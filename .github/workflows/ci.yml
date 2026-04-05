@@ -1,0 +1,71 @@
+name: TGP Reproducibility CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install numpy>=1.26 scipy>=1.12 matplotlib>=3.8
+
+      - name: Run quick reproduction (10 stages)
+        run: python -m nbody.reproduce_all --quick
+        timeout-minutes: 10
+
+      - name: Run EOM regression
+        run: python -m nbody.examples.verify_nbody_eom_quick --quick
+        timeout-minutes: 5
+
+      - name: Run Lyapunov regression
+        run: python -m nbody.examples.verify_nbody_lyapunov_quick --quick
+        timeout-minutes: 10
+
+  latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-lang-european texlive-bibtex-extra
+
+      - name: Compile N-body paper
+        run: |
+          cd nbody
+          pdflatex -interaction=nonstopmode tgp_nbody_results_clean.tex
+          bibtex tgp_nbody_results_clean
+          pdflatex -interaction=nonstopmode tgp_nbody_results_clean.tex
+          pdflatex -interaction=nonstopmode tgp_nbody_results_clean.tex
+
+      - name: Check for LaTeX errors
+        run: |
+          cd nbody
+          if grep -q "^!" tgp_nbody_results_clean.log; then
+            echo "LaTeX errors found!"
+            grep "^!" tgp_nbody_results_clean.log
+            exit 1
+          fi
+          echo "No LaTeX errors."
+
+      - name: Upload N-body PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: tgp-nbody-paper
+          path: nbody/tgp_nbody_results_clean.pdf
