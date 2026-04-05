@@ -1,0 +1,217 @@
+% ============================================================
+% §2  The Phi field — sources, superposition, interference
+% ============================================================
+\section{The space-generating field}\label{sec:pole}
+
+\subsection{Definition of the field $\Phi$}
+
+\begin{definition}[Spatial field $\Phi$]\label{def:Phi}
+$\Phi$ is a real scalar field whose value at a given point measures
+the \textbf{density of generated space} at that location.  It is not
+a field on a ready-made manifold --- it is the field that
+\emph{constitutes} the manifold:
+\begin{itemize}[nosep]
+  \item $\Phi = 0$: no space (nothingness $\Nzero$),
+  \item $\Phi > 0$: space exists, its ``density'' equals~$\Phi$,
+  \item $\Phi \to \infty$: extremely dense space
+        (interior of massive objects).
+\end{itemize}
+\end{definition}
+
+$\Phi$ is not an \textbf{additional field} in space.
+It is the field \textbf{from which} space is composed.
+Metric, distance, causality --- these are properties of the
+configuration of~$\Phi$, not separate entities.
+
+\begin{remark}[Physical interpretation]
+One may think of $\Phi$ as a ``density of aether'' --- but not of a
+material medium; rather, of the very \emph{capacity for spatial
+relations to exist}.  Where $\Phi = 0$ there is nothing --- not even
+emptiness.  Where $\Phi > 0$, objects can coexist, interact, and move
+relative to one another.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Matter as a source of $\Phi$}\label{ssec:zrodla}
+
+Every fundamental particle generates a contribution to the
+field~$\Phi$.  This is not an ``external'' coupling (matter in space
+coupled to a field); it is a \textbf{constitutive act}: a particle
+\emph{is} a local excitation that simultaneously produces the spatial
+field around itself.
+
+\begin{axiom}[Matter generates space]\label{ax:zrodlo}
+Each source of mass-energy $\rho_a$ produces a contribution to~$\Phi$:
+\begin{equation}\label{eq:Phi-source}
+    \mathcal{D}[\Phi_a] = q_a \cdot \rho_a,
+\end{equation}
+where $q_a > 0$ is the \textbf{spatial generation constant} of
+particle type~$a$ (analogous to charge, but for space), and
+$\mathcal{D}$ is the operator governing the dynamics of~$\Phi$.
+\end{axiom}
+
+\begin{remark}[Generation constant $q_a$]
+The constant $q_a$ specifies how strongly a given particle type
+generates space.  It may depend on mass, spin, or other particle
+properties.  It is a new physical parameter, intrinsic to TGP and
+absent from standard physics.  In the homogeneous limit ($q_a = q$
+for all types) the theory reduces to a one-parameter form.
+\end{remark}
+
+\begin{remark}[Nature of the operator $\mathcal{D}$]\label{rem:D-natura}
+The operator $\mathcal{D}$ in Eq.~\eqref{eq:Phi-source} is not a
+standard Laplacian on a pre-existing manifold --- that would violate
+Axiom~\ref{ax:przestrzen}.  It must be \textbf{internal to $\Phi$}:
+defined by the very configuration of the field that constitutes
+space.  Its explicit form is derived in Section~\ref{sec:formalizm}
+(Definition~\ref{def:D}).
+
+For reference, the linear part of the operator reads
+\begin{equation}\label{eq:D-preview}
+  \mathcal{D}[\Phi]\big|_{\mathrm{lin}}
+  = \frac{1}{\PhiZero}\,\nabla^2\Phi,
+\end{equation}
+while the full field equation includes the nonlinear
+self-interference term $\mathcal{N}[\Phi]$
+(Definition~\ref{def:N}, Section~\ref{sec:formalizm}):
+\begin{equation}\label{eq:N-preview}
+  \mathcal{N}[\Phi]
+  = \frac{\alpha}{\PhiZero}\,\frac{(\nabla\Phi)^2}{\Phi}
+  + \beta\,\frac{\Phi^2}{\PhiZero^2}
+  - \gamma\,\frac{\Phi^3}{\PhiZero^3},
+\end{equation}
+where $\alpha = 2$ (from variation of the action),
+$\beta, \gamma > 0$, $[\beta] = [\gamma] = \mathrm{L}^{-2}$.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Single source: spherical generated space}%
+\label{ssec:pojedyncze}
+
+For an isolated, static point particle of mass~$M$ located
+at~$\mathbf{x}_0$, the generated field has spherical symmetry:
+\begin{equation}\label{eq:Phi-single}
+    \Phi_{\mathrm{single}}(r)
+    = \frac{q\,M}{4\pi}\,\phi(r),
+    \qquad
+    r = |\mathbf{x} - \mathbf{x}_0|,
+\end{equation}
+where $\phi(r)$ is the \textbf{generation profile} --- a function of
+distance from the source.
+
+The profile $\phi(r)$ is \textbf{not} assumed a priori to be
+$e^{-mr}/r$ (Yukawa) or $1/r$ (Coulomb).  Its form follows from the
+full, nonlinear dynamics of~$\Phi$ and must be \textbf{derived} from
+the equations of the theory.  At the present stage one may only
+assume general properties:
+\begin{enumerate}[nosep]
+  \item $\phi(r) > 0$ everywhere (space is generated, never
+        ``negative''),
+  \item $\phi(r) \to \infty$ as $r \to 0$ (spatial density diverges
+        at the source centre),
+  \item $\phi(r) \to 0$ as $r \to \infty$ (space vanishes far from
+        the source),
+  \item $\phi(r)$ is non-monotonic --- it possesses an inflection
+        point or local extremum, giving rise to three regimes
+        (Section~\ref{sec:rezimy}).
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsection{Multiple sources: superposition and interference}%
+\label{ssec:interferencja}
+
+In the presence of many particles the total field~$\Phi$ is not a
+simple sum of individual contributions.  It is the result of
+\textbf{nonlinear interference}.
+
+\subsubsection{Linear approximation (weak field)}
+
+In the weak-field limit ($\Phi \ll \Phi_{\mathrm{char}}$, where
+$\Phi_{\mathrm{char}}$ is the nonlinearity scale) the contributions
+superpose linearly:
+\begin{equation}\label{eq:Phi-linear}
+    \Phi(\mathbf{x})
+    \simeq \sum_{i} \Phi_i(\mathbf{x})
+    = \sum_{i} \frac{q_i\,M_i}{4\pi}\,
+      \phi(|\mathbf{x}-\mathbf{x}_i|).
+\end{equation}
+This approximation corresponds to the Newtonian limit and suffices
+at large scales.
+
+\subsubsection{Full nonlinear regime}
+
+In regions where contributions from many sources overlap strongly
+(dense matter clusters, stellar interiors, atomic nuclei), the field
+equation becomes \textbf{nonlinear}:
+\begin{equation}\label{eq:Phi-nonlinear}
+    \mathcal{D}[\Phi]
+    = \sum_{i} q_i \rho_i
+    + \mathcal{N}[\Phi],
+\end{equation}
+where $\mathcal{N}[\Phi]$ describes the \textbf{self-interference} of
+the field --- the nonlinear coupling of generated space with itself.
+The explicit form of $\mathcal{N}[\Phi]$ is given in
+Eq.~\eqref{eq:N-preview} above and in Definition~\ref{def:N}
+(Section~\ref{sec:formalizm}); the full field equation is stated in
+Theorem~\ref{thm:field-eq}.
+
+The self-interference term $\mathcal{N}[\Phi]$ is responsible for:
+\begin{itemize}[nosep]
+  \item repulsion at intermediate scales (high spatial potential
+        between nearby sources),
+  \item a well at extremely small scales (confinement),
+  \item amplification and cancellation of the field depending on the
+        relative configuration of sources.
+\end{itemize}
+
+\begin{remark}[Interference, not mere superposition]
+The word ``interference'' is deliberate.  In wave physics,
+interference means that the result of superposition depends on
+\emph{phase} --- constructive and destructive effects can occur.
+In TGP the analogous role is played by the \textbf{field gradient}
+$\nabla\Phi$: two nearby sources generate between them a region of
+\emph{higher}~$\Phi$ than either produces alone (constructive
+overlap); but the net force on objects depends on the
+\emph{gradient} of~$\Phi$, which can point either toward or away
+from the source, depending on the scale.  This is the mechanism
+behind the three regimes (Section~\ref{sec:rezimy}).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{From $\Phi$ to the metric}\label{ssec:metryka}
+
+The metric is not a fundamental object.  It is an \textbf{effective
+description} of the configuration of~$\Phi$.  In regions where
+$\Phi > 0$ and varies smoothly, one can define an effective metric:
+\begin{equation}\label{eq:metric-from-Phi}
+    g_{\mu\nu}^{\mathrm{eff}}
+    = g_{\mu\nu}[\Phi, \partial\Phi, \ldots\,].
+\end{equation}
+The exact form of this relation is an \textbf{open problem} in TGP.
+At the present stage one can state:
+\begin{itemize}[nosep]
+  \item the metric is defined only where $\Phi > 0$;
+  \item a homogeneous $\Phi = \mathrm{const} > 0$ yields a flat
+        (Minkowski) metric;
+  \item gradients of $\Phi$ generate curvature --- this is gravity
+        in TGP;
+  \item large $\Phi$ with large gradients corresponds to a strong
+        gravitational field.
+\end{itemize}
+
+\begin{hypothesis}[Minimal metric]\label{hyp:metric}
+In the simplest ansatz the effective metric takes the form
+\begin{equation}\label{eq:metric-minimal}
+    ds^2 = -\frac{c(\Phi)^2}{c_0^2}\,dt^2
+    + \frac{\Phi}{\PhiZero}\,\delta_{ij}\,dx^i dx^j,
+\end{equation}
+where $c(\Phi)$ is the local speed of light
+(Section~\ref{sec:stale}) and $\PhiZero$ is the reference value.
+The spatial part is modulated by $\Phi/\PhiZero$ --- more generated
+space means a larger ``volume'' available in a given region.
+\end{hypothesis}
+
+This metric form is a \textbf{working hypothesis}, not an axiom.
+Its consistency with observations must be verified.  A corrected
+(exponential) form yielding correct post-Newtonian parameters is
+derived in Section~\ref{ssec:metryka-popr}.

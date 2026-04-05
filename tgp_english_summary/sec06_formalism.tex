@@ -1,0 +1,377 @@
+% ============================================================
+% sec06_formalism.tex — Condensed formalism (English summary)
+% Consolidates sek08_formalizm + sek08a + sek08b + sek08c
+% ============================================================
+
+\section{Mathematical formalism}\label{sec:formalism}
+
+This section presents the core mathematical architecture of TGP
+in a self-contained form.  The full derivations are given in the
+Polish-language manuscript (\S8, \S8a--c); here we state the
+principal results with their essential proofs.
+
+% ==================================================================
+\subsection{The TGP kinetic operator}\label{ssec:kinetic-operator}
+% ==================================================================
+
+The dynamical variable of TGP is a single scalar field
+$\Phi(\mathbf{x},t)$, interpreted as the coarse-grained
+density of the substrate lattice $\Gamma=(V,E)$.
+We work in the dimensionless variable $\varphi \equiv \Phi/\PhiZero$.
+
+\begin{theorem}[Uniqueness of $\mathcal{D}_{\mathrm{kin}}$]%
+\label{thm:D-uniqueness-en}
+Among all local second-order scalar kinetic operators of the form
+$\mathcal{D}[\varphi] = K(\varphi)\,\nabla^{2}\varphi
+ + \tfrac{1}{2}K'(\varphi)\,(\nabla\varphi)^{2}$,
+require:
+\begin{enumerate}[(C1)]
+  \item $K(\varphi)$ depends only on $\varphi$ and is smooth for
+        $\varphi > 0$\; (locality);
+  \item $\mathcal{D}[\varphi]\to\nabla^{2}\varphi$ when
+        $\varphi = \mathrm{const}$\; (Laplacian limit);
+  \item $\mathcal{D}$ is covariant under conformal rescaling
+        $\varphi \mapsto \lambda\,\varphi$ of the substrate metric
+        $h_{ij}=\varphi^{4}\,\delta_{ij}$\;
+        ($\Phi$-covariance).
+\end{enumerate}
+Then $K(\varphi)=K_{\mathrm{geo}}\,\varphi^{4}$ (with $\alpha=2$)
+is the \textbf{unique} solution, and the kinetic operator is
+\begin{equation}\label{eq:Dkin}
+  \boxed{
+    \mathcal{D}_{\mathrm{kin}}[\varphi]
+    = \nabla^{2}\varphi + \frac{2\,(\nabla\varphi)^{2}}{\varphi}
+    = \frac{1}{3\,\varphi^{2}}\,\nabla^{2}(\varphi^{3}).
+  }
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+(C2) fixes $K(1)=1$. The Euler--Lagrange equation of
+$\mathcal{L}_{\mathrm{kin}}=-\frac{1}{2}K(\varphi)(\nabla\varphi)^{2}$
+gives the ratio $\alpha(\varphi)=K'(\varphi)\,\varphi/[2K(\varphi)]$.
+(C1) requires $\alpha=\mathrm{const}$.  (C3) is checked by computing
+the Laplace--Beltrami operator on $(h_{ij})$:
+$\Delta_{h}\varphi = \varphi^{-4}\,\mathcal{D}_{\mathrm{kin}}[\varphi]$,
+which holds if and only if $\alpha=2$.
+Hence $K(\varphi)=\varphi^{4}$.
+\end{proof}
+
+\noindent
+The identity $\mathcal{D}_{\mathrm{kin}} = (3\varphi^{2})^{-1}\nabla^{2}(\varphi^{3})$
+shows that the operator is simply the flat Laplacian acting on
+$\varphi^{3}$, divided by $3\varphi^{2}$.  This makes the
+nonlinearity transparent: it arises from the geometric coupling of
+the substrate lattice, not from an ad~hoc modification of the field
+equation.
+
+% ==================================================================
+\subsection{Lagrangian density and unified action}\label{ssec:action}
+% ==================================================================
+
+The complete TGP action is
+\begin{equation}\label{eq:S-TGP}
+  S_{\mathrm{TGP}}[\Phi,\psi_{m}]
+  = \int d^{4}x\;\sqrt{-g_{\mathrm{eff}}}\;
+    \Bigl[
+      \mathcal{L}_{\mathrm{field}}(\Phi)
+      + \mathcal{L}_{\mathrm{mat}}(\Phi,\psi_{m})
+    \Bigr],
+\end{equation}
+with three ingredients:
+
+\paragraph{(a) Field Lagrangian.}
+\begin{equation}\label{eq:L-field}
+  \mathcal{L}_{\mathrm{field}}
+  = -\frac{1}{2}\,K(\varphi)\,
+    g_{\mathrm{eff}}^{\mu\nu}\,
+    \partial_{\mu}\varphi\,\partial_{\nu}\varphi
+  - U(\varphi),
+\end{equation}
+where the kinetic function is
+\begin{equation}\label{eq:K-function}
+  K(\varphi) = 1 + 2\alpha\,\ln\!\bigl(\varphi\bigr),
+  \qquad \alpha = 2
+  \quad\text{(from 1-loop ERG)},
+\end{equation}
+and the self-interference potential is
+\begin{equation}\label{eq:U-potential}
+  U(\varphi)
+  = \frac{\beta}{3}\,\varphi^{3} - \frac{\gamma}{4}\,\varphi^{4},
+  \qquad \beta = \gamma
+  \quad\text{(vacuum condition $U'(1)=0$)}.
+\end{equation}
+
+\paragraph{(b) Matter coupling.}
+\begin{equation}\label{eq:L-matter}
+  \mathcal{L}_{\mathrm{mat}}
+  = -\frac{q}{\PhiZero}\,\varphi\,\rho,
+\end{equation}
+where $\rho$ is the matter density minimally coupled to
+$g_{\mu\nu}^{\mathrm{eff}}$.
+The factor $\varphi$ reflects the axiom that sources generate
+$\Phi$, not a constant background.
+
+\paragraph{(c) Volume element.}
+From the effective metric (see \S\ref{ssec:exp-metric} below):
+\begin{equation}\label{eq:sqrt-g}
+  \sqrt{-g_{\mathrm{eff}}} = c_{0}\,\varphi.
+\end{equation}
+
+\noindent
+Variation $\delta S/\delta\Phi = 0$ yields the full TGP field
+equation:
+\begin{equation}\label{eq:field-eq}
+  \boxed{
+    \nabla^{2}\Phi
+    + \frac{2\,(\nabla\Phi)^{2}}{\Phi}
+    + \beta\,\frac{\Phi^{2}}{\PhiZero}
+    - \gamma\,\frac{\Phi^{3}}{\PhiZero^{2}}
+    = -q\,\PhiZero\,\rho.
+  }
+\end{equation}
+
+\begin{remark}[TGP is not a scalar-tensor theory]\label{rem:not-ST}
+The action~\eqref{eq:S-TGP} contains no Einstein--Hilbert term
+$R$.  The effective metric $g_{\mu\nu}^{\mathrm{eff}}$ is defined
+algebraically by $\Phi$ (it is not an independent dynamical
+variable).  The Einstein equations emerge as a geometric
+consistency condition, not as a postulate.
+The only dynamical degree of freedom is $\Phi$.
+\end{remark}
+
+% ==================================================================
+\subsection{Exponential metric from substrate coarse-graining}%
+\label{ssec:exp-metric}
+% ==================================================================
+
+The spatial components of the effective metric follow directly
+from the substrate: a coarse-graining cell $B(\mathbf{x})$
+containing $N_{B}$ lattice nodes has physical volume
+$\propto \Phi(\mathbf{x})$.  Hence:
+\begin{equation}\label{eq:g-spatial}
+  g_{ij} = \frac{\Phi}{\PhiZero}\,\delta_{ij} = \psi\,\delta_{ij},
+  \qquad \psi \equiv \frac{\Phi}{\PhiZero}.
+\end{equation}
+
+The temporal component is determined by the \textbf{information
+budget constraint}: the substrate has a fixed information capacity
+$\mathcal{B} = N_{B}\,s_{0}$ per cell, partitioned between spatial
+and temporal degrees of freedom.  If spatial capacity scales as
+$h(\Phi)=\Phi/\PhiZero$ and temporal capacity as $f(\Phi)$, the
+multiplicative conservation law
+\begin{equation}\label{eq:fh-1}
+  f(\Phi)\cdot h(\Phi) = 1
+  \qquad\text{(antipodal condition)}
+\end{equation}
+yields $f = \PhiZero/\Phi = 1/\psi$.
+
+In the weak-field limit $\Phi = \PhiZero(1+2U/c_{0}^{2})$,
+identifying the Newtonian potential $U$, the power-law form
+$g_{tt}=-c_{0}^{2}/\psi$ gives $\beta_{\mathrm{PPN}}=2$.
+The PPN consistency requirement $\beta_{\mathrm{PPN}}=1$
+\emph{uniquely} selects the exponential parametrization:
+\begin{equation}\label{eq:exp-metric}
+  \boxed{
+    ds^{2}
+    = -c_{0}^{2}\,e^{-2U/c_{0}^{2}}\,dt^{2}
+    + e^{+2U/c_{0}^{2}}\,\delta_{ij}\,dx^{i}\,dx^{j},
+    \qquad
+    \psi = e^{2U/c_{0}^{2}}.
+  }
+\end{equation}
+Both forms ($1/\psi$ and $e^{-2U/c_{0}^{2}}$) satisfy $f\cdot h=1$
+and agree at $O(U)$; the exponential form extends the agreement to
+\emph{all orders} in $U$.
+
+\begin{remark}[Derivation chain]\label{rem:derivation-chain}
+The metric~\eqref{eq:exp-metric} is \textbf{not postulated} but
+derived from three inputs:
+\begin{enumerate}[(i)]
+  \item node density $\Rightarrow$ $g_{ij}=\psi\,\delta_{ij}$;
+  \item information budget $\Rightarrow$ $f\cdot h=1$;
+  \item PPN consistency $\Rightarrow$ exponential form,
+        $\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$ exactly.
+\end{enumerate}
+An independent check: requiring $\ell_{P}=\sqrt{G\hbar/c^{3}}=\mathrm{const}$
+(Axiom~A7) fixes the scaling exponents
+$c(\Phi)=c_{0}/\sqrt{\psi}$, $G(\Phi)=G_{0}/\psi$,
+$\hbar(\Phi)=\hbar_{0}/\sqrt{\psi}$,
+all consistent with the exponential metric.
+\end{remark}
+
+\paragraph{PPN parameters (exact).}
+Expanding eq.~\eqref{eq:exp-metric}:
+\begin{align}
+  g_{tt} &= -c_{0}^{2}\bigl(1 - 2U/c_{0}^{2} + 2U^{2}/c_{0}^{4} - \ldots\bigr), \\
+  g_{ij} &= \bigl(1 + 2U/c_{0}^{2} + 2U^{2}/c_{0}^{4} + \ldots\bigr)\delta_{ij}.
+\end{align}
+Comparing with the standard PPN expansion (Will 2014):
+\begin{equation}\label{eq:gamma-beta-exact}
+  \gamma_{\mathrm{PPN}} = 1, \qquad \beta_{\mathrm{PPN}} = 1
+  \qquad\text{(exact to all orders in $U$)}.
+\end{equation}
+
+% ==================================================================
+\subsection{Ghost resolution}\label{ssec:ghost}
+% ==================================================================
+
+The non-standard kinetic term $K(\varphi)=1+4\ln\varphi$ vanishes
+at $\varphi^{*}=e^{-1/4}\approx 0.779$, signalling a potential
+kinetic ghost for $\varphi < \varphi^{*}$.  Three observations
+resolve this:
+
+\paragraph{1.\ Perturbative sector: ghost-free by construction.}
+In the cosmological background $\psi_{\mathrm{bg}}>0$, the
+Mukhanov--Sasaki kinetic coefficient is
+$Q_{s}=\psi_{\mathrm{bg}}^{4}>0$ for all physical
+$\psi_{\mathrm{bg}}$.  In the fundamental variable $\psi$,
+the kinetic energy is $\psi^{4}(\nabla\psi)^{2}\geq 0$.
+
+\paragraph{2.\ Soliton sector: substrate resolution.}
+The logarithmic function $K=1+4\ln\varphi$ is a \emph{truncated}
+approximation to the full substrate kinetic coupling:
+\begin{equation}\label{eq:K-substrate}
+  K_{\mathrm{sub}}(\varphi) = K_{\mathrm{geo}}\,\varphi^{4},
+  \qquad K_{\mathrm{geo}} > 0,
+\end{equation}
+which follows from the geometric link coupling
+$K_{ij}=J\,(\varphi_{i}\,\varphi_{j})^{2}$ on the lattice.
+The expansion $K_{\mathrm{sub}}=K_{\mathrm{geo}}\,e^{4\ln\varphi}
+\approx K_{\mathrm{geo}}(1+4\ln\varphi+\ldots)$ shows that
+$K=1+4\ln\varphi$ is its first-order logarithmic truncation.
+The full $K_{\mathrm{sub}}=K_{\mathrm{geo}}\,\varphi^{4}$
+is \textbf{strictly positive} for all $\varphi>0$:
+\begin{equation}
+  K_{\mathrm{sub}}(\varphi^{*})
+  = K_{\mathrm{geo}}\,(e^{-1/4})^{4}
+  = K_{\mathrm{geo}}\,e^{-1} > 0.
+\end{equation}
+The ``ghost'' at $\varphi^{*}$ is an artefact of the continuum
+approximation, not a physical singularity.
+
+\paragraph{3.\ Soliton equation: regular at all $\varphi>0$.}
+With the substrate coupling, the soliton ODE becomes
+\begin{equation}\label{eq:soliton-substrate}
+  K_{\mathrm{geo}}\,\varphi^{2}\,\varphi''
+  + K_{\mathrm{geo}}\,\varphi\,(\varphi')^{2}
+  + \frac{2}{r}\,K_{\mathrm{geo}}\,\varphi^{2}\,\varphi'
+  = V'(\varphi).
+\end{equation}
+The coefficient of $\varphi''$ is
+$K_{\mathrm{geo}}\,\varphi^{2}>0$ for all $\varphi>0$:
+no kinetic singularity, no sign change, no ghost.
+
+\begin{remark}[Ghost-freedom summary]
+TGP is ghost-free at three levels:
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Sector} & \textbf{Kinetic positivity} & \textbf{Mechanism} \\
+\midrule
+Fundamental ($\psi$)   & $\psi^{4}(\nabla\psi)^{2}>0$
+  & geometric \\
+Perturbations (MS)     & $Q_{s}=\psi_{\mathrm{bg}}^{4}>0$
+  & linearized \\
+Solitons (substrate)   & $K_{\mathrm{sub}}=K_{\mathrm{geo}}\varphi^{4}>0$
+  & full lattice \\
+\bottomrule
+\end{tabular}
+\end{center}
+All three originate from the same substrate coupling
+$K_{ij}=J(\varphi_{i}\varphi_{j})^{2}\geq 0$, expressed in
+different variables and regimes.
+\end{remark}
+
+% ==================================================================
+\subsection{Modified Friedmann equations}\label{ssec:friedmann-en}
+% ==================================================================
+
+In the homogeneous FRW limit $\Phi=\Phi(t)$, defining
+$\psi(t)=\Phi(t)/\PhiZero$, the effective metric becomes
+\begin{equation}
+  ds^{2} = -\frac{c_{0}^{2}}{\sqrt{\psi}}\,dt^{2}
+         + a^{2}\sqrt{\psi}\;\delta_{ij}\,dx^{i}\,dx^{j}.
+\end{equation}
+The TGP field equation in cosmological variables reads
+\begin{equation}\label{eq:psi-cosmo}
+  \psi'' + \Bigl(3 + \frac{E'}{E}\Bigr)\psi'
+  = \frac{\PhiZero}{E^{2}}
+    \Bigl[\frac{7}{3}\,\psi^{2} - 2\,\psi^{3}\Bigr]
+  - \frac{2\,\psi'^{2}}{\psi},
+\end{equation}
+where primes denote $d/d\ln a$ and $E(a)=H(a)/H_{0}$.
+
+The Einstein equations emerge as a \emph{geometric consistency
+condition} of the effective metric.  The modified Friedmann
+equation takes the form:
+\begin{equation}\label{eq:friedmann-mod}
+  \boxed{
+    3\!\left(H + \frac{\dot\psi}{4\psi}\right)^{\!2}\!\sqrt{\psi}
+    = c_{0}^{2}\!\left[
+      \frac{\sqrt{\psi}\;\dot\psi^{2}}{2\,c_{0}^{2}}
+      + U(\psi)
+    \right],
+  }
+\end{equation}
+with $U(\psi) = \frac{\gamma}{3}\psi^{3} - \frac{\gamma}{4}\psi^{4}$
+(using $\beta=\gamma$).
+
+In the vacuum ($\psi\approx 1$, $\dot\psi\approx 0$), this reduces to
+\begin{equation}
+  3H_{0}^{2} \approx c_{0}^{2}\,U(1)
+  = c_{0}^{2}\,\frac{\gamma}{12}
+  = c_{0}^{2}\,\Lambda_{\mathrm{eff}},
+\end{equation}
+which is the standard de~Sitter solution with effective cosmological
+constant $\Lambda_{\mathrm{eff}}=\gamma/12$.  The dimensionless
+Friedmann equation $E^{2}(a)=\Omega_{m}/a^{3}+\Omega_{r}/a^{4}
++\Omega_{\mathrm{DE}}\,f(\psi)$ with the TGP potential shape
+$f(\psi)=4\psi^{3}-3\psi^{4}$ recovers standard FRW cosmology,
+with effective dark energy arising from the scalar field potential.
+
+\begin{remark}[Bianchi identity propagation]
+The Friedmann constraint~\eqref{eq:friedmann-mod} is not obtained
+by varying the TGP action with respect to $a$ (which gives an
+over-determined system), but is \emph{propagated} by the contracted
+Bianchi identity $\nabla_{\mu}G^{\mu\nu}_{\mathrm{eff}}=0$ once
+it holds at the initial time~$t_{0}$.
+This mirrors the role of the Hamiltonian constraint in GR.
+\end{remark}
+
+% ==================================================================
+\subsection{Parameter classification}\label{ssec:params}
+% ==================================================================
+
+TGP organizes its parameters into three layers:
+
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Layer} & \textbf{Origin} \\
+\midrule
+\multicolumn{4}{l}{\textit{Layer~I --- structural (universal across substrate cosmologies)}} \\
+$\alpha=2$  & exact & I & $K_{ij}=J(\varphi_{i}\varphi_{j})^{2}$ \\
+$\beta=\gamma$ & exact & I & vacuum condition $U'(1)=0$ \\
+$d=3$ & exact & I & lattice optimality \\
+\midrule
+\multicolumn{4}{l}{\textit{Layer~II --- selective (our universe)}} \\
+$\PhiZero \approx 24.66\;[H_{0}^{2}/c_{0}^{2}]^{-1}$
+  & fitted & II & match to $\Lambda_{\mathrm{obs}}$ \\
+$a_{\Gamma}\approx 0.040$ & fitted & II & match to $r_{21}=m_{\mu}/m_{e}$ \\
+\midrule
+\multicolumn{4}{l}{\textit{Layer~III --- derived (predictions, not inputs)}} \\
+$c_{\mathrm{GW}}=c_{0}$ & exact & III & substrate propagation \\
+$\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$ & exact & III & exponential metric \\
+$\Lambda_{\mathrm{eff}}=\gamma/12$ & $\sim H_{0}^{2}$ & III & potential minimum \\
+3 generations & exact & III & WKB $n=0,1,2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+The parsimony ratio is $M_{\mathrm{obs}}/N_{\mathrm{param}}\geq 12/2 = 6$:
+two free parameters ($\PhiZero$, $a_{\Gamma}$) generate at least
+twelve independent predictions.  An open question (OP-3) is whether
+$a_{\Gamma}=1/\PhiZero$, which would reduce the free parameter count
+to one.

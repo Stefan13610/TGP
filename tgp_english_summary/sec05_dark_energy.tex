@@ -1,0 +1,174 @@
+% ============================================================
+% §5  Dark Energy from Fluctuations of Generated Space
+% ============================================================
+\section{Dark energy}\label{sec:ciemna}
+
+In standard cosmology dark energy is a cosmological constant~$\Lambda$
+inserted by hand into the Einstein equations, or a quintessence field
+with an arbitrary potential.  In TGP dark energy arises from the
+\textbf{dynamics of generated space itself}: condensation of matter
+amplifies fluctuations of the field~$\Phi$, which generate additional
+space.
+
+% ----------------------------------------------------------
+\subsection{Mechanism}\label{ssec:de-mech}
+
+\begin{proposition}[Dark energy from $\Phi$~fluctuations]%
+\label{prop:DE}
+The field~$\Phi$ undergoes fluctuations---both quantum (on small
+scales) and classical/turbulent (superposition of contributions from
+many sources on large scales).  These fluctuations generate
+\textbf{additional effective space}, because the large-scale average
+$\langle\Phi\rangle$ is elevated relative to the value that the same
+mass would produce if distributed homogeneously.
+\end{proposition}
+
+The detailed mechanism proceeds in four steps:
+\begin{enumerate}[nosep]
+  \item Every particle generates a field~$\Phi$ in its vicinity.
+  \item When particles condense into structures (galaxies, clusters),
+        their $\Phi$~fields superpose \textbf{nonlinearly}.
+  \item The nonlinearity $\mathcal{N}[\Phi]$ implies that the
+        average $\langle\Phi\rangle$ in a structured region is
+        \textbf{higher} than~$\Phi$ for the same mass spread
+        homogeneously:
+        \begin{equation}\label{eq:Phi-excess}
+            \langle\Phi_{\mathrm{struct}}\rangle
+            > \Phi_{\mathrm{homogeneous}}.
+        \end{equation}
+  \item The excess
+        $\Delta\Phi = \langle\Phi_{\mathrm{struct}}\rangle
+        - \Phi_{\mathrm{homogeneous}}$
+        represents \textbf{additional space}---space that ``should
+        not exist'' if matter were distributed uniformly.
+        This additional space manifests as \textbf{accelerated
+        expansion}: there is more ``room'' than matter alone
+        would warrant, so the Universe expands faster than a
+        matter-only model predicts.
+\end{enumerate}
+
+\begin{remark}[Flattening the problem]
+In standard cosmology one asks: ``Why does $\Lambda$ have
+\emph{this} particular value?'' (fine-tuning problem).
+In TGP the question becomes: ``How much additional space do
+$\Phi$~fluctuations generate for a given matter distribution?''
+---the answer follows from dynamics, not from parameter tuning.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Link to structure growth}\label{ssec:de-struktury}
+
+A key prediction: dark energy in TGP \textbf{grows} as cosmic
+structures form.
+\begin{itemize}[nosep]
+  \item In the early Universe matter is nearly homogeneous,
+        $\Delta\Phi \approx 0$, and dark energy is negligibly small.
+  \item In the late Universe---galaxies, clusters,
+        superclusters---matter is strongly concentrated,
+        $\Delta\Phi$ is large, and dark energy is significant.
+\end{itemize}
+
+\begin{hypothesis}[Coincidence problem]\label{hyp:coincidence}
+In TGP the ``coincidental'' overlap between the epoch of
+dark-energy domination and the epoch of structure formation
+\textbf{is not a coincidence}---one causes the other.
+Condensation of matter into structures generates additional
+space, which we observe as dark energy.
+\end{hypothesis}
+
+% ----------------------------------------------------------
+\subsection{Dark energy: natural $\Lambda$ or quintessence?}%
+\label{ssec:de-dyn}
+
+Numerical analysis (script \texttt{w\_de\_exact.py}) reveals
+a central result.  For \textbf{natural} parameters
+$\gamma \sim H_0^2/c_0^2$ (corresponding to
+$\tau_0 \sim 1/H_0$, $\PhiZero \sim 25$), the field~$\varphi$
+is \textbf{perfectly frozen}: Hubble friction $3H\dot\varphi$
+dominates the potential force by $\sim 40$ orders of magnitude.
+The outcome is $w_0 = -1.000$, $w_a = 0.000$---\textbf{indistinguishable
+from a cosmological constant~$\Lambda$}.
+
+TGP is therefore a \textbf{natural $\Lambda$~theory}: the
+cosmological constant is not a parameter inserted by hand but
+the residual potential $U(1) = \gamma/12$
+(Proposition~\ref{prop:Lambda-eff}).
+
+The effective cosmological constant is computable:
+\begin{equation}\label{eq:Lambda-eff-def}
+    \Lambda_{\mathrm{eff}}
+    \;=\; \frac{8\pi G_0}{c_0^4}\;
+    \bigl\langle U(\varphi_{\min}) \bigr\rangle_\Sigma,
+\end{equation}
+where $\varphi_{\min}(\mathbf{x})$ solves the field equation
+subject to the zero-sum constraint, and
+$\langle\cdot\rangle_\Sigma$ denotes the spatial average.
+
+\medskip\noindent
+\textbf{When is dark energy dynamical?}
+The field~$\varphi$ evolves appreciably ($w_0 > -1$, $w_a < 0$)
+only when $\gamma \gg H_0^2/c_0^2$, which requires either
+unnaturally large~$\PhiZero$, higher-order substrate couplings,
+or non-trivial initial conditions $\varphi_{\mathrm{ini}} \neq 1$.
+In the dynamical regime TGP yields a \textbf{quintessence}-type
+prediction:
+\begin{itemize}[nosep]
+  \item $w_0 \gtrsim -1$: today $\dot{\varphi}^2 > 0$ but small.
+  \item $w_a < 0$: as structures stabilise,
+        $w_{\mathrm{DE}} \to -1$ from above.
+\end{itemize}
+
+The equation of state of TGP dark energy takes the form
+(Proposition~\ref{prop:wDE}):
+\begin{equation}\label{eq:wDE-def}
+    w_{\mathrm{DE}}
+    \;=\; \frac{\frac{1}{2}\dot{\varphi}^2 - U(\varphi)}
+               {\frac{1}{2}\dot{\varphi}^2 + U(\varphi)}.
+\end{equation}
+In the slow-relaxation regime
+($\dot{\varphi}^2 \ll U(\varphi)$):
+\begin{equation}\label{eq:wDE-slow}
+    w_{\mathrm{DE}} \;\approx\; -1 + \delta w,
+    \qquad
+    \delta w \;=\; \frac{\dot{\varphi}^2}{U(\varphi)} \;>\; 0.
+\end{equation}
+For natural $\gamma \sim H_0^2/c_0^2$ one obtains
+$\delta w < 10^{-40}$, operationally identical to $w = -1$.
+For enhanced $\gamma$: $\delta w \sim 0.02$--$0.2$, yielding
+testable quintessence with $(w_0 > -1,\; w_a < 0)$ in the CPL
+parametrisation.
+
+% ----------------------------------------------------------
+\subsection{Relation to the zero-sum principle}\label{ssec:de-zero}
+
+The zero-sum principle (Axiom~\ref{ax:zero}) requires
+$\Ffield_{\mathrm{ext}} = 0$.  The additional space generated
+by fluctuations \textbf{does not violate} this principle:
+\begin{itemize}[nosep]
+  \item An internal observer sees more space (dark energy).
+  \item An external observer sees $\Ffield = 0$---the excess
+        space is exactly compensated in the global balance.
+\end{itemize}
+Dark energy is therefore a \textbf{local self-organisation
+effect of matter}, not a global constant.
+
+\begin{remark}[Distinguishing TGP from $\Lambda$CDM]%
+\label{rem:rozroznienie}
+At natural parameters TGP is observationally indistinguishable
+from $\Lambda$CDM via $w(z)$ measurements alone.
+Discrimination requires \textbf{other observables}:
+\begin{enumerate}[nosep]
+  \item \textbf{GW polarisation}: a breathing mode alongside
+        the tensorial $+/\times$ modes
+        (Proposition~\ref{prop:GW-dispersion}).
+  \item \textbf{Massive-GW dispersion relation}:
+        a mass gap $f_{\mathrm{cut}} \sim H_0/(2\pi)$.
+  \item \textbf{$\Lambda_{\mathrm{eff}}$ without fine-tuning}:
+        $\Lambda \approx \gamma/12
+        \sim \PhiZero\,H_0^2/(12\,c_0^2)$
+        is \emph{calculable}, not inserted by hand.
+  \item \textbf{Correlation of $\Lambda_{\mathrm{eff}}$
+        with structure}: the back-reaction mechanism
+        (Section~\ref{ssec:de-struktury}).
+\end{enumerate}
+\end{remark}

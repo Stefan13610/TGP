@@ -1,0 +1,450 @@
+% ============================================================
+% sec07_tests.tex — Observational tests (English summary)
+% Integrates: tgp_ppn_full, tgp_gw_summary_table,
+%             tgp_lensing_geff, tgp_perturbations_lss,
+%             tgp_cosmo_likelihood
+% ============================================================
+
+\section{Observational tests}\label{sec:tests}
+
+TGP has been confronted with a comprehensive suite of observational
+tests spanning the solar system, gravitational waves, gravitational
+lensing, large-scale structure, and background cosmology.  This
+section summarizes the results; full derivations are given in the
+dedicated deliverables referenced below.
+
+% ==================================================================
+\subsection{Parametrized Post-Newtonian analysis}%
+\label{ssec:ppn-summary}
+% ==================================================================
+
+\noindent\textit{(Full analysis: \texttt{nbody/tgp\_ppn\_full.tex},
+following Will~(2014).)}
+
+\subsubsection{TGP as a metric theory}
+
+In TGP, matter couples universally to the effective metric
+$g_{\mu\nu}^{\mathrm{eff}}$ and not directly to the scalar field
+$\Phi$.  Therefore TGP is a \textbf{metric theory} in the sense
+of Will~(2014, \S3.1).  For any metric theory, six PPN parameters
+vanish identically:
+\begin{equation}\label{eq:metric-theory-vanish}
+  \xi = \alpha_{3} = \zeta_{1} = \zeta_{2} = \zeta_{3} = \zeta_{4} = 0.
+\end{equation}
+
+\subsubsection{$\gamma$ and $\beta$ from the exponential metric}
+
+From the exponential metric
+$ds^{2}=-c_{0}^{2}\,e^{-2U/c_{0}^{2}}\,dt^{2}
++e^{+2U/c_{0}^{2}}\,\delta_{ij}\,dx^{i}dx^{j}$
+(eq.~\ref{eq:exp-metric}), expanding to PPN order:
+\begin{equation}\label{eq:gamma-beta-ppn}
+  \boxed{
+    \gamma_{\mathrm{PPN}} = 1,
+    \qquad
+    \beta_{\mathrm{PPN}} = 1
+  }
+  \qquad\text{(exact to all orders in $U$)}.
+\end{equation}
+This is not an approximation: the exponential structure forces
+$\gamma=\beta=1$ algebraically at every post-Newtonian order.
+
+\subsubsection{Preferred-frame parameters}
+
+For semi-conservative metric theories, the preferred-frame parameters
+$\alpha_{1}$ and $\alpha_{2}$ are proportional to
+$\partial\gamma/\partial\phi_{0}$ and
+$\partial(\gamma-\beta-1)/\partial\phi_{0}$ (Damour \&
+Esposito-Far\`ese 1992).  Since $\gamma=1$ and $\beta=1$ are
+\textbf{exact} (independent of $\Phi$):
+\begin{equation}\label{eq:alpha12-ppn}
+  \boxed{\alpha_{1} = 0, \qquad \alpha_{2} = 0.}
+\end{equation}
+
+\subsubsection{Complete PPN table}
+
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Parameter} & \textbf{GR} & \textbf{TGP} & \textbf{Derivation} \\
+\midrule
+$\gamma$   & 1 & 1 & exponential metric (exact) \\
+$\beta$    & 1 & 1 & exponential metric (exact) \\
+$\xi$      & 0 & 0 & metric theory (automatic) \\
+$\alpha_{1}$ & 0 & 0 & $\partial\gamma/\partial\phi_{0}=0$ \\
+$\alpha_{2}$ & 0 & 0 & $\partial(\gamma{-}\beta{-}1)/\partial\phi_{0}=0$ \\
+$\alpha_{3}$ & 0 & 0 & metric theory (automatic) \\
+$\zeta_{1}$  & 0 & 0 & metric theory (automatic) \\
+$\zeta_{2}$  & 0 & 0 & metric theory (automatic) \\
+$\zeta_{3}$  & 0 & 0 & metric theory (automatic) \\
+$\zeta_{4}$  & 0 & 0 & metric theory (automatic) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Result.}
+TGP is \textbf{PPN-indistinguishable from GR}.
+All 10 parameters take their GR values \emph{exactly}, not as a
+limit of some coupling constant.
+
+\paragraph{Experimental bounds satisfied.}
+\begin{itemize}[nosep]
+  \item Cassini: $\gamma-1 = (2.1\pm 2.3)\times 10^{-5}$
+        (Bertotti et al.\ 2003).
+        TGP: $\gamma-1=0$ exactly.  \textsc{Pass.}
+  \item Lunar Laser Ranging (Nordtvedt):
+        $|4\beta-\gamma-3|<5.3\times 10^{-4}$.
+        TGP: $4\beta-\gamma-3=0$ exactly.  \textsc{Pass.}
+  \item Binary pulsars:
+        $|\alpha_{1}|<1.3\times 10^{-4}$,
+        $|\alpha_{2}|<1.8\times 10^{-5}$.
+        TGP: $\alpha_{1}=\alpha_{2}=0$.  \textsc{Pass.}
+\end{itemize}
+
+\paragraph{Caveat: strong-field regime.}
+The PPN analysis is strictly valid for $U/c^{2}\ll 1$.
+For neutron stars ($U/c^{2}\sim 0.2$), strong-field
+``sensitivities'' (Damour \& Esposito-Far\`ese 1993) could modify
+the effective PPN parameters.  Since TGP satisfies $\gamma=\beta=1$,
+the Nordtvedt effect vanishes, but a fully rigorous strong-field
+analysis (solving the TGP field equation inside a neutron star)
+is left for future work.
+
+% ==================================================================
+\subsection{Gravitational waves}\label{ssec:gw-summary}
+% ==================================================================
+
+\noindent\textit{(Full analysis: \texttt{nbody/tgp\_gw\_summary\_table.tex}.)}
+
+\subsubsection{Speed of gravitational waves}
+
+In TGP, gravitational and electromagnetic waves propagate through
+the \emph{same} substrate $\Gamma$.  The tensor perturbations
+$\sigma_{ab}$ (spin-2) propagate on the background metric
+$g_{\mu\nu}^{\mathrm{eff}}$ independently of local fluctuations
+in $\Phi$.  Consequently:
+\begin{equation}\label{eq:cGW}
+  \boxed{c_{\mathrm{GW}} = c_{0}}
+  \qquad\text{(algebraic identity, not fine-tuning).}
+\end{equation}
+This is consistent with the GW170817\,+\,GRB\,170817A constraint
+$|c_{\mathrm{GW}}/c-1|<3\times 10^{-15}$.
+
+\subsubsection{Polarization content}
+
+TGP predicts:
+\begin{itemize}[nosep]
+  \item \textbf{2 tensor polarizations} ($+$, $\times$):
+        massless, $c_{\mathrm{GW}}=c_{0}$, amplitude matched
+        to GR via $\xi_{\mathrm{eff}}=4\pi G_{0}\sigma_{0}\PhiZero$.
+  \item \textbf{1 scalar breathing mode}: massive
+        ($m_{\mathrm{sp}}=\sqrt{\gamma}\sim H_{0}$), with
+        dispersion $\omega^{2}=c_{0}^{2}(k^{2}+m_{\mathrm{sp}}^{2})$.
+        Cutoff frequency $f_{\mathrm{cut}}\sim c_{0}\,m_{\mathrm{sp}}
+        /(2\pi)\sim 10^{-18}$\,Hz, far below the LIGO band.
+        Non-detection in GW170817 is \textbf{expected} (screened).
+  \item \textbf{No vector modes} in the minimal model.
+\end{itemize}
+
+The scalar breathing mode becomes detectable in the PTA band
+($\sim$\,nHz) with predicted amplitude $h_{\mathrm{br}}\sim 10^{-17}$,
+distinguishable from the stochastic GW background by its monopolar
+(isotropic) angular pattern.  This is a \textbf{testable} prediction
+for SKA.
+
+% ==================================================================
+\subsection{Gravitational lensing}\label{ssec:lensing-summary}
+% ==================================================================
+
+\noindent\textit{(Full analysis: \texttt{nbody/tgp\_lensing\_geff.tex}.)}
+
+\subsubsection{Weak-field deflection}
+
+For the TGP metric $\psi=e^{2U/c_{0}^{2}}$, the effective
+refractive index is $n(r)=\psi(r)=e^{2U/c_{0}^{2}}$, and
+$\ln\psi=2U/c_{0}^{2}$ is \emph{exact} (not a weak-field
+expansion).  The Born integral closes analytically:
+\begin{equation}\label{eq:deflection}
+  \hat\alpha
+  = \int_{-\infty}^{+\infty}
+    \frac{2\,G\,M\,b}{c_{0}^{2}\,(b^{2}+l^{2})^{3/2}}\,dl
+  = \frac{4\,G\,M}{c_{0}^{2}\,b},
+\end{equation}
+\textbf{identically} the GR result.  Numerical integration
+confirms this to $<10^{-6}$ relative precision (8/8 tests PASS).
+
+\subsubsection{Shapiro time delay}
+
+The signal delay through a gravitational field is
+\begin{equation}\label{eq:shapiro}
+  \Delta t
+  \approx \frac{4\,G\,M}{c_{0}^{3}}\,\ln\!\frac{4r_{1}r_{2}}{b^{2}}.
+\end{equation}
+Linearization error: $O(U^{2}/c_{0}^{4})\sim 10^{-12}$.
+The Cassini constraint $|\gamma-1|=(2.1\pm 2.3)\times 10^{-5}$ is
+satisfied automatically: TGP gives $\gamma-1=0$ exactly.
+
+\subsubsection{Yukawa correction}
+
+The scalar perturbation $\delta\Phi$ around a point mass satisfies
+$(\nabla^{2}-m_{\mathrm{sp}}^{2})\,\delta\Phi=-q\,\PhiZero\,\rho$,
+yielding a Yukawa profile with effective coupling
+\begin{equation}\label{eq:alpha-eff}
+  \alpha_{\mathrm{eff}}
+  = \frac{q\,\PhiZero}{4\pi}
+  \approx 3.7\times 10^{-26}.
+\end{equation}
+The Compton wavelength $\lambda_{\mathrm{sp}}=2\pi/m_{\mathrm{sp}}
+\approx 5.6$\,Gpc exceeds all astrophysical scales (unsuppressed
+Yukawa factor), but the amplitude is negligible:
+\begin{equation}\label{eq:yukawa-correction}
+  \frac{\Delta\hat\alpha_{\mathrm{Yuk}}}{\hat\alpha_{\mathrm{GR}}}
+  \sim \alpha_{\mathrm{eff}}^{2} \sim 10^{-51}
+  \qquad\text{(undetectable)}.
+\end{equation}
+
+\subsubsection{Post-post-Newtonian correction}
+
+The exponential metric deviates from Schwarzschild at $O(U^{2})$:
+$g_{rr}^{\mathrm{TGP}}=1+2U/c_{0}^{2}+2U^{2}/c_{0}^{4}+\ldots$
+versus
+$g_{rr}^{\mathrm{Schw}}=1+2U/c_{0}^{2}+4U^{2}/c_{0}^{4}+\ldots$.
+The correction enters only through non-Born ray-tracing effects:
+\begin{equation}\label{eq:ppN-lensing}
+  \frac{\Delta\hat\alpha_{\mathrm{ppN}}}{\hat\alpha_{\mathrm{GR}}}
+  \sim \left(\frac{GM_{\odot}}{R_{\odot}\,c_{0}^{2}}\right)^{2}
+  \approx 4.5\times 10^{-12}
+  \qquad(\sim 8\;\text{pico-arcsec}).
+\end{equation}
+
+\subsubsection{Strong-field prediction}
+
+Extrapolating the exponential metric to the strong-field regime:
+
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Observable} & \textbf{GR (Schwarzschild)} &
+\textbf{TGP (exponential)} & $\Delta/\mathrm{GR}$ \\
+\midrule
+Event horizon   & $r_{H}=2GM/c_{0}^{2}$  & none (exp.\ $>0$ always) & --- \\
+Photon sphere   & $r_{\mathrm{ph}}=\tfrac{3}{2}r_{s}$ & $r_{\mathrm{ph}}=r_{s}$ & $-33\%$ \\
+Shadow $b_{\mathrm{crit}}$ & $3\sqrt{3}\;GM/c_{0}^{2}$ & $r_{s}\sqrt{e}$ & $-37\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+\textbf{Caveat.}  These numbers assume the exponential metric extends
+to $U/c_{0}^{2}\sim 0.5$.  The actual TGP compact-object solution may
+differ; a complete strong-field lensing calculation is an open problem.
+
+% ==================================================================
+\subsection{Cosmological perturbations and large-scale structure}%
+\label{ssec:perturbations-summary}
+% ==================================================================
+
+\noindent\textit{(Full analysis: \texttt{nbody/tgp\_perturbations\_lss.tex}.)}
+
+\subsubsection{Stability}
+
+Cosmological perturbations of $\Phi$ around the FRW background
+satisfy \textbf{all} stability conditions:
+\begin{enumerate}[(i),nosep]
+  \item \textbf{No-ghost}: $Q_{s}=\psi_{\mathrm{bg}}^{4}>0$
+        for all $\psi_{\mathrm{bg}}>0$.
+  \item \textbf{Gradient stability}: $c_{s}^{2}=c_{0}^{2}>0$
+        (sound speed equals light speed identically).
+  \item \textbf{Tachyonic stability}:
+        $m_{\mathrm{sp}}^{2}=\gamma>0$ (exponential suppression on
+        sub-Compton scales).
+\end{enumerate}
+Verified numerically: 18/18 tests PASS over $\psi\in(0,3]$.
+
+\subsubsection{Scale-dependent gravitational constant}
+
+The effective gravitational constant in the Fourier domain is
+\begin{equation}\label{eq:Geff}
+  G_{\mathrm{eff}}(k,a)
+  = G_{0}\left(1 + \frac{2\,\alpha_{\mathrm{eff}}^{2}}
+    {1 + (a\,m_{\mathrm{sp}}/k)^{2}}\right),
+\end{equation}
+with $\alpha_{\mathrm{eff}}=q\,\PhiZero/(4\pi)\approx 3.7\times 10^{-26}$.
+This gives:
+\begin{equation}
+  \frac{G_{\mathrm{eff}}}{G_{0}} - 1 \sim 10^{-51}
+  \qquad\Longrightarrow\qquad
+  \text{TGP} = \Lambda\text{CDM in the LSS sector.}
+\end{equation}
+
+\subsubsection{Modified gravity parameterization $(\mu,\Sigma,\eta)$}
+
+In the parametrized post-Friedmann framework:
+\begin{align}
+  \mu(k,a) &= 1 + \frac{2\,\alpha_{\mathrm{eff}}^{2}}
+               {1 + (a\,m_{\mathrm{sp}}/k)^{2}}, \\
+  \Sigma(k,a) &= 1 + \frac{\alpha_{\mathrm{eff}}^{2}}
+               {1 + (a\,m_{\mathrm{sp}}/k)^{2}}, \\
+  \eta(k,a) &= \frac{\Sigma}{\mu}
+  = \frac{1 + \alpha_{\mathrm{eff}}^{2}/(1+x^{2})}
+         {1 + 2\alpha_{\mathrm{eff}}^{2}/(1+x^{2})},
+  \qquad x = a\,m_{\mathrm{sp}}/k.
+\end{align}
+At $\PhiZero\approx 25$:
+$\mu-1 \sim \Sigma-1 \sim \eta-1 \sim 10^{-51}$,
+far below the projected sensitivity of Euclid
+($\sigma_{\mu}\sim 0.02$) and LSST ($\sigma_{\Sigma}\sim 0.03$).
+
+\subsubsection{Inflationary predictions}
+
+The Mukhanov--Sasaki equation in TGP yields:
+\begin{equation}\label{eq:ns-r}
+  n_{s} = 1 - \frac{2}{N_{e}},
+  \qquad
+  r = \frac{16}{N_{e}},
+  \qquad
+  f_{\mathrm{NL}}^{\mathrm{local}} \approx -\frac{1}{N_{e}},
+\end{equation}
+where $N_{e}$ is the number of $e$-folds.
+For $N_{e}\in[55,65]$:
+$n_{s}\in[0.964, 0.969]$ (within Planck $1\sigma$),
+$|f_{\mathrm{NL}}|\lesssim 0.02$ (undetectable).
+
+\begin{remark}[Note on $r$]
+The relation $r=16/N_{e}$ assumes an unmodified tensor sector.
+In TGP, the tensor sector ($\sigma_{ab}$) has status ``Sketch'';
+the actual $r_{\mathrm{TGP}}$ may differ once the full tensor
+perturbation theory is developed.
+\end{remark}
+
+% ==================================================================
+\subsection{Cosmological likelihood: TGP vs.\ $\Lambda$CDM}%
+\label{ssec:likelihood-summary}
+% ==================================================================
+
+\noindent\textit{(Full analysis: \texttt{nbody/tgp\_cosmo\_likelihood.tex}.)}
+
+\subsubsection{Data}
+
+Three complementary probes with $N_{\mathrm{data}}=47$:
+\begin{enumerate}[nosep]
+  \item \textbf{DESI DR1 BAO} (DESI Collaboration 2024):
+        $D_{V}/r_{d}$, $D_{M}/r_{d}$, $D_{H}/r_{d}$ at
+        $z_{\mathrm{eff}}=0.30$--$2.33$ (11 points).
+  \item \textbf{Planck 2018 compressed CMB}:
+        shift parameter $R$, acoustic scale $\ell_{A}$,
+        baryon density $\omega_{b}$ (3 points).
+  \item \textbf{Cosmic chronometers $H(z)$}
+        (Moresco et al.\ 2022): 33 differential-aging measurements.
+\end{enumerate}
+
+\subsubsection{Model specifications}
+
+\paragraph{$\Lambda$CDM (2 free parameters).}
+$\Omega_{m}$ and $H_{0}$;
+$\Omega_{\Lambda}=1-\Omega_{m}-\Omega_{r}$;
+$\omega_{b}=0.02236$ fixed.
+
+\paragraph{TGP (3 free parameters).}
+$\Omega_{m}$, $H_{0}$, and $\PhiZero$.
+The dimensionless Friedmann equation is
+\begin{equation}\label{eq:E2}
+  E^{2}(a)
+  = \frac{\Omega_{m}}{a^{3}} + \frac{\Omega_{r}}{a^{4}}
+  + \Omega_{\mathrm{DE}}\,f\bigl(\psi(a)\bigr),
+\end{equation}
+with the TGP potential shape $f(\psi)=4\psi^{3}-3\psi^{4}$,
+$f(1)=1$.  Key limits:
+\begin{itemize}[nosep]
+  \item $\PhiZero\to 0$: field frozen at $\psi=1$,
+        $\Rightarrow$ $\Lambda$CDM exactly.
+  \item $\PhiZero\sim O(1)$: quintessence-like $w_{\mathrm{DE}}(z)$.
+  \item $\PhiZero\gg 1$: rapid oscillations,
+        $\langle w_{\mathrm{DE}}\rangle > -1$.
+\end{itemize}
+
+\subsubsection{Results}
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & $\chi^{2}_{\mathrm{BAO}}$ & $\chi^{2}_{H(z)}$ &
+$\chi^{2}_{\mathrm{CMB}}$ & $\chi^{2}_{\mathrm{tot}}$ \\
+\midrule
+$\Lambda$CDM ($\Omega_{m}=0.305$, $H_{0}=68.0$)
+  & 14.3 & 24.0 & 2.1 & 40.3 \\
+TGP 3-param ($\PhiZero\to 0$, free $\Omega_{m},H_{0}$)
+  & 15.1 & 24.2 & 2.9 & 42.1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & $k$ & $\chi^{2}_{\mathrm{tot}}$ & AIC & BIC \\
+\midrule
+$\Lambda$CDM & 2 & 40.3 & 44.3 & 48.0 \\
+TGP (3-param) & 3 & 42.1 & 48.1 & 53.7 \\
+\midrule
+$\Delta$ (TGP $-$ $\Lambda$CDM) & $+1$ & $+1.8$ & $+3.8$ & $+5.7$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Interpretation.}
+$\Delta\chi^{2}=+1.8$ with one extra parameter gives
+$\Delta\mathrm{AIC}=+3.8$: \textbf{weak preference for
+$\Lambda$CDM}, insufficient to distinguish the models.
+Both achieve $\chi^{2}/N<1$ (adequate fits).
+
+Key findings:
+\begin{enumerate}[nosep]
+  \item TGP \textbf{contains $\Lambda$CDM as a smooth limit}
+        ($\PhiZero=0 \Leftrightarrow w_{\mathrm{DE}}=-1$);
+        the 3-parameter best-fit converges to $\PhiZero\to 0$.
+  \item Current data do not require $\PhiZero\neq 0$: the field
+        dynamics are not yet detectable.
+  \item TGP is \textbf{not excluded}: $\chi^{2}/N=0.90$,
+        comparable to $\Lambda$CDM ($\chi^{2}/N=0.86$).
+  \item \textbf{Falsifiability}: TGP is falsified if future data
+        require $w_{\mathrm{DE}}(z)<-1$ at any redshift (phantom
+        crossing), since the TGP potential enforces $w_{\mathrm{DE}}\geq -1$
+        structurally.
+\end{enumerate}
+
+% ==================================================================
+\subsection{Summary of observational status}\label{ssec:test-summary}
+% ==================================================================
+
+\begin{center}\small
+\begin{tabular}{@{}lp{6cm}l@{}}
+\toprule
+\textbf{Test} & \textbf{TGP prediction} & \textbf{Status} \\
+\midrule
+PPN (all 10 params)  & $=$ GR exactly & \textsc{Pass} \\
+Cassini ($\gamma$)   & $\gamma-1=0$ & \textsc{Pass} \\
+LLR (Nordtvedt)      & $4\beta-\gamma-3=0$ & \textsc{Pass} \\
+$c_{\mathrm{GW}}$    & $=c_{0}$ (algebraic) & \textsc{Pass} \\
+GW polarizations     & 2 tensor + 1 screened scalar & \textsc{Pass} \\
+Solar deflection     & $\hat\alpha=4GM/(c_{0}^{2}b)=$ GR & \textsc{Pass} \\
+Shapiro delay        & $\gamma=1$ exactly & \textsc{Pass} \\
+Yukawa correction    & $\Delta\hat\alpha/\hat\alpha\sim 10^{-51}$ & Undetectable \\
+ppN correction       & $\sim 8$ pico-arcsec & Undetectable \\
+$\mu,\Sigma,\eta$    & $=1+O(10^{-51})$ & $\equiv\Lambda$CDM \\
+$f\sigma_{8}(z)$     & $=\Lambda$CDM to $O(10^{-50})$ & \textsc{Pass} \\
+$n_{s}$              & $0.964$--$0.969$ ($N_{e}=55$--$65$) & Planck $1\sigma$ \\
+BAO + CMB + $H(z)$   & $\chi^{2}=42.1$ ($N=47$) & \textsc{Pass} \\
+BH shadow            & $\sim 37\%$ smaller & Open \\
+PTA breathing mode   & $h_{\mathrm{br}}\sim 10^{-17}$ & Testable (SKA) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+In every currently measurable sector, TGP is operationally
+equivalent to GR (weak field) or $\Lambda$CDM (cosmology).
+The distinct predictions lie in: (a)~the strong-field regime
+(BH shadow, frozen interior), (b)~the PTA breathing mode,
+(c)~the particle sector (lepton masses, $\alpha_{s}$), and
+(d)~$N$-body dynamics (Earnshaw violation, chaos suppression).
