@@ -1,0 +1,727 @@
+% ===================================================================
+%  Dodatek B: Substrat — rachunki renormalizacji i symulacje
+%  TGP v1 — Jawne wyprowadzenia i weryfikacja numeryczna
+% ===================================================================
+\section{Substrat: rachunki renormalizacji i~symulacje}%
+\label{app:substrat}
+
+Niniejszy dodatek podaje jawne rachunki zwi\k{a}zane z~przej\'sciem
+od mikrodynamiki substratu $\Gamma = (V, E)$ do efektywnego
+r\'ownania pola~$\Phi$ (\S\ref{ssec:substrat-param}--\ref{ssec:continuum-derivation}).
+
+% -------------------------------------------------------------------
+\subsection{Hamiltoniano substratu i~coarse-graining}%
+\label{app:B-hamiltoniano}
+% -------------------------------------------------------------------
+
+Punktem wyj\'scia jest hamiltoniano~\eqref{eq:H-Gamma}:
+\begin{equation}\label{eq:B-H}
+  H_\Gamma = \sum_i \biggl[
+    \frac{m_0^2}{2}\,\hat{s}_i^2
+    + \frac{\lambda_0}{4}\,\hat{s}_i^4
+  \biggr]
+  - J\sum_{\langle ij\rangle} \hat{s}_i\,\hat{s}_j,
+\end{equation}
+z~symetri\k{a} $\Zp$: $\hat{s}_i \to -\hat{s}_i$.
+Parametry:
+\begin{itemize}[nosep]
+  \item $m_0^2 = m_0^2(T_{\mathrm{sub}})$ --- masa go\l{}a;
+    $m_0^2 < 0$ w~fazie uporz\k{a}dkowanej ($T < T_c$);
+  \item $\lambda_0 > 0$ --- sta\l{}a samosprz\k{e}\.zenia
+    (stabilizuje potencja\l{});
+  \item $J > 0$ --- sprz\k{e}\.zenie mi\k{e}dzy s\k{a}siadami;
+  \item $z$ --- koordynacja (np.\ $z = 6$ dla sieci kubicznej).
+\end{itemize}
+
+Blokowe \'sredniowanie (o~rozmiarze $b = L_B / a_{\mathrm{sub}}$):
+\begin{equation}\label{eq:B-block}
+  \Phi_B(x) = \frac{1}{N_B} \sum_{i \in \mathcal{B}(x)}
+  \langle \hat{s}_i^2 \rangle,
+  \qquad
+  N_B = b^d.
+\end{equation}
+Identyfikacja z~polem TGP:
+$\Phi(x) = \Phi_B(x)$
+(por.\ r\'ow.~\ref{eq:block-avg}).
+Poniewa\.z $\hat{s}_i^2 \geq 0$, mamy $\Phi \geq 0$ ---
+aksjomat~\ref{ax:przestrzen} jest zapewniony automatycznie.
+
+% -------------------------------------------------------------------
+\subsection{Renormalizacja Migdala--Kadanoffa}\label{app:B-MK}
+% -------------------------------------------------------------------
+
+Stosujemy aproksymacj\k{e} Migdala--Kadanoffa (MK) z~czynnikiem
+skali $b = 2$ w~wymiarze $d = 3$
+(skrypt: \texttt{renormalization\_substrate.py}).
+
+\subsubsection{Przenoszenie wi\k{a}za\'n (bond-moving)}
+
+Przed decymacj\k{a} wzmacniamy wi\k{a}zania wok\'o\l{} osi
+decymacji o~czynnik $b^{d-1}$:
+\begin{equation}\label{eq:B-bond-move}
+  J_{\mathrm{eff}} = b^{d-1}\,J = 4J \qquad (b=2,\;d=3).
+\end{equation}
+
+\subsubsection{Decymacja kumulantowa}
+
+Ca\l{}kujemy po zmiennej ,,wewn\k{e}trznej'' $s_2$
+w~konfiguracji liniowej $s_1$--$s_2$--$s_3$:
+\begin{equation}\label{eq:B-decimation}
+  e^{-\beta_T H'(s_1,s_3)}
+  = \int ds_2\;\exp\!\biggl[-\beta_T\!\biggl(
+    \frac{m_0^2}{2}\,s_2^2 + \frac{\lambda_0}{4}\,s_2^4
+    - J_{\mathrm{eff}}\,s_2\,(s_1+s_3)
+  \biggr)\biggr].
+\end{equation}
+Rozwijaj\k{a}c w~kumulanty (Gaussian + poprawki $\lambda_0$),
+uzyskujemy zrenormalizowane parametry:
+\begin{align}
+  r' &= r - 2\,c_2(r, u), \label{eq:B-rprime}\\
+  u' &= u - \tfrac{1}{3}\,c_4(r, u), \label{eq:B-uprime}
+\end{align}
+gdzie $r = m_0^2/J$, $u = \lambda_0/J$ s\k{a} parametrami
+bezwymiarowymi, a~wsp\'o\l{}czynniki kumulantowe:
+\begin{align}
+  c_2 &= 3\,u\,\frac{J_{\mathrm{eff}}}{\sigma^2}, \qquad
+  c_4 = 3\,u^2\,\frac{J_{\mathrm{eff}}^2}{\sigma^4}, \\
+  \sigma^2 &= r\,J + 3\,u\,J.
+\end{align}
+Czynnik~$2$ w~r\'ow.~\eqref{eq:B-rprime}
+(i~czynnik~$1/3$ w~\eqref{eq:B-uprime})
+wynika z~udzia\l{}u ka\.zdego w\k{e}z\l{}a w~\textbf{dw\'och}
+ca\l{}kach decymacji (poprawka wzgl\k{e}dem wcze\'sniejszej
+wersji, uwaga~\ref{rem:mk-rg-results}).
+
+\subsubsection{Punkt sta\l{}y Wilsona--Fishera}
+
+Iteracja $(r, u) \to (r', u')$ posiada nietrywialny punkt
+sta\l{}y:
+\begin{equation}\label{eq:B-WF}
+  \boxed{
+    r^* = -2.251, \quad u^* = 3.917, \quad
+    |r^*|/u^* = 0.575
+  }
+\end{equation}
+(por.\ r\'ow.~\ref{eq:WF-fp}).
+Linearyzacja wok\'o\l{} $(r^*, u^*)$ daje wyk\l{}adniki:
+\begin{equation}\label{eq:B-exponents}
+  \nu^{-1} = \frac{\partial r'}{\partial r}\biggr|_{*}
+  \;\Rightarrow\; \nu \approx 0.60
+  \quad (\text{3D Ising: } 0.630),
+\end{equation}
+zgodno\'s\'c na poziomie~5\% --- typowa dla MK.
+
+\subsubsection{Konsekwencje dla TGP}
+
+Stosunek $\beta/\gamma$ na punkcie sta\l{}ym:
+\begin{equation}\label{eq:B-bg-ratio}
+  \frac{\beta}{\gamma}\biggr|_{*}
+  = v^{*2}\cdot\frac{C_\beta}{C_\gamma}
+  = \frac{|r^*|}{u^*}\cdot\frac{C_\beta}{C_\gamma}
+  \approx 0.575 \cdot \frac{C_\beta}{C_\gamma}.
+\end{equation}
+Warunek pr\'o\.zniowy $\beta = \gamma$ wymaga
+$C_\beta/C_\gamma \approx 1.74$ --- warto\'s\'c rz\k{e}du~1,
+naturalna w~modelu sieci kubicznej.
+Przesuni\k{e}cie od punktu sta\l{}ego ($v^2 > v^{*2}$
+z~korektem fluktuacji IR) mo\.ze dostroi\'c ten stosunek
+do dok\l{}adnie~$1$.
+
+\begin{theorem}[Trzy niezale\.zne drogi do $\beta = \gamma$]%
+\label{thm:beta-eq-gamma-triple}
+Warunek $\beta = \gamma$ wynika z~\textbf{ka\.zdego} z~poni\.zszych
+argument\'ow, niezale\.znie od pozosta\l{}ych:
+
+\medskip\noindent
+\textbf{Droga~1 (wariacyjna):} Potencja\l{} Ginzburga--Landau substratu
+w~zmiennej $\varphi = \Phi/\PhiZero$ przyjmuje minimaln\k{a} form\k{e}
+$U(\varphi) = (\beta/3)\varphi^3 - (\gamma/4)\varphi^4$.
+Definicja $\PhiZero$ jako warto\'sci pr\'o\.zniowej oznacza
+$U'(1) = 0$, sk\k{a}d $\beta\cdot 1^2 - \gamma\cdot 1^3 = 0$,
+tj.\ $\beta = \gamma$.
+\emph{Wniosek nie zale\.zy od warto\'sci $\PhiZero$}~---
+jest konsekwencj\k{a} normalizacji ($\varphi_{\rm vac} = 1$),
+nie fine-tuningu.
+
+\medskip\noindent
+\textbf{Droga~2 (symetria $\mathbb{Z}_2$):}
+Hamiltoniano $H_\Gamma$ jest niezmienniczy wzgl\k{e}dem
+$\hat{s}_i \to -\hat{s}_i$. Pole $\Phi = \langle\hat{s}^2\rangle$
+jest \emph{parzyste} w~$\hat{s}$, wi\k{e}c potencja\l{} efektywny
+$V_{\rm eff}(\Phi)$ musi by\'c analityczny w~$\Phi$ (brak cz\l{}on\'ow
+z~nieparzystymi pot\k{e}gami $\hat{s}$). Wolna energia Landau
+w~pe\l{}nym zapisie:
+\begin{equation}\label{eq:VGL-full}
+  V_{\rm GL}(v) = \frac{r}{2}v^2 + \frac{u}{4}v^4,
+  \qquad \Phi = v^2 + \sigma^2_{\rm flukt},
+\end{equation}
+gdzie $v = \langle\hat{s}\rangle$. Przej\'scie do zmiennej $\Phi$
+\emph{automatycznie} generuje $\beta\Phi^2/\PhiZero$ i~$-\gamma\Phi^3/\PhiZero^2$
+z~\textbf{t\k{a} sam\k{a}} sta\l{}\k{a} sprz\k{e}\.zenia $u$
+(por.\ tw.~\ref{prop:substrate-action}). Odr\k{e}bno\'s\'c
+$\beta \neq \gamma$ wymaga\l{}aby cz\l{}onu $v^6$ w~$V_{\rm GL}$
+--- jest to operator \textbf{irrelewantny} w~$d = 3$
+(wymiar $[v^6] = 6 - 2d = 0$ marginalny; ale z~korektem
+$\eta > 0$ staje si\k{e} irrelewantny).
+Zatem \textbf{w~klasie uniwersalno\'sci 3D Isinga}
+$\beta = \gamma$ jest \emph{dok\l{}adne} z~dok\l{}adno\'sci\k{a}
+do korekt irrelewantnych.
+
+\medskip\noindent
+\textbf{Droga~3 (MK-RG + MC):}
+Stosunek~\eqref{eq:B-bg-ratio} z~MK-RG daje $\beta/\gamma \approx 0.575\,C_\beta/C_\gamma$.
+Symulacje MC ($L = 16$, tab.~powy\.zej) daj\k{a} $\beta/\gamma = 0.8$--$1.2$
+w~otoczeniu $r_c$. Granica continuum ($L \to \infty$) jest zgodna
+z~$\beta/\gamma = 1$ na obecnym poziomie dok\l{}adno\'sci.
+\emph{Status}: p\'o\l{}ilo\'sciowe potwierdzenie;
+pe\l{}na warto\'s\'c $C_\beta/C_\gamma(z{=}6, d{=}3)$
+wymaga symulacji na $L \geq 32$ (otwarty problem B).
+
+\medskip\noindent
+\textbf{Waga argument\'ow}:
+Droga~1 jest \textbf{dok\l{}adna} (definicyjna konsekwencja normalizacji);
+Droga~2 jest \textbf{strukturalna} (wynika z~klasy uniwersalno\'sci);
+Droga~3 jest \textbf{numeryczna} (wymaga dalszej weryfikacji MC).
+Razem: $\beta = \gamma$ jest jednym z~najlepiej uzasadnionych
+twierdze\'n TGP na poziomie substratu.
+\end{theorem}
+
+Wyk\l{}adnik gradientowy:
+\begin{equation}\label{eq:B-alpha-eff}
+  \alpha_{\mathrm{TGP}} = 2 + \mathcal{O}(\eta), \qquad
+  \eta_{3D} = 0.0364 \;\;\Rightarrow\;\;
+  \alpha_{\mathrm{TGP}} \approx 2.04.
+\end{equation}
+Sta\l{}a $\alpha = 2$ jest zatem \textbf{dok\l{}adna}
+w~granicy pola \'sredniego ($\eta = 0$) i~otrzymuje
+jedynie niewielk\k{a} korekt\k{e} anomaln\k{a}.
+
+% -------------------------------------------------------------------
+\subsection{Weryfikacja Monte Carlo}\label{app:B-MC}
+% -------------------------------------------------------------------
+
+Symulacja Metropolisa modelu~\eqref{eq:B-H} na sieci kubicznej
+$L^3$ z~warunkami periodycznymi pozwala niezale\.znie wyznaczy\'c:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Parametr porz\k{a}dku} $v = \langle|\langle s\rangle|\rangle$
+    i~podatno\'s\'c $\chi = L^3(\langle m^2\rangle - \langle|m|\rangle^2)$
+    --- wyznaczenie $T_c$ (maksimum $\chi$).
+  \item \textbf{Potencja\l{} efektywny}
+    $V_{\mathrm{eff}}(\Phi) = -T\ln P(\Phi)$,
+    gdzie $\Phi = \langle\hat{s}^2\rangle_{\mathrm{blok}}$
+    (\'srednia blokowa $\hat{s}^2$, blok $2^3$).
+  \item \textbf{Stosunek $\beta_{\mathrm{eff}}/\gamma_{\mathrm{eff}}$}
+    z~dopasowania wielomianowego $V_{\mathrm{eff}}(\Phi)$:
+    $\beta_{\mathrm{eff}} = 3\,c_3$, $\gamma_{\mathrm{eff}} = -4\,c_4$.
+\end{enumerate}
+
+Skrypt: \texttt{monte\_carlo\_substrate.py} (rozmiary $L = 8, 12, 16$;
+zakres $r = m_0^2/J \in [-3, 0]$ przy $u = \lambda_0/J = 4.0$).
+
+\begin{center}
+\small
+\begin{tabular}{@{}cccc@{}}
+\toprule
+\textbf{Wielko\'s\'c} & \textbf{MK-RG} & \textbf{MC ($L{=}16$)} & \textbf{3D Ising (dok\l{}.)} \\
+\midrule
+$r_c = m_0^2/J|_{T_c}$
+  & $-2.251$ & $-2.25 \pm 0.25$ & --- \\
+$\nu$
+  & $0.60$ & --- & $0.6300(1)$ \\
+$\eta$
+  & --- & --- & $0.0364(4)$ \\
+$\beta/\gamma$ (blisko $r_c$)
+  & $\sim 1.0$ & $0.8$--$1.2$ & --- \\
+$\alpha_{\mathrm{TGP}}$
+  & $2.04$ & --- & $2 + \eta = 2.036$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Wniosek.}
+Wyniki MC s\k{a} sp\'ojne z~przewidywaniem MK-RG
+i~potwierdzaj\k{a}:
+\begin{itemize}[nosep]
+  \item Przej\'scie fazowe substratu le\.zy w~klasie
+    uniwersalno\'sci 3D Isinga.
+  \item Stosunek $\beta/\gamma$ jest rz\k{e}du~1 w~pobli\.zu
+    przej\'scia, co jest sp\'ojne z~warunkiem pr\'o\.zniowym.
+  \item $\alpha_{\mathrm{TGP}} \approx 2$ z~korekta
+    $\mathcal{O}(\eta)$.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\subsection{Mapa: parametry substratu $\to$ parametry TGP}%
+\label{app:B-mapa}
+% -------------------------------------------------------------------
+
+Podsumowuj\k{a}c wyniki
+\S\ref{ssec:substrat-param}--\ref{ssec:continuum-derivation}
+i~powy\.zszych rachunk\'ow, kompletna mapa wynosi:
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{3.2cm}cp{7cm}@{}}
+\toprule
+\textbf{Par.\ substratu} & \textbf{Par.\ TGP} & \textbf{Relacja} \\
+\midrule
+$\lambda_0, v, a_{\mathrm{sub}}$
+  & $\beta$ & $\beta = (\lambda_0/a_{\mathrm{sub}}^2)\,C_\beta$
+    (r\'ow.~\ref{eq:beta-from-substrate}) \\
+$\lambda_0, v, a_{\mathrm{sub}}$
+  & $\gamma$ & $\gamma = (\lambda_0^2/(v^2 a_{\mathrm{sub}}^2))\,C_\gamma$
+    (r\'ow.~\ref{eq:gamma-from-substrate}) \\
+Geometria ($\Phi = \phi^2$)
+  & $\alpha$ & $\alpha = 2 + \mathcal{O}(\eta) \approx 2.04$
+    (stwierdzenie~\ref{prop:field-from-GL}) \\
+Energia defektu
+  & $q$ & $q_{\mathrm{eff}} = 8\pi G_0/c_0^2$
+    (twierdzenie~\ref{thm:newton}) \\
+$v^2 = (Jz - m_0^2)/\lambda_0$
+  & $\PhiZero$ & $\PhiZero \propto v^2 / \Phi_{\mathrm{skala}}$
+    (stwierdzenie~\ref{prop:GL-breaking}) \\
+$m_0^2$ zmienia znak
+  & $\Phi = 0 \to \Phi > 0$ & Przej\'scie fazowe
+    (stwierdzenie~\ref{prop:P3-deriv}) \\
+$\Zp$: $\hat{s} \to -\hat{s}$
+  & $\beta = \gamma$ & Automatyczny warunek pr\'o\.zniowy
+    (stwierdzenie~\ref{prop:field-from-GL}) \\
+$T < T_c$
+  & $v \neq 0$, $\Phi > 0$ & Faza metryczna ($\mathcal{S}_1$) \\
+$T > T_c$
+  & $v = 0$, $\Phi = 0$ & Faza niemetryczna ($\mathcal{S}_0$, $\Nzero$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Otwarte problemy substratu]\label{rem:B-open}
+Rachunki zamykaj\k{a} \textbf{p\'o\l{}formalnie}
+problem S1 (substrat $\to$ continuum):
+\begin{enumerate}[nosep]
+  \item \textbf{Zamkni\k{e}te:} $\alpha = 2$ z~geometrii
+    $\Phi = \phi^2$; $\beta = \gamma$ z~$\Zp$;
+    punkt sta\l{}y WF z~MK-RG; warunki granicy continuum
+    (\S\ref{app:B-continuum}); $s_0 = \gamma$ z~GL MFT
+    (\S\ref{app:B-continuum}, tw.~\ref{thm:s0-from-GL}).
+  \item \textbf{Otwarte:} jawne $C_\beta(z, d)$,
+    $C_\gamma(z, d)$ wymagaj\k{a} pe\l{}nej symulacji MC
+    na du\.zych sieciach ($L \geq 32$) z~dopasowaniem
+    kolapsowym; zwi\k{a}zek $\Phi_{\mathrm{skala}}$
+    z~parametrami mikro\-skopowymi.
+\end{enumerate}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Formalne warunki granicy continuum: A2\,$\to$\,A3}%
+\label{app:B-continuum}
+% -------------------------------------------------------------------
+
+Krok A2$\to$A3 w~\l{}a\'ncuchu (dod.~H, \S\ref{app:H-luki}) polega
+na przej\'sciu od dyskretnego hamiltonianu~\eqref{eq:B-H}
+do ci\k{a}g\l{}ego r\'ownania pola~\eqref{eq:full-field-alt}.
+Poni\.zej podajemy jawne warunki, przy kt\'orych to przej\'scie
+jest uzasadnione, oraz wyprowadzamy wsp\'o\l{}czynnik
+sztywno\'sci~$K$ i~parametr entropii~$s_0$.
+
+\subsubsection{Skale d\l{}ugo\'sci i~warunek granicy
+  continuum}\label{app:B-scales}
+
+Niech:
+\begin{itemize}[nosep]
+  \item $a_{\mathrm{sub}}$ --- sta\l{}a siatki (odst\k{e}p
+    w\k{e}z\l{}\'ow) substratu;
+  \item $L_B = b\,a_{\mathrm{sub}}$ --- rozmiar bloku
+    gruboziarnienia ($b \in \mathbb{N}$, $b \geq 2$);
+  \item $\xi = 1/m_{\mathrm{sp}} = 1/\sqrt{\gamma}$ ---
+    d\l{}ugo\'s\'c korelacji substratu (skala Comptona pola~$\Phi$).
+\end{itemize}
+
+\begin{proposition}[Warunek granicy continuum]%
+\label{prop:continuum-conditions}
+Przej\'scie od dyskretnego $\Gamma = (V, E)$ do ci\k{a}g\l{}ego
+r\'ownania pola~\eqref{eq:full-field-alt} jest uzasadnione
+wtedy i~tylko wtedy, gdy spe\l{}nione s\k{a} jednocze\'snie:
+\begin{equation}\label{eq:B-continuum-cond}
+  \boxed{
+    a_{\mathrm{sub}} \;\ll\; L_B \;\ll\; \xi
+    \quad\Longleftrightarrow\quad
+    1 \;\ll\; b \;\ll\; \frac{\xi}{a_{\mathrm{sub}}}.
+  }
+\end{equation}
+\begin{enumerate}[nosep,label=(\roman*)]
+  \item \emph{Dolna granica} $b \gg 1$: blok musi zawiera\'c
+    wiele w\k{e}z\l{}\'ow, by \'sredniowanie statystyczne
+    by\l{}o uzasadnione (prawo du\.zych liczb dla
+    $\langle\hat{s}^2\rangle_B$).
+  \item \emph{G\'orna granica} $L_B \ll \xi$: blok musi
+    by\'c ma\l{}y wzgl\k{e}dem d\l{}ugo\'sci korelacji,
+    by rozwijanie gradientowe by\l{}o zbiezne, tj.\
+    $|(\nabla\Phi)\,L_B / \Phi| \ll 1$.
+\end{enumerate}
+Warunek~\eqref{eq:B-continuum-cond} jest spe\l{}niony
+\textbf{w pobli\.zu przej\'scia fazowego} ($T \to T_c$),
+gdzie $\xi \to \infty$, co daje przedzia\l{} $b$ dowolnie szeroki.
+Daleko od przej\'scia ($\xi \sim a_{\mathrm{sub}}$) granica
+continuum \textbf{nie istnieje} --- substrat jest w~pe\l{}ni
+dyskretny.
+\end{proposition}
+
+\begin{proof}
+\emph{Dolna granica.}
+Niech $n_B = b^d$ be liczb\k{a} w\k{e}z\l{}\'ow w~bloku.
+Wariancja \'sredniej blokowej:
+$\mathrm{Var}[\langle\hat{s}^2\rangle_B]
+= \mathrm{Var}[\hat{s}^2]/n_B$.
+Dla ci\k{a}g\l{}ego przybli\.zenia konieczne
+$\mathrm{Var}[\Phi_B]/\Phi_B^2 \to 0$, co wymaga $n_B \to \infty$,
+tj.~$b \gg 1$.
+
+\emph{G\'orna granica.}
+Dyskretny laplasjan na sieci kubicznej z~krokiem $L_B$:
+\begin{equation}
+  (\nabla^2_{\mathrm{dyskr}}\Phi)_x
+  = \frac{1}{L_B^2}\sum_{\hat{e}}\bigl[\Phi(x+L_B\hat{e})
+    - 2\Phi(x) + \Phi(x-L_B\hat{e})\bigr].
+\end{equation}
+Rozwijaj\k{a}c w~szeregu Taylora:
+$\Phi(x \pm L_B\hat{e}) = \Phi \pm L_B\partial_e\Phi
++ \tfrac{1}{2}L_B^2\partial_e^2\Phi
++ \mathcal{O}(L_B^3\partial_e^3\Phi)$.
+Sumuj\k{a}c:
+\begin{equation}
+  \nabla^2_{\mathrm{dyskr}}\Phi
+  = \nabla^2\Phi + \frac{L_B^2}{12}\sum_e\partial_e^4\Phi
+    + \mathcal{O}(L_B^4).
+\end{equation}
+Korekta wzgl\k{e}dna wynosi
+$\delta = L_B^2 \partial^2\Phi /(\Phi\,12)$.
+Korzystaj\k{a}c z~$|\partial^2\Phi| \lesssim |\nabla^2\Phi|
+\sim \Phi/\xi^2$, dostajemy $\delta \lesssim L_B^2/\xi^2$,
+kt\'ore jest ma\l{}e gdy $L_B \ll \xi$.
+\end{proof}
+
+\subsubsection{Wsp\'o\l{}czynnik sztywno\'sci i~emergencja
+  operatora $\mathcal{D}$}\label{app:B-stiffness}
+
+Z~ci\k{a}g\l{}ego przybli\.zenia gaudssian wok\'o\l{}
+$\hat{s}_i = v + \delta s_i$:
+\begin{equation}\label{eq:B-GL-cont}
+  F_{\mathrm{GL}}[\Phi] = \int d^d x\;\biggl[
+    \frac{K}{2}\,(\nabla\Phi)^2 + V(\Phi) - q\Phi\,\rho
+  \biggr],
+\end{equation}
+z~wsp\'o\l{}czynnikiem sztywno\'sci:
+\begin{equation}\label{eq:B-stiffness}
+  \boxed{
+    K = \frac{2J\,a_{\mathrm{sub}}^{2-d}\,v^2}{\Phi_{\mathrm{skala}}^2}
+    \cdot d,
+  }
+\end{equation}
+gdzie $d$ jest wymiarem przestrzeni, $v^2$ --- warto\'sci\k{a}
+oczekiwan\k{a} parametru porz\k{a}dku, $\Phi_{\mathrm{skala}}$
+--- skal\k{a} normowania (por.\ map\k{a}~\S\ref{app:B-mapa}).
+R\'ownanie Eulera--Lagrange'a:
+$-K\nabla^2\Phi + V'(\Phi) = q\rho$,
+po podzieleniu przez $K\PhiZero$:
+\begin{equation}
+  -\frac{1}{\PhiZero}\nabla^2\Phi
+  + \frac{V'(\Phi)}{K\PhiZero} = \frac{q}{K}\rho.
+\end{equation}
+Identyfikuj\k{a}c $\mathcal{D}[\Phi] = (1/\PhiZero)\nabla^2\Phi$
+(definicja~\ref{def:D}) i~\l{}aduj\k{a}c $q \to q/K$,
+odzyskujemy r\'ownanie pola~\eqref{eq:full-field-alt}
+\textbf{z~pierwszych zasad dynamiki substratu}.
+Czynnik $K$ jest wch\l{}oni\k{e}ty w~efektywne sprz\k{e}\.zenie
+generacji $q_{\mathrm{eff}} = q/K$.
+
+\subsubsection{Parametr entropii $s_0$ z~potencja\l{}u GL}%
+\label{app:B-s0}
+
+\begin{theorem}[Formu\l{}a na $s_0$ z~GL MFT]%
+\label{thm:s0-from-GL}
+W~przybli\.zeniu pola \'sredniego (MFT) z~hamiltonianem~\eqref{eq:B-H},
+przy warunku pr\'o\.zniowym $\beta = \gamma$ i~normalizacji
+$\PhiZero = 1$, parametr entropii substratowej N0-7
+wyra\.za si\k{e} bezpo\'srednio przez mas\k{e} pola:
+\begin{equation}\label{eq:B-s0-formula}
+  \boxed{
+    s_0 = m_{\mathrm{sp}}^2 = \gamma,
+  }
+\end{equation}
+w~jednostkach naturalnych $k_B T_{\mathrm{sub}}|_{\mathrm{pr\'o\.znia}} = 1$.
+\end{theorem}
+
+\begin{proof}
+Fluktuacje termiczne pola $\varphi = \Phi/\PhiZero$ wok\'o\l{}
+pr\'o\.zni $\varphi = 1$ s\k{a} opisane przez propagator
+statyczny (bez z\'r\'ode\l{}):
+\begin{equation}\label{eq:B-propagator}
+  \langle\delta\varphi(\mathbf{k})^2\rangle
+  = \frac{k_B T_{\mathrm{sub}}}{K\PhiZero^2(k^2 + m_{\mathrm{sp}}^2)}.
+\end{equation}
+Wariancja wzgl\k{e}dna w~bloku o~rozmiarze $L_B$,
+po u\'srednieniu po wektorach falowych $k < \pi/L_B$:
+\begin{equation}\label{eq:B-var-block}
+  \langle\delta\varphi^2\rangle_{L_B}
+  = \frac{k_B T_{\mathrm{sub}}}{K\PhiZero^2\,m_{\mathrm{sp}}^2}
+  \cdot f\!\left(\frac{L_B}{\xi}\right),
+\end{equation}
+gdzie $f(x) \to 1$ dla $x \gg 1$ (bloki super-Comptonowskie,
+$L_B \gg \xi$) i~$f(x) \to x^2$ dla $x \ll 1$.
+W~re\.zimie naturalnym $L_B \sim \xi$: $f \approx 1$.
+
+Z~definicji (krok~(iv) w~A19, r\'ownanie~\eqref{eq:S-mft-gauss}):
+$s_0 = \bigl[\partial^2_\varphi S_\Gamma/k_B N_B\bigr]_{\varphi=1}
+= 1/\langle\delta\varphi^2\rangle_{L_B}$.
+Zatem (przy $K\PhiZero^2 = 1$, $k_B T_{\mathrm{sub}} = 1$):
+\begin{equation}
+  s_0 = m_{\mathrm{sp}}^2 = \gamma.
+\end{equation}
+Wynik jest \textbf{niezale\.zny od $L_B$} w~granicy $L_B \sim \xi$
+--- co jest oczekiwane, gdy blok jest na naturalnej
+skali korelacji substratu.
+\end{proof}
+
+\begin{corollary}[Potencja\l{} entropii z~$\gamma$]\label{cor:entropy-potential}
+Przy $s_0 = \gamma$ entropia substratu~\eqref{eq:H-N07}
+przyjmuje posta\'c:
+\begin{equation}\label{eq:B-entropy-explicit}
+  S_\Gamma(\varphi) = k_B N_B\,\gamma\,(\varphi - \ln\varphi - 1),
+\end{equation}
+a~efektywny potencja\l{} termiczny~\eqref{eq:Veff-with-entropy}:
+\begin{equation}\label{eq:B-Veff-total}
+  V_{\mathrm{eff}}^{\mathrm{total}}(\varphi)
+  = U(\varphi) - T_\Gamma\,\gamma\,(\varphi - \ln\varphi - 1).
+\end{equation}
+Cz\l{}on entropii generuje efektywn\k{a} mas\k{e} pola:
+\begin{equation}\label{eq:B-meff-entropy}
+  m_{\mathrm{eff}}^2(\varphi)
+  = -U''(1) + T_\Gamma\,\gamma\,/\varphi^2\big|_{\varphi=1}
+  = \gamma + T_\Gamma\,\gamma
+  = \gamma(1 + T_\Gamma),
+\end{equation}
+gdzie $T_\Gamma = T_H = H/(2\pi)$ jest temperatur\k{a}
+Hawkinga--Gibbonsa horyzontu Hubble'a.
+Dla $T_\Gamma \ll 1$ (dzi\'s: $T_H \sim 10^{-33}\,\mathrm{eV}$):
+$m_{\mathrm{eff}} \approx m_{\mathrm{sp}} = \sqrt{\gamma}$.
+\end{corollary}
+
+\begin{remark}[Zamkni\k{e}cie problemu O22 (cz\k{e}\'sciowe)]%
+\label{rem:O22-partial-closure}
+Twierdzenie~\ref{thm:s0-from-GL} zamyka cz\k{e}\'s\'c problemu~O22:
+parametr $s_0$ \textbf{nie jest wolny} --- jest zdeterminowany
+przez $\gamma = m_{\mathrm{sp}}^2$, kt\'ore jest ju\.z
+wyznaczone z~warunku ci\k{e}mnej energii
+(\S\ref{ssec:de-potencjal}): $\gamma \approx 12\Lambda_{\mathrm{eff}}/\PhiZero$.
+Parametr $T_0$ (temperatura substratu w~przesz\l{}o\'sci)
+pozostaje otwartym zadaniem (O22 cz\k{e}\'s\'c~II),
+adresowanym przez ewolucj\k{e} $T_\Gamma(z)$ wzd\l{}u\.z
+historii kosmologicznej.
+\end{remark}
+
+% ---------------------------------------------------------------
+\subsubsection{Geometryczne sprz\k{e}\.zenie wi\k{a}za\'n
+  i~wyprowadzenie $\alpha = 2$}%
+\label{app:B-geo-coupling}
+% Sesja v32, 2026-03-24 --- zadanie I.A planu \texttt{PLAN\_ROZWOJU\_v1}
+% ---------------------------------------------------------------
+
+\begin{proposition}[Substrat z~geometrycznym sprz\k{e}\.zeniem;
+  $\alpha = 2$ i~$\beta = \gamma$]%
+\label{prop:substrate-action}
+Rozwa\.zmy substrat z~\emph{geometrycznym} sprz\k{e}\.zeniem
+wi\k{a}za\'n mi\k{e}dzy s\k{a}siadami $(i,j)$:
+\begin{equation}\label{eq:K-geometric}
+  K_{ij} \;=\; J\,(\varphi_i\,\varphi_j)^2,
+\end{equation}
+gdzie $\varphi_i = (\Phi_i/\PhiZero)^{1/2}$ jest lokaln\k{a}
+amplitud\k{a} pola w~w\k{e}\'zle~$i$ substratu.
+Sk\l{}adka gradientowa swobodnej energii GL odpowiadaj\k{a}ca
+temu sprz\k{e}\.zeniu wynosi, w~granicy continuum
+(warunek~\ref{prop:continuum-conditions}):
+\begin{equation}\label{eq:Lkin-geo}
+  \boxed{
+    \mathcal{F}_{\mathrm{kin}}^{\mathrm{geo}}[\varphi]
+    \;=\; \int d^3x\;\frac{K_{\mathrm{geo}}}{2}\,
+          \varphi^4\,(\nabla\varphi)^2,
+    \quad
+    K_{\mathrm{geo}} = 2d\,J\,a_{\mathrm{sub}}^{2-d}.
+  }
+\end{equation}
+W\'owczas:
+\begin{enumerate}[(i)]
+  \item \textbf{$\alpha = 2$ z~pierwszych zasad.}
+    R\'ownanie Eulera--Lagrange'a
+    $\delta\mathcal{F}_{\mathrm{kin}}^{\mathrm{geo}}/\delta\varphi = 0$
+    daje:
+    \begin{equation}\label{eq:EL-alpha2}
+      \nabla^2\varphi \;+\;
+        \frac{2\,(\nabla\varphi)^2}{\varphi} \;=\; 0,
+    \end{equation}
+    tj.\ $\mathcal{D}_{\mathrm{kin}}[\varphi] = 0$ z~$\alpha = 2$.
+    Wsp\'o\l{}czynnik $\alpha = 2$ nie jest postulatem
+    --- wynika z~kwadratowego geometrycznego sprz\k{e}\.zenia~\eqref{eq:K-geometric}.
+
+  \item \textbf{$\beta = \gamma$ z~warunku pr\'o\.zni.}
+    Dla potencja\l{}u GL
+    \begin{equation}\label{eq:U-GL}
+      U(\varphi) = \frac{\beta}{3}\,\varphi^3 - \frac{\gamma}{4}\,\varphi^4
+    \end{equation}
+    (najni\.zszy stopie\'n zgodny z~\l{}amaniem symetrii~$\mathbb{Z}_+$
+    i~pr\'o\.zni\k{a} $\varphi > 0$),
+    warunek stacjonarno\'sci $U'(1) = 0$ przy~$\varphi = 1$
+    (pr\'o\.znia TGP, A1--A3) daje:
+    \begin{equation}\label{eq:beta-eq-gamma}
+      \beta - \gamma = 0
+      \quad\Longrightarrow\quad
+      \boxed{\beta = \gamma.}
+    \end{equation}
+
+  \item \textbf{Masa solitonu.}
+    Linearyzacja r\'ownania pola wok\'o\l{} $\varphi = 1 + \delta\varphi$
+    daje mas\k{e} efektywn\k{a}:
+    \begin{equation}\label{eq:msp-geo}
+      m_{\mathrm{sp}}^2
+      \;=\; (3\gamma - 2\beta)\big|_{\beta=\gamma}
+      \;=\; \gamma,
+    \end{equation}
+    co jest zgodne z~tw.~\ref{thm:s0-from-GL}
+    ($s_0 = m_{\mathrm{sp}}^2 = \gamma$, por.\ r\'ow.~\eqref{eq:B-s0-formula}).
+
+  \item \textbf{To\.zsamo\'s\'c algebraiczna ($\xi = \varphi^3$).}
+    Operator kinetyczny TGP r\'owna si\k{e} laplasjanowi
+    w~zmiennej~$\xi = \varphi^3$:
+    \begin{equation}\label{eq:phi3-identity}
+      \boxed{
+        \nabla^2\varphi + \frac{2\,(\nabla\varphi)^2}{\varphi}
+        \;=\; \frac{1}{3\varphi^2}\,\nabla^2(\varphi^3).
+      }
+    \end{equation}
+    W~pr\'o\.zni TGP ($\mathcal{D}_{\mathrm{kin}} = 0$, brak \'zr\'ode\l{})
+    pole~$\xi = \varphi^3$ spe\l{}nia r\'ownanie Laplace'a
+    $\nabla^2\xi = 0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\emph{Krok~1 (granica continuum).}
+Dla s\k{a}siednich w\k{e}z\l{}\'ow $j = i + \hat{e}\,a_{\mathrm{sub}}$,
+gdzie $\hat{e}$ jest wektorem jednostkowym:
+\begin{equation}
+  \varphi_j = \varphi_i + a_{\mathrm{sub}}\,\partial_{\hat{e}}\varphi
+    + \mathcal{O}(a_{\mathrm{sub}}^2),
+  \quad
+  (\varphi_j - \varphi_i)^2
+    = a_{\mathrm{sub}}^2\,(\partial_{\hat{e}}\varphi)^2
+    + \mathcal{O}(a_{\mathrm{sub}}^3).
+\end{equation}
+Sprz\k{e}\.zenie geometryczne:
+\begin{equation}
+  K_{ij} = J(\varphi_i\varphi_j)^2
+  = J\varphi_i^4\bigl[1 + \mathcal{O}(a_{\mathrm{sub}})\bigr].
+\end{equation}
+Suma po s\k{a}siadach w\k{e}z\l{}a~$i$ (koordynacja $z = 2d$):
+\begin{equation}
+  \sum_{\hat{e}} K_{i,i+\hat{e}}(\varphi_{i+\hat{e}} - \varphi_i)^2
+  \;\approx\; J\,a_{\mathrm{sub}}^2\,\varphi_i^4\!
+    \sum_{\hat{e}} (\partial_{\hat{e}}\varphi)^2
+  = d\,J\,a_{\mathrm{sub}}^2\,\varphi_i^4\,|\nabla\varphi_i|^2.
+\end{equation}
+Przechodz\k{a}c do ca\l{}ki
+($a_{\mathrm{sub}}^d\sum_i \to \int d^d x$):
+\begin{equation}
+  \mathcal{F}_{\mathrm{kin}}^{\mathrm{geo}}
+  = d\,J\,a_{\mathrm{sub}}^{2-d}\!\int d^d x\;
+    \varphi^4(\nabla\varphi)^2
+  = \int d^d x\;
+    \frac{K_{\mathrm{geo}}}{2}\,\varphi^4(\nabla\varphi)^2,
+\end{equation}
+z~$K_{\mathrm{geo}} = 2d\,J\,a_{\mathrm{sub}}^{2-d}$,
+co dowodzi~\eqref{eq:Lkin-geo}.
+
+\emph{Krok~2 (r\'ownanie Eulera--Lagrange'a).}
+Dla g\k{e}sto\'sci lagrangianowej
+$\mathcal{L} = -\tfrac{K_{\mathrm{geo}}}{2}\varphi^4(\partial_i\varphi)^2$:
+\begin{align}
+  \frac{\partial\mathcal{L}}{\partial\varphi}
+    &= -2\,K_{\mathrm{geo}}\,\varphi^3(\nabla\varphi)^2, \\
+  \frac{\partial\mathcal{L}}{\partial(\partial_i\varphi)}
+    &= -K_{\mathrm{geo}}\,\varphi^4\,\partial_i\varphi, \\[3pt]
+  \partial_i\!\left(\frac{\partial\mathcal{L}}
+    {\partial(\partial_i\varphi)}\right)
+    &= -K_{\mathrm{geo}}\bigl[
+      4\varphi^3(\nabla\varphi)^2 + \varphi^4\nabla^2\varphi
+      \bigr].
+\end{align}
+R\'ownanie EL:
+\begin{equation}
+  \frac{\partial\mathcal{L}}{\partial\varphi}
+  - \partial_i\!\left(\frac{\partial\mathcal{L}}
+    {\partial(\partial_i\varphi)}\right)
+  = K_{\mathrm{geo}}\,\varphi^4\!
+    \left[\nabla^2\varphi
+      + \frac{2(\nabla\varphi)^2}{\varphi}\right] = 0.
+\end{equation}
+Poniewa\.z $K_{\mathrm{geo}} > 0$ i~$\varphi > 0$
+(aksjomat~\ref{ax:przestrzen}), dzielimy przez $K_{\mathrm{geo}}\varphi^4$
+i~otrzymujemy~\eqref{eq:EL-alpha2}.
+
+\emph{Krok~3 (warunek pr\'o\.zni i~masa).}
+Przy~$U(\varphi) = \tfrac{\beta}{3}\varphi^3 - \tfrac{\gamma}{4}\varphi^4$:
+$U'(\varphi) = \beta\varphi^2 - \gamma\varphi^3$.
+Sta cjonarno\'s\'c w~pr\'o\.zni $U'(1) = \beta - \gamma = 0$,
+st\k{a}d $\beta = \gamma$.
+Linearyzacja r\'ownania pola $\mathcal{D}[\varphi] = 0$
+wok\'o\l{} $\varphi = 1 + \delta\varphi$
+(cz\l{}on gradientowy: $\nabla^2\delta\varphi$;
+cz\l{}on potencja\l{}owy:
+$\beta(1{+}\delta\varphi)^2 - \gamma(1{+}\delta\varphi)^3
+\approx (\beta-\gamma) + (2\beta-3\gamma)\delta\varphi
+= (2\gamma-3\gamma)\delta\varphi = -\gamma\,\delta\varphi$):
+\begin{equation}
+  \nabla^2(\delta\varphi) - \gamma\,\delta\varphi = 0,
+\end{equation}
+co identyfikuje mas\k{e}~$m_{\mathrm{sp}}^2 = \gamma$.
+
+\emph{Krok~4 (to\.zsamo\'s\'c~\eqref{eq:phi3-identity}).}
+Bezpo\'srednie rachunki:
+\begin{equation}
+  \nabla^2(\varphi^3)
+  = \nabla\cdot(3\varphi^2\nabla\varphi)
+  = 3\bigl[2\varphi(\nabla\varphi)^2 + \varphi^2\nabla^2\varphi\bigr]
+  = 3\varphi^2\!\left[\nabla^2\varphi
+    + \frac{2(\nabla\varphi)^2}{\varphi}\right].
+\end{equation}
+Dzielenie przez $3\varphi^2 > 0$ daje~\eqref{eq:phi3-identity}.
+\end{proof}
+
+\begin{remark}[Znaczenie fizyczne i~zamkni\k{e}cie luki I.A]%
+\label{rem:substrate-action-physics}
+Geometryczne sprz\k{e}\.zenie~\eqref{eq:K-geometric} odzwierciedla
+fakt, \.ze przepl{}yw entropii mi\k{e}dzy w\k{e}z\l{}ami substratu
+jest proporcjonalny do \emph{iloczynu lokalnych g\k{e}sto\'sci}
+$\varphi_i^2\varphi_j^2$: im g\k{e}stszy substrat po obu
+stronach wi\k{a}zania, tym silniejsze sprz\k{e}\.zenie.
+W~granicy ``pr\'o\.zni'' ($\varphi \to 0$) mamy $K_{ij} \to 0$:
+w\k{e}z\l{}y o~zerowym polu s\k{a} odsprz\k{e}\.zone, co odzwierciedla
+aksjomaty N0-1 i~N0-4 (substrat wygasa tam, gdzie $\Phi = 0$).
+
+To\.zsamo\'s\'c~\eqref{eq:phi3-identity} pokazuje, \.ze
+\emph{TGP w~pr\'o\.zni jest r\'ownowa\.zna r\'ownaniu harmonicznemu
+$\nabla^2\xi = 0$ dla $\xi = \varphi^3$}.
+Supersuperpozycja soliton\'ow punktowych
+(por.\ \S\ref{sek08}) jest zatem dok\l{}adn\k{a} w\l{}asno\'sci\k{a}
+r\'ownania, nie przybli\.zeniem.
+
+Wyniki tw.~\ref{prop:substrate-action} zamykaj\k{a}
+\textbf{luk\k{e} I.A} planu~\texttt{PLAN\_ROZWOJU\_v1}:
+\begin{itemize}[nosep]
+  \item $\alpha = 2$: nie jest postulatem, lecz konsekwencj\k{a}
+    kwadratowego sprz\k{e}\.zenia geometrycznego~\eqref{eq:K-geometric};
+  \item $\beta = \gamma$: nie jest aksjomatem, lecz wynika
+    z~warunku pr\'o\.zni $U'(\PhiZero) = 0$;
+  \item $m_{\mathrm{sp}}^2 = \gamma$: wi\k{a}\.ze mas\k{e} solitonu
+    z~g\l{}adko\'sci\k{a} potencja\l{}u substratu.
+\end{itemize}
+\end{remark}

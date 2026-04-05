@@ -1,0 +1,31 @@
+Bazowa...
+g0_e=0.869134 g0_mu=1.406288 g0_tau=1.728479
+r21=206.7680 r31=3477.15
+  [100/500] ok=100 fail=0 t=21s
+  [200/500] ok=200 fail=0 t=42s
+  [300/500] ok=300 fail=0 t=62s
+  [400/500] ok=400 fail=0 t=83s
+  [500/500] ok=500 fail=0 t=104s
+
+Udanych: 500/500, fail: 0, t=104s
+
+--- r_21 (fixed g0*) ---
+  mean=205.7527 std=51.9758 spread=25.137%
+  delta=-0.4910%
+  min/max = 87.291 / 468.652
+
+--- r_31 (fixed g0*) ---
+  mean=3456.58 std=791.12 spread=22.752%
+  delta=-0.5915%
+  min/max = 1600.4 / 7293.9
+
+--- Koide ---
+  mean=0.6634277 std=0.0226364
+
+--- TESTY Fazy 2 ---
+  [FAIL] F2-T1: spread(r21)=25.137% < 5%
+  [FAIL] F2-T2: spread(r31)=22.752% < 10%
+  [PASS] F2-T3: |delta(r21)|=0.4910% < 1%
+  [PASS] F2-T4: |delta(r31)|=0.5915% < 3%
+
+Wynik Fazy 2: 2/4 PASS

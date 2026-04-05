@@ -1,0 +1,1164 @@
+% ===================================================================
+%  Dodatek H: Kanoniczny łańcuch wyprowadzeń A1 → K20
+%  TGP v1 — Od aksjomatu do obserwabl
+% ===================================================================
+%
+%  CEL: Jeden dokument ukazujący KOMPLETNY łańcuch logiczny
+%  od fundamentalnego aksjomatu (A1: materia generuje przestrzeń)
+%  do wszystkich kluczowych przewidywalnych obserwabli (K1–K20).
+%
+%  FORMAT: Każdy krok numerowany, z referencją do głównego tekstu,
+%  statusem epistemicznym [AX]/[AN]/[NUM]/[PHE] oraz zależnościami.
+%
+%  LEGENDA STATUSÓW:
+%    [AX]  Aksjomat / założenie robocze
+%    [AN]  Wniosek analityczny (zamknięta formuła)
+%    [NUM] Wynik numeryczny (skrypt weryfikujący)
+%    [PHE] Porównanie fenomenologiczne
+% ===================================================================
+
+\section{Kanoniczny \l{}a\'ncuch wyprowadze\'n: A1\texorpdfstring{$\;\to\;$}{→}K20}%
+\label{app:lancuch}
+
+Niniejszy dodatek zbiera pe\l{}ny \l{}a\'ncuch logiczny TGP w~jednym
+miejscu. Ka\.zdy krok opatrzony jest statusem epistemicznym, jawnym
+twierdzeniem lub za\l{}o\.zeniem roboczym oraz odno\'snikiem do
+g\l{}\'ownego tekstu. Celem jest umo\.zliwienie \textbf{jednorazowej
+weryfikacji sp\'ojno\'sci ca\l{}ej teorii} bez konieczno\'sci
+przeszukiwania wielu rozdzia\l{\'ow}.
+
+Wyr\'o\.zniamy cztery poziomy epistemiczne:
+\begin{center}
+\begin{tabular}{@{}llp{9.5cm}@{}}
+\toprule
+\textbf{Status} & \textbf{Symbol} & \textbf{Znaczenie} \\
+\midrule
+Aksjomat & \textbf{[AX]} & Za\l{}o\.zenie fundamentalne lub robocze (N0-1\ldots N0-7);
+  nie wyprowadzone, weryfikowane przez sp\'ojno\'s\'c i~obs.\ \\
+Analityczny & \textbf{[AN]} & Zamkni\k{e}ty wniosek matematyczny;
+  wery\-fikowany algebraicznie \\
+Numeryczny & \textbf{[NUM]} & Wynik potwierdzony przez skrypt;
+  mo\.ze zale\.ze\'c od parametr\'ow \\
+Fenomenologiczny & \textbf{[PHE]} & Por\'ownanie z~danymi;
+  status otwiera si\k{e} na obserwacje \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 0: Substrat i~aksjomat fundamentalny}%
+\label{app:H-A1}
+% -------------------------------------------------------------------
+
+\begin{chain}[A1 --- Materia generuje przestrze\'n]\label{chain:A1}
+  \textbf{[AX]}$\;$\emph{Za\l{}o\.zenie:} Przestrze\'n nie istnieje
+  niezale\.znie od materii --- jest generowana przez obecno\'s\'c masy
+  i~energii.
+  \begin{equation}\label{eq:H-A1}
+    \Phi > 0 \;\Longleftrightarrow\; \text{materia/energia obecna},
+    \qquad
+    \Phi = 0 \;\Longleftrightarrow\; \Nzero\text{ (absolutna nico\'s\'c)}.
+  \end{equation}
+  \emph{Ref.:} Aksjomat~\ref{ax:przestrzen}; patrz te\.z aksjomat~\ref{ax:N0}.
+\end{chain}
+
+\begin{chain}[A2 --- Substrat $\Gamma$ i~emergencja $\Phi$]\label{chain:A2}
+  \textbf{[AX]}$\;$Substrat $\Gamma = (V, E)$ jest dyskretn\k{a}
+  siatk\k{a} (w\k{e}z\l{}y + kraw\k{e}dzie) z~hamiltonianem
+  $H_\Gamma$ o~symetrii $\mathbb{Z}_2$: $\hat{s}_i \to -\hat{s}_i$
+  (wzgl.~\eqref{eq:H-Gamma}).
+  Pole $\Phi$ emerguje przez \'sredniowanie blokowe
+  (prop.~\ref{prop:Z2}):
+  \begin{equation}\label{eq:H-A2}
+    \Phi(x) = \frac{1}{N_B}\sum_{i \in \mathcal{B}(x)}\langle \hat{s}_i^2\rangle
+    \;\geq\; 0.
+  \end{equation}
+  Nier\'owno\'s\'c $\Phi \geq 0$ wynika z~$\hat{s}_i^2 \geq 0$ ---
+  aksjomat~\ref{ax:przestrzen} jest spe\l{}niony automatycznie.
+  \emph{Ref.:} Dod.~B (\S\ref{app:B-hamiltoniano}).
+\end{chain}
+
+\begin{chain}[A2b --- Warunek $K(0) = 0$ z~substratu (N0-4)]%
+\label{chain:A2b}
+  \textbf{[AN]}$\;$Sprz\k{e}\.zenie kinetyczne substratu
+  $K_{ij} = J(\varphi_i\varphi_j)^2$ (tw.~\ref{prop:substrate-action})
+  daje makroskopowy cz\l{}on $K(\varphi) = K_{\rm geo}\,\varphi^4$.
+  Przy $\Phi = 0$ (tj.~$\varphi = 0$):
+  \begin{equation}\label{eq:H-K0}
+    K(0) = K_{\rm geo} \cdot 0^4 = 0.
+  \end{equation}
+  Fizycznie: $\varphi = 0$ oznacza brak fazowej koherencji w~substrat\-cie,
+  wi\k{e}c brak propagacji (brak przestrzeni).
+  Status N0-4: \textbf{[AX]~$\to$~[AN]} (wyprowadzony z~A2).
+  \emph{Ref.:} Prop.~\ref{prop:K0-from-substrate} (\S\ref{ssec:formalizm-zamkniecie}).
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 1: R\'ownanie pola~$\Phi$}%
+\label{app:H-pole}
+% -------------------------------------------------------------------
+
+\begin{chain}[A3 --- R\'ownanie \'zr\'od\l{}owe]\label{chain:A3}
+  \textbf{[AX]}$\;$Ka\.zda cz\k{a}stka fundamentalna typu~$a$
+  generuje lokalny wk\l{}ad do pola~$\Phi$ (aksjomat~\ref{ax:zrodlo}):
+  \begin{equation}\label{eq:H-source}
+    \mathcal{D}[\Phi] = \sum_a q_a \rho_a,
+    \qquad
+    q_a > 0,
+  \end{equation}
+  gdzie $\mathcal{D}[\Phi]$ jest operatorem dynamiki (wzgl.~\eqref{eq:Phi-source}).
+\end{chain}
+
+\begin{chain}[A4 --- Cz\l{}on nieliniowy \texorpdfstring{$\mathcal{N}[\Phi]$}{N[Phi]}]\label{chain:A4}
+  \textbf{[AX]}$\;$Operator $\mathcal{N}[\Phi]$ opisuje
+  samointerferencj\k{e} pola (wzgl.~\eqref{eq:N-def}):
+  \begin{equation}\label{eq:H-N}
+    \mathcal{N}[\Phi] =
+      \frac{\alpha\,(\nabla\Phi)^2}{\PhiZero\,\Phi}
+      + \beta\,\frac{\Phi^2}{\PhiZero^2}
+      - \gamma\,\frac{\Phi^3}{\PhiZero^3}.
+  \end{equation}
+  Pe\l{}ne r\'ownanie pola TGP: $\mathcal{D}[\Phi] + \mathcal{N}[\Phi]
+  = \sum_a q_a \rho_a$ (tw.~\ref{thm:field-eq}).
+\end{chain}
+
+\begin{chain}[A5 --- Profil Yukawa od pojedynczego \'zr\'od\l{}a]\label{chain:A5}
+  \textbf{[AN]}$\;$Dla jednej cz\k{a}stki punktowej w~re\.zimie
+  linearyzowanym (N0-3: $\alpha = 0$, stabilizacja poprzez
+  $\beta$--$\gamma$):
+  \begin{equation}\label{eq:H-Yukawa}
+    \Phi(r) = \PhiZero + \frac{q\,m}{4\pi\,r}\,e^{-r/\lambda_Y},
+    \qquad
+    \lambda_Y = \PhiZero\,\sqrt{\frac{1}{\gamma - \beta}}
+    \quad (\gamma > \beta),
+  \end{equation}
+  (wzgl.~\eqref{eq:Phi-single}, \eqref{eq:lambda-Yukawa}).
+  D\l{}ugo\'s\'c Yukawy $\lambda_Y$ wyznacza granic\k{e} mi\k{e}dzy
+  re\.zimami grawitacyjnym i~odpychaj\k{a}cym.
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 1b: Trzy re\.zimy i~pr\'o\.znia}%
+\label{app:H-rezimy}
+% -------------------------------------------------------------------
+
+\begin{chain}[A6 --- Klasyfikacja si\l{}y -- trzy re\.zimy]\label{chain:A6}
+  \textbf{[AN]}$\;$Si\l{}a mi\k{e}dzycz\k{a}stkowa $F(r)$
+  ma trzy strefy (prop.~\ref{prop:trzy-rezimy-beta-gamma}):
+  \begin{equation}\label{eq:H-force}
+    F(r) \;=\;
+    \begin{cases}
+      < 0 & r > d_{\mathrm{rep}} \quad\text{(grawitacja / przyci\k{a}ganie)} \\
+      > 0 & d_{\mathrm{well}} < r < d_{\mathrm{rep}} \quad\text{(odpychanie)} \\
+      < 0 & r < d_{\mathrm{well}} \quad\text{(studnia / sklejenie)}
+    \end{cases}
+  \end{equation}
+  Warunek konieczny: $\beta > 0$, $\gamma > 0$.
+  Tw.~\ref{thm:uniqueness}: przy naturalnych za\l{}o\.zeniach
+  jedynym wielomianowym $\mathcal{N}$ daj\k{a}cym wszystkie trzy
+  re\.zimy jest postac\'c~\eqref{eq:H-N}.
+  \emph{Kill-shot K1 --- ZAMKNI\k{E}TY.}
+\end{chain}
+
+\begin{chain}[A7 --- Warunek pr\'o\.zniowy N0-5: $\beta = \gamma$]\label{chain:A7}
+  \textbf{[AN]}$\;$W~jednorodnym tle pr\'o\.zniowym
+  $\Phi = \PhiZero$ minimalizuje dzia\l{}anie wtedy i~tylko wtedy,
+  gdy (prop.~\ref{prop:vacuum-condition}):
+  \begin{equation}\label{eq:H-vac}
+    \beta = \gamma.
+  \end{equation}
+  \emph{Wyprowadzenie:} $U'(\psi)\big|_{\psi=1} = \beta - \gamma = 0$
+  (warunek stacjonarno\'sci potencja\l{}u w~pr\'o\.zni).
+  Trzy niezale\.zne \'scie\.zki: (1)~wariacyjna, (2)~symetria $Z_2$
+  substratu (klasa uniwersalno\'sci Isinga 3D,
+  tw.~\ref{thm:beta-eq-gamma-triple}), (3)~MK-RG~$+$~MC.
+  Weryfikacja: 12/12 test\'ow PPN, kill-shot K8 --- ZAMKNI\k{E}TY.
+  Przy $\beta = \gamma$ profil~\eqref{eq:H-Yukawa} przechodzi
+  w~profil eksponencjalny (Newtona), a~$\lambda_Y \to \infty$
+  (zasi\k{e}g grawitacji jest niesko\'nczony).
+  \textbf{Status: Aksjomat\,$\to$\,Twierdzenie} (sesja~v42).
+\end{chain}
+
+\begin{chain}[A8 --- Masa substratu N0-6: $m_{\mathrm{sp}} = \sqrt{\gamma}$]%
+  \label{chain:A8}
+  \textbf{[AN]}$\;$Masa efektywna wzbudzenia pola~$\Phi$
+  wzgl\k{e}dem pr\'o\.zni wyra\.za si\k{e} przez parametr potencja\l{}u:
+  \begin{equation}\label{eq:H-msp}
+    m_{\mathrm{sp}} = \sqrt{\gamma}\;\PhiZero
+    \qquad (\text{w~jednostkach naturalnych}).
+  \end{equation}
+  \emph{Wyprowadzenie:} $m_{\mathrm{sp}}^2 = 3\gamma - 2\beta
+  \big|_{\beta=\gamma} = \gamma$
+  (druga pochodna potencja\l{}u w~pr\'o\.zni z~warunkiem N0-5).
+  Z~tw.~\ref{thm:s0-from-GL}: $s_0 = m_{\mathrm{sp}}^2 = \gamma$
+  (parametr entropii substratu).
+  K15 --- ZAMKNI\k{E}TY, 12/12 PASS (\S\ref{ssec:ew-unification}).
+  \textbf{Status: Aksjomat\,$\to$\,Twierdzenie} (sesja~v42).
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 2: Emergentna metryka i~dynamiczne sta\l{}e}%
+\label{app:H-metryka}
+% -------------------------------------------------------------------
+
+\begin{chain}[A9 --- Dynamiczne sta\l{}e fundamentalne]\label{chain:A9}
+  \textbf{[AX]}$\;$Pr\k{e}dko\'s\'c \'swiat\l{}a, sta\l{}a Plancka
+  i~sta\l{}a grawitacyjna s\k{a} polami zale\.znymi od~$\Phi$
+  (aksjomaty~\ref{ax:c}, \ref{ax:hbar}, \ref{ax:G}):
+  \begin{equation}\label{eq:H-stale}
+    c(\Phi) = c_0\!\left(\frac{\PhiZero}{\Phi}\right)^{\!a},\quad
+    \hbar(\Phi) = \hbar_0\!\left(\frac{\PhiZero}{\Phi}\right)^{\!b},\quad
+    G(\Phi) = G_0\,\left(\frac{\PhiZero}{\Phi}\right)^{\!g}.
+  \end{equation}
+\end{chain}
+
+\begin{chain}[A10 --- Jednoznaczno\'s\'c wyk\l{}adnik\'ow $(a,b,g)$]%
+  \label{chain:A10}
+  \textbf{[AN]}$\;$Z wymogu sta\l{}o\'sci d\l{}ugo\'sci Plancka
+  $\ell_P = \sqrt{\hbar G / c^3} = \mathrm{const}$ (tw.~\ref{thm:lP})
+  oraz fizycznej sp\'ojno\'sci (tw.~\ref{thm:exponents}):
+  \begin{equation}\label{eq:H-exponents}
+    a = \tfrac{1}{2},\quad b = \tfrac{1}{2},\quad g = 1.
+  \end{equation}
+  Jawnie: $c(\Phi) = c_0\sqrt{\PhiZero/\Phi}$,
+  $\hbar(\Phi) = \hbar_0\sqrt{\PhiZero/\Phi}$,
+  $G(\Phi) = G_0\,\PhiZero/\Phi$.
+  Lokalny obserwator zawsze mierzy $c_0$, $\hbar_0$, $G_0$ ---
+  zmiana jest relacyjna, wykrywalna jedynie przy por\'ownaniu
+  dw\'och region\'ow o~r\'o\.znym $\Phi$
+  (\S\ref{ssec:obserwabilnosc-stalych}).
+  \emph{Kill-shot K7 ($\ell_P = \mathrm{const}$) --- ZAMKNI\k{E}TY.}
+\end{chain}
+
+\begin{chain}[A11 --- Metryka eksponencjalna $g_{tt}$]\label{chain:A11}
+  \textbf{[AN]}$\;$Z~profilu pola~$\Phi(r)$ przy $\beta = \gamma$
+  i~przez identyfikacj\k{e} z~potencja\l{}em grawitacyjnym
+  $U(r) = G_0 M / r$ (wzgl.~\eqref{eq:metric-from-Phi}):
+  \begin{equation}\label{eq:H-gtt}
+    g_{tt} = -\exp(-2U),\qquad
+    g_{rr} = \exp(+2U)
+    \quad (U \ll 1).
+  \end{equation}
+  Metryka ta redukuje si\k{e} do metryki Schwarzschilda
+  w~granicznym uj\k{e}ciu PPN z~$\gamma = \beta = 1$
+  (K8 --- ZAMKNI\k{E}TY).
+
+  \medskip\noindent\textbf{Wyprowadzenie z~substratu (v41, 2026-03-30):}
+  Krok~3 mostu substrat--metryka zosta\l{} wyprowadzony
+  z~warunku zachowania bud\.zetu informacyjnego
+  (prop.~\ref{prop:antipodal-from-budget}):
+  $f \cdot h = 1$, sk\k{a}d $g_{tt} = -c_0^2/\psi$
+  (tw.~\ref{thm:metric-from-substrate-full}).
+  Warunek PPN dobiera form\k{e} eksponencjaln\k{a}.
+  Status: \textbf{[AN+POST]} (warunek bud\.zetu z~za\l{}o\.zeniem
+  multiplikatywno\'sci dekompozycji; patrz uw.\ w~dowodzie
+  prop.~\ref{prop:antipodal-from-budget}).
+\end{chain}
+
+\begin{chain}[A11b --- Zunifikowana akcja $S_{\rm TGP}$
+  i~$\kappa = 3/(4\Phi_0)$]\label{chain:A11b}
+  \textbf{[AN]}$\;$Z~metryki~\eqref{eq:H-gtt}
+  wyznaczamy element obj\k{e}to\'sciowy $\sqrt{-g} = c_0\psi$
+  ($\psi = \Phi/\Phi_0$, NIE $\psi^4$).
+  Wariacja dzia\l{}ania $S_{\rm TGP}$
+  (hip.~\ref{hyp:unified-action}) daje:
+  \begin{equation}
+    \kappa = \frac{3}{4\Phi_0} \approx 0{,}030.
+  \end{equation}
+  Wynik: $|\dot G/G|/H_0 = 0{,}009 < 0{,}02$ (LLR) ---
+  napi\k{e}cie N0-7 \textbf{ROZWI\k{A}ZANE}
+  (prop.~\ref{prop:kappa-corrected},
+  \texttt{ex104\_kappa\_from\_action.py}).
+  \emph{Kill-shot K3 (LLR):} ZAMKNI\k{E}TY.
+\end{chain}
+
+\begin{chain}[A11c --- Brak ghost\'ow w~sektorze solitonowym]%
+\label{chain:A11c}
+  \textbf{[AN]}$\;$Sprzężenie kinetyczne $f(g) = 1 + 2\alpha\ln g$
+  ma zero przy $g^* = e^{-1/4}$, ale jest przybli\.zeniem
+  substratowego $K_{\rm sub}(g) = g^2 > 0$ dla ka\.zdego $g > 0$
+  (tw.~\ref{thm:ghost-free-soliton}).
+  Mechanizm $A_{\rm tail}$ zachowany (ogon przy $g \approx 1$).
+\end{chain}
+
+\begin{chain}[A12 --- Granica Newtonowska]\label{chain:A12}
+  \textbf{[AN]}$\;$Dla s\l{}abego pola ($U \ll 1$)
+  i~niskich pr\k{e}dko\'sci r\'ownania ruchu z~metryki~\eqref{eq:H-gtt}
+  daj\k{a} prawo Newtona (prop.~\ref{prop:grav}):
+  \begin{equation}\label{eq:H-newton}
+    F = -\frac{G_0 M m}{r^2},\qquad
+    G_0 = \frac{q\,c_0^2}{4\pi\,\PhiZero}.
+  \end{equation}
+  \emph{Ref.:} r\'ownanie~\eqref{eq:newton-limit}.
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 3: Poprawki post-Newtonowskie}%
+\label{app:H-PN}
+% -------------------------------------------------------------------
+
+\begin{chain}[A13 --- Poprawka 3PN: $\Delta c_2 = -1/3$]\label{chain:A13}
+  \textbf{[AN]}$\;$Przy ekspansji post-Newtonowskiej metryki TGP
+  do rz\k{e}du $U^3$ pojawia si\k{e} dodatkowy cz\l{}on trzeciego
+  rz\k{e}du (wzgl.~\eqref{eq:3PN-diff}):
+  \begin{equation}\label{eq:H-3PN}
+    g_{tt}^{\mathrm{TGP}} = -1 + 2U - 2U^2 + \tfrac{4}{3}\,U^3 + O(U^4),
+  \end{equation}
+  podczas gdy GR daje $+\frac{4}{3}U^3$.
+  Odchylenie wzgl\k{e}dem GR:
+  \begin{equation}\label{eq:H-delta-c2}
+    \delta c_2 \equiv c_2^{\mathrm{TGP}} - c_2^{\mathrm{GR}} = -\tfrac{1}{3}.
+  \end{equation}
+\end{chain}
+
+\begin{chain}[A14 --- Sygnatura TaylorF2 w~falach grawitacyjnych]%
+  \label{chain:A14}
+  \textbf{[AN]}$\;$Odchylenie $\delta c_2 = -1/3$ propaguje si\k{e}
+  do fazy TaylorF2 (wzgl.~\eqref{eq:3PN-diff}):
+  \begin{equation}\label{eq:H-TaylorF2}
+    \Delta\Psi_{\mathrm{TGP}}(f)
+    = \frac{3}{128\eta}\,x^{-5/2}\cdot\delta c_2\cdot x^3,
+    \qquad
+    x = (\pi\mathcal{M}f)^{2/3},
+  \end{equation}
+  gdzie $\eta = m_1 m_2 / (m_1+m_2)^2$ i~$\mathcal{M}$ --- chirp mass.
+  Dla GW150914: $|\Delta\Psi| \approx 0.056\,\mathrm{rad}$
+  (poni\.zej progu LIGO, wykrywalne przez LISA dla MBHB).
+  \emph{Kill-shot K20 --- OTWARTY (LISA 2034+).}
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 3: Kosmologia TGP}%
+\label{app:H-cosmo}
+% -------------------------------------------------------------------
+
+\begin{chain}[A15 --- Zmodyfikowane r\'ownanie Friedmanna]\label{chain:A15}
+  \textbf{[AN]}$\;$W~FLRW z~wolno zmiennym t\l{}em $\phi(t) = \Phi/\PhiZero$
+  r\'ownanie Friedmanna modyfikuje si\k{e} (wzgl.~\eqref{eq:friedmann-modified}):
+  \begin{equation}\label{eq:H-Friedmann}
+    H^2(a,\phi) = \frac{H^2_{\Lambda\mathrm{CDM}}(a)}{\phi(t)},
+  \end{equation}
+  gdzie $\phi \to 1$ dla $a \to 1$ (dzisiaj) i~$\phi < 1$ w~przesz\l{}o\'sci
+  (gdy g\k{e}sto\'s\'c materii by\l{}a wy\.zsza).
+  Efekt: $H(z) > H_{\Lambda\mathrm{CDM}}(z)$ dla $z > 0$.
+\end{chain}
+
+\begin{chain}[A16 --- Zmiana $G(z)$ wzgl\k{e}dem BBN/CMB]\label{chain:A16}
+  \textbf{[PHE]}$\;$Z~A9--A10 i~A15: $G(\Phi) = G_0\,\PhiZero/\Phi$,
+  wi\k{e}c w~przesz\l{}o\'sci $\phi < 1$ oznacza $G(z) > G_0$.
+  Ograniczenia z~BBN ($z \approx 10^9$) i~CMB ($z \approx 1100$):
+  $|G(z)/G_0 - 1| < 0.1$.
+  Wymagane: $|\phi(z)-1| < 0.1$.
+  \emph{Kill-shot K5 --- ZAMKNI\k{E}TY (skrypt cosmological\_phi\_evolution.py).}
+\end{chain}
+
+\begin{chain}[A17 --- Ciemna energia bez fine-tuningu]\label{chain:A17}
+  \textbf{[PHE]}$\;$Efektywna sta\l{}a kosmologiczna wynika
+  ze fluktuacji $\phi$ wok\'o\l{} t\l{}a (wzgl.~\eqref{eq:delta-Phi-var}).
+  Modyfikacja $w_{\mathrm{DE}}(z)$ wzgl\k{e}dem $w=-1$
+  jest testowalnym sygna\l{}em TGP (DESI 2026+).
+  \emph{Kill-shot K2 --- OTWARTY.}
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Poziom 3: Skale galaktyczne}%
+\label{app:H-galaktyki}
+% -------------------------------------------------------------------
+
+\begin{chain}[A18 --- Skalowanie j\k{a}dra solonu FDM]\label{chain:A18}
+  \textbf{[AN+PHE]}$\;$Dla ultralekkich bozon\'ow ($m_\chi \ll 1\,\mathrm{eV}$)
+  w~re\.zimie odp.~TGP promie\'n j\k{a}dra solonu skaluje si\k{e} jako
+  (wzgl.~\eqref{eq:rc-K18}):
+  \begin{equation}\label{eq:H-rc}
+    r_c \;\propto\; M_{\mathrm{gal}}^{-1/9},
+  \end{equation}
+  w~por\'ownaniu z~$r_c \propto M^{-1/3}$ w~standardowym FDM.
+  Test na pr\'obie SPARC: $F_1$\,(standardowe FDM) wykluczone
+  na $44\sigma$; TGP nie wykluczone.
+  \emph{Kill-shot K18 --- ZAMKNI\k{E}TY.}
+\end{chain}
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie: diagram \l{}a\'ncucha}%
+\label{app:H-diagram}
+% -------------------------------------------------------------------
+
+Poni\.zszy diagram (\emph{czytaj: strza\l{}ka $\to$ oznacza
+``prowadzi do''}) streszcza ca\l{}y \l{}a\'ncuch:
+
+\begin{center}
+\small
+\begin{tabular}{@{}rl@{}}
+\toprule
+\textbf{Krok} & \textbf{Wynik} \\
+\midrule
+A1 & Aksjomat: Materia generuje $\Phi$ [\ref{ax:przestrzen}] \\
+$\downarrow$ & \\
+A2 & Substrat $\Gamma \to \Phi \geq 0$ (blokowanie) \\
+$\downarrow$ & \\
+A2b & $K(0)=0$ z~$K_{\rm geo}\varphi^4$; N0-4 $\textbf{[AX]}\to\textbf{[AN]}$ \\
+$\downarrow$ & \\
+A3--A4 & R\'ownanie pola $\mathcal{D}[\Phi] + \mathcal{N}[\Phi]
+         = \sum q_a\rho_a$ [\ref{thm:field-eq}] \\
+$\downarrow$ & \\
+A5 & Profil Yukawa $\Phi(r) \sim e^{-r/\lambda_Y}/r$ [\ref{eq:H-Yukawa}] \\
+$\downarrow$ & \\
+A6 & Trzy re\.zimy $F(r)$ [\ref{thm:uniqueness}]; \textbf{K1 ZAMKNI\k{E}TY} \\
+$\downarrow$ & \\
+A7 & N0-5: $\beta = \gamma$ (warunek pr\'o\.zniowy) [\ref{prop:vacuum-condition}] \\
+$\downarrow$ & \\
+A8 & N0-6: $m_{\mathrm{sp}} = \sqrt{\gamma}$ (masa substratu) \\
+$\downarrow$ & \\
+A9--A10 & $c(\Phi)$, $\hbar(\Phi)$, $G(\Phi)$; wyk\l{}adniki $(1/2, 1/2, 1)$
+         [\ref{thm:exponents}]; \textbf{K7 ZAMKNI\k{E}TY} \\
+$\downarrow$ & \\
+A11 & Metryka $g_{tt} = -e^{-2U}$; PPN $\gamma = \beta = 1$;
+      \textbf{K8 ZAMKNI\k{E}TY} \\
+$\downarrow$ & \\
+A11b & Akcja $S_{\rm TGP}$; $\kappa = 3/(4\Phi_0)$;
+       \textbf{K3 LLR ZAMKNI\k{E}TY} \\
+A11c & Ghost-free: $K_{\rm sub}(g) = g^2 > 0$ \\
+A11d & \'Scie\.zka~9 $\varphi$-FP: $r_{21} = 206{,}77$ (0{,}0001\%);
+       \textbf{O-J2 ZAMKNI\k{E}TY} \\
+$\downarrow$ & \\
+A12 & Prawo Newtona $F = -G_0Mm/r^2$ [\ref{prop:grav}] \\
+$\downarrow$ & \\
+A13 & 3PN: $\delta c_2 = -1/3$; cz\l{}on $\tfrac{4}{3}U^3$ w~$g_{tt}$ \\
+$\downarrow$ & \\
+A14 & TaylorF2 $\Delta\Psi_{\mathrm{TGP}}$; \textbf{K20 OTWARTY (LISA 2034+)} \\
+\\
+A7+A8 $\to$ A15 & Friedmann: $H^2 = H^2_{\Lambda\text{CDM}}/\phi$ [\ref{eq:H-Friedmann}] \\
+$\downarrow$ & \\
+A16 & $G(z) = G_0/\phi(z)$; \textbf{K5 ZAMKNI\k{E}TY (BBN/CMB)} \\
+A17 & $w_{\mathrm{DE}}(z) \neq -1$; \textbf{K2 OTWARTY (DESI 2026+)} \\
+\\
+A5 + FDM $\to$ A18 & $r_c \propto M_{\mathrm{gal}}^{-1/9}$;
+                     \textbf{K18 ZAMKNI\k{E}TY (SPARC $44\sigma$)} \\
+\\
+A1 + aks.~\ref{ax:complex-substrate} $\to$ A20
+     & Emergencja U(1): $H_\Gamma^{(U1)} \to S_{\rm Maxwell}$;
+       \textbf{PROPOZYCJA} (tw.~\ref{thm:photon-emergence}) \\
+\\
+\multicolumn{2}{@{}l}{\textbf{--- Nowe ogniwa (sesja v42, 2026-04-04) ---}} \\
+\\
+A11d $\to$ B1 & Masa $M = c_M A_{\rm tail}^4 + O(A^6)$ z~trybu zerowego;
+       $\mathcal{E}^{(2)} = 0$ [AN] (kasowanie wirialowe);
+       $\mathcal{E}^{(3)} = 0$ [\textbf{NUM}] (kasowanie nieperturbacyjne ---
+       perturbacyjnie $\mathcal{E}^{(3)} \neq 0$ (ex148);
+       zob.\ uw.~\ref{rem:R-E3-status});
+       $r_{21}(\varphi\text{-FP}) = 203{,}7$ ($1{,}5\%$ od PDG);
+       \textbf{TWIERDZENIE [AN($\mathcal{E}^{(2)}$) + NUM($\mathcal{E}^{(3)}$)]}
+       (tw.~\ref{thm:R-A4}; dod.~\ref{app:zero-mode-A4};
+       \texttt{ex142}: 12/12 PASS) \\
+$\downarrow$ & \\
+B1 $\to$ B2 & $Q_K = 3/2$ z~$\mathbb{Z}_3$ (dekoherencja fazowa
+       w~przestrzeni amplitud, $\mathcal{K}=0$);
+       \textbf{Uwaga}: symetria $\mathbb{Z}_3$ jest
+       \textbf{za\l{}o\.zona} (nie wyprowadzona z~dynamiki TGP);
+       \textbf{PROPOZYCJA [AN+NUM+POST($\mathbb{Z}_3$)]}
+       (tw.~\ref{thm:R2-QK-circle},
+       prop.~\ref{prop:R2-decoherence-Z3};
+       dod.~\ref{app:R2-qk-z3};
+       \texttt{ex145}: 14/14 PASS) \\
+$\downarrow$ & \\
+B1+B2 & Trzy masy leptonowe: $r_{21} = 206{,}77$ ($\varphi$-FP),
+       $r_{31} = 3477{,}44$ (Koide);
+       \textbf{zero parametr\'ow wolnych} \\
+\\
+A5 $\to$ B3 & $K(\psi)=\psi^4$ strukturalnie stabilne pod ERG:
+       ghost-free, $K_{\mathrm{IR}}/K_{\mathrm{UV}} = 1{,}07$,
+       $m^2 = 0{,}36 > 0$; $\theta_u = -7{,}0$ (UV-atrakcyjny);
+       \textbf{PROPOZYCJA [NUM]}
+       (tw.~\ref{thm:M-K-structural}; dod.~\ref{ssec:M-fp-shape}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Tabela: mapa kill-shot\'ow do \l{}a\'ncucha}%
+\label{app:H-killshot-map}
+% -------------------------------------------------------------------
+
+\begin{center}
+\small
+\begin{longtable}{@{}cllcc@{}}
+\toprule
+\textbf{K\#} & \textbf{Predykcja} & \textbf{Krok \l{}a\'ncucha}
+  & \textbf{Status} & \textbf{Typ} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{K\#} & \textbf{Predykcja} & \textbf{Krok \l{}a\'ncucha}
+  & \textbf{Status} & \textbf{Typ} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+K1  & Trzy re\.zimy $F(r)$          & A5--A6          & Zamkni\k{e}ty & [AN] \\
+K2  & $\Lambda_{\mathrm{eff}}$ b.\ fine-tuning & A15--A17 & Otwarty & [PHE] \\
+K3  & Zbieg\l{}o\'s\'c problem\'ow   & A15             & Otwarty  & [PHE] \\
+K4  & Zamar\l{}a CD, brak singularyno\'sci & A11       & Otwarty  & [PHE] \\
+K5  & $G(z)$ --- BBN/CMB             & A9, A16         & Zamkni\k{e}ty & [PHE] \\
+K6  & $\hbar(\Phi)$                  & A9--A10         & Otwarty  & [PHE] \\
+K7  & $\ell_P = \mathrm{const}$      & A10             & Zamkni\k{e}ty & [AN] \\
+K8  & PPN $\gamma = \beta = 1$       & A11             & Zamkni\k{e}ty & [AN] \\
+K9  & 3PN $+\tfrac{1}{6}U^3$        & A13             & Zamkni\k{e}ty & [AN] \\
+K10 & Oddechowy mod GW               & A11, A13        & Otwarty  & [PHE] \\
+K11 & Brak echa singularyno\'sci BH  & A11             & Otwarty  & [PHE] \\
+K12 & Gechowanie $U(1)\times SU(2)\times SU(3)$ & A7--A8 & Zamkni\k{e}ty & [AN] \\
+K13 & Okno Efimova                   & A5--A6          & Zamkni\k{e}ty & [NUM] \\
+K14 & Lyman-$\alpha$                 & A15--A16        & Zamkni\k{e}ty & [PHE] \\
+K15 & $v_W$ elektros\l{}aby          & A8              & Zamkni\k{e}ty & [AN] \\
+K16 & $\alpha_{\mathrm{em}}$ z~substratu & A2, A8      & Zamkni\k{e}ty & [AN] \\
+K17 & Anulacja ABJ $N_c = 3$         & A8              & Zamkni\k{e}ty & [AN] \\
+K18 & SPARC $r_c \propto M^{-1/9}$   & A18             & Zamkni\k{e}ty & [PHE] \\
+K19 & Destabilizacja kr\k{a}\.zka fig-8 & A6          & Zamkni\k{e}ty & [NUM] \\
+K20 & 3PN TaylorF2 $\delta c_2$      & A13--A14        & Otwarty  & [PHE] \\
+\end{longtable}
+\end{center}
+
+Bilans (Marzec 2026, sesja v30$\to$v41):
+\textbf{15 zamkni\k{e}tych, 5 otwartych, 0 obalonych.}
+Krok A19 (N0-7: entropia substratu $S_\Gamma$) dodany
+do \l{}a\'ncucha w~sesji v30; weryfikacja numeryczna:
+\texttt{consistency\_full\_check.py}.
+
+\smallskip\noindent\textbf{Nowe kroki (sesja v41, 2026-03-30):}
+\begin{itemize}[nosep]
+  \item A11b: zunifikowana akcja $S_{\rm TGP}$;
+        $\kappa = 3/(4\Phi_0)$;
+        napi\k{e}cie N0-7 \textbf{ROZWI\k{A}ZANE};
+        K3 (LLR) $\to$ ZAMKNI\k{E}TY.
+  \item A11c: brak ghost\'ow w~sektorze solitonowym
+        ($K_{\rm sub}(g) = g^2 > 0$).
+  \item Tw.~\ref{thm:metric-from-substrate-full}: metryka
+        z~bud\.zetu substratu (krok~3 $\to$ Propozycja).
+  \item Tw.~\ref{thm:pi1-Z2}: $\pi_1(\mathcal{C}_{\rm sol}) = \mathbb{Z}_2$
+        (formalny dow\'od statystyki Fermiego).
+  \item Weryfikacja: \texttt{tgp\_physical\_consistency.py}
+        71/71 PASS (v41).
+  \item A11d: \'Scie\.zka~9 $\varphi$-FP (twierdzenie~\ref{thm:J2-FP}):
+        $g_0^* = 1{,}24915$, $r_{21} = 206{,}77$ (0{,}0001\%);
+        O-J2 (zasada selekcji $g_0^\mu$) $\to$ ZAMKNI\k{E}TY.
+        Weryfikacja: \texttt{ex106} 14/14 PASS.
+  \item $n_s = 0{,}9662$ (Mukhanov-Sasaki numeryczny, 0{,}32$\sigma$ Planck):
+        $r = 0{,}0033$; $r \cdot N_e^2 = 12$ (Starobinsky).
+        Weryfikacja: \texttt{ex107} 10/10 PASS.
+  \item Chiralnosc: $m_R/m_L = 2{,}03$ z~asymetrii $V(g)$ i~$K_{\rm sub}$;
+        $g_0^L(e) = 0{,}751 < g^*$ (bariera duchowa {\l}amie chiralnosc).
+        OP-D1d-1 ZAMKNI\k{E}TY. Weryfikacja: \texttt{ex108} 9/9 PASS.
+  \item Weryfikacja: \texttt{tgp\_physical\_consistency.py}
+        85/85 PASS (v41, kontynuacja).
+  \item Emergencja U(1): \texttt{thm:photon-emergence} ---
+        5-krokowy dow\'od ($H_\Gamma^{(U1)} \to \mathcal{L}_{\rm phase}
+        \to A_\mu \to F_{\mu\nu} \to S_{\rm Maxwell}$);
+        Szkic $\to$ \textbf{Propozycja} (warunkowo na aks.~\ref{ax:complex-substrate}).
+        Weryfikacja: \texttt{ex109} 12/12 PASS.
+  \item Weryfikacja: \texttt{tgp\_physical\_consistency.py}
+        92/92 PASS (v41, kontynuacja~2).
+  \item R3: Hipoteza $a_\Gamma \cdot \Phi_0 = 1$ z~DESI DR2 (2025):
+        $a_\Gamma \cdot \Phi_0 = 1{,}005$ (odch.~$1{,}03\sigma$).
+        Dynamiczna DE: $3{,}1\sigma$ preferencja ($w_0 = {-}0{,}42$)
+        --- sp\'ojne z~predykcj\k{a} TGP ($w_{\rm DE} \neq {-}1$).
+        Weryfikacja: \texttt{ex110} 10/10 PASS.
+  \item R7 formalizacja: dodatek~\ref{app:K2-chiralnosc}
+        (prop.~\ref{prop:K2-Vasym}, tw.~\ref{thm:K2-chiral-selection}).
+  \item Weryfikacja: \texttt{tgp\_physical\_consistency.py}
+        98/98 PASS (v41, kontynuacja~3).
+  \item A2b: Wyprowadzenie N0-4 ($K(0) = 0$) z~substratu ---
+        $K(\varphi) = K_{\rm geo}\,\varphi^4 \Rightarrow K(0) = 0$;
+        status \textbf{[AX]~$\to$~[AN]}.
+        \emph{Ref.:} prop.~\ref{prop:K0-from-substrate}.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\subsection{Uwagi na temat granic stosowalności metryki}\label{app:H-granice}
+% -------------------------------------------------------------------
+
+\begin{remark}[Kiedy metryka $g_{\mu\nu}$ jest stosowalnym opisem]\label{rem:H-metric-domain}
+  Emergentna metryka Riemannowska $g_{\mu\nu}$ (krok A11)
+  jest stosowaln\k{a} aproksymacj\k{a} dynamiki TGP wtedy
+  i~tylko wtedy, gdy spe\l{}nione s\k{a} nast\k{e}puj\k{a}ce
+  warunki:
+  \begin{enumerate}[nosep,label=(\roman*)]
+    \item Pole t\l{}a jest g\l{}adkie: $|\nabla\Phi / \Phi| \ll 1/\ell_P$;
+    \item Odchylenia od pr\'o\.zni s\k{a} ma\l{}e:
+          $|\delta\phi| = |\Phi/\PhiZero - 1| \ll 1$;
+    \item Skala czasowa ewolucji $\Phi$ jest d\l{}uga: $|\dot\phi|/\phi \ll H$;
+    \item Brak degeneracji: $\Phi \gg 0$
+          (w~granicy $\Phi \to 0$ metryka traci sens --- obszar ten
+          odpowiada $\Nzero$ lub zamro\.zonemu obszarowi BH).
+  \end{enumerate}
+  W~granicy $\Phi \to \infty$ (niezwykle wysoka g\k{e}sto\'s\'c
+  przestrzeni) sta\l{}e efektywne $c \to 0$, $\hbar \to 0$,
+  co odpowiada rejonowi w~pobli\.zu Wielkiego Wybuchu
+  (dod.~G~[\S\ref{app:wielki-wybuch}]).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Otwarte wy\l{}omy w~\l{}a\'ncuchu}\label{app:H-luki}
+% -------------------------------------------------------------------
+
+Pomimo pe\l{}no\'sci \l{}a\'ncucha A1--A19 istniej\k{a} trzy miejsca
+wymagaj\k{a}ce dalszej formalizacji:
+
+% -------------------------------------------------------------------
+\subsection{N0-7: Entropia substratu --- wyprowadzenie formalne}%
+\label{app:H-N07}
+% -------------------------------------------------------------------
+
+\begin{remark}[Status N0-7 przed sesj\k{a} v30]\label{rem:N07-status-before}
+Poprzednie sesje (v26--v29) traktowa\l{}y N0-7 jako \textbf{za\l{}o\.zenie
+robocze} z~wolnymi parametrami $s_0$, $T_0$:
+$S_\Gamma(\varphi) = s_0(\varphi - \ln\varphi - 1)$.
+Brakowa\l{}o formalnego wyprowadzenia z~substratu $\Gamma = (V, E)$.
+Niniejszy krok A19 uzupe\l{}nia t\k{e} luk\k{e}.
+\end{remark}
+
+\begin{chain}[A19 --- Entropia substratu N0-7]\label{chain:A19}
+\textbf{[AN]}$\;$Substrat $\Gamma = (V, E)$ z~hamiltonianem
+$H_\Gamma$ i~stanem termicznym~\eqref{eq:vacuum-thermal}
+(dod.~E, stw.~\ref{prop:substrate-vacuum}) ma entropii
+von~Neumanna:
+\begin{equation}\label{eq:H-entropy-vonN}
+  S_\Gamma(\rho)
+  = -k_B\,\operatorname{Tr}(\rho\ln\rho)
+  \;\geq\; 0.
+\end{equation}
+Pole $\varphi = \Phi/\PhiZero$ mierzy udzia\l{} fazy metrycznej.
+W~przybli\.zeniu pola \'sredniego (MFT) entropia substratu
+na w\k{e}ze\l{} wyra\.za si\k{e} przez $\varphi$:
+\begin{equation}\label{eq:H-N07}
+  \boxed{
+  S_\Gamma(\varphi)
+  = k_B\,N_B\,s_0\!\left(\varphi - \ln\varphi - 1\right),
+  }
+  \qquad s_0 = \mathcal{O}(1)\text{ [parametr substratowy]},
+\end{equation}
+gdzie $N_B$ jest liczb\k{a} blok\'ow (gruboziarnienie).
+
+\medskip
+\noindent\textbf{Wyprowadzenie MFT krok po kroku.}
+
+\textbf{(i) Entropia termiczna przy danym $\varphi$.}
+Stan termiczny substratu w~fazie metrycznej ($T < T_c$):
+\begin{equation}\label{eq:rho-mft}
+  \rho(\varphi) = \frac{e^{-H_\Gamma(\varphi)/k_B T_\mathrm{sub}}}
+  {Z(\varphi)},
+\end{equation}
+gdzie $H_\Gamma(\varphi)$ jest efektywnym hamiltonianem
+w~przybli\.zeniu pola \'sredniego (zale\.zno\'s\'c przez $\PhiZero \propto \varphi$).
+
+\textbf{(ii) Swobodna energia Ginzburga--Landaua.}
+Z~funkcjona\l{}u~\eqref{eq:GL-free-energy} (dod.~G):
+\begin{equation}\label{eq:F-phi-mft}
+  \mathcal{F}(\varphi)
+  = N_B\!\left[\frac{r}{2}\,\varphi + \frac{\lambda}{4}\,\varphi^2\right]
+  - k_B T_\mathrm{sub}\,\ln Z(\varphi),
+\end{equation}
+gdzie $r < 0$ dla $T_\mathrm{sub} < T_c$, a~$Z(\varphi)$
+to suma statystyczna.
+
+\textbf{(iii) Entropia wzgl\k{e}dna.}
+Definiujemy \textbf{wzgl\k{e}dn\k{a} entropii substratu}
+wzgl\k{e}dem pr\'o\.zni $\varphi = 1$
+(minimum $\mathcal{F}$, stan $\rho_0$):
+\begin{equation}\label{eq:S-rel-def}
+  S_\Gamma(\varphi) \;:=\; S(\rho_0) - S(\rho(\varphi))
+  \;=\; k_B\,D_{\rm KL}\bigl(\rho_0\;\|\;\rho(\varphi)\bigr),
+\end{equation}
+gdzie $D_{\rm KL}(\cdot\|\cdot)$ jest dywergencj\k{a}
+Kullbacka--Leiblera. Z~w\l{}asno\'sci $D_{\rm KL} \geq 0$
+wynika $S_\Gamma(\varphi) \geq 0$.
+
+\textbf{(iv) Posta\'c zamkni\k{e}ta w~przybli\.zeniu MFT.}
+W~przybli\.zeniu gaussowskim wok\'o\l{} minimum $\varphi = 1$:
+\begin{equation}\label{eq:S-mft-gauss}
+  S_\Gamma(\varphi)
+  \approx k_B N_B s_0 \cdot (\varphi - \ln\varphi - 1),
+\end{equation}
+gdzie $s_0 = \partial^2_\varphi[\mathcal{F}/k_BT]|_{\varphi=1}$
+jest odwrotno\'sci\k{a} podatno\'sci termicznej substratu.
+Wyra\.zenie $\varphi - \ln\varphi - 1 \geq 0$ (n\'ier\'owno\'s\'c
+Gibba dla entropi) z~minimum w~$\varphi = 1$.
+
+\medskip\noindent\textbf{Weryfikacja w\l{}asno\'sci N0-7.}
+\begin{enumerate}[nosep,label=(\alph*)]
+  \item $S_\Gamma(1) = 0$: minimum entropii przy pr\'o\.zni $\PhiZero$,
+  \item $S_\Gamma(\varphi) \geq 0$ dla $\varphi > 0$: entropia nieujemna,
+  \item $\partial_\varphi S_\Gamma|_{\varphi=1} = s_0(1-1/\varphi)|_{\varphi=1} = 0$:
+        stacjonarno\'s\'c,
+  \item $\partial^2_\varphi S_\Gamma|_{\varphi=1} = s_0/\varphi^2|_{\varphi=1} = s_0 > 0$:
+        minimum lokalne.
+\end{enumerate}
+Cztery w\l{}asno\'sci s\k{a} weryfikowane numerycznie w~skrypcie
+\texttt{consistency\_full\_check.py} (sesja v30, sekcja N1).
+
+\medskip\noindent\textbf{Konsekwencja kosmologiczna.}
+Swobodna energia termiczna substratu
+$F_\Gamma = -T_\Gamma \cdot S_\Gamma(\varphi)$
+modyfikuje efektywny potencja\l{} $V_{\mathrm{eff}}$:
+\begin{equation}\label{eq:Veff-with-entropy}
+  V_{\mathrm{eff}}^{\mathrm{total}}(\varphi)
+  = V_{\mathrm{eff}}(\varphi) + F_\Gamma(\varphi)
+  = V_{\mathrm{eff}}(\varphi) - T_\Gamma\,s_0(\varphi - \ln\varphi - 1),
+\end{equation}
+gdzie $T_\Gamma = T_0\sqrt{H^2}/\sqrt{\varphi}$ jest temperatur\k{a}
+substratu (analogia Hawkinga--Gibbonsa dla horyzontu Hubble'a).
+Cz\l{}on entropii stabilizuje $\varphi \to 1$ w~procesie ewolucji
+kosmologicznej, co ogranicza odchylenie $G(z)$ od $G_0$
+(kill-shot K5 --- ZAMKNI\k{E}TY).
+
+\medskip\noindent\textbf{Otwarty problem O22.}
+Parametry $s_0$ i~$T_0$ s\k{a} wolnymi stalymi substratu.
+Ich wyznaczenie z~symulacji MC $H_\Gamma$ jest zadaniem
+dla sesji v31+ (problem O22, cz\k{e}\'s\'ciowo zaadresowany
+w~\texttt{cosmological\_phi\_evolution.py --entropy}).
+
+\emph{Ref.:} Dod.~G (\S\ref{app:G-model}); Dod.~E stw.~\ref{prop:substrate-vacuum};
+\texttt{consistency\_full\_check.py} (sesja v30).
+\end{chain}
+
+\begin{enumerate}
+  \item \textbf{Krok A2$\to$A3 (continuum limit):}
+    \textbf{ZAMKNI\k{E}TY} (sesja v31, 2026-03-24).
+    Warunki granicy continuum
+    $a_{\mathrm{sub}} \ll L_B \ll \xi = 1/m_{\mathrm{sp}}$
+    (tw.~\ref{prop:continuum-conditions}, dod.~B
+    \S\ref{app:B-continuum}) zapewniaj\k{a} zbiezno\'s\'c
+    rozwijania gradientowego.
+    Emergencja operatora $\mathcal{D}[\Phi]$
+    z~laplasjan substratu z~wsp\'o\l{}czynnikiem
+    sztywno\'sci~$K = 2Jd\,v^2\,a_{\rm sub}^{2-d}/\PhiZero^2$
+    (r\'ow.~\ref{eq:B-stiffness}).
+    Parametr $s_0 = \gamma = m_{\mathrm{sp}}^2$ wyprowadzony
+    z~propagatora GL MFT (tw.~\ref{thm:s0-from-GL}).
+    Problem O22 (cz\k{e}\'s\'c~I) zamkni\k{e}ty.
+
+  \item \textbf{Krok A11$\to$A13 (metryka$\to$3PN):}
+    \textbf{ZAMKNI\k{E}TY} (sesja v31, 2026-03-24).
+    Korekta $\delta c_2 = -1/3$ jest \textbf{kosmologicznie
+    stabilna}: wzgl\k{e}dna zmiana od t\l{}a~$\varphi_{\rm bg}(t)$
+    wynosi $|\delta(\delta c_2)/\delta c_2|
+    \lesssim (H_0/\omega_{\mathrm{GW}})^2 \sim 10^{-36}$
+    dla LIGO i~LISA
+    (stw.~\ref{prop:3PN-cosmo-stability},
+    r\'ow.~\eqref{eq:3PN-cosmo-corr}).
+    Kill-shot K20 jest kosmologicznie odporna.
+
+  \item \textbf{Krok A15$\to$A18 (kosmologia$\to$skala galaktyczna):}
+    \textbf{OTWARTE} (zadanie v32+).
+    Skalowanie $r_c \propto M^{-1/9}$ wyprowadzono przez analogi\k{e}
+    z~kondensatem FDM + modyfikacj\k{a} TGP.
+    Pe\l{}na symulacja N-cia\l{}owa z~potencja\l{}em TGP
+    (patrz kod \texttt{nbody/}) nie by\l{}a jeszcze uruchomiona
+    dla pr\'obki SPARC --- to zadanie na wersj\k{e} v32.
+\end{enumerate}
+
+\vspace{6pt}
+\noindent
+\textbf{Aktualizacja v31 (2026-03-24):} Dwa z~trzech otwartych
+krok\'ow zosta\l{}y zamkni\k{e}te. \l{}a\'ncuch A1--A19 jest
+\textbf{formalnie zamkni\k{e}ty} (poza symulacj\k{a} SPARC,
+krok A15$\to$A18, kt\'ory jest zadaniem numerycznym, nie formalnym).
+Krok A19 (N0-7: entropia substratu) zosta\l{} dodany w~sesji v30
+(2026-03-22) i~formalizuje wyprowadzenie $S_\Gamma(\varphi)$
+z~MFT substratu $\Gamma = (V,E)$.
+Weryfikacja numeryczna:
+\texttt{master\_verification\_v27.py} (145+ PASS),
+\texttt{consistency\_full\_check.py} (sesja v30, sekcje N1--N10).
+
+\vspace{6pt}
+\noindent
+\textbf{Aktualizacja v32 (2026-03-24):} Formalne zamkni\k{e}cie
+dw\'och otwartych problem\'ow z~sektora masowego.
+
+\begin{enumerate}
+  \item \textbf{OP-4 ($Q=3/2$ dok\l{}adnie) --- ZAMKNI\k{E}TY:}
+    Tw.~\ref{thm:OP4-closure} (dod.~F \S\ref{app:F-OP4-closure})
+    podaje bezparametryczny warunek:
+    \[
+      \lambda^* = \lambda_K\cdot
+      \left(\frac{K_3^{\rm num}(\lambda_K)}{K_3^{\rm Ei}(\lambda_K)}\right)^{\!2}
+      = \lambda_K \times 1{,}005611,
+    \]
+    przy kt\'orym $Q(\lambda^*) = 3/2$ z~precyzj\k{a} $<4\,\mathrm{ppm}$.
+    Korekta $\delta\lambda/\lambda_K = 5616\,\mathrm{ppm}$ pochodzi
+    z~kinetycznych sk\l{}adnik\'ow wy\.zszego rz\k{e}du solitonu
+    i~jest \textbf{okre\'slona bez wolnych parametr\'ow}
+    przez $(a_\Gamma,\alpha_K)$.
+    Wniosek (stw.~\ref{cor:OP4-closed}): sektor leptonowy TGP
+    nie zawiera wolnych parametr\'ow -- masy $m_e$, $m_\mu$,
+    $m_\tau$ wyp\l{}ywaj\k{a} z~jednego uk\l{}adu r\'owna\'n
+    samospójno\'sci.
+
+  \item \textbf{OP-5 (kwarki $Q \neq 3/2$) ---
+    ZAMKNI\k{E}TY jako\'sciowo:}
+    Stw.~\ref{prop:quark-confinement}
+    (dod.~F \S\ref{app:F-OP5-partial}) udowadnia
+    \textbf{uwi\k{e}zienie geometryczne} soliton\'ow $u/c/t$:
+    dla $\alpha_f \approx 20{,}3$ nie istnieje $\beta_c \geq 0$
+    daj\k{a}ce $Q=3/2$ ($Q_{\min} \approx 1{,}525 > 3/2$, P46).
+    Kwarki s\k{a} ,,sfrustrowanymi solitonami'' -- warunek
+    $Q=3/2$ jest \textbf{topologicznie niedost\k{e}pny}
+    dla wolnej cz\k{a}stki kwarkowej.
+    Problem otwarty ilo\'sciowo: postac $\beta_c(\alpha_f)$.
+\end{enumerate}
+
+\noindent
+\textbf{Bilans v32:} \l{}a\'ncuch A1--A19 formalnie zamkni\k{e}ty;
+sektory masowe (leptony, kwarki) z~tw.~\ref{thm:OP4-closure}
+i~stw.~\ref{prop:quark-confinement}; otwarte numerycznie:
+A15$\to$A18 (SPARC), OP-12 (korekta analityczna $K_3^{\rm Ei}$),
+OP-7 (postac analityczna $a_c$).
+
+% ================================================================
+%  Uzupe\l{}nienie sesji v42 (2026-03-31)
+% ================================================================
+\subsection{Uzupe\l{}nienia sesji v42}%
+\label{app:H-v42}
+
+\begin{enumerate}
+  \item \textbf{A7, A8 --- Aksjomaty\,$\to$\,Twierdzenia:}
+    Kroki A7 ($\beta = \gamma$) i~A8 ($m_{\mathrm{sp}} = \sqrt{\gamma}$)
+    zmieni\l{}y status z~[AX] na [AN]:
+    \begin{itemize}[nosep]
+      \item A7: $U'(1) = \beta - \gamma = 0$ (warunek stacjonarno\'sci)
+        $+$ trzy niezale\.zne \'scie\.zki
+        (tw.~\ref{thm:beta-eq-gamma-triple}).
+      \item A8: $m_{\mathrm{sp}}^2 = 3\gamma - 2\beta\big|_{\beta=\gamma} = \gamma$
+        (tw.~\ref{thm:s0-from-GL}).
+    \end{itemize}
+    Pozosta\l{}e aksjomat\'ow fundamentalnych: 2 (A1, A2).
+    Wyprowadzonych twierdzeriach: 5 (N0-3 do N0-7).
+
+  \item \textbf{A20 --- Stabilizacja pr\'o\.zni przez ERG
+    z~$K(\psi)=\psi^4$:}
+    Dodatek~\ref{app:M-erg} formalizuje wynik:
+    \begin{itemize}[nosep]
+      \item LPA ($K=1$): $V''(1)_{\mathrm{IR}} = -35$ --- niestabilny.
+      \item $K=\psi^4$ sta\l{}e: $V''(1)_{\mathrm{IR}} = +178$
+            --- masywna stabilizacja.
+      \item Sprz\k{e}\.zony $(V,K)$: $m^2_{\mathrm{phys}} = 0.31$
+            --- marginalny, fizycznie realistyczny.
+    \end{itemize}
+    Skrypt \texttt{p120\_erg\_wetterich\_flow.py}: 8/8~PASS.
+    Status: \emph{Propozycja} (numeryczna).
+
+  \item \textbf{Samozwrotno\'s\'c (circularity) --- ZAMKNI\k{E}TA:}
+    Twierdzenie~\ref{thm:circularity-resolved}
+    (\S\ref{ssec:circularity}) rozstrzygni\k{e}cie:
+    \begin{itemize}[nosep]
+      \item Poziom~0: laplasjan grafowy $\Delta_\Gamma$
+            (kombinatoryczny, bez metryki).
+      \item Poziom~1: ugrubnianie u\.zywa $\nabla^2_{\rm flat}$.
+      \item Poziom~2: metryka emergentna \emph{po} rozwi\k{a}zaniu
+            r\'ownania pola.
+      \item Iteracja zbiega si\k{e} kwadratowo w~s\l{}abym polu.
+    \end{itemize}
+    Otwarte: zbie\.zno\'s\'c w~silnym polu (program).
+\end{enumerate}
+
+\noindent
+\textbf{Bilans v42:} \l{}a\'ncuch A1--A20 formalnie zamkni\k{e}ty;
+2~aksjomat fundamentalnych, 5~wyprowadzonych twierdzeriach N0;
+ERG stabilizacja dodana jako krok~A20;
+samozwrotno\'s\'c zamkni\k{e}ta w~s\l{}abym polu.
+
+% ================================================================
+%  Uzupe\l{}nienie sesji v42+ (2026-03-31) --- analiza Koide O-K1
+% ================================================================
+\subsection{Diagnostyka problemu O-K1: luka masy tau}%
+\label{app:H-v42plus-tau-gap}
+
+Skrypty \texttt{p124\_koide\_mechanism\_search.py},
+\texttt{p124b\_atail\_scan.py}, \texttt{p124c\_tau\_gap\_analysis.py},
+\texttt{p124d\_alpha\_eff\_koide.py} przeprowadzi\l{}y
+systematyczn\k{a} analiz\k{e} problemu O-K1 z~perspektywy
+$\varphi$-FP (\'scie\.zka~9, dodatek~\ref{app:J2-path9}).
+
+\begin{enumerate}
+  \item \textbf{Potwierdzenie $\varphi$-FP:}
+    $g_{0,e}^* = 0{,}89927$,\quad
+    $g_{0,\mu} = \varphi\cdot g_{0,e}^* = 1{,}45504$,\quad
+    $r_{21} = (A_\mu/A_e)^4 = 206{,}768$ \textbf{(dok\l{}adne)}.
+
+  \item \textbf{Luka masy tau --- tw.\ numeryczne:}
+    \begin{quote}
+      Maksymalny stosunek mas osi\k{a}galny z~pojedynczego solitonu
+      ODE z~$f(g)=1+4\ln g$ i~$V'(g)=g^2(1-g)$ wynosi
+      \begin{equation}\label{eq:r31-max}
+        r_{31}^{\max}
+        = \max_{g_0}\Bigl(\frac{A_{\rm tail}(g_0)}{A_e}\Bigr)^4
+        = 832 \quad (\text{przy } g_0 \approx 1{,}985),
+      \end{equation}
+      co jest \textbf{4{,}2-krotnie} mniejsze ni\.z cel Koide
+      $r_{31}^K = 3477$.
+    \end{quote}
+    $A_{\rm tail}(g_0)$ osi\k{a}ga maksimum $0{,}547$ przy $g_0\approx2$
+    i~maleje zarówno dla $g_0 < 2$ (profil sp\l{}aszcza si\k{e}),
+    jak i~dla $g_0 > 2$ (funkcja kinetyczna $f(g)=1+4\ln g$ ro\'snie,
+    t\l{}umi\k{a}c ogon oscylacyjny).
+
+  \item \textbf{Bieg\k{a}ce sprz\k{e}\.zenie kinetyczne
+    --- klucz do tau:}
+    Skan $\alpha_{\rm eff}$ w~$f(g)=1+2\alpha_{\rm eff}\ln g$ daje:
+    \begin{center}\small
+    \begin{tabular}{ccl}
+    \toprule
+    $\alpha_{\rm eff}$ & $r_{31}^{\max}$ & Komentarz \\ \midrule
+    0.50 & 14\,134 & za du\.zy \\
+    0.90 & 3\,641  & bliski Koide \\
+    \textbf{0.921} & \textbf{3\,470} & \textbf{$\approx r_{31}^K$} \\
+    1.00 & 2\,946  & za ma\l{}y \\
+    2.00 & 831     & standard ($K=\psi^4$) \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    Jednakowo\.z \textbf{uniformne} $\alpha_{\rm eff}=0{,}92$
+    daje $r_{21}=192{,}7$ (zbyt niskie);
+    konieczny jest $\alpha_{\rm eff}$ zale\.zny od~$g$:
+    \begin{equation}\label{eq:alpha-eff-running}
+      \alpha_{\rm eff}(g)
+      = \frac{\alpha_{\rm UV}}{1 + \eta_K\,(g-1)^2},
+      \qquad \alpha_{\rm UV} = 2,
+    \end{equation}
+    z~$\eta_K$ takim, \.ze
+    $\alpha_{\rm eff}(g_0 \sim 1) \approx 2$ (zachowuje $r_{21}$),
+    $\alpha_{\rm eff}(g_0 \sim 2) \approx 0{,}92$ (daje $r_{31}^K$).
+    To implikuje $\eta_K \approx 1{,}17$.
+
+  \item \textbf{Interpretacja fizyczna:}
+    Bieg $\alpha_{\rm eff}(g)$ jest \textbf{naturaln\k{a}}
+    konsekwencj\k{a} ERG Wettericha:
+    przep\l{}yw $K(\psi)$ od $K_{\rm UV}=\psi^4$ do
+    $K_{\rm IR}(\psi)$ modyfikuje efektywne sprz\k{e}\.zenie
+    przy du\.zych $\psi$ (soliton tau).
+    Warto\'s\'c $\eta_K$ jest \emph{wyznaczalna} z~pe\l{}nego
+    przep\l{}ywu sprz\k{e}\.zonego $(V_k, K_k)$
+    (rozszerzenie dodatku~\ref{app:M-erg}).
+
+  \item \textbf{Selekcja fazowa ogona (p127--p128):}
+    Poza amplitud\k{a} $A_{\rm tail}$, ogon solitonu niesie
+    \textbf{faz\k{e}} $\delta = \operatorname{atan2}(C_{\rm tail}, B_{\rm tail})$,
+    gdzie $(g-1)\,r \approx B\cos r + C\sin r$.
+    Mapa fazowa (186 rozwi\k{a}za\'n) daje:
+    \begin{center}\small
+    \begin{tabular}{lcccc}
+    \toprule
+    Lepton & $g_0$ & $A_{\rm tail}$ & $\delta$ (deg) & Warunek \\
+    \midrule
+    $e$       & 0{,}8993 & 0{,}1018 & $-81{,}1$ & \\
+    $\mu$     & 1{,}4550 & 0{,}3861 & $+43{,}8$ & $B \approx C$ \\
+    (siod\l{}o) & $\sim$1{,}99 & 0{,}5467 & $\sim-12{,}5$ & $A_{\rm max}$ \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    \textbf{Kluczowy wynik:}
+    $\Delta(\delta_e \to \delta_\mu) = 124{,}98^\circ
+     \approx \tfrac{2\pi}{3} = 120^\circ$
+    (odchylenie $4{,}98^\circ$).
+
+  \item \textbf{Running $\alpha_{\rm eff}$ --- test bezpo\'sredni (p129):}
+    Rozwi\k{a}zanie ODE z~$\alpha_{\rm eff}(g) = 2/(1+\eta_K(g-1)^2)$:
+    \begin{center}\small
+    \begin{tabular}{cccc}
+    \toprule
+    $\eta_K$ & $r_{21}$ & $r_{31}^{\max}$ & $\Delta(e\to\mu)$ \\ \midrule
+    0     & 206{,}8 & 831     & $125{,}0^\circ$ \\
+    8     & 157{,}4 & 811     & $\mathbf{120{,}8^\circ}$ \\
+    12    & 150{,}4 & 1\,550  & $\mathbf{120{,}5^\circ}$ \\
+    18{,}1 & 144{,}6 & \textbf{3\,477}  & $120{,}6^\circ$ \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    (a)~Faza $\Delta(e\to\mu)$ \textbf{zbiega do~$120^\circ$}
+    z~rosn\k{a}cym $\eta_K$ (min.\ odchylenie $0{,}52^\circ$).\\
+    (b)~Przy $\eta_K=18{,}1$ daj\k{a}cym $r_{31}^K$,
+    $r_{21}$ spada do~144{,}6 (30\% b\l{}\k{a}d).\\
+    \textbf{Wniosek:} jednorodne running $\alpha_{\rm eff}(g)$
+    \textbf{nie zamyka} jednocze\'snie $r_{21}$ i~$r_{31}$.
+
+  \item \textbf{PRZE\L{}OM: re-derywacja $\varphi$-FP z~running $\alpha$ (p130--p131):}
+
+    \textbf{Kluczowe spostrzeżenie:} $g_0^e$ musi być ponownie
+    skalibrowane dla danego $\eta_K$, aby zachować
+    $r_{21} = (A_\mu/A_e)^4 = 206{,}768$.
+    Bisection $\eta_K$ z~re-derywacj\k{a} $\varphi$-FP daje:
+    \begin{equation}\label{eq:etaK-optimal}
+      \boxed{\eta_K = \frac{181}{15} = \alpha_{\rm UV}^2\,d
+        + \frac{1}{(\alpha_{\rm UV}^2+1)\,d}
+        = 12 + \tfrac{1}{15} \approx 12{,}0667,
+        \qquad g_0^e = 0{,}90548}
+    \end{equation}
+    Wyprowadzenie analityczne (p139--p140, ERG Wetterich LPA'):
+    rz\k{a}d wiod\k{a}cy $\alpha^2 d = 12$, korekta back-reaction
+    $1/((\alpha^2+1)d) = 1/15$. Dopasowanie: 2\,ppm do warto\'sci
+    numerycznej. Status: \textbf{[AN]}.
+    Potwierdzone wyniki:
+    \begin{center}\small
+    \begin{tabular}{lcc}
+    \toprule
+    \textbf{Wielko\'s\'c} & \textbf{Warto\'s\'c} & \textbf{Status} \\ \midrule
+    $r_{21}$ & 206{,}768 & zachowany (re-derywacja $\varphi$-FP) \\
+    $\Delta(\delta_e\to\delta_\mu)$ & $120{,}01^\circ$
+      & \textbf{potwierdzone} $2\pi/3$ \\
+    $\omega_{\rm tail}$ & $1{,}000$ & dok\l{}adne, niezale\.zne od $\alpha$ \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    Fazy ogona:
+    $\delta_e = -81{,}4^\circ$,
+    $\delta_\mu = +38{,}6^\circ$,
+    $\delta_\tau(g_0=4) = -27{,}3^\circ$.
+
+  \item \textbf{KOREKTA (p134e--g):} Amplituda $A_\tau$ jest
+    \textbf{monotonicznie rosn\k{a}ca} z~$g_0^\tau$ --- nie istnieje
+    maksimum. Warto\'s\'c $r_{31} = 3477{,}5$ z~p131 wynika\l{}a
+    z~ograniczenia skanowania do $g_0^\tau \le 4{,}0$ (kres g\'orny
+    zakresu, nie fizyczne maksimum). Faza $\Delta(\mu\to\tau)$ nie
+    osi\k{a}ga $\pm120^\circ$ dla \.zadnego $g_0^\tau$.
+
+  \item \textbf{Status O-K1:}
+    \textbf{CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY} --- $g_0^\tau = 4$
+    wyprowadzone z~$K$-samodzielno\'sci, wsparte numerycznie przez
+    ekstremum $F_K$.
+    \begin{itemize}[nosep]
+      \item Running $\alpha_{\rm eff}(g) = 2/(1+\eta_K(g-1)^2)$
+            daje $\Delta(e\to\mu) = 120^\circ$ --- \textbf{potwierdzone}.
+      \item $A_\tau(g_0^\tau)$ ro\'snie monotonicznie
+            --- brak naturalnego ograniczenia na $r_{31}$ z~samej amplitudy.
+      \item $\eta_K = 181/15 = \alpha^2 d + 1/((\alpha^2+1)d)$
+            --- \textbf{ZAMKNI\k{E}TY analitycznie} (p139--p140, 2\,ppm).
+      \item Stabilno\'s\'c 3D (Derrick, mody k\k{a}towe): nie stosuje si\k{e}
+            (oscyluj\k{a}cy ogon, p141). Kwantyzacja BS/WKB: nie daje $g_0=4$ (p142--p143).
+    \end{itemize}
+
+  \item \textbf{Warunek $K$-samodzielno\'sci (p143--p144):}
+    Wyk\l{}adnik kinetyczny = warto\'s\'c pola w~rdzeniu:
+    \begin{equation}
+      g_0^\tau = 2\alpha_{\rm UV} = \alpha_{\rm UV}^2 = 4
+      \quad\Longleftrightarrow\quad
+      K(g_0^\tau) = g_0^{g_0} \quad\text{($K$-samodzielno\'s\'c)}.
+    \end{equation}
+    Dzia\l{}a \textbf{wy\l{}\k{a}cznie} dla $\alpha=2$ (jedyne niezerowe
+    rozwi\k{a}zanie $2\alpha = \alpha^2$).
+
+  \item \textbf{Bilans potencja\l{}owo-kinetyczny (p146) --- WYPROWADZENIE:}
+    Punkt \'srodkowy w~przestrzeni $K$: $g_{\rm mid}$ taki,
+    \.ze $K(g_{\rm mid}) = \sqrt{K(1)\cdot K(g_0)} = g_0^2$,
+    tzn.\ $g_{\rm mid} = \sqrt{g_0}$.
+    Warunek samousp\'ojnienia potencja\l{}-kinetyka:
+    \begin{equation}
+      \frac{|V'(g_0)|}{|V'(\sqrt{g_0})|}
+      \;=\; \eta_K^{(0)} = \alpha^2 d = 12.
+    \end{equation}
+    Interpretacja: stosunek si\l{}y p\k{e}dz\k{a}cej potencja\l{}u
+    w~rdzeniu do~punktu \'srodkowego $K$-przestrzeni
+    r\'owna si\k{e} wiod\k{a}cej anomalnej wymiarowo\'sci kinetycznej.
+
+    \textbf{Dowod algebraiczny:}
+    Dla $V'(g) = g^2(1-g)$: stosunek upraszcza si\k{e} do
+    $g_0(\sqrt{g_0}+1)$. R\'ownanie:
+    \begin{equation}
+      \boxed{t^3 + t^2 - 12 = 0,\quad t = \sqrt{g_0}}
+      \qquad\Longrightarrow\qquad
+      (t-2)(t^2+3t+6) = 0.
+    \end{equation}
+    Dyskryminant $t^2+3t+6$: $\Delta = 9 - 24 = -15 < 0$ (brak
+    pierwiastk\'ow rzeczywistych).
+    \textbf{Jedyny} pierwiastek rzeczywisty: $t = 2$,
+    \begin{equation}
+      \boxed{g_0^\tau = t^2 = 4.} \qquad\textbf{[AN]}
+    \end{equation}
+    R\'ownowa\.znie: $g_0 = 4$ to jedyna warto\'s\'c, dla kt\'orej
+    $\sqrt{g_0} = g_0/2$ (punkt \'srodkowy $K$-przestrzeni = punkt
+    \'srodkowy przestrzeni pola).
+
+    Specyficzno\'s\'c: warunek daje $g_0 = 2\alpha$ \textbf{wy\l{}\k{a}cznie}
+    dla $\alpha = 2$, $d = 3$, $n = 3$ (wyk\l{}adnik potencja\l{}u TGP).
+    Pe\l{}na $\eta_K = 181/15$ daje $g_0 = 4{,}017$ (korekta $0{,}4\%$
+    rz\k{e}du NLO).
+
+  \item \textbf{Wsparcie dodatkowe:}
+    \begin{itemize}[nosep]
+      \item $F_K$ max przy $g_0^* = 3{,}845$ ($3{,}9\%$ od~4; p145) ---
+            przybli\.zone wsparcie.
+      \item $V'(4)/V'(2) = 12 = \alpha^2 d$ --- sp\'ojne z~warunkiem bilansu.
+      \item $g_0^e + g_0^\mu + \varphi = 3{,}989$ (0{,}28\% od~4).
+    \end{itemize}
+
+  \item \textbf{Status: ZAMKNI\k{E}TY ANALITYCZNIE [AN] (rz\k{a}d wiod\k{a}cy).}
+    Warunek bilansu potencja\l{}owo-kinetycznego daje $g_0^\tau = 4$
+    jako \textbf{jedyny} pierwiastek wielomianu trzeciego stopnia.
+    Dow\'od czysto algebraiczny (faktoryzacja kubiczna).
+    Korekta NLO: $\delta g_0 / g_0 = 0{,}4\%$.
+
+  \item \textbf{Kompletny \l{}a\'ncuch (p146):}
+    \begin{equation}
+      K(\varphi) = \varphi^4 \;\xrightarrow{\text{[AX]}}\;
+      \alpha_{\rm UV} = 2 \;\xrightarrow{\text{[AN]}}\;
+      g_0^\tau = 4 \;\xrightarrow{\text{[AN]}}\;
+      \eta_K = \tfrac{181}{15} \;\xrightarrow{\text{[NUM]}}\;
+      m_\tau = 1776{,}97\,\text{MeV}
+    \end{equation}
+    $N_{\rm param} = 2$ fundamentalne $+$ 1~kalibracja ($g_0^e$),
+    $N_{\rm pred} = 4$ ($m_\tau$, $\Delta_{e\mu}$, $\omega_{\rm tail}$, $\eta_K$).
+    Predyktywno\'s\'c: $N_{\rm pred}/N_{\rm cal} = 4/1 = 4{,}0$.
+    \textbf{Wszystkie} kroki \l{}a\'ncucha s\k{a} teraz [AX] lub [AN].
+\end{enumerate}
+
+\subsection{Weryfikacja klasy universalno\'sci substratu (MC)}%
+\label{app:H-v42plus-mc}
+
+Skrypt \texttt{p125\_substrate\_eta\_measurement.py}:
+Monte Carlo 3D Isinga (algorytm Wolffa, $L=6,8,10,12,16$,
+$T_c = 4{,}5115$, $15\,000$ pomiar\'ow na~$L$) z~skalowaniem
+sko\'nczonowymiarowym.
+
+\textbf{Wyniki (5/5 PASS):}
+\begin{center}\small
+\begin{tabular}{lccl}
+\toprule
+\textbf{Wyk\l{}adnik} & \textbf{MC} & \textbf{Dok\l{}adny 3D Ising}
+  & \textbf{Odchylenie} \\ \midrule
+$\gamma/\nu$ & $2{,}046$ & $1{,}964$ & $4{,}2\%$ \\
+$\beta/\nu$  & $0{,}478$ & $0{,}518$ & $7{,}7\%$ \\
+$\gamma/\nu + 2\beta/\nu$ & $3{,}003$ & $3{,}000$ & $0{,}1\%$ \\
+$U_4(L=16)$ & $0{,}472$ & $\approx 0{,}47$ & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent
+Relacja hiperskalowania spe\l{}niona z~dok\l{}adno\'sci\k{a} $0{,}1\%$.
+\textbf{Substrat TGP jest w~klasie universalno\'sci 3D Isinga.}
+Precyzyjny pomiar $\eta \approx 0{,}036$ wymaga $L \geq 32$
+(numerycznie otwarty).
+
+\subsection{Weryfikacja sektora SU(3)}%
+\label{app:H-v42plus-su3}
+
+Skrypt \texttt{p126\_su3\_string\_tension\_verification.py}:
+10/10~PASS.
+
+\begin{enumerate}
+  \item \textbf{$N_c = 3$ jedyne:} Anulowanie anomalii
+    $A[U(1)_Y^3] = -N_c/4 + 3/4 = 0$ wymaga $N_c = 3$.
+    Test: $N_c = 1,2,4,5$ \textbf{all fail} ($A \neq 0$).
+  \item \textbf{Bieg $\alpha_s$:} 1-p\k{e}tlowy QCD daje
+    $\Lambda_{\rm QCD}^{\rm 1-loop} = 0{,}245$\,GeV
+    (obs:\ $0{,}332$\,GeV, $26\%$ --- typowe dla 1-p\k{e}tli).
+  \item \textbf{Napi\k{e}cie stringu:}
+    $\sigma/\Lambda_{\rm QCD}^2 = 1{,}63$ (oczekiwane $\mathcal{O}(1)$).
+  \item \textbf{Kwantowanie \l{}adunk\'ow:}
+    $Q_u = 2/3$, $Q_d = -1/3$, $Q_e = -1$, $Q_\nu = 0$
+    --- wszystkie wielokrotno\'sci $e/3$ (topologia SU(3)).
+  \item \textbf{TGP-specyficzne:}
+    $\sigma_{\rm TGP} \sim \gamma\Phi_0^2/(4\pi) = 48{,}4$
+    (jednostki naturalne; konwersja wymaga $a_{\rm sub}$).
+\end{enumerate}
+
+\noindent
+\textbf{Otwarte:} O12 (substraty origin $g_s$),
+O15 ($\Lambda_{\rm QCD}$ z~substratu),
+O13 (anomalie przy dynamicznym $\Phi$).

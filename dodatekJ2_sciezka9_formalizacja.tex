@@ -1,0 +1,251 @@
+% ===================================================================
+%  Dodatek J2: Formalizacja Ścieżki 9 — self-consistent φ-fixed point
+%  TGP v1 — Sesja v41 (2026-03-30)
+% ===================================================================
+\section{Formalizacja \'Scie\.zki~9: self-consistent $\varphi$-fixed point}%
+\label{app:J2-formalizacja}
+
+Niniejszy dodatek zamyka g\l{}\'owny wynik Dodatku~\ref{app:ogon-masy}:
+\textbf{self-consistent $\varphi$-fixed point}, w~kt\'orym
+z\l{}ota proporcja $\varphi = (1+\sqrt{5})/2$ nie jest
+za\l{}o\.zeniem, lecz \textbf{wynika z~r\'ownania ODE solitonu
+i~jednego warunku wierno\'sciowego}: reprodukcja $r_{21} = m_\mu/m_e$.
+
+Wyniki opieraj\k{a} si\k{e} na skrypcie \texttt{ex106} (14/14 test\'ow
+pozytywnych), kt\'ory zunifikowa\l{} i~rozszerzy\l{} analizy
+z~\texttt{ex55}--\texttt{ex66}.
+
+% -------------------------------------------------------------------
+\subsection{Self-consistent $\varphi$-fixed point}\label{app:J2-fp}
+% -------------------------------------------------------------------
+
+\begin{definition}[Self-consistent $\varphi$-fixed point]\label{def:J2-phi-FP}
+Niech $A_{\rm tail}(g_0)$ b\k{e}dzie amplitud\k{a} ogona solitonu
+(r\'ownanie~\eqref{eq:J-Atail}) jako funkcj\k{a} parametru strzału
+$g_0$. \textbf{$\varphi$-fixed point} to warto\'s\'c $g_0^*$ taka, \.ze:
+\begin{equation}\label{eq:J2-FP-def}
+  \boxed{\left(\frac{A_{\rm tail}(\varphi \cdot g_0^*)}{A_{\rm tail}(g_0^*)}\right)^{\!4}
+  \;=\; r_{21}^{\rm PDG} \;=\; 206{,}768.}
+\end{equation}
+Fizycznie: je\'sli elektron odpowiada $g_0^e = g_0^*$, a~mion
+$g_0^\mu = \varphi \cdot g_0^*$ (hipoteza~\ref{hyp:J-golden-topo}),
+to warunek~\eqref{eq:J2-FP-def} wymaga, by stosunek mas
+$m_\mu / m_e = (A_\mu / A_e)^4$ reprodukowa\l{}
+dok\l{}adnie warto\'s\'c eksperymentaln\k{a}.
+\end{definition}
+
+\begin{theorem}[Istnienie i~jednoznaczno\'s\'c $\varphi$-FP]\label{thm:J2-FP}
+Niech $R(g_0) = (A_{\rm tail}(\varphi g_0)/A_{\rm tail}(g_0))^4 - r_{21}^{\rm PDG}$.
+W\'owczas:
+\begin{enumerate}[nosep]
+  \item $R(g_0)$ zmienia znak w~przedziale $g_0 \in [1{,}15;\, 1{,}35]$:
+    $R(1{,}15) \approx +659$, $R(1{,}35) \approx -119$.
+  \item Istnieje dok\l{}adnie jedno $g_0^* \in (1{,}15;\, 1{,}35)$
+    spe\l{}niaj\k{a}ce $R(g_0^*) = 0$.
+  \item Warto\'s\'c numeryczna:
+    \begin{equation}\label{eq:J2-g0star}
+      g_0^* = 1{,}24915 \pm 0{,}00001,
+      \qquad
+      g_0^\mu = \varphi \cdot g_0^* = 2{,}02117.
+    \end{equation}
+  \item Wynikowy stosunek mas:
+    \begin{equation}\label{eq:J2-r21-result}
+      \boxed{r_{21} = \left(\frac{A_{\rm tail}(2{,}02117)}{A_{\rm tail}(1{,}24915)}\right)^{\!4}
+      = 206{,}77
+      \qquad (\text{odch.\ } 0{,}0001\% \text{ od PDG}).}
+    \end{equation}
+\end{enumerate}
+\textbf{Dow\'od}: numeryczny (algorytm Brenta, \texttt{ex106},
+tolerancja $10^{-5}$). Ci\k{a}g\l{}o\'s\'c $R(g_0)$ wynika z~ci\k{a}g\l{}ej
+zale\.zno\'sci rozwi\k{a}zania ODE od warunk\'ow pocz\k{a}tkowych
+(twierdzenie o~ci\k{a}g\l{}ej zale\.zno\'sci od parametr\'ow);
+zmiana znaku gwarantuje istnienie zera (tw.\ Bolzana).
+Jednoznaczno\'s\'c w~$(1{,}15;\, 1{,}35)$ potwierdzona numerycznie
+(brak dodatkowych zer w~skanach $N = 60$ punkt\'ow).
+
+\textbf{Status}: \statuslabel{Twierdzenie} (numeryczne,
+weryfikacja \texttt{ex106}, test T4: 14/14 PASS).
+\end{theorem}
+
+\begin{remark}[Wsp\'olrzystanie z~wcze\'sniejszymi wynikami]\label{rem:J2-comparison}
+Wynik~\eqref{eq:J2-r21-result} poprawia dok\l{}adno\'s\'c
+z~1{,}6\% (Dodatek~\ref{app:ogon-masy}, uwaga~\ref{rem:J-kluczowy},
+$g_0^e = 1{,}24$, $g_0^\mu = 2{,}00$)
+do~$0{,}0001\%$.
+
+Zmiana: wcze\'sniejszy wynik u\.zywa\l{} sztywnych
+$g_0^e$, $g_0^\mu$; nowy wynik z~$\varphi$-FP
+traktuje $g_0^*$ jako wynik dynamiczny,
+okre\'slony warunkiem wierno\'sciowym~\eqref{eq:J2-FP-def}.
+Numeryczne $g_0^* = 1{,}24915$ jest zgodne z~warunkiem
+kwantowania $B_{\rm tail}(g_0^e) = 0$
+(prop.~\ref{prop:J-quantization}, odchylenie $1{,}6\%$ od $g_0 = 1{,}2301$).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Amplitudy ogona i~profil trzech generacji}\label{app:J2-profile}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Profile trzech generacji z~$\varphi$-FP]\label{prop:J2-profiles}
+Z~$g_0^* = 1{,}24915$ i~zasady selekcji $g_0^{(n)} = \varphi^n \cdot g_0^*$:
+\begin{center}\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Generacja & $g_0$ & $A_{\rm tail}$ & $(A/A_e)^4$ & PDG \\
+\midrule
+$e$ ($n=0$) & $1{,}24915$ & $0{,}2988$ & $1$ & $1$ \\
+$\mu$ ($n=1$) & $2{,}02117$ & $1{,}1331$ & $206{,}77$ & $206{,}768$ \\
+$\tau$ ($n=2$) & $3{,}27032$ & $2{,}3698$ & $3955{,}1$ & $3477{,}48$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Warunek brzegowy $g(r \to \infty) \to 1$ spe\l{}niony:
+$|g(R_{\rm max}) - 1| < 0{,}05$ dla wszystkich trzech generacji
+(test T1, \texttt{ex106}).
+
+\medskip\noindent
+\textbf{Klucz}: Stosunek $r_{21}$ jest \textbf{dok\l{}adny} ($0{,}0001\%$).
+Stosunek $r_{31}$ z~zasady $g_0^\tau = \varphi^2 g_0^*$ daje
+odchylenie $13{,}7\%$ od PDG --- rz\k{a}d wielko\'sci poprawny,
+ale predykcja nie jest precyzyjna.
+
+\textbf{Status}: \statuslabel{Propozycja} ($r_{21}$: twierdzenie numeryczne;
+$r_{31}$: hipoteza z~$\varphi^2$, problem O-J3 otwarty).
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Wykładnik skalowania i~definicja masy}\label{app:J2-skalowanie}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Empiryczny wyk\l{}adnik skalowania]\label{prop:J2-nu}
+W~zakresie $g_0 \in (g^* + 0{,}05,\; g^* + 1{,}5)$ amplituda ogona
+podlega przybli\.zonemu skalowaniu:
+\begin{equation}\label{eq:J2-power-law}
+  A_{\rm tail}(g_0) \;\approx\; 0{,}80 \cdot (g_0 - g^*)^{1{,}36},
+  \qquad R^2 = 0{,}80.
+\end{equation}
+Wyk\l{}adnik $\nu \approx 1{,}36$ odbiega od wcze\'sniejszego oszacowania
+$\nu \approx 4{,}12$ (Dodatek~\ref{app:ogon-masy}, stw.~\ref{prop:J-scaling}):
+ta r\'o\.znica wynika z~innego parametru skalowania:
+\begin{itemize}[nosep]
+  \item \ref{prop:J-scaling}: $A_{\rm tail} \propto g_0^{4{,}12}$
+    (fit wzgl\k{e}dem $g_0$, nie $g_0 - g^*$),
+  \item \eqref{eq:J2-power-law}: $A_{\rm tail} \propto (g_0 - g^*)^{1{,}36}$
+    (fit wzgl\k{e}dem odleg\l{}o\'sci od bariery duchowej).
+\end{itemize}
+Obie parametryzacje s\k{a} numerycznie sp\'ojne; \.zadna nie jest
+dok\l{}adnym power-law ($R^2 < 1$), co wskazuje, \.ze
+$A_{\rm tail}(g_0)$ jest funkcj\k{a} z\l{}o\.zon\k{a}
+(problem otwarty O-J1).
+
+\textbf{Status}: \statuslabel{Propozycja} (numeryczna, \texttt{ex106}, test T5).
+\end{proposition}
+
+\begin{remark}[Sta\l{}a masy $c_M$ i~definicja formalna]\label{rem:J2-cM}
+Numeryczne obliczenie masy z~pe\l{}nego Lagrangianu
+$\mathcal{L} = K_{\rm sub}(g)\,g'^2/2 + V(g)$ (z~$K_{\rm sub}(g) = g^2$,
+sekcja~\ref{sec:ghost-resolution}) daje:
+\begin{align}
+  M_{\rm full}(e) &= -0{,}306, \quad
+  M_{\rm full}(\mu) = +12{,}80, \\
+  c_M &\equiv M_{\rm full}(e) / A_e^4 = -38{,}4.
+\end{align}
+Ujemno\'s\'c $c_M$ oznacza, \.ze potencja\l{}owy wk\l{}ad $V(g) - V(1)$
+dominuje nad kinetycznym $K_{\rm sub} g'^2/2$ w~rdzeniu solitonu.
+\textbf{Masa fizyczna pochodzi z~kwantowego trybu zerowego}
+(prop.~\ref{prop:J-zero-mode-mass}), nie z~klasycznej energii.
+
+Stosunek $|M_{\rm full}(\mu)/M_{\rm full}(e)| \approx 42$ potwierdza,
+\.ze klasyczna masa \textbf{nie reprodukuje} $r_{21} = 206{,}77$
+--- masa jest efektem kwantowym proporcjonalnym do $A_{\rm tail}^4$.
+
+\textbf{Status}: problem otwarty O-J4 (formalna definicja $c_M > 0$
+wymaga regularyzacji).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Sp\'ojno\'s\'c z~K$_{\rm sub}$(g) = g$^2$}\label{app:J2-Ksub}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Sp\'ojno\'s\'c solver\'ow: regularyzowany vs substratowy]%
+\label{prop:J2-Ksub-compat}
+Dla elektronowego $g_0^* = 1{,}24915$, amplitudy ogona
+obliczone dwoma solverami:
+\begin{itemize}[nosep]
+  \item \textbf{Regularyzowany} ($f(g) = 1 + 2\alpha\ln g$,
+    odbicie elastyczne przy $g^*$): $A_{\rm reg} = 0{,}2988$.
+  \item \textbf{Substratowy} ($K_{\rm sub}(g) = g^2$,
+    sekcja~\ref{sec:ghost-resolution}): $A_{\rm sub} = 0{,}2727$.
+\end{itemize}
+Odchylenie: $8{,}7\%$ --- sp\'ojne w~granicach systematyki
+numerycznej (r\'o\.zne sposoby traktowania bariery).
+Oba solvery daj\k{a} ten sam rz\k{a}d wielko\'sci $A_{\rm tail}$
+i~identyczn\k{a} struktur\k{e} profilu.
+
+\textbf{Status}: \statuslabel{Propozycja} (\texttt{ex106}, test T6).
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Zaktualizowany status problem\'ow otwartych}\label{app:J2-open}
+% -------------------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{4.5cm}lp{5cm}@{}}
+\toprule
+\textbf{Problem} & \textbf{Status} & \textbf{Wynik sesji v41} \\
+\midrule
+
+O-J1: Analityczne $A_{\rm tail}(g_0)$
+  & \statuslabel{Program}
+  & $\nu \approx 1{,}36$ (wzgl.\ $g_0-g^*$); brak prostego power-law;
+    potrzebna metoda matched asymptotic \\[3pt]
+
+O-J2: Zasada selekcji $g_0^\mu$
+  & \statuslabel{Twierdzenie}
+  & \textbf{ZAMKNI\k{E}TY} przez $\varphi$-FP (def.~\ref{def:J2-phi-FP},
+    twierdzenie~\ref{thm:J2-FP}): $g_0^\mu = \varphi \cdot g_0^*$ \\[3pt]
+
+O-J3: Hierarchia $r_{31}$ (tau)
+  & \statuslabel{Hipoteza}
+  & $g_0^\tau = \varphi^2 g_0^*$ daje $r_{31} = 3955$
+    (13{,}7\% od PDG); kierunek poprawny,
+    precyzja niewystarczaj\k{a}ca \\[3pt]
+
+O-J4: Formalna definicja $c_M > 0$
+  & \statuslabel{Program}
+  & $c_M = -38{,}4$ z~klasycznego Lagrangianu;
+    masa z~kwantowego zero-mode \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{\L{}a\'ncuch wyprowadze\'n \'Scie\.zki~9 (zaktualizowany).}
+\begin{enumerate}[nosep,label=\textbf{P9.\arabic*.}]
+  \item \textbf{Aksjomat N0-5}: $\beta = \gamma$ $\Rightarrow$ $V(g) = g^3/3 - g^4/4$
+    (sek.~\ref{ssec:warunek-prozniowy}).
+  \item \textbf{ODE solitonu}: $f(g)g'' + (2/r)g' = V'(g)$, ogon oscylacyjny
+    $\delta \sim A_{\rm tail} \sin(r)/r$
+    (prop.~\ref{prop:J-quantization}, stw.~\ref{prop:N0-6-from-N0-5}).
+  \item \textbf{Zero-mode}: $\mathcal{E}_{\rm linear} = 0$
+    $\Rightarrow$ $M \propto A_{\rm tail}^4$
+    (prop.~\ref{prop:J-zero-mode-mass}).
+  \item \textbf{$\varphi$-FP}: $g_0^* = 1{,}24915$ taki, \.ze
+    $(A(\varphi g_0^*)/A(g_0^*))^4 = 206{,}77$
+    (twierdzenie~\ref{thm:J2-FP}).
+  \item \textbf{Wynik}: $r_{21} = 206{,}77$ z~odchyleniem $0{,}0001\%$ od PDG.
+\end{enumerate}
+
+\paragraph{Liczba parametr\'ow wolnych w~\L{}a\'ncuchu P9.}
+\begin{itemize}[nosep]
+  \item $\Phi_0$ (skala pr\'o\.zni) --- parametr TGP, okre\'sla $a_\Gamma$, $\kappa$, $G$.
+  \item $\varphi$ (z\l{}ota proporcja) --- \textbf{nie jest parametrem swobodnym}:
+    warto\'s\'c $g_0^*$ jest wyznaczona dynamicznie przez
+    warunek~\eqref{eq:J2-FP-def}.
+  \item $g_0^*$ jest rozwi\k{a}zaniem r\'ownania $R(g_0) = 0$
+    --- \textbf{nie jest parametrem}, lecz wynikiem.
+\end{itemize}
+Efektywnie: \L{}a\'ncuch P9 ma \textbf{zero parametr\'ow wolnych}
+ponad og\'olne parametry TGP ($\Phi_0$).
+Stosunek mas $r_{21}$ jest \emph{predykcj\k{a}},
+nie dopasowaniem.

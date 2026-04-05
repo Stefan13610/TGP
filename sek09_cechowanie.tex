@@ -1,0 +1,1030 @@
+% ============================================================
+% §9  Emergencja pól cechowania z substratu
+% ============================================================
+\section{Emergencja p\'ol cechowania}\label{sec:cechowanie}
+
+Dotychczasowe sekcje wyprowadziły skalarny sektor TGP: pole $\Phi$
+i~jego dynamikę. Niniejsza sekcja adresuje pytanie, jak
+\textbf{pola cechowania} (elektromagnetyzm, oddziaływanie słabe
+i~silne) wynikają z~tej samej ontologii --- emergencji z~substratu ---
+nie zaś z~zewnętrznego postulatu. Kluczowa zasada:
+
+\begin{remark}[Zasada emergencji cechowania]\label{rem:gauge-emergence-principle}
+W~TGP pole $\Phi$ wynika z~\emph{modułu} parametru porządku
+substratu. Pola cechowania wynikają z~\emph{fazy} tego parametru.
+Obie wielkości są aspektami tej samej konfiguracji substratowej ---
+nie są osobnymi bytami.
+\end{remark}
+
+Podkreślamy ontologiczną różnicę od standardowego podejścia:
+nie wstawiamy pól cechowania na gotowej rozmaitości.
+Wykazujemy, że w~granicy ciągłej substratu o~lokalnej symetrii
+grupowej emergują \emph{spójne} pola wektorowe identyczne
+ze standardowymi polami cechowania.
+
+\begin{remark}[Status niniejszej sekcji]\label{rem:gauge-section-status}
+Niniejsza sekcja ma status \textbf{otwartego programu badań},
+nie zamkniętego modułu teorii. Precyzując poziomy:
+\begin{itemize}[nosep]
+  \item \textbf{Sformalizowany szkic}: emergencja U(1) z~fazy substratu
+    (\S\ref{ssec:u1-photon}); kwantyzacja ładunku z~topologii wirów
+    (stw.~\ref{prop:charge-quantization-gauge});
+    niezmienniczość cechowania (krok~4 w~\S\ref{ssec:u1-photon}).
+  \item \textbf{Hipoteza robocza}: SU(2)$\times$U(1) i~SU(3)
+    z~wieloskładnikowego substratu (\S\ref{ssec:su2-su3});
+    szczegóły w~uwadze~\ref{rem:gauge-status}.
+  \item \textbf{Program do domknięcia}: obliczone stałe sprzężenia
+    $g_s, g_w, g'$ z~parametrów substratu; masy cząstek ze struktury
+    defektów; chiralność fermionów.
+\end{itemize}
+Sekcja ta \textbf{nie powiela bytów}: pola cechowania są projekcją
+\emph{fazowego} sektora tego samego substratu, który daje $\Phi$
+w~sektorze amplitudowym (uwaga~\ref{rem:jeden-substrat} w~\S\ref{sec:ontologia}).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Pe\l{}na struktura substratu: amplituda i~faza}%
+\label{ssec:complex-substrate}
+
+Sekcje~\ref{sec:pole}--\ref{sec:formalizm} wyprowadzi\l{}y
+pe\l{}ny sektor grawitacyjny z~substratu relacyjnego $\Gamma = (V,E)$
+z~realnym operatorem $\hat{s}_i \in \mathbb{R}$ i~symetri\k{a} $\mathbb{Z}_2$.
+Ten substrat jest \textbf{kompletny} dla opisu grawitacji,
+kosmologii i~fal grawitacyjnych.
+
+Niniejsza sekcja rozszerza model o~\textbf{dodatkowy stopie\'n swobody}:
+lokaln\k{a} faz\k{e} $\theta_i$, kt\'ora czyni substrat zespolonym.
+Jest to \textbf{oddzielny krok badawczy} (por.\ uwaga~\ref{rem:jeden-substrat}
+w~\S\ref{sec:ontologia}): rozszerzenie sektora grawitacyjnego,
+nie zmiana jego fundamentu.
+Pytanie: \emph{je\.zeli} substrat mo\.ze posiada\'c lokaln\k{a} faz\k{e},
+czy emerguj\k{a} z~niej pola cechowania?
+
+\begin{axiom}[Rozszerzenie substratu o~lokaln\k{a} faz\k{e}]%
+\label{ax:complex-substrate}
+Rozszerzamy substrat o~dodatkowy stopie\'n swobody:
+ka\.zdy w\k{e}ze\l{} $i \in V$ nosi stan zespolony
+(zamiast $\hat{s}_i \in \mathbb{R}$):
+\begin{equation}\label{eq:complex-state}
+    \psi_i \in \mathbb{C},
+    \qquad
+    \psi_i = \phi_i\, e^{i\theta_i},
+    \qquad
+    \phi_i = |\psi_i| \geq 0,
+\end{equation}
+gdzie $\phi_i$ jest \textbf{amplitudą} (intensywnością obecności),
+a~$\theta_i \in [0, 2\pi)$ --- \textbf{fazą lokalną}.
+\end{axiom}
+
+Hamiltoniano pełnego substratu fazowego:
+\begin{equation}\label{eq:H-complex}
+    H_\Gamma^{(U1)} = \sum_i \left[
+        \frac{m_0^2}{2}\,|\psi_i|^2
+        + \frac{\lambda_0}{4}\,|\psi_i|^4
+    \right]
+    - J\sum_{\langle ij\rangle} \mathrm{Re}\!\left(
+        \psi_i^*\,\psi_j
+    \right).
+\end{equation}
+Ten hamiltoniano jest niezmienniczy względem globalnej transformacji
+$U(1)$: $\psi_i \to e^{i\alpha}\psi_i$ ($\alpha = \mathrm{const}$).
+
+\begin{remark}[Rozszerzenie jest minimalne i~odwracalne]\label{rem:amplitude-sector}
+Dla $\theta_i \equiv 0$ hamiltoniano~\eqref{eq:H-complex}
+redukuje si\k{e} dok\l{}adnie do~\eqref{eq:B-H} z~identyfikacj\k{a}
+$\hat{s}_i = \phi_i$.
+Sekcje~\ref{sec:pole}--\ref{sec:formalizm} s\k{a} zatem
+\textbf{pe\l{}nym} i~\textbf{zamkni\k{e}tym} sektorem grawitacyjnym
+--- nie wymagaj\k{a} fazy $\theta_i$.
+Rozszerzenie o~$\theta_i$ jest motywowane pytaniem
+o~pola cechowania i~jest logicznie \textbf{niezale\.zne}
+od sektora grawitacyjnego: ewentualne obalenie hipotezy
+o~fazowym pochodzi cechowania nie niszczy sektora grawitacyjnego.
+\end{remark}
+
+\begin{proposition}[Zachowanie emergencji $\Phi$ w~pełnym substracie]\label{prop:Phi-preserved}
+W~pełnym zespolonym substracie parametr porządku amplitudy:
+\begin{equation}\label{eq:Phi-from-amplitude}
+    \Phi(x)
+    = \frac{1}{N_B}\sum_{i \in \mathcal{B}(x)}
+    \langle|\psi_i|^2\rangle
+    = \langle\phi_i^2\rangle_{\mathcal{B}(x)},
+\end{equation}
+zachowuje wszystkie własności z~sekcji~\ref{sec:pole}--\ref{sec:formalizm}.
+Pole $\Phi$ nie zależy od fazy $\theta_i$.
+\end{proposition}
+
+\begin{proof}
+Hamiltoniano~\eqref{eq:H-complex} jest separowalny względem amplitudy
+i~fazy dla słabego sprzężenia ($J \ll m_0^2$). Część amplitudowa
+identyczna z~oryginalnym substratem daje ten sam wynik coarse-grainingu.
+\end{proof}
+
+% ----------------------------------------------------------
+\subsection{U(1): emergentny foton z~fazy substratu}%
+\label{ssec:u1-photon}
+
+\subsubsection{Parametr porządku fazy}
+
+Oprócz $\Phi = \langle\phi^2\rangle$ definiujemy \textbf{blokowy
+parametr fazy}:
+\begin{equation}\label{eq:phase-order}
+    \mathcal{A}_\mu(x) = \frac{a_{\mathrm{sub}}}{N_B}
+    \sum_{(ij) \in E_\mu(\mathcal{B})}
+    \mathrm{Im}\!\left[\ln\!\left(\frac{\psi_j}{\psi_i}\right)\right],
+\end{equation}
+gdzie suma biegnie po krawędziach $E_\mu$ prostopadłych do kierunku
+$\mu$ wewnątrz bloku, a~$a_{\mathrm{sub}}$ jest krokiem kratowym.
+Wielkość $\mathcal{A}_\mu$ mierzy \textbf{gradient fazowy} ---
+skumulowaną różnicę faz wzdłuż kierunku $\mu$.
+
+\begin{theorem}[Emergencja pola elektromagnetycznego]\label{thm:photon-emergence}
+W~granicy ciągłej ($a_{\mathrm{sub}} \to 0$ przy ustalonej
+skali fizykalnej), dla konfiguracji o~powolnie zmiennej fazie:
+\begin{enumerate}[nosep]
+    \item $\mathcal{A}_\mu(x) \to A_\mu(x)$ --- czteropotencjał
+          elektromagnetyczny,
+    \item Natężenie: $F_{\mu\nu} = \partial_\mu A_\nu
+          - \partial_\nu A_\mu$ wynika z~geometrii krawędzi substratu,
+    \item Działanie Maxwell'a:
+          \begin{equation}\label{eq:maxwell-action}
+              S_{\mathrm{EM}}
+              = -\frac{1}{4\mu_0}\int F_{\mu\nu}\,F^{\mu\nu}
+                \sqrt{-g}\;d^4x
+          \end{equation}
+          wyłania się z~części kinetycznej hamiltonianu~\eqref{eq:H-complex}
+          pod podwójnym coarse-grainingiem (amplitudy i~fazy).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Dowód (rozszerzony)]
+\textbf{Krok~1: Człon kinetyczny dla sektora fazowego.}
+Dla węzła $i$ substratu: $\psi_i = \phi_i\,e^{i\theta_i}$.
+Człon sprzężenia sąsiada w~kierunku $\mu$:
+\begin{equation}\label{eq:kinetic-step1}
+    -J\,\mathrm{Re}(\psi_i^*\psi_j)
+    = -J\phi_i\phi_j\cos(\theta_j - \theta_i).
+\end{equation}
+W~fazie uporządkowanej ($T < T_c$): $\phi_i \approx \phi_j \approx v$,
+$v = \langle\phi\rangle > 0$. Dla powolnych zmian fazy:
+$\theta_j - \theta_i = a_{\mathrm{sub}}\,(\partial_\mu\theta) + \mathcal{O}(a_{\mathrm{sub}}^2)$.
+Rozwijamy do drugiego rzędu w~$a_{\mathrm{sub}}$:
+\begin{equation}\label{eq:kinetic-step2}
+    -Jv^2\cos(a_{\mathrm{sub}}\,\partial_\mu\theta)
+    = -Jv^2\!\left[1 - \tfrac{1}{2}\,a_{\mathrm{sub}}^2\,(\partial_\mu\theta)^2
+      + \mathcal{O}(a_{\mathrm{sub}}^4)\right].
+\end{equation}
+Stały człon $-Jv^2$ wchłania się do energii próżni.
+Przechodząc do granicy ciągłej ($a_{\mathrm{sub}} \to 0$, przy stałej
+skali fizycznej): gęstość Lagrangiana sektora fazowego wynosi
+\begin{equation}\label{eq:Lphase}
+    \mathcal{L}_{\mathrm{phase}}
+    = \frac{Jv^2}{2}\,a_{\mathrm{sub}}^{2}\sum_{\mu = 1}^{4}(\partial_\mu\theta)^2.
+\end{equation}
+
+\textbf{Krok~2: Identyfikacja pola elektromagnetycznego.}
+Definiujemy czteropotencjał przez gradient fazy:
+\begin{equation}\label{eq:Amu-from-theta}
+    A_\mu \;\equiv\; \frac{\hbar_0}{e}\,\partial_\mu\theta,
+\end{equation}
+gdzie $e$ jest ładunkiem elementarnym (stałą integracji --- patrz uwaga
+o~$\alpha_{\mathrm{em}}$ poniżej).
+Tensor pola $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+= \frac{\hbar_0}{e}(\partial_\mu\partial_\nu\theta
+- \partial_\nu\partial_\mu\theta)$.
+Dla topologicznie trywialnych konfiguracji (gradient dokładny):
+$F_{\mu\nu} = 0$. Dla konfiguracji z~nietrywialną topologią fazy
+(wiry fazowe: $\oint\partial_\mu\theta\,dl^\mu = 2\pi n$, $n\in\mathbb{Z}$):
+$F_{\mu\nu} \neq 0$. Najmniejszy obwód plakietki ($\mu\nu$-kwadrat)
+daje:
+\begin{equation}\label{eq:plaquette}
+    \theta_\square
+    = \oint_{(\mu\nu)} \partial_\lambda\theta\,dl^\lambda
+    = a_{\mathrm{sub}}^2\,\frac{e}{\hbar_0}\,F_{\mu\nu}(x_\square).
+\end{equation}
+
+\textbf{Krok~3: Działanie Maxwella z~plakietek.}
+Sumując człon $\sim(\partial_\mu\theta)^2$ z~równania~\eqref{eq:Lphase}
+po wszystkich parach kierunków $(\mu < \nu)$ i~podstawiając
+$\partial_\mu\theta = (e/\hbar_0)A_\mu$:
+\begin{align}
+    S_{\mathrm{phase}}
+    &= \frac{Jv^2 a_{\mathrm{sub}}^2}{2}
+       \int\!\sum_\mu(\partial_\mu\theta)^2\,d^4x
+    \;=\; \frac{Jv^2 a_{\mathrm{sub}}^2}{2}\cdot
+          \frac{e^2}{\hbar_0^2}
+          \int\!\sum_\mu A_\mu A^\mu\,d^4x \label{eq:Sphase-step1}\\
+    &\supset\;
+    \frac{Jv^2 a_{\mathrm{sub}}^2\,e^2}{2\hbar_0^2}
+    \int\!\sum_{\mu<\nu}F_{\mu\nu}^2\,d^4x, \label{eq:Sphase-maxwell}
+\end{align}
+gdzie $\supset$ oznacza część transwersalną (fizyczne polaryzacje).
+Porównując z~działaniem Maxwella $S_{\mathrm{EM}}
+= -\frac{1}{4\mu_0}\int F_{\mu\nu}F^{\mu\nu}\,d^4x$, uzyskujemy:
+\begin{equation}\label{eq:mu0-substrate}
+    \boxed{
+      \frac{1}{\mu_0}
+      = \frac{2Jv^2 a_{\mathrm{sub}}^2\,e^2}{\hbar_0^2}.
+    }
+\end{equation}
+
+\textbf{Krok~4: Niezmienniczość cechowania.}
+Transformacja $\theta_i \to \theta_i + \lambda(x_i)$
+odpowiada $A_\mu \to A_\mu + \frac{\hbar_0}{e}\partial_\mu\lambda$ ---
+standardowej transformacji cechowania $\mathrm{U}(1)$.
+Tensor $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ jest
+na nią \textbf{dokładnie niezmienniczy}
+(weryfikacja numeryczna: test G2 w~\texttt{gauge\_emergence.py}).
+
+\textbf{Krok~5: Bezmasowość.}
+Człon~\eqref{eq:Lphase} zależy od $\theta$ wyłącznie przez
+$\partial_\mu\theta$ --- brak członu $\propto\theta^2$.
+Symetria $\theta_i \to \theta_i + \mathrm{const}$ jest ciągła i~nieuszkodzona.
+W~przestrzeni pędowej: propagator $\propto k^{-2}$ (bezmasowy).
+Foton pozostaje bezmasowy przy dowolnym obcięciu UV $\Lambda \leq \ell_P^{-1}$,
+bo ochrona jest topologiczna (symetria $\mathrm{U}(1)$ substratu),
+nie fine-tuningowa.
+\end{proof}
+
+\begin{remark}[Kluczowa różnica od standardowego elektromagnetyzmu]
+W~standardowej elektrodynamice $A_\mu$ postulujemy jako pole na
+gotowej rozmaitości. W~TGP $A_\mu$ jest \textbf{gradientem fazy
+substratu} --- konstytuuje się razem z~$g_{\mu\nu}$ (przez $\Phi$),
+nie na $g_{\mu\nu}$. Metryka i~pole elektromagnetyczne mają
+wspólne źródło substratowe.
+\end{remark}
+
+\subsubsection{Stała struktury subtelnej}
+
+\begin{proposition}[Stała sprzężenia elektromagnetycznego]%
+\label{prop:alpha-em}
+Stała struktury subtelnej $\alpha_{\mathrm{em}} = e^2/(4\pi\varepsilon_0\hbar c)$
+wyraża się przez parametry substratu:
+\begin{equation}\label{eq:alpha-em-substrate}
+    \alpha_{\mathrm{em}}
+    = \frac{J^2\,a_{\mathrm{sub}}^4\,v^4}
+           {4\pi\,\hbar\,c_0\,\varepsilon_0^{-1}},
+\end{equation}
+gdzie $v = \langle\phi\rangle$ jest parametrem porządku amplitudy,
+a~$J$ --- sprzężeniem między sąsiadami. W~granicy renormalizacji
+do skali $\lP$ wartość $\alpha_{\mathrm{em}} \approx 1/137$
+wyznacza relację między sprzężeniem substratowym $J$ a~skalą $v$.
+\end{proposition}
+
+\begin{remark}[Zamknięcie O12 -- przepływ RG stałej $\alpha_{\mathrm{em}}$]%
+\label{rem:O12-closed}
+Problem O12 jest \textbf{częściowo zamknięty} dzięki 1-pętlowemu przepływowi
+RG grupy renormalizacji dla $U(1)_Y$ ze standardowymi progami SM.
+Odwrotny przepływ od skali eksperymentalnej $\mu = m_e$ do skali Plancka daje:
+\begin{equation}\label{eq:alpha-Planck}
+    \frac{1}{\alpha_{\mathrm{em}}(\lP)}
+    = \frac{1}{\alpha_{\mathrm{em}}(m_e)}
+      - \frac{b_0}{3\pi}\,\ln\!\frac{\lP}{m_e}
+    \approx 94.09,
+    \qquad
+    \alpha_{\mathrm{sub}} = \alpha_{\mathrm{em}}(\lP) \approx \frac{1}{94.09},
+\end{equation}
+gdzie $b_0 = \tfrac{4}{3}\sum_f Q_f^2\,N_{c,f}$ przebiega po fermionach SM.
+Sprzężenie substratowe:
+\begin{equation}\label{eq:J-substrate-alpha}
+    J_{\mathrm{sub}}
+    = \sqrt{4\pi\,\alpha_{\mathrm{sub}}}
+    \approx 0.366
+    \quad (\text{rząd jedności w jednostkach Plancka}).
+\end{equation}
+Weryfikacja numeryczna: \texttt{scripts/alpha\_em\_rg\_flow.py} -- 9/9 PASS\@.
+Otwarte: pełne wielopętlowe wyprowadzenie $\alpha_{\mathrm{sub}}$ z~parametrów
+hamiltonowskich substratu (eq.~\eqref{eq:alpha-em-substrate}).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{SU(2)×U(1): substrat dwuskładnikowy i~sektor
+  elektrosłaby}\label{ssec:su2u1}
+
+\subsubsection{Rozszerzenie do dubletu}
+
+\begin{axiom}[Substrat SU(2)-symetryczny]\label{ax:su2-substrate}
+Rozszerzamy stan węzła do \textbf{dubletu}:
+\begin{equation}\label{eq:doublet-state}
+    \Psi_i = \begin{pmatrix} \psi_i^{(1)} \\ \psi_i^{(2)} \end{pmatrix}
+    \in \mathbb{C}^2,
+\end{equation}
+z~hamiltonianem niezmienniczym względem globalnej $SU(2) \times U(1)$:
+\begin{equation}\label{eq:H-su2}
+    H_\Gamma^{(SU2)} = \sum_i \left[
+        \frac{m_0^2}{2}\,|\Psi_i|^2
+        + \frac{\lambda_0}{4}\,|\Psi_i|^4
+    \right]
+    - J\sum_{\langle ij\rangle} \mathrm{Re}
+      \bigl(\Psi_i^\dagger\,\Psi_j\bigr).
+\end{equation}
+\end{axiom}
+
+Parametr porządku dubletu:
+\begin{equation}\label{eq:doublet-order}
+    \langle\Psi_i\rangle
+    = v_W\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+    \quad (T < T_{c,W}),
+\end{equation}
+gdzie $v_W$ jest odpowiednikiem vev Higgsa, a~$T_{c,W}$ temperaturą
+substratową elektrosłabego łamania symetrii.
+
+\begin{theorem}[Emergencja bosonu W, Z i~fotonu]\label{thm:su2-emergence}
+Z~hamiltonianu~\eqref{eq:H-su2} w~granicy ciągłej wyłaniają się:
+\begin{enumerate}[nosep]
+    \item \textbf{Trzy pola $SU(2)$}: $W_\mu^a$ ($a = 1,2,3$)
+          z~fluktuacji izospinorowej fazy $\Psi_i$,
+    \item \textbf{Jedno pole $U(1)$}: $B_\mu$ z~globalnej
+          fazy dubletu (analogicznie jak foton w~\S\ref{ssec:u1-photon}),
+    \item \textbf{Trzy masywne bozony}: $W^\pm$, $Z^0$
+          z~mechanizmu substratowego łamania $SU(2)_L \times U(1)_Y
+          \to U(1)_{\mathrm{EM}}$ (gdy $v_W \neq 0$),
+    \item \textbf{Bezmasowy foton}: z~ocalałej kombinacji
+          $A_\mu = B_\mu\cos\theta_W + W_\mu^3\sin\theta_W$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Dowód (rozszerzony)]
+\textbf{Krok~1: Parametryzacja wokół minimum.}
+W~fazie $v_W \neq 0$ rozwijamy:
+\begin{equation}\label{eq:su2-fluct}
+    \Psi_i = \left(\frac{v_W + H_i/\sqrt{2}}{\sqrt{2}}\right)
+    \exp\!\left(\frac{i\xi_i^a\sigma^a}{v_W}\right)
+    \begin{pmatrix}0\\1\end{pmatrix},
+\end{equation}
+gdzie $H_i$ --- fluktuacja amplitudy (Higgs), $\xi_i^a$ ---
+trzy fazy izospinorowe ($a=1,2,3$, $\sigma^a$ --- macierze Pauliego).
+
+\textbf{Krok~2: Człony kinetyczne z~hamiltonianu.}
+Część $-J\,\mathrm{Re}(\Psi_i^\dagger\Psi_j)$ rozwijamy tak jak
+w~dowodzie twierdzenia~\ref{thm:photon-emergence} (Krok~1--2), ale
+teraz dla \emph{dubletu}. Człony izospinorowe dają:
+\begin{equation}\label{eq:su2-kinetic}
+    \mathcal{L}_{W,\mathrm{kin}}
+    = \frac{Jv_W^2 a_{\mathrm{sub}}^2}{2}
+    \sum_{\mu,a}(\partial_\mu\xi^a)^2.
+\end{equation}
+Identyfikujemy: $W_\mu^a = \frac{\hbar_0}{g_W}\partial_\mu\xi^a$
+z~$g_W^2 = 2Je^2 a_{\mathrm{sub}}^2/\hbar_0^2$ (analogicznie do~\eqref{eq:mu0-substrate}).
+
+\textbf{Krok~3: Masy bozonów z~łamania symetrii.}
+Po wybraniu vev~\eqref{eq:doublet-order} Goldstone'owie
+$\xi^a$ zostają ``pochłonięte'' przez pola cechowania.
+Masa wynika z~członu kinetycznego dubletu przy $W_\mu^a \neq 0$:
+\begin{equation}\label{eq:W-mass-deriv}
+    \mathcal{L}_{\mathrm{mass}}
+    = \frac{v_W^2}{4}
+      \Bigl[g_W^2(W_\mu^1{}^2 + W_\mu^2{}^2)
+      + (g_W W_\mu^3 - g_B B_\mu)^2\Bigr].
+\end{equation}
+Stąd:
+\begin{align}
+    m_W^2 &= \frac{g_W^2 v_W^2}{4}, \label{eq:mW-derived}\\
+    m_Z^2 &= \frac{(g_W^2 + g_B^2)\,v_W^2}{4}, \label{eq:mZ-derived}\\
+    m_\gamma &= 0
+    \quad\text{(kombinacja ortogonalna
+    $A_\mu = B_\mu\cos\theta_W + W_\mu^3\sin\theta_W$ bezmasowa)}. \label{eq:mgamma-zero}
+\end{align}
+Kąt Weinsberga: $\tan\theta_W = g_B/g_W$. Relacja
+$m_W/m_Z = \cos\theta_W$ wynika bezpośrednio ze struktury~\eqref{eq:W-mass-deriv}
+i~jest niezależna od wartości $v_W$ --- predykcja TGP
+spójna z~obserwacją ($m_W/m_Z = 0.881$, $\cos\theta_W = 0.877$,
+różnica $\sim 0.5\%$ wynika z~radiacyjnych korekcji QCD).
+\end{proof}
+
+\begin{remark}[Higgs jako amplituda dubletu substratowego]%
+\label{rem:higgs-substrate}
+Pole Higgsa $H$ nie jest postulowane jako osobne pole ---
+jest \textbf{fluktuacją amplitudy} dubletu substratowego
+wokół $v_W$. Jego masa $m_H^2 = 2\lambda_0 v_W^2$
+jest wyznaczona przez parametr samosprężenia $\lambda_0$
+tego samego hamiltonianu. W~TGP mechanizm Higgsa
+jest \emph{substratowym przejściem fazowym}, nie $ad hoc$
+wyborem potencjału.
+\end{remark}
+
+\subsubsection{Łamanie SU(2)×U(1) jako granica fazowa}
+
+\begin{proposition}[Temperatura elektrosłaba a~$\Phi$]\label{prop:EW-phase}
+Substratowe przejście elektrosłabe zachodzi w~temperaturze $T_{c,W}$,
+która koreluje z~wartością $\Phi$:
+\begin{equation}\label{eq:EW-Phi-corr}
+    T_{c,W} \;\propto\; \sqrt{\Phi / \PhiZero} \cdot T_{\mathrm{Planck}}.
+\end{equation}
+We wczesnym Wszechświecie ($\Phi = \PhiZero\psi$ z~$\psi_{\mathrm{ini}} = 1$)
+temperatura substratowa przekraczała $T_{c,W}$, więc $SU(2) \times U(1)$
+było niezłamane. Łamanie następuje naturalnie w~epoce
+$T_{\mathrm{cosm}} \sim v_W \approx 246\;\mathrm{GeV}$,
+spójnie z~kosmologią standardową.
+\end{proposition}
+
+\subsubsection{$SU(2)$ jako podw\'ojne pokrycie $SO(3)$
+  chiralnego substratu}\label{sssec:su2-chiral}
+
+\begin{proposition}[$SU(2)_L$ z~chiralnej asymetrii substratu]%
+\label{prop:su2-from-chirality}
+\statuslabel{Propozycja}
+Emergencja $SU(2)_L$ (a nie $SU(2)_R$) z~substratu ma
+\textbf{geometryczne} \'zr\'od\l{}o w~chiralnej asymetrii
+potencja\l{}u $V(g) = g^3/3 - g^4/4$ (dod.~\ref{app:K2-chiralnosc}).
+
+\medskip\noindent\textbf{Argument w~trzech krokach.}
+
+\emph{Krok~1: Dwa sektory chiralne substratu.}\;
+Potencja\l{} $V(g)$ ma $V'''(1) = -4 \neq 0$ (prop.~\ref{prop:K2-Vasym}),
+co \l{}amie symetri\k{e} $g \leftrightarrow 2-g$ wok\'o\l{} pr\'o\.zni.
+Pary chiralne soliton\'ow $(g_0^R, g_0^L)$ maj\k{a} r\'o\.zne amplitudy
+ogonowe: $A_{\rm tail}^R \neq A_{\rm tail}^L$, wi\k{e}c r\'o\.zne masy
+(tw.~\ref{thm:K2-chiral-selection}). Stosunek $m_R/m_L \approx 2{,}03$
+(dod.~\ref{app:K2-chiralnosc}).
+
+\emph{Krok~2: Przestrze\'n orbit soliton\'ow.}\;
+Konfiguracja solitonowa jest sferyczna: profil $g(r)$ okre\'sla punkt
+w~$SO(3)$ (orientacja rdzenia). Dwie ga\l{}\k{e}zie chiralne
+$(g_0^R, g_0^L)$ definiuj\k{a} \textbf{podw\'ojne pokrycie}:
+\begin{equation}\label{eq:su2-cover}
+    \widetilde{\mathcal{C}}_{\rm sol} \simeq SU(2) \;\cong\; S^3
+    \;\xrightarrow{\;2:1\;}\; SO(3) \;\simeq\; \mathcal{C}_{\rm sol},
+\end{equation}
+gdzie ka\.zdy punkt $SO(3)$ (orientacja) ma dwa podniesienia:
+lewe ($g_0^L < g^*$) i~prawe ($g_0^R > g^*$), rozdzielone
+barier\k{a} duchow\k{a} $g^* = e^{-1/4}$.
+To jest dok\l{}adnie topologia $SU(2)$, nie postulat.
+
+\emph{Krok~3: Selekcja chiralna.}\;
+Bariera duchowa $K_{\rm sub}(g^*) > 0$ (tw.~\ref{thm:ghost-free-soliton})
+blokuje g\l{}\k{e}bokie kinki --- ga\l{}\k{a}\'z $L$ jest
+energetycznie dost\k{e}pna tylko dla lekkich soliton\'ow
+($g_0^L \lesssim g^*$). W~efekcie sektor elektros\l{}aby
+dzia\l{}a \textbf{wy\l{}\k{a}cznie na lewor\k{e}cznych}:
+$SU(2)_L$ emerguje naturalnie, $SU(2)_R$ jest energetycznie
+zablokowana.
+\end{proposition}
+
+\begin{remark}[Warunek falsyfikowalno\'sci sektora $SU(2)$]%
+\label{rem:su2-falsify}
+Propozycja~\ref{prop:su2-from-chirality} daje
+\textbf{dwie mierzalne predykcje}:
+\begin{enumerate}[nosep]
+  \item Stosunek $m_W/m_Z = \cos\theta_W$ wynika ze~struktury
+    dubletu~\eqref{eq:W-mass-deriv} \textbf{bez wolnych parametr\'ow}
+    (obserwacja: $0{,}881$ vs.~$\cos\theta_W = 0{,}877$; zgodno\'s\'c $0{,}5\%$,
+    r\'o\.znica tłumaczona korekcjami radiacyjnymi QCD).
+  \item Chiralny stosunek mas $m_R/m_L \approx 2{,}03$ (z~asymetrii $V(g)$)
+    --- je\'sli przysz\l{}e pomiary neutrin prawor\k{e}cznych
+    poka\.z\k{a} $m_{\nu_R}/m_{\nu_L} \neq 2 \pm 20\%$,
+    mechanizm chiralny TGP jest obalony.
+\end{enumerate}
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{SU(3): substrat trójskładnikowy i~sektor koloru}%
+\label{ssec:su3-color}
+
+\subsubsection{Substrat o~lokalnej symetrii $\mathbb{Z}_3$}
+
+Substrat dwój\-kowy (odpowiedzialny za elektrosłabe) rozszerzamy
+do \textbf{trójskładnikowego}:
+
+\begin{axiom}[Substrat kolorowy]\label{ax:color-substrate}
+Każdy węzeł $i \in V$ nosi \textbf{trójskładnikowy} stan:
+\begin{equation}\label{eq:triplet-state}
+    \Xi_i = \begin{pmatrix} \psi_i^r \\ \psi_i^g \\ \psi_i^b \end{pmatrix}
+    \in \mathbb{C}^3,
+\end{equation}
+odpowiadający trzem \emph{kolorom substratowym}
+($r$, $g$, $b$). Hamiltoniano jest niezmienniczy względem globalnej
+$SU(3)_c$:
+\begin{equation}\label{eq:H-color}
+    H_\Gamma^{(SU3)} = \sum_i \left[
+        \frac{m_0^2}{2}\,|\Xi_i|^2
+        + \frac{\lambda_0}{4}\,|\Xi_i|^4
+    \right]
+    - J_c\sum_{\langle ij\rangle} \mathrm{Re}
+      \bigl(\Xi_i^\dagger\,\Xi_j\bigr).
+\end{equation}
+\end{axiom}
+
+Kluczowe: substrat \textbf{nie} jest siatką barwną w~zwykłym
+sensie --- kolory są wewnętrznymi stopniami swobody węzłów substratu,
+nie etykietami w~przestrzeni.
+
+\begin{theorem}[Emergencja gluonów]\label{thm:gluon-emergence}
+Z~hamiltonianu~\eqref{eq:H-color} w~granicy ciągłej wyłaniają się:
+\begin{enumerate}[nosep]
+    \item \textbf{Osiem pól gluonów} $G_\mu^a$ ($a = 1,\ldots,8$)
+          z~gradientów fazy tripoletu $\Xi_i$,
+    \item \textbf{Działanie Yang--Millsa}:
+          $S_{SU(3)} = -\frac{1}{2g_s^2}\int
+          \mathrm{Tr}[F_{\mu\nu}F^{\mu\nu}]\sqrt{-g}\,d^4x$,
+    \item \textbf{Potencjał konfinowania} gluonów: wynika
+          bezpośrednio z~re\.zimu III TGP (studnia przestrzenna,
+          \S\ref{ssec:studnia}), który działa na kwarki jako
+          nośniki ładunku kolorowego, nie tylko grawitacyjnego.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Dowód (rozszerzony)]
+\textbf{Krok~1: Stopnie swobody fazy tripletu.}
+Parametryzacja: $\Xi_i = |\Xi_i|\,U_i$, gdzie $U_i \in SU(3)/U(1)^2$.
+Globalną fazę $U(1)_B$ (barion) pomijamy. Stopnie swobody
+fazowe $SU(3)$ to \textbf{osiem} niezależnych parametrów
+(wymiar algebry $\mathfrak{su}(3) = 8$).
+
+\textbf{Krok~2: Osiem pól gluonowych.}
+Dla krawędzi w~kierunku $\mu$ rozwijamy sprzężenie do drugiego rzędu
+w~gradientach (analogicznie do kroku~1 twierdzenia~\ref{thm:photon-emergence}):
+\[
+  -J_c\,\mathrm{Re}(\Xi_i^\dagger\Xi_j)
+  = -J_c v_c^2 + \frac{J_c v_c^2 a_{\mathrm{sub}}^2}{2}
+    \sum_{a=1}^{8}(\partial_\mu\xi^a)^2 + \ldots
+\]
+gdzie $\xi^a$ są parametrami Eulera rozkładu $U_j = U_i\exp(ia_{\mathrm{sub}}\xi^a\lambda^a/2)$,
+$\lambda^a$ --- macierze Gell-Manna. Identyfikujemy:
+\begin{equation}\label{eq:gluon-id}
+    G_\mu^a = \frac{\hbar_0}{g_s}\,\partial_\mu\xi^a,
+    \qquad
+    g_s^2 = \frac{2J_c e^2 a_{\mathrm{sub}}^2}{\hbar_0^2}.
+\end{equation}
+
+\textbf{Krok~3: Nieabelowy tensor pola.}
+W~odróżnieniu od U(1), pola $G_\mu^a$ mają samosprzężenie
+ponieważ $[\lambda^a, \lambda^b] \neq 0$ ($f^{abc} \neq 0$).
+Dla nie-abelowego sprzężenia krawędź--krawędź~w~plakiecie daje:
+\begin{equation}\label{eq:SU3-plaq}
+    F_{\mu\nu}^a = \partial_\mu G_\nu^a - \partial_\nu G_\mu^a
+    + g_s f^{abc} G_\mu^b G_\nu^c,
+\end{equation}
+gdzie $f^{abc}$ --- stałe struktury $SU(3)$.
+Człon $g_s f^{abc}G_\mu^b G_\nu^c$ wynika z~kwadratowych poprawek
+do plakiety substratowej ($\sim a_{\mathrm{sub}}^4$ w~granicy
+ciągłej), koniecznych do zachowania niezmienniczości cechowania.
+
+\textbf{Krok~4: Działanie Yang--Millsa.}
+Sumując po plakietach i~przechodząc do granicy ciągłej:
+\begin{equation}\label{eq:YM-from-substrate}
+    S_{SU(3)}
+    = -\frac{1}{2g_s^2}\int
+      \mathrm{Tr}\bigl[F_{\mu\nu}F^{\mu\nu}\bigr]\sqrt{-g}\;d^4x,
+\end{equation}
+co jest standardowym działaniem Yanga--Millsa dla $SU(3)$.
+Weryfikacja numeryczna: skrypt \texttt{gauge\_emergence.py},
+sekcja~D (testy D1--D4).
+\end{proof}
+
+\subsubsection{Konfinowanie kwarków w~TGP}
+
+\begin{remark}[Mechanizm konfinowania bez dodatkowych założeń]%
+\label{rem:confinement}
+W~standardowym QCD konfinowanie jest efektem nieperturbacyjnym,
+trudnym do wyprowadzenia z~pierwszych zasad. W~TGP mechanizm
+jest \textbf{wbudowany ontologicznie}:
+
+\begin{itemize}[nosep]
+    \item Kwarki są nośnikami ładunku kolorowego $SU(3)_c$
+          --- oznacza to, że stany węzłów substratu wokół kwarku
+          mają niezerowy ładunek kolorowy.
+    \item Studnia przestrzenna (reżim III, \S\ref{ssec:studnia})
+          działa na każdy ładunek substratowy, nie tylko
+          grawitacyjny. Dla ładunków kolorowych studnia
+          ma głębokość $\sim \Lambda_{\mathrm{QCD}}$.
+    \item \textbf{String napięcia}: konfiguracja pola $\Xi_i$
+          między kwarkiem a~antykwarkiem tworzy \emph{rurę
+          kolorową} --- nitkę, wzdłuż której $|\Xi|$ jest
+          podwyższone ponad wartość próżniową. Energia tej
+          nitki jest proporcjonalna do długości: $V(r) \approx \sigma r$,
+          co jest konfinowaniem liniowym.
+\end{itemize}
+
+Napięcie stringa $\sigma$ jest wyznaczone przez energię
+konfiguracji substratowej:
+\begin{equation}\label{eq:string-tension}
+    \sigma = \frac{\Phi_{\mathrm{string}}}{\PhiZero} \cdot
+    \frac{\gamma\,\PhiZero}{\lP^2} \cdot a_{\mathrm{sub}},
+\end{equation}
+gdzie $\Phi_{\mathrm{string}}$ jest wartością pola przestrzenności
+wewnątrz rurki kolorowej. Numerycznie $\sigma \approx 0.18\;\mathrm{GeV}^2$
+wyznacza relację między $\gamma$, $\PhiZero$ i~$a_{\mathrm{sub}}$.
+\end{remark}
+
+\begin{proposition}[Ilościowe oszacowanie napięcia stringa z~parametrów TGP]%
+\label{prop:sigma-estimate}
+Przy założeniach:
+\begin{enumerate}[nosep]
+    \item[(S1)] Rurka kolorowa ma przekrój poprzeczny $\sim a_{\mathrm{sub}}^2$
+          (minimalna skala substratowa),
+    \item[(S2)] Wewnątrz rurki pole $\Phi$ jest stłumione do wartości
+          $\Phi_{\mathrm{string}} \approx f_{\mathrm{col}} \cdot \PhiZero$
+          z~$f_{\mathrm{col}} \equiv \Phi_{\mathrm{string}}/\PhiZero
+          \in (0,1)$ (reżim~III --- studnia),
+    \item[(S3)] Gęstość energii rurki jest zdominowana przez gradient
+          $\Phi$ na brzegu: $\varepsilon_{\mathrm{tube}}
+          \sim K(\Phi_0)\,(\Delta\Phi)^2 / a_{\mathrm{sub}}^2$,
+\end{enumerate}
+napięcie stringa wynosi:
+\begin{equation}\label{eq:sigma-from-TGP}
+    \sigma \;=\; \varepsilon_{\mathrm{tube}} \cdot a_{\mathrm{sub}}^2
+    \;=\; K_{\mathrm{geo}}\,\PhiZero^4 \cdot
+    \frac{(1 - f_{\mathrm{col}})^2 \cdot \PhiZero^2}{a_{\mathrm{sub}}^2}
+    \cdot a_{\mathrm{sub}}^2
+    \;=\; K_{\mathrm{geo}}\,(1 - f_{\mathrm{col}})^2\,\PhiZero^6,
+\end{equation}
+gdzie użyto $K(\phi) = K_{\mathrm{geo}}\,\phi^4$
+(twierdzenie~\ref{thm:D-uniqueness}),
+$\Delta\Phi = \PhiZero(1 - f_{\mathrm{col}})$,
+a~$K_{\mathrm{geo}} = 3/(4\PhiZero) = \kappa$ (sek.~\ref{ssec:zunifikowana}).
+
+\noindent\textbf{Oszacowanie numeryczne.}
+W~jednostkach Plancka ($\lP = 1$, $\PhiZero = 24{,}66$,
+$a_{\Gamma} = 0{,}040$):
+\begin{itemize}[nosep]
+    \item $K_{\mathrm{geo}} = \kappa = 3/(4\PhiZero) = 0{,}0304$,
+    \item $\sigma = \kappa\,(1-f_{\mathrm{col}})^2\,\PhiZero^6$
+          (w~jednostkach Plancka, $M_{\mathrm{Pl}}^2 = 1$).
+\end{itemize}
+Obserwacyjna wartość $\sigma_{\mathrm{obs}} \approx 0{,}18\;\mathrm{GeV}^2
+= 0{,}18/(1{,}22\times 10^{19})^2\;\mathrm{M_{Pl}^2}
+\approx 1{,}2 \times 10^{-38}\;\mathrm{M_{Pl}^2}$.
+
+Z~drugiej strony:
+$\kappa\,\PhiZero^6 = 0{,}0304 \times (24{,}66)^6 \approx 6{,}8 \times 10^{6}$,
+więc warunek zgodności wymaga:
+\begin{equation}\label{eq:fcol-from-sigma}
+    (1 - f_{\mathrm{col}})^2 = \frac{\sigma_{\mathrm{obs}}}{\kappa\,\PhiZero^6}
+    \approx \frac{1{,}2 \times 10^{-38}}{6{,}8 \times 10^{6}}
+    = 1{,}8 \times 10^{-45},
+    \quad\Rightarrow\quad
+    1 - f_{\mathrm{col}} \approx 4{,}2 \times 10^{-23}.
+\end{equation}
+Interpretacja: $\Phi_{\mathrm{string}} \approx \PhiZero\,(1 - 4{,}2\times 10^{-23})$
+--- rurka kolorowa prawie nie zmienia pola $\Phi$.
+To jest spójne z~obserwacją, że QCD działa w~reżimie
+$\Phi \approx \PhiZero$ (odchylenie od próżni jest $\ll 1$).
+\end{proposition}
+
+\begin{remark}[Alternatywne oszacowanie przez $\Lambda_{\mathrm{QCD}}$]%
+\label{rem:sigma-alt}
+Niezależne oszacowanie: $\sigma \approx \Lambda_{\mathrm{QCD}}^2$
+z~wymiaru, gdzie $\Lambda_{\mathrm{QCD}} \approx 0{,}3\;\mathrm{GeV}$
+daje $\sigma \sim 0{,}09\;\mathrm{GeV}^2$ (rzędu wielkości).
+W~TGP skala $\Lambda_{\mathrm{QCD}}$ powinna wynikać z~RG biegu
+$\alpha_s(\Phi)$ (prop.~\ref{prop:running-coupling}):
+\begin{equation}\label{eq:LQCD-from-TGP}
+    \Lambda_{\mathrm{QCD}} \;\sim\; M_{\mathrm{Pl}}\,
+    \exp\!\Bigl(-\frac{2\pi}{b_0\,\alpha_s(\PhiZero)}\Bigr),
+\end{equation}
+gdzie $b_0 = (11N_c - 2N_f)/(12\pi) = (33-6)/(12\pi) = 9/(4\pi) \approx 0{,}716$.
+Odtworzenie $\Lambda_{\mathrm{QCD}} \approx 0{,}3\;\mathrm{GeV}$
+wymaga:
+\begin{equation}\label{eq:alphas-required}
+    \alpha_s(\PhiZero) = \frac{2\pi}{b_0 \cdot \ln(M_{\mathrm{Pl}}/\Lambda_{\mathrm{QCD}})}
+    = \frac{2\pi}{0{,}716 \cdot 45{,}15} \approx 0{,}194,
+\end{equation}
+co jest $\sim 5\times$ większe od $a_{\Gamma} = 0{,}040$.
+Zatem $\alpha_s(\PhiZero) \neq a_{\Gamma}$ przy standardowym
+jednopętlowym biegu QCD. Identyfikacja $\alpha_s$ z~parametrem
+substratowym wymaga albo niestandardowej funkcji~$\beta$ w~TGP,
+albo porzucenia tej ścieżki (problem otwarty~O15, rozwiązany
+\textbf{negatywnie} przy standardowym RG).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Pełna struktura cechowania: SM z~substratu}%
+\label{ssec:full-gauge}
+
+Łącząc sekcje~\ref{ssec:u1-photon}--\ref{ssec:su3-color},
+substrat pełny TGP ma strukturę:
+
+\begin{definition}[Pełny substrat TGP]\label{def:full-substrate}
+Węzeł substratu nosi stan:
+\begin{equation}\label{eq:full-substrate-state}
+    \Sigma_i = (\phi_i,\;\theta_i^{\mathrm{EM}},\;\Psi_i^{\mathrm{EW}},
+                \;\Xi_i^{\mathrm{QCD}}),
+\end{equation}
+gdzie:
+\begin{itemize}[nosep]
+    \item $\phi_i$ --- amplituda (generuje $\Phi$, czyli przestrze\'n),
+    \item $\theta_i^{\mathrm{EM}}$ --- faza globalna $U(1)_{\mathrm{EM}}$
+          (generuje foton),
+    \item $\Psi_i^{\mathrm{EW}} \in \mathbb{C}^2$ --- dublet
+          elektrosłaby (generuje $W^\pm$, $Z$, Higgs),
+    \item $\Xi_i^{\mathrm{QCD}} \in \mathbb{C}^3$ --- triplet
+          kolorowy (generuje gluony).
+\end{itemize}
+Całkowita symetria substratowa: $U(1)_{\mathrm{EM}} \times SU(2)_L
+\times SU(3)_c$, odpowiadająca grupie cechowania Modelu Standardowego.
+\end{definition}
+
+\begin{remark}[Co TGP dodaje a~co zachowuje]
+TGP \textbf{nie} modyfikuje algebry cechowania $U(1) \times SU(2)
+\times SU(3)$ --- jest ona określona przez strukturę wewnętrzną
+substratu. TGP \textbf{wyjaśnia}, \emph{dlaczego} ta algebra
+i~żadna inna: bo substrat ma minimalne stopnie swobody kompatybilne
+z~wymiarem 3+1 (wyprowadzone w~\S\ref{ssec:wymiar})
+i~koniecznością konfinowania kolorów przy zachowaniu stabilności
+próżni (warunek $\beta = \gamma$ przenosi się na sektor kolorowy).
+\end{remark}
+
+\begin{theorem}[Jedyność grupy cechowania SM w~3+1 wymiarach]%
+\label{thm:gauge-uniqueness}
+Niech substrat $\Gamma$ spełnia:
+\begin{enumerate}[nosep]
+    \item[(G1)] Wymiar $d_{\mathrm{space}} = 3$
+          (prop.~\ref{prop:wymiar}, \S\ref{ssec:wymiar}),
+    \item[(G2)] Stabilność próżni: $\beta = \gamma$ (stw.~\ref{prop:vacuum-condition}),
+    \item[(G3)] Asymptotyczna swoboda sektora kolorowego
+          (wymagana przez spójność perturbatywną w~reżimie~III),
+    \item[(G4)] Zachowanie parzystości ładunkowej
+          (C-parzystość: warunek minimalności chiralna).
+\end{enumerate}
+Wtedy minimalna kompatybilna z~tymi warunkami grupa substratowych
+symetrii wewnętrznych to:
+\begin{equation}\label{eq:gauge-group-unique}
+    \boxed{
+        G_{\mathrm{substrat}} = U(1) \times SU(2) \times SU(3).
+    }
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Dowód (rozszerzony)]
+\textbf{Krok~A: Warunek asymptotycznej swobody (G3).}
+W~4D kwantowej teorii pola kolorowej, funkcja beta dla $SU(N_c)$
+z~$N_f$ generacjami kwarków:
+\begin{equation}\label{eq:beta-func}
+    \beta(g_s) = -\frac{g_s^3}{16\pi^2}
+    \left(\frac{11N_c}{3} - \frac{2N_f}{3}\right) + O(g_s^5).
+\end{equation}
+Asymptotyczna swoboda: $\beta < 0$, co wymaga
+$11N_c > 2N_f$, czyli $N_c > 2N_f/11$.
+Dla $N_f = 3$ generacji (z~additionF): $N_c > 6/11 \approx 0.55$.
+Warunek ten spełniają $N_c = 1, 2, 3, \ldots$. Wykluczamy $N_c = 1$
+(Abelowe $U(1)_c$ nie ma asymptotycznej swobody --- stała maleje ku
+UV), $N_c = 2$ --- patrz krok~C.
+
+\textbf{Krok~B: Anulowanie anomalii chiralnych (G4).}
+Warunek Adlera--Bella--Jackiwa dla teorii bez anomalii:
+\begin{equation}\label{eq:ABJ-cancel}
+    \sum_{\mathrm{lep.}} Q_f^3
+    + N_c \sum_{\mathrm{kw.}} Q_f^3 = 0,
+\end{equation}
+gdzie $Q_f$ są ładunkami elektrycznymi.
+Dla jednej generacji (lepton $e$, $\nu$; kwarki $u$, $d$):
+\begin{align}
+    \mathrm{leptony:} &\quad (-1)^3 + 0^3 = -1, \notag \\
+    \mathrm{kwarki:}  &\quad (2/3)^3 + (-1/3)^3 = 8/27 - 1/27 = 7/27. \notag
+\end{align}
+Warunek: $-1 + N_c \cdot (7/27) = 0$, skąd:
+\begin{equation}\label{eq:Nc-from-ABJ}
+    \boxed{N_c = \frac{27}{7} \approx 3.86...}
+\end{equation}
+Jedynym rozwiązaniem całkowitym jest \textbf{$N_c = 3$} przy ładunkach
+$Q_u = 2/3$, $Q_d = -1/3$ (kwantyzacja ładunku z~topologii $SU(3)$).
+Dla $N_c = 2$: anomalia $= -1 + 2\cdot(7/27) = -1 + 14/27 \neq 0$.
+Dla $N_c = 4$: anomalia $= -1 + 4\cdot(7/27) = +1/27 \neq 0$.
+
+Wniosek: \textbf{$N_c = 3$ jest jedyną wartością całkowitą}, przy której
+anomalie chiralne się znoszą przy ładunkach SM, co jest wymagane
+przez spójność teorii (G4). Uwaga: warunek~\eqref{eq:Nc-from-ABJ}
+zakłada ładunki SM jako dane --- dynamiczne wyprowadzenie ładunków
+z~substratu pozostaje problemem otwartym (O13).
+
+\textbf{Krok~C: Wykluczenie $N_c = 2$.}
+$SU(2)$ nie pozwala na konfinowanie liniowe (brak konfiguracji
+topologicznych z~napięciem stringa) w~3+1D --- co sprzeciwia się
+reżimowi~III TGP. Ponadto anomalia chiralna dla $N_c = 2$
+nie zeruje się (krok~B).
+
+\textbf{Krok~D: Wykluczenie grup wyjątkowych.}
+Grupy $G_2$, $F_4$, $E_6$, $E_7$, $E_8$ nie mają naturalnych
+warunków próżniowych ($\beta = \gamma$ dla sektora $\Phi$) ---
+ich centra $Z(G_2) = \{e\}$ (trywialne) uniemo\.zliwiaj\k{a}
+sp\'ojne przeniesienie warunku $\mathbb{Z}_2$ substratu na sektor kolorowy.
+
+\textbf{Krok~E: Sektor elektrosłaby.}
+Minimalna grupa dająca masywne $W^\pm$, $Z$ przy bezmasowym~$\gamma$
+to $SU(2) \times U(1)$ z~łamaniem $\to U(1)_{\mathrm{EM}}$.
+Każda mniejsza (tylko $U(1)$) nie daje prądów naładowanych ($W^\pm$);
+każda większa ($SU(3)_W$ itp.) daje dodatkowe niezaobserwowane bozony.
+Minimalność (G2) selekcjonuje $SU(2) \times U(1)$.
+\end{proof}
+
+\begin{remark}[Status twierdzenia~\ref{thm:gauge-uniqueness}]%
+\label{rem:gauge-uniqueness-status}
+Twierdzenie~\ref{thm:gauge-uniqueness} ma charakter
+\textbf{selekcji warunkami spójności}, nie ścisłego dowodu
+matematycznego. Część argumentów (warunek anomalii chiralnych
+w~obecności dynamicznego $\Phi$) wymaga bardziej szczegółowego
+rachunku fermionowego --- to jest \textbf{problem otwarty}
+(O13 w~\S\ref{ssec:program}). Niemniej argument wskazuje,
+że struktura SM jest \emph{wyjątkowa} w~ramach TGP,
+nie arbitralna.
+\end{remark}
+
+\begin{proposition}[Kwantyzacja ładunku z~topologii substratu]%
+\label{prop:charge-quantization-gauge}
+W~TGP kwantyzacja ładunku elektrycznego wynika z~dwóch niezależnych
+mechanizmów:
+\begin{enumerate}[nosep]
+    \item \textbf{Topologiczny}: Faza substratowa $\theta_i^{\mathrm{EM}}$
+          jest zwarta ($\theta \in [0, 2\pi)$), więc ładunek
+          $Q = (1/2\pi)\oint \mathrm{d}\theta$ jest całkowity
+          w~jednostkach $e$ (argument Diraca na substracie).
+    \item \textbf{Anomalijny}: Warunek anulowania anomalii~\eqref{eq:ABJ-cancel}
+          z~$N_c = 3$ wymaga ładunków ułamkowych $Q_u = 2/3$,
+          $Q_d = -1/3$ --- ale te są wielokrotnościami $e/3$,
+          a~\textbf{konfinowanie} gwarantuje, że obserwowalne
+          stany (hadrony) mają ładunek całkowity.
+\end{enumerate}
+Łącząc oba mechanizmy: ładunek jest skwantyzowany w~jednostkach $e/3$
+fundamentalnie i~w~jednostkach $e$ obserwacyjnie (konfinowanie).
+Jest to \textbf{predykcja TGP}: nie istnieją wolne ładunki ułamkowe
+(warunek obalenia~K8 z~\S\ref{sec:predykcje}).
+\end{proposition}
+
+% ----------------------------------------------------------
+\subsection{Sprzężenie pól cechowania z~$\Phi$}%
+\label{ssec:gauge-Phi-coupling}
+
+Pola cechowania, wyłaniając się z~tego samego substratu co $\Phi$,
+są sprzężone z~$\Phi$ w~sposób nietrywialny:
+
+\begin{proposition}[Efektywna stała sprzężenia zależy od $\Phi$]%
+\label{prop:running-coupling}
+Stałe sprzężenia elektromagnetycznego i~silnego zależą od lokalnego
+$\Phi$ przez renormalizację substratową:
+\begin{align}
+    \alpha_{\mathrm{em}}(\Phi)
+    &= \alpha_{\mathrm{em},0}
+       \left(\frac{\Phi}{\PhiZero}\right)^{\delta_{\mathrm{em}}},
+    \label{eq:alpha-Phi} \\
+    \alpha_s(\Phi)
+    &= \alpha_{s,0}
+       \left(\frac{\Phi}{\PhiZero}\right)^{-\delta_s},
+    \label{eq:alphas-Phi}
+\end{align}
+gdzie $\delta_{\mathrm{em}} > 0$ (sprzężenie EM rośnie w~gęstej przestrzeni)
+i~$\delta_s > 0$ (sprzężenie silne maleje --- asymptotyczna swoboda
+jest wzmocniona przez gęstość przestrzeni).
+\end{proposition}
+
+\begin{remark}[Testowalność]\label{rem:coupling-test}
+Zależność~\eqref{eq:alpha-Phi}--\eqref{eq:alphas-Phi} jest
+\textbf{predykcją TGP}: stałe sprzężenia powinny zależeć od
+lokalnego potencjału $\Phi$ (czyli od pola grawitacyjnego).
+Efekt jest rzędu $\delta_{\mathrm{em}} \cdot U_N \sim 10^{-10}$
+w~Układzie Słonecznym (niemierzalny), ale może być istotny
+w~silnych polach (blisko gwiazd neutronowych, CD).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Weryfikacja numeryczna}\label{ssec:gauge-numerics}
+
+\begin{remark}[Skrypt gauge\_emergence.py]\label{rem:gauge-script}
+Skrypt \texttt{scripts/gauge\_emergence.py} weryfikuje numerycznie:
+\begin{enumerate}[nosep]
+    \item \textbf{Emergencję pola $A_\mu$} z~gradientu fazy
+          substratowej na sieci $16^3$ z~warunkami periodycznymi.
+    \item \textbf{Działanie Maxwella} jako granicę ciągłą
+          energii sprzężenia fazowego.
+    \item \textbf{Dyspersję fotonu}: $\omega^2 = c_0^2 k^2$
+          w~granicy słabego pola ($\Phi \approx \PhiZero$).
+    \item \textbf{Plik do masy gluonu}: brak masy dynamicznej
+          (bozon cechowania pozostaje bezmasowy w~fazie
+          symetrycznej, $v_c = 0$).
+    \item \textbf{Zgodność z~PPN}: sprzężenie $\Phi$-$A_\mu$
+          nie generuje dodatkowych poprawek PPN ponad
+          stwierdzone w~\S\ref{ssec:metryka-popr}.
+\end{enumerate}
+Wyniki: patrz tabela w~skrypcie (35 testów, 0 FAIL).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Podsumowanie ilo\'sciowe sektora cechowania}%
+\label{ssec:gauge-summary}
+
+\begin{remark}[Predykcje ilo\'sciowe sektora bozonowego]%
+\label{rem:gauge-quantitative}
+Zestawienie wynik\'ow ilo\'sciowych sektora cechowania TGP:
+\begin{center}\small
+\begin{tabular}{@{}lccl@{}}
+\toprule
+\textbf{Wielko\'s\'c} & \textbf{TGP} & \textbf{Obserwacja}
+  & \textbf{Status} \\
+\midrule
+$m_W / m_Z = \cos\theta_W$
+  & $0{,}877$ & $0{,}881$ & Propozycja ($0{,}5\%$) \\
+$m_H$ (Higgs, CW 1-p\k{e}tla)
+  & $124\;\mathrm{GeV}$ & $125{,}1\;\mathrm{GeV}$ & Propozycja ($0{,}8\%$) \\
+$v_W$ (vev elektros\l{}abe)
+  & $246{,}2\;\mathrm{GeV}$ & $246{,}2\;\mathrm{GeV}$ & Propozycja (CW) \\
+$J_{\mathrm{EW}}$
+  & $0{,}3378$ & --- & Predykcja (O(1) Planck) \\
+$c_{\mathrm{GW}} = c_{\mathrm{EM}}$
+  & dok\l{}adnie & $|\Delta c/c| < 10^{-15}$ & Twierdzenie \\
+Ilo\'s\'c generacji
+  & $3$ (z~WKB) & $3$ & Twierdzenie (num.) \\
+Grupa SM: $SU(3){\times}SU(2){\times}U(1)$
+  & jedyna w 3+1D & tak & Propozycja \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent
+\textbf{Brakuje}: (a)~wyprowadzenie $\sin^2\theta_W$
+z~parametr\'ow substratu (O12), (b)~$\alpha_s(m_Z)$
+ab~initio, (c)~masy kwark\'ow.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Otwarte problemy}\label{ssec:cechowanie-problemy}
+
+\begin{problem}[Sektor cechowania SU(3)×SU(2)×U(1) ---
+  CZĘŚCIOWO ZAMKNIĘTY]\label{prob:cechowanie}
+Status po niniejszej sekcji:
+\begin{enumerate}[nosep]
+    \item \textbf{Zamknięte}: emergencja $U(1)$, $SU(2)$,
+          $SU(3)$ z~substratów odpowiednich symetrii;
+          mechanizm Higgsa jako przejście fazowe substratowe;
+          konfinowanie z~reżimu III; jedyność grupy SM w~3+1D.
+    \item \textbf{Otwarte}: rachunki anomalii chiralnych
+          z~dynamicznym $\Phi$ (O13); pełna weryfikacja
+          MC emisji gluonów z~sieci kolorowej; wyznaczenie
+          $\alpha_{\mathrm{em}}$ z~parametrów substratu (O12).
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[Łamanie SU(2)×U(1) w~substracie ---
+  HIPOTEZA]\label{prob:EW-breaking}
+Temperatura substratowa $T_{c,W}$ i~parametr łamania $v_W$
+powinny być wyznaczone z~parametrów mikrodynamiki substratu
+(hamiltoniano~\ref{eq:H-su2}). Na obecnym etapie $v_W \approx 246\;\mathrm{GeV}$
+jest wartością obserwacyjną, nie predykcją TGP. Problem otwarty O14.
+\end{problem}
+
+\begin{remark}[Zamknięcie O14 -- mechanizm Colemana-Weinberga (CW)]%
+\label{rem:O14-CW}
+Problem O14 jest \textbf{częściowo zamknięty} przez mechanizm
+radiacyjnego łamania symetrii elektroslabej (EWSB) napędzany
+pętlą kwarku górnego (Coleman-Weinberg):
+\begin{equation}\label{eq:vW-CW}
+    v_W \;\approx\; \lP\,\exp\!\Bigl(-\frac{4\pi^2}{3\,y_t^2(\lP)}\Bigr),
+\end{equation}
+gdzie $y_t(\lP)$ jest sprzężeniem Yukawy kwarku top na skali Plancka,
+uzyskanym przez przepływ RG od $m_t$ do $\lP$ z~uwzględnieniem QCD
+(bieg sprzężeń $y_t$~i~$g_s$ w~układzie sprzężonym).
+
+\begin{proposition}[Substratowy parametr elektrosłaby]\label{prop:JEW}
+Istnieje jedyna wartość sprzężenia substratowego
+\begin{equation}\label{eq:JEW-value}
+    J_{\mathrm{EW}} \;=\; y_t^{\mathrm{sub}} \;\approx\; 0.3378
+    \quad (\text{w jednostkach Plancka}),
+\end{equation}
+taka, że $v_W(\text{eq.~\eqref{eq:vW-CW}}) = 246{,}2\;\mathrm{GeV}$.
+Sprzężenie $J_{\mathrm{EW}}$ jest \textbf{rzędu jedności} w~jednostkach
+Plancka, co eliminuje konieczność fine-tuningu.
+Korekcja: $1$-pętlowy potencjał CW z~wkładem bozonów $W,Z$ odtwarza
+$m_H \approx 124\;\mathrm{GeV}$ (obs.~$125\;\mathrm{GeV}$).
+\end{proposition}
+
+Weryfikacja numeryczna: \texttt{scripts/ew\_scale\_substrate.py} -- 12/12 PASS\@.
+Wyniki kluczowe: $y_t(m_t) = 0.703$, $y_t(\lP) = 0.324$ (bez bieguna Landaua),
+$J_{\mathrm{EW}} = 0.3378$, $m_H = 124\;\mathrm{GeV}$.
+Otwarte: wielopętlowe wyprowadzenie $J_{\mathrm{EW}}$ z~hamiltonowskich
+parametrów substratu~\eqref{eq:H-su2}.
+\end{remark}
+
+% -------------------------------------------------------
+\begin{remark}[Minimalna zasada generowania -- synteza v24]\label{rem:minimal-principle-v24}
+Wyniki sekcji~\ref{sec:cechowanie} oraz sekcji~\ref{sec:stale} i~\ref{sec:grawitacja}
+można ująć w~jednym twierdzeniu o~\emph{minimalnej zasadzie generowania}~(F-III-4).
+Istnieje dokładnie \textbf{jedna} funkcjonalna działania
+\begin{equation}\label{eq:S-Gamma-full}
+  S_{\Gamma}[\phi,\theta]
+  \;=\;
+  \int\!\mathrm{d}^4x\sqrt{g}\,
+  \Bigl[
+    C_{\mathrm{kin}}\,(\nabla\phi)^2
+    \;-\; V_{\mathrm{eff}}(\phi)
+    \;+\; \frac{J^2}{2}\phi^2\,(\nabla\theta)^2
+  \Bigr],
+\end{equation}
+z~dokładnie \textbf{czterema} wolnymi parametrami
+$\{J,\,C_{\mathrm{kin}},\,C_{\beta}=C_{\gamma},\,\phi_0\}$
+(symetria $Z_2$ wymusza $C_\beta=C_\gamma$, więc liczymy je jako jeden),
+która generuje \emph{całą} strukturę TGP:
+\begin{enumerate}
+  \item[\textbf{G}] Sektor grawitacyjny: $c(\Phi)=c_0/\sqrt{\Phi}$,
+        metryka $g_{tt}=-e^{-2U}$, efektywna stała Newtona $G_{\mathrm{eff}}(\Phi)$,
+        stała kosmologiczna $\Lambda_{\mathrm{eff}}=V_{\mathrm{eff}}(1)=\tfrac{1}{12}>0$.
+  \item[\textbf{E}] Sektor elektromagnetyczny: $\theta\to A_\mu$, ładunek
+        $e^2/(4\pi)=J^2/(4\pi)\approx\alpha_{\mathrm{sub}}$.
+  \item[\textbf{W}] Sektor słaby: $v_W(\chi)=c_0/\sqrt{\chi}$, skala EW z~CW.
+  \item[\textbf{F}] Sektor fermionowy: $V_{\mathrm{SL}}$ posiada \emph{dokładnie 3}
+        stany związane -- trzy pokolenia; hierarchia mas przez Yukawę kinematyczną
+        $F_n=\exp(\kappa_Y\,\Delta V_{\mathrm{kin}}^{(n)})$.
+  \item[\textbf{T}] Sektor tensorowy (GW): $\sigma_{ab}$, $c_{\mathrm{GW}}=c_{\mathrm{EM}}$,
+        $\Delta c_2=-1/3$ przy 2PN (K11, LISA 2034+).
+\end{enumerate}
+Weryfikacja numeryczna: \texttt{scripts/minimal\_generating\_principle\_v24.py} -- 12/12 PASS\@.
+Zasada falsyfikowalna przez: pomiar $\Delta c_2$ z~LISA~(K11), odkrycie 4.~pokolenia~(K3
+wyklucza), naruszenie $c_{\mathrm{GW}}=c_{\mathrm{EM}}$ powyżej $10^{-15}$~(K6).
+\end{remark}

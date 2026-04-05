@@ -1,0 +1,286 @@
+% ===================================================================
+%  Dodatek X: Sektor kwarkowy --- rozszerzenie schematu phi-FP + Koide
+%  TGP v1 --- Sesja v45 (2026-04-05)
+% ===================================================================
+\section{Sektor kwarkowy: $\varphi$-FP a~Koide}%
+\label{app:quark-sector}
+
+Niniejszy dodatek bada rozszerzenie schematu \emph{$\varphi$-FP + Koide}
+(prop.~\ref{prop:J-koide-chain} z~dod.~J) na sektory kwarkowe:
+$(d, s, b)$ i~$(u, c, t)$.
+Wyniki oparte na skryptach \texttt{ex158}--\texttt{ex161}
+(sesja v45, 2026-04-05).
+
+% -------------------------------------------------------------------
+\subsection{Pytania badawcze}\label{app:X-pytania}
+% -------------------------------------------------------------------
+
+\begin{enumerate}[nosep]
+  \item Czy ODE substratowe~\eqref{eq:J-substrate-ode} daje sensowne
+        $A_{\rm tail}(g_0)$ dla stosunków mas kwarkowych?
+  \item Czy selekcja $\varphi$-FP ($g_0^{(2)} = \varphi\,g_0^{(1)}$)
+        reprodukuje $r_{21}$ w~sektorach kwarkowych?
+  \item Czy formuła Koidego $K = 2/3$ domyka triplety kwarkowe
+        (tak jak lepton\-owe)?
+  \item Czy modyfikacja ODE (np.\ czynnik kolorowy $\alpha_{\rm eff}$)
+        może naprawić Koide?
+\end{enumerate}
+
+% -------------------------------------------------------------------
+\subsection{Masy kwarkowe (dane wejściowe)}\label{app:X-masy}
+% -------------------------------------------------------------------
+
+Warto\'sci PDG ($\overline{\text{MS}}$, skala 2~GeV):
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Sektor & $m_1$ [MeV] & $m_2$ [MeV] & $m_3$ [MeV]
+       & $r_{21} = m_2/m_1$ & $r_{31} = m_3/m_1$ \\
+\midrule
+leptony ($e, \mu, \tau$) & 0,511 & 105,7 & 1776,9 & 206,8 & 3477 \\
+down ($d, s, b$)         & 4,67  & 93,4  & 4180   & 20,0  & 895  \\
+up ($u, c, t$)           & 2,16  & 1270  & 172\,760 & 588 & 79\,982 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{$\varphi$-FP: wynik uniwersalny}\label{app:X-phiFP}
+% -------------------------------------------------------------------
+
+\begin{result}[$\varphi$-FP reprodukuje $r_{21}$ we wszystkich sektorach]%
+\label{res:X-phiFP-universal}
+Dla ODE substratowego~\eqref{eq:J-substrate-ode} selekcja
+$g_0^{(2)} = \varphi\,g_0^{(1)}$ wyznacza jednoznacznie
+$g_0^{(1)}$ dla ka\.zdego sektora, a~wynikowy stosunek mas
+$(A_2/A_1)^4 = r_{21}$ jest zgodny z~PDG:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+  Sektor & $g_0^{(1)}$ & $g_0^{(2)} = \varphi\,g_0^{(1)}$
+         & $r_{21}^{\rm (ODE)}$ & $r_{21}^{\rm (PDG)}$ \\
+\midrule
+  leptony & 0,8695 & 1,4068 & 206,8 & 206,8 \\
+  down    & 0,8171 & 1,3221 & 20,0  & 20,0  \\
+  up      & 0,8905 & 1,4408 & 588,0 & 588,0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\begin{remark}[Interpretacja]\label{rem:X-phiFP-interpretacja}
+$\varphi$-FP jest \textbf{mechanizmem uniwersalnym}: jedyny input
+to stosunek $r_{21}$ (dane PDG), a~$\varphi$-FP go reprodukuje
+niezale\.znie od typu sektora.
+R\'o\.znice w~$g_0^{(1)}$ ($0{,}817$ vs $0{,}870$ vs $0{,}891$)
+odzwierciedlaj\k{a} r\'o\.znice w~$r_{21}$ --- TGP nie wymaga
+nowych postulat\'ow dla ka\.zdego sektora.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Koide: wynik specyficzny sektorowo}\label{app:X-koide}
+% -------------------------------------------------------------------
+
+\begin{result}[Koide $K = 2/3$ jest specyficzny dla sektor\'ow leptonowych]%
+\label{res:X-koide-failure}
+Warto\'s\'c $K = \sum m_i / (\sum\sqrt{m_i})^2$ obliczona z~mas PDG:
+\begin{center}
+\begin{tabular}{@{}lccl@{}}
+\toprule
+  Sektor & $K$ & $\Delta K / K_{\rm Koide}$ & Status \\
+\midrule
+  leptony ($e, \mu, \tau$) & 0,6667 & $< 0{,}01\%$ & \checkmark \\
+  down ($d, s, b$)         & 0,7314 & $9{,}7\%$     & $\times$ \\
+  up ($u, c, t$)           & 0,8490 & $27{,}4\%$    & $\times$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Niezmienniczo\'s\'c $K$ wzgl\k{e}dem ODE}%
+\label{app:X-K-invariant}
+% -------------------------------------------------------------------
+
+\begin{result}[$K$ jest ODE-niezmienniczy]\label{res:X-K-invariant}
+Formuła Koidego $K = \sum m_i / (\sum\sqrt{m_i})^2$ jest jednorodna
+stopnia $0$ w~masach.
+Poniewa\.z $m_i \propto A_{\rm tail}^4(g_0^{(i)})$, warto\'s\'c $K$
+zale\.zy \textbf{wy\l{}\k{a}cznie} od stosunk\'ow
+$r_{21} = m_2/m_1$ i~$r_{31} = m_3/m_1$:
+\begin{equation}\label{eq:X-K-ratios}
+  K \;=\; \frac{1 + r_{21} + r_{31}}
+               {\bigl(1 + \sqrt{r_{21}} + \sqrt{r_{31}}\bigr)^2}.
+\end{equation}
+Stosunki te s\k{a} \textbf{danymi PDG} --- nie zale\.z\k{a} od ODE.
+\end{result}
+
+\begin{corollary}\label{cor:X-no-ODE-fix}
+\.Zadna modyfikacja ODE solitonowego (zmiana $\alpha_{\rm eff}$,
+$K_{\rm sub}(g)$, potencja\l{}u $V(g)$) \textbf{nie mo\.ze zmieni\'c} $K$.
+Modyfikacja zmienia $A_{\rm tail}(g_0)$, ale stosunki $r_{21}$, $r_{31}$
+(dane eksperymentalne) pozostaj\k{a} niezmienione, wi\k{e}c $K$ te\.z.
+\end{corollary}
+
+\noindent
+Weryfikacja numeryczna (\texttt{ex161\_color\_modified\_ode.py}):
+ODE $g'' + (\alpha/g)(g')^2 + (2/r)g' = 1-g$
+dla $\alpha_{\rm eff} \in \{0{,}3;\; 0{,}5;\; \ldots;\; 3{,}0\}$
+daje $K(d,s,b) = 0{,}731$ i~$K(u,c,t) = 0{,}849$ ---
+\textbf{niezale\.znie od $\alpha_{\rm eff}$}.
+
+\begin{result}[$K$ jest RGE-niezmienniczy (\texttt{ex172})]%
+\label{res:X-K-RGE}
+Bieganie mas QCD jest multiplikatywne: $m(\mu) = c(\mu)\,m_0$.
+Poniewa\.z $K$ jest jednorodne stopnia~$0$, bieganie
+nie zmienia~$K$: $K(d,s,b) = 0{,}744 \pm 0{,}002$
+i~$K(u,c,t) = 0{,}882 \pm 0{,}002$ na ka\.zdej
+skali $\mu \in [1{,}5;\, 1000]$~GeV.
+Jedyne (pomijalne) zmiany wynikaj\k{a} z~r\'o\.znych
+prog\'ow smakowych $n_f$.
+\end{result}
+
+\begin{remark}[Shifted Koide: korekcja addytywna (\texttt{ex173})]%
+\label{rem:X-shifted-koide}
+Korekcja multiplikatywna ($m_i \to \lambda\,m_i$) \textbf{nie zmienia}~$K$
+(jednorodne st.~$0$).
+Korekcja \textbf{addytywna} $K(m_i + m_0) = 2/3$ daje:
+$m_0^{(d,s,b)} = 22$~MeV (ok.\ $0{,}1\,\Lambda_{\rm QCD}$),
+$m_0^{(u,c,t)} = 1982$~MeV ($\approx 2$~GeV).
+Shifted Koide jest \emph{opisowy} (dwa wolne parametry),
+ale wskazuje, \.ze \l{}amanie $K = 2/3$ w~kwarkach
+pochodzi z~\textbf{addytywnego} wk\l{}adu nieperturbacyjnego QCD.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Zbadane rozszerzenia}\label{app:X-rozszerzenia}
+% -------------------------------------------------------------------
+
+\noindent
+Osiem hipotez rozszerzenia Koide na kwarki
+(\texttt{ex159\_quark\_extended\_koide.py}):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lp{5.8cm}l@{}}
+\toprule
+  Hipoteza & Opis & Wynik \\
+\midrule
+  H2: Brannen & $m_k = \tfrac{M}{3}(1+\sqrt{2}\cos(\theta_0 + 2\pi k/3))^2$
+    & $K = 2/3$ z~konstrukcji, ale z\l{}y fit \\
+  H6: Shifted & $K(m_i + m_0) = 2/3$; $m_0 = 1982$ MeV (up), $22$ MeV (down)
+    & Dzia\l{}a; $m_0$ addytywny (nie multiplikatywny, \texttt{ex173}) \\
+  H7: Cross & $(u, s, \tau)$: $K = 0{,}659$ ($1{,}1\%$); $(\tau, b, t)$: $K = 0{,}655$
+    & Interesuj\k{a}ce, prawdop.\ koincydencja \\
+  H8: Wyk\l{}adnik~$n$ & $K_n = 2/3$ przy $n = 2{,}33$ (down), $3{,}28$ (up)
+    & Brak prostej interpretacji \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Skan cross-sektorowy}\label{app:X-cross-sector}
+% -------------------------------------------------------------------
+
+\begin{result}[Systematyczny skan triplet\'ow Koide (\texttt{ex168})]%
+\label{res:X-cross-scan}
+Spo\'sr\'od $\binom{9}{3} = 84$ triplet\'ow z~9 fermion\'ow
+$(e, \mu, \tau, d, s, b, u, c, t)$, tylko dwa spe\l{}niaj\k{a}
+$|K - 2/3| < 1\%$:
+\begin{center}\footnotesize
+\begin{tabular}{@{}llccl@{}}
+\toprule
+  Triplet & Typ & $K$ & $\Delta K / K_{\rm Koide}$ & Status \\
+\midrule
+  $(e, \mu, \tau)$ & intra (lepton) & 0{,}6667 & $< 0{,}01\%$ & \checkmark \\
+  $(b, c, t)$ & \textbf{cross} (D$_3$, U$_2$, U$_3$) & 0{,}6695 & $0{,}42\%$ & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{center}
+Losowa szansa (masy log-uniform): $P(|\Delta K| < 1\%) = 1{,}7\%$,
+oczekiwana liczba~$= 84 \times 0{,}017 = 1{,}4$.
+Obserwacja 2~triplet\'ow jest \textbf{statystycznie nieinformacyjna}
+($p \approx 0{,}4$), ale triplet $(b,c,t)$ \'l\k{a}czy ci\k{e}\.zkie
+fermiony trzeciej~i~drugiej generacji --- wart dalszego badania.
+\end{result}
+
+\begin{remark}[Triplet $(b,c,t)$: g\l{}\k{e}bsza analiza (\texttt{ex170})]%
+\label{rem:X-bct-analysis}
+Triplet $(b,c,t)$ spe\l{}nia $K = 0{,}6695 \pm 0{,}0008$ (MC, $10^5$ pr\'obek),
+odchylenie~$3{,}4\sigma$ od~$2/3$.
+Warunek $K(b,c,t) = 2/3$ predykuje $m_t = 168{,}4$~GeV
+(vs PDG $172{,}8 \pm 0{,}3$~GeV, $-2{,}5\%$, $14{,}6\sigma$).
+
+\textbf{Zastrze\.zenie}: masy $m_b$ ($\overline{\text{MS}}$ przy $\mu_b$),
+$m_c$ ($\overline{\text{MS}}$ przy $\mu_c$) i~$m_t$ (masa biegunowa)
+\textbf{nie s\k{a} na wsp\'olnej skali}.
+Z~$m_t(\overline{\text{MS}}, \mu_t) \approx 162{,}5$~GeV:
+$K = 0{,}663$ ($-0{,}6\%$), \textbf{bli\.zej} $2/3$.
+Precyzyjna weryfikacja wymaga pe\l{}nego biegania NLO QCD
+do wsp\'olnej skali $\mu$.
+
+\textbf{Rozstrzygni\k{e}cie} (\texttt{ex171}):
+po precyzyjnym bieganiu QCD (2-loop $\alpha_s$ + 1-loop $\gamma_m$,
+z~progami smak\'ow) do wsp\'olnej skali $\overline{\text{MS}}$:
+$K(b,c,t) \approx 0{,}712$--$0{,}716$ (ok.\ $+7\%$ od~$2/3$)
+\textbf{na ka\.zdej skali} $\mu \in [1;\, 500]$~GeV.
+Blisko\'s\'c $K \approx 2/3$ w~\texttt{ex170} by\l{}a
+\textbf{artefaktem mieszania konwencji} masowych
+($m_b$ MS-bar, $m_c$ MS-bar, $m_t$ biegunowa).
+\textbf{Dodatkowe spostrzezenie} (\texttt{ex172}):
+bieganie QCD jest multiplikatywne
+($m(\mu) = c(\mu)\,m_0$), a~$K$ jest jednorodne stopnia~$0$
+--- zatem $K$ jest \textbf{dok\l{}adnie RGE-niezmienniczy}
+(zmiany $< 0{,}2\%$ wynikaj\k{a} wy\l{}\k{a}cznie
+z~r\'o\.znych prog\'ow $n_f$).
+B\l{}\k{a}d \texttt{ex170} pochodzi\l{} z~mieszania
+mas biegunowej i~$\overline{\text{MS}}$
+--- korekcja $m_{\rm pole} = m_{\overline{\rm MS}} + \delta m$
+jest \textbf{addytywna}, co \l{}amie jednorodność~$K$.
+
+\textbf{Status}: \statuslabel{Hipoteza} (obalona).
+\end{remark}
+
+\begin{result}[Trzecia generacja: brak uniwersalnego warunku (\texttt{ex169})]%
+\label{res:X-3rd-gen}
+Selekcja $\varphi$-FP daje $r_{21}$ (uniwersalnie).
+Prosta iteracja $g_0^{(3)} = \varphi^2\,g_0^{(1)}$ \textbf{nie} reprodukuje
+$r_{31}$ w~\.zadnym sektorze.
+Wyk\l{}adnik $g_0^{(3)} = \varphi^{n}\,g_0^{(1)}$ wynosi
+$n = 1{,}42$ (leptony), $1{,}54$ (down), $1{,}79$ (up) ---
+\textbf{nie jest uniwersalny}.
+Skalowanie pot\k{e}gowe $r_{31} = r_{21}^p$:
+$p = 1{,}53$ (leptony), $2{,}27$ (down), $1{,}77$ (up) ---
+r\'ownie\.z nieuniwersalne.
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Wnioski}\label{app:X-wnioski}
+% -------------------------------------------------------------------
+
+\begin{enumerate}[nosep]
+  \item $\varphi$-FP jest \textbf{uniwersalnym} mechanizmem TGP ---
+        dzia\l{}a na leptony \emph{i} kwarki.
+  \item Koide $K = 2/3$ jest \textbf{specyficzny} dla sektora leptonowego.
+        Cross-sektorowy triplet $(b, c, t)$ daje $K \approx 0{,}67$
+        tylko przy mieszaniu konwencji masowych; na wsp\'olnej skali
+        $\overline{\text{MS}}$: $K \approx 0{,}71$ ($+7\%$)
+        (uw.~\ref{rem:X-bct-analysis}, \texttt{ex171}).
+  \item $K$ jest algebr.\ w\l{}asno\'sci\k{a} stosunk\'ow mas;
+        \textbf{\.zadna modyfikacja ODE} go nie zmienia (wn.~\ref{cor:X-no-ODE-fix}).
+  \item Trzecia generacja kwarkowa wymaga \textbf{innego} warunku selekcji
+        ni\.z Koide --- kandydaci: shifted Koide ($m_0 \neq 0$),
+        wyk\l{}adnik uog\'olniony, cross-sektor.
+  \item Status: \statuslabel{Otwarty} (Problem R12).
+\end{enumerate}
+
+\noindent\textbf{Skrypty:}
+\texttt{ex158\_quark\_koide\_survey.py},
+\texttt{ex159\_quark\_extended\_koide.py},
+\texttt{ex160\_quark\_ode\_lite.py},
+\texttt{ex161\_color\_modified\_ode.py},
+\texttt{ex168\_cross\_sector\_koide.py},
+\texttt{ex169\_third\_gen\_selection.py},
+\texttt{ex170\_bct\_cross\_koide.py},
+\texttt{ex171\_running\_masses\_koide.py},
+\texttt{ex172\_koide\_scale\_scan.py},
+\texttt{ex173\_koide\_color\_correction.py}.

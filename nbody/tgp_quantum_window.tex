@@ -1,0 +1,191 @@
+\section{Quantum Efimov window: exact finite-difference result}
+\label{sec:quantum_window}
+
+\subsection{Motivation: WKB validity}
+
+The WKB analysis of Sec.~\ref{sec:efimov} located a single quasi-bound
+level in the classical Efimov window $C\in(0.128,\,0.184)$ using the
+criterion $n(E)=\frac{1}{\pi}\int\sqrt{2\mu(E-V_{\rm eff})}\,dd\geq\tfrac{1}{2}$.
+The WKB approximation requires $\lambda_{\rm dB}\ll L_{\rm well}$, where
+$L_{\rm well}$ is the length scale of the potential well.  At the WKB
+energy $E_0^{\rm WKB}=-9\times10^{-4}\,E_{\rm Pl}$ (for $C=0.180$), the
+de~Broglie wavelength at the centre of the well ($d\approx7$,
+$V_{\rm eff}\approx-0.011$) is
+\begin{equation}
+  \lambda_{\rm dB} = \frac{2\pi}{\sqrt{2\mu(E_0^{\rm WKB}-V_{\rm eff})}}
+  \approx \frac{2\pi}{\sqrt{2\times0.010}} \approx 44\,l_{\rm Pl},
+\end{equation}
+far exceeding the well width $L_{\rm well}\approx14\,l_{\rm Pl}$.
+\textbf{The WKB is invalid here.}  A correct quantum treatment is
+required.
+
+\subsection{Finite-difference Hamiltonian}
+
+We solve the 1D Schr\"odinger equation in the collective coordinate $d$:
+\begin{equation}
+  \hat{H}\psi = E\psi,\qquad
+  \hat{H} = -\frac{1}{2\mu}\frac{d^2}{dd^2} + V_{\rm eff}(d),
+\end{equation}
+with Dirichlet boundary conditions $\psi(d_{\rm lo})=\psi(d_{\rm hi})=0$,
+$d_{\rm lo}=0.4$, $d_{\rm hi}=30\,l_{\rm Pl}$, $N=3000$ grid points.
+The ZP term $3/(8d^2)$ is included in $V_{\rm eff}$ as the
+\emph{hypercentrifugal} kinetic energy from the transverse degrees of
+freedom (the $d$-axis kinetic energy is added by $\hat{H}$).
+
+We define:
+\begin{align}
+  V_{\rm 2B}(d;C,m_{\rm sp}) &=
+    \frac{3}{8d^2} - \frac{3C^2 e^{-m_{\rm sp}d}}{d}, \\
+  V_{\rm 3B}(d;C,m_{\rm sp}) &=
+    V_{\rm 2B}(d;C,m_{\rm sp}) - C^3\,I_Y(d,d,d;\,m_{\rm sp}).
+\end{align}
+The \textbf{classical Efimov window} (Sec.~\ref{sec:efimov}) is
+$\min_d V_{\rm 2B}>0$ and $\min_d V_{\rm 3B}<0$.  The
+\textbf{quantum Efimov window} (this section) is
+$E_0^{\rm FD}(V_{\rm 2B})>0$ and $E_0^{\rm FD}(V_{\rm 3B})<0$,
+where $E_0^{\rm FD}$ is the lowest eigenvalue of $\hat{H}$.
+
+\subsection{Results: classical vs quantum windows}
+
+\begin{table}[h]
+\centering
+\caption{Classical Efimov window (ex23) vs quantum window (ex26 FD),
+$m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$.}
+\label{tab:qm_window}
+\begin{tabular}{lcc}
+\hline
+Quantity & Classical (ex23) & Quantum FD (ex26) \\
+\hline
+$C_{\rm crit}^{(3B)}$ (3B binding threshold) & $0.128$ & $0.191$ \\
+$C_{\rm crit}^{(2B)}$ (2B binding threshold) & $0.184$ & $0.310$ \\
+Window width $\Delta C$ & $0.056$ & $\mathbf{0.119}$ \\
+Mass range $[m_{\rm Pl}]$ & $[0.45,\,0.65]$ & $[0.68,\,1.10]$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+Both thresholds are shifted upward by $\Delta C\approx0.063$--$0.126$
+because the quantum kinetic energy in the $d$-mode
+($E_{\rm kin}^{(d)}\approx0.006\,E_{\rm Pl}$) must be overcome by the
+attractive potential.  The window is \textbf{wider} in the quantum case
+($\Delta C=0.119$ vs $0.056$) because the 3-body force adds steeper
+$C^3$ attraction, reaching the quantum threshold at lower $C$ relative
+to the 2-body threshold.
+
+\begin{table}[h]
+\centering
+\caption{FD eigenvalues in the quantum Efimov window, $m_{\rm sp}=0.1$.}
+\label{tab:qm_eigs}
+\begin{tabular}{rcccc}
+\hline
+$C$ & $E_0^{\rm 2B}$ [$E_{\rm Pl}$] & $E_0^{\rm 3B}$ [$E_{\rm Pl}$]
+    & $N_{\rm states}$ & $d_{\rm peak}$ [$l_{\rm Pl}$] \\
+\hline
+$0.128$ & $+0.00722$ & $+0.00618$ & $0$ & --- \\
+$0.184$ & $+0.00608$ & $+0.00122$ & $0$ & --- \\
+$0.192$ & $+0.00587$ & $-0.00027$ & $1$ & $8.87$ \\
+$0.207$ & $+0.00540$ & $-0.00419$ & $1$ & $7.12$ \\
+$0.280$ & $+0.00220$ & $-0.06637$ & $2$ & $3.56$ \\
+$0.310$ & $+0.00051$ & $-0.11036$ & $2$ & --- \\
+$0.312$ & $-0.00016$ & $-0.12838$ & $2$ & --- \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Planck coupling is inside the quantum window}
+
+The TGP Planck coupling $C_{\rm Pl}=1/(2\sqrt{\pi})\approx0.282$
+lies \emph{inside} the quantum Efimov window $C\in(0.191,\,0.310)$:
+\begin{equation}
+  \boxed{C_{\rm Pl} = 0.282 \in (C_Q^{(3B)},\,C_Q^{(2B)}) = (0.191,\,0.310)}
+\end{equation}
+At $C=C_{\rm Pl}$:
+\begin{equation}
+  E_0^{\rm 2B}(C_{\rm Pl}) = +0.0022\,E_{\rm Pl} > 0
+    \quad\text{(triangle unbound by 2-body)},
+\end{equation}
+\begin{equation}
+  E_0^{\rm 3B}(C_{\rm Pl}) = -0.0664\,E_{\rm Pl} < 0
+    \quad\text{(triangle bound by 3-body!)}.
+\end{equation}
+\textbf{Planck-mass objects in TGP possess a quantum-mechanically
+bound 3B-induced triangular ground state.}
+
+\subsection{Wavefunction at \texorpdfstring{$C=0.207$}{C=0.207}}
+
+At $C=0.207$ (just above the 3B quantum threshold):
+\begin{equation}
+  E_0 = -4.2\times10^{-3}\,E_{\rm Pl},\quad
+  d_{\rm peak} = 7.1\,l_{\rm Pl},\quad
+  \langle d\rangle = 9.8\,l_{\rm Pl},\quad
+  \sigma_d = 4.8\,l_{\rm Pl}.
+\end{equation}
+The state is diffuse (spread over $\sim5\,l_{\rm Pl}$) but well-localised
+compared to the box size ($d_{\rm hi}=30\,l_{\rm Pl}$).
+
+\subsection{Correction to ex24 WKB}
+
+The WKB predicted a bound state at $E_0^{\rm WKB}=-9\times10^{-4}\,E_{\rm Pl}$
+for $C=0.180$.  The exact FD gives $E_0^{\rm FD}=+1.8\times10^{-3}\,E_{\rm Pl}$
+(unbound).  The WKB was wrong because:
+\begin{equation}
+  \lambda_{\rm dB} \approx 44\,l_{\rm Pl} \gg L_{\rm well}\approx14\,l_{\rm Pl}
+  \quad\text{(at } C=0.180\text{)}.
+\end{equation}
+The WKB quantisation condition $n+\tfrac{1}{2}=\frac{1}{\pi}\int\sqrt{2\mu(E-V)}\,dd$
+overestimates binding for such wide, shallow wells.
+
+\subsection{Summary}
+
+\begin{table}[h]
+\centering
+\caption{Summary: quantum Efimov window (ex26 FD), $m_{\rm sp}=0.1$.}
+\label{tab:qm_summary}
+\begin{tabular}{ll}
+\hline
+Property & Value \\
+\hline
+Quantum 3B threshold $C_Q^{(3B)}$ & $0.191$ \\
+Quantum 2B threshold $C_Q^{(2B)}$ & $0.310$ \\
+Quantum window width $\Delta C$ & $0.119$ (2.1$\times$ classical) \\
+Mass range (quantum) & $[0.68,\,1.10]\,m_{\rm Pl}$ \\
+$C_{\rm Pl}$ in window? & \textbf{Yes} ($C_{\rm Pl}=0.282\in(0.191,0.310)$) \\
+$E_0^{(3B)}(C_{\rm Pl})$ & $-0.066\,E_{\rm Pl}$ (strongly bound) \\
+WKB validity in classical window & No ($\lambda_{\rm dB}\gg L_{\rm well}$) \\
+Max FD states in quantum window & 2 (for $C\in(0.280,0.310)$) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Critical revision: 2D Jacobi correction (ex34, ex34v2)}
+\label{ssec:qw_2d_revision}
+
+\begin{remark}[2D geometry correction — equilateral is a saddle point]%
+\label{rem:2d_correction}
+The FD solver above reduces the three-body problem to a \emph{one-dimensional}
+collective coordinate $d$ (equilateral side length), implicitly constraining
+all three particles to an equilateral triangle.  Full 2D Jacobi calculations
+(scripts \texttt{ex34}, \texttt{ex34v2}, 2026-03-22) reveal that the
+equilateral configuration is a \textbf{saddle point} in the two-dimensional
+isosceles configuration space $(b, h)$, not the minimum.
+
+The systematic energy correction is:
+\begin{equation}
+  E_0^{\rm 2D} \approx E_0^{\rm 1D} + 0.08\,E_{\rm Pl}
+  \quad\text{(consistently for all $m_{\rm sp}$ and $C = C_{\rm Pl}$).}
+\end{equation}
+
+Applying this correction to the benchmark case $m_{\rm sp}=0.10$,
+$C = C_{\rm Pl} = 0.282$:
+\begin{align}
+  E_0^{\rm 1D}({\rm 3B}) &= -0.066\,E_{\rm Pl} \quad\text{(bound, this section)},\\
+  E_0^{\rm 2D}({\rm 3B}) &= -0.066 + 0.08 = +0.023\,E_{\rm Pl} \quad\text{(\textbf{unbound!})}.
+\end{align}
+
+\noindent\textbf{Consequence:} the conclusion
+``$C_{\rm Pl}$ lies inside the quantum Efimov window for $m_{\rm sp}=0.1$''
+is an artefact of the 1D (equilateral) approximation.  The window
+survives in 2D but is drastically narrowed; see
+Sec.~\ref{sec:quantum_window_msp} for the revised parameter range.
+\end{remark}

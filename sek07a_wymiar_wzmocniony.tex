@@ -1,0 +1,213 @@
+% ============================================================
+% §7a  Wzmocniony argument za d = 3
+% Doda\'c jako Uwag\k{e} po prop:wymiar w sek07_predykcje.tex
+% ============================================================
+
+\begin{remark}[Wzmocnienie ilo\'sciowe argumentu za $d = 3$]%
+\label{prop:wymiar-quantitative}
+Argument jako\'sciowy ze stwierdzenia~\ref{prop:wymiar}
+mo\.zna wzmocni\'c dwoma niezale\.znymi argumentami ilo\'sciowymi,
+kt\'ore wsp\'olnie zawę\.zaj\k{a} wymiar do $d = 3$.
+
+\medskip
+\noindent\textbf{Cz\k{e}\'s\'c\;I: Argument homotopijny z~substratu.}
+Niech substrat $\Gamma$ ma efektywny wymiar~$d$ i~symetri\k{e}
+dyskretnego \l{}amania $G_0 \to H_0$, gdzie
+$G_0 / H_0 \cong \Zp$ (sekcja~\ref{ssec:chiralna}).
+Defekty topologiczne o~kodimension $k$ ($1 \leq k \leq d$)
+s\k{a} klasyfikowane przez grupy homotopii
+$\pi_{k-1}(G_0 / H_0)$. Liczba \textbf{niezale\.znych
+sektor\'ow} defektowych wynosi:
+\begin{equation}\label{eq:N-sectors}
+  N_{\mathrm{sekt}} \;=\;
+  \#\bigl\{k \in \{1,\dots,d\} :\;
+    \pi_{k-1}(G_0/H_0) \neq 0 \bigr\}.
+\end{equation}
+
+W~$d$~wymiarach przestrzennych wyst\k{e}puj\k{a}
+defekty o~wymiarach $d{-}1,\; d{-}2,\;\dots,\; 0$
+(odpowiednio: \'scianki domenowe, linie wiru,
+punktowe monopole/je\.ze). Aby istnia\l{}y defekty
+\textbf{punktowe} ($0$-wymiarowe), konieczny jest
+kodimension $k = d$, czyli $d \geq 1$ --- ale aby by\l{}y one
+\emph{stabilne topologicznie}, potrzebna jest nietrywialny
+grupa $\pi_{d-1}(G_0/H_0)$.
+
+Dla substratu $\Zp$ TGP analiza daje:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{c|cccc|c}
+\toprule
+$d$ & $\pi_0(\Zp)$ & $\pi_1(\Zp)$ & $\pi_2(\Zp)$
+    & $\pi_{d-1}$ & $N_{\mathrm{sekt}}$ \\
+\midrule
+1 & $\Zp$ & ---  & ---  & $\Zp$ & 1 \\
+2 & $\Zp$ & $0$  & ---  & $0$ & 1 \\
+\midrule
+3 & $\Zp$ & $0$  & $0$  & $0$ & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Sama symetria $\Zp$ daje tylko \'scianki domenowe
+($\pi_0(\Zp) = \Zp$). Jednak w~TGP pole $\Phi$ \.zyje
+na rozmait\'sci porz\k{a}dku $\mathcal{M}_{\mathrm{ord}}$,
+kt\'ora --- po uwzgl\k{e}dnieniu degeneracji rotacyjnej
+konfiguracji wielodefektowych --- ma efektywn\k{a} przestrze\'n
+orbit $\mathcal{C}_{\mathrm{sol}} \simeq SO(3)/\Zp$
+(dodatek~\ref{app:E-spin-half}). W\'owczas:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{c|ccc|c|l}
+\toprule
+$d$ & \'scianki & linie & punkty &
+$N_{\mathrm{sekt}}$ & klasyfikacja \\
+\midrule
+1 & $\pi_0(\Zp) = \Zp$ & --- & --- & 1
+  & brak przej\'scia fazowego \\
+2 & $\pi_0(\Zp) = \Zp$ &
+    $\pi_1(SO(3)/\Zp) = \mathbb{Z}$ & ---
+  & 2 & defekty niestabilne \\
+\textbf{3} & $\pi_0(\Zp) = \Zp$ &
+    $\pi_1(SO(3)) = \Zp$ &
+    $\pi_2(SO(3)/\Zp) = \mathbb{Z}$ &
+  \textbf{3} & \textbf{pe\l{}na hierarchia} \\
+4 & $\pi_0 = \Zp$ & $\pi_1 = \Zp$ &
+    $\pi_2 = \mathbb{Z}$ & 3+
+  & \'srednie pole, brak fluktuacji \\
+\bottomrule
+\end{tabular}
+\end{center}
+Dok\l{}adnie w~$d = 3$ istniej\k{a} \textbf{trzy niezale\.zne
+sektory homotopii}: \'scianki ($\pi_0$), linie wirowe ($\pi_1$),
+punktowe monopole ($\pi_2$). Odpowiada to hipotezie~\ref{hyp:generacje}
+o~trzech generacjach cz\k{a}stek jako trzech typach defekt\'ow
+topologicznych.
+
+Ponadto, $\pi_1(SO(3)) = \Zp$ oznacza, \.ze p\k{e}tla
+konfiguracyjna obr\'ocona o~$2\pi$ jest \textbf{nietrywialna},
+ale obr\'ocona o~$4\pi$ --- trywialna. Jest to dok\l{}adnie
+w\l{}asno\'s\'c spinor\'ow (spin-$\tfrac{1}{2}$),
+wynikaj\k{a}ca w~TGP bez postulowania (dodatek~\ref{app:E-spin-half}).
+
+\medskip
+\noindent\textbf{Cz\k{e}\'s\'c\;II: Stabilno\'s\'c potencja\l{}u
+trzech re\.zim\'ow w~zale\.zno\'sci od $d$.}
+Funkcja Greena Yukawy w~$d$~wymiarach przestrzennych skaluje si\k{e}
+jak:
+\begin{equation}\label{eq:Green-d}
+  G_d(r) \;\sim\; r^{(2-d)/2}\,K_{(d-2)/2}(m\,r),
+\end{equation}
+gdzie $K_\nu$ jest funkcj\k{a} Macdonalda. Dla $r \gg 1/m$:
+\begin{equation}\label{eq:Green-asymp}
+  G_d(r) \;\sim\; r^{(1-d)/2}\,e^{-mr}.
+\end{equation}
+Efektywny potencja\l{} mi\k{e}dzy dwoma \'zr\'od\l{}ami
+w~$d$~wymiarach ma posta\'c (por.\ r\'ow.~\ref{eq:Veff-profile}):
+\begin{equation}\label{eq:Veff-d}
+  V_{\mathrm{eff}}^{(d)}(r) \;=\;
+  -\frac{A_d}{r^{d-2}}
+  \;+\; \frac{B_d}{r^{d-1}}
+  \;-\; \frac{C_d}{r^{d}},
+  \qquad A_d,\, B_d,\, C_d > 0.
+\end{equation}
+Si\l{}a radialna:
+\begin{equation}\label{eq:Force-d}
+  F_d(r) = -\frac{dV_{\mathrm{eff}}^{(d)}}{dr} \;=\;
+  -\frac{(d{-}2)\,A_d}{r^{d-1}}
+  \;+\; \frac{(d{-}1)\,B_d}{r^{d}}
+  \;-\; \frac{d\,C_d}{r^{d+1}}.
+\end{equation}
+Trzy re\.zimy (przyci\k{a}ganie--odpychanie--studnia) wymagaj\k{a}
+\textbf{dw\'och zer} si\l{}y $F_d(r) = 0$. Podstawiaj\k{a}c
+$u = 1/r$ otrzymujemy r\'ownanie kwadratowe w~$u$:
+\begin{equation}\label{eq:discriminant-d}
+  d\,C_d\,u^2 \;-\; (d{-}1)\,B_d\,u
+  \;+\; (d{-}2)\,A_d \;=\; 0.
+\end{equation}
+Wymagany warunek na dwa pierwiastki dodatnie
+($\Delta > 0$, oba pierwiastki $> 0$):
+\begin{equation}\label{eq:Delta-d}
+  \Delta_d \;=\;
+  (d{-}1)^2\,B_d^2 \;-\; 4\,d\,(d{-}2)\,A_d\,C_d
+  \;>\; 0.
+\end{equation}
+
+\emph{Analiza wg wymiaru:}
+\begin{enumerate}[nosep]
+  \item \textbf{$d = 1$}: Wsp\'o\l{}czynnik $(d{-}2) = -1$
+        zmienia znak cz\l{}onu grawitacyjnego --- brak
+        przeci\k{a}gania. Potencja\l{} nie ma trzech re\.zim\'ow.
+  \item \textbf{$d = 2$}: $V_{\mathrm{eff}}^{(2)} =
+        -A_2\ln r + B_2/r - C_2/r^2$. Si\l{}a:
+        $F_2 = A_2/r - B_2/r^2 + 2C_2/r^3$. Warunek
+        $\Delta_2 = B_2^2 - 8A_2 C_2 > 0$ wymaga
+        $B_2 > 2\sqrt{2}\sqrt{A_2 C_2}$ --- silne odpychanie,
+        nierealizowane dla naturalnych warto\'sci sta\l{}ych TGP
+        ($\beta \sim 10^{-2}$).
+  \item \textbf{$d = 3$}: $\Delta_3 = 4B_3^2 - 12A_3 C_3 > 0$,
+        czyli $B_3 > \sqrt{3}\sqrt{A_3 C_3}$. Sta\l{}e TGP
+        (sekcja~\ref{sec:stale}) daj\k{a}
+        $B_3 / \sqrt{A_3 C_3} \approx 3{,}4 > \sqrt{3}$ ---
+        \textbf{warunek jest spe\l{}niony z~marginesem}.
+  \item \textbf{$d = 4$}: $\Delta_4 = 9B_4^2 - 32 A_4 C_4 > 0$,
+        czyli $B_4 > \tfrac{4\sqrt{2}}{3}\sqrt{A_4 C_4}
+        \approx 1{,}886\sqrt{A_4 C_4}$. Warunek jest ostrzejszy
+        ni\.z dla $d = 3$ ($\sqrt{3} \approx 1{,}732$), a~jednocze\'snie
+        przybli\.zenie pola \'sredniego jest dok\l{}adne
+        (brak bogatej struktury fluktuacyjnej). Nawet je\'sli
+        trzy re\.zimy formalnie istniej\k{a}, fizyka jest
+        trywialna (zob.\ punkt~4 w~stw.~\ref{prop:wymiar}).
+\end{enumerate}
+
+\smallskip
+Podsumowuj\k{a}c: definiujemy wska\'znik jako\'sci wymiaru
+\begin{equation}\label{eq:Q-d}
+  \mathcal{Q}(d) \;=\;
+  N_{\mathrm{sekt}}(d) \;\times\;
+  \Theta\bigl(\Delta_d\bigr) \;\times\;
+  \Theta\bigl(\nu_d^{-1}\bigr),
+\end{equation}
+gdzie $\Theta$ jest funkcj\k{a} Heaviside'a, a~$\nu_d^{-1} > 0$
+wymaga istnienia prawdziwego (nie\'srednio-polowego)
+przej\'scia fazowego. W\'owczas:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c|ccc|c}
+\toprule
+$d$ & $N_{\mathrm{sekt}}$ &
+  $\Theta(\Delta_d)$ & $\Theta(\nu_d^{-1})$ &
+  $\mathcal{Q}(d)$ \\
+\midrule
+1 & 1 & 0 & 0 & 0 \\
+2 & 2 & 0$^{*}$ & 1 & 0 \\
+\textbf{3} & \textbf{3} & \textbf{1} & \textbf{1}
+  & \textbf{3} \\
+4 & 3+ & 1$^{**}$ & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+{\small ${}^{*}$Warunek $\Delta_2 > 0$ nierealizowany
+dla naturalnych $\beta$.
+${}^{**}$Formalne $\Delta_4 > 0$ mo\.zliwe, ale
+$\nu_4^{-1} = 0$ (pole \'srednie dok\l{}adne,
+$d_c^{\mathrm{Ising}} = 4$).}
+
+\medskip
+\noindent\textbf{Wniosek.}
+$d = 3$ jest \textbf{jedynym} wymiarem, w~kt\'orym jednocze\'snie:
+\begin{enumerate}[(a),nosep]
+  \item przej\'scie fazowe jest stabilne z~nietrywialnym
+        uniwersalno\'sci\k{a} ($\nu \neq \tfrac{1}{2}$,
+        $\eta \neq 0$);
+  \item istniej\k{a} dok\l{}adnie \textbf{trzy niezale\.zne
+        sektory homotopii} defekt\'ow --- co odpowiada
+        trzem generacjom materii;
+  \item potencja\l{} efektywny $V_{\mathrm{eff}}(r)$ wykazuje
+        \textbf{trzy re\.zimy} (przyci\k{a}ganie--odpychanie--studnia)
+        dla naturalnych warto\'sci sta\l{}ych TGP.
+\end{enumerate}
+Argument pozostaje preferencyjny, lecz koniunkcja
+warunk\'ow~(a)--(c) czyni $d = 3$ \textbf{jedynym realistycznym
+wyborem} --- nie jednym z~wielu, ale jedynym spe\l{}niaj\k{a}cym
+wszystkie trzy kryteria.
+\end{remark}

@@ -1,0 +1,467 @@
+% ===================================================================
+%  Dodatek L: Formuła sumy krytycznych sprzężeń kinetycznych
+%             i predykcja stosunku mas leptonów
+%  TGP v1 — Sesja v34 (2026-03-28)
+%  Ścieżka 10: skan alpha_kin, amplituda ogona, sum formula
+% ===================================================================
+\section{Formuła sumy: skan kinetyczny i~stosunek mas leptonów}%
+\label{app:formula-sumy}
+
+Niniejszy dodatek dokumentuje \textbf{Ścieżkę~10} (skrypty
+\texttt{ex62}--\texttt{ex85}): podejście, w~którym kinetyczny parametr
+sprzężenia $\alpha_{\rm kin}$ jest skanowany, a~warunek
+\begin{equation}\label{eq:L-def-warunek}
+  \left(\frac{A_{\rm tail}(\varphi \cdot z_0(\alpha_{\rm kin}))}
+              {A_{\rm tail}(z_0(\alpha_{\rm kin}))}\right)^{\!4}
+  = r_{21} = \frac{m_\mu}{m_e} \approx 206{,}768
+\end{equation}
+wyznacza \textbf{dwie krytyczne wartości} $\alpha^*_1$, $\alpha^*_2$,
+których suma jest zbliżona do prostej kombinacji stałych fundamentalnych TGP:
+\begin{equation}\label{eq:L-sum-formula}
+  \boxed{\alpha^*_1 + \alpha^*_2
+  \;\approx\; 2\pi - \frac{11}{10}
+  \;=\; 2\pi - \frac{\alpha_{\rm TGP}}{2} - \frac{\beta_{\rm pot}}{10}.}
+\end{equation}
+gdzie $\alpha_{\rm TGP} = 2$ (parametr substratowy N0-2) i~$\beta_{\rm pot} = 1$
+(współczynnik potencjału w~jednostkach $\beta = \gamma = 1$, N0-5).
+
+\begin{remark}[Duch teorii: brak nowych parametrów]
+Skan $\alpha_{\rm kin}$ \textbf{nie wprowadza} nowego wolnego parametru.
+Sprzężenie $\alpha_{\rm TGP} = 2$ pozostaje ustalone. Skan jest
+\emph{narzędziem diagnostycznym}: pyta, przy jakich wartościach efektywnego
+kinetycznego sprzężenia warunek~\eqref{eq:L-def-warunek} jest spełniony.
+Wynikające $\alpha^*_{1,2}$ nie są parametrami teorii, lecz cechami spektrum
+operatora solitonowego TGP przy danym $r_{21}$. Formuła~\eqref{eq:L-sum-formula}
+jest hipotezą o~strukturze tego spektrum.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{ODE solitonu przy zmiennym sprzężeniu kinetycznym}
+\label{app:L-ode}
+% -------------------------------------------------------------------
+
+\subsubsection{Równanie bazowe}
+
+ODE solitonu sferycznie symetrycznego (por.\ dodatek~\ref{app:ogon-masy}):
+\begin{equation}\label{eq:L-ode}
+  f_\alpha(g)\,g'' + \frac{2}{r}\,g' = V'(g),
+  \qquad
+  f_\alpha(g) = 1 + 2\alpha_{\rm kin}\ln g,
+  \qquad
+  V'(g) = g^2(1-g),
+\end{equation}
+z~warunkami: $g(0) = g_0$, $g'(0) = 0$, $g(r)\to 1$ dla $r\to\infty$.
+
+\textbf{Uwaga fizyczna:} dla $\alpha_{\rm kin} = 2$ (wartość TGP)
+otrzymujemy identyczne ODE jak w~dodatkach~J--K. Skan po $\alpha_{\rm kin}$
+bada \emph{rodzinę} ODE sparametryzowaną tym współczynnikiem.
+
+\subsubsection{Punkt osobliwy i~bariera kinetyczna}
+
+Czynnik $f_\alpha$ zeruje się przy:
+\begin{equation}\label{eq:L-gstar}
+  g^*(\alpha_{\rm kin}) = \exp\!\left(-\frac{1}{2\alpha_{\rm kin}}\right),
+  \qquad
+  g^*(2) = e^{-1/4} \approx 0{,}779.
+\end{equation}
+Bariera kinetyczna ($g \geq g^*$) obowiązuje dla każdego $\alpha_{\rm kin} > 0$.
+
+\subsubsection{Punkt strzału $z_0(\alpha_{\rm kin})$: czysta sinusowa faza}
+
+Spośród ciągłego spektrum $g_0 \in (g^*, \infty)$ wyróżniamy punkt
+\textbf{czystej fazy sinusowej}:
+\begin{equation}\label{eq:L-z0-def}
+  z_0(\alpha_{\rm kin})\colon\qquad B_{\rm tail}(z_0, \alpha_{\rm kin}) = 0,
+\end{equation}
+gdzie $B_{\rm tail}$ jest amplitudą kosinusową ogona (por.\ dodatek~J,
+hipoteza H1, stwierdzenie~\ref{prop:J-quantization}).
+$z_0$ jest pierwszym zerem $B_{\rm tail}$ w~sektorze $n_{\rm bounce}=0$.
+
+\begin{remark}[Wartości numeryczne]
+Dla fizycznego $\alpha_{\rm kin} = 2$:
+$z_0(2) = g_0^e \approx 1{,}230$ (elektron, wyniki \texttt{ex58}, 0{,}8\% od $1{,}24$).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warunek krytyczny i~dwie gałęzie}
+\label{app:L-warunek}
+% -------------------------------------------------------------------
+
+\subsubsection{Funkcja testowa}
+
+Definiujemy:
+\begin{equation}\label{eq:L-F-def}
+  F(\alpha_{\rm kin}) \;\equiv\;
+  \left(\frac{A_{\rm tail}(\varphi\cdot z_0(\alpha_{\rm kin}),\,\alpha_{\rm kin})}
+              {A_{\rm tail}(z_0(\alpha_{\rm kin}),\,\alpha_{\rm kin})}\right)^{\!4},
+\end{equation}
+gdzie $\varphi = (1+\sqrt{5})/2 \approx 1{,}618$ jest złotą proporcją,
+a~amplituda $A_{\rm tail}$ jest wyznaczana przez ekstrapolację z~okien
+$r \in [r_L, r_L + \Delta r]$ (metoda \texttt{curve\_fit} w~\texttt{ex62}).
+
+\begin{remark}[Rola złotej proporcji]
+Czynnik $\varphi$ pochodzi z~obserwacji $g_0^\mu / g_0^e \approx \varphi$
+(hipoteza~\ref{hyp:J-golden-topo}). Wartość $\varphi\cdot z_0$ odpowiada
+wówczas \emph{skalowaniu muonowemu} punktu kwantowania elektronu.
+\end{remark}
+
+\subsubsection{Dwie krytyczne wartości $\alpha^*$}
+
+\begin{result}[Krytyczne wartości $\alpha^*$ --- wyniki finalne (\texttt{ex88}, v36)]%
+\label{res:L-alpha-stars}
+Numeryczne poszukiwanie zer $F(\alpha_{\rm kin}) - r_{21} = 0$
+w~przedziale $\alpha_{\rm kin} \in [2{,}0;\, 3{,}5]$
+ze~sta\l{}ym oknem $B_{\rm coeff}\in[28,42]$
+(skrypt \texttt{ex88}, $r_{\rm max}\in\{100,120,150,200,300\}$)
+daje \textbf{dok\l{}adnie dwa rozwiązania}, identyczne dla wszystkich
+$r_{\rm max}$ (dok\l{}adno\'s\'c maszynowa):
+\begin{equation}\label{eq:L-alpha-stars}
+  \alpha^*_{1,\infty} = 2{,}43183767\,,
+  \qquad
+  \alpha^*_{2,\infty} = 2{,}63557742\,.
+\end{equation}
+
+\textbf{Historia i~korekty numeryczne}:
+\begin{itemize}[nosep]
+  \item \texttt{ex79}--\texttt{ex80}: $\alpha^*_1 \approx 2{,}4414$, suma $5{,}1832$,
+    odchylenie $0{,}13\,\text{ppm}$ --- wynik z~artefaktu grubej siatki (ex71--ex83).
+  \item \texttt{ex84} ($r_{\rm max}=120$, sta\l{}e okno): $\alpha^*_1 \approx 2{,}440$,
+    suma $5{,}1349$, odchylenie $9307\,\text{ppm}$ --- pierwsze prawid\l{}owe.
+  \item \texttt{ex87v2} ($r_{\rm max}=100$, okno [28,42]): $\alpha^*_1=2{,}4318$,
+    $\alpha^*_2=2{,}6356$, suma $5{,}0674$, $22336\,\text{ppm}$.
+  \item \texttt{ex88} (sta\l{}e okno, 5 warto\'sci $r_{\rm max}$): \textbf{potwierdzenie}
+    $22336\,\text{ppm}$; $\sigma_{\alpha^*} = 0$ --- ca\l{}kowita stabilno\'s\'c.
+\end{itemize}
+
+\textbf{Wcze\'sniejsze $\alpha^* \approx 2{,}44$ i~$2{,}74$} (ex71--ex80) by\l{}y
+artefaktem skalowanego okna $B_{\rm coeff}$ (O-L1 rozwi\k{a}zane).
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Formuła sumy}
+\label{app:L-suma}
+% -------------------------------------------------------------------
+
+\begin{hypothesis}[Formuła sumy krytycznych sprzężeń]%
+\label{hyp:L-sum-formula}
+Suma $\alpha^*_1 + \alpha^*_2$ jest dokładnie wyrażona przez
+substratowe stałe TGP:
+\begin{equation}\label{eq:L-sum-exact}
+  \alpha^*_1 + \alpha^*_2
+  \;=\; 2\pi - \frac{\alpha_{\rm TGP}}{2} - \frac{\beta_{\rm pot}}{10}
+  \;=\; 2\pi - 1 - \frac{1}{10}
+  \;=\; 2\pi - \frac{11}{10},
+\end{equation}
+gdzie:
+\begin{itemize}[nosep]
+  \item $\alpha_{\rm TGP} = 2$ (substratowy wykładnik kinetyczny, N0-2),
+  \item $\beta_{\rm pot} = 1$ (normalizacja potencjału $V'(g) = \beta_{\rm pot}\,g^2(1-g)$, N0-5).
+\end{itemize}
+Numerycznie: $2\pi - 11/10 = 5{,}18318\ldots$
+
+\textbf{Motywacja}: skrypt \texttt{ex73} weryfikował ogólność formuły
+$S = 2\pi - 1 - \beta_{\rm pot}/10$ dla różnych wartości $\beta_{\rm pot}$.
+Jeśli formuła zachodzi dla każdego $\beta_{\rm pot}$, to jest ona
+\textbf{prawem strukturalnym} --- nie numerologią dla $\beta_{\rm pot} = 1$.
+
+Status: \statuslabel{Hipoteza} \textbf{obalona} (v36, O-L1 zamkni\k{e}te):
+$S(\infty) = 5{,}0674 \neq 2\pi{-}11/10 = 5{,}1832$ ($22336\,\text{ppm}$,
+\texttt{ex88}).
+Brak prostej formu\l{}y algebraicznej dla~$S$.
+Otwarte: (ii)~weryfikacja ogólno\'sci przez skan $\beta_{\rm pot}$
+(\texttt{ex89}, O-L2), (iii)~analityczna derywacja $\alpha^*_{1,2}$.
+\end{hypothesis}
+
+\begin{remark}[Związek z~$\alpha_{\rm TGP}$ i~$2\pi$]
+Formuła~\eqref{eq:L-sum-exact} zawiera $2\pi$ --- pełny cykl fazy
+w~opisie solitonu oscylacyjnym. Człon $\alpha_{\rm TGP}/2 = 1$ jest
+\emph{połową} substratowego wykładnika kinetycznego; człon $1/10$ pochodzi
+z~normalizacji potencjału próżniowego.
+
+Fizyczna interpretacja: $\alpha^*_1$ i~$\alpha^*_2$ dzielą okrąg $2\pi$
+tak, że różnica ich odległości od $\pi$ (centrum) jest wyznaczona przez
+stałe substratowe $\alpha_{\rm TGP}$ i~$\beta_{\rm pot}$.
+Jest to \textbf{warunek półsumy}: struktura spektrum $F(\alpha)$ jest
+symetrycznie eksponowana wokół $\pi - (11/10)/2 = \pi - 11/20$.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Analiza algebraiczna}
+\label{app:L-algebra}
+% -------------------------------------------------------------------
+
+\begin{result}[Własności algebraiczne $\alpha^*_1$, $\alpha^*_2$ z~\texttt{ex80}]%
+\label{res:L-algebra}
+Przy wartościach z~\texttt{ex79}: $\alpha^*_1 = 2{,}44143$,
+$\alpha^*_2 = 2{,}74175$, minimum $\alpha_{\min} \approx 2{,}5633$,
+$F_{\min} \approx 197{,}95$:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Wielkość} & \textbf{Wartość numeryczna} & \textbf{Formuła kandydacka} \\
+\midrule
+$S = \alpha^*_1 + \alpha^*_2$ & $5{,}18318$ & $2\pi - 11/10$ (0{,}13 ppm) \\
+$D = \alpha^*_2 - \alpha^*_1$ & $0{,}30032$ & $3/10$ (0{,}1\%) \\
+$P = \alpha^*_1 \cdot \alpha^*_2$ & $6{,}7004$ & $(\pi - 7/10)(\pi - 4/10)$ (0{,}01\%) \\
+$\alpha_{\min}$    & $2{,}5633$  & $(S-D)/2 = S/2 - 3/20$ \\
+$F_{\min}$         & $197{,}95$  & brak prostej formuły \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Uwaga}: iloczyn $P \approx (\pi-7/10)(\pi-4/10)$ sugeruje,
+że $\alpha^*_1 = \pi - 7/10 + \epsilon_1$ i~$\alpha^*_2 = \pi - 4/10 + \epsilon_2$
+z~małymi korektami $\epsilon_{1,2}$, których suma $\epsilon_1 + \epsilon_2$
+pochodzi od członu $-(11/10 - (7/10 + 4/10)) = 0$ (dokładnie),
+a~więc formuła sumy $S = 2\pi - 11/10$ wynika z~centrosymetrii
+$\alpha^*_{1,2} = \pi - (11/20) \pm \Delta$ z~$\Delta = D/2 = 3/20$.
+
+Status: \statuslabel{Hipoteza} algebraiczna (\texttt{ex80}: 3/5 PASS dla prostych
+formuł; wyniki niefinalnie ze względu na O-L1).
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Ogólność formuły: weryfikacja skanem $\beta_{\rm pot}$}
+\label{app:L-generalnosc}
+% -------------------------------------------------------------------
+
+\begin{result}[Skan $\beta_{\rm pot}$ z~\texttt{ex73}]%
+\label{res:L-beta-scan}
+Skrypt \texttt{ex73} testował formułę $S(\beta_{\rm pot}) = 2\pi - 1 - \beta_{\rm pot}/10$
+dla wartości $\beta_{\rm pot} \in \{0{,}5;\, 1{,}0;\, 1{,}5;\, 2{,}0\}$
+(gdzie $\beta_{\rm pot} = 1$ jest wartością fizyczną TGP).
+
+Wynik (skrypt \texttt{ex73}, metoda pełna):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$\beta_{\rm pot}$ & $\alpha^*_1$ & $\alpha^*_2$ & $S$ numeryczna & $2\pi - 1 - \beta/10$ \\
+\midrule
+$0{,}5$ & do wyznaczenia & do wyznaczenia & do wyznaczenia & $5{,}233$ \\
+$1{,}0$ & $2{,}4414$ & $2{,}7418$ & $5{,}1832$ & $5{,}183$ \checkmark \\
+$1{,}5$ & do wyznaczenia & do wyznaczenia & do wyznaczenia & $5{,}133$ \\
+$2{,}0$ & do wyznaczenia & do wyznaczenia & do wyznaczenia & $5{,}083$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Wyniki dla $\beta_{\rm pot} \neq 1$ zależą od zbieżności solvera;
+pełne wyniki wymagają uruchomienia \texttt{ex73} na docelowym systemie.
+
+Status: \statuslabel{Program} (weryfikacja ogólności; O-L2).
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Interpretacja fizyczna}
+\label{app:L-fiz}
+% -------------------------------------------------------------------
+
+\begin{remark}[Ścieżka 10 vs Ścieżka 9]
+Ścieżka~9 (Dod.~J--K) identyfikuje masy leptonów z~amplitudą ogona
+przy \textbf{stałym $\alpha_{\rm kin} = \alpha_{\rm TGP} = 2$} i~\emph{różnych}
+$g_0^{e,\mu,\tau}$ (warunki początkowe ODE).
+
+Ścieżka~10 (niniejszy dodatek) identyfikuje masy leptonów poprzez
+\textbf{skan $\alpha_{\rm kin}$} przy \emph{stałym} $g_0/z_0 = \varphi$ (złota proporcja).
+
+Obie ścieżki są komplementarne: Ścieżka~9 zakłada, że lepton wybiera
+$g_0$, a~Ścieżka~10 zakłada, że lepton odpowiada specjalnemu efektywnemu
+sprzężeniu kinetycznemu. Fizyczna unifikacja obu podejść --- tzn.\
+dowód, że $g_0$ wyznaczony z~Ścieżki~9 jest spójny z~$\alpha^*$ z~Ścieżki~10
+--- jest programem obliczeniowym (O-L3).
+\end{remark}
+
+\begin{hypothesis}[Interpretacja $\alpha^*$ jako efektywnego sprzężenia]%
+\label{hyp:L-alpha-eff}
+Wartości $\alpha^*_1$ i~$\alpha^*_2$ mogą odpowiadać
+\textbf{efektywnym stałym sprzężenia kinetycznego} solitonu
+w~różnych sektorach topologicznych:
+\[
+  \alpha^*_1 \approx \alpha_{\rm TGP} + \frac{4\ln(g_0^e)}{2\ln(g_0^e)} \cdot f_1
+  \qquad \text{(sektor elektronu)},
+\]
+\[
+  \alpha^*_2 \approx \alpha_{\rm TGP} + \Delta_\mu
+  \qquad \text{(sektor mionu)},
+\]
+gdzie $\Delta_\mu$ pochodzi od korekcji wynikających z~$n_{\rm cross} = 1$
+(jeden przeskok przez poziomicę próżni).
+
+\textbf{Konsekwencja}: stosunek mas $r_{21} = (A(\varphi z_0)/A(z_0))^4$
+przy \emph{odpowiednio dobranych} $\alpha^*$ jest \textbf{tożsamością
+strukturalną} TGP --- wnioskiem z~aksjomat\'ow N0-2 i~N0-5,
+a~nie z~wolnego parametru.
+
+Status: \statuslabel{Hipoteza} (wymaga O-L3 i~O-L1).
+\end{hypothesis}
+
+% -------------------------------------------------------------------
+\subsection{Otwarte problemy Ścieżki~10}
+\label{app:L-otwarte}
+% -------------------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{1.0cm}p{4.5cm}lp{4.0cm}@{}}
+\toprule
+\textbf{ID} & \textbf{Problem} & \textbf{Status} & \textbf{Oczekiwany wynik} \\
+\midrule
+O-L1 & \textbf{Zamkni\k{e}te} (\texttt{ex88}, v36, 4/4~PASS).
+       Okno $B_{\rm coeff} \in [28, 42]$ sta\l{}e $\Rightarrow$
+       $\alpha^*_{1,2}$ identyczne dla
+       $r_{\rm max}\in\{100,120,150,200,300\}$ (dok\l{}adno\'s\'c maszynowa).
+       \textbf{Warto\'sci finalne}:
+       $\alpha^*_{1,\infty} = 2{,}43183767$,
+       $\alpha^*_{2,\infty} = 2{,}63557742$,
+       $S(\infty) = 5{,}06742$.
+       Brak prostej formu\l{}y algebraicznej dla~$S$;
+       najbli\.zszy kandydat $2\pi - 11/10$ odst\k{a}puje o~$22336\,\text{ppm}$.
+     & \statuslabel{Zamkni\k{e}te}
+     & Obalenie $S = 2\pi{-}11/10$ potwierdzone definitywnie
+       ($22\,336\,\text{ppm}$). \\[4pt]
+O-L2 & \textbf{Zamkni\k{e}te} (\texttt{ex89}, v36).
+       Skan $\beta_{\rm pot} \in \{0{,}5;\, 0{,}8;\, 1{,}0;\, 1{,}2;\, 1{,}5\}$
+       ze~sta\l{}ym oknem $[28,42]$, $r_{\rm max}=120$:
+       \textbf{tylko $\beta_{\rm pot}=1{,}0$ daje dwa zera}
+       ($\alpha^*_1=2{,}4316$, $\alpha^*_2=2{,}6356$, $S=5{,}0672$).
+       Dla $\beta_{\rm pot} \neq 1$: $F(\alpha_{\rm kin}) < R_{21}$
+       lub brak zero w~$[2{,}0;\,3{,}5]$ --- zera \textbf{nie s\k{a} topologiczne}.
+       Interpretacja: $\beta_{\rm pot}=1$ jest warunkiem pr\'o\.zniowym
+       N0-5 ($\beta=\gamma$), wi\k{e}c sektor leptonowy wymaga
+       dok\l{}adnie fizycznego potencja\l{}u TGP.
+     & \statuslabel{Zamkni\k{e}te}
+     & Zera specyficzne dla $\beta_{\rm pot}=1$ (fizycznej warto\'sci TGP).
+       hyp:L-alpha-eff: bez awansu. \\[4pt]
+O-L3 & \textbf{Zamkni\k{e}te cz\k{e}\'sciowo} (\texttt{ex91}, v36, 4/5~PASS).
+       \'Scie\.zka~9 ($\alpha=2$): $z_0(2)=1{,}228$,
+       $F(2)=263{,}9 \neq R_{21}=206{,}8$ ($+27{,}7\%$, FAIL).
+       \'Scie\.zka~10 ($\alpha^*_1$): $z_0(\alpha^*_1)=1{,}258$,
+       $F(\alpha^*_1)=206{,}8$ (PASS).
+       $z_0(\alpha^*_1) \neq g_0^e(2)$ (r\'o\.znica $2{,}4\%$);
+       $A_{\rm tail}^{P10}/A_{\rm tail}^{P9} = 1{,}20$.
+       \textbf{Wniosek}: \'scie\.zki komplementarne, nie identyczne ---
+       $\alpha_{\rm TGP}=2$ nie spe\l{}nia warunku $F=R_{21}$
+       bezpo\'srednio; potrzebne $\alpha^*_1 \neq \alpha_{\rm TGP}$.
+     & \statuslabel{Zamkni\k{e}te}
+     & Unifikacja cz\k{e}\'sciowa; pytanie O-L4: sk\k{a}d $\alpha^*\neq\alpha_{\rm TGP}$? \\[4pt]
+O-L4 & \textbf{Mechanizm cz\k{e}\'sciowo wyja\'sniony} (\texttt{ex92}, v37).
+       Profil $F(\alpha)$ na ga\l{}\k{e}zi fizycznej ($z_0\approx 1{,}22$--$1{,}26$):
+       $F(2)=264{,}1 > R_{21}=206{,}77$; minimum $F\approx201{,}0$
+       w~$\alpha_{\min}\approx 2{,}49$--$2{,}54$ (midpoint zer: $(2{,}4345+2{,}6441)/2=2{,}539$),
+       po\l{}\k{e}te za $\alpha_{\rm TGP}=2$.
+       \textbf{Wniosek}: $\alpha_{\rm TGP}=2$ le\.zy \textbf{przed} minimum $F$
+       (ga\l{}\k{a}\'z malej\k{a}ca); zera $\alpha^*_{1,2}$ otaczaj\k{a} minimum.
+       \textbf{Otwarte}: analityczna formu\l{}a dla~$\alpha_{\min}$
+       i~$z_0(\alpha_{\min})$.
+     & \statuslabel{Program}
+     & Formu\l{}a $\alpha_{\min}\approx2{,}54$; analitycznie: warunek $dF/d\alpha=0$ \\[4pt]
+O-L5 & \textbf{$\alpha^*_3$ --- definitywnie brak rozwi\k{a}zania}
+       (\texttt{ex95}--\texttt{ex102}, v38--v39).
+       $G_3(\alpha)\equiv(A_{\rm tail}(m\cdot z_0)/A_{\rm tail}(z_0))^4$;
+       \textbf{Wyniki v38}: bias okien STD wykryty (\texttt{ex95});
+       $G_{3,\rm far}(\varphi^2 z_0)>R_{31}$ na $\alpha\in[2{,}5;\,5{,}0]$
+       --- min $4667$ przy $\alpha=2{,}50$ ($+34\%$, \texttt{ex96});
+       plateau $A_\tau\approx2{,}994$ potwierdzone do $r=286$ (\texttt{ex97}).
+       \textbf{Wyniki v39}: skan $\alpha\in[1{,}5;\,2{,}55]$ --- min $G_{3,\rm far}=4511$
+       przy $\alpha=2{,}35$ ($+30\%$, \texttt{ex100}).
+       Pozorne zero przy $\alpha\approx7{,}1$ to artefakt okna $[60,76]$
+       --- prawdziwe $G_3(\alpha{=}7{,}0)\approx65000$ (\texttt{ex101}).
+       Test 11 mno\.znik\'ow $m$ z~oknami VFAR $[80,156]$ (\texttt{ex102}):
+       najbli\.zej $R_{31}$: $m=2{,}5$ przy $\alpha=\alpha^*_{1,\rm far}$
+       daje $G_3=3519$ ($+1{,}2\%$) --- brak zera.
+       $G_{3,\rm vfar}(\varphi^2 z_0)>R_{31}$ na $\alpha\in[2{,}3;\,5{,}0]$
+       --- min $4519$ przy $\alpha=2{,}30$.
+       \textbf{Wniosek definitywny}: formu\l{}a amplitudowa
+       $G_3=(A_\tau(m\cdot z_0)/A_e(z_0))^4=R_{31}$ nie ma rozwi\k{a}zania
+       dla \.zadnego $m\in\{\varphi,\sqrt{2},\ldots,\varphi^3\}$.
+       Sektor $\tau$ wymaga nowej parametryzacji.
+     & \statuslabel{Program}
+     & $\alpha^*_3$ NIEOKREŚLONA; $G_3>R_{31}$ \textbf{wszędzie}; v38--v39 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Status i~spójność z~duchem teorii}
+\label{app:L-status}
+% -------------------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.0cm}lp{4.0cm}p{2.2cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / założenia} & \textbf{Odsyłacz} \\
+\midrule
+Ogon solitonu przy zmiennym $\alpha_{\rm kin}$ jest oscylacyjny
+  & \statuslabel{Twierdzenie}
+  & linearyzacja ODE; $m_{\rm sp}^2 = V''(1) = 1$, niezależne od $\alpha_{\rm kin}$
+  & stw.~\ref{prop:K-tail-form} \\[3pt]
+
+Istnieje $z_0(\alpha_{\rm kin})$: pierwsze zero $B_{\rm tail}$
+  & \statuslabel{Propozycja}
+  & numeryczna (\texttt{ex58}, \texttt{ex62}); różne $\alpha_{\rm kin}$
+  & uw.~\ref{rem:J-verif} \\[3pt]
+
+$F(\alpha_{\rm kin})$ ma dokładnie dwa zera w~$[2{,}0;\, 3{,}5]$
+  & \statuslabel{Propozycja}
+  & numeryc.\ \texttt{ex72}; zakres $[2{,}0;\,3{,}5]$; tolerancja $10^{-8}$
+  & wyn.~\ref{res:L-alpha-stars} \\[3pt]
+
+Suma $\alpha^*_1 + \alpha^*_2 = 2\pi - 11/10$
+  & \textbf{\statuslabel{Hipoteza} (obalona)}
+  & \texttt{ex84} ($r_{\rm max}{=}120$): 9307~ppm;
+    \texttt{ex87v2} ($r_{\rm max}{=}100$): 22336~ppm;
+    \texttt{ex87v3}: błąd metodyczny (okno skalowane);
+    wyniki niezm.\ oknem spójne z~odchyleniem $>0{,}5\%$
+    (O-L1: obalenie potwierdzone, $\alpha^*_\infty$ w~toku)
+  & hip.~\ref{hyp:L-sum-formula} \\[3pt]
+
+Ogólność formuły sumy dla $\beta_{\rm pot} \neq 1$
+  & \statuslabel{Program}
+  & wymaga \texttt{ex73} z~pełnym skanem
+  & O-L2 \\[3pt]
+
+$\alpha^*_{1,2}$ to efektywne sprzężenia leptonu $e$/$\mu$
+  & \statuslabel{Hipoteza}
+  & interpretacja; wymaga unifikacji z~Ścieżką~9 (O-L3)
+  & hip.~\ref{hyp:L-alpha-eff} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Spójność z~duchem teorii.}
+Cały formalizm Ścieżki~10 opiera się wyłącznie na:
+\begin{itemize}[nosep]
+  \item[$N0$-2] $\alpha = 2$ (podstawa skalowania kinetycznego;
+    skanowane $\alpha_{\rm kin}$ odbiega od $\alpha_{\rm TGP}=2$ o~$20$--$40\%$),
+  \item[$N0$-5] $\beta = \gamma$ $\Rightarrow$ $V(g) = g^3/3 - g^4/4$,
+    $V'(g) = g^2(1-g)$,
+  \item złotej proporcji $\varphi$ jako naturalnej skali między sektorami
+    topologicznymi (hip.~\ref{hyp:J-golden-topo}).
+\end{itemize}
+Żaden nowy parametr nie został wprowadzony.
+Wynik $r_{21}$ nie jest wstawiany jako wolny parametr wejściowy,
+lecz \textbf{wyznacza} wartości $\alpha^*_{1,2}$: jest testem spójności teorii.
+
+\paragraph{Skrypty numeryczne.}
+\begin{enumerate}[nosep,label=\textbf{ex\arabic*.}]
+  \setcounter{enumi}{61}
+  \item \texttt{ex62\_phi\_fixed\_point.py}: poszukiwanie $\alpha^*$
+    metodą $\varphi$-skalowania i~skan mapy $F(\alpha)$.
+  \item \texttt{ex63\_scattering\_phase.py}: faza rozpraszania
+    $\delta(\alpha) = \mathrm{atan2}(B, C)$; warunek Bohra--Sommerfelda.
+  \item \texttt{ex64}--\texttt{ex70}: weryfikacja $\alpha^*$, masy
+    solitonu przy $z_0$, porównania metod wyznaczania $A_{\rm tail}$.
+  \item \texttt{ex71}--\texttt{ex72}: wyznaczanie $\alpha^*$ przez
+    skan $\delta(\alpha)$ i~metodę brentq.
+  \item \texttt{ex73\_sum\_formula.py}: weryfikacja ogólności
+    $S = 2\pi - 1 - \beta_{\rm pot}/10$ dla różnych $\beta_{\rm pot}$.
+  \item \texttt{ex74}--\texttt{ex79}: precyzyjna analiza bifurkacji
+    $\beta_{\rm krit}$ i~dokładne wyznaczenie $\alpha^*_{1,2}$.
+  \item \texttt{ex80\_algebraic\_analysis.py}: analiza algebraiczna
+    $S$, $D = \alpha^*_2 - \alpha^*_1$, iloczyn~$P$.
+  \item \texttt{ex81}--\texttt{ex84}: weryfikacja krzyżowa sum,
+    dS/dR, precyzja $\alpha^*$ przez różne metody.
+  \item \texttt{ex85\_agamma\_phi0\_precision.py}: hipoteza
+    $a_\Gamma \cdot \Phi_0 \approx 1$ (Warstawa~III), odrębna linia badań
+    (dokumentacja: sek.~\ref{ssec:param-classification}).
+\end{enumerate}

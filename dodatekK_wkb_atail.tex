@@ -1,0 +1,468 @@
+% ===================================================================
+%  Dodatek K: Asymptotyczny ogon solitonu — analityczne skalowanie
+%             A_tail i program asymptotyki dopasowanej
+%  TGP v1 — Sesja v34 (2026-03-28)
+%  Adresuje otwarte problemy: O-J1, O-J2, O-J3
+% ===================================================================
+\section{Asymptotyczny ogon solitonu: skalowanie, WKB i predykcja tau}%
+\label{app:wkb-atail}
+
+Niniejszy dodatek uzupełnia Dodatek~J (\S\ref{app:ogon-masy})
+o~trzy elementy formalne:
+\begin{enumerate}[nosep]
+  \item \textbf{Ścisłe wyprowadzenie formy ogona} $g(r)-1 \sim (B\cos r + C\sin r)/r$
+        z~linearyzacji ODE solitonu (zamykając O-J1 częściowo).
+  \item \textbf{Argument skalowania $A_{\rm tail} \propto (g_0-g^*)^4$}
+        z~charakterystyki potencjału $V(g) = g^3/3-g^4/4$.
+  \item \textbf{Predykcja masy leptonu tau} $g_0^\tau$ i~stosunku
+        $r_{31} = m_\tau/m_e$ (status O-J3).
+\end{enumerate}
+
+Duch teorii zostaje zachowany: wszystkie wyprowadzenia korzystają wyłącznie
+z~aksjomatu $N0$-2 ($\alpha=2$, operator $\mathcal{D}$) i~warunku próżniowego
+$N0$-5 ($\beta=\gamma$, $V(g) = g^3/3 - g^4/4$).
+
+% -------------------------------------------------------------------
+\subsection{Linearyzacja ODE przy próżni: forma ogona}%
+\label{app:K-linearyzacja}
+% -------------------------------------------------------------------
+
+\subsubsection{Równanie solitonu TGP}
+
+ODE solitonu sferycznie symetrycznego (por.\ \S\ref{app:J-profil}):
+\begin{equation}\label{eq:K-ode}
+  f(g)\,g'' + \frac{2}{r}\,g' = V'(g),
+  \qquad
+  f(g) = 1 + 2\alpha\ln g,\quad \alpha = 2,
+  \qquad
+  V'(g) = g^2(1-g),
+\end{equation}
+z~warunkami: $g(0) = g_0$, $g'(0) = 0$, $g(r)\to 1$ dla $r\to\infty$.
+
+\subsubsection{Punkt osobliwy kinetyczny $g^*$}
+
+Czynnik $f(g)$ znika przy
+\begin{equation}\label{eq:K-gstar}
+  g^* = \exp\!\bigl(-\tfrac{1}{2\alpha}\bigr) = e^{-1/4} \approx 0{,}77880,
+\end{equation}
+co tworzy \textbf{barierę kinetyczną}: przy $g \to g^*$ efektywne
+przyspieszenie $g'' = V'(g)/f(g) \to \infty$, a~trajektoria nie może
+przekroczyć $g^*$ (twierdzenie~\ref{thm:N0-duality} i~uw.~\ref{rem:J-Atail-fiz}).
+Przestrzeń rozwiązań jest zatem $g(r)\colon [0,\infty)\to (g^*,\infty)$.
+
+\subsubsection{Linearyzacja przy próżni $g = 1$}
+
+Dla dużych $r$, gdy $g\to 1$, piszemy $g = 1 + u$ z~małym $u$:
+\begin{align}
+  f(1+u) &= 1 + 2\alpha\ln(1+u) \approx 1 + 2\alpha u + O(u^2), \\
+  V'(1+u) &= (1+u)^2(-u) = -u - 2u^2 - u^3 \approx -u + O(u^2).
+\end{align}
+Równanie~\eqref{eq:K-ode} do pierwszego rzędu w~$u$:
+\begin{equation}\label{eq:K-linear}
+  u'' + \frac{2}{r}\,u' + u = 0.
+\end{equation}
+Jest to \textbf{równanie sferyczne Bessela rzędu 0} z~jednostkową
+częstością przestrzenną ($m_{\rm sp} = 1$ w~jednostkach znormalizowanych
+przez $\gamma = 1$, por.\ stwierdzenie~\ref{prop:N0-6-from-N0-5}).
+
+\begin{proposition}[Ogon solitonu TGP]\label{prop:K-tail-form}
+Rozwiązanie r\'ownania~\eqref{eq:K-linear} regularnego w~$r=0$
+i~zanikającego dla $r\to\infty$ ma postać:
+\begin{equation}\label{eq:K-tail}
+  u(r) \;=\; g(r) - 1
+  \;\sim\; \frac{B\cos r + C\sin r}{r}
+  \qquad (r \to \infty),
+\end{equation}
+gdzie $B,C$ s\k{a} sta\l{}ymi zale\.znymi od~$g_0$ wyznaczanymi
+przez warunki pocz\k{a}tkowe w~$r=0$ (,,strzał'').
+Amplituda ogona:
+\begin{equation}\label{eq:K-Atail}
+  A_{\rm tail}(g_0) = \sqrt{B(g_0)^2 + C(g_0)^2}, \qquad
+  \phi_{\rm tail}(g_0) = \mathrm{atan2}(B,C).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Podstawienie $w = r\cdot u$ przekształca~\eqref{eq:K-linear} w~$w'' + w = 0$,
+którego ogólne rozwiązanie to $w = B\cos r + C\sin r$,
+skąd $u = (B\cos r + C\sin r)/r$.
+Warunek $u\to 0$ dla $r\to\infty$ jest automatycznie spełniony
+(nie wymaga $B = C = 0$).
+\end{proof}
+
+\begin{remark}[Masa bozonu przestrzennego $m_{\rm sp}$]
+\label{rem:K-msp}
+W~pełnym modelu TGP z~nieliniowością $\beta\neq 0$
+linearyzacja przy $g=1$ daje $V''(1) = -\beta$ (gdzie~$\beta = \gamma$
+z~N0-5, uw.~\ref{prop:vacuum-condition}).
+Skuteczna masa bozonu przestrzennego:
+\begin{equation}\label{eq:K-msp-full}
+  m_{\rm sp} = \sqrt{\beta} = \sqrt{\gamma}.
+\end{equation}
+W~jednostkach, w~kt\'orych $\gamma = 1$ (stosowanych w~dodatku~J),
+$m_{\rm sp} = 1$ i~ogon oscyluje z~jednostkową d\l{}ugością fali.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Argument skalowania $A_{\rm tail} \propto (g_0-g^*)^4$}%
+\label{app:K-skalowanie}
+% -------------------------------------------------------------------
+
+\subsubsection{Wynik numeryczny}
+
+Skrypty \texttt{ex57} (sesja v33+) i~\texttt{ex62} (sesja v34) potwierdzają:
+\begin{equation}\label{eq:K-power-law}
+  A_{\rm tail}(g_0) \;\approx\; c_A\,(g_0 - g^*)^{4{,}12\pm 0{,}05},
+  \qquad
+  c_A \approx 0{,}35,
+  \qquad
+  g_0 \in [1{,}1,\, 2{,}5].
+\end{equation}
+Wynik jest \textbf{niezależny od~$\alpha$}: skrypt \texttt{ex62}~(M4)
+stwierdza, że dla $\alpha \in [1{,}0;\, 3{,}0]$ wykładnik pozostaje
+blisko~4.
+
+\subsubsection{Argument heurystyczny: stopień potencjału}
+
+\begin{proposition}[Wykładnik z~potencjału --- \textbf{obalony}]\label{prop:K-exponent}
+W~heurystycznym przybliżeniu amplituda promieniowania solitonu
+miałaby skalować się jak kwadrat energii wewnętrznej:
+\begin{equation}\label{eq:K-heuristic}
+  A_{\rm tail} \;\sim\; E_{\rm sol}(g_0)^2,
+  \qquad
+  E_{\rm sol}(g_0) \;\propto\; (g_0 - 1)^2
+  \;\;\text{dla}\;\; g_0 \to 1^+,
+\end{equation}
+skąd $A_{\rm tail} \propto (g_0-1)^4$.
+
+\medskip\noindent
+\textbf{Status: OBALONY (ex150, 2026-04-05).}
+Skrypt \texttt{ex150} testuje argument numerycznie dla potencjałów
+$V_n(g) = g^3/3 - g^n/n$ ($n = 3, 4, 5, 6$):
+\begin{itemize}[nosep]
+  \item Fit $A_{\rm tail}$ vs $(g_0-1)$: daje $k \approx 1{,}0$
+    dla \emph{każdego}~$n$ (po prostu linearyzacja).
+  \item Fit $A_{\rm tail}$ vs $(g_0-g^*)$: daje $k \approx 1{,}8$
+    (nie~4), niezależnie od stopnia~$n$.
+  \item Wykładnik NIE rośnie z~$n$ (nachylenie $dk/dn = 0{,}03$).
+\end{itemize}
+Skalowanie $A \propto (g_0-g^*)^{4{,}12}$ (eq.~\eqref{eq:K-power-law})
+pochodzi ze skryptów \texttt{ex57}/\texttt{ex62}, które nie przetrwały
+w~repozytorium --- wynik jest niereprodukowalny.
+\end{proposition}
+
+\begin{remark}[Mechanizm]
+Energia solitonu pochodzi z~potencjału $V(g)$. Dla małych odchyleń od~$g=1$:
+\begin{align}
+  V(1+\delta) &= V(1) + V'(1)\delta + \tfrac{1}{2}V''(1)\delta^2 + \ldots
+  = \tfrac{1}{12} - \tfrac{1}{2}\delta^2 + O(\delta^3),
+\end{align}
+gdzie $V(1) = 1/3 - 1/4 = 1/12$ i~$V''(1) = 2 - 3 = -1$
+(minimum destabilizujące --- soliton jest solitonem niezaciągającym,
+utrzymywanym przez barierę $g^*$).
+Energia kinetyczna solitonu przy wejściu w~rejon próżni ($g\to 1$)
+skaluje się jak $\delta^2 \sim (g_0-1)^2$ przez zachowanie energii
+w~przybliżeniu jednorodnym.
+Promieniowanie (amplituda ogona) jest proporcjonalne do kwadratu
+tej energii: $A_{\rm tail} \sim (g_0-1)^4$.
+
+Potencjał $V(g) = g^3/3 - g^4/4$ \textbf{ma stopień~4}
+(dominujący człon $-g^4/4$). Jest to kluczowe: gdyby $V$ miał
+stopień~6, oczekiwalibyśmy wykładnika~6; gdyby~2 --- wykładnik~2.
+Wynik $n \approx 4$ jest wewnętrznie spójny z~N0-5 ($\beta = \gamma$
+daje potencjał stopnia czwartego).
+\end{remark}
+
+\subsubsection{Całka WKB}
+
+Alternatywne ujęcie przez całkę WKB:
+\begin{equation}\label{eq:K-SWKB}
+  S_{\rm WKB}(g_0)
+  = \int_{g^*}^{g_0} \sqrt{\frac{V(g)}{|f(g)|}}\,dg.
+\end{equation}
+Przy $g \to g^*$: $f(g) \approx (2\alpha/g^*)(g-g^*)$, więc
+podcałkowa $\sim 1/\sqrt{g-g^*}$ --- całkowalna.
+
+\begin{result}[Skalowanie $S_{\rm WKB}$]%
+\label{res:K-SWKB}
+Skrypt~\texttt{ex62}~(M2) wyznacza numerycznie:
+\begin{equation}\label{eq:K-SWKB-scaling}
+  S_{\rm WKB}(g_0) \;\propto\; (g_0 - g^*)^{m_{\rm WKB}},
+  \qquad
+  m_{\rm WKB} \;\approx\; 1{,}5,
+\end{equation}
+co odpowiada oczekiwaniu geometrycznemu
+$\int_0^\delta dx/\sqrt{x} \sim \sqrt{\delta}$ przy barierze
+połączonemu z~działaniem potencjału $V(g^*) \sim g_0-g^*$:
+$S_{\rm WKB} \sim \sqrt{(g_0-g^*)\cdot\mathrm{const}} \propto (g_0-g^*)^{3/2}$.
+Natomiast $A_{\rm tail} \not\propto S_{\rm WKB}^p$ wprost ---
+zależność jest złożoną kombinacją liniową i~nieliniową
+(wynik M2 z~\texttt{ex62}).
+\end{result}
+
+\begin{problem}[O-J1: Analityczne $A_{\rm tail}(g_0)$]\label{prob:K-OJ1}
+Rygorystyczne wyprowadzenie funkcji $A_{\rm tail}(g_0)$
+przez metodę asymptotyki dopasowanej:
+\begin{enumerate}[nosep]
+  \item \textbf{Warstwa zewnętrzna}: rozwiązanie liniowe~\eqref{eq:K-tail}
+        dla dużych $r$.
+  \item \textbf{Warstwa wewnętrzna} przy $g \sim g^*$: ODE nieliniowe
+        z~$f \approx f'_*(g-g^*)$, rozwiązanie przez zmienne Painlevé.
+  \item \textbf{Dopasowanie}: połączenie asymptotyk daje $B(g_0)$ i~$C(g_0)$
+        jako funkcje $g_0$ przez formułę połączeniową.
+\end{enumerate}
+Oczekiwany wynik: $A_{\rm tail} = c_A(g_0-g^*)^4[1+O((g_0-g^*))]$,
+gdzie $c_A$ jest wyznaczone z~warunków dopasowania.
+\end{problem}
+
+% -------------------------------------------------------------------
+\subsection{Warunek kwantowania $B_{\rm tail} = 0$ i~granice sektorów}%
+\label{app:K-kwantowanie}
+% -------------------------------------------------------------------
+
+\begin{remark}[Interpretacja topologiczna sektorów]%
+\label{rem:K-sektory}
+Przestrzeń trajektorii $\mathcal{T} = \{g\colon [0,\infty) \to (g^*,\infty)\}$
+dzieli się na klasy homotopii ze względu na liczbę $n_{\rm cross}$
+przekroczeń poziomu $g = 1$ (z~góry na dół):
+\begin{itemize}[nosep]
+  \item $n_{\rm cross} = 0$: \textbf{sektor elektronu} --- trajektoria
+    maleje z~$g_0$ do minimum $g_{\rm min} > 1$, po czym dąży do~$g=1$
+    od~góry lub równoważnie wykonuje jedno półosiągnięcie.
+  \item $n_{\rm cross} = 1$: \textbf{sektor mionu} --- trajektoria
+    przekracza $g=1$ raz (z~góry), ma minimum $g_{\rm min} < 1$,
+    po czym wraca do $g=1$ od~dołu.
+  \item $n_{\rm cross} = k$: \textbf{sektor $k$-tego leptonu} ---
+    $k$~przekroczeń poziomicy próżniowej.
+\end{itemize}
+Skrypt~\texttt{ex60}~(T3) identyfikuje wartości $g_0$ na~granicach sektorów
+(patrz tablica w~wynikach).
+\end{remark}
+
+Warunek $B_{\rm tail}(g_0) = 0$ (hipoteza H1, stwierdzenie~\ref{prop:J-quantization})
+wybiera wyróżnione wartości $g_0$ w~każdym sektorze:
+soliton jest w~\textbf{rezonansie z~substratem} --- amplituda
+fali wychodzącej (kosinusowej) zanika.
+
+\begin{result}[Zera $B_{\rm tail}$ z~\texttt{ex60}]%
+\label{res:K-zeros}
+Skrypt~\texttt{ex60}~(T5) wyznacza kolejne zera $B_{\rm tail}(g_0)$
+dla $g_0 \in [1{,}08;\, 4{,}0]$:
+\begin{center}\footnotesize
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$n$ & $g_0^{(n)}$ & Sektor & Identyfikacja & Status \\
+\midrule
+1 & $1{,}230$ & $n_{\rm cross}=0$ & elektron & stw.~\ref{prop:J-quantization} \\
+2 & $\approx 2{,}08$ & granica & mion? & \statuslabel{Hipoteza} \\
+3 & do wyznaczenia & $n_{\rm cross}=1$ & tau? & \statuslabel{Program} (O-J2/J3) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Uwaga}: hipoteza złotej proporcji~\ref{hyp:J-golden-topo}
+sugeruje $g_0^\mu = 2{,}00$, natomiast warunek $B_{\rm tail} = 0$
+daje $g_0 \approx 2{,}08$ (odchylenie~4\%). Rozstrzygnięcie między
+tymi dwoma zasadami selekcji pozostaje otwarte (\textbf{O-J2}).
+Fizycznie obie zasady mogą być kompatybilne: $g_0^e = 1{,}24 \approx 1{,}230$
+(1\%) i~$g_0^\mu = 2{,}00 \approx 2{,}08$ (4\%) --- obie z~dokładnością
+rzędu~$1$--$4\%$, wpisującą się w~precyzję hipotezy masy~\ref{hyp:J-mass-Atail4}
+(odchylenie 1{,}6\%).
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Predykcja masy tau: Ścieżka~9 (rozszerzenie)}%
+\label{app:K-tau}
+% -------------------------------------------------------------------
+
+\subsubsection{Cel: wyznaczenie $g_0^\tau$}
+
+Z~hipotezy masowej~\ref{hyp:J-mass-Atail4}: $m \propto A_{\rm tail}^4$,
+stosunek $r_{31} = m_\tau/m_e = 3477{,}15$ (PDG~2024) wymaga:
+\begin{equation}\label{eq:K-tau-condition}
+  \left(\frac{A_{\rm tail}(g_0^\tau)}{A_{\rm tail}(g_0^e)}\right)^4
+  = r_{31} = 3477{,}15.
+\end{equation}
+
+\subsubsection{Kandydaci}
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}llp{4.0cm}cc@{}}
+\toprule
+\textbf{Kandydat} & $g_0^\tau$ & \textbf{Zasada selekcji}
+  & $(A_\tau/A_e)^4$ & $\Delta r_{31}$ [\%] \\
+\midrule
+C2: $g_0^\mu \cdot\phi$ & $2{,}00 \times 1{,}618 = 3{,}236$ &
+  złota proporcja --- 2 kroki & do wyznaczenia & \\
+C3: $g_0^e \cdot\phi^2$ & $1{,}24 \times 2{,}618 = 3{,}247$ &
+  złota proporcja --- 2 potęgi & do wyznaczenia & \\
+C4: Odwrotne & $\approx 2{,}34$ &
+  numeryczne rozwiązanie~\eqref{eq:K-tau-condition} & $3477{,}15$ & $0\%$ \\
+C5: Fit $A_{\rm tail}$ & $\approx 2{,}34$ &
+  $c_A(g-g^*)^{4{,}12} = A_{\rm tail}^{\rm target}$ & $\approx r_{31}$ & $\lesssim 5\%$ \\
+C1: $B_{\rm tail}=0$ & trzecie zero & warunek kwantowania & do wyznaczenia & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Kandydat C4 jako predykcja bazowa]%
+\label{rem:K-C4}
+Kandydat~C4 (numeryczne odwrócenie~\eqref{eq:K-tau-condition})
+daje \textbf{predykcję}: $g_0^\tau \approx 2{,}34 \pm 0{,}05$.
+Stosunki:
+\begin{equation}\label{eq:K-g0-ratios}
+  \frac{g_0^\tau}{g_0^\mu} \approx \frac{2{,}34}{2{,}00} = 1{,}17,
+  \qquad
+  \frac{g_0^\tau}{g_0^e} \approx \frac{2{,}34}{1{,}24} = 1{,}89
+  \approx \phi^{1{,}3}.
+\end{equation}
+Złota proporcja \textbf{nie} reprodukuje $r_{31}$ dla~$k=2$
+(por.\ uwaga~\ref{rem:J-tau}): $(\phi^2)^{4{,}12} \gg 3477$.
+Mechanizm wyznaczający $g_0^\tau$ różni się od mechanizmu dla~$g_0^\mu$.
+\end{remark}
+
+\begin{hypothesis}[Predykcja masy tau]\label{hyp:K-tau}
+Masa leptonu tau wynika z~Ścieżki~9 przez:
+\begin{equation}\label{eq:K-tau-prediction}
+  m_\tau = m_e \times \left(\frac{A_{\rm tail}(g_0^\tau)}{A_{\rm tail}(g_0^e)}\right)^4
+  \approx 3477 \times m_e \approx 1777\;\mathrm{MeV},
+\end{equation}
+gdzie $g_0^\tau \approx 2{,}34$ jest wyznaczone z~warunku odwrotnego~C4.
+Odchylenie od PDG ($m_\tau = 1776{,}86$~MeV): $< 0{,}1\%$ przez konstrukcję.
+
+Weryfikowalna zasada selekcji $g_0^\tau$ --- niezależna od~odwrotnej
+kalkulacji~C4 --- pozostaje \textbf{otwartym problemem O-J3}.
+Kandydaci to: (i)~trzecie zero~$B_{\rm tail}(g_0)$,
+(ii)~warunek granicy sektora $n_{\rm cross}=1\to 2$,
+(iii)~nowa zasada samodopasowania (program).
+
+Status: \statuslabel{Hipoteza} ilościowa.
+\end{hypothesis}
+
+\subsubsection{Zgodność z formułą Koidego}
+
+Dla mas elektron-mion-tau z~Ścieżki~9 możemy sprawdzić formułę Koidego:
+\begin{equation}\label{eq:K-Koide-check}
+  Q_K = \frac{(\sqrt{m_e} + \sqrt{m_\mu} + \sqrt{m_\tau})^2}
+             {\tfrac{2}{3}(m_e + m_\mu + m_\tau)}
+  \stackrel{?}{=} 1.
+\end{equation}
+Z~danymi PDG: $Q_K = 1{,}000000 \pm 10^{-6}$
+(formuła Koidego dokładna na~poziomie $10^{-6}$).
+Z~predykcją Ścieżki~9 ($m_\tau^{\rm TGP} \approx 1777$~MeV):
+\begin{equation}
+  |Q_K^{\rm TGP} - 1| \lesssim 10^{-4}
+  \quad(\text{zależy od precyzji wyznaczenia }g_0^\tau).
+\end{equation}
+Zgodność z~Koidem dla TGP jest \textbf{testem spójności}:
+predykcja $g_0^\tau$ powinna reprodukować nie tylko $r_{31}$,
+ale i~relację Koidego do tej samej precyzji.
+Skrypt~\texttt{ex61}~(sekcja~Bonus) weryfikuje tę zgodność.
+
+\begin{remark}[v41: ODE substratowe --- predykcja \emph{wszystkich} mas leptonów]%
+\label{rem:K-substrate-tau}
+Skrypt \texttt{tau\_uv\_completion.py} (2026-03-30) rozwiązuje ODE
+substratowe~\eqref{eq:J-substrate-ode} ($K_{\rm sub} = g^2$, ghost-free).
+Wyniki:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+  Lepton & $g_0$ & $(A/A_e)^4$ & PDG & $\Delta$ \\
+\midrule
+  $e$ & $0{,}8694$ (z $\varphi$-FP) & $1$ & $1$ & --- \\
+  $\mu$ & $1{,}4068 = \varphi\cdot g_0^*$ & $206{,}77$ & $206{,}77$ & $0{,}04\%$ \\
+  $\tau$ & $1{,}7294$ & $3477{,}2$ & $3477{,}2$ & $0{,}001\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+$m_\tau^{\rm pred} = 1776{,}83$~MeV (PDG: $1776{,}86$), $\Delta = -14$~ppm.
+Formuła Koidego: $K = 0{,}66666$ ($\Delta = -11$~ppm od dokładnego $2/3$).
+
+Stosunki w~ODE substratowym:
+$g_0^\tau/g_0^e = 1{,}989$, $g_0^\tau/g_0^\mu = 1{,}229$, $g_0^\tau/(g_0^e\cdot\varphi^2) = 0{,}760$.
+Żaden prosty stosunek z~$\varphi$ nie reprodukuje $g_0^\tau$ --- zasada
+selekcji tauonu (O-J3) pozostaje \textbf{otwarta}.
+
+\textbf{Uwaga}: ODE substratowe jest \emph{jedynym} wariantem ODE zdolnym
+reprodukować $r_{31}$. Pełne ODE ($f(g) = 1+4\ln g$) obcina spektrum barierą
+ducha przy $g_0^{\rm crit} \approx 1{,}63$, co ogranicza $\max(A/A_e)^4 \approx 1571$
+--- zbyt mało o~czynnik $2{,}2\times$.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Status i~otwarte problemy (sesja v34)}%
+\label{app:K-status}
+% -------------------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.0cm}lp{4.0cm}p{2.2cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / założenia} & \textbf{Odsyłacz} \\
+\midrule
+
+Ogon solitonu $\sim (B\cos r + C\sin r)/r$
+  & \statuslabel{Twierdzenie}
+  & linearyzacja ODE~\eqref{eq:K-ode} przy $g=1$; $m_{\rm sp}=1$
+  & stw.~\ref{prop:K-tail-form} \\[3pt]
+
+$A_{\rm tail}(g_0) \propto (g_0-g^*)^{4{,}12}$
+  & \statuslabel{Propozycja}
+  & numeryc.\ \texttt{ex57}, \texttt{ex62}; zakres $g_0 \in [1{,}1;\,2{,}5]$
+  & stw.~\ref{prop:J-scaling} \\[3pt]
+
+Wykładnik $n \approx 4$: stopień potencjału $V$
+  & \statuslabel{Obalony}
+  & \texttt{ex150}: $k \approx 1{,}0$ vs $(g_0-1)$; brak korelacji $k$--$n$
+  & uw.~\ref{prop:K-exponent} \\[3pt]
+
+$g_0^\tau \approx 2{,}34$ (predykcja Ścieżki~9)
+  & \statuslabel{Hipoteza}
+  & hipoteza~\ref{hyp:J-mass-Atail4} + odwrotne równanie~C4
+  & hip.~\ref{hyp:K-tau} \\[3pt]
+
+Zasada selekcji $g_0^\tau$ (niezależna od~C4)
+  & \statuslabel{Program}
+  & zera $B_{\rm tail}$, granice sektorów, samopod.
+  & O-J3 \\[3pt]
+
+Rygorystyczne wyprowadzenie $A_{\rm tail}(g_0)$
+  & \statuslabel{Program}
+  & asymptotyka dopasowana; warstwa przy $g^*$
+  & O-J1, prob.~\ref{prob:K-OJ1} \\[3pt]
+
+Zasada selekcji $g_0^\mu = 2{,}00$ (vs $2{,}08$)
+  & \statuslabel{Program}
+  & granica sektora vs $B_{\rm tail}=0$; patrz \texttt{ex60}~T3--T5
+  & O-J2 \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Spójność z duchem teorii.}
+Wszystkie wyniki powyżej opierają się wyłącznie na:
+\begin{itemize}[nosep]
+  \item[$N0$-2] $\alpha = 2$ (z~$K_{ij} = J(\varphi_i\varphi_j)^2$,
+    tw.~\ref{prop:substrate-action}),
+  \item[$N0$-5] $\beta = \gamma$ (warunek próżni $U'(1)=0$,
+    stw.~\ref{prop:vacuum-condition}) $\Rightarrow V(g) = g^3/3 - g^4/4$,
+  \item[$N0$-6] $m_{\rm sp} = \sqrt{\gamma}$ (masa bozonu przestrzennego,
+    stw.~\ref{prop:N0-6-from-N0-5}).
+\end{itemize}
+Żaden nowy parametr nie został wprowadzony.
+Solitony są rozwiązaniami ODE wynikającej z~akcji TGP --- nie są
+zewnętrznymi obiektami wstawionymi do teorii.
+
+\paragraph{Programy obliczeniowe.}
+
+\begin{enumerate}[nosep,label=\textbf{ex\arabic*.}]
+  \setcounter{enumi}{59}
+  \item \texttt{ex60\_golden\_ratio\_topology.py}: topologia sektorów,
+    zera $B_{\rm tail}$, złota proporcja.
+  \item \texttt{ex61\_tau\_prediction.py}: predykcja~$g_0^\tau$,
+    porównanie kandydatów C1--C5.
+  \item \texttt{ex62\_phi\_fixed\_point.py}: skan kinetycznego $\alpha_K$,
+    wyznaczenie $\alpha^*_1, \alpha^*_2$ ze warunku
+    $F(\alpha_K) = r_{21}$ (szczegóły w Dod.~\ref{app:formula-sumy}).
+\end{enumerate}

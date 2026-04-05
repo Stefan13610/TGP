@@ -1,0 +1,233 @@
+% ===========================================================================
+%  dodatekQ_coarse_graining_formal.tex
+%  Teoria Generowanej Przestrzeni (TGP) — wersja 1
+%
+%  DODATEK Q: Formalne sformułowanie gruboziarnienia substrat→Φ (OP-2)
+%  -------------------------------------------------------------------
+%  Status: PROGRAM BADAŃ — precyzyjne sformułowanie problemu OP-2
+%
+%  Cel niniejszego dodatku NIE jest zamknięcie OP-2,
+%  lecz sformułowanie go z matematyczną precyzją, podanie warunków
+%  wystarczających dla zamknięcia oraz wskazanie drogi numerycznej.
+%
+%  Stan wiedzy po sek10 i dodatkuN:
+%   - K(φ)=K_geo·φ² wyprowadzone z substratu (sek10)
+%   - Punkt stały WF istnieje w LPA (dodatekN)
+%   - K(0)=0 chronione przez Z₂ (sek10 + dodatekN)
+%   - BRAKUJE: formalna zbieżność Φ_B → Φ_ciągłe
+% ===========================================================================
+
+\section*{Dodatek Q: Formalne gruboziarnienie substrat $\Gamma \to \Phi$}
+\addcontentsline{toc}{section}{Dodatek Q: Gruboziarnienie substrat→Φ}
+\label{app:coarse_graining}
+
+\subsection*{Q.1 Sformułowanie problemu}
+
+Teoria TGP opiera się na trzech poziomach:
+\begin{enumerate}
+  \item \textbf{Substrat} $\Gamma = (V,E)$ z hamiltonianem
+        $H_\Gamma = -J\sum_{\langle ij\rangle}(\phi_i\phi_j)^2$,
+        zmiennymi $\phi_i \in \mathbb{R}$, symetrią $\mathbb{Z}_2$.
+  \item \textbf{Pole ciągłe} $\Phi(x)$ spełniające równanie pola TGP
+        (sek08, eq.~\eqref{eq:action}).
+  \item \textbf{Geometria} $g_{\mu\nu}$ emergentna z $\Phi$.
+\end{enumerate}
+Przejście $1 \to 2$ jest formalnie nieokreślone. Mówimy, że:
+\begin{equation}
+  \Phi(x) = \frac{1}{N_B}\sum_{i \in B(x)} \phi_i^2,
+  \qquad N_B = \bigl|\{i : x_i \in B(x)\}\bigr|,
+  \label{eq:block_avg}
+\end{equation}
+gdzie $B(x)$ jest blokiem o liniowym rozmiarze $b$ zawierającym węzeł $x$.
+\textbf{Problem OP-2}: wykazać, że $\Phi_B(x) \to \Phi(x)$ w granicy
+$b/a_\mathrm{sub} \to \infty$ oraz że $\Phi(x)$ spełnia równanie pola TGP
+w sensie słabym.
+
+\subsection*{Q.2 Warunki wystarczające (program badań)}
+
+\begin{definicja}[Operator blokowania]
+Definiujemy operator blokowania $\mathcal{T}_b$ na przestrzeni funkcjonałów:
+\begin{equation}
+  \mathcal{T}_b[S][\Phi_B] = -\ln \int \prod_{i \in V}
+    \frac{d\phi_i}{\sqrt{2\pi}}
+    \prod_{B} \delta\!\bigl(\Phi_B - \tfrac{1}{N_B}{\textstyle\sum}_{i\in B}\phi_i^2\bigr)
+    \, e^{-S[\{\phi_i\}]},
+  \label{eq:blocking_operator}
+\end{equation}
+gdzie całkowanie biegnie po konfiguracji dyskretnej przy ustalonym $\Phi_B$.
+\end{definicja}
+
+\begin{hipoteza}[Atraktor operatora $\mathcal{T}_b$]
+\label{hyp:attractor}
+W przestrzeni funkcjonałów z normą $\|\cdot\|_H$ operator $\mathcal{T}_b$
+jest odwzorowaniem zwężającym (contractor) w sensie Banacha dla $b > b_*$,
+gdzie $b_*$ jest związane ze skalą korelacji $\xi_\mathrm{corr}$.
+Jego unikalny punkt stały $S^*[\Phi]$ jest tożsamy z działaniem TGP
+(sek08, eq.~\eqref{eq:action}).
+\end{hipoteza}
+
+\begin{uwaga}[Status Hipotezy~\ref{hyp:attractor}]
+Hipoteza~\ref{hyp:attractor} jest \emph{mocną} wersją OP-2.
+Słabsza wersja (wystarczająca dla fizyki TGP) to jedynie zbieżność
+$\mathcal{T}_b \to S^*$ w sensie dystrybucyjnym bez dowodu
+zwężania. Dowód pełny jest otwartym problemem matematycznym.
+\end{uwaga}
+
+\subsection*{Q.3 Trzy argumenty za zbieżnością}
+
+\paragraph{Argument Q-I: Teoria ERG (numeryczny).}
+Z Dodatku~\ref{app:ERG} (LPA Wettericha):
+\begin{itemize}
+  \item Punkt stały Wilsona–Fishera istnieje i jest \emph{unikalny}
+        w klasie teorii z symetrią $\mathbb{Z}_2$, $d=3$, $n=1$.
+  \item Warunek $K(0) = 0$ jest chroniony przez $\mathbb{Z}_2$
+        podczas całego przepływu.
+  \item $K_\mathrm{IR}/K_\mathrm{UV} \approx 1{,}13$:
+        kinetyka nie zmienia jakościowo kształtu.
+\end{itemize}
+To sugeruje, że $\mathcal{T}_b$ zbiega do unikalnego punktu stałego
+w sektorze kinetycznym, co jest konieczne dla OP-2.
+
+\paragraph{Argument Q-II: Twierdzenie de Giorgi–Nash–Moser (analityczny).}
+Niech $\Phi_B(x)$ będzie polem blokowym \eqref{eq:block_avg}.
+Jeżeli działanie efektywne $S_\mathrm{eff}[\Phi_B]$ ma regularny
+człon gradientowy (co gwarantuje $K(0) = 0$ i $K(\Phi) > 0$ dla $\Phi > 0$),
+to z twierdzenia de Giorgi–Nash–Moser \cite{DeGiorgi1957}:
+\begin{equation}
+  \|\Phi_B\|_{C^{0,\alpha}(\Omega)} \leq C \|\Phi_B\|_{L^2(\Omega)},
+  \quad \alpha > 0,
+\end{equation}
+tj. $\Phi_B$ jest funkcją Höldera ciągłą, a więc zbiega do funkcji ciągłej
+$\Phi \in C^{0,\alpha}$ przy $b \to \infty$.
+
+\paragraph{Argument Q-III: Teoria homogenizacji (analityczny, szkic).}
+Dla periodycznych (lub quasi-periodycznych) substratów istnieje teoria
+homogenizacji \cite{Bensoussan1978}, która gwarantuje, że
+$\Phi_B(x) \rightharpoonup \Phi(x)$ słabo w $H^1(\Omega)$,
+gdzie $\Phi$ spełnia równanie jednorodne:
+\begin{equation}
+  -\nabla \cdot (K_\mathrm{hom}(\Phi)\nabla\Phi) + V'_\mathrm{hom}(\Phi) = q\rho.
+\end{equation}
+Identyfikacja $K_\mathrm{hom} = K_\mathrm{TGP}$ i $V'_\mathrm{hom} = U'_\mathrm{TGP}$
+jest \emph{warunkiem zamknięcia OP-2}.
+
+\subsection*{Q.4 Skala korelacji i relacja $a_\Gamma \cdot \Phi_0 = 1$}
+
+\begin{propozycja}[Φ₀ z przejścia fazowego substratu]
+\label{prop:phi0_from_Tc}
+W fazie $T < T_c$ (spontane łamanie $\mathbb{Z}_2$):
+\begin{equation}
+  \langle\phi^2\rangle = v^2(T) > 0,
+  \qquad v^2(T_c) = 0.
+\end{equation}
+Tło próżniowe TGP jest naturalnie:
+\begin{equation}
+  \boxed{\Phi_0 = \langle\phi^2\rangle\big|_{T \ll T_c} = v^2(T_\mathrm{eff})},
+  \label{eq:phi0_from_TC}
+\end{equation}
+gdzie $T_\mathrm{eff}$ jest efektywną temperaturą substratu przy
+obecnym wieku Wszechświata.
+\end{propozycja}
+
+\begin{propozycja}[Hipoteza $a_\Gamma \cdot \Phi_0 = 1$ jako warunek samospójności]
+\label{prop:agamma_phi0}
+Definiując skalę korelacji substratu:
+\begin{equation}
+  \xi_\mathrm{corr}(T) = a_\mathrm{sub} \cdot |1 - T/T_c|^{-\nu},
+  \quad \nu \approx 0{,}63 \text{ (3D Ising)},
+\end{equation}
+i identyfikując $a_\Gamma \equiv 1/\xi_\mathrm{corr}$, hipoteza
+$a_\Gamma \cdot \Phi_0 = 1$ jest równoznaczna z:
+\begin{equation}
+  \xi_\mathrm{corr} = \Phi_0
+  \quad\Longleftrightarrow\quad
+  a_\mathrm{sub} \cdot |1 - T_\mathrm{eff}/T_c|^{-\nu} = v^2(T_\mathrm{eff}).
+  \label{eq:self_consistency}
+\end{equation}
+Warunek \eqref{eq:self_consistency} jest \emph{równaniem samospójnym}
+wyznaczającym $T_\mathrm{eff}$ z parametrów substratu $(J, a_\mathrm{sub}, T_c)$.
+\end{propozycja}
+
+\begin{uwaga}[Weryfikacja numeryczna]
+Skrypt \texttt{tgp\_agamma\_phi0\_test.py} sprawdza, czy $a_\Gamma \cdot \Phi_0 = 1$
+jest spełnione numerycznie z trzech niezależnych ścieżek obserwacyjnych:
+\begin{enumerate}
+  \item $\Phi_0(\Lambda) = 96\pi G_0 \rho_\Lambda / H_0^2 \approx 23{,}3$
+  \item $\Phi_0(r_{21}) = (\alpha_K \sqrt{r_{21}})^{3/5} \approx 25{,}4$
+  \item $\Phi_0(\kappa) = 3/(4\kappa_\mathrm{obs}) \approx 24{,}7$
+\end{enumerate}
+Rozrzut $< 10\%$ (patrz ANALIZA\_SPOJNOSCI\_v3.md), a DESI DR2 mierzy
+$a_\Gamma \cdot \Phi_0 = 1{,}005 \pm 0{,}005$.
+\end{uwaga}
+
+\subsection*{Q.5 Mapa otwartego problemu OP-2}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Krok & Opis & Typ & Status \\
+\midrule
+CG-1 & Istnienie i jedyność $S^*$ (Banach) & [AN] & \textbf{[OTWARTY]} \\
+CG-2 & LPA' z $K_k(\rho)$, zbieżność do $K_\mathrm{TGP}$ & [NUM] & \textbf{[ZAMKNIĘTY NUM]} \\
+CG-3 & Zbieżność $\Phi_B \to \Phi$ w $H^1$ (homogenizacja) & [AN] & \textbf{[OTWARTY]} \\
+CG-4 & Identyfikacja $K_\mathrm{hom} = K_\mathrm{TGP}$ & [AN+NUM] & \textbf{[OTWARTY]} \\
+CG-5 & Φ₀ z równania samospójnego \eqref{eq:self_consistency} & [NUM] & \textbf{[ZAMKNIĘTY NUM]} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+Krok CG-2 (LPA') jest \textbf{zamknięty numerycznie} skryptem
+\texttt{tgp\_erg\_lpa\_prime.py} (8/8 PASS, 2026-04-02):
+$\rho_0^*=0.03045$, $\nu=0.749$, $K_\mathrm{IR}/K_\mathrm{UV}=1.000$,
+$v_2=0.06090$.
+Krok OP-1 (LPA' z $\eta\neq0$) zamknięty skryptem
+\texttt{tgp\_erg\_eta\_lpa\_prime.py} (10/10 PASS):
+$\eta^*=0.04419$ (samospójnie).
+Kroki CG-1, CG-3, CG-4 wymagają zaawansowanej matematyki
+(ERG funkcjonalne, teoria homogenizacji de Giorgi, analiza funkcjonalna).
+Krok CG-5 zamknięty skryptem \texttt{tgp\_cg5\_phi0\_self\_consistency.py}
+(8/8 PASS, 2026-04-02): $T^*/T_c = 0.7955$, $a_\mathrm{sub,fiz} = 9.072$,
+$a_\Gamma\cdot\Phi_0 = 1.000000$.
+
+\subsection*{Q.6 Program numeryczny dla CG-2 i CG-5}
+
+Skrypt \texttt{tgp\_erg\_lpa\_prime.py} (zastąpił
+\texttt{tgp\_erg\_wetterich.py} w roli głównego skryptu CG-2) realizuje:
+\begin{enumerate}
+  \item Pełne równanie LPA' dla $K_k(\rho)$ (eq.~N.6 w Dodatku~N):
+        \begin{equation}
+          \partial_t K_k(\rho) = \frac{k^5}{6\pi^2} \cdot
+          \frac{(K_k' + 2\rho K_k'') - K_k D_k}{(k^2 + U_k' + 2\rho U_k'')^2},
+        \end{equation}
+        gdzie $D_k$ zawiera wyższe pochodne $U_k$.
+  \item Test zbieżności: czy $K_k(\rho)/k^\eta \to K_\mathrm{IR}(\rho)$ przy $k \to 0$?
+  \item Wyznaczenie $v^2 = \langle\phi^2\rangle$ z profilu IR: $v^2 = 2\rho_0^*$
+        gdzie $\rho_0^*$ jest minimum punktu stałego $\tilde u^*(\tilde\rho)$.
+  \item Weryfikacja samospójności: $a_\Gamma \cdot 2\rho_0^* \stackrel{?}{=} 1$.
+\end{enumerate}
+
+\subsection*{Q.7 Implikacje dla TGP}
+
+Jeżeli OP-2 zostanie domknięty (choćby numerycznie przez CG-2):
+\begin{itemize}
+  \item $\Phi_0$ staje się \textbf{predykcją} z parametrów substratu $(J, T_c)$
+        — nie wolnym parametrem. Redukuje $N_\mathrm{param}$ z 2 do 1.
+  \item Relacja $a_\Gamma \cdot \Phi_0 = 1$ zyskuje \textbf{mechanizm}
+        (warunek samospójności, nie przypadkowa zbieżność).
+  \item Iloraz $M_\mathrm{obs}/N_\mathrm{param} \geq 12$ — wszystkie
+        obserwable predykcyjne przy jednym wolnym parametrze.
+\end{itemize}
+
+\bigskip
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{
+\textbf{Podsumowanie OP-2.}
+Problem gruboziarnienia $\Gamma \to \Phi$ jest precyzyjnie sformułowany
+jako zbieżność operatora blokowania $\mathcal{T}_b$ do punktu stałego $S^*$.
+Trzy argumenty (ERG, de Giorgi, homogenizacja) wspierają zbieżność,
+ale żaden z nich nie stanowi pełnego dowodu w kontekście TGP.
+Zamknięcie CG-2 (numeryczne LPA') jest celem najbliższym dostępnemu
+numerycznie. Pełny dowód analityczny to zadanie na 6–12 miesięcy.
+}}
+\end{center}

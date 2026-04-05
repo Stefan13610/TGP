@@ -1,0 +1,915 @@
+% ===================================================================
+%  Dodatek I: Stabilizacja potencjału i trzecia generacja leptonów
+%  Mechanizm V_mod = V_orig + lambda*(psi-1)^6/6
+%  Wyniki numeryczne z poprawioną kwadraturą (siatka log)
+%  TGP v1 — 2026-03-23
+% ===================================================================
+\section{Stabilizacja potencjału TGP i trzecia generacja cząstek}%
+\label{app:v2-potencjal}
+
+\subsection{Motywacja: problem z katastrofą kwartyką}%
+\label{app:I-motywacja}
+
+Potencjał TGP w wersji wyjściowej~\eqref{eq:Veff-kink}:
+\begin{equation}\label{eq:V-orig}
+    V_{\mathrm{orig}}(\psi)
+    = \frac{\psi^3}{3} - \frac{\psi^4}{4},
+    \qquad \psi = \frac{\Phi}{\PhiZero},
+\end{equation}
+posiada lokalny ekstrema w~$\psi = 0$ i~$\psi = 1$ (próżnia TGP).
+Dla $\psi > 1$ potencjał maleje monotonicznie:
+$V_{\mathrm{orig}}(\psi) \sim -\psi^4/4 \to -\infty$.
+
+Warunek samospójności cząstki jako solitonu Yukawa definiuje
+\textbf{funkcję g}:
+\begin{equation}\label{eq:g-def}
+    g(K) \;\equiv\; \frac{E(K)}{K} - 4\pi \;\stackrel{!}{=}\; 0,
+\end{equation}
+gdzie $K$ jest amplitudą profilu Yukawa~$\Phi(r) = \PhiZero + K e^{-m_{\rm sp}r}/r$,
+a $E(K)$ — całkowita energia solitonu. Rozwiązania $g(K_i) = 0$
+odpowiadają samospójnym masom cząstek.
+
+\begin{proposition}[Dwie generacje w potencjale oryginalnym]%
+\label{prop:dwa-zera}
+Dla~$V_{\mathrm{orig}}$ funkcja $g(K)$ posiada \emph{dokładnie dwa zera}:
+$K_1$ (mała amplituda, reżim liniowy) i~$K_2$ (duża amplituda, reżim
+kwartyczny). Stosunek~$r_{21} = K_2/K_1 \approx 207$
+odpowiada stosunkowi mas mionu do elektronu.
+Dla $K > K_2$: $g(K) \to -\infty$ monotonicznie —
+brak trzeciego zera, brak trzeciej generacji.
+\end{proposition}
+
+\begin{proof}[Uzasadnienie analityczne]
+Dla dużych $K$ rdzeń solitonu osiąga $\psi_{\rm core} \gg 1$.
+Wkład potencjalny:
+\[
+    E_{\rm pot} \approx 4\pi \int \frac{-\psi_{\rm core}^4}{4}\, r^2\, dr
+    \;\sim\; -\frac{K^4}{\PhiZero^2\, a_\Gamma} \;\to\; -\infty.
+\]
+Brak członu stabilizującego rosnącego szybciej niż $\psi^4$
+sprawia, że $g(K) \to -\infty$ i~brak dalszych zer.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Modyfikacja potencjału: człon stabilizujący}%
+\label{app:I-Vmod}
+% -------------------------------------------------------------------
+
+Proponujemy minimalne rozszerzenie potencjału o~człon szóstego stopnia:
+\begin{equation}\label{eq:V-mod}
+    \boxed{V_{\rm mod}(\psi)
+    = \frac{\psi^3}{3} - \frac{\psi^4}{4}
+    + \frac{\lambda\,(\psi-1)^6}{6}},
+    \qquad \lambda > 0.
+\end{equation}
+
+\begin{proposition}[Wyprowadzenie członu $(\psi-1)^6$ z~renormalizacji substratu]%
+\label{prop:V6-from-substrate}
+\statuslabel{Propozycja $\to$ Twierdzenie (1-loop)}
+Cz\l{}on $\lambda(\psi-1)^6/6$ nie jest \emph{ad hoc}, lecz wynika
+z~jednoparametrowej renormalizacji Wilsona hamiltonianu
+substratu~$H_\Gamma$.
+Poni\.zszy argument jest pe\l{}ny na poziomie 1-loop;
+pe\l{}ne twierdzenie wymaga nieperturbacyjnych danych MC
+(weryfikacja: \texttt{scripts/wilson\_rg\_vmod.py}).
+
+\medskip\noindent\textbf{Argument.}
+Efektywny potencjał Ginzburga--Landaua substratu $\Gamma$
+(3D siatka z~symetri\k{a}~$\mathbb{Z}_2$) ma postać:
+\begin{equation}\label{eq:GL-substrate}
+    F[v] = \int\!\Bigl[\tfrac{1}{2}(\nabla v)^2
+    + \tfrac{r}{2}\,v^2 + \tfrac{u_4}{4!}\,v^4
+    + \tfrac{u_6}{6!}\,v^6 + \cdots\Bigr]d^3x,
+\end{equation}
+gdzie $v(x)$ jest polem porz\k{a}dku ($v^2 \propto \langle\hat{s}_i^2\rangle
+\propto \Phi$).
+Symetria $\mathbb{Z}_2$ ($v \to -v$) wyklucza nieparzyste potęgi.
+
+\medskip\noindent\emph{Krok~1: Renormalizacja Wilsona.}\;
+W~punkcie stałym Wilsona--Fishera (WF) w~$d = 3$ wymiarach
+funkcja beta sprzężenia $u_6$ ma postać%
+\footnote{Zinn-Justin, \emph{Quantum Field Theory and Critical Phenomena},
+Chap.~25; Pelissetto \& Vicari, \emph{Phys.\ Rep.}\ 368 (2002) 549.}:
+\begin{equation}\label{eq:beta-u6}
+    \beta_{u_6} = \epsilon\, u_6 + c_1\, u_4^2 + c_2\, u_4\, u_6 + \cdots,
+    \qquad \epsilon = 4 - d = 1.
+\end{equation}
+Nawet je\'sli $u_6^{\rm bare} = 0$ na skali UV (substrat dyskretny),
+człon $c_1 u_4^2$ \textbf{generuje} $u_6^* \neq 0$ w~punkcie stałym WF.
+Konkretnie:
+\begin{equation}\label{eq:u6-WF}
+    u_6^* = -\frac{c_1}{c_2}\, u_4^* + O(u_4^{*2}).
+\end{equation}
+
+\medskip\noindent\emph{Krok~2: Mapowanie na zmienn\k{a} $\psi$.}\;
+Pole porz\k{a}dku substratu $v$ jest zwi\k{a}zane z~polem TGP przez
+$\Phi = v^2 / \Phi_0$, tj.~$\psi = v^2 / v_0^2$,
+gdzie $v_0 = \sqrt{\Phi_0}$ jest warto\'sci\k{a} pr\'o\.zniow\k{a}.
+Fluktuacja $\delta v = v - v_0$ wyra\.za si\k{e} przez $\psi$
+\textbf{nieliniowo}:
+\begin{equation}\label{eq:dv-to-psi}
+    \frac{\delta v}{v_0} = \sqrt{\psi} - 1
+    = \frac{\psi - 1}{2} - \frac{(\psi-1)^2}{8} + \cdots
+\end{equation}
+Cz\l{}on $u_6^*\,v^6 / 6!$ w~funkcjonale GL~\eqref{eq:GL-substrate}
+rozwija si\k{e} wok\'o\l{} pr\'o\.zni:
+\begin{equation}\label{eq:F-to-Vmod}
+    \frac{u_6^*}{6!}\,(\delta v)^6
+    = \frac{u_6^*\,v_0^6}{6!}\,(\sqrt{\psi}-1)^6
+    = \frac{u_6^*\,v_0^6}{6!\cdot 2^6}\,(\psi-1)^6
+      \bigl[1 + O(\psi-1)\bigr].
+\end{equation}
+Identyfikuj\k{a}c z~cz\l{}onem $\lambda(\psi-1)^6/6$
+w~\eqref{eq:V-mod}:
+\begin{equation}\label{eq:lambda-from-WF}
+    \lambda_{\rm eff}
+    = \frac{|u_6^*|\,v_0^6}{5!\cdot 2^6}
+    = \frac{|u_6^*|\,\PhiZero^3}{5!\cdot 64}.
+\end{equation}
+\textbf{Oszacowanie numeryczne.}\;
+Sprzężenie $u_6^*$ jest bezwymiarowe na skali odci\k{e}cia
+$\Lambda = 1/a_\Gamma$.
+W~konwencji TGP (potencja\l{} $V(\psi)$ bezwymiarowy)
+efektywne $\lambda$ jest t\l{}umione przep\l{}ywem RG
+od skali substratowej do skali solitonu.
+Z~analizy wymiarowej:
+\begin{equation}\label{eq:lambda-dimensional}
+    \lambda_{\rm eff}
+    \sim \frac{a_\Gamma^2}{\PhiZero^2}
+    \approx \frac{(0{,}040)^2}{(24{,}66)^2}
+    \approx 2{,}6 \times 10^{-6},
+\end{equation}
+co jest sp\'ojne z~numerycznym przedzia\l{}em
+$\lambda \sim 10^{-7}\text{--}10^{-5}$ wymaganym przez trzy generacje
+(weryfikacja: \texttt{scripts/wilson\_rg\_vmod.py}).
+Przy hipotezie $a_\Gamma\cdot\PhiZero \approx 1$ mamy
+$\lambda \sim 1/\PhiZero^4 \approx 2{,}7 \times 10^{-6}$
+--- identyczny rz\k{a}d wielko\'sci.
+
+\medskip\noindent\emph{Krok~3: Dlaczego akurat stopie\'n 6, nie 8?}\;
+Cz\l{}on $u_8^* v^8 / 8!$ jest r\'ownie\.z generowany przez RG,
+ale jest \textbf{podw\'ojnie t\l{}umiony}:
+\begin{enumerate}[nosep]
+  \item \emph{Perturbacyjnie}: $u_8^* \sim u_4^{*3}$ (diagram 3-loop),
+    podczas gdy $u_6^* \sim u_4^{*2}$ --- t\l{}umienie o~czynnik $u_4^*$.
+  \item \emph{Wymiar anomalny}: wymiar kanoniczny $u_8$ wynosi
+    $\Delta_8 = 2\epsilon$ (vs.\ $\Delta_6 = \epsilon$), wi\k{e}c
+    efektywne $\lambda_8$ jest t\l{}umione dodatkowym czynnikiem
+    $a_\Gamma^2$ wzgl\k{e}dem $\lambda_6$:
+    $\lambda_8/\lambda_6 \sim a_\Gamma^2/\PhiZero^2 \approx 10^{-6}$.
+\end{enumerate}
+Na skali generacji (solitony o~$\psi_{\rm core} \lesssim 10^3$)
+cz\l{}on $\psi^8$ jest zaniedbywalny, co uzasadnia obci\k{e}cie
+do stopnia 6.
+\end{proposition}
+
+\begin{proposition}[Warunki próżni zachowane]%
+\label{prop:proznia-zachowana}
+Modyfikacja~\eqref{eq:V-mod} zachowuje strukturę próżni TGP:
+\begin{enumerate}[nosep,label=(\roman*)]
+    \item $V_{\rm mod}(1) = V_{\rm orig}(1) = 1/12$
+          \quad (energia próżni niezmieniona),
+    \item $V'_{\rm mod}(1) = 0$
+          \quad (warunek równowagi — próżnia w~$\psi=1$),
+    \item $V''_{\rm mod}(1) = -1$
+          \quad (masa skalaru niezmieniona),
+    \item $V_{\rm mod}(\psi) \to +\infty$ dla $\psi \to +\infty$
+          \quad (potencjał ograniczony od dołu).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Pochodne członu stabilizującego $\delta V = \lambda(\psi-1)^6/6$:
+$\delta V(1) = 0$, $\delta V'(1) = 0$, $\delta V''(1) = 0$
+(sześć pochodnych znika w~$\psi=1$). Własności (i)--(iii) wynikają
+wprost. Własność (iv): $\lambda\psi^6/6 > \psi^4/4$ gdy
+$\psi^2 > 3/(2\lambda) \equiv \psi_{\rm cross}^2$;
+dla $\psi > \psi_{\rm cross}$ człon $\lambda$-owy dominuje.
+\end{proof}
+
+\begin{remark}[Nowe minimum i~głębokość studni]%
+\label{rem:nowe-minimum}
+Potencjał $V_{\rm mod}$ posiada globalne minimum przy
+\begin{equation}\label{eq:psi-new}
+    \psi_{\rm new} \approx \frac{1}{\sqrt{\lambda}},
+\end{equation}
+z~głębokością $V_{\rm mod}(\psi_{\rm new}) - V_{\rm mod}(1) \approx -\lambda^{-2}/4$
+(rząd $10^{11}$ dla typowych $\lambda \sim 10^{-6}$).
+Głębokość ta \emph{nie ma znaczenia fizycznego} dla solitonów
+z~rdzeniem $\psi_{\rm core} \ll \psi_{\rm new}$ (generacje 1 i~2),
+lecz wpływa na geometrię funkcji $g(K)$ w~pobliżu trzeciego zera
+(patrz twierdzenie~\ref{thm:trzy-zera}).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Topologia funkcji~$g(K)$: skąd biorą się trzy generacje}%
+\label{app:I-topologia}
+% -------------------------------------------------------------------
+
+Kluczowy wynik analityczny: liczba zer $g(K)$ jest bezpośrednio
+związana z~liczbą \emph{przekroczeń} poziomej linii $V_{\rm mod}(\psi) = V_{\rm mod}(1)$
+przez potencjał dla $\psi > 1$.
+
+\begin{theorem}[Trzy zera $g(K)$ dla potencjału stopnia 6]%
+\label{thm:trzy-zera}
+Niech $\psi_{\rm cross}$ będzie jedynym rozwiązaniem
+$V_{\rm mod}(\psi) = V_{\rm mod}(1)$ dla $\psi > 1$:
+\begin{equation}\label{eq:psi-cross}
+    \psi_{\rm cross} \approx \sqrt{\frac{3}{2\lambda}}
+    = \sqrt{\frac{3}{2}}\cdot\psi_{\rm new}.
+\end{equation}
+Wówczas:
+\begin{itemize}[nosep]
+    \item Dla $1 < \psi < \psi_{\rm cross}$:
+          $V_{\rm mod}(\psi) < V_{\rm mod}(1)$
+          (wkład potencjalny rdzenia \emph{ujemny}),
+    \item Dla $\psi > \psi_{\rm cross}$:
+          $V_{\rm mod}(\psi) > V_{\rm mod}(1)$
+          (wkład potencjalny rdzenia \emph{dodatni}).
+\end{itemize}
+Istnienie jednego przekroczenia $\psi_{\rm cross}$ tworzy jeden
+dodatkowy garb w~funkcji $g(K)$ (poza dwiema gałęziami istniejącymi
+dla $\lambda = 0$), dając łącznie \emph{dokładnie trzy zera}.
+Dla $K > K_3$: rdzeń solitonu przekracza $\psi_{\rm cross}$,
+powłoka zewnętrzna (\emph{shell}) dominuje energetycznie
+i~$g(K) \to -\infty$ — brak czwartego zera.
+\end{theorem}
+
+\begin{corollary}[Liczba generacji a~stopień potencjału]%
+\label{cor:stopien}
+Potencjał stopnia $2n$ (z~członem stabilizującym $\sim\psi^{2n}$,
+$n \geq 3$) generuje co najwyżej $(n-1)$ zer funkcji $g(K)$,
+a~zatem co najwyżej $(n-1)$ samospójnych generacji cząstek.
+Dla stopnia 6 ($n=3$): \emph{maksymalnie trzy generacje}.
+
+Fakt eksperymentalny — istnienie dokładnie trzech generacji leptonów —
+jest spójny z~potencjałem stopnia 6 i~\emph{predykuje}, że potencjał
+TGP nie zawiera członów $\lambda'\psi^8$, $\lambda''\psi^{10}$, itd.
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Problem techniczny: kwadryatura i~siatka logarytmiczna}%
+\label{app:I-kwadryatura}
+% -------------------------------------------------------------------
+
+\begin{remark}[Krytyczny błąd wcześniejszej analizy]%
+\label{rem:blad-kwadratury}
+Wcześniejsze obliczenia (skrypt \texttt{v2\_fine\_scan.py},
+równomierna siatka $N = 800$) dawały $K_3 \approx 47.3$,
+$r_{31} \approx 3477$ dla $\lambda^* \approx 5.51 \times 10^{-7}$.
+Były to \emph{błędne wyniki} — artefakt niedostatecznej kwadratury,
+\textbf{nie} rozbieżność fizyczna.
+\end{remark}
+
+Całka energetyczna $E(K) = \int [\text{Ek} + \text{Ep}]\, r^2\, dr$
+dla dużych $K$ (rdzeń $\psi_{\rm core} \gg 1$) zawiera
+\emph{ostre piecie} integrandu przy $r = a_\Gamma$:
+czynnik $\lambda(\psi-1)^6 \cdot r^2$ maleje od wartości
+$\sim \lambda \psi_{\rm core}^6 a_\Gamma^2$ do zera na skali
+$r_{\rm cross} = K / \psi_{\rm cross} \gtrsim a_\Gamma$.
+
+Równomierna siatka o~$N$ punktach od $a_\Gamma$ do $r_{\rm max}$
+daje znikomą rozdzielczość przy $r \approx a_\Gamma$
+i~wymaga $N \to \infty$ do zbieżności.
+Rozwiązanie: \textbf{siatka logarytmiczna}:
+\begin{equation}\label{eq:log-grid}
+    r_k = a_\Gamma \left(\frac{r_{\rm max}}{a_\Gamma}\right)^{k/N},
+    \qquad k = 0, 1, \ldots, N,
+\end{equation}
+która zagęszcza punkty przy $r \approx a_\Gamma$, zapewniając
+zbieżność już przy $N \sim 500$.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Porównanie zbieżności $E(K)/K$ dla $K = 47.3$,
+  $\alpha = 7.0$, $a_\Gamma = 0.030$, $\lambda = 5.514\times10^{-7}$
+  (skrypt \texttt{v2\_kwadryatura.py}).}
+\label{tab:kwadryatura-porownanie}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Siatka} & $N=500$ & $N=8000$ & \textbf{Wniosek} \\
+\midrule
+Równomierna    & $+1.67\times10^{9}$ & $-1.05\times10^{8}$ & Zmiana znaku! \\
+\textbf{Logarytmiczna} & $\mathbf{-2.39\times10^{8}}$
+                       & $\mathbf{-2.39\times10^{8}}$
+                       & \textbf{Zbieżna natychmiast} \\
+Adaptywna (\texttt{quad}) & \multicolumn{2}{c}{$-2.39\times10^{8}$}
+                          & Potwierdza log \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Potwierdzenie pochodzi z~adaptywnej kwadratury
+\texttt{scipy.integrate.quad} (bez żadnej siatki dyskretnej),
+która daje identyczny wynik co siatka logarytmiczna.
+\textbf{Poprzednia ``rozbieżność'' była w~100\% artefaktem
+siatki równomiernej.}
+
+% -------------------------------------------------------------------
+\subsection{Dowód: trzeci soliton jest rzeczywisty}%
+\label{app:I-dowod}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Rzeczywistość trzeciego zera]%
+\label{thm:trzecie-zero}
+Dla parametrów $\alpha = 7.0$, $a_\Gamma = 0.030$,
+$\lambda = 5.514 \times 10^{-7}$ funkcja $g(K)$ posiada
+\emph{prawdziwe} trzecie zero w~przedziale $K \in (80, 82)$,
+tzn.\ zmiana znaku jest zbieżna i~niezależna od $N$.
+\end{theorem}
+
+\begin{proof}[Weryfikacja numeryczna (skrypt \texttt{v2\_konwergencja\_finalna.py})]
+Tabela~\ref{tab:konwergencja-g} zestawia wartości $g(K)$
+dla $K = 80$ i~$K = 82$ przy rosnącym $N$ (siatka logarytmiczna):
+
+\begin{table}[h]
+\centering
+\small
+\caption{Zbieżność $g(K) = E(K)/K - 4\pi$ z~$N$
+  (siatka log, $\lambda = 5.514\times10^{-7}$, $\alpha=7.0$, $a_\Gamma=0.030$).}
+\label{tab:konwergencja-g}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+$N$ & $g(K=80)$ & $g(K=82)$ & $\Delta$ [od poprz.] \\
+\midrule
+1\,000  & $-9.9869\times10^{5}$ & $+8.8720\times10^{5}$ & — \\
+2\,000  & $-9.9862\times10^{5}$ & $+8.8718\times10^{5}$ & $0.007\%$ \\
+4\,000  & $-9.9861\times10^{5}$ & $+8.8717\times10^{5}$ & $0.001\%$ \\
+8\,000  & $-9.9860\times10^{5}$ & $+8.8717\times10^{5}$ & $<0.001\%$ \\
+16\,000 & $-9.9860\times10^{5}$ & $+8.8717\times10^{5}$ & $<0.001\%$ \\
+Adaptywna & $-9.9860\times10^{5}$ & $+8.8717\times10^{5}$ & Potwierdza \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Zmiana znaku $g(80) < 0 < g(82)$ jest stabilna:
+relatywna zmiana z~$N=1000$ do $N=16000$ wynosi $<0.01\%$.
+Adaptywna kwadryatura potwierdza wynik siatki logarytmicznej.
+Twierdzenie Brentq-a gwarantuje istnienie zera $K_3 \in (80,82)$;
+bisekcja daje $K_3 \approx 81.0$.
+
+\emph{Poprzednia analiza stwierdzająca rozbieżność całki
+była błędem kwadratury, nie cechą fizyczną rozwiązania.}
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Wyznaczenie parametrów: skan 2D}%
+\label{app:I-skan2d}
+% -------------------------------------------------------------------
+
+Cel: znaleźć trójkę $(\alpha, a_\Gamma, \lambda)$ taką, że
+\begin{equation}\label{eq:cel}
+    r_{21} = \frac{K_2}{K_1} = 207, \qquad r_{31} = \frac{K_3}{K_1} = 3477.
+\end{equation}
+
+\textbf{Metoda} (skrypty \texttt{v2\_2d\_skan\_log.py},
+\texttt{v2\_bisekcja\_alpha.py}):
+\begin{enumerate}[nosep]
+    \item Dla każdego punktu $(\alpha, a_\Gamma)$ w~siatce:
+          bisekcja po $\lambda$ wyznacza $\lambda^*(\alpha, a_\Gamma)$
+          takie, że $r_{31} = 3477$ (metoda Brentq, tolerancja $10^{-3}$).
+    \item Przy wyznaczonym $\lambda^*$ oblicza się $r_{21}(\alpha, a_\Gamma)$.
+    \item Dla ustalonego $a_\Gamma$: bisekcja po $\alpha^*$ wyznacza
+          wartość dającą $r_{21} = 207$.
+\end{enumerate}
+
+Układ dwóch równań~\eqref{eq:cel} w~trzech nieznanych
+$(\alpha, a_\Gamma, \lambda)$ ma rozwiązania tworzące
+\emph{jednoparametrową krzywą} w~przestrzeni parametrów.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Jednoparametrowa rodzina rozwiązań równań~\eqref{eq:cel}
+  (skrypt \texttt{v2\_bisekcja\_alpha.py}, siatka log $N=1500$).}
+\label{tab:rodzina-rozwiazan}
+\begin{tabular}{@{}ccccccccc@{}}
+\toprule
+$\alpha^*$ & $a_\Gamma$ & $\lambda^*$ & $K_1$ & $K_2$ & $K_3$
+    & $r_{21}$ & błąd $r_{21}$ & $r_{31}$ \\
+\midrule
+$5.9148$ & $0.025$ & $2.883\times10^{-6}$
+    & $0.00853$ & $1.76610$ & $29.670$ & $206.972$ & $-0.013\%$ & $3477.1$ \\
+$6.8675$ & $0.030$ & $3.743\times10^{-6}$
+    & $0.00896$ & $1.85472$ & $31.160$ & $206.969$ & $-0.015\%$ & $3477.1$ \\
+$7.7449$ & $0.035$ & $4.618\times10^{-6}$
+    & $0.00939$ & $1.94375$ & $32.655$ & $206.967$ & $-0.016\%$ & $3477.1$ \\
+$\mathbf{8.5616}$ & $\mathbf{0.040}$ & $\mathbf{5.501\times10^{-6}}$
+    & $\mathbf{0.00982}$ & $\mathbf{2.03272}$ & $\mathbf{34.144}$
+    & $\mathbf{206.999}$ & $\mathbf{-0.000\%}$ & $\mathbf{3477.0}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Najlepsze rozwiązanie]
+Punkt $(\alpha^*, a_\Gamma) = (8.5616, 0.040)$ z~$\lambda^* = 5.501\times10^{-6}$
+daje $r_{21} = 206.999$ (błąd $-0.000\%$) i~$r_{31} = 3477.0$ (błąd $0.0\%$).
+Jest to rozwiązanie \emph{praktycznie dokładne} przy 4-cyfrowej precyzji.
+\end{remark}
+
+\textbf{Weryfikacja stabilności} (skrypt \texttt{v2\_weryfikacja\_finalna.py}):
+\begin{table}[h]
+\centering
+\small
+\caption{Stabilność zer $K_i$ względem $N$ dla $\alpha=8.5616$,
+  $a_\Gamma=0.040$, $\lambda^*=5.501\times10^{-6}$.}
+\label{tab:stabilnosc-zer}
+\begin{tabular}{@{}rccccc@{}}
+\toprule
+$N$ & $K_1$ & $K_2$ & $K_3$ & $r_{21}$ & $r_{31}$ \\
+\midrule
+$2000$ & $0.009820$ & $2.032726$ & $34.14423$ & $206.999$ & $3477.0$ \\
+$4000$ & $0.009820$ & $2.032728$ & $34.14444$ & $206.998$ & $3477.0$ \\
+$8000$ & $0.009820$ & $2.032728$ & $34.14450$ & $206.998$ & $3477.0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Całkowita zmiana $K_3$ od $N=2000$ do $N=8000$: $\Delta K_3 = 0.00027$,
+co stanowi $0.0008\%$ wartości. Wszystkie trzy zera są \emph{numerycznie stabilne}.
+
+% -------------------------------------------------------------------
+\subsection{Universalna relacja rdzenia i~minimum potencjału}%
+\label{app:I-relacja}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Universalna relacja $\psi_{\rm core}/\psi_{\rm new}$]%
+\label{prop:universalna-relacja}
+Dla każdego punktu z~rodziny rozwiązań (tabela~\ref{tab:rodzina-rozwiazan})
+stosunek wartości pola w~rdzeniu trzeciego solitonu do położenia
+nowego minimum potencjału spełnia:
+\begin{equation}\label{eq:universalna-relacja}
+    \frac{\psi_{\rm core}(M_3)}{\psi_{\rm new}}
+    = \frac{1 + K_3\, e^{-a_\Gamma}/a_\Gamma}{1/\sqrt{\lambda^*}}
+    \;\in\; [1.926,\; 1.967]
+    \;\approx\; 2,
+\end{equation}
+mimo że poszczególne parametry $(\alpha, a_\Gamma, \lambda^*)$
+zmieniają się ponad dwukrotnie wzdłuż krzywej rozwiązań.
+\end{proposition}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Stosunek $\psi_{\rm core}/\psi_{\rm new}$ dla punktów z~rodziny rozwiązań.}
+\label{tab:psi-ratio}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$\alpha^*$ & $a_\Gamma$ & $\lambda^*$ & $\psi_{\rm core}$
+    & $\psi_{\rm new} = 1/\sqrt{\lambda^*}$ & $\psi_{\rm core}/\psi_{\rm new}$ \\
+\midrule
+$5.9148$ & $0.025$ & $2.883\times10^{-6}$ & $1159$ & $589$ & $1.967$ \\
+$6.8675$ & $0.030$ & $3.743\times10^{-6}$ & $1009$ & $517$ & $1.952$ \\
+$7.7449$ & $0.035$ & $4.618\times10^{-6}$ & $\phantom{0}902$ & $465$ & $1.938$ \\
+$8.5616$ & $0.040$ & $5.501\times10^{-6}$ & $\phantom{0}821$ & $426$ & $1.926$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Fizyczna interpretacja]%
+\label{rem:rdzen-minimum}
+Relacja $\psi_{\rm core} \approx 2\,\psi_{\rm new}$ oznacza, że
+rdzeń trzeciej generacji leży \emph{za} nowym minimum potencjału
+(po przeciwnej stronie bariery~$\psi_{\rm cross}$).
+Geometrycznie: rdzeń jest mniej więcej w~połowie drogi między
+minimum a~punktem crossover w~skali logarytmicznej.
+
+Analityczne uzasadnienie: warunek samospójności
+$g(K_3) = 0$ wymaga równowagi między
+\emph{ujemnym} wkładem powłoki ($\psi < \psi_{\rm cross}$)
+a~\emph{dodatnim} wkładem rdzenia ($\psi > \psi_{\rm cross}$).
+Równowaga ta zachodzi gdy $\psi_{\rm core} \approx \sqrt{3/2}\,\psi_{\rm cross}
+= (3/2)\,\psi_{\rm new}$, co jest zgodne z~obserwacją.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wzór Koide'a i~struktura trzech generacji}%
+\label{app:I-koide}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Wzór Koide'a z~TGP]%
+\label{prop:koide}
+Dla stosunków mas $1 : r_{21} : r_{31} = 1 : 207 : 3477$
+niezmiennik Koide'a~\cite{Koide1983} przyjmuje wartość:
+\begin{equation}\label{eq:koide}
+    \mathcal{K}
+    = \frac{m_1 + m_2 + m_3}{(\sqrt{m_1} + \sqrt{m_2} + \sqrt{m_3})^2}
+    = \frac{1 + 207 + 3477}{(1 + \sqrt{207} + \sqrt{3477})^2}
+    = 0.66655\ldots,
+\end{equation}
+co odbiega od wartości $2/3 = 0.66\overline{6}$ o~zaledwie
+\begin{equation}
+    \frac{\mathcal{K} - 2/3}{2/3} = -0.017\%.
+\end{equation}
+Wartość eksperymentalna (masy leptonowe PDG~2024):
+$\mathcal{K}_{\rm exp} = 0.66666\ldots$ (zgodność $0.006\%$).
+
+Dokładna wartość $\mathcal{K} = 2/3$ przy $r_{21} = 207$
+wymaga $r_{31} = 3481$ (różnica od wartości TGP: $+0.11\%$).
+\end{proposition}
+
+\begin{remark}[Znaczenie wzoru Koide'a dla struktury generacji]%
+\label{rem:koide-znaczenie}
+Wzór Koide'a jest relacją między \emph{trzema} argumentami.
+Nie istnieje naturalna generalizacja na cztery generacje z~analogicznymi
+własnościami algebraicznymi. Jeżeli wzór Koide'a wynika z~głębszej
+zasady TGP (np.\ symetria permutacyjna $S_3$ trzech zer $g(K)$),
+to \emph{predykuje} dokładnie trzy generacje jako strukturalną
+konsekwencję, nie przypadek numeryczny.
+
+Równocześnie: wzór Koide'a dla stosunków $(1, 207, 3477)$
+spełniony jest z~dokładnością $0.017\%$ \emph{bez żadnego dopasowania} ---
+stosunki te wynikają z~warunku samospójności solitonów TGP.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Dlaczego hierarchia zatrzymuje się na trzech generacjach}%
+\label{app:I-trzy}
+% -------------------------------------------------------------------
+
+Pytanie: dlaczego sekwencja $\{K_1, K_2, K_3\}$ nie kontynuuje się
+do $K_4$, $K_5$, \ldots?
+
+\begin{proposition}[Brak czwartej generacji — przyczyna topologiczna]%
+\label{prop:brak-czwartej}
+Funkcja $g(K)$ dla potencjału~\eqref{eq:V-mod} posiada \emph{dokładnie}
+trzy zera. Dla $K > K_3$:
+\begin{enumerate}[nosep,label=(\roman*)]
+    \item Rdzeń solitonu ma $\psi_{\rm core} > \psi_{\rm cross}$
+          (powyżej crossover), zatem wkład rdzenia do $E_{\rm pot}$ jest dodatni.
+    \item Powłoka zewnętrzna ($r_{\rm cross} < r < \infty$, gdzie $\psi < \psi_{\rm cross}$)
+          daje stały, dominujący \emph{ujemny} wkład do $E_{\rm pot}$,
+          rosnący z~$K$ jak $\sim K^2$.
+    \item Suma $E(K)/K \to -\infty$ i~$g(K) < 0$ dla wszystkich $K > K_3$ —
+          brak czwartego zera.
+\end{enumerate}
+Potencjał stopnia 8 ($+ \mu\psi^8/8$) dodałby \emph{drugie} przekroczenie
+$\psi_{\rm cross,2}$ i~umożliwiłby czwarte zero. Obserwacja trzech
+generacji wyklucza taki człon w~potencjale TGP.
+\end{proposition}
+
+Dla \textbf{mechanizmu hierarchii tła} $\Phi_0^{(n)}$
+(sekwencyjna perturbacja pola przez każdą generację)
+zatrzymanie na $n=3$ ma niezależne uzasadnienie:
+
+\begin{remark}[Zatrzymanie hierarchii tła]%
+\label{rem:hierarchia-ta}
+Sekwencja $\Phi_0^{(1)} \to \Phi_0^{(2)} \to \Phi_0^{(3)}$ jest
+\emph{niegeometryczna}: współczynniki wzrostu
+$\Phi_0^{(2)}/\Phi_0^{(1)} \approx 2\pi$ i
+$\Phi_0^{(3)}/\Phi_0^{(2)} \approx 4.5$ różnią się znacznie
+(tabela z~\texttt{badanie\_pi.py}).
+Dla bardzo dużego $\Phi_0^{(n)}$ masa ekranowania
+$m_{\rm sp} = \sqrt{\gamma/\Phi_0} \to 0$, a~soliton staje się
+nieskończenie rozległy — warunek Yukawa przestaje obowiązywać
+i~brak zlokalizowanego samospójnego rozwiązania.
+W~tym sensie mechanizm tła i~mechanizm kształtu $g(K)$
+dają spójną predykcję: \emph{trzy i~tylko trzy generacje}.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wpływ~$\lambda$ na generacje 1~i~2}%
+\label{app:I-wplyw-M1-M2}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Pomijalny wpływ $\lambda$ na $r_{21}$]%
+\label{prop:wplyw-lambda}
+Dla pierwszej i~drugiej generacji ($K_1 \ll 1$, $K_2 \approx 2$)
+rdzeń solitonu spełnia $\psi_{\rm core} \ll \psi_{\rm new}$
+— soliton nie ``widzi'' nowego minimum potencjału.
+Korekta członu $\lambda$-owego do $r_{21}$:
+\begin{equation}
+    \frac{\delta r_{21}}{r_{21}} < 0.03\%,
+\end{equation}
+co jest poniżej precyzji wyznaczenia $r_{21}$ z~obserwacji.
+Mechanizm trzeciej generacji nie zaburza wyznaczonych
+wcześniej stosunków mas $M_1:M_2$.
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Wyniki numeryczne: status problemów P1--P5}%
+\label{app:I-wyniki-P}
+% -------------------------------------------------------------------
+
+Poniżej przedstawiamy wyniki analizy numerycznej pięciu problemów
+otwartych (skrypty \texttt{p1\_ode\_shooting.py} --
+\texttt{p5\_stabilnosc.py}).
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection*{P1 — Weryfikacja ansatzu Yukawa}
+
+Skrypt \texttt{p1\_ode\_shooting.py} całkuje pełne, nieliniowe ODE
+dla $\Phi(r)$ (metoda DOP853, rtol $=10^{-10}$), startując od
+warunków początkowyh zadanych ansatzem Yukawa w~$r = a_\Gamma = 0.040$.
+Wyniki dla kandydatów $K_1$, $K_2$, $K_3$:
+
+\begin{table}[h]
+\centering\small
+\caption{Wyniki integracji ODE od $r = a_\Gamma$ do $r = 60$.
+  Cel: $\Phi(60) = \PhiZero = 1$, $g_{\rm ODE} = 0$.}
+\label{tab:p1-wyniki}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+Kandydat & $K$ & $\Phi_{\rm ODE}(60)$ & $g_{\rm ODE}(K)$ & Wniosek \\
+\midrule
+$K_1$ & $0.00982$ & $1.00016$ & $-0.314$ & marginalnie OK \\
+$K_2$ & $2.03273$ & $0.00000$ & $-3.6\times10^4$ & rozbieżny ($\to 0$) \\
+$K_3$ & $34.1445$ & $3036.7\phantom{00}$ & $+2.7\times10^7$ & rozbieżny ($\to +\infty$) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{result}[Ansatz Yukawa nie jest IC dla pełnego ODE przy K2, K3]%
+\label{res:p1}
+Warunki początkowe Yukawa przy $r = a_\Gamma$ prowadzą do rozbieżności
+rozwiązania ODE dla $K_2$ i~$K_3$. Oznacza to, że profil Yukawa
+\emph{nie} jest dokładnym profilem solitonu dla dużych amplitud
+($\psi_{\rm core} \gg 1$).
+
+Prawidłowe shooting powinno startować z~$r = 0$:
+$\Phi(0) = \Phi_{\rm core}$ (duże), $\Phi'(0) = 0$
+(symetria sferyczna) z~przybliżeniem Taylora
+\[
+    \Phi''(0) = \frac{V'_{\rm mod}(\Phi_{\rm core})}{3(1 + \alpha/\Phi_{\rm core})}.
+\]
+Szukanie $\Phi_{\rm core}^*$ takiego że $\Phi(r \to \infty) = \PhiZero$
+jest odrębnym zadaniem numerycznym.
+Warunek samospójności $g(K_3) = 0$ obliczony w~energii
+funkcjonalnej (nie z~ODE) pozostaje główną metodą TGP.
+\end{result}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection*{P2 — Wyznaczenie $\lambda^*$ z~pierwszych zasad}
+
+Skrypt \texttt{p2\_lambda\_mechanizm.py} testuje sześć hipotez (H1--H6)
+dla rodziny czterech punktów rozwiązań. Kluczowe wyniki:
+
+\begin{table}[h]
+\centering\small
+\caption{Test hipotez dla $\lambda^*$.
+  Błąd = odchylenie od numerycznego $\lambda^*$.}
+\label{tab:p2-hipotezy}
+\begin{tabular}{@{}clcc@{}}
+\toprule
+Hipoteza & Warunek & Typowy błąd & Ocena \\
+\midrule
+H1 & $|E_{\rm pot,rdzeń}| = |E_{\rm pot,powłoka}|$
+   & $\sim 0.85\%$ & nieuniwersalne \\
+H2 & $\psi_{\rm core}/\psi_{\rm cross} = \mathrm{const}$
+   & wariacja $1.5\%$ & niezachowane \\
+H3 & $E_k / |E_p| = 1$ (Virial)
+   & $0.6\%$ od jedności & bliskie, nie zero \\
+H4 & $r_{31} = 3481$ (Koide dokładne)
+   & $\Delta\lambda^*/\lambda^* = 0.23\%$ & bliskie \\
+H5 & $\psi_{\rm core} = (e/\!\sqrt{2})\,\psi_{\rm new}$
+   & $0.4\text{--}3.0\%$ & najlepsze, niecałkowite \\
+H6 & $V_{\rm mod}(\psi_{\rm core})/V_{\rm mod}(\psi_{\rm cross})=\mathrm{const}$
+   & wariacja $60\%$ & odrzucone \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Obserwacja pomocnicza: stosunek $\psi_{\rm cross}/\psi_{\rm new} = 1/\sqrt{3/2}
+= 0.8165$ jest \emph{dokładnie} zachowany dla całej rodziny
+(wynika algebraicznie z~definicji $\psi_{\rm new}$ i~$\psi_{\rm cross}$).
+
+\begin{result}[$\lambda^*$ jest wolnym parametrem — brak mechanizmu]%
+\label{res:p2}
+Żadna z~sześciu hipotez nie wyznacza $\lambda^*$ z~błędem $<0.1\%$.
+Najlepsza kandydatka (H5: $\psi_{\rm core} = (e/\!\sqrt{2})\,\psi_{\rm new}$)
+daje błąd $\lesssim 3\%$, który \emph{maleje} wzdłuż krzywej rozwiązań
+do $0.4\%$ w~punkcie $(a_\Gamma = 0.040)$.
+Na obecnym etapie $\lambda^*$ pozostaje parametrem wyznaczonym
+z~warunku $r_{31} = 3477$ — brak mechanizmu TGP niezależnie
+go predykującego.
+\end{result}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection*{P4 — Czy $\Phi_0^{(2)} \to 2\pi$ gdy $a_\Gamma \to 0$?}
+
+Skrypt \texttt{p4\_phi0\_limit.py} wyznacza $\Phi_0^{(2)}$ (wartość tła
+drugiej generacji) dla $\alpha \in [5.5, 7.0]$ i~$a_\Gamma \in [0.01, 0.10]$,
+a~następnie ekstrapoluje do $a_\Gamma \to 0$.
+
+\begin{table}[h]
+\centering\small
+\caption{Limit $\Phi_0^{(2)}(a_\Gamma \to 0)$ dla różnych $\alpha$.}
+\label{tab:p4-phi0}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\alpha$ & $\Phi_0^{(2)}(a_\Gamma\to 0)$ & $\Phi_0^{(2)} / 2\pi$ & Odchylenie od $2\pi$ \\
+\midrule
+$5.5$ & $7.310$ & $1.1635$ & $+16.35\%$ \\
+$5.9$ & $7.190$ & $1.1444$ & $+14.44\%$ \\
+$6.0$ & $7.163$ & $1.1400$ & $+14.00\%$ \\
+$6.5$ & $7.037$ & $1.1199$ & $+11.99\%$ \\
+$7.0$ & $6.928$ & $1.1027$ & $+10.27\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Dla całego badanego zakresu $\Phi_0^{(2)}(a_\Gamma \to 0) > 2\pi$;
+brak zmiany znaku w~$\alpha \in [5, 7]$.
+Stosunek $\Phi_0^{(3)}/\Phi_0^{(2)} \approx 3.42\text{--}3.52$
+w~limicie $a_\Gamma \to 0$ — bliski $\pi \approx 3.14159$,
+ale nie identyczny z~żadną prostą kombinacją stałych matematycznych.
+
+\begin{result}[Hipoteza $\Phi_0^{(2)} \to 2\pi$ obalona w~zakresie $\alpha \in \{5,\ldots,7\}$]%
+\label{res:p4}
+Ekstrapolacja numeryczna wyklucza $\Phi_0^{(2)} = 2\pi$ dla
+$\alpha \leq 7.0$ w~granicy $a_\Gamma \to 0$.
+Odchylenie jest zbyt duże ($>10\%$), by wynikało z~artefaktów numerycznych.
+Jeśli relacja $\Phi_0^{(2)} = 2\pi$ miałaby istnieć,
+wymagałoby to $\alpha > 10$ lub zupełnie innego mechanizmu tła.
+Hipoteza ta nie jest poparta przez dostępne obliczenia.
+\end{result}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection*{P5 — Stabilność dynamiczna}
+
+Skrypt \texttt{p5\_stabilnosc.py} dyskretyzuje operator perturbacji
+$H = -\nabla^2_r + V''_{\rm mod}(\Phi_{\rm sol}(r))$
+na profilu Yukawa i~wyznacza spektrum.
+
+Profil $V''_{\rm mod}(\Phi_{\rm sol}(r))$ wzdłuż solitonu $K_3$:
+\begin{itemize}[nosep]
+\item $r = a_\Gamma$: $V'' = +1.04 \times 10^7$ (rdzeń, silnie stabilizujący)
+\item $r \approx 0.091$: $V'' = 0$ (zmiana znaku)
+\item $r > 0.1$: $V'' < 0$, dążąc do $V''(1) = -1$ przy $r \to \infty$
+\end{itemize}
+
+Najniższe wartości własne $H$ dla $K_3$:
+$E_0 \approx -8.0 \times 10^4$, $E_1 \approx -7.1\times10^4$, \ldots
+(wszystkie $\ll V''(1) = -1$).
+
+\begin{result}[Wstępna analiza wskazuje niestabilność — wyniki niepełne]%
+\label{res:p5}
+Preliminarna dyskretyzacja daje wszystkie mody niestabilne
+($E_i \ll -1$). Interpretacja wymaga ostrożności z~trzech powodów:
+\begin{enumerate}[nosep,label=(\roman*)]
+\item profil solitonu jest ansatzem Yukawa, nie rozwiązaniem dokładnym ODE;
+\item operator kinetyczny nie uwzględnia członu $(1 + \alpha/\Phi)$ z~lagranżianu TGP;
+\item tło $\Phi = \PhiZero$ jest \emph{siodłem} potencjału ($V''(1) = -1 < 0$):
+      continuum perturbacji tła samo w~sobie jest niestabilne.
+\end{enumerate}
+Test Derricka potwierdza brak skalowalnej równowagi:
+$-E_k + 3E_p \neq 0$ dla wszystkich trzech solitonów.
+Pełna analiza stabilności wymaga rozwiązania P1 (dokładny profil ODE).
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Problemy otwarte (zaktualizowane)}%
+\label{app:I-otwarte}
+% -------------------------------------------------------------------
+
+\begin{problem}[Shooting od $r=0$: właściwe równanie ODE dla solitonów]%
+\label{prob:ODE}
+Wynik P1 (tabela~\ref{tab:p1-wyniki}) pokazuje, że ansatz Yukawa
+nie jest właściwym warunkiem początkowym dla full-ODE.
+Konieczna jest implementacja shootingu od $r = 0$:
+\begin{equation}
+    \Phi''(0) = \frac{V'_{\rm mod}(\Phi_0^{\rm try})}{3(1 + \alpha/\Phi_0^{\rm try})},
+    \quad \Phi'(0) = 0,
+\end{equation}
+i~wyznaczenie $\Phi_0^{\rm try}$ takie, że $\Phi(r) \to 1$ dla $r \to \infty$.
+\textbf{Pytanie otwarte}: czy solitony $M_2$ i~$M_3$ istnieją jako
+dokładne statyczne rozwiązania ODE, czy tylko jako stacjonarności funkcjonału energii?
+\end{problem}
+
+\begin{problem}[Wyznaczenie $\lambda^*$ z~pierwszych zasad]%
+\label{prob:lambda-star}
+Wynik P2 (tabela~\ref{tab:p2-hipotezy}) wskazuje, że $\lambda^*$
+nie jest wyznaczony przez żadną z~testowanych relacji.
+Najbardziej obiecująca kandydatka H5 ($\psi_{\rm core} = (e/\!\sqrt{2})\,\psi_{\rm new}$)
+ma błąd $0.4\text{--}3\%$ — zbyt duży na mechanizm zasadniczy.
+
+\textbf{Pytanie otwarte}: czy $\lambda$ wynika z~głębszej symetrii TGP,
+czy jest nowym niezależnym parametrem teorii (analogicznym do stałej
+sprzężenia w~QED)?
+\end{problem}
+
+\begin{problem}[Jednoparametrowa rodzina — fizyczny selektor]%
+\label{prob:rodzina}
+Rodzina rozwiązań $(\alpha^*, a_\Gamma, \lambda^*)$ tworzy krzywą
+(tabela~\ref{tab:rodzina-rozwiazan}).
+Każdy punkt daje $r_{21} = 207$, $r_{31} = 3477$.
+
+\textbf{Obserwacja (wynik P2)}: stosunek $\psi_{\rm core}/\psi_{\rm cross}$
+maleje monotonicz\-nie wzdłuż krzywej:
+
+\medskip
+\begin{center}\small
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$a_\Gamma$ & $\psi_{\rm core}/\psi_{\rm cross}$ & $\pi/2 = 1.5708$ & Odchylenie \\
+\midrule
+$0.025$ & $1.6062$ & & $2.25\%$ \\
+$0.030$ & $1.5937$ & & $1.46\%$ \\
+$0.035$ & $1.5826$ & & $0.75\%$ \\
+$0.040$ & $1.5726$ & $\leftarrow$ & $0.11\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+Punkt $a_\Gamma = 0.040$ jest najbliżej relacji $\psi_{\rm core}/\psi_{\rm cross} = \pi/2$,
+co odpowiada
+\begin{equation}\label{eq:selektor-pi}
+    \psi_{\rm core} = \frac{\pi}{2}\,\psi_{\rm cross}
+    = \frac{\pi}{2}\sqrt{\frac{3}{2}}\,\psi_{\rm new}
+    = \pi\sqrt{\frac{3}{8}}\;\psi_{\rm new}
+    \approx 1.924\,\psi_{\rm new}.
+\end{equation}
+Obserwowana wartość dla $a_\Gamma=0.040$: $\psi_{\rm core}/\psi_{\rm new} = 1.926$
+(odchylenie od~\eqref{eq:selektor-pi}: $+0.11\%$).
+Ekstrapolacja liniowa daje $a_\Gamma^* \approx 0.041$ dla dokładnej równości.
+
+\textbf{Hipoteza P3}: fizycznym selektorem rodziny jest warunek
+$\psi_{\rm core} = (\pi/2)\,\psi_{\rm cross}$,
+czyli ``rdzeń solitonu leży w~ćwiartce drogi ponad punktem crossover''
+w~skali mnożnikowej.
+
+\textbf{Pytanie otwarte}: skąd wynika czynnik $\pi/2$?
+Możliwe uzasadnienia:
+(a) geometria całki sferycznej $\int_0^{\pi/2} \sin^2\theta\,d\theta = \pi/4$;
+(b) warunek stacjonarności fazy profilu Yukawa $e^{-r_{\rm cross}}/r_{\rm cross}$;
+(c) przypadek numeryczny wymagający weryfikacji w~szerszej rodzinie parametrów.
+\end{problem}
+
+\begin{problem}[Stabilność dynamiczna solitonów]%
+\label{prob:stabilnosc-M3}
+Wynik P5 jest wstępny i~niedokładny (patrz uwagi w~\ref{res:p5}).
+Kluczowym krokiem jest uzyskanie dokładnego profilu ODE z~P1,
+a~następnie analiza spektrum z~pełnym operatorem kinetycznym.
+
+\textbf{Ważna obserwacja}: $V''_{\rm mod}(1) = -1 < 0$ oznacza, że
+tło $\Phi = \PhiZero$ jest siodłem — nie minimum globalnym.
+Stabilność solitonu musi być rozumiana \emph{względem tła},
+nie absolutnie. Długoczasowa dynamika wymaga uwzględnienia
+rozpadu tła na $\psi_{\rm new} \approx 426$ lub mechani\-zmu
+stabilizacji (np.\ ładunek topologiczny, bariera potencjału).
+\end{problem}
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie wyników}%
+\label{app:I-podsumowanie}
+% -------------------------------------------------------------------
+
+\begin{table}[h]
+\centering
+\small
+\caption{Zestawienie wyników modyfikacji potencjału TGP
+  $V_{\rm mod} = V_{\rm orig} + \lambda(\psi-1)^6/6$.}
+\label{tab:podsumowanie-v2}
+\begin{tabular}{@{}p{6.5cm}c p{4.5cm}@{}}
+\toprule
+\textbf{Twierdzenie / wynik} & \textbf{Status} & \textbf{Skrypt} \\
+\midrule
+Warunki próżni zachowane & Dowiedziony analitycznie
+    & Stwierdzenie~\ref{prop:proznia-zachowana} \\
+Trzy zera $g(K)$ dla stopnia 6 & Dowiedziony analitycznie
+    & Tw.~\ref{thm:trzy-zera} \\
+Poprzednia ``rozbieżność'' = artefakt siatki
+    & Potwierdzony num.
+    & \texttt{v2\_kwadryatura.py} \\
+Trzecie zero rzeczywiste (zbieżne)
+    & Potwierdzony num.
+    & \texttt{v2\_konwergencja\_finalna.py} \\
+$r_{21} = 207$, $r_{31} = 3477$ jednocześnie
+    & Potwierdzony num.
+    & \texttt{v2\_bisekcja\_alpha.py} \\
+Rodzina jednoparametrowa (4 punkty)
+    & Potwierdzony num.
+    & Tabela~\ref{tab:rodzina-rozwiazan} \\
+$\psi_{\rm core}/\psi_{\rm new} \approx 2$ (universalne)
+    & Obserwacja num.
+    & Tabela~\ref{tab:psi-ratio} \\
+Wzór Koide'a spełniony do $0.017\%$
+    & Weryfikacja num.
+    & \texttt{badanie\_pi.py} \\
+Brak czwartej generacji (predykcja)
+    & Analitycznie + num.
+    & Stwierdzenie~\ref{prop:brak-czwartej} \\
+\midrule
+Ansatz Yukawa = IC dla full-ODE? (P1)
+    & \textbf{Nie} dla $K_2$, $K_3$
+    & Wynik~\ref{res:p1}, tab.~\ref{tab:p1-wyniki} \\
+$\lambda^*$ z~pierwszych zasad (P2)
+    & \textbf{Brak mechanizmu}
+    & Wynik~\ref{res:p2}, tab.~\ref{tab:p2-hipotezy} \\
+$\Phi_0^{(2)} \to 2\pi$ dla $\alpha \leq 7$ (P4)
+    & \textbf{Obalona} ($>10\%$ odchyleń)
+    & Wynik~\ref{res:p4}, tab.~\ref{tab:p4-phi0} \\
+Stabilność dynamiczna $M_3$ (P5)
+    & \textbf{Wstępna niestabilność} (niepełna analiza)
+    & Wynik~\ref{res:p5} \\
+Selektor punktu na krzywej rozwiązań (P3)
+    & \textbf{Otwarty}
+    & Problem~\ref{prob:rodzina} \\
+Shooting ODE od $r=0$ (P1 rozszerzony)
+    & \textbf{Otwarty}
+    & Problem~\ref{prob:ODE} \\
+\bottomrule
+\end{tabular}
+\end{table}

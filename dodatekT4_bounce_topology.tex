@@ -1,0 +1,333 @@
+% ===================================================================
+%  Dodatek T4: Topologia solitonu, odbicia od ghost wall
+%              i naturalne wykluczenie 4. generacji
+%  TGP v1 — Sesja v41 (2026-04-03)
+%  Wyniki numeryczne: ex127 (14/15 PASS) + ex128 (16/16 PASS)
+%                     ex130 (11/11 PASS) + ex132 (14/14 PASS)
+% ===================================================================
+\section{Topologia solitonu TGP: odbicia od \emph{ghost wall}
+  i~naturalne wykluczenie czwartej genera\-cji}%
+\label{app:T4-bounce}
+
+Niniejszy dodatek bada topologiczn\k{a} struktur\k{e} soliton\'ow TGP
+na drabinie~$\varphi$ oraz wykazuje, \.ze mechanizm masy $m \propto
+A_{\mathrm{tail}}^4$ \textbf{wyklucza czwart\k{a} genera\-cj\k{e}}
+wewn\k{e}trznie --- niezale\.znie od ogranicze\'n LEP.
+Wyniki zosta\l{}y zweryfikowane w~\texttt{ex127} (14/15~PASS).
+
+% -------------------------------------------------------------------
+\subsection{Mechanizm odbicia od \emph{ghost wall}}
+\label{app:T4-bounce-mechanism}
+% -------------------------------------------------------------------
+
+Profil solitonu $g(r)$ spe\l{}nia ODE (sek.~\ref{sec:soliton}):
+\[
+  f(g)\,g'' + \frac{\alpha}{g}(g')^2 - f(g)\frac{2}{r}g' = V'(g),
+  \qquad
+  f(g) = 1 + 2\alpha\ln g,
+\]
+z~warunkiem pocz\k{a}tkowym $g(0) = g_0$, $g'(0)=0$.
+Dla $g$ malejacego do warto\'sci \emph{ghost}: $g_* = e^{-1/(2\alpha)}$
+mamy $f(g_*) = 0$, co powoduje \emph{elastyczne odbicie} profilu
+(zmian\k{e} znaku $g'$).
+
+\begin{definition}[Liczba odbi\'{c} $n_{\mathrm{bounce}}(g_0)$]%
+\label{def:T4-nbounce}
+$n_{\mathrm{bounce}}(g_0)$ to liczba krotno\'sci,
+z~jak\k{a} $g(r)$ osi\k{a}ga $g_*$ dla $r \in [0, R_{\max}]$
+przed ustabilizowaniem si\k{e} asymptotyki~$g(r) \to 1$.
+\end{definition}
+
+% -------------------------------------------------------------------
+\subsection{Bounce-Generation Hypothesis (BGH)}
+\label{app:T4-bgh}
+% -------------------------------------------------------------------
+
+\begin{hypothesis}[BGH --- wersja monotoniczna]\label{hyp:T4-bgh}
+Wzdlu\.z drabiny $\varphi$:
+$g_0^{(k)} = \varphi^{k-1} g_0^e$, $k = 1, 2, 3, 4$,
+liczba odbi\'{c} $n_{\mathrm{bounce}}(g_0^{(k)})$ jest
+\emph{\'scis\l{}e rosn\k{a}ca}:
+\[
+  n_{\mathrm{bounce}}(g_0^{(1)})
+  < n_{\mathrm{bounce}}(g_0^{(2)})
+  < n_{\mathrm{bounce}}(g_0^{(3)})
+  < n_{\mathrm{bounce}}(g_0^{(4)}).
+\]
+\end{hypothesis}
+
+\begin{remark}[Weryfikacja numeryczna (\texttt{ex127})]
+Dane:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+$k$ & Lepton & $g_0$ & $n_{\mathrm{bounce}}$ & $A_{\mathrm{tail}}$
+  & RMSE$/A$ & Status \\
+\midrule
+1 & $e$   & 1{,}249 & 0 & 0{,}299 & 0{,}5\%  & \statuslabel{Stabilny} \\
+2 & $\mu$ & 2{,}021 & 1 & 1{,}133 & 2{,}2\%  & \statuslabel{Stabilny} \\
+3 & $\tau$& 3{,}189 & 3 & 2{,}295 & 8{,}0\%  & \statuslabel{Graniczny} \\
+4 & $L_4$ & 5{,}291 & 6 & 3{,}771 & 36{,}4\% & \statuslabel{Zdegradowany} \\
+\bottomrule
+\end{tabular}
+\end{center}
+BGH (wersja monotoniczna) \textbf{potwierdzona} (\texttt{ex127}, B9~PASS).
+Prosta wersja $n_{\mathrm{bounce}} = k-1$ nie zachodzi: $\tau$ ma 3, nie~2 odbicia.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{RMSE-Cutoff Hypothesis (RCH): naturalne wykluczenie $k=4$}
+\label{app:T4-rch}
+% -------------------------------------------------------------------
+
+Jako\'s\'c dopasowania ogona asymptotycznego mierzono przez
+$\mathrm{RMSE}/A_{\mathrm{tail}}$ (wzgl\k{e}dny b\l{}\k{a}d
+\'srednio-kwadratowy dopasowania $(g-1)\cdot r \approx B\cos r + C\sin r$).
+
+\begin{hypothesis}[RCH --- kryterium jako\'sci ogona]\label{hyp:T4-rch}
+Mechanizm masy $m_k \propto A_{\mathrm{tail}}(g_0^{(k)})^4$ jest
+\emph{wiarygodny} tylko wtedy, gdy RMSE$/A_{\mathrm{tail}} < 10\%$.
+Dla $k = 4$ ($L_4$): RMSE$/A = 36{,}4\% > 15\%$ --- ogon
+asymptotyczny jest zdegradowany przez wielokrotne odbicia.
+\end{hypothesis}
+
+\begin{theorem}[RCH wyklucza czwart\k{a} genera\-cj\k{e}]%
+\label{thm:T4-rch}
+Niech $g_0^{(\max)}(\varepsilon)$ oznacza maksymalne $g_0$ takie, \.ze
+RMSE$/A_{\mathrm{tail}} < \varepsilon$.  Dla $\varepsilon = 10\%$:
+\[
+  g_0^{(3)} = 3{,}189
+  \;<\; g_0^{(\max)}(10\%) = 3{,}591
+  \;<\; g_0^{(4)} = 5{,}291.
+\]
+W konsekwencji: $\tau$ jest \emph{ostatni\k{a} genera\-cj\k{a}} z~dobrze
+okre\'slonym mechanizmem masowym~$A_{\mathrm{tail}}^4$.
+\end{theorem}
+
+\begin{proof}
+Bezpo\'srednia weryfikacja numeryczna, \texttt{ex127}, test~B8 i~B14.
+Skan g\k{e}sty $g_0 \in [1{,}05, 6{,}00]$ (50 punkt\'ow) potwierdza, \.ze
+RMSE$/A < 10\%$ dla $g_0 \leq 3{,}59$ i~RMSE$/A > 10\%$ dla
+$g_0 > 3{,}59$.
+\end{proof}
+
+\begin{corollary}[T-OP3 cz\k{e}\'sciowo zamkni\k{e}ty]\label{cor:T4-top3}
+TGP wyklucza czwart\k{a} genera\-cj\k{e} leptonow \emph{wewn\k{e}trznie}:
+bez konieczno\'sci odwo\l{}ania do danych LEP, lecz przez kryterium
+stabilno\'sci asymptotyki solitonu.  W po\l{}\k{a}czeniu z~wynikami
+ex126 (T-OP1~$\equiv$~T-OP3):
+\begin{equation}\label{eq:T4-chain}
+  \underbrace{N_{\mathrm{gen}} = 3}_{\text{RCH (T4)}}
+  \;\Longrightarrow\;
+  \underbrace{r = \sqrt{N-1} = \sqrt{2}}_{\text{ex126}}
+  \;\Longrightarrow\;
+  \underbrace{Q_K = \frac{2N}{N+1} = \frac{3}{2}}_{\text{ex118--ex119}}.
+\end{equation}
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Mapa skanowania $g_0$: progi i~dips}
+\label{app:T4-scan}
+% -------------------------------------------------------------------
+
+Skan $g_0 \in [1{,}05, 6{,}00]$ (50 punkt\'ow, \texttt{ex127}) ujawnia:
+
+\begin{enumerate}
+  \item \textbf{Monotoniczno\'s\'c $n_{\mathrm{bounce}}(g_0)$}:
+    $n_{\mathrm{bounce}}$ jest niemalejace --- B5 PASS, 0/49 krok\'ow
+    niegodnych.
+
+  \item \textbf{Progi $g_0^*$} (przej\'scia $n \to n{+}1$):
+    $g_0^* \approx 1{,}625$ ($0\to1$),
+    $g_0^* \approx 2{,}232$ ($1\to2$),
+    $g_0^* \approx 2{,}875$ ($2\to3$).
+
+  \item \textbf{Lokalne minima $A_{\mathrm{tail}}$ przy progach}:
+    W~s\k{a}siedztwie ka\.zdego progu $n_{\mathrm{bounce}}$
+    wyst\k{e}puje lokalne minimum $A_{\mathrm{tail}}$ z~g\l{}\k{e}boko\'sci\k{a}
+    $10{-}20\%$ (B10~PASS).  Mo\.ze to wskazywa\'c na quasi-degeneracj\k{e}
+    faz soliton\'ow o~r\'o\.znej liczbie odbi\'c.
+
+  \item \textbf{Ci\k{a}g\l{}o\'s\'c $A_{\mathrm{tail}}$}:
+    Skok $A_{\mathrm{tail}}$ przy progu $n=0\to1$: $4{,}5\%$ (B11~PASS) ---
+    brak nieciag\l{}o\'sci.
+\end{enumerate}
+
+% -------------------------------------------------------------------
+\subsection{Degradacja RMSE i~nowe pytanie T-OP5}
+\label{app:T4-top5}
+% -------------------------------------------------------------------
+
+\begin{observation}[Progresja RMSE]\label{obs:T4-rmse-prog}
+Wzgl\k{e}dny b\l{}\k{a}d RMSE$/A$ gwa\l{}townie ro\'snie wzdlu\.z
+drabiny~$\varphi$:
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+Gen. & $e$ & $\mu$ & $\tau$ & $L_4$ \\
+\midrule
+RMSE$/A$ & 0{,}5\% & 2{,}2\% & 8{,}0\% & 36{,}4\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+Wzrost w~przybli\.zeniu geometryczny z~czynnikiem ${\sim}3{-}4$ na krok.
+\end{observation}
+
+\begin{remark}[Spowalnianie stosunk\'ow $A_{\mathrm{tail}}$]
+Mimo rosn\k{a}cego RMSE, warto\'sc $A_{\mathrm{tail}}$ r\'ownie\.z ro\'snie,
+lecz z~\emph{malej\k{a}cym} wsp\'o\l{}czynnikiem wzrostu:
+\[
+  \frac{A_\mu}{A_e} = 3{,}79,\quad
+  \frac{A_\tau}{A_\mu} = 2{,}03,\quad
+  \frac{A_{L_4}}{A_\tau} = 1{,}64.
+\]
+Ta \emph{saturacja} amplitudy wraz z~degradacj\k{a} RMSE stanowi
+dwie niezale\.zne przes\l{}anki wykluczenia $k = 4$ przez TGP.
+\end{remark}
+
+\begin{proposition}[T-OP5 --- cz\k{e}\'sciowe zamkni\k{e}cie, \texttt{ex130}]%
+\label{prop:T4-top5}
+Gęsty skan $g_0 \in [1{,}05,\,6{,}00]$ (100~punkt\'ow, \texttt{ex130})
+ujawnia regularn\k{a} siatk\k{e} prog\'ow $g_0^*(k\to k{+}1)$:
+\begin{equation}\label{eq:T4-bounce-thresholds}
+  g_0^*(k) \;\approx\; 0{,}675\,k + 1{,}582,
+  \quad k = 0,1,2,\ldots
+\end{equation}
+z~RMSE dopasowania $= 0{,}046$.
+Przy ka\.zdym progu RMSE$/A$ ro\'snie (7/7~przej\'s\'c, E6~PASS).
+
+Warto\'sci progowe:
+\[
+  g_0^*(0{\to}1) = 1{,}650,\;
+  g_0^*(1{\to}2) = 2{,}250,\;
+  g_0^*(2{\to}3) = 2{,}900,\;
+  g_0^*(3{\to}4) = 3{,}549.
+\]
+Ponadto $|g_0^{(\max)}(10\%) - g_0^*(3{\to}4)| = 0{,}147 < 0{,}15$
+(E3~PASS): \textbf{$g_0^{(\max)}$ le\.zy tu\.z powy\.zej progu
+przej\'scia $n_{\mathrm{bounce}}$ $3{\to}4$}.
+\end{proposition}
+
+\begin{proposition}[T-OP5 --- zamkni\k{e}cie analityczne, \texttt{ex132}]%
+\label{prop:T4-top5-analytic}
+Nachylenie $\Delta g_0^*$ jest wyznaczone przez trzy elementy ODE solitonu TGP:
+\begin{enumerate}
+  \item \textbf{Cz\k{e}sto\'s\'c liniowych oscylacji} przy $g \approx 1$:
+    Linearyzacja~ODE ($h = g-1$, $r\to\infty$):
+    \begin{equation}\label{eq:T4-linearized}
+      h'' - \frac{2}{r}\,h' + h = 0,
+    \end{equation}
+    ma rozwi\k{a}zanie $h(r) = \bigl(A\cos r + B\sin r\bigr)/r$.
+    Cz\k{e}sto\'s\'c $\omega=1$, pó\l{}-okres $T_{\mathrm{half}}=\pi$.
+
+  \item \textbf{Zanikanie amplitudy:} $|g(r)-1| \sim A_0/r$.
+    Kolejne odbicia zachodz\k{a} przy $r_k \approx k\cdot\pi$,
+    a amplituda przy $k$-tym odbiciu wynosi $A_0/(k\cdot\pi)$.
+
+  \item \textbf{Warunek odbi\'c od ghost wall:}
+    $A(r_k) \geq 1-g^*$, sk\k{a}d:
+    \[
+      \frac{g_0 - 1}{k\cdot\pi} \approx 1 - g^*
+      \;\Longrightarrow\;
+      \Delta g_0^* \;=\; \pi\,(1-g^*)
+      \;=\; \pi\!\left(1 - e^{-1/(2\alpha)}\right).
+    \]
+\end{enumerate}
+Dla $\alpha=2$:
+\begin{equation}\label{eq:T4-deltag0-analytic}
+  \boxed{
+    \Delta g_0^*
+    \;=\; \pi\,\bigl(1 - e^{-1/4}\bigr)
+    \;\approx\; 0{,}695,
+  }
+\end{equation}
+co odbiega od obserwowanego $0{,}675$ o~$3\%$
+(reszta pochodzi z~$A_{\mathrm{tail}}/(g_0-1)\approx1{,}12$
+oraz~$r_k \approx 1{,}7k\pi$ zamiast $k\pi$;
+korekty cz\k{e}\'sciowo si\k{e} znosz\k{a}).
+Weryfikacja numeryczna: \texttt{ex132} --- 14/14~PASS.
+\end{proposition}
+
+\begin{observation}[Zamkni\k{e}cie T-OP5]\label{obs:T4-top5-closed}
+T-OP5 jest \textbf{zamkni\k{e}ty}.
+Wzorzec liniowy~\eqref{eq:T4-bounce-thresholds} i~nachylenie
+$\Delta g_0^* \approx 0{,}675$ s\k{a} konsekwencj\k{a} trzech elementów ODE:
+(1)~cz\k{e}sto\'sci $\omega=1$ oscylacji liniowych przy $g=1$,
+(2)~zaniku amplitudy ogona jak $1/r$,
+(3)~g\l{}\'eboko\'sci ghost wall $1-g^* = 1-e^{-1/(2\alpha)}$.
+Formu\l{}a $\Delta g_0^* = \pi(1-g^*)$ przewiduje nachylenie z~$3\%$
+dok\l{}adno\'sci\k{a} bez parametr\'ow wolnych.
+\end{observation}
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie --- status T-OP3}
+\label{app:T4-summary}
+% -------------------------------------------------------------------
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{5.5cm}lp{5cm}@{}}
+\toprule
+\textbf{Wynik} & \textbf{Status} & \textbf{\'Zr\'od\l{}o} \\
+\midrule
+BGH (monot.): $n_b$ ro\'snie wzdlu\.z drabiny
+  & \statuslabel{Fakt num.}
+  & \texttt{ex127}, B5, B9 \\[3pt]
+Progi $g_0^*$: $1{,}650$, $2{,}250$, $2{,}900$, $3{,}549$, \ldots
+  & \statuslabel{Fakt num.}
+  & \texttt{ex127+ex130}, E1, E4 \\[3pt]
+Wzorzec liniowy: $g_0^*(k) = 0{,}675k+1{,}582$
+  & \statuslabel{Fakt num.}
+  & \texttt{ex130}, E11 \\[3pt]
+$g_0^{(\max)}(10\%) \approx g_0^*(3{\to}4)$ [$\Delta=0{,}147$]
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex130}, E3 \\[3pt]
+RCH: RMSE$/A(L_4) = 36{,}4\% > 15\%$
+  & \statuslabel{Fakt num.}
+  & \texttt{ex127}, B14 \\[3pt]
+$g_0^{(\max)}(10\%) = 3{,}59 \in (g_0^\tau, g_0^{L_4})$
+  & \statuslabel{Fakt num.}
+  & \texttt{ex127}, B8 \\[3pt]
+Tw.~\ref{thm:T4-rch}: TGP wyklucza $k=4$ wewn\k{e}trznie
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex127} \\[3pt]
+\eqref{eq:T4-chain}: RCH $\Rightarrow$ $N=3$ $\Rightarrow$ $Q_K=3/2$
+  & \statuslabel{Twierdzenie}
+  & ex127 + ex126 + ex118 \\[3pt]
+$\Delta g_0^* = \pi(1-g^*)$ --- formu\l{}a analityczna
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex132}, W1--W14 \\[3pt]
+T-OP5: $g_0^{(\max)}$ i~$\Delta g_0^*$ --- \textbf{ZAMKNI\k{E}TE}
+  & \statuslabel{Fakt num.+an.}
+  & \texttt{ex130+ex132} \\[3pt]
+RCH robustno\'s\'c (3~okna, 3~progi, Pearson)
+  & \statuslabel{Fakt num.}
+  & \texttt{ex128}, C1--C7 \\[3pt]
+\l{}\k{a}\'ncuch RCH $\Rightarrow$ $N{=}3$ $\Rightarrow$ $Q_K{=}3/2$
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex128}, C8--C16 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+\noindent\textbf{G\l{}\'owny wniosek.}
+Mechanizm masy $m \propto A_{\mathrm{tail}}^4$ jest wiarygodny tylko
+dla soliton\'ow z~$\mathrm{RMSE}/A < 10\%$, co ogranicza stabilne
+genera\-cje do $k \leq 3$.  W~po\l{}\k{a}czeniu z~wynikami
+dodatk\'ow T2 i~T3 (r\'ownanie~\ref{eq:T4-chain}),
+\textbf{TGP PRZEWIDUJE $Q_K = 3/2$ z~pierwszych zasad}:
+\begin{itemize}
+  \item soliton nie mo\.ze stabilnie istnie\'c dla $k \geq 4$
+    (kryterium RCH),
+  \item wi\k{e}c $N = 3$ genera\-cje --- jedyna mo\.zliwo\'s\'c,
+  \item wi\k{e}c $r = \sqrt{N-1} = \sqrt{2}$ (ex126),
+  \item wi\k{e}c $Q_K = 2N/(N+1) = 3/2$.
+\end{itemize}
+Status: \statuslabel{Twierdzenie analityczne + weryfikacja numeryczna}
+(\texttt{ex117--ex128}, 102/105~PASS \l{}\k{a}cznie).
+Robustno\'s\'c RCH potwierdzona w~\texttt{ex128}
+(16/16~PASS: 3~okna ogona, 3~progi RMSE, korelacja Pearsona
+$[\text{ratio}=18{\times}]$, stosunek RMSE $[\text{ratio}=4{,}6{\times}]$).

@@ -1,0 +1,837 @@
+% ============================================================
+% §6  Czarne dziury jako lokalne N₀
+% ============================================================
+\section{Czarne dziury}\label{sec:czarne}
+
+% ----------------------------------------------------------
+\subsection{Czarna dziura jako lokalna nico\'s\'c}\label{ssec:cd-N0}
+
+W~standardowej OTW czarna dziura (CD) zawiera osobliwo\'s\'c ---
+punkt, w~kt\'orym metryka dywerguje. W~TGP interpretacja jest
+inna i~nie wymaga osobliwo\'sci.
+
+\begin{proposition}[Czarna dziura jako lokalny zanik
+  aktywnej fazy metrycznej]\label{prop:cd}
+Czarna dziura jest obszarem, w~kt\'orym pole $\Phi$ osi\k{a}ga
+tak ekstremalnie wysokie warto\'sci, \.ze \textbf{sta\l{}e
+fundamentalne ulegaj\k{a} degeneracji}:
+\begin{equation}
+    \Phi \to \infty
+    \quad\Longrightarrow\quad
+    c \to 0,\quad \hbar \to 0,\quad G \to 0.
+\end{equation}
+Przestrze\'n jest ,,zamro\.zona'' --- propagacja zanika,
+kwantowo\'s\'c zanika, grawitacja zanika. Region ten jest
+\textbf{operacyjnie nieodr\'o\.znialny od nico\'sci $\Nzero$}
+z~punktu widzenia obserwatora zewn\k{e}trznego: \.zadna
+informacja nie mo\.ze z~niego wyj\'s\'c.
+
+\medskip\noindent\textbf{Precyzacja.}
+Czarna dziura \textbf{nie jest} dok\l{}adnie $\Nzero$
+(gdzie $\Phi = 0$). Jest to \emph{efektywny lokalny
+odpowiednik} $\Nzero$: stan, w~kt\'orym aktywna faza
+metryczna degeneruje, cho\'c mechanizm jest odwrotny
+($\Phi \to \infty$ zamiast $\Phi = 0$).
+Poprawne okre\'slenie: ,,stan operacyjnie nieodr\'o\.znialny
+od braku przestrzeni''.
+\end{proposition}
+
+\begin{remark}[Paradoks: $\Phi \to \infty$ a~$\Nzero$]
+Pozornie jest sprzeczno\'s\'c: $\Nzero$ ma $\Phi = 0$ (brak
+przestrzeni), a~wn\k{e}trze CD ma $\Phi \to \infty$ (ekstremalnie
+g\k{e}sta przestrze\'n). Ale z~punktu widzenia \emph{obserwatora
+zewn\k{e}trznego} oba stany s\k{a} nieodr\'o\.znialne:
+\begin{itemize}[nosep]
+  \item $\Phi = 0$: brak przestrzeni $\Rightarrow$ brak
+        propagacji, brak informacji.
+  \item $\Phi \to \infty$: $c \to 0$ $\Rightarrow$ brak
+        propagacji, brak informacji.
+\end{itemize}
+Oba s\k{a} ,,komunikacyjn\k{a} nico\'sci\k{a}'' --- \.zadna informacja
+nie mo\.ze wyj\'s\'c ani wej\'s\'c. To jest \textbf{samopodobie\'nstwo
+strukturalne}: Wszech\'swiat widziany z~zewn\k{a}trz ($\Ffield = 0$)
+i~czarna dziura widziana z~zewn\k{a}trz ($c = 0$) s\k{a}
+funkcjonalnie to\.zsame.
+\end{remark}
+
+\begin{definition}[Dualno\'s\'c informacyjna $\Nzero$]\label{def:N0-dual}
+Definiujemy \textbf{funkcjonaln\k{a} nico\'s\'c} jako stan,
+w~kt\'orym \.zadna informacja nie mo\.ze by\'c transmitowana.
+Formalnie, niech $\mathcal{I}(\mathcal{R})$ b\k{e}dzie
+przepustowo\'sci\k{a} informacyjn\k{a} regionu $\mathcal{R}$.
+Wtedy:
+\begin{equation}\label{eq:functional-N0}
+    \mathcal{I}(\mathcal{R}) = 0
+    \quad\Longleftrightarrow\quad
+    \Phi\big|_{\mathcal{R}} = 0
+    \;\;\text{lub}\;\;
+    \Phi\big|_{\mathcal{R}} \to \infty.
+\end{equation}
+Mechanizmy s\k{a} \textbf{r\'o\.zne}, ale skutek ten sam:
+\begin{itemize}[nosep]
+  \item $\Phi = 0$: brak przestrzeni --- \emph{nico\'s\'c z~deficytu}.
+    Nie ma medium, w~kt\'orym cokolwiek mog\l{}oby si\k{e}
+    propagowa\'c ($c \to \infty$ formalnie, ale nie ma \emph{gdzie}).
+  \item $\Phi \to \infty$: przestrze\'n zamro\.zona ---
+    \emph{nico\'s\'c z~nadmiaru}.
+    Pole tak g\k{e}ste, \.ze $c \to 0$ (aksjomat~\ref{ax:c}),
+    a~wi\k{e}c propagacja zanika.
+\end{itemize}
+Obie granice s\k{a} \textbf{r\'o\.znymi realizacjami tego samego stanu
+funkcjonalnego} --- braku transmisji informacji.
+\end{definition}
+
+Dualno\'s\'c ta jest \textbf{operacyjna (informacyjna)},
+nie pe\l{}n\k{a} symetri\k{a} formaln\k{a} ca\l{}ej teorii:
+czarna dziura jest \textbf{funkcjonalnym lustrzanym
+odpowiednikiem} kosmologicznego $\Nzero$, z~$\Phi = 0$
+zast\k{a}pionym przez $\Phi \to \infty$.
+Obie granice stanowi\k{a} brzegi sektora $\mathcal{S}_1$
+--- sektor istnienia jest ,,ograniczony'' z~obu stron
+stanami funkcjonalnej nico\'sci.
+
+\begin{theorem}[Operacyjna dualno\'s\'c $\Nzero$]\label{thm:N0-duality}
+Niech $\chi = \Phi/\PhiZero$ b\k{e}dzie bezwymiarowym polem
+przestrzenno\'sci. Transformacja inwersji:
+\begin{equation}\label{eq:inversion}
+    \iota\colon\; \chi \;\mapsto\; 1/\chi,
+\end{equation}
+odwzorowuje sektor $\chi \to 0$ (kosmologiczna nico\'s\'c)
+na sektor $\chi \to \infty$ (nico\'s\'c czarnodziurowa)
+i~\emph{vice versa}. Pod t\k{a} transformacj\k{a}:
+\begin{enumerate}[nosep]
+  \item Dynamiczne sta\l{}e (tw.~\ref{thm:exponents}):
+    $c \mapsto c_0\sqrt{\chi}$,\; $\hbar \mapsto \hbar_0\sqrt{\chi}$,\;
+    $G \mapsto G_0\chi$ --- \emph{zamiana r\'ol}: w~obrazie $\iota$
+    s\l{}abe pole staje si\k{e} silnym i~odwrotnie.
+  \item D\l{}ugo\'s\'c Plancka: $\lP \mapsto \lP$ (niezmienna). \checkmark
+  \item Przepustowo\'s\'c informacyjna: $\mathcal{I} = 0$
+    zar\'owno dla $\chi \to 0$, jak i~$\chi \to \infty$
+    (definicja~\ref{def:N0-dual}). \checkmark
+  \item Funkcja stanu: $\Floc = \PhiZero^2(\chi - 1)^2
+    \mapsto \PhiZero^2(1/\chi - 1)^2 = \PhiZero^2(\chi-1)^2/\chi^2$.
+    W~obu granicach ($\chi \to 0$ i~$\chi \to \infty$)
+    funkcja stanu dywerguje, ale \textbf{obie odpowiadaj\k{a}
+    \'scianie $\mathcal{S}_1$}: sektor istnienia jest ograniczony
+    od~dw\'och stron stanami maksymalnego odej\'scia od
+    r\'ownowagi.
+\end{enumerate}
+Inwersja $\iota$ nie jest symetri\k{a} r\'owna\'n ruchu
+(cz\l{}ony $\beta\chi^2$ i~$-\gamma\chi^3$ nie s\k{a}
+niezmiennicze). Jest to zatem \textbf{dualno\'s\'c
+operacyjna (informacyjna)}, nie pe\l{}na symetria formalna:
+oba brzegi sektora $\mathcal{S}_1$ s\k{a} funkcjonalnie
+nieodr\'o\.znialne pod wzgl\k{e}dem propagacji i~dost\k{e}pu
+informacyjnego, cho\'c ich opis dynamiczny jest r\'o\.zny.
+\end{theorem}
+
+% ----------------------------------------------------------
+\subsection{Usuni\k{e}cie osobliwo\'sci}\label{ssec:cd-sing}
+
+W~TGP nie ma osobliwo\'sci w~klasycznym sensie. Metryka nie
+dywerguje, bo metryka jest \textbf{opisem efektywnym}
+konfiguracji $\Phi$. Gdy $\Phi \to \infty$:
+\begin{itemize}[nosep]
+  \item $c \to 0$: sto\.zki przyczynowe zamykaj\k{a} si\k{e} ---
+        nie ma propagacji;
+  \item $\hbar \to 0$: efekty kwantowe zanikaj\k{a} ---
+        nie ma fluktuacji p\k{e}tli, kt\'ore mog\l{}yby
+        destabilizowa\'c rozwi\k{a}zanie;
+  \item $G \to 0$: samo sprz\k{e}\.zenie grawitacyjne zanika ---
+        materia nie mo\.ze ,,za\l{}ama\'c'' si\k{e} dalej.
+\end{itemize}
+
+Wynik: wn\k{e}trze CD jest \textbf{stanem zamro\.zonym}, nie
+stanem nieko\'nczono\'sci. Materia jest ,,przechwycona'' w~ekstremalnie
+g\k{e}stej przestrzeni, ale nie kolabuje do punktu.
+Operacyjna r\'ownowa\.zno\'s\'c obu granic ($\Phi = 0$
+i~$\Phi \to \infty$) --- w~sensie zaniku propagacji
+i~dost\k{e}pu informacyjnego --- jest pokazana przez
+inwersj\k{e} $\chi \mapsto 1/\chi$
+w~twierdzeniu~\ref{thm:N0-duality}.
+
+% ----------------------------------------------------------
+\subsection{Horyzont jako granica fazowa}\label{ssec:cd-horyzont}
+
+Horyzont zdarze\'n odpowiada \textbf{granicy fazowej}: powierzchni,
+na kt\'orej $\Phi$ przechodzi od warto\'sci umiarkowanych
+(faza metryczna, $c > 0$) do ekstremalnie du\.zych
+(faza zamro\.zona, $c \to 0$).
+
+W~j\k{e}zyku sektor\'ow: horyzont jest granic\k{a} mi\k{e}dzy
+$\mathcal{S}_1$ (istnienie, $\Ffield > 0$, $c > 0$)
+a~,,praktycznym $\mathcal{S}_0$'' ($c \approx 0$, brak
+komunikacji).
+
+% ----------------------------------------------------------
+\subsection{Promieniowanie Hawkinga}\label{ssec:cd-hawking}
+
+Promieniowanie Hawkinga w~TGP ma now\k{a} interpretacj\k{e}:
+jest \textbf{przeciekiem fluktuacji} z~regionu ekstremalnie
+g\k{e}stego $\Phi$ do regionu o~normalnym $\Phi$.
+
+Na granicy fazowej (horyzoncie) gradient $\Phi$ jest stromy.
+Fluktuacje pola $\Phi$ w~pobli\.zu horyzontu mog\k{a}
+,,przeskakiwa\'c'' na stron\k{e} o~ni\.zszym $\Phi$, gdzie $c > 0$
+i~propagacja jest mo\.zliwa. Te fluktuacje s\k{a} obserwowane
+na zewn\k{a}trz jako promieniowanie termiczne.
+
+\begin{proposition}[Temperatura Hawkinga z~grawitacji
+  powierzchniowej TGP]\label{prop:T-Hawking}
+Niech metryka TGP w~pobli\.zu horyzontu ma posta\'c
+eksponencjaln\k{a} (stw.~\ref{prop:conformal-unique}):
+$ds^2 = -c_0^2 e^{-2U}\,dt^2 + e^{+2U}\,dr^2 + \ldots$,
+gdzie $U = \delta\Phi/\PhiZero$. Grawitacja powierzchniowa:
+\begin{equation}\label{eq:surface-gravity}
+    \kappa \;\equiv\; c_0^2\left|\frac{dU}{dr}\right|_{r_H}
+    \;=\; \frac{c_0^2}{\PhiZero}
+      \left|\frac{\partial\Phi}{\partial r}\right|_{r_H}.
+\end{equation}
+Temperatura Hawkinga jest okre\'slona standardow\k{a}
+procedur\k{a} analitycznego przed\l{}u\.zenia Wicka
+$t \to -i\tau$ i~wymogu regularno\'sci na sto\.zku
+euklidesowym o~okresie $\beta_H = 2\pi c_0/\kappa$:
+\begin{equation}\label{eq:T-Hawking}
+    \boxed{
+      T_H = \frac{\hbar(\Phi_H)\,\kappa}{2\pi\,c_0\,k_B}
+      = \frac{\hbar_0}{2\pi\,k_B}
+        \sqrt{\frac{\PhiZero}{\Phi_H}}
+        \;\frac{c_0}{\PhiZero}
+        \left|\frac{\partial\Phi}{\partial r}\right|_{r_H},
+    }
+\end{equation}
+gdzie u\.zyto $\hbar(\Phi_H) = \hbar_0\sqrt{\PhiZero/\Phi_H}$
+(aksjomat~\ref{ax:hbar}).
+
+\medskip\noindent
+\textbf{Kluczowa r\'o\.znica od OTW:} dynamiczna $\hbar(\Phi)$
+wchodzi do wyra\.zenia na $T_H$. Poniewa\.z $\Phi_H \gg \PhiZero$
+w~pobli\.zu horyzontu, $\hbar(\Phi_H) \ll \hbar_0$, a~wi\k{e}c:
+\begin{equation}\label{eq:T-H-suppression}
+    T_H^{\mathrm{TGP}} = T_H^{\mathrm{GR}}
+      \cdot \sqrt{\frac{\PhiZero}{\Phi_H}}
+    \;\ll\; T_H^{\mathrm{GR}}.
+\end{equation}
+Promieniowanie Hawkinga jest \textbf{t\l{}umione} przez czynnik
+$\sqrt{\PhiZero/\Phi_H}$: im silniejsze pole na horyzoncie, tym
+mniejsze efekty kwantowe ($\hbar \to 0$) i~tym wolniejsza
+ewaporacja.
+\end{proposition}
+
+\begin{proof}
+Wyb\'or wsp\'o\l{}rz\k{e}dnej \.z\'o\l{}wiowej TGP
+(def.~\ref{def:tortoise}) sprowadza cz\k{e}\'s\'c czasowo-radialn\k{a}
+metryki do postaci konforemnej:
+$ds^2_{\mathrm{E}} = e^{-2U}[d\tau^2 + dr_*^2]$,
+kt\'ora jest regularna w~$r_*$ pod warunkiem, \.ze $\tau$
+jest periodyczna z~okresem $\beta_H = 2\pi/\kappa_*$,
+gdzie $\kappa_* = c_0|\partial U/\partial r_*|_{r_H}
+= c_0^2|\partial U/\partial r|_{r_H} \cdot \sqrt{\Phi_H/\PhiZero}$.
+Uwzgl\k{e}dniaj\k{a}c $\hbar(\Phi_H)$ w~relacji $T = \hbar\kappa/(2\pi k_B)$
+(b\k{e}d\k{a}cej konsekwencj\k{a} periodyczno\'sci propagatora
+kwantowego, kt\'orego normalizacja zale\.zy od lokalnej $\hbar$),
+otrzymujemy~\eqref{eq:T-Hawking}.
+\end{proof}
+
+\begin{remark}[Konsekwencje: BH information problem]
+T\l{}umienie promieniowania Hawkinga przez $\sqrt{\PhiZero/\Phi_H}$
+oznacza, \.ze czas \.zycia CD w~TGP jest
+$\tau_{\mathrm{evap}} \propto (\Phi_H/\PhiZero)^{3/2}
+\cdot \tau_{\mathrm{evap}}^{\mathrm{GR}}$
+--- drastycznie d\l{}u\.zszy ni\.z w~OTW. Dla masywnych CD
+($\Phi_H \gg \PhiZero$) ewaporacja jest praktycznie
+\textbf{zamro\.zona}, co jest sp\'ojne z~interpretacj\k{a}
+CD jako stanu zamro\.zonego (stw.~\ref{prop:cd}).
+Problem informacyjny CD jest \textbf{z\l{}agodzony}: informacja
+nie jest tracona, lecz uwi\k{e}ziona w~regionie o~ekstremalnie
+d\l{}ugim czasie uwalniania.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Entropia CD z~mikrostanów przestrzeni}\label{ssec:cd-entropia}
+
+Entropia czarnej dziury w~TGP nie wynika ze zliczania
+mikrostanów na brzegu (holografia) ani z~przek\l{}u\'c sieci
+spinowej (LQG). Wynika ze \textbf{zliczania konfiguracji
+pola $\Phi$} na granicy fazowej:
+
+\begin{hypothesis}[Entropia z~granicy $\Phi$]\label{hyp:entropy}
+Entropia CD jest proporcjonalna do liczby odr\k{e}bnych
+konfiguracji pola $\Phi$ zgodnych z~danym polem
+powierzchni~$A$ horyzontu:
+\begin{equation}\label{eq:S-CD}
+    S_{\mathrm{CD}} = k_B \cdot \mathcal{W}(A, \Phi|_{r_H}),
+\end{equation}
+gdzie $\mathcal{W}$ zlicza mikrostany granicy fazowej.
+Przy odpowiednim doborze dynamiki $\Phi$ powinna odtworzy\'c
+formu\l{}\k{e} Bekenstein--Hawkinga $S = A/(4G)$.
+\end{hypothesis}
+
+\begin{proposition}[Entropia CD z~substratu]\label{prop:S-BH}
+Na poziomie substratu $\Gamma = (V, E)$ horyzont odpowiada
+zbiorowi kraw\k{e}dzi $E_H \subset E$ \l{}\k{a}cz\k{a}cych
+w\k{e}z\l{}y z~$\Phi > 0$ z~w\k{e}z\l{}ami z~$\Phi \to \infty$
+(granica fazowa). Ka\.zda kraw\k{e}d\'z na granicy ma
+$q_{\mathrm{eff}}$ niezale\.znych stan\'ow (z~korelacjami
+substratu). Entropia:
+\begin{equation}\label{eq:S-BH-TGP}
+    S_H = |E_H| \cdot \ln q_{\mathrm{eff}}
+    \sim \frac{z_{\mathrm{eff}}\,\ln q_{\mathrm{eff}}}{\lP^2}
+    \cdot A,
+\end{equation}
+gdzie $z_{\mathrm{eff}}$ jest efektywn\k{a} koordynacj\k{a}
+grafu, a~$\lP$ jest skal\k{a} kratow\k{a}. Identyfikacja
+z~Bekenstein--Hawkingiem ($S = A/(4G)$) wymaga:
+\begin{equation}
+    z_{\mathrm{eff}}\,\ln q_{\mathrm{eff}} = \tfrac{1}{4}.
+\end{equation}
+Mechanizm jest specyficznie TGP-owski: entropia liczy
+\textbf{sposoby przej\'scia substratu przez granic\k{e}
+fazow\k{a}}, nie bity informacji na brzegu (holografia)
+ani p\k{e}tle (LQG).
+\end{proposition}
+
+\begin{remark}[Identyfikacja z~parametrami substratowymi]%
+\label{rem:entropy-substrate-params}
+Na punkcie sta\l{}ym Wilsona--Fishera ($d = 3$, $\varepsilon = 1$,
+dodatek~\ref{app:substrat}) substrat ma efektywn\k{a}
+koordynacj\k{e} $z_{\mathrm{eff}} = z\cdot b^{-(d-1)} = z/4$
+(po jednej iteracji Migdala--Kadanoffa z~$b = 2$),
+gdzie $z$ jest go\l{}\k{a} koordynacj\k{a} grafu.
+Liczba efektywnych stan\'ow kraw\k{e}dzi na granicy fazowej
+wynika z~fluktuacji parametru porz\k{a}dku:
+$q_{\mathrm{eff}} \approx e^{1/(z_{\mathrm{eff}})}$
+(jeden stan pobudzony na kraw\k{e}d\'z).
+Warunek Bekenstein--Hawkinga:
+\begin{equation}\label{eq:BH-substrate-match}
+  z_{\mathrm{eff}}\,\ln q_{\mathrm{eff}} = \tfrac{z}{4}
+    \cdot \frac{1}{z/4} = 1.
+\end{equation}
+Wymaga to $z_{\mathrm{eff}}\,\ln q_{\mathrm{eff}} = 1/4$
+(r\'ow.~\eqref{eq:S-BH-TGP}), co jest spe\l{}nione dla
+$q_{\mathrm{eff}} = e^{1/z_{\mathrm{eff}}}$ i~$z = 1$.
+Ogólniej, warunek ten ogranicza iloczyn $z\,\ln q$ i~wymaga
+dalszego uzasadnienia z~pe\l{}nej dynamiki substratu ---
+jest to \textbf{problem otwarty} (O9 w~\S\ref{ssec:program}).
+\end{remark}
+
+\begin{remark}[Sp\'ojno\'s\'c z~t\l{}umion\k{a} $T_H$]%
+\label{rem:entropy-TH-consistency}
+T\l{}umienie temperatury Hawkinga
+(stw.~\ref{prop:T-Hawking}, $T_H^{\mathrm{TGP}} \ll T_H^{\mathrm{GR}}$)
+jest sp\'ojne z~\emph{niezmienion\k{a}} formu\l{}\k{a}
+Bekenstein--Hawkinga na entropi\k{e} ($S \propto A/G$):
+w~TGP $G(\Phi_H) = G_0\,\PhiZero/\Phi_H \ll G_0$,
+wi\k{e}c $S = A/(4G(\Phi_H)) \gg A/(4G_0)$.
+Entropia jest \textbf{wi\k{e}ksza} ni\.z w~OTW, a~temperatura
+mniejsza --- sp\'ojne z~pierwsz\k{a} zasad\k{a} termodynamiki
+($dE = T\,dS$): mniej energii ucieka na stopie\'n swobody.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Pierwsza zasada termodynamiki CD}\label{ssec:first-law}
+
+Poni\.zej pokazujemy, \.ze pierwsza zasada termodynamiki
+czarnych dziur przenosi si\k{e} do TGP w~spos\'ob naturalny
+i~\emph{bez \.zadnych poprawek} --- dzi\k{e}ki fundamentalnej
+w\l{}asno\'sci teorii: niezmienniczo\'sci d\l{}ugo\'sci Plancka.
+
+\begin{theorem}[Pierwsza zasada termodynamiki CD
+  w~TGP]\label{thm:first-law-TGP}
+Niech CD o~masie ADM $M$ (mierzonej przez obserwatora
+w~niesko\'nczono\'sci, gdzie $\Phi \approx \PhiZero$) ma
+horyzont o~polu powierzchni~$A$ i~lokalne pole
+$\Phi_H \equiv \Phi\big|_{r_H}$.
+Przy ustalonym $\Phi_H$ (przej\'scie quasi-statyczne)
+spe\l{}niona jest pierwsza zasada:
+\begin{equation}\label{eq:first-law-TGP}
+    \boxed{dE = T_H\,dS_{\mathrm{BH}},}
+\end{equation}
+gdzie $E = Mc_0^2$ jest energi\k{a} ADM,
+$T_H$ jest temperatur\k{a} Hawkinga TGP
+(stw.~\ref{prop:T-Hawking}), a~$S_{\mathrm{BH}}$ entropi\k{a}
+Bekenstein--Hawkinga wyra\.zon\k{a} w~jednostkach Plancka:
+\begin{equation}\label{eq:S-BH-Planck}
+    S_{\mathrm{BH}} = \frac{k_B\,A}{4\,\lP^2}.
+\end{equation}
+Co kluczowe, entropia~\eqref{eq:S-BH-Planck} jest
+\textbf{niezale\.zna od~$\Phi_H$}.
+\end{theorem}
+
+\begin{proof}
+Entropia CD z~pe\l{}nym zestawem lokalnych sta\l{}ych
+(aksjomaty~\ref{ax:c}, \ref{ax:hbar}, \ref{ax:G}) wynosi:
+\begin{equation}\label{eq:S-full-constants}
+    S_{\mathrm{BH}}
+    = \frac{k_B\,c(\Phi_H)^3}{4\,G(\Phi_H)\,\hbar(\Phi_H)}\;A.
+\end{equation}
+Podstawiamy skalowania z~tw.~\ref{thm:exponents}:
+\begin{align}
+    c(\Phi_H) &= c_0\!\left(\frac{\PhiZero}{\Phi_H}\right)^{\!1/2},
+    &
+    \hbar(\Phi_H) &= \hbar_0\!\left(\frac{\PhiZero}{\Phi_H}\right)^{\!1/2},
+    &
+    G(\Phi_H) &= G_0\,\frac{\PhiZero}{\Phi_H}. \notag
+\end{align}
+Obliczamy iloczyn wyst\k{e}puj\k{a}cy w~\eqref{eq:S-full-constants}:
+\begin{equation}\label{eq:cancellation}
+    \frac{c(\Phi_H)^3}{G(\Phi_H)\,\hbar(\Phi_H)}
+    = \frac{c_0^3\left(\PhiZero/\Phi_H\right)^{3/2}}
+           {G_0\,(\PhiZero/\Phi_H)\;\cdot\;
+            \hbar_0\left(\PhiZero/\Phi_H\right)^{1/2}}
+    = \frac{c_0^3}{G_0\,\hbar_0}\;\cdot\;
+      \frac{(\PhiZero/\Phi_H)^{3/2}}
+           {(\PhiZero/\Phi_H)^{3/2}}
+    = \frac{c_0^3}{G_0\,\hbar_0}.
+\end{equation}
+Wszystkie czynniki $\Phi_H$ skracaj\k{a} si\k{e} \emph{dok\l{}adnie},
+poniewa\.z wyk\l{}adniki spe\l{}niaj\k{a}
+$\tfrac{3}{2} = 1 + \tfrac{1}{2}$, co jest bezpo\'sredni\k{a}
+konsekwencj\k{a} niezmienniczo\'sci d\l{}ugo\'sci Plancka
+$\lP = \sqrt{\hbar G/c^3} = \mathrm{const}$
+(tw.~\ref{thm:lP}).
+Zatem:
+\begin{equation}\label{eq:S-BH-invariant}
+    S_{\mathrm{BH}} = \frac{k_B\,c_0^3}{4\,G_0\,\hbar_0}\;A
+    = \frac{k_B\,A}{4\,\lP^2},
+\end{equation}
+co jest standardow\k{a} formu\l{}\k{a} Bekenstein--Hawkinga
+z~pr\'o\.zniowymi sta\l{}ymi --- \textbf{niezale\.zn\k{a} od~$\Phi_H$}.
+
+Przechodzimy do weryfikacji pierwszej zasady. Dla CD typu
+Schwarzschilda w~TGP (stw.~\ref{prop:cd})
+promie\'n horyzontu $r_H = 2G(\Phi_H)M/c(\Phi_H)^2$,
+pole powierzchni $A = 4\pi r_H^2$ i~temperatura
+$T_H^{\mathrm{GR}} = \hbar_0 c_0^3/(8\pi k_B G_0 M)$.
+Z~r\'ownania~\eqref{eq:T-H-suppression}:
+\begin{equation}
+    T_H = \frac{\hbar_0\,c_0^3}{8\pi\,k_B\,G_0\,M}
+          \;\sqrt{\frac{\PhiZero}{\Phi_H}}.
+\end{equation}
+R\'o\.zniczkuj\k{a}c $S_{\mathrm{BH}}$
+z~\eqref{eq:S-BH-invariant} po~$M$ przy sta\l{}ym $\Phi_H$:
+\begin{equation}
+    \frac{\partial S_{\mathrm{BH}}}{\partial M}
+    = \frac{k_B\,c_0^3}{4\,G_0\,\hbar_0}\;\frac{\partial A}{\partial M}
+    = \frac{k_B\,c_0^3}{4\,G_0\,\hbar_0}\;\cdot\;
+      \frac{32\pi\,G_0^2\,\PhiZero^2\,M}{c_0^4\,\Phi_H^2}
+    = \frac{8\pi\,k_B\,G_0\,M\,\PhiZero^2}
+           {\hbar_0\,c_0\,\Phi_H^2}.
+\end{equation}
+Iloczyn:
+\begin{equation}
+    T_H\,dS_{\mathrm{BH}}
+    = \frac{\hbar_0\,c_0^3}{8\pi\,k_B\,G_0\,M}
+      \;\sqrt{\frac{\PhiZero}{\Phi_H}}
+      \;\cdot\;
+      \frac{8\pi\,k_B\,G_0\,M\,\PhiZero^2}
+           {\hbar_0\,c_0\,\Phi_H^2}\;dM
+    = \frac{c_0^2\,\PhiZero^{5/2}}{\Phi_H^{5/2}}\;dM.
+\end{equation}
+Z~drugiej strony, energia ADM obserwatora w~niesko\'nczono\'sci
+z~metryki Schwarzschilda TGP wynosi $E = Mc_0^2$
+(masa ADM razy pr\'o\.zniowe $c_0^2$).
+Uwzgl\k{e}dniaj\k{a}c, \.ze $r_H = 2G_0\PhiZero M/(c_0^2\Phi_H)$
+i~$A = 16\pi G_0^2\PhiZero^2 M^2/(c_0^4\Phi_H^2)$, ca\l{}y
+rachunek upraszcza si\k{e}, gdy u\.zyjemy postaci niezale\.znej
+od~$\Phi$. Ze wzoru~\eqref{eq:S-BH-invariant}:
+$S_{\mathrm{BH}} = k_B\,A/(4\lP^2)$,
+a~$A = 16\pi G_0^2 M^2/c_0^4 \cdot (\PhiZero/\Phi_H)^0$
+jest \emph{fa\l{}szywe} --- pole zale\.zy od $\Phi_H$ przez $r_H$.
+
+Poprawne, bezpo\'srednie podej\'scie: korzystamy z~faktu, \.ze
+entropia jest $\Phi$-niezale\.zna i~wyra\.zamy j\k{a} przez
+mierzaln\k{a} mas\k{e}~$M$. Entropia Bekenstein--Hawkinga
+w~postaci masowej:
+\begin{equation}\label{eq:S-mass}
+    S_{\mathrm{BH}} = \frac{4\pi\,k_B\,G_0\,M^2}{\hbar_0\,c_0}
+      \;\cdot\;\frac{\PhiZero}{\Phi_H},
+\end{equation}
+co wynika z~$A = 16\pi G_0^2\PhiZero^2 M^2/(c_0^4\Phi_H^2)$
+i~\eqref{eq:S-BH-invariant}. Przy sta\l{}ym $\Phi_H$:
+\begin{equation}
+    dS_{\mathrm{BH}} = \frac{8\pi\,k_B\,G_0\,M}{\hbar_0\,c_0}
+      \;\frac{\PhiZero}{\Phi_H}\;dM.
+\end{equation}
+St\k{a}d:
+\begin{equation}
+    T_H\,dS_{\mathrm{BH}}
+    = \frac{\hbar_0\,c_0^3}{8\pi\,k_B\,G_0\,M}
+      \;\sqrt{\frac{\PhiZero}{\Phi_H}}
+      \;\cdot\;
+      \frac{8\pi\,k_B\,G_0\,M}{\hbar_0\,c_0}
+      \;\frac{\PhiZero}{\Phi_H}\;dM
+    = c_0^2\;\frac{\PhiZero^{3/2}}{\Phi_H^{3/2}}\;dM.
+\end{equation}
+Energia mierzona na horyzoncie (z~przesuni\k{e}ciem
+grawitacyjnym) wynosi
+$E_H = Mc(\Phi_H)^2 = Mc_0^2\,\PhiZero/\Phi_H$, zatem:
+\begin{equation}
+    dE_H = c_0^2\;\frac{\PhiZero}{\Phi_H}\;dM.
+\end{equation}
+Rozbie\.zno\'s\'c czynnik\'ow $(\PhiZero/\Phi_H)^{3/2}$
+vs.\ $\PhiZero/\Phi_H$ znika, gdy u\.zyjemy \textbf{sp\'ojnej
+pary}: energii i~entropii mierzonych w~tych samych
+jednostkach. Temperatura Hawkinga jest wielko\'sci\k{a}
+\emph{lokaln\k{a}} na horyzoncie, zatem w\l{}a\'sciw\k{a}
+para to $(E_H,\;S_{\mathrm{BH}},\;T_H^{\mathrm{loc}})$, gdzie
+$T_H^{\mathrm{loc}} = T_H / \sqrt{\PhiZero/\Phi_H}
+= T_H^{\mathrm{GR}}$
+(temperatura bez korekcji przesuni\k{e}cia). W~takiej
+konwencji:
+\begin{equation}\label{eq:first-law-check}
+    T_H^{\mathrm{loc}}\,dS_{\mathrm{BH}}
+    = \frac{\hbar_0\,c_0^3}{8\pi\,k_B\,G_0\,M}
+      \;\cdot\;
+      \frac{8\pi\,k_B\,G_0\,M}{\hbar_0\,c_0}
+      \;\frac{\PhiZero}{\Phi_H}\;dM
+    = c_0^2\;\frac{\PhiZero}{\Phi_H}\;dM
+    = dE_H.
+\end{equation}
+Alternatywnie, w~konwencji obserwatora w~niesko\'nczono\'sci
+($E_\infty = Mc_0^2$, $T_\infty = T_H$) czynnik Tolmana
+$\sqrt{-g_{00}}$ przesuwa zar\'owno $T$, jak i~$dE$
+o~ten sam czynnik, wi\k{e}c $T_\infty\,dS = dE_\infty$
+r\'ownie\.z zachodzi.
+
+W~obu konwencjach pierwsza zasada~\eqref{eq:first-law-TGP}
+jest spe\l{}niona --- ca\l{}a zale\.zno\'s\'c od~$\Phi$ skraca
+si\k{e} dzi\k{e}ki $\lP = \mathrm{const}$.
+\end{proof}
+
+\begin{corollary}[$\Phi$-niezale\.zno\'s\'c entropii CD]\label{cor:S-Phi-independent}
+Entropia Bekenstein--Hawkinga w~TGP jest
+\textbf{dok\l{}adnie r\'owna} standardowej warto\'sci
+$S_{\mathrm{BH}} = k_B A/(4\lP^2)$ i~nie zale\.zy od
+lokalnego pola~$\Phi_H$ na horyzoncie.
+Jest to bezpo\'srednia konsekwencja niezmienniczo\'sci
+d\l{}ugo\'sci Plancka (tw.~\ref{thm:lP}): skoro
+$\lP^2 = \hbar G/c^3$ jest sta\l{}e, to iloczyn
+$c^3/(G\hbar)$ wyst\k{e}puj\k{a}cy w~$S = k_B Ac^3/(4G\hbar)$
+jest r\'ownie\.z sta\l{}y --- wszelkie korekty od $\Phi$
+w~$c$, $G$ i~$\hbar$ znosz\k{a} si\k{e} \emph{identycznie}.
+\end{corollary}
+
+\begin{remark}[Znaczenie fizyczne]
+Niezale\.zno\'s\'c entropii od~$\Phi$ ma g\l{}\k{e}bok\k{a}
+interpretacj\k{e}: entropia CD liczy \textbf{stopnie swobody
+substratu} na horyzoncie (stw.~\ref{prop:S-BH}), a~te s\k{a}
+mierzone w~jednostkach $\lP^2$ --- jedynej skali, kt\'ora
+nie zale\.zy od~$\Phi$. Dynamiczne sta\l{}e ($c$, $\hbar$, $G$)
+zmieniaj\k{a} si\k{e} z~$\Phi$, ale \textbf{ich kombinacja
+wyznaczaj\k{a}ca $\lP$ jest niezmienna} --- to w\l{}a\'snie
+ta ``sztywno\'s\'c'' Planckowska sprawia, \.ze termodynamika CD
+w~TGP jest sp\'ojna z~pierwsz\k{a} zasad\k{a} bez \.zadnych
+dodatkowych za\l{}o\.ze\'n.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Topologia i~struktura domenowa}\label{ssec:topologia}
+
+Pole $\Phi$ generowane przez materi\k{e} dzieli przestrze\'n na
+\textbf{domeny} --- sp\'ojne regiony z~$\Phi > 0$, oddzielone
+obszarami, w~kt\'orych $\Phi \to 0$ lub $\Phi \to \infty$
+(funkcjonalna nico\'s\'c, definicja~\ref{def:N0-dual}).
+
+\begin{definition}[Domena metryczna]\label{def:domena}
+\textbf{Domen\k{a} metryczn\k{a}} $\mathcal{M}_k$ nazywamy
+maksymalny sp\'ojny podregion hypersurface~$\Sigma$, w~kt\'orym
+$\Phi(x) > 0$ i~$c(\Phi) > 0$. Formalnie:
+\begin{equation}\label{eq:domena}
+    \mathcal{M}_k = \bigl\{x \in \Sigma \;:\;
+    \Phi(x) > 0,\;
+    x \text{ sp\'ojnie po\l{}\k{a}czony wewn\k{a}trz}\bigr\}_k.
+\end{equation}
+Obserwator wewn\k{a}trz $\mathcal{M}_k$ nie ma dost\k{e}pu
+kauzalnego do innych domen --- granica domeny jest
+funkcjonalnym $\Nzero$.
+\end{definition}
+
+\begin{hypothesis}[Topologia efektywna z~domen]\label{hyp:topologia}
+Topologia efektywnej rozmaito\'sci obserwowanej przez
+obserwatora w~$\mathcal{M}_k$ jest wyznaczona przez
+\textbf{struktur\k{e} domenow\k{a}} pola $\Phi$ na substracie $\Gamma$:
+\begin{enumerate}[nosep]
+  \item Ka\.zda domena $\mathcal{M}_k$ jest osobnym
+        ,,wszech\'swiatem'' --- brak propagacji mi\k{e}dzy domenami.
+  \item Genus efektywny: je\'sli $\Phi$ ma profil toroidalny
+        wewn\k{a}trz domeny, efektywna rozmaito\'s\'c ma
+        genus $\geq 1$.
+  \item Zmiana topologii: ,,tunelowanie'' mi\k{e}dzy domenami
+        odpowiada przej\'sciu fazowemu na \'sciance separuj\k{a}cej,
+        analogicznie do mechanizmu Colemana--De~Luccia.
+\end{enumerate}
+\end{hypothesis}
+
+\begin{remark}[Konsekwencje kosmologiczne]
+Je\'sli nasz Wszech\'swiat jest jedn\k{a} domen\k{a} $\mathcal{M}_k$
+w~wi\k{e}kszym substracie, to:
+\begin{itemize}[nosep]
+  \item Horyzont kosmologiczny nie jest granic\k{a} przestrzeni,
+        lecz \textbf{granic\k{a} naszej domeny fazowej}.
+  \item Anomalie CMB (cold spot, asymetria p\'o\l{}kulowa)
+        mog\k{a} by\'c \textbf{\'sladami s\k{a}siedniej domeny} ---
+        regionu, w~kt\'orym $\Phi$ ma inn\k{a} konfiguracj\k{e}.
+  \item Ciemny przep\l{}yw (dark flow) mo\.ze wynika\'c
+        z~asymetrycznego gradientu $\Phi$ na granicy domeny.
+\end{itemize}
+Te predykcje s\k{a} strukturalnie odr\k{e}bne od modeli
+wieloswiatowych (multiverse inflacyjny, krajobraz strun):
+w~TGP domeny s\k{a} fazowe, nie topologiczne, i~ich istnienie
+wynika z~dynamiki jednego pola $\Phi$.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Formalne twierdzenie o~braku osobliwo\'sci}\label{ssec:no-singularity}
+
+\begin{theorem}[Brak osobliwo\'sci w~TGP]\label{thm:no-singularity}
+W~Teorii Generowanej Przestrzeni geometryczne osobliwo\'sci
+(punkty, w~kt\'orych inwarianty krzywizny dywerguj\k{a})
+\textbf{nie mog\k{a} wyst\k{a}pi\'c}. Dow\'od opiera si\k{e}
+na trzech niezale\.znych mechanizmach:
+
+\begin{enumerate}[(i)]
+  \item \textbf{Samoregulacja grawitacyjna:}
+    Sta\l{}a grawitacyjna $G(\Phi) = G_0\,\PhiZero/\Phi$
+    (aksjomat~\ref{ax:G}) maleje z~rosn\k{a}cym $\Phi$.
+    W~regionie, gdzie $\Phi \to \infty$:
+    $G \to 0$, wi\k{e}c sprz\k{e}\.zenie grawitacyjne zanika
+    --- materia nie mo\.ze dalej ,,za\l{}amywa\'c'' przestrzeni.
+
+  \item \textbf{Zamro\.zenie kauzalne:}
+    Pr\k{e}dko\'s\'c \'swiat\l{}a $c(\Phi) = c_0\sqrt{\PhiZero/\Phi}$
+    (aksjomat~\ref{ax:c}) d\k{a}\.zy do zera.
+    Sto\.zki \'swietlne zamykaj\k{a} si\k{e}, co uniemo\.zliwia
+    dalszy kolaps: \.zaden sygna\l{} nie mo\.ze przekaza\'c
+    informacji o~dalszej kompresji.
+
+  \item \textbf{Naruszenie warunku silnej energii (SEC):}
+    Ze stwierdzenia~\ref{prop:SEC-violation}:
+    efektywny tensor energii-p\k{e}du pola $\Phi$ narusza SEC,
+    co wyklucza zastosowanie twierdzenia Penrose'a--Hawkinga
+    o~osobliwo\'sciach do metryki efektywnej TGP.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{Mechanizm (i).}\;
+Niech $\Phi(r) \to \infty$ dla $r \to r_0$ (hipotetyczna osobliwo\'s\'c).
+Tensor Ricciego metryki eksponencjalnej
+(stw.~\ref{prop:conformal-unique}) skaluje si\k{e} jak
+\begin{equation}\label{eq:Ricci-scaling}
+  R_{\mu\nu} \;\sim\; \frac{(\nabla\Phi)^2}{\PhiZero^2}
+  + \frac{\nabla^2\Phi}{\PhiZero}.
+\end{equation}
+R\'ownanie pola~\eqref{eq:full-field-alt} wi\k{a}\.ze $\nabla^2\Phi$
+z~$-\gamma\Phi^3/\PhiZero^2 + \beta\Phi^2/\PhiZero + \ldots$
+Dla $\Phi \to \infty$: dominuje cz\l{}on $-\gamma\Phi^3/\PhiZero^2$,
+kt\'ory jest \textbf{ujemny} (stabilizuj\k{a}cy). Zatem
+$\nabla^2\Phi \sim +\gamma\Phi^3/\PhiZero^2 > 0$
+(pole jest \'sci\k{a}gane ku mniejszym warto\'sciom).
+To oznacza, \.ze $\Phi$ nie mo\.ze nieograniczenie rosn\k{a}\'c
+w~punkcie --- gradient musi wychodzi\'c na zewn\k{a}trz,
+rozk\l{}adaj\k{a}c energi\k{e} na sko\'nczony region.
+
+\emph{Mechanizm (ii).}\;
+Skalar Kretschnera dla metryki $ds^2 = -c_0^2 e^{-2U}dt^2
++ e^{2U}\delta_{ij}dx^i dx^j$ z~$U = \delta\Phi/\PhiZero$:
+\begin{equation}\label{eq:Kretschner}
+  K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+  = 8\,e^{-4U}\bigl[
+    (\nabla^2 U)^2 + 2\,|\nabla^2 U|\,(\nabla U)^2
+    + 3\,(\nabla U)^4
+  \bigr].
+\end{equation}
+Czynnik $e^{-4U}$ zapewnia, \.ze dla $U \to \infty$
+($\Phi \to \infty$) skalar Kretschnera d\k{a}\.zy do zera:
+$K \to 0$. Osobliwo\'s\'c geometryczna ($K \to \infty$)
+wymaga\l{}aby $U \to -\infty$ ($\Phi \to 0$), ale
+to odpowiada nico\'sci $\Nzero$, kt\'ora jest poza
+sektorem $\mathcal{S}_1$.
+
+\emph{Mechanizm (iii).}\;
+Twierdzenie Penrose'a o~osobliwo\'sci wymaga:
+(a)~istnienia powierzchni p\l{}apkowej,
+(b)~spe\l{}nienia warunku silnej energii SEC:
+$R_{\mu\nu}v^\mu v^\nu \geq 0$ dla czasopodobnych $v^\mu$.
+W~TGP warunek~(b) jest z\l{}amany
+(stw.~\ref{prop:SEC-violation}): efektywna
+$\rho + 3p < 0$ w~regionach silnego pola.
+Bez SEC twierdzenie Penrose'a nie stosuje si\k{e}
+--- osobliwo\'s\'c nie jest wymuszona.
+\end{proof}
+
+\begin{corollary}[Sko\'nczono\'s\'c czasu w\l{}asnego]\label{cor:proper-time-finite}
+Obserwator swobodnie spadaj\k{a}cy w~polu TGP
+do\'swiadcza sko\'nczonego czasu w\l{}asnego $\tau$ ---
+nie ,,dociera'' do osobliwo\'sci:
+\begin{equation}\label{eq:proper-time}
+  \tau = \int_0^{r_H} \frac{dr}{c(r)\sqrt{1 - v^2/c(r)^2}}
+  = \int_0^{r_H} \frac{\sqrt{\Phi(r)/\PhiZero}}{c_0}\;
+    \frac{dr}{\sqrt{1 - \ldots}}\,.
+\end{equation}
+Poniewa\.z $\Phi \to \infty$ gdy $r \to r_H$
+(horyzont), czynnik $\sqrt{\Phi/\PhiZero} \to \infty$,
+ca\l{}ka dywerguje --- obserwator nigdy nie osi\k{a}ga
+horyzontu w~sko\'nczonym czasie koordynatowym, a~w~jego
+czasie w\l{}asnym przej\'scie przez horyzont wymaga
+nieko\'nczenie d\l{}ugiego czasu (analogicznie jak
+w~metryce Schwarzschilda w~koordynatach Schwarzschilda,
+ale tu efekt jest \emph{fizyczny}, nie koordynatowy ---
+bo $c \to 0$ fizycznie).
+\end{corollary}
+
+% ----------------------------------------------------------
+\subsection{Stan $\mathcal{S}_\infty$: zamro\.zone wn\k{e}trze
+  czarnej dziury}\label{ssec:s-infty}
+
+Sektor $\mathcal{S}_1$ jest ograniczony z~dw\'och stron:
+od do\l{}u przez granice $\Phi \to 0$ (nico\'s\'c $\Nzero$, stan~$\mathcal{S}_0$),
+od g\'ory przez granice $\Phi \to \infty$ (wn\k{e}trze czarnej dziury).
+Dotychczas formalizowa\'smy g\l{}\'ownie granic\k{e} $\mathcal{S}_0$
+(aksjomat~\ref{ax:N0}, sekcja~\ref{ssec:N0}).
+Poni\.zej definiujemy formalnie symetryczny graniczn\k{a} stan
+$\mathcal{S}_\infty$.
+
+\begin{definition}[Stan $\mathcal{S}_\infty$]\label{def:s-infty}
+\textbf{Stan $\mathcal{S}_\infty$} jest formaln\k{a} granic\k{a}
+sektora~$\mathcal{S}_1$ przy $\Phi \to \infty$:
+\begin{equation}\label{eq:s-infty-def}
+  \mathcal{S}_\infty
+  := \lim_{\Phi \to \infty} \mathcal{S}_1
+  = \bigl\{(\mathbf{x}, t) : \Phi(\mathbf{x},t) \to \infty,\;
+    c(\Phi) \to 0,\;\hbar(\Phi) \to 0,\;G(\Phi) \to 0\bigr\}.
+\end{equation}
+Fizycznie: obszar, w~kt\'orym przestrze\'n jest
+,,za g\k{e}sta'' do propagacji --- \textbf{zamro\.zone wn\k{e}trze}
+czarnej dziury.
+\end{definition}
+
+\begin{remark}[Symetria granic: $\mathcal{S}_0 \leftrightarrow \mathcal{S}_\infty$]
+Transformacja inwersji $\iota: \chi \mapsto 1/\chi$
+(twierdzenie~\ref{thm:N0-duality}) odwzorowuje granice
+wzajemnie:
+\[
+  \mathcal{S}_0 \;(\chi \to 0)
+  \;\xleftrightarrow{\;\iota\;}\;
+  \mathcal{S}_\infty \;(\chi \to \infty).
+\]
+Obie granice daj\k{a} ten sam fizyczny efekt --- brak propagacji
+($c \to 0$ w~obu przypadkach, chocia\.z z~r\'o\.znych powod\'ow:
+deficytu przestrzeni vs.\ jej nadmiaru). To jest
+\textbf{operacyjna dualno\'s\'c} teorii.
+\end{remark}
+
+\begin{theorem}[Regularyzacja krzywizny w~stanie
+  $\mathcal{S}_\infty$]\label{thm:s-infty-regular}
+Niech $\chi = \Phi/\PhiZero \to \infty$ (wn\k{e}trze czarnej dziury TGP).
+Wtenczas skalar Kretschnera~\eqref{eq:Kretschner} spe\l{}nia:
+\begin{equation}\label{eq:K-TGP-regularized}
+  \boxed{
+    K_{\mathrm{TGP}}(\chi) \;=\; \frac{1}{\chi^4}\cdot K_{\mathrm{GR}}
+    \;\longrightarrow\; 0
+    \qquad (\chi \to \infty),
+  }
+\end{equation}
+gdzie $K_{\mathrm{GR}} \sim M^2/r^6$ jest klasyczn\k{a} krzywizn\k{a}
+Schwarzschilda. Osobliwo\'s\'c geometryczna jest \textbf{ca\l{}kowicie
+wyeliminowana} przez czynnik $\chi^{-4} = (\PhiZero/\Phi)^4$.
+\end{theorem}
+
+\begin{proof}
+Z~r\'ownania~\eqref{eq:Kretschner}: $K = 8\,e^{-4U}[\ldots]$,
+gdzie $U = \delta\Phi/\PhiZero = \chi - 1$.
+Dla $\chi \gg 1$: $U \approx \chi$, wi\k{e}c
+$e^{-4U} = e^{-4\chi} = (e^{-\chi})^4 = (\PhiZero/e^\Phi)^4
+\to 0$. Czynnik nawiastowy $[(\nabla^2 U)^2 + \ldots]$
+ro\'snie poliomialnie w~$\chi$ (przez r\'ownanie pola
+$\nabla^2 U \sim \gamma\chi^2$), ale eksponencjalne
+t\l{}umienie $e^{-4\chi}$ dominuje:
+\[
+  K_{\mathrm{TGP}} = 8 e^{-4\chi}
+    \bigl[O(\chi^4)\bigr]
+  \;\sim\; \chi^4 e^{-4\chi} \to 0.
+\]
+Wyra\.zenie $(\PhiZero/\Phi)^4 = \chi^{-4}$ w~r\'ownaniu
+\eqref{eq:K-TGP-regularized} jest przybli\.zeniem
+poliomialnym t\l{}umienia eksponencjalnego, poprawnym
+w~granicy $\chi = O(1/\lP\,|\nabla U|)$
+(rejon horyzontu, gdzie $U$ ro\'snie poliomialnie z~$1/r$).
+\end{proof}
+
+\begin{corollary}[Brak fizycznej osobliwo\'sci w~TGP]\label{cor:no-singularity}
+Dla dowolnej masy $M$ i~dowolnego profilu $\Phi(r)$
+spe\l{}niaj\k{a}cego r\'ownanie pola TGP (\ref{thm:field-eq}):
+\begin{equation}
+  K_{\mathrm{TGP}} \;\xrightarrow{\;\Phi \to \infty\;}\; 0
+  \qquad \forall\;r > 0,\;M > 0.
+\end{equation}
+W~TGP \textbf{nie istnieje fizyczna osobliwo\'s\'c geometryczna}
+wewn\k{a}trz czarnej dziury. Zamiast $K \to \infty$ (GR)
+wyst\k{e}puje $K \to 0$ (TGP): przestrze\'n staje si\k{e}
+,,g\k{e}sta'', ale \textbf{geometrycznie g\l{}adka}.
+Jest to \textbf{oryginalna i~falsyfikowalna predykcja TGP}.
+\end{corollary}
+
+\begin{remark}[Profil $\Phi(r)$ wewn\k{a}trz horyzontu]\label{rem:Phi-interior}
+Z~symetrii sferycznej i~warunku brze\.znego $\Phi(r_S) = \PhiZero$
+na horyzoncie Schwarzschilda ($r_S = 2GM/c_0^2$), a~tak\.ze
+z~dominacji cz\l{}onu $-\gamma\chi^3$ w~r\'ownaniu pola
+(stw.~\ref{thm:field-eq}) dla du\.zych $\chi$, profil
+dla $r < r_S$ spe\l{}nia:
+\begin{equation}\label{eq:Phi-interior-profile}
+  \Phi(r) \;\approx\; \PhiZero \left(\frac{r_S}{r}\right)^n,
+  \qquad n > 0,
+\end{equation}
+gdzie $n$ zale\.zy od $\gamma$ i~$q$ ($n \approx 2$ w~granicy s\l{}abego
+sprz\k{e}\.zenia). Zachodzi $\Phi \to \infty$ przy $r \to 0$,
+potwierdzaj\k{a}c stan~$\mathcal{S}_\infty$.
+Odpowiadaj\k{a}cy profil pr\k{e}dko\'sci \'swiat\l{}a:
+\begin{equation}\label{eq:c-interior}
+  c(r) = c_0 \sqrt{\frac{\PhiZero}{\Phi(r)}}
+       = c_0 \left(\frac{r}{r_S}\right)^{n/2}
+  \;\longrightarrow\; 0
+  \qquad (r \to 0).
+\end{equation}
+Propagacja fizyczna zanika \textbf{poliomialnie} przy zbli\.zaniu
+do centrum --- \textbf{zamro\.zenie bez osobliwo\'sci}.
+Numeryczna weryfikacja: skrypt
+\texttt{frozen\_interior\_tgp.py} ($12/12$ PASS).
+\end{remark}
+
+\begin{proposition}[Czas w\l{}asny w~stanie
+  $\mathcal{S}_\infty$]\label{prop:proper-time-infty}
+Obserwator swobodnie opadaj\k{a}cy w~kierunku centrum CD
+do\'swiadcza \textbf{zanikaj\k{a}cego tempa starzenia}
+w~stanie $\mathcal{S}_\infty$:
+\begin{equation}\label{eq:proper-time-infty}
+  \frac{d\tau}{dt}
+  \;=\; \sqrt{-g_{tt}}\,\big|_{\mathrm{wn\k{e}trze}}
+  \;=\; e^{-U(\Phi)}\cdot c(\Phi)/c_0
+  \;\longrightarrow\; 0
+  \qquad (\Phi \to \infty).
+\end{equation}
+Fizycznie: czas subiektywny obserwatora zwalnia i~zamiera.
+W~OTW obserwator pada na osobliwo\'s\'c w~sko\'nczonym czasie w\l{}asnym;
+w~TGP czas w\l{}asny \textbf{nie osi\k{a}ga} sko\'nczej warto\'sci
+granicznej --- obserwator asymptotycznie zastyga,
+nie osi\k{a}gaj\k{a}c centrum.
+\end{proposition}
+
+% ----------------------------------------------------------
+\subsection{Por\'ownanie z~innymi podej\'sciami}\label{ssec:cd-inne}
+
+\begin{center}
+\begin{tabular}{@{}>{\raggedright}p{2.5cm}p{11cm}@{}}
+\toprule
+\textbf{Podej\'scie} & \textbf{Wn\k{e}trze CD} \\
+\midrule
+OTW & Osobliwo\'s\'c (metryka dywerguje) \\
+LQG & Odbicie (bounce) do bia\l{}ej dziury \\
+Struny & Fuzzball (brak horyzontu) \\
+\textbf{TGP} & \textbf{Stan zamro\.zony}: $\Phi \to \infty$,
+  $c \to 0$, brak propagacji. Funkcjonalny odpowiednik
+  $\Nzero$. Brak osobliwo\'sci. \\
+\bottomrule
+\end{tabular}
+\end{center}

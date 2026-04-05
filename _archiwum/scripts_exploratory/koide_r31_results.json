@@ -1,0 +1,65 @@
+{
+  "r31_koide_algebraic": 3477.43729821637,
+  "r31_phi2_known": 3955.1,
+  "r31_pdg": 3477.48,
+  "r21_pdg": 206.768,
+  "QK_algebraic": 1.5,
+  "g0_star": 1.24915,
+  "g0_mu": 2.021167157046931,
+  "g0_tau_phi2": 3.2703171570469314,
+  "g0_tau_koide": 3.1891341063264838,
+  "A_e": 0.2988230080780974,
+  "A_mu": 1.1331437153179924,
+  "A_tau": 2.2947264441912143,
+  "r31_verify": 3477.5032843708536,
+  "tests": [
+    {
+      "label": "K1: r₃₁^Koide ≈ 3477.5 (błąd < 0.1% vs PDG)",
+      "status": "PASS",
+      "detail": "r₃₁^K = 3477.44,  r₃₁^PDG = 3477.48,  δ = 0.0012%"
+    },
+    {
+      "label": "K2: φ²-skalowanie r₃₁^φ² ≈ 3955 (błąd > 10% vs PDG)",
+      "status": "PASS",
+      "detail": "r₃₁^φ² = 3955.1,  δ = 13.7%"
+    },
+    {
+      "label": "K3: Q_K = 3/2 zweryfikowany dla (r₂₁, r₃₁^K)",
+      "status": "PASS",
+      "detail": "Q_K = 1.50000000  (oczekiwane: 1.5)"
+    },
+    {
+      "label": "K4: A_tail(g₀^e) > 0",
+      "status": "PASS",
+      "detail": "A_e = 0.29882"
+    },
+    {
+      "label": "K5: Bisekcja g₀^τ — zmiana znaku w (g₀^μ, 2·g₀^μ)",
+      "status": "PASS",
+      "detail": "f(g₀^μ) = -3270.7,  f(2·g₀^μ) = 7077.7"
+    },
+    {
+      "label": "K6: g₀^τ spełnia (A(g₀^τ)/A_e)^4 = r₃₁^K ± 0.5%",
+      "status": "PASS",
+      "detail": "g₀^τ = 3.1891,  A_τ = 2.29473,  r₃₁^verify = 3477.50,  δ = 0.002%"
+    },
+    {
+      "label": "K7: g₀^τ(Koide) ≠ φ²·g₀^e  (różnica > 1%)",
+      "status": "PASS",
+      "detail": "g₀^τ(Koide) = 3.1891,  φ²·g₀^e = 3.2703,  Δ = 2.48%"
+    },
+    {
+      "label": "K8: Tabela porównawcza wydrukowana",
+      "status": "PASS",
+      "detail": "Koide daje 0.0012% vs PDG, φ²-skalowanie 13.73%"
+    },
+    {
+      "label": "K9: Q_K ≈ 3/2 dla wyznaczonego g₀^τ",
+      "status": "PASS",
+      "detail": "Q_K = 1.499996  (oczekiwane ≈ 1.5)"
+    }
+  ],
+  "n_pass": 9,
+  "n_total": 9,
+  "session": "v42-2026-04-01"
+}

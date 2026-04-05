@@ -1,0 +1,240 @@
+\section{Physical interpretation: window bounds and classical/quantum non-overlap}
+\label{sec:physical_interpretation}
+
+\subsection{Why does the quantum Efimov window exist for
+  \texorpdfstring{$\lambda_{\rm sp}\in(5.1,\,13.2)\,l_{\rm Pl}$}{lambda in (5.1,13.2) l\_Pl}?}
+\label{sec:why_window}
+
+The quantum Efimov window $C_{\rm Pl}\in\bigl(C_Q^{(3B)},\,C_Q^{(2B)}\bigr)$
+exists for scalar range $\lambda_{\rm sp}\in(5.1,\,13.2)\,l_{\rm Pl}$.
+Each boundary has a clear physical origin.
+
+\paragraph{Upper boundary $\lambda_{\rm sp}^{\rm upper}=13.2\,l_{\rm Pl}$
+  ($m_{\rm sp}=0.076\,l_{\rm Pl}^{-1}$):}
+As the scalar range $\lambda_{\rm sp}$ increases, the Yukawa two-body
+potential becomes more long-range and the two-body quantum threshold
+$C_Q^{(2B)}(\lambda_{\rm sp})$ decreases.  At
+$\lambda_{\rm sp}=13.2\,l_{\rm Pl}$ the threshold reaches the Planck
+coupling:
+\begin{equation}
+  C_Q^{(2B)}(m_{\rm sp}=0.076) = C_{\rm Pl} = 0.282.
+\end{equation}
+For $\lambda_{\rm sp}>13.2\,l_{\rm Pl}$ (longer range), pairs
+quantum-mechanically bind at $C_{\rm Pl}$, so the three-body cluster
+is no longer a ``Efimov-type'' purely three-body state —
+pairs already bind by themselves.
+
+\textbf{Physical meaning:} $\lambda^{\rm upper}$ is the Yukawa range
+at which the Planck coupling first becomes strong enough to form
+quantum-mechanically bound \emph{pairs}.  Above this range, two-body
+physics dominates.
+
+\paragraph{Lower boundary $\lambda_{\rm sp}^{\rm lower}=5.1\,l_{\rm Pl}$
+  ($m_{\rm sp}=0.198\,l_{\rm Pl}^{-1}$):}
+As the scalar range decreases (heavier mediator), the three-body
+Feynman integral $I_Y(d,d,d;\,m_{\rm sp})$ becomes more rapidly
+screened for $d\gg\lambda_{\rm sp}$, reducing the range over which
+three-body attraction acts.  The three-body quantum threshold
+$C_Q^{(3B)}$ therefore increases.  At $\lambda_{\rm sp}=5.1\,l_{\rm Pl}$:
+\begin{equation}
+  C_Q^{(3B)}(m_{\rm sp}=0.198) = C_{\rm Pl} = 0.282.
+\end{equation}
+For $\lambda_{\rm sp}<5.1\,l_{\rm Pl}$ (shorter range), the Planck
+coupling is insufficient to bind a quantum three-body cluster —
+the zero-point kinetic energy $3/(8d^2)$ in the collective coordinate
+overcomes the screened attraction.
+
+\textbf{Physical meaning:} $\lambda^{\rm lower}$ is the Yukawa range at which
+the three-body TGP interaction becomes too short-ranged to support a
+quantum bound cluster at $C_{\rm Pl}$.  Below this range, zero-point
+pressure wins.
+
+\paragraph{Summary of window origin.}
+The window $\lambda_{\rm sp}\in(5.1,\,13.2)\,l_{\rm Pl}$ is the range
+in which:
+\begin{itemize}
+\item The scalar is \emph{long-range enough} that three-body attraction
+  overcomes zero-point pressure (requires $\lambda_{\rm sp}>5.1\,l_{\rm Pl}$).
+\item The scalar is \emph{short-range enough} that pairs remain
+  quantum-mechanically unbound at $C_{\rm Pl}$
+  (requires $\lambda_{\rm sp}<13.2\,l_{\rm Pl}$).
+\end{itemize}
+The window width $\Delta\lambda = 8.1\,l_{\rm Pl}$ (factor $\times2.6$ in
+$m_{\rm sp}$) is not fine-tuned.
+
+\paragraph{Connection to wavefunction (ex29).}
+The ground-state wavefunction at $C_{\rm Pl}$, $m_{\rm sp}=0.1$ peaks at
+$d_{\rm peak}=3.5\,l_{\rm Pl}$ with $\langle d\rangle=4.5\,l_{\rm Pl}$.
+This is well within the Yukawa range $\lambda=10\,l_{\rm Pl}$, explaining
+why the three-body force is effective: the cluster lives where
+$I_Y(d,d,d;\,m_{\rm sp})$ is large.  At the lower boundary
+($\lambda=5.1\,l_{\rm Pl}$, $m_{\rm sp}=0.198$), the wavefunction would need
+to sit at $d\lesssim\lambda=5.1\,l_{\rm Pl}$ to feel the three-body force,
+but zero-point energy pushes it outward — the potential well is too narrow
+to contain the state (from section~C of ex29: $\langle d\rangle$ grows
+from $4.2$ to $8.1\,l_{\rm Pl}$ as $m_{\rm sp}$ approaches $0.198$).
+
+\subsection{Why are the classical and quantum windows non-overlapping?}
+\label{sec:nonoverlap}
+
+The central result of Sec.~\ref{sec:quantum_window_msp} is that the
+classical Efimov window for $C_{\rm Pl}$ (at $m_{\rm sp}\in(0.235,\,0.38)$)
+and the quantum Efimov window (at $m_{\rm sp}\in(0.076,\,0.198)$) are
+\emph{mutually exclusive}.  We now explain why.
+
+\subsubsection{The role of zero-point energy}
+
+The classical and quantum treatments of the collective coordinate $d$ differ
+in how zero-point kinetic energy enters:
+
+\begin{itemize}
+\item \textbf{Classical:} The system minimises $E_{\rm eff}(d)=\frac{3}{8d^2}
+  +V_2+V_3$ over $d$.  The ZP term acts as a static repulsive ``pressure''
+  at small $d$.  Binding requires $\min_d E_{\rm eff}<0$.
+
+\item \textbf{Quantum:} The operator $\hat{T}=-\frac{1}{2\mu}\frac{d^2}{dd^2}$
+  contributes kinetic energy that depends on the wavefunction curvature.
+  The ground-state energy $E_0 = \langle\psi|\hat{H}|\psi\rangle$ includes
+  both potential \emph{and} kinetic contributions.  Since $\psi$ is spread
+  over $\sigma_d\sim 2\,l_{\rm Pl}$ (ex29), it samples a range of $V_{\rm eff}$
+  values around the minimum, raising the effective energy.
+\end{itemize}
+
+The net effect is that the quantum criterion for binding ($E_0<0$) requires
+a \emph{deeper and broader} potential well than the classical criterion
+($E_{\rm eff}^{\rm min}<0$).  This raises both thresholds:
+$C_Q^{(3B)}>C_{\rm cl}^{(3B)}$ and $C_Q^{(2B)}>C_{\rm cl}^{(2B)}$,
+and the quantum window is shifted upward in $C$ by $\approx0.063$ at
+$m_{\rm sp}=0.1$.
+
+\subsubsection{Why the shift causes non-overlap}
+
+At fixed $C=C_{\rm Pl}=0.282$:
+
+\begin{enumerate}
+\item \textbf{Classical window} ($m_{\rm sp}\in(0.235,\,0.38)$, short-range
+  Yukawa, $\lambda\in(2.6,\,4.3)\,l_{\rm Pl}$):
+  Here $C_{\rm cl}^{(3B)}<C_{\rm Pl}<C_{\rm cl}^{(2B)}$.
+  The classical equilibrium separation is $d_{\rm cl}\sim1.5$--$2\,l_{\rm Pl}$,
+  well within the Yukawa range $\lambda$.
+  However, at these short Yukawa ranges the potential well is very narrow
+  (width $\Delta d\sim2\,l_{\rm Pl}$) and shallow.
+  The quantum ground-state wavefunction in this shallow well has
+  $\sigma_d\sim\Delta d$, so kinetic energy is large and
+  $E_0 = E_{\rm eff}^{\rm min} + \langle\hat{T}\rangle \gg 0$ —
+  zero-point energy destroys the binding.
+  In ex29 at $m_{\rm sp}=0.18$ (close to the classical window):
+  $\langle d\rangle=8.1\,l_{\rm Pl}\gg\lambda=5.6\,l_{\rm Pl}$ and
+  the three-body force is effectively absent.
+
+\item \textbf{Quantum window} ($m_{\rm sp}\in(0.076,\,0.198)$, longer-range,
+  $\lambda\in(5.1,\,13.2)\,l_{\rm Pl}$):
+  Here $C_Q^{(3B)}<C_{\rm Pl}<C_Q^{(2B)}$.
+  The potential well is broader (extends over $d\sim1$--$6\,l_{\rm Pl}$
+  within the Yukawa range), so the wavefunction can be contained while
+  zero-point energy remains manageable.
+  The quantum bound state exists precisely because the broader range allows
+  $\langle d\rangle\sim4.5\,l_{\rm Pl}\lesssim\lambda=10\,l_{\rm Pl}$
+  (ex29, $m_{\rm sp}=0.1$).
+  However, classically the pair threshold $C_{\rm cl}^{(2B)}\sim0.18$
+  is already below $C_{\rm Pl}$, so pairs \emph{classically} bind —
+  the classical Efimov-type 3B-only window at $C_{\rm Pl}$ does not exist
+  in this range of $m_{\rm sp}$.
+\end{enumerate}
+
+\subsubsection{Schematic}
+
+\begin{table}[h]
+\centering
+\caption{Physical mechanism behind classical/quantum window separation.}
+\label{tab:nonoverlap_mechanism}
+\begin{tabular}{p{3cm}p{4cm}p{4.5cm}p{2.5cm}}
+\hline
+$m_{\rm sp}$ range & $\lambda_{\rm sp}$ & Classical binding & Quantum binding \\
+\hline
+$<0.076$ ($\lambda>13.2$) & Long-range & pairs + triples bind & pairs bind at $C_{\rm Pl}$ \\
+$0.076$--$0.198$ ($\lambda=5$--$13$) & Medium & pairs bind classically, no 3B-only window & 3B-only window: \textbf{quantum Efimov} \\
+$0.198$--$0.235$ ($\lambda=4.3$--$5.1$) & Medium-short & pairs bind classically & unbound \\
+$0.235$--$0.38$ ($\lambda=2.6$--$4.3$) & Short & 3B-only classical Efimov & unbound: ZP destroys it \\
+$>0.38$ ($\lambda<2.6$) & Very short & neither binds & neither \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Key insight: WKB invalidity as a diagnostic}
+
+A quantitative signature of the non-overlap is the WKB ratio
+$\lambda_{\rm dB}/L_{\rm well}$ at the quantum ground state (ex29):
+\begin{equation}
+  \frac{\lambda_{\rm dB}}{L_{\rm well}} = \frac{16.0}{5.3} \approx 3.0
+  \quad (m_{\rm sp}=0.1,\; C=C_{\rm Pl}),
+\end{equation}
+which is $\gg1$, confirming deep quantum mechanics.  In the classical Efimov
+regime (short-range Yukawa), the well would be narrow enough that the
+WKB ratio approaches unity — but the state is then pushed out by zero-point
+energy.  The two regimes are incompatible at $C_{\rm Pl}$.
+
+\subsection{Quantum state characterisation at
+  \texorpdfstring{$C=C_{\rm Pl}$}{C=C\_Pl}}
+\label{sec:wavefunction_summary}
+
+The ground state at $C_{\rm Pl}=0.282$, $m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$
+(ex29) has the following properties:
+
+\begin{table}[h]
+\centering
+\caption{Ground-state wavefunction properties at $C_{\rm Pl}$, $m_{\rm sp}=0.1$.}
+\label{tab:psi0_summary}
+\begin{tabular}{ll}
+\hline
+Quantity & Value \\
+\hline
+$E_0$ & $-0.0696\,E_{\rm Pl} = -1.36\times10^8\,\text{J}$ \\
+$d_{\rm peak}$ & $3.51\,l_{\rm Pl} = 5.45\times10^{-35}\,\text{m}$ \\
+$\langle d\rangle$ & $4.52\,l_{\rm Pl}$ \\
+$\sigma_d$ & $2.10\,l_{\rm Pl}$ \\
+$\sigma_d/\langle d\rangle$ & $0.46$ (broad, non-classical) \\
+$d_{\rm cl}$ (classical minimum) & $1.37\,l_{\rm Pl}$ \\
+$\langle d\rangle/d_{\rm cl}$ & $3.30$ (quantum delocalisation) \\
+$\lambda_{\rm dB}/L_{\rm well}$ & $3.03$ (WKB invalid) \\
+Tunnelling fraction & $20.8\%$ \\
+$V_3/V_2$ at $\langle d\rangle$ & $2.74$ (3-body dominant) \\
+Number of bound states & 2 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+The second bound state ($n=1$) has $E_1=-6.5\times10^{-4}\,E_{\rm Pl}$
+and peaks at $d_{\rm peak}^{(1)}=13.3\,l_{\rm Pl}$ — a very diffuse,
+weakly-bound excited state analogous to the first Efimov excited state
+in nuclear/atomic physics.  The ratio of spatial scales
+$d_{\rm peak}^{(1)}/d_{\rm peak}^{(0)}\approx3.8$ is much smaller than
+the classical Efimov ratio $e^{\pi/s_0}\approx22.7$, confirming that TGP
+does not produce an infinite geometric tower.  The Yukawa screening
+limits the well depth, allowing at most two bound levels at $C_{\rm Pl}$.
+
+As $m_{\rm sp}$ approaches the upper boundary $0.198\,l_{\rm Pl}^{-1}$,
+the bound state becomes increasingly diffuse
+($\langle d\rangle$ grows from $4.2$ to $8.1\,l_{\rm Pl}$,
+tunnelling from $20\%$ to $32\%$) — a classic signature of a
+state approaching the dissociation threshold.
+
+\subsection{Summary}
+
+\begin{enumerate}
+\item The quantum Efimov window bounds at $\lambda\approx5$ and
+  $13\,l_{\rm Pl}$ are set by the two-body and three-body quantum
+  thresholds coinciding with $C_{\rm Pl}$ — not by any fine-tuning.
+\item The classical and quantum windows are non-overlapping because the
+  zero-point energy operator raises both thresholds by $\approx0.063$ in $C$,
+  shifting the quantum window to longer Yukawa ranges where the potential
+  well is broad enough to contain the wavefunction.
+\item The quantum ground state at $C_{\rm Pl}$ is deeply non-classical:
+  $\langle d\rangle/d_{\rm cl}=3.3$, WKB ratio $=3.0$, tunnelling $=21\%$.
+  Classical methods give qualitatively wrong predictions for the existence
+  and location of bound states.
+\item A second bound state exists at $m_{\rm sp}=0.1$, $C=C_{\rm Pl}$,
+  at $d\sim13\,l_{\rm Pl}$.  This analogue of the first Efimov excitation
+  has no infinite tower — Yukawa screening limits the count to $\leq2$.
+\end{enumerate}

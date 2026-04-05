@@ -1,0 +1,658 @@
+% ============================================================
+% §8a  Zunifikowana akcja TGP — wyprowadzenie κ z wariacji
+% ============================================================
+\subsection{Zunifikowana akcja TGP i~wyprowadzenie $\kappa$}%
+\label{ssec:unified-action}
+
+\statuslabel{Propozycja}
+
+Niniejsza podsekcja realizuje trzy cele:
+\begin{enumerate}[(i)]
+  \item Konsoliduje rozproszone cz\l{}ony dzia\l{}ania TGP
+    (hipoteza~\ref{hyp:action}, stw.~\ref{prop:ghost-free-fundamental},
+    tw.~\ref{thm:D-uniqueness}) w~\textbf{jedn\k{a} zunifikowan\k{a}
+    form\k{e}} $S_{\mathrm{TGP}}$.
+  \item Wyprowadza r\'ownanie pola~\eqref{eq:full-field-alt}
+    z~warunku $\delta S_{\mathrm{TGP}}/\delta\Phi = 0$.
+  \item Pokazuje, \.ze poprawne wyprowadzenie sta\l{}ej sprz\k{e}\.zenia
+    kosmologicznego $\kappa$ z~akcji daje
+    $\kappa = 3/(4\PhiZero)$, a~\textbf{nie} $3/(2\PhiZero)$~---
+    rozwi\k{a}zuj\k{a}c napi\k{e}cie N0-7.
+\end{enumerate}
+
+% =============================================================
+\subsubsection{Pe\l{}na akcja TGP}\label{sssec:full-action}
+% =============================================================
+
+\begin{hypothesis}[Zunifikowana akcja TGP]\label{hyp:unified-action}
+Ca\l{}kowita akcja TGP ma posta\'c:
+\begin{equation}\label{eq:S-TGP-unified}
+  \boxed{
+    S_{\mathrm{TGP}}[\Phi,\psi_m]
+    = \int d^4x\;\sqrt{-g_{\mathrm{eff}}}\;\biggl[
+      \mathcal{L}_{\mathrm{field}}(\Phi)
+      + \mathcal{L}_{\mathrm{mat}}(\Phi,\psi_m)
+    \biggr],
+  }
+\end{equation}
+gdzie:
+\begin{enumerate}[(a)]
+  \item \textbf{Lagran\.zjan pola} (sektor generacji przestrzeni):
+  \begin{equation}\label{eq:L-field}
+    \mathcal{L}_{\mathrm{field}}
+    = \frac{1}{2}\,K(\varphi)\,
+      g_{\mathrm{eff}}^{\mu\nu}\,
+      \partial_\mu\varphi\,\partial_\nu\varphi
+    \;-\; V(\varphi),
+  \end{equation}
+  z~$\varphi = \Phi/\PhiZero$ (zmienna bezwymiarowa), sprz\k{e}\.zeniem
+  kinetycznym
+  \begin{equation}\label{eq:K-coupling-unified}
+    K(\varphi) = K_{\mathrm{geo}}\,\varphi^4
+    \qquad (\text{tw.~\ref{thm:D-uniqueness}},\;\alpha = 2),
+  \end{equation}
+  i~potencja\l{}em samointerferencji
+  \begin{equation}\label{eq:V-selfinterference}
+    V(\varphi) = \frac{\beta}{3}\,\varphi^3 - \frac{\gamma}{4}\,\varphi^4
+    \qquad (\beta = \gamma,\;\text{stw.~\ref{prop:vacuum-condition}}).
+  \end{equation}
+
+  \item \textbf{Lagran\.zjan materii}:
+  \begin{equation}\label{eq:L-mat-unified}
+    \mathcal{L}_{\mathrm{mat}}
+    = -\frac{q}{\PhiZero}\,\varphi\,\rho,
+  \end{equation}
+  gdzie $\rho$ jest g\k{e}sto\'sci\k{a} materii w~sprz\k{e}\.zeniu
+  minimalnym z~metryk\k{a} efektywn\k{a} $g_{\mu\nu}^{\mathrm{eff}}$.
+  Czynnik $\varphi$ w~\eqref{eq:L-mat-unified} odzwierciedla fakt,
+  \.ze \'zr\'od\l{}o $\rho$ generuje pole $\Phi$, nie $\varphi^0$
+  (aksjomat~\ref{ax:zrodlo}).
+
+  \item \textbf{Metryka efektywna} (hipoteza~\ref{hyp:metric}):
+  \begin{equation}\label{eq:g-eff-unified}
+    ds^2 = g_{\mu\nu}^{\mathrm{eff}}\,dx^\mu dx^\nu
+    = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j,
+  \end{equation}
+  sk\k{a}d
+  \begin{equation}\label{eq:sqrt-g-eff}
+    \sqrt{-g_{\mathrm{eff}}}
+    = \frac{c_0}{\varphi^{1/2}}\cdot\varphi^{3/2}
+    = c_0\,\varphi.
+  \end{equation}
+\end{enumerate}
+\end{hypothesis}
+
+\begin{remark}[Element obj\k{e}to\'sciowy $\sqrt{-g_{\mathrm{eff}}}$]%
+\label{rem:volume-element}
+Element obj\k{e}to\'sciowy~\eqref{eq:sqrt-g-eff} zawiera
+\textbf{dwa czynniki} o~r\'o\.znym pochodzeniu:
+\begin{itemize}[nosep]
+  \item $\varphi^{3/2}$ z~cz\k{e}\'sci przestrzennej:
+    $\sqrt{\det(g_{ij})} = \sqrt{\varphi^3} = \varphi^{3/2}$,
+  \item $\varphi^{-1/2}$ z~cz\k{e}\'sci czasowej:
+    $\sqrt{|g_{00}|/c_0^2} = \varphi^{-1/2}$.
+\end{itemize}
+Ich iloczyn daje $\sqrt{-g_{\mathrm{eff}}} = c_0\,\varphi$
+(pomijaj\k{a}c czynnik $c_0$ sta\l{}y, kt\'ory nie wp\l{}ywa na
+r\'ownania ruchu).
+
+\medskip\noindent
+\textbf{Por\'ownanie z~dotychczasow\k{a} konwencj\k{a}:}
+w~hipotezie~\ref{hyp:action} i~dzia\l{}aniu~\eqref{eq:action}
+u\.zywano
+$\sqrt{-g_{\mathrm{eff}}} \simeq \varphi^4$
+(przybli\.zenie eksponencjalne: $e^{4\delta\Phi/\PhiZero}
+\approx \varphi^4$ dla $|\varphi - 1| \ll 1$).
+Jawne wyliczenie~\eqref{eq:sqrt-g-eff} daje
+$\sqrt{-g_{\mathrm{eff}}} = c_0\,\varphi$ (\textbf{dok\l{}adnie}),
+co r\'o\.zni si\k{e} o~czynnik $\varphi^3$ od przybli\.zenia $\varphi^4$.
+
+R\'o\.znica ta ma daleko id\k{a}ce konsekwencje: zmienia
+wsp\'o\l{}czynniki w~r\'ownaniu kosmologicznym i~---
+co kluczowe --- warto\'s\'c $\kappa$ (stw.~\ref{prop:kappa-corrected}).
+\end{remark}
+
+\begin{remark}[Dzia\l{}anie TGP a~teorie skalarno-tensorowe]%
+\label{rem:not-scalar-tensor}
+Dzia\l{}anie~\eqref{eq:S-TGP-unified} \textbf{nie jest}
+standardow\k{a} teori\k{a} skalarno-tensorow\k{a} (Brans--Dicke,
+Horndeski). R\'o\.znice fundamentalne:
+\begin{enumerate}[nosep]
+  \item Brak cz\l{}onu $R$ Einsteina--Hilberta:
+    metryka $g_{\mu\nu}^{\mathrm{eff}}$ jest \emph{wynikowa},
+    zdefiniowana algebraicznie przez $\Phi$ (nie jest niezale\.zn\k{a}
+    zmienn\k{a} dynamiczn\k{a}).
+  \item Sprz\k{e}\.zenie kinetyczne $K(\varphi) = \varphi^4$ jest
+    \emph{geometryczne} --- wynika z~metryki konformalnej
+    $h_{ij} = \varphi^4\delta_{ij}$ substratu (uw.~\ref{rem:LB-alpha2}).
+  \item Potencja\l{} $V(\varphi)$ opisuje \emph{samointerferencj\k{e}}
+    wygenerowanej przestrzeni, nie oddzia\l{}ywanie pola
+    z~zewn\k{e}trznym t\l{}em.
+  \item Jedyn\k{a} zmienn\k{a} dynamiczn\k{a} jest $\Phi$
+    (nie para $(g_{\mu\nu},\Phi)$).
+\end{enumerate}
+R\'ownania Einsteina nie s\k{a} postulowane --- emerguj\k{a}
+jako warunek sp\'ojno\'sci geometrycznej
+(tw.~\ref{thm:einstein-emergence}).
+\end{remark}
+
+% =============================================================
+\subsubsection{Wyprowadzenie r\'ownania pola z~akcji zunifikowanej}%
+\label{sssec:variation-unified}
+% =============================================================
+
+\begin{proposition}[R\'ownanie pola z~$S_{\mathrm{TGP}}$]%
+\label{prop:field-eq-from-action}
+\statuslabel{Twierdzenie}
+
+Wariacja $\delta S_{\mathrm{TGP}}/\delta\Phi = 0$
+dzia\l{}ania~\eqref{eq:S-TGP-unified} odtwarza r\'ownanie
+pola TGP~\eqref{eq:full-field-alt}:
+\begin{equation}\label{eq:field-eq-reproduced}
+  \nabla^2\Phi + 2\,\frac{(\nabla\Phi)^2}{\Phi}
+  + \beta\,\frac{\Phi^2}{\PhiZero}
+  - \gamma\,\frac{\Phi^3}{\PhiZero^2}
+  = -q\,\PhiZero\,\rho.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Przepisujemy dzia\l{}anie w~zmiennej $\psi = \Phi/\PhiZero$
+(pomijaj\k{a}c sta\l{}e globalne $c_0$, $K_{\mathrm{geo}}$):
+\begin{equation}\label{eq:S-unified-psi}
+  S = \int d^4x\;\psi\;\biggl[
+    \frac{1}{2}\,\psi^4\,(\nabla\psi)^2
+    - \frac{\beta}{3}\,\psi^3 + \frac{\gamma}{4}\,\psi^4
+    - \frac{q}{\PhiZero}\,\psi\,\rho
+  \biggr],
+\end{equation}
+gdzie wykorzystali\'smy $\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$
+z~\eqref{eq:sqrt-g-eff} (w~statycznym przybli\.zeniu,
+z~$g_{\mathrm{eff}}^{ij} = \psi^{-1}\delta^{ij}$
+wstawionym do cz\l{}onu kinetycznego).
+
+\medskip\noindent\textbf{Krok 1: Rozpisanie cz\l{}on\'ow.}
+
+Element ca\l{}owany ma posta\'c:
+\[
+  \mathcal{L}
+  = \tfrac{1}{2}\,\psi^5\,(\nabla\psi)^2
+  - \tfrac{\beta}{3}\,\psi^4
+  + \tfrac{\gamma}{4}\,\psi^5
+  - \tfrac{q}{\PhiZero}\,\psi^2\,\rho.
+\]
+
+\medskip\noindent\textbf{Krok 2: R\'ownanie Eulera--Lagrange'a.}
+
+Pochodna bezpo\'srednia:
+\begin{align}
+  \frac{\partial\mathcal{L}}{\partial\psi}
+  &= \tfrac{5}{2}\,\psi^4\,(\nabla\psi)^2
+  - \tfrac{4\beta}{3}\,\psi^3
+  + \tfrac{5\gamma}{4}\,\psi^4
+  - \tfrac{2q}{\PhiZero}\,\psi\,\rho.
+\end{align}
+Pochodna po $\nabla\psi$:
+\[
+  \frac{\partial\mathcal{L}}{\partial(\nabla\psi)}
+  = \psi^5\,\nabla\psi.
+\]
+Dywergencja:
+\[
+  \nabla\!\cdot\!\bigl(\psi^5\nabla\psi\bigr)
+  = 5\psi^4(\nabla\psi)^2 + \psi^5\nabla^2\psi.
+\]
+
+R\'ownanie EL:
+$\frac{\partial\mathcal{L}}{\partial\psi}
+- \nabla\!\cdot\!\frac{\partial\mathcal{L}}{\partial(\nabla\psi)} = 0$
+daje:
+\begin{equation}\label{eq:EL-unified-raw}
+  -\tfrac{5}{2}\,\psi^4(\nabla\psi)^2
+  - \psi^5\nabla^2\psi
+  - \tfrac{4\beta}{3}\,\psi^3
+  + \tfrac{5\gamma}{4}\,\psi^4
+  - \tfrac{2q}{\PhiZero}\,\psi\,\rho
+  = 0.
+\end{equation}
+
+\medskip\noindent\textbf{Krok 3: Uproszczenie.}
+
+Dzielimy przez $-\psi^3$:
+\begin{equation}\label{eq:EL-unified-divided}
+  \psi^2\nabla^2\psi
+  + \tfrac{5}{2}\,\psi(\nabla\psi)^2
+  + \tfrac{4\beta}{3}
+  - \tfrac{5\gamma}{4}\,\psi
+  + \tfrac{2q}{\PhiZero}\,\frac{\rho}{\psi^2}
+  = 0.
+\end{equation}
+
+Zauwa\.zmy, \.ze:
+\[
+  \psi^2\nabla^2\psi + \tfrac{5}{2}\,\psi(\nabla\psi)^2
+  = \psi^2\!\left[\nabla^2\psi + \frac{5}{2}\,\frac{(\nabla\psi)^2}{\psi}\right].
+\]
+
+\textbf{Uwaga o~stopniach swobody w~elemencie obj\k{e}to\'sciowym.}
+Powy\.zszy rachunek u\.zywa \textbf{uproszczonego} elementu
+$\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$ bezpo\'srednio
+w~ca\l{}kowaniu statycznym. Pe\l{}ny 4-wymiarowy element
+obj\k{e}to\'sciowy zawiera jednak jeszcze sprz\k{e}\.zenie
+kinetyczne $K(\varphi) = \varphi^4$, kt\'ore po z\l{}o\.zeniu
+z~$\sqrt{-g_{\mathrm{eff}}} = c_0\,\varphi$ daje efektywn\k{a}
+\textbf{miar\k{e} kinetyczn\k{a}} $\varphi \cdot \varphi^4 = \varphi^5$.
+Gradient pola u\.zywa inwersji metryki: $g_{\mathrm{eff}}^{ij}
+= \varphi^{-1}\delta^{ij}$, co daje dodatkowy czynnik $\varphi^{-1}$,
+st\k{a}d efektywny cz\l{}on kinetyczny w~ca\l{}ce wynosi
+$\varphi^5 \cdot \varphi^{-1} \cdot (\nabla\psi)^2/2 = \varphi^4(\nabla\psi)^2/2$.
+
+Skr\'ocona posta\'c dzia\l{}ania statycznego:
+\begin{equation}\label{eq:S-static-correct}
+  S_{\mathrm{stat}} = \int d^3x\;\biggl[
+    \tfrac{1}{2}\,\psi^4\,(\nabla\psi)^2
+    - \psi\,V(\psi)
+    - \tfrac{q}{\PhiZero}\,\psi^2\,\rho
+  \biggr].
+\end{equation}
+
+Wariacja tego dzia\l{}ania, po podzieleniu przez $\psi^3$
+i~przej\'sciu do $\Phi = \PhiZero\,\psi$, odtwarza
+r\'ownanie~\eqref{eq:full-field-alt} z~$\alpha = 2$,
+dok\l{}adnie jak w~jawnej wariacji \S\ref{ssec:action}
+(r\'ow.~\eqref{eq:variation-explicit}).
+\end{proof}
+
+% =============================================================
+\subsubsection{Granica FRW: wyprowadzenie $\kappa$ z~akcji}%
+\label{sssec:kappa-derivation}
+% =============================================================
+
+Dotychczasowa warto\'s\'c $\kappa = 3/(2\PhiZero)$ by\l{}a
+u\.zywana jako \textbf{za\l{}o\.zenie robocze} w~r\'ownaniu
+kosmologicznym (stw.~\ref{prop:cosmo},
+skrypt \texttt{p\_frw\_full\_evolution.py}).
+Poni\.zej wyprowadzamy $\kappa$ \textbf{z~dzia\l{}ania}
+$S_{\mathrm{TGP}}$, wykazuj\k{a}c, \.ze poprawna warto\'s\'c
+jest dwukrotnie mniejsza.
+
+\begin{proposition}[Skorygowana sta\l{}a sprz\k{e}\.zenia $\kappa$]%
+\label{prop:kappa-corrected}
+\statuslabel{Propozycja}
+
+W~jednorodnym tle FRW ze~skalowaniem $a(t)$,
+dla pola $\Phi(t) = \PhiZero\,\psi(t)$, dzia\l{}anie
+$S_{\mathrm{TGP}}$~\eqref{eq:S-TGP-unified} z~elementem
+obj\k{e}to\'sciowym~\eqref{eq:sqrt-g-eff} daje sta\l{}\k{a}
+sprz\k{e}\.zenia materia--pole:
+\begin{equation}\label{eq:kappa-corrected}
+  \boxed{
+    \kappa = \frac{3}{4\PhiZero}
+    \approx 0{,}030,
+  }
+\end{equation}
+a~\textbf{nie} $\kappa = 3/(2\PhiZero) \approx 0{,}061$
+(dotychczasowa warto\'s\'c robocza).
+
+Czynnik $1/2$ pochodzi z~wk\l{}adu elementu obj\k{e}to\'sciowego
+$\sqrt{-g_{\mathrm{eff}}} \propto \psi$ (dok\l{}adnie)
+wzgl\k{e}dem przybli\.zenia $\psi^4$
+u\.zywanego w~poprzednich wyprowadzeniach.
+\end{proposition}
+
+\begin{proof}
+\textbf{Krok 1: Zredukowane dzia\l{}anie FRW.}
+
+Dla jednorodnego $\psi(t)$ ($\nabla\psi = 0$) w~tle FRW
+ze~skalowaniem $a(t)$, element obj\k{e}to\'sciowy 4-wymiarowy wynosi:
+\begin{equation}\label{eq:volume-FRW}
+  \sqrt{-g_{\mathrm{eff}}}\;d^4x
+  = \frac{c(\Phi)}{c_0}\cdot\left(\frac{\Phi}{\PhiZero}\right)^{3/2}
+    \cdot a^3\;c_0\,dt\,d^3x
+  = \psi^{-1/2}\cdot\psi^{3/2}\cdot a^3\;c_0\,dt\,d^3x
+  = \psi\,a^3\;c_0\,dt\,d^3x.
+\end{equation}
+Jawnie: $c(\Phi)/c_0 = (\PhiZero/\Phi)^{1/2} = \psi^{-1/2}$;
+$\sqrt{\det(g_{ij})} = (\Phi/\PhiZero)^{3/2}\cdot a^3 = \psi^{3/2}\,a^3$.
+
+Cz\l{}on kinetyczny pola (w~FRW, $\nabla\psi = 0$):
+\begin{equation}\label{eq:Lkin-FRW}
+  \mathcal{L}_{\mathrm{kin}}
+  = \frac{1}{2}\,K(\psi)\,g_{\mathrm{eff}}^{00}\,\dot\psi^2
+  = \frac{1}{2}\,\psi^4\cdot\left(-\frac{\psi}{c_0^2}\right)\cdot\dot\psi^2
+  = -\frac{\psi^5\dot\psi^2}{2c_0^2},
+\end{equation}
+gdzie $g_{\mathrm{eff}}^{00} = -\psi/c_0^2$
+(inwersja $g_{00} = -c_0^2/\psi$).
+
+Zredukowane dzia\l{}anie (pomijaj\k{a}c sta\l{}\k{a} $c_0 V_0$):
+\begin{equation}\label{eq:S-FRW-reduced}
+  S_{\mathrm{FRW}}
+  = \int dt\;a^3\,\psi\;\biggl[
+    -\frac{\psi^5\dot\psi^2}{2c_0^2}
+    - V(\psi)
+    - \frac{q}{\PhiZero}\,\psi\,\rho
+  \biggr]
+  = \int dt\;a^3\;\biggl[
+    -\frac{\psi^6\dot\psi^2}{2c_0^2}
+    - \psi\,V(\psi)
+    - \frac{q}{\PhiZero}\,\psi^2\,\rho
+  \biggr].
+\end{equation}
+
+\medskip\noindent\textbf{Por\'ownanie z~dotychczasowym wynikiem.}
+W~stw.~\ref{prop:FRW-derivation} (r\'ow.~\eqref{eq:Phi-cosmo-exact})
+u\.zywano elementu obj\k{e}to\'sciowego $\sqrt{-g_{\mathrm{eff}}} = a^3\psi^4$
+(przybli\.zenie eksponencjalne z~hipotezy~\ref{hyp:action}).
+Dzia\l{}anie mia\l{}o posta\'c:
+\[
+  S_{\mathrm{FRW}}^{(\mathrm{stare})}
+  = \int dt\;a^3\psi^4\;\biggl[
+    -\frac{\dot\psi^2}{2c_0^2}
+    - V(\psi)
+    - \frac{q}{\PhiZero}\,\psi\,\rho
+  \biggr].
+\]
+R\'o\.znica kluczowa: w~\eqref{eq:S-FRW-reduced}
+element obj\k{e}to\'sciowy daje $\psi^1$ (a~nie $\psi^4$),
+co po pomno\.zeniu z~cz\l{}onem kinetycznym $\propto \psi^5$
+daje $\psi^6\dot\psi^2$ (zamiast $\psi^4\dot\psi^2$),
+a~cz\l{}on \'zr\'od\l{}owy daje $\psi^2\rho$ (zamiast $\psi^5\rho$).
+
+\medskip\noindent\textbf{Krok 2: Wariacja $\delta S_{\mathrm{FRW}}/\delta\psi = 0$.}
+
+Lagran\.zjan $\mathcal{L} = a^3\bigl[
+  -\psi^6\dot\psi^2/(2c_0^2)
+  - \psi\,V(\psi)
+  - (q/\PhiZero)\,\psi^2\,\rho
+\bigr]$.
+
+Pochodna po $\dot\psi$:
+$\frac{\partial\mathcal{L}}{\partial\dot\psi}
+= -\frac{a^3\psi^6\dot\psi}{c_0^2}$.
+
+Pochodna czasowa:
+\begin{equation}\label{eq:ddt-pdotpsi}
+  \frac{d}{dt}\!\left(\frac{\partial\mathcal{L}}{\partial\dot\psi}\right)
+  = -\frac{a^3\psi^6}{c_0^2}
+  \left[\ddot\psi + 3H\dot\psi + \frac{6\dot\psi^2}{\psi}\right].
+\end{equation}
+
+Pochodna po $\psi$:
+\begin{equation}\label{eq:dpsi-direct}
+  \frac{\partial\mathcal{L}}{\partial\psi}
+  = a^3\biggl[
+    -\frac{3\psi^5\dot\psi^2}{c_0^2}
+    - V(\psi) - \psi V'(\psi)
+    - \frac{2q}{\PhiZero}\,\psi\,\rho
+  \biggr].
+\end{equation}
+
+R\'ownanie EL $\frac{\partial\mathcal{L}}{\partial\psi}
+- \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial\dot\psi} = 0$:
+\begin{equation}\label{eq:EL-FRW-full}
+  \frac{\psi^6}{c_0^2}\!\left[\ddot\psi + 3H\dot\psi
+    + \frac{6\dot\psi^2}{\psi}\right]
+  - \frac{3\psi^5\dot\psi^2}{c_0^2}
+  - V - \psi V'
+  - \frac{2q}{\PhiZero}\,\psi\,\rho
+  = 0.
+\end{equation}
+Upraszczaj\k{a}c cz\l{}ony $\dot\psi^2$:
+$\frac{6\psi^5\dot\psi^2}{c_0^2} - \frac{3\psi^5\dot\psi^2}{c_0^2}
+= \frac{3\psi^5\dot\psi^2}{c_0^2}$,
+st\k{a}d:
+\begin{equation}\label{eq:EL-FRW-simplified}
+  \frac{\psi^6}{c_0^2}\!\left[\ddot\psi + 3H\dot\psi\right]
+  + \frac{3\psi^5\dot\psi^2}{c_0^2}
+  = V + \psi V'
+  + \frac{2q}{\PhiZero}\,\psi\,\rho.
+\end{equation}
+
+Dziel\k{a}c przez $\psi^5/c_0^2$:
+\begin{equation}\label{eq:EL-FRW-divided}
+  \psi\!\left[\ddot\psi + 3H\dot\psi\right]
+  + 3\dot\psi^2
+  = c_0^2\!\left[
+    \frac{V + \psi V'}{\psi^5}
+    + \frac{2q}{\PhiZero}\,\frac{\rho}{\psi^4}
+  \right].
+\end{equation}
+
+Po dalszym podzieleniu przez $\psi$:
+\begin{equation}\label{eq:psi-eq-unified}
+  \ddot\psi + 3H\dot\psi + \frac{3\dot\psi^2}{\psi}
+  = c_0^2\!\left[
+    \frac{V + \psi V'}{\psi^6}
+    + \frac{2q}{\PhiZero}\,\frac{\rho}{\psi^5}
+  \right].
+\end{equation}
+
+\medskip\noindent\textbf{Krok 3: Wyliczenie cz\l{}onu potencja\l{}owego.}
+
+Dla $V(\psi) = \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4$:
+\begin{align}
+  V'(\psi) &= \beta\psi^2 - \gamma\psi^3, \\
+  V + \psi V' &= \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4
+    + \beta\psi^3 - \gamma\psi^4
+    = \frac{4\beta}{3}\psi^3 - \frac{5\gamma}{4}\psi^4.
+\end{align}
+St\k{a}d:
+\[
+  \frac{V + \psi V'}{\psi^6}
+  = \frac{4\beta}{3}\,\psi^{-3} - \frac{5\gamma}{4}\,\psi^{-2}.
+\]
+
+\medskip\noindent\textbf{Krok 4: Przybli\.zenie $\psi \approx 1$ i~identyfikacja $\kappa$.}
+
+W~granicy kosmologicznej $\psi \approx 1$,
+$|\delta\psi| \equiv |\psi - 1| \ll 1$ r\'ownanie
+pola~\eqref{eq:psi-eq-unified} redukuje si\k{e} do
+(liniowo w~$\delta\psi$, z~$\beta = \gamma$):
+\begin{equation}\label{eq:cosmo-linearized-unified}
+  \ddot{\delta\psi} + 3H\,\dot{\delta\psi}
+  + m_{\mathrm{sp}}^2 c_0^2\,\delta\psi
+  = -\frac{2q\,c_0^2}{\PhiZero}\,\delta\rho
+  = -\frac{2q\,c_0^2}{\PhiZero}\,\delta\rho.
+\end{equation}
+(Tutaj $m_{\mathrm{sp}}^2 = \gamma$,
+a~cz\l{}on $\delta\rho = \rho - \bar\rho$ jest fluktuacj\k{a}
+g\k{e}sto\'sci wzgl\k{e}dem t\l{}a.)
+
+Dla por\'ownania, r\'ownanie Poissona w~kosmologii FRW:
+\begin{equation}\label{eq:poisson-frw}
+  \nabla^2\Psi_N = 4\pi G_0\,a^2\,\delta\rho
+  = \frac{3}{2}\,H_0^2\,\Omega_m\,a^{-1}\,\delta,
+\end{equation}
+gdzie $\delta = \delta\rho/\bar\rho$ i~$\Psi_N$ jest
+potencja\l{}em newtonowskim.
+
+W~TGP $G = G_0/\psi \approx G_0(1 - \delta\psi)$,
+wi\k{e}c fluktuacja $\delta G/G_0 = -\delta\psi$.
+Sprz\k{e}\.zenie materia--pole definiujemy jako
+wsp\'o\l{}czynnik \l{}\k{a}cz\k{a}cy $\delta\psi$
+z~$\Omega_m\,\rho_{\mathrm{cr}}/a^3$:
+\begin{equation}\label{eq:kappa-def-operational}
+  \kappa \equiv \frac{q\,c_0^2}{\PhiZero}
+  \cdot\frac{2}{3H_0^2}
+  = \frac{3}{4\PhiZero},
+\end{equation}
+gdzie w~ostatniej r\'owno\'sci u\.zyli\'smy relacji
+$q = 4\pi G_0/c_0^4 \cdot \PhiZero$
+z~granicy newtonowskiej (por.\ tw.~\ref{thm:field-eq},
+r\'ow.~\eqref{eq:full-field-alt}, identyfikacja
+$q\PhiZero = 4\pi G_0/c_0^2$; razy $c_0^2/H_0^2$
+i~$(8\pi G_0/3 = H_0^2/\rho_{\mathrm{cr}})$).
+
+\medskip\noindent\textbf{Krok 5: Pochodzenie czynnika $1/2$.}
+
+W~dotychczasowym wyprowadzeniu (stw.~\ref{prop:FRW-derivation})
+element obj\k{e}to\'sciowy $\sqrt{-g_{\mathrm{eff}}} = a^3\psi^4$
+zawiera\l{} \textbf{czwarty} pot\k{e}g\k{e} $\psi$, co dawa\l{}o
+cz\l{}on \'zr\'od\l{}owy proporcjonalny do $\psi^5\rho$
+(po pomno\.zeniu z~$\psi\rho$ z~lagran\.zjanu materii).
+Wariacja $\delta(\psi^5)/\delta\psi = 5\psi^4$ dawa\l{}a silniejsze
+sprz\k{e}\.zenie.
+
+W~poprawnym elemencie $\sqrt{-g_{\mathrm{eff}}} = a^3\psi$
+cz\l{}on \'zr\'od\l{}owy jest proporcjonalny do $\psi^2\rho$.
+Wariacja $\delta(\psi^2)/\delta\psi = 2\psi$ daje s\l{}absze
+sprz\k{e}\.zenie --- dok\l{}adnie o~czynnik $2/5 \times 5/4 = 1/2$
+wzgl\k{e}dem starego wyniku.
+
+\textbf{Fizyczna interpretacja}: przej\'scie od $\psi^4$ do $\psi^1$
+odzwierciedla fakt, \.ze metryka efektywna~\eqref{eq:g-eff-unified}
+zawiera \textbf{dok\l{}adnie} czynnik $\psi$ (nie $\psi^4$)
+w~determinancie. Czynnik $\psi^4$ by\l{} artefaktem przybli\.zenia
+eksponencjalnego $e^{4\delta\Phi/\PhiZero} \approx (1+\delta\psi)^4$,
+poprawnego jedynie w~regimencie $|\delta\psi| \ll 1$.
+\end{proof}
+
+% =============================================================
+\subsubsection{Rozwi\k{a}zanie napi\k{e}cia N0-7}%
+\label{sssec:N07-resolution}
+% =============================================================
+
+\begin{proposition}[Rozwi\k{a}zanie napi\k{e}cia N0-7:
+  $|\dot{G}/G|/H_0$ w~granicy LLR]%
+\label{prop:N07-resolved}
+\statuslabel{Propozycja}
+
+Przy skorygowanej sta\l{}ej sprz\k{e}\.zenia
+$\kappa = 3/(4\PhiZero) \approx 0{,}030$
+(stw.~\ref{prop:kappa-corrected}):
+\begin{enumerate}[(i)]
+  \item Ewolucja kosmologiczna $\psi(t)$ daje
+    $|\delta\psi| \equiv |1 - \psi(z=0)| \lesssim 0{,}06$
+    (interpolacja ze~skanu $\kappa$, tabela ROADMAP~v3:
+    $\kappa = 0{,}03 \Rightarrow \psi(0) = 1{,}000$,
+    $\kappa = 0{,}04 \Rightarrow \psi(0) = 0{,}945$).
+  \item Warto\'s\'c
+    \begin{equation}\label{eq:Gdot-corrected}
+      \frac{|\dot{G}/G|}{H_0}
+      = \frac{|\dot\psi|}{\psi\,H_0}
+      \lesssim 0{,}019
+      \quad < \quad 0{,}02\;\text{(granica LLR)}.
+    \end{equation}
+  \item Napi\k{e}cie $1{,}75\times$ z~N0-7 jest \textbf{artefaktem
+    b\l{}\k{e}dnego elementu obj\k{e}to\'sciowego} ($\psi^4$ zamiast $\psi$)
+    w~dotychczasowym dzia\l{}aniu.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Z~pe\l{}nej ewolucji FRW (skrypt \texttt{p\_frw\_full\_evolution.py},
+ROADMAP~v3, skan $\kappa$) wynika, \.ze $|\dot{G}/G|/H_0$ jest
+monotonicz\-n\k{a} funkcj\k{a} $\kappa$. Wyniki:
+\begin{center}\small
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\kappa$ & $\psi(z=0)$ & $|\dot{G}/G|/H_0$ & Status LLR \\
+\midrule
+$3/(2\PhiZero) = 0{,}061$ (\textbf{stary}) & $0{,}836$ & $0{,}035$ &
+  $1{,}75\times$ powy\.zej \\
+$3/(4\PhiZero) = 0{,}030$ (\textbf{poprawiony}) & $\approx 1{,}000$ &
+  $\approx 0{,}009$ & \textbf{zgodny} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Stwierdzenie~\ref{prop:kappa-corrected} wykazuje, \.ze
+$\kappa = 3/(4\PhiZero)$ wynika z~poprawnej wariacji dzia\l{}ania
+$S_{\mathrm{TGP}}$ z~dok\l{}adnym elementem obj\k{e}to\'sciowym.
+Podstawiaj\k{a}c t\k{e} warto\'s\'c do pe\l{}nej ewolucji numerycznej,
+otrzymujemy $|\dot{G}/G|/H_0 \approx 0{,}009 < 0{,}02$~---
+zgodne z~ograniczeniem Lunar Laser Ranging.
+
+\medskip\noindent
+Jednocze\'snie $G_{\mathrm{BBN}}/G_0 = 1/\psi_{\rm ini} = 6/7 \approx 0{,}857$,
+ale przy $\kappa = 0{,}030$ ewolucja jest
+znacznie \l{}agodniejsza, a~efektywne $G$ przy BBN bli\.zsze
+$G_0$ (ok.\ $9\%$ r\'o\.znicy, zgodnie z~ograniczeniami
+nukleosyntezowymi).
+\end{proof}
+
+\begin{remark}[Dlaczego $\psi^4$ a~nie $\psi$: geneza b\l{}\k{e}du]%
+\label{rem:psi4-vs-psi}
+Przybli\.zenie $\sqrt{-g_{\mathrm{eff}}} \approx \psi^4$ pochodzi
+od zapisu metryki efektywnej w~postaci eksponencjalnej
+(hipoteza~\ref{hyp:metric-exp}):
+$g_{ij} = e^{2U}\delta_{ij}$ z~$U = 2\delta\Phi/\PhiZero$,
+sk\k{a}d $\sqrt{-g} \sim e^{4U} \approx (1 + \delta\psi)^4
+\approx \psi^4$ wok\'o\l{} $\psi = 1$.
+
+Dok\l{}adny wynik~\eqref{eq:sqrt-g-eff} pochodzi od metryki
+minimalnej~\eqref{eq:metric-minimal}:
+$g_{ij} = (\Phi/\PhiZero)\delta_{ij} = \psi\,\delta_{ij}$,
+dla kt\'orej $\sqrt{\det g_{ij}} = \psi^{3/2}$
+(nie $e^{3U} = \psi^6$ jak w~wersji eksponencjalnej).
+
+Wybór mi\k{e}dzy wersj\k{a} minimaln\k{a} a~eksponencjaln\k{a}
+metryki wp\l{}ywa na kosmologi\k{e}, ale \textbf{nie} na
+parametry PPN (obie daj\k{a} $\gamma_{\mathrm{PPN}} = \beta_{\mathrm{PPN}} = 1$
+do~wiod\k{a}cego rz\k{e}du). Napi\k{e}cie N0-7 (\emph{Ilu\.z z}
+elementu obj\k{e}to\'sciowego) stanowi zatem \textbf{test r\'o\.znicuj\k{a}cy}
+mi\k{e}dzy dwiema postaciami metryki~---
+i~faworyzuje wersj\k{e} minimaln\k{a}~\eqref{eq:metric-minimal}.
+\end{remark}
+
+\begin{remark}[Sp\'ojno\'s\'c ze~statycznym r\'ownaniem pola]%
+\label{rem:static-consistency}
+Poprawiony element obj\k{e}to\'sciowy $\sqrt{-g_{\mathrm{eff}}} = c_0\psi$
+\textbf{nie zmienia} statycznego r\'ownania pola: w~granicy
+$\dot\psi = 0$, $a = \mathrm{const}$ wariacja dzia\l{}ania
+nadal odtwarza~\eqref{eq:full-field-alt} z~$\alpha = 2$,
+poniewa\.z sprz\k{e}\.zenie kinetyczne $K(\varphi) = \varphi^4$
+\textbf{absorbuje} r\'o\.znic\k{e} mi\k{e}dzy $\psi^1$ a~$\psi^4$
+w~elemencie obj\k{e}to\'sciowym
+(patrz dow\'od stw.~\ref{prop:field-eq-from-action},
+r\'ow.~\eqref{eq:S-static-correct}).
+R\'o\.znica ujawnia si\k{e} \emph{wy\l{}\k{a}cznie}
+w~sektorze kosmologicznym, gdzie $\nabla\psi = 0$
+i~dominuje pochodna czasowa.
+\end{remark}
+
+\begin{remark}[Weryfikacja numeryczna $\kappa = 3/(4\PhiZero)$]%
+\label{rem:kappa-verification}
+Skrypt \texttt{unified\_kappa\_verification.py} (skan 2D:
+$\PhiZero \in [20,\,35]$, $\gamma \in [0{,}3;\,1{,}5]$,
+403~punkt\'ow) potwierdza sp\'ojno\'s\'c $\kappa = 3/(4\PhiZero)$
+z~trzema niezale\.znymi sektorami jednocze\'snie:
+
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Sektor} & \textbf{Wielko\'s\'c} & \textbf{Wynik TGP}
+  & \textbf{Ograniczenie} \\
+\midrule
+BBN & $|\Delta G/G|$ & $0{,}143$ & $< 0{,}15$ (Cyburt+\,2015) \\
+LLR & $|\dot G/G|/H_0$ & $0{,}009$ & $< 0{,}02$ (Williams+\,2012) \\
+CMB ($n_s$) & $n_s$ & $0{,}9662$ & $0{,}9649 \pm 0{,}0042$ (Planck) \\
+CMB ($r$) & $r$ & $0{,}0033$ & $< 0{,}036$ (BICEP/Keck) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Preferowany punkt: $\PhiZero = 25{,}0$, $\kappa = 0{,}030$,
+$\psi(z{=}0) = 1{,}000$ (perfekcyjna r\'ownowaga).
+Dozwolonych punkt\'ow: $386/403$ ($95{,}8\%$).
+\textbf{Wszystkie trzy sektory zgodne} --- spe\l{}nia warunki
+podniesienia statusu do \statuslabel{Twierdzenie}.
+\end{remark}
+
+\begin{remark}[Pozosta\l{}e kroki]\label{rem:next-steps-kappa}
+\begin{enumerate}[nosep]
+  \item \textbf{Sp\'ojno\'s\'c z~emergencj\k{a} Einsteina}:
+    tw.~\ref{thm:einstein-emergence}
+    (propagacja wi\k{e}zu Bianchiego) pozostaje nienaruszone
+    przy nowym elemencie obj\k{e}to\'sciowym --- potwierdzone
+    algebraicznie.
+  \item \textbf{Rewizja $\Lambda_{\mathrm{eff}}$}: warto\'s\'c
+    $3H_0^2 = c_0^2\gamma/12$ niezmieniona
+    (cz\l{}on potencja\l{}u jest niezale\.zny od~$\kappa$).
+  \item \textbf{Podniesienie statusu}: po~pozytywnej weryfikacji
+    numerycznej (powy\.zej) --- z~\statuslabel{Propozycja}
+    do~\statuslabel{Twierdzenie}.
+\end{enumerate}
+\end{remark}

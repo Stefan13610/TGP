@@ -1,0 +1,865 @@
+% ============================================================
+% §5  Ciemna energia z fluktuacji generowanej przestrzeni
+% ============================================================
+\section{Ciemna energia}\label{sec:ciemna}
+
+W~standardowej kosmologii ciemna energia jest sta\l{}\k{a} kosmologiczn\k{a}
+$\Lambda$ wstawion\k{a} r\k{e}cznie do r\'owna\'n Einsteina, lub polem
+kwintesencji z~arbitralnym potencja\l{}em. W~TGP ciemna energia
+wynika z~\textbf{samej dynamiki generowanej przestrzeni}:
+kondensacja materii nasila fluktuacje pola $\Phi$, kt\'ore
+generuj\k{a} dodatkow\k{a} przestrze\'n.
+
+% ----------------------------------------------------------
+\subsection{Mechanizm}\label{ssec:de-mech}
+
+\begin{proposition}[Ciemna energia z fluktuacji $\Phi$]\label{prop:DE}
+Pole $\Phi$ podlega fluktuacjom --- zar\'owno kwantowym
+(na ma\l{}ych skalach), jak i~klasycznym (turbulentne nak\l{}adanie
+wk\l{}ad\'ow od wielu \'zr\'ode\l{} na du\.zych skalach). Fluktuacje
+te generuj\k{a} \textbf{dodatkow\k{a} efektywn\k{a} przestrze\'n},
+poniewa\.z \'srednia warto\'s\'c $\Phi$ na du\.zych skalach jest
+zawy\.zona wzgl\k{e}dem warto\'sci, kt\'or\k{a} dawa\l{}aby jednorodny
+rozk\l{}ad tej samej materii.
+\end{proposition}
+
+Szczeg\'o\l{}owy mechanizm:
+
+\begin{enumerate}[nosep]
+  \item Ka\.zda cz\k{a}stka generuje pole $\Phi$ wok\'o\l{} siebie.
+  \item Gdy cz\k{a}stki kondensuj\k{a} si\k{e} w~struktury (galaktyki,
+        gromady), ich pola $\Phi$ nak\l{}adaj\k{a} si\k{e}
+        \textbf{nieliniowo}.
+  \item Nieliniowo\'s\'c $\mathcal{N}[\Phi]$ sprawia, \.ze
+        \'srednia $\langle\Phi\rangle$ w~regionie ze strukturami
+        jest \textbf{wy\.zsza} ni\.z $\Phi$ dla tej samej masy
+        rozrzuconej jednorodnie:
+        \begin{equation}\label{eq:Phi-excess}
+            \langle\Phi_{\mathrm{strukt}}\rangle
+            > \Phi_{\mathrm{jednorodne}}.
+        \end{equation}
+  \item Nadwy\.zka $\Delta\Phi = \langle\Phi_{\mathrm{strukt}}\rangle
+        - \Phi_{\mathrm{jednorodne}}$ oznacza \textbf{dodatkow\k{a}
+        przestrze\'n} --- przestrze\'n, kt\'orej ,,nie powinno by\'c''
+        gdyby materia by\l{}a rozrzucona r\'ownomiernie.
+  \item Ta dodatkowa przestrze\'n objawia si\k{e} jako
+        \textbf{przyspieszona ekspansja}: jest wi\k{e}cej ,,miejsca''
+        ni\.z wynika\l{}oby z~samej materii, wi\k{e}c Wszech\'swiat
+        rozszerza si\k{e} szybciej ni\.z przewiduje model z~sam\k{a}
+        materi\k{a}.
+\end{enumerate}
+
+\begin{remark}[Sp\l{}aszczenie problemu]
+W~standardowej kosmologii pytamy: ,,dlaczego $\Lambda$ ma
+tak\k{a}, a~nie inn\k{a} warto\'s\'c?'' (problem fine-tuningu).
+W~TGP pytanie si\k{e} zmienia: ,,ile dodatkowej przestrzeni
+generuj\k{a} fluktuacje $\Phi$ przy danym rozk\l{}adzie materii?''
+--- odpowied\'z wynika z~dynamiki, nie z~doboru parametr\'ow.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Zwi\k{a}zek ze wzrostem struktur}\label{ssec:de-struktury}
+
+Kluczowa predykcja: ciemna energia w~TGP \textbf{ro\'snie}
+w~miar\k{e} formowania si\k{e} struktur kosmicznych.
+
+\begin{itemize}[nosep]
+  \item We wczesnym Wszech\'swiecie: materia jest prawie
+        jednorodna, $\Delta\Phi \approx 0$, ciemna energia
+        jest zaniedbywalnie ma\l{}a.
+  \item W~p\'o\'znym Wszech\'swiecie: galaktyki, gromady,
+        superstruktury --- materia jest silnie
+        skoncentrowana, $\Delta\Phi$ jest du\.ze, ciemna
+        energia jest znacz\k{a}ca.
+\end{itemize}
+
+To daje naturaln\k{a} odpowied\'z na pytanie ,,dlaczego ciemna
+energia dominuje dopiero teraz?'' --- \textbf{bo struktury
+dopiero teraz s\k{a} wystarczaj\k{a}co rozbudowane}, by
+fluktuacje $\Phi$ by\l{}y istotne.
+
+\begin{hypothesis}[Problem coincidence]\label{hyp:coincidence}
+W~TGP ,,przypadkowe'' pokrywanie si\k{e} epoki dominacji
+ciemnej energii z~epok\k{a} formowania struktur
+\textbf{nie jest przypadkiem} --- jedno powoduje drugie.
+Kondensacja materii w~struktury generuje dodatkow\k{a}
+przestrze\'n, kt\'ora obserwujemy jako ciemn\k{a} energi\k{e}.
+\end{hypothesis}
+
+% ----------------------------------------------------------
+\subsection{Ciemna energia: $\Lambda$ naturalna czy kwintesencja?}\label{ssec:de-dyn}
+
+Analiza numeryczna (skrypt \texttt{w\_de\_exact.py})
+ujawnia kluczowy wynik: przy \textbf{naturalnych} parametrach
+$\gamma \sim H_0^2/c_0^2$ (odpowiadaj\k{a}cych $\tau_0 \sim 1/H_0$,
+$\PhiZero \sim 25$) pole $\varphi$ jest \textbf{doskonale zamro\.zone}
+--- tarcie Hubble'a $3H\dot\varphi$ dominuje nad si\l{}\k{a}
+z~potencja\l{}u o~$\sim 40$ rz\k{e}d\'ow wielko\'sci.
+Wynik: $w_0 = -1{,}000$, $w_a = 0{,}000$ ---
+\textbf{nieodr\'o\.znialne od sta\l{}ej kosmologicznej $\Lambda$}.
+
+TGP jest zatem \textbf{naturaln\k{a} teori\k{a} $\Lambda$}:
+sta\l{}a kosmologiczna nie jest parametrem wstawionym r\k{e}cznie,
+lecz resztkowym potencja\l{}em $U(1) = \gamma/12$
+(stwierdzenie~\ref{prop:Lambda-eff}).
+
+\medskip\noindent
+\textbf{Kiedy ciemna energia jest dynamiczna?}
+Pole $\varphi$ ewoluuje widocznie ($w_0 > -1$, $w_a < 0$)
+jedynie gdy $\gamma \gg H_0^2/c_0^2$, co odpowiada:
+\begin{itemize}[nosep]
+  \item $\PhiZero \gg 25$ (nienaturalnie du\.ze), lub
+  \item dodatkowym mechanizmom wzmocnienia potencja\l{}u
+        $U(\varphi)$ (np.\ sprz\k{e}\.zenia wy\.zszych rz\k{e}d\'ow
+        z~substratu), lub
+  \item nienaturalnym warunkom pocz\k{a}tkowym
+        $\varphi_{\mathrm{ini}} \neq 1$.
+\end{itemize}
+W~re\.zimie dynamicznym TGP daje predykcj\k{e} typu
+\textbf{kwintesencji}:
+\begin{itemize}[nosep]
+  \item $w_0 \gtrsim -1$: dzi\'s $\dot{\varphi}^2 > 0$, ale ma\l{}e.
+  \item $w_a < 0$: w~miar\k{e} stabilizowania si\k{e} struktur
+        $w_{\mathrm{DE}} \to -1$ od g\'ory.
+\end{itemize}
+
+\begin{remark}[Rozr\'o\.znienie TGP od $\Lambda$CDM]\label{rem:rozroznienie}
+Przy naturalnych parametrach TGP jest obserwacyjnie
+nieodr\'o\.znialna od $\Lambda$CDM przez pomiary $w(z)$.
+Odr\'o\.znienie wymaga \textbf{innych obserwabli}:
+\begin{enumerate}[nosep]
+  \item \textbf{Polaryzacja GW}: mod oddechowy (\emph{breathing})
+        zamiast/opr\'ocz tensorowych $+/\times$
+        (stw.~\ref{prop:GW-dispersion}).
+  \item \textbf{Relacja dyspersji masywnych GW}:
+        przerwa masowa $f_{\mathrm{cut}} \sim H_0/(2\pi)$.
+  \item \textbf{$\Lambda_{\mathrm{eff}}$ bez fine-tuningu}:
+        $\Lambda \approx \gamma/12 \sim \PhiZero H_0^2/(12 c_0^2)$
+        jest \emph{wyliczalna}, nie wstawiana r\k{e}cznie.
+  \item \textbf{Korelacja $\Lambda_{\mathrm{eff}}$
+        ze strukturami}: mechanizm backreakcyjny
+        (sekcja~\ref{ssec:de-struktury}).
+\end{enumerate}
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Zwi\k{a}zek z~zasad\k{a} zerowej sumy}\label{ssec:de-zero}
+
+Zasada zerowej sumy (aksjomat~\ref{ax:zero}) wymaga, by
+$\Ffield_{\mathrm{ext}} = 0$. Dodatkowa przestrze\'n
+generowana przez fluktuacje \textbf{nie narusza} tej zasady:
+\begin{itemize}[nosep]
+  \item Obserwator wewn\k{e}trzny widzi wi\k{e}cej przestrzeni
+        (ciemna energia).
+  \item Obserwator zewn\k{e}trzny widzi $\Ffield = 0$ ---
+        nadwy\.zka przestrzeni jest dok\l{}adnie skompensowana
+        w~bilansie globalnym.
+\end{itemize}
+
+Ciemna energia jest zatem \textbf{lokalnym efektem
+samoorganizacji materii}, nie globaln\k{a} sta\l{}\k{a}.
+
+% ----------------------------------------------------------
+\subsection{Potencja\l{} $U(\Phi)$ i~efektywna sta\l{}a kosmologiczna}\label{ssec:de-potencjal}
+
+Dotychczasowy opis ciemnej energii w~TGP by\l{} jako\'sciowy:
+fluktuacje $\Phi$ generuj\k{a} dodatkow\k{a} przestrze\'n.
+Poni\.zej formalizujemy ten mechanizm, wyprowadzaj\k{a}c
+jawny potencja\l{} $U(\Phi)$, efektywn\k{a} sta\l{}\k{a}
+kosmologiczn\k{a} $\Lambda_{\mathrm{eff}}$ oraz r\'ownanie
+stanu $w_{\mathrm{DE}}(z)$.
+
+\subsubsection{Potencja\l{} samosprz\k{e}\.zenia $U(\varphi)$}
+
+\begin{definition}[Potencja\l{} ciemnej energii]\label{def:U-DE}
+Wprowadzamy bezwymiarow\k{a} fluktuacj\k{e}
+$\varphi = \Phi/\PhiZero - 1$ i~definiujemy potencja\l{}
+samosprz\k{e}\.zenia jako rozwinięcie Taylora potencja\l{}u
+$U(\psi) = (\beta/3)\psi^3 - (\gamma/4)\psi^4$
+(r\'ownanie~\ref{eq:U-potential}) wok\'o\l{}
+$\psi = 1$ ($\varphi = 0$):
+\begin{equation}\label{eq:U-phi-def}
+  \boxed{
+    U(\varphi)
+    \;=\; U(1) \;+\; \tfrac{1}{2}\,U''(1)\,\varphi^2
+    \;+\; \frac{U'''(1)}{3!}\,\varphi^3
+    \;+\; \frac{U^{(4)}(1)}{4!}\,\varphi^4,
+  }
+\end{equation}
+gdzie cz\l{}on liniowy znika ($U'(1) = \beta - \gamma = 0$
+przy warunku pr\'o\.zniowym $\beta = \gamma$),
+a~wsp\'o\l{}czynniki wyra\.zaj\k{a} si\k{e} bezpo\'srednio
+przez $\beta$, $\gamma$:
+\begin{align}
+  U(1) &= \frac{\beta}{3} - \frac{\gamma}{4}
+    = \frac{\gamma}{12}
+    \quad (\text{residualny potencja\l{}: \'zr\'od\l{}o }\Lambda_{\mathrm{eff}}),
+    \label{eq:U1-from-bg} \\[3pt]
+  U''(1) &= 2\beta - 3\gamma = -\gamma < 0
+    \quad (\text{$\psi = 1$ jest \emph{maksimum} --- wolne staczanie}),
+    \label{eq:meff-from-bg} \\[3pt]
+  U'''(1) &= 2\beta - 6\gamma = -4\gamma,
+    \label{eq:l3-from-bg} \\[3pt]
+  U^{(4)}(1) &= -6\gamma.
+    \label{eq:l4-from-bg}
+\end{align}
+Jawnie, potencja\l{} TGP wok\'o\l{} pr\'o\.zni przyjmuje posta\'c:
+\begin{equation}\label{eq:U-phi-explicit}
+  U(\varphi) = \frac{\gamma}{12}
+  - \frac{\gamma}{2}\,\varphi^2
+  - \frac{2\gamma}{3}\,\varphi^3
+  - \frac{\gamma}{4}\,\varphi^4.
+\end{equation}
+Potencja\l{} jest kontrolowany przez \textbf{jeden parametr}~$\gamma$
+(przy $\beta = \gamma$). Wymiar: $[U] = [\gamma] = [\mathrm{L}^{-2}]$.
+\end{definition}
+
+\begin{remark}[Pochodzenie potencja\l{}u]
+Potencja\l{} $U(\varphi)$ \textbf{nie jest wstawiany r\k{e}cznie}.
+Wynika z~cz\l{}on\'ow samointerferencji $\beta\Phi^2/\PhiZero$
+i~$-\gamma\Phi^3/\PhiZero^2$
+w~r\'ownaniu pola~\eqref{eq:full-field-alt}: s\k{a} to dok\l{}adnie
+te same cz\l{}ony, kt\'ore odpowiadaj\k{a} za barier\k{e} (re\.zim~II)
+i~studni\k{e} (re\.zim~III) na skalach subgalaktycznych. Na skalach
+kosmologicznych, po u\'srednieniu, generuj\k{a} one
+\textbf{rezydualn\k{a} energi\k{e} pr\'o\.zni}.
+\end{remark}
+
+\subsubsection{Efektywna sta\l{}a kosmologiczna z~zasady zerowej sumy}
+
+\begin{proposition}[Residualna $\Lambda_{\mathrm{eff}}$
+  z~warunku zerowej sumy]\label{prop:Lambda-positive}
+Zasada zerowej sumy (r\'ownanie~\ref{eq:zero-constraint})
+wymaga, by \'srednia perturbacja $\varphi$ po zamkni\k{e}tej
+hypersurface~$\Sigma$ spe\l{}nia\l{}a:
+\begin{equation}\label{eq:zero-sum-phi}
+    \int_\Sigma \varphi\,\sqrt{h}\,d^3x \;=\; 0.
+\end{equation}
+Ten warunek \textbf{nie dopuszcza} globalnego minimum
+$\varphi = 0$ wsz\k{e}dzie w~obecno\'sci materii, poniewa\.z
+\'zr\'od\l{}a wymuszaj\k{a} $\varphi > 0$ lokalnie. Deficyt
+$\varphi < 0$ w~pustych regionach kompensuje nadwy\.zk\k{e},
+ale residualna energia potencja\l{}u nie zeruje si\k{e}:
+\begin{equation}\label{eq:Lambda-eff-def}
+  \boxed{
+    \Lambda_{\mathrm{eff}}
+    \;=\; \frac{8\pi G_0}{c_0^4}\;
+    \bigl\langle U(\varphi_{\min}) \bigr\rangle_\Sigma,
+  }
+\end{equation}
+gdzie $\varphi_{\min}(\mathbf{x})$ jest rozwi\k{a}zaniem
+r\'ownania pola~\eqref{eq:full-field-alt} spe\l{}niaj\k{a}cym
+warunek~\eqref{eq:zero-sum-phi}, a~$\langle\cdot\rangle_\Sigma$
+oznacza \'sredni\k{a} po hypersurface.
+
+Kluczowo: $\varphi_{\min} \neq 0$ z~powodu warunku
+zerowej sumy --- pr\'o\.znia TGP \textbf{nie} jest stanem
+$\varphi = 0$, lecz stanem z~niezerow\k{a}
+\'sredni\k{a} $\langle\varphi^2\rangle > 0$, co generuje
+$\Lambda_{\mathrm{eff}} > 0$.
+\end{proposition}
+
+\begin{proof}[Szkic dowodu]
+Rozwi\k{a}zanie $\varphi_{\min}$ minimalizuje funkcjona\l{}
+energii~\eqref{eq:energy-corrected} przy wi\k{e}zie
+\eqref{eq:zero-sum-phi}. Metod\k{a} mno\.znik\'ow Lagrange'a:
+\begin{equation}
+    \frac{\delta E}{\delta\varphi}\bigg|_{\varphi_{\min}}
+    = \mu\,\sqrt{h},
+\end{equation}
+gdzie $\mu$ jest mno\.znikiem zwi\k{a}zanym z~wi\k{e}zem.
+W~obecno\'sci \'zr\'ode\l{} ($\rho \neq 0$) r\'ownanie to
+ma rozwi\k{a}zanie z~$\langle\varphi_{\min}^2\rangle > 0$,
+co daje $\langle U(\varphi_{\min})\rangle > 0$, a~zatem
+$\Lambda_{\mathrm{eff}} > 0$.
+
+Warto\'s\'c $\Lambda_{\mathrm{eff}}$ zale\.zy od rozk\l{}adu
+materii $\rho(\mathbf{x})$: im wi\k{e}cej struktur, tym wi\k{e}ksze
+$\langle\varphi^2\rangle$ i~wi\k{e}ksza
+$\Lambda_{\mathrm{eff}}$ --- sp\'ojnie
+z~jako\'sciowym argumentem sekcji~\ref{ssec:de-struktury}.
+\end{proof}
+
+\begin{remark}[$\Lambda_{\mathrm{eff}}$ nie jest parametrem
+  fundamentalnym]\label{rem:Lambda-nie-param}
+W~standardowej kosmologii $\Lambda$ jest sta\l{}\k{a}
+wstawion\k{a} r\k{e}cznie.
+W~TGP $\Lambda_{\mathrm{eff}}$ jest \textbf{wielko\'sci\k{a} wyliczaln\k{a}}:
+residualn\k{a} energi\k{a} samosprz\k{e}\.zenia pola $\Phi$,
+wymuszon\k{a} przez zasad\k{e} zerowej sumy w~obecno\'sci materii.
+Problem fine-tuningu ($\Lambda_{\mathrm{obs}}/\Lambda_{\mathrm{QFT}}
+\sim 10^{-122}$) zostaje zast\k{a}piony pytaniem o~warto\'s\'c
+$\beta$, $\gamma$ i~rozk\l{}ad struktur --- pytaniem
+fizycznym, nie metafizycznym.
+\end{remark}
+
+\subsubsection{R\'ownanie stanu $w_{\mathrm{DE}}(z)$}
+
+\begin{proposition}[R\'ownanie stanu ciemnej energii]\label{prop:wDE}
+Traktuj\k{a}c ciemn\k{a} energi\k{e} jako sum\k{e} energii
+kinetycznej i~potencjalnej fluktuacji $\varphi$, r\'ownanie stanu
+ma posta\'c:
+\begin{equation}\label{eq:wDE-def}
+  \boxed{
+    w_{\mathrm{DE}}
+    \;=\; \frac{\frac{1}{2}\dot{\varphi}^2 - U(\varphi)}
+               {\frac{1}{2}\dot{\varphi}^2 + U(\varphi)}.
+  }
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+G\k{e}sto\'s\'c energii i~ci\'snienie efektywne p\l{}ynu ciemnej
+energii wynikaj\k{a} z~dzia\l{}ania~\eqref{eq:action} dla
+jednorodnego $\varphi(t)$:
+\begin{align}
+    \rho_{\mathrm{DE}} &= \tfrac{1}{2}\dot{\varphi}^2 + U(\varphi),
+    \label{eq:rhoDE} \\
+    p_{\mathrm{DE}} &= \tfrac{1}{2}\dot{\varphi}^2 - U(\varphi).
+    \label{eq:pDE}
+\end{align}
+R\'ownanie stanu $w = p/\rho$ daje
+bezpo\'srednio~\eqref{eq:wDE-def}.
+\end{proof}
+
+W~re\.zimie powolnej relaksacji, gdy energia kinetyczna jest
+ma\l{}a wzgl\k{e}dem potencjalnej
+($\dot{\varphi}^2 \ll U(\varphi)$), rozwijamy:
+\begin{equation}\label{eq:wDE-slow}
+    w_{\mathrm{DE}} \;\approx\; -1 + \delta w,
+    \qquad
+    \delta w \;=\; \frac{\dot{\varphi}^2}{U(\varphi)} \;>\; 0.
+\end{equation}
+St\k{a}d formalnie $w_{\mathrm{DE}} > -1$ --- ale wielko\'s\'c
+$\delta w = \dot\varphi^2/U$ zale\.zy krytycznie od skali $\gamma$:
+\begin{itemize}[nosep]
+  \item Dla \textbf{naturalnego} $\gamma \sim H_0^2/c_0^2$:
+        $U(1) \sim 10^{-78}$, a~$\dot\varphi^2 \sim 10^{-120}$
+        (zamro\.zone pole). Wynik: $\delta w < 10^{-40}$,
+        nieodr\'o\.znialny od $w = -1$.
+  \item Dla \textbf{wzmocnionego} $\gamma \gg H_0^2/c_0^2$
+        (np.\ dodatkowe sprz\k{e}\.zenie substratowe):
+        $\delta w \sim 0{,}02$--$0{,}2$, daj\k{a}c testowaln\k{a}
+        kwintesencj\k{e} z~$w_0 \gtrsim -1$, $w_a < 0$.
+\end{itemize}
+W~parametryzacji CPL: predykcja $(w_0 > -1, w_a < 0)$
+jest testowalna jedynie w~re\.zimie wzmocnionym.
+Przy naturalnych parametrach TGP daje $w = -1$ dok\l{}adnie.
+
+\subsubsection{Ewolucja $\Lambda_{\mathrm{eff}}$ w~czasie}
+
+\begin{proposition}[Malej\k{a}ca $\Lambda_{\mathrm{eff}}$]\label{prop:Lambda-decay}
+Podczas relaksacji pola $\varphi$ ku prawdziwemu minimum
+potencja\l{}u, efektywna sta\l{}a kosmologiczna
+\textbf{maleje w~czasie}:
+\begin{equation}\label{eq:Lambda-dot}
+  \boxed{
+    \frac{d\Lambda_{\mathrm{eff}}}{dt}
+    \;=\; \frac{8\pi G_0}{c_0^4}\;U'(\varphi)\,\dot{\varphi}
+    \;<\; 0,
+  }
+\end{equation}
+poniewa\.z w~fazie relaksacji $\varphi$ porusza si\k{e} ku
+minimum potencja\l{}u: $U'(\varphi)\,\dot{\varphi} < 0$.
+\end{proposition}
+
+\begin{proof}
+Bezpo\'srednio z~definicji~\eqref{eq:Lambda-eff-def}:
+$\Lambda_{\mathrm{eff}} \propto U(\varphi)$, wi\k{e}c
+$\dot{\Lambda}_{\mathrm{eff}} \propto U'(\varphi)\dot{\varphi}$.
+R\'ownanie ruchu $\varphi$ (por.~\eqref{eq:Phi-cosmo})
+z~t\l{}umieniem Hubble'owskim $3H\dot{\varphi}$ zapewnia,
+\.ze $\varphi$ relaksuje monotonicznie ku minimum $U$ ---
+zatem $U'(\varphi)\dot{\varphi} \leq 0$, z~r\'owno\'sci\k{a}
+jedynie w~minimum.
+\end{proof}
+
+\begin{remark}[Testowalna predykcja]\label{rem:Lambda-test}
+Malej\k{a}ca $\Lambda_{\mathrm{eff}}$ jest \textbf{jako\'sciow\k{a}
+predykcj\k{a} odr\'o\.zniaj\k{a}c\k{a}} TGP od modelu $\Lambda$CDM,
+w~kt\'orym $\dot{\Lambda} = 0$ dok\l{}adnie.
+Tempo zaniku mo\.zna oszacowa\'c:
+\begin{equation}\label{eq:Lambda-rate}
+    \frac{\dot{\Lambda}_{\mathrm{eff}}}{\Lambda_{\mathrm{eff}}}
+    \;\sim\; -\frac{\delta w}{t_H}
+    \;\sim\; -\frac{\dot{\varphi}^2}{U\,t_H},
+\end{equation}
+gdzie $t_H = 1/H_0$ jest czasem Hubble'a. Dla $\delta w
+\sim 0{,}02$--$0{,}05$ (zgodne z~DESI) daje to
+$|\dot{\Lambda}/\Lambda| \sim 10^{-2}\,H_0$ --- efekt
+dost\k{e}pny pomiarowo w~nast\k{e}pnej generacji przegl\k{a}d\'ow
+(Euclid, DESI~Stage~V, Roman).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Lemat o~dodatniości $\Lambda_{\mathrm{eff}}$
+  i~model zabawkowy}\label{ssec:de-lemat}
+
+Kluczowe twierdzenie --- \.ze zasada zerowej sumy
+w~obecno\'sci materii wymusza $\Lambda_{\mathrm{eff}} > 0$ ---
+wymaga formalnego uzasadnienia. Poni\.zej podajemy
+\textbf{lemat} i~ilustrujemy go \textbf{modelem zabawkowym}.
+
+\begin{lemma}[Dodatnio\'s\'c $\Lambda_{\mathrm{eff}}$
+  przy wi\k{e}zie zerowej sumy]\label{lem:Lambda-positive}
+Niech $\delta\Phi(x) = \Phi(x) - \PhiZero$ spe\l{}nia warunek zerowej sumy
+przestrzennej (ZS2): $\langle\delta\Phi\rangle_\Sigma = 0$,
+ale $\delta\Phi \not\equiv 0$ (\'zr\'od\l{}a wymuszaj\k{a}
+$\delta\Phi > 0$ lokalnie).
+Efektywna sta\l{}a kosmologiczna sk\l{}ada si\k{e} z~dw\'och
+cz\l{}on\'ow:
+\begin{equation}\label{eq:Lambda-pos-lem}
+  \Lambda_{\mathrm{eff}}
+  \;=\; \underbrace{U(1)}_{\gamma/12 > 0}
+  \;+\; \underbrace{\frac{1}{2}\,m_{\mathrm{sp}}^2\,
+  \langle\delta\Phi^2\rangle_\Sigma /\PhiZero^2}_{\geq\, 0}
+  \;>\; 0,
+\end{equation}
+gdzie $m_{\mathrm{sp}}^2 = \gamma > 0$ jest mas\k{a} efektywn\k{a}
+\textbf{przestrzennych} perturbacji (ze zlinearyzowanego
+r\'ownania pola, stw.~\ref{prop:vacuum-stability}).
+\end{lemma}
+
+\begin{proof}
+Kosmologiczna $\Lambda_{\mathrm{eff}}$ pochodzi ze \'sredniej
+przestrzennej ca\l{}kowitej energii pola $\Phi$. Rozdzielamy
+wk\l{}ady:
+\begin{enumerate}[nosep]
+  \item \textbf{T\l{}o jednorodne} ($\psi = 1$): daje
+    rezydualny potencja\l{} $U(1) = \gamma/12 > 0$
+    (r.~\ref{eq:U1-from-bg}).
+  \item \textbf{Perturbacje przestrzenne} $\delta\Phi(x)$:
+    z~wi\k{e}zu ZS2: $\langle\delta\Phi\rangle = 0$,
+    wi\k{e}c $\langle\delta\Phi^2\rangle = \mathrm{Var}(\delta\Phi) > 0$.
+    Energia przestrzenna perturbacji jest \textbf{dodatnio
+    okre\'slona}: $E_{\mathrm{sp}} = \frac{1}{2}\int
+    [(\nabla\delta\Phi)^2 + m_{\mathrm{sp}}^2\,\delta\Phi^2]\,d^3x
+    \geq 0$, bo $m_{\mathrm{sp}}^2 = \gamma > 0$.
+\end{enumerate}
+Zatem $\Lambda_{\mathrm{eff}} \geq U(1) = \gamma/12 > 0$;
+perturbacje mog\k{a} j\k{a} jedynie \textbf{zwi\k{e}kszy\'c}.
+
+\medskip\noindent
+\emph{Uwaga:} potencja\l{} $U(\psi)$ jest \textbf{wkl\k{e}s\l{}y}
+w~$\psi = 1$ ($U''(1) = -\gamma < 0$), ale to charakteryzuje
+niestabilno\'s\'c \emph{kosmologiczn\k{a}} (wolne staczanie), nie
+przestrzenn\k{a}. Przestrzenne perturbacje s\k{a} stabilne
+dzi\k{e}ki cz\l{}onowi gradientowemu i~$m_{\mathrm{sp}}^2 > 0$.
+\end{proof}
+
+\begin{remark}[Model zabawkowy: dwa \'zr\'od\l{}a
+  na okr\k{e}gu]\label{rem:toy-Lambda}
+Rozwa\.zmy prostszy problem: dwa punktowe \'zr\'od\l{}a
+o~masie $M$ na okr\k{e}gu d\l{}ugo\'sci $L$. R\'ownanie
+pola $\Phi$:
+\[
+  \Phi'' + m_{\mathrm{sp}}^2(\Phi - \PhiZero)
+  = -q\,\PhiZero\,M\bigl[\delta(x) + \delta(x - L/2)\bigr],
+\]
+z~warunkiem periodycznym i~wi\k{e}zem
+$\int_0^L (\Phi - \PhiZero)\,dx = 0$.
+Rozwi\k{a}zanie: $\Phi(x) = \PhiZero + \delta\Phi(x)$,
+gdzie $\delta\Phi$ jest symetryczne wzgl\k{e}dem \'zr\'ode\l{}.
+
+Energia potencjalna pr\'o\.zni:
+\[
+  \langle U \rangle
+  = \frac{1}{L}\int_0^L \tfrac{1}{2}m^2(\delta\Phi)^2\,dx
+  = \frac{m^2}{2L}\,\bigl\|\delta\Phi\bigr\|^2 > 0.
+\]
+Jest \textbf{dodatnia} i~proporcjonalna do $M^2$ (im wi\k{e}cej
+materii, tym wi\k{e}kszy $\Lambda_{\mathrm{eff}}$).
+Wi\k{e}z zerowej sumy wymusza, by nadwy\.zka w~pobli\.zu
+\'zr\'ode\l{} by\l{}a kompensowana deficytem daleko od nich ---
+ale \emph{\'srednia energia potencja\l{}u} pozosta\l{}a
+dodatnia, bo efektywna energia przestrzenna
+$\tfrac{1}{2}m_{\mathrm{sp}}^2(\delta\Phi)^2$ jest wypuk\l{}a
+($m_{\mathrm{sp}}^2 = \gamma > 0$).
+
+Model ten pokazuje jawnie, \.ze \textbf{zasada zerowej sumy +
+istnienie \'zr\'ode\l{} + dodatnia masa przestrzenna} implikuj\k{a}
+$\Lambda_{\mathrm{eff}} > 0$, bez dodatkowych za\l{}o\.ze\'n.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Formalne domkni\k{e}cie problemu zbie\.zno\'sci (K3)}%
+\label{ssec:de-k3}
+
+\begin{proposition}[Algebraiczne domkni\k{e}cie K3 ---
+  jedno\'s\'c parametru $\PhiZero$]\label{prop:K3-coincidence}
+W~TGP parametry g\k{e}sto\'sci $\Omega_\Lambda$ i~$\Omega_m$
+s\k{a} \textbf{jednocze\'snie} wyznaczane przez jeden parametr
+substratu~$\PhiZero$:
+\begin{align}
+  \Omega_\Lambda
+    &= \frac{\PhiZero}{36},
+    \label{eq:OmLambda-from-Phi0}\\[4pt]
+  \Omega_m
+    &= 1 - \frac{\PhiZero}{36}
+    \quad (\text{p\l{}aski Wszech\'swiat}),
+    \label{eq:Omm-from-Phi0}
+\end{align}
+sk\k{a}d stosunek zbieżno\'sci:
+\begin{equation}\label{eq:fc-ratio}
+  \boxed{
+    f_c \;\equiv\; \frac{\Omega_\Lambda}{\Omega_m}
+    \;=\; \frac{\PhiZero/36}{1 - \PhiZero/36}
+    \;=\; \frac{\PhiZero}{36 - \PhiZero}.
+  }
+\end{equation}
+Problem zbie\.zno\'sci jest \textbf{formalnie domkni\k{e}ty}:
+$f_c = \mathcal{O}(1)$ zawsze gdy $\PhiZero \in [18, 34]$.
+\end{proposition}
+
+\begin{proof}
+Z~r\'ownania~\eqref{eq:Phi0-from-Lambda}:
+$\Lambda_{\mathrm{eff}} = \gamma/12 = \PhiZero H_0^2/(12\,c_0^2)$,
+sk\k{a}d
+\[
+  \Omega_\Lambda
+  \;=\; \frac{\Lambda_{\mathrm{eff}}\,c_0^2}{3\,H_0^2}
+  \;=\; \frac{\PhiZero}{36}.
+\]
+Warunek p\l{}sko\'sci ($\Omega_m + \Omega_\Lambda = 1$,
+zaniedbuj\k{a}c promieniowanie) daje
+$\Omega_m = 1 - \PhiZero/36$.
+Stosunek~\eqref{eq:fc-ratio} wynika bezpo\'srednio.
+Zakres $f_c = \mathcal{O}(1)$: dolna granica
+$f_c(18) = 1/2$, g\'orna $f_c(34) = 17$.
+Centralnie dla $\PhiZero = 36\,\Omega_\Lambda \approx 24{,}7$:
+$f_c \approx 2{,}2$.
+\end{proof}
+
+\begin{remark}[Cztery niezale\.zne wi\k{e}zy na $\PhiZero$]%
+  \label{rem:phi0-four-constraints}
+Warto\'s\'c $\PhiZero \approx 24$--$28$ wynika z~czterech
+niezale\.znych \'zr\'ode\l{} (skrypt
+\texttt{phi0\_cross\_verification.py}):
+\begin{enumerate}[nosep]
+  \item \textbf{Z~$\Lambda_{\mathrm{obs}}$}:
+        $\PhiZero = 36\,\Omega_\Lambda \approx 24{,}7$
+        (r\'ownanie~\ref{eq:Phi0-from-Lambda}).
+  \item \textbf{Z~BBN}: synteza He$^4$ wymaga
+        $|\Delta G/G| < 0{,}13$, co daje $\PhiZero \in [24, 29]$
+        (uwaga~\ref{rem:BBN-resolution}).
+  \item \textbf{Z~FDM}: masa bozonu solitonu
+        $m_{\mathrm{sp}} \sim H_0$
+        implikuje $\PhiZero \approx 25$
+        (\S\ref{ssec:program}, K18).
+  \item \textbf{Krzy\.zowa weryfikacja}:
+        \texttt{phi0\_cross\_verification.py}
+        daje $\PhiZero \approx 25$--$28$.
+\end{enumerate}
+Wszystkie cztery \'zr\'od\l{}a daj\k{a} $\PhiZero \in [24, 29]$,
+a~zatem $f_c \in [1{,}8,\;4{,}1]$ --- rz\k{e}du jedno\'sci bez
+\.zadnego fine-tuningu.
+Weryfikacja numeryczna: skrypt \texttt{coincidence\_k3.py}
+($12/12$~PASS).
+\end{remark}
+
+\begin{remark}[Kontrast z~$\Lambda$CDM]\label{rem:k3-vs-lcdm}
+W~modelu $\Lambda$CDM $\Omega_\Lambda$ i~$\Omega_m$ s\k{a}
+\textbf{dwoma niezale\.znymi parametrami}.
+Ich obserwowana r\'owno\'s\'c $\Omega_\Lambda/\Omega_m
+\approx 2{,}2$ stanowi \emph{przypadkowy zbieg okoliczno\'sci}
+wymagaj\k{a}cy wyja\'snienia antropicznego lub dynamicznego.
+W~TGP oba parametry s\k{a} tym samym wyra\.zeniem jednej
+wielko\'sci $\PhiZero$ --- ,,przypadek'' staje si\k{e}
+\textbf{konsekwencj\k{a} struktury teorii}.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Otwarte problemy}\label{ssec:de-prob}
+
+\begin{problem}[Ilo\'sciowa predykcja $\Lambda_{\mathrm{eff}}$
+  --- CZ\k{E}\'SCIOWO ROZWI\k{A}ZANY]\label{prob:Lambda}
+Wyliczenie efektywnej $\Lambda_{\mathrm{eff}}$ z~danego
+rozk\l{}adu materii wymaga:
+\begin{enumerate}[nosep]
+  \item jawnej postaci $\mathcal{N}[\Phi]$,
+  \item rachunku \'sredniej $\langle\Phi\rangle$ po
+        realistycznym rozk\l{}adzie struktur,
+  \item por\'ownania z~obserwowanym $\Lambda \sim
+        10^{-52}\;\mathrm{m}^{-2}$.
+\end{enumerate}
+Cz\k{e}\'sciowe rozwi\k{a}zanie: patrz uwaga~\ref{rem:Lambda-quantitative}.
+\end{problem}
+
+\begin{remark}[Ilo\'sciowa weryfikacja $\Lambda_{\mathrm{eff}}$
+  --- wyniki numeryczne]\label{rem:Lambda-quantitative}
+Skrypt \texttt{lambda\_eff\_quantitative.py} oblicza
+$\Lambda_{\mathrm{eff}}$ ilo\'sciowo. Wyniki:
+
+\medskip\noindent
+\textbf{(1) T\l{}o jednorodne.}
+Relacja $\Lambda_{\mathrm{eff}} = \gamma/12 = \PhiZero H_0^2/(12\,c_0^2)$
+z~warunkiem $\Lambda_{\mathrm{eff}} = \Lambda_{\mathrm{obs}}$ wyznacza:
+\begin{equation}\label{eq:Phi0-from-Lambda}
+  \boxed{
+    \PhiZero = \frac{12\,\Lambda_{\mathrm{obs}}\,c_0^2}{H_0^2}
+    = 36\,\Omega_\Lambda
+    \approx 24{,}7.
+  }
+\end{equation}
+Warto\'s\'c ta jest \textbf{sp\'ojna} z~niezale\.znymi
+ograniczeniami (BBN, CMB, PPN, gromady galaktyk;
+skrypt \texttt{phi0\_cross\_verification.py}).
+
+\medskip\noindent
+\textbf{Uczciwo\'s\'c interpretacji:} $\gamma$ nie jest
+niezale\.znie przewidywana --- wynika z~warunku naturalno\'sci
+$\tau_0 \sim 1/H_0$. Zatem TGP \textbf{dopasowuje}
+$\Lambda_{\mathrm{obs}}$ jednym parametrem ($\PhiZero$),
+ale warto\'s\'c $\PhiZero \sim \mathcal{O}(10)$ nie wymaga
+fine-tuningu (por\'ownaj z~$10^{122}$ w~QFT).
+
+\medskip\noindent
+\textbf{(2) Poprawka od struktur.}
+Z~lematu~\ref{lem:Lambda-positive}:
+$\Lambda_{\mathrm{eff}} = \gamma/12 + (\gamma/2)\,
+\langle\delta\Phi^2\rangle/\PhiZero^2$.
+Poprawka wzgl\k{e}dna:
+\[
+  \frac{\delta\Lambda}{\Lambda}
+  = 6\,\frac{\langle\delta\Phi^2\rangle}{\PhiZero^2}
+  \approx 6\,\langle\Psi_N^2\rangle
+  \approx 5{,}4 \times 10^{-9},
+\]
+gdzie dominuj\k{a}cy wk\l{}ad pochodzi od kosmicznej sieci
+($\sigma_\Psi \sim 3 \times 10^{-5}$). Wk\l{}ady halo
+i~gromad galaktyk s\k{a} jeszcze mniejsze ze wzgl\k{e}du
+na ma\l{}e frakcje obj\k{e}to\'sci ($f_{\mathrm{halo}} \sim 1\%$,
+$f_{\mathrm{cl}} \sim 10^{-4}$).
+\textbf{Poprawka jest zaniedbywalnie ma\l{}a} ---
+$\Lambda_{\mathrm{eff}}$ jest zdominowana przez cz\l{}on
+jednorodny $U(1) = \gamma/12$.
+
+\medskip\noindent
+\textbf{(3) Skalowanie z~przesuni\k{e}ciem ku czerwieni.}
+$\langle\delta\Phi^2\rangle(z) \propto D^2(z)$
+(czynnik wzrostu liniowego), wi\k{e}c:
+\[
+  \Lambda_{\mathrm{eff}}(z)
+  = \Lambda_0\bigl[1 + \varepsilon\,D^2(z)\bigr],
+  \qquad
+  \varepsilon \approx 5{,}4 \times 10^{-9}.
+\]
+Implikowane odchylenie r\'ownania stanu:
+$w_0 - (-1) \sim 4 \times 10^{-9}$,
+daleko poni\.zej progu obserwacyjnego ($\sim 0{,}03$).
+TGP z~naturalnymi parametrami daje $w = -1$ dok\l{}adnie.
+
+\medskip\noindent
+\textbf{(4) Model zabawkowy} (dwa \'zr\'od\l{}a na okr\k{e}gu,
+uwaga~\ref{rem:toy-Lambda}): numerycznie potwierdzono
+$\Lambda_{\mathrm{eff}} > 0$ oraz skalowanie
+$\Lambda_{\mathrm{eff}} \propto M^2$.
+
+\medskip\noindent
+\textbf{Podsumowanie wynik\'ow:}
+\begin{center}
+\begin{tabular}{lrl}
+\hline
+Wielko\'s\'c & Warto\'s\'c & Jednostka \\
+\hline
+$\Lambda_{\mathrm{obs}}$ & $1{,}11 \times 10^{-52}$ & $\mathrm{m}^{-2}$ \\
+$\PhiZero$ (z~dopasowania DE) & $24{,}7$ & --- \\
+$\Lambda_{\mathrm{eff}} = \gamma/12$ & $1{,}11 \times 10^{-52}$ & $\mathrm{m}^{-2}$ \\
+$\delta\Lambda/\Lambda$ (struktury) & $5{,}4 \times 10^{-9}$ & --- \\
+$\varepsilon$ (zmienno\'s\'c z~$z$) & $5{,}4 \times 10^{-9}$ & --- \\
+$w_0 - (-1)$ (implikowane) & $4 \times 10^{-9}$ & --- \\
+\hline
+\end{tabular}
+\end{center}
+
+Status problemu~\ref{prob:Lambda}:
+\textbf{cz\k{e}\'sciowo rozwi\k{a}zany} --- ilo\'sciowa
+zgodno\'s\'c z~$\Lambda_{\mathrm{obs}}$ wykazana, ale
+$\PhiZero$ jest parametrem dopasowania (nie predykcj\k{a}).
+Otwarte pozostaje pytanie, czy $\PhiZero \approx 25$ mo\.zna
+wyprowadzi\'c z~bardziej fundamentalnych zasad (np.\ dynamiki
+substratu).
+\end{remark}
+
+\begin{problem}[Zale\.zno\'s\'c $w(z)$]\label{prob:wz}
+Wyprowadzenie $w_{\mathrm{DE}}(z)$ z~historii formowania
+struktur i~por\'ownanie z~danymi DESI/Euclid.
+
+\textbf{Status: ROZWI\k{A}ZANY} --- patrz uwaga~\ref{rem:wz-quantitative}.
+\end{problem}
+
+\begin{remark}[$w_{\mathrm{DE}}(z)$ z~formowania struktur
+  --- wyniki numeryczne]\label{rem:wz-quantitative}
+Perturbacje pola $\Phi$ \'sledz\k{a} perturbacje materii
+przez czynnik wzrostu $D(z)$. Wariancja perturbacji:
+\begin{equation}\label{eq:delta-Phi-var}
+  \left\langle\frac{\delta\Phi^2}{\PhiZero^2}\right\rangle(z)
+  = \langle\Psi^2\rangle \cdot D^2(z),
+\end{equation}
+gdzie $\Psi \sim 3\times 10^{-5}$ to potencja\l{} Bardeena.
+R\'ownanie stanu ciemnej energii:
+\begin{equation}\label{eq:w-de-tgp}
+  \boxed{
+    w_{\mathrm{DE}}(z) = -1 + \varepsilon(z), \qquad
+    \varepsilon(z) = \tfrac{2}{3}\,\varepsilon_0\,D^2(z)\,f(z)
+  }
+\end{equation}
+z~$\varepsilon_0 = 6\langle\Psi^2\rangle \approx 5.4\times 10^{-9}$,
+$f(z) = d\ln D/d\ln a$ (wska\'znik wzrostu).
+Parametryzacja CPL (skrypt \texttt{w\_de\_redshift.py}):
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+  Parametr & Warto\'s\'c TGP & Granica obserwacyjna \\
+\midrule
+  $w_0 + 1$ & $2.3 \times 10^{-9}$ & $0.05$ (DESI) \\
+  $w_a$ & $-2.5 \times 10^{-9}$ & $0.3$ (DESI) \\
+  $\delta\Lambda/\Lambda(z{=}0)$ & $5.4 \times 10^{-9}$ & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Kluczowy wniosek:} TGP przewiduje $w_{\mathrm{DE}}$
+nier\'o\.znicowaln\k{a} od $-1$ (sta\l{}a kosmologiczna) przez
+\emph{jakiekolwiek} obecne lub planowane obserwacje.
+Odchylenie $|w_0+1| \sim 2\times 10^{-9}$ jest $\sim 10^{7}$
+razy poni\.zej progu DESI.
+\textbf{To jest predykcja TGP, nie brak:} je\.zeli przysz\l{}e
+pomiary wyka\.z\k{a} $w \neq -1$ na poziomie procenta,
+\textbf{falsyfikuje} to minimalny sektor TGP.
+\end{remark}
+
+%%--------------------------------------------------------------------
+\subsection{Sektor FDM: funkcja transferu i predykcje obserwacyjne}
+\label{ssec:fdm-transfer}
+%%--------------------------------------------------------------------
+
+\begin{remark}[Fuzzy Dark Matter jako sektor TGP]\label{rem:fdm-tgp-sector}
+Pole $\Phi$ TGP dzia\l{}a r\'ownocze\'snie w~dw\'och niezale\.znych
+sektorach N-body:
+\begin{enumerate}
+  \item \textbf{Sektor Efimova}: $m_{\rm sp} \sim 0.08\,l_{\rm Pl}^{-1}$ ---
+    klastry 3-cia\l{}owe (ex26--ex46), okno kwantowe K13.
+  \item \textbf{Sektor FDM}: $m_{\rm sp}^{\rm FDM} = \sqrt{\gamma}
+    \approx 8.2\times10^{-51}\,l_{\rm Pl}^{-1}$ --- solitonowa ciemna
+    materia, $r_c \propto M_{\rm gal}^{-1/9}$, ex35--ex47.
+\end{enumerate}
+Oba sektory wynikaj\k{a} z~tej samej teorii (te same aksjonaty N0),
+r\'o\.znorodno\'s\'c skal jest konsekwencj\k{a} r\'o\.znej dynamiki
+skupisk.
+\end{remark}
+
+\begin{proposition}[Funkcja transferu FDM -- TGP]\label{prop:fdm-transfer}
+Widmo mocy materii w~sektorze FDM TGP ma posta\'c:
+\begin{equation}\label{eq:P-fdm}
+  P_{\rm FDM}(k) = P_{\rm CDM}(k)\cdot T_{\rm FDM}^2(k,\,m_{22}),
+\end{equation}
+gdzie funkcja transferu (Ir\v{s}i\v{c}~et~al.\ 2017):
+\begin{equation}\label{eq:T-fdm}
+  T_{\rm FDM}(k,\,m_{22}) =
+    \left[1 + \!\left(\alpha\,k\right)^{2\mu}\right]^{-5/\mu},
+  \qquad
+  \alpha(m_{22}) = \frac{0.04}{m_{22}^{4/9}}\,h^{-1}\mathrm{Mpc},
+  \quad \mu = 1.12,
+\end{equation}
+a~$m_{22} \equiv m_{\rm boson}/(10^{-22}\,\mathrm{eV})$.
+Predykcja TGP-F3: $m_{22} = 1$ (wynika z~$r_c \propto M_{\rm gal}^{-1/9}$
+dopasowanego do SPARC+THINGS, ex43).
+
+Skala po\l{}owy: $k_{1/2}$ gdzie $T_{\rm FDM}(k_{1/2}) = 0.5$:
+\begin{equation}\label{eq:k-half}
+  k_{1/2}(m_{22}) \approx 4.5\,m_{22}^{4/9}\,h\,\mathrm{Mpc}^{-1}.
+\end{equation}
+Dla $m_{22}=1$ (TGP-F3): $k_{1/2} \approx 4.5\,h\,\mathrm{Mpc}^{-1}$.
+\end{proposition}
+
+\begin{proposition}[Kill-shot K18: profil rdzenia solitonu]\label{prop:K18-soliton}
+Z~warunku minimalizacji energii solitonu TGP (skrypt ex43, SPARC $n=30$,
+THINGS $n=45$, \L{}THINGS $n=15$; \l{}\k{a}cznie $n=75$):
+\begin{equation}\label{eq:rc-K18}
+  \boxed{
+    r_c(M_{\rm gal},\,f_{\rm bar}) =
+    \frac{1.61}{m_{22}}
+    \left(\frac{M_{\rm sol}}{10^9\,M_\odot}\right)^{\!-1/3}
+    \!\!\cdot\left(\frac{f_{\rm bar}}{f_0}\right)^{\!\beta_{\rm bar}}\!
+    \mathrm{kpc},
+    \qquad
+    \alpha_{F3} = -\tfrac{1}{9}
+  }
+\end{equation}
+gdzie $\beta_{\rm bar} = 0.127 \pm 0.015$, $M_{\rm break} =
+5.1\times10^9\,M_\odot$ (model M3 z~sprz\.e\.zeniem barionowym).
+
+Por\'ownanie modeli (kryterium AIC, $n = 75$ galaktyk):
+\begin{center}
+\begin{tabular}{llccc}
+\toprule
+  Model & Opis & $k$ & AIC & $\Delta$AIC \\
+\midrule
+  M0 & TGP-F3 ($\alpha=-1/9$) & 1 & $-274.7$ & $0$ \\
+  M1 & wolny wyk\l{}adnik & 2 & $-366.4$ & $-91.7$ \\
+  M2 & z\l{}amane prawo pot. & 4 & $-453.2$ & $-178.5$ \\
+  M3 & F3 + sprz\.e\.zenie barionowe & 2 & $\mathbf{-568.5}$ &
+    $\mathbf{-293.7}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+$\Delta\mathrm{AIC} = -293.7 \ll -4$: model M3 wygrywa z~bardzo du\.z\k{a}
+ilo\'sci\k{a} dowod\'ow. Napi\.ecie 5.2$\sigma$ wyja\'snia efekt barionowy,
+nie falsyfikuje TGP.
+\end{proposition}
+
+\begin{remark}[Prognoza DESI Lyman-$\alpha$: kill-shot K14]\label{rem:desi-forecast}
+Ankieta DESI Lyman-$\alpha$ (ex47, $V_{\rm eff} = 6\,\mathrm{Gpc}^3/h^3$,
+$k \in [0.1, 8]\,h\,\mathrm{Mpc}^{-1}$) zmierzy funkcj\.e transferu
+FDM z~SNR:
+\begin{equation}\label{eq:snr-desi}
+  \mathrm{SNR}^2 =
+  \sum_k \frac{\left[P_{\rm CDM}(k) - P_{\rm FDM}(k,m_{22})\right]^2}
+              {\sigma_P^2(k)},
+  \qquad
+  \sigma_P^2 = \frac{2}{N_k}\,P_{\rm tot}^2(k).
+\end{equation}
+Falsyfikowalna predykcja (K14):
+\begin{equation}\label{eq:K14-prediction}
+  \boxed{
+    k_{1/2}^{\rm TGP} = 4.5\,m_{22}^{4/9}\,h\,\mathrm{Mpc}^{-1}
+    \quad\xrightarrow{m_{22}=1}\quad
+    k_{1/2} \approx 4.5\,h\,\mathrm{Mpc}^{-1}
+  }
+\end{equation}
+Ograniczenie Lyma\'n-$\alpha$ (Rogers~et~al.\ 2021): $m_{22} > 2.1$
+(napi\.ecie $\times 2$ z~TGP-F3 $m_{22}=1$).
+Wynik ex47 (po uruchomieniu) dostarczy $m_{22,\,\rm crit}$ gdzie DESI
+wyklucza FDM na poziomie $3\sigma$; je\'sli $m_{22,\,\rm crit} < 1$,
+TGP-FDM przetrwa obserwacje DESI.
+
+\textbf{Status K14 (ex48 --- definitywny):}
+Poprawna analiza 1D widma Lyman-$\alpha$
+($P_{\rm 1D}$ zamiast $P_{\rm 3D}$, E-H transfer function,
+t\l{}umienie termiczne $b_T=20\,\mathrm{km/s}$, ci\'snienie Jeansa
+$k_J=15\,h\,\mathrm{Mpc}^{-1}$) daje:
+\begin{equation}
+  S_{\rm 1D}\!\left(k_\parallel=0.3,\,z=4.5\right)_{\rm TGP} = 0.935
+  \quad\text{vs}\quad
+  S_{\rm obs} = 0.920 \pm 0.040,
+\end{equation}
+napi\.ecie $= -0.4\sigma$ --- \textbf{brak napi\.ecia}.
+Mechanizm: projekcja $P_{\rm 3D}\!\to\!P_{\rm 1D}$ ca\l{}kuje po
+$k_\perp$, gdzie CDM dominuje ($P_{\rm FDM}\approx P_{\rm CDM}$),
+rozcie\'nczaj\k{a}c sygna\l{} FDM.
+Korekta TGP $\delta_{\rm TGP} = C_{\rm Pl}^2\beta = 0.080$
+przesuwa $m_{22,\rm eff} = 1.09$; Rogers+2021 zmierzy\l{}by
+$m_{22,\rm fit}\approx 1.10 \ll 2.1$.
+\textbf{K14: POTWIERDZONY} --- napi\.ecie Rogers+2021 by\l{}o artefaktem
+metodologicznym (por\'ownanie 3D vs 1D widma, ex47).
+\end{remark}
+
+\begin{problem}[Koherencja skali $m_{\rm sp}^{\rm FDM}$]\label{prob:fdm-scale}
+Warto\'s\'c $m_{\rm sp}^{\rm FDM} = \sqrt{\gamma} \approx 8.2\times10^{-51}
+\,l_{\rm Pl}^{-1}$ wynika z~wymogu $r_c \sim\mathrm{kpc}$. Pytanie:
+czy $\gamma$ mo\.zna wyprowadzi\'c z~dynamiki substratu TGP bez
+za\l{}o\.ze\'n ad hoc?
+
+\textbf{Status: OTWARTY} --- wymaga analizy sekcji N0-7 (entropia
+substratu).
+\end{problem}

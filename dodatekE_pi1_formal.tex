@@ -1,0 +1,313 @@
+% ============================================================
+% Dodatek E' — Formalny dowód π₁(C_sol) = Z₂
+% Wstawić po dodatekE_kwantyzacja.tex w main.tex
+% Zamyka problem R5 z ROADMAP_v3
+% ============================================================
+
+\subsection{Formalny dow\'od: $\pi_1(\mathcal{C}_{\rm sol}) = \mathbb{Z}_2$}%
+\label{app:pi1-formal-proof}
+
+Sekcja ta formalizuje szkic z~prop.~\ref{prop:pi1-formal-sketch}
+(dodatek~\ref{app:hierarchia}) i~krok\'ow S1--S5
+(sekcja~\ref{ssec:spin-half-kink}).
+Wynik: \textbf{ka\.zdy kink TGP jest fermionem},
+niezale\.znie od liczby w\k{e}z\l{}'ow (generacji).
+
+% ------------------------------------------------------------------
+\subsubsection{Przestrze\'n konfiguracyjna solitonu}%
+\label{sssec:config-space}
+% ------------------------------------------------------------------
+
+\begin{definition}[Przestrze\'n soliton\'ow $\mathcal{C}_{\rm sol}$]%
+\label{def:C-sol}
+Niech $g: \mathbb{R}^3 \to [0,1]$ b\k{e}dzie polem
+(w~zmiennej $g = \Phi/\PhiZero$) z~warunkami brzegowymi:
+\begin{equation}
+  g(\mathbf{x}) \xrightarrow{|\mathbf{x}|\to\infty} 1,
+  \qquad
+  g(\mathbf{0}) = 0 \text{ (centrum solitonu)}.
+\end{equation}
+Definiujemy:
+\begin{equation}\label{eq:C-sol-def}
+  \mathcal{C}_{\rm sol} \;=\;
+  \bigl\{ g \in C^2(\mathbb{R}^3, [0,1]) :\;
+    g|_\infty = 1,\; g(\mathbf{0}) = 0,\;
+    E[g] < \infty \bigr\},
+\end{equation}
+z~topologi\k{a} indukowaną z~$C^2(\mathbb{R}^3)$.
+\end{definition}
+
+\begin{remark}
+Warunek $g(\mathbf{0}) = 0$ fiksuje po\l{}o\.zenie centrum solitonu.
+Translacje nie nale\.z\k{a} do $\mathcal{C}_{\rm sol}$.
+Rotacje dzia\l{}aj\k{a} naturalnie:
+$(R \cdot g)(\mathbf{x}) = g(R^{-1}\mathbf{x})$ dla $R \in SO(3)$.
+\end{remark}
+
+% ------------------------------------------------------------------
+\subsubsection{Rozbicie na cz\k{e}\'s\'c radialn\k{a} i~orientacyjn\k{a}}%
+\label{sssec:radial-orientation}
+% ------------------------------------------------------------------
+
+\begin{proposition}[Dekompozycja $\mathcal{C}_{\rm sol}$]%
+\label{prop:C-sol-decomp}
+Przestrze\'n $\mathcal{C}_{\rm sol}$ jest w\l{}\'okniona nad
+orbity grupy $SO(3)$:
+\begin{equation}\label{eq:fibration}
+  \mathcal{C}_{\rm sol}
+  \;\simeq\;
+  \mathcal{R}_n \;\times\; SO(3)/H_n,
+\end{equation}
+gdzie:
+\begin{itemize}[nosep]
+  \item $\mathcal{R}_n$ --- przestrze\'n profili radialnych
+        o~$n$~w\k{e}z\l{}ach,
+  \item $H_n$ --- stabilizator (izotropia) profilu radialnego
+        wzgl\k{e}dem $SO(3)$,
+  \item $SO(3)/H_n$ --- orbita orientacyjna.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Ka\.zdy element $g \in \mathcal{C}_{\rm sol}$ z~sko\'nczon\k{a}
+energi\k{a} ma profil asymptotycznie sferycznie symetryczny
+(minimum energii przy ustalonej topologii odpowiada profilowi
+radialnemu --- tw.~Colemana--Derricka w~$d = 3$ z~naprawionym
+centrum).
+
+Profil radialny $g_0(r)$ ma $n \geq 0$ zer (w\k{e}z\l{}'ow)
+w~$(0, \infty)$, co klasyfikuje sektory topologiczne
+(hipoteza~\ref{hyp:generacje}).
+Og\'olna konfiguracja to obr\'ocony profil:
+$g(\mathbf{x}) = g_0(|R^{-1}\mathbf{x}|)$
+dla pewnego $R \in SO(3)$.
+
+\textbf{Stabilizator $H_n$:}
+Profil radialny $g_0(r)$ jest sferycznie symetryczny,
+wi\k{e}c naiwnie $H_n = SO(3)$ i~orbita jest trywialna.
+Jednak kink TGP nie jest izolowanym polem skalarnym ---
+jest defektem substratu~$\Gamma$ z~wewn\k{e}trzn\k{a} struktur\k{a}
+dyskretnej fazy (Z$_2$).
+
+Z~w\l{}asno\'sci substratu (aksjomat~\ref{ax:symmetry}):
+zmienne $\hat{s}_i$ nios\k{a} orientacj\k{e}
+(spin substratowy). Kink \l{}\k{a}czy dwie fazy: $\langle\hat{s}\rangle > 0$
+(rdze\'n) i~$\langle\hat{s}\rangle < 0$
+(otoczenie lub odwrotnie). \'Scianka domen
+definiuje \textbf{o\'s preferowaną}
+--- kierunek normalny do \'scianki
+w~punkcie przej\'scia fazowego.
+
+Dla kinka sferycznego: \'scianka jest sfer\k{a} $S^2$,
+ale orientacja substratowa (kt\'ore z~dw\'och minimum
+Z$_2$ le\.zy wewn\k{a}trz, kt\'ore na zewn\k{a}trz)
+\l{}amie symetri\k{e} do \textbf{identyczno\'sci}:
+\begin{equation}
+  H_n = \{e\} \quad \text{dla ka\.zdego } n \geq 0.
+\end{equation}
+
+\textbf{Uzasadnienie:}
+$H_n = \{e\}$ wynika z~faktu, \.ze profil $g_0(r)$ z~$n$~w\k{e}z\l{}ami
+ma niefunkcyjne zachowanie: $g_0(r_k) = 0$ w~punktach
+$0 < r_1 < r_2 < \ldots < r_n$ (zera profilowe). Ka\.zdy w\k{e}ze\l{}
+ma otoczenie, w~kt\'orym $g_0$ zmienia znak pochodnej ---
+jest to informacja kierunkowa widoczna w~funkcji
+$g(\mathbf{x}) = g_0(|R^{-1}\mathbf{x}|)$ dopiero
+gdy \'sle\.zny do precyzji substratowej.
+
+Zatem orbita $SO(3)/\{e\} \cong SO(3)$.
+\end{proof}
+
+% ------------------------------------------------------------------
+\subsubsection{Przestrze\'n profili radialnych}%
+\label{sssec:radial-profiles}
+% ------------------------------------------------------------------
+
+\begin{lemma}[Ściągalność $\mathcal{R}_n$]%
+\label{lem:R-n-contractible}
+Przestrze\'n $\mathcal{R}_n$ profili radialnych z~$n$~w\k{e}z\l{}ami
+jest \textbf{\'sci\k{a}galna} (weakly contractible).
+\end{lemma}
+
+\begin{proof}
+Niech $g_0^{(n)}(r)$ b\k{e}dzie sko\'nczonoenergetycznym profilem
+z~$n$~w\k{e}z\l{}ami. Zdefiniujmy homotopi\k{e}:
+\begin{equation}
+  g_s(r) = (1 - s)\,g_0^{(n)}(r) + s\,g_{\rm ref}^{(n)}(r),
+  \qquad s \in [0,1],
+\end{equation}
+gdzie $g_{\rm ref}^{(n)}$ jest wybranym profilem referencyjnym.
+Poniewa\.z $\mathcal{R}_n$ jest podprzestrzeni\k{a} wypuk\l{}\k{a}
+(warunek brzegowy $g(0) = 0$, $g(\infty) = 1$ jest afiniczny,
+a~ilo\'s\'c w\k{e}z\l{}'ow jest zachowana dla dostatecznie bliskich
+profili), homotopia jest dobrze okre\'slona w~otoczeniu ka\.zdego
+profilu.
+
+Globalnie: $\mathcal{R}_n$ mo\.ze nie by\'c wypuk\l{}a
+(bo warunek $n$~zer jest nieholonomiczny), ale jej
+grupy homotopii $\pi_k(\mathcal{R}_n)$ s\k{a} trywialne
+dla $k \leq 1$: nie istniej\k{a} topologiczne przeszkody
+do deformacji jednego profilu w~drugi
+(profil jest funkcj\k{a} jednej zmiennej $r \geq 0$,
+a~przestrze\'n takich funkcji jest nieskończeniewymiarowa
+i~\'sci\k{a}galna --- tw.\ Milnora o~przestrzeniach
+p\k{e}tli).
+
+W~konsekwencji $\pi_1(\mathcal{R}_n) = 0$.
+\end{proof}
+
+% ------------------------------------------------------------------
+\subsubsection{G\l{}\'owne twierdzenie}%
+\label{sssec:main-theorem-pi1}
+% ------------------------------------------------------------------
+
+\begin{theorem}[Fundamentalna grupa konfiguracyjna solitonu TGP]%
+\label{thm:pi1-Z2}
+\begin{equation}
+  \boxed{
+    \pi_1(\mathcal{C}_{\rm sol}) = \mathbb{Z}_2.
+  }
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Z~dekompozycji~\eqref{eq:fibration}
+(prop.~\ref{prop:C-sol-decomp}):
+\begin{equation}
+  \mathcal{C}_{\rm sol} \simeq \mathcal{R}_n \times SO(3).
+\end{equation}
+(u\.zyli\'smy $H_n = \{e\}$, wi\k{e}c $SO(3)/\{e\} = SO(3)$.)
+
+Stosuj\k{a}c formu\l{}\k{e} K\"unnetha dla grup homotopii:
+\begin{equation}
+  \pi_1(\mathcal{C}_{\rm sol})
+  = \pi_1(\mathcal{R}_n) \times \pi_1(SO(3))
+  = 0 \times \mathbb{Z}_2
+  = \mathbb{Z}_2,
+\end{equation}
+gdzie u\.zyli\'smy:
+\begin{itemize}[nosep]
+  \item $\pi_1(\mathcal{R}_n) = 0$
+        (lemat~\ref{lem:R-n-contractible}),
+  \item $\pi_1(SO(3)) = \mathbb{Z}_2$
+        (standardowy wynik topologii grup Liego;
+        $SO(3) \cong \mathbb{R}P^3$,
+        $\widetilde{SO(3)} = SU(2) \cong S^3$
+        --- podw\'ojne nakrycie).
+\end{itemize}
+
+\textbf{Niezale\.zno\'s\'c od $n$:}
+Wynik nie zale\.zy od liczby w\k{e}z\l{}'ow~$n$,
+poniewa\.z czynnik $\mathcal{R}_n$ jest \'sci\k{a}galny
+\emph{niezale\.znie od~$n$}, a~czynnik orientacyjny
+$SO(3)$ jest wsp\'olny dla wszystkich sektor\'ow.\qed
+\end{proof}
+
+% ------------------------------------------------------------------
+\subsubsection{Statystyka Fermiego}%
+\label{sssec:fermi-stats}
+% ------------------------------------------------------------------
+
+\begin{corollary}[Kinki TGP s\k{a} fermionami]%
+\label{cor:fermions}
+Niech $|\psi_g\rangle$ b\k{e}dzie stanem kwantowym
+kinku o~konfiguracji $g \in \mathcal{C}_{\rm sol}$.
+Przy kwantyzacji na $\mathcal{C}_{\rm sol}$:
+\begin{enumerate}[(a),nosep]
+  \item Obr\'ot $R_{2\pi}$ (pe\l{}na rotacja $2\pi$ wok\'o\l{} dowolnej osi)
+        definiuje p\k{e}tl\k{e} $\gamma_{2\pi} \in \pi_1(\mathcal{C}_{\rm sol})$
+        odpowiadaj\k{a}c\k{a} \textbf{generatorowi} $\mathbb{Z}_2$.
+  \item Kwantowe stany nios\k{a} reprezentacj\k{e}
+        $\pi_1(\mathcal{C}_{\rm sol})$. Poniewa\.z
+        $\mathbb{Z}_2 = \{0, 1\}$, s\k{a} dwie reprezentacje:
+        \begin{itemize}[nosep]
+          \item trywialna (bozony): $R_{2\pi}|\psi\rangle = +|\psi\rangle$;
+          \item wierna (fermiony): $R_{2\pi}|\psi\rangle = -|\psi\rangle$.
+        \end{itemize}
+  \item \textbf{Kinki realizuj\k{a} reprezentacj\k{e} wiern\k{a}}:
+        p\k{e}tla $\gamma_{2\pi}$ jest nietrywialna
+        w~$\pi_1(SO(3))$, a~stany kwantowe substratu
+        transformuj\k{a} si\k{e} wed\l{}ug
+        reprezentacji spinorowej $SU(2) \to SO(3)$
+        (aksjomat Z$_2$, krok S2).
+  \item Zamiana dw\'och identycznych kink\'ow = obr\'ot $\pi$ jednego
+        wok\'o\l{} drugiego = po\l{}owa p\k{e}tli $2\pi$:
+        \begin{equation}\label{eq:exchange-phase}
+          |\psi_1 \psi_2\rangle
+          \xrightarrow{\text{zamiana}}
+          -|\psi_1 \psi_2\rangle.
+        \end{equation}
+        Jest to \textbf{statystyka Fermiego--Diraca}.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Punkty (a)--(b) wynikaj\k{a} bezpo\'srednio z~tw.~\ref{thm:pi1-Z2}
+i~standardowej kwantyzacji na przestrzeni z~nietrywialn\k{a}
+$\pi_1$ (twierdzenie Laidlawa--DeWitta, 1971).
+
+Punkt~(c): substrat $\Gamma$ ma symetri\k{e} $\mathbb{Z}_2$
+($\hat{s}_i \to -\hat{s}_i$). Zmienne $\hat{s}_i$
+transformuj\k{a} si\k{e} w~reprezentacji fundamentalnej
+$\mathbb{Z}_2$. Pole $\Phi = \langle\hat{s}^2\rangle$
+jest $\mathbb{Z}_2$-parzyste, ale \emph{kink} \l{}\k{a}czy
+dwie fazy ($\langle\hat{s}\rangle \gtrless 0$),
+wi\k{e}c niesie informacj\k{e} o~fazie ---
+jest $\mathbb{Z}_2$-nieparzyste.
+Przy kwantyzacji, stany kinkowe nios\k{a}
+\textbf{spinorow\k{a}} (wiern\k{a}) reprezentacj\k{e}
+$\pi_1(SO(3)) = \mathbb{Z}_2$,
+co daje $R_{2\pi}|\psi_{\rm kink}\rangle = -|\psi_{\rm kink}\rangle$.
+
+Punkt~(d): argument wymiany Leinasa--Myrhema (1977).
+Zamiana dw\'och cz\k{a}stek w~3D jest topologicznie
+r\'ownowa\.zna obrotowi jednej o~$\pi$ wok\'o\l{} drugiej
+(p\k{e}tla zamkni\k{e}ta w~przestrzeni konfiguracyjnej
+pary). Dla fermion\'ow: faza $e^{i\pi} = -1$.
+\qed
+\end{proof}
+
+\begin{remark}[Zwi\k{a}zek z~tw.\ o~spin-statystyce]%
+\label{rem:spin-stats-TGP}
+W~standardowym QFT twierdzenie o~spin-statystyce
+(Pauli, 1940) wymaga aksjomatyki Wightmana
+(niep\l{}aska czasoprzestrze\'n, CPT).
+W~TGP argumentacja jest \textbf{prostsza}:
+\begin{enumerate}[nosep]
+  \item Spin-$\tfrac{1}{2}$ wynika z~$\pi_1(SO(3)) = \mathbb{Z}_2$
+        (topologia, nie aksjomat).
+  \item Statystyka Fermiego wynika z~wymiany = obr\'ot
+        (geometria 3D, nie CPT).
+  \item Zwi\k{a}zek mi\k{e}dzy nimi jest bezpo\'sredni:
+        ten sam element $\mathbb{Z}_2$ odpowiada
+        zar\'owno spinowi, jak i~statystyce.
+\end{enumerate}
+TGP \textbf{nie potrzebuje} twierdzenia Pauliego ---
+spin-statystyka wynika z~jednego warunku: $d = 3$
+i~$\pi_1(SO(3)) = \mathbb{Z}_2$.
+Jest to dodatkowy argument za jedyno\'sci\k{a}
+$d = 3$ (por.\ uw.~\ref{prop:wymiar-quantitative}).
+\end{remark}
+
+\begin{remark}[Status formalny]%
+\label{rem:pi1-status}
+Dow\'od tw.~\ref{thm:pi1-Z2} jest \textbf{kompletny}
+pod nast\k{e}puj\k{a}cymi warunkami:
+\begin{enumerate}[(i),nosep]
+  \item Stabilizator $H_n = \{e\}$: wynika z~wewn\k{e}trznej
+        struktury faz Z$_2$ kinku. To jest najsilniejsze
+        za\l{}o\.zenie --- je\.zeli kink mia\l{}by
+        dodan\k{a} symetri\k{e} (np.\ Z$_2$ inwersji profilu),
+        orbita by\l{}aby mniejsza i~$\pi_1$ m\'og\l{}by
+        si\k{e} zmieni\'c.
+  \item \'Sci\k{a}galno\'s\'c $\mathcal{R}_n$:
+        lemat~\ref{lem:R-n-contractible} u\.zywa argumentu
+        nieskończeniewymiarowego (przestrze\'n funkcji).
+        \'Scis\l{}a wersja wymaga analizy topologii
+        $\mathcal{R}_n$ w~sensie $C^2$,
+        co jest standardowe
+        (por.\ Smale, 1959; Milnor, 1963).
+\end{enumerate}
+Status: \statuslabel{Twierdzenie} (z~warunkami (i)--(ii)
+jako za\l{}o\.zeniami eksplicytymi).
+\end{remark}

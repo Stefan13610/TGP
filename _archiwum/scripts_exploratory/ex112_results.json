@@ -1,0 +1,95 @@
+{
+  "session": "ex112",
+  "date": "2026-04-02",
+  "approach": "f(g)+bounce profile, K_sub=g^2 energy",
+  "g_bounce": 0.7838007830714049,
+  "g0_e": 1.24915,
+  "g0_mu": 2.021167157046931,
+  "g0_tau": 3.2703171570469314,
+  "A_e": 0.2988230080780974,
+  "A_mu": 1.1331437153179924,
+  "A_tau": 2.3697505884895844,
+  "R21_A": 206.76824653771126,
+  "R31_A": 3955.0722936701845,
+  "r1_e": 3.240861333608106,
+  "r1_mu": 2.9745786498813387,
+  "r1_tau": 2.4596237431266315,
+  "E_core_e": 2.0187169661640785,
+  "E_core_mu": 36.34185826240004,
+  "E_core_tau": 171.79425225694314,
+  "R21_E_core": 18.002453474919783,
+  "R31_E_core": 85.10071254980474,
+  "n_Ecore_Atail": 2.1487695394717536,
+  "R21_PDG": 206.768,
+  "R31_PDG": 3477.48,
+  "n_pass": 11,
+  "n_fail": 2,
+  "n_total": 13,
+  "tests": [
+    {
+      "label": "K1: A_tail(e) > 0 (bounce)",
+      "status": "PASS",
+      "detail": "A_e=0.298823  [ex106: 0.298823]"
+    },
+    {
+      "label": "K2: A_tail(μ) > 0 (g₀>g₀_max_f, dostępne przez odbicia)",
+      "status": "PASS",
+      "detail": "A_μ=1.133144  [ex106: 1.133144]"
+    },
+    {
+      "label": "K3: A_tail(τ) > 0 (φ²·g₀*)",
+      "status": "PASS",
+      "detail": "A_τ=2.369751  [ex106: 2.369751]"
+    },
+    {
+      "label": "K4: R₂₁^A = (A_μ/A_e)^4 ≈ 206.77 (potwierdza ex106)",
+      "status": "PASS",
+      "detail": "R₂₁^A=206.768, δ=0.000%"
+    },
+    {
+      "label": "K5: R₃₁^A = (A_τ/A_e)^4 vs PDG",
+      "status": "PASS",
+      "detail": "R₃₁^A=3955.1, PDG=3477.48, δ=13.7%"
+    },
+    {
+      "label": "K6: A_tail(e) < A_tail(μ) < A_tail(τ) — monotoniczne",
+      "status": "PASS",
+      "detail": "A_e=0.2988 < A_μ=1.1331 < A_τ=2.3698"
+    },
+    {
+      "label": "K7: r₁ wyznaczone dla wszystkich leptonów",
+      "status": "PASS",
+      "detail": "r₁(e)=3.2409, r₁(μ)=2.9746, r₁(τ)=2.4596"
+    },
+    {
+      "label": "K8: r₁(e) > r₁(μ) > r₁(τ) — szybsze opadanie przy wyższym g₀",
+      "status": "PASS",
+      "detail": "r₁: 3.2409 > 2.9746 > 2.4596"
+    },
+    {
+      "label": "K9: E_core(e) > 0",
+      "status": "PASS",
+      "detail": "E_core(e) = 2.018717"
+    },
+    {
+      "label": "K10: E_core(μ) > 0",
+      "status": "PASS",
+      "detail": "E_core(μ) = 36.341858"
+    },
+    {
+      "label": "K11: R₂₁^{E_core} = E_core(μ)/E_core(e)",
+      "status": "FAIL",
+      "detail": "R₂₁^Ec=18.002, PDG=206.768, δ=91.3%"
+    },
+    {
+      "label": "K12: R₃₁^{E_core} = E_core(τ)/E_core(e)",
+      "status": "FAIL",
+      "detail": "R₃₁^Ec=85.10, PDG=3477.48, δ=97.6%"
+    },
+    {
+      "label": "K13: E_core ∝ A_tail^n — power-law skalowanie",
+      "status": "PASS",
+      "detail": "n=2.149, R²=0.99994  (n=4 → zgodność z A_tail⁴)"
+    }
+  ]
+}

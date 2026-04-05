@@ -1,0 +1,665 @@
+% ============================================================
+\appendix
+\section{S\l{}ownik notacji}\label{app:notacja}
+% ============================================================
+
+\begin{longtable}{@{}>{\raggedright}p{2.8cm}p{10cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Znaczenie} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Symbol} & \textbf{Znaczenie} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+\multicolumn{2}{@{}l}{\textbf{Fundamenty}} \\
+\midrule
+$\Nzero$ & Absolutna nico\'s\'c: brak przestrzeni, materii, czasu \\
+$\Ffield$ & Funkcja stanu: miara odej\'scia od nico\'sci; $\Ffield = 0$ w~$\Nzero$, $\Ffield > 0$ w~$\mathcal{S}_1$ \\
+$\mathcal{S}_0$ & Sektor nico\'sci: $\Ffield = 0$ \\
+$\mathcal{S}_1$ & Sektor istnienia: $\Ffield > 0$ \\
+$\Phi$ & Pole przestrzenno\'sci: g\k{e}sto\'s\'c wygenerowanej przestrzeni \\
+$\PhiZero$ & Warto\'s\'c referencyjna $\Phi$ (warunki laboratoryjne) \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{\'Zr\'od\l{}a i~interferencja}} \\
+\midrule
+$q_a$ & Sta\l{}a generacji przestrzennej cz\k{a}stki typu~$a$;
+  $[q] = [\mathrm{M}^{-1}\mathrm{L}]$.
+  Metryka minimalna: $q_{\mathrm{min}} = 8\pi G_0/c_0^2$ (tw.~\ref{thm:newton});
+  eksponencjalna: $q_{\mathrm{exp}} = 4\pi G_0/c_0^2$ (uw.~\ref{rem:metric-relation}) \\
+$\rho_a$ & G\k{e}sto\'s\'c masy--energii \'zr\'od\l{}a typu~$a$ \\
+$\phi(r)$ & Profil generacji: kszta\l{}t pola od pojedynczego \'zr\'od\l{}a \\
+$\mathcal{D}[\Phi]$ & Operator dynamiki pola $\Phi$ \\
+$\mathcal{N}[\Phi]$ & Cz\l{}on samointerferencji (nieliniowy):
+  $\alpha(\nabla\Phi)^2/(\PhiZero\Phi)
+  + \beta\Phi^2/\PhiZero^2
+  - \gamma\Phi^3/\PhiZero^3$ \\
+$\alpha$ & Bezwymiarowa sta\l{}a sprz\k{e}\.zenia gradientowego;
+  $\alpha = 2$ z~wariacji dzia\l{}ania (wn.~\ref{cor:alpha-fixed}) \\
+$\beta$ & Sta\l{}a odpychania $[\mathrm{L}^{-2}]$ (cz\l{}on kubiczny);
+  bezwymiarowo: $\hat\beta = \beta r_0^2$ \\
+$\gamma$ & Sta\l{}a studni $[\mathrm{L}^{-2}]$ (cz\l{}on kwartyczny);
+  bezwymiarowo: $\hat\gamma = \gamma r_0^2$ \\
+$E_{\mathrm{int}}(d)$ & Energia oddzia\l{}ywania dw\'och \'zr\'ode\l{} w~odleg\l{}o\'sci $d$ \\
+$\varphi(t)$ & $\Phi(t)/\PhiZero$ --- bezwymiarowe pole kosmologiczne
+  (to\.zsame z~$\psi$ w~kontek\'scie FRW);
+  \textbf{uwaga:} w~sekcji ciemnej energii u\.zywane te\.z
+  jako $\varphi = \Phi/\PhiZero - 1$ (perturbacja) ---
+  znaczenie wynika z~kontekstu \\
+$\psi$ & $\Phi/\PhiZero$ --- bezwymiarowe pole w~r\'ownaniach
+  dynamicznych i~analizie stabilno\'sci;
+  $\psi \equiv \chi$ (r\'o\.zne litery,
+  ta sama wielko\'s\'c); $\varphi = \psi$ gdy u\.zyte
+  jako pole kosmologiczne, $\varphi = \psi - 1$ gdy u\.zyte
+  jako perturbacja \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Trzy re\.zimy}} \\
+\midrule
+$r_{\mathrm{well}}$ & Skala studni przestrzennej (sklejenie) \\
+$r_{\mathrm{rep}}$ & Skala odpychania przestrzennego \\
+$V_{\mathrm{eff}}(r)$ & Efektywny potencja\l{} mi\k{e}dzy dwoma \'zr\'od\l{}ami \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Dynamiczne sta\l{}e}} \\
+\midrule
+$c(\Phi)$ & Lokalna pr\k{e}dko\'s\'c \'swiat\l{}a: $c_0(\PhiZero/\Phi)^{1/2}$ \\
+$\hbar(\Phi)$ & Lokalna sta\l{}a Plancka: $\hbar_0(\PhiZero/\Phi)^{1/2}$ \\
+$G(\Phi)$ & Lokalna sta\l{}a grawitacyjna: $G_0(\PhiZero/\Phi)$ \\
+$\lP$ & D\l{}ugo\'s\'c Plancka (sta\l{}a, niezmienna) \\
+$c_0, \hbar_0, G_0$ & Obserwowane warto\'sci sta\l{}ych w~warunkach referencyjnych \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Kosmologia i~czarne dziury}} \\
+\midrule
+$\Delta\Phi$ & Nadwy\.zka przestrzeni z~fluktuacji (\'zr\'od\l{}o ciemnej energii) \\
+$w_{\mathrm{DE}}(z)$ & R\'ownanie stanu ciemnej energii \\
+$\Srel$ & Entropia relacyjna: $-\int \rho_{\mathrm{cg}}\ln\rho_{\mathrm{cg}}\,\sqrt{h}\,d^3x$ \\
+$g_{\mu\nu}^{\mathrm{eff}}$ & Metryka efektywna wynikaj\k{a}ca z~konfiguracji $\Phi$ \\
+$\mathcal{I}(\mathcal{R})$ & Przepustowo\'s\'c informacyjna regionu $\mathcal{R}$ \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Formalizm i~sp\'ojno\'s\'c}} \\
+\midrule
+$\Ffield_{\!\mathrm{abs}}(x)$ & Absolutna funkcja stanu: $\Phi(x)^2/\PhiZero^2$; $= 0$ w~$\Nzero$ (def.~\ref{def:Fabs}) \\
+$\Floc(x)$ & Perturbacyjna funkcja stanu: $(\Phi(x) - \PhiZero)^2 = \PhiZero^2\varphi^2$ (def.~\ref{def:Floc}) \\
+$\Delta(x)$ & Lokalna asymetria chiralna ze znakiem ($\langle\hat{s}\rangle$); $\int\Delta\sqrt{h}\,d^3x = 0$ (ZS1) \\
+$T_{\mu\nu}^{(\Phi)}$ & Efektywny tensor energii-p\k{e}du pola $\Phi$ (stw.~\ref{prop:T-Phi}) \\
+$\mathcal{T}$ & Zbi\'or konfiguracji trywialnych (brak struktury) \\
+$\rho_{\mathrm{cg}}(x)$ & Grubozarniona g\k{e}sto\'s\'c substratu \\
+$\mu_\beta$ & Miara Gibbsa substratu \\
+$\beta_c$ & Krytyczna temperatura odwrotna substratu \\
+$G_{\mathrm{eff}}(k,a)$ & Efektywna sta\l{}a grawitacyjna zale\.zna od skali \\
+$\alpha_{\mathrm{eff}}$ & Bezwymiarowa sta\l{}a sprz\k{e}\.zenia: $q\PhiZero/(4\pi)$ \\
+$m_{\mathrm{sp}}$ & Przestrzenna masa efektywna: $\sqrt{3\gamma - 2\beta}$ (stw.~\ref{prop:vacuum-stability});
+  \textbf{dla $\beta = \gamma$}: $m_{\mathrm{sp}} = \sqrt{\gamma}$, a~zatem
+  $m_{\mathrm{sp}}^2 = \gamma > 0$ (perturbacje stabilne) \\
+$m_{\mathrm{cosmo}}$ & Kosmologiczna masa efektywna: $\sqrt{4c_0^2\gamma/3}$ z~r\'ownania~\eqref{eq:Phi-cosmo-linearized}; r\'o\.zna od $m_{\mathrm{sp}}$ (uwaga~\ref{rem:two-masses}) \\
+$\tau_0$ & Kosmologiczna skala czasowa: $\sqrt{\PhiZero}/(c_0\sqrt{3\gamma - 2\beta})$; dla $\beta=\gamma$: $\sqrt{\PhiZero}/(c_0\sqrt{\gamma})$ (def.~\ref{def:tau0}) \\
+$f(\Phi)$ & Zmodyfikowany cz\l{}on kinetyczny: $1 + 2\alpha\ln(\Phi/\PhiZero)$ \\
+$j_{\Ffield}^\mu$ & Pr\k{a}d funkcji stanu: $2(\Phi-\PhiZero)\partial^\mu\Phi$ (stw.~\ref{prop:F-current}) \\
+$\chi$ & Bezwymiarowe pole $\Phi/\PhiZero$; to\.zsame z~$\psi$
+  (u\.zywane g\l{}\'ownie w~sek.~\ref{sec:czarne}
+  i~dod.~\ref{app:ringdown}) \\
+$\iota$ & Inwersja dualno\'sci $\Nzero$: $\chi \mapsto 1/\chi$ (tw.~\ref{thm:N0-duality}) \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Defekty i~materia}} \\
+\midrule
+$m_{\mathrm{def}}$ & Masa radialnego kinka (defektu $\Phi$): $4\pi\int[\frac{1}{2}(\Phi')^2 + V_{\mathrm{eff}} - V_{\mathrm{eff}}(\PhiZero)]\,r^2 dr$ \\
+$\Phi_{\!0}$ & Warto\'s\'c pola $\Phi$ w~centrum defektu ($\neq \PhiZero$) \\
+$n$ & Liczba w\k{e}z\l{}\'ow profilu radialnego --- pokolenie cz\k{a}stki \\
+$e^a{}_\mu$ & Tetrada TGP: $g_{\mu\nu}^{\mathrm{eff}} = \eta_{ab}\,e^a{}_\mu\,e^b{}_\nu$ (def.~\ref{def:tetrada}) \\
+$\omega_\mu{}^{bc}$ & Koneksja spinowa wyznaczona z~tetrady TGP \\
+$\Psi$ & Pole Diraca sprz\k{e}\.zone z~$g_{\mu\nu}^{\mathrm{eff}}(\Phi)$ (hip.~\ref{hyp:dirac-TGP}) \\
+$n_Q$ & \L{}adunek topologiczny defektu (hip.~\ref{hyp:charge-topology}); $n_Q \in \mathbb{Z}$ \\
+$A_\mu^a$ & Pola cechowania emergentne z~substratu (hip.~\ref{hyp:gauge-substrate}) \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Ciemna energia --- formalizm}} \\
+\midrule
+$U(\varphi)$ & Potencja\l{} samosprz\k{e}\.zenia;
+  $\varphi = \Phi/\PhiZero - 1$ w~sek.~\ref{sec:ciemna},
+  $\varphi = \Phi/\PhiZero$ (tj.~$\psi$) w~sek.~8 ---
+  konwencja wynika z~kontekstu \\
+$\Lambda_{\mathrm{eff}}$ & Efektywna sta\l{}a kosmologiczna: resztkowy potencja\l{} pr\'o\.zniowy \\
+$\varphi_{\min}$ & Po\l{}o\.zenie minimum $U(\varphi)$; $\neq 0$ z~zasady zerowej sumy \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Topologia i~domeny}} \\
+\midrule
+$\mathcal{M}_k$ & Domena metryczna: sp\'ojny region z~$\Phi > 0$, $c > 0$ \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Sektor nielokalny}} \\
+\midrule
+$K(x{-}y)$ & J\k{a}dro nielokalne z~korelator\'ow substratu \\
+$\xi_{\mathrm{corr}}$ & D\l{}ugo\'s\'c korelacji substratu \\
+$\eta$ & Wyk\l{}adnik anomalnego skalowania \\
+$G_\varphi(k)$ & Propagator perturbacji $\delta\Phi$: $1/(k^2 + m_{\mathrm{eff}}^2)$ \\
+$k_{\max}$ & Obci\k{e}cie UV z~substratu: $\sim 1/\lP$ \\
+\midrule
+
+\multicolumn{2}{@{}l}{\textbf{Substrat --- parametry}} \\
+\midrule
+$\mu$ & Masa kinetyczna operatora $\hat{s}_i$ \\
+$m_0^2$ & Kwadrat masy go\l{}ej w~potencjale substratowym \\
+$\lambda_0$ & Sta\l{}a samosprz\k{e}\.zenia $\hat{s}^4$ \\
+$J$ & Sta\l{}a sprz\k{e}\.zenia mi\k{e}dzy s\k{a}siadami \\
+$z$ & Koordynacja substratu (liczba s\k{a}siad\'ow) \\
+$v$ & Pr\'o\.zniowa warto\'s\'c oczekiwana: $v^2 = (Jz - m_0^2)/\lambda_0$ \\
+$C_\beta, C_\gamma$ & Wsp\'o\l{}czynniki coarse-grainingu: $\beta,\gamma = f(\lambda_0, v, C_{\beta,\gamma})$ \\
+\end{longtable}
+
+% ----------------------------------------------------------
+\subsection{Tablica konwersji wymiarowej}\label{app:A-wymiary}
+% ----------------------------------------------------------
+
+W~r\'o\.znych cz\k{e}\'sciach tekstu sta\l{}e $\beta$, $\gamma$ wyst\k{e}puj\k{a}
+zar\'owno z~wymiarem $[\mathrm{L}^{-2}]$ (uk\l{}ad fizyczny) jak i~jako bezwymiarowe
+$\hat\beta, \hat\gamma$ (uk\l{}ad siatki). Poni\.zsza tablica zbiera konwencje:
+
+\begin{center}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Wymiar fiz.} & \textbf{Bezwym.} & \textbf{Konwersja} & \textbf{U\.zycie} \\
+\midrule
+$\beta$ & $[\mathrm{L}^{-2}]$ & $\hat\beta = \beta\,r_0^2$ & $\beta = \hat\beta/r_0^2$ & r\'ow.~pola~\eqref{eq:full-field-alt} \\
+$\gamma$ & $[\mathrm{L}^{-2}]$ & $\hat\gamma = \gamma\,r_0^2$ & $\gamma = \hat\gamma/r_0^2$ & potencja\l{}, masa \\
+$a_\Gamma$ & $[\mathrm{L}]$ & $1$ (jednostka siatki) & $r = a_\Gamma \xi$ & skrypty, solitony \\
+$m_{\mathrm{sp}}$ & $[\mathrm{L}^{-1}]$ & $\hat m = m_{\mathrm{sp}} a_\Gamma$ & $m_{\mathrm{sp}} = \sqrt{\gamma}$ & profil Yukawa \\
+$\kappa$ & $[-]$ & $\kappa = 3/(4\PhiZero)$ & --- & sek.~\ref{ssec:zunifikowana} \\
+$K_{\rm geo}$ & $[-]$ & $K_{\rm geo} = 1$ (normalizacja) & --- & sprz.~kinetyczne \\
+$V(\psi)$ & $[\mathrm{L}^{-2}]$ & $\hat V = V/\gamma$ & $V = \gamma\hat V$ & potencja\l{}~\eqref{eq:V-orig} \\
+$g_0$ & $[-]$ & $g_0 = \Phi_0/\PhiZero$ & --- & amplituda solitonu \\
+$A_{\rm tail}$ & $[-]$ & --- & --- & ogon oscylacyjny \\
+$r_{21}$ & $[-]$ & $r_{21} = (A_{\rm tail}^\mu/A_{\rm tail}^e)^4$ & --- & stosunek mas \\
+$\alpha_K$ & $[-]$ & $\alpha_K = 2\alpha\gamma/(\gamma r_0^2)$ & patrz dod.~\ref{app:ogon-masy} & sprz.~soliton. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Konwencja skrypt\'ow:} Wszystkie skrypty w~\texttt{scripts/}
+u\.zywaj\k{a} uk\l{}adu bezwymiarowego z~$a_\Gamma = 1$ (jednostka siatki)
+i~$\gamma = a_\Gamma = 0{,}040049$ (fizyczna warto\'s\'c). Przej\'scie
+do uk\l{}adu fizycznego: $r_{\rm phys} = a_\Gamma\,\xi$,
+$\Phi_{\rm phys} = \PhiZero\,\psi$.
+
+% ----------------------------------------------------------
+\subsection{Aksjomaty TGP --- podsumowanie}
+
+\begin{center}
+\begin{tabular}{@{}cp{12.5cm}@{}}
+\toprule
+\textbf{Nr} & \textbf{Tre\'s\'c} \\
+\midrule
+A1 & Przestrze\'n wynika z~obecno\'sci materii
+     (aksjomat~\ref{ax:przestrzen}) \\
+A2 & $\Nzero$ jest stanem odniesienia z~$\Ffield = 0$, $\Phi = 0$
+     (aksjomat~\ref{ax:N0}); wyprowadzalny z~$\Ffield$
+     (stw.~\ref{prop:N0-from-F}) \\
+A3 & Zerowa suma: dwa niezale\.zne warunki ---
+     (ZS1) chiralna: $\int\Delta\sqrt{h}\,d^3x = 0$;
+     (ZS2) przestrzenna: $\int(\Phi-\PhiZero)\sqrt{h}\,d^3x = 0$
+     (aksjomat~\ref{ax:zero}, precyzacja~\ref{rem:zero-precyzacja}) \\
+A4 & $\Nzero$ jest niestabilny: $\mu(\Ffield=0) = 0$
+     (aksjomat~\ref{ax:P3}); wyprowadzalny z~termodynamiki
+     substratu (stw.~\ref{prop:P3-deriv}) i~z~potencja\l{}u
+     (stw.~\ref{prop:P3-action}) \\
+A5 & Ka\.zde \'zr\'od\l{}o materii generuje wk\l{}ad do $\Phi$
+     (aksjomat~\ref{ax:zrodlo}) \\
+A6 & $c(\Phi) = c_0(\PhiZero/\Phi)^{1/2}$
+     (aksjomat~\ref{ax:c}); wyprowadzalny z~metryki konforemnej
+     (stw.~\ref{prop:conformal-unique}) \\
+A7 & $\hbar(\Phi) = \hbar_0(\PhiZero/\Phi)^{1/2}$
+     (aksjomat~\ref{ax:hbar}); \textbf{konsekwencja} A6 + sta\l{}o\'s\'c
+     $\lP$ + sp\'ojno\'s\'c propagatora (tw.~\ref{thm:exponents}) \\
+A8 & $G(\Phi) = G_0(\PhiZero/\Phi)$
+     (aksjomat~\ref{ax:G}); \textbf{konsekwencja} A6\,+\,A7 + sta\l{}o\'s\'c
+     $\lP$ (tw.~\ref{thm:exponents}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ----------------------------------------------------------
+\subsection{Za\l{}o\.zenia bazowe N-body TGP (N0-1 do N0-7)}
+\label{ssec:N0-lista}
+
+Poni\.zsza tabela definiuje \textbf{kanoniczne za\l{}o\.zenia N0-1 do N0-7}
+u\.zywane w~obliczeniach N-body i~w~sektorze FDM.
+S\k{a} one logicznie zale\.zne od aksjomat\'ow A1--A8 i~mo\.zna je traktowa\'c
+jako ich \textbf{graniczne (quasi-klasyczne) konsekwencje} przy $\Phi \approx \PhiZero$.
+
+\begin{center}
+\begin{tabular}{@{}clp{7.5cm}l@{}}
+\toprule
+\textbf{Nr} & \textbf{Tre\'s\'c}
+  & \textbf{Jawna posta\'c} & \textbf{\'Zr\'od\l{}o} \\
+\midrule
+N0-1
+  & Pole $\Phi$ jako jedyne \'zr\'od\l{}o metryki
+  & $g_{\mu\nu} = g_{\mu\nu}[\Phi]$;
+    $\Phi(x) = \PhiZero + \delta\Phi(x)$,
+    $|\delta\Phi| \ll \PhiZero$
+  & A1, A5 \\[4pt]
+N0-2
+  & T\l{}o referencyjne: jednorodne pr\'o\.zniowe $\Phi$
+  & $\Phi_{\mathrm{bg}} = \PhiZero = \mathrm{const}$;
+    warunek pr\'o\.zniowy $\beta = \gamma$
+    (stw.~\ref{prop:vacuum-condition})
+  & A1, thm.~\ref{prop:vacuum-condition} \\[4pt]
+N0-3
+  & Profil Yukawy dla pojedynczego \'zr\'od\l{}a
+  & $\delta\Phi(r) = -C\,e^{-m_{\mathrm{sp}}\,r}/r$;
+    $C > 0$ --- amplituda generacji przestrzennej
+  & A5, stw.~\ref{prop:vacuum-stability} \\[4pt]
+N0-4
+  & Zwi\k{a}zek amplitudy z~mas\k{a} \'zr\'od\l{}a
+    (\textbf{Droga B})
+  & $C = q\,M\,\PhiZero / (4\pi)$;
+    w~granicy izotropowej: $C = m_{\mathrm{sp}}/(2\sqrt{\pi})$
+    (skrypt \texttt{ex39})
+  & A5, stw.~\ref{prop:composite-profile} \\[4pt]
+N0-5
+  & Warunek pr\'o\.zniowy i~posta\'c potencja\l{}u efektywnego
+  & $\beta = \gamma$;
+    $V_{\mathrm{eff}}(g) = \frac{\gamma}{3}g^3 - \frac{\gamma}{4}g^4$,
+    gdzie $g = \Phi/\PhiZero$
+    (stw.~\ref{prop:vacuum-condition}, \ref{prop:nonlinear-stability})
+  & A1, aksjomat struktury $\Gamma$ \\[4pt]
+N0-6
+  & Masa pola przestrzenno\'sci (masa skalaru TGP)
+  & $m_{\mathrm{sp}}^2 = 3\gamma - 2\beta = \gamma$
+    (dla $\beta = \gamma$);
+    $m_{\mathrm{sp}} = \sqrt{\gamma}$
+    (stw.~\ref{prop:vacuum-stability}, prop.~\ref{prop:eps-th})
+  & N0-5 \\[4pt]
+N0-7
+  & Zmienno\'s\'c $G$ i~ograniczenie kosmologiczne
+  & $G(\Phi) = G_0\,\PhiZero/\Phi$ (A8);
+    przy $\Phi_{\mathrm{bg}} = \PhiZero\,\psi_{\mathrm{bg}}(t)$:
+    $\dot{G}/G = -\dot\psi/\psi$.
+    Dla zamro\.zonego pola ($|\dot\psi| \ll H\psi$, stw.~\ref{prop:Lambda-eff}):
+    $|\dot{G}/G| \lesssim H_0\,\delta_\psi$,
+    gdzie $\delta_\psi = |\psi_{\rm ini} - 1|\cdot e^{-\xi}$,
+    $\xi$ --- ca\l{}kowite t\l{}umienie Hubble'a
+    od momentu pocz\k{a}tkowego do $t_0$.
+    Przy $\psi_{\rm ini} = 7/6$:
+    (a)~oszacowanie analityczne ($\xi \approx 3/2$):
+    $\delta_\psi \approx 0{,}037$;
+    (b)~z~dominacj\k{a} DE ($\xi \approx 2$):
+    $\delta_\psi \approx 0{,}023$;
+    (c)~\textbf{pe\l{}na ewolucja FRW} (skrypt \texttt{p\_frw\_full\_evolution.py},
+    Radau ODE, $z = 10^9 \to 0$):
+    przy fizycznym $\kappa = 3/(2\Phi_0) = 0{,}061$:
+    $\psi(0) = 0{,}836$,
+    $|\dot{G}/G|/H_0 = 0{,}035$ --- czynnik $1{,}75\times$ powy\.zej LLR.
+    Skan $\kappa$: $\kappa_{\rm krit} \approx 0{,}03$--$0{,}04$
+    (tj.\ $\Phi_{0,\rm eff} \approx 37$--$50$) daje zgodno\'s\'c z~LLR.
+    Ograniczenie LLR: $|\dot{G}/G| < 0{,}02\,H_0$
+    (Williams et~al.\ 2004).
+    \textbf{Status: ZAMKNI\k{E}TY z~napi\k{e}ciem} czynnika~$1{,}75$
+    w~$|\dot{G}/G|$. Naprawa wymaga: precyzyjnego wyprowadzenia $\kappa$
+    z~akcji TGP (mo\.zliwy dodatkowy czynnik $\sim 1/2$
+    z~mapowania Jordan/Einstein) lub mechanizmu screeningu
+  & A8, N0-5, stw.~\ref{prop:psi-ini-derived} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Hierarchia aksjomat\'ow i~za\l{}o\.ze\'n N0]
+Za\l{}o\.zenia N0-1 do N0-6 s\k{a} \textbf{logi\-cznie zale\.zne}
+od aksjomat\'ow A1--A8 i~stanowi\k{a} ich spe\-cjali\-zacj\k{e}
+do re\.zimu quasi-klasycznego ($\Phi \approx \PhiZero$, s\l{}abe pole).
+Kolejno\'s\'c implikacji:
+\begin{equation*}
+  \underbrace{A1}_{\text{mat.}\to\Phi}
+  \;\Rightarrow\;
+  \underbrace{A5}_{\text{\'zr\'od\l{}o}}
+  \;\Rightarrow\;
+  \underbrace{\text{N0-1}}_{\delta\Phi\ll\PhiZero}
+  \;\Rightarrow\;
+  \underbrace{\text{N0-2}}_{\beta=\gamma}
+  \;\Rightarrow\;
+  \underbrace{\text{N0-3}}_{\text{Yukawa}}
+  \;\Rightarrow\;
+  \underbrace{\text{N0-4}}_{C=qM\Phi_0/(4\pi)}
+  \;\Rightarrow\;
+  \underbrace{\text{N0-5}}_{V_{\mathrm{eff}}}
+  \;\Rightarrow\;
+  \underbrace{\text{N0-6}}_{m_{\mathrm{sp}}=\sqrt{\gamma}}.
+\end{equation*}
+Ka\.zde N0-x mo\.zna traktowa\'c jako aksjomat roboczy \textbf{lub} jako
+twierdzenie wyprowadzalne z~poprzednich --- zale\.znie od poziomu opisu.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wyprowadzenie N0-5 $\Rightarrow$ N0-6: masa pola~$m_{\rm sp}$}%
+\label{ssec:N0-derivation}
+% -------------------------------------------------------------------
+
+\begin{proposition}[N0-6 wynika z~N0-5]%
+\label{prop:N0-6-from-N0-5}
+Przy warunku pr\'o\.zniowym $\beta = \gamma$ (N0-5),
+efektywny potencja\l{}
+\begin{equation}\label{eq:Veff-N0-5}
+  V_{\rm eff}(g) = \frac{\gamma}{3}\,g^3 - \frac{\gamma}{4}\,g^4,
+  \qquad g = \frac{\Phi}{\PhiZero},
+\end{equation}
+ma minimum w~$g_{\rm min} = 1$ (pr\'o\.znia) i~mas\k{e} pola:
+\begin{equation}\label{eq:msp-N0-6}
+  \boxed{m_{\rm sp}^2 = V_{\rm eff}''(1) = 3\gamma - 2\beta \;\overset{\beta=\gamma}{=}\; \gamma,
+  \qquad m_{\rm sp} = \sqrt{\gamma}.}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+\emph{Krok~1 (minimum).}
+$V_{\rm eff}'(g) = \gamma g^2 - \gamma g^3 = \gamma g^2(1-g)$.
+Zera: $g = 0$ (niestabilne) i~$g = 1$ (fizyczne minimum).
+
+\emph{Krok~2 (druga pochodna przy $g=1$).}
+$V_{\rm eff}''(g) = 2\gamma g - 3\gamma g^2$.
+Przy $g = 1$:
+$V_{\rm eff}''(1) = 2\gamma - 3\gamma = -\gamma$.
+
+\noindent\textbf{Uwaga o~znaku:} $V_{\rm eff}''(1) = -\gamma < 0$
+sugeruje \emph{nie minimum}. Wyja\'snienie: $V_{\rm eff}$
+jest \textbf{potencja\l{}em rolorodnym} (t\l{}umienie, nie oscylacja).
+Stabilno\'s\'c pr\'o\.zni sprawdzamy przez liniow\k{a}
+perturbacj\k{e} r\'ownania pola, nie przez drugą pochodn\k{a}~$V$.
+
+\emph{Krok~3 (linearyzacja r\'ownania pola).}
+Pe\l{}ne r\'ownanie pola TGP dla $g = 1 + \delta g$, $|\delta g| \ll 1$:
+\begin{equation}\label{eq:field-linearized}
+  \frac{1}{\PhiZero}\nabla^2(\delta g)
+  + \frac{2(\nabla\delta g)^2}{\delta g}
+  + V_{\rm eff}'(1+\delta g) = 0.
+\end{equation}
+Linearyzacja ($(\nabla\delta g)^2 \to 0$, $V_{\rm eff}'(1+\delta g) \approx
+V_{\rm eff}''(1)\,\delta g$):
+\begin{equation}\label{eq:delta-g-linear}
+  \nabla^2(\delta g) - m_{\rm sp}^2\,\delta g = 0,
+  \qquad
+  m_{\rm sp}^2 \;=\; -\PhiZero\,V_{\rm eff}''(1) \;=\; -\PhiZero(-\gamma)
+  \;=\; \gamma\,\PhiZero.
+\end{equation}
+W~jednostkach $\PhiZero = 1$ (bezwymiarowe): $m_{\rm sp}^2 = \gamma$.
+
+\emph{Krok~4 (profil Yukawy --- N0-3).}
+R\'ownanie~\eqref{eq:delta-g-linear} ma sferyczno-symetryczne
+rozwi\k{a}zanie zanikaj\k{a}ce w~niesko\'nczono\'sci:
+$\delta g(r) = -\,C\,e^{-m_{\rm sp}\,r}/r$,
+co jest dok\l{}adnie profilem Yukawy N0-3 z~\textbf{mas\k{a}
+$m_{\rm sp} = \sqrt{\gamma}$}~(N0-6). \qed
+
+\medskip\noindent
+{\small \textbf{Weryfikacja numeryczna:} skrypt
+\texttt{n0\_axioms\_chain\_verification.py}
+(katalog \texttt{scripts/}), testy T-N0-5 i~T-N0-6: 2/2~PASS.}
+\end{proof}
+
+\begin{remark}[Interpretacja fizyczna $m_{\rm sp}$]\label{rem:msp-physics}
+Masa $m_{\rm sp} = \sqrt{\gamma}$ okre\'sla \textbf{zasi\k{e}g}
+odchyle\'n od pr\'o\.zni: perturbacja $\delta\Phi$ na skali
+$r \ll m_{\rm sp}^{-1}$ jest silna (re\.zim wewn\k{e}trzny),
+a~dla $r \gg m_{\rm sp}^{-1}$ zanika eksponencjalnie (re\.zim Yukawa).
+
+W~kosmologii: $m_{\rm sp}^{-1} = 1/\sqrt{\gamma}$.
+Z~$\gamma \sim H_0^2/c_0^2$: $m_{\rm sp}^{-1} \sim c_0/H_0 = R_H$
+(horyzont Hubble'a). Pole TGP ma zasi\k{e}g rz\k{e}du rozmiaru
+Wszech\'swiata --- co jest sp\'ojne z~rol\k{a} $\Phi$ jako
+pola generuj\k{a}cego przestrze\'n w~skali kosmologicznej.
+
+Predykcja falsyfikowalna (Kill-shot K-G): cz\k{e}stotliwo\'s\'c
+odci\k{e}cia modu oddechowego GW:
+$f_{\rm cut} = c_0 m_{\rm sp}/(2\pi) \approx H_0/(2\pi)
+\approx 3{,}7 \times 10^{-18}\,\mathrm{Hz}$.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection*{Disambiguacja trzech obiekt\'ow zwanych ,,potencja\l{}em''}
+\label{app:A-potential-disambiguation}
+% -------------------------------------------------------------------
+
+W~tek\'scie TGP wyst\k{e}puj\k{a} trzy r\'o\.zne obiekty okre\'slane
+s\l{}owem \emph{potencja\l{}}, pe\l{}ni\k{a}ce zasadniczo inne role.
+Poni\.zsza tabela rozr\'o\.znia je jednoznacznie.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{2.6cm}p{2.6cm}p{3.0cm}p{4.8cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Nazwa} & \textbf{Argument} & \textbf{Rola i~lokalizacja} \\
+\midrule
+$V_{\mathrm{eff}}(r)$
+  & Potencja\l{} mi\k{e}dzycz\k{a}stkowy
+  & $r$ --- odleg\l{}o\'s\'c mi\k{e}dzy cz\k{a}stkami
+  & Si\l{}a mi\k{e}dzycz\k{a}stkowa; trzy re\.zimy TGP;
+    $F = -\partial_r V_{\mathrm{eff}}$;
+    \textbf{sek03}, tw.~\ref{thm:uniqueness} \\
+\midrule
+$V_{\mathrm{mod}}(\varphi)$
+  & Potencja\l{} samopola
+  & $\varphi = \Phi/\PhiZero$ --- znormalizowane pole t\l{}a
+  & Dynamika jednorodnego t\l{}a $\Phi$; decyduje o~ewolucji
+    kosmologicznej i~stabilno\'sci pr\'o\.zni;
+    $V_{\mathrm{mod}} = \beta\varphi^2 - \gamma\varphi^3$;
+    \textbf{sek05/sek08} (\S\ref{ssec:rownanko}) \\
+\midrule
+$V_{\mathrm{pot}}(\psi)$
+  & Potencja\l{} dzia\l{}ania kosmologicznego
+  & $\psi = \sqrt{\Phi}$ --- pole pierwiastkowe
+  & Dzia\l{}anie skalarne w~FLRW; powi\k{a}zany z~$w_{\mathrm{DE}}$;
+    pojawia si\k{e} w~r\'ownaniu Kleina--Gordona dla $\psi$;
+    \textbf{sek05/sek08} (\S\ref{ssec:architektura}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Zwi\k{a}zek mi\k{e}dzy potencja\l{}ami]\label{rem:A-potential-rel}
+  Trzy potencja\l{}y s\k{a} ze sob\k{a} powi\k{a}zane, lecz \textbf{nie
+  s\k{a} to\.zsame}:
+  \begin{itemize}[nosep]
+    \item $V_{\mathrm{eff}}(r)$ wynika z~ca\l{}kowania $\mathcal{N}[\Phi]$
+      wzgl\k{e}dem po\l{}o\.zenia --- to potencja\l{} dwucz\k{a}stkowy,
+      zale\.zny od geometrii (odleg\l{}o\'sci).
+    \item $V_{\mathrm{mod}}(\varphi)$ to potencja\l{} jednocz\k{a}stkowy
+      w~przestrzeni warto\'sci pola --- odpowiada czci cz\l{}onu
+      $\mathcal{N}[\Phi]$ bez gradient\'ow ($\nabla\Phi = 0$).
+    \item $V_{\mathrm{pot}}(\psi)$ jest reparametryzacj\k{a}
+      $V_{\mathrm{mod}}$ dla pola $\psi = \sqrt\Phi$, wygodniejsz\k{a}
+      w~zapisie kowariantnego dzia\l{}ania.
+  \end{itemize}
+  Gdy piszemy po prostu ,,potencja\l{} TGP'' bez dodatkowego
+  okre\'slenia, zawsze powinno by\'c jasne z~kontekstu,
+  kt\'ory z~trzech obiekt\'ow mamy na my\'sli.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Mapa zale\.zno\'sci logicznych TGP}\label{ssec:dependency-map}
+% -------------------------------------------------------------------
+
+Poni\.zsza mapa pokazuje \textbf{kluczowe \'la\'ncuchy dedukcji} od
+aksjomat\'ow do predykcji testowalnych.
+Dla ka\.zdego kroku podajemy: (i)~wej\'scie logiczne,
+(ii)~wynik po\'sredni lub ko\'ncowy z~etykiet\k{a} statusu
+(\S\ref{rem:status-levels}), (iii)~faz\k{e} rozwoju teorii.
+
+\subsubsection*{\'La\'ncuch I\@.\ --- Substrat $\Gamma$ i~operator $\mathcal{D}$}
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{3.5cm}c>{\raggedright}p{4.5cm}cl@{}}
+\toprule
+\textbf{Wej\'scie} & $\Rightarrow$ & \textbf{Wynik} & \textbf{Status} & \textbf{Faza} \\
+\midrule
+A1 (substrat $\Gamma$, $K(\varphi)=\varphi^4$)
+  & $\Rightarrow$
+  & \texttt{prop:substrate-action}: dzia\l{}anie $S_\Gamma$
+  & \statuslabel{Propozycja}
+  & I.A \\
+\texttt{prop:substrate-action}
+  & $\Rightarrow$
+  & $\alpha = 2$ (wn.~\ref{cor:alpha-fixed}): cz\l{}on gradientowy
+  & \statuslabel{Twierdzenie}
+  & I.A \\
+\texttt{prop:substrate-action}
+  & $\Rightarrow$
+  & \texttt{thm:D-uniqueness}: jedyno\'s\'c operatora $\mathcal{D}$
+  & \statuslabel{Twierdzenie}
+  & I.B \\
+$K(\varphi)=\varphi^4$, $\mathbb{Z}_2$
+  & $\Rightarrow$
+  & \texttt{rem:minimal-nonlinearity}: minimalno\'s\'c
+  & \statuslabel{Propozycja}
+  & I.A \\
+A1, $K(\varphi)$, $\beta=\gamma$
+  & $\Rightarrow$
+  & \texttt{prop:vacuum-condition}: pr\'o\.znia stabilna
+  & \statuslabel{Twierdzenie}
+  & I.B \\
+\texttt{prop:vacuum-condition}
+  & $\Rightarrow$
+  & \texttt{prop:vacuum-stability}: $m_{\mathrm{sp}}=\sqrt{\gamma}$
+  & \statuslabel{Twierdzenie}
+  & I.B \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{\'La\'ncuch II\@.\ --- Sta\l{}e dynamiczne i~falsyfikowalno\'s\'c}
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{3.5cm}c>{\raggedright}p{4.5cm}cl@{}}
+\toprule
+\textbf{Wej\'scie} & $\Rightarrow$ & \textbf{Wynik} & \textbf{Status} & \textbf{Faza} \\
+\midrule
+A6 + sta\l{}o\'s\'c $\lP$
+  & $\Rightarrow$
+  & A7, A8: $\hbar(\Phi)$, $G(\Phi)$
+  & \statuslabel{Twierdzenie}
+  & I.C \\
+A1--A8
+  & $\Rightarrow$
+  & \texttt{thm:exponents}: wyk\l{}adniki $(-\tfrac{1}{2}, -\tfrac{1}{2}, -1)$
+  & \statuslabel{Twierdzenie}
+  & I.C \\
+A6 + jednorodne t\l{}o
+  & $\Rightarrow$
+  & $c_T = c_0$ (stw.~\ref{prop:cT}); zgodne z~GW170817
+  & \statuslabel{Twierdzenie}
+  & I.C \\
+A1, A5, N0-1 do N0-4
+  & $\Rightarrow$
+  & \texttt{thm:newton}: grawitacja Newtona
+  & \statuslabel{Twierdzenie}
+  & II.A \\
+\texttt{thm:newton} + PPN
+  & $\Rightarrow$
+  & $\gamma_{\mathrm{PPN}}=1$, $\beta_{\mathrm{PPN}}=1$
+  & \statuslabel{Propozycja}
+  & II.A \\
+A8 + ewolucja $\Phi_{\mathrm{bg}}(z)$
+  & $\Rightarrow$
+  & $\Delta G/G \lesssim H_0\varepsilon$ (N0-7)
+  & \statuslabel{Program}
+  & II.B \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{\'La\'ncuch III\@.\ --- Kosmologia i~perturbacje}
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{3.5cm}c>{\raggedright}p{4.5cm}cl@{}}
+\toprule
+\textbf{Wej\'scie} & $\Rightarrow$ & \textbf{Wynik} & \textbf{Status} & \textbf{Faza} \\
+\midrule
+A1, A3 (ZS2), $\beta=\gamma$
+  & $\Rightarrow$
+  & $\Lambda_{\mathrm{eff}} \approx c_0^2\gamma/3$ (stw.~\ref{prop:cosmo-system})
+  & \statuslabel{Propozycja}
+  & II.C \\
+\texttt{prop:cosmo-system}
+  & $\Rightarrow$
+  & \texttt{sssec:cosmo-complete}: pe\l{}ny uk\l{}ad FRW
+  & \statuslabel{Propozycja}
+  & II.C \\
+\texttt{prop:cosmo-system} + $\psi_{\mathrm{ini}}$
+  & $\Rightarrow$
+  & \texttt{prop:ghost-free-MS}: brak ghost\'ow, $c_s^2=c_0^2$
+  & \statuslabel{Propozycja}
+  & III.A \\
+\texttt{prop:ghost-free-MS} + $v_k$ (num.)
+  & $\Rightarrow$
+  & $n_s - 1$, $r = P_T/P_S$ (C.2B --- \statuslabel{Program})
+  & \statuslabel{Program}
+  & III.B \\
+T\l{}o kosmol.\ + $T_\Gamma(z)$
+  & $\Rightarrow$
+  & $w_{\mathrm{DE}}(z)$, $\eta_{\mathrm{slip}}$ (predykcje)
+  & \statuslabel{Hipoteza}
+  & II.C \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{\'La\'ncuch IV\@.\ --- Materia, defekty i~generacje}
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{3.5cm}c>{\raggedright}p{4.5cm}cl@{}}
+\toprule
+\textbf{Wej\'scie} & $\Rightarrow$ & \textbf{Wynik} & \textbf{Status} & \textbf{Faza} \\
+\midrule
+A1 + topologia $\mathbb{Z}_2$
+  & $\Rightarrow$
+  & kink topologiczny, $n\in\mathbb{Z}$ (D.1a)
+  & \statuslabel{Twierdzenie}
+  & IV.A \\
+D.1a + ZS1
+  & $\Rightarrow$
+  & spin $1/2$, statystyki Fermiego (D.1b--c)
+  & \statuslabel{Propozycja}
+  & IV.A \\
+A1 + $a_\Gamma$, WKB
+  & $\Rightarrow$
+  & trzy pokolenia $N_{\mathrm{gen}}=3$
+  & \statuslabel{Propozycja}
+  & IV.B \\
+$N_{\mathrm{gen}}=3$ + warunek bif.\ TGP
+  & $\Rightarrow$
+  & $Q_{\mathrm{Koide}} = 2/3$ (odtwarzanie)
+  & \statuslabel{Propozycja}
+  & IV.B \\
+$Q=2/3$ + $r_{21}^{\mathrm{PDG}}$
+  & $\Rightarrow$
+  & $r_{31}$ (predykcja $\pm 0.016\%$); D.3
+  & \statuslabel{Propozycja}
+  & IV.B \\
+OP-3 (otwarty)
+  & $\Rightarrow$
+  & $\alpha_K$ z~$a_\Gamma$ $\Rightarrow$ N$_\mathrm{param}=2$
+  & \statuslabel{Program}
+  & IV.C \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[G\l{}\'owna hipoteza pomostowa]\label{rem:bridge-summary}
+Centralnym \textbf{za\l{}o\.zeniem niewyprowadzalnym} pozosta\l{}ym w~TGP jest krok 3
+mostu substrat~$\to$~metryka (uw.~\ref{rem:metric-bridge}):
+\begin{equation*}
+  g_{00} = -\frac{\Phi_0}{\Phi}
+  \quad\text{z warunku}\quad
+  c_{\mathrm{lok}}\cdot c_{\mathrm{graw}} = c_0^2.
+\end{equation*}
+Wszystkie \l{}a\'ncuchy I--IV s\k{a} poprawne pod warunkiem akceptacji
+tego kroku.
+Bez niego TGP dostarcza dynamik\k{e} pola $\Phi$, ale nie geometri\k{e}
+Lorentzowsk\k{a}.
+\end{remark}

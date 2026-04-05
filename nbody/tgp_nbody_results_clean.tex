@@ -1,0 +1,867 @@
+% =============================================================================
+% tgp_nbody_results_clean.tex
+% Clean publication-ready draft: novel results from TGP N-body analysis
+%
+% Self-contained document (standalone compilation with pdflatex).
+% Can also be \input{}-ed into the main TGP manuscript as a section/appendix.
+%
+% Notation synchronized with: nbody/pairwise.py, nbody/eom_tgp.py,
+% nbody/three_body_force_exact.py, nbody/tgp_nbody_lagrangian_eom.tex.
+%
+% Mateusz Serafin, 2026
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage[pdfusetitle,hidelinks]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{natbib}
+\bibliographystyle{unsrtnat}
+\pdfstringdefDisableCommands{%
+  \def\textup#1{#1}%
+  \def\textsc#1{#1}%
+  \def\msp{m\_sp}%
+  \def\Ceff{C\_eff}%
+}
+\usepackage{enumitem}
+
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vL}{\mathbf{L}}
+\newcommand{\vP}{\mathbf{P}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\dij}{d_{ij}}
+\newcommand{\msp}{m_{\rm sp}}
+\newcommand{\lmax}{\lambda_{\max}}
+\newcommand{\drep}{d_{\rm rep}}
+\newcommand{\dwell}{d_{\rm well}}
+\newcommand{\Ceff}{C_{\rm eff}}
+
+\newtheorem{result}{Result}
+\newtheorem{prediction}{Prediction}
+
+\title{%
+  \textbf{N-body dynamics of Topology-Generated Potential:}\\[4pt]
+  Earnshaw violation, chaos suppression,\\
+  and the EFT origin of Yukawa coupling%
+}
+\author{Mateusz Serafin}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We derive and verify numerically the complete $N$-body dynamics arising
+from the TGP scalar-field Lagrangian $\mathcal{L}[\Phi]$ with quartic
+self-interaction.  The potential decomposes as $V = V_2 + V_3^{\rm irr}$,
+where $V_2$ is a closed-form pairwise interaction (gradient + repulsive +
+confining) and $V_3$ is an irreducible three-body term computed via a
+Feynman two-parameter integral.
+
+Seven principal results emerge.  (1)~TGP breaks the Earnshaw theorem:
+equilateral three-body configurations admit stable static equilibria with
+all normal modes positive ($\omega^2 > 0$), whereas Newton gives marginal
+modes ($\omega^2 \approx 0$) for all tested parameter pairs $(\beta,C)$.
+(2)~TGP suppresses three-body chaos by 35--45\% (measured via the
+maximal Lyapunov exponent) for $\beta \gtrsim 0.025$ at initial
+conditions involving close encounters; the effect is IC-dependent and
+enhanced by $V_3$.  (3)~The Yukawa source coupling $\Ceff$ is derived
+from EFT projection of the classical topological defect.
+(4)~Classical soliton interaction is \emph{not} Yukawa (oscillatory,
+power-law decay), establishing that the Yukawa law requires the EFT mass
+gap.  (5)~The irreducible three-body integral admits a semi-analytic
+multipole representation with controlled accuracy ($<0.01\%$ at
+$L_{\max}=15$).  (6)~The ratio $|V_3/V_2|$ is mapped across the
+dimensionless parameter $t = \msp\,d$, showing perturbative behaviour
+($\sim1\%$) in the Lyapunov regime and exponential suppression for
+$t > 3$.  (7)~Closed-form expressions for the equilibrium distances
+$\drep$ and $\dwell$, the radial normal-mode frequency
+$\omega_{\rm rad}^2$, and the TGP Hill sphere radius are derived and
+verified; TGP generically expands the Hill sphere relative to Newton.
+(8)~For unequal masses, the phase diagram is governed by a critical
+coupling $\beta_{\rm crit} = \tfrac{3}{2}\sqrt{\gamma(C_1+C_2)}$;
+the escape velocity and a three-body breathing mode are derived in
+closed form.
+\end{abstract}
+
+\tableofcontents
+
+% =====================================================================
+\section{Introduction}
+\label{sec:introduction}
+% =====================================================================
+
+The gravitational $N$-body problem has been a cornerstone of
+mathematical physics since Newton.  In the restricted three-body case,
+the problem exhibits chaotic trajectories, non-integrability (Bruns
+theorem~\citep{Bruns1887}), and the impossibility of stable static
+equilibria (Earnshaw's theorem~\citep{Earnshaw1842}).  Modern
+treatments range from the classical monographs of
+\citet{Valtonen2006} and \citet{Heggie2003} to statistical approaches
+for chaotic outcomes~\citep{StoneLeigh2019,Manwadkar2021}.  The Burrau
+problem~\citep{Burrau1913,Szebehely1967} remains a standard benchmark
+for numerical integrators.
+
+In modified-gravity theories, $N$-body dynamics are altered by
+additional scalar or vector degrees of freedom.  Cosmological $N$-body
+codes incorporating scalar-field modifications include
+MG-GADGET~\citep{Puchwein2013}, ECOSMOG~\citep{Li2012}, and
+ISIS~\citep{Llinares2014}; a systematic comparison was carried out
+by~\citet{Winther2015}.  These codes focus on large-scale structure
+($\gtrsim$~Mpc), and screening mechanisms
+(chameleon~\citep{Khoury2004}, Vainshtein~\citep{Vainshtein1972})
+play a central role.  At the fundamental level, scalar-tensor
+theories~\citep{Damour1992} introduce a Yukawa correction to the
+Newtonian potential, constrained by fifth-force
+experiments~\citep{Adelberger2003,Murata2015} and solar-system
+tests~\citep{Will2014,Bertotti2003}.
+
+A separate line of research concerns \emph{few-body} systems with
+short-range (Yukawa-type) interactions, where three-body forces can
+produce qualitatively new phenomena.  The Efimov
+effect~\citep{Efimov1970} --- an infinite tower of three-body bound
+states near a two-body resonance --- illustrates how irreducible
+three-body physics can dominate; see~\citet{Braaten2006}
+and~\citet{Naidon2017} for reviews.  While the Efimov effect is
+typically studied in quantum mechanics, the underlying principle ---
+that non-additive three-body forces qualitatively alter the spectrum
+--- is relevant to any system with short-range interactions.
+
+The Topology-Generated Potential (TGP)~\citep{Serafin2026} is a
+scalar-field theory in which space is emergent from a discrete
+substrate.  The field Lagrangian naturally produces a quartic
+self-interaction that, upon expansion around solitonic sources, yields:
+(i)~a pairwise potential $V_2$ combining Newtonian attraction, a
+repulsive barrier, and short-range confinement;  (ii)~an irreducible
+three-body potential $V_3$ arising from the $\Phi^4$ vertex.  This
+paper derives the complete $N$-body dynamics from the TGP Lagrangian
+and presents eight principal results, each verified by a dedicated
+regression suite (59/59 PASS, 102 active scripts).
+
+The paper is organized as follows.
+Section~\ref{sec:eom} derives the equations of motion.
+Section~\ref{sec:earnshaw} establishes Earnshaw violation (Result~1).
+Section~\ref{sec:chaos} quantifies chaos suppression (Result~2).
+Section~\ref{sec:pathC} derives the EFT Yukawa coupling (Result~3).
+Section~\ref{sec:soliton-interaction} contrasts classical soliton
+interaction with the Yukawa law (Result~4).
+Sections~\ref{sec:multipole}--\ref{sec:v3v2} analyze the three-body
+integral and its regime map (Results~5--6).
+Section~\ref{sec:analytical} derives analytical equilibria and the
+Hill criterion (Result~7).
+Section~\ref{sec:unequal} treats unequal masses and the phase diagram
+(Result~8).
+Section~\ref{sec:summary} summarizes the deductive chain.
+
+% =====================================================================
+\section{Equations of motion from TGP Lagrangian}
+\label{sec:eom}
+% =====================================================================
+
+\subsection{Setup}
+
+We consider $N$ point sources with positions $\vx_i \in \bR^3$ and
+source strengths $C_i > 0$ serving as both gravitational ``charge'' and
+inertial mass ($m_i \equiv C_i$).  The TGP Lagrangian yields a
+total potential $V = V_2 + V_3$ with the following closed-form expressions.
+
+\subsection{Pairwise potential $V_2$}
+
+For bodies $i \neq j$ at separation $\dij = |\vx_i - \vx_j|$,
+\begin{equation}
+  \boxed{
+  V_{2,ij}(\dij)
+  = \underbrace{-\frac{4\pi\,C_i C_j}{\dij}}_{\text{gradient (attractive)}}
+  + \underbrace{\frac{8\pi\,\beta\,C_i C_j}{\dij^2}}_{\text{repulsive ($\beta$-term)}}
+  - \underbrace{\frac{12\pi\,\gamma\,C_i C_j\,(C_i + C_j)}{\dij^3}}_{\text{confining ($\gamma$-term)}},
+  }
+  \label{eq:V2}
+\end{equation}
+with total $V_2 = \sum_{i<j} V_{2,ij}$.  The three terms arise from the
+$(\nabla\Phi)^2$, $\Phi^3$, and $\Phi^4$ sectors of the TGP action,
+respectively.  The hierarchy $1/d \gg 1/d^2 \gg 1/d^3$ at large
+separation ensures Newtonian behaviour at long range; at short distances
+the $\beta$-repulsion creates a barrier $\drep$ (when it exists) and the
+$\gamma$-confinement creates a well $\dwell$.
+
+\subsection{Irreducible three-body potential $V_3$}
+
+For each unordered triplet $\{i,j,k\}$, the $\Phi^4$ vertex contributes
+\begin{equation}
+  \boxed{
+  V_{3,ijk}
+  = -6\,\gamma\,C_i C_j C_k \; I_Y(d_{ij}, d_{ik}, d_{jk};\, \msp),
+  }
+  \label{eq:V3}
+\end{equation}
+where $I_Y$ is the triple-overlap integral in the Feynman
+(Schwinger-parameter) representation:
+\begin{equation}
+  I_Y = 2 \int_{\Delta_2}
+    \Delta^{-3/2}\;
+    K_0\!\Bigl(\msp\sqrt{Q/\Delta}\Bigr)\;
+    \mathrm{d}\alpha,
+  \label{eq:IY-feynman}
+\end{equation}
+with $\Delta = \alpha_1\alpha_2 + \alpha_1\alpha_3 + \alpha_2\alpha_3$,
+$Q = \alpha_2 d_{ij}^2 + \alpha_1 d_{ik}^2 + \alpha_3 d_{jk}^2$,
+the integral being over the standard 2-simplex
+$\Delta_2 = \{\alpha \geq 0,\; \alpha_1+\alpha_2+\alpha_3=1\}$.
+The screening mass is
+\begin{equation}
+  \msp = \sqrt{3\gamma - 2\beta}.
+  \label{eq:msp}
+\end{equation}
+In the unscreened (Coulomb) limit $\msp \to 0$:
+$I \to 8\pi^2/(d_{ij}+d_{ik}+d_{jk})$.
+
+\subsection{Equations of motion}
+
+With $V = V_2 + \sum_{i<j<k} V_{3,ijk}$, the Euler--Lagrange equations
+give
+\begin{equation}
+  C_i\,\ddot\vx_i = \vF_i = -\nabla_{\vx_i} V,
+  \label{eq:eom}
+\end{equation}
+with exact translational invariance ($\sum_i \vF_i = 0$),
+$SO(3)$ rotational invariance ($\sum_i \vx_i \times \vF_i = 0$), and
+Hamiltonian structure ($H = T + V$ conserved).
+
+\medskip
+\noindent\textbf{Remark.}  $V_2$ and $V_3$ are the \emph{only} terms arising
+from the standard TGP $\Phi^4$ Lagrangian for point-source superposition;
+there is no free structural parameter beyond $(\beta, \gamma, \{C_i\})$.
+
+% =====================================================================
+\section{Result 1: Breaking Earnshaw's theorem}
+\label{sec:earnshaw}
+% =====================================================================
+
+\begin{result}[Earnshaw violation]
+For equilateral three-body configurations at the confining equilibrium
+$\dwell$, TGP produces \textbf{stable} static equilibria (all
+$\omega^2 > 0$), while Newton yields marginal modes
+($\omega^2 \approx 0$) for all tested $(\beta, C)$ pairs.
+\end{result}
+
+\subsection{Background}
+
+Earnshaw's theorem~\citep{Earnshaw1842} states that no static
+equilibrium of point masses under an inverse-square-law force can be
+stable in all directions.
+In TGP, the higher-order terms ($1/d^2$ repulsion, $1/d^3$ confinement)
+create an effective well $\dwell$ where $V'_2(\dwell) = 0$ with
+$V''_2(\dwell) > 0$.  The question is whether the full $3N$-dimensional
+Hessian $\partial^2 V/\partial x_{i\alpha}\partial x_{j\beta}$ has all
+non-translational eigenvalues positive.
+
+\subsection{Normal-mode analysis}
+
+We compute the mass-weighted dynamical matrix
+$D = M^{-1/2}\,H\,M^{-1/2}$ where $H$ is the $3N \times 3N$ Hessian
+and $M = \mathrm{diag}(C_1, C_1, C_1, C_2, \ldots)$.  Normal-mode
+frequencies satisfy $\omega_k^2 = \text{eigenvalues of } D$, with
+translational zero modes removed.
+
+\subsection{Results}
+
+For an equilateral triangle ($N=3$) on $\dwell$, scanning
+$\beta \in [0.5, 5.0]$ and $C \in [0.05, 0.50]$:
+
+\begin{center}
+\begin{tabular}{lccl}
+  \toprule
+  \textbf{Mode type} & \textbf{Newton $\omega^2$} & \textbf{TGP $\omega^2$}
+    & \textbf{Character} \\
+  \midrule
+  Breathing (radial) & $\sim 0$ (marginal) & $0.0083$ & Radial-fraction $= 1.0$ \\
+  Mixed $\times 2$ ($C_3$ degen.)  & $\sim 0$ & $0.0042$ & Tangential + radial \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[nosep]
+  \item Newton: \textbf{marginal} in 11/11 $(\beta, C)$ points (Earnshaw).
+  \item TGP: \textbf{stable} in 11/11 points --- all physical modes
+        $\omega^2 > 0$.
+  \item Effect of $V_3$: mildly destabilizes 1 of 3 modes (toward marginal),
+        but 2 modes remain stable.
+  \item 5-gon ($N=5$): TGP creates a \emph{saddle} ($\omega^2 = -20.7$
+        tangential, $+24.7$ radial) --- stabilization is
+        \textbf{geometry-specific}, not universal.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Significance.}  TGP is the only known modification of
+gravity that breaks Earnshaw for static $N$-body configurations
+\emph{without rotation or external fields} --- purely from $V(\Phi)$.
+
+% =====================================================================
+\section{Result 2: Chaos suppression in the three-body problem}
+\label{sec:chaos}
+% =====================================================================
+
+\begin{prediction}[Falsifiable]
+For $\beta \gtrsim 0.025$ and initial conditions with close encounters,
+TGP suppresses the maximal Lyapunov exponent by 35--45\%\textup{:}
+\begin{equation}
+  \frac{\lmax^{\rm TGP}}{\lmax^{\rm Newton}} \approx 0.55\text{--}0.65.
+  \label{eq:ratio}
+\end{equation}
+\end{prediction}
+
+\subsection{Methodology}
+
+We set $G_{\rm Newton} = 4\pi$ so that the leading TGP term
+$V_{\rm grad} = -4\pi C_i C_j / d$ reproduces Newton in the limit
+$\beta \to 0$.  Kinetic energy is matched so that
+$H_{\rm TGP} = H_{\rm Newton}$ on the same configuration (Burrau
+pythagorean IC~\citep{Burrau1913,Szebehely1967} with $v = 0$; energy matching via velocity scaling or
+random velocity generation with fixed RNG seed for reproducibility).
+
+The maximal Lyapunov exponent $\lmax$ is computed via the Benettin
+algorithm~\citep{Benettin1980}:
+\begin{enumerate}[nosep]
+  \item Symplectic leapfrog (Velocity Verlet) for the base trajectory.
+  \item Coupled tangent map with the full analytical Jacobian
+        $J_{i\alpha,j\beta} = \partial a_{i,\alpha}/\partial x_{j,\beta}$
+        (chain rule through the Hessian of $I_Y$ in the distance variables).
+  \item QR renormalization at regular intervals; accumulation of
+        $\sum \log\|R_{kk}\|$.
+\end{enumerate}
+
+For the full spectrum ($k = 6N = 18$ exponents), Hamiltonian conservation
+is verified: $|\sum_i \lambda_i| \sim 10^{-13}$.
+
+\subsection{Beta scan with $V_2 + V_3$ (Burrau IC)}
+
+\begin{center}
+\begin{tabular}{ccccl}
+  \toprule
+  $\beta$ & ratio($V_2{+}V_3$) & ratio($V_2$) & $V_3$ effect & Classification \\
+  \midrule
+  0.020 & 1.09 & 1.91 & $-43\%$ & comparable \\
+  0.050 & 0.52 & 0.67 & $-22\%$ & \textsc{suppress} \\
+  0.080 & 0.58 & 0.91 & $-36\%$ & \textsc{suppress} \\
+  0.120 & 0.63 & 0.99 & $-36\%$ & \textsc{suppress} \\
+  0.200 & 0.65 & 0.85 & $-24\%$ & \textsc{suppress} \\
+  0.350 & 0.60 & 0.76 & $-21\%$ & \textsc{suppress} \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[nosep]
+  \item 9/10 $\beta$-points: \textsc{suppress} (with $V_3$) vs 7/10
+        ($V_2$-only).
+  \item $\beta_{\rm crit}(V_3) \approx 0.025$ vs
+        $\beta_{\rm crit}(V_2) \approx 0.042$ --- \textbf{$V_3$ lowers
+        threshold by $\sim40\%$}.
+  \item Convergence: ratio stable from $t = 2$ to $t = 6$.
+\end{itemize}
+
+\subsection{IC-dependence (multi-IC scan)}
+
+\begin{center}
+\begin{tabular}{lcc}
+  \toprule
+  \textbf{IC type} & \textbf{SUPPRESS fraction} & \textbf{Mechanism} \\
+  \midrule
+  Burrau (close encounters) & 75\% & Potential softening at small $d$ \\
+  Equilateral (symmetric) & 0\% & No close encounters \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+The suppression mechanism is \emph{not} the repulsive barrier $\drep$
+(which does not exist for typical $C$ values; it requires
+$\beta \gg 1$).  Rather, TGP's higher-order terms ($1/d^2$, $1/d^3$)
+\textbf{effectively soften the potential} at close encounters, reducing
+the exponential divergence of nearby trajectories.  Symmetric ICs
+(equilateral) never enter the close-encounter regime and thus show no
+suppression.
+
+\subsection{Caveats}
+
+\begin{enumerate}[nosep]
+  \item Finite-time Lyapunov exponents ($t_{\rm final} \leq 6$).
+  \item Burrau IC with $v = 0$ requires random velocities for energy
+        matching --- orbits depend on the RNG seed (seed 200 fixed for
+        reproducibility).
+  \item Leapfrog energy drift grows at long horizons; RK45 gives
+        \texttt{success=False} at close encounters.
+\end{enumerate}
+
+% =====================================================================
+\section{Result 3: Yukawa coupling from EFT projection of topological defect}
+\label{sec:pathC}
+% =====================================================================
+
+\begin{result}[Path C closure]
+The Yukawa source axiom (Path~B: $\delta_i = C_i\,e^{-\msp r}/(4\pi r)$)
+is \textbf{derived} from the physics of the classical TGP defect via an EFT
+projection.
+\end{result}
+
+\subsection{The problem}
+
+The classical TGP field equation for a spherical
+defect~\citep[cf.][for soliton physics]{Manton2004},
+$g^2 g'' + g(g')^2 + (2/r)\,g^2\,g' = g^2(1-g)$, admits solutions
+with boundary conditions $g(0) = g_0 < 1$, $g(\infty) = 1$.
+Linearization at $g \to 1$ gives $(\nabla^2 + 1)\delta = 0$ where
+$\delta = 1 - g$, yielding an \textbf{oscillatory} tail
+$\delta(r) \sim \sin(r)/r$ (verified numerically: 7 sign changes).
+This is \emph{not} Yukawa.
+
+\subsection{Stabilization obstacle}
+
+A naive vacuum-stabilization potential
+$V_{\rm sb} = (\mu^2/2)(g-1)^2$ fails: the derivative
+$V'_C(g) = (1-g)(g^2 - \mu^2)$ is negative for all $g \in (0,1)$
+when $\mu^2 > 1$, destroying the defect's turning point.
+
+\subsection{EFT resolution}
+
+The screening mass $\msp$ enters not through a classical Lagrangian
+modification, but through \textbf{loop corrections to the propagator}
+(EFT mass gap).  The effective source coupling is the projection of the
+classical defect profile onto the Yukawa Green's function:
+\begin{equation}
+  \boxed{
+  \Ceff = \int_0^\infty \delta(r)\;e^{-\msp\,r}\;r\;\mathrm{d}r,
+  }
+  \label{eq:Ceff}
+\end{equation}
+where $\delta(r) = 1 - g(r)$ is the classical defect profile.
+
+\subsection{Scaling laws}
+
+Scanning over defect depth $g_0$ and coupling $\beta$:
+\begin{equation}
+  |\Ceff| \propto (1 - g_0)^{1.02},
+  \qquad
+  |\Ceff| \propto \beta^{-1.00}.
+\end{equation}
+The exponents are remarkably close to unity, giving a transparent physical
+interpretation: deeper cores and weaker self-coupling produce larger
+effective Yukawa charges.
+
+\medskip\noindent
+The self-consistent screening mass is $\mu^2 = 2(3\gamma - 2\beta)$,
+identical to Eq.~\eqref{eq:msp} squared, confirming internal consistency
+of the EFT framework.
+
+% =====================================================================
+\section{Result 4: Classical soliton interaction is not Yukawa}
+\label{sec:soliton-interaction}
+% =====================================================================
+
+\begin{result}[EFT mass gap required]
+The classical overlap interaction of two TGP defects is oscillatory and
+decays as a power law ($\sim d^{-1/2}$), not exponentially.  The Yukawa
+force law used in $N$-body dynamics is a \textbf{quantum} (EFT) result,
+not a classical one.
+\end{result}
+
+\subsection{Method}
+
+Two defect profiles are placed at separation $d$ and their field overlap
+is integrated on a 2D cylindrical grid $(\rho, z)$:
+\begin{align}
+  S(d) &= 2\pi \iint \delta_1\,\delta_2\;\rho\;\mathrm{d}\rho\,\mathrm{d}z
+    & &\text{(overlap integral)},
+    \label{eq:S}\\
+  G(d) &= \iint \nabla\delta_1 \cdot \nabla\delta_2 \;\mathrm{d}^3x
+    & &\text{(gradient cross integral)},
+    \label{eq:G}\\
+  V_{\rm cl}(d) &= G(d) + V''(1)\,S(d)
+    & &\text{(classical interaction energy)}.
+    \label{eq:Vcl}
+\end{align}
+
+\subsection{Results}
+
+\begin{itemize}[nosep]
+  \item $\delta(d)$ oscillates (7 sign changes) --- the classical defect
+        tail is not Yukawa.
+  \item $G(d)$ and $V''(1)\,S(d)$ cancel to $\sim93\%$ --- confirming
+        the linearized equation $(\nabla^2 + 1)\delta = 0$.
+  \item $V_{\rm cl}$ decays as $d^{-1/2}$ (power law), not $e^{-\msp d}$.
+  \item $|V_{\rm cl}/V_Y|$ grows from $\sim16$ to $\sim10^8$ with distance
+        --- completely different physics.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Significance.}  This closes the deductive chain:
+\[
+  g(r) \;\xrightarrow{\text{P5: EFT projection}}\; \Ceff
+  \;\xrightarrow{\text{Path B}}\; V_Y(d)
+  \;\xrightarrow{\text{P0: EOM}}\; \vF_i.
+\]
+The Yukawa law is justified \emph{only} through the EFT mass gap, not
+by classical field overlap.
+
+% =====================================================================
+\section{Result 5: Semi-analytic multipole representation of $I_Y$}
+\label{sec:multipole}
+% =====================================================================
+
+Using the Yukawa addition theorem, the double sum in the partial-wave
+expansion of $I_Y$ collapses to a \textbf{single sum over $l$}:
+\begin{equation}
+  \boxed{
+  I_Y = 4\pi \sum_{l=0}^{L_{\max}} (2l+1)\,P_l(\cos\omega)\,
+    R_l(d_{13}, d_{23}, \msp),
+  }
+  \label{eq:IY-multipole}
+\end{equation}
+where $\omega$ is the angle at the vertex joining edges $d_{13}$ and $d_{23}$,
+$P_l$ are Legendre polynomials, and $R_l$ is a 1D radial integral
+computed by 3-segment Gauss--Legendre quadrature.  The key
+simplification is the angular diagonalization:
+$A_{ll'}(\omega) = \frac{4\pi}{2l+1}\,\delta_{ll'}\,P_l(\cos\omega)$.
+
+\begin{center}
+\begin{tabular}{ccc}
+  \toprule
+  $L_{\max}$ & Relative error (equilateral) & Relative error (scalene) \\
+  \midrule
+  3  & 0.23\% & 2.1\% \\
+  10 & 0.12\% & 0.22\% \\
+  15 & 0.006\% & 0.04\% \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+The Feynman 2D integral (Sec.~\ref{sec:eom}) remains faster per evaluation
+with caching, but the multipole form is tabulable and analytically
+transparent.
+
+% =====================================================================
+\section{Result 6: $V_3/V_2$ regime map}
+\label{sec:v3v2}
+% =====================================================================
+
+The dimensionless parameter $t = \msp\,d$ controls the importance of
+three-body forces relative to pairwise interactions.
+
+\begin{center}
+\begin{tabular}{lcl}
+  \toprule
+  \textbf{Regime} & $|V_3/V_2|$ & \textbf{Description} \\
+  \midrule
+  Coulomb ($t < 0.5$) & $\sim 1.3\%$ & Saturates (constant); $V_3$ perturbative \\
+  Transition ($t \sim 1$) & $\sim 14\%$ & Peak; $V_3$ significant \\
+  Yukawa ($t > 3$) & $< 0.2\%$ & Exponentially screened \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Additional findings:
+\begin{itemize}[nosep]
+  \item \textbf{Lyapunov regime} ($\beta = 0.02$--$0.35$,
+        $\msp d \sim 0.3$--$1.0$): $|V_3/V_2| = 0.8$--$1.0\%$ ---
+        perturbative but sufficient to lower $\beta_{\rm crit}$ by $40\%$.
+  \item \textbf{Geometry}: compact configurations ($d/2$) have $7\times$
+        larger $V_3/V_2$ than extended ($2d$) --- close encounters amplify
+        three-body effects.
+  \item \textbf{$C$-scaling}: $V_3/V_2 \propto C$ (linear, verified to
+        $<2\%$ deviation) --- consistent with $V_3 \propto C^3$ vs
+        $V_2 \propto C^2$.
+  \item \textbf{Physical TGP} ($\gamma \sim \Lambda_{\rm eff} \sim 10^{-52}$):
+        $\msp d \ll 1$ --- Coulomb regime applies for all macroscopic
+        separations.
+\end{itemize}
+
+% =====================================================================
+\section{Result 7: Analytical equilibria, normal modes, and Hill criterion}
+\label{sec:analytical}
+% =====================================================================
+
+\subsection{Exact equilibrium distances}
+
+Setting $V_2'(d) = 0$ for equal-mass bodies ($C_1 = C_2 = C$) yields a
+quadratic in~$d$:
+\begin{equation}
+  \boxed{
+  d^2 - 4\beta\,d + 18\gamma\,C = 0.
+  }
+  \label{eq:equilibrium-condition}
+\end{equation}
+The two roots give the \emph{repulsive barrier} and the \emph{confining
+well}:
+\begin{equation}
+  \drep = 2\beta - \sqrt{4\beta^2 - 18\gamma C},
+  \qquad
+  \dwell = 2\beta + \sqrt{4\beta^2 - 18\gamma C},
+  \label{eq:drep-dwell}
+\end{equation}
+existing whenever $\beta > \sqrt{9\gamma C/2}$.  For unequal masses, the
+condition generalizes to $d^2 - 4\beta\,d + 9\gamma(C_1+C_2) = 0$.
+At threshold ($4\beta^2 = 18\gamma C$), the two equilibria merge:
+$\drep = \dwell = 2\beta$.  Far from threshold: $\drep \to 0$ and
+$\dwell \to 4\beta$.  Verified numerically: analytical = numerical to
+machine precision.
+
+\subsection{Closed-form normal-mode frequency}
+
+The radial stiffness at $\dwell$ is
+\begin{equation}
+  V_2''(d) = \frac{8\pi C^2}{d^3}
+    \biggl[-1 + \frac{6\beta}{d} - \frac{18\gamma C}{d^2}\biggr].
+  \label{eq:V2pp}
+\end{equation}
+For an isolated pair with reduced mass $\mu = C/2$, the radial breathing
+frequency is
+\begin{equation}
+  \boxed{
+  \omega_{\rm rad}^2 = \frac{2\,V_2''(\dwell)}{C}
+  = \frac{16\pi C}{\dwell^3}
+    \biggl[-1 + \frac{6\beta}{\dwell} - \frac{18\gamma C}{\dwell^2}\biggr].
+  }
+  \label{eq:omega-rad}
+\end{equation}
+Verified against finite-difference Hessian: relative error $<10^{-6}$.
+
+\subsection{TGP Hill sphere}
+
+The classical Hill sphere~\citep{Murray1999,Hamilton1992} is the region
+around a body in which its gravity dominates over the tidal field of
+a more massive companion.
+The tidal field of a central body $C_{\rm cen}$ at distance~$d$ in TGP is
+\begin{equation}
+  \Omega_{\rm tidal}^2(d)
+  = \frac{8\pi C_{\rm cen}}{d^3}
+    \biggl[1 - \frac{6\beta}{d} + \frac{18\gamma\,C_{\rm cen}}{d^2}\biggr].
+  \label{eq:tidal}
+\end{equation}
+The $\beta$-repulsion \emph{weakens} the tidal field (negative correction to
+the bracket), while $\gamma$-confinement \emph{strengthens} it.  The Hill
+radius follows from balancing the tidal acceleration against self-gravity
+of a body of mass $C_{\rm body}$:
+\begin{equation}
+  \boxed{
+  R_H^3 = \frac{4\pi\,C_{\rm body}}{|\Omega_{\rm tidal}^2(d)|}.
+  }
+  \label{eq:hill}
+\end{equation}
+Scanning $\beta \in [0.01, 2.0]$ at $d = 5$, $C_{\rm body} = 0.1$,
+$C_{\rm cen} = 1.0$:
+
+\begin{center}
+\begin{tabular}{ccl}
+  \toprule
+  $\beta$ & $R_H^{\rm TGP}/R_H^{\rm Newton}$ & Effect \\
+  \midrule
+  0.01 & 1.002 & $\sim$same \\
+  0.10 & 1.017 & slightly larger \\
+  0.50 & 1.096 & 10\% larger \\
+  1.00 & 1.244 & 24\% larger \\
+  2.00 & 2.924 & $3\times$ larger \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Result:} TGP generically \textbf{expands} the Hill sphere
+($R_H^{\rm TGP} > R_H^{\rm Newton}$), making satellite systems more stable
+against tidal disruption.
+
+\subsection{Perturbative $V_3$ correction to equilibria}
+
+The three-body force shifts $\dwell$ by
+\begin{equation}
+  \delta d = -\frac{F_3(\dwell)}{3\,V_2''(\dwell)},
+  \label{eq:delta-d}
+\end{equation}
+where $F_3 = -\partial V_3/\partial d|_{\rm breathing}$.  Numerically:
+$|\delta d/\dwell| < 0.2\%$ for all tested $(\beta, C)$ --- the
+correction is perturbative.  The sign is positive: \textbf{$V_3$ shifts
+$\dwell$ outward} (slightly larger equilibrium distance).
+
+% =====================================================================
+\section{Supplementary result: Closed orbits and Lagrange stability}
+\label{sec:orbits}
+% =====================================================================
+
+Two classical periodic configurations were tested under TGP perturbation:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Figure-8 choreography} (Chenciner--Montgomery):
+        survives TGP to $\beta = 0.10$ ($C = 0.3$).  Period shift:
+        Newton $T = 3.115$, TGP $T = 3.283$ (+5.4\%).  Deformation
+        scales as $\Delta r_{\max} \sim \beta^{0.65}$ (perturbative).
+        With $V_3$: $V_3/V_2 = 0.82\%$.
+  \item \textbf{Lagrange point $L_4$}: position shift $\sim 10^{-5}$;
+        stability preserved ($q_{\rm crit}$ unchanged); Poincar\'e
+        sections show regular orbits.  Effective-potential curvature
+        changes by $< 10^{-4}$.
+\end{enumerate}
+
+\noindent\textbf{Conclusion.}  Periodic orbits are \emph{robust} under TGP
+corrections --- the perturbation is smooth and non-destructive.
+
+% =====================================================================
+\section{Result 8: Unequal masses, phase diagram, escape velocity, breathing mode}
+\label{sec:unequal}
+% =====================================================================
+
+\begin{result}[Unequal-mass confinement and phase diagram]
+For $C_1\neq C_2$ the force equation $F(d)=0$ yields
+\begin{equation}\label{eq:unequal}
+  d^{2} - 4\beta\,d + 9\gamma(C_1{+}C_2) = 0,
+\end{equation}
+with roots $d_{\rm rep,well} = 2\beta \mp \sqrt{4\beta^{2}-9\gamma(C_1{+}C_2)}$.
+\end{result}
+
+\noindent Eq.~\eqref{eq:unequal} reduces to eq.~\eqref{eq:equilibrium}
+for $C_1{=}C_2{=}C$.
+
+\subsection{Phase diagram}
+
+Confinement exists if and only if the discriminant is positive:
+\begin{equation}\label{eq:phase}
+\boxed{\;
+  \beta > \beta_{\rm crit} \;=\; \tfrac{3}{2}\,\sqrt{\gamma\,(C_1{+}C_2)}\,,
+  \qquad\text{equivalently}\quad
+  C_1{+}C_2 < \tfrac{4}{9}\,\frac{\beta^{2}}{\gamma}\,.
+\;}
+\end{equation}
+At $\beta=\beta_{\rm crit}$ the two roots coalesce:
+$\drep = \dwell = 2\beta_{\rm crit}$ (saddle-node bifurcation).
+For fixed $C_1$, the maximum mass ratio for which equilibria persist is
+\begin{equation}
+  q_{\max} = \frac{C_{2,\max}}{C_1}
+  = \frac{4\beta^{2}}{9\gamma\,C_1} - 1.
+\end{equation}
+Numerical verification (\texttt{ex211}, grid $10\times10$ in
+$(\beta, C_{\rm sum})$): 100\% agreement with analytical boundary.
+
+\subsection{Escape velocity}
+
+The binding energy at $\dwell$ is $E_{\rm bind} = |V_2(\dwell)|$,
+so the escape velocity in the reduced-mass frame is
+\begin{equation}\label{eq:vesc}
+\boxed{\;
+  v_{\rm esc} = \sqrt{\frac{2\,|V_2(\dwell)|}{\mu}}\,,
+  \qquad \mu = \frac{C_1 C_2}{C_1{+}C_2}\,.
+\;}
+\end{equation}
+Substituting $V_2(\dwell) = -A/\dwell + B/\dwell^{2} - G/\dwell^{3}$
+gives a fully closed-form expression in $(\beta,\gamma,C_1,C_2)$.
+Scaling: $v_{\rm esc}$ decreases monotonically with $\beta$
+(deeper well at smaller $\beta$, but $\dwell$ also shrinks;
+net effect: $v_{\rm esc} \propto \beta^{-0.5}$ approximately).
+
+\subsection{Three-body breathing mode}
+
+For three equal masses ($C_1{=}C_2{=}C_3{=}C$) in an equilateral triangle
+with side~$d$, the effective potential for the breathing coordinate is
+\begin{equation}
+  U_{\rm eff}(d) \;=\; 3\,V_2(d) \;+\; V_3(d,d,d).
+\end{equation}
+The reduced mass for symmetric breathing (all distances change equally) is
+$\mu_{\rm br} = C$, giving
+\begin{equation}\label{eq:omega-br}
+  \omega^{2}_{\rm br} = \frac{U_{\rm eff}''(\dwell)}{C}
+  = \frac{3\,V_2''(\dwell) + V_3''(\dwell)}{C}\,.
+\end{equation}
+Without $V_3$, this simplifies to
+$\omega^{2}_{\rm br} = 3\,V_2''(\dwell)/C = \tfrac{3}{2}\,\omega^{2}_{\rm rad}$
+(the breathing mode is \textbf{50\% stiffer} than the two-body radial mode;
+physically, three pairs contribute to the restoring force while the breathing
+reduced mass is $C$, not $C/2$).
+
+The $V_3$ correction to $\omega^{2}_{\rm br}$ is \textbf{$-1.3\%$}
+(\texttt{ex211}, $\beta{=}\gamma{=}1$, $C{=}0.1$) --- perturbative
+and consistent with the $V_3/V_2$ regime analysis (Result~6).
+
+\medskip
+\noindent\textbf{Inward barrier.}
+The energy barrier for the breathing mode to reach $\drep$ from $\dwell$ is
+$\Delta U = U_{\rm eff}(\drep) - U_{\rm eff}(\dwell)$.
+Numerically: $\Delta U / |U_{\rm eff}(\dwell)| \approx 9.4$
+for $\beta{=}1$, $C{=}0.1$ --- the inward barrier is roughly ten times
+the binding energy, confirming that the repulsive wall at $\drep$ is
+highly effective.
+
+% =====================================================================
+\section{Summary and deductive chain}
+\label{sec:summary}
+% =====================================================================
+
+The complete deductive chain from the TGP field Lagrangian to
+$N$-body dynamics is:
+
+\begin{center}
+\begin{tabular}{rl}
+  \textbf{Layer} & \textbf{Content} \\
+  \midrule
+  Field equation & $K_{\rm sub}(g)\;\Box g + \ldots = V'(g)$
+    \quad ($K_{\rm sub} = g^2$) \\
+  Defect profile & $g(r)$: ODE solution, oscillatory tail $\sin(r)/r$ \\
+  EFT projection (P5) & $\Ceff = \int \delta\,e^{-\msp r}\,r\,\mathrm{d}r$ \\
+  Yukawa source (Path B) & $\delta_i = \Ceff\,e^{-\msp r}/(4\pi r)$ \\
+  $V_2$ (pairwise) & Eq.~\eqref{eq:V2}: gradient + repulsion + confinement \\
+  $V_3$ (three-body) & Eq.~\eqref{eq:V3}: Feynman integral $I_Y$ \\
+  $N$-body EOM & $C_i\ddot\vx_i = -\nabla_{\vx_i}(V_2 + V_3)$ \\
+  \midrule
+  \multicolumn{2}{c}{\textit{Novel results from this chain:}} \\
+  \midrule
+  Result 1 & Earnshaw violation (Sec.~\ref{sec:earnshaw}) \\
+  Result 2 & Chaos suppression 35--45\% (Sec.~\ref{sec:chaos}) \\
+  Result 3 & $\Ceff$ from EFT projection (Sec.~\ref{sec:pathC}) \\
+  Result 4 & Classical $\neq$ Yukawa (Sec.~\ref{sec:soliton-interaction}) \\
+  Result 5 & $I_Y$ multipole form (Sec.~\ref{sec:multipole}) \\
+  Result 6 & $V_3/V_2$ regime map (Sec.~\ref{sec:v3v2}) \\
+  Result 7 & Analytical equilibria + Hill sphere (Sec.~\ref{sec:analytical}) \\
+  Result 8 & Phase diagram, $v_{\rm esc}$, breathing mode (Sec.~\ref{sec:unequal}) \\
+\end{tabular}
+\end{center}
+
+\bigskip
+
+All results are supported by a regression suite of 59 numerical tests
+(102 active example scripts) passing consistently.  The implementation
+is available in the \texttt{nbody/} package of TGP~v1.
+
+\paragraph{Context.}
+The pairwise potential $V_2$ connects to the three regimes of TGP
+(gradient, repulsive, confining) identified in the parent
+theory~\citep{Serafin2026}.  The $N$-body dynamics presented here are
+\emph{exact} consequences of the field Lagrangian (no tunable
+parameters beyond $\beta$, $\gamma$, $C_i$), distinguishing TGP from
+phenomenological modified-gravity $N$-body
+approaches~\citep{Puchwein2013,Li2012,Winther2015}.  The Earnshaw
+violation (Result~1) and chaos suppression (Result~2) are qualitatively
+new predictions with no counterpart in Newtonian gravity; the EFT
+derivation of $\Ceff$ (Result~3) bridges the gap between the
+topological defect (UV) and the Yukawa source (IR).
+
+\paragraph{Outlook.}
+Future work includes: (i)~extending to relativistic corrections using
+the TGP metric ($\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$, per
+\citealt{Will2014}); (ii)~cosmological $N$-body simulations
+incorporating scale-dependent $G_{\rm eff}(k,a)$;
+(iii)~exploring the Efimov-like tower that may arise from
+$V_3$ near the two-body resonance at $\beta_{\rm crit}$
+\citep{Efimov1970,Braaten2006};
+(iv)~applying the analytical equilibria (Result~7) and Hill criterion
+to exoplanetary stability~\citep{Murray1999,Hamilton1992}.
+
+\paragraph{Reproducibility.}
+All numerical results are reproduced by
+\texttt{python reproduce\_all.py -{}-quick}
+(10/10 stages PASS in ${\sim}100$\,s on a standard laptop).
+See \texttt{README.md} for the full script manifest
+and the supplementary material for data files.
+
+\bibliography{tgp_nbody}
+
+\end{document}

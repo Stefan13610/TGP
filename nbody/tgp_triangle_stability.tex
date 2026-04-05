@@ -1,0 +1,198 @@
+\section{Triangle shape-space stability and the equilateral approximation}
+\label{sec:triangle_stability}
+
+\subsection{Question}
+
+Sections~\ref{sec:efimov}--\ref{sec:wavefunction} solve the Schr\"odinger
+equation along the equilateral \emph{breathing mode} $d_{12}=d_{13}=d_{23}=d$.
+Is the equilateral configuration actually a stable energy minimum in shape
+space, or is it a saddle point?  The answer determines whether the 1D
+reduction is exact or approximate.
+
+\subsection{Parameterisation of shape deformations}
+
+We parameterise deviations from equilateral by two dimensionless parameters:
+\begin{equation}
+  d_{12} = d(1+\varepsilon_a),\quad
+  d_{13} = d(1+\varepsilon_b),\quad
+  d_{23} = d.
+\end{equation}
+The ZP term uses $\bar{d}=(d_{12}+d_{13}+d_{23})/3$.
+At $(\varepsilon_a,\varepsilon_b)=(0,0)$ the triangle is equilateral.
+
+By $S_3$ symmetry, the full Hessian in the 3-distance space is
+$H_{ij}^{(3)} = \alpha\,\delta_{ij} + \beta\,(1-\delta_{ij})$,
+with two eigenvalue families:
+\begin{align}
+  \text{Breathing mode:} &\quad \lambda_{\rm br} = \alpha + 2\beta
+    \quad (\text{equilateral scaling}), \\
+  \text{Shape modes (2-fold degenerate):} &\quad \lambda_{\rm sh} = \alpha - \beta.
+\end{align}
+
+\subsection{Numerical results at \texorpdfstring{$C=C_{\rm Pl}$}{C=C\_Pl},
+  \texorpdfstring{$m_{\rm sp}=0.1$}{m\_sp=0.1}}
+
+\paragraph{Classical equilibrium ($d_{\rm cl}=1.37\,l_{\rm Pl}$):}
+
+\begin{equation}
+  H = \begin{pmatrix}
+    -0.0144 & +0.1026 \\
+    +0.1026 & -0.0146
+  \end{pmatrix}\;\text{E}_{\rm Pl}
+  \quad\Rightarrow\quad
+  \lambda_{\rm sh} = -0.117,\quad \lambda_{\rm br}^{(2)} = +0.088\;\text{E}_{\rm Pl}.
+\end{equation}
+
+Both eigenvalues of the reduced $2\times2$ matrix are identified: the
+\emph{antisymmetric} shape mode (one bond shortens, another lengthens)
+has $\lambda_{\rm sh}=-0.117<0$ — the equilateral is a \textbf{saddle point}
+at its own classical minimum.
+
+\begin{table}[h]
+\centering
+\caption{Shape-mode Hessian eigenvalues vs $d$ at $C_{\rm Pl}$, $m_{\rm sp}=0.1$.
+Negative eigenvalue indicates local instability in that direction.}
+\label{tab:shape_hessian}
+\begin{tabular}{rlll}
+\hline
+$d$ $[l_{\rm Pl}]$ & $\lambda_1$ & $\lambda_2$ & Classification \\
+\hline
+$1.00$ & $-0.160$ & $+0.278$ & Saddle \\
+$1.37$ (class.\ min.) & $-0.117$ & $+0.088$ & Saddle \\
+$1.84$ & $0$ & $-0.030$ & Transition \\
+$2.00$ & $-0.081$ & $-0.016$ & Fully unstable \\
+$4.52$ (quant.\ $\langle d\rangle$) & $-0.064$ & $-0.037$ & Fully unstable \\
+$8.00$ & $-0.051$ & $-0.022$ & Fully unstable \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+The stability transition (where the larger shape eigenvalue crosses zero)
+occurs at $d^*\approx1.84\,l_{\rm Pl}$.  For $d>d^*$, the equilateral
+is a \emph{local maximum} in both shape directions — the potential energy
+decreases in all shape-deformation directions.
+
+\paragraph{At the quantum mean position $\langle d\rangle=4.52\,l_{\rm Pl}$:}
+Both eigenvalues are negative ($\lambda_1=-0.064$, $\lambda_2=-0.037$),
+confirming the instability extends through the entire classically accessible
+region of the quantum wavefunction.
+
+\subsection{Physical interpretation}
+
+The shape instability has a clear physical origin: at $C=C_{\rm Pl}$,
+the pair interaction $V_2\propto e^{-m_{\rm sp}d}/d$ is non-negligible.
+An isosceles deformation creating one shorter bond $d_{\rm short}<d$ and
+one longer bond $d_{\rm long}>d$ with $d_{\rm short}+d_{\rm long}=2d$ lowers
+$V_2$ because Yukawa is convex: $e^{-mx}/x$ is a convex function for
+$mx\lesssim1$, so the average over asymmetric bonds gives lower energy
+than at the symmetric point.
+
+At $C=0.282$ all pairs are classically bound ($E_0^{(2B)}<0$, see ex29),
+so pair interactions drive isosceles deformation.
+
+\subsection{Consequence for quantum Efimov window}
+
+\paragraph{Classical level.}
+The true classical ground state is a deformed (isosceles) triangle, not equilateral.
+Along the softer mode ($\varepsilon_a=-\varepsilon_b$), the energy decreases
+monotonically with deformation at fixed $d$:
+\begin{equation}
+  E(d,\varepsilon) < E(d,0) \quad \forall\, \varepsilon\neq0.
+\end{equation}
+The equilateral result $E_{\rm cl}^{\rm eq}=-0.265\,E_{\rm Pl}$ (at $d_{\rm cl}=1.37$)
+is an \emph{upper bound} on the true classical minimum.
+
+\paragraph{Quantum level.}
+In the quantum problem, the full shape space is the 2D hyperangle manifold.
+The equilateral breathing-mode calculation (ex26/ex29) restricts to the
+1D submanifold $d_{12}=d_{13}=d_{23}$.  Since the equilateral is a
+local energy maximum in the shape directions, the restriction gives an
+\emph{upper bound} on $E_0$:
+\begin{equation}
+  E_0^{\rm equil} \geq E_0^{\rm true}.
+\end{equation}
+The true ground-state energy is lower (more bound).
+
+\paragraph{Implication for window boundaries.}
+A lower true $E_0$ means both thresholds $C_Q^{(3B)}$ and $C_Q^{(2B)}$
+are \emph{smaller} than computed in ex26/ex27:
+\begin{itemize}
+\item $C_Q^{(3B)}$ (lower window bound): shifts downward.
+  Binding occurs at weaker coupling.
+\item $C_Q^{(2B)}$ (upper window bound): shifts downward.
+  Two-body binding also occurs at weaker coupling.
+\item The window $m_{\rm sp}\in(0.076,\,0.198)$ computed in ex27 is a
+  \emph{conservative estimate}.  The true quantum window is
+  \emph{at least as wide} and may extend to slightly larger $m_{\rm sp}$
+  (requiring less coupling to bind the triple via the 3-body force).
+\end{itemize}
+
+\paragraph{Three-body only vs two-body.}
+Whether the 3B-only Efimov window still exists for the full 2D problem
+depends on whether $C_Q^{(3B)}$ shifts faster than $C_Q^{(2B)}$ as
+the geometry deforms.  Since $V_3$ (the three-body force) is also
+symmetric and may have different shape dependence than $V_2$, a full
+2D calculation is required.
+
+\subsection{Normal mode frequencies}
+
+The radial (breathing) mode at $d_{\rm cl}=1.37\,l_{\rm Pl}$ has curvature:
+\begin{equation}
+  \frac{d^2E}{dd^2}\bigg|_{\rm eq} = 0.305\;\text{E}_{\rm Pl}/l_{\rm Pl}^2.
+\end{equation}
+With effective mass $\mu_r = m_{\rm Pl}/3$, the breathing frequency is
+$\omega_r = \sqrt{0.305\times3}\approx0.957\,E_{\rm Pl}$.
+
+The stiffer shape mode has $\lambda_2^{(2)}/d_{\rm cl}^2=+0.047$,
+giving $\omega_{\rm sh,2}=\sqrt{0.047\times3}\approx0.375\,E_{\rm Pl}$
+(about $0.39\times\omega_r$).
+The softer shape mode has $\lambda_1^{(2)}/d_{\rm cl}^2<0$ (imaginary
+frequency): this is the unstable mode.
+
+\subsection{Shape stability vs \texorpdfstring{$C$}{C} at quantum mean position}
+
+\begin{table}[h]
+\centering
+\caption{Shape stability at $d=\langle d\rangle=4.52\,l_{\rm Pl}$
+vs coupling $C$.  At $C<0.19$ (near quantum Efimov threshold) the larger
+eigenvalue is still positive — saddle-type stability.}
+\label{tab:shape_vs_C}
+\begin{tabular}{rllll}
+\hline
+$C$ & $\lambda_1$ & $\lambda_2$ & Type & Note \\
+\hline
+$0.100$ & $-0.0045$ & $+0.0177$ & Saddle & below 3B threshold \\
+$0.128$ & $-0.0074$ & $+0.0123$ & Saddle & classical 3B threshold \\
+$0.150$ & $-0.0102$ & $+0.0066$ & Saddle & Efimov window midpoint \\
+$0.191$ & $-0.0168$ & $-0.0081$ & Fully unstable & quantum 3B threshold \\
+$0.282$ & $-0.0637$ & $-0.0374$ & Fully unstable & $C_{\rm Pl}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+The shape mode transitions from ``saddle'' to ``fully unstable'' near
+$C\approx0.19$, coinciding with the quantum Efimov threshold
+$C_Q^{(3B)}=0.191$.  Below threshold, the stiff shape mode has a
+positive restoring force, partially stabilising the equilateral geometry.
+Above threshold, both modes are unstable.
+
+\subsection{Summary}
+
+\begin{enumerate}
+\item The equilateral triangle is a \textbf{saddle point} in shape space
+  for all $C$ and $d$ tested — never a stable minimum.
+\item The 1D equilateral breathing-mode calculation (ex26/ex29) gives
+  \textbf{upper bounds} on $E_0$ and on the window thresholds.
+\item The true quantum ground state is likely a deformed (isosceles)
+  triangle.  By $S_3$ symmetry, the quantum state is a superposition
+  of three equivalent isosceles configurations, restoring permutation
+  symmetry.
+\item The quantum Efimov window for $C_{\rm Pl}$ may be slightly wider
+  than $(0.076,\,0.198)\,l_{\rm Pl}^{-1}$ (more conservative: could start
+  at lower $m_{\rm sp}$ or extend to higher $m_{\rm sp}$).
+\item A full 2D hyperangle Schr\"odinger solver is required for
+  quantitatively accurate window boundaries.  This is identified as the
+  primary open computational problem (ex31+).
+\end{enumerate}

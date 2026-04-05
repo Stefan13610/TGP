@@ -1,0 +1,845 @@
+% ============================================================
+% §3  Trzy reżimy odległościowe
+% ============================================================
+\section{Trzy re\.zimy oddzia\l{}ywania}\label{sec:rezimy}
+
+Centraln\k{a} predykcj\k{a} TGP jest istnienie \textbf{trzech odr\k{e}bnych
+re\.zim\'ow} oddzia\l{}ywania, wynikaj\k{a}cych z~interferencji p\'ol $\Phi$
+generowanych przez r\'o\.zne \'zr\'od\l{}a. Nie s\k{a} to trzy osobne si\l{}y ---
+jest to \textbf{jedna dynamika} pola $\Phi$, kt\'ora na r\'o\.znych
+skalach odleg\l{}o\'sci daje r\'o\.zny znak si\l{}y wypadkowej.
+
+% ----------------------------------------------------------
+\subsection{Mechanizm: gradient $\Phi$ jako si\l{}a}\label{ssec:mechanizm}
+
+Obiekt testowy poruszaj\k{a}cy si\k{e} w~polu $\Phi$ do\'swiadcza
+si\l{}y proporcjonalnej do gradientu:
+\begin{equation}\label{eq:force}
+    \mathbf{F} \;\propto\; -\nabla V_{\mathrm{eff}}(\Phi),
+\end{equation}
+gdzie $V_{\mathrm{eff}}(\Phi)$ jest efektywnym potencja\l{}em
+do\'swiadczanym przez cz\k{a}stk\k{e} w~polu przestrzenno\'sci.
+
+Kluczowa obserwacja: $V_{\mathrm{eff}}$ \textbf{nie jest
+monotoniczn\k{a}} funkcj\k{a} odleg\l{}o\'sci od \'zr\'od\l{}a. Wynika to
+z~nieliniowego sprz\k{e}\.zenia $\mathcal{N}[\Phi]$
+(r\'ow.~\ref{eq:Phi-nonlinear}). Profil efektywnego potencja\l{}u
+mi\k{e}dzy dwoma \'zr\'od\l{}ami ma posta\'c:
+
+\begin{equation}\label{eq:Veff-profile}
+    V_{\mathrm{eff}}(d) \;=\;
+    \underbrace{-\frac{(q\PhiZero)^2 M_1 M_2}{4\pi\,d}}_{%
+      E_{\mathrm{lin}}:\;\text{przyci\k{a}ganie (du\.ze }d\text{)}}
+    \;+\;
+    \underbrace{\frac{2\beta\,(q\PhiZero)^2 M_1 M_2}
+      {(4\pi)^2\,\PhiZero\,d}\ln\frac{d}{r_0}}_{%
+      E_\beta:\;\text{odpychanie (\'srednie }d\text{)}}
+    \;-\;
+    \underbrace{E_\gamma(d)}_{%
+      \sim d^{-3}:\;\text{studnia (ma\l{}e }d\text{)}}
+\end{equation}
+gdzie $E_\gamma(d) > 0$ jest cz\l{}onem kwartycznym dominuj\k{a}cym
+dla ma\l{}ych~$d$. Dok\l{}adna posta\'c cz\l{}onu $E_\gamma$
+i~pe\l{}na dekompozycja $V_{\mathrm{eff}} = E_{\mathrm{int}}$
+s\k{a} wyprowadzone z~funkcjona\l{}u
+energii~\eqref{eq:energy-corrected} w~\S\ref{ssec:dwa-zrodla}
+(r\'ow.~\ref{eq:Eint-decomp}--\ref{eq:Egamma},
+uwaga~\ref{rem:Veff-Eint-bridge}).
+Istotna jest \textbf{struktura}: trzy zmiany znaku gradientu,
+wynikaj\k{a}ce z~r\'o\.znej szybko\'sci wzrostu cz\l{}on\'ow
+liniowego ($\sim 1/d$), kubicznego (odpychaj\k{a}cego)
+i~kwartycznego (studnia) przy zbli\.zaniu \'zr\'ode\l{}.
+
+% ----------------------------------------------------------
+\subsection{Re\.zim I: du\.ze skale --- grawitacja}\label{ssec:grawitacja}
+
+\begin{proposition}[Grawitacja jako efekt interferencji]\label{prop:grav}
+Na du\.zych skalach ($r \gg r_{\mathrm{rep}}$, gdzie $r_{\mathrm{rep}}$
+jest skal\k{a} odpychania) interferencja p\'ol $\Phi$ generowanych
+przez dwa obiekty materialne powoduje, \.ze gradient $\Phi$
+jest skierowany \textbf{ku drugiemu obiektowi}. Obiekty s\k{a}
+spychane ku sobie.
+\end{proposition}
+
+Mechanizm: ka\.zdy obiekt generuje ,,wyg\'orowanie'' $\Phi$ wok\'o\l{}
+siebie. Dwa odleg\l{}e obiekty maj\k{a} mi\k{e}dzy sob\k{a} obszar, gdzie
+ich pola nak\l{}adaj\k{a} si\k{e} \emph{konstruktywnie} --- $\Phi$
+mi\k{e}dzy nimi jest wy\.zsze ni\.z na zewn\k{a}trz. Obiekt testowy
+,,stacza si\k{e}'' po gradiencie $\Phi$ w~stron\k{e} drugiego obiektu.
+
+To jest \textbf{grawitacja} w~TGP: nie krzywizna gotowej geometrii,
+lecz si\l{}a wynikaj\k{a}ca z~konstruktywnej interferencji
+wygenerowanej przestrzeni.
+
+W~granicy s\l{}abego pola i~du\.zych odleg\l{}o\'sci odzyskujemy
+prawo Newtona:
+\begin{equation}\label{eq:newton-limit}
+    F_{\mathrm{grav}} \simeq -\frac{G_{\mathrm{eff}}\,M_1\,M_2}{r^2}
+    \qquad (r \gg r_{\mathrm{rep}}).
+\end{equation}
+Sta\l{}a $G_{\mathrm{eff}}$ jest tutaj wielko\'sci\k{a} \textbf{wynikow\k{a}}
+--- wyra\.zon\k{a} przez sta\l{}\k{a} generacji $q$ i~parametry profilu
+$\phi(r)$, nie wprowadzon\k{a} r\k{e}cznie.
+
+% ----------------------------------------------------------
+\subsection{Re\.zim II: \'srednie skale --- odpychanie}\label{ssec:odpychanie}
+
+\begin{proposition}[Odpychanie przestrzenne]\label{prop:rep}
+Na \'srednich skalach ($r_{\mathrm{well}} < r < r_{\mathrm{rep}}$)
+potencja\l{} przestrzenny blisko cz\k{a}stek jest na tyle wysoki,
+\.ze gradient $\Phi$ jest skierowany \textbf{od \'zr\'od\l{}a}.
+Obiekty s\k{a} odpychane.
+\end{proposition}
+
+Mechanizm: w~bezpo\'srednim s\k{a}siedztwie cz\k{a}stki pole $\Phi$
+osi\k{a}ga bardzo wysokie warto\'sci (cz\k{a}stka generuje g\k{e}st\k{a}
+przestrze\'n wok\'o\l{} siebie). Gdy drugi obiekt zbli\.za si\k{e},
+wchodzi w~region \emph{stromego wzrostu} $\Phi$ --- gradient
+jest skierowany na zewn\k{a}trz, co oznacza si\l{}\k{e} odpychaj\k{a}c\k{a}.
+
+To odpychanie mo\.ze by\'c odpowiedzialne za:
+\begin{itemize}[nosep]
+  \item stabilno\'s\'c materii (cz\k{a}stki nie kolabiuj\k{a} na siebie),
+  \item efekty kwantowe (zasada nieoznaczono\'sci jako skutek
+        odpychania przestrzennego na ma\l{}ych skalach),
+  \item ci\'snienie degeneracji (efekt wielu cz\k{a}stek
+        w~ograniczonej obj\k{e}to\'sci).
+\end{itemize}
+
+\begin{remark}[Zwi\k{a}zek z~zasad\k{a} nieoznaczono\'sci]
+W~standardowej mechanice kwantowej zasada nieoznaczono\'sci
+Heisenberga ($\Delta x \cdot \Delta p \geq \hbar/2$) jest
+aksjomatem. W~TGP mo\.ze ona \emph{wynika\'c} z~odpychania
+przestrzennego: pr\'oba \'sci\'slejszej lokalizacji cz\k{a}stki
+oznacza wej\'scie w~region wysokiego $\Phi$ i~silnego gradientu,
+co generuje ,,odrzut'' --- fizyczne \'zr\'od\l{}o nieoznaczono\'sci.
+Poni\.zsza propozycja formalizuje ten mechanizm.
+\end{remark}
+
+\begin{proposition}[Zasada nieoznaczono\'sci z~odpychania
+  przestrzennego TGP]\label{prop:uncertainty-tgp}
+Niech cz\k{a}stka o~masie $m$ jest zlokalizowana w~obszarze
+o~rozmiarze $\Delta x$ w~polu $\Phi(r)$ generowanym przez
+siebie sam\k{a} (samosprzężenie, aksjomat~\ref{ax:zrodlo}).
+W~re\.zimie~II (odpychanie, $r_{\mathrm{well}} < \Delta x < r_{\mathrm{rep}}$)
+energia pola w~rdzeniu obj\k{e}to\'sci $V_{\rm rdz} \sim (4\pi/3)\Delta x^3$:
+\begin{align}\label{eq:E-field-core}
+  E_{\rm pole}(\Delta x)
+  &= \int_0^{\Delta x} 4\pi r^2\,
+     \frac{\beta\,\Phi_{\rm loc}^2(r)}{\PhiZero^2}\,dr
+  \;\approx\;
+  4\pi \cdot \frac{\beta}{\PhiZero^2}
+  \cdot \left(\frac{qm}{4\pi}\right)^2
+  \int_0^{\Delta x} dr
+  = \frac{\beta\,(qm)^2}{4\pi\,\PhiZero^2}\,\Delta x,
+\end{align}
+gdzie $\Phi_{\rm loc}(r) = qm/(4\pi r)$ jest polem w~przybli\.zeniu liniowym.
+\textbf{Kluczowe}: energia pola ro\'snie liniowo z~$\Delta x$
+(gromadzi si\k{e} w~coraz wi\k{e}kszym rdzeniu).
+Energia kinetyczna wynikaj\k{a}ca z~nieoznaczono\'sci p\k{e}du
+$\Delta p \sim \hbar(\Phi)/\Delta x$:
+\begin{equation}\label{eq:E-kin-uncertainty}
+  E_{\mathrm{kin}} \sim \frac{(\Delta p)^2}{2m}
+  = \frac{\hbar(\Phi)^2}{2m\,(\Delta x)^2}.
+\end{equation}
+Minimalizacja $E_{\mathrm{total}} = E_{\mathrm{kin}} + E_{\rm pole}$
+wzgl\k{e}dem $\Delta x$:
+\begin{equation}\label{eq:Emin-condition}
+  \frac{dE_{\rm total}}{d(\Delta x)} = 0
+  \quad\Longrightarrow\quad
+  -\frac{\hbar(\Phi)^2}{m\,(\Delta x^*)^3} + \frac{\beta\,(qm)^2}{4\pi\,\PhiZero^2} = 0,
+\end{equation}
+skąd minimalna skala lokalizacji:
+\begin{equation}\label{eq:Dx-min}
+  \Delta x^* = \left(\frac{4\pi\,\PhiZero^2\,\hbar^2(\Phi)}{m\,\beta\,(qm)^2}\right)^{1/3}.
+\end{equation}
+Odpowiedni p\k{e}d: $\Delta p^* = \hbar(\Phi)/\Delta x^*$. Iloczyn:
+\begin{equation}\label{eq:uncertainty-tgp-full}
+  \Delta x^*\cdot\Delta p^*
+  = \Delta x^* \cdot \frac{\hbar(\Phi)}{\Delta x^*} = \hbar(\Phi).
+\end{equation}
+Zatem granica nieoznaczono\'sci:
+\begin{equation}\label{eq:uncertainty-tgp}
+  \Delta x \cdot \Delta p
+  \;\geq\;
+  \hbar(\Phi)\cdot f(\beta, q, m),
+\end{equation}
+gdzie \textbf{$f = 1$} w~modelu energii pola rdzeniowego~\eqref{eq:E-field-core}.
+Wynik~\eqref{eq:uncertainty-tgp-full} pokazuje, \.ze minimalna
+lokalizacja cz\k{a}stki dok\l{}adnie odtwarza standardow\k{a}
+zasad\k{e} nieoznaczono\'sci, ale z~\textbf{efektywn\k{a}
+sta\l{}\k{a} $\hbar(\Phi)$}:
+\begin{equation}\label{eq:HUP-TGP}
+  \boxed{\Delta x \cdot \Delta p \;\geq\; \hbar(\Phi) = \hbar_0\sqrt{\PhiZero/\Phi}.}
+\end{equation}
+Dla $\Phi = \PhiZero$ (warunki referencyjne): $\hbar(\PhiZero) = \hbar_0$,
+odtwarzając standardow\k{a} zasad\k{e} nieoznaczono\'sci Heisenberga
+\textbf{jako wynik dynamiczny}, nie aksjomat.
+
+\medskip\noindent\emph{Status i~zakres wa\.zno\'sci.}
+Wyprowadzenie~\eqref{eq:E-field-core}--\eqref{eq:Dx-min} jest
+\textbf{schematycznym dowodem porz\k{a}dku wielko\'sci}
+dla modelu pola liniowego ($\Phi_{\rm loc} \sim qm/(4\pi r)$)
+w~re\.zimie s\l{}abego pola. Pe\l{}na precyzja wymaga:
+(a)~koneksji spinowej w~TGP (sek.~\ref{sec:formalizm}),
+(b)~kwantyzacji pola $\Phi$ z~obci\k{e}ciem substratowym
+(dod.~\ref{app:kwantyzacja}).
+Wynik $f = 1$ jest \textbf{dok\l{}adny} w~modelu,
+gdy g\k{e}sto\'s\'c energii pola jest proporcjonalna do $\Phi^2$
+z~niemetrycznym wzrostem liniowym ---
+a~zatem dok\l{}adny w~przybli\.zeniu \'sredniego pola substratu.
+Numeryczna weryfikacja (skala zgodna z~$f=1$, odch.~$<10\%$):
+skrypt~\texttt{heisenberg\_from\_tgp.py}.
+\end{proposition}
+
+\begin{corollary}[Zmienno\'s\'c granicy nieoznaczono\'sci z~$\Phi$]%
+\label{cor:uncertainty-variable}
+W~silnym polu ($\Phi \gg \PhiZero$, blisko CD):
+$\hbar(\Phi) = \hbar_0\sqrt{\PhiZero/\Phi} \ll \hbar_0$.
+Efektywna granica nieoznaczono\'sci jest \textbf{t\l{}umiona}:
+\[
+  \Delta x \cdot \Delta p \;\geq\; \hbar(\Phi)/2 \;\ll\; \hbar_0/2.
+\]
+Materia w~silnym polu jest \emph{bli\.zsza klasycznej}:
+kwantowo\'s\'c zanika naturalnie bez dodatkowych aksjomat\'ow.
+To jest sp\'ojne ze stanem zamro\.zonym $\mathcal{S}_\infty$
+(sekcja~\ref{ssec:s-infty}).
+\end{corollary}
+
+% ----------------------------------------------------------
+\begin{proposition}[Pr\k{e}dko\'s\'c propagacji substratu $v_W(\chi)$
+  \emph{(O14 ZAMKNI\k{E}TY)}]\label{prop:vW-substrate}
+Niech $\chi \equiv \Phi/\Phi_0$ b\k{e}dzie znormalizowan\k{a} warto\'sci\k{a}
+skalara przestrzennego. Kowariantne r\'ownanie pola TGP:
+\begin{equation}\label{eq:field-eq-covariant}
+  \Box_g\Phi \;=\; \mathcal{N}[\Phi],
+\end{equation}
+przy liniaryzacji wok\'o\l{} jednorodnego t\l{}a $\chi = \chi_0$
+($\partial_\mu\partial^\mu\delta\Phi = 0$ w~metryce efektywnej)
+prowadzi do pr\k{e}dko\'sci propagacji zaburze\'n substratu:
+\begin{equation}\label{eq:vW-formula}
+  v_W(\chi)
+  \;=\; \frac{c_0}{\sqrt{\chi}},
+\end{equation}
+gdzie $c_0$ jest pr\k{e}dko\'sci\k{a} \'swiat\l{}a w~stanie referencyjnym $N_0$
+($\chi=1$). W~szczeg\'olno\'sci: $v_W(1)=c_0$, $v_W(\chi)\to\infty$
+gdy $\chi\to 0$ (rejon pró\.zni), $v_W\to 0$ gdy $\chi\to\infty$
+(wnętrze $\mathcal{S}_\infty$).
+
+\medskip\noindent
+\emph{Pr\k{e}dko\'s\'c grupowa} pakietu falowego z~dyspersj\k{a}
+Kleina-Gordona ($m_{\mathrm{sp}} > 0$):
+\begin{equation}\label{eq:vg-kg}
+  v_g(k,\chi)
+  \;=\; v_W(\chi)\,\frac{k}{\sqrt{k^2 + m_{\mathrm{sp}}^2}}
+  \;<\; v_W(\chi),
+\end{equation}
+natomiast pr\k{e}dko\'s\'c frontu Brillouina r\'owna si\k{e}
+dok\l{}adnie $v_W(\chi)$.
+
+\medskip\noindent
+\emph{Pr\k{e}dko\'s\'c tensora GW}:
+$v_{\mathrm{GW}}^{\mathrm{tensor}} = c_0$ (sektor $\sigma_{ab}$,
+niezale\.zny od $\chi$) --- zgodne z~obserwacj\k{a} GW170817.
+
+\medskip\noindent
+Weryfikacja: \texttt{vw\_substrate\_3d.py} ($15/15$ PASS).
+\end{proposition}
+
+% ----------------------------------------------------------
+\subsection{Re\.zim III: ekstremalnie ma\l{}e skale ---
+  studnia przestrzenna}\label{ssec:studnia}
+
+\begin{proposition}[Studnia przestrzenna]\label{prop:well}
+Na ekstremalnie ma\l{}ych skalach ($r < r_{\mathrm{well}}$)
+nieliniowe samosprz\k{e}\.zenie $\mathcal{N}[\Phi]$ tworzy
+\textbf{studni\k{e} potencja\l{}ow\k{a}} --- obszar, w~kt\'orym dwa
+\'zr\'od\l{}a s\k{a} ,,sklejone'' we wsp\'olnym do\l{}ku pola $\Phi$.
+Gradient $\Phi$ jest ponownie skierowany do wewn\k{a}trz.
+\end{proposition}
+
+Mechanizm: gdy dwa \'zr\'od\l{}a s\k{a} ekstremalnie blisko, ich pola
+$\Phi$ nak\l{}adaj\k{a} si\k{e} tak silnie, \.ze cz\l{}ony nieliniowe
+$\mathcal{N}[\Phi]$ dominuj\k{a} i~tworz\k{a} g\l{}\k{e}bok\k{a} studni\k{e}
+--- obszar, z~kt\'orego ucieczka wymaga dostarczenia znacznej
+energii.
+
+Ten re\.zim mo\.ze by\'c odpowiedzialny za:
+\begin{itemize}[nosep]
+  \item silne oddzia\l{}ywanie j\k{a}drowe (confinement kwark\'ow):
+        kwarki s\k{a} ,,sklejone'' we wsp\'olnej studni przestrzennej;
+  \item tworzenie zwi\k{a}zanych stan\'ow hadronowych;
+  \item asymptotyczn\k{a} swoboda: wewn\k{a}trz studni gradienty
+        s\k{a} ma\l{}e (p\l{}askie dno), cz\k{a}stki zachowuj\k{a} si\k{e}
+        jak swobodne.
+\end{itemize}
+
+% ----------------------------------------------------------
+\subsection{Diagram potencja\l{}u efektywnego}\label{ssec:diagram}
+
+Schematycznie, potencja\l{} efektywny $V_{\mathrm{eff}}(r)$
+mi\k{e}dzy dwoma \'zr\'od\l{}ami wygl\k{a}da nast\k{e}puj\k{a}co:
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+\textbf{Skala} & $\nabla V_{\mathrm{eff}}$ & \textbf{Efekt} \\
+\midrule
+$r < r_{\mathrm{well}}$ & $\to$ do wewn\k{a}trz & Studnia (sklejenie) \\
+$r_{\mathrm{well}} < r < r_{\mathrm{rep}}$ & $\leftarrow$ na zewn\k{a}trz & Odpychanie \\
+$r > r_{\mathrm{rep}}$ & $\to$ do wewn\k{a}trz & Grawitacja (przyci\k{a}ganie) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Kszta\l{}t $V_{\mathrm{eff}}$ przypomina potencja\l{} Lennarda-Jonesa
+z~dodatkow\k{a} studni\k{a} na ma\l{}ych skalach --- ale jego pochodzenie
+jest fundamentalnie inne: nie z~empirycznego dopasowania, lecz
+z~nieliniowej interferencji pola $\Phi$.
+
+\begin{remark}[Jawne powi\k{a}zanie z~r\'ownaniem pola]\label{rem:Veff-field-eq}
+Cz\l{}ony potencja\l{}u~\eqref{eq:Veff-profile} wynikaj\k{a} bezpo\'srednio
+z~r\'ownania pola~\eqref{eq:full-field-alt}:
+\begin{itemize}[nosep]
+  \item $E_{\mathrm{lin}} \sim -1/d$: z~cz\l{}onu liniowego
+    $\nabla^2\Phi/\PhiZero$ po podw\'ojnym ca\l{}kowaniu
+    po obj\k{e}to\'sci mi\k{e}dzy dwiema kulami Gaussa;
+  \item $E_\beta \sim +1/d^2$ (odpychanie): z~cz\l{}onu kubicznego
+    $\beta\Phi^2/\PhiZero^2$ w~$\mathcal{N}[\Phi]$; dominuje,
+    gdy gradienty i~warto\'s\'c $\Phi$ s\k{a} \'srednio du\.ze;
+  \item $E_\gamma \sim -1/d^3$ (studnia): z~cz\l{}onu kwartycznego
+    $-\gamma\Phi^3/\PhiZero^3$; dominuje przy bardzo du\.zych $\Phi$
+    (ekstremalnie bliskie \'zr\'od\l{}a, re\.zim~III).
+\end{itemize}
+Dok\l{}adna dekompozycja (rów.~\ref{eq:Eint-decomp}--\ref{eq:Egamma})
+jest podana w~\S\ref{ssec:dwa-zrodla}.
+Pe\l{}ne r\'ownanie pola: twierdzenie~\ref{thm:field-eq}.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Materia jako defekty pola $\Phi$}\label{ssec:defekty}
+
+W~TGP przestrze\'n nie jest aren\k{a} zdarze\'n, lecz \textbf{produktem}
+materii --- jest generowana przez pole $\Phi$. Powstaje zatem
+naturalne pytanie: czym \emph{jest} cz\k{a}stka materialna
+w~j\k{e}zyku tego pola? Odpowied\'z: cz\k{a}stka jest
+\textbf{zlokalizowanym defektem} pola~$\Phi$.
+
+Podkre\'slmy, \.ze symetria $\Zp$ substratu ($\hat{s}_i \to -\hat{s}_i$)
+jest symetri\k{a} dyskretna o~grupie homotopii $\pi_0(\Zp)=\Zp$.
+Defekty topologiczne pola $\hat{s}$ (porz\k{a}dku spinowego) dawa\l{}yby
+jedynie \'sciany domenowe --- obiekty $(d{-}1)$-wymiarowe,
+nierelewantne dla cz\k{a}stek punktowych. Jednak pole~$\Phi$,
+b\k{e}d\k{a}ce wielko\'sci\k{a} \emph{kwadratow\k{a}} w~$\hat{s}$
+($\Phi \propto \langle\hat{s}^2\rangle$), jest zawsze nieujemne
+i~posiada w\l{}asn\k{a} topologi\k{e}. Defekty pola~$\Phi$ ---
+\textbf{radialne kinki} --- s\k{a} w\l{}a\'sciwymi kandydatami
+na cz\k{a}stki.
+
+\begin{definition}[Radialny kink]\label{def:kink}
+\emph{Radialnym kinkiem} pola $\Phi$ nazywamy sferycznie
+symetryczne, zlokalizowane rozwi\k{a}zanie r\'ownania
+\begin{equation}\label{eq:kink}
+    \nabla^2\Phi - V'_{\mathrm{eff}}(\Phi) = 0,
+\end{equation}
+spe\l{}niaj\k{a}ce warunki brzegowe
+\begin{equation}\label{eq:kink-bc}
+    \Phi(0) = \Phi_{\!0} \neq \PhiZero, \qquad
+    \Phi(r\to\infty) = \PhiZero,
+\end{equation}
+gdzie $\PhiZero$ jest warto\'sci\k{a} pr\'o\.zniow\k{a} (jednorodnym
+minimum $V_{\mathrm{eff}}$), a~$\Phi_{\!0}$ jest warto\'sci\k{a}
+pola w~centrum defektu.
+\end{definition}
+
+Kink radialny opisuje obszar, w~kt\'orym $\Phi$ odbiega od
+warto\'sci pr\'o\.zniowej w~spos\'ob topologicznie stabilny ---
+,,wyg\'orowanie'' lub ,,zapad\l{}o\'s\'c'' pola, kt\'ore nie mo\.ze
+by\'c ci\k{a}gle zdeformowane do rozwi\k{a}zania jednorodnego.
+To w\l{}a\'snie jest cz\k{a}stka w~TGP: \'zr\'od\l{}o przestrzeni,
+kt\'ore jednocze\'snie \emph{jest} nietrywialn\k{a} konfiguracj\k{a}
+tej przestrzeni.
+
+\begin{proposition}[Masa defektu]\label{prop:masa-defektu}
+Masa zwi\k{a}zana z~radialnym kinkiem pola~$\Phi$ wynosi
+\begin{equation}\label{eq:masa-defektu}
+    m_{\mathrm{def}} = 4\pi \int_0^{\infty}
+    \left[\,\frac{1}{2}\!\left(\frac{d\Phi}{dr}\right)^{\!2}
+    + V_{\mathrm{eff}}(\Phi)
+    - V_{\mathrm{eff}}(\PhiZero)\right] r^2\,dr.
+\end{equation}
+Ca\l{}ka jest sko\'nczona dzi\k{e}ki warunkowi brzegowemu
+$\Phi(r\to\infty) = \PhiZero$ i~regularnemu zachowaniu
+$\Phi$ w~pocz\k{a}tku.
+\end{proposition}
+
+\begin{hypothesis}[Trzy generacje a~w\k{e}z\l{}y profilu radialnego]%
+\label{hyp:generacje}
+Trzy generacje cz\k{a}stek elementarnych odpowiadaj\k{a} liczbie
+w\k{e}z\l{}\'ow~$n$ profilu radialnego~$\Phi(r)$:
+\begin{itemize}[nosep]
+  \item $n=0$ --- profil bezw\k{e}z\l{}owy, najl\.zejsza generacja
+        (elektron, $u$, $d$),
+  \item $n=1$ --- jeden w\k{e}ze\l{}, \'srednia generacja
+        (mion, $c$, $s$),
+  \item $n=2$ --- dwa w\k{e}z\l{}y, najci\k{e}\.zsza generacja
+        (taon, $t$, $b$).
+\end{itemize}
+Ka\.zdy dodatkowy w\k{e}ze\l{} zwi\k{e}ksza ca\l{}k\k{e}~\eqref{eq:masa-defektu},
+co wyja\'snia hierarchi\k{e} mas generacji w~spos\'ob analogiczny
+do stanów wzbudzonych w~mechanice kwantowej.
+\end{hypothesis}
+
+\begin{remark}[Cz\k{a}stka--antycz\k{a}stka a~sektory $\Zp$]%
+\label{rem:antyczastka}
+Symetria $\Zp$ substratu ($\hat{s}_i \to -\hat{s}_i$) daje dwa
+sektory pr\'o\.zniowe: $+v$ i~$-v$. Pole $\Phi$ jest kwadratowe
+w~$\hat{s}$, wi\k{e}c oba sektory generuj\k{a} to samo~$\PhiZero$,
+ale radialny kink mo\.ze by\'c \emph{osadzony} w~sektorze $+v$
+lub $-v$. Te dwa osadzenia definiuj\k{a} \textbf{cz\k{a}stk\k{e}}
+i~\textbf{antycz\k{a}stk\k{e}}. Anihilacja cz\k{a}stki
+z~antycz\k{a}stk\k{a} odpowiada rekombinacji defekt\'ow
+z~przeciwnych sektor\'ow, przywracaj\k{a}cej jednorodny stan
+uporz\k{a}dkowany (faz\k{e} pr\'o\.zniow\k{a}). Energia
+zwi\k{a}zana w~deformacji pola jest uwalniana
+w~postaci promieniowania.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Warunek istnienia trzech re\.zim\'ow}\label{ssec:trzy-rezimy-warunek}
+
+Kluczowe pytanie: czy trzy re\.zimy mog\k{a} wyst\k{a}pi\'c
+przy warunku pr\'o\.zniowym $\beta = \gamma$
+(stw.~\ref{prop:vacuum-condition})? Odpowied\'z jest twierdz\k{a}ca.
+
+\begin{proposition}[Trzy re\.zimy przy $\beta = \gamma$]%
+\label{prop:trzy-rezimy-beta-gamma}
+Niech $\beta = \gamma > 0$ (warunek pr\'o\.zniowy). Efektywny
+potencja\l{} oddzia\l{}ywania dw\'och r\'ownych \'zr\'ode\l{}
+o~bezwymiarowej sile $C = \alpha_{\mathrm{eff}} M / (4\pi r_0)$
+w~odleg\l{}o\'sci $d$ ma posta\'c:
+\begin{equation}\label{eq:Veff-beta-eq-gamma}
+  V_{\mathrm{eff}}(d)
+  = -\frac{4\pi C^2}{d}
+    + \frac{8\pi\beta\, C^2}{d^2}
+    - \frac{24\pi\beta\, C^3}{d^3}\,.
+\end{equation}
+Si\l{}a $F = -dV_{\mathrm{eff}}/dd = 0$ daje r\'ownanie:
+\begin{equation}\label{eq:force-zeros}
+  d^2 - 4\beta\, d + 18\beta\, C = 0\,,
+\end{equation}
+kt\'ore ma dwa pierwiastki rzeczywiste (a~wi\k{e}c trzy re\.zimy)
+wtedy i~tylko wtedy, gdy
+\begin{equation}\label{eq:trzy-rezimy-warunek}
+  \boxed{\;\beta > \frac{9\,C}{2}\;}\,.
+\end{equation}
+Skale przej\'scia wynosz\k{a}:
+\begin{align}
+  d_{\mathrm{rep}} &= 2\beta - \sqrt{4\beta^2 - 18\beta C}\,,
+  \label{eq:d-rep}\\
+  d_{\mathrm{well}} &= 2\beta + \sqrt{4\beta^2 - 18\beta C}\,.
+  \label{eq:d-well}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Pochodna $V_{\mathrm{eff}}$ wzgl\k{e}dem $d$:
+\[
+  F(d) = -\frac{dV}{dd}
+       = -\frac{4\pi C^2}{d^2}
+         + \frac{16\pi\beta\, C^2}{d^3}
+         - \frac{72\pi\beta\, C^3}{d^4}\,.
+\]
+Mno\.z\k{a}c przez $-d^4/(4\pi C^2)$ otrzymujemy:
+\[
+  d^2 - 4\beta\, d + 18\beta\, C = 0\,.
+\]
+Wyznacznik: $\Delta = 16\beta^2 - 72\beta C = 4\beta(4\beta - 18C)$.
+Dwa pierwiastki rzeczywiste $\iff$ $\Delta > 0$ $\iff$ $\beta > 9C/2$.
+Oba pierwiastki s\k{a} dodatnie, gdy $\beta > 0$ i~$C > 0$
+(z~wzor\'ow Viete'a: suma $= 4\beta > 0$, iloczyn $= 18\beta C > 0$).
+\end{proof}
+
+\begin{remark}[Interpretacja fizyczna]\label{rem:trzy-rezimy-fizyczne}
+Warunek $\beta > 9C/2$ ma naturaln\k{a} interpretacj\k{e}:
+\begin{itemize}[nosep]
+  \item Dla \textbf{cz\k{a}stek elementarnych} ($C \ll 1$, tj.\
+        $q M \ll \PhiZero$) warunek jest spe\l{}niony dla ka\.zdego
+        rozs\k{a}dnego $\beta > 0$. Trzy re\.zimy (grawitacja,
+        odpychanie, uwi\k{e}zienie) wyst\k{e}puj\k{a} na skalach
+        subatomowych.
+  \item Dla \textbf{obiekt\'ow makroskopowych} ($C \gg 1$, tj.\
+        $q M \gg \PhiZero$) warunek jest z\l{}amany: $d_{\mathrm{rep}}$
+        i~$d_{\mathrm{well}}$ zespalaj\k{a} si\k{e} i~znikaj\k{a}.
+        Pozosta\l{} jedynie re\.zim~I (grawitacja). Jest to sp\'ojne
+        z~obserwacj\k{a} --- na skalach makroskopowych widzimy wy\l{}\k{a}cznie
+        oddzia\l{}ywanie grawitacyjne.
+  \item Przej\'scie: krytyczna masa \'zr\'od\l{}a, powy\.zej kt\'orej
+        trzy re\.zimy zanikaj\k{a}, wynosi $M_{\mathrm{crit}} \sim
+        2\beta\,\PhiZero / (9\,q)$.
+\end{itemize}
+Warunek pr\'o\.zniowy $\beta = \gamma$ jest zatem \textbf{w~pe\l{}ni
+sp\'ojny} z~istnieniem trzech re\.zim\'ow dla materii fundamentalnej.
+\end{remark}
+
+\begin{proposition}[Fizyczne skale trzech re\.zim\'ow]\label{prop:skale-fizyczne}
+Przy identyfikacjach $\gamma \approx 10^{-52}\;\mathrm{m}^{-2}$
+(z~dopasowania $\Lambda_{\mathrm{obs}}$, r.~\eqref{eq:Lambda-estimate})
+i~$\PhiZero \approx 25$ (stw.~\ref{prop:Lambda-eff}),
+skala d\l{}ugo\'sci Yukawy (masywnego mediatora $\Phi$):
+\begin{equation}\label{eq:lambda-Yukawa}
+  \lambda_{\mathrm{Yuk}} = \frac{1}{\sqrt{\gamma}}
+  \approx 10^{26}\;\mathrm{m} \approx 3\;\mathrm{Mpc},
+\end{equation}
+wyznacza \textbf{zasi\k{e}g modyfikacji} wzgl\k{e}dem grawitacji
+newtonowskiej. Skale przej\'scia mi\k{e}dzy re\.zimami
+(r\'ow.~\ref{eq:d-rep}--\ref{eq:d-well}) dla \'zr\'od\l{}a
+o~masie $m$ wynosz\k{a}:
+\begin{center}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{\'Zr\'od\l{}o} & $C$ & $r_{\mathrm{rep}}$ & $r_{\mathrm{well}}$ \\
+\midrule
+Proton ($m_p$)
+  & $\sim 10^{-39}$ & $\sim 2\gamma\,r_0 \approx 10^{-67}\;\mathrm{m}$
+  & $\sim 4\gamma\,r_0 \approx 2\times10^{-67}\;\mathrm{m}$ \\
+Elektron ($m_e$)
+  & $\sim 10^{-42}$ & $\sim 10^{-70}\;\mathrm{m}$
+  & $\sim 10^{-70}\;\mathrm{m}$ \\
+S\l{}o\'nce ($M_\odot$)
+  & $\sim 10^{+38}$ & \multicolumn{2}{c}{--- zanikaj\k{a} ($C \gg 1$)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+gdzie $r_0$ jest rozmiarem \'zr\'od\l{}a, a~$C = q\,m/(4\pi\PhiZero\,r_0)$
+z~$q = 4\pi G_0/c_0^2 \approx 9.30 \times 10^{-27}\;\mathrm{m/kg}$
+(metryka eksponencjalna, tw.~\ref{thm:newton}).
+
+\medskip\noindent
+\textbf{Wniosek:} dla cz\k{a}stek fundamentalnych
+($C \ll 1$) skale studni i~odpychania le\.z\k{a} g\l{}\k{e}boko
+poni\.zej d\l{}ugo\'sci Plancka ($\lP \approx 1{,}6\times10^{-35}\;\mathrm{m}$).
+Trzy re\.zimy s\k{a} zatem zjawiskiem
+\textbf{sub-planckowskim} w~fizycznym $\gamma$ ---
+ich bezpo\'srednia obserwacja wymaga\l{}aby sond
+o~energiach daleko poza zasi\k{e}giem. Niemniej samo
+\emph{istnienie} trzech re\.zim\'ow jest kluczowe
+strukturalnie: odpowiada za \textbf{topologi\k{e}}
+profilu \'zr\'od\l{}owego (studnia $\to$ kink $\to$
+defekt), niezale\.znie od dok\l{}adnej skali.
+\end{proposition}
+
+\begin{proof}
+Dla $C \ll 1$: $d_{\mathrm{rep}} \approx 9C/(2)$
+(rozwijaj\k{a}c r\'ow.~\ref{eq:d-rep} w~$C/\beta \ll 1$,
+z~$\beta = \gamma$). Zatem:
+$r_{\mathrm{rep}} = d_{\mathrm{rep}}\,r_0
+\approx \frac{9}{2}\,\frac{q\,m}{4\pi\PhiZero}\,r_0
+= \frac{9\,q\,m}{8\pi\PhiZero}$.
+Dla protonu ($m = 1{,}67\times10^{-27}\;\mathrm{kg}$):
+$r_{\mathrm{rep}} \approx \frac{9 \times 1{,}86\times10^{-26}
+\times 1{,}67\times10^{-27}}{8\pi \times 25}
+\approx 4{,}5\times10^{-54}\;\mathrm{m}$.
+Analogicznie $d_{\mathrm{well}} \approx 4\beta = 4\gamma$ ---
+r\'ownie\.z sub-planckowy.
+Dla $C \gg 1$ ($M_\odot$): $\beta < 9C/2$, wi\k{e}c
+wyznacznik jest ujemny i~re\.zimy II, III nie istniej\k{a}.
+\end{proof}
+
+% ----------------------------------------------------------
+\subsection{Systematyka trzech re\.zim\'ow: warunki
+  istnienia}\label{ssec:systematyka-rezimow}
+
+\begin{proposition}[Warunki istnienia trzech
+  re\.zim\'ow --- pe\l{}na klasyfikacja]\label{prop:rezim-klasyfikacja}
+Niech $\alpha = 2$ (z~wariacji dzia\l{}ania,
+wniosek~\ref{cor:alpha-fixed}), $\beta, \gamma > 0$.
+Istnienie trzech re\.zim\'ow w~potencjale efektywnym
+$V_{\mathrm{eff}}(d)$ dw\'och \'zr\'ode\l{} zale\.zy od
+nast\k{e}puj\k{a}cych warunk\'ow:
+
+\medskip
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{2.8cm}cp{9cm}@{}}
+\toprule
+\textbf{Warunek} & \textbf{Formu\l{}a} & \textbf{Konsekwencja} \\
+\midrule
+T\l{}o pr\'o\.zniowe & $\beta = \gamma + q\bar{\rho}$
+  & Jednorodne $\PhiZero$ jest rozwi\k{a}zaniem.
+    Dla $\bar\rho \approx 0$: $\beta \approx \gamma$. \\[4pt]
+Stabilno\'s\'c t\l{}a & $3\gamma > 2\beta$
+  & $m_{\mathrm{sp}}^2 > 0$; perturbacje zanikaj\k{a}ce.
+    Przy $\beta = \gamma$: \textbf{spe\l{}niony}
+    ($m_{\mathrm{sp}}^2 = \gamma$). \\[4pt]
+Trzy re\.zimy & $\beta > 9C/2$
+  & Dwa zera si\l{}y, trzy sektory;
+    $C = \alpha_{\mathrm{eff}} M/(4\pi r_0) \ll 1$
+    dla cz\k{a}stek elementarnych. \\[4pt]
+Zanik re\.zim\'ow II--III & $\beta < 9C/2$
+  & Dla obiekt\'ow makroskopowych ($C \gg 1$):
+    tylko re\.zim~I (grawitacja). \\[4pt]
+Re\.zim \'srodkowy (II) istnieje & $d_{\mathrm{rep}} < d_{\mathrm{well}}$
+  & Bariera odpychania szersza ni\.z studnia;
+    wymaga $\beta^2 > 18\beta C$ (z~\eqref{eq:force-zeros}). \\[4pt]
+Re\.zim \'srodkowy zanika & $\beta \to 9C/2$
+  & $d_{\mathrm{rep}} \to d_{\mathrm{well}}$;
+    bariera i~studnia zlewaj\k{a} si\k{e}.
+    Przej\'scie typu siod\l{}o--w\k{e}ze\l{}. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Zale\.zno\'s\'c od skali i~t\l{}a.}
+Skale przej\'scia (r\'ow.~\ref{eq:d-rep}--\ref{eq:d-well})
+zale\.z\k{a} od $\beta$ i~$C = \alpha_{\mathrm{eff}} M/(4\pi r_0)$:
+\begin{itemize}[nosep]
+  \item Przy sta\l{}ym $\beta$: wzrost masy \'zr\'od\l{}a $M$
+    zwi\k{e}ksza $C$, przesuwaj\k{a}c $d_{\mathrm{rep}}$
+    i~$d_{\mathrm{well}}$ ku wi\k{e}kszym odleg\l{}o\'sciom,
+    a\.z do ich zlania (zanik re\.zim\'ow II--III).
+  \item Przy sta\l{}ym $M$: wzrost $\beta$ powi\k{e}ksza
+    barier\k{e} odpychania i~poszerza re\.zim~II.
+  \item W~tle kosmologicznym ($\PhiZero$ ro\'snie z~czasem
+    kosmicznym): $C \propto M/\PhiZero$ maleje, co
+    \textbf{u\l{}atwia} trzy re\.zimy we wczesnym
+    Wszech\'swiecie.
+\end{itemize}
+\end{proposition}
+
+% ----------------------------------------------------------
+\subsection{Otwarte problemy}\label{ssec:rezimy-problemy}
+
+\begin{problem}[Posta\'c profilu $\phi(r)$ --- CZ\k{E}\'SCIOWO
+  ROZWI\k{A}ZANY]\label{prob:profil}
+Jawna posta\'c profilu $\phi(r)$ wynika z~r\'ownania
+pola~\eqref{eq:spher} (\S\ref{ssec:rownanko}), kt\'ore
+okre\'sla operator~$\mathcal{D}$ i~cz\l{}on nieliniowy
+$\mathcal{N}[\Phi]$ w~spos\'ob jednoznaczny.
+
+\textbf{Rozwi\k{a}zania znane}:
+\begin{itemize}[nosep]
+  \item \textbf{Daleki re\.zim} ($r \to \infty$):
+    profil Yukawy $\delta\Phi \sim e^{-\sqrt\gamma\,r}/r$
+    (r\'ow.~\ref{eq:far-field}), z~zasi\k{e}giem
+    $\lambda_{\mathrm{sp}} \sim R_H$ (uwaga~\ref{rem:yukawa-newton}).
+  \item \textbf{Bliski re\.zim} ($r \to 0$):
+    $\Phi \sim A/r$ z~amplitud\k{a} $A \sim \PhiZero\sqrt{\alpha/\gamma}$
+    (r\'ow.~\ref{eq:near-balance}).
+  \item \textbf{Profil numeryczny}: pe\l{}ne rozwi\k{a}zanie BVP
+    z~gaussowskim \'zr\'od\l{}em, trzy re\.zimy widoczne w~$f(x)$
+    i~dekompozycji si\l{} (\texttt{radial\_profile.py}).
+\end{itemize}
+
+\textbf{Rozwi\k{a}zanie po\'srednie (asymptotic matching)}:
+Skrypt \texttt{profile\_intermediate.py} rozwi\k{a}zuje pe\l{}ne
+r\'ownanie nieliniowe (BVP, sferyczne pr\'o\.zniowe) dla
+$C \in \{0.1, 1, 5\}$, $\beta \in \{0.1, 0.5, 1.0\}$
+i~por\'ownuje z~przybli\.zeniem dopasowywanym (Yukawa zewn\k{e}trznie,
+szereg pot\k{e}gowy wewn\k{e}trznie).
+\begin{itemize}[nosep]
+  \item W~re\.zimie po\'srednim ($r_0 < r < r_{\mathrm{crit}}$)
+    profil $\varphi(r)$ zbli\.za si\k{e} do prawie pot\k{e}gowego:
+    $\varphi \sim r^{-p}$ z~$p \in (1.5, 2.9)$ zale\.znym od $C,\beta$.
+  \item Efektywna g\k{e}sto\'s\'c ,,ciemnej materii''
+    $\rho_{\mathrm{DM,eff}} \propto r^{-(p+1)}$ naśladuje profil
+    typu NFW w~wewn\k{e}trznym halo.
+  \item Krzywa rotacji ulega sp\l{}aszczeniu w~re\.zimie po\'srednim,
+    co jest sp\'ojne z~obserwowanymi krzywymi rotacji galaktyk.
+\end{itemize}
+\end{problem}
+
+\begin{problem}[Skale $r_{\mathrm{well}}$ i $r_{\mathrm{rep}}$ ---
+  ROZWI\k{A}ZANY]\label{prob:skale}
+Skale przej\'scia mi\k{e}dzy re\.zimami s\k{a} okre\'slone
+analitycznie w~ramach przybli\.zenia dwucia\l{}owego
+(stw.~\ref{prop:trzy-rezimy-beta-gamma},
+r\'ow.~\ref{eq:d-rep}--\ref{eq:d-well}):
+\begin{align*}
+  d_{\mathrm{rep}} &= 2\beta - \sqrt{4\beta^2 - 18\beta C}\,,\\
+  d_{\mathrm{well}} &= 2\beta + \sqrt{4\beta^2 - 18\beta C}\,,
+\end{align*}
+gdzie $C = \alpha_{\mathrm{eff}} M/(4\pi r_0)$.
+Weryfikacja numeryczna (\texttt{two\_body\_Veff.py}):
+\begin{itemize}[nosep]
+  \item Dla cz\k{a}stek elementarnych ($C \ll 1$): trzy re\.zimy
+        potwierdzone, $r_{\mathrm{well}} \sim r_0$,
+        $r_{\mathrm{rep}} \sim \beta\,r_0$.
+  \item Dla obiekt\'ow makroskopowych ($C \gg 1$): $d_{\mathrm{rep}}$
+        i~$d_{\mathrm{well}}$ zanikaj\k{a} (tylko grawitacja).
+  \item Korekcja Yukawy w~$E_{\mathrm{lin}}$ pomijalna
+        ($< 10^{-50}$, uwaga~\ref{rem:Elin-yukawa}).
+\end{itemize}
+
+Szacunki fizyczne w~jednostkach SI: stwierdzenie~\ref{prop:skale-fizyczne}.
+\textbf{Pozosta\l{}e otwarte}: wyznaczenie $r_0$ z~pierwszych zasad (substrat).
+\end{problem}
+
+\begin{problem}[Jednoznaczno\'s\'c --- ROZWI\k{A}ZANY]\label{prob:jednoznacznosc}
+Czy trzy re\.zimy wynikaj\k{a} \textbf{jednoznacznie}
+z~ka\.zdego rozs\k{a}dnego nieliniowego $\mathcal{N}[\Phi]$,
+czy wymagaj\k{a} specyficznej klasy cz\l{}on\'ow nieliniowych?
+Je\'sli drugie --- jaka klasa?
+
+\medskip\noindent
+\textbf{Odpowied\'z:} Trzy re\.zimy \emph{nie} wynikaj\k{a} z~dowolnego
+$\mathcal{N}[\Phi]$ --- wymagaj\k{a} specyficznej klasy nieliniowo\'sci.
+Pe\l{}na klasyfikacja jest podana w~twierdzeniu~\ref{thm:uniqueness}
+poni\.zej.
+\end{problem}
+
+\begin{theorem}[Jednoznaczno\'s\'c trzech re\.zim\'ow]%
+\label{thm:uniqueness}
+Niech $\mathcal{N}[\Phi]$ b\k{e}dzie wielomianow\k{a} nieliniowo\'sci\k{a}
+w~r\'ownaniu pola TGP:
+\begin{equation}\label{eq:N-polynomial}
+  \mathcal{N}[\Phi]
+  = \sum_{n=3}^{N} c_n\,\frac{\Phi^n}{\PhiZero^{\,n-1}}\,,
+\end{equation}
+a~$E_n(d)$ --- odpowiadaj\k{a}cy wk\l{}ad do energii oddzia\l{}ywania
+dw\'och \'zr\'ode\l{} w~odleg\l{}o\'sci~$d$. Dla profil\'ow
+kulombowskich $\delta\Phi_i \sim C/r_i$ wk\l{}ad $n$-tego rz\k{e}du
+skaluje si\k{e} jako
+\begin{equation}\label{eq:En-scaling}
+  E_n(d) \;\sim\; \frac{s_n}{d^{\,n-1}}\,,
+  \qquad s_n = \operatorname{sgn}(c_n) \cdot |a_n(C)|,
+\end{equation}
+gdzie $a_n(C)$ jest amplitud\k{a} zale\.zn\k{a} od ca\l{}ek nak\l{}adania.
+Cz\l{}on liniowy (sprz\k{e}\.zenie \'zr\'od\l{}owe) daje $E_{\mathrm{lin}}
+= -4\pi C^2/d$ (przyci\k{a}ganie newtonowskie, $\sim 1/d$). W\'owczas:
+
+\medskip
+\noindent\textbf{(A) Warunki konieczne.}
+Potencja\l{} $V_{\mathrm{eff}}(d) = E_{\mathrm{lin}} + \sum_n E_n(d)$
+wykazuje trzy re\.zimy (dwa zera si\l{}y $F = -dV/dd$) \textbf{tylko wtedy},
+gdy spe\l{}nione s\k{a} jednocze\'snie:
+\begin{enumerate}[label=(\roman*),nosep]
+  \item \textbf{co najmniej dwa} cz\l{}ony nieliniowe o~\textbf{r\'o\.znych}
+        pot\k{e}gach $1/d$;
+  \item istniej\k{a} wska\'zniki $n_1 < n_2$ takie, \.ze $s_{n_1} > 0$
+        (odpychanie) i~$s_{n_2} < 0$ (przyci\k{a}ganie);
+  \item pot\k{e}gi spe\l{}niaj\k{a} $1 < n_1{-}1 < n_2{-}1$, tj.\
+        cz\l{}on odpychaj\k{a}cy ma \emph{d\l{}u\.zszy} zasi\k{e}g ni\.z
+        cz\l{}on przyci\k{a}gaj\k{a}cy, ale kr\'otszy ni\.z cz\l{}on
+        newtonowski;
+  \item amplitudy spe\l{}niaj\k{a} nier\'owno\'s\'c zapewniaj\k{a}c\k{a}
+        dwa rzeczywiste dodatnie pierwiastki $F(d) = 0$.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{(B) Warunki wystarczaj\k{a}ce.}
+Je\.zeli istniej\k{a} $n_1 < n_2$ spe\l{}niaj\k{a}ce~(i)--(iii) powy\.zej,
+to dla dostatecznie du\.zych $|s_{n_1}|$, $|s_{n_2}|$ wzgl\k{e}dem
+$|E_{\mathrm{lin}}|$ warunek~(iv) jest automatycznie spe\l{}niony
+i~potencja\l{} $V_{\mathrm{eff}}$ posiada dok\l{}adnie trzy re\.zimy.
+
+\medskip
+\noindent\textbf{(C) Minimalna realizacja.}
+\boxed{%
+  \text{Minimaln\k{a} realizacj\k{a} wielomianow\k{a} jest }
+  n_1 = 3\;(\beta\,\Phi^3/\PhiZero),\;\;
+  n_2 = 4\;(\gamma\,\Phi^4/\PhiZero^2),
+}
+co odpowiada standardowej nieliniowo\'sci TGP z~warunkiem
+$\beta > 9C/2$ (stw.~\ref{prop:trzy-rezimy-beta-gamma}).
+Wy\.zsze kombinacje (np.\ $n_1{=}4, n_2{=}5$ lub $n_1{=}3, n_2{=}6$)
+r\'ownie\.z daj\k{a} trzy re\.zimy, lecz wymagaj\k{a} cz\l{}on\'ow
+wy\.zszego rz\k{e}du, kt\'ore nie maj\k{a} naturalnego uzasadnienia
+w~dzia\l{}aniu~TGP.
+
+\medskip
+\noindent\textbf{(D) Przypadki wykluczaj\k{a}ce trzy re\.zimy.}
+\begin{itemize}[nosep]
+  \item \textbf{Sama nieliniowo\'s\'c gradientowa}
+        $\alpha(\nabla\Phi)^2/\Phi$: renormalizuje jedynie cz\l{}on
+        newtonowski ($\sim 1/d$), \textbf{nie} wprowadza nowej pot\k{e}gi
+        --- co najwy\.zej jeden re\.zim.
+  \item \textbf{Pojedynczy cz\l{}on nieliniowy} (dowolnego rz\k{e}du):
+        co najwy\.zej dwa re\.zimy.
+  \item \textbf{Dwa cz\l{}ony o~tym samym znaku}: co najwy\.zej dwa
+        re\.zimy (brak naprzemienno\'sci).
+  \item \textbf{Cz\l{}on przyci\k{a}gaj\k{a}cy o~d\l{}u\.zszym zasi\k{e}gu
+        ni\.z odpychaj\k{a}cy} ($n_2 < n_1$): brak po\'sredniego
+        odpychania.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+Potencja\l{} efektywny ma og\'oln\k{a} posta\'c
+$V(d) = \sum_k A_k / d^{p_k}$ z~$p_1 < p_2 < \ldots$
+Si\l{}a:
+\[
+  F(d) = -\frac{dV}{dd}
+       = \sum_k \frac{p_k\, A_k}{d^{\,p_k+1}}\,.
+\]
+Mno\.z\k{a}c przez $d^{p_{\max}+1}$, otrzymujemy wielomian w~$d$
+stopnia $p_{\max} - p_1$. Trzy re\.zimy wymagaj\k{a} dw\'och
+dodatnich pierwiastk\'ow. Dla trzech cz\l{}on\'ow
+($p_1 = 1$, $p_2 = n_1{-}1$, $p_3 = n_2{-}1$) wielomian ma stopie\'n
+$n_2{-}2$ i~mo\.ze mie\'c dwa dodatnie pierwiastki tylko wtedy,
+gdy wsp\'o\l{}czynniki \textbf{zmieniaj\k{a} znak}: $A_1 < 0$
+(Newton, przyci\k{a}ganie), $A_2 > 0$ (odpychanie),
+$A_3 < 0$ (studnia) --- z~warunkiem $p_2 < p_3$.
+Dla standardowego TGP ($p_2 = 2$, $p_3 = 3$) wielomian redukuje
+si\k{e} do~\eqref{eq:force-zeros} z~wyznacznikiem
+$\Delta = 4\beta(4\beta - 18C) > 0 \iff \beta > 9C/2$.
+
+Systematyczny skan numeryczny par $(n_1, n_2)$ dla
+$3 \leq n_1, n_2 \leq 7$ potwierdza, \.ze trzy re\.zimy
+wyst\k{e}puj\k{a} wtedy i~tylko wtedy, gdy $n_1 < n_2$
+(tj.\ $p_{\mathrm{rep}} < p_{\mathrm{att}}$), a~w~ka\.zdym przypadku
+$n_1 \geq n_2$ potencja\l{} ma co najwy\.zej dwa re\.zimy
+(\texttt{three\_regimes\_uniqueness.py}).
+\end{proof}
+
+\begin{remark}[Fizyczna naturalno\'s\'c minimalnej realizacji]%
+\label{rem:naturalnosc}
+Kubiczny cz\l{}on $\beta\,\Phi^3/\PhiZero$ i~kwartyczny cz\l{}on
+$\gamma\,\Phi^4/\PhiZero^2$ s\k{a} dwoma najni\.zszymi rz\k{e}dami
+samosprz\k{e}\.zenia pola~$\Phi$ ponad cz\l{}onem masowym
+$\sim\Phi^2$. Ich wsp\'o\l{}istnienie jest naturalne w~ka\.zdej
+efektywnej teorii polowej z~symetri\k{a} $\Phi > 0$.
+Warunek pr\'o\.zniowy $\beta = \gamma$ (stw.~\ref{prop:vacuum-condition})
+wi\k{a}\.ze ich amplitudy, redukuj\k{a}c jedn\k{a} sta\l{}\k{a} swobodn\k{a}.
+Trzy re\.zimy nie wymagaj\k{a} zatem \emph{fine-tuningu} --- wynikaj\k{a}
+z~minimalnej struktury nieliniowej TGP pod warunkiem
+$\beta > 9C/2$, kt\'ory jest automatycznie spe\l{}niony dla cz\k{a}stek
+elementarnych ($C \ll 1$).
+\end{remark}
+
+\begin{remark}[Dwa niezale\.zne sektory fizyki N-body]%
+\label{rem:dwa-sektory-nbody}
+Ta sama nieliniowo\'s\'c $\Phi^4$ generuje \textbf{dwa fizycznie
+niezale\.zne sektory} oddzia\l{}ywa\'n wielocia\l{}owych, rozdzielone
+o~ok.~50 rz\k{e}d\'ow wielko\'sci w~skali $m_{\mathrm{sp}}$:
+
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Sektor} & $m_{\mathrm{sp}}$ & \textbf{Fizyka} & \textbf{Testy} \\
+\midrule
+\textbf{Efimov} (planckowski) &
+  $\sim 0.08\;l_{\mathrm{Pl}}^{-1}$ &
+  3-cia\l{}owe klastry kwantowe, & ex26--ex34v2 \\
+  & & okno Efimova (K13) & \\[3pt]
+\textbf{FDM} (galaktyczny) &
+  $\sqrt{\gamma} \approx 8\times10^{-51}\;l_{\mathrm{Pl}}^{-1}$ &
+  Solitony $\Phi$ jako ciemna materia, & ex35--ex44 \\
+  & & skalowanie $r_c \propto M_{\rm gal}^{-1/9}$ (K18) & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Paradoks r\'o\.znicy mas $\sim 50$ rz\k{e}d\'ow wielko\'sci
+jest \textbf{pozorny}: oba sektory wynikaj\k{a} z~tego samego
+pola $\Phi$ przy $m_{\mathrm{sp}} = \sqrt{\gamma}$ (N0-6),
+lecz opisuj\k{a} fizyk\k{e} na jako\'sciowo r\'o\.znych skalach energii.
+Ich rozdzielno\'s\'c jest \textbf{gwarancj\k{a} sp\'ojno\'sci}:
+wyniki sektora Efimova ($m_{\rm sp} \sim 0.08$) nie interferuj\k{a}
+z~wynikami sektora FDM ($m_{\rm sp} \sim 10^{-51}$).
+\end{remark}

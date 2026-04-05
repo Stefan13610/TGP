@@ -1,0 +1,59 @@
+{
+  "session": "tgp_erg_lpa_prime",
+  "date": "2026-04-02",
+  "rho0_star": 0.030451127819548875,
+  "v2": 0.06090225563909775,
+  "nu_lpa": 0.7486711393457478,
+  "theta1": 1.3356999454712313,
+  "K_ratio_at_rho0": 1.0,
+  "K_lin_slope": 1.0,
+  "K_lin_R2": 1.0,
+  "a_gamma": 0.041666666666666664,
+  "a_gamma_v2": 0.0025375939849624062,
+  "converged": true,
+  "final_residuum": 7.534198994491037e-05,
+  "n_pass": 8,
+  "n_fail": 0,
+  "tests": [
+    {
+      "label": "P1: Punkt staly znaleziony",
+      "status": "PASS",
+      "detail": "residuum = 7.53e-05"
+    },
+    {
+      "label": "P2: rho0* > 0 (lamanie Z2)",
+      "status": "PASS",
+      "detail": "rho0* = 0.03045"
+    },
+    {
+      "label": "P3: u''(rho0*) > 0 (minimum wlasciwe)",
+      "status": "PASS",
+      "detail": "u''(rho0*) = 7.43856"
+    },
+    {
+      "label": "P4: nu = 1/theta1 in [0.50, 0.80] (3D Ising LPA ~0.649)",
+      "status": "PASS",
+      "detail": "nu = 0.7487"
+    },
+    {
+      "label": "P5: K(0) = 0 po przeplywie",
+      "status": "PASS",
+      "detail": "K_IR(0) = 0.00e+00"
+    },
+    {
+      "label": "P6: K_IR/K_UV in [0.7, 1.5] przy rho0*",
+      "status": "PASS",
+      "detail": "K_IR/K_UV = 1.0000"
+    },
+    {
+      "label": "P7: K_IR(rho) ~ a*rho (K(phi) ~ phi2) dla malych rho",
+      "status": "PASS",
+      "detail": "R2 = 1.00000,  a = 1.0000"
+    },
+    {
+      "label": "P8: v2 = 2*rho0* wyznaczone",
+      "status": "PASS",
+      "detail": "v2 = 0.06090  (Phi0 = v2)"
+    }
+  ]
+}

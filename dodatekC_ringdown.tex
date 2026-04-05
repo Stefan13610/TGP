@@ -1,0 +1,793 @@
+% ===================================================================
+%  Dodatek C: Perturbacje wokol statycznego tla i rownanie ringdown
+%  TGP v1 -- Wyprowadzenie potencjalu efektywnego V_eff(r)
+% ===================================================================
+\section{Perturbacje wok\'o\l{} statycznego t\l{}a sferycznego}%
+\label{app:ringdown}
+
+Wyprowadzamy r\'ownanie typu Schr\"odingera dla skalarnych
+zaburze\'n $\delta\Phi$ wok\'o\l{} statycznego, sferycznie
+symetrycznego t\l{}a $f(r)$ w~pr\'o\.zni.
+
+% -------------------------------------------------------------------
+\subsection{T\l{}o i~perturbacja}
+% -------------------------------------------------------------------
+
+Niech $f(r)$ b\k{e}dzie statycznym rozwi\k{a}zaniem r\'ownania
+pola~\eqref{eq:full-field-alt} w~pr\'o\.zni ($\rho = 0$, $\beta = \gamma$):
+\begin{equation}\label{eq:bg-static}
+  f'' + \frac{2}{r}\,f' + \alpha\,\frac{(f')^2}{f}
+  + \beta\,\frac{f^2}{\PhiZero} - \gamma\,\frac{f^3}{\PhiZero^2} = 0,
+\end{equation}
+z~warunkami brzegowymi $f'(0) = 0$ (regularno\'s\'c)
+i~$f(r \to \infty) = \PhiZero$.
+Definiujemy bezwymiarow\k{a} funkcj\k{e} t\l{}a
+$\chi(r) \equiv f(r)/\PhiZero$ oraz lokaln\k{a} pr\k{e}dko\'s\'c
+\'swiat\l{}a t\l{}a
+\begin{equation}
+  c_{\mathrm{bg}}(r) = c_0\,\sqrt{\PhiZero/f(r)}
+  = c_0/\sqrt{\chi(r)}.
+\end{equation}
+
+Perturbacja:
+\begin{equation}
+  \Phi(t, r, \theta, \varphi)
+  = f(r) + \varepsilon\,h(t, r, \theta, \varphi),
+  \qquad |\varepsilon| \ll 1.
+\end{equation}
+
+% -------------------------------------------------------------------
+\subsection{Linearyzacja r\'ownania kowariantnego}
+% -------------------------------------------------------------------
+
+Rozwijamy r\'ownanie kowariantne~\eqref{eq:covariant-field}
+z~$\alpha = 2$ do rz\k{e}du $\mathcal{O}(\varepsilon)$.
+Cz\l{}on $(\dot\Phi)^2/\Phi$ jest rz\k{e}du $\varepsilon^2$
+i~odpada. Pozostaje:
+
+\begin{proposition}[R\'ownanie master perturbacji]\label{prop:master-pert}
+Perturbacja $h(t,r,\theta,\varphi)$ wok\'o\l{} statycznego t\l{}a
+$f(r)$ spe\l{}nia:
+\begin{equation}\label{eq:master-pert}
+  \frac{\chi}{c_0^2}\,\ddot{h}
+  \;-\; \nabla^2 h
+  \;-\; 4\,\frac{f'}{f}\,\frac{\partial h}{\partial r}
+  \;+\; \left[2\!\left(\frac{f'}{f}\right)^{\!2}
+    - 2\beta\chi + 3\gamma\chi^2
+  \right] h = 0,
+\end{equation}
+gdzie kropka oznacza $\partial/\partial t$,
+a~$\nabla^2$ jest laplasjanem p\l{}askim.
+\end{proposition}
+
+\begin{proof}
+Rozk\l{}ad ka\.zdego cz\l{}onu r\'ownania~\eqref{eq:covariant-field}:
+
+\smallskip\noindent
+\textbf{(a)} Cz\l{}on czasowy $c^{-2}\ddot\Phi$:
+Przy $c^2 = c_0^2/\chi$ dostajemy $(\chi/c_0^2)\ddot h$
+w~rz\k{e}dzie $\varepsilon$ (t\l{}o statyczne: $\ddot f = 0$).
+Korekcja $\delta c^2$ jest $\mathcal{O}(\varepsilon)$,
+ale mno\.zy $\ddot f = 0$, wi\k{e}c odpada.
+
+\smallskip\noindent
+\textbf{(b)} Laplasjan $-\nabla^2\Phi = -\nabla^2 f - \varepsilon\nabla^2 h$.
+Cz\l{}on $-\nabla^2 f$ zeruje si\k{e} z~t\l{}em~\eqref{eq:bg-static}.
+
+\smallskip\noindent
+\textbf{(c)} Gradient coupling $-\alpha(\nabla\Phi)^2/\Phi$
+z~$\alpha = 2$:
+\begin{align*}
+  (\nabla\Phi)^2 &= (f')^2 + 2\varepsilon\,f'\,\partial_r h
+    + \mathcal{O}(\varepsilon^2), \\
+  \Phi^{-1} &= f^{-1} - \varepsilon\,h/f^2
+    + \mathcal{O}(\varepsilon^2).
+\end{align*}
+Rz\k{a}d $\varepsilon$:
+$-2\bigl[2\,f'\,\partial_r h / f - (f')^2 h / f^2\bigr]
+= -4(f'/f)\,\partial_r h + 2(f'/f)^2\,h$.
+
+\smallskip\noindent
+\textbf{(d)} Potencja\l{} $-\beta\Phi^2/\PhiZero + \gamma\Phi^3/\PhiZero^2$:
+Rz\k{a}d $\varepsilon$: $(-2\beta\chi + 3\gamma\chi^2)\,h$.
+
+Sumuj\k{a}c i~odejmuj\k{a}c r\'ownanie t\l{}a~\eqref{eq:bg-static}
+(kt\'ore zeruje wszystkie cz\l{}ony rz\k{e}du $\varepsilon^0$),
+otrzymujemy~\eqref{eq:master-pert}.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Separacja zmiennych i~r\'ownanie radialne}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Separacja zmiennych]\label{prop:separation}
+Podstawienie
+\begin{equation}
+  h(t,r,\theta,\varphi) = e^{-i\omega t}\,u(r)\,Y_\ell^m(\theta,\varphi)
+\end{equation}
+w~r\'ownaniu~\eqref{eq:master-pert} daje r\'ownanie radialne:
+\begin{equation}\label{eq:radial-u}
+  -u'' - \left(\frac{2}{r} + \frac{4f'}{f}\right) u'
+  + \left[\frac{\ell(\ell+1)}{r^2}
+    + 2\!\left(\frac{f'}{f}\right)^{\!2}
+    - 2\beta\chi + 3\gamma\chi^2
+  \right] u
+  = \frac{\chi}{c_0^2}\,\omega^2\,u.
+\end{equation}
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Eliminacja pochodnej pierwszej}
+% -------------------------------------------------------------------
+
+\begin{lemma}[Funkcja wagowa]\label{lem:weight}
+Podstawienie
+\begin{equation}\label{eq:weight-sub}
+  u(r) = \frac{\Psi(r)}{r\,f(r)^2}
+\end{equation}
+eliminuje cz\l{}on z~$u'$ w~r\'ownaniu~\eqref{eq:radial-u},
+daj\k{a}c:
+\begin{equation}\label{eq:psi-eq}
+  \Psi'' + \frac{\chi}{c_0^2}\,\omega^2\,\Psi
+  = V_{\mathrm{raw}}(r)\,\Psi,
+\end{equation}
+gdzie
+\begin{equation}\label{eq:V-raw}
+  V_{\mathrm{raw}}(r)
+  = \frac{\ell(\ell+1)}{r^2}
+    + \frac{2\,f''}{f}
+    + \frac{4\,(f')^2}{f^2}
+    + \frac{4\,f'}{r\,f}
+    - 2\beta\chi + 3\gamma\chi^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Wsp\'o\l{}czynnik przy $u'$ w~\eqref{eq:radial-u} wynosi
+$p(r) = 2/r + 4f'/f$. Podstawiamy $u = \Psi\cdot g(r)$
+i~\.z\k{a}damy znikni\k{e}cia cz\l{}onu $\Psi'$:
+\begin{equation}
+  g'/g = -p/2 = -(1/r + 2f'/f) = -\frac{d}{dr}\ln(r\,f^2),
+\end{equation}
+sk\k{a}d $g(r) = 1/(r\,f^2)$.
+Poprawno\'s\'c potwierdzona symbolicznie
+(skrypt \texttt{ringdown\_derivation.py}).
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Wsp\'o\l{}rz\k{e}dna \.z\'o\l{}wiowa i~posta\'c Schr\"odingera}
+% -------------------------------------------------------------------
+
+\begin{definition}[Wsp\'o\l{}rz\k{e}dna \.z\'o\l{}wiowa TGP]\label{def:tortoise}
+\begin{equation}\label{eq:tortoise}
+  \frac{dr_*}{dr} = \frac{\sqrt{\chi(r)}}{c_0}
+  = \frac{1}{c_{\mathrm{bg}}(r)},
+  \qquad r_* = \frac{1}{c_0}\int_0^r
+  \sqrt{\frac{f(r')}{\PhiZero}}\,dr'.
+\end{equation}
+\end{definition}
+
+Definiujemy funkcj\k{e} falow\k{a} $\Phi_w(r_*)$ przez
+\begin{equation}\label{eq:wave-function}
+  \Psi(r) = f(r)^{-1/4}\,\Phi_w(r_*(r)),
+\end{equation}
+co eliminuje cz\l{}on z~$\Phi_w'$ przy przej\'sciu
+do wsp\'o\l{}rz\k{e}dnej $r_*$.
+
+\begin{theorem}[R\'ownanie ringdown TGP]\label{thm:ringdown}
+Perturbacje skalarne wok\'o\l{} statycznego, sferycznie
+symetrycznego t\l{}a TGP spe\l{}niaj\k{a} r\'ownanie typu
+Schr\"odingera:
+\begin{equation}\label{eq:ringdown}
+  \boxed{
+    \frac{d^2\Phi_w}{dr_*^2}
+    + \bigl[\omega^2 - V_{\mathrm{eff}}(r)\bigr]\,\Phi_w = 0,
+  }
+\end{equation}
+gdzie \textbf{potencja\l{} efektywny} wynosi:
+\begin{equation}\label{eq:V-eff}
+  \boxed{
+    V_{\mathrm{eff}}(r) = \frac{c_0^2\PhiZero}{f(r)}
+    \left[
+      \frac{\ell(\ell+1)}{r^2}
+      + \frac{9}{4}\,\frac{f''}{f}
+      + \frac{59}{16}\left(\frac{f'}{f}\right)^{\!2}
+      + \frac{4\,f'}{r\,f}
+      - 2\beta\chi + 3\gamma\chi^2
+    \right].
+  }
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\emph{Krok 1: Zmiana zmiennej $r \to r_*$.}
+Z~definicji~\eqref{eq:tortoise}: $dr_*/dr = \sqrt{\chi}/c_0$,
+sk\k{a}d $d/dr = (\sqrt{\chi}/c_0)\,d/dr_*$.
+R\'ownanie~\eqref{eq:psi-eq} w~wsp\'o\l{}rz\k{e}dnej $r_*$
+przybiera posta\'c:
+\begin{equation}\label{eq:psi-tortoise}
+  \frac{d^2\Psi}{dr_*^2}
+  + \omega^2\,\Psi
+  = \frac{c_0^2}{\chi}\,\widetilde{V}(r)\,\Psi
+  + \text{(cz\l{}ony z~$d\chi/dr$)},
+\end{equation}
+gdzie $\widetilde{V}$ zawiera cz\l{}ony z~$V_{\mathrm{raw}}$
+przetransformowane do $r_*$.
+
+\emph{Krok 2: Podstawienie wagowe $\Psi = Z\,\Phi_w$.}
+Waga $Z = f^{-1/4}$ eliminuje pochodn\k{a} pierwsz\k{a}
+$\Phi_w'$ i~wnosi dodatkowy potencja\l{} $-Z''/Z$:
+\begin{equation}
+  \frac{Z''}{Z} = \frac{d^2}{dr^2}\bigl(f^{-1/4}\bigr)
+  \cdot f^{1/4}
+  = \frac{-4f\,f'' + 5(f')^2}{16\,f^2}
+  = -\frac{f''}{4f} + \frac{5}{16}\left(\frac{f'}{f}\right)^{\!2}.
+\end{equation}
+
+\emph{Krok 3: Jawna arytmetyka wsp\'o\l{}czynnik\'ow.}
+Potencja\l{} efektywny: $V_{\mathrm{eff}} = (c_0^2/\chi)
+(V_{\mathrm{raw}} - Z''/Z)$. Porównuj\k{a}c cz\l{}ony
+z~$V_{\mathrm{raw}}$~\eqref{eq:V-raw}:
+\begin{alignat}{3}
+  \frac{f''}{f}&:\quad &
+    \underbrace{2}_{\text{z }V_{\mathrm{raw}}}
+    &- \underbrace{\bigl(-\tfrac{1}{4}\bigr)}_{\text{z }-Z''/Z}
+    &&= \frac{9}{4}, \label{eq:coeff-9-4}\\[4pt]
+  \left(\frac{f'}{f}\right)^{\!2}&:\quad &
+    \underbrace{4}_{\text{z }V_{\mathrm{raw}}}
+    &- \underbrace{\tfrac{5}{16}}_{\text{z }-Z''/Z}
+    &&= \frac{64-5}{16} = \frac{59}{16}. \label{eq:coeff-59-16}
+\end{alignat}
+Pozosta\l{}e cz\l{}ony ($\ell(\ell+1)/r^2$, $4f'/(rf)$,
+$-2\beta\chi + 3\gamma\chi^2$) przechodz\k{a} bez zmian,
+daj\k{a}c~\eqref{eq:V-eff}.
+
+Poprawno\'s\'c arytmetyki potwierdzona symbolicznie
+(skrypt \texttt{ringdown\_derivation.py}).
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Przypadki graniczne}
+% -------------------------------------------------------------------
+
+\begin{corollary}[Granica s\l{}abego pola]\label{cor:weak-ringdown}
+Dla $f \to \PhiZero$, $f' \to 0$, $\chi \to 1$, z~$\beta = \gamma$:
+\begin{equation}
+  V_{\mathrm{eff}} \to c_0^2\left[
+    \frac{\ell(\ell+1)}{r^2} + \gamma
+  \right].
+\end{equation}
+Dla $\ell = 0$: $V_{\mathrm{eff}} = c_0^2\gamma = c_0^2 m_{\mathrm{sp}}^2$.
+
+Tryby propaguj\k{a}ce istniej\k{a} tylko dla
+$\omega^2 > c_0^2\gamma$, co potwierdza mas\k{e}
+$m_{\mathrm{sp}} = \sqrt{\gamma}$ z~twierdzenia~\ref{prop:vacuum-stability}.
+\end{corollary}
+
+\begin{corollary}[Granica silnego pola]\label{cor:strong-ringdown}
+Dla $f \gg \PhiZero$ ($\chi \gg 1$), dominuje cz\l{}on
+$3\gamma\chi^2$ w~nawiasie, daj\k{a}c:
+\begin{equation}
+  V_{\mathrm{eff}} \;\sim\; 3\gamma\,c_0^2\,\chi
+  = \frac{3\gamma\,c_0^2\,f(r)}{\PhiZero}.
+\end{equation}
+Potencja\l{} \textbf{ro\'snie} z~$\Phi$: g\k{e}sta przestrze\'n
+stanowi rosn\k{a}c\k{a} bari er\k{e}, kt\'ora przechwytuje zaburzenia.
+Jest to sp\'ojne z~interpretacj\k{a} $c \to 0$ jako
+efektywnej granicy przyczynowej.
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Por\'ownanie z~GR (Regge--Wheeler)}
+% -------------------------------------------------------------------
+
+\begin{remark}[R\'o\.znice strukturalne wzgl\k{e}dem GR]\label{rem:vs-RW}
+R\'ownanie ringdown TGP~\eqref{eq:ringdown} r\'o\.zni si\k{e}
+od r\'ownania Regge'a--Wheelera w~czterech fundamentalnych
+aspektach:
+\begin{enumerate}[nosep]
+  \item \textbf{Luka masowa}: $\omega_{\min} = c_0\sqrt{\gamma}$.
+    W~GR potencja\l{} Regge'a--Wheelera zanika jak $r^{-2}$
+    dla $r \to \infty$; w~TGP utrzymuje si\k{e} $V_{\mathrm{eff}}
+    \to c_0^2\gamma > 0$. Nie istniej\k{a} mody o~niskiej
+    cz\k{e}stotliwo\'sci.
+  \item \textbf{Autoreferencyjna pr\k{e}dko\'s\'c}:
+    $c_{\mathrm{bg}}(r) = c_0/\sqrt{\chi(r)}$ zmienia si\k{e}
+    z~t\l{}em, modyfikuj\k{a}c wsp\'o\l{}rz\k{e}dn\k{a} $r_*$
+    nieliniowo.
+  \item \textbf{Rosn\k{a}ca bariera}: $V_{\mathrm{eff}} \sim \chi$
+    w~silnym polu. W~GR potencja\l{} ma g\'or\k{e} (bariera)
+    i~zanika przy horyzoncie; w~TGP \textbf{ro\'snie}
+    w~g\l{}\k{a}b obiektu zwartego.
+  \item \textbf{Dodatkowy mod oddechowy}:
+    R\'ownanie~\eqref{eq:ringdown} opisuje \textbf{oddechowy}
+    (breathing) mod polaryzacji, kt\'ory w~GR nie istnieje.
+    Mody tensorowe $h_+$, $h_\times$ pochodz\k{a}
+    z~substratowego pola $\sigma_{ab}$ (sekcja~\ref{ssec:tensor-substrate}).
+    Ringdown TGP zawiera zatem \textbf{trzy} polaryzacje:
+    dwie tensorowe (jak GR) plus oddechow\k{a} (predykcja TGP).
+\end{enumerate}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Tryby quasinormalne: sformu\l{}owanie}
+% -------------------------------------------------------------------
+
+\begin{definition}[Quasinormal modes TGP]\label{def:QNM}
+Tryby quasinormalne (QNM) s\k{a} rozwi\k{a}zaniami
+r\'ownania~\eqref{eq:ringdown} z~warunkami brzegowymi:
+\begin{itemize}[nosep]
+  \item $r_* \to +\infty$: fala wychodz\k{a}ca,
+    $\Phi_w \sim e^{+ik_\infty r_*}$,
+    gdzie $k_\infty = \sqrt{\omega^2 - c_0^2\gamma}$;
+  \item $r_* \to r_*^{\mathrm{min}}$ (region $\Phi \to \infty$,
+    $c \to 0$): zanik wykl{}adniczy w~rosn\k{a}cej barierze
+    potencja\l{}u, $\Phi_w \sim e^{-\kappa(r_* - r_*^{\min})}$
+    (sformalizowane w~stw.~\ref{prop:frozen-BC}).
+\end{itemize}
+Cz\k{e}stotliwo\'sci $\omega_n = \omega_R + i\,\omega_I$
+s\k{a} zespolone: $\omega_R$ --- cz\k{e}stotliwo\'s\'c oscylacji,
+$\omega_I < 0$ --- szybko\'s\'c t\l{}umienia.
+\end{definition}
+
+\begin{remark}[Status obliczeniowy --- ROZWI\k{A}ZANY]
+Widmo QNM obliczono numerycznie (skrypt
+\texttt{qnm\_spectrum.py}) metod\k{a} strzelan\k{a}
+z~przybli\.zeniem pocz\k{a}tkowym WKB.
+Wyniki w~sekcji~\ref{ssec:qnm-results}.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wyniki numeryczne: widmo QNM}\label{ssec:qnm-results}
+% -------------------------------------------------------------------
+
+Rozwi\k{a}zujemy r\'ownanie~\eqref{eq:ringdown} numerycznie
+dla t\l{}a $f(r)$ odpowiadaj\k{a}cego gwiazdowym czarnym
+dziurom. Metoda: shooting z~warunkami QNM (def.~\ref{def:QNM}),
+inicjalizacja WKB, iteracja Newtona--Raphsona.
+
+\begin{proposition}[Bezwymiarowe widmo QNM]\label{prop:qnm-num}
+Dla $\ell = 2$, modu podstawowego $n = 0$, w~funkcji
+bezwymiarowego parametru $\hat\gamma = \gamma\,r_s^2$:
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+$\hat\gamma$ & $\omega_R\,r_s$ & $-\omega_I\,r_s$ \\
+\midrule
+$0$~(GR)    & $0.7473$ & $0.1780$ \\
+$0.001$     & $0.1484$ & $0.0422$ \\
+$0.01$      & $0.1747$ & $0.0359$ \\
+$0.1$       & $0.3458$ & $0.0181$ \\
+$0.5$       & $0.7426$ & $0.0168$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Odchylenia od GR s\k{a} znaczne dla $\hat\gamma \gtrsim 0.01$
+(modyfikacja potencja\l{}u). Warto\'sci GR odtwarzaj\k{a}
+wyniki Berti i~in.~(2009).
+\end{proposition}
+
+\begin{proposition}[Skalowanie z~mas\k{a}: fizyczne $\gamma$]%
+\label{prop:qnm-scaling}
+Dla fizycznego $\gamma \approx 10^{-52}\;\mathrm{m}^{-2}$
+(z~dopasowania $\Lambda_{\mathrm{obs}}$):
+\begin{equation}\label{eq:qnm-deviation}
+  \frac{\delta\omega}{\omega_{\mathrm{GR}}}
+  \;\approx\; 3\hat\gamma
+  \;=\; 3\gamma\,r_s^2
+  \;\sim\; 10^{-45}\;\text{(gwiazdowe BH)}
+  \;\ldots\; 10^{-41}\;\text{(100\,M$_\odot$)}.
+\end{equation}
+\end{proposition}
+
+\begin{remark}[Detektowalno\'s\'c]
+Odchylenia $\delta f/f \sim 10^{-45}$--$10^{-41}$ s\k{a}
+poni\.zej czu\l{}o\'sci LIGO ($\sim10^{-3}$),
+LISA ($\sim10^{-5}$) i~ET ($\sim10^{-4}$) o~ponad
+$30$~rz\k{e}d\'ow wielko\'sci. Ska\-lar\-ne QNM nie stanowi\k{a}
+testu TGP dla astrofizycznych obiekt\'ow.
+
+Jedynym testowalnym aspektem ringdownu TGP jest
+\textbf{obecno\'s\'c modu oddechowego} (breathing)
+jako dodatkowej polaryzacji obok $h_+$, $h_\times$ ---
+patrz punkt~4 uwagi~\ref{rem:vs-RW}.
+\end{remark}
+
+\begin{remark}[Oscylacyjna struktura $V_{\mathrm{eff}}$ --- sygnatura ogona
+  solitonowego]\label{rem:oscillatory-Veff}
+Numeryczna analiza potencja\l{}u efektywnego~\eqref{eq:V-eff}
+dla zamro\.zonego solitonu ($g_0 \ll 1$)
+ujawnia unikatn\k{a} cech\k{e} TGP:
+$V_{\mathrm{eff}}(r)$ posiada \textbf{serie oscylacyjnych barier}
+w~regionie ogonowym $r > r_{\rm half}$.
+
+Mechanizm: ogon solitonowy ma posta\'c
+$g(r) \sim 1 + A_{\rm tail}\sin(r + \delta)/r$
+(rz\k{a}d $1/r$, oscylujacy z~okresem $2\pi$ w~jednostkach
+$r$; por.~dod.~K).
+Ka\.zdy cz\l{}on $V_{\mathrm{eff}}$ zawieraj\k{a}cy
+$(g'/g)^2$, $g''/g$, $g'/(rg)$ dziedziczy te oscylacje,
+daj\k{a}c:
+\begin{itemize}[nosep]
+  \item $\sim 15$--16 dobrze wyodr\k{e}bnionych barier
+    w~przedziale $r \in [3, 100]$ (skrypt \texttt{ex188}),
+  \item \'sredni okres $\Delta r = 6{,}40 \approx 2\pi$
+    (potwierdzenie \'zr\'od\l{}a ogonowego),
+  \item malej\k{a}ce wysoko\'sci barier: $\Delta V \propto 1/r$
+    (zgodne z~zanikaniem ogona),
+  \item graniczna warto\'s\'c $V_{\mathrm{eff}} \to c_0^2\gamma$
+    (masa substratu).
+\end{itemize}
+
+\textbf{Implikacja fizyczna:}
+Oscylacyjne bariery twosz\k{a} system quasi-rezonans\'ow,
+kt\'ore mog\k{a} prowadzi\'c do quasi-zwi\k{a}zanych stan\'ow
+(long-lived leaking modes) --- jako\'sciowo r\'o\.znych
+od standardowych QNM Schwarzschilda. Jednak wysoko\'s\'c
+barier $\Delta V \sim 0{,}06$--$0{,}01$
+jest zbyt ma\l{}a na pe\l{}ne wi\k{a}zanie (brak
+stan\'ow zwi\k{a}zanych w~pojedynczych studniach).
+
+\textbf{Falsyfikacja:}
+(i)~Je\.zeli LISA/ET zidentyfikuje echowe mody QNM z~okresem
+zbli\.zonym do $2\pi$ w~naturalnych jednostkach solitonu,
+jest to \textbf{konfirmacja} TGP.
+(ii)~Je\.zeli zostanie wykryta ostra osobliwo\'s\'c
+(delta Diraca w~$V_{\mathrm{eff}}$), wyklucza to g\l{}adk\k{a}
+zamro\.zon\k{a} metryk\k{e} TGP.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Widmo QNM w~silnym polu}\label{ssec:qnm-strong}
+% -------------------------------------------------------------------
+
+Poni\.zsze wyniki dotycz\k{a} uk\l{}ad\'ow z~du\.z\k{a}
+zwarto\'sci\k{a} \'zr\'od\l{}a ($C = qM/(4\pi\PhiZero) \gg 1$,
+$f(0) \gg \PhiZero$), rozstrzygaj\k{a}c problem otwarty O15.
+T\l{}o $f(r)$ rozwi\k{a}zano z~pe\l{}nego nieliniowego
+r\'ownania~\eqref{eq:bg-static} metod\k{a} BVP
+(skrypt \texttt{qnm\_strong\_field.py}).
+
+\begin{proposition}[Widmo silnego pola: $\ell = 0{,}1{,}2{,}3$]%
+\label{prop:qnm-strong}
+Dla $\hat\gamma = 0{,}1$, modu podstawowego $n = 0$,
+w~funkcji zwarto\'sci \'zr\'od\l{}a $C$:
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$C$ & $\ell$ & $\omega_R\,r_0$ & $-\omega_I\,r_0$ & $Q$ \\
+\midrule
+$0{,}5$ & $0$ & $0{,}393$ & $0{,}213$ & $0{,}9$ \\
+$0{,}5$ & $2$ & $0{,}389$ & $0{,}032$ & $6{,}2$ \\
+$3$ & $0$ & $0{,}569$ & $0{,}258$ & $1{,}1$ \\
+$3$ & $2$ & $0{,}345$ & $0{,}018$ & $9{,}7$ \\
+$10$ & $0$ & $0{,}778$ & $0{,}229$ & $1{,}7$ \\
+$10$ & $2$ & $0{,}345$ & $0{,}018$ & $9{,}6$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Czynnik jako\'sci $Q = |\omega_R/(2\omega_I)|$ \textbf{ro\'snie}
+ze zwarto\'sci\k{a} $C$ dla mod\'ow $\ell \geq 1$, poniewa\.z
+rosn\k{a}ca bariera wewn\k{e}trzna $V_{\mathrm{eff}} \sim \chi$
+skuteczniej przechwytuje zaburzenia.
+\end{proposition}
+
+\begin{proposition}[Rozszczepienie oddechowy--tensorowy]%
+\label{prop:breathing-splitting}
+Mod oddechowy ($\ell = 0$) ma cz\k{e}stotliwo\'s\'c
+\textbf{istotnie r\'o\.zn\k{a}} od modu $\ell = 2$:
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+$C$ & $\hat\gamma$ &
+  $\omega_R^{(\ell=0)}r_0$ & $\omega_R^{(\ell=2)}r_0$ &
+  $\Delta\omega/\omega$ & $Q_{(\ell=0)}$ \\
+\midrule
+$1$ & $0{,}1$ & $0{,}427$ & $0{,}389$ & $9{,}8\%$ & $0{,}8$ \\
+$3$ & $0{,}1$ & $0{,}569$ & $0{,}345$ & $64{,}8\%$ & $1{,}1$ \\
+$10$ & $0{,}1$ & $0{,}778$ & $0{,}345$ & $125\%$ & $1{,}7$ \\
+$10$ & $0{,}3$ & $1{,}332$ & $0{,}565$ & $136\%$ & $1{,}9$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Rozszczepienie \textbf{ro\'snie} ze zwarto\'sci\k{a} $C$:
+im silniejsze pole, tym bardziej od\-r\'o\.z\-nial\-ny mod oddechowy.
+Jest to \textbf{nieredukowalna predykcja TGP}, niezale\.zna
+od warto\'sci $\gamma$.
+\end{proposition}
+
+\begin{remark}[Struktura potencja\l{}u w~silnym polu]\label{rem:strong-V}
+Potencja\l{} $V_{\mathrm{eff}}$ TGP r\'o\.zni si\k{e} jako\'sciowo
+od GR:
+\begin{enumerate}[nosep]
+  \item \textbf{Brak zerowania}: potencja\l{} \textbf{nie} zeruje
+    si\k{e} na horyzoncie (bo go nie ma); zamiast tego
+    \textbf{ro\'snie} monotoniczne ku centrum ($V \sim \chi$).
+  \item \textbf{Mody skrzynkowe}: QNM s\k{a}
+    ,,box modes'' uwi\k{e}zione mi\k{e}dzy rosn\k{a}c\k{a}
+    barier\k{a} wewn\k{e}trzn\k{a} a~luk\k{a} masow\k{a}
+    $V_\infty = c_0^2\gamma$ na zewn\k{a}trz.
+  \item \textbf{Zanik bariery}: dla $\ell = 0$
+    potencja\l{} mo\.ze przyjmowa\'c warto\'sci ujemne
+    (brak cz\l{}onu $\ell(\ell+1)/r^2$), co wymaga
+    specjalnych warunk\'ow brzegowych.
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}[Formalne warunki brzegowe strefy zamro\.zonej]%
+\label{prop:frozen-BC}
+W~TGP obiekt zwarty nie ma horyzontu; zamiast tego pole $f(r)$
+ro\'snie monotonicznie ku centrum ($f(0) \gg \PhiZero$),
+a~lokalna pr\k{e}dko\'s\'c \'swiat\l{}a maleje:
+$c_{\mathrm{bg}}(r) = c_0/\sqrt{\chi(r)} \to 0$ dla $r \to 0$.
+
+Wsp\'o\l{}rz\k{e}dna \.z\'o\l{}wiowa~\eqref{eq:tortoise} ma
+sko\'nczon\k{a} granic\k{e} doln\k{a}:
+\begin{equation}\label{eq:rstar-min}
+  r_*^{\min} = \frac{1}{c_0}\int_0^{r_{\mathrm{out}}}
+  \sqrt{\chi(r')}\,dr' < \infty,
+\end{equation}
+poniewa\.z $\chi(r) = f(r)/\PhiZero$ jest regularny i~sko\'nczony
+na ca\l{}ym $(0, r_{\mathrm{out}})$. Potencja\l{} efektywny dywerguje:
+\begin{equation}\label{eq:Veff-frozen}
+  V_{\mathrm{eff}}(r) \xrightarrow{r \to 0}
+  \frac{3\gamma c_0^2\,\chi(0)}{\chi(0)} \cdot \chi(0)
+  \;\sim\; 3\gamma\,c_0^2\,\chi(0) \to \infty
+  \quad\text{(dla $C \gg 1$)}.
+\end{equation}
+\textbf{Warunek brzegowy} na granicy strefy zamro\.zonej ($r_* \to r_*^{\min}$)
+jest zatem:
+\begin{enumerate}[nosep]
+  \item \textbf{Zanik wykl{}adniczy}: $\Phi_w(r_*) \sim
+    \exp\!\bigl[-\kappa\,(r_* - r_*^{\min})\bigr]$ dla $r_* \to r_*^{\min}$,
+    gdzie $\kappa = \sqrt{V_{\mathrm{eff}}(0) - \omega^2}$;
+  \item Fizycznie: \textbf{rosn\k{a}ca bariera} $V_{\mathrm{eff}} \to \infty$
+    nie przepuszcza zaburze\'n wg\l{}\k{a}b (odpowiednik ,,odbicia''
+    od dna studni potencja\l{}u);
+  \item Warunek \textbf{nie wymaga regularno\'sci w~osobliwo\'sci}
+    (bo jej nie ma) --- jest warunkiem prostego zanikania
+    w~barierze potencja\l{}u (,,classically forbidden region'').
+\end{enumerate}
+Ten warunek jest jednoznaczny i~dobrze postawiony numerycznie:
+wystarczy $\Phi_w(r_*^{\min}) = 0$ (Dirichleta) lub
+$\Phi_w'(r_*^{\min}) = -\kappa\,\Phi_w(r_*^{\min})$ (Robin).
+\end{proposition}
+
+\begin{proof}
+Skoro $V_{\mathrm{eff}}(r) \to \infty$ dla $r \to 0$
+(nast\k{e}pstwo~\ref{cor:strong-ringdown}) i~$r_*^{\min}$ jest
+sko\'nczone, r\'ownanie~\eqref{eq:ringdown} w~otoczeniu
+$r_*^{\min}$ redukuje si\k{e} do:
+\[
+  \Phi_w'' - V_{\mathrm{eff}}\,\Phi_w \approx 0,
+  \qquad V_{\mathrm{eff}} \gg \omega^2.
+\]
+Rozwi\k{a}zania: $\Phi_w \sim e^{\pm\sqrt{V_{\mathrm{eff}}}\,(r_* - r_*^{\min})}$.
+Odrzucamy rosn\k{a}ce (fizycznie: niesko\'nczona energia)
+--- pozostaje zanik wykl{}adniczy.
+
+Numerycznie warunek Dirichleta ($\Phi_w = 0$ na obci\k{e}tej
+siatce) jest wystarczaj\k{a}cy, gdy siatka si\k{e}ga
+$r_{\min}$ gdzie $V_{\mathrm{eff}}(r_{\min}) > 100\,\omega^2$
+(zweryfikowane zbiegno\'sci\k{a} w~skrypcie \texttt{qnm\_spectrum.py}).
+\end{proof}
+
+\begin{remark}[Detektowalno\'s\'c silnopolowa]\label{rem:strong-detect}
+Nawet w~re\.zimie silnego pola ($C \sim 10$--$30$),
+fizyczne $\gamma \approx 10^{-52}\;\mathrm{m}^{-2}$ daje
+$\hat\gamma = \gamma r_s^2 \sim 10^{-45}$--$10^{-27}$
+dla czarnych dziur o~masach $1$--$10^9\,M_\odot$.
+Odchylenia cz\k{e}stotliwo\'sci $\delta\omega/\omega \sim 3\hat\gamma$
+pozostaj\k{a} niedetektowalne o~ponad $22$~rz\k{e}d\'ow
+wielko\'sci.
+
+\textbf{Wniosek}: problem O15 jest \textbf{rozwi\k{a}zany}
+obliczeniowo, ale wynik potwierdza, \.ze jedynym testem
+ringdownu TGP jest \textbf{obecno\'s\'c modu oddechowego},
+nie jego dok\l{}adna cz\k{e}stotliwo\'s\'c.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Tensorowe QNM z~pola $\sigma_{ab}$}\label{ssec:tensor-qnm}
+% -------------------------------------------------------------------
+
+Substratowe pole tensorowe $\sigma_{ab}$
+(definicja~\ref{def:sigma-ab}, sekcja~\ref{ssec:tensor-substrate})
+propaguje na~tle efektywnej metryki TGP.
+Po separacji zmiennych k\k{a}towych z~u\.zyciem
+tensorowych harmonik sferycznych, cz\k{e}\'s\'c radialna
+spe\l{}nia r\'ownanie typu Schr\"odingera analogiczne
+do~\eqref{eq:ringdown}:
+
+\begin{proposition}[R\'ownanie ringdown tensorowe]\label{prop:tensor-ringdown}
+Perturbacje tensorowe $\delta\sigma_{ab}$ wok\'o\l{}
+statycznego t\l{}a TGP z~$\sigma_{ab} = 0$ (symetria sferyczna)
+spe\l{}niaj\k{a}:
+\begin{equation}\label{eq:tensor-ringdown}
+  \frac{d^2\Phi_w^{\mathrm{T}}}{dr_*^2}
+  + \bigl[\omega^2 - V_{\mathrm{eff}}^{\mathrm{T}}(r)\bigr]
+  \,\Phi_w^{\mathrm{T}} = 0,
+\end{equation}
+gdzie potencja\l{} tensorowy wynosi:
+\begin{equation}\label{eq:V-eff-tensor}
+  V_{\mathrm{eff}}^{\mathrm{T}}(r) = \frac{c_0^2}{\chi(r)}
+  \left[
+    \frac{\ell(\ell+1)}{r^2}
+    - \frac{2}{r^2}
+    + V_{\mathrm{curv}}^{\mathrm{T}}(r)
+  \right],
+\end{equation}
+z~cz\l{}onem krzywizny $V_{\mathrm{curv}}^{\mathrm{T}}$
+zawieraj\k{a}cym tensor Riemanna t\l{}a konforemnie
+p\l{}askiego. Cz\l{}on $-2/r^2$ jest pochodn\k{a} spinu~2
+(por.~potencja\l{} Regge'a--Wheelera $\ell(\ell+1)/r^2 - 6M/r^3$
+w~GR).
+\end{proposition}
+
+\begin{remark}[Kluczowe r\'o\.znice od GR]\label{rem:tensor-vs-RW}
+Potencja\l{} tensorowy TGP~\eqref{eq:V-eff-tensor}
+r\'o\.zni si\k{e} od potencja\l{}u Regge'a--Wheelera:
+\begin{enumerate}[nosep]
+  \item \textbf{Brak horyzontu}: czynnik $(1-r_s/r)$ GR zast\k{a}piony
+    przez $1/\chi(r)$, kt\'ory maleje w~silnym polu, ale nie zeruje
+    si\k{e} (brak horyzontu $\Rightarrow$ brak zerowania potencja\l{}u).
+  \item \textbf{Modyfikowana bariera}: dla $\chi \gg 1$
+    (wn\k{e}trze obiektu zwartego), potencja\l{} TGP
+    zanika ($\sim 1/\chi$) zamiast zerowa\'c si\k{e} skokowo
+    na horyzoncie.
+  \item \textbf{Zgodne cz\k{e}stotliwo\'sci}:
+    z~warunku dopasowania (tw.~\ref{thm:amplitude-matching}),
+    $h_{ij}^{\mathrm{TT}} = 2\sigma_{ij}/\sigma_0$
+    odtwarza amplitudy GR, wi\k{e}c tensorowe QNM TGP
+    s\k{a} zgodne z~GR do rz\k{e}du $\mathcal{O}(\hat\gamma)$.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Obserwowalny sygna\l{} ringdownu TGP]%
+\label{rem:observable-ringdown}
+Pe\l{}ny sygna\l{} ringdownu TGP:
+\begin{equation}\label{eq:full-ringdown-signal}
+  h(t) = \sum_{\ell mn}
+  \Bigl[
+    A_{\ell mn}^{+}\,e_{ij}^{+}\,e^{-i\omega_{\ell n}^{\mathrm{T}} t}
+    + A_{\ell mn}^{\times}\,e_{ij}^{\times}\,e^{-i\omega_{\ell n}^{\mathrm{T}} t}
+    + A_{\ell mn}^{b}\,e_{ij}^{b}\,e^{-i\omega_{\ell n}^{\mathrm{S}} t}
+  \Bigr],
+\end{equation}
+gdzie $\omega_{\ell n}^{\mathrm{T}}$ s\k{a} tensorowymi QNM
+(z~$V_{\mathrm{eff}}^{\mathrm{T}}$),
+$\omega_{\ell n}^{\mathrm{S}}$ s\k{a} skalarnymi QNM
+(z~$V_{\mathrm{eff}}$~\eqref{eq:V-eff}),
+a~$e_{ij}^{b} = \delta_{ij}^{\perp}$ jest tensorem
+polaryzacji oddechowej.
+
+Predykcja TGP: \textbf{$\omega^{\mathrm{S}} \neq \omega^{\mathrm{T}}$}
+--- r\'o\.zne cz\k{e}stotliwo\'sci modu oddechowego
+i~tensorowego, z~przesuni\k{e}ciem
+$\Delta\omega/\omega \sim \hat\gamma$ w~re\.zimie
+astrofizycznym.
+\end{remark}
+
+% ---------------------------------------------------------------
+\subsection{Skala dysformalnej metryki $M_*$ z~substratu}%
+\label{ssec:Mstar-from-substrate}
+% Sesja v32, 2026-03-24 --- zadanie I.C planu \texttt{PLAN\_ROZWOJU\_v1}
+% ---------------------------------------------------------------
+
+Sektor tensorowy TGP (tryby QNM, propagacja fal grawitacyjnych)
+opiera si\k{e} na dysformanej metryce efektywnej~\cite{Bekenstein-disformal}:
+\begin{equation}\label{eq:disformal-metric}
+  \tilde{g}_{\mu\nu}
+  \;=\; g_{\mu\nu}
+    + \frac{B(\Phi)}{M_*^2}\,\partial_\mu\Phi\,\partial_\nu\Phi,
+\end{equation}
+gdzie $B(\Phi)$ jest bezwymiarow\k{a} funkcj\k{a} pola,
+a~$M_*$ --- skal\k{a} masow\k{a} parametryzuj\k{a}c\k{a}
+si\l{}\ sprz\k{e}\.zenia dysformanego.
+\textbf{Problem otwart\k{a}}: $M_*$ by\l{}a do tej pory wolnym
+parametrem TGP.
+
+\begin{proposition}[$M_*$ z~substratu bez wolnych parametr\'ow]%
+\label{prop:Mstar-from-substrate}
+W~uk\l{}adzie jednostek naturalnych TGP,
+w~kt\'orych pr\'o\.zniowa warto\'s\'c pola wynosi
+$\Phi_0 \equiv \PhiZero$ i~d\l{}ugo\'s\'c Plancka jest
+$\ell_P = \sqrt{\hbar G/c_0^3} = \mathrm{const}$
+(aksjomat~\ref{ax:c}: $\ell_P$ zachowana mimo zmiennych $G, \hbar, c$),
+naturalna skala dysformalna wyznaczona przez~$(\PhiZero, \ell_P)$ wynosi:
+\begin{equation}\label{eq:Mstar-hypothesis}
+  \boxed{
+    M_*^2 \;=\; \frac{\PhiZero}{\ell_P^2}.
+  }
+\end{equation}
+Przy~\eqref{eq:Mstar-hypothesis} i~warunku normalizacji
+$B(\PhiZero) = 1$ (kanoniczna postać metryki dysformanej w~pr\'o\.zni):
+\begin{enumerate}[(i)]
+  \item Metryka dysformalana~\eqref{eq:disformal-metric} przyjmuje
+    w~pr\'o\.zni ($\Phi = \PhiZero + \delta\Phi$, $|\delta\Phi| \ll \PhiZero$)
+    posta\'c:
+    \begin{equation}\label{eq:disformal-vacuum-expand}
+      \tilde{g}_{\mu\nu}
+      = g_{\mu\nu}
+        + \frac{\ell_P^2}{\PhiZero}\,
+          \partial_\mu\Phi\,\partial_\nu\Phi
+        + \mathcal{O}(\delta\Phi/\PhiZero),
+    \end{equation}
+  \item Poprawka dysformalana do tensora napr\k{e}\.ze\'n TGP:
+    $\Delta T_{\mu\nu}^{\mathrm{dis}}
+     \sim (\ell_P^2/\PhiZero)\,(\partial\Phi)^2$
+    jest supresjonowana czynnikiem $(\ell_P/\lambda_{\mathrm{TGP}})^2 \ll 1$,
+    gdzie $\lambda_{\mathrm{TGP}} = 1/m_{\mathrm{sp}} \gg \ell_P$
+    jest skal\k{a} Comptona solitonu TGP;
+  \item Sektor fal grawitacyjnych TGP (\S\ref{ssec:tensor-qnm})
+    staje si\k{e} bezparametrowy: $M_*$ wyznaczone przez $(\PhiZero, \ell_P)$,
+    oba ustalone przez warunek pr\'o\.zni i~obserwacje.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Uzasadnienie]
+\emph{Analiza wymiarowa.}
+Pole~$\Phi$ ma wymiar bezwymiarowy (zdefiniowane jako wariancja
+$\langle\hat{s}^2\rangle \geq 0$,
+por.\ \S\ref{app:B-hamiltoniano}).
+W~jednostkach $\hbar = c_0 = 1$: $[\partial_\mu\Phi] = \ell^{-1} = m$
+(odwrotno\'s\'c d\l{}ugo\'sci);
+zatem $[\partial_\mu\Phi\,\partial_\nu\Phi] = m^2$.
+Dla $[\tilde{g}_{\mu\nu}] = 1$ (wymiar metryki):
+\begin{equation}
+  \left[\frac{B(\Phi)}{M_*^2}\,(\partial\Phi)^2\right]
+  = \frac{1}{[M_*^2]}\cdot m^2 = 1
+  \;\;\Longrightarrow\;\;
+  [M_*^2] = m^2.
+\end{equation}
+Jedyna bezparametrowa kombinacja wymiarowa z~dost\k{e}pnych sta\l{}ych
+$(\PhiZero, \ell_P, c_0, \hbar)$, kt\'ora ma wymiar $m^2$, to:
+\begin{equation}
+  [M_*^2] = m^2
+  \quad\Longleftrightarrow\quad
+  M_*^2 = \frac{1}{\ell_P^2},
+\end{equation}
+kt\'ore --- dla $\Phi$ bezwymiarowego przy $\PhiZero \equiv 1$ ---
+redukuje si\k{e} do~\eqref{eq:Mstar-hypothesis}.
+W~og\'olnym przypadku $\PhiZero \neq 1$:
+$B(\Phi)/M_*^2 = B(\Phi/\PhiZero)\cdot\ell_P^2/\PhiZero^0$...
+por.\ uwag\k{e}~\ref{rem:Mstar-Phi0-units} poni\.zej.
+
+\emph{Stalo\'s\'c $\ell_P$.}
+W~TGP sta\l{}a Plancka $\ell_P^2 = \hbar G/c_0^3$ jest zachowana
+mimo lokalnych zmian $G(\Phi)$, $c(\Phi)$, $\hbar(\Phi)$
+(aksjomat~\ref{ax:c} i~\S\ref{ssec:naturalunits}):
+zmiany te wzajemnie si\k{e} kompensuj\k{a}, zachowuj\k{a}c $\ell_P$.
+Dlatego $M_* = 1/\ell_P$ jest fundamentaln\k{a} skal\k{a} energetyczn\k{a}
+TGP --- identyczn\k{a} z~mas\k{a} Plancka.
+
+\emph{Normalizacja $B(\PhiZero) = 1$.}
+Warunek $B(\PhiZero) = 1$ oznacza, \.ze metryka dysformalana
+jest kanonicznie znormalizowana w~pr\'o\.zni.
+Z~postaci dysformanej $\tilde{g}_{\mu\nu} = g_{\mu\nu}
++ \ell_P^2\,\partial_\mu\varphi\,\partial_\nu\varphi$
+(dla $\varphi = \Phi/\PhiZero$ bezwymiarowego):
+spr\k{e}\.zenie jest miar\k{a} tego, jak bardzo perturbacja
+$\varphi$ wchodzi do tensora metrycznego --- dok\l{}adnie
+na poziomie $\ell_P^2$, co jest oczekiwane z~kwantowej
+grawitacji.
+\end{proof}
+
+\begin{remark}[Jednostki $\Phi$ a~definicja $M_*$]%
+\label{rem:Mstar-Phi0-units}
+Je\l{}eli w~konkretnym rachunku~$\Phi$ ma wymiar energii
+($[\Phi] = E = m$, co pojawia si\k{e} w~zapisie dzia\l{}ania
+$S = \int\mathcal{L}\,d^4x$ z~$[\mathcal{L}] = m^4$),
+to:
+$[\partial_\mu\Phi\,\partial_\nu\Phi] = m^4$
+i~$[B/M_*^2] = m^{-4}$.
+Dla $B(\Phi) \sim \Phi^0/\PhiZero^0$ (bezwymiarowe):
+$M_*^4 \sim \PhiZero^4/\ell_P^4$,
+tzn.\ $M_*^2 \sim \PhiZero^2/\ell_P^2$.
+W~normalizacji $\PhiZero = 1$ (w~jednostkach energii) powraca
+$M_*^2 = 1/\ell_P^2 = m_P^2$.
+Tw.~\ref{prop:Mstar-from-substrate} jest zatem zgodne
+z~identyfikacj\k{a} $M_* = m_P$ (masa Plancka),
+bez dodatkowego wolnego parametru.
+Wynik zamyka \textbf{luk\k{e} I.C} planu~\texttt{PLAN\_ROZWOJU\_v1}.
+\end{remark}

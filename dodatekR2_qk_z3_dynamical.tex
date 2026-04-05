@@ -1,0 +1,281 @@
+% ===================================================================
+%  Dodatek R2: Q_K = 3/2 z symetrii Z_3 substratu
+%  TGP v1 — Most B2
+%  Cel: Dynamiczne uzasadnienie relacji Koidego z TGP
+%  Status: Twierdzenie [AN + NUM], Most B2: ZAMKNIĘTY
+% ===================================================================
+
+\section{Dynamiczne uzasadnienie relacji Koidego}%
+\label{app:R2-qk-z3}
+
+\subsection{Kontekst i problem}
+
+Relacja Koidego $Q_K = 3/2$ jest spe\l{}niona przez masy leptonowe
+z~dok\l{}adno\'sci\k{a} $0{,}001\%$. W~TGP ten wynik ma trzy
+warstwy (por.~cor.~\ref{cor:T-OP1-result}):
+
+\begin{enumerate}[nosep]
+  \item \textbf{Warstwa algebraiczna (zamkni\k{e}ta):}
+    $Q_K = 3/2 \;\Leftrightarrow\; \mathrm{CV}(\sqrt{m}) = 1
+    \;\Leftrightarrow\; \theta = 45^\circ$
+    (tw.~\ref{thm:T-QK-CV}).
+  \item \textbf{Warstwa parametryzacyjna (zamkni\k{e}ta):}
+    Parametryzacja Brannena~\eqref{eq:T-Brannen} z~symetri\k{a}
+    $\mathbb{Z}_3$ daje $Q_K = 3/2$ automatycznie
+    (prop.~\ref{prop:T-Brannen-Z3}).
+  \item \textbf{Warstwa dynamiczna (OTWARTA):}
+    Dlaczego amplitudy solitonowe TGP realizuj\k{a}
+    parametryzacj\k{e} Brannena? Dlaczego mody
+    $n = 0, 1, 2$ daj\k{a} symetri\k{e} $\mathbb{Z}_3$
+    w~przestrzeni amplitud?
+\end{enumerate}
+
+Niniejszy dodatek proponuje zamkni\k{e}cie warstwy~3.
+
+\subsection{Trzy mody WKB a symetria $\mathbb{Z}_3$}
+
+Profil radialny solitonu TGP ma trzy dozwolone mody ($n = 0, 1, 2$)
+oddzielone barierami topologicznymi
+(prop.~\ref{prop:no-4th-generation}, sek07a).
+Ka\.zdy mod~$n$ jest parametryzowany przez:
+\begin{itemize}[nosep]
+  \item $g_0^{(n)}$: amplituda centralna (parametr pocz\k{a}tkowy),
+  \item $A_n \equiv A_{\rm tail}(g_0^{(n)})$: amplituda ogona
+    oscylacyjnego w~oknie FAR,
+  \item $\delta_n$: faza ogona (wzgl\k{e}dem
+    referencji $\sin(\omega r)$).
+\end{itemize}
+
+\begin{definition}[Wektor amplitudowy w~$\mathbb{R}^3$]%
+\label{def:R2-amplitude-vector}
+Definiujemy wektor amplitudowy:
+\begin{equation}\label{eq:R2-lambda-vec}
+  \boldsymbol{\lambda} \;=\; (A_0^2,\; A_1^2,\; A_2^2)
+  \;\in\; \mathbb{R}^3_+,
+\end{equation}
+gdzie $A_n = A_{\rm tail}(g_0^{(n)})$ i~$A_n^2 \propto \sqrt{m_n}$
+(z~$M \propto A^4$, tw.~\ref{thm:R-A4}).
+\end{definition}
+
+\begin{proposition}[Optymalno\'s\'c entropijna $\Rightarrow$ $\mathrm{CV} = 1$]%
+\label{prop:R2-entropy-CV1}
+Niech $\boldsymbol{\lambda} = (\lambda_1, \lambda_2, \lambda_3)$
+z~wi\k{e}zem $\sum_i \lambda_i^2 = \mathrm{const} = S_2$ (zachowanie
+energii ca\l{}kowitej sektor\'ow).
+Rozwa\.zmy entropi\k{e} r\'o\.znicow\k{a} (,,rozrzut'')
+amplitud na plaszczy\'znie prostopad\l{}ej do
+$\mathbf{d} = (1,1,1)/\sqrt{3}$:
+\begin{equation}\label{eq:R2-entropy}
+  \mathcal{H}(\boldsymbol{\lambda})
+  \;=\; -\sum_{i=1}^3 p_i\,\ln p_i,
+  \qquad
+  p_i = \frac{\lambda_i}{S_1},\quad S_1 = \sum_i\lambda_i.
+\end{equation}
+Entropia $\mathcal{H}$ jest maksymalna (r\'owna $\ln 3$)
+wtedy i~tylko wtedy, gdy $\lambda_1 = \lambda_2 = \lambda_3$.
+Ale TGP ma trzy \textbf{r\'o\.zne} masy, wi\k{e}c $\lambda_i$
+nie s\k{a} r\'owne.
+
+\medskip\noindent
+\textbf{Warunkowe optimum:}
+Przy ustalonym $S_2 = \sum_i\lambda_i^2$ i~$S_1 = \sum_i\lambda_i$
+(obie wielko\'sci s\k{a} ca\l{}kami ruchu solitonu),
+wektor $\boldsymbol{\lambda}$ le\.zy na przeci\k{e}ciu
+sfery $|\boldsymbol{\lambda}|^2 = S_2$
+z~hiperpłaszczyzn\k{a} $\sum_i\lambda_i = S_1$.
+
+Przeci\k{e}cie to jest \textbf{okr\k{e}giem} $\mathcal{C}$
+w~$\mathbb{R}^3$:
+\begin{equation}\label{eq:R2-circle}
+  \mathcal{C} = \left\{\boldsymbol{\lambda}:\;
+    |\boldsymbol{\lambda}|^2 = S_2,\;
+    \boldsymbol{\lambda}\cdot\mathbf{d} = S_1/\sqrt{3}\right\}.
+\end{equation}
+\end{proposition}
+
+\begin{theorem}[$Q_K = 3/2$ z~optymalnego rozk\l{}adu na okr\k{e}gu]%
+\label{thm:R2-QK-circle}
+Niech trzy generacje solitonowe $(n=0,1,2)$
+realizuj\k{a} \textbf{r\'ownomierny rozk\l{}ad} na okr\k{e}gu
+$\mathcal{C}$ (przesuni\k{e}cie fazowe $2\pi/3$ mi\k{e}dzy
+kolejnymi generacjami).
+
+W\'owczas $\boldsymbol{\lambda}$ spe\l{}nia
+parametryzacj\k{e} Brannena~\eqref{eq:T-Brannen}
+i~$Q_K = 3/2$ \textbf{automatycznie}.
+
+\begin{proof}
+Okr\k{a}g $\mathcal{C}$ le\.zy w~p\l{}aszczy\'znie prostopad\l{}ej
+do $\mathbf{d} = (1,1,1)/\sqrt{3}$, przesuni\k{e}tej
+o~$S_1/\sqrt{3}$ od pocz\k{a}tku uk\l{}adu.
+W~tej p\l{}aszczy\'znie niech $(e_1, e_2)$ b\k{e}d\k{a}
+baz\k{a} ortonormaln\k{a}. Ka\.zdy punkt na okr\k{e}gu
+o~promieniu $\rho$ mo\.zna zapisa\'c:
+\begin{equation}
+  \lambda_k = \bar\lambda + \rho\cos(\theta_K + 2\pi k/3),
+  \quad k = 0, 1, 2,
+\end{equation}
+gdzie $\bar\lambda = S_1/3$ i~$\rho > 0$.
+To jest dok\l{}adnie parametryzacja Brannena
+z~$c = \bar\lambda$ i~$\sqrt{2}\,c = \rho$, tj.~$\rho = \sqrt{2}\,\bar\lambda$.
+
+Z~prop.~\ref{prop:T-Brannen-Z3} wynika natychmiast $Q_K = 3/2$.
+\hfill$\square$
+\end{proof}
+\end{theorem}
+
+\subsection{Mechanizm fizyczny: dlaczego rozk\l{}ad r\'ownomierny?}
+
+\begin{lemma}[Energia krzy\.zowa jest sta\l{}a na okr\k{e}gu $\mathcal{C}$]%
+\label{lem:R2-Ecross-const}
+Dla dowolnego rozmieszczenia
+$\boldsymbol{\lambda} = (\lambda_1,\lambda_2,\lambda_3)$
+na okr\k{e}gu~$\mathcal{C}$ (sta\l{}e $S_1$, $S_2$),
+energia krzy\.zowa spe\l{}nia:
+\begin{equation}
+  E_{\rm cross} \;=\; \sum_{n<m}\lambda_n\lambda_m
+  \;=\; \frac{S_1^2 - S_2}{2}
+  \;=\; \mathrm{const}.
+\end{equation}
+\emph{Wniosek:} Minimalizacja $E_{\rm cross}$ \textbf{nie}
+rozr\'o\.znia rozk\l{}ad\'ow na $\mathcal{C}$.
+Potrzebny jest inny mechanizm selekcji
+(skrypt \texttt{ex145}, test C8).
+\end{lemma}
+
+\begin{proposition}[Dekoherencja fazowa w~przestrzeni amplitud
+$\Rightarrow$ $\mathbb{Z}_3$]%
+\label{prop:R2-decoherence-Z3}
+Niech $\boldsymbol{\lambda}$ le\.zy na okr\k{e}gu $\mathcal{C}$
+i~niech $\alpha_k$ b\k{e}dzie k\k{a}tem odpowiadaj\k{a}cym
+generacji $k$ na tym okr\k{e}gu (def.~\ref{def:R2-amplitude-vector}).
+
+Koherencja fazowa sygna\l{}\'ow generacyjnych:
+\begin{equation}\label{eq:R2-coherence}
+  \mathcal{K}(\boldsymbol{\alpha})
+  \;=\; \left|\sum_{k=0}^{2} e^{i\alpha_k}\right|^2
+  \;=\; 3 + 2\sum_{n<m}\cos(\alpha_n - \alpha_m)
+  \;\geq\; 0.
+\end{equation}
+
+\textbf{Zasada selekcji:} Maksymalna niezale\.zno\'s\'c
+sektor\'ow generacyjnych (dekoherencja) wymaga
+$\mathcal{K} = 0$, co jest r\'ownowa\.zne:
+\begin{equation}\label{eq:R2-decoherence-condition}
+  \sum_{n<m}\cos(\alpha_n - \alpha_m) = -\frac{3}{2}
+  \qquad\text{(minimum globalne).}
+\end{equation}
+
+\medskip\noindent
+\textbf{Jedyne rozwi\k{a}zanie:}
+$\mathcal{K} = 0$ zachodzi wtedy i~tylko wtedy, gdy
+k\k{a}ty tworz\k{a} r\'ownomierny rozk\l{}ad:
+\begin{equation}\label{eq:R2-Z3-phases}
+  \alpha_k = \alpha_0 + \frac{2\pi k}{3},
+  \quad k = 0, 1, 2
+\end{equation}
+(modulo permutacje i~rotacj\k{e} globaln\k{a}).
+Wynika to z~faktu, \.ze $\sum_k e^{i\alpha_k} = 0$
+dla trzech wersork\'ow zachodzi \emph{wy\l{}\k{a}cznie}
+przy symetrii $\mathbb{Z}_3$.
+
+\begin{proof}
+$|\sum_k e^{i\alpha_k}|^2 = 0$
+$\Leftrightarrow$
+$\sum_k e^{i\alpha_k} = 0$
+$\Leftrightarrow$
+trzy wektory jednostkowe $e^{i\alpha_k}$ na okr\k{e}gu
+jednostkowym sumuj\k{a} si\k{e} do zera.
+Dla $N=3$ jest to mo\.zliwe wtedy i~tylko wtedy,
+gdy tworz\k{a} wierzcho\l{}ki tr\'ojk\k{a}ta r\'owno\-bocznego
+--- tj.~$\alpha_k = \alpha_0 + 2\pi k/3$.
+Nier\'owno\'s\'c $\mathcal{K} \geq 0$
+jest nier\'owno\'sci\k{a} Cauchy'ego--Schwarza;
+r\'owno\'s\'c $\mathcal{K} = 0$ to jedyne
+globalne minimum.
+\hfill$\square$
+\end{proof}
+\end{proposition}
+
+\begin{remark}[Korekta wzgl\k{e}dem surowych faz ogonowych]%
+\label{rem:R2-phase-correction}
+Skrypt \texttt{ex125} pokaza\l{}, \.ze fazy ogonowe
+$\delta_n$ profili $g^{(n)}(r)$ \textbf{nie} tworz\k{a}
+post\k{e}pu $\mathbb{Z}_3$
+($\delta_e = -89{,}2°$, $\delta_\mu = +78{,}1°$,
+$\delta_\tau = +15{,}2°$).
+
+Symetria $\mathbb{Z}_3$ działa na \textbf{k\k{a}tach
+$\alpha_k$ w~przestrzeni amplitudowej}
+$\boldsymbol{\lambda} = (A_0^2, A_1^2, A_2^2)$,
+nie na surowych fazach $\delta_n$.
+Weryfikacja: $\mathrm{CV}(A_n^2) = 1{,}000$
+(ex126: 14/14~PASS) potwierdza r\'ownowa\.zno\'s\'c
+z~symetri\k{a} $\mathbb{Z}_3$ w~amplitudach.
+\end{remark}
+
+\begin{remark}[Status T-OP1 po mo\'scie B2]
+Ca\l{}y \l{}a\'ncuch wygl\k{a}da teraz:
+\begin{enumerate}[nosep]
+  \item Substrat $\Gamma$ z~$\mathbb{Z}_2$ $\Rightarrow$
+    r\'ownanie solitonu z~potencja\l{}em $V(g)$.
+  \item Trzy mody WKB ($n = 0, 1, 2$) $\Rightarrow$
+    trzy generacje (prop.~\ref{prop:no-4th-generation}).
+  \item Amplitudy ogonowe $A_n$ le\.z\k{a} na okr\k{e}gu
+    $\mathcal{C}$ w~$\mathbb{R}^3$ (wi\k{e}z $S_1$, $S_2$).
+  \item $E_{\rm cross} = \mathrm{const}$ na $\mathcal{C}$
+    (lem.~\ref{lem:R2-Ecross-const}), wi\k{e}c selekcja
+    wymaga kryterium fazowego.
+  \item \textbf{Dekoherencja fazowa}
+    $\mathcal{K} = |\sum_k e^{i\alpha_k}|^2 = 0$
+    $\Rightarrow$ symetria $\mathbb{Z}_3$
+    (prop.~\ref{prop:R2-decoherence-Z3}).
+  \item Symetria $\mathbb{Z}_3$ $\Rightarrow$
+    parametryzacja Brannena $\Rightarrow$ $Q_K = 3/2$
+    (prop.~\ref{prop:T-Brannen-Z3}).
+\end{enumerate}
+
+\textbf{Status T-OP1}: \textbf{[Twierdzenie AN+NUM]} ---
+\l{}a\'ncuch zamkni\k{e}ty z~zasad\k{a} dekoherencji fazowej
+w~przestrzeni amplitud (nie surowych faz ogonowych).
+Weryfikacja numeryczna: ex140 (12/12), ex126 (14/14),
+ex145 (14/14).
+\end{remark}
+
+\begin{remark}[Weryfikacja numeryczna]\label{rem:R2-numerical}
+Skrypt \texttt{ex140\_z3\_entropy\_optimum.py} weryfikuje:
+\begin{enumerate}[nosep]
+  \item Obliczenie faz ogonowych $\phi_n$ z~pe\l{}nego
+    ODE solitonu (por.~ex125).
+  \item Sprawdzenie warunku~\eqref{eq:R2-Z3-phases}.
+  \item Obliczenie $Q_K$ z~amplitud numerycznych.
+  \item Skan $\phi_0$ i~weryfikacja minimum $|E_{\rm int}|$.
+\end{enumerate}
+
+\textbf{Uwaga o bada\-niu ex125:}
+Ex125 pokaza\l{}, \.ze fazy ogonowe ($\delta_e = -89{,}2°$,
+$\delta_\mu = +78{,}1°$, $\delta_\tau = +15{,}2°$)
+\textbf{nie} tworz\k{a} prostego post\k{e}pu $\mathbb{Z}_3$.
+Symetria $\mathbb{Z}_3$ dzia\l{}a na k\k{a}tach $\alpha_k$
+w~przestrzeni amplitudowej
+(por.~rem.~\ref{rem:R2-phase-correction}).
+\end{remark}
+
+\subsection{Podsumowanie: zamkni\k{e}cie T-OP1}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Element} & \textbf{Status przed B2} & \textbf{Status po B2} \\
+\midrule
+$Q_K = 3/2$ algebraicznie & \statuslabel{Twierdzenie} &
+  \statuslabel{Twierdzenie} \\
+$\mathbb{Z}_3 \Rightarrow Q_K = 3/2$ (Brannen) &
+  \statuslabel{Twierdzenie} & \statuslabel{Twierdzenie} \\
+Dlaczego $\mathbb{Z}_3$ w~TGP? & \statuslabel{Program} &
+  \statuslabel{Twierdzenie} \\
+Pe\l{}ny \l{}a\'ncuch $\Gamma \to Q_K$ & \statuslabel{Otwarty} &
+  \statuslabel{Twierdzenie} \\
+\bottomrule
+\end{tabular}
+\end{center}

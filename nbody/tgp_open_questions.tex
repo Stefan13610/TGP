@@ -1,0 +1,234 @@
+\section{Open theoretical questions}
+\label{sec:open_questions}
+
+This section discusses three fundamental open questions in TGP Path~B
+that require theoretical rather than numerical resolution.
+
+\subsection{Q1: Yukawa source mechanism}
+\label{sec:yukawa_source}
+
+\paragraph{Question.}
+Why does a body of mass $m$ act as a source of the Yukawa scalar field
+$\phi$ with coupling $C = m/(2\sqrt{\pi}\,m_{\rm Pl})$?
+In TGP Path~B, this is taken as an axiom.  No derivation from first
+principles has been given.
+
+\paragraph{Scalar-field formulation (standard}.
+In a standard massive scalar field theory with Lagrangian
+$\mathcal{L} = -\frac{1}{2}(\partial_\mu\phi)^2 - \frac{1}{2}m_{\rm sp}^2\phi^2 - g\phi T$,
+the coupling to the trace of the energy-momentum tensor $T=-\rho$ (for
+non-relativistic matter) gives the field equation
+$(\Box - m_{\rm sp}^2)\phi = g\rho$,
+with the Yukawa solution $\phi = -\frac{g}{4\pi}\frac{m e^{-m_{\rm sp}r}}{r}$
+for a point mass $m$.
+
+The two-body potential from scalar exchange is then
+$V_{12} = g^2\phi_1(r_{12})m_2 = -\frac{g^2 m_1 m_2}{4\pi}\frac{e^{-m_{\rm sp}r}}{r}$.
+Matching to TGP: $g^2/(4\pi) = C_1 C_2 / (m_1 m_2) = 1/(4\pi m_{\rm Pl}^2)$,
+giving $g = 1/m_{\rm Pl}$ — this is the Planck-scale coupling.
+
+\paragraph{Three-body vertex from $\phi^3$ term.}
+The three-body TGP interaction arises if the scalar Lagrangian contains
+a cubic self-interaction $\mathcal{L}_3 = -\lambda\phi^3/6$.  The one-loop
+diagram with one $\phi^3$ vertex and three external matter lines generates
+the Feynman integral $I_Y$ computed in the preceding sections.  The
+coupling scales as $C^3 = (g m/m_{\rm Pl})^3 = (m/m_{\rm Pl})^3/(4\pi)^{3/2}$.
+
+\paragraph{Identification with Dilaton or Brans-Dicke scalar.}
+A natural candidate is the dilaton field $\phi$ of string theory or the
+scalar partner in Brans-Dicke gravity.  In Brans-Dicke theory, the scalar
+$\chi$ couples to matter as $g_{\rm BD}\chi T$, with $g_{\rm BD}\sim1/m_{\rm Pl}$.
+The Yukawa mass $m_{\rm sp}$ would arise from a non-minimal scalar potential
+$V(\chi)\ni\frac{1}{2}m_{\rm sp}^2\chi^2$.
+
+\paragraph{Status.}
+The coupling structure of TGP Path~B is consistent with a standard
+dilaton-like scalar with coupling $g=1/m_{\rm Pl}$ and mass $m_{\rm sp}$.
+The derivation from a specific string or modified-gravity Lagrangian
+is an open problem.  The key observation is that the TGP 2-body
+potential IS the Newtonian gravitational potential at $r\ll1/m_{\rm sp}$,
+so the scalar-exchange mechanism is a completion of Newtonian gravity
+at sub-Planck scales.
+
+\subsection{Q2: Dark matter and rotation curves}
+\label{sec:dark_matter}
+
+\paragraph{Question.}
+Can TGP with $m_{\rm sp}\sim1/{\rm kpc}$ explain galactic rotation curves
+without dark matter?
+
+\paragraph{Answer: No, for ordinary matter.}
+The TGP two-body coupling for ordinary baryonic matter is
+$C = m/(2\sqrt{\pi}\,m_{\rm Pl}) \sim 10^{-19}$--$10^{-20}$
+(for masses $m\sim10^{-27}$--$10^{-26}$~kg).
+The two-body TGP potential is:
+\begin{equation}
+  V_{\rm TGP}(r) = -\frac{G m_1 m_2}{r}\,e^{-m_{\rm sp}r}.
+\end{equation}
+At $r\ll1/m_{\rm sp}$ (sub-Yukawa range) this is Newtonian gravity.
+At $r\gg1/m_{\rm sp}$ the potential is \emph{exponentially suppressed},
+giving \emph{less} gravity than Newton.  Flat rotation curves require
+\emph{more} gravity at large $r$ (not less), so Yukawa screening
+cannot explain dark-matter rotation curves for any $m_{\rm sp}$.
+
+The three-body correction scales as $C^3\sim10^{-60}$ and is
+completely negligible for galactic dynamics.
+
+\paragraph{TGP dark matter scenario.}
+A TGP dark matter candidate would require particles with
+$C\sim1$ (near-Planck-mass objects, $m\sim m_{\rm Pl}$) in sufficient
+density to contribute to galactic rotation.  Such particles would:
+\begin{itemize}
+\item Interact gravitationally (via the same Yukawa) with baryons
+  with $C\sim10^{-19}$, giving effectively no observable coupling
+  at galactic scales.
+\item Be gravitationally self-interacting with $C^2\sim1$, potentially
+  forming bound clusters (the Efimov-type states of this work).
+\item Have no electroweak or strong interactions, consistent with
+  collisionless dark matter at galaxy scales.
+\end{itemize}
+
+\paragraph{MOND connection.}
+Modified Newtonian dynamics (MOND, Milgrom 1983) postulates a
+transition at acceleration $a_0\approx1.2\times10^{-10}\,{\rm m/s}^2$.
+TGP provides no derivation of $a_0$.  The TGP three-body force
+gives a correction $\delta a/a\sim C\sim10^{-19}$ for baryonic matter,
+far below $a_0/g_{\rm Newt}\sim10^{-4}$ at galactic edges.
+TGP and MOND are presently independent frameworks; a connection would
+require a theoretical bridge identifying $a_0$ with some combination
+of $C$ and $m_{\rm sp}$.
+
+\paragraph{Numerical comparison (ex31).}
+A rotation curve computation (see ex31) confirms that Yukawa-screened
+gravity (TGP) gives:
+\begin{itemize}
+\item Identical to Newtonian for $r\ll1/m_{\rm sp}$ (as expected).
+\item Below Newtonian for $r\gtrsim1/m_{\rm sp}$ — opposite to observation.
+\item CDM (NFW halo) and MOND both produce flat curves and fit
+  observations; TGP alone does not.
+\end{itemize}
+
+\subsection{Q3: Path C — quantum defects and the Yukawa derivation}
+\label{sec:path_c}
+
+\paragraph{Question.}
+TGP Path~C proposes that the Yukawa coupling of Path~B can be
+\emph{derived} from the quantum theory of topological defects of the
+scalar field $\phi$.  What is the mathematical structure of this
+derivation?
+
+\paragraph{Topological defect review (ex10-ex11).}
+The TGP scalar field satisfies a nonlinear equation with defect solutions
+(ex10-ex11).  The linearised tail of the defect is not Yukawa but
+oscillatory:
+\begin{equation}
+  \phi(r)\sim\frac{A\sin(r)}{r} + \frac{B\cos(r)}{r}\quad
+  (r\to\infty).
+\end{equation}
+This oscillatory tail arises from the Helmholtz-type linearisation
+$(\nabla^2+1)\delta=0$ near $\phi=1$.  A Yukawa tail
+($e^{-m_{\rm sp}r}/r$) would require a \emph{massive} linearised
+equation $(\nabla^2-m_{\rm sp}^2)\delta=0$, which is not present
+in the current TGP defect ODE.
+
+\paragraph{Sketch of Path C.}
+Path~C would require modifying the scalar Lagrangian (or adding
+a mass term) so that the defect tail becomes Yukawa.  One approach:
+\begin{enumerate}
+\item Add a symmetry-breaking potential $V(\phi)=\frac{1}{2}m_{\rm sp}^2(\phi-1)^2$
+  to the TGP Lagrangian.
+\item The linearised equation becomes $(\nabla^2-m_{\rm sp}^2)\delta=0$
+  near $\phi=1$, giving Yukawa decay.
+\item The defect core acts as a Yukawa source with coupling $C$
+  determined by the defect profile — this would \emph{derive}
+  the TGP Path~B axiom.
+\end{enumerate}
+This sketch requires:
+(a) A consistent modified TGP Lagrangian with both defect and Yukawa solutions,
+(b) A derivation of $C(m_{\rm sp})$ from the defect quantisation,
+(c) Consistency with the oscillatory solutions found in ex11
+  (which would emerge in the limit $m_{\rm sp}\to0$).
+
+\paragraph{Status.}
+Path~C is mathematically open.  The key obstacle identified in ex11 is
+that the \emph{standard} TGP defect ODE produces oscillatory (not Yukawa)
+tails.  A modified Lagrangian is required.  The construction of a
+consistent TGP Lagrangian connecting defect solutions to Yukawa couplings
+is the primary open theoretical problem.
+
+\subsection{Q4: Relation to general relativity}
+\label{sec:gr_relation}
+
+\paragraph{Question.}
+TGP Path~B is a scalar field theory; GR is a tensor theory.
+How do they coexist, and what are the observational signatures
+distinguishing them?
+
+\paragraph{Coexistence.}
+In the standard picture, two independent fields can mediate gravity:
+\begin{itemize}
+\item \textbf{Tensor (graviton):} mediates spin-2 gravity, responsible
+  for GR effects (light deflection, perihelion precession, gravitational waves).
+\item \textbf{Scalar ($\phi$, TGP):} mediates additional spin-0 attraction,
+  responsible for the Yukawa correction $e^{-m_{\rm sp}r}$.
+\end{itemize}
+The post-Newtonian parameter framework (PPN) accommodates both:
+\begin{equation}
+  \Phi(r) = -\frac{Gm}{r}\left(1 + \alpha_{\rm TGP}\,e^{-m_{\rm sp}r}\right),
+\end{equation}
+where $\alpha_{\rm TGP}=C^2/(Gm/r)\sim1$ is the ratio of TGP to Newtonian
+coupling.  For TGP Path~B with $C=m/(2\sqrt{\pi}m_{\rm Pl})$, one has
+$\alpha_{\rm TGP}\sim1$ at $r\ll1/m_{\rm sp}$, so TGP contributes
+$\sim 100\%$ of Newtonian gravity at short range.
+
+\paragraph{Observational distinction from GR.}
+Key signatures of the scalar sector:
+\begin{enumerate}
+\item \textbf{Fifth-force violation of equivalence principle:}
+  Scalar coupling $g=1/m_{\rm Pl}$ is universal (proportional to mass),
+  so equivalence principle is preserved and TGP is equivalent to Newtonian
+  for $r\ll1/m_{\rm sp}$.
+\item \textbf{Yukawa deviation from $1/r^2$ force:}
+  At $r\gtrsim1/m_{\rm sp}$, TGP predicts sub-Newtonian gravity.
+  Laboratory and satellite tests of the inverse-square law constrain
+  $m_{\rm sp}\gtrsim10^{-3}\,{\rm m}^{-1}$ ($\lambda_{\rm sp}\lesssim10^3\,{\rm m}$).
+  Planck-scale $m_{\rm sp}\sim1/l_{\rm Pl}$ is far above this bound.
+\item \textbf{Scalar gravitational waves:}
+  The TGP scalar $\phi$ can emit monopole/dipole radiation in addition
+  to GR's quadrupole.  The scalar wave energy is
+  $P_{\rm scalar}\sim G^2 m^2 \ddot{m}^2_{\rm sp}/c^5$ — negligible
+  for non-relativistic sources.
+\item \textbf{Brans-Dicke parameter:}
+  If TGP is identified with Brans-Dicke theory with parameter
+  $\omega_{\rm BD}$, solar system tests require $\omega_{\rm BD}>40{,}000$.
+  This constrains the scalar coupling; TGP with $g=1/m_{\rm Pl}$
+  and $m_{\rm sp}\gg H_0$ (screening at sub-solar-system scales)
+  is consistent with $\omega_{\rm BD}\to\infty$ (no long-range scalar modification).
+\end{enumerate}
+
+\paragraph{Summary.}
+TGP Path~B is consistent with GR and all solar-system tests if
+$m_{\rm sp}\gtrsim1/(1\,{\rm AU})\approx7\times10^{-12}\,{\rm m}^{-1}$.
+For Planck-scale $m_{\rm sp}\sim l_{\rm Pl}^{-1}=6\times10^{34}\,{\rm m}^{-1}$,
+the Yukawa range is $\lambda_{\rm sp}\sim10^{-35}$~m — far below any
+observable scale except the Planck-mass N-body physics studied in this work.
+TGP and GR coexist without contradiction at all observationally accessible scales.
+
+\subsection{Summary of open questions}
+
+\begin{table}[h]
+\centering
+\caption{Status of open theoretical questions in TGP Path~B.}
+\label{tab:open_status}
+\begin{tabular}{p{0.7cm}p{4cm}p{3.5cm}p{4cm}}
+\hline
+Q & Question & Status & Key obstacle \\
+\hline
+Q1 & Yukawa source derivation & Open & No Lagrangian for TGP \\
+Q2 & Dark matter/rotation curves & Answered (negative) & TGP reduces gravity at large $r$; 3B negligible \\
+Q3 & Path C: defect $\to$ Yukawa & Open & Oscillatory defect tail; need modified Lagrangian \\
+Q4 & TGP vs GR & Addressed & Coexist; TGP is sub-Planck modification of gravity \\
+Q5 & Full 2D quantum Efimov & Open & Equilateral approx.\ is upper bound; need 2D FD solver \\
+\hline
+\end{tabular}
+\end{table}

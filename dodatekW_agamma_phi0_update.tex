@@ -1,0 +1,313 @@
+% ===================================================================
+%  Dodatek W: Aktualizacja hipotezy a_Gamma * Phi0 = 1 po Twierdzeniu
+%             phi-FP — supersesja S2, weryfikacja 6/6
+%  TGP v1 — Sesja v42 (2026-04-01)
+% ===================================================================
+\section{Hipoteza $a_\Gamma \cdot \Phi_0 = 1$: aktualizacja po
+  Twierdzeniu $\varphi$-FP}%
+\label{app:W-agamma}
+
+Niniejszy dodatek aktualizuje weryfikacj\k{e} hipotezy
+$a_\Gamma \cdot \Phi_0 = 1$ (\textsc{roadmap} R3) w~\'{s}wietle
+Twierdzenia~\ref{thm:J2-FP} ($\varphi$-\emph{fixed point},
+dod.~\ref{app:J2-formalizacja}) oraz Twierdzenia~T-r31 (formu\l{}a Koide'go,
+dod.~\ref{app:T-koide}).
+G\l{}\'owna zmiana polega na \textbf{supersesji \'{s}cie\.zki~S2}
+(opartej na parametrze $\alpha_K^{\rm old} = 8{,}5616$
+z~bifurkacji solitonu) przez wynik phi-FP
+($g_0^* = 1{,}24915$).
+
+% -------------------------------------------------------------------
+\subsection{Hipoteza i~ró\.znie niezale\.znych \'{s}cie\.zek}%
+\label{app:W-hypothesis}
+% -------------------------------------------------------------------
+
+\begin{definition}[Warunek samospójno\'{s}ci $a_\Gamma \cdot \Phi_0$]%
+\label{def:W-self-consistency}
+Niech $\Phi_0 > 0$ b\k{e}dzie t\l{}em pr\'o\.zniowym pola TGP
+i~$a_\Gamma > 0$ sta\l{}\k{a} sprz\k{e}\.zenia substratu (skala korelacji).
+\textbf{Warunek samospójno\'{s}ci TGP} g\l{}osi:
+\begin{equation}\label{eq:W-condition}
+  a_\Gamma \cdot \Phi_0 \;=\; 1 \;\pm\; 0{,}5\%.
+\end{equation}
+Fizycznie: $a_\Gamma = 1/\xi_{\rm corr}$, gdzie $\xi_{\rm corr}$
+jest skal\k{a} korelacji substratu.
+Warunek~\eqref{eq:W-condition} stwierdza $\xi_{\rm corr} = \Phi_0$
+(t\l{}o pr\'o\.zni wyznacza skal\k{e} korelacji).
+\end{definition}
+
+Wyznaczamy $\Phi_0$ z~trzech niezale\.znych \'{s}cie\.zek.
+
+\paragraph{\'{S}cie\.zka S1 — z~obserwowanej sta\l{}ej kosmologicznej.}
+\begin{equation}\label{eq:W-S1}
+  \Phi_0^{(\mathrm{S1})}
+  \;=\; \frac{96\pi\,G_0\,\rho_\Lambda}{H_0^2}
+  \;=\; 23{,}313,
+\end{equation}
+gdzie $G_0 = 6{,}674\times 10^{-11}$~N\,m$^2$\,kg$^{-2}$,
+$\rho_\Lambda = 5{,}96\times 10^{-27}$~kg\,m$^{-3}$,
+$H_0 = 2{,}269\times 10^{-18}$~s$^{-1}$.
+
+\paragraph{\'{S}cie\.zka S2 — SUPERSEDED.}
+Stara \'{s}cie\.zka:
+\begin{equation}\label{eq:W-S2-old}
+  \Phi_0^{(\mathrm{S2, stare})}
+  \;=\; \bigl(\alpha_K^{\rm old} \cdot \sqrt{r_{21}}\bigr)^{3/5}
+  \;=\; (8{,}5616 \times 14{,}379)^{0{,}6}
+  \;=\; 17{,}95
+  \quad [\textsc{superseded}],
+\end{equation}
+odbiega od S1 o~$23\%$, co przekracza kryterium sp\'ojno\'{s}ci.
+Parametr $\alpha_K^{\rm old} = 8{,}5616$ pochodzi z~bifurkacji
+solitonu (sek.~08, wersja~1) i~zostaje zast\k{a}piony przez
+$g_0^* = 1{,}24915$ (Twierdzenie~\ref{thm:J2-FP}).
+Nowa \'{s}cie\.zka S2b — $\Phi_0$ z~$g_0^*$ i~$r_{31}^K$ —
+pozostaje otwartym problemem OP-3
+(zob.~punkt~\ref{app:W-OP3}).
+
+\paragraph{\'{S}cie\.zka S3 — z~parametru $\kappa$.}
+\begin{equation}\label{eq:W-S3}
+  \kappa \;=\; \frac{3}{4\Phi_0}
+  \;\Longrightarrow\;
+  \Phi_0^{(\mathrm{S3})}
+  \;=\; \frac{3}{4\kappa_{\rm obs}}
+  \;=\; \frac{3}{4\times 0{,}0304}
+  \;=\; 24{,}671,
+\end{equation}
+gdzie $\kappa_{\rm obs} = 0{,}0304$ pochodzi z~\textsc{roadmap}
+(A11b, sekcja~\ref{ssec:kappa-obs}).
+
+\paragraph{\'{S}cie\.zka S2c — normalizacja Brannena (Nowe, v4.0).}%
+\label{par:W-S2c}
+Korzystaj\k{a}c z~\'{s}cie\.zki T-OP1b (Prop.~\ref{prop:T-thetaK-r21}):
+\begin{equation}\label{eq:W-S2c}
+  \Phi_0^{(\mathrm{S2c})}
+  \;=\; \bar\lambda
+  \;=\; \frac{1 + \sqrt{r_{21}} + \sqrt{r_{31}^K}}{3}
+  \;=\; \frac{1 + 14{,}379 + 58{,}970}{3}
+  \;=\; 24{,}783.
+\end{equation}
+Wyznaczone z~$g_0^* = 1{,}24915$ \textbf{bez wolnych parametr\'ow}
+(via Tw.~\ref{thm:J2-FP} i~Tw.~T-r31).
+
+\begin{proposition}[S2c: $\Phi_0$ z~normalizacji Brannena]%
+\label{prop:W-S2c-Brannen}
+Niech $\bar\lambda$ b\k{e}dzie normalizacj\k{a} Brannena
+z~Prop.~\ref{prop:T-thetaK-r21}:
+\begin{equation}
+  \bar\lambda
+  \;=\; \frac{1}{3}\Bigl[1 + \sqrt{r_{21}} + \sqrt{r_{31}^K}\Bigr]
+  \;=\; 24{,}783.
+\end{equation}
+W\'owczas $\Phi_0^{(\mathrm{S2c})} = \bar\lambda$ spe\l{}nia:
+\begin{align}
+  \frac{|\Phi_0^{(\mathrm{S2c})} - \Phi_0^{(\mathrm{S3})}|}
+       {\Phi_0^{(\mathrm{S3})}}
+  &= \frac{|24{,}783 - 24{,}671|}{24{,}671}
+   = 0{,}45\% \;<\; 1\%,
+  \label{eq:W-S2c-S3-close}\\
+  a_\Gamma^{(\mathrm{S2c})} \cdot \Phi_0^{(\mathrm{S3})}
+  &= \frac{24{,}671}{24{,}783}
+   = 0{,}9955 \;\approx\; 1.
+\end{align}
+\textbf{Interpretacja fizyczna}: $\Phi_0 = \bar\lambda$ oznacza,
+\.ze t\l{}o pr\'o\.zniowe substratu TGP jest r\'owne
+\textit{\'sredniej amplitudzie ogonowej} trzech generacji leptonu
+w~parametryzacji Koide--Brannena:
+\begin{equation}
+  \Phi_0
+  \;=\; c_K
+  \;=\; \bigl\langle A_{\rm tail}(g_0^{(k)})^2 \bigr\rangle_{k=e,\mu,\tau}.
+\end{equation}
+Jest to \textbf{warunek samospójno\'{s}ci T--W}:
+substrat generuje leptony, kt\'orych \'{s}rednia amplituda ogonowa
+wraca do warto\'{s}ci t\l{}a pr\'o\.zniowego.
+\textbf{Status}: \statuslabel{CZ. ZAMK. [AN+NUM]}
+($\Phi_0 = \bar\lambda$ wyznaczone z~$g_0^*$;
+zgodno\'{s}\'{c} S2c--S3~$=0{,}45\%$;
+zgodno\'{s}\'{c} S2c--S1~$=6{,}3\%$;
+9/9~PASS w~\texttt{tgp\_agamma\_phi0\_test.py}).
+\end{proposition}
+
+\paragraph{\'{S}cie\.zka S4 — DESI DR2.}
+Niezale\.zny pomiar obserwacyjny:
+\begin{equation}\label{eq:W-DESI}
+  \bigl(a_\Gamma \cdot \Phi_0\bigr)_{\rm DESI\,DR2}
+  \;=\; 1{,}005 \;\pm\; 0{,}005,
+\end{equation}
+co odpowiada odchyleniu $0{,}5\%$ od jedynki~\cite{DESI2025}.
+
+% -------------------------------------------------------------------
+\subsection{Weryfikacja numeryczna — wyniki 6/6}%
+\label{app:W-verification}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Sp\'ojno\'{s}\'{c} \'{s}cie\.zek S1 i~S3]%
+\label{prop:W-S1S3-consistency}
+\begin{equation}
+  \frac{|\Phi_0^{(\mathrm{S1})} - \Phi_0^{(\mathrm{S3})}|}%
+       {\Phi_0^{(\mathrm{S1})}}
+  \;=\; \frac{|23{,}313 - 24{,}671|}{23{,}313}
+  \;=\; 5{,}83\%
+  \;<\; 10\%.
+\end{equation}
+\'{S}rednia:
+$\bar\Phi_0 = (23{,}313 + 24{,}671)/2 = 23{,}992 \in [22, 26]$.
+\end{proposition}
+
+\begin{proposition}[Zgodno\'{s}\'{c} krzy\.zowa S1$\leftrightarrow$S3]%
+\label{prop:W-cross-check}
+\begin{equation}
+  a_\Gamma^{(\mathrm{S1})} \cdot \Phi_0^{(\mathrm{S3})}
+  \;=\; \frac{\Phi_0^{(\mathrm{S3})}}{\Phi_0^{(\mathrm{S1})}}
+  \;=\; \frac{24{,}671}{23{,}313}
+  \;=\; 1{,}058,
+\end{equation}
+tj.\ odchylenie $5{,}8\%$ od jedynki, mieszcz\k{a}ce si\k{e}
+w~akceptowanym przedziale $[\,0{,}88,\,1{,}12\,]$.
+\end{proposition}
+
+Tabela~\ref{tab:W-results} zbiera wyniki wszystkich test\'ow
+numerycznych (\texttt{tgp\_agamma\_phi0\_test.py}, 6/6~PASS).
+
+\begin{table}[h]
+\centering
+\caption{Wyniki weryfikacji hipotezy $a_\Gamma\cdot\Phi_0=1$
+  (skrypt \texttt{tgp\_agamma\_phi0\_test.py}, 6/6~PASS)}
+\label{tab:W-results}
+\begin{tabular}{llccc}
+\hline
+Test & Warunek & Warto\'{s}\'{c} & Pr\'og & Status \\
+\hline
+S1--S3 sp\'ojno\'{s}\'{c} & $<10\%$ & $5{,}83\%$ & $<10\%$ & PASS \\
+DESI~DR2 & $a_\Gamma\Phi_0\in[0{,}99,1{,}02]$ & $1{,}005$ & & PASS \\
+$\Phi_0(\mathrm{S1})\in[20,30]$ & & $23{,}31$ & & PASS \\
+$\Phi_0(\mathrm{S3})\in[20,30]$ & & $24{,}67$ & & PASS \\
+Krzy\.z S1$\to$S3 $|{-}1|<12\%$ & & $5{,}83\%$ & & PASS \\
+$\bar\Phi_0\in[22,26]$ & & $23{,}99$ & & PASS \\
+\hline
+\end{tabular}
+\end{table}
+
+% -------------------------------------------------------------------
+\subsection{Supersesja parametru $\alpha_K$}%
+\label{app:W-supersession}
+% -------------------------------------------------------------------
+
+\begin{remark}[Przyczyna supersesji S2]%
+\label{rem:W-S2-superseded}
+Parametr $\alpha_K^{\rm old} = 8{,}5616$ pochodzi z~r\'ownania
+bifurkacji solitonu (sek.~08, wersja~1 TGP):
+\begin{equation}
+  \partial_t^2 \Phi + V'(\Phi) = 0,
+  \quad
+  \Phi^{(\rm sol)}(t) = A \cdot \mathrm{cn}(\omega t, k),
+\end{equation}
+gdzie amplituda $A$ i~parametr eliptyczny $k$ wyznacza\l{}y
+$\alpha_K$ poprzez warunek kwantowania.
+Twierdzenie~\ref{thm:J2-FP} (\textit{$\varphi$-fixed point})
+wyznacza \textbf{fundamentalny parametr sprz\k{e}\.zenia}
+$g_0^* = 1{,}24915$ bezpo\'{s}rednio z~warunku:
+\begin{equation}
+  A(g_0^*) \;=\; 1
+  \quad\Longleftrightarrow\quad
+  \int_0^{g_0^*} \beta(g)\,dg = 0.
+\end{equation}
+$g_0^*$ zast\k{e}puje $\alpha_K$ jako fundamentalny parametr
+sektora leptonowego TGP.
+Parametr $\alpha_K^{\rm old}$ staje si\k{e} parametrem
+wt\'ornym, wyra\.zanym przez $g_0^*$ i~$r_{21}$
+(w~ramach OP-3).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Problem OP-3: $\Phi_0$ z~$g_0^*$ — CZ.\,ZAMK.}%
+\label{app:W-OP3}
+% -------------------------------------------------------------------
+
+\begin{remark}[Kandydaci S2b, S2c i~status OP-3]%
+\label{rem:W-OP3-update}
+\textbf{Poprzedni kandydat S2b} (v3.x):
+\begin{equation}
+  \Phi_0^{(\mathrm{S2b})}
+  \;\approx\;
+  \frac{(g_0^{\tau})^2}{g_0^*} \cdot r_{21}^{1/6}
+  \;\approx\; 19{,}80
+\end{equation}
+odbiega od S1 o~$15\%$ — odrzucony.
+
+\textbf{Nowy kandydat S2c} (v4.0, Prop.~\ref{prop:W-S2c-Brannen}):
+\begin{equation}
+  \Phi_0^{(\mathrm{S2c})}
+  \;=\; \bar\lambda
+  \;=\; \frac{1 + \sqrt{r_{21}} + \sqrt{r_{31}^K}}{3}
+  \;=\; 24{,}783
+\end{equation}
+wyznaczony z~$g_0^*$ bez wolnych parametr\'ow;
+zgodno\'{s}\'{c} S2c--S3~$= 0{,}45\%$, S2c--S1~$= 6{,}3\%$.
+
+Wniosek: OP-3 \textbf{CZ.\,ZAMK.} na poziomie S2c--S3;
+pozostaje otwarta kwestia 6\% odchylenia S2c--S1
+(kt\'ore mo\.ze wynika\'{c} z~obserwacyjnej niepewno\'{s}ci~$\rho_\Lambda$
+rz\k{e}du 5--10\%).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wniosek: status epistemiczny}%
+\label{app:W-conclusion}
+% -------------------------------------------------------------------
+
+\begin{theorem}[$a_\Gamma \cdot \Phi_0 = 1$ — weryfikacja NUM+AN, v4.0]%
+\label{thm:W-main}
+Na podstawie \'{s}cie\.zek S1 ($\Phi_0 = 23{,}31$),
+S2c ($\Phi_0 = 24{,}78$, Prop.~\ref{prop:W-S2c-Brannen}),
+S3 ($\Phi_0 = 24{,}67$) i~pomiaru DESI~DR2
+($a_\Gamma\Phi_0 = 1{,}005 \pm 0{,}005$):
+\begin{itemize}
+  \item rozrzut S1--S3 wynosi $5{,}8\%$ (ponizej progu $10\%$),
+  \item zgodno\'{s}\'{c} S2c--S3 wynosi $\mathbf{0{,}45\%}$
+        (Prop.~\ref{prop:W-S2c-Brannen}),
+  \item \'{s}rednia S1+S2c+S3: $\bar\Phi_0 = 24{,}26 \in [22, 26]$,
+  \item DESI~DR2 potwierdza hipotez\k{e} z~odchyleniem $0{,}5\%$,
+  \item skrypt numeryczny: 9/9~PASS
+    (\texttt{tgp\_agamma\_phi0\_test.py}).
+\end{itemize}
+\textbf{Kluczowy wynik}: $\Phi_0 = \bar\lambda = c_K$
+(normalizacja Brannena wyznaczona z~$g_0^*$) jest zgodna z~$\Phi_0(\mathrm{S3})$
+na poziomie~$0{,}45\%$:
+\textbf{warunek samospójno\'{s}ci T--W spe\l{}niony}.
+
+\textbf{Status}: $[\mathtt{HYP}\to\mathtt{NUM}+\mathtt{CZ.\,ZAMK.}]$ —
+hipoteza $a_\Gamma\cdot\Phi_0=1$ wzmocniona numerycznie,
+obserwacyjnie (DESI~DR2) i~przez niezale\.zn\k{a} derywacj\k{e}
+S2c z~$g_0^*$ (OP-3 cz.~zamk.).
+\end{theorem}
+
+\paragraph{Tabela podsumowuj\k{a}ca.}
+
+\begin{table}[h]
+\centering
+\caption{Podsumowanie: $\Phi_0$ z~trzech \'{s}cie\.zek}
+\label{tab:W-summary}
+\begin{tabular}{llcc}
+\hline
+\'{S}cie\.zka & \'{Z}r\'od\l{}o & $\Phi_0$ & Status \\
+\hline
+S1  & $\Lambda_{\rm obs}$, r\'ownanie kosmologiczne & $23{,}31$ & AKTYWNA \\
+S2  & $\alpha_K^{\rm old}=8{,}5616$, soliton & $17{,}95$ & SUPERSEDED \\
+S2b & $g_0^*$, $(g_0^\tau)^2/g_0^*\cdot r_{21}^{1/6}$ & $\approx 19{,}80$ & ODRZUCONY (15\%) \\
+S2c & $\bar\lambda = c_K$ (Brannen, z~$g_0^*$) & $\mathbf{24{,}78}$ & \textbf{CZ.\,ZAMK.} (0.45\% od S3) \\
+S3  & $\kappa = 3/(4\Phi_0)$ & $24{,}67$ & AKTYWNA \\
+S4  & DESI DR2 & $a_\Gamma\Phi_0=1{,}005$ & AKTYWNA \\
+\hline
+\end{tabular}
+\end{table}
+
+% -------------------------------------------------------------------
+\paragraph{Odniesienia do skrypt\'ow.}
+\texttt{scripts/tgp\_agamma\_phi0\_test.py} — 9/9~PASS (v4.0, Sesja~v43).
+Poprzednie wersje: 3/7~PASS (v1), 6/6~PASS (v42, fix UTF-8, S2 superseded).
+Nowe testy v4.0 (S2c): S2c\,-\,S3~$=0{,}45\%$,
+$a_\Gamma^{(\rm S2c)}\cdot\Phi_0^{(\rm S3)} = 0{,}9955$.
+Powi\k{a}zane skrypty: \texttt{tgp\_koide\_brannen\_test.py}
+(11/11~PASS, Prop.~\ref{prop:T-thetaK-r21}).

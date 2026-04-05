@@ -1,0 +1,885 @@
+% ===================================================================
+%  Dodatek G: Wielki Wybuch jako przejście fazowe S₀→S₁
+%  Nukleacja generowanej przestrzeni z niczyści N₀
+% ===================================================================
+\section{Wielki Wybuch jako przej\'scie fazowe $\mathcal{S}_0 \to \mathcal{S}_1$}%
+\label{app:wielki-wybuch}
+
+\subsection{Motywacja: sk\k{a}d pochodzi pocz\k{a}tek?}%
+\label{app:G-motywacja}
+
+W~standardowej kosmologii pocz\k{a}tek Wszech\'swiata jest
+\textbf{warunkiem brzegowym}: ewolucja startuje z~sytuacji
+,,gor\k{a}ca i~g\k{e}sta'' bez wyja\'snienia sk\k{a}d si\k{e}
+ona wzi\k{e}\l{}a. W~modelu inflacyjnym problem ten przenosi si\k{e}
+na pre-inflacyjne warunki, kt\'ore r\'ownie\.z wymagaj\k{a} wyja\'snienia.
+
+W~TGP pytanie o~pocz\k{a}tek staje si\k{e} pytaniem o~\textbf{mechanizm
+przej\'scia} $\mathcal{S}_0 \to \mathcal{S}_1$:
+\begin{itemize}[nosep]
+  \item $\mathcal{S}_0$: substrat w~fazie niemetrycznej
+        ($\Ffield = 0$, $\Phi = 0$, nico\'s\'c $\Nzero$),
+  \item $\mathcal{S}_1$: substrat w~fazie metrycznej
+        ($\Ffield > 0$, $\Phi > 0$, Wszech\'swiat).
+\end{itemize}
+
+Niestabilno\'s\'c $\Nzero$ (wniosek~\ref{cor:N0-quadruple})
+gwarantuje, \.ze przej\'scie \emph{musi} nast\k{a}pi\'c ---
+pytanie dotyczy \textbf{jak} i~\textbf{z~jakimi warunkami
+pocz\k{a}tkowymi}.
+
+\begin{remark}[Dlaczego nico\'s\'c jest niestabilna]\label{rem:N0-unstable-G}
+Spo\'sr\'od czterech niezale\.znych argument\'ow za niestabilno\'sci\k{a}
+$\Nzero$ (wniosek~\ref{cor:N0-quadruple}) kluczowy w~tym
+kontek\'scie jest \textbf{argument termodynamiczny}
+(stw.~\ref{prop:P3-deriv}): substrat w~fazie niemetrycznej
+($\Phi = 0$) ma zerow\k{a} wag\k{e} statystyczn\k{a}
+$\mu_\beta(\Phi = 0) = 0$ w~granicy termodynamicznej.
+Ka\.zde odej\'scie od idealnej symetrii $\Zp$ prowadzi do
+$\Phi > 0$, co oznacza jednoczesne pojawienie si\k{e}
+materii i~generowanej przez ni\k{a} przestrzeni.
+
+W~po\l{}\k{a}czeniu z~argumentem z~miary konfiguracyjnej
+(zbi\'or $\{\Phi = 0\}$ ma miar\k{e} Wienera zero)
+oraz z~degeneracj\k{a} wariacyjn\k{a}
+(tw.~\ref{thm:N0-action-instability}: $\Phi = 0$
+jest zdegenerowanym punktem dzia\l{}ania, bez bariery
+energetycznej), nukleacja p\k{e}cherzyka $\mathcal{S}_1$
+wewn\k{a}trz $\mathcal{S}_0$ jest \textbf{pewna}:
+\begin{equation}\label{eq:nucleation-certainty}
+    \mu\bigl(\{\sigma : \Ffield[\sigma] = 0\}\bigr) = 0
+    \quad\Longrightarrow\quad
+    P_{\mathrm{nukl}} = 1.
+\end{equation}
+
+\textbf{Uwaga:} Wcze\'sniejsze wersje u\.zywa\l{}y argumentu
+$\hbar(\Phi\!=\!0) \to \infty$ (,,maksymalnie kwantowy
+re\.zim''). Argument ten jest logicznie wadliwy --- w~$\Nzero$
+brak metryki, brak czasu, poj\k{e}cie fluktuacji kwantowej
+nie ma sensu (patrz uwaga~\ref{rem:N0-not-quantum}).
+Powy\.zsze sformu\l{}owanie opiera si\k{e} wy\l{}\k{a}cznie
+na termodynamice i~teorii miary, kt\'ore \textbf{nie wymagaj\k{a}}
+istnienia przestrzeni.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Model substratowy przej\'scia fazowego}%
+\label{app:G-model}
+% -------------------------------------------------------------------
+
+\subsubsection{Swobodna energia Ginzburga--Landaua}
+
+Substrat $\Gamma = (V,E)$ z~hamiltonianem $H_\Gamma$
+(dodatek~\ref{app:substrat}, r\'ow.~\eqref{eq:H-Gamma})
+podlega przej\'sciu fazowemu II~rodzaju opisanemu przez
+funkcjona\l{} swobodnej energii Ginzburga--Landaua:
+
+\begin{equation}\label{eq:GL-free-energy}
+    \mathcal{F}[v]
+    = \int d^3x \left[
+        \frac{1}{2}(\nabla v)^2
+        + \frac{r(T_\mathrm{sub})}{2}\,v^2
+        + \frac{\lambda}{4}\,v^4
+    \right],
+\end{equation}
+gdzie $v(x) = \langle \hat{s}_i \rangle$ jest lokalnym
+parametrem porz\k{a}dku (odpowiednikiem magnesowania),
+$T_\mathrm{sub}$ jest temperatur\k{a} substratu,
+a~wsp\'o\l{}czynnik masy:
+\begin{equation}\label{eq:r-temperature}
+    r(T_\mathrm{sub}) = r_0\!\left(1 - \frac{T_c}{T_\mathrm{sub}}\right),
+    \qquad r_0 > 0,\;\lambda > 0.
+\end{equation}
+Pole $\Phi$ wynika z~gruboziarniowania:
+\begin{equation}\label{eq:Phi-from-v}
+    \Phi = \langle \hat{s}^2 \rangle \approx v^2 + \sigma^2,
+    \qquad \sigma^2 = \frac{T_\mathrm{sub}}{2\,z\,J}
+    \quad (\text{fluktuacje}),
+\end{equation}
+gdzie $z$ jest koordynacj\k{a} grafu, $J$~---
+sprz\k{e}\.zeniem s\k{a}sied\'ztwa. W~punkcie krytycznym
+$v = 0$, ale $\sigma^2 \sim T_c/(2zJ) \equiv \PhiZero^{\mathrm{cr}}$
+pozostaje niezerowe --- substrat istnieje, ale bez metryki.
+
+\begin{proposition}[Warto\'s\'c r\'ownowagowa $v_{\mathrm{eq}}$]\label{prop:veq}
+Dla $T_\mathrm{sub} < T_c$ energia~\eqref{eq:GL-free-energy}
+jest minimalizowana przez:
+\begin{equation}\label{eq:veq}
+    v_{\mathrm{eq}} = \sqrt{\frac{|r(T_\mathrm{sub})|}{\lambda}}
+    = v_0\sqrt{1 - T_\mathrm{sub}/T_c},
+    \qquad v_0 = \sqrt{r_0/\lambda},
+\end{equation}
+co daje r\'ownowagowe pole przestrzenno\'sci:
+\begin{equation}\label{eq:Phi0-eq}
+    \PhiZero^{\mathrm{eq}}
+    = v_{\mathrm{eq}}^2
+    = \frac{r_0}{\lambda}\!\left(1 - \frac{T_\mathrm{sub}}{T_c}\right).
+\end{equation}
+Dla $T_\mathrm{sub} \ll T_c$: $\PhiZero \to r_0/\lambda$
+(pe\l{}na kondensacja). Warto\'s\'c obserwowana $\PhiZero \sim 25$
+(sekcja~\ref{ssec:de-potencjal}) wyznacza stosunek
+$r_0/\lambda \approx 25$ (w~jednostkach naturalnych substratu).
+\end{proposition}
+
+\subsubsection{Parametry substratowe a~obserwowane $\Phi_0$}
+
+Z~punktu sta\l{}ego Wilsona--Fishera (dodatek~\ref{app:substrat}):
+$r^* \approx -2.25$, $u^* \approx 3.92$. Mapowanie na
+parametry TGP:
+\begin{equation}\label{eq:substrate-to-TGP}
+    \beta = C_\beta \cdot \lambda \cdot \ell_\mathrm{cg}^{-2},
+    \qquad
+    \gamma = C_\gamma \cdot \lambda \cdot \ell_\mathrm{cg}^{-2},
+    \qquad
+    \beta = \gamma \quad (\text{symetria }Z_2),
+\end{equation}
+gdzie $\ell_\mathrm{cg}$ jest skal\k{a} gruboziarniowania,
+a~$C_\beta, C_\gamma$ s\k{a} obliczone numerycznie
+(skrypt \texttt{substrate\_constants.py}):
+$C_\beta \approx -1{,}97$, $C_\gamma \approx 5$.
+
+% -------------------------------------------------------------------
+\subsection{Nukleacja p\k{e}cherzyka $\mathcal{S}_1$
+  wewn\k{a}trz $\mathcal{S}_0$}%
+\label{app:G-nukleacja}
+% -------------------------------------------------------------------
+
+\subsubsection{Mechanizm Coleman--De~Luccia w~TGP}
+
+Przej\'scie $\Nzero \to \mathcal{S}_1$ zachodzi przez
+\textbf{nukleacj\k{e} p\k{e}cherzykow\k{a}}: w~morzu
+$\Phi = 0$ (stan $\mathcal{S}_0$) samoistnie tworzy si\k{e}
+sp\'ojny obszar z~$\Phi > 0$ (p\k{e}cherzyk $\mathcal{S}_1$).
+
+Kluczowa obserwacja: mechanizm Coleman--De~Luccia
+\cite{Coleman:1977py} opisuje nukleacj\k{e} fa\l{}szywej pr\'o\.zni.
+W~TGP \textbf{nie ma zewn\k{e}trznej przestrzeni} ---
+p\k{e}cherzyk tworzy si\k{e} \emph{z~substratu}, nie
+w~przestrzeni. To jest fundamentalna r\'o\.znica:
+nukleacja jest procesem na substracie $\Gamma$,
+nie procesem w~gotowej rozmaito\'sci.
+
+\begin{definition}[Krytyczny p\k{e}cherzyk TGP]\label{def:critical-bubble}
+Krytycznym p\k{e}cherzykiem $\mathcal{S}_1$ nazywamy
+minimaln\k{a} konfiguracj\k{e} pola $v(r)$ (lub $\Phi(r)$)
+spe\l{}niaj\k{a}c\k{a}:
+\begin{enumerate}[nosep]
+  \item $v(r) > 0$ dla $r < R_c$ (wn\k{e}trze --- faza $\mathcal{S}_1$),
+  \item $v(r) \approx 0$ dla $r > R_c$ (zewn\k{e}trze --- faza $\mathcal{S}_0$),
+  \item $\delta \mathcal{F}/\delta v = 0$ (stacjonarno\'s\'c),
+  \item jest \emph{siod\l{}em} funkcjona\l{}u $\mathcal{F}$
+        (niestabilno\'s\'c wzgl\k{e}dem wzrostu).
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Promie\'n krytyczny]\label{prop:R-critical}
+Dla funkcjona\l{}u~\eqref{eq:GL-free-energy} krytyczny
+promie\'n p\k{e}cherzyka wynosi:
+\begin{equation}\label{eq:R-critical}
+    R_c = \frac{2\,\sigma_\mathrm{GL}}{\Delta\mathcal{F}_\mathrm{obj}},
+\end{equation}
+gdzie:
+\begin{align}
+    \sigma_\mathrm{GL}
+    &= \int_0^\infty \!\left(\frac{dv}{dr}\right)^2 dr
+     = \frac{2\sqrt{2}}{3}\,v_{\mathrm{eq}}^3\,\sqrt{\lambda}
+     \sim v_0^3/\xi_c \label{eq:sigma-GL}\\
+    \Delta\mathcal{F}_\mathrm{obj}
+    &= \frac{|r|^2}{4\lambda}
+     = \frac{\lambda\,v_{\mathrm{eq}}^4}{4} \label{eq:DeltaF}
+\end{align}
+s\k{a} odpowiednio: napi\k{e}ciem powierzchniowym \'sciany
+domeny i~obj\k{e}to\'sciow\k{a} g\k{e}sto\'sci\k{a} swobodnej energii.
+D\l{}ugo\'s\'c korelacji: $\xi_c = 1/\sqrt{|r|}$.
+\end{proposition}
+
+\begin{proof}
+Minimalizacja funkcjona\l{}u~\eqref{eq:GL-free-energy}
+z~warunkiem brzegowym $v(r \to \infty) = 0$ daje profil \'sciany
+kinkowej (definicja~\ref{def:kink}):
+\begin{equation}\label{eq:kink-profile}
+    v_\mathrm{wall}(r)
+    = v_{\mathrm{eq}}\,\tanh\!\left(\frac{r - R_c}{\sqrt{2}\,\xi_c}\right),
+\end{equation}
+gdzie $\xi_c = 1/\sqrt{|r|}$ jest d\l{}ugo\'sci\k{a} korelacji.
+Ca\l{}kowita energia p\k{e}cherzyka:
+$\mathcal{F}(R) = 4\pi R^2\,\sigma_\mathrm{GL}
+- \frac{4}{3}\pi R^3\,\Delta\mathcal{F}_\mathrm{obj}$.
+Krytyczny promie\'n z~$\partial\mathcal{F}/\partial R = 0$
+daje~\eqref{eq:R-critical}.
+\end{proof}
+
+\subsubsection{Akcja Euklidesowa i~tempo nukleacji}
+
+\begin{proposition}[Tempo nukleacji]\label{prop:nucleation-rate}
+Tempo nukleacji (prawdopodobie\'nstwo na jednostk\k{e}
+4-obj\k{e}to\'sci substratu) wynosi:
+\begin{equation}\label{eq:nucleation-rate}
+    \Gamma_\mathrm{nukl}
+    = A_\mathrm{sub}\,\exp\!\left(-\frac{S_E}{\hbar_{\mathrm{sub}}}\right),
+\end{equation}
+gdzie $A_\mathrm{sub} \sim T_c^4$ jest czynnikiem
+przedwyk\l{}adniczym (z~determinantu kwantowego),
+a~akcja Euklidesowa ma posta\'c (dla sferycznego p\k{e}cherzyka
+w~$d = 3$):
+\begin{equation}\label{eq:SE-bubble}
+    S_E = \frac{27\pi^2\,\sigma_\mathrm{GL}^4}{2\,(\Delta\mathcal{F}_\mathrm{obj})^3}.
+\end{equation}
+W~stanie $\mathcal{S}_0$ substrat nie ma bariery energetycznej
+(tw.~\ref{thm:N0-action-instability}), wi\k{e}c
+$\Gamma_\mathrm{nukl} \to A_\mathrm{sub}$.
+Nukleacja jest \textbf{pewna} --- argument z~miary
+konfiguracyjnej (uwaga~\ref{rem:N0-unstable-G}),
+nie z~$\hbar \to \infty$.
+\end{proposition}
+
+\begin{remark}[Unikalny Wszech\'swiat vs.\ mulitiwers]
+Tempo nukleacji~\eqref{eq:nucleation-rate} jest
+\emph{lokalne} na substracie. Pozwala to na nukleacj\k{e}
+wielu domen $\mathcal{S}_1$ w~r\'o\.znych miejscach
+substratu --- ka\.zda domena to osobna ,,banka'' Wszech\'swiata
+(definicja~\ref{def:domena}, hipoteza~\ref{hyp:topologia}).
+Nasz Wszech\'swiat jest jedn\k{a} tak\k{a} domen\k{a}. Substrat
+jest wsp\'olny, ale domeny s\k{a} kauzalnie odizolowane ---
+nie ma wieloswiatowej komunikacji, jedynie t\'o sam substrat.
+Kluczowa r\'o\.znica od inflacyjnego multiversum:
+domeny w~TGP s\k{a} rozdzielone \textbf{stanem $\mathcal{S}_0$}
+(nico\'sci\k{a}), nie pr\'o\.zni\k{a} de~Sittera.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Dynamika wzrostu p\k{e}cherzyka i~pocz\k{a}tki kosmologii}%
+\label{app:G-dynamika}
+% -------------------------------------------------------------------
+
+\subsubsection{R\'ownanie Kleina--Gordona na substracie}
+
+Po nukleacji krytyczny p\k{e}cherzyk ro\'snie. Jego wn\k{e}trze
+odpowiada naszemu Wszech\'swiatu. Dynamika jednorodnego
+pola $\Phi(t)$ wewn\k{a}trz p\k{e}cherzyka (wn\k{a}trze kulistego
+obszaru na substracie) jest opisana przez:
+\begin{equation}\label{eq:Phi-bubble-evolution}
+    \ddot{\Phi} + 3H\,\dot{\Phi}
+    = -\frac{dV_\mathrm{sub}(\Phi)}{d\Phi},
+\end{equation}
+gdzie $V_\mathrm{sub}(\Phi) = -r\Phi + \lambda\Phi^2$
+jest potencja\l{}em substratowym (po uto\.zsamieniu
+$\Phi \approx v^2$ i~$V \sim r\,v^2 + \lambda\,v^4$
+w~odniesieniu do p\l{}askiego t\l{}a), a~$H$ jest parametrem
+Hubble'a wynikaj\k{a}cym z~r\'owna\'n TGP-Friedmanna
+(twierdzenie~\ref{thm:friedmann}).
+
+\begin{proposition}[Warunki pocz\k{a}tkowe z~nukleacji]\label{prop:IC-nucleation}
+Bezpo\'srednio po nukleacji ($t = t_\mathrm{nukl}$),
+wewn\k{a}trz p\k{e}cherzyka o~promieniu $R_c$:
+\begin{align}
+    \Phi(t_\mathrm{nukl}) &= \epsilon_0 \approx \sigma^2_{\mathrm{flukt}},
+    \label{eq:IC-Phi}\\
+    \dot\Phi(t_\mathrm{nukl}) &= 0,
+    \label{eq:IC-dPhi}\\
+    H(t_\mathrm{nukl}) &\approx \sqrt{\frac{\Delta\mathcal{F}_\mathrm{obj}}{3\,\PhiZero}},
+    \label{eq:IC-H}
+\end{align}
+gdzie $\epsilon_0 \sim \PhiZero^{\mathrm{cr}} \ll \PhiZero^{\mathrm{eq}}$.
+Warunek~\eqref{eq:IC-dPhi} wynika z~symetrii O(4)
+rozwi\k{a}zania Euklidesowego przy nukleacji.
+\end{proposition}
+
+\subsubsection{Faza inflacyjna TGP}
+
+Dla ma\l{}ych $\Phi \ll \PhiZero$ potencja\l{} substratowy
+jest zdominowany przez cz\l{}on liniowy:
+$V_\mathrm{sub}(\Phi) \approx -|r|\Phi$,
+co daje si\l{}\k{e} $dV/d\Phi \approx -|r|$.
+R\'ownanie~\eqref{eq:Phi-bubble-evolution} staje si\k{e}:
+\begin{equation}\label{eq:inflation-eq}
+    \ddot\Phi + 3H\dot\Phi = |r|.
+\end{equation}
+Przy sta\l{}ym $H = H_*$ ($\Phi$-dominacja przez energi\k{e}
+przej\'scia fazowego): rozwi\k{a}zanie:
+\begin{equation}\label{eq:inflation-sol}
+    \Phi(t) = \frac{|r|}{3H_*^2}\!\left[
+        1 - e^{-3H_*(t-t_\mathrm{nukl})}
+    \right]
+    + \epsilon_0.
+\end{equation}
+Dla $t \gg 1/(3H_*)$: $\Phi \to |r|/(3H_*^2) \equiv \Phi_{\mathrm{plateau}}$.
+
+\begin{proposition}[Inflacja z~przej\'scia fazowego]\label{prop:inflation-TGP}
+W~fazie wzrostu $\Phi(t)$ od $\epsilon_0$ do $\PhiZero^{\mathrm{eq}}$
+czynnik skali rozszerza si\k{e} eksponencjalnie:
+\begin{equation}\label{eq:scale-factor-inflation}
+    a(t) \;\propto\; e^{H_* (t - t_\mathrm{nukl})},
+\end{equation}
+gdzie parametr Hubble'a inflacji:
+\begin{equation}\label{eq:H-inflation-TGP}
+    H_*^2
+    = \frac{8\pi G_0}{3}\,\Delta\mathcal{F}_\mathrm{obj}
+    = \frac{8\pi G_0}{3}\,\frac{\lambda\,v_{\mathrm{eq}}^4}{4}.
+\end{equation}
+Ilo\'s\'c e-sk\l{}adanie\'n inflacji:
+\begin{equation}\label{eq:N-efolds}
+    N_e = H_*\,\Delta t_*
+    \approx \frac{H_*}{3H_*}
+    \cdot \ln\!\left(\frac{\PhiZero^{\mathrm{eq}}}{\epsilon_0}\right)
+    = \frac{1}{3}\ln\!\frac{r_0/\lambda}{\PhiZero^{\mathrm{cr}}}.
+\end{equation}
+Dla $\PhiZero^{\mathrm{eq}} = 25$ i~$\epsilon_0 \sim 10^{-60}$
+(fluktuacje substratu na skali Plancka):
+$N_e \approx \tfrac{1}{3}\ln(25/10^{-60}) \approx 46$ e-sk\l{}adanie\'n.
+\end{proposition}
+
+\begin{remark}[Wyprowadzenie $\epsilon_0$ z~termodynamiki substratu --- ramy formalne]%
+\label{rem:epsilon0-derivation}
+Warto\'s\'c pocz\k{a}tkowa $\epsilon_0 = \sigma^2_{\mathrm{flukt}}$
+z~prop.~\ref{prop:IC-nucleation} mo\.ze by\'c wyznaczona
+z~parametr\'ow substratu:
+\begin{enumerate}[nosep]
+  \item \textbf{Fluktuacja krytyczna:}
+    Na substratowej siatce z~koordynacj\k{a}~$z$ i~sprz\k{e}\.zeniem~$J$:
+    \begin{equation}\label{eq:sigma-crit}
+      \sigma^2_c = \frac{T_c}{2\,z\,J}
+      \quad\Longrightarrow\quad
+      \epsilon_0 = \sigma^2_c \cdot \mathcal{S}(R_c/a_\mathrm{sub}),
+    \end{equation}
+    gdzie $\mathcal{S}(x)$ jest czynnikiem t\l{}umienia Boltzmannowskiego
+    dla b\k{a}bla o~promieniu~$R_c$ nukleowanym na tle
+    fluktuacji krytycznych.
+  \item \textbf{Promie\'n nukleacji:}
+    $R_c = 2\sigma_s / \Delta\mathcal{F}$ (promie\'n krytyczny Colemana),
+    gdzie $\sigma_s \sim J\xi^{d-1}$ jest napi\k{e}ciem
+    powierzchniowym, $\xi$ d\l{}ugo\'sci\k{a} korelacji.
+    Dla $T \approx T_c$: $\xi \to \infty$,
+    $R_c \to \infty$, $\mathcal{S} \to 0$ --- brak
+    nukleacji. Nukleacja jest mo\.zliwa, gdy $T < T_c$
+    z~sko\'nczonym $\xi$.
+  \item \textbf{Dolna granica na $\epsilon_0$:}
+    Kwantowe tunelowanie przez barier\k{e} GL daje minimaln\k{a}
+    amplitud\k{e}:
+    \begin{equation}\label{eq:eps0-bound}
+      \epsilon_0 \;\gtrsim\; \ell_P^2 / R_c^2
+      \;\sim\; (\ell_P / \xi)^2,
+    \end{equation}
+    tj.\ $\epsilon_0$ maleje jak kwadrat stosunku
+    skali Plancka do d\l{}ugo\'sci korelacji.
+    Dla $\xi \sim 10^{30}\,\ell_P$:
+    $\epsilon_0 \sim 10^{-60}$, co daje $N_e \sim 46$.
+  \item \textbf{Zwi\k{a}zek z~$N_e$:}
+    Z~r\'ow.~\eqref{eq:N-efolds}:
+    $N_e = \frac{1}{3}\ln(\PhiZero/\epsilon_0)$.
+    Sta\l{}a Starobinsky'ego~$N_e \approx 55$--$60$
+    wymaga $\epsilon_0 / \PhiZero \sim e^{-3N_e}
+    \sim 10^{-72}$--$10^{-78}$,
+    co sugeruje $\xi / \ell_P \sim 10^{36}$--$10^{39}$.
+\end{enumerate}
+
+\smallskip\noindent
+\textbf{Weryfikacja numeryczna} (v41, \texttt{epsilon0\_estimate.py}):
+przy $N_e = 55$, $\PhiZero = 24{,}66$, $\sigma^2_c = 0{,}376$ (Ising~3D, sc):
+\begin{itemize}[nosep]
+  \item $\epsilon_0 = 5{,}41 \times 10^{-71}$,
+  \item $\xi/\ell_P = 8{,}33 \times 10^{34}$,
+  \item $n_s = 0{,}9631$ ($0{,}42\sigma$ od Planck),
+  \item $r = 3{,}97 \times 10^{-3}$, $r \cdot N_e^2 = 12{,}0$
+    (klasa Starobinsky'ego).
+\end{itemize}
+Samospójność: $\epsilon_0(\xi) \to N_e \to n_s$ zamyka się.
+
+\smallskip\noindent
+\textbf{Dalsze wyniki} (v45, \texttt{ex164}--\texttt{ex165}):
+\begin{enumerate}[nosep]
+  \item \textbf{Bounce Colemana} (bezwymiarowy): $g_0^{\rm bounce} \sim O(1)$
+    $\Rightarrow$ $\epsilon_0 \sim O(1)$, $N_e \sim 1$ --- niewystarczaj\k{a}cy.
+  \item \textbf{Josephson + nukleacja}: $B_3/T = \text{const}$ blisko $T_c$
+    (z~relacji hiperska\-lowości $d\nu = 2-\alpha$, klasa Isinga 3D).
+    Nukleacja \emph{at} $T_c$ daje $\xi \sim a$ $\Rightarrow$ brak inflacji.
+  \item \textbf{$N_e$ jest geometryczny}: $N_e = \tfrac{1}{3}\ln(1/\epsilon_0)$
+    wynika z~$a(\Phi) = \Phi^{1/3}$ (metryka emergentna),
+    \textbf{nie} z~slow-rollu $V(\Phi)$.
+    Potencja\l{} $V(\Phi) \propto \phi_{\rm can}^{3/2}$ (w~zm.\ kanonicznej)
+    daje jedynie $N_e \sim O(1)$.
+  \item \textbf{Samospójny \l{}a\'ncuch}: $n_s(\text{obs}) \to N_e \to \epsilon_0
+    \to \xi/a_{\rm sub} \to |t_{\rm nuc}|$:
+    \[
+      0{,}9649 \;\to\; 56 \;\to\; 10^{-74} \;\to\; 10^{36} \;\to\; 10^{-58}.
+    \]
+  \item \textbf{Fine-tuning}: 1-parametrowy ($\epsilon_0$ lub $\xi$),
+    r\'ownorz\k{e}dny z~inflacj\k{a} Starobinsky'ego ($M$)
+    lub Higgs-inflation ($\xi_H$).
+\end{enumerate}
+
+\smallskip\noindent
+\textbf{Status}: \statuslabel{Program} (cz\k{e}\'sciowo rozwi\k{a}zany).
+Formu\l{}a $\epsilon_0 = \sigma^2_c (a_{\rm sub}/\xi)^2$ potwierdzona;
+geometryczny $N_e$ zweryfikowany.
+Ramy formalne~\eqref{eq:sigma-crit}--\eqref{eq:eps0-bound}
+z~weryfikacj\k{a} numeryczn\k{a}
+zawę\.zaj\k{a} $\epsilon_0$ do przedzia\l{}u $10^{-83}$--$10^{-65}$
+(1$\sigma$ okno z~$n_s$ Planck).
+Brakuje: mechanizm supercoolingu $|t_{\rm nuc}| \sim 10^{-58}$.
+\end{remark}
+
+\begin{remark}[Inflacja substratowa vs.\ inflacja standardowa]
+Inflacja w~TGP nie wymaga ad-hoc pola inflaton\'ow ---
+wynika z~\textbf{dynamiki substratowego przej\'scia fazowego}.
+Inflaton jest tutaj samym polem $\Phi$ w~fazie grzania
+od $\epsilon_0$ do $\PhiZero$. Nie ma problemu wyboru
+potencja\l{}u inflacyjnego: potencja\l{} jest \textbf{wyznaczony}
+przez parametry substratu ($r_0$, $\lambda$) z~warunku Wilsona-Fishera.
+Por\'ownanie z~inflacj\k{a} chaotyczn\k{a} Linde'a: oba modele
+daj\k{a} eksponencjalny wzrost $a(t)$, ale w~TGP amplituda
+fluktuacji pierwotnych wynika ze statystyki substratowej.
+\end{remark}
+
+\subsubsection{Podgrzewanie i~warunki pocz\k{a}tkowe dla kosmologii}
+
+Po osi\k{a}gni\k{e}ciu $\Phi \approx \PhiZero^{\mathrm{eq}}$
+pole zaczyna oscylowa\'c wok\'o\l{} minimum potencja\l{}u.
+Oscylacje s\k{a} t\l{}umione przez cz\l{}on $3H\dot\Phi$
+(Hubble damping) --- energia z~przej\'scia fazowego
+jest transferowana do materii (termin \'zr\'od\l{}a
+w~r\'ownaniu pola).
+
+\begin{proposition}[Podgrzewanie (reheating)]\label{prop:reheating}
+Temperatura podgrzewania:
+\begin{equation}\label{eq:T-reheat}
+    T_\mathrm{reh}
+    \;\sim\; \left(\frac{45\,\Delta\mathcal{F}_\mathrm{obj}\,\Phi_0^2}
+                        {\pi^2\,g_*}\right)^{1/4},
+\end{equation}
+gdzie $g_* \approx 106.75$ jest liczb\k{a} efektywnych
+stopni swobody w~SM.
+Standardowe termiczne Kosmologiczne Warunki Pocz\k{a}tkowe
+(BBN, CMB) s\k{a} generowane po podgrzewaniu,
+gdy $\Phi \equiv \PhiZero$ i~stale $c_0, \hbar_0, G_0$ osi\k{a}gaj\k{a}
+warto\'sci obserwowane.
+\end{proposition}
+
+\begin{proposition}[Most GL $\to$ FRW: warunki pocz\k{a}tkowe
+  dla r\'owna\'n Friedmanna]\label{prop:GL-FRW-bridge}
+Po podgrzewaniu (reheating), gdy $\Phi \to \PhiZero$,
+parametry GL substratu mapuj\k{a} si\k{e} na warunki
+pocz\k{a}tkowe FRW-TGP w~nast\k{e}puj\k{a}cy spos\'ob:
+\begin{align}
+    \PhiZero &= v_{\mathrm{eq}}^2
+    = \frac{|r_0|}{\lambda},
+    \label{eq:Phi0-from-veq}\\[4pt]
+    G_{\mathrm{obs}} &= G_0
+    = \frac{c_0^4}{8\pi}\,\frac{1}{\PhiZero\,\sigma_0},
+    \label{eq:G-from-Phi0}\\[4pt]
+    H_{\mathrm{ini}}^2 &= \frac{8\pi G_0}{3}\,\rho_{\mathrm{reh}},
+    \label{eq:H-ini-FRW}
+\end{align}
+gdzie $v_{\mathrm{eq}} = \sqrt{|r_0|/\lambda}$ jest
+r\'ownowagowym parametrem porz\k{a}dku GL (minimum
+$\mathcal{F}_{\mathrm{GL}}$), za\'s $\rho_{\mathrm{reh}}$
+jest g\k{e}sto\'sci\k{a} energii promieniowania po podgrzewaniu.
+
+Warunek spójności: przy $\Phi = \PhiZero$ r\'ownanie FRW-TGP:
+\begin{equation}\label{eq:FRW-TGP-ini}
+    H^2 = \frac{8\pi G_0\,\PhiZero}{3\,\Phi}\,\rho_{\mathrm{tot}}
+    \xrightarrow{\Phi \to \PhiZero}
+    \frac{8\pi G_0}{3}\,\rho_{\mathrm{tot}}
+\end{equation}
+redukuje si\k{e} do standardowego r\'ownania Friedmanna,
+potwierdzaj\k{a}c sp\'ojno\'s\'c TGP z~kosmologi\k{a} standardow\k{a}
+po podgrzewaniu.
+\end{proposition}
+
+\begin{remark}[Zamkni\k{e}cie O25: jawny most GL$\to$FRW]
+\label{rem:O25-bridge}
+Powy\.zsza propozycja zamyka otwarty problem O25:
+\textbf{sk\k{a}d $\Phi(t_{\mathrm{BB}})$ wynika z~nukleacji GL?}
+Odpowied\'z: $\PhiZero$ = $v_{\mathrm{eq}}^2$ (eq.~\ref{eq:Phi0-from-veq}).
+Bezpo\'srednio po nukleacji $\Phi = \epsilon_0 \ll \PhiZero$
+(prop.~\ref{prop:IC-nucleation}); po fazie inflacyjnej
+i~podgrzewaniu $\Phi \to \PhiZero = v_{\mathrm{eq}}^2$,
+co inicjuje r\'ownania Friedmanna~(\ref{eq:H-ini-FRW}).
+Parametry substratu ($r_0$, $\lambda$) s\k{a} wyznaczane
+przez punkt sta\l{}y Wilsona--Fishera
+(\S\ref{app:H-rezimy}, eq.~\ref{eq:substrate-to-TGP}).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Entropia i~warunki Penrose'a}%
+\label{app:G-entropia}
+% -------------------------------------------------------------------
+
+\subsubsection{Niska entropia stanu pocz\k{a}tkowego}
+
+Jednym z~g\l{}\'ownych osi\k{a}gni\k{e}\'c TGP jest naturalne
+wyja\'snienie \textbf{niskiej entropii stanu pocz\k{a}tkowego}
+(hipoteza Penrose'a).
+
+\begin{proposition}[Niska entropia z~nukleacji]\label{prop:low-entropy}
+Stan p\k{e}cherzyka bezpo\'srednio po nukleacji ma
+\textbf{minimaln\k{a} entropi\k{e}}: konfiguracja $v(r)$
+odpowiadaj\k{a}ca krytycznemu p\k{e}cierzykowi jest
+przybli\.zone \textbf{jednorodna} (wn\k{e}trze z~$\Phi \approx \epsilon_0$)
+i~\textbf{sferycznie symetryczna}. Liczba mikrostanow
+substratu kompatybilnych z~t\k{a} konfiguracj\k{a}:
+\begin{equation}\label{eq:low-entropy-count}
+    \mathcal{W}_\mathrm{ini} \;\approx\; e^{S_\mathrm{BH}(R_c)}
+    = \exp\!\left[\frac{k_B\cdot 4\pi R_c^2}{4\lP^2}\right]
+    \;\ll\; \mathcal{W}_\mathrm{termal},
+\end{equation}
+gdzie $\mathcal{W}_\mathrm{termal}$ jest termaln\k{a}
+liczb\k{a} mikrostanow dla tej samej energii rozk\l{}adem
+jednorodnym. Niska entropia jest zatem \textbf{wynikiem
+geometrii nukleacji}, nie dodatkowym za\l{}o\.zeniem.
+\end{proposition}
+
+\begin{remark}[Por\'ownanie z~hipotez\k{a} Penrose'a]
+Penrose postuluje, \.ze stan pocz\k{a}tkowy Wszech\'swiata
+mia\l{} ekstremalnie nisk\k{a} entropi\k{e} z~powodu
+,,wyj\k{a}tkowo niskiej warto\'sci tensora Weyla'' ---
+ale nie wyja\'snia, \emph{dlaczego} tak by\l{}o. W~TGP
+niska entropia jest \textbf{nieuniknion\k{a} konsekwencj\k{a}}
+mechanizmu nukleacji: sferyczna symetria krytycznego
+p\k{e}cherzyka wymusza g\l{}adk\k{a} pocz\k{a}tkow\k{a}
+geometri\k{e} (ma\l{}y tensor Weyla), a~dynamika
+$\mathcal{S}_0 \to \mathcal{S}_1$ jest topologicznie
+prosta (jeden sp\'ojny p\k{e}czerzyk).
+\end{remark}
+
+\subsubsection{Wyj\'scie problemu p\l{}sko\'sci}
+
+Standardowy problem p\l{}sko\'sci (\textbf{flatness}) polega na tym,
+\.ze g\k{e}sto\'s\'c energii musia\l{}a by\'c dostrojona do kr\'ytycznej
+z~dokładno\'sci\k{a} $|\Omega - 1| < 10^{-60}$ w~epoce Plancka.
+
+W~TGP: krytyczny p\k{e}czerzyk ma sko\'nczony promie\'n $R_c$
+i~\textbf{geometryczn\k{a} p\l{}sko\'s\'c wewn\k{e}trzn\k{a}}
+(sfera de~Sittera to najog\'olniejsza symetria nukleacji
+Euklidesowej, ale wewn\k{e}trze jest lokalnie p\l{}askie
+w~granicach $R_c \gg \lP$). Inflacja~\eqref{eq:scale-factor-inflation}
+nast\k{e}pnie wygładza wszelkie odchyłki od płaskości:
+\begin{equation}\label{eq:flatness-resolution}
+    |\Omega(t) - 1| = |\Omega_\mathrm{ini} - 1|\,a_\mathrm{ini}^2/a(t)^2
+    \;\propto\; e^{-2N_e} \;\approx\; e^{-92} \;\approx\; 10^{-40}.
+\end{equation}
+Dla $N_e \approx 46$ wymaganych przez obserwacje ($N_e \geq 60$
+wymaga $\PhiZero^{\mathrm{cr}}/\PhiZero^{\mathrm{eq}} \leq 10^{-90}$,
+co jest osiągalne dla substratu z~małymi fluktuacjami).
+
+% -------------------------------------------------------------------
+\subsection{Predykcje dla obserwacji}%
+\label{app:G-predykcje}
+% -------------------------------------------------------------------
+
+% -----------------------------------------------------------------------
+\subsubsection{Wyprowadzenie indeksu spektralnego przez transformacj\k{e}
+konformaln\k{a}}
+\label{app:G-starobinsky}
+% -----------------------------------------------------------------------
+
+Potencja\l{} substratowy $V_\mathrm{sub}(\Phi) = -|r|\Phi + \lambda\Phi^2$
+ma minimum w~$\Phi_\mathrm{min} = |r|/(2\lambda) = \PhiZero/2$.
+Po uzupe\l{}nieniu do~kwadratu:
+\begin{equation}\label{eq:Vinf-quadratic}
+    V_\mathrm{inf}(\Phi)
+    \;=\; V_\mathrm{sub}(\Phi) + \Delta\mathcal{F}_\mathrm{obj}
+    \;=\; \lambda\!\left(\Phi - \frac{\PhiZero}{2}\right)^{\!2},
+\end{equation}
+gdzie $\Delta\mathcal{F}_\mathrm{obj} = |r|^2/(4\lambda)$ jest g\k{e}sto\'sci\k{a}
+energii fa\l{}szywej pr\'o\.zni (rys.~warunki pocz\k{a}tkowe).
+Flaton $\Phi$ toczy si\k{e} od $\epsilon_0 \approx 0$ do~$\Phi_\mathrm{min} = \PhiZero/2$,
+po czym nast\k{e}puje oscylacyjne podgrzewanie.
+
+Dynamiczne $G(\Phi) = G_0\Phi_0/\Phi$ (aksjomat~\ref{ax:G}) implikuje
+efektywn\k{a} mas\k{e} Plancka $M_\mathrm{Pl,eff}^2 = M_\mathrm{Pl}^2\,\Phi/\PhiZero$.
+Dzia\l{}anie jordanowskie:
+\begin{equation}\label{eq:action-jordan}
+    \mathcal{S}_J = \int\!d^4x\sqrt{-g}
+    \left[\frac{M_\mathrm{Pl}^2}{2}\cdot\frac{\Phi}{\PhiZero}\,R
+          - \tfrac{1}{2}(\partial\Phi)^2 - V_\mathrm{inf}(\Phi)\right].
+\end{equation}
+Jest to teoria skalaro-tensorowa z~nieminimalnym sprz\k{e}\.zeniem
+$f(\Phi) = \Phi/\PhiZero$. Transformacja konformalna do~ramy Einsteina
+$\tilde{g}_{\mu\nu} = (\Phi/\PhiZero)\,g_{\mu\nu}$ daje dla pola
+kanonicznego $\chi$ (w~re\.zimie silnego sprz\k{e}\.zenia
+$\Phi \ll \Phi_\mathrm{NM} \equiv M_\mathrm{Pl}\sqrt{3\PhiZero/2}$):
+\begin{equation}\label{eq:chi-of-Phi}
+    \frac{d\chi}{d\Phi} \;\approx\; \frac{M_\mathrm{Pl}\sqrt{3/2}}{\Phi}
+    \quad\Rightarrow\quad
+    \Phi = \Phi_\mathrm{ref}\,e^{\chi\sqrt{2/3}/M_\mathrm{Pl}}.
+\end{equation}
+Podstawiaj\k{a}c do~potencja\l{}u einsteinowskiego
+$\tilde{V}(\chi) = V_\mathrm{inf}(\Phi)\,\PhiZero^2/\Phi^2$ i~oznaczaj\k{a}c
+$x \equiv \Phi/(\PhiZero/2) = e^{\chi\sqrt{2/3}/M_\mathrm{Pl}}$:
+\begin{equation}\label{eq:Vtilde-Starobinsky}
+    \boxed{%
+    \tilde{V}(\chi)
+    = 4\,\Delta\mathcal{F}_\mathrm{obj}\cdot
+      \left(1 - e^{-\chi\sqrt{2/3}/M_\mathrm{Pl}}\right)^{\!2}.}
+\end{equation}
+Jest to \textbf{dok\l{}adnie potencja\l{} inflacji Starobinsky'ego}
+(inflacja $R^2$). Wsp\'o\l{}czynnik $4\Delta\mathcal{F}_\mathrm{obj}$
+wyznaczony jest przez parametry substratu.
+
+\begin{proposition}[Indeks spektralny --- wynik kanonicznego slow-roll]%
+\label{prop:spectral-index}
+Z~potencja\l{}u~\eqref{eq:Vtilde-Starobinsky} i~standardowego
+rachunku slow-roll ($\epsilon = \tilde{V}'^2/(2\tilde{V}^2)$,
+$\eta = \tilde{V}''/\tilde{V}$, w~jednostkach $M_\mathrm{Pl}=1$):
+\begin{align}
+    \epsilon &\approx \frac{3}{4N_e^2},
+    \label{eq:epsilon-TGP}\\
+    \eta &\approx -\frac{1}{N_e},
+    \label{eq:eta-TGP}
+\end{align}
+skad indeks spektralny:
+\begin{equation}\label{eq:spectral-index}
+    n_s - 1 = -6\epsilon + 2\eta
+    = -\frac{2}{N_e} - \frac{9}{4N_e^2} + \mathcal{O}(N_e^{-3})
+    \approx -\frac{2}{N_e} - \frac{3}{N_e^2}.
+\end{equation}
+Dla $N_e = 55$--$65$: $n_s \in (0{,}962;\;0{,}967)$,
+sp\'ojnie z~danymi Planck~2018: $n_s = 0{,}9649 \pm 0{,}0042$
+($N_e=60$: $n_s = 0{,}9658$ --- w~$1\sigma$).
+\end{proposition}
+
+\begin{remark}[Klasa uniwersalno\'sci predykcji inflacyjnych]\label{rem:universality}
+Wynik~\eqref{eq:Vtilde-Starobinsky} pokazuje, \.ze TGP nale\.zy
+do~\textbf{klasy atraktorowej} inflacji z~silnym nieminimalnym
+sprz\k{e}\.zeniem. W~tej klasie zbiegaj\k{a} si\k{e}: inflacja
+Starobinsky'ego ($R^2$), inflacja Higgsa Bezrukova--Shaposhnikova
+(du\.ze $\xi$), oraz TGP z~dynamicznym $G(\Phi)$.
+Predykcje s\k{a} zdeterminowane topologicznie (kszta\l{}t potencja\l{}u
+einsteinowskiego), a~nie warto\'sci\k{a} parametr\'ow substratu.
+\end{remark}
+
+\begin{proposition}[Stosunek tensor-skalar $r_\mathrm{ts}$]\label{prop:r-tensor}
+Z~$\epsilon \approx 3/(4N_e^2)$ i~standardowej relacji $r = 16\epsilon$:
+\begin{equation}\label{eq:r-ts-TGP}
+    r_\mathrm{ts}^{\mathrm{TGP}}
+    \approx \frac{12}{N_e^2} + \delta_\mathrm{breath},
+\end{equation}
+gdzie $\delta_\mathrm{breath} \sim m_\mathrm{sp}^2/H_*^2 \ll 1/N_e^2$
+jest ma\l{}a sk\l{}adow\k{a} od modu oddechowego (ekranowanego
+podczas inflacji gdy $H_* \gg m_\mathrm{sp}$).
+
+\textbf{Warto\'sci numeryczne:}
+$r_\mathrm{ts}(N_e=46) \approx 0{,}0057$;
+$r_\mathrm{ts}(N_e=60) \approx 0{,}0033$
+--- spe\l{}niaj\k{a} ograniczenie BICEP/Keck+Planck~2018: $r < 0{,}12$.
+
+\textbf{Uwaga:} Relacja konsystencji Starobinsky'ego $r \cdot N_e^2 = 12$
+jest \textbf{unikatowan\k{a} predykcj\k{a} TGP} --- odwrotnie do
+chaotycznej inflacji $V \propto \phi^2$, kt\'ora daje
+$r \cdot N_e = 8$ (ju\.z wykluczonej przez Planck~2018).
+TGP wchodzi wi\k{e}c w~klas\k{e} sprz\k{e}\.ze\'n wielkich
+(large-$\xi$ attractor), ale z~fizycznym wyja\'snieniem
+przez dynamik\k{e} substratu, nie ad-hoc parametr.
+\end{proposition}
+
+\begin{corollary}[Obserwowalne sygnatury w~CMB]\label{cor:CMB-signatures}
+TGP przewiduje nast\k{e}puj\k{a}ce sygnatury w~reliktowym
+promieniowaniu mikrofalowym:
+\begin{enumerate}[nosep]
+  \item \textbf{Indeks spektralny:} $n_s \in (0{,}957;\;0{,}967)$
+    --- identyczny z~predykcj\k{a} inflacji potencja\l{}owej ($V \propto \phi^2$),
+    ale wynikaj\k{a}cy z~dynamiki substratowej, nie z~doboru pola.
+  \item \textbf{Niegalilaczowskie}: nielinowo\'s\'c modu oddechowego
+    generuje nieGaussianowo\'s\'c $f_\mathrm{NL} \sim 1$
+    (testowalne przysz\l{}ym SKA i~Euclid-spektrum).
+  \item \textbf{Cold spot i~inne anomalie CMB}: mog\k{a}
+    by\'c \'sladami granicy domenowej (uwaga~\ref{rem:CMB-anomalies},
+    hipoteza~\ref{hyp:topologia}).
+  \item \textbf{Pierwotne fale grawitacyjne:} $r_\mathrm{ts} < 0{,}1$,
+    z~dodatkow\k{a} sk\l{}adow\k{a} modu oddechowego w~pasmie
+    niskich cz\k{e}stotliwo\'sci (PTA).
+\end{enumerate}
+Weryfikacja: skrypt \texttt{cmb\_tgp\_comparison.py}
+(por.\ program symulacji, \S\ref{ssec:symulacja}).
+\end{corollary}
+
+\begin{remark}[Anomalie CMB jako \'slady granic domenowych]\label{rem:CMB-anomalies}
+CMB wykazuje kilka statystycznie znacz\k{a}cych anomalii:
+asymetri\k{e} p\'o\l{}kulow\k{a}, cold spot, nisk\k{a} amplitud\k{e}
+multipoli $\ell \leq 5$. Wszystkie mog\k{a}
+wynika\'c z~\textbf{niedoskonale sferycznej geometrii nukleacji}:
+je\'sli w~pobli\.zu naszego p\k{e}cherzyka istnia\l{} inny
+p\k{e}czerzyk $\mathcal{S}_1$ (s\k{a}siednia domena),
+gradient pola $\Phi$ na granicy domenowej indukowa\l{}by
+asymetryczny sk\l{}adnik w~$\Phi(\mathbf{x}, t_\mathrm{nukl})$.
+Transformacja ta nie jest przewidywaln\k{a} z~parametr\'ow
+TGP bez danych MC, ale jest \textbf{sp\'ojna strukturalnie}
+--- jest predykcj\k{a} z~klas\k{a} sygna\l{}u.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Problem horyzontu}%
+\label{app:G-horyzont}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Koherencja horyzontu]\label{prop:horizon-coherence}
+Krytyczny p\k{e}czerzyk o~promieniu $R_c$ jest \textbf{kauzalnie
+sp\'ojny} w~momencie nukleacji: wszystkie punkty wn\k{e}trza
+p\k{e}cherzyka by\l{}y po\l{}\k{a}czone przez substrat
+(za po\'srednictwem wsp\'olnego $H_\Gamma$) \emph{przed}
+nukleacj\k{a}. Problem horyzontu w~TGP nie wyst\k{e}puje:
+\begin{equation}\label{eq:causal-coherence}
+    d_H(t_\mathrm{nukl}) = c_* \cdot t_\mathrm{nukl}
+    \;\gg\; R_c,
+\end{equation}
+poniewa\.z horyzont substratowy (wyznaczony przez pr\k{e}dko\'s\'c
+propagacji w~$\mathcal{S}_0$) jest formalnie nieskończony
+($c \to \infty$ przy $\Phi \to 0$, aksjomat~\ref{ax:c}).
+Informacja na substracie mo\.ze propagowa\'c przed nukleacj\k{a}
+ze \textbf{skończon\k{a}} pr\k{e}dko\'sci\k{a} substratow\k{a}
+$c_\mathrm{sub}$ (pr\k{e}dko\'s\'c propagacji na sieci),
+nie z~pr\k{e}dko\'sci\k{a} \'swiat\l{}a $c_0$ (która jest
+emergentna). Dlatego ka\.zdy punkt nukleowanego p\k{e}cherzyka
+,,zna'' ca\l{}y substrat do momentu $t_\mathrm{nukl}$.
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Status i~powi\k{a}zanie z~problemami otwartymi}%
+\label{app:G-status}
+% -------------------------------------------------------------------
+
+\begin{remark}[Status zamkni\k{e}cia O10]
+Niniejszy dodatek cz\k{e}\'sciowo zamyka \textbf{O10}
+(\S\ref{ssec:program}): mechanizm Wielkiego Wybuchu jako
+przej\'scia fazowego $\mathcal{S}_0 \to \mathcal{S}_1$
+jest formalnie opisany na poziomie Ginzburga-Landaua.
+
+\textbf{Zamkni\k{e}te w~tym dodatku:}
+\begin{itemize}[nosep]
+  \item Mechanizm nukleacji (prop.~\ref{prop:R-critical},
+        \ref{prop:nucleation-rate}),
+  \item Inflacja substratowa (prop.~\ref{prop:inflation-TGP}),
+  \item Niska entropia (prop.~\ref{prop:low-entropy}),
+  \item Problem horyzontu (prop.~\ref{prop:horizon-coherence}),
+  \item Problem p\l{}sko\'sci (r\'ow.~\ref{eq:flatness-resolution}),
+  \item Indeks spektralny CMB (prop.~\ref{prop:spectral-index}).
+\end{itemize}
+
+\textbf{Nadal otwarte:}
+\begin{itemize}[nosep]
+  \item Pe\l{}ne kwantowe obliczenie amplitudy nukleacji
+        bez aproksymacji GL (wymaga QFT na substracie,
+        dodatek~\ref{app:kwantyzacja}),
+  \item Kwantowe grawitacyjne fluktuacje podczas inflacji
+        (korekty do $n_s$ od dynamiki $\sigma_{ab}$),
+  \item Porównanie z~pe\l{}nymi danymi CMB (Planck, BICEP/Keck):
+        skrypt \texttt{cmb\_tgp\_comparison.py}.
+\end{itemize}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Temperatura substratu $T_\Gamma(z) = H(z)/(2\pi)$
+  --- zamkni\k{e}cie O22 cz.~II (II.B)}%
+\label{app:G-TGamma}
+% Sesja v32, 2026-03-24 --- zadanie II.B planu \texttt{PLAN\_ROZWOJU\_v1}
+% -------------------------------------------------------------------
+
+Problem O22 (cz\k{e}\'s\'c II): wyznaczy\'c temperatur\k{e} substratu
+$T_\Gamma(z)$ jako funkcj\k{e} przesuni\k{e}cia ku czerwieni.
+Cz\k{e}\'s\'c~I zosta\l{}a zamkni\k{e}ta przez
+tw.~\ref{thm:s0-from-GL}: $s_0 = \gamma$.
+Cz\k{e}\'s\'c~II wymaga zwi\k{a}zku mi\k{e}dzy~$T_\Gamma$
+a~histori\k{a} kosmologiczn\k{a}.
+
+\begin{proposition}[$T_\Gamma(z) = H(z)/(2\pi)$:
+  temperatura Gibbonsa--Hawkinga substratu]%
+\label{prop:TGamma-from-Unruh}
+Niech $\varphi_{\mathrm{bg}}(t)$ b\k{e}dzie t\l{}em kosmologicznym TGP
+w~przestrzeni de~Sittera z~parametrem Hubble'a $H(t)$.
+Substrat w~stanie r\'ownowagi termicznej
+z~horyzontem de~Sittera ma temperatur\k{e}:
+\begin{equation}\label{eq:TGamma-GH}
+  \boxed{
+    T_\Gamma(z) \;=\; \frac{H(z)}{2\pi},
+  }
+\end{equation}
+gdzie $H(z) = H_0\,E(z)$,
+$E(z) = \sqrt{\Omega_m(1+z)^3 + \Omega_\Lambda}$
+jest znormalizowanym parametrem Hubble'a TGP
+(prop.~\ref{prop:cosmo}), a~$T_\Gamma$ wyra\.zona
+w~jednostkach naturalnych ($\hbar = c_0 = k_B = 1$).
+\end{proposition}
+
+\begin{proof}[Uzasadnienie (szkic)]
+\emph{Krok~1 (efekt Gibbonsa--Hawkinga).}
+Obserwator w~stanie komoving w~przestrzeni de~Sittera
+z~sta\l{}ym $H$ do\'swiadcza horyzontu kosmologicznego
+o~promieniu $r_H = c_0/H$.
+Pole kwantowe na tle dS promieniuje z~temperatur\k{a}
+Gibbonsa--Hawkinga~\cite{Gibbons-Hawking-1977}:
+\begin{equation}\label{eq:T-GH}
+  T_{\mathrm{GH}} \;=\; \frac{\hbar H}{2\pi k_B c_0}
+  \;\xrightarrow{\hbar=c_0=k_B=1}\;
+  \frac{H}{2\pi}.
+\end{equation}
+Wynik analogiczny do temperatury Hawkinga czarnej dziury
+($T_{\mathrm{BH}} = \kappa/(2\pi)$, gdzie $\kappa$ jest
+grawitacj\k{a} powierzchniow\k{a}; por.\ r\'ownanie~\eqref{eq:metric-exp}).
+
+\emph{Krok~2 (substrat w~r\'ownowadze z~horyzontem).}
+W~TGP substrat $\Gamma$ jest uk\l{}adem termodynamicznym
+o~temperaturze $T_\Gamma$
+(hamiltoniano~\eqref{eq:B-H}, sekcja~\ref{app:B-hamiltoniano}).
+Warunek r\'ownowagi:
+substrat jest sprzężony z~t\l{}em dS przez samo pole~$\varphi_{\mathrm{bg}}(t)$
+(TGP: przestrze\'n = substrat).
+Z~zasady termodynamiki: uk\l{}ad sprzężony z~\emph{jedynym}
+termostatem osi\k{a}ga jego temperatur\k{e}:
+\begin{equation}\label{eq:eq-condition}
+  T_\Gamma = T_{\mathrm{GH}} = \frac{H}{2\pi}.
+\end{equation}
+
+\emph{Krok~3 (zale\.zno\'s\'c od $z$).}
+W~modelu kosmologicznym TGP (prop.~\ref{prop:cosmo}):
+$H = H(z)$ zmienia si\k{e} wzd\l{}u\.z historii kosmologicznej.
+Adiabatyczna ewolucja substratu (warunek $\dot\varphi_{\mathrm{bg}} \ll H^2$,
+znany jako slow-roll) gwarantuje,
+\.ze substrat \emph{pod\k{a}\.za} za temperatur\k{a} horyzontu.
+St\k{a}d $T_\Gamma(z) = H(z)/(2\pi)$, co dowodzi~\eqref{eq:TGamma-GH}.
+\end{proof}
+
+\begin{corollary}[Zamkni\k{e}cie O22 cz.~II]%
+\label{cor:O22-II-closed}
+\begin{enumerate}[(i)]
+  \item \textbf{Dzi\'s} ($z = 0$):
+    $T_\Gamma^{(0)} = H_0/(2\pi)
+    \approx 2{,}3 \times 10^{-33}\,\mathrm{eV}$
+    (por.\ cor.~\ref{cor:entropy-potential}: $T_\Gamma \ll 1$
+    uzasadnia przybli\.zenie $m_{\mathrm{eff}} \approx m_{\mathrm{sp}}$).
+  \item \textbf{W~epoce radiacyjnej} ($z \gg 1$):
+    $T_\Gamma(z) \sim H_0\sqrt{\Omega_r}(1+z)^2/(2\pi)$
+    --- substrat by\l{} gor\k{a}cy, co nap\k{e}dza\l{}o przej\'scie fazowe
+    prop.~\ref{prop:inflation-TGP}.
+  \item \textbf{Entropia substratu}~\eqref{eq:B-entropy-explicit}:
+    $S_\Gamma(z) = k_B N_B\gamma\,(\varphi - \ln\varphi - 1)$
+    z~$T_\Gamma(z)$ we wzorze~\eqref{eq:B-Veff-total} podaje
+    ewolucj\k{e} histori\k{a} termiczn\k{a} bez wolnych parametr\'ow.
+\end{enumerate}
+Problem O22 jest \textbf{zamkni\k{e}ty} w~ramach hipotezy
+r\'ownowagi termicznej substratu z~horyzontem dS.
+Zadanie otwarte: weryfikacja numeryczna przez por\'ownanie
+$T_\Gamma(z)$ z~obserwowanym spektrum anizotropii CMB.
+\end{corollary}
+
+\begin{remark}[Sp\'ojno\'s\'c z~N$_0$ i~za\l{}o\.zeniami TGP]
+Mechanizm opisany w~tym dodatku zachowuje wszystkie
+centralne za\l{}o\.zenia TGP:
+\begin{itemize}[nosep]
+  \item $\Nzero$ jako stan odniesienia [\emph{zachowane}]:
+        nukleacja \emph{zaczyna si\k{e}} w~$\Nzero$ (substrat w~$\mathcal{S}_0$).
+  \item Trzy re\.zimy [\emph{zachowane}]: powstaj\k{a}
+        \emph{po} osi\k{a}gni\k{e}ciu $\Phi \approx \PhiZero$
+        (po podgrzewaniu), gdy nieliniowe samosprz\k{e}\.zenie
+        $\mathcal{N}[\Phi]$ jest aktywne.
+  \item Przestrze\'n z~materii [\emph{zachowane}]: materia
+        (defekty substratu, sekcja~\ref{ssec:defekty})
+        pojawia si\k{e} r\'ownocze\'snie z~$\Phi > 0$ ---
+        nie ma przestrzeni bez materii.
+  \item Dynamiczne sta\l{}e [\emph{zachowane}]: $c(\Phi)$,
+        $\hbar(\Phi)$, $G(\Phi)$ s\k{a} aktywne przez ca\l{}y
+        proces. Nukleacj\k{e} gwarantuje termodynamika
+        substratu i~miara konfiguracyjna
+        (uwaga~\ref{rem:N0-unstable-G}), nie $\hbar\to\infty$.
+\end{itemize}
+\end{remark}

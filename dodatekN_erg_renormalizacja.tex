@@ -1,0 +1,211 @@
+% ===========================================================================
+%  dodatekN_erg_renormalizacja.tex
+%  Teoria Generowanej Przestrzeni (TGP) — wersja 1
+%
+%  DODATEK N: Analiza ERG (Wetterich) dla substratu TGP
+%  ------------------------------------------------------
+%  Cel:   Uzasadnić postać K(φ)∝φ⁴ jako punkt stały przepływu RG
+%         i wyznaczyć λ_eff z równania Wettericha.
+%
+%  Metoda: Exact Renormalization Group (ERG) w aproksymacji LPA
+%          i LPA' (z dynamiczną funkcją kinetyczną).
+%
+%  Wyniki: K(φ)∝φ⁴ jest zgodny z przepływem ERG przy T~T_c;
+%          K_IR/K_UV = 1.13; θ_u = −8.68 (sygnał asymptotycznej
+%          bezpieczności); λ_eff wyznaczony numerycznie.
+%
+%  Implementacja numeryczna: scripts/tgp_erg_wetterich.py
+% ===========================================================================
+
+\section*{Dodatek N: Przepływ ERG dla substratu TGP}
+\addcontentsline{toc}{section}{Dodatek N: Przepływ ERG}
+\label{app:ERG}
+
+\subsection*{N.1 Równanie Wettericha — schemat ogólny}
+
+Dokładne równanie renormalizacyjne (ERG) Wettericha opisuje ewolucję
+efektywnego działania $\Gamma_k[\phi]$ ze skalą $k$:
+\begin{equation}
+  \partial_t \Gamma_k = \frac{1}{2}\,
+    \mathrm{Tr}\!\left[
+      \bigl(\Gamma_k^{(2)} + R_k\bigr)^{-1}\partial_t R_k
+    \right],
+  \quad t = \ln(k/\Lambda),
+  \label{eq:Wetterich}
+\end{equation}
+gdzie $\Gamma_k^{(2)}$ to druga pochodna funkcjonalna względem $\phi$,
+$R_k(q)$ to regulator infra-czerwony (IR), a $\Lambda$ to skala UV.
+
+\paragraph{Regulator Litmima (optymalny).}
+Stosujemy regulator Litmima (Litim 2001):
+\begin{equation}
+  R_k(q) = (k^2 - q^2)\,\theta(k^2 - q^2),
+  \label{eq:Litim_regulator}
+\end{equation}
+który maksymalizuje konwergencję LPA i pozwala całkować analitycznie
+po pędach.
+
+\subsection*{N.2 Aproksymacja lokalna potencjału (LPA)}
+
+W LPA przyjmujemy $\Gamma_k[\phi] = \int [(\nabla\phi)^2/2 + U_k(\phi)]\,d^dx$
+(bez renormalizacji funkcji falowej). Dla $d = 3$, $n = 1$
+(jedno-składnikowe pole, symetria $\mathbb{Z}_2$) i regulatora Litmima:
+\begin{equation}
+  \partial_t U_k(\rho) =
+    \frac{k^5}{6\pi^2}
+    \cdot\frac{1}{k^2 + U_k'(\rho) + 2\rho\,U_k''(\rho)},
+  \quad \rho = \tfrac{1}{2}\phi^2.
+  \label{eq:LPA_flow}
+\end{equation}
+
+\paragraph{Bezwymiarowe zmienne.}
+Wprowadzamy zmienne unormowane do skali $k$:
+\begin{equation}
+  \tilde\rho = \rho\,k^{-(d-2)},
+  \quad \tilde u(\tilde\rho) = U_k(\rho)\,k^{-d},
+  \label{eq:dimensionless_vars}
+\end{equation}
+dając przepływ w bezwymiarowej formie ($d = 3$, $\eta = 0$ w LPA):
+\begin{equation}
+  \partial_t \tilde u =
+    -3\tilde u + \tilde\rho\,\tilde u'
+    + \frac{1}{6\pi^2}\,\frac{1}{1 + \tilde u' + 2\tilde\rho\,\tilde u''}\,.
+  \label{eq:LPA_dimensionless}
+\end{equation}
+Punkt stały: $\partial_t \tilde u = 0$ — wyznacza ODE dla
+$\tilde u^*(\tilde\rho)$.
+
+\subsection*{N.3 Rozszerzona LPA' z dynamiczną funkcją kinetyczną}
+
+W LPA' uwzględniamy przepływ funkcji kinetycznej $K_k(\rho)$:
+\begin{equation}
+  \Gamma_k[\phi] = \int\!\left[
+    K_k\!\left(\tfrac{\phi^2}{2}\right)(\nabla\phi)^2 + U_k\!\left(\tfrac{\phi^2}{2}\right)
+  \right]d^3x.
+  \label{eq:LPA_prime_ansatz}
+\end{equation}
+Równanie przepływu dla $K_k(\rho)$ przy regulatorze Litmima:
+\begin{equation}
+  \partial_t K_k(\rho) =
+    \frac{k^5}{6\pi^2}\cdot
+    \frac{K_k'(\rho) + 2\rho K_k''(\rho) - K_k(\rho)(1 + U_k'' + 2\rho U_k''')
+          /(k^2 + U_k' + 2\rho U_k'')}{(k^2 + U_k' + 2\rho U_k'')^2}\,.
+  \label{eq:LPA_prime_K_flow}
+\end{equation}
+Pełne równania wraz z ich implementacją numeryczną znajdują się w skrypcie
+\texttt{tgp\_erg\_wetterich.py}.
+
+\subsection*{N.4 Punkt stały Wilsona–Fishera}
+
+\begin{twierdzenie}[Punkt stały ERG i K(φ)∝φ²]
+\label{thm:ERG_fixed_point}
+Dla hamiltonianu substratu $H_\Gamma = -J\sum(\phi_i\phi_j)^2$
+z warunkiem początkowym $K_{k=\Lambda}(\rho) = K_\mathrm{UV}\,\phi^2
+= 2K_\mathrm{UV}\,\rho$ w przepływie LPA':
+\begin{enumerate}[(i)]
+  \item Punkt stały Wilsona–Fishera $\tilde u^*(\tilde\rho)$ istnieje
+        i ma $\tilde\rho_0 > 0$ (spontane łamanie symetrii $\mathbb{Z}_2$
+        dla $T < T_c$).
+  \item Funkcja kinetyczna przepływa do $K_\mathrm{IR}(\rho) \approx
+        1{,}13\,K_\mathrm{UV}\,\rho$ z renormalizacją $13\%$ między
+        skalami UV i IR.
+  \item Warunek $K_\mathrm{IR}(0) = 0$ jest zachowany przez przepływ ERG
+        (korekty nie generują stałego członu w $K$).
+  \item Parametr stabilizujący potencjał:
+        \begin{equation}
+          \lambda_\mathrm{eff} = u_6^{(\mathrm{IR})}\,\phi_\mathrm{ref}^6\,\Phi_0^3,
+          \quad u_6^{(\mathrm{IR})} > 0.
+          \label{eq:lambda_eff_ERG}
+        \end{equation}
+\end{enumerate}
+\end{twierdzenie}
+
+\begin{uwaga}
+Wynik (iii) jest kluczowy: przepływ ERG nie generuje zerowego członu
+$K_0$ niezależnego od $\rho$ — warunek $K(0)=0$ jest \emph{chroniony}
+przez symetrię $\mathbb{Z}_2$ ($\phi \mapsto -\phi$ zakazuje
+stałego członu kinetycznego).
+\end{uwaga}
+
+\subsection*{N.5 Wykładniki krytyczne}
+
+Z analizy LPA wokół punktu stałego Wilsona–Fishera wyznaczamy
+wykładniki $\theta_i$ (ujemne $\Rightarrow$ perturbacja nierelewantna):
+\begin{equation}
+  \partial_t\,\delta\tilde u = \mathcal{M}\,\delta\tilde u,
+  \quad \mathcal{M} = \frac{d(\partial_t \tilde u)}{d\tilde u}\bigg|_{u^*}.
+\end{equation}
+Wyniki numeryczne (patrz \texttt{tgp\_erg\_wetterich.py}):
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Wykładnik & Wartość (LPA) & Wartość (3D Ising, dok.) \\
+\midrule
+$\nu$ & $0{,}649$ & $0{,}6301$ \\
+$\eta$ & $0$ (LPA) & $0{,}0364$ \\
+$\theta_u = 1/\nu$ & $1{,}541$ & $1{,}587$ \\
+$\theta_1$ (1. irrelevant) & $-8{,}68$ & $-$ \\
+$K_\mathrm{IR}/K_\mathrm{UV}$ & $1{,}13$ & $-$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Zgodność z klasą uniwersalności 3D Isinga potwierdza identyfikację
+przejścia fazowego substratu TGP z modelem Isinga.
+
+\subsection*{N.6 Przepływ potencjału i człon $u_6$}
+
+\begin{propozycja}[Generowanie $u_6 > 0$ przez przepływ ERG]
+Nawet jeżeli warunek początkowy nie zawiera członu $\phi^6$
+($u_6^{(\mathrm{UV})} = 0$), przepływ ERG \eqref{eq:LPA_dimensionless}
+generuje $u_6^{(\mathrm{IR})} > 0$ w punkcie stałym.
+\end{propozycja}
+
+\begin{dowod}[heurystyczny]
+W punkcie stałym Wilsona–Fishera $\tilde u^*(\tilde\rho)$ jest
+analityczną funkcją spełniającą ODE \eqref{eq:LPA_dimensionless}
+z $\partial_t\tilde u = 0$. Rozwinięcie Taylora wokół minimum $\tilde\rho_0$:
+$\tilde u^*(\tilde\rho) = \sum_{n=2}^\infty \frac{a_n}{n!}
+(\tilde\rho - \tilde\rho_0)^n$
+zawsze zawiera niezerowe człony do dowolnego rzędu, w szczególności
+$a_3 \propto u_6 > 0$ (weryfikacja numeryczna w skrypcie
+\texttt{tgp\_erg\_wetterich.py}).  \hfill$\square$
+\end{dowod}
+
+\subsection*{N.7 Połączenie z formą $f(g) = 1 + 2\alpha\ln g$}
+
+Efektywna funkcja kinetyczna $f(g)$ używana w TGP pochodzi z
+rozwinięcia $K_\mathrm{IR}(\phi)$ wokół próżni $\phi_0$
+(odpowiada $g = \Phi/\Phi_0 = 1$). Definiując $g = \phi^2/\phi_0^2$:
+\begin{equation}
+  K_\mathrm{IR}(\phi) = \tilde K\,\phi^2 = \tilde K\,\phi_0^2\,g,
+\end{equation}
+a logarytmiczne poprawki kwantowe do działania dają:
+\begin{equation}
+  K_\mathrm{eff}(g) = \tilde K\,\phi_0^2\,
+    \bigl[1 + 2\alpha\ln g + \mathcal{O}((\ln g)^2)\bigr],
+  \quad \alpha = 2.
+\end{equation}
+Człon $2\alpha\ln g$ pochodzi z jednopętlowej korekty do funktionału
+$\Gamma_k$ i jest numerycznie dominujący przy $g \sim 1$
+(patrz sek08, \eqref{eq:f_kinetic}).
+
+\subsection*{N.8 Wyniki numeryczne z \texttt{tgp\_erg\_wetterich.py}}
+
+Skrypt \texttt{tgp\_erg\_wetterich.py} implementuje:
+\begin{enumerate}
+  \item Integrację ODE \eqref{eq:LPA_dimensionless} metodą RK4 na siatce
+        $\tilde\rho \in [0, \tilde\rho_\mathrm{max}]$ z $N = 200$ punktami.
+  \item Poszukiwanie punktu stałego przez iterację przepływu $t: 0 \to -20$.
+  \item Obliczenie macierzy stabilności $\mathcal{M}$ i wykładników $\theta_i$.
+  \item Przepływ LPA' dla $K_k(\rho)$ i wyznaczenie $K_\mathrm{IR}/K_\mathrm{UV}$.
+  \item Weryfikację $u_6^{(\mathrm{IR})} > 0$ (konieczność członu $\psi^3$).
+\end{enumerate}
+
+Wyniki zapisywane są do pliku \texttt{erg\_results.json} i wykresów PNG.
+
+\begin{uwaga}[Ograniczenia LPA]
+LPA pomija anomalny wymiar $\eta \neq 0$. Dla klasy Isinga 3D: $\eta = 0{,}036$
+(mała korekta). Dla celów TGP — weryfikacji $K(0)=0$, znaku $u_6$ i
+skali $\lambda_\mathrm{eff}$ — LPA jest wystarczająca. Pełna analiza LPA'
+(z $\eta \neq 0$) pozostaje zadaniem otwartym (OP-1).
+\end{uwaga}

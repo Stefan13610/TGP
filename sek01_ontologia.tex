@@ -1,0 +1,1359 @@
+% ============================================================
+% §1  Ontologia TGP — materia jako źródło przestrzeni
+% ============================================================
+\section{Ontologia}\label{sec:ontologia}
+
+\subsection{Centralne za\l{}o\.zenie}
+
+Teoria Generowanej Przestrzeni opiera si\k{e} na jednym fundamentalnym
+twierdzeniu ontologicznym:
+
+\begin{axiom}[Przestrze\'n z~materii]\label{ax:przestrzen}
+Przestrze\'n nie jest bytem niezale\.znym od materii.
+\textbf{Obecno\'s\'c przestrzeni wynika z~obecno\'sci materii.}
+Ka\.zda forma masy i~energii generuje lokalny wk\l{}ad do wsp\'olnego
+pola $\Phi$, kt\'ore mierzy ,,g\k{e}sto\'s\'c wygenerowanej przestrzeni''
+w~danym miejscu. Bez materii nie ma przestrzeni; bez przestrzeni
+nie ma materii. Obie wielko\'sci s\k{a} wsp\'o\l{}zale\.zne.
+\end{axiom}
+
+To odwraca standardowy obraz fizyki, w~kt\'orym przestrze\'n (lub
+czasoprzestrzenie) istnieje jako uprzednio dana arena, a~materia
+jedynie ,,porusza si\k{e}'' po niej. Odr\'o\.znia to r\'ownie\.z TGP od
+program\'ow, w~kt\'orych przestrze\'n emerguje z~informacji lub spl\k{a}tania
+(AdS/CFT, ER\,=\,EPR) --- w~TGP przestrze\'n emerguje z~\emph{materii}.
+
+\begin{remark}[Czym nie jest TGP]
+TGP \textbf{nie jest} teori\k{a} skalarno-tensorow\k{a} z~dodatkowym
+polem na gotowej rozmaito\'sci. Pole $\Phi$ nie ,,mieszka'' w~uprzednio
+istniej\k{a}cej czasoprzestrzeni --- ono t\k{e} czasoprzestrze\'n
+\emph{konstytuuje}. Formalizm skalarno-tensorowy mo\.ze by\'c jedynie
+przybli\.zeniem p\'o\'znej, s\l{}abopolowej granicy TGP, nie jej fundamentem.
+\end{remark}
+
+\begin{remark}[Tr\'ojpoziomowa ontologia TGP]\label{rem:ontologia}
+TGP przyjmuje nast\k{e}puj\k{a}c\k{a} hierarchi\k{e}:
+\begin{description}[style=nextline,nosep]
+  \item[Poziom 0: Substrat relacyjny $\Gamma = (V, E)$]
+    Fundamentalny, nie-emergentny. Posiada relacje
+    s\k{a}siedztwa i~konektywno\'s\'c, ale nie posiada
+    metryki. Istnieje zar\'owno w~$\mathcal{S}_0$,
+    jak i~w~$\mathcal{S}_1$.
+  \item[Poziom 1: Pole przestrzenno\'sci $\Phi$
+    (parametr fazy metrycznej)]
+    $\Phi$ \textbf{nie jest} przestrzeni\k{a} ani geometri\k{a}
+    --- jest \emph{parametrem fazy metrycznej substratu},
+    mierz\k{a}cym stopie\'n, w~jakim substrat wspiera relacje
+    metryczne (odleg\l{}o\'sci, propagacj\k{e}).
+    $\Phi = 0$: substrat istnieje, ale
+    nie ma metryki (faza niemetryczna).
+    $\Phi > 0$: faza metryczna --- materia generuje
+    zdolno\'s\'c substratu do wspierania geometrii.
+  \item[Poziom 2: Geometria efektywna $g_{\mu\nu}$]
+    Emergentna w~tym sensie, \.ze wynika
+    z~grubozarnienia poziomu~1. Metryka, krzywizna,
+    przyczynowo\'s\'c s\k{a} w\l{}asno\'sciami
+    konfiguracji~$\Phi$, nie oddzielnymi bytami.
+\end{description}
+Substrat jest fundamentalny i~nie-emergentny. Geometria jest
+stanem tego substratu, kontrolowanym przez $\Phi$. Przej\'scie
+$\Phi = 0 \to \Phi > 0$ nie tworzy przestrzeni z~nico\'sci ---
+,,w\l{}\k{a}cza'' metryczn\k{a} odpowied\'z ju\.z
+istniej\k{a}cego substratu. Analogia: zamarzanie wody nie
+tworzy moleku\l{} --- zmienia ich faz\k{e}.
+\end{remark}
+
+\begin{remark}[Jeden substrat --- wiele konsekwencji]\label{rem:jeden-substrat}
+Tr\'ojpoziomowa hierarchia powy\.zej wynika z~\textbf{jednego}
+fundamentalnego obiektu: substratu relacyjnego $\Gamma = (V,E)$
+z~hamiltonianem $H_\Gamma$ o~chiralnej symetrii $\mathbb{Z}_2$
+(ssec.~\ref{ssec:chiralna}). Z~tego jednego obiektu
+przez r\'o\.zne projekcje coarse-grainingu wynikaj\k{a}:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Pole $\Phi(x)$} --- parametr fazy metrycznej,
+    z~grubowania amplitudy: $\Phi \propto \langle\hat{s}^2\rangle_{\mathcal{B}(x)}$.
+    Stanowi fundament \emph{ca\l{}ego} sektora grawitacyjnego
+    i~kosmologicznego (sekcje~\ref{sec:pole}--\ref{sec:formalizm}).
+  \item \textbf{Pole $\sigma_{ab}(x)$} --- tensor korelacji przestrzennych:
+    $\sigma_{ab} \propto \langle\hat{s}_i\,\hat{s}_{i+\hat{e}_a}\rangle_{\mathcal{B}}^{\rm TF}$.
+    Niesie spin-2, opisuje tensorowe mody fal grawitacyjnych
+    (\S\ref{ssec:tensor-substrate}).
+    Wynika z~\textbf{tego samego} $H_\Gamma$ co $\Phi$ ---
+    nie jest dodatkowym postulatem.
+\end{enumerate}
+
+\noindent\textbf{Czym to \emph{nie} jest.}
+Pola $\Phi$ i~$\sigma_{ab}$ nie s\k{a} polami ,,na'' przestrzeni ---
+one \emph{konstytuuj\k{a}} przestrze\'n (poziom~0~$\to$~1~$\to$~2).
+Nie jest to teoria skalarno-tensorowa: w~teorii skalarno-tensorowej
+dwa pola s\k{a} \emph{postulowane} na gotowej rozmaito\'sci.
+Tu oba emerguj\k{a} z~jednego substratu jako r\'o\.zne projekcje.
+
+\medskip
+\noindent\textbf{Sektor cechowania (program odrębny).}
+Sekcja~\ref{sec:cechowanie} pokazuje, \.ze \emph{je\.zeli} substrat
+posiada dodatkowy stopie\'n swobody fazowego
+($\hat{s}_i \to \psi_i = |\psi_i|\,e^{i\theta_i}$),
+to z~gradienta fazy emerguje pole cechowania $A_\mu$.
+Jest to \textbf{oddzielny program badawczy} (nie zamkni\k{e}ty modu\l{}),
+logicznie niezale\.zny od sektora grawitacyjnego.
+Grawitacja w~TGP nie potrzebuje tego rozszerzenia.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Nico\'s\'c $\Nzero$ i~funkcja stanu $\Ffield$}\label{ssec:N0}
+
+Punktem wyj\'scia jest formalne zdefiniowanie stanu,
+w~kt\'orym nie ma ani materii, ani przestrzeni.
+
+\begin{axiom}[Nico\'s\'c]\label{ax:N0}
+Fundamentalnym stanem odniesienia jest $\Nzero$ ---
+absolutna nico\'s\'c. Formalnie:
+\begin{equation}
+    \Nzero := \bigl\{\emptyset,\;\Ffield\bigr\},
+    \qquad
+    \Ffield\big|_{\Nzero} = 0,
+    \qquad
+    \Phi\big|_{\Nzero} = 0.
+\end{equation}
+W~stanie $\Nzero$ nie ma przestrzeni ($\Phi = 0$), nie ma materii,
+nie ma czasu, nie ma energii. Jedyn\k{a} w\l{}asno\'sci\k{a} logiczn\k{a}
+jest zdefiniowanie funkcji stanu $\Ffield$ r\'ownej zeru.
+\end{axiom}
+
+$\Nzero$ nie jest pust\k{a} przestrzeni\k{a} --- jest brakiem
+przestrzeni. Nie jest pr\'o\.zni\k{a} kwantow\k{a} --- jest brakiem
+jakiejkolwiek struktury. Jedyno\'s\'c tego stanu (w~obr\k{e}bie
+przyj\k{e}tego modelu substratu) jest wykazana
+w~twierdzeniu~\ref{thm:N0-unique}.
+
+\medskip\noindent\textbf{Precyzacja ontologiczna $\Ffield$
+wzgl\k{e}dem $\Nzero$.}\;
+$\Ffield$ nie jest ,,sk\l{}adnikiem ontologicznym'' nico\'sci ---
+nie ,,mieszka'' w~$\Nzero$ jako cz\k{e}\'s\'c jego struktury.
+$\Ffield$ jest \textbf{zewn\k{e}trznym operatorem klasyfikuj\k{a}cym}
+stan: narz\k{e}dziem opisu, kt\'ore przyporz\k{a}dkowuje stanowi
+$\sigma$ warto\'s\'c $\Ffield[\sigma]$.
+Zapis $\Nzero = \{\emptyset, \Ffield\}$ nale\.zy czyta\'c jako:
+,,stan $\Nzero$ jest charakteryzowany przez warunek $\Ffield = 0$'',
+nie jako: ,,$\Nzero$ \emph{zawiera} $\Ffield$''.
+Analogia: temperatura jest operatorem opisuj\k{a}cym stan gazu,
+ale nie jest sk\l{}adnikiem gazu.
+
+\begin{remark}[Substrat w~$\Nzero$: precyzacja terminologiczna]%
+\label{rem:N0-substrat-precyzacja}
+W~TGP wyra\.zenie \emph{absolutna nico\'s\'c} oznacza
+\textbf{brak wszelkiej fizycznej struktury metrycznej}:
+braku przestrzeni, materii, czasu i~propagacji.
+\emph{Nie} oznacza braku substratu~$\Gamma$.
+
+Substrat relacyjny $\Gamma = (V,E)$ jest bytem \textbf{poziomu~0}
+(uwaga~\ref{rem:ontologia} i~\ref{rem:jeden-substrat}): istnieje
+zar\'owno w~sektorze $\mathcal{S}_0$, jak i~w~$\mathcal{S}_1$.
+Stan $\Nzero$ to faza niemetryczna substratu ---
+stan, w~kt\'orym symetria $\mathbb{Z}_2$ jest nienaruszona
+($\langle\hat{s}_i\rangle = 0$ dla ka\.zdego $i$),
+co implikuje $\Phi = 0$ i~brak metryki.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{4.5cm}p{2.6cm}p{4.5cm}@{}}
+\toprule
+\textbf{Stwierdzenie} & \textbf{W~TGP} & \textbf{Uzasadnienie} \\
+\midrule
+,,Brak metryki w~$\Nzero$'' & Prawda & $\Phi = 0$ \\
+,,Brak materii w~$\Nzero$'' & Prawda & $\langle\hat{s}_i\rangle = 0$ \\
+,,Brak czasu w~$\Nzero$'' & Prawda & brak propagacji, $c \to \infty$ \\
+,,Brak substratu w~$\Nzero$'' & \textbf{Nieprawda} & $\Gamma$ jest fundamentalny \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+To rozr\'o\.znienie jest niezb\k{e}dne dla sp\'ojno\'sci:
+substrat musi \emph{istnie\'c} w~$\mathcal{S}_0$, by przej\'scie
+$\mathcal{S}_0 \to \mathcal{S}_1$ mia\l{}o sens jako zmiana fazy ---
+nie jako kreacja z~dosłownej nico\'sci.
+U\.zywamy wyra\.zenia ,,absolutna nico\'s\'c''
+jako \textbf{skr\'otu j\k{e}zykowego} oznaczaj\k{a}cego
+,,brak fizycznej struktury (metrycznej, materialnej, czasowej)'',
+nie jako twierdzenia metafizycznego o~braku czegokolwiek.
+\end{remark}
+
+\begin{proposition}[Wyprowadzenie $\Nzero$ z~funkcji stanu $\Ffield$]\label{prop:N0-from-F}
+Cho\'c $\Nzero$ jest postulowany jako aksjomat~\ref{ax:N0},
+mo\.zna go \textbf{wyprowadzi\'c} z~funkcji stanu $\Ffield$ ---
+odwracaj\k{a}c logik\k{e} fundamentacji. Niech:
+\begin{enumerate}[nosep]
+  \item[(F1)] $\Omega$ --- przestrze\'n konfiguracji substratu,
+  \item[(F2)] $\Ffield\colon\Omega\to\mathbb{R}_{\ge 0}$ --- ci\k{a}g\l{}a
+    funkcja stanu spe\l{}niaj\k{a}ca $\Ffield[\sigma] = 0
+    \;\Leftrightarrow\; \langle\hat{s}_i\rangle_\sigma = 0\;\forall i$
+    (warunek~(i) z~tw.~\ref{thm:N0-unique}),
+  \item[(F3)] $\mathcal{T}\subset\Omega$ --- podzbi\'or
+    \textbf{konfiguracji trywialnych}: brak wewn\k{e}trznej struktury
+    metrycznej (zerowa liczba relacji, brak r\'o\.znicowania),
+  \item[(F4)] $\Phi\colon\Omega\to\mathbb{R}_{\ge 0}$ --- pole
+    przestrzenno\'sci, zwi\k{a}zane z~$\Ffield$ przez
+    $\Ffield_{\!\mathrm{abs}} = \Phi^2/\PhiZero^2$
+    (def.~\ref{def:Fabs}).
+\end{enumerate}
+W\'owczas:
+\begin{equation}\label{eq:N0-derived}
+    \Nzero \;=\; \bigl\{\sigma \in \Omega :
+        \Ffield[\sigma] = 0\bigr\} \;\cap\; \mathcal{T}
+    \;=\; \mathcal{S}_0 \;\cap\; \mathcal{T},
+\end{equation}
+a~stan $\Nzero$ posiada nast\k{e}puj\k{a}ce w\l{}asno\'sci:
+\begin{enumerate}
+  \item $\Nzero$ jest \textbf{niepusty}: substrat w~fazie
+    niemetrycznej ($T > T_c$, $v = 0$) realizuje $\Ffield = 0$.
+  \item $\Nzero$ jest \textbf{jedyny} (z~dok\l{}adno\'sci\k{a} do
+    symetrii $\Zp$): wynika z~tw.~\ref{thm:N0-unique}.
+  \item W~$\Nzero$: $\Phi = 0$, $c = \infty$ (formalnie),
+    $\hbar = \infty$, $G = \infty$ --- brak sko\'nczonych sta\l{}ych
+    fizycznych, brak metryki, brak propagacji.
+  \item $\Nzero$ jest \textbf{niestabilny}: z~czterech niezale\.znych
+    argument\'ow (wn.~\ref{cor:N0-quadruple}).
+\end{enumerate}
+Postulowanie $\Nzero$ jako aksjomatu jest zatem logicznie
+\textbf{r\'ownowa\.zne} z~uznaniem, \.ze funkcja stanu $\Ffield$
+posiada (co najmniej) jedno zero w~sektorze trywialnym ---
+co jest gwarantowane przez faz\k{e} niemetryczn\k{a} substratu.
+\end{proposition}
+
+\begin{proof}
+Dow\'od w~trzech cz\k{e}\'sciach.
+
+\emph{Niepusto\'s\'c.}\;
+W~modelu substratu (hamiltoniano~\ref{eq:H-Gamma}), dla $T > T_c$
+(faza nieuporz\k{a}dkowana), $\langle\hat{s}_i\rangle = 0$ dla
+ka\.zdego $i$ z~symetrii $\Zp$. Zatem $\Ffield[\sigma_{T>T_c}] = 0$
+(z~warunku F2). Jednocze\'snie brak parametru porz\k{a}dku ($v = 0$)
+oznacza brak struktury metrycznej ($\Phi = 0$), wi\k{e}c
+$\sigma_{T>T_c} \in \mathcal{T}$. St\k{a}d
+$\sigma_{T>T_c} \in \Nzero$: zbi\'or jest niepusty.
+
+\emph{Jedyno\'s\'c.}\;
+Z~twierdzenia~\ref{thm:N0-unique}: zbi\'or $\mathcal{S}_0
+= \{\sigma : \Ffield[\sigma] = 0\}$ jest sp\'ojny
+i~stanowi jedn\k{a} orbit\k{e} $\Zp$.
+Przeci\k{e}cie z~$\mathcal{T}$ (konfiguracje trywialne)
+daje jedn\k{a} klas\k{e} r\'ownowa\.zno\'sci, poniewa\.z
+\textbf{ka\.zdy} element $\mathcal{S}_0$ jest trywialny:
+je\'sli $\langle\hat{s}_i\rangle = 0\;\forall i$, to
+$\Phi = \langle\hat{s}^2\rangle_{\mathrm{cg}} = 0$
+(fluktuacje zaniedbywalnie ma\l{}e w~granicy termodynamicznej
+powy\.zej $T_c$), wi\k{e}c brak metryki.
+Zatem $\mathcal{S}_0 \cap \mathcal{T} = \mathcal{S}_0$:
+$\Nzero$ jest jedynym stanem z~$\Ffield = 0$.
+
+\emph{W\l{}asno\'sci fizyczne.}\;
+Z~$\Phi = 0$ i~aksjomat\'ow~\ref{ax:c}--\ref{ax:G}:
+$c(0) = c_0(\PhiZero/0)^{1/2} = \infty$
+(formalnie: brak sko\'nczonej pr\k{e}dko\'sci propagacji,
+bo nie ma metryki). Analogicznie $\hbar(0) = \infty$,
+$G(0) = \infty$. Sta\l{}e fizyczne s\k{a} nieokre\'slone ---
+sp\'ojne z~brakiem struktury.
+Niestabilno\'s\'c: z~wn.~\ref{cor:N0-quadruple}
+(termodynamika, r\'ownanie pola, degeneracja wariacyjna,
+miara konfiguracyjna).
+\end{proof}
+
+\begin{remark}[Aksjomat czy twierdzenie?]\label{rem:N0-aksjomat-vs-twierdzenie}
+Stwierdzenie~\ref{prop:N0-from-F} pokazuje, \.ze $\Nzero$ jest
+\textbf{wyprowadzalny} z~w\l{}asno\'sci funkcji stanu $\Ffield$
+i~modelu substratu. Aksjomat~\ref{ax:N0} mo\.zna zatem traktowa\'c
+jako \textbf{skr\'ot poj\k{e}ciowy}: jest logicznie r\'ownowa\.zny
+istnieniu fazy niemetrycznej substratu. Zachowujemy go jako aksjomat
+ze wzgl\k{e}d\'ow pedagogicznych --- bezpo\'srednio wprowadza
+centralny byt teorii.
+\end{remark}
+
+\begin{theorem}[Jedyno\'s\'c $\Nzero$ w~modelu substratu]\label{thm:N0-unique}
+Niech $\Omega$ b\k{e}dzie przestrzeni\k{a} konfiguracji substratu
+z~hamiltonianem $H_\Gamma$ o~symetrii $\Zp$, i~niech
+$\Ffield\colon\Omega\to\mathbb{R}_{\ge 0}$ b\k{e}dzie funkcj\k{a}
+stanu spe\l{}niaj\k{a}c\k{a}:
+\begin{enumerate}[nosep]
+  \item $\Ffield[\sigma] = 0 \;\Leftrightarrow\;
+    \langle\hat{s}_i\rangle_\sigma = 0\;\;\forall i$
+    (symetria $\Zp$ nienaruszona),
+  \item $\Ffield$ jest ci\k{a}g\l{}a wzgl\k{e}dem topologii
+    produktowej na $\Omega$,
+  \item \'srednie $\langle\hat{s}_i\rangle_\sigma$ s\k{a}
+    \textbf{afiniczne} (liniowe) w~mierze $\sigma$
+    (spe\l{}nione dla \'srednich Gibbsa z~hamiltonianem
+    liniowym w~$\sigma$),
+  \item topologia $\Omega$ jest produktowa: $\Omega = \prod_{i\in V}[-1,1]$.
+\end{enumerate}
+Wtedy, \textbf{w~obr\k{e}bie powy\.zszych za\l{}o\.ze\'n},
+zbi\'or $\mathcal{S}_0 = \{\sigma:\Ffield[\sigma]=0\}$
+jest \textbf{sp\'ojny} i~stanowi dok\l{}adnie jedn\k{a}
+klas\k{e} r\'ownowa\.zno\'sci orbitalnej symetrii $\Zp$.
+W~szczeg\'olno\'sci $\Nzero$ jest jedynym stanem
+funkcjonalnym (z~dok\l{}adno\'sci\k{a} do symetrii substratu),
+w~kt\'orym $\Ffield = 0$.
+
+\medskip\noindent\emph{Zastrze\.zenie.} Wynik zale\.zy
+od za\l{}o\.zenia~(iii) (liniowo\'s\'c \'srednich)
+i~za\l{}o\.zenia~(iv) (topologia produktowa). Os\l{}abienie
+kt\'orego\'s z~nich --- np.\ przej\'scie do substratu
+o~nietrywialnej topologii lub modelu ze spontanicznie
+z\l{}amanymi korelacjami d\l{}ugozasi\k{e}gowymi --- mog\l{}oby
+prowadzi\'c do wielosk\l{}adnikowego $\mathcal{S}_0$.
+Jedyno\'s\'c $\Nzero$ jest zatem \textbf{twierdzeniem modelu},
+nie absolutnym faktem metafizycznym.
+\end{theorem}
+
+\begin{proof}
+Dow\'od przebiega w~trzech krokach, opieraj\k{a}c si\k{e}
+na lemacie~\ref{lem:fixed-point} poni\.zej.
+
+\emph{Krok~1 (Zamkni\k{e}to\'s\'c).}
+Warunek $\langle\hat{s}_i\rangle_\sigma = 0$ dla ka\.zdego $i$
+wyznacza przeci\k{e}cie hiperpowierzchni
+$\mathcal{H}_i = \{\sigma\in\Omega : \langle\hat{s}_i\rangle_\sigma=0\}$.
+Ka\.zda $\mathcal{H}_i$ jest zamkni\k{e}ta (przeciwobraz zera
+funkcji ci\k{a}g\l{}ej), wi\k{e}c
+$\mathcal{S}_0 = \bigcap_i \mathcal{H}_i$ jest zamkni\k{e}ty.
+
+\emph{Krok~2 (Identyfikacja ze zbiorem punkt\'ow sta\l{}ych).}
+Dzia\l{}anie $\Zp$: $\iota(\sigma)_i = -\sigma_i$.
+Warto\'s\'c oczekiwana spe\l{}nia $\langle\hat{s}_i\rangle_{\iota(\sigma)}
+= -\langle\hat{s}_i\rangle_\sigma$ (r\'ownowariantno\'s\'c).
+Zatem $\langle\hat{s}_i\rangle_\sigma = 0\;\forall i$ wtedy
+i~tylko wtedy, gdy $\sigma$ le\.zy w~zbiorze punkt\'ow sta\l{}ych
+$\Omega^{\Zp}$ dzia\l{}ania $\Zp$ \textbf{na poziomie \'srednich}.
+Z~lematu~\ref{lem:fixed-point}:
+$\Omega^{\Zp}$ jest sp\'ojny (zwarty i~\l{}\k{a}kowo sp\'ojny).
+
+\emph{Krok~3 (Jedyno\'s\'c orbity).}
+Dzia\l{}anie $\Zp$ na $\mathcal{S}_0$ jest trywialne
+(ka\.zdy element jest punktem sta\l{}ym). Zatem
+$\mathcal{S}_0$ jest jedn\k{a} orbit\k{a} --- i~stanowi
+dok\l{}adnie jedn\k{a} klas\k{e} r\'ownowa\.zno\'sci.
+\end{proof}
+
+\begin{lemma}[Sp\'ojno\'s\'c zbioru punkt\'ow sta\l{}ych]%
+\label{lem:fixed-point}
+Niech $\Omega = \prod_{i\in V} [-1,1]$ z~topologi\k{a} produktow\k{a},
+a~$\Zp$ dzia\l{}a przez $\iota(\sigma)_i = -\sigma_i$.
+Zbi\'or punkt\'ow sta\l{}ych na poziomie \'srednich makroskopowych,
+\[
+  \Omega^{\Zp}_{\mathrm{avg}}
+  = \bigl\{\sigma\in\Omega :
+    \langle\hat{s}_i\rangle_\sigma = 0\;\;\forall i\bigr\},
+\]
+jest niepusty, zwarty i~sp\'ojny (w~szczeg\'olno\'sci
+\l{}\k{a}kowo sp\'ojny).
+\end{lemma}
+
+\begin{proof}
+\emph{Niepusto\'s\'c}: konfiguracja $\sigma_i = 0\;\forall i$
+(je\'sli dozwolona) lub dowolna kombinacja symetryzowana
+$\mu = \frac{1}{2}(\delta_\sigma + \delta_{\iota(\sigma)})$
+daje $\langle\hat{s}_i\rangle = 0$.
+
+\emph{Zwarto\'s\'c}: $\Omega^{\Zp}_{\mathrm{avg}}$ jest
+przeci\k{e}ciem zamkni\k{e}tych zbior\'ow w~zwartej
+przestrzeni $\Omega$ (tw.~Tichonowa).
+
+\emph{Sp\'ojno\'s\'c}: Niech $\sigma, \sigma' \in
+\Omega^{\Zp}_{\mathrm{avg}}$. Definiujemy \'scie\.zk\k{e}
+$\sigma(t) = (1-t)\sigma + t\sigma'$ dla $t\in[0,1]$.
+R\'ownowariantno\'s\'c $\langle\hat{s}_i\rangle$ wzgl\k{e}dem
+$\Zp$ implikuje, \.ze $\langle\hat{s}_i\rangle$ jest
+\textbf{nieparzysta} w~$\sigma$. Kombinacja wypuk\l{}a dw\'och
+punkt\'ow z~$\langle\hat{s}_i\rangle = 0$ daje
+$\langle\hat{s}_i\rangle_{\sigma(t)} = 0$ pod warunkiem
+liniowo\'sci \'sredniej w~konfiguracji (spe\l{}nione
+dla \'srednich Gibbsa z~hamiltonianem liniowym w~$\sigma$)
+lub --- og\'olniej --- z~tw.~Brouwera o~punkcie sta\l{}ym
+zastosowanego do odwzorowania $(1-t)\mathrm{id} + t\,\iota$,
+kt\'ore jest homotopijne z~identyczno\'sci\k{a} na $\Omega$.
+\end{proof}
+
+\begin{definition}[Funkcja stanu $\Ffield$]\label{def:F}
+Funkcja stanu $\Ffield$ jest miar\k{a} \textbf{odej\'scia od nico\'sci}.
+Przyjmuje warto\'sci:
+\begin{itemize}[nosep]
+  \item $\Ffield = 0$: pe\l{}na symetria, brak struktury, stan $\Nzero$.
+  \item $\Ffield > 0$: lokalne z\l{}amanie symetrii --- istnieje materia
+        i~wygenerowana przez ni\k{a} przestrze\'n.
+\end{itemize}
+$\Ffield$ mo\.zna rozumie\'c jako globaln\k{a} miar\k{e} ,,ilo\'sci
+istnienia'' --- ile struktury (materii, przestrzeni, relacji)
+jest obecne w~danym opisie. Dynamika $\Ffield$ jest okre\'slona
+przez pr\k{a}d zachowania $j_{\Ffield}^\mu$
+(stwierdzenie~\ref{prop:F-current}), a~jej ewolucja wynika
+z~r\'ownania pola $\Phi$ (r\'ownanie~\ref{eq:F-evolution}).
+
+Na poziomie formalizmu (sekcja~\ref{ssec:F-Phi}) $\Ffield$ realizuje
+si\k{e} jako \textbf{absolutna funkcja stanu}
+$\Ffield_{\!\mathrm{abs}}(x) = \Phi(x)^2/\PhiZero^2$,
+kt\'ora jest zerowa dok\l{}adnie w~$\Nzero$ ($\Phi = 0$).
+Nale\.zy j\k{a} odr\'o\.znia\'c od perturbacyjnej miary
+$\Floc = (\Phi - \PhiZero)^2$, kt\'ora jest zerowa
+na tle referencyjnym ($\Phi = \PhiZero$) i~s\l{}u\.zy
+do rachunk\'ow wok\'o\l{} tego t\l{}a
+(uwaga~\ref{rem:F-dwa-poziomy}).
+\end{definition}
+
+\begin{axiom}[Zasada zerowej sumy]\label{ax:zero}
+Widziany z~zewn\k{a}trz, zamkni\k{e}ty uk\l{}ad (Wszech\'swiat) jest
+nieodr\'o\.znialny od~$\Nzero$:
+\begin{equation}\label{eq:zero-sum}
+    \Ffield_{\mathrm{ext}}\bigl(\text{Wszech\'swiat}\bigr) = 0.
+\end{equation}
+Wewn\k{a}trz: $\Ffield_{\mathrm{int}}(x) > 0$ lokalnie. Ca\l{}kowita
+,,ilo\'s\'c istnienia'' netto jest zerowa --- Wszech\'swiat jest
+samowyzerowuj\k{a}c\k{a} si\k{e} fluktuacj\k{a} nico\'sci.
+\end{axiom}
+
+Analogia: Wszech\'swiat jest jak fala na morzu --- lokalnie jest
+wzniesienie i~obni\.zenie, ale \'sredni poziom wody si\k{e} nie zmienia.
+
+\begin{remark}[Precyzacja zerowej sumy --- dwa
+  niezale\.zne warunki]\label{rem:zero-precyzacja}
+Zasada zerowej sumy rozk\l{}ada si\k{e} na \textbf{dwa
+logicznie niezale\.zne warunki}:
+
+\medskip\noindent
+\textbf{(ZS1) Zerowa suma chiralna ($\Zp$).}
+Nale\.zy rozr\'o\.zni\'c dwa obiekty:
+\begin{itemize}[nosep]
+  \item $\Ffield_{\mathrm{int}}(x) \geq 0$ --- lokalna miara
+        odej\'scia od symetrii \emph{wewn\k{a}trz} uk\l{}adu.
+        Jest nieujemna i~niezerowa wsz\k{e}dzie, gdzie istnieje
+        materia i~przestrze\'n.
+  \item $\Ffield_{\mathrm{ext}}$ --- wypadkowy opis
+        \emph{z~zewn\k{a}trz}: suma netto ze znakiem.
+\end{itemize}
+Zasada zerowej sumy (\ref{eq:zero-sum}) nie m\'owi, \.ze
+$\int \Ffield_{\mathrm{int}} = 0$ (to jest niemo\.zliwe,
+bo $\Ffield_{\mathrm{int}} \geq 0$). M\'owi, \.ze
+\textbf{asymetria chiralna ze znakiem} $\Delta(x)$
+(r\'o\.znica $\rho(s,x) - \rho(-s,x)$ w~opisie $\Zp$,
+odpowiadaj\k{a}ca lokalnej warto\'sci $\langle\hat{s}\rangle$)
+ca\l{}kuje si\k{e} do zera:
+\begin{equation}\label{eq:zero-sum-precise}
+    \int_\Sigma \Delta(x)\,\sqrt{h}\,d^3x = 0.
+\end{equation}
+Lokalna asymetria mo\.ze by\'c niezerowa (i~jest --- to jest
+materia), ale globalna suma ze znakiem wynosi zero.
+Na poziomie substratu: w~fazie z~$\Zp$ z\l{}aman\k{a}
+istniej\k{a} domeny $\langle\hat{s}\rangle = +v$
+i~$\langle\hat{s}\rangle = -v$; globalnie ca\l{}ka
+$\int\langle\hat{s}\rangle = 0$.
+
+\medskip\noindent
+\textbf{(ZS2) Zerowa suma przestrzenna ($\Phi$).}
+W~j\k{e}zyku pola $\Phi$ zasada zerowej sumy
+przyjmuje posta\'c drugiego warunku
+(r\'ownanie~\ref{eq:zero-constraint}):
+\begin{equation}\label{eq:zero-sum-Phi}
+    \int_\Sigma \bigl(\Phi(\mathbf{x}) - \PhiZero\bigr)\,
+    \sqrt{h}\,d^3x = 0.
+\end{equation}
+\'Srednia perturbacja pola przestrzenno\'sci po ca\l{}ej
+hypersurface wynosi zero: nadwy\.zka wygenerowanej
+przestrzeni ($\Phi > \PhiZero$) wok\'o\l{} \'zr\'ode\l{}
+jest dok\l{}adnie kompensowana deficytem
+($\Phi < \PhiZero$) w~regionach mi\k{e}dzy nimi.
+
+\begin{remark}[Autoreferencyjno\'s\'c ZS2]\label{rem:ZS2-self-ref}
+Warunek~\eqref{eq:zero-sum-Phi} zawiera $\sqrt{h}$,
+kt\'ore w~TGP zale\.zy od $\Phi$:
+$\sqrt{h} = (\Phi/\PhiZero)^{3/2}$
+(stw.~\ref{prop:conformal-unique}).
+Nie jest to b\l{}\k{a}d ko\l{}owy, lecz
+\textbf{autoreferencyjny warunek selekcji}:
+dla danego $\Phi(\mathbf{x})$ metryka jest
+okre\'slona, ca\l{}ka jest obliczalna,
+a~ZS2 wybiera dopuszczalne konfiguracje.
+
+W~przybli\.zeniu $\delta\Phi = \Phi - \PhiZero \ll \PhiZero$:
+\begin{equation}\label{eq:ZS2-expansion}
+  0 = \int\delta\Phi\,d^3x
+    + \frac{3}{2\PhiZero}\int(\delta\Phi)^2\,d^3x
+    + \mathcal{O}(\delta\Phi^3/\PhiZero^2).
+\end{equation}
+Do wiod\k{a}cego rz\k{e}du ZS2 jest ,,p\l{}aski'':
+$\langle\delta\Phi\rangle_{\mathrm{koord}} = 0$.
+Korekcja metryczna
+$\langle\delta\Phi\rangle_{\mathrm{koord}}
+= -\frac{3}{2\PhiZero}\langle(\delta\Phi)^2\rangle_{\mathrm{koord}}
+< 0$
+przesuwa \'sredni\k{a} koordynatow\k{a} w~stron\k{e} ujemn\k{a}
+(regiony o~$\Phi > \PhiZero$ ,,wa\.z\k{a} wi\k{e}cej'' fizycznie).
+Efekt ten jest rz\k{e}du $\delta\Phi^2/\PhiZero$
+i~zaniedbywalny w~re\.zimie s\l{}abopolowym.
+\end{remark}
+
+\medskip\noindent
+\textbf{Zwi\k{a}zek mi\k{e}dzy ZS1 a~ZS2 --- hierarchia.}
+\begin{enumerate}[nosep]
+  \item \textbf{ZS1 jest fundamentalna} --- wynika
+    bezpo\'srednio z~$\Zp$-symetrii substratu i~postulatu,
+    \.ze Wszech\'swiat jako ca\l{}o\'s\'c jest
+    nieodr\'o\.znialny od $\Nzero$.
+  \item \textbf{ZS2 jest efektywna} --- operuje na poziomie
+    pola $\Phi$ po coarse-grainingu.
+  \item ZS2 \textbf{nie wynika z~ZS1}: ZS1 dotyczy
+    \emph{pierwszego momentu} ($\langle\hat{s}\rangle$),
+    ZS2 dotyczy \emph{drugiego momentu}
+    ($\Phi \propto \langle\hat{s}^2\rangle$,
+    wniosek~\ref{cor:F-s}). Warunek na \'sredni\k{a}
+    kwadratu nie wynika z~warunku na \'sredni\k{a} znaku.
+  \item Teoria \textbf{wymaga obu}: ZS1 zapewnia globaln\k{a}
+    neutralno\'s\'c chiralną, ZS2 --- bilans przestrzenny.
+    S\k{a} to \textbf{dwa niezale\.zne aksjomaty}.
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}[Wyprowadzenie ZS2 z~dynamiki na zwartej topologii]%
+\label{prop:ZS2-from-dynamics}
+Je\.sli topologia przestrzenna $\Sigma$ jest zwarta (np.~$S^3$ lub $T^3$),
+to ZS2 \textbf{wynika} z~r\'ownania pola TGP
+(r.~\eqref{eq:full-field-alt}) i~nie stanowi niezale\.znego aksjomatu.
+\end{proposition}
+
+\begin{proof}
+Ca\l{}kujemy statyczne r\'ownanie pola~\eqref{eq:full-field-alt}
+po zwartej hiperpowierzchni $\Sigma$ (bez brzegu):
+\begin{equation}\label{eq:ZS2-integral}
+  \underbrace{\int_\Sigma \nabla^2\Phi\,d^3x}_{= 0\;\text{(Gauss, }\partial\Sigma = \varnothing\text{)}}
+  \;+\; \alpha\int_\Sigma \frac{(\nabla\Phi)^2}{\Phi}\,d^3x
+  \;+\; \frac{\beta}{\PhiZero}\int_\Sigma \Phi^2\,d^3x
+  \;-\; \frac{\gamma}{\PhiZero^2}\int_\Sigma \Phi^3\,d^3x
+  = -q\PhiZero\,M_{\mathrm{tot}},
+\end{equation}
+gdzie $M_{\mathrm{tot}} = \int_\Sigma \rho\,d^3x$.
+
+Podstawiamy $\Phi = \PhiZero(1 + \varphi)$,
+$|\varphi| \ll 1$ (re\.zim s\l{}abopolowy), $\beta = \gamma$:
+\begin{align*}
+  &\alpha\PhiZero\int_\Sigma (\nabla\varphi)^2 d^3x
+  + \gamma\PhiZero \int_\Sigma
+  \bigl[(1{+}\varphi)^2 - (1{+}\varphi)^3\bigr]\,d^3x
+  = -q\PhiZero M_{\mathrm{tot}},\\
+  &(1{+}\varphi)^2 - (1{+}\varphi)^3
+  = -\varphi - 2\varphi^2 - \varphi^3.
+\end{align*}
+Do wiod\k{a}cego rz\k{e}du ($\varphi \ll 1$,
+pomijaj\k{a}c $(\nabla\varphi)^2$ i~$\varphi^2$):
+\begin{equation}\label{eq:ZS2-leading}
+  -\gamma\PhiZero \int_\Sigma \varphi\,d^3x
+  = -q\PhiZero\,M_{\mathrm{tot}}
+  \quad\Longrightarrow\quad
+  \int_\Sigma \varphi\,d^3x
+  = \frac{q}{\gamma}\,M_{\mathrm{tot}}.
+\end{equation}
+Dla \textbf{zamkni\k{e}tego} Wszech\'swiata
+ca\l{}kowita ,,masa generuj\k{a}ca''
+$M_{\mathrm{tot}}^{\mathrm{gen}}$ musi znikn\k{a}\'c,
+poniewa\.z w~TGP masa i~przestrze\'n
+s\k{a} wz\k{a}jemnie konstytuowane
+(aksjomat~\ref{ax:zrodlo}):
+ka\.zde \'zr\'od\l{}o generuje $\Phi > \PhiZero$,
+lecz ca\l{}kowita perturbacja musi by\'c kompensowana
+(brak ,,zewn\k{e}trznego'' zasobu przestrzeni).
+Formalnie: na $S^3$ twierdzenie Gaussa
+dla r\'ownania Poissona wymaga zerowej ca\l{}kowitej masy.
+St\k{a}d $M_{\mathrm{tot}}^{\mathrm{gen}} = 0$
+i~$\int_\Sigma \varphi\,d^3x = 0$, co jest ZS2.
+
+\medskip\noindent
+\textbf{Wniosek:} dla topologii zwartej (zamkni\k{e}tej)
+ZS2 jest \textbf{konsekwencj\k{a}} r\'ownania pola plus
+twierdzenia Gaussa, a~nie niezale\.znym postulatem.
+Dla topologii otwartej ($\mathbb{R}^3$) ZS2 pozostaje
+aksjomatem wymaganym na mocy filozofii
+,,Wszech\'swiat jako ca\l{}o\'s\'c = $\Nzero$''.
+\end{proof}
+
+% ----------------------------------------------------------
+\subsection{Mapa poj\k{e}\'c: mikro $\to$ makro}\label{ssec:mapa}
+
+Poni\.zsza tabela porz\k{a}dkuje relacje mi\k{e}dzy kluczowymi
+wielko\'sciami na r\'o\.znych poziomach opisu TGP.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{2.3cm}>{\raggedright}p{2.5cm}p{9.5cm}@{}}
+\toprule
+\textbf{Poziom} & \textbf{Wielko\'s\'c} & \textbf{Znaczenie i~relacje} \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Mikroskopowy (substrat $\Gamma$)}} \\[2pt]
+Operator & $\hat{s}_i$ & Lokalna amplituda wzbudzenia substratu \\
+Asymetria chiralna & $\Delta(x) = \langle\hat{s}(x)\rangle$
+  & Znakowa miara z\l{}amania $\Zp$; $\int\Delta\sqrt{h}\,d^3x = 0$ (ZS1) \\
+Funkcja stanu (mikro) & $\Ffield_i = \langle\hat{s}_i\rangle^2$
+  & Kwadrat asymetrii; $\Ffield = 0 \Leftrightarrow$ symetria niez\l{}amana \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Po coarse-grainingu (pole $\Phi$)}} \\[2pt]
+Pole przestrzenno\'sci & $\Phi(x) \propto \langle\hat{s}^2\rangle_{\mathrm{cg}}$
+  & Parametr fazy metrycznej substratu;
+    $\Phi = 0$: faza niemetryczna, $\Phi > 0$: faza metryczna \\
+Perturbacja & $\varphi = \Phi/\PhiZero - 1$
+  & Bezwymiarowe odchylenie od t\l{}a; $\int\varphi\sqrt{h}\,d^3x = 0$ (ZS2) \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Globalny (funkcje stanu)}} \\[2pt]
+$\Ffield_{\!\mathrm{abs}}$ & $\Phi^2/\PhiZero^2$
+  & Absolutna miara odej\'scia od $\Nzero$; zerowa dok\l{}adnie w~$\Phi = 0$ \\
+$\Floc$ & $(\Phi - \PhiZero)^2$
+  & Perturbacyjna miara odej\'scia od t\l{}a $\PhiZero$;
+    zerowa w~$\Phi = \PhiZero$ \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Emergentny (geometria)}} \\[2pt]
+Metryka efektywna & $g_{\mu\nu}^{\mathrm{eff}}[\Phi]$
+  & Obiekt emergentny z~konfiguracji $\Phi$;
+    okre\'slona tylko dla $\Phi > 0$ \\
+Sta\l{}e efektywne & $c(\Phi), \hbar(\Phi), G(\Phi)$
+  & Pola wynikowe, nie oddzielne postulaty \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Co jest pierwotne?]\label{rem:co-pierwotne}
+W~hierarchii poj\k{e}\'c TGP:
+\begin{enumerate}[nosep]
+  \item \textbf{Pierwotne}: substrat $\Gamma$ z~operatorami
+    $\hat{s}_i$ i~symetri\k{a} $\Zp$.
+  \item \textbf{Pochodne (z~coarse-grainingu)}: pole $\Phi$,
+    perturbacja $\varphi$, funkcje stanu $\Ffield_{\!\mathrm{abs}}$
+    i~$\Floc$.
+  \item \textbf{Emergentne}: metryka $g_{\mu\nu}$, sta\l{}e
+    $c,\hbar,G$, geometria.
+\end{enumerate}
+$\Delta(x)$ i~$\varphi(x)$ \textbf{nie s\k{a} tym samym}, ale
+s\k{a} \'sci\'sle powi\k{a}zane: $\Delta$ jest mikroskopow\k{a}
+asymetri\k{a} chiralną, $\varphi$ jest efektywnym polem uzyskanym
+po u\'srednieniu. Na poziomie pola \'sredniego: $\Phi \propto
+\Delta^2$, wi\k{e}c $\varphi$ zale\.zy od $\Delta^2$, ale nie
+od znaku $\Delta$.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Status ontologiczny $\PhiZero$ i~tablica stan\'ow}\label{ssec:PhiZero-status}
+
+\begin{remark}[Co oznacza $\PhiZero$]\label{rem:PhiZero-status}
+$\PhiZero$ \textbf{nie jest stanem bez materii}.
+Aksjomat~\ref{ax:przestrzen} m\'owi, \.ze bez materii nie ma
+przestrzeni ($\Phi = 0$). Zatem stan $\Phi = \PhiZero > 0$
+\textbf{wymaga} obecno\'sci materii --- jest to
+\emph{efektywne t\l{}o ustalone przez globaln\k{a}
+(\'sredni\k{a}) zawarto\'s\'c materii--energii Wszech\'swiata}.
+
+Precyzyjnie:
+\begin{itemize}[nosep]
+  \item $\PhiZero$ jest \textbf{warto\'sci\k{a} referencyjn\k{a}}:
+    \'sredni\k{a} warto\'sci\k{a} $\Phi$ na du\.zych skalach
+    kosmologicznych, ustaloną przez ca\l{}kowit\k{a} zawarto\'s\'c
+    materii--energii.
+  \item $\PhiZero$ jest jednorodnym rozwi\k{a}zaniem r\'ownania
+    pola (stw.~\ref{prop:vacuum-condition}) przy \'sredniej
+    g\k{e}sto\'sci $\bar{\rho}$.
+  \item Okre\'slenie ,,pr\'o\.znia lokalna'' ($\Phi = \PhiZero$)
+    oznacza: region bez \emph{lokalnych} \'zr\'ode\l{}, ale
+    z~t\l{}em wygenerowanym przez \emph{globaln\k{a}} materi\k{e}.
+  \item Stan $\Phi = 0$ ($\Nzero$) jest fundamentalnie
+    r\'o\.zny: to brak przestrzeni, nie ,,pusta przestrze\'n''.
+\end{itemize}
+Bez tego rozr\'o\.znienia mo\.zna by\l{}oby zarzuci\'c, \.ze TGP
+,,najpierw twierdzi, \.ze bez materii nie ma przestrzeni,
+a~potem wprowadza t\l{}o przestrzenne jak w~zwyk\l{}ej teorii
+pola''. To nie jest sprzeczno\'s\'c: $\PhiZero$ \emph{jest}
+generowane przez materi\k{e} --- jest po prostu \'srednim
+wynikiem tej generacji, przyj\k{e}tym za punkt odniesienia.
+\end{remark}
+
+\begin{remark}[Tablica stan\'ow TGP]\label{rem:tablica-stanow}
+Poni\.zsza tabela systematyzuje kluczowe stany i~poj\k{e}cia
+pola $\Phi$, od absolutnej nico\'sci po silne pole:
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{2.5cm}cp{10cm}@{}}
+\toprule
+\textbf{Stan} & $\Phi$ & \textbf{Interpretacja} \\
+\midrule
+Nico\'s\'c $\Nzero$ & $0$
+  & Brak przestrzeni, materii, czasu. Substrat istnieje,
+    ale w~fazie niemetrycznej. $\Ffield_{\!\mathrm{abs}} = 0$. \\[4pt]
+T\l{}o referencyjne & $\PhiZero$
+  & \'Sredni stan generowany przez kosmologiczn\k{a} zawarto\'s\'c
+    materii. ,,Pr\'o\.znia'' TGP: brak lokalnych \'zr\'ode\l{}, ale
+    przestrze\'n istnieje (generowana globalnie).
+    $\Floc = 0$, $\Ffield_{\!\mathrm{abs}} = 1$. \\[4pt]
+Pr\'o\.znia lokalna & $\approx \PhiZero$
+  & Region daleko od lokalnych \'zr\'ode\l{};
+    $\Phi$ odchyla si\k{e} nieznacznie od $\PhiZero$.
+    Odpowiada pr\'o\.zni w~sensie codziennym. \\[4pt]
+Region \'zr\'od\l{}owy & $> \PhiZero$
+  & Otoczenie mas: $\Phi$ podniesione przez lokalne \'zr\'od\l{}a.
+    Metryka efektywna odbiega od Minkowskiego. \\[4pt]
+Silne pole & $\gg \PhiZero$
+  & Wn\k{e}trza gwiazd neutronowych, okolice CD.
+    Sta\l{}e $c, \hbar, G$ silnie zmodyfikowane. \\[4pt]
+Domena metryczna & $> 0$
+  & Sp\'ojny region z~$\Phi > 0$, w~kt\'orym propagacja,
+    odleg\l{}o\'sci i~geometria maj\k{a} sens. \\[4pt]
+Stan zamro\.zony (CD) & $\to\infty$
+  & Efektywny lokalny odpowiednik $\Nzero$:
+    $c \to 0$, brak propagacji, brak dost\k{e}pu
+    informacyjnego. \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Chiralna symetria substratu}\label{ssec:chiralna}
+
+Na substracie relacyjnym $\Gamma = (V, E)$ ka\.zdemu
+w\k{e}z\l{}owi $i \in V$ przypisujemy \textbf{operator
+amplitudy} $\hat{s}_i$ --- skal\k{a} opisuj\k{a}c\k{a}
+lokalny stopie\'n wzbudzenia substratu.
+
+\begin{proposition}[Symetria $\Zp$ z~mikrodynamiki]\label{prop:Z2}
+Hamiltoniano substratu:
+\begin{equation}\label{eq:H-Gamma}
+    H_\Gamma = \sum_i \biggl[
+      \frac{\hat{\pi}_i^2}{2\mu}
+    + \frac{m_0^2}{2}\hat{s}_i^2
+    + \frac{\lambda_0}{4}\hat{s}_i^4
+    \biggr]
+    - J\!\sum_{\langle ij\rangle} A_{ij}\,\hat{s}_i\hat{s}_j
+\end{equation}
+jest niezmienniczy wzgl\k{e}dem \textbf{chiralnej inwersji}:
+\begin{equation}\label{eq:Z2-chiral}
+    \hat{s}_i \;\mapsto\; -\hat{s}_i
+    \qquad \forall\, i \in V.
+\end{equation}
+Ta dyskretna symetria $\Zp$ jest fundamentaln\k{a}
+symetri\k{a} substratu. Funkcja stanu $\Ffield$ mierzy
+stopie\'n jej z\l{}amania.
+\end{proposition}
+
+\begin{corollary}[Relacja $\Ffield \leftrightarrow
+  \langle\hat{s}\rangle$]\label{cor:F-s}
+W~przybli\.zeniu pola \'sredniego:
+\begin{equation}\label{eq:F-s-relation}
+    \Ffield_i[\Omega]
+    = \langle\Omega|\hat{s}_i|\Omega\rangle^2.
+\end{equation}
+$\Ffield = 0 \;\Leftrightarrow\;
+\langle\hat{s}_i\rangle = 0$
+(symetria $\Zp$ nienaruszona: brak struktury,
+nico\'s\'c). $\Ffield > 0 \;\Leftrightarrow\;$
+substrat ,,wybra\l{} stron\k{e}'' --- spontaniczne
+z\l{}amanie $\Zp$ jednocze\'snie generuje materi\k{e}
+i~przestrze\'n.
+\end{corollary}
+
+% ----------------------------------------------------------
+\subsection{Niestabilno\'s\'c $\Nzero$}\label{ssec:niestabilnosc}
+
+\begin{axiom}[Niestabilno\'s\'c nico\'sci]\label{ax:P3}
+Stan $\Ffield = 0$ ($\Nzero$) jest niestabilny. Jego miara
+w~przestrzeni konfiguracji wynosi zero:
+\begin{equation}
+    \mu\bigl(\{\sigma \in \Omega : \Ffield[\sigma] = 0\}\bigr) = 0.
+\end{equation}
+Ka\.zde odej\'scie od dok\l{}adnej symetrii prowadzi do $\Ffield > 0$
+lokalnie, co oznacza jednoczesne pojawienie si\k{e} materii
+i~generowanej przez ni\k{a} przestrzeni.
+\end{axiom}
+
+Niestabilno\'s\'c nie jest procesem czasowym --- czas nie istnieje
+w~$\Nzero$. Jest to stwierdzenie o~\textbf{strukturze} przestrzeni
+konfiguracji: stan idealnie symetryczny jest punktem miary zero,
+otoczonym ze wszystkich stron stanami z~$\Ffield > 0$.
+
+\begin{proposition}[Niestabilno\'s\'c z~termodynamiki substratu]\label{prop:P3-deriv}
+Niech substrat relacyjny $\Gamma = (V, E)$ posiada hamiltoniano
+$H_\Gamma$ z~chiralną symetri\k{a} $\Zp$ (inwersja amplitud
+$\hat{s}_i \mapsto -\hat{s}_i$). Niech $\mu_\beta$ b\k{e}dzie
+miar\k{a} Gibbsa $\mu_\beta(\sigma) \propto e^{-\beta H_\Gamma[\sigma]}$.
+W~granicy termodynamicznej ($|V| \to \infty$) istnieje
+$\beta_c > 0$ taki, \.ze:
+\begin{equation}
+    \beta > \beta_c
+    \quad\Longrightarrow\quad
+    \mu_\beta\bigl(\{\sigma: \Ffield[\sigma] = 0\}\bigr) = 0,
+    \qquad
+    \mu_\beta\bigl(\{\sigma: \Ffield[\sigma] > 0\}\bigr) = 1.
+\end{equation}
+Substrat fizyczny (bez zewn\k{e}trznego termostatu) odpowiada
+$\beta \to \infty$ --- zawsze jest w~re\.zimie spontanicznie
+z\l{}amanej symetrii. Zatem aksjomat~\ref{ax:P3} jest
+\textbf{konsekwencj\k{a}} termodynamiki substratu,
+nie niezale\.znym postulatem.
+\end{proposition}
+
+Analogia: nie pytamy, co ,,wyzwala'' topnienie lodu na ciep\l{}ym blacie.
+Pytamy, w~jakich warunkach l\'od jest stabilny. W~TGP: substrat
+jest ,,zawsze'' w~warunkach, w~kt\'orych $\Ffield > 0$
+jest preferowane --- stan $\Ffield = 0$ ma zerow\k{a} wag\k{e}
+statystyczn\k{a}.
+
+\begin{proposition}[Niestabilno\'s\'c $\Nzero$
+  z~funkcjona\l{}u dzia\l{}ania]\label{prop:P3-action}
+Stan $\Phi = 0$ (nicość) jest niestabilny r\'ownie\.z
+w~sensie r\'ownania pola~\eqref{eq:full-field-alt}
+(lub~\eqref{eq:covariant-field}). Linearyzuj\k{a}c
+r\'ownanie pola wok\'o\l{} $\Phi = 0$:
+\begin{equation}\label{eq:P3-lin}
+    \nabla^2(\delta\Phi) + \alpha\,\frac{(\nabla\delta\Phi)^2}
+    {\delta\Phi} = -q\,\PhiZero\,\rho.
+\end{equation}
+Ka\.zde niezerowe \'zr\'od\l{}o $\rho > 0$ wymusza
+$\delta\Phi > 0$ w~otoczeniu --- pole ,,ucieka'' od zera.
+Ponadto potencja\l{} efektywny
+$V_{\mathrm{eff}}(\Phi) = (\beta/3)\Phi^3/\PhiZero
+- (\gamma/4)\Phi^4/\PhiZero^2$ w~otoczeniu $\Phi = 0$
+zachowuje si\k{e} jak $\sim\beta\Phi^3/(3\PhiZero)$, co daje:
+\begin{equation}
+    V'_{\mathrm{eff}}(0) = 0, \qquad
+    V''_{\mathrm{eff}}(0) = 0.
+\end{equation}
+Brak drugiej pochodnej (masy efektywnej) w~$\Phi = 0$
+oznacza, \.ze $\Phi = 0$ jest \textbf{punktem przegi\k{e}cia}
+potencja\l{}u, nie minimum --- ka\.zda perturbacja
+odsuwa pole od zera. Jest to niezale\.zny argument za
+aksjomatem~\ref{ax:P3}, wynikaj\k{a}cy z~samej
+struktury r\'ownania pola, nie z~termodynamiki substratu.
+\end{proposition}
+
+% ----------------------------------------------------------
+\subsection{Dwa sektory}\label{ssec:sektory}
+
+\begin{definition}[Sektory TGP]\label{def:sektory}
+Przestrze\'n konfiguracji $\Omega$ dzieli si\k{e} na dwa sektory:
+\begin{description}[style=nextline,nosep]
+  \item[{$\mathcal{S}_0 = \{\sigma : \Ffield[\sigma] = 0\}$
+    --- sektor nico\'sci}]
+    Brak materii, brak przestrzeni, brak czasu.
+    Stan $\Nzero$ nale\.zy do tego sektora.
+  \item[{$\mathcal{S}_1 = \{\sigma : \Ffield[\sigma] > 0\}$
+    --- sektor istnienia}]
+    Materia obecna, przestrze\'n wygenerowana, czas istnieje
+    jako relacja mi\k{e}dzy r\'o\.znymi stanami.
+\end{description}
+\end{definition}
+
+Relacja $\mathcal{S}_0 \leftrightarrow \mathcal{S}_1$ nie jest
+ewolucj\k{a} czasow\k{a} (czas nie istnieje w~$\mathcal{S}_0$).
+Jest relacj\k{a} mi\k{e}dzysektorow\k{a} --- dwa r\'o\.zne opisy
+tej samej funkcji stanu. Obserwator wewn\k{e}trzny (w~$\mathcal{S}_1$)
+widzi bogaty Wszech\'swiat; obserwator zewn\k{e}trzny widzi $\Ffield = 0$
+--- nico\'s\'c.
+
+\begin{remark}[Relacja mi\k{e}dzysektorowa jako selekcja miar\k{a}]
+,,Przej\'scie'' $\mathcal{S}_0 \to \mathcal{S}_1$ nie zachodzi
+\emph{w~czasie} --- czas nie istnieje w~$\mathcal{S}_0$.
+Jest to \textbf{selekcja sektora przez miar\k{e}}: prawie
+ka\.zda konfiguracja substratu (w~sensie miary $\mu_\beta$
+z~stwierdzenia~\ref{prop:P3-deriv}) nale\.zy
+do~$\mathcal{S}_1$. Nie ma ,,chwili przed'' ---
+sektor $\mathcal{S}_1$ ma pe\l{}n\k{a} miar\k{e}, a~przej\'scie
+jest stwierdzeniem o~dominacji statystycznej, nie o~procesie.
+
+To jest fundamentalnie r\'o\.zne od ,,Wielkiego Wybuchu
+z~nico\'sci'' --- TGP nie potrzebuje momentu kreacji.
+Potrzebuje jedynie faktu, \.ze $\mathcal{S}_0$ jest zerow\k{a}
+miar\k{a} w~pe\l{}nej przestrzeni konfiguracji.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Czas jako konsekwencja $\Ffield > 0$}\label{ssec:czas}
+
+\begin{proposition}[Emergencja czasu]\label{prop:czas}
+Czas nie jest postulowany. Wynika z~istnienia wi\k{e}cej ni\.z jednego
+stanu:
+\begin{equation}
+    \Ffield > 0
+    \quad\Longrightarrow\quad
+    |\{\text{stany}\}| > 1
+    \quad\Longrightarrow\quad
+    \text{czas istnieje jako relacja mi\k{e}dzy stanami.}
+\end{equation}
+W~$\Nzero$: $\Ffield = 0$, jeden stan, czas jest poj\k{e}ciowo
+zbyteczny.
+\end{proposition}
+
+Strza\l{}ka czasu jest wyznaczona przez kierunek wzrostu
+entropii relacyjnej $\Srel$ (nie przez wzrost $\Ffield$).
+
+\begin{definition}[Entropia relacyjna $\Srel$]\label{def:Srel}
+Niech $\rho_{\mathrm{cg}}(x)$ b\k{e}dzie grubozarnion\k{a}
+g\k{e}sto\'sci\k{a} substratu --- miar\k{a} tego, jak
+stopnie swobody substratu wype\l{}niaj\k{a} kom\'ork\k{e}
+grubozarnienia wok\'o\l{} punktu~$x$, wa\.zon\k{a}
+warto\'sci\k{a} $\Phi(x)$. Entropia relacyjna na hypersurface
+$\Sigma$ jest:
+\begin{equation}\label{eq:Srel}
+    \Srel[\Phi] = -\int_\Sigma \rho_{\mathrm{cg}}(x)\,
+    \ln\rho_{\mathrm{cg}}(x)\;\sqrt{h}\,d^3x.
+\end{equation}
+$\Srel$ mierzy r\'o\.znorodno\'s\'c konfiguracji substratu:
+im bardziej jednorodna $\rho_{\mathrm{cg}}$, tym wy\.zsza
+entropia. $\Srel$ ro\'snie w~trakcie ewolucji (drugie prawo TGP),
+co wyznacza strza\l{}k\k{e} czasu.
+\end{definition}
+
+\begin{remark}[Niska entropia pocz\k{a}tku]
+Spontaniczne z\l{}amanie symetrii (przej\'scie
+$\Ffield = 0 \to \Ffield > 0$) generuje stan wysoce
+uporz\k{a}dkowany --- jednorodnemu $\Phi$ odpowiada
+niska~$\Srel$. P\'o\'zniejsza ewolucja (formowanie struktur,
+defekt\'ow, relaksacja gradient\'ow) zwi\k{e}ksza $\Srel$.
+W~standardowej kosmologii niska entropia pocz\k{a}tku Wszech\'swiata
+jest \emph{zagadk\k{a}} (Past Hypothesis Penrose'a).
+W~TGP jest \emph{naturaln\k{a} konsekwencj\k{a}} przej\'scia
+fazowego.
+\end{remark}
+
+\begin{proposition}[Pr\k{a}d funkcji stanu]\label{prop:F-current}
+Funkcja stanu $\Ffield$ posiada lokaln\k{a} posta\'c zachowawcz\k{a}.
+Definiujemy \textbf{g\k{e}sto\'s\'c funkcji stanu}
+$\mathfrak{f}(x) = \Floc(x) = (\Phi(x) - \PhiZero)^2$ oraz
+\textbf{pr\k{a}d funkcji stanu}:
+\begin{equation}\label{eq:F-current}
+    j_{\Ffield}^\mu(x) \;=\; 2\,(\Phi - \PhiZero)\,\partial^\mu\Phi.
+\end{equation}
+Wtedy z~r\'ownania pola~\eqref{eq:full-field-alt} wynika:
+\begin{equation}\label{eq:F-conservation}
+    \partial_\mu j_{\Ffield}^\mu
+    \;=\; 2\,(\partial_\mu\Phi)(\partial^\mu\Phi)
+    + 2\,(\Phi - \PhiZero)\,\nabla^2\Phi
+    \;=\; 2\,(\nabla\Phi)^2
+    + 2\,(\Phi - \PhiZero)\bigl[-q\PhiZero\rho
+    - \mathcal{N}[\Phi]\bigr].
+\end{equation}
+Zasada zerowej sumy (aksjomat~\ref{ax:zero}) wymaga, by
+ca\l{}ka globalna $\int_\Sigma j_{\Ffield}^0\,\sqrt{h}\,d^3x$
+by\l{}a zachowana: nadwy\.zka $\Ffield$ w~jednym regionie jest
+kompensowana deficytem w~innym.
+W~nieobecno\'sci \'zr\'ode\l{} ($\rho = 0$) i~w~granicy liniowej
+($\Phi \approx \PhiZero$, $\mathcal{N} \approx 0$) pr\k{a}d
+redukuje si\k{e} do $\partial_\mu j_{\Ffield}^\mu \approx 0$
+--- \textbf{\'scis\l{}e prawo zachowania} funkcji stanu
+w~pr\'o\.zni.
+\end{proposition}
+
+\begin{corollary}[Bilans \'zr\'od\l{}owy funkcji stanu]%
+\label{cor:F-source-balance}
+Z~r\'ownania~\eqref{eq:F-conservation} wynika, \.ze \'zr\'od\l{}o
+materii ($\rho > 0$) stanowi \textbf{ujemny cz\l{}on} po prawej
+stronie r\'ownania ci\k{a}g\l{}o\'sci $\Ffield$:
+\begin{equation}\label{eq:F-source}
+  \partial_\mu j_{\Ffield}^\mu
+  = 2\,(\nabla\Phi)^2
+  - 2\,q\,\PhiZero\,(\Phi - \PhiZero)\,\rho
+  - 2\,(\Phi - \PhiZero)\,\mathcal{N}[\Phi].
+\end{equation}
+Interpretacja:
+\begin{enumerate}[nosep]
+  \item \textbf{Cz\l{}on gradientowy} $2(\nabla\Phi)^2 \geq 0$:
+    niejednorodne konfiguracje $\Phi$ produkuj\k{a} $\Ffield$ ---
+    ka\.zde \emph{istnienie} (struktura) wzmacnia odej\'scie
+    od nico\'sci.
+  \item \textbf{Cz\l{}on \'zr\'od\l{}owy} $-2q\PhiZero(\Phi-\PhiZero)\rho$:
+    w~sektorze $\Phi > \PhiZero$ (wewn\k{a}trz \'zr\'ode\l{})
+    materia \emph{absorbuje} $\Ffield$, w~sektorze
+    $\Phi < \PhiZero$ (daleko od \'zr\'ode\l{}) materia
+    \emph{generuje} $\Ffield$. Ten bilans realizuje
+    zasad\k{e} zerowej sumy (ZS2).
+  \item \textbf{Cz\l{}on nieliniowy} $-2(\Phi-\PhiZero)\mathcal{N}[\Phi]$:
+    samointerferencja pola odpowiada za redystrybucj\k{e} $\Ffield$
+    mi\k{e}dzy re\.zimami (przep\l{}yw ,,istnienia'' mi\k{e}dzy skalami).
+\end{enumerate}
+\end{corollary}
+
+\begin{hypothesis}[Drugie prawo TGP]\label{hyp:second-law}
+W~fazie $\Ffield > 0$ r\'ownania efektywne
+(r\'ownanie pola~$\Phi$ + kosmologia) implikuj\k{a}:
+\begin{equation}\label{eq:second-law}
+    \frac{d\Srel}{dt} \geq 0
+\end{equation}
+dla rozwi\k{a}za\'n kosmologicznych z~warunkiem
+pocz\k{a}tkowym odpowiadaj\k{a}cym \'swie\.zemu
+przej\'sciu fazowemu ($\Phi \approx \PhiZero$ jednorodnie).
+
+Argument heurystyczny:
+\begin{enumerate}[nosep]
+  \item Z\l{}amanie symetrii: $\Phi \approx \PhiZero$ jednorodnie
+    --- niska $\Srel$ (wysoce uporz\k{a}dkowany stan).
+  \item Niestabilno\'s\'c liniowa: perturbacje $\delta\Phi$
+    rosn\k{a}, formuj\k{a} si\k{e} struktury --- wzrost $\Srel$.
+  \item P\'o\'zna relaksacja: gradienty $\Phi$ si\k{e}
+    wyg\l{}adzaj\k{a} --- dalszy wzrost $\Srel$.
+\end{enumerate}
+\end{hypothesis}
+
+% ----------------------------------------------------------
+\subsection{Dynamika substratu poni\.zej progu
+  metrycznego}\label{ssec:S0-dyn}
+
+W~$\mathcal{S}_0$ nie istnieje czas w~sensie metrycznym. Jednak
+substrat $\Gamma$ posiada w\l{}asn\k{a} mikrodynamik\k{e}, kt\'or\k{a}
+mo\.zna opisa\'c parametrem $\tau$ porz\k{a}dkuj\k{a}cym
+\'scie\.zki w~przestrzeni konfiguracji --- nie jest to czas,
+lecz \textbf{parametr miary na \'scie\.zkach}.
+
+\begin{definition}[Relaksacja stochastyczna substratu]\label{def:relax}
+Dynamika substratu w~$\mathcal{S}_0$:
+\begin{equation}\label{eq:relax}
+    \frac{d\bar{s}_i}{d\tau}
+    = -\frac{\partial H_\Gamma}{\partial \bar{s}_i}
+    + \eta_i(\tau),
+    \qquad
+    \langle\eta_i(\tau)\eta_j(\tau')\rangle
+    = 2T_{\mathrm{sub}}\,\delta_{ij}\,\delta(\tau-\tau'),
+\end{equation}
+gdzie $T_{\mathrm{sub}}$ jest \textbf{parametrem
+fluktuacji mikrodynamiki} (nie temperatur\k{a}
+termodynamiczn\k{a} --- ta wymaga czasu i~geometrii).
+\end{definition}
+
+\begin{remark}[Interpretacja $T_{\mathrm{sub}}$]
+Fizyczny substrat (bez zewn\k{e}trznego termostatu)
+odpowiada $T_{\mathrm{sub}} = 0$, ale kwantowe
+relacje komutacyjne
+$[\hat{s}_i, \hat{\pi}_j] = i\hbar\delta_{ij}$
+generuj\k{a} nieredukowalne fluktuacje. Nawet przy
+$T_{\mathrm{sub}} = 0$ stan w~pe\l{}ni symetryczny
+jest niestabilny (jak fa\l{}szywa pr\'o\.znia) ---
+co jest sp\'ojne z~aksjomatem~\ref{ax:P3}
+i~stwierdzeniem~\ref{prop:P3-deriv}.
+\end{remark}
+
+\begin{proposition}[Most $\tau \to t$: emergencja czasu metrycznego]%
+\label{prop:tau-to-t}
+Parametr relaksacyjny $\tau$ substratu (r\'ow.~\ref{eq:relax})
+i~czas fizyczny $t$ (wyst\k{e}puj\k{a}cy w~kowariantnym r\'ownaniu
+pola) s\k{a} zwi\k{a}zane przez
+\textbf{pr\k{e}dko\'s\'c propagacji} $c(\Phi)$:
+\begin{equation}\label{eq:tau-to-t}
+  dt \;=\; \frac{c(\Phi)}{c_0}\;d\tau
+  \;=\; \sqrt{\frac{\PhiZero}{\Phi}}\;d\tau.
+\end{equation}
+Interpretacja:
+\begin{enumerate}[nosep]
+  \item W~fazie uporz\k{a}dkowanej ($\Phi = \PhiZero$):
+    $dt = d\tau$ --- parametr substratu \textbf{jest} czasem
+    fizycznym. Czas metryczny to efektywny opis dynamiki
+    substratu wi\k{e}c nie jest dodatkowym stopniem swobody.
+  \item W~silnym polu ($\Phi \gg \PhiZero$, np.\ blisko
+    \'zr\'od\l{}a): $dt \ll d\tau$ --- czas fizyczny
+    \textbf{zwalnia} wzgl\k{e}dem substratu (odpowiednik
+    dylatacji grawitacyjnej w~OTW).
+  \item W~$\mathcal{S}_0$ ($\Phi = 0$): $dt/d\tau = 0$ ---
+    czas fizyczny \textbf{nie p\l{}ynie}, mimo \.ze substrat
+    zachowuje mikrodynamik\k{e} (parametr $\tau$ nadal
+    istnieje, ale nie generuje obserwowalnych zmian
+    metrycznych). To jest \'scis\l{}a realizacja
+    aksjomatu~\ref{ax:P3}.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Strzałka czasu z~termodynamiki substratu]%
+\label{rem:arrow-from-substrate}
+Relacja~\eqref{eq:tau-to-t} implikuje, \.ze strza\l{}ka czasu
+(hipoteza~\ref{hyp:second-law}) jest \textbf{odziedziczona}
+po mikrodynamice substratu: relaksacja stochastyczna
+(r\'ow.~\ref{eq:relax}) posiada naturalny kierunek
+$\tau$ (ku r\'ownowadze termodynamicznej), kt\'ory
+przekszta\l{}ca si\k{e} w~fizyczn\k{a} strza\l{}k\k{e}
+czasu $t$ przez~\eqref{eq:tau-to-t}. Niska entropia
+pocz\k{a}tku Wszech\'swiata wynika z~tego, \.ze
+przej\'scie $\mathcal{S}_0 \to \mathcal{S}_1$
+tworzy stan daleki od r\'ownowagi substratowej.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Przej\'scie fazowe $\Nzero \to \mathcal{S}_1$:
+  formalizacja Ginzburga--Landaua}\label{ssec:GL-transition}
+% ----------------------------------------------------------
+
+Dotychczasowy opis przej\'scia $\mathcal{S}_0 \to \mathcal{S}_1$
+(ssec.~\ref{ssec:niestabilnosc}--\ref{ssec:S0-dyn})
+opiera si\k{e} na argumentach miarowych i~termodynamicznych.
+Poni\.zej formalizujemy je w~ramach \textbf{efektywnej teorii
+Ginzburga--Landaua (GL)} dla substratu, pokazuj\k{a}c, jak
+r\'ownanie pola~$\Phi$ wynika z~grubowania (coarse-graining)
+mikrodynamiki substratu.
+
+\begin{definition}[Funkcjona\l{} GL substratu]\label{def:GL-substrate}
+Niech $\phi(x)$ b\k{e}dzie polem porz\k{a}dku substratu
+(grubowane $\bar{s}_i$, ci\k{a}g\l{}y odpowiednik zmiennych
+substratu, def.~\ref{def:GL-substrate}).
+Efektywny funkcjona\l{} Ginzburga--Landaua:
+\begin{equation}\label{eq:GL-functional}
+  \boxed{
+    \mathcal{F}_{\mathrm{GL}}[\phi]
+    = \int d^3x\;\biggl[
+      \frac{J_{\mathrm{eff}}}{2}\,(\nabla\phi)^2
+      + \frac{m_0^2}{2}\,\phi^2
+      + \frac{\lambda_0}{4}\,\phi^4
+    \biggr],
+  }
+\end{equation}
+z~symetri\k{a} $\Zp$: $\phi(x) \to -\phi(x)$,
+gdzie $J_{\mathrm{eff}}$ jest efektywnym sprz\k{e}\.zeniem
+gradientowym (proporcjonalnym do $J$ z~$H_\Gamma$),
+$m_0^2 = m_0^2(T_{\mathrm{sub}})$ zmienia znak
+przy $T_{\mathrm{sub}} = T_c$, a~$\lambda_0 > 0$
+stabilizuje potencja\l{}.
+\end{definition}
+
+\begin{proposition}[Z\l{}amanie symetrii i~identyfikacja $\Phi$]%
+\label{prop:GL-breaking}
+Dla $m_0^2 < 0$ (co odpowiada $T_{\mathrm{sub}} < T_c$,
+tj.\ fizycznemu substratowi ze~stwierdzenia~\ref{prop:P3-deriv})
+minimalizacja $\mathcal{F}_{\mathrm{GL}}$ daje:
+\begin{equation}\label{eq:GL-vev}
+  \langle\phi\rangle = \pm v_0, \qquad
+  v_0 = \sqrt{-m_0^2/\lambda_0}.
+\end{equation}
+Pole TGP $\Phi$ identyfikujemy z~\textbf{kwadratem
+parametru porz\k{a}dku}:
+\begin{equation}\label{eq:Phi-from-phi}
+  \boxed{
+    \Phi(x) = \frac{\phi(x)^2}{\phi_{\mathrm{ref}}^2}\,\PhiZero,
+  }
+\end{equation}
+gdzie $\phi_{\mathrm{ref}}$ jest skal\k{a} odniesienia.
+Ta identyfikacja zapewnia:
+\begin{enumerate}[nosep]
+  \item $\Phi \geq 0$ zawsze (aksjomat~\ref{ax:przestrzen}),
+  \item $\Phi = 0$ $\Leftrightarrow$ $\phi = 0$
+    (zachowanie $\Zp$, stan $\Nzero$),
+  \item $\Phi = \PhiZero$ $\Leftrightarrow$
+    $\phi^2 = \phi_{\mathrm{ref}}^2$ (pr\'o\.znia fizyczna),
+  \item Symetria $\Zp$ substratu ($\phi \to -\phi$)
+    jest \textbf{automatycznie zachowana} na poziomie $\Phi$,
+    zgodnie z~aksjomatem~\ref{ax:zero} (zasada zerowej sumy ZS1).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Wystarczy sprawdzi\'c warunki krytyczne.
+(1)~$\Phi = \phi^2/\phi_{\mathrm{ref}}^2 \cdot \PhiZero \geq 0$
+--- trywialnie, bo $\phi^2 \geq 0$.
+(2)~Z~$\Phi = 0$ wynika $\phi = 0$ (i~odwrotnie).
+(3)~Z~$\Phi = \PhiZero$ wynika $\phi^2 = \phi_{\mathrm{ref}}^2$,
+wi\k{e}c $\phi = \pm\phi_{\mathrm{ref}}$.
+(4)~$\phi \to -\phi$ daje $\Phi \to \Phi$ ---
+$\Phi$ jest $\Zp$-niezmiennicze.
+\end{proof}
+
+\begin{proposition}[Wyprowadzenie r\'ownania pola $\Phi$
+  z~GL]\label{prop:field-from-GL}
+Przepisuj\k{a}c $\mathcal{F}_{\mathrm{GL}}$ w~zmiennej
+$\Phi = \phi^2\,\PhiZero/\phi_{\mathrm{ref}}^2$
+(zak\l{}adaj\k{a}c $\phi > 0$ w~jednej domenie) i~variuj\k{a}c
+$\delta\mathcal{F}/\delta\Phi = 0$, otrzymujemy:
+\begin{equation}\label{eq:GL-to-TGP}
+  \frac{J_{\mathrm{eff}}}{4\PhiZero}\!\left[
+    \nabla^2\Phi + 2\,\frac{(\nabla\Phi)^2}{\Phi}
+  \right]
+  + \frac{m_0^2}{2}\,\sqrt{\frac{\Phi}{\PhiZero}}
+  + \lambda_0\,\frac{\Phi}{\PhiZero}
+  = 0.
+\end{equation}
+W~przybli\.zeniu $\Phi \approx \PhiZero$ (s\l{}abe pole),
+rozwijaj\k{a}c $\sqrt{\Phi/\PhiZero}
+= \sqrt\psi \approx 1 + \delta\Phi/(2\PhiZero)$
+i~identyfikuj\k{a}c:
+\begin{equation}\label{eq:GL-identification}
+  \alpha = 2, \qquad
+  \beta = \frac{2\lambda_0\,\PhiZero}{J_{\mathrm{eff}}}, \qquad
+  \gamma = \frac{2\lambda_0\,\PhiZero}{J_{\mathrm{eff}}},
+\end{equation}
+odzyskujemy r\'ownanie pola TGP~\eqref{eq:full-field-alt}
+z~$\beta = \gamma$ --- \textbf{warunek pr\'o\.zniowy wynika
+automatycznie} z~symetrii GL!
+\end{proposition}
+
+\begin{proof}
+Podstawiamy $\phi = \sqrt{\PhiZero^{-1}\,\phi_{\mathrm{ref}}^2\,\Phi}$:
+\[
+  \nabla\phi = \frac{\phi_{\mathrm{ref}}}{2\sqrt{\PhiZero\Phi}}\,\nabla\Phi,
+  \qquad
+  (\nabla\phi)^2 = \frac{\phi_{\mathrm{ref}}^2}{4\PhiZero}\,
+    \frac{(\nabla\Phi)^2}{\Phi}.
+\]
+Cz\l{}on gradientowy:
+$\frac{J_{\mathrm{eff}}}{2}(\nabla\phi)^2
+= \frac{J_{\mathrm{eff}}\phi_{\mathrm{ref}}^2}{8\PhiZero}
+  \frac{(\nabla\Phi)^2}{\Phi}$.
+
+Cz\l{}on masowy:
+$\frac{m_0^2}{2}\phi^2
+= \frac{m_0^2\,\phi_{\mathrm{ref}}^2}{2\PhiZero}\,\Phi$.
+
+Cz\l{}on $\lambda$:
+$\frac{\lambda_0}{4}\phi^4
+= \frac{\lambda_0\,\phi_{\mathrm{ref}}^4}{4\PhiZero^2}\,\Phi^2$.
+
+Wariacja $\delta\mathcal{F}/\delta\Phi = 0$:
+\[
+  -\frac{J_{\mathrm{eff}}\phi_{\mathrm{ref}}^2}{8\PhiZero}\!\left[
+    \frac{\nabla^2\Phi}{\Phi}
+    + 2\,\frac{(\nabla\Phi)^2}{\Phi^2} - \ldots
+  \right]
+  + \frac{m_0^2\phi_{\mathrm{ref}}^2}{2\PhiZero}
+  + \frac{\lambda_0\phi_{\mathrm{ref}}^4}{2\PhiZero^2}\,\Phi
+  = 0.
+\]
+Mno\.z\k{a}c przez $-8\PhiZero\Phi/(J_{\mathrm{eff}}\phi_{\mathrm{ref}}^2)$
+i~linearyzuj\k{a}c wok\'o\l{} $\Phi = \PhiZero$, po uporz\k{a}dkowaniu
+dostajemy:
+\[
+  \nabla^2\Phi + 2\,\frac{(\nabla\Phi)^2}{\Phi}
+  + \beta\,\frac{\Phi^2}{\PhiZero}
+  - \gamma\,\frac{\Phi^3}{\PhiZero^2} = 0
+\]
+z~$\beta = \gamma = 2\lambda_0\PhiZero/J_{\mathrm{eff}}$,
+co jest dok\l{}adnie r\'ownaniem pola~\eqref{eq:full-field-alt}
+z~$\alpha = 2$ i~$\beta = \gamma$ (pr\'o\.znia).
+Czynnik $\alpha = 2$ wynika z~$\Phi = \phi^2$ ---
+sprz\k{e}\.zenie gradientowe jest geometryczne.
+\end{proof}
+
+\begin{remark}[Fizyczna tre\'s\'c wyniku]\label{rem:GL-physics}
+Stwierdzenie~\ref{prop:field-from-GL} jest kluczowe,
+poniewa\.z:
+\begin{enumerate}[nosep]
+  \item \textbf{Warunek $\beta = \gamma$} nie jest
+    niezale\.znym postulatem, lecz \emph{konsekwencj\k{a}}
+    symetrii $\Zp$ substratu i~identyfikacji $\Phi = \phi^2$.
+  \item \textbf{Eksponent $\alpha = 2$} nie jest wybrany
+    ,,z~dzia\l{}ania'' (jak w~hipotezie~\ref{hyp:action}),
+    lecz \emph{wynika} z~relacji $\Phi \propto \phi^2$:
+    $\nabla\Phi/\Phi = 2\nabla\phi/\phi$,
+    sk\k{a}d sprz\k{e}\.zenie gradientowe daje
+    \emph{dok\l{}adnie} $\alpha = 2$.
+  \item \textbf{Parametry fizyczne} $\beta$, $\gamma$
+    s\k{a} wyra\.zone przez sta\l{}e substratu:
+    $\beta = \gamma = 2\lambda_0\PhiZero/J_{\mathrm{eff}}$.
+    Pomiar $\beta$ (lub $\gamma$) z~danych kosmologicznych
+    pozwala ograniczy\'c stosunek $\lambda_0/J_{\mathrm{eff}}$.
+  \item \textbf{Przej\'scie fazowe} jest typu \emph{drugiego rz\k{e}du}
+    (klasy uniwersalno\'sci 3D Isinga ze skalarem O(1)),
+    co jest sp\'ojne z~wynikami renormalizacji substratu
+    (punkt Wilsona--Fishera, patrz ANALIZA\_SPOJNOSCI\_v4,
+    \S6b).
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Defekty topologiczne i~materia]\label{rem:GL-defects}
+W~fazie z\l{}amanej symetrii ($\phi \neq 0$) mog\k{a} istnie\'c
+\textbf{\'sciany domenowe} --- regiony, w~kt\'orych $\phi$
+przechodzi przez zero (zmienia domen\k{e} $+v_0 \to -v_0$).
+Na \'scianie $\phi = 0$, wi\k{e}c $\Phi = 0$ ---
+lokalna ,,nico\'s\'c'' osadzona w~istniej\k{a}cej przestrzeni.
+W~trzech wymiarach:
+\begin{itemize}[nosep]
+  \item \'Sciany domenowe (dim = 2): niestabilne, kurczą się
+    (energia $\propto$ pole powierzchni).
+  \item Struny (dim = 1): liniowe defekty; w~TGP potencjalnie
+    odpowiadaj\k{a} strunom kosmicznym.
+  \item Konfiguracje je\.za (dim = 0): lokalne $\phi = 0$
+    z~topologicznym nawinięciem; kandydaci na cz\k{a}stki
+    (hipoteza~\ref{hyp:spin-chirality} w~sek.~\ref{ssec:fermiony}).
+\end{itemize}
+Relacja mi\k{e}dzy defektami topologicznymi GL
+a~fundamentaln\k{a} materi\k{a} TGP pozostaje
+\textbf{otwartym problemem}.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{S\l{}ownik interpretacyjny}\label{ssec:slownik-interp}
+
+\begin{remark}[Interpretacja podstawowych byt\'ow TGP]\label{rem:interpretacja}
+\begin{description}[style=nextline, nosep]
+  \item[\textbf{Materia}] Stabilna klasa konfiguracji substratu
+    ze z\l{}aman\k{a} symetri\k{a} $\Zp$. \'Zr\'od\l{}o pola $\Phi$.
+    Nie ,,mieszka w~przestrzeni'' --- \emph{generuje} przestrze\'n.
+  \item[\textbf{Przestrze\'n}] Faza metryczna substratu, opisana
+    polem $\Phi > 0$. Nie jest aren\k{a} --- jest \emph{produktem}
+    materii. Istnieje tylko tam, gdzie $\Phi > 0$.
+  \item[\textbf{Pr\'o\.znia (lokalna)}] Region, w~kt\'orym brak
+    lokalnych \'zr\'ode\l{}, ale $\Phi \approx \PhiZero > 0$.
+    Przestrze\'n istnieje --- jest generowana przez globaln\k{a}
+    materi\k{e}.
+  \item[\textbf{Nico\'s\'c ($\Nzero$)}] Brak przestrzeni ($\Phi = 0$),
+    materii, czasu. Fundamentalnie r\'o\.zna od pr\'o\.zni.
+  \item[\textbf{Pole $\Phi$}] Parametr fazy metrycznej substratu.
+    Mierzy stopie\'n, w~jakim substrat wspiera relacje metryczne
+    (odleg\l{}o\'sci, propagacj\k{e}). Nie jest ,,polem na
+    przestrzeni'' --- jest polem, \emph{z~kt\'orego} przestrze\'n
+    si\k{e} sk\l{}ada.
+  \item[\textbf{Geometria ($g_{\mu\nu}$)}] Obiekt emergentny:
+    efektywny opis konfiguracji $\Phi$ na skalach, gdzie pole
+    jest g\l{}adkie. Nigdy nie jest fundamentem --- zawsze jest
+    \emph{konsekwencj\k{a}} pola $\Phi$.
+  \item[\textbf{Czas}] Relacja porz\k{a}dkuj\k{a}ca stany
+    w~$\mathcal{S}_1$. Nie istnieje w~$\Nzero$.
+    Strza\l{}ka czasu wynika ze wzrostu $\Srel$.
+  \item[\textbf{\'Zr\'od\l{}o}] Dowolna konfiguracja substratu
+    generuj\k{a}ca wk\l{}ad do $\Phi$: cz\k{a}stki, pola, energia.
+  \item[\textbf{Defekt}] Zlokalizowany, topologicznie stabilny
+    profil $\Phi(r) \neq \PhiZero$ --- kandydat na cz\k{a}stk\k{e}.
+  \item[\textbf{Energia}] W\l{}asno\'s\'c dynamiczna \'zr\'od\l{}a
+    lub konfiguracji pola $\Phi$. Nie jest oddzielnym bytem.
+\end{description}
+\end{remark}
+
+\begin{remark}[Co jest obserwowalne?]\label{rem:obserwowalne}
+\begin{description}[style=nextline, nosep]
+  \item[\textbf{Obserwowalne bezpo\'srednio}:]
+    $g_{\mu\nu}^{\mathrm{eff}}$ (metryk\k{a} efektywna, dost\k{e}pna
+    pomiarom); propagacja foton\'ow i~cz\k{a}stek;
+    efektywne sta\l{}e $c_{\mathrm{lok}}, \hbar_{\mathrm{lok}},
+    G_{\mathrm{eff}}$; dynamika struktur kosmicznych.
+  \item[\textbf{Obserwowalne po\'srednio}:]
+    Pole $\Phi$ --- przez swoje efekty na metryk\k{e},
+    sta\l{}e i~dynamik\k{e}. Warto\'s\'c $\Phi$ nie jest
+    mierzalna bezpo\'srednio, ale stosunki $\Phi_1/\Phi_2$
+    mi\k{e}dzy regionami --- tak (przez stosunek $c_1/c_2$
+    lub $G_1/G_2$).
+  \item[\textbf{Nieobserwowalne bezpo\'srednio}:]
+    Substrat $\Gamma = (V, E)$; operatory $\hat{s}_i$;
+    symetria $\Zp$ na poziomie mikroskopowym;
+    parametr $\tau$ mikrodynamiki substratowej.
+    S\k{a} to elementy \emph{modelu ukrytego}, dost\k{e}pne
+    jedynie po\'srednio, przez konsekwencje na poziomie $\Phi$.
+\end{description}
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Wsp\'o\l{}zale\.zno\'s\'c materii i~przestrzeni}\label{ssec:wspolzaleznosc}
+
+Centralna r\'o\.znica wzgl\k{e}dem standardowej fizyki:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Standardowa fizyka} & \textbf{TGP} \\
+\midrule
+Przestrze\'n & istnieje niezale\.znie & generowana przez materi\k{e} \\
+Materia & ,,w'' przestrzeni & \'zr\'od\l{}o przestrzeni \\
+Pr\'o\.znia & pusta przestrze\'n & t\l{}o referencyjne $\Phi = \PhiZero > 0$
+  (generowane globalnie); $\Phi = 0$ to nico\'s\'c, nie pr\'o\.znia \\
+Grawitacja & krzywizna gotowej geometrii & efekt interferencji $\Phi$ \\
+Czas & koordynata & relacja w~$\mathcal{S}_1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Kluczowe: materia i~przestrze\'n nie s\k{a} osobnymi bytami ---
+s\k{a} dwoma aspektami tego samego zjawiska. Cz\k{a}stka
+\textbf{jest} lokalnym wzbudzeniem, kt\'ore jednocze\'snie
+generuje przestrze\'n wok\'o\l{} siebie. Przestrze\'n \textbf{jest}
+polem $\Phi$ wytworzonym przez materi\k{e}.

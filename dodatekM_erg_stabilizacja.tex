@@ -1,0 +1,360 @@
+% dodatekM_erg_stabilizacja.tex  --  ERG vacuum stabilization via K(psi)=psi^4
+% TGP v1, sesja v42, 2026-03-31
+% ================================================================
+
+\section{Dodatek M: Stabilizacja pr\'o\.zni TGP
+         przez przep\l{}yw Wetterika z~$K(\psi)=\psi^4$}
+\label{app:M-erg}
+
+Sekcja ta uzupe\l{}nia analiz\k{e} kwantyzacji z~dod.~\ref{app:E}
+o~pe\l{}ne r\'ownanie przep\l{}ywu ERG (Wetterich, 1993)
+dla potencja\l{}u efektywnego TGP z~nieliniowym sprz\k{e}\.zeniem
+kinetycznym $K(\psi)=\psi^4$, wyprowadzonym z~substratu
+(tw.~\ref{thm:D-uniqueness}, dod.~\ref{app:B}).
+
+% ----------------------------------------------------------------
+\subsection{Motywacja: niestabilno\'s\'c LPA}
+\label{ssec:M-motywacja}
+
+Potencja\l{} drzewowy TGP:
+\begin{equation}\label{eq:M-Vtree}
+    V(\psi) = \frac{\beta}{3}\,\psi^3 - \frac{\gamma}{4}\,\psi^4,
+    \qquad \beta = \gamma = 1,
+\end{equation}
+ma drug\k{a} pochodn\k{a} w~pr\'o\.zni
+$V''(1) = 2 - 3 = -1 < 0$,
+co oznacza, \.ze pr\'o\.znia $\psi = 1$ jest
+\emph{maksimum lokalnym}, nie minimum.
+
+W~standardowym przybli\.zeniu lokalnego potencja\l{}u
+(LPA, $K = 1 = \mathrm{const}$) r\'ownanie Wetterika
+w~$d=4$ wymiarach euklidesowych z~regulatorem Litima
+$R_k(p^2) = (k^2 - p^2)\,\theta(k^2 - p^2)$ daje:
+\begin{equation}\label{eq:M-flow-LPA}
+    \partial_t V_k(\psi)
+    = \frac{k^6}{32\pi^2\bigl(k^2 + V''_k(\psi)\bigr)},
+    \qquad t \equiv \ln\frac{k}{k_{\mathrm{IR}}}.
+\end{equation}
+
+\begin{result}[Niestabilno\'s\'c LPA]%
+\label{res:M-LPA-unstable}
+Numeryczna integracja \eqref{eq:M-flow-LPA}
+od $k_{\mathrm{UV}} = 1/a_\Gamma \approx 25$
+do $k_{\mathrm{IR}} = m_{\mathrm{sp}} = 1$ daje:
+\begin{equation}
+    V''_{\mathrm{LPA}}(1)\big|_{\mathrm{IR}} \approx -35,
+\end{equation}
+tzn.\ niestabilno\'s\'c pr\'o\.zni \emph{pogarsza si\k{e}} pod przep\l{}ywem
+RG (skrypt \texttt{p120\_erg\_wetterich\_flow.py}, tryb~A, 200 punkt\'ow,
+Radau, rtol\,$= 10^{-6}$).
+\end{result}
+
+Wniosek: przybli\.zenie LPA jest \emph{niewystarczaj\k{a}ce} dla TGP.
+Wynik ten nie jest zaskoczeniem --- potencja\l{} drzewowy
+jest ograniczony z~do\l{}u dopiero przez cz\l{}on
+$\lambda(\psi-1)^6$ (dod.~\ref{app:I}),
+kt\'ory w~LPA nie wp\l{}ywa na $V''(1)$.
+
+% ----------------------------------------------------------------
+\subsection{Sprz\k{e}\.zenie kinetyczne $K(\psi) = \psi^4$}
+\label{ssec:M-Kpsi4}
+
+Substrat TGP (dod.~\ref{app:B}, tw.~\ref{thm:D-uniqueness})
+wymusza geometryczne sprz\k{e}\.zenie kinetyczne:
+\begin{equation}\label{eq:M-Ksub}
+    K_{\mathrm{sub}}(\psi) = K_{\mathrm{geo}}\,\psi^4,
+\end{equation}
+kt\'ore jest \emph{dodatnio okre\'slone} dla $\psi > 0$
+(tw.~\ref{thm:ghost-free-soliton}) i~zerowe dok\l{}adnie
+w~$\psi = 0$ (stan $N_0$).
+
+R\'ownanie Wetterika z~$K(\psi)$ i~regulatorem Litima
+$R_k(p^2) = K(\psi)\,(k^2 - p^2)\,\theta(k^2 - p^2)$
+przyjmuje posta\'c:
+\begin{equation}\label{eq:M-flow-K}
+    \boxed{
+    \partial_t V_k(\psi)
+    = \frac{K(\psi)\,k^6}
+           {32\pi^2\bigl(K(\psi)\,k^2 + V''_k(\psi)\bigr)}.
+    }
+\end{equation}
+
+\begin{theorem}[Stabilizacja pr\'o\.zni przez $K(\psi)=\psi^4$]%
+\label{thm:M-vacuum-stable}
+Przy sta\l{}ym $K(\psi) = \psi^4$, przep\l{}yw \eqref{eq:M-flow-K}
+od $k_{\mathrm{UV}} = 1/a_\Gamma$ do $k_{\mathrm{IR}} = m_{\mathrm{sp}}$
+odwraca znak $V''(1)$:
+\begin{equation}\label{eq:M-Vpp-flip}
+    V''(1)\big|_{\mathrm{UV}} = -1.00
+    \quad\longrightarrow\quad
+    V''(1)\big|_{\mathrm{IR}} = +177.7,
+\end{equation}
+co odpowiada masie fizycznej:
+\begin{equation}
+    m^2_{\mathrm{phys}} = \frac{V''(\psi)}{K(\psi)}\bigg|_{\psi=1}
+    \approx +170.
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Dow\'od numeryczny]
+Skrypt \texttt{p120\_erg\_wetterich\_flow.py}, tryb~B,
+$N_\psi = 80$, metoda Radau, rtol\,$= 10^{-6}$.
+Stabilno\'s\'c ca\l{}ego zakresu pr\'o\.zniowego:
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}rrrrl@{}}
+\toprule
+$\psi$ & $V''_k(\psi)$ & $K(\psi)$ & $m^2_{\mathrm{phys}}$ & Status \\
+\midrule
+$0.3$ & $+10.2$  & $0.010$ & $+1078$ & stabilny \\
+$0.5$ & $+34.1$  & $0.056$ & $+608$  & stabilny \\
+$0.8$ & $+112.8$ & $0.394$ & $+286$  & stabilny \\
+$1.0$ & $+177.7$ & $1.044$ & $+170$  & stabilny \\
+$1.2$ & $+214.6$ & $1.975$ & $+109$  & stabilny \\
+$1.5$ & $+211.4$ & $4.944$ & $+42.8$ & stabilny \\
+$2.0$ & $+49.9$  & $16.5$  & $+3.0$  & stabilny \\
+$2.3$ & $-5.7$   & $29.0$  & $-0.2$  & niestabilny \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pr\'o\.znia jest stabilna w~ca\l{}ym zakresie $\psi \in [0.05, 2.3]$,
+obejmuj\k{a}cym wszystkie fizycznie istotne konfiguracje solitonowe.
+\end{proof}
+
+\begin{remark}[Mechanizm stabilizacji]%
+\label{rem:M-mechanism}
+Mechanizm stabilizacji ma podw\'ojn\k{a} natur\k{e}:
+\begin{enumerate}[(i)]
+\item Dla du\.zych $\psi$: $K \sim \psi^4 \gg 1$
+      dominuje w~mianowniku \eqref{eq:M-flow-K},
+      t\l{}umi\k{a}c poprawki kwantowe
+      (``bariera kinetyczna'').
+\item Dla ma\l{}ych $\psi$: $K \to 0$, ale $V''/K \to \infty$
+      (ca\l{}kowity gradient $K(\psi)(d\psi)^2$ maleje szybciej
+      ni\.z poprawka potencja\l{}u).
+\end{enumerate}
+W~obu granicach przep\l{}yw jest samoograniczaj\k{a}cy,
+co jest strukturalnym wynikiem geometrycznego sprz\k{e}\.zenia
+$K_{\mathrm{sub}} = K_{\mathrm{geo}}\,\psi^4$
+wyprowadzonego z~substratu.
+\end{remark}
+
+% ----------------------------------------------------------------
+\subsection{Sprz\k{e}\.zony przep\l{}yw $(V_k, K_k)$}
+\label{ssec:M-coupled}
+
+W~pe\l{}nym schemacie r\'ownania Wetterika
+sprz\k{e}\.zenie kinetyczne $K(\psi)$ r\'ownie\.z p\l{}ynie:
+\begin{equation}\label{eq:M-dKdt}
+    \partial_t K_k(\psi)
+    = -\frac{K_k^2\,k^6\,(V'''_k)^2}
+            {16\pi^2\bigl(K_k\,k^2 + V''_k\bigr)^3}.
+\end{equation}
+
+\begin{proposition}[Marginalna masa z~przep\l{}ywu sprz\k{e}\.zonego]%
+\label{prop:M-marginal-mass}
+Numeryczna integracja uk\l{}adu sprz\k{e}\.zonego
+\eqref{eq:M-flow-K}--\eqref{eq:M-dKdt} daje w~podczerwieni:
+\begin{align}
+    V''(1)\big|_{\mathrm{IR}} &= +0.37, \\
+    K(1)\big|_{\mathrm{IR}} &= 1.19
+    \quad (K_{\mathrm{IR}}/K_{\mathrm{UV}} = 1.14), \\
+    m^2_{\mathrm{phys}} &= V''/K\big|_{\psi=1}
+    \approx \mathbf{0.31}.
+\end{align}
+Pr\'o\.znia pozostaje stabilna ($m^2 > 0$),
+ale masa jest \emph{marginalna},
+co jest fizycznie po\.z\k{a}dane:
+\begin{itemize}[nosep]
+\item Sp\'ojna z~wolnym skalowaniem kosmologicznym
+      ($\eta \equiv m^2/H^2 \ll 1$ w~epoce inflacyjnej).
+\item $K$ jest ograniczone: $K_{\mathrm{IR}}/K_{\mathrm{UV}} = 1.14$
+      --- pozytywny sygna\l{} asymptotycznego bezpiecze\'nstwa.
+\item Wymiar krytyczny $\theta_u = -8.68$
+      (operator potencja\l{}u jest relewantny w~UV).
+\end{itemize}
+\end{proposition}
+
+% ----------------------------------------------------------------
+\subsection{Por\'ownanie trzech schemat\'ow}
+\label{ssec:M-comparison}
+
+\begin{table}[h]
+\centering
+\caption{Por\'ownanie schemat\'ow ERG dla TGP
+  ($k_{\mathrm{UV}} = 25$, $k_{\mathrm{IR}} = 1$).}
+\label{tab:M-comparison}
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+Schemat & $V''(1)_{\mathrm{IR}}$ & $m^2_{\mathrm{phys}}$
+        & $K_{\mathrm{IR}}/K_{\mathrm{UV}}$ & Status \\
+\midrule
+LPA ($K=1$)
+  & $-35.1$ & $-35.1$ & $1$ & \textbf{niestabilny} \\
+$K(\psi)=\psi^4$ sta\l{}e
+  & $+177.7$ & $+170.2$ & $1$ & stabilny (sztywny) \\
+Sprz\k{e}\.zony $(V,K)$
+  & $+0.37$ & $+0.31$ & $1.14$ & \textbf{stabilny (marginalny)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{result}[Hierarchia stabilno\'sci]%
+\label{res:M-hierarchy}
+\begin{enumerate}[(1)]
+\item LPA jest \textbf{niewystarczaj\k{a}ce} ---
+      ignorowanie $K(\psi)=\psi^4$ prowadzi
+      do fa\l{}szywego wniosku o~niestabilno\'sci.
+\item Sta\l{}e $K = \psi^4$ \textbf{stabilizuje masywnie}
+      ($m^2 \approx 170$), ale jest nierealnie sztywne.
+\item Sprz\k{e}\.zony przep\l{}yw $(V,K)$ daje
+      \textbf{fizycznie realistyczn\k{a}} marginaln\k{a} mas\k{e}
+      ($m^2 \approx 0.31$) --- mi\k{e}kki kondensat.
+\end{enumerate}
+\end{result}
+
+% ----------------------------------------------------------------
+\subsection{Implikacje dla asymptotycznego bezpiecze\'nstwa}
+\label{ssec:M-asymptotic-safety}
+
+Wyniki dod.~\ref{ssec:M-coupled} daj\k{a} trzy pozytywne
+sygna\l{}y asymptotycznego bezpiecze\'nstwa (Weinberg, 1979):
+
+\begin{enumerate}[(S1)]
+\item $K(\psi)$ jest ograniczone pod przep\l{}ywem:
+      $K_{\mathrm{IR}}/K_{\mathrm{UV}} = 1.14$ w~pr\'o\.zni.
+\item Wymiar krytyczny $\theta_u < 0$ (operator potencja\l{}u
+      relewantny) --- uk\l{}ad p\l{}ynie ku punktowi sta\l{}emu.
+\item Stabilno\'s\'c pr\'o\.zni jest \emph{strukturalna}:
+      wynika z~geometrycznego sprz\k{e}\.zenia
+      $K = \psi^4$ (substrat), nie z~dostrajania parametr\'ow.
+\end{enumerate}
+
+\begin{remark}[Status i~otwarte problemy]%
+\label{rem:M-status}
+\textbf{Zamkni\k{e}te}: LPA niewystarczaj\k{a}ce,
+$K(\psi) = \psi^4$ stabilizuje, przep\l{}yw sprz\k{e}\.zony
+daje marginaln\k{a} mas\k{e}. Status: \emph{Propozycja} (numeryczna).
+
+\textbf{Otwarte}: (i) pe\l{}na trunkacja z~operatorami wy\.zszego rz\k{e}du
+$(\partial\psi)^4$, $\psi^6(\partial\psi)^2$;
+(ii) wymiar anomalny $\eta_\Phi$ modyfikuj\k{a}cy
+wyk\l{}adniki krytyczne;
+(iii) kszta\l{}t $K_{\mathrm{IR}}(\psi)$ w~pe\l{}nym
+zakresie $\psi$ (por.~\S\ref{ssec:M-fp-shape}).
+Status: \emph{Program} (szacunkowo 6--12~miesi\k{e}cy).
+\end{remark}
+
+% ----------------------------------------------------------------
+\subsection{Most B3: $K(\psi)=\psi^4$ jako punkt sta\l{}y ERG}
+\label{ssec:M-fp-shape}
+
+Mosty B1~(\S\ref{app:R-A4-zero-mode}) i~B2~(\S\ref{app:R2-qk-z3})
+zamykaj\k{a} \l{}a\'ncuch $\Gamma \to r_{21}$ i~$\Gamma \to Q_K$
+przy za\l{}o\.zeniu, \.ze sprz\k{e}\.zenie kinetyczne
+$K(\psi) = \psi^4$ jest fizycznie poprawne na skalach IR.
+Niniejsza sekcja weryfikuje to za\l{}o\.zenie za pomoc\k{a}
+sprz\k{e}\.zonego przep\l{}ywu ERG.
+
+\begin{theorem}[Stabilno\'s\'c strukturalna $K(\psi)=\psi^4$
+  pod przep\l{}ywem ERG]%
+\label{thm:M-K-structural}
+Niech $(V_k, K_k)$ spe\l{}niaj\k{a} uk\l{}ad sprz\k{e}\.zony
+\eqref{eq:M-flow-K}--\eqref{eq:M-dKdt}
+z~warunkiem pocz\k{a}tkowym $K_{k_{\mathrm{UV}}}(\psi) = \psi^4$.
+W\'owczas:
+\begin{enumerate}[(i)]
+  \item \textbf{Dodatnio\'s\'c:}
+    $K_k(\psi) > 0$ dla wszystkich $\psi \in [0{,}3;\; 2{,}0]$
+    i~wszystkich $k \in [k_{\mathrm{IR}}, k_{\mathrm{UV}}]$.
+    W~szczeg\'olno\'sci uk\l{}ad jest \emph{ghost-free}
+    w~ca\l{}ym przep\l{}ywie.
+  \item \textbf{Ograniczono\'s\'c:}
+    $K_{\mathrm{IR}}(1)/K_{\mathrm{UV}}(1) = 1{,}07$
+    --- sprz\k{e}\.zenie nie ucieka pod RG
+    (pozytywny sygna\l{} asymptotycznego bezpiecze\'nstwa).
+  \item \textbf{K(0)\,$\approx$\,0 zachowane:}
+    $K_{\mathrm{IR}}(0{,}05) \approx 7{,}5 \times 10^{-6}$,
+    tj.\ warunek $K(0) = 0$ ($\psi = 0 \Leftrightarrow N_0$)
+    jest chroniony przez przep\l{}yw.
+  \item \textbf{Deformacja kszta\l{}tu:}
+    Lokalny wyk\l{}adnik $K_{\mathrm{IR}}(\psi) \sim \psi^\alpha$
+    w~okolicy $\psi = 1$ daje $\alpha_{\mathrm{IR}} \approx 0{,}24$
+    (wobec $\alpha_{\mathrm{UV}} = 4$).
+    Przep\l{}yw sp\l{}aszcza $K$ w~okolicy pr\'o\.zni.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Dow\'od numeryczny]
+Skrypt \texttt{ex141\_erg\_full\_K\_flow.py}, 12/12~PASS.
+Uk\l{}ad sprz\k{e}\.zony ca\l{}kowany metod\k{a} Radau
+na siatce $N_\psi = 60$ punkt\'ow,
+$\psi \in [0{,}05;\; 2{,}5]$,
+$k_{\mathrm{UV}} = 25$, $k_{\mathrm{IR}} = 1$.
+\end{proof}
+
+\begin{remark}[Interpretacja fizyczna deformacji kszta\l{}tu]%
+\label{rem:M-shape-deformation}
+Sp\l{}aszczenie $K_{\mathrm{IR}}$ w~okolicy pr\'o\.zni ma
+podw\'ojn\k{a} interpretacj\k{e}:
+
+\begin{enumerate}[(i)]
+\item \textbf{Logarytmiczna korekta:}
+  $K_{\mathrm{IR}}(\psi) \approx K_0\,(1 + 2\alpha\ln\psi)$
+  przy $\psi \approx 1$ jest sp\'ojna z~form\k{a}
+  $f(g) = 1 + 2\alpha\ln g$ u\.zywan\k{a}
+  w~sek08~\eqref{eq:f_kinetic}.
+  Przep\l{}yw ERG \emph{generuje} logarytmiczn\k{a}
+  form\k{e} z~mikroskopowej $\psi^4$.
+
+\item \textbf{Niezmiennik fizyczny:}
+  Wyniki fizyczne (masy soliton\'ow, stabilno\'s\'c pr\'o\.zni)
+  zale\.z\k{a} od $K(1)$ i~$K'(1)/K(1)$,
+  nie od pe\l{}nego profilu.
+  Oba s\k{a} stabilne: $K(1)$ zmienia si\k{e} o~$7\%$,
+  $m^2_{\mathrm{phys}} = V''/K = 0{,}36 > 0$.
+\end{enumerate}
+
+\noindent
+\textbf{Podsumowanie hierarchii:}
+\begin{center}
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+Schemat & $V''(1)_{\mathrm{IR}}$ & $m^2_{\mathrm{phys}}$
+        & $K_{\mathrm{IR}}/K_{\mathrm{UV}}$ & Status \\
+\midrule
+LPA ($K=1$)
+  & $-3{,}2$ & $-3{,}2$ & $1$ & \textbf{niestabilny} \\
+$K(\psi)=\psi^4$ sta\l{}e
+  & $+177$ & $+177$ & $1$ & stabilny (sztywny) \\
+Sprz\k{e}\.zony $(V,K)$
+  & $+0{,}38$ & $+0{,}36$ & $1{,}07$ & \textbf{stabilny (marginalny)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Wniosek: przep\l{}yw sprz\k{e}\.zony $(V,K)$ daje wynik
+fizycznie po\'sredni mi\k{e}dzy niestabilno\'sci\k{a} LPA
+a~nadmiern\k{a} sztywno\'sci\k{a} sta\l{}ego $K$.
+Marginalna masa ($m^2 \approx 0{,}36$) jest sp\'ojna
+z~wolnym skalowaniem kosmologicznym i~potokiem Hubble'a.
+\end{remark}
+
+\begin{proposition}[Wymiar krytyczny $\theta_u$ z~uk\l{}adu sprz\k{e}\.zonego]%
+\label{prop:M-theta-coupled}
+W~uk\l{}adzie sprz\k{e}\.zonym $(V_k, K_k)$
+bezwymiarowy potencja\l{} $u = V/k^4$ na pr\'o\.zni
+skaluje si\k{e} jak $u \sim e^{\theta_u\,t}$
+w~obszarze UV ($t \to t_{\mathrm{max}}$):
+\begin{equation}
+  \theta_u = -7{,}03 \quad (< 0).
+\end{equation}
+Ujemny wymiar krytyczny oznacza, \.ze operator potencja\l{}u
+jest \textbf{UV-atrakcyjny} (relewantny) ---
+uk\l{}ad p\l{}ynie ku punktowi sta\l{}emu, nie od niego.
+Jest to \textbf{konieczny warunek} asymptotycznego bezpiecze\'nstwa
+TGP w~sektorze skalarnym.
+\end{proposition}

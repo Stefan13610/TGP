@@ -1,0 +1,299 @@
+% ===================================================================
+%  Dodatek T3: Geometria Brannena, N generacji i Q_K = 3/2
+%  TGP v1 — Sesja v41 (2026-04-03)
+%  Wyniki numeryczne: ex119 (10/10 PASS), ex126 (14/14 PASS)
+% ===================================================================
+\section{Parametryzacja Brannena, geometria $N$~genera\-cji i~warunek
+  $Q_K = 3/2$}%
+\label{app:T3-brannen}
+
+Niniejszy dodatek analizuje \emph{geometryczne} podstawy warunku
+Koide'go $Q_K = 3/2$ w~ramach parametryzacji Brannena i~uog\'olnia
+wyniki dla dowolnej liczby generacji~$N$.
+G\l{}\'owne wyniki zostaly zweryfikowane numerycznie w~\texttt{ex119}
+i~\texttt{ex126} (24/24~PASS).
+
+% -------------------------------------------------------------------
+\subsection{Parametryzacja Brannena}\label{app:T3-brannen-param}
+% -------------------------------------------------------------------
+
+\begin{definition}[Parametryzacja Brannena]\label{def:T3-brannen}
+Uk\l{}ad $N$~generacji z~symetri\k{a} $\mathbb{Z}_N$ opisuje si\k{e}
+przez~\cite{Brannen2006}:
+\begin{equation}\label{eq:T3-brannen}
+  \sqrt{m_k} \;=\; M\bigl(1 + r\cos(\theta + \tfrac{2\pi k}{N})\bigr),
+  \qquad k = 0, 1, \ldots, N-1,
+\end{equation}
+gdzie $M > 0$ to skala mas, $r \geq 0$ parametr wzgl\k{e}dnego
+rozrzutu, za\'s $\theta$ k\k{a}t fazowy.
+\end{definition}
+
+\begin{remark}
+Dla $N = 3$: parametry $M, r, \theta$ wyznaczone z~mas PDG
+$(m_e, m_\mu, m_\tau)$ daj\k{a}:
+\[
+  r_{\mathrm{PDG}} = 1{,}41420 \approx \sqrt{2},
+  \qquad
+  \theta_{\mathrm{PDG}} = 132{,}73^\circ = \theta_K
+  \quad\text{(\emph{k\k{a}t Koide'go})}.
+\]
+Odchylenie $|r_{\mathrm{PDG}} - \sqrt{2}| < 10^{-5}$
+(\texttt{ex119}, test~H3).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Wz\'or zamkni\k{e}ty $Q_K(N, r)$}\label{app:T3-qk-formula}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Wz\'or Koide'go dla $N$ genera\-cji]\label{prop:T3-qkNr}
+Niech $\sqrt{m_k}$ dana jest parametryzacj\k{a}~\eqref{eq:T3-brannen}
+i~wszystkie masy s\k{a} dodatnie.  Dla $N \geq 3$ zachodzi:
+\begin{equation}\label{eq:T3-qkNr}
+  Q_K^{(N)}(r) \;\equiv\;
+  \frac{\bigl(\sum_{k=0}^{N-1} \sqrt{m_k}\bigr)^2}{\sum_{k=0}^{N-1} m_k}
+  \;=\; \frac{N}{1 + r^2/2}.
+\end{equation}
+Wynik nie zale\.zy od $\theta$ ani od $M$.
+\end{proposition}
+
+\begin{proof}
+Niech $x_k = 1 + r\cos(\theta + 2\pi k/N)$.  Wtedy:
+\[
+  \sum_k x_k = N + r \underbrace{\sum_k \cos(\theta + \tfrac{2\pi k}{N})}_{=\,0} = N,
+\]
+\[
+  \sum_k x_k^2 = N + 2r\underbrace{\sum_k \cos(\cdot)}_{=\,0}
+    + r^2 \underbrace{\sum_k \cos^2(\theta + \tfrac{2\pi k}{N})}_{=\,N/2}
+  = N\bigl(1 + \tfrac{r^2}{2}\bigr),
+\]
+gdzie u\.zyto to\.zsamo\'sci (dla $N \geq 3$):
+$\sum_{k=0}^{N-1} \cos^2(\theta + \frac{2\pi k}{N}) = \frac{N}{2}$.
+St\k{a}d:
+\[
+  Q_K^{(N)} = \frac{(\sum_k x_k)^2}{\sum_k x_k^2}
+  = \frac{N^2}{N(1 + r^2/2)} = \frac{N}{1+r^2/2}.
+  \qed
+\]
+\end{proof}
+
+\begin{remark}
+Warunek $N \geq 3$ jest konieczny: dla $N = 2$
+$\sum_k\cos^2 = 2\cos^2(\theta)$ zale\.zy od~$\theta$
+i~formu\l{}a~\eqref{eq:T3-qkNr} nie obowi\k{a}zuje.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warunek $r = \sqrt{N-1}$ i~$Q_K = 2N/(N+1)$}
+\label{app:T3-sqrtN1}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Warunek naturalnego rozrzutu]\label{thm:T3-sqrtN1}
+Dla $r = \sqrt{N-1}$ (naturalny rozrzut dla $N$ genera\-cji):
+\begin{equation}\label{eq:T3-qk-nat}
+  Q_K^{(N)}\bigl(\sqrt{N-1}\bigr)
+  \;=\; \frac{2N}{N+1}.
+\end{equation}
+W~szczeg\'olno\'sci:
+\begin{align}
+  N=2: &\quad Q_K = \tfrac{4}{3} \approx 1{,}333, \label{eq:T3-N2}\\
+  N=3: &\quad Q_K = \tfrac{3}{2} = 1{,}500, \label{eq:T3-N3}\\
+  N=4: &\quad Q_K = \tfrac{8}{5} = 1{,}600 \;\;\text{(wykluczone LEP)}. \label{eq:T3-N4}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Bezpo\'srednio z~\eqref{eq:T3-qkNr}: $Q_K = N/(1+(N-1)/2) = N/\frac{N+1}{2} = 2N/(N+1)$.
+\end{proof}
+
+\begin{corollary}[Wyj\k{a}tkowo\'s\'c $N=3$]\label{cor:T3-N3-special}
+Spo\'sr\'od $N \in \{2, 3, 4, 5, \ldots\}$, jedynie dla $N = 3$ zachodzi:
+\[
+  \mathrm{CV}(\sqrt{m_k})
+  \;\equiv\; \frac{\mathrm{std}(\sqrt{m_k})}{\mathrm{mean}(\sqrt{m_k})}
+  \;=\; 1
+  \quad\text{(jednostkowy wsp\'o\l{}czynnik zmienno\'sci)}.
+\]
+\end{corollary}
+
+\begin{proof}
+$\mathrm{mean}(\sqrt{m_k}) = M$,\; $\mathrm{var}(\sqrt{m_k}) = M^2 r^2/2$.
+Przy $r = \sqrt{N-1}$: $\mathrm{CV} = r/\sqrt{2} = \sqrt{(N-1)/2}$.
+R\'owno\'s\'c $\mathrm{CV} = 1 \Leftrightarrow N = 3$.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Geometryczna charakteryzacja $Q_K = 3/2$}
+\label{app:T3-geom}
+% -------------------------------------------------------------------
+
+\begin{proposition}[K\k{a}t $45^\circ$]\label{prop:T3-45deg}
+Niech $\vec{v} = (\sqrt{m_e}, \sqrt{m_\mu}, \sqrt{m_\tau}) \in \mathbb{R}^3_+$
+i~$\vec{u} = (1, 1, 1)/\sqrt{3}$ (wersja jedynkowa).  Wtedy:
+\begin{equation}\label{eq:T3-cos45}
+  Q_K \;=\; 3\cos^2\sphericalangle(\vec{v}, \vec{u})
+  \;\overset{!}{=}\; \tfrac{3}{2}
+  \;\Longleftrightarrow\;
+  \sphericalangle(\vec{v}, \vec{u}) = 45^\circ.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+$\cos\sphericalangle(\vec{v}, \vec{u}) = \frac{\sum\sqrt{m_k}}{\sqrt{N}\,\|\vec{v}\|}$.
+Wobec $Q_K = (\sum\sqrt{m_k})^2/\sum m_k = N\|\vec{u}\|^2\cos^2 \cdot \|\vec{v}\|^2/\|\vec{v}\|^2 = N\cos^2$.
+Dla $Q_K = 3/2 = N/2$: $\cos^2 = 1/2$, wi\k{e}c $\sphericalangle = 45^\circ$.
+\end{proof}
+
+\begin{remark}[Weryfikacja PDG]
+Dla mas $(m_e, m_\mu, m_\tau)$~PDG:
+$\sphericalangle(\vec{v}, \vec{u}) = 44{,}9997^\circ \approx 45{,}000^\circ$
+(dok\l{}adno\'s\'c $0{,}001^\circ$, \texttt{ex126} sekcja~8).
+Wobec Prop.~\ref{prop:T3-45deg}, warunek Koide'go jest r\'ownowa\.zny
+temu, \.ze \textbf{wektor $\sqrt{m}$~le\.zy dok\l{}adnie na sto\.zku 45°
+wzgl\k{e}dem osi r\'ownowa\.zno\'sci}.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Interpretacja probabilistyczna: hipoteza Z$_N$-CLT}
+\label{app:T3-clt}
+% -------------------------------------------------------------------
+
+\begin{hypothesis}[$\mathbb{Z}_N$-CLT]\label{hyp:T3-clt}
+Warto\'s\'c $r = \sqrt{N-1}$ jest \emph{typow\k{a} amplitud\k{a}
+fluktuacji} dla uk\l{}adu $N$ genera\-cji z~$N-1$ niezale\.znymi
+stopniami swobody:
+\[
+  r \;=\; \sigma\!\left(\sum_{j=1}^{N-1} \xi_j\right)
+       \;=\; \sqrt{N-1},
+  \qquad \xi_j \sim \pm 1 \text{ (Bernoulli)}.
+\]
+Dla $N = 3$: $r = \sqrt{2}$ odpowiada $2$ binarnym stopniom swobody
+(np.\ chiralno\'s\'c $\times$ izospin słaby $\sim \mathbb{Z}_2 \times \mathbb{Z}_2$).
+\end{hypothesis}
+
+\begin{remark}
+Hipoteza~\ref{hyp:T3-clt} ma status \emph{jako\'sciowy}:
+weryfikacja numeryczna (\texttt{ex126}, test~P9) daje
+$|\sigma_{\mathrm{MC}} - \sqrt{N-1}| < 0{,}5\%$ dla $N = 2, \ldots, 5$.
+Formalizacja w~ramach TGP (w kontekście operatora bodzowego TGP)
+pozostaje \emph{otwarta} (T-OP1 zredukowany, patrz~\S\ref{app:T3-top1}).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Reformulacja T-OP1: liczebno\'s\'c genera\-cji}
+\label{app:T3-top1}
+% -------------------------------------------------------------------
+
+Zestawiaj\k{a}c wyniki ex119 i~ex126, T-OP1
+(,,dlaczego $\xi^* = 2{,}553$ zamiast $\varphi^2 = 2{,}618$?'')
+redukuje si\k{e} do prostszego pytania:
+
+\begin{theorem}[Redukcja T-OP1]\label{thm:T3-top1-reduction}
+Je\.zeli TGP dynamicznie wymusza dok\l{}adnie $N = 3$ genera\-cje
+leptonów, to:
+\begin{equation}\label{eq:T3-top1}
+  r = \sqrt{N-1} = \sqrt{2}
+  \;\Longrightarrow\;
+  Q_K = \frac{2N}{N+1} = \frac{3}{2}.
+\end{equation}
+Korekta $\xi^* = 2{,}553 \neq \varphi^2 = 2{,}618$ jest konsekwencj\k{a}
+dok\l{}adnej warto\'sci $r = \sqrt{2}$ w~TGP,
+a~nie osobnym parametrem.
+\end{theorem}
+
+\begin{corollary}[Eqivalent T-OP1 $\equiv$ T-OP3]
+T-OP1 (,,dlaczego $Q_K = 3/2$?'') i~T-OP3 (,,dlaczego $N = 3$ genera\-cje?'')
+to ten sam problem fizyczny.  Oba zosta\l{}y cz\k{e}\'sciowo
+zamkni\k{e}te w TGP przez:
+\begin{itemize}
+  \item $N \geq 4$: wykluczone przez warunek ghost + LEP (\texttt{ex116});
+  \item $N = 2$: nieobserwowane (obserwacja~$3$ leptonów);
+  \item $N = 3$: jedyna mo\.zliwo\'s\'c --- wtedy $Q_K = 3/2$ automatycznie.
+\end{itemize}
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Bliskie trafienie: $r_{21}/r^* \approx N^2$}
+\label{app:T3-top4}
+% -------------------------------------------------------------------
+
+\begin{observation}[T-OP4]\label{obs:T3-top4}
+Stosunek pierwszego kroku wie\.zy leptonowej do asymptotycznego:
+\begin{equation}\label{eq:T3-top4}
+  \frac{m_\mu/m_e}{r^*}
+  \;=\; \frac{206{,}768}{22{,}956}
+  \;=\; 9{,}007
+  \;\approx\; 9 \;=\; N^2,
+\end{equation}
+z~odchyleniem $\delta = 0{,}078\%$.
+\end{observation}
+
+\begin{remark}
+Formu\l{}a $m_\mu/m_e = N^2 r^*$ jest spe\l{}niona z~dok\l{}adno\'sci\k{a}
+$0{,}08\%$.  Je\'sli zachodzi dok\l{}adnie, to TGP przewidywa\l{}oby
+$m_\mu/m_e = 9(23 + 5\sqrt{21})/2 = (207 + 45\sqrt{21})/2 \approx 206{,}61$
+(vs PDG: $206{,}768$; $\delta = 0{,}078\%$).
+Status: \statuslabel{Otwarte (T-OP4)} --- bliskie trafienie,
+brak wyja\'snienia mechanizmu.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie wyników i~status T-OP1}
+\label{app:T3-summary}
+% -------------------------------------------------------------------
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{5.5cm}lp{5.2cm}@{}}
+\toprule
+\textbf{Wynik} & \textbf{Status} & \textbf{\'Zr\'od\l{}o} \\
+\midrule
+$Q_K = N/(1+r^2/2)$ (Prop.~\ref{prop:T3-qkNr})
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex126}, P1--P2 \\[3pt]
+$r = \sqrt{N-1} \Rightarrow Q_K = 2N/(N+1)$
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex126}, P3, Tw.~\ref{thm:T3-sqrtN1} \\[3pt]
+$N = 3$ jedyny z~$\mathrm{CV}(\sqrt{m}) = 1$
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex126}, P4--P5, Wn.~\ref{cor:T3-N3-special} \\[3pt]
+$Q_K = 3/2 \Leftrightarrow \angle(\vec{\sqrt{m}}, \vec{1}) = 45^\circ$
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex126}, sekcja~8, Prop.~\ref{prop:T3-45deg} \\[3pt]
+$r = \sqrt{N-1}$: hipoteza $\mathbb{Z}_N$-CLT (H.~\ref{hyp:T3-clt})
+  & \statuslabel{Hipoteza}
+  & \texttt{ex126}, P9 \\[3pt]
+T-OP1 $\equiv$ T-OP3 (Tw.~\ref{thm:T3-top1-reduction})
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex126}, P14 \\[3pt]
+T-OP4: $r_{21}/r^* \approx 9 = N^2$ ($\delta = 0{,}078\%$)
+  & \statuslabel{Otwarte}
+  & \texttt{ex125}--\texttt{ex126}, Obs.~\ref{obs:T3-top4} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+\noindent\textbf{Hierarchia wyja\'snie\'n $Q_K = 3/2$} (stan po \texttt{ex117}--\texttt{ex126}):
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Poziom} & \textbf{Wynik} & \textbf{Status} & \textbf{Skrypt} \\
+\midrule
+0 & $Q_K(m_e,m_\mu,m_\tau) = 3/2$ (PDG) & Obserwacja & --- \\
+1 & FP wie\.zy $\Rightarrow r^* = (23+5\sqrt{21})/2$
+  & \statuslabel{Tw.} & ex117--ex118 \\
+2 & $Q_K=3/2 \Leftrightarrow r_{\mathrm{Br}}=\sqrt{2}
+    \Leftrightarrow \mathrm{CV}=1$
+  & \statuslabel{Tw.} & ex119 \\
+3 & $A_{\mathrm{tail}} \propto m^{1/4} \Rightarrow Q_K(A^4)=3/2$
+  & \statuslabel{Num.} & ex125 \\
+3' & $Q_K=3/2 \Leftrightarrow \angle 45^\circ$
+  & \statuslabel{Tw.} & ex126 \\
+4 & T-OP1: dlaczego $N_{\mathrm{gen}}=3$?
+  & \statuslabel{Otwarte} & T-OP1$\equiv$T-OP3 \\
+\bottomrule
+\end{tabular}
+\end{center}

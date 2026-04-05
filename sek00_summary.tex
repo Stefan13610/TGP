@@ -1,0 +1,184 @@
+% ============================================================
+% §0  Streszczenie wykonawcze — rdzeń TGP
+% ============================================================
+% Cel: recenzent po 4 stronach wie CO jest teoria, JAK dziala,
+% JAKIE daje predykcje, i GDZIE szukac szczegolow.
+% ============================================================
+\section*{Streszczenie wykonawcze}\label{sec:executive-summary}
+\addcontentsline{toc}{section}{Streszczenie wykonawcze}
+
+\noindent
+Poni\.zsza sekcja stanowi zwi\k{e}z\l{}y przegl\k{a}d teorii:
+aksjomaty, dzia\l{}anie, g\l{}\'owne r\'ownania, kompletna tabela
+predykcji z~konfrontacj\k{a} z~danymi, oraz mapa nawigacji po
+manuskrypcie. Szczeg\'o\l{}owe wyprowadzenia w~odpowiednich sekcjach.
+
+% ----------------------------------------------------------
+\subsection*{Aksjomaty TGP (A1--A8)}
+
+\begin{enumerate}[label=\textbf{A\arabic*}.,leftmargin=2em]
+\item \textbf{Przestrze\'n z~materii.}
+  Przestrze\'n nie istnieje niezale\.znie; jest generowana
+  przez obecno\'s\'c masy/energii (\S\ref{sec:ontologia}).
+\item \textbf{Nico\'s\'c $\Nzero$.}
+  Stan bez materii i~pola: $\Phi = 0$, brak przestrzeni (\S\ref{ssec:N0}).
+\item \textbf{Zasada zerowej sumy.}
+  Zamkni\k{e}ty Wszech\'swiat w~ca\l{}o\'sci: $\sum \Phi = 0$ (\S\ref{sec:ontologia}).
+\item \textbf{Niestabilno\'s\'c $\Nzero$.}
+  Stan $\Phi = 0$ jest niestabilny --- Wielki Wybuch jako
+  przej\'scie fazowe (\S\ref{subsec:N0_instability}, dod.~\ref{app:wielki-wybuch}).
+\item \textbf{R\'ownanie pola.}
+  Ka\.zda cz\k{a}stka wytwarza lokalny wk\l{}ad:
+  $\mathcal{D}[\Phi_a] = q_a \cdot \rho_a$ (\S\ref{sec:pole}).
+\item \textbf{Pr\k{e}dko\'s\'c \'swiat\l{}a.}
+  $c(\Phi) = c_0 (\PhiZero/\Phi)^{1/2}$ (\S\ref{sec:stale}).
+\item \textbf{Emergentna sta\l{}a Plancka.}
+  $\hbar(\Phi) = \hbar_0 (\PhiZero/\Phi)^{1/2}$ (\S\ref{sec:stale}).
+\item \textbf{Sta\l{}a grawitacyjna.}
+  $G(\Phi) = G_0 \cdot \PhiZero/\Phi$ (\S\ref{sec:stale}).
+\end{enumerate}
+\noindent
+Wyk\l{}adniki $(a, b, g) = (1/2,\, 1/2,\, 1)$ s\k{a}
+\emph{jedynym} rozwi\k{a}zaniem
+zachowuj\k{a}cym sta\l{}o\'s\'c d\l{}ugo\'sci Plancka
+$\ell_P = \sqrt{\hbar G/c^3} = \mathrm{const}$
+(tw.~\ref{thm:exponents}).
+
+% ----------------------------------------------------------
+\subsection*{Dzia\l{}anie zunifikowane}
+
+Dzia\l{}anie TGP (\S\ref{ssec:unified-action}, hipoteza~\ref{hyp:unified-action}):
+\begin{equation}\label{eq:S-TGP-summary}
+S_{\mathrm{TGP}}[\Phi,\psi_m]
+= \int d^4x\;\sqrt{-g_{\mathrm{eff}}}\;\Bigl[
+  \underbrace{\tfrac{1}{2}\,K(\varphi)\,
+  (\partial\varphi)^2 - V(\varphi)}_{\text{sektor pola}}
+  \;-\;
+  \underbrace{\tfrac{q}{\PhiZero}\,\varphi\,\rho}_{\text{sprz\k{e}\.zenie z~materi\k{a}}}
+\Bigr]
+\end{equation}
+gdzie $\varphi = \Phi/\PhiZero$,\;
+$K(\varphi) = K_{\mathrm{geo}}\,\varphi^4$,\;
+$V(\varphi) = \frac{\gamma}{3}\varphi^3 - \frac{\gamma}{4}\varphi^4$
+(warunek $\beta = \gamma$, tw.~\ref{thm:beta_gamma}).
+Metryka efektywna:
+\begin{equation}
+ds^2 = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j
+\end{equation}
+
+% ----------------------------------------------------------
+\subsection*{G\l{}\'owne r\'ownania pola}
+
+\noindent\textbf{R\'ownanie stacjonarne} (soliton, $d=3$):
+\begin{equation}
+g^2 g'' + g(g')^2 + \frac{2}{r}\,g^2 g' = g^2(1 - g)
+\end{equation}
+z~warunkiem: $g(0) = g_0$, $g'(0) = 0$, $g(\infty) \to 1$.
+
+\noindent\textbf{Granica s\l{}abego pola} (PPN, uwaga~\ref{rem:PPN-Will}):
+$\gamma_{\mathrm{PPN}} = 1$,\;
+$\beta_{\mathrm{PPN}} = 1$
+--- zgodne z~GR.
+
+\noindent\textbf{Fale grawitacyjne} (\S\ref{ssec:tensor-substrate}, dod.~\ref{app:ringdown}):
+$c_{\mathrm{GW}} = c_0$ dok\l{}adnie na tle kosmologicznym
+(stw.~\ref{prop:cT}); zgodne z~GW170817.
+
+\noindent\textbf{Kosmologia} (FLRW, \S\ref{sssec:cosmo-complete}):
+\begin{equation}
+H^2(a,\varphi) = \frac{1}{\varphi(a)}\,H^2_{\Lambda\mathrm{CDM}}(a),
+\qquad
+\kappa = \frac{3}{4\PhiZero} \approx 0{,}030
+\end{equation}
+
+% ----------------------------------------------------------
+\subsection*{Sektor cz\k{a}steczkowy --- predykcje ilo\'sciowe}
+
+TGP przewiduje masy lepton\'ow i~sta\l{}\k{a} sprz\k{e}\.zenia
+silnego z~\textbf{jednego parametru substratowego} $g_0^e = 0{,}869$,
+wyznaczonego przez ODE solitonu i~z\l{}ot\k{a} proporcj\k{e}
+$\varphi = (1+\sqrt{5})/2$:
+
+\begin{itemize}[nosep]
+\item \textbf{Mechanizm $\varphi$-FP}: $g_0^\mu = \varphi \cdot g_0^e$
+  \;\;$\Rightarrow$\;\; $r_{21} = [A_{\rm tail}(\varphi g_0)/A_{\rm tail}(g_0)]^4 = 206{,}77$
+  (PDG: $206{,}768$; odch.\ $0{,}001\%$).
+\item \textbf{Koide} ($K = 2/3$): zamyka $m_\tau$ --- siedem predykcji mas z~precyzj\k{a} $< 0{,}1\%$.
+\item \textbf{Stala sprz\k{e}\.zenia silnego}:
+  $\alpha_s(M_Z) = N_c^3\, g_0^e/(8\,N_f^2) = 0{,}1174$
+  (PDG: $0{,}1179 \pm 0{,}0009$; $0{,}6\sigma$).
+\item \textbf{Discrete running}:
+  $\alpha_s(m_\tau) = 3\,g_0^e/8 = 0{,}326$
+  (PDG: $0{,}330 \pm 0{,}014$; $0{,}3\sigma$).
+\item \textbf{Ratio (zero parametr\'ow)}:
+  $\alpha_s(m_\tau)/\alpha_s(M_Z) = (5/3)^2 = 25/9 = 2{,}778$
+  (PDG: $2{,}799 \pm 0{,}121$; $0{,}18\sigma$).
+\end{itemize}
+
+% ----------------------------------------------------------
+\subsection*{Kompletna tabela predykcji}
+
+\begin{center}\small
+\begin{tabular}{@{}rlllrl@{}}
+\toprule
+\textbf{\#} & \textbf{Obserwabla} & \textbf{TGP} & \textbf{PDG/Planck}
+  & \textbf{$\sigma$} & \textbf{Metoda} \\
+\midrule
+1 & $r_{21} = m_\mu/m_e$ & $206{,}77$ & $206{,}768$ & $< 0{,}01$ & $\varphi$-FP (kalibr.) \\
+2 & $r_{31} = m_\tau/m_e$ & $3477{,}2$ & $3477{,}2$ & $< 0{,}01$ & $\varphi$-FP + Koide \\
+3 & $r_{32} = m_\tau/m_\mu$ & $16{,}818$ & $16{,}817$ & $< 0{,}1$ & $\varphi$-FP + Koide \\
+4 & $m_\mu$ (MeV) & $105{,}66$ & $105{,}658$ & $0{,}02$ & $\varphi$-FP \\
+5 & $m_\tau$ (MeV) & $1776{,}9$ & $1776{,}86$ & $0{,}02$ & $\varphi$-FP + Koide \\
+6 & $K_{\mathrm{lepton}} = 2/3$ & $0{,}66666$ & $0{,}66666$ & $< 0{,}01$ & Koide \\
+7 & $n_s$ & $0{,}965$ & $0{,}9649 \pm 0{,}004$ & $0{,}03$ & Inflacja TGP \\
+8 & $r$ (tensor-to-scalar) & $0{,}003$ & $< 0{,}036$ & OK & Inflacja TGP \\
+9 & $\kappa$ (BBN/CMB/LLR) & $0{,}030$ & zgodne & OK & $3/(4\PhiZero)$ \\
+10 & $\alpha_s(M_Z)$ & $0{,}1174$ & $0{,}1179 \pm 0{,}0009$ & $0{,}6$ & $N_c^3 g_0^e/(8 N_f^2)$ \\
+11 & $\alpha_s(m_\tau)$ & $0{,}326$ & $0{,}330 \pm 0{,}014$ & $0{,}3$ & Discrete running \\
+12 & $\alpha_s(\tau)/\alpha_s(Z)$ & $2{,}778$ & $2{,}799 \pm 0{,}121$ & $0{,}18$ & $(5/3)^2$ (0 param.) \\
+13 & $c_{\mathrm{GW}}/c_0$ & $1$ & $|1 - c_T/c| < 10^{-15}$ & OK & stw.~\ref{prop:cT} \\
+\midrule
+\multicolumn{6}{l}{\textbf{13/13 PASS} ~|~ wolne parametry: 1 ($g_0^e$) lub 0 (je\'sli $g_0^e$ z~$r_{21}$)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ----------------------------------------------------------
+\subsection*{Mapa nawigacji}
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Temat} & \textbf{Sekcja} & \textbf{Status} \\
+\midrule
+Ontologia i~aksjomaty & \S\ref{sec:ontologia}--\S\ref{sec:pole} & Aksjomaty A1--A5 \\
+Dynamiczne sta\l{}e ($c, \hbar, G$) & \S\ref{sec:stale} & Aksjomaty A6--A8, tw.~\ref{thm:exponents} \\
+Ciemna energia i~kosmologia & \S\ref{sec:ciemna}, \S\ref{sssec:cosmo-data-confrontation} & 9/9 PASS (Planck/DESI) \\
+Czarne dziury (stan zamro\.zony) & \S\ref{sec:czarne}, dod.~\ref{app:ringdown} & Predykcja + QNM \\
+Tabela predykcji i~falsyfikowalno\'s\'c & \S\ref{sec:predykcje} & 13/13 PASS \\
+Dzia\l{}anie zunifikowane & \S\ref{ssec:unified-action} & Propozycja \\
+Duchy i~stabilno\'s\'c & \S\ref{sec:ghost-resolution} & Zamkni\k{e}te (ghost-free) \\
+Metryka z~substratu & \S\ref{ssec:metric-from-budget} & Propozycja \\
+Mapa status\'ow (tw./hip./prog.) & \S\ref{sec:status-map} & 57 twierdze\'n \\
+Sektor cechowania ($G_{\mathrm{SM}}$) & \S\ref{sec:cechowanie}, dod.~O,~U,~V & Propozycja [AN+NUM] \\
+Masy lepton\'ow ($\varphi$-FP, Koide) & Dod.~J2, T--T4 & Twierdzenie \\
+Sta\l{}a sprz\k{e}\.zenia silnego ($\alpha_s$) & Dod.~V (rem.~\ref{rem:V-alphas-alpha1}) & Propozycja \\
+Kosmologiczna ewolucja $\varphi(z)$ & Dod.~\ref{app:lancuch}, chain A15 & Twierdzenie \\
+PPN: $\gamma = \beta = 1$ & Uwaga~\ref{rem:PPN-Will} & Propozycja \\
+GW: $c_T = c_0$ & Stw.~\ref{prop:cT} & Propozycja \\
+Soczewkowanie & \S\ref{sssec:lensing} & $\equiv$ GR (stw.~\ref{prop:deflection-angle}) \\
+Perturbacje LSS & \S\ref{ssec:perturb} (tw.~\ref{thm:Geff-k}) & $\equiv \Lambda$CDM ($\alpha_{\rm eff} \sim 10^{-26}$) \\
+N-body / FDM & Uw.~\ref{rem:nbody-package}, \texttt{nbody/} & $r_c \propto M^{-1/9}$ (K18) \\
+Oscylacyjny $V_{\rm eff}$ (BH) & Dod.~\ref{app:ringdown} (uw.~\ref{rem:oscillatory-Veff}) & Predykcja \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip\noindent
+Szczeg\'o\l{}y formalne: ka\.zde twierdzenie ma jawny status
+(aksjomat/twierdzenie/propozycja/hipoteza/program)
+w~mapie status\'ow (\S\ref{sec:status-map}).
+Numeryczna weryfikacja: skrypty \texttt{ex104}--\texttt{ex186}
+w~za\l{}\k{a}czonym repozytorium.
+
+\newpage

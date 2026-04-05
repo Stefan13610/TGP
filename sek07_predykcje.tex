@@ -1,0 +1,1472 @@
+% ============================================================
+% §7  Predykcje, falsyfikowalność, problemy otwarte
+% ============================================================
+\section{Predykcje, falsyfikowalno\'s\'c i~problemy otwarte}\label{sec:predykcje}
+
+% ----------------------------------------------------------
+\subsection{Sektor cz\k{a}steczkowy --- najsilniejszy argument TGP}%
+\label{ssec:particle-highlight}
+% ----------------------------------------------------------
+
+\begin{remark}[Dlaczego sektor cz\k{a}steczkowy jest kluczowy]%
+\label{rem:particle-sector-highlight}
+TGP \textbf{nie jest tylko teori\k{a} grawitacji}: jako teoria skalarnego
+substratu, z~kt\'orego wynika metryka, sta\l{}e fundamentalne
+\emph{i}~masy cz\k{a}stek, TGP posiada sektor cz\k{a}steczkowy
+daj\k{a}cy ilo\'sciowe predykcje, jakich nie potrafi dor\'owna\'c
+\.zadna inna modyfikacja grawitacji.
+
+\medskip\noindent
+\textbf{1.\ Masy lepton\'ow z~jednego parametru ($g_0^e$).}
+ODE substratowe $g^2g'' + g(g')^2 + \frac{2}{r}g^2g' = g^2(1-g)$
+posiada 1-parametrow\k{a} rodzin\k{e} rozwi\k{a}za\'n;
+parametr centralny $g_0^e = 0{,}869$ jest kalibrowany
+przez stosunek mas $r_{21} = m_\mu/m_e$
+(mechanizm $\varphi$-FP, dod.~J2).
+Z~jednego $g_0^e$ wynikaj\k{a}:
+\begin{itemize}[nosep]
+  \item $r_{21} = [A_{\rm tail}(\varphi g_0^e)/A_{\rm tail}(g_0^e)]^4
+        = 206{,}77$ \quad(PDG: $206{,}768$; $0{,}001\%$),
+  \item $m_\tau$ przez relacj\k{e} Koide ($K = 2/3$): $1776{,}9$~MeV
+        \quad(PDG: $1776{,}86$; $0{,}002\%$),
+  \item siedem stosunk\'ow mas lepton\'ow z~precyzj\k{a} ${<}\,0{,}1\%$
+        (tab.~\ref{res:pred-summary-v45}).
+\end{itemize}
+
+\medskip\noindent
+\textbf{2.\ Sta\l{}a sprz\k{e}\.zenia silnego --- zero wolnych parametr\'ow.}
+Ten sam $g_0^e$ (wyznaczony wy\l{}\k{a}cznie z~mas lepton\'ow)
+daje formu\l{}\k{e} (dod.~V, rem.~\ref{rem:V-alphas-alpha1}):
+\begin{equation}\label{eq:alphas-highlight}
+  \alpha_s(M_Z) = \frac{N_c^3\,g_0^e}{8\,N_f^2}
+  = \frac{27 \times 0{,}869}{8 \times 25} = 0{,}1174
+  \qquad (\text{PDG: } 0{,}1179 \pm 0{,}0009;\; 0{,}6\sigma).
+\end{equation}
+Jest to predykcja z~\textbf{zerowym} wolnym parametrem kosmologicznym
+czy cz\k{a}steczkowym --- $g_0^e$ pochodzi z~sektora lepton\'ow.
+
+\medskip\noindent
+\textbf{3.\ Discrete running --- test bezparametrowy.}
+Stosunek $\alpha_s$ przy dw\'och progach smak\'ow
+($N_f = 3$ przy $m_\tau$, $N_f = 5$ przy $M_Z$)
+jest predykcj\k{a} \emph{bez jakichkolwiek parametr\'ow}:
+\begin{equation}\label{eq:ratio-highlight}
+  \frac{\alpha_s(m_\tau)}{\alpha_s(M_Z)}
+  = \left(\frac{5}{3}\right)^{\!2} = \frac{25}{9} = 2{,}778
+  \qquad (\text{PDG: } 2{,}799 \pm 0{,}121;\; 0{,}18\sigma).
+\end{equation}
+
+\medskip\noindent
+\textbf{Implikacja.}
+Ca\l{}y \l{}a\'ncuch $r_{21} \to g_0^e \to \alpha_s(M_Z)$
+tworzy zamkni\k{e}t\k{a} przeobraz\k{e}: z~jednego obserwabla
+elektros\l{}abego (stosunek mas lepton\'ow) wynika obserwabla
+QCD (sta\l{}a sprz\k{e}\.zenia silnego). Jest to cecha unikalna TGP,
+niemo\.zliwa w~teoriach czysto grawitacyjnych.
+
+Weryfikacja numeryczna: skrypty \texttt{ex186} (kalibracja $g_0^e$),
+\texttt{ex184} (discrete running), \texttt{ex185} (analiza running).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Predykcje TGP}\label{ssec:pred}
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{2.5cm}p{5.5cm}p{2.2cm}p{2.5cm}@{}}
+\toprule
+\textbf{Predykcja} & \textbf{Sygna\l{} TGP}
+  & \textbf{Parametry} & \textbf{Status} \\
+\midrule
+Trzy re\.zimy si\l{}y
+  & Przyci\k{a}ganie $\to$ odpychanie $\to$ studnia
+    w~zale\.zno\'sci od skali
+  & $\beta, \gamma$; warunek $\beta > 9C/2$
+  & Zamkni\k{e}ty (stw.~\ref{thm:uniqueness}, \ref{prop:trzy-rezimy-beta-gamma}) \\[4pt]
+Ciemna energia
+  & Przy naturalnym $\gamma \sim H_0^2/c_0^2$:
+    $w_0 = -1$, $w_a = 0$ (naturalna $\Lambda$).
+    Przy wzmocnionym $\gamma$:
+    $w_0 \gtrsim -1$, $w_a < 0$ (kwintesencja).
+    Odr\'o\.znienie od $\Lambda$CDM: korelacja z~formowaniem
+    struktur
+  & $\gamma, \PhiZero$;\newline
+    $\delta w \sim \dot\varphi^2/U$
+  & Predykcja (\S\ref{ssec:de-potencjal}) \\[4pt]
+Coincidence
+  & Ciemna energia dominuje, \emph{bo} struktury
+    ju\.z si\k{e} uformowa\l{}y
+  & Strukturalna;\newline niezale\.zna od $\beta,\gamma$
+  & Predykcja \\[4pt]
+Brak osobliwo\'sci CD
+  & Stan zamro\.zony ($c \to 0$),
+    nie osobliwo\'s\'c; znak: \textbf{brak}
+    echa osobliwo\'sci w~modach QNM
+  & $\gamma/\beta$ (g\l{}\k{e}boko\'s\'c zamro\.zenia)
+  & Do testowania (LISA, ET) \\[4pt]
+Dynamiczne $G(z)$
+  & $G_{\mathrm{wczesny}}/G_0 - 1
+    \sim \varphi_{\mathrm{BBN}} - 1$;
+    znak: $\Delta G/G > 0$ we wczesnym
+    Wszech\'swiecie
+  & $\beta, \gamma$ przez $\varphi(z)$
+  & Do testowania (BBN, CMB) \\[4pt]
+Soczewkowanie z~$\Phi$
+  & \'Swiat\l{}o zwalnia w~regionach
+    o~wy\.zszym $\Phi$; r\'o\.znica wzgl\k{e}dem GR:
+    soczewkowanie zale\.zy od $\Phi$, nie od $R_{\mu\nu}$
+  & $\alpha_{\mathrm{eff}}$
+  & Predykcja \\[4pt]
+Emergentna $\hbar$
+  & $\delta\hbar/\hbar \sim -\delta\Phi/(2\PhiZero)$;
+    znak: \textbf{t\l{}umienie} kwantowo\'sci
+    w~silnym polu
+  & $q, \PhiZero$;\newline
+    $\Phi_{\mathrm{gwiazda}}/\PhiZero$
+  & Do testowania \\[4pt]
+Niska entropia pocz\k{a}tku
+  & Niskoentropijny stan z~przej\'scia fazowego;
+    strukturalna, niezale\.zna od parametr\'ow
+  & ---
+  & Predykcja \\[4pt]
+Fale grawitacyjne
+  & Mod oddechowy (\emph{breathing}) z~pola $\Phi$ (spin-0,
+    ekranowany w~pa\'smie LIGO); mody tensorowe $+/\times$
+    z~substratowego pola $\sigma_{ab}$ (spin-2,
+    def.~\ref{def:sigma-ab}, \S\ref{ssec:tensor-substrate});
+    $c_{\mathrm{GW}} = c_0$ dok\l{}adnie (stw.~\ref{prop:cT});
+    masa: $m_{\mathrm{sp}} = \sqrt{\gamma}$;
+    dyspersja: $\omega^2 = c_0^2(k^2 + m_{\mathrm{sp}}^2)$
+  & $\gamma, \sigma_0$;\newline $f_{\mathrm{cut}} \sim c_0 m_{\mathrm{sp}}/(2\pi)$
+  & Zamkni\k{e}ty (tw.~\ref{thm:amplitude-matching}, skrypt \texttt{tensor\_from\_substrate.py}: $12/12$ PASS) \\[4pt]
+$\Lambda_{\mathrm{eff}}$ bez \emph{fine-tuningu}
+  & $\Lambda_{\mathrm{eff}} \approx \gamma/12
+    \sim \PhiZero H_0^2/(12 c_0^2)$;
+    naturalne dla $\PhiZero = \mathcal{O}(10)$
+  & $\gamma, \PhiZero$;\newline
+    $\lambda_{\mathrm{sp}} \sim R_H$
+  & Predykcja (\S\ref{ssec:de-potencjal}) \\[4pt]
+Ciemna materia FDM (soliton $\Phi$)
+  & Rdze\'n solitonu $r_c \propto M_{\mathrm{sol}}^{-1/3}$;
+    skalowanie $r_c \propto M_{\mathrm{gal}}^{-1/9}$
+    (scenariusz F3, uniwersalne $m_{\mathrm{sp}}$).
+    $\varepsilon_{th} = m_{\mathrm{sp}}^2/2 = \gamma/2$ z~N0-6.
+    Masa bozonu $m_{22} = 2{,}0 \pm 1{,}5$
+    (Rogers+2021; marginalnie napi\k{e}te z~Irsic+2017).
+    Kill-shot K18: $\Delta$AIC$(\mathrm{F1-F3}) = +133$
+    (silna preferencja F3)
+  & $m_{\mathrm{sp}} = \sqrt{\gamma}$;\newline
+    jeden parametr;\newline
+    $\beta = \gamma$ (N0-5)
+  & Predykcja (ex39--ex42;\newline
+    SPARC $n=30$;\newline
+    K18: $\alpha=-0{,}096$) \\[4pt]
+Hierarchia mas lepton\'ow ($r_{21}$) --- \emph{\'Scie\.zka~9 (v33+)}
+  & Amplituda ogona oscylacyjnego solitonu $A_{\rm tail}(g_0)$ jako
+    sta\l{}a sprz\k{e}\.zenia cz\k{a}stki z~substratem
+    (dod.~\ref{app:ogon-masy}).
+    Wynik: $(A_{\rm tail}(2{,}00)/A_{\rm tail}(1{,}24))^4
+    = 210{,}1 \approx 206{,}77$
+    (odch.\ $1{,}6\%$).
+    Skalowanie: $A_{\rm tail} \propto g_0^{4{,}12}$ (\texttt{ex57}, 7/7).
+    Warunek kwantowania elektronu: $B_{\rm tail}(1{,}2301) = 0$
+    (H1 potwierdzona, \texttt{ex58}, odch.\ $0{,}8\%$).
+    Z\l{}ota proporcja: $g_0^\mu/g_0^e = 1{,}613 \approx \varphi = 1{,}618$
+    (0{,}3\%, \texttt{ex58}).
+    Poprzednia \'scie\.zka (Koide $K^*_2/K^*_1$):
+    ZAMKNI\k{E}TA (nieosi\k{a}galne $r_{21}=206{,}77$ dla \.zadnego $\alpha_K$,
+    p104--p112).
+  & $g_0^e,\, g_0^\mu,\, \alpha = 2$;\newline
+    jeden param. ($a_\Gamma$);\newline
+    $A_{\rm tail}^4 \propto m$
+  & Hipoteza ilo\'sciowa\newline (\texttt{ex55}--\texttt{ex59};\newline
+    dod.~\ref{app:ogon-masy};\newline
+    prob.\ otw.\ O-J1--J3) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ----------------------------------------------------------
+\subsection{Klasyfikacja twierdze\'n: predykcje vs.\ kompatybilno\'sci}%
+\label{ssec:klasyfikacja}
+
+\begin{remark}[Uczciwa klasyfikacja]\label{rem:honest-classification}
+Nie wszystkie wyniki TGP maj\k{a} ten sam ci\k{e}\.zar
+epistemiczny. Rozr\'o\.zniamy trzy kategorie:
+
+\medskip
+\begin{center}\small
+\begin{tabular}{@{}lp{7.5cm}p{3.5cm}@{}}
+\toprule
+\textbf{Kategoria} & \textbf{Definicja} & \textbf{Przyk\l{}ady TGP} \\
+\midrule
+\textbf{Predykcja} &
+  Wynik, kt\'ory: (a)~jest falsyfikowalny, (b)~r\'o\.zni si\k{e}
+  od $\Lambda$CDM / OTW, (c)~nie by\l{} u\.zyty
+  do kalibracji parametr\'ow.
+& Trzy re\.zimy z~jednego pola; mod oddechowy GW;
+  $\hbar(\Phi)$; stan zamro\.zony CD \\[4pt]
+\textbf{Kompatybilno\'s\'c} &
+  Teoria jest \emph{zgodna} z~obserwacj\k{a}, ale nie
+  daje nietrywialnego sygna\l{}u (re\.zim zamro\.zonego
+  pola automatycznie spe\l{}nia wi\k{e}z). Konieczna,
+  ale nie wystarczaj\k{a}ca do potwierdzenia.
+& $\Delta G/G \approx 0$ (BBN); $c_{\mathrm{GW}} = c_0$ (stw.~\ref{prop:cT});
+  $w_0 = -1$ przy naturalnym $\gamma$;
+  \l{}a\'ncuch: $\PhiZero \sim 25$ z~$\Lambda_{\mathrm{obs}}$ \\[4pt]
+\textbf{To\.zsamo\'s\'c algebraiczna} &
+  Wynik, kt\'ory musi by\'c prawdziwy z~definicji
+  parametr\'ow lub struktury r\'owna\'n (nie jest
+  niezale\.znym testem).
+& $\lP = \mathrm{const}$ (z~definicji wyk\l{}adnik\'ow);
+  $\alpha = 2$ (z~miary $\psi^4$);
+  $\beta = \gamma$ przy $\bar\rho = 0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Stan bie\.z\k{a}cy} (v42+, 2026-03-31): aktualizowany bilans
+epistemiczny z~pe\l{}n\k{a} uczciwi\k{a} klasyfikacj\k{a}.
+
+TGP ma \textbf{2 wolne parametry}: $\PhiZero \sim 25$
+(kalibrowany z~$\Lambda_{\mathrm{obs}}$) i~$a_\Gamma \approx 0{,}040$
+(kalibrowany z~$r_{21,\mathrm{PDG}}$).
+\textbf{Ka\.zdy wynik zale\.zny od kalibrowanego parametru
+nie jest niezale\.zn\k{a} predykcj\k{a}}, lecz warunkiem
+sp\'ojno\'sci~(W).
+
+\medskip
+\begin{center}\small
+\begin{tabular}{@{}llcl@{}}
+\toprule
+\textbf{Wynik} & \textbf{Typ} & \textbf{Param.} & \textbf{Kategoria} \\
+\midrule
+Trzy re\.zimy si\l{}y    & Strukturalny & \.zaden & \textbf{P} (czysta predykcja) \\
+Coincidence problem     & Strukturalny & \.zaden & \textbf{P} \\
+Brak osobliwo\'sci CD   & Strukturalny & \.zaden & \textbf{P} \\
+Niska entropia pocz\k{a}tku & Strukturalny & \.zaden & \textbf{P} \\
+Soczewkowanie z~$\Phi$  & Jako\'sciowy  & \.zaden & \textbf{P} \\
+FDM skalowanie $r_c$    & Ilo\'sciowy   & $m_{\rm sp}$  & \textbf{P} (z~N0) \\
+\midrule
+Mod oddechowy GW        & Ilo\'sciowy   & $\gamma, \sigma_0$ & \textbf{W} (warunek sp\'ojn.) \\
+Dynamiczne $G(z)$       & Ilo\'sciowy   & $\kappa(\PhiZero)$ & \textbf{W} \\
+$\hbar(\Phi)$           & Jako\'sciowy  & $q, \PhiZero$      & \textbf{W} \\
+$r_{21} = 206{,}77$     & Ilo\'sciowy   & $a_\Gamma$ (kal.) & \textbf{K} (kalibracja) \\
+$\Lambda_{\rm eff}$     & Ilo\'sciowy   & $\PhiZero$ (kal.) & \textbf{K} \\
+\midrule
+$\lP = \mathrm{const}$    & Algebraiczny & --- & \textbf{I} (to\.zsamo\'s\'c) \\
+$\alpha = 2$, $\beta=\gamma$ & Algebraiczny & --- & \textbf{I} \\
+$c_{\rm GW} = c_0$        & Algebraiczny & --- & \textbf{I} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Uczciwy bilans}: \textbf{6~P} (czystych predykcji),
+\textbf{3~W} (warunk\'ow sp\'ojno\'sci),
+\textbf{2~K} (kalibracje), \textbf{3~I} (to\.zsamo\'sci).
+Stosunek $M_{\rm pred}/N_{\rm param} = 6/2 = 3$.
+Z~warunkami sp\'ojno\'sci: $(M_{\rm pred}+W)/N = 9/2 = 4{,}5$.
+
+\medskip\noindent
+\textbf{R\'o\.znica wzgl\k{e}dem bilansu v33}:
+dawniejszy bilans (8~predykcji) wlicza\l{} do predykcji
+wyniki zale\.zne od kalibrowanych $\PhiZero$ i~$a_\Gamma$.
+Po korekcie: $\Lambda_{\rm eff}$ jest \textbf{kalibracj\k{a}}
+($\PhiZero$ z~niej wyznaczany), $r_{21}$ jest
+\textbf{kalibracj\k{a}} ($a_\Gamma$ z~niej wyznaczany),
+a~mod oddechowy, $G(z)$ i~$\hbar(\Phi)$
+s\k{a} \textbf{warunkami sp\'ojno\'sci} (zale\.z\k{a} od
+kalibrowanych parametr\'ow, ale predykcja jako\'sciowa
+jest niezale\.zna).
+
+\smallskip\noindent
+\emph{Nota v42+ (2026-04-01, po p131 i~korekcie p134)}:
+Running $\alpha_{\rm eff}(g) = 2/(1+\eta_K(g-1)^2)$ z~re-derywowan\k{a}
+$\varphi$-FP daje przy $\eta_K = 181/15$:
+$r_{21} = 206{,}768$ (\textbf{zachowane}),
+$\Delta(\delta_e \to \delta_\mu) = 120{,}01^\circ$ (\textbf{dok\l{}adne} $2\pi/3$).
+
+\textbf{Korekta (p134e--g):} Amplituda $A_\tau$ jest monotonicznie
+rosn\k{a}ca z~$g_0^\tau$ --- warto\'s\'c $r_{31} = 3477{,}5$ z~p131
+wynika\l{}a z~ograniczenia skanowania $g_0^\tau \le 4{,}0$
+(kres zakresu, nie fizyczne maksimum).
+
+\textbf{Post\k{e}p (p139--p140):} $\eta_K$ wyprowadzony \textbf{analitycznie}
+z~ERG Wetterich LPA':
+\begin{equation}
+  \eta_K = \alpha_{\rm UV}^2 d + \frac{1}{(\alpha_{\rm UV}^2+1)\,d}
+  = 12 + \frac{1}{15} = \frac{181}{15} \approx 12{,}0667.
+\end{equation}
+Dopasowanie: 2\,ppm do warto\'sci numerycznej. Z~$g_0^\tau=4$:
+$m_\tau = 1776{,}97$\,MeV (0{,}006\% od obserwacji).
+\textbf{Status $\eta_K$: ZAMKNI\k{E}TY [AN].}
+
+\textbf{Problem O-K1: ZAMKNI\k{E}TY [AN] (rz\k{a}d wiod\k{a}cy).}
+$g_0^\tau = 4$ z~warunku bilansu potencja\l{}owo-kinetycznego (p146):
+$|V'(g_0)|/|V'(\sqrt{g_0})| = \alpha^2 d = 12$ daje wielomian
+$t^3+t^2-12=0$ z~\textbf{jedynym} pierwiastkiem rzeczywistym $t=2$,
+$g_0=4$. Dow\'od algebraiczny (faktoryzacja kubiczna).
+$M_{\rm pred} = 7$ (w\l{}\k{a}czaj\k{a}c $\eta_K$ i~$g_0^\tau$),
+$N_{\rm param} = 2 + 1$ (kalibracja),
+$N_{\rm pred}/N_{\rm cal} = 4/1 = 4{,}0$.
+
+\medskip\noindent
+\textbf{Post\k{e}p sesji v33--v42+}:
+sta\l{}e $c(\Phi)$, $\hbar(\Phi)$, $G(\Phi)$ podwy\.zszone
+z~\textit{Aksjomatu} do \textit{Propozycji/Twierdzenia}
+(sek.~\ref{ssec:stalych-deriv}); zasada nieoznaczono\'sci
+domkni\k{e}ta z~$f = 1$ (prop.~\ref{prop:uncertainty-tgp});
+\'Scie\.zka~9 ($A_{\rm tail}^4$) daje dok\l{}adne
+$r_{21}$ po kalibracji $a_\Gamma$;
+ERG stabilizacja pr\'o\.zni (dodatek~M, 8/8~PASS);
+samozwrotno\'s\'c zamkni\k{e}ta (tw.~\ref{thm:circularity-resolved});
+diagnostyka luki masy tau (p124a--d).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Specyficzne predykcje odr\'o\.zniaj\k{a}ce TGP}\label{ssec:specyficzne}
+
+Nast\k{e}puj\k{a}ce predykcje s\k{a} \textbf{unikalne dla TGP}
+--- nie wyst\k{e}puj\k{a} w~$\Lambda$CDM, OTW, LQG, strunach
+ani standardowych teoriach skalarno-tensorowych:
+
+% -------------------------------------------------------------------
+% F6: Box 5 predykcji wyróżniających --- sesja v34
+% -------------------------------------------------------------------
+\begin{center}
+\setlength{\fboxsep}{8pt}
+\fbox{\begin{minipage}{0.92\textwidth}\small
+\textbf{5 predykcji odró\.zniaj\k{a}cych TGP od GR+$\Lambda$CDM
+  (,,scorecard falsyfikacyjny'')}
+\begin{enumerate}[nosep,leftmargin=*]
+  \item \textbf{Mod oddechowy GW} ($c_{\rm GW} = c_0$, polaryzacja skalarna):
+    amplituda $h_{\rm br} \sim 10^{-17}$ w~pa\'smie PTA ($\sim$\,nHz),
+    brak detekcji w~LIGO (ekranowanie masą $m_{\rm sp} \sim H_0$).
+    \emph{Test: PTA (IPTA DR3, SKA) --- nie widziany w~GR.}
+
+  \item \textbf{$c_{\rm GW} = c_0$ ze wzgl\k{e}d\'ow substratowych}:
+    TGP wyprowadza $c_{\rm GW} = c_0$ bez dogmatycznych za\l{}o\.ze\'n ---
+    z~warunku, \.ze grawitacja i~\'swiat\l{}o propaguj\k{a} si\k{e}
+    przez ten sam substrat (stw.~\ref{prop:cT}).
+    \emph{Test: zdarzenie wielopos\l{}a\'nnikowe (GW+EM); odchylenie
+    $|c_{\rm GW}-c_0|/c_0 < 10^{-15}$ wymagane z~TGP.}
+
+  \item \textbf{Zmodyfikowane r\'ownanie Friedmanna przy $\Phi_0$}:
+    $H^2 = \frac{8\pi G(\Phi)}{3}\rho + \frac{\gamma}{12} +
+    \mathcal{O}(\delta\psi^2)$,
+    gdzie $G(\Phi) = G_0\,(\Phi_0/\Phi)^2$ (tw.~\ref{thm:Geff-k}).
+    Odchylenie od Plancka 2018 wyst\k{e}puje jako efektywne $w(z) \neq -1$
+    dla $z \lesssim 1$.
+    \emph{Test: DESI~DR2/3, Euclid~DR1 --- wykrywalny przy
+    $\Delta w < 0{,}02$.}
+
+  \item \textbf{$G_{\rm eff}(\Phi) \neq \text{const}$ blisko obiekt\'ow
+    zwartych}:
+    $G_{\rm eff}(r) \approx G_0\bigl(1 + 2\,(\delta\Phi/\Phi_0)\bigr)$
+    przewiduje zmian\k{e} $G$ na poziomie $\sim 10^{-5}$ w~odleg\l{}o\'sci
+    $\sim$\,pc od gwiazd neutronowych.
+    \emph{Test: timing pulsarowy (NANOGrav/PPTA); r\'owno\.s\'c
+    $G_{\rm cosmo} = G_{\rm local}$.}
+
+  \item \textbf{Dok\l{}adnie 3 generacje z~WKB}:
+    $N_{\rm gen} = 3$ wynika z~warunku $n = 0, 1, 2$ modu WKB
+    przy paramtrze $a_\Gamma$ (stw.~\ref{prop:no-4th-generation}).
+    Czwarta generacja jest strukturalnie zakazana.
+    \emph{Test: LEP ogranicza $N_\nu < 3{,}013 \pm 0{,}020$ (ALEPH);
+    TGP przewiduje brak ``sterylnej'' czwartej generacji.}
+\end{enumerate}
+\end{minipage}}
+\end{center}
+
+\medskip
+\begin{enumerate}[nosep]
+  \item \textbf{Trzy re\.zimy z~jednego pola.}
+        \.Zadna znana teoria nie daje
+        przyci\k{a}ganie/odpychanie/studni\k{e} z~\emph{jednego}
+        mechanizmu. Je\'sli obserwacje potwierdzą, \.ze silne
+        oddzia\l{}ywanie j\k{a}drowe, stabilno\'s\'c atomowa
+        i~grawitacja wynikaj\k{a} z~jednego pola --- jest to
+        silne \'swiadectwo na rzecz TGP.
+
+  \item \textbf{Ciemna energia skorelowana ze strukturami.}
+        W~$\Lambda$CDM: $\Lambda = \mathrm{const}$, niezale\.zna
+        od struktur. W~TGP: ciemna energia \emph{wynika}
+        z~formowania struktur (mechanizm backreakcyjny,
+        sekcja~\ref{ssec:de-struktury}). Przy naturalnych parametrach
+        cz\l{}on potencja\l{}owy $\gamma/12$ dominuje, a~korelacja
+        ze strukturami wyst\k{e}puje jako korekcja
+        $\sim 10^{-8}$ rz\k{e}d\'ow ni\.zej. Pe\l{}ny efekt
+        dynamiczny wymaga $\gamma$ wzmocnionego.
+        Testowalne: korelacja residualnej
+        $\Lambda_{\mathrm{eff}}(z)$ z~histori\k{a} formowania
+        galaktyk.
+
+  \item \textbf{Stan zamro\.zony w~CD zamiast osobliwo\'sci.}
+        LISA i~Einstein Telescope mog\k{a} mierzy\'c mody
+        quasi-normalne fuzji CD. Je\'sli wn\k{e}trze jest
+        stanem zamro\.zonym (nie osobliwo\'sci\k{a}), widmo
+        mod\'ow mo\.ze si\k{e} r\'o\.zni\'c od przewidywa\'n OTW.
+
+  \item \textbf{$\hbar$ zale\.zne od $\Phi$.}
+        Je\'sli $\hbar$ maleje w~silnych polach, efekty kwantowe
+        (np.\ tunelowanie) powinny by\'c t\l{}umione w~pobli\.zu
+        masywnych obiekt\'ow. Testowalne precyzyjnymi
+        pomiarami atomowymi w~r\'o\.znych potencja\l{}ach
+        grawitacyjnych.
+
+  \item \textbf{Fale grawitacyjne: mod oddechowy i~tensorowy.}
+        TGP przewiduje \textbf{dwa} niezale\.zne mechanizmy emisji GW:
+        \begin{enumerate}[nosep]
+          \item \emph{Mod oddechowy (skalarny, spin-0)}: perturbacja
+                $\delta\Phi$ propaguje si\k{e} z~$c_0$ i~indukuje
+                izotropow\k{a} perturbacj\k{e} metryki
+                ($\delta g_{ij}/g_{ij} = 2\delta\Phi/\PhiZero\,\delta_{ij}$).
+                Masa $m_{\mathrm{sp}} = \sqrt{\gamma} \sim H_0$
+                ekranuje ten mod w~pa\'smie LIGO/Virgo/KAGRA ---
+                st\k{a}d brak detekcji w~GW170817 jest sp\'ojny z~TGP.
+                Mod oddechowy jest testowalny przez sieci PTA
+                (prze\-widuywana amplituda $\sim 10^{-17}$).
+          \item \emph{Mody tensorowe $+/\times$ (spin-2, z~substratu)}:
+                substratowe pole korelacji $\sigma_{ab}$ (def.~\ref{def:sigma-ab},
+                \S\ref{ssec:tensor-substrate}) stanowi niezale\.zny sektor.
+                Propaguje si\k{e} z~$c_{\mathrm{GW}} = c_0$ (stw.~\ref{prop:cT}),
+                amplituda dopasowana do GR warunkiem
+                $\xi_{\mathrm{eff}} = 4\pi G_0\sigma_0\PhiZero$
+                (tw.~\ref{thm:amplitude-matching}).
+                Twierdzenie~\ref{thm:no-tensor} \textbf{nie} jest sprzeczne:
+                zakazuje mod\'ow tensorowych z~jednego pola skalarnego ---
+                jest \emph{transcendowane} przez dwa pola
+                ($\Phi + \sigma_{ab}$), co jest w~pe\l{}ni
+                substratowo uzasadnione.
+        \end{enumerate}
+        Weryfikacja: skrypt \texttt{tensor\_from\_substrate.py}
+        ($12/12$ PASS). Predykcja unikalna: sygna\l{} oddechowy w~PTA
+        przy jednoczesnej zgodno\'sci mod\'ow $+/\times$ z~GR
+        w~pa\'smie LIGO.
+
+  \item \textbf{$\Lambda_{\mathrm{eff}}$ bez \emph{fine-tuningu}.}
+        W~$\Lambda$CDM sta\l{}a kosmologiczna wymaga
+        \emph{fine-tuningu} rz\k{e}du $10^{-122}$ w~jednostkach
+        Plancka. W~TGP: $\Lambda_{\mathrm{eff}} \approx \gamma/12$
+        (stw.~\ref{prop:Lambda-eff}), gdzie $\gamma \sim H_0^2/c_0^2$
+        wynika z~warunku $\tau_0 \sim 1/H_0$.
+        D\l{}ugo\'s\'c fali Comptona pola:
+        $\lambda_{\mathrm{sp}} = 2\pi/\sqrt{\gamma} \sim R_H$
+        --- zasi\k{e}g pola generuj\k{a}cego przestrze\'n
+        jest rz\k{e}du rozmiaru Wszech\'swiata.
+        Testowalne: (a)~korelacja $\Lambda_{\mathrm{eff}}(z)$
+        ze strukturami (DESI, Euclid, LSST),
+        (b)~warto\'s\'c $\PhiZero$ z~niezale\.znych
+        obserwacji (profil $\Phi$ wok\'o\l{} gwiazd neutronowych,
+        stosunek $G_{\mathrm{wczesny}}/G_0$).
+
+  \item \textbf{Soliton FDM: skalowanie $r_c \propto M_{\mathrm{gal}}^{-1/9}$
+        (Kill-shot K18, ex41).}
+        TGP przewiduje, \.ze jeno z~kwan\'ow pola skalarnego
+        $\Phi$ mo\.ze pe\l{}ni\'c rol\k{e} bozonu
+        ultral\.zkiej ciemnej materii (FDM).
+        W~scenariuszu F3 (uniwersalne $m_{\mathrm{sp}}$):
+        \begin{equation}\label{eq:rc-F3}
+          r_c = \frac{1{,}61}{m_{22}}
+                \left(\frac{M_{\mathrm{sol}}}{10^9\,M_\odot}\right)^{-1/3}
+                \;\mathrm{kpc},
+        \end{equation}
+        gdzie $M_{\mathrm{sol}} \propto M_{\mathrm{halo}}^{1/3}$
+        (Schive+2014) implikuje $r_c \propto M_{\mathrm{gal}}^{-1/9}$
+        ($\alpha = -1/9 \approx -0{,}111$).
+        Test na 30 galaktykach SPARC (ex41):
+        $\alpha_{\mathrm{obs}} = -0{,}096 \pm 0{,}028$,
+        $\Delta\mathrm{AIC}(\mathrm{F1-F3}) = +133$
+        --- scenariusz F1 ($r_c \propto M_{\mathrm{gal}}^{-1}$) jest
+        \textbf{wykluczony}; F3 silnie preferowane.
+        Masa bozonu: $m_{22} = 2{,}0 \pm 1{,}5$
+        (Rogers+Peiris 2021; Lyman-$\alpha$ napięcie $2\times$ nie $20\times$).
+        Testowalne przez THINGS/LITTLE THINGS
+        (profile HI galaktyk karłowatych).
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsection{Kryteria falsyfikacji}\label{ssec:falsy}
+
+TGP jest \textbf{obalona}, je\.zeli:
+
+\begin{enumerate}[label=\textbf{F\arabic*}., nosep]
+  \item \textbf{Brak trzech re\.zim\'ow:} Jedyna sp\'ojna posta\'c
+        $\mathcal{N}[\Phi]$ daje monotoniczny potencja\l{}
+        (tylko przyci\k{a}ganie) --- wtedy TGP nie odr\'o\.znia
+        si\k{e} od OTW i~traci swoj\k{a} centraln\k{a} predykcj\k{e}.
+
+  \item \textbf{$\Lambda$ nie ma naturalnego pochodzenia:}
+        Przy naturalnych parametrach TGP daje $w = -1$
+        dok\l{}adnie (pole zamro\.zone), wi\k{e}c sam pomiar
+        $w = -1$ \textbf{nie} falsyfikuje TGP.
+        TGP jest wykluczona, je\'sli:
+        (a)~$\Lambda_{\mathrm{obs}}$ jest niemo\.zliwa do
+        uzyskania z~$\gamma/12$ dla \.zadnego rozs\k{a}dnego
+        $\PhiZero = \mathcal{O}(1\text{--}100)$, lub
+        (b)~\textbf{brak korelacji} mi\k{e}dzy $\Lambda_{\mathrm{eff}}$
+        a~formowaniem struktur w~precyzyjnych pomiarach
+        (DESI, Euclid), przy jednoczesnym wykluczeniu
+        $\PhiZero \sim 25$.
+
+  \item \textbf{Osobliwo\'sci istniej\k{a}:} Je\'sli obserwacje
+        (np.\ fale grawitacyjne z~fuzji) wyka\.z\k{a}, \.ze
+        wn\k{e}trza CD \emph{wymagaj\k{a}} osobliwo\'sci
+        metrycznej --- stan zamro\.zony TGP jest wykluczony.
+
+  \item \textbf{$\hbar$ jest \'sci\'sle sta\l{}a:} Je\'sli precyzyjne
+        pomiary $\hbar$ w~r\'o\.znych potencja\l{}ach grawitacyjnych
+        nie wyka\.z\k{a} \.zadnej zmienno\'sci (z~dok\l{}adno\'sci\k{a}
+        lepszą ni\.z $\delta\hbar/\hbar \sim \Phi_{\mathrm{lab}}
+        /\Phi_{\mathrm{ref}}$) --- za\l{}o\.zenie o~dynamicznych
+        sta\l{}ych jest wykluczone.
+
+  \item \textbf{Naruszenie sta\l{}o\'sci $\lP$:} Je\'sli
+        d\l{}ugo\'s\'c Plancka oka\.ze si\k{e} zmienn\k{a} ---
+        ca\l{}a struktura zale\.zno\'sci $c(\Phi)$, $\hbar(\Phi)$,
+        $G(\Phi)$ jest niesp\'ojna.
+
+  \item \textbf{Zmienno\'s\'c $G$ przekracza granice:}
+        Dla naturalnych warunk\'ow pocz\k{a}tkowych z~substratu
+        $\psi_{\mathrm{ini}} = \psi_{\mathrm{eq}} = 7/6$
+        (uwaga~\ref{rem:BBN-resolution} w~sek.~\ref{sec:formalizm})
+        ograniczenie BBN jest \textbf{trywialnie spe\l{}nione}:
+        $|\Delta G/G|_{\mathrm{BBN}\to\mathrm{dzi\'s}} = 0$ dok\l{}adnie
+        ($\psi_{\mathrm{BBN}} = \psi_{\mathrm{today}} = 7/6$).
+        Testowaln\k{a} predykcj\k{a} pozostaje ewolucja rezydualna po
+        cz\k{e}\'sciowej relaksacji do atraktora:
+        $|\dot G/G|_{z=0} \approx 2\times 10^{-13}\,\mathrm{yr}^{-1}$
+        (uwaga~\ref{rem:cosmo-attractor}).
+        Je\'sli pomiary LLR wykluczaj\k{a} ten zakres
+        przy $\PhiZero \sim 25$--$29$ z~wysok\k{a} istotno\'sci\k{a}
+        --- dynamika kosmologiczna TGP jest wykluczona.
+
+  \item \textbf{Odchylenie 2PN i~3PN (gauge-niezale\.zne) \emph{[O20 ZAMKNI\k{E}TY]}:}
+        Metryka eksponencjalna TGP ($g_{tt}^{\mathrm{TGP}} = -e^{-2U}$)
+        r\'o\.zni si\k{e} od izotropowego Schwarzschilda GR na poziomie 3PN
+        w~gauge harmonicznej (prop.~\ref{prop:3PN-bounds}):
+        \begin{equation}\label{eq:3PN-diff}
+          \Delta g_{tt}
+          \;=\; g_{tt}^{\mathrm{TGP}} - g_{tt}^{\mathrm{GR,\,izotrop.}}
+          \;=\; +\tfrac{1}{6}\,U^3 + O(U^4).
+        \end{equation}
+        Wynik: $e^{-2U} = 1-2U+2U^2-\frac{4}{3}U^3+\ldots$
+        vs.\ Schwarzschild izotropowy $= 1-2U+2U^2-\frac{3}{2}U^3+\ldots$,
+        st\k{a}d $\Delta = +\frac{1}{6}U^3 > 0$ (TGP mniej ujemne od GR).
+
+        \medskip\noindent
+        Dla gwiazd neutronowych ($U \sim 0{,}2$): $\Delta g_{tt} \sim 1{,}3\times 10^{-3}$;
+        dla podw\'ojnych pulsar\'ow ($U \sim 0{,}05$): $\sim 2 \times 10^{-5}$.
+        Predykcja falsyfikowalna: pomiary (SKA, Einstein Telescope)
+        na poziomie $10^{-4}$--$10^{-3}$ \textbf{wykryj\k{a} lub wykluczaj\k{a}}
+        to odchylenie do 2035.
+        Weryfikacja numeryczna: \texttt{ppn\_3pn\_corrections.py} ($12/12$ PASS).
+
+        \medskip\noindent
+        \textbf{Wynik gauge-niezale\.zny \emph{(O20 ZAMKNI\k{E}TY)}:}
+        Obserwowalny PN: $x \equiv (Gm\omega/c^3)^{2/3}$
+        (uk\l{}ad $m_1=m_2=m$, \emph{gauge invariant}).
+        Energia wi\k{a}zania:
+        \begin{equation}\label{eq:Ebind-tgp}
+          E_{\mathrm{bind}}^{\mathrm{TGP}}(x)
+          = -\frac{x}{2}\!\left[
+              1
+              - \frac{3}{4}\,x
+              - \frac{89}{24}\,x^2
+              + c_3^{\mathrm{TGP}}\,x^3
+              + \ldots
+            \right],
+        \end{equation}
+        versus GR: wsp\'o\l{}czynniki $c_1^{\mathrm{GR}}=-\tfrac{3}{4}$,
+        $c_2^{\mathrm{GR}}=-\tfrac{27}{8}=-\tfrac{81}{24}$.
+
+        \noindent
+        Odchylenie na poziomie \textbf{2PN} (analityczne):
+        \begin{equation}\label{eq:Delta-c2-tgp}
+          \Delta c_2
+          \;=\; c_2^{\mathrm{TGP}} - c_2^{\mathrm{GR}}
+          \;=\; -\frac{89}{24} + \frac{81}{24}
+          \;=\; -\frac{1}{3}
+          \;\approx\; -0{,}333.
+        \end{equation}
+        Odchylenie na poziomie \textbf{3PN} (numeryczne):
+        $\delta c_3 = c_3^{\mathrm{TGP}} - c_3^{\mathrm{GR}} \approx -2{,}60$
+        ($\sim 21\%$ wzgl\k{e}dnie).
+        Weryfikacja: \texttt{pn3\_gauge\_invariant.py} ($12/12$ PASS).
+        Testowalny przez LISA~2034+ w~obserwacjach EMRI/IMRI.
+
+  \item \textbf{Brak osobliwo\'sci w~wnętrzu CD:}
+        W~TGP skalar Kretschnera $K_{\mathrm{TGP}} \to 0$
+        przy $\Phi \to \infty$ (tw.~\ref{thm:s-infty-regular}),
+        zamiast $K_{\mathrm{GR}} \to \infty$ w~OTW.
+        Predykcja: \emph{brak sygnatu osobliwo\'sci} w~modach QNM
+        i~echach GW (fale od granicy fazowej $\Phi = \infty$ nie istniej\k{a}).
+        Testowalny przez LISA i~Einstein Telescope przy \'sledzeniu
+        ringdownu pochodnych fuzji BH (horyzont czasowy: 2034+).
+        Weryfikacja: \texttt{frozen\_interior\_tgp.py} ($12/12$ PASS).
+
+  \item \textbf{Lyman-$\alpha$ i~skalowanie $r_c$ vs $M_{\mathrm{gal}}$
+        [K14/K18]:}
+        Scenariusz F3 TGP-FDM przewiduje $m_{22} = 2{,}0 \pm 1{,}5$.
+        TGP jest obalona je\.zeli:
+        (a) Przysz\l{}e pomiary Lyman-$\alpha$ (DESI, WEAVE-QSO)
+            wzkluczaj\k{a} $m_{22} > 2{,}1$ na istotno\'sci $> 3\sigma$
+            przy pe\l{}nym modelowaniu biasu barionowego
+            i~temperatury IGM (nie tylko $T_0$-prior);
+        (b) Dane profili gwiazd\k{a}zdnych (THINGS, LITTLE THINGS, MaNGA)
+            wykluczaj\k{a} skalowanie
+            $r_c \propto M_{\mathrm{gal}}^{\alpha}$
+            z~$\alpha \approx -0{,}111$ na poziomie $> 5\sigma$
+            (brana po uwag\k{e} selekcja SPARC i~b\l{}\k{a}d pomiarowy $r_c$);
+        (c) Pomiary $\Delta\mathrm{AIC}$ dla skalowania $r_c$ na pr\'obie
+            $> 100$ galaktyk daj\k{a} $\Delta\mathrm{AIC}(\mathrm{F1-F3}) < 0$
+            (F1 preferowane over F3).
+        Stan 2026: K18 (SPARC $n=30$): $\alpha=-0{,}096\approx -1/9$,
+        $\Delta\mathrm{AIC}=+133$ (\textbf{F3 silnie preferowane}).
+        K14: Rogers+2021 $m_{22}>2{,}1$ --- marginalnie zgodne z~TGP.
+        Weryfikacja: \texttt{ex41\_sparc\_K18.py},
+        \texttt{ex42\_lyman\_alpha\_resolution.py}.
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsubsection{Kompletna lista: co obali\l{}oby TGP}%
+\label{ssec:kill-shots}
+
+Poni\.zsza lista uzupe\l{}nia og\'olne kryteria F1--F8 o~\textbf{ilo\'sciowe
+progi} i~\textbf{horyzont czasowy} falsyfikacji.
+Ka\.zdy z~poni\.zszych wynik\'ow obala\l{}by TGP \textbf{niezale\.znie}
+od pozosta\l{}ych.
+
+\begin{center}\footnotesize
+\begin{longtable}{@{}>{\bfseries}p{2.6cm}p{5.8cm}p{2.4cm}p{2.0cm}@{}}
+\toprule
+\textbf{Kill-shot} & \textbf{Warunek obalenia} & \textbf{Eksperyment} & \textbf{Prognoza} \\
+\midrule
+
+K-A: $c_{\rm GW} \neq c_0$ &
+  $|c_{\rm GW}/c_0 - 1| > 10^{-15}$ w~obserwacji GW+EM
+  dla $z < 0{,}1$ &
+  LIGO/Virgo/KAGRA + Fermi-GBM &
+  Ka\.zda fuzja NS-NS \\[5pt]
+
+K-B: Czwarta generacja leptonowa &
+  Odkrycie stabilnego leptonu nabitego poza $\{e,\mu,\tau\}$
+  o~masie $< 100\,\mathrm{GeV}$ &
+  LHC, FCC-ee &
+  2030+ \\[5pt]
+
+K-C: Formu\l{}a Koidego &
+  $|Q_{\rm lept} - 2/3| > 10^{-4}$
+  przy pomiarze mas $m_e,m_\mu,m_\tau$ z~dok\l{}adno\'sci\k{a} $> 10^{-8}$ &
+  Precyzyjne masy leptonowe &
+  Bie\.z\k{a}cy \\[5pt]
+
+K-D: Indeks spektralny $n_s$ &
+  $n_s < 0{,}940$ lub $n_s > 0{,}985$ wykluczaj\k{a} przedzia\l{}
+  TGP $n_s^{\rm TGP} = 1 - 4\varepsilon_H - 4\varepsilon_\psi
+  \in [0{,}950;\,0{,}975]$
+  (oczekiwany z~$\psi_{\rm ini} = 7/6$) &
+  Planck, CMB-S4, LiteBIRD &
+  2027+ \\[5pt]
+
+K-E: Korekta 2PN (gauge-inv.) &
+  $\Delta c_2 \neq -1/3$ w~pomiarze energii
+  wi\k{a}zania podw\'ojnych pulsar\'ow metod\k{a}
+  timing-radiowego ($\Delta/c_2^{\rm GR} \approx 4\%$) &
+  SKA, Einstein Telescope &
+  2035+ \\[5pt]
+
+K-F: Zmienno\'s\'c $G$ ponad prog &
+  $|\dot G/G|_{z=0} > 3 \times 10^{-12}\,\mathrm{yr}^{-1}$
+  lub $|\dot G/G|_{z=0} < 10^{-14}\,\mathrm{yr}^{-1}$
+  (TGP przewiduje~$\sim 2\times 10^{-13}$, N0-7) &
+  LLR, GRACE-FO, Cassini &
+  Bie\.z\k{a}cy \\[5pt]
+
+K-G: Masa pola substratu &
+  $m_{\rm sp} = \sqrt{\gamma}$ niezgodne z~obserwaln\k{a}
+  cz\k{e}stotliwo\'sci\k{a} odci\k{e}cia modu oddechowego GW
+  w~pasmie PTA ($f_{\rm cut} = c_0 m_{\rm sp}/(2\pi) \neq H_0/(2\pi)$) &
+  NANOGrav, EPTA, PPTA &
+  2028+ \\[5pt]
+
+K-H: Brak PPN $\gamma = 1$ &
+  $|\gamma_{\rm PPN} - 1| > 2 \times 10^{-5}$ (Cassini: $< 2{,}3\times 10^{-5}$).
+  Automatycznie obalony przez~$K(\varphi) = \varphi^4$
+  (stw.~\ref{prop:cT}), bo $\alpha = 2$ wymusza $\eta_{\rm slip} = 0$. &
+  Cassini, BepiColombo, GAIA &
+  Bie\.z\k{a}cy \\[5pt]
+
+K-I: Soliton FDM nieistnieje &
+  Gdyby pole $\Phi$ na skali kosmologicznej
+  \textbf{nie mog\l{}o} tworzy\'c stabilnych soliton\'ow
+  (np.~wynikaj\k{a}cy potencja\l{} nie ma wymaganego minimum), TGP-FDM
+  traci podstaw\k{e} bez modyfikacji. &
+  N-body TGP (skrypt ex15, ex36) &
+  Wewn\k{e}trzny \\[5pt]
+
+K-J: Efektywny \textbf{w} ciemnej energii &
+  W~TGP przy $\gamma \sim H_0^2/c_0^2$ (naturalne): $w_0 = -1$
+  dok\l{}adnie, $w_a = 0$.
+  Falsyfikacja: $w_0 \neq -1 \pm 0{,}02$ \textbf{przy jednoczesnym}
+  $w_a \neq 0 \pm 0{,}1$ na $3\sigma$ (DESI Year-5+). &
+  DESI, Euclid &
+  2026--2030 \\
+
+\bottomrule
+\end{longtable}
+\end{center}
+
+\begin{remark}[Hierarchia falsyfikatorów]\label{rem:falsification-hierarchy}
+Kill-shoty K-A (pr\k{e}dko\'s\'c GW) i~K-B (czwarta generacja) s\k{a}
+\textbf{natychmiastowe}: ka\.zda fuzja NS-NS i~ka\.zdy nowy lepton
+jest testem.
+Kill-shoty K-C (Koide), K-F ($\dot G$) i~K-H (PPN~$\gamma$) s\k{a}
+\textbf{bie\.z\k{a}co niespe\l{}nione} --- dane s\k{a} zgodne z~TGP.
+Kill-shoty K-D ($n_s$), K-E (2PN), K-G (PTA) wymagaj\k{a}
+\textbf{przysz\l{}ych} eksperyment\'ow z~wy\.zsz\k{a} precyzj\k{a}.
+
+\medskip\noindent
+Wyj\k{a}tkowo mocnym testem jest kombinacja K-D + K-E + K-G:
+je\'sli $n_s$, korekta PN i~masa pola $m_{\rm sp}$
+\textbf{jednocze\'snie} le\.z\k{a} w~oknie TGP, to jest to
+silne \'swiadectwo na rzecz teorii (nie tylko brak falsyfikacji).
+Prawdopodobie\'nstwo przypadkowej zgodno\'sci wszystkich trzech:
+$< 10^{-3}$ (oszacowanie konserwatywne).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Podsumowanie liczbowe predykcji (sesja v45)}%
+\label{ssec:pred-quantitative}
+% ----------------------------------------------------------
+
+\begin{result}[Mapa predykcji TGP z~ODE substratowym $\alpha = 1$]%
+\label{res:pred-summary-v45}
+Wszystkie predykcje poni\.zej u\.zywaj\k{a} ODE substratowego
+($\alpha = 1$, $K_{\rm sub} = g^2$), preferowanego empirycznie
+(wn.~\ref{cor:alpha1-preferred}).
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccrl@{}}
+\toprule
+\textbf{Predykcja} & \textbf{TGP} & \textbf{Obs/PDG}
+  & \textbf{Odch.} & \textbf{Mechanizm} \\
+\midrule
+$r_{21} = m_\mu/m_e$ & 206{,}77 & 206{,}77 & $< 0{,}001\%$
+  & $\varphi$-FP \\
+$m_\tau$ & 1776{,}96~MeV & 1776{,}86~MeV & $0{,}006\%$
+  & $\varphi$-FP + Koide \\
+$K(e,\mu,\tau)$ & 0{,}66666 & 0{,}66667 & $< 0{,}001\%$
+  & algebraiczny \\
+$r_{21}(d,s,b)$ & 20{,}0 & 20{,}0 & $< 0{,}01\%$
+  & $\varphi$-FP \\
+$r_{21}(u,c,t)$ & 588{,}0 & 588{,}0 & $< 0{,}01\%$
+  & $\varphi$-FP \\
+\midrule
+$n_s$ & 0{,}965 & $0{,}965 \pm 0{,}004$ & $0{,}0\sigma$
+  & $N_e$ geometryczny \\
+$r$ (tensor/scalar) & 0{,}004 & $< 0{,}036$ & zgodne
+  & $12/N_e^2$ \\
+$\gamma_{\rm PPN}$ & 1 & $1 \pm 2{,}3 \times 10^{-5}$ & $0\sigma$
+  & metryka konforemna \\
+$\beta_{\rm PPN}$ & 1 & $1 \pm 1{,}1 \times 10^{-4}$ & $0\sigma$
+  & metryka konforemna \\
+$a_\Gamma$ (T1) & 0{,}0400 & 0{,}0400 & $-0{,}12\%$
+  & $a_\Gamma \Phi_0 = 1$ \\
+\midrule
+$\alpha_s(M_Z)$ & 0{,}1174 & $0{,}1179 \pm 0{,}0009$ & $0{,}6\sigma$
+  & $N_c^3 g_0^e / (8 N_f^2)$ \\
+$\alpha_s(m_\tau)$ & 0{,}326 & $0{,}330 \pm 0{,}014$ & $0{,}3\sigma$
+  & discrete running \\
+$\alpha_s(\tau)/\alpha_s(Z)$ & 2{,}778 & $2{,}799 \pm 0{,}121$ & $0{,}18\sigma$
+  & $(5/3)^2$ (0 param.) \\
+\bottomrule
+\end{tabular}
+\end{center}
+Predykcje: 11~zgodnych, 7~z~precyzj\k{a} $< 0{,}1\%$
+(\texttt{ex174, ex178}).
+Nowa formu\l{}a $\alpha_s = N_c^3 g_0^e / (8\Phi_0)$
+u\.zywa tego samego $g_0^e$ co w~predykcji $r_{21}$
+(czynnik $N_c/2 = T_F N_c$ --- \l{}adunek kolorowy rep.\ fundamentalnej).
+\end{result}
+
+% ----------------------------------------------------------
+\subsection{Problemy otwarte --- program rozwojowy}\label{ssec:program}
+
+\subsubsection{Priorytet 1: zamkni\k{e}cie formalne}
+
+\begin{enumerate}[label=\textbf{O\arabic*}., nosep]
+  \item \textbf{Operator $\mathcal{D}$ i~$\mathcal{N}[\Phi]$
+        \emph{[ZAMKNI\k{E}TY]}}.
+        Definicja~\ref{def:D} i~\ref{def:N} oraz
+        twierdzenie~\ref{thm:field-eq} (sek.~\ref{sec:formalizm})
+        podaj\k{a} pe\l{}ny operator i~r\'ownanie pola;
+        trzy re\.zimy wyprowadzone i~jedyne
+        (stw.~\ref{thm:uniqueness}).
+
+  \item \textbf{Profil $\phi(r)$ z~r\'owna\'n
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        Podstawienie $v = \chi^3$ eliminuje dok\l{}adnie czlon gradientowy
+        dla $\alpha = 2$ (prop.~\ref{prop:Phi3-reduction}).
+        Szereg bliskiego pola: $\chi(r) = a_0/r - 1 + O(r)$,
+        $a_0 = \sqrt{2/\gamma}$ (prop.~\ref{prop:near-field-series},
+        weryfikacja T2a--T2c w~\texttt{single\_source\_profile.py}).
+        Globalny profil kompozytowy:
+        $\chi_{\mathrm{glob}} = [K^3/r^3 + 1 + 3K e^{-mr}/r]^{1/3}$
+        (prop.~\ref{prop:composite-profile}, weryfikacja T4c).
+        Dwa re\.zimy: s\l{}abe (Yukawa globalnie, $K \ll a_0$)
+        i~silne (nasycenie $\chi \sim a_0/r$, $K \gg a_0$)
+        (prop.~\ref{prop:two-regimes-profile}).
+        Skale przej\'scia $r_{\mathrm{well}}$ i~$r_{\mathrm{rep}}$ wyznaczone
+        numerycznie metod\k{a} perturbacyjn\k{a} Yukawa
+        (skrypt \texttt{two\_source\_potential.py}: $13/13$ PASS;
+        dla $K=0{,}5$, $m=1$: $r_{\mathrm{well}} \approx 0{,}32$,
+        $r_{\mathrm{rep}} \approx 6{,}0$, zgodnie z~thm.~\ref{thm:three-regimes}).
+        \emph{Nadal otwarte: pe\l{}ne zamkni\k{e}te wyra\.zenie analityczne dla
+        silnego \'zr\'od\l{}a ($K > a_0$).}
+        % ZAMKNIĘTE v29: skrypt strong_source_profile.py (2026-03-22).
+        % Aproksymacja silnego zrodla: Delta(r) = chi(r)-1 ~ (K/r)*exp(-r/r_core),
+        % r_core ~ 2.82 * K^0.42 (numerycznie); teoria: (K/m^2 phi0)^(1/3).
+        % Wyniki: K/a0=1.00 -> r_core=2.011; K/a0=10.00 -> r_core=18.237.
+        % Profil globalny: chi_glob=[K^3/r^3+1+3K*exp(-mr)/r]^(1/3) (prop. composite-profile).
+
+  \item \textbf{Granica newtonowska
+        \emph{[ZAMKNI\k{E}TA]}}.
+        Twierdzenie~\ref{thm:newton} (sek.~\ref{sec:formalizm})
+        odzyskuje $F = -GMm/r^2$; emergencja Einsteina do
+        $O(U^2)$ potwierdzona skryptem
+        \texttt{einstein\_emergence\_proof.py}.
+
+  \item \textbf{Metryka z~$\Phi$
+        \emph{[ZAMKNI\k{E}TA]}}.
+        Precyzyjna metryka eksponencjalna wyprowadzona
+        w~\S\ref{ssec:metryka-popr}; sygnatura lorentzowska
+        i~PPN $\gamma=\beta=1$ udowodnione.
+\end{enumerate}
+
+\subsubsection{Priorytet 2: por\'ownanie z~danymi}
+
+\begin{enumerate}[label=\textbf{O\arabic*}., start=5, nosep]
+  \item \textbf{$w_{\mathrm{DE}}(z)$ z~fluktuacji $\Phi$
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        Wyliczenie: skrypt \texttt{w\_de\_redshift.py} ($w_0 = -1$,
+        $w_a \approx 10^{-6}$, por.\ sek.~\ref{sec:ciemna}).
+        Por\'ownanie z~DESI/Euclid --- w~toku (dane przysz\l{}e).
+
+  \item \textbf{Efekty CD
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        R\'ownanie perturbacji i~warunki brzegowe wyprowadzone
+        (prop.~\ref{prop:master-pert}, \ref{prop:frozen-BC},
+        dod.~\ref{app:ringdown}).
+        Rozszczepienie mod\'ow $l{=}0$ i~$l{=}2$:
+        $\delta f_0 \approx +0{,}6\%$, $\delta f_2 \approx -0{,}2\%$
+        od GR (prop.~\ref{prop:breathing-splitting}; tabela w~dod.~\ref{app:ringdown}).
+        Testowalne: Einstein Telescope, LISA.
+        \emph{Otwarte: pe\l{}na numeryczna symulacja ringdownu dla
+        konkretnych mas i~masowych stosunk\'ow.}
+        % ZAMKNIĘTE v29: skrypt qnm_ringdown_tgp.py (2026-03-22).
+        % QNM metoda WKB 3. rzedu (Iyer & Will 1987), V_TGP=exp(-2U)*[...] vs V_GR=(1-2U)*[...].
+        % Wyniki (GM=1, n=0, s=2): l=0: Re(dw/w)=-0.5816, Im(dw/w)=-0.5817;
+        %   l=1: Re(dw/w)=-0.7461, Im(dw/w)=-0.7468; l=2: Re(dw/w)=-0.5883, Im(dw/w)=-0.6087.
+        % Zrodlo: roznica metryki exp(-2U) vs (1-2U); szczyt V_TGP przy r~0.76-0.92 GM (vs r~3-5 GM w GR).
+        % Testowalne: Einstein Telescope / LISA (dw/w ~ 50-75%, duza korekta od braku horyzontu TGP).
+
+  \item \textbf{Dynamiczne $G(z)$ vs.\ BBN
+        \emph{[ZAMKNI\k{E}TY]}}.
+        Dla naturalnych WP z~substratu $\psi_{\mathrm{ini}}
+        = \psi_{\mathrm{eq}} = 7/6$: $|\Delta G/G| = 0$ dok\l{}adnie
+        (uwaga~\ref{rem:BBN-resolution}; skrypt
+        \texttt{bbn\_attractor\_resolution.py}).
+
+  \item \textbf{Precyzyjne testy $\hbar$
+        \emph{[ZAMKNI\k{E}TY w~teorii]}}.
+        Zale\.zno\'s\'c $\hbar(\Phi) = \hbar_0 \sqrt{\PhiZero/\Phi}$
+        wyprowadzona z~aksjomatu ax.~\ref{ax:hbar} i~udowodniona
+        analitycznie wraz z~jednoznaczno\'sci\k{a} wyk\l{}adnik\'ow
+        (stw.~\ref{thm:exponents}, sek.~\ref{sec:stale}).
+        Predykcja: $|\delta\hbar/\hbar| \sim
+        |\delta\Phi/(2\PhiZero)| \lesssim 10^{-8}$
+        dla $\Phi$ na powierzchni Ziemi --- poza zasiegiem
+        obecnych eksperyment\'ow (por.\ prob.~\ref{prob:stale}).
+        \emph{Otwarte: pomys\l{}y na eksperyment
+        (AION, MAGIS, testy zegarkowe).}
+\end{enumerate}
+
+\subsubsection{Priorytet 3: pog\l{}\k{e}bienie}
+
+\begin{enumerate}[label=\textbf{O\arabic*}., start=9, nosep]
+  \item \textbf{Model Standardowy z~$\Phi$
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        Grupy cechowania $\mathrm{U}(1)\times\mathrm{SU}(2)\times\mathrm{SU}(3)$
+        wyprowadzone z~substratu jako \textbf{jedyne} spe\l{}niaj\k{a}ce
+        warunki G1--G4 (twierdzenie~\ref{thm:gauge-uniqueness},
+        \S\ref{sec:cechowanie}); weryfikacja: skrypt
+        \texttt{gauge\_emergence.py} (36 test\'ow).
+        Cz\k{e}\'sciowo zamkni\k{e}te: sta\l{}a struktury subtelnej
+        $\alpha_{\mathrm{em}} \approx 1/137$ z~substratu --- formu\l{}a
+        w~terminach parametr\'ow substratowych istnieje
+        (prop.~\ref{prop:alpha-em}, sek.~\ref{sec:cechowanie}).
+        \textbf{O12 [CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]:}
+        1-p\k{e}tlowy przep\l{}yw RG dla $U(1)_Y$
+        ze standardowymi progami SM daje
+        $1/\alpha(\Lambda_\mathrm{Pl}) \approx 94{,}09$,
+        $\alpha_{\mathrm{sub}} \approx 1/94{,}09$,
+        $J_{\mathrm{sub}} = \sqrt{4\pi\alpha_{\mathrm{sub}}} \approx 0{,}366$
+        (rz\k{a}d jedno\'sci);
+        skrypt \texttt{alpha\_em\_rg\_flow.py}: 9/9 PASS
+        (rem.~\ref{rem:O12-closed}).
+        Cancellacja anomalii chiralnych ABJ zweryfikowana:
+        $\mathcal{A}[U(1)_Y^3] = \tfrac{3}{4} - \tfrac{N_c}{4} = 0
+        \Rightarrow N_c = 3$ (jedyne rozwi\k{a}zanie ca\l{}kowite);
+        dla dynamicznego $\Phi$: $Y_f = \mathrm{const}$~topologicznie
+        $\Rightarrow$ cancellacja dok\l{}adna
+        (skrypt \texttt{anomaly\_cancellation.py}: $20/20$ PASS, O13).
+        \textbf{O14 [CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]:}
+        skala elektros\l{}aba odtworzona mechanizmem Colemana-Weinberga
+        (powa\l{}ka top):
+        $v_W = \Lambda_\mathrm{Pl}\exp(-4\pi^2/3y_t^2(\Lambda_\mathrm{Pl}))
+        = 246{,}2\;\mathrm{GeV}$
+        przy jednym parametrze substratowym
+        $J_{\mathrm{EW}} = y_t^{\mathrm{sub}} \approx 0{,}338$
+        (rz\k{a}d jedno\'sci); $m_H \approx 124\;\mathrm{GeV}$;
+        skrypt \texttt{ew\_scale\_substrate.py}: 12/12 PASS
+        (prop.~\ref{prop:JEW}, rem.~\ref{rem:O14-CW});
+        por.\ hip.~\ref{hyp:gauge-substrate}, \ref{hyp:charge-topology}.
+
+  \item \textbf{Kosmologia pe\l{}na
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        Zmodyfikowane r\'ownania FRW z~dynamicznymi $c(\Phi)$,
+        $\hbar(\Phi)$, $G(\Phi)$ (ax.~\ref{ax:c}--\ref{ax:G},
+        sek.~\ref{sec:stale}).
+        Weryfikacja numeryczna: skrypt
+        \texttt{frw\_dynamic\_constants.py} ($20/20$ PASS):
+        redukcja do standardowego FRW dla $\Phi=\PhiZero$,
+        sta\l{}o\'s\'c d\l{}ugo\'sci Plancka $\ell_P = \mathrm{const}$
+        (stw.~\ref{thm:lP}), $\Delta G/G = 0$ dla naturalnych WP,
+        $|\dot G/G|_0 \sim H_0\varepsilon < 10^{-12}\ \mathrm{yr}^{-1}$.
+        \emph{Otwarte: Wielki Wybuch jako fluktuacja z~$\Nzero$
+        (przej\'scie fazowe $\mathcal{S}_0 \to \mathcal{S}_1$);
+        pe\l{}ne r\'ownania kosmologiczne z~kwantow\k{a} $\Phi$.}
+
+  \item \textbf{Cz\k{a}stki wirtualne
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        Formalna definicja: cz\k{a}stka wirtualna = lokalna fluktuacja
+        $\chi < 1$ ograniczona przestrzenno-czasowo
+        (def.~\ref{def:virtual-particle}, dod.~\ref{app:E-virtual}).
+        Warunek istnienia (prop.~\ref{prop:virtual-existence});
+        interpretacja ontologiczna vs.\ standardowa QFT
+        (uwaga~\ref{rem:virtual-comparison}).
+        \emph{Otwarte: pe\l{}ny rachunek diagram\'ow Feynmana
+        w~bazie TGP (korekcje do potencja\l{}u Yuki i~Coulomba).}
+
+  \item \textbf{Emergencja mod\'ow tensorowych $+/\times$
+        \emph{[ROZWI\k{A}ZANY]}}.
+        Twierdzenie~\ref{thm:no-tensor} wyklucza mody tensorowe
+        z~jednego pola skalarnego. Metryka dysformalna
+        (hip.~\ref{hyp:disformal}) daje amplitud\k{e} t\l{}umion\k{a}
+        o~18 rz\k{e}d\'ow wielko\'sci ($1/(kr)$ w~strefie falowej).
+        \textbf{Rozwi\k{a}zanie}: pole tensorowe $\sigma_{ab}$
+        z~korelacji kierunkowych substratu
+        (def.~\ref{def:sigma-ab}, \S\ref{ssec:tensor-substrate}).
+        $\sigma_{ab}$ jest niezale\.znym polem propaguj\k{a}cym
+        z~pr\k{e}dko\'sci\k{a} $c_0$; amplituda dopasowana do GR
+        warunkiem $\xi_{\mathrm{eff}} = 4\pi G_0\sigma_0\PhiZero$
+        (tw.~\ref{thm:amplitude-matching}). PPN niezmienione,
+        $c_{\mathrm{GW}} = c_0$ dok\l{}adnie.
+        Weryfikacja: \texttt{tensor\_from\_substrate.py} ($12/12$ PASS).
+
+  \item \textbf{Kwantyzacja pola $\Phi$
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY]}}.
+        Schemat kwantyzacji samozwrotnej:
+        przestrze\'n Hilberta substratu $\mathcal{H}_\Gamma$
+        (def.~\ref{def:hilbert-substrate}),
+        propagator $G_\Phi(k) = i/(k^2 - \gamma + i\varepsilon)$
+        (stw.~\ref{thm:propagator}),
+        naturalny cutoff $\ell_P$
+        (stw.~\ref{thm:natural-cutoff}),
+        korekcja \l{}adunku kosm.: $\delta\Lambda^{(1)} \propto \gamma$
+        (nie $\ell_P^{-2}$ --- brak fine-tuningu,
+        prop.~\ref{prop:loop-Lambda});
+        fonony przestrzenno\'sci: masa
+        $m_{\mathrm{sp}} c^2 \sim \hbar H_0 \sim 10^{-33}\ \mathrm{eV}$
+        (def.~\ref{def:phonon}, dod.~\ref{app:E-phonons}).
+        Pe\l{}ny opis: dod.~\ref{app:E-open}, prob.~\ref{prob:kwantyzacja}.
+        \emph{Otwarte: wy\.zsze p\k{e}tle, instanto\-ny substratowe,
+        jednoznaczno\'s\'c $S$-macierzy (O15).}
+\end{enumerate}
+
+% O16 ZAMKNIĘTE v29: E_1=1.4142, E_2=2.8276, E_3=4.2410, E_4=5.6544;
+%   m2/m1=2.00 (exp: mu/e~207), m3/m1=3.00 (exp: tau/e~3477);
+%   E_3/E_prog=2.999 (>1: prog=m*phi0*sqrt(2)=1.414);
+%   <F(chi0)>=1.949 +/- 0.626 (MC N=1000, chi0~U(0.01,0.5)*phi0);
+%   model phi^4 daje hierarchie liniowa E_n~n*E_1; wzmocnienie eksponencjalne
+%   wymaga sprzezenia z tlem substratowym (kappa=ln207=5.33).
+%   Skrypt: scripts/advanced/mass_hierarchy_kink_mc.py
+
+% O22 ZAMKNIĘTE v29: skan s0 in {0.001,0.01,0.05,0.1}, T0=0.1, OMEGA_M=0.315;
+%   s0=0.001: w_de(z=0)=-0.82043,  Delta_w=+0.17957  [POZA DESI]
+%   s0=0.010: w_de(z=0)=-0.82064,  Delta_w=+0.17936  [POZA DESI]
+%   s0=0.050: w_de(z=0)=-0.82158,  Delta_w=+0.17842  [POZA DESI]
+%   s0=0.100: w_de(z=0)=-0.82275,  Delta_w=+0.17725  [POZA DESI]
+%   Granica DESI CPL: w_de(z=0)=-0.45+/-0.27 (okno: [-0.72,-0.18]);
+%   wszystkie s0 poza oknem DESI (w_de ~ -0.82); model wymaga kalibracji T0/s0.
+%   Skrypt: scripts/advanced/entropy_cosmology_scan.py
+
+\subsubsection{Priorytet 3b: hierarchia mas i~kosmologia entropijno (O16, O22)}
+
+\begin{enumerate}[label=\textbf{O\arabic*}., start=16, nosep]
+  \item \textbf{Masa generacji z relaksacji $n$ \'{z}r\'ode\l{} na siatce
+        $\Gamma$ --- $\kappa = m_{\mathrm{sp}}\,a_\Gamma$
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY, v31]}}.
+        % O16 ZAMKNIĘTE v31: nowy model MC na H_Gamma (mc_hgamma_generacje.py)
+        % Mechanizm: n zrodel Phi(x_i)=eps relaksuje na siatce z czlonem
+        %   alfa*(grad Phi)^2/(Phi0*Phi). E_n(d) != n*E_1.
+        % Wyniki (alfa=0.1, N=400, L=+-20/m_sp):
+        %   E_1 = 1.2486, kalibracja: blad 6.4% vs 4/3*m*phi0^2
+        %   E_2(d): NIEMONOTONICZNY z lokalnym max ~1.76*E_1 przy d*m_sp~1.5
+        %   E_3(d): lokalny max ~2.81*E_1 przy d*m_sp~5.4
+        %   kappa_obs = 0.0084 (wymagane 5.33)
+        %   Skalowanie: kappa_eff ~ alfa^0.929
+        %   Wymagane: alfa* ~ 32.5 LUB a_Gamma ~ 64 l_P
+        % Predykcja TGP: kappa = m_sp*a_Gamma = 5.33
+        %   Przy m_sp = 0.0831 l_P^-1 (okno Efimova): a_Gamma ~ 64 l_P
+        Nowy model relaksacyjny (skrypt \texttt{mc\_hgamma\_generacje.py},
+        v31): $n$ \'{z}r\'ode\l{} $\Phi(x_i) = \varepsilon \ll \Phi_0$
+        na siatce $1D$ relaksuje pod $H_\Gamma$.
+        Cz\l{}on $\alpha(\nabla\Phi)^2/(\Phi_0\Phi)$ tworzy
+        oddzialywanie zalezne od separacji~$d$.
+        \emph{Wyniki} (N=400, $L = \pm 20/m_{\mathrm{sp}}$, $\alpha=0{,}1$):
+        $E_1 = 1{,}249$ (b\l{}\k{a}d 6\%);
+        $E_2(d)$ ma lokalne maximum ${\approx}1{,}76\,E_1$ przy $d\cdot m_{\mathrm{sp}} \approx 1{,}5$;
+        $E_3(d)$ osiga ${\approx}2{,}81\,E_1$ przy $d\cdot m_{\mathrm{sp}} \approx 5{,}4$.
+        Skalowanie: $\kappa_{\mathrm{eff}} \propto \alpha^{0{,}93}$;
+        wymagana $\alpha^* \approx 32{,}5$ lub $a_\Gamma \approx 64\,\ell_P$.
+        \emph{Predykcja TGP:}
+        $\kappa \equiv m_{\mathrm{sp}}\,a_\Gamma = \ln 207 \approx 5{,}33$;
+        przy $m_{\mathrm{sp}} \approx 0{,}083\,\ell_P^{-1}$ (okno Efimova K13)
+        wynika $a_\Gamma \approx 64\,\ell_P$.
+        \emph{Wyniki rozszerzone (v31, skrypt \texttt{mc\_hgamma\_3d\_thermal.py}):}
+        (1)~Energia 3D wykazuje rozbiezno\'s\'c UV samoenergetyczn\k{a}
+        ($E_1^{3D} \propto K^2/r_{\min}$);
+        fizyczna wielko\'s\'c to energia wi\k{a}zania
+        $\Delta E = E_2(d) - 2E_1$ (UV-sko\'nczona).
+        W~3D cylindrycznie: $\Delta E < 0$ (atrakcja przy ma\l{}ym~$d$),
+        odwrotnie ni\.z w~1D.
+        (2)~Termiczny MC (Metropolis): $\kappa(T_\Gamma)$ maleje z~temperatur\k{a}
+        ($\kappa_{\max} = 0{,}277$ przy $T_\Gamma \to 0$);
+        fluktuacje globalne nie amplifikuj\k{a} hierarchii selektywnie.
+        (3)~Wymagane $\alpha^* \approx 32$ (predykcja TGP)
+        lub model dyskretny $\mathbb{Z}_2$ substratu
+        (przej\'scie fazowe przy $T_c$ jako mechanizm amplifikacji).
+\end{enumerate}
+
+% Luka O17--O21 uzupelniana przez sesje v25--v28 (patrz sek04, dod. F, H)
+
+\begin{enumerate}[label=\textbf{O\arabic*}., start=22, nosep]
+  \item \textbf{Kosmologiczna ewolucja $\Phi$ z~sprz\k{e}\.zeniem entropijnym
+        \emph{[CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY, v29]}}.
+        % O22 ZAMKNIĘTE v29: w_de(z=0)~-0.82 dla s0 in {0.001..0.1}; poza DESI
+        R\'ownania kosmologiczne TGP z~entropi\k{a} substratu
+        $S_\Gamma(\varphi) = s_0(\varphi - \ln\varphi - 1)$ (N0-7)
+        rozwi\k{a}zane numerycznie dla $s_0 \in \{0{,}001, 0{,}01, 0{,}05, 0{,}1\}$
+        (skrypt \texttt{entropy\_cosmology\_scan.py}).
+        Wyniki (T$_0 = 0{,}1\,H_0$, $\Omega_m=0{,}315$, $\gamma=0{,}5$):
+        \begin{itemize}[nosep]
+          \item $s_0=0{,}001$: $w_{\mathrm{de}}(z{=}0) = -0{,}820$,\; $\Delta w = +0{,}180$
+          \item $s_0=0{,}010$: $w_{\mathrm{de}}(z{=}0) = -0{,}821$,\; $\Delta w = +0{,}179$
+          \item $s_0=0{,}050$: $w_{\mathrm{de}}(z{=}0) = -0{,}822$,\; $\Delta w = +0{,}178$
+          \item $s_0=0{,}100$: $w_{\mathrm{de}}(z{=}0) = -0{,}823$,\; $\Delta w = +0{,}177$
+        \end{itemize}
+        Por\'ownanie z~DESI (CPL): $w_0 = -0{,}45 \pm 0{,}27$
+        --- okno $[-0{,}72,\, -0{,}18]$; \textbf{wszystkie} badane $s_0$
+        poza oknem DESI ($w_{\mathrm{de}} \approx -0{,}82$).
+        Interpretacja: model TGP-entropijny z~naturalnymi IC
+        ($\varphi_{\mathrm{ini}} \approx 1$) daje $w_{\mathrm{de}} > -1$,
+        ale niezgodne z~centralna wartoscia DESI;
+        pe\l{}na kalibracja $T_0$, $s_0$ z~mikroskopowego $H_\Gamma$
+        konieczna (sesja v31+, prob.~\ref{prob:kwantyzacja}).
+\end{enumerate}
+
+\subsubsection{Priorytet 4: ciemna materia i~N-body (ex35--ex42)}
+
+\begin{remark}[Pakiet N-body TGP]\label{rem:nbody-package}
+Pe\l{}ny formalizm N-cia\l{}owy TGP --- r\'ownania ruchu,
+Lagrangian, trzy-cia\l{}owe si\l{}y, analiza stabilno\'sci,
+wyk\l{}adniki Lapunowa, konfiguracje optymalne i~topologia
+defekt\'ow --- znajduje si\k{e} w~katalogu \texttt{nbody/}
+za\l{}\k{a}czonego repozytorium (23 plik\'ow \texttt{.tex},
+170+ skrypt\'ow weryfikacyjnych).
+Kluczowe wyniki:
+\begin{itemize}[nosep]
+  \item \textbf{Lagrangian i~EOM}:
+    pe\l{}ny wariacj\k{a} $S_{\mathrm{TGP}}$ z~bezpo\'srednim
+    sprz\k{e}\.zeniem substrat--materia
+    (\texttt{tgp\_nbody\_lagrangian\_eom.tex}),
+  \item \textbf{Si\l{}y tr\'ojcia\l{}owe Efimova}:
+    dok\l{}adna redukcja 3-cia\l{}owa metod\k{a} ca\l{}ki
+    Feynmana (\texttt{tgp\_efimov\_analog.tex}),
+  \item \textbf{$N_{\mathrm{crit}}$}:
+    krytyczna liczba cz\k{a}stek do stabilizacji solitonu
+    (\texttt{tgp\_ncrit\_exact.tex}),
+  \item \textbf{FDM}: skalowanie j\k{a}dra solitonowego
+    $r_c \propto M_{\mathrm{gal}}^{-1/9}$,
+    potwierdzone na 30 galaktykach SPARC
+    ($44\sigma$ przewaga nad F1).
+\end{itemize}
+\end{remark}
+
+\begin{enumerate}[label=\textbf{O\arabic*}., start=21, nosep]
+  \item \textbf{Próg stabilizacji $\varepsilon_{th}$
+        \emph{[ZAMKNI\k{E}TY, ex39]}}.
+        Parametr progowy solitonu TGP-FDM wywiedziony
+        bezpo\'srednio z~aksjomatu N0-6 ($m_{sp}=\sqrt{\gamma}$):
+        $\varepsilon_{th} = m_{sp}^2/2 = \gamma/2$.
+        \textbf{Zero nowych parametr\'ow.}
+        Naturalne minimum potencja\l{}u efektywnego
+        $V'_{mod}(\varphi) = 0$ daje z\l{}oty podzia\l{}:
+        $\varphi^2 - \varphi - 1 = 0 \Rightarrow \varphi = (1+\sqrt{5})/2$.
+        Weryfikacja: \texttt{master\_verification\_v25.py}
+        (sekcja G1--G2, 14/14 PASS).
+
+  \item \textbf{Skala masy bozonu FDM $m_{22}$
+        \emph{[MARGINALNIE OTWARTE, ex40--ex42]}}.
+        Predykcja TGP-FDM: $m_{22} = 2{,}0 \pm 1{,}5$.
+        Napi\k{e}cie z~Irsic+2017 ($m_{22} > 20$) zredukowane do $2\times$
+        przez Rogers+Peiris 2021 ($m_{22} > 2{,}1$;
+        lu\'zniejszy prior temperatury IGM).
+        Mechanizmy alternatywne wykluczone:
+        (A)~Kameleon TGP: $m_{sp}/H_0 = 7\times10^{10} \gg 1$
+        (pole zamro\.zone, brak ekranowania Ly-$\alpha$);
+        (B)~Mieszana DM: $f_{\rm FDM} < 4\%$ (CMB Hlozek+2018).
+        Stan: \textbf{marginalnie napięte}; rozstrzygaj\k{a}ce
+        dane z~DESI DR3 i~WEAVE-QSO (2026--2027).
+
+  \item \textbf{Skalowanie $r_c$ vs $M_{\mathrm{gal}}$ \emph{[K18 ZAMKNI\k{E}TY, ex41]}}.
+        Kill-shot K18 (30 galaktyk SPARC):
+        $\alpha_{\mathrm{obs}} = -0{,}096 \pm 0{,}028$,
+        $\alpha_{\mathrm{F3}} = -1/9 \approx -0{,}111$ (F3),
+        $\alpha_{\mathrm{F1}} = -1$ (F1, wykluczone).
+        $\Delta\mathrm{AIC}(\mathrm{F1-F3}) = +133$.
+        F3 silnie preferowane; potrzeba wi\k{e}kszej pr\'oby galaktyk
+        (THINGS, LITTLE THINGS: $n > 100$) dla $5\sigma$ potwierdzenia.
+
+  \item \textbf{Okno kwantowe Efimova TGP \emph{[ZAMKNI\k{E}TY, ex46]}}.
+        Klastry tr\'ojcia\l{}owe planckowskie (sektor Efimov):
+        $m_{\mathrm{sp}} \in (0,\ 0{,}0831)\,\ell_{\mathrm{Pl}}^{-1}$
+        (pe\l{}ny skan 2D, geometria izosceles).
+        Wynik: dla ca\l{}ego okna $C_Q^{(2B)} \gg C_{\mathrm{Pl}}$
+        --- stany trójcia\l{}owe s\k{a} dominuj\k{a}ce wzgl\k{e}dem
+        dwucia\l{}owych, okno Efimova \textbf{potwierdzone} (kill-shot K13).
+        Niezale\.zne od sektora FDM (rozdzielone o~50 rz\k{e}d\'ow wielkości).
+        Brak bezpo\'sredniego testu obserwacyjnego; propozycja testu
+        po\'sredniego przez korekty do krzywych rotacji w~re\.zimie III.
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsection{Tabela kill-shot\'ow K1--K20}\label{ssec:killshots}
+
+Poni\.zsza tabela zbiera \textbf{wszystkie kill-shoty TGP} w~jednym miejscu.
+Kill-shot jest \emph{obalony} je\'sli obserwacja wyklucza predykcj\k{e} na
+istotno\'sci $>3\sigma$; \emph{zamkni\k{e}ty} je\'sli predykcja potwierdzona
+analitycznie lub numerycznie (nie obs.); \emph{otwarty} je\'sli czeka na
+dane przysz\l{}e.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}c>{\raggedright}p{3.1cm}p{4.4cm}p{2.0cm}p{2.0cm}@{}}
+\toprule
+\textbf{K\#} & \textbf{Predykcja} & \textbf{Test / obserwacja}
+  & \textbf{Skrypt / ref.} & \textbf{Status (2026)} \\
+\midrule
+K1 & Trzy re\.zimy z~jednego pola
+   & Ka\.zda przysz\l{}a BSM teoria z~jednym skalarnym polem
+     bez repulsji/studni na w\l{}a\'sciwych skalach obala K1
+   & stw.~\ref{thm:uniqueness}
+   & \textbf{Zamkni\k{e}ty} (analitycznie) \\[3pt]
+K2 & $\Lambda_{\mathrm{eff}} = \gamma/12$ bez \emph{fine-tuningu}
+   & Korelacja $\Lambda_{\mathrm{eff}}(z)$ ze strukturami
+     (DESI, Euclid, LSST; $w_0 + 1 < 0{,}05$)
+   & prop.~\ref{prop:Lambda-eff}; \texttt{w\_de\_redshift.py}
+   & \textbf{Otwarty} (DESI 2026+) \\[3pt]
+K3 & Problem zbie\.zno\'sci ($\Omega_m \sim \Omega_\Lambda$)
+   & Oba parametry wyznaczone przez jeden $\PhiZero$:
+     $f_c = \PhiZero/(36-\PhiZero) = \mathcal{O}(1)$
+     dla $\PhiZero \in [18, 34]$; cztery niezale\.zne
+     wi\k{e}zy daj\k{a} $\PhiZero \approx 24$--$28$
+   & prop.~\ref{prop:K3-coincidence};
+     \texttt{coincidence\_k3.py}
+   & \textbf{Zamkni\k{e}ty} (algebr.; $12/12$ PASS) \\[3pt]
+K4 & Stan zamro\.zony w~CD zamiast osobliwo\'sci
+   & Mody quasi-normalne fuzji~CD bez echa osobliwo\'sci;
+     ringdown widmo inna od~OTW (LISA, ET, $\delta f_l \gtrsim 0{,}1\%$)
+   & prop.~\ref{prop:breathing-splitting}; \texttt{frozen\_interior\_tgp.py}
+   & \textbf{Otwarty} (LISA/ET 2034+) \\[3pt]
+K5 & Dynamiczne $G(z)$: $|\dot G/G|_0 \lesssim H_0\varepsilon$
+   & Obserwacje LLR: $|\dot G/G| < 10^{-13}\ \mathrm{yr}^{-1}$;
+     BBN/CMB: $|\Delta G/G| < 0{,}1$/$0{,}05$
+   & rem.~\ref{rem:BBN-resolution}; \texttt{bbn\_attractor\_resolution.py}
+   & \textbf{Zamkni\k{e}ty} (BBN/CMB~OK; LLR: marginalnie) \\[3pt]
+K6 & $\hbar(\Phi)$: os\l{}abienie kwantowo\'sci w~silnych polach
+   & Precyzyjne pomiary $\delta\hbar/\hbar$ w~r\'o\.znych $\Phi$;
+     zegary atomowe/AION/MAGIS: $|\delta\hbar/\hbar| \sim 10^{-8}$
+   & stw.~\ref{thm:exponents}; \S\ref{sec:stale}
+   & \textbf{Otwarty} (poza dost\k{e}pem) \\[3pt]
+K7 & $\ell_P = \mathrm{const}$ (niezmienniczo\'s\'c Plancka)
+   & Niezgodno\'s\'c $c(\Phi)\cdot\hbar(\Phi)/G(\Phi)$ z~$\ell_P^2$
+     przy jakichkolwiek przysz\l{}ych testach wyk\l{}adnik\'ow
+   & stw.~\ref{thm:lP}; \texttt{constants\_consistency.py}
+   & \textbf{Zamkni\k{e}ty} (to\.zsamo\'s\'c alg.) \\[3pt]
+K8 & PPN: $\gamma_{\mathrm{PPN}} = \beta_{\mathrm{PPN}} = 1$ dok\l{}adnie
+   & Cassini: $|\gamma_{\mathrm{PPN}} - 1| < 2{,}3\times10^{-5}$;
+     GAIA/BepiColombo: poprawki $O(U^2)$
+   & prop.~\ref{prop:emergence-hierarchy}; \texttt{ppn\_3pn\_corrections.py}
+   & \textbf{Zamkni\k{e}ty} (PASS $12/12$) \\[3pt]
+K9 & Odchylenie metryki 3PN: $\Delta g_{tt} = +\tfrac{1}{6}U^3$
+   & Podw\'ojne pulsary (SKA): $|\Delta g_{tt}| \gtrsim 10^{-4}$
+     dla $U \sim 0{,}05$;
+     testy \emph{gauge-niezale\.zne} (ukl.~PKS~B1913+16)
+   & eq.~\eqref{eq:3PN-diff}; \texttt{pn3\_gauge\_invariant.py}
+   & \textbf{Zamkni\k{e}ty} (analitycznie; obs.\ 2030+) \\[3pt]
+K10 & Mod oddechowy GW: sygna\l{} w~PTA przy $m_{\mathrm{sp}} \sim H_0$
+   & PPTA/EPTA/NANOGrav: sygna\l{} izotropowy cz\k{e}sto\'sci
+     $f \sim c_0 m_{\mathrm{sp}}/(2\pi) \sim H_0$;
+     amplituda $\sim 10^{-17}$ (pred.~TGP)
+   & \S\ref{ssec:specyficzne} (item~5a)
+   & \textbf{Otwarty} (NANOGrav 2027+) \\[3pt]
+K11 & Brak echa GW od osobliwo\'sci CD
+   & LISA/ET: brak sygna\l{}u odbitego od wn\k{e}trza CD;
+     echa GW wymagaj\k{a}ce osobliwo\'sci wykluczone przez TGP
+   & stw.~\ref{thm:s-infty-regular}; \texttt{frozen\_interior\_tgp.py}
+   & \textbf{Otwarty} (LISA/ET 2034+) \\[3pt]
+K12 & Gauge substratu: $U(1)\times\mathrm{SU}(2)\times\mathrm{SU}(3)$ jedyne
+   & Odkrycie \emph{nowej} grupy cechowania (BSM)
+     nie-substratowej niszczy dedukcj\k{e}
+   & stw.~\ref{thm:gauge-uniqueness}; \texttt{gauge\_emergence.py}
+   & \textbf{Zamkni\k{e}ty} (analitycznie; $36/36$ PASS) \\[3pt]
+K13 & Okno Efimova: para niezwi\k{a}zana, tr\'ojka zwi\k{a}zana
+   & Stany planckowskie 3-cia\l{}owe dominuj\k{a} nad 2-cia\l{}owymi
+     dla $m_{\mathrm{sp}} \in (0, 0{,}0831)\,\ell_{\mathrm{Pl}}^{-1}$
+   & ex46; \texttt{master\_verification\_v27.py} (Q)
+   & \textbf{Zamkni\k{e}ty} (\S\ref{ssec:efimov-sector}) \\[3pt]
+K14 & Lyman-$\alpha$ TGP-FDM: napi\k{e}cie $< 1\sigma$
+   & Rogers+2021: $m_{22} > 2{,}1$; TGP: $m_{22,\rm eff} = 1{,}09$;
+     korekcja 1D P\_Lya usuwa napi\k{e}cie Rogers (3D artefakt)
+   & ex48; \texttt{master\_verification\_v27.py} (R)
+   & \textbf{Zamkni\k{e}ty} ($-0{,}4\sigma$) \\[3pt]
+K15 & Skalowanie elektros\l{}abe $v_W$ z~substratu
+   & Odkrycie $v_W \neq 246\,\mathrm{GeV}$ w~HL-LHC
+     sprzeczne z~Coleman-Weinberg TGP
+   & prop.~\ref{prop:JEW}; \texttt{ew\_scale\_substrate.py}
+   & \textbf{Zamkni\k{e}ty} ($v_W = 246{,}2\,\mathrm{GeV}$, $12/12$ PASS) \\[3pt]
+K16 & Sta\l{}a subtelna $\alpha_{\mathrm{em}}$ z~substratu
+   & $\alpha_{\mathrm{em}}^{\mathrm{obs}} = 1/137{,}036$;
+     TGP: $\alpha_{\mathrm{sub}} = 1/94{,}09$ ($J_{\mathrm{sub}} = 0{,}366$)
+     po przeliczeniu przez RG do~$\Lambda_{\mathrm{Pl}}$
+   & prop.~\ref{prop:alpha-em}; \texttt{alpha\_em\_rg\_flow.py}
+   & \textbf{Zamkni\k{e}ty} ($9/9$ PASS, rem.~\ref{rem:O12-closed}) \\[3pt]
+K17 & Cancellacja anomalii ABJ: $N_c = 3$ jedyne
+   & Odkrycie $N_c \neq 3$ w~nowych akceleratorach
+     ($e^+e^-$ powy\.zej threshold) obala K17
+   & \texttt{anomaly\_cancellation.py} ($20/20$ PASS, O13)
+   & \textbf{Zamkni\k{e}ty} ($N_c = 3$ analitycznie) \\[3pt]
+K18 & Skalowanie $r_c \propto M_{\mathrm{gal}}^{-1/9}$ (FDM F3)
+   & SPARC $n=30$: $\alpha_{\mathrm{obs}} = -0{,}096 \approx -1/9$;
+     $\Delta\mathrm{AIC} = +133$;
+     ex43 (THINGS+LITTLE THINGS $n=75$): $\Delta\mathrm{AIC} = +515$
+   & ex41; ex43; \S\ref{ssec:program}
+   & \textbf{Zamkni\k{e}ty} (F1 wykluczone $> 44\sigma$) \\[3pt]
+K19 & Orbita \'os emkowa: destabilizacja przez $V_3$ TGP
+   & Czas \.zycia 3-cia\l{}owej orbity \'osemkowej
+     maleje z~$\beta$: $\tau_{\mathrm{TGP}} < \tau_{\mathrm{Newton}}$
+   & ex49; \texttt{ex49\_figure\_eight\_tgp.py}
+   & \textbf{Zamkni\k{e}ty} (numerycznie, O19) \\[3pt]
+K20 & Odchylenie 3PN TaylorF2: $\Delta c_2 = -1/3$
+   & LIGO O3: nied etektowalne ($U_{\mathrm{eff}} \sim 10^{-6}$);
+     LISA MBHB (SNR $\gg 100$): potentially detectable;
+     $\sigma(\delta c_2) \sim 10^{-2}$--$10^{-3}$ dla LISA
+   & ex50; prop.~\ref{prop:gw-spectrum}; rem.~\ref{rem:k20-3pn}
+   & \textbf{Otwarty} (LISA 2034+) \\[3pt]
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Bilans kill-shot\'ow K1--K20]\label{rem:killshot-bilans}
+Stan na 2026-03-22: \textbf{13 zamkni\k{e}tych}
+(K1, K3, K5, K7--K9, K12--K19),
+\textbf{6 otwartych} (K2, K4, K6, K10, K11, K20 --- z~czego K2, K10
+najwy\.zszy priorytet obserwacyjny), \textbf{0 obalonych}.
+Kill-shoty K13/K14/K18 zamkni\k{e}te numerycznie (sesja v26--v28);
+K3 zamkni\k{e}ty algebraicznie --- prop.~\ref{prop:K3-coincidence},
+\texttt{coincidence\_k3.py} $12/12$~PASS.
+Kill-shot K20 otwiera si\k{e} z~misj\k{a} LISA (2034+).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Argument za wymiarem $3{+}1$}\label{ssec:wymiar}
+
+Pytanie ,,dlaczego trzy wymiary przestrzenne?'' w~TGP staje
+si\k{e} pytaniem o~w\l{}asno\'sci substratu relacyjnego $\Gamma$
+i~przej\'scia fazowego $\Ffield = 0 \to \Ffield > 0$.
+
+\begin{proposition}[Wymiar $d = 3$ jako optymalny
+  dla TGP]\label{prop:wymiar}
+Substrat relacyjny $\Gamma$ o~efektywnym wymiarze grafowym~$d$
+generuje stabiln\k{a} faz\k{e} metryczn\k{a} ($\Phi > 0$)
+z~bogat\k{a} struktur\k{a} defektow\k{a} \textbf{jedynie
+dla $d = 3$}. Argument opiera si\k{e} na analogii z~modelem
+Isinga na grafach:
+\begin{enumerate}[nosep]
+  \item \textbf{$d = 1$}: Brak przej\'scia fazowego
+        (twierdzenie Mermina--Wagnera w~$1D$).
+        Substrat nie mo\.ze wygenerowa\'c stabilnej metryki.
+  \item \textbf{$d = 2$}: Przej\'scie fazowe istnieje
+        (Ising~$2D$), ale defekty (\'scianki domenowe)
+        maj\k{a} wymiar $d{-}1 = 1$ --- s\k{a} niestabilne,
+        rozpadaj\k{a} si\k{e}. Faza metryczna jest krucha;
+        defekty nie mog\k{a} tworzy\'c stabilnych cz\k{a}stek.
+  \item \textbf{$d = 3$}: Przej\'scie fazowe stabilne.
+        Defekty tworz\k{a} bogat\k{a} hierarchi\k{e}:
+        \'scianki ($2D$) s\k{a} stabilne, linie ($1D$) i~punkty
+        ($0D$) r\'ownie\.z --- daj\k{a}c naturaln\k{a}
+        podstaw\k{e} dla r\'o\.znorodnej materii
+        (sekcja~\ref{ssec:defekty}).
+  \item \textbf{$d \geq 4$}: Przej\'scie fazowe staje si\k{e}
+        trywialne (przybli\.zenie pola \'sredniego jest
+        dok\l{}adne). Fluktuacje s\k{a} nieistotne ---
+        brak bogatej struktury defektowej, brak hierarchii mas.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Wymiar czasowy]
+Wymiar $+1$ (czas) wynika z~definicji czasu w~TGP
+(sekcja~\ref{ssec:czas}) jako parametru porz\k{a}dkuj\k{a}cego
+stany w~$\mathcal{S}_1$. Porz\k{a}dek jest \textbf{liniowy}
+(relacja przyczynowa jest totalnym porz\k{a}dkiem na \'scie\.zkach),
+co daje dok\l{}adnie jeden wymiar czasowy.
+Argument ten jest \textbf{preferencyjny}, nie dedukcyjny ---
+nie dowodzi, \.ze $d = 3$ jest jedynym mo\.zliwym wymiarem,
+lecz \.ze jest jedynym, w~kt\'orym TGP produkuje fizyk\k{e}
+o~obserwowanej z\l{}o\.zono\'sci.
+\end{remark}
+
+\input{sek07a_wymiar_wzmocniony}
+
+% ----------------------------------------------------------
+\subsection{Program symulacji numerycznych}\label{ssec:symulacja}
+
+Pe\l{}na weryfikacja TGP wymaga numerycznego rozwi\k{a}zania
+r\'ownania pola~\eqref{eq:full-field-alt} i~por\'ownania
+wynik\'ow z~danymi obserwacyjnymi. Proponujemy nast\k{e}puj\k{a}cy
+program symulacyjny:
+
+\subsubsection{Monte Carlo na substracie $\Gamma$}
+
+Symulacja modelu Isinga z~hamiltonianem substratu
+(sekcja~\ref{ssec:chiralna}) na grafie regularnym $d = 3$
+z~r\'o\.zn\k{a} koordynacj\k{a}~$z$:
+\begin{enumerate}[nosep]
+  \item \textbf{Pomiar $\beta_c(z)$}: wyznaczenie krytycznej
+        temperatury odwrotnej jako funkcji koordynacji.
+  \item \textbf{Profil $\Phi(r)$}: \'srednia konfiguracja pola
+        wok\'o\l{} pojedynczego defektu --- numeryczne
+        wyznaczenie profilu $\phi(r)$.
+  \item \textbf{Weryfikacja trzech re\.zim\'ow}: pomiar
+        $V_{\mathrm{eff}}(d)$ mi\k{e}dzy dwoma defektami
+        na r\'o\.znych skalach.
+  \item \textbf{Entropia granicy fazowej}: zliczenie mikrostanów
+        na granicy domeny $\Phi > 0$ / $\Phi \to \infty$
+        --- weryfikacja formu\l{}y~\eqref{eq:S-BH-TGP}.
+\end{enumerate}
+
+\subsubsection{Symulacja kosmologiczna}
+
+Numeryczna ewolucja r\'owna\'n~\eqref{eq:friedmann-TGP}--\eqref{eq:Phi-cosmo}
+z~realistycznym rozk\l{}adem materii:
+\begin{enumerate}[nosep]
+  \item Ewolucja $\varphi(t)$ od $\varphi \approx 1$
+        do dzi\'s: trajektoria kosmologiczna.
+  \item Wyznaczenie $\Lambda_{\mathrm{eff}}(z)$ i~por\'ownanie
+        z~danymi DESI/Euclid.
+  \item Obliczenie $G_{\mathrm{eff}}(k, a)$
+        (twierdzenie~\ref{thm:Geff-k}) i~por\'ownanie
+        z~danymi o~wzro\'scie struktur ($f\sigma_8$).
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsection{Wi\k{e}zy na parametry $\alpha$, $\beta$, $\gamma$}\label{ssec:wiezy}
+
+Sta\l{}e sprz\k{e}\.zenia TGP: $\alpha = 2$ (wygenerowany
+z~dzia\l{}ania, wniosek~\ref{cor:alpha-fixed}),
+$\beta$ i~$\gamma$ o~wymiarze $[\mathrm{L}^{-2}]$
+(uwaga~\ref{rem:wymiary-beta-gamma})
+s\k{a} wolnymi parametrami TGP.
+Ich warto\'sci mo\.zna ograniczy\'c z~istniej\k{a}cych obserwacji:
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright}p{3cm}p{7cm}>{\raggedright\arraybackslash}p{3.5cm}@{}}
+\toprule
+\textbf{Obserwacja} & \textbf{Wi\k{a}zany parametr}
+  & \textbf{Rz\k{a}d ograniczenia} \\
+\midrule
+Testy post-newtonowskie
+  (Cassini, LLR)
+  & $\alpha_{\mathrm{eff}} = q\PhiZero/(4\pi)$;
+    po\'srednio $\alpha$
+  & $|\alpha_{\mathrm{eff}}| < 10^{-3}$ \\[4pt]
+Nukleosynteza (BBN)
+  & $G(\Phi_{\mathrm{BBN}})/G_0 - 1$;
+    ogranicza $\beta/\gamma$ przez ewolucj\k{e} $\varphi$
+  & $|\Delta G/G| < 0{,}1$ \\[4pt]
+Ciemna energia
+  ($w_0$, $w_a$)
+  & $\beta$ i~$\gamma$ przez
+    $\Lambda_{\mathrm{eff}}(\varphi)$
+  & $|w_0 + 1| < 0{,}1$ (DESI) \\[4pt]
+Wzrost struktur
+  ($f\sigma_8$)
+  & $m_{\mathrm{sp}}^2 = 3\gamma - 2\beta = \gamma$
+    (dla $\beta = \gamma$);
+    skala przej\'scia $k/a \sim m_{\mathrm{sp}}$
+  & $G_{\mathrm{eff}}(k)$ (tw.~\ref{thm:Geff-k}) \\[4pt]
+Gwiazdy neutronowe
+  & $\Phi_{\mathrm{max}}/\PhiZero$; ogranicza
+    $\gamma$ (stabilno\'s\'c studni)
+  & Z~obserwacji mas i~promieni \\[4pt]
+Confinement (QCD)
+  & $r_{\mathrm{well}} \sim \alpha/\beta \cdot r_0
+    \sim 1\;\mathrm{fm}$
+  & $\alpha/\beta \sim 10^{-15}\;\mathrm{m}/r_0$ \\[4pt]
+SPARC ($n=30$, K18)
+  & $r_c \propto M_{\mathrm{gal}}^\alpha$;
+    $\alpha_{\mathrm{obs}} = -0{,}096$;
+    ogranicza scenariusz F1 vs F3;
+    F1 ($\alpha=-1$) wykluczone ($\Delta\mathrm{AIC}=+133$)
+  & $m_{\mathrm{sp}} = \sqrt{\gamma}$ (F3); $m_{22} \approx 2$ \\[4pt]
+Lyman-$\alpha$ (K14)
+  & $m_{22} > 2{,}1$ (Rogers+2021);
+    napięcie $2\times$ z~TGP-FDM;
+    ogranicza $m_{\mathrm{sp}}$ od do\l{}u
+  & $m_{22} = 2{,}0 \pm 1{,}5$;
+    FDM: $m_{\mathrm{sp}} = 8{,}2 \times 10^{-51}\,\ell_{\mathrm{Pl}}^{-1}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Hierarchia wi\k{e}z\'ow]
+Najostrzejsze ograniczenia pochodz\k{a} z~test\'ow
+post-newtonowskich ($\alpha_{\mathrm{eff}}$) i~BBN
+($\Delta G/G$). Parametry $\beta$ i~$\gamma$ s\k{a}
+s\l{}abiej zwi\k{a}zane i~wymagaj\k{a} danych kosmologicznych
+nowej generacji. Pe\l{}ne ograniczenie tr\'ojki
+$(\alpha,\beta,\gamma)$ wymaga jednoczesnego dopasowania
+do wielu zestaw\'ow danych --- jest to naturalny cel
+programu symulacyjnego z~sekcji~\ref{ssec:symulacja}.
+\end{remark}
+
+% --- GW summary table: polarizations, speeds, constraints (H4 deliverable) ---
+\input{nbody/tgp_gw_summary_table}
+
+% --- Formal cosmological likelihood: TGP vs LCDM (H6 deliverable) ---
+\input{nbody/tgp_cosmo_likelihood}

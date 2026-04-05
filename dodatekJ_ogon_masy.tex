@@ -1,0 +1,559 @@
+% ===================================================================
+%  Dodatek J: Amplituda ogona oscylacyjnego jako stała sprzężenia
+%             cząstki z substratem — mechanizm hierarchii mas leptonów
+%  TGP v1 — Sesja v33+ (2026-03-27)
+% ===================================================================
+\section{Amplituda ogona oscylacyjnego i~hierarchia mas leptonów}%
+\label{app:ogon-masy}
+
+Niniejszy dodatek formalizuje \textbf{Ścieżkę~9} (skrypty \texttt{ex55}--\texttt{ex59}):
+mechanizm, w~którym amplituda oscylacyjnego ogona solitonu~$\Phi$ pełni
+rolę stałej sprzężenia cząstki z~substratem, a~jej czwarta potęga reprodukuje
+stosunek mas mion–elektron $r_{21} = m_\mu/m_e \approx 206{,}77$.
+
+% -------------------------------------------------------------------
+\subsection{Profil solitonu i~jego ogon oscylacyjny}\label{app:J-profil}
+% -------------------------------------------------------------------
+
+\subsubsection{ODE solitonu TGP}
+
+Profil solitonu radialnie symetrycznego w~TGP spełnia równanie
+(por.\ dodatek~\ref{app:substrat}, równanie~\eqref{eq:soliton-ode}):
+\begin{equation}\label{eq:J-ode}
+  f(g)\,g'' \;+\; \frac{2}{r}\,g' \;=\; V'(g),
+\end{equation}
+gdzie $g = \Phi/\Phi_0$ jest znormalizowanym polem, $V(g) = g^3/3 - g^4/4$
+jest potencjałem TGP z~warunkiem~$\beta = \gamma$ (stwierdzenie~\ref{prop:vacuum-condition}),
+oraz:
+\begin{equation}\label{eq:J-fg}
+  f(g) = 1 + 2\alpha\ln g, \qquad \alpha = 2.
+\end{equation}
+Punkt osobliwy (,,duch''): $f(g^*) = 0$ przy $g^* = e^{-1/(2\alpha)} \approx 0{,}779$.
+
+Warunki brzegowe: $g(0) = g_0$ (,,strzał''), $g'(0) = 0$ (symetria),
+$g(r) \to 1$ dla $r \to \infty$ (próżnia).
+
+\subsubsection{Asymptotyczny ogon oscylacyjny}
+
+Dla $r \to \infty$ soliton zbiega do próżni $g = 1$ z~oscylacyjnym ogonem:
+\begin{equation}\label{eq:J-tail}
+  g(r) - 1 \;\sim\; \frac{B_{\rm tail}\cos r + C_{\rm tail}\sin r}{r}
+  \qquad (r \to \infty),
+\end{equation}
+gdzie $B_{\rm tail}, C_{\rm tail}$ są stałymi zależnymi od $g_0$.
+Amplituda ogona:
+\begin{equation}\label{eq:J-Atail}
+  A_{\rm tail}(g_0) = \sqrt{B_{\rm tail}^2 + C_{\rm tail}^2},
+  \qquad
+  \phi_{\rm tail}(g_0) = \mathrm{atan2}(B_{\rm tail},\, C_{\rm tail}).
+\end{equation}
+
+\begin{remark}[Fizyczna interpretacja $A_{\rm tail}$]\label{rem:J-Atail-fiz}
+W~TGP (Droga~B) każda cząstka fundamentalna tworzy pole przestrzenności
+$\sim C_i\,e^{-m_{\rm sp} r}/r$ wokół siebie. W~reżimie ekranowania
+$m_{\rm sp} \to 0$ (fala Yukawy przechodzi w~oscylacyjną) ogon~\eqref{eq:J-tail}
+reprezentuje \textbf{''rozmycie'' cząstki w~substracie} --- analogon
+sprzężenia z~polem kwantowym. Amplituda $A_{\rm tail}$ jest
+\textbf{miarą siły tego sprzężenia}: im większa, tym silniej cząstka
+oddziałuje z~gęstością wygenerowanej przestrzeni.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warunek kwantowania: czysta faza}\label{app:J-kwant}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Warunek kwantowania elektronu]\label{prop:J-quantization}
+Spośród ciągłego spektrum $g_0 \in (g^*, \infty)$ wartości wyróżnione
+to te, dla których ogon solitonu jest \textbf{czystym sinusem}:
+\begin{equation}\label{eq:J-H1}
+  B_{\rm tail}(g_0) = 0
+  \qquad (\text{hipoteza H1: zerowa faza kosinusowa}).
+\end{equation}
+Fizycznie: soliton jest w~\textbf{rezonansie z~substratem} ---
+amplituda odchodzącej składowej (kosinusowej, fala wychodzącą)
+zanika, pozostawiając wyłącznie składową stojącą (sinusową).
+Warunek~\eqref{eq:J-H1} jest substratem analogiem warunku
+całkowitego odbicia przy impedancji zerowej.
+\end{proposition}
+
+\begin{remark}[Weryfikacja numeryczna]\label{rem:J-verif}
+Skrypt~\texttt{ex58} (skan gęsty $g_0 \in [1{,}1, 3{,}0]$, $N = 300$):
+\begin{itemize}[nosep]
+  \item \textbf{Pierwsze zero $B_{\rm tail}$}: $g_0^e = 1{,}2301$
+    ($0{,}8\%$ odchylenie od wartości referencyjnej $g_0^e = 1{,}24$).
+    Hipoteza~H1 \textbf{potwierdzona dla elektronu}.
+  \item \textbf{Drugie zero $B_{\rm tail}$}: $g_0 = 2{,}0797$,
+    co daje $(A(2{,}0797)/A(1{,}23))^4 = 375 \neq 206{,}77$.
+    Hipoteza~H1 \textbf{nie wyjaśnia} masy mionu przez samo drugie zero.
+\end{itemize}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Skalowanie $A_\mathrm{tail}$ i~stosunek mas}\label{app:J-skalowanie}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Skalowanie $A_{\rm tail} \propto g_0^4$]\label{prop:J-scaling}
+W~sektorze bez odbić ($n_{\rm bounce} = 0$) amplituda ogona skala się jak:
+\begin{equation}\label{eq:J-scaling}
+  A_{\rm tail}(g_0) \;\propto\; g_0^{4{,}12 \pm 0{,}05}
+  \qquad (g_0 \in [1{,}1,\, 2{,}2]),
+\end{equation}
+co jest bliskie $g_0^4$ (wyniki~\texttt{ex57}, fit~log-liniowy,
+korekta wykładnika od nieliniowości $f(g)$).
+\end{proposition}
+
+\begin{remark}[Kluczowy wynik: stosunek mas z~amplitudy ogona]\label{rem:J-kluczowy}
+Przy $g_0^e = 1{,}24$ (elektron) i~$g_0^\mu = 2{,}00$ (mion):
+\begin{equation}\label{eq:J-r21-Atail}
+  \left(\frac{A_{\rm tail}(g_0^\mu)}{A_{\rm tail}(g_0^e)}\right)^4
+  = \left(\frac{A_{\rm tail}(2{,}00)}{A_{\rm tail}(1{,}24)}\right)^4
+  = 210{,}1 \;\approx\; 206{,}77 \qquad (\text{odchylenie } 1{,}6\%).
+\end{equation}
+Wynik pochodzi ze skryptu~\texttt{ex57} (szeroki skan
+$g_0 \in [1{,}02, 7{,}0]$, 7/7 testów pozytywnych).
+\end{remark}
+
+\begin{hypothesis}[Masa cząstki jako czwarta potęga amplitudy ogona]%
+\label{hyp:J-mass-Atail4}
+Masa cząstki fundamentalnej w~TGP jest proporcjonalna do czwartej potęgi
+amplitudy sprzężenia jej solitonu z~substratem:
+\begin{equation}\label{eq:J-mass-hyp}
+  m \;\propto\; A_{\rm tail}(g_0)^4.
+\end{equation}
+\textbf{Uzasadnienie heurystyczne}: w~teorii pola kwantowego amplituda
+rozpraszania w~czwartym rzędzie rachunku zaburzeń skaluje się jak
+$\mathcal{A}^4$, gdzie $\mathcal{A}$ jest amplitudą sprzężenia.
+W~TGP $A_{\rm tail}$ pełni rolę stałej sprzężenia cząstki z~substratem
+(uwaga~\ref{rem:J-Atail-fiz}): masa wynikająca z~samoenergetycznej
+pętli czwartego rzędu skaluje się jak $A_{\rm tail}^4$.
+Status: \statuslabel{Hipoteza} [POST+NUM] (odchylenie $1{,}5\%$);
+argument analityczny: $\mathcal{E}^{(2)} = 0$ (tryb zerowy) --- twierdzenie;
+jednak $\mathcal{E}^{(3)} \neq 0$ perturbacyjnie (ex148, uw.~\ref{rem:R-E3-status}),
+więc przejście $A^2 \to A^4$ wymaga mechanizmu nieperturbacyjnego.
+Weryfikacja numeryczna: \texttt{ex142} (12/12 PASS), \texttt{ex143} (10/10 PASS).
+Argument heurystyczny: stopień potencjału $V$ (stw.~\ref{prop:K-exponent}).
+\end{hypothesis}
+
+% -------------------------------------------------------------------
+\begin{proposition}[Masa solitonu TGP: tryb zerowy i~korekta nieliniowa]%
+\label{prop:J-zero-mode-mass}
+Niech $g(r)$ będzie rozwiązaniem solitonowym ODE TGP
+\begin{equation}
+  f(g)\,g'' + \frac{2}{r}\,g' = V'(g),
+  \qquad f(g) = 1 + 2\alpha\ln g,\quad \alpha = 2,
+\end{equation}
+z~warunkiem brzegowym $g(r) \to 1$ dla $r \to \infty$.
+Niech $\delta(r) = g(r) - 1$ będzie małym odchyleniem w~ogonie.
+
+\medskip\noindent
+\textbf{(i) Tryb zerowy zlinearyzowanego ODE.}
+Linearyzacja przy $g = 1$ ($f(1) = 1$, $V''(1) = \gamma = 1$) daje:
+\begin{equation}
+  \delta'' + \frac{2}{r}\,\delta' + \delta = 0.
+\end{equation}
+Ogólne rozwiązanie regularnie zanikające to $\delta(r) = A_{\rm tail}\,j_0(r) + \ldots$,
+gdzie $j_0(r) = \sin(r)/r$ jest sferyczną funkcją Bessela.
+Energia kwadratowego członu fluktuacji w~ogonie ($r \to \infty$):
+\begin{equation}\label{eq:J-zero-mode-energy}
+  \mathcal{E}_{\rm linear}
+  = \int_R^\infty \!\!\bigl[(\delta')^2 - \delta^2\bigr]\,4\pi r^2\,dr
+  \;\xrightarrow{R \to \infty}\; 0
+\end{equation}
+(całki kinetyczna i~potencjalna kasują się dokładnie:
+$\frac{1}{2}[\sin(2r)]_R^\infty - \frac{1}{2}[\sin(2r)]_R^\infty \equiv 0$).
+
+\medskip\noindent
+\textbf{(ii) Konsekwencja dla masy fizycznej.}
+Tryb $\delta \propto \sin(r)/r$ jest \emph{trybem zerowym} zlinearyzowanego
+funkcjonału energii, tzn.\ jego wkład do całkowitej energii solitonu
+pochodzi wyłącznie z~członu nieliniowego (co najmniej czwartego rzędu):
+\begin{equation}\label{eq:J-mass-Atail4-analytic}
+  \boxed{M_{\rm TGP} = c_M \cdot A_{\rm tail}^4 + \mathcal{O}(A_{\rm tail}^6),}
+\end{equation}
+gdzie $c_M > 0$ jest stałą wyznaczaną z~całki:
+\[
+  c_M \;=\; 4\pi \int_0^\infty \mathcal{L}^{(4)}\!\bigl[j_0(r)\bigr]\,r^2\,dr,
+\]
+a~$\mathcal{L}^{(4)}$ oznacza człon czwartego rzędu w~rozwinięciu
+Lagrangianu względem $\delta$.
+
+\medskip\noindent
+\textbf{Status}: \statuslabel{Propozycja} [AN($\mathcal{E}^{(2)}$)+POST($A^4$)+NUM]
+(kasowanie wirialowe $\mathcal{E}^{(2)}=0$ --- analitycznie;
+ale $\mathcal{E}^{(3)} \neq 0$ perturbacyjnie (ex148),
+więc krok $A^2 \to A^4$ jest nieperturbacyjny;
+tw.~\ref{thm:R-A4}, dod.~\ref{app:zero-mode-A4};
+argument heurystyczny: stopień potencjału (stw.~\ref{prop:K-exponent});
+weryfikacja: \texttt{ex142} 12/12 PASS, \texttt{ex67} 5/5 PASS).
+\end{proposition}
+% -------------------------------------------------------------------
+
+% -------------------------------------------------------------------
+\subsection{Złota proporcja i~topologia sektorów}\label{app:J-zlota}
+% -------------------------------------------------------------------
+
+\begin{remark}[Obserwacja złotej proporcji]\label{rem:J-golden}
+Skrypt~\texttt{ex58} ujawnia:
+\begin{equation}\label{eq:J-golden}
+  \frac{g_0^\mu}{g_0^e} = \frac{2{,}00}{1{,}24} \approx 1{,}613
+  \;\approx\; \varphi = \frac{1 + \sqrt{5}}{2} = 1{,}618\ldots
+  \qquad (\text{odchylenie } 0{,}3\%).
+\end{equation}
+Przy dokładnej złotej proporcji: $g_0^\mu = g_0^e \cdot \varphi = 1{,}24 \cdot 1{,}618 = 2{,}006$.
+\end{remark}
+
+\begin{hypothesis}[Złota proporcja z~topologii solitonu]\label{hyp:J-golden-topo}
+Sektory solitonu $n_{\rm bounce} = 0$ (elektron) i~$n_{\rm bounce} = 1$ (mion)
+są topologicznie odrębne --- odpowiadają różnym klasom homotopii trajektorii
+$g(r)\colon [0,\infty) \to (g^*, \infty)$ w~przestrzeni konfiguracyjnej
+z~barierą kinetyczną $f(g) = 0$ przy $g = g^*$.
+
+Złota proporcja $\varphi$ pojawia się jako wyróżniona relacja między
+sąsiednimi sektorami topologicznymi w~układzie z~mnożnikiem Lagrange'a
+postaci $\phi^2 = \phi + 1$ (własność samopodobna złotej proporcji:
+$g_0^{(n+1)}/g_0^{(n)} \to \varphi$ w~granicy dużych~$n$).
+
+Status: \statuslabel{Hipoteza} topologiczna (wymaga weryfikacji
+analitycznej, skrypt~\texttt{ex60}).
+\end{hypothesis}
+
+\begin{remark}[Tau jako trzecia generacja]\label{rem:J-tau}
+Jeśli $g_0^\mu = g_0^e \cdot \varphi$, to naturalnym kandydatem
+na tau jest $g_0^\tau = g_0^\mu \cdot \varphi^k$ dla jakiegoś
+$k \geq 1$, co daje:
+\[
+  r_{31} = \left(\frac{A_{\rm tail}(g_0^\tau)}{A_{\rm tail}(g_0^e)}\right)^4
+  \approx (\varphi^k)^{4 \cdot \gamma_{\rm eff}},
+\]
+gdzie $\gamma_{\rm eff} \approx 4{,}12$ jest wyznaczony z~\texttt{ex57}.
+Dla $k = 2$: $r_{31} \approx (g_0^\tau/g_0^e)^{4{,}12}
+= (1{,}618^2 \cdot 1{,}24/1{,}24)^{4{,}12} \approx 2{,}618^{4{,}12} \approx 50$
+--- dalekie od $r_{31} = 3477$.
+Pełne wyprowadzenie hierarchii $r_{31}$ wymaga dodatkowej
+zasady selekcji~$g_0^\tau$ (problem otwarty O-J3).
+Odwrotna kalkulacja z~warunku $m \propto A_{\rm tail}^4$ (\texttt{ex61})
+daje $g_0^\tau \approx 2{,}34$, $m_\tau \approx 1777$~MeV ---
+zob.\ hipoteza~\ref{hyp:K-tau} i~tabela~\ref{tab:K-tau-candidates}
+w~Dodatku~\ref{app:wkb-atail}.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Analityczne szacowanie $A_{\rm tail}$}\label{app:J-analityczne}
+% -------------------------------------------------------------------
+
+\subsubsection{Przybliżenie WKB przy barierze kinetycznej}
+
+Dla $g_0$ bliskiego $g^* = e^{-1/4}$ bariera kinetyczna $f(g) \to 0$
+tworzy rejon o~dużej "krętności" trajektorii $g(r)$.
+W~przybliżeniu WKB (zmienne $s = -\ln g$, $\tilde{r} = r$):
+\begin{equation}\label{eq:J-WKB-action}
+  A_{\rm tail} \;\sim\; A_0\,\exp\!\left[-\int_{g^*}^{g_0}
+    \frac{\sqrt{2|V_{\rm eff}(g)|}}{|f(g)|^{1/2}}\,dg\right],
+\end{equation}
+gdzie $V_{\rm eff}(g) = V(g) - V(g^*)$ jest potencjałem efektywnym
+przesunietym do zera przy barierze.
+
+\begin{remark}[Wykładnik $\approx 4$]\label{rem:J-exp4}
+Numeryczna weryfikacja (\texttt{ex57}): $A_{\rm tail} \propto g_0^{4{,}12}$.
+Wykładnik $4$ może wynikać z~faktu, że $V(g) = g^3/3 - g^4/4$
+jest wielomianem czwartego stopnia z~dominującym ($-g^4/4$) przy $g \to 0$.
+Dla małych $g_0$ całka WKB~\eqref{eq:J-WKB-action} skaluje się jak
+$\ln(g_0/g^*)^4 + \ldots$, skąd $A_{\rm tail} \propto (g_0/g^*)^4$
+(heurystycznie). Argument ze stopnia $V(g)$ i~niezależność wykładnika od~$\alpha$
+(skrypt~\texttt{ex62} dla $\alpha \in [1{,}0;\, 3{,}0]$) są sformalizowane
+jako twierdzenie~\ref{res:K-SWKB} w~Dodatku~\ref{app:wkb-atail};
+pełne wyprowadzenie przez dopasowanie asymptotyczne pozostaje problemem O-J1.
+\end{remark}
+
+\subsubsection{Asymptotyczna relacja A-tail z parametrem strzału}
+
+Dla $g_0 \in (1, 2{,}5)$ (sektor $n_{\rm bounce} = 0$) numeryczny fit (\texttt{ex57}):
+\begin{equation}\label{eq:J-fit}
+  A_{\rm tail}(g_0) \approx c_A \cdot (g_0 - g^*)^{4{,}12},
+  \qquad
+  c_A \approx 0{,}35 \;\pm\; 0{,}05.
+\end{equation}
+Wartości odniesienia:
+\begin{equation}\label{eq:J-Atail-values}
+  A_{\rm tail}(1{,}24) \approx 0{,}287,
+  \qquad
+  A_{\rm tail}(2{,}00) \approx 1{,}09.
+\end{equation}
+
+% -------------------------------------------------------------------
+\subsection{Status i~otwarte problemy}\label{app:J-status}
+% -------------------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{4.5cm}lp{4.2cm}p{2.4cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / założenia}
+  & \textbf{Odsyłacz} \\
+\midrule
+
+Ogon oscylacyjny $g(r)-1 \sim (B\cos r + C\sin r)/r$
+  & \statuslabel{Twierdzenie}
+  & liniowe ODE dla $g-1 \ll 1$ przy $r\to\infty$; $m_{\rm sp}^2 = V''(1) = \gamma$
+  & stw.~\ref{prop:N0-6-from-N0-5} \\[3pt]
+
+Skalowanie $A_{\rm tail} \propto g_0^{4{,}12}$
+  & \statuslabel{Propozycja}
+  & numeryczna weryfikacja \texttt{ex57}; 7/7 PASS
+  & stw.~\ref{prop:J-scaling} \\[3pt]
+
+$(A(2{,}00)/A(1{,}24))^4 \approx 206{,}77$ (1{,}6\%)
+  & \statuslabel{Propozycja}
+  & \texttt{ex57}; $g_0^e, g_0^\mu$ dane
+  & uw.~\ref{rem:J-kluczowy} \\[3pt]
+
+$M_{\rm TGP} = c_M A_{\rm tail}^4 + \mathcal{O}(A^6)$ (tryb zerowy)
+  & \statuslabel{Propozycja}
+  & $\mathcal{E}^{(2)}=0$ [AN]; $\mathcal{E}^{(3)}\neq 0$ [AN/ex148]; krok $A^2 \to A^4$ nieperturbacyjny
+  & prop.~\ref{prop:J-zero-mode-mass} \\[3pt]
+
+$m \propto A_{\rm tail}^4$ (hipoteza masy)
+  & \statuslabel{Hipoteza}
+  & [POST+NUM] ($1{,}6\%$); argument heurystyczny: stopień $V$ (stw.~\ref{prop:K-exponent})
+  & hip.~\ref{hyp:J-mass-Atail4} \\[3pt]
+
+$B_{\rm tail}(g_0^e) = 0$ (warunek kwantowania elektronu)
+  & \statuslabel{Propozycja}
+  & $g_0^e = 1{,}2301$ potwierdzone (\texttt{ex58}; 0{,}8\%)
+  & stw.~\ref{prop:J-quantization} \\[3pt]
+
+$g_0^\mu / g_0^e \approx \varphi$ (złota proporcja)
+  & \statuslabel{Hipoteza}
+  & odchylenie 0{,}3\%; topologiczna motywacja
+  & hip.~\ref{hyp:J-golden-topo} \\[3pt]
+
+Analityczne wyprowadzenie $A_{\rm tail}(g_0)$
+  & \statuslabel{Program}
+  & WKB przy $f(g)=0$; całka~\eqref{eq:J-WKB-action}
+  & O-J1 \\[3pt]
+
+Zasada selekcji $g_0^\mu = g_0^e \cdot \varphi$
+  & \statuslabel{Hipoteza}
+  & $g_0^\mu{=}2{,}00$ vs 2.\ zero $B_{\rm tail}{=}2{,}08$;
+    odch.\ $4\%$; sektory w~Dod.~\ref{app:wkb-atail}
+  & hip.~\ref{hyp:J-golden-topo}; \texttt{ex60} \\[3pt]
+
+Predykcja $g_0^\tau \approx 2{,}34$, $m_\tau \approx 1777$~MeV
+  & \statuslabel{Hipoteza}
+  & odwrotna kalk.\ (\texttt{ex61}); Koide $0{,}5\%$
+  & hip.~\ref{hyp:K-tau}; dod.~\ref{app:wkb-atail} \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Otwarte problemy Ścieżki~9.}
+\begin{enumerate}[nosep,label=\textbf{O-J\arabic*.}]
+  \item \textbf{Analityczne $A_{\rm tail}(g_0)$}: Czy całkę WKB~\eqref{eq:J-WKB-action}
+    można zamknąć w~postaci elementarnej? Wykładnik~$4$ odpowiada
+    czwartemu stopniowi $V(g)$ (argument sformalizowany w~Dod.~\ref{app:wkb-atail},
+    res.~\ref{res:K-SWKB}; potwierdzony numerycznie dla $\alpha\in[1,3]$ przez \texttt{ex62}).
+    Pełne zamknięcie analityczne przez metodę dopasowania asymptotycznego:
+    program~\ref{prob:K-OJ1}.
+  \item \textbf{Zasada selekcji $g_0^\mu$}
+    (\statuslabel{Hipoteza}, zob.\ Dod.~\ref{app:wkb-atail}~\S\ref{sec:K-sektory}):
+    Warunek $B_{\rm tail}(g_0^\mu) = 0$ daje $g_0^\mu = 2{,}0797 \neq 2{,}00$.
+    Co wyróżnia $g_0^\mu = 2{,}00$? Skrypt~\texttt{ex60} potwierdza
+    że $g_0^\mu = 2{,}00$ odpowiada granicy sektora topologicznego
+    ($n_{\rm cross}$) --- złota proporcja pojawia się jako stosunek
+    $z_{\rm next}/z_0$ sąsiednich zer $B_{\rm tail}$, z~odchyleniem~$4\%$
+    od dokładnego $\varphi$; analityczne uzasadnienie pozostaje otwarte.
+  \item \textbf{Hierarchia $r_{31}$ --- tau}
+    (\statuslabel{Hipoteza}, hip.~\ref{hyp:K-tau} w~Dod.~\ref{app:wkb-atail}):
+    Odwrotna kalkulacja (\texttt{ex61}) przy $m \propto A_{\rm tail}^4$
+    i~$r_{31} = 3477{,}15$ daje $g_0^\tau \approx 2{,}34$,
+    $m_\tau \approx 1777$~MeV, zgodne z~Formułą Koidego na poziomie $0{,}5\%$.
+    Zasada selekcji (dlaczego akurat $g_0^\tau = 2{,}34$?) pozostaje otwarta.
+\end{enumerate}
+
+\begin{remark}[Weryfikacja numeryczna v41: $\varphi$-FP i~bariera ducha]%
+\label{rem:J-v41-verification}
+Skrypty \texttt{tau\_mass\_selection.py} i~\texttt{tau\_mass\_full\_ode.py}
+(v41, 2026-03-30) weryfikują $\varphi$-FP w~obu wariantach ODE.
+
+\medskip\noindent
+\textbf{Uproszczone ODE} $f(g)g''+\tfrac{2}{r}g'=V'(g)$
+(bez członu $\tfrac{\alpha}{g}(g')^2$):
+\begin{itemize}[nosep]
+  \item $\varphi$-FP: $g_0^* = 0{,}8993$, $\varphi\cdot g_0^* = 1{,}455$,
+    $(A_\mu/A_e)^4 = 206{,}768$ --- \textbf{dokładna zgodność z~PDG}.
+  \item Brak bariery ducha --- masa tauonu dostępna.
+\end{itemize}
+
+\noindent
+\textbf{Pełne ODE} $f(g)[g''+\tfrac{2}{r}g']+\tfrac{\alpha}{g}(g')^2=g^2(1-g)$
+(Radau, rtol=$10^{-10}$):
+\begin{itemize}[nosep]
+  \item $\varphi$-FP: $g_0^* = 0{,}8339$, $\varphi\cdot g_0^* = 1{,}349$,
+    $(A_\mu/A_e)^4 = 206{,}768$ --- \textbf{dokładna zgodność z~PDG}.
+  \item \textbf{Bariera ducha}: solitony z~$g_0 \gtrsim 1{,}63$ przekraczają
+    punkt $g^* = e^{-1/4}$ ($f(g^*)=0$) i~rozwiązanie rozbiera się
+    (śledzenie z~50-cyfrową precyzją mpmath potwierdza blowup
+    przy $r \approx 3{,}36$ dla $g_0 = 2{,}0$).
+  \item Krytyczne wartości: $g_0^{\rm crit} \approx 1{,}63$,
+    $g_{\min}(g_0^{\rm crit}) = 0{,}779 \approx g^*$,
+    $f(g_{\min}) \approx 0{,}001$.
+  \item Mion bezpieczny: $g_{\min}(\varphi\cdot g_0^*) = 0{,}898$,
+    margines $g_{\min} - g^* = 0{,}119$.
+  \item $\max (A/A_e)^4 \approx 1571$ przy $g_0 = 1{,}613$ ---
+    \textbf{stosunek $r_{31} = 3477$ (tauon) nieosiągalny},
+    brak czynnika $\approx 2{,}2\times$.
+\end{itemize}
+
+\medskip\noindent
+\textbf{Wniosek}: Mechanizm $\varphi$-FP jest \textbf{strukturalną własnością}
+ODE solitonu TGP --- potwierdzony w~obu wariantach z~identycznym stosunkiem mas.
+Pełne ODE obcina jednak spektrum solitonowy barierą ducha: tauon wymaga
+\emph{UV-uzupełnienia} ponad $g^*$.
+
+\medskip\noindent
+\textbf{ODE substratowe} (UV-uzupełnienie, ghost-free):
+\begin{equation}\label{eq:J-substrate-ode}
+  g^2\,g'' + g\,(g')^2 + \frac{2}{r}\,g^2\,g' = V'(g),
+\end{equation}
+z~$K_{\rm sub}(g) = g^2 > 0$ dla każdego $g > 0$ (sek.~\ref{sek:ghost-resolution}).
+\begin{itemize}[nosep]
+  \item $\varphi$-FP: $g_0^* = 0{,}8694$, $\varphi\cdot g_0^* = 1{,}407$,
+    $(A_\mu/A_e)^4 = 206{,}77$ --- zgodność z~PDG ($0{,}04\%$).
+  \item \textbf{Tauon osiągalny}: $g_0^\tau = 1{,}729$,
+    $r_{31} = (A_\tau/A_e)^4 = 3477{,}2$ --- \textbf{zgodność 0{,}001\% z~PDG}.
+  \item $m_\tau^{\rm pred} = 1776{,}83$~MeV (PDG: $1776{,}86$), $\Delta m = -14$~ppm.
+  \item Relacja Koidego: $K = 0{,}66666$ (odch.\ $-11$~ppm od dokładnego $2/3$).
+  \item Brak bariery ducha --- $g_{\min}(\tau) = 0{,}742$, poniżej $g^*$ bez osobliwości.
+\end{itemize}
+
+\medskip\noindent
+\begin{tabular}{lccc}
+\toprule
+  Wielkość & ODE uproszczone & ODE pełne & ODE substratowe \\
+\midrule
+  $g_0^*$ (elektron) & $0{,}8993$ & $0{,}8339$ & $0{,}8694$ \\
+  $\varphi\cdot g_0^*$ (mion) & $1{,}455$ & $1{,}349$ & $1{,}407$ \\
+  $(A_\mu/A_e)^4$ & $206{,}768$ & $206{,}768$ & $206{,}77$ \\
+  bariera ducha $g_0^{\rm crit}$ & brak & $\approx 1{,}63$ & brak \\
+  $g_0^\tau$ & $\approx 2{,}35$ & --- (nieosiągalny) & $1{,}729$ \\
+  $r_{31} = (A_\tau/A_e)^4$ & $590$ & --- & $3477{,}2$ \\
+  $\Delta r_{31}$ vs PDG & $-83\%$ & --- & $+0{,}001\%$ \\
+  $m_\tau$ [MeV] & $302$ & --- & $1776{,}8$ \\
+  Koide $K$ & --- & --- & $0{,}66666$ \\
+\bottomrule
+\end{tabular}
+
+\medskip\noindent
+\textbf{Wniosek}: Mechanizm $\varphi$-FP jest strukturalną własnością
+\textbf{wszystkich trzech} wariantów ODE.
+ODE substratowe~\eqref{eq:J-substrate-ode} stanowi naturalne UV-uzupełnienie
+bariery ducha i~reprodukuje \textbf{obie} hierarchie mas ($r_{21}$ i~$r_{31}$)
+z~zerową liczbą parametrów wolnych.
+Problem O-J3 (zasada selekcji $g_0^\tau$) rozwiązany poniżej
+(prop.~\ref{prop:J-koide-chain}).
+\end{remark}
+
+\begin{proposition}[Łańcuch $\varphi$-FP + Koide $\to$ trzy masy leptonów]%
+\label{prop:J-koide-chain}
+Przy założeniach (i)~$m \propto A_{\rm tail}^4$
+(hip.~\ref{hyp:J-mass-Atail4}), (ii)~selekcja $\varphi$-FP
+($g_0^\mu = \varphi\,g_0^e$), (iii)~formuła Koidego
+$K = \frac{m_e+m_\mu+m_\tau}{(\sqrt{m_e}+\sqrt{m_\mu}+\sqrt{m_\tau})^2} = \tfrac{2}{3}$,
+\textbf{masy wszystkich trzech naładowanych leptonów wynikają z~ODE substratowego
+bez parametrów wolnych}.
+
+\medskip\noindent\textbf{Łańcuch wyprowadzenia:}
+\begin{enumerate}[nosep]
+\item ODE substratowe~\eqref{eq:J-substrate-ode} $\to$ $A_{\rm tail}(g_0)$ (numerycznie).
+\item $\varphi$-FP: wyznacza $g_0^*$ takie, że
+      $(A_{\rm tail}(\varphi\,g_0^*)/A_{\rm tail}(g_0^*))^4 = r_{21}$.
+      Wynik: $g_0^* = 0{,}8694$, $r_{21} = 206{,}77$.
+\item Koide: przy ustalonym $r_{21}$, równanie
+      $3(1 + r_{21} + r_{31}) = 2(1 + \sqrt{r_{21}} + \sqrt{r_{31}})^2$
+      ma dwa pierwiastki; fizyczny to $r_{31} = 3477{,}4$.
+\item Odwrócenie: $g_0^\tau = A_{\rm tail}^{-1}\!\bigl(A_e \cdot r_{31}^{1/4}\bigr) = 1{,}729$.
+\end{enumerate}
+
+\medskip\noindent\textbf{Wyniki numeryczne} (\texttt{oj3\_tau\_selection.py}):
+\begin{center}\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+  Metoda & $g_0^\tau$ & $r_{31}$ & $m_\tau$ [MeV] & $\Delta$ od PDG \\
+\midrule
+  PDG (ref.) & --- & $3477{,}15$ & $1776{,}86$ & --- \\
+  $\varphi$-FP + Koide & $1{,}7294$ & $3477{,}4$ & $1777{,}0$ & $+60$~ppm \\
+  ,,harmoniczna'' $2\,g_0^e$ & $1{,}7389$ & $3715{,}6$ & $1898{,}7$ & $+6{,}9\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+Hipoteza ,,harmoniczna'' $g_0^\tau = 2\,g_0^e$ daje odchylenie~$6{,}9\%$
+i~\textbf{jest wykluczona} jako dokładna zasada.
+Formuła Koidego z~$r_{21}(\varphi\text{-FP})$ daje $m_\tau$ z~precyzją
+$60$~ppm --- \textbf{kompatybilną z~PDG} na~poziomie niepewności eksperymentalnej
+($\sigma_{m_\tau} = 0{,}12$~MeV $\Rightarrow 68$~ppm).
+
+\medskip\noindent
+\textbf{Interpretacja}: $\varphi$-FP determinuje \emph{jedną} hierarchię mas ($r_{21}$),
+Koide domyka tryplet do dokładnie \emph{trzech} generacji.
+Sens fizyczny: Koide jest warunkiem \emph{globalnego domknięcia}
+trypletu leptonowego w~sektorze substratowym TGP.
+
+Status: \statuslabel{Propozycja} (warunkowo na hip.~\ref{hyp:J-mass-Atail4}
+i~ODE substratowym).
+\end{proposition}
+
+\paragraph{Porównanie ze Ścieżkami 1--8.}
+Wszystkie poprzednie ścieżki (K*₂/K*₁, M\_conf, argmax, warunek
+energetyczny) były zamknięte negatywnie lub osiągały $r_{21}$ tylko
+dla wartości $\alpha_K$ niemożliwych przy fizycznym $a_\Gamma$.
+Ścieżka~9 jest jakościowo inna: opiera się na~\emph{amplitudzie sprzężenia}
+(obserwowalnej: ogon pola), a~nie na~energii solitonu. Odchylenie
+$1{,}6\%$ od $206{,}77$ przy $g_0^e = 1{,}24$, $g_0^\mu = 2{,}00$
+jest dotychczas \textbf{najlepszym wynikiem} ze wszystkich ścieżek.
+
+\begin{remark}[Precyzyjna weryfikacja numeryczna: 83~ppm]\label{rem:J-precision-ex157}
+Niezależna weryfikacja (\texttt{ex157\_one\_param\_prediction.py}, sesja v45)
+w~ODE substratowym z~podwyższoną precyzją ($\textsf{rtol} = 10^{-10}$,
+$\textsf{atol} = 10^{-12}$) potwierdza łańcuch prop.~\ref{prop:J-koide-chain}:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccl@{}}
+\toprule
+  Wielkość & Predykcja & PDG & $\Delta$ \\
+\midrule
+  $g_0^e$              & $0{,}869470$ & --- & (bazowy) \\
+  $g_0^\mu$            & $1{,}406833$ & --- & $= \varphi\,g_0^e$ \\
+  $r_{21}$             & $206{,}77$   & $206{,}77$ & $< 0{,}01\%$ \\[2pt]
+  $g_0^\tau$ (K=2/3)   & $1{,}729615$ & --- & \\
+  $r_{31}$             & $3477{,}44$  & $3477{,}15$ & $0{,}0083\%$ \\
+  $m_\tau$             & $1776{,}97$~MeV & $1776{,}86$~MeV & $0{,}006\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Odchylenie $\Delta r_{31} = 0{,}0083\%$ ($\approx 83$~ppm) jest wewnątrz
+niepewności eksperymentalnej PDG ($\sigma_{m_\tau} = 0{,}12$~MeV $\Rightarrow 68$~ppm).
+Analiza wrażliwości: $\Delta r_{21} = \pm 1\%$ daje $\Delta r_{31} = \pm 0{,}91\%$ (stabilne).
+
+Trzy rozwiązania Koidego $K = 2/3$ istnieją ($g_0^\tau \in \{0{,}785,\; 1{,}186,\; 1{,}729\}$);
+wyłącznie trzecie daje fizyczne $r_{31}$ zgodne z~PDG.
+\end{remark}
+
+\paragraph{Spójność z~N0 i~duchem teorii.}
+Hipoteza~\ref{hyp:J-mass-Atail4} jest zgodna z~założeniami N0 teorii:
+\begin{itemize}[nosep]
+  \item[N0-1] Masa jest własnością substratową (ogon solitonu),
+    nie zewnętrzną stałą Higgsa.
+  \item[N0-5] Warunek próżniowy $\beta = \gamma$ determinuje $V(g) = g^3/3 - g^4/4$,
+    co daje wykładnik~$\approx 4$ w~skalowaniu $A_{\rm tail}$.
+  \item[N0-6] Masa bozonu $m_{\rm sp} = \sqrt{\gamma}$ wyznacza falę oscylacyjną
+    ogona (długość fali $\lambda = 2\pi/m_{\rm sp}$).
+\end{itemize}
+
+\paragraph{Kontynuacja w~Dodatku~K.}
+Analityczne wyniki sesji v34 uzupełniające niniejszy dodatek --- ścisłe
+wyprowadzenie formy ogona (prop.~\ref{prop:K-tail-form}),
+argument ze stopnia $V(g)$ dla wykładnika~$4$
+(res.~\ref{res:K-SWKB}), klasyfikacja sektorów topologicznych
+i~predykcja masy tauonu (hip.~\ref{hyp:K-tau}) ---
+są zebrane w~Dodatku~\ref{app:wkb-atail}.

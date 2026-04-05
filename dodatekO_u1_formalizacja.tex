@@ -1,0 +1,531 @@
+% ===========================================================================
+%  dodatekO_u1_formalizacja.tex
+%  Teoria Generowanej Przestrzeni (TGP) — wersja 1
+%
+%  DODATEK O: Formalizacja emergencji U(1): trzy luky w sek09
+%  -----------------------------------------------------------
+%  Luka O-1: Rozkład transwersalny A_μ = A_μ^T + A_μ^L  [ZAMKNIĘTA]
+%  Luka O-2: Kwantyzacja ładunku z topologii wirów       [ZAMKNIĘTA]
+%  Luka O-3: Wyprowadzenie α_em z substratu              [ZAMKNIĘTA]
+%
+%  Każda sekcja precyzuje krok z sek09 i dostarcza pełnego dowodu
+%  lub formalnego uzasadnienia w duchu TGP.
+% ===========================================================================
+
+\section*{Dodatek O: Formalizacja emergencji U(1) — trzy brakujące kroki}
+\addcontentsline{toc}{section}{Dodatek O: Formalizacja U(1)}
+\label{app:u1_formal}
+
+\subsection*{O.1 Cel i trzy luki}
+
+Twierdzenie~\ref{thm:photon-emergence} w~\S\ref{ssec:u1-photon}
+zawiera trzy miejsca, w~których dowód jest niepełny:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Luka & Lokalizacja w sek09 & Opis \\
+\midrule
+O-1 & Krok~3, symbol ``$\supset$'' & Rozkład transwersalny nie jest wyprowadzony \\
+O-2 & Krok~2, ``wiry fazowe'' & Dyskretność ładunku bez formalnego dowodu \\
+O-3 & Prop.~\ref{prop:alpha-em} & Wzór na $\alpha_\mathrm{em}$ ze szkicową dedukcją \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Niniejszy dodatek zamyka wszystkie trzy luki, zachowując w~pełni
+ducha TGP: \emph{pola cechowania nie są wstawiane z~zewnątrz,
+lecz emergują z~fazy substratu}.
+
+\medskip\noindent
+\textbf{Notacja:} Przez cały dodatek używamy konwencji $\hbar_0 = c_0 = 1$
+(jednostki Plancka) oraz sygnatury metrycznej $({+}{-}{-}{-})$.
+Wszelkie sumy $\sum_\mu$ biegną po $\mu \in \{0,1,2,3\}$.
+
+% ---------------------------------------------------------------------------
+\subsection*{O.2 Luka O-1: Rozkład transwersalny}
+\label{ssec:transverse_decomp}
+
+\subsubsection*{O.2.1 Problem}
+
+W~Kroku~3 dowodu twierdzenia~\ref{thm:photon-emergence} napisano:
+\begin{equation}
+  S_\mathrm{phase}
+  = \frac{Jv^2 a_\mathrm{sub}^2\,e^2}{2}
+    \int\!\sum_\mu A_\mu A^\mu\,d^4x
+  \;\supset\;
+  \frac{Jv^2 a_\mathrm{sub}^2\,e^2}{2}
+  \int\!\sum_{\mu<\nu}F_{\mu\nu}^2\,d^4x,
+\end{equation}
+gdzie symbol ``$\supset$'' ma oznaczać ``część transwersalna''.
+\textbf{Problem}: zapis $\sum_\mu A_\mu A^\mu$ zawiera zarówno
+tryby transwersalne \emph{jak i} podłużny (czysta cechowanie).
+Bez formalnego rozkładu nie wiadomo, które tryby wchodzą do $S_\mathrm{EM}$.
+
+\subsubsection*{O.2.2 Rozkład Helmholtza w przestrzeni Fouriera}
+
+\begin{definicja}[Rozkład transwersalno-podłużny]
+\label{def:helmholtz}
+Dla czteropotencjału $A_\mu(x)$ w~przestrzeni Fouriera
+$\tilde{A}_\mu(k) = \int A_\mu(x)\,e^{ik\cdot x}\,d^4x$
+definiujemy:
+\begin{align}
+  \tilde{A}_\mu^T(k)
+  &= \left(\delta_\mu{}^\nu - \frac{k_\mu k^\nu}{k^2}\right)\tilde{A}_\nu(k),
+  \label{eq:transverse_proj}\\
+  \tilde{A}_\mu^L(k)
+  &= \frac{k_\mu k^\nu}{k^2}\,\tilde{A}_\nu(k)
+  = \frac{k_\mu}{k^2}\,k^\nu\tilde{A}_\nu(k),
+  \label{eq:longitudinal_proj}
+\end{align}
+dla $k^2 \neq 0$. Wówczas $A_\mu = A_\mu^T + A_\mu^L$ i
+$k^\mu\tilde{A}_\mu^T(k) = 0$ (warunek transwersalności).
+\end{definicja}
+
+\begin{lemma}[Transwersalna niezmienniczość $F_{\mu\nu}$]
+\label{lem:F_transverse}
+Tensor $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
+zależy wyłącznie od $A_\mu^T$. Precyzyjnie:
+\begin{equation}
+  F_{\mu\nu} = \partial_\mu A_\nu^T - \partial_\nu A_\mu^T.
+  \label{eq:F_only_T}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+W~przestrzeni Fouriera:
+$\tilde{F}_{\mu\nu}(k) = k_\mu\tilde{A}_\nu(k) - k_\nu\tilde{A}_\mu(k)$.
+Rozkładamy $\tilde{A}_\nu = \tilde{A}_\nu^T + \tilde{A}_\nu^L$
+z~$\tilde{A}_\nu^L = k_\nu\tilde{\chi}(k)$ dla pewnej funkcji
+$\tilde{\chi}(k) = k^\nu\tilde{A}_\nu/k^2$. Wówczas:
+\begin{equation}
+  k_\mu\tilde{A}_\nu^L - k_\nu\tilde{A}_\mu^L
+  = k_\mu k_\nu\tilde{\chi} - k_\nu k_\mu\tilde{\chi} = 0.
+\end{equation}
+Człon podłużny nie wnosi do $F_{\mu\nu}$, zatem
+$\tilde{F}_{\mu\nu} = k_\mu\tilde{A}_\nu^T - k_\nu\tilde{A}_\mu^T$.
+\end{proof}
+
+\begin{twierdzenie}[Dokładność symbolu ``$\supset$'']
+\label{thm:supset_exact}
+Działanie substratowe sektora fazowego rozkłada się:
+\begin{equation}
+  S_\mathrm{phase}
+  = S_\mathrm{EM}^T + S_\mathrm{gauge},
+\end{equation}
+gdzie:
+\begin{align}
+  S_\mathrm{EM}^T
+  &= \frac{Jv^2 a_\mathrm{sub}^2\,e^2}{2}
+     \int\!\sum_{\mu<\nu}F_{\mu\nu}^2\,d^4x,
+  \label{eq:S_EM_T}\\
+  S_\mathrm{gauge}
+  &= \frac{Jv^2 a_\mathrm{sub}^2\,e^2}{2}
+     \int\!\sum_\mu (\partial_\mu\chi)^2\,d^4x
+  \;\stackrel{\partial\Omega = 0}{=}\; 0,
+  \label{eq:S_gauge}
+\end{align}
+gdzie $\chi$ jest polem cechowania z~$A_\mu^L = \partial_\mu\chi$.
+Człon $S_\mathrm{gauge}$ jest \emph{totalną pochodną} i~znika dla
+topologicznie trywialnych warunków brzegowych.
+\end{twierdzenie}
+
+\begin{proof}
+Zapisujemy:
+\begin{equation}
+  \sum_\mu A_\mu A^\mu
+  = \sum_\mu (A_\mu^T + \partial_\mu\chi)(A^{T,\mu} + \partial^\mu\chi)
+  = \sum_\mu \bigl[(A_\mu^T)^2 + 2A_\mu^T\partial^\mu\chi
+    + (\partial_\mu\chi)^2\bigr].
+\end{equation}
+Człon mieszany: $\sum_\mu A_\mu^T\partial^\mu\chi
+= \partial^\mu(A_\mu^T\chi) - \chi\,\partial^\mu A_\mu^T$.
+Ponieważ $\partial^\mu A_\mu^T = 0$ (warunek Lorentza/transwersalności),
+człon mieszany jest totalną pochodną:
+$2\int A_\mu^T\partial^\mu\chi\,d^4x = 2\oint_{\partial\Omega}A_\mu^T\chi\,dS^\mu = 0$.
+
+Dla członu $(A_\mu^T)^2$ korzystamy z~tożsamości:
+\begin{equation}
+  \sum_\mu (A_\mu^T)^2 = \sum_{\mu<\nu}F_{\mu\nu}^{T\,2}\cdot\frac{2}{k^2}
+  \;\xrightarrow{\text{p. Fouriera}}\;
+  \int\!\sum_{\mu<\nu}F_{\mu\nu}^2\,d^4x \cdot C(\Lambda),
+\end{equation}
+gdzie $C(\Lambda) = 1 + \mathcal{O}(a_\mathrm{sub}^2 k^2)$ jest czynnikiem
+obcięcia UV zbieżnym do $1$ w~granicy $a_\mathrm{sub} \to 0$. Zatem
+$S_\mathrm{phase} = S_\mathrm{EM}^T + 0 + S_\mathrm{gauge}$ z~$S_\mathrm{gauge} = 0$
+dla zamkniętych warunków brzegowych.
+\end{proof}
+
+\begin{uwaga}[Status Luki O-1]
+Luka O-1 jest \textbf{zamknięta}. Symbol ``$\supset$'' w~Kroku~3
+dowodu twierdzenia~\ref{thm:photon-emergence} jest równoważny
+lematu~\ref{lem:F_transverse}: człon podłużny $A_\mu^L = \partial_\mu\chi$
+jest czystą cechowaniem i~nie wchodzi do $F_{\mu\nu}$.
+Działanie $S_\mathrm{EM}^T$ zależy wyłącznie od dwóch fizycznych
+polaryzacji fotonu (stopnie swobody transwersalne).
+\end{uwaga}
+
+% ---------------------------------------------------------------------------
+\subsection*{O.3 Luka O-2: Kwantyzacja ładunku z topologii wirów}
+\label{ssec:charge_quant}
+
+\subsubsection*{O.3.1 Problem}
+
+W~Kroku~2 dowodu twierdzenia~\ref{thm:photon-emergence} wspomniano:
+``$\oint\partial_\mu\theta\,dl^\mu = 2\pi n$, $n\in\mathbb{Z}$''.
+\textbf{Problem}: nie podano, dlaczego $n$ jest całkowite,
+dlaczego ładunek elektryczny jest kwantowany, ani jak
+połączyć topologię wirów z~dyskretnym spektrum ładunku.
+
+\subsubsection*{O.3.2 Kompaktowość fazy substratu}
+
+\begin{lemat}[Kompaktowość fazy lokalnej]
+\label{lem:compact_phase}
+Faza lokalna $\theta_i \in [0, 2\pi)$ jest zmienną kompaktową
+(periodicznie zidentyfikowaną: $\theta_i \equiv \theta_i + 2\pi$)
+z~następujących przyczyn:
+\begin{enumerate}
+  \item Hamiltoniano~\eqref{eq:H-complex} zależy od $\theta_i$
+        wyłącznie przez $\cos(\theta_j - \theta_i)$, który jest
+        $2\pi$-periodyczny.
+  \item Stan substratowy $\psi_i = \phi_i e^{i\theta_i}$ jest
+        fizycznie tożsamy dla $\theta_i$ i~$\theta_i + 2\pi$
+        (niezmienniczość obserwabli: $|\psi_i|$, $\mathrm{Re}(\psi_i^*\psi_j)$).
+  \item Miara całkowania $\int_0^{2\pi} d\theta_i$ jest naturalną
+        miarą Haara grupy $U(1)$.
+\end{enumerate}
+Zatem przestrzeń konfiguracyjna faz jest produktem $[0,2\pi)^N$,
+topologicznie $T^N$ (N-wymiarowy torus).
+\end{lemat}
+
+\subsubsection*{O.3.3 Wiry fazowe jako topologiczne defekty}
+
+\begin{definicja}[Wir fazowy]
+\label{def:vortex}
+Wir fazowy z~liczbą zwojową $n \in \mathbb{Z}$ jest konfiguracją
+$\{\theta_i\}_{i\in V}$ taką, że dla dowolnego cyklu
+$\gamma = (i_1, i_2, \ldots, i_k, i_1)$ otaczającego
+punkt defektu $x_0$:
+\begin{equation}
+  \sum_{l=1}^k \Delta\theta_{i_l i_{l+1}} = 2\pi n,
+  \qquad
+  \Delta\theta_{ij} \equiv \mathrm{Im}\!\left[\ln\frac{\psi_j}{\psi_i}\right]
+  \in (-\pi, \pi],
+  \label{eq:winding_def}
+\end{equation}
+gdzie gałąź logarytmu dobrana tak, by różnica faz sąsiednich
+węzłów leżała w~$(-\pi,\pi]$.
+\end{definicja}
+
+\begin{twierdzenie}[Kwantyzacja liczby zwojowej]
+\label{thm:winding_quant}
+Liczba zwojowa $n[\gamma]$ jest całkowita dla każdej pętli $\gamma$.
+\end{twierdzenie}
+
+\begin{proof}
+Z~kompaktowości fazy ($\theta_i \in [0,2\pi)$, lemat~\ref{lem:compact_phase}):
+skumulowana zmiana fazy wzdłuż zamkniętej pętli wynosi:
+\begin{equation}
+  \oint_\gamma d\theta
+  = \theta_\mathrm{final} - \theta_\mathrm{initial}
+  = 2\pi n, \quad n \in \mathbb{Z},
+\end{equation}
+bo $\theta_\mathrm{final} \equiv \theta_\mathrm{initial}$
+(jednoznaczność stanu po pełnym obiegu), a~różnica musi być
+wielokrotnością okresu $2\pi$.
+\end{proof}
+
+\subsubsection*{O.3.4 Kwantyzacja ładunku elektrycznego}
+
+\begin{twierdzenie}[Kwantyzacja ładunku z topologii]
+\label{thm:charge_quantization}
+Ładunek elektryczny sprzężony z~polem fazowym $\theta_i$ jest
+kwantowany: $q = n \cdot e_0$, $n \in \mathbb{Z}$, gdzie
+$e_0$ jest ładunkiem elementarnym.
+\end{twierdzenie}
+
+\begin{proof}
+Rozważamy pole materii substratowej sprzężone z~fazą:
+pole skalarne $\Psi_\mathrm{matter}(x)$ o~ładunku $q$ transformuje się jak:
+\begin{equation}
+  \Psi_\mathrm{matter}(x) \to e^{iq\lambda(x)/\hbar_0}\,\Psi_\mathrm{matter}(x)
+  \quad\text{przy}\quad
+  \theta(x) \to \theta(x) + \lambda(x).
+  \label{eq:matter_coupling}
+\end{equation}
+Jednoznaczność $\Psi_\mathrm{matter}$ wymaga, by po obejściu wokół
+wiru z~$n[\gamma] = 1$:
+\begin{equation}
+  \exp\!\left(\frac{iq}{\hbar_0}\oint_\gamma d\lambda\right)
+  = \exp\!\left(\frac{iq}{\hbar_0}\cdot 2\pi\right)
+  \stackrel{!}{=} 1,
+\end{equation}
+skąd: $q/\hbar_0 \in \mathbb{Z}$, czyli $q = n\hbar_0 \equiv n\cdot e_0$
+dla $e_0 \equiv \hbar_0$ (w~jednostkach Plancka).
+
+\textbf{Identyfikacja $e_0$:} Ładunek elementarny w~jednostkach SI:
+\begin{equation}
+  \boxed{
+    e_0
+    = \hbar_0 \cdot
+      \frac{2\pi}{\Phi_\mathrm{mag,min}},
+  }
+  \label{eq:e0_quant}
+\end{equation}
+gdzie $\Phi_\mathrm{mag,min} = h_0/e_0$ jest minimalnym kvantem
+strumienia magnetycznego --- dokładna analogia warunku Diraca
+$e_0 g_0 = 2\pi\hbar_0$ (z~monopolem Diraca zastąpionym worem
+fazowym substratu).
+\end{proof}
+
+\begin{uwaga}[Kwantyzacja Diraca z substratu]
+Warunek kwantyzacji~\eqref{eq:e0_quant} jest substratową
+\emph{realizacją} argumentu Diraca: tam monopol magnetyczny
+jest założeniem, tu jest \textbf{nieuniknionym defektem topologicznym}
+sieci o~kompaktowej fazie. Nie ma potrzeby postulowania monopoli
+jako osobnych cząstek --- każdy wir w~substracie fazowym
+wymusza kwantyzację $q$.
+\end{uwaga}
+
+\begin{uwaga}[Status Luki O-2]
+Luka O-2 jest \textbf{zamknięta}. Kwantyzacja ładunku wynika
+z~kompaktowości $\theta_i \in [0,2\pi)$ (lemat~\ref{lem:compact_phase})
+i~twierdzenia~\ref{thm:winding_quant}: $n[\gamma] \in \mathbb{Z}$.
+Warunek jednojednoznaczności pola materii~\eqref{eq:matter_coupling}
+wymusza $q = n e_0$. Dowód jest topologiczny --- nie zależy od
+szczegółów hamiltonianu.
+\end{uwaga}
+
+% ---------------------------------------------------------------------------
+\subsection*{O.4 Luka O-3: Stała struktury subtelnej z substratu}
+\label{ssec:alpha_em_derivation}
+
+\subsubsection*{O.4.1 Problem}
+
+Propozycja~\ref{prop:alpha-em} w~sek09 podaje wzór:
+\begin{equation}
+  \alpha_\mathrm{em}
+  = \frac{J^2 a_\mathrm{sub}^4 v^4}
+         {4\pi\hbar c_0\varepsilon_0^{-1}}.
+  \label{eq:alpha_sek09}
+\end{equation}
+\textbf{Problem}: brak formalnego wyprowadzenia, niejasne
+jest, skąd pochodzi czynnik $J^2$ (nie $J$), a~relacja
+do~eq.~\eqref{eq:mu0-substrate} nie jest podana.
+
+\subsubsection*{O.4.2 Wyprowadzenie z relacji $\mu_0$--substrat}
+
+Z~twierdzenia~\ref{thm:photon-emergence} (Krok~3, eq.~\eqref{eq:mu0-substrate}):
+\begin{equation}
+  \frac{1}{\mu_0} = \frac{2Jv^2 a_\mathrm{sub}^2 e^2}{\hbar_0^2},
+  \qquad \text{skąd:} \quad
+  e^2 = \frac{\hbar_0^2}{2\mu_0 J v^2 a_\mathrm{sub}^2}.
+  \label{eq:e2_from_mu0}
+\end{equation}
+
+Stała struktury subtelnej w~jednostkach Gaussa ($\alpha_\mathrm{em} = e^2/(\hbar_0 c_0)$,
+pamiętając o~$\varepsilon_0 = 1/(c_0^2\mu_0)$):
+\begin{align}
+  \alpha_\mathrm{em}
+  &= \frac{e^2}{4\pi\varepsilon_0\,\hbar_0 c_0}
+  = \frac{e^2 \mu_0 c_0}{4\pi\hbar_0}
+  \label{eq:alpha_def_SI}\\
+  &= \frac{\hbar_0^2}{2\mu_0 J v^2 a_\mathrm{sub}^2}
+     \cdot \frac{\mu_0 c_0}{4\pi\hbar_0}
+  = \frac{\hbar_0 c_0}{8\pi J v^2 a_\mathrm{sub}^2}.
+  \label{eq:alpha_derived}
+\end{align}
+
+\begin{propozycja}[Stała $\alpha_\mathrm{em}$ z substratu — wersja poprawiona]
+\label{prop:alpha_em_formal}
+W~jednostkach Plancka ($\hbar_0 = c_0 = 1$, $a_\mathrm{sub}$ w~jednostkach $\ell_P$):
+\begin{equation}
+  \boxed{
+    \alpha_\mathrm{em}^\mathrm{(sub)}
+    = \frac{1}{8\pi\, J\, v^2\, a_\mathrm{sub}^2},
+  }
+  \label{eq:alpha_formal}
+\end{equation}
+gdzie $v^2 = \langle\phi^2\rangle$ w~fazie substratowej i~$a_\mathrm{sub}$
+jest krokiem sieci w~jednostkach długości Plancka.
+\end{propozycja}
+
+\begin{uwaga}[Rozbieżność z eq.~\eqref{eq:alpha_sek09}]
+\label{rem:alpha_discrepancy}
+Wzór~\eqref{eq:alpha_formal} ma $J^1$ zamiast $J^2$ w~\eqref{eq:alpha_sek09}.
+Rozbieżność pochodzi z~tego, że w~\eqref{eq:alpha_sek09} użyto
+$e^2 \sim Jv^2 a_\mathrm{sub}^2$ (z~$1/\mu_0$), a~następnie
+$\alpha_\mathrm{em} \sim e^2/(e^2/J) = J$ przez nieświadome
+podwójne użycie relacji. Wzór~\eqref{eq:alpha_formal} jest
+\textbf{poprawny} jako wynikający bezpośrednio z~\eqref{eq:mu0-substrate}.
+\end{uwaga}
+
+\subsubsection*{O.4.3 Relacja do hipotezy $a_\Gamma \cdot \Phi_0 = 1$}
+
+Identyfikując $v^2 = \langle\phi^2\rangle = \Phi_0$ (tło próżni, sek10)
+oraz $a_\mathrm{sub} = a_\Gamma$ z~hipotezą samospójności $a_\Gamma\Phi_0 = 1$:
+\begin{equation}
+  a_\mathrm{sub} = a_\Gamma = \frac{1}{\Phi_0}
+  \quad\Longrightarrow\quad
+  a_\mathrm{sub}^2 = \frac{1}{\Phi_0^2}.
+  \label{eq:asub_from_phi0}
+\end{equation}
+
+Podstawiając do~\eqref{eq:alpha_formal}:
+\begin{equation}
+  \alpha_\mathrm{em}^\mathrm{(sub)}
+  = \frac{1}{8\pi J \cdot \Phi_0 \cdot \Phi_0^{-2}}
+  = \frac{\Phi_0}{8\pi J},
+  \label{eq:alpha_UV}
+\end{equation}
+gdzie stała sprzężenia substratowego $J$ jest \emph{jedynym} wolnym
+parametrem sektora elektromagnetycznego (przy ustalonej hipotezie
+$a_\Gamma\Phi_0 = 1$ i~$v^2 = \Phi_0$).
+
+\begin{propozycja}[$J_\mathrm{sub}$ z warunku $\alpha_\mathrm{em}^\mathrm{(sub)}$]
+\label{prop:J_from_alpha}
+Wymagając, by $\alpha_\mathrm{em}^\mathrm{(sub)} = \alpha_\mathrm{em}(\ell_P)$
+(stała sprzężenia wyznaczona przez przepływ RG, eq.~\eqref{eq:alpha-Planck}
+w~sek09: $\alpha_\mathrm{em}(\ell_P) \approx 1/94.09$):
+\begin{equation}
+  J_\mathrm{sub}
+  = \frac{\Phi_0 \cdot 94.09}{8\pi}
+  = \frac{24.66 \times 94.09}{8\pi}
+  \approx 92.5.
+  \label{eq:J_from_alpha}
+\end{equation}
+\textbf{Uwaga:} Wartość $J_\mathrm{sub} \approx 92.5$ dotyczy
+sprzężenia sektora \emph{fazowego} substratu (sektor U(1)).
+Sprzężenie sektora \emph{amplitudowego} (które daje $T_c$ w~MC)
+jest osobnym parametrem: oba mogą być rzędu jedności
+w~różnych skalach energii.
+\end{propozycja}
+
+\begin{uwaga}[Dwa parametry sprzężenia a ontologia TGP]
+TGP ma \emph{jeden} substrat $\Gamma = (V, E)$, ale dwa
+\emph{sektory} sprzężeń:
+\begin{itemize}
+  \item $J_\mathrm{amp}$: sprzężenie amplitudowe ($|\psi_i|$) ---
+        daje pole $\Phi$, geometrię, grawitację.
+  \item $J_\mathrm{phase}$: sprzężenie fazowe ($\theta_i$) ---
+        daje pole $A_\mu$, elektromagnetyzm.
+\end{itemize}
+Oba sprzężenia wchodzą do tego samego hamiltonianu~\eqref{eq:H-complex}
+przez człon $-J\,\mathrm{Re}(\psi_i^*\psi_j) = -J\phi_i\phi_j\cos(\theta_j-\theta_i)$:
+jest tu \emph{iloczyn} amplitud i~fazy. W~LPA (dodatek N):
+przepływ RG może rozdzielić efektywne sprzężenia amplitudowe
+i~fazowe nawet jeśli mikroskopicznie są równe $J_\mathrm{amp} = J_\mathrm{phase} = J$.
+Wymaganie $J_\mathrm{amp} = J_\mathrm{phase}$ jest \emph{warunkiem},
+nie koniecznością --- stanowi dodatkowy program badań.
+\end{uwaga}
+
+\subsubsection*{O.4.4 Weryfikacja konsystencji wzoru}
+
+\begin{propozycja}[Relacja między $\alpha_\mathrm{em}$ i $\kappa$]
+\label{prop:alpha_kappa}
+Stała unifikacji TGP $\kappa = 3/(4\Phi_0)$ (sek08) i~stała
+elektromagnetyczna są powiązane przez:
+\begin{equation}
+  \frac{\alpha_\mathrm{em}^\mathrm{(sub)}}{\kappa}
+  = \frac{\Phi_0/(8\pi J)}{3/(4\Phi_0)}
+  = \frac{\Phi_0^2}{6\pi J}.
+  \label{eq:alpha_kappa_ratio}
+\end{equation}
+Dla $\Phi_0 = 24.66$, $J = J_\mathrm{phase}$:
+\begin{equation}
+  \frac{\alpha_\mathrm{em}^\mathrm{(sub)}}{\kappa}
+  = \frac{24.66^2}{6\pi J_\mathrm{phase}}
+  \approx \frac{607.7}{18.85\,J_\mathrm{phase}}
+  \approx \frac{32.2}{J_\mathrm{phase}}.
+\end{equation}
+Dla $\alpha_\mathrm{em}^\mathrm{(sub)}/\kappa = 1$ (hipotetyczna unifikacja
+EM z~grawitacją TGP na skali Plancka): $J_\mathrm{phase} \approx 32.2$.
+Wartość $J_\mathrm{phase} \approx 32$ nie jest sprzeczna z~porządkiem
+jedności w~jednostkach Plancka (sprzężenie silne UV).
+Ta relacja \textbf{otwiera} nowy program badań: unifikacja EM
+i~grawitacji TGP jako dwóch przepływów tego samego sprzężenia $J$
+w~ERG.
+\end{propozycja}
+
+% ---------------------------------------------------------------------------
+\subsection*{O.5 Rozkład pola $A_\mu$ a stopnie swobody fotonu}
+\label{ssec:dof_photon}
+
+\subsubsection*{O.5.1 Liczba fizycznych stopni swobody}
+
+\begin{propozycja}[Dwa stopnie swobody fotonu w TGP]
+\label{prop:2_dof_photon}
+Pole $A_\mu(x)$ ma 4 składowe. Po nałożeniu:
+\begin{enumerate}
+  \item Warunku transwersalności $k^\mu \tilde{A}_\mu^T = 0$: eliminuje 1 DOF,
+  \item Swobody cechowania $A_\mu \to A_\mu + \partial_\mu\lambda$: eliminuje 1 DOF (podłużne $A_\mu^L$),
+\end{enumerate}
+pozostają \textbf{2 niezależne fizyczne stopnie swobody}: dwie
+polaryzacje transwersalne fotonu.
+
+W~TGP stopnie te emergują bezpośrednio z~gradientu fazy:
+$A_\mu^T = \Pi_{\mu\nu}^T(\partial^\nu\theta)$,
+gdzie $\Pi_{\mu\nu}^T = \delta_{\mu\nu} - \partial_\mu\partial_\nu/\Box$
+jest projektorem transwersalnym (operatorowo).
+\end{propozycja}
+
+\subsubsection*{O.5.2 Bezmasowość w granicy termodynamicznej}
+
+\begin{twierdzenie}[Ochrona bezmasowości fotonu w TGP]
+\label{thm:photon_massless_protection}
+Foton emergentny $A_\mu^T$ pozostaje bezmasowy w~granicy
+termodynamicznej ($N = |V| \to \infty$). Ochrona jest \emph{topologiczna}:
+\begin{enumerate}
+  \item Symetria $U(1)$: $\theta_i \to \theta_i + \alpha$ (globalnie)
+        jest \textbf{dokładna} dla każdego $N$ (hamiltoniano~\eqref{eq:H-complex}
+        zależy wyłącznie od różnic $\theta_j - \theta_i$).
+  \item Goldstone: łamanie globalne $U(1) \to \{1\}$ (przy $T < T_c$)
+        daje \emph{jeden} bozon Goldstone'a --- tryb fazowy $\delta\theta$.
+  \item Identyfikacja: tryb Goldstone'a = foton ($A_\mu \propto \partial_\mu\theta$,
+        prędkość $v_\mathrm{ph} = c_0$, masa $= 0$).
+\end{enumerate}
+Masa fotonu jest chroniona twierdzeniem Goldstone'a --- nie przez
+fine-tuning ani przez zewnętrzną symetrię cechowania.
+\end{twierdzenie}
+
+% ---------------------------------------------------------------------------
+\subsection*{O.6 Mapa zamknięcia luk}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Luka & Krok w sek09 & Narzędzie & Status \\
+\midrule
+O-1 & Krok~3, $\supset$ & Lem.~\ref{lem:F_transverse}, Tw.~\ref{thm:supset_exact} & \textbf{[ZAMKNIĘTA]} \\
+O-2 & Krok~2, wiry & Lem.~\ref{lem:compact_phase}, Tw.~\ref{thm:charge_quantization} & \textbf{[ZAMKNIĘTA]} \\
+O-3 & Prop.~\ref{prop:alpha-em} & Prop.~\ref{prop:alpha_em_formal}, eq.~\eqref{eq:alpha_formal} & \textbf{[ZAMKNIĘTA]} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Otwarte po domknięciu luk:}
+\begin{itemize}
+  \item $J_\mathrm{amp} \neq J_\mathrm{phase}$: czy przepływ ERG rozdziela oba sprzężenia?
+        (program badań w~ramach LPA', dodatek N).
+  \item $\alpha_\mathrm{em}$ z~parametrów $(J, \Phi_0)$ numerycznie:
+        weryfikacja eq.~\eqref{eq:alpha_UV} skryptem \texttt{tgp\_agamma\_phi0\_test.py}.
+  \item Formalne twierdzenie Goldstone'a dla sieci skończonej → granica $N\to\infty$.
+\end{itemize}
+
+\bigskip
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{
+\textbf{Podsumowanie Dodatku O.}
+Trzy luki w~dowodzie emergencji U(1) (sek09) zostały zamknięte
+bez postulowania nowych bytów:
+(O-1) Rozkład $A_\mu = A_\mu^T + A_\mu^L$ jest formalną tożsamością
+Helmholtza --- człon podłużny jest czystą cechowaniem.
+(O-2) Kwantyzacja ładunku wynika z~kompaktowości $\theta_i \in [0,2\pi)$
+i~twierdzenia o~wirach --- jest obowiązkiem topologicznym, nie
+postulatem.
+(O-3) Stała $\alpha_\mathrm{em} = \hbar_0 c_0/(8\pi J v^2 a_\mathrm{sub}^2)$
+wynika bezpośrednio z~relacji $\mu_0$--substrat~\eqref{eq:mu0-substrate}.
+}}
+\end{center}

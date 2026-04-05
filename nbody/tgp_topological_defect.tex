@@ -1,0 +1,169 @@
+
+\section{Topological defect structure of TGP bodies}
+\label{sec:topological_defect}
+
+\subsection{Motivation: what is a ``body'' in TGP?}
+
+In the $N$-body formulation of TGP, each body is modelled as a
+\emph{point source} coupling to the scalar field $\Phi$.  This is
+analogous to classical electrodynamics, where electrons are treated as
+point charges without deriving their internal structure.  Scenario~C
+(the most ambitious interpretation) asks whether a \emph{body} in TGP
+is actually a \textbf{topological defect} of the $\Phi$ field:
+a localised region where $\Phi$ departs from the vacuum value
+$\Phi_0$ and approaches $\Phi\to 0$ (the ``absolute nothing'' sector
+$\mathcal{S}_0$).
+
+\subsection{Static spherically symmetric ODE}
+
+We seek a static, spherically symmetric profile
+$\Phi(r) = \Phi_0\,g(r)$, with $g(r)\to 1$ as $r\to\infty$ (vacuum)
+and $g(0)=g_0<1$ (defect core).  With the kinetic function
+$f(g)=1+2\alpha\ln g$ (the TGP nonlinear kinetic term, $\alpha=2$)
+and the potential
+$V(\Phi_0 g)/\Phi_0^2 = \tfrac{\beta}{3}g^3 - \tfrac{\gamma}{4}g^4$,
+the Euler--Lagrange equation gives
+
+\begin{equation}
+  f(g)\!\left[g'' + \frac{2}{r}g'\right]
+  + \frac{\alpha}{g}(g')^2
+  = g^2(1-g),
+  \qquad \beta=\gamma=1.
+\label{eq:defect_ode}
+\end{equation}
+
+The right-hand side $g^2(1-g)>0$ for $g\in(0,1)$, so $g''(0)>0$:
+solutions rise from $g_0$ toward $g=1$.  The \textbf{ghost boundary}
+\begin{equation}
+  g^* = \exp\!\bigl(-\tfrac{1}{2\alpha}\bigr)
+      = e^{-1/4} \approx 0.7788
+\end{equation}
+marks the minimum allowed core depth: for $g_0<g^*$, the kinetic term
+$f(g)<0$, rendering the theory unphysical (negative kinetic energy).
+The physical domain is $g_0\in(g^*,1)$.
+
+\subsection{Linearised far-field: oscillatory, not Yukawa}
+
+Setting $g=1-\delta$ with $|\delta|\ll 1$ and linearising
+Eq.~\eqref{eq:defect_ode}:
+\begin{equation}
+  \delta'' + \frac{2}{r}\delta' = -\delta
+  \quad\Longrightarrow\quad
+  (\nabla^2+1)\,\delta = 0.
+\label{eq:linearised}
+\end{equation}
+The general solution regular at the origin is
+\begin{equation}
+  \delta(r) = A\,\frac{\sin r}{r} + B\,\frac{\cos r}{r}.
+\label{eq:oscillatory_tail}
+\end{equation}
+This is \emph{oscillatory} ($\sin r/r$), \textbf{not} a Yukawa tail
+($e^{-r}/r$).  The sign of the mass-squared term in the linearised
+field equation is $+1$ (from $V''(\Phi_0)=-\beta<0$ evaluated at the
+vacuum), leading to $(\nabla^2+m^2)\delta=0$ with $m^2=\beta>0$.
+A Yukawa tail would require $(\nabla^2-m^2)\delta=0$ with $m^2>0$,
+which arises only at a \emph{minimum} of $V$.
+
+\textbf{Key result (ex11):} Numerical integration confirms that all
+solutions with $g_0\in(g^*,1)$ exhibit oscillatory far-field tails
+with amplitude $A\approx0.05$--$0.11$ and residual from a Yukawa fit
+$\gtrsim 0.003$.  The full nonlinear $f(g)\ne 1$ ODE does not change
+this conclusion.
+
+\subsection{Implication: Path~B as external-source formulation}
+
+Since the free-field TGP vacuum emits oscillatory rather than Yukawa
+radiation, the Yukawa profile $\Phi_i(r)=C_i e^{-m_{sp}r}/r$
+\emph{cannot} be derived from the vacuum sector of the theory.
+It must be imposed as an external source:
+\begin{equation}
+  (\nabla^2 - m_{sp}^2)\,\Phi = -4\pi\,C_i\,\delta^{(3)}(r-r_i),
+\label{eq:external_source}
+\end{equation}
+whose solution is the Yukawa propagator.  This is \textbf{Path~B}:
+the Yukawa ansatz is a \emph{phenomenological input}, not a derivable
+consequence of the TGP field equations.
+
+\subsection{Physical analogies}
+
+\begin{enumerate}
+\item \textbf{Classical electrodynamics:} the point-charge model
+  $(\nabla^2)\Phi=-4\pi q\,\delta^3(r)$ does not derive the electron
+  radius; it is an axiomatic external source.  TGP Path~B is
+  structurally identical.
+
+\item \textbf{Chameleon/scalar-tensor gravity:} in many modified
+  gravity theories, the scalar field couples to matter through an
+  external source term; the vacuum propagator alone does not determine
+  the particle profile.
+
+\item \textbf{Fuzzy dark matter (FDM):} if $\Phi$ acquires a
+  non-trivial background condensate, its density profile could provide
+  dark-matter-like contributions.  However, the FDM mass scale
+  $m_{boson}\sim10^{-22}$\,eV requires
+  $m_{sp}\approx8\times10^{-51}$\,[Planck], which is \emph{below}
+  the radiation-suppression threshold $m_{sp}>3.4\times10^{-41}$
+  derived in \cite{Efimov1970} (see also the N-body predictions section).
+\end{enumerate}
+
+\subsection{Rotation-curve diagnostic (ex14)}
+
+A systematic comparison of TGP Path~B Yukawa against the NGC~3198
+rotation curve shows that the Yukawa modification
+$G_{\rm eff}(r)=G\exp(-r/\lambda)$ \emph{decreases} the gravitational
+force at large $r$, giving velocities \emph{below} the Newton-only
+prediction.  The flat observed rotation curve ($v\approx147$\,km/s
+at $r=20$\,kpc) requires additional dark mass; TGP Yukawa alone makes
+the discrepancy \emph{worse}, not better.  Specifically:
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Model & $v_{\rm rot}(20\,\mathrm{kpc})$ & $\chi^2/N$ \\
+\hline
+Observed & $147$\,km/s & --- \\
+Newton (baryons) & $71$\,km/s & $198$ \\
+CDM (ISO halo)   & $197$\,km/s & $84$ \\
+MOND             & $\approx138$\,km/s & $58$ \\
+TGP $\lambda=100$\,kpc & $64$\,km/s & $220$ \\
+TGP $\lambda=10$\,kpc  & $26$\,km/s & $387$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+\textbf{Conclusion:} TGP (Path~B) is not a dark-matter replacement.
+It must coexist with standard CDM, contributing three-body corrections
+to the internal structure of dark-matter halos and producing an
+observable $G_{\rm eff}(r)$ deviation at scales $r\sim\lambda$.
+
+\subsection{Summary of constraints on $m_{sp}$}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Constraint & Bound on $m_{sp}$ [Planck] & Source \\
+\hline
+Radiation suppr.\ (LIGO) & $m_{sp}>3.4\times10^{-41}$ & ex13 \\
+Gravity range $>$50\,AU  & $m_{sp}<1.1\times10^{-46}$ & ex13 \\
+FDM mass scale           & $m_{sp}\approx8\times10^{-51}$ & ex14 \\
+\hline
+\end{tabular}
+\end{center}
+
+The FDM value falls \emph{below} the radiation-suppression bound,
+ruling out TGP as an ultralight FDM candidate unless the radiation
+coupling is suppressed by an additional symmetry.
+
+The range $3.4\times10^{-41}<m_{sp}<1.1\times10^{-46}$ is
+\emph{empty} (the lower bound exceeds the upper), implying that no
+single value of $m_{sp}$ simultaneously suppresses TGP radiation and
+allows the force to operate at Solar-System scales.
+
+\textbf{Resolution:} TGP with $m_{sp}\gg 1$ (Planck-scale mass)
+gives $G_{\rm eff}\approx0$ everywhere except at sub-nuclear
+distances and zero radiation for all sub-Planck frequencies.  In
+this limit, TGP is a theory of \emph{quantum spacetime foam} at the
+Planck scale, decoupled from classical gravity observations entirely.
+Classical gravity is then described by GR alone, and TGP provides
+quantum corrections only at Planck energies.

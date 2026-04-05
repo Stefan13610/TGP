@@ -1,0 +1,162 @@
+% tgp_cosmo_likelihood.tex -- Formal cosmological likelihood comparison
+% Self-contained section for \input{} into main manuscript.
+% Data: DESI DR1 BAO + Planck 2018 CMB + cosmic chronometers H(z).
+% Script: scripts/cosmology/tgp_formal_likelihood.py
+
+\subsection{Formal cosmological likelihood: TGP vs $\Lambda$CDM}%
+\label{ssec:cosmo-likelihood}
+
+We confront TGP with current cosmological data using a formal
+$\chi^2$ analysis.  The data comprise three complementary probes:
+
+\begin{enumerate}[nosep]
+  \item \textbf{DESI DR1 BAO} (DESI Collaboration 2024, arXiv:2404.03002):
+        $D_V/r_d$ at $z_{\rm eff}=0.30$ (BGS),
+        $D_M/r_d$ and $D_H/r_d$ at $z_{\rm eff} = 0.51, 0.71, 0.93, 1.32, 2.33$
+        (LRG+ELG+QSO+Ly$\alpha$), with published covariance matrices.
+        Total: 11 data points.
+  \item \textbf{Planck 2018 compressed CMB} (Planck VI, Table~2;
+        Chen et al.\ 2018, arXiv:1807.06209):
+        shift parameter $R$, acoustic scale $\ell_A$, baryon density
+        $\omega_b$, with $3\times3$ correlation matrix.
+        Total: 3 data points.
+  \item \textbf{Cosmic chronometers $H(z)$} (Moresco et al.\ 2022
+        compilation): 33 measurements from differential galaxy aging.
+\end{enumerate}
+
+\noindent Total data vector: $N_{\rm data} = 47$.
+
+% ------------------------------------------------------------------
+\subsubsection{Model specifications}
+
+\paragraph{$\Lambda$CDM (2 free parameters):}
+$\Omega_m$ and $H_0$, with $\Omega_\Lambda = 1 - \Omega_m - \Omega_r$
+and $\omega_b = 0.02236$ fixed.
+
+\paragraph{TGP (1--3 free parameters):}
+The dimensionless Friedmann equation is
+\begin{equation}\label{eq:E2-tgp}
+  E^2(a) \equiv \frac{H^2(a)}{H_0^2}
+  = \frac{\Omega_m}{a^3} + \frac{\Omega_r}{a^4}
+    + \Omega_{\rm DE}\,f\bigl(\psi(a)\bigr),
+\end{equation}
+where the TGP potential shape is
+\begin{equation}\label{eq:f-pot}
+  f(\psi) = 4\psi^3 - 3\psi^4, \qquad f(1) = 1,
+\end{equation}
+and $\Omega_{\rm DE} = 1 - \Omega_m - \Omega_r$ (closure).
+The field $\psi$ satisfies the exact TGP equation
+(derived from the substrate dynamics):
+\begin{equation}\label{eq:tgp-field-cosmo}
+  \psi'' + \left(3 + \frac{E'}{E}\right)\psi'
+  = \frac{\Phi_0}{E^2}\left[\frac{7}{3}\,\psi^2 - 2\,\psi^3\right]
+    - \frac{2\,\psi'^{\,2}}{\psi},
+\end{equation}
+where primes denote $d/d\ln a$ and $\Phi_0$ is a dimensionless
+coupling that controls the field evolution rate.
+
+\medskip\noindent
+\textbf{Key limits:}
+\begin{itemize}[nosep]
+  \item $\Phi_0 \to 0$: field frozen at $\psi = 1$,
+        $f(\psi) = 1$, $\Rightarrow$ $\Lambda$CDM exactly.
+  \item $\Phi_0 \sim O(1)$: field evolves on Hubble timescale,
+        quintessence-like $w_{\rm DE}(z)$ departures.
+  \item $\Phi_0 \gg 1$: rapid field oscillations,
+        effective $\langle w_{\rm DE} \rangle > -1$.
+\end{itemize}
+
+The sound horizon $r_d$ at the baryon drag epoch is computed via
+the Aubourg et al.\ (2015) fitting formula (calibrated to Planck~2018).
+For $\ell_A$ (CMB acoustic scale), we use $r_s(z_*)$ at
+recombination ($r_s(z_*)/r_d \approx 0.982$).
+Pre-recombination physics is unchanged in TGP (the field is frozen
+by Hubble friction at $z \gg 1$), so $r_d$ and $r_s$ are the same
+as in $\Lambda$CDM to $O(\delta\psi) \sim O(10^{-5})$.
+
+% ------------------------------------------------------------------
+\subsubsection{Results}
+
+\paragraph{Quick-fit ($\Phi_0$ only, $\Omega_m$ and $H_0$ fixed at Planck).}
+Best-fit: $\Phi_0 = 1.80$, giving $\psi(z=0) = 1.04$, $w_{\rm DE}(0) \approx -0.97$.
+
+\paragraph{Full fit ($\Phi_0$, $\Omega_m$, $H_0$ free).}
+Best-fit: $\Phi_0 \to 0$ ($\Lambda$CDM limit), $\Omega_m = 0.306$, $H_0 = 67.85$\,km/s/Mpc.
+
+\begin{center}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Model} & $\chi^2_{\rm BAO}$ & $\chi^2_{H(z)}$ & $\chi^2_{\rm CMB}$ & $\chi^2_{\rm tot}$ \\
+\midrule
+$\Lambda$CDM ($\Omega_m = 0.305$, $H_0 = 68.0$) & 14.3 & 24.0 & 2.1 & 40.3 \\
+TGP 1-param ($\Phi_0 = 1.80$, Planck fixed)      & 22.6 & 26.0 & 0.6 & 49.3 \\
+TGP 3-param ($\Phi_0 \to 0$, free $\Omega_m, H_0$) & 15.1 & 24.2 & 2.9 & 42.1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{Model} & $k$ & $\chi^2_{\rm tot}$ & $\chi^2/N$ & AIC & BIC \\
+\midrule
+$\Lambda$CDM & 2 & 40.3 & 0.86 & 44.3 & 48.0 \\
+TGP (3-param) & 3 & 42.1 & 0.90 & 48.1 & 53.7 \\
+\midrule
+$\Delta$ (TGP $-$ $\Lambda$CDM) & $+1$ & $+1.8$ & $+0.04$ & $+3.8$ & $+5.7$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Interpretation.}
+$\Delta\chi^2 = +1.8$ with one extra parameter gives
+$\Delta\text{AIC} = +3.8$ and $\Delta\text{BIC} = +5.7$:
+\textbf{weak preference for $\Lambda$CDM} (insufficient to
+distinguish the models).  Both achieve $\chi^2/N < 1$
+(adequate fits with 47 data points).
+
+The key result: the 3-parameter TGP best-fit converges to
+$\Phi_0 \to 0$, recovering $\Lambda$CDM.  This demonstrates that:
+\begin{enumerate}[nosep]
+  \item TGP \textbf{contains $\Lambda$CDM as a smooth limit}
+        ($\Phi_0 = 0 \Leftrightarrow w_{\rm DE} = -1$).
+  \item Current data do not require $\Phi_0 \neq 0$ --- the field
+        dynamics are not yet detectable.
+  \item TGP is \textbf{not excluded}: it fits the data with
+        $\chi^2/N = 0.90$, comparable to $\Lambda$CDM.
+\end{enumerate}
+
+\paragraph{Physics of the $\Phi_0$ constraint.}
+The 1-parameter fit (Planck priors) prefers $\Phi_0 \approx 1.8$,
+producing a mild dark energy evolution:
+$\psi(z=0) \approx 1.04$, $f(\psi) \approx 0.99$
+--- a ${\sim}1\%$ departure from $\Lambda$.
+The penalty is concentrated in BAO ($\Delta\chi^2_{\rm BAO} = +8.4$),
+offset by an improved CMB fit ($\Delta\chi^2_{\rm CMB} = -1.4$).
+When $\Omega_m$ and $H_0$ are freed, the optimizer finds that
+$\Phi_0 = 0$ (no field evolution) is globally preferred,
+because the BAO data tightly constrain the expansion history shape.
+
+% ------------------------------------------------------------------
+\subsubsection{Where TGP differs from $\Lambda$CDM}
+
+The $\Phi_0 \to 0$ limit recovers $\Lambda$CDM exactly.
+Non-zero $\Phi_0$ introduces:
+\begin{enumerate}[nosep]
+  \item \textbf{Time-varying dark energy:}
+        $w_{\rm DE}(z) \neq -1$; controlled by $\Phi_0$.
+  \item \textbf{Modified growth rate:}
+        $G_{\rm eff}(k,a) = G_0\bigl[1 + 2\alpha_{\rm eff}^2/(1 + m_{\rm sp}^2 a^2/k^2)\bigr]$
+        with $m_{\rm sp} \sim H_0$ (screened at sub-horizon scales).
+  \item \textbf{Testable prediction:}
+        If $\Phi_0 > 0$, $\psi(z=0) > 1$, which modifies
+        $f\sigma_8(z)$ at the $\sim 1\%$ level ---
+        within reach of DESI Year~5 and Euclid.
+\end{enumerate}
+
+\paragraph{Falsifiability.}
+TGP is falsified if future data require $w_{\rm DE}(z) < -1$
+at any redshift (phantom crossing), because the TGP potential
+$f(\psi) > 0$ constrains $w_{\rm DE} \geq -1$ structurally.
+Current data (including DESI~DR1) are consistent with $w \geq -1$.
+

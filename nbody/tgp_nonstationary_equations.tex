@@ -1,0 +1,268 @@
+
+\section{Non-stationary TGP equations of motion}
+
+\subsection{Starting point: the time-dependent field equation}
+
+The TGP field $\Phi(x,t)$ obeys the Euler--Lagrange equation derived from
+the action $S = \int dt\, E[\Phi]$ extended with a kinetic term.
+Including the standard minimal kinetic term for the scalar field gives the
+field equation
+\begin{equation}
+\Box\,\Phi + V'(\Phi;\Phi_0)
+= \sum_{i=1}^N C_i\,\delta^{(3)}\!\bigl(x - x_i(t)\bigr),
+\label{eq:field_eq_full}
+\end{equation}
+where $\Box = \partial_t^2 - \nabla^2$ is the d'Alembertian and
+the source $C_i\,\delta^{(3)}$ models each body as a point source of
+field strength $C_i$.  The self-interaction potential is
+\begin{equation}
+V(\Phi;\Phi_0)
+= \frac{\beta}{3\Phi_0}\,\Phi^3 - \frac{\gamma}{4\Phi_0^2}\,\Phi^4.
+\end{equation}
+
+\paragraph{Vacuum condition.}
+The field sits in the non-trivial vacuum $\Phi_0>0$ with $\beta=\gamma$
+(exact TGP vacuum condition), giving a screening mass
+\begin{equation}
+m_{\rm sp}^2 = V''(\Phi_0;\Phi_0)\big|_{\beta=\gamma} = \beta.
+\end{equation}
+
+\subsection{Linearisation around the vacuum}
+
+Write $\Phi(x,t) = \Phi_0\bigl(1 + \delta(x,t)\bigr)$ with $\delta\ll 1$.
+Expanding $V'$ to linear order in $\delta$:
+\begin{equation}
+V'(\Phi) \approx V'(\Phi_0) + V''(\Phi_0)\,\Phi_0\,\delta
+= m_{\rm sp}^2\,\Phi_0\,\delta,
+\end{equation}
+where we used $V'(\Phi_0)=0$ (vacuum equation) and $V''(\Phi_0)=m_{\rm sp}^2$.
+Hence
+\begin{equation}
+\boxed{
+\bigl(\Box - m_{\rm sp}^2\bigr)\delta(x,t)
+= \frac{1}{\Phi_0}\sum_{i=1}^N C_i\,\delta^{(3)}\!\bigl(x - x_i(t)\bigr).
+}
+\label{eq:wave_delta}
+\end{equation}
+This is the \emph{Klein--Gordon equation with time-dependent point sources}.
+
+\subsection{Retarded solution: the radiation field}
+
+The causal solution of \eqref{eq:wave_delta} is given by convolution with
+the retarded Green function $G_{\rm ret}$:
+\begin{equation}
+\bigl(\Box - m_{\rm sp}^2\bigr)G_{\rm ret}(x,t;x',t')
+= \delta^{(3)}(x-x')\,\delta(t-t'),
+\end{equation}
+whose explicit form in 3+1 dimensions is (Yukawa propagator):
+\begin{equation}
+G_{\rm ret}(x,t;x',t')
+=
+-\frac{1}{4\pi |x-x'|}
+\left[
+  \delta\!\bigl(t-t'-|x-x'|\bigr)
+  - m_{\rm sp}\,\frac{J_1\!\bigl(m_{\rm sp}\sqrt{(t-t')^2-|x-x'|^2}\bigr)}
+                     {\sqrt{(t-t')^2-|x-x'|^2}}\,
+    \theta\!\bigl(t-t'-|x-x'|\bigr)
+\right].
+\end{equation}
+
+Therefore the exact linearised field is
+\begin{equation}
+\delta(x,t)
+=
+\frac{1}{\Phi_0}
+\sum_{i=1}^N C_i
+\int_{-\infty}^{t} dt'\;
+G_{\rm ret}\!\bigl(x,t;\, x_i(t'),\, t'\bigr).
+\end{equation}
+
+\paragraph{Physical interpretation.}
+The key difference from the quasi-static case is that:
+\begin{itemize}
+  \item each body emits a \emph{wave} that propagates at speed $c=1$
+    (in natural units);
+  \item the wave decays exponentially on length scale $m_{\rm sp}^{-1}$
+    \emph{in the rest frame};
+  \item the field at body $j$ at time $t$ depends on the \emph{retarded
+    position} $x_i(t - |x_j - x_i|)$, not the current position.
+\end{itemize}
+
+\subsection{Non-stationary pairwise interaction}
+
+For two slowly moving bodies (velocities $v \ll 1$), the retarded position
+can be expanded:
+\begin{equation}
+x_i\!\bigl(t - d_{ij}/c\bigr)
+= x_i(t) - \dot x_i(t)\,d_{ij}/c + \tfrac{1}{2}\ddot x_i(t)\,(d_{ij}/c)^2 + \cdots
+\end{equation}
+This gives corrections to the static Yukawa potential of order $v/c$.
+
+The leading-order retardation correction to the pairwise energy is (in the
+$m_{\rm sp} d\ll 1$ limit):
+\begin{equation}
+\delta V_2^{(v/c)}
+= \frac{4\pi C_i C_j}{d_{ij}}\cdot v_i \cdot v_j / c^2 + O(v^2/c^2),
+\end{equation}
+analogous to the Darwin term in electrodynamics.
+
+\subsection{Radiation: power loss}
+
+For an accelerating source (e.g.\ body $i$ with acceleration $\ddot x_i$),
+the scalar field radiates energy.  In the far field ($r\to\infty$, $m r\ll 1$),
+the radiated power is (Larmor formula for massive scalar field):
+\begin{equation}
+P_{\rm rad,i}
+= \frac{C_i^2}{6\pi}\,|\ddot x_i|^2
+  \cdot
+  \begin{cases}
+    1 & m_{\rm sp}=0\text{ (massless)},\\[4pt]
+    \displaystyle
+    1 - \frac{3m_{\rm sp}^2}{4\omega^2}+\cdots & \omega \gg m_{\rm sp},
+  \end{cases}
+\end{equation}
+where $\omega$ is the orbital frequency.  For TGP screening masses
+$m_{\rm sp} = \sqrt{\beta}$ and typical orbital frequencies,
+this quantifies the rate of energy loss to scalar radiation.
+
+\subsection{Non-stationary N-body equations of motion}
+
+Including retardation and radiation reaction, the equation of motion for
+body $i$ becomes:
+\begin{equation}
+\boxed{
+C_i\,\ddot x_i(t)
+=
+\underbrace{
+F_i^{(2,\rm quasi)}\!\bigl(x_i(t),\{x_j(t)\}\bigr)
+}_{\text{quasi-static pairwise}}
++
+\underbrace{
+F_i^{(3,\rm quasi)}\!\bigl(\{x_j(t)\}\bigr)
+}_{\text{quasi-static 3-body}}
++
+\underbrace{
+\delta F_i^{(v/c)}\!\bigl(\{x_j(t),\dot x_j(t)\}\bigr)
+}_{\text{velocity corrections}}
++
+\underbrace{
+\delta F_i^{(\rm RR)}(t)
+}_{\text{radiation reaction}}
++
+\cdots
+}
+\label{eq:eom_nonstationary}
+\end{equation}
+
+The terms are:
+\begin{enumerate}
+\item \emph{Quasi-static pairwise force} (exact, closed form):
+\begin{equation}
+F_i^{(2,\rm quasi)}
+= -\nabla_{x_i}\sum_{j\ne i} V_2(d_{ij}),\quad
+V_2(d) = -\frac{4\pi C_i C_j}{d} + \frac{8\pi\beta C_i C_j}{d^2}
+         - \frac{12\pi\gamma C_i C_j(C_i+C_j)}{d^3}.
+\end{equation}
+
+\item \emph{Quasi-static 3-body force} (exact via Feynman integral):
+\begin{equation}
+F_i^{(3,\rm quasi)}
+= 6\gamma\sum_{j<k\atop j\ne i,k\ne i} C_i C_j C_k
+\left[
+\frac{\partial I_Y}{\partial d_{ij}}\,\hat e_{ij}
++ \frac{\partial I_Y}{\partial d_{ik}}\,\hat e_{ik}
+\right],
+\end{equation}
+where $\partial I_Y/\partial d_{ij}$ is computed exactly via
+\begin{equation}
+\frac{\partial I_Y}{\partial d_{12}}
+=
+-2m\,d_{12}
+\int_{\Delta_2}
+\frac{\alpha_2}{\Delta^2 \sqrt{Q}}\,K_1\!\Bigl(m\sqrt{Q/\Delta}\Bigr)\,d\alpha,
+\label{eq:exact_dI_dd}
+\end{equation}
+with $Q = \alpha_2 d_{12}^2 + \alpha_1 d_{13}^2 + \alpha_3 d_{23}^2$
+and $\Delta = \alpha_1\alpha_2+\alpha_1\alpha_3+\alpha_2\alpha_3$
+(implemented in \texttt{three\_body\_force\_exact.py}).
+
+\item \emph{Velocity corrections} ($v/c$ order): retardation shifts, Darwin term,
+  Römer delay in the effective potential.  Suppressed by $(v/c)^2\sim (v_{\rm orb}/1)^2$.
+
+\item \emph{Radiation reaction} (Abraham--Lorentz--Dirac term for a scalar):
+\begin{equation}
+\delta F_i^{(\rm RR)}
+= \frac{C_i^2}{6\pi}\,\dddot x_i(t).
+\end{equation}
+  Suppressed by $C_i^2$ (source strength squared) and relevant only when
+  the orbital period is comparable to the radiation timescale.
+\end{enumerate}
+
+\subsection{Hierarchy of approximations}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Level & Approximation kept & Error scale\\
+\hline
+0 & Full field equation \eqref{eq:field_eq_full} (nonlinear, retarded) & exact\\
+1 & Linearised + retarded \eqref{eq:wave_delta} & $O(\delta^2)$\\
+2 & Quasi-static: drop $\partial_t^2\delta$ & $O(v^2/c^2)$\\
+3 & Yukawa superposition: $\delta=\sum \delta_i$ & $O(\delta^2)$\\
+4 & Truncate at 3-body: drop $V_4,V_5,\ldots$ & $O(C^4)$\\
+5 & Exact 3-body force via \eqref{eq:exact_dI_dd} & $0$ (within level 4)\\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{What \texttt{dynamics\_v2.py} implements.}
+Currently levels 0--4 are applied and, for the 3-body term, an
+additional saddle-point approximation $I_Y \approx (2\pi)^{3/2}m^{-2}
+e^{-ms}/s$ is used (roughly 5--30\% error in the 3-body force).
+
+\paragraph{What \texttt{three\_body\_force\_exact.py} provides.}
+The exact 3-body force at level 5, replacing the saddle-point
+approximation with the exact Feynman 2D integral, at the cost of
+$O(n_{\rm quad}^2)$ function evaluations per triplet per time step.
+
+\subsection{Retardation time scale}
+
+The quasi-static approximation (level 2) fails when the retardation
+delay $\tau = d_{ij}/c$ is comparable to the orbital period $T_{\rm orb}$.
+The condition for validity is
+\begin{equation}
+\frac{d_{ij}}{c\,T_{\rm orb}} = \frac{v_{\rm orb}}{c} \ll 1.
+\end{equation}
+For TGP bodies moving at non-relativistic speeds ($v_{\rm orb}/c \sim
+10^{-3}$--$10^{-6}$ in astrophysical contexts), the quasi-static limit is
+excellent.  Post-Newtonian corrections enter at relative order $v^2/c^2
+\sim 10^{-6}$--$10^{-12}$ and are negligible for most TGP applications.
+
+\subsection{Non-stationary 3-body effects: summary}
+
+The genuine novelty of the non-stationary TGP equations (compared to
+Newtonian gravity or standard Yukawa) lies in two effects:
+
+\begin{enumerate}
+\item \emph{Non-trivial 3-body interaction} (already present in the
+  quasi-static limit): the term $V_3 \propto \gamma\,C_1 C_2 C_3\,I_Y$
+  has no Newtonian analogue.  It is attractive, breaks the equivalence
+  with gravity ($C_i\ne$ mass), and is dominant at intermediate separations
+  $m_{\rm sp}d\sim 1$.
+
+\item \emph{Modified radiation}: the massive scalar ($m_{\rm sp}>0$) radiates
+  less efficiently than a massless field.  The radiation spectrum has a
+  low-frequency cutoff at $\omega = m_{\rm sp}$, unlike electromagnetic or
+  gravitational radiation.  This means short-period orbits are more
+  stable in TGP than in GR.
+\end{enumerate}
+
+The leading observable signatures of non-stationary effects in TGP
+would therefore be:
+\begin{itemize}
+  \item orbital decay rate suppressed below the gravitational-wave analogue
+    by a factor of $(m_{\rm sp}\,d_{\rm orb})^2$ relative to GR,
+  \item three-body secular effects (Kozai--Lidov-type resonances modified
+    by the $V_3$ coupling) measurable at the $C^3/(C^2)=C$ level compared
+    to pairwise dynamics.
+\end{itemize}

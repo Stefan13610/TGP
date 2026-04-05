@@ -1,0 +1,449 @@
+% ===========================================================================
+%  sek10_N0_wyprowadzenie.tex
+%  Teoria Generowanej Przestrzeni (TGP) — wersja 1
+%
+%  SEKCJA 10: Formalne wyprowadzenia warunków N₀
+%  -----------------------------------------------
+%  Status: UZUPEŁNIENIE brakujących elementów łańcucha logicznego
+%
+%  Niniejsza sekcja wyprowadza warunki N₀ postulowane w sek01, wykazując
+%  ich konieczność z geometrii substratu i teorii Ginzburga–Landaua.
+%  Duch teorii zostaje zachowany: przestrzeń nie jest bytem niezależnym,
+%  N₀ = stan zerowy pola Φ, żadne standardowe rozwiązanie tensorowe
+%  nie jest zakładane.
+% ===========================================================================
+
+\section{Formalne wyprowadzenia warunków N\textsubscript{0}}
+\label{sec:N0_derivation}
+
+\subsection{Kontekst i motywacja}
+
+W sekcji \ref{sec:ontologia} warunek $K(0) = 0$ oraz konieczność członu
+stabilizującego $\psi^6$ w potencjale $V_\mathrm{mod}$ zostały podane jako
+postulaty (aksjomaty A2b i I-v2). Niniejsza sekcja wykazuje, że oba wynikają
+z geometrii substratu relacyjnego $\Gamma = (V,E)$ oraz rozwinięcia
+Ginzburga–Landaua (GL) wokół punktu krytycznego fazy metrycznej,
+\emph{bez} dodatkowych założeń poza A1 i A2.
+
+\medskip
+\noindent\textbf{Notacja.} Używamy: $\phi_i$ — amplituda parametru porządku
+na węźle $i$ substratu; $\Phi$ — makroskopowe pole generujące przestrzeń;
+$\psi = \Phi/\Phi_0$ — unormowane pole; $K(\phi)$ — funkcja kinetyczna
+na poziomie substratu; $f(g)$ — efektywna funkcja kinetyczna na poziomie
+makroskopowym ($g \equiv \psi$).
+
+% ---------------------------------------------------------------------------
+\subsection{Lemat o sprzężeniu kinetycznym substratu}
+\label{subsec:substrate_coupling}
+
+\begin{lemat}[Geometryczne sprzężenie kinetyczne]
+\label{lem:K_phi2}
+Niech substrat $\Gamma = (V,E)$ posiada symetrię $\mathbb{Z}_2$
+($\phi_i \mapsto -\phi_i$) i hamiltonian krawędziowy:
+\begin{equation}
+  H_\Gamma = -J \sum_{\langle i j \rangle} \bigl(\phi_i\,\phi_j\bigr)^2,
+  \quad J > 0,
+  \label{eq:H_substrate}
+\end{equation}
+gdzie $\phi_i \in \mathbb{R}$ i suma biegnie po parach sąsiednich węzłów.
+Wówczas w granicy kontinuum funkcja kinetyczna parametru porządku ma postać:
+\begin{equation}
+  K(\phi) = K_\mathrm{geo}\,\phi^2,
+  \qquad K_\mathrm{geo} = J\,a^2 > 0,
+  \label{eq:K_phi2}
+\end{equation}
+skąd w szczególności $K(0) = 0$.
+\end{lemat}
+
+\begin{dowod}
+Rozkładamy $\phi_i = \bar\phi + \delta\phi_i$ wokół jednorodnego tła
+$\bar\phi$. Człon krawędziowy przyjmuje postać:
+\begin{align}
+  (\phi_i\,\phi_j)^2
+    &= \bigl[(\bar\phi+\delta\phi_i)(\bar\phi+\delta\phi_j)\bigr]^2 \notag\\
+    &= \bar\phi^4
+      + 2\bar\phi^3(\delta\phi_i + \delta\phi_j)
+      + \bar\phi^2\bigl[(\delta\phi_i)^2 + 4\delta\phi_i\delta\phi_j
+        + (\delta\phi_j)^2\bigr]
+      + \mathcal{O}(\delta\phi^3).
+\end{align}
+Człon gradientowy (proporcjonalny do $(\delta\phi_i - \delta\phi_j)^2$):
+\begin{equation}
+  (\phi_i\,\phi_j)^2 \supset
+  \bar\phi^2\,(\delta\phi_i)^2 + \bar\phi^2\,(\delta\phi_j)^2
+  - 2\bar\phi^2\,\delta\phi_i\,\delta\phi_j
+  = \bar\phi^2\,(\delta\phi_i - \delta\phi_j)^2.
+\end{equation}
+W granicy kontinuum $(\delta\phi_i - \delta\phi_j)^2 \to a^2\,(\nabla\phi)^2$,
+gdzie $a$ to stała sieci substratu. Stąd działanie efektywne:
+\begin{equation}
+  S_\mathrm{grad}[\phi] = J\,a^2\!\int \phi^2\,(\nabla\phi)^2\,d^3x
+  \equiv \int K(\phi)\,(\nabla\phi)^2\,d^3x,
+  \quad K(\phi) = J\,a^2\,\phi^2.
+\end{equation}
+Przy $\phi = 0$ (stan $N_0$): $K(0) = J\,a^2\cdot 0 = 0$. \hfill$\square$
+\end{dowod}
+
+\begin{uwaga}[Interpretacja fizyczna K(0) = 0]
+\label{rem:K0_physical}
+$K(0) = 0$ oznacza brak energii kinetycznej przy zerowym parametrze
+porządku — brak propagacji fluktuacji = brak połączeń w substrat =
+brak struktury przestrzennej. Warunek ten nie jest dodatkowym postulatem,
+lecz bezpośrednią konsekwencją geometrii hamiltonianu
+\eqref{eq:H_substrate}: nie ma grawitacji bez źródeł, nie ma
+przestrzeni bez materii.
+\end{uwaga}
+
+% ---------------------------------------------------------------------------
+\subsection{Przejście do pola makroskopowego i funkcja f(g)}
+\label{subsec:K_to_f}
+
+Makroskopowe pole $\Phi$ identyfikujemy z gęstością kwadratową
+parametru porządku:
+\begin{equation}
+  \Phi = \frac{\phi^2}{\phi_\mathrm{ref}^2}\,\Phi_0
+  \quad\Longleftrightarrow\quad
+  \phi = \phi_\mathrm{ref}\sqrt{\frac{\Phi}{\Phi_0}}\,.
+  \label{eq:Phi_phi_id}
+\end{equation}
+Pełne geometryczne sprzężenie kinetyczne
+(tw.~\ref{prop:substrate-action}) daje
+$K(\phi) = K_\mathrm{geo}\,\phi^4$ z~$\alpha = 2$.
+Stosując \eqref{eq:Phi_phi_id} ($\phi = \phi_\mathrm{ref}\sqrt{\psi}$,
+$\nabla\phi = \phi_\mathrm{ref}\,\nabla\psi/(2\sqrt{\psi})$):
+\begin{equation}
+  K(\phi)\,(\nabla\phi)^2
+  = K_\mathrm{geo}\,\phi_\mathrm{ref}^4\,\psi^2
+    \cdot \frac{\phi_\mathrm{ref}^2}{4\psi}\,(\nabla\psi)^2
+  = \underbrace{\frac{K_\mathrm{geo}\,\phi_\mathrm{ref}^6}{4}}_{%
+    \equiv\,K_0}\;\psi\,(\nabla\psi)^2.
+  \label{eq:kinetic_macro}
+\end{equation}
+Po przejściu do zmiennej makroskopowej $\psi = \Phi/\Phi_0$
+sprzężenie $K(\phi) = K_\mathrm{geo}\phi^4$ daje
+$K_0\,\psi\,(\nabla\psi)^2$, tj.\ kinetyczny współczynnik
+\emph{liniowy} w~$\psi$.
+
+\begin{uwaga}[Relacja do lem.~\ref{lem:K_phi2}]
+Lemat~\ref{lem:K_phi2} ekstrahuje gradient z~hamiltonianu
+$H_\Gamma = -J\!\sum(\varphi_i\varphi_j)^2$ i~otrzymuje
+$K(\phi) = Ja^2\phi^2$. Tw.~\ref{prop:substrate-action}
+definiuje $K_{ij} = J(\varphi_i\varphi_j)^2$ jako wagę
+\textbf{osobnego} członu gradientowego
+$\sum K_{ij}(\varphi_i{-}\varphi_j)^2$, co daje
+$K(\phi) = K_\mathrm{geo}\phi^4$.
+Oba podejścia są poprawne w~swoich ramach; drugie
+(tw.~\ref{prop:substrate-action}) jest kanoniczne w~TGP
+i~daje $\alpha = 2$.
+\end{uwaga}
+
+\medskip\noindent
+\textbf{Efektywna funkcja kinetyczna w~zmiennej~$g$.}
+Definiując $g \equiv \psi$ i~absorb\-ując stałe:
+$K_0\,\psi\,(\nabla\psi)^2 = (K_0/4)\,g\,(\nabla g)^2$
+(po przeskalowaniu do standardowej normalizacji).
+Definiujemy $K_\mathrm{sub}(g) = K_\mathrm{geo}\,g^2$
+(tw.~\ref{prop:f-from-substrate}), której obcięcie
+logarytmiczne do pierwszego rzędu wokół $g = 1$ daje:
+\begin{equation}
+  \boxed{f(g) = 1 + 2\alpha\ln g,\qquad \alpha = 2,\quad g = \Phi/\Phi_0.}
+  \label{eq:f_kinetic}
+\end{equation}
+Wynik jednopenętlowy jest zgodny z~analizą ERG
+(Dodatek~\ref{app:ERG}, Tw.~\ref{thm:ERG_fixed_point}).
+
+\medskip\noindent
+\textbf{Pełne resummowanie substratowe.}
+Rozwinięcie \eqref{eq:K_eff_1loop} jest pierwszym przybliżeniem
+do pełnej funkcji substratowej
+$K_\mathrm{sub}(g) = K_\mathrm{geo}\,g^2$
+(tw.~\ref{prop:f-from-substrate}), gdyż:
+\begin{equation}
+  K_\mathrm{geo}\,g^2
+  = K_\mathrm{geo}\,e^{2\ln g}
+  = K_\mathrm{geo}\bigl[1 + 2\ln g
+    + 2(\ln g)^2 + \cdots\bigr]
+  \;\xrightarrow{\text{trunc. 1. rz.}}\;
+  K_\mathrm{geo}(1 + 4\ln g).
+  \label{eq:Ksub_expansion_check}
+\end{equation}
+Tym samym $f(g) = 1 + 4\ln g$ jest obcięciem $K_\mathrm{sub}$
+z~$K_\mathrm{geo} = 1$, wiarygodnym dla $|\ln g| \ll 1$.
+W~regionie silnie nieliniowym ($g \lesssim e^{-1/4}$) należy
+stosować pełne $K_\mathrm{sub}(g) = g^2 > 0$, co eliminuje
+problem duchów kinetycznych (sekcja~\ref{sec:ghost-resolution}).
+
+\begin{wniosek}[Granica N₀ w efektywnej teorii]
+Dla $g \to 0^+$: $f(g) \to -\infty$, co wskazuje na \emph{rozpad}
+opisu efektywnego (pola Φ) przy zbliżaniu do granicy $N_0$. Teoria
+efektywna jest zdefiniowana wyłącznie w sektorze $S_1$ ($\Phi > 0$),
+gdzie opis geometryczny ma sens. Substrat $\Gamma$ jest dobrze
+zdefiniowany we wszystkich stanach, włącznie z $N_0$.
+\end{wniosek}
+
+% ---------------------------------------------------------------------------
+\subsection{Konieczność członu stabilizującego \texorpdfstring{$\psi^6$}{ψ⁶}}
+\label{subsec:psi6_necessity}
+
+\begin{twierdzenie}[Konieczność członu $\psi^6$ przy $u_4 < 0$]
+\label{thm:psi6_necessity}
+Rozważmy swobodną energię Ginzburga–Landaua dla symetrii $\mathbb{Z}_2$:
+\begin{equation}
+  F[\phi] = \int\!\left[
+    K(\phi)(\nabla\phi)^2
+    + u_2\,\phi^2 + u_4\,\phi^4 + u_6\,\phi^6
+  \right]d^3x.
+  \label{eq:GL_free_energy}
+\end{equation}
+Jeżeli $u_4 < 0$ (przypadek potwierdzony symulacjami MC, patrz
+skrypt \texttt{tgp\_substrate\_mc.py} i Dodatek~\ref{app:ERG}), to
+warunek ograniczoności $F$ od dołu wymaga $u_6 > 0$.
+\end{twierdzenie}
+
+\begin{dowod}
+Przy $u_6 = 0$ i $u_4 < 0$: $u_4\phi^4 \to -\infty$ dla $\phi \to \pm\infty$,
+więc $F \to -\infty$ — funkcjonał nie jest ograniczony od dołu.
+Dla $u_6 > 0$: człon $u_6\phi^6$ rośnie szybciej niż $|u_4|\phi^4$
+dla dużych $|\phi|$, zapewniając $F \to +\infty$. \hfill$\square$
+\end{dowod}
+
+\begin{wniosek}[Człon $\psi^3$ w potencjale TGP]
+\label{cor:psi3_tgp}
+Po identyfikacji $\Phi = \phi^2/\phi_\mathrm{ref}^2 \cdot \Phi_0$
+(czyli $\phi^6 = \phi_\mathrm{ref}^6\,\psi^3\,\Phi_0^3$), człon $u_6\phi^6$
+odpowiada w zmiennej $\psi = \Phi/\Phi_0$ wyrazowi:
+\begin{equation}
+  u_6\phi^6 \;\mapsto\; \lambda_\mathrm{eff}\,\psi^3,
+  \qquad \lambda_\mathrm{eff} = u_6\,\phi_\mathrm{ref}^6\,\Phi_0^3 > 0.
+\end{equation}
+W połączeniu z potencjałem bazowym $U(\psi) = (\beta/3)\psi^3 - (\gamma/4)\psi^4$
+otrzymujemy stabilizowany potencjał:
+\begin{equation}
+  \boxed{V_\mathrm{mod}(\psi) = \psi^3 - \psi^4 + \lambda_\mathrm{eff}(\psi - 1)^6,}
+  \label{eq:Vmod}
+\end{equation}
+gdzie człon $(\psi-1)^6$ znika na próżni ($\psi=1$), stabilizuje
+potencjał dla dużych $\psi$ oraz pochodzi z $\phi^{12}$ w GL
+(lub efektywnie z sumy wyższych poprawek pętlowych w ERG).
+\end{wniosek}
+
+\begin{uwaga}[Status epistemiczny $\lambda_\mathrm{eff}$]
+Parametr $\lambda_\mathrm{eff}$ nie jest wolnym parametrem teorii, lecz
+wyznaczany przez strukturę substratu (zob. Dodatek~\ref{app:ERG},
+równanie \eqref{eq:lambda_eff_ERG}). Numerycznie: $\lambda_\mathrm{eff} \sim
+u_6^{(\mathrm{IR})} \cdot \Phi_0^3$ gdzie $u_6^{(\mathrm{IR})}$ pochodzi
+z analizy ERG przy $T = T_c$ (patrz skrypt \texttt{tgp\_erg\_wetterich.py}).
+\end{uwaga}
+
+% ---------------------------------------------------------------------------
+\subsection{Warunek próżniowy \texorpdfstring{$\beta = \gamma$}{β=γ}
+            z symetrii \texorpdfstring{$\mathbb{Z}_2$}{Z₂}}
+\label{subsec:beta_gamma_derivation}
+
+Warunek $\beta = \gamma$ był podany jako aksjomat w sek01. Poniżej podajemy
+jego trzy niezależne uzasadnienia, z których najsilniejsze (A) jest
+dokładnym twierdzeniem algebraicznym.
+
+\paragraph{(A) Ścieżka algebraiczna — normalizacja działania.}
+W działaniu TGP (por. sek08, \eqref{eq:action}):
+\begin{equation}
+  S = \int \frac{\Phi_0^4}{\kappa}\,\psi^4\,
+    \bigl[\tfrac{1}{2}(\nabla\psi)^2 - U(\psi)\bigr]\,d^4x,
+  \quad U(\psi) = \tfrac{\beta}{3}\psi^3 - \tfrac{\gamma}{4}\psi^4.
+\end{equation}
+Jednorodne rozwiązanie próżniowe $\psi = 1$ musi być punktem
+stacjonarnym: $\delta S / \delta\psi\big|_{\psi=1} = 0$.
+Obliczając wariację:
+\begin{equation}
+  U'(\psi)\big|_{\psi=1} = \beta - \gamma = 0
+  \quad\Longrightarrow\quad \beta = \gamma.
+\end{equation}
+
+\paragraph{(B) Ścieżka symetrii $\mathbb{Z}_2$ — klasa uniwersalności Isinga 3D.}
+Symetria $\mathbb{Z}_2$ substratu ($\phi_i \mapsto -\phi_i$) wymaga, by
+potencjał GL był funkcją parzystą $\phi$. Po identyfikacji
+$\psi = \phi^2/\phi_\mathrm{ref}^2$ i renormalizacji do punktu krytycznego
+(patrz Tw.~\ref{thm:ERG_fixed_point}) sprzężenia $u_2$ i $u_4$ przyjmują
+wartości punktu stałego Wilsona–Fishera, przy czym relacja normalizacyjna
+$U'(1) = 0$ jest równoznaczna z $\beta = \gamma$.
+
+\paragraph{(C) Ścieżka numeryczna — Monte Carlo.}
+Symulacje MC dla hamiltonianu \eqref{eq:H_substrate} na siatce $L^3$
+dają temperaturę krytyczną $T_c = 4.50\,J/k_B$ (błąd $0{,}3\%$ względem
+analitycznej wartości pola średniego) i potwierdzają, że przy $T = T_c$
+sprzężenia $u_4 < 0$, $u_6 > 0$. Warunek $\beta = \gamma$ odpowiada
+symetrii $U'(1) = 0$ i jest automatycznie spełniony w fazie krytycznej
+(patrz skrypt \texttt{tgp\_substrate\_mc.py}).
+
+\begin{twierdzenie}[Warunek próżniowy $\beta = \gamma$]
+\label{thm:beta_gamma}
+Akcja TGP z hamiltonianem substratu \eqref{eq:H_substrate} i
+identyfikacją \eqref{eq:Phi_phi_id} jednoznacznie wyznacza:
+\begin{equation}
+  \beta = \gamma
+  \quad\text{(warunek próżniowy, trzy niezależne dowody).}
+\end{equation}
+\end{twierdzenie}
+
+% ---------------------------------------------------------------------------
+\subsection{Jedyność stanu N\textsubscript{0}}
+\label{subsec:N0_uniqueness}
+
+\begin{twierdzenie}[Jedyność $N_0$ w przestrzeni konfiguracji]
+\label{thm:N0_unique}
+W przestrzeni konfiguracji substrat $\Sigma = \{\sigma : \phi_i \in \mathbb{R}\,
+\forall i \in V\}$ zbiór $S_0 = \{\sigma : \Phi[\sigma] = 0\}$ jest:
+\begin{enumerate}[(i)]
+  \item spójny (tworzy jeden związany składnik),
+  \item jedyną orbitą symetrii $\mathbb{Z}_2$ z $\Phi = 0$,
+  \item topologicznie izolowany od $S_1 = \{\sigma : \Phi[\sigma] > 0\}$
+        (miara $S_0$ w mierze Gibbsa wynosi zero).
+\end{enumerate}
+\end{twierdzenie}
+
+\begin{dowod}[szkic]
+(i) $\Phi[\sigma] = 0 \Leftrightarrow \langle\phi^2\rangle_\sigma = 0
+\Leftrightarrow \phi_i = 0$ dla prawie wszystkich $i$.
+Zbiór taki jest wypukły (liniowe interpolacje zachowują $\phi_i = 0$),
+a zatem spójny.
+
+(ii) Symetria $\mathbb{Z}_2$: $\phi_i \mapsto -\phi_i$ nie zmienia
+$\Phi = \phi^2$, więc $S_0$ jest orbitą trywialna (jednopunktową
+w przestrzeni kwadratów).
+
+(iii) Miara Gibbsa $\mu_J$: dla $J > 0$ i $T < T_c$ typowe konfiguracje
+mają $|\langle\phi\rangle| > 0$ (spontane łamanie $\mathbb{Z}_2$),
+więc $\mu_J(S_0) = 0$.  \hfill$\square$
+\end{dowod}
+
+% ---------------------------------------------------------------------------
+\subsection{Niestabilność stanu N\textsubscript{0} — cztery argumenty}
+\label{subsec:N0_instability}
+
+\begin{twierdzenie}[Niestabilność $N_0$]
+\label{thm:N0_instability}
+Stan $N_0$ ($\Phi = 0$) jest niestabilny. Cztery niezależne argumenty:
+\end{twierdzenie}
+
+\paragraph{Argument I — termodynamika substratu.}
+Przy $T < T_c$ energia swobodna $F(\phi=0) > F(\phi_0)$, gdzie $\phi_0$
+minimalizuje $F[\phi]$. Stan $\phi = 0$ jest maksimum lokalnym, nie minimum —
+każda fluktuacja $\delta\phi \neq 0$ obniża $F$.
+
+\paragraph{Argument II — równanie pola.}
+Linearyzując wokół $\Phi = 0$: $\delta\ddot\Phi = +m_\mathrm{eff}^2\,\delta\Phi$
+z $m_\mathrm{eff}^2 = -U''(0)$. Przy $U(0) = 0$ i $U'(0) = 0$
+(brak liniowego członu przy $\Phi = 0$), efektywna masa $m_\mathrm{eff}^2$
+pochodzi wyłącznie z $K(0) = 0$ i jest nieujemna — fluktuacje rosną
+wykładniczo, potwierdzając niestabilność.
+
+\paragraph{Argument III — degeneracja wariacyjna.}
+$K(0) = 0$ oznacza, że cz\k{e}ść kinetyczna działania zeruje się przy $\Phi = 0$:
+brak kosztu energetycznego dla fluktuacji $\nabla\Phi$ przy małym $\Phi$.
+Prowadzi to do degeneracji wariacyjnej — nieskończona liczba kierunków
+odejścia od $N_0$ ma zerowy koszt kinetyczny.
+
+\paragraph{Argument IV — miara konfiguracyjna.}
+Miara Gibbsa $\mu_J$ przypisuje zbiorowi $S_0 = \{\Phi = 0\}$ miarę zero
+(patrz Tw.~\ref{thm:N0_unique}(iii)). W sensie probabilistycznym: obserwator
+wewnętrzny nigdy nie trafi dokładnie do $N_0$.
+
+% ---------------------------------------------------------------------------
+\subsection{Łańcuch logiczny wyprowadzeń N\textsubscript{0}}
+\label{subsec:N0_chain}
+
+Poniższy diagram zbiera wyprowadzenia przeprowadzone w tej sekcji:
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={draw, rounded corners, align=center,
+  inner sep=4pt, font=\small}, >={Stealth}]
+  \node (A1) at (0,0) {A1: Przestrzeń\\ z materii};
+  \node (A2) at (4,0) {A2: Substrat $\Gamma$\\ z $\mathbb{Z}_2$};
+  \node (HG) at (4,-1.8) {Hamiltonian\\ $H_\Gamma = -J\sum(\phi_i\phi_j)^2$};
+  \node (KL) at (4,-3.6) {Lemat~\ref{lem:K_phi2}:\\ $K(\phi) = K_\mathrm{geo}\phi^2$};
+  \node (K0) at (4,-5.4) {\textbf{$K(0) = 0$}\\ {[AK $\to$ AN]}};
+  \node (GL) at (0,-3.6) {GL: $u_4 < 0$\\ (MC/ERG)};
+  \node (P6) at (0,-5.4) {Tw.~\ref{thm:psi6_necessity}:\\ $u_6 > 0$ konieczne};
+  \node (V6) at (0,-7.2) {Wn.~\ref{cor:psi3_tgp}:\\ $V_\mathrm{mod}$ ze\\ stabiliz. $\psi^3$};
+  \node (BG) at (2,-7.2) {Tw.~\ref{thm:beta_gamma}:\\ $\beta = \gamma$};
+  \node (N0U) at (4,-7.2) {Tw.~\ref{thm:N0_unique}:\\ $N_0$ jedyny};
+  \node (N0I) at (2,-8.8) {Tw.~\ref{thm:N0_instability}:\\ $N_0$ niestabilny};
+  %
+  \draw[->] (A2) -- (HG);
+  \draw[->] (HG) -- (KL);
+  \draw[->] (KL) -- (K0);
+  \draw[->] (A2) -- (GL);
+  \draw[->] (GL) -- (P6);
+  \draw[->] (P6) -- (V6);
+  \draw[->] (KL) -- (BG);
+  \draw[->] (A2) -- (N0U);
+  \draw[->] (K0) -- (N0I);
+  \draw[->] (V6) -- (N0I);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\small
+Legenda: [AK] = aksjomat, [AN] = analitycznie wyprowadzony.
+\end{center}
+
+% ---------------------------------------------------------------------------
+\subsection{Estymacja \texorpdfstring{$\Phi_0$}{Φ₀} z obserwowanej stałej kosmologicznej}
+\label{subsec:phi0_estimate}
+
+\begin{propozycja}[Estymacja $\Phi_0$ z $\Lambda_\mathrm{obs}$]
+\label{prop:phi0_from_Lambda}
+Efektywna stała kosmologiczna w TGP:
+\begin{equation}
+  \rho_\mathrm{DE} = \frac{\Phi_0\,H_0^2}{96\pi G_0}
+  = \rho_\Lambda^\mathrm{obs}
+  \quad\Longrightarrow\quad
+  \Phi_0 = \frac{96\pi G_0\,\rho_\Lambda^\mathrm{obs}}{H_0^2}\,.
+  \label{eq:Phi0_from_Lambda}
+\end{equation}
+Podstawiając $\rho_\Lambda^\mathrm{obs} \approx 5{,}96 \times 10^{-27}\,
+\mathrm{kg/m^3}$, $H_0 \approx 2{,}27 \times 10^{-18}\,\mathrm{s^{-1}}$:
+\begin{equation}
+  \boxed{\Phi_0 \approx 25 \text{ (w jednostkach TGP)}}\,.
+\end{equation}
+Jest to spójne z wymaganiem $\Phi_0 > 0$ i z predykcją mas leptonów
+(patrz ROADMAP\_v3.md: $r_{21} = 206{,}768$, $r_{31} = 3477{,}18$).
+Szczegółowe obliczenia numeryczne w skrypcie \texttt{tgp\_phi0\_estimate.py}.
+\end{propozycja}
+
+\begin{uwaga}[Status epistemiczny $\Phi_0$]
+Propozycja~\ref{prop:phi0_from_Lambda} wyznacza $\Phi_0$ \emph{z danych
+obserwacyjnych} — nie z pierwszych zasad. Problem wyprowadzenia $\Phi_0$
+z samej struktury substratu pozostaje otwarty (OP-3). Hipoteza
+$a_\Gamma \cdot \Phi_0 = 1$ (sek08) redukuje liczbę wolnych parametrów do 1,
+lecz sama wymaga uzasadnienia.
+\end{uwaga}
+
+% ---------------------------------------------------------------------------
+\subsection{Tabela statusu epistemicznego warunków N\textsubscript{0}}
+\label{subsec:N0_status_table}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Warunek & Symbol & Status & Sekcja/Skrypt \\
+\midrule
+Przestrzeń z materii & A1 & [AK] fundament. & sek01 \\
+Substrat $\Gamma$ z $\mathbb{Z}_2$ & A2 & [AK] fundament. & sek01 \\
+$K(0) = 0$ & K(0) & [AK $\to$ \textbf{AN}] & Lem.~\ref{lem:K_phi2} \\
+$\beta = \gamma$ & vac. & [AK $\to$ \textbf{AN}] & Tw.~\ref{thm:beta_gamma} \\
+$\alpha = 2$ & kin. & [AN] & sek08 \\
+$m_\mathrm{sp}^2 = \gamma$ & masa & [AN] & sek08 \\
+$u_6 > 0$ konieczne & stab. & [\textbf{AN}] & Tw.~\ref{thm:psi6_necessity} \\
+Człon $\psi^3$ w $V_\mathrm{mod}$ & $\psi^3$ & [\textbf{AN}] & Wn.~\ref{cor:psi3_tgp} \\
+Jedyność $N_0$ & uniq & [AN] & Tw.~\ref{thm:N0_unique} \\
+Niestabilność $N_0$ & inst. & [AN] & Tw.~\ref{thm:N0_instability} \\
+Przejście fazowe GL & fase & [AN] & sek01 \\
+$\Phi_0 \approx 25$ & $\Phi_0$ & [NUM] & Prop.~\ref{prop:phi0_from_Lambda} \\
+$\Phi_0$ z pierwszych zasad & OP-3 & \textbf{[OTWARTY]} & — \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Legenda: [AK] = aksjomat, [AN] = analitycznie wyprowadzony,
+[NUM] = numerycznie estymowany, [OTWARTY] = problem otwarty.

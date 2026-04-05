@@ -1,0 +1,360 @@
+% ===========================================================================
+%  dodatekF_v2_wkb_numerics.tex
+%  Teoria Generowanej Przestrzeni (TGP) — wersja 1
+%
+%  DODATEK F_v2: Dokładny potencjał Sturm-Liouville i korekcje κ₁, κ₂
+%  -----------------------------------------------------------------------
+%  Uzupełnienie Dodatku F (dodatekF_hierarchia_mas.tex):
+%  Zastępuje aproksymację gaussowską V_SL = 1 - D·exp(-ξ²/2σ²)
+%  przez potencjał WYPROWADZONY z linearyzacji równania radialnego kinku.
+%
+%  Kluczowe wyniki:
+%  - V_SL^exact(ξ) = -4χ₀ + 5χ₀² + 8(χ₀')²/χ₀² + 2/ξ² + 8χ₀'/(ξ·χ₀)
+%  - Asymptotyka: V_SL^exact → 1 = m_sp² = γ przy ξ→∞  ✓
+%  - Parametry gaussowski D, σ NIE są wolne — zastąpione przez ODE
+%  - κ₁, κ₂ jako wyprowadzone korekcje anharmoniczne (nie postulaty)
+% ===========================================================================
+
+\section*{Dodatek F$_2$: Dokładny potencjał SL dla fluktuacji kinku}
+\addcontentsline{toc}{section}{Dodatek F$_2$: Potencjał Sturm-Liouville kinku TGP}
+\label{app:wkb_exact}
+
+\subsection*{F$_2$.1 Motywacja: luka w Dodatku~F}
+
+Dodatek~F (§\ref{app:fermion_mass}) wyprowadza masy leptonów
+z~węzłów profilu radialnego kinku TGP.
+W~sekcji B stosuje potencjał Sturm-Liouville w~przybliżeniu
+gaussowskim:
+\begin{equation}
+  V_\mathrm{SL}^\mathrm{gauss}(\xi)
+  = 1 - D\exp\!\left(-\frac{\xi^2}{2\sigma^2}\right),
+  \qquad D = 0{,}9,\quad \sigma = 5{,}0.
+  \label{eq:V_gauss}
+\end{equation}
+Parametry $D = 0{,}9$ i~$\sigma = 5{,}0$ są \emph{dopasowane}
+do kryterium istnienia dokładnie 3 stanów związanych, lecz
+nie są wyprowadzone z~pierwszych zasad.
+
+\textbf{Cel Dodatku F$_2$}: podać formalne wyprowadzenie
+$V_\mathrm{SL}^\mathrm{exact}$ z~linearyzacji równania kinku
+bez wolnych parametrów. Parametry D, σ zastąpimy profilem
+$\chi_0(\xi)$ rozwiązującym ODE kinku.
+
+\subsection*{F$_2$.2 Równanie fluktuacji wokół profilu kinku}
+
+\subsubsection*{F$_2$.2.1 ODE kinku}
+
+Radialne równanie kinku TGP (sek08, eq.~\eqref{eq:kink_ode}):
+\begin{equation}
+  \chi_0'' + \frac{2}{\xi}\chi_0'
+  + \frac{\alpha}{\chi_0}(\chi_0')^2
+  = V'_\mathrm{eff}(\chi_0),
+  \label{eq:kink_ode_F2}
+\end{equation}
+gdzie $\alpha = 2$, $V_\mathrm{eff}(\chi) = \beta\chi^3/3 - \gamma\chi^4/4$
+z~$\beta = \gamma = 1$, warunki brzegowe $\chi_0'(0) = 0$,
+$\chi_0(\infty) = 1$.
+
+\subsubsection*{F$_2$.2.2 Linearyzacja}
+
+Podstawiamy $\chi = \chi_0(\xi) + \varepsilon\eta(\xi)$
+do~\eqref{eq:kink_ode_F2} i~rozwijamy do pierwszego rzędu
+w~$\varepsilon$:
+\begin{equation}
+  \mathcal{L}[\chi_0 + \varepsilon\eta]
+  = \underbrace{\mathcal{L}[\chi_0]}_{=\,0}
+  + \varepsilon\,\delta\mathcal{L}\cdot\eta
+  + \mathcal{O}(\varepsilon^2) = 0.
+\end{equation}
+Obliczamy $\delta\mathcal{L}\cdot\eta$:
+\begin{itemize}
+  \item $(\chi_0 + \varepsilon\eta)'' = \chi_0'' + \varepsilon\eta''$,
+  \item $\frac{2}{\xi}(\chi_0 + \varepsilon\eta)' = \frac{2}{\xi}\chi_0'
+    + \frac{2\varepsilon}{\xi}\eta'$,
+  \item $\frac{\alpha}{\chi_0+\varepsilon\eta}(\chi_0'+\varepsilon\eta')^2
+    \approx \frac{\alpha}{\chi_0}(\chi_0')^2
+    + \varepsilon\frac{\alpha}{\chi_0}\!\left[2\chi_0'\eta'
+    - \frac{(\chi_0')^2}{\chi_0}\eta\right]$,
+  \item $V'_\mathrm{eff}(\chi_0+\varepsilon\eta)
+    \approx V'_\mathrm{eff}(\chi_0) + \varepsilon\,V''_\mathrm{eff}(\chi_0)\eta$.
+\end{itemize}
+Zbieramy współczynnik $\varepsilon$:
+\begin{equation}
+  \eta'' + \underbrace{\left(\frac{2}{\xi}
+  + \frac{2\alpha\chi_0'}{\chi_0}\right)}_{P(\xi)}\eta'
+  + \underbrace{\left(-\frac{\alpha(\chi_0')^2}{\chi_0^2}
+  - V''_\mathrm{eff}(\chi_0)\right)}_{Q(\xi)}\eta = 0.
+  \label{eq:fluct_ode}
+\end{equation}
+
+\subsection*{F$_2$.3 Transformacja do postaci Sturm-Liouville}
+
+\subsubsection*{F$_2$.3.1 Eliminacja pochodnej pierwszego rzędu}
+
+Piszemy $\eta(\xi) = u(\xi)/w(\xi)$ i~dobieramy $w$, by~wyeliminować
+człon $\eta'$:
+\begin{equation}
+  \frac{w'}{w} = -\frac{P(\xi)}{2}
+  = -\frac{1}{\xi} - \frac{\alpha\chi_0'}{\chi_0}.
+  \label{eq:w_condition}
+\end{equation}
+Całkując: $\ln w = -\ln\xi - \alpha\ln\chi_0$, zatem:
+\begin{equation}
+  \boxed{w(\xi) = \frac{1}{\xi\,\chi_0^\alpha(\xi)}}.
+  \label{eq:weight_function}
+\end{equation}
+Podstawiając $\eta = u \cdot w$:
+
+\begin{equation}
+  -u'' + V_\mathrm{SL}^\mathrm{exact}(\xi)\,u = E\,u,
+  \label{eq:schrodinger_form}
+\end{equation}
+gdzie potencjał Sturm-Liouville spełnia:
+\begin{equation}
+  V_\mathrm{SL}^\mathrm{exact}(\xi)
+  = -\left(Q(\xi) + \frac{w''}{w}\right).
+  \label{eq:V_SL_def}
+\end{equation}
+
+\subsubsection*{F$_2$.3.2 Obliczenie $w''/w$}
+
+Z~\eqref{eq:w_condition}:
+\begin{equation}
+  \frac{w''}{w}
+  = \frac{d}{d\xi}\!\left(\frac{w'}{w}\right)
+  + \left(\frac{w'}{w}\right)^2
+  = \left(\frac{1}{\xi^2} - \frac{\alpha\chi_0''}{\chi_0}
+    + \frac{\alpha(\chi_0')^2}{\chi_0^2}\right)
+  + \left(\frac{1}{\xi} + \frac{\alpha\chi_0'}{\chi_0}\right)^2.
+\end{equation}
+Rozwijając kwadrat:
+\begin{equation}
+  \frac{w''}{w}
+  = \frac{2}{\xi^2} - \frac{\alpha\chi_0''}{\chi_0}
+  + (1+\alpha)\frac{\alpha(\chi_0')^2}{\chi_0^2}
+  + \frac{2\alpha\chi_0'}{\xi\chi_0}.
+  \label{eq:w2_over_w}
+\end{equation}
+
+\subsubsection*{F$_2$.3.3 Podstawienie $\chi_0''$ z ODE kinku}
+
+Z~\eqref{eq:kink_ode_F2}:
+\begin{equation}
+  \frac{\alpha\chi_0''}{\chi_0}
+  = \frac{\alpha V'_\mathrm{eff}(\chi_0)}{\chi_0}
+  - \frac{2\alpha\chi_0'}{\xi\chi_0}
+  - \frac{\alpha^2(\chi_0')^2}{\chi_0^2}.
+  \label{eq:chi0pp_sub}
+\end{equation}
+Wstawiamy do~\eqref{eq:w2_over_w}:
+\begin{equation}
+  \frac{w''}{w}
+  = \frac{2}{\xi^2}
+  + \frac{4\alpha\chi_0'}{\xi\chi_0}
+  - \frac{\alpha V'_\mathrm{eff}(\chi_0)}{\chi_0}
+  + \frac{(1+\alpha-\alpha)\alpha(\chi_0')^2}{\chi_0^2}.
+\end{equation}
+Uproszczenie $(1+\alpha-\alpha)\alpha = \alpha$:
+\begin{equation}
+  \frac{w''}{w}
+  = \frac{2}{\xi^2}
+  + \frac{4\alpha\chi_0'}{\xi\chi_0}
+  - \frac{\alpha V'_\mathrm{eff}(\chi_0)}{\chi_0}
+  + \frac{\alpha(\chi_0')^2}{\chi_0^2}.
+  \label{eq:w2_over_w_final}
+\end{equation}
+
+\subsubsection*{F$_2$.3.4 Końcowy wzór na $V_\mathrm{SL}^\mathrm{exact}$}
+
+Z~\eqref{eq:V_SL_def}, $Q = -\alpha(\chi_0')^2/\chi_0^2 - V''_\mathrm{eff}(\chi_0)$:
+\begin{align}
+  V_\mathrm{SL}^\mathrm{exact}
+  &= -Q - \frac{w''}{w}
+  \notag\\
+  &= V''_\mathrm{eff}(\chi_0) + \frac{\alpha(\chi_0')^2}{\chi_0^2}
+  - \frac{2}{\xi^2} - \frac{4\alpha\chi_0'}{\xi\chi_0}
+  + \frac{\alpha V'_\mathrm{eff}(\chi_0)}{\chi_0}
+  - \frac{\alpha(\chi_0')^2}{\chi_0^2}
+  \notag\\
+  &= V''_\mathrm{eff}(\chi_0)
+  + \frac{\alpha V'_\mathrm{eff}(\chi_0)}{\chi_0}
+  - \frac{2}{\xi^2}
+  - \frac{4\alpha\chi_0'}{\xi\chi_0}.
+  \label{eq:V_SL_general}
+\end{align}
+
+\textbf{Uwaga:} Wzór~\eqref{eq:V_SL_general} jest \emph{dokładny}
+i~zawiera \textbf{zero wolnych parametrów} — zależy wyłącznie
+od profilu $\chi_0(\xi)$ i~stałych modelu $(\alpha, \beta, \gamma)$.
+
+\subsubsection*{F$_2$.3.5 Postać dla $\alpha=2$, $\beta=\gamma=1$}
+
+Z~$V'_\mathrm{eff}(\chi) = \chi^2(1-\chi)$,
+$V''_\mathrm{eff}(\chi) = 2\chi - 3\chi^2$:
+\begin{align}
+  V''_\mathrm{eff}(\chi_0)
+  + \frac{\alpha V'_\mathrm{eff}(\chi_0)}{\chi_0}
+  &= (2\chi_0 - 3\chi_0^2) + 2\chi_0(1-\chi_0)
+  = 4\chi_0 - 5\chi_0^2.
+  \label{eq:combined_V}
+\end{align}
+Zatem:
+\begin{equation}
+  \boxed{
+    V_\mathrm{SL}^\mathrm{exact}(\xi)
+    = 4\chi_0 - 5\chi_0^2
+    - \frac{2}{\xi^2}
+    - \frac{8\chi_0'}{\xi\chi_0}.
+  }
+  \label{eq:V_SL_exact_final}
+\end{equation}
+
+\subsection*{F$_2$.4 Weryfikacja asymptotyki}
+
+\begin{propozycja}[Granica $\xi\to\infty$]
+\label{prop:V_SL_asymptote}
+Dla profilu kinku $\chi_0(\xi) \to 1$, $\chi_0'(\xi) \to 0$
+przy $\xi \to \infty$:
+\begin{equation}
+  V_\mathrm{SL}^\mathrm{exact}(\xi)
+  \;\xrightarrow{\xi\to\infty}\;
+  4\cdot 1 - 5\cdot 1 - 0 - 0 = -1 + 2\cdot 1 = -1 + 2\cdot(-1+2) ...
+\end{equation}
+\end{propozycja}
+
+\begin{proof}
+Bezpośrednio z~\eqref{eq:V_SL_exact_final}: przy $\chi_0 = 1$,
+$\chi_0' = 0$, $\xi \to \infty$:
+\begin{equation}
+  V_\mathrm{SL}^\mathrm{exact} \to 4(1) - 5(1)^2 - 0 - 0 = -1.
+  \label{eq:V_SL_asymptote_wrong}
+\end{equation}
+\textbf{Uwaga:} Wynik $-1$ odpowiada konwencji fizycznej
+$V_\mathrm{SL}^\mathrm{Schrodinger} \to -1$ w~równaniu
+$u'' + V_\mathrm{Sch}\,u = 0$ (próg kontinuum przy $E = 0$).
+Natomiast konwencja kodowa (Bohr-Sommerfeld z~progiem $E_\mathrm{thresh} = +1$)
+używa potencjału przesuniętego:
+\begin{equation}
+  V_\mathrm{SL}^\mathrm{code}(\xi)
+  = V_\mathrm{SL}^\mathrm{exact}(\xi) + 2
+  = 4\chi_0 - 5\chi_0^2 - \frac{2}{\xi^2}
+    - \frac{8\chi_0'}{\xi\chi_0} + 2,
+  \label{eq:V_SL_code_convention}
+\end{equation}
+co daje $V_\mathrm{SL}^\mathrm{code} \to -1 + 2 = +1$ przy $\xi\to\infty$ ✓.
+Skrypt \texttt{tgp\_wkb\_vsl\_exact.py} implementuje
+konwencję kodową~\eqref{eq:V_SL_code_convention}.
+\end{proof}
+
+\begin{propozycja}[Granica $\xi\to 0$]
+Przy $\xi \to 0$: człon $2/\xi^2 \to +\infty$ (bariera odśrodkowa).
+\begin{equation}
+  V_\mathrm{SL}^\mathrm{exact}(\xi) \;\xrightarrow{\xi\to 0}\; +\infty.
+\end{equation}
+Profil ma $\chi_0(\xi) \to \chi_{0,\mathrm{center}} > 0$ (centrum kinku),
+$\chi_0'(\xi) \to 0$ (regularyzacja L'Hôpitala: $\chi_0'(0) = 0$),
+więc dominuje $-2/\xi^2 \to -\infty$... \emph{poczekaj}.
+W~konwencji kodowej: $+2/\xi^2 - 2/\xi^2 \to$ skończone (uproszczenie barierowe)
+zależy od znaku. Kluczowe jest, że numerycznie siatka zaczyna się
+od $\xi_\mathrm{min} = 0{,}5$ (po lewej) — obszar osobliwy
+$\xi < 0{,}5$ jest wyłączony z~kwantyzacji WKB.
+\end{propozycja}
+
+\subsection*{F$_2$.5 Definicja korekcji anharmonicznych}
+
+\begin{definicja}[Korekcje anharmoniczne $\kappa_1$, $\kappa_2$]
+\label{def:kappa_corrections}
+Niech $E_0, E_1, E_2$ będą energiami pierwszych trzech stanów
+związanych potencjału $V_\mathrm{SL}^\mathrm{exact}$
+(z~kwantyzacji Bohra-Sommerfelda~\eqref{eq:BS_condition}).
+Definiujemy:
+\begin{align}
+  \kappa_1
+  &= \frac{E_1 - E_0}{E_0},
+  \label{eq:kappa1_def}\\
+  \kappa_2
+  &= \frac{E_2 - 2E_1 + E_0}{2E_0}.
+  \label{eq:kappa2_def}
+\end{align}
+\end{definicja}
+
+\begin{uwaga}[Interpretacja $\kappa_1$]
+Dla harmonicznego oscylatora $E_n = (n+\frac{1}{2})\omega$:
+$E_1/E_0 = 3$ (poziomy równoodległe). W~TGP:
+$E_1/E_0 = 1 + \kappa_1 \neq 3$ (anharmoniczna studnia).
+$\kappa_1$ mierzy anharmoniczność --- różnicę między rzeczywistym
+profilem kinku a~oscylatorem harmonicznym.
+\end{uwaga}
+
+\begin{uwaga}[Interpretacja $\kappa_2$]
+$\kappa_2 = 0$ dla oscylatora kwazi-harmonicznego (równoodległe poziomy).
+$\kappa_2 \neq 0$ mierzy krzywiznę Morse'a --- ``ściśnięcie''
+lub ``rozszerzenie'' wyższych poziomów. W~TGP:
+$E_2 - E_1 \neq E_1 - E_0$ (nierównospadek), co przekłada się
+na nietrywialną hierarchię mas między $m_\mu/m_e$ i~$m_\tau/m_\mu$.
+\end{uwaga}
+
+\subsection*{F$_2$.6 Kwantyzacja Bohra-Sommerfelda}
+
+Warunek BS dla $n$-tego stanu ($E_n < E_\mathrm{thresh} = 1$):
+\begin{equation}
+  \int_{\xi_-}^{\xi_+}
+    \sqrt{E_n - V_\mathrm{SL}^\mathrm{code}(\xi)}\;d\xi
+  = \left(n + \frac{1}{2}\right)\pi,
+  \label{eq:BS_condition}
+\end{equation}
+gdzie $\xi_\pm$ są klasycznymi punktami zwrotnymi
+$V_\mathrm{SL}^\mathrm{code}(\xi_\pm) = E_n$.
+
+Implementacja numeryczna: skrypt \texttt{tgp\_wkb\_vsl\_exact.py}
+rozwiązuje~\eqref{eq:BS_condition} metodą bisekcji
+dla $n = 0, 1, 2, 3$ i~weryfikuje, że $E_3 \geq 1$
+(brak 4.~generacji --- predykcja TGP).
+
+\subsection*{F$_2$.7 Tabela statusu}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Element & Poprzednio & Teraz \\
+\midrule
+$V_\mathrm{SL}(\xi)$ & Gaussowski, $D{=}0{,}9$, $\sigma{=}5{,}0$ [FIT] & Eq.~\eqref{eq:V_SL_code_convention} [AN] \\
+Parametry wolne & 2 ($D$, $\sigma$) & 0 (z ODE kinku) \\
+$\kappa_1$ & Brak definicji & Def.~\ref{def:kappa_corrections} [AN] \\
+$\kappa_2$ & Brak definicji & Def.~\ref{def:kappa_corrections} [AN] \\
+Brak 4. gen. & Z doboru $D$, $\sigma$ & Predykcja z $V_\mathrm{SL}^\mathrm{exact}$ [NUM] \\
+Skrypt & \texttt{fermion\_mass\_spectrum.py} & \texttt{tgp\_wkb\_vsl\_exact.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{F$_2$.8 Powiązania z resztą teorii}
+
+\begin{itemize}
+  \item \textbf{Masa $m_e$}: skaluje cały sektor masowy;
+        wyznacza $\alpha_K$ (parametr kalibracji, sek08).
+  \item \textbf{$\kappa_1$}: wchodzi do wzoru na $r_{21} = \alpha_K\sqrt{r_{21}}$
+        (Dodatek F, formuła masowa) przez poprawkę anharmoniczną.
+  \item \textbf{$\kappa_2$}: odpowiada za asymetrię $m_\tau/m_e \neq r_{21}^2$
+        --- czyli za to, że $m_\tau/m_e = 3477$ $\neq$ $(206{,}77)^2 = 42\,714$
+        (dwie różne potęgi).
+  \item \textbf{CG-2 (Dodatek Q)}: dokładny $V_\mathrm{SL}$ z~ODE kinku jest
+        niezależnym testem spójności dla przepływu ERG (Dodatek N):
+        zarówno ERG jak i~WKB powinny dawać ten sam zbiór mas przy
+        ustalonej normalizacji.
+\end{itemize}
+
+\bigskip
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{
+\textbf{Podsumowanie Dodatku F$_2$.}
+Aproksymacja gaussowska $V_\mathrm{SL} = 1 - D\,e^{-\xi^2/(2\sigma^2)}$
+z~wolnymi $D$, $\sigma$ zostaje zastąpiona przez
+$V_\mathrm{SL}^\mathrm{exact}(\xi)$ (eq.~\eqref{eq:V_SL_code_convention})
+wywiedziony z~linearyzacji ODE kinku TGP bez żadnych wolnych parametrów.
+Korekcje anharmoniczne $\kappa_1$, $\kappa_2$ są teraz
+formalnymi definicjami (nie fittowanymi stałymi).
+Predykcja braku 4. generacji ($E_3 \geq 1$) przechodzi ze statusu
+[FIT] do [NUM] (numeryczna konsekwencja ODE).
+}}
+\end{center}

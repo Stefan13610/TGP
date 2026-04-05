@@ -1,0 +1,942 @@
+% ===================================================================
+%  Dodatek T2: Zamknięta forma punktu stałego Koidego
+%              i faktoryzacja Z₃
+%  TGP v1 — Sesja v41 (2026-04-02/03)
+%  Wyniki numeryczne: ex117 (12/12 PASS), ex118 (12/12 PASS),
+%                     ex129 (14/14 PASS), ex131 (15/15 PASS),
+%                     ex133 (15/17 PASS), ex134 (19/19 PASS),
+%                     ex135 (13/16 PASS), ex136 (8/16 PASS),
+%                     ex137 (6/16 PASS)
+% ===================================================================
+\section{Zamkni\k{e}ta forma punktu sta\l{}ego Koidego i~symetria
+  $\mathbb{Z}_3$}%
+\label{app:T2-fp-algebra}
+
+Niniejszy dodatek rozwija algebr\k{e} r\'ownania punktu sta\l{}ego
+wyprowadzonego w~dodatku~T (sekcja~\ref{app:T-koide}).
+G\l{}\'ownym wynikiem jest \textbf{dok\l{}adna zamkni\k{e}ta forma}
+asymptotycznego kroku wie\.zy leptonowej TGP:
+\begin{equation}\label{eq:T2-rstar-exact}
+  \boxed{r^* \;=\; \frac{23 + 5\sqrt{21}}{2} \;\approx\; 22{,}9564392374,}
+\end{equation}
+oraz zwi\k{a}zana z~ni\k{a} \textbf{faktoryzacja}
+wielomianu~$P(u) = u^4-4u^3-3u^2-4u+1$ na \emph{sektor fizyczny}
+i~\emph{sektor $\mathbb{Z}_3$}:
+\begin{equation}\label{eq:T2-factor}
+  \boxed{P(u) \;=\; \underbrace{(u^2-5u+1)}_{\text{sektor fiz.}}
+                \cdot \underbrace{(u^2+u+1)}_{\text{sektor }\mathbb{Z}_3}.}
+\end{equation}
+
+
+% -------------------------------------------------------------------
+\subsection{R\'ownanie punktu sta\l{}ego Koidego}\label{app:T2-fpeq}
+% -------------------------------------------------------------------
+
+Przypomnijmy wynik ex117.
+Asymptotyczny krok wie\.zy leptonowej
+$s = m_{k+1}/m_k$ stabilizuje si\k{e} do sta\l{}ej $r^*$
+wtedy i~tylko wtedy, gdy spe\l{}niony jest \emph{warunek punktu sta\l{}ego}:
+\begin{equation}\label{eq:T2-fp-condition}
+  Q_K(1,\; s,\; s^2) \;=\; \frac{3}{2},
+\end{equation}
+gdzie $Q_K(a,b,c) \equiv (\sqrt{a}+\sqrt{b}+\sqrt{c})^2/(a+b+c)$
+jest wsp\'o\l{}czynnikiem Koide'go (def.~\ref{def:T-QK}).
+
+Podstawiaj\k{a}c $r_{21}=s$, $r_{31}=s^2$ do definicji~\eqref{eq:T-QK-norm}
+i~oznaczaj\k{a}c $u = \sqrt{s}$ (tak \.ze $\sqrt{r_{21}}=u$,
+$\sqrt{r_{31}}=u^2$):
+\begin{equation}\label{eq:T2-qk-expand}
+  Q_K(1, u^2, u^4)
+    \;=\; \frac{(1 + u + u^2)^2}{1 + u^2 + u^4}
+    \;=\; \frac{3}{2}.
+\end{equation}
+
+\begin{proposition}[Wielomian punktu sta\l{}ego]\label{prop:T2-poly}
+Warunek~\eqref{eq:T2-fp-condition} jest r\'ownowa\.zny r\'ownaniu
+algebraicznemu stopnia czwartego:
+\begin{equation}\label{eq:T2-poly}
+  P(u) \;\equiv\; u^4 - 4u^3 - 3u^2 - 4u + 1 \;=\; 0,
+  \qquad u = \sqrt{r^*} > 0.
+\end{equation}
+
+\textbf{Dow\'od}.
+Ze wzoru~\eqref{eq:T2-qk-expand} mno\.zymy obie strony przez
+$2(1+u^2+u^4)$:
+\begin{equation}
+  2(1+u+u^2)^2 \;=\; 3(1+u^2+u^4).
+\end{equation}
+Rozwijaj\k{a}c lewą stron\k{e}:
+\begin{equation}
+  2\bigl(1 + 2u + 3u^2 + 2u^3 + u^4\bigr)
+  \;=\; 3 + 3u^2 + 3u^4.
+\end{equation}
+Po uproszczeniu:
+\begin{equation}
+  2 + 4u + 6u^2 + 4u^3 + 2u^4
+  - 3 - 3u^2 - 3u^4 \;=\; 0,
+\end{equation}
+czyli:
+\begin{equation}
+  -u^4 + 4u^3 + 3u^2 + 4u - 1 \;=\; 0.
+\end{equation}
+Mno\.z\k{a}c przez $-1$ otrzymujemy r\'ownanie~\eqref{eq:T2-poly}.
+\hfill$\square$
+\end{proposition}
+
+\begin{remark}[Weryfikacja numeryczna]\label{rem:T2-verify}
+R\'ownanie~\eqref{eq:T2-poly} zosta\l{}o zweryfikowane w~\texttt{ex117}
+(testy F2 i~F3, 12/12~PASS) oraz \texttt{ex118} (testy G1--G3).
+Dla $u^* = \sqrt{r^*} \approx 4{,}79129$:
+\[
+  |P(u^*)| \;=\; 3{,}55 \times 10^{-14}
+  \qquad (\text{precyzja maszynowa}).
+\]
+\end{remark}
+
+
+% -------------------------------------------------------------------
+\subsection{Palindromiczno\'s\'c i~redukcja}\label{app:T2-palindrome}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Wielomian $P$ jest palindromiczny]\label{prop:T2-palindrome}
+Wsp\'o\l{}czynniki $P(u) = u^4 - 4u^3 - 3u^2 - 4u + 1$ spe\l{}niaj\k{a}
+warunek palindromiczno\'sci:
+\begin{equation}
+  [a_4, a_3, a_2, a_1, a_0] \;=\; [1,\,-4,\,-3,\,-4,\,1],
+  \qquad a_k = a_{4-k},
+\end{equation}
+tzn.\ $P(u) = u^4 P(1/u)$.
+
+\textbf{Dow\'od}.
+\[
+  u^4 P\!\left(\tfrac{1}{u}\right)
+    = u^4\!\left(\tfrac{1}{u^4} - \tfrac{4}{u^3} - \tfrac{3}{u^2}
+      - \tfrac{4}{u} + 1\right)
+    = 1 - 4u - 3u^2 - 4u^3 + u^4
+    = P(u). \;\hfill\square
+\]
+\textbf{Konsekwencja}: je\'sli $u_0$ jest pierwiastkiem $P$, to tak\.ze
+$1/u_0$ jest pierwiastkiem $P$.
+W~szczeg\'olno\'sci pierwiastki $P$ tworz\k{a} pary
+$\{u_0,\, 1/u_0\}$.
+\end{proposition}
+
+\begin{theorem}[Palindromiczna redukcja]\label{thm:T2-reduction}
+Podstawienie $v = u + 1/u$ redukuje r\'ownanie stopnia 4 do stopnia 2:
+\begin{equation}\label{eq:T2-vred}
+  P(u) \;=\; 0 \quad\Longleftrightarrow\quad
+  v^2 - 4v - 5 \;=\; 0
+  \quad (v = u + 1/u,\; u \neq 0),
+\end{equation}
+a~wielomian $v^2-4v-5$ faktoryzuje si\k{e} nad $\mathbb{Z}$:
+\begin{equation}\label{eq:T2-vfactor}
+  v^2 - 4v - 5 \;=\; (v-5)(v+1).
+\end{equation}
+
+\textbf{Dow\'od}.
+Dzielimy $P(u)$ przez $u^2 \neq 0$:
+\[
+  u^2 - 4u - 3 - \frac{4}{u} + \frac{1}{u^2} \;=\; 0.
+\]
+Grupuj\k{a}c symetrycznie:
+\[
+  \left(u^2 + \frac{1}{u^2}\right) - 4\!\left(u + \frac{1}{u}\right) - 3
+  \;=\; 0.
+\]
+Korzystamy z~to\.zsamo\'sci $u^2+1/u^2 = (u+1/u)^2 - 2 = v^2-2$:
+\[
+  (v^2 - 2) - 4v - 3 \;=\; 0,
+  \qquad\text{czyli}\quad
+  v^2 - 4v - 5 \;=\; 0.
+\]
+Faktoryzacja nad $\mathbb{Z}$: wsp\'o\l{}czynniki sumuj\k{a} si\k{e}
+$5 \cdot (-1) = -5 = a_0$, $5 + (-1) = 4 = -a_1$, st\k{a}d
+$(v-5)(v+1) = 0$.
+\hfill$\square$
+\end{theorem}
+
+\begin{remark}[Podzia\l{} na sektory]\label{rem:T2-sectors}
+R\'ownanie $(v-5)(v+1)=0$ wydziela dwa \emph{sektory}:
+\begin{itemize}
+  \item \textbf{Sektor fizyczny} ($v=5$):
+        $u + 1/u = 5 \;\Rightarrow\; u^2 - 5u + 1 = 0$,
+        dwa pierwiastki rzeczywiste $(5\pm\sqrt{21})/2$.
+  \item \textbf{Sektor $\mathbb{Z}_3$} ($v=-1$):
+        $u + 1/u = -1 \;\Rightarrow\; u^2 + u + 1 = 0$,
+        dwa pierwiastki zespolone $e^{\pm 2\pi i/3}$.
+\end{itemize}
+\end{remark}
+
+
+% -------------------------------------------------------------------
+\subsection{Faktoryzacja wielomianu}\label{app:T2-factorization}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Faktoryzacja wielomianu FP]\label{thm:T2-factor}
+Wielomian punktu sta\l{}ego~\eqref{eq:T2-poly} rozk\l{}ada si\k{e}
+nad $\mathbb{Z}$ na dwa nieredukowalne czynniki kwadratowe:
+\begin{equation}\label{eq:T2-factor-main}
+  u^4 - 4u^3 - 3u^2 - 4u + 1
+  \;=\;
+  \underbrace{(u^2 - 5u + 1)}_{\substack{\text{sektor fizyczny}\\\text{pierwiastki rzecz.}}}
+  \;\cdot\;
+  \underbrace{(u^2 + u + 1)}_{\substack{\text{sektor }\mathbb{Z}_3\\\text{pierwiastki zesp.}}}.
+\end{equation}
+
+\textbf{Dow\'od}.
+Mno\.zymy wprost:
+\[
+  (u^2-5u+1)(u^2+u+1)
+  = u^4 + u^3 + u^2 - 5u^3 - 5u^2 - 5u + u^2 + u + 1
+  = u^4 - 4u^3 - 3u^2 - 4u + 1.
+\]
+Niezmienno\'s\'c nad $\mathbb{Q}$: czynnik $u^2-5u+1$ ma dyskryminant
+$\Delta_1 = 25-4 = 21$ (niekwadratowy w~$\mathbb{Q}$), wi\k{e}c jest
+nieredukowalny nad $\mathbb{Q}$.  Czynnik $u^2+u+1 = \Phi_3(u)$
+jest 3-cyklotomicznym i~r\'ownie\.z nieredukowalny nad $\mathbb{Q}$.
+Obydwa czynniki s\k{a} wzajemnie pierwsze ($\gcd = 1$ w~$\mathbb{Q}[u]$).
+\hfill$\square$
+\end{theorem}
+
+\begin{remark}[To\.zsamo\'s\'c z~sektorami palindromicznej redukcji]
+Z~twierdzenia~\ref{thm:T2-reduction}: r\'ownanie $v=5$ daje
+$u^2-5u+1=0$, a~$v=-1$ daje $u^2+u+1=0$ ---
+dok\l{}adnie dwa czynniki faktoryzacji~\eqref{eq:T2-factor-main}.
+Faktoryzacja jest zatem \emph{bezpo\'sredni\k{a} konsekwencj\k{a}}
+palindromicznej struktury wielomianu.
+\end{remark}
+
+
+% -------------------------------------------------------------------
+\subsection{Zamkni\k{e}ta forma $r^*$}\label{app:T2-closed-form}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Zamkni\k{e}ta forma punktu sta\l{}ego]\label{thm:T2-rstar}
+Fizyczny punkt sta\l{}y r\'ownania~\eqref{eq:T2-fp-condition}
+jest dany wzorem zamkni\k{e}tym:
+\begin{equation}\label{eq:T2-rstar}
+  r^* \;=\; \frac{23 + 5\sqrt{21}}{2},
+\end{equation}
+a~odpowiadaj\k{a}cy mu parametr $u^* = \sqrt{r^*}$ spe\l{}nia:
+\begin{equation}\label{eq:T2-ustar}
+  u^* \;=\; \frac{5 + \sqrt{21}}{2},
+  \qquad
+  u^* + \frac{1}{u^*} \;=\; 5,
+  \qquad
+  u^* \cdot \frac{1}{u^*} \;=\; 1.
+\end{equation}
+
+\textbf{Dow\'od}.
+Z~sektora fizycznego twierdzenia~\ref{thm:T2-factor} pierwiastki
+$u^2-5u+1=0$ to:
+\[
+  u \;=\; \frac{5 \pm \sqrt{21}}{2}.
+\]
+Dyskryminant $\Delta_1 = 5^2 - 4 \cdot 1 \cdot 1 = 21$.
+Poniewa\.z $r^* = u^{*2}$ musi by\'c dodatnie i~$u^* > 1$ (asymptotyczny
+krok wie\.zy jest wi\k{e}kszy od 1), wybieramy ga\l{}\k{a}\'z $+$:
+\[
+  u^* = \tfrac{5+\sqrt{21}}{2} \approx 4{,}7913 > 1,
+  \qquad
+  \frac{1}{u^*} = \tfrac{5-\sqrt{21}}{2} \approx 0{,}2087 < 1.
+\]
+Nast\k{e}pnie:
+\[
+  r^* = \left(\frac{5+\sqrt{21}}{2}\right)^{\!2}
+      = \frac{25 + 10\sqrt{21} + 21}{4}
+      = \frac{46 + 10\sqrt{21}}{4}
+      = \frac{23 + 5\sqrt{21}}{2}.
+\]
+W\l{}asno\'sci~\eqref{eq:T2-ustar} wynikaj\k{a} z~formul
+Viète'a dla $u^2-5u+1=0$:
+suma pierwiastk\'ow $= 5$, iloczyn $= 1$.
+\hfill$\square$
+\end{theorem}
+
+\begin{corollary}[Dok\l{}adno\'s\'c zamkni\k{e}tej formy]\label{cor:T2-precision}
+Wzgl\k{e}dna ró\.znica mi\k{e}dzy warto\'sci\k{a}~\eqref{eq:T2-rstar}
+a~wynikiem numerycznym brentq (tolerancja $10^{-14}$):
+\begin{equation}
+  \left|\,r^*_{\rm exact} \;-\; r^*_{\rm brentq}\,\right|
+  \;<\; 4 \times 10^{-15}
+  \qquad\text{(precyzja maszynowa IEEE-754)}.
+\end{equation}
+\textbf{Status}: \statuslabel{Twierdzenie}
+(analityczne + weryfikacja \texttt{ex118}, test~G3).
+\end{corollary}
+
+\begin{remark}[Skąd pochodzi liczba 21?]\label{rem:T2-21}
+Dyskryminant $\Delta_1 = 21 = 3 \times 7$.
+Czynnik $3$ odzwierciedla liczb\k{e} generacji leptonowych
+i~rz\k{a}d grupy $\mathbb{Z}_3$ (por.\ sekcja~\ref{app:T2-Z3}).
+Czynnik $7$ nie ma (na razie) bezpo\'sredniej interpretacji w~TGP.
+W~szczeg\'olno\'sci $\sqrt{21}$ \textbf{nie jest} prost\k{a} form\k{a}
+ani $\varphi^n$, ani $\pi$, ani $e^n$ ---
+najmniejsze odchylenie to $3\varphi \approx 4{,}854$ ($\delta = 5{,}9\%$
+od $\sqrt{21} \approx 4{,}583$), por.\ \texttt{ex118}, etap~[5].
+\end{remark}
+
+
+% -------------------------------------------------------------------
+\subsection{Sektor $\mathbb{Z}_3$ i~symetria Koidego}\label{app:T2-Z3}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Czynnik cyklotomiczny $\Phi_3$]\label{prop:T2-cyclo}
+Drugi czynnik faktoryzacji~\eqref{eq:T2-factor-main} to:
+\begin{equation}
+  u^2 + u + 1 \;=\; \Phi_3(u) \;=\; \frac{u^3 - 1}{u - 1},
+\end{equation}
+gdzie $\Phi_3$ jest \emph{3-cyklotomicznym wielomianem}.
+Jego pierwiastki to prymitywne pierwiastki sze\'scienne jedno\'sci:
+\begin{equation}\label{eq:T2-omega}
+  \omega \;=\; e^{2\pi i/3} \;=\; -\tfrac{1}{2} + \tfrac{\sqrt{3}}{2}\,i,
+  \qquad
+  \bar\omega \;=\; e^{-2\pi i/3} \;=\; -\tfrac{1}{2} - \tfrac{\sqrt{3}}{2}\,i,
+\end{equation}
+spe\l{}niaj\k{a}ce $|\omega| = |\bar\omega| = 1$
+oraz $\omega^3 = \bar\omega^3 = 1$, $\omega \neq 1$.
+
+\textbf{Dow\'od}.
+Bezpo\'srednie sprawdzenie: $\omega^2+\omega+1 = e^{4\pi i/3}+e^{2\pi i/3}+1 = 0$
+(suma geometryczna $\sum_{k=0}^{2} e^{2\pi ik/3} = 0$).
+$\Phi_3(u) = (u^3-1)/(u-1)$ wynika z~to\.zsamo\'sci
+$u^3-1 = (u-1)(u^2+u+1)$.
+\hfill$\square$
+\end{proposition}
+
+\begin{remark}[$\mathbb{Z}_3$-symetria formu\l{}y Koidego]\label{rem:T2-Z3-koide}
+Formu\l{}a Koide'go~\eqref{eq:T-QK} jest jawnie inwariantna
+wzgl\k{e}dem permutacji $(\sqrt{m_1}, \sqrt{m_2}, \sqrt{m_3})$,
+co generuje grup\k{e} $S_3 \supset \mathbb{Z}_3$.
+Podgrupa cykliczna $\mathbb{Z}_3 = \{1, \omega, \omega^2\}$
+dzia\l{}a na $(\sqrt{m_k}) \mapsto (\omega^k \sqrt{m_k})$
+i~pozostawia $Q_K$ niezmiennym.
+
+Twierdzenie~\ref{thm:T2-factor} pokazuje, \.ze ta symetria jest
+\textbf{algebraicznie wbudowana} w~r\'ownanie punktu sta\l{}ego
+wie\.zy leptonowej TGP: prymitywne pierwiastki $\mathbb{Z}_3$
+wyst\k{e}puj\k{a} w~$P(u)$ dok\l{}adnie jako czynnik $\Phi_3(u) = u^2+u+1$.
+Jest to strukturalnie niezale\.zne od sektora fizycznego $(u^2-5u+1)$,
+kt\'ory wyznacza $r^*$.
+\end{remark}
+
+\begin{remark}[Sektor $v=-1$ a~skok $r^*$]\label{rem:T2-v-minus1}
+Z~palindromicznej redukcji (tw.~\ref{thm:T2-reduction}):
+$v = \omega + 1/\omega = e^{2\pi i/3} + e^{-2\pi i/3}
+= 2\cos(2\pi/3) = -1$ --- dok\l{}adnie ga\l{}\k{a}\'z $v=-1$.
+Natomiast sektor fizyczny $v = u^*+1/u^* = 5$ ma swoj\k{a} w\l{}asn\k{a}
+liczb\k{e} $5 \in \mathbb{Z}$, ca\l{}kowit\k{a}.
+Warto\'sc ta wyznacza
+$r^*$ poprzez \eqref{eq:T2-rstar}: $5$ jest \emph{\'sladem}
+macierzy Möbiusa $\bigl(\begin{smallmatrix}5&-1\\1&0\end{smallmatrix}\bigr)$
+odpowiadaj\k{a}cej przekszta\l{}ceniu $u \mapsto u+1/u = 5$.
+\end{remark}
+
+
+% -------------------------------------------------------------------
+\subsection{Wie\.za leptonowa TGP}\label{app:T2-tower}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Asymptotyczna wie\.za leptonowa]\label{prop:T2-tower}
+Na mocy twierdzenia~\ref{thm:T2-rstar} wie\.za mas leptonowych TGP
+jest asymptotycznie geometryczn\k{a} z~ilorazem $r^*$:
+\begin{equation}\label{eq:T2-tower}
+  m_k \;\xrightarrow{k\to\infty}\;
+  m_\tau \cdot \left(\frac{23+5\sqrt{21}}{2}\right)^{\!\!(k-3)},
+  \qquad k = 3, 4, 5, \ldots
+\end{equation}
+Zbieganie jest eksponencjalnie szybkie:
+dla $k \geq 7$ krok $r_{k+1,k} = m_{k+1}/m_k$ odbiega
+od $r^*$ o~mniej ni\.z $0{,}1\%$ (weryfikacja \texttt{ex117}, test~F7).
+
+Pierwsze generacje powyżej znanych granic eksperymentalnych:
+\begin{center}\small
+\begin{tabular}{@{}ccrll@{}}
+\toprule
+$k$ & Lepton & $m_k$ [GeV] & Status & Krok $r_{k,k-1}$ \\
+\midrule
+1 & $e$     & 0{,}000511  & PDG  & --- \\
+2 & $\mu$   & 0{,}1057    & PDG  & $r_{21}=206{,}77$ \\
+3 & $\tau$  & 1{,}777     & PDG  & $r_{32}=16{,}82$ \\
+4 & $L_4$   & 43{,}7      & WYKL.\ LEP ($>100{,}8$ GeV) & 24{,}59 \\
+5 & $L_5$   & \textbf{989} & HL-LHC ($\sim 1\,{\rm TeV}$) & 22{,}63 \\
+6 & $L_6$   & $2{,}3 \times 10^4$ & FCC-hh range & $r^*$ \\
+$k\geq7$ & $L_k$ & $m_\tau\cdot(r^*)^{k-3}$ & poza LHC & $r^*$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Masa $L_4 = 43{,}7\,\mathrm{GeV}$ jest \textbf{wykluczona} przez LEP
+($m > 100{,}8\,\mathrm{GeV}$), co \textbf{potwierdza} dok\l{}adnie
+trzy znane generacje leptonowe.
+Masa $L_5 = 989\,\mathrm{GeV}$ jest \textbf{pierwsz\k{a} testowalna}
+predykcj\k{a} TGP w~zasięgu HL-LHC.
+\end{proposition}
+
+
+% -------------------------------------------------------------------
+\subsection{Diagram struktury algebraicznej}\label{app:T2-diagram}
+% -------------------------------------------------------------------
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[
+  node distance=1.5cm,
+  every node/.style={font=\small},
+  box/.style={draw, rounded corners, fill=gray!10, minimum height=0.8cm,
+              text centered, inner sep=4pt},
+  boxblue/.style={draw=blue!60, rounded corners, fill=blue!8, minimum height=0.8cm,
+              text centered, inner sep=4pt},
+  boxred/.style={draw=red!50, rounded corners, fill=red!8, minimum height=0.8cm,
+              text centered, inner sep=4pt},
+  arrow/.style={->, >=Stealth, thick},
+]
+
+\node[box, text width=6.5cm] (fp)
+  {$Q_K(1,s,s^2)=\frac{3}{2}$ \hfill\emph{warunek FP}};
+
+\node[box, text width=6.5cm, below=0.7cm of fp] (poly)
+  {$P(u) = u^4-4u^3-3u^2-4u+1=0$ \hfill ($u=\sqrt{s}$)};
+
+\node[box, text width=6.5cm, below=0.7cm of poly] (palindrome)
+  {$P$ palindromiczny: $P(u)=u^4P(1/u)$};
+
+\node[box, text width=6.5cm, below=0.7cm of palindrome] (reduction)
+  {$v=u+1/u$: \quad $v^2-4v-5=(v-5)(v+1)=0$};
+
+\node[boxblue, text width=3cm, below left=1.2cm and -0.2cm of reduction] (phys)
+  {$v=5$ \\ $u^2-5u+1=0$ \\ $r^*=\dfrac{23+5\sqrt{21}}{2}$};
+
+\node[boxred, text width=3cm, below right=1.2cm and -0.2cm of reduction] (z3)
+  {$v=-1$ \\ $u^2+u+1=0$ \\ $\omega=e^{\pm 2\pi i/3}$};
+
+\node[boxblue, text width=3.2cm, below=1.0cm of phys] (tower)
+  {Wie\.za leptonowa \\ $m_k = m_\tau\cdot(r^*)^{k-3}$ \\ $L_5=989\,\mathrm{GeV}$};
+
+\node[boxred, text width=3.2cm, below=1.0cm of z3] (sym)
+  {Symetria $\mathbb{Z}_3$ \\ permutacja $\sqrt{m_k}$ \\ $\Phi_3(u)=\frac{u^3-1}{u-1}$};
+
+\draw[arrow] (fp) -- (poly) node[midway,right,font=\scriptsize]
+  {def.\ $u=\sqrt{s}$, rozwin.};
+\draw[arrow] (poly) -- (palindrome) node[midway,right,font=\scriptsize]
+  {$[1,-4,-3,-4,1]$};
+\draw[arrow] (palindrome) -- (reduction) node[midway,right,font=\scriptsize]
+  {$\div u^2$};
+\draw[arrow] (reduction) -- (phys) node[midway,left,font=\scriptsize]
+  {fiz.};
+\draw[arrow] (reduction) -- (z3) node[midway,right,font=\scriptsize]
+  {$\mathbb{Z}_3$};
+\draw[arrow] (phys) -- (tower);
+\draw[arrow] (z3) -- (sym);
+
+\end{tikzpicture}
+\end{center}
+\caption{Struktura algebraiczna punktu sta\l{}ego Koidego.
+  Warunek $Q_K=3/2$ prowadzi do palindromicznego wielomianu $P(u)$,
+  kt\'ory przez redukcj\k{e} palindromiczn\k{a} rozk\l{}ada si\k{e}
+  na sektor fizyczny (wieża leptonowa, $r^*$)
+  i~sektor $\mathbb{Z}_3$ (symetria Koidego, $\Phi_3$).}
+\label{fig:T2-algebra-diagram}
+\end{figure}
+
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie wynik\'ow T2}\label{app:T2-summary}
+% -------------------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.5cm}lp{5cm}@{}}
+\toprule
+\textbf{Wynik} & \textbf{Status} & \textbf{Szczeg\'o\l{}y} \\
+\midrule
+Wielomian FP: $P(u)=u^4-4u^3-3u^2-4u+1$
+  & \statuslabel{Twierdzenie}
+  & Prop.~\ref{prop:T2-poly}; $|P(u^*)|<4\times10^{-14}$ \\[3pt]
+$P(u)$ jest palindromiczny
+  & \statuslabel{Twierdzenie}
+  & Prop.~\ref{prop:T2-palindrome}; $P(u)=u^4P(1/u)$ \\[3pt]
+Redukcja: $v^2-4v-5=(v-5)(v+1)$
+  & \statuslabel{Twierdzenie}
+  & Tw.~\ref{thm:T2-reduction}; $v=u+1/u$ \\[3pt]
+Faktoryzacja $P=(u^2-5u+1)(u^2+u+1)$
+  & \statuslabel{Twierdzenie}
+  & Tw.~\ref{thm:T2-factor}; nieredukowalny nad $\mathbb{Q}$ \\[3pt]
+\textbf{Zamkni\k{e}ta forma} $r^* = \frac{23+5\sqrt{21}}{2}$
+  & \statuslabel{Twierdzenie}
+  & Tw.~\ref{thm:T2-rstar}; G3: $|\Delta r^*|<4\times10^{-15}$ \\[3pt]
+$u^2+u+1 = \Phi_3(u)$ (3-cyklotomiczny)
+  & \statuslabel{Twierdzenie}
+  & Prop.~\ref{prop:T2-cyclo}; korzenie $e^{\pm 2\pi i/3}$ \\[3pt]
+$\mathbb{Z}_3$ symetria algebraicznie wbudowana
+  & \statuslabel{Fakt~an.+num.}
+  & Rem.~\ref{rem:T2-Z3-koide}; \texttt{ex118} 12/12~PASS \\[3pt]
+Wie\.za: $L_5=989\,\mathrm{GeV}$, $L_6=22{,}8\,\mathrm{TeV}$
+  & \statuslabel{Predykcja}
+  & Prop.~\ref{prop:T2-tower}; \texttt{ex117} 12/12~PASS \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+\noindent\textbf{G\l{}\'owny wniosek.}
+Warunek punktu sta\l{}ego wie\.zy leptonowej TGP $Q_K(1,r^*,(r^*)^2)=3/2$
+posiada dok\l{}adn\k{a} zamkni\k{e}t\k{a} form\k{e}:
+\[
+  r^* \;=\; \frac{23+5\sqrt{21}}{2},
+\]
+a~odpowiadaj\k{a}cy mu wielomian \emph{palindromicznie} rozk\l{}ada si\k{e}
+na czynnik fizyczny (wyznaczaj\k{a}cy $r^*$) i~czynnik cyklotomiczny
+$\Phi_3(u)$ (enkoduj\k{a}cy symetri\k{e} $\mathbb{Z}_3$ formu\l{}y
+Koide'go).  Rezultat ma status \statuslabel{Twierdzenia analitycznego}
+zweryfikowanego numerycznie (\texttt{ex117--ex118}, 24/24~PASS).
+
+
+% -------------------------------------------------------------------
+\subsection{Status otwarty T-OP1: Sk\k{a}d $Q_K = 3/2$ dla fizycznych
+  leptonów?}\label{app:T2-TOP1}
+% -------------------------------------------------------------------
+
+\paragraph{Hierarchia wyja\'snie\'n.}
+Twierdzenia T2.1--T2.5 pokazuj\k{a}, \.ze warunek $Q_K=3/2$
+jest \emph{algebraicznie konieczny} wzdlu\.z wie\.zy leptonowej TGP
+(Poziom~1 poni\.zej).  Pytanie T-OP1 dotyczy poziomu g\l{}\k{e}bszego:
+dlaczego fizyczne leptony $(e,\mu,\tau)$ realizuj\k{a} ten warunek
+z~dok\l{}adno\'sci\k{a} $\delta Q_K < 0{,}001$?
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Poziom} & \textbf{Wynik} & \textbf{Status} \\
+\midrule
+0 & $Q_K(m_e,m_\mu,m_\tau)=3/2$ (PDG, $\delta<0{,}001$)
+  & \statuslabel{Obserwacja} \\
+1 & FP wie\.zy Koidego $\Rightarrow r^*=(23+5\sqrt{21})/2$
+  & \statuslabel{Twierdzenie} (Tw.~\ref{thm:T2-rstar}) \\
+2 & $Q_K=3/2 \Leftrightarrow r_{\text{Br}}=\sqrt{2}
+       \Leftrightarrow \mathrm{CV}(\sqrt{m})=1$
+  & \statuslabel{Fakt an.} (\texttt{ex119}) \\
+3 & $A_{\mathrm{tail}}\propto m^{1/4}$
+  $\Rightarrow Q_K(A^4)=1{,}500$
+  & \statuslabel{Fakt num.} (\texttt{ex125}, $p=0{,}2500$) \\
+4 & Sk\k{a}d $Q_K=3/2$ (nie $1{,}472$ z $\varphi$-drabiny)?
+  & \statuslabel{T-OP1 OPEN} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Hipoteza fazowa PSH (obalona).}
+Rozwa\.zono hipotez\k{e}, \.ze asymptotyczna faza solitonu
+$\delta_k = \arctan(-C_k/B_k)$ tworzy post\k{e}p
+arytmetyczny $\Delta\delta = 2\pi/3$ (symetria $\mathbb{Z}_3$).
+Numeryczna weryfikacja (\texttt{ex125}, 10/14~PASS) daje:
+
+\begin{equation}
+  \Delta\delta_{12} = \delta_\mu - \delta_e = 167{,}3^\circ,
+  \qquad
+  \Delta\delta_{23} = \delta_\tau - \delta_\mu = -62{,}9^\circ.
+\end{equation}
+
+Warto\'sci te s\k{a} odleg\l{}e od~$\pm 120^\circ$ (post\k{e}pu
+$\mathbb{Z}_3$), zatem \textbf{PSH jest obalone}.
+
+\paragraph{Odkrycie pozytywne (ex125).}
+Analiza \texttt{ex125} ujawnia, \.ze dla kalibracji
+$g_0^k = \varphi^{k-1} g_0^e$ (drabina $\varphi$) zachodzi
+$A_{\mathrm{tail}}(g_0^k) \propto m_k^{1/4}$ z~wyk\l{}adnikiem
+$p = 0{,}2500$ (log-log OLS, $R^2 \approx 1$).  Wynika st\k{a}d:
+\begin{equation}
+  Q_K(A_e^4,\, A_\mu^4,\, A_\tau^4)
+  \;=\; Q_K(m_e,\, m_\mu,\, m_\tau)
+  \;=\; 1{,}5000.
+\end{equation}
+Oznacza to, \.ze mechanizm amplitudowy $A_{\mathrm{tail}}^4$
+\emph{replikuje} warunek Koidego, lecz tylko przez kalibracj\k{e}
+drabiny do mas PDG.  Parametr $\xi^*=2{,}553$ (w~miejsce
+$\varphi^2=2{,}618$, ró\.znica $2{,}5\%$) pozostaje niewyja\'sniony.
+
+\paragraph{Bliskie trafienie T-OP4.}
+Wynik \texttt{ex125} identyfikuje nowe numeryczne trafienie:
+\begin{equation}\label{eq:T2-TOP4}
+  \frac{m_\mu/m_e}{r^*}
+  \;=\; \frac{206{,}768}{22{,}956}
+  \;=\; 9{,}007
+  \;\approx\; 9 \;=\; N^2 \quad (N=3),
+\end{equation}
+z~odchyleniem $0{,}078\%$.  Pytanie T-OP4: czy istnieje
+algebraiczna to\.zsamo\'s\'c $m_\mu/m_e = N^2 r^*$ w~ramach TGP?
+
+Analiza \texttt{ex129} dostarcza nast\k{e}puj\k{a}cych wynik\'ow:
+
+\begin{enumerate}
+  \item \textbf{To\.zsamo\'s\'c analityczna} $u_*^2 = r^*$.
+    Z~definicji $u_* = (5+\sqrt{21})/2$ wynika
+    $u_*^2 = (46+10\sqrt{21})/4 = (23+5\sqrt{21})/2 = r^*$.
+    W~konsekwencji~\eqref{eq:T2-TOP4} mo\.zna przepisa\'c:
+    \[
+      \frac{m_\mu/m_e}{r^*} \;\approx\; 9
+      \;\;\Longleftrightarrow\;\;
+      \frac{m_\mu}{m_e} \;\approx\; 9\,u_*^2
+      \;\;\Longleftrightarrow\;\;
+      \sqrt{\frac{m_\mu}{m_e}} \;\approx\; 3\,u_*,
+    \]
+    gdzie $3u_* = 3(5+\sqrt{21})/2 = 14{,}374$ wobec
+    $\sqrt{m_\mu/m_e} = 14{,}379$ (odchylenie $0{,}039\%$).
+
+  \item \textbf{Formu\l{}a kandydacka TGP.}
+    Je\'sli $m_\mu/m_e = N^2 r^*$ dok\l{}adnie, to
+    \begin{equation}\label{eq:T2-TOP4-candidate}
+      \frac{m_\mu}{m_e}
+      \;=\; N^2 r^*
+      \;=\; \frac{207 + 45\sqrt{21}}{2}
+      \;=\; 206{,}6080\ldots
+    \end{equation}
+    wobec PDG $206{,}7683$ (odchylenie $0{,}078\%$).
+
+  \item \textbf{K\k{a}t Brannena przy $r_{21}=N^2 r^*$} (wynik \texttt{ex129}, D7).
+    W~parametryzacji Brannena
+    $\sqrt{m_k} = M(1 + \sqrt{2}\cos(\theta+2\pi k/3))$
+    warunek $r_{21}(\theta) = N^2 r^*$ ma rozwi\k{a}zanie
+    $\theta_{9r^*} = 132{,}7314^\circ$,
+    kt\'ore le\.zy zaledwie $0{,}0014^\circ$ od k\k{a}ta
+    $\theta_{\mathrm{PDG}} = 132{,}7328^\circ$.
+
+  \item \textbf{K\k{a}t Brannena z~amplitud solitonu} (wynik \texttt{ex131}).
+    \label{it:T2-theta-tgp}
+    Skrypt \texttt{ex131} oblicza $\theta_{\mathrm{TGP}}$
+    \emph{bezpo\'srednio} z~amplitud ogon\'ow soliton\'ow
+    na drabinie~$\varphi$: podstawiaj\k{a}c masy
+    $m_k \propto A_{\mathrm{tail}}(g_0^k)^4$ do
+    formu\l{}y Brannena~\eqref{eq:T2-TOP4-candidate},
+    uzyskuje si\k{e}
+    \begin{equation}\label{eq:T2-theta-tgp}
+      \theta_{\mathrm{TGP}} \;=\; 132{,}7324^\circ.
+    \end{equation}
+    Warto\'s\'c ta le\.zy \emph{pomi\k{e}dzy} wynikami \texttt{ex129} i~PDG:
+    \begin{equation}\label{eq:T2-theta-ordering}
+      \theta_{9r^*} \;=\; 132{,}7314^\circ
+      \;<\; \theta_{\mathrm{TGP}} \;=\; 132{,}7324^\circ
+      \;<\; \theta_{\mathrm{PDG}} \;=\; 132{,}7328^\circ,
+    \end{equation}
+    przy czym odst\k{e}py wynosz\k{a}:
+    \[
+      |\theta_{\mathrm{TGP}} - \theta_{\mathrm{PDG}}| = 0{,}0004^\circ,
+      \qquad
+      |\theta_{\mathrm{TGP}} - \theta_{9r^*}| = 0{,}0010^\circ.
+    \]
+    Wszystkie trzy warto\'sci mieszcz\k{a} si\k{e} w~przedziale
+    $0{,}0014^\circ$.
+    Fakt, \.ze drabina $\varphi$ skalibrowana do mas PDG
+    reprodukuje $\theta$ niemal identyczne z~$\theta_{\mathrm{PDG}}$
+    i~jednocze\'snie niemal identyczne z~$\theta_{9r^*}$,
+    stanowi silne powi\k{a}zanie mi\k{e}dzy trzema pozornie
+    niezale\.znymi wielko\'sciami:
+    amplitudami soliton\'ow $(A_e, A_\mu, A_\tau)$,
+    parametrem Koidego~$r^*$
+    oraz mas\k{a} mione $(m_\mu/m_e)$.
+\end{enumerate}
+
+\begin{observation}[Zamkni\k{e}cie T-OP4 numeryczne]\label{obs:T2-top4-closure}
+  Wyniki \texttt{ex129} i~\texttt{ex131} (15/15~PASS) pokazuj\k{a}:
+  \begin{equation}
+    \theta_{9r^*} < \theta_{\mathrm{TGP}} < \theta_{\mathrm{PDG}},
+    \quad
+    |\Delta\theta| < 0{,}0014^\circ.
+  \end{equation}
+  TGP \emph{numerycznie} odtwarza $\theta_{\mathrm{PDG}}$
+  z~dok\l{}adno\'sci\k{a} $|\theta_{\mathrm{TGP}}-\theta_{\mathrm{PDG}}|=0{,}0004^\circ$
+  za po\'srednictwem drabiny $\varphi$ i~mechanizmu $A_{\mathrm{tail}}^4$.
+  Gdyby istnia\l{}o analityczne wyprowadzenie
+  $\theta_{\mathrm{TGP}} = 132{,}7324^\circ$
+  z~r\'owna\l{}ania ODE solitonu,
+  formu\l{}a $m_\mu/m_e = (207+45\sqrt{21})/2$
+  sta\l{}aby si\k{e} \textbf{dok\l{}adn\k{a} predykcj\k{a} TGP}.
+\end{observation}
+
+\begin{observation}[Skan $g_0^e$ i~punkt dok\l{}adnego zamkni\k{e}cia
+  T-OP4 (\texttt{ex133})]\label{obs:T2-top4-g0e-scan}
+  Skrypt \texttt{ex133} (15/17~PASS) wyznacza numerycznie warto\'s\'c
+  $g_0^{e,*}$ tak\k{a}, \.ze $\theta_{\mathrm{TGP}}(g_0^{e,*}) = \theta_{9r^*}
+  = 132{,}7314^\circ$ dok\l{}adnie:
+  \begin{equation}\label{eq:T2-g0e-star}
+    g_0^{e,*} = 1{,}249082.
+  \end{equation}
+  R\'o\.znica wzgl\k{e}dem obserwowanej warto\'sci $g_0^e = 1{,}24915$
+  (punkt stały~$\varphi$, ex106) wynosi:
+  \begin{equation}
+    \Delta g_0^e \;=\; g_0^{e,*} - g_0^e(\mathrm{obs}) \;=\; -0{,}00006
+    \quad (= 0{,}005\%).
+  \end{equation}
+  Czu\l{}o\'s\'c k\k{a}ta na zmian\k{e} $g_0^e$:
+  $\mathrm{d}\theta/\mathrm{d}g_0^e \approx 18{,}76\,{}^\circ/\mathrm{unit}$,
+  co daje zmian\k{e} $\Delta\theta \approx 0{,}001^\circ$ na zmian\k{e}
+  $\Delta g_0^e = 0{,}00006$.
+  Ponadto:
+  \begin{equation}\label{eq:T2-5-4}
+    g_0^e(\mathrm{obs}) = 1{,}24915 \;\approx\; \tfrac{5}{4}
+    \quad \text{(b\l\k{a}d } 0{,}068\%),
+    \qquad
+    g_0^{e,*} = 1{,}249082 \;\approx\; \tfrac{5}{4}
+    \quad \text{(b\l\k{a}d } 0{,}073\%).
+  \end{equation}
+  Zauwa\.zmy, \.ze $\tfrac{5}{4} = 1 + \tfrac{1}{2\alpha} = 1 + \tfrac{1}{4}$
+  (przy $\alpha=2$) --- jest to wyk\l{}adnik okre\'slaj\k{a}cy \textbf{\'scian\k{e}
+  duchy}: $g^* = e^{-1/(2\alpha)}$.
+  Sprawdzono ponadto: $Q_K(g_0^e = 5/4) = 1{,}5007 \approx 3/2$ (\b{l}\k{a}d
+  $0{,}05\%$).
+\end{observation}
+
+\begin{openproblem}[T-OP4]\label{op:T2-top4}
+  Wyprowadzi\'c analitycznie k\k{a}t Brannena
+  $\theta_{\mathrm{TGP}} \approx 132{,}7314^\circ$
+  z~warunk\'ow TGP: ODE solitonu TGP
+  i~asymptotyku ogona $A_{\mathrm{tail}}$.
+  Zamkni\k{e}cie da predykcj\k{e}
+  $m_\mu/m_e = (207+45\sqrt{21})/2$ (od\-chylenie $0{,}078\%$).
+  Wskazanie: skrypt \texttt{ex133} pokazuje, \.ze wystarczy
+  przesun\k{a}\'c $g_0^e$ o~zaledwie $0{,}005\%$ (tj.\ o~$\Delta g_0^e =
+  -0{,}00006$) od obserwowanej warto\'sci $1{,}24915$, aby osi\k{a}gn\k{a}\'c
+  dok\l{}adne zamkni\k{e}cie.
+  Kluczowe pytanie: \textbf{dlaczego punkt sta\l{}y $\varphi$-drabiny TGP
+  daje $g_0^e \approx 1 + 1/(2\alpha) = 5/4$ z~dok\l{}adno\'sci\k{a} $0{,}07\%$?}
+  Liczba $1 + 1/(2\alpha)$ jest wyk\l{}adnikiem \'sciany duchy
+  $g^* = e^{-1/(2\alpha)}$, co sugeruje g\l{}\k{e}boki
+  zwi\k{a}zek mi\k{e}dzy $\varphi$-drabink\k{a} a~topologi\k{a} potencja\l{}u
+  TGP.
+  Skrypt \texttt{ex134} (19/19~PASS) identyfikuje nowe wskazanie:
+  faza ogona solitonu przy $g_0^e = 5/4$ jest r\'owna $\delta \approx 89{,}1^\circ
+  \approx \pi/2$ (odchylenie $0{,}96\%$), zob.\ obserwacj\k{e}~\ref{obs:T2-phase-pi2}.
+\end{openproblem}
+
+\begin{observation}[Faza ogona solitonu TGP przy $g_0^e = 5/4$
+  (\texttt{ex134})]\label{obs:T2-phase-pi2}
+  Skrypt \texttt{ex134} (19/19~PASS) bada analityczn\k{a} struktur\k{e} ODE
+  solitonu TGP przy $g_0^e = 5/4 = 1 + 1/(2\alpha)$.
+  Ogon solitonu dopasowujemy jako
+  $(g-1)\cdot r = B_c\cos r + C_s\sin r$; faza definiujemy jako
+  $\delta = \mathrm{arctan2}(C_s, B_c)$.
+  G\l{}\'owne wyniki:
+  \begin{enumerate}
+    \item \textbf{Faza przy $g_0^e = 5/4$:}
+      \begin{equation}\label{eq:T2-phase-5-4}
+        \delta\!\left(\tfrac{5}{4}\right) \;=\; 89{,}14^\circ
+        \;\approx\; \frac{\pi}{2}
+        \qquad \text{(odchylenie $0{,}96\%$).}
+      \end{equation}
+      Ogon solitonu elektronu TGP jest wi\k{e}c \emph{prawie czysto
+      sinusoidalny}: $(g-1)\cdot r \approx A_{\mathrm{tail}}\sin r$,
+      co odpowiada postaci $g(r) \approx 1 + A_{\mathrm{tail}}\,j_0(r)$,
+      gdzie $j_0(r) = \sin r/r$ jest sfery\-czn\k{a} funkcj\k{a} Bessela.
+
+    \item \textbf{Faza liniowego ODE (uwaga: korekta w~\texttt{ex135}):}
+      Liniowe ODE $h'' - (2/r)h' + h = 0$ posiada jedynie
+      \emph{rosn\k{a}ce} rozwi\k{a}zania dla $r\to\infty$
+      (por.\ obserwacja~\ref{obs:T2-ex135}); ogon solitonu jest
+      zjawiskiem czysto nieliniowym.
+      Jednak w~granicy $A_{\mathrm{tail}}\to0$ (tj.\ $g_0^e\to1^+$)
+      numerycznie $\delta \to \approx 90^\circ$:
+      \begin{equation}\label{eq:T2-delta0}
+        \delta_0 \;\equiv\; \lim_{g_0^e\to1^+}\delta(g_0^e)
+        \;\approx\; 90^\circ,
+      \end{equation}
+      a faktyczna korekta nieliniowa przy $g_0^e = 5/4$ jest
+      \emph{ma\l{}a}:
+      \begin{equation}\label{eq:T2-delta-phase}
+        \Delta\delta \;=\;
+        \delta\!\left(\tfrac{5}{4}\right) - 90^\circ
+        \;=\; -0{,}864^\circ
+        \qquad\text{(nie $\approx\pi/2$, zob.\ \texttt{ex135}).}
+      \end{equation}
+
+    \item \textbf{Nieliniowo\'s\'c konieczna:}
+      W przybli\.zeniu liniowym $A_{\mathrm{tail}} \propto (g_0^e - 1)$
+      warunek $A_\mu/A_e = (9r^*)^{1/4}$ daje $g_0^e \approx 1{,}284$
+      (niezgodne z~$5/4$).
+      Dopiero wk\l{}ad nieliniowy ($q_{\mathrm{local}} \approx 1{,}094$)
+      prowadzi do $g_0^e \approx 5/4$.
+
+    \item \textbf{Korekta drugiego rz\k{e}du:}
+      $g_0^{e,*} = 5/4 - 0{,}015\,\varepsilon^2 + \ldots$, gdzie
+      $\varepsilon = 1/(2\alpha)$; wsp\'o\l{}czynnik $0{,}015$
+      nie ma dotychczas prostej formy analitycznej.
+
+    \item \textbf{Nowe otwarte pytanie (T-OP4c):}
+      Dlaczego korekta nieliniowa $\Delta\delta(5/4) = -0{,}86^\circ$
+      jest tak ma\l{}a w~por\'ownaniu z~$\delta_0 \approx 90^\circ$,
+      tzn.\ sk\k{a}d wynika $|\Delta\delta| \ll \delta_0$
+      przy $g_0^e = 5/4$?
+      Zob.\ obserwacja~\ref{obs:T2-ex135}.
+  \end{enumerate}
+\end{observation}
+
+\begin{observation}[Korekta ex134: faza liniowego ODE i~\texttt{ex135}
+  (13/16~PASS)]\label{obs:T2-ex135}
+  Skrypt \texttt{ex135} (13/16~PASS) koryguje i~uzupe\l{}nia
+  analiz\k{e} z~\texttt{ex134}.
+
+  \paragraph{G\l{}\'owna korekta.}
+  Liniowe ODE $h'' - (2/r)h' + h = 0$, b\k{e}d\k{a}ce linearyzacj\k{a}
+  ODE solitonu TGP przy $g=1$, nie posiada zanikaj\k{a}cych rozwi\k{a}za\'n
+  dla $r\to\infty$.  Og\'olne rozwi\k{a}zanie zachowuje si\k{e} jak
+  $h(r) \sim r\bigl(C\sin r + D\cos r\bigr)$ (rosn\k{a}ce liniowo).
+  Ogon solitonu $(g-1) \sim A\sin(r+\delta)/r$ jest zatem
+  zjawiskiem \emph{czysto nieliniowym}: wynika z~globalnej
+  struktury ODE, nie z~jego linearyzacji.
+
+  \paragraph{Faza w~granicy ma\l{}ej amplitudy.}
+  Numeryczny skan $\delta(g_0^e)$ dla $g_0^e \to 1^+$ (por.\ sek.~[4]
+  skryptu) daje
+  \begin{equation}\label{eq:T2-delta0-num}
+    \delta_0 \;=\; \lim_{A_{\mathrm{tail}}\to0}\delta
+    \;\approx\; 90^\circ
+    \qquad\bigl(\text{np.\ przy }g_0^e=1{,}01{:}\ \delta=90{,}43^\circ\bigr).
+  \end{equation}
+
+  \paragraph{Dok\l{}adne $g_0^e(\delta=90^\circ)$ via brentq.}
+  Faza ogona r\'owna si\k{e} dok\l{}adnie $90^\circ$ przy
+  \begin{equation}\label{eq:T2-g0e-90deg}
+    g_0^e(\delta=90^\circ) \;=\; 1{,}23037
+    \qquad\bigl(\text{brentq, } \delta=90{,}0000^\circ \text{ potwierdzone}\bigr),
+  \end{equation}
+  co r\'o\.zni si\k{e} od $5/4$ o~$-1{,}57\%$.
+  Najlepszy kandydat algebraiczny:
+  $1 + \varepsilon(1-\varepsilon/3) = 1{,}22917$ (b\l\k{a}d $0{,}098\%$),
+  gdzie $\varepsilon = 1/(2\alpha)$.
+  Trzy warto\'sci tworz\k{a} hierarchi\k{e}:
+  \begin{equation}\label{eq:T2-three-g0e}
+    g_0^e(\delta=90^\circ) \;=\; 1{,}23037
+    \;<\; \tfrac{5}{4} \;=\; 1{,}25000
+    \;\approx\; g_0^{e,*} \;=\; 1{,}24908.
+  \end{equation}
+
+  \paragraph{Kwadratowo\'s\'c korekty fazowej.}
+  Korekta nieliniowa $\Delta\delta = \delta - 90^\circ$ jest
+  kwadratowa w~amplitudzie ogona:
+  \begin{equation}\label{eq:T2-Ddelta-quad}
+    \Delta\delta(A) \;\approx\;
+    -108{,}4^\circ \cdot A^2 + 28{,}0^\circ \cdot A + 0{,}6^\circ,
+    \qquad r^2 = 0{,}9997.
+  \end{equation}
+  Zero tej paraboli: $A \approx 0{,}277$ (co odpowiada
+  $g_0^e \approx 1{,}230$~---~zgodnie z~\eqref{eq:T2-g0e-90deg}).
+  Maksimum: $\Delta\delta_{\max} \approx 2{,}43^\circ$ przy
+  $A \approx 0{,}129$ ($g_0^e \approx 1{,}110$).
+  Przy $g_0^e = 5/4$ ($A = 0{,}300$):
+  $\Delta\delta(5/4) = -0{,}864^\circ$ --- istotnie \emph{ma\l{}e}.
+
+  \paragraph{Otwarte pytanie T-OP4c.}
+  Dlaczego korekta $|\Delta\delta(5/4)| \approx 0{,}86^\circ \ll 90^\circ
+  \approx \delta_0$ jest tak ma\l{}a w\l{}a\'snie przy $g_0^e = 5/4
+  = 1+1/(2\alpha)$?  Jednocze\'snie $g_0^e = 5/4$ nie jest punktem
+  zerowym $\Delta\delta$ (to $g_0^e(\delta=90^\circ) = 1{,}23037$),
+  ani punktem sta\l{}ym warunku $\theta_{\mathrm{TGP}} = \theta(9r^*)$
+  (to $g_0^{e,*} = 1{,}24908$).
+\end{observation}
+
+\begin{observation}[Korekta drugiego rz\k{e}du $c_2 \approx -1/68$
+  i~skan~$\alpha$ (\texttt{ex136}, 8/16~PASS)]\label{obs:T2-ex136}
+  Skrypt \texttt{ex136} (8/16~PASS) bada rozszerzone zachowanie
+  $g_0^{e,*}(\alpha)$ i~wyznacza wsp\'o\l{}czynnik korekty drugiego
+  rz\k{e}du przy $\alpha=2$.
+
+  \paragraph{Wysokoprecyzyjne wyznaczenie $g_0^{e,*}$.}
+  Dla fizycznego $\alpha = 2$ metoda brentq (10 cyfr) daje
+  \begin{equation}\label{eq:T2-g0estar-hprec}
+    g_0^{e,*} \;=\; 1{,}249\,081\,6636,
+    \qquad \theta_{\mathrm{TGP}}=132{,}731\,439\,00^\circ.
+  \end{equation}
+
+  \paragraph{Kandydat na wsp\'o\l{}czynnik korekty.}
+  Rozk\l{}adaj\k{a}c $g_0^{e,*} = 1 + \varepsilon + c_2\varepsilon^2
+  + O(\varepsilon^3)$ ($\varepsilon = 1/(2\alpha) = 1/4$):
+  \begin{equation}\label{eq:T2-c2-value}
+    c_2 \;=\;
+    \frac{g_0^{e,*} - 1 - \varepsilon}{\varepsilon^2}
+    \;=\; -0{,}014693.
+  \end{equation}
+  Najlepszy kandydat algebraiczny:
+  \begin{equation}\label{eq:T2-c2-candidate}
+    \boxed{c_2 \;\approx\; -\frac{1}{68} \;=\; -0{,}014706}
+    \qquad\bigl(\text{b\l\k{a}d}\;0{,}09\%\bigr),
+  \end{equation}
+  co mo\.zna zapisa\'c jako $c_2 \approx -\varepsilon/17$ (gdy\.z
+  $1/68 = (1/4)/17$).
+  Wynikowe przybli\.zenie:
+  \begin{equation}\label{eq:T2-g0e-expansion}
+    g_0^{e,*} \;\approx\; 1 + \frac{1}{2\alpha}
+               - \frac{1}{68\cdot(2\alpha)^2}
+               + O\!\left(\frac{1}{\alpha^3}\right).
+  \end{equation}
+
+  \paragraph{Zbli\.zenie $g_0^{e,*} \approx 1+1/(2\alpha)$ jest specyficzne
+    dla $\alpha = 2$.}
+  Skan parametryczny po $\alpha \in \{1{,}5;\,2{,}5;\,\ldots;\,10\}$
+  (z~ustalonymi fizycznymi proporcjami $g_0^\mu/g_0^e$, $g_0^\tau/g_0^e$)
+  ujawnia, \.ze tylko dla $\alpha=2$ zachodzi zbli\.zenie $g_0^{e,*}
+  \approx 1+1/(2\alpha)$ na poziomie $0{,}073\%$.  Dla innych $\alpha$
+  odchylenie si\k{e}ga kilku procent lub wi\k{e}cej --- wskazuje to
+  na zwi\k{a}zek zbli\.zenia z~\emph{fizyczn\k{a}} warto\'sci\k{a}
+  $\alpha=2$ i~sta\l\k{a} Koidego $r^*$.
+
+  \paragraph{Otwarte pytanie T-OP4d.}
+  Sk\k{a}d wynika liczba~$17$ w~$c_2 \approx -1/68 = -\varepsilon/17$?
+  Czy mo\.zna wyprowadzi\'c $c_2$ analitycznie z~ODE solitonu TGP?
+\end{observation}
+
+% -------------------------------------------------------------------
+\begin{observation}[Matematyczna $\varphi$-drabina daje
+  $g_0^{e,*}(\alpha=2)=1{,}508 \neq 5/4$ (\texttt{ex137}, 6/16~PASS)]
+  \label{obs:T2-ex137}
+  Skrypt \texttt{ex137} (6/16~PASS) testuje ,,matematyczn\k{a}
+  $\varphi$-drabin\k{e}''~--- wariant, w~kt\'orym
+  \begin{equation}\label{eq:T2-phi-ladder}
+    g_0^\mu \;=\; \varphi\,g_0^e, \qquad
+    g_0^\tau \;=\; \varphi^2\,g_0^e,
+    \qquad \varphi = \tfrac{1+\sqrt{5}}{2} \approx 1{,}618,
+  \end{equation}
+  zamiast fizycznych proporcji $R_\mu^{\rm phys}=1{,}6181$,
+  $R_\tau^{\rm phys}=2{,}5530$ (ex136).
+
+  \paragraph{G\l{}\'owny wynik: $\varphi^2 \neq R_\tau^{\rm phys}$.}
+  Kluczowa r\'o\.znica dotyczy sk\l{}adowej $\tau$:
+  \begin{equation}\label{eq:T2-phi2-vs-Rtau}
+    \varphi^2 \;=\; 2{,}6180 \;\neq\; R_\tau^{\rm phys} \;=\; 2{,}5530,
+    \qquad \Delta R_\tau \;=\; +0{,}065 \;(\approx 2{,}5\%).
+  \end{equation}
+  Ta pozornie ma\l{}a r\'o\.znica prowadzi do drastycznej zmiany
+  punktu sta\l{}ego:
+  \begin{align}\label{eq:T2-phi-vs-phys}
+    g_0^{e,*}(\varphi\text{-drabina},\;\alpha=2) &= 1{,}508, \\
+    g_0^{e,*}(\text{fiz.},\;\alpha=2)            &= 1{,}249,
+  \end{align}
+  co daje odchylenie $\Delta g_0^{e,*} = +0{,}259$ ($20{,}7\%$).
+  Czu\l{}o\'s\'c:
+  \begin{equation}\label{eq:T2-sensitivity}
+    \frac{\Delta g_0^{e,*}}{\Delta R_\tau}
+    \;\approx\; \frac{0{,}259}{0{,}065} \;\approx\; 4{,}0,
+  \end{equation}
+  czyli $2{,}5\%$ zmiany $R_\tau$ powoduje $20\%$ zmian\k{e}
+  $g_0^{e,*}$.
+
+  \paragraph{Zbli\.zenie $g_0^{e,*}\approx 1+1/(2\alpha)$ znika
+    pod $\varphi^2$-drabin\k{a}.}
+  Dla matematycznej $\varphi$-drabiny \.zadne $\alpha$ ze skanowanego
+  zbioru $\{1{,}5;\,2{,}0;\ldots;\,10{,}0\}$ nie spe\l{}nia
+  $g_0^{e,*} \approx 1+1/(2\alpha)$ lepiej ni\.z
+  $\approx 3\%$ (a dla $\alpha=2$ b\l\k{a}d wynosi $20\%$).
+  Korekta $c_2(\alpha=2)=+4{,}13$ jest du\.za i dodatnia,
+  w~odro\.znieniu od fizycznego $c_2=-0{,}0147\approx -1/68$.
+
+  \paragraph{Wniosek.}
+  Zbli\.zenie $g_0^{e,*}\approx 5/4 = 1+1/(2\alpha)$ jest
+  w\l{}asno\'sci\k{a} \emph{fizycznej} proporcji $R_\tau^{\rm phys}
+  = \xi^* \approx 2{,}553$, a~nie matematycznej $\varphi$-drabiny.
+  Lepton $\tau$~\emph{nie} siedzi w~punkcie $g_0^\tau = \varphi^2
+  g_0^e$~--- odchylenie wynosi $2{,}5\%$.
+
+  \paragraph{Otwarte pytanie T-OP4e.}
+  Sk\k{a}d pochodzi fizyczna proporcja $R_\tau^{\rm phys}=\xi^*
+  \approx 2{,}553$?  Jak wyznaczy\'c $R_\tau(\alpha)$ z~pierwszych
+  zasad (punkt sta\l{}y $\varphi$-drabiny z~ex106)?
+\end{observation}

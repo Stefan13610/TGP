@@ -1,0 +1,230 @@
+% tgp_perturbations_lss.tex -- M2 deliverable: Cosmological perturbations and LSS
+% Integrates into sek08_formalizm.tex (after ssec:perturb) or sek07_predykcje.tex
+% Cross-refs: thm:Geff-k, cor:grav-slip, prop:ghost-free-MS, eq:Geff-k
+
+\subsection{Large-scale structure predictions}%
+\label{ssec:lss-predictions}
+
+The scale-dependent effective gravitational constant
+(tw.~\ref{thm:Geff-k}) and the gravitational slip
+(wn.~\ref{cor:grav-slip}) yield concrete, falsifiable
+predictions for large-scale structure observables.
+This subsection quantifies the predictions and compares
+them with existing data from BOSS, DESI, and forthcoming
+surveys (Euclid, LSST, SKA).
+
+% ----- Stability ----- %
+\subsubsection{Stability analysis}%
+\label{sssec:lss-stability}
+
+\begin{proposition}[Complete perturbative stability]%
+\label{prop:lss-stability}
+Cosmological perturbations of the TGP scalar field $\Phi$
+around the homogeneous FRW background $\bar\Phi(t)$
+satisfy \textbf{all} stability conditions:
+\begin{enumerate}[(i),nosep]
+  \item \textbf{No-ghost}: the kinetic coefficient in the
+    Mukhanov--Sasaki sector is
+    $Q_s = \psi_{\rm bg}^4 > 0$ for all $\psi_{\rm bg} > 0$
+    (stw.~\ref{prop:ghost-free-MS});
+  \item \textbf{Gradient stability}: the sound speed is
+    $c_s^2 = c_0^2 > 0$ (identically the speed of light);
+  \item \textbf{Tachyonic stability}: the spatial Yukawa mass satisfies
+    $m_{\mathrm{sp}}^2 = \gamma > 0$
+    (stw.~\ref{prop:vacuum-stability}), ensuring exponential
+    suppression of $\delta\Phi$ on sub-Compton scales;
+  \item \textbf{Cosmological mass}: the homogeneous mass
+    $m_{\rm cosmo}^2 = \tfrac{4}{3}\,c_0^2\gamma > 0$
+    corresponds to damped oscillations of $\bar\Phi$
+    around the vacuum~$\Phi_0$, driven to rest by
+    Hubble friction --- this is the relaxation to
+    $\Lambda$CDM, not an instability.
+\end{enumerate}
+\end{proposition}
+
+\noindent\textit{Numerical verification:}
+Script \texttt{tgp\_perturbations\_formal.py} confirms all four
+conditions over the range $\psi \in (0, 3]$ (18/18 tests PASS).
+
+% ----- Growth factor ----- %
+\subsubsection{Linear growth factor and $f\sigma_8$}%
+\label{sssec:growth-lss}
+
+The linear density contrast $\delta_m$ obeys:
+\begin{equation}\label{eq:growth-ode}
+  D'' + \bigl(2 + \tfrac{H'}{H}\bigr)\,D'
+  = \tfrac{3}{2}\,\Omega_m(a)\,
+    \frac{G_{\mathrm{eff}}(k,a)}{G_0}\;D,
+\end{equation}
+where primes denote $d/d\ln a$. The scale dependence of
+$G_{\mathrm{eff}}$ (r.~\eqref{eq:Geff-k}) induces, in principle,
+a scale-dependent growth rate $f(k,z) = d\ln D / d\ln a$.
+
+\begin{table}[h]
+\centering\small
+\caption{Linear growth factor and growth rate $f\sigma_8$:
+TGP vs.\ $\Lambda$CDM at $k = 0.1\;\mathrm{Mpc}^{-1}$.
+At $\Phi_0 \approx 25$, deviations are below $10^{-50}$.}
+\label{tab:growth-comparison}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$z$ & $D_{\Lambda\mathrm{CDM}}$ & $D_{\mathrm{TGP}}$ &
+$|\Delta D/D|$ & $f\sigma_8$ \\
+\midrule
+0.0 & 1.0000 & 1.0000 & $< 10^{-50}$ & 0.428 \\
+0.3 & 0.8528 & 0.8528 & $< 10^{-50}$ & 0.474 \\
+0.5 & 0.7689 & 0.7689 & $< 10^{-50}$ & 0.476 \\
+0.7 & 0.6964 & 0.6964 & $< 10^{-50}$ & 0.462 \\
+1.0 & 0.6067 & 0.6067 & $< 10^{-50}$ & 0.431 \\
+1.5 & 0.4956 & 0.4956 & $< 10^{-50}$ & 0.374 \\
+2.0 & 0.4172 & 0.4172 & $< 10^{-50}$ & 0.324 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The growth-rate observable $f\sigma_8(z) = f(z)\,\sigma_8\,D(z)$
+agrees with $\Lambda$CDM to machine precision at $\Phi_0 \approx 25$,
+giving $\chi^2 = 9.86$ for 14 combined data points
+(BOSS DR12 + 6dFGS + VIPERS + eBOSS + DESI DR1 RSD).
+
+\begin{remark}[Observational bound on $\alpha_{\mathrm{eff}}$]%
+\label{rem:alpha-bound}
+A $\chi^2$ scan over $\alpha_{\mathrm{eff}}$ using the combined
+$f\sigma_8$ compilation yields the $2\sigma$ upper bound:
+\begin{equation}\label{eq:alpha-bound}
+  \alpha_{\mathrm{eff}} < 0.17 \quad (2\sigma).
+\end{equation}
+The TGP prediction $\alpha_{\mathrm{eff}} = q\,\Phi_0/(4\pi)
+\approx 3.7 \times 10^{-26}$ lies $25$~orders of magnitude below
+this threshold. Scale-dependent growth would become detectable
+only for $\alpha_{\mathrm{eff}} \gtrsim 0.01$, corresponding to
+$\Phi_0 \gtrsim 10^{24}$.
+\end{remark}
+
+% ----- Modified gravity parameterization ----- %
+\subsubsection{Modified gravity parameterization $(\mu, \Sigma, \eta)$}%
+\label{sssec:mu-sigma-eta}
+
+In the standard parameterized post-Friedmann framework:
+\begin{align}
+  \mu(k,a) &\equiv \frac{G_{\mathrm{eff}}}{G_0}
+  = 1 + \frac{2\,\alpha_{\mathrm{eff}}^2}
+        {1 + (a\,m_{\mathrm{sp}}/k)^2},
+  \label{eq:mu-lss} \\[4pt]
+  \Sigma(k,a) &= 1 + \frac{\alpha_{\mathrm{eff}}^2}
+        {1 + (a\,m_{\mathrm{sp}}/k)^2},
+  \label{eq:sigma-lss} \\[4pt]
+  \eta(k,a) &\equiv \frac{\Sigma}{\mu}
+  = \frac{1 + \alpha_{\mathrm{eff}}^2/(1+x^2)}
+         {1 + 2\alpha_{\mathrm{eff}}^2/(1+x^2)},
+  \qquad x = a\,m_{\mathrm{sp}}/k.
+  \label{eq:eta-lss}
+\end{align}
+For $k/a \gg m_{\mathrm{sp}}$ (small scales):
+$\eta \approx 1 - \alpha_{\mathrm{eff}}^2$.
+For $k/a \ll m_{\mathrm{sp}}$ (large scales):
+$\eta \to 1$ (GR recovered).
+
+At $\Phi_0 \approx 25$:
+$\mu - 1 \sim \Sigma - 1 \sim \eta - 1 \sim 10^{-51}$,
+far below the projected sensitivity of
+Euclid ($\sigma_\mu \sim 0.02$, Amendola et al.\ 2018)
+and LSST ($\sigma_\Sigma \sim 0.03$).
+
+\begin{table}[h]
+\centering\small
+\caption{Modified gravity parameters at
+$k = 0.1\;\mathrm{Mpc}^{-1}$ for TGP ($\Phi_0 \approx 25$).
+All deviations from GR are undetectable.}
+\label{tab:mu-sigma-eta}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$z$ & $\mu - 1$ & $\Sigma - 1$ & $\eta - 1$ \\
+\midrule
+0.0 & $< 10^{-51}$ & $< 10^{-51}$ & $< 10^{-51}$ \\
+0.5 & $< 10^{-51}$ & $< 10^{-51}$ & $< 10^{-51}$ \\
+1.0 & $< 10^{-51}$ & $< 10^{-51}$ & $< 10^{-51}$ \\
+2.0 & $< 10^{-51}$ & $< 10^{-51}$ & $< 10^{-51}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ----- Inflationary sector ----- %
+\subsubsection{Inflationary predictions}%
+\label{sssec:inflation-lss}
+
+The Mukhanov--Sasaki equation in TGP reads (prop.~\ref{prop:ghost-free-MS}):
+\begin{equation}\label{eq:MS-TGP}
+  v_k'' + \bigl[c_s^2\,k^2 - z''/z\bigr]\,v_k = 0,
+  \qquad z = a\,\psi_{\rm bg}^2,\quad c_s^2 = c_0^2.
+\end{equation}
+In the slow-roll regime (Dodatek~G), the spectral index and
+tensor-to-scalar ratio are:
+\begin{equation}\label{eq:ns-r-TGP}
+  n_s = 1 - \frac{2}{N_e}, \qquad
+  r = \frac{16}{N_e}, \qquad
+  f_{\rm NL}^{\rm local} \approx -\frac{1}{N_e},
+\end{equation}
+where $N_e$ is the number of $e$-folds.
+For $N_e \in [55, 65]$:
+$n_s \in [0.964, 0.969]$ (Planck $1\sigma$),
+$r \in [0.25, 0.29]$,\footnote{%
+  The standard relation $r = 16\varepsilon$ assumes
+  an unmodified tensor sector. In TGP, the tensor sector
+  ($\sigma_{ab}$) has status Szkic; the actual $r_{\rm TGP}$
+  may differ. See sek.~\ref{sssec:sigma-status-map}.}
+$|f_{\rm NL}| \lesssim 0.02$ (undetectable by Planck).
+
+% ----- Falsifiability ----- %
+\subsubsection{Falsifiability criteria}%
+\label{sssec:falsifiability-lss}
+
+\begin{table}[h]
+\centering\small
+\caption{Falsifiability of TGP in the perturbation sector.}
+\label{tab:falsifiability}
+\begin{tabular}{@{}lp{5.5cm}l@{}}
+\toprule
+\textbf{Observable} & \textbf{Condition to falsify TGP} &
+\textbf{Survey} \\
+\midrule
+$\mu(k,z)$ & $|\mu - 1| > 0.02$ at fixed $\Phi_0 \approx 25$
+& Euclid \\
+$\Sigma(k,z)$ & $|\Sigma - 1| > 0.03$
+& LSST \\
+$f\sigma_8(z)$ & Scale-dependent anomaly at
+$\Delta(f\sigma_8)/f\sigma_8 > 1\%$
+& DESI, Euclid \\
+$n_s$ & $n_s \notin [0.95, 0.98]$ (no viable $N_e$)
+& CMB-S4 \\
+$c_{\rm GW}$ & $|c_{\rm GW}/c_0 - 1| > 10^{-15}$
+& LIGO/ET \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Perturbation sector conclusion]%
+\label{rem:perturbation-conclusion}
+At $\Phi_0 \approx 25$ (the value fixed by
+$\Lambda_{\mathrm{eff}} \approx \Lambda_{\mathrm{obs}}$),
+TGP is \textbf{operationally equivalent to $\Lambda$CDM}
+in the cosmological perturbation sector:
+$G_{\mathrm{eff}} = G_0$ to $O(10^{-51})$,
+all stability conditions are satisfied,
+and the inflationary predictions lie within the
+Planck $1\sigma$ band for $N_e \sim 57$--$65$.
+
+The distinct predictions of TGP lie
+\textbf{outside} the linear perturbation regime:
+\begin{enumerate}[(a),nosep]
+  \item modified dark energy equation of state $w_{\rm DE}(z)$
+    (\S\ref{ssec:de-oszacowanie}, likelihood H6:
+    $\Delta\chi^2 = +1.8$ vs.\ $\Lambda$CDM);
+  \item GW dispersion at the Yukawa mass scale
+    $m_{\mathrm{sp}} \sim 10^{-26}\;\mathrm{m}^{-1}$
+    (Table~\ref{tab:gw-summary});
+  \item $N$-body dynamics: Earnshaw violation, chaos
+    suppression, three-body force (Appendix~\ref{app:nbody}).
+\end{enumerate}
+These are the arenas where TGP can be distinguished from GR.
+\end{remark}

@@ -1,0 +1,334 @@
+% ===================================================================
+%  Dodatek D: Nieredukowalne sily trojcialowe i krzywe rotacji
+%  TGP v1 -- Adapted from nbody/trojcialowe_sily.tex
+% ===================================================================
+\section{Nieredukowalne si\l{}y tr\'ojcia\l{}owe}%
+\label{app:three-body}
+
+Kwartyczna nieliniowo\'s\'c $\Phi^4$ w~r\'ownaniu pola
+TGP~\eqref{eq:full-field-alt} generuje
+nieredukowalne oddzia\l{}ywania wielocia\l{}owe.
+Poni\.zej wyprowadzamy jawnie cz\l{}on tr\'ojcia\l{}owy,
+podajemy zamkni\k{e}t\k{a} form\k{e} analityczn\k{a} gradientu
+i~analizujemy konsekwencje astrofizyczne.
+
+% -------------------------------------------------------------------
+\subsection{\'Zr\'od\l{}o: ca\l{}ka potr\'ojnego nak\l{}adania}
+% -------------------------------------------------------------------
+
+Dla $N$~\'zr\'ode\l{} o~profilach Yukawy
+$\delta_i(r) = -C_i\,e^{-m_{\mathrm{sp}} r_i}/r_i$,
+energia rozk\l{}ada si\k{e} na:
+\begin{equation}\label{eq:energy-3b-decomp}
+  E = E_{\mathrm{self}}
+    + \sum_{i<j} V_2(d_{ij})
+    + \sum_{i<j<k} V_3(i,j,k)
+    + \mathcal{O}(\delta^4).
+\end{equation}
+
+Kwartyczny cz\l{}on $-(\gamma/4\PhiZero^2)\Phi^4$ z~rozwini\k{e}cia
+$(1+\delta_1+\delta_2+\delta_3)^4$ daje wsp\'o\l{}czynnik
+$4!/(1!\cdot1!\cdot1!\cdot1!) = 24$ przy mieszanych sk\l{}adnikach,
+co prowadzi do:
+
+\begin{proposition}[Nieredukowalna energia tr\'ojcia\l{}owa]%
+\label{prop:V3-def}
+\begin{equation}\label{eq:V3-main}
+  \boxed{
+    V_3(i,j,k) = -6\,\gamma\;C_i\,C_j\,C_k
+    \;\cdot\; I_{\mathrm{triple}}(d_{ij},\, d_{ik},\, d_{jk})
+  }
+\end{equation}
+gdzie $I_{\mathrm{triple}}$ jest ca\l{}k\k{a} obj\k{e}to\'sciow\k{a}
+z~iloczynu trzech profili:
+\begin{equation}
+  I_{\mathrm{triple}} = \int d^3\mathbf{x}\;
+  \delta_i(\mathbf{x})\;\delta_j(\mathbf{x})\;\delta_k(\mathbf{x}).
+\end{equation}
+\end{proposition}
+
+Dwa przypadki graniczne:
+\begin{itemize}[nosep]
+  \item \textbf{Coulomb} ($m_{\mathrm{sp}} \to 0$):
+    $I_{\mathrm{triple}}^{\mathrm{Coul}} = 8\pi^2/P$,
+    gdzie $P = d_{ij} + d_{ik} + d_{jk}$ (perymetr).
+  \item \textbf{Yukawa} ($m_{\mathrm{sp}} = \sqrt{\gamma}$):
+    $I_{\mathrm{triple}}^{\mathrm{Yuk}} \approx
+    (2\pi)^{3/2}\,m_{\mathrm{sp}}^{-2}\,e^{-m_{\mathrm{sp}}\,s}/s$,
+    gdzie $s = P/2$ (p\'o\l{}perymetr).
+    Czynnik $e^{-m_{\mathrm{sp}}\,s}$ powoduje
+    \textbf{eksponencjalne t\l{}umienie} na du\.zych skalach.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\subsection{Zamkni\k{e}ta forma gradientu}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Si\l{}a tr\'ojcia\l{}owa]\label{prop:3body-force-main}
+Si\l{}a na mas\k{e} $i$ od tr\'ojki $(i,j,k)$:
+\begin{equation}\label{eq:F3-main}
+  \boxed{
+    \mathbf{F}_i^{(3)} = -6\,\gamma\,C_i C_j C_k
+    \;\cdot\; \frac{dI}{dP} \;\cdot\;
+    \bigl(\hat{\mathbf{r}}_{ij} + \hat{\mathbf{r}}_{ik}\bigr)
+  }
+\end{equation}
+gdzie $dI/dP < 0$ dla obu przypadk\'ow, co daje
+\textbf{si\l{}\k{e} odpychaj\k{a}c\k{a}} (tendencja do
+powi\k{e}kszania tr\'ojk\k{a}ta).
+\end{proposition}
+
+\begin{proof}
+Perymetr $P = d_{ij} + d_{ik} + d_{jk}$ zale\.zy od $\mathbf{x}_i$
+tylko przez $d_{ij}$ i~$d_{ik}$, wi\k{e}c
+$\partial P/\partial\mathbf{x}_i = \hat{\mathbf{r}}_{ij} +
+\hat{\mathbf{r}}_{ik}$.
+Regu\l{}a \l{}a\'nuchowa $\partial I/\partial\mathbf{x}_i
+= (dI/dP)\cdot(\partial P/\partial\mathbf{x}_i)$ ko\'nczy dow\'od.
+\end{proof}
+
+\begin{remark}[Skalowanie]
+Stosunek $|V_3/V_2| \sim C \cdot \gamma d$ rz\k{e}du $10^{-3}$
+dla pojedynczej tr\'ojki przy $C \sim 0.3$.
+Dla $N$~cia\l{}, efektywna liczba kontrybuuj\k{a}cych tr\'ojek
+to $N_{\mathrm{loc}}^2$, gdzie $N_{\mathrm{loc}}
+= (4\pi\lambda_{3b}^3/3)\,n_\star$ jest liczb\k{a} gwiazd
+w~kuli Yukawy o~promieniu $\lambda_{3b} = 1/\sqrt{\gamma}$.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Konsekwencje dla krzywych rotacji galaktyk}%
+\label{ssec:rotation-curves}
+% -------------------------------------------------------------------
+
+Ca\l{}kowite przyspieszenie w~TGP sk\l{}ada si\k{e} z~trzech
+cz\l{}on\'ow:
+\begin{equation}\label{eq:a-total}
+  a_{\mathrm{TGP}}(R) = a_{\mathrm{Newton}}(R)
+  + \Delta a_{\mathrm{pair}}(R)
+  + \Delta a_3(R),
+\end{equation}
+gdzie $\Delta a_{\mathrm{pair}}$ pochodzi od modyfikacji parowej
+($-4\beta/r$ i~$+9\gamma C_0/r^2$), a~$\Delta a_3$ jest
+kumulatywn\k{a} korekt\k{a} tr\'ojcia\l{}ow\k{a}.
+
+\begin{remark}[Wyniki numeryczne: krzywe rotacji]%
+\label{rem:rotation-results}
+Semi-analityczne ca\l{}kowanie po dysku eksponencjalnym
+($R_d = 3$~kpc, $M = 5\times10^{10}\,M_\odot$)
+z~modyfikacj\k{a} parow\k{a} TGP (skrypt
+\texttt{nbody/run\_rotation\_curve.py}) daje:
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$\beta/R_d$ & $v_{\mathrm{peak}}/v_0$ &
+$v(5R_d)/v(2R_d)$ & efekt \\
+\midrule
+$0$ (Newton) & $0.594$ & $0.819$ & --- \\
+$0.02$ & $0.594$ & $0.812$ & $-0.8\%$ \\
+$0.05$ & $0.594$ & $0.802$ & $-2.1\%$ \\
+$0.10$ & $0.597$ & $0.785$ & $-4.2\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Modyfikacja parowa sama \textbf{nie sp\l{}aszcza} krzywej rotacji
+--- odpychanie TGP redukuje si\l{}\k{e} przyci\k{a}gania
+na \'srednich skalach, przyspieszaj\k{a}c keplerowskie opadanie.
+\end{remark}
+
+\begin{remark}[Fizyczne $\gamma$ a~krzywe rotacji]%
+\label{rem:physical-gamma-rotation}
+Dla fizycznego $\gamma \approx 10^{-52}\;\mathrm{m}^{-2}$:
+\begin{equation}
+  \hat\beta = \gamma \cdot R_d^2
+  \approx 10^{-52} \cdot (3 \times 10^{19})^2
+  \approx 10^{-13},
+\end{equation}
+co odpowiada bezwymiarowemu $\beta/R_d \sim 10^{-13}$
+--- $13$~rz\k{e}d\'ow wielko\'sci poni\.zej zakresu,
+w~kt\'orym modyfikacja jest wykrywalna.
+\textbf{TGP z~fizycznym $\gamma$ nie modyfikuje krzywych
+rotacji galaktyk.}
+
+Wniosek: TGP w~obecnej formie \textbf{nie zast\k{e}puje
+ciemnej materii} na skalach galaktycznych.
+Trzy re\.zimy oddzia\l{}ywania (grawitacja, odpychanie,
+studnia) s\k{a} efektami kr\'otkozasi\k{e}gowymi
+($\lambda_{3b} = 1/\sqrt{\gamma} \sim 10^{26}$~m $\sim 3$~Mpc)
+--- wystarczaj\k{a}co dalekozasi\k{e}gowymi na skal\k{e}
+kosmologiczn\k{a}, ale zbyt ma\l{}ymi amplitudowo
+($\sim\gamma\,r^2 \sim 10^{-13}$) na skal\k{e} galaktyczn\k{a}.
+\end{remark}
+
+\begin{remark}[Otwarte pytanie: alternatywne mechanizmy]%
+\label{rem:DM-alternatives}
+Mo\.zliwe rozszerzenia TGP, kt\'ore mog\l{}yby wp\l{}yn\k{a}\'c
+na dynamik\k{e} galaktyczn\k{a}:
+\begin{enumerate}[nosep]
+  \item \textbf{Dynamiczne $G(\Phi)$}: $G = G_0(\PhiZero/\Phi)$
+    (sek.~\ref{sec:stale}) --- w~regionach o~obni\.zonym $\Phi$
+    (mi\k{e}dzy galaktykami) $G$ ro\'snie, wzmacniaj\k{a}c
+    grawitacj\k{e}. Efekt skali: $\delta G/G \sim U \sim
+    GM/(c_0^2 R) \sim 10^{-6}$ na kraw\k{e}dzi galaktyki.
+  \item \textbf{Substratowe stopnie swobody}: pole $\sigma_{ab}$
+    (sek.~\ref{ssec:tensor-substrate}) mo\.ze mie\'c d\l{}ugo\-falowe
+    mody modyfikuj\k{a}ce dynamik\k{e} na du\.zych skalach.
+  \item \textbf{Ciemna materia}: TGP jest kompatybilna
+    z~istnieniem cz\k{a}stek ciemnej materii jako dodatkowych
+    \'zr\'ode\l{} $\rho$ w~r\'ownaniu pola.
+\end{enumerate}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Sektor Efimova: okno kwantowe TGP (ex32--ex46)}%
+\label{ssec:efimov-sector}
+% -------------------------------------------------------------------
+
+Tr\'ojcia\l{}owe stany zwi\k{a}zane skali Plancka istniej\k{a} tylko w~w\k{a}skim
+oknie masy pola przestrzenno\'sci $m_{\rm sp}$.
+W~sektorze Efimova TGP \textbf{jednostk\k{a} naturaln\k{a}} jest $\ell_{\rm Pl}^{-1}$
+(odwrotno\'s\'c d\l{}ugo\'sci Plancka), a~energie podajemy w~$E_{\rm Pl}$.
+
+\begin{remark}[Korekcja Jacobiego 1D $\to$ 2D]%
+\label{rem:jacobi-2d-correction}
+Pierwotny skan (ex23--ex31) u\.zywa\l{} \textbf{jednej} wsp\'o\l{}rz\k{e}dnej Jacobiego
+(odleg\l{}o\'s\'c \'sroda ci\k{e}\.zko\'sci para--trzecia masa),
+co zawy\.za\l{}o energi\k{e} fundamentaln\k{a} o~sta\l{} offsetu.
+Skrypt ex32 wprowadzi\l{} pe\l{}ne \textbf{2D wsp\'o\l{}rz\k{e}dne Jacobiego}
+$(R_{\rm Jac},\, r_{\rm Jac})$, co da\l{}o systematyczn\k{a} korekt\k{e}
+$\Delta E \approx +0.08\,E_{\rm Pl}$ w~g\'ornym brzegu okna.
+\end{remark}
+
+\begin{table}[ht]
+\caption{Por\'ownanie skan\'ow 1D i~2D okna Efimova TGP.
+Podano $E_{\rm fund}$ (energia fundamentalna stanu tr\'ojcia\l{}owego)
+i~status okna kwantowego $\mathcal{W}$
+w~funkcji $m_{\rm sp}$ [$\ell_{\rm Pl}^{-1}$].}
+\label{tab:efimov-1d-vs-2d}
+\begin{center}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Skrypt & Wsp\'o\l{}rz\k{e}dne & $m_{\rm sp}^{\rm min}$ &
+  $m_{\rm sp}^{\rm max}$ & $\Delta E$ (korekta) & Uwagi \\
+\midrule
+ex23--ex31 & 1D (Jacobi) & $0.076$ & $0.120$ & --- & Wst\k{e}pny skan \\
+ex32--ex33 & 2D (pe\l{}ne) & $0.000$ & $0.105$ & $+0.08\,E_{\rm Pl}$ & Korekta geometryczna \\
+ex34 & 2D, g\k{e}ste & $0.000$ & $0.0831$ & $+0.08\,E_{\rm Pl}$ & Izosceles, zaw\k{e}\.zone \\
+\textbf{ex46} & \textbf{2D, full} & $\mathbf{0.000}$ & $\mathbf{0.0831}$ &
+  $\mathbf{+0.08\,E_{\rm Pl}}$ & \textbf{K13: potwierdzone} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{remark}[Wyniki ex46: potwierdzenie K13]%
+\label{rem:ex46-k13}
+Pe\l{}ny skan 2D geometrii izosceles (ex46) wykaza\l{},
+\.ze dla \emph{ca\l{}ego} okna $m_{\rm sp} \in (0,\, 0.0831)\,\ell_{\rm Pl}^{-1}$
+zachodzi:
+\begin{equation}\label{eq:k13-result}
+  C_Q^{(2B)} \gg C_{\rm Pl},
+\end{equation}
+tj.\ kwantowa amplituda dwucia\l{}owa jest \textbf{pomijalna}
+wobec tr\'ojcia\l{}owej.
+Stany Efimova TGP s\k{a} wi\k{e}c nieredukowalnie tr\'ojcia\l{}owe
+--- kill-shot K13 \textbf{ZAMKNI\k{E}TY}.
+
+Okno kwantowe (finalne):
+\begin{equation}\label{eq:efimov-window}
+  \boxed{m_{\rm sp} \in \bigl(0,\; 0.0831\bigr)\,\ell_{\rm Pl}^{-1}},
+\end{equation}
+niezale\.znie od sektora FDM
+(rozdzielone o~$\sim\!50$ rz\k{e}d\'ow wielko\'sci energii).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Sektor FDM: solitony TGP jako ciemna materia (ex35--ex44)}%
+\label{ssec:fdm-sector}
+% -------------------------------------------------------------------
+
+\begin{remark}[Dwa niezale\.zne sektory N-body TGP]%
+\label{rem:two-sectors}
+Poprzednia analiza (uwaga~\ref{rem:physical-gamma-rotation}) dotyczy\l{}a
+\emph{planckowskiego} sektora N-body ($m_{\rm sp} \sim 0.1\,l_{\rm Pl}^{-1}$,
+skala Efimova). Sesja obliczeniowa ex35--ex44 odkry\l{}a \textbf{drugi
+niezale\.zny sektor} tego samego formalizmu~--- sektor FDM
+(Fuzzy Dark Matter), w~kt\'orym $m_{\rm sp}$ przyjmuje warto\'s\'c
+galaktyczn\k{a}:
+\begin{equation}
+  m_{\rm sp}^{\rm FDM} = \sqrt{\gamma} \approx 8.2\times10^{-51}\,l_{\rm Pl}^{-1}
+  \;\Longleftrightarrow\;
+  m_{\rm boson} \approx 10^{-22}\;\mathrm{eV}.
+\end{equation}
+Paradoks r\'o\.znicy $\sim 50$ rz\k{e}d\'ow wielko\'sci mi\k{e}dzy
+sektorami \textbf{jest rozwi\k{a}zany}: oba wynikaj\k{a} z~tego samego
+pola $\Phi$ przy \'sci\'sle zdeterminowanym $m_{\rm sp} = \sqrt{\gamma}$
+(N0-6), lecz opisuj\k{a} fizyk\k{e} na zupe\l{}nie r\'o\.znych skalach
+energii.
+\end{remark}
+
+\begin{proposition}[Soliton TGP-FDM i~profil Schive'a]%
+\label{prop:soliton-schive}
+W~sektorze FDM minimalna konfiguracja energetyczna pola $\Phi$
+tworzy \textbf{soliton kwantowy} (j\k{a}dro solitonowe galaktyki).
+Promie\'n rdzenia solitonu jest wyznaczony przez relacj\k{e}
+Schive'a~(2014):
+\begin{equation}\label{eq:schive-rc}
+  r_c = \frac{1.61}{m_{22}}
+    \left(\frac{M_{\rm sol}}{10^9\,M_\odot}\right)^{-1/3}\;\mathrm{kpc},
+\end{equation}
+gdzie $m_{22} = m_{\rm boson}/(10^{-22}\;\mathrm{eV})$ i~$M_{\rm sol}$
+to masa j\k{a}dra solitonowego. Scenariusz F3 (jeden parametr
+$m_{\rm sp} = \mathrm{const}$) przewiduje:
+\begin{equation}\label{eq:rc-vs-Mgal}
+  \boxed{r_c \propto M_{\rm gal}^{-1/9}}
+  \quad\bigl[\alpha_{\rm F3} = -\tfrac{1}{9} \approx -0.111\bigr].
+\end{equation}
+\end{proposition}
+
+\begin{remark}[Kill-shot K18: weryfikacja SPARC+THINGS+LITTLE THINGS]%
+\label{rem:k18-verification}
+Skalowanie~\eqref{eq:rc-vs-Mgal} zosta\l{}o przetestowane na
+$n = 75$ galaktykach (SPARC + THINGS + LITTLE THINGS, skrypt
+\texttt{ex43}):
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Pr\'oba & $n$ & $\alpha_{\rm obs}$ & $\Delta{\rm AIC}({\rm F1{-}F3})$
+  & Status F3 \\
+\midrule
+SPARC (ex41) & 30 & $-0.096\pm0.028$ & $+133$ & OK ($0.5\sigma$) \\
+THINGS (ex43) & 25 & $-0.084\pm0.020$ & $+169$ & OK ($1.4\sigma$) \\
+\textbf{Pe\l{}na (ex43)} & \textbf{75} & $\mathbf{-0.086\pm0.021}$
+  & $\mathbf{+515}$ & \textbf{OK ($1.2\sigma$)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+Scenariusz F1 ($\alpha = -1$) wykluczony na \textbf{44.6\,$\sigma$}.
+Napi\k{e}cie spirale/kar\l{}owe (5.2\,$\sigma$) wyja\'snione
+feedbackiem barionowym (\texttt{ex44}):
+\begin{equation}
+  r_c \propto M_{\rm gal}^{-1/9}\cdot (f_{\rm bar}/f_0)^{0.127},
+  \quad M_{\rm break} = 5.1\times10^9\,M_\odot,
+\end{equation}
+co \textbf{nie falsyfikuje F3}, lecz dodaje poprawk\k{e} barionow\k{a}
+przewidywan\k{a} teoretycznie (Di~Cintio+2014).
+\end{remark}
+
+\begin{remark}[Falsyfikowalno\'s\'c cz\l{}onu tr\'ojcia\l{}owego]
+Niezale\.znie od kwestii galaktycznej, nieredukowalne si\l{}y
+tr\'ojcia\l{}owe~\eqref{eq:V3-main} s\k{a} \textbf{test owaln\k{a}
+predykcj\k{a}} TGP w~uk\l{}adach o~du\.zym $C$:
+\begin{enumerate}[nosep]
+  \item Korekta tr\'ojcia\l{}owa zale\.zy od \textbf{geometrii}
+    konfiguracji (kszta\l{}tu tr\'ojk\k{a}ta), nie tylko
+    od odleg\l{}o\'sci par.
+  \item W~uk\l{}adach potr\'ojnych (tr\'ojki gwiazd,
+    uk\l{}ady planetarne z~trzema masami) efekt jest zasadniczo
+    r\'o\.zny od samych poprawek parowych.
+  \item Pomiar wymagalby precyzji $\delta a/a \sim C \cdot
+    \gamma d \sim 10^{-3}$ w~uk\l{}adach o~$C \sim 0.3$,
+    $d \sim 1/\sqrt{\gamma}$.
+\end{enumerate}
+\end{remark}

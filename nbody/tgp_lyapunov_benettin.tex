@@ -1,0 +1,113 @@
+% tgp_lyapunov_benettin.tex — fragment do \input z katalogu nbody/
+% Współgra z implementacją Python: lyapunov.py, examples/ex148–ex194.
+%
+% Zakładamy drugi rząd w postaci przyspieszenia $\mathbf a_i=\mathbf F_i/C_i$
+% (masa źródłowa $C_i$, jak w \texttt{tgp\_nbody\_lagrangian\_eom.tex}).
+
+\paragraph{Styczna i wykładniki Lapunowa (Benettin).}
+Niech stan fazowy to $(\mathbf x,\mathbf v)\in\mathbb R^{6N}$ (pozycje i prędkości
+wszystkich ciał). Rozwinięcie liniowe wzdłuż trajektorii:
+\[
+  \delta\dot{\mathbf x}=\delta\mathbf v,\qquad
+  \delta\dot{\mathbf v}= \mathbf J(\mathbf x)\,\delta\mathbf x,
+  \qquad
+  J_{i\alpha,j\beta}=\frac{\partial a_{i,\alpha}}{\partial x_{j,\beta}}.
+\]
+Algorytm Benettina: propagacja wektora stycznego (lub $k$ wektorów z ortogonalizacją
+\texttt{QR}), okresowa renorma $\|\delta\|\to 1$, akumulacja $\sum\log\|\delta\|$.
+Szacunek $\lambda_{\max}\approx T^{-1}\sum\log\|\delta\|$ (i analogicznie pierwsze
+$k$ wykładników z diagonalą $R$ po \texttt{QR}).
+
+\paragraph{Symplektyczna baza (leapfrog + styczna).}
+Dla układu potencjalnego Hamiltonowskiego naturalna jest mapa Velocity Verlet
+(leapfrog) na $(\mathbf x,\mathbf v)$ ze sprzężoną \emph{dyskretną} ewolucją
+$(\delta\mathbf x,\delta\mathbf v)$ (dwie ewaluacje $\mathbf J$ na krok).
+Przy pełnym spektrum $6N$ wykładników i tej bazie suma średnich wykładników
+bywa numerycznie bliska zeru (zachowanie objętości w przestrzeni fazowej),
+w przeciwieństwie do sprzężenia tej samej stycznej z klasycznym RK4 na rozszerzonym
+ODE — por.\ \texttt{ex153} (domyślnie leapfrog; flaga \texttt{--rk4}).
+
+\paragraph{Matched $H$ na Burrau: orbita Benettina, leapfrog i RK45.}
+\texttt{ex178} (oraz CSV \texttt{ex186}, skan \texttt{ex188}) podaje
+$\lambda_{\max}$ z Benettina sprzężonego z \emph{tą samą} mapą leapfrog, która
+wyznacza trajektorię nośną i krok czasu --- to jest obiekt \textbf{dyskretny}
+(siatka + renorma stycznej), nawet przy symplektycznym kroku.
+Rodzina ``matched $H$'': jeden stan Newtona $(\mathbf x,\mathbf v{=}0)$ z
+$H{=}H_N$ oraz trzy gałęzie TGP, w których prędkości dobiera się tak, by w
+\emph{własnym} potencjale było $H{=}H_N$ --- porównania są więc na wspólnym
+skalowaniu energetycznym, lecz punkty w $\mathbb R^{12}$ różnią się między
+backendami (\texttt{ex174}--\texttt{ex177}).
+\texttt{ex190} mierzy $|{\Delta E}/{E_0}|$ na \emph{tej samej} parze
+\texttt{(acc, pot)} co leapfrog (\texttt{matched\_h\_family\_leapfrog\_branches}
+w \texttt{ex178}); przy matched-$H$ prędkości bywają większe niż przy $v{=}0$,
+więc dryf energii na skończonym $h$ może rosnąć szybciej niż w \texttt{ex167}
+(mimo celowo krótkiego okna w regresji).
+\texttt{ex191} startuje z tych samych $(\mathbf x_0,\mathbf v_0)$, lecz całkuje
+\textbf{ciągły} układ Hamiltona DOP853: na krótkim $t_{\mathrm{final}}$ typowo
+\texttt{success=True} i bardzo małe $|{\Delta E}/{E_0}|$ dla TGP --- to referencja
+dla przepływu Hamiltona, \textbf{nie} dla orbity użytej w Benettinie na siatce LF.
+Przy \textbf{długim} horyzoncie (\texttt{ex152}, \texttt{ex164}) \texttt{solve\_ivp}
+często zwraca \texttt{success=False} przy zbliżeniach Burrau, mimo nadal małych
+wartości $|{\Delta E}/{E_0}|$ na zadanych \texttt{t\_eval} --- inny reżim błędu
+niż gwałtowny wzrost $|{\Delta E}/{E_0}|$ leapfroga na matched-$H$ poza krótkim
+oknem \texttt{ex190}.
+Skrypt \texttt{ex192} drukuje obie kolumny (\texttt{ex190}/\texttt{ex191}) przy
+\textbf{wspólnym} $t_{\mathrm{final}}$ dla bezpośredniego porównania liczbowego;
+\texttt{ex193} zapisuje te same liczby do CSV, \texttt{ex194} je odczytuje i waliduje.
+
+\paragraph{Główny wynik: tłumienie chaosu przez TGP (synteza P1).}
+Przy stałym $G_{\rm Newton}=4\pi$ (tak, by $V_{\rm TGP}^{(2)}\!\approx\! -4\pi C_i C_j/d$
+reprodukował Newtona w limicie $\beta\to0$), energię kinetyczną TGP dobieramy
+tak, by $H_{\rm TGP}=H_{\rm Newton}$ (\texttt{scale\_velocities\_match\_energy}
+lub \texttt{random\_velocities\_for\_excess\_energy} z ustalonym ziarnem RNG).
+Na tej wspólnej powłoce energetycznej $\lambda_{\max}^{\rm TGP}/\lambda_{\max}^{\rm Newton}$
+mierzy, czy TGP tłumi chaos.
+
+\emph{Skan $\beta$ przy IC Burrau} (\texttt{ex200}, $V_2{+}V_3$,
+\texttt{yukawa\_feynman}): 9/10 punktów $\beta$ daje \textsc{suppress}
+($\lambda_{\max}^{\rm TGP}<\lambda_{\max}^{\rm Newton}$); $\beta_{\rm crit}\approx 0.025$.
+Typowe stłumienie 35--45\% (ratio 0.52--0.65 dla $\beta=0.05$--$0.35$).
+Z samym $V_2$ (\texttt{pairwise}): $\beta_{\rm crit}\approx 0.042$ ---
+składnik trójciałowy $V_3$ \textbf{obniża próg o $\sim 40\%$}.
+
+\emph{Zależność od warunków początkowych} (\texttt{ex207}):
+IC Burrau (bliskie przejścia) --- 75\% SUPPRESS;
+IC trójkąta równobocznego (symetria) --- 0\% SUPPRESS.
+Mechanizm: tłumienie nie wynika z bariery $d_{\rm rep}$ (nie istnieje
+dla typowych $C$, wymagałaby $\beta\gg1$), lecz z \textbf{efektywnego
+złagodzenia potencjału} przy bliskich przejściach (człony $V_2{+}V_3$
+o wyższych potęgach $1/d$). Symetryczne IC nie wchodzą w reżim
+bliskich przejść --- stąd brak tłumienia.
+
+\emph{Widmo Lapunowa} (\texttt{ex208}, $k{=}18{=}6N$):
+$|\Sigma\lambda_i|\sim 10^{-13}$ (dokładna zachowawczość hamiltoniańska);
+parowanie $\lambda_i+\lambda_{18-i}\approx 0$ przybliżone przy krótkim $T$
+(wymaga $T\geq 4$); stosunek $\lambda_{\max}^{\rm TGP}/\lambda_{\max}^{\rm Newton}$
+zbieżny od $T=2$.
+
+\emph{Reżim $V_3/V_2$} (\texttt{ex209}):
+w zakresie Lapunowskim ($\beta=0.02$--$0.35$, $m_{\rm sp}d\sim 0.3$--$1.0$)
+stosunek $|V_3/V_2|\approx 0.8$--$1\%$ --- perturbacyjny, lecz wystarczający,
+by obniżyć $\beta_{\rm crit}$. Geometrie zwarte (bliskie przejścia)
+amplifikują $V_3/V_2$ siedmiokrotnie względem rozciągniętych.
+
+\medskip\noindent\textbf{Zastrzeżenia.}
+(i)~Horyzont $t_{\rm final}\leq 6$ (Benettin na leapfrog); wyniki skończenoczasowe.
+(ii)~IC Burrau $v{=}0$ wymaga losowych prędkości do dopasowania $H$ --- orbit zależy
+od ziarna RNG (ustalono seed 200 dla powtarzalności).
+(iii)~Przy dłuższych horyzontach $|{\Delta E}/{E_0}|$ leapfroga rośnie
+(\texttt{ex167}, \texttt{ex190}); RK45 daje \texttt{success=False} przy
+bliskich przejściach (\texttt{ex164}).
+Predykcja: \emph{TGP tłumi chaos 3-ciałowy o 35--45\% dla $\beta\gtrsim 0.025$
+przy IC z bliskimi przejściami; efekt jest IC-zależny i wzmocniony przez $V_3$.}
+
+\paragraph{Implementacja i regresja.}
+Moduł \texttt{nbody/lyapunov.py}: m.in.\
+\texttt{largest\_lyapunov\_exponent\_benettin},
+\texttt{largest\_lyapunov\_exponent\_benettin\_leapfrog},
+\texttt{lyapunov\_spectrum\_benettin},
+\texttt{lyapunov\_spectrum\_benettin\_leapfrog},
+oraz jawny $\mathbf J$ dla Newtona ze \texttt{softening}:
+\texttt{acceleration\_jacobian\_newton\_softened}.
+Skrypty \texttt{ex148}--\texttt{ex194} (m.in.\ \texttt{yukawa\_feynman}, \texttt{ex161} $d_{\mathrm{rep}}$, \texttt{ex162}--\texttt{ex166} Jacobian / okno / siatka CSV, \texttt{ex167} krotki test $|{\Delta E}/{E_0}|$ leapfroga, \texttt{ex168} interpretacja CSV \texttt{ex166}, \texttt{ex169} LF FD vs analityczny $J$ (Yukawa), \texttt{ex170}--\texttt{ex172} suma spektrum $6N$, \texttt{ex173} pairwise spektrum FD vs analityczny $J$, \texttt{ex174} Newton vs Yukawa Feynman przy dopasowanej energii, \texttt{ex175} trzy hamiltoniany Yukawa na Burrau $x$, \texttt{ex176} Newton vs Coulomb $3b$ przy dopasowanej energii, \texttt{ex177} Newton vs pairwise $V_2$ przy dopasowanej energii, \texttt{ex178} tabela Newton + trzy TGP przy dopasowanej energii, \texttt{ex179} trzy hamiltoniany Coulomb na Burrau $x$, \texttt{ex180} trzy hamiltoniany pairwise na Burrau $x$, \texttt{ex181} siedem wierszy $v{=}0$ vs $H{=}H_N$, \texttt{ex182} eksport CSV jak \texttt{ex181}, \texttt{ex183} odczyt CSV \texttt{ex182}, \texttt{ex184} skan $t_{\mathrm{final}}$, \texttt{ex185} odczyt CSV \texttt{ex184}, \texttt{ex186} CSV jak \texttt{ex178}, \texttt{ex187} odczyt CSV \texttt{ex186}, \texttt{ex188} skan $t_{\mathrm{final}}$ matched-$H$, \texttt{ex189} odczyt CSV \texttt{ex188}, \texttt{ex190} krótki $|{\Delta E}/{E_0}|$ leapfroga matched-$H$, \texttt{ex191} krótki RK45/DOP853 diagnostyka energii matched-$H$, \texttt{ex192} tabela LF vs RK przy wspólnym $t_{\mathrm{final}}$, \texttt{ex193} CSV jak \texttt{ex192}, \texttt{ex194} odczyt CSV \texttt{ex193}) oraz
+\texttt{examples/verify\_nbody\_lyapunov\_quick.py} (\texttt{--quick}).

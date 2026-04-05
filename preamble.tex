@@ -1,0 +1,74 @@
+% ============================================================
+% TGP v1 — Preambuła
+% Teoria Generowanej Przestrzeni: materia jako źródło przestrzeni
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newunicodechar}
+\newunicodechar{✓}{\ensuremath{\checkmark}}
+\newunicodechar{✗}{\ensuremath{\times}}
+\newunicodechar{△}{\ensuremath{\triangle}}
+\newunicodechar{★}{\ensuremath{\bigstar}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{Φ}{\ensuremath{\varPhi}}
+\newunicodechar{₀}{\ensuremath{_0}}
+\newunicodechar{₁}{\ensuremath{_1}}
+\newunicodechar{₂}{\ensuremath{_2}}
+\newunicodechar{₃}{\ensuremath{_3}}
+\newunicodechar{₄}{\ensuremath{_4}}
+\usepackage{tikz}
+\usetikzlibrary{arrows,arrows.meta,positioning,calc}
+\usepackage[polish]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}   % \xleftrightarrow, \xrightarrow z etykietą
+\usepackage[hidelinks]{hyperref}
+% Fix: \k{} (polskie znaki) w tytulach sekcji nie psuje bookmarkow PDF
+\pdfstringdefDisableCommands{\let\k\@gobble}
+\usepackage{geometry}
+\usepackage{longtable,booktabs,tabularx,array}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\geometry{margin=2.3cm}
+
+% --- Status twierdzeń TGP ---
+\newcommand{\statuslabel}[1]{\textbf{[#1]}}  % etykieta logiczna: [Aksjomat], [Hipoteza], ...
+
+% --- Symbole TGP ---
+\renewcommand{\Phi}{\varPhi}            % pole generujące przestrzeń
+\newcommand{\PhiZero}{\varPhi_0}        % wartość próżniowa / odniesienia
+\newcommand{\Nzero}{N_0}               % absolutna nicość
+\newcommand{\Ffield}{\mathcal{F}}       % funkcja stanu (miara asymetrii)
+\newcommand{\Floc}{\mathcal{F}_{\mathrm{loc}}}
+\newcommand{\Srel}{S_{\mathrm{rel}}}    % entropia relacyjna
+\newcommand{\GN}{G_{\mathrm{N}}}
+\newcommand{\lP}{\ell_{\mathrm{P}}}
+\newcommand{\Zp}{\mathbb{Z}_2}
+
+% --- Otoczenia (angielskie nazwy) ---
+\newtheorem{axiom}{Aksjomat}
+\newtheorem{definition}[axiom]{Definicja}
+\newtheorem{theorem}[axiom]{Twierdzenie}
+\newtheorem{proposition}[axiom]{Stwierdzenie}
+\newtheorem{lemma}[axiom]{Lemat}
+\newtheorem{corollary}[axiom]{Wniosek}
+\newtheorem{remark}[axiom]{Uwaga}
+\newtheorem{hypothesis}[axiom]{Hipoteza}
+\newtheorem{problem}[axiom]{Problem otwarty}
+\newtheorem{result}[axiom]{Wynik numeryczny}
+\newtheorem{chain}[axiom]{Krok}
+\newtheorem{observation}[axiom]{Obserwacja}
+\newtheorem{openproblem}[axiom]{Problem T-OP}
+
+% --- Aliasy polskie (kompatybilność z plikami używającymi polskich nazw) ---
+\newenvironment{twierdzenie}{\begin{theorem}}{\end{theorem}}
+\newenvironment{lemat}{\begin{lemma}}{\end{lemma}}
+\newenvironment{hipoteza}{\begin{hypothesis}}{\end{hypothesis}}
+\newenvironment{propozycja}{\begin{proposition}}{\end{proposition}}
+\newenvironment{definicja}{\begin{definition}}{\end{definition}}
+\newenvironment{uwaga}{\begin{remark}}{\end{remark}}
+\newenvironment{wniosek}{\begin{corollary}}{\end{corollary}}
+\newenvironment{dowod}{\begin{proof}}{\end{proof}}

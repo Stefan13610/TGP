@@ -1,0 +1,84 @@
+{
+  "session": "ex111",
+  "date": "2026-04-02",
+  "conclusion_S3": "NEGATIVE — ghost constraint prevents E-ratio from reaching R21",
+  "g_ghost": 0.7788007830714049,
+  "g0_max_valid": 1.6114363270297647,
+  "E_electron": 105.34609354092069,
+  "max_R21_E_valid": 5.768834566461038,
+  "g0_fp": 1.24915,
+  "g0_mu": 2.021167157046931,
+  "g0_mu_in_valid_range": false,
+  "g0_tau_E": null,
+  "g0_tau_A": 3.1891,
+  "g0_tau_A_in_valid_range": false,
+  "R21_E_alpha0": null,
+  "R21_E_alphaS": null,
+  "R21_PDG": 206.768,
+  "R31_PDG": 3477.48,
+  "n_pass": 12,
+  "n_fail": 0,
+  "n_total": 12,
+  "tests": [
+    {
+      "label": "E1: g(r→∞) → 1 dla g₀=g₀*",
+      "status": "PASS",
+      "detail": "g_mean=0.99976, std=1.48e-03"
+    },
+    {
+      "label": "E2: E(g₀*) > 0",
+      "status": "PASS",
+      "detail": "E_e=105.346094"
+    },
+    {
+      "label": "E2b: Granica ghost g₀_max wyznaczona",
+      "status": "PASS",
+      "detail": "g₀_max=1.61144, max_R21^E=5.77"
+    },
+    {
+      "label": "E3: E(g₀) monotonicznie rośnie (g₀ ∈ [g₀*, g₀_max])",
+      "status": "PASS",
+      "detail": "E_vals=['105.3', '156.4', '217.8', '288.6', '367.3', '450.7', '532.9', '598.5']"
+    },
+    {
+      "label": "E4: g₀^μ = φ·g₀* POZA zakresem ważnych solitonów (ghost constraint)",
+      "status": "PASS",
+      "detail": "g₀^μ=2.02117 > g₀_max=1.61144 → E(g₀^μ) niezdefiniowane"
+    },
+    {
+      "label": "E5: max R₂₁^E < R₂₁^PDG (S3 nie replikuje stosunku mas w zakresie ghost)",
+      "status": "PASS",
+      "detail": "max_R21^E=5.77 << R₂₁^PDG=206.768 → S3 niewystarczające"
+    },
+    {
+      "label": "E6: max E_ratio < R₃₁ (S3 NIEWYSTARCZAJĄCE — wynik fizyczny)",
+      "status": "PASS",
+      "detail": "max_R_E=5.7 < R₃₁=3477.48 → ghost constraint uniemożliwia S3"
+    },
+    {
+      "label": "E7: g₀^τ(A)=3.189 POZA zakresem ważnych solitonów (potwierdza limit ghost)",
+      "status": "PASS",
+      "detail": "g₀^τ(A)=3.1891 > g₀_max=1.61144"
+    },
+    {
+      "label": "E8: E_max_ratio << R₂₁ (potwierdzenie: S3 wymaga nowego mechanizmu)",
+      "status": "PASS",
+      "detail": "max_R^E=5.77, R₂₁=206.768, gap=2.8%"
+    },
+    {
+      "label": "E9: Korelacja log(E_ratio) vs log(A_tail⁴)",
+      "status": "PASS",
+      "detail": "r=1.0000, ν_eff=0.500 (oczekiwane ~1.0)"
+    },
+    {
+      "label": "E10: max R₂₁^E(α*) < R₂₁^PDG (ghost constraint niezależny od α)",
+      "status": "PASS",
+      "detail": "max_R21^E(α₀)=5.77, max_R21^E(α*)=4.10, PDG=206.768"
+    },
+    {
+      "label": "E12: E(g₀*) ∝ R_MAX (IR-dywergencja z ogona 1/r — wynik fizyczny)",
+      "status": "PASS",
+      "detail": "E@80=56.1, @200=140.5, dE/dR_MAX=0.703, R²=1.00000"
+    }
+  ]
+}

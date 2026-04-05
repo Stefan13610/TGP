@@ -1,0 +1,648 @@
+% ===================================================================
+%  Dodatek E: Kwantyzacja pola Φ w~duchu TGP
+%  Schemat samozwrotny — bez tła przestrzennego
+% ===================================================================
+\section{Kwantyzacja pola $\Phi$: schemat samozwrotny}%
+\label{app:kwantyzacja}
+
+\subsection{Problem: dlaczego standardowa QFT nie stosuje się}%
+\label{app:E-problem}
+
+Standardowa kwantowa teoria pola (QFT) kwantuje pola
+\textbf{na danym tle przestrzennym}: wybieramy rozmaitość
+$(M, g_{\mu\nu})$, rozkładamy pole na mody normalne,
+definiujemy próżnię Focka, itp. Podejście to zakłada,
+że przestrzeń istnieje jako \emph{uprzednio dana arena}.
+
+W~TGP ta droga jest zamknięta z~przyczyn ontologicznych
+(aksjomat~\ref{ax:przestrzen}): $\Phi$ konstytuuje przestrze\'n,
+nie ,,mieszka'' na niej. Nie możemy zdefiniować próżni Focka
+dla $\Phi$ na tle metryki, która sama zależy od $\Phi$.
+
+\begin{remark}[Pętla samozwrotna]
+W~TGP zachodzi pętla:
+\[
+    \Phi \;\longrightarrow\; g_{\mu\nu}(\Phi)
+    \;\longrightarrow\; \text{kwantyzacja na tle }g
+    \;\longrightarrow\; \langle\delta\Phi^2\rangle
+    \;\longrightarrow\; \Phi.
+\]
+Pętla ta nie jest defektem --- jest \emph{istotą} teorii.
+Kwantyzacja musi być \textbf{samozwrotna}: fluktuacje $\Phi$
+muszą być zdefiniowane względem struktury generowanej przez
+samego $\Phi$.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Schemat kwantyzacji substratowej}%
+\label{app:E-scheme}
+% -------------------------------------------------------------------
+
+Zamiast kwantyzować pole $\Phi$ na przestrzeni,
+kwantyzujemy \textbf{substrat} $\Gamma = (V, E)$ ---
+obiekt fundamentalny, niezależny od metryki.
+
+\begin{definition}[Przestrzeń Hilberta substratu]%
+\label{def:hilbert-substrate}
+Przestrzenią Hilberta substratu jest:
+\begin{equation}\label{eq:H-substrate}
+    \mathcal{H}_\Gamma
+    = \bigotimes_{i \in V} \mathcal{H}_i,
+    \qquad
+    \mathcal{H}_i = L^2([-1, 1], d\sigma_i),
+\end{equation}
+gdzie $d\sigma_i$ jest miarą Lebesgue'a na stanie węzła $i$.
+Obserwable są operatorami samozwrotnymi na $\mathcal{H}_\Gamma$.
+\end{definition}
+
+Pole $\Phi$ w~tym schemacie jest \textbf{obserwalnym blokowym}:
+\begin{equation}\label{eq:Phi-observable}
+    \hat{\Phi}(x) = \frac{1}{N_B}
+    \sum_{i \in \mathcal{B}(x)} \hat{s}_i^2
+    \;\in\; \mathcal{B}(\mathcal{H}_\Gamma).
+\end{equation}
+
+\begin{proposition}[Próżnia substratowa]\label{prop:substrate-vacuum}
+Próżnia TGP jest \textbf{stanem termalnym substratu}
+w~fazie metrycznej ($T < T_c$):
+\begin{equation}\label{eq:vacuum-thermal}
+    |0_{\mathrm{TGP}}\rangle
+    \equiv \rho_0
+    = \frac{e^{-H_\Gamma/k_B T_{\mathrm{sub}}}}
+           {\mathrm{Tr}\,e^{-H_\Gamma/k_B T_{\mathrm{sub}}}},
+    \qquad T_{\mathrm{sub}} < T_c.
+\end{equation}
+Wartość oczekiwana:
+$\langle\hat{\Phi}(x)\rangle_{\rho_0} = \PhiZero = v^2$
+(par.\ porządku), co odpowiada jednorodnej próżni TGP.
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Propagator kwantowy pola $\Phi$}%
+\label{app:E-propagator}
+% -------------------------------------------------------------------
+
+\begin{definition}[Fluktuacja substratowa]\label{def:Phi-fluct}
+Fluktuacją kwantową pola $\Phi$ nazywamy:
+\begin{equation}\label{eq:delta-Phi}
+    \delta\hat{\Phi}(x)
+    = \hat{\Phi}(x) - \PhiZero,
+\end{equation}
+z~operatorem $\hat{\Phi}(x)$ określonym przez~\eqref{eq:Phi-observable}.
+\end{definition}
+
+\begin{theorem}[Propagator kwantowy TGP]\label{thm:propagator}
+W~granicy ciągłej i~w~przybliżeniu gaussowskim (drugie pochodne
+działania) propagator Feynmana dla $\delta\Phi$ wynosi:
+\begin{equation}\label{eq:propagator}
+    G_\Phi(x, y)
+    = \langle T[\delta\hat{\Phi}(x)\,\delta\hat{\Phi}(y)]\rangle_{\rho_0}
+    = \int \frac{d^4k}{(2\pi)^4}\;
+      \frac{i}{k^2 - m_{\mathrm{sp}}^2 + i\epsilon}\;
+      e^{ik(x-y)},
+\end{equation}
+gdzie $m_{\mathrm{sp}}^2 = \gamma > 0$ jest masą efektywną
+z~stw.~\ref{prop:vacuum-stability}.
+\end{theorem}
+
+\begin{proof}
+Gaussowska aproksymacja działania wokół $\Phi = \PhiZero$
+(zlinearyzowane równanie pola, stw.~\ref{prop:vacuum-stability})
+daje działanie Kleina--Gordona:
+\begin{equation}
+    S_{\mathrm{KG}}[\delta\Phi]
+    = \frac{1}{2}\int\!\left[
+        (\partial_\mu\delta\Phi)^2
+        - m_{\mathrm{sp}}^2\,(\delta\Phi)^2
+    \right]\sqrt{-g}\,d^4x,
+\end{equation}
+z~$g_{\mu\nu} = \eta_{\mu\nu}$ w~przybliżeniu płaskiej próżni.
+Standardowy propagator Klein--Gordona daje~\eqref{eq:propagator}.
+Masa $m_{\mathrm{sp}}^2 = \gamma > 0$ zapewnia biegun rzeczywisty
+(masywne kwanty przestrzeni).
+\end{proof}
+
+\begin{remark}[Propagator samozwrotny]\label{rem:self-ref-prop}
+Propagator~\eqref{eq:propagator} jest zdefiniowany na \emph{płaskim}
+tle $\eta_{\mu\nu}$ --- to jest \textbf{przybliżenie}: zakłada,
+że fluktuacje $\delta\Phi$ są małe i~nie zmieniają metryki.
+Pełna teoria wymaga iteracyjnego schematu:
+\begin{enumerate}[nosep]
+    \item Startujemy z~$g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$.
+    \item Obliczamy propagator $G_\Phi^{(0)}(x,y)$.
+    \item Obliczamy wkład pętlowy do $\langle\Phi\rangle$:
+          $\delta\Phi^{(1)} = \hbar \cdot G_\Phi^{(0)}(x,x)$.
+    \item Aktualizujemy metrykę: $g^{(1)}_{\mu\nu}[\Phi^{(0)}
+          + \delta\Phi^{(1)}]$.
+    \item Powtarzamy aż do zbieżności.
+\end{enumerate}
+Na poziomie zera pętlowego ($\hbar \to 0$) odzyskujemy klasyczne
+równania TGP. Na poziomie jednej pętli pojawiają się kwantowe
+korekcje do $\Phi$, $\Lambda_{\mathrm{eff}}$ i~stałych sprzężenia.
+\end{remark}
+
+\begin{proposition}[Pierwsza iteracja schematu samozwrotnego]%
+\label{prop:first-iteration}
+Jawny wynik \textbf{pierwszej iteracji} (n=1) schematu
+z~uwagi~\ref{rem:self-ref-prop}:
+
+\medskip
+\noindent\textbf{(1) Propagator zerowego rzędu.}
+Na tle $g_{\mu\nu}^{(0)} = \eta_{\mu\nu}$, po obróceniu Wicka
+($k^0 \to ik_E^0$) propagator euklidesowy:
+\begin{equation}\label{eq:prop-eucl}
+    G_\Phi^{(0)}(x,x)\big|_{\mathrm{E}}
+    = \int_0^{\Lambda_{\mathrm{UV}}} \frac{d^4k_E}{(2\pi)^4}
+      \frac{1}{k_E^2 + m_{\mathrm{sp}}^2}
+    = \frac{1}{16\pi^2}
+      \left[\Lambda_{\mathrm{UV}}^2 - m_{\mathrm{sp}}^2\,
+      \ln\!\left(\frac{\Lambda_{\mathrm{UV}}^2}{m_{\mathrm{sp}}^2} + 1\right)\right],
+\end{equation}
+z~$\Lambda_{\mathrm{UV}} = \lP^{-1}$ i~$m_{\mathrm{sp}}^2 = \gamma$.
+W~granicy $\Lambda_{\mathrm{UV}} \gg m_{\mathrm{sp}}$:
+\begin{equation}\label{eq:prop-approx}
+    G_\Phi^{(0)}(x,x)\big|_{\mathrm{reg}}
+    \approx \frac{\lP^{-2}}{16\pi^2}
+    - \frac{\gamma}{16\pi^2}\ln\!\frac{1}{\gamma\lP^2}.
+\end{equation}
+
+\noindent\textbf{(2) Kwantowa korekcja do próżni $\Phi$.}
+Pierwszy iteracyjny wkład do średniej wartości pola:
+\begin{equation}\label{eq:Phi-1st-corr}
+    \delta\Phi^{(1)} = \hbar_0\,G_\Phi^{(0)}(x,x)\big|_{\mathrm{reg}}
+    \approx \frac{\hbar_0\,\lP^{-2}}{16\pi^2}
+    \left[1 - \gamma\lP^2\ln\!\frac{1}{\gamma\lP^2}\right].
+\end{equation}
+Wyrażenie $\gamma\lP^2 \sim 10^{-52}\times 10^{-70} = 10^{-122} \ll 1$,
+więc człon logarytmiczny jest pomijalny, a~$\delta\Phi^{(1)}
+\approx \hbar_0\lP^{-2}/(16\pi^2)$.
+
+\noindent\textbf{(3) Zaktualizowana metryka.}
+Z~hipotezy~\ref{hyp:metric-exp}: $g_{\mu\nu}^{(1)} =
+g_{\mu\nu}[\PhiZero + \delta\Phi^{(1)}]$.
+Perturbacja $\delta\Phi^{(1)}/\PhiZero \sim \hbar_0 \lP^{-2}/(16\pi^2\PhiZero)
+\sim \lP^{-2}/\PhiZero \cdot \hbar_0$.
+W~jednostkach Plancka ($\hbar_0 = 1$, $\lP = 1$):
+$\delta\Phi^{(1)}/\PhiZero \sim 1/(16\pi^2\PhiZero) \sim 10^{-3}$.
+Korekcja metryczna jest zatem supresowana przez $1/(16\pi^2\PhiZero)$.
+
+\noindent\textbf{(4) Korekcja do stałej kosmologicznej.}
+Z~propozycji~\ref{prop:loop-Lambda}: korekcja pętlowa jest
+$\delta\Lambda^{(1)} = \frac{m_{\mathrm{sp}}^2}{2}
+G_\Phi^{(0)}(x,x)|_{\mathrm{reg}} \approx
+\frac{\gamma}{32\pi^2}\left[\lP^{-2} - \gamma\ln({\lP^{-2}/\gamma})\right]$.
+Dominuje człon $\frac{\gamma\lP^{-2}}{32\pi^2}$, ale:
+\begin{equation}\label{eq:dLambda-ratio}
+    \frac{\delta\Lambda^{(1)}}{\Lambda_{\mathrm{eff}}}
+    = \frac{\gamma\lP^{-2}/(32\pi^2)}{\gamma/12}
+    = \frac{12}{32\pi^2\lP^2\cdot 1}
+    \approx \frac{12}{32\pi^2} \cdot \frac{1}{\lP^2\cdot\gamma^{-1}}\,.
+\end{equation}
+Ponieważ $\lP^2 \cdot \gamma = \lP^2 \cdot \Lambda_{\mathrm{obs}} \sim 10^{-122}$,
+stąd $\delta\Lambda^{(1)}/\Lambda_{\mathrm{eff}} \sim 12\lP^{-2}/(32\pi^2) \cdot \lP^2/\Lambda_{\mathrm{obs}}^{-1}$
+--- i~powracamy do problemu hierarchii, \textbf{chyba że} przyjmiemy,
+że $\Lambda_{\mathrm{UV}}^{\mathrm{eff}} = \sqrt{\gamma}$ (cięcie IR,
+nie UV), co jest spójne z~masą pola:
+\begin{equation}\label{eq:IR-cutoff-argue}
+    \Lambda_{\mathrm{UV}}^{\mathrm{eff}} \to m_{\mathrm{sp}} = \sqrt{\gamma},
+    \qquad
+    \delta\Lambda^{(1)}_{\mathrm{IR}}
+    = \frac{\gamma}{32\pi^2}\cdot\gamma\cdot
+    [\text{logarytm}] \propto \gamma^2.
+\end{equation}
+Ta subtelność --- wybór skali regulatora --- jest
+\textbf{otwartym problemem~O15}: pełna iteracyjna zbieżność
+schematu samozwrotnego wymaga rachunku z~nieperturbatywnym
+obcięciem na skali substratowej.
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Regularyzacja: naturalna obcięcie w~$\lP$}%
+\label{app:E-cutoff}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Naturalny cutoff kwantowy]\label{thm:natural-cutoff}
+W~TGP nie potrzeba zewnętrznego parametru regularyzacyjnego.
+Naturalnym cutoffem UV jest \textbf{skala Plancka}
+$\Lambda_{\mathrm{UV}} = \lP^{-1}$, wynikająca ze skali kratowej
+substratu:
+\begin{equation}\label{eq:UV-cutoff}
+    a_{\mathrm{sub}} = \lP
+    \;\;\Longrightarrow\;\;
+    \Lambda_{\mathrm{UV}}^{-1} = \lP = \sqrt{\frac{\hbar_0 G_0}{c_0^3}}.
+\end{equation}
+Twierdzenie~\ref{thm:lP} gwarantuje, że $\lP$ jest stałą ---
+cutoff jest \textbf{absolutny}, nie zależy od $\Phi$.
+\end{theorem}
+
+\begin{proof}
+Substrat $\Gamma$ ma skala kratową $a_{\mathrm{sub}}$.
+Coarse-graining ($a_{\mathrm{sub}} \to 0$ w~granicy ciągłej)
+jest cutoffem dla teorii efektywnej $\Phi$.
+Identyfikacja $a_{\mathrm{sub}} = \lP$ wymaga trzech kroków:
+
+\textbf{(i) Dlaczego jakaś stała skala?}
+Twierdzenie~\ref{thm:lP}: $\lP = \sqrt{\hbar_0 G_0/c_0^3}$ jest
+\textbf{stałą} w~TGP, ponieważ iloraz $\hbar_0 G_0/c_0^3$ nie zależy
+od $\Phi$ (stałe $\hbar_0$, $G_0$, $c_0$ są wartościami referencyjnymi,
+a~$\lP$ jest przez nie skonstruowana jako kombinacja niezmiennicza
+skalowania $\Phi$-zależnego, por.\ sekcja~\ref{sec:stale}).
+Substrat musi mieć \emph{jakąś} stałą skalę kratową --- fizyka
+mikro-substratu jest odcięta od dynamiki makroskopowej $\Phi$.
+
+\textbf{(ii) Dlaczego $a_{\mathrm{sub}} = \lP$, a~nie inna wartość?}
+W~grawitacji kwantowej (pętlowej, strunowej, spinowych pianach)
+skala dyskretu przestrzennego jest niezmienniczo związana z~$\lP$
+przez warunek, że elementy objętości substratu mają minimalną
+nieredukowalną objętość $\sim \lP^3$.
+W~TGP: $\Phi > 0$ oznacza istnienie przestrzeni; minimalne
+nieredukowalne $\delta\Phi = \PhiZero \cdot (\lP/a_{\mathrm{sub}})^3$
+przy $\lP = a_{\mathrm{sub}}$ daje $\delta\Phi \sim \PhiZero$ ---
+kwant przestrzenności rzędu jeden (bezwymiarowy), co jest
+spójne z~próżniowym $\PhiZero \approx 25$.
+
+\textbf{(iii) Brak dodatkowego skali.}
+Inne stałe długości w~TGP (np.\ $m_{\mathrm{sp}}^{-1} = \gamma^{-1/2}
+\sim 3\;\mathrm{Mpc}$) są dynamiczne i~kosmologiczne --- nie mogą
+być skalą kratową mikro-fizyki. Jedyną pozostałą skalą jest~$\lP$.
+
+Wniosek: $a_{\mathrm{sub}} = \lP$, co daje~\eqref{eq:UV-cutoff}.
+\end{proof}
+
+\begin{corollary}[Skończona renormalizacja]\label{cor:finite-renorm}
+Przy cutoffie $\Lambda_{\mathrm{UV}} = \lP^{-1}$:
+\begin{enumerate}[nosep]
+    \item Dywergencje pętlowe są \textbf{mocami} $\lP^{-n}$,
+          a~nie $\infty$ --- wszystkie całki są skończone.
+    \item Renormalizowane parametry (masy, stałe sprzężenia)
+          absorbują poprawki pętlowe w~skalę $\lP$ --- zgodnie
+          z~standardową renormalizacją efektywną.
+    \item Nie ma problemu hierarchii w~tradycyjnym sensie:
+          $m_H^2 / m_{\mathrm{Planck}}^2 \sim v_W^2/\lP^{-2}$
+          jest pytaniem o~substratowe parametry $\lambda_0, v$,
+          nie o~fine-tuning.
+\end{enumerate}
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Korekcje kwantowe do stałej kosmologicznej}%
+\label{app:E-cosmconst}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Wkład pętlowy do $\Lambda_{\mathrm{eff}}$]%
+\label{prop:loop-Lambda}
+Jednoopętlowy wkład kwantów $\Phi$ do efektywnej stałej
+kosmologicznej:
+\begin{equation}\label{eq:loop-Lambda}
+    \delta\Lambda^{(1)}
+    = \frac{1}{2}\,m_{\mathrm{sp}}^2\,
+      G_\Phi(x,x)\big|_{\mathrm{reg}}
+    = \frac{m_{\mathrm{sp}}^2}{8\pi^2}
+      \left[\Lambda_{\mathrm{UV}}^2 - m_{\mathrm{sp}}^2
+      \ln\frac{\Lambda_{\mathrm{UV}}^2}{m_{\mathrm{sp}}^2}\right],
+\end{equation}
+gdzie $\Lambda_{\mathrm{UV}} = \lP^{-1}$ i~$m_{\mathrm{sp}}^2 = \gamma$.
+\end{proposition}
+
+\begin{remark}[Naturalność $\Lambda_{\mathrm{eff}}$ w~TGP]%
+\label{rem:naturalness}
+Podstawiając $m_{\mathrm{sp}}^2 = \gamma \sim H_0^2/c_0^2
+\sim 10^{-52}\;\mathrm{m}^{-2}$
+i~$\Lambda_{\mathrm{UV}}^2 = \lP^{-2} \sim 10^{70}\;\mathrm{m}^{-2}$:
+\begin{equation}
+    \delta\Lambda^{(1)}
+    \sim \frac{\gamma}{\lP^2} \cdot \frac{\lP^2}{8\pi^2}
+    = \frac{\gamma}{8\pi^2}
+    \approx \frac{10^{-52}}{80} \;\mathrm{m}^{-2},
+\end{equation}
+co jest rzędu obserwowanego $\Lambda_{\mathrm{obs}}$!
+
+\textbf{Kluczowe}: w~TGP nie ma problemu hierarchii
+$10^{122}$ między $\Lambda_{\mathrm{QFT}}$ a~$\Lambda_{\mathrm{obs}}$
+dlatego, że:
+\begin{itemize}[nosep]
+    \item Masa pola $\Phi$ to $m_{\mathrm{sp}}^2 = \gamma$ ---
+          ta sama stała, która wyznacza $\Lambda_{\mathrm{eff}} = \gamma/12$.
+    \item Wkład pętlowy~\eqref{eq:loop-Lambda} jest
+          \textbf{proporcjonalny do} $\gamma$, nie do $\lP^{-2}$.
+    \item Kwanty $\Phi$ (fonony przestrzenności) mają masę
+          wyznaczoną przez $\Lambda_{\mathrm{eff}}$, nie przez skalę
+          Plancka --- to jest samospójna pętla, nie fine-tuning.
+\end{itemize}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Stany wzbudzone: fonony przestrzenności}%
+\label{app:E-phonons}
+% -------------------------------------------------------------------
+
+\begin{definition}[Fonon przestrzenności]\label{def:phonon}
+\textbf{Fononem przestrzenności} nazywamy kwant fluktuacji
+pola $\Phi$ wokół próżni $\PhiZero$:
+\begin{equation}\label{eq:phonon-state}
+    |k\rangle_\Phi = \hat{a}^\dagger(k)|0_{\mathrm{TGP}}\rangle,
+    \qquad
+    \hat{a}^\dagger(k) = \int \frac{d^3x}{(2\pi)^3}
+    e^{-ikx}\,\hat{a}^\dagger_{\mathbf{k}},
+\end{equation}
+z~relacją dyspersji:
+\begin{equation}\label{eq:phonon-dispersion}
+    \omega_k^2 = c_0^2\,\mathbf{k}^2 + m_{\mathrm{sp}}^2\,c_0^4,
+    \qquad
+    m_{\mathrm{sp}} = \sqrt{\gamma}\,\frac{\hbar_0 c_0}{l_{\mathrm{sp}}}
+    \;\sim\; \frac{\hbar_0 H_0}{c_0},
+\end{equation}
+gdzie $l_{\mathrm{sp}} = 1/\sqrt{\gamma} \approx R_H$
+(zasięg Yukawy~\ref{eq:lambda-Yukawa}).
+\end{definition}
+
+\begin{remark}[Ultralekie fonony]
+Masa fononu przestrzenności:
+$m_{\mathrm{sp}}\,c^2 \sim \hbar\,H_0 \sim 10^{-33}\;\mathrm{eV}$
+--- ekstremalne ultralekkie. Jest to naturalny kandydat na
+\textbf{emergentną ciemną energię}: zbiorowe wzbudzenia
+pola przestrzenności mają masę wyznaczoną przez $H_0$,
+co tłumaczy zbieżność skali ciemnej energii ze skalą Hubble'a
+(problem coincidence, hyp.~\ref{hyp:coincidence}).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Diagram Feynmana: TGP jako QFT samozwrotna}%
+\label{app:E-feynman}
+% -------------------------------------------------------------------
+
+\begin{remark}[Reguły Feynmana TGP]\label{rem:feynman-rules}
+Diagramy Feynmana dla TGP mają niestandardową interpretację:
+\begin{enumerate}[nosep]
+    \item \textbf{Propagator fononu} $\Phi$: linia przerywana,
+          wartość $G_\Phi(k) = i/(k^2 - \gamma + i\epsilon)$.
+    \item \textbf{Vertex wierzchołkowy} $\Phi^3$ (kubiczny):
+          wynika z~członu $\beta\Phi^3/\PhiZero^2$, siła
+          sprzężenia $\sim \beta/\PhiZero$.
+    \item \textbf{Vertex kwartyczny} $\Phi^4$:
+          wynika z~$-\gamma\Phi^4/\PhiZero^3$,
+          siła $\sim \gamma/\PhiZero^2$.
+    \item \textbf{Sprzężenie z~materią}: vertex $\Phi$--materia
+          wynika z~członu źródłowego $q\rho$ w~równaniu pola;
+          amplituda $\sim q$.
+    \item \textbf{Fotony / bozony cechowania}: linie ciągłe
+          z~propagatorem standardowym, ale na tle efektywnym
+          $g_{\mu\nu}(\Phi)$.
+\end{enumerate}
+
+\textbf{Niestandardowość}: w~standardowej QFT na tle grawitacyjnym
+linie materii i~grawitony są rozdzielone. W~TGP \emph{nie ma}
+,,grawitonu'': propagatorem grawitacji jest sam propagator $\Phi$.
+Foton $A_\mu$ propaguje na tle $g_{\mu\nu}(\Phi)$, które zależy
+od $\Phi$ --- dlatego diagramy $\Phi$-$A_\mu$ mogą generować
+niekonwencjonalne korekcje do propagacji fotonu.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Problem otwarty: pełna kwantyzacja}%
+\label{app:E-open}
+% -------------------------------------------------------------------
+
+\begin{problem}[Kwantyzacja pola $\Phi$ --- OTWARTY]%
+\label{prob:kwantyzacja}
+Niniejszy dodatek dostarcza:
+\begin{enumerate}[nosep]
+    \item \textbf{Schemat}: kwantyzacja substratu jako przestrzeni
+          Hilberta $\mathcal{H}_\Gamma$.
+    \item \textbf{Propagator} w~przybliżeniu gaussowskim.
+    \item \textbf{Cutoff}: $\lP$ jako skala kratowa.
+    \item \textbf{Korekcje pętlowe} do $\Lambda_{\mathrm{eff}}$.
+\end{enumerate}
+Pozostaje otwarte:
+\begin{itemize}[nosep]
+    \item Pełna teoria perturbacji (wyższe pętle,
+          wkłady nieperturbacyjne instantonów substratowych).
+    \item Samospójna iteracja $\Phi \to g_{\mu\nu} \to G_\Phi
+          \to \delta\langle\Phi\rangle \to g_{\mu\nu}$
+          (problem O15).
+    \item Unitarność: czy $S$-macierz TGP jest unitarna
+          mimo samozwrotności?
+    \item Statystyki: fermiony w~TGP jako topologiczne defekty
+          --- czy statystyki Fermiego--Diraca wynikają
+          z~topologii profilu radialnego (prob.~\ref{prob:fermion-full})?
+\end{itemize}
+To jest \textbf{program otwartej kwantyzacji TGP} (O15).
+\end{problem}
+
+% -------------------------------------------------------------------
+\subsection{Cz\k{a}stki wirtualne w~TGP (O11)}%
+\label{app:E-virtual}
+% -------------------------------------------------------------------
+
+\begin{definition}[Cz\k{a}stka wirtualna w~TGP]\label{def:virtual-particle}
+\textbf{Cz\k{a}stk\k{a} wirtualn\k{a}} nazywamy lokaln\k{a} fluktuacj\k{e}
+pola $\Phi$ poni\.zej progu pr\'o\.zni, tj.\ zdarzenie
+\begin{equation}\label{eq:virtual-condition}
+    \Phi(\mathbf{x}, t) < \PhiZero
+    \quad \Longleftrightarrow \quad
+    \chi(\mathbf{x}, t) < 1,
+\end{equation}
+kt\'ore jest czasowo-przestrzennie ograniczone
+(ograniczone do obszaru $|\Delta\mathbf{x}| \lesssim \Delta t \cdot c_0$)
+i~nie rozprzestrzenia si\k{e} asymptotycznie jako stan rzeczywisty.
+
+Geometrycznie: fluktuacja $\chi < 1$ odpowiada lokalnej
+\emph{nicości} zanurzanej w~przestrzeni~---
+fragmentowi fazy $\mathcal{S}_0$
+zanurzanemu chwilowo w~substrat fazy $\mathcal{S}_1$.
+\end{definition}
+
+\begin{remark}[Interpretacja i~por\'ownanie ze standardow\k{a} QFT]
+\label{rem:virtual-comparison}
+W standardowej QFT cz\k{a}stki wirtualne s\k{a} wewn\k{e}trznymi
+liniami diagram\'ow Feynmana --- formalnym narz\k{e}dziem
+rachunkowym, bez interpretacji fizycznej.
+
+W~TGP uzyskuj\k{a} \textbf{bezpo\'sredni\k{a} interpretacj\k{e} ontologiczn\k{a}}:
+\begin{enumerate}[nosep]
+    \item \textbf{Wirtualny foton} ($\Phi < \PhiZero$ w~obszarze
+          mi\k{e}dzy \l{}adunkami): lokalna redukcja g\k{e}sto\'sci
+          przestrzenno\'sci transmituje oddzia\l{}ywanie.
+    \item \textbf{Masy wirtualne}: fluktuacja $\chi < 1$ powoduje
+          $c(\Phi) > c_0$ (prawo ax.~\ref{ax:c}),
+          $G(\Phi) < G_0$ (ax.~\ref{ax:G}) ---
+          cz\k{a}stka wirtualna zmienia lokalnie prawa fizyki.
+    \item \textbf{Czas \.zycia}: z~zasady nieoznaczono\'sci w~TGP
+          $\Delta t \cdot \Delta E \sim \hbar_0$,
+          przy czym $\hbar_0$ jest g\'orn\k{a} granic\k{a} produktu
+          (emergentne $\hbar(\Phi) \leq \hbar_0$).
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}[Warunek istnienia cz\k{a}stki wirtualnej]\label{prop:virtual-existence}
+Fluktuacja $\chi < 1$ jest dynamicznie dozwolona,
+gdy energia fluktuacji spe\l{}nia:
+\begin{equation}\label{eq:virtual-energy}
+    \delta E \;=\; \int_{\delta V}
+    \Bigl[U(\chi) - U(1)\Bigr]\,d^3x
+    \;\approx\; \PhiZero^2\!\int_{\delta V}
+    \frac{(\chi-1)^2}{2}\Bigl(\gamma - \beta\Bigr)\,d^3x
+    \;\leq\; \frac{\hbar_0}{\Delta t},
+\end{equation}
+gdzie $\delta V$ to obj\k{e}to\'s\'c fluktuacji,
+a~warunek $\gamma > \beta$ zapewnia,
+\.ze pr\'o\.znia $\chi=1$ jest \emph{lokalnym minimum} potencjalu
+(co jest spe\l{}nione przy naturalnych WP:
+$\gamma = \beta$ daje stan brzegin; $\gamma > \beta$ --- stabil.).
+\end{proposition}
+
+\begin{remark}[Status O11]
+Powy\.zsza definicja i~propozycja stanowi\k{a} \textbf{cz\k{e}\'sciowe zamkni\k{e}cie}
+problemu O11.
+Otwarte pozostaje: pe\l{}na rachunkowp\'os\'c diagram\'ow Feynmana
+z~wirtualnymi cz\k{a}stkami, w~szczeg\'olno\'sci obliczenie
+korekcji do oddzia\l{}ywania Coulomba i~Youkawy z~u\.zyciem
+regu\l{} sekcji~\ref{app:E-feynman}
+w~bazie ontologicznej TGP.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Spin-$\tfrac{1}{2}$ z~topologii kinku --- szkic (II.A)}%
+\label{app:E-spin-half}
+% Sesja v32, 2026-03-24 --- zadanie II.A planu \texttt{PLAN\_ROZWOJU\_v1}
+% -------------------------------------------------------------------
+
+Niniejsza sekcja zawiera \textbf{szkic formalizmu} prowadz\k{a}cy
+do spin-$\tfrac{1}{2}$ i~statystyk Fermiego--Diraca z~topologii
+solitonu TGP.
+Jest to odpowied\'z na problem~\ref{prob:fermion-full}
+(por.\ prob.~\ref{prob:kwantyzacja}, sekcja~\ref{app:E-open}).
+
+\begin{definition}[Przestrze\'n konfiguracyjna solitonu TGP]%
+\label{def:kink-config-space}
+\textbf{Przestrzeni\k{a} konfiguracyjn\k{a}} solitonu TGP nazywamy:
+\begin{equation}\label{eq:kink-config}
+  \mathcal{C}_{\mathrm{sol}}
+  \;:=\;
+  \bigl\{
+    \varphi : \mathbb{R}^3 \to [0,\infty)
+    \;\big|\;
+    \varphi(0) = 0,\;
+    \varphi(\infty) = 1,\;
+    \text{sferycznie symetryczna}
+  \bigr\} \!\big/ \!\sim,
+\end{equation}
+gdzie $\sim$ oznacza r\'ownowa\.zno\'s\'c przez ci\k{a}g\l{}e deformacje
+zachowuj\k{a}ce warunki brzegowe.
+Rozr\'o\.zniamy dwie klasy (por.\ def.~\ref{prop:kink-chirality}):
+\begin{itemize}[nosep]
+  \item \textbf{Kink}: $\varphi$ ro\'snie monotonicznie od $0$ do $1$;
+  \item \textbf{Antykink}: transformacja $\varphi \to 2 - \varphi$
+    (zamiana centrum i~pr\'o\.zni).
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Indeks topologiczny kinku i~spin-$\tfrac{1}{2}$
+  --- szkic]%
+\label{prop:kink-spin-half}
+Nast\k{e}puj\k{a}cy ci\k{a}g argument\'ow prowadzi do wniosku,
+\.ze kink TGP niesie \textbf{spin-$\tfrac{1}{2}$}:
+\begin{enumerate}[(S1)]
+  \item \textbf{$\mathbb{Z}_2$-symetria substratu.}
+    Hamiltoniano substratu~\eqref{eq:B-H} jest niezmienniczy
+    wzgl\k{e}dem globalnej $\hat{s}_i \to -\hat{s}_i$.
+    W~fazie uporzadkowanej $\langle\hat{s}^2\rangle \neq 0$:
+    symetria spontanicznie z\l{}amana, lecz \emph{nieobserwowalna}
+    dla $\Phi = \langle\hat{s}^2\rangle$ ($\mathbb{Z}_2$-parzyste).
+
+  \item \textbf{Reprezentacja spinorowa.}
+    Zmienne substratowe $\hat{s}_i$ transformuj\k{a} si\k{e}
+    w~reprezentacji podw\'ojnej $SU(2) \twoheadrightarrow SO(3)$.
+    Obrót o~$2\pi$ daje
+    \begin{equation}\label{eq:Z2-rotation}
+      R_{2\pi}|\Psi_{\mathrm{sub}}\rangle
+      \;=\; (-1)^{N_s}\,|\Psi_{\mathrm{sub}}\rangle,
+    \end{equation}
+    gdzie $N_s$ jest liczb\k{a} w\k{e}z\l{}\'ow solitonu.
+
+  \item \textbf{Homotopia przestrzeni konfiguracyjnej.}
+    Po kompaktyfikacji ($\mathbb{R}^3 \cup \{\infty\} \cong S^3$)
+    i~redukcji do symetrii sferycznych:
+    \begin{equation}\label{eq:pi1-config}
+      \pi_1(\mathcal{C}_{\mathrm{sol}}) \;=\; \mathbb{Z}_2.
+    \end{equation}
+    Nietrywialny element $\mathbb{Z}_2$ to p\k{e}tla obrotu
+    o~$2\pi$ niecofalaj\k{a}ca si\k{e} do punktu
+    (analogia Diraca: ska\'nca\l{}a wolna lina).
+
+  \item \textbf{Znak stanu kinku.}
+    Z~(S1)--(S3): przy obrocie o~$2\pi$ wok\'o\l{} dowolnej osi
+    \begin{equation}\label{eq:kink-sign}
+      \boxed{
+        R_{2\pi}|\mathrm{kink}\rangle \;=\; -|\mathrm{kink}\rangle.
+      }
+    \end{equation}
+    To jest w\l{}asno\'s\'c definiuj\k{a}ca \textbf{spin-$\tfrac{1}{2}$}.
+
+  \item \textbf{Statystyki Fermiego--Diraca.}
+    Wymiana dw\'och identycznych kink\'ow
+    = obrót jednego o~$2\pi$ wzgl\k{e}dem drugiego.
+    Z~\eqref{eq:kink-sign}:
+    \begin{equation}\label{eq:exchange-sign}
+      |\mathrm{kink}_1,\mathrm{kink}_2\rangle
+      \;\xrightarrow{\text{wymiana}}\;
+      -|\mathrm{kink}_2,\mathrm{kink}_1\rangle,
+    \end{equation}
+    sk\k{a}d \textbf{zasada Pauliego} i~statystyki FD.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Chiralno\'s\'c z~asymetrii kink--antykink]%
+\label{prop:kink-chirality}
+Kink i~antykink TGP tworz\k{a} dwie nierównoważne klasy
+chiralne:
+\begin{enumerate}[(C1)]
+  \item \textbf{Kink-L} ($\varphi{:}\;0\!\to\!1$, profil narastaj\k{a}cy):
+    odpowiada lewoskr\k{e}tno\'sci;
+  \item \textbf{Kink-R} (antykink, $\tilde\varphi = 2-\varphi$):
+    profil malej\k{a}cy od centrum,
+    odpowiada prawoskr\k{e}tno\'sci.
+\end{enumerate}
+Asymetria pochodzi z~braku symetrii $\varphi \leftrightarrow 2-\varphi$
+w~potencjale:
+\begin{equation}\label{eq:chirality-asymmetry}
+  U(\varphi) = \tfrac{\beta}{3}\varphi^3 - \tfrac{\gamma}{4}\varphi^4
+  \;\;\not\equiv\;\;
+  U(2-\varphi)
+  \quad (\varphi \neq 1),
+\end{equation}
+co prowadzi do \textbf{chiralnego podzia\l{}u mas}
+$m_L \neq m_R$ --- zal\k{a}\.zek mechanizmu Higgsa w~TGP.
+\end{proposition}
+
+\begin{problem}[Fermiony w~TGP: program pe\l{}nego wyprowadzenia]%
+\label{prob:fermion-full}
+Szkic tw.~\ref{prop:kink-spin-half}--\ref{prop:kink-chirality}
+identyfikuje mechanizm.
+Do pe\l{}nego zamkni\k{e}cia potrzebne s\k{a}:
+\begin{enumerate}[nosep]
+  \item Jawna kwantyzacja funkcjona\l{}u stanu solitonu
+    w~$\mathcal{H}_\Gamma$ (def.~\ref{def:hilbert-substrate});
+  \item Formalny dow\'od $\pi_1(\mathcal{C}_{\mathrm{sol}}) = \mathbb{Z}_2$
+    dla sferycznie symetrycznych kink\'ow 3D;
+  \item Twierdzenie spin--statystyki ze struktury
+    algebry substratowej (\S\ref{app:E-scheme});
+  \item Numeryczne obliczenie $m_L/m_R$ z~$U(\varphi)$.
+\end{enumerate}
+\textit{Status v32}: szkic jako\'sciowy zamkniety;
+pe\l{}ne wyprowadzenie --- program Fazy~II.A
+(\texttt{PLAN\_ROZWOJU\_v1}).
+\end{problem}
+
+\begin{remark}[Trzy generacje a~poziomy WKB]%
+\label{rem:generations-wkb}
+Trzy pokolenia fermion\'ow w~TGP odpowiadaj\k{a}
+poziomom WKB solitonu: $n = 0, 1, 2$.
+Ka\.zdy poziom niesie spin-$\tfrac{1}{2}$
+z~tw.~\ref{prop:kink-spin-half} (niezale\.znie od~$n$).
+Masy generacji wyznaczane s\k{a} przez warunek WKB
+(\S\ref{sek05_pokolenia}), chiralny podzia\l{}
+przez tw.~\ref{prop:kink-chirality}.
+\textbf{Wniosek}: jednakowy spin wszystkich trzech generacji
+jest konsekwencj\k{a} topologii, nie koincydencj\k{a}.
+\end{remark}

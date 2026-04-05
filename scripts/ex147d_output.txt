@@ -1,0 +1,43 @@
+=================================================================
+ex147d: Actual TGP ODE vs Substrate versions
+  TGP:   g'' + (2/r)g' + (2/g)(g')^2 = g^2 - g^3
+  Sub1:  g'' + (2/r)g' + (1/g)(g')^2 = g^2 - g^3
+  Sub2:  g'' + (2/r)g' + (1/g)(g')^2 = (g^2-g^3)/g^2
+=================================================================
+
+  g0       r21_TGP      r21_sub1     r21_sub2
+----------------------------------------------------------
+  1.100          FAIL        7287.8       10214.0
+  1.112          FAIL        5529.4        7245.9
+  1.124          FAIL        4425.4        5374.7
+  1.136          FAIL        3712.3        4133.2
+  1.148          FAIL        3253.4        3274.6
+  1.160          FAIL        2977.8        2660.0
+  1.172          FAIL        2855.5        2207.4
+  1.184          FAIL        2892.0        1865.8
+  1.197          FAIL        3146.2        1602.7
+  1.209          FAIL        3799.2        1396.5
+  1.221          FAIL        5472.0        1232.6
+  1.233          FAIL       16770.0        1100.8
+  1.245          FAIL          FAIL         993.7
+  1.257          FAIL          FAIL         906.3
+  1.269          FAIL          FAIL         834.8
+  1.281          FAIL          FAIL         776.7
+  1.293          FAIL          FAIL         730.0
+  1.305          FAIL          FAIL         694.1
+  1.317          FAIL          FAIL         669.0
+  1.329          FAIL          FAIL         656.8
+  1.341          FAIL          FAIL         664.0
+  1.353          FAIL          FAIL         717.6
+  1.366          FAIL          FAIL          FAIL
+  1.378          FAIL          FAIL          FAIL
+  1.390          FAIL          FAIL          FAIL
+  1.402          FAIL          FAIL          FAIL
+  1.414          FAIL          FAIL          FAIL
+  1.426          FAIL          FAIL          FAIL
+  1.438          FAIL          FAIL          FAIL
+  1.450          FAIL          FAIL          FAIL
+
+--- Fine scan TGP near phi-FP ---
+
+[DONE]

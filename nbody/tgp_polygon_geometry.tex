@@ -1,0 +1,188 @@
+\section{Polygon binding: N=3, 4, 5 bodies}
+\label{sec:polygon_geometry}
+
+\subsection{Setup}
+
+We compare regular $N$-polygon clusters — equilateral triangle ($N=3$),
+square ($N=4$), and regular pentagon ($N=5$) — each parameterised by the
+nearest-neighbour side length $d$.  For each geometry the effective energy is
+
+\begin{equation}
+  E_{\rm eff}(d;\,C,m_{\rm sp}) = \underbrace{\frac{N}{8d^2}}_{\rm ZP}
+  + V_2(d;\,C,m_{\rm sp})
+  + V_3(d;\,C,m_{\rm sp}),
+\end{equation}
+
+with the same zero-point convention ${\rm ZP}=N/(8d^2)$,
+two-body sum $V_2 = -C^2\sum_{\rm pairs} e^{-m_{\rm sp}r_{ij}}/r_{ij}$,
+and three-body sum $V_3 = -C^3\sum_{\rm triples} I_Y(r_{ij},r_{ik},r_{jk};\,m_{\rm sp})$.
+
+\paragraph{Pentagon geometry.}
+For $N=5$ with side $d$ the golden ratio $\varphi = 2\cos(\pi/5)\approx1.618$
+gives the two distinct inter-vertex distances:
+\begin{align}
+  &\text{5 adjacent pairs:}&&r = d, \\
+  &\text{5 diagonal pairs:} &&r = \varphi d.
+\end{align}
+The $\binom{5}{3}=10$ triples split into two classes:
+\begin{align}
+  &\text{Type A (consecutive, 5):}&&(d,\;d,\;\varphi d), \\
+  &\text{Type B (skip-one, 5):}   &&(d,\;\varphi d,\;\varphi d).
+\end{align}
+
+\subsection{Binding energies at \texorpdfstring{$C=0.155$}{C=0.155}}
+
+Table~\ref{tab:polygon_binding} compares the classical energy minimum
+for $m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$ at the midpoint of the equilateral
+3B-only window.
+
+\begin{table}[h]
+\centering
+\caption{Binding energies for regular $N$-gons.
+$m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$, $C=0.155$.
+$E_{\rm min}^{(2B)}$ uses ZP+$V_2$ only; $E_{\rm min}^{(2B+3B)}$ adds $V_3$.}
+\label{tab:polygon_binding}
+\begin{tabular}{rllrrrrl}
+\hline
+$N$ & Geometry & Triples & $E_{\rm min}^{(2B)}$ & $E_{\rm min}^{(3B)}$
+    & $d_{\rm eq}$ & $V_3/V_2$ & Bound? \\
+    &          & $\binom{N}{3}$ & $[E_{\rm Pl}]$ & $[E_{\rm Pl}]$
+    & $[l_{\rm Pl}]$ & & \\
+\hline
+3 & Equilateral & 1  & $+3.6\times10^{-4}$ & $-7.1\times10^{-3}$ & 4.52 & 1.51 & YES \\
+4 & Square      & 4  & $+4.5\times10^{-4}$ & $-6.9\times10^{-2}$ & 2.42 & 2.74 & YES \\
+5 & Pentagon    & 10 & $+3.6\times10^{-4}$ & $-2.3\times10^{-1}$ & 1.69 & 3.76 & YES \\
+\hline
+\end{tabular}
+\end{table}
+
+All three geometries are in the 3B-only window at $C=0.155$: the
+two-body energy is positive (pairs unbound) while the full
+two-body+three-body energy is negative (cluster bound).  The binding
+energy grows by a factor $\sim32$ from $N=3$ to $N=5$.
+
+\paragraph{Physical origin.}
+The dramatic growth comes from two cooperating effects:
+\begin{enumerate}
+\item \textbf{More triples}: $\binom{N}{3}$ grows as $N^3/6$, giving
+  $1\to4\to10$ for $N=3,4,5$.
+\item \textbf{Shorter equilibrium separation}: $d_{\rm eq}$ decreases from
+  $4.5\to2.4\to1.7\,l_{\rm Pl}$, pushing the cluster deeper into the
+  high-$I_Y$ short-distance regime.
+\end{enumerate}
+The $V_3/V_2$ ratio — a measure of three-body dominance — rises from
+$1.5$ to $3.8$, confirming that the cluster becomes progressively more
+``three-body driven'' as $N$ increases.
+
+\subsection{Critical coupling thresholds}
+
+\begin{table}[h]
+\centering
+\caption{Classical critical couplings and 3B-only windows for regular
+$N$-gons at $m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$.
+$C_{\rm Pl}=0.282$ lies outside all classical windows for this $m_{\rm sp}$.}
+\label{tab:polygon_windows}
+\begin{tabular}{rlllll}
+\hline
+$N$ & Geometry & $C_{\rm cl}^{(2B)}$ & $C_{\rm cl}^{(3B)}$ & $\Delta C$ &
+$C_{\rm Pl}$ in? \\
+\hline
+3 & Equilateral & 0.184 & 0.128 & 0.057 & no \\
+4 & Square      & 0.166 & 0.102 & 0.064 & no \\
+5 & Pentagon    & 0.159 & 0.091 & 0.068 & no \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+\textbf{Key trend:} both thresholds \emph{decrease} with $N$, because
+a larger cluster has more 3-body interactions.  Specifically:
+\begin{itemize}
+\item $C_{\rm cl}^{(3B)}$ decreases from $0.128\to0.102\to0.091$:
+  it takes less coupling per triple to bind a larger polygon.
+\item $C_{\rm cl}^{(2B)}$ also decreases ($0.184\to0.166\to0.159$)
+  because the additional Yukawa pairs in larger polygons aid two-body
+  binding.
+\item The window width $\Delta C$ \emph{increases} slightly:
+  $0.057\to0.064\to0.068$.
+\end{itemize}
+
+The 3B-only window \emph{shifts downward} as $N$ increases.
+At $m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$, the window lies in
+$C\in(0.091,\,0.184)$ for any of the three polygon types,
+but $C_{\rm Pl}=0.282$ lies well above $C_{\rm cl}^{(2B)}$ for all $N$.
+This means that at the Planck coupling \emph{all} polygon geometries
+have their pairs classically bound; the purely-three-body classical window
+does not extend to $C_{\rm Pl}$ for $m_{\rm sp}=0.1$.
+
+\subsection{Pentagon Feynman integrals}
+
+At the pentagon equilibrium ($d_{\rm eq}=1.69\,l_{\rm Pl}$, $C=0.155$):
+\begin{align}
+  I_Y^{(A)}(d,d,\varphi d) &= 10.16, \\
+  I_Y^{(B)}(d,\varphi d,\varphi d) &= 8.77, \\
+  \sum_{\rm triples} I_Y &= 5\times10.16 + 5\times8.77 = 94.7.
+\end{align}
+For comparison, the equilateral triangle at its equilibrium
+($d_{\rm eq}=4.52\,l_{\rm Pl}$) gives $I_Y(d,d,d)=4.10$.
+The pentagon integral is larger primarily because $d_{\rm eq}$ is smaller
+(shorter-range Yukawa is stronger at close range).
+
+\subsection{Comparison at \texorpdfstring{$C=C_{\rm Pl}$}{C=C\_Pl}}
+
+At $C_{\rm Pl}=0.282$, all pair energies are negative; there is no
+3B-only classical window.  However, the absolute binding energy grows
+dramatically:
+
+\begin{table}[h]
+\centering
+\caption{Binding energies at $C=C_{\rm Pl}=0.282$,
+$m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$.  All geometries are classically bound
+(pairs also bind), so no Efimov-type 3B-only window exists at this coupling.}
+\label{tab:polygon_cpl}
+\begin{tabular}{rlll}
+\hline
+$N$ & Geometry & $E_{\rm min}^{(2B)}$ $[E_{\rm Pl}]$ &
+$E_{\rm min}^{(2B+3B)}$ $[E_{\rm Pl}]$ \\
+\hline
+3 & Equilateral & $-0.018$ & $-0.265$ \\
+4 & Square      & $-0.051$ & $-1.350$ \\
+5 & Pentagon    & $-0.096$ & $-3.729$ \\
+\hline
+\end{tabular}
+\end{table}
+
+The 3-body contribution at $C_{\rm Pl}$ dominates: pentagon binding
+($-3.73\,E_{\rm Pl}$) is $14\times$ stronger than the equilateral
+($-0.27\,E_{\rm Pl}$), while the 2-body energy ratio is only $5\times$.
+
+\subsection{Summary}
+
+\begin{table}[h]
+\centering
+\caption{Polygon geometry comparison summary, $m_{\rm sp}=0.1\,l_{\rm Pl}^{-1}$.}
+\label{tab:polygon_summary}
+\begin{tabular}{llll}
+\hline
+Property & $N=3$ & $N=4$ & $N=5$ \\
+\hline
+\# pairs                   & 3    & 6    & 10 \\
+\# triples                 & 1    & 4    & 10 \\
+$C_{\rm cl}^{(3B)}$        & 0.128 & 0.102 & 0.091 \\
+$C_{\rm cl}^{(2B)}$        & 0.184 & 0.166 & 0.159 \\
+$\Delta C$ window          & 0.057 & 0.064 & 0.068 \\
+$d_{\rm eq}$ ($C=0.155$)   & $4.5\,l_{\rm Pl}$ & $2.4\,l_{\rm Pl}$ & $1.7\,l_{\rm Pl}$ \\
+$E_{\rm bind}$ ($C=0.155$) & $7\times10^{-3}$ & $6.9\times10^{-2}$ & $2.3\times10^{-1}$ \\
+$V_3/V_2$ ratio            & 1.51 & 2.74 & 3.76 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+\textbf{Main conclusion:} TGP three-body forces create bound polygon
+clusters for all $N=3,4,5$ in an Efimov-like 3B-only window.
+As $N$ increases: (i) the binding energy grows superlinearly ($\sim N^3$),
+(ii) the equilibrium separation shrinks, (iii) the window shifts to lower
+$C$, and (iv) three-body forces become progressively more dominant.
+The pentagon cluster is $\sim32\times$ more tightly bound than the
+equilateral triangle at the same coupling constant.

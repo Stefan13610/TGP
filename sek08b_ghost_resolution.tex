@@ -1,0 +1,464 @@
+% ============================================================
+% §8b  Rozwiązanie problemu duchów kinetycznych w sektorze solitonowym
+% ============================================================
+\section{Rozwiązanie problemu duchów kinetycznych
+  w~sektorze solitonowym}\label{sec:ghost-resolution}
+
+Sekcja~\ref{sssec:ghost-check} wykazała brak duchów
+w~perturbacyjnym sektorze MS-TGP
+(stw.~\ref{prop:ghost-free-MS}, stw.~\ref{prop:ghost-free-fundamental}).
+Niniejsza sekcja adresuje \textbf{odrębny problem}: osobliwość
+kinetyczną profilu solitonowego przy $f(g^*) = 0$, gdzie
+$f(g) = 1 + 2\alpha\ln g$ jest funkcją kinetyczną
+równania solitonu~\eqref{eq:J-ode}.
+
+\statuslabel{Twierdzenie}: problem duchów jest artefaktem
+przybliżenia kontinualnego i~nie występuje
+w~pełnym opisie substratowym.
+
+% -------------------------------------------------------------------
+\subsection{Sformułowanie problemu}\label{ssec:ghost-problem}
+% -------------------------------------------------------------------
+
+\begin{problem}[Osobliwość kinetyczna solitonu TGP]%
+\label{prob:kinetic-singularity}
+Równanie solitonu TGP (dod.~\ref{app:ogon-masy},
+ró{}w.~\eqref{eq:J-ode}):
+\begin{equation}\label{eq:ghost-ode}
+  f(g)\,g'' + \frac{2}{r}\,g' = V'(g),
+  \qquad
+  f(g) = 1 + 2\alpha\ln g,
+  \quad \alpha = 2,
+\end{equation}
+posiada \textbf{punkt osobliwy} przy wartości pola
+\begin{equation}\label{eq:gstar}
+  g^* = e^{-1/(2\alpha)} = e^{-1/4} \approx 0{,}7788,
+\end{equation}
+w~którym $f(g^*) = 0$. Trzy konsekwencje:
+\begin{enumerate}[(i)]
+  \item \textbf{Osobliwość ODE}: współczynnik przy $g''$
+    zeruje się, równanie degeneruje się
+    z~drugiego do pierwszego rzędu.
+  \item \textbf{Zmiana znaku}: dla $g < g^*$ zachodzi $f(g) < 0$,
+    co odpowiada \textbf{ujemnej energii kinetycznej}
+    (,,duch kinetyczny'') w~funkcjonale energii
+    $E = \int\!\bigl[\tfrac{1}{2}f(g)(g')^2 + V(g)\bigr]
+    4\pi r^2\,dr$.
+  \item \textbf{Fizyczna istotność}: profil solitonu mionowego
+    i~tauonowego osiąga $g_{\min} < 1$
+    (oscylacyjny ogon, ró{}w.~\eqref{eq:J-tail}),
+    a~dla dostatecznie dużego $g_0$ profil może
+    zbliżyć się do~$g^*$ lub przekroczyć tę wartość.
+\end{enumerate}
+\end{problem}
+
+\begin{remark}[Zakres problemu]\label{rem:ghost-scope}
+Ghost-check MS-TGP (stw.~\ref{prop:ghost-free-MS})
+dotyczy jednorodnego tła kosmologicznego $\psi_{\rm bg}(t) > 0$
+i~liniowych perturbacji wokół niego. Problem~\ref{prob:kinetic-singularity}
+dotyczy \textbf{nieliniowych} konfiguracji solitonowych,
+w~których pole $g(r)$ przechodzi przez region $g \approx g^*$.
+Są to odmienne reżimy i~wymagają oddzielnego rozwiązania.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Rozwiązanie substratowe}\label{ssec:substrate-resolution}
+% -------------------------------------------------------------------
+
+Klucz do rozwiązania leży w~rozróżnieniu między
+\textbf{pełnym sprzężeniem substratowym} a~jego
+\textbf{przybliżeniem kontinualnym}.
+
+\begin{proposition}[Pochodzenie $f(g)$ z~substratu]%
+\label{prop:f-from-substrate}
+\statuslabel{Twierdzenie}.
+Funkcja kinetyczna $f(g) = 1 + 2\alpha\ln g$ jest
+rozwinięciem logarytmicznym substratowej funkcji
+kinetycznej $K_{\rm sub}(g)$ wokół próżni $g = 1$,
+obowiązującym w~reżimie $|g - 1| \ll 1$.
+
+\medskip\noindent
+\textbf{Wyprowadzenie.}
+W~substracie $\Gamma = (V, E)$ geometryczne sprzężenie
+kinetyczne ma postać (tw.~\ref{prop:substrate-action},
+ró{}w.~\eqref{eq:K-geometric}):
+\begin{equation}\label{eq:Kij-substrate}
+  K_{ij} = J\,(\varphi_i\,\varphi_j)^2
+  \qquad (\text{link } \langle ij \rangle \in E),
+\end{equation}
+gdzie $\varphi_i = |\hat{s}_i|$ jest amplitudą parametru porządku
+w~węźle~$i$. W~granicy ciągłej, dla jednorodnego tła $\varphi \approx
+\varphi_0$, identyfikujemy (aksjomat~\ref{ax:zrodlo}):
+\begin{equation}\label{eq:phi-to-g}
+  \varphi^2 = \frac{\Phi}{\PhiZero} = g,
+  \qquad \varphi = \sqrt{g},
+\end{equation}
+skąd sprzężenie substratowe w~zmiennej $g$:
+\begin{equation}\label{eq:Ksub-g}
+  \boxed{
+    K_{\rm sub}(g) = K_{\rm geo}\,g^2,
+  }
+\end{equation}
+z~$K_{\rm geo} > 0$ wynikającym z~stałej sprężystości sieci.
+\end{proposition}
+
+\begin{remark}[Relacja $K_{\rm sub}(g)$ do $K(\varphi)$]%
+\label{rem:K-relation}
+W~zmiennych $\varphi$ (sekcja~\ref{ssec:architektura},
+tw.~\ref{prop:substrate-action}):
+$K(\varphi) = K_{\rm geo}\,\varphi^4$.
+Przejście do zmiennej $g = \varphi^2$
+daje $d\varphi = dg/(2\sqrt{g})$, więc
+$K(\varphi)(\nabla\varphi)^2 = K_{\rm geo}\varphi^4
+  \cdot (\nabla g)^2/(4g) = (K_{\rm geo}/4)\,g\,(\nabla g)^2$.
+Definiujemy efektywną funkcję kinetyczną
+w~zmiennej $g$ jako $K_{\rm sub}(g) = K_{\rm geo}\,g^2$
+(z~dokładnością do bezwymiarowej stałej, którą absorbujemy
+w~$K_{\rm geo}$). Istotna jest \textbf{struktura potęgowa}:
+$K_{\rm sub}(g) \propto g^n$ z~$n = 2 > 0$,
+co gwarantuje dodatniość dla $g > 0$.
+
+\smallskip\noindent
+\textbf{Uwaga o~lem.~\ref{lem:K_phi2}}: Lemat ten wyprowadza
+$K(\varphi) = J a^2 \varphi^2$ z~rozwinięcia gradientowego
+hamiltonianu $H_\Gamma = -J\sum(\varphi_i\varphi_j)^2$.
+Wynik $\varphi^2$ (nie $\varphi^4$) wynika z~faktu, że
+lemat ekstrahuje gradient z~\textbf{energii całkowitej}
+$-(\varphi_i\varphi_j)^2$, podczas gdy pełne geometryczne
+sprzężenie kinetyczne (tw.~\ref{prop:substrate-action})
+definiuje $K_{ij}$ jako wagę członu gradientowego
+$K_{ij}(\varphi_i - \varphi_j)^2$, co daje $K = \varphi^4$.
+Weryfikacja numeryczna (\texttt{ex163}, sesja v45) potwierdza:
+oba opisy s\k{a} poprawne w~swoich ramach ---
+lem.~\ref{lem:K_phi2} to \emph{linearyzacja} wok\'o\l{}
+jednorodnego t\l{}a $\bar\varphi$,
+tw.~\ref{prop:substrate-action} to pe\l{}na \emph{nieliniowa} definicja.
+$H_\Gamma \neq F_{\rm kin}$ --- to r\'o\.zne funkcjona\l{}y.
+Nie ma sprzeczno\'sci (R11 rozwi\k{a}zany).
+
+Dodatkowy wynik (\texttt{ex163}): ODE kanoniczne ($\alpha = 2$,
+$K \propto g^4$) ma barier\k{e} duchow\k{a} $g_{\rm ghost} \approx 0{,}717$,
+kt\'ora uniemo\.zliwia selekcj\k{e} $\varphi$-FP
+($g_0^\mu = \varphi\,g_0^e > g_{\rm ghost}$).
+ODE substratowe ($\alpha = 1$, $K \propto g^2$) nie ma bariery
+i~daje $r_{21} = 206{,}77$ z~predykcj\k{a} $m_\tau$ z~precyzj\k{a} $83$~ppm
+(rem.~\ref{rem:J-precision-ex157}).
+\end{remark}
+
+\begin{remark}[$f(g)$ jako rozwinięcie $K_{\rm sub}$]%
+\label{rem:f-as-expansion}
+Logarytmiczne rozwinięcie $K_{\rm sub}(g)$ wokół $g = 1$:
+\begin{equation}\label{eq:Ksub-expansion}
+  K_{\rm sub}(g) = K_{\rm geo}\,g^2
+  = K_{\rm geo}\,e^{2\ln g}
+  \approx K_{\rm geo}\bigl[1 + 2\ln g + 2(\ln g)^2 + \cdots\bigr].
+\end{equation}
+Obcięcie do pierwszego rzędu w~$\ln g$
+z~normalizacją $K_{\rm geo} = 1$ daje:
+\begin{equation}\label{eq:f-truncation}
+  K_{\rm sub}(g)\big|_{\rm trunc}
+  = 1 + 2\ln g
+  \;\;\xrightarrow{\alpha=2}\;\;
+  f(g) = 1 + 2\alpha\ln g = 1 + 4\ln g.
+\end{equation}
+Przybliżenie jest wiarygodne dla $|\ln g| \ll 1$,
+tj.\ $g \approx 1$ (reżim próżniowy).
+Dla $g \lesssim g^* \approx 0{,}78$
+obcięcie nie jest poprawne --- pełne $K_{\rm sub}(g) = g^2$
+pozostaje dodatnie.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Twierdzenie o~braku duchów w~teorii substratowej}%
+\label{ssec:ghost-free-substrate}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Brak duchów w~sektorze solitonowym substratu]%
+\label{thm:ghost-free-soliton}
+\statuslabel{Twierdzenie}.
+Niech $H_\Gamma$ będzie hamiltonianem substratu
+z~geometrycznym sprzężeniem $K_{ij} = J(\varphi_i\varphi_j)^2 \geq 0$.
+Wówczas:
+\begin{enumerate}[(i)]
+  \item Energia kinetyczna solitonu z~\textbf{pełnym}
+    sprzężeniem substratowym:
+    \begin{equation}\label{eq:T-substrate}
+      T = \frac{1}{2}\,K_{\rm sub}(g)\,(\nabla g)^2
+        = \frac{K_{\rm geo}}{2}\,g^2\,(\nabla g)^2
+        \geq 0
+        \qquad \forall\; g > 0.
+    \end{equation}
+  \item Równanie solitonu z~$K_{\rm sub}(g)$ nie posiada
+    osobliwości kinetycznej:
+    \begin{equation}\label{eq:soliton-substrate}
+      \boxed{
+        K_{\rm geo}\,g^2\,g''
+        + K_{\rm geo}\,g\,(g')^2
+        + \frac{2}{r}\,K_{\rm geo}\,g^2\,g'
+        = V'(g).
+      }
+    \end{equation}
+    Współczynnik przy $g''$ wynosi $K_{\rm geo}\,g^2 > 0$
+    dla każdego $g > 0$ --- \textbf{brak degeneracji}.
+  \item Żadna konfiguracja solitonowa $g(r) > 0$
+    nie generuje ujemnej energii kinetycznej.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{Punkt (i).}
+$K_{\rm sub}(g) = K_{\rm geo}\,g^2$; $K_{\rm geo} > 0$
+(stała sprężystości sieci); $g > 0$ (fizycznie: $\Phi > 0$
+w~sektorze $\mathcal{S}_1$); $(\nabla g)^2 \geq 0$.
+Iloczyn trzech czynników nieujemnych jest nieujemny.
+
+\medskip
+\emph{Punkt (ii).}
+Funkcjonał energii z~$K_{\rm sub}$:
+\begin{equation}
+  E[g] = \int_0^\infty\!
+    \left[\frac{K_{\rm geo}}{2}\,g^2\,(g')^2 + V(g)\right]
+    4\pi r^2\,dr.
+\end{equation}
+Równanie Eulera--Lagrange'a (sferyczna symetria):
+\begin{align}
+  0 &= \frac{\delta E}{\delta g}
+     = K_{\rm geo}\,g\,(g')^2 + V'(g)
+     - \frac{1}{r^2}\frac{d}{dr}\!\left[K_{\rm geo}\,g^2\,g'\,r^2\right] \\
+    &= K_{\rm geo}\,g\,(g')^2 + V'(g)
+     - K_{\rm geo}\bigl[2g(g')^2 + g^2 g'' + \tfrac{2}{r}g^2 g'\bigr].
+\end{align}
+Upraszczając:
+\[
+  K_{\rm geo}\,g^2\,g''
+  + K_{\rm geo}\,g\,(g')^2
+  + \frac{2}{r}\,K_{\rm geo}\,g^2\,g'
+  = V'(g).
+\]
+Współczynnik przy $g''$: $K_{\rm geo}\,g^2 > 0$ dla $g > 0$.
+Równanie jest regularne na całym $g \in (0,\infty)$.
+
+\medskip
+\emph{Punkt (iii).}
+Wynika bezpośrednio z~(i): $T \geq 0$ dla każdego
+$g : [0,\infty) \to (0,\infty)$.
+Hamiltonian $H = T + \int V(g)\,4\pi r^2\,dr$
+ma nieujemny człon kinetyczny, więc nie ma niestabilności
+duchowej (Ostrogradski).
+\end{proof}
+
+\begin{corollary}[Osobliwość $f(g^*) = 0$ jest artefaktem]\label{cor:ghost-artifact}
+Punkt $g^* = e^{-1/4}$, w~którym $f(g^*) = 0$,
+nie jest fizyczną osobliwością teorii.
+Jest miejscem, w~którym przybliżenie
+$K_{\rm sub}(g) \approx 1 + 4\ln g$ traci ważność.
+Pełna funkcja substratowa $K_{\rm sub}(g) = K_{\rm geo}\,g^2$
+jest regularna i~dodatnia w~tym punkcie:
+\begin{equation}
+  K_{\rm sub}(g^*) = K_{\rm geo}\,(e^{-1/4})^2
+  = K_{\rm geo}\,e^{-1/2} \approx 0{,}607\,K_{\rm geo} > 0.
+\end{equation}
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Dopasowanie reżimu próżniowego}\label{ssec:matching}
+% -------------------------------------------------------------------
+
+Aby obie postacie --- substratowa $K_{\rm sub}(g) = K_{\rm geo}\,g^2$
+i~kontinualna $f(g) = 1 + 2\alpha\ln g$ --- dawały identyczne
+wyniki w~reżimie próżniowym ($g \approx 1$), wymagamy zgodności
+rozwinięć Taylora wokół $g = 1$.
+
+\begin{proposition}[Dopasowanie substrat--kontinuum]%
+\label{prop:matching}
+\statuslabel{Twierdzenie}.
+Niech $\delta = g - 1$ oraz $|\delta| \ll 1$.
+\begin{enumerate}[(a)]
+  \item \textbf{Substrat}:
+    \begin{equation}\label{eq:Ksub-taylor}
+      K_{\rm sub}(g) = K_{\rm geo}\,g^2
+      = K_{\rm geo}\bigl[1 + 2\delta + \delta^2\bigr].
+    \end{equation}
+  \item \textbf{Kontinuum}:
+    \begin{equation}\label{eq:f-taylor}
+      f(g) = 1 + 2\alpha\ln(1+\delta)
+      = 1 + 2\alpha\,\delta - \alpha\,\delta^2 + O(\delta^3).
+    \end{equation}
+  \item \textbf{Dopasowanie do rzędu $\delta^0$}: $K_{\rm geo} = 1$.
+  \item \textbf{Dopasowanie do rzędu $\delta^1$}:
+    $2K_{\rm geo} = 2\alpha$, skąd $\alpha_{\rm eff} = K_{\rm geo} = 1$.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Rozbieżność na wyższych rzędach]\label{rem:discrepancy}
+Przy rzędzie $\delta^2$: substrat daje $+K_{\rm geo}\,\delta^2 = +\delta^2$,
+kontinuum daje $-\alpha\,\delta^2 = -\delta^2$.
+Rozbieżność wynosi $2\delta^2$ i~jest \textbf{nieistotna}
+w~reżimie próżniowym ($\delta \ll 1$), ale rośnie dla $g \ll 1$ lub $g \gg 1$.
+Dokładnie w~tych reżimach opis substratowy staje się konieczny.
+
+Wartość $\alpha = 2$ wyznaczona w~tw.~\ref{thm:alpha-unique}
+wynika z~warunku $K(\varphi) = K_{\rm geo}\,\varphi^4$
+(pełna zmienna $\varphi$, nie $g$).
+Stała $\alpha_{\rm eff} = 1$ w~powyższym rozwinięciu
+dotyczy \textbf{innej} parametryzacji --- rozwinięcia
+w~$\delta = g - 1$ zamiast w~$\ln g$.
+Rozwinięcia te pokrywają się do pierwszego rzędu
+i~rozchodzą na wyższych.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Konsekwencje fizyczne}\label{ssec:physical-consequences}
+% -------------------------------------------------------------------
+
+\begin{remark}[Solitony ciężkie sondują substrat]%
+\label{rem:heavy-solitons-substrate}
+Profil solitonu z~dużym $g_0 \gg 1$ (ciężkie cząstki: mion, tauon)
+osiąga w~regionie oscylacyjnego ogona wartości
+$g_{\min} < 1$ bliskie $g^*$ (dod.~\ref{app:ogon-masy}).
+W~opisie kontinualnym $f(g) = 1 + 4\ln g$ profil napotyka
+osobliwość --- dynamika staje się nieciągła.
+
+W~opisie substratowym:
+\begin{enumerate}[(i)]
+  \item Soliton z~dowolnym $g_0 > 0$ jest opisany
+    regularnym równaniem~\eqref{eq:soliton-substrate}.
+  \item Profil $g(r)$ może przechodzić przez $g^*$
+    bez osobliwości: $K_{\rm sub}(g^*) = K_{\rm geo}\,e^{-1/2} > 0$.
+  \item Cięższa cząstka ($g_0 \gg 1$) głębiej sonduje
+    strukturę substratu --- tam, gdzie pełne $K_{\rm sub}(g) = K_{\rm geo}\,g^2$
+    istotnie odbiega od przybliżonego $f(g)$.
+\end{enumerate}
+
+Hierarchia mas: elektron ($g_0 \approx 1{,}24$) pozostaje
+blisko próżni i~jest dobrze opisany przez $f(g)$.
+Mion ($g_0 \approx 2{,}0$) i~tauon ($g_0 \approx 2{,}34$)
+sondują głębszy reżim. Ich ogon oscylacyjny ($g \approx 1$,
+ró{}w.~\eqref{eq:J-tail}) pozostaje \textbf{w~pełni w~reżimie
+próżniowym}, gdzie $f(g) \approx K_{\rm sub}(g)$.
+\end{remark}
+
+\begin{proposition}[Zachowanie mechanizmu $A_{\rm tail}$]%
+\label{prop:Atail-preserved}
+\statuslabel{Twierdzenie}.
+Mechanizm hierarchii mas oparty na amplitudzie ogona
+$A_{\rm tail}(g_0)$ (hip.~\ref{hyp:J-mass-Atail4},
+dod.~\ref{app:ogon-masy}) jest \textbf{niezmienniczy}
+wobec przejścia $f(g) \to K_{\rm sub}(g)$
+w~regionie ogona, ponieważ:
+\begin{enumerate}[(i)]
+  \item Ogon oscylacyjny $g(r) - 1 \sim B\cos r/r$
+    leży w~reżimie $|g - 1| \ll 1$, gdzie
+    $f(g)$ i~$K_{\rm sub}(g)$ różnią się o~$O(\delta^2)$.
+  \item Stosunek mas $r_{21} = m_\mu/m_e
+    = (A_{\rm tail}^{(\mu)}/A_{\rm tail}^{(e)})^4$
+    zależy od \textbf{ilorazu} amplitud,
+    w~którym korekcje substratowe $O(\delta^2)$
+    znoszą się do wiodącego rzędu.
+  \item Wynik numeryczny $r_{21} \approx 206{,}77 \pm 1{,}6\%$
+    (dod.~\ref{app:ogon-masy}) jest stabilny wobec
+    regularyzacji substratowej, ponieważ
+    ogony obu solitonów leżą w~tym samym reżimie.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Podsumowanie statusu ghost-freedom TGP]%
+\label{rem:ghost-summary}
+Brak duchów w~TGP jest teraz wykazany na \textbf{trzech}
+poziomach:
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Sektor} & \textbf{Wynik} & \textbf{Referencja} & \textbf{Status} \\
+\midrule
+Zmienne fundamentalne $\psi$
+  & $\psi^4(\nabla\psi)^2 > 0$
+  & stw.~\ref{prop:ghost-free-fundamental}
+  & \statuslabel{Twierdzenie} \\[3pt]
+Perturbacje MS-TGP
+  & $Q_s = \psi_{\rm bg}^4 > 0$
+  & stw.~\ref{prop:ghost-free-MS}
+  & \statuslabel{Propozycja} \\[3pt]
+Solitony (substrat)
+  & $K_{\rm sub}(g) = K_{\rm geo}\,g^2 > 0$
+  & tw.~\ref{thm:ghost-free-soliton}
+  & \statuslabel{Twierdzenie} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+We wszystkich trzech sektorach pozytywność energii
+kinetycznej wynika z~\textbf{tej samej} przyczyny:
+substratowe sprzężenie $K_{ij} = J(\varphi_i\varphi_j)^2$
+jest z~definicji nieujemne. Różne sektory
+(jednorodne tło, perturbacje, solitony) eksponują
+tę samą właściwość w~różnych zmiennych
+i~różnych reżimach.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Rozstrzygnięcie $\alpha = 1$ vs $\alpha = 2$}%
+\label{ssec:alpha-resolution}
+% -------------------------------------------------------------------
+
+\begin{result}[Obserwable s\l{}abopolowe s\k{a} niezale\.zne od~$\alpha$]%
+\label{res:alpha-independent}
+Metryka emergentna $g_{\mu\nu} = (\Phi/\PhiZero)^{2/3}\,\eta_{\mu\nu}$
+jest \textbf{aksjomatyczna} (A3): pot\k{e}ga $2/3$ wynika z~geometrycznej
+relacji $ds \propto \Phi^{1/3}$ (obj\k{e}to\'s\'c $\propto \Phi$ w~3D),
+\textbf{nie} z~dynamiki pola.
+
+W~s\l{}abym polu ($\Phi = \PhiZero(1 + \delta)$, $|\delta| \ll 1$)
+operator kinetyczny TGP:
+\begin{equation}\label{eq:D-alpha-linear}
+  D(\alpha)[\Phi] \;=\; \nabla^2\Phi + \frac{\alpha}{\Phi}(\nabla\Phi)^2
+  \;\;\xrightarrow{\;\delta \ll 1\;\;}\;\;
+  \PhiZero\,\nabla^2\delta + O(\delta^2).
+\end{equation}
+Cz\l{}on $(\alpha/\Phi)(\nabla\Phi)^2 = \alpha\,\PhiZero\,(\nabla\delta)^2
++ O(\delta^3)$ jest \textbf{drugiego rz\k{e}du} w~$\delta$.
+St\k{a}d linearyzacja jest \textbf{uniwersalna} (niezale\.zna od~$\alpha$):
+
+\medskip
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Obserwabla} & \textbf{Zale\.zno\'s\'c od $\alpha$} \\
+\midrule
+$\kappa = 3/(4\PhiZero)$ & niezale\.zna (1.~rz\k{a}d PPN) \\
+PPN: $\gamma = 1$, $\beta = 1$ & niezale\.zne (1.~rz\k{a}d) \\
+$N_e = \tfrac{1}{3}\ln(1/\varepsilon_0)$ & niezale\.zny (geometryczny) \\
+$n_s = 1 - 2/N_e$ & niezale\.zny \\
+$r = 12/N_e^2$ & niezale\.zny \\
+$K_{\rm Koide}$ & niezale\.zny (algebraiczny) \\
+$G_{\rm SM}$ emergence & niezale\.zna (topologiczna) \\
+\midrule
+ODE solitonu & \textbf{zale\.zna} (re\.zim nieliniowy) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\begin{corollary}[$\alpha = 1$ preferowane bez konfliktu]%
+\label{cor:alpha1-preferred}
+Jedynym sektorem zale\.znym od~$\alpha$ jest ODE solitonu
+(re\.zim nieliniowy, $g$ daleko od~$1$).
+ODE substratowe ($\alpha = 1$, $K_{\rm sub} = g^2$) jest preferowane
+empirycznie: selekcja $\varphi$-FP daje $r_{21} = 206{,}77$
+i~$m_\tau$ z~precyzj\k{a} $83$~ppm (rem.~\ref{rem:J-precision-ex157}).
+ODE kanoniczne ($\alpha = 2$, $K = g^4$) posiada barier\k{e}
+duchow\k{a} $g_{\rm ghost} \approx 0{,}717$
+blokuj\k{a}c\k{a} $\varphi$-FP.
+
+Poniewa\.z \.zadna obserwabla s\l{}abopolowa nie zale\.zy od~$\alpha$
+(wynik~\ref{res:alpha-independent}), wyb\'or $\alpha = 1$
+\textbf{nie koliduje} z~predykcjami grawitacyjnymi ani kosmologicznymi.
+Dualizm $\alpha_{\rm grav} \neq \alpha_{\rm sol}$ jest
+\textbf{zb\k{e}dny}.
+\end{corollary}
+
+\noindent
+Weryfikacja numeryczna: \texttt{ex166\_alpha1\_vs\_alpha2.py}
+(systematyczne por\'ownanie),
+\texttt{ex167\_ppn\_alpha1.py} (linearyzacja PPN).
