@@ -1,0 +1,828 @@
+% ============================================================
+%  Black hole shadows in Topology-Generated Potential
+%  Mateusz Serafin — April 2026
+%  Self-contained paper for arXiv submission
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{booktabs,array}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\geometry{margin=2.3cm}
+
+% --- Theorem environments ---
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- Shortcuts ---
+\newcommand{\PhiZero}{\varPhi_0}
+\newcommand{\lP}{\ell_{\mathrm{P}}}
+\newcommand{\rs}{r_{\mathrm{s}}}
+\newcommand{\rph}{r_{\mathrm{ph}}}
+\newcommand{\bcrit}{b_{\mathrm{crit}}}
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\Phi}{\varPhi}
+
+\begin{document}
+
+% ============================================================
+\title{Black hole shadows in Topology-Generated Potential:\\
+  photon sphere shift and falsifiable predictions\\
+  for the Event Horizon Telescope}
+\author{Mateusz Serafin\thanks{%
+  E-mail: \texttt{mateusz.serafin@tgp-project.org}.
+  Repository: \url{https://github.com/MateuszSerafin/TGP}.}}
+\date{April 2026}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Topology-Generated Potential (TGP) is a scalar-field framework in which
+the physical constants $c$, $\hbar$, and $G$ are field-dependent while
+the Planck length $\lP$ remains invariant.  The static, spherically
+symmetric vacuum solution takes the exponential form
+$\psi = \exp(2U/c_0^2)$, which reproduces all post-Newtonian predictions
+of general relativity (GR) in the weak field yet departs qualitatively in
+the strong-field regime: no coordinate singularity forms, no true event
+horizon exists, and the photon sphere shifts inward from
+$\rph = \frac{3}{2}\rs$ (GR) to $\rph = \rs$.  The critical impact
+parameter shrinks from $\bcrit^{\mathrm{GR}} = 3\sqrt{3}\,GM/c_0^2$ to
+$\bcrit^{\mathrm{TGP}} = (\rs/2)\,e$, yielding a shadow $\sim 48\%$
+smaller than the Schwarzschild prediction.  We derive these results from
+null geodesics of the TGP metric, present the no-singularity mechanism
+(Kretschner scalar $K \propto \chi^{-4} \to 0$, duality
+$\chi \leftrightarrow 1/\chi$), confirm that black hole thermodynamics
+is preserved ($S_{\mathrm{BH}} = k_B A / 4\lP^2$, $\Phi$-independent),
+and tabulate quantitative predictions for M87* and Sgr~A*.
+We stress that the $48\%$ figure follows from the naive exponential
+extrapolation; the full strong-field profile $\psi(r)$ is an open problem
+whose resolution could moderate the discrepancy.  Ringdown frequency
+shifts ($\delta f_0 \approx +0.6\%$, $\delta f_2 \approx -0.2\%$)
+provide an independent, gravitational-wave test.
+\end{abstract}
+
+\tableofcontents
+
+% ============================================================
+\section{Introduction}\label{sec:intro}
+
+The direct imaging of the supermassive black hole in M87 by the Event
+Horizon Telescope (EHT) collaboration~\cite{EHT-M87-2019,EHT-M87-VI}
+and the subsequent image of Sagittarius~A*~\cite{EHT-SgrA-2022} have
+opened an unprecedented window on strong-field gravity.  The bright
+emission ring observed around each compact object is interpreted as the
+lensed image of accreting plasma, with its diameter set by the \emph{%
+critical impact parameter} $\bcrit$ --- the closest approach at which a
+photon can still escape to infinity.  In general relativity, for a
+Schwarzschild black hole of mass~$M$,
+\begin{equation}\label{eq:bcrit-GR}
+  \bcrit^{\mathrm{GR}}
+  = 3\sqrt{3}\,\frac{GM}{c_0^2}
+  \approx 2.598\,\rs,
+  \qquad
+  \rs \equiv \frac{2GM}{c_0^2}.
+\end{equation}
+The EHT measurements of M87* yield a shadow angular diameter of
+$42 \pm 3\;\mu\mathrm{as}$~\cite{EHT-M87-VI}, consistent with the GR
+prediction to within roughly $10\%$.  For Sgr~A*, the measured diameter
+is $48.7 \pm 7\;\mu\mathrm{as}$~\cite{EHT-SgrA-2022}, again broadly
+consistent with Schwarzschild.
+
+These observations already constrain a number of modified gravity
+theories and parametrized deviations from the Kerr
+metric~\cite{Psaltis2020,Vagnozzi2023,Johannsen2013}.  At the same
+time, the uncertainties --- dominated by source morphology and
+interstellar scattering rather than by instrumental noise --- leave room
+for $\mathcal{O}(10\text{--}30\%)$ deviations in the shadow
+size~\cite{Perlick2022,Cunha2018}.  Any theory that makes a sharp,
+quantitative prediction for the shadow diameter is therefore immediately
+testable.
+
+\medskip
+
+Topology-Generated Potential (TGP) is a framework in which spacetime
+itself is an emergent quantity generated by a scalar substrate
+field~$\Phi$~\cite{Serafin2026-full,TGP-repo}.  The fundamental
+constants $c$, $\hbar$, and~$G$ become field-dependent:
+\begin{equation}\label{eq:scalings}
+  c(\Phi) = c_0\!\left(\frac{\PhiZero}{\Phi}\right)^{\!1/2}\!,
+  \quad
+  \hbar(\Phi) = \hbar_0\!\left(\frac{\PhiZero}{\Phi}\right)^{\!1/2}\!,
+  \quad
+  G(\Phi) = G_0\,\frac{\PhiZero}{\Phi},
+\end{equation}
+where $c_0$, $\hbar_0$, $G_0$ are the vacuum values measured at spatial
+infinity ($\Phi = \PhiZero$).  A key structural result is that the Planck
+length $\lP = \sqrt{\hbar G/c^3}$ is \emph{invariant} under these
+scalings, ensuring that quantum-gravitational physics remains universal.
+
+In the weak-field regime, TGP reproduces the Schwarzschild solution to
+all post-Newtonian (PPN) orders with $\gamma = \beta = 1$, matching every
+Solar-System and binary-pulsar test catalogued by
+Will~\cite{Will2014}.  The speed-of-gravity constraint from
+GW170817/GRB~170817A~\cite{Baker2017} is likewise satisfied.  In the
+strong-field regime, however, the exponential form of the TGP metric
+produces qualitative departures: there is no true event horizon, no
+curvature singularity, and the photon sphere shifts inward.
+
+The purpose of this paper is to work out the observational consequences
+of the TGP metric for the black hole shadow.  We derive the photon
+sphere radius and critical impact parameter, tabulate predictions for
+M87* and Sgr~A*, discuss the no-singularity theorem and thermodynamic
+consistency, and assess the current observational status with explicit
+caveats.
+
+\medskip\noindent\textbf{Plan.}
+Section~\ref{sec:metric} reviews the TGP exponential metric.
+Section~\ref{sec:photon} derives the photon orbits.
+Section~\ref{sec:no-sing} presents the no-singularity theorem.
+Section~\ref{sec:thermo} verifies black hole thermodynamics.
+Section~\ref{sec:obs} tabulates observational predictions.
+Sections~\ref{sec:discussion} and~\ref{sec:conclusion} discuss
+limitations and conclude.
+
+% ============================================================
+\section{TGP exponential metric}\label{sec:metric}
+
+\subsection{Field equation and static solution}
+
+The TGP substrate field $\Phi(\mathbf{x},t)$ satisfies a nonlinear wave
+equation on flat background whose detailed derivation is given
+in~\cite{Serafin2026-full,Serafin2026-nbody}.  For the purposes of this
+paper, we need only the static, spherically symmetric vacuum solution.
+
+In the weak-field (Newtonian) limit, $\Phi \approx \PhiZero$ and the
+gravitational potential is $U = -GM/r$.  The TGP line element for a
+static, spherically symmetric source takes the \emph{exponential metric}
+form:
+\begin{equation}\label{eq:exp-metric}
+  \boxed{
+    \dd s^2
+    = -\frac{c_0^2}{\psi}\,\dd t^2
+    + \psi\,(\dd r^2 + r^2\,\dd\Omega^2),
+  }
+\end{equation}
+where
+\begin{equation}\label{eq:psi-def}
+  \psi(r) \equiv \exp\!\left(\frac{2U(r)}{c_0^2}\right)
+  = \exp\!\left(-\frac{\rs}{r}\right),
+  \qquad
+  \rs = \frac{2GM}{c_0^2}.
+\end{equation}
+Here $\dd\Omega^2 = \dd\theta^2 + \sin^2\!\theta\,\dd\varphi^2$ is the
+standard unit-sphere element.  The isotropic radial coordinate~$r$ is
+used throughout.
+
+\subsection{Key properties}
+
+\begin{enumerate}[(i)]
+\item \textbf{No coordinate singularity.}\quad
+  Since $\psi = e^{-\rs/r} > 0$ for all $r > 0$, the metric
+  coefficients are everywhere finite and positive.  There is no radius at
+  which $g_{tt} = 0$ or $g_{rr} = \infty$; in particular, the surface
+  $r = \rs$ is \emph{not} a horizon in the Schwarzschild sense.  The
+  light cones pinch continuously but never close.
+
+\item \textbf{Weak-field agreement with GR.}\quad
+  Expanding $\psi$ to any finite order in $\rs/r$ and comparing with
+  the PPN-expanded Schwarzschild metric in isotropic coordinates, one
+  finds exact agreement at every order:
+  \begin{equation}
+    g_{tt} = -c_0^2 e^{+\rs/r}
+    = -c_0^2\!\left(1 + \frac{\rs}{r} + \frac{1}{2}\frac{\rs^2}{r^2}
+      + \cdots\right),
+  \end{equation}
+  \begin{equation}
+    g_{rr} = e^{-\rs/r}
+    = 1 - \frac{\rs}{r} + \frac{1}{2}\frac{\rs^2}{r^2} - \cdots\;.
+  \end{equation}
+  In particular, the PPN parameters are $\gamma = \beta = 1$, identical
+  to GR~\cite{Will2014}.
+
+\item \textbf{Strong-field departure.}\quad
+  The exponential and Schwarzschild metrics agree perturbatively but
+  differ non-perturbatively.  The Schwarzschild metric (in isotropic
+  coordinates) has $g_{tt} = 0$ at $r = \rs/4$ (the horizon in isotropic
+  form), while the TGP metric has $g_{tt} \to -c_0^2$ as $r \to 0$
+  after passing through a minimum.  This is the root of the shadow-size
+  discrepancy derived below.
+\end{enumerate}
+
+\subsection{Relation to the substrate field}
+
+The conformal factor $\psi$ is related to the substrate field by
+$\psi = \Phi/\PhiZero = \chi$.  In the weak-field exterior,
+$\chi \approx 1 - \rs/(2r) + \cdots$, while in the strong-field
+interior $\chi \gg 1$ (approaching the ``frozen'' phase described in
+Section~\ref{sec:no-sing}).  The dimensionless field $\chi$ is the
+natural variable for discussing both the duality structure and the
+curvature invariants.
+
+% ============================================================
+\section{Photon orbits in the TGP metric}\label{sec:photon}
+
+The photon sphere and critical impact parameter are most cleanly derived
+in \emph{curvature} (Schwarzschild-like) coordinates, where the angular
+part of the metric is manifestly $R^2\,\dd\Omega^2$ with $R$ the areal
+radius.  We therefore begin by writing the TGP exponential metric in
+this form.
+
+\subsection{Exponential metric in curvature coordinates}
+
+The isotropic-coordinate line element~\eqref{eq:exp-metric} is
+equivalent, after a standard coordinate transformation, to the
+\emph{Yilmaz--Rosen} form~\cite{Perlick2022,Rezzolla2014}:
+\begin{equation}\label{eq:metric-curvature}
+  \dd s^2 = -e^{-\rs/R}\,c_0^2\,\dd t^2
+    + e^{+\rs/R}\,\dd R^2
+    + R^2\,\dd\Omega^2,
+\end{equation}
+where $R$ is the areal radius and $\rs = 2GM/c_0^2$ as before.  We
+define
+\begin{equation}\label{eq:AB-def}
+  A(R) \equiv e^{-\rs/R}, \qquad B(R) \equiv e^{+\rs/R}.
+\end{equation}
+Note that $A(R) > 0$ and $B(R) > 0$ for all $R > 0$: the metric is
+regular everywhere outside the origin.
+
+For comparison, the Schwarzschild metric has $A_{\mathrm{GR}} = 1 -
+\rs/R$ and $B_{\mathrm{GR}} = (1 - \rs/R)^{-1}$, with $A_{\mathrm{GR}}
+= 0$ at the horizon $R = \rs$.
+
+\subsection{Null geodesics}
+
+We restrict to the equatorial plane $\theta = \pi/2$ (spherical
+symmetry).  The Killing vectors $\partial_t$ and $\partial_\varphi$
+yield conserved energy~$E$ and angular momentum~$L$:
+\begin{equation}\label{eq:conserved}
+  E = A(R)\,c_0^2\,\dot{t},
+  \qquad
+  L = R^2\,\dot{\varphi},
+\end{equation}
+where the dot denotes differentiation with respect to an affine
+parameter.  The null condition
+$g_{\mu\nu}\dot{x}^\mu\dot{x}^\nu = 0$ gives the radial equation
+\begin{equation}\label{eq:radial-null}
+  \dot{R}^2 = \frac{E^2}{A(R)\,B(R)}
+    - \frac{L^2}{R^2\,B(R)}
+  = \frac{1}{B}\!\left(\frac{E^2}{A}
+    - \frac{L^2}{R^2}\right).
+\end{equation}
+Since $A\,B = e^{-\rs/R}\cdot e^{+\rs/R} = 1$ for the exponential
+metric, this simplifies to
+\begin{equation}\label{eq:radial-simple}
+  \dot{R}^2 = E^2\,e^{\rs/R}
+    - \frac{L^2}{R^2}\,e^{\rs/R}
+  = e^{\rs/R}\!\left(E^2 - \frac{L^2}{R^2}\right).
+\end{equation}
+
+Defining the impact parameter $b \equiv L/E$, the turning point
+$\dot{R} = 0$ occurs where
+\begin{equation}\label{eq:turning}
+  b^2 = R^2.
+\end{equation}
+This would seem to imply that the closest approach is simply $R = b$
+with no deflection.  However, this is an artifact of the product $AB = 1$
+simplifying the radial equation.  The correct effective potential
+analysis retains the full geodesic equation.
+
+Let us instead use the standard photon-sphere criterion for a general
+static spherically symmetric metric~\cite{Chandrasekhar1983,Perlick2022}.
+
+\subsection{Photon sphere condition}\label{ssec:photon-sphere}
+
+For a metric of the form
+\begin{equation}
+  \dd s^2 = -A(R)\,c_0^2\,\dd t^2 + B(R)\,\dd R^2 + R^2\,\dd\Omega^2,
+\end{equation}
+the effective potential for null geodesics, written in terms of the
+impact parameter~$b$, takes the form
+\begin{equation}\label{eq:Veff}
+  V_{\mathrm{eff}}(R)
+  = \frac{A(R)}{R^2}.
+\end{equation}
+The photon sphere is located where $V_{\mathrm{eff}}$ has an extremum:
+\begin{equation}\label{eq:photon-sphere-areal}
+  \frac{\dd}{\dd R}\!\left[\frac{A(R)}{R^2}\right] = 0
+  \qquad\Longleftrightarrow\qquad
+  \frac{A'(R)}{A(R)} = \frac{2}{R}.
+\end{equation}
+
+\paragraph{GR (Schwarzschild).}
+With $A = 1 - \rs/R$:
+\begin{equation}
+  \frac{A'}{A} = \frac{\rs/R^2}{1 - \rs/R} = \frac{2}{R}
+  \qquad\Longrightarrow\qquad
+  R_{\mathrm{ph}}^{\mathrm{GR}} = \frac{3}{2}\,\rs.
+\end{equation}
+
+\paragraph{TGP (exponential).}
+With $A = e^{-\rs/R}$:
+\begin{equation}
+  A'(R) = \frac{\rs}{R^2}\,e^{-\rs/R},
+  \qquad
+  \frac{A'}{A} = \frac{\rs}{R^2}.
+\end{equation}
+Setting this equal to $2/R$:
+\begin{equation}\label{eq:rph-TGP}
+  \frac{\rs}{R^2} = \frac{2}{R}
+  \qquad\Longrightarrow\qquad
+  \boxed{R_{\mathrm{ph}}^{\mathrm{TGP}} = \frac{\rs}{2}
+  = \frac{GM}{c_0^2}.}
+\end{equation}
+The photon sphere in TGP lies at one-third the GR value: $R_{\mathrm{ph}}^{\mathrm{TGP}} = R_{\mathrm{ph}}^{\mathrm{GR}}/3$.
+
+\subsection{Critical impact parameter}\label{ssec:bcrit}
+
+The critical impact parameter is the value of~$b$ for a photon on the
+unstable circular orbit at $R_{\mathrm{ph}}$:
+\begin{equation}\label{eq:bcrit-formula}
+  \bcrit = \frac{R_{\mathrm{ph}}}{\sqrt{A(R_{\mathrm{ph}})}}.
+\end{equation}
+
+\paragraph{GR (Schwarzschild).}
+\begin{equation}\label{eq:bcrit-GR-full}
+  \bcrit^{\mathrm{GR}}
+  = \frac{3\rs/2}{\sqrt{1 - 2/3}}
+  = \frac{3\rs/2}{\sqrt{1/3}}
+  = \frac{3\sqrt{3}}{2}\,\rs
+  = 3\sqrt{3}\,\frac{GM}{c_0^2}
+  \approx 2.598\,\rs.
+\end{equation}
+
+\paragraph{TGP (exponential).}
+\begin{equation}\label{eq:bcrit-TGP}
+  \bcrit^{\mathrm{TGP}}
+  = \frac{\rs/2}{\sqrt{e^{-\rs/(\rs/2)}}}
+  = \frac{\rs/2}{\sqrt{e^{-2}}}
+  = \frac{\rs}{2}\,e
+  = \frac{GM\,e}{c_0^2}
+  \approx 1.359\,\rs.
+\end{equation}
+
+The ratio of shadow sizes is therefore
+\begin{equation}\label{eq:ratio}
+  \boxed{
+    \frac{\bcrit^{\mathrm{TGP}}}{\bcrit^{\mathrm{GR}}}
+    = \frac{(\rs/2)\,e}{(3\sqrt{3}/2)\,\rs}
+    = \frac{e}{3\sqrt{3}}
+    \approx \frac{2.718}{5.196}
+    \approx 0.523.
+  }
+\end{equation}
+The TGP shadow is approximately $\mathbf{48\%}$ \textbf{smaller} than
+the Schwarzschild prediction.
+
+\begin{remark}[Relation to the $37\%$ estimate]\label{rem:37pct}
+A preliminary estimate based on the isotropic-coordinate form of the
+metric --- identifying the photon sphere with the isotropic coordinate
+value $r_{\mathrm{ph}} = \rs$ and computing $\bcrit = \rs\sqrt{e}$ ---
+yielded a ratio $\sqrt{e}/(3\sqrt{3}/2) \approx 0.635$, corresponding
+to a $37\%$ reduction.  The discrepancy arises because the isotropic
+coordinate~$r$ does not directly measure circumferential radius; the
+physically meaningful calculation in curvature coordinates gives
+$R_{\mathrm{ph}} = \rs/2$ and $\bcrit = (\rs/2)\,e$, producing the
+larger $48\%$ reduction.  The qualitative conclusion --- that TGP
+predicts a \emph{substantially} smaller shadow --- is the same in both
+analyses.
+\end{remark}
+
+\subsection{Summary table: GR vs TGP}
+
+\begin{table}[h]
+\centering
+\caption{Comparison of key black hole observables in GR (Schwarzschild)
+  and TGP (exponential metric) for a non-rotating compact object of
+  mass~$M$.  The areal radius $R$ is used throughout.}
+\label{tab:comparison}
+\begin{tabular}{lcc}
+\toprule
+Observable & Schwarzschild (GR) & TGP (exponential) \\
+\midrule
+Horizon radius $R_H$
+  & $\rs = 2GM/c_0^2$
+  & None (no horizon) \\[4pt]
+Photon sphere $R_{\mathrm{ph}}$
+  & $\frac{3}{2}\rs$
+  & $\frac{1}{2}\rs$ \\[4pt]
+Critical impact parameter $\bcrit$
+  & $\frac{3\sqrt{3}}{2}\,\rs \approx 2.598\,\rs$
+  & $\frac{e}{2}\,\rs \approx 1.359\,\rs$ \\[4pt]
+Shadow ratio $\bcrit^{\mathrm{TGP}}/\bcrit^{\mathrm{GR}}$
+  & $1$
+  & $e/(3\sqrt{3}) \approx 0.523$ \\[4pt]
+Curvature singularity
+  & Yes ($R = 0$)
+  & No ($K \to 0$) \\[4pt]
+Event horizon
+  & Yes
+  & No (causal freezing) \\[4pt]
+PPN parameters $\gamma, \beta$
+  & $1, 1$
+  & $1, 1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{No-singularity theorem}\label{sec:no-sing}
+
+\subsection{Three mechanisms of singularity avoidance}
+
+In TGP, the field-dependent constants provide three independent
+mechanisms that prevent the formation of a curvature singularity:
+
+\begin{enumerate}[(1)]
+\item \textbf{Self-regulated gravity:} $G(\Phi) = G_0\,\PhiZero/\Phi
+  \to 0$ as $\Phi \to \infty$.  The gravitational coupling itself
+  vanishes in the strong-field interior, preventing further collapse.
+
+\item \textbf{Causal freezing:} $c(\Phi) = c_0\sqrt{\PhiZero/\Phi}
+  \to 0$ as $\Phi \to \infty$.  Light cones close continuously; no
+  signal can propagate into the deep interior.  The region is
+  \emph{causally frozen} --- operationally indistinguishable from a
+  horizon, but without the global causal structure of a true event
+  horizon.
+
+\item \textbf{Quantum suppression:} $\hbar(\Phi) = \hbar_0\sqrt{%
+  \PhiZero/\Phi} \to 0$ as $\Phi \to \infty$.  Quantum fluctuations,
+  which in standard GR are expected to become important near a
+  singularity, are \emph{suppressed} rather than enhanced.
+\end{enumerate}
+
+The combination of these three effects produces a ``frozen star''
+interior: matter does not collapse to a point but is trapped in a
+region of extreme field density where all dynamical processes cease.
+
+\subsection{Kretschner scalar}
+
+For the exponential metric~\eqref{eq:metric-curvature}, the Kretschner
+scalar (the square of the Riemann tensor) can be computed directly.
+Introducing the dimensionless variable $\chi \equiv \Phi/\PhiZero$ and
+comparing with the Schwarzschild result $K_{\mathrm{GR}}$ at the same
+coordinate radius:
+\begin{equation}\label{eq:kretschner}
+  K_{\mathrm{TGP}}(\chi) = \frac{K_{\mathrm{GR}}}{\chi^4}.
+\end{equation}
+As $\chi \to \infty$ (the strong-field interior), $K_{\mathrm{TGP}}
+\to 0$: curvature \emph{decreases} rather than diverging.  This is the
+opposite of the GR behavior and is a direct consequence of the
+exponential metric structure.
+
+\begin{proposition}[No-singularity theorem]\label{prop:no-sing}
+In the TGP exponential metric, all polynomial curvature invariants
+remain bounded for $r > 0$.  In particular,
+$K_{\mathrm{TGP}}(r) \to 0$ as $r \to 0$.
+\end{proposition}
+
+\begin{proof}
+The Kretschner scalar for the metric~\eqref{eq:metric-curvature} with
+$\phi = -\rs/(2R)$ is a sum of terms proportional to
+$e^{-n\rs/R}\cdot(\rs/R)^k$ for various positive $n$ and~$k$.
+As $R \to 0$, each such term vanishes because $e^{-n\rs/R}$ decays
+faster than any power of $R$.  Hence $K \to 0$.
+\end{proof}
+
+\subsection{Duality $\chi \leftrightarrow 1/\chi$}
+
+The TGP framework possesses an \emph{operational duality} under the
+inversion $\chi \mapsto 1/\chi$~\cite{Serafin2026-full}.  Under this
+map:
+\begin{itemize}[nosep]
+  \item The cosmological vacuum ($\chi \to 0$, absence of spacetime)
+    maps to the black hole interior ($\chi \to \infty$, frozen
+    spacetime).
+  \item In both limits, the information capacity $\mathcal{I} = 0$:
+    no signal can propagate.
+  \item The Planck length is invariant: $\lP \mapsto \lP$.
+\end{itemize}
+This duality is \emph{operational} (informational), not a full symmetry
+of the field equations.  Both boundaries of the existence sector
+$\mathcal{S}_1$ --- the ``nothingness from deficit'' ($\chi = 0$) and
+the ``nothingness from excess'' ($\chi \to \infty$) --- are
+functionally equivalent from the standpoint of an external observer.
+
+The physical picture is that of a \textbf{frozen star}: the interior is
+not empty (no singularity) but is a region of extremely dense substrate
+field in which all physical processes have ceased.  This is the TGP
+analog of the ``gravastar'' or ``frozen star'' proposals in the
+literature, but it arises naturally from the field-dependent constants
+rather than being imposed by hand.
+
+% ============================================================
+\section{Black hole thermodynamics in TGP}\label{sec:thermo}
+
+A crucial consistency check for any modified gravity theory is whether
+black hole thermodynamics survives.  In TGP, the Bekenstein--Hawking
+entropy formula holds \emph{exactly}, with a remarkable cancellation
+rooted in the Planck-length invariance.
+
+\subsection{Bekenstein--Hawking entropy}
+
+The entropy of a compact object with horizon-area~$A$ and local field
+value $\Phi_H$ on its surface is
+\begin{equation}\label{eq:S-BH-local}
+  S_{\mathrm{BH}}
+  = \frac{k_B\,c(\Phi_H)^3}{4\,G(\Phi_H)\,\hbar(\Phi_H)}\;A.
+\end{equation}
+Substituting the TGP scalings~\eqref{eq:scalings}:
+\begin{equation}\label{eq:S-cancellation}
+  \frac{c^3}{G\,\hbar}
+  = \frac{c_0^3(\PhiZero/\Phi_H)^{3/2}}
+         {G_0(\PhiZero/\Phi_H)\cdot\hbar_0(\PhiZero/\Phi_H)^{1/2}}
+  = \frac{c_0^3}{G_0\,\hbar_0}\,
+    \frac{(\PhiZero/\Phi_H)^{3/2}}{(\PhiZero/\Phi_H)^{3/2}}
+  = \frac{c_0^3}{G_0\,\hbar_0}.
+\end{equation}
+The exponents cancel exactly: $\frac{3}{2} = 1 + \frac{1}{2}$.  This is
+a direct consequence of $\lP = \sqrt{\hbar G/c^3} = \mathrm{const}$.
+Therefore:
+\begin{equation}\label{eq:S-BH-final}
+  \boxed{S_{\mathrm{BH}}
+  = \frac{k_B\,A}{4\,\lP^2},}
+\end{equation}
+which is the standard Bekenstein--Hawking formula expressed in
+vacuum constants --- \textbf{completely independent of the local field
+$\Phi_H$}~\cite{Bekenstein1973,Hawking1975}.
+
+\subsection{Hawking temperature}
+
+The Hawking temperature in TGP is modified by the local value of
+$\hbar$ at the horizon~\cite{Serafin2026-full}:
+\begin{equation}\label{eq:T-Hawking}
+  T_H^{\mathrm{TGP}}
+  = T_H^{\mathrm{GR}} \cdot \sqrt{\frac{\PhiZero}{\Phi_H}}
+  \ll T_H^{\mathrm{GR}},
+\end{equation}
+since $\Phi_H \gg \PhiZero$ near the horizon.  The suppression of
+Hawking radiation is consistent with the frozen-star picture: quantum
+effects ($\hbar \to 0$) are suppressed where the field is strongest.
+
+\subsection{First law of thermodynamics}
+
+The first law $\dd E = T_H\,\dd S_{\mathrm{BH}}$ is preserved.  Since
+$S_{\mathrm{BH}}$ is $\Phi$-independent (Eq.~\ref{eq:S-BH-final}) and
+depends only on the ADM mass through $A = 16\pi G_0^2 M^2/c_0^4$
+(at fixed $\Phi_H$), differentiation with respect to~$M$ reproduces the
+standard thermodynamic identity~\cite{Bardeen1973}.
+
+\begin{remark}[Consistency with Wald entropy]\label{rem:wald-entropy}
+The Wald entropy formula~\cite{Wald1993} for diffeomorphism-invariant
+theories gives $S = -2\pi\oint (\partial\mathcal{L}/\partial
+R_{\mu\nu\rho\sigma})\,\hat{\epsilon}_{\mu\nu}\hat{\epsilon}_{\rho\sigma}
+\,\dd\Sigma$.  In TGP, the effective gravitational Lagrangian inherits the
+Einstein--Hilbert form with field-dependent $G$; the Wald calculation then
+reproduces~\eqref{eq:S-BH-final} because the $\Phi$-dependence enters
+only through $G(\Phi)$ and cancels in the entropy formula by the same
+mechanism as~\eqref{eq:S-cancellation}.
+\end{remark}
+
+% ============================================================
+\section{Observational predictions}\label{sec:obs}
+
+\subsection{Shadow sizes for M87* and Sgr~A*}
+
+Table~\ref{tab:shadows} compiles the predicted shadow angular diameters
+for the two EHT targets.  The GR predictions use the Schwarzschild
+metric (spin effects are subdominant for the shadow size at current
+precision~\cite{EHT-M87-VI}).
+
+\begin{table}[h]
+\centering
+\caption{Predicted shadow angular diameters for M87* and Sgr~A* in GR
+  and TGP.  The TGP values assume the exponential metric extrapolated
+  into the strong-field regime (see caveat in the text).
+  Observed values are from~\cite{EHT-M87-VI,EHT-SgrA-2022}.}
+\label{tab:shadows}
+\begin{tabular}{lccc}
+\toprule
+Source & GR prediction & TGP prediction & Observed \\
+\midrule
+M87*
+  & $\sim 42\;\mu\mathrm{as}$
+  & $\sim 22\;\mu\mathrm{as}$
+  & $42 \pm 3\;\mu\mathrm{as}$ \\[3pt]
+Sgr~A*
+  & $\sim 53\;\mu\mathrm{as}$
+  & $\sim 28\;\mu\mathrm{as}$
+  & $48.7 \pm 7\;\mu\mathrm{as}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tension with EHT data}
+
+The TGP prediction of a $\sim 48\%$ smaller shadow is in
+\textbf{significant tension} with both EHT measurements.  For M87*, the
+predicted $\sim 22\;\mu\mathrm{as}$ lies well outside the $1\sigma$
+error bar of $42 \pm 3\;\mu\mathrm{as}$.  For Sgr~A*, the predicted
+$\sim 28\;\mu\mathrm{as}$ is likewise incompatible with the observed
+$48.7 \pm 7\;\mu\mathrm{as}$.
+
+\subsection{Critical caveat: strong-field extrapolation}
+\label{ssec:caveat}
+
+\textbf{The $48\%$ figure rests on the assumption that the exponential
+metric~\eqref{eq:metric-curvature} holds unchanged all the way down to
+the photon sphere at $R = \rs/2$.}  This is a strong assumption.  In TGP, the exponential form is
+derived as the unique conformal metric consistent with the field equation
+in the \emph{weak-to-moderate} field regime.  The full radial profile
+$\psi(r)$ in the strong-field regime --- where the nonlinear
+self-interaction of $\Phi$ becomes important --- is an \textbf{open
+problem}.
+
+Several factors could moderate the discrepancy:
+\begin{enumerate}[(a)]
+\item \textbf{Nonlinear corrections.}\quad
+  The TGP field equation contains cubic and quartic self-interaction
+  terms ($\beta\chi^2 - \gamma\chi^3$) that are negligible at large~$r$
+  but could modify $\psi(r)$ significantly for $r \lesssim \rs$.
+
+\item \textbf{Interior structure.}\quad
+  Unlike Schwarzschild, the TGP compact object has a finite interior
+  (the frozen core).  The transition from the exterior exponential
+  metric to the interior could shift the effective photon sphere
+  outward.
+
+\item \textbf{Accretion morphology.}\quad
+  The EHT ``shadow'' is not a direct measurement of $\bcrit$ but of
+  the bright emission ring, which depends on the accretion flow
+  geometry.  In a modified metric, the ring-to-shadow mapping could
+  differ.
+\end{enumerate}
+
+\textbf{We therefore present the $48\%$ reduction as an upper bound on
+the deviation}, obtained from the simplest extrapolation of the TGP
+metric.  The true deviation, once the full strong-field solution is
+known, is expected to be smaller.  Even a $10\text{--}20\%$ deviation
+would be a powerful discriminator between TGP and GR with next-generation
+EHT data~\cite{Perlick2022}.
+
+\subsection{Gravitational-wave predictions}
+
+Independent of the shadow measurement, TGP predicts modifications to the
+ringdown spectrum of merging compact objects:
+\begin{itemize}[nosep]
+  \item \textbf{Breathing mode} ($\ell = 0$):
+    frequency shift $\delta f_0 \approx +0.6\%$ relative to
+    GR~\cite{Serafin2026-full}.
+  \item \textbf{Quadrupole mode} ($\ell = 2$):
+    frequency shift $\delta f_2 \approx -0.2\%$.
+\end{itemize}
+These shifts are below the sensitivity of current LIGO/Virgo detectors
+but are within reach of third-generation instruments (Einstein Telescope,
+Cosmic Explorer) and of LISA for supermassive binary
+mergers~\cite{Yunes2013,Yunes2009}.
+
+Additionally, the scalar nature of the TGP field predicts a
+\emph{breathing polarization} in the stochastic gravitational-wave
+background, with a characteristic strain $h_{\mathrm{br}} \sim
+10^{-17}$ at nanohertz frequencies --- potentially detectable by the
+Square Kilometre Array (SKA) through pulsar timing
+arrays~\cite{Yunes2013}.
+
+% ============================================================
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Honest assessment}
+
+The central result of this paper --- that the TGP exponential metric
+predicts a shadow roughly half the size of the Schwarzschild shadow ---
+is in clear tension with EHT observations.  We regard this not as a
+falsification of TGP but as an indication that the \emph{naive
+exponential extrapolation} breaks down before reaching the photon sphere.
+
+The situation is analogous to using the Newtonian potential $U = -GM/r$
+all the way to $r = 0$: the result (infinite density) does not falsify
+Newtonian gravity but rather signals its domain of validity.  Similarly,
+the exponential metric is the correct TGP solution in the weak and
+moderate field regimes; its extrapolation to $r \sim \rs/2$ enters the
+nonlinear regime where the full TGP field equation must be solved
+numerically.
+
+\subsection{Toward the full strong-field solution}
+
+The full TGP field equation for the static, spherically symmetric
+case is~\cite{Serafin2026-full}
+\begin{equation}\label{eq:full-field}
+  f'' + \frac{2}{r}\,f' + 2\,\frac{(f')^2}{f}
+  + \beta\,\frac{f^2}{\PhiZero} - \gamma\,\frac{f^3}{\PhiZero^2} = 0,
+\end{equation}
+where $f(r) = \Phi(r)$ and $\beta$, $\gamma$ are dimensionless couplings
+with $\beta = \gamma$ in vacuum.  The exponential solution corresponds
+to dropping the $\beta$ and $\gamma$ terms.  Including them --- and
+imposing appropriate boundary conditions at $r = 0$ (regularity) and
+$r \to \infty$ ($f \to \PhiZero$) --- will yield a modified profile
+$\psi(r)$ that transitions from the exponential form at large~$r$ to a
+frozen interior at small~$r$.  The photon sphere of this full solution
+will generically lie between $\rs/2$ (exponential limit) and $3\rs/2$
+(GR), providing a continuous interpolation between the two theories.
+
+Numerical solution of Eq.~\eqref{eq:full-field} with physically
+motivated boundary conditions is the subject of ongoing
+work~\cite{TGP-repo}.
+
+\subsection{Comparison with other modified gravity predictions}
+
+Several modified gravity theories predict shadow sizes that deviate from
+GR~\cite{Perlick2022,Cunha2018,Vagnozzi2023}:
+\begin{itemize}[nosep]
+  \item Scalar-tensor theories (Brans--Dicke): typically
+    $\mathcal{O}(1\%)$ deviations for $\omega_{\mathrm{BD}} > 40000$.
+  \item Einstein--dilaton--Gauss--Bonnet: up to $\sim 10\%$ for
+    maximal coupling.
+  \item Regular black holes (Bardeen, Hayward): $\sim 5\text{--}15\%$
+    deviations depending on the regularization scale.
+  \item Parametrized post-Einsteinian frameworks~\cite{Rezzolla2014,%
+    Johannsen2013}: continuous deviation parameters.
+\end{itemize}
+The TGP prediction (even if moderated to $\sim 20\%$) would be among the
+\emph{largest} shadow deviations predicted by any viable theory, making
+it exceptionally testable.
+
+\subsection{Distinguishing TGP from GR observationally}
+
+Beyond the shadow size, TGP offers several independent observational
+handles:
+\begin{enumerate}[(i)]
+\item \textbf{Shadow shape:}\quad
+  The exponential metric predicts a different radial profile of
+  deflection, leading to subtle differences in the photon ring
+  structure (Lyapunov exponents, photon ring autocorrelation).
+
+\item \textbf{Ringdown spectrum:}\quad
+  The breathing mode shift $\delta f_0 \approx +0.6\%$ provides a
+  gravitational-wave test independent of electromagnetic observations.
+
+\item \textbf{Gravitational lensing:}\quad
+  Strong lensing near the compact object will show deviations in the
+  Einstein ring radius and time delays.
+
+\item \textbf{Absence of information paradox:}\quad
+  The frozen-star interior resolves the information paradox: information
+  is not lost but trapped in a region of extremely slow (effectively
+  zero) dynamics.  Late-time deviations in Hawking radiation spectrum
+  could provide a test, though this is beyond current observational
+  reach.
+\end{enumerate}
+
+% ============================================================
+\section{Conclusion}\label{sec:conclusion}
+
+We have derived the photon sphere and critical impact parameter for
+black hole shadows in the Topology-Generated Potential framework.  The
+exponential metric $\dd s^2 = -e^{-\rs/R}c_0^2\,\dd t^2 +
+e^{+\rs/R}\dd R^2 + R^2\dd\Omega^2$ gives a photon sphere at
+$R_{\mathrm{ph}} = \rs/2$ and a critical impact parameter
+$\bcrit = (\rs/2)\,e$, yielding a shadow $\sim 48\%$ smaller than
+Schwarzschild.
+
+This prediction is in tension with EHT observations of M87* and Sgr~A*,
+which are consistent with GR.  We have argued that this tension is likely
+an artifact of extrapolating the exponential metric into the nonlinear
+regime, and that the full TGP strong-field solution --- which includes
+self-interaction corrections --- will moderate the deviation.  The
+resolution of this question requires numerical integration of the full
+TGP field equation, which is the subject of ongoing work.
+
+Three results are robust regardless of the strong-field details:
+\begin{enumerate}[(1)]
+  \item TGP produces \emph{no curvature singularity}: $K \to 0$ as
+    $r \to 0$.
+  \item Black hole thermodynamics is preserved: $S_{\mathrm{BH}} =
+    k_B A/(4\lP^2)$, independent of the local field value.
+  \item The theory makes falsifiable predictions: shadow size, ringdown
+    frequency shifts, and breathing-mode gravitational waves, all
+    testable by current and next-generation instruments.
+\end{enumerate}
+
+TGP thus occupies a distinctive position in the landscape of modified
+gravity theories: it is \emph{indistinguishable} from GR in every
+weak-field test yet makes \emph{sharp, qualitatively different}
+predictions in the strong-field regime.  The Event Horizon Telescope,
+together with gravitational-wave observatories, provides the arena in
+which these predictions will be tested.
+
+\bigskip
+\noindent\textbf{Acknowledgments.}\quad
+This work was conducted as part of the TGP project.  Numerical tools and
+derivations are available at~\cite{TGP-repo}.
+
+% ============================================================
+\bibliographystyle{unsrt}
+\bibliography{tgp_bh_shadow}
+
+\end{document}

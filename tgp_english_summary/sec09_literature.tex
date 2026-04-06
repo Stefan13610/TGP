@@ -1,0 +1,108 @@
+% ============================================================
+% Section 9 — Relation to existing theories
+% ============================================================
+
+\section{Relation to existing theories}\label{sec:literature}
+
+TGP occupies a distinctive niche among extensions of GR.
+This section positions the theory relative to established
+frameworks and identifies points of contact and departure.
+
+\subsection{Scalar-tensor theories}
+
+The closest relatives of TGP are Brans--Dicke theory and its
+generalizations~\cite{Fujii2003,Damour1992}.  In these theories
+a scalar field $\varphi$ is coupled to the Ricci scalar through
+$\omega(\varphi) R$, and the PPN parameters depend on $\omega$.
+TGP differs in three structural ways:
+\begin{enumerate}[nosep]
+  \item The field $\Phi$ is not a conformal factor of an
+        \emph{a priori} metric; rather, the metric is an
+        \emph{emergent} object constructed from $\Phi$.
+  \item The kinetic coupling $K(\varphi)\propto\varphi^{4}$
+        (with $\alpha=2$) is not a free function but is
+        determined by the uniqueness theorem for $\mathcal{D}$
+        and the vacuum condition $\beta=\gamma$.
+  \item The fundamental constants $c$, $\hbar$, $G$ are all
+        field-dependent, with $\ell_{P}=\mathrm{const}$ as the
+        sole invariant.  This is more radical than VSL
+        (variable speed of light) or VCC (varying coupling
+        constant) models, yet avoids EEP violations because
+        all dimensionless observables remain
+        $\Phi$-independent~\cite{Uzan2011}.
+\end{enumerate}
+
+Despite these differences, TGP reproduces the GR limit with
+$\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$
+exactly~\cite{Will2014}, placing it in the same observational
+equivalence class as GR in the weak-field regime.
+
+\subsection{Gravitational wave constraints}
+
+The observation of GW170817~\cite{GW170817} with its
+electromagnetic counterpart constrains $|c_{T}/c-1|
+\lesssim 10^{-15}$~\cite{Baker2017}, ruling out large classes
+of scalar-tensor and vector-tensor models.  In TGP,
+$c_{\mathrm{GW}}=c_{0}$ is an algebraic identity (the tensor
+perturbation propagates on the substrate, not on $g_{\mu\nu}^{\mathrm{eff}}$),
+so this constraint is satisfied trivially.
+
+\subsection{Cosmological context}
+
+The $\Lambda_{\mathrm{eff}}$ mechanism in TGP is qualitatively
+similar to quintessence: a slowly evolving scalar potential
+provides an effective equation of state $w(z)\neq -1$.
+However, the physical origin is different: $\Lambda_{\mathrm{eff}}$
+arises from \emph{fluctuations of generated space amplified
+by matter condensation}, not from a fundamental potential.
+The likelihood analysis against Planck~2018~\cite{Planck2018VI}
+and DESI~DR1~\cite{DESI2024} data gives
+$\Delta\chi^{2}=+1.8$, $\Delta\mathrm{AIC}=+3.8$ relative
+to $\Lambda$CDM --- statistically indistinguishable.
+
+\subsection{Fuzzy dark matter analogy}
+
+The screened-Yukawa sector of TGP, with a Compton wavelength
+$\lambda_{\mathrm{sp}}\sim\mathrm{Gpc}$, shares mathematical
+structure with fuzzy dark matter
+(FDM)~\cite{Hu2000,Schive2014}.  However, the effective boson
+mass in TGP ($m_{\mathrm{sp}}\sim H_{0}$) is much larger
+than the typical FDM candidate ($m\sim 10^{-22}\,\mathrm{eV}$).
+Current Lyman-$\alpha$ constraints~\cite{Irsic2017,Rogers2021}
+do not exclude the TGP regime; future DESI Lyman-$\alpha$ data
+will provide a direct test (kill-shot K14).
+
+\subsection{Black hole thermodynamics}
+
+TGP reproduces the Bekenstein--Hawking
+entropy~\cite{Bekenstein1973,Hawking1975} exactly:
+$S_{\mathrm{BH}}=k_{B}A/(4\ell_{P}^{2})$, with the
+$\Phi$-dependence cancelling due to
+$\ell_{P}=\mathrm{const}$.  This is consistent with the
+Wald entropy~\cite{Wald1993} in the weak-field limit where
+the effective action reduces to Einstein--Hilbert.
+In the strong-field regime (BH shadow, singularity
+resolution), TGP makes predictions that differ from GR
+and are testable by the Event Horizon
+Telescope~\cite{EHT-M87-2019,EHT-SgrA-2022}.
+
+\subsection{Particle sector: Koide formula}
+
+The Koide relation $Q=(\sqrt{m_e}+\sqrt{m_\mu}+\sqrt{m_\tau})^2
+/(m_e+m_\mu+m_\tau)=2/3$~\cite{Koide2007} has been known as
+an empirical curiosity since 1982.  In TGP, it arises as a
+\emph{consequence} of the soliton fixed-point structure,
+not as an input.  The single parameter $g_{0}^{e}$
+simultaneously determines lepton mass ratios (to $0.001\%$),
+the Koide angle, and $\alpha_{s}(M_{Z})$~\cite{PDG2024}.
+This is, to our knowledge, the first framework that derives
+$Q=2/3$ from a dynamical mechanism rather than an
+\emph{ad hoc} symmetry.
+
+\subsection{Reproducibility}
+
+All numerical results presented in this summary and in the
+companion papers are reproducible from the open-source
+repository~\cite{TGP-repo}, which contains 59 automated tests,
+a 10-stage master reproduction pipeline, and GitHub Actions CI
+running on Python~3.10/3.12.
