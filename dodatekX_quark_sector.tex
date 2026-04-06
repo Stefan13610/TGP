@@ -254,6 +254,73 @@ r\'ownie\.z nieuniwersalne.
 \end{result}
 
 % -------------------------------------------------------------------
+\subsection{Dekompozycja mas kwarkowych: $m_q = m_{\rm sub} + m_0$}%
+\label{app:X-decomposition}
+% -------------------------------------------------------------------
+
+Shifted Koide $K(m_i + m_0) = 2/3$ sugeruje, \.ze masa kwarkowa
+ma dwie sk\l{}adowe:
+\begin{equation}\label{eq:X-decomposition}
+  m_q \;=\; m_{\rm substrate} + m_0,
+\end{equation}
+gdzie $m_{\rm substrate}$ pochodzi z~ODE solitonowego (jak dla lepton\'ow),
+a~$m_0$ jest addytywnym wk\l{}adem nieperturbacyjnego QCD
+(konfinement, chiralny kondensat).
+
+\begin{result}[Sta\l{}a~$A$ shifted Koide (\texttt{quark\_mass\_decomposition.py})]%
+\label{res:X-A-constant}
+Formu\l{}a $m_0 = A \cdot m_3/m_1$ ($= A \cdot r_{31}$) z~jednym parametrem
+$A$ reprodukuje $m_0$ w~obu sektorach z~precyzj\k{a} $1\%$:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccl@{}}
+\toprule
+  Sektor & $A = m_0 \cdot m_1/m_3$ & $m_0$ [MeV] & Status \\
+\midrule
+  down ($d, s, b$) & 0{,}02451 & 21{,}9 & --- \\
+  up ($u, c, t$)   & 0{,}02478 & 1981{,}5 & --- \\
+\midrule
+  \'Srednia         & $\mathbf{0{,}02464}$ & --- & $\Delta A/\bar{A} = 1{,}1\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Formu\l{}a jest \textbf{cykliczna} ($m_3$ jest niewiadom\k{a}),
+ale sta\l{}o\'s\'c $A$ mi\k{e}dzy sektorami jest niebanalna.
+Samozgodne r\'ownanie $K(m_i + A\,m_3/m_1) = 2/3$ zamyka uk\l{}ad
+(jedna niewiadoma $m_3$), daj\k{a}c $m_b = 4190$~MeV ($0{,}24\%$)
+i~$m_t = 168\,492$~MeV ($2{,}5\%$).
+\end{result}
+
+\begin{result}[Skalowanie pot\k{e}gowe $m_0/m_1 \propto r_{21}^p$
+  (\texttt{quark\_m0\_formula\_analysis.py})]%
+\label{res:X-power-scaling}
+Fit do dw\'och sektor\'ow kwarkowych daje:
+\begin{equation}\label{eq:X-power-scaling}
+  \frac{m_0}{m_1} = K \cdot r_{21}^{p},
+  \qquad p = 1{,}56 \;\approx\; \varphi = 1{,}618
+  \quad (3{,}6\%\;\text{odchylenie}).
+\end{equation}
+Wyk\l{}adnik $\varphi$ (z\l{}ota proporcja) pojawia si\k{e} tu
+po raz \textbf{drugi} w~fizyce mas TGP (po $g_0^{(2)}/g_0^{(1)} = \varphi$).
+\textbf{Zastrze\.zenia}:
+\begin{itemize}[nosep]
+  \item Fit z~$p = \varphi$ daje 22\% b\l{}\k{a}d dla sektora up;
+  \item Formu\l{}a z~$p = \varphi$ stosowana do lepton\'ow daje
+        $m_0 \approx 105$~MeV $\neq 0$ --- nie jest uniwersalna;
+  \item Dwa punkty danych s\k{a} niewystarczaj\k{a}ce
+        do rozr\'o\.znienia $p = \varphi$ od $p = 1{,}56$.
+\end{itemize}
+\end{result}
+
+\begin{remark}[Substrate ratio up-type]\label{rem:X-substrate-ratio-up}
+Po odjściu $m_0$ stosunek mas substratowych w~sektorze up wynosi
+$r_{21}^{\rm (sub)} = (m_c + m_0)/(m_u + m_0) = 1{,}639 \approx \varphi$
+(odchylenie $1{,}3\%$).
+Dla sektora down: $r_{21}^{\rm (sub)} = 4{,}33$ --- daleko od $\varphi$.
+Blisko\'s\'c $r_{21}^{\rm (sub, up)} \approx \varphi$ jest interesuj\k{a}ca,
+ale mo\.ze by\'c koincydencj\k{a} (jeden punkt danych).
+\end{remark}
+
+% -------------------------------------------------------------------
 \subsection{Wnioski}\label{app:X-wnioski}
 % -------------------------------------------------------------------
 
@@ -267,10 +334,21 @@ r\'ownie\.z nieuniwersalne.
         (uw.~\ref{rem:X-bct-analysis}, \texttt{ex171}).
   \item $K$ jest algebr.\ w\l{}asno\'sci\k{a} stosunk\'ow mas;
         \textbf{\.zadna modyfikacja ODE} go nie zmienia (wn.~\ref{cor:X-no-ODE-fix}).
-  \item Trzecia generacja kwarkowa wymaga \textbf{innego} warunku selekcji
-        ni\.z Koide --- kandydaci: shifted Koide ($m_0 \neq 0$),
-        wyk\l{}adnik uog\'olniony, cross-sektor.
-  \item Status: \statuslabel{Otwarty} (Problem R12).
+  \item \textbf{Shifted Koide} $K(m_i + m_0) = 2/3$ dzia\l{}a
+        z~addytywnym wk\l{}adem:
+        $m_0^{(d,s,b)} = 21{,}9$~MeV,\;
+        $m_0^{(u,c,t)} = 1981{,}5$~MeV.
+        Sta\l{}a $A = m_0 m_1/m_3 \approx 0{,}0246$ jest
+        \textbf{uniwersalna} mi\k{e}dzy sektorami ($\Delta = 1{,}1\%$)
+        --- wskazuje na wsp\'olne \'zr\'od\l{}o $m_0$ (wynik~\ref{res:X-A-constant}).
+  \item Skalowanie $m_0/m_1 \propto r_{21}^{1{,}56}$ (wynik~\ref{res:X-power-scaling}):
+        wyk\l{}adnik bliski $\varphi$, ale nie jest uniwersalne (nie dzia\l{}a
+        na leptony) i~oparte na dw\'och punktach.
+  \item \textbf{Brakuj\k{a}cy element}: wyprowadzenie $m_0$ z~parametr\'ow TGP
+        ($\alpha_s$, $N_c$, $C_{\rm eff}$) lub z~sektora $N$-body.
+        Natura $m_0$ jako energii konfinementu (addytywnej) sugeruje
+        powi\k{a}zanie z~potencja\l{}em N-body $V_2(R_{\rm had})$.
+  \item Status: \statuslabel{Otwarty} (Problem R12, zaw\k{e}\.zony).
 \end{enumerate}
 
 \noindent\textbf{Skrypty:}
@@ -283,4 +361,7 @@ r\'ownie\.z nieuniwersalne.
 \texttt{ex170\_bct\_cross\_koide.py},
 \texttt{ex171\_running\_masses\_koide.py},
 \texttt{ex172\_koide\_scale\_scan.py},
-\texttt{ex173\_koide\_color\_correction.py}.
+\texttt{ex173\_koide\_color\_correction.py},
+\texttt{quark\_mass\_decomposition.py},
+\texttt{quark\_golden\_ratio\_test.py},
+\texttt{quark\_m0\_formula\_analysis.py}.
