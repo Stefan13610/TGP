@@ -9,7 +9,10 @@ CONVENTION (AXIOM):
   All functions in this module return FORCES (not accelerations):
       F_i = -nabla_i V_total
 
-  The integrators divide by m_i = C_i internally to get accelerations.
+  The integrators expect ACCELERATIONS (a_i = F_i / C_i).
+  Use dynamics_backends.build_tgp_integration_pair() which wraps
+  force functions into acceleration functions (F / C[:, None])
+  before passing them to leapfrog_integrate / rk45_integrate.
 
 STATUS OF RESULTS:
   EXACT (pairwise sector):

@@ -80,8 +80,9 @@ chaos suppression, and the EFT origin of Yukawa coupling"
 ## Quick start: reproduction
 
 ```bash
-# 1. Install dependencies
-pip install numpy>=1.26 scipy>=1.12 matplotlib>=3.8
+# 1. Install dependencies (pinned versions for deterministic reproduction)
+pip install -r requirements.lock
+# Or use minimum versions: pip install numpy>=1.26 scipy>=1.12 matplotlib>=3.8
 
 # 2. Run master reproduction (10 stages, ~100s)
 python -m nbody.reproduce_all --quick

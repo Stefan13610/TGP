@@ -21,8 +21,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: pip install numpy>=1.26 scipy>=1.12 matplotlib>=3.8
+      - name: Install dependencies (pinned)
+        run: pip install -r requirements.lock
 
       - name: Run quick reproduction (10 stages)
         run: python -m nbody.reproduce_all --quick
@@ -69,3 +69,33 @@ jobs:
         with:
           name: tgp-nbody-paper
           path: nbody/tgp_nbody_results_clean.pdf
+
+      - name: Compile full manuscript (main.tex)
+        run: |
+          pdflatex -interaction=nonstopmode main.tex
+          pdflatex -interaction=nonstopmode main.tex
+
+      - name: Check full manuscript for LaTeX errors
+        run: |
+          if grep -q "^!" main.log; then
+            echo "LaTeX errors found in full manuscript!"
+            grep "^!" main.log
+            exit 1
+          fi
+          echo "No LaTeX errors in full manuscript."
+
+      - name: Compile English summary
+        run: |
+          cd tgp_english_summary
+          pdflatex -interaction=nonstopmode main_en.tex
+          pdflatex -interaction=nonstopmode main_en.tex
+
+      - name: Check English summary for LaTeX errors
+        run: |
+          cd tgp_english_summary
+          if grep -q "^!" main_en.log; then
+            echo "LaTeX errors found in English summary!"
+            grep "^!" main_en.log
+            exit 1
+          fi
+          echo "No LaTeX errors in English summary."
