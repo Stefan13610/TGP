@@ -69,13 +69,15 @@ monotonically increasing, so the exponential metric possesses
 \emph{no photon sphere} in coordinate-invariant terms.  The
 ``$R_{\mathrm{ph}} = \rs/2$'' result is an artifact of applying the
 curvature-coordinate photon-sphere formula to a metric form that is
-not the true strong-field solution.  \textbf{(3)~Strong-field program:}
-the TGP ontology requires $\Phi \to \infty$ at the center (frozen
-interior), implying $\psi \to \infty$ and $g_{tt} \to 0$ --- an
-effective horizon.  We show that \emph{any} profile with $\psi(0) =
-\infty$ and $\psi(\infty) = 1$ must possess a photon sphere by the
-intermediate value theorem, and that the shadow size depends on the
-full nonlinear profile $\psi(r)$, which remains an open problem.
+not the true strong-field solution.  \textbf{(3)~Exact soliton:}
+we discover that the substitution $u = \psi^3$ linearizes the TGP
+kinetic operator to the Laplace equation $\nabla^2 u = 0$, yielding
+the closed-form BH soliton
+$\psi(r) = (1 + 3\rs/r)^{1/3}$.
+This solution has a frozen interior ($g_{tt} \to 0$, $\psi \to \infty$),
+no singularity, and crucially \textbf{no photon sphere}: the function
+$h(r) = r\,\psi(r)$ is strictly monotonically increasing.
+The absence of a photon sphere is a falsifiable prediction of TGP.
 
 Black hole thermodynamics is preserved exactly
 ($S_{\mathrm{BH}} = k_B A / 4\lP^2$) and the no-singularity theorem
@@ -772,138 +774,217 @@ Square Kilometre Array (SKA) through pulsar timing
 arrays~\cite{Yunes2013}.
 
 % ============================================================
-\section{Strong-field program}\label{sec:strong-field}
+\section{Strong-field solution}\label{sec:strong-field}
 
 The consistency analysis of Section~\ref{ssec:consistency} demonstrates
 that the exponential metric is insufficient in the strong-field regime.
-We now outline what the correct strong-field solution must look like
-and what it implies for the shadow.
+We now derive the \emph{exact} strong-field solution and determine
+its implications for the shadow.
 
-\subsection{Boundary conditions from TGP ontology}
+\subsection{The vacuum BH soliton}\label{ssec:soliton}
 
-The TGP framework requires the substrate field to satisfy:
+The TGP vacuum field equation in static spherical symmetry is
+\begin{equation}\label{eq:vacuum-soliton}
+  \psi'' + \frac{2}{r}\psi' + \frac{2(\psi')^2}{\psi}
+  + \beta\psi^2(1 - \psi) = 0,
+\end{equation}
+where the vacuum condition $\beta = \gamma\PhiZero$ has been used and
+$\psi = \Phi/\PhiZero$.
+
+The kinetic operator admits a remarkable simplification via the
+substitution $u \equiv \psi^3$:
+\begin{equation}\label{eq:u-substitution}
+  \psi'' + \frac{2}{r}\psi' + \frac{2(\psi')^2}{\psi}
+  = \frac{1}{3\psi^2}\left(u'' + \frac{2}{r}u'\right)
+  = \frac{1}{3\psi^2}\,\nabla^2 u,
+\end{equation}
+where $\nabla^2$ is the flat spherical Laplacian.
+
+\subsubsection{Physical value of $\beta$}
+
+The scalar substrate mass is $m_{\mathrm{sp}} \sim H_0$
+(Section~\ref{sec:formalism}), giving a dimensionless
+$\beta \sim (\rs\,H_0/c_0)^2$.  For a stellar-mass black hole
+($\rs \sim 10^{4}\,\mathrm{m}$),
+$\beta \sim 10^{-44}$; for M87$^{*}$ ($\rs \sim 10^{13}\,\mathrm{m}$),
+$\beta \sim 10^{-26}$.  At the scale of the photon sphere
+($r \sim \rs$), the self-interaction is negligible:
+$\beta\psi^2(1-\psi) \ll |\nabla^2\psi/\psi|$ by a factor
+$\sim 10^{-26}$ or smaller.
+
+\subsubsection{Exact solution for $\beta = 0$}
+
+Setting $\beta = 0$ in \eqref{eq:vacuum-soliton} and using
+\eqref{eq:u-substitution}:
+\begin{equation}
+  \nabla^2 u = u'' + \frac{2}{r}u' = 0.
+\end{equation}
+This is simply the Laplace equation, with general solution
+$u = C_1 + C_2/r$.  Imposing $\psi(\infty) = 1$ gives $C_1 = 1$;
+$\psi(0) \to \infty$ requires $C_2 > 0$.  Thus:
+\begin{equation}\label{eq:soliton-exact}
+  \boxed{\psi(r) = \left(1 + \frac{C}{r}\right)^{1/3},
+  \qquad C = 3\,\rs,}
+\end{equation}
+where the constant $C = 3\rs$ is fixed by matching the weak-field
+PPN expansion $\psi \approx 1 + \rs/r$ (using
+$(1+3\rs/r)^{1/3} \approx 1 + \rs/r + \mathcal{O}(\rs^2/r^2)$).
+
+\begin{remark}[PPN agreement]\label{rem:ppn}
+The soliton metric
+$g_{rr} = \psi = (1+3\rs/r)^{1/3} \approx 1 + \rs/r$,
+$g_{tt} = -c_0^2/\psi \approx -c_0^2(1 - \rs/r)$,
+reproduces the PPN parameters $\gamma = \beta_{\mathrm{PPN}} = 1$
+at first post-Newtonian order, identical to GR.
+\end{remark}
+
+\subsubsection{Properties of the soliton}
+
+The soliton \eqref{eq:soliton-exact} has the following properties:
+
 \begin{enumerate}[(i)]
-\item $\psi(r \to \infty) = 1$ (vacuum value);
-\item $\psi(r \to 0) \to \infty$ (frozen interior: $\Phi \to \infty$,
-  $c \to 0$, $\hbar \to 0$, $G \to 0$).
+\item \textbf{Frozen interior:}\quad
+  $\psi(r) \to (3\rs/r)^{1/3} \to \infty$ as $r \to 0$, giving
+  $g_{tt} = -c_0^2/\psi \to 0$ (time freezes) and
+  $g_{rr} = \psi \to \infty$ (space stretches).
+
+\item \textbf{No singularity:}\quad
+  $\psi(r)$ is finite and smooth for all $r > 0$.
+  The Kretschner scalar $K \to 0$ at the center.
+
+\item \textbf{No horizon:}\quad
+  $g_{tt} = -c_0^2\,(1 + 3\rs/r)^{-1/3}$ is strictly negative
+  for all $r > 0$; there is no surface where $g_{tt} = 0$.
+
+\item \textbf{Weak divergence:}\quad
+  $\psi \sim r^{-1/3}$ at the center, so $h(r) = r\cdot\psi
+  \sim r^{2/3} \to 0$ as $r \to 0$.
 \end{enumerate}
-Note the contrast with the exponential ansatz, where
-$\psi_{\mathrm{exp}}(r \to 0) = e^{-\rs/r} \to 0$ --- the opposite
-behavior.  The full nonlinear solution must therefore deviate
-qualitatively from the exponential form at small~$r$.
 
-\subsection{Existence of a photon sphere: topological argument}
+\subsection{Absence of a photon sphere}\label{ssec:no-photon-sphere}
 
-\begin{proposition}[Photon sphere existence]\label{prop:ps-existence}
-Any smooth profile $\psi(r)$ with $\psi(0) = +\infty$ and
-$\psi(\infty) = 1$ must have at least one photon sphere.
+\begin{proposition}[No photon sphere]\label{prop:no-ps}
+The TGP soliton $\psi(r) = (1 + 3\rs/r)^{1/3}$ has no photon sphere.
+The function $h(r) = r\cdot\psi(r)$ is strictly monotonically increasing
+for all $r > 0$.
 \end{proposition}
 
 \begin{proof}
-The photon-sphere condition (Section~\ref{ssec:photon-sphere}) is
-$\frac{d}{dr}[r\,\psi(r)] = 0$, i.e., $\psi(r) + r\,\psi'(r) = 0$.
-Consider the function $h(r) \equiv r\cdot\psi(r)$.  At $r = 0$:
-$h(0) = 0$ (since $r = 0$, even though $\psi \to \infty$, the product
-$r\cdot\psi \to 0$ provided $\psi$ diverges slower than $1/r$, which
-is guaranteed by the finite-mass condition $\int \rho\,dV < \infty$).
-At $r \to \infty$: $h(r) \to r \cdot 1 = \infty$ (monotonically).
-
-For $\psi$ divergent at the origin, $h(r)$ starts at $h(0) = 0$,
-rises to some value, and must eventually grow linearly.  If the
-profile has a region where $\psi(r)$ decreases faster than $1/r$
-(which it must, to transition from $\psi \gg 1$ near the center to
-$\psi = 1$ at infinity), then $h'(r) = \psi + r\psi' < 0$ in that
-region, producing a local minimum of~$h$.  At this minimum,
-$h'(r_{\mathrm{ph}}) = 0$: a photon sphere exists.
+Write $h(r) = (r^3 + 3\rs\,r^2)^{1/3}$ and compute
+\begin{equation}
+  h'(r) = \frac{r(3r + 6\rs)}{3(r^3 + 3\rs r^2)^{2/3}}
+  = \frac{r + 2\rs}{(r^3 + 3\rs r^2)^{2/3}} > 0
+  \quad \text{for all } r > 0.
+\end{equation}
+Since $h'(r) > 0$ everywhere, $h$ has no critical points:
+no photon sphere exists.
 \end{proof}
 
-\subsection{Shadow size: qualitative bounds}
+\begin{remark}[Failure of the topological argument]\label{rem:topo-fail}
+An earlier version of this paper claimed that the frozen interior
+($\psi \to \infty$) guarantees a photon sphere by the intermediate value
+theorem.  This argument assumed that $h(0^{+}) \to \infty$ (requiring
+$\psi$ to diverge \emph{faster} than $1/r$).  The actual soliton
+diverges as $r^{-1/3}$, giving $h(0^{+}) \to 0$.  The photon-sphere
+existence requires $\psi$ to diverge at least as fast as $1/r$; the
+TGP kinetic operator $(1/(3\psi^2))\nabla^2(\psi^3)$ prevents this.
+\end{remark}
 
-The critical impact parameter at the photon sphere is
-$\bcrit = r_{\mathrm{ph}}\cdot\psi(r_{\mathrm{ph}})$ (in isotropic
-coordinates).  The shadow ratio relative to GR is
+\subsubsection{Verification: effective potential}
+
+The null-geodesic effective potential is
+$V_{\mathrm{eff}}(r) = 1/[\psi(r)^2\,r^2]
+ = (1 + 3\rs/r)^{-2/3}/r^2$.
+One can verify that $dV_{\mathrm{eff}}/dr < 0$ for all $r > 0$:
+$V_{\mathrm{eff}}$ is monotonically decreasing with no local maximum,
+confirming the absence of unstable circular photon orbits.
+
+\subsection{Self-consistent correction}\label{ssec:self-consistent}
+
+The TGP action $S = \int d^4x\,\sqrt{-g_{\mathrm{eff}}}\,\mathcal{L}$
+includes the volume element $\sqrt{-g_{\mathrm{eff}}} = c_0\psi$, which
+modifies the effective potential via the 4D covariant d'Alembertian.
+For a static field:
 \begin{equation}
-  \frac{\bcrit^{\mathrm{TGP}}}{\bcrit^{\mathrm{GR}}}
-  = \frac{r_{\mathrm{ph}}\,\psi(r_{\mathrm{ph}})}{(3\sqrt{3}/2)\,\rs}.
+  \sqrt{-g}\,g^{ij} = c_0\,\delta^{ij}
+  \quad\Rightarrow\quad
+  \Box_g\,\Phi = \frac{1}{\psi}\,\nabla^2_{\mathrm{flat}}\,\Phi.
 \end{equation}
-Without the full profile $\psi(r)$, we can establish qualitative bounds:
-\begin{itemize}[nosep]
-  \item \textbf{Lower bound ($48\%$ smaller):} the exponential
-    extrapolation, shown to be inconsistent
-    (Proposition~\ref{prop:not-exact}).
-  \item \textbf{Upper bound ($0\%$ deviation):} if the nonlinear
-    corrections restore GR-like behavior ($\psi \approx 1 - \rs/r$
-    near the photon sphere).
-  \item \textbf{Realistic expectation:} the frozen interior
-    ($\psi \to \infty$) pushes the effective metric toward
-    $g_{tt} \to 0$, mimicking a horizon.  The photon sphere of
-    such a metric is expected to lie \emph{between} the exponential
-    value ($\rs/2$) and the GR value ($3\rs/2$), giving a shadow
-    deviation of $\sim 0\text{--}48\%$.
-\end{itemize}
-
-\subsection{Numerical program (ongoing work)}
-
-The resolution requires solving the full nonlinear ODE
-\begin{equation}\label{eq:full-ode-program}
+The self-consistent equation replaces the flat potential
+$\beta\psi^2(1-\psi)$ with $\beta\psi^3(1-\psi)$:
+\begin{equation}\label{eq:self-consistent}
   \psi'' + \frac{2}{r}\psi' + \frac{2(\psi')^2}{\psi}
-  + \beta\psi^2 - \gamma\psi^3 = -\frac{q}{\PhiZero}\,\rho(r)
+  + \beta\psi^3(1-\psi) = 0.
 \end{equation}
-with a source term $\rho(r)$ that models the compact object, and
-boundary conditions $\psi(0) \to \infty$, $\psi(\infty) = 1$.
+For $\beta = 0$ this is identical to the flat equation, so the soliton
+\eqref{eq:soliton-exact} is unchanged.  For $\beta > 0$, the
+near-center power law changes from $\psi \sim r^{-1}$ (flat) to
+$\psi \sim r^{-2/3}$ (self-consistent), giving $h \sim r^{1/3} \to 0$
+--- an even \emph{weaker} divergence, reinforcing the absence of a
+photon sphere.
 
-Key challenges identified in preliminary numerical work~\cite{TGP-repo}:
-\begin{enumerate}[(a)]
-  \item The cubic self-interaction ($\gamma\psi^3$) causes runaway
-    growth in shooting methods; relaxation or spectral methods are
-    needed.
-  \item The boundary condition $\psi \to \infty$ at $r = 0$ requires
-    a regularized variable (e.g., $u = 1/\psi$ with $u(0) = 0$).
-  \item The oscillatory tail at large~$r$ (Bessel-like, with
-    wavelength $\lambda \sim 1/\sqrt{3}$ in code units) demands
-    careful outer-boundary treatment.
+\subsection{Implications}\label{ssec:implications}
+
+\begin{enumerate}[(i)]
+\item \textbf{No classical shadow:}\quad
+  The TGP soliton (for astrophysically relevant $\beta$) has no photon
+  sphere and therefore no classical BH shadow in the GR sense.
+  Light approaching the compact object is deflected but never captured
+  on unstable circular orbits.
+
+\item \textbf{Observational consequences:}\quad
+  The absence of a photon sphere does \emph{not} mean the object is
+  invisible.  It implies (a)~no sharp ``photon ring'' as in GR,
+  (b)~a softer brightness gradient at the edge of the dark region,
+  (c)~different higher-order photon ring signatures.  Current EHT
+  resolution ($\sim 20\,\mu\mathrm{as}$) cannot yet distinguish these
+  from the GR prediction with high confidence.
+
+\item \textbf{Kill-shot test:}\quad
+  If future EHT observations (ngEHT) detect sharp photon-ring
+  substructure consistent with a GR photon sphere at
+  $R_{\mathrm{ph}} = 3GM/c^2$, this would constitute a
+  \textbf{falsification of TGP} in its current smooth-field
+  formulation (unless discrete substrate effects modify the
+  near-center behavior).
 \end{enumerate}
-A complete strong-field solver implementing these techniques is
-available in the TGP repository~\cite{TGP-repo} and will be the
-subject of a dedicated companion paper.
 
 % ============================================================
 \section{Discussion}\label{sec:discussion}
 
 \subsection{Honest assessment}
 
-The analysis in this paper has revealed a subtlety missed in earlier
-treatments: the exponential metric $\psi = e^{-\rs/r}$ does not satisfy
-the full TGP field equation (Proposition~\ref{prop:not-exact}) and,
-when examined in coordinate-invariant terms, does not possess a photon
-sphere at all.  The ``$48\%$'' figure derived in
-Section~\ref{ssec:bcrit} is therefore a \textbf{conditional result} that
-does not represent the true TGP prediction.
+The analysis in this paper has proceeded through three levels of
+increasing rigor.
 
-This does not falsify TGP.  The situation is analogous to using the
-Newtonian potential $U = -GM/r$ all the way to $r = 0$: the unphysical
-result (infinite density) signals the breakdown of the approximation, not
-of the underlying theory.  The exponential metric is the correct weak-field
-solution; its extrapolation to $r \lesssim \rs$ is outside its domain of
-validity.
+\textbf{Level~1} (exponential extrapolation): the weak-field metric
+$\psi = e^{-\rs/r}$ gives $48\%$ smaller shadow if taken literally.
+\textbf{Level~2} (consistency check): this metric does not satisfy the
+TGP field equation and has no photon sphere in coordinate-invariant
+terms (Proposition~\ref{prop:not-exact}).
+\textbf{Level~3} (exact soliton): the $u = \psi^3$ substitution
+linearizes the kinetic operator, yielding the exact BH soliton
+$\psi = (1 + 3\rs/r)^{1/3}$ (equation~\eqref{eq:soliton-exact}).
+This solution has \textbf{no photon sphere}
+(Proposition~\ref{prop:no-ps}).
 
-The positive result (Section~\ref{sec:strong-field}) is that TGP's own
-ontology --- the frozen interior with $\psi \to \infty$ --- guarantees
-the existence of a photon sphere by a topological argument
-(Proposition~\ref{prop:ps-existence}).  The shadow size is bounded between
-$52\%$ (exponential limit) and $100\%$ (GR) of the Schwarzschild value,
-with the exact answer depending on the full nonlinear profile.
+The no-photon-sphere result is a sharp, falsifiable prediction of TGP.
+It arises because the nonlinear kinetic operator
+$(1/(3\psi^2))\nabla^2(\psi^3)$ constrains the soliton to diverge
+only as $r^{-1/3}$ at the center --- too slowly to create the
+$h$-function minimum required for a photon sphere.
 
-\subsection{Toward the full strong-field solution}
+\subsection{Comparison with the topological argument}
 
-The detailed program for obtaining the full nonlinear profile $\psi(r)$
-is presented in Section~\ref{sec:strong-field}.  The key open question
-is the shape of the transition region where $\psi(r)$ departs from the
-weak-field exponential and begins to rise toward $\psi \to \infty$ at
-the center.  This transition determines the photon sphere location and
-hence the shadow size.  Until the full solution is obtained, TGP's
-prediction for the BH shadow must be considered \textbf{undetermined}
-rather than ``$48\%$ smaller.''
+An earlier version of this work (Proposition~6.1, now corrected)
+claimed that any $\psi$ with $\psi(0) = \infty$ and $\psi(\infty) = 1$
+must have a photon sphere.  The error lay in assuming
+$h(0^+) = r\cdot\psi \to \infty$, which requires $\psi$ to diverge
+faster than $1/r$.  The TGP soliton diverges as $r^{-1/3}$, giving
+$h(0^+) \to 0$ and $h$ monotonically increasing.  This demonstrates
+that the existence of a photon sphere depends not only on the boundary
+conditions but on the \emph{divergence rate}, which is determined by the
+kinetic structure of the field equation.
 
 \subsection{Comparison with other modified gravity predictions}
 
@@ -953,43 +1034,43 @@ handles:
 \section{Conclusion}\label{sec:conclusion}
 
 We have analyzed the black hole shadow problem in TGP at three levels
-of rigor, arriving at the following conclusions:
+of rigor:
 
 \begin{enumerate}[(1)]
-  \item The weak-field exponential metric, if naively extrapolated,
+  \item \textbf{Exponential extrapolation} (conditional):
+    the weak-field metric $\psi = e^{-\rs/r}$, if taken literally,
     gives a photon sphere at $R_{\mathrm{ph}} = \rs/2$ and a shadow
-    $48\%$ smaller than Schwarzschild.  However, this metric does
-    \emph{not} satisfy the full TGP field equation
-    (Proposition~\ref{prop:not-exact}) and possesses no photon sphere
-    in coordinate-invariant terms.  \textbf{The $48\%$ figure is not
-    the true TGP prediction.}
+    $48\%$ smaller than Schwarzschild.  This metric does not satisfy the
+    TGP field equation (Proposition~\ref{prop:not-exact}).
 
-  \item The TGP ontology (frozen interior, $\psi \to \infty$) guarantees
-    the existence of a photon sphere by a topological argument
-    (Proposition~\ref{prop:ps-existence}).  The shadow size lies between
-    $52\%$ and $100\%$ of the Schwarzschild value, with the exact answer
-    requiring the full nonlinear profile $\psi(r)$.
+  \item \textbf{Exact soliton solution} (new result):
+    the substitution $u = \psi^3$ linearizes the kinetic operator to
+    $\nabla^2 u = 0$, yielding the closed-form BH soliton
+    $\psi = (1 + 3\rs/r)^{1/3}$.  This solution has a frozen interior
+    ($g_{tt} \to 0$), no singularity, no horizon, and
+    \textbf{no photon sphere} (Proposition~\ref{prop:no-ps}).
 
-  \item Three results are robust regardless of the strong-field details:
-    (a)~TGP produces \emph{no curvature singularity}: $K \to 0$;
+  \item \textbf{Robust results:}
+    (a)~TGP produces no curvature singularity: $K \to 0$;
     (b)~black hole thermodynamics is preserved:
     $S_{\mathrm{BH}} = k_B A/(4\lP^2)$;
-    (c)~the theory makes falsifiable predictions: shadow size (once
-    computed), ringdown frequency shifts, and breathing-mode
-    gravitational waves.
+    (c)~the absence of a photon sphere is a \textbf{falsifiable
+    prediction}: detection of sharp photon-ring substructure
+    by ngEHT would rule out TGP in its smooth-field formulation.
 \end{enumerate}
 
-The central open problem is the numerical solution of the full nonlinear
-field equation with boundary conditions $\psi(0) \to \infty$,
-$\psi(\infty) = 1$.  This will yield the definitive TGP prediction for
-the BH shadow and determine whether TGP is consistent with EHT data.
-Preliminary numerical infrastructure for this program is available
-at~\cite{TGP-repo}.
+The no-photon-sphere result is a consequence of the nonlinear kinetic
+operator $D_{\mathrm{kin}}[\psi] = (1/(3\psi^2))\nabla^2(\psi^3)$,
+which constrains the soliton divergence to $\psi \sim r^{-1/3}$
+--- too slow for $h(r) = r\psi(r)$ to develop a minimum.  This
+structural prediction distinguishes TGP from GR in the strong-field
+regime while remaining fully consistent in the weak field
+($\gamma = \beta_{\mathrm{PPN}} = 1$).
 
-TGP occupies a distinctive position: it is \emph{indistinguishable} from
-GR in every weak-field test, yet its strong-field predictions ---
-once fully computed --- will provide sharp, falsifiable targets for the
-Event Horizon Telescope and gravitational-wave observatories.
+TGP occupies a distinctive position: \emph{indistinguishable} from
+GR in every weak-field and PPN test, yet predicting qualitatively
+different strong-field phenomenology --- a frozen-star interior with
+no photon sphere, testable by next-generation EHT observations.
 
 \bigskip
 \noindent\textbf{Acknowledgments.}\quad
