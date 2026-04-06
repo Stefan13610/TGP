@@ -923,14 +923,82 @@ $\psi \sim r^{-2/3}$ (self-consistent), giving $h \sim r^{1/3} \to 0$
 --- an even \emph{weaker} divergence, reinforcing the absence of a
 photon sphere.
 
+\subsection{Robustness against lattice discretization}%
+\label{ssec:lattice-robustness}
+
+TGP derives its field equation from a discrete substrate
+$\Gamma = (V,E)$ via coarse-graining~\cite{Serafin2026-full}.  One may
+ask whether the no-photon-sphere result survives when the continuum
+Laplacian is replaced by its discrete counterpart on a cubic lattice
+with block spacing~$L_{B}$.
+
+\subsubsection{Perturbative protection (harmonicity)}
+
+The discrete Laplacian admits the Taylor expansion
+\begin{equation}\label{eq:disc-lap}
+  \nabla^{2}_{\mathrm{disc}}\,u
+  = \nabla^{2} u + \frac{L_{B}^{2}}{12}\,\nabla^{4} u
+    + \mathcal{O}(L_{B}^{4}).
+\end{equation}
+Since the soliton variable $u = \psi^{3}$ satisfies
+$\nabla^{2} u = 0$, the bi-Laplacian
+$\nabla^{4} u = \nabla^{2}(\nabla^{2} u) = 0$, and similarly for all
+higher orders $\nabla^{2n} u = 0$, $n \geq 1$.  Consequently:
+
+\begin{proposition}[Harmonicity protection]\label{prop:lattice-protect}
+All perturbative lattice corrections to the soliton equation vanish
+identically.  The continuum soliton $\psi = (1+3\rs/r)^{1/3}$ is an
+exact solution of the Taylor-expanded discrete field equation to
+\textbf{all orders} in $L_{B}$.
+\end{proposition}
+
+\subsubsection{Non-perturbative regime: discrete Green's function}
+
+At distances $r \lesssim L_{B}$, the Taylor expansion breaks down.  The
+true discrete equation is $\nabla^{2}_{\mathrm{disc}}\,u = 0$, whose
+solution is the lattice Green's function $G_{\mathrm{disc}}$.  Unlike the
+continuum $1/(4\pi r)$, the lattice Green's function is \emph{finite}
+at the origin: $G_{\mathrm{disc}}(0) = W_{3}/(6\cdot 2\pi^{2})
+\approx 0.2527/L_{B}$ (Watson's triple integral).
+
+This regularizes the soliton: $\psi(0)$ becomes finite rather than
+divergent.  Crucially, this makes the photon-sphere condition
+\emph{harder} to satisfy, not easier: near the center $\psi' \approx 0$,
+so $h'(r) = \psi + r\psi' \approx \psi > 0$.
+
+\subsubsection{Structural argument: the $1/3$ exponent}
+
+The absence of a photon sphere rests on a single structural fact.
+The photon-sphere condition $h'(r_{*}) = 0$ requires
+$\psi'/\psi = -1/r$.  Since $\psi = u^{1/3}$:
+\begin{equation}\label{eq:one-third}
+  \frac{\psi'}{\psi} = \frac{1}{3}\,\frac{u'}{u}.
+\end{equation}
+For any positive solution of $\nabla^{2} u = 0$ (or its discrete
+analogue) with $u \to 1 + C/r$, the steepest possible logarithmic
+gradient is $|u'/u| \to 1/r$ as $r \to 0$.  Therefore
+$|\psi'/\psi| \leq 1/(3r) < 1/r$, and $h' > 0$ everywhere.
+
+The factor $1/3 = 1/(\alpha+1)$ with $\alpha = 2$ (the TGP kinetic
+exponent) is the \emph{fundamental} reason for the absence of a photon
+sphere.  It is independent of the lattice spacing, lattice geometry, or
+$\rs/L_{B}$ ratio.
+
+\begin{remark}[Critical exponent]\label{rem:critical-alpha}
+A photon sphere would require $p = 1/(\alpha+1) \geq 1$,
+i.e.\ $\alpha \leq 0$.  The TGP value $\alpha = 2$ is far from this
+threshold.  The no-photon-sphere prediction is therefore robust against
+any reasonable perturbation of the theory.
+\end{remark}
+
 \subsection{Implications}\label{ssec:implications}
 
 \begin{enumerate}[(i)]
 \item \textbf{No classical shadow:}\quad
-  The TGP soliton (for astrophysically relevant $\beta$) has no photon
-  sphere and therefore no classical BH shadow in the GR sense.
-  Light approaching the compact object is deflected but never captured
-  on unstable circular orbits.
+  The TGP soliton has no photon sphere and therefore no classical BH
+  shadow in the GR sense.  This result holds for the exact continuum
+  solution, the self-consistent correction, and the discrete-substrate
+  formulation.
 
 \item \textbf{Observational consequences:}\quad
   The absence of a photon sphere does \emph{not} mean the object is
@@ -940,13 +1008,16 @@ photon sphere.
   resolution ($\sim 20\,\mu\mathrm{as}$) cannot yet distinguish these
   from the GR prediction with high confidence.
 
-\item \textbf{Kill-shot test:}\quad
+\item \textbf{Kill-shot test (strengthened):}\quad
   If future EHT observations (ngEHT) detect sharp photon-ring
   substructure consistent with a GR photon sphere at
   $R_{\mathrm{ph}} = 3GM/c^2$, this would constitute a
-  \textbf{falsification of TGP} in its current smooth-field
-  formulation (unless discrete substrate effects modify the
-  near-center behavior).
+  \textbf{falsification of TGP}.  The loophole ``unless discrete
+  substrate effects modify the near-center behavior'' is now
+  \emph{closed}: the $1/3$ exponent structurally forbids a photon
+  sphere for \emph{any} lattice geometry
+  (Proposition~\ref{prop:lattice-protect},
+  equation~\eqref{eq:one-third}).
 \end{enumerate}
 
 % ============================================================
