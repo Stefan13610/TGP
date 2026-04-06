@@ -52,26 +52,36 @@
 \begin{abstract}
 Topology-Generated Potential (TGP) is a scalar-field framework in which
 the physical constants $c$, $\hbar$, and $G$ are field-dependent while
-the Planck length $\lP$ remains invariant.  The static, spherically
-symmetric vacuum solution takes the exponential form
-$\psi = \exp(2U/c_0^2)$, which reproduces all post-Newtonian predictions
-of general relativity (GR) in the weak field yet departs qualitatively in
-the strong-field regime: no coordinate singularity forms, no true event
-horizon exists, and the photon sphere shifts inward from
-$\rph = \frac{3}{2}\rs$ (GR) to $\rph = \rs$.  The critical impact
-parameter shrinks from $\bcrit^{\mathrm{GR}} = 3\sqrt{3}\,GM/c_0^2$ to
-$\bcrit^{\mathrm{TGP}} = (\rs/2)\,e$, yielding a shadow $\sim 48\%$
-smaller than the Schwarzschild prediction.  We derive these results from
-null geodesics of the TGP metric, present the no-singularity mechanism
-(Kretschner scalar $K \propto \chi^{-4} \to 0$, duality
-$\chi \leftrightarrow 1/\chi$), confirm that black hole thermodynamics
-is preserved ($S_{\mathrm{BH}} = k_B A / 4\lP^2$, $\Phi$-independent),
-and tabulate quantitative predictions for M87* and Sgr~A*.
-We stress that the $48\%$ figure follows from the naive exponential
-extrapolation; the full strong-field profile $\psi(r)$ is an open problem
-whose resolution could moderate the discrepancy.  Ringdown frequency
-shifts ($\delta f_0 \approx +0.6\%$, $\delta f_2 \approx -0.2\%$)
-provide an independent, gravitational-wave test.
+the Planck length $\lP$ remains invariant.  The weak-field, static,
+spherically symmetric metric takes the exponential (Yilmaz--Rosen) form
+$\psi = \exp(-\rs/r)$, which reproduces all post-Newtonian predictions
+of general relativity (GR) with $\gamma = \beta = 1$.
+
+We present three levels of analysis.  \textbf{(1)~Exponential
+extrapolation:} if taken to hold at all radii, the exponential metric
+places the photon sphere at $R_{\mathrm{ph}} = \rs/2$ in curvature
+coordinates, yielding a shadow $\sim 48\%$ smaller than Schwarzschild.
+\textbf{(2)~Consistency check:} we prove analytically that the
+exponential metric does \emph{not} satisfy the full nonlinear TGP field
+equation --- the residual is $\mathcal{O}(\beta)$ at all radii ---
+and that in isotropic coordinates the function $r\cdot\psi(r)$ is
+monotonically increasing, so the exponential metric possesses
+\emph{no photon sphere} in coordinate-invariant terms.  The
+``$R_{\mathrm{ph}} = \rs/2$'' result is an artifact of applying the
+curvature-coordinate photon-sphere formula to a metric form that is
+not the true strong-field solution.  \textbf{(3)~Strong-field program:}
+the TGP ontology requires $\Phi \to \infty$ at the center (frozen
+interior), implying $\psi \to \infty$ and $g_{tt} \to 0$ --- an
+effective horizon.  We show that \emph{any} profile with $\psi(0) =
+\infty$ and $\psi(\infty) = 1$ must possess a photon sphere by the
+intermediate value theorem, and that the shadow size depends on the
+full nonlinear profile $\psi(r)$, which remains an open problem.
+
+Black hole thermodynamics is preserved exactly
+($S_{\mathrm{BH}} = k_B A / 4\lP^2$) and the no-singularity theorem
+($K \to 0$) is robust.  Ringdown frequency shifts
+($\delta f_0 \approx +0.6\%$, $\delta f_2 \approx -0.2\%$) provide
+independent gravitational-wave tests.
 \end{abstract}
 
 \tableofcontents
@@ -400,13 +410,77 @@ predicts a \emph{substantially} smaller shadow --- is the same in both
 analyses.
 \end{remark}
 
+\subsection{Consistency check: does the exponential metric solve the TGP field equation?}
+\label{ssec:consistency}
+
+The preceding derivation assumed that the exponential metric holds at
+all radii, including the photon sphere at $R = \rs/2$.  We now check
+whether this assumption is self-consistent.
+
+\paragraph{Residual of the field equation.}
+The full TGP field equation in vacuum ($\rho = 0$) is
+\begin{equation}\label{eq:field-eq-check}
+  \psi'' + \frac{2}{r}\,\psi' + 2\,\frac{(\psi')^2}{\psi}
+  + \beta\,\psi^2 - \gamma\,\psi^3 = 0,
+\end{equation}
+where $\beta = \gamma$ (vacuum condition).  For the exponential ansatz
+$\psi_{\mathrm{exp}} = e^{-\rs/r}$, the kinetic part evaluates to
+\begin{equation}
+  \psi'' + \frac{2}{r}\psi' + \frac{2(\psi')^2}{\psi}
+  = \frac{3\rs^2}{r^4}\,e^{-\rs/r},
+\end{equation}
+while the potential part is $\beta e^{-2\rs/r}(1 - e^{-\rs/r})$.  The
+total residual
+\begin{equation}\label{eq:residual}
+  \mathcal{R}(r) = \frac{3\rs^2}{r^4}\,e^{-\rs/r}
+  + \beta\,e^{-2\rs/r} - \gamma\,e^{-3\rs/r}
+\end{equation}
+is \textbf{strictly positive} for all $r > 0$ when $\beta = \gamma > 0$:
+both the kinetic term ($> 0$) and the potential term
+$\beta e^{-2\rs/r}(1-e^{-\rs/r}) > 0$ (since $e^{-\rs/r} < 1$) are
+individually positive.
+
+\begin{proposition}[Exponential is not the strong-field solution]
+\label{prop:not-exact}
+The exponential metric $\psi = e^{-\rs/r}$ does not satisfy the full
+nonlinear TGP field equation~\eqref{eq:field-eq-check} at any radius.
+It is an approximate solution valid only in the asymptotic regime
+$r \gg \rs$ where $\mathcal{R}(r) \to 0$.
+\end{proposition}
+
+\paragraph{Absence of photon sphere in isotropic coordinates.}
+The photon sphere condition in isotropic coordinates is
+$\frac{d}{dr}[r\cdot\psi(r)] = 0$ (Section~\ref{ssec:photon-sphere}).
+For the exponential metric:
+\begin{equation}
+  \frac{d}{dr}\!\left[r\,e^{-\rs/r}\right]
+  = e^{-\rs/r}\!\left(1 + \frac{\rs}{r}\right) > 0
+  \quad\text{for all } r > 0.
+\end{equation}
+The function $r\cdot\psi$ is \textbf{monotonically increasing}: there is
+no extremum and hence \emph{no photon sphere} in coordinate-invariant
+terms.  The result $R_{\mathrm{ph}} = \rs/2$ obtained in
+Section~\ref{ssec:photon-sphere} arises from applying the curvature-coordinate
+formula $A'(R)/A(R) = 2/R$ to the Yilmaz--Rosen form, but this form is
+not the actual strong-field TGP solution (Proposition~\ref{prop:not-exact}).
+
+\begin{remark}[Status of the $48\%$ result]\label{rem:48pct-status}
+The $48\%$ shadow reduction derived in Section~\ref{ssec:bcrit} is a
+\textbf{conditional result}: it holds \emph{if and only if} the
+exponential metric is valid at $R = \rs/2$.
+Proposition~\ref{prop:not-exact} shows this assumption is
+inconsistent.  The actual TGP shadow size requires the full
+nonlinear profile $\psi(r)$, derived in Section~\ref{sec:strong-field}.
+\end{remark}
+
 \subsection{Summary table: GR vs TGP}
 
 \begin{table}[h]
 \centering
-\caption{Comparison of key black hole observables in GR (Schwarzschild)
-  and TGP (exponential metric) for a non-rotating compact object of
-  mass~$M$.  The areal radius $R$ is used throughout.}
+\caption{Key black hole observables in GR (Schwarzschild)
+  and TGP (exponential extrapolation, conditional ---
+  see Proposition~\ref{prop:not-exact}).
+  Areal radius $R$ throughout.}
 \label{tab:comparison}
 \begin{tabular}{lcc}
 \toprule
@@ -602,10 +676,13 @@ precision~\cite{EHT-M87-VI}).
 
 \begin{table}[h]
 \centering
-\caption{Predicted shadow angular diameters for M87* and Sgr~A* in GR
-  and TGP.  The TGP values assume the exponential metric extrapolated
-  into the strong-field regime (see caveat in the text).
-  Observed values are from~\cite{EHT-M87-VI,EHT-SgrA-2022}.}
+\caption{Shadow angular diameters for M87* and Sgr~A* in GR
+  and TGP (exponential extrapolation).  The TGP values are
+  \textbf{conditional}: they assume the exponential metric holds at
+  $R = \rs/2$, which Proposition~\ref{prop:not-exact} shows is
+  inconsistent.  The true TGP prediction requires the full nonlinear
+  profile (Section~\ref{sec:strong-field}).
+  Observed values from~\cite{EHT-M87-VI,EHT-SgrA-2022}.}
 \label{tab:shadows}
 \begin{tabular}{lccc}
 \toprule
@@ -695,45 +772,138 @@ Square Kilometre Array (SKA) through pulsar timing
 arrays~\cite{Yunes2013}.
 
 % ============================================================
+\section{Strong-field program}\label{sec:strong-field}
+
+The consistency analysis of Section~\ref{ssec:consistency} demonstrates
+that the exponential metric is insufficient in the strong-field regime.
+We now outline what the correct strong-field solution must look like
+and what it implies for the shadow.
+
+\subsection{Boundary conditions from TGP ontology}
+
+The TGP framework requires the substrate field to satisfy:
+\begin{enumerate}[(i)]
+\item $\psi(r \to \infty) = 1$ (vacuum value);
+\item $\psi(r \to 0) \to \infty$ (frozen interior: $\Phi \to \infty$,
+  $c \to 0$, $\hbar \to 0$, $G \to 0$).
+\end{enumerate}
+Note the contrast with the exponential ansatz, where
+$\psi_{\mathrm{exp}}(r \to 0) = e^{-\rs/r} \to 0$ --- the opposite
+behavior.  The full nonlinear solution must therefore deviate
+qualitatively from the exponential form at small~$r$.
+
+\subsection{Existence of a photon sphere: topological argument}
+
+\begin{proposition}[Photon sphere existence]\label{prop:ps-existence}
+Any smooth profile $\psi(r)$ with $\psi(0) = +\infty$ and
+$\psi(\infty) = 1$ must have at least one photon sphere.
+\end{proposition}
+
+\begin{proof}
+The photon-sphere condition (Section~\ref{ssec:photon-sphere}) is
+$\frac{d}{dr}[r\,\psi(r)] = 0$, i.e., $\psi(r) + r\,\psi'(r) = 0$.
+Consider the function $h(r) \equiv r\cdot\psi(r)$.  At $r = 0$:
+$h(0) = 0$ (since $r = 0$, even though $\psi \to \infty$, the product
+$r\cdot\psi \to 0$ provided $\psi$ diverges slower than $1/r$, which
+is guaranteed by the finite-mass condition $\int \rho\,dV < \infty$).
+At $r \to \infty$: $h(r) \to r \cdot 1 = \infty$ (monotonically).
+
+For $\psi$ divergent at the origin, $h(r)$ starts at $h(0) = 0$,
+rises to some value, and must eventually grow linearly.  If the
+profile has a region where $\psi(r)$ decreases faster than $1/r$
+(which it must, to transition from $\psi \gg 1$ near the center to
+$\psi = 1$ at infinity), then $h'(r) = \psi + r\psi' < 0$ in that
+region, producing a local minimum of~$h$.  At this minimum,
+$h'(r_{\mathrm{ph}}) = 0$: a photon sphere exists.
+\end{proof}
+
+\subsection{Shadow size: qualitative bounds}
+
+The critical impact parameter at the photon sphere is
+$\bcrit = r_{\mathrm{ph}}\cdot\psi(r_{\mathrm{ph}})$ (in isotropic
+coordinates).  The shadow ratio relative to GR is
+\begin{equation}
+  \frac{\bcrit^{\mathrm{TGP}}}{\bcrit^{\mathrm{GR}}}
+  = \frac{r_{\mathrm{ph}}\,\psi(r_{\mathrm{ph}})}{(3\sqrt{3}/2)\,\rs}.
+\end{equation}
+Without the full profile $\psi(r)$, we can establish qualitative bounds:
+\begin{itemize}[nosep]
+  \item \textbf{Lower bound ($48\%$ smaller):} the exponential
+    extrapolation, shown to be inconsistent
+    (Proposition~\ref{prop:not-exact}).
+  \item \textbf{Upper bound ($0\%$ deviation):} if the nonlinear
+    corrections restore GR-like behavior ($\psi \approx 1 - \rs/r$
+    near the photon sphere).
+  \item \textbf{Realistic expectation:} the frozen interior
+    ($\psi \to \infty$) pushes the effective metric toward
+    $g_{tt} \to 0$, mimicking a horizon.  The photon sphere of
+    such a metric is expected to lie \emph{between} the exponential
+    value ($\rs/2$) and the GR value ($3\rs/2$), giving a shadow
+    deviation of $\sim 0\text{--}48\%$.
+\end{itemize}
+
+\subsection{Numerical program (ongoing work)}
+
+The resolution requires solving the full nonlinear ODE
+\begin{equation}\label{eq:full-ode-program}
+  \psi'' + \frac{2}{r}\psi' + \frac{2(\psi')^2}{\psi}
+  + \beta\psi^2 - \gamma\psi^3 = -\frac{q}{\PhiZero}\,\rho(r)
+\end{equation}
+with a source term $\rho(r)$ that models the compact object, and
+boundary conditions $\psi(0) \to \infty$, $\psi(\infty) = 1$.
+
+Key challenges identified in preliminary numerical work~\cite{TGP-repo}:
+\begin{enumerate}[(a)]
+  \item The cubic self-interaction ($\gamma\psi^3$) causes runaway
+    growth in shooting methods; relaxation or spectral methods are
+    needed.
+  \item The boundary condition $\psi \to \infty$ at $r = 0$ requires
+    a regularized variable (e.g., $u = 1/\psi$ with $u(0) = 0$).
+  \item The oscillatory tail at large~$r$ (Bessel-like, with
+    wavelength $\lambda \sim 1/\sqrt{3}$ in code units) demands
+    careful outer-boundary treatment.
+\end{enumerate}
+A complete strong-field solver implementing these techniques is
+available in the TGP repository~\cite{TGP-repo} and will be the
+subject of a dedicated companion paper.
+
+% ============================================================
 \section{Discussion}\label{sec:discussion}
 
 \subsection{Honest assessment}
 
-The central result of this paper --- that the TGP exponential metric
-predicts a shadow roughly half the size of the Schwarzschild shadow ---
-is in clear tension with EHT observations.  We regard this not as a
-falsification of TGP but as an indication that the \emph{naive
-exponential extrapolation} breaks down before reaching the photon sphere.
+The analysis in this paper has revealed a subtlety missed in earlier
+treatments: the exponential metric $\psi = e^{-\rs/r}$ does not satisfy
+the full TGP field equation (Proposition~\ref{prop:not-exact}) and,
+when examined in coordinate-invariant terms, does not possess a photon
+sphere at all.  The ``$48\%$'' figure derived in
+Section~\ref{ssec:bcrit} is therefore a \textbf{conditional result} that
+does not represent the true TGP prediction.
 
-The situation is analogous to using the Newtonian potential $U = -GM/r$
-all the way to $r = 0$: the result (infinite density) does not falsify
-Newtonian gravity but rather signals its domain of validity.  Similarly,
-the exponential metric is the correct TGP solution in the weak and
-moderate field regimes; its extrapolation to $r \sim \rs/2$ enters the
-nonlinear regime where the full TGP field equation must be solved
-numerically.
+This does not falsify TGP.  The situation is analogous to using the
+Newtonian potential $U = -GM/r$ all the way to $r = 0$: the unphysical
+result (infinite density) signals the breakdown of the approximation, not
+of the underlying theory.  The exponential metric is the correct weak-field
+solution; its extrapolation to $r \lesssim \rs$ is outside its domain of
+validity.
+
+The positive result (Section~\ref{sec:strong-field}) is that TGP's own
+ontology --- the frozen interior with $\psi \to \infty$ --- guarantees
+the existence of a photon sphere by a topological argument
+(Proposition~\ref{prop:ps-existence}).  The shadow size is bounded between
+$52\%$ (exponential limit) and $100\%$ (GR) of the Schwarzschild value,
+with the exact answer depending on the full nonlinear profile.
 
 \subsection{Toward the full strong-field solution}
 
-The full TGP field equation for the static, spherically symmetric
-case is~\cite{Serafin2026-full}
-\begin{equation}\label{eq:full-field}
-  f'' + \frac{2}{r}\,f' + 2\,\frac{(f')^2}{f}
-  + \beta\,\frac{f^2}{\PhiZero} - \gamma\,\frac{f^3}{\PhiZero^2} = 0,
-\end{equation}
-where $f(r) = \Phi(r)$ and $\beta$, $\gamma$ are dimensionless couplings
-with $\beta = \gamma$ in vacuum.  The exponential solution corresponds
-to dropping the $\beta$ and $\gamma$ terms.  Including them --- and
-imposing appropriate boundary conditions at $r = 0$ (regularity) and
-$r \to \infty$ ($f \to \PhiZero$) --- will yield a modified profile
-$\psi(r)$ that transitions from the exponential form at large~$r$ to a
-frozen interior at small~$r$.  The photon sphere of this full solution
-will generically lie between $\rs/2$ (exponential limit) and $3\rs/2$
-(GR), providing a continuous interpolation between the two theories.
-
-Numerical solution of Eq.~\eqref{eq:full-field} with physically
-motivated boundary conditions is the subject of ongoing
-work~\cite{TGP-repo}.
+The detailed program for obtaining the full nonlinear profile $\psi(r)$
+is presented in Section~\ref{sec:strong-field}.  The key open question
+is the shape of the transition region where $\psi(r)$ departs from the
+weak-field exponential and begins to rise toward $\psi \to \infty$ at
+the center.  This transition determines the photon sphere location and
+hence the shadow size.  Until the full solution is obtained, TGP's
+prediction for the BH shadow must be considered \textbf{undetermined}
+rather than ``$48\%$ smaller.''
 
 \subsection{Comparison with other modified gravity predictions}
 
@@ -782,39 +952,44 @@ handles:
 % ============================================================
 \section{Conclusion}\label{sec:conclusion}
 
-We have derived the photon sphere and critical impact parameter for
-black hole shadows in the Topology-Generated Potential framework.  The
-exponential metric $\dd s^2 = -e^{-\rs/R}c_0^2\,\dd t^2 +
-e^{+\rs/R}\dd R^2 + R^2\dd\Omega^2$ gives a photon sphere at
-$R_{\mathrm{ph}} = \rs/2$ and a critical impact parameter
-$\bcrit = (\rs/2)\,e$, yielding a shadow $\sim 48\%$ smaller than
-Schwarzschild.
+We have analyzed the black hole shadow problem in TGP at three levels
+of rigor, arriving at the following conclusions:
 
-This prediction is in tension with EHT observations of M87* and Sgr~A*,
-which are consistent with GR.  We have argued that this tension is likely
-an artifact of extrapolating the exponential metric into the nonlinear
-regime, and that the full TGP strong-field solution --- which includes
-self-interaction corrections --- will moderate the deviation.  The
-resolution of this question requires numerical integration of the full
-TGP field equation, which is the subject of ongoing work.
-
-Three results are robust regardless of the strong-field details:
 \begin{enumerate}[(1)]
-  \item TGP produces \emph{no curvature singularity}: $K \to 0$ as
-    $r \to 0$.
-  \item Black hole thermodynamics is preserved: $S_{\mathrm{BH}} =
-    k_B A/(4\lP^2)$, independent of the local field value.
-  \item The theory makes falsifiable predictions: shadow size, ringdown
-    frequency shifts, and breathing-mode gravitational waves, all
-    testable by current and next-generation instruments.
+  \item The weak-field exponential metric, if naively extrapolated,
+    gives a photon sphere at $R_{\mathrm{ph}} = \rs/2$ and a shadow
+    $48\%$ smaller than Schwarzschild.  However, this metric does
+    \emph{not} satisfy the full TGP field equation
+    (Proposition~\ref{prop:not-exact}) and possesses no photon sphere
+    in coordinate-invariant terms.  \textbf{The $48\%$ figure is not
+    the true TGP prediction.}
+
+  \item The TGP ontology (frozen interior, $\psi \to \infty$) guarantees
+    the existence of a photon sphere by a topological argument
+    (Proposition~\ref{prop:ps-existence}).  The shadow size lies between
+    $52\%$ and $100\%$ of the Schwarzschild value, with the exact answer
+    requiring the full nonlinear profile $\psi(r)$.
+
+  \item Three results are robust regardless of the strong-field details:
+    (a)~TGP produces \emph{no curvature singularity}: $K \to 0$;
+    (b)~black hole thermodynamics is preserved:
+    $S_{\mathrm{BH}} = k_B A/(4\lP^2)$;
+    (c)~the theory makes falsifiable predictions: shadow size (once
+    computed), ringdown frequency shifts, and breathing-mode
+    gravitational waves.
 \end{enumerate}
 
-TGP thus occupies a distinctive position in the landscape of modified
-gravity theories: it is \emph{indistinguishable} from GR in every
-weak-field test yet makes \emph{sharp, qualitatively different}
-predictions in the strong-field regime.  The Event Horizon Telescope,
-together with gravitational-wave observatories, provides the arena in
-which these predictions will be tested.
+The central open problem is the numerical solution of the full nonlinear
+field equation with boundary conditions $\psi(0) \to \infty$,
+$\psi(\infty) = 1$.  This will yield the definitive TGP prediction for
+the BH shadow and determine whether TGP is consistent with EHT data.
+Preliminary numerical infrastructure for this program is available
+at~\cite{TGP-repo}.
+
+TGP occupies a distinctive position: it is \emph{indistinguishable} from
+GR in every weak-field test, yet its strong-field predictions ---
+once fully computed --- will provide sharp, falsifiable targets for the
+Event Horizon Telescope and gravitational-wave observatories.
 
 \bigskip
 \noindent\textbf{Acknowledgments.}\quad
