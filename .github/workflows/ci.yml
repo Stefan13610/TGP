@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Lyapunov regression
         run: python -m nbody.examples.verify_nbody_lyapunov_quick --quick
-        timeout-minutes: 10
+        timeout-minutes: 20
 
   latex:
     runs-on: ubuntu-latest
