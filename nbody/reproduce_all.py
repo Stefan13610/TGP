@@ -62,7 +62,10 @@ def run_stage(desc, module):
             )
             if real_fail:
                 ok = False
-        return ok, elapsed, result.stdout[-500:] if not ok else ""
+        detail = ""
+        if not ok:
+            detail = (result.stderr or "")[-500:] + "\n" + (result.stdout or "")[-500:]
+        return ok, elapsed, detail
     except subprocess.TimeoutExpired:
         return False, 600.0, "TIMEOUT"
     except Exception as e:
@@ -83,8 +86,8 @@ def main():
         status = "PASS" if ok else "FAIL"
         print(f"  [{status}] {elapsed:.1f}s")
         if not ok and err:
-            # Print last few lines of error
-            for line in err.strip().split("\n")[-5:]:
+            # Print last lines of error (stderr + stdout)
+            for line in err.strip().split("\n")[-15:]:
                 print(f"    {line}")
         results.append((desc, ok, elapsed))
 
