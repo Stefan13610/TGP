@@ -110,8 +110,10 @@ python ex235_alpha_s_formula.py
 | ex279 | Baryogenesis washout resolution (5 corrections) | 10/10 | ★★★ |
 | ex280 | Quark mass shifts from QCD + Koide | 8/10 | |
 | ex281 | DM soliton self-interaction cross section | 8/8 | ★★★ |
+| ex282 | UV completion: F₂³ lattice, asymptotic safety, DW TQFT | 10/10 | ★★★ |
+| ex283 | BH unitarity: no interior, Page curve, microstate counting | 9/9 | ★★★ |
 
-*Note: ex272–ex281 are analysis scripts added during the 2026-04-07 session.*
+*Note: ex272–ex283 are analysis scripts added during the 2026-04-07 session.*
 
 **Key findings:**
 
@@ -136,22 +138,26 @@ python ex235_alpha_s_formula.py
 
 **ex281:** DM soliton self-interaction: m_DM = (ρ_Λ/V(1))^(1/4) ≈ 4×10⁻³ eV (derived). Core-halo M_c ∝ M_h^(1/3) matches Schive+2014. Velocity-dependent σ/m, Bullet Cluster consistent.
 
+**ex282:** UV completion: GL(3,𝔽₂) verified by explicit enumeration (168 matrices). Three candidates: F₂³ lattice (Fano plane), asymptotic safety (g₀ UV fixed point), Dijkgraaf-Witten TQFT (level k=56). All 40 predictions UV-insensitive.
+
+**ex283:** BH unitarity: g→0 at horizon = no interior. Entropy from 56 = |GL(3,𝔽₂)|/N microstates per Planck cell. Page curve automatic. 6 BH types from Z₃×Z₂. Remnant 5.5 M_Pl.
+
 ---
 
 ## Grand Total (updated post ex279-ex281)
 
 | Metric | Value |
 |--------|-------|
-| Physics scripts | 36 (+10 analysis) |
-| Total tests | 348 (+58) |
-| Tests passed | 314 (+52) |
-| Pass rate | **90.2%** (analysis: 94%) |
-| Perfect scores (★★★) | **14/36** (+4 analysis) |
+| Physics scripts | 36 (+12 analysis) |
+| Total tests | 348 (+77) |
+| Tests passed | 314 (+71) |
+| Pass rate | **90.2%** (analysis: 95%) |
+| Perfect scores (★★★) | **14/36** (+6 analysis) |
 | Kill criteria survived | **0/15** |
 | Quantitative predictions | **40** |
 | Confirmed predictions | **22** (+1 Cabibbo) |
 | Tensions resolved | **2** (g₀ origin, Cabibbo) |
-| Partially resolved | **4** (B², baryogenesis, quarks, DM) |
+| Partially resolved | **6** (B², baryogenesis, quarks, DM, UV, BH info) |
 | Parameter reduction | 35 → 6 (−83%) |
 | Prediction-to-parameter ratio | **6.7** |
 

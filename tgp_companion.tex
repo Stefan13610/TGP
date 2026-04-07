@@ -958,10 +958,22 @@ The most decisive tests are:
   while $K(\nu) = 1/2$ predicts $B^2 = 1$ (Majorana).
   A fully rigorous proof from the TGP action remains open.
 
-\item \textbf{UV completion}.
-  What generates $\GL$ at high energies? Is there a UV-complete theory
-  (perhaps a lattice model on $\mathbb{F}_2^3$) whose low-energy
-  effective description is TGP?
+\item \textbf{UV completion} (\emph{partially resolved}).
+  What generates $\GL$ at high energies?
+  Three UV completion candidates have been identified
+  (script \texttt{ex282}):
+  (a)~\emph{Lattice gauge theory on $\mathbb{F}_2^3$}: the 8-site
+  cube with 28 links and 14 plaquettes automatically has $\GL$ as its
+  symmetry group; the Fano plane $\mathrm{PG}(2,2)$ provides a unique
+  geometric origin for the flavor structure.
+  (b)~\emph{Asymptotic safety}: $\beta(\gone) = 0$ at 1-loop and
+  $\gone$ runs by $< 0.1\%$ from $M_Z$ to $M_\mathrm{Pl}$, making
+  $\gone$ an approximate UV fixed point with 2 relevant directions.
+  (c)~\emph{Dijkgraaf--Witten TQFT}: a discrete gauge theory with
+  level $k = 56$ ($K{=}g^4$) or $k = 12$ ($K{=}g^2$), matching
+  products of $\GL$ irrep dimensions.
+  Crucially, the 12 master equations are algebraic and therefore
+  UV-insensitive; the UV completion does not affect the 40 predictions.
 
 \item \textbf{Cabibbo tension ($4.8\sigma$)}.
   The tree-level formula $\lambda_C = \OL/N = 0.22823$ overshoots the
@@ -1036,10 +1048,17 @@ The most decisive tests are:
   Could TGP accommodate a second scalar field for the dark sector,
   or does the minimality principle forbid this?
 
-\item \textbf{Information paradox}.
-  With no BH interior in TGP, the information paradox may be resolved
-  trivially---information never crosses the horizon. But this needs
-  a rigorous quantum-information treatment.
+\item \textbf{BH information problem} (\emph{partially resolved}).
+  With $g \to 0$ at the horizon, there is no BH interior and
+  information never crosses the horizon (script \texttt{ex283}).
+  The Bekenstein--Hawking entropy is reproduced by GL$(3,\mathbb{F}_2)$
+  microstate counting with $56 = |\GL|/N$ states per Planck cell,
+  giving a quantum of area $a_0 = 4\ln(56)\, l_\mathrm{Pl}^2$.
+  The Page curve follows automatically from unitarity.
+  TGP predicts 6 BH types from $Z_3 \times Z_2$ (baryon triality
+  $\times$ charge) and a stable remnant at $M_\mathrm{rem} \approx
+  5.5\, M_\mathrm{Pl}$.
+  A rigorous quantum-information treatment remains open.
 
 \item \label{item:kinetic} \textbf{Kinetic coupling reconciliation}.
   Three kinetic couplings appear in different derivation paths:
