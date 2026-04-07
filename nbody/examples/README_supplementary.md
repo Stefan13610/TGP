@@ -101,14 +101,25 @@ python ex235_alpha_s_formula.py
 |--------|-------|-------|---------|
 | ex271 | Final summary v2 (definitive scorecard) | 10/10 | ★★★ |
 | ex272 | Soliton ODE comparison: K=g⁴ vs K=g² vs K=1+4ln g | 6/6 | ★★★ |
-| ex273 | Analytical candidate g₀ᵉ = √(3/4) investigation | —/— | |
+| ex273 | Analytical candidate g₀ᵉ = √(3/4+1/168) | —/— | |
+| ex274 | Cabibbo 4.8σ tension: correction analysis | —/— | |
+| ex275 | K=g² from effective dimension (n_K = D−2) | 8/8 | ★★★ |
+| ex276 | K=g² action consequences: all 40 predictions unchanged | —/— | |
 
-*Note: ex272–ex273 are analysis scripts added during drift reconciliation (2026-04-07).*
+*Note: ex272–ex276 are analysis scripts added during drift reconciliation (2026-04-07).*
 
-**Key finding (ex272):** The three kinetic couplings produce different phi-fixed-point values:
-- K=g⁴ (Form. A): g₀* = 0.8678
-- K=g² (Form. C): g₀* = 0.8695 (matches published 0.86941 to 0.004%)
-- K=1+4ln g (Form. B): g₀* = 0.8339
+**Key findings:**
+
+**ex272:** Three kinetic couplings produce different phi-fixed-point values:
+- K=g⁴: g₀* = 0.8678 | K=g²: g₀* = 0.8695 (0.004% from published) | K=1+4ln g: g₀* = 0.8339
+
+**ex273:** Best analytical candidate: **g₀ᵉ = √(3/4 + 1/168) = 0.86946** (0.002% from K=g² phi-FP)
+
+**ex274:** Cabibbo tension resolved: **N_eff = 3.043** → λ_C = Ω_Λ/N_eff = 0.22501 (< 0.1σ). Matches SM neutrino decoupling N_eff = 3.044.
+
+**ex275:** K=g² preferred: effective-dimension argument n_K = D−2 = 2 (conformal overcounts ×2). Emden-Chandrasekhar canonical form, ghost-free, simpler ODE.
+
+**ex276:** All 40 predictions UNCHANGED by K=g⁴ → K=g². Higgs mass ratio 57/112 is a GL(3,𝔽₂) group-theory formula. Only cosmological constant shifts (×14/3).
 
 ---
 
@@ -116,9 +127,9 @@ python ex235_alpha_s_formula.py
 
 | Metric | Value |
 |--------|-------|
-| Physics scripts | 36 (+2 analysis) |
-| Total tests | 348 (+6) |
-| Tests passed | 314 (+6) |
+| Physics scripts | 36 (+5 analysis) |
+| Total tests | 348 (+14) |
+| Tests passed | 314 (+14) |
 | Pass rate | **90.2%** (analysis: 100%) |
 | Perfect scores (★★★) | **14/36** (+1) |
 | Kill criteria survived | **0/15** |
