@@ -50,8 +50,8 @@ Omega_Lambda = 0.685
 Omega_r = 9.15e-5
 
 # TGP parameters
-Phi0 = 36 * Omega_Lambda   # ≈ 24.66
-gamma_phys = 12 * Omega_Lambda * H0**2 / c0**2   # ~ 10^{-52} m^{-2}
+Phi0 = 168 * Omega_Lambda   # ≈ 115.08
+gamma_phys = 56 * Omega_Lambda * H0**2 / c0**2   # ~ 10^{-52} m^{-2}
 beta_phys = gamma_phys      # vacuum condition β=γ
 
 # BBN epoch
@@ -353,7 +353,7 @@ print("=" * 72)
 # A scalar field that is frozen during BBN does NOT contribute
 # to N_eff as radiation. It acts as a cosmological constant
 # (dark energy). The energy density in the Φ field is:
-# ρ_Φ = U(ψ=1) / κ = γ/(12κ) = Λ_eff / (8πG₀)
+# ρ_Φ = P(ψ=1) / κ = γ/(56κ) = Λ_eff / (8πG₀)
 # This is already accounted for as Ω_Λ.
 
 # The contribution to N_eff from any additional field is:

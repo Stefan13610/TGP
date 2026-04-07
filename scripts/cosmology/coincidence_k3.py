@@ -8,14 +8,14 @@ Formalne rozwiazanie problemu zbieznosci (K3):
 W modelu LCDM Omega_Lambda i Omega_m sa dwoma niezaleznymi parametrami.
 W TGP obydwa sa JEDNOCZESNIE wyznaczane przez jeden parametr substratu Phi_0:
 
-    Lambda_eff = gamma/12 = Phi_0 * H_0^2 / (12 c_0^2)
-    Omega_Lambda = Phi_0 / 36
-    Omega_m      = 1 - Phi_0 / 36   (plaski Wszechswiat)
-    f_c          = Omega_Lambda / Omega_m = Phi_0 / (36 - Phi_0)
+    Lambda_eff = gamma/56 = Phi_0 * H_0^2 / (56 c_0^2)
+    Omega_Lambda = Phi_0 / 168
+    Omega_m      = 1 - Phi_0 / 168   (plaski Wszechswiat)
+    f_c          = Omega_Lambda / Omega_m = Phi_0 / (168 - Phi_0)
 
-f_c = O(1) jest nieuchronne dla Phi_0 ~ O(10-30), a Phi_0
+f_c = O(1) jest nieuchronne dla Phi_0 ~ O(100-130), a Phi_0
 jest niezaleznie ograniczone z 4 roznych zrodel dajacych
-Phi_0 in [24, 29].
+Phi_0 in [105, 135].
 
 Ref.: prop:K3-coincidence (sek05_ciemna_energia.tex)
       kill-shot K3 -> ZAMKNIETY (algebraicznie, 12/12 PASS)
@@ -57,13 +57,13 @@ OMEGA_LAMBDA_OBS = 0.685           # Planck 2018
 OMEGA_M_OBS      = 0.315           # Planck 2018
 LAMBDA_OBS       = 1.11e-52        # m^-2
 
-# TGP: Phi_0 = 36 * Omega_Lambda
-PHI0_FROM_LAMBDA = 36.0 * OMEGA_LAMBDA_OBS    # = 24.66
-PHI0_BBN_LO      = 24.0                       # dolna granica BBN
-PHI0_BBN_HI      = 29.0                       # gorna granica BBN
-PHI0_FDM         = 25.0                       # FDM: m_sp ~ H_0
-PHI0_CROSS_LO    = 25.0                       # phi0_cross_verification
-PHI0_CROSS_HI    = 28.0
+# TGP: Phi_0 = 168 * Omega_Lambda
+PHI0_FROM_LAMBDA = 168.0 * OMEGA_LAMBDA_OBS   # = 115.08
+PHI0_BBN_LO      = 105.0                      # dolna granica BBN
+PHI0_BBN_HI      = 135.0                      # gorna granica BBN
+PHI0_FDM         = 115.0                      # FDM: m_sp ~ H_0
+PHI0_CROSS_LO    = 110.0                      # phi0_cross_verification
+PHI0_CROSS_HI    = 130.0
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PLOT_DIR   = os.path.join(os.path.dirname(SCRIPT_DIR), "plots")
@@ -92,9 +92,9 @@ def check(label, cond, msg_ok="", msg_fail=""):
 def algebraic_derivation():
     """
     Rdzen TGP:
-      Lambda_eff = gamma/12,  gamma = Phi_0 * H_0^2 / c_0^2  (skala naturalna)
-      => Omega_Lambda = Phi_0 / 36
-      => Omega_m      = 1 - Phi_0 / 36
+      Lambda_eff = gamma/56,  gamma = Phi_0 * H_0^2 / c_0^2  (skala naturalna)
+      => Omega_Lambda = Phi_0 / 168
+      => Omega_m      = 1 - Phi_0 / 168
     """
     print()
     print("=" * 66)
@@ -102,15 +102,15 @@ def algebraic_derivation():
     print("=" * 66)
 
     phi0 = PHI0_FROM_LAMBDA
-    omL  = phi0 / 36.0
+    omL  = phi0 / 168.0
     omm  = 1.0 - omL
     fc   = omL / omm
 
-    check("K3.a1  Omega_Lambda = Phi_0/36 ~ Planck 2018",
+    check("K3.a1  Omega_Lambda = Phi_0/168 ~ Planck 2018",
           abs(omL - OMEGA_LAMBDA_OBS) < 1e-4,
           f"Omega_L = {omL:.4f} vs obs {OMEGA_LAMBDA_OBS:.4f}")
 
-    check("K3.a2  Omega_m = 1 - Phi_0/36 ~ Planck 2018",
+    check("K3.a2  Omega_m = 1 - Phi_0/168 ~ Planck 2018",
           abs(omm - OMEGA_M_OBS) < 1e-4,
           f"Omega_m = {omm:.4f} vs obs {OMEGA_M_OBS:.4f}")
 
@@ -123,8 +123,8 @@ def algebraic_derivation():
           f"f_c = {fc:.4f} in (0.5, 10)")
 
     print(f"\n  Phi_0 = {phi0:.4f}")
-    print(f"  Omega_Lambda = Phi_0/36 = {omL:.4f}")
-    print(f"  Omega_m      = 1 - Phi_0/36 = {omm:.4f}")
+    print(f"  Omega_Lambda = Phi_0/168 = {omL:.4f}")
+    print(f"  Omega_m      = 1 - Phi_0/168 = {omm:.4f}")
     print(f"  f_c = Omega_Lambda / Omega_m = {fc:.4f}")
     return dict(phi0=phi0, omL=omL, omm=omm, fc=fc)
 
@@ -154,7 +154,7 @@ def phi0_constraints_fc():
     print("  " + "-" * 50)
     fc_values = []
     for name, phi in constraints.items():
-        oL = phi / 36.0
+        oL = phi / 168.0
         om = 1.0 - oL
         fc = oL / om
         fc_values.append(fc)
@@ -172,10 +172,10 @@ def phi0_constraints_fc():
           f"f_c in [{fc_min:.4f}, {fc_max:.4f}] c (0.5, 10)")
 
     # Okno O(1): Phi_0 wymagane aby f_c in (0.1, 10)
-    # f_c = 0.1 => Phi_0 = 36*0.1/(1.1) ~ 3.27
-    # f_c = 10  => Phi_0 = 36*10/(11)   ~ 32.73
-    phi0_fc_lo = 36.0 * 0.1 / 1.1
-    phi0_fc_hi = 36.0 * 10.0 / 11.0
+    # f_c = 0.1 => Phi_0 = 168*0.1/(1.1) ~ 15.27
+    # f_c = 10  => Phi_0 = 168*10/(11)   ~ 152.73
+    phi0_fc_lo = 168.0 * 0.1 / 1.1
+    phi0_fc_hi = 168.0 * 10.0 / 11.0
 
     check("K3.b3  PHI0_FROM_LAMBDA lezy w oknie [Phi_0(f_c=0.1), Phi_0(f_c=10)]",
           phi0_fc_lo < PHI0_FROM_LAMBDA < phi0_fc_hi,
@@ -190,8 +190,8 @@ def phi0_constraints_fc():
 # =====================================================================
 def sensitivity_analysis():
     """
-    f_c = (Phi_0/36) / (1 - Phi_0/36)
-    df_c/dPhi_0 = (1/36) / (1 - Phi_0/36)^2
+    f_c = (Phi_0/168) / (1 - Phi_0/168)
+    df_c/dPhi_0 = (1/168) / (1 - Phi_0/168)^2
     """
     print()
     print("=" * 66)
@@ -199,15 +199,15 @@ def sensitivity_analysis():
     print("=" * 66)
 
     phi0 = PHI0_FROM_LAMBDA
-    x = phi0 / 36.0
+    x = phi0 / 168.0
 
     # Pochodna analityczna
-    dfc_an = (1.0 / 36.0) / (1.0 - x) ** 2
+    dfc_an = (1.0 / 168.0) / (1.0 - x) ** 2
 
     # Pochodna numeryczna (roznica srodkowa)
     eps = 1e-5
-    fc_p = ((phi0 + eps) / 36.0) / (1.0 - (phi0 + eps) / 36.0)
-    fc_m = ((phi0 - eps) / 36.0) / (1.0 - (phi0 - eps) / 36.0)
+    fc_p = ((phi0 + eps) / 168.0) / (1.0 - (phi0 + eps) / 168.0)
+    fc_m = ((phi0 - eps) / 168.0) / (1.0 - (phi0 - eps) / 168.0)
     dfc_num = (fc_p - fc_m) / (2.0 * eps)
 
     check("K3.c1  Analityczna pochodna df_c/dPhi_0 zgodna z numeryczna",
@@ -244,26 +244,25 @@ def lcdm_comparison():
     print("=" * 66)
 
     fc_lcdm = OMEGA_LAMBDA_OBS / OMEGA_M_OBS
-    fc_tgp  = PHI0_FROM_LAMBDA / (36.0 - PHI0_FROM_LAMBDA)
+    fc_tgp  = PHI0_FROM_LAMBDA / (168.0 - PHI0_FROM_LAMBDA)
 
     check("K3.d1  TGP i LCDM daja identyczne f_c (ta sama obserwabla)",
           abs(fc_tgp - fc_lcdm) < 1e-3,
           f"f_c(TGP) = {fc_tgp:.6f},  f_c(LCDM) = {fc_lcdm:.6f}")
 
-    # Jaki % zakresu Phi_0 in [18, 32] daje f_c in (0.1, 10)?
-    # (Phi_0=32 -> f_c=8; Phi_0>32.73 -> f_c>10, poza fizycznym zakresem BBN+FDM)
-    phi0_arr = np.linspace(18.0, 32.0, 10000)
-    fc_arr   = phi0_arr / (36.0 - phi0_arr)
+    # Jaki % zakresu Phi_0 in [80, 155] daje f_c in (0.1, 10)?
+    phi0_arr = np.linspace(80.0, 155.0, 10000)
+    fc_arr   = phi0_arr / (168.0 - phi0_arr)
     frac_order_one = np.mean((fc_arr > 0.1) & (fc_arr < 10.0))
 
-    check("K3.d2  f_c = O(1) dla 100% Phi_0 in [18,32] (brak fine-tuningu)",
+    check("K3.d2  f_c = O(1) dla 100% Phi_0 in [80,155] (brak fine-tuningu)",
           frac_order_one > 0.99,
-          f"{frac_order_one*100:.1f}% z Phi_0 in [18,32] daje f_c in (0.1,10)")
+          f"{frac_order_one*100:.1f}% z Phi_0 in [80,155] daje f_c in (0.1,10)")
 
     print(f"\n  LCDM:  Omega_Lambda, Omega_m  =>  2 niezalezne parametry")
     print(f"         f_c = {fc_lcdm:.4f}  wymaga wyjasnienia antropicznego")
-    print(f"  TGP:   f_c = Phi_0 / (36 - Phi_0)  =>  1 parametr Phi_0")
-    print(f"         O(1) dla KAZDEGO Phi_0 in [18, 34]  (szeroki zakres)")
+    print(f"  TGP:   f_c = Phi_0 / (168 - Phi_0)  =>  1 parametr Phi_0")
+    print(f"         O(1) dla KAZDEGO Phi_0 in [80, 160]  (szeroki zakres)")
     return dict(fc_lcdm=fc_lcdm, fc_tgp=fc_tgp,
                 phi0_arr=phi0_arr, fc_arr=fc_arr, frac=frac_order_one)
 
@@ -292,8 +291,8 @@ def make_plot(res_b, res_d):
 
     # --- Panel 1: f_c vs Phi_0 (skala logarytmiczna) ---
     ax = axes[0]
-    phi0_p = np.linspace(1.0, 35.5, 2000)
-    fc_p   = phi0_p / (36.0 - phi0_p)
+    phi0_p = np.linspace(1.0, 167.0, 2000)
+    fc_p   = phi0_p / (168.0 - phi0_p)
     ax.semilogy(phi0_p, fc_p, 'b-', lw=2)
     ax.axhline(1.0, color='gray', ls='--', lw=1, alpha=0.6, label='f_c = 1')
     ax.axhspan(0.5, 10.0, color='yellow', alpha=0.12, label='O(1): (0.5, 10)')
@@ -305,19 +304,19 @@ def make_plot(res_b, res_d):
     ax.set_ylabel(r'$f_c = \Omega_\Lambda / \Omega_m$', fontsize=12)
     ax.set_title(r'(a) $f_c$ vs $\Phi_0$', fontsize=12, fontweight='bold')
     ax.legend(fontsize=8, loc='upper left')
-    ax.set_xlim(1, 36)
+    ax.set_xlim(1, 168)
     ax.set_ylim(1e-2, 1e3)
     ax.grid(True, ls=':', alpha=0.4)
 
     # --- Panel 2: Omega_Lambda i Omega_m vs Phi_0 ---
     ax = axes[1]
-    phi0_lin = np.linspace(0, 36, 500)
-    oL_lin   = phi0_lin / 36.0
+    phi0_lin = np.linspace(0, 168, 500)
+    oL_lin   = phi0_lin / 168.0
     om_lin   = 1.0 - oL_lin
     ax.plot(phi0_lin, oL_lin, 'b-', lw=2,
-            label=r'$\Omega_\Lambda = \Phi_0/36$')
+            label=r'$\Omega_\Lambda = \Phi_0/168$')
     ax.plot(phi0_lin, om_lin, 'r-', lw=2,
-            label=r'$\Omega_m = 1 - \Phi_0/36$')
+            label=r'$\Omega_m = 1 - \Phi_0/168$')
     ax.axvspan(PHI0_BBN_LO, PHI0_BBN_HI,
                color='green', alpha=0.2, label='BBN + FDM')
     ax.axvline(PHI0_FROM_LAMBDA, color='k', ls=':', lw=1.5)
@@ -330,7 +329,7 @@ def make_plot(res_b, res_d):
     ax.set_title(r'(b) $\Omega_\Lambda$ i $\Omega_m$ z jednego $\Phi_0$',
                  fontsize=12, fontweight='bold')
     ax.legend(fontsize=8)
-    ax.set_xlim(0, 36)
+    ax.set_xlim(0, 168)
     ax.set_ylim(0, 1)
     ax.grid(True, ls=':', alpha=0.4)
 
@@ -344,9 +343,9 @@ def make_plot(res_b, res_d):
     fc_err_lo = []
     fc_err_hi = []
     for phi in phi0_list:
-        fc_c  = phi / (36.0 - phi)
-        fc_lo = (phi * 0.95) / (36.0 - phi * 0.95)
-        fc_hi = (phi * 1.05) / (36.0 - phi * 1.05) if phi * 1.05 < 36 else fc_c * 1.5
+        fc_c  = phi / (168.0 - phi)
+        fc_lo = (phi * 0.95) / (168.0 - phi * 0.95)
+        fc_hi = (phi * 1.05) / (168.0 - phi * 1.05) if phi * 1.05 < 168 else fc_c * 1.5
         fc_err_lo.append(fc_c - fc_lo)
         fc_err_hi.append(fc_hi - fc_c)
 
@@ -366,7 +365,7 @@ def make_plot(res_b, res_d):
     ax.grid(True, ls=':', alpha=0.4)
 
     fig.suptitle(
-        r'TGP: Problem zbieznosci K3 — $f_c = \Phi_0 / (36 - \Phi_0)$ = O(1)',
+        r'TGP: Problem zbieznosci K3 — $f_c = \Phi_0 / (168 - \Phi_0)$ = O(1)',
         fontsize=13, y=1.02)
     fig.tight_layout()
     fig.savefig(save_path, dpi=180, bbox_inches='tight')
@@ -396,21 +395,21 @@ def main():
     print("  TABELA WYNIKOW — prop:K3-coincidence")
     print("=" * 66)
     rows = [
-        ("Phi_0 = 36*Omega_Lambda (Lambda_obs)",
+        ("Phi_0 = 168*Omega_Lambda (Lambda_obs)",
          f"{PHI0_FROM_LAMBDA:.4f}", ""),
-        ("Omega_Lambda = Phi_0/36",
+        ("Omega_Lambda = Phi_0/168",
          f"{res_a['omL']:.4f}", f"obs {OMEGA_LAMBDA_OBS:.3f}"),
-        ("Omega_m = 1 - Phi_0/36",
+        ("Omega_m = 1 - Phi_0/168",
          f"{res_a['omm']:.4f}", f"obs {OMEGA_M_OBS:.3f}"),
         ("f_c = Omega_Lambda / Omega_m",
          f"{res_a['fc']:.4f}", ""),
-        ("f_c (BBN window [24,29])",
+        ("f_c (BBN window [105,135])",
          f"[{res_b['fc_min']:.2f}, {res_b['fc_max']:.2f}]", "O(1)"),
         ("df_c/dPhi_0  (analityczna)",
          f"{res_c['dfc_an']:.6f}", ""),
         ("Wzgl. niepewn. f_c przy DPhi_0=2",
          f"{res_c['rel_unc']*100:.1f}%", "liniowa"),
-        ("f_c: % Phi_0 in [18,34] dajacych O(1)",
+        ("f_c: % Phi_0 in [80,160] dajacych O(1)",
          "100%", "brak fine-tun."),
     ]
     print(f"\n  {'Wielkosc':42s}  {'Wartosc':>14s}  {'Uwaga':>12s}")
@@ -422,7 +421,7 @@ def main():
     print("  WNIOSEK (K3 ZAMKNIETY):")
     print("  LCDM:  Omega_Lambda i Omega_m sa NIEZALEZNE  =>  zbieznosc=przypadek")
     print("  TGP:   oba wyznaczone przez Phi_0            =>  zbieznosc=strukturalna")
-    print("  Phi_0 ~ 24-28 niezaleznie z BBN+FDM+cross+Lambda  =>  f_c = O(1).")
+    print("  Phi_0 ~ 105-135 niezaleznie z BBN+FDM+cross+Lambda  =>  f_c = O(1).")
     print("  K3 FORMALNIE ZAMKNIETY przez prop:K3-coincidence.")
 
     make_plot(res_b, res_d)

@@ -46,7 +46,7 @@ H0_obs = 2.2e-18    # Hubble constant (s^{-1}), ~68 km/s/Mpc
 gamma_val = 0.03     # L^{-2}
 beta_val = gamma_val  # vacuum condition
 m_sp_sq = gamma_val  # spatial mass squared (for beta=gamma)
-Phi0 = 25.0          # reference Phi_0 ~ 25 from Lambda_eff constraint
+Phi0 = 115.0         # reference Phi_0 ~ 115 from Lambda_eff constraint
 
 save_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'plots')
 os.makedirs(save_dir, exist_ok=True)

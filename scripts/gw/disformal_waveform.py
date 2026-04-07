@@ -59,8 +59,8 @@ hbar = 1.05457e-34       # J·s
 # =========================================================================
 # TGP parameters
 # =========================================================================
-Phi0 = 25.0                              # background Φ₀
-gamma_tgp = 12 * H0**2 / c0**2          # from Λ_eff = γ/12
+Phi0 = 115.0                             # background Φ₀
+gamma_tgp = 56 * H0**2 / c0**2          # from Λ_eff = γ/56
 beta_tgp = gamma_tgp                     # vacuum condition β = γ
 m_sp = np.sqrt(gamma_tgp)                # screening mass
 q_coupling = 8 * np.pi * G0 / c0**2     # source coupling

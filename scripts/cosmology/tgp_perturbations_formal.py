@@ -78,8 +78,8 @@ sigma8_fid = 0.8111           # Planck 2018
 # Lambda_obs from cosmological constant
 Lambda_obs = 3 * H0_SI**2 * Omega_L0 / c0**2    # m⁻²
 
-# gamma = 12 * Lambda_obs  (from Λ_eff = γ/12, eq:chain-Lambda)
-gamma_TGP = 12 * Lambda_obs
+# gamma = 56 * Lambda_obs  (from correct action: Λ_eff = γ/56, eq:chain-Lambda)
+gamma_TGP = 56 * Lambda_obs
 
 # Spatial Yukawa mass: m_sp² = γ (eq:delta-Phi-evol, prop:vacuum-stability)
 m_sp_sq = gamma_TGP           # m⁻²
@@ -734,7 +734,7 @@ def summary_and_falsifiability(chi2_gr, chi2_tgp, alpha_2s):
   │       detectable only if α_eff > 0.01                            │
   │                                                                  │
   │  CONCLUSION: TGP contains ΛCDM as exact limit (Φ₀ → 0)        │
-  │  At Φ₀ ≈ 25, perturbation sector is indistinguishable from GR. │
+  │  At Φ₀ ≈ 115, perturbation sector is indistinguishable from GR.│
   │  TGP's distinct predictions lie in:                              │
   │     (a) Modified w_DE(z) at high precision  [see H6]            │
   │     (b) GW dispersion at m_sp scale  [see H4]                  │

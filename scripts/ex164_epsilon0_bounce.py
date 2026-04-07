@@ -302,7 +302,7 @@ print("""
   N_e = (1/3)·ln(Φ₀/ε₀) = (1/3)·ln(1/ε₀) + (1/3)·ln(Φ₀)
 """)
 
-Phi0 = 25.0
+Phi0 = 115.0
 print(f"  Φ₀ = {Phi0}")
 print(f"\n  {'ε_bias':>8} {'g₀_bounce':>12} {'ε₀=g₀²':>10} {'N_e(ε₀)':>10} {'B':>10} {'exp(-B)':>12}")
 print("  " + "-" * 70)
@@ -324,7 +324,7 @@ print("""
 
   Żeby uzyskać ε₀ ~ 10⁻⁷⁰:
   Potrzebna hierarchia SKALI — substrat ma a_sub ~ ℓ_P,
-  ale Φ₀ = 25 oznacza ξ/ℓ_P ~ 10³⁵.
+  ale Φ₀ = 115 oznacza ξ/ℓ_P ~ 10³⁵.
 """)
 
 # =====================================================================
@@ -376,7 +376,7 @@ print(f"  ℓ_P = 1.616 × 10⁻³⁵ m")
 print(f"  ξ przy T_c: ξ ~ a_sub · |t|^{{-ν}} z ν = 0.630\n")
 
 # Skan: ξ/a_sub → ε₀ → N_e
-print(f"  {'ξ/a_sub':>12} {'ε₀':>14} {'N_e (Φ₀=25)':>14} {'n_s (Starobinsky)':>18}")
+print(f"  {'ξ/a_sub':>12} {'ε₀':>14} {'N_e (Φ₀=115)':>14} {'n_s (Starobinsky)':>18}")
 print("  " + "-" * 65)
 
 xi_a_values = np.logspace(10, 45, 15)

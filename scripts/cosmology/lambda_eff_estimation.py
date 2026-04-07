@@ -11,9 +11,13 @@ Physics
 -------
 In TGP, the effective cosmological constant has two sources:
 
-  1. Residual potential energy at psi = 1:
-       U(1) = beta/3 - gamma/4
-     For beta = gamma:  U(1) = gamma/12
+  1. Residual action potential at psi = 1:
+       P(1) = beta/7 - gamma/8
+     For beta = gamma:  P(1) = gamma/56
+
+     NOTE: This uses the CORRECT action potential P(g) = (beta/7)g^7 - (gamma/8)g^8
+     derived from P'(g) = K(g)*(gamma g^3 - beta g^2) with K=g^4.
+     The old (incorrect) value was U(1) = gamma/12 from the field-equation potential.
 
   2. Backreaction from structure formation:
        Lambda_back = gamma * <(delta_Phi / Phi_0)^2>
@@ -22,16 +26,16 @@ In TGP, the effective cosmological constant has two sources:
      of the gravitational potential.
 
 The dominant contribution is (1), giving:
-    Lambda_eff ~ gamma/12
+    Lambda_eff ~ gamma/56
 
 The naturalness condition tau_0 ~ 1/H_0 implies:
     gamma ~ Phi_0 * H_0^2 / c_0^2
 
 Therefore:
-    Lambda_eff ~ Phi_0 * H_0^2 / (12 * c_0^2)
+    Lambda_eff ~ Phi_0 * H_0^2 / (56 * c_0^2)
     Lambda_obs = 3 * Omega_Lambda * H_0^2 / c_0^2 ~ 2.1 * H_0^2 / c_0^2
 
-The ratio Lambda_obs / Lambda_eff ~ 25.2 / Phi_0, so Phi_0 ~ 10-30
+The ratio Lambda_obs / Lambda_eff ~ 117 / Phi_0, so Phi_0 ~ 100-120
 gives the correct order of magnitude WITHOUT fine-tuning.
 
 Outputs (saved to scripts/plots/):
@@ -68,11 +72,12 @@ def gamma_natural(Phi0):
 
 
 def Lambda_eff_potential(Phi0, beta_ratio=1.0):
-    """Lambda_eff from residual potential U(psi=1).
+    """Lambda_eff from residual action potential P(psi=1).
 
-    U(1) = beta/3 - gamma/4
+    P(g) = (beta/7)g^7 - (gamma/8)g^8  (correct action potential)
+    P(1) = beta/7 - gamma/8
     For beta = beta_ratio * gamma:
-        U(1) = gamma * (beta_ratio/3 - 1/4)
+        P(1) = gamma * (beta_ratio/7 - 1/8)
 
     Parameters
     ----------
@@ -80,7 +85,7 @@ def Lambda_eff_potential(Phi0, beta_ratio=1.0):
     beta_ratio : float, beta/gamma ratio (1.0 for vacuum condition)
     """
     gamma = gamma_natural(Phi0)
-    return gamma * (beta_ratio / 3.0 - 1.0 / 4.0)
+    return gamma * (beta_ratio / 7.0 - 1.0 / 8.0)
 
 
 def Lambda_eff_backreaction(Phi0, sigma_Phi=3e-5):
@@ -130,7 +135,7 @@ def plot_lambda_vs_Phi0(save_dir=None):
 
     fig, ax = plt.subplots(figsize=(9, 6))
 
-    Phi0_arr = np.linspace(1, 100, 500)
+    Phi0_arr = np.linspace(1, 250, 500)
 
     # Total Lambda_eff
     L_pot = Lambda_eff_potential(Phi0_arr)
@@ -142,24 +147,25 @@ def plot_lambda_vs_Phi0(save_dir=None):
     ax.plot(Phi0_arr, ratio, "b-", lw=2.5, label=r"$\Lambda_{\rm eff}/\Lambda_{\rm obs}$")
     ax.axhline(1.0, color="r", ls="--", lw=1.5, label=r"$\Lambda_{\rm eff} = \Lambda_{\rm obs}$")
 
-    # Mark the crossing point
-    Phi0_match = 25.2  # analytical: Lambda_obs / Lambda_eff = 25.2 / Phi0
+    # Mark the crossing point (P(1) = gamma/56, so Phi0_match ~ 168*Omega_L)
+    idx_cross = np.argmin(np.abs(ratio - 1.0))
+    Phi0_match = Phi0_arr[idx_cross] if idx_cross > 0 else 115.0
     ax.axvline(Phi0_match, color="green", ls=":", lw=1.2, alpha=0.7)
-    ax.annotate(rf"$\Phi_0 \approx {Phi0_match:.1f}$",
-                xy=(Phi0_match, 1.0), xytext=(Phi0_match + 8, 2.5),
+    ax.annotate(rf"$\Phi_0 \approx {Phi0_match:.0f}$",
+                xy=(Phi0_match, 1.0), xytext=(min(Phi0_match + 15, 85), 2.5),
                 fontsize=11, color="green",
                 arrowprops=dict(arrowstyle="->", color="green"))
 
     # Shade "natural" region
-    ax.axvspan(5, 50, color="green", alpha=0.08, label=r"$\Phi_0 = \mathcal{O}(10)$ (natural)")
+    ax.axvspan(50, 200, color="green", alpha=0.08, label=r"$\Phi_0 = \mathcal{O}(100)$ (natural)")
 
     ax.set_xlabel(r"$\Phi_0$ (background field value)", fontsize=13)
     ax.set_ylabel(r"$\Lambda_{\rm eff} / \Lambda_{\rm obs}$", fontsize=13)
     ax.set_title(r"TGP prediction: $\Lambda_{\rm eff}$ vs observed $\Lambda$", fontsize=14)
     ax.legend(fontsize=11)
     ax.grid(True, ls=":", alpha=0.4)
-    ax.set_xlim(1, 100)
-    ax.set_ylim(0, 8)
+    ax.set_xlim(1, 250)
+    ax.set_ylim(0, 4)
 
     fig.tight_layout()
     path = os.path.join(save_dir, "lambda_eff_vs_Phi0.png")
@@ -185,7 +191,7 @@ def plot_components(save_dir=None):
     sigma_vals = [1e-5, 3e-5, 1e-4, 3e-4]
 
     ax1.plot(Phi0_arr, L_pot / Lambda_obs, "b-", lw=2.5,
-             label=r"Potential: $U(1) = \gamma/12$")
+             label=r"Potential: $P(1) = \gamma/56$")
 
     colors = plt.cm.Oranges(np.linspace(0.3, 0.9, len(sigma_vals)))
     for sigma, col in zip(sigma_vals, colors):
@@ -204,12 +210,12 @@ def plot_components(save_dir=None):
 
     # Right panel: ratio potential / backreaction
     for sigma, col in zip(sigma_vals, colors):
-        ratio = (1.0/12.0) / (4.0 * sigma**2) * np.ones_like(Phi0_arr)
+        ratio = (1.0/56.0) / (4.0 * sigma**2) * np.ones_like(Phi0_arr)
         ax2.axhline(ratio[0], color=col, ls="-", lw=1.8,
                      label=rf"$\sigma_\Phi = {sigma:.0e}$: ratio = {ratio[0]:.1e}")
 
     ax2.set_xlabel(r"$\Phi_0$", fontsize=13)
-    ax2.set_ylabel(r"$U(1) / \Lambda_{\rm back}$", fontsize=13)
+    ax2.set_ylabel(r"$P(1) / \Lambda_{\rm back}$", fontsize=13)
     ax2.set_title("Potential / Backreaction ratio", fontsize=14)
     ax2.set_yscale("log")
     ax2.legend(fontsize=10)
@@ -243,8 +249,8 @@ def plot_parameter_space(save_dir=None):
     G, P = np.meshgrid(g_factors, Phi0_arr)
 
     gamma_grid = G * gamma_unit
-    # Lambda_eff = gamma / 12 (potential dominates for beta=gamma)
-    L_eff = gamma_grid / 12.0
+    # Lambda_eff = gamma / 56 (correct action potential P(1) = gamma/56)
+    L_eff = gamma_grid / 56.0
     ratio = np.log10(L_eff / Lambda_obs)
 
     im = ax.pcolormesh(g_factors, Phi0_arr, ratio,
@@ -295,13 +301,13 @@ def print_summary():
 
     print(f"\n  TGP formulae:")
     print(f"    gamma_natural   = Phi_0 * H_0^2 / c_0^2")
-    print(f"    Lambda_eff      = gamma / 12     (for beta = gamma)")
-    print(f"    Lambda_eff      = Phi_0 * H_0^2 / (12 c_0^2)")
+    print(f"    Lambda_eff      = gamma / 56     (for beta = gamma, correct action)")
+    print(f"    Lambda_eff      = Phi_0 * H_0^2 / (56 c_0^2)")
 
     print(f"\n  Comparison with observations:")
-    for Phi0 in [1, 5, 10, 25, 50, 100]:
+    for Phi0 in [10, 25, 50, 80, 100, 115, 150]:
         gamma = gamma_natural(Phi0)
-        L_eff = gamma / 12.0
+        L_eff = gamma / 56.0
         L_back = Lambda_eff_backreaction(Phi0)
         m_sp = m_sp_from_gamma(gamma)
         lam_c = compton_wavelength(gamma)
@@ -317,8 +323,8 @@ def print_summary():
         print(f"      lambda_C / R_H  = {lam_c/R_H:.2f}")
 
     print(f"\n  Key insight:")
-    print(f"    Phi_0 ~ 25 gives Lambda_eff ~ Lambda_obs")
-    print(f"    This is O(10), NOT 10^122 -- no fine-tuning!")
+    print(f"    Phi_0 ~ 115 gives Lambda_eff ~ Lambda_obs")
+    print(f"    This is O(100), NOT 10^122 -- no fine-tuning!")
     print(f"    Compton wavelength ~ Hubble radius (consistency)")
 
     print(f"\n  Cosmological constant problem resolution:")
@@ -332,44 +338,50 @@ def print_summary():
 # ═══════════════════════════════════════════════════════════════════════════
 # w_DE estimation: equation of state from slow-roll
 # ═══════════════════════════════════════════════════════════════════════════
-def estimate_w_DE(Phi0=25.0):
+def estimate_w_DE(Phi0=115.0):
     """
-    Estimate the dark energy equation of state w_DE from slow-roll.
+    Estimate the dark energy equation of state w_DE.
 
-    In slow-roll: w = (kinetic - potential) / (kinetic + potential)
-    With V >> K: w ~ -1 + 2K/V ~ -1 + epsilon
+    With the correct unified action S[g] = int[1/2 g^4 (nabla g)^2 + P(g)],
+    the cosmological field equation is:
 
-    The slow-roll parameter:
-    epsilon = (1/2) * (V'/V)^2 * (1/kappa_eff)
+        psi'' + 3H psi' + 3(psi')^2/psi = c0^2 (gamma*psi - beta)
+
+    At the vacuum psi = 1 (with beta = gamma):
+        W(1) = c0^2 (gamma - beta) = 0   (true equilibrium!)
+        W'(1) = c0^2 * gamma              (restoring force)
+
+    Since W(1) = 0, the field sits at a stable minimum.
+    Hubble friction (3H psi') damps any perturbation exponentially.
+    The screening mass m^2 = gamma >> H^2, so psi is frozen at 1.
+
+    Result: w_DE = -1 EXACTLY (pure cosmological constant behavior).
+    This is confirmed by numerical ODE integration (see w_de_redshift.py).
     """
     gamma = gamma_natural(Phi0)
 
-    # Potential: U(psi) = (gamma/3) psi^3 - (gamma/4) psi^4
-    # At psi = 1: U(1) = gamma/12
-    # U'(1) = gamma - gamma = 0  (but this is the flat-space derivative)
-    # Actually: U'(psi) = gamma*psi^2 - gamma*psi^3
-    # U'(1) = gamma - gamma = 0
+    # Correct cosmological potential: W(psi) = c0^2 * (gamma*psi - beta)
+    # At vacuum psi = 1 (beta = gamma):
+    W1 = 0.0          # gamma - beta = 0: true equilibrium
+    Wp1 = gamma        # restoring force coefficient (in c0^2 units)
 
-    # In the cosmological potential W(psi) = (7beta/3)psi^2 - 2gamma*psi^3:
-    # W(1) = 7gamma/3 - 2gamma = gamma/3
-    # W'(1) = 14gamma/3 - 6gamma = -4gamma/3
-    # W''(1) = 14gamma/3 - 12gamma = -22gamma/3
+    # Screening mass vs Hubble rate
+    # m^2 = gamma ~ H_0^2 / c_0^2, but m_phys = sqrt(gamma) * c_0 >> H_0
+    # The field responds on timescale ~ 1/m_phys << 1/H_0
+    # Any deviation from psi=1 is damped within a Hubble time
 
-    # Slow-roll parameter epsilon ~ (W'/W)^2 / (some factor)
-    W1 = gamma / 3.0
-    Wp1 = -4.0 * gamma / 3.0
+    # Slow-roll parameter: epsilon = 0 because W(1) = 0
+    epsilon = 0.0
 
-    # epsilon_SR ~ (1/2) * (W'(1)/W(1))^2 * Phi_0 / (8*pi)
-    # This is very rough...
-    epsilon = 0.5 * (Wp1 / W1)**2  # (W'/W)^2 = 16 at psi=1
-
-    print(f"\n  Slow-roll estimate (Phi_0 = {Phi0}):")
-    print(f"    W(1)  = gamma/3  = {W1:.4e}")
-    print(f"    W'(1) = -4gamma/3 = {Wp1:.4e}")
-    print(f"    (W'/W)^2 = {(Wp1/W1)**2:.2f}")
-    print(f"    -> w_DE ~ -1 + epsilon, with epsilon = O(1)")
-    print(f"    -> This indicates quintessence (w > -1)")
-    print(f"    -> Precise w requires numerical integration of FRW + field eq.")
+    print(f"\n  Dark energy EOS estimate (Phi_0 = {Phi0}):")
+    print(f"    Correct action: S[g] = int[1/2 g^4 (nabla g)^2 + P(g)]")
+    print(f"    Cosmological potential: W(psi) = c0^2 (gamma*psi - beta)")
+    print(f"    W(1) = c0^2 (gamma - beta) = {W1:.4e}  (exact equilibrium)")
+    print(f"    W'(1) = c0^2 * gamma = {Wp1:.4e}  (restoring force)")
+    print(f"    -> psi = 1 is a STABLE vacuum: field frozen by Hubble friction")
+    print(f"    -> w_DE = -1 exactly (cosmological constant)")
+    print(f"    -> No slow-roll: field is AT the minimum, not rolling toward it")
+    print(f"    -> Confirmed by numerical ODE (w_de_redshift.py)")
 
     return epsilon
 

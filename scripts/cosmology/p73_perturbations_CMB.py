@@ -60,7 +60,7 @@ k_pivot      = 0.05        # Mpc^-1
 
 # Parametry TGP (z cosmological_evolution.py)
 H0    = 2.2e-18   # 1/s
-Phi0  = 24.66     # wartosc referencyjna (adimensional)
+Phi0  = 115.08    # wartosc referencyjna (adimensional, P(1)=gamma/56, Omega_DE=0.685)
 psi_ini = 7.0/6  # warunek poczatkowy (atraktor TGP, hyp:action)
 eps_psi_ref = 0.01  # typowy wolnorol dla TGP (oszacowanie)
 
@@ -111,7 +111,7 @@ def make_background_dS_TGP(eps_psi=0.01, nu_offset=0.0):
     # Parametr eta_psi (z rownania pola TGP: eta ~ d^2U/dpsi^2 / H^2)
     # Przy psi ~ psi_ini = 7/6, W'(7/6) = 0, W''(7/6) = 14/3 - 12*(7/6) = 14/3 - 14 = -28/3
     # W jednostkach Phi0: eta_psi ~ Phi0 * |W''| / (3*H^2) ~ Phi0/3 * 28/3 ~ 2.8*Phi0/3
-    # Dla Phi0 ~ 24.66: eta_psi ~ 23. Ale to jest masa kosmologiczna, nie wolnorolowanie...
+    # Dla Phi0 ~ 115: eta_psi ~ 107. Ale to jest masa kosmologiczna, nie wolnorolowanie...
     # W praktyce: dla TGP inflacyjnego eta_psi ~ eps_psi (slow-roll hierarchy)
     eta_psi = eps_psi  # upraszczajace zalozenie
     nu = 3.0/2 + (3*eps_psi - eta_psi)/2 + nu_offset
@@ -288,7 +288,7 @@ def n_s_from_nu(nu):
 # SEKCJA 5: Wolnorolowe parametry TGP
 # ─────────────────────────────────────────────────────────────────────────────
 
-def tgp_slow_roll_params(N_e, Phi0_val=24.66):
+def tgp_slow_roll_params(N_e, Phi0_val=115.08):
     """
     Wolnorolowe parametry TGP z inflacji substratowej (Dodatek G).
 

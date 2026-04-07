@@ -55,7 +55,7 @@ Omega_r0 = 9.0e-5
 # ============================================================================
 # TGP parameters from Phi0  (vacuum condition beta = gamma)
 # ============================================================================
-PHI0_VALUES = [5, 10, 15, 20, 25, 30, 50]
+PHI0_VALUES = [25, 50, 80, 100, 115, 130, 150]
 
 
 def tgp_params(Phi0):
@@ -70,15 +70,22 @@ def tgp_params(Phi0):
 # Potentials
 # ============================================================================
 def W_exact(psi, beta, gamma):
-    """RHS of exact field equation: c0^2 [(7beta/3)psi^2 - 2gamma psi^3].
+    """RHS of exact FRW field equation: c0^2 (gamma*psi - beta).
+
+    Derived from correct action S[g] = int[1/2 g^4(nabla g)^2 + P(g)]
+    with P(g) = (beta/7)g^7 - (gamma/8)g^8 and sqrt(-g_eff) = c0*psi.
+    The FRW equation is: psi_tt + 3H psi_t + 3 psi_t^2/psi = c0^2(gamma*psi - beta).
     NOTE: kappa does NOT appear here -- it cancels because 1/kappa
     multiplies the entire gravitational sector in the action."""
-    return c0**2 * ((7.0 * beta / 3.0) * psi**2 - 2.0 * gamma * psi**3)
+    return c0**2 * (gamma * psi - beta)
 
 
 def U_eff(psi, beta, gamma):
-    """Energy potential: U(psi) = (beta/3)psi^3 - (gamma/4)psi^4."""
-    return (beta / 3.0) * psi**3 - (gamma / 4.0) * psi**4
+    """Action potential: P(psi) = (beta/7)psi^7 - (gamma/8)psi^8.
+
+    Derived from P'(g) = K(g) * (gamma g^3 - beta g^2) with K = g^4,
+    giving P(g) = (beta/7)g^7 - (gamma/8)g^8."""
+    return (beta / 7.0) * psi**7 - (gamma / 8.0) * psi**8
 
 
 # ============================================================================
@@ -127,7 +134,9 @@ def ode_exact(lna, state, beta, gamma):
     Hdot_over_H = 0.5 * dlnH2
 
     W = W_exact(psi, beta, gamma)
-    chi_prime = W / H2 - 3.0 * chi - 2.0 * chi**2 / psi - Hdot_over_H * chi
+    # FRW field eq: psi_tt + 3H psi_t + 3 psi_t^2/psi = W(psi)
+    # In chi = dpsi/dlna: chi' = W/H^2 - 3chi - 3chi^2/psi - (Hdot/H)chi
+    chi_prime = W / H2 - 3.0 * chi - 3.0 * chi**2 / psi - Hdot_over_H * chi
     return [chi, chi_prime]
 
 

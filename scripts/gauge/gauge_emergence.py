@@ -195,7 +195,7 @@ print("\n=== SEKCJA C: Substrat SU(3) — konfinowanie kolorów ===")
 # Obserwowane: sigma ≈ 0.18 GeV^2 ≈ (0.42 GeV)^2
 sigma_observed_GeV2 = 0.18
 # TGP: sigma = gamma * Phi0 * a_sub * f_color
-# Dla Phi0=25, gamma~10^-52 m^-2, a_sub~l_P: bezwymiarowo sigma ~ gamma*Phi0*l_P
+# Dla Phi0=115, gamma~10^-52 m^-2, a_sub~l_P: bezwymiarowo sigma ~ gamma*Phi0*l_P
 # W jednostkach SI: sigma_SI = 0.18 * (GeV/c^2)^2 / hbar^2 ≈ 3.7 * 10^15 kg/(m*s^2)
 # Testujemy spójność: czy sigma > 0 (konfinowanie liniowe istnieje)
 record("C1_string_tension_positive", "PASS",
@@ -246,7 +246,7 @@ print("\n=== SEKCJA D: Sprzężenie Phi-cechowanie ===")
 
 # D1: Prędkość światła w polu Phi: c(Phi) = c0*(Phi0/Phi)^(1/2)
 # Sprawdzamy: foton propaguje z prędkością c(Phi), nie c0
-Phi0 = 25.0
+Phi0 = 115.0
 def c_TGP(Phi, c0=1.0):
     return c0 * np.sqrt(Phi0 / Phi)
 

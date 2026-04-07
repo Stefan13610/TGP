@@ -144,7 +144,8 @@ def three_body_forces_approximate(positions, C_values, beta, gamma=None,
         djk = np.sqrt(np.dot(rjk, rjk) + softening**2)
 
         P = dij + dik + djk  # perimeter
-        coupling = 6.0 * gamma * Ci * Cj * Ck
+        # Force coupling: (6*gamma - 2*beta) from corrected potential vertex
+        coupling = (6.0 * gamma - 2.0 * beta) * Ci * Cj * Ck
 
         if use_yukawa:
             s = P / 2.0

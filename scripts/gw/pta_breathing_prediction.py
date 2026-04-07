@@ -27,7 +27,7 @@ import numpy as np
 c0 = 3.0e8          # m/s
 G0 = 6.674e-11      # m^3 kg^-1 s^-2
 H0 = 2.2e-18        # 1/s (67.4 km/s/Mpc)
-Phi0 = 25.0          # TGP background field
+Phi0 = 115.0         # TGP background field
 M_sun = 1.989e30    # kg
 pc = 3.086e16        # m
 Mpc = 3.086e22       # m

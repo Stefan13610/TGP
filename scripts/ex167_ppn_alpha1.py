@@ -143,7 +143,7 @@ print("=" * 72)
 print("--- 4. Porównanie liczbowe: κ, N_e, n_s ---")
 print("=" * 72)
 
-Phi0 = 25.0
+Phi0 = 115.0
 
 for alpha in [1, 2]:
     n = 1 + 2*alpha
@@ -158,8 +158,11 @@ for alpha in [1, 2]:
     # → κ = 8πG_eff/3 = 8πc²/(12Φ₀) = 2πc²/(3Φ₀)
     # Hmm, w naturalnych: κ = 3/(4Φ₀) = 0.03
 
-    kappa = 3/(4*Phi0)
-    print(f"    κ = 3/(4Φ₀) = {kappa:.4f} (NIEZALEŻNE od α)")
+    # κ = 3/(4·Φ_eff) = 7/(2·Φ₀_bare), see ex219
+    Phi_eff = Phi0 * 3/14  # action screening: P(1)/V(1) = 3/14
+    kappa = 3/(4*Phi_eff)  # equivalently 7/(2*Phi0)
+    print(f"    Φ_eff = Φ₀·3/14 = {Phi_eff:.2f}")
+    print(f"    κ = 3/(4Φ_eff) = 7/(2Φ₀) = {kappa:.4f} (NIEZALEŻNE od α)")
     print(f"    (bo κ pochodzi z identyfikacji G_eff w linearnym limicie)")
 
 # =====================================================================
@@ -200,7 +203,7 @@ print("""
 """)
 
 # Weryfikacja: linearyzacja
-print("  Weryfikacja: linearyzacja D(α) wokół Φ₀ = 25\n")
+print("  Weryfikacja: linearyzacja D(α) wokół Φ₀ = 115\n")
 print(f"  {'α':>4} {'D(α)[Φ₀(1+δ)]':>30} {'liniowy w δ':>20}")
 print("  " + "-" * 55)
 

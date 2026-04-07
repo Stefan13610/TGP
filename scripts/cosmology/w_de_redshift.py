@@ -8,13 +8,13 @@ Compute w_DE(z) from structure formation history in TGP.
 
 Physics summary
 ---------------
-TGP gives Lambda_eff = gamma * Phi_0 / 12, with Phi_0 ~ 24.66 matching
+TGP gives Lambda_eff = gamma / 56, with Phi_0 ~ 115 matching
 Lambda_obs.  The dark energy equation of state w_DE deviates from -1
 through three mechanisms:
 
   (1) Spatial variation:  Phi = Phi_0 (1 + delta_Phi), where delta_Phi
       tracks matter perturbations via the Newtonian potential Psi_N.
-      This gives Lambda_eff(x) = gamma Phi(x) / 12.
+      This gives Lambda_eff(x) = gamma Phi(x) / 56.
 
   (2) Time evolution:  as structures grow, <delta_Phi^2> ~ D^2(z) <Psi^2>
       increases, so the volume-averaged Lambda_eff evolves.
@@ -55,7 +55,7 @@ Omega_Lambda = 0.685
 Lambda_obs = 1.11e-52   # m^-2  (observed)
 
 # TGP parameters
-Phi0 = 36.0 * Omega_Lambda   # = 24.66
+Phi0 = 168.0 * Omega_Lambda   # = 115.1 (from P(1) = gamma/56)
 gamma_tgp = Phi0 * H0**2 / c0**2   # m^-2
 
 # Structure correction amplitude from lambda_eff_quantitative.py
@@ -187,7 +187,7 @@ def compute_w_de(z_arr, D_arr, f_arr, psi2_z):
     Compute w_DE(z) from the TGP Phi field.
 
     The effective cosmological constant in TGP is:
-        Lambda_eff(z) = (gamma/12) [1 + 6 <delta_Phi^2>/Phi_0^2]
+        Lambda_eff(z) = (gamma/56) [1 + 6 <delta_Phi^2>/Phi_0^2]
                       = Lambda_0 [1 + epsilon(z)]
 
     where epsilon(z) = 6 psi2_z = epsilon_0 * D^2(z).
@@ -452,7 +452,7 @@ def main():
     print(f"  Omega_m   = {Omega_m}")
     print(f"  Omega_L   = {Omega_Lambda}")
     print(f"  Lambda_obs= {Lambda_obs:.3e} m^-2")
-    print(f"  Phi_0     = 36 * Omega_Lambda = {Phi0:.4f}")
+    print(f"  Phi_0     = 168 * Omega_Lambda = {Phi0:.4f}")
     print(f"  gamma     = Phi_0 * H_0^2 / c_0^2 = {gamma_tgp:.4e} m^-2")
     print(f"  sigma_Psi = {sigma_Psi:.1e} (Bardeen potential RMS)")
     print(f"  epsilon_0 = 6 * sigma_Psi^2 = {epsilon_0:.3e}")

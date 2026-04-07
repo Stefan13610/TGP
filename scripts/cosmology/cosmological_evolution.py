@@ -44,9 +44,9 @@ Omega_r0 = 9.1e-5
 Omega_L0 = 0.685
 
 # TGP parameters
-gamma = 12 * Lambda_obs  # Λ_eff = γ/12
+gamma = 56 * Lambda_obs  # Λ_eff = γ/56
 beta  = gamma             # warunek próżni β = γ
-Phi0  = 36 * Omega_L0    # ≈ 24.66
+Phi0  = 168 * Omega_L0    # ≈ 115.08
 
 # Dimensionless TGP parameter: Φ₀ = c₀²γ/H₀²
 Phi0_eff = c0**2 * gamma / H0**2
@@ -70,8 +70,8 @@ def check(condition, name, detail=""):
 # ===================================================================
 
 def U_pot_norm(psi):
-    """U(ψ)/(γΦ₀²) = (1/3)ψ³ - (1/4)ψ⁴  (β=γ)"""
-    return (1.0/3)*psi**3 - (1.0/4)*psi**4
+    """P(ψ)/(γΦ₀²) = (1/7)ψ⁷ - (1/8)ψ⁸  (β=γ, action potential)"""
+    return (1.0/7)*psi**7 - (1.0/8)*psi**8
 
 def W_pot_norm(psi):
     """W(ψ)/γ = (7/3)ψ² - 2ψ³  (β=γ)"""
@@ -174,8 +174,8 @@ print(f"  ψ_eq     = {psi_eq:.6f}")
 print("\n--- GROUP 1: Basin & freezing ---")
 
 psi_all = sol.y[0, :idx_today+1]
-check(len(psi_all) > 0 and np.all(psi_all > 0) and np.all(psi_all < 4.0/3),
-      "ψ(t) ∈ (0, 4/3) throughout",
+check(len(psi_all) > 0 and np.all(psi_all > 0) and np.all(psi_all < 8.0/7),
+      "ψ(t) ∈ (0, 8/7) throughout",
       f"ψ ∈ [{np.min(psi_all):.6f}, {np.max(psi_all):.6f}]")
 
 # Frozen in matter era
@@ -188,7 +188,7 @@ check(abs(psi_z100 - 1.0) < 0.001,
       f"ψ(z≈100) = {psi_z100:.8f}")
 
 # ψ evolves toward ψ_eq at late times
-check(psi_today > 1.0 and psi_today < 4.0/3,
+check(psi_today > 1.0 and psi_today < 8.0/7,
       "ψ(today) > 1 (evolving toward ψ_eq)",
       f"ψ = {psi_today:.6f}, ψ_eq = {psi_eq:.6f}")
 
@@ -246,27 +246,27 @@ check(Delta_G_BBN < 0.20,
 
 print("\n--- GROUP 4: Structural consistency ---")
 
-# Φ₀ = 36·Ω_Λ
-check(abs(Phi0 - 36*Omega_L0) / Phi0 < 0.01,
-      "Φ₀ = 36·Ω_Λ",
-      f"Φ₀ = {Phi0:.2f}, 36Ω_Λ = {36*Omega_L0:.2f}")
+# Φ₀ = 168·Ω_Λ
+check(abs(Phi0 - 168*Omega_L0) / Phi0 < 0.01,
+      "Φ₀ = 168·Ω_Λ",
+      f"Φ₀ = {Phi0:.2f}, 168Ω_Λ = {168*Omega_L0:.2f}")
 
 # W(ψ_eq) = 0
 check(abs(W_pot_norm(psi_eq)) < 1e-12,
       "W(ψ_eq) = 0",
       f"W(7/6) = {W_pot_norm(psi_eq):.2e}")
 
-# U(4/3) = 0
-check(abs(U_pot_norm(4.0/3)) < 1e-12,
-      "U(4/3) = 0  (basin boundary)",
-      f"U(4/3) = {U_pot_norm(4.0/3):.2e}")
+# P(8/7) = 0
+check(abs(U_pot_norm(8.0/7)) < 1e-12,
+      "P(8/7) = 0  (basin boundary)",
+      f"P(8/7) = {U_pot_norm(8.0/7):.2e}")
 
-# W(1) = 4·U(1) (ψ⁴ measure identity)
+# W(1) = (56/3)·P(1) (ψ⁸ action potential identity)
 W1 = W_pot_norm(1.0)
-U1 = U_pot_norm(1.0)
-check(abs(W1 - 4*U1) < 1e-12,
-      "W(1) = 4U(1)  (ψ⁴ measure identity)",
-      f"W(1)={W1:.8f}, 4U(1)={4*U1:.8f}")
+P1 = U_pot_norm(1.0)
+check(abs(W1 - (56.0/3.0)*P1) < 1e-12,
+      "W(1) = (56/3)P(1)  (ψ⁸ action potential identity)",
+      f"W(1)={W1:.8f}, (56/3)P(1)={(56.0/3.0)*P1:.8f}")
 
 # Linearized mass matches
 # W'(1) = 14β/3 - 6γ = -4γ/3 (for β=γ)

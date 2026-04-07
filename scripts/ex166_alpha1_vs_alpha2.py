@@ -152,7 +152,7 @@ print("=" * 72)
 print("--- 3. Co zależy od α, a co nie? ---")
 print("=" * 72)
 
-Phi0 = 25.0
+Phi0 = 115.0
 
 # κ = 3/(4Φ₀) — czy to zależy od α?
 # κ pochodzi z porównania FRW TGP z FRW GR.
@@ -170,7 +170,7 @@ print("""
   │  Koide K=2/3        │  NIE (algeb.)  │  ✓ (0.667)   │  ✓ (0.667)  │
   │  K (kwarkowe)       │  NIE (algeb.)  │  ✓ (0.731)   │  ✓ (0.731)  │
   │  Metryka g_µν       │  TAK           │  Φ^{2/3}     │  Φ^{?}      │
-  │  κ = 3/(4Φ₀)       │  TAK           │  3/(4·25)=0.03│  ???        │
+  │  κ = 3/(4Φ_eff)     │  TAK           │  7/(2·115)≈0.030 │  ???     │
   │  N_e                │  TAK           │  (1/3)ln(1/ε₀)│ ???        │
   │  n_s                │  TAK           │  1-2/N_e     │  ???         │
   │  PPN (γ, β)         │  TAK           │  γ=1, β=1    │  ???         │

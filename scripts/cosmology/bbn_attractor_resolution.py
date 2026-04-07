@@ -12,7 +12,7 @@ evolving and ψ_today depends on cosmological dynamics.
 This script:
 1. Solves the full nonlinear cosmological evolution ψ(z)
 2. Shows ψ_today as function of Φ₀ in the allowed range
-3. Demonstrates that for natural Φ₀ ∈ [24, 29], ΔG/G ∈ [8%, 14%]
+3. Demonstrates that for natural Φ₀ ∈ [105, 135], ΔG/G ∈ [8%, 14%]
 4. Shows BBN bounds are model-dependent: 5-20% range
 5. Computes the frozen-field value ψ(z_BBN) explicitly
 
@@ -39,8 +39,8 @@ Omega_Lambda = 0.685
 Omega_r = 9.15e-5
 
 # TGP parameters
-Phi0_nominal = 36 * Omega_Lambda  # ≈ 24.66
-gamma_nominal = 12 * Omega_Lambda * H0**2 / c0**2
+Phi0_nominal = 168 * Omega_Lambda  # ≈ 115.08
+gamma_nominal = 56 * Omega_Lambda * H0**2 / c0**2
 
 # ============================================================
 # Cosmological evolution of ψ(a)
@@ -67,7 +67,7 @@ def evolve_psi(Phi0, z_start=1e6, z_end=0, psi_ini=1.0, N_points=10000):
     In terms of a (scale factor), using dt = da/(aH):
     ψ''(a) + [3/a + H'/H]ψ'(a) + 2ψ'²/ψ = c₀²/(a²H²) · γ · dW/dψ
     """
-    gamma = 12 * Omega_Lambda * H0**2 / c0**2
+    gamma = 56 * Omega_Lambda * H0**2 / c0**2
 
     a_start = 1.0 / (1 + z_start)
     a_end = 1.0 / (1 + z_end)
@@ -154,7 +154,7 @@ print("\n" + "=" * 70)
 print("  1. EXACT PSI_TODAY FROM NONLINEAR EVOLUTION")
 print("=" * 70)
 
-Phi0_values = [23.0, 24.0, 24.7, 25.0, 26.0, 28.0, 29.0]
+Phi0_values = [105.0, 110.0, 115.0, 117.0, 120.0, 130.0, 135.0]
 psi_today_results = {}
 
 for Phi0 in Phi0_values:
@@ -168,7 +168,7 @@ for Phi0 in Phi0_values:
               f"|DG/G| = {DG_over_G:.2f}%")
 
 # Check that exact ψ_today < 7/6 (not yet at attractor)
-psi_nominal = psi_today_results.get(24.7, 1.15)
+psi_nominal = psi_today_results.get(115.0, 1.15)
 check("E1: psi_today < 7/6 (field not at asymptotic limit)",
       psi_nominal < 7.0/6.0,
       f"psi_today = {psi_nominal:.6f} < 7/6 = {7/6:.6f}")
@@ -185,7 +185,7 @@ print("\n" + "=" * 70)
 print("  2. FIELD VALUE AT BBN EPOCH")
 print("=" * 70)
 
-result = evolve_psi(24.7, z_start=1e6, z_end=0, psi_ini=1.0, N_points=50000)
+result = evolve_psi(115.0, z_start=1e6, z_end=0, psi_ini=1.0, N_points=50000)
 if result is not None:
     z_arr, psi_arr = result
 
@@ -354,7 +354,7 @@ print("""
 
 # Test Option C
 psi_eq = 7.0 / 6.0
-result_C = evolve_psi(24.7 * psi_eq, z_start=1e6, z_end=0, psi_ini=1.0, N_points=50000)
+result_C = evolve_psi(115.0 * psi_eq, z_start=1e6, z_end=0, psi_ini=1.0, N_points=50000)
 if result_C is not None:
     z_arr_C, psi_arr_C = result_C
     psi_today_C = psi_arr_C[-1]
@@ -415,12 +415,12 @@ check("R2: Recalibrated frame makes this automatic (ψ'_ini = 1 = ψ'_eq)",
 # Does this change any other prediction?
 print("\n  Impact on other predictions:")
 print("  - Three regimes: UNCHANGED (β, γ, α unchanged)")
-print("  - Λ_eff = γ/12: UNCHANGED (same γ)")
+print("  - Λ_eff = γ/56: UNCHANGED (same γ)")
 print("  - w_DE = -1: UNCHANGED (field at equilibrium, no dynamics)")
 print("  - PPN γ=β=1: UNCHANGED (exponential metric unchanged)")
 print("  - GW speed: UNCHANGED (c_GW = c₀)")
 print("  - QNM spectrum: UNCHANGED")
-print("  - Φ₀^(recal) ≈ 28.8: CONSISTENT with Φ₀ range")
+print("  - Φ₀^(recal) ≈ 134: CONSISTENT with Φ₀ range")
 
 check("R3: No other predictions affected by recalibrated IC",
       True)

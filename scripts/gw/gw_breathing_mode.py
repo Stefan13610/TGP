@@ -80,7 +80,7 @@ import matplotlib.pyplot as plt
 c0 = 3.0e8          # m/s
 G0 = 6.674e-11      # m^3 kg^-1 s^-2
 r0 = 1.0e-15        # m  (nuclear scale for dimensionless hat parameters)
-Phi0 = 25.0          # background field (dimensionless; ~25 from TGP cosmology)
+Phi0 = 115.0         # background field (dimensionless; ~115 from TGP cosmology)
 H0 = 2.2e-18        # Hubble constant [1/s] (~67.4 km/s/Mpc)
 
 # ═══════════════════════════════════════════════════════════════════════════

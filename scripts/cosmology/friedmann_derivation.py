@@ -176,11 +176,11 @@ def compute_friedmann_constraint():
     # For ψ ≈ 1 (near vacuum):
     print(f"\nAt ψ = 1 (vacuum, β = γ):")
     print(f"  3(H + ψ̇/4)² = [ψ̇²/2 + c0^2 U(1)]")
-    print(f"  3H² + 3H·ψ̇/2 + 3ψ̇²/16 = ψ̇²/2 + c0^2 γ/12")
+    print(f"  3H² + 3H·ψ̇/2 + 3ψ̇²/16 = ψ̇²/2 + c0^2 U(1)")
     print(f"\nLeading term (ψ̇ → 0, ψ = 1):")
-    print(f"  3H² ≈ c0^2 γ/12 = c0^2 Λ_eff")
+    print(f"  3H² ≈ c0^2 U(1) = c0^2 γ/56 = c0^2 Λ_eff")
     print(f"  → H² = Λ_eff/3  (de Sitter!)")
-    print(f"  This is consistent with Λ_eff = γ/12 from sek05.")
+    print(f"  This is consistent with Λ_eff = γ/56 (correct action potential P(1)).")
 
     return G_00
 
@@ -201,7 +201,7 @@ def verify_field_equation_consistency():
     print("=" * 65)
 
     # The ψ field equation is:
-    # ψ̈ + 3Hψ̇ + 2ψ̇²/ψ = c0^2 W(ψ)
+    # ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2 W(ψ)
     # where W(ψ) = (7β/3)ψ² - 2γψ³
 
     # The energy density and pressure of the ψ field:
@@ -212,24 +212,23 @@ def verify_field_equation_consistency():
     # → ψ̇ψ̈/c0^2 + U'ψ̇ + 3H·ψ̇²/c0^2 = 0
     # → ψ̈ + 3Hψ̇ + c0^2U'(ψ) = 0
 
-    # But the TGP field equation has the EXTRA term 2ψ̇²/ψ and uses W(ψ)
-    # instead of U'(ψ). The difference:
-    # c0^2 W(ψ) = c0^2 (4U/ψ + U')
-    # = c0^2U' + 4c0^2U/ψ
+    # But the TGP field equation has the EXTRA term 3ψ̇²/ψ and uses W(ψ)
+    # instead of U'(ψ). With the correct action S[g] = int[1/2 g^4 (nabla g)^2 + P(g)]:
+    # The kinetic coupling K(ψ) = ψ^4 gives the 3ψ̇²/ψ term
+    # The cosmological potential W(ψ) = c0^2(γψ - β) from Euler-Lagrange
 
     # So the TGP equation is:
-    # ψ̈ + 3Hψ̇ + 2ψ̇²/ψ = c0^2U'(ψ) + 4c0^2U(ψ)/ψ
+    # ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2(γψ - β)
 
-    # The extra terms (2ψ̇²/ψ and 4U/ψ) come from the ψ⁴ volume element.
-    # They encode the back-reaction of ψ on the geometry via √(-g_eff).
+    # The extra term 3ψ̇²/ψ comes from the kinetic coupling K = ψ^4.
+    # It encodes the back-reaction of ψ on the geometry.
 
     print("\nStandard Klein-Gordon in FRW: ψ̈ + 3Hψ̇ = -c0^2 U'(ψ)")
-    print("TGP field equation:          ψ̈ + 3Hψ̇ + 2ψ̇²/ψ = c0^2 W(ψ)")
-    print("where W(ψ) = 4U(ψ)/ψ + U'(ψ)")
-    print(f"\nExtra terms vs standard KG:")
-    print(f"  +2ψ̇²/ψ on LHS  → from ψ⁴ volume element (self-coupling to geometry)")
-    print(f"  +4U/ψ  on RHS  → from variation of √(-g_eff) = ψ⁴")
-    print(f"\nThese are NOT ad-hoc: they follow from the ψ⁴ measure.")
+    print("TGP field equation:          ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2 W(ψ)")
+    print("where W(ψ) = c0^2(γψ - β)  [from correct unified action]")
+    print(f"\nExtra term vs standard KG:")
+    print(f"  +3ψ̇²/ψ on LHS  → from kinetic coupling K(ψ)=ψ⁴ (self-coupling to geometry)")
+    print(f"\nThis is NOT ad-hoc: it follows from the correct Euler-Lagrange variation.")
     print(f"They encode the GEOMETRIC back-reaction of the scalar field")
     print(f"on the spacetime it generates — a hallmark of TGP.")
 
@@ -238,7 +237,7 @@ def compute_energy_first_integral():
     """
     Derive the energy conservation (first integral) from the ψ field equation.
 
-    Method: multiply ψ̈ + 3Hψ̇ + 2ψ̇²/ψ = c0^2W(ψ) by an integrating factor.
+    Method: multiply ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2W(ψ) by an integrating factor.
     """
     print("\n" + "=" * 65)
     print("ENERGY CONSERVATION (first integral)")
@@ -258,7 +257,7 @@ def compute_energy_first_integral():
     # ε(t) = ψ̇²/(2c0^2) - U(ψ)  [energy density of ψ field]
 
     # From the field equation, we can show:
-    # d/dt[a³ψ⁴ · ψ̇²/(2c0^2)] = a³ψ⁴ψ̇ [c0^2W(ψ) - 3Hψ̇ - 2ψ̇²/ψ] / (c0^2)
+    # d/dt[a³ψ⁴ · ψ̇²/(2c0^2)] = a³ψ⁴ψ̇ [c0^2W(ψ) - 3Hψ̇ - 3ψ̇²/ψ] / (c0^2)
     #                              + 3Ha³ψ⁴ ψ̇²/(2c0^2) + 4a³ψ³ψ̇ · ψ̇²/(2c0^2)
 
     # This is getting complicated. The key insight:
@@ -275,7 +274,7 @@ def compute_energy_first_integral():
     print("  ┌─────────────────────────────────────────────────────────────┐")
     print("  │  3(H + ψ̇/(4ψ))² sqrt(psi) = c0^2 [sqrt(psi) ψ̇²/(2c0^2) + U(ψ)]     │")
     print("  │                                                           │")
-    print("  │  At ψ ≈ 1:  3H² ≈ c0^2 U(1) = c0^2 γ/12 = c0^2 Λ_eff  │")
+    print("  │  At ψ ≈ 1:  3H² ≈ c0^2 U(1) = c0^2 γ/56 = c0^2 Λ_eff  │")
     print("  │  → de Sitter solution: H² = Λ_eff/3                      │")
     print("  └─────────────────────────────────────────────────────────────┘")
     print()
@@ -315,10 +314,12 @@ def numerical_verification():
     print(f"  Hubble time = {1/H0:.4e} s = {1/(H0*3.156e7):.2f} yr")
 
     def U(psi):
-        return beta_val / 3 * psi**3 - gamma_val / 4 * psi**4
+        # Correct action potential P(g) = (beta/7)g^7 - (gamma/8)g^8
+        return beta_val / 7 * psi**7 - gamma_val / 8 * psi**8
 
     def W(psi):
-        return 7 * beta_val / 3 * psi**2 - 2 * gamma_val * psi**3
+        # RHS of FRW field eq: c0^2 * (gamma*psi - beta)
+        return gamma_val * psi - beta_val
 
     # System: [ψ, ψ̇, ln(a)]
     def rhs(t, y):
@@ -328,8 +329,8 @@ def numerical_verification():
 
         H = H0  # constant H for de Sitter background (first approximation)
 
-        # Field equation: ψ̈ + 3Hψ̇ + 2ψ̇²/ψ = c0^2 W(ψ)  (kappa cancels)
-        psi_dd = c0**2 * W(psi) - 3 * H * psi_d - 2 * psi_d**2 / psi
+        # Field equation: ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2 W(ψ)  (kappa cancels)
+        psi_dd = c0**2 * W(psi) - 3 * H * psi_d - 3 * psi_d**2 / psi
 
         return [psi_d, psi_dd, H]
 
@@ -355,19 +356,19 @@ def numerical_verification():
 
         # At ψ ≈ 1 with ψ̇ ≈ 0:
         # LHS ≈ 3H₀²
-        # RHS ≈ c0^2 γ/12  (kappa cancels)
+        # RHS ≈ c0^2 γ/56  (kappa cancels, correct action potential P(1)=γ/56)
         print(f"\n  Friedmann constraint check (ψ ≈ {psi0}):")
         print(f"    LHS (t=0) = 3H₀² sqrt(psi) = {LHS[0]:.6e}")
         print(f"    RHS (t=0) = c0^2 U(ψ) = {RHS[0]:.6e}")
         print(f"    Ratio = {LHS[0] / RHS[0]:.6f}")
         print(f"    (Should be ≈ 1 if Friedmann is consistent)")
 
-        # Also check: does 3H₀² = c0^2γ/12?  (kappa cancels)
+        # Also check: does 3H₀² = c0^2γ/56?  (kappa cancels)
         lhs_check = 3 * H0**2
-        rhs_check = c0**2 * gamma_val / 12
+        rhs_check = c0**2 * gamma_val / 56
         print(f"\n  de Sitter consistency:")
         print(f"    3H₀² = {lhs_check:.6e}")
-        print(f"    c0^2γ/12 = {rhs_check:.6e}")
+        print(f"    c0^2γ/56 = {rhs_check:.6e}")
         print(f"    Ratio = {lhs_check / rhs_check:.6f} (should be 1.0)")
 
         # Field evolution
@@ -389,14 +390,14 @@ def summary():
 STATUS: PARTIALLY RESOLVED
 
 1. The ψ FIELD EQUATION is rigorously derived from the TGP action:
-     ψ̈ + 3Hψ̇ + 2ψ̇²/ψ = c0^2 W(ψ)
-   where W(ψ) = (7β/3)ψ² - 2γψ³  [prop:FRW-derivation]
+     ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2 W(ψ)
+   where W(ψ) = c₀²(γψ - β)  [prop:FRW-derivation, correct action]
 
 2. The FRIEDMANN EQUATION cannot be derived from the scalar action alone.
    The action S[ψ] has only ψ as a dynamical variable; a(t) appears
    as a background parameter. Variation δS/δψ = 0 gives the field eq.
    Variation δS/δa = 0 gives the constraint ψ̇²/(2c0^2) + U(ψ) = 0,
-   which is too restrictive (incompatible with U(1) = γ/12 > 0).
+   which is too restrictive (incompatible with U(1) = γ/56 > 0).
 
 3. The MODIFIED FRIEDMANN EQUATION follows from a geometric consistency
    condition: if the TGP effective metric satisfies Einstein's equations
@@ -404,11 +405,11 @@ STATUS: PARTIALLY RESOLVED
 
      3(H + ψ̇/(4ψ))² sqrt(psi) = c0^2 [sqrt(psi) ψ̇²/(2c0^2) + U(ψ)]
 
-   At ψ ≈ 1: 3H² ≈ c0^2 γ/12 = c0^2 Λ_eff  → de Sitter
+   At ψ ≈ 1: 3H² ≈ c0^2 γ/56 = c0^2 Λ_eff  → de Sitter
 
 4. The EXTRA TERMS vs standard scalar cosmology:
-   - 2ψ̇²/ψ (gradient self-coupling, from ψ⁴ volume element)
-   - 4U/ψ  (potential shift, from δ(√-g)/δψ)
+   - 3ψ̇²/ψ (gradient self-coupling, from correct kinetic coupling K=ψ⁴)
+   - geometric potential terms (from correct action variation)
    These are geometric back-reaction terms unique to TGP.
 
 5. REMAINING OPEN: proving that Einstein's equations are EMERGENT

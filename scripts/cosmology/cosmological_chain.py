@@ -15,13 +15,13 @@ consistent results, forming a single chain:
     VACUUM: beta = gamma (prop:vacuum-condition)
         |
         +--> Level 0: ANALYTIC (lambda_eff_estimation.py)
-        |      Lambda_eff = gamma/12 at psi = 1 (equilibrium)
+        |      Lambda_eff = gamma/56 at psi = 1 (equilibrium)
         |      No dynamics, no ODEs
-        |      => Phi_0 ~ 25, Lambda_eff ~ Lambda_obs
+        |      => Phi_0 ~ 115, Lambda_eff ~ Lambda_obs
         |
         +--> Level 1: EXACT FIELD (w_de_exact.py)
         |      Solves exact nonlinear field equation
-        |      psi'' + 3H psi' + 2(psi')^2/psi = c0^2 W(psi)  (kappa cancels)
+        |      psi'' + 3H psi' + 3(psi')^2/psi = c0^2 W(psi)  (kappa cancels)
         |      No matter coupling (field-only)
         |      => w_DE(z), confirms psi frozen at 1
         |
@@ -68,18 +68,20 @@ def level0_analytic(Phi0):
 
     From: lambda_eff_estimation.py, Proposition prop:Lambda-eff.
 
-    U(psi) = (beta/3)*psi^3 - (gamma/4)*psi^4
-    U(1)   = beta/3 - gamma/4 = gamma/12     [for beta = gamma]
+    P(psi) = (beta/7)*psi^7 - (gamma/8)*psi^8  (correct action potential)
+    P(1)   = beta/7 - gamma/8 = gamma/56     [for beta = gamma]
 
-    Lambda_eff = U(1) = gamma/12
+    Lambda_eff = P(1) = gamma/56
     gamma = Phi0 * H0^2 / c0^2
 
     rho_DE = Lambda_eff * c0^4 / (8*pi*G0)
            = Phi0 * H0^2 / (96*pi*G0)
     """
     gamma = Phi0 * H0_SI**2 / c0**2
-    Lambda_eff = gamma / 12.0
-    rho_DE = Phi0 * H0_SI**2 / (96.0 * np.pi * G0)
+    Lambda_eff = gamma / 56.0
+    # rho_DE = P(1) * c0^2 / (8*pi*G0) = (gamma/56) * c0^2 / (8*pi*G0)
+    #        = Phi0 * H0^2 / (56 * 8 * pi * G0)   [since gamma = Phi0*H0^2/c0^2]
+    rho_DE = Lambda_eff * c0**2 / (8.0 * np.pi * G0)
     Omega_DE = rho_DE / rho_crit
     w0 = -1.0  # by construction: constant potential => w = -1 exactly
 
@@ -103,8 +105,8 @@ def level1_exact_field(Phi0):
     From: w_de_exact.py (exact nonlinear field equation).
 
     Field equation (kappa cancels from the action):
-        psi'' + 3H psi' + 2(psi')^2/psi = c0^2 W(psi)
-    where W(psi) = (7*beta/3)*psi^2 - 2*gamma*psi^3
+        psi'' + 3H psi' + 3(psi')^2/psi = c0^2 W(psi)
+    where W(psi) = gamma*psi - beta
 
     For natural gamma ~ Phi0*H0^2/c0^2, the potential is extremely
     flat and Hubble friction freezes psi at 1.
@@ -125,13 +127,11 @@ def level1_exact_field(Phi0):
         return np.sqrt(max(Omega_r0 / a**4 + Omega_m0 / a**3 + Omega_DE0, 1e-30))
 
     # Dimensionless potential derivative
-    # W(psi) = (7*beta/3)*psi^2 - 2*gamma*psi^3
-    # But beta, gamma are in physical units. In code units (H0=1):
+    # Correct cosmological potential: W(psi) = c0^2 * (gamma*psi - beta)
+    # At psi=1 (vacuum): W(1) = c0^2*(gamma-beta) = 0 for beta=gamma
+    # W'(1) = c0^2*gamma (restoring force toward vacuum)
     tau0_sq = c0**2 / (Phi0 * H0_SI**2)  # ~ c0^2/(Phi0 * H0^2)
-    # Field potential in code units: dU/dpsi = 2*beta*psi - 3*gamma*psi^2
-    # With beta=gamma: dU/dpsi = gamma*(2*psi - 3*psi^2)
-    # In code units: dU/dpsi / tau0^2 = (gamma / tau0^2) * (2*psi - 3*psi^2)
-    # gamma/tau0^2 = Phi0*H0^2/c0^2 * Phi0*H0^2/c0^2 ... extremely small
+    # The screening mass m^2 = gamma >> H0^2, so the field is frozen at psi=1
 
     # Simplification: for natural gamma, the field is frozen.
     # We can verify by computing the timescale ratio.
@@ -139,11 +139,11 @@ def level1_exact_field(Phi0):
     tau_Hubble = 1.0 / H0_SI
     freezing_ratio = tau_Hubble / tau_field
 
-    # For Phi0 ~ 25: gamma ~ 1.4e-54, tau_field ~ 8.4e26, tau_Hubble ~ 4.4e17
-    # ratio ~ 5e-10 << 1: field timescale >> Hubble time => FROZEN
+    # For Phi0 ~ 115: gamma ~ 6.5e-54, tau_field ~ 3.9e26, tau_Hubble ~ 4.4e17
+    # ratio ~ 1.1e-9 << 1: field timescale >> Hubble time => FROZEN
 
     # Since field is frozen at psi = 1, extract w_DE
-    # Kinetic energy ~ 0, potential = U(1) = gamma/12
+    # Kinetic energy ~ 0, potential = P(1) = gamma/56
     # w = (KE - PE) / (KE + PE) = -PE/PE = -1
 
     return {
@@ -176,7 +176,8 @@ def level2_coupled(Phi0, tau0=8.0, q_eff=0.005):
     Omega_r0 = 9.1e-5
 
     def lambda_eff(phi):
-        return beta * phi**2 - gamma * phi**3
+        # From correct action potential: P(phi) = (beta/7)*phi^7 - (gamma/8)*phi^8
+        return (beta / 7.0) * phi**7 - (gamma / 8.0) * phi**8
 
     def H2(a, phi):
         return (1.0 / phi) * (Omega_r0 / a**4 + Omega_m0 / a**3) \
@@ -193,10 +194,10 @@ def level2_coupled(Phi0, tau0=8.0, q_eff=0.005):
         da = a * 1e-5
         dH2 = (H2(a + da, phi) - H2(a - da, phi)) / (2e-5)
 
-        # Linearized W(psi) around psi=1 (Prop. prop:exact-to-linearized)
-        # W(1) = 7*beta/3 - 2*gamma,  W'(1) = 14*beta/3 - 6*gamma
-        W1 = 7.0 * beta / 3.0 - 2.0 * gamma
-        Wp1 = 14.0 * beta / 3.0 - 6.0 * gamma
+        # Linearized W(psi) around psi=1 (correct FRW field equation)
+        # W(psi) = gamma*psi - beta,  W(1) = gamma - beta = 0,  W'(1) = gamma
+        W1 = gamma - beta  # = 0 for beta=gamma (vacuum)
+        Wp1 = gamma
         field_pot = -(3.0 / tau0**2) * (W1 + Wp1 * (phi - 1.0))
         source = q_eff * (Omega_m0 / a**3 + Omega_r0 / a**4)
 
@@ -241,7 +242,7 @@ def level2_coupled(Phi0, tau0=8.0, q_eff=0.005):
 # ═══════════════════════════════════════════════════════════════════════════
 def validate_chain(Phi0_values=None):
     if Phi0_values is None:
-        Phi0_values = [10, 15, 20, 25, 30, 40]
+        Phi0_values = [25, 50, 80, 100, 115, 130, 150]
 
     print("=" * 72)
     print("TGP Cosmological Deduction Chain — Cross-Validation")
@@ -284,7 +285,7 @@ def validate_chain(Phi0_values=None):
 
     # Key consistency statement
     print(f"\nChain consistency:")
-    print(f"  Level 0 (analytic): Lambda_eff = gamma/12 => Omega_DE ~ 0.7 for Phi_0 ~ 25")
+    print(f"  Level 0 (analytic): Lambda_eff = gamma/56 => Omega_DE ~ 0.7 for Phi_0 ~ 115")
     print(f"  Level 1 (exact field): field frozen (tau_field >> tau_Hubble) => w = -1 exact")
     print(f"  Level 2 (full coupled): phi(today) ~ 1, w_0 ~ -1, confirms Level 0 + 1")
 
@@ -318,7 +319,7 @@ def plot_chain_validation(results_table, save_dir=None):
     ax.axhline(0.685, color="r", ls="--", lw=1.5, label=r"$\Omega_\Lambda^{\rm obs} = 0.685$")
     ax.set_xlabel(r"$\Phi_0$", fontsize=12)
     ax.set_ylabel(r"$\Omega_{\rm DE}$", fontsize=12)
-    ax.set_title("Level 0: Analytic $\\Lambda_{\\rm eff} = \\gamma/12$", fontsize=13)
+    ax.set_title("Level 0: Analytic $\\Lambda_{\\rm eff} = \\gamma/56$", fontsize=13)
     ax.legend(fontsize=10)
     ax.grid(True, ls=":", alpha=0.4)
 

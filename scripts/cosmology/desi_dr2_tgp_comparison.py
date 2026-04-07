@@ -59,26 +59,26 @@ print("\n" + "=" * 65)
 print("TGP DARK ENERGY PREDICTION")
 print("=" * 65)
 
-# In TGP: w_DE = (K - U) / (K + U)
-# where K = (1/2) psi_dot^2, U = gamma/3 * psi^3 - gamma/4 * psi^4
-# At psi = 1 (vacuum): K = 0, U = gamma/12 > 0
+# In TGP: w_DE = (K - P) / (K + P)
+# where K = (1/2) psi_dot^2, P = (beta/7) * psi^7 - (gamma/8) * psi^8 (action potential)
+# At psi = 1 (vacuum): K = 0, P = gamma/56 > 0  (for beta=gamma)
 # => w_DE = -1 (exactly Lambda)
 #
 # For small perturbation psi = 1 + epsilon:
 # K ~ (1/2) epsilon_dot^2 >= 0
-# U ~ gamma/12 * (1 + delta_U)
-# w_DE = -1 + 2K / (K + U) >= -1
+# P ~ gamma/56 * (1 + delta_P)
+# w_DE = -1 + 2K / (K + P) >= -1
 #
 # THEREFORE: w_DE >= -1 ALWAYS in TGP (quintessence bound)
 
 print(f"""
-  TGP field: psi = Phi/Phi_0, potential U = (gamma/3)psi^3 - (gamma/4)psi^4
-  At vacuum psi=1: U(1) = gamma/12 > 0
+  TGP field: psi = Phi/Phi_0, action potential P = (beta/7)psi^7 - (gamma/8)psi^8
+  At vacuum psi=1: P(1) = gamma/56 > 0  (for beta=gamma)
 
   Equation of state:
-    w_DE = (K - U) / (K + U)
+    w_DE = (K - P) / (K + P)
     K = (1/2) psi_dot^2 >= 0
-    U > 0 (for psi near 1)
+    P > 0 (for psi near 1)
 
   => w_DE = -1 + 2K/(K+U) >= -1  ALWAYS
 

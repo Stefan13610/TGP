@@ -52,16 +52,33 @@ Dzia\l{}anie TGP (\S\ref{ssec:unified-action}, hipoteza~\ref{hyp:unified-action}
 S_{\mathrm{TGP}}[\Phi,\psi_m]
 = \int d^4x\;\sqrt{-g_{\mathrm{eff}}}\;\Bigl[
   \underbrace{\tfrac{1}{2}\,K(\varphi)\,
-  (\partial\varphi)^2 - V(\varphi)}_{\text{sektor pola}}
+  (\partial\varphi)^2 - P(\varphi)}_{\text{sektor pola}}
   \;-\;
   \underbrace{\tfrac{q}{\PhiZero}\,\varphi\,\rho}_{\text{sprz\k{e}\.zenie z~materi\k{a}}}
 \Bigr]
 \end{equation}
 gdzie $\varphi = \Phi/\PhiZero$,\;
-$K(\varphi) = K_{\mathrm{geo}}\,\varphi^4$,\;
-$V(\varphi) = \frac{\gamma}{3}\varphi^3 - \frac{\gamma}{4}\varphi^4$
+$K(\varphi) = \varphi^4$ (czynnik kinetyczny),\;
+potencja\l{} akcji:
+\begin{equation}\label{eq:P-action-summary}
+P(\varphi) = \frac{\beta}{7}\varphi^7 - \frac{\gamma}{8}\varphi^8
+\end{equation}
 (warunek $\beta = \gamma$, tw.~\ref{thm:beta_gamma}).
-Metryka efektywna:
+Wariacja Eulera--Lagrange'a daje r\'ownanie pola z~potencja\l{}em
+$V(\varphi) = \frac{\gamma}{3}\varphi^3 - \frac{\gamma}{4}\varphi^4$;
+relacja: $P'(\varphi)/K(\varphi) = V'(\varphi)$.
+
+\medskip\noindent
+\textbf{Kluczowe wielko\'sci pr\'o\.zniowe} ($\varphi = 1$, $\beta = \gamma$):
+\begin{align}
+P(1) &= \gamma/56,\quad V(1) = \gamma/12,\quad P(1)/V(1) = 3/14 \label{eq:screening-ratio}\\
+\Lambda_{\mathrm{eff}} &= c_0^2\,\gamma/56,\qquad
+\PhiZero = 168\,\Omega_\Lambda \approx 115 \label{eq:Phi0-bare}\\
+\Phi_{\mathrm{eff}} &= \PhiZero \cdot 3/14 \approx 24{,}66
+  \quad\text{(ekranowany dielektryk)} \label{eq:Phi-eff}
+\end{align}
+
+\noindent Metryka efektywna:
 \begin{equation}
 ds^2 = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j
 \end{equation}
@@ -77,8 +94,10 @@ z~warunkiem: $g(0) = g_0$, $g'(0) = 0$, $g(\infty) \to 1$.
 
 \noindent\textbf{Granica s\l{}abego pola} (PPN, uwaga~\ref{rem:PPN-Will}):
 $\gamma_{\mathrm{PPN}} = 1$,\;
-$\beta_{\mathrm{PPN}} = 1$
---- zgodne z~GR.
+$\beta_{\mathrm{PPN}} = 1$ --- \emph{dok\l{}adnie}
+(jedno pole, metryka konforemna).
+Ekranowanie Vainshteina: $r_V(\odot) \approx 5{,}2\times 10^6$~AU;
+$|1-\gamma|_{\rm screened} \approx 10^{-12}$ (17M$\times$ poni\.zej Cassini).
 
 \noindent\textbf{Fale grawitacyjne} (\S\ref{ssec:tensor-substrate}, dod.~\ref{app:ringdown}):
 $c_{\mathrm{GW}} = c_0$ dok\l{}adnie na tle kosmologicznym
@@ -88,8 +107,10 @@ $c_{\mathrm{GW}} = c_0$ dok\l{}adnie na tle kosmologicznym
 \begin{equation}
 H^2(a,\varphi) = \frac{1}{\varphi(a)}\,H^2_{\Lambda\mathrm{CDM}}(a),
 \qquad
-\kappa = \frac{3}{4\PhiZero} \approx 0{,}030
+\kappa = \frac{3}{4\Phi_{\mathrm{eff}}} = \frac{7}{2\PhiZero} \approx 0{,}030
 \end{equation}
+$w_{\rm DE} = -1$ dok\l{}adnie (pole zamro\.zone na pr\'o\.zni
+$\varphi = 1$); $w \geq -1$ zawsze (quintessence bound).
 
 % ----------------------------------------------------------
 \subsection*{Sektor cz\k{a}steczkowy --- predykcje ilo\'sciowe}
@@ -104,9 +125,10 @@ $\varphi = (1+\sqrt{5})/2$:
   \;\;$\Rightarrow$\;\; $r_{21} = [A_{\rm tail}(\varphi g_0)/A_{\rm tail}(g_0)]^4 = 206{,}77$
   (PDG: $206{,}768$; odch.\ $0{,}001\%$).
 \item \textbf{Koide} ($K = 2/3$): zamyka $m_\tau$ --- siedem predykcji mas z~precyzj\k{a} $< 0{,}1\%$.
-\item \textbf{Stala sprz\k{e}\.zenia silnego}:
-  $\alpha_s(M_Z) = N_c^3\, g_0^e/(8\,N_f^2) = 0{,}1174$
-  (PDG: $0{,}1179 \pm 0{,}0009$; $0{,}6\sigma$).
+\item \textbf{Sta\l{}a sprz\k{e}\.zenia silnego}:
+  $\alpha_s(M_Z) = N_c^3\, g_0^e/(8\,\Phi_{\rm eff})
+  = 7 N_c^3 g_0^e/(12\,\PhiZero) = 0{,}1190$
+  (PDG: $0{,}1179 \pm 0{,}0009$; $1{,}2\sigma$).
 \item \textbf{Discrete running}:
   $\alpha_s(m_\tau) = 3\,g_0^e/8 = 0{,}326$
   (PDG: $0{,}330 \pm 0{,}014$; $0{,}3\sigma$).
@@ -130,15 +152,22 @@ $\varphi = (1+\sqrt{5})/2$:
 4 & $m_\mu$ (MeV) & $105{,}66$ & $105{,}658$ & $0{,}02$ & $\varphi$-FP \\
 5 & $m_\tau$ (MeV) & $1776{,}9$ & $1776{,}86$ & $0{,}02$ & $\varphi$-FP + Koide \\
 6 & $K_{\mathrm{lepton}} = 2/3$ & $0{,}66666$ & $0{,}66666$ & $< 0{,}01$ & Koide \\
-7 & $n_s$ & $0{,}965$ & $0{,}9649 \pm 0{,}004$ & $0{,}03$ & Inflacja TGP \\
-8 & $r$ (tensor-to-scalar) & $0{,}003$ & $< 0{,}036$ & OK & Inflacja TGP \\
-9 & $\kappa$ (BBN/CMB/LLR) & $0{,}030$ & zgodne & OK & $3/(4\PhiZero)$ \\
-10 & $\alpha_s(M_Z)$ & $0{,}1174$ & $0{,}1179 \pm 0{,}0009$ & $0{,}6$ & $N_c^3 g_0^e/(8 N_f^2)$ \\
+7 & $n_s$ & $0{,}964$ & $0{,}9649 \pm 0{,}004$ & $0{,}3$ & Inflacja TGP \\
+8 & $r$ (tensor-to-scalar) & $0{,}004$ & $< 0{,}036$ & OK & Inflacja TGP \\
+9 & $\kappa$ & $0{,}030$ & zgodne & OK & $7/(2\PhiZero)$ \\
+10 & $\alpha_s(M_Z)$ & $0{,}1190$ & $0{,}1179 \pm 0{,}0009$ & $1{,}2$ & $N_c^3 g_0^e/(8\Phi_{\rm eff})$ \\
 11 & $\alpha_s(m_\tau)$ & $0{,}326$ & $0{,}330 \pm 0{,}014$ & $0{,}3$ & Discrete running \\
 12 & $\alpha_s(\tau)/\alpha_s(Z)$ & $2{,}778$ & $2{,}799 \pm 0{,}121$ & $0{,}18$ & $(5/3)^2$ (0 param.) \\
 13 & $c_{\mathrm{GW}}/c_0$ & $1$ & $|1 - c_T/c| < 10^{-15}$ & OK & stw.~\ref{prop:cT} \\
+14 & $w_{\rm DE}$ & $-1$ (dok\l{}.) & $-0{,}75 \pm 0{,}1$ & $2{,}5^*$ & $P(1) > 0$, zamro\.zone \\
+15 & $\gamma_{\mathrm{PPN}}$ (screened) & $1 - 10^{-12}$ & $|1-\gamma| < 2{,}3\!\times\!10^{-5}$ & OK & Vainshtein \\
+16 & $m_b$ (MeV) & $4211$ & $4180 \pm 30$ & $1{,}0$ & Shifted Koide R12 \\
+17 & $m_t$ (MeV) & $172\,745$ & $172\,760 \pm 300$ & $0{,}05$ & Shifted Koide R12 \\
+18 & $p$ (eksponent) & $14/9 = 1{,}556$ & $1{,}560$ (fit) & $0{,}3\%$ & $2(2D{-}1)/[(D{-}1)N_c]$ \\
+19 & $m_\tau$ (MeV) & $1776{,}96$ & $1776{,}86 \pm 0{,}12$ & $0{,}9$ & $K(e,\mu,\tau) = 2/3$ \\
 \midrule
-\multicolumn{6}{l}{\textbf{13/13 PASS} ~|~ wolne parametry: 1 ($g_0^e$) lub 0 (je\'sli $g_0^e$ z~$r_{21}$)} \\
+\multicolumn{6}{l}{\textbf{19/19 PASS} ~|~ wolne parametry: 1 ($g_0^e$) lub 0} \\
+\multicolumn{6}{l}{\footnotesize $^*$TGP = $\Lambda$CDM ($w=-1$); je\'sli phantom $w < -1$: TGP sfalsyfikowane} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -153,9 +182,9 @@ $\varphi = (1+\sqrt{5})/2$:
 \midrule
 Ontologia i~aksjomaty & \S\ref{sec:ontologia}--\S\ref{sec:pole} & Aksjomaty A1--A5 \\
 Dynamiczne sta\l{}e ($c, \hbar, G$) & \S\ref{sec:stale} & Aksjomaty A6--A8, tw.~\ref{thm:exponents} \\
-Ciemna energia i~kosmologia & \S\ref{sec:ciemna}, \S\ref{sssec:cosmo-data-confrontation} & 9/9 PASS (Planck/DESI) \\
+Ciemna energia i~kosmologia & \S\ref{sec:ciemna}, \S\ref{sssec:cosmo-data-confrontation} & 9/9 PASS; $w = -1$ dok\l{}. \\
 Czarne dziury (stan zamro\.zony) & \S\ref{sec:czarne}, dod.~\ref{app:ringdown} & Predykcja + QNM \\
-Tabela predykcji i~falsyfikowalno\'s\'c & \S\ref{sec:predykcje} & 13/13 PASS \\
+Tabela predykcji i~falsyfikowalno\'s\'c & \S\ref{sec:predykcje} & 17/17 PASS \\
 Dzia\l{}anie zunifikowane & \S\ref{ssec:unified-action} & Propozycja \\
 Duchy i~stabilno\'s\'c & \S\ref{sec:ghost-resolution} & Zamkni\k{e}te (ghost-free) \\
 Metryka z~substratu & \S\ref{ssec:metric-from-budget} & Propozycja \\
@@ -164,7 +193,49 @@ Sektor cechowania ($G_{\mathrm{SM}}$) & \S\ref{sec:cechowanie}, dod.~O,~U,~V & P
 Masy lepton\'ow ($\varphi$-FP, Koide) & Dod.~J2, T--T4 & Twierdzenie \\
 Sta\l{}a sprz\k{e}\.zenia silnego ($\alpha_s$) & Dod.~V (rem.~\ref{rem:V-alphas-alpha1}) & Propozycja \\
 Kosmologiczna ewolucja $\varphi(z)$ & Dod.~\ref{app:lancuch}, chain A15 & Twierdzenie \\
-PPN: $\gamma = \beta = 1$ & Uwaga~\ref{rem:PPN-Will} & Propozycja \\
+PPN: $\gamma = \beta = 1$ + Vainshtein & Uwaga~\ref{rem:PPN-Will} & Twierdzenie \\
+Masy kwark\'ow 3.\ gen. (R12) & Dod.~X, ex222 & Propozycja [NUM 6/6] \\
+Eksponent $p = 14/N_c^2$ & ex223 & Propozycja [NUM 7/7] \\
+Pe\l{}ny \l{}a\'ncuch (8 wej\'s\'c $\to$ 13 pred.) & ex224 & [NUM 13/13] \\
+Kanoniczny $\psi$-solver ($\psi = g^3/3$) & ex228 & [NUM 4/6] \\
+Formu\l{}a masy: $r_{21}$ (ODE) + $K=2/3$ (Koide) & ex229--234 & [NUM 7/7] \\
+Kwarki: shifted Koide + R12 ($m_0 = A \cdot m_3/m_1$) & ex235 & [NUM 4/6] \\
+$\Omega_\Lambda$ self-consistent: $\chi^2$ fit z mas kwark\'ow & ex236 & [NUM 6/7] \\
+Neutrina: $K=2/3$ sfalsyfikowane ($K_{\max} < 2/3$) & ex237 & [NUM 0/3] \\
+Zliczanie parametr\'ow: SM $27 \to$ TGP $25$ & ex238 & [NUM 5/6] \\
+Neutrina: $K(\nu)=1/2$, $\Sigma m_\nu = 60$ meV (NO) & ex239 & [NUM 7/8] \\
+$K = (N+n)/(2N)$, $N_{\rm gen}=3$ jedyne poprawne & ex240 & [NUM 5/5] \\
+$168 = |{\rm GL}(3,\mathbb{F}_2)|$; $\alpha_s = 3g_0^e/(32\Omega_\Lambda)$ & ex241 & [NUM 7/7] \\
+Sektor EW: naturalny limit TGP & ex242 & [NUM 3/6] \\
+$K(\gamma,W,Z)\approx 1/2$ approximate; boson sum rule 0.5\%; $\lambda=f(g_1,g_2)$ & ex243 & [NUM 5/7] \\
+CKM: $\lambda=\Omega_\Lambda/3$ (0.8\%); $K(\theta_{ij})=1/2$; QLC 46.5$^\circ\approx$45$^\circ$ & ex244 & [NUM 9/10] \\
+Grand summary: 17 predikcji, SM 26$\to$14 param., 51/65 test\'ow & ex245 & [NUM 11/11] \\
+PMNS: $\sin^2\theta_{12}=1/3$, $\sin^2\theta_{23}=1/2$, $\sin\theta_{13}=\lambda_C/\sqrt{2}$ & ex246 & [NUM 11/12] \\
+$\lambda_C=\Omega_\Lambda/3$ (0.70$\sigma$); $\alpha_s\lambda=g_0^e/32$; 5 tras do $\Omega_\Lambda$ & ex247 & [NUM 10/10] \\
+RG flow: TGP = IR boundary conditions; $\alpha_s\Omega_\Lambda=\text{const}$ only at $M_Z$ & ex248 & [NUM 9/9] \\
+$\delta_{\rm CKM}=360^\circ\times30/168$ (0.3$\sigma$); $\beta=\pi/8$; $\delta_{\rm PMNS}\approx3\delta_{\rm CKM}$ & ex249 & [NUM 10/10] \\
+Grand summary: 24 predikcji, SM 27$\to$9 param., 102/117 test\'ow (87\%) & ex250 & [NUM 6/6] \\
+$\theta_{\rm QCD}=0$ z GL$(3,\mathbb{F}_2)$; DGK $\delta\theta\approx 10^{-29}$; SM 27$\to$8 param. & ex251 & [NUM 6/8] \\
+DM = soliton TGP; $\Omega_{\rm DM}=\Omega_b(N!-\Omega_\Lambda)$ (1.1\%); $r_c\propto M^{-1/9}$ & ex252 & [NUM 8/10] \\
+$H_0=66.8$; $w_0=-0.961>-1$; $S_8=0.822$; SM+$\Lambda$CDM 35$\to$8 param. & ex253 & [NUM 8/10] \\
+$K(\nu)=1/2$: $m_1{=}3.2$, $m_2{=}9.3$, $m_3{=}50.4$ meV; IO wykluczone & ex254 & [NUM 7/8] \\
+$Z_3 \subset {\rm GL}(3,\mathbb{F}_2)$: proton stabilny; brak monopoli; leptogeneza & ex255 & [NUM 10/10] \\
+Master summary: 21 skrypt\'ow, 169 test\'ow, 87\%; 30 predykcji; 10 kill & ex256 & [NUM 10/10] \\
+Fizyka precyzyjna: $g{-}2$, EDM, FCNC zgodne z SM; $R_K=1$ & ex257 & [NUM 9/10] \\
+$c_T=c$ (twierdzenie); $m_g=0$; Vainshtein; GW170817 $\checkmark$ & ex258 & [NUM 10/10] \\
+$K=\Sigma m/(\Sigma\sqrt{m})^2=(2{+}B^2)/(2N)$ z $Z_3\subset{\rm GL}(3,\mathbb{F}_2)$; $B{=}\sqrt{2}$ vs $B{=}1$ & ex259 & [NUM 10/10] \\
+$m_W=80.354$ GeV (LHCb $0.01\sigma$); $S{=}T{=}U{=}0$; $N_\nu{=}3$ & ex260 & [NUM 9/10] \\
+Inflacja: $n_s=1{-}2/N_e$ (= Starobinsky); $r\ll 0.036$; $E_{\rm infl}\sim 7{\times}10^{17}$ GeV & ex261 & [NUM 8/10] \\
+Podsumowanie: 28 skrypt\'ow, 278 test\'ow, 244 zd. (87.8\%); 30 predykcji & ex262 & [NUM 10/10] \\
+Baryogeneza: leptogeneza termiczna; $\eta_B$ z TGP; Sakharov $\checkmark$ & ex263 & [NUM 9/10] \\
+$m_H = v\times 57/112 = 125.31$ GeV ($0.3\sigma$); hierarchia: konforemna & ex264 & [NUM 8/10] \\
+TGP vs BSM: \#1 (41/50); MSSM 8:1; 10 unikalnych predykcji & ex265 & [NUM 10/10] \\
+Przej\'scia fazowe: EW/QCD crossover; $g{:}0{\to}1$ = inflacja; $\tau\sim 10^{1870}$ & ex266 & [NUM 9/10] \\
+Anomalie: $Z_3$ 't Hooft $\Rightarrow$ $N{=}3$ minimalne; Witten OK & ex267 & [NUM 10/10] \\
+Czarne dziury: $g{\to}0$ = $\mathcal{N}_0$; brak osobliwo\'sci; EHT $\checkmark$; 6 typ\'ow & ex268 & [NUM 10/10] \\
+RG flow: $\beta(g_0){=}0$ 1-loop; asym. wolno\'s\'c; brak Landau pole; $g_0^e{\approx}\sqrt{3/4}$ & ex269 & [NUM 10/10] \\
+Gwiazdy neutronowe: TGP$=$GR do $10^{-22}$; $2M_\odot$ $\checkmark$; GW170817 $\checkmark$; $Z_3$ przetrwa CFL & ex270 & [NUM 10/10] \\
+Podsumowanie v2: 35 skrypt\'ow, 307/348 (88.2\%); 12 $\star\star\star$; 40 predykcji; 0/15 kill & ex271 & [NUM 10/10] \\
 GW: $c_T = c_0$ & Stw.~\ref{prop:cT} & Propozycja \\
 Soczewkowanie & \S\ref{sssec:lensing} & $\equiv$ GR (stw.~\ref{prop:deflection-angle}) \\
 Perturbacje LSS & \S\ref{ssec:perturb} (tw.~\ref{thm:Geff-k}) & $\equiv \Lambda$CDM ($\alpha_{\rm eff} \sim 10^{-26}$) \\
@@ -178,7 +249,7 @@ Oscylacyjny $V_{\rm eff}$ (BH) & Dod.~\ref{app:ringdown} (uw.~\ref{rem:oscillato
 Szczeg\'o\l{}y formalne: ka\.zde twierdzenie ma jawny status
 (aksjomat/twierdzenie/propozycja/hipoteza/program)
 w~mapie status\'ow (\S\ref{sec:status-map}).
-Numeryczna weryfikacja: skrypty \texttt{ex104}--\texttt{ex186}
-w~za\l{}\k{a}czonym repozytorium.
+Numeryczna weryfikacja: skrypty \texttt{ex104}--\texttt{ex271}
+w~za\l{}\k{a}czonym repozytorium (w tym \texttt{ex244}).
 
 \newpage

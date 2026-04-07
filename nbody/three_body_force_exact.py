@@ -412,7 +412,8 @@ def three_body_energy_exact(d12, d13, d23, C1, C2, C3,
     beta, gamma_c = default_beta_gamma(beta, gamma)
     m = screening_mass(beta, gamma_c)
     I_Y = yukawa_overlap_exact(d12, d13, d23, m, n_quad=n_quad)
-    return -6.0 * gamma_c * C1 * C2 * C3 * I_Y
+    # Potential vertex: cubic (+2*beta) + quartic (-6*gamma)
+    return (2.0 * beta - 6.0 * gamma_c) * C1 * C2 * C3 * I_Y
 
 
 def total_three_body_energy_exact(positions, C_values, beta=None, gamma=None,
@@ -464,19 +465,13 @@ def three_body_force_triplet_exact(pos1, pos2, pos3, C1, C2, C3,
 
     Derivation:
     -----------
-    V_3 = -6*gamma*C1*C2*C3 * I_Y(d12, d13, d23; m)
+    V_3 = (2*beta - 6*gamma)*C1*C2*C3 * I_Y(d12, d13, d23; m)
 
     F_1 = -dV_3/dx_1
-        = 6*gamma*C1*C2*C3 * [dI_Y/dd12 * (x1-x2)/d12
-                              + dI_Y/dd13 * (x1-x3)/d13]
+        = (6*gamma - 2*beta)*C1*C2*C3 * [dI_Y/dd12 * (x1-x2)/d12
+                                         + dI_Y/dd13 * (x1-x3)/d13]
 
-    F_2 = -dV_3/dx_2
-        = 6*gamma*C1*C2*C3 * [dI_Y/dd12 * (x2-x1)/d12
-                              + dI_Y/dd23 * (x2-x3)/d23]
-
-    F_3 = -dV_3/dx_3
-        = 6*gamma*C1*C2*C3 * [dI_Y/dd13 * (x3-x1)/d13
-                              + dI_Y/dd23 * (x3-x2)/d23]
+    (analogous for F_2, F_3)
 
     Parameters
     ----------
@@ -506,7 +501,9 @@ def three_body_force_triplet_exact(pos1, pos2, pos3, C1, C2, C3,
     # Exact derivatives dI_Y/dd_ij
     dI12, dI13, dI23 = _dI_dd_components(d12, d13, d23, m, n_quad=n_quad)
 
-    coeff = 6.0 * gamma_c * C1 * C2 * C3  # positive: I_Y > 0, V_3 < 0, F = +grad
+    # F = -dV3/dx; V3 = (2*beta - 6*gamma)*C1C2C3*I_Y
+    # → F = (6*gamma - 2*beta)*C1C2C3 * dI/dx
+    coeff = (6.0 * gamma_c - 2.0 * beta) * C1 * C2 * C3
 
     # Unit vectors r_hat_ij = (xi - xj) / d_ij
     e12 = r12 / d12   # points 1 -> away from 2

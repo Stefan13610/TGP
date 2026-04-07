@@ -76,7 +76,7 @@ Omega_L0 = 1 - Omega_m0
 
 # TGP parameters
 Lambda_obs = 3 * H0_SI**2 * Omega_L0 / c0**2
-gamma_TGP  = 12 * Lambda_obs
+gamma_TGP  = 56 * Lambda_obs   # From correct action: Lambda_eff = gamma/56
 m_sp       = np.sqrt(gamma_TGP)        # m⁻¹
 m_sp_Mpc   = m_sp * Mpc_m
 q_SI       = 8 * np.pi * G0 / c0**2

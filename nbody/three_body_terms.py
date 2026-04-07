@@ -250,13 +250,16 @@ def three_body_energy(d12, d13, d23, C1, C2, C3, beta=None, gamma=None,
         d_max = max(d12, d13, d23)
         L = max(20.0, 5.0 * d_max)
         I_bare = triple_overlap_numerical(sources, L=L, N=80)
-        V3 = -6.0 * gamma * C1 * C2 * C3 * I_bare
+        # Potential vertex: cubic (beta/3)g^3 contributes +2*beta,
+        # quartic -(gamma/4)g^4 contributes -6*gamma.
+        # Full potential vertex coefficient: (2*beta - 6*gamma).
+        V3 = (2.0 * beta - 6.0 * gamma) * C1 * C2 * C3 * I_bare
     else:
         # Use approximate analytic formula (order-of-magnitude).
         # triple_overlap_analytic already includes C factors.
         I_triple = triple_overlap_analytic(d12, d13, d23, C1, C2, C3,
                                            m_sp=m_sp)
-        V3 = -6.0 * gamma * I_triple
+        V3 = (2.0 * beta - 6.0 * gamma) * I_triple
 
     return V3
 

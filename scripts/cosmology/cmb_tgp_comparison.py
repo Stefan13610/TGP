@@ -59,7 +59,7 @@ alpha_s_obs       = -0.0045    # running n_s (Planck 2018)
 sigma_alpha       = 0.0067     # 1-sigma running
 
 # TGP parametry (z inflacji substratowej, Dodatek G)
-Phi0    = 25.0                 # rownoWagowe pole przestrzennosci
+Phi0    = 115.0                # rownoWagowe pole przestrzennosci (P(1)=gamma/56, Omega_DE=0.685)
 gamma_TGP = 1.0 / Phi0**2     # ~ H_0^2/c_0^2 (w jednostkach naturalnych)
 m_sp    = np.sqrt(gamma_TGP)  # masa modu oddechowego
 H0_nat  = 1.0 / Phi0          # H_0 w jednostkach naturalnych (H_0 ~ 1/Phi_0)

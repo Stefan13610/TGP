@@ -16,7 +16,7 @@ T8  - Koherencja horyzontu: c_sub → ∞ przy Φ→0
 T9  - Indeks spektralny n_s ∈ (0.957, 0.967)
 T10 - Stosunek tensor/skalar r_ts < 0.1
 T11 - Temperatura reheat > T_BBN = 1 MeV
-T12 - Sp\u00f3jno\u015b\u0107 z Φ₀ ≈ 25 z substratu
+T12 - Sp\u00f3jno\u015b\u0107 z Φ₀ ≈ 115 z substratu
 
 Uruchomienie: python scripts/big_bang_transition.py
 Wymagane: numpy, scipy, matplotlib
@@ -43,7 +43,7 @@ hbar0 = 1.0       # stala Plancka
 G0 = 1.0          # stala grawitacji
 
 # Parametry TGP
-Phi0 = 25.0       # rownowagowe pole przestrzennosci (z Lambda_obs)
+Phi0 = 115.0      # rownowagowe pole przestrzennosci (z Lambda_obs, P(1)=gamma/56)
 beta = 1.0        # = gamma (warunek prozniowy)
 gamma = 1.0
 
@@ -279,7 +279,7 @@ N_e_Planck_pre = (1.0/3.0) * np.log(Phi0_eq / eps_cr_Planck_pre)
 check("T6b: N_e(Planck-scale eps) w zakresie 40-70", 40 <= N_e_Planck_pre <= 70,
       f"N_e(Planck)={N_e_Planck_pre:.1f} [model range: {N_e_lo:.1f}..{N_e_hi:.1f}]")
 
-# Dla Phi0 = 25, eps_cr ~ 10^{-60} (skala Plancka)
+# Dla Phi0 = 115, eps_cr ~ 10^{-60} (skala Plancka)
 eps_cr_Planck = 1e-60 * Phi0_eq
 N_e_Planck = (1.0/3.0) * np.log(Phi0_eq / eps_cr_Planck)
 check("T6c: N_e ~ 46 dla skali Plancka",
@@ -399,9 +399,9 @@ check("T11c: T_reh/T_c ~ O(1) (podgrzewanie skuteczne)",
       f"T_reh/T_c={T_ratio:.4f}")
 
 # ─────────────────────────────────────────────────────────
-# T12: SPOJNOSC Z Phi0 = 25
+# T12: SPOJNOSC Z Phi0 = 115
 # ─────────────────────────────────────────────────────────
-print("\n=== T12: Spójność Φ₀ ≈ 25 z parametrami substratu ===")
+print("\n=== T12: Spójność Φ₀ ≈ 115 z parametrami substratu ===")
 
 # Z prop. veq: Phi0 = |r_GL|/lambda_GL (definicja lambda_GL)
 Phi0_computed = abs(r_GL) / lambda_GL

@@ -11,7 +11,7 @@ Addresses prob:Lambda from sek05_ciemna_energia.tex.
 
 Structure
 ---------
-(a) Homogeneous background: Lambda_eff = gamma/12
+(a) Homogeneous background: Lambda_eff = gamma/56
 (b) Perturbative correction from structure (NFW + disk)
 (c) Toy model: two sources on a circle (lem:Lambda-positive)
 (d) Scaling with structure formation via growth factor D(z)
@@ -21,10 +21,10 @@ Structure
 Key honesty statement
 ---------------------
 TGP does NOT independently predict Lambda. The relation
-  Lambda_eff = gamma/12 = Phi_0 * H_0^2 / (12 c_0^2)
+  Lambda_eff = gamma/56 = Phi_0 * H_0^2 / (56 c_0^2)
 requires gamma as INPUT (set by tau_0 ~ 1/H_0 naturalness).
-The "prediction" is that Phi_0 ~ 25 (an O(10) number, not fine-tuned)
-reproduces Lambda_obs. The value Phi_0 ~ 25 is FIXED by the DE
+The "prediction" is that Phi_0 ~ 115 (an O(100) number, not fine-tuned)
+reproduces Lambda_obs. The value Phi_0 ~ 115 is FIXED by the DE
 constraint; all other constraints are then CHECKED (not fitted).
 
 Output:
@@ -52,27 +52,27 @@ Lambda_obs = 1.11e-52   # m^-2  (observed)
 rho_crit = 3 * H0**2 / (8 * np.pi * G0)   # kg/m^3
 
 # TGP parameter
-Phi0 = 12 * Lambda_obs * c0**2 / H0**2   # from Lambda_eff = gamma/12 = Lambda_obs
+Phi0 = 56 * Lambda_obs * c0**2 / H0**2   # from Lambda_eff = gamma/56 = Lambda_obs
 
 # =====================================================================
 # (a) Homogeneous background
 # =====================================================================
 def homogeneous_background():
     """
-    Lambda_eff = gamma/12, where gamma = Phi_0 * H_0^2 / c_0^2.
+    Lambda_eff = gamma/56, where gamma = Phi_0 * H_0^2 / c_0^2.
     Setting Lambda_eff = Lambda_obs determines Phi_0.
     """
     gamma = Phi0 * H0**2 / c0**2
-    Lambda_eff = gamma / 12.0
+    Lambda_eff = gamma / 56.0
     ratio = Lambda_eff / Lambda_obs
 
     # Phi_0 that gives exact match
-    Phi0_match = 12 * Lambda_obs * c0**2 / H0**2
+    Phi0_match = 56 * Lambda_obs * c0**2 / H0**2
     # Alternative: from Omega_Lambda
     # Lambda_obs = 3 * Omega_Lambda * H0^2 / c0^2
-    # Phi0_match = 12 * 3 * Omega_Lambda * H0^2 / c0^2 * c0^2 / H0^2
-    #            = 36 * Omega_Lambda = 36 * 0.685 = 24.66
-    Phi0_from_Omega = 36 * Omega_Lambda
+    # Phi0_match = 56 * 3 * Omega_Lambda * H0^2 / c0^2 * c0^2 / H0^2
+    #            = 168 * Omega_Lambda = 168 * 0.685 = 115.08
+    Phi0_from_Omega = 168 * Omega_Lambda
 
     print("=" * 70)
     print("  (a) HOMOGENEOUS BACKGROUND")
@@ -81,13 +81,13 @@ def homogeneous_background():
     print(f"  c_0       = {c0:.3e} m/s")
     print(f"  Lambda_obs= {Lambda_obs:.3e} m^-2")
     print()
-    print(f"  TGP relation: Lambda_eff = Phi_0 * H_0^2 / (12 * c_0^2)")
+    print(f"  TGP relation: Lambda_eff = Phi_0 * H_0^2 / (56 * c_0^2)")
     print(f"  Setting Lambda_eff = Lambda_obs:")
-    print(f"    Phi_0 = 12 * Lambda_obs * c_0^2 / H_0^2")
+    print(f"    Phi_0 = 56 * Lambda_obs * c_0^2 / H_0^2")
     print(f"          = {Phi0_match:.4f}")
     print(f"  From Omega_Lambda = {Omega_Lambda}:")
     print(f"    Lambda_obs = 3 * Omega_Lambda * H_0^2 / c_0^2")
-    print(f"    Phi_0 = 36 * Omega_Lambda = {Phi0_from_Omega:.4f}")
+    print(f"    Phi_0 = 168 * Omega_Lambda = {Phi0_from_Omega:.4f}")
     print()
     print(f"  gamma     = {gamma:.4e} m^-2")
     print(f"  Lambda_eff= {Lambda_eff:.4e} m^-2")
@@ -97,8 +97,8 @@ def homogeneous_background():
     print("    gamma is NOT independently predicted. It is set by the")
     print("    naturalness condition tau_0 ~ 1/H_0, which gives")
     print("    gamma = Phi_0 * H_0^2 / c_0^2.")
-    print("    Then Lambda_eff = gamma/12 = Phi_0 * H_0^2 / (12 c_0^2).")
-    print("    Matching Lambda_obs FIXES Phi_0 ~ 25.")
+    print("    Then Lambda_eff = gamma/56 = Phi_0 * H_0^2 / (56 c_0^2).")
+    print("    Matching Lambda_obs FIXES Phi_0 ~ 115.")
     print("    This is a FIT with one parameter, but Phi_0 ~ O(10)")
     print("    is not fine-tuned (compare with 10^122 in QFT).")
     print()
@@ -115,8 +115,8 @@ def homogeneous_background():
 def structure_correction():
     """
     From lem:Lambda-positive:
-      Lambda_eff = U(1) + (1/2) m_sp^2 <delta_Phi^2> / Phi_0^2
-                 = gamma/12 + (gamma/2) <delta_Phi^2> / Phi_0^2
+      Lambda_eff = P(1) + (1/2) m_sp^2 <delta_Phi^2> / Phi_0^2
+                 = gamma/56 + (gamma/2) <delta_Phi^2> / Phi_0^2
 
     Correction: delta_Lambda / Lambda = 6 <delta_Phi^2> / Phi_0^2
 
@@ -220,7 +220,7 @@ def structure_correction():
     print(f"                        = {correction:.3e}")
     print(f"\n  RESULT: Correction is {correction:.1e} = {correction*100:.4f}%")
     print(f"    This is NEGLIGIBLE compared to the background term.")
-    print(f"    The cosmological constant is dominated by U(1) = gamma/12.")
+    print(f"    The cosmological constant is dominated by P(1) = gamma/56.")
     print()
 
     return dict(
@@ -421,9 +421,9 @@ def results_table(res_a, res_b, res_c, res_d):
     rows = [
         ("Lambda_obs", f"{Lambda_obs:.3e}", "m^-2"),
         ("Phi_0 (from DE match)", f"{res_a['Phi0_match']:.4f}", ""),
-        ("Phi_0 (= 36 * Omega_Lambda)", f"{res_a['Phi0_from_Omega']:.4f}", ""),
+        ("Phi_0 (= 168 * Omega_Lambda)", f"{res_a['Phi0_from_Omega']:.4f}", ""),
         ("gamma = Phi_0 * H_0^2 / c_0^2", f"{res_a['gamma']:.3e}", "m^-2"),
-        ("Lambda_eff = gamma/12", f"{res_a['Lambda_eff']:.3e}", "m^-2"),
+        ("Lambda_eff = gamma/56", f"{res_a['Lambda_eff']:.3e}", "m^-2"),
         ("Lambda_eff / Lambda_obs", f"{res_a['ratio']:.6f}", ""),
         ("", "", ""),
         ("delta_Lambda/Lambda (structures)", f"{res_b['correction']:.2e}", ""),
@@ -447,9 +447,9 @@ def results_table(res_a, res_b, res_c, res_d):
     print()
     print("  CONCLUSION:")
     print("  -----------")
-    print("  1. TGP reproduces Lambda_obs with Phi_0 = 24.66")
-    print("     (= 36 * Omega_Lambda). This is a FIT, not a prediction.")
-    print("  2. Phi_0 ~ 25 is O(10), not fine-tuned. This resolves the")
+    print("  1. TGP reproduces Lambda_obs with Phi_0 = 115.08")
+    print("     (= 168 * Omega_Lambda). This is a FIT, not a prediction.")
+    print("  2. Phi_0 ~ 115 is O(100), not fine-tuned. This resolves the")
     print("     hierarchy problem: no 10^122 ratio appears.")
     print("  3. Structure corrections are ~5e-9, completely negligible.")
     print("  4. Lambda_eff is effectively constant in z (w = -1).")
@@ -467,28 +467,28 @@ def make_plot(res_a, res_b, res_c, res_d, save_path):
     ax = axes[0, 0]
     gamma_val = res_a['gamma']
     phi = np.linspace(-0.5, 1.5, 500)
-    U = (gamma_val/12) - (gamma_val/2)*phi**2 - (2*gamma_val/3)*phi**3 - (gamma_val/4)*phi**4
-    U_norm = U / (gamma_val / 12)
+    U = (gamma_val/56) - (gamma_val/2)*phi**2 - (2*gamma_val/3)*phi**3 - (gamma_val/4)*phi**4
+    U_norm = U / (gamma_val / 56)
 
     ax.plot(phi, U_norm, 'b-', lw=2.2)
-    ax.axhline(1.0, color='r', ls='--', lw=1.2, alpha=0.7, label=r'$U(0) = \gamma/12$')
+    ax.axhline(1.0, color='r', ls='--', lw=1.2, alpha=0.7, label=r'$P(0) = \gamma/56$')
     ax.axhline(0.0, color='gray', ls=':', lw=0.8)
     ax.axvline(0.0, color='green', ls=':', lw=1.5, alpha=0.6, label=r'$\varphi = 0$ (vacuum)')
     ax.set_xlabel(r'$\varphi = \Phi/\Phi_0 - 1$', fontsize=12)
-    ax.set_ylabel(r'$U(\varphi)\;/\;U(0)$', fontsize=12)
-    ax.set_title(r'(a) TGP potential $U(\varphi)$', fontsize=13, fontweight='bold')
+    ax.set_ylabel(r'$P(\varphi)\;/\;P(0)$', fontsize=12)
+    ax.set_title(r'(a) TGP potential $P(\varphi)$', fontsize=13, fontweight='bold')
     ax.legend(fontsize=9)
     ax.set_ylim(-15, 3)
     ax.grid(True, ls=':', alpha=0.4)
-    ax.annotate(r'$U(0) = \gamma/12 \to \Lambda_{\rm eff}$',
+    ax.annotate(r'$P(0) = \gamma/56 \to \Lambda_{\rm eff}$',
                 xy=(0, 1), xytext=(0.4, 2.0),
                 fontsize=10, color='red',
                 arrowprops=dict(arrowstyle='->', color='red'))
 
     # --- Panel (b): Lambda_eff vs Phi_0 ---
     ax = axes[0, 1]
-    Phi0_arr = np.linspace(1, 80, 500)
-    Lambda_eff_arr = Phi0_arr * H0**2 / (12 * c0**2)
+    Phi0_arr = np.linspace(1, 200, 500)
+    Lambda_eff_arr = Phi0_arr * H0**2 / (56 * c0**2)
     ratio_arr = Lambda_eff_arr / Lambda_obs
 
     ax.plot(Phi0_arr, ratio_arr, 'b-', lw=2.2,
@@ -499,8 +499,8 @@ def make_plot(res_a, res_b, res_c, res_d, save_path):
                label=rf'$\Phi_0 = {res_a["Phi0_match"]:.2f}$')
 
     # 1-sigma band from Omega_Lambda = 0.685 +/- 0.007
-    Phi0_lo = 36 * (0.685 - 0.007)
-    Phi0_hi = 36 * (0.685 + 0.007)
+    Phi0_lo = 168 * (0.685 - 0.007)
+    Phi0_hi = 168 * (0.685 + 0.007)
     ax.axvspan(Phi0_lo, Phi0_hi, color='green', alpha=0.15,
                label=rf'Planck $1\sigma$: [{Phi0_lo:.1f}, {Phi0_hi:.1f}]')
 
@@ -509,7 +509,7 @@ def make_plot(res_a, res_b, res_c, res_d, save_path):
     ax.set_title(r'(b) $\Lambda_{\rm eff}$ vs $\Phi_0$: the sweet spot',
                  fontsize=13, fontweight='bold')
     ax.legend(fontsize=8, loc='upper left')
-    ax.set_xlim(1, 80)
+    ax.set_xlim(1, 200)
     ax.set_ylim(0, 4)
     ax.grid(True, ls=':', alpha=0.4)
 

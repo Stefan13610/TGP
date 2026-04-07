@@ -86,9 +86,9 @@ print("ψ = Φ/Φ₀\n")
 # H² = (8πG/(3·3κ_TGP))·V(ψ)·Φ₀⁴  (wymiarowo)
 # ε = (1/(2·8πG·Φ₀²))·(V'(ψ)/V(ψ))²
 #
-# Kluczowe: Φ₀ = 25 → M_P²/(Φ₀²) ← to definiuje siłę slow-rollu
-# W TGP: κ² = 8πG → κ²Φ₀² = 8π·Φ₀²/M_P² = 8π·25²/M_P²
-# W naturalnych jednostkach (M_P=1): κ²Φ₀² = 8π·625 ≈ 15700
+# Kluczowe: Φ₀ = 115 → M_P²/(Φ₀²) ← to definiuje siłę slow-rollu
+# W TGP: κ² = 8πG → κ²Φ₀² = 8π·Φ₀²/M_P² = 8π·115²/M_P²
+# W naturalnych jednostkach (M_P=1): κ²Φ₀² = 8π·13225 ≈ 332400
 
 # Bezwymiarowe ε i η:
 # ε_SR = (1/(2κ²Φ₀²))·(V'(ψ)/V(ψ))²  = (M_P²/(2Φ₀²))·(V'(ψ)/V(ψ))²
@@ -179,7 +179,7 @@ print("""
   ε₀ → N_e:
 """)
 
-Phi0 = 25.0
+Phi0 = 115.0
 eps0_values = np.logspace(-80, -1, 20)
 
 print(f"  {'ε₀':>14} {'N_e':>8} {'n_s (TGP)':>12} {'r (TGP)':>10}")

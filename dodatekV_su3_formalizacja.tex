@@ -123,31 +123,40 @@ W\'owczas \textbf{sprzężenie silne} przy skali~$M_Z$ wynosi:
 \begin{equation}\label{eq:V-alphas-formula}
   \alpha_s(M_Z)
   \;\approx\;
-  N_c \cdot g_0^* \cdot \kappa
+  \frac{N_c^3\,g_0^e}{8\,\Phi_{\rm eff}}
   \;=\;
-  \frac{N_c^2\,g_0^*}{4\,\Phi_0},
+  \frac{7\,N_c^3\,g_0^e}{12\,\PhiZero},
   \qquad
   N_c = 3.
 \end{equation}
-\textbf{Warto\'sci numeryczne}:
+gdzie $\Phi_{\rm eff} = \PhiZero \cdot P(1)/V(1) = \PhiZero \cdot 3/14 \approx 24{,}66$
+(ekranowany dielektryk z~poprawionej akcji, \S\ref{ssec:unified-action}).%
+\footnote{Wcze\'sniejsza wersja u\.zywa\l{}a
+$\alpha_s = N_c^2 g_0^*/(4\Phi_0)$ z~$\Phi_0 = 24{,}783$ i~$g_0^* = 1{,}249$.
+Po korekcie potencja\l{}u akcji ($P(g) = \beta g^7/7 - \gamma g^8/8$,
+$K(g) = g^4$) poprawna formu\l{}a zawiera $N_c^3$ i~$g_0^e = 0{,}869$
+(ex219, ex222).}
+
+\noindent\textbf{Warto\'sci numeryczne}:
 \[
-  \kappa = \frac{3}{4\times 24{,}783} = 0{,}03026,
+  \Phi_{\rm eff} = 115 \times 3/14 = 24{,}66,
   \quad
-  \alpha_s^{(\mathrm{TGP})} = 3 \times 1{,}24915 \times 0{,}03026
-  = 0{,}1134,
+  \alpha_s^{(\mathrm{TGP})} = \frac{27 \times 0{,}8694}{8 \times 24{,}66}
+  = 0{,}1190,
 \]
-co daje odchylenie $3{,}8\%$ od PDG ($0{,}1179 \pm 0{,}0010$).
+co daje odchylenie $1{,}2\sigma$ od PDG ($0{,}1179 \pm 0{,}0009$).
 
 \textbf{Konsekwencja}: warto\'s\'c $\Phi_0$ impliko\-wana przez
 $\alpha_s^{\rm PDG}$ to:
 \begin{equation}\label{eq:V-Phi0-VOP2}
-  \Phi_0^{(\mathrm{V\text{-}OP2})}
-  = \frac{N_c^2\,g_0^*}{4\,\alpha_s^{\rm PDG}}
-  = \frac{9 \times 1{,}24915}{4 \times 0{,}1179}
-  = 23{,}84,
+  \Phi_{\rm eff}^{(\mathrm{V\text{-}OP2})}
+  = \frac{N_c^3\,g_0^e}{8\,\alpha_s^{\rm PDG}}
+  = \frac{27 \times 0{,}8694}{8 \times 0{,}1179}
+  = 24{,}88,
 \end{equation}
-kt\'ora le\.zy \textbf{pomi\k{e}dzy} $\Phi_0^{(\mathrm{S1})} = 23{,}31$
-i~$\Phi_0^{(\mathrm{S3})} = 24{,}67$ (sp\'ojno\'s\'c TW).
+co jest sp\'ojne z~$\Phi_{\rm eff} = \PhiZero \cdot 3/14 = 24{,}66$
+(odchylenie $0{,}9\%$)
+i~z~$\bar\lambda_{\rm Brannen} = 24{,}783$ (odchylenie $0{,}4\%$).
 
 \textbf{Interpretacja}: $\alpha_s \propto N_c \cdot g_0^* \cdot \kappa$
 --- silne sprz\k{e}\.zenie jest iloczynem krotno\'sci barwnej~$N_c$,
@@ -472,10 +481,10 @@ V-OP1: Cornell $r_{\rm min}$ z~TGP
 V-OP2: $\alpha_s$ z~parametr\'ow substratu
   & \statuslabel{CZ. ZAMK. [HYP+NUM]}
   & Prop.~\ref{prop:V-alphas-substrate}:
-    $\alpha_s = N_c\cdot g_0^*\cdot\kappa = N_c^2 g_0^*/(4\Phi_0)
-    = 0{,}1134$
-    ($\delta=3{,}8\%$ od PDG; 8/8~PASS).
-    Otwarty: mechanizm $J_c$ z~hamiltonianu substratu. \\[3pt]
+    $\alpha_s = 7 N_c^3 g_0^e/(12\PhiZero)
+    = N_c^3 g_0^e/(8\Phi_{\rm eff}) = 0{,}1190$
+    ($1{,}2\sigma$ od PDG; ex219: 8/8~PASS).
+    Re-derived z~poprawionej akcji zunifikowanej. \\[3pt]
 
 V-OP3: $\Lambda_{\rm QCD}$ z~biegu RG
   & \statuslabel{CZ. ZAMK. [NUM]}

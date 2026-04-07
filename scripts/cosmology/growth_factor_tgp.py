@@ -16,10 +16,10 @@ Model TGP (eq:Geff-k z sek08_formalizm.tex):
   G_eff(k,a) = G_0 * (1 + 2*alpha_eff^2 / (1 + (a*m_eff/k)^2))
 
 Parametry:
-  - gamma = 12 * Lambda_obs (z dark energy)
+  - gamma = 56 * Lambda_obs (from P(1) = gamma/56 = Lambda_obs)
   - m_sp^2 = gamma = 3*gamma - 2*beta  (beta = gamma)
-  - m_eff^2 = m_cosmo^2 = -4*gamma (from U''(1) in cosmological potential)
-    NOTE: m_eff^2 < 0 means slow-roll, not instability
+  - m_eff^2 = m_cosmo^2 = -gamma (from P''(1) = 6*beta - 7*gamma = -gamma)
+    NOTE: P''(1) < 0 means psi=1 is a maximum of P (de Sitter stable)
   - For structure growth, use SPATIAL mass m_sp^2 = gamma > 0
   - alpha_eff = q*Phi0/(4*pi)  where q = 8*pi*G_0/c_0^2
 
@@ -52,7 +52,7 @@ sigma8_fid = 0.811   # sigma_8 fiducjalny (Planck)
 Lambda_obs = 3 * H0**2 * Omega_L0 / c0**2  # m^{-2}
 
 # Parametry TGP
-gamma_TGP = 12 * Lambda_obs  # z Λ_eff = γ/12
+gamma_TGP = 56 * Lambda_obs  # from P(1) = gamma/56 = Lambda_obs
 beta_TGP = gamma_TGP         # warunek prozniowy
 
 # Masy
@@ -83,7 +83,7 @@ print(f"  H_0 = {H0:.3e} s^-1 ({67.4:.1f} km/s/Mpc)")
 print(f"  Omega_m = {Omega_m0:.3f}, Omega_L = {Omega_L0:.3f}")
 print(f"  Lambda_obs = {Lambda_obs:.3e} m^-2")
 print(f"\nParametry TGP:")
-print(f"  gamma = beta = 12 * Lambda_obs = {gamma_TGP:.3e} m^-2")
+print(f"  gamma = beta = 56 * Lambda_obs = {gamma_TGP:.3e} m^-2")
 print(f"  m_sp = sqrt(gamma) = {m_sp:.3e} m^-1 = {m_sp_Mpc:.3e} Mpc^-1")
 print(f"  m_sp / H_0 * c_0 = {m_sp * c0 / H0:.2f}")
 print(f"  tau_0 = 1/(c_0 sqrt(gamma)) = {tau0:.3e} s = {tau0 * H0:.2f} / H_0")
