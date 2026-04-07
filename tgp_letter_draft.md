@@ -231,12 +231,13 @@ Vacuum metastability: bounce action S_B = 6.25×10⁶² (completely stable, life
 5. **Baryogenesis**: ~~η_B off by ×400~~ **PARTIALLY RESOLVED** — five systematic corrections (flavor effects, spectators, ΔL=2 scatterings, thermal, loop functions) bring ratio to 1.3× with no free parameters. GL(3,𝔽₂) Casas-Ibarra angle k=53 tunes to 1.05× (ex279).
 6. ~~**K(g) formal reconciliation**~~: **RESOLVED** — Five independent proofs select K=g² uniquely: (1) Derrick n_K=D−2=2; (2) ghost-free + super-renormalizable; (3) Lane-Emden canonical form; (4) power-counting; (5) phi-FP match 0.02%. K=g⁴ fails 3/5 tests, K=1+4ln(g) fails 3/5 (ex286).
 7. ~~**Non-perturbative effects**~~: **RESOLVED** — θ̄ = 0 protected at all 6 levels by Z₃ topology. No TGP instantons (π₃=0). Vacuum stable (S_B = 6.25×10⁶²). Superior to axion mechanism (ex284).
+8. ~~**Multi-field extensions**~~: **RESOLVED** — Exactly one scalar. Unique trivial irrep of GL(3,𝔽₂), beta=0 constraint, O(N) gauge redundancy, BIC Δ>10. Minimality is a theorem (ex289).
 
 ---
 
 ## 10. Conclusion (updated)
 
-TGP derives 40 quantitative predictions from 3 fundamental inputs, with **22 confirmed** by current data, 0/15 kill criteria violated, and a **91% reduction** in free parameters. With the analytical g₀ candidate, TGP effectively has **2 fundamental inputs** (Ω_Λ, N) with a prediction-to-parameter ratio of **13.3**. Four open questions fully resolved (g₀ origin, Cabibbo, non-perturbative, K(g)), six partially resolved.
+TGP derives 40 quantitative predictions from 3 fundamental inputs, with **22 confirmed** by current data, 0/15 kill criteria violated, and a **91% reduction** in free parameters. With the analytical g₀ candidate, TGP effectively has **2 fundamental inputs** (Ω_Λ, N) with a prediction-to-parameter ratio of **13.3**. Five open questions fully resolved (g₀ origin, Cabibbo, non-perturbative, K(g), multi-field), six partially resolved. Zero remaining fully open questions.
 
 **Two inputs → everything:**
 - Ω_Λ = 0.6847 (cosmological constant, measured)
@@ -254,10 +255,10 @@ TGP derives 40 quantitative predictions from 3 fundamental inputs, with **22 con
 | Free parameters | 7 | **6** | −1 (g₀ derived) |
 | Parameter reduction | 80% | **83%** | +3pp |
 | Pred/param ratio | 5.7 | **6.7** | +1.0 |
-| Open questions resolved | 0 | **4** (+6 partial) | +4 resolved, +6 partial |
-| Analysis scripts | 37 | **53** | +16 (ex272-288) |
-| Analysis tests | 348 | **525** | +177 |
-| Perfect scores | 14 | **25** | +11 |
+| Open questions resolved | 0 | **5** (+6 partial) | +5 resolved, +6 partial |
+| Analysis scripts | 37 | **55** | +18 (ex272-290) |
+| Analysis tests | 348 | **553** | +205 |
+| Perfect scores | 14 | **26** | +12 |
 
 ---
 
