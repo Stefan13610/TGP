@@ -991,20 +991,36 @@ The most decisive tests are:
   A $\GL$-quantized Casas--Ibarra angle $\omega = 2\pi \cdot 53/168$
   further tunes the ratio to $\sim 1.05$.
 
-\item \textbf{Quark sector masses}.
-  TGP's Koide-like relations for quarks ($K_u = 2/3$, $K_d = 2/3$)
-  are approximate. A more precise treatment of QCD corrections to the
-  pole masses is needed.
+\item \textbf{Quark sector masses} (\emph{partially resolved}).
+  At tree level, Koide $K = 2/3$ fails for quarks ($K_d = 0.73$,
+  $K_u = 0.85$) due to QCD corrections.
+  A shifted Koide relation $K(m + m_0) = 2/3$ works for both
+  sectors with $m_0(d) = 21.9$~MeV and $m_0(u) = 1981.5$~MeV
+  (script \texttt{ex235}).
+  The shift is interpretable as a 1-loop QCD correction:
+  at leading order, $K$ is RG-invariant (universal $\gamma_m$),
+  with threshold effects at $m_c$, $m_b$, $m_t$ generating
+  the effective shift (\texttt{ex280}).
+  The R12 formula predicts $m_b = 4218$~MeV ($1.3\sigma$)
+  and $m_t = 174\,327$~MeV ($5.2\sigma$).
+  Exact derivation of $m_0$ from first principles remains open.
 
 \item \textbf{$g_0^e$ from $\sqrt{3/4}$}.
   If $\gone = \sqrt{3/4}$ exactly, the $0.39\%$ discrepancy must come
   from a computable radiative correction. This is perhaps the most
   important open calculation in TGP.
 
-\item \textbf{Gravitino/dark photon sector}.
-  TGP predicts no new particles, but the solitonic dark matter has
-  specific self-interaction cross sections that should be computed
-  and compared with Bullet Cluster bounds.
+\item \textbf{DM self-interaction} (\emph{partially resolved}).
+  The solitonic DM self-interaction has been computed
+  (\texttt{ex281}).  Key results: (i)~the DM mass scale
+  $m_\mathrm{TGP} = (\rho_\Lambda / V(1))^{1/4} \sim 4 \times
+  10^{-3}$~eV is \emph{derived} from the cosmological constant;
+  (ii)~$\sigma/m$ is velocity-dependent with characteristic velocity
+  $v_0 = \gone^2 c / (4\pi) \sim 18\,000$~km/s;
+  (iii)~the core--halo mass relation $M_c \propto M_h^{1/N}
+  = M_h^{1/3}$ matches the Schive~et~al.\ (2014) observations;
+  (iv)~no direct-detection signal (consistent with null results).
+  Bullet Cluster and cluster-merger bounds are satisfied at high $v$.
 
 \item \textbf{Connection to quantum gravity}.
   TGP's conformal structure suggests a connection to asymptotic safety.

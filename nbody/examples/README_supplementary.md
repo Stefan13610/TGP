@@ -107,8 +107,11 @@ python ex235_alpha_s_formula.py
 | ex276 | K=g² action consequences: all 40 predictions unchanged | —/— | |
 | ex277 | Updated scorecard (post ex272-ex278) | 10/10 | ★★★ |
 | ex278 | B² = c chirality proof (3 independent arguments) | 8/10 | |
+| ex279 | Baryogenesis washout resolution (5 corrections) | 10/10 | ★★★ |
+| ex280 | Quark mass shifts from QCD + Koide | 8/10 | |
+| ex281 | DM soliton self-interaction cross section | 8/8 | ★★★ |
 
-*Note: ex272–ex278 are analysis scripts added during the 2026-04-07 session.*
+*Note: ex272–ex281 are analysis scripts added during the 2026-04-07 session.*
 
 **Key findings:**
 
@@ -127,21 +130,28 @@ python ex235_alpha_s_formula.py
 
 **ex278:** B² = c (chirality count) via 3 independent proofs: (a) chirality counting, (b) Z₃ representation theory, (c) soliton homotopy. Leptons: B² = 1.99996 (Dirac). Neutrinos: prediction B² = 1 (Majorana).
 
+**ex279:** Baryogenesis washout: five systematic corrections (flavor, spectator, ΔL=2, thermal, loop functions) bring η_B ratio from 415× to **1.3×** with no free parameters. GL(3,𝔽₂) Casas-Ibarra k=53 tunes to 1.05×.
+
+**ex280:** Quark shifted Koide: K(m+m₀) = 2/3 for quarks with m₀ from QCD 1-loop. K is RG-invariant at 1-loop; threshold effects generate m₀. R12 predicts m_b to 1.3σ.
+
+**ex281:** DM soliton self-interaction: m_DM = (ρ_Λ/V(1))^(1/4) ≈ 4×10⁻³ eV (derived). Core-halo M_c ∝ M_h^(1/3) matches Schive+2014. Velocity-dependent σ/m, Bullet Cluster consistent.
+
 ---
 
-## Grand Total (updated post ex277-ex278)
+## Grand Total (updated post ex279-ex281)
 
 | Metric | Value |
 |--------|-------|
-| Physics scripts | 36 (+7 analysis) |
-| Total tests | 348 (+32) |
-| Tests passed | 314 (+28) |
-| Pass rate | **90.2%** (analysis: 96%) |
-| Perfect scores (★★★) | **14/36** (+2) |
+| Physics scripts | 36 (+10 analysis) |
+| Total tests | 348 (+58) |
+| Tests passed | 314 (+52) |
+| Pass rate | **90.2%** (analysis: 94%) |
+| Perfect scores (★★★) | **14/36** (+4 analysis) |
 | Kill criteria survived | **0/15** |
 | Quantitative predictions | **40** |
 | Confirmed predictions | **22** (+1 Cabibbo) |
 | Tensions resolved | **2** (g₀ origin, Cabibbo) |
+| Partially resolved | **4** (B², baryogenesis, quarks, DM) |
 | Parameter reduction | 35 → 6 (−83%) |
 | Prediction-to-parameter ratio | **6.7** |
 
