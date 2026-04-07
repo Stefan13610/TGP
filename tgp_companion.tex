@@ -897,11 +897,27 @@ The most decisive tests are:
 
 \begin{enumerate}
 \item \textbf{Origin of $\gone$}.
-  The best analytical candidate is $\gone = \sqrt{3/4} = 0.86603$,
-  which is $0.39\%$ below the numerical value $0.86941$. A successful
-  derivation would reduce TGP's free physical parameters to effectively
-  zero (since $\OL$ is measured and $N = 3$ follows from anomaly
-  cancellation).
+  The bare candidate $\gone^{(0)} = \sqrt{3/4} = 0.86603$ is $0.39\%$
+  below the numerical value $0.86941$.
+  A refined candidate incorporating the $\GL$ group order is
+  \begin{equation}\label{eq:g0-candidate}
+    \gone = \sqrt{\frac{3}{4} + \frac{1}{|\GL|}}
+          = \sqrt{\frac{3}{4} + \frac{1}{168}}
+          = 0.86946\,,
+  \end{equation}
+  which matches the $K = g^2$ soliton $\phi$-fixed-point
+  ($\gone^* = 0.86947$) to $0.002\%$ and the published value to
+  $0.005\%$ (script \texttt{ex273}).
+  Physically, this suggests the bare geometric coupling $3/4$
+  receives an additive $1/|\GL|$ correction from the discrete
+  flavor group.
+  An alternative route---radiative dressing
+  $\gone = \sqrt{3/4}\,(1 + C\,\as/\pi)$ with $C \approx 0.10$
+  (a plausible 1-loop Wilson coefficient)---also reproduces the
+  numerical value to $0.01\%$.
+  A successful derivation of either form would reduce TGP's free
+  physical parameters to effectively zero (since $\OL$ is measured
+  and $N = 3$ follows from anomaly cancellation).
 
 \item \textbf{Formal $B^2$ proof}.
   Why does $B^2 = 2$ for Dirac fermions and $B^2 = 1$ for Majorana?
@@ -915,9 +931,20 @@ The most decisive tests are:
   effective description is TGP?
 
 \item \textbf{Cabibbo tension ($4.8\sigma$)}.
-  The formula $\lambda_C = \OL/N$ overshoots by 1.4\%.
-  A sub-leading correction of order $O(\OL^2/N^2)$ is expected but
-  not yet derived.
+  The tree-level formula $\lambda_C = \OL/N = 0.22823$ overshoots the
+  PDG value $0.22500 \pm 0.00067$ by $4.8\sigma$ (1.4\%).
+  A systematic scan (script \texttt{ex274}) identifies three promising
+  corrections:
+  (a)~\emph{Effective generation count}: replacing $N = 3$ by
+  $N_\mathrm{eff} = 3.043$ resolves the tension to $< 0.1\sigma$.
+  Remarkably, $N_\mathrm{eff} = 3.044$ is the standard-model value
+  from neutrino decoupling (including QED corrections), suggesting
+  a deep connection between the Cabibbo angle and neutrino cosmology.
+  (b)~\emph{1-loop QCD correction}: $\lambda_C = (\OL/N)(1 - \as/(4\pi))
+  = 0.22609$, reducing the tension to $1.6\sigma$.
+  (c)~\emph{Wolfenstein interpretation}: if TGP predicts the angle
+  $\theta_C = \OL/N$ and $\lambda = \sin\theta_C$, then
+  $\lambda = 0.22626$ ($1.9\sigma$).
 
 \item \textbf{Baryogenesis washout}.
   The raw $\eta_B$ prediction is $\sim 400\times$ too large.
@@ -961,12 +988,22 @@ The most decisive tests are:
   Three kinetic couplings appear in different derivation paths:
   $K = g^4$ (conformal, $\alpha = 2$), $K = g^2$ (effective-dimension,
   $n_K = D{-}2$), and $K = 1 + 4\ln g$ (substrate expansion).
-  All three produce comparable soliton profiles and central values
-  $\gone \approx 0.87$, and none affects the algebraic master equations.
-  A unified derivation showing which $K(g)$ is fundamental---or proving
-  their physical equivalence via field redefinition---is needed before
-  the soliton mechanism (mass-ratio predictions from tail amplitudes)
-  can be placed on firm footing.
+  All three produce comparable soliton profiles but \emph{distinct}
+  $\phi$-fixed-point central values (script \texttt{ex272}):
+  $\gone^* = 0.8678$ ($K{=}g^4$),
+  $\gone^* = 0.8695$ ($K{=}g^2$),
+  $\gone^* = 0.8339$ ($K{=}1{+}4\ln g$).
+  The published value $0.86941$ matches $K = g^2$ to $0.004\%$,
+  favoring the effective-dimension derivation.
+  Crucially, none of the algebraic master equations F1--F12 depends
+  on the kinetic coupling; only the soliton tail-amplitude mechanism
+  (relating mass ratios to $A_\mathrm{tail}$) is affected.
+  A unified derivation showing which $K(g)$ is fundamental---or
+  proving their physical equivalence via field redefinition---is
+  needed before the soliton mechanism can be placed on firm footing.
+  If $K = g^2$ is confirmed as the physical coupling, the conformal
+  argument ($\alpha = 2$) would need revision to an
+  effective-dimension argument ($n_K = D - 2 = 2$ in $D = 4$).
 \end{enumerate}
 
 

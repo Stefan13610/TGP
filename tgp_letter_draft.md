@@ -170,7 +170,7 @@ TGP achieves the highest prediction-to-parameter ratio (5.7) and the most confir
 
 ## 8. Open Questions
 
-1. **g₀ᵉ origin**: Best candidate √(3/4) = 0.86603 (0.39% off). A derivation would reduce free parameters to effectively zero.
+1. **g₀ᵉ origin**: Best candidate √(3/4 + 1/168) = 0.86946 (0.005% off published, 0.002% off K=g² phi-FP). Combines bare geometric coupling 3/4 with GL(3,𝔽₂) correction 1/168. A derivation would reduce free parameters to effectively zero.
 2. **Formal B² proof**: Why B² = 2 (Dirac) vs B² = 1 (Majorana) from soliton topology.
 3. **UV completion**: What generates GL(3,𝔽₂) at high energies?
 4. **Cabibbo angle**: 4.8σ tension — correction term needed?
