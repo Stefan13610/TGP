@@ -368,3 +368,11 @@ Co po wariacji NIE daje ODE Formulacji A, lecz inną formę (sek08a, linie 206-2
   - tgp_english_summary/sec06_formalism — footnote
   - Wszystkie oryginalne wyprowadzenia ZACHOWANE
   - Podejście: noty kanoniczne (Nota kanoniczna) przy elementach Formulacji B
+- [x] **Rekalkulacja solitonu** (ex272_soliton_K_comparison.py, 2026-04-07):
+  - Form. A (K=g⁴): g₀* = 0.8678, A_tail = 0.1310, E = 0.01065
+  - Form. B (K=1+4ln g): g₀* = 0.8339, A_tail = 0.1138, E = 0.05014
+  - Form. C (K=g²): g₀* = 0.8695, A_tail = 0.1246, E = 0.04174
+  - **WNIOSEK**: g₀ᵉ = 0.86941 pochodzi z Form. C (K=g²), nie A (K=g⁴)
+  - Form. A daje g₀* = 0.8678 (Δ = 0.19% od 0.86941)
+  - Trzy K(g) NIE są fizycznie równoważne — różne g₀*, A_tail, energie
+  - Ale: master equations F1-F12 niezależne (algebraiczne), Δg₀ = 0.19% nie wpływa na predykcje

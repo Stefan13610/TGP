@@ -204,14 +204,24 @@ $K = g^2$ (effective-dimension argument $n_{K} = D{-}2 = 2$) and
 $K = 1 + 4\ln g$ (substrate-level derivation)---have been explored in
 the literature and in earlier versions of this work.  All three choices
 share the same right-hand side $g^2(1-g)$ of the soliton ODE and yield
-comparable central values $\gone \approx 0.87$.  Crucially, the 12
-master equations F1--F12 (Sec.~\ref{sec:master}), the Koide relations
-(Sec.~\ref{ssec:F3}), and all 40~quantitative predictions cataloged in
-Appendix~\ref{app:predictions} are \emph{algebraic} identities that
-depend only on $(\gone, \OL, N)$ and \emph{not} on the functional form
-of $K(g)$.  Reconciling the three kinetic-coupling variants at the
-action level is an open problem (see Sec.~\ref{sec:open},
-item~\ref{item:kinetic}).
+comparable central values $\gone \approx 0.87$.
+Numerical shooting (script \texttt{ex272}) confirms:
+$\gone^* = 0.8678$ for $K = g^4$,
+$\gone^* = 0.8695$ for $K = g^2$, and
+$\gone^* = 0.8339$ for $K = 1{+}4\ln g$,
+all at the $\phi$-fixed-point condition
+$(A_\mathrm{tail}(\phi\,g_0)/A_\mathrm{tail}(g_0))^4 = r_{21}^{\rm PDG}
+ = 206.768$.
+The published value $\gone = 0.86941$ matches $K = g^2$ to $0.004\%$
+and $K = g^4$ to $0.19\%$; the algebraic predictions are insensitive
+to this difference.
+Crucially, the 12~master equations F1--F12 (Sec.~\ref{sec:master}),
+the Koide relations (Sec.~\ref{ssec:F3}), and all 40~quantitative
+predictions cataloged in Appendix~\ref{app:predictions} are
+\emph{algebraic} identities that depend only on $(\gone, \OL, N)$
+and \emph{not} on the functional form of $K(g)$.
+Reconciling the three kinetic-coupling variants at the action level
+is an open problem (see Sec.~\ref{sec:open}, item~\ref{item:kinetic}).
 
 
 \subsection{The \texorpdfstring{$\GL$}{GL(3,F2)} discrete
