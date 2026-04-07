@@ -173,6 +173,30 @@ W~regionie silnie nieliniowym ($g \lesssim e^{-1/4}$) należy
 stosować pełne $K_\mathrm{sub}(g) = g^2 > 0$, co eliminuje
 problem duchów kinetycznych (sekcja~\ref{sec:ghost-resolution}).
 
+\begin{uwaga}[Nota kanoniczna: $K(g) = g^4$ jako dokładne sprzężenie konforemne]
+\label{rem:canonical_g4}
+Powyższe wyprowadzenie historycznie prowadziło do postaci logarytmicznej
+$f(g) = 1 + 4\ln g$, będącej obcięciem pierwszego rzędu. W~kanonicznej
+Formułacji~A teorii TGP przyjmuje się \textbf{dokładne sprzężenie konforemne}:
+\begin{equation}
+  K(g) = g^4,
+  \label{eq:K_canonical_g4}
+\end{equation}
+z~próżnią przy $g = 1$ i~stanem $N_0$ przy $g = 0$.
+Związek obu postaci wynika z~rozwinięcia Taylora wokół $g = 1$:
+\begin{equation}
+  g^4 = e^{4\ln g}
+  = 1 + 4\ln g + \tfrac{1}{2}(4\ln g)^2 + \cdots
+  \;\approx\; 1 + 4\ln g
+  \quad\text{dla } |\ln g| \ll 1.
+\end{equation}
+Forma logarytmiczna $f(g) = 1 + 4\ln g$ jest zatem rozwinięciem Taylora
+pierwszego rzędu kanonicznej postaci $K(g) = g^4$, wiarygodnym w~otoczeniu
+próżni ($g \approx 1$). Postać $g^4$ jest dokładna na całym zakresie $g > 0$,
+zachowuje warunek $K(0) = 0$ i~nie wprowadza problemów kinetycznych duchów
+($K(g) > 0$ dla $g > 0$).
+\end{uwaga}
+
 \begin{wniosek}[Granica N₀ w efektywnej teorii]
 Dla $g \to 0^+$: $f(g) \to -\infty$, co wskazuje na \emph{rozpad}
 opisu efektywnego (pola Φ) przy zbliżaniu do granicy $N_0$. Teoria
