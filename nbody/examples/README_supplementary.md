@@ -95,11 +95,20 @@ python ex235_alpha_s_formula.py
 
 **Phase subtotal: 73/80 (91.2%)**
 
-### Summary Script
+### Summary & Analysis Scripts
 
 | Script | Topic | Score | Perfect |
 |--------|-------|-------|---------|
 | ex271 | Final summary v2 (definitive scorecard) | 10/10 | ★★★ |
+| ex272 | Soliton ODE comparison: K=g⁴ vs K=g² vs K=1+4ln g | 6/6 | ★★★ |
+| ex273 | Analytical candidate g₀ᵉ = √(3/4) investigation | —/— | |
+
+*Note: ex272–ex273 are analysis scripts added during drift reconciliation (2026-04-07).*
+
+**Key finding (ex272):** The three kinetic couplings produce different phi-fixed-point values:
+- K=g⁴ (Form. A): g₀* = 0.8678
+- K=g² (Form. C): g₀* = 0.8695 (matches published 0.86941 to 0.004%)
+- K=1+4ln g (Form. B): g₀* = 0.8339
 
 ---
 
@@ -107,11 +116,11 @@ python ex235_alpha_s_formula.py
 
 | Metric | Value |
 |--------|-------|
-| Physics scripts | 36 |
-| Total tests | 348 |
-| Tests passed | 314 |
-| Pass rate | **90.2%** |
-| Perfect scores (★★★) | **14/36** |
+| Physics scripts | 36 (+2 analysis) |
+| Total tests | 348 (+6) |
+| Tests passed | 314 (+6) |
+| Pass rate | **90.2%** (analysis: 100%) |
+| Perfect scores (★★★) | **14/36** (+1) |
 | Kill criteria survived | **0/15** |
 | Quantitative predictions | **40** |
 | Confirmed predictions | **21** |
