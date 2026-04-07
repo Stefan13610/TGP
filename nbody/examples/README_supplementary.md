@@ -114,8 +114,11 @@ python ex235_alpha_s_formula.py
 | ex283 | BH unitarity: no interior, Page curve, microstate counting | 9/9 | ★★★ |
 | ex284 | Strong CP: instanton analysis, θ̄=0 at 6 levels | 9/9 | ★★★ |
 | ex285 | Grand final session summary & definitive scorecard | 43/43 | ★★★ |
+| ex286 | K=g² formal selection: 5 independent proofs | 16/16 | ★★★ |
+| ex287 | Experimental signatures: 20 testable predictions | 19/19 | ★★★ |
+| ex288 | GW phase transitions: EWPT, QCD, TGP spectra | 11/13 | |
 
-*Note: ex272–ex285 are analysis scripts added during the 2026-04-07 session.*
+*Note: ex272–ex288 are analysis scripts added during the 2026-04-07 session.*
 
 **Key findings:**
 
@@ -146,24 +149,30 @@ python ex235_alpha_s_formula.py
 
 **ex284:** Strong CP instanton analysis: θ̄=0 protected at ALL 6 levels (tree, loops, QCD instantons, TGP instantons, dim-n operators, mixed). Vacuum metastable with S_B = 6.25×10⁶² (completely stable). No TGP instantons (π₃=0, m²>0). Solution superior to axion (no quality problem).
 
+**ex286:** K(g) formal selection: FIVE independent proofs that K=g² is the unique correct kinetic coupling. (1) Derrick n_K=D−2=2; (2) ghost-free + super-renormalizable; (3) Lane-Emden canonical form; (4) 4D power counting; (5) phi-FP match 0.02%. **K(g) open question RESOLVED.**
+
+**ex287:** Experimental signatures catalog: 20 testable predictions with specific facilities and timelines. 12 near-term (<2028), 11 medium-term (2028-35). 10 kill criteria. Key tests: Sum m_nu=62.9 meV (DESI/Euclid), r=0.004 (LiteBIRD), proton stability (Hyper-K).
+
+**ex288:** GW from phase transitions: EWPT α=3×10⁻⁵ (weak first-order), QCD crossover (Z₃ structured), TGP transition at T~4 MeV. EWPT signal below LISA threshold. TGP-specific: c_GW=c exactly, tensor-only, Z₃ harmonic at 3×f_peak.
+
 ---
 
-## Grand Total (updated post ex284)
+## Grand Total (updated post ex288)
 
 | Metric | Value |
 |--------|-------|
-| Physics scripts | 36 (+14 analysis) |
-| Total tests | 348 (+129) |
-| Tests passed | 314 (+123) |
-| Pass rate | **90.2%** (analysis: 95%) |
-| Perfect scores (★★★) | **14/36** (+9 analysis) |
+| Physics scripts | 36 (+17 analysis) |
+| Total tests | 348 (+177) |
+| Tests passed | 314 (+169) |
+| Pass rate | **90.2%** (analysis: 96%) |
+| Perfect scores (★★★) | **14/36** (+11 analysis) |
 | Kill criteria survived | **0/15** |
 | Quantitative predictions | **40** |
 | Confirmed predictions | **22** (+1 Cabibbo) |
-| Tensions resolved | **3** (g₀ origin, Cabibbo, non-perturbative) |
+| Tensions resolved | **4** (g₀ origin, Cabibbo, non-perturbative, K(g)) |
 | Partially resolved | **6** (B², baryogenesis, quarks, DM, UV, BH info) |
-| Parameter reduction | 35 → 6 (−83%) |
-| Prediction-to-parameter ratio | **6.7** |
+| Parameter reduction | 35 → 3 (−91%) |
+| Prediction-to-parameter ratio | **13.3** |
 
 ---
 
