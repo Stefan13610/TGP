@@ -354,4 +354,17 @@ Co po wariacji NIE daje ODE Formulacji A, lecz inną formę (sek08a, linie 206-2
   - Dodano "Remark on the kinetic coupling" w Sec. 2.2 companion paper
   - Dodano Open Question #13 "Kinetic coupling reconciliation" w Sec. 13
   - Master equations F1–F12 i 40 predykcji jawnie oznaczone jako niezależne od K(g)
-- [ ] Opcja ambitna (rewrite polskiego źródła) — odłożona do TGP v2
+- [x] **Opcja ambitna zaimplementowana** (2026-04-07, commit 305830e):
+  - 31 plików .tex zmodyfikowanych (290 insertions, 18 deletions)
+  - 15 dodatków (A,F,H,J,J2,K,K2,L,M,R,T,T2,T4,V,W) — noty kanoniczne \fbox
+  - 10 sekcji (sek01-09, sek10) — footnote'y i bloki quote
+  - sek08_formalizm (9000+ linii) — 5 footnote'ów przy ψ₀*=1.24 i f(Φ)
+  - sek08a (akcja zunifikowana) — footnote + komentarze przy V=(β/3)g³
+  - sek08b (ghost resolution) — nota "nie występuje w Form. A"
+  - sek06 (czarne dziury) — rekoncyliacja g→0 ↔ Φ→∞
+  - sek07 (predykcje) — 3 noty przy α_s formulas
+  - status_map — nota top-level
+  - nbody/tgp_false_vacuum, nbody/tgp_topological_defect — noty
+  - tgp_english_summary/sec06_formalism — footnote
+  - Wszystkie oryginalne wyprowadzenia ZACHOWANE
+  - Podejście: noty kanoniczne (Nota kanoniczna) przy elementach Formulacji B
