@@ -155,11 +155,24 @@ where $\beta$ and $\gamma$ are coupling constants satisfying
 $\beta = \gamma$ at the vacuum ($g = 1$).
 
 \textbf{Kinetic sector.}
-The prefactor $g^4$ in the kinetic term ensures conformal coupling.
-This can be derived from the requirement that the action be invariant
-under the conformal rescaling $g \to \Omega\, g$, $x \to \Omega^{-1} x$
-(in $d = 3$ spatial dimensions), which uniquely fixes the kinetic
-coupling to $K(g) = g^{2\alpha}$ with $\alpha = 2$.
+The kinetic coupling $K(g) = g^n$ is fixed by two independent arguments:
+(a)~\emph{Conformal invariance} in $d = 3$ spatial dimensions gives
+$n = 2(d{-}1) = 4$, yielding $K = g^4$;
+(b)~\emph{Effective-dimension} for a soliton in $D = 4$ spacetime gives
+$n_K = D - 2 = 2$, yielding $K = g^2$ (script \texttt{ex275}, 8/8).
+The conformal argument over-counts by a factor of~2 because it uses the
+ambient dimension rather than the soliton codimension.
+Numerically, $K = g^2$ is preferred:
+the $\phi$-fixed-point gives $\gone^* = 0.86947$ ($0.004\%$ from the
+published value), versus $0.86778$ ($0.19\%$) for $K = g^4$.
+Crucially, all 40~algebraic predictions (including $m_H = v \times 57/112$)
+are \emph{identical} for both choices (script \texttt{ex276}).
+The only physical difference is the vacuum energy:
+$V(1) = 1/56$ for $K = g^4$ (matching $\dim_7 \times \dim_8$ of $\GL$)
+versus $V(1) = 1/12$ for $K = g^2$.
+We present the action with $K = g^4$ (Eq.~\eqref{eq:action}) for
+continuity with the literature, noting that $K = g^2$ gives
+equivalent physics with a simpler soliton ODE.
 
 \textbf{Potential sector.}
 The self-interaction potential
