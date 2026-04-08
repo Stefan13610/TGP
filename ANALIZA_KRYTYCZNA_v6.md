@@ -361,6 +361,9 @@ Zero sprzeczności między N0 a predykcjami.
 | `dodatekX_quark_sector.tex` | EDYCJA | Dodano §warunki brzegowe konfinementu (prop:X-confinement-mass) |
 | `dodatekA_notacja.tex` | EDYCJA | Zaktualizowano starą wartość κ na poprawną |
 | `scripts/ex190_consistency_chain.py` | NOWY | 9/9 PASS weryfikacja pełnego łańcucha predykcji |
+| `scripts/ex191_confinement_m0.py` | NOWY | Masa konfinementu m₀: A=m₀·m₁/m₃=0.0246 uniwersalne (1.1%) |
+| `scripts/ex192_cosmo_Hz_confrontation.py` | NOWY | Konfrontacja H(z) vs DESI DR1: Δχ²=+0.68 (TGP≈ΛCDM) |
+| `sek08_formalizm.tex` | EDYCJA | Naprawiono kolizję symbolu κ→κ_E (stała Einsteina) |
 
 ---
 
@@ -371,7 +374,7 @@ Zero sprzeczności między N0 a predykcjami.
 2. **Zero parametrów kosmologicznych** — κ z sektora cząsteczkowego
 3. **Unifikacja masa-sprzężenie**: g₀^e łączy r₂₁ i α_s (ZERO wolnych parametrów)
 4. **Predykcja m_τ**: 0.008% od PDG (1-parametrowa)
-5. **9/9 PASS kosmologicznych** (BBN, CMB, LLR, DESI, BICEP)
+5. **4/5 PASS kosmologicznych** (BBN, CMB, DESI, BICEP; LLR: 2× napięcie)
 6. **Spójność wewnętrzna**: 0 sprzeczności, 25 twierdzeń, 21 propozycji
 7. **ex190: 9/9 PASS łańcucha** — pełna weryfikacja numeryczna od substratu do predykcji
 
@@ -385,6 +388,18 @@ Zero sprzeczności między N0 a predykcjami.
 
 ### Rekomendowane następne kroki (po 2026-04-08):
 1. 🔬 **R12: Kwarki** — wyprowadzić m₀ z parametrów TGP (σ, R_had, N_c)
-2. 📐 **PPN jawne 1PN** — rozpisać krok po kroku (Plan Domknięcia H3')
-3. 📊 **Kosmologia zintegrowana** — jawne H(z) vs Planck/DESI w jednym miejscu
+   - ex191 pokazał: A=m₀·m₁/m₃=0.0246 jest UNIWERSALNE (1.1%)
+   - Brak czystej derywacji A z TGP; najlepszy kandydat Ω_Λ/(4πN_c)=0.018 (26% off)
+   - **Status: OTWARTY** — wymaga nowego argumentu
+2. ~~📐 **PPN jawne 1PN** — rozpisać krok po kroku (Plan Domknięcia H3')~~
+   → **ZAMKNIĘTE**: tgp_ppn_full.tex (nbody/) zawiera kompletną 3-krokową derywację
+   10 parametrów PPN, zintegrowaną z manuskryptem via \input w sek08c
+3. ~~📊 **Kosmologia zintegrowana** — jawne H(z) vs Planck/DESI w jednym miejscu~~
+   → **ZAMKNIĘTE**: ex192_cosmo_Hz_confrontation.py:
+   - Δχ²(TGP-ΛCDM) = +0.68 (12 punktów DESI DR1)
+   - BBN PASS, CMB PASS, GW170817 PASS
+   - **NAPIĘCIE**: LLR |Ġ/G|/H₀ = 0.019 > 0.01 (2× limit)
+     Potencjalne rozwiązania: screening, ODE z właściwym IC, większe Φ_eff
 4. 🧪 **Φ₀ pełne ERG** — numeryczne rozwiązanie Wettericha z K(ψ)=ψ⁴ i N_f=5
+5. ⚠️ **LLR tension** — quasi-statyczny atraktor daje |dpsi/dN|~2κΩ_m=0.019
+   Wymaga albo mechanizmu screeningu, albo ODE z poprawnym IC dającym mniejsze dpsi/dN
