@@ -4,7 +4,7 @@
 
 **Nawigacja:** [README.md](README.md) · [ZALOZENIA_NBODY.md](ZALOZENIA_NBODY.md) · [ANALIZA_3CIALA.md](ANALIZA_3CIALA.md) · [examples/README.md](examples/README.md) · [PLAN_ROZWOJU_NBODY.md](PLAN_ROZWOJU_NBODY.md) · zrzuty: `examples/_outputs/` · snapshot sesji 2026-03: [_archiwum_docs/WYNIKI_SESJI_2026_03_21.md](_archiwum_docs/WYNIKI_SESJI_2026_03_21.md)
 
-**Aktywny tor numeryczny (2026-04):** ścieżka 9 / ogon / Koide — **ex104–ex124** + kontynuacje **ex125–ex137** (szczegóły w `examples/README.md`). Starsze ex (Efimov, K13–K18, …) w `examples/_archiwum/`. Pełna mapa teorii: **`../ANALIZA_SPOJNOSCI_v5.md`**.
+**Aktywny tor numeryczny (2026-04):** ścieżka 9 / ogon / Koide — **ex104–ex124** + kontynuacje **ex125–ex137** (szczegóły w `examples/README.md`). Starsze ex (Efimov, K13–K18, …) w `examples/_archiwum/`. Pełna mapa teorii: **`../ANALIZA_KRYTYCZNA_v6.md`**.
 
 ---
 
@@ -608,4 +608,4 @@ FDM sektor               ──► m_sp ~ 8.2e-51 l_Pl⁻¹            ✅ nieza
 
 ---
 
-*Utrzymanie: dokument historycznie obejmował ex1–ex44; obecny pakiet ma 8 modułów `.py` w korzeniu `nbody/`, **22** pliki `.tex` w `nbody/` oraz **~92** aktywnych `examples/ex*.py` + **55** w `examples/_archiwum/`. Regresja Efimov/okien: `examples/verify_all.py` (**59/59**). Pełny stan mostów i korekt teorii: `ANALIZA_SPOJNOSCI_v5.md`.*
+*Utrzymanie: dokument historycznie obejmował ex1–ex44; obecny pakiet ma 8 modułów `.py` w korzeniu `nbody/`, **22** pliki `.tex` w `nbody/` oraz **~92** aktywnych `examples/ex*.py` + **55** w `examples/_archiwum/`. Regresja Efimov/okien: `examples/verify_all.py` (**59/59**). Pełny stan mostów i korekt teorii: `ANALIZA_KRYTYCZNA_v6.md`.*

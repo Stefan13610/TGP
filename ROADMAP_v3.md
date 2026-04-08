@@ -709,7 +709,7 @@ Koide = 0.66666               [2/3, Δ = -11 ppm]
 
 ### Plan domknięcia recenzji (sesja v45, 2026-04-05)
 
-Odpowiedź na recenzję zewnętrzną. Szczegóły: PLAN_DOMKNIECIA_v1.md
+Odpowiedź na recenzję zewnętrzną. Szczegóły: `_archiwum/PLAN_DOMKNIECIA_v1.md`
 
 **DIAGNOZA**: Większość "krytycznych" punktów recenzenta (H1,H2,H5) JUŻ ISTNIEJE
 w manuskrypcie — problem WIDOCZNOŚCI w 389 stronach, nie treści.

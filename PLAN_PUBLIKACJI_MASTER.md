@@ -122,4 +122,4 @@ Wszystkie zadania H1-H7 **ZAMKNIĘTE**:
 
 ---
 
-*Plan do aktualizacji po każdej zamkniętej fazie.*
+*Plan zakończony: wszystkie fazy H1–H7 i M1–M3 zamknięte per 2026-04-06. Weryfikacja: ex194 → 45/45 PASS (2026-04-08).*

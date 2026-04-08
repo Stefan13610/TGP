@@ -1,6 +1,6 @@
 # Mapa skryptów TGP v1
 
-> Ostatnia aktualizacja: sesja v35 (2026-03-28)
+> Ostatnia aktualizacja: sesja v45+ (2026-04-08). Baseline: v35 (2026-03-28); nowe: ex188–ex194.
 >
 > Konwencja statusu: ✅ Aktywny | ⚠️ Wymaga weryfikacji | ❌ Artefakt/superseded | 📦 Archiwum
 

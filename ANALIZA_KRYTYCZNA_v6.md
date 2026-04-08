@@ -1,7 +1,7 @@
 # Analiza Krytyczna TGP v6 — Mosty, Rozbieżności, Domknięcia
-**Data:** 2026-04-07
-**Wersja:** 6.0 (pełna analiza + nowe domknięcia B1/B2)
-**Poprzednik:** ANALIZA_SPOJNOSCI_v5.md
+**Data:** 2026-04-08
+**Wersja:** 6.1 (pełna analiza + domknięcia B1/B2 + porządki 04-08)
+**Poprzednik:** ANALIZA_SPOJNOSCI_v5.md (→ `_archiwum/stare_analizy/`)
 
 ---
 
@@ -344,6 +344,8 @@ Zero sprzeczności między N0 a predykcjami.
 
 ## VI. NOWE PLIKI UTWORZONE/ZMODYFIKOWANE
 
+### Sesja 2026-04-07 (v6.0):
+
 | Plik | Akcja | Opis |
 |------|-------|------|
 | `dodatekR_zero_mode_A4.tex` | EDYCJA | Dodano prop:R-k4-dimensional + rem:R-dim3-connection |
@@ -352,21 +354,21 @@ Zero sprzeczności między N0 a predykcjami.
 | `scripts/ex189_Z3_entropy_chain.py` | NOWY | 8 testów łańcucha entropijnego |
 | `ANALIZA_KRYTYCZNA_v6.md` | NOWY | Niniejszy dokument |
 
-### Nowe pliki/zmiany (sesja 2026-04-08):
+### Sesja 2026-04-08 (v6.1):
 
 | Plik | Akcja | Opis |
 |------|-------|------|
 | `sek08c_metryka_z_substratu.tex` | EDYCJA | Naprawiono błąd znaku G_eff w dowodzie ℓ_P (Krok 3) |
 | `sek00_summary.tex` | EDYCJA | Dodano wyjaśnienie dualności metryki potęg./eksponencjalnej |
 | `sek10_N0_wyprowadzenie.tex` | EDYCJA | Dodano §Φ₀=N_f² (3 ścieżki zbieżności + ERG self-consistency) |
-| `dodatekX_quark_sector.tex` | EDYCJA | Dodano §warunki brzegowe konfinementu (prop:X-confinement-mass) |
+| `dodatekX_quark_sector.tex` | EDYCJA | Dodano §warunki brzegowe konfinementu + R_had scaling |
 | `dodatekA_notacja.tex` | EDYCJA | Zaktualizowano starą wartość κ na poprawną |
+| `sek08_formalizm.tex` | EDYCJA | Naprawiono kolizję symbolu κ→κ_E (stała Einsteina) |
 | `scripts/ex190_consistency_chain.py` | NOWY | 9/9 PASS weryfikacja pełnego łańcucha predykcji |
 | `scripts/ex191_confinement_m0.py` | NOWY | Masa konfinementu m₀: A=m₀·m₁/m₃=0.0246 uniwersalne (1.1%) |
 | `scripts/ex192_cosmo_Hz_confrontation.py` | NOWY | Konfrontacja H(z) vs DESI DR1: Δχ²=+0.68 (TGP≈ΛCDM) |
 | `scripts/ex193_unified_predictions.py` | NOWY | Pełna tabela predykcji: 28 PASS / 1 CAL / 1 PRED z 2 parametrów |
 | `scripts/ex194_master_verification.py` | NOWY | Master runner: 45/45 PASS, GO — uruchamia ex190–ex193 łącznie |
-| `sek08_formalizm.tex` | EDYCJA | Naprawiono kolizję symbolu κ→κ_E (stała Einsteina) |
 
 ---
 
@@ -381,28 +383,22 @@ Zero sprzeczności między N0 a predykcjami.
 6. **Spójność wewnętrzna**: 0 sprzeczności, 25 twierdzeń, 21 propozycji
 7. **ex194: 45/45 PASS master** — pełna weryfikacja łączna (ex190–ex193) → GO
 
-### Słabości strukturalne (zaktualizowane 2026-04-08):
+### Słabości strukturalne (otwarte na 2026-04-08):
 1. **Dwa kluczowe postulaty** (m∝A⁴, CV=1) — silnie umotywowane ale nie w pełni wyprowadzone
 2. **Sektor kwarkowy**: φ-FP uniwersalne, Koide leptonowo-specyficzne — teraz z argumentem konfinementu (prop:X-confinement-mass)
-3. ~~**Φ₀ = 25** — algebraicznie piękne, ale bez dynamiki~~ → ZAMKNIĘTE: 3 zbieżne ścieżki + ERG (prop:phi0_convergence)
-4. ~~**Niespójność prezentacyjna** α=1/α=2~~ → NAPRAWIONE: nota o dualizmie α w sek00_summary
-5. ~~**Błąd znaku G_eff** w dowodzie ℓ_P~~ → NAPRAWIONY (sek08c)
-6. ~~**κ stara wartość** w dodatekA~~ → ZAKTUALIZOWANE
+
+### Zamknięte dawne słabości:
+- **Φ₀ = 25** — zamknięte: 3 zbieżne ścieżki + ERG (prop:phi0_convergence)
+- **α=1/α=2 dualność** — zamknięte: nota o dualizmie α w sek00_summary
+- **Błąd znaku G_eff** — naprawiony (sek08c)
+- **κ stara wartość w dodatekA** — zaktualizowane
+- **PPN jawne 1PN** — zamknięte: tgp_ppn_full.tex (10 parametrów, \input w sek08c)
+- **Kosmologia vs DESI** — zamknięte: ex192 Δχ²=+0.68, 5/5 PASS (BBN/CMB/LLR/DESI/GW)
+- **LLR tension** — zamknięte: quasi-static 0.019 < 0.02 (Williams+2004); full ODE ~0.009
 
 ### Rekomendowane następne kroki (po 2026-04-08):
 1. 🔬 **R12: Kwarki** — wyprowadzić m₀ z parametrów TGP (σ, R_had, N_c)
    - ex191 pokazał: A=m₀·m₁/m₃=0.0246 jest UNIWERSALNE (1.1%)
    - Brak czystej derywacji A z TGP; najlepszy kandydat Ω_Λ/(4πN_c)=0.018 (26% off)
    - **Status: OTWARTY** — wymaga nowego argumentu
-2. ~~📐 **PPN jawne 1PN** — rozpisać krok po kroku (Plan Domknięcia H3')~~
-   → **ZAMKNIĘTE**: tgp_ppn_full.tex (nbody/) zawiera kompletną 3-krokową derywację
-   10 parametrów PPN, zintegrowaną z manuskryptem via \input w sek08c
-3. ~~📊 **Kosmologia zintegrowana** — jawne H(z) vs Planck/DESI w jednym miejscu~~
-   → **ZAMKNIĘTE**: ex192_cosmo_Hz_confrontation.py:
-   - Δχ²(TGP-ΛCDM) = +0.68 (12 punktów DESI DR1)
-   - BBN PASS, CMB PASS, GW170817 PASS
-   - LLR: quasi-static daje 0.019 < 0.02 (Williams+2004 limit) → PASS
-     Full ODE (sek08a, prop:N07-resolved) daje ~0.009 → komfortowo w limicie
-4. 🧪 **Φ₀ pełne ERG** — numeryczne rozwiązanie Wettericha z K(ψ)=ψ⁴ i N_f=5
-5. ~~⚠️ **LLR tension**~~ → **ZAMKNIĘTE**: quasi-static 0.019 < 0.02 (Williams+2004);
-   pełne ODE daje 0.009. LLR limit 0.02 (nie 0.01 jak w ex192 v1). Vainshtein r_V~5.2e6 AU.
+2. 🧪 **Φ₀ pełne ERG** — numeryczne rozwiązanie Wettericha z K(ψ)=ψ⁴ i N_f=5

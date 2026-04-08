@@ -25,7 +25,7 @@ W TGP pojawia się **bariera repulsywna** ∝ 1/d², która zmienia jakość pro
 
 ## 5. Skrypty `examples/ex*.py` — osobna warstwa założeń
 
-Każdy plik `exNNN_*.py` może dodawać **własne** założenia fenomenologiczne (np. konkretne ODE na g(r), ghost boundary, dopasowanie ogona **A_tail**, mapa **m ∝ A_tail⁴**, warunki Koidego). Te założenia **nie wynikają automatycznie** z punktów 1–4; są hipotezami testowanymi numerycznie. Status zamknięć (PASS/FAIL, interpretacja) jest w docstringach skryptów i w dokumencie spójności w korzeniu repozytorium: **`ANALIZA_SPOJNOSCI_v5.md`** (starsze wersje w `_archiwum/stare_analizy/`).
+Każdy plik `exNNN_*.py` może dodawać **własne** założenia fenomenologiczne (np. konkretne ODE na g(r), ghost boundary, dopasowanie ogona **A_tail**, mapa **m ∝ A_tail⁴**, warunki Koidego). Te założenia **nie wynikają automatycznie** z punktów 1–4; są hipotezami testowanymi numerycznie. Status zamknięć (PASS/FAIL, interpretacja) jest w docstringach skryptów i w dokumencie spójności w korzeniu repozytorium: **`ANALIZA_KRYTYCZNA_v6.md`** (starsze wersje w `_archiwum/stare_analizy/`).
 
 ## 6. Klasyfikacja ścisłości (przyjęta w pakiecie)
 

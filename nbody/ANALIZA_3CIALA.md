@@ -1,7 +1,7 @@
 # Problem 3 ciał w warstwie `nbody`
 
 > **Ostatnia synchronizacja dokumentacji:** 2026-04-05  
-> **Pełny stan teorii (repo):** `ANALIZA_SPOJNOSCI_v5.md` w korzeniu `TGP_v1/` — niniejszy plik opisuje wyłącznie warstwę wielociałową i kod w `nbody/`.
+> **Pełny stan teorii (repo):** `ANALIZA_KRYTYCZNA_v6.md` w korzeniu `TGP_v1/` — niniejszy plik opisuje wyłącznie warstwę wielociałową i kod w `nbody/`.
 
 **Nawigacja:** [README.md](README.md) · [ZALOZENIA_NBODY.md](ZALOZENIA_NBODY.md) · [ANALIZA_NBODY_INTEGRACJA.md](ANALIZA_NBODY_INTEGRACJA.md) · [examples/README.md](examples/README.md) · [archiwum sesji](_archiwum_docs/WYNIKI_SESJI_2026_03_21.md)
 
@@ -377,4 +377,4 @@ Wszystkie [1]–[8] pozostają spójne z rdzeniem modułów Pythona w `nbody/` (
 
 ---
 
-*Skrót utrzymaniowy: rdzeń `nbody/` = 8 modułów `.py` + 22 pliki `.tex` w tym katalogu; skrypty `examples/*.py` (setki eksperymentów, część w `_archiwum/`). Pełna mapa teorii: `ANALIZA_SPOJNOSCI_v5.md` w korzeniu `TGP_v1/`.*
+*Skrót utrzymaniowy: rdzeń `nbody/` = 8 modułów `.py` + 22 pliki `.tex` w tym katalogu; skrypty `examples/*.py` (setki eksperymentów, część w `_archiwum/`). Pełna mapa teorii: `ANALIZA_KRYTYCZNA_v6.md` w korzeniu `TGP_v1/`.*

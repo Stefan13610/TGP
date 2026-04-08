@@ -156,7 +156,7 @@ Key parameters: `beta` (self-interaction), `gamma` (cubic coupling), `C_i` (sour
 
 - `PLAN_ROZWOJU_NBODY.md` -- Development plan with status of all phases (P1-P9)
 - `ANALIZA_NBODY_ROZWOJ.md` -- Full analysis: inventory, consistency, roadmap
-- `ODPOWIEDZ_NA_RECENZJE_ZEWNETRZNA.md` -- Response to external review critique
+- `_archiwum_docs/ODPOWIEDZ_NA_RECENZJE_ZEWNETRZNA.md` -- Response to external review critique (archived)
 
 ## Citation
 

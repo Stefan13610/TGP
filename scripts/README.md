@@ -60,8 +60,10 @@ Multi-loop running comparison, Phi_0 exact value, alpha_s variants.
 - G(z_BBN)/G_0 within 3% (BBN constraint: <10%)
 - n_s = 0.965 (Planck: 0.9649, 0.03 sigma)
 
-### Summary Scorecard
-13/13 predictions PASS with 1 free parameter (g0^e) or 0 if g0^e is fixed from r21.
+### Master Verification (ex194)
+45/45 tests PASS across all modules (ex190–ex193). GO status.
+- **28 PASS** from 2 free parameters (Phi_eff, g0^e)
+- Efficiency: N_pass/N_param = 14.0
 
 ## Script Naming Convention
 
@@ -82,3 +84,10 @@ Multi-loop running comparison, Phi_0 exact value, alpha_s variants.
 | PPN (Sec. 8) | ex167 |
 | ERG/stability (Sec. 8b) | ex141, ex142, ex146, ex148 |
 | Gauge sector (Sec. 9, App. O,U,V) | ex140, ex145, ex183 |
+| Dimensional argument k=4 (App. R) | ex188 |
+| Entropy chain Z₃ (App. R2) | ex189 |
+| Full consistency chain | ex190 (9/9 PASS) |
+| Quark confinement m₀ (App. X) | ex191 |
+| Cosmology vs DESI DR1 (Sec. 8a) | ex192 (5/5 PASS) |
+| Unified prediction table | ex193 (28 PASS / 1 CAL / 1 PRED) |
+| **Master runner (all above)** | **ex194 (45/45 PASS → GO)** |

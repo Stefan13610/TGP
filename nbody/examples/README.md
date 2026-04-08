@@ -112,7 +112,7 @@ Albo z IDE z ustawionym katalogiem roboczym na `examples/`.
 
 ### Ścieżka 8–9 — eksploracja i pośrednie weryfikacje (ex55–ex103)
 
-Skrypty `ex55`–`ex103` to łańcuch numeryczny wokół **A_tail**, **α\***, okien, stabilności i wzorów sumacyjnych. Część wcześniejszych hipotez została zamknięta negatywnie lub zastąpiona przez ex106+ (patrz archiwum planów w `_archiwum/` repozytorium). Przy konflikcie **nadrzędne są ex106 / ex112 / ex113** oraz aktualny opis w **`ANALIZA_SPOJNOSCI_v5.md`** (korzeń `TGP_v1/`, poza folderem `nbody`).
+Skrypty `ex55`–`ex103` to łańcuch numeryczny wokół **A_tail**, **α\***, okien, stabilności i wzorów sumacyjnych. Część wcześniejszych hipotez została zamknięta negatywnie lub zastąpiona przez ex106+ (patrz archiwum planów w `_archiwum/` repozytorium). Przy konflikcie **nadrzędne są ex106 / ex112 / ex113** oraz aktualny opis w **`ANALIZA_KRYTYCZNA_v6.md`** (korzeń `TGP_v1/`, poza folderem `nbody`).
 
 Ciąg dalszy (2026-04): **ex125–ex137** — eksploracja Z₃ / Brannen / top4–top5 / WKB (patrz nagłówki plików i `_outputs/` po uruchomieniu).
 
