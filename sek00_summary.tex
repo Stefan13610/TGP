@@ -78,10 +78,18 @@ P(1) &= \gamma/56,\quad V(1) = \gamma/12,\quad P(1)/V(1) = 3/14 \label{eq:screen
   \quad\text{(ekranowany dielektryk)} \label{eq:Phi-eff}
 \end{align}
 
-\noindent Metryka efektywna:
+\noindent Metryka efektywna (forma pot\k{e}gowa, dok\l{}adna do $O(U)$):
 \begin{equation}
 ds^2 = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j
 \end{equation}
+W~granicy s\l{}abego pola $\varphi = 1 + 2U$ forma pot\k{e}gowa
+i~eksponencjalna
+$ds^2 = -c_0^2 e^{-2U}\,dt^2 + e^{+2U}\,\delta_{ij}\,dx^i dx^j$
+s\k{a} r\'ownowa\.zne do pierwszego rz\k{e}du PN.
+Forma eksponencjalna daje $\beta_{\rm PPN} = 1$ dok\l{}adnie
+(tw.~\ref{thm:metric-from-substrate-full});
+obe\-jmie s\k{a} konsekwencj\k{a} warunku antypodycznego
+$f \cdot h = 1$ (\S\ref{ssec:metric-from-budget}).
 
 % ----------------------------------------------------------
 \subsection*{G\l{}\'owne r\'ownania pola}
@@ -91,6 +99,21 @@ ds^2 = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j
 g^2 g'' + g(g')^2 + \frac{2}{r}\,g^2 g' = g^2(1 - g)
 \end{equation}
 z~warunkiem: $g(0) = g_0$, $g'(0) = 0$, $g(\infty) \to 1$.
+
+\smallskip\noindent
+\fbox{\parbox{0.95\linewidth}{%
+\textbf{Nota o~dualizmie $\alpha$}:
+Sprz\k{e}\.zenie kinetyczne wyst\k{e}puje w~dw\'och postaciach:
+$K(\varphi) = \varphi^4$ (makroskopowe, z~$K_{ij} = J(\varphi_i\varphi_j)^2$,
+prop.~\ref{prop:substrate-action}, daje $\alpha = 2$)
+oraz $K_{\rm sub}(g) = g^2$ (substratowe, z~$H_\Gamma = -J\sum(\varphi_i\varphi_j)^2$,
+lem.~\ref{prop:K0-from-substrate}, daje $\alpha = 1$).
+Obie s\k{a} poprawne w~swoich domenach:
+\textbf{predykcje grawitacyjne} (PPN, $\kappa$, $n_s$, $c_{\rm GW}$) s\k{a}
+\textbf{niezale\.zne od $\alpha$} w~granicy s\l{}abego pola
+(ex167: cz\l{}on $(\alpha/\Phi)(\nabla\Phi)^2$ jest $O(\delta^2)$);
+\textbf{sektor solitonowy} preferuje $\alpha = 1$
+(ghost-free, reprodukuje $r_{21}$ i~$m_\tau$, ex163/166/167).}}
 
 \noindent\textbf{Granica s\l{}abego pola} (PPN, uwaga~\ref{rem:PPN-Will}):
 $\gamma_{\mathrm{PPN}} = 1$,\;

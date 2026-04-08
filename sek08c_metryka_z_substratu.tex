@@ -212,20 +212,37 @@ co daje $\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$ dok\l{}adnie.
 
 \smallskip
 \textbf{Krok~3} (zgodno\'s\'c z~$\ell_P = \text{const}$).
-Z~$c_{\rm lok} = c_0 e^{-U}$, $G_{\rm eff} = G_0 e^{+2U}$
-(z~r\'ow.~Poissona) i~$\hbar_{\rm eff} = \hbar_0 e^{-U}$:
+
+\smallskip\noindent
+\textbf{Weryfikacja bezpo\'srednia.}
+Z~formy eksponencjalnej metryki i~aksjomatu~A8
+($G(\Phi) = G_0\,\PhiZero/\Phi$):
+przy $\Phi = \PhiZero e^{2U}$ mamy
+$c_{\rm lok} = c_0 e^{-U}$,\;
+$G_{\rm eff} = G_0 e^{-2U}$,\;
+$\hbar_{\rm eff} = \hbar_0 e^{-U}$.\;
+Zatem:
 \begin{equation}
   \ell_P^2 = \frac{G_{\rm eff}\,\hbar_{\rm eff}}{c_{\rm lok}^3}
-  = \frac{G_0 e^{2U} \cdot \hbar_0 e^{-U}}{c_0^3 e^{-3U}}
-  = \frac{G_0\hbar_0}{c_0^3}\cdot e^{2U - U + 3U}
-  = \frac{G_0\hbar_0}{c_0^3}\cdot e^{4U}.
+  = \frac{G_0 e^{-2U} \cdot \hbar_0 e^{-U}}{c_0^3 e^{-3U}}
+  = \frac{G_0\hbar_0}{c_0^3}\cdot e^{-2U - U + 3U}
+  = \frac{G_0\hbar_0}{c_0^3}\cdot e^{0}
+  = \frac{G_0\hbar_0}{c_0^3} = \text{const}.
 \end{equation}
-Aby $\ell_P = \text{const}$, wykładnik musi zerowa\'c si\k{e}:
-$a + g - 3b = 0$ w~notacji
-$(c \propto e^{-aU},\; G \propto e^{gU},\; \hbar \propto e^{-bU})$.
-Z~aksjomatu: $a = 1$ (z~$c = c_0\sqrt{f}$). Z~$m_P = \text{const}$:
-$b + a - g = 0$, $b + g - 3a = 0$
-$\Rightarrow$ $g = 2$, $b = 1$.
+Wyk\l{}adnik zeruje si\k{e} \emph{dok\l{}adnie}, bez
+dodatkowych warunk\'ow --- jest to automatyczna
+konsekwencja aksjomatu~A8 i~warunku antypodycznego~(ii).
+
+\smallskip\noindent
+\textbf{Og\'olna struktura.}
+W~og\'olnej parametryzacji pot\k{e}gowej
+$c = c_0(\PhiZero/\Phi)^a$,\;
+$\hbar = \hbar_0(\PhiZero/\Phi)^b$,\;
+$G = G_0(\PhiZero/\Phi)^g$
+warunek $\ell_P = \text{const}$ wymaga
+$b + g - 3a = 0$.
+Aksjomat A6 daje $a = 1/2$, aksjomat~A7 daje $b = 1/2$,
+sk\k{a}d $g = 3a - b = 1$.
 Zatem:
 \begin{equation}
   c(\Phi) = c_0\sqrt{\PhiZero/\Phi}, \quad

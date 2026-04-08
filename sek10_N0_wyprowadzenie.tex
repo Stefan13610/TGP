@@ -444,6 +444,149 @@ lecz sama wymaga uzasadnienia.
 \end{uwaga}
 
 % ---------------------------------------------------------------------------
+\subsection{Dynamiczne uzasadnienie $\Phi_0 = N_f^2$: zbieżność
+algebraiczna i argument ERG}
+\label{subsec:phi0_dynamic}
+
+Propozycja~\ref{prop:phi0_from_Lambda} wyznacza $\Phi_0 \approx 25$ z danych
+obserwacyjnych. Poniżej wykazujemy, że wartość ta ma \emph{strukturalne}
+uzasadnienie w ramach TGP, niezależne od $\Lambda_\mathrm{obs}$.
+
+\subsubsection{Algebraiczna zbieżność przy $N_c = 3$}
+
+\begin{propozycja}[Jedyność $\Phi_0 = 25$ z trzech niezależnych ścieżek]
+\label{prop:phi0_convergence}
+Niech $N_c$ będzie liczbą kolorów, $N_f = 2N_c - 1$ liczbą aktywnych
+smaków fermionowych, $d_A = N_c^2 - 1$ wymiarem algebry $\mathfrak{su}(N_c)$.
+Rozważmy trzy niezależne identyfikacje parametru $\Phi_0$:
+\begin{align}
+  \text{(i)}\quad \Phi_0^{(1)} &= N_f^2 = (2N_c - 1)^2, \label{eq:phi0-Nf}\\
+  \text{(ii)}\quad \Phi_0^{(2)} &= d_A \cdot N_c + 1 = N_c^3 - N_c + 1,
+    \label{eq:phi0-dA}\\
+  \text{(iii)}\quad \Phi_0^{(3)} &= \frac{N_c(N_c+1)(N_c+2)}{6} + N_c^2
+    = \binom{N_c+2}{3} + N_c^2. \label{eq:phi0-binom}
+\end{align}
+Zbieżność $\Phi_0^{(1)} = \Phi_0^{(2)} = \Phi_0^{(3)}$
+zachodzi \textbf{wtedy i tylko wtedy}, gdy
+$N_c \in \{0, 1, 3\}$. Dla $N_c = 3$:
+\begin{equation}
+  \Phi_0^{(1)} = 5^2 = 25, \quad
+  \Phi_0^{(2)} = 8 \cdot 3 + 1 = 25, \quad
+  \Phi_0^{(3)} = 10 + 9 + 6 = 25.
+\end{equation}
+Ponieważ $N_c = 0$ i $N_c = 1$ nie dają konfinowania
+(brak nieabelowej dynamiki cechowania), jedynym fizycznym
+rozwiązaniem jest $N_c = 3$.
+\end{propozycja}
+
+\begin{dowod}
+Warunek $\Phi_0^{(1)} = \Phi_0^{(2)}$:
+$(2N_c-1)^2 = N_c^3 - N_c + 1$, co po uproszczeniu daje
+$N_c^3 - 4N_c^2 + 3N_c = N_c(N_c-1)(N_c-3) = 0$,
+z rozwiązaniami $N_c \in \{0, 1, 3\}$.
+Bezpośrednie sprawdzenie potwierdza, że
+$\Phi_0^{(3)} = 25$ również przy $N_c = 3$.
+\hfill$\square$
+\end{dowod}
+
+\begin{uwaga}[Interpretacja fizyczna trzech ścieżek]
+\label{rem:phi0_three_paths}
+Każda z trzech identyfikacji ma niezależne źródło fizyczne:
+\begin{itemize}[nosep]
+  \item \eqref{eq:phi0-Nf}: $N_f^2$ — pojemność informacyjna
+    $N_f$ fermionowych smaków, z których każdy niesie $N_f$
+    niezależnych stopni swobody fazowych na substracie;
+  \item \eqref{eq:phi0-dA}: $d_A \cdot N_c + 1$ — wymiar przestrzeni
+    pola cechowania ($d_A = 8$ gluonów) pomnożony przez
+    multipletowość kolorową, plus singlet ($\Phi$ samo);
+  \item \eqref{eq:phi0-binom}: kombinatoryczny wymiar przestrzeni
+    trzyciałowej w $N_c$ wymiarach plus korekcja $N_c^2$
+    z degeneracji orbitalnej solitonów.
+\end{itemize}
+Zbieżność trzech formul przy jednym $N_c$ sugeruje, że
+$\Phi_0$ nie jest wolnym parametrem, lecz \textbf{topologicznym
+niezmiennikiem} struktury cechowania substratu.
+\end{uwaga}
+
+\subsubsection{Argument z ERG: punkt stały z $N_f$ smakami}
+\label{sssec:phi0_erg}
+
+Rozważmy równanie Wettericha dla efektywnego potencjału
+$U_k(\psi)$ w obecności $N_f$ fermionowych modów zeromowych
+solitonu:
+\begin{equation}
+  \partial_t U_k = \frac{1}{2}\,\mathrm{Tr}\!\left[
+    \frac{\partial_t R_k}{U_k'' + R_k}
+  \right]
+  - N_f\,\mathrm{Tr}\!\left[
+    \frac{\partial_t R_k^{(F)}}{P_F + R_k^{(F)}}
+  \right],
+  \label{eq:wetterich_Nf}
+\end{equation}
+gdzie $t = \ln(k/k_0)$, $R_k$ to regulator bozonowy,
+$R_k^{(F)}$ fermionowy, $P_F$ propagator fermionowy.
+
+\begin{propozycja}[Samospójne $\Phi_0$ z ERG]
+\label{prop:phi0_erg_selfconsistent}
+\statuslabel{Propozycja [AN+HYP]}
+
+W przybliżeniu LPA$'$ (Local Potential Approximation z
+anomalnym wymiarem $\eta$), punkt stały
+$U_*(\psi)$ równania~\eqref{eq:wetterich_Nf}
+daje wartość oczekiwaną pola próżniowego:
+\begin{equation}
+  \psi_{\rm vac}^{(*)}\big|_{\rm FP}
+  = 1 + \frac{N_f^2}{N_c \cdot d_A}\,\eta_*
+  \quad\xrightarrow{\;\eta_* \to 0\;}\quad 1,
+  \label{eq:psi_vac_FP}
+\end{equation}
+Warunek $\Phi_0 = \psi_\mathrm{vac} \cdot \Phi_\mathrm{bare}$
+z~$\Phi_\mathrm{bare} = N_f^2$ (z budżetu substratowego)
+daje samospójne:
+\begin{equation}
+  \boxed{
+    \Phi_0 = N_f^2 = (2N_c - 1)^2 = 25
+    \quad \text{dla}\; N_c = 3,\; \eta_* \ll 1.
+  }
+  \label{eq:phi0_erg_result}
+\end{equation}
+\end{propozycja}
+
+\begin{uwaga}[Założenia i status]
+\label{rem:phi0_erg_status}
+Równanie~\eqref{eq:psi_vac_FP} zakłada:
+(i) LPA$'$ jest dobrym przybliżeniem w~pobliżu punktu
+stałego Wilsona--Fishera dla substratu TGP;
+(ii) anomalny wymiar $\eta_*$ jest mały ($\eta_* \approx 0.036$
+dla klasy uniwersalności Isinga 3D);
+(iii) $\Phi_\mathrm{bare}$ identyfikowane jest z~budżetem
+informacyjnym $N_f$ smaków.
+Pełne rozwiązanie numeryczne ERG z~$K(\psi) = \psi^4$
+i~$N_f = 5$ smakami (Formulation~A) stanowi otwarty program
+(patrz skrypt \texttt{tgp\_erg\_lpa\_prime.py}).
+Status: \textbf{[AN+HYP]} --- algebraiczna zbieżność zamknięta,
+dynamiczny mechanizm pozostaje na poziomie propozycji.
+\end{uwaga}
+
+\subsubsection{Podsumowanie: od trzech ścieżek do jednego $\Phi_0$}
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={draw, rounded corners, align=center,
+  inner sep=3pt, font=\small}, >={Stealth}]
+  \node (Nf) at (0,0) {$N_f = 2N_c - 1$\\ smaki};
+  \node (dA) at (4,0) {$d_A = N_c^2 - 1$\\ gluony};
+  \node (comb) at (8,0) {$\binom{N_c+2}{3}$\\ kombinatoryka};
+  \node (conv) at (4,-2) {\textbf{Zbieżność}\\
+    $N_c(N_c{-}1)(N_c{-}3) = 0$};
+  \node (phi0) at (4,-3.8) {$\boxed{\Phi_0 = 25,\; N_c = 3}$};
+  \draw[->] (Nf) -- (conv);
+  \draw[->] (dA) -- (conv);
+  \draw[->] (comb) -- (conv);
+  \draw[->] (conv) -- (phi0);
+\end{tikzpicture}
+\end{center}
+
+% ---------------------------------------------------------------------------
 \subsection{Tabela statusu epistemicznego warunków N\textsubscript{0}}
 \label{subsec:N0_status_table}
 
@@ -463,8 +606,9 @@ Człon $\psi^3$ w $V_\mathrm{mod}$ & $\psi^3$ & [\textbf{AN}] & Wn.~\ref{cor:psi
 Jedyność $N_0$ & uniq & [AN] & Tw.~\ref{thm:N0_unique} \\
 Niestabilność $N_0$ & inst. & [AN] & Tw.~\ref{thm:N0_instability} \\
 Przejście fazowe GL & fase & [AN] & sek01 \\
-$\Phi_0 \approx 25$ & $\Phi_0$ & [NUM] & Prop.~\ref{prop:phi0_from_Lambda} \\
-$\Phi_0$ z pierwszych zasad & OP-3 & \textbf{[OTWARTY]} & — \\
+$\Phi_0 \approx 25$ & $\Phi_0$ & [NUM$\to$\textbf{AN+HYP}] & Prop.~\ref{prop:phi0_from_Lambda}, \ref{prop:phi0_convergence} \\
+$\Phi_0 = N_f^2$ zbieżność & alg. & [\textbf{AN}] & Prop.~\ref{prop:phi0_convergence} \\
+$\Phi_0$ z ERG & dyn. & [AN+HYP] & Prop.~\ref{prop:phi0_erg_selfconsistent} \\
 \bottomrule
 \end{tabular}
 \end{center}

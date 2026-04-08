@@ -321,6 +321,118 @@ ale mo\.ze by\'c koincydencj\k{a} (jeden punkt danych).
 \end{remark}
 
 % -------------------------------------------------------------------
+\subsection{Warunki brzegowe konfinementu a~\l{}amanie Koide}%
+\label{app:X-confinement-bc}
+% -------------------------------------------------------------------
+
+Poni\.zej podajemy fizyczne uzasadnienie, dlaczego Koide $K = 2/3$
+jest specyficzne dla lepton\'ow z~perspektywy warunki brzegowych
+solitonu w~TGP.
+
+\subsubsection{Ogon solitonu w~r\'o\.znych sektorach}
+
+Soliton leptonowy (odosobniony) ma warunek brzegowy
+$g(r) \to 1$ przy $r \to \infty$ --- ogon jest \textbf{swobodny}:
+\begin{equation}\label{eq:X-free-tail}
+  \delta g(r) = g(r) - 1 \;\sim\; \frac{A_{\rm tail}}{r}\,
+  \sin(\omega\,r + \delta), \qquad r \to \infty.
+\end{equation}
+Amplituda $A_{\rm tail}(g_0)$ zale\.zy \textbf{wy\l{}\k{a}cznie}
+od centralnej warto\'sci $g_0$, tj.\ od ODE solitonowego.
+Koide $K = 2/3$ odpowiada rozrzutowi CV($\sqrt{m}$) = 1
+wynikaj\k{a}cemu z~trzech niezale\.znych swobodnych ogon\'ow.
+
+Soliton kwarkowy jest \textbf{skonfinowany}: jego ogon jest
+obci\k{e}ty przez rur\k{e} struny kolorowej o~d\l{}ugo\'sci
+$R_{\rm had} \sim 1/\Lambda_{\rm QCD}$:
+\begin{equation}\label{eq:X-confined-tail}
+  \delta g(r)\big|_{\rm quark} \;\sim\;
+  \frac{A_{\rm tail}}{r}\,\sin(\omega\,r + \delta)\;
+  \times\; \Theta(R_{\rm had} - r)
+  \;+\; A_{\rm conf}\,e^{-r/R_{\rm had}},
+  \quad r \gtrsim R_{\rm had}.
+\end{equation}
+Obci\k{e}cie ogona na skali $R_{\rm had}$ dodaje
+\textbf{addytywny} wk\l{}ad masowy:
+
+\begin{propozycja}[Masa konfinementu z obci\k{e}cia ogona]%
+\label{prop:X-confinement-mass}
+\statuslabel{Propozycja [AN+HYP]}
+
+Energia zmagazynowana w~obci\k{e}tym ogonie solitonu
+kwarkowego ma posta\'c:
+\begin{equation}\label{eq:X-m0-estimate}
+  m_0 \;\sim\; \sigma\,R_{\rm had}
+  \;\sim\; \Lambda_{\rm QCD}^2 / M_q,
+\end{equation}
+gdzie $\sigma \sim (400\;\text{MeV})^2$ to napięcie struny QCD,
+$R_{\rm had} \sim 1\;\text{fm}$, $M_q$ to typowa masa sektora.
+Wk\l{}ad ten jest:
+\begin{itemize}[nosep]
+  \item \textbf{addytywny} (nie multiplikatywny) ---
+        poniewa\.z energia rury struny jest niezale\.zna
+        od masy solitonu;
+  \item \textbf{sektorowo zale\.zny} (r\'o\.zny $R_{\rm had}$
+        i $\sigma$ dla sektora up vs down);
+  \item \textbf{zerowy dla lepton\'ow} ($m_0^{(\ell)} = 0$,
+        brak konfinementu kolorowego).
+\end{itemize}
+\end{propozycja}
+
+\begin{dowod}[szkic]
+Ogon solitonu niesie energi\k{e}
+$E_{\rm tail} = \int_{R_c}^{\infty} [\frac{1}{2}K_{\rm sub}(g)(\nabla g)^2
++ V(g)] \, 4\pi r^2\,dr$.
+Dla swobodnego ogona: $E_{\rm tail}^{(\rm free)} \propto A_{\rm tail}^2
+\cdot \omega$.
+Dla obci\k{e}tego ogona: $E_{\rm tail}^{(\rm conf)} =
+E_{\rm tail}^{(\rm free)} + \sigma \cdot R_{\rm had}$,
+gdzie drugi cz\l{}on to energia rury struny \l{}\k{a}cz\k{a}cej
+soliton z~antysolitonem (lub z~innymi kwarkami w~hadronie).
+Poniewa\.z $m \propto A_{\rm tail}^4$ (prop.~\ref{prop:R-k4-dimensional}),
+efektywna masa kwarka:
+\begin{equation}
+  m_q^{(\rm eff)} = m_{\rm substrate} + m_0,
+  \qquad m_0 = c_\sigma\,\sigma\,R_{\rm had},
+\end{equation}
+z~$c_\sigma \sim \mathcal{O}(1)$ (sta\l{}a dopasowania).
+\hfill$\square$
+\end{dowod}
+
+\begin{uwaga}[Szacunki numeryczne]\label{rem:X-m0-estimates}
+Dla standardowych parametr\'ow QCD ($\sigma = (440\;\text{MeV})^2$,
+$R_{\rm had} \approx 0{,}5$--$1$~fm):
+\begin{itemize}[nosep]
+  \item $m_0^{(d,s,b)} \approx \sigma \cdot 0{,}11\;\text{fm}
+        \approx 21$~MeV (zob.\ wynik~\ref{res:X-A-constant}: $m_0 = 21{,}9$~MeV);
+  \item $m_0^{(u,c,t)} \approx \sigma \cdot 10\;\text{fm} \approx 1940$~MeV
+        (por.\ $m_0 = 1981{,}5$~MeV).
+\end{itemize}
+Stosunek $m_0^{(u)}/m_0^{(d)} \approx 90$ odzwierciedla
+r\'o\.znic\k{e} w~efektywnym promieniu konfinementu
+mi\k{e}dzy sektorami up i~down (zwi\k{a}zan\k{a}
+z~masami: ci\k{e}\.zszy sektor up ma d\l{}u\.zsz\k{a}
+rur\k{e}).
+\end{uwaga}
+
+\begin{uwaga}[Konsekwencje dla CV i Koide]\label{rem:X-CV-consequence}
+Addytywny wk\l{}ad $m_0$ \l{}amie jednorodność skalowania
+$m_i \propto A_{\rm tail}^4$, kt\'ora jest warunkiem koniecznym
+CV($\sqrt{m}$) = 1. Konkretnie:
+\begin{equation}
+  \text{CV}\bigl(\sqrt{m_{\rm sub} + m_0}\bigr) \neq
+  \text{CV}\bigl(\sqrt{m_{\rm sub}}\bigr),
+\end{equation}
+chyba \.ze $m_0 = 0$ (jak dla lepton\'ow) lub $m_0 \gg m_{\rm sub}$
+(wtedy CV jest zdominowane przez $m_0$).
+
+Shifted Koide $K(m_i + m_0) = 2/3$ jest zatem \textbf{naturaln\k{a}
+konsekwencj\k{a}} TGP: po odj\k{e}ciu wk\l{}adu konfinementu
+masy substratowe $m_{\rm sub}$ spe\l{}niaj\k{a} Koide,
+bo ogony s\k{a} ponownie ``swobodne''.
+\end{uwaga}
+
+% -------------------------------------------------------------------
 \subsection{Wnioski}\label{app:X-wnioski}
 % -------------------------------------------------------------------
 

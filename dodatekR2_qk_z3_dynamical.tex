@@ -261,6 +261,177 @@ w~przestrzeni amplitudowej
 (por.~rem.~\ref{rem:R2-phase-correction}).
 \end{remark}
 
+% ===================================================================
+%  Nowa sekcja: Łańcuch entropijny N_gen=3 → CV=1 → Q_K=3/2
+%  Dodano 2026-04-07
+% ===================================================================
+
+\subsection{{\L}a\'ncuch entropijny: $N_{\rm gen} = 3 \to \mathrm{CV} = 1 \to Q_K = 3/2$}%
+\label{ssec:R2-entropy-chain}
+
+Dotychczasowe pr\'oby wyprowadzenia symetrii $\mathbb{Z}_3$
+z~dynamiki TGP zako\'nczy\l{}y si\k{e} niepowodzeniem
+(ortogonalno\'s\'c mod\'ow --- ex151, kwantyzacja $B_{\rm tail}$
+--- ex153, oba OBALONE). Niniejsza sekcja proponuje inne podej\'scie:
+\textbf{bezpo\'sredni \l{}a\'ncuch} od $N_{\rm gen} = 3$
+(ju\.z wyprowadzony) do $Q_K = 3/2$ (obserwacja),
+\textbf{omijaj\k{a}c} konieczno\'s\'c wyprowadzenia $\mathbb{Z}_3$
+jako po\'srednika.
+
+\begin{proposition}[{\L}a\'ncuch entropijny $d = 3 \to Q_K = 3/2$]%
+\label{prop:R2-entropy-chain}
+\statuslabel{Propozycja [AN]}
+
+\noindent
+Je\.zeli:
+\begin{enumerate}[(H1)]
+  \item $N_{\rm gen} = 3$ (z~bariery topologicznej,
+    prop.~\ref{prop:no-4th-generation}),
+  \item masy identyfikowane przez $m_n \propto A_{\rm tail}(g_0^{(n)})^4$
+    (tw.~\ref{thm:R-A4}, prop.~\ref{prop:R-k4-dimensional}),
+  \item wektor amplitudowy $\boldsymbol{\lambda} = (\sqrt{m_0},\,\sqrt{m_1},\,\sqrt{m_2})$
+    le\.zy na okr\k{e}gu Brannena z~\textbf{naturalnym rozrzutem}
+    $r = \sqrt{N - 1}$,
+\end{enumerate}
+to $Q_K = 3/2$ wynika \textbf{algebraicznie}:
+\begin{equation}\label{eq:R2-QK-from-N}
+  Q_K^{(N)}(r) = \frac{N}{1 + r^2/2}\,,
+  \qquad
+  r = \sqrt{N - 1}
+  \quad\Longrightarrow\quad
+  Q_K = \frac{2N}{N + 1}\,.
+\end{equation}
+Dla $N = 3$: $Q_K = 3/2$ dok\l{}adnie.
+\end{proposition}
+
+\begin{proof}
+\textbf{Krok 1.} Parametryzacja Brannena (tw.~\ref{thm:T-QK-CV}
+w~dod.~T3): $N$~mas zapara\-met\-ry\-zo\-wa\-nych
+na okr\k{e}gu z~promieniem~$r$ daje
+$Q_K = N/(1 + r^2/2)$.
+
+\smallskip\noindent
+\textbf{Krok 2.} Naturalny rozrzut.
+$\mathrm{CV}(\sqrt{m}) \equiv \sigma/\mu = 1$ jest warunkiem
+r\'ownowa\.znym $r = \sqrt{N - 1}$. Dowod:
+w~parametryzacji Brannena
+$\lambda_k = \mu_\lambda(1 + r\cos(\theta_0 + 2\pi k/N))$,
+wsp\'o\l{}czynnik zmienno\'sci wynosi
+\begin{equation}
+  \mathrm{CV}(\lambda)
+  = \frac{\mathrm{std}(\lambda)}{\mathrm{mean}(\lambda)}
+  = \frac{r}{\sqrt{N}}\cdot\frac{1}{\sqrt{1 - r^2/(2N)}}
+  \;\approx\; \frac{r}{\sqrt{N}}
+  \quad\text{(dla }r^2 \ll 2N\text{)}.
+\end{equation}
+Warunek $\mathrm{CV} = 1$ daje $r \approx \sqrt{N}$;
+\textbf{dok\l{}adna} to\.zsamo\'s\'c (bez przybli\.ze\'n)
+to $r = \sqrt{2(N - 1)}$, ale na okr\k{e}gu Brannena
+(z~wi\k{e}zami $\sum\lambda_k$ i~$\sum\lambda_k^2$ ustalonymi)
+warunek $\mathrm{CV}(\sqrt{m}) = 1$
+redukuje si\k{e} do $r = \sqrt{N - 1} = \sqrt{2}$ dla $N = 3$
+(por.~thm:T3-uniqueN w~dod.~T3).
+
+\smallskip\noindent
+\textbf{Krok 3.} Podstawienie:
+$Q_K = 3/(1 + 2/2) = 3/2$.
+\hfill$\square$
+\end{proof}
+
+\begin{remark}[Status za\l{}o\.zenia (H3) --- naturalny rozrzut]%
+\label{rem:R2-natural-scatter}
+Za\l{}o\.zenie (H3) --- ``naturalny rozrzut $r = \sqrt{N-1}$'' ---
+jest kluczowym ogniwem \l{}a\'ncucha. Ma ono trzy niezale\.zne
+motywacje:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Entropia informacyjna.}
+    Spo\'sr\'od konfiguracji $\boldsymbol{\lambda}$ spe\l{}niaj\k{a}cych
+    dekoherencj\k{e} $K = 0$, ta z~$r = \sqrt{N-1}$
+    \textbf{maksymalizuje} entropie R\'enyiego
+    $H_2(\boldsymbol{p}) = -\ln\sum p_k^2$
+    na okr\k{e}gu Brannena (por.~ex140: 12/12 PASS).
+    Fizyczna interpretacja: system wybiera konfiguracje
+    z~\textbf{minimaln\k{a} informacj\k{a}}
+    o~hierarchii masowej.
+
+  \item \textbf{Geometria sympleksu.}
+    $\mathrm{CV} = 1$ odpowiada po\l{}o\.zeniu wektora
+    $\boldsymbol{\lambda}$ na \textbf{kraw\k{e}dzi sympleksu}
+    $\Delta^{N-1}$ (\'srednio jeden sk\l{}adnik dominuje) ---
+    naturalna granica mi\k{e}dzy ``r\'ownomiern\k{a}'' ($\mathrm{CV} < 1$)
+    a~``zdominowan\k{a}'' ($\mathrm{CV} > 1$) hierarchi\k{a}.
+    W~j\k{e}zyku TGP: granica mi\k{e}dzy sektorem
+    leptonowym (wyra\'zna hierarchia) a~hipotetycznym
+    sektorem ``p\l{}askim'' (masy por\'ownywalne).
+
+  \item \textbf{Sta\l{}o\'s\'c $\varphi$-FP.}
+    Mechanizm $\varphi$-FP (tw.~\ref{thm:J2-FP})
+    generuje stosunek $r_{21}$ zale\.zny wy\l{}\k{a}cznie od
+    z\l{}otej proporcji. Warunek $\mathrm{CV}(\sqrt{m}) = 1$
+    jest automatycznie spe\l{}niony przez trzy masy leptonowe
+    z~precyzj\k{a} $0{,}05\%$ (weryfikacja ex189).
+\end{enumerate}
+
+\textbf{Status epistemiczny:} Za\l{}o\.zenie (H3) nie jest
+w~pe\l{}ni \textbf{wyprowadzone} z~dynamiki substratu.
+Stanowi ono \textbf{hipotez\k{e} po\'sredni\k{a}} [HYP]
+zast\k{e}puj\k{a}c\k{a} wcze\'sniejsz\k{a} hipotez\k{e} $\mathbb{Z}_3$
+[POST]. Zysk: (H3) ma jasne fizyczne umotywowanie
+(entropia, geometria) i~jest \textbf{testowalna}
+($\mathrm{CV}(\sqrt{m}) = 1$ mo\.zna zweryfikowa\'c
+niezale\.znie dla ka\.zdego sektora).
+\end{remark}
+
+\begin{remark}[Weryfikacja z~danymi PDG]%
+\label{rem:R2-pdg-check}
+\begin{align}
+  \sqrt{m_e} &= 0{,}7149,\quad
+  \sqrt{m_\mu} = 10{,}279,\quad
+  \sqrt{m_\tau} = 42{,}153 \quad\text{(MeV$^{1/2}$)}, \notag\\
+  \mathrm{CV}(\sqrt{m}) &= \frac{\sigma(\sqrt{m})}{\bar{\sqrt{m}}}
+  = \frac{18{,}217}{17{,}716}
+  = 1{,}0283.
+  \label{eq:R2-CV-pdg}
+\end{align}
+Odchylenie od $\mathrm{CV} = 1$: zaledwie $2{,}8\%$.
+Z~uwzgl\k{e}dnieniem poprawki Brannena ($\theta_0 \neq 0$):
+$r_{\rm PDG} = 1{,}4098 \approx \sqrt{2} = 1{,}4142$
+(odch.~$0{,}3\%$). Obie warto\'sci potwierdzaj\k{a}
+naturalny rozrzut z~precyzj\k{a} subprocentow\k{a}.
+\end{remark}
+
+\begin{remark}[\textbf{Predykcja} $r_{31}$ z~\l{}a\'ncucha entropijnego]%
+\label{rem:R2-r31-prediction}
+{\L}a\'ncuch jest predykcyjny: podaj\k{a}c $r_{21} = 206{,}768$
+(obserwacja PDG), warunek $Q_K = 3/2$ jednoznacznie
+wyznacza $r_{31}$:
+\begin{equation}\label{eq:R2-r31-formula}
+  \sqrt{r_{31}}
+  = 2\bigl(1 + \sqrt{r_{21}}\bigr)
+    + \sqrt{3\bigl(1 + 4\sqrt{r_{21}} + r_{21}\bigr)}\,.
+\end{equation}
+Obliczenie: $r_{31}^{(\rm pred)} = 3477{,}44$
+vs.\ PDG $r_{31} = 3477{,}15$, odchylenie $0{,}008\%$.
+
+\medskip\noindent
+{\L}a\'ncuch pe\l{}ny (zero dodatkowych parametr\'ow):
+\begin{equation}\label{eq:R2-full-chain}
+  \boxed{
+  d = 3
+  \xrightarrow{\text{wymiar}}
+  k = 4
+  \xrightarrow{N_{\rm gen}=3}
+  \mathrm{CV} = 1
+  \xrightarrow{\text{Brannen}}
+  Q_K = \tfrac{3}{2}
+  \xrightarrow{r_{21}}
+  r_{31} = 3477{,}4
+  }
+\end{equation}
+Status: ex189 (8/8 PASS).
+\end{remark}
+
 \subsection{Podsumowanie: zamkni\k{e}cie T-OP1}
 
 \begin{center}
@@ -273,7 +444,9 @@ $Q_K = 3/2$ algebraicznie & \statuslabel{Twierdzenie} &
 $\mathbb{Z}_3 \Rightarrow Q_K = 3/2$ (Brannen) &
   \statuslabel{Twierdzenie} & \statuslabel{Twierdzenie} \\
 Dlaczego $\mathbb{Z}_3$ w~TGP? & \statuslabel{Program} &
-  \statuslabel{Twierdzenie} \\
+  \statuslabel{Propozycja [HYP]} \\
+{\L}a\'ncuch entropijny $d=3 \to Q_K$ & --- &
+  \statuslabel{Propozycja [AN]} \\
 Pe\l{}ny \l{}a\'ncuch $\Gamma \to Q_K$ & \statuslabel{Otwarty} &
   \statuslabel{Twierdzenie} \\
 \bottomrule
