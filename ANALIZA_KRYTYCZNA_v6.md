@@ -364,6 +364,8 @@ Zero sprzeczności między N0 a predykcjami.
 | `scripts/ex190_consistency_chain.py` | NOWY | 9/9 PASS weryfikacja pełnego łańcucha predykcji |
 | `scripts/ex191_confinement_m0.py` | NOWY | Masa konfinementu m₀: A=m₀·m₁/m₃=0.0246 uniwersalne (1.1%) |
 | `scripts/ex192_cosmo_Hz_confrontation.py` | NOWY | Konfrontacja H(z) vs DESI DR1: Δχ²=+0.68 (TGP≈ΛCDM) |
+| `scripts/ex193_unified_predictions.py` | NOWY | Pełna tabela predykcji: 28 PASS / 1 CAL / 1 PRED z 2 parametrów |
+| `scripts/ex194_master_verification.py` | NOWY | Master runner: 45/45 PASS, GO — uruchamia ex190–ex193 łącznie |
 | `sek08_formalizm.tex` | EDYCJA | Naprawiono kolizję symbolu κ→κ_E (stała Einsteina) |
 
 ---
@@ -371,13 +373,13 @@ Zero sprzeczności między N0 a predykcjami.
 ## VII. PODSUMOWANIE GLOBALNE
 
 ### Siła teorii TGP:
-1. **Minimalne parametry**: N_param=2, M_obs≥19, M/N≥9.5
+1. **Minimalne parametry**: N_param=2, M_obs≥28 PASS, M/N=14.0
 2. **Zero parametrów kosmologicznych** — κ z sektora cząsteczkowego
 3. **Unifikacja masa-sprzężenie**: g₀^e łączy r₂₁ i α_s (ZERO wolnych parametrów)
 4. **Predykcja m_τ**: 0.008% od PDG (1-parametrowa)
 5. **5/5 PASS kosmologicznych** (BBN, CMB, LLR, DESI, BICEP)
 6. **Spójność wewnętrzna**: 0 sprzeczności, 25 twierdzeń, 21 propozycji
-7. **ex190: 9/9 PASS łańcucha** — pełna weryfikacja numeryczna od substratu do predykcji
+7. **ex194: 45/45 PASS master** — pełna weryfikacja łączna (ex190–ex193) → GO
 
 ### Słabości strukturalne (zaktualizowane 2026-04-08):
 1. **Dwa kluczowe postulaty** (m∝A⁴, CV=1) — silnie umotywowane ale nie w pełni wyprowadzone
