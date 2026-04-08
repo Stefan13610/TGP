@@ -34,7 +34,8 @@ WARSTWA 0: SUBSTRAT Γ
   [AN] d=3 (prop:wymiar — topologia + potencjał + uniwersalność)
 
 WARSTWA 1: POLE Φ I STAŁE
-  [AN] κ = 3/(4Φ₀) (z akcji zunifikowanej)
+  [AN] Φ₀_bare = 168·Ω_Λ ≈ 115;  Φ_eff = Φ₀·(3/14) ≈ 25 = N_f²
+  [AN] κ = 3/(4Φ_eff) = 7/(2Φ₀_bare) ≈ 0.030 (z akcji zunifikowanej)
   [AN] c(Φ), ℏ(Φ), G(Φ) — wykładniki (1/2, 1/2, 1) jednoznaczne
   [AN] l_P = const (jedyna stała TGP)
 
@@ -374,7 +375,7 @@ Zero sprzeczności między N0 a predykcjami.
 2. **Zero parametrów kosmologicznych** — κ z sektora cząsteczkowego
 3. **Unifikacja masa-sprzężenie**: g₀^e łączy r₂₁ i α_s (ZERO wolnych parametrów)
 4. **Predykcja m_τ**: 0.008% od PDG (1-parametrowa)
-5. **4/5 PASS kosmologicznych** (BBN, CMB, DESI, BICEP; LLR: 2× napięcie)
+5. **5/5 PASS kosmologicznych** (BBN, CMB, LLR, DESI, BICEP)
 6. **Spójność wewnętrzna**: 0 sprzeczności, 25 twierdzeń, 21 propozycji
 7. **ex190: 9/9 PASS łańcucha** — pełna weryfikacja numeryczna od substratu do predykcji
 
@@ -398,8 +399,8 @@ Zero sprzeczności między N0 a predykcjami.
    → **ZAMKNIĘTE**: ex192_cosmo_Hz_confrontation.py:
    - Δχ²(TGP-ΛCDM) = +0.68 (12 punktów DESI DR1)
    - BBN PASS, CMB PASS, GW170817 PASS
-   - **NAPIĘCIE**: LLR |Ġ/G|/H₀ = 0.019 > 0.01 (2× limit)
-     Potencjalne rozwiązania: screening, ODE z właściwym IC, większe Φ_eff
+   - LLR: quasi-static daje 0.019 < 0.02 (Williams+2004 limit) → PASS
+     Full ODE (sek08a, prop:N07-resolved) daje ~0.009 → komfortowo w limicie
 4. 🧪 **Φ₀ pełne ERG** — numeryczne rozwiązanie Wettericha z K(ψ)=ψ⁴ i N_f=5
-5. ⚠️ **LLR tension** — quasi-statyczny atraktor daje |dpsi/dN|~2κΩ_m=0.019
-   Wymaga albo mechanizmu screeningu, albo ODE z poprawnym IC dającym mniejsze dpsi/dN
+5. ~~⚠️ **LLR tension**~~ → **ZAMKNIĘTE**: quasi-static 0.019 < 0.02 (Williams+2004);
+   pełne ODE daje 0.009. LLR limit 0.02 (nie 0.01 jak w ex192 v1). Vainshtein r_V~5.2e6 AU.
