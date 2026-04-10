@@ -959,4 +959,56 @@ Relacja Koide'go jest w\l{}asno\'sci\k{a}
 \textbf{Otwarty krok}: dowód analityczny, \.ze r\'ownanie solitonowe
 z~$K(g) = g^4$ implikuje $Q_K = 2N/(N{+}1)$ przy spacingu $\varphi$-FP.
 Ca\l{}o\'s\'c jest potwierdzona \textbf{[NUM]} z~precyzj\k{a} $10^{-5}$.
+\emph{Potwierdzono} r\'ownie\.z dla kanonicznej Form~A ($\alpha = 2$,
+\'zr\'od\l{}o $g^2(1-g)$) --- patrz Uwaga~\ref{rem:T-formA-vs-formB}.
+\end{remark}
+
+\begin{remark}[Oscylujacy ogon solitonu i~twierdzenie wirialne (v47b)]%
+\label{rem:T-oscillatory-tail}
+Linearyzacja ODE w~otoczeniu pr\'o\.zni $g = 1 + h$ daje:
+\[
+  h'' + \frac{2}{r}\,h' + h = 0,
+\]
+r\'ownanie sferycznego Bessela o~cz\k{e}sto\'sci $\omega = 1$ (potwierdzone
+numerycznie: $\omega^2 = 1{,}000007$). Ogon: $h \sim A\cos(r + \delta)/r$.
+
+Pr\'oba dowodu relacji wirialnej $T_{\rm kin} = C_{\rm cross}$
+(\texttt{virial\_theorem\_v47b.py}) pokaza\l{}a:
+\begin{itemize}[nosep]
+  \item $T_{\rm kin}/C_{\rm cross}$ zmienia si\k{e} od $0{,}992$ (g_0 = 0{,}3)
+    do~$1{,}0005$ ($g_0 \approx 1{,}3$) i~z~powrotem do $0{,}994$ ($g_0 = 2$).
+  \item Dla fizycznych $g_0$ odchylenie $< 0{,}1\%$ --- przybli\.zone, nie dok\l{}adne.
+  \item Standardowe to\.zsamo\'sci Pohożajewa / Derricka \textbf{nie dzia\l{}aj\k{a}}
+    dla oscyluj\k{a}cych ogon\'ow (cz\l{}on brzegowy $g' r^2$ rozbiega si\k{e}).
+\end{itemize}
+Przybli\.zenie $T \approx C$ wynika z~faktu, \.ze $g \approx 1$ w~obszarze
+gdzie skoncentrowana jest g\k{e}sto\'s\'c energii kinetycznej $g'^2 r^2$.
+\end{remark}
+
+\begin{remark}[Sp\'ojno\'s\'c Koide: Form~A vs Form~B (v47b)]%
+\label{rem:T-formA-vs-formB}
+Kanoniczne r\'ownanie TGP ($\alpha = 2$, \'zr\'od\l{}o $g^2(1{-}g)$, Form~A)
+i~uproszczone ($\alpha = 1$, \'zr\'od\l{}o $1{-}g$, Form~B) \textbf{obie} daj\k{a}
+$Q_K = 3/2$ z~precyzj\k{a} $10^{-10}$:
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+  & $g_{0,e}$ & $c = g_{0,\tau}/g_{0,e}$ & $r_{31}$ (\% od PDG) \\
+\midrule
+Form A ($\alpha{=}2$) & $0{,}8677$ & $1{,}8089$ & $3477{,}4$ ($+0{,}006\%$) \\
+Form B ($\alpha{=}1$) & $0{,}8694$ & $1{,}9891$ & $3477{,}4$ ($+0{,}006\%$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+W~Form~A rozw.\ Koide le\.zy przy $g_{0,\tau} = 1{,}5696$, zaledwie $1{,}9\%$
+poni\.zej progu kolapsu solitonu $g_{0,\rm crit} \approx 1{,}60$.
+Solitony z~$g_0 > g_{0,\rm crit}$ nie istniej\k{a} --- sprz\k{e}\.zenie
+$(2/g)\,g'^2$ generuje pozytywne sprz\k{e}\.zenie zwrotne prowadz\k{a}ce
+do~kolapsu $g \to 0$.  Fakt, \.ze $\tau$-soliton le\.zy tu\.z przy granicy
+istnienia, mo\.ze by\'c fizycznie znacz\k{a}cy.
+
+\textbf{Wniosek}: wynik $Q_K = 3/2$ jest \textbf{niezale\.zny} od wyboru
+sformu\l{}owania ODE (Form~A lub B).  Obie formy daj\k{a} identyczne
+$r_{31}$ przy identycznej precyzji.
+Skrypty: \texttt{ode\_koide\_formA\_v47b.py}, \texttt{ode\_koide\_formA\_exact\_v47b.py}.
 \end{remark}
