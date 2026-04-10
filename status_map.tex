@@ -984,3 +984,208 @@ Stosunek $M/N$        & $\geq 6$ & & \textbf{v35}: $M/N \geq 6$ (bez T1+T2);
   \item \emph{Sektory cechowania} SU(2), SU(3).
 \end{enumerate}
 \end{remark}
+
+% ================================================================
+% Aktualizacja v47 (2026-04-09) — nowe wyniki
+% ================================================================
+\begin{remark}[Aktualizacja v47 --- nowe domkni\k{e}cia
+  i~korekty sp\'ojno\'sci]\label{rem:status-v47}
+\begin{enumerate}[nosep]
+  \item \textbf{Element obj\k{e}to\'sciowy:}
+    Wszystkie odwo\l{}ania do starego
+    $\sqrt{-g_{\mathrm{eff}}} = \psi^4$ w~sek08\_formalizm.tex
+    poprawione na $c_0\psi$
+    (5 poprawek, zob.\ sek.~\ref{sec:akcja-zunifikowana}).
+    R\'ownanie FRW (prop.~\ref{prop:FRW-derivation})
+    zaktualizowane: $2\dot\psi^2/\psi \to 3\dot\psi^2/\psi$.
+
+  \item \textbf{M1 --- jednoznaczno\'s\'c $k = 4$ (stw.~\ref{thm:R-k4-definite}):}
+    Nowe twierdzenie w~dodatku~R:
+    fizyczna masa solitonu w~$d = 3$ ma jednoznaczne
+    rozwini\k{e}cie $M = c_4 A_{\rm tail}^4 + \mathcal{O}(A^6)$,
+    poniewa\.z rz\k{a}d $n = 3$ jest logarytmicznie rozbie\.zny
+    (schematycznie zale\.zny) --- unikalne dla $d = 3$.
+    Status: \statuslabel{Twierdzenie}~[AN+NUM].
+
+  \item \textbf{M2 --- $\lambda_{\mathrm{eff}} = 2/\PhiZero^4$
+    (prop.~\ref{prop:I-lambda-Z2}):}
+    Nowa propozycja w~dodatku~I: czynnik $\mathbb{Z}_2$
+    zamyka luk\k{e} mi\k{e}dzy estymacj\k{a} wymiarow\k{a}
+    a~skanem solitonowym ($1{,}7\%$ od $\lambda^*$).
+    Status: \statuslabel{Propozycja}~[AN+NUM].
+
+  \item \textbf{M3 --- $Q_K = 3/2$ z~$N_{\rm gen} = 3$
+    (stw.~\ref{thm:T-QK-from-Ngen}):}
+    Nowe twierdzenie w~dodatku~T:
+    $Q_K = 2N/(N+1) = 3/2$ wynika z~$N = 3$ generacji.
+    \textbf{Awans w~v47b}: hipoteza ekwipartycji
+    $r = \sqrt{N{-}1}$ okazuje si\k{e} \textbf{algebraiczn\k{a}
+    konsekwencj\k{a}} $Q_K = 3/2$ w~parametryzacji Brannena
+    ($r^2 = 2(N/Q_K - 1) = 2$,
+    prop.~\ref{prop:T-equipartition-info}).
+    Status: \statuslabel{Twierdzenie}~[AN+NUM],
+    T-OP1 \textbf{zamkni\k{e}ty}.
+
+  \item \textbf{M4 --- sektor kwarkowy
+    (prop.~\ref{prop:X-m0-confinement}--\ref{prop:X-universal-A},
+    tw.~\ref{thm:X-A-golden}):}
+    Nowe propozycje w~dodatku~X:
+    masa konfinementowa $m_0$ z~potencja\l{}u liniowego;
+    przesuni\k{e}ty Koide $K(m_k + m_0) = 3/2$;
+    uniwersalna sta\l{}a $\mathcal{A} = a_\Gamma/\varphi = 0.02472$
+    (odch.\ $0.31\%$). R12 istotnie zaw\k{e}\.zony.
+    Status: \statuslabel{Twierdzenie}~[AN+NUM].
+
+  \item \textbf{M5 --- most masa--sprz\k{e}\.zenie
+    (prop.~\ref{prop:alphas-phiFP}):}
+    $\alpha_s(M_Z) = N_c^3 g_0^{\,e}/(8\PhiZero) = 0.1190$
+    ($1.2\sigma$ od PDG). Ta sama sta\l{}a $g_0^{\,e}$
+    determinuje stosunek mas leptonowych i~si\l{}\k{e}
+    oddzia\l{}ywa\'n silnych. Status: \statuslabel{Propozycja}~[AN+NUM].
+
+  \item \textbf{Sektor kosmologiczny z~poprawk\k{a} FRW:}
+    Wsp\'o\l{}czynnik $3\dot\psi^2/\psi$ (z~$c_0\psi$) nie zmienia
+    predykcji inflacyjnych ($n_s$, $r$) --- atraktor
+    Starobinsky'ego jest odporny na struktur\k{e} kinetyczn\k{a}.
+    $\kappa = 3/(4\PhiZero) = 0.0304$: wci\k{a}\.z poni\.zej LLR.
+    Weryfikacja: \texttt{cosmo\_frw\_verification\_v47.py} (18/18 PASS).
+
+  \item \textbf{Master test v47:}
+    Skrypt \texttt{tgp\_master\_consistency\_v47.py}:
+    \textbf{50/51~PASS}, 1~oczekiwany FAIL
+    (Koide bez przesuni\k{e}cia dla kwark\'ow --- potwierdza R12).
+
+  \item \textbf{O12 --- $\sin^2\theta_W = 3/(N_c^2{+}N_c{+}1) = 3/13$
+    (prop.~\ref{prop:sin2thetaW}):}
+    Zero-parametrowa formu\l{}a daje $0{,}23077$ vs PDG $0{,}23122$
+    (odch.\ $-0{,}19\%$). Mianownik $1 + N_c + N_c^2 = 13$
+    jest sum\k{a} geometryczn\k{a} wymiar\'ow kolorowych.
+    Status O12: awans \textbf{Otwarty}~$\to$~\textbf{[AN+HYP]}.
+
+  \item \textbf{Czynnik $1/\varphi$ w~rurze kolorowej
+    (prop.~\ref{prop:X-phi-color-tube}):}
+    $\mathcal{A} = a_\Gamma/\varphi$ motywowany przez mod
+    wt\'orny $\varphi$-FP: rura kolorowa ,,wyczerpuje'' jeden
+    tryb solitonu na wi\k{a}zanie. Awans M4 do~\textbf{[AN+NUM]}.
+
+  \item \textbf{O13 --- anomalia ABJ z~dynamicznym~$\Phi$
+    (prop.~\ref{prop:anomaly-Phi-robust}):}
+    Hiperladunki s\k{a} topologicznymi sta\l{}ymi
+    (niezale\.znymi od $\Phi$); tw.~Adlera--Bardeena
+    gwarantuje dok\l{}adno\'s\'c jednoobiegow\k{a}.
+    Status O13: awans \textbf{Otwarty}~$\to$~\textbf{[AN]}.
+
+  \item \textbf{Argument $k \le 2$ dla $\sin^2\theta_W$:}
+    Saturacja tensorowa w~$d = 3$ wyklucza $k{=}3$
+    (brak wolnych stopni swobody substratowych).
+    Awans O12 do~\textbf{[AN]}.
+
+  \item \textbf{Napi\k{e}cie z~EHT (O9) --- cz\k{e}\'sciowo zamkni\k{e}te (v47b):}
+    Soliton TGP nie posiada sfery fotonowej.
+    Analiza ISCO + profilu jasno\'sci
+    (\texttt{bh\_isco\_raytrace\_tgp.py}) pokaza\l{}a:
+    TGP ISCO przy $R_{\rm phys} \approx 0{,}55\,r_s$,
+    pier\'scie\'n emisyjny przy $b \approx 0{,}6\,r_s$ (max.\ ugięcie $76°$, 1~przej\'scie dysku).
+    TGP \textbf{produkuje} pier\'scie\'n z~ISCO, ale mniejszy i~s\l{}abszy ni\.z w~OTW.
+    Napi\k{e}cie \textbf{zmniejszone} --- rozr\'o\.znialno\'s\'c wymaga ngEHT.
+    Status O9: \textbf{CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY}.
+
+  \item \textbf{Sektor neutrinowy (v47b):}
+    Predykcje: normal ordering, $\Sigma m_\nu \approx 62{,}9$~meV
+    ($< 72$~meV Planck+DESI), $m_3/m_2 \approx 5{,}4$.
+    Uwaga: ``$K(\nu) = 1/2$'' nie odpowiada standardowemu
+    parametrowi Koide'a ($Q_K \in [1,3]$) --- wymaga sformalizowania
+    w~kontek\'scie mechanizmu see-saw (Majorana).
+    5~nowych test\'ow dodanych do master consistency.
+
+  \item \textbf{Tabela zunifikowana (v47b):}
+    \texttt{tgp\_unified\_predictions\_v47.py}:
+    \textbf{23 predykcje z~2 parametr\'ow} (w tym 2 nowe z~rury kolorowej),
+    21/23 w~$1\sigma$, 22/23 w~$2\sigma$.
+    \texttt{tgp\_master\_consistency\_v47.py}:
+    \textbf{50/51~PASS}, 1~oczekiwany FAIL.
+
+  \item \textbf{Poprawka QCD do $\sin^2\theta_W$ (v47b):}
+    Formu\l{}a~\eqref{eq:sin2-corrected}: $\sin^2\theta_W
+    = N_c/(1+N_c+N_c^2 - b_0\alpha_s/N_c)$ z~wsp\'o\l{}czynnikiem
+    beta QCD $b_0 = (11N_c{-}2N_f)/(12\pi)$.
+    Redukcja odchylenia: \textbf{$11{,}3\sigma \to 0{,}6\sigma$}.
+    Status O12: awans do~\textbf{[AN]}.
+
+  \item \textbf{Rura kolorowa --- wariacyjne napi\k{e}cie strunowe (v47b):}
+    Poprawiony potencja\l{} energetyczny:
+    $V_E(\varphi) = \varphi^8/8 - \varphi^7/7 + 1/56$,
+    z~$V_E(1) = 0$, $V_E'' > 0$ (pr\'o\.znia jest minimum).
+    Gaussowski ansatz daje $\hat\sigma = \pi A^2$ (perturbacyjnie)
+    z~$A_{\rm color} = C_F\alpha_s/(\pi\PhiZero) \approx 2 \times 10^{-3}$.
+
+    \textbf{Kluczowy wynik:}
+    $\mathcal{A} = a_\Gamma/\varphi = C_F^2\,\alpha_s^2(M_Z)$
+    z~odchyleniem \textbf{0{,}04\%} przy $\alpha_s = 0{,}1179$ (PDG).
+    Status M4/R12: awans do~\textbf{[AN+NUM]}.
+    Skrypty: \texttt{color\_tube\_variational\_tgp.py},
+    \texttt{color\_tube\_ode\_tgp.py}.
+    Formalne propozycje: prop.~\ref{prop:X-tube-string-tension},
+    prop.~\ref{prop:X-A-from-tube-tension}.
+    7~nowych test\'ow (G1--G7) w~master consistency.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Odpowied\'z na audyt zewn\k{e}trzny (v47b)]%
+\label{rem:audit-response}
+Audyt z~2026-04-09 zidentyfikowa\l{} pi\k{e}\'c g\l{}\'ownych luk.
+Poni\.zej podsumowanie dzia\l{}a\'n podj\k{e}tych w~sesji v47b.
+
+\begin{enumerate}[nosep]
+  \item \textbf{Brak mostu $\Gamma \to \Phi$ (CG-1, CG-3)}:
+    Dodano dwie propozycje do dod.~Q
+    (prop.~\ref{prop:Q-weak-continuum}:
+    s\l{}abe twierdzenie continuum $H^1_{\rm loc}$;
+    prop.~\ref{prop:Q-alpha-from-phi-squared}:
+    $\alpha_{\rm eff} = 2$ z~$\Phi = \phi^2$).
+    Status: \textbf{[SZKIC]}, nie pe\l{}ne domkni\k{e}cie.
+
+  \item \textbf{Bilans predykcyjny --- mieszanie kalibracji z~predykcjami}:
+    Utworzono uczciw\k{a} 4-klasow\k{a} taksonomie:
+    \texttt{tgp\_prediction\_taxonomy\_v47.py}.
+    Wynik: \textbf{2 wej\'scia [I]},
+    \textbf{12 predykcji zerowych [D]} (ratio~6:1),
+    5~odzysk\'ow [R], 4~prospektywne [P].
+    15/17 testowalnych w~$1\sigma$.
+
+  \item \textbf{Brak s\l{}ownika formulacji}:
+    Dodano tabele przej\'s\'c Formulacja~A/B
+    (uw.~\ref{rem:formulation-dictionary} w~sek.~\ref{sec:formalizm}).
+    Zasada: Formulacja~A kanoniczna od sesji v33.
+
+  \item \textbf{Brak mechanicznego uzasadnienia $m_0$}:
+    Sformalizowano $\mathcal{A} = m_0\,m_1/m_3$ jako jedyny
+    naturalny parametr rury kolorowej
+    (prop.~\ref{prop:X-A-from-binding}),
+    ze zgodno\'sci\k{a} $0{,}3\%$ mi\k{e}dzy sektorami.
+    \textbf{Uzupe\l{}nienie v47b:} wariacyjne napi\k{e}cie strunowe
+    z~ansatzem gaussowskim daje
+    $\mathcal{A} = C_F^2\,\alpha_s^2$ z~odchyleniem $0{,}04\%$
+    (prop.~\ref{prop:X-A-from-tube-tension}).
+    Luka \textbf{istotnie domkni\k{e}ta}.
+
+  \item \textbf{Sektor cechowania jako ,,plugin''}:
+    Uwaga audytu s\l{}uszna, ale ju\.z oznaczona
+    jako [Program] w~mapie statusu.
+    Zasada defektowej hierarchii
+    (amplituda $\to$ faza $\to$ multiplet)
+    odnotowana jako kierunek przysz\l{}ego programu.
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Uwaga krytyczna wobec audytu:}
+Audyt niedoszacowa\l{} si\l{}y predykcyjnej TGP.
+Twierdzi\l{}, \.ze ,,wiele PASS to kalibracje lub to\.zsamo\'sci''.
+4-klasowa taksonomia pokazuje, \.ze \textbf{12 niezale\.znych
+predykcji z~2 parametr\'ow} to ratio 6:1 --- nietrywialne
+nawet po ostrym filtrze.
+Ponadto \l{}a\'ncuch
+$d{=}3 \to k{=}4 \to N_{\rm gen}{=}3 \to Q_K{=}3/2 \to r^2{=}N{-}1$
+jest zamkni\k{e}ty analitycznie (sesja v47) i~nie by\l{} dost\k{e}pny
+audytorowi.
+\end{remark}

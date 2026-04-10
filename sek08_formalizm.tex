@@ -385,6 +385,49 @@ Cie\.zka~1 (Koide): standardowy $V_{\rm mod}$ daje $K^*_2/K^*_1 = 3{,}27 \neq R_
 wymaga modyfikacji $V_{\rm mod}$ (cel: skrypt p15).
 \end{result}
 
+% ==============================================================
+% Słownik formalizmu (v47b, odpowiedź na audyt zewnętrzny)
+% ==============================================================
+\begin{remark}[S\l{}ownik formulacji TGP (v47b)]%
+\label{rem:formulation-dictionary}
+W~r\'o\.znych cz\k{e}\'sciach manuskryptu pojawiaj\k{a} si\k{e} dwie
+\textbf{r\'ownowa\.zne formulacje} formalizmu. Poni\.zsza tabela
+stanowi kanoniczny s\l{}ownik przej\'s\'c mi\k{e}dzy nimi.
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{3cm}p{4.5cm}p{4.5cm}@{}}
+\toprule
+\textbf{Wielko\'s\'c} & \textbf{Formulacja~A} (kanoniczna)
+  & \textbf{Formulacja~B} \\
+\midrule
+Kinetyczny czynnik & $K(g) = g^4$ & $f(g) = 1 + 4\ln g$ \\
+Substratowe $g_0^e$ & $\mathbf{0{,}86941}$ & $1{,}24$ \\
+Relacja & $g_0^{(A)} = \exp\!\bigl((g_0^{(B)} - 1)/4\bigr)$ &
+  $g_0^{(B)} = 1 + 4\ln g_0^{(A)}$ \\
+\midrule
+R\'ownanie pola & $\alpha = 2$ (kanoniczne TGP) & to\.zsame \\
+Wyk\l{}adniki & $a = b = \tfrac12$, $g = 1$ & to\.zsame \\
+$\Phi_0$ & $\mathbf{24{,}65}$ (bare, z~$\Lambda_{\rm obs}$) & to\.zsame \\
+$\Phi_{\rm eff}$ & $\Phi_0\,(1+\delta)$ z~p\k{e}tl\k{a} 1-loop
+  & to\.zsame (nie u\.zywane numerycznie) \\
+\midrule
+Element obj\k{e}to\'sci & $\sqrt{-g} = c_0\psi$
+  & to\.zsame (poprawione v47, by\l{}o $\psi^4$) \\
+Metryka & $f = \Phi_0/\Phi$, $h = \Phi/\Phi_0$
+  & to\.zsame \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Zasada:} \textit{Formulacja~A} jest domy\'slna we wszystkich
+nowych wyprowadzeniach (od sesji v33).
+Formulacja~B pojawia si\k{e} wy\l{}\k{a}cznie w~starszych sekcjach
+i~w~przypisach dolnych.
+Wyra\.zenia algebraiczne (Koide, $r_{21}$, $\sin^2\theta_W$)
+s\k{a} niezale\.zne od wyboru formulacji.
+\end{remark}
+
 \begin{remark}[Bifurkacja substratu: $\alpha_{\rm max}$ i~naturalno\'s\'c $\alpha_K$]%
 \label{rem:alpha-max-bifurcation}
 Numeryczna eksploracja p78--p80 ujawni\l{}a, \.ze
@@ -1702,13 +1745,18 @@ Wychodzimy z~dzia\l{}ania~\eqref{eq:action} w~zmiennej
 $\psi = \Phi/\PhiZero$, ale tym razem uwzgl\k{e}dniamy
 \textbf{pe\l{}ne pochodne czasoprzestrzenne}. Metryka
 efektywna~\eqref{eq:metric-exp} do pierwszego rz\k{e}du daje
-$\sqrt{-g_{\mathrm{eff}}} = \psi^4$ oraz lokaln\k{a}
+$\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$%
+\footnote{Poprawiony element obj\k{e}to\'sciowy ---
+  wcze\'sniejsze wersje u\.zywa\l{}y $\psi^4$, co by\l{}o
+  artefaktem przybli\.zonej metryki; pe\l{}ne wyprowadzenie
+  w~sek.~\ref{sec:akcja-zunifikowana}, prop.~\ref{prop:kappa-corrected}.}
+oraz lokaln\k{a}
 pr\k{e}dko\'s\'c propagacji $c(\Phi)^2 = c_0^2\,\PhiZero/\Phi
 = c_0^2/\psi$. Element czasoprzestrzenny w~uk\l{}adzie
 $(t, \mathbf{x})$ wynosi zatem:
 \[
   d^4x\;\sqrt{-g_{\mathrm{eff}}}
-  = c_0\,dt\,d^3x\;\psi^4.
+  = c_0\,dt\,d^3x\;\psi.
 \]
 Cz\l{}on kinetyczny w~dzia\l{}aniu zawiera pe\l{}ny gradient
 czasoprzestrzenny:
@@ -2446,8 +2494,12 @@ W~granicy s\l{}abego pola ($\Phi \approx \PhiZero$):
 $f \approx 1$, odzyskujemy standardowy cz\l{}on kinetyczny.
 Dok\l{}adna posta\'c $f(\Phi)$ na ca\l{}ym zakresie
 $\Phi$ wynika z~dzia\l{}ania~\eqref{eq:action}
-z~miar\k{a} $\sqrt{-g_{\mathrm{eff}}} = \psi^4$,
+z~sprz\k{e}\.zeniem kinetycznym $K(\psi) = \psi^4$,
 co generuje $\alpha = 2$ (wniosek~\ref{cor:alpha-fixed}).
+Poprawiony element obj\k{e}to\'sciowy wynosi
+$\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$
+(sek.~\ref{sec:akcja-zunifikowana}); warto\'s\'c $\alpha=2$
+wynika z~$K(\psi)$, nie z~miary.
 
 \medskip\noindent\textbf{Zakres stosowalno\'sci $f(\Phi)$:}
 Funkcja $f(\Phi) = 1 + 4\ln(\Phi/\PhiZero)$%
@@ -3933,73 +3985,92 @@ kosmologiczn\k{a}.
 W~przestrzeni FRW ze~skalowaniem $a(t)$, dla jednorodnego pola
 $\Phi(t)$ ($\nabla\Phi = 0$), r\'ownanie ruchu wynikaj\k{a}ce
 z~dzia\l{}ania~\eqref{eq:action} z~elementem obj\k{e}to\'sciowym
-$\sqrt{-g_{\mathrm{eff}}} = a^3\,\psi^4$ (gdzie $\psi = \Phi/\PhiZero$)
+$\sqrt{-g_{\mathrm{eff}}} = a^3\,c_0\,\psi$ (gdzie $\psi = \Phi/\PhiZero$)%
+\footnote{Poprawiono z~wcze\'sniejszego $a^3\psi^4$;
+  zob.\ prop.~\ref{prop:kappa-corrected}.}
 i~p\l{}askim cz\l{}onem kinetycznym $\frac{1}{\kappa}(-\frac{1}{2}\dot\psi^2/c_0^2 - U)$
 ma posta\'c:
 \begin{equation}\label{eq:Phi-cosmo-exact}
   \boxed{
-    \ddot\psi + 3H\dot\psi + 2\frac{\dot\psi^2}{\psi}
-    \;=\; c_0^2\biggl[
-      \frac{7\beta}{3}\,\psi^2 - 2\gamma\,\psi^3
-    \biggr]
+    \ddot\psi + 3H\dot\psi + \frac{3\dot\psi^2}{\psi}
+    \;=\; c_0^2\,\frac{V(\psi) + \psi\,V'(\psi)}{\psi^6}
     + S_{\mathrm{src}}(\psi,\rho),
   }
 \end{equation}
-gdzie $S_{\mathrm{src}}$ zawiera sprz\k{e}\.zenie \'zr\'od\l{}owe.
+gdzie $V(\psi) = \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4$
+i~$S_{\mathrm{src}}$ zawiera sprz\k{e}\.zenie \'zr\'od\l{}owe.
+Pe\l{}ne wyprowadzenie z~poprawionej miary $\sqrt{-g}=c_0\psi$
+w~sekcji~\ref{sec:akcja-zunifikowana},
+r.~\eqref{eq:psi-eq-unified}.
+\textbf{Uwaga historyczna:} wcze\'sniejsza wersja
+(z~miar\k{a} $\psi^4$) dawa\l{}a
+$2\dot\psi^2/\psi$ zamiast $3\dot\psi^2/\psi$
+i~uproszczone prawa strony.
 \end{proposition}
 
 \begin{proof}
-Zredukowane dzia\l{}anie dla jednorodnego $\psi(t)$ w~FRW:
+Z~poprawionym elementem obj\k{e}to\'sciowym
+$\sqrt{-g_{\mathrm{eff}}} = a^3 c_0\,\psi$
+i~sprz\k{e}\.zeniem kinetycznym $K(\psi) = \psi^4$,
+zredukowane dzia\l{}anie dla jednorodnego $\psi(t)$ w~FRW
+(pe\l{}ne wyprowadzenie w~sek.~\ref{sec:akcja-zunifikowana},
+r.~\eqref{eq:S-FRW-reduced}) wynosi:
 \[
-  S_{\mathrm{FRW}} = \frac{V_0}{\kappa}\!\int\!dt\;a^3\psi^4\biggl[
-    -\frac{1}{2}\,\frac{\dot\psi^2}{c_0^2}
-    - U(\psi) + \text{\'zr\'od\l{}o}
+  S_{\mathrm{FRW}} = \frac{V_0}{\kappa}\!\int\!dt\;a^3\biggl[
+    -\frac{\psi^6}{2c_0^2}\,\dot\psi^2
+    - \psi\,V(\psi)
+    - \frac{q}{\PhiZero}\,\psi^2\,\rho
   \biggr],
 \]
-gdzie $U(\psi) = \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4$
-(r.~\eqref{eq:U-potential}). R\'ownanie Eulera--Lagrange'a
-$\partial\mathcal{L}/\partial\psi - \frac{d}{dt}(\partial\mathcal{L}/\partial\dot\psi) = 0$
-z~$\mathcal{L} = a^3\psi^4[\ldots]$:
+gdzie $V(\psi) = \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4$
+(r.~\eqref{eq:U-potential}).
+Lagran\.zjan $\mathcal{L} = a^3[\ldots]$; r\'ownanie EL
+$\partial\mathcal{L}/\partial\psi
+- \frac{d}{dt}(\partial\mathcal{L}/\partial\dot\psi) = 0$:
 
 \emph{Pochodna po $\dot\psi$}
-(czynnik $1/\kappa$ jest wsp\'olny i~pomijamy go):
+(czynnik $1/\kappa$ wsp\'olny):
 $\frac{\partial\mathcal{L}}{\partial\dot\psi}
-\propto -\frac{a^3\psi^4\dot\psi}{c_0^2}$.
+= -\frac{a^3\psi^6\dot\psi}{c_0^2}$.
 Pochodna czasowa:
 $\frac{d}{dt}(\cdots)
-\propto -\frac{a^3\psi^4}{c_0^2}
-\bigl[\ddot\psi + 3H\dot\psi + 4\dot\psi^2/\psi\bigr]$.
+= -\frac{a^3\psi^6}{c_0^2}
+\bigl[\ddot\psi + 3H\dot\psi + 6\dot\psi^2/\psi\bigr]$.
 
 \emph{Pochodna po $\psi$}:
 $\frac{\partial\mathcal{L}}{\partial\psi}
-\propto a^3\bigl[
-  -\frac{2\psi^3\dot\psi^2}{c_0^2}
-  - 4\psi^3 U - \psi^4 U'
-  + \text{\'zr.}
+= a^3\bigl[
+  -\frac{3\psi^5\dot\psi^2}{c_0^2}
+  - V - \psi V'
+  - \frac{2q}{\PhiZero}\,\psi\,\rho
 \bigr]$.
 
-Dziel\k{a}c przez $-a^3\psi^3/c_0^2$ i~upraszczaj\k{a}c
-($1/\kappa$ skr\'oci\l{}o si\k{e}):
+Dziel\k{a}c EL przez $a^3\psi^5/c_0^2$ i~upraszczaj\k{a}c
+($6\dot\psi^2/\psi - 3\dot\psi^2/\psi = 3\dot\psi^2/\psi$):
 \[
-  \psi\ddot\psi + 3H\psi\dot\psi + 2\dot\psi^2
-  = c_0^2\psi\,(4U/\psi + U') + \text{\'zr.}
+  \psi\bigl(\ddot\psi + 3H\dot\psi\bigr) + 3\dot\psi^2
+  = c_0^2\,\frac{V + \psi V'}{\psi^5}
+  + \frac{2q\,c_0^2}{\PhiZero}\,\frac{\rho}{\psi^4}.
 \]
-Poniewa\.z $4U/\psi + U'
-= \frac{4\beta}{3}\psi^2 - \gamma\psi^3 + \beta\psi^2 - \gamma\psi^3
-= \frac{7\beta}{3}\psi^2 - 2\gamma\psi^3$,
-po podzieleniu przez $\psi$ otrzymujemy~\eqref{eq:Phi-cosmo-exact}.
-Cz\l{}on $2\dot\psi^2/\psi$ jest odpowiednikiem
-czasowym sprz\k{e}\.zenia gradientowego ($\alpha = 2$)
-ze statycznego r\'ownania pola.
+Po podzieleniu przez $\psi$
+otrzymujemy~\eqref{eq:Phi-cosmo-exact}.
+Cz\l{}on $3\dot\psi^2/\psi$ jest odpowiednikiem
+czasowym sprz\k{e}\.zenia kinetycznego $K(\psi)=\psi^4$
+z~poprawion\k{a} miar\k{a} $c_0\psi$.
 \end{proof}
 
 \begin{remark}[Potencja\l{} kosmologiczny a~statyczny]\label{rem:cosmo-vs-static}
 Efektywny potencja\l{} w~r\'ownaniu kosmologicznym
-$W(\psi) \equiv \frac{7\beta}{3}\psi^2 - 2\gamma\psi^3$
+$W_{\mathrm{eff}}(\psi) \equiv (V + \psi V')/\psi^6$
 \textbf{r\'o\.zni si\k{e}} od statycznego
 $V(\psi)/\PhiZero = \beta\psi^2 - \gamma\psi^3$.
-R\'o\.znica pochodzi od cz\l{}onu $4U/\psi$,
-kt\'ory jest konsekwencj\k{a} sprz\k{e}\.zenia pola $\Phi$
+R\'o\.znica pochodzi od czynnika $\psi V'$ oraz dzielnika $\psi^6$
+(konsekwencja poprawionego sprz\k{e}\.zenia $K(\psi)=\psi^4$
+z~miar\k{a} $c_0\psi$).
+\textbf{Uwaga:} wcze\'sniejsza wersja z~$4U/\psi + U'$
+wynika\l{}a ze starego elementu obj\k{e}to\'sciowego $\psi^4$;
+pe\l{}na korekta w~sek.~\ref{sec:akcja-zunifikowana}.
+R\'o\.znica jest konsekwencj\k{a} sprz\k{e}\.zenia pola $\Phi$
 z~elementem obj\k{e}to\'sciowym $\psi^4$: rozszerzaj\k{a}cy si\k{e}
 Wszech\'swiat \emph{rozrzedza} wygenerowana przestrze\'n, modyfikuj\k{a}c
 efektywny potencja\l{}.
@@ -4985,7 +5056,10 @@ Dziel\k{a}c przez $\psi^3$ i~przechodz\k{a}c do $\Phi = \PhiZero\psi$:
 Jest to dok\l{}adnie r\'ownanie~\eqref{eq:full-field-alt}
 z~\textbf{wygenerowanym} $\alpha = 2$ --- sprz\k{e}\.zenie
 gradientowe nie jest wolnym parametrem, lecz konsekwencj\k{a}
-miary $\sqrt{-g_{\mathrm{eff}}} = \psi^4$.
+sprz\k{e}\.zenia kinetycznego $K(\psi)=\psi^4$
+(element obj\k{e}to\'sciowy zosta\l{} poprawiony na
+$\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$;
+zob.\ sek.~\ref{sec:akcja-zunifikowana}).
 \end{proof}
 
 \begin{corollary}[Redukcja liczby wolnych parametr\'ow]\label{cor:alpha-fixed}
@@ -5143,7 +5217,11 @@ Poni\.zej zamykamy t\k{e} argumentacj\k{e} twierdzeniem opartym
 \begin{theorem}[Niestabilno\'s\'c $\Phi = 0$
   z~dzia\l{}ania TGP]\label{thm:N0-action-instability}
 Niech dzia\l{}anie TGP ma posta\'c~\eqref{eq:action}
-z~miar\k{a} $\sqrt{-g_{\mathrm{eff}}} = \psi^4$,
+z~miar\k{a} $\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$%
+\footnote{Twierdzenie zachowuje wa\.zno\'s\'c przy poprawionej mierze ---
+  degeneracja w~$\Phi=0$ i~brak bariery wynikaj\k{a}
+  z~czynnika $\psi^4$ w~sprz\k{e}\.zeniu kinetycznym $K(\psi)$,
+  nie z~elementu obj\k{e}to\'sciowego.},
 $\psi = \Phi/\PhiZero > 0$.
 Definiujemy funkcjona\l{} energii statycznej:
 \begin{equation}\label{eq:E-static}

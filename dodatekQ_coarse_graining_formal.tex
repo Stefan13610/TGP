@@ -228,6 +228,74 @@ jako zbieżność operatora blokowania $\mathcal{T}_b$ do punktu stałego $S^*$.
 Trzy argumenty (ERG, de Giorgi, homogenizacja) wspierają zbieżność,
 ale żaden z nich nie stanowi pełnego dowodu w kontekście TGP.
 Zamknięcie CG-2 (numeryczne LPA') jest celem najbliższym dostępnemu
-numerycznie. Pełny dowód analityczny to zadanie na 6–12 miesięcy.
+numerycznie. Pe\l{}ny dow\'od analityczny to zadanie na 6--12 miesi\k{e}cy.
 }}
 \end{center}
+
+% ==============================================================
+% Q.7 Propozycje domknięcia continuum (v47b)
+% ==============================================================
+\subsection*{Q.7 Propozycje domkni\k{e}cia continuum (v47b)}
+\label{ssec:Q-continuum-proposals}
+
+Poni\.zsze dwie propozycje s\k{a} \textbf{kandydatami na formalne mosty},
+nie pe\l{}nymi twierdzeniami. Oznaczone jako \statuslabel{Szkic}.
+
+\begin{proposition}[S\l{}abe twierdzenie continuum]%
+\label{prop:Q-weak-continuum}
+\textbf{Status: \statuslabel{Szkic}.}
+Niech $\Phi_B(x) = N_B^{-1}\sum_{i \in B(x)} \phi_i^2$
+b\k{e}dzie polem blokowym na substracie $\Gamma$
+z~lokalnym hamiltonianem i~d\l{}ugo\'sci\k{a} korelacji $\xi_{\rm corr}$.
+Je\.zeli:
+\begin{enumerate}[nosep]
+  \item $\sup_B \|\Phi_B\|_{L^2(K)} < \infty$ dla ka\.zdego
+    zwartego~$K$,
+  \item sektor gradientowy energii swobodnej spe\l{}nia
+    $F_B[\Phi_B] \ge c_* \|\nabla\Phi_B\|^2_{L^2(K)} - C_K$
+    z~$c_* > 0$,
+  \item korelacje dwupunktowe malej\k{a} szybciej ni\.z
+    $\exp(-r/\xi_{\rm corr})$,
+\end{enumerate}
+to rodzina $\{\Phi_B\}$ jest prezwarta s\l{}abo w~$H^1_{\rm loc}$
+i~mocno w~$L^2_{\rm loc}$ (twierdzenie Rellicha--Kondrachova).
+Punkty skupienia spe\l{}niaj\k{a} r\'ownanie Eulera--Lagrange'a
+pewnego lokalnego funkcjona\l{}u efektywnego.
+
+\medskip\noindent
+\textit{Znaczenie}: zast\k{e}puje niedost\k{e}pny pe\l{}ny dow\'od
+(CG-1 Banacha) s\l{}abszym, ale publikowalnym rezultatem
+o~istnieniu granicy ci\k{a}g\l{}ej podsekwencji.
+Najtrudniejszy punkt techniczny to uzasadnienie
+dodatnio\'sci efektywnej sztywno\'sci po blokowaniu.
+\end{proposition}
+
+\begin{proposition}[$\alpha_{\rm eff} = 2$ z~przej\'scia
+  $\phi \to \Phi = \phi^2$]%
+\label{prop:Q-alpha-from-phi-squared}
+\textbf{Status: \statuslabel{Propozycja}.}
+Je\.zeli $\Phi = \phi^2$ z~$\phi > 0$, to:
+\begin{align}
+  \nabla\Phi &= 2\phi\,\nabla\phi, &
+  (\nabla\Phi)^2 &= 4\Phi\,(\nabla\phi)^2, &
+  (\nabla\phi)^2 &= \frac{(\nabla\Phi)^2}{4\Phi}.
+\end{align}
+Ka\.zdy regularny cz\l{}on gradientowy dla amplitudy,
+\[
+  \int Z(\phi)\,(\nabla\phi)^2\,d^3x,
+\]
+po zapisaniu w~zmiennej $\Phi$ przyjmuje posta\'c
+\[
+  \int \frac{Z(\sqrt{\Phi})}{4\Phi}\,(\nabla\Phi)^2\,d^3x.
+\]
+Je\.zeli $Z(\phi) \sim \phi^2$ (co sugeruje struktura substratowa),
+to $Z(\sqrt{\Phi})/\Phi = \mathrm{const} + O(\Phi - \Phi_0)$,
+a~wariacja generuje dok\l{}adnie cz\l{}on $(\nabla\Phi)^2/\Phi$,
+czyli \textbf{$\alpha_{\rm eff} = 2$}.
+
+\medskip\noindent
+\textit{Wniosek}: $\alpha = 2$ w~r\'ownaniu pola TGP
+\textbf{nie jest dowolnym wsp\'o\l{}czynnikiem}, lecz
+algebraiczn\k{a} konsekwencj\k{a} przej\'scia od amplitudy
+do jej kwadratu. To mocno wspiera naturalnie\'s\'c r\'ownania pola.
+\end{proposition}

@@ -888,3 +888,63 @@ Struny & Fuzzball (brak horyzontu) \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\begin{remark}[Cie\'n czarnej dziury --- napi\k{e}cie z~EHT (v47)]%
+\label{rem:BH-shadow-tension}
+Metryka solitonowa TGP ($\psi(r) = (1 + 3r_s/r)^{1/3}$)
+prowadzi do $h(r) = r\psi(r)$ \'sci\'sle rosn\k{a}cego
+($h'(r) > 0$ dla wszystkich $r > 0$), co oznacza
+\textbf{brak sfery fotonowej}.
+W~OTW sfera fotonowa ($R = 3M$) odpowiada za ostry
+cie\'n obserwowany przez Event Horizon Telescope (EHT):
+$R_{\rm ring} = \sqrt{27}\,M = 5{,}2\,M$ (M87*: $42 \pm 3\;\mu$as).
+
+\textbf{Predykcja TGP:}
+Brak sfery fotonowej --- fotony nie s\k{a} wychwytywane,
+maksymalne odchylenie wynosi $\lesssim 90°$.
+Oznacza to \textbf{brak ostrej kraw\k{e}dzi cienia},
+zast\k{a}pion\k{a} stopniowym zaciemnieniem.
+
+\textbf{Napi\k{e}cie:} EHT obserwuje struktur\k{e} pier\'scieniow\k{a}
+sp\'ojn\k{a} z~OTW. Potencjalne rozwi\k{a}zania:
+\begin{enumerate}[nosep]
+  \item Profil emisji dysku akrecyjnego mo\.ze generowa\'c
+    pier\'scie\'n nawet bez sfery fotonowej (dominacja emisji
+    przy ISCO, nie przy $R_{\rm ph}$).
+  \item Profil solitonowy $\psi = (1 + 3r_s/r)^{1/3}$ jest
+    \textbf{przybli\.zeniem s\l{}abego sprz\k{e}\.zenia}
+    --- pe\l{}ne rozwi\k{a}zanie z~potencja\l{}em $V_{\rm mod}$
+    i~poprawkami $\lambda$-szóstego rz\k{e}du mo\.ze
+    modyfikowa\'c profil w~silnym polu.
+  \item Bie\.z\k{a}ca rozdzielczo\'s\'c EHT ($\sim 20\;\mu$as)
+    mo\.ze nie rozr\'o\.znia\'c ostrej vs g\l{}adkiej kraw\k{e}dzi.
+\end{enumerate}
+\textbf{Status O9:} CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY (v47b).
+
+Analiza ISCO + profilu jasno\'sci dysku
+(\texttt{bh\_isco\_raytrace\_tgp.py}) pokazuje:
+\begin{itemize}[nosep]
+  \item \textbf{TGP ISCO:} $r_{\rm ISCO} \approx 0{,}23\,r_s$
+    ($R_{\rm phys} = r\psi \approx 0{,}55\,r_s$),
+    vs.\ OTW: $R_{\rm ISCO} = 3\,r_s$.
+  \item \textbf{Pier\'scie\'n emisyjny:}
+    TGP generuje szczyt jasno\'sci przy
+    $b_{\rm peak} \approx 0{,}6\,r_s$ z~FWHM $\approx 0{,}44\,r_s$.
+    OTW: $b_{\rm peak} \approx 5{-}6\,M$.
+  \item \textbf{Transfer function:}
+    Max.\ ugięcie $\sim 76°$ --- \.zaden foton nie okr\k{a}\.za
+    solitonu, \textbf{1 przej\'scie} przez p\l{}aszczyzn\k{e}
+    dysku (brak obraz\'ow wt\'ornych).
+\end{itemize}
+
+\textbf{Wniosek:} TGP \textbf{produkuje} struktur\k{e}
+pier\'scieniow\k{a} z~ISCO, ale znacznie mniejsz\k{a}
+i~s\l{}absz\k{a} ni\.z w~OTW.
+Rozr\'o\.znialno\'s\'c wymaga bazy kosmicznej (ngEHT).
+Napi\k{e}cie \textbf{zmniejszone} ale \textbf{nie wyeliminowane}
+--- dalsze prace:
+dok\l{}adny ray-tracing z~pe\l{}nym profilem emisji
+oraz efektami Dopplera rotacji dysku.
+Weryfikacja: \texttt{bh\_shadow\_tgp\_vs\_gr.py},
+\texttt{bh\_isco\_raytrace\_tgp.py}.
+\end{remark}

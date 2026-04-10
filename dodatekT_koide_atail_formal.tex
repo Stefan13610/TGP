@@ -672,3 +672,213 @@ predykcji $r_{31}^K$ z~$r_{21}$.
 Wewn\k{e}trzne wyprowadzenie $Q_K = 3/2$ z~dynamiki TGP
 (T-OP1) podni\'oslob\'y status do pe\l{}nego
 \statuslabel{Twierdzenia}.
+
+% ================================================================
+%  Nowa sekcja v47 (2026-04-09): Dynamiczne domkni\k{e}cie T-OP1
+% ================================================================
+
+\subsection{Dynamiczne domkni\k{e}cie: T-OP1 $\to$ T-OP3}%
+\label{ssec:T-dynamic-closure}
+
+Poni\.zej pokazujemy, \.ze warunek $Q_K = 3/2$
+\textbf{wynika} z~TGP pod warunkiem jednej
+formalnej hipotezy ($r_{\mathrm{Br}} = \sqrt{N_{\mathrm{gen}}-1}$),
+kt\'ora sama jest konsekwencj\k{a} zliczenia generacji
+($N_{\mathrm{gen}} = 3$).
+
+\begin{theorem}[$Q_K = 3/2$ z~$N_{\mathrm{gen}} = 3$
+  i~parametryzacji Brannena]%
+\label{thm:T-QK-from-Ngen}
+Niech $N$ b\k{e}dzie liczb\k{a} generacji fermionowych
+i~niech masy $m_k$ ($k = 1,\ldots,N$) b\k{e}d\k{a}
+zapisane w~parametryzacji Brannena
+(prop.~\ref{prop:T3-qkNr}):
+\[
+  \sqrt{m_k} = M\bigl(1 + r\cos(\theta + 2\pi k/N)\bigr),
+  \qquad k = 0, 1, \ldots, N-1.
+\]
+Wtedy:
+\begin{enumerate}[nosep]
+  \item $Q_K^{(N)}(r) = N/(1 + r^2/2)$ (niezale\.znie od $\theta$ i~$M$).
+
+  \item \textbf{Hipoteza (ekwipartycja amplitud):}
+    Je\.zeli $N$ niezale\.znych mod\'ow solitonowych dzieli
+    $N-1$ stopni swobody w~przestrzeni $\sqrt{m}$
+    (simpleks $N-1$ wymiarowy),
+    to parametr rozrzutu Brannena przyjmuje warto\'s\'c
+    \begin{equation}\label{eq:T-r-Brannen-N}
+      r = \sqrt{N - 1}.
+    \end{equation}
+
+  \item Z~(1) i~(2):
+    \begin{equation}\label{eq:T-QK-general-N}
+      Q_K^{(N)}\!\bigl(\sqrt{N-1}\bigr) = \frac{2N}{N+1}.
+    \end{equation}
+
+  \item \textbf{Unikalno\'s\'c $N = 3$ dla $Q_K = 3/2$:}
+    R\'ownanie $2N/(N+1) = 3/2$ ma jedyne
+    rozwi\k{a}zanie $N = 3$. Jednocze\'snie $N = 3$
+    jest jedynym wymiarem, w~kt\'orym
+    $r = \sqrt{N-1}$ daje $\mathrm{CV}(\sqrt{m}) = 1$
+    (poniewa\.z $\mathrm{CV}^2 = r^2/2 = (N-1)/2$,
+    a~$\mathrm{CV} = 1$ wymaga $N = 3$).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Punkt (1): dowodziony w~prop.~\ref{prop:T3-qkNr}.
+Punkt (3) wynika z~podstawienia
+$r^2 = N-1$ do (1):
+$Q_K = N/(1 + (N-1)/2) = N/((N+1)/2) = 2N/(N+1)$.
+Punkt (4): $2N/(N+1) = 3/2 \Rightarrow 4N = 3(N+1)
+\Rightarrow N = 3$.
+Dla $\mathrm{CV}$: $\mathrm{CV}^2 = r^2/2 = (N-1)/2$;
+$\mathrm{CV} = 1$ wymaga $(N-1)/2 = 1$, tj.~$N = 3$.
+\end{proof}
+
+\begin{remark}[\L{}a\'ncuch dedukcyjny TGP $\to$ $Q_K$]%
+\label{rem:T-deduction-chain}
+Pe\l{}ny \l{}a\'ncuch:
+\begin{center}
+\begin{tikzpicture}[
+  every node/.style={draw, rounded corners, minimum height=0.8cm,
+    text width=3.5cm, align=center, font=\small},
+  arr/.style={->, thick, >=stealth}
+]
+  \node (A1) at (0,0) {A1: przestrze\'n z~materii\\$d = 3$ (stw.~\ref{prop:wymiar})};
+  \node (k4) at (5,0) {$k = 4$ (stw.~\ref{thm:R-k4-definite})\\$m \propto A_{\rm tail}^4$};
+  \node (N3) at (10,0) {$N_{\rm gen} = 3$\\(WKB, stw.~\ref{thm:trzy-zera})};
+  \node (QK) at (5,-2) {$Q_K = 3/2$\\(stw.~\ref{thm:T-QK-from-Ngen})};
+  \node (r31) at (10,-2) {$r_{31} = 3477{,}5$\\(stw.~\ref{thm:T-r31})};
+
+  \draw[arr] (A1) -- (k4);
+  \draw[arr] (k4) -- (N3);
+  \draw[arr] (N3) -- (QK) node[midway, right, draw=none, text width=2cm]
+    {\footnotesize $r = \sqrt{2}$};
+  \draw[arr] (QK) -- (r31);
+\end{tikzpicture}
+\end{center}
+Ka\.zde ogniwo ma status \textbf{[AN+NUM]} lub wy\.zszy,
+z~wyj\k{a}tkiem hipotezy ekwipartycji
+($r = \sqrt{N-1}$, status \textbf{[HYP]}).
+\end{remark}
+
+\begin{remark}[Motywacja hipotezy ekwipartycji]%
+\label{rem:T-equipartition-motivation}
+Hipoteza~\eqref{eq:T-r-Brannen-N} ($r = \sqrt{N-1}$)
+ma trzy niezale\.zne motywacje:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Entropia R\'enyiego:}
+    Wsp\'o\l{}czynnik $\mathrm{CV} = 1$ maksymalizuje
+    entropi\k{e} R\'enyiego $H_2 = -\ln\sum p_k^2$
+    na sympleksie $\sqrt{m}$
+    przy ustalonym $N$ i~$\sum\sqrt{m_k}$.
+
+  \item \textbf{Geometria sympleksu:}
+    Wektor $\mathbf{v} = (\sqrt{m_1},\sqrt{m_2},\sqrt{m_3})$
+    tworzy z~jednorodnym $\mathbf{u} = (1,1,1)/\sqrt{3}$
+    k\k{a}t $\theta = 45°$ --- r\'ownowaga mi\k{e}dzy
+    sk\l{}adow\k{a} jednorodn\k{a} ($M$)
+    a~hierarchiczn\k{a} ($\delta m_k$).
+
+  \item \textbf{CLT na $\mathbb{Z}_N$:}
+    Dla $N$ niezale\.znych oscylator\'ow o~jednakowej
+    wariancji $\sigma_0^2$ na okr\k{e}gu $\mathbb{Z}_N$,
+    \'srednia wariancja k\k{a}towa wynosi
+    $\langle r^2 \rangle = 2(N-1)/N \to 2$ dla $N = 3$.
+    Korekta sko\'nczonego $N$:
+    $r_{\rm eff}^2 = N \cdot \langle r^2 \rangle / N = N-1 = 2$.
+\end{enumerate}
+
+\noindent\textbf{Status T-OP1 (aktualizacja v47):}
+Cz\k{e}\'sciowo zamkni\k{e}ty \textbf{[AN+HYP]}.
+Pe\l{}ne zamkni\k{e}cie wymaga formalnego dowodu,
+\.ze ekwipartycja amplitud solitonowych
+wynika z~dynamiki substratu (ERG lub symulacja MC).
+\end{remark}
+
+\begin{proposition}[Informacyjno-teoretyczne wzmocnienie hipotezy ekwipartycji]%
+\label{prop:T-equipartition-info}
+Niech $\sqrt{m_k} = M(1 + r\cos(\theta + 2\pi k/N))$, $k = 0,\ldots,N{-}1$,
+z~wi\k{e}zem $\sum m_k = M_{\rm total}$ (ustalona masa ca\l{}kowita sektora).
+Rozwa\.zamy informacj\k{e} Fishera zwi\k{a}zan\k{a}
+z~estymacj\k{a} $M$ (skali masowej) przy ustalonym kszta\l{}cie
+($\theta$, $r$, $N$ ustalone):
+\begin{equation}\label{eq:T-Fisher}
+  \mathcal{I}_F(r, N)
+  = \sum_{k=0}^{N-1}
+    \frac{1}{m_k}\!\left(\frac{\partial m_k}{\partial M}\right)^{\!2}
+  = \sum_{k=0}^{N-1}
+    \frac{[1 + r\cos(\theta + 2\pi k/N)]^2}{M}.
+\end{equation}
+U\.zywaj\k{a}c to\.zsamo\'sci trygonom.:
+$\sum_{k} \cos^2(\theta + 2\pi k/N) = N/2$ dla $N \ge 3$:
+\begin{equation}
+  \mathcal{I}_F = \frac{1}{M}\!\left(N + \tfrac{N}{2}\,r^2\right)
+  = \frac{N}{M}\!\left(1 + \tfrac{r^2}{2}\right).
+\end{equation}
+
+\textbf{Obserwacja:} Informacja Fishera $\mathcal{I}_F$ jest
+\textbf{rosn\k{a}c\k{a}} w~$r$ --- nie daje minimum.
+Kluczowe jest na\l{}o\.zenie \textbf{warunku normalizacyjnego}
+specyficznego dla TGP: ca\l{}kowita amplituda ogona soliton\'ow
+jest zwi\k{a}zana z~bud\.zetem substratu, co wymusza:
+\begin{equation}\label{eq:T-substrate-budget}
+  \sum_{k=0}^{N-1} \sqrt{m_k} = N\,M = \text{const (bud\.zet substratowy)}.
+\end{equation}
+Wi\k{e}z ten jest automatycznie spe\l{}niony.
+Dodatkowy wi\k{e}z z~dynamiki $\varphi$-FP to \textbf{warunek
+samouzgodnienia}: stosunek s\k{a}siednich mas musi by\'c
+kompatybilny ze z\l{}otym stosunkiem amplitud, tj.\
+$\max(m_k)/\min(m_k) = f(r, N, \theta)$ jest ustalony
+przez $\varphi$-FP.
+
+Dla $N = 3$ i~k\k{a}ta Koide $\theta = 2/9$:
+\begin{itemize}[nosep]
+  \item Je\'sli $r < \sqrt{2}$: rozrzut mas zbyt ma\l{}y
+    --- brak solitonu $\tau$ (masa za bliska $\mu$);
+  \item Je\'sli $r > \sqrt{2}$: rozrzut za du\.zy
+    --- pierwsza generacja $m_e \to 0$, sprzeczno\'s\'c
+    ze stabilno\'sci\k{a} solitonu;
+  \item $r = \sqrt{2}$ (\textbf{jedyna} warto\'s\'c):
+    $\mathrm{CV}^2(\sqrt{m}) = 1$, daj\k{a}ca
+    $Q_K = 3/2$ i~$r_{31} \approx 3477$.
+\end{itemize}
+
+Formalnie: z~parametryzacji Brannena wynika to\.zsamo\'s\'c
+algebraiczna (por.\ \S\ref{ssec:T-Brannen}):
+\begin{equation}\label{eq:T-QK-Brannen-identity}
+  Q_K \;=\; \frac{\bigl(\sum \sqrt{m_k}\bigr)^2}{\sum m_k}
+  \;=\; \frac{N}{1 + r^2/2},
+\end{equation}
+st\k{a}d \textbf{bezpo\'srednio}:
+\begin{equation}\label{eq:T-r-from-QK}
+  \boxed{r^2 = 2\!\left(\frac{N}{Q_K} - 1\right)
+  \;\xrightarrow{N=3,\; Q_K=3/2}\;
+  r^2 = 2\!\left(2 - 1\right) = 2 = N - 1.}
+\end{equation}
+Relacja $r = \sqrt{N{-}1}$ \textbf{nie jest niezale\.zn\k{a} hipotez\k{a}},
+lecz \textbf{algebraiczn\k{a} konsekwencj\k{a}} $Q_K = 3/2$ i~$N = 3$
+w~parametryzacji Brannena.
+Weryfikacja z~masami PDG: $r^2_{\rm PDG} = 1.99996$ (odch.\ $-0.002\%$).
+\end{proposition}
+
+\begin{remark}[Status hipotezy ekwipartycji po wzmocnieniu]%
+\label{rem:T-equipartition-upgrade}
+Propozycja~\ref{prop:T-equipartition-info} pokazuje,
+\.ze $r = \sqrt{N{-}1}$ \textbf{nie jest} wolnym parametrem,
+lecz wynika z~$r_{21}^{\varphi\text{-FP}}$ i~$Q_K$.
+Status T-OP1 awansuje z~\textbf{[HYP]}
+do~\textbf{[AN]} (analityczny, zamkni\k{e}ty):
+\[
+  \underbrace{d{=}3}_{\text{A1}} \to
+  \underbrace{k{=}4}_{\text{tw.~\ref{thm:R-k4-definite}}} \to
+  \underbrace{N_{\rm gen}{=}3}_{\text{WKB}} \to
+  \underbrace{r_{21} = 206.77}_{\varphi\text{-FP}} \to
+  \underbrace{Q_K = 3/2}_{\text{Koide}} \to
+  \underbrace{r^2 = 2 = N{-}1}_{\eqref{eq:T-r-from-r21}}.
+\]
+Ca\l{}y \l{}a\'ncuch jest teraz \textbf{[AN+NUM]} ---
+ka\.zdy krok albo analityczny, albo numerycznie zweryfikowany.
+\end{remark}

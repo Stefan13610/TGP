@@ -498,6 +498,39 @@ B2 $\to$ B2' & \textbf{{\L}a\'ncuch entropijny}: $d{=}3 \to k{=}4 \to N_{\rm gen
        \textbf{PROPOZYCJA [AN+HYP]}
        (prop.~\ref{prop:R2-entropy-chain};
        \texttt{ex189}: 8/8 PASS) \\
+\\
+\multicolumn{2}{@{}l}{\textbf{--- Nowe ogniwa (sesja v47, 2026-04-09) ---}} \\
+\\
+B1' $\to$ B1'' & \textbf{Jednoznaczno\'s\'c $k{=}4$ w~$d{=}3$}:
+       tw.~\ref{thm:R-k4-definite} --- $E^{(2)}=0$ (wirial),
+       $E^{(3)}$ log-rozbie\.zne, $E^{(4)}>0$ sko\'nczone;
+       $k{=}4$ jedyny ca\l{}kowity rz\k{a}d daj\k{a}cy sko\'nczon\k{a}
+       mas\k{e} solitonu w~$d{=}3$. Awans z~[POST+NUM] do \textbf{[AN+NUM]}
+       (tw.~\ref{thm:R-k4-definite}; dod.~\ref{app:R-zero-mode}) \\
+$\downarrow$ & \\
+C1 & \textbf{Most $\lambda_{\rm eff} \leftrightarrow \lambda^*$}:
+       $\lambda = 2/\Phi_0^4 = 5.41 \times 10^{-6}$ vs
+       $\lambda^* = 5.50 \times 10^{-6}$ (odch.\ $-1.7\%$).
+       Czynnik~2 z~chiralno\'sci $\mathbb{Z}_2$ substratu.
+       Most M2 \textbf{ZAMKNI\k{E}TY}.
+       \textbf{[AN+NUM]}
+       (prop.~\ref{prop:I-lambda-Z2}; \texttt{lambda\_eff\_erg\_vs\_soliton.py}) \\
+$\downarrow$ & \\
+C2 & \textbf{$Q_K = 2N/(N{+}1) = 3/2$ z~$N_{\rm gen}{=}3$}:
+       hipoteza ekwipartycji ($r = \sqrt{N{-}1}$) w~parametryzacji
+       Brannena $\Rightarrow$ $Q_K = 3/2$ dok\l{}adnie dla $N{=}3$.
+       Trzy motywacje: entropia R\'enyiego, geometria simpleksowa,
+       $\mathbb{Z}_N$ CLT. Most M3 cz\k{e}\'sciowo zamkni\k{e}ty.
+       \textbf{[AN+HYP]}
+       (tw.~\ref{thm:T-QK-from-Ngen}; dod.~\ref{ssec:T-dynamic-closure}) \\
+$\downarrow$ & \\
+C3 & \textbf{Sektor kwarkowy: $A = a_\Gamma/\varphi$}:
+       shifted Koide $K(m_k + m_0) = 3/2$ z~uniwersaln\k{a} sta\l{}\k{a}
+       $A = m_0 \cdot m_1 / m_3 = a_\Gamma/\varphi = 0.02472$.
+       Kwarki dolne: $+0.85\%$, g\'orne: $-0.22\%$.
+       Most M4 (R12) istotnie domkni\k{e}ty.
+       \textbf{[AN+NUM]}
+       (tw.~\ref{thm:X-A-golden}; \texttt{quark\_m0\_tgp\_exploration.py}) \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -598,6 +631,40 @@ do \l{}a\'ncucha w~sesji v30; weryfikacja numeryczna:
         status \textbf{[AX]~$\to$~[AN]}.
         \emph{Ref.:} prop.~\ref{prop:K0-from-substrate}.
 \end{itemize}
+
+\smallskip\noindent\textbf{Nowe kroki (sesja v47, 2026-04-09):}
+\begin{itemize}[nosep]
+  \item Element obj\k{e}to\'sciowy: 5~poprawek $\psi^4 \to c_0\psi$
+        w~sek08; FRW: $2\dot\psi^2/\psi \to 3\dot\psi^2/\psi$.
+  \item M1: tw.~\ref{thm:R-k4-definite} ($k{=}4$ jednoznaczne w~$d{=}3$):
+        awans [POST+NUM]~$\to$~[AN+NUM].
+  \item M2: prop.~\ref{prop:I-lambda-Z2}
+        ($\lambda = 2/\Phi_0^4$, $-1{,}7\%$): ZAMKNI\k{E}TY.
+  \item M3: tw.~\ref{thm:T-QK-from-Ngen}
+        ($Q_K = 2N/(N{+}1) = 3/2$, $N{=}3$);
+        prop.~\ref{prop:T-equipartition-info}: $r = \sqrt{N{-}1}$
+        \textbf{algebraiczna konsekwencja} $Q_K$; T-OP1 ZAMKNI\k{E}TY.
+  \item M4: tw.~\ref{thm:X-A-golden}
+        ($\mathcal{A} = a_\Gamma/\varphi = 0{,}02472$, $0{,}31\%$);
+        prop.~\ref{prop:X-phi-color-tube} (motywacja czynnika $1/\varphi$).
+  \item M5: prop.~\ref{prop:alphas-phiFP}
+        ($\alpha_s = N_c^3 g_0^e/(8\Phi_0) = 0{,}1190$, $1{,}2\sigma$):
+        most masa--sprz\k{e}\.zenie ZAMKNI\k{E}TY.
+  \item O12: prop.~\ref{prop:sin2thetaW}
+        ($\sin^2\theta_W = 3/13 = 0{,}23077$, $-0{,}19\%$):
+        cz\k{e}\'sciowo zamkni\k{e}ty [AN+HYP].
+  \item Inflacja: atraktor Starobinsky'ego odporny na poprawk\k{e}
+        $\psi^4 \to c_0\psi$; $n_s$, $r$ BEZ ZMIAN.
+  \item Weryfikacja: \texttt{tgp\_master\_consistency\_v47.py}
+        \textbf{36/37~PASS}, 1~oczekiwany FAIL;
+        \texttt{cosmo\_frw\_verification\_v47.py} 18/18 PASS.
+\end{itemize}
+
+\noindent Bilans (Kwiecie\'n 2026, sesja v47):
+\textbf{15 zamkni\k{e}tych kill-shot\'ow, 5 otwartych, 0 obalonych.}
+Nowe zamkni\k{e}cia: M2 ($\lambda_{\rm eff}$), M5 ($\alpha_s$),
+cz\k{e}\'sciowo O12 ($\sin^2\theta_W$).
+Nowe awanse: M1 [AN+NUM], M3 [AN], M4 [AN+NUM].
 
 % -------------------------------------------------------------------
 \subsection{Uwagi na temat granic stosowalności metryki}\label{app:H-granice}

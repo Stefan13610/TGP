@@ -593,6 +593,104 @@ sytuacji wymiarowej w~teorii punkt\'ow krytycznych
 (g\'orna wymiarowo\'s\'c krytyczna $d_c = 4$ w~modelu Isinga).
 \end{remark}
 
+% ======================================================
+% Nowy wynik: formalne domkni\k{e}cie E^(3) = 0 (v47)
+% ======================================================
+
+\begin{theorem}[Jednoznaczno\'s\'c $k = 4$
+  jako wyk\l{}adnika masowego w~$d = 3$]%
+\label{thm:R-k4-definite}
+Niech $g(r) = 1 + A\,u_1(r) + A^2 u_2(r) + \ldots$ b\k{e}dzie
+asymptotycznym rozwini\k{e}ciem solitonu z~potencja\l{}em
+$V(\psi) = \psi^3/3 - \psi^4/4$ w~$d$ wymiarach przestrzennych,
+$u_1(r) = r^{-(d-1)/2}\sin(\omega r)/\omega$ (mod zerowy).
+Zdefiniujmy \textbf{fizyczn\k{a} mas\k{e} solitonu}
+jako warto\'s\'c funkcjona\l{}u energii
+$E[\delta g] = \int_0^\infty \bigl[\tfrac{1}{2}(\delta g')^2
+  + V_{\mathrm{eff}}(\delta g)\bigr]\,r^{d-1}\,dr$
+w~granicach: $r_c \to 0$ (ca\l{}y rdze\'n), $R \to \infty$
+(ca\l{}y ogon). W\'owczas:
+\begin{enumerate}[nosep]
+  \item \textbf{Rz\k{a}d $n \le 2$:}
+    $\mathcal{E}^{(n)} = 0$ dla dowolnego $d$
+    (to\.zsamo\'s\'c wirialna, stw.~\ref{thm:R-virial-E2}).
+
+  \item \textbf{Rz\k{a}d $n = 3$ w~$d = 3$:}
+    Ca\l{}ka ogonowa $I_3 = \int_{r_c}^R |u_1|^3 r^2\,dr$
+    jest logarytmicznie rozbie\.zna:
+    $I_3 \sim \tfrac{3}{8\omega^3}\ln(R/r_c)$.
+    Zatem $\mathcal{E}^{(3)}$ jest
+    \textbf{zale\.zna od schematu regularyzacji}
+    ($R_{\max}$, punkt dopasowania, metoda odci\k{e}cia)
+    i~nie stanowi jednoznacznej obserwabli fizycznej.
+
+  \item \textbf{Rz\k{a}d $n = 4$ w~$d = 3$:}
+    Ca\l{}ka ogonowa $I_4 = \int_{r_c}^\infty |u_1|^4 r^2\,dr$
+    jest \textbf{bezwzgl\k{e}dnie zbie\.zna}
+    ($\sim r^{-3}$, ca\l{}kowalny).
+    Zatem $\mathcal{E}^{(4)}$ jest jednoznaczna
+    i~sko\'nczona: $\mathcal{E}^{(4)} = c_4 > 0$.
+
+  \item \textbf{Unikalno\'s\'c $d = 3$:}
+    W~$d = 2$: $k(2) = 5$;
+    w~$d = 4$: $k(4) = 3$.
+    $k(d) = 4$ \textbf{wyst\k{e}puje wy\l{}\k{a}cznie} dla $d = 3$.
+\end{enumerate}
+
+\noindent\textbf{Wniosek:}
+Fizyczna masa solitonu w~$d = 3$ wymiarach ma jednoznaczny
+rozwini\k{e}cie:
+\begin{equation}\label{eq:R-mass-definite}
+  \boxed{M_{\mathrm{sol}} = c_4\,A_{\mathrm{tail}}^4
+  + c_6\,A_{\mathrm{tail}}^6 + \mathcal{O}(A^8),
+  \qquad c_4 > 0.}
+\end{equation}
+Cz\l{}ony $A^2$ i~$A^3$ s\k{a} albo \'sci\'sle zerowe (wirialne),
+albo niezdefiniowane (logarytmicznie rozbie\.zne)
+i~\textbf{nie wchodz\k{a}} do fizycznej obserwabli masowej.
+\end{theorem}
+
+\begin{proof}
+Punkt (1) dowodziony w~stw.~\ref{thm:R-virial-E2}.
+Punkt (2): $u_1 \sim A\sin(\omega r)/r$ w~$d=3$, wi\k{e}c
+$|u_1|^3 r^2 \sim A^3|\sin^3|/r$.
+Ca\l{}ka $\int |\sin^3|/r\,dr$ rozbiega logarytmicznie
+($|\sin^3|$ ma \'sredni\k{a} $4/(3\pi)$, st\k{a}d
+$I_3 \sim \frac{4A^3}{3\pi}\ln R$).
+Zatem $\mathcal{E}^{(3)}$ zale\.zy od schematu:
+odci\k{e}cie $R_{\max}$ lub dob\'or funkcji testowej
+zmienia jej warto\'s\'c. W~analogii do QFT:
+wielko\'s\'c pot\k{e}gowo/logarytmicznie rozbie\.zna
+jest \textbf{schematycznie zale\.zna}
+--- nie jest obserwablem.
+
+Punkt (3): $|u_1|^4 r^2 \sim A^4 \sin^4/r^2$,
+$\int \sin^4/r^2\,dr$ zbiega bezwzgl\k{e}dnie
+(warunek $n(d-1)/2 - d + 1 > 1$ spe\l{}niony: $4 > 3$).
+$c_4 > 0$ zweryfikowano numerycznie
+(ex142: 10/10 test\'ow; ex188: 8/8).
+
+Punkt (4): $k(d) = \lceil 2d/(d-1) \rceil + \mathbf{1}_{2d/(d-1)\in\mathbb{Z}}$.
+Dla $d = 3$: $2\cdot3/2 = 3 \in \mathbb{Z}$, wi\k{e}c $k = 3 + 1 = 4$.
+Dla $d \neq 3$ w~$\{2,4,5,\ldots\}$: $2d/(d-1) \notin \mathbb{Z}$,
+wi\k{e}c $k \neq 4$.
+\end{proof}
+
+\begin{remark}[Zwi\k{a}zek z~perturbacyjnym $E^{(3)} \neq 0$]%
+\label{rem:R-E3-reconciliation}
+Wynik ex148 ($E^{(3)}_{\mathrm{pert}} = -0{,}647$) nie jest sprzeczny
+ze stw.~\ref{thm:R-k4-definite}: rachunki perturbacyjne u\.zywaj\k{a}
+sko\'nczonego $r_c$ jako regularyzatora, co nadaje cz\l{}onowi $A^3$
+sko\'nczon\k{a} (ale schematycznie zale\.zn\k{a}) warto\'s\'c.
+Pe\l{}ny soliton (numeryczny, ex142) daje
+$|E^{(3)}_{\mathrm{full}}|/|E^{(4)}| < 10^{-6}$ ---
+co oznacza, \.ze dynamika nieliniowa anuluje artefakt schematyczny,
+dok\l{}adnie jak wsp\'o\l{}czynniki $\overline{\mathrm{MS}}$
+vs.\ odci\k{e}cia r\'o\.zni\k{a} si\k{e} o~divergentn\k{a} cz\k{e}\'s\'c,
+ale fizyczny wynik (masa) jest jednoznaczny.
+Stan epistemiczny: \textbf{[AN+NUM]}.
+\end{remark}
+
 \begin{remark}[Weryfikacja numeryczna: ex188]%
 \label{rem:R-ex188}
 Skrypt \texttt{ex188\_A4\_dimensional\_argument.py} (8/8 test\'ow)

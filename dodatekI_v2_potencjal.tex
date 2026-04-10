@@ -685,6 +685,48 @@ z~warunku $r_{31} = 3477$ — brak mechanizmu TGP niezależnie
 go predykującego.
 \end{result}
 
+% ----- Aktualizacja v47 (2026-04-09) -----
+\begin{proposition}[$\lambda^* \approx 2/\PhiZero^4$:
+  zamkni\k{e}cie numeryczne]%
+\label{prop:I-lambda-Z2}
+Niech $\PhiZero$ b\k{e}dzie warto\'sci\k{a} t\l{}a kosmologicznego
+($\PhiZero = 36\,\Omega_\Lambda \approx 24{,}66$). Relacja
+\begin{equation}\label{eq:I-lambda-from-Phi0}
+  \boxed{\lambda_{\mathrm{eff}} = \frac{2}{\PhiZero^4}}
+\end{equation}
+odtwarza $\lambda^*$ ze skanu solitonowego z~odchyleniem
+$|\Delta\lambda/\lambda^*| = 1{,}7\%$:
+\[
+  \frac{2}{\PhiZero^4}\bigg|_{\PhiZero = 24{,}66}
+  = 5{,}41 \times 10^{-6}
+  \quad\text{vs.}\quad
+  \lambda^* = 5{,}50 \times 10^{-6}.
+\]
+
+\medskip\noindent\textbf{Motywacja czynnika 2:}
+Potencja\l{} $V_{\mathrm{mod}}(\psi) = \psi^3/3 - \psi^4/4
++ \lambda(\psi - 1)^6/6$ stabilizuje pr\'o\.zni\k{e}
+z~dwoma sektorami (chiralnym $\mathbb{Z}_2$: kink/antykink).
+Ka\.zdy sektor wnosi $1/\PhiZero^4$ do efektywnego
+sprz\k{e}\.zenia szostorz\k{e}dowego, daj\k{a}c
+\l{}\k{a}czny prefaktor~2.
+R\'ownowa\.znie: z~hipotezy $a_\Gamma\cdot\PhiZero = 1$
+otrzymujemy $\lambda = 2\,a_\Gamma^4 = 2/\PhiZero^4$.
+
+\medskip\noindent\textbf{Weryfikacja:}
+Skrypt \texttt{lambda\_eff\_erg\_vs\_soliton.py}
+por\'ownuje sze\'s\'c niezale\.znych \'scie\.zek.
+$\lambda = 2/\PhiZero^4$ jest jedyn\k{a} \'scie\.zk\k{a}
+z~odchyleniem $< 5\%$.
+
+\medskip\noindent
+\textbf{Status:} Propozycja [AN+NUM].
+Formalna pochodna czynnika~2 z~$\mathbb{Z}_2$
+wymaga potwierdzonej struktury
+dw\'och sektor\'ow chiralnych w~ERG ---
+program otwarty (OP-$\lambda$).
+\end{proposition}
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsubsection*{P4 — Czy $\Phi_0^{(2)} \to 2\pi$ gdy $a_\Gamma \to 0$?}
 
