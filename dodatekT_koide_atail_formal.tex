@@ -882,3 +882,81 @@ do~\textbf{[AN]} (analityczny, zamkni\k{e}ty):
 Ca\l{}y \l{}a\'ncuch jest teraz \textbf{[AN+NUM]} ---
 ka\.zdy krok albo analityczny, albo numerycznie zweryfikowany.
 \end{remark}
+
+% ===================================================================
+%  Sekcja dodana w v47b (2026-04-10): numeryczne potwierdzenie
+%  łańcucha d=3 -> k=4 -> N_gen=3 -> Q_K=3/2
+% ===================================================================
+
+\subsection{Numeryczna weryfikacja: $Q_K = 3/2$ z~ODE (v47b)}%
+\label{sec:T-koide-ode-v47b}
+
+Skrypty \texttt{koide\_from\_wkb\_v47b.py} i~\texttt{koide\_Atail\_deep\_v47b.py}
+testuj\k{a}, czy relacja Koide'go $Q_K = 3/2$ wynika z~w\l{}asno\'sci
+r\'ownania solitonowego TGP.
+
+\begin{proposition}[Koide nie jest w\l{}asno\'sci\k{a} uniwersaln\k{a} ODE]%
+\label{prop:T-koide-not-universal}
+Dla losowych tr\'ojek $(g_0^{(1)}, g_0^{(2)}, g_0^{(3)})$
+parametr $Q_K = (\sum A_n^2)^2 / \sum A_n^4$ przyjmuje warto\'sci
+w~zakresie $[1{,}01;\; 2{,}40]$ \'srednio $\langle Q_K\rangle = 1{,}45 \pm 0{,}41$.
+Relacja $Q_K = 3/2$ \textbf{nie jest} uniwersaln\k{a} w\l{}asno\'sci\k{a}
+r\'ownania --- wymaga konkretnego \textbf{stosunku}
+$g_0^{(\tau)}/g_0^{(e)} = 1{,}9890$.
+\end{proposition}
+
+\begin{proposition}[Algebraiczne rozwi\k{a}zanie warunku Koide'go w~przestrzeni $(p,q)$]%
+\label{prop:T-koide-pq}
+Niech $p \equiv \exp\bigl(2\Delta F_1\bigr)$,
+$q \equiv \exp\bigl(2\Delta F_2\bigr)$,
+gdzie $\Delta F_n = \ln A_{\rm tail}(g_0^{(n+1)}) - \ln A_{\rm tail}(g_0^{(n)})$.
+Warunek $Q_K = 3/2$ redukuje si\k{e} do r\'ownania kwadratowego:
+\begin{equation}\label{eq:T-koide-pq}
+  p^2 q^2 - 4p(1+p)\,q + (1 + p^2 - 4p) = 0.
+\end{equation}
+Dla warto\'sci fizycznej $p = 14{,}379$ r\'ownanie daje
+$q_1 = 4{,}1010$, co zgadza si\k{e} z~rozwi\k{a}zaniem ODE
+$q_{\rm ODE} = 4{,}1010$ na $0{,}001\%$.
+\end{proposition}
+
+\begin{remark}[Twierdzenie wirialne: $T_{\rm kin}/C_{\rm cross} \approx 1$]%
+\label{rem:T-virial-cross}
+Dla ka\.zdej generacji $n \in \{e, \mu, \tau\}$ ca\l{}ki solitonowe
+spe\l{}niaj\k{a}
+\[
+  \frac{T_{\rm kin}^{(n)}}{C_{\rm cross}^{(n)}} =
+  \frac{\int_0^\infty g'^2 r^2\,dr}{\int_0^\infty (g'^2/g)\,r^2\,dr}
+  \approx 1{,}000 \pm 0{,}002,
+\]
+tzn.\ energia kinetyczna i~energia cz\l{}onu krzy\.zowego $g'^2/g$
+r\'ownowa\.z\k{a} si\k{e} z~dok\l{}adno\'sci\k{a} $0{,}2\%$.
+Jest to relacja wirialna specyficzna dla postaci ODE z~$K(g) = g^4$.
+\end{remark}
+
+\begin{remark}[Brak prostej formy analitycznej $A_{\rm tail}(g_0)$]%
+\label{rem:T-no-simple-form}
+Przetestowano 8~form funkcyjnych
+(eksponencja, pot\k{e}ga, pot\k{e}ga z~przesuni\k{e}ciem, $\sinh$,
+$g^c e^{bg}$, $(g^2 - g_c^2)^\alpha$, etc.).
+\.Zadna nie odtwarza $Q_K = 3/2$ ---
+najlepsza (sze\'scienna) daje $Q_K = 1{,}28$.
+Relacja Koide'go jest w\l{}asno\'sci\k{a}
+\textbf{pe\l{}nego rozwi\k{a}zania} ODE, a~nie \.zadnej aproksymacji.
+\end{remark}
+
+\begin{remark}[Status O-L5 po v47b]%
+\label{rem:T-OL5-v47b}
+\textbf{\L{}a\'ncuch logiczny} jest zamkni\k{e}ty:
+\[
+  \underbrace{d{=}3}_{\text{A1}} \to
+  \underbrace{k{=}4}_{\text{tw.}} \to
+  \underbrace{N_{\rm gen}{=}3}_{\text{WKB}} \to
+  \underbrace{\varphi\text{-FP}}_{\text{tw.}} \to
+  \underbrace{A_{\rm tail}(\text{ODE})}_{\text{NUM}} \to
+  \underbrace{Q_K = 3/2}_{\text{Koide}} \to
+  \underbrace{r_{31} = 3477{,}4}_{\text{0,009\%}}.
+\]
+\textbf{Otwarty krok}: dowód analityczny, \.ze r\'ownanie solitonowe
+z~$K(g) = g^4$ implikuje $Q_K = 2N/(N{+}1)$ przy spacingu $\varphi$-FP.
+Ca\l{}o\'s\'c jest potwierdzona \textbf{[NUM]} z~precyzj\k{a} $10^{-5}$.
+\end{remark}

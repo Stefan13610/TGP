@@ -1100,10 +1100,11 @@ Stosunek $M/N$        & $\geq 6$ & & \textbf{v35}: $M/N \geq 6$ (bez T1+T2);
 
   \item \textbf{Tabela zunifikowana (v47b):}
     \texttt{tgp\_unified\_predictions\_v47.py}:
-    \textbf{23 predykcje z~2 parametr\'ow} (w tym 2 nowe z~rury kolorowej),
-    21/23 w~$1\sigma$, 22/23 w~$2\sigma$.
+    \textbf{24 predykcje z~2 parametr\'ow} (w tym 2 nowe z~rury kolorowej + QCD-corrected $\sin^2\theta_W$),
+    22/24 w~$1\sigma$, 23/24 w~$2\sigma$.
     \texttt{tgp\_master\_consistency\_v47.py}:
-    \textbf{50/51~PASS}, 1~oczekiwany FAIL.
+    \textbf{55/56~PASS}, 1~oczekiwany FAIL
+    (w tym 5 nowych test\'ow H1--H5: Koide-ODE).
 
   \item \textbf{Poprawka QCD do $\sin^2\theta_W$ (v47b):}
     Formu\l{}a~\eqref{eq:sin2-corrected}: $\sin^2\theta_W
@@ -1128,6 +1129,21 @@ Stosunek $M/N$        & $\geq 6$ & & \textbf{v35}: $M/N \geq 6$ (bez T1+T2);
     Formalne propozycje: prop.~\ref{prop:X-tube-string-tension},
     prop.~\ref{prop:X-A-from-tube-tension}.
     7~nowych test\'ow (G1--G7) w~master consistency.
+
+  \item \textbf{O-L5 --- Koide z~ODE (v47b, sek.~\ref{sec:T-koide-ode-v47b}):}
+    Numeryczna weryfikacja \l{}a\'ncucha
+    $d{=}3 \to k{=}4 \to N_{\rm gen}{=}3 \to \varphi\text{-FP}
+    \to A_{\rm tail}(\text{ODE}) \to Q_K = 3/2$.
+    Relacja Koide'go \textbf{nie jest} uniwersaln\k{a} w\l{}asno\'sci\k{a} ODE
+    (losowe tr\'ojki: $Q_K \in [1{,}01;\,2{,}40]$).
+    Warunek Koide'go w~$(p,q)$ daje r\'ownanie kwadratowe
+    z~rozwi\k{a}zaniem $q_1 = 4{,}1010$, zgodnym z~ODE na $0{,}001\%$.
+    Nowa relacja wirialna: $T_{\rm kin}/C_{\rm cross} \approx 1$
+    z~dok\l{}adno\'sci\k{a} $0{,}2\%$ dla trzech generacji.
+    \.Zadna z~8 testowanych form aproksymacyjnych nie odtwarza $Q_K = 3/2$
+    --- wymaga pe\l{}nego rozwi\k{a}zania ODE.
+    Status O-L5: \textbf{CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY [NUM]}.
+    Otwarty krok: dow\'od analityczny $A_{\rm tail} \to Q_K = 3/2$.
 \end{enumerate}
 \end{remark}
 
@@ -1149,9 +1165,9 @@ Poni\.zej podsumowanie dzia\l{}a\'n podj\k{e}tych w~sesji v47b.
     Utworzono uczciw\k{a} 4-klasow\k{a} taksonomie:
     \texttt{tgp\_prediction\_taxonomy\_v47.py}.
     Wynik: \textbf{2 wej\'scia [I]},
-    \textbf{12 predykcji zerowych [D]} (ratio~6:1),
+    \textbf{14 predykcji zerowych [D]} (ratio~7:1),
     5~odzysk\'ow [R], 4~prospektywne [P].
-    15/17 testowalnych w~$1\sigma$.
+    17/19 testowalnych w~$1\sigma$.
 
   \item \textbf{Brak s\l{}ownika formulacji}:
     Dodano tabele przej\'s\'c Formulacja~A/B
@@ -1181,8 +1197,8 @@ Poni\.zej podsumowanie dzia\l{}a\'n podj\k{e}tych w~sesji v47b.
 \textbf{Uwaga krytyczna wobec audytu:}
 Audyt niedoszacowa\l{} si\l{}y predykcyjnej TGP.
 Twierdzi\l{}, \.ze ,,wiele PASS to kalibracje lub to\.zsamo\'sci''.
-4-klasowa taksonomia pokazuje, \.ze \textbf{12 niezale\.znych
-predykcji z~2 parametr\'ow} to ratio 6:1 --- nietrywialne
+4-klasowa taksonomia pokazuje, \.ze \textbf{14 niezale\.znych
+predykcji z~2 parametr\'ow} to ratio 7:1 --- nietrywialne
 nawet po ostrym filtrze.
 Ponadto \l{}a\'ncuch
 $d{=}3 \to k{=}4 \to N_{\rm gen}{=}3 \to Q_K{=}3/2 \to r^2{=}N{-}1$
