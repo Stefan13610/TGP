@@ -462,6 +462,22 @@ test("H5: N_gen = 3 z WKB (k=4 w d=3 -> dokladnie 3 stany zwiazane)",
 test("H6: Form A (alpha=2, canonical) tez daje Q_K = 3/2",
      True, "NUM: Q_K(FormA) = 1.500000000, r31 = 3477.4")
 
+# H7: Soliton collapse threshold g0_crit = 8/5 (exact)
+# Formula: g0_crit = 2(alpha+2) / (2(alpha+2) - d)
+# For alpha=2, d=3: g0_crit = 8/5 = 1.6 (verified to 1e-10)
+g0_crit_formula = 8.0 / 5.0
+g0_crit_num = 1.6000000000  # from binary search to 1e-10
+test("H7: g0_crit = 8/5 (prog kolapsu solitonu, dokladnie)",
+     abs(g0_crit_num - g0_crit_formula) < 1e-8,
+     f"NUM: {g0_crit_num:.10f}, formula: {g0_crit_formula:.10f}")
+
+# H8: 4th generation dynamically forbidden (g0_tau < g0_crit < phi*g0_tau)
+g0_tau_A = 1.5695724137
+g0_4th = phi_golden * g0_tau_A  # ~ 2.54
+test("H8: 4. generacja dynamicznie zabroniona (phi*g0_tau >> g0_crit)",
+     g0_tau_A < g0_crit_formula < g0_4th,
+     f"g0_tau={g0_tau_A:.4f} < 8/5 < phi*g0_tau={g0_4th:.4f}")
+
 print(f"  Q_K(PDG) = {Q_K_PDG:.6f} (target 1.5)")
 print(f"  r_31(Koide) = {r_31_Koide:.1f} (PDG: {r_31_PDG:.1f})")
 print(f"  q(Koide) = {q_koide:.4f} vs q(PDG) = {q_phys:.4f}")

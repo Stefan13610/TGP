@@ -1001,14 +1001,62 @@ Form B ($\alpha{=}1$) & $0{,}8694$ & $1{,}9891$ & $3477{,}4$ ($+0{,}006\%$) \\
 \end{tabular}
 \end{center}
 W~Form~A rozw.\ Koide le\.zy przy $g_{0,\tau} = 1{,}5696$, zaledwie $1{,}9\%$
-poni\.zej progu kolapsu solitonu $g_{0,\rm crit} \approx 1{,}60$.
+poni\.zej progu kolapsu solitonu $g_{0,\rm crit} = 8/5$ (dok\l{}adnie).
 Solitony z~$g_0 > g_{0,\rm crit}$ nie istniej\k{a} --- sprz\k{e}\.zenie
 $(2/g)\,g'^2$ generuje pozytywne sprz\k{e}\.zenie zwrotne prowadz\k{a}ce
-do~kolapsu $g \to 0$.  Fakt, \.ze $\tau$-soliton le\.zy tu\.z przy granicy
-istnienia, mo\.ze by\'c fizycznie znacz\k{a}cy.
+do~kolapsu $g \to 0$.
 
 \textbf{Wniosek}: wynik $Q_K = 3/2$ jest \textbf{niezale\.zny} od wyboru
 sformu\l{}owania ODE (Form~A lub B).  Obie formy daj\k{a} identyczne
 $r_{31}$ przy identycznej precyzji.
 Skrypty: \texttt{ode\_koide\_formA\_v47b.py}, \texttt{ode\_koide\_formA\_exact\_v47b.py}.
 \end{remark}
+
+\begin{proposition}[Pr\'og kolapsu solitonu i~$N_{\rm gen} = 3$]%
+\label{prop:T-collapse-Ngen3}
+Dla ODE solitonowego
+\[
+  g'' + \frac{d{-}1}{r}\,g' + \frac{\alpha}{g}\,g'^2 + g^2(1-g) = 0,
+  \qquad g(0) = g_0,\quad g'(0) = 0,
+\]
+istnieje krytyczna warto\'s\'c $g_{0,\rm crit}$, powy\.zej kt\'orej
+rozw.\ kolapsuje do~$g \to 0$ w~sko\'nczonym~$r$.
+Formu\l{}a (potwierdzona numerycznie z~precyzj\k{a} $10^{-10}$):
+\begin{equation}\label{eq:g0crit}
+  g_{0,\rm crit}
+  = \frac{2(\alpha + 2)}{2(\alpha + 2) - d}
+  = \frac{2\alpha + 4}{2\alpha + 1}\Big|_{d=3}.
+\end{equation}
+Dla kanonicznej TGP ($\alpha = 2$, $d = 3$):
+$g_{0,\rm crit} = 8/5 = 1{,}6$ (dok\l{}adnie).
+
+\medskip\noindent
+\textbf{Konsekwencja: $N_{\rm gen} = 3$.}
+Trzy generacje lepton\'ow odpowiadaj\k{a} solitonom
+z~rosn\k{a}cym $g_0$:
+\[
+  \underbrace{g_{0,e} = 0{,}868}_{1}
+  < \underbrace{g_{0,\mu} = 1{,}404}_{2}
+  < \underbrace{g_{0,\tau} = 1{,}570}_{3}
+  < \underbrace{g_{0,\rm crit} = 1{,}600}_{\text{kolaps}}.
+\]
+Soliton $\tau$ zu\.zywa $95{,}8\%$ dost\k{e}pnego zakresu
+$[g_{0,e},\;8/5]$.
+Hipotetyczna 4.~generacja ($\varphi \cdot g_{0,\tau} = 2{,}54$)
+le\.zy $58{,}7\%$ \textbf{powy\.zej} progu --- jest
+\textbf{dynamicznie zabroniona}.
+
+\medskip\noindent
+\textbf{Dwa niezale\.zne dowody $N_{\rm gen} = 3$:}
+\begin{enumerate}[nosep]
+  \item \emph{WKB}: pot\k{e}ga potencja\l{}u $k = 4$
+    ($\Leftrightarrow$ $K(g) = g^4$) daje dok\l{}adnie 3~stany
+    zwi\k{a}zane w~$d = 3$ (ograniczenie kinematyczne).
+  \item \emph{Kolaps solitonu}: wsp\'o\l{}czynnik
+    $\alpha = 2$ ($\Leftrightarrow$ $K(g) = g^4$)
+    daje $g_{0,\rm crit} = 8/5$, co ogranicza
+    liczb\k{e} stabilnych soliton\'ow do~3 (ograniczenie dynamiczne).
+\end{enumerate}
+Oba argumenty wynikaj\k{a} z~$K(g) = g^4$ w~lagra\.zjanie TGP.
+Skrypt: \texttt{ngen\_collapse\_v47b.py}.
+\end{proposition}
