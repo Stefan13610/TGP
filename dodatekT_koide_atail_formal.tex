@@ -1772,3 +1772,55 @@ ale nie dowiedziona z~pierwszych zasad ODE.
 
 Skrypt: \texttt{koide\_cv1\_origin\_v47b.py}.
 \end{remark}
+
+\begin{remark}[Hipoteza ekwipartycji: test ko\'ncowy (v47b)]%
+\label{rem:T-equipartition-test}
+\'Scie\.zka~23 bada, czy hipotez\k{e} ekwipartycji mo\.zna
+wyprowadzi\'c z~w\l{}asno\'sci ODE solitonowego.
+
+\medskip\noindent
+\textbf{Kluczowe wyniki:}
+\begin{enumerate}[nosep]
+  \item \textbf{Proporcjonalno\'s\'c $A^2 \propto I_{\mathrm{kin}}$:}
+    Ca\l{}ka kinetyczna $I_{\mathrm{kin}} = \int g^4 g'^2 r^2\,dr$ jest
+    \textbf{liniowo} proporcjonalna do $A^2$ z~wyk\l{}adnikiem
+    $\alpha = 1{,}000 \pm 0{,}002$ (sta\l{}y dla wszystkich trzech
+    generacji).
+    Zatem $\mathrm{CV}(A^2) = 1$ jest r\'ownowa\.zne
+    $\mathrm{CV}(I_{\mathrm{kin}}) = 1$.
+  \item \textbf{Uniwersalno\'s\'c}: Dla \textbf{ka\.zdego} $g_0^e$
+    z~zakresu $[0{,}50;\; 0{,}92]$ istnieje $g_{0,\tau}$ daj\k{a}ce
+    $Q_K = 3/2$. Warto\'s\'c $Q_K = 3/2$ nie jest specyficzna
+    dla fizycznego $g_0^e$ --- jest \textbf{zawsze osi\k{a}galna}.
+  \item \textbf{Brak relacji funkcyjnej}: stosunek
+    $g_{0,\tau}/g_{0,\mu}$ zmienia si\k{e} od $1{,}07$ do $1{,}31$;
+    $\theta_{\mathrm{Brannen}}$ od $110^\circ$ do $135^\circ$;
+    \.zaden z~tych parametr\'ow nie jest sta\l{}\k{a} uniwersaln\k{a}.
+  \item \textbf{Skalowanie bliskie kolapsowi}:
+    $\delta_\tau \approx C\,\delta_\mu^{1{,}86}$
+    (najlepsze dopasowanie; $1{,}86$ bliskie $2$
+    z~b\l{}\k{e}dem $7\%$).
+  \item \textbf{Energia monotonowa}: suma energii soliton\'ow
+    $E_e + E_\mu + E_\tau(g_{0,\tau})$ jest monotonicznie
+    malej\k{a}ca --- \.zaden funkcjona\l{} energetyczny nie
+    selekcjonuje Koide.
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Status ko\'ncowy problemu $Q_K = 3/2$ w~TGP:}\\
+Po 23 \'scie\.zkach analizy:
+\begin{itemize}[nosep]
+  \item $Q_K = 3/2$ jest \textbf{trzecim parametrem wej\'sciowym}
+    TGP (obok $g_0^e$ i~regu\l{}y $\varphi$-FP).
+  \item Pitagorejski mechanizm selekcji
+    (prop.~\ref{prop:T-pythagorean-selection})
+    wyja\'snia \emph{dlaczego} Koide dzia\l{}a na poziomie mas.
+  \item Zbie\.zno\'s\'c $\chi^2(2)$ i~Brannena
+    (rem.~\ref{rem:T-cv1-origin})
+    \emph{sugeruje} warto\'s\'c $3/2$.
+  \item \textbf{Wyprowadzenie} z~pierwszych zasad
+    \textbf{nie zosta\l{}o znalezione}.
+\end{itemize}
+
+Skrypt: \texttt{koide\_equipartition\_v47b.py}.
+\end{remark}

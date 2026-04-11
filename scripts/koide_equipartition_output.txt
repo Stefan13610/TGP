@@ -1,0 +1,267 @@
+======================================================================
+PATH 23: WHY EQUIPARTITION? (the last open question)
+======================================================================
+  Reference: g0_e=0.86770494, g0_mu=1.40397609, g0_tau=1.56962743
+  A2: [0.0171440495, 0.2465584687, 1.0111189164]
+  CV=1.00000000, QK=1.50000000
+
+======================================================================
+APPROACH 1: BRANNEN FIT
+======================================================================
+  c = mean(A^2) = 0.42494048
+  b = sqrt(2) = 1.41421356
+    e: A^2/c - 1 = -0.959655, cos(theta_0) = -0.678579, theta_0 = 132.73 deg, theta_eff = 132.73 deg
+   mu: A^2/c - 1 = -0.419781, cos(theta_1) = -0.296830, theta_1 = 107.27 deg, theta_eff = -12.73 deg
+  tau: A^2/c - 1 = +1.379437, cos(theta_2) = +0.975409, theta_2 = 12.73 deg, theta_eff = 132.73 deg
+
+  Optimal theta = 0.222266 rad = 12.73 deg
+  Residual = 7.94e-10 (should be ~0 if fit is exact)
+
+  Special theta values:
+  theta = 0: A^2 = c*(1+sqrt(2)), c*(1-sqrt(2)/2), c*(1-sqrt(2)/2)
+  theta = pi: A^2 = c*(1-sqrt(2)), c*(1+sqrt(2)/2), c*(1+sqrt(2)/2)
+  theta = pi/4 = 45 deg
+  theta = arctan(1/sqrt(2)) = 35.26 deg
+
+======================================================================
+APPROACH 2: UNIVERSALITY -- g0_tau(g0_e) function
+======================================================================
+  For each g0_e, find Koide g0_tau and compute g0_tau/g0_mu,
+  (g0c-g0_tau)/(g0c-g0_mu), and theta_Brannen:
+      g0_e    g0_mu     g0_tau     tau/mu d_tau/d_mu      theta    g0t-g0m
+    0.7000   1.1326   1.486391   1.312343   0.243079     110.58   0.353767
+    0.7200   1.1650   1.487044   1.276450   0.259659     113.65   0.322060
+    0.7400   1.1973   1.491759   1.245889   0.268819     117.04   0.294414
+    0.7600   1.2297   1.499993   1.219799   0.270073     120.46   0.270288
+    0.7800   1.2621   1.511053   1.197285   0.263210     123.68   0.248986
+    0.8000   1.2944   1.524104   1.177435   0.248372     126.54   0.229677
+    0.8200   1.3268   1.538174   1.159322   0.226292     128.94   0.211386
+    0.8400   1.3591   1.552190   1.142031   0.198503     130.84   0.193042
+    0.8600   1.3915   1.565119   1.124763   0.167304     132.29   0.173609
+    0.8800   1.4239   1.576161   1.106956   0.135348     133.33   0.152291
+    0.9000   1.4562   1.584908   1.088363   0.104975     134.04   0.128677
+    0.9200   1.4886   1.591340   1.069024   0.077728     134.51   0.102749
+
+  g0_tau/g0_mu: mean=1.176638, std=0.072962, CV=0.0620
+  Is constant? NO
+  delta_tau/delta_mu: mean=0.205280, std=0.065182, CV=0.3175
+  theta_Brannen: mean=125.49, std=7.99 deg
+  Is constant? NO -- varies!
+  g0_tau - g0_mu: mean=0.223412, std=0.074607, CV=0.3339
+
+======================================================================
+APPROACH 3: FUNCTIONAL RELATION g0_tau = F(g0_e)
+======================================================================
+  Candidate 1: delta_tau = C * delta_mu^alpha
+    alpha = 1.864400, C = 0.604216, RMS(log) = 0.122590
+    alpha vs known:
+             2 = 2.000000 (err 6.78%)
+           phi = 1.618034 (err 15.23%)
+         phi^2 = 2.618034 (err 28.79%)
+             3 = 3.000000 (err 37.85%)
+             e = 2.718282 (err 31.41%)
+            pi = 3.141593 (err 40.65%)
+           7/3 = 2.333333 (err 20.10%)
+           5/2 = 2.500000 (err 25.42%)
+
+  Candidate 2: g0_tau = 0.645341*g0_mu + 0.311565*delta_mu + 0.598066
+    RMS = 0.00522249
+
+  Candidate 3 (linear): g0_tau = 0.333775*g0_mu + 1.096571, RMS=0.00522249
+  Candidate 3 (quadratic): g0_tau = 0.2436*g0_mu^2 + -0.3046*g0_mu + 1.5119, RMS=0.00447649
+
+======================================================================
+APPROACH 4: N_gen FROM COLLAPSE THRESHOLD
+======================================================================
+  g0_crit = 1.6000
+  phi-FP ladder from g0_e:
+    k=0: g0 = 0.867705 OK
+    k=1: g0 = 1.403976 OK
+    k=2: g0 = 2.271681 COLLAPSED
+    k=3: g0 = 3.675657 COLLAPSED
+    k=4: g0 = 5.947338 COLLAPSED
+    k=5: g0 = 9.622995 COLLAPSED
+
+  BUT: the electron (k=0) is BELOW vacuum (g0<1).
+  Only k=1 (mu) and k=2 would be above. k=2 collapses.
+  So N_gen = 3 comes from:
+    - 1 below-vacuum soliton (e)
+    - 1 above-vacuum soliton (mu, at phi*g0_e)
+    - 1 above-vacuum soliton (tau, NOT at phi^2*g0_e)
+  The third is 'squeezed' under the threshold by Koide.
+
+  N_gen vs g0_e (phi-FP ladder, ignoring Koide):
+    g0_e = 0.30: N_gen = 4 (phi^4 * g0_e = 2.056 >= g0_crit)
+    g0_e = 0.35: N_gen = 4 (phi^4 * g0_e = 2.399 >= g0_crit)
+    g0_e = 0.40: N_gen = 3 (phi^3 * g0_e = 1.694 >= g0_crit)
+    g0_e = 0.45: N_gen = 3 (phi^3 * g0_e = 1.906 >= g0_crit)
+    g0_e = 0.50: N_gen = 3 (phi^3 * g0_e = 2.118 >= g0_crit)
+    g0_e = 0.55: N_gen = 3 (phi^3 * g0_e = 2.330 >= g0_crit)
+    g0_e = 0.60: N_gen = 3 (phi^3 * g0_e = 2.542 >= g0_crit)
+    g0_e = 0.65: N_gen = 2 (phi^2 * g0_e = 1.702 >= g0_crit)
+    g0_e = 0.70: N_gen = 2 (phi^2 * g0_e = 1.833 >= g0_crit)
+    g0_e = 0.75: N_gen = 2 (phi^2 * g0_e = 1.964 >= g0_crit)
+    g0_e = 0.80: N_gen = 2 (phi^2 * g0_e = 2.094 >= g0_crit)
+    g0_e = 0.85: N_gen = 2 (phi^2 * g0_e = 2.225 >= g0_crit)
+    g0_e = 0.90: N_gen = 2 (phi^2 * g0_e = 2.356 >= g0_crit)
+    g0_e = 0.95: N_gen = 2 (phi^2 * g0_e = 2.487 >= g0_crit)
+
+======================================================================
+APPROACH 5: ENERGY OF SOLITON INTERACTION
+======================================================================
+  Soliton energies:
+     e: g0=0.867705, E_kin=10.740316, E_pot=-10.809915, E_tot=-0.069599
+    mu: g0=1.403976, E_kin=154.274770, E_pot=-155.824066, E_tot=-1.549296
+   tau: g0=1.569627, E_kin=624.787300, E_pot=-653.282493, E_tot=-28.495192
+
+  Total energy vs g0_tau:
+      g0_tau        E_tau      E_total      Q_K
+      1.4200    -1.958875    -3.577770   2.1222
+      1.4250    -2.106189    -3.725084   2.1152
+      1.4300    -2.263888    -3.882783   2.1069
+      1.4350    -2.432689    -4.051584   2.0975
+      1.4400    -2.613367    -4.232262   2.0869
+      1.4450    -2.806765    -4.425660   2.0752
+      1.4500    -3.013809    -4.632704   2.0624
+      1.4550    -3.235516    -4.854411   2.0485
+      1.4600    -3.473020    -5.091915   2.0336
+      1.4650    -3.727589    -5.346485   2.0178
+      1.4700    -4.000664    -5.619559   2.0010
+      1.4750    -4.293894    -5.912789   1.9834
+      1.4800    -4.609198    -6.228093   1.9649
+      1.4850    -4.948844    -6.567739   1.9455
+      1.4900    -5.315547    -6.934442   1.9254
+      1.4950    -5.712623    -7.331518   1.9045
+      1.5000    -6.144184    -7.763079   1.8829
+      1.5050    -6.615424    -8.234319   1.8606
+      1.5100    -7.133016    -8.751911   1.8376
+      1.5150    -7.705683    -9.324578   1.8138
+      1.5200    -8.345021    -9.963916   1.7894
+      1.5250    -9.066680   -10.685575   1.7643
+      1.5300    -9.892136   -11.511031   1.7385
+      1.5350   -10.851311   -12.470206   1.7120
+      1.5400   -11.986510   -13.605405   1.6846
+      1.5450   -13.358466   -14.977361   1.6564
+      1.5500   -15.055674   -16.674569   1.6272
+      1.5550   -17.209044   -18.827939   1.5969
+      1.5600   -20.015113   -21.634008   1.5654
+      1.5650   -23.773025   -25.391920   1.5323
+      1.5700   -28.942943   -30.561838   1.4973
+      1.5750   -36.234440   -37.853335   1.4599
+      1.5800   -46.722031   -48.340926   1.4191
+      1.5850   -61.924770   -63.543665   1.3735
+      1.5900   -83.764716   -85.383612   1.3201
+      1.5950  -121.608422  -123.227318   1.2504
+
+  Total energy is monotonic -- no extremum
+
+======================================================================
+APPROACH 6: INTEGRAL IDENTITIES OF THE ODE
+======================================================================
+  Integral quantities for each soliton:
+   gen    I_kinetic      I_cross     I_source  I_kin/I_src I_cross/I_kin
+     e     2.570640     2.571577    20.300697     0.126628     1.000364
+    mu    36.928136    36.916849    92.264172     0.400244     0.999694
+   tau   149.732224   149.895994     6.433930    23.272281     1.001094
+
+  Sum rules across generations:
+    sum(I_kin) = 189.231000
+    CV(I_kin) = 0.996550
+    sum(I_cross) = 189.384420
+    CV(I_cross) = 0.996955
+    sum(I_source) = 118.998799
+    CV(I_source) = 0.948431
+
+  I_kin/I_source per generation: [0.126628, 0.400244, 23.272281]
+  CV of ratios: 1.367324
+
+  Relating A^2 to integrals:
+  A^2 values: [0.01714405, 0.24655847, 1.01111892]
+  I_source values: [20.30069665, 92.26417219, 6.43392978]
+  A^2 ~ I_kin^alpha: alpha_mu=1.0004, alpha_tau=1.0031 (CONST!)
+  A^2 ~ I_cross^alpha: alpha_mu=1.0007, alpha_tau=1.0029 (CONST!)
+  A^2 ~ I_source^alpha: alpha_mu=1.7609, alpha_tau=-3.5482 
+
+======================================================================
+APPROACH 7: IS CV=1 A PROPERTY OF THE ODE ITSELF?
+======================================================================
+  Using approximation A^2(g0) ~ (g0-1)^p / (g0c-g0)^q
+  with p=2.075, q=0.370
+
+  The electron is on a DIFFERENT branch (below vacuum).
+  The power-law approximation has DIFFERENT exponents below vacuum.
+  This breaks any simple algebraic derivation from the approximation.
+
+  Algebraic: given A2_e and A2_mu, solve for A2_tau from Q_K=3/2
+  2*(A2_e + A2_mu + x)^2 = 3*(A2_e^2 + A2_mu^2 + x^2)
+  2*(S0 + x)^2 = 3*(P0 + x^2)  where S0 = A2_e+A2_mu, P0 = A2_e^2+A2_mu^2
+  2*S0^2 + 4*S0*x + 2*x^2 = 3*P0 + 3*x^2
+  x^2 - 4*S0*x + (3*P0 - 2*S0^2) = 0
+  S0 = 0.26370252, P0 = 0.0610849969
+  discriminant = 16*S0^2 - 4*(3*P0 - 2*S0^2) = 0.9359164715
+  Solutions: x1 = 1.01111892, x2 = 0.04369116
+  Actual A2_tau = 1.01111892
+  Match x1? err=0.000000%
+  Match x2? err=95.678930%
+
+  Closed form: A2_tau = 2*(A2_e+A2_mu) + sqrt(3*(A2_e^2+4*A2_e*A2_mu+A2_mu^2))
+  Check: 1.01111892 (actual 1.01111892, err 1.03e-10)
+
+  With r = A2_mu/A2_e = 14.381577:
+  A2_tau/A2_e = 2*(1+r) + sqrt(3*(1+4r+r^2))
+  = 2*(1+14.38) + sqrt(3*(1+4*14.38+14.38^2))
+  = 58.977835
+  Actual A2_tau/A2_e = 58.977835
+  This is an EXACT ALGEBRAIC identity -- it's just Q_K=3/2 restated!
+
+======================================================================
+FINAL SYNTHESIS: PATH 23
+======================================================================
+
+  RESULTS:
+
+  1. BRANNEN FIT: A^2 values fit the Brannen parametrization EXACTLY
+     (by construction -- Q_K=3/2 is equivalent to b=sqrt(2)).
+     The theta parameter varies with g0_e -- it is NOT a universal constant.
+
+  2. UNIVERSALITY: For ALL scanned g0_e, a Koide-satisfying g0_tau EXISTS.
+     But g0_tau/g0_mu is NOT constant (varies significantly).
+     delta_tau/delta_mu is NOT constant either.
+     theta_Brannen is NOT constant.
+     => CV=1 is ALWAYS ACHIEVABLE, not unique to the physical g0_e.
+     The question isn't "why CV=1" but "what selects g0_tau in the corridor."
+
+  3. FUNCTIONAL RELATION: delta_tau = C * delta_mu^alpha with
+     alpha ~ 1.864. This fits well but alpha is not a known constant.
+
+  4. N_gen FROM COLLAPSE: For g0_e ~ 0.87, exactly N=2 steps fit
+     below g0_crit. The third generation is squeezed under the
+     threshold by Koide (or the deeper condition).
+
+  5. ENERGY: Total soliton energy E_e + E_mu + E_tau is MONOTONIC
+     in g0_tau -- no extremum selects Koide.
+
+  6. INTEGRALS: No obvious integral identity constrains Q_K.
+     The ratio I_kin/I_source is NOT constant across generations.
+
+  7. ALGEBRAIC: A2_tau = 2*(A2_e+A2_mu) + sqrt(3*(A2_e^2+4*A2_e*A2_mu+A2_mu^2))
+     This is exact but TAUTOLOGICAL -- it's Q_K=3/2 restated as a formula.
+
+  CONCLUSION:
+  The equipartition hypothesis CANNOT be derived from the single-soliton
+  ODE alone. The ODE determines A^2(g0) -- a fixed function. Any three
+  points on this curve can be found such that CV=1 (the Koide curve
+  exists for all g0_e).
+
+  The SELECTION of the specific Koide point requires EITHER:
+  (a) A multi-soliton interaction that PREFERS CV=1 (not found -- energy monotonic)
+  (b) A symmetry of the 3-body problem that constrains A^2 ratios
+  (c) An external principle (CV=1 as an axiom / anthropic / ?)
+  (d) The identification: 2 tail modes = N-1 generational modes,
+      combined with a PROOF that these modes are equidistributed.
+
+  After 23 paths, the status is:
+  - Q_K = 3/2 IS an input parameter of TGP (third axiom alongside g0_e and phi-FP)
+  - The Pythagorean mechanism EXPLAINS why it acts at the mass level
+  - The convergence of chi2(2) and Brannen SUGGESTS why the value is 3/2
+  - But no DERIVATION from first principles has been found
