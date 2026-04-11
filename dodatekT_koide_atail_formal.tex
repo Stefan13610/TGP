@@ -1101,3 +1101,31 @@ le\.zy $58{,}7\%$ \textbf{powy\.zej} progu --- jest
 Oba argumenty wynikaj\k{a} z~$K(g) = g^4$ w~lagra\.zjanie TGP.
 Skrypt: \texttt{ngen\_collapse\_v47b.py}.
 \end{proposition}
+
+\begin{remark}[Analiza energetyczna dla $d > 1$ (v47b)]%
+\label{rem:T-energy-dissipation}
+Pr\'oba uog\'olnienia dowodu $d = 1$ na $d > 1$ metodami energetycznymi.
+W~zmiennej kanonicznej $f = g^{\alpha+1}$ r\'ownanie przyjmuje posta\'c
+Lane-Emdena:
+\[
+  f'' + \frac{d{-}1}{r}\,f' = S(f),
+  \qquad S(f) = -\frac{dV}{df}.
+\]
+Energia $E = f'^2/2 + V(f)$ spe\l{}nia
+$\dot{E} = -(d{-}1)/r \cdot f'^2$ (dysypacja).
+Dla $d = 1$: $E$~jest zachowane $\Rightarrow$ $V(f_0) = V(0) = 0$,
+co daje formu\l{}\k{e} wprost.
+Dla $d > 1$: ca\l{}ka tarcia
+$\int_0^\infty (d{-}1)/r \cdot f'^2\,dr$
+jest \textbf{funkcjona\l{}em trajektorii} $f(r)$, nie funkcj\k{a}~$f_0$.
+Bilans energetyczny zamyka si\k{e} numerycznie (zgodny z~formu\l{}\k{a}
+$g_{0,\rm crit}$ na poziomie $10^{-3}$), ale nie prowadzi do zamkni\k{e}tej postaci
+analitycznej.
+
+\medskip\noindent
+Mo\.zliwe \'scie\.zki dowodu dla $d > 1$:
+to\.zsamo\'s\'c Pohozaeva--Derricka (argument skalowania),
+perturbacja wok\'o\l{} $d = 1$,
+lub ukryta symetria kanonicznego r\'ownania Lane-Emdena.
+Skrypt: \texttt{gcrit\_energy\_proof\_v47b.py}.
+\end{remark}
