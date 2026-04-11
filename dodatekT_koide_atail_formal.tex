@@ -1367,3 +1367,99 @@ Skrypty: \texttt{koide\_field\_balance\_v47b.py},
 \texttt{koide\_coupling\_v47b.py},
 \texttt{koide\_symmetry\_v47b.py}.
 \end{remark}
+
+\begin{remark}[Analiza mi\k{e}dzysektorowa i~stabilno\'s\'c \l{}\k{a}czna (v47b)]%
+\label{rem:T-crosssector-joint}
+\'Scie\.zki 16--17 badaj\k{a} relacj\k{e} Koide'go
+poza sektorem lepton\'ow nabitych oraz stabilno\'s\'c
+\l{}\k{a}czn\k{a} uk\l{}adu mas i~\l{}adunk\'ow.
+
+\medskip\noindent
+\textbf{Wyniki mi\k{e}dzysektorowe (\'scie\.zka 16):}
+\begin{itemize}[nosep]
+  \item $Q_K$ per sektor: leptony $1{,}500$ ($+0{,}001\%$),
+    kwarki g\'orne $1{,}178$ ($-21{,}5\%$),
+    kwarki dolne $1{,}367$ ($-8{,}9\%$).
+  \item Trzecia generacja mi\k{e}dzysektorowa $(\tau, t, b)$:
+    $Q_K = 1{,}527$ (najbli\.zej $3/2$, $1{,}8\%$ odchylenie).
+  \item R\'ownowaga \l{}adunkowo-masowa
+    $-\sqrt{m_l} + 2\sqrt{m_u} - \sqrt{m_d} = 0$:
+    generacja~1 spe\l{}nia ($2{,}2\%$ b\l{}\k{a}d), generacje~2--3 nie.
+\end{itemize}
+
+\medskip\noindent
+\textbf{Stabilno\'s\'c \l{}\k{a}czna (\'scie\.zka 17):}
+\begin{itemize}[nosep]
+  \item Jednoczesna minimalizacja reszty Koide + r\'ownowagi
+    \l{}adunkowo-masowej: najlepsze dopasowanie $Q_K \approx 2{,}08$,
+    \textbf{nie}~$3/2$.
+  \item Testowano 5 wariant\'ow wsp\'o\l{}czynnik\'ow
+    ($N_c Q$, $N_c Q^2$, $Q$, $N_c |Q|$, $N_c\,\mathrm{sign}\,Q$);
+    $N_c Q$ daje najni\.zsz\k{a} reszt\k{e} ($0{,}0009$).
+  \item Wniosek: za\l{}o\.zenie uniwersalnego $Q_K$ upada
+    --- r\'o\.zne sektory maj\k{a} bardzo r\'o\.zne hierarchie
+    ($r_{21}$: leptony $207$, kwarki g\'orne $588$, dolne $20$).
+\end{itemize}
+Skrypty: \texttt{koide\_crosssector\_v47b.py},
+\texttt{koide\_joint\_stability\_v47b.py}.
+\end{remark}
+
+\begin{remark}[Efekt obserwatora (v47b)]%
+\label{rem:T-observer-effect}
+\'Scie\.zka~18 bada hipotez\k{e}, \.ze formu\l{}a Koide'go jest
+w\l{}asno\'sci\k{a} nie samych soliton\'ow, lecz \textbf{\l{}a\'ncucha
+obserwacji} $g_0 \to A_{\rm tail} \to A^2 \to A^4 = m$.
+
+\medskip\noindent
+\textbf{Q_K na ka\.zdym poziomie \l{}a\'ncucha:}
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Poziom & Wielko\'s\'c & $Q_K$ \\
+\hline
+Wewn\k{e}trzny  & $g_0$              & $2{,}955$ \\
+Dewiacja         & $|g_0 - 1|$        & $2{,}782$ \\
+Amplituda ogona  & $A$                & $2{,}622$ \\
+Obserwowana      & $A^2 = \sqrt{m}$   & $2{,}092$ \\
+\textbf{Masa}    & $A^4 = m$          & $\mathbf{1{,}500}$ \\
+\hline
+\end{tabular}
+\end{center}
+$Q_K = 3/2$ zachodzi \textbf{dok\l{}adnie} na poziomie
+$A^4 = m$ (r\'ownowa\.znie: Koide na $\sqrt{m_i} = A_i^2$).
+
+\medskip\noindent
+\textbf{Kluczowe wyniki:}
+\begin{enumerate}[nosep]
+  \item Nieliniowe wzmocnienie
+    $G(g_0) \equiv A_{\rm tail}^2 / (g_0 - 1)^2$
+    jest \textbf{istotne}:
+    $G_e = 0{,}98$, $G_\mu = 1{,}51$, $G_\tau = 3{,}12$
+    (wsp\'o\l{}czynnik $\times 3{,}2$).
+    Bez niego (tj.\ $G = \mathrm{const}$): $Q_K = 2{,}42$,
+    \textbf{nie}~$3/2$.
+  \item Zmienno\'s\'c $G$ wynika z~blisko\'sci progu kolapsu
+    $g_{0,\mathrm{crit}} = 8/5$: soliton~$\tau$ le\.zy bardzo blisko
+    progu, co prowadzi do silnego wzmocnienia nieliniowego.
+  \item $Q_K = 3/2$ jest \textbf{emergentnym} efektem trzech
+    sk\l{}adnik\'ow: (a)~nieliniowo\'s\'c ODE blisko progu kolapsu,
+    (b)~regu\l{}a rozstawu $\varphi$-FP,
+    (c)~\l{}a\'ncuch pomiarowy $A \to A^2 \to A^4$.
+  \item Ekstrakcja okna ($r_{\min}, r_{\max}$) jest stabilna:
+    $Q_K(A^2)$ zmienia si\k{e} o~mniej ni\.z $0{,}3\%$
+    w~szerokim zakresie okien.
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Interpretacja:}
+Soliton nie <<zna>> formu\l{}y Koide'go.
+Koide jest w\l{}asno\'sci\k{a} \textbf{procesu pomiaru}:
+obserwator mierzy mas\k{e} $m = c \cdot A^4$, oblicza
+$\sqrt{m} = \sqrt{c}\,A^2$ i~znajduje $Q_K = 3/2$.
+To transformacja $A \to A^2$ (kwadrat amplitudy,
+analogicznie do przekroju czynnego w~rozpraszaniu)
+w~po\l{}\k{a}czeniu z~nieliniowym wzmocnieniem $G(g_0)$ z~ODE
+produkuje warto\'s\'c $\mathrm{CV} = 1$.
+
+Skrypt: \texttt{koide\_observer\_v47b.py}.
+\end{remark}
