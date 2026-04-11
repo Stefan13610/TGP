@@ -1709,3 +1709,66 @@ $g_{0,\mathrm{crit}} = 1{,}6$).
     programu Koide w~TGP.
 \end{enumerate}
 \end{proposition}
+
+\begin{remark}[Dlaczego $\mathrm{CV} = 1$? --- \'scie\.zka 22 (v47b)]%
+\label{rem:T-cv1-origin}
+Prop.~\ref{prop:T-pythagorean-selection} redukuje ca\l{}y program Koide
+do jednego pytania: \emph{dlaczego} $\mathrm{CV}(A^2) = 1$?
+Zbadano dziewi\k{e}\'c niezale\.znych podej\'s\'c:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Samopodoba A$^2$}: stosunek $A^2(\varphi g_0)/A^2(g_0)$
+    zmienia si\k{e} od $\sim 0$ do $\sim 165$; mapa $A^2$ \textbf{nie jest}
+    samopodobna wzgl\k{e}dem $\varphi$-skalowania.
+  \item \textbf{Zasada wariacyjna}: \.zaden z~testowanych funkcjona\l{}\'ow
+    (energia, entropia, AM/GM, iloczyn) nie ma ekstremum przy $Q_K = 3/2$
+    --- wszystkie monotoniczne w~$g_{0,\tau}$.
+  \item \textbf{Przybli\.zenie analityczne}:
+    $A^2(g_0) \approx C\,(g_0{-}1)^{2{,}08}/(g_{0,\mathrm{crit}}{-}g_0)^{0{,}37}$
+    z~dok\l{}adno\'sci\k{a} $0{,}4\%$.
+    Nie implikuje algebraicznie $\mathrm{CV} = 1$.
+  \item \textbf{Regu\l{}y sumowe}: szybko\'sci wzrostu $d(\ln A^2)/dg_0$
+    przy trzech $g_0$ nie spe\l{}niaj\k{a} \.zadnej prostej regu\l{}y.
+  \item \textbf{Dyskretne RG}: krok $g_0 \to \varphi g_0$
+    \l{}amie si\k{e} przy $k = 2$ (kolaps).
+  \item \textbf{Odleg\l{}o\'s\'c od kolapsu}: $\delta_\mu/\delta_\tau
+    = 6{,}45$, brak dopasowania do znanych sta\l{}ych.
+  \item \textbf{Entropia}: maksimum Shannona pada na $g_{0,\tau} = 1{,}42$,
+    nie na Koide ($1{,}57$).
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Kluczowe odkrycie --- zbie\.zno\'s\'c dw\'och argument\'ow:}
+
+Hipoteza ekwipartycji (tw.~\ref{thm:T-QK-from-Ngen})
+z~formu\l{}\k{a} Brannena daje $b = \sqrt{N{-}1}$, sk\k{a}d
+$\mathrm{CV}^2 = b^2/2 = (N{-}1)/2$.
+Dla $N = 3$: $\mathrm{CV}^2 = 1$, $Q_K = 3/2$.
+\textbf{To jest ta sama ,,dw\'ojka''} co w~hipotezie $\chi^2(2)$
+(rem.~\ref{rem:T-substrate-chi2}):
+\[
+  \underbrace{2\;\text{sk\l{}adowe ogona}\;(a,b)}_{\chi^2(2)}
+  \;=\;
+  \underbrace{N - 1 = 2\;\text{niezale\.zne mody}}_{\text{Brannen}}.
+\]
+Oba argumenty prowadz\k{a} do $\mathrm{CV} = 1$ z~tej samej
+przyczyny: w~$d = 3$ ogon ma \textbf{dwa} stopnie swobody,
+a~$N = 3$ generacje z~jednym wi\k{a}zem maj\k{a} $N{-}1 = 2$
+niezale\.zne mody. Postawiona teza: oba ,,2'' to ta sama
+wielko\'s\'c --- \textbf{wymierno\'s\'c faz w~oscylacyjnym ogonie
+w~$d = 3$ nadaje dwa mody, kt\'ore poprzez sum\k{e}
+pitagorejsk\k{a} wymuszaj\k{a} $Q_K = 3/2$}.
+
+\medskip\noindent
+\textbf{Otwarta luka:}
+Formalna implikacja
+$d = 3 \;\wedge\; N_{\mathrm{gen}} = 3 \;\Longrightarrow\;
+\mathrm{CV}(A^2) = 1$ wymaga dowodu,
+\.ze $N{-}1$ mod\'ow generacyjnych wnosi
+\textbf{jednakowy wk\l{}ad} do wariancji $A^2$.
+Hipoteza ekwipartycji jest fizycznie motywowana
+(rem.~\ref{rem:T-equipartition-status}),
+ale nie dowiedziona z~pierwszych zasad ODE.
+
+Skrypt: \texttt{koide\_cv1\_origin\_v47b.py}.
+\end{remark}

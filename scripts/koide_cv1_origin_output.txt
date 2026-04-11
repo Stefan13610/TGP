@@ -1,0 +1,290 @@
+======================================================================
+PATH 22: WHY IS CV(A^2) = 1?
+======================================================================
+
+  Precomputing A^2(g0) map...
+  g0_e = 0.86770494, g0_mu = 1.40397609, g0_tau = 1.56962743
+  A2_e = 0.0171440495, A2_mu = 0.2465584687, A2_tau = 1.0111189164
+  CV = 1.00000000, Q_K = 1.50000000
+
+======================================================================
+APPROACH 1: SELF-SIMILARITY RATIO R(g0) = A^2(phi*g0) / A^2(g0)
+======================================================================
+        g0       A2(g0)   A2(phi*g0)      R=ratio
+    0.5000   0.32071520   0.03602259       0.1123
+    0.5200   0.28666543   0.02470302       0.0862
+    0.5400   0.25592745   0.01561262       0.0610
+    0.5600   0.22811679   0.00864196       0.0379
+    0.5800   0.20290709   0.00372665       0.0184
+    0.6000   0.18002093   0.00084380       0.0047
+    0.6200   0.15921727   0.00001013       0.0001
+    0.6400   0.14029223   0.00128142       0.0091
+    0.6600   0.12306754   0.00475346       0.0386
+    0.6800   0.10739173   0.01056464       0.0984
+    0.7000   0.09313214   0.01890051       0.2029
+    0.7200   0.08017449   0.03000106       0.3742
+    0.7400   0.06842101   0.04417156       0.6456
+    0.7600   0.05778636   0.06179923       1.0694
+    0.7800   0.04819793   0.08337857       1.7299
+    0.8000   0.03959404   0.10955061       2.7668
+    0.8200   0.03192213   0.14116681       4.4222
+    0.8400   0.02513855   0.17939678       7.1363
+    0.8600   0.01920764   0.22592084      11.7620
+    0.8800   0.01410103   0.28330095      20.0908
+    0.9000   0.00979718   0.35576680      36.3132
+    0.9200   0.00628096   0.45111466      71.8225
+    0.9400   0.00354338   0.58629040     165.4606
+
+  R(g0_e) = A2_mu / A2_e = 14.381577
+  phi^2 = 2.618034
+  phi^4 = 6.854102
+  For CV=1 with geometric ratio r: r = 4.791288 (from PATH 21b)
+  R(g0_e) = 14.381577 is NOT phi^n for any integer n
+
+  R statistics: mean=14.0984, std=36.0601, CV(R)=2.5577
+  R is NOT constant across g0
+
+  R_21 = A2_mu/A2_e = 14.381577
+  R_32 = A2_tau/A2_mu = 4.100930
+  R_32/R_21 = 0.285152
+  If geometric: R_32 should = R_21, but ratio = 0.2852 (not 1)
+
+======================================================================
+APPROACH 2: VARIATIONAL PRINCIPLE -- does CV=1 extremize something?
+======================================================================
+
+  Scanning g0_tau in corridor, computing functionals:
+      g0_tau      Q_K       CV       sum_A2       sum_A4   entropy_A2     log_prod
+      1.4200   2.1222   0.6431     0.539452     0.137123     0.810483    -6.754521
+      1.4250   2.1152   0.6468     0.549248     0.142621     0.807845    -6.719614
+      1.4300   2.1069   0.6510     0.559402     0.148523     0.804903    -6.684672
+      1.4350   2.0975   0.6560     0.569935     0.154863     0.801657    -6.649671
+      1.4400   2.0869   0.6615     0.580871     0.161681     0.798106    -6.614583
+      1.4450   2.0752   0.6676     0.592235     0.169019     0.794250    -6.579380
+      1.4500   2.0624   0.6743     0.604054     0.176924     0.790085    -6.544036
+      1.4550   2.0485   0.6815     0.616362     0.185453     0.785609    -6.508514
+      1.4600   2.0336   0.6893     0.629191     0.194667     0.780819    -6.472781
+      1.4650   2.0178   0.6977     0.642581     0.204634     0.775711    -6.436800
+      1.4700   2.0010   0.7066     0.656576     0.215434     0.770278    -6.400529
+      1.4750   1.9834   0.7159     0.671224     0.227159     0.764515    -6.363921
+      1.4800   1.9649   0.7258     0.686583     0.239913     0.758414    -6.326926
+      1.4850   1.9455   0.7362     0.702714     0.253816     0.751964    -6.289490
+      1.4900   1.9254   0.7471     0.719691     0.269010     0.745156    -6.251549
+      1.4950   1.9045   0.7584     0.737597     0.285661     0.737973    -6.213030
+      1.5000   1.8829   0.7702     0.756531     0.303965     0.730401    -6.173854
+      1.5050   1.8606   0.7826     0.776606     0.324155     0.722420    -6.133928
+      1.5100   1.8376   0.7954     0.797954     0.346510     0.714006    -6.093148
+      1.5150   1.8138   0.8087     0.820737     0.371372     0.705132    -6.051388
+      1.5200   1.7894   0.8225     0.845143     0.399158     0.695763    -6.008507
+      1.5250   1.7643   0.8369     0.871405     0.430388     0.685858    -5.964330
+      1.5300   1.7385   0.8518     0.899810     0.465717     0.675368    -5.918648
+      1.5350   1.7120   0.8674     0.930707     0.505979     0.664231    -5.871219
+      1.5400   1.6846   0.8836     0.964545     0.552265     0.652371    -5.821733
+      1.5450   1.6564   0.9007     1.001901     0.606021     0.639691    -5.769803
+      1.5500   1.6272   0.9185     1.043532     0.669219     0.626070    -5.714940
+      1.5550   1.5969   0.9373     1.090461     0.744615     0.611346    -5.656502
+      1.5600   1.5654   0.9573     1.144123     0.836226     0.595302    -5.593615
+      1.5650   1.5323   0.9787     1.206564     0.950072     0.577647    -5.525096
+      1.5700   1.4973   1.0018     1.280854     1.095683     0.557970    -5.449254
+      1.5750   1.4599   1.0271     1.372002     1.289413     0.535634    -5.363433
+      1.5800   1.4191   1.0555     1.488644     1.561566     0.509644    -5.263367
+      1.5850   1.3735   1.0882     1.647798     1.976804     0.478220    -5.141214
+      1.5900   1.3201   1.1281     1.890066     2.706143     0.437652    -4.979914
+      1.5950   1.2504   1.1829     2.357006     4.443002     0.377341    -4.727517
+
+  Checking for extrema near CV=1 (g0_tau ~ 1.570):
+  At Q_K=3/2 (index 30):
+    sum(A2) -- monotonically increasing? YES
+    sum(A4) -- monotonically increasing? YES
+    entropy -- monotonically increasing? NO
+    log(prod) -- monotonically increasing? YES
+    Entropy is monotonic -- no extremum
+
+  AM/GM ratio (should be >=1, = 1 only for equal values):
+    At Q_K=3/2: AM/GM = 2.625662
+    Monotonic? YES
+
+======================================================================
+APPROACH 3: ANALYTICAL APPROXIMATION OF A^2(g0)
+======================================================================
+  Degree 1 fit: RMS = 0.404017
+  Degree 2 fit: RMS = 0.254565
+    ln(A^2) ~ -13.1881*g0^2 + 44.7520*g0 + -38.0290
+  Degree 3 fit: RMS = 0.088984
+    ln(A^2) ~ 70.0117*g0^3 + -288.3341*g0^2 + 401.8415*g0 + -191.0308
+
+  Power-law model: A^2 ~ (g0-1)^p / (g0_crit - g0)^q
+  Fit: p=2.0751, q=0.3705, C=0.887382, relative RMS=0.0058
+  Model A2_mu = 0.24741473 (actual 0.24655847, err 0.35%)
+  Model A2_tau = 1.00717795 (actual 1.01111892, err 0.39%)
+
+======================================================================
+APPROACH 4: GROWTH RATE AND SUM RULES
+======================================================================
+
+  Growth rate d(ln A^2)/dg0 at soliton g0 values:
+     e: g0=0.867705, d(ln A^2)/dg0 = -15.1630
+    mu: g0=1.403976, d(ln A^2)/dg0 = 6.9942
+   tau: g0=1.569627, d(ln A^2)/dg0 = 15.9112
+
+  Sum of growth rates: 7.7423
+  Product of growth rates: -1687.4285
+  Sum of |rates|: 38.0684
+
+======================================================================
+APPROACH 5: DISCRETE RG PERSPECTIVE
+======================================================================
+
+  Discrete RG steps g0_k = phi^k * g0_e:
+  k=0: g0 = 0.867705 
+  k=1: g0 = 1.403976 
+  k=2: g0 = 2.271681 (> g0_crit = 1.6, COLLAPSED!)
+  k=3: g0 = 3.675657 (> g0_crit = 1.6, COLLAPSED!)
+  k=4: g0 = 5.947338 (> g0_crit = 1.6, COLLAPSED!)
+
+  Modified step: g0_tau / g0_mu = 1.117987
+  g0_mu / g0_e = 1.618034 = phi
+  g0_tau / g0_mu = 1.117987 (NOT phi)
+  g0_tau / g0_e = 1.808941, phi^2 = 2.618034
+  phi * ratio = 1.808941
+  1/ratio = 0.894465
+  (g0_crit - g0_tau)/(g0_crit - g0_mu) = 0.154943
+
+  RG in A^2 space:
+  A2_mu / A2_e = 14.381577
+  A2_tau / A2_mu = 4.100930
+  (A2_tau/A2_mu) / (A2_mu/A2_e) = 0.285152
+
+======================================================================
+APPROACH 6: MAGIC ANGLE / DISTANCE TO COLLAPSE
+======================================================================
+  delta_mu = g0_crit - g0_mu = 0.196024
+  delta_tau = g0_crit - g0_tau = 0.030373
+  delta_mu / delta_tau = 6.453980
+  phi = 1.618034
+  phi^2 = 2.618034
+  phi^3 = 4.236068
+
+  delta_mu/delta_tau = 6.453980
+  Comparison: phi = 1.618034 (err 298.88%)
+  Comparison: phi^2 = 2.618034 (err 146.52%)
+  Comparison: e = 2.718282 (err 137.43%)
+  Comparison: pi = 3.141593 (err 105.44%)
+  Comparison: 2*phi = 3.236068 (err 99.44%)
+
+  Finding X such that g0_tau = g0_crit - delta_mu/X gives CV=1:
+  X = 6.453980
+
+  Distance from vacuum:
+  delta_e = 1 - g0_e = 0.132295
+  g0_mu - 1 = 0.403976
+  g0_tau - 1 = 0.569627
+  (g0_mu-1)/delta_e = 3.053599
+  (g0_tau-1)/delta_e = 4.305735
+  phi = 1.618034, phi^2 = 2.618034
+
+======================================================================
+APPROACH 7: FUNCTIONAL FORM NEAR COLLAPSE
+======================================================================
+
+  Near-collapse fit: A^2 ~ C*(g0-1)^p / (g0_crit - g0)^q
+  From Approach 3: p = 2.0751, q = 0.3705
+  Predicted A2_tau/A2_mu = 4.0708
+  Actual A2_tau/A2_mu = 4.1009
+
+======================================================================
+APPROACH 8: ENTROPY / INFORMATION EXTREMUM
+======================================================================
+  Mass fractions: [0.013448, 0.193406, 0.793146]
+  Shannon entropy H = 0.559517
+  Max entropy (equal) = 1.098612
+  H / H_max = 0.509294
+  1 - H/H_max = 0.490706
+  Renyi H_0.5 = 0.738063 (H/H_max = 0.671814)
+  Renyi H_2.0 = 0.405465 (H/H_max = 0.369070)
+  Renyi H_3.0 = 0.340423 (H/H_max = 0.309866)
+
+  Scanning for entropy extremum:
+  Max entropy at g0_tau = 1.4200, H = 0.810483
+  Koide g0_tau = 1.5696
+  Match? NO
+
+======================================================================
+APPROACH 9: Q_K = N/(1+CV^2) -- is CV^2=1 natural for N=3?
+======================================================================
+  Q_K = N/(1+CV^2)
+  For N=3: Q_K=3/2 <=> CV^2 = 1
+  For N=2: Q_K=2/(1+CV^2). Q_K=1 <=> CV^2=1 (trivial)
+  For N=4: Q_K=4/(1+CV^2). CV^2=1 <=> Q_K=2
+
+  Alternative: CV^2 = N-2?
+  N=2: CV^2=0 => Q_K=2 (equal masses)
+  N=3: CV^2=1 => Q_K=3/2 (Koide!)
+  N=4: CV^2=2 => Q_K=4/3
+  This gives Q_K = N/(N-1) for CV^2=N-2
+
+  Or: CV^2 = 1 for all N (universal)?
+  N=2: Q_K=1 (maximal hierarchy)
+  N=3: Q_K=3/2 (Koide)
+  N=4: Q_K=2
+
+  Brannen equipartition: b = sqrt(N-1), CV^2 = b^2/2 = (N-1)/2
+  N=2: CV^2=1/2 => Q_K=4/3
+  N=3: CV^2=1 => Q_K=3/2 (MATCH!)
+  N=4: CV^2=3/2 => Q_K=8/5
+
+======================================================================
+FINAL SYNTHESIS: PATH 22
+======================================================================
+
+  RESULTS:
+
+  1. SELF-SIMILARITY (Approach 1): R(g0) = A2(phi*g0)/A2(g0) is NOT
+     constant -- varies from 0.0 to 165.5. The map A^2 is not
+     self-similar under phi-scaling. This rules out simple power-law
+     derivations of CV=1.
+
+  2. VARIATIONAL PRINCIPLE (Approach 2): None of the tested functionals
+     (energy, entropy, AM/GM, log-product) have an extremum at Q_K=3/2.
+     All are monotonic in g0_tau across the corridor.
+     CV=1 does NOT appear to be a variational extremum.
+
+  3. ANALYTICAL APPROXIMATION (Approach 3): A^2(g0) is well-fit by
+     (g0-1)^p / (g0c-g0)^q with p=2.08, q=0.37. This interpolation
+     gives ~0.4% accuracy but doesn't provide a closed-form CV=1 condition.
+
+  4. GROWTH RATES (Approach 4): Growth rates at the three g0 values
+     don't satisfy any obvious sum rule.
+
+  5. DISCRETE RG (Approach 5): phi^2*g0_e > g0_crit -- the third step
+     BREAKS the discrete RG. g0_tau/g0_mu = 1.1180 (not phi).
+     The A^2 ratios are also not geometric.
+
+  6. DISTANCE TO COLLAPSE (Approach 6): delta_mu/delta_tau = 6.4540.
+     No clear match to phi, pi, e, or other constants.
+
+  7. ENTROPY (Approach 8): Max entropy at g0_tau = 1.4200, Koide at 1.5696.
+     NO MATCH
+
+  8. BRANNEN FORMULA (Approach 9): CV^2 = (N-1)/2 from the
+     equipartition hypothesis gives Q_K = 3/2 for N=3.
+     This is the ONLY formula that reproduces CV=1 from a
+     counting argument (N-1 = 2 modes).
+
+  CONCLUSION:
+  The COUNTING ARGUMENT remains the most compelling:
+  - N=3 generations, b = sqrt(N-1) = sqrt(2), CV = b/sqrt(2) = 1
+  - This is equivalent to: 2 independent tail components (a,b)
+    from the oscillatory tail in d=3
+  - The "2" in chi2(2) IS the "N-1 = 2" in the Brannen formula
+
+  But the GAP persists: WHY is b = sqrt(N-1)?
+  The equipartition hypothesis (thm:T-QK-from-Ngen) says "each
+  independent mode contributes equally to the variance."
+  With N=3 generations and 1 constraint (sum), there are N-1=2
+  independent modes -> b^2 = 2 -> CV=1.
+
+  This connects to chi2(2):
+  - 2 tail components -> chi2(2) -> CV=1  [structural, from ODE]
+  - N-1 = 2 modes -> b = sqrt(2) -> CV=1  [counting, from Brannen]
+  These are the SAME "2" seen from different angles.
