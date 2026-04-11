@@ -1210,3 +1210,27 @@ poni\.zej progu kolapsu $g_{0,\rm crit}$.
 \end{enumerate}
 Skrypt: \texttt{F\_alpha\_canonical\_v47b.py}.
 \end{proposition}
+
+\begin{remark}[Algebraiczny mechanizm uniwersalno\'sci $r_{31}$ (v47b)]%
+\label{rem:T-r31-algebra}
+Uniwersalno\'s\'c $r_{31}$ wzgl\k{e}dem $\alpha$ jest
+\textbf{tautologi\k{a} algebraiczn\k{a}}.
+Relacja Koide'go $Q_K = 3/2$ jest r\'ownaniem kwadratowym
+na $v = \sqrt{r_{31}}$ przy danym $u = \sqrt{r_{21}}$:
+\[
+  1 + u^2 + v^2 - 4u - 4v - 4uv = 0.
+\]
+Rozwi\k{a}zanie (ga\l{}\k{a}\'z fizyczna):
+\begin{equation}\label{eq:r31-formula}
+  \sqrt{r_{31}} = 2(1 + \sqrt{r_{21}})
+    + \sqrt{3\bigl(1 + 4\sqrt{r_{21}} + r_{21}\bigr)}.
+\end{equation}
+Warto\'s\'c numeryczna: $r_{31} = 3477{,}44$
+(PDG $3477{,}23$, odchylenie $0{,}006\%$).
+Formu\l{}a ta zale\.zy \textbf{wy\l{}\k{a}cznie} od~$r_{21}$
+--- nie zna $\alpha$, ODE ani formy r\'ownania (A/B).
+
+Druga ga\l{}\k{a}\'z ($v_-$) daje $r_{31}^- = 6{,}49$
+(hipotetyczne $m_\tau^- = 3{,}32$~MeV --- niefizyczne).
+Skrypt: \texttt{r31\_universality\_proof\_v47b.py}.
+\end{remark}
