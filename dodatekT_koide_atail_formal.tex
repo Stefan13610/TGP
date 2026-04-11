@@ -1234,3 +1234,32 @@ Druga ga\l{}\k{a}\'z ($v_-$) daje $r_{31}^- = 6{,}49$
 (hipotetyczne $m_\tau^- = 3{,}32$~MeV --- niefizyczne).
 Skrypt: \texttt{r31\_universality\_proof\_v47b.py}.
 \end{remark}
+
+\begin{remark}[Hierarchia predykcji i~status $Q_K = 3/2$ (v47b)]%
+\label{rem:T-prediction-hierarchy}
+Profil $Q_K(g_{0,\tau})$ jest ci\k{a}g\l{}\k{a} funkcj\k{a}
+\textbf{monotoniczne malej\k{a}c\k{a}} od $Q_K \approx 2{,}13$
+(przy $g_{0,\tau} \approx g_{0,\mu}$) do $Q_K \approx 1{,}15$
+(przy $g_{0,\tau} \to g_{0,\rm crit}$).
+Ka\.zda warto\'s\'c $Q_K \in [1{,}15;\; 2{,}13]$ jest osi\k{a}galna
+--- ODE solitonowe \textbf{nie selekcjonuje} $Q_K = 3/2$.
+
+\medskip\noindent
+\textbf{Hierarchia logiczna:}
+\begin{enumerate}[nosep]
+  \item[\textsc{wej.}]
+    $r_{21} = 206{,}77$ (z~$\varphi$-FP + ODE);
+    $Q_K = 3/2$ (Koide --- empiryczny lub pochodny?).
+  \item[\textsc{alg.}]
+    $r_{31} = f(r_{21}) = 3477{,}4$ (wzór~\eqref{eq:r31-formula},
+    niezale\.zny od~$\alpha$/ODE).
+  \item[\textsc{ode.}]
+    $g_{0,e}(\alpha)$ (kalibracja), $g_{0,\tau}(\alpha)$ (Koide + ODE),
+    $g_{0,\rm crit}(\alpha)$ (kolaps).
+  \item[\textsc{lag.}]
+    $\alpha = 2$ ($K = g^4$), $g_{0,\rm crit} = 8/5$, $N_{\rm gen} = 3$.
+\end{enumerate}
+Status O-L5: \textbf{otwarty krok to pochodzenie $Q_K = 3/2$},
+nie~$r_{31}$ (kt\'ore jest konsekwencj\k{a} algebraiczn\k{a}).
+Skrypt: \texttt{koide\_existence\_v47b.py}.
+\end{remark}
