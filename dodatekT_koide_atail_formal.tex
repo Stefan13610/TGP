@@ -1554,3 +1554,60 @@ losowania z~rozk\l{}adu wyk\l{}adniczego.
 
 Skrypt: \texttt{koide\_substrate\_cv\_v47b.py}.
 \end{remark}
+
+\begin{remark}[Domkni\k{e}cie luki $\chi^2$: spirala ODE i~szum substratu (v47b)]%
+\label{rem:T-chi2-closure}
+\'Scie\.zka~21b testuje dwie drogi domkni\k{e}cia luki
+z~rem.~\ref{rem:T-substrate-chi2}:
+
+\medskip\noindent
+\textbf{\'Scie\.zka A (statystyczna --- szum substratu):}
+Dodanie losowego zaburzenia $\eta(r)$ do ODE
+i~ekstrakcja $(a,b)$ z~wielu realizacji.
+Wynik: szum \textbf{nie stabilizuje} $Q_K$ przy $3/2$.
+Dla $\varepsilon = 0{,}01$: $Q_K \in [1{,}43;\; 2{,}33]$
+(du\.zy rozrzut, brak zbiegania).
+\'Scie\.zka~A jest \textbf{zamkni\k{e}ta}.
+
+\medskip\noindent
+\textbf{\'Scie\.zka B (strukturalna --- w\l{}asno\'sci mapy ODE):}
+Kluczowe odkrycia:
+\begin{enumerate}[nosep]
+  \item Mapa $g_0 \mapsto (a, b)$ wy\'sledla \textbf{spiral\k{e}}
+    w~p\l{}aszczy\'znie $(a,b)$: amplituda ro\'snie,
+    faza $\theta$ obraca si\k{e} wraz ze wzrostem $g_0$.
+  \item Pr\k{e}dko\'s\'c rotacji $d\theta/dg_0$
+    \textbf{przyspiesza} ku progowi kolapsu:
+    od $\sim\!-111^\circ$/dg$_0$ (blisko pr\'o\.zni)
+    do $+2117^\circ$/dg$_0$ (blisko $g_{0,\mathrm{crit}}$).
+  \item Trzy solitony pr\'obkuj\k{a} spiral\k{e} pod
+    r\'o\.znymi k\k{a}tami:
+    $\theta_e = -68^\circ$, $\theta_\mu = 82^\circ$,
+    $\theta_\tau = -172^\circ$ (rozpi\k{e}to\'s\'c $150/256/106^\circ$).
+  \item $A^2 = a^2 + b^2$ jest \textbf{niezale\.zne od fazy}
+    (inwariancja pythagorejska) --- to t\l{}umaczy,
+    dlaczego \textbf{masa} (nie amplituda, nie $g_0$)
+    spe\l{}nia Koide.
+  \item Korelacja Pearsona $\rho(A,\theta) = 0{,}20$,
+    Spearmana $\rho_S = 0{,}33$ ($p = 0{,}054$):
+    spirala jest \textbf{s\l{}abo sprz\k{e}\.zona}, ale
+    nie pe\l{}ni okr\k{a}g\l{}o-symetryczna.
+  \item $Q_K$ maleje \textbf{monotonicznie} od $2{,}12$ do $1{,}32$
+    w~miar\k{e} wzrostu $g_{0,\tau}$
+    --- brak ekstremum, brak mechanizmu samo-selekcji.
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Konkluzja:}
+Ramy $\chi^2(2)$ wyja\'sniaj\k{a}, \emph{dlaczego}
+Koide dzia\l{}a na poziomie masy
+(inwariancja $A^2 = a^2 + b^2$),
+ale \textbf{nie derywuj\k{a}} $\mathrm{CV} = 1$.
+Po 21 \'scie\.zkach analizy, $Q_K = 3/2$ pozostaje
+\textbf{parametrem wej\'sciowym} (selekcja $g_{0,\tau}$).
+Otwarte pytanie: co fizycznie \textbf{selekcjonuje}
+$g_{0,\tau} = 1{,}570$ w~korytarzu kolapsu $[1{,}404;\; 1{,}600)$?
+
+Skrypty: \texttt{koide\_chi2\_closure\_v47b.py},
+\texttt{koide\_chi2\_closure\_fast.py}.
+\end{remark}

@@ -23,6 +23,7 @@ Poniżej: **propozycje**, które **nie są** zawarte w wyczerpującej liście ne
 | 13+1 | Korytarz kolapsu + ekwipartycja | Q_K monotoniczne w korytarzu; f=0.845 nie pasuje do stałej; d/d_max = 1/sqrt(2) na simpleksie | `koide_collapse_corridor_v47b.py` |
 | 4 | Korekty Z₃ faz | Fazy ODE to 150/256/106 deg (nie Z₃); opt. fazy dla nierównych A to 0/180 deg; korekty overlap łamią Koide | `koide_z3_correction_v47b.py` |
 | 10 | Substrat -> CV=1 | Bezp. momenty Isinga nie dają CV=1; **ale chi²(2) z dwóch składowych ogona → Exp → CV=1 = Koide!** Luka: determinizm vs statystyka | `koide_substrate_cv_v47b.py` |
+| 10b | Domknięcie luki χ² | Ścieżka A (szum): ZAMKNIĘTA. Ścieżka B (spirala ODE): wyjaśnia DLACZEGO masa, ale NIE derywuje CV=1 | `koide_chi2_closure_fast.py` |
 
 ---
 
@@ -133,6 +134,16 @@ Nie pojawia się na liście 12 zawodów: czy \(Q_K=3/2\) odpowiada **krzywiźnie
   - **KLUCZOWE ODKRYCIE -- lancuch chi-kwadrat**: ogon solitonu ma DWA niezalezne skladowe (\(a\cos r + b\sin r\)). Jesli \(a, b\) sa efektywnie gaussowskie: \(A^2 = a^2 + b^2 \sim \chi^2(2) = \mathrm{Exp}\), a rozklad wykladniczy ma \(\mathrm{CV} = 1\) = KOIDE! Lancuch: \(d=3\) (oscylacyjne ogony) \(\to\) 2 skladowe \(\to\) \(\chi^2(2)\) \(\to\) \(\mathrm{CV}=1\) \(\to\) \(Q_K = 3/2\).
   - **PROBLEM**: trzy solitony sa deterministyczne, nie losowe. Potrzebne uzasadnienie, dlaczego stale amplitudy zachowuja sie jak losowania z Exp.
   - **Status: najobiecniejszy link strukturalny**, wymaga zamkniecia luki deterministyczny/statystyczny.
+  - **Wynik PATH 21b (`koide_chi2_closure_fast.py`):**
+    - **Ścieżka A (szum substratu) — ZAMKNIĘTA:** szum nie stabilizuje Q_K przy 3/2. Dla ε=0.01: Q_K ∈ [1.43, 2.33] (duży rozrzut). Mechanizm statystyczny nie działa.
+    - **Ścieżka B (mapa ODE) — wyniki strukturalne:**
+      - Mapa g₀ → (a,b) kreśli **spiralę** w płaszczyźnie (a,b): amplituda rośnie, faza rotuje.
+      - Rotacja fazy **przyspiesza** ku kolapsowi: od -111°/dg₀ do +2117°/dg₀.
+      - Trzy solitony próbkują spiralę pod różnymi kątami: θ_e=-68°, θ_μ=82°, θ_τ=-172°.
+      - A² = a²+b² jest **niezależne od fazy** (inwariancja pitagorejska) — wyjaśnia DLACZEGO masa (nie amplituda) spełnia Koide.
+      - Korelacja Pearson(A,θ) = 0.20 — spirala NIE jest kołowo-symetryczna.
+      - Q_K **monotonicznie** maleje z g₀_τ — brak mechanizmu samoselekcji.
+    - **KONKLUZJA:** Ramy χ²(2) wyjaśniają dlaczego Koide działa na poziomie masy, ale **nie derywują** CV=1. Po 21 ścieżkach, Q_K=3/2 pozostaje **parametrem wejściowym**.
 
 ---
 
