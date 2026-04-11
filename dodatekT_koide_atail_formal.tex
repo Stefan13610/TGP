@@ -1129,3 +1129,48 @@ perturbacja wok\'o\l{} $d = 1$,
 lub ukryta symetria kanonicznego r\'ownania Lane-Emdena.
 Skrypt: \texttt{gcrit\_energy\_proof\_v47b.py}.
 \end{remark}
+
+\begin{proposition}[Mechanizm oscylacyjnego ogona solitonowego]%
+\label{prop:T-oscillatory-tail}
+W~zmiennej kanonicznej $f = g^{\alpha+1}$ r\'ownanie solitonowe
+przyjmuje posta\'c
+\[
+  f'' + \frac{d{-}1}{r}\,f' = (\alpha{+}1)\,f^{\frac{\alpha+2}{\alpha+1}}
+  \bigl(1 - f^{\frac{1}{\alpha+1}}\bigr).
+\]
+Linearyzacja wok\'o\l{} pr\'o\.zni $f = 1 + \eta$, $|\eta| \ll 1$:
+\[
+  \eta'' + \frac{d{-}1}{r}\,\eta' + \eta = 0
+  \qquad\text{(sferyczne r\'ownanie Bessela, $\omega = 1$)}.
+\]
+Rozwiązanie w~$d = 3$: $\eta(r) = A\sin(r + \varphi)/r$ ---
+\textbf{oscylacyjne} z~cz\k{e}sto\'sci\k{a} $\omega = 1$ (uniwersaln\k{a},
+niezale\.zn\k{a} od~$\alpha$).
+
+\medskip\noindent
+\textbf{Kontrast}: w~zmiennej $g$ linearyzacja daje
+$h'' + \frac{d{-}1}{r}\,h' - h = 0$
+(zmodyfikowane r.\ Bessela, zanik \textbf{wyk\l{}adniczy}).
+Transformacja $f = g^{\alpha+1}$ absorbuje cz\l{}on krzy\.zowy
+$(\alpha/g)\,g'^2$, odwracaj\k{a}c znak efektywnego potencja\l{}u
+z~$-1$ na~$+1$.
+
+\medskip\noindent
+\textbf{Konsekwencje:}
+\begin{enumerate}[nosep]
+  \item Ogon oscylacyjny jest \textbf{fizyczn\k{a} konsekwencj\k{a}}
+    nieliniowej metryki kinetycznej $K(g) = g^{2\alpha+2}$.
+  \item Amplituda ogona: $A_f = (\alpha{+}1)\cdot A_g$
+    (potwierdzone numerycznie z~precyzj\k{a} $10^{-5}$
+    dla $\alpha = 2$: $A_f = 3\,A_g$).
+  \item W~pobli\.zu pr\'o\.zni: $A_g \approx |g_0 - 1|$
+    (liniowa zale\.zno\'s\'c, \textbf{dok\l{}adna} w~granicy $g_0 \to 1$).
+  \item W~pobli\.zu kolapsu ($g_0 \to 8/5$):
+    $A_g \sim (8/5 - g_0)^{-\gamma}$ z~$\gamma \approx 0{,}23$
+    (wykładnik wyznaczony przez nieliniow\k{a} dynamik\k{e} j\k{a}dra).
+  \item Model interpolacyjny $A_g \sim |g_0 {-} 1|/(8/5 {-} g_0)^\gamma$
+    daje $Q_K \approx 1{,}55$ --- \textbf{nie} $3/2$.
+    Dok\l{}adna warto\'s\'c $Q_K = 3/2$ wymaga pe\l{}nego nieliniowego ODE.
+\end{enumerate}
+Skrypt: \texttt{atail\_asymptotic\_v47b.py}.
+\end{proposition}
