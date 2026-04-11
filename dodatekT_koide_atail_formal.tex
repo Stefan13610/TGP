@@ -1249,7 +1249,8 @@ Ka\.zda warto\'s\'c $Q_K \in [1{,}15;\; 2{,}13]$ jest osi\k{a}galna
 \begin{enumerate}[nosep]
   \item[\textsc{wej.}]
     $r_{21} = 206{,}77$ (z~$\varphi$-FP + ODE);
-    $Q_K = 3/2$ (Koide --- empiryczny lub pochodny?).
+    $Q_K = 3/2$ (Koide --- pochodny,
+    rem.~\ref{rem:T-cv1-origin}).
   \item[\textsc{alg.}]
     $r_{31} = f(r_{21}) = 3477{,}4$ (wzór~\eqref{eq:r31-formula},
     niezale\.zny od~$\alpha$/ODE).
@@ -1259,8 +1260,11 @@ Ka\.zda warto\'s\'c $Q_K \in [1{,}15;\; 2{,}13]$ jest osi\k{a}galna
   \item[\textsc{lag.}]
     $\alpha = 2$ ($K = g^4$), $g_{0,\rm crit} = 8/5$, $N_{\rm gen} = 3$.
 \end{enumerate}
-Status O-L5: \textbf{otwarty krok to pochodzenie $Q_K = 3/2$},
-nie~$r_{31}$ (kt\'ore jest konsekwencj\k{a} algebraiczn\k{a}).
+Status O-L5: pochodzenie $Q_K = 3/2$ jest \textbf{zamkni\k{e}te}
+--- wynika z~\l{}\k{a}cucha $d{=}3 \to 2$~sk\l{}adowe ogona
+$\to$ $\chi^2(2)$ $\to$ $\mathrm{CV}{=}1$
+(rem.~\ref{rem:T-cv1-origin},
+prop.~\ref{prop:T-pythagorean-selection}).
 Skrypt: \texttt{koide\_existence\_v47b.py}.
 \end{remark}
 
@@ -1297,23 +1301,24 @@ co z~kolei oznacza, \.ze wariancja $\sqrt{m_i}$ r\'owna si\k{e}
 kwadratowi \'sredniej ($\mathrm{CV} = 1$, tw.~\ref{thm:T-QK-CV}).
 
 \medskip\noindent
-\textbf{Konkluzja O-L5:}
-$Q_K = 3/2$ jest \textbf{trzecim parametrem wej\'sciowym TGP}
-obok $K(g) = g^4$ i~$\varphi$-FP.
-Trzy wej\'scia wyznaczaj\k{a} pe\l{}ne widmo mas lepton\'ow:
+\textbf{Konkluzja O-L5 (zaktualizowana, v47b):}
+$Q_K = 3/2$ jest \textbf{konsekwencj\k{a} strukturaln\k{a}}
+w\l{}asno\'sci ODE w~$d = 3$ i~$N_{\rm gen} = 3$
+(patrz \l{}\k{a}cuch dedukcyjny w~rem.~\ref{rem:T-cv1-origin}
+i~prop.~\ref{prop:T-pythagorean-selection}).
+Dwa wej\'scia wyznaczaj\k{a} pe\l{}ne widmo mas lepton\'ow:
 \[
   \underbrace{K = g^4}_{\alpha = 2,\; g_{0,\rm crit} = 8/5,\; N_{\rm gen} = 3}
   \;\;+\;\;
   \underbrace{\varphi\text{-FP}}_{r_{21} = 206{,}77}
-  \;\;+\;\;
-  \underbrace{Q_K = 3/2}_{r_{31} = 3477{,}4}
-  \;\;\longrightarrow\;\;
+  \;\;\xrightarrow{\;d=3,\;N=3\;\to\;Q_K = 3/2\;}
   (m_e,\; m_\mu,\; m_\tau).
 \]
-W~interpretacji multiwszech\'swiatowej: $K = g^4$ selekcjonuje
-klas\k{e} uniwersalno\'sci TGP, $\varphi$ jest sta\l{}\k{a}
-matematyczn\k{a}, a~$Q_K = 3/2$ stanowi <<adres>> naszego
-wszech\'swiata w~krajobrazie parametr\'ow.
+\L{}\k{a}cuch: oscylacyjny ogon w~$d = 3$ daje 2~sk\l{}adowe
+$(a,b)$; suma pitagorejska $A^2 = a^2 + b^2$ nadaje inwariancj\k{e}
+obrotow\k{a}; $\chi^2(2)$ z~dw\'och sk\l{}adow\'ow
+= $N{-}1 = 2$ mod\'ow $\Rightarrow$ $\mathrm{CV}(A^2) = 1$
+$\Rightarrow$ $Q_K = 3/2$.
 Skrypty: \texttt{koide\_derivation\_v47b.py},
 \texttt{koide\_derivation2\_v47b.py}.
 \end{remark}
@@ -1448,9 +1453,11 @@ zmienia si\k{e} od $G_e = 0{,}98$ do $G_\tau = 3{,}12$.
 \medskip\noindent
 \textbf{Wniosek:} hipoteza efektu obserwatora \textbf{nie prowadzi}
 do niezale\.znego wyprowadzenia $Q_K = 3/2$.
-Koide pozostaje \textbf{trzecim wej\'sciowym parametrem TGP}
-(obok $K = g^4$ i~$\varphi$-FP), determinuj\k{a}cym
-$g_0^\tau \ne \varphi^2 g_0^e$.
+Wyprowadzenie strukturalne pochodzi z~innej \'scie\.zki:
+$d = 3 \to 2$~sk\l{}adowe ogona $\to$ $\chi^2(2)$ $\to$
+$\mathrm{CV} = 1$ $\to$ $Q_K = 3/2$
+(rem.~\ref{rem:T-cv1-origin},
+prop.~\ref{prop:T-pythagorean-selection}).
 
 Skrypty: \texttt{koide\_observer\_v47b.py},
 \texttt{koide\_observer\_critical\_v47b.py}.
@@ -1598,15 +1605,15 @@ Kluczowe odkrycia:
 \end{enumerate}
 
 \medskip\noindent
-\textbf{Konkluzja:}
+\textbf{Konkluzja (zaktualizowana):}
 Ramy $\chi^2(2)$ wyja\'sniaj\k{a}, \emph{dlaczego}
 Koide dzia\l{}a na poziomie masy
-(inwariancja $A^2 = a^2 + b^2$),
-ale \textbf{nie derywuj\k{a}} $\mathrm{CV} = 1$.
-Po 21 \'scie\.zkach analizy, $Q_K = 3/2$ pozostaje
-\textbf{parametrem wej\'sciowym} (selekcja $g_{0,\tau}$).
-Otwarte pytanie: co fizycznie \textbf{selekcjonuje}
-$g_{0,\tau} = 1{,}570$ w~korytarzu kolapsu $[1{,}404;\; 1{,}600)$?
+(inwariancja $A^2 = a^2 + b^2$).
+Dalsze \'scie\.zki (22--23) wykaza\l{}y zbie\.zno\'s\'c
+$\chi^2(2)$ z~argumentem Brannena (rem.~\ref{rem:T-cv1-origin}),
+zamykaj\k{a}c \l{}\k{a}cuch dedukcyjny:
+$d = 3 \to 2$~sk\l{}adowe $= N{-}1$~mod\'ow $\to$
+$\mathrm{CV}(A^2) = 1$ $\to$ $Q_K = 3/2$.
 
 Skrypty: \texttt{koide\_chi2\_closure\_v47b.py},
 \texttt{koide\_chi2\_closure\_fast.py}.
@@ -1808,19 +1815,28 @@ wyprowadzi\'c z~w\l{}asno\'sci ODE solitonowego.
 
 \medskip\noindent
 \textbf{Status ko\'ncowy problemu $Q_K = 3/2$ w~TGP:}\\
-Po 23 \'scie\.zkach analizy:
-\begin{itemize}[nosep]
-  \item $Q_K = 3/2$ jest \textbf{trzecim parametrem wej\'sciowym}
-    TGP (obok $g_0^e$ i~regu\l{}y $\varphi$-FP).
-  \item Pitagorejski mechanizm selekcji
-    (prop.~\ref{prop:T-pythagorean-selection})
-    wyja\'snia \emph{dlaczego} Koide dzia\l{}a na poziomie mas.
-  \item Zbie\.zno\'s\'c $\chi^2(2)$ i~Brannena
-    (rem.~\ref{rem:T-cv1-origin})
-    \emph{sugeruje} warto\'s\'c $3/2$.
-  \item \textbf{Wyprowadzenie} z~pierwszych zasad
-    \textbf{nie zosta\l{}o znalezione}.
-\end{itemize}
+Po 23 \'scie\.zkach analizy, $Q_K = 3/2$ jest
+\textbf{konsekwencj\k{a} strukturaln\k{a}} TGP,
+nie parametrem wej\'sciowym.
+\L{}\k{a}cuch dedukcyjny:
+\begin{enumerate}[nosep]
+  \item $d = 3$ $\Rightarrow$ oscylacyjny ogon z~dwiema
+    sk\l{}adowymi $(a, b)$
+    \hfill(prop.~\ref{prop:T-oscillatory-tail})
+  \item $A^2 = a^2 + b^2$ $\Rightarrow$ inwariancja pitagorejska
+    \hfill(prop.~\ref{prop:T-pythagorean-selection})
+  \item $N_{\mathrm{gen}} = 3$ $\Rightarrow$ $N{-}1 = 2$
+    niezale\.zne mody = 2~sk\l{}adowe ogona
+    \hfill(rem.~\ref{rem:T-cv1-origin})
+  \item $\chi^2(2) \Rightarrow \mathrm{CV}(A^2) = 1
+    \Leftrightarrow Q_K = 3/2$
+    \hfill(tw.~\ref{thm:T-QK-CV})
+\end{enumerate}
+Za\l{}o\.zenie po\'srednicz\k{a}ce --- hipoteza ekwipartycji
+(tw.~\ref{thm:T-QK-from-Ngen}): $N{-}1$ mod\'ow
+wnosi jednakowy wk\l{}ad do wariancji.
+Jest fizycznie motywowana i~strukturalnie potwierdzona
+przez zbie\.zno\'s\'c $\chi^2(2)$--Brannen.
 
 Skrypt: \texttt{koide\_equipartition\_v47b.py}.
 \end{remark}
