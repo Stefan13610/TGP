@@ -1611,3 +1611,101 @@ $g_{0,\tau} = 1{,}570$ w~korytarzu kolapsu $[1{,}404;\; 1{,}600)$?
 Skrypty: \texttt{koide\_chi2\_closure\_v47b.py},
 \texttt{koide\_chi2\_closure\_fast.py}.
 \end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Jawny mechanizm selekcji $Q_K$: dekompozycja pitagorejska ogona}%
+\label{app:T-pythagorean-selection}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Pitagorejski mechanizm selekcji $Q_K = 3/2$]%
+\label{prop:T-pythagorean-selection}
+W~kanonicznym TGP ($K(g)=g^4$, $d=3$) \l{}\k{a}cznik dedukcyjny
+od amplitud ogonowych do relacji Koide'go ma nast\k{e}puj\k{a}c\k{a}
+struktur\k{e}:
+
+\medskip\noindent
+\textbf{Krok~1 (ODE $\to$ dwie sk\l{}adowe):}
+Linearyzacja kanonicznego ODE wok\'o\l{} pr\'o\.zni ($g \to 1$)
+daje r\'ownanie sferyczne Bessela z~$\omega = 1$
+(prop.~\ref{prop:T-oscillatory-tail}).
+Og\'olne rozwi\k{a}zanie w~$d=3$:
+\begin{equation}\label{eq:T-tail-ab}
+  h(r) \;:=\; \bigl(g(r)-1\bigr)\cdot r
+  \;\xrightarrow{r\to\infty}\;
+  a\,\cos r \;+\; b\,\sin r,
+\end{equation}
+gdzie $a = a(g_0)$, $b = b(g_0)$ s\k{a} \textbf{deterministycznymi}
+funkcjami warunku pocz\k{a}tkowego, wyznaczonymi przez ca\l{}kowanie
+pe\l{}nego (nieliniowego) ODE od $r = 0$ do ogona.
+
+\medskip\noindent
+\textbf{Krok~2 (suma pitagorejska):}
+Amplituda ogonowa spe\l{}nia
+\begin{equation}\label{eq:T-A2-pythagoras}
+  A^2(g_0) \;=\; a(g_0)^2 \;+\; b(g_0)^2,
+\end{equation}
+co jest \textbf{inwariancj\k{a} obrotow\k{a}} w~p\l{}aszczy\'znie
+$(a,b)$: $A^2$ zale\.zy od \textbf{promienia},
+nie od fazy $\theta(g_0) = \arctan(b/a)$.
+
+\medskip\noindent
+\textbf{Krok~3 (mapa spiralna):}
+Ca\l{}kowanie ODE dla $g_0 \in (1, g_{0,\mathrm{crit}})$
+daje map\k{e} $g_0 \mapsto (a(g_0), b(g_0))$,
+kt\'ora kre\'sli \textbf{spiral\k{e}} w~p\l{}aszczy\'znie $(a,b)$:
+amplituda $A(g_0)$ ro\'snie monotonicznie,
+faza $\theta(g_0)$ obraca si\k{e} z~pr\k{e}dko\'sci\k{a}
+rosn\k{a}c\k{a} ku progowi kolapsu
+($d\theta/dg_0$: od $\sim\!100^\circ$/dg$_0$ blisko pr\'o\.zni
+do $>2000^\circ$/dg$_0$ blisko $g_{0,\mathrm{crit}} = 8/5$).
+
+\medskip\noindent
+\textbf{Krok~4 (selekcja $g_{0,\tau}$):}
+Regu\l{}a $\varphi$-FP wyznacza $g_0^e$ i~$g_0^\mu = \varphi\,g_0^e$.
+Warunek Koide'go $Q_K = 3/2$ (r\'ownowa\.znie
+$\mathrm{CV}(A^2) = 1$, tw.~\ref{thm:T-QK-CV},
+wn.~\ref{cor:T-CV-Atail}) \textbf{jednoznacznie} wyznacza
+\begin{equation}\label{eq:T-g0tau-selection}
+  g_{0,\tau} \;=\; \bigl(A^2\bigr)^{-1}\!\!
+  \bigl(\text{jedyne $x$ takie, \.ze }
+  \mathrm{CV}(A_e^2, A_\mu^2, x) = 1\bigr)
+  \;\in\; \bigl[g_0^\mu,\; g_{0,\mathrm{crit}}\bigr).
+\end{equation}
+Monotoniczno\'s\'c $A^2(g_0)$ nad pr\'o\.zni\k{a}
+gwarantuje \textbf{istnienie i~jednoznaczno\'s\'c} rozwi\k{a}zania.
+Numerycznie: $g_{0,\tau} = 1{,}5696$ (tj.\ $1{,}9\%$ poni\.zej
+$g_{0,\mathrm{crit}} = 1{,}6$).
+
+\medskip\noindent
+\textbf{Pe\l{}ny \l{}\k{a}cuch selekcji:}
+\begin{equation}\label{eq:T-selection-chain}
+  \boxed{
+  g_0
+  \;\xrightarrow{\;\text{ODE}\;}
+  \bigl(a(g_0),\; b(g_0)\bigr)
+  \;\xrightarrow{\;\text{Pitagoras}\;}
+  A^2 = a^2 + b^2
+  \;\xrightarrow{\;Q_K = 3/2\;}
+  g_{0,\tau} = 1{,}5696.}
+\end{equation}
+
+\medskip\noindent
+\textbf{Co ten mechanizm wyja\'snia:}
+\begin{enumerate}[nosep]
+  \item \textbf{Dlaczego masa, nie amplituda?}
+    Poniewa\.z $A^2 = a^2+b^2$ u\'srednia po fazie spiralnej ---
+    inwariancja obrotowa \l{}\k{a}czy Koide z~geometri\k{a}
+    pitagorejsk\k{a} w~przestrzeni $(a,b)$, kt\'ora istnieje
+    tylko dla $d \geq 3$ (oscylacyjne ogony).
+  \item \textbf{Dlaczego $Q_K$ mo\.ze mie\'c r\'o\.zne warto\'sci?}
+    Przesuni\k{e}cie $g_{0,\tau}$ w~korytarzu kolapsu
+    daje $Q_K \in [1{,}27;\; 2{,}13]$. Warto\'s\'c $3/2$ jest
+    \textbf{selekcjonowana}, nie wymuszona algebraicznie.
+  \item \textbf{Co pozostaje otwarte?}
+    Fizyczny mechanizm, kt\'ory \textbf{preferuje}
+    $\mathrm{CV}(A^2) = 1$ (tj.\ $\sigma = \bar\mu$) spo\'sr\'od
+    continuum dopuszczalnych warto\'sci.
+    Jest to jedyne pozosta\l{}e otwarte pytanie
+    programu Koide w~TGP.
+\end{enumerate}
+\end{proposition}
