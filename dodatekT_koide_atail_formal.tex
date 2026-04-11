@@ -1455,3 +1455,54 @@ $g_0^\tau \ne \varphi^2 g_0^e$.
 Skrypty: \texttt{koide\_observer\_v47b.py},
 \texttt{koide\_observer\_critical\_v47b.py}.
 \end{remark}
+
+\begin{remark}[Korytarz kolapsu i~fazy $\mathbb{Z}_3$ (v47b)]%
+\label{rem:T-collapse-corridor}
+\'Scie\.zki 19--20 testuj\k{a} dwie dalsze propozycje z~listy
+otwartych problem\'ow Koide'go.
+
+\medskip\noindent
+\textbf{Korytarz kolapsu (\'scie\.zka~19, propozycje 13+1):}
+\begin{itemize}[nosep]
+  \item Korytarz: $g_0^\tau \in [g_0^\mu,\, g_{0,\mathrm{crit}})
+    = [1{,}404,\; 1{,}600)$, szeroko\'s\'c $\Delta = 0{,}196$.
+  \item $Q_K$ jest \textbf{monotonicznie malej\k{a}ce}
+    w~korytarzu: $Q_K \in [1{,}27,\; 2{,}13]$.
+    Nie ma ekstremum --- korytarz \textbf{ogranicza} zakres
+    $Q_K$, ale nie \textbf{selekcjonuje} $3/2$.
+  \item Frakcja korytarza $f = (g_0^\tau{-}g_0^\mu)/\Delta = 0{,}845$
+    nie odpowiada \.zadnej znanej sta\l{}ej (min.\ odchylenie $16\%$);
+    $f$ zmienia si\k{e} z~$g_0^e$ ($0{,}73$--$0{,}90$).
+  \item Na simpleksie frakcji masowych: $d/d_{\max} = 1/\sqrt{2}$
+    \textbf{dok\l{}adnie} przy $Q_K = 3/2$
+    (konsekwencja algebraiczna $b = \sqrt{2}$, nie nowy wi\k{e}z).
+\end{itemize}
+
+\medskip\noindent
+\textbf{Korekty faz $\mathbb{Z}_3$ (\'scie\.zka~20, propozycja~4):}
+\begin{itemize}[nosep]
+  \item Fazy ogon\'ow ODE: $\Delta\delta_{e\mu} = 150{,}1^\circ$,
+    $\Delta\delta_{e\tau} = 256{,}0^\circ$,
+    $\Delta\delta_{\mu\tau} = 105{,}9^\circ$
+    --- \textbf{nie}~$120^\circ$ ($\mathbb{Z}_3$).
+  \item Optymalne fazy (min.\ overlap, nier\'owne $A$):
+    $\sim 0^\circ / 180^\circ$ (antyr\'ownoleg\l{}o\'s\'c
+    $A_\mu$--$A_\tau$, bo $A_\tau$ dominuje).
+  \item Ortogonalno\'s\'c (zerowe overlap)
+    definiuje \textbf{krzyw\k{a}} w~$(d_1,d_2)$,
+    nie punkt --- potrzebny dodatkowy warunek.
+  \item Korekty overlap do mas \textbf{\l{}ami\k{a}} Koide
+    nawet przy $\alpha = 0{,}01$: $Q_K$ oddala si\k{e} od $3/2$.
+\end{itemize}
+
+\medskip\noindent
+\textbf{Wniosek:} ani korytarz kolapsu, ani fazy $\mathbb{Z}_3$
+nie dostarczaj\k{a} mechanizmu selekcji $Q_K = 3/2$.
+Korytarz jest warunkiem koniecznym (ogranicza $Q_K$ do sko\'nczonego
+przedzia\l{}u), ale nie wystarczaj\k{a}cym.
+Propozycja~\#4 (korekty wy\.zszego rz\k{e}du) jest
+\textbf{os\l{}abiona} --- prosty model overlap nie odtwarza Koide.
+
+Skrypty: \texttt{koide\_collapse\_corridor\_v47b.py},
+\texttt{koide\_z3\_correction\_v47b.py}.
+\end{remark}
