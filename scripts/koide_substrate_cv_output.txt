@@ -1,0 +1,214 @@
+======================================================================
+PROPOSAL #10: SUBSTRATE DISCRETE MOMENTS -> CV=1 -> KOIDE
+======================================================================
+
+======================================================================
+SECTION 1: UNIVERSAL MOMENT RATIOS AT CRITICALITY
+======================================================================
+
+  3D Ising at criticality:
+  Binder cumulant U4* = 0.6233
+  <phi^4>/<phi^2>^2 = 1.1301
+  For Gaussian: this ratio = 3.0000
+  Deviation from Gaussian: -62.33%
+  Excess kurtosis: -0.6233
+
+  Connection to CV = 1:
+  At T_c: <phi> = 0 (Z2 symmetry). Relevant variable: phi^2.
+  For X = phi^2: <X> = <phi^2>, <X^2> = <phi^4>
+  CV(X) = sqrt(<X^2>/<X>^2 - 1) = sqrt(1.1301 - 1) = 0.3607
+  TARGET: CV = 1.0000
+  Deviation: -63.93%
+
+======================================================================
+SECTION 2: WHAT CV=1 REQUIRES FROM MOMENTS
+======================================================================
+
+  CV(phi^2) = 1 requires:
+  <phi^4>/<phi^2>^2 = 2.0000
+  Binder cumulant U4 = 0.3333
+  Actual Ising U4* = 0.6233
+  Difference: +86.99%
+
+======================================================================
+SECTION 3: COARSE-GRAINING SCALES AS GENERATIONS
+======================================================================
+
+  Finite-size scaling: Phi(L) ~ L^{-(d-2+eta)/2} = L^{-0.5181}
+  If L_k = phi^k * L_0:
+  g0_k/g0_0 ~ phi^{-k*0.5181}
+  g0_mu/g0_e = phi^{-0.5181} = 0.779315
+  Actual: g0_mu/g0_e = phi = 1.618034
+  Does NOT match! Exponent is -0.518, not +1.
+
+  Reversed: UV (small L) = heavy generation, IR (large L) = light
+  g0_k ~ L_k^{+0.5181}
+  For phi-ratio: L_tau/L_e = (g0_tau/g0_e)^{1/0.5181}
+  g0_tau/g0_e = 1.8089
+  L_tau/L_e = 3.1392
+  phi^2 = 2.6180
+  phi^1.93 = 2.5312
+
+======================================================================
+SECTION 4: CRITICAL EXPONENTS AND CV
+======================================================================
+
+  Universal moment ratios at WF (3D Ising):
+  <phi^2>:  defines the scale
+  <phi^4>/<phi^2>^2 = 1.1301 (kurtosis ratio)
+
+  beta/nu = 0.5183
+
+  Test: L_k = phi^k, x_k = L_k^{-2*beta/nu}:
+  x = [1.000000, 0.607271, 0.368778]
+  CV(x) = 0.395102
+  Target CV = 1.0000
+  Deviation: -60.49%
+
+  CV = 1 requires alpha = 3.255945
+  2*beta/nu = 1.036508
+  alpha/2*beta/nu = 3.141264
+  Expected from TGP: m ~ A^4, A ~ phi^k -> sqrt(m) ~ phi^2*k
+  In TGP: alpha should = 2 (because sqrt(m) ~ A^2 ~ g0^2 ~ phi^2k)
+
+  With alpha = 2 (TGP mass law):
+  x = [1.000000, 0.381966, 0.145898]
+  CV = 0.707107
+  Deviation: -29.29%
+
+  The alpha for CV=1 is 3.255945.
+  Geometric hierarchy ratio: phi^alpha = 4.791288
+  Actual mass ratios:
+  r_21 = m_mu/m_e = 206.83
+  r_31 = m_tau/m_e = 3478.38
+  phi^(4*alpha) = 527.00
+  phi^8 = 46.98
+
+======================================================================
+SECTION 5: ISING MOMENT CONSTRAINT ON SOLITON MASSES
+======================================================================
+
+  Soliton 'Binder cumulant':  U_sol = 0.106434
+  Ising U4* = 0.623300
+
+  For sqrt(m) values:
+  U_sol(sqrt(m)) = 0.333333
+  Note: CV=1 <=> U_sol(sqrt(m)) = 1 - <x^2>/(3*<x>^2)
+       = 1 - (mean(x^2))/(3*mean(x)^2)
+  <x^2>/<x>^2 = 2.000000
+  CV(x)^2 + 1 = 2.000000  -> CV = 1.000000
+  (Should be 1.0000 for Koide)
+
+  CV = 1 requires: U(sqrt(m)) = 1/3 = 0.333333
+  Actual: U(sqrt(m)) = 0.333333
+  Match: True
+
+======================================================================
+SECTION 6: CLT ARGUMENT (from ex126 P9/P13)
+======================================================================
+
+  CLT argument: b = sqrt(N-1) = sqrt(2) for N=3
+  Interpretation: 'N-1 independent fluctuation modes'
+  In 3D Ising at WF:
+    - Z2 symmetry -> 1 order parameter mode
+    - In d=3: 3 spatial directions
+    - Soliton tail has 2 independent components (cos, sin)
+    - N-1 = 2 matches 'two tail components'
+
+  KEY CONNECTION:
+  Soliton tail: h(r) = [a*sin(r) + b*cos(r)] / r
+  A^2 = a^2 + b^2 (Pythagoras)
+  If a, b are independent Gaussians: A^2 ~ chi^2(2) = Exp(1/sigma^2)
+  Exponential distribution has CV = 1!
+  This is EXACTLY the Koide condition!
+
+  But: a_k, b_k for the THREE solitons are NOT independent draws.
+  They are DETERMINISTIC functions of g0_k.
+  The 'random Gaussian' interpretation requires justification.
+
+======================================================================
+SECTION 7: CHI-SQUARED HYPOTHESIS TEST
+======================================================================
+
+  Sorted A^2 values (= sqrt(m)):
+  A_e^2  = 0.01714405
+  A_mu^2 = 0.24655847
+  A_tau^2 = 1.01111892
+
+  Spacings:
+  A_mu^2 - A_e^2  = 0.22941442
+  A_tau^2 - A_mu^2 = 0.76456045
+  Ratio: 3.3327
+  For Exp order stats: expected ratio of spacings = 1.5000 (i.e., 1.5)
+  For uniform spacings: ratio = 1.0
+  Actual ratio: 3.3327
+
+  Tail components (a, b) where h = a*cos(r)/r + b*sin(r)/r:
+                    a            b  A=sqrt(a^2+b^2)          A^2
+       e   0.04818462  -0.12174684       0.13093529   0.01714405
+      mu   0.07207069   0.49128839       0.49654654   0.24655847
+     tau  -0.99674354  -0.13274499       1.00554409   1.01111892
+
+  Statistics of a-components: mean = -0.292163, std = 0.498309
+  Statistics of b-components: mean = 0.078932, std = 0.291614
+  Combined sigma from a: 0.498309
+  Combined sigma from b: 0.291614
+  (For Gaussian: sigma_a ~ sigma_b)
+
+======================================================================
+SECTION 8: THE EXPONENTIAL DISTRIBUTION MECHANISM
+======================================================================
+
+  Pattern in (a, b) space:
+     e: r = 0.130935, theta = -68.4 deg
+    mu: r = 0.496547, theta = 81.7 deg
+   tau: r = 1.005544, theta = -172.4 deg
+
+  For i.i.d. Gaussian (a,b):
+  - Angles should be uniformly distributed (not clustered)
+  - Radii should follow Rayleigh distribution
+  - With only N=3, this is not statistically testable
+
+======================================================================
+FINAL SYNTHESIS: PROPOSAL #10
+======================================================================
+
+  RESULTS:
+
+  1. DIRECT MOMENT MATCH: The Ising Binder cumulant U4* = 0.6233
+     does NOT match the CV=1 requirement U4 = 1/3.
+     The substrate phi^2 distribution at criticality has CV = 0.361,
+     not 1. Deviation: -63.9%.
+
+  2. COARSE-GRAINING SCALES: Finite-size scaling gives Phi ~ L^{-0.518}.
+     This does NOT match the phi-FP scaling (exponent should be ~1, not 0.518).
+
+  3. CRITICAL EXPONENT MATCH: 2*beta/nu = 1.0365, while CV=1
+     requires alpha = 3.2559. These differ significantly.
+
+  4. **KEY INSIGHT -- CHI-SQUARED CONNECTION**:
+     Soliton tails have TWO independent components (a*cos + b*sin).
+     A^2 = a^2 + b^2.
+     IF a, b are "effectively Gaussian" (from substrate randomness):
+       A^2 ~ chi^2(2) = Exponential
+       Exp distribution has CV = 1 = KOIDE!
+
+     This would provide a STATISTICAL derivation of Q_K = 3/2:
+     - 2 components (sin/cos of tail) -> chi^2(2) -> CV = 1
+     - The "2" comes from d=3 solitons having oscillatory tails
+       (for d=2 no oscillation, for d>3 more components?)
+
+  5. PROBLEM: The three solitons are DETERMINISTIC, not random.
+     The (a, b) values are fixed by g0_k through the ODE.
+     The "effective Gaussian" interpretation requires:
+     - Either a STATISTICAL argument from substrate averaging
+     - Or a STRUCTURAL argument that the ODE naturally produces
+       chi^2(2)-like spread in A^2 values
+
+  STATUS: Proposal #10 does NOT provide a direct substrate->CV=1 derivation.
+  But it reveals a potentially deep connection:
+    TWO tail components -> chi^2(2) -> Exponential -> CV=1 -> Q_K=3/2
+  This is the most promising structural link found so far, but requires
+  justifying WHY deterministic soliton amplitudes behave as if they
+  were draws from an exponential distribution.
+

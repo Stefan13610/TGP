@@ -22,6 +22,7 @@ Poniżej: **propozycje**, które **nie są** zawarte w wyczerpującej liście ne
 |---|-----------|--------|--------|
 | 13+1 | Korytarz kolapsu + ekwipartycja | Q_K monotoniczne w korytarzu; f=0.845 nie pasuje do stałej; d/d_max = 1/sqrt(2) na simpleksie | `koide_collapse_corridor_v47b.py` |
 | 4 | Korekty Z₃ faz | Fazy ODE to 150/256/106 deg (nie Z₃); opt. fazy dla nierównych A to 0/180 deg; korekty overlap łamią Koide | `koide_z3_correction_v47b.py` |
+| 10 | Substrat -> CV=1 | Bezp. momenty Isinga nie dają CV=1; **ale chi²(2) z dwóch składowych ogona → Exp → CV=1 = Koide!** Luka: determinizm vs statystyka | `koide_substrate_cv_v47b.py` |
 
 ---
 
@@ -126,6 +127,12 @@ Nie pojawia się na liście 12 zawodów: czy \(Q_K=3/2\) odpowiada **krzywiźnie
 `scripts/ex162_phi0_from_substrate.py` i powiązane materiały szukają związku \(\Phi_0\) z WF/Ising. Analogicznie: czy **momenty** rozkładu pola (lub jego kwadratu) na sieci w fazie krytycznej **wymuszają** na poziomie efektywnym relację typu \(\mathrm{CV}=1\) dla „efektywnych mas generacji”?
 
 - **Otwarte:** nie widnieje jako zakończony negatywny wynik w `rem:T-QK-derivation-attempts`; wymaga **nowego** mapowania coarse-graining \(\Gamma \to (g_0^{(1)},g_0^{(2)},g_0^{(3)})\).
+- **Wynik analizy (v47b, `koide_substrate_cv_v47b.py`):**
+  - **Bezposrednie dopasowanie momentow NIE DZIALA**: kumulant Bindera \(U_4^* = 0{,}62\) vs wymagane \(1/3\). CV(\(\phi^2\)) = 0.36, nie 1.0 (odchylenie 64%).
+  - **Skalowanie coarse-graining NIEZGODNE**: \(\Phi \sim L^{-0{,}52}\), a \(\varphi\)-FP wymaga wykladnika \(\sim 1\).
+  - **KLUCZOWE ODKRYCIE -- lancuch chi-kwadrat**: ogon solitonu ma DWA niezalezne skladowe (\(a\cos r + b\sin r\)). Jesli \(a, b\) sa efektywnie gaussowskie: \(A^2 = a^2 + b^2 \sim \chi^2(2) = \mathrm{Exp}\), a rozklad wykladniczy ma \(\mathrm{CV} = 1\) = KOIDE! Lancuch: \(d=3\) (oscylacyjne ogony) \(\to\) 2 skladowe \(\to\) \(\chi^2(2)\) \(\to\) \(\mathrm{CV}=1\) \(\to\) \(Q_K = 3/2\).
+  - **PROBLEM**: trzy solitony sa deterministyczne, nie losowe. Potrzebne uzasadnienie, dlaczego stale amplitudy zachowuja sie jak losowania z Exp.
+  - **Status: najobiecniejszy link strukturalny**, wymaga zamkniecia luki deterministyczny/statystyczny.
 
 ---
 

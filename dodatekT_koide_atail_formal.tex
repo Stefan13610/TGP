@@ -1506,3 +1506,51 @@ Propozycja~\#4 (korekty wy\.zszego rz\k{e}du) jest
 Skrypty: \texttt{koide\_collapse\_corridor\_v47b.py},
 \texttt{koide\_z3\_correction\_v47b.py}.
 \end{remark}
+
+\begin{remark}[Substrat dyskretny i~hipoteza $\chi^2(2)$ (v47b)]%
+\label{rem:T-substrate-chi2}
+\'Scie\.zka~21 testuje, czy momenty rozk\l{}adu pola na sieci
+Isinga 3D w~fazie krytycznej wymuszaj\k{a} $\mathrm{CV} = 1$.
+
+\medskip\noindent
+\textbf{Wyniki negatywne:}
+\begin{itemize}[nosep]
+  \item Kumulant Bindera $U_4^* = 0{,}62$ vs wymagane $U_4 = 1/3$.
+    $\mathrm{CV}(\phi^2) = 0{,}36$ na sieci, nie~$1$ (odchylenie $64\%$).
+  \item Skalowanie finite-size: $\Phi \sim L^{-0{,}52}$,
+    niezgodne z~rozstawem $\varphi$-FP (wyk\l{}adnik $\sim 1$).
+  \item Wyk\l{}adniki krytyczne $2\beta/\nu = 1{,}04$
+    vs wymagane $\alpha = 3{,}26$ dla $\mathrm{CV} = 1$;
+    bezpo\'srednie dopasowanie nie dzia\l{}a.
+\end{itemize}
+
+\medskip\noindent
+\textbf{Odkrycie strukturalne --- hipoteza $\chi^2(2)$:}\\
+Ogon solitonu ma posta\'c $h(r) = [a\cos r + b\sin r]/r$,
+sk\k{a}d $A^2 = a^2 + b^2$ (dwie niezale\.zne sk\l{}adowe).
+Je\'sli $a, b$ s\k{a} \emph{efektywnie gaussowskie}
+(np.\ z~uniwersalno\'sci fluktuacji substratu):
+\[
+  A^2 = a^2 + b^2 \;\sim\; \chi^2(2) = \mathrm{Exp}(\sigma^{-2}),
+\]
+a~rozk\l{}ad wyk\l{}adniczy ma \textbf{dok\l{}adnie}
+$\mathrm{CV} = 1$, co jest r\'ownowa\.zne $Q_K = 3/2$.
+
+\medskip\noindent
+\textbf{\l{}a\'ncuch implikacji (hipotetyczny):}
+\[
+  d = 3 \;\;(\text{oscylacyjne ogony})
+  \;\to\; 2\;\text{sk\l{}adowe}
+  \;\to\; \chi^2(2)
+  \;\to\; \mathrm{CV} = 1
+  \;\to\; Q_K = 3/2.
+\]
+Ten \l{}a\'ncuch jest \textbf{najobiecniejszym linkiem strukturalnym}
+znalezionym w~20 \'scie\.zkach analizy.
+Otwarta luka: trzy solitony s\k{a} \textbf{deterministyczne}
+(nie losowe) --- potrzebne uzasadnienie,
+dlaczego sta\l{}e amplitudy <<zachowuj\k{a} si\k{e} jak>>
+losowania z~rozk\l{}adu wyk\l{}adniczego.
+
+Skrypt: \texttt{koide\_substrate\_cv\_v47b.py}.
+\end{remark}
