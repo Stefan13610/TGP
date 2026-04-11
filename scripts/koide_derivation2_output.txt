@@ -1,0 +1,147 @@
+======================================================================
+DERIVATION ATTEMPT 2: DEEPER ANALYSIS
+======================================================================
+
+PATH 9: theta(b) curve from r_21 constraint
+--------------------------------------------------
+  u = sqrt(r_21) = 14.379440
+  A = sqrt(u^2+u+1) = 14.904621
+  phi_0 = arctan(sqrt(3)/(2u+1)) = 0.058137 rad = 3.33 deg
+
+  Minimum b for solution: b_min = (u-1)/A = 0.897671
+  sqrt(2) = 1.414214
+  b_min / sqrt(2) = 0.634749
+
+  theta vs b:
+         b  b/sqrt2   theta(deg)      Q_K    min_x/a        r31
+    0.9077   0.6418       174.82   2.1247     0.0960     251.47
+    0.9577   0.6772       162.94   2.0568     0.0845     405.64
+    1.0077   0.7125       156.31   1.9898     0.0772     550.27
+    1.0577   0.7479       151.40   1.9239     0.0713     711.24
+    1.1077   0.7832       147.47   1.8594     0.0661     898.74
+    1.1577   0.8186       144.17   1.7963     0.0614    1122.51
+    1.2077   0.8540       141.34   1.7349     0.0569    1394.27
+    1.2577   0.8893       138.87   1.6752     0.0527    1729.37
+    1.3077   0.9247       136.68   1.6172     0.0486    2148.80
+    1.3577   0.9600       134.72   1.5612     0.0447    2682.18
+    1.4077   0.9954       132.95   1.5070     0.0408    3372.45
+    1.4577   1.0307       131.34   1.4546     0.0371    4283.88
+    1.5077   1.0661       129.87   1.4041     0.0335    5515.98
+    1.5577   1.1014       128.52   1.3555     0.0299    7229.28
+    1.6077   1.1368       127.27   1.3087     0.0264    9695.76
+    1.6577   1.1722       126.12   1.2637     0.0229   13405.04
+    1.7077   1.2075       125.04   1.2205     0.0194   19309.48
+    1.7577   1.2429       124.04   1.1789     0.0160   29460.49
+    1.8077   1.2782       123.11   1.1390     0.0127   48949.96
+    1.8577   1.3136       122.23   1.1007     0.0093   93404.42
+    1.9077   1.3489       121.40   1.0640     0.0060  231615.68
+    1.9577   1.3843       120.62   1.0287     0.0028 1148373.16
+
+======================================================================
+PATH 10: CRITICAL CONDITION AT b = sqrt(2)
+======================================================================
+
+  r31(b) curve:
+         b      Q_K        r31    dr31/db
+    0.9077   2.1247     251.47    3606.71
+    0.9577   2.0568     405.64    2827.43
+    1.0077   1.9898     550.27    3051.94
+    1.0577   1.9239     711.24    3508.15
+    1.1077   1.8594     898.74    4151.70
+    1.1577   1.7963    1122.51    5008.41
+    1.2077   1.7349    1394.27    6137.65
+    1.2577   1.6752    1729.37    7634.00
+    1.3077   1.6172    2148.80    9641.60
+    1.3577   1.5612    2682.18   12381.88
+    1.4077   1.5070    3372.45   16203.36 <-- sqrt(2)
+    1.4577   1.4546    4283.88   21672.94
+    1.5077   1.4041    5515.98   29751.13
+    1.5577   1.3555    7229.28   42147.54
+    1.6077   1.3087    9695.76   62094.20
+    1.6577   1.2637   13405.04   96178.37
+    1.7077   1.2205   19309.48  159184.43
+    1.7577   1.1789   29460.49  288840.72
+    1.8077   1.1390   48949.96  600478.81
+    1.8577   1.1007   93404.42 1558649.14
+    1.9077   1.0640  231615.68 6212645.21
+    1.9577   1.0287 1148373.16 83630923.44
+
+  r31(b) is MONOTONIC -- no extremum.
+
+======================================================================
+PATH 11: PHI AND b = sqrt(2)
+======================================================================
+  phi = 1.61803399
+  sqrt(2) = 1.41421356
+  phi/sqrt(2) = 1.14412281
+  phi * sqrt(2) = 2.28824561
+  phi^2 / 2 = 1.30901699
+  (phi-1)*2 = 1.23606798
+  1/phi + 1 = 1.61803399
+
+======================================================================
+PATH 12: SELF-CONSISTENT A_TAIL
+======================================================================
+
+  The A_tail function is:
+    A(g0) = |g0-1| * F(g0)  [F = nonlinear enhancement]
+
+  F(g0) = 1 near vacuum, diverges at collapse threshold.
+  The specific shape of F determines the mass spectrum.
+
+  Q_K = 3/2 requires a specific ratio F(g0_tau)/F(g0_e).
+  This ratio depends on the ODE's nonlinear dynamics.
+  There is no simple variational principle that selects it.
+
+  FINAL VERDICT:
+  Q_K = 3/2 appears to be an EMERGENT property of the specific
+  nonlinear ODE g'' + 2/r g' + 2g'^2/g + g^2(1-g) = 0,
+  combined with the phi-FP spacing rule.
+
+  It is NOT derivable from simple optimization principles
+  (energy, entropy, hierarchy, geometry).
+
+  It MAY be derivable from deeper structural properties
+  of the ODE (symmetries, integrability, topological invariants),
+  but this would require significant mathematical machinery
+  beyond the current analysis.
+
+======================================================================
+FINAL SUMMARY AND RECOMMENDATION
+======================================================================
+
+  TESTED PATHS (all FAIL to derive Q_K = 3/2):
+   1. Energy extremum: M is monotonic
+   2. Entropy maximum: peaks at Q_K ~ 2.0
+   3. Koide circle:    Q_K = 3/(1+b^2/2), reframes to "why b=sqrt(2)?"
+   4. ODE selects b:   no mechanism found
+   5. Angular geometry: b=sqrt(2) not at positivity boundary (b=2 is)
+   6. Interaction:      minimum at Q_K = 1
+   7. Self-consistency: algebraic, Q_K is input
+   8. Geometric prog:   spectrum not geometric
+   9. theta(b) curve:   monotonic, no special point at b=sqrt(2)
+  10. r31(b) curve:     monotonic, no extremum
+  11. phi-sqrt(2):      algebraically independent
+  12. Self-consistent field: nonlinear F determines Q_K, no principle
+
+  RECOMMENDATION:
+  Treat Q_K = 3/2 as the THIRD INPUT of TGP (alongside K=g^4 and phi-FP).
+
+  TGP parameter count:
+    [1] K(g) = g^4     -> alpha = 2, g0_crit = 8/5, N_gen = 3
+    [2] phi-FP          -> r_21 = 206.77
+    [3] Q_K = 3/2       -> r_31 = 3477.4 (via closed formula)
+
+  Three inputs -> entire lepton mass spectrum.
+  This is still EXTREMELY economical.
+
+  In a multiverse interpretation:
+  - K=g^4 selects the "TGP universality class"
+  - phi is a mathematical constant (universal)
+  - Q_K = 3/2 is the "address" of our universe
+
+  Alternative: Q_K = 3/2 could be a SELECTION EFFECT.
+  Only universes with Q_K = 3/2 support complex chemistry
+  (the tau mass affects weak decays and nucleosynthesis).
+  This would be an anthropic argument within TGP.
+

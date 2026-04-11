@@ -1,0 +1,226 @@
+======================================================================
+ATTEMPT TO DERIVE Q_K = 3/2
+======================================================================
+
+  Calibration: g0_e=0.86770494, A_e=0.13093785, A_mu=0.49651936
+  r_21 check: 206.7683
+
+======================================================================
+PATH 1: TOTAL ENERGY EXTREMUM
+======================================================================
+
+  Total mass M = m_e + m_mu + m_tau vs Q_K:
+       Q_K        M/m_e
+    2.1291       445.54
+    2.1017       517.28
+    2.0577       611.56
+    1.9990       737.42
+    1.9275       909.42
+    1.8452      1152.75
+    1.7529      1515.75
+    1.6499      2106.32
+    1.5322      3232.90
+    1.3840      6356.70
+
+  M is monotonic
+  VERDICT: Total mass has NO extremum. PATH 1 FAILS.
+
+======================================================================
+PATH 2: ENTROPY MAXIMUM
+======================================================================
+
+  Entropy vs Q_K:
+       Q_K    Entropy
+    2.1291   0.705095 <-- max
+    2.1017   0.685921
+    2.0577   0.651217
+    1.9990   0.603188
+    1.9275   0.544378
+    1.8452   0.477247
+    1.7529   0.403792
+    1.6499   0.325092
+    1.5322   0.240509
+    1.3840   0.144951
+
+  Max entropy at Q_K = 2.1291
+  Koide Q_K = 1.5000
+  VERDICT: Entropy max at Q_K = 2.1291, NOT 3/2. PATH 2 FAILS.
+
+======================================================================
+PATH 3: KOIDE CIRCLE GEOMETRY
+======================================================================
+
+  Koide parametrization: sqrt(m_i) = a(1 + b*cos(theta + 2*pi*(i-1)/3))
+
+  FACT: Q_K = 3/2 holds AUTOMATICALLY for this parametrization,
+  for ANY values of a, b, theta. This is because:
+    sum sqrt(m_i) = 3a  (cosines cancel in sum)
+    sum m_i = 3a^2(1 + b^2/2)  (cross terms cancel)
+    (sum sqrt(m_i))^2 / (sum m_i) = 9a^2 / (3a^2(1+b^2/2)) = 3/(1+b^2/2)
+  Wait, that's not 3/2 in general. Let me recalculate.
+
+  Correction: Q_K = 3/(1 + b^2/2)
+  Q_K = 3/2 requires b^2 = 2, i.e., b = sqrt(2) = 1.414214
+
+  Solution: theta = 2.316617 rad = 132.73 deg
+  x1 (e) = 0.040350
+  x2 (mu) = 0.580212
+  x3 (tau) = 2.379438
+  r21 = 206.7683 (target 206.7683)
+  r31 = 3477.4416 (target 3477.44)
+  Q_K = 1.119108
+
+  Solution: theta = 4.082843 rad = 233.93 deg
+  x1 (e) = 0.167342
+  x2 (mu) = 2.406284
+  x3 (tau) = 0.426374
+  r21 = 206.7683 (target 206.7683)
+  r31 = 6.4919 (target 3477.44)
+  Q_K = 1.072697
+
+  INSIGHT: Q_K = 3/2 requires EXACTLY b = sqrt(2) in the
+  Koide circle parametrization. The question becomes:
+  Does TGP select b = sqrt(2)?
+
+  b = sqrt(2) means the AMPLITUDE of modulation equals
+  the MEAN, scaled by sqrt(2). This is a specific constraint
+  on the 'democracy' of the mass spectrum.
+
+======================================================================
+PATH 4: DOES THE ODE SELECT b = sqrt(2)?
+======================================================================
+
+  Numerical values:
+    x_e   = A_e^2   = 0.01714472
+    x_mu  = A_mu^2  = 0.24653147
+    x_tau = A_tau^2 = 1.01022601
+    a = mean(x) = 0.42463407
+    d_e   = x_e/a - 1 = -0.95962472
+    d_mu  = x_mu/a - 1 = -0.41942607
+    d_tau = x_tau/a - 1 = 1.37905078
+
+    b^2 = (2/3)*sum(d_i^2) = 1.99905259
+    b = 1.41387856
+    sqrt(2) = 1.41421356
+    b/sqrt(2) = 0.99976312
+
+    Q_K = 3/(1+b^2/2) = 1.50035536
+    Q_K(target) = 1.500000
+
+======================================================================
+PATH 5: GEOMETRIC / ANGULAR ANALYSIS
+======================================================================
+  b = 0.0000: Q_K = 3.000000
+  b = 0.5000: Q_K = 2.666667
+  b = 1.0000: Q_K = 2.000000
+  b = 1.4142: Q_K = 1.500000
+  b = 1.5000: Q_K = 1.411765
+  b = 2.0000: Q_K = 1.000000
+  b = 3.0000: Q_K = 0.545455
+  b = 5.0000: Q_K = 0.222222
+
+  b = 1.0 gives Q_K = 3/(1+0.5) = 2.000000 = 2.0
+  b = sqrt(2) gives Q_K = 3/(1+1) = 1.500000 = 1.5
+  b = sqrt(3) gives Q_K = 3/(1+1.5) = 1.200000 = 1.2
+
+  For b = sqrt(2): x_i > 0 requires 1 + sqrt(2)*cos(theta_i) > 0
+  cos(theta_i) > -1/sqrt(2) = -0.707107
+  theta_i must be in (-135.0, 135.0) degrees
+  = within 135 deg of 0. With 120 deg spacing, this is tight!
+
+======================================================================
+PATH 6: SOLITON ENERGY FUNCTIONAL
+======================================================================
+  Interaction model: C = sum(m_i) + lambda * sum(sqrt(m_i*m_j))
+  = sum(s^2) * [1 + lambda*(Q_K-1)/2]
+  Minimized at Q_K = 1 (maximum hierarchy), not 3/2.
+  VERDICT: Simple interaction model FAILS.
+
+======================================================================
+PATH 7: SELF-CONSISTENCY WITH PHI-FP
+======================================================================
+
+  p = A_mu/A_e = r_21^(1/4) = 3.79202315
+  w+ = 58.96983670, R+ = A_tau/A_mu = 2.02508838
+  w- = 2.54792167, R- = 0.42094180
+  r31 = (p*R+)^4 = 3477.4416
+  r32 = R+^4 = 16.8181
+  PDG r32 = 206.77... no, r32 = m_tau/m_mu = 16.8171
+
+  R+ = A_tau/A_mu = 2.02508838
+  phi = 1.61803399
+  R/phi = 1.25157345
+  R^2 = 4.10098296
+  phi^2 = 2.61803399
+
+  r32 = m_tau/m_mu = R^4 = 16.8181
+  r32(PDG) = 16.8171
+  sqrt(r32) = 4.1010
+  r32 = r31/r21 = 16.8181
+
+======================================================================
+PATH 8: LOG-SPACING AND GEOMETRIC MEAN
+======================================================================
+  If sqrt(m) forms geometric progression with ratio q = 3.7920:
+  Q_K = (1+q+q^2)^2 / (1+q^2+q^4) = 1.654507
+
+  Q_K = 3/2 requires geometric ratio q = 4.791288
+  Actual q = sqrt(r_21)^(1/2) = 3.792023
+  These don't match. Mass spectrum is NOT geometric.
+
+======================================================================
+SUMMARY OF DERIVATION ATTEMPTS
+======================================================================
+
+  PATH 1 (Energy extremum):     FAILS -- M is monotonic in g0_tau
+  PATH 2 (Entropy maximum):     FAILS -- max at Q_K ~ 2.0, not 1.5
+  PATH 3 (Koide circle):        REFRAMES -- Q_K=3/2 iff b=sqrt(2)
+  PATH 4 (ODE selects b):       OPEN -- no mechanism identified
+  PATH 5 (Angular analysis):    b=sqrt(2) is at boundary of positivity
+  PATH 6 (Interaction energy):  FAILS -- min at Q_K=1
+  PATH 7 (Self-consistency):    ALGEBRAIC -- r31 determined, but Q_K input
+  PATH 8 (Geometric progression): FAILS -- spectrum not geometric
+
+  CONCLUSION:
+  None of the tested paths derive Q_K = 3/2 from TGP first principles.
+
+  The CLEANEST reformulation is via the Koide circle (Path 3):
+    Q_K = 3/2 <=> b = sqrt(2) in the parametrization
+    sqrt(m_i) = a(1 + sqrt(2)*cos(theta + 2*pi*(i-1)/3))
+
+  The question "why Q_K = 3/2?" becomes "why b = sqrt(2)?".
+
+  POSSIBLE INTERPRETATION:
+  b = sqrt(2) is the MAXIMUM b for which all three masses are
+  positive (since 1 - sqrt(2) < 0, one needs theta such that
+  all cos terms keep x_i > 0 -- this is tight at b = sqrt(2)).
+
+  This suggests: Q_K = 3/2 = the MOST HIERARCHICAL mass spectrum
+  compatible with all three masses being positive in the Koide
+  circle parametrization.
+
+  Let me verify this "maximal hierarchy" interpretation...
+
+  MAXIMAL HIERARCHY TEST:
+  For b > sqrt(2), can all x_i be positive?
+    b=1.00: min(x_i/a) = 0.5000, Q_K = 2.0000
+    b=1.10: min(x_i/a) = 0.4500, Q_K = 1.8692
+    b=1.20: min(x_i/a) = 0.4000, Q_K = 1.7442
+    b=1.30: min(x_i/a) = 0.3500, Q_K = 1.6260
+    b=1.40: min(x_i/a) = 0.3000, Q_K = 1.5152
+    b=1.50: min(x_i/a) = 0.2500, Q_K = 1.4118
+    b=1.60: min(x_i/a) = 0.2000, Q_K = 1.3158
+    b=1.70: min(x_i/a) = 0.1500, Q_K = 1.2270
+    b=1.80: min(x_i/a) = 0.1000, Q_K = 1.1450
+    b=1.90: min(x_i/a) = 0.0500, Q_K = 1.0695
+
+  b = 2.0: min(x_i/a) = 0 (one mass = 0), Q_K = 1.0000
+  b = sqrt(2): min(x_i/a) = 0.2929, Q_K = 1.5000
+
+  CRITICAL INSIGHT:
+  b = 2 is the ABSOLUTE maximum for positivity.
+  b = sqrt(2) is NOT the maximum. It's at Q_K = 1.5,
+  while b = 2 gives Q_K = 1.0.
+
+  So Q_K = 3/2 is NOT selected by maximal hierarchy.
+  It's an intermediate value with no obvious geometric meaning.
