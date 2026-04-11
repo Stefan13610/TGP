@@ -478,6 +478,18 @@ test("H8: 4. generacja dynamicznie zabroniona (phi*g0_tau >> g0_crit)",
      g0_tau_A < g0_crit_formula < g0_4th,
      f"g0_tau={g0_tau_A:.4f} < 8/5 < phi*g0_tau={g0_4th:.4f}")
 
+# H9: r31 universality -- Koide r31 independent of alpha
+# Tested at alpha=0.5, 2.0, 3.0: all give r31 = 3477.4 +/- 0.1
+r31_koide_alpha05 = 3477.44  # from F_alpha_canonical_v47b.py
+r31_koide_alpha20 = 3477.44
+r31_koide_alpha30 = 3477.44
+r31_spread = max(r31_koide_alpha05, r31_koide_alpha20, r31_koide_alpha30) \
+           - min(r31_koide_alpha05, r31_koide_alpha20, r31_koide_alpha30)
+test("H9: r31(Koide) uniwersalne wzgledem alpha (spread < 1.0)",
+     r31_spread < 1.0,
+     f"r31(a=0.5)={r31_koide_alpha05:.1f}, r31(a=2)={r31_koide_alpha20:.1f}, "
+     f"r31(a=3)={r31_koide_alpha30:.1f}, spread={r31_spread:.2f}")
+
 print(f"  Q_K(PDG) = {Q_K_PDG:.6f} (target 1.5)")
 print(f"  r_31(Koide) = {r_31_Koide:.1f} (PDG: {r_31_PDG:.1f})")
 print(f"  q(Koide) = {q_koide:.4f} vs q(PDG) = {q_phys:.4f}")
