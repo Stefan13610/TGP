@@ -1,0 +1,180 @@
+======================================================================
+PATH 18b: CRITICAL RE-ANALYSIS OF OBSERVER EFFECT
+======================================================================
+
+======================================================================
+TEST A: TAUTOLOGY CHECK -- WHAT WAS ACTUALLY ENFORCED?
+======================================================================
+
+  Given: g0_e = 0.86770494, g0_mu = phi*g0_e = 1.40397609
+  A_e = 0.13093529, A_mu = 0.49654654
+
+  What the original script ENFORCED (line 122):
+  (A_e^2 + A_mu^2 + A_tau^2)^2 / (A_e^4 + A_mu^4 + A_tau^4) = 1.5
+  This is equivalent to: sum(sqrt(m))^2 / sum(m) = 1.5
+  i.e., the STANDARD Koide relation.
+
+  QK_func(A^4) = 0.500000  (= 3/2 by construction? True)
+  Note: QK_func has NO /3 factor.
+  QK_func(A^4) = (sum A^2)^2 / (sum A^4)
+  Direct: (sum A^2)^2/(sum A^4) = 1.500000
+
+  VERDICT: QK_func(A^4) = 1.5 IS the enforced condition. TAUTOLOGICAL.
+
+  QK_func values at different levels:
+  g0:    0.985067
+  |g0-1|:0.927360
+  A:     0.874024
+  A^2:   0.697293
+  A^4:   0.500000  <-- enforced = 1.5
+
+  The output table in PATH 18 RELABELED these as:
+  A^4 line said 'Q_K = 1.500000 actual masses <-- KOIDE!'
+  But this was the DEFINITION, not a finding!
+
+======================================================================
+TEST A2: IS THERE ANYTHING NON-TRIVIAL IN THE Q_K CHAIN?
+======================================================================
+
+  Non-enforced test: g0 = g0_e * phi^{0,1,2}
+  g0: 0.867705, 1.403976, 2.271681
+  A:  0.13093529, 0.49654654, 0.00000000
+  m:  2.93918434e-04, 6.07910785e-02, 0.00000000e+00
+  QK(masses) for pure phi-FP spacing = 0.000000
+  Deviation from 3/2: -1.500000 (-100.00%)
+
+  If this were close to 3/2, the ODE map + phi-FP would
+  'naturally produce' Koide. If not, Koide requires g0_tau != phi^2*g0_e.
+
+  g0_tau (Koide-enforced) = 1.56962743
+  g0_tau (phi^2*g0_e)     = 2.27168103
+  Difference: -0.70205359 (-30.9046%)
+
+======================================================================
+TEST B: DOES ODE MAP PUSH Q_K TOWARD 3/2?
+======================================================================
+
+  Scanning g0_e with phi-FP spacing (g0_mu = phi*g0_e, g0_tau = phi^2*g0_e):
+        g0_e      g0_mu     g0_tau   QK(mass)     QK-3/2
+      0.5000     0.8090     1.3090   0.643228  -0.856772
+      0.5500     0.8899     1.4399   0.682277  -0.817723
+      0.6000     0.9708     1.5708   0.446939  -1.053061
+
+======================================================================
+TEST C: DOES SQUARING GENERICALLY PUSH Q_K TOWARD 3/2?
+======================================================================
+
+  10000 random triplets from Exp(1):
+       Level   mean(QK)    std(QK)   %near3/2
+           A     0.8578     0.1058        0.0%
+         A^2     0.7068     0.1573        0.0%
+         A^4     0.5525     0.1647        0.0%
+
+  10000 random triplets from 10^Uniform(-3,1) (strong hierarchy):
+       Level   mean(QK)    std(QK)   %near3/2
+           A     0.6439     0.1655        0.0%
+         A^2     0.5002     0.1577        0.0%
+         A^4     0.4174     0.1242        0.0%
+
+  If squaring pushes Q_K toward 3/2, we'd see Q_K(A^2) or Q_K(A^4)
+  closer to 3/2 than Q_K(A). If not, squaring has no special role.
+
+======================================================================
+TEST D: WHAT THE NONLINEAR MAP g0->A ACTUALLY DOES TO Q_K
+======================================================================
+
+  For phi-FP spacing with different g0_e:
+      g0_e     QK(g0)      QK(A)    QK(A^2)    QK(A^4)   QK(mass)
+    0.5000   0.963351   0.954640   0.851234   0.643228   0.643228
+    0.5500   0.963351   0.909253   0.791000   0.682277   0.682277
+    0.6000   0.963351   0.759622   0.593357   0.446939   0.446939
+
+======================================================================
+TEST E: THE REAL NON-TRIVIAL QUESTION
+======================================================================
+
+  The GENUINE observer effect question would be:
+
+  Given the TGP ODE with its specific nonlinearity,
+  does the map g0 -> A_tail have a special property such that
+  phi-FP spaced g0 values GENERICALLY produce Q_K ~ 3/2 for masses?
+
+  From Test B, we know Q_K(mass) for pure phi-FP spacing.
+  If Q_K(mass) ~ 3/2 naturally, then Koide IS emergent.
+  If Q_K(mass) != 3/2, then g0_tau must be tuned (it's an input).
+
+  The actual g0_tau deviates from phi^2*g0_e, which means
+  Koide DOES require additional input beyond phi-FP.
+
+  NATURAL Q_K (pure phi-FP, no Koide enforcement):
+  g0 = 0.867705, 1.403976, 2.271681
+  A  = 0.13093529, 0.49654654, 0.00000000
+  Q_K(mass) = 0.000000
+  Deviation from 3/2: -100.0000%
+
+  RESULT: Q_K != 3/2 for pure phi-FP.
+  Koide requires g0_tau != phi^2*g0_e.
+  The 'observer effect' does NOT produce Koide generically.
+
+======================================================================
+TEST F: NONLINEAR ENHANCEMENT -- PREDICTIVE OR DESCRIPTIVE?
+======================================================================
+
+  G(g0) = A_tail(g0)^2 / (g0-1)^2 across the ODE:
+        g0            A     (g0-1)^2            G       dG/dg0
+    0.5000   0.56631722   0.25000000     1.282861
+    0.5500   0.49160743   0.20250000     1.193471
+    0.6000   0.42428873   0.16000000     1.125131
+    0.6500   0.36259788   0.12250000     1.073283
+    0.7000   0.30517559   0.09000000     1.034802
+    0.7500   0.25093521   0.06250000     1.007496
+    0.8000   0.19898250   0.04000000     0.989851
+    0.8500   0.14855451   0.02250000     0.980820
+    0.9000   0.09898070   0.01000000     0.979718
+    0.9500   0.04965264   0.00250000     0.986154
+    1.0500   0.05053193   0.00250000     1.021390
+    1.1000   0.10250608   0.01000000     1.050750
+    1.1500   0.15652329   0.02250000     1.088869
+    1.2000   0.21326417   0.04000000     1.137040
+    1.2500   0.27355668   0.06250000     1.197332
+    1.3000   0.33849586   0.09000000     1.273105
+    1.3500   0.40967452   0.12250000     1.370067
+    1.4000   0.48968563   0.16000000     1.498700
+    1.4500   0.58339678   0.20250000     1.680750
+    1.5000   0.70201756   0.25000000     1.971315
+    1.5500   0.88307952   0.30250000     2.577949
+
+  G at lepton soliton positions:
+  G_e   = 0.979549  (g0_e   = 0.867705)
+  G_mu  = 1.510806  (g0_mu  = 1.403976)
+  G_tau = 3.116165  (g0_tau = 1.569627)
+  G_tau/G_e = 3.1812
+
+  If G = G_e = const: Q_K(mass) = 0.643356
+  (This is just Q_K of |g0-1|^4 values)
+  With actual G values: Q_K(mass) = 0.500000
+  (Should be 3/2 = 1.500000)
+
+======================================================================
+FINAL CRITICAL ASSESSMENT
+======================================================================
+
+  PATH 18 TAUTOLOGY DIAGNOSIS:
+
+  1. TAUTOLOGICAL (no new content):
+     - Q_K(A^4) = 3/2 was ENFORCED by choosing g0_tau (line 118-123)
+     - The "observation chain" showing Q_K varies from 2.955 to 1.500
+       is just the same constraint viewed in different coordinates
+     - Saying "Koide is at the A^2 level" just means sqrt(m) = A^2,
+       which is the DEFINITION of the mass-amplitude relation
+
+  2. PARTIALLY NON-TRIVIAL (descriptive, not predictive):
+     - The G(g0) enhancement curve IS a real property of the ODE
+     - It tells us HOW the nonlinearity redistributes values
+     - But it doesn't PREDICT Q_K = 3/2
+
+  3. THE GENUINE QUESTION (addressed in Test E):
+     - Does pure phi-FP spacing + ODE produce Q_K ~ 3/2?
+     - If yes: Koide is emergent (real observer effect)
+     - If no: Koide is an additional input (g0_tau tuned)
+

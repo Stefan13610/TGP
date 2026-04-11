@@ -1404,62 +1404,54 @@ Skrypty: \texttt{koide\_crosssector\_v47b.py},
 \texttt{koide\_joint\_stability\_v47b.py}.
 \end{remark}
 
-\begin{remark}[Efekt obserwatora (v47b)]%
+\begin{remark}[Efekt obserwatora -- analiza i~korekta (v47b)]%
 \label{rem:T-observer-effect}
-\'Scie\.zka~18 bada hipotez\k{e}, \.ze formu\l{}a Koide'go jest
-w\l{}asno\'sci\k{a} nie samych soliton\'ow, lecz \textbf{\l{}a\'ncucha
-obserwacji} $g_0 \to A_{\rm tail} \to A^2 \to A^4 = m$.
+\'Scie\.zka~18 bada\l{}a hipotez\k{e}, \.ze formu\l{}a Koide'go jest
+w\l{}asno\'sci\k{a} \l{}a\'ncucha obserwacji
+$g_0 \to A_{\rm tail} \to A^2 \to A^4 = m$,
+a~nie samych soliton\'ow.
 
 \medskip\noindent
-\textbf{Q_K na ka\.zdym poziomie \l{}a\'ncucha:}
-\begin{center}
-\begin{tabular}{lcc}
-\hline
-Poziom & Wielko\'s\'c & $Q_K$ \\
-\hline
-Wewn\k{e}trzny  & $g_0$              & $2{,}955$ \\
-Dewiacja         & $|g_0 - 1|$        & $2{,}782$ \\
-Amplituda ogona  & $A$                & $2{,}622$ \\
-Obserwowana      & $A^2 = \sqrt{m}$   & $2{,}092$ \\
-\textbf{Masa}    & $A^4 = m$          & $\mathbf{1{,}500}$ \\
-\hline
-\end{tabular}
-\end{center}
-$Q_K = 3/2$ zachodzi \textbf{dok\l{}adnie} na poziomie
-$A^4 = m$ (r\'ownowa\.znie: Koide na $\sqrt{m_i} = A_i^2$).
+\textbf{Wynik pocz\k{a}tkowy (\'scie\.zka~18):}
+$Q_K$ w~r\'o\.znych reprezentacjach:
+$Q_K(g_0) = 2{,}96$;
+$Q_K(A) = 2{,}62$;
+$Q_K(A^2) = 2{,}09$;
+$Q_K(A^4) = 1{,}500$ (Koide).
+Nieliniowe wzmocnienie $G(g_0) \equiv A^2/(g_0{-}1)^2$
+zmienia si\k{e} od $G_e = 0{,}98$ do $G_\tau = 3{,}12$.
 
 \medskip\noindent
-\textbf{Kluczowe wyniki:}
+\textbf{Krytyczna weryfikacja (\'scie\.zka~18b):}
 \begin{enumerate}[nosep]
-  \item Nieliniowe wzmocnienie
-    $G(g_0) \equiv A_{\rm tail}^2 / (g_0 - 1)^2$
-    jest \textbf{istotne}:
-    $G_e = 0{,}98$, $G_\mu = 1{,}51$, $G_\tau = 3{,}12$
-    (wsp\'o\l{}czynnik $\times 3{,}2$).
-    Bez niego (tj.\ $G = \mathrm{const}$): $Q_K = 2{,}42$,
-    \textbf{nie}~$3/2$.
-  \item Zmienno\'s\'c $G$ wynika z~blisko\'sci progu kolapsu
-    $g_{0,\mathrm{crit}} = 8/5$: soliton~$\tau$ le\.zy bardzo blisko
-    progu, co prowadzi do silnego wzmocnienia nieliniowego.
-  \item $Q_K = 3/2$ jest \textbf{emergentnym} efektem trzech
-    sk\l{}adnik\'ow: (a)~nieliniowo\'s\'c ODE blisko progu kolapsu,
-    (b)~regu\l{}a rozstawu $\varphi$-FP,
-    (c)~\l{}a\'ncuch pomiarowy $A \to A^2 \to A^4$.
-  \item Ekstrakcja okna ($r_{\min}, r_{\max}$) jest stabilna:
-    $Q_K(A^2)$ zmienia si\k{e} o~mniej ni\.z $0{,}3\%$
-    w~szerokim zakresie okien.
+  \item \textbf{Tautologia}: $g_0^\tau$ by\l{}o wyznaczone
+    przez wymuszenie $Q_K(A^4) = 3/2$.
+    Stwierdzenie, \.ze <<Koide zachodzi na poziomie $A^4$>>
+    jest r\'ownowa\.zne powtarzeniu warunku wej\'sciowego.
+    \l{}a\'ncuch $Q_K(g_0) \to Q_K(A) \to Q_K(A^4)$ to ta sama
+    informacja w~r\'o\.znych wsp\'o\l{}rz\k{e}dnych.
+  \item \textbf{Brak emergencji}: czyste rozstawienie $\varphi$-FP
+    daje $g_0^\tau = \varphi^2 g_0^e = 2{,}27$, co \textbf{przekracza}
+    pr\'og kolapsu $g_{0,\mathrm{crit}} = 8/5$.
+    Soliton~$\tau$ nie istnieje dla $g_0 = \varphi^2 g_0^e$.
+    Zatem $Q_K = 3/2$ \textbf{nie jest} w\l{}asno\'sci\k{a}
+    emergent\-n\k{a} mapy $g_0 \to A_{\rm tail}$.
+  \item \textbf{Podnoszenie do kwadratu nie jest <<specjalne>>}:
+    testy Monte Carlo ($10^4$ losowych triplet\'ow)
+    pokazuj\k{a}, \.ze $Q_K(A^n)$ \emph{oddala si\k{e}} od~$3/2$
+    ze~wzrostem~$n$, nie przybli\.za.
+  \item \textbf{Wzmocnienie $G(g_0)$ jest opisowe}:
+    $G$ opisuje \emph{jak} znane masy wynikaj\k{a} z~$g_0$,
+    ale nie \emph{dlaczego} $Q_K = 3/2$.
 \end{enumerate}
 
 \medskip\noindent
-\textbf{Interpretacja:}
-Soliton nie <<zna>> formu\l{}y Koide'go.
-Koide jest w\l{}asno\'sci\k{a} \textbf{procesu pomiaru}:
-obserwator mierzy mas\k{e} $m = c \cdot A^4$, oblicza
-$\sqrt{m} = \sqrt{c}\,A^2$ i~znajduje $Q_K = 3/2$.
-To transformacja $A \to A^2$ (kwadrat amplitudy,
-analogicznie do przekroju czynnego w~rozpraszaniu)
-w~po\l{}\k{a}czeniu z~nieliniowym wzmocnieniem $G(g_0)$ z~ODE
-produkuje warto\'s\'c $\mathrm{CV} = 1$.
+\textbf{Wniosek:} hipoteza efektu obserwatora \textbf{nie prowadzi}
+do niezale\.znego wyprowadzenia $Q_K = 3/2$.
+Koide pozostaje \textbf{trzecim wej\'sciowym parametrem TGP}
+(obok $K = g^4$ i~$\varphi$-FP), determinuj\k{a}cym
+$g_0^\tau \ne \varphi^2 g_0^e$.
 
-Skrypt: \texttt{koide\_observer\_v47b.py}.
+Skrypty: \texttt{koide\_observer\_v47b.py},
+\texttt{koide\_observer\_critical\_v47b.py}.
 \end{remark}
