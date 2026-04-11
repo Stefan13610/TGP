@@ -1,0 +1,243 @@
+======================================================================
+PATH 14: WHY SELF/CROSS = 4?
+======================================================================
+
+SECTION 1: ALGEBRAIC EQUIVALENCE
+--------------------------------------------------
+
+  For variables x_i = A_i^2 (proportional to sqrt(m_i)):
+
+  Q_K = (sum x_i)^2 / sum(x_i^2)
+
+  Let S = sum(x_i), P = sum(x_i^2), C = sum_{i<j}(x_i*x_j)
+  Then S^2 = P + 2C, so Q_K = (P + 2C)/P = 1 + 2C/P
+
+  Q_K = 3/2 => 2C/P = 1/2 => P = 4C => self = 4 * cross. QED.
+
+  Now: via m_i = k * A_i^4 (TGP mass relation):
+    x_i = A_i^2 = (m_i/k)^(1/2) = sqrt(m_i/k)
+    P = sum(m_i/k), C = sum(sqrt(m_i*m_j)/k)
+    self/cross = sum(m_i) / sum(sqrt(m_i*m_j))
+
+  This ratio depends ONLY on mass ratios, not on k.
+  So self/cross = 4 is a UNIVERSAL CONSTRAINT on mass ratios
+  that is INDEPENDENT of the amplitude-mass power law!
+
+  Wait -- that can't be right. Let me recheck for general power n.
+
+  For n=4 (TGP): self/cross in A-space = sum(m)/sum(sqrt(m_i*m_j))
+  Koide => this ratio = 4.
+
+  For n=2 (hypothetical): self/cross = sum(m^2)/sum(m_i*m_j)
+
+  n=4: self/cross = 1883.03/470.77 = 3.999895
+  n=2: self/cross = 3168395.33/188701.44 = 16.790520
+  n=6: self/cross = 169.6905/70.7230 = 2.399369
+  n=1: self/cross = 9.97e+12/3.52e+10 = 282.811383
+
+======================================================================
+SECTION 2: PROTON ANALOGY -- FRACTIONAL DECOMPOSITION
+======================================================================
+
+  Proton: charge = +2/3 + 2/3 - 1/3 = +1
+  The "whole" (proton charge = 1) decomposes into fractional parts.
+
+  Lepton family: what quantity is "whole"?
+  Candidates:
+    (a) sum(sqrt(m_i)) = 3*a  (from Koide parametrization)
+    (b) sum(m_i) = 3*a^2*(1+b^2/2)  (from Koide)
+    (c) Q_K = 3/2 (the "charge" of the lepton family)
+
+  For Koide with b=sqrt(2):
+    sum(sqrt(m)) = 3a
+    sum(m) = 3a^2 * 2 = 6a^2
+    Q_K = 9a^2 / 6a^2 = 3/2
+
+  The "fractional" sqrt(m_i) values:
+
+  a = sum(sqrt(m)) / 3 = 17.715556
+  sqrt(m_e)/a   = 0.040351  (fractional part)
+  sqrt(m_mu)/a  = 0.580225  (fractional part)
+  sqrt(m_tau)/a = 2.379424  (fractional part)
+  Sum = 3.000000  (= 3, by construction)
+
+  Koide decomposition (b = sqrt(2)):
+    e: sqrt(m)/a = 0.040351 = 1 + -0.959649
+    mu: sqrt(m)/a = 0.580225 = 1 + -0.419775
+    tau: sqrt(m)/a = 2.379424 = 1 + +1.379424
+
+  Sum of deviations: 0.0000000000 (= 0 by construction)
+  Sum of deviations^2: 2.999947
+  2/3 * sum(dev^2) = b^2 = 1.999965
+  sqrt(2)^2 = 2.000000
+
+======================================================================
+SECTION 3: VACUUM AS MEDIATOR
+======================================================================
+
+  Physical picture (user's hypothesis refined):
+
+  1. The TGP vacuum (g=1) is a SHARED MEDIUM for all solitons.
+  2. Each soliton deforms the vacuum with amplitude A_i.
+  3. The vacuum's response is governed by the linearized ODE
+     (spherical Bessel equation around g=1).
+  4. The three solitons must be COMPATIBLE with the same vacuum.
+
+  Condition: the total "stress" on the vacuum from all three
+  solitons must satisfy a consistency relation.
+
+  The soliton tail h_i(r) ~ A_i * sin(r - delta_i) / r
+  satisfies the linearized equation. But the FULL nonlinear equation
+  has terms O(h^2) that couple different modes.
+
+  At second order: the nonlinear coupling generates terms
+  proportional to A_i * A_j. These must be self-consistent
+  with the vacuum equation.
+
+  The condition for self-consistency at O(A^2):
+    sum of second-order corrections must vanish
+    (or: source for h^(2) must have no secular growth)
+
+  This is like the SOLVABILITY CONDITION in perturbation theory!
+
+  In canonical variable f = g^(alpha+1) = g^3:
+  Linearized: eta'' + 2/r eta' + eta = 0  (oscillatory!)
+  Solutions: eta ~ sin(r)/r, cos(r)/r
+  Frequency omega = 1.
+
+  At second order, nonlinear source has frequency 2.
+  The Green's function at frequency 2 is non-singular
+  (2 is not a resonance of the spherical Bessel operator).
+  So there's NO solvability condition at O(A^2)!
+
+  The condition would arise at a HIGHER order,
+  or from a DIFFERENT mechanism (e.g., energy conservation).
+
+======================================================================
+SECTION 4: ENERGY PARTITION -- does the ODE predict Q_K?
+======================================================================
+
+  Testing natural rules for g0_tau:
+  g0_e  = 0.86770, g0_mu = phi*g0_e = 1.40397
+
+  Field energy: E_e = 2.1509, E_mu = 31.0768
+
+  Searching: E_tau = E_e + E_mu = 33.2277
+
+                                           rule   g0_tau      Q_K        r31
+               g0_crit - (gc-g0_mu)^2/(gc-g0_e)  1.54753   1.6418    1958.19
+
+======================================================================
+SECTION 5: DEMOCRATIC DEFICIT / CV = 1
+======================================================================
+
+  Q_K = 3/2 <=> CV(sqrt(m)) = 1 <=> b = sqrt(2)
+  <=> "variance of sqrt(m) = mean^2"
+
+  In field theory terms:
+    <A^2> = (A_e^2 + A_mu^2 + A_tau^2) / 3  (mean of A^2)
+    Var(A^2) = <(A^2)^2> - <A^2>^2
+             = (A_e^4 + A_mu^4 + A_tau^4)/3 - ((A_e^2+A_mu^2+A_tau^2)/3)^2
+
+    CV(A^2) = sqrt(Var) / <A^2>
+
+    Q_K = 3/2 <=> CV(A^2) = 1 <=> Var = <A^2>^2
+    <=> <(A^2)^2> = 2 * <A^2>^2  (i.e., kurtosis condition)
+
+  This is a STATISTICAL property of the amplitude distribution.
+  It says: the three amplitudes are distributed such that
+  their coefficient of variation is EXACTLY 1.
+
+  Physical meaning: the fluctuations in soliton "strength"
+  (measured by A^2) are as large as the mean strength itself.
+  This is the MAXIMUM DISORDER compatible with all amplitudes > 0
+  under the constraint of 3-fold structure... NO, it's not the maximum.
+  CV can be larger.
+
+  But CV = 1 IS special: it's the value where the distribution
+  is "scale-free" in a certain sense. The standard deviation
+  equals the mean.
+
+  Amplitude values: A_e=0.130935, A_mu=0.496547, A_tau=1.005544
+  x = A^2 values:  0.017144, 0.246558, 1.011119
+  Mean(x) = 0.424940
+  Var(x)  = 0.180574
+  CV(x)   = 1.000000  (Q_K = 3/2 requires CV = 1.0)
+  CV^2    = 1.000000
+
+======================================================================
+SECTION 6: QUANTITATIVE PROTON-LEPTON PARALLEL
+======================================================================
+
+  Proton:  3 quarks with charges q_i = (+2/3, +2/3, -1/3)
+    sum(q_i) = +1 (integer "neutrality")
+    sum(q_i^2) = 4/9 + 4/9 + 1/9 = 1
+    Q_charge = sum(q_i)^2 / sum(q_i^2) = 1/1 = 1
+
+  Lepton family: 3 generations with "charges" x_i = sqrt(m_i/m_e)
+    sum(x_i) = S
+    sum(x_i^2) = P (= sum(m_i/m_e))
+    Q_K = S^2/P = 3/2
+
+  In Koide parametrization with b=sqrt(2):
+    x_i = a(1 + sqrt(2)*cos(theta_i))
+    where theta_i are 120 deg apart.
+
+  The "fractional charges" are:
+    f_i = x_i / sum(x_j) = (1 + sqrt(2)*cos(theta_i)) / 3
+
+  Lepton 'fractional charges':  f_e = 0.013450, f_mu = 0.193408, f_tau = 0.793141
+  Sum = 1.000000
+  sum(f_i^2) = 0.666661
+  Q = (sum f_i)^2 / (3*sum(f_i^2)) = 0.500004
+
+  Quark charges: q = [ 0.66666667  0.66666667 -0.33333333]
+  Sum = 1.000000
+  sum(q^2) = 1.000000
+  Q = (sum q)^2 / (3*sum(q^2)) = 0.333333
+
+  Interesting parallel:
+    Q_proton_charge = (sum q)^2 / (3*sum(q^2)) = 1/3
+    Q_lepton_mass   = Q_K/3 = 1/2
+    Both are simple fractions!
+    Proton: 1/3 (from 3 colors)
+    Lepton: 1/2 (from ... what?)
+
+======================================================================
+FINAL SYNTHESIS
+======================================================================
+
+  The user's proton analogy is STRUCTURALLY apt:
+
+  1. PROTON: 3 quarks, fractional charges (2/3, 2/3, -1/3), sum = 1
+     Enforced by: SU(3) color confinement + charge quantization.
+
+  2. LEPTON FAMILY: 3 generations, "fractional" sqrt(m) values,
+     Q_K = sum(sqrt(m))^2 / sum(m) = 3/2.
+     Enforced by: ??? (the open question)
+
+  WHAT WE LEARNED:
+  - Complex neutrality: FAILS (phases don't cancel)
+  - Field charge neutrality: FAILS (all Q_i < 0)
+  - Self = 4*cross: TRUE but tautological (= Q_K = 3/2)
+  - Energy partition: no natural rule gives Q_K = 3/2
+  - CV = 1: the cleanest reformulation (democratic deficit)
+
+  THE DEEPEST INSIGHT from the proton analogy:
+  In the proton, the NUMBER 3 (quarks) and charge quantization
+  are enforced by the GAUGE GROUP SU(3).
+  In TGP, the NUMBER 3 (generations) is enforced by the ODE dynamics
+  (soliton collapse threshold). Could there be an ANALOGOUS
+  symmetry principle that fixes Q_K = 3/2?
+
+  POSSIBLE DIRECTION:
+  The soliton ODE with alpha=2 has a specific symmetry structure.
+  The canonical variable f=g^3 transforms it to Lane-Emden type.
+  Lane-Emden equations have scaling symmetries (Lie group structure).
+  Could a discrete subgroup of this scaling symmetry
+  constrain the mass ratios to satisfy Q_K = 3/2?
+
+  This would be the "SU(3) of TGP" -- not a gauge group,
+  but a symmetry of the soliton equation that quantizes
+  the mass spectrum.
+
