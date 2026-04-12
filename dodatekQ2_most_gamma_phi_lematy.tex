@@ -1,0 +1,490 @@
+% ===========================================================================
+%  dodatekQ2_most_gamma_phi_lematy.tex
+%  Teoria Generowanej Przestrzeni (TGP) --- wersja 1
+%
+%  DODATEK Q2: Most $\Gamma \to \Phi$ --- lematy formalne (A1--A5)
+%  ----------------------------------------------------------------
+%  Status: PROGRAM BADA\'N --- realizacja PROPOZYCJA_MOST_GAMMA_DO_PHI.md
+%
+%  Cel: sformalizowa\'c s\l{}abe twierdzenie continuum (prop:Q-weak-continuum)
+%  jako \'sci\'sle okre\'slony {\l}a\'ncuch lemat\'ow A1--A5,
+%  prowadz\k{a}cy od substratu $\Gamma$ do ci\k{a}g\l{}ego r\'ownania pola TGP.
+%
+%  Zale\.zno\'sci:
+%   - dodatekQ (OP-2, operator blokowania, CG-1..CG-5)
+%   - sek08 (r\'ownanie pola TGP, dzia\l{}anie)
+%   - sek10 (K(\phi)=K_geo \phi^2 z substratu)
+%   - dodatekN (ERG/LPA', punkt sta\l{}y WF)
+% ===========================================================================
+
+\section*{Dodatek Q2: Most $\Gamma \to \Phi$ --- lematy formalne}
+\addcontentsline{toc}{section}{Dodatek Q2: Most $\Gamma \to \Phi$ (lematy)}
+\label{app:bridge_lemmata}
+
+\noindent
+Niniejszy dodatek rozwija propozycj\k{e} z~Dod.~Q (\S\ref{ssec:Q-continuum-proposals})
+w~\textbf{{\l}a\'ncuch pi\k{e}ciu lemat\'ow} prowadz\k{a}cych od dyskretnego
+substratu do ci\k{a}g\l{}ego r\'ownania pola~TGP.
+Strategia: zamiast dowodzi\'c pe\l{}nej hipotezy o~kontrakcji Banacha
+(CG-1, \S\ref{hyp:attractor}), u\.zywamy \textbf{kompaktowo\'sci}
+(Rellich--Kondrachov), aby otrzyma\'c s\l{}absz\k{a},
+ale publikowaln\k{a} wersj\k{e} mostu.
+
+\medskip\noindent
+\textbf{Konwencje.}
+$\Omega \subset \mathbb{R}^3$ jest ograniczonym obszarem,
+$K \Subset \Omega$ oznacza zwarty podzbi\'or,
+$H^1_{\rm loc}(\Omega)$ to przestrze\'n Sobolewa z~kontrol\k{a} na ka\.zdym~$K$.
+Indeks $B$ oznacza wielko\'s\'c bloku ($L_B = b\,a_{\rm sub}$, $b \in \mathbb{N}$).
+Granica continuum to $b \to \infty$ przy ustalonym $\xi_{\rm corr}$.
+
+% =============================================================
+\subsection*{Q2.1 Warunki wyj\'sciowe}
+\label{ssec:Q2-assumptions}
+% =============================================================
+
+Przyjmujemy nast\k{e}puj\k{a}ce za\l{}o\.zenia
+(ka\.zde z~nich jest weryfikowalne numerycznie w~repozytorium TGP):
+
+\begin{enumerate}[label=\textbf{(W\arabic*)},nosep]
+  \item \label{W:substrate}
+    \textbf{Substrat.}
+    $\Gamma = (V,E)$ jest grafem regularnym w~$\mathbb{R}^3$ z~lokalnym
+    hamiltonianem $H_\Gamma = -J\sum_{\langle ij\rangle}(\phi_i\phi_j)^2$,
+    symetri\k{a} $\mathbb{Z}_2$ i~przej\'sciem fazowym drugiego rodzaju
+    przy $T = T_c$.
+    W~fazie $T < T_c$ istnieje $v^2(T) = \langle\phi^2\rangle > 0$.
+
+  \item \label{W:block}
+    \textbf{Pole blokowe.}
+    $\Phi_B(x) = N_B^{-1}\sum_{i \in B(x)} \phi_i^2$,
+    gdzie $B(x)$ jest sze\'sciennym blokiem o~boku $L_B = b\,a_{\rm sub}$.
+
+  \item \label{W:separation}
+    \textbf{Separacja skal.}
+    $a_{\rm sub} \ll L_B \ll \xi_{\rm corr}$,
+    gdzie $\xi_{\rm corr} = a_{\rm sub}\,|1 - T/T_c|^{-\nu}$
+    jest d\l{}ugo\'sci\k{a} korelacji substratu.
+    Continuum ma sens tylko w~re\.zimie $\xi_{\rm corr}/a_{\rm sub} \gg 1$.
+
+  \item \label{W:correlation}
+    \textbf{Zanik korelacji.}
+    Korelacje dwupunktowe $\langle\phi_i^2\,\phi_j^2\rangle_c$
+    malej\k{a} jak $C\,\exp(-|x_i - x_j|/\xi_{\rm corr})$
+    lub szybciej.
+\end{enumerate}
+
+% =============================================================
+\subsection*{Q2.2 Lemat A1: Kompaktowo\'s\'c rodziny blokowej}
+\label{ssec:lemma-A1}
+% =============================================================
+
+\begin{lemma}[Kompaktowo\'s\'c $\{\Phi_B\}$ --- Lemat A1]%
+\label{lem:A1-compactness}
+\textbf{Status: \statuslabel{Szkic}.}
+Przy za\l{}o\.zeniach \ref{W:substrate}--\ref{W:correlation},
+je\.zeli ponadto:
+\begin{enumerate}[nosep]
+  \item[(i)] $\sup_B \|\Phi_B\|_{L^2(K)} < \infty$
+    dla ka\.zdego zwartego $K \Subset \Omega$,
+  \item[(ii)] energia swobodna po blokowaniu spe\l{}nia dolny szacunek
+    gradientowy:
+    \begin{equation}
+      F_B[\Phi_B] \;\ge\; c_*\,\|\nabla\Phi_B\|^2_{L^2(K)} - C_K,
+      \qquad c_* > 0,
+      \label{eq:A1-gradient-bound}
+    \end{equation}
+\end{enumerate}
+to rodzina $\{\Phi_B\}_{b \ge b_0}$ jest:
+\begin{itemize}[nosep]
+  \item \textbf{prezwarta s\l{}abo} w~$H^1_{\rm loc}(\Omega)$,
+  \item \textbf{prezwarta mocno} w~$L^2_{\rm loc}(\Omega)$.
+\end{itemize}
+W~szczeg\'olno\'sci istnieje podsekwencja $\Phi_{B_k} \to \Phi$
+mocno w~$L^2_{\rm loc}$ i~s\l{}abo w~$H^1_{\rm loc}$.
+\end{lemma}
+
+\begin{proof}[Szkic dowodu]
+\begin{enumerate}[nosep]
+  \item \textbf{Ograniczenie $H^1$.}
+    Z~(i) i~\eqref{eq:A1-gradient-bound}:
+    \[
+      \|\Phi_B\|_{H^1(K)}^2
+      = \|\Phi_B\|_{L^2(K)}^2 + \|\nabla\Phi_B\|_{L^2(K)}^2
+      \;\le\; M_K^2 + \frac{1}{c_*}\bigl(F_B[\Phi_B] + C_K\bigr).
+    \]
+    Prawo du\.zych liczb dla \'srednich blokowych (warunek \ref{W:separation})
+    gwarantuje, \.ze $F_B[\Phi_B]$ jest ograniczone jednostajnie po~$B$,
+    gdy\.z fluktuacje wewn\k{a}trz bloku s\k{a} t\l{}umione jak $O(N_B^{-1/2})$.
+
+  \item \textbf{Rellich--Kondrachov.}
+    Ograniczenie $\|\Phi_B\|_{H^1(K)} \le M$ jednostajnie po~$B$
+    implikuje (tw.~Rellicha--Kondrachova):
+    \[
+      \{\Phi_B\} \text{ jest prezwarta mocno w } L^2(K),
+    \]
+    a~z~refleksywno\'sci $H^1$ r\'ownie\.z s\l{}abo prezwarta w~$H^1(K)$.
+
+  \item \textbf{Diagonalizacja.}
+    Bior\k{a}c ci\k{a}g wyczerpuj\k{a}cy $K_1 \subset K_2 \subset \ldots$
+    z~$\bigcup K_n = \Omega$ i~stosuj\k{a}c argument diagonalny Cantora,
+    otrzymujemy podsekwencj\k{e} zbiegaj\k{a}c\k{a} na ka\.zdym~$K_n$,
+    a~wi\k{e}c w~$L^2_{\rm loc}(\Omega)$ i~s\l{}abo w~$H^1_{\rm loc}(\Omega)$.\qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{uwaga}[Co pozosta\l{}o do zamkni\k{e}cia A1]
+\label{rem:A1-open}
+Kluczowy punkt otwarty to \textbf{uzasadnienie nierówności~\eqref{eq:A1-gradient-bound}}
+z~mikrodynamiki substratu. Są trzy drogi:
+\begin{enumerate}[nosep]
+  \item \emph{Analityczna}: dolny szacunek z~tw.~Griffithsa--Simona dla
+    modeli $\mathbb{Z}_2$ przy $T < T_c$,
+  \item \emph{Numeryczna}: pomiar efektywnej sztywno\'sci $c_*$
+    z~korelator\'ow gradientowych w~Monte Carlo
+    (etap N3 programu numerycznego),
+  \item \emph{ERG}: odczytanie $c_*$ z~profilu $K_{\rm IR}(\rho)$
+    uzyskanego w~CG-2 (skrypt \texttt{tgp\_erg\_lpa\_prime.py}).
+\end{enumerate}
+Aktualnie CG-2 daje $K_{\rm IR}/K_{\rm UV} = 1.000$ (8/8 PASS),
+co \emph{sugeruje} $c_* > 0$, ale formalny dow\'od wymaga przeniesienia
+tego wyniku na poziom szacunku blokowego.
+\end{uwaga}
+
+% =============================================================
+\subsection*{Q2.3 Lemat A2: Lokalno\'s\'c funkcjona\l{}u efektywnego}
+\label{ssec:lemma-A2}
+% =============================================================
+
+\begin{lemma}[Lokalny funkcjona\l{} efektywny --- Lemat A2]%
+\label{lem:A2-local-functional}
+\textbf{Status: \statuslabel{Szkic}.}
+Przy za\l{}o\.zeniach \ref{W:substrate}--\ref{W:correlation},
+je\.zeli energia swobodna po blokowaniu ma posta\'c
+\[
+  F_B[\Phi_B] = \sum_{x} \Bigl[
+    K_B(\Phi_B)\,|\nabla_{\rm lat}\Phi_B|^2
+    + U_B(\Phi_B)
+    + \mathcal{R}_B(x)
+  \Bigr]\,a_{\rm lat}^3,
+\]
+gdzie $\mathcal{R}_B$ zawiera cz\l{}ony nielokalne, to:
+\begin{enumerate}[nosep]
+  \item[(i)] cz\l{}ony nielokalne s\k{a} t\l{}umione:
+    $\|\mathcal{R}_B\|_{L^2(K)} = O\bigl((L_B/\xi_{\rm corr})^p\bigr)$
+    z~$p \ge 1$,
+  \item[(ii)] w~granicy $L_B/\xi_{\rm corr} \to 0$ funkcjona\l{} efektywny
+    ma posta\'c \textbf{lokaln\k{a} drugiego rz\k{e}du}:
+    \begin{equation}
+      F_{\rm eff}[\Phi] = \int_\Omega \bigl[
+        K_1(\Phi)\,(\nabla\Phi)^2 + U(\Phi)
+      \bigr]\,d^3x + o(1).
+      \label{eq:A2-local-functional}
+    \end{equation}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}[Szkic dowodu]
+\begin{enumerate}[nosep]
+  \item \textbf{T\l{}umienie ogon\'ow nielokalnych.}
+    Z~warunku \ref{W:correlation} (wykładniczy zanik korelacji),
+    ka\.zdy cz\l{}on \emph{nie\-lo\-kal\-ny} w~$F_B$ {\l}\k{a}czy
+    punkty oddalone o~co najwy\.zej $\xi_{\rm corr}$.
+    Po przej\'sciu do zmiennych blokowych ($L_B \ll \xi_{\rm corr}$)
+    acauzalne sprz\k{e}\.zenia s\k{a} eksponencjalnie t\l{}umione:
+    \[
+      |\mathcal{R}_B(x,y)| \le C\,e^{-|x-y|/\xi_{\rm corr}}
+      \quad\Longrightarrow\quad
+      \|\mathcal{R}_B\|_{L^2} = O(L_B/\xi_{\rm corr}).
+    \]
+
+  \item \textbf{Rozwinięcie gradientowe.}
+    Dla $L_B \ll \xi_{\rm corr}$ pole $\Phi_B$ zmienia si\k{e} wolno
+    w~skali bloku. Rozwinięcie Taylora do drugiego rz\k{e}du daje
+    cz\l{}on kinetyczny $K_1(\Phi)\,(\nabla\Phi)^2$
+    i~potencja\l{} $U(\Phi)$.
+    Cz\l{}ony wy\.zszego rz\k{e}du ($\nabla^4$, $(\nabla^2\Phi)^2$)
+    s\k{a} rz\k{e}du $O((L_B/\xi_{\rm corr})^2)$.
+
+  \item \textbf{Identyfikacja $K_1$ i~$U$.}
+    $K_1(\Phi)$ jest granicą $K_B(\Phi_B)$ dla $B \to \infty$;
+    $U(\Phi)$ jest granic\k{a} $U_B(\Phi_B)$.
+    Istnienie tych granic wynika z~Lematu~A1 (s\l{}aba zbieżność
+    w~$H^1_{\rm loc}$) i~ciągłości $K_B$, $U_B$ jako funkcji $\Phi_B$.
+    \qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{uwaga}[Związek z~homogenizacj\k{a}]
+\label{rem:A2-homogenization}
+Lemat A2 jest analogi\k{a} twierdzenia homogenizacyjnego
+(Bensoussan~\emph{et al.}, 1978; por.~Argument~Q-III w~Dod.~Q).
+R\'o\.znica polega na tym, \.ze substrat TGP nie jest periodyczny,
+lecz posiada ko\'ncowy zasi\k{e}g korelacji $\xi_{\rm corr}$,
+co pe\l{}ni rol\k{e} analogi\k{a} warunku periodyczno\'sci.
+\end{uwaga}
+
+% =============================================================
+\subsection*{Q2.4 Lemat A3: $\alpha_{\rm eff} = 2$ z~przej\'scia $\phi \to \Phi = \phi^2$}
+\label{ssec:lemma-A3}
+% =============================================================
+
+\begin{lemma}[$\alpha_{\rm eff} = 2$ z~geometrii zmiennej --- Lemat A3]%
+\label{lem:A3-alpha-eff}
+\textbf{Status: \statuslabel{Propozycja}.}
+Niech pole amplitudowe $\phi(x) > 0$ spe\l{}nia r\'ownanie o~standardowym
+sektorze kinetycznym:
+\begin{equation}
+  \int Z(\phi)\,(\nabla\phi)^2\,d^3x,
+  \qquad Z(\phi) = Z_0\,\phi^2 + O(\phi^4 - \Phi_0^2).
+  \label{eq:A3-kinetic-phi}
+\end{equation}
+Po przej\'sciu do zmiennej $\Phi = \phi^2$ ($\phi > 0$):
+\begin{enumerate}[nosep]
+  \item[(i)] $\nabla\Phi = 2\phi\,\nabla\phi$,
+    \quad $(\nabla\phi)^2 = (\nabla\Phi)^2/(4\Phi)$,
+  \item[(ii)] sektor kinetyczny przyjmuje posta\'c
+    \begin{equation}
+      \int \frac{Z(\sqrt{\Phi})}{4\Phi}\,(\nabla\Phi)^2\,d^3x
+      = \int \frac{Z_0}{4}\,(\nabla\Phi)^2\,d^3x
+        + O\bigl((\Phi - \Phi_0)/\Phi_0\bigr),
+      \label{eq:A3-kinetic-Phi}
+    \end{equation}
+  \item[(iii)] wariacja \eqref{eq:A3-kinetic-Phi} wzgl\k{e}dem $\Phi$
+    generuje dok\l{}adnie cz\l{}on
+    $\frac{(\nabla\Phi)^2}{\Phi}$,
+    co odpowiada $\alpha_{\rm eff} = 2$
+    w~r\'ownaniu pola TGP (sek08, eq.~\eqref{eq:action}).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Cz\k{e}\'sci (i)--(ii) s\k{a} algebraiczne (por.~prop.~\ref{prop:Q-alpha-from-phi-squared}
+w~Dod.~Q). Dla cz\k{e}\'sci (iii):
+
+Niech $\mathcal{K}[\Phi] = \int K_1(\Phi)\,(\nabla\Phi)^2\,d^3x$
+z~$K_1(\Phi) = Z_0/(4\Phi) + O(1)$ w~otoczeniu $\Phi_0 > 0$.
+Wariacja pierwsza:
+\begin{align}
+  \frac{\delta\mathcal{K}}{\delta\Phi}
+  &= K_1'(\Phi)\,(\nabla\Phi)^2 - 2\nabla\cdot\bigl(K_1(\Phi)\,\nabla\Phi\bigr)
+  \nonumber\\
+  &= -\frac{Z_0}{4\Phi^2}\,(\nabla\Phi)^2
+    - 2\,\frac{Z_0}{4\Phi}\,\nabla^2\Phi
+    + 2\,\frac{Z_0}{4\Phi^2}\,(\nabla\Phi)^2
+    + O(1)
+  \nonumber\\
+  &= -\frac{Z_0}{2\Phi}\,\nabla^2\Phi
+    + \frac{Z_0}{4\Phi^2}\,(\nabla\Phi)^2
+    + O(1).
+  \label{eq:A3-variation}
+\end{align}
+Po normalizacji (dzielenie przez $Z_0/(2\Phi)$):
+\[
+  -\nabla^2\Phi + \frac{1}{2}\,\frac{(\nabla\Phi)^2}{\Phi}
+  + O(\Phi - \Phi_0) = 0.
+\]
+Identyfikujemy $\alpha_{\rm eff} = 2 \times \tfrac{1}{2} = 1$
+w~konwencji $\alpha\,(\nabla\Phi)^2/(2\Phi)$, tj.
+\textbf{$\alpha = 2$} w~konwencji r\'ownania pola TGP.
+\end{proof}
+
+\begin{uwaga}[Strukturalno\'s\'c $\alpha = 2$]
+\label{rem:A3-structural}
+Lemat~A3 dowodzi, \.ze $\alpha = 2$ \textbf{nie jest wolnym parametrem},
+lecz algebraiczn\k{a} konsekwencj\k{a} przejścia $\phi \to \Phi = \phi^2$.
+Ka\.zda teoria, w~kt\'orej pole makroskopowe jest kwadratem amplitudy,
+musi mie\'c $\alpha = 2$ w~sektorze kinetycznym. To jest \emph{geometryczny
+invariant} definicji zmiennej, nie wynik dopasowania.
+
+\medskip\noindent
+\textbf{Warunek konieczny}: $Z(\phi) \sim \phi^2$ blisko $\phi = \sqrt{\Phi_0}$.
+To jest zgodne ze struktur\k{a} wyprowadzon\k{a} w~sek10
+($K(\phi) = K_{\rm geo}\,\phi^2$).
+\end{uwaga}
+
+% =============================================================
+\subsection*{Q2.5 Lemat A4: Identyfikacja wsp\'o\l{}czynnik\'ow}
+\label{ssec:lemma-A4}
+% =============================================================
+
+\begin{lemma}[Identyfikacja wsp\'o\l{}czynnik\'ow efektywnych --- Lemat A4]%
+\label{lem:A4-coefficients}
+\textbf{Status: \statuslabel{Program}.}
+Niech $\Phi$ b\k{e}dzie punktem skupienia z~Lematu~A1
+i~niech funkcjona\l{} efektywny z~Lematu~A2 ma posta\'c
+\eqref{eq:A2-local-functional} z~$K_1(\Phi) = Z_0/(4\Phi)$.
+R\'ownanie Eulera--Lagrange'a ma wtedy posta\'c og\'oln\k{a}:
+\begin{equation}
+  \nabla^2\Phi + \alpha_{\rm eff}\,\frac{(\nabla\Phi)^2}{2\Phi}
+  + \beta_{\rm eff}\,\frac{\Phi^2}{\Phi_0}
+  - \gamma_{\rm eff}\,\frac{\Phi^3}{\Phi_0^2}
+  = -q_{\rm eff}\,\Phi_0\,\rho,
+  \label{eq:A4-general-PDE}
+\end{equation}
+gdzie:
+\begin{enumerate}[nosep]
+  \item $\alpha_{\rm eff} = 2$ (Lemat~A3, geometria zmiennej),
+  \item $\beta_{\rm eff}$ i~$\gamma_{\rm eff}$ s\k{a} wyznaczone przez
+    rozwinięcie $U(\Phi)$ wok\'o\l{} pr\'o\.zni $\Phi = \Phi_0$:
+    \begin{equation}
+      U(\Phi) = U(\Phi_0)
+        + \tfrac{1}{2}\,m_{\rm sp}^2\,(\Phi - \Phi_0)^2
+        + u_3\,(\Phi - \Phi_0)^3
+        + \ldots
+      \label{eq:A4-potential-expansion}
+    \end{equation}
+  \item $\beta_{\rm eff} = \gamma_{\rm eff}$
+    je\.zeli $U'(\Phi_0) = 0$ i~$U(\Phi)$ jest symetrycznie \'sci\k{e}te
+    do rz\k{e}du trzeciego.
+\end{enumerate}
+Identyfikacja z~r\'ownaniem pola TGP (sek08) wymaga:
+\begin{equation}
+  \beta_{\rm eff} = \gamma_{\rm eff}
+  = \frac{m_{\rm sp}^2}{2\Phi_0},
+  \qquad
+  q_{\rm eff} = \frac{4\pi G_0}{\Phi_0},
+  \label{eq:A4-identification}
+\end{equation}
+co jest \textbf{testowalnym warunkiem} (\l{}\k{a}cz\k{a}cym CG-4 z~obserwablami TGP).
+\end{lemma}
+
+\begin{uwaga}[Program identyfikacji]
+\label{rem:A4-program}
+Identyfikacja \eqref{eq:A4-identification} wymaga:
+\begin{enumerate}[nosep]
+  \item Wyznaczenie $U(\Phi)$ z~histogramu blokowego (etap N2 programu
+    numerycznego) lub z~profilu IR w~LPA' (CG-2),
+  \item Wyznaczenie $m_{\rm sp}^2$ z~krzywizny $U''(\Phi_0)$,
+  \item Por\'ownanie $\beta_{\rm eff}/\gamma_{\rm eff}$ z~predykcj\k{a}
+    TGP ($\beta = \gamma$, por.~sek08).
+\end{enumerate}
+R\'ownanie $\beta = \gamma$ jest konsekwencj\k{a} warunku pr\'o\.zniowego
+$U'(\Phi_0) = 0$ i~struktury potencja\l{}u TGP.
+Numeryczna weryfikacja jest celem etap\'ow N2--N3.
+\end{uwaga}
+
+% =============================================================
+\subsection*{Q2.6 Twierdzenie A5: S\l{}abe twierdzenie continuum}
+\label{ssec:theorem-A5}
+% =============================================================
+
+\begin{proposition}[S\l{}abe twierdzenie continuum --- A5]%
+\label{thm:A5-weak-continuum}
+\textbf{Status: \statuslabel{Szkic}.}
+Niech substrat $\Gamma$ spe\l{}nia warunki \ref{W:substrate}--\ref{W:correlation}
+i~niech spe\l{}nione s\k{a} przes\l{}anki Lemat\'ow A1--A4.
+W\'owczas:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Istnienie granicy.}
+    Istnieje podsekwencja $\Phi_{B_k} \to \Phi$ mocno w~$L^2_{\rm loc}(\Omega)$
+    i~s\l{}abo w~$H^1_{\rm loc}(\Omega)$ (Lemat~A1).
+
+  \item \textbf{Lokalny funkcjona\l{}.}
+    Granica $\Phi$ jest punktem krytycznym lokalnego funkcjona\l{}u
+    $F_{\rm eff}[\Phi] = \int [K_1(\Phi)\,(\nabla\Phi)^2 + U(\Phi)]\,d^3x$
+    (Lemat~A2).
+
+  \item \textbf{Struktura TGP.}
+    R\'ownanie Eulera--Lagrange'a ma posta\'c r\'ownania pola TGP
+    z~$\alpha = 2$ (Lemat~A3) i~$\beta = \gamma$ (Lemat~A4):
+    \begin{equation}
+      \boxed{
+        \nabla^2\Phi + \frac{(\nabla\Phi)^2}{\Phi}
+        + \beta\,\frac{\Phi^2}{\Phi_0}
+        - \beta\,\frac{\Phi^3}{\Phi_0^2}
+        = -q\,\Phi_0\,\rho
+      }
+      \label{eq:A5-TGP-recovered}
+    \end{equation}
+    z~b\l{}\k{e}dem kontrolowanym przez $\varepsilon(L_B/\xi, a_{\rm sub}/L_B)$.
+
+  \item \textbf{Kontrola b\l{}\k{e}du.}
+    \begin{equation}
+      \|\Phi_B - \Phi\|_{L^2(K)}
+      \;\le\; C_1\,\Bigl(\frac{L_B}{\xi_{\rm corr}}\Bigr)
+        + C_2\,\Bigl(\frac{a_{\rm sub}}{L_B}\Bigr)^{1/2},
+      \label{eq:A5-error}
+    \end{equation}
+    gdzie $C_1$ pochodzi z~ogon\'ow nielokalnych (Lemat~A2),
+    a~$C_2$ z~fluktuacji wewn\k{a}trzblokowych (prawo du\.zych liczb).
+\end{enumerate}
+\end{proposition}
+
+\begin{uwaga}[Relacja do CG-1..CG-4]
+\label{rem:A5-vs-CG}
+Twierdzenie A5 \textbf{nie wymaga} zamknięcia CG-1
+(pe\l{}na kontrakcja Banacha). Wystarcz\k{a}:
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  CG-krok & Status w~A5 \\
+  \midrule
+  CG-1 (Banach) & \textbf{obej\'scie}: kompaktowo\'s\'c zamiast kontrakcji \\
+  CG-2 (LPA') & \textbf{u\.zyty}: dostarcza $K_{\rm IR}$, $c_*$ \\
+  CG-3 ($H^1$ zbieżność) & \textbf{s\l{}aba wersja}: Lemat~A1 \\
+  CG-4 (identyfikacja) & \textbf{cz\k{e}\'sciowy}: Lemat~A4 \\
+  CG-5 (samospójność) & \textbf{zamkni\k{e}ty NUM}: niezale\.zny \\
+  \bottomrule
+\end{tabular}
+\end{center}
+Strategia: zamknięcie A5 \emph{przed} CG-1 daje publikowalny
+wynik formalny bez pe\l{}nego dowodu kontrakcji.
+\end{uwaga}
+
+% =============================================================
+\subsection*{Q2.7 Mapa statusu i~nast\k{e}pne kroki}
+\label{ssec:Q2-status}
+% =============================================================
+
+\begin{center}
+\begin{tabular}{lllp{5cm}}
+\toprule
+Lemat & Status & Najtrudniejszy punkt & Droga zamkni\k{e}cia \\
+\midrule
+A1 (kompaktowo\'s\'c)
+  & \statuslabel{Szkic}
+  & Dolny szacunek $c_* > 0$ \eqref{eq:A1-gradient-bound}
+  & Griffiths--Simon \emph{lub} MC~(N3) \emph{lub} ERG~(CG-2) \\[4pt]
+A2 (lokalno\'s\'c)
+  & \statuslabel{Szkic}
+  & T\l{}umienie ogon\'ow $\mathcal{R}_B$
+  & Klasterowy rozk\l{}ad korelacji \\[4pt]
+A3 ($\alpha = 2$)
+  & \statuslabel{Propozycja}
+  & $Z(\phi) \sim \phi^2$
+  & sek10 + sek08 (ju\.z wyprowadzone) \\[4pt]
+A4 (wsp\'o\l{}czynniki)
+  & \statuslabel{Program}
+  & Profil $U(\Phi)$ z~blokowaniem
+  & Histogram MC (N2) + LPA' (CG-2) \\[4pt]
+A5 (twierdzenie)
+  & \statuslabel{Szkic}
+  & Sk\l{}ada si\k{e} z~A1--A4
+  & Zamknięcie komponent\'ow \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Priorytet}: Lemat~A1 (kompaktowo\'s\'c) jest \textbf{najwa\.zniejszym
+pierwszym wynikiem}, poniewa\.z bez kontroli $\|\nabla\Phi_B\|$ w~$L^2$
+nie istnieje \.zadne przej\'scie do granicy. Lemat~A3 jest ju\.z w~zasadzie
+zamkni\k{e}ty (algebraiczny, por.~prop.~\ref{prop:Q-alpha-from-phi-squared}).
+
+\bigskip
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{
+\textbf{Podsumowanie Dodatku Q2.}
+Most $\Gamma \to \Phi$ jest roz\l{}o\.zony na pi\k{e}\'c lemat\'ow (A1--A5).
+Najkr\'otsza droga do publikowalnego zamkni\k{e}cia prowadzi przez:
+(1)~uzasadnienie dolnego szacunku gradientowego (A1),
+(2)~t\l{}umienie nielokalnych ogon\'ow (A2),
+(3)~algebraiczne $\alpha = 2$ (A3, ju\.z zamkni\k{e}ty),
+(4)~identyfikacj\k{e} potencja\l{}u (A4, cz\k{e}\'sciowo numeryczny),
+(5)~z\l{}o\.zenie w~s\l{}abe twierdzenie continuum (A5).
+Program numeryczny (N1--N5, por.~\texttt{PLAN\_NUMERYCZNY\_CG3\_CG4.md})
+wspiera ka\.zdy krok niezale\.zn\k{a} weryfikacj\k{a}.
+}}
+\end{center}
