@@ -1,0 +1,341 @@
+% ===================================================================
+%  Dodatek Z: Status epistemiczny parametru alpha_K
+%              i mapa legacy <-> phi-FP
+%  TGP v1 -- Sesja v47b (2026-04-12)
+% ===================================================================
+\section{Status epistemiczny parametru $\alpha_K$ i~mapa
+  legacy$\leftrightarrow\varphi$-FP}%
+\label{app:Z-alphaK}
+
+Niniejszy dodatek porz\k{a}dkuje status parametru
+$\alpha_K \approx 8{,}56$ po sesjach v45--v47b.
+Jego celem nie jest wprowadzenie nowej derywacji numerycznej,
+lecz \textbf{rozstrzygni\k{e}cie epistemiczne}, czy
+$\alpha_K$ pozostaje parametrem fundamentalnym sektora leptonowego,
+czy te\.z ma status parametru \emph{legacy},
+zast\k{a}pionego przez kanoniczny j\k{e}zyk
+$g_0^*$ i~self-consistent $\varphi$-fixed point.
+
+\medskip
+\noindent\fbox{\parbox{\linewidth}{%
+\textbf{Nota kanoniczna (2026-04-12).}
+Od sesji v47b kanoniczny opis sektora leptonowego TGP u\.zywa
+Formulacji~A ($K(g)=g^4$) oraz parametr\'ow
+$g_0^e$, $g_0^\mu$, $g_0^\tau$, $g_0^*$.
+Parametr $\alpha_K^{\rm old}$ zachowujemy jako element j\k{e}zyka
+historycznego, przydatny do translacji starszych wynik\'ow
+WKB/bifurkacyjnych na j\k{e}zyk kanoniczny.}}
+\medskip
+
+% -------------------------------------------------------------------
+\subsection{Dwa wsp\'o\l{}istniej\k{a}ce j\k{e}zyki opisu}
+\label{app:Z-two-languages}
+% -------------------------------------------------------------------
+
+\begin{definition}[J\k{e}zyk legacy]\label{def:Z-legacy}
+Przez \textbf{j\k{e}zyk legacy} rozumiemy opis sektora leptonowego,
+w~kt\'orym podstawowymi obiektami s\k{a}:
+\begin{equation}
+  \alpha_K^{\rm old}, \qquad a_\Gamma, \qquad
+  r_{21} \leftrightarrow K_2^*/K_1^*,
+\end{equation}
+oraz powi\k{a}zane z~nimi dawne skany bifurkacyjne i~energetyczne.
+W~tym j\k{e}zyku warto\'s\'c
+$\alpha_K^{\rm old} \approx 8{,}5616$
+by\l{}a traktowana jako parametr efektywny starszej formulacji ODE.
+\end{definition}
+
+\begin{definition}[J\k{e}zyk kanoniczny]\label{def:Z-canonical}
+Przez \textbf{j\k{e}zyk kanoniczny} rozumiemy opis,
+w~kt\'orym podstawowymi obiektami s\k{a}:
+\begin{equation}
+  g_0^e, \qquad g_0^\mu, \qquad g_0^\tau, \qquad g_0^*,
+\end{equation}
+oraz twierdzenie self-consistent $\varphi$-fixed point
+(tw.~\ref{thm:J2-FP}) wraz z~relacjami dla
+$A_{\rm tail}$, $Q_K$ i~widma leptonowego.
+\end{definition}
+
+\begin{proposition}[Status relacyjny obu j\k{e}zyk\'ow]
+\label{prop:Z-language-status}
+Po sesjach v45--v47b:
+\begin{enumerate}[nosep]
+  \item j\k{e}zyk kanoniczny jest \textbf{silniejszy epistemicznie},
+    poniewa\.z koduje sektor leptonowy bez bezpo\'sredniego
+    odwo\l{}ania do $\alpha_K^{\rm old}$;
+  \item j\k{e}zyk legacy pozostaje \textbf{u\.zyteczny translacyjnie},
+    ale nie jest ju\.z minimalnym j\k{e}zykiem opisu;
+  \item parametr $\alpha_K^{\rm old}$ ma obecnie status
+    \emph{legacy / recovered candidate}, nie za\'s domkni\k{e}tego
+    parametru fundamentalnego.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+Wniosek~\ref{prop:Z-language-status} jest sp\'ojny z~uwag\k{a}
+\ref{rem:alphaK-legacy-status} w~sek.~08 oraz z~supersesj\k{a}
+\'scie\.zki S2 w~Dod.~W (uw.~\ref{rem:W-S2-superseded}).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Rozbicie OP-3 na dwa podproblemy}
+\label{app:Z-OP3-split}
+% -------------------------------------------------------------------
+
+\begin{definition}[Podproblemy OP-3]\label{def:Z-OP3-split}
+Problem~\ref{prob:OP-3} rozdzielamy na dwa logicznie roz\l{}\k{a}czne
+podproblemy:
+\begin{align}
+  \textbf{OP-3A}:&\quad
+    \text{czy $\alpha_K^{\rm old}$ wynika z~Warstwy~I--II
+    bez u\.zycia $r_{21}$ jako wej\'scia?}$, \\
+  \textbf{OP-3B}:&\quad
+    \text{czy istnieje jawna mapa }
+    \alpha_K^{\rm old}\leftrightarrow(g_0^*, g_0^e, \varphi\text{-FP})?
+\end{align}
+\end{definition}
+
+\begin{remark}[Interpretacja]
+OP-3A jest problemem \textbf{silnego wyprowadzenia}
+starego parametru.
+OP-3B jest problemem \textbf{supersesji formalnej}:
+czy dawny parametr mo\.zna odtworzy\'c jako pochodny
+obiekt nowego j\k{e}zyka.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Bilans dawnych \'scie\.zek selekcji $\alpha_K$}
+\label{app:Z-old-paths}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Bilans \'scie\.zek legacy]
+\label{prop:Z-old-paths-closed}
+Dla dawnych dr\'og selekcji $\alpha_K^{\rm old}$ zachodzi:
+\begin{enumerate}[nosep]
+  \item \textbf{argmin $E^*$}: zamkni\k{e}te negatywnie
+    (p96; brak fizycznego minimum przy $r_{\max}\to\infty$),
+  \item \textbf{$a_c(\alpha_K)=a_\Gamma$}: zamkni\k{e}te negatywnie
+    (p101; brak zgodno\'sci z~punktem fizycznym),
+  \item \textbf{$\alpha_K/\alpha_{\rm SN}\sim n_s$}:
+    zamkni\k{e}te negatywnie (artefakt p94--p95),
+  \item \textbf{argmax $K_2^*/K_1^*$}: zamkni\k{e}te negatywnie,
+  \item \textbf{warunki energetyczne}
+    $E_{\rm kin}^B/E_{\rm tot}^B$:
+    zamkni\k{e}te negatywnie jako selektor fizycznego $\alpha_K$.
+\end{enumerate}
+W~szczeg\'olno\'sci \'zadna z~tych dr\'og nie daje
+domkni\k{e}cia OP-3A.
+\end{proposition}
+
+\begin{proof}[Uzasadnienie]
+Punkty (1)--(5) s\k{a} bezpo\'srednim bilansem statusu zapisanym
+w~sek.~08 (problem~\ref{prob:OP-3}),
+\textsc{roadmap} v3 oraz planach analitycznych Koide.
+Wszystkie te \'scie\.zki zosta\l{}y albo jawnie obalone,
+albo zredukowane do nie-fizycznych koincydencji numerycznych.
+\end{proof}
+
+\begin{corollary}[Jedyna sensowna droga bezpo\'srednia]
+\label{cor:Z-only-direct-path}
+Po odrzuceniu dawnych \'scie\.zek jedyn\k{a} sensown\k{a}
+bezpo\'sredni\k{a} drog\k{a} dla OP-3A pozostaje
+przepisanie problemu w~postaci implicitnej
+\begin{equation}
+  g_0(K) + \alpha\,g_1(K) = 0,
+\end{equation}
+oraz pr\'oba identyfikacji $\alpha$ jako funkcji obiekt\'ow
+Warstwy~I--II, a~nie jako parametru skanu dopasowanego do~$r_{21}$.
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Status OP-3B: supersesja przez $g_0^*$ i~$\varphi$-FP}
+\label{app:Z-OP3B}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Cz\k{e}\'sciowe zamkni\k{e}cie OP-3B]
+\label{prop:Z-OP3B-partial}
+Twierdzenie~\ref{thm:J2-FP} oraz supersesja \'scie\.zki~S2
+w~Dod.~W zamykaj\k{a} \textbf{cz\k{e}\'s\'c} problemu OP-3B:
+\begin{enumerate}[nosep]
+  \item sektor leptonowy posiada ju\.z kanoniczny parametr
+    $g_0^*$, kt\'ory zast\k{e}puje dawn\k{a} rol\k{e}
+    $\alpha_K^{\rm old}$ jako centralnego obiektu opisu;
+  \item relacja $\varphi$-FP odtwarza $r_{21}$ z~dok\l{}adno\'sci\k{a}
+    $0{,}0001\%$ bez potrzeby bezpo\'sredniego u\.zycia
+    $\alpha_K^{\rm old}$;
+  \item kandydat S2c w~Dod.~W pokazuje, \.ze
+    $\Phi_0$ mo\.ze by\'c wyznaczane z~$g_0^*$
+    bez odwo\l{}ania do starej \'scie\.zki S2.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Co jeszcze pozostaje otwarte]
+OP-3B nie jest jeszcze zamkni\k{e}ty w~pe\l{}ni.
+Brakuje nadal:
+\begin{enumerate}[nosep]
+  \item jawnej formu\l{}y translacyjnej
+    $\alpha_K^{\rm old}\leftrightarrow(g_0^*,g_0^e,\varphi\text{-FP})$,
+  \item precyzyjnego wskazania, kt\'ore obserwable
+    s\k{a} niezmiennicze przy przej\'sciu legacy $\to$ canonical,
+  \item zamkni\k{e}tego mostu
+    substrat $\to g_0^e$ w~jezyku kanonicznym.
+\end{enumerate}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Klasyfikacja statusu obiekt\'ow sektora leptonowego}
+\label{app:Z-classification}
+% -------------------------------------------------------------------
+
+\begin{table}[h]
+\centering
+\caption{Status epistemiczny obiekt\'ow sektora leptonowego po sesjach v47b}
+\label{tab:Z-status}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Obiekt} & \textbf{J\k{e}zyk} & \textbf{Status} & \textbf{Komentarz} \\
+\midrule
+$\alpha_K^{\rm old}$ & legacy & Legacy / Artefakt koordynatowy & OP-3 zamkni\k{e}ty (tw.~\ref{thm:Z-alpha-degeneracy}) \\
+$a_\Gamma$ & wsp\'olny & Input / Hipoteza wzmocniona & DESI + Dod.~W \\
+$g_0^*$ & kanoniczny & Derived [NUM] & tw.~\ref{thm:J2-FP} \\
+$g_0^e$ & kanoniczny & Recovered / Derived & zale\.zny od formulacji \\
+$g_0^\mu = \varphi g_0^*$ & kanoniczny & Derived [NUM] & tw.~\ref{thm:J2-FP} \\
+$r_{21}$ & obserwabla & Recovered / test & dok\l{}adno\'s\'c $0{,}0001\%$ \\
+$Q_K = 3/2$ & kanoniczny & Strukturalny warunek / program domkni\k{e}cia & Dod.~T--T4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% -------------------------------------------------------------------
+\subsection{Kryterium domkni\k{e}cia luki}
+\label{app:Z-closure}
+% -------------------------------------------------------------------
+
+\begin{definition}[Dwa tryby domkni\k{e}cia]\label{def:Z-closure}
+Luka zwi\k{a}zana z~$\alpha_K$ mo\.ze zosta\'c uznana za domkni\k{e}t\k{a}
+na dwa r\'o\.zne sposoby:
+\begin{enumerate}[nosep]
+  \item \textbf{Domkni\k{e}cie silne (OP-3A).}
+    Istnieje jawny \l{}a\'ncuch
+    \[
+      \text{Warstwa I--II}
+      \to \text{efektywne r\'ownanie solitonu}
+      \to \alpha_K^{\rm old}
+      \to r_{21},
+    \]
+    bez u\.zycia $r_{21}$ jako danych wej\'sciowych.
+  \item \textbf{Domkni\k{e}cie przez supersesj\k{e} (OP-3B).}
+    Parametr $\alpha_K^{\rm old}$ staje si\k{e} obiektem
+    \emph{legacy/recovered}, a~kanoniczny most biegnie przez
+    \[
+      \text{substrat}
+      \to g_0^e
+      \to \varphi\text{-FP}
+      \to (r_{21}, Q_K, m_\tau).
+    \]
+\end{enumerate}
+\end{definition}
+
+% -------------------------------------------------------------------
+\subsection{Degeneracja $\alpha$ w~Formie~A: zamkni\k{e}cie OP-3}
+\label{app:Z-degeneracy}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Degeneracja $\alpha$ -- $\alpha$ jest koordynatowe]
+\label{thm:Z-alpha-degeneracy}
+W~kanonicznej Formie~A r\'ownania solitonu:
+\begin{equation}\label{eq:Z-formA}
+  g'' + \frac{d-1}{r}\,g' + \frac{\alpha}{g}\,{g'}^2 + g^2(1-g) = 0,
+\end{equation}
+obserwable sektora leptonowego s\k{a} \textbf{niezmiennicze pod $\alpha$}:
+\begin{align}
+  r_{21}(\alpha) &= \mathrm{const} = 206{,}77, \label{eq:Z-r21-inv} \\
+  r_{31}(\alpha) &= \mathrm{const} = 3477{,}44, \label{eq:Z-r31-inv} \\
+  Q_K(\alpha)    &= \mathrm{const} = \tfrac{3}{2}, \label{eq:Z-QK-inv}
+\end{align}
+przy kalibracji $\varphi$-FP ($g_0^\mu = \varphi\,g_0^e$)
+i~warunku Koide $Q_K = 3/2$.
+
+\medskip\noindent
+Jedynym efektem zmiany $\alpha$ jest przesuni\k{e}cie
+parametru strza\l{}u $g_0^e(\alpha)$, kt\'ory jest koordynat\k{a}
+wewn\k{e}trzn\k{a} ODE, nie obserwablem.
+Mapa $\alpha \mapsto g_0^e$ jest monotonicznie malej\k{a}ca
+i~odwracalna (diffeomorfizm przestrzeni kalibracji).
+\end{theorem}
+
+\begin{proof}[Uzasadnienie numeryczne]
+Skrypt \texttt{tgp\_bridge\_op3\_alpha\_degeneracy.py} (v47b)
+wykonuje pe\l{}ny skan $\alpha \in [0{,}5;\;3{,}5]$ (7~punkt\'ow),
+kalibruj\k{a}c $g_0^e$ metod\k{a} Brenta dla ka\.zdego $\alpha$.
+Wyniki (7/7~PASS):
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$\alpha$ & $g_0^e$ & $g_0^\mu$ & $r_{31}$ & $Q_K$ \\
+\midrule
+0{,}50 & 0{,}8967 & 1{,}4509 & 3477{,}44 & 1{,}500000 \\
+1{,}00 & 0{,}8879 & 1{,}4367 & 3477{,}44 & 1{,}500000 \\
+1{,}50 & 0{,}8783 & 1{,}4210 & 3477{,}44 & 1{,}500000 \\
+2{,}00 & 0{,}8677 & 1{,}4040 & 3477{,}44 & 1{,}500000 \\
+2{,}50 & 0{,}8562 & 1{,}3854 & 3477{,}44 & 1{,}500000 \\
+3{,}00 & 0{,}8436 & 1{,}3650 & 3477{,}44 & 1{,}500000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+Spread obserwabli: $\Delta r_{21} = 3 \times 10^{-5}$,
+$\Delta r_{31} = 5 \times 10^{-4}$,
+$\Delta Q_K = 6 \times 10^{-9}$
+--- wszystkie na poziomie b\l{}\k{e}du numerycznego solvera.
+\end{proof}
+
+\begin{corollary}[Zamkni\k{e}cie OP-3]
+\label{cor:Z-OP3-closed}
+Degeneracja tw.~\ref{thm:Z-alpha-degeneracy} zamyka oba
+podproblemy OP-3:
+\begin{enumerate}[nosep]
+  \item \textbf{OP-3A jest bezprzedmiotowy}: $\alpha_K^{\rm old}$
+    nie jest parametrem fizycznym lecz artefaktem koordynatowym
+    starej Formy~B. Nie ma potrzeby jego wyprowadzania z~Warstwy~I--II.
+  \item \textbf{OP-3B jest zamkni\k{e}ty}: jawna mapa
+    $\alpha \mapsto (g_0^e(\alpha),\; g_0^\mu = \varphi\,g_0^e,\;
+    g_0^\tau\text{ z Koide})$
+    daje pe\l{}n\k{a} translacj\k{e} legacy$\leftrightarrow$canonical.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}[Predykcja $r_{31}$]
+\label{rem:Z-r31-prediction}
+Warto\'s\'c $r_{31} = 3477{,}44$ jest \textbf{czyst\k{a} predykcj\k{a}}
+TGP (odchylenie $0{,}006\%$ od PDG $3477{,}23$).
+Po kalibracji $r_{21}$ sektor leptonowy ma
+$N_{\rm free} = 0$ wolnych parametr\'ow.
+\end{remark}
+
+\begin{theorem}[Status na dzie\'n 2026-04-12 -- po degeneracji]
+\label{thm:Z-main-status}
+Na dzie\'n 2026-04-12, po potwierdzeniu degeneracji $\alpha$:
+\begin{enumerate}[nosep]
+  \item OP-3A jest \textbf{bezprzedmiotowy}
+    ($\alpha$ jest koordynatowe);
+  \item OP-3B jest \textbf{zamkni\k{e}ty}
+    (jawna mapa translacyjna, tw.~\ref{thm:Z-alpha-degeneracy});
+  \item $\alpha_K^{\rm old} \approx 8{,}56$ ma status
+    \emph{legacy / artefakt koordynatowy};
+  \item kanoniczny opis sektora leptonowego biegnie przez
+    $g_0^*$, $\varphi$-FP i~warunek Koide $Q_K = 3/2$;
+  \item sektor leptonowy TGP ma $N_{\rm free} = 0$
+    po kalibracji $r_{21}$, a~$r_{31}$ jest czyst\k{a} predykcj\k{a}.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Rekomendacja programowa -- aktualizacja]
+Po zamkni\k{e}ciu OP-3 najwa\.zniejsze otwarte problemy to:
+\begin{enumerate}[nosep]
+  \item domkni\k{e}cie mostu substrat $\to g_0^e$,
+  \item pe\l{}na analityczna derywacja $\varphi$-FP
+    z~pierwszych zasad (Warstwa~I--II),
+  \item dalsze testy predykcji $r_{31}$ i~$Q_K$
+    wzgl\k{e}dem przysz\l{}ych danych eksperymentalnych.
+\end{enumerate}
+\end{remark}

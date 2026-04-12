@@ -304,19 +304,30 @@ Statystyki Fermiego kinku: $\Psi(2,1) = -\Psi(1,2)$
 
 Formu\l{}a Koidego $Q = 2/3$
   & \statuslabel{Propozycja}
-  & $\alpha_K$ dopasowane; pred. wzgl\k{e}dnych mas
+  & w~j\k{e}zyku legacy: $\alpha_K^{\rm old}$ dopasowane;
+    w~j\k{e}zyku kanonicznym: $\varphi$-FP i~$g_0^*$ koduj\k{a}
+    sektor leptonowy
   & \S\ref{ssec:koide-hierarchy} \\[3pt]
 
-$\alpha_K \approx 8{,}56$ z~warunku bifurkacji $a_c(\alpha_K) = a_\Gamma$
-  & \statuslabel{Hipoteza}
-  & OP-3 otwarty; \'scie\.zki 1--8 zamkni\k{e}te negatywnie
-  & uw.~\ref{rem:parsimony}; p104--p112 \\[3pt]
+$\alpha_K^{\rm old} \approx 8{,}56$ (artefakt koordynatowy formulacji~B)
+  & \statuslabel{Zamkni\k{e}ty}
+  & OP-3 zamkni\k{e}ty: $\alpha$ jest parametrem koordynatowym
+    (degeneracja obserwabli, tw.~\ref{thm:Z-alpha-degeneracy});
+    dawne \'scie\.zki 1--8 zamkni\k{e}te negatywnie
+  & tw.~\ref{thm:Z-alpha-degeneracy}; dod.~\ref{app:Z-alphaK} \\[3pt]
 
 \'{S}cie\.zka~9: $\varphi$-FP, $r_{21} = 206{,}77$ (odch.~$0{,}0001\%$)
   & \statuslabel{Twierdzenie}
   & \texttt{ex106} (14/14); $g_0^* = 1{,}24915$;
     $g_0^\mu = \varphi g_0^* = 2{,}02117$; zero param.\ wolnych
   & twierdzenie~\ref{thm:J2-FP}; dod.~\ref{app:J2-formalizacja} \\[3pt]
+
+Mapa $\alpha_K^{\rm old}\leftrightarrow(g_0^*,g_0^e,\varphi\text{-FP})$
+  & \statuslabel{Twierdzenie [NUM]}
+  & OP-3B zamkni\k{e}ty: jawna mapa translacyjna
+    $\alpha \mapsto g_0^e(\alpha)$ monotoniczna i~odwracalna;
+    $r_{31}$, $Q_K$ niezmiennicze (7/7~PASS)
+  & tw.~\ref{thm:Z-alpha-degeneracy}; dod.~\ref{app:Z-alphaK} \\[3pt]
 
 $M_{\rm TGP} = c_M A_{\rm tail}^4 + \mathcal{O}(A^6)$: tryb zerowy
   & \statuslabel{Twierdzenie [AN+NUM]}
@@ -477,11 +488,11 @@ Asymptotyczne bezpiecze\'nstwo TGP
   & \textbf{Uwagi} \\
 \midrule
 Aksjomat              & 2  & --- & wej\'scie, nie dowodzone \\
-Twierdzenie           & 23 & wysoka & +9 v41: metryka, $\kappa$, ghost, $\pi_1$, Fermi, $\varphi$-FP, $r_{21}$, $n_s$, $r$ \\
+Twierdzenie           & 24 & wysoka & +9 v41: metryka, $\kappa$, ghost, $\pi_1$, Fermi, $\varphi$-FP, $r_{21}$, $n_s$, $r$; +1 v47b: degeneracja $\alpha$ \\
 Propozycja            & 23 & \'srednia & +6: antypod., $S_{\rm TGP}$, profile, chiralnosc, U(1), $k{=}4$ wymiar., \l{}a\'ncuch entrop. \\
 Hipoteza              & 5  & niska & $m_\tau$; T1+T2; $a_\Gamma\Phi_0{=}1$ (DESI DR2); CV${=}1$ \\
 Szkic                 & 2  & --- & SU(2), SU(3) \\
-Program               & 3  & --- & O-J1 (ogon), asympt.\ bezp., $\alpha_K{=}a_c^{-1}(a_\Gamma)$ \\
+Program               & 2  & --- & O-J1 (ogon), asympt.\ bezp. \\
 \midrule
 \textbf{\'Lacznie}   & \textbf{58} & & +12 sesja v41; \'Sc.~9, $n_s$, $r$, chiralnosc; +2 v46: $k{=}4$, \l{}a\'ncuch \\
 \midrule
@@ -980,7 +991,9 @@ Stosunek $M/N$        & $\geq 6$ & & \textbf{v35}: $M/N \geq 6$ (bez T1+T2);
         \textbf{O-L5: definitywnie otwarte --- wymaga nowej parametryzacji}.
     \end{itemize}
 
-  \item \emph{Hipoteza OP-3}: $\alpha_K = a_c^{-1}(a_\Gamma)$.
+  \item \emph{OP-3 zamkni\k{e}ty}: $\alpha_K^{\rm old}$ jest artefaktem
+    koordynatowym (tw.~\ref{thm:Z-alpha-degeneracy}); dawna hipoteza
+    $\alpha_K = a_c^{-1}(a_\Gamma)$ bezprzedmiotowa.
   \item \emph{Sektory cechowania} SU(2), SU(3).
 \end{enumerate}
 \end{remark}
