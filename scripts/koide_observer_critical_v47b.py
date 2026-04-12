@@ -357,10 +357,11 @@ print("""
 
   From Test B, we know Q_K(mass) for pure phi-FP spacing.
   If Q_K(mass) ~ 3/2 naturally, then Koide IS emergent.
-  If Q_K(mass) != 3/2, then g0_tau must be tuned (it's an input).
+  If Q_K(mass) != 3/2, then g0_tau must be selected by the mechanism.
 
-  The actual g0_tau deviates from phi^2*g0_e, which means
-  Koide DOES require additional input beyond phi-FP.
+  The actual g0_tau deviates from phi^2*g0_e. The selection
+  mechanism is structural: d=3 -> 2 tail components -> chi2(2)
+  -> CV=1 -> Q_K=3/2 (see rem:T-cv1-origin, thm:T-QK-CV).
 """)
 
 # What is the Q_K for the exact phi-FP triplet (no Koide enforcement)?

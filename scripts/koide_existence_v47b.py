@@ -204,7 +204,8 @@ print("=" * 50)
 print("""
   INPUT:
     [1] r_21 = m_mu/m_e = 206.768  (from phi-FP + ODE)
-    [2] Q_K = 3/2                  (Koide relation -- empirical or derived?)
+    [2] Q_K = 3/2                  (structural consequence, see rem:T-cv1-origin)
+        Deduction: d=3 -> 2 tail components -> chi2(2) -> CV=1 -> Q_K=3/2
 
   PURE ALGEBRA (independent of ODE details):
     [3] r_31 = f(r_21) = 3477.4    (from [1] + [2])
@@ -235,12 +236,12 @@ print("""
 
   The ODE does NOT determine:
   1. r31 (algebraic consequence of r21 + Koide)
-  2. Q_K = 3/2 itself (additional input needed)
 
-  The remaining OPEN question for O-L5:
-  Is Q_K = 3/2 derivable from TGP principles,
-  or is it an empirical input?
-
-  If derivable: need a variational/topological argument.
-  If empirical: it's an additional constraint alongside r_21.
+  STATUS O-L5 (CLOSED, rem:T-cv1-origin):
+  Q_K = 3/2 IS derivable from TGP first principles:
+    d=3 -> 2 oscillatory tail components (a,b)
+    -> A^2 = a^2 + b^2  (Pythagorean, phase-averaging)
+    -> chi^2(2) distribution -> CV(A^2) = 1
+    -> Q_K = N/(1+CV^2) = 3/2
+  Only 2 genuine inputs: K=g^4 and phi-FP.
 """)

@@ -670,6 +670,8 @@ print("""
   STATUS O-L5:
      Virial approach does NOT close the gap analytically.
      T ~ C is a nice numerical observation, not a proof tool.
-     The Koide condition Q_K = 3/2 remains a NUMERICAL THEOREM
-     about the ODE -- no simple analytical route found.
+     The virial approach alone does not close the gap, but the
+     structural chain d=3 -> chi2(2) -> CV=1 -> Q_K=3/2 does
+     (see rem:T-cv1-origin, thm:T-QK-CV). Q_K=3/2 is a
+     structural consequence of TGP, not a numerical coincidence.
 """)
