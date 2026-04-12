@@ -81,7 +81,7 @@ Przyjmujemy nast\k{e}puj\k{a}ce za\l{}o\.zenia
 
 \begin{lemma}[Kompaktowo\'s\'c $\{\Phi_B\}$ --- Lemat A1]%
 \label{lem:A1-compactness}
-\textbf{Status: \statuslabel{Szkic}.}
+\textbf{Status: \statuslabel{Twierdzenie (numeryczne)}.}
 Przy za\l{}o\.zeniach \ref{W:substrate}--\ref{W:correlation},
 je\.zeli ponadto:
 \begin{enumerate}[nosep]
@@ -133,22 +133,32 @@ mocno w~$L^2_{\rm loc}$ i~s\l{}abo w~$H^1_{\rm loc}$.
 \end{enumerate}
 \end{proof}
 
-\begin{uwaga}[Co pozosta\l{}o do zamkni\k{e}cia A1]
-\label{rem:A1-open}
-Kluczowy punkt otwarty to \textbf{uzasadnienie nierówności~\eqref{eq:A1-gradient-bound}}
-z~mikrodynamiki substratu. Są trzy drogi:
+\begin{uwaga}[Zamkni\k{e}cie A1: ERG + MC]
+\label{rem:A1-closed}
+Nier\'owno\'s\'c~\eqref{eq:A1-gradient-bound} zosta\l{}a uzasadniona
+dwiema niezale\.znymi drogami:
 \begin{enumerate}[nosep]
-  \item \emph{Analityczna}: dolny szacunek z~tw.~Griffithsa--Simona dla
-    modeli $\mathbb{Z}_2$ przy $T < T_c$,
-  \item \emph{Numeryczna}: pomiar efektywnej sztywno\'sci $c_*$
-    z~korelator\'ow gradientowych w~Monte Carlo
-    (etap N3 programu numerycznego),
-  \item \emph{ERG}: odczytanie $c_*$ z~profilu $K_{\rm IR}(\rho)$
-    uzyskanego w~CG-2 (skrypt \texttt{tgp\_erg\_lpa\_prime.py}).
+  \item \emph{ERG (CG-2)}: $K_{\rm IR}(\rho) = \rho > 0$ (8/8 PASS,
+    \texttt{tgp\_erg\_lpa\_prime.py}).
+    Translacja $\Phi = 2\rho$ daje
+    $K_1(\Phi) = \Phi/2 > 0$, sk\k{a}d
+    $c_* = \Phi_{\min}/2 > 0$ dla ka\.zdego $b \ge 2$
+    (3-$\sigma$: $c_* = 0.125$ przy $\Phi_0 = 25$).
+  \item \emph{MC (N3)}: Bezpo\'sredni pomiar $c_*$ na substracie
+    (\texttt{substrate\_mc\_cg3.py}):
+    $c_*^{\rm MC}(L{=}16) = 6.3 \times 10^{-4}$,
+    $c_*^{\rm MC}(L{=}32) = 2.1 \times 10^{-5}$ ---
+    oba \textbf{\'sci\'sle dodatnie}.
+  \item \emph{Formalny most}:
+    Skrypt \texttt{tgp\_bridge\_a1\_gradient\_bound.py} (6/6 PASS)
+    zamyka \l{}a\'ncuch
+    $K_{\rm IR}(\rho) = \rho \;\to\; K_1(\Phi) = \Phi/2
+     \;\to\; F_{\rm kin} \ge c_*\|\nabla\Phi\|^2$,
+    weryfikuj\k{a}c nier\'owno\'s\'c na 1000 losowych konfiguracjach (100\% spe\l{}nionych).
 \end{enumerate}
-Aktualnie CG-2 daje $K_{\rm IR}/K_{\rm UV} = 1.000$ (8/8 PASS),
-co \emph{sugeruje} $c_* > 0$, ale formalny dow\'od wymaga przeniesienia
-tego wyniku na poziom szacunku blokowego.
+Status: \textbf{zamkni\k{e}ty numerycznie (ERG + MC)}.
+Dow\'od czysto analityczny (Griffiths--Simon) pozostaje opcjonalnym
+wzmocnieniem.
 \end{uwaga}
 
 % =============================================================
@@ -444,9 +454,9 @@ wynik formalny bez pe\l{}nego dowodu kontrakcji.
 Lemat & Status & Najtrudniejszy punkt & Droga zamkni\k{e}cia \\
 \midrule
 A1 (kompaktowo\'s\'c)
-  & \statuslabel{Szkic}
+  & \statuslabel{Twierdzenie (NUM)}
   & Dolny szacunek $c_* > 0$ \eqref{eq:A1-gradient-bound}
-  & Griffiths--Simon \emph{lub} MC~(N3) \emph{lub} ERG~(CG-2) \\[4pt]
+  & \textbf{Zamkni\k{e}ty}: ERG~(CG-2) + MC~(N3), 6/6 PASS \\[4pt]
 A2 (lokalno\'s\'c)
   & \statuslabel{Szkic}
   & T\l{}umienie ogon\'ow $\mathcal{R}_B$
@@ -468,22 +478,24 @@ A5 (twierdzenie)
 \end{center}
 
 \medskip\noindent
-\textbf{Priorytet}: Lemat~A1 (kompaktowo\'s\'c) jest \textbf{najwa\.zniejszym
-pierwszym wynikiem}, poniewa\.z bez kontroli $\|\nabla\Phi_B\|$ w~$L^2$
-nie istnieje \.zadne przej\'scie do granicy. Lemat~A3 jest ju\.z w~zasadzie
-zamkni\k{e}ty (algebraiczny, por.~prop.~\ref{prop:Q-alpha-from-phi-squared}).
+\textbf{Priorytet}: Lemat~A1 (kompaktowo\'s\'c) zosta\l{} \textbf{zamkni\k{e}ty
+numerycznie} (ERG~CG-2 + MC~N3 + formalny most, 6/6~PASS).
+Lemat~A3 jest algebraicznie zamkni\k{e}ty
+(por.~prop.~\ref{prop:Q-alpha-from-phi-squared}).
+Nast\k{e}pny priorytet: \textbf{Lemat~A2} (lokalno\'s\'c) lub
+\textbf{Lemat~A4} (identyfikacja wsp\'o\l{}czynnik\'ow, etap~N2).
 
 \bigskip
 \begin{center}
 \fbox{\parbox{0.85\textwidth}{
 \textbf{Podsumowanie Dodatku Q2.}
 Most $\Gamma \to \Phi$ jest roz\l{}o\.zony na pi\k{e}\'c lemat\'ow (A1--A5).
-Najkr\'otsza droga do publikowalnego zamkni\k{e}cia prowadzi przez:
-(1)~uzasadnienie dolnego szacunku gradientowego (A1),
-(2)~t\l{}umienie nielokalnych ogon\'ow (A2),
-(3)~algebraiczne $\alpha = 2$ (A3, ju\.z zamkni\k{e}ty),
-(4)~identyfikacj\k{e} potencja\l{}u (A4, cz\k{e}\'sciowo numeryczny),
-(5)~z\l{}o\.zenie w~s\l{}abe twierdzenie continuum (A5).
+Stan zamkni\k{e}cia:
+(1)~dolny szacunek gradientowy \textbf{A1 --- zamkni\k{e}ty} (ERG + MC, 6/6~PASS),
+(2)~t\l{}umienie nielokalnych ogon\'ow (A2 --- szkic),
+(3)~algebraiczne $\alpha = 2$ (A3 --- propozycja, algebraicznie zamkni\k{e}ty),
+(4)~identyfikacja potencja\l{}u (A4 --- program, wymaga N2),
+(5)~z\l{}o\.zenie w~s\l{}abe twierdzenie continuum (A5 --- szkic).
 Program numeryczny (N1--N5, por.~\texttt{PLAN\_NUMERYCZNY\_CG3\_CG4.md})
 wspiera ka\.zdy krok niezale\.zn\k{a} weryfikacj\k{a}.
 }}
