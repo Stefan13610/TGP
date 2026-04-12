@@ -1,5 +1,10 @@
 """
 EX76: CZY beta_c = 1 SCISLE? Weryfikacja przy zwiekszonym rtol/atol
+STATUS: LEGACY-TRANSLATIONAL
+
+This script refines the older `beta_c` / `delta(alpha)` bifurcation hypothesis
+within the legacy variable set. Treat it as translation/history material rather
+than a canonical synchronized `nbody` example.
 
 Z ex75: beta_c_upper = 1.000050 (gdzie min delta[2.5,2.72] = 0).
 Pytanie: czy to prawdziwy wynik czy artefakt numeryczny?

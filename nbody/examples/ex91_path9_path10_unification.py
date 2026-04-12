@@ -2,6 +2,12 @@
 """
 ex91_path9_path10_unification.py — Unifikacja Ścieżek 9+10 (O-L3, v36)
 ========================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file attempts to unify older Path 9 / Path 10 selection language built on
+`alpha*`, `z0(alpha)`, and pre-sync amplitude matching. Treat it as historical
+transition material, not as a canonical current path.
+
 Pytanie fizyczne:
   Ścieżka 9  (α=2,    vary g₀):  g₀^e = z₀(2) ≈ 1.230 → A_tail(g₀^e, α=2)
   Ścieżka 10 (vary α, g₀=z₀(α)): α*₁,₂ gdzie F(α*) = R21

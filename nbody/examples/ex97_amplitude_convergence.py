@@ -2,6 +2,12 @@
 """
 ex97_amplitude_convergence.py — Test zbieżności A_tail(φ²·z₀) z R_MAX
 ========================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file is part of the older tau/amplitude diagnostic chain around `G3`,
+`alpha*`, and legacy matching rules. Treat it as historical exploratory
+material, not as a canonical current `nbody` example.
+
 Pytanie kluczowe po ex95/ex96:
   Z ex95: per-okno A_tau plateau ≈ 2.994 dla r∈[60,136] (R_MAX=150)
   Z ex96: G₃_far = (2.994/0.347)^4 ≈ 5540 >> R31=3477 WSZĘDZIE na [2.5,5.0]

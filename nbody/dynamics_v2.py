@@ -166,12 +166,9 @@ def three_body_forces_approximate(positions, C_values, beta, gamma=None,
         dP_dxj = rij / dij + (-rjk) / djk
         dP_dxk = rik / dik + rjk / djk
 
-        # V_3 = -coupling * I_val
-        # F_i = -dV_3/dx_i = coupling * dI/dP * dP/dx_i
-        # (the minus from -coupling and the minus from F=-dV cancel,
-        #  and dI/dP is already negative for Coulomb)
-        # Actually: F_i = -d(-coupling*I)/dx_i = coupling * dI/dx_i
-        #         = coupling * dI/dP * dP/dx_i
+        # V_3 = (2*beta - 6*gamma) * I_val
+        # F_i = -dV_3/dx_i = (6*gamma - 2*beta) * dI/dx_i
+        #                 = coupling * dI/dP * dP/dx_i
 
         forces[i] += coupling * dI_dP * dP_dxi
         forces[j] += coupling * dI_dP * dP_dxj
@@ -185,7 +182,7 @@ def three_body_potential(positions, C_values, beta, gamma=None,
     """Total irreducible 3-body potential energy.
 
     V_3_total = sum_{i<j<k} V_3(i,j,k)
-             = sum_{i<j<k} -6*gamma * Ci*Cj*Ck * I_triple(d_ij, d_ik, d_jk)
+             = sum_{i<j<k} (2*beta - 6*gamma) * Ci*Cj*Ck * I_triple(d_ij, d_ik, d_jk)
     """
     if gamma is None:
         gamma = beta
@@ -218,7 +215,7 @@ def three_body_potential(positions, C_values, beta, gamma=None,
         else:
             I_val = 8.0 * np.pi**2 / P
 
-        V3 += -6.0 * gamma * Ci * Cj * Ck * I_val
+        V3 += (2.0 * beta - 6.0 * gamma) * Ci * Cj * Ck * I_val
 
     return V3
 

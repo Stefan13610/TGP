@@ -3,6 +3,12 @@
 """
 ex85_agamma_phi0_precision.py  --  TGP v1 · Hipoteza a_Gamma * Phi0 = 1
 ==========================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file uses older `a_Gamma`, `Phi0`, and `alpha_K` framing from a pre-sync
+layer of the project. Keep it as legacy historical/exploratory material, not
+as a canonical current `nbody` example.
+
 Cel: precyzyjna weryfikacja hyp:agamma-phi0 z uzyciem najnowszych danych
      kosmologicznych (Planck 2018, DESI DR1 BAO, DESI DR1+CMB).
 

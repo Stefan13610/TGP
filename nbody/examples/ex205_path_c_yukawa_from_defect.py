@@ -3,6 +3,11 @@
 ex205 -- P5: Path C -- Yukawa coupling from topological defect (EFT approach)
 ==============================================================================
 
+STATUS: CANONICAL
+
+This is the preferred example for the synchronized bridge
+`classical defect -> C_eff, m_sp -> effective Yukawa source`.
+
 Derives the Path B Yukawa coupling C_eff from first principles:
   1. Classical TGP defect has oscillatory tail (sin(r)/r)
   2. Loop/RG corrections generate mass gap m_sp (screening mass)
@@ -35,7 +40,8 @@ EFT resolution:
   - C_eff = projection of defect onto Yukawa Green's function
   - This derives Path B from Path C without modifying classical Lagrangian
 
-Key result: mu^2 = 2*(3*gamma - 2*beta) is the required EFT mass scale.
+Key result: mu^2 = 2*(3*gamma - 2*beta) is an auxiliary EFT stabilization scale.
+The physical screening mass used by `nbody` remains m_sp.
 """
 
 import sys

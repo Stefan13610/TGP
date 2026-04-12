@@ -1,0 +1,283 @@
+======================================================================
+A_tail ASYMPTOTIC ANALYSIS
+======================================================================
+
+1. LINEAR REGIME: g0 -> 1
+--------------------------------------------------
+
+  Numerical check: does the tail oscillate?
+  g0=0.990: tail crossings=22, A_tail=0.00998318, |g0-1|=0.010
+  g0=0.980: tail crossings=22, A_tail=0.01993565, |g0-1|=0.020
+  g0=0.950: tail crossings=22, A_tail=0.04965300, |g0-1|=0.050
+  g0=0.900: tail crossings=22, A_tail=0.09898217, |g0-1|=0.100
+  g0=0.850: tail crossings=22, A_tail=0.14855776, |g0-1|=0.150
+
+  Extended check with finer detail:
+  g0=0.999: crossings(g=1)= 57, A_osc=0.00099983, |g-1| ratio last/first=0.095830
+  g0=0.990: crossings(g=1)= 57, A_osc=0.00998318, |g-1| ratio last/first=0.098720
+  g0=0.980: crossings(g=1)= 57, A_osc=0.01993568, |g-1| ratio last/first=0.101134
+  g0=0.950: crossings(g=1)= 57, A_osc=0.04965339, |g-1| ratio last/first=0.107796
+  g0=0.900: crossings(g=1)= 57, A_osc=0.09898588, |g-1| ratio last/first=0.124491
+  g0=0.850: crossings(g=1)= 57, A_osc=0.14857090, |g-1| ratio last/first=0.145545
+  g0=0.800: crossings(g=1)= 57, A_osc=0.19902084, |g-1| ratio last/first=0.183159
+  g0=0.700: crossings(g=1)= 57, A_osc=0.30530236, |g-1| ratio last/first=0.592351
+  g0=0.600: crossings(g=1)= 58, A_osc=0.42454936, |g-1| ratio last/first=0.118105
+  g0=0.500: crossings(g=1)= 57, A_osc=0.56652741, |g-1| ratio last/first=0.031681
+
+
+2. SOURCE OF OSCILLATORY TAIL
+--------------------------------------------------
+
+  Detailed profile for g0 = 0.85:
+         r         g(r)          g-1      (g-1)*r
+      0.00   0.85000000  -0.15000000  -0.00000015
+      5.23   1.02678480   0.02678480   0.14020030
+     12.02   1.00998763   0.00998763   0.12001252
+     19.16   1.00083546   0.00083546   0.01600726
+     26.50   0.99543168  -0.00456832  -0.12106418
+     33.94   0.99616676  -0.00383324  -0.13011435
+     41.51   1.00080352   0.00080352   0.03335474
+     49.11   1.00300592   0.00300592   0.14760585
+     56.71   1.00071076   0.00071076   0.04030347
+     64.31   0.99800119  -0.00199881  -0.12853370
+     71.91   0.99852621  -0.00147379  -0.10597325
+     79.51   1.00093471   0.00093471   0.07431445
+     87.11   1.00163591   0.00163591   0.14249615
+     94.71   0.99996355  -0.00003645  -0.00345229
+    102.31   0.99858331  -0.00141669  -0.14493469
+    109.91   0.99936266  -0.00063734  -0.07004702
+    117.51   1.00092864   0.00092864   0.10911991
+    125.11   1.00099379   0.00099379   0.12432880
+    132.71   0.99964459  -0.00035541  -0.04716495
+    140.31   0.99894136  -0.00105864  -0.14853241
+    147.91   0.99981097  -0.00018903  -0.02795812
+    155.51   1.00086192   0.00086192   0.13403236
+    163.11   1.00058179   0.00058179   0.09489372
+    170.71   0.99949182  -0.00050818  -0.08674941
+    178.31   0.99922112  -0.00077888  -0.13887782
+    185.91   1.00008920   0.00008920   0.01658283
+    193.51   1.00075892   0.00075892   0.14685558
+    201.11   1.00028283   0.00028283   0.05687792
+    208.71   0.99943173  -0.00056827  -0.11860130
+    216.31   0.99946003  -0.00053997  -0.11679731
+    223.91   1.00026618   0.00026618   0.05959848
+    231.51   1.00063261   0.00063261   0.14645312
+    239.11   1.00005736   0.00005736   0.01371445
+    246.71   0.99943318  -0.00056682  -0.13983788
+    254.31   0.99966868  -0.00033132  -0.08425649
+    261.91   1.00037126   0.00037126   0.09723502
+    269.51   1.00049301   0.00049301   0.13286866
+    277.11   0.99988918  -0.00011082  -0.03070944
+    284.71   0.99947827  -0.00052173  -0.14853981
+    292.31   0.99984889  -0.00015111  -0.04416935
+    299.91   1.00042052   0.00042052   0.12611668
+
+
+3. EXPONENTIAL vs OSCILLATORY -- careful check
+--------------------------------------------------
+
+  Very near vacuum:
+  eps=1.0e-01: A_tail(osc fit)=9.90e-02, decay rate=-0.0245 (expect -1.0 for exp)
+  eps=1.0e-02: A_tail(osc fit)=9.98e-03, decay rate=-0.0240 (expect -1.0 for exp)
+  eps=1.0e-03: A_tail(osc fit)=1.00e-03, decay rate=-0.0240 (expect -1.0 for exp)
+  eps=1.0e-04: A_tail(osc fit)=1.00e-04, decay rate=-0.0239 (expect -1.0 for exp)
+  eps=1.0e-05: A_tail(osc fit)=1.00e-05, decay rate=-0.0239 (expect -1.0 for exp)
+  eps=1.0e-06: A_tail(osc fit)=1.00e-06, decay rate=-0.0240 (expect -1.0 for exp)
+
+  Above vacuum:
+  eps=1.0e-01: A_tail(osc fit)=1.03e-01, decay rate=-0.0244
+  eps=1.0e-02: A_tail(osc fit)=1.00e-02, decay rate=-0.0240
+  eps=1.0e-03: A_tail(osc fit)=1.00e-03, decay rate=-0.0239
+  eps=1.0e-04: A_tail(osc fit)=1.00e-04, decay rate=-0.0239
+  eps=1.0e-05: A_tail(osc fit)=1.00e-05, decay rate=-0.0239
+
+
+4. REAL TAIL STRUCTURE
+--------------------------------------------------
+  EUREKA: In the canonical variable f = g^3,
+  the linearization around vacuum gives:
+    eta'' + 2/r eta' + eta = 0  (oscillatory!)
+
+  In contrast, in the g-variable:
+    h'' + 2/r h' - h = 0  (exponential!)
+
+  The difference is because the canonical transformation
+  f = g^3 absorbs the cross term 2g'^2/g.
+  The PHYSICAL tail is oscillatory in f (and therefore in g),
+  with A_tail being the coefficient of sin(r)/r in the f-variable.
+
+  Verification: frequency of oscillation
+  g0 = 0.85
+  A_tail (g-variable, h*r fit):  0.14855776
+  A_tail (f-variable, eta*r fit): 0.44565921
+  Ratio A_f / A_g: 2.999905
+  Expected (linear): 3*1 = 3 (since f = g^3, df = 3g^2 dg, at g=1: 3)
+  Actual ratio: 2.999905
+
+
+5. A_tail RELATIONSHIP: g vs f variables
+--------------------------------------------------
+  At leading order near vacuum (g ~ 1 + h, f = g^3 ~ 1 + 3h):
+  A_f = 3 * A_g
+
+  For Koide, we use A_g (or equivalently A_f/3).
+  Since mass ~ A^4, the choice of variable doesn't affect Q_K:
+  Q_K = (sum A_g^2)^2 / (sum A_g^4) = (sum (A_f/3)^2)^2 / (sum (A_f/3)^4)
+       = (sum A_f^2)^2 / (sum A_f^4)  [3's cancel in ratio]
+
+  Ratio check A_f / (3*A_g) for various g0:
+  g0=0.500: A_g=0.56629607, A_f=1.69891828, A_f/(3*A_g)=1.000018
+  g0=0.600: A_g=0.42428865, A_f=1.27283489, A_f/(3*A_g)=0.999976
+  g0=0.700: A_g=0.30518355, A_f=0.91549747, A_f/(3*A_g)=0.999942
+  g0=0.800: A_g=0.19898793, A_f=0.59693716, A_f/(3*A_g)=0.999955
+  g0=0.850: A_g=0.14855776, A_f=0.44565921, A_f/(3*A_g)=0.999968
+  g0=0.900: A_g=0.09898217, A_f=0.29694085, A_f/(3*A_g)=0.999981
+  g0=0.950: A_g=0.04965300, A_f=0.14895774, A_f/(3*A_g)=0.999992
+  g0=1.050: A_g=0.05053161, A_f=0.15159577, A_f/(3*A_g)=1.000006
+  g0=1.100: A_g=0.10250492, A_f=0.30751797, A_f/(3*A_g)=1.000010
+  g0=1.200: A_g=0.21326026, A_f=0.63978982, A_f/(3*A_g)=1.000014
+  g0=1.300: A_g=0.33848579, A_f=1.01547664, A_f/(3*A_g)=1.000019
+  g0=1.400: A_g=0.48965965, A_f=1.46901444, A_f/(3*A_g)=1.000024
+  g0=1.500: A_g=0.70193558, A_f=2.10587712, A_f/(3*A_g)=1.000033
+  g0=1.550: A_g=0.88296158, A_f=2.64874433, A_f/(3*A_g)=0.999947
+
+
+6. NEAR-VACUUM SLOPE: A_tail ~ |g0 - 1| * C
+--------------------------------------------------
+  Linear prediction: A_g = |g0 - 1|
+  Verification:
+  g0=0.9990: A_tail=0.00099983, |g0-1|=0.0010, A/|g0-1|=0.999825
+  g0=0.9980: A_tail=0.00199930, |g0-1|=0.0020, A/|g0-1|=0.999652
+  g0=0.9950: A_tail=0.00499570, |g0-1|=0.0050, A/|g0-1|=0.999140
+  g0=0.9900: A_tail=0.00998318, |g0-1|=0.0100, A/|g0-1|=0.998318
+  g0=0.9800: A_tail=0.01993565, |g0-1|=0.0200, A/|g0-1|=0.996783
+  g0=0.9500: A_tail=0.04965300, |g0-1|=0.0500, A/|g0-1|=0.993060
+  g0=0.9000: A_tail=0.09898217, |g0-1|=0.1000, A/|g0-1|=0.989822
+  g0=0.8500: A_tail=0.14855776, |g0-1|=0.1500, A/|g0-1|=0.990385
+  g0=0.8000: A_tail=0.19898793, |g0-1|=0.2000, A/|g0-1|=0.994940
+
+  Above vacuum:
+  g0=1.0010: A_tail=0.00100018, |g0-1|=0.0010, A/|g0-1|=1.000176
+  g0=1.0020: A_tail=0.00200071, |g0-1|=0.0020, A/|g0-1|=1.000354
+  g0=1.0050: A_tail=0.00500448, |g0-1|=0.0050, A/|g0-1|=1.000896
+  g0=1.0100: A_tail=0.01001830, |g0-1|=0.0100, A/|g0-1|=1.001830
+  g0=1.0200: A_tail=0.02007614, |g0-1|=0.0200, A/|g0-1|=1.003807
+  g0=1.0500: A_tail=0.05053161, |g0-1|=0.0500, A/|g0-1|=1.010632
+  g0=1.1000: A_tail=0.10250492, |g0-1|=0.1000, A/|g0-1|=1.025049
+  g0=1.2000: A_tail=0.21326026, |g0-1|=0.2000, A/|g0-1|=1.066301
+  g0=1.3000: A_tail=0.33848579, |g0-1|=0.3000, A/|g0-1|=1.128286
+  g0=1.4000: A_tail=0.48965965, |g0-1|=0.4000, A/|g0-1|=1.224149
+  g0=1.5000: A_tail=0.70193558, |g0-1|=0.5000, A/|g0-1|=1.403871
+
+
+7. NEAR-COLLAPSE: A_tail ~ (8/5 - g0)^(-gamma)
+--------------------------------------------------
+  g0=1.50000, delta=0.10000, A_tail=0.70193558
+  g0=1.50338, delta=0.09662, A_tail=0.71143754
+  g0=1.50676, delta=0.09324, A_tail=0.72120111
+  g0=1.51014, delta=0.08986, A_tail=0.73124950
+  g0=1.51352, delta=0.08648, A_tail=0.74160399
+  g0=1.51690, delta=0.08310, A_tail=0.75228915
+  g0=1.52028, delta=0.07972, A_tail=0.76333528
+  g0=1.52366, delta=0.07634, A_tail=0.77477441
+  g0=1.52703, delta=0.07297, A_tail=0.78664491
+  g0=1.53041, delta=0.06959, A_tail=0.79898654
+  g0=1.53379, delta=0.06621, A_tail=0.81185120
+  g0=1.53717, delta=0.06283, A_tail=0.82529891
+  g0=1.54055, delta=0.05945, A_tail=0.83938957
+  g0=1.54393, delta=0.05607, A_tail=0.85420708
+  g0=1.54731, delta=0.05269, A_tail=0.86985141
+  g0=1.55069, delta=0.04931, A_tail=0.88642654
+  g0=1.55407, delta=0.04593, A_tail=0.90408472
+  g0=1.55745, delta=0.04255, A_tail=0.92298421
+  g0=1.56083, delta=0.03917, A_tail=0.94335947
+  g0=1.56421, delta=0.03579, A_tail=0.96547926
+  g0=1.56759, delta=0.03241, A_tail=0.98969447
+  g0=1.57097, delta=0.02903, A_tail=1.01649949
+  g0=1.57434, delta=0.02566, A_tail=1.04654932
+  g0=1.57772, delta=0.02228, A_tail=1.08081058
+  g0=1.58110, delta=0.01890, A_tail=1.12068779
+  g0=1.58448, delta=0.01552, A_tail=1.16850311
+  g0=1.58786, delta=0.01214, A_tail=1.22825436
+  g0=1.59124, delta=0.00876, A_tail=1.30803949
+  g0=1.59462, delta=0.00538, A_tail=1.42852779
+  g0=1.59800, delta=0.00200, A_tail=1.68248853
+
+  Power law fit: A_tail = 0.4301 * delta^(-0.2339)
+  Exponent gamma = 0.233892
+  Max residual in log: 0.089581
+
+
+8. EFFECTIVE A_tail MODEL AND KOIDE
+======================================================================
+  Best fit: A_tail ~ 0.9945 * |g0-1| / (8/5 - g0)^0.1631
+
+  Numerical A_tail values:
+    A_e   = 0.13094587
+    A_mu  = 0.49649668
+    A_tau = 1.00509647
+    Q_K   = 1.5003257480
+
+  Model A_tail values:
+    A_e   = 0.13843229
+    A_mu  = 0.52401531
+    A_tau = 1.00112566
+    Q_K   = 1.5548188888
+
+  Q_K(numerical) = 1.5003257480
+  Q_K(model)     = 1.5548188888
+  Difference: 0.054493
+
+
+  Q_K constraint: g0_tau and r_31 from model with different gamma:
+     gamma     g0_tau       r_31  r_31/3477
+     0.080   1.596681    2326.26     0.6690
+     0.100   1.592778    2556.85     0.7353
+     0.120   1.588034    2811.63     0.8086
+     0.140   1.582933    3093.23     0.8896
+     0.160   1.577767    3404.52     0.9791
+     0.180   1.572694    3748.73     1.0781
+     0.200   1.567794    4129.43     1.1876
+     0.220   1.563104    4550.58     1.3087
+     0.240   1.558638    5016.56     1.4427
+     0.260   1.554395    5532.27     1.5910
+     0.280   1.550369    6103.11     1.7552
+     0.300   1.546551    6735.09     1.9369
+     0.320   1.542928    7434.90     2.1382
+     0.340   1.539489    8209.92     2.3611
+     0.360   1.536222    9068.39     2.6080
+     0.380   1.533116   10019.45     2.8815
+     0.400   1.530159   11073.22     3.1845
+     0.420   1.527342   12240.96     3.5204
+     0.440   1.524656   13535.17     3.8926
+     0.460   1.522091   14969.74     4.3051
+     0.480   1.519640   16560.08     4.7625
+
+
+======================================================================
+SUMMARY
+======================================================================
+
+  1. OSCILLATORY TAIL: In the canonical variable f = g^3,
+     the linearized equation is eta'' + 2/r eta' + eta = 0
+     (oscillatory), NOT h'' + 2/r h' - h = 0 (exponential).
+     The oscillations are a PHYSICAL consequence of the nonlinear
+     kinetic metric K(g) = g^4.
+
+  2. NEAR VACUUM: A_tail ~ |g0 - 1| (proportionality constant ~ 1).
+     This follows from the linearized f-equation solution
+     eta(r) = eta_0 * sin(r)/r.
+
+  3. NEAR COLLAPSE: A_tail ~ (8/5 - g0)^(-0.2339).
+     The exponent gamma ~ 0.20 is determined by the nonlinear
+     core dynamics near the collapse threshold.
+
+  4. INTERPOLATING MODEL: A_tail ~ |g0-1| / (8/5-g0)^gamma
+     with 2 parameters. Q_K = 3/2 with phi-FP spacing
+     constrains gamma via the mass ratio r_31.
+
+  5. The EXACT Koide Q_K = 3/2 requires the FULL nonlinear ODE --
+     no simple asymptotic model reproduces it precisely.
+     The model captures the qualitative structure but not the
+     exact numerical value.
+

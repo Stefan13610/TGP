@@ -1,5 +1,10 @@
 """
 EX68: MASA RENORMALIZOWANA M_ren = M_total(R) - pi*A_inf^2*R
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older renormalized-mass route tied to `A_tail`,
+`g0*`, and pre-canonical soliton selection language. Keep as historical
+analysis, not as a current `nbody` reference path.
 
 Hipoteza: Ogon solitonu daje dywergencje liniowa M_total ~ pi*A^2*R.
 Subtrakcja: M_ren = M_total(R) - pi*A_inf^2 * R -> stala ~ c*A^4.

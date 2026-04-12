@@ -1,6 +1,12 @@
 """
 ex55_nodal_spectrum_tgp.py
 ==========================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script preserves an older exploratory language built around the LPA /
+ghost-boundary formulation and pre-canonical `g0` interpretation.
+Use `examples/STATUS_MAP.md` for the current map of canonical vs legacy files.
+
 Widmo wezlowe TGP-ODE: rozwiazania n=0,1,2 jako kandydaci na generacje.
 
 PYTANIE CENTRALNE:

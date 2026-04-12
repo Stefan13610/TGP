@@ -2,6 +2,12 @@
 """
 ex87v2_alpha_star_fast.py — Szybkie precyzyjne α*₁, α*₂ (O-L1, v35)
 =====================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file is a faster variant of the older `alpha*` precision/selection track.
+Keep it as legacy exploratory material rather than a canonical synchronized
+entry point.
+
 Wersja szybka ex87: brentq w wąskich przedziałach wokół znanych zer
 z ex84 (α*₁≈2.440, α*₂≈2.695), z multiprocessingiem.
 

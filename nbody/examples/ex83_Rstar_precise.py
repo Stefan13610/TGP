@@ -1,5 +1,10 @@
 """
 EX83 v3: PRECYZYJNE alpha*(R_CODATA) przez brentq w alpha
+STATUS: LEGACY-TRANSLATIONAL
+
+This file remains in the older `alpha*` / `R21` matching chain using pre-sync
+selection language. It should be read as legacy transition material, not as a
+canonical current reference.
 
 Problem z v1/v2: fz0(alpha) ma systematyczne przesunięcie ~0.250 w R
 (błąd amplitudy A_inf). Pochodne sa prawidlowe, wartosci bezwzgledne - nie.

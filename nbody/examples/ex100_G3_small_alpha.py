@@ -2,6 +2,12 @@
 """
 ex100_G3_small_alpha.py — G₃_far(α) na α∈[1.5, 2.45] (S1, v39)
 =================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script remains in the older tau-sector `G3(alpha)` search chain based on
+legacy selection variables. Treat it as exploratory history, not as a
+canonical synchronized `nbody` example.
+
 Pytanie: czy G₃_far maleje poniżej R₃₁ przy małych α < 2.4?
 
 Z ex96: G₃_far(2.40)=4534, G₃_far(2.50)=4667 — minimum gdzieś koło α≈2.4.

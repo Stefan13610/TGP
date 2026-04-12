@@ -1,6 +1,12 @@
 """
 ex60_golden_ratio_topology.py
 ==============================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script records an older golden-ratio / sector-boundary interpretation
+based on historical `g0_e ~ 1.24` language. Read as exploratory history or a
+translation aid, not as the canonical current bridge used by `nbody`.
+
 Topologiczne uzasadnienie złotej proporcji w TGP:
 dlaczego g0_mu / g0_e ≈ φ = 1.618?
 

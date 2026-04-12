@@ -1,5 +1,10 @@
 """
 EX74b: PRECYZYJNA BIFURKACJA — jak waska jest okolica beta=1 z dwoma zerami?
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older bifurcation/selection chain around
+`delta(alpha)` and `alpha*`. It is useful historically, but it is not part of
+the canonical synchronized `nbody` path.
 
 Z ex74: w siatce co 0.02 tylko beta=1.00 ma 2 zera.
 Teraz skanujemy [0.97, 1.03] co 0.002 aby znalezc dokladna szerokosc okna.

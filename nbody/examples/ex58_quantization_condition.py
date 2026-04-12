@@ -1,6 +1,13 @@
 """
 ex58_quantization_condition.py
 ================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script uses a historical quantization narrative centered on
+`g0_e = 1.24`, `g0_mu = 2.00`, ghost-boundary language, and pre-canonical
+selection heuristics. It remains useful as a translation layer, but it is not
+the canonical entry point to current `nbody`.
+
 Warunek kwantowania g0 w TGP: dlaczego g0_e = 1.24 i g0_mu = 2.00?
 
 KONTEKST (ex57):

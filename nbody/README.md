@@ -2,26 +2,29 @@
 
 **Topology-Generated Potential: N-body dynamics, chaos, and analytical structure**
 
-This package implements the complete N-body physics of TGP (Topology-Generated Potential), from the field Lagrangian through pairwise and three-body potentials to equations of motion, Lyapunov chaos analysis, and analytical equilibrium theory.
+This package implements the synchronized `nbody` layer of TGP: the bridge from
+the classical defect sector to effective Yukawa sources, then to pairwise and
+three-body EOM, integrators, and chaos diagnostics.
 
 ## Quick start
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run full regression suite (59 tests, ~2 min)
-cd TGP_v1
-python -m nbody.examples.verify_all
-
-# Run Lyapunov regression (~3 min with --quick)
-python -m nbody.examples.verify_nbody_lyapunov_quick --quick
-
-# Run EOM regression
-python -m nbody.examples.verify_nbody_eom_quick --quick
+# From the repo root:
+python -m nbody.examples.verify_nbody_canonical_quick
+python -m nbody.examples.verify_nbody_bridge_extended
+python -m nbody.examples.verify_nbody_eom_quick
 ```
 
-All three should exit with code 0 (PASS).
+Read first:
+
+- `nbody/THEORY_SYNC_NBODY.md`
+- `nbody/examples/STATUS_MAP.md`
+
+Recommended interpretation order:
+
+1. `CLASSICAL`: defect / soliton with `sin(r)/r` tail
+2. `EFT-DERIVED`: `C_eff`, `m_sp`, bridge from defect to Yukawa source
+3. `N-BODY`: effective `V_2 + V_3`, EOM, integrators, Lyapunov diagnostics
 
 ## Requirements
 
@@ -38,7 +41,8 @@ See `requirements.txt`.
 
 | Module | Function | Status |
 |--------|----------|--------|
-| `tgp_field.py` | Yukawa profile, energy density, screening mass m_sp | Stable |
+| `tgp_field.py` | Field profiles, Yukawa helpers, screening mass `m_sp` | Stable |
+| `bridge_nbody.py` | Canonical bridge: defect -> `C_eff` -> Yukawa-source inputs | Stable |
 | `pairwise.py` | 2-body potential V_2 (analytical, exact) | Stable |
 | `three_body_force_exact.py` | 3-body potential V_3 via Feynman 2D reduction (exact) | Stable |
 | `three_body_terms.py` | Triple overlap integral (numerical 3D quadrature) | Stable |
@@ -56,34 +60,29 @@ See `requirements.txt`.
 
 ### Example scripts (examples/)
 
-166 active scripts in `examples/ex*.py`, 55 archived in `examples/_archiwum/`.
+Do not treat all `exNNN` scripts equally. The canonical map lives in:
 
-| Range | Topic | Key results |
-|-------|-------|-------------|
-| ex55-ex103 | Efimov, rotation curves, V_eff | Historical |
-| ex104-ex124 | Soliton, tail, Koide, formalization | Path 9 |
-| ex125-ex147 | EOM, regression, 3B forces | Integration |
-| ex148-ex194 | Lyapunov, Benettin, matched-H, CSV | Chaos (P1) |
-| ex195-ex197 | K_sub full vs LPA, particle predictions | Soliton ODE |
-| ex198-ex200 | Beta scan, normalization, V2+V3 scan | Chaos synthesis |
-| ex201 | Full Hessian stability scan | Earnshaw (P2) |
-| ex202 | Multipole vs Feynman verification | I_Y multipole (P4) |
-| ex203-ex204 | Figure-8, Lagrange points, Poincare | Orbits (P3) |
-| ex205 | EFT projection, C_eff scaling | Path C (P5) |
-| ex206 | Soliton interaction analysis | Soliton (P6) |
-| ex207 | Multi-IC beta scan (Burrau, equilateral, random) | IC-dependence |
-| ex208 | Full Lyapunov spectrum (k=18=6N) | Hamiltonian check |
-| ex209 | V3/V2 regime map vs m_sp*d | V3/V2 (P7) |
-| ex210 | Analytical equilibria + Hill criterion | Equilibria (P8) |
-| ex211 | Unequal mass, phase diagram, v_esc, breathing | Phase diagram (P9) |
+- `examples/STATUS_MAP.md`
+- `examples/README.md`
+
+| Entry point | Role | Notes |
+|-------------|------|-------|
+| `verify_nbody_canonical_quick.py` | Short canonical route | FULL/LPA sync -> EFT bridge -> EOM |
+| `verify_nbody_bridge_extended.py` | Stable extended route | canonical route + representative Lyapunov checks |
+| `verify_nbody_eom_quick.py` | EOM/backend regression | force/potential consistency, COM/P/L checks |
+| `verify_nbody_lyapunov_quick.py` | Broad Lyapunov package | larger historical P1 sweep |
+| `ex195`-`ex197` | Canonical soliton synchronization | FULL `K_sub = g^2` |
+| `ex205` | Canonical EFT bridge | defect -> `C_eff` |
+| `ex55`-`ex103` | Historical layer | mostly `LEGACY-TRANSLATIONAL` |
+| `ex104+` | Mixed active exploration | see `STATUS_MAP.md` |
 
 ### Regression tests
 
 | Script | Tests | Time |
 |--------|-------|------|
-| `verify_all.py` | 59 | ~2 min |
-| `verify_nbody_lyapunov_quick.py --quick` | ~47 | ~3 min |
-| `verify_nbody_eom_quick.py --quick` | ~10 | ~1 min |
+| `verify_nbody_canonical_quick.py` | canonical chain | short |
+| `verify_nbody_bridge_extended.py` | canonical + representative chaos checks | moderate |
+| `verify_nbody_eom_quick.py` | EOM/backend regression | short |
 
 ## Reproducing publication results
 
@@ -122,17 +121,63 @@ All scripts support `--quick` for fast verification (reduced grid/precision).
 
 ## Physics summary
 
-TGP generates an effective N-body potential from a single scalar field Lagrangian:
+`nbody` uses the synchronized three-layer interpretation:
 
-```
+- classical defect: oscillatory tail `sin(r)/r`
+- EFT bridge: projection to `C_eff` and `m_sp`
+- effective N-body layer: point-source `V_2 + V_3`
+
+The effective potential is
+
+```text
 V_total = sum_{i<j} V_2(d_ij) + sum_{i<j<k} V_3(d_ij, d_ik, d_jk)
 ```
 
 where:
-- `V_2(d) = -4*pi*C1*C2/d + 8*pi*beta*C1*C2/d^2 - 12*pi*gamma*C1*C2*(C1+C2)/d^3`
-- `V_3 = -6*gamma*C1*C2*C3 * I_Y(d12, d13, d23)` (Feynman integral)
 
-Key parameters: `beta` (self-interaction), `gamma` (cubic coupling), `C_i` (source strengths), `m_sp = sqrt(3*gamma - 2*beta)` (screening mass).
+- `V_2(d) = -4*pi*C1*C2/d + 8*pi*beta*C1*C2/d^2 - 12*pi*gamma*C1*C2*(C1+C2)/d^3`
+- `V_3 = (2*beta - 6*gamma)*C1*C2*C3 * I_Y(d12, d13, d23)`
+
+Key parameters: `beta`, `gamma`, `C_i`, `m_sp = sqrt(3*gamma - 2*beta)`.
+
+Exact Yukawa-overlap scaling identity:
+
+```text
+(d12*∂/∂d12 + d13*∂/∂d13 + d23*∂/∂d23 - m_sp*∂/∂m_sp) I_Y = 0
+```
+
+This identity is now exposed numerically in `three_body_force_exact.py`.
+
+Useful canonical shape variables:
+
+```text
+d_min <= d_mid <= d_max
+q1 = d_min / d_max
+q2 = d_mid / d_max
+t  = m_sp * d_max
+I_Y = F(t; q1, q2)
+```
+
+For general shape, the large-`t` exponential rate is controlled by
+
+```text
+lambda(q1,q2) = min_{alpha in Delta_2} sqrt(Q/Delta)
+I_Y(t;q1,q2) ~ exp(-lambda(q1,q2) * t) * [prefactor + corrections]
+```
+
+Controlled equilateral large-`t` asymptotic:
+
+```text
+I_Y^eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3) * t)
+A_eq = 4*sqrt(2)*pi^(3/2) / 3^(3/4)
+```
+
+First subleading correction:
+
+```text
+I_Y^eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3) * t)
+            * (1 - 5/(8*sqrt(3)*t) + O(t^(-2)))
+```
 
 ### Main results
 

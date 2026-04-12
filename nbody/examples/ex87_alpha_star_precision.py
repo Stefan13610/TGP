@@ -2,6 +2,12 @@
 """
 ex87_alpha_star_precision.py — Precyzyjne wyznaczenie α*₁, α*₂ (O-L1)
 =====================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file continues the historical `alpha*` precision/selection chain. It is
+useful as legacy exploratory context, but it is not part of the canonical
+current `nbody` workflow.
+
 Cel: Re-wyznaczenie α*₁ i α*₂ na gęstej siatce (200+ punktów)
 w celu potwierdzenia lub poprawienia wyników ex84.
 

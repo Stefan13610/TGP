@@ -1,6 +1,12 @@
 """
 EX67: TRYB ZEROWY I MASA NIELINIOWA M_nonlin ∝ A_tail^4
 =========================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file extends the older `A_tail^4` / zero-mode mass interpretation in the
+historical pre-sync language. Treat it as a legacy translation layer rather
+than a canonical current example.
+
 Hipoteza analityczna (ex66):
   Zlinearyzowane ODE TGP: delta'' + (2/r)delta' + delta = 0
   => tryb k=1 jest TRYBEM ZEROWYM (energia = 0 dokładnie)

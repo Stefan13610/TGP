@@ -2,6 +2,12 @@
 """
 ex95_G3_precision.py — Lepsza precyzja G₃ przez rozszerzone okna (O-L6, v38)
 ==============================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file remains in the older tau-sector `G3` / `alpha*` exploration built on
+legacy selection language. Keep it as historical exploratory material rather
+than a canonical current path.
+
 Problem z ex93/ex94:
   G₃(α*₃) = 3495.2 vs R31=3477.2 → różnica +18 j. (+0.52%)
   Szum G₃ ≈ ±20 j. → niepewność α*₃ ≈ ±0.007 → szum S₃ ≈ ±875 ppm

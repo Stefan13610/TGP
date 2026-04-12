@@ -23,10 +23,11 @@ For distinct bodies $i\neq j$ at separation $d_{ij}=|\mathbf{x}_i-\mathbf{x}_j|$
 The total two-body energy is $V_2=\sum_{i<j}V_{2,ij}(d_{ij})$.
 
 \paragraph{Irreducible three-body term.}
-For each unordered triplet $\{i,j,k\}$ the quartic ($\Phi^4$) sector contributes
+For each unordered triplet $\{i,j,k\}$ the irreducible three-body sector receives
+contributions from both $\Phi^3$ and $\Phi^4$, giving
 \begin{equation}
   V_{3,ijk}
-  = -6\,\gamma\,C_i C_j C_k\,
+  = (2\beta - 6\gamma)\,C_i C_j C_k\,
     I(d_{ij},d_{ik},d_{jk}),
   \label{eq:V3-I}
 \end{equation}
@@ -60,7 +61,7 @@ For a single triplet $(i,j,k)$ contributing \eqref{eq:V3-I}, writing $I=I(d_{ij}
 and therefore
 \begin{equation}
   \mathbf{F}_i^{(ijk)}
-  = 6\gamma C_i C_j C_k\,\nabla_{\mathbf{x}_i} I,
+  = (6\gamma - 2\beta) C_i C_j C_k\,\nabla_{\mathbf{x}_i} I,
 \end{equation}
 with analogous expressions for $\mathbf{F}_j^{(ijk)}$ and $\mathbf{F}_k^{(ijk)}$ (pairs involving $j$ and $k$).  Summing over all triplets and adding the pairwise gradient gives the total $\mathbf{F}_i$.
 

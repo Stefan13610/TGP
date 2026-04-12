@@ -1,0 +1,147 @@
+======================================================================
+COLLAPSE EXPONENT gamma(alpha, d)
+======================================================================
+
+1. gamma vs alpha (d=3)
+--------------------------------------------------
+   alpha       gc      gamma  max_resid   1/(2a+1)    1/(N-d)
+     0.5   2.5000   0.251966   0.051697   0.500000   0.500000
+     1.0   2.0000   0.224777   0.059704   0.333333   0.333333
+     1.5   1.7500   0.210484   0.074130   0.250000   0.250000
+     2.0   1.6000   0.204276   0.091528   0.200000   0.200000
+     2.5   1.5000   0.202783   0.111534   0.166667   0.166667
+     3.0   1.4286   0.204335   0.133819   0.142857   0.142857
+     3.5   1.3750   0.208020   0.158127   0.125000   0.125000
+     4.0   1.3333   0.213253   0.184387   0.111111   0.111111
+     5.0   1.2727   0.227104   0.242692   0.090909   0.090909
+
+2. Rational form search
+--------------------------------------------------
+  Checking gamma = f(alpha) for d=3:
+
+  alpha=0.5, gamma=0.251966:
+    BEST:      d/(N*(N-d)) = 0.300000  (err = 0.1906)
+
+  alpha=1.0, gamma=0.224777:
+    BEST:         1/(2a+2) = 0.250000  (err = 0.1122)
+
+  alpha=1.5, gamma=0.210484:
+            1/(2a+2) = 0.200000  (err = 0.0498)
+    BEST:         1/(2a+2) = 0.200000  (err = 0.0498)
+
+  alpha=2.0, gamma=0.204276:
+            1/(2a+1) = 0.200000  (err = 0.0209)
+             1/(N-d) = 0.200000  (err = 0.0209)
+    BEST:         1/(2a+1) = 0.200000  (err = 0.0209)
+
+  alpha=2.5, gamma=0.202783:
+              1/(2a) = 0.200000  (err = 0.0137)
+    BEST:           1/(2a) = 0.200000  (err = 0.0137)
+
+  alpha=3.0, gamma=0.204335:
+             (d-1)/N = 0.200000  (err = 0.0212)
+    BEST:          (d-1)/N = 0.200000  (err = 0.0212)
+
+  alpha=3.5, gamma=0.208020:
+    BEST:          1/(a+1) = 0.222222  (err = 0.0683)
+
+  alpha=4.0, gamma=0.213253:
+    BEST:          1/(a+1) = 0.200000  (err = 0.0621)
+
+  alpha=5.0, gamma=0.227104:
+    BEST:          1/(a+1) = 0.166667  (err = 0.2661)
+
+
+3. gamma vs d (alpha=2)
+--------------------------------------------------
+    d       gc      gamma  max_resid
+    1   1.1429  -0.378239   0.648425
+    2   1.3333   0.140285   0.188393
+    3   1.6000   0.204276   0.091528
+    4   2.0000   0.280161   0.069068
+    5   2.6667   0.365573   0.061953
+
+
+4. Power law quality check (alpha=2, d=3)
+--------------------------------------------------
+  Is A_tail = C * delta^(-gamma) exact, or an approximation?
+       delta       A_tail      log_A  local_gamma
+      0.1000   0.70193558  -0.353914          ---
+      0.0800   0.76241853  -0.271260     0.370407
+      0.0600   0.83704209  -0.177881     0.324590
+      0.0400   0.93822052  -0.063770     0.281432
+      0.0300   1.00853600   0.008500     0.251215
+      0.0200   1.10693415   0.101594     0.229599
+      0.0150   1.17673358   0.162742     0.212555
+      0.0100   1.27556474   0.243389     0.198899
+      0.0080   1.33030694   0.285410     0.188312
+      0.0050   1.44678445   0.369343     0.178581
+      0.0030   1.57642730   0.455161     0.167998
+      0.0020   1.68248853   0.520274     0.160588
+
+
+5. Near-collapse in canonical variable f = g^3
+--------------------------------------------------
+
+  Near g0 -> gc = 8/5:
+  f0 -> fc = (8/5)^3 = 512/125 = 4.096
+
+  The critical solution in f-variable: f starts at f0 and the
+  solution barely avoids collapse. The core region expands,
+  and A_tail (measured in the tail) diverges.
+
+  The divergence exponent gamma depends on how the matching
+  between core and tail behaves as f0 -> fc.
+
+  Local gamma vs delta (finest resolution):
+    delta=0.000122: local_gamma=0.121202
+    delta=0.000149: local_gamma=0.122849
+    delta=0.000181: local_gamma=0.126310
+    delta=0.000221: local_gamma=0.129953
+    delta=0.000270: local_gamma=0.133764
+    delta=0.000329: local_gamma=0.136883
+    delta=0.000401: local_gamma=0.139566
+    delta=0.000489: local_gamma=0.141150
+    delta=0.000597: local_gamma=0.141565
+    delta=0.000728: local_gamma=0.142267
+    delta=0.000888: local_gamma=0.143702
+    delta=0.001083: local_gamma=0.145829
+    delta=0.001320: local_gamma=0.148690
+    delta=0.001610: local_gamma=0.151943
+    delta=0.001964: local_gamma=0.155343
+    delta=0.002395: local_gamma=0.158646
+    delta=0.002921: local_gamma=0.161815
+    delta=0.003562: local_gamma=0.164837
+    delta=0.004344: local_gamma=0.168166
+    delta=0.005298: local_gamma=0.171994
+    delta=0.006462: local_gamma=0.176491
+    delta=0.007880: local_gamma=0.181716
+    delta=0.009611: local_gamma=0.187457
+    delta=0.011721: local_gamma=0.193793
+    delta=0.014295: local_gamma=0.200832
+    delta=0.017433: local_gamma=0.208575
+    delta=0.021261: local_gamma=0.217256
+    delta=0.025929: local_gamma=0.227102
+    delta=0.031623: local_gamma=0.238434
+
+  Limiting gamma (delta < 0.005): 0.143920
+  As fraction: 0.143920
+    close to 1/7 = 0.142857 (err = 0.001063)
+    close to 2/14 = 0.142857 (err = 0.001063)
+
+======================================================================
+SUMMARY
+======================================================================
+
+  The collapse exponent gamma is NOT a simple rational number.
+  It varies with alpha and d, and the local exponent drifts
+  as delta -> 0, suggesting it may be logarithmically corrected:
+    A_tail ~ (delta)^(-gamma) * (log(1/delta))^beta
+
+  This is consistent with the critical solution being a
+  SEPARATRIX in the ODE phase space, where the approach
+  to the critical point involves logarithmic corrections.
+
+  The exponent gamma does NOT have a clean closed form
+  in terms of alpha and d.
+

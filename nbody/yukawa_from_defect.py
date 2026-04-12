@@ -50,8 +50,9 @@ We require V_C''(1) = m_sp_B^2:
 For beta = gamma = 1:
     m_sp = 1,  mu^2 = 2,  mu = sqrt(2)
 
-This is a CONCRETE prediction: the stabilization scale mu is determined
-by the TGP parameters (beta, gamma).
+This is an AUXILIARY stabilization picture: the helper scale mu is determined
+by the TGP parameters (beta, gamma), but the physical screening mass used by
+`nbody` remains m_sp.
 
 DEFECT STRUCTURE:
 -----------------
@@ -98,7 +99,7 @@ PHYSICAL CONTENT:
   1. Classical theory: defect with oscillatory tail (ex10-ex11)
   2. Quantum corrections: mass gap m_sp from loop/RG effects
   3. Effective interaction: Yukawa with C_eff from defect projection
-  4. mu^2 = 2*(3*gamma - 2*beta) is the required stabilization strength
+  4. mu^2 = 2*(3*gamma - 2*beta) is the auxiliary stabilization strength
   5. Path B axiom "C_i is a source strength" is DERIVED from defect physics
 """
 

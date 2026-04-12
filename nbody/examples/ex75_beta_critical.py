@@ -1,5 +1,10 @@
 """
 EX75: PRECYZYJNA WARTOSC beta_c — czy beta=1 jest dokladnym punktem bifurkacji?
+STATUS: LEGACY-TRANSLATIONAL
+
+This file belongs to the historical `beta_c` / `delta(alpha)` bifurcation
+program written in the older selection language. Keep as legacy exploratory
+material, not as a canonical current reference.
 
 Z ex74b: tylko beta=1.000 (rozdzielczosc 0.002) daje 2 zera delta(alpha).
 Teraz:

@@ -3,13 +3,25 @@ tgp_field.py -- Core TGP field infrastructure
 ================================================
 Dimensionless units throughout: x = r/r_0, Phi_hat = Phi/Phi_0.
 
-The TGP scalar field Phi satisfies a nonlinear field equation whose
-linearized (weak-field) solution around the vacuum Phi = Phi_0 is:
+CANONICAL INTERPRETATION IN `nbody`
+-----------------------------------
+This module serves two different but compatible layers of the theory:
 
-    Phi(r) = Phi_0 * (1 + delta(r))
+1. Classical defect layer:
+   The full TGP soliton/defect equation near the vacuum produces an
+   oscillatory tail ~ sin(r)/r, not a Yukawa tail.
 
-where delta(r) = C * exp(-m_sp * r) / r is the Yukawa profile, with
-C the dimensionless source strength and m_sp the screening mass.
+2. Effective N-body layer:
+   After the EFT / Path C projection, point sources are represented by the
+   screened Yukawa profile
+
+       delta(r) = C * exp(-m_sp * r) / r
+
+   where C is the effective source strength and m_sp is the effective
+   screening mass used by the N-body package.
+
+This file mainly implements the SECOND layer, while preserving the kinetic
+coupling conventions of the first one.
 
 Vacuum condition
 ----------------
@@ -17,7 +29,7 @@ For beta = gamma (the vacuum self-interaction balance):
     m_sp = sqrt(3*gamma - 2*beta) = sqrt(gamma)
 
 Kinetic coupling — two forms
------------------------------
+----------------------------
 The kinetic coupling K(g) (where g = Phi/Phi_0) has two representations:
 
   (a) FULL substrate form (sek10_N0_wyprowadzenie.tex, prop:f-from-substrate):
@@ -99,7 +111,11 @@ def default_beta_gamma(beta=None, gamma=None):
 
 
 def screening_mass(beta, gamma=None):
-    """Screening mass m_sp = sqrt(3*gamma - 2*beta).
+    """Effective N-body screening mass m_sp = sqrt(3*gamma - 2*beta).
+
+    In the canonical interpretation of ``nbody``, this is the EFT screening
+    mass used by Yukawa source profiles. It should not be confused with the
+    oscillatory classical defect tail of the unprojected soliton equation.
 
     For vacuum (beta=gamma): m_sp = sqrt(gamma).
     """
@@ -114,12 +130,13 @@ def screening_mass(beta, gamma=None):
 # ── Single-source profiles ────────────────────────────────────────────────
 
 def yukawa_profile(r, C, m_sp):
-    """Single-source linearized profile.
+    """Single-source effective Yukawa profile.
 
     delta(r) = C * exp(-m_sp * r) / r
 
-    This is the fractional field excess: delta = (Phi - Phi_0) / Phi_0.
-    For a point source of strength C with screening mass m_sp.
+    This is the fractional field excess: delta = (Phi - Phi_0) / Phi_0 in the
+    effective N-body description. The profile is the post-projection Yukawa
+    source used by Path B / Path C, not the raw classical defect tail.
 
     Parameters
     ----------
@@ -141,9 +158,11 @@ def yukawa_profile(r, C, m_sp):
 
 
 def phi_single(r, C, beta):
-    """Full profile Phi/Phi_0 = 1 + delta for a single source in vacuum.
+    """Full effective profile Phi/Phi_0 = 1 + delta for one source.
 
-    Uses vacuum condition beta = gamma so m_sp = sqrt(beta).
+    Uses the vacuum condition beta = gamma so m_sp = sqrt(beta).
+    This is the effective screened source profile employed by ``nbody`` after
+    the soliton-to-source bridge, not a standalone classical defect solution.
 
     Parameters
     ----------
@@ -193,13 +212,13 @@ def grad_phi_single(r, C, m_sp):
 # ── Multi-source superposition ────────────────────────────────────────────
 
 def phi_n_sources_linear(x, sources):
-    """Linear superposition of Yukawa profiles (weak-field approximation).
+    """Linear superposition of effective Yukawa profiles.
 
     Phi(x)/Phi_0 = 1 + sum_i delta_i(|x - x_i|)
 
-    This is the linearized (Born) approximation: valid when all delta_i << 1.
-    Nonlinear corrections (which produce the 3-body forces) are handled
-    separately in three_body_terms.py.
+    This is the linearized (Born) approximation for the EFFECTIVE source
+    description: valid when all delta_i << 1. Nonlinear corrections (which
+    produce the 3-body forces) are handled separately in three_body_terms.py.
 
     Parameters
     ----------

@@ -2,6 +2,12 @@
 """
 ex102_hierarchy.py — Inne hierarchie mnożnikowe + α_min_far precyzja (S4+S5, v39)
 ==================================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older tau/hierarchy multiplier exploration in
+legacy variables. Treat it as transition/history material, not as a canonical
+current `nbody` source.
+
 S4: Czy inny mnożnik m (zamiast φ²) może dać G₃=R₃₁ w fizycznym zakresie α?
     Test: m = φ, 1.5, 2.0, e, √5, √3, 3/2 przy α∈{α*₁_far, α*₂_far, 2.5, 3.0}
     Nowy twist: używamy TYLKO okien [80,140] (wyeliminowanie [60,76] biasu)

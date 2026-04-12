@@ -2,6 +2,12 @@
 """
 ex93_tau_alpha_star.py — Precyzyjne α*₃ dla sektora tau (O-L5, v37)
 ====================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file belongs to the older tau-sector `alpha*` / `G3(alpha)` program in
+legacy variables. It should be read as transition/history material, not as a
+canonical current `nbody` source.
+
 Cel:
   Wyznaczenie α*₃ gdzie G₃(α*₃) = R31 = m_τ/m_e ≈ 3477.22
 

@@ -1,5 +1,10 @@
 """
 EX81: S(R) = alpha*_1(R) + alpha*_2(R) jako funkcja targetu R
+STATUS: LEGACY-TRANSLATIONAL
+
+This file continues the older `alpha*` / sum-rule selection program in legacy
+variables. Treat it as historical transition material, not as a canonical
+modern entry point.
 
 Pytanie: czy wzor S = 2pi - 11/10 jest specyficzny dla R = r21 = 206.768,
 czy jest ogolna wlasnoscia geometrii f(z0, alpha)?

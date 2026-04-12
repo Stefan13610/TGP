@@ -1,6 +1,12 @@
 """
 EX65: WERYFIKACJA M_total = M_kin + M_pot ∝ A_tail^4
 ======================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older `A_tail^4` / `M_total` program in the
+historical `g0* ~ 1.24` language. Treat it as a legacy translation and
+diagnostic layer rather than a canonical current entry point.
+
 Hipoteza analityczna (ex64):
   - M_raw (kinetyczna) ∝ A_tail^2 (ogon dominuje, rozbiezny)
   - M_pot (potencjalna) ∝ A_tail^2 z opozytnym znakiem w ogonie

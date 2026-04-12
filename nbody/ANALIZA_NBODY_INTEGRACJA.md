@@ -45,7 +45,7 @@ Rozwiązanie: δ ~ sin(r)/r — **ogon OSCYLACYJNY, nie Yukawa.** Profil Yukawa 
 
 $$(\nabla^2 - m_{sp}^2)\Phi = -4\pi C_i \, \delta^3(\mathbf{r} - \mathbf{r}_i)$$
 
-Jest to wewnętrznie spójne z TGP — oznacza jedynie, że ciała są *defektami topologicznymi z nałożonym profile'm Yukawa*, nie swobodnymi rozwiązaniami nieklasyczną ODE. **Droga B = poprawne sformułowanie fizyki cząstkowej w TGP.**
+Jest to wewnętrznie spójne z TGP — oznacza jedynie, że ciała są *defektami topologicznymi z nałożonym profile'm Yukawa*, nie swobodnymi rozwiązaniami nieklasyczną ODE. W aktualnej interpretacji `nbody` jest to warstwa **efektywna**: klasyczny defekt przechodzi przez most EFT do źródła Yukawy. **Droga B pozostaje poprawną warstwą obliczeniową, ale nie jest tożsama z klasycznym ogonem solitonu.**
 
 ---
 
@@ -71,9 +71,12 @@ Trójkąt jest **geometrycznie preferowaną** pierwszą konfigurację — pojawi
 
 ### 2.2 Siły 3-ciałowe z Φ⁴ ✅
 
-Z nielliniowości $(1+δ_1+δ_2+δ_3)^4$ wynika niezerowy człon 3-ciałowy:
+Z nieliniowości potencjału wynika niezerowy człon 3-ciałowy. Pełny współczynnik pochodzi z obu sektorów:
 
-$$V_3 = -6\gamma C_1 C_2 C_3 \cdot I_{\text{triple}}$$
+- z `Φ^3`: `+2β`
+- z `Φ^4`: `-6γ`
+
+$$V_3 = (2\beta - 6\gamma) C_1 C_2 C_3 \cdot I_{\text{triple}}$$
 
 **Granica Coulomba** (m_sp → 0, realistyczna dla TGP fizycznego):
 

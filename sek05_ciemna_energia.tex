@@ -872,3 +872,40 @@ za\l{}o\.ze\'n ad hoc?
 \textbf{Status: OTWARTY} --- wymaga analizy sekcji N0-7 (entropia
 substratu).
 \end{problem}
+
+% ---------------------------------------------------------------------------
+\subsection{Status epistemiczny r\'ownania Friedmanna w~TGP}
+\label{ssec:friedmann-status}
+
+\begin{uwaga}[R\'ownanie Friedmanna jako twierdzenie warunkowe]
+\label{rem:friedmann-conditional}
+Zmodyfikowane r\'ownanie Friedmanna w~TGP \textbf{nie jest aksjomatem},
+lecz \textbf{twierdzeniem warunkowym} wyprowadzonym z~akcji TGP
+w~nast\k{e}puj\k{a}cym \l{}a\'ncuchu:
+\begin{enumerate}[nosep]
+  \item \textbf{Akcja TGP} $S[\psi]$ (sek08, eq.~action) + ansatz FRW
+    $\psi = \psi(t)$, $ds^2 = -dt^2 + a(t)^2\,d\mathbf{x}^2$.
+  \item \textbf{Euler--Lagrange} $\delta S/\delta\psi = 0$ daje
+    r\'ownanie pola kosmologicznego:
+    \begin{equation}
+      \ddot\psi + 3H\dot\psi + 3\,\frac{\dot\psi^2}{\psi}
+      = \frac{c_0^2(V + \psi V')}{\psi^6}\,,
+      \label{eq:psi-cosmo-unified}
+    \end{equation}
+    zweryfikowane algebraicznie (skrypt \texttt{ex204}, STEP~1: PASS).
+  \item \textbf{Metryka efektywna} $g_{\mu\nu}^{\rm eff}(\psi)$
+    (hipoteza metryczna, sek08c) + \textbf{to\.zsamo\'s\'c Bianchiego}
+    $\nabla_\mu G^{\mu\nu}_{\rm eff} = 0$ propaguj\k{a} wi\k{e}z
+    Friedmannowski:
+    je\'sli $G_{00}^{\rm eff} = T_{00}$ na hiperpowierzchni pocz\k{a}tkowej,
+    to $G_{00}^{\rm eff} = T_{00}$ wsz\k{e}dzie.
+  \item \textbf{Granica pr\'o\.zniowa} $\psi \to 1$, $\dot\psi \to 0$
+    odzyskuje standardowe $3H^2 = \Lambda_{\rm eff}$ z
+    $\Lambda_{\rm eff} = V(1) = \gamma/12$
+    (skrypt \texttt{ex204}, STEP~4: PASS).
+\end{enumerate}
+Struktura jest analogiczna do GR: wi\k{e}z hamiltonowski musi
+zachodzi\'c na danych pocz\k{a}tkowych i~jest propagowany przez
+to\.zsamo\'s\'c Bianchiego. \.Zadne dodatkowe za\l{}o\.zenia
+poza akcj\k{a} TGP i~hipotez\k{a} metryczn\k{a} nie s\k{a} wymagane.
+\end{uwaga}

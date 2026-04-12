@@ -3,6 +3,11 @@
 ex196 — φ-FP Particle Predictions: FULL K_sub=g² vs LPA
 =========================================================
 
+STATUS: CANONICAL
+
+This script belongs to the synchronized current bridge and compares the
+canonical FULL `K_sub = g^2` formulation against the older LPA language.
+
 The φ-FP mechanism predicts lepton mass ratios via:
   r₂₁ = [A_tail(φ·g₀) / A_tail(g₀)]⁴
 
@@ -16,9 +21,12 @@ Depends on ex195 ODE solvers.
 """
 
 import sys
+import io
 import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.optimize import brentq
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 # ── Constants ───────────────────────────────────────────────────────────────
 PHI = (1.0 + np.sqrt(5.0)) / 2.0   # golden ratio 1.6180...

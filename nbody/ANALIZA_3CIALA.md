@@ -1,6 +1,6 @@
 # Problem 3 ciał w warstwie `nbody`
 
-> **Ostatnia synchronizacja dokumentacji:** 2026-04-05  
+> **Ostatnia synchronizacja dokumentacji:** 2026-04-12  
 > **Pełny stan teorii (repo):** `ANALIZA_KRYTYCZNA_v6.md` w korzeniu `TGP_v1/` — niniejszy plik opisuje wyłącznie warstwę wielociałową i kod w `nbody/`.
 
 **Nawigacja:** [README.md](README.md) · [ZALOZENIA_NBODY.md](ZALOZENIA_NBODY.md) · [ANALIZA_NBODY_INTEGRACJA.md](ANALIZA_NBODY_INTEGRACJA.md) · [examples/README.md](examples/README.md) · [archiwum sesji](_archiwum_docs/WYNIKI_SESJI_2026_03_21.md)
@@ -48,9 +48,13 @@ Katalog `nbody/` nie zawiera już syntetycznych `run_*.py` w korzeniu. Eksperyme
 **Poprawne:**
 W granicy Coulomba (m_sp → 0), dla trójkąta równobocznego d₁₂=d₁₃=d₂₃=d:
 
-$$V_3 = -6\gamma C^3 \cdot I_{\text{triple}} = -6\gamma C^3 \cdot \frac{8\pi^2}{3d} = -\frac{16\pi^2 \gamma C^3}{d}$$
+$$V_3 = (2\beta - 6\gamma) C^3 \cdot I_{\text{triple}} = (2\beta - 6\gamma) C^3 \cdot \frac{8\pi^2}{3d}$$
 
-Skalowanie: **1/d** (nie 1/d²). Człon V₃ w granicy Coulomba jest tego samego rzędu co V_grad (atrakcyjny człon 1/d), ale wzmocniony czynnikiem γ·C.
+Dla sektora próżni `β = γ` dostajemy:
+
+$$V_3 = -\frac{32\pi^2 \beta C^3}{3d}$$
+
+Skalowanie: **1/d** (nie 1/d²). Człon V₃ w granicy Coulomba jest tego samego rzędu co V_grad (atrakcyjny człon 1/d), ale tłumiony dodatkowym czynnikiem rzędu `β·C`.
 
 ### 2.2 KLUCZOWE ODKRYCIE: Reżim Coulomba vs Yukawa dla V₃
 
@@ -74,8 +78,8 @@ W `dynamics_v2.py` (linia 161–165):
 ```python
 forces[i] += coupling * dI_dP * dP_dxi
 ```
-gdzie `coupling = 6 * gamma * Ci * Cj * Ck` i dla Coulomba `dI_dP = -8π²/P² < 0`.
-Wynik: siła przyciągająca (ujemna w kierunku od mas) → **FIZYCZNIE POPRAWNE** (V₃ < 0 = atrakcja).
+gdzie efektywny prefaktor ma znak `6γ - 2β`, a dla sektora próżni `β = γ` redukuje się do `4γ > 0`; dla Coulomba `dI_dP = -8π²/P² < 0`.
+Wynik: siła przyciągająca (ujemna w kierunku od mas) → **FIZYCZNIE POPRAWNE** (w próżni `V₃ < 0` = atrakcja).
 
 ### 2.3 Siła 3-ciałowa — dokładność statusów
 
@@ -103,11 +107,16 @@ Siła (F = -dV/dd, dodatnia = odpychanie):
 
 $$F_2(d) = -\frac{4\pi C^2}{d^2} + \frac{16\pi \beta C^2}{d^3} - \frac{72\pi \beta C^3}{d^4}$$
 
-### 3.2 Potencjał 3-ciałowy (źródło: człon Φ⁴, nielinearna TGP)
+### 3.2 Potencjał 3-ciałowy (pełny nieredukowalny wkład z potencjału)
 
-Z rozwinięcia $(1 + \delta_1 + \delta_2 + \delta_3)^4$ z współczynnikiem multinomialnym $4!/(1!1!1!1!) = 24$:
+Pełny współczynnik 3-ciałowy pochodzi z obu nieliniowości:
 
-$$V_3 = -6\gamma C_1 C_2 C_3 \cdot I_{\text{triple}}$$
+- z `Φ³`: `+2β`
+- z `Φ⁴`: `-6γ`
+
+Zatem:
+
+$$V_3 = (2\beta - 6\gamma) C_1 C_2 C_3 \cdot I_{\text{triple}}$$
 
 Gdzie całka potrójnego nakładania profili Yukawa:
 
@@ -119,11 +128,11 @@ $$\boxed{I_{\text{triple}}^{\text{Coul}} = \frac{8\pi^2}{P}, \quad P = d_{12} + 
 
 Zatem:
 
-$$V_3^{\text{Coul}} = -\frac{48\pi^2 \gamma C_1 C_2 C_3}{d_{12} + d_{13} + d_{23}}$$
+$$V_3^{\text{Coul}} = \frac{8\pi^2(2\beta - 6\gamma) C_1 C_2 C_3}{d_{12} + d_{13} + d_{23}}$$
 
 Siła 3-ciałowa na cząstkę i (ANALITYCZNA w granicy Coulomba):
 
-$$\vec{F}_3^{(i)} = \frac{48\pi^2 \gamma C_i C_j C_k}{P^2} \left(\hat{r}_{ij} + \hat{r}_{ik}\right)$$
+$$\vec{F}_3^{(i)} = \frac{8\pi^2(6\gamma - 2\beta) C_i C_j C_k}{P^2} \left(\hat{r}_{ij} + \hat{r}_{ik}\right)$$
 
 gdzie $\hat{r}_{ij} = (\vec{x}_j - \vec{x}_i)/d_{ij}$ — wersor od i do j.
 
@@ -366,7 +375,7 @@ Wszystkie poniższe muszą być spełnione jednocześnie:
 [1] V_gamma = -12π γ C₁C₂(C₁+C₂)/d³   ← z pairwise.py ✓
 [2] F_gamma = -36π γ C₁C₂(C₁+C₂)/d⁴  ← F = -dV/dd ✓
 [3] d² - 4βd + 18βC = 0               ← równowaga 2-ciał/trójkąt ✓
-[4] V₃ = -6γC₁C₂C₃ · I_triple        ← z Φ⁴ nonlinearity ✓
+[4] V₃ = (2β-6γ)C₁C₂C₃ · I_triple    ← pełny nieredukowalny wkład ✓
 [5] I_triple(Coulomb) = 8π²/P          ← dokładne ✓
 [6] dI/dP = -8π²/P²                    ← pochodna ✓
 [7] m_i = C_i                          ← aksjomat TGP (ekwiwalencja) ✓

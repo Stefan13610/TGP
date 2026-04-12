@@ -2,6 +2,12 @@
 """
 ex88_fixed_window.py — Poprawiona ekstrapolacja α*₁,₂ do R_MAX→∞ (O-L1b, v36)
 ==============================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file remains part of the older `alpha*` / window-selection chain. It is
+historically useful, but it is not aligned with the canonical synchronized
+`nbody` path.
+
 Naprawa błędu ex87v3: okno B_coeff stałe [28,42], niezależne od R_MAX.
 
 Strategia:

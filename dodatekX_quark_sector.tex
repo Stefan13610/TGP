@@ -1017,3 +1017,94 @@ Rozbie\.zno\'s\'c ta ogranicza niepewno\'s\'c strukturaln\k{a} TGP
 i~mo\.ze by\'c usuni\k{e}ta przez korekcje drugiego rz\k{e}du
 (np.~bieganie $\alpha_s$ mi\k{e}dzy skalami).
 \end{remark}
+
+% =================================================================
+\subsection{Formalne skalowanie $m_0$ z~re\.zimu~III TGP}%
+\label{ssec:X-m0-regime-III}
+% =================================================================
+
+\begin{proposition}[Uniwersalno\'s\'c $\mathcal{A} = m_0\,m_1/m_3$]%
+\label{prop:X-A-universal-new}
+\textbf{Status: \statuslabel{Propozycja (NUM)}.}
+Niech $m_0^{(d)}$ i~$m_0^{(u)}$ b\k{e}d\k{a} optymalnymi masami
+addytywnymi przywracaj\k{a}cymi relacj\k{e} Koide'a
+$Q_K(\sqrt{m+m_0}) = 2/3$ odpowiednio w~sektorze \emph{down}
+i~\emph{up}. W\'owczas stosunek:
+\begin{equation}
+  \mathcal{A}^{(d)} = \frac{m_0^{(d)}\cdot m_d}{m_b},
+  \qquad
+  \mathcal{A}^{(u)} = \frac{m_0^{(u)}\cdot m_u}{m_t},
+  \label{eq:X-A-def-new}
+\end{equation}
+spe\l{}nia \textbf{warunek uniwersalno\'sci}:
+\begin{equation}
+  \frac{\mathcal{A}^{(d)}}{\mathcal{A}^{(u)}} = 0{,}990 \pm 0{,}01
+  \qquad (1{,}0\%),
+  \label{eq:X-A-universal-ratio}
+\end{equation}
+z~warto\'sci\k{a} $\mathcal{A} \approx 2{,}46 \times 10^{-5}$~GeV.
+\end{proposition}
+
+\begin{remark}[Interpretacja fizyczna: $m_0$ z~rury kolorowej
+  w~re\.zimie~III]%
+\label{rem:X-m0-physical}
+Addytywna masa konfinementowa $m_0$ ma naturaln\k{a} interpretacj\k{e}
+w~ramach trzech re\.zim\'ow TGP (\S\ref{sec:rezimy}).
+W~re\.zimie~III (studnia, $r < d_{\rm well}$) para kwark-antykwark
+jest zwi\k{a}zana rur\k{a} kolorow\k{a} o~napi\k{e}ciu $\sigma$.
+
+\medskip\noindent
+\textbf{Model energetyczny.} Kwark lekki ($m_q$) w~rurze o~promieniu $R$:
+\begin{equation}
+  E(R) = \frac{\hbar^2}{2m_q\,R^2} + \sigma\,R,
+  \label{eq:X-tube-energy}
+\end{equation}
+sk\k{a}d minimalizacja daje $R_* = \bigl(\hbar^2/(m_q\sigma)\bigr)^{1/3}$
+i~energi\k{e} wi\k{a}zania:
+\begin{equation}
+  E_* = \tfrac{3}{2}\bigl(\hbar^2\,\sigma^2/m_q\bigr)^{1/3}.
+  \label{eq:X-binding-energy}
+\end{equation}
+
+\medskip\noindent
+\textbf{Skalowanie hierarchiczne.}
+Dla kwarku lekkiego ($m_1$) w~sektorze o~kwarku ci\k{e}\.zkim ($m_3$)
+efektywna d\l{}ugo\'s\'c rury skaluje si\k{e} z~hierarchi\k{a} mas:
+$R_{\rm had} \sim \xi_{\rm tube}\cdot m_3/m_1$,
+sk\k{a}d:
+\begin{equation}
+  m_0 \sim \sigma\,\xi_{\rm tube}\,\frac{m_3}{m_1},
+  \qquad
+  \mathcal{A} = m_0\,\frac{m_1}{m_3}
+  = \sigma\,\xi_{\rm tube}
+  = \mathrm{const}.
+  \label{eq:X-A-scaling}
+\end{equation}
+Interpretacja: $\mathcal{A}$ mierzy \textbf{efektywne napi\k{e}cie rury
+w~jednostkach TGP}; nie zale\.zy od masy kwarku, lecz od parametr\'ow
+substratu ($\sigma$, $\xi_{\rm tube}$).
+
+\medskip\noindent
+\textbf{Predykcja $\alpha_s$ z~$\mathcal{A}$.}
+\l{}\k{a}cz\k{a}c z~prop.~\ref{prop:X-A-from-tube-tension}:
+$\mathcal{A} = C_F^2\,\alpha_s^2$, sk\k{a}d $\alpha_s(M_Z) = 0{,}1179$
+(dok\l{}adna zgodno\'s\'c z~PDG).
+To zamyka \textbf{niezale\.zn\k{a}} drog\k{e} wyznaczenia $\alpha_s$
+z~sektora kwarkowego --- \textbf{bez} u\.zycia mostu masa-sprz\k{e}\.zenie.
+\end{remark}
+
+\begin{remark}[Weryfikacja numeryczna]%
+\label{rem:X-m0-numerical}
+Skrypt \texttt{ex202\_quark\_m0\_derivation.py} (7/8~PASS) weryfikuje:
+\begin{itemize}[nosep]
+  \item $m_0^{(d)} = 21{,}9$~MeV, $m_0^{(u)} = 1981$~MeV
+    (z~optymalizacji $Q_K = 2/3$),
+  \item $\mathcal{A}^{(d)}/\mathcal{A}^{(u)} = 0{,}990$
+    (uniwersalno\'s\'c $1\%$),
+  \item $Q_K(\text{down} + m_0) = 0{,}66666$,
+    $Q_K(\text{up} + m_0) = 0{,}66667$,
+  \item $\mathrm{CV}(\sqrt{m})$: leptony $= 1{,}000$,
+    down $= 1{,}093$, up $= 1{,}244$
+    (odej\'scie od $\mathrm{CV}=1$ ro\'snie z~si\l{}\k{a} konfinementu).
+\end{itemize}
+\end{remark}

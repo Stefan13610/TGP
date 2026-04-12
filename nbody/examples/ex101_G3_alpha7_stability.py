@@ -2,6 +2,12 @@
 """
 ex101_G3_alpha7_stability.py — Rezonans czy fizyka? G₃_far≈R₃₁ przy α≈7.1 (S2, v39)
 ======================================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file continues the older tau-sector `G3` resonance/stability exploration
+in legacy variables. Keep it as historical exploratory material rather than a
+canonical current `nbody` path.
+
 Z ex99: G₃_far(7.0)=781 << R₃₁, G₃_far(7.5)=13640 >> R₃₁ — skok o czynnik 17.5.
 Pytanie: czy to rezonans fazowy pomiaru (okna FAR [60,136] trafiają w węzeł A(r)),
          czy fizyczne przejście przez R₃₁?

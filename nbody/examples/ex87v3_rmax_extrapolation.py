@@ -2,6 +2,12 @@
 """
 ex87v3_rmax_extrapolation.py — Ekstrapolacja α*₁,₂ do R_MAX→∞  (O-L1 finalny)
 ==============================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the historical `alpha*` extrapolation and selection
+program in legacy variables. Treat it as transition/history material, not as a
+canonical current `nbody` reference.
+
 Odkrycie ex87v2: α*₁, α*₂ są wrażliwe na R_MAX:
     R_MAX=100: α*₁≈2.432, α*₂≈2.636
     R_MAX=120: α*₁≈2.440, α*₂≈2.695 (ex84)

@@ -7,7 +7,7 @@ EXACT RESULT (no saddle-point, no approximation):
 --------------------------------------------------
 From the Fourier/Feynman representation (tgp_yukawa_fourier_feynman_reduction.tex).
 Multipole / Legendre series route (semianalytic truncation): tgp_yukawa_IY_multipole_gegenbauer.tex
-(\input{} from tgp_yukawa_exact_reduction.tex).
+(`\\input{}` from tgp_yukawa_exact_reduction.tex).
 
     I_Y(d12, d13, d23; m) = 2 * integral_{Delta_2} Delta^{-3/2}
                              * K_0( m * sqrt(Q / Delta) ) d_alpha
@@ -25,15 +25,47 @@ Differentiating under the integral (K_0' = -K_1):
 
 Analogously for d13 (alpha_1 factor) and d23 (alpha_3 factor).
 
+Differentiating with respect to the screening mass gives:
+
+    d I_Y / d m = -2 * integral_{Delta_2} Delta^{-2} * sqrt(Q)
+                          * K_1(m * sqrt(Q/Delta)) d_alpha
+
+This makes the exact scaling structure manifest. Since the integral depends only
+on the dimensionless combinations t_ij = m * d_ij,
+
+    I_Y(d12, d13, d23; m) = F(m*d12, m*d13, m*d23),
+
+so it obeys the exact identity
+
+    (d12*d/dd12 + d13*d/dd13 + d23*d/dd23 - m*d/dm) I_Y = 0.
+
+For the equilateral case d12 = d13 = d23 = d, the Feynman form collapses to
+
+    I_eq(t) = 2 * integral_{Delta_2} Delta^{-3/2} * K_0(t / sqrt(Delta)) d_alpha,
+    t = m*d.
+
+The minimum of the Bessel argument occurs at alpha_1 = alpha_2 = alpha_3 = 1/3
+with Delta_* = 1/3. A Laplace expansion around that point gives the leading
+large-t asymptotic
+
+    I_eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3)*t),
+
+    A_eq = 4*sqrt(2)*pi^(3/2) / 3^(3/4).
+
+Keeping the first subleading term gives
+
+    I_eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3)*t)
+              * [1 - 5/(8*sqrt(3)*t) + O(t^(-2))].
+
 Cartesian force on body 1:
     dI_Y / dx_1 = (dI_Y/dd12) * (x1-x2)/d12
                 + (dI_Y/dd13) * (x1-x3)/d13
 
 The 3-body energy for a triplet (1,2,3) is:
-    V_3 = -6 * gamma * C1 * C2 * C3 * I_Y
+    V_3 = (2*beta - 6*gamma) * C1 * C2 * C3 * I_Y
 
 so the force on body 1 is:
-    F_1 = -dV_3/dx_1 = 6 * gamma * C1 * C2 * C3 * dI_Y/dx_1
+    F_1 = -dV_3/dx_1 = (6*gamma - 2*beta) * C1 * C2 * C3 * dI_Y/dx_1
 
 ADVANTAGES over saddle-point approximation:
   - No error from saddle-point: exact to machine precision
@@ -64,6 +96,7 @@ from __future__ import annotations
 import numpy as np
 from scipy.special import k0, k1
 from scipy.integrate import dblquad
+from scipy.optimize import minimize
 from itertools import combinations
 
 from .tgp_field import default_beta_gamma, screening_mass
@@ -161,6 +194,371 @@ def yukawa_overlap_exact(d12, d13, d23, m, n_quad=40, eps=1e-9):
     return 2.0 * np.dot(weights, integrand)
 
 
+def yukawa_overlap_exact_derivatives(d12, d13, d23, m, n_quad=40, eps=1e-9):
+    """
+    Exact ``I_Y`` and its first derivatives in one quadrature pass.
+
+    Returns the triple Yukawa overlap together with:
+
+    - ``dI/dd12``, ``dI/dd13``, ``dI/dd23``
+    - ``dI/dm`` for the screening mass
+
+    The distance derivatives come from differentiating ``K_0`` under the
+    Feynman integral. The mass derivative follows from the same step and makes
+    the exact scaling identity available numerically:
+
+        d12*dI/dd12 + d13*dI/dd13 + d23*dI/dd23 = m*dI/dm
+
+    Parameters
+    ----------
+    d12, d13, d23 : float
+        Pairwise distances (> 0).
+    m : float
+        Screening mass (> 0).
+    n_quad : int
+        Quadrature resolution.
+    eps : float
+        Small regularization guard.
+
+    Returns
+    -------
+    dict
+        Keys:
+        ``I_Y``, ``dI_dd12``, ``dI_dd13``, ``dI_dd23``, ``dI_dm``,
+        ``distance_contraction``, ``mass_contraction``.
+    """
+    d12, d13, d23 = float(d12), float(d13), float(d23)
+    m = float(m)
+
+    a1, a2, a3, weights = _get_quad(n_quad)
+
+    Q = a2 * d12**2 + a1 * d13**2 + a3 * d23**2
+    Delta = a1 * a2 + a1 * a3 + a2 * a3
+    Delta = np.maximum(Delta, eps)
+    sqrtQ = np.sqrt(np.maximum(Q, eps**2))
+    u = m * np.sqrt(Q / Delta)
+
+    K0u = k0(u)
+    K1u = k1(u)
+    K0u = np.where(np.isfinite(K0u), K0u, 0.0)
+    K1u = np.where(np.isfinite(K1u), K1u, 0.0)
+
+    overlap_integrand = Delta**(-1.5) * K0u
+    overlap_integrand = np.where(np.isfinite(overlap_integrand), overlap_integrand, 0.0)
+    I_Y = 2.0 * np.dot(weights, overlap_integrand)
+
+    distance_kernel = Delta**(-2.0) * K1u / sqrtQ
+    distance_kernel = np.where(np.isfinite(distance_kernel), distance_kernel, 0.0)
+
+    J12 = np.dot(weights, a2 * distance_kernel)
+    J13 = np.dot(weights, a1 * distance_kernel)
+    J23 = np.dot(weights, a3 * distance_kernel)
+
+    dI_dd12 = -2.0 * m * d12 * J12
+    dI_dd13 = -2.0 * m * d13 * J13
+    dI_dd23 = -2.0 * m * d23 * J23
+
+    mass_kernel = Delta**(-2.0) * sqrtQ * K1u
+    mass_kernel = np.where(np.isfinite(mass_kernel), mass_kernel, 0.0)
+    dI_dm = -2.0 * np.dot(weights, mass_kernel)
+
+    distance_contraction = d12 * dI_dd12 + d13 * dI_dd13 + d23 * dI_dd23
+    mass_contraction = m * dI_dm
+
+    return {
+        "I_Y": I_Y,
+        "dI_dd12": dI_dd12,
+        "dI_dd13": dI_dd13,
+        "dI_dd23": dI_dd23,
+        "dI_dm": dI_dm,
+        "distance_contraction": distance_contraction,
+        "mass_contraction": mass_contraction,
+    }
+
+
+def yukawa_overlap_scaling_identity_residual(d12, d13, d23, m, n_quad=40, eps=1e-9):
+    """
+    Evaluate the exact scaling-identity residual for ``I_Y``.
+
+    The Yukawa overlap depends only on the dimensionless products ``m*d_ij``,
+    so exact arithmetic would give:
+
+        d12*dI/dd12 + d13*dI/dd13 + d23*dI/dd23 - m*dI/dm = 0.
+
+    This helper quantifies the residual of that identity at finite quadrature.
+    It is useful for diagnostics and for checking consistency of derivative
+    implementations.
+    """
+    derivs = yukawa_overlap_exact_derivatives(
+        d12, d13, d23, m, n_quad=n_quad, eps=eps
+    )
+    residual = derivs["distance_contraction"] - derivs["mass_contraction"]
+    scale = max(
+        abs(derivs["distance_contraction"]),
+        abs(derivs["mass_contraction"]),
+        abs(derivs["I_Y"]),
+        1e-30,
+    )
+    return {
+        **derivs,
+        "residual": residual,
+        "relative_residual": abs(residual) / scale,
+    }
+
+
+def canonicalize_triangle_sides(d12, d13, d23, atol=1e-12):
+    """
+    Return the sorted side lengths ``(d_min, d_mid, d_max)`` of a triangle.
+
+    Raises ``ValueError`` if any side is non-positive or if the triangle
+    inequality is violated beyond ``atol``.
+    """
+    sides = np.sort(np.array([d12, d13, d23], dtype=float))
+    d_min, d_mid, d_max = map(float, sides)
+
+    if d_min <= 0.0:
+        raise ValueError("Triangle sides must be positive.")
+    if d_min + d_mid < d_max - atol:
+        raise ValueError("Triangle inequality violated.")
+
+    return d_min, d_mid, d_max
+
+
+def triangle_shape_coordinates(d12, d13, d23, m=None, atol=1e-12):
+    """
+    Dimensionless shape-space coordinates for the Yukawa overlap geometry.
+
+    The exact overlap ``I_Y`` is symmetric in the three pairwise distances and
+    depends only on the dimensionless products ``m*d_ij``. A convenient
+    canonical parametrization is obtained by sorting the sides and scaling by
+    the largest one:
+
+        d_min <= d_mid <= d_max,
+        q1 = d_min / d_max,
+        q2 = d_mid / d_max,
+        t  = m * d_max.
+
+    Then
+
+        I_Y(d12, d13, d23; m) = F(t; q1, q2),
+
+    with the admissible shape domain
+
+        0 < q1 <= q2 <= 1,   q1 + q2 >= 1.
+    """
+    d_min, d_mid, d_max = canonicalize_triangle_sides(d12, d13, d23, atol=atol)
+    q1 = d_min / d_max
+    q2 = d_mid / d_max
+
+    result = {
+        "d_min": d_min,
+        "d_mid": d_mid,
+        "d_max": d_max,
+        "q1": q1,
+        "q2": q2,
+        "shape_sum": q1 + q2,
+    }
+    if m is not None:
+        m = float(m)
+        result["t"] = m * d_max
+        result["t_min"] = m * d_min
+        result["t_mid"] = m * d_mid
+        result["t_max"] = m * d_max
+    return result
+
+
+def yukawa_phase_argument(d12, d13, d23, alpha1, alpha2, alpha3=None, eps=1e-12):
+    """
+    Phase function ``sqrt(Q/Delta)`` appearing in the exact Feynman kernel.
+
+    For the exact overlap
+
+        I_Y = 2 * int Delta^(-3/2) K_0(m * sqrt(Q/Delta)) d_alpha,
+
+    the large-``t`` exponential rate is controlled by the minimum of this
+    phase over the simplex.
+    """
+    alpha1 = float(alpha1)
+    alpha2 = float(alpha2)
+    if alpha3 is None:
+        alpha3 = 1.0 - alpha1 - alpha2
+    alpha3 = float(alpha3)
+
+    Q = alpha2 * d12**2 + alpha1 * d13**2 + alpha3 * d23**2
+    Delta = alpha1 * alpha2 + alpha1 * alpha3 + alpha2 * alpha3
+    Delta = max(Delta, eps)
+    Q = max(Q, eps**2)
+    return float(np.sqrt(Q / Delta))
+
+
+def yukawa_overlap_shape_rate(q1, q2, *, refine=True):
+    """
+    Large-``t`` exponential rate ``lambda(q1,q2)`` for normalized shape-space.
+
+    For the canonical normalized triangle with sides ``(q1, q2, 1)``, the
+    exact overlap obeys
+
+        I_Y(t; q1, q2) ~ exp(-lambda(q1,q2) * t) * [subleading factors],
+
+    where ``lambda(q1,q2)`` is the minimum of ``sqrt(Q/Delta)`` over the
+    Feynman simplex.
+
+    This helper returns that minimizing rate together with the barycentric
+    point where it is attained.
+    """
+    q1 = float(q1)
+    q2 = float(q2)
+    if not (0.0 < q1 <= q2 <= 1.0):
+        raise ValueError("Require 0 < q1 <= q2 <= 1.")
+    if q1 + q2 < 1.0 - 1e-12:
+        raise ValueError("Require q1 + q2 >= 1 for a valid normalized triangle.")
+
+    d12, d13, d23 = q1, q2, 1.0
+
+    def objective(a):
+        a1, a2, a3 = a
+        return yukawa_phase_argument(d12, d13, d23, a1, a2, a3)
+
+    # Coarse interior seeds to avoid missing non-symmetric minima.
+    seeds = [
+        np.array([1/3, 1/3, 1/3], dtype=float),
+        np.array([0.50, 0.25, 0.25], dtype=float),
+        np.array([0.25, 0.50, 0.25], dtype=float),
+        np.array([0.25, 0.25, 0.50], dtype=float),
+        np.array([0.60, 0.20, 0.20], dtype=float),
+        np.array([0.20, 0.60, 0.20], dtype=float),
+        np.array([0.20, 0.20, 0.60], dtype=float),
+    ]
+
+    best_x = None
+    best_val = np.inf
+
+    if refine:
+        constraints = [{"type": "eq", "fun": lambda a: np.sum(a) - 1.0}]
+        bounds = [(0.0, 1.0), (0.0, 1.0), (0.0, 1.0)]
+
+        for seed in seeds:
+            res = minimize(
+                objective,
+                seed,
+                method="SLSQP",
+                bounds=bounds,
+                constraints=constraints,
+                options={"ftol": 1e-12, "maxiter": 500},
+            )
+            cand_x = np.asarray(res.x, dtype=float)
+            cand_x = np.clip(cand_x, 0.0, 1.0)
+            s = cand_x.sum()
+            if s > 0.0:
+                cand_x = cand_x / s
+            cand_val = objective(cand_x)
+            if cand_val < best_val:
+                best_val = cand_val
+                best_x = cand_x
+    else:
+        for seed in seeds:
+            val = objective(seed)
+            if val < best_val:
+                best_val = val
+                best_x = seed
+
+    a1, a2, a3 = map(float, best_x)
+    return {
+        "lambda": float(best_val),
+        "alpha1": a1,
+        "alpha2": a2,
+        "alpha3": a3,
+        "q1": q1,
+        "q2": q2,
+    }
+
+
+def yukawa_overlap_geometry_rate(d12, d13, d23, m=None):
+    """
+    Geometry-controlled large-``t`` exponent for a general triangle.
+
+    Returns the normalized shape coordinates and the exact simplex minimizer of
+    the Feynman phase ``sqrt(Q/Delta)``. If ``m`` is provided, also reports the
+    dimensionless suppression exponent ``lambda * t`` with ``t = m*d_max``.
+    """
+    shape = triangle_shape_coordinates(d12, d13, d23, m=m)
+    rate = yukawa_overlap_shape_rate(shape["q1"], shape["q2"])
+    result = {**shape, **rate}
+    if m is not None:
+        result["suppression_exponent"] = result["lambda"] * result["t"]
+    return result
+
+
+def yukawa_overlap_shape_exact(t, q1, q2, n_quad=40, eps=1e-9):
+    """
+    Exact Yukawa overlap in canonical shape-space coordinates.
+
+    This evaluates the same exact overlap as ``yukawa_overlap_exact``, but in
+    the dimensionless parametrization
+
+        I_Y = F(t; q1, q2),
+
+    where ``t = m*d_max`` and ``q1 = d_min/d_max``, ``q2 = d_mid/d_max``.
+
+    Because the overlap is symmetric under permutation of the side labels, we
+    may choose the normalized sorted triangle with sides ``(q1, q2, 1)`` and
+    screening mass ``m = t``.
+    """
+    t = float(t)
+    q1 = float(q1)
+    q2 = float(q2)
+
+    if not (0.0 < q1 <= q2 <= 1.0):
+        raise ValueError("Require 0 < q1 <= q2 <= 1.")
+    if q1 + q2 < 1.0 - 1e-12:
+        raise ValueError("Require q1 + q2 >= 1 for a valid normalized triangle.")
+    if t <= 0.0:
+        raise ValueError("Require t > 0.")
+
+    return yukawa_overlap_exact(q1, q2, 1.0, t, n_quad=n_quad, eps=eps)
+
+
+def yukawa_overlap_equilateral_asymptotic(
+    t=None, *, d=None, m=None, include_subleading=True
+):
+    """
+    Leading large-``t`` asymptotic for the equilateral Yukawa overlap.
+
+    For ``d12 = d13 = d23 = d`` and ``t = m*d``,
+
+        I_eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3)*t),
+
+    with
+
+        A_eq = 4*sqrt(2)*pi^(3/2) / 3^(3/4).
+
+    The first controlled correction is
+
+        I_eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3)*t)
+                  * (1 - 5/(8*sqrt(3)*t)).
+
+    This is the controlled asymptotic extracted from the exact Feynman kernel
+    by a Laplace expansion around the simplex saddle ``alpha_i = 1/3``.
+
+    Pass either ``t`` directly or ``(d, m)``.
+    """
+    if t is None:
+        if d is None or m is None:
+            raise ValueError("Provide either t or both d and m.")
+        t = float(d) * float(m)
+    else:
+        t = float(t)
+
+    if t <= 0.0:
+        raise ValueError("Require t > 0.")
+
+    prefactor = 4.0 * np.sqrt(2.0) * np.pi ** 1.5 / (3.0 ** 0.75)
+    value = prefactor * np.exp(-np.sqrt(3.0) * t) / (t ** 1.5)
+    if include_subleading:
+        value *= 1.0 - 5.0 / (8.0 * np.sqrt(3.0) * t)
+    return value
+
+
 def _dI_dd_components(d12, d13, d23, m, n_quad=40, eps=1e-9):
     """
     Compute the three scalar derivatives dI_Y/dd_ij simultaneously
@@ -175,30 +573,10 @@ def _dI_dd_components(d12, d13, d23, m, n_quad=40, eps=1e-9):
 
     where u = m*sqrt(Q/Delta).
     """
-    a1, a2, a3, weights = _get_quad(n_quad)
-
-    Q     = a2 * d12**2 + a1 * d13**2 + a3 * d23**2
-    Delta = a1*a2 + a1*a3 + a2*a3
-    Delta = np.maximum(Delta, eps)
-    sqrtQ = np.sqrt(np.maximum(Q, eps**2))
-
-    u = m * np.sqrt(Q / Delta)
-
-    # Kernel common to all three derivatives:
-    # K_1(u) * Delta^{-2} / sqrt(Q)
-    K1u = k1(u)
-    kernel = K1u * Delta**(-2.0) / sqrtQ
-    kernel = np.where(np.isfinite(kernel), kernel, 0.0)
-
-    J12 = np.dot(weights, a2 * kernel)
-    J13 = np.dot(weights, a1 * kernel)
-    J23 = np.dot(weights, a3 * kernel)
-
-    dI_dd12 = -2.0 * m * d12 * J12
-    dI_dd13 = -2.0 * m * d13 * J13
-    dI_dd23 = -2.0 * m * d23 * J23
-
-    return dI_dd12, dI_dd13, dI_dd23
+    derivs = yukawa_overlap_exact_derivatives(
+        d12, d13, d23, m, n_quad=n_quad, eps=eps
+    )
+    return derivs["dI_dd12"], derivs["dI_dd13"], derivs["dI_dd23"]
 
 
 def _d2I_dd_matrix(d12, d13, d23, m, n_quad=40, eps=1e-9):
@@ -394,7 +772,7 @@ def three_body_energy_exact(d12, d13, d23, C1, C2, C3,
     """
     Exact irreducible 3-body energy for a triplet.
 
-        V_3 = -6 * gamma * C1*C2*C3 * I_Y(d12, d13, d23; m)
+        V_3 = (2*beta - 6*gamma) * C1*C2*C3 * I_Y(d12, d13, d23; m)
 
     Uses the Feynman 2D integral (no saddle-point approximation).
 

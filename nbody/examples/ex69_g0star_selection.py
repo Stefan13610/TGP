@@ -1,5 +1,10 @@
 """
 EX69: ZASADA SELEKCJI g0* — zaleznosc od alpha i warunki kwantowania
+STATUS: LEGACY-TRANSLATIONAL
+
+This file is part of the older `g0* ~ 1.24`, `alpha*`, and quantization
+selection program. It remains useful as a record of historical hypotheses, but
+it is not aligned with the canonical synchronized `nbody` framing.
 
 Pytanie: Co wyznacza g0* = 1.24771 z aksjomatow TGP (bez wejscia r21)?
 

@@ -387,7 +387,7 @@ def summary():
     print("=" * 65)
 
     print("""
-STATUS: PARTIALLY RESOLVED
+STATUS: RESOLVED (see ex204_friedmann_from_tgp_action.py for unified chain)
 
 1. The ψ FIELD EQUATION is rigorously derived from the TGP action:
      ψ̈ + 3Hψ̇ + 3ψ̇²/ψ = c0^2 W(ψ)
@@ -412,10 +412,11 @@ STATUS: PARTIALLY RESOLVED
    - geometric potential terms (from correct action variation)
    These are geometric back-reaction terms unique to TGP.
 
-5. REMAINING OPEN: proving that Einstein's equations are EMERGENT
-   from TGP (not just consistent). This requires showing:
-   - The coarse-grained ψ dynamics reproduces G_μν = κ T_μν
-   - Or equivalently: the Bianchi identity for g_eff(ψ) is automatic.
+5. NOW RESOLVED: thm:einstein-emergence (sek08_formalizm.tex) proves that
+   Einstein's equations ARE emergent: the spatial component G_ij = T_ij
+   is equivalent to the field equation, and the Bianchi identity propagates
+   the Friedmann constraint. See ex204_friedmann_from_tgp_action.py for
+   the complete formal verification chain.
 """)
 
 

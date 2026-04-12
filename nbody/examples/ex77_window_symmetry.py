@@ -1,5 +1,10 @@
 """
 EX77: CZY OKNO BIFURKACJI JEST SYMETRYCZNE WOKOL beta=1?
+STATUS: LEGACY-TRANSLATIONAL
+
+This file remains in the older bifurcation/symmetry exploration around
+`delta(alpha)` and legacy selection variables. Keep it as historical
+exploration, not as a canonical current `nbody` path.
 
 Z ex76:
   - beta_c_upper ~ 1.0003 (min delta[2.5,2.72] = 0)

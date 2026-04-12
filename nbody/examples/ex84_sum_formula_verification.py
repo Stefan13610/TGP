@@ -1,6 +1,12 @@
 """
 ex84_sum_formula_verification.py
 ==================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older `alpha*` / sum-formula verification program.
+Treat it as historical exploratory context rather than a canonical synchronized
+`nbody` path.
+
 BEZPOSREDNIA WERYFIKACJA FORMULY SUMY S = 2*pi - 11/10
 
 CEL:

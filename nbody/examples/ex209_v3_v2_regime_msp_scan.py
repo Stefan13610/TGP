@@ -9,7 +9,7 @@ to pairwise (V2) as a function of the dimensionless parameter t = m_sp * d.
 Physics:
   - m_sp = sqrt(3*gamma - 2*beta); for beta=gamma: m_sp = sqrt(beta)
   - V2 ~ pairwise Yukawa + gradient + confining terms
-  - V3 = -6*gamma*C1*C2*C3*I_Y(d;m_sp) (irreducible 3-body overlap)
+  - V3 = (2*beta - 6*gamma)*C1*C2*C3*I_Y(d;m_sp) (irreducible 3-body overlap)
   - t << 1: Coulomb regime (physical TGP), V3/V2 saturates (constant)
   - t >> 1: Yukawa regime (unit-code TGP), V3/V2 exponentially suppressed
 
@@ -36,6 +36,8 @@ if _REPO not in sys.path:
 from nbody.three_body_force_exact import (
     three_body_energy_exact,
     yukawa_overlap_exact,
+    triangle_shape_coordinates,
+    yukawa_overlap_geometry_rate,
 )
 from nbody.dynamics_v2 import potential_tgp
 from nbody.tgp_field import screening_mass
@@ -217,9 +219,9 @@ def part3_geometry():
     }
 
     print(f"\n  beta = gamma = {beta}, m_sp = {m_sp:.4f}, n_quad = {n_quad}")
-    print(f"\n  {'Geometry':>20s} {'d12':>6s} {'d13':>6s} {'d23':>6s} "
-          f"{'t_avg':>8s} {'|V3/V2|':>12s}")
-    print(f"  {'-'*68}")
+    print(f"\n  {'Geometry':>20s} {'q1':>6s} {'q2':>6s} {'lambda':>8s} {'t_max':>8s} "
+          f"{'|V3/V2|':>12s}")
+    print(f"  {'-'*74}")
 
     results = {}
     for name, (d12, d13, d23) in geometries.items():
@@ -228,7 +230,8 @@ def part3_geometry():
             # Degenerate/collinear — V3 should still be computable
             pass
 
-        t_avg = m_sp * (d12 + d13 + d23) / 3
+        shape = triangle_shape_coordinates(d12, d13, d23, m=m_sp)
+        rate = yukawa_overlap_geometry_rate(d12, d13, d23, m=m_sp)
 
         # Build positions (in-plane)
         # Body 1 at origin, body 2 at (d12,0,0), body 3 determined by d13,d23
@@ -247,10 +250,19 @@ def part3_geometry():
                                       beta=beta, gamma=gamma, n_quad=n_quad)
 
         ratio = abs(V3 / V2) if abs(V2) > 1e-30 else float('nan')
-        results[name] = {'ratio': ratio, 't_avg': t_avg, 'V2': V2, 'V3': V3}
+        results[name] = {
+            'ratio': ratio,
+            't_max': shape['t'],
+            'q1': shape['q1'],
+            'q2': shape['q2'],
+            'lambda': rate['lambda'],
+            'suppression_exponent': rate['suppression_exponent'],
+            'V2': V2,
+            'V3': V3,
+        }
 
-        print(f"  {name:>20s} {d12:6.2f} {d13:6.2f} {d23:6.2f} "
-              f"{t_avg:8.3f} {ratio:12.6e}")
+        print(f"  {name:>20s} {shape['q1']:6.3f} {shape['q2']:6.3f} "
+              f"{rate['lambda']:8.3f} {shape['t']:8.3f} {ratio:12.6e}")
 
     # Verify: compact geometry has larger V3/V2 (closer bodies = stronger overlap)
     if 'compact' in results and 'extended' in results:

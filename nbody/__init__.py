@@ -6,9 +6,12 @@ Core modules for investigating n-body physics in the Theory of Generated Space.
 PHYSICAL GLOSSARY
 -----------------
 C (source strength):
-    Dimensionless scalar characterizing a point source in TGP.
-    Enters the single-source Yukawa profile: delta(r) = C * exp(-m_sp*r) / r.
-    Physical interpretation: C is the "charge" of the TGP scalar field.
+    Dimensionless scalar characterizing an EFFECTIVE point source in the
+    N-body package.
+    Enters the screened Yukawa profile:
+        delta(r) = C * exp(-m_sp*r) / r.
+    Canonical interpretation in `nbody`: C is the post-projection coupling
+    C_eff obtained from the classical defect sector.
 
 m_i (inertial mass):
     TGP AXIOM: inertial mass equals source strength, m_i = C_i.
@@ -21,14 +24,24 @@ beta, gamma (self-interaction couplings):
     Vacuum condition: beta = gamma (ensures Phi = Phi_0 is a stable vacuum).
 
 m_sp (screening mass):
-    Yukawa screening length from linearized TGP field equation:
+    Effective Yukawa screening mass used by the N-body layer:
         m_sp = sqrt(3*gamma - 2*beta)
     At vacuum condition (beta=gamma): m_sp = sqrt(gamma).
+    This is not the raw classical defect tail scale: the unprojected defect
+    equation has an oscillatory tail ~ sin(r)/r.
 
 softening (epsilon):
     NUMERICAL REGULATOR, not a physical cutoff. Replaces r → sqrt(r^2 + eps^2)
     to prevent 1/r divergences in numerical integration. Results should be
     checked for convergence as epsilon → 0. See dynamics_v2.py docstring.
+
+THEORY-LAYER LABELS
+-------------------
+To avoid mixing the classical and effective descriptions, it is useful to
+distinguish:
+  CLASSICAL:    soliton/defect ODE with oscillatory tail ~ sin(r)/r
+  EFT-DERIVED:  bridge from defect to effective source (C_eff, m_sp)
+  N-BODY:       equations of motion built from Yukawa-source V_2 and V_3
 
 STATUS LEVELS
 -------------
@@ -41,6 +54,7 @@ Throughout this package, results are classified by rigor:
 MODULES
 -------
 tgp_field              -- Field profiles, gradients, energy density
+bridge_nbody           -- Canonical bridge: defect -> C_eff -> Yukawa source -> EOM inputs
 pairwise               -- 2-body effective potential and forces (EXACT)
 three_body_terms       -- Irreducible 3-body interactions (APPROXIMATE/NUMERICAL)
 three_body_force_exact -- Exact 3-body forces via Feynman 2D integral (EXACT)
@@ -73,6 +87,7 @@ ROADMAP: PROVEN vs CONJECTURED
 """
 
 from . import tgp_field
+from . import bridge_nbody
 from . import pairwise
 from . import three_body_terms
 from . import three_body_force_exact

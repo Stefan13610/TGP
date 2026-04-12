@@ -1,5 +1,10 @@
 """
 EX79: MINIMUM f(z0, alpha) — geometria doliny i symetria alpha*
+STATUS: LEGACY-TRANSLATIONAL
+
+This file belongs to the historical `f(z0, alpha)` / `alpha*` valley-analysis
+chain built on older selection language. Keep as legacy exploratory context,
+not as a canonical current `nbody` source.
 
 Z ex78: f(z0, alpha) ma minimum ~198 przy alpha~2.57.
 Pytanie:

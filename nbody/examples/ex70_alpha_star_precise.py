@@ -1,6 +1,12 @@
 """
 EX70: PRECYZYJNE alpha* I PHI-ORBITA g0*
 
+STATUS: LEGACY-TRANSLATIONAL
+
+This script extends the older `alpha*` program. It is retained as a
+translation/history aid, but it is no longer the canonical route to the
+current `nbody` interpretation.
+
 Cel 1: Oblicz alpha* dokladnie do 10^{-4} i porownaj z sqrt(6)=2.4495
 Cel 2: Sprawdz samopodobienstwo phi-orbity: f(phi^n*g0*) = r21 dla n=0,1,2?
 Cel 3: Walidacja delta(alpha) = 0 @ alpha* z wyzszym zakresem alpha

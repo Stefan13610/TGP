@@ -2,6 +2,12 @@
 """
 ex92_F_alpha_profile.py — Pełny profil F(α) i G₃(α) (O-L4 + O-L5, v37)
 ========================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older `F(alpha)` / `G3(alpha)` exploration based on
+legacy selection variables. Keep it as historical exploratory material rather
+than a canonical synchronized `nbody` entry point.
+
 Pytania fizyczne:
   O-L4: Dlaczego α*₁,₂ ≠ α_TGP=2? Wyznacz α_min, F_min, kształt doliny.
   O-L5: Czy G₃(α)=(A_tail(φ²·z₀)/A_tail(z₀))^4 osiąga R31=3477 dla jakiegoś α?

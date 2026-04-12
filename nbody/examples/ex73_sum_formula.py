@@ -1,5 +1,10 @@
 """
 EX73: CZY alpha*_1 + alpha*_2 = 2pi - alpha_TGP/2 - beta/10 JEST PRAWEM?
+STATUS: LEGACY-TRANSLATIONAL
+
+This script is part of the older `alpha*` numerology / sum-rule exploration.
+Treat it as historical exploratory context, not as synchronized canonical
+`nbody`.
 
 Idea:
   - W ex71/ex72 skanowalismy KINETYCZNY parametr alpha ODE i znalezlismy

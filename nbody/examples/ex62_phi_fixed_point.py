@@ -1,6 +1,12 @@
 """
 EX62: phi-SELF-CONSISTENT FIXED POINT I POSZUKIWANIE alpha*
 ============================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file is historically important for the route to `phi-FP`, but it still
+uses the pre-canonical `g0* ~ 1.24` / `alpha*` framing. For the synchronized
+current formulation prefer `ex195`–`ex197`, `ex205`, and `examples/STATUS_MAP.md`.
+
 Cel: rozwiązanie krytycznej diagnozy z ex61:
   (A(phi*z0)/A(z0))^4 = 252  !=  207   przy alpha=2
 

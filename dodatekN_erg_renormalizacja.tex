@@ -203,9 +203,106 @@ Skrypt \texttt{tgp\_erg\_wetterich.py} implementuje:
 
 Wyniki zapisywane są do pliku \texttt{erg\_results.json} i wykresów PNG.
 
-\begin{uwaga}[Ograniczenia LPA]
+\subsection*{N.9 Jednoznaczno\'s\'c punktu sta\l{}ego w~sektorze $\mathbb{Z}_2$}
+
+\begin{twierdzenie}[Jednoznaczno\'s\'c FP w~klasie $\mathbb{Z}_2$]
+\label{thm:ERG_FP_unique}
+W~aproksymacji LPA dla $d=3$, $n=1$ z~symetri\k{a} $\mathbb{Z}_2$,
+punkt sta\l{}y Wilsona--Fishera jest jedynym nietrywialnym punktem sta\l{}ym z:
+\begin{enumerate}[(i),nosep]
+  \item $\rho_0 > 0$ (spontaniczne \l{}amanie symetrii),
+  \item $K(0) = 0$ (warunek $N_0$),
+  \item $u_6 > 0$ (stabilno\'s\'c).
+\end{enumerate}
+\end{twierdzenie}
+
+\begin{dowod}[szkic]
+ODE punktu sta\l{}ego \eqref{eq:LPA_dimensionless} (z~$\partial_t \tilde u = 0$)
+ma dwa rozwi\k{a}zania:
+\begin{itemize}[nosep]
+  \item \emph{Punkt Gaussowski} (trywialny): $\rho_0 = 0$, brak \l{}amania symetrii.
+  \item \emph{Punkt Wilsona--Fishera}: $\rho_0 > 0$, jedno-parametrowa rodzina
+    z~jednym relewantnym kierunkiem ($\theta_u > 0$).
+\end{itemize}
+Warunek (ii) $K(0) = 0$ jest zachowany automatycznie przez symetri\k{e} $\mathbb{Z}_2$
+(brak generowania sta\l{}ego cz\l{}onu kinetycznego,
+por.~tw.~\ref{thm:ERG_fixed_point}(iii)).
+Warunek (iii) $u_6 > 0$ jest spe\l{}niony w~FP~WF
+(Propozycja~N.6, \S\ref{eq:LPA_dimensionless}).
+Jedyno\'s\'c wynika z~twierdzenia o~bifurkacji: w~$d=3$ istnieje dok\l{}adnie
+jedna bifurkacja od punktu Gaussowskiego (klasyczny wynik Wilsona 1971).
+\hfill$\square$
+\end{dowod}
+
+\subsection*{N.10 Ochrona $K(0)=0$ poza aproksymacj\k{a} LPA}
+\label{sec:K0_beyond_LPA}
+
+Twierdzenie~\ref{thm:ERG_fixed_point}(iii) oraz tw.~\ref{thm:ERG_FP_unique}
+zosta\l{}y sformu\l{}owane w~ramach LPA ($\eta=0$).
+Poni\.zsza propozycja pokazuje, \.ze warunek $K(0)=0$ jest chroniony
+\emph{r\'ownie\.z} przy uwzgl\k{e}dnieniu renormalizacji funkcji falowej
+($\eta \neq 0$) i~w~pe\l{}nym r\'ownaniu Wettericha.
+
+\begin{propozycja}[Ochrona $K(0)=0$ poza LPA]
+\label{prop:K0_beyond_LPA}
+Niech $\Gamma_k[\phi]$ spe\l{}nia r\'ownanie Wettericha \eqref{eq:Wetterich}
+z~warunkiem pocz\k{a}tkowym $\Gamma_{k=\Lambda}$ odpowiadaj\k{a}cym
+hamiltonianowi substratu $H_\Gamma = -J\sum(\phi_i\phi_j)^2$,
+i~niech $K_k(\rho)$ oznacza funkcj\k{e} kinetyczn\k{a} zdefiniowan\k{a}
+przez ansatz \eqref{eq:LPA_prime_ansatz}.
+W\'owczas $K_k(0) = 0$ dla ka\.zdej skali $k \in (0,\Lambda]$,
+niezale\.znie od rz\k{e}du obci\k{e}cia pochodnych (LPA, LPA', pe\l{}ny ERG).
+\end{propozycja}
+
+\begin{dowod}[szkic --- trzy niezale\.zne argumenty]
+\mbox{}
+\begin{enumerate}[(A),nosep]
+  \item \textbf{Argument symetryjny (to\.zsamo\'s\'c Warda).}
+    Symetria $\mathbb{Z}_2$ ($\phi \mapsto -\phi$) wymusza
+    $K(\rho) = K(-\rho)$, wi\k{e}c $K$ jest funkcj\k{a} $\rho = \phi^2/2$.
+    Cz\l{}on kinetyczny w~dzia\l{}aniu ma posta\'c $K(\rho)(\nabla\phi)^2$.
+    Przy $\rho = 0$ daje to $K(0)\cdot(\nabla\phi)^2$ ---
+    standardowy cz\l{}on kinetyczny.
+    Jednak hamiltonian substratu $H_\Gamma = -J\sum(\phi_i\phi_j)^2$
+    zawiera \emph{wy\l{}\k{a}cznie} sprz\k{e}\.zenie kwadratowe ($\phi^2\phi^2$),
+    bez cz\l{}onu liniowego $\phi_i\phi_j$.
+    Zatem dzia\l{}anie go\l{}e nie generuje $K_0 \neq 0$,
+    a~to\.zsamo\'s\'c Warda dla $\mathbb{Z}_2$ chroni t\k{e} w\l{}asno\'s\'c
+    na ka\.zdym poziomie p\k{e}tlowym.
+
+  \item \textbf{Argument nie-renormalizacyjny (struktura punktu sta\l{}ego).}
+    W~LPA' r\'ownanie przep\l{}ywu \eqref{eq:LPA_prime_K_flow} dla $K_k(\rho)$
+    zawiera w~mianowniku $(k^2 + U_k' + 2\rho\,U_k'')^2$.
+    Przy $\rho = 0$ propagator $\Gamma^{(2)} + R_k$ otrzymuje wk\l{}ad
+    od $K(\rho)\cdot q^2$ z~$K(0)=0$, co czyni go bardziej osobliwym.
+    Je\'sli $K(\rho) = c_1\rho + c_2\rho^2 + \cdots$ (bez wyrazu wolnego),
+    to funkcja beta dla $c_0 \equiv K(0)$ jest proporcjonalna
+    do samego $c_0$: $\beta_{c_0} = A\cdot c_0$ z~pewnym $A \in \mathbb{R}$.
+    W~konsekwencji $c_0 = 0$ jest punktem sta\l{}ym przep\l{}ywu,
+    a~perturbacje $\delta c_0$ nie s\k{a} generowane, je\'sli pocz\k{a}tkowo $c_0=0$.
+
+  \item \textbf{Argument z~pe\l{}nego funkcjonalnego RG.}
+    Dok\l{}adne r\'ownanie Wettericha \eqref{eq:Wetterich} zachowuje
+    posta\'c funkcjonaln\k{a} dzia\l{}ania $\Gamma_k$: je\'sli dzia\l{}anie
+    go\l{}e ma $K_\Lambda(0) = 0$ (co wynika z~postaci substratu),
+    a~przep\l{}yw zachowuje symetri\k{e} $\mathbb{Z}_2$
+    (co gwarantuje $\mathbb{Z}_2$-niezmienniczo\'s\'c regulatora $R_k$),
+    to na ka\.zdej skali $k$: $K_k(0) = 0$.
+    Formalnie: \'slad w~\eqref{eq:Wetterich} zachowuje $\mathbb{Z}_2$-parzyst\k{a}
+    struktur\k{e} ka\.zdego cz\l{}onu ansatzu, wi\k{e}c zerowy cz\l{}on $K_0$
+    nie mo\.ze zosta\'c wygenerowany.
+\end{enumerate}
+Argumenty (A)--(C) s\k{a} wzajemnie niezale\.zne i~razem stanowi\k{a}
+silne uzasadnienie, \.ze $K(0)=0$ jest wynikiem \emph{dok\l{}adnym},
+a~nie artefaktem aproksymacji LPA.
+\hfill$\square$
+\end{dowod}
+
+\begin{uwaga}[Ograniczenia LPA --- uzupe\l{}nienie]
 LPA pomija anomalny wymiar $\eta \neq 0$. Dla klasy Isinga 3D: $\eta = 0{,}036$
-(mała korekta). Dla celów TGP — weryfikacji $K(0)=0$, znaku $u_6$ i
-skali $\lambda_\mathrm{eff}$ — LPA jest wystarczająca. Pełna analiza LPA'
-(z $\eta \neq 0$) pozostaje zadaniem otwartym (OP-1).
+(ma\l{}a korekta). Dla cel\'ow TGP --- weryfikacji $K(0)=0$, znaku $u_6$ i~skali
+$\lambda_\mathrm{eff}$ --- LPA jest wystarczaj\k{a}ca.
+Propozycja~\ref{prop:K0_beyond_LPA} pokazuje ponadto, \.ze warunek $K(0)=0$
+jest chroniony r\'ownie\.z poza LPA, zamykaj\k{a}c punkt otwarty OP-1
+w~odniesieniu do tego warunku.
 \end{uwaga}

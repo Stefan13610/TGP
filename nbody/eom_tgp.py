@@ -5,12 +5,13 @@ eom_tgp.py — Analityczna postać równań ruchu N ciał TGP (warstwa 1 vs wars
 Warstwa 1 — ANalityka TGP (bez czasu, bez kwadratur po czasie)
 ---------------------------------------------------------------
 Przy źródłach punktowych i Drodze B (profil Yukawy jako warunek brzegowy) energia
-potencjalna w zadanym rzędzie (2-ciałowy + redukowalny Φ⁴) ma postać:
+potencjalna w zadanym rzędzie (2-ciałowy + nieredukowalny 3-ciałowy z potencjału)
+ma postać:
 
     V(q) = Σ_{i<j}  V_2(d_ij; C_i,C_j,β,γ)
-         + Σ_{i<j<k} V_3^{irr}(d_ij, d_ik, d_jk; C_i,C_j,C_k,γ)
+         + Σ_{i<j<k} V_3^{irr}(d_ij, d_ik, d_jk; C_i,C_j,C_k,β,γ)
 
-    V_3^{irr} = -6 γ C_i C_j C_k · I(d_ij, d_ik, d_jk)
+    V_3^{irr} = (2β - 6γ) C_i C_j C_k · I(d_ij, d_ik, d_jk)
 
 gdzie I jest całką nakładki potrójnej (Yukawa lub jej granica Coulomba).  Siła:
 
@@ -21,7 +22,7 @@ Dla pojedynczego tripletu (i,j,k) zależność I tylko od odległości daje:
     ∂I/∂x_i = (∂I/∂d_ij) (x_i-x_j)/d_ij + (∂I/∂d_ik) (x_i-x_k)/d_ik
 
     F_i^{(ijk)} = -∂V_3/∂x_i
-                = 6 γ C_i C_j C_k · ∂I/∂x_i
+                = (6γ - 2β) C_i C_j C_k · ∂I/∂x_i
 
 (analogicznie dla j, k — indeksy w parach z i).  To jest **pełna postać wektorowa**
 niezależna od wyboru backendu dla I.
@@ -62,18 +63,21 @@ TripletIDerivatives = Callable[[float, float, float], Tuple[float, float, float]
 def irreducible_three_body_forces_from_I_derivatives(
     positions: np.ndarray,
     C_values: np.ndarray,
+    beta: float,
     gamma: float,
     softening: float,
     dI_triplet: TripletIDerivatives,
 ) -> np.ndarray:
     """
-    Siły 3-ciałowe z V_3 = -6γ C_i C_j C_k I(d_ij,d_ik,d_jk) przy znanych pochodnych I.
+    Siły 3-ciałowe z
+        V_3 = (2β - 6γ) C_i C_j C_k I(d_ij,d_ik,d_jk)
+    przy znanych pochodnych I.
 
     Parameters
     ----------
     positions : (N, 3)
     C_values : (N,)
-    gamma : float
+    beta, gamma : float
     softening : regulator numeryczny na d (jak w dynamics_v2)
     dI_triplet : callable (d_ij, d_ik, d_jk) -> (g_ij, g_ik, g_jk)
         g_ab = ∂I/∂d_ab w punktach aktualnych odległości.
@@ -89,7 +93,7 @@ def irreducible_three_body_forces_from_I_derivatives(
 
     for i, j, k in combinations(range(n), 3):
         Ci, Cj, Ck = C_values[i], C_values[j], C_values[k]
-        pref = 6.0 * gamma * Ci * Cj * Ck
+        pref = (6.0 * gamma - 2.0 * beta) * Ci * Cj * Ck
 
         rij = positions[j] - positions[i]
         rik = positions[k] - positions[i]
@@ -158,7 +162,7 @@ def accelerations_tgp_nbody(
 
     dI_fn = three_body_dI if three_body_dI is not None else dI_coulomb_closed_form
     F3 = irreducible_three_body_forces_from_I_derivatives(
-        positions, C_values, gamma, softening, dI_fn
+        positions, C_values, beta, gamma, softening, dI_fn
     )
     return (F2 + F3) / C_values[:, None]
 

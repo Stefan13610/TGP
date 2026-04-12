@@ -2,6 +2,12 @@
 """
 ex89_beta_pot_scan.py — Zależność zer F(α*)=R21 od β_pot (O-L2, v36)
 =======================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older `alpha*` / `F(alpha)` / selection-language
+chain. Keep it as legacy exploratory context rather than a canonical modern
+`nbody` example.
+
 Pytanie fizyczne:
   Czy dwa zera F(α*) = R21 są specyficzne dla β_pot=1,
   czy zachowują się dla dowolnego β_pot?

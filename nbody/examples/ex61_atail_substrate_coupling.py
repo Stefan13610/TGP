@@ -1,6 +1,12 @@
 """
 ex61_atail_substrate_coupling.py
 ==================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script captures an older analytic route to `A_tail^4` and the historical
+bridge from substrate language to lepton ratios. It remains useful as context,
+but it is not the canonical synchronized bridge used by current `nbody`.
+
 Analityczne i numeryczne wyprowadzenie A_tail^4 = r_21 z pierwszych zasad TGP.
 
 KONTEKST (dod. J, hip:J-mass-Atail4):

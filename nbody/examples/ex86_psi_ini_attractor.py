@@ -2,6 +2,12 @@
 """
 ex86_psi_ini_attractor.py — Atraktor ψ_ini = 7/6  (zadanie F5)
 ================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to an older cosmology/selection layer predating the current
+canonical synchronization of `nbody`. Treat it as historical exploratory
+context, not as a primary current reference.
+
 Numeryczna weryfikacja hipotezy:
     ψ_ini = 7/6 jest wyróżnionym warunkiem początkowym TGP,
     wynikającym z przejścia fazowego GL substratu.

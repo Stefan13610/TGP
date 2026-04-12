@@ -1,5 +1,10 @@
 """
 EX80: PRECYZYJNA ANALIZA ALGEBRAICZNA alpha*_1, alpha*_2
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older `alpha*` algebra / sum-rule program. It is
+useful as historical exploratory context, but it is not part of the canonical
+current `nbody` path.
 
 Wersja szybka: uzywamy wartosci z ex79 (brentq xtol=1e-8):
   alpha*_1 = 2.44143051

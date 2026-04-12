@@ -1,5 +1,10 @@
 """
 EX72: ILOCZYN alpha*_1 * alpha*_2 I RELACJE ALGEBRAICZNE
+STATUS: LEGACY-TRANSLATIONAL
+
+This file continues the historical `alpha*` algebra/selection program built on
+older variables and matching rules. Keep as legacy translation and exploratory
+material rather than a canonical modern entry point.
 
 Z ex71:
   alpha*_1 = 2.44142  (pierwsze zero delta)

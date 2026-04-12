@@ -1,6 +1,12 @@
 """
 EX64: PRECYZYJNE alpha* I WARUNEK M_raw
 ========================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older `alpha*` / `M_raw` selection program. It may
+still be useful diagnostically, but it should not be treated as the canonical
+source for current `nbody` assumptions.
+
 Cele:
   1. Precyzyjne wyznaczenie alpha* (gdzie czyste phi daje r21=207)
      Hipoteza: alpha* = sqrt(6) = 2.4495?

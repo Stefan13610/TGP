@@ -2,6 +2,12 @@
 """
 ex98_tau_multiplier.py — Jaki mnożnik m* daje (A(m·z₀)/A(z₀))^4 = R₃₁?
 ==========================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older tau-sector multiplier search built on legacy
+selection variables. Keep it as exploratory transition material rather than a
+canonical synchronized path.
+
 Wyniki ex96/ex97:
   G₃(φ²·z₀)_far > R₃₁ wszędzie na α∈[2.5,5.0]
   Plateau A_tau potwierdzone do r=286

@@ -1,6 +1,12 @@
 """
 EX66: M_CORE — FIZYCZNA MASA TGP JAKO CAŁKA JĄDRA
 ==================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older `A_tail^4` / `g0* ~ 1.24` mass-selection
+program. Keep it as historical translation and diagnostic context, not as a
+canonical synchronized entry point for current `nbody`.
+
 Hipoteza (ex65): Fizyczna masa solitonu TGP to ENERGIA JĄDRA,
 nie ogona. Ogon ma zerową energię netto (kasowanie kin+pot).
 

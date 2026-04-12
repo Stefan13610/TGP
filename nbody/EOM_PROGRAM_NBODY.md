@@ -2,15 +2,20 @@
 
 **Zakres:** ten dokument i powiązany kod w **`nbody/`** są utrzymywane jako spójna warstwa pakietu. Ewentualne różnice względem głównego tomu LaTeX w `TGP_v1/` nie blokują prac tutaj — integrujesz je osobno, gdy zechcesz.
 
-**Cel nadrzędny:** mieć **jasno rozdzielone** (i udokumentowane) dwa problemy:
+**Kanoniczny kontekst teorii:** `nbody` jest dziś utrzymywane jako warstwa **efektywna**. Klasyczny defekt ma ogon `sin(r)/r`; źródło Yukawy jest obiektem pośrednim otrzymanym po projekcji EFT. Zwięzły słownik i równania: [`THEORY_SYNC_NBODY.md`](THEORY_SYNC_NBODY.md).
+
+**Cel nadrzędny:** mieć **jasno rozdzielone** (i udokumentowane) trzy problemy:
 
 | Warstwa | Pytanie | Co musi być „zamknięte” |
 |--------|---------|-------------------------|
-| **1 — Analityka TGP** | Jakiego potencjału / jakich sił używamy i jak wygląda **wektorowa** postać \(F_i = -\nabla_i V\)? | Zamknięte wzory na \(V_2\), postać \(V_3\) przez \(I(d_{ij},d_{ik},d_{jk})\), reguła łańcuchowa na \(\nabla_i I\) **bez** wchodzenia w szczegóły kwadratury. |
+| **0 — Most klasyczny \(\to\) EFT** | Jak przejść od defektu `g(r)` do parametrów źródła używanych w `nbody`? | Oscylacyjny ogon `sin(r)/r`, projekcja `C_eff = \int \delta e^{-m_sp r} r dr`, kanoniczne wejścia `C_eff`, `m_sp`. |
+| **1 — Analityka TGP / EFT** | Jakiego potencjału / jakich sił używamy i jak wygląda **wektorowa** postać \(F_i = -\nabla_i V\)? | Zamknięte wzory na \(V_2\), postać \(V_3\) przez \(I(d_{ij},d_{ik},d_{jk})\), reguła łańcuchowa na \(\nabla_i I\) **bez** wchodzenia w szczegóły kwadratury. |
 | **2 — Przeliczenie na współrzędne** | Jak policzyć \(I\) i \(\partial I/\partial d_{ab}\) oraz jak z czasu dostać \(q(t)\)? | Backend: całka Feynmana 2D (`three_body_force_exact`), siatka 3D (`triple_overlap_numerical`), ewentualnie przyszłe zamknięcie \(I_Y\); integrator: `leapfrog_integrate` / RK. |
 
 Implementacja warstwy 1 z callable \(\partial I/\partial d\): moduł **`eom_tgp.py`** (`irreducible_three_body_forces_from_I_derivatives`, `accelerations_tgp_nbody`).  
 Domyślne zamknięcie Coulomba na \(I\) jest zgodne z `dynamics_v2.three_body_forces_approximate(..., use_yukawa=False)` (test w `if __name__ == "__main__"`).
+
+Implementacja warstwy 0: **`bridge_nbody.py`** (`solve_classical_defect`, `derive_effective_source_from_defect`, `build_nbody_source_from_defect`) z backendem defektowym z `yukawa_from_defect.py`.
 
 **TeX do głównego tomu:** `\input{tgp_nbody_lagrangian_eom}` — plik [`tgp_nbody_lagrangian_eom.tex`](tgp_nbody_lagrangian_eom.tex) (ścieżka względem katalogu roboczego LaTeX; zwykle ustaw `\input{nbody/tgp_nbody_lagrangian_eom}` z korzenia `TGP_v1/`).  
 Opcjonalnie chaos numeryczny: [`tgp_lyapunov_benettin.tex`](tgp_lyapunov_benettin.tex) (`\input{nbody/tgp_lyapunov_benettin}`).
@@ -25,9 +30,17 @@ Opcjonalnie chaos numeryczny: [`tgp_lyapunov_benettin.tex`](tgp_lyapunov_benetti
    - Jedna sekcja w istniejącym pliku `.tex` w `nbody/` lub krótki dodatek: \(L = \sum_i \tfrac12 C_i \|\dot x_i\|^2 - V\), \(V\) jak wyżej, jawne \(F_i^{(ijk)}\).  
    - Status: częściowo pokryte przez `three_body_force_exact.py` (wstęp) i teraz `eom_tgp.py`.
 
+1a. **Formalny zapis mostu klasycznego \(\to\) EFT**  
+   - `g(r)` z klasycznego defektu nie jest Yukawą; Yukawa pojawia się dopiero po projekcji `C_eff`.
+   - Status: teraz jawnie spięte przez `bridge_nbody.py` + `THEORY_SYNC_NBODY.md`.
+
 2. **Backend \(I_Y\) dla dynamiki**  
    - Do symulacji z pełną Yukawą: **używać** `three_body_forces_exact` (już EXACT), a nie przybliżenia saddle-point z `dynamics_v2` (duży błąd przy małym \(m d\)).  
-   - Otwarte badawczo: zamknięta forma \(I_Y\) (plan P4 w `PLAN_ROZWOJU_NBODY.md`).
+   - Dodatkowo domknięte na poziomie analitycznym: dokładna pochodna `∂I_Y/∂m_sp`
+     i tożsamość skalowania
+     \((\sum d_{ij}\partial_{d_{ij}} - m_{sp}\partial_{m_{sp}})I_Y = 0\),
+     zaimplementowane w `three_body_force_exact.py`.  
+   - Otwarte badawczo: prostsza zamknięta forma samego \(I_Y\) dla ogólnej geometrii.
 
 3. **Spójny interfejs „analityka → numeryka”**  
    - Zrobione: `dynamics_backends.build_tgp_integration_pair` wybiera backend i zwraca `(acc_fn, pot_fn)` pod leapfrog / RK45 (`ex138`–`ex140`).
@@ -64,4 +77,4 @@ Opcjonalnie chaos numeryczny: [`tgp_lyapunov_benettin.tex`](tgp_lyapunov_benetti
 
 ---
 
-*Nawigacja:* [README.md](README.md) · [PLAN_ROZWOJU_NBODY.md](PLAN_ROZWOJU_NBODY.md) · [ZALOZENIA_NBODY.md](ZALOZENIA_NBODY.md)
+*Nawigacja:* [README.md](README.md) · [PLAN_ROZWOJU_NBODY.md](PLAN_ROZWOJU_NBODY.md) · [ZALOZENIA_NBODY.md](ZALOZENIA_NBODY.md) · [THEORY_SYNC_NBODY.md](THEORY_SYNC_NBODY.md)

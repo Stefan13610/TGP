@@ -1,5 +1,10 @@
 """
 EX74: BIFURKACJA — przy jakim beta dwa zera delta(alpha) zlewaja sie w jedno?
+STATUS: LEGACY-TRANSLATIONAL
+
+This file extends the historical `delta(alpha)` / bifurcation analysis in the
+older variable set. Keep it as legacy transition material, not as a canonical
+current workflow.
 
 Cel: znalezc krytyczne beta_c (w poblizu beta=1) gdzie delta(alpha) ma
 dokladnie jeden dublet zero (d/dalpha = 0 i delta = 0 jednoczesnie).

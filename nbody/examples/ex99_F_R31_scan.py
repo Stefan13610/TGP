@@ -2,6 +2,12 @@
 """
 ex99_F_R31_scan.py — Czy F_far(α) = R₃₁ ma rozwiązanie? (O-L8, v38)
 ======================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file continues the older `F(alpha)` / tau-target exploration in legacy
+variables. It should be read as historical exploratory context, not as a
+canonical current `nbody` source.
+
 Hipoteza:
   Z ex96/ex98: F_far rośnie monotonicznie dla α>3 (233→672 na [3,5]).
   Interpolacja sugeruje F_far(α)=R₃₁=3477 gdzieś w α≈8–12.

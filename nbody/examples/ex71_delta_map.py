@@ -1,5 +1,10 @@
 """
 EX71: MAPA delta(alpha) — DWA ZERA (ROWNOLEGLE, max 16 rdzeni)
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the historical `delta(alpha)`, `alpha*`, and old
+selection-language chain. Read it as legacy/exploratory transition material,
+not as a canonical current `nbody` source.
 """
 import sys, io, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')

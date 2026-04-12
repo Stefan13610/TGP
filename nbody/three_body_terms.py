@@ -18,7 +18,7 @@ STATUS OF RESULTS:
                 for the unscreened 3-body force.
 
 Origin of the 3-body force
----------------------------
+--------------------------
 The TGP energy functional contains nonlinear self-interaction terms:
 
     E[Phi] = ... + (beta/3 Phi_0) Phi^3 - (gamma/4 Phi_0^2) Phi^4
@@ -31,16 +31,29 @@ plus the vacuum:
 with delta_i = C_i * exp(-m_sp * r_i) / r_i being the Yukawa profile of
 source i, the QUARTIC term -(gamma/4*Phi_0^2) * Phi^4 produces cross-terms.
 
-Expanding (1 + d1 + d2 + d3)^4 via the multinomial theorem, the
-irreducible 3-body cross-term (one power of 1, one each of d1, d2, d3)
-has multinomial coefficient:
+The irreducible 3-body term receives contributions from BOTH nonlinearities:
+
+  - cubic sector +(beta/3) Phi^3  -> coefficient +2*beta
+  - quartic sector -(gamma/4) Phi^4 -> coefficient -6*gamma
+
+Expanding (1 + d1 + d2 + d3)^4 via the multinomial theorem, the quartic
+cross-term (one power of 1, one each of d1, d2, d3) has coefficient:
 
     4! / (1! * 1! * 1! * 1!) = 24
 
-So the 3-body contribution from the quartic term is:
+So the quartic contribution is:
 
-    V_3 = -(gamma/4) * Phi_0^2 * 24 * integral { delta_1 * delta_2 * delta_3 } d^3x
-        = -6 * gamma * C1*C2*C3 * I_triple_bare
+    V_3^(4) = -(gamma/4) * Phi_0^2 * 24 * integral { delta_1 * delta_2 * delta_3 } d^3x
+           = -6 * gamma * C1*C2*C3 * I_triple_bare
+
+The cubic sector gives:
+
+    V_3^(3) = +(beta/3) * Phi_0 * 6 * C1*C2*C3 * I_triple_bare
+           = +2 * beta * C1*C2*C3 * I_triple_bare
+
+Hence the full irreducible 3-body coefficient used in the code is:
+
+    V_3 = (2*beta - 6*gamma) * C1*C2*C3 * I_triple_bare
 
 where I_triple_bare is the triple overlap integral of the SCREENED Yukawa
 profiles (not bare 1/r, which would diverge).
@@ -201,22 +214,18 @@ def three_body_energy(d12, d13, d23, C1, C2, C3, beta=None, gamma=None,
                       use_numerical=False, positions=None):
     """Irreducible 3-body energy from the quartic self-interaction.
 
-    From the expansion of -(gamma/4*Phi_0^2) * Phi^4 with
-    Phi = Phi_0*(1 + d1 + d2 + d3), the irreducible 3-body cross-term is:
+    The full irreducible 3-body term comes from the cubic and quartic
+    nonlinearities together:
 
-        V_3 = -(gamma/4) * Phi_0^2 * 24 * C1*C2*C3 * I_triple_bare
-            = -6 * gamma * C1*C2*C3 * I_triple_bare
+        V_3 = (2*beta - 6*gamma) * C1*C2*C3 * I_triple_bare
 
     where I_triple_bare is the triple overlap integral of the Yukawa profiles
-    (without C factors), and the coefficient 24 = 4!/(1!1!1!1!) is the
-    multinomial coefficient for the term 1^1 * d1^1 * d2^1 * d3^1 in
-    (1 + d1 + d2 + d3)^4.
+    (without C factors).  The coefficient +2*beta comes from Phi^3, while
+    -6*gamma comes from Phi^4.
 
-    Physical interpretation: the factor -6*gamma represents the strength
-    of the quartic nonlinearity.  The sign is ATTRACTIVE (V_3 < 0 for
-    gamma > 0), meaning three bodies attract each other MORE than the
-    sum of pairwise attractions.  This is the TGP analogue of the
-    Axilrod-Teller-Muto three-body dispersion force.
+    Physical interpretation: for the vacuum sector beta = gamma the net
+    coefficient is negative, so the irreducible 3-body interaction is
+    attractive.  This is the TGP analogue of a non-additive three-body force.
 
     Parameters
     ----------
@@ -234,8 +243,9 @@ def three_body_energy(d12, d13, d23, C1, C2, C3, beta=None, gamma=None,
 
     Returns
     -------
-    V3 : float
-        Irreducible 3-body interaction energy.
+        V3 : float
+        Irreducible 3-body interaction energy with full coefficient
+        (2*beta - 6*gamma).
     """
     beta, gamma = default_beta_gamma(beta, gamma)
     m_sp = screening_mass(beta, gamma)

@@ -1,6 +1,12 @@
 """
 ex59_mass_stability_scan.py
 ============================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file extends the older mass-structure / sector-transition program in the
+historical `g0 = 1.24, 2.00` language. Keep as a translation/history layer, not
+as the canonical current formulation.
+
 Stabilność solitonów z odbiciami i struktura dM/dg0 w TGP.
 
 KONTEKST (ex57, ex58):

@@ -238,6 +238,66 @@ Oscylacyjny $V_{\rm eff}$ (BH) & Dod.~\ref{app:ringdown} (uw.~\ref{rem:oscillato
 \end{tabular}
 \end{center}
 
+% ----------------------------------------------------------
+\subsection*{S\l{}ownik formulacji TGP}
+
+W~manuskrypcie wsp\'o\l{}istniej\k{a} dwa r\'ownowa\.zne opisy
+tego samego formalizmu (Formulacja~A i~B) oraz dwa schematy
+sprz\k{e}\.zenia kinetycznego ($\alpha = 1$ i~$\alpha = 2$).
+Poni\.zsza tabela jednoznacznie okre\'sla ich zakres wa\.zno\'sci.
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{2.8cm}p{5.0cm}p{5.0cm}@{}}
+\toprule
+\textbf{Cecha} & \textbf{Formulacja~A (kanoniczna)} & \textbf{Formulacja~B (perturbacyjna)} \\
+\midrule
+Zmienna & $g = \Phi/\PhiZero \in (0,1]$ & $f(g) = 1 + 4\ln g$ \\
+Sprz\k{e}\.zenie kinetyczne & $K(g) = g^4$ (dok\l{}adne, ca\l{}y zakres) & $f(g)$ (obci\k{e}cie do $O(\ln g)$, $g \approx 1$) \\
+Pr\'o\.znia & $g = 1$ & $f = 1$ \\
+$\Nzero$ (nico\'s\'c) & $g = 0$, $K(0) = 0$ & $f \to -\infty$ (awaria przy $g^* = e^{-1/4}$) \\
+Punkt duchowy & \textbf{Brak} ($K(g) > 0$ dla $g > 0$) & $g^* = e^{-1/4} \approx 0{,}78$ \\
+Punkt r\'ownowagi & $g_0^e = 0{,}86941$ & $g_0^e = 1{,}24$ (= $1/0{,}86941$ po odwr.) \\
+Zakres wa\.zno\'sci & Ca\l{}a fizyka; r\'ownania soliton\'ow & Grawitacja s\l{}abego pola, kosmologia \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{2.8cm}p{5.0cm}p{5.0cm}@{}}
+\toprule
+\textbf{Cecha} & \textbf{$\alpha = 1$ (substratowe)} & \textbf{$\alpha = 2$ (kanoniczne)} \\
+\midrule
+Pochodzenie & $K(\phi) = K_{\rm geo}\,\phi^2$ (lem.~\ref{lem:K_phi2}) & $K(\phi) = K_{\rm geo}\,\phi^4$ (tw.~\ref{prop:substrate-action}) \\
+R\'ownanie solitonu & $g'' + \frac{2}{r}g' + \frac{1}{g}(g')^2 = V'(g)$ & $g'' + \frac{2}{r}g' + \frac{2}{g}(g')^2 = V'(g)$ \\
+U\.zycie & Masy lepton\'ow, $\varphi$-FP, $r_{21}$ & R\'ow. pola makrosk., PPN, kosmologia \\
+Relacja & \multicolumn{2}{c}{Oba wynikaj\k{a} z~tego samego hamiltonianu $H_\Gamma$,} \\
+        & \multicolumn{2}{c}{r\'o\.zni\k{a} si\k{e} sposobem ekstrakcji gradientu (sek10, uw.~\ref{rem:canonical_g4}).} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Definicja} & \textbf{Relacja} \\
+\midrule
+$\Phi_0$ (bare) & $\approx 168\,\Omega_\Lambda \approx 115$ & Parametr kalibracyjny Warstwy~II \\
+$\Phi_{\rm eff}$ & $\Phi_0 \cdot 3/14 \approx 25$ & = $N_f^2 = (2N_c - 1)^2$ \\
+$\kappa$ & $3/(4\Phi_{\rm eff})$ & $= 7/(2\Phi_0) \approx 0{,}030$ \\
+$a_\Gamma$ & $\approx 0{,}0401$ & $\approx 1/\Phi_{\rm eff}$ (hip.~\ref{hyp:agamma-phi0}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Wszystkie predykcje fizyczne (PPN, kosmologia, masy, $\alpha_s$)
+s\k{a} \textbf{niezale\.zne od wyboru} formulacji A~vs~B
+i~od konwencji $\alpha = 1$ vs $\alpha = 2$
+(weryfikacja: \texttt{ex190\_consistency\_chain.py}).
+
 \bigskip\noindent
 Szczeg\'o\l{}y formalne: ka\.zde twierdzenie ma jawny status
 (aksjomat/twierdzenie/propozycja/hipoteza/program)

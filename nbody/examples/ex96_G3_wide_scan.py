@@ -2,6 +2,12 @@
 """
 ex96_G3_wide_scan.py — Skan G₃(α) z oknami FAR [60,136] na α∈[2.5, 5.0]
 ===========================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older tau-sector `G3(alpha)` search chain in legacy
+variables. It is useful as exploratory history, but it is not part of the
+canonical synchronized `nbody` layer.
+
 Cel:
   Po wykryciu artefaktu w ex95 (okno [20,36] w near-field dla φ²·z₀≈3.31):
   szukamy PRAWDZIWEGO zera G₃=R₃₁ na szerokim zakresie α∈[2.5, 5.0]

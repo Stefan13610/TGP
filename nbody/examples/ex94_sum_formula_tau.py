@@ -2,6 +2,12 @@
 """
 ex94_sum_formula_tau.py — Weryfikacja S₃=8 i G₃/F=R32 (O-L5, v37)
 ====================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older tau-sector sum-rule / `G3/F` selection chain.
+Treat it as legacy exploratory context, not as a canonical synchronized
+`nbody` example.
+
 Cele:
   1. Precyzyjne α*τμ gdzie G₃(α)/F(α) = R32 = m_τ/m_μ ≈ 16.817
      (Z ex93: crossing między α=2.840 a α=2.850)

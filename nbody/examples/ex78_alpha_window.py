@@ -1,5 +1,10 @@
 """
 EX78: CZY alpha_TGP=2 JEST CENTRUM OKNA W PRZESTRZENI alpha?
+STATUS: LEGACY-TRANSLATIONAL
+
+This script continues the older `alpha*` / window-center exploration in legacy
+selection variables. It should be read as transitional historical material, not
+as a canonical synchronized example.
 
 Analogia do ex77: beta=1 jest centrum okna bifurkacji w przestrzeni beta.
 Pytanie: czy alpha_TGP=2 jest centrum jakiegos okna w przestrzeni alpha?

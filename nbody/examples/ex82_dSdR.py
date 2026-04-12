@@ -1,5 +1,10 @@
 """
 EX82: PRECYZYJNE dS/dR i PREDYKCJA r21 Z WARUNKU S = 2pi - 11/10
+STATUS: LEGACY-TRANSLATIONAL
+
+This script extends the historical `alpha*` / sum-rule track built on older
+selection variables. Keep it as legacy exploratory context rather than a
+canonical synchronized `nbody` example.
 
 Z ex80: S(r21=206.768) = 5.18318462, 2pi-11/10 = 5.18318531, roznica = -6.87e-7
 Z ex81: dS/dR ~ 8.87e-3 (gruba siatka)

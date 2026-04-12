@@ -2,6 +2,12 @@
 """
 ex103_mc_precision.py — Precyzyjny mnożnik krytyczny m_c i zera G₃=R₃₁ (S1, v40)
 ===================================================================================
+STATUS: LEGACY-TRANSLATIONAL
+
+This file continues the older tau-sector critical-multiplier search in legacy
+selection variables. Keep it as historical exploratory context rather than a
+canonical synchronized `nbody` path.
+
 Odkrycie z weryfikacji v40:
   min_α G3(m·z₀; α) zmienia znak między m=2.49 (min=3437<R₃₁) a m=2.50 (min=3510>R₃₁)
   → istnieje m_c ≈ 2.4955 gdzie min_α G3(m_c·z₀)=R₃₁ (tangensowe zero)

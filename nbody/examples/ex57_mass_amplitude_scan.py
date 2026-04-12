@@ -1,6 +1,12 @@
 """
 ex57_mass_amplitude_scan.py
 ============================
+STATUS: LEGACY-TRANSLATIONAL
+
+This script belongs to the older `g0 ~ 1.24 / 2.00`, ghost-boundary, and
+`A_tail`-selection program. It is still useful historically, but it is not the
+canonical synchronized entry point to current `nbody`.
+
 Weryfikacja hipotez wzmocnienia masy TGP: skan szerokopasmowy g_0 in [1.02, 7.0].
 
 WYNIKI EX55/EX56:
