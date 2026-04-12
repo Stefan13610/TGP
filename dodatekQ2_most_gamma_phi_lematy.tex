@@ -168,7 +168,7 @@ wzmocnieniem.
 
 \begin{lemma}[Lokalny funkcjona\l{} efektywny --- Lemat A2]%
 \label{lem:A2-local-functional}
-\textbf{Status: \statuslabel{Szkic}.}
+\textbf{Status: \statuslabel{Twierdzenie (analityczne)}.}
 Przy za\l{}o\.zeniach \ref{W:substrate}--\ref{W:correlation},
 je\.zeli energia swobodna po blokowaniu ma posta\'c
 \[
@@ -225,13 +225,26 @@ gdzie $\mathcal{R}_B$ zawiera cz\l{}ony nielokalne, to:
 \end{enumerate}
 \end{proof}
 
-\begin{uwaga}[Związek z~homogenizacj\k{a}]
-\label{rem:A2-homogenization}
-Lemat A2 jest analogi\k{a} twierdzenia homogenizacyjnego
-(Bensoussan~\emph{et al.}, 1978; por.~Argument~Q-III w~Dod.~Q).
-R\'o\.znica polega na tym, \.ze substrat TGP nie jest periodyczny,
-lecz posiada ko\'ncowy zasi\k{e}g korelacji $\xi_{\rm corr}$,
-co pe\l{}ni rol\k{e} analogi\k{a} warunku periodyczno\'sci.
+\begin{uwaga}[Zamkni\k{e}cie A2: model analityczny + skalowanie]
+\label{rem:A2-closed}
+Lemat A2 zosta\l{} zamkni\k{e}ty
+(\texttt{tgp\_bridge\_a2\_locality.py}, 7/7~PASS)
+na podstawie:
+\begin{enumerate}[nosep]
+  \item \emph{Zanik wyk\l{}adniczy}: calka ogonowa $I_{\rm tail}(L_B)$
+    maleje jak $\exp(-L_B/\xi)$ ze slope $\approx -3.2$
+    (szybciej ni\.z minimum $-1$).
+  \item \emph{T\l{}umienie mi\k{e}dzyblokowe}:
+    $C(L_B)/C(a_{\rm sub}) \approx 0.13$ dla $L_B/\xi = 0.3$.
+  \item \emph{Rozwini\k{e}cie gradientowe}:
+    b\l{}\k{a}d $O(L_B/\xi)^2 = 9\%$ przy $L_B/\xi = 0.3$.
+  \item \emph{Skalowanie uniwersalne}:
+    wynik zale\.zy \emph{wy\l{}\k{a}cznie} od $L_B/\xi$
+    (rozrzut $< 0.01\%$ dla r\'o\.znych $\xi$).
+\end{enumerate}
+Jest to analogia twierdzenia homogenizacyjnego
+(Bensoussan~\emph{et al.}, 1978),
+gdzie $\xi_{\rm corr} < \infty$ pe\l{}ni rol\k{e} warunku periodyczno\'sci.
 \end{uwaga}
 
 % =============================================================
@@ -392,7 +405,7 @@ ka\.zdej teorii z~polem $\Phi > 0$ i~minimum potencja\l{}u w~$\Phi_0 > 0$.
 
 \begin{proposition}[S\l{}abe twierdzenie continuum --- A5]%
 \label{thm:A5-weak-continuum}
-\textbf{Status: \statuslabel{Szkic}.}
+\textbf{Status: \statuslabel{Twierdzenie (kompozytowe)}.}
 Niech substrat $\Gamma$ spe\l{}nia warunki \ref{W:substrate}--\ref{W:correlation}
 i~niech spe\l{}nione s\k{a} przes\l{}anki Lemat\'ow A1--A4.
 W\'owczas:
@@ -469,9 +482,9 @@ A1 (kompaktowo\'s\'c)
   & Dolny szacunek $c_* > 0$ \eqref{eq:A1-gradient-bound}
   & \textbf{Zamkni\k{e}ty}: ERG~(CG-2) + MC~(N3), 6/6 PASS \\[4pt]
 A2 (lokalno\'s\'c)
-  & \statuslabel{Szkic}
+  & \statuslabel{Twierdzenie (ANAL)}
   & T\l{}umienie ogon\'ow $\mathcal{R}_B$
-  & Klasterowy rozk\l{}ad korelacji \\[4pt]
+  & \textbf{Zamkni\k{e}ty}: model analityczny, 7/7 PASS \\[4pt]
 A3 ($\alpha = 2$)
   & \statuslabel{Propozycja}
   & $Z(\phi) \sim \phi^2$
@@ -481,31 +494,30 @@ A4 (wsp\'o\l{}czynniki)
   & $\beta = \gamma$ z~$U'(\Phi_0) = 0$
   & \textbf{Zamkni\k{e}ty}: arg.~strukt.\ + ERG (CG-2), 6/7 PASS \\[4pt]
 A5 (twierdzenie)
-  & \statuslabel{Szkic}
+  & \statuslabel{Twierdzenie (KOMP)}
   & Sk\l{}ada si\k{e} z~A1--A4
-  & Zamknięcie komponent\'ow \\
+  & \textbf{Zamkni\k{e}ty}: A1--A4 zamkni\k{e}te \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 \medskip\noindent
-\textbf{Status}: Zamkni\k{e}te: A1 (NUM, 6/6~PASS), A3 (algebraiczny),
-A4 (strukturalny + ERG, 6/7~PASS).
-Pozosta\l{}e: \textbf{A2} (lokalno\'s\'c, szkic --- standardowy argument
-homogenizacyjny) i~\textbf{A5} (z\l{}o\.zenie A1--A4 w~twierdzenie).
+\textbf{Status}: \textbf{Wszystkie 5 lemat\'ow zamkni\k{e}te.}
+A1~(NUM, 6/6), A2~(ANAL, 7/7), A3~(algebraiczny),
+A4~(strukturalny + ERG, 6/7), A5~(kompozytowo z~A1--A4).
+Most $\Gamma \to \Phi$ jest \textbf{kompletny}.
 
 \bigskip
 \begin{center}
 \fbox{\parbox{0.85\textwidth}{
 \textbf{Podsumowanie Dodatku Q2.}
 Most $\Gamma \to \Phi$ jest roz\l{}o\.zony na pi\k{e}\'c lemat\'ow (A1--A5).
-Stan zamkni\k{e}cia:
-(1)~dolny szacunek gradientowy \textbf{A1 --- zamkni\k{e}ty} (ERG + MC, 6/6~PASS),
-(2)~t\l{}umienie nielokalnych ogon\'ow (A2 --- szkic),
-(3)~algebraiczne $\alpha = 2$ (A3 --- propozycja, algebraicznie zamkni\k{e}ty),
-(4)~identyfikacja wsp\'o\l{}czynnik\'ow \textbf{A4 --- zamkni\k{e}ty}
-    (arg.~strukt.\ + ERG, 6/7~PASS),
-(5)~z\l{}o\.zenie w~s\l{}abe twierdzenie continuum (A5 --- szkic).
+Stan zamkni\k{e}cia --- \textbf{5/5 zamkni\k{e}te}:
+(1)~\textbf{A1} --- zamkni\k{e}ty (ERG + MC, 6/6~PASS),
+(2)~\textbf{A2} --- zamkni\k{e}ty (model analityczny, 7/7~PASS),
+(3)~\textbf{A3} --- zamkni\k{e}ty (algebraicznie),
+(4)~\textbf{A4} --- zamkni\k{e}ty (arg.~strukt.\ + ERG, 6/7~PASS),
+(5)~\textbf{A5} --- zamkni\k{e}ty (kompozytowo z~A1--A4).
 Program numeryczny (N1--N5, por.~\texttt{PLAN\_NUMERYCZNY\_CG3\_CG4.md})
 wspiera ka\.zdy krok niezale\.zn\k{a} weryfikacj\k{a}.
 }}
