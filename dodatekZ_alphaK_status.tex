@@ -329,10 +329,85 @@ Na dzie\'n 2026-04-12, po potwierdzeniu degeneracji $\alpha$:
 \end{enumerate}
 \end{theorem}
 
-\begin{remark}[Rekomendacja programowa -- aktualizacja]
-Po zamkni\k{e}ciu OP-3 najwa\.zniejsze otwarte problemy to:
+% -------------------------------------------------------------------
+\subsection{Most substrat $\to g_0^e$: kandydaci relacji}
+\label{app:Z-substrate-bridge}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Kandydat ERG: $g_0^e \approx 1 - \frac{13}{3}\,\rho_0^*$]
+\label{prop:Z-ERG-bridge}
+Numerycznie zachodzi:
+\begin{equation}\label{eq:Z-ERG-bridge}
+  g_0^e \;\approx\; 1 - \tfrac{13}{3}\,\rho_0^*
+  \;=\; 1 - 4{,}333 \times 0{,}03045
+  \;=\; 0{,}86805,
+\end{equation}
+podczas gdy kalibracja $\varphi$-FP daje $g_0^e = 0{,}86770$.
+Odchylenie: $0{,}04\%$.
+
+\medskip\noindent
+Relacja \eqref{eq:Z-ERG-bridge} \l{}\k{a}czy dwa niezale\.zne
+obliczenia:
 \begin{enumerate}[nosep]
-  \item domkni\k{e}cie mostu substrat $\to g_0^e$,
+  \item $g_0^e$: parametr strza\l{}u solitonu
+    (r\'ownanie Formy~A, kalibracja $\varphi$-FP),
+  \item $\rho_0^* = 0{,}03045$: minimum potencja\l{}u
+    Wilsona--Fishera w~LPA$'$ (CG-2).
+\end{enumerate}
+Sta\l{}a $c = 13/3$ nie ma jeszcze derywacji analitycznej.
+Status: \textbf{Propozycja [NUM]}.
+\end{proposition}
+
+\begin{proposition}[Kandydat substratowy: $g_0^e \approx 1 - \pi\,a_\Gamma$]
+\label{prop:Z-substrate-bridge}
+Alternatywnie:
+\begin{equation}\label{eq:Z-substrate-bridge}
+  g_0^e \;\approx\; 1 - \pi\,a_\Gamma
+  \;=\; 1 - \pi \times 0{,}040049
+  \;=\; 0{,}87418.
+\end{equation}
+Odchylenie od $g_0^e = 0{,}86770$: $0{,}75\%$.
+Z~relacj\k{a} T1 ($a_\Gamma\,\Phi_0 = 1$) r\'ownowa\.zna posta\'c:
+$g_0^e \approx 1 - \pi/\Phi_0$.
+\end{proposition}
+
+\begin{proposition}[T2 kanoniczne: $C \equiv r_{21}/\Phi_0$]
+\label{prop:Z-T2-canonical}
+Dawna relacja T2 ($r_{21} = \Phi_0 \cdot \alpha_K^{\rm old}$)
+w~j\k{e}zyku kanonicznym przechodzi w:
+\begin{equation}\label{eq:Z-T2-canonical}
+  \frac{r_{21}}{\Phi_0} \;=\; C,
+  \qquad C \approx 8{,}38,
+\end{equation}
+gdzie $C$ zast\k{e}puje dawn\k{a} $\alpha_K^{\rm old} \approx 8{,}56$.
+Najlepszy kandydat na posta\'c zamkni\k{e}t\k{a}: $C \approx 3\pi - 1 = 8{,}425$
+(odchylenie $0{,}5\%$ przy $\Phi_0^{(\rm S3)} = 24{,}67$).
+\end{proposition}
+
+\begin{remark}[Status mostu substrat $\to g_0^e$]
+\label{rem:Z-bridge-status}
+Skrypt \texttt{tgp\_bridge\_substrate\_g0e.py} (6/7~PASS) ustala:
+\begin{enumerate}[nosep]
+  \item T1 ($a_\Gamma\,\Phi_0 = 1$) redukuje
+    $N_{\rm input} = 2 \to 1$; jedyny wolny parametr: $\Phi_0$;
+  \item kandydat ERG (prop.~\ref{prop:Z-ERG-bridge}) \l{}\k{a}czy
+    $g_0^e$ z~$\rho_0^*$ na poziomie $0{,}04\%$;
+  \item pe\l{}ne domkni\k{e}cie wymaga derywacji sta\l{}ej
+    $c = 13/3$ z~r\'owna\'n ERG
+    (wzgl\k{e}dnie dowodu, \.ze $C = r_{21}/\Phi_0$
+    jest wyznaczalne z~pierwszych zasad);
+  \item sektor leptonowy TGP ma $N_{\rm free} = 1$ ($\Phi_0$)
+    przed domkni\k{e}ciem T2-kanonicznego
+    oraz $N_{\rm free} = 0$ po nim.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Rekomendacja programowa -- aktualizacja]
+Po zamkni\k{e}ciu OP-3 i~eksploracji mostu substratowego,
+najwa\.zniejsze otwarte problemy to:
+\begin{enumerate}[nosep]
+  \item derywacja sta\l{}ej $c = 13/3$ z~r\'owna\'n ERG
+    (lub r\'ownowa\.znie: dowodzi\'c $C = 3\pi - 1$),
   \item pe\l{}na analityczna derywacja $\varphi$-FP
     z~pierwszych zasad (Warstwa~I--II),
   \item dalsze testy predykcji $r_{31}$ i~$Q_K$
