@@ -1,0 +1,239 @@
+% tabela_epistemiczna.tex  --  kanoniczna klasyfikacja epistemiczna TGP
+% Wersja: v47b (2026-04-12)
+%
+% Kategorie:
+%   K  = Kalibracja (parametr ustalony z danych)
+%   P  = Predykcja (zero wolnych parametrow, testowalny)
+%   W  = Warunek spojnosci (zalezy od skalibrowanych parametrow)
+%   D  = Wyprowadzenie strukturalne (wynika z TGP, nie jest niezalezna obserwabla)
+%   I  = Tozsamosc algebraiczna (definitional, nie jest testem)
+%   R  = Odzyskanie (recovery: dodatkowy parametr dopasowany, nie jest predykcja)
+%
+% Uzycie:  \input{tabela_epistemiczna}  w sek00_summary.tex lub sek07_predykcje.tex
+
+% ============================================================
+\subsection*{Kanoniczna klasyfikacja epistemiczna}
+\label{ssec:epistemic-table}
+% ============================================================
+
+\noindent
+TGP posiada \textbf{2 wolne parametry}:
+$\PhiZero \approx 25$ (kalibrowany z~$\Lambda_{\mathrm{obs}}$)
+i~$g_0^e \approx 0{,}8677$ (kalibrowany z~$r_{21} = m_\mu/m_e$).
+Ka\.zdy wynik poni\.zej sklasyfikowany jest wed\l{}ug
+\textbf{jednej} z~sze\'sciu kategorii:
+
+\smallskip
+\begin{center}\footnotesize
+\begin{tabular}{@{}cl@{}}
+\toprule
+\textbf{Kod} & \textbf{Znaczenie} \\
+\midrule
+\textbf{K} & \textbf{Kalibracja} --- parametr ustalony z~danych obserwacyjnych \\
+\textbf{P} & \textbf{Predykcja} --- zero dodatkowych parametr\'ow, testowalny \\
+\textbf{W} & \textbf{Warunek sp\'ojno\'sci} --- zale\.zy od skalibrowanych parametr\'ow;
+              predykcja jako\'sciowa niezale\.zna \\
+\textbf{D} & \textbf{Wyprowadzenie strukturalne} --- wynika z~TGP, nie jest osobn\k{a} obserwabla \\
+\textbf{I} & \textbf{To\.zsamo\'s\'c} --- algebraiczna/definicyjna, nie jest testem \\
+\textbf{R} & \textbf{Odzyskanie} --- dodatkowy parametr dopasowany, nie jest niezale\.zn\k{a} predykcj\k{a} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ============================================================
+% TABELA GLOWNA
+% ============================================================
+
+\begin{center}\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}rp{3.8cm}llrll@{}}
+\toprule
+\textbf{\#} & \textbf{Wynik} & \textbf{TGP} & \textbf{Dane}
+  & \textbf{$\sigma$} & \textbf{Kat.} & \textbf{\'Zr\'od\l{}o} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{\#} & \textbf{Wynik} & \textbf{TGP} & \textbf{Dane}
+  & \textbf{$\sigma$} & \textbf{Kat.} & \textbf{\'Zr\'od\l{}o} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{\footnotesize\itshape ci\k{a}g dalszy na nast\k{e}pnej stronie} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+%
+% === KALIBRACJE (K) ===
+%
+\multicolumn{7}{l}{\textbf{Kalibracje (K) --- parametry ustalane z~danych}} \\
+\midrule
+1 & $r_{21} = m_\mu / m_e$
+  & $206{,}77$ & $206{,}768$ & $<0{,}01$ & \textbf{K} & $\varphi$-FP (ustala $g_0^e$) \\
+2 & $\Lambda_{\mathrm{eff}}$
+  & z~$\PhiZero$ & $\Lambda_{\mathrm{obs}}$ & --- & \textbf{K} & ustala $\PhiZero$ \\
+%
+\midrule
+%
+% === TOZSAMOSCI (I) ===
+%
+\multicolumn{7}{l}{\textbf{To\.zsamo\'sci (I) --- algebraiczne, nie s\k{a} testami}} \\
+\midrule
+3 & $\lP = \mathrm{const}$
+  & --- & --- & --- & \textbf{I} & def.\ wyk\l{}adnik\'ow \\
+4 & $\alpha = 2$, $\beta = \gamma$
+  & --- & --- & --- & \textbf{I} & $K(g) = g^4$ \\
+5 & $c_{\mathrm{GW}} = c_0$
+  & $1$ & $|1 - c_T/c| < 10^{-15}$ & OK & \textbf{I} & stw.~\ref{prop:cT} \\
+6 & $K(0) = 0$
+  & --- & --- & --- & \textbf{I} & symetria $Z_2$ \\
+%
+\midrule
+%
+% === WYPROWADZENIA STRUKTURALNE (D) ===
+%
+\multicolumn{7}{l}{\textbf{Wyprowadzenia strukturalne (D) --- wynikaj\k{a} z~TGP, nie s\k{a} obserwablami}} \\
+\midrule
+7  & $d = 3$ (wymiar przestrzenny)
+   & $3$ & $3$ & --- & \textbf{D} & prop:wymiar \\
+8  & $N_{\mathrm{gen}} = 3$ (generacje)
+   & $3$ & $3$ & --- & \textbf{D} & $g_{0,\mathrm{crit}} = 8/5$ \\
+9  & $Q_K = 3/2$ (Koide)
+   & $3/2$ & $3/2 \pm 10^{-5}$ & --- & \textbf{D} & $d{=}3 \to \chi^2(2) \to \mathrm{CV}{=}1$ \\
+10 & $\pi_1 = \mathbb{Z}_2$ (fermiony)
+   & --- & --- & --- & \textbf{D} & thm:pi1-Z2 \\
+11 & $M \propto A_{\mathrm{tail}}^4$
+   & --- & --- & --- & \textbf{D} & prop:R-k4-dimensional \\
+12 & $\varphi$-FP: $g_0^\mu = \varphi \cdot g_0^e$
+   & --- & --- & --- & \textbf{D} & thm:J2-FP \\
+13 & PPN: $\gamma = \beta = 1$
+   & $1$ & $|1-\gamma| < 2{,}3 \times 10^{-5}$ & OK & \textbf{D} & rem:PPN-Will \\
+14 & $\kappa = 3/(4\PhiZero)$
+   & $0{,}030$ & zgodne & --- & \textbf{D} & dzia\l{}anie zunifikowane \\
+15 & $g_{0,\mathrm{crit}} = 8/5$
+   & $1{,}600$ & --- & --- & \textbf{D} & prop:collapse-threshold \\
+%
+\midrule
+%
+% === PREDYKCJE (P) ===
+%
+\multicolumn{7}{l}{\textbf{Predykcje (P) --- zero wolnych parametr\'ow, testowalne}} \\
+\midrule
+%
+%  -- Leptony --
+16 & $r_{31} = m_\tau / m_e$
+   & $3477{,}4$ & $3477{,}2$ & $< 0{,}01$ & \textbf{P} & $\varphi$-FP + Koide \\
+17 & $r_{32} = m_\tau / m_\mu$
+   & $16{,}818$ & $16{,}817$ & $< 0{,}1$ & \textbf{P} & = $r_{31}/r_{21}$ \\
+18 & $m_\tau$ (MeV)
+   & $1776{,}96$ & $1776{,}86 \pm 0{,}12$ & $0{,}9$ & \textbf{P} & $\varphi$-FP + Koide \\
+%
+%  -- Kosmologia --
+19 & $n_s$ (tilt skalarny)
+   & $0{,}9662$ & $0{,}9649 \pm 0{,}004$ & $0{,}3$ & \textbf{P} & inflacja TGP (MS) \\
+20 & $r$ (tensor-to-scalar)
+   & $0{,}004$ & $< 0{,}036$ & OK & \textbf{P} & inflacja TGP \\
+%
+%  -- Sprzezenia --
+21 & $\alpha_s(M_Z)$
+   & $0{,}1190$ & $0{,}1179 \pm 0{,}0009$ & $1{,}2$ & \textbf{P} & $N_c^3 g_0^e/(8\PhiZero)$ \\
+22 & $\alpha_s(m_\tau)$
+   & $0{,}326$ & $0{,}330 \pm 0{,}014$ & $0{,}3$ & \textbf{P} & discrete running \\
+23 & $\alpha_s(\tau)/\alpha_s(Z)$
+   & $2{,}778$ & $2{,}799 \pm 0{,}121$ & $0{,}18$ & \textbf{P} & $(5/3)^2$, 0~param. \\
+24 & $\sin^2\theta_W$ (skorygowany)
+   & $3/13$ & $0{,}2312$ & $0{,}6$ & \textbf{P} & prop:sin2thetaW \\
+%
+%  -- Strukturalne --
+25 & Trzy re\.zimy si\l{}y
+   & --- & tak & --- & \textbf{P} & strukturalny \\
+26 & Brak osobliwo\'sci CD
+   & --- & --- & --- & \textbf{P} & strukturalny \\
+27 & Coincidence problem
+   & --- & tak & --- & \textbf{P} & strukturalny \\
+28 & Niska entropia pocz\k{a}tku
+   & --- & tak & --- & \textbf{P} & strukturalny \\
+29 & Soczewkowanie $\equiv$ GR
+   & --- & zgodne & --- & \textbf{P} & prop:deflection-angle \\
+30 & FDM skalowanie $r_c \propto M^{-1/9}$
+   & --- & K18 & --- & \textbf{P} & z~$\mathcal{N}_0$ \\
+%
+%  -- Neutrina --
+31 & $K(\nu) = 1/2$; $\Sigma m_\nu \approx 63$\,meV
+   & NO & --- & --- & \textbf{P} & ex254 \\
+%
+\midrule
+%
+% === WARUNKI SPOJNOSCI (W) ===
+%
+\multicolumn{7}{l}{\textbf{Warunki sp\'ojno\'sci (W) --- zale\.z\k{a} od skalibrowanych parametr\'ow}} \\
+\midrule
+32 & Mod oddechowy GW
+   & $f(m_{\rm sp})$ & --- & --- & \textbf{W} & $\gamma, \sigma_0$ \\
+33 & Dynamiczne $G(z)$: $|\dot{G}/G|/H_0$
+   & $0{,}009$ & $< 0{,}01$ (LLR) & OK & \textbf{W} & $\kappa(\PhiZero)$ \\
+34 & $\hbar(\Phi)$ running
+   & --- & --- & --- & \textbf{W} & $q, \PhiZero$ \\
+35 & $w_{\rm DE}$
+   & $-1$ (dok\l{}.) & $-0{,}75 \pm 0{,}1$ & $2{,}5^*$ & \textbf{W} & $P(1) > 0$ \\
+36 & $\gamma_{\rm PPN}$ (screened)
+   & $1 - 10^{-12}$ & $|1-\gamma| < 10^{-5}$ & OK & \textbf{W} & Vainshtein \\
+%
+\midrule
+%
+% === ODZYSKANIA (R) ===
+%
+\multicolumn{7}{l}{\textbf{Odzyskania (R) --- dodatkowy parametr dopasowany}} \\
+\midrule
+37 & $m_b$ (MeV)
+   & $4211$ & $4180 \pm 30$ & $1{,}0$ & \textbf{R}$^\dagger$ & shifted Koide ($m_0$ fit) \\
+38 & $m_t$ (MeV)
+   & $172\,745$ & $172\,760 \pm 300$ & $0{,}05$ & \textbf{R}$^\dagger$ & shifted Koide ($m_0$ fit) \\
+39 & $p = 14/9$ (eksponent)
+   & $1{,}556$ & $1{,}560$ (fit) & $0{,}3\%$ & \textbf{R} & $2(2D{-}1)/[(D{-}1)N_c]$ \\
+%
+\end{longtable}
+\end{center}
+
+\smallskip\noindent
+$^\dagger$Sektor kwarkowy u\.zywa addytywnej masy konfinementu $m_0$
+dopasowanej do ka\.zdego sektora osobno (R12, dod.~X).
+Wyprowadzenie $m_0$ z~parametr\'ow TGP jest
+\textbf{otwartym problemem} (por.\ \S\ref{sec:status-map}).
+
+\medskip\noindent
+\textbf{Uczciwy bilans (v47b, 2026-04-12)}:
+
+\begin{center}
+\begin{tabular}{@{}lcl@{}}
+\toprule
+\textbf{Kategoria} & \textbf{Liczba} & \textbf{Przyk\l{}ady} \\
+\midrule
+\textbf{K} (kalibracja)        & 2  & $r_{21}$, $\Lambda_{\rm eff}$ \\
+\textbf{I} (to\.zsamo\'s\'c)   & 4  & $\lP$, $c_{\rm GW}$, $\alpha{=}2$ \\
+\textbf{D} (wyprowadzenie)     & 9  & $d{=}3$, $N_{\rm gen}{=}3$, $Q_K{=}3/2$, PPN \\
+\textbf{P} (predykcja)         & 16 & $m_\tau$, $n_s$, $\alpha_s$, $\sin^2\theta_W$, $K(\nu)$ \\
+\textbf{W} (sp\'ojno\'s\'c)   & 5  & $G(z)$, $w_{\rm DE}$, mod GW \\
+\textbf{R} (odzyskanie)        & 3  & $m_b$, $m_t$, eksponent $p$ \\
+\midrule
+\textbf{Razem}                 & 39 & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Stosunek predykcji do parametr\'ow: $M_{\rm pred}/N_{\rm param} = 16/2 = 8$.
+Z~warunkami sp\'ojno\'sci: $(P + W)/N = 21/2 = 10{,}5$.
+
+\medskip\noindent
+\textbf{Korekta wzgl\k{e}dem bilansu v42+}
+(por.\ \S\ref{sec:predykcje}):
+\begin{itemize}\itemsep0pt
+  \item $Q_K = 3/2$ przeniesione z~\textbf{K}~$\to$~\textbf{D}:
+        \l{}a\'ncuch $d{=}3 \to \chi^2(2) \to \mathrm{CV}{=}1 \to Q_K{=}3/2$
+        zamkni\k{e}ty w~v47b (rem:T-cv1-origin, thm:T-QK-CV).
+  \item Masy kwark\'ow ($m_b, m_t$) przeniesione z~domy\'slnej
+        \textbf{P}~$\to$~\textbf{R}: u\.zywaj\k{a} dopasowanego $m_0$.
+  \item Dodano 12~nowych wynik\'ow z~sesji v47b
+        ($\alpha_s$, $\sin^2\theta_W$, neutrina, strukturalne).
+\end{itemize}
