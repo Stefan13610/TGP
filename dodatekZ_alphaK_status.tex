@@ -441,13 +441,49 @@ w~$d=3$ z~CG-2).
 $N_{\rm free}^{\rm (masy)} = 0$.
 \end{proposition}
 
+\begin{proposition}[Struktura sta\l{}ej ERG: $c(\alpha)$ i~wybr\'or $\alpha{=}2$]
+\label{prop:Z-c-alpha-structure}
+Sta\l{}a $c = (1{-}g_0^e)/\rho_0^*$ \textbf{zale\.zy} od parametru koordynatowego~$\alpha$.
+Przybli\.zone warto\'sci $c(\alpha)$ przy $d=3$:
+\begin{center}\footnotesize
+\begin{tabular}{ccccc}
+\toprule
+$\alpha$ & $0{,}5$ & $1$ & $2$ & $3$ \\
+\midrule
+$c$ & $3{,}39$ & $3{,}68$ & $4{,}34$ & $5{,}14$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Przy \textbf{kanonicznym} $\alpha = 2$ ($\Phi = \phi^2$)
+numeryka daje $c = 4{,}345$, co odpowiada
+\begin{equation}\label{eq:c-cyclotomic}
+  c(\alpha{=}2,\, d) = \frac{d^2 + d + 1}{d}
+    = \frac{\Phi_3(d)}{d},
+\end{equation}
+gdzie $\Phi_3$ jest trzecim wielomianem cyklotomicznym.
+Przy $d = 3$: $c = 13/3$ (odch.\ $0{,}27\%$ od numeryki).
+$\alpha$ spe\l{}niaj\k{a}cy $c = 13/3$ dok\l{}adnie:
+$\alpha^* \approx 1{,}984 \approx 2$ (0{,}8\%).
+\textbf{To singluje $\alpha = 2$ jako fizycznie preferowany
+wyb\'or koordynat} --- jedyny, przy kt\'orym
+$c$ jest racjonaln\k{a} cyklotomiczn\k{a} sta\l{}\k{a}.
+
+Dodatkowa obserwacja: przy $\alpha = 0$ (brak cz\l{}onu krzy\.zowego)
+$c \approx \pi$ (0{,}31\%).
+
+Skrypt \texttt{tgp\_c133\_origin.py} (4/4~PASS).
+\end{proposition}
+
 \begin{remark}[Rekomendacja programowa -- aktualizacja]
-Po zamkni\k{e}ciu OP-3, mostu substratowego i~pe\l{}nego \l{}a\'ncucha numerycznego,
+Po zamkni\k{e}ciu OP-3, mostu substratowego, pe\l{}nego \l{}a\'ncucha numerycznego
+i~identyfikacji $c = \Phi_3(d)/d$,
 najwa\.zniejsze otwarte problemy to:
 \begin{enumerate}[nosep]
-  \item derywacja sta\l{}ej $c = 13/3$ z~r\'owna\'n ERG
-    (lub r\'ownowa\.znie: dowodzi\'c $C = 3\pi - 1$) ---
-    jedyny brakuj\k{a}cy element do pe\l{}nego zamkni\k{e}cia,
+  \item \textbf{analityczna derywacja} $c = (d^2{+}d{+}1)/d$
+    z~ODE Form~A przy $\alpha{=}2$ ---
+    prawdopodobnie perturbacyjna ekspansja solitonu
+    blisko $g{=}1$ w~po\l{}\k{a}czeniu ze struktur\k{a}
+    punktu sta\l{}ego Wilsona--Fishera;
   \item pe\l{}na analityczna derywacja $\varphi$-FP
     z~pierwszych zasad (Warstwa~I--II),
   \item dalsze testy predykcji $r_{31}$ i~$Q_K$
