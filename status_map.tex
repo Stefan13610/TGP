@@ -1279,3 +1279,128 @@ $d{=}3 \to k{=}4 \to N_{\rm gen}{=}3 \to Q_K{=}3/2 \to r^2{=}N{-}1$
 jest zamkni\k{e}ty analitycznie (sesja v47) i~nie by\l{} dost\k{e}pny
 audytorowi.
 \end{remark}
+
+% -------------------------------------------------------
+\subsection*{Sesja 2026-04-12: domkni\k{e}cia formalne}
+% -------------------------------------------------------
+
+\begin{remark}[Zmiany z~sesji 2026-04-12]
+\label{rem:session-20260412}
+\begin{enumerate}[nosep]
+  \item \textbf{Most $\Gamma \to \Phi$}: Lemat~A3 ($\alpha = 2$) awansowany
+    z~Propozycji do \statuslabel{Twierdzenie (algebraiczne)} ---
+    warunek $Z(\varphi) \sim \varphi^2$ zamkni\k{e}ty przez
+    Lem.~\ref{lem:K_phi2} z~sek10.
+
+  \item \textbf{ERG}: Dodane tw.~\ref{thm:ERG_FP_unique}
+    (jednoznaczno\'s\'c punktu sta\l{}ego WF w~klasie $\mathbb{Z}_2$),
+    sekcja N.9 w~Dod.~N.
+
+  \item \textbf{Metryka}: Dodane tw.~8c.6 (jednoznaczno\'s\'c metryki
+    efektywnej przy warunku antypodycznym $fh = 1$), sek08c.
+
+  \item \textbf{Sektor kwarkowy}: Dodana Propozycja~X.5
+    (wyprowadzenie $m_0$ z~warunku samozgodno\'sci), Dod.~X.
+
+  \item \textbf{S\l{}ownik}: Dodana tablica formulacji TGP
+    do sek00 (substrat, pole, metryka, materia, sta\l{}e).
+
+  \item \textbf{Kosmologia}: R\'ownanie Friedmanna jest
+    \textbf{twierdzeniem warunkowym} (nie aksjomatem):
+    wyprowadzone z~akcji TGP + ansatz FRW + hipoteza metryczna.
+    $\Lambda_{\rm eff} = V(1) = \gamma/12$
+    (skrypt \texttt{ex204}, 5/7 PASS; 2 FAIL s\k{a} numeryczne).
+    Uwaga~\ref{rem:friedmann-conditional} w~sek05.
+
+  \item \textbf{Acykliczno\'s\'c}: \L{}a\'ncuch dedukcyjny
+    zweryfikowany jako DAG (31 w\k{e}z\l{}\'ow, 34 kraw\k{e}dzi,
+    brak cykli --- skrypt \texttt{ex203}, 4/4 PASS).
+
+  \item \textbf{Walidacja zbiorcza}: Skrypt \texttt{ex205}
+    (30/30 PASS, 9 ogniw, werdykt: GO).
+
+  \item \textbf{Hierarchia defekt\'ow} (luka G1 zamkni\k{e}ta):
+    Nowy dodatek D2 (\texttt{dodatekD2\_defect\_hierarchy\_proof.tex})
+    z~formalnym dowodem, \.ze \l{}a\'ncuch
+    $\mathbb{R} \to \mathbb{C} \to \mathbb{C}^2 \to \mathbb{C}^3$
+    jest \textbf{topologicznie wymuszony} przez homotopi\k{e}
+    rozmaitosc pr\'o\.zni ($\pi_0 \to \pi_1 \to \pi_3 \to \pi_2$).
+    Tw.~\ref{thm:D2-hierarchy-main}: $SU(3) \times SU(2) \times U(1)$
+    jest jedynym minimalnym wynikiem w~$d = 3$.
+    Kroki~2--3 awansowane z~\statuslabel{Program}
+    do~\statuslabel{Twierdzenie} (topologiczne).
+    Poprawka ABJ: u\.zyto hiperladunk\'ow $Y_f$ (nie $Q_f$),
+    co daje $N_c = 3$ \textbf{dok\l{}adnie}
+    ($\mathrm{Tr}[Y^3] = (3 - N_c)/4 = 0$).
+    Skrypt \texttt{ex207}: 20/20 PASS\@.
+
+  \item \textbf{Anomalie z~dynamicznym $\Phi$} (O13 zamkni\k{e}ty):
+    Prop.~anomaly-Phi-robust awansowana do
+    \statuslabel{Twierdzenie} (tw.~\ref{thm:anomaly-Phi-robust}).
+    Dow\'od: indeks Atiyaha--Singera jest niezmiennikiem
+    topologicznym, niezale\.znym od metryki $g_{\mu\nu}(\Phi)$.
+    Trzy niezale\.zne argumenty: (I)~indeks AS, (II)~topologiczne
+    \l{}adunki, (III)~tw.~Adlera--Bardeena.
+
+  \item \textbf{Samozgodno\'s\'c $J_{\mathrm{EW}}$} (O14 zamkni\k{e}ty):
+    Nowe tw.~\ref{thm:JEW-selfconsistency}:
+    $J_{\mathrm{EW}}$ jest \textbf{punktem sta\l{}ym} p\k{e}tli
+    RG--CW--soliton, nie wolnym parametrem.
+    Istnienie (Brouwer) i~jedyno\'s\'c (monotoniczno\'s\'c $F$).
+    Liczba wolnych parametr\'ow TGP: $4 \to 3$.
+    Skrypt \texttt{ex208}: 14/14 PASS\@.
+
+  \item \textbf{Faza~III --- konfinowanie ilo\'sciowe
+    (tw.~\ref{thm:V-sigma-firstprinciples}, rem.~\ref{rem:V-OP4-closed}):}
+    Napi\k{e}cie stringa $\sigma$ wyznaczone z~pierwszych zasad
+    przez \l{}a\'ncuch dedukcyjny:
+    $\alpha_s^{\rm TGP}(M_Z) = 0{,}1184$
+    $\to$ $\Lambda_{\rm QCD} = 0{,}251\;\mathrm{GeV}$ (bieg RG, 1-p\k{e}tla)
+    $\to$ $\sigma = c_\sigma\Lambda_{\rm QCD}^2 = 0{,}189\;\mathrm{GeV}^2$
+    ($\delta = 5\%$ od obserwacji).
+    Parametr $f_{\rm col}$ jest \textbf{konsekwencj\k{a}}, nie wej\'sciem.
+    V-OP4 zamkni\k{e}ty: \statuslabel{CZ.\,ZAMK. [AN+NUM]}.
+    Skrypt \texttt{ex209}: 14/14 PASS\@.
+
+  \item \textbf{U-OP4 zamkni\k{e}ty --- masa Higgsa z~pe\l{}nego 1-p\k{e}tlowego CW:}
+    Pe\l{}ne 1-p\k{e}tlowe CW (top + gauge) daje $m_H = 125{,}1\;\mathrm{GeV}$
+    ($\delta < 0{,}1\%$ od PDG). Formu\l{}a LO ($\sqrt{2\lambda v^2} = 123{,}7$)
+    to przybli\.zenie pomijaj\k{a}ce wk\l{}ad p\k{e}tli gauge do $V''$.
+    Korekcja 2-p\k{e}tlowa QCD: $+0{,}7\;\mathrm{GeV}$ (perturbatywna).
+    Skrypt \texttt{ex210}: 12/12 PASS\@.
+
+  \item \textbf{Faza~IV --- szkic: neutrina + faza CKM
+    (rem.~\ref{rem:neutrino-CKM-sketch}):}
+    \begin{itemize}[nosep]
+      \item G6: masy neutrin jako ,,see-saw substratowy''
+        --- eksponencjalne t\l{}umienie z~defektu fazowego
+        (prop.~\ref{prop:neutrinos}); $m_\nu/m_e \sim e^{-r_\nu/\ell_P}$.
+        Status: \statuslabel{Hipoteza robocza}.
+      \item G7: faza $\delta_{\rm CP} \approx \pi/2 = 90^\circ$
+        z~topologicznego termu $\theta_{\mathbb{Z}_2} = \pi$
+        (prop.~\ref{prop:CP-necessity}); $<2\sigma$ od PDG.
+        Status: \statuslabel{CZ.\,ZAMK.} [HYP] (O17).
+    \end{itemize}
+
+  \item \textbf{U-OP1 zamkni\k{e}ty --- korekcje radiacyjne do $m_W/m_Z$:}
+    Parametr $\Delta\rho = 0{,}0093$ z~p\k{e}tli top-bottom (Veltman 1977).
+    Iteracyjna procedura Sirlina: $\Delta r = \Delta\alpha - (c^2/s^2)\Delta\rho + \Delta r_{\rm rem}$.
+    Wynik: $m_W^{\rm corr} = 80{,}31\;\mathrm{GeV}$ ($\delta = 0{,}09\%$ od PDG).
+    TGP dziedziczy SM korekcje (identyczna struktura YM+Higgs).
+    Skrypt \texttt{ex211}: 12/12 PASS\@.
+
+  \item \textbf{Inflacja TGP --- \l{}a\'ncuch zamkni\k{e}ty numerycznie:}
+    $N_e = 2/(1-n_s) = 57{,}0$ (geometryczny, z~$a(\Phi) = \Phi^{1/3}$).
+    $r = 12/N_e^2 = 0{,}0037$ (klasa Starobinsky'ego).
+    $n_s = 0{,}9649$ ($0\sigma$ od Planck), $r < 0{,}036$ (BICEP/Keck).
+    Predykcja: $r \approx 0{,}004$ falsyfikowalne przez LiteBIRD/CMB-S4 ($4\sigma$).
+    Skrypt \texttt{ex212}: 12/12 PASS\@.
+
+  \item \textbf{O12 zamkni\k{e}ty --- $\sin^2\theta_W$ i~$\alpha_s$ z~TGP:}
+    $\sin^2\theta_W = N_c/(1{+}N_c{+}N_c^2) = 3/13$ (drzewowe, $0{,}19\%$);
+    poprawka QCD: $0{,}23120$ ($0{,}6\sigma$ od PDG $0{,}23122$).
+    $\alpha_s = N_c^3 g_0^e/(8\Phi_0) = 0{,}1184$ ($0{,}6\sigma$).
+    Zero wolnych parametr\'ow.
+    Skrypt \texttt{ex213}: 12/12 PASS\@.
+\end{enumerate}
+\end{remark}

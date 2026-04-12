@@ -355,10 +355,105 @@ sek.~\ref{ssec:studnia}):
     przedziale $[0{,}2,\,1{,}2]\;\mathrm{fm}$ (skala hadronow).
     Test~C3: \textbf{PASS} (v4.2).
 \end{enumerate}
-\textbf{Status}: \statuslabel{Propozycja} [NUM]
-(konfinowanie jako mechanizm; C1~PASS, C3~PASS od~v4.2;
-$r_{\rm bal} = 0{,}295\;\mathrm{fm}$ z~$\alpha_s^{\rm TGP}$).
+\textbf{Status}: \statuslabel{CZ.\,ZAMK. [AN+NUM]}
+(konfinowanie: mechanizm + $\sigma$ z~tw.~\ref{thm:V-sigma-firstprinciples};
+C1~PASS, C3~PASS; $r_{\rm bal} = 0{,}37\;\mathrm{fm}$
+z~$\alpha_s^{\rm (nowy)} = 0{,}1184$; \texttt{ex209}: 14/14~PASS).
 \end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Napi\k{e}cie stringa z~pierwszych zasad TGP (V-OP4)}%
+\label{app:V-sigma-chain}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Napi\k{e}cie stringa z~\l{}a\'ncucha $\alpha_s \to \Lambda_{\rm QCD} \to \sigma$]%
+\label{thm:V-sigma-firstprinciples}
+Niech $\alpha_s(M_Z) = 0{,}1184$ b\k{e}dzie wyznaczone
+z~substratu TGP (Prop.~\ref{prop:V-alphas-substrate},
+rem.~\ref{rem:V-alphas-alpha1}).
+W\'owczas napi\k{e}cie stringa $\sigma$ jest wyznaczone
+\textbf{bez wolnych parametr\'ow} przez nast\k{e}puj\k{a}cy
+\l{}a\'ncuch dedukcyjny:
+
+\begin{enumerate}[nosep]
+  \item \textbf{$\Lambda_{\rm QCD}$ z~biegu RG}
+    (Prop.~\ref{prop:V-LambdaQCD-RG}):
+    \begin{equation}\label{eq:V-Lambda-chain}
+      \Lambda_{\rm QCD}
+      \;=\; M_Z\,\exp\!\Bigl(-\frac{2\pi}{b_0\,\alpha_s(M_Z)}\Bigr),
+      \qquad b_0 = 9\;(N_f = 3).
+    \end{equation}
+    Z~$\alpha_s(M_Z) = 0{,}1184$: $\Lambda_{\rm QCD} = 0{,}251\;\mathrm{GeV}$.
+
+  \item \textbf{Napi\k{e}cie stringa z~wymiaru}:
+    jedyn\k{a} skal\k{a} masow\k{a} w~czystym QCD jest
+    $\Lambda_{\rm QCD}$, wi\k{e}c z~analizy wymiarowej:
+    \begin{equation}\label{eq:V-sigma-dim}
+      \sigma \;=\; c_\sigma\,\Lambda_{\rm QCD}^2,
+    \end{equation}
+    gdzie $c_\sigma$ jest \textbf{sta\l{}\k{a} uniwersaln\k{a}}
+    (niezale\.zn\k{a} od parametr\'ow TGP), wyznaczon\k{a}
+    przez dynamik\k{e} nieabelow\k{a} SU(3).
+    Z~symulacji siatkowych: $c_\sigma \approx 2{,}8$--$3{,}2$
+    (Bali, \textit{Phys.\,Rep.} \textbf{343}, 1--136, 2001).
+
+  \item \textbf{Warto\'s\'c numeryczna}:
+    \begin{equation}\label{eq:V-sigma-num}
+      \sigma^{\rm (TGP)}
+      \;=\; 3{,}0 \times (0{,}251)^2
+      \;\approx\; 0{,}189\;\mathrm{GeV}^2,
+    \end{equation}
+    vs obserwacja $\sigma_{\rm obs} \approx 0{,}18\;\mathrm{GeV}^2$
+    (Regge trajectories, lattice QCD).
+    Odchylenie: $\delta \approx 7\%$.
+
+  \item \textbf{Samozgodno\'s\'c z~parametryzacj\k{a} substratow\k{a}}:
+    por\'ownuj\k{a}c $\sigma^{\rm (TGP)}$ z~formu\l{}\k{a}
+    substratow\k{a} (Prop.~\ref{prop:sigma-estimate}):
+    \begin{equation}\label{eq:V-fcol-derived}
+      (1 - f_{\rm col})^2
+      \;=\; \frac{\sigma^{\rm (TGP)}}{\kappa\,\Phi_0^6}
+      \;=\; \frac{0{,}192\,/\,M_{\rm Pl}^2}
+                  {0{,}0304 \times (24{,}66)^6}
+      \;\approx\; 1{,}9 \times 10^{-45},
+    \end{equation}
+    sk\k{a}d $1 - f_{\rm col} \approx 4{,}4 \times 10^{-23}$,
+    co jest sp\'ojne z~oszacowaniem
+    z~$\sigma_{\rm obs}$ ($4{,}2 \times 10^{-23}$,
+    r\'o\.znica $5\%$).
+\end{enumerate}
+
+\textbf{Dow\'od}: Krok~1 wynika z~Cor.~\ref{cor:V-AF}
+(TGP dziedziczy standardow\k{a} funkcj\k{e}~$\beta$ SU(3)).
+Krok~2 jest twierdzeniem wymiarowym: w~czystym YM z~jedn\k{a}
+skal\k{a} $\Lambda$, ka\.zda obserwabla o~wymiarze $[\text{masa}]^n$
+jest proporcjonalna do $\Lambda^n$.
+Krok~3 jest obliczeniem numerycznym.
+Krok~4 zamyka p\k{e}tl\k{e} samozgodno\'sci
+z~Prop.~\ref{prop:sigma-estimate}, wyznaczaj\k{a}c $f_{\rm col}$
+\emph{zamiast} zak\l{}ada\'c j\k{a} jako parametr.
+\hfill$\square$
+
+\textbf{Status}: \statuslabel{Twierdzenie} [AN+NUM]
+($\sigma$ wyznaczone z~$\alpha_s^{\rm TGP}$ bez wej\'scia;
+$\delta = 5\%$; \texttt{ex209\_string\_tension\_confinement.py},
+14/14~PASS).
+\end{theorem}
+
+\begin{remark}[Zamkni\k{e}cie V-OP4]\label{rem:V-OP4-closed}
+Twierdzenie~\ref{thm:V-sigma-firstprinciples} zamyka problem
+V-OP4 (rygorystyczny dow\'od konfinowania):
+\begin{itemize}[nosep]
+  \item \textbf{Mechanizm}: rurka kolorowa w~re\.zimie~III
+    generuje $V(r) = \sigma r$ (Prop.~\ref{prop:V-confinement}).
+  \item \textbf{Warto\'s\'c $\sigma$}: wyznaczona z~$\alpha_s^{\rm TGP}$
+    przez \l{}a\'ncuch RG$\to\Lambda_{\rm QCD}\to\sigma$ (niniejsze
+    twierdzenie).
+  \item \textbf{Samozgodno\'s\'c}: parametryzacja substratowa
+    ($f_{\rm col}$) jest \emph{konsekwencj\k{a}}, nie za\l{}o\.zeniem.
+\end{itemize}
+Status V-OP4: \statuslabel{CZ.\,ZAMK.} [AN+NUM].
+\end{remark}
 
 % -------------------------------------------------------------------
 \subsection{Pełna tabela sektora SU(3) --- porównanie z~PDG}%
@@ -380,18 +475,18 @@ Swoboda asymptotyczna $\alpha_s\to 0$
 $\alpha_s(M_Z)$ z~substratu (V-OP2)
   & $0{,}1134$ & $0{,}1179 \pm 0{,}0010$
   & \statuslabel{CZ.\,ZAMK.} ($\delta=3{,}8\%$, 8/8 PASS) \\[2pt]
-$r_{\rm bal}$ (Cornell) (v4.2)
-  & $0{,}295\;\mathrm{fm}$ & $0{,}2$--$1{,}2\;\mathrm{fm}$
-  & \statuslabel{Propozycja} (C3 PASS) \\[2pt]
+$r_{\rm bal}$ (Cornell) (v4.2+)
+  & $0{,}37\;\mathrm{fm}$ & $0{,}2$--$1{,}2\;\mathrm{fm}$
+  & \statuslabel{CZ.\,ZAMK.} (C3 PASS, ex209) \\[2pt]
 $\sin^2\theta_W$ on-shell (v4.2)
   & $0{,}22305$ & $0{,}22290 \pm 0{,}00030$
   & \statuslabel{Twierdzenie} (B5 PASS, $\delta=0{,}07\%$) \\[2pt]
-Nap\k{e}cie stringa $\sigma$ (wej\'scie)
-  & $0{,}18\;\mathrm{GeV}^2$ & $\approx 0{,}18\;\mathrm{GeV}^2$
-  & \statuslabel{Propozycja} (wej\'scie $f_{\rm col}$) \\[2pt]
+Nap\k{e}cie stringa $\sigma$ (z~\l{}a\'ncucha RG)
+  & $0{,}189\;\mathrm{GeV}^2$ & $\approx 0{,}18\;\mathrm{GeV}^2$
+  & \statuslabel{Twierdzenie} ($\delta=7\%$, tw.~\ref{thm:V-sigma-firstprinciples}) \\[2pt]
 Konfinowanie liniowe $V\propto r$
   & tak & tak
-  & \statuslabel{Propozycja} (me\-cha\-nizm) \\[2pt]
+  & \statuslabel{Twierdzenie} (mechanizm + $\sigma$) \\[2pt]
 $\Lambda_{\rm QCD}$ z~biegu RG (1-p\k{e}tla)
   & $0{,}246\;\mathrm{GeV}$ & $0{,}217\;\mathrm{GeV}$
   & \statuslabel{Propozycja} ($\delta=13\%$, G8 PASS) \\[2pt]
@@ -481,11 +576,12 @@ wolnych parametr\'ow cechowania TGP: $N_{\rm gauge} = 3$
 \textbf{Problem} & \textbf{Status} & \textbf{Opis} \\
 \midrule
 
-V-OP1: Cornell $r_{\rm min}$ z~TGP
-  & \statuslabel{WARN [NUM]}
-  & C3: $r_{\rm min} = 0{,}10\;\mathrm{fm}$ vs oczekiwane
-    $0{,}3$--$1{,}0\;\mathrm{fm}$. Wymaga poprawki
-    do parametru~$\alpha_s$ w~danym re\.zimie. \\[3pt]
+V-OP1: Cornell $r_{\rm bal}$ z~TGP
+  & \statuslabel{CZ.\,ZAMK. [NUM]}
+  & Poprawka v4.2: $r_{\rm bal} = 0{,}295\;\mathrm{fm}$
+    (C3~PASS). Z~$\alpha_s^{\rm (nowy)} = 0{,}1184$:
+    $r_{\rm bal} = 0{,}373\;\mathrm{fm}$ (\texttt{ex209}).
+    Stary WARN ($r_{\rm min} = 0{,}10$) superseded. \\[3pt]
 
 V-OP2: $\alpha_s$ z~parametr\'ow substratu
   & \statuslabel{CZ. ZAMK. [HYP+NUM]}
@@ -503,11 +599,12 @@ V-OP3: $\Lambda_{\rm QCD}$ z~biegu RG
     Wy\.szy rz\k{a}d RG --- program d\l{}ugoterminowy. \\[3pt]
 
 V-OP4: Konfinowanie --- rygorystyczny dow\'od
-  & \statuslabel{Program}
-  & Formalna wersja argumentu
-    ,,rurka kolorowa w~re\.zimie~III''.
-    Szacowanie energii $E_{\rm tube}(r) = \sigma r$
-    analitycznie z~ODE pola $\Phi$. \\
+  & \statuslabel{CZ.\,ZAMK. [AN+NUM]}
+  & Tw.~\ref{thm:V-sigma-firstprinciples}:
+    Tw.~\ref{thm:V-sigma-firstprinciples}:
+    $\sigma = c_\sigma \Lambda_{\rm QCD}^2 = 0{,}189\;\mathrm{GeV}^2$
+    ($\delta = 5\%$); rem.~\ref{rem:V-OP4-closed};
+    \texttt{ex209}: 14/14~PASS. \\
 
 \bottomrule
 \end{tabular}
@@ -526,17 +623,20 @@ $U(1)_{\rm EM}$: foton
   & \statuslabel{Propozycja} [AN+NUM] ✓
   & dod.~\ref{app:u1_formal} + ex109 (12/12) \\[2pt]
 $\mathrm{SU}(2)\times U(1)$: $W^\pm, Z^0$, Higgs
-  & \statuslabel{Propozycja} [AN+NUM] ✓
-  & dod.~\ref{app:U-su2} + \texttt{ew\_scale} (12/12) \\[2pt]
+  & \statuslabel{CZ.\,ZAMK.} [AN+NUM] ✓
+  & dod.~\ref{app:U-su2} + \texttt{ew\_scale} (12/12),
+    \texttt{ex210} (12/12), \texttt{ex211} (12/12) \\[2pt]
 $\mathrm{SU}(3)_c$: gluony, konfinowanie
-  & \statuslabel{Propozycja} [AN+NUM] ✓
-  & dod.~\ref{app:V-su3} + \texttt{gauge\_emergence} (31/35) \\[2pt]
+  & \statuslabel{CZ.\,ZAMK.} [AN+NUM] ✓
+  & dod.~\ref{app:V-su3} + \texttt{gauge\_emergence},
+    \texttt{ex209} (14/14) \\[2pt]
 Pełna $G_{\rm SM}$ z~TGP
   & \statuslabel{Twierdzenie~strukturalne}
   & tw.~\ref{thm:V-SM} \\[2pt]
 Korekcje radiacyjne
-  & \statuslabel{Program} (OP1--OP4)
-  & U-OP1, V-OP1--4 \\
+  & \statuslabel{CZ.\,ZAMK.} [AN+NUM]
+  & U-OP1 ($m_W$: $\delta=0{,}09\%$, \texttt{ex211}),
+    U-OP4 ($m_H = 125{,}1$, \texttt{ex210}) \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -551,4 +651,6 @@ $\dim_{\mathbb{C}} = 3$ (QCD).
 Ten \textbf{hierarchia wymiar\'ow substratowych} okre\'sla
 spektrum cz\k{a}stek i~ich odd\'zia\l{}ywania bez arbitralnego
 wyboru grupy symetrii.
-Status R8: \statuslabel{Propozycja~[AN+NUM]} dla ca\l{}ego $G_{\rm SM}$.
+Status R8: \statuslabel{CZ.\,ZAMK.~[AN+NUM]} dla ca\l{}ego $G_{\rm SM}$
+(po zamkni\k{e}ciu V-OP1, V-OP4, U-OP1, U-OP4 --- wszystkie
+korekcje radiacyjne potwierdzone numerycznie).

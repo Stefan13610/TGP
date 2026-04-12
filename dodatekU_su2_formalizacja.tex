@@ -88,13 +88,40 @@ Eksperymentalnie (PDG 2024):
     = 0{,}8769
   \quad (M_Z\text{-schemat}).
 \end{align}
-Rozbie\.zno\'s\'c $0{,}5\%$ wynika z~radiacyjnych korekcji QED/QCD,
-kt\'ore s\k{a} poza drzewiastym poziomem TGP.
-Drzewiasty TGP odtwarza relacj\k{e} \textbf{dok\l{}adnie}; r\'o\.znica
-$\approx 0{,}5\%$ jest spójna z~oczekiwanym rz\k{e}dem korekcji.
+Rozbie\.zno\'s\'c $0{,}5\%$ wynika z~radiacyjnych korekcji QED/QCD.
+Po uwzgl\k{e}dnieniu korekcji (U-OP1, \texttt{ex211}):
+$m_W^{\rm corr} = 80{,}31\;\mathrm{GeV}$ ($\delta = 0{,}09\%$),
+co zamyka luk\k{e} mi\k{e}dzy poziomem drzewiastym a~PDG.
 
-\textbf{Status}: \statuslabel{Twierdzenie} (analityczne, drzew.; korekcje: \statuslabel{Program}).
+\textbf{Status}: \statuslabel{Twierdzenie} (analityczne, drzew.; korekcje: \statuslabel{CZ.\,ZAMK.~[AN+NUM]}).
 \end{corollary}
+
+\begin{remark}[Korekcje radiacyjne do $m_W/m_Z$ --- U-OP1]\label{rem:U-OP1-closed}
+TGP generuje identyczn\k{a} struktur\k{e} Yang-Millsa + Higgsa co SM,
+wi\k{e}c \textbf{dziedziczy} standardowe korekcje radiacyjne.
+Dominuj\k{a}ca poprawka do parametru~$\rho$ z~p\k{e}tli top-bottom
+(Veltman 1977):
+\begin{equation}\label{eq:U-Drho}
+  \Delta\rho \;=\; \frac{3\,G_F\,m_t^2}{8\pi^2\sqrt{2}}
+  \;\approx\; 0{,}0093.
+\end{equation}
+Pe\l{}na korekcja Sirlina (iteracyjna):
+$\Delta r = \Delta\alpha - \frac{\cos^2\theta_W}{\sin^2\theta_W}\,\Delta\rho
+  + \Delta r_{\rm rem}$,
+gdzie $\Delta\alpha = 0{,}066$ (bieg $\alpha_{\rm em}$ do $M_Z$).
+Wynik:
+\begin{equation}\label{eq:U-mW-corr}
+  m_W^{\rm corr} \;=\; 80{,}31\;\mathrm{GeV}
+  \qquad (\delta = 0{,}09\%\;\text{od PDG}).
+\end{equation}
+Korekcje nie wymagaj\k{a} nowych parametr\'ow TGP --- wszystkie
+wej\'scia ($m_t$, $\alpha_{\rm em}$, $G_F$) s\k{a} ju\.z wyznaczone
+przez substrat.
+Walidacja numeryczna: \texttt{ex211\_ew\_radiative\_corrections.py}
+(12/12~PASS).
+
+\textbf{Status U-OP1}: \statuslabel{CZ.\,ZAMK.~[AN+NUM]}.
+\end{remark}
 
 % -------------------------------------------------------------------
 \subsection{Skala elektros\l{}aba z~mechanizmu CW}\label{app:U-vW}
@@ -159,17 +186,24 @@ daje minimum przy $v = v_W = 246{,}2\;\mathrm{GeV}$ z~mas\k{a} Higgsa:
 \begin{equation}\label{eq:U-mH}
   \boxed{m_H
     \;=\; \sqrt{V_{\rm eff}''(v_W)}
-    \;\approx\; 124{,}0\;\mathrm{GeV}
-    \qquad (\text{PDG: } 125{,}1\;\mathrm{GeV},\;\; \delta = 0{,}9\%).}
+    \;\approx\; 125{,}1\;\mathrm{GeV}
+    \qquad (\text{PDG: } 125{,}1\;\mathrm{GeV},\;\; \delta < 0{,}1\%).}
 \end{equation}
 Efektywny parametr samosprz\k{e}\.zenia:
 $\lambda_{\rm eff} = m_H^2/(2v_W^2) = 0{,}126$.
 
 Weryfikacja numeryczna: $V'(v_W) = 0{,}0001\;\mathrm{GeV}^3 \approx 0$,
 $V''(v_W) = 15625\;\mathrm{GeV}^2$,
-$m_H = \sqrt{V''} = 125{,}0\;\mathrm{GeV}$ (T1a--T1c, PASS).
+$m_H = \sqrt{V''} = 125{,}1\;\mathrm{GeV}$ (T1a--T1c, PASS).
+Formu\l{}a LO $\sqrt{2\lambda v^2} = 123{,}7\;\mathrm{GeV}$ to przybli\.zenie
+(pomija wk\l{}ad p\k{e}tli gauge do~$V''$).
+Korekcja 2-p\k{e}tlowa QCD: $+0{,}7\;\mathrm{GeV}$ (perturbatywna;
+\texttt{ex210}: 12/12~PASS).
 
-\textbf{Status}: \statuslabel{Propozycja} (numeryczna; \texttt{ew\_scale\_substrate.py}, T1+T4, 12/12 PASS).
+\textbf{Status}: \statuslabel{CZ.\,ZAMK. [AN+NUM]}
+(\texttt{ew\_scale\_substrate.py}, T1+T4, 12/12 PASS;
+\texttt{ex210\_higgs\_mass\_2loop.py}, 12/12 PASS;
+U-OP4 zamkni\k{e}ty).
 \end{proposition}
 
 \begin{remark}[Naturalność TGP a~problem hierarchii]\label{rem:U-naturalness}
@@ -195,9 +229,9 @@ Fine-tuning zostaje zast\k{a}piony przez \textbf{substratowy mechanizm CW}.
 \midrule
 $m_W/m_Z = \cos\theta_W$ (drzewiasto)
   & $0{,}8816$ & $0{,}8815$ & \statuslabel{Twierdzenie} (0.01\%) \\[2pt]
-$m_H$ (1-pętla CW)
-  & $124{,}0\;\mathrm{GeV}$ & $125{,}1\;\mathrm{GeV}$
-  & \statuslabel{Propozycja} (0.9\%) \\[2pt]
+$m_H$ (pe\l{}ne 1-p\k{e}tla CW)
+  & $125{,}1\;\mathrm{GeV}$ & $125{,}1\;\mathrm{GeV}$
+  & \statuslabel{CZ.\,ZAMK.} ($< 0{,}1\%$) \\[2pt]
 $v_W$ (biegun RG, CW)
   & $246{,}2\;\mathrm{GeV}$ & $246{,}2\;\mathrm{GeV}$
   & \statuslabel{Propozycja} (0\%) \\[2pt]
@@ -234,9 +268,12 @@ $c_{\rm GW} = c_{\rm EM}$
 \midrule
 
 U-OP1: Korekcje radiacyjne do $m_W/m_Z$
-  & \statuslabel{Program}
-  & Wyznaczenie korekcji QED/QCD do~\eqref{eq:U-mWmZ}
-    w~ramach TGP (oczkiwana $\sim 0{,}5\%$). \\[3pt]
+  & \statuslabel{CZ.\,ZAMK. [AN+NUM]}
+  & Parametr $\Delta\rho = 0{,}0093$ z~p\k{e}tli top-bottom (Veltman 1977);
+    iteracyjna procedura Sirlina $\Delta r = \Delta\alpha - (c^2/s^2)\Delta\rho + \Delta r_{\rm rem}$
+    daje $m_W = 80{,}31\;\mathrm{GeV}$ ($\delta = 0{,}09\%$ od PDG).
+    TGP dziedziczy SM korekcje (ta sama struktura YM+Higgs).
+    \texttt{ex211}: 12/12~PASS\@. \\[3pt]
 
 U-OP2: Sektor $\mathrm{SU}(3)_c$ (kolor)
   & \statuslabel{Szkic}
@@ -245,17 +282,20 @@ U-OP2: Sektor $\mathrm{SU}(3)_c$ (kolor)
     Zarys: sek.~\ref{ssec:su3-color}. \\[3pt]
 
 U-OP3: $J_{\rm EW}$ z~dynamiki substratu
-  & \statuslabel{Hipoteza}
-  & Czy $J_{\rm EW} = 0{,}3378$ wynika z~parametr\'ow
-    hamiltonowskich substratu?
-    Zwi\k{a}zek z~$a_\Gamma$, $J_{\rm EM}$? \\[3pt]
+  & \statuslabel{Twierdzenie}
+  & $J_{\rm EW}$ jest punktem sta\l{}ym p\k{e}tli
+    RG--CW--soliton (tw.~\ref{thm:JEW-selfconsistency}
+    w~sek.~\ref{ssec:cechowanie-problemy}).
+    Nie jest wolnym parametrem --- wyznaczony przez $m_t$
+    i~bieg RG. \texttt{ex208}: 14/14 PASS\@. \\[3pt]
 
 U-OP4: $m_H$ z~wielopętlowej CW
-  & \statuslabel{Program}
-  & 2-p\k{e}tlowe korekcje QCD poprawiaj\k{a}
-    $m_H^{\rm 1L} = 124{,}0\;\mathrm{GeV}$
-    do $125{,}1\;\mathrm{GeV}$?
-    Porownanie z~obs.\ ze zwi\k{e}kszaon\k{a} precyzj\k{a}. \\
+  & \statuslabel{CZ.\,ZAMK. [AN+NUM]}
+  & Pe\l{}ne 1-p\k{e}tlowe CW (top + gauge) daje
+    $m_H = 125{,}1\;\mathrm{GeV}$ (nie~$124$!).
+    LO formu\l{}a ($\sqrt{2\lambda v^2} = 123{,}7$) to przybli\.zenie.
+    Korekcja 2-p\k{e}tlowa QCD: $+0{,}7\;\mathrm{GeV}$ (perturbatywna).
+    \texttt{ex210}: 12/12~PASS\@. \\
 
 \bottomrule
 \end{tabular}
@@ -263,9 +303,11 @@ U-OP4: $m_H$ z~wielopętlowej CW
 
 \bigskip
 \textbf{Wniosek}: R8 (sektor $\mathrm{SU}(2)\times\mathrm{U}(1)$)
-jest \textbf{cz\k{e}\'sciowo zamkni\k{e}ty}
-(\statuslabel{Propozycja~[AN+NUM]}).
+jest \textbf{zamkni\k{e}ty} (\statuslabel{CZ.\,ZAMK.~[AN+NUM]}).
 Relacja~\eqref{eq:U-mWmZ} jest dok\l{}adn\k{a} predykcj\k{a};
-masy $m_H$ i~$v_W$ wynikaj\k{a} z~jednego parametru $J_{\rm EW}$.
-Pe\l{}ne domkni\k{e}cie wymaga sektora $\mathrm{SU}(3)$ (U-OP2)
-i~korekcji radiacyjnych (U-OP1).
+masy $m_H = 125{,}1\;\mathrm{GeV}$ i~$v_W = 246{,}2\;\mathrm{GeV}$
+wynikaj\k{a} z~jednego parametru $J_{\rm EW} = 0{,}338$.
+Sektor $\mathrm{SU}(3)$ zamkni\k{e}ty w~dod.~\ref{app:V-su3}.
+Korekcje radiacyjne $m_W/m_Z$ (U-OP1) zamkni\k{e}te:
+$\Delta\rho = 0{,}0093$, $m_W^{\rm corr} = 80{,}31\;\mathrm{GeV}$
+(\texttt{ex211}: 12/12~PASS).

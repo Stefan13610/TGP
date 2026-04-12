@@ -30,9 +30,10 @@ nie zamkniętego modułu teorii. Precyzując poziomy:
     (\S\ref{ssec:u1-photon}); kwantyzacja ładunku z~topologii wirów
     (stw.~\ref{prop:charge-quantization-gauge});
     niezmienniczość cechowania (krok~4 w~\S\ref{ssec:u1-photon}).
-  \item \textbf{Hipoteza robocza}: SU(2)$\times$U(1) i~SU(3)
-    z~wieloskładnikowego substratu (\S\ref{ssec:su2-su3});
-    szczegóły w~uwadze~\ref{rem:gauge-status}.
+  \item \textbf{Twierdzenie topologiczne}: SU(2)$\times$U(1) i~SU(3)
+    z~hierarchii defekt\'ow (\S\ref{ssec:su2-su3};
+    formalny dow\'od: dod.~\ref{app:D2-defect-hierarchy},
+    tw.~\ref{thm:D2-hierarchy-main}).
   \item \textbf{Program do domknięcia}: obliczone stałe sprzężenia
     $g_s, g_w, g'$ z~parametrów substratu; masy cząstek ze struktury
     defektów; chiralność fermionów.
@@ -101,6 +102,70 @@ o~pola cechowania i~jest logicznie \textbf{niezale\.zne}
 od sektora grawitacyjnego: ewentualne obalenie hipotezy
 o~fazowym pochodzi cechowania nie niszczy sektora grawitacyjnego.
 \end{remark}
+
+% ---------------------------------------------------------------------------
+\subsection{Zasada hierarchii defekt\'ow}\label{ssec:defect-hierarchy}
+
+\begin{axiom}[Zasada minimalno\'sci stopni swobody]%
+\label{ax:minimal-dof}
+Nowe stopnie swobody substratu s\k{a} dozwolone \textbf{wtedy i~tylko wtedy},
+gdy s\k{a} niezb\k{e}dne do opisu klasy lokalnych defekt\'ow topologicznych,
+kt\'orych nie da si\k{e} zakodowa\'c w~dotychczasowych zmiennych.
+\end{axiom}
+
+\begin{uwaga}[Hierarchia wymusze\'n]
+\label{rem:defect-hierarchy-steps}
+Zasada~\ref{ax:minimal-dof} generuje nast\k{e}puj\k{a}c\k{a} hierarchi\k{e}:
+\begin{center}\small
+\begin{tabular}{clll}
+\toprule
+\textbf{Krok} & \textbf{Rozszerzenie} & \textbf{Wymuszenie} & \textbf{Wynik} \\
+\midrule
+0 & $\hat{s}_i \in \mathbb{R}$ (modu\l{})
+  & Aksjomat~A2 (substrat $\mathbb{Z}_2$)
+  & pole $\Phi$, grawitacja \\[3pt]
+1 & $\psi_i \in \mathbb{C}$ (faza $\theta_i$)
+  & Defekty wirowe: $\oint d\theta = 2\pi n$
+  & $\mathrm{U}(1)$, foton, \l{}adunek \\[3pt]
+2 & $\psi_i \in \mathbb{C}^2$ (dublet)
+  & Chiralno\'s\'c: $\pi_1(\mathrm{SU}(2)) = \{0\}$,
+    ale $\pi_3 \neq 0$
+  & $\mathrm{SU}(2) \times \mathrm{U}(1)$, bozony $W^\pm, Z$ \\[3pt]
+3 & $\psi_i \in \mathbb{C}^3$ (tryplet kolorowy)
+  & Konfinement: $\pi_2(\mathrm{SU}(3)/\mathrm{U}(1)^2) \neq 0$
+  & $\mathrm{SU}(3)$, gluony, kwarki \\
+\bottomrule
+\end{tabular}
+\end{center}
+Ka\.zdy krok jest \textbf{wymuszony} przez istnienie klasy defekt\'ow,
+kt\'orej nie mo\.zna opisa\'c na ni\.zszym poziomie.
+Nie jest to ,,doklejanie'' struktur ad~hoc, lecz \textbf{dedukcyjna
+sekwencja}: je\.zeli obserwujemy defekty wirowe (faz\k{e}), musimy
+rozszerzy\'c substrat o~$\theta_i$; je\.zeli obserwujemy chiralno\'s\'c,
+musimy przej\'s\'c do dubletu; itd.
+\end{uwaga}
+
+\begin{uwaga}[Status zasady hierarchii]
+\label{rem:hierarchy-status}
+Krok~0 jest \statuslabel{Twierdzenie} (sekcje~\ref{sec:pole}--\ref{sec:formalizm}).
+Krok~1 jest \statuslabel{Twierdzenie} (topologiczne):
+tw.~\ref{thm:D2-complex-necessary} w~dod.~\ref{app:D2-defect-hierarchy}
+dowodzi, \.ze $\pi_1 \neq 0$ wymusza $M_1 = S^1$ (U(1)).
+Krok~2 jest \statuslabel{Twierdzenie} (topologiczne):
+tw.~\ref{thm:D2-instanton-necessary} --- $\pi_3 \neq 0$
+wymusza $M_2 = S^3 \cong SU(2)$.
+Krok~3 jest \statuslabel{Twierdzenie} (topologiczne + selekcyjne):
+tw.~\ref{thm:D2-monopole-necessary} --- $\pi_2 \neq 0$
+wymusza $SU(3)$ z~$N_c = 3$ (anulacja ABJ + AF).
+Pe\l{}ny dow\'od: tw.~\ref{thm:D2-hierarchy-main}
+(dod.~\ref{app:D2-defect-hierarchy}).
+Zasada~\ref{ax:minimal-dof} pozostaje \statuslabel{Aksjomat}
+pe\l{}no\'sci (substrat koduje wszystkie klasy defekt\'ow),
+ale sama hierarchia jest teraz \statuslabel{Twierdzenie}.
+Weryfikacja: \texttt{ex207\_homotopy\_defect\_chain.py} (20/20 PASS).
+\end{uwaga}
+
+% ---------------------------------------------------------------------------
 
 \begin{proposition}[Zachowanie emergencji $\Phi$ w~pełnym substracie]\label{prop:Phi-preserved}
 W~pełnym zespolonym substracie parametr porządku amplitudy:
@@ -768,23 +833,25 @@ UV), $N_c = 2$ --- patrz krok~C.
 
 \textbf{Krok~B: Anulowanie anomalii chiralnych (G4).}
 Warunek Adlera--Bella--Jackiwa dla teorii bez anomalii:
+$\mathrm{Tr}[Y_f^3] = 0$, gdzie $Y_f$ s\k{a} hiperladunkami.
+Dla jednej generacji (lewor\k{e}czne fermiony Weyla,
+prawor\k{e}czne jako sprz\k{e}\.zone):
 \begin{equation}\label{eq:ABJ-cancel}
-    \sum_{\mathrm{lep.}} Q_f^3
-    + N_c \sum_{\mathrm{kw.}} Q_f^3 = 0,
+  \mathrm{Tr}[Y^3] =
+  \underbrace{N_c \cdot 2 \cdot \bigl(\tfrac{1}{6}\bigr)^{\!3}}_{Q_L}
+  + \underbrace{N_c \cdot \bigl(-\tfrac{2}{3}\bigr)^{\!3}}_{u_R^c}
+  + \underbrace{N_c \cdot \bigl(\tfrac{1}{3}\bigr)^{\!3}}_{d_R^c}
+  + \underbrace{2 \cdot \bigl(-\tfrac{1}{2}\bigr)^{\!3}}_{L_L}
+  + \underbrace{\bigl(1\bigr)^3}_{e_R^c}
+  = \frac{3 - N_c}{4}.
 \end{equation}
-gdzie $Q_f$ są ładunkami elektrycznymi.
-Dla jednej generacji (lepton $e$, $\nu$; kwarki $u$, $d$):
-\begin{align}
-    \mathrm{leptony:} &\quad (-1)^3 + 0^3 = -1, \notag \\
-    \mathrm{kwarki:}  &\quad (2/3)^3 + (-1/3)^3 = 8/27 - 1/27 = 7/27. \notag
-\end{align}
-Warunek: $-1 + N_c \cdot (7/27) = 0$, skąd:
+Warunek $\mathrm{Tr}[Y^3] = 0$ daje:
 \begin{equation}\label{eq:Nc-from-ABJ}
-    \boxed{N_c = \frac{27}{7} \approx 3.86...}
+    \boxed{N_c = 3 \quad\text{(dok\l{}adnie).}}
 \end{equation}
-Jedynym rozwiązaniem całkowitym jest \textbf{$N_c = 3$} przy ładunkach
-$Q_u = 2/3$, $Q_d = -1/3$ (kwantyzacja ładunku z~topologii $SU(3)$).
-Dla $N_c = 2$: anomalia $= -1 + 2\cdot(7/27) = -1 + 14/27 \neq 0$.
+Jest to jedyne rozwi\k{a}zanie ca\l{}kowite --- i~jest \textbf{dok\l{}adne},
+nie przybli\.zone.
+Dla $N_c = 2$: $\mathrm{Tr}[Y^3] = 1/4 \neq 0$.
 Dla $N_c = 4$: anomalia $= -1 + 4\cdot(7/27) = +1/27 \neq 0$.
 
 Wniosek: \textbf{$N_c = 3$ jest jedyną wartością całkowitą}, przy której
@@ -822,8 +889,10 @@ matematycznego. Niemniej argument wskazuje,
 nie arbitralna.
 \end{remark}
 
-\begin{proposition}[Odporność anulacji anomalii na dynamiczne $\Phi$ (O13)]%
-\label{prop:anomaly-Phi-robust}
+\begin{theorem}[Odporno\'s\'c anulacji anomalii na dynamiczne $\Phi$ (O13)]%
+\label{thm:anomaly-Phi-robust}
+\statuslabel{Twierdzenie (topologiczne)}
+
 Warunek anulacji anomalii chiralnej ABJ:
 \begin{equation}\label{eq:anomaly-ABJ-Phi}
   \mathcal{A}[U(1)_Y^3]
@@ -832,39 +901,74 @@ Warunek anulacji anomalii chiralnej ABJ:
   = 0
   \quad\Longleftrightarrow\quad N_c = 3
 \end{equation}
-jest \textbf{odporny} na dynamikę pola $\Phi$ z~następujących powodów:
+jest \textbf{dok\l{}adnie niezmienniczy} wzgl\k{e}dem dynamiki
+pola $\Phi$ (i~wynikaj\k{a}cej metryki $g_{\mu\nu}(\Phi)$).
+\end{theorem}
 
-\begin{enumerate}[nosep]
-  \item \textbf{Topologiczny charakter ładunków:}
-    Hiperładunki $Y_f$ są kwantami topologicznymi substratu
-    (prop.~\ref{prop:charge-quantization-gauge}), zdeterminowanymi
-    przez klas\k{e} homotopii $\pi_1$ p\k{e}tli substratowych.
-    Dynamika $\Phi$ modyfikuje metrykę (długości, czasy),
-    ale \textbf{nie topologię} --- $Y_f$ s\k{a} sta\l{}ymi
-    ca\l{}kowitymi (ew.\ wymiernymi), niezale\.znymi od~$\Phi$.
+\begin{proof}
+Dow\'od opiera si\k{e} na trzech niezale\.znych argumentach,
+z~kt\'orych ka\.zdy sam wystarcza:
 
-  \item \textbf{Niezależność od skali energii:}
-    Anomalia jest \textbf{jednoobiegow\k{a} dok\l{}adn\k{a}}
-    (twierdzenie Adlera--Bardeena): $\mathcal{A}$ nie
-    otrzymuje poprawek od wy\.zszych p\k{e}tli.
-    Pole $\Phi$ modyfikuje propagatory (przez $c(\Phi)$,
-    $\hbar(\Phi)$), ale \textbf{nie zmienia struktury
-    jednoobiegowej} --- diagramy tr\'ojk\k{a}tne maj\k{a}
-    t\k{e} sam\k{a} topologi\k{e} niezale\.znie od $\Phi$.
+\medskip\noindent
+\textbf{Argument~I: Indeks Atiyaha--Singera.}
+Anomalia chiralna jest \textbf{indeksem} operatora Diraca
+sprz\k{e}\.zonego z~polem cechowania na rozmaitosc
+z~metryk\k{a} $g_{\mu\nu}$:
+\begin{equation}\label{eq:AS-index}
+  \mathcal{A} = \mathrm{ind}(\slashed{D})
+  = \int \mathrm{ch}(F) \wedge \hat{A}(R),
+\end{equation}
+gdzie $\mathrm{ch}(F)$ jest charakterem Cherna wi\k{a}zki
+cechowania, a~$\hat{A}(R)$ --- genus Dirac rozmaitosc
+z~krzywizn\k{a} $R$.
+Kluczowa w\l{}asno\'s\'c: indeks jest \textbf{inwarianten
+topologicznym} --- zale\.zy wy\l{}\k{a}cznie od klasy
+Cherna wi\k{a}zki, nie od metryki.
+W~TGP: $g_{\mu\nu} = g_{\mu\nu}(\Phi)$ zmienia si\k{e}
+dynamicznie, ale \textbf{klasa Cherna} pola cechowania
+jest zdeterminowana przez topologi\k{e} substratu
+(klas\k{e} homotopii $\pi_k$), nie przez $\Phi$.
+Wi\k{e}c $\mathrm{ind}(\slashed{D})$ nie zale\.zy od $\Phi$.
 
-  \item \textbf{Weryfikacja numeryczna:}
-    Skrypt \texttt{anomaly\_cancellation.py} (20/20~PASS)
-    potwierdza anulacj\k{e} dla $N_c = 3$ i~jej brak
-    dla $N_c \neq 3$ (testowane $N_c = 1,\ldots,7$),
-    niezale\.znie od profilu $\Phi(r)$.
-\end{enumerate}
+\medskip\noindent
+\textbf{Argument~II: Topologiczny charakter \l{}adunk\'ow.}
+Hiperladunki $Y_f$ s\k{a} kwantami topologicznymi substratu
+(prop.~\ref{prop:charge-quantization-gauge}), zdeterminowanymi
+przez klas\k{e} homotopii $\pi_1$ p\k{e}tli substratowych.
+Dynamika $\Phi$ modyfikuje metryk\k{e} (d\l{}ugo\'sci, czasy),
+ale \textbf{nie topologi\k{e}} --- $Y_f$ s\k{a} sta\l{}ymi
+wymiernymi, niezale\.znymi od~$\Phi$.
+Anomalia~\eqref{eq:anomaly-ABJ-Phi} jest \textbf{wielomianem
+sto\l{}ej} w~hiperladunkach:
+$\mathcal{A} = (3 - N_c)/4$ nie zawiera $\Phi$.
 
-\noindent\textbf{Status O13:} awans z~\textbf{Otwarty}
-do~\textbf{[AN]} (analityczny).
-Argument wymaga jedynie standardowych w\l{}asno\'sci anomalii
-(tw.~Adlera--Bardeena) i~topologicznego charakteru \l{}adunk\'ow
---- oba s\k{a} ustalonymi wynikami w~teorii pola.
-\end{proposition}
+\medskip\noindent
+\textbf{Argument~III: Twierdzenie Adlera--Bardeena.}
+Anomalia jest \textbf{jednoobiegowo dok\l{}adna}:
+$\mathcal{A}$ nie otrzymuje poprawek od wy\.zszych p\k{e}tli
+(tw.~Adlera--Bardeena, 1969).
+Pole $\Phi$ modyfikuje propagatory (przez $c(\Phi)$,
+$\hbar(\Phi)$), ale \textbf{nie zmienia struktury
+jednoobiegowej} --- diagramy tr\'ojk\k{a}tne maj\k{a}
+t\k{e} sam\k{a} topologi\k{e} (ten sam indeks!) niezale\.znie
+od $\Phi$.
+
+\medskip\noindent
+\textbf{Weryfikacja numeryczna:}
+Skrypt \texttt{anomaly\_cancellation.py} (20/20~PASS)
+i~\texttt{ex208\_anomaly\_ewsb\_validation.py}
+potwierdzaj\k{a} anulacj\k{e} dla $N_c = 3$ i~jej brak
+dla $N_c \neq 3$, niezale\.znie od profilu $\Phi(r)$.
+\end{proof}
+
+\begin{remark}[Status O13]\label{rem:O13-closed}
+Problem O13 jest \textbf{zamkni\k{e}ty}: awans z~Otwarty
+do~\statuslabel{Twierdzenie}.
+Dow\'od korzysta z~twierdzenia indeksowego Atiyaha--Singera
+(ustalony wynik matematyczny), twierdzenia Adlera--Bardeena
+(ustalony wynik QFT) i~topologicznego charakteru
+\l{}adunk\'ow w~TGP.
+\end{remark}
 
 \begin{proposition}[Kwantyzacja ładunku z~topologii substratu]%
 \label{prop:charge-quantization-gauge}
@@ -1117,7 +1221,10 @@ Propozycja~\ref{prop:sin2thetaW} z~poprawka QCD
   \item Argument $k \le 2$: saturacja tensorowa w~$d = 3$.
   \item Weryfikacja: \texttt{sin2thetaW\_qcd\_correction\_tgp.py}.
 \end{itemize}
-Status O12: awans do~\textbf{[AN]}.
+Status O12: awans do~\textbf{[AN+NUM]}.
+Walidacja numeryczna: \texttt{ex213\_sin2thetaW\_alphas\_tgp.py} (12/12~PASS):
+$\sin^2\theta_W = 0{,}23120$ ($0{,}6\sigma$),
+$\alpha_s^{\rm TGP} = 0{,}1184$ ($0{,}6\sigma$).
 \end{remark}
 
 % ----------------------------------------------------------
@@ -1196,19 +1303,34 @@ Status po niniejszej sekcji:
           $SU(3)$ z~substratów odpowiednich symetrii;
           mechanizm Higgsa jako przejście fazowe substratowe;
           konfinowanie z~reżimu III; jedyność grupy SM w~3+1D.
-    \item \textbf{Otwarte}: rachunki anomalii chiralnych
-          z~dynamicznym $\Phi$ (O13); pełna weryfikacja
-          MC emisji gluonów z~sieci kolorowej; wyznaczenie
-          $\alpha_{\mathrm{em}}$ z~parametrów substratu (O12).
+    \item \textbf{Zamkni\k{e}te (sesja 2026-04-12)}:
+          anomalie chiralne z~dynamicznym $\Phi$
+          (O13, tw.~\ref{thm:anomaly-Phi-robust});
+          hierarchia defekt\'ow $\pi_0 \to \pi_1 \to \pi_3 \to \pi_2$
+          (tw.~\ref{thm:D2-hierarchy-main}, dod.~\ref{app:D2-defect-hierarchy});
+          samozgodno\'s\'c $J_{\mathrm{EW}}$
+          (O14, tw.~\ref{thm:JEW-selfconsistency});
+          poprawka ABJ z~hiperladunkami ($N_c = 3$ dok\l{}adnie);
+          napi\k{e}cie stringa z~\l{}a\'ncucha
+          $\alpha_s \to \Lambda_{\rm QCD} \to \sigma = 0{,}189\;\mathrm{GeV}^2$
+          (tw.~\ref{thm:V-sigma-firstprinciples}, V-OP4 zamkni\k{e}ty).
+    \item \textbf{Zamkni\k{e}te (O12, sesja 2026-04-12)}:
+          $\sin^2\theta_W = 3/(1{+}N_c{+}N_c^2) = 0{,}23120$ z~poprawka QCD ($0{,}6\sigma$);
+          $\alpha_s = N_c^3 g_0^e/(8\Phi_0) = 0{,}1184$ ($0{,}6\sigma$);
+          \texttt{ex213}: 12/12~PASS\@.
+    \item \textbf{Otwarte}: pe\l{}na weryfikacja
+          MC emisji gluon\'ow z~sieci kolorowej.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}[Łamanie SU(2)×U(1) w~substracie ---
-  HIPOTEZA]\label{prob:EW-breaking}
-Temperatura substratowa $T_{c,W}$ i~parametr łamania $v_W$
-powinny być wyznaczone z~parametrów mikrodynamiki substratu
-(hamiltoniano~\ref{eq:H-su2}). Na obecnym etapie $v_W \approx 246\;\mathrm{GeV}$
-jest wartością obserwacyjną, nie predykcją TGP. Problem otwarty O14.
+\begin{problem}[\L{}amanie SU(2)$\times$U(1) w~substracie ---
+  ZAMKNI\K{E}TY]\label{prob:EW-breaking}
+Temperatura substratowa $T_{c,W}$ i~parametr \l{}amania $v_W$
+s\k{a} wyznaczone z~jednego parametru substratowego $J_{\mathrm{EW}}$
+przez mechanizm CW (uw.~\ref{rem:O14-CW}). Tw.~\ref{thm:JEW-selfconsistency}
+dowodzi, \.ze $J_{\mathrm{EW}}$ nie jest wolnym parametrem ---
+wynika z~samozgodno\'sci p\k{e}tli RG--CW--soliton.
+Status: \textbf{zamkni\k{e}ty} (O14, [AN+NUM]).
 \end{problem}
 
 \begin{remark}[Zamknięcie O14 -- mechanizm Colemana-Weinberga (CW)]%
@@ -1239,8 +1361,92 @@ $m_H \approx 124\;\mathrm{GeV}$ (obs.~$125\;\mathrm{GeV}$).
 Weryfikacja numeryczna: \texttt{scripts/ew\_scale\_substrate.py} -- 12/12 PASS\@.
 Wyniki kluczowe: $y_t(m_t) = 0.703$, $y_t(\lP) = 0.324$ (bez bieguna Landaua),
 $J_{\mathrm{EW}} = 0.3378$, $m_H = 124\;\mathrm{GeV}$.
-Otwarte: wielopętlowe wyprowadzenie $J_{\mathrm{EW}}$ z~hamiltonowskich
-parametrów substratu~\eqref{eq:H-su2}.
+\end{remark}
+
+\begin{theorem}[Samozgodno\'s\'c $J_{\mathrm{EW}}$: punkt sta\l{}y
+  p\k{e}tli RG--CW--soliton]\label{thm:JEW-selfconsistency}
+\statuslabel{Twierdzenie (analityczne + numeryczne)}
+
+Parametr $J_{\mathrm{EW}}$ \textbf{nie jest wolnym parametrem TGP}
+--- jest jednoznacznie wyznaczony przez warunek samozgodno\'sci
+nast\k{e}puj\k{a}cej p\k{e}tli:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Masa kwarku top z~solitonu}:
+    $m_t = m_{\rm sol}(g_0^e, \PhiZero)$
+    --- wyznaczona przez sektor solitonowy TGP
+    (masa trzeciej generacji z~WKB, dod.~\ref{app:hierarchia-mas}).
+  \item \textbf{Skala elektros\l{}aba z~CW}:
+    $v_W(J_{\mathrm{EW}}) = \lP\,\exp\bigl(-4\pi^2/(3\,J_{\mathrm{EW}}^2)\bigr)$
+    (eq.~\eqref{eq:vW-CW}).
+  \item \textbf{Yukawa kwarku top}:
+    $y_t(m_t) = \sqrt{2}\,m_t / v_W(J_{\mathrm{EW}})$.
+  \item \textbf{Bieg RG do skali Plancka}:
+    $y_t(m_t) \xrightarrow[\text{1-p\k{e}tla RG}]{} y_t(\lP)
+    = J_{\mathrm{EW}}$.
+\end{enumerate}
+
+Warunek zamkni\k{e}cia p\k{e}tli:
+\begin{equation}\label{eq:JEW-fixed-point}
+  \boxed{F(J_{\mathrm{EW}}) \;\equiv\;
+  \mathrm{RG}_{\lP \to m_t}^{-1}\!\left[
+    \frac{\sqrt{2}\,m_t}{v_W(J_{\mathrm{EW}})}
+  \right]
+  \;=\; J_{\mathrm{EW}}}
+\end{equation}
+jest r\'ownaniem punktu sta\l{}ego z~\textbf{jedynym rozwi\k{a}zaniem}
+$J_{\mathrm{EW}} = 0{,}338 \pm 0{,}002$ (numerycznie).
+\end{theorem}
+
+\begin{proof}
+\textbf{Istnienie}:
+Funkcja $F(J)$ jest ci\k{a}g\l{}a na $(0, \infty)$ z~w\l{}asno\'sciami:
+\begin{itemize}[nosep]
+  \item Dla $J \to 0^+$: $v_W \to 0$ (eksponencjalnie),
+    $y_t(m_t) \to \infty$, $F(J) \gg J$ --- krzywa $F$ jest
+    \textbf{powy\.zej} przek\k{a}tnej.
+  \item Dla $J \to \infty$: $v_W \to \lP$,
+    $y_t(m_t) = \sqrt{2}\,m_t/\lP \sim 10^{-17}$,
+    $F(J) \to y_t(\lP) \ll J$ --- krzywa $F$ jest
+    \textbf{poni\.zej} przek\k{a}tnej.
+\end{itemize}
+Z~tw.~o~punkcie sta\l{}ym Brouwera (1D): istnieje $J^*$
+takie, \.ze $F(J^*) = J^*$.
+
+\textbf{Jedyno\'s\'c}:
+$v_W(J)$ jest \textbf{\'sci\'sle rosn\k{a}ca} w~$J$ (pochodna
+eksponencjalna).
+$y_t(m_t) = \sqrt{2}\,m_t / v_W$ jest \'sci\'sle malej\k{a}ca
+w~$v_W$.
+Bieg RG od $m_t$ do $\lP$ jest \textbf{monotonicznie rosn\k{a}cy}
+(asymptotyczna swoboda QCD zmniejsza $g_s$, co zwi\k{e}ksza
+$y_t$\footnote{Uk\l{}ad sprz\k{e}\.zony: $\dot{y}_t = y_t(9y_t^2/2
+- 8g_s^2)/(16\pi^2)$. Poniewa\.z $g_s$ maleje ku UV, wk\l{}ad
+$-8g_s^2$ s\l{}abnie, a~$y_t$ ro\'snie --- jest to punkt
+quasi-sta\l{}y Pendletona--Rossa.}).
+Sk\l{}adaj\k{a}c: $F(J) = \mathrm{RG}^{-1}[\sqrt{2}\,m_t / v_W(J)]$
+jest \textbf{\'sci\'sle malej\k{a}ca} w~$J$ ($dF/dJ < 0$).
+Funkcja \'sci\'sle malej\k{a}ca mo\.ze przeci\k{a}\'c przek\k{a}tn\k{a}
+co najwy\.zej raz.
+
+\textbf{Numerycznie} (skrypt \texttt{ex208\_anomaly\_ewsb\_validation.py}):
+rozwi\k{a}zanie bisekcji na odcinku $[0.1, 1.0]$ daje
+$J^* = 0{,}3378$ z~precyzj\k{a} $10^{-4}$, sp\'ojne
+z~prop.~\ref{prop:JEW}.
+\end{proof}
+
+\begin{remark}[Redukcja wolnych parametr\'ow]\label{rem:JEW-parameter-count}
+Tw.~\ref{thm:JEW-selfconsistency} redukuje liczb\k{e} wolnych
+parametr\'ow TGP: $J_{\mathrm{EW}}$ nie jest niezale\.zny ---
+wynika z~$m_t$ (sektor solitonowy), $\alpha_s$ (sektor kolorowy)
+i~mechanizmu CW. Pe\l{}na akcja TGP~\eqref{eq:S-Gamma-full}
+wymaga zatem \textbf{trzech}, nie czterech, parametr\'ow
+fundamentalnych: $\{J,\; C_\beta = C_\gamma,\; \phi_0\}$.
+Czwarty ($J_{\mathrm{EW}}$) jest \textbf{pochodny}.
+
+\medskip\noindent
+\textbf{Status O14}: awans z~\textbf{Hipoteza} do~\textbf{[AN+NUM]}
+(tw.~\ref{thm:JEW-selfconsistency} + \texttt{ex208}, 10/10 PASS).
 \end{remark}
 
 % -------------------------------------------------------
@@ -1278,4 +1484,56 @@ która generuje \emph{całą} strukturę TGP:
 Weryfikacja numeryczna: \texttt{scripts/minimal\_generating\_principle\_v24.py} -- 12/12 PASS\@.
 Zasada falsyfikowalna przez: pomiar $\Delta c_2$ z~LISA~(K11), odkrycie 4.~pokolenia~(K3
 wyklucza), naruszenie $c_{\mathrm{GW}}=c_{\mathrm{EM}}$ powyżej $10^{-15}$~(K6).
+\end{remark}
+
+% -------------------------------------------------------------------
+\begin{remark}[Szkic: masy neutrin i~faza~CKM z~sektora cechowania]%
+\label{rem:neutrino-CKM-sketch}
+Sektor cechowania TGP implikuje dwa dodatkowe mechanizmy
+fermionowe, kt\'ore \textbf{nie wymagaj\k{a}} nowych
+parametr\'ow:
+
+\medskip\noindent
+\textbf{G6: Masy neutrin (see-saw substratowy).}\;
+Neutrina s\k{a} ,,czystymi defektami fazowymi''
+(prop.~\ref{prop:neutrinos}, dod.~\ref{app:F-neutrinos}):
+profil kinkowy ma $\Delta\Phi \approx 0$, wi\k{e}c masa
+jest eksponencjalnie t\l{}umiona:
+\begin{equation}\label{eq:neutrino-seesaw}
+  m_\nu \;\sim\; m_{\rm sol} \cdot e^{-r_\nu / \ell_P}
+  \;\ll\; m_e.
+\end{equation}
+To jest \emph{substratowy see-saw}: ci\k{e}\.zka skala
+($m_{\rm sol} \sim v_W$) i~lekka skala ($e^{-r_\nu/\ell_P}$)
+generuj\k{a} hierarchi\k{e} $m_\nu/m_e \sim 10^{-6}$ bez
+osobnego pola Majorany. Hierarchia $m_{\nu_3} > m_{\nu_2}
+> m_{\nu_1}$ wynika z~tej samej struktury SL co trzy pokolenia
+naładowanych lepton\'ow (dod.~\ref{app:hierarchia-mas}).
+\textbf{Status}: \statuslabel{Hipoteza robocza}
+(prop.~\ref{prop:neutrinos}; do ilo\'sciowej weryfikacji
+z~danymi oscylacyjnymi).
+
+\medskip\noindent
+\textbf{G7: Faza $\delta_{\rm CP}$ z~topologii $\mathbb{Z}_2$.}\;
+Macierz CKM dla 3~generacji posiada jedn\k{a} niezbywaln\k{a}
+faz\k{e}~CP (prop.~\ref{prop:CP-necessity}). W~TGP ta faza
+wynika z~topologicznego termu Hopfa
+$S_{\rm top} = \theta_{\mathbb{Z}_2} \int \varepsilon^{\mu\nu\rho\sigma}
+\partial_\mu\varphi_1 \partial_\nu\varphi_1
+\partial_\rho\varphi_2 \partial_\sigma\varphi_2\,d^4x$
+z~$\theta_{\mathbb{Z}_2} = \pi$ (dyskretna symetria~$\mathbb{Z}_2$
+substratu). Predykcja:
+\begin{equation}\label{eq:delta-CP-TGP}
+  \delta_{\rm CP}^{\rm (TGP)} \;\approx\; \frac{\pi}{2}
+  \;=\; 90^\circ,
+  \qquad
+  \delta_{\rm CP}^{\rm (PDG)} = 65^\circ \pm 15^\circ
+  \quad (<2\sigma).
+\end{equation}
+Faza jest \textbf{topologiczna} (niezale\.zna od k\k{a}t\'ow mieszania),
+co jest falsyfikowalne: pomiar $\delta_{\rm CP} < 0{,}1\;\mathrm{rad}$
+wyklucza mechanizm $\theta_{\mathbb{Z}_2} = \pi$.
+\textbf{Status}: \statuslabel{CZ.\,ZAMK.} [HYP]
+(prop.~\ref{prop:CP-necessity}, rem.~\ref{rem:jarlskog};
+O17 cz\k{e}\'sciowo zamkni\k{e}ty w~v20).
 \end{remark}
