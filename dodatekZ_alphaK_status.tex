@@ -491,13 +491,36 @@ Skrypty \texttt{tgp\_c133\_origin.py} (4/4~PASS),
 \texttt{tgp\_c\_alpha\_translation.py} (4/4~PASS).
 \end{proposition}
 
+\begin{remark}[Levinson i~pochodzenie $c(0) = \pi$]
+\label{rem:Z-levinson}
+Analiza fazowa solitonu (\texttt{tgp\_c0\_pi\_derivation.py}, 1/1~PASS)
+wyja\'snia $c(\alpha{=}0) \approx \pi$ \textbf{strukturalnie}:
+\begin{enumerate}[nosep]
+  \item Przy $g_0 \to 1^-$ (elektron): faza ogona
+    $\delta(g_0) \to \pi$ (zmierzono $\delta(0{,}995) = 0{,}9975\,\pi$).
+  \item Przy $g_0 \to 1^+$ (mion): $\delta \to 0$.
+  \item Skok fazowy $\Delta\delta = \pi$ przy przej\'sciu
+    przez vacuum $g{=}1$ --- analogia z~\textbf{twierdzeniem Levinsona}:
+    soliton ma dok\l{}adnie 1~stan zwi\k{a}zany.
+  \item Re\.zim liniowy: $A_{\rm tail} \approx \varepsilon = |g_0{-}1|$
+    (stosunek $A/\varepsilon \to 1$ przy $\varepsilon \to 0$);
+    korekta nieliniowa: $K_\mu/K_e = 0{,}78$ (znacz\k{a}ca asymetria).
+  \item Nachylenie: $c'(0) \approx 3/(2\pi)$ (1{,}8\%),
+    $c''(0)/2 \approx 1/15$ (0{,}75\%).
+\end{enumerate}
+Wniosek: $c(0) = \pi$ wynika z~geometrii sferycznej ($d = 3$)
+i~topologii solitonu (1~stan zwi\k{a}zany~$\Rightarrow$ skok $\pi$),
+\textbf{nie} z~numerologii.
+\end{remark}
+
 \begin{remark}[Rekomendacja programowa -- aktualizacja]
-Po zamkni\k{e}ciu OP-3, mostu substratowego, pe\l{}nego \l{}a\'ncucha numerycznego
-i~identyfikacji $c = \Phi_3(d)/d$,
+Po zamkni\k{e}ciu OP-3, mostu substratowego, pe\l{}nego \l{}a\'ncucha numerycznego,
+identyfikacji $c = \Phi_3(d)/d$ i~powi\k{a}zania $c(0){=}\pi$
+z~twierdzeniem Levinsona,
 najwa\.zniejsze otwarte problemy to:
 \begin{enumerate}[nosep]
-  \item \textbf{analityczna derywacja} $c = (d^2{+}d{+}1)/d$
-    z~ODE Form~A przy $\alpha{=}2$ ---
+  \item \textbf{formalny dow\'od} $c(0) = \pi$
+    z~twierdzenia Levinsona dla ODE solitonu ---
     prawdopodobnie perturbacyjna ekspansja solitonu
     blisko $g{=}1$ w~po\l{}\k{a}czeniu ze struktur\k{a}
     punktu sta\l{}ego Wilsona--Fishera;
