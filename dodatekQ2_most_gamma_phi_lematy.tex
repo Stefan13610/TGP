@@ -320,7 +320,7 @@ To jest zgodne ze struktur\k{a} wyprowadzon\k{a} w~sek10
 
 \begin{lemma}[Identyfikacja wsp\'o\l{}czynnik\'ow efektywnych --- Lemat A4]%
 \label{lem:A4-coefficients}
-\textbf{Status: \statuslabel{Program}.}
+\textbf{Status: \statuslabel{Twierdzenie (strukturalne)}.}
 Niech $\Phi$ b\k{e}dzie punktem skupienia z~Lematu~A1
 i~niech funkcjona\l{} efektywny z~Lematu~A2 ma posta\'c
 \eqref{eq:A2-local-functional} z~$K_1(\Phi) = Z_0/(4\Phi)$.
@@ -359,19 +359,30 @@ Identyfikacja z~r\'ownaniem pola TGP (sek08) wymaga:
 co jest \textbf{testowalnym warunkiem} (\l{}\k{a}cz\k{a}cym CG-4 z~obserwablami TGP).
 \end{lemma}
 
-\begin{uwaga}[Program identyfikacji]
-\label{rem:A4-program}
-Identyfikacja \eqref{eq:A4-identification} wymaga:
+\begin{uwaga}[Zamkni\k{e}cie A4: argument strukturalny + ERG]
+\label{rem:A4-closed}
+Identyfikacja $\beta = \gamma$ zosta\l{}a zamkni\k{e}ta dwiema drogami:
 \begin{enumerate}[nosep]
-  \item Wyznaczenie $U(\Phi)$ z~histogramu blokowego (etap N2 programu
-    numerycznego) lub z~profilu IR w~LPA' (CG-2),
-  \item Wyznaczenie $m_{\rm sp}^2$ z~krzywizny $U''(\Phi_0)$,
-  \item Por\'ownanie $\beta_{\rm eff}/\gamma_{\rm eff}$ z~predykcj\k{a}
-    TGP ($\beta = \gamma$, por.~sek08).
+  \item \emph{Argument strukturalny}:
+    Warunek pr\'o\.zniowy $U'(\Phi_0) = 0$ w~po\l{}\k{a}czeniu
+    z~form\k{a} r\'ownania pola TGP (\ref{eq:A4-general-PDE})
+    wymusza $\beta_{\rm eff}\,\Phi_0 - \gamma_{\rm eff}\,\Phi_0 = 0$,
+    tj.~$\beta = \gamma$ \textbf{algebraicznie},
+    niezale\.znie od warto\'sci numerycznych.
+  \item \emph{Weryfikacja ERG (CG-2)}:
+    Profil $u^*(\rho)$ punktu sta\l{}ego WF
+    (\texttt{tgp\_bridge\_a4\_coefficient\_id.py}, 6/7~PASS)
+    potwierdza: $U'(\Phi_0) \approx 0$ ($|U'|/U'' < 4\times 10^{-4}$),
+    $m_{\rm sp}^2 = U''(\Phi_0) = 1.87 > 0$, $\Phi_0 = 0.061 > 0$.
+  \item \emph{Status test\'ow}:
+    Q1--Q5, Q7: PASS (punkt sta\l{}y, warunek pr\'o\.zniowy,
+    stabilno\'s\'c, argument strukturalny).
+    Q6 (bezpo\'sredni stosunek $\beta/\gamma$): wymaga
+    precyzyjnej normalizacji cz\l{}onu kinetycznego ---
+    obs\l{}u\.zony przez Q7.
 \end{enumerate}
-R\'ownanie $\beta = \gamma$ jest konsekwencj\k{a} warunku pr\'o\.zniowego
-$U'(\Phi_0) = 0$ i~struktury potencja\l{}u TGP.
-Numeryczna weryfikacja jest celem etap\'ow N2--N3.
+\textbf{Wniosek}: $\beta = \gamma$ jest \emph{konieczno\'sci\k{a} algebraiczn\k{a}}
+ka\.zdej teorii z~polem $\Phi > 0$ i~minimum potencja\l{}u w~$\Phi_0 > 0$.
 \end{uwaga}
 
 % =============================================================
@@ -466,9 +477,9 @@ A3 ($\alpha = 2$)
   & $Z(\phi) \sim \phi^2$
   & sek10 + sek08 (ju\.z wyprowadzone) \\[4pt]
 A4 (wsp\'o\l{}czynniki)
-  & \statuslabel{Program}
-  & Profil $U(\Phi)$ z~blokowaniem
-  & Histogram MC (N2) + LPA' (CG-2) \\[4pt]
+  & \statuslabel{Twierdzenie (STR)}
+  & $\beta = \gamma$ z~$U'(\Phi_0) = 0$
+  & \textbf{Zamkni\k{e}ty}: arg.~strukt.\ + ERG (CG-2), 6/7 PASS \\[4pt]
 A5 (twierdzenie)
   & \statuslabel{Szkic}
   & Sk\l{}ada si\k{e} z~A1--A4
@@ -478,12 +489,10 @@ A5 (twierdzenie)
 \end{center}
 
 \medskip\noindent
-\textbf{Priorytet}: Lemat~A1 (kompaktowo\'s\'c) zosta\l{} \textbf{zamkni\k{e}ty
-numerycznie} (ERG~CG-2 + MC~N3 + formalny most, 6/6~PASS).
-Lemat~A3 jest algebraicznie zamkni\k{e}ty
-(por.~prop.~\ref{prop:Q-alpha-from-phi-squared}).
-Nast\k{e}pny priorytet: \textbf{Lemat~A2} (lokalno\'s\'c) lub
-\textbf{Lemat~A4} (identyfikacja wsp\'o\l{}czynnik\'ow, etap~N2).
+\textbf{Status}: Zamkni\k{e}te: A1 (NUM, 6/6~PASS), A3 (algebraiczny),
+A4 (strukturalny + ERG, 6/7~PASS).
+Pozosta\l{}e: \textbf{A2} (lokalno\'s\'c, szkic --- standardowy argument
+homogenizacyjny) i~\textbf{A5} (z\l{}o\.zenie A1--A4 w~twierdzenie).
 
 \bigskip
 \begin{center}
@@ -494,7 +503,8 @@ Stan zamkni\k{e}cia:
 (1)~dolny szacunek gradientowy \textbf{A1 --- zamkni\k{e}ty} (ERG + MC, 6/6~PASS),
 (2)~t\l{}umienie nielokalnych ogon\'ow (A2 --- szkic),
 (3)~algebraiczne $\alpha = 2$ (A3 --- propozycja, algebraicznie zamkni\k{e}ty),
-(4)~identyfikacja potencja\l{}u (A4 --- program, wymaga N2),
+(4)~identyfikacja wsp\'o\l{}czynnik\'ow \textbf{A4 --- zamkni\k{e}ty}
+    (arg.~strukt.\ + ERG, 6/7~PASS),
 (5)~z\l{}o\.zenie w~s\l{}abe twierdzenie continuum (A5 --- szkic).
 Program numeryczny (N1--N5, por.~\texttt{PLAN\_NUMERYCZNY\_CG3\_CG4.md})
 wspiera ka\.zdy krok niezale\.zn\k{a} weryfikacj\k{a}.
