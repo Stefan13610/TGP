@@ -132,10 +132,11 @@ Zasada nieoznaczono\'sci $\Delta x \cdot \Delta p \geq \hbar(\Phi)$
   & stw.~\ref{prop:uncertainty-tgp} \\[3pt]
 
 $a_\Gamma \cdot \Phi_0 = 1$: redukcja $N_{\rm param} = 2 \to 1$
-  & \statuslabel{Hipoteza}
-  & DESI DR2: $a_\Gamma \Phi_0 = 1{,}005$ ($1{,}03\sigma$);
-    Planck: $0{,}987$ ($1{,}22\sigma$);
-    \texttt{ex110} (10/10 PASS)
+  & \statuslabel{Hipoteza [NUM]}
+  & DESI DR1+CMB: $0{,}12\sigma$;
+    DESI DR2: $1{,}03\sigma$;
+    Planck: $1{,}22\sigma$;
+    \texttt{ex216}: 12/12~PASS; \texttt{ex110}: 10/10~PASS
   & R3; p75 \\
 
 \bottomrule
@@ -198,14 +199,16 @@ napr\k{e}\.ze\'n substratu
   & \S\ref{ssec:tensor-substrate} \\[3pt]
 
 Warunek antypodyczny $f \cdot h = 1$ z~bud\.zetu substratu
-  & \statuslabel{Propozycja [AN+POST]}
+  & \statuslabel{Propozycja [AN+NUM+POST]}
   & $\mathcal{B} = N_B \cdot s_0 = \text{const}$; podzia\l{} czas/przestrze\'n;
-    za\l{}o\.zenie multiplikatywne
+    za\l{}o\.zenie multiplikatywne;
+    \texttt{ex201}: 7/8~PASS (T4 FAIL: przybli\.zenie Newtona)
   & stw.~\ref{prop:antipodal-from-budget} \\[3pt]
 
 Metryka z~substratu: $g_{tt} = -c_0^2/\psi$, jedyno\'s\'c
-  & \statuslabel{Twierdzenie}
-  & (i) $g_{ij}$; (ii) $fh{=}1$; (iii) PPN; (iv) $\ell_P{=}\text{const}$
+  & \statuslabel{Twierdzenie [AN+NUM]}
+  & (i) $g_{ij}$; (ii) $fh{=}1$; (iii) PPN; (iv) $\ell_P{=}\text{const}$;
+    \texttt{ex206}: 26/26~PASS
   & tw.~\ref{thm:metric-from-substrate-full} \\[3pt]
 
 Zunifikowana akcja $S_{\rm TGP}$; $\sqrt{-g} = c_0\psi$
@@ -727,16 +730,12 @@ Stosunek $M/N$        & $\geq 6$ & & \textbf{v35}: $M/N \geq 6$ (bez T1+T2);
     \end{itemize}
     \textbf{\'Scie\.zka~8--9 (ogon algebraiczny)}: \textsc{Zamkni\k{e}ta}.
   \item \textbf{ex73--ex77: $\beta=1$ jako centrum symetrii}
-    (\statuslabel{Hipoteza}; \textbf{wymaga re-weryfikacji}):
-    Przy starych $\alpha^*$ (b\l{}\k{e}dnych): dwu-zerowa struktura
-    $\delta(\alpha)$ wyst\k{e}puje wy\l\k{a}cznie dla $\beta=1$;
-    $\beta=1$ by\l{}o centrum okna bifurkacji z~dok\l{}adno\'sci\k{a}
-    $1{,}87\times10^{-5}$.
-    \textbf{Status po ex84}: wynik wymaga re-weryfikacji
-    z~poprawnymi warto\'sciami $z_0(\alpha)$ (poprawna siatka, $>100$~pkt).
-    Je\'sli $\beta=1$ pozostaje centrum symetrii przy poprawnych $\alpha^*$
-    $\Rightarrow$ aksjomat N0-5 ($\beta=\gamma$) ma dodatkowe uzasadnienie
-    dynamiczne.
+    (\statuslabel{Hipoteza [NUM]}; potwierdzone \texttt{ex217}):
+    Dwu-zerowa struktura $F(\alpha^*)=R_{21}$ wyst\k{e}puje
+    \textbf{wy\l{}\k{a}cznie} dla $\beta_{\rm pot}=1$ (fizycznej warto\'sci TGP);
+    $\beta\neq1$: 0~zer (ex217, skan 6~warto\'sci).
+    Aksjomat N0-5 ($\beta=\gamma$) ma dodatkowe uzasadnienie
+    dynamiczne --- selekcja potencja\l{}u.
   \item \textbf{ex85: Nowe relacje algebraiczne Warstwy~II}
     (\statuslabel{Hipoteza}; \texttt{ex85}, 5/6~PASS):
     Weryfikacja z~danymi Planck~2018, DESI~DR1+CMB:
