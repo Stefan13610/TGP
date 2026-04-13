@@ -220,8 +220,23 @@ przez metodę asymptotyki dopasowanej:
   \item \textbf{Dopasowanie}: połączenie asymptotyk daje $B(g_0)$ i~$C(g_0)$
         jako funkcje $g_0$ przez formułę połączeniową.
 \end{enumerate}
-Oczekiwany wynik: $A_{\rm tail} = c_A(g_0-g^*)^4[1+O((g_0-g^*))]$,
+Oczekiwany wynik: $A_{\rm tail} = c_A(g_0-g^*)^\nu[1+O((g_0-g^*))]$,
 gdzie $c_A$ jest wyznaczone z~warunków dopasowania.
+
+\medskip\noindent
+\textbf{Wynik numeryczny} (\texttt{ex218}, sesja~v50):
+\begin{itemize}[nosep]
+  \item Skan $g_0\in[1{,}05;\,2{,}5]$, 60~punktów, $R_{\max}=120$.
+  \item Wykładnik względem $g^* = e^{-1/4}$:
+    $\nu = 1{,}508 \approx 3/2$ (odch.~$0{,}5\%$).
+  \item Interpretacja: $3/2$ jest standardowym wykładnikiem WKB
+    w~punkcie zwrotnym $f(g^*)=0$ --- spójne z~matched asymptotics.
+  \item Wykładnik względem próżni ($g_0-1$):
+    $\nu' = 0{,}971 \approx 2\ln\varphi$ (odch.~$0{,}8\%$).
+  \item Power-law jest przybliżeniem (RMS $\sim 5\%$);
+    mechanizm $\varphi$-FP nie wymaga jawnego~$\nu$.
+\end{itemize}
+Status: \statuslabel{Propozycja [NUM]}.
 \end{problem}
 
 % -------------------------------------------------------------------
@@ -436,8 +451,8 @@ Zasada selekcji $g_0^\tau$ (niezależna od~C4)
   & O-J3 \\[3pt]
 
 Rygorystyczne wyprowadzenie $A_{\rm tail}(g_0)$
-  & \statuslabel{Program}
-  & asymptotyka dopasowana; warstwa przy $g^*$
+  & \statuslabel{Propozycja [NUM]}
+  & $\nu \approx 3/2$ (WKB); \texttt{ex218}; analityka otwarta
   & O-J1, prob.~\ref{prob:K-OJ1} \\[3pt]
 
 Zasada selekcji $g_0^\mu = \varphi g_0^*$
