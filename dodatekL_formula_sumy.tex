@@ -247,18 +247,30 @@ Wynik (skrypt \texttt{ex73}, metoda pełna):
 \toprule
 $\beta_{\rm pot}$ & $\alpha^*_1$ & $\alpha^*_2$ & $S$ numeryczna & $2\pi - 1 - \beta/10$ \\
 \midrule
-$0{,}5$ & do wyznaczenia & do wyznaczenia & do wyznaczenia & $5{,}233$ \\
-$1{,}0$ & $2{,}4414$ & $2{,}7418$ & $5{,}1832$ & $5{,}183$ \checkmark \\
-$1{,}5$ & do wyznaczenia & do wyznaczenia & do wyznaczenia & $5{,}133$ \\
-$2{,}0$ & do wyznaczenia & do wyznaczenia & do wyznaczenia & $5{,}083$ \\
+$0{,}5$ & --- & --- & \textbf{0 zer} & $5{,}233$ \\
+$0{,}8$ & --- & --- & \textbf{0 zer} & $5{,}203$ \\
+$1{,}0$ & $2{,}432$ & $2{,}636$ & $5{,}067$ & $5{,}183$ \\
+$1{,}2$ & --- & --- & \textbf{0 zer} & $5{,}163$ \\
+$1{,}5$ & --- & --- & \textbf{0 zer} & $5{,}133$ \\
+$2{,}0$ & --- & --- & \textbf{9 zer (artefakt)} & $5{,}083$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Wyniki dla $\beta_{\rm pot} \neq 1$ zależą od zbieżności solvera;
-pełne wyniki wymagają uruchomienia \texttt{ex73} na docelowym systemie.
+Wyniki dla $\beta_{\rm pot} \neq 1$ (skrypty \texttt{ex89}
+i~\texttt{ex217}, sesja~v50):
+\textbf{dwa zera $F(\alpha^*)=R_{21}$ istnieją WYŁĄCZNIE
+dla $\beta_{\rm pot}=1$}.
+Dla $\beta_{\rm pot}\in\{0{,}5;\, 0{,}8;\, 1{,}2;\, 1{,}5\}$:
+zero zer; $\beta_{\rm pot}=2{,}0$: 9~zer (artefakt numeryczny,
+$\alpha^*>2{,}9$).
+Interpretacja: aksjomat $\beta=\gamma$ ($\equiv\beta_{\rm pot}=1$, N0-5)
+jest \textbf{jedynym} potencjałem solitonowym dającym poprawną
+hierarchię leptonową w~Ścieżce~10.
 
-Status: \statuslabel{Program} (weryfikacja ogólności; O-L2).
+Status: \statuslabel{CZ. ZAMK. [NUM]}
+(O-L2 zamknięty negatywnie: formuła sumy nie jest ogólna;
+pozytywnie: $\beta_{\rm pot}=1$ jest selektywne).
 \end{result}
 
 % -------------------------------------------------------------------
@@ -425,8 +437,9 @@ Suma $\alpha^*_1 + \alpha^*_2 = 2\pi - 11/10$
   & hip.~\ref{hyp:L-sum-formula} \\[3pt]
 
 Ogólność formuły sumy dla $\beta_{\rm pot} \neq 1$
-  & \statuslabel{Program}
-  & wymaga \texttt{ex73} z~pełnym skanem
+  & \statuslabel{CZ. ZAMK. [NUM]}
+  & \texttt{ex89}/\texttt{ex217}: 2~zera \textbf{tylko} dla $\beta=1$;
+    $\beta \neq 1$: 0~zer (selekcja potencjału)
   & O-L2 \\[3pt]
 
 $\alpha^*_{1,2}$ to efektywne sprzężenia leptonu $e$/$\mu$
