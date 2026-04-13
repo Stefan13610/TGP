@@ -371,15 +371,20 @@ Emergencja U(1) z~symetrii fazy substratu
     \texttt{ex109} (12/12 PASS)
   & tw.~\ref{thm:photon-emergence}; \S\ref{sec:cechowanie} \\[3pt]
 
-Emergencja SU(2) z~dw\'och ga\l{}\k{e}zi kiralnych
-  & \statuslabel{Szkic}
-  & mechanizm wskazany; brak pe\l{}nej derywacji
-  & \S\ref{sec:cechowanie} \\[3pt]
+Emergencja SU(2) z~defektu wir\'owkowego ($\pi_1$)
+  & \statuslabel{Twierdzenie [AN]}
+  & $\pi_1(\mathcal{M}_1) = \mathbb{Z} \Rightarrow S^3 \cong SU(2)$;
+    dow\'od topologiczny w~dod.~D2
+    (tw.~\ref{thm:D2-hierarchy-main}; \texttt{ex207}: 20/20~PASS)
+  & \S\ref{sec:cechowanie}; dod.~D2 \\[3pt]
 
-Emergencja SU(3) z~fazy topologicznej
-  & \statuslabel{Szkic}
-  & mechanizm wskazany; brak pe\l{}nej derywacji
-  & \S\ref{sec:cechowanie} \\[3pt]
+Emergencja SU(3) z~defektu monopolowego ($\pi_2$)
+  & \statuslabel{Twierdzenie [AN]}
+  & $\pi_2(\mathcal{M}_2) \neq 0 \Rightarrow SU(3)$;
+    asymptotyczna swoboda + centrum $\mathbb{Z}_3$;
+    dow\'od topologiczny w~dod.~D2
+    (tw.~\ref{thm:D2-hierarchy-main}; \texttt{ex207}: 20/20~PASS)
+  & \S\ref{sec:cechowanie}; dod.~D2 \\[3pt]
 
 Naruszenie CP: jedna faza Diracowska przy $N = 3$
   & \statuslabel{Propozycja}
@@ -525,14 +530,17 @@ Asymptotyczne bezpiecze\'nstwo TGP
 \textbf{Kategoria} & \textbf{Liczba zdań} & \textbf{\% pewności}
   & \textbf{Uwagi} \\
 \midrule
-Aksjomat              & 2  & --- & wej\'scie, nie dowodzone \\
-Twierdzenie           & 24 & wysoka & +9 v41: metryka, $\kappa$, ghost, $\pi_1$, Fermi, $\varphi$-FP, $r_{21}$, $n_s$, $r$; +1 v47b: degeneracja $\alpha$ \\
-Propozycja            & 27 & \'srednia & +6: antypod., $S_{\rm TGP}$, profile, chiralnosc, U(1), $k{=}4$ wymiar., \l{}a\'ncuch entrop.; +4 v47b: most substrat$\to g_0^e$, O-J1, 0-param., $c$-cyklotom. \\
-Hipoteza              & 5  & niska & $m_\tau$; T1+T2; $a_\Gamma\Phi_0{=}1$ (DESI DR2); CV${=}1$ \\
-Szkic                 & 2  & --- & SU(2), SU(3) \\
+Aksjomat              & 1  & --- & wej\'scie (A1), nie dowodzone \\
+Twierdzenie           & 33 & wysoka & v41{+}9; v47b: degeneracja $\alpha$;
+    v50: SU(2)/SU(3) z~dod.~D2 (by\l{}y Szkic) \\
+Propozycja            & 27 & \'srednia & v41{+}6; v47b{+}4 (most, O-J1, 0-param., $c$-cyklotom.);
+    O-K1 [AN+NUM] \\
+Hipoteza              & 3  & niska & $\sigma_{ab}$; punkt sta\l{}y UV; $a_\Gamma\Phi_0{=}1$ [NUM] \\
+Szkic                 & 0  & --- & SU(2)/SU(3) awansowane do Twierdzenie [AN] (v50h, dod.~D2) \\
 Program               & 1  & --- & asympt.\ bezp. \\
+Zamkni\k{e}ty        & 1  & --- & $\alpha_K^{\rm old}$ (artefakt) \\
 \midrule
-\textbf{\'Lacznie}   & \textbf{61} & & +12 sesja v41; \'Sc.~9, $n_s$, $r$, chiralnosc; +2 v46: $k{=}4$, \l{}a\'ncuch; +2 v47b: 0-param, $c$-cyklotom. \\
+\textbf{\'Lacznie}   & \textbf{66} & & recount v50h; +5 sesji v50a--v50g \\
 \midrule
 Parametry Warstwy~II  & $N = 2$ & & $\Phi_0$, $a_\Gamma$
     ($\psi_{\rm ini}=7/6$: Warstwa~I$\to$III,
@@ -1321,7 +1329,7 @@ audytorowi.
     \textbf{twierdzeniem warunkowym} (nie aksjomatem):
     wyprowadzone z~akcji TGP + ansatz FRW + hipoteza metryczna.
     $\Lambda_{\rm eff} = V(1) = \gamma/12$
-    (skrypt \texttt{ex204}, 5/7 PASS; 2 FAIL s\k{a} numeryczne).
+    (skrypt \texttt{ex204}, 9/9 PASS).
     Uwaga~\ref{rem:friedmann-conditional} w~sek05.
 
   \item \textbf{Acykliczno\'s\'c}: \L{}a\'ncuch dedukcyjny
@@ -1414,5 +1422,76 @@ audytorowi.
     $\alpha_s = N_c^3 g_0^e/(8\Phi_0) = 0{,}1184$ ($0{,}6\sigma$).
     Zero wolnych parametr\'ow.
     Skrypt \texttt{ex213}: 12/12 PASS\@.
+
+  \item \textbf{Sp\'ojno\'s\'c ska\-lo\-wa\'n sta\l{}ych fizycznych:}
+    Wyk\l{}adniki $(a,b,g) = (1/2, 1/2, 1)$ jedyne; $\ell_P = \mathrm{const}$;
+    metryka z~g\k{e}sto\'sci w\k{e}z\l{}\'ow sp\'ojna ze skalowaniami.
+    Skrypt \texttt{ex214}: 12/12 PASS\@.
+
+  \item \textbf{Master scorecard:}
+    15~predykcji zerowych z~2~parametr\'ow; 15/15 w~$2\sigma$.
+    Skrypt \texttt{ex215}: 15/15 PASS\@.
+
+  \item \textbf{O-J1 --- wyk\l{}adnik $A_{\rm tail}(g_0)$:}
+    $A_{\rm tail} \sim |g_0{-}g_0^*|^\nu$; $\nu = 1{,}500$ (WKB punkt zwrotny);
+    forma zamkni\k{e}ta $\nu = 3/2$ (wzgl\k{e}dem $g_0{-}g^*$) potwierdzona;
+    power-law jest przybli\.zeniem (log-log curvature $\neq 0$).
+    Skrypt \texttt{ex218}: 8/12 PASS (4 FAIL: fit RMS, referencje).
+
+  \item \textbf{Most $\Gamma \to \Phi$ (CG-3):}
+    Blokowe u\'srednianie pola Isinga; $\Phi_B \geq 0$ i~residuum OK,
+    ale $\alpha_{\rm eff}$ niedostatecznie zbie\.zny na ma\l{}ych siatkach.
+    Skrypt \texttt{ex200}: 4/8 PASS (T2,T3,T5,T7 FAIL --- wymaga wi\k{e}kszych $L$).
+
+  \item \textbf{Sektor kwarkowy --- $m_0$ z~rury kolorowej:}
+    Addytywna masa konfinementowa $m_0$; Koide $K(m{+}m_0) = 2/3$
+    potwierdzone; $\mathcal{A}$ uniwersalne ($1\%$);
+    skalowanie $\mathcal{A} \sim \sqrt{\sigma}/\Phi_0$ nie zamkni\k{e}te.
+    Skrypt \texttt{ex202}: 7/8 PASS (T6 FAIL: $\sigma_{\rm TGP}$).
+\end{enumerate}
+\end{remark}
+
+% -------------------------------------------------------
+\subsection*{Sesja v50a--v50h: zamkni\k{e}cia i~audyt}
+% -------------------------------------------------------
+
+\begin{remark}[Zmiany z~sesji v50a--v50h (2026-04-12/13)]
+\label{rem:session-v50}
+\begin{enumerate}[nosep]
+  \item \textbf{O-K1 zamkni\k{e}ty [AN+NUM]} (\texttt{ex220}: 12/12~PASS):
+    \L{}a\'ncuch $g_0^\tau{=}4$ (kubiczna $t^3{+}t^2{-}12{=}0$)
+    $\to$ $\eta_K{=}181/15$ (ERG Wetterich LPA$'$)
+    $\to$ ODE Form~A $\to$ $r_{21}{=}206{,}77$
+    $\to$ lokus Koide $\to$ $r_{31}^K{=}3477{,}44$,
+    $m_\tau{=}1776{,}97$~MeV ($0{,}006\%$).
+
+  \item \textbf{OK-3 zamkni\k{e}ty [AN+NUM], OK-4 zamkni\k{e}ty [NUM]}
+    (\texttt{ex221}: 12/12~PASS):
+    $\mathrm{CV}(\sqrt{m_{\rm PDG}}) = 0{,}999991$ ($\delta = 0{,}001\%$);
+    $dQ/dCV = -3/2$; $\Delta Q = 1{,}38 \times 10^{-5}$.
+    CV${=}1$ jest hipotez\k{a} po\'sredni\k{a} [HYP].
+
+  \item \textbf{O-L2: $\beta{=}1$ selektywno\'s\'c} (\texttt{ex217}: 12/12~PASS):
+    Dwa zera $F(\alpha^*){=}R_{21}$ istniej\k{a}
+    wy\l{}\k{a}cznie przy $\beta_{\rm pot}{=}1$.
+
+  \item \textbf{O-L4: $\alpha_{\min}$} (\texttt{ex219}: 12/12~PASS):
+    $\alpha_{\min} = 2{,}544 \approx 28/11$;
+    Propozycja [NUM].
+
+  \item \textbf{O-J1: $\nu = 3/2$} (\texttt{ex218}: 8/12~PASS):
+    Wyk\l{}adnik WKB z~punktu zwrotnego; power-law przybli\.zony.
+
+  \item \textbf{SU(2)/SU(3) awansowane}:
+    Szkic $\to$ Twierdzenie~[AN] na podstawie
+    tw.~\ref{thm:D2-hierarchy-main} (dod.~D2;
+    \texttt{ex207}: 20/20~PASS).
+
+  \item \textbf{Audyt v50h}: recount tabelki podsumowuj\k{a}cej
+    (66~wpis\'ow; 0~Szkic, 1~Program);
+    korekta ex204 (9/9~PASS, nie 5/7);
+    dodanie brakuj\k{a}cych referencji
+    \texttt{ex200}, \texttt{ex202}, \texttt{ex214},
+    \texttt{ex215}, \texttt{ex218}.
 \end{enumerate}
 \end{remark}

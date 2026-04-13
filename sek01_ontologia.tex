@@ -17,6 +17,20 @@ w~danym miejscu. Bez materii nie ma przestrzeni; bez przestrzeni
 nie ma materii. Obie wielko\'sci s\k{a} wsp\'o\l{}zale\.zne.
 \end{axiom}
 
+\begin{remark}[Warstwa pre-substratowa]\label{rem:pre-substrat}
+Aksjomat~\ref{ax:przestrzen} jest fundamentalny \emph{fizycznie},
+lecz nie \emph{logicznie}: istnieje warstwa wcze\'sniejsza ni\.z
+substrat $\Gamma$, w~kt\'orej promocja symetrii $\Zp$ do rangi
+\emph{aktu ustanowienia r\'o\.znicy} zamyka \l{}a\'ncuch przyczynowy
+od nico\'sci do rzeczywisto\'sci. Formalnie jest to
+\textbf{Aksjomat~0} (dod.~\ref{app:aksjomatyka-roznicy}), z~kt\'orego
+wynikaj\k{a} jako twierdzenia: niestabilno\'s\'c $\Nzero$
+(tw.~\ref{thm:P3}), $\Zp$-niezmienniczo\'s\'c $H_\Gamma$
+(aks.~\ref{ax:Z2-konstytutywny}) oraz nieujemno\'s\'c $\Phi \geq 0$.
+Niniejsza sekcja zachowuje tradycyjn\k{a} prezentacj\k{e}
+,,od substratu'' dla przejrzysto\'sci fizycznej.
+\end{remark}
+
 To odwraca standardowy obraz fizyki, w~kt\'orym przestrze\'n (lub
 czasoprzestrzenie) istnieje jako uprzednio dana arena, a~materia
 jedynie ,,porusza si\k{e}'' po niej. Odr\'o\.znia to r\'ownie\.z TGP od
@@ -717,7 +731,8 @@ w\k{e}z\l{}owi $i \in V$ przypisujemy \textbf{operator
 amplitudy} $\hat{s}_i$ --- skal\k{a} opisuj\k{a}c\k{a}
 lokalny stopie\'n wzbudzenia substratu.
 
-\begin{proposition}[Symetria $\Zp$ z~mikrodynamiki]\label{prop:Z2}
+\begin{axiom}[Symetria $\Zp$ jako akt konstytutywny]%
+\label{ax:Z2-konstytutywny}\label{prop:Z2}
 Hamiltoniano substratu:
 \begin{equation}\label{eq:H-Gamma}
     H_\Gamma = \sum_i \biggl[
@@ -732,10 +747,17 @@ jest niezmienniczy wzgl\k{e}dem \textbf{chiralnej inwersji}:
     \hat{s}_i \;\mapsto\; -\hat{s}_i
     \qquad \forall\, i \in V.
 \end{equation}
-Ta dyskretna symetria $\Zp$ jest fundamentaln\k{a}
-symetri\k{a} substratu. Funkcja stanu $\Ffield$ mierzy
-stopie\'n jej z\l{}amania.
-\end{proposition}
+Ta dyskretna symetria $\Zp$ nie jest pochodn\k{a} cech\k{a}
+hamiltonianu --- jest \textbf{aktem ustanowienia} samego substratu
+(patrz Aksjomat~0, dod.~\ref{app:aksjomatyka-roznicy},
+tw.~\ref{thm:0-rownowaznosc}). Funkcja stanu $\Ffield$ mierzy
+stopie\'n jej spontanicznego z\l{}amania.
+
+\medskip
+\noindent\textbf{Etykieta \texttt{prop:Z2}} jest zachowana dla
+kompatybilno\'sci wstecznej odno\'snik\'ow; kanoniczna etykieta to
+\texttt{ax:Z2-konstytutywny}.
+\end{axiom}
 
 \begin{corollary}[Relacja $\Ffield \leftrightarrow
   \langle\hat{s}\rangle$]\label{cor:F-s}
@@ -756,7 +778,8 @@ i~przestrze\'n.
 % ----------------------------------------------------------
 \subsection{Niestabilno\'s\'c $\Nzero$}\label{ssec:niestabilnosc}
 
-\begin{axiom}[Niestabilno\'s\'c nico\'sci]\label{ax:P3}
+\begin{theorem}[Niestabilno\'s\'c nico\'sci]%
+\label{thm:P3}\label{ax:P3}
 Stan $\Ffield = 0$ ($\Nzero$) jest niestabilny. Jego miara
 w~przestrzeni konfiguracji wynosi zero:
 \begin{equation}
@@ -765,7 +788,26 @@ w~przestrzeni konfiguracji wynosi zero:
 Ka\.zde odej\'scie od dok\l{}adnej symetrii prowadzi do $\Ffield > 0$
 lokalnie, co oznacza jednoczesne pojawienie si\k{e} materii
 i~generowanej przez ni\k{a} przestrzeni.
-\end{axiom}
+\end{theorem}
+
+\begin{proof}[Szkic dowodu (z~Aksjomatu~0)]
+Stan $\Ffield = 0$ odpowiada $\langle\hat{s}_i\rangle = 0$ dla
+ka\.zdego $i$, czyli konfiguracji \emph{niezmienniczej} wzgl\k{e}dem
+$\Zp$. Zgodnie z~prop.~\ref{prop:0-niestabilnosc}
+(dod.~\ref{app:aksjomatyka-roznicy}), degeneracja typu
+$\sigma x = x$ dla ka\.zdego $x$ jest dynamicznie nieodr\'o\.znialna
+od $\Nzero$, st\k{a}d miara konfiguracji $\Zp$-niezmienniczych
+jest zero w~$(\Omega, \mu)$. \qed
+\end{proof}
+
+\begin{remark}[Status epistemiczny]\label{rem:P3-status}
+Dotychczas tw.~\ref{thm:P3} by\l{}o prezentowane jako
+\emph{aksjomat}~(A4) substratu. Po promocji $\Zp$ do Aksjomatu~0
+staje si\k{e} ono \emph{twierdzeniem} --- konsekwencj\k{a}
+logicznej niestabilno\'sci stanu maksymalnie zdegenerowanego.
+Etykieta \texttt{ax:P3} jest zachowana dla kompatybilno\'sci
+wstecznej.
+\end{remark}
 
 Niestabilno\'s\'c nie jest procesem czasowym --- czas nie istnieje
 w~$\Nzero$. Jest to stwierdzenie o~\textbf{strukturze} przestrzeni
