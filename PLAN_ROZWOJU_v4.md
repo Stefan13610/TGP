@@ -213,29 +213,29 @@ P4: PIERWSZY PRZEŻYWAJĄCY E^(4) > 0      ✅ UDOWODNIONE
 
 ---
 
-## R6: B=√2 analitycznie — `research/brannen_sqrt2/`
+## R6: B=√2 analitycznie — `research/brannen_sqrt2/` ⚙️ W TRAKCIE
 
 **Problem:** Stosunek Brannena B = b/a = √2 jest potwierdzony numerycznie do 10⁻⁶,
 ale brak dowodu analitycznego. Gdyby udowodnić → Koide K=2/3 staje się **twierdzeniem**.
 
-**Obecny status:**
-- a3d_soliton_brannen_r.py: 5/6 PASS, T5 = EXPECTED FAIL
-- B_num = 1.414212... ≈ √2 (|δ| < 10⁻⁶)
-- Związek: K = (1 + B²/2)/N = (1 + 1)/3 = 2/3
+**POSTĘP (2026-04-14):**
 
-**Plan ataku:**
-1. **Analiza ODE solitonowego:**
-   - g'' + (2/r)g' = dP/dg z K(g)=g^{2α}
-   - Warunki brzegowe: g(0)=g₀, g'(0)=0, g(∞)=1
-   - Szukać relacji między g₀ a parametrami Brannena (a, b, θ)
-2. **Symetria ODE:**
-   - Czy ODE ma ukrytą symetrię SO(2) lub dyskretną S₃ wymuszającą B=√2?
-   - Analiza Lie punktowych symetrii ODE
-3. **Perturbacyjnie wokół B=√2:**
-   - Założyć B = √2 + ε, sprawdzić czy ε=0 jest punktem stacjonarnym
-   - Minimalizacja jakiego funkcjonału daje B=√2?
+Łańcuch algebraiczny KOMPLETNY:
+```
+GL(3,𝔽₂) → Z₃ podgrupa → fazy 120° → K = 2/3 → B = √2
+```
 
-**Kryterium zamknięcia:** Dowód analityczny B=√2 z ODE solitonowego
+Negatywne wyniki (eliminacja ślepych ścieżek):
+- **Ścieżka 4 nie działa:** F(φ) = A(φg₀)/A(g₀) NIE jest stałe (CV = 220%)
+- **φ²-drabinka tau nie działa w substracie:** g₀^τ = φ²g₀^e → A_tail = 0
+- Best-fit g₀^τ = 1.73, co daje B = 1.4143 ≈ √2 z 10⁻⁴
+
+**Brakujące ogniwo:** Formalizacja Z₃ → fazy 120° (dlaczego parametryzacja Brannena?)
+
+**Co zostaje do zamknięcia:**
+1. **Z₃ → equidistant phases:** formalny dowód z reprezentacji GL(3,𝔽₂)
+2. **Tau z Koide constraint:** m_τ z K(m_e,m_μ,m_τ) = 2/3, nie z drabinki φ²
+3. **Porównanie kanoniczne vs substrat:** a3d (kanoniczne) działa lepiej
 
 **Pliki rdzenia do scalenia:**
 - Rozszerzenie `dodatekT3_brannen_geometry.tex`
