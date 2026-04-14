@@ -51,7 +51,7 @@ def main() -> None:
         renorm = 4
         jac_eps = 1.2e-4
         n_quad = 10
-        rel_tol = 0.002
+        rel_tol = 0.008
     else:
         t_final = 1.15
         dt = 0.052

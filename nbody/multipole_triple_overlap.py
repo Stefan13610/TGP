@@ -290,7 +290,9 @@ def three_body_forces_multipole(positions, C_values, beta=None, gamma=None,
             dij, dik, djk, m, L_max=L_max, n_rad=n_rad,
         )
 
-        coeff = 6.0 * gamma * Ci * Cj * Ck
+        # V_3 = (2*beta - 6*gamma)*Ci*Cj*Ck*I_Y
+        # F = -dV_3/dx = (6*gamma - 2*beta)*Ci*Cj*Ck * dI/dx
+        coeff = (6.0 * gamma - 2.0 * beta) * Ci * Cj * Ck
 
         e_ij = (positions[i] - positions[j]) / dij
         e_ik = (positions[i] - positions[k]) / dik
@@ -312,7 +314,7 @@ def three_body_potential_multipole(positions, C_values, beta=None, gamma=None,
     """
     Total irreducible 3-body potential energy via multipole expansion.
 
-    V_3_total = sum_{i<j<k} -6*gamma*Ci*Cj*Ck*I_Y(dij,dik,djk;m)
+    V_3_total = sum_{i<j<k} (2*beta - 6*gamma)*Ci*Cj*Ck*I_Y(dij,dik,djk;m)
     """
     from .tgp_field import default_beta_gamma, screening_mass
     from itertools import combinations
@@ -339,6 +341,6 @@ def three_body_potential_multipole(positions, C_values, beta=None, gamma=None,
 
         I_Y = yukawa_overlap_multipole(dij, dik, djk, m,
                                         L_max=L_max, n_rad=n_rad)
-        V += -6.0 * gamma * Ci * Cj * Ck * I_Y
+        V += (2.0 * beta - 6.0 * gamma) * Ci * Cj * Ck * I_Y
 
     return V

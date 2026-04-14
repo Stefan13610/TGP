@@ -270,7 +270,7 @@ def part5_force_comparison():
         dik = np.linalg.norm(rik)
         djk = np.linalg.norm(rjk)
         I_Y = yukawa_overlap_exact(dij, dik, djk, M, n_quad=n_quad)
-        V_exact += -6.0 * GAMMA_C * C[i] * C[j] * C[k] * I_Y
+        V_exact += (2.0 * BETA - 6.0 * GAMMA_C) * C[i] * C[j] * C[k] * I_Y
 
     V_mult = three_body_potential_multipole(pos, C, BETA, GAMMA, L_max=L_max, n_rad=N_RAD)
 

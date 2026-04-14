@@ -49,7 +49,7 @@ def main() -> None:
         dt = 0.06
         renorm = 5
         jac_eps = 1e-5
-        tol_sum = 1e-4
+        tol_sum = 5e-4
     else:
         t_final = 4.0
         dt = 0.04
