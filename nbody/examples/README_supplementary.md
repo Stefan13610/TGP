@@ -153,7 +153,7 @@ python ex235_alpha_s_formula.py
 
 **ex286:** K(g) formal selection: FIVE independent proofs that K=g² is the unique correct kinetic coupling. (1) Derrick n_K=D−2=2; (2) ghost-free + super-renormalizable; (3) Lane-Emden canonical form; (4) 4D power counting; (5) phi-FP match 0.02%. **K(g) open question RESOLVED.**
 
-**ex287:** Experimental signatures catalog: 20 testable predictions with specific facilities and timelines. 12 near-term (<2028), 11 medium-term (2028-35). 10 kill criteria. Key tests: Sum m_nu=62.9 meV (DESI/Euclid), r=0.004 (LiteBIRD), proton stability (Hyper-K).
+**ex287:** Experimental signatures catalog: 20 testable predictions with specific facilities and timelines. 12 near-term (<2028), 11 medium-term (2028-35). 10 kill criteria. Key tests: Sum m_nu=59.6 meV (DESI/Euclid), r=0.004 (LiteBIRD), proton stability (Hyper-K).
 
 **ex288:** GW from phase transitions: EWPT α=3×10⁻⁵ (weak first-order), QCD crossover (Z₃ structured), TGP transition at T~4 MeV. EWPT signal below LISA threshold. TGP-specific: c_GW=c exactly, tensor-only, Z₃ harmonic at 3×f_peak.
 
@@ -194,7 +194,7 @@ The 12 master equations (all verified in ex244):
 | F4 | \|GL(3,F₂)\| = 168 | exact | 0σ |
 | F5 | α_s × Ω_Λ = 3g₀ᵉ/32 | 0.0815 | invariant |
 | F6 | Ω_DM = Ω_b(N! − Ω_Λ) | 0.262 | 0.3σ |
-| F7 | Σm_ν = 62.9 meV (NO) | prediction | < 120 meV |
+| F7 | Σm_ν = 59.6 meV (NO) | prediction | < 120 meV |
 | F8 | S[g] unified action | framework | — |
 | F9 | n_s = 1 − 2/N_e | 0.967 | 0.4σ |
 | F10 | m_W = 80.354 GeV | 80.354 | 0.01σ |

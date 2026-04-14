@@ -383,9 +383,9 @@ print("""
     Delta m^2_21 = 7.53e-5 eV^2
     Delta m^2_32 = 2.453e-3 eV^2
 
-  With K(nu) = 1/2 (Majorana, B=1):
-    Predicted: m_1=3.2 meV, m_2=9.3 meV, m_3=50.4 meV
-    Sum m_nu = 62.9 meV (testable by KATRIN, cosmology)
+  With K(nu) = 1/2 (Majorana, B=√2):
+    Predicted: m_1=0.80 meV, m_2=8.65 meV, m_3=50.11 meV
+    Sum m_nu = 59.6 meV (testable by KATRIN, cosmology)
 
   Question: does A = a_Gamma/phi work for neutrinos too?
   Neutrinos have no confinement, so m_0 = 0 is expected.

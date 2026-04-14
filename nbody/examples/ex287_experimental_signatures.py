@@ -64,8 +64,8 @@ print()
 print("-" * 72)
 print("  A1: Neutrino Mass Sum")
 print("-" * 72)
-# From F7: Sum m_nu = 62.9 meV (normal ordering)
-sum_mnu = 62.9  # meV
+# From F7: Sum m_nu = 59.6 meV (normal ordering)
+sum_mnu = 59.6  # meV
 # Current bounds: Planck 2018 < 120 meV, DESI+CMB 2024 < 72 meV
 # KATRIN endpoint: < 450 meV (kinematic)
 print(f"  TGP prediction:    Sum m_nu = {sum_mnu} meV (NO)")
@@ -76,7 +76,7 @@ print(f"  Experiments:       DESI (BAO), Euclid, CMB-S4, JUNO")
 print(f"  Timeline:          2025-2028 (cosmological sensitivity ~ 20 meV)")
 print()
 
-check("Sum m_nu = 62.9 meV consistent with bounds",
+check("Sum m_nu = 59.6 meV consistent with bounds",
       sum_mnu < 120 and sum_mnu < 72,
       f"{sum_mnu} meV < 72 meV (DESI+CMB)")
 
@@ -84,13 +84,13 @@ check("Sum m_nu = 62.9 meV consistent with bounds",
 Delta_m21_sq = 7.53e-5  # eV^2
 Delta_m31_sq = 2.453e-3  # eV^2
 # m1^2 + m2^2 + m3^2 >= Delta_m31_sq + Delta_m21_sq (NO)
-# sum = m1 + m2 + m3 = 62.9 meV
+# sum = m1 + m2 + m3 = 59.6 meV
 # Minimize: m1 ~ 0, m2 = sqrt(Delta_m21), m3 = sqrt(Delta_m31)
 m3 = np.sqrt(Delta_m31_sq) * 1000  # meV
 m2 = np.sqrt(Delta_m21_sq) * 1000  # meV
 m1_min = 0.0
 sum_min = m1_min + m2 + m3
-# For sum = 62.9: m1 = sum - m2 - m3
+# For sum = 59.6: m1 = sum - m2 - m3
 m1 = (sum_mnu - m2 - m3)
 print(f"  Individual masses (NO):")
 print(f"    m1 = {m1:.2f} meV")
@@ -421,7 +421,7 @@ print()
 kill_criteria = [
     ("Proton decay observed",                "Z3 triality violated"),
     ("Inverted neutrino ordering confirmed",  "F7 prediction fails"),
-    ("Sum m_nu > 120 meV (cosmological)",     "Conflicts with F7 = 62.9 meV + NO"),
+    ("Sum m_nu > 120 meV (cosmological)",     "Conflicts with F7 = 59.6 meV + NO"),
     ("WIMP dark matter detected",             "Solitonic DM picture fails"),
     ("c_GW != c measured",                    "Conformal coupling violated"),
     ("New fundamental scalar found (not H)",  "Minimality principle fails"),
@@ -452,7 +452,7 @@ print(f"  {'#':<4s} {'Prediction':<35s} {'TGP Value':<15s} {'Facility':<15s} {'W
 print(f"  {'-'*4} {'-'*35} {'-'*15} {'-'*15} {'-'*10}")
 
 predictions = [
-    ("P1",  "Sum m_nu",                  "62.9 meV",     "DESI/Euclid",  "2025-28"),
+    ("P1",  "Sum m_nu",                  "59.6 meV",     "DESI/Euclid",  "2025-28"),
     ("P2",  "Neutrino ordering",         "Normal (NO)",  "JUNO/DUNE",    "2028-32"),
     ("P3",  "Majorana nature (0vbb)",    "Yes",          "nEXO/LEGEND",  "2028-35"),
     ("P4",  "m_W precision",             "80.354 GeV",   "HL-LHC/FCC",   "2029+"),

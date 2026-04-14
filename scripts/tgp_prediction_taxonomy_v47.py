@@ -211,13 +211,13 @@ add("m0(d,s,b)",
 # ============================================================
 
 add("sum(m_nu)",
-    62.9, 60.0, 30.0, "P",
-    "TGP predicts ~63 meV (normal ordering). Planck+DESI gives "
+    59.6, 60.0, 30.0, "P",
+    "TGP predicts ~60 meV (normal ordering). Planck+DESI gives "
     "upper bound ~72 meV. Not yet precision-testable.",
     "Planck+DESI")
 
 add("m3/m2 (neutrino)",
-    50.4/9.3, 5.0, 1.0, "P",
+    50.11/8.65, 5.0, 1.0, "P",
     "Predicted ratio from TGP neutrino spectrum. Precision test "
     "requires JUNO + next-gen oscillation experiments.",
     "oscillation")

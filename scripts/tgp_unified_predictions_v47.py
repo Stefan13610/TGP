@@ -106,13 +106,13 @@ alpha_s_tube = np.sqrt(A_tgp) / C_F
 pred("alpha_s(tube) = sqrt(A)/C_F", alpha_s_tube, 0.1179, 0.0009, "", "PDG2024")
 
 # --- Neutrino sector ---
-# TGP: normal ordering, K(nu)=1/2 (Majorana), sum_mnu ~ 62.9 meV
-pred("sum(m_nu) meV", 62.9, 60.0, 30.0, "meV", "Planck+DESI")
+# TGP: normal ordering, K(nu)=1/2 (Majorana), sum_mnu ~ 59.6 meV
+pred("sum(m_nu) meV", 59.6, 60.0, 30.0, "meV", "Planck+DESI")
 # NOTE: Standard Koide K in [1,3]. K(nu)=1/2 was claimed for Majorana see-saw
 # parameter, NOT standard Koide. Removed until formalized.
 # pred("K(nu) Majorana", 0.5, 0.5, 0.1, "", "TGP prediction")
 # Normal ordering: m3 >> m2 > m1
-pred("m3/m2 (neutrino)", 50.4/9.3, 5.0, 1.0, "", "oscillation")
+pred("m3/m2 (neutrino)", 50.11/8.65, 5.0, 1.0, "", "oscillation")
 
 # ============================================================
 # Output table

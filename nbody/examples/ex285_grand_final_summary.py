@@ -153,7 +153,7 @@ K_lep    = 2.0 / 3.0
 K_nu     = 0.5
 import math
 Omega_DM = 0.0493 * (math.factorial(N) - Omega_Lam)
-sum_mnu  = 62.9   # meV, prediction
+sum_mnu  = 59.6   # meV, prediction
 n_s      = 1 - 2.0 / 55  # N_e = 55
 m_W      = 80.354  # GeV
 v_ew     = 246.22  # GeV
@@ -169,7 +169,7 @@ master_eqs = [
     ("F4",  "|GL(3,F2)| = 168",            "168",                "168",                  "0 sigma"),
     ("F5",  "alpha_s * OmL = 3g0/32",      f"{alpha_s*Omega_Lam:.4f}", "invariant",     "invariant"),
     ("F6",  "Omega_DM = Omega_b*(N!-OmL)", f"{Omega_DM:.3f}",    "0.265 +/- 0.007",    "0.3 sigma"),
-    ("F7",  "Sum m_nu = 62.9 meV (NO)",    "62.9",               "< 120 meV",           "prediction"),
+    ("F7",  "Sum m_nu = 59.6 meV (NO)",    "59.6",               "< 120 meV",           "prediction"),
     ("F8",  "S[g] unified action",         "framework",          "—",                    "—"),
     ("F9",  "n_s = 1 - 2/N_e",            f"{n_s:.4f}",          "0.9649 +/- 0.0042",   "0.4 sigma"),
     ("F10", "m_W = 80.354 GeV",            f"{m_W:.3f}",         "80.354 +/- 0.032",    "0.01 sigma"),

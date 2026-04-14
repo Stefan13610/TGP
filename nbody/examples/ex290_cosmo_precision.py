@@ -229,7 +229,7 @@ print("  6. NEUTRINO MASS SUM (F7)")
 print("-" * 72)
 print()
 
-sum_mnu_tgp = 62.9  # meV (TGP prediction)
+sum_mnu_tgp = 59.6  # meV (TGP prediction)
 sum_mnu_bound = 120  # meV (Planck 95% CL)
 sum_mnu_desi = 72   # meV (DESI+CMB 2024)
 
