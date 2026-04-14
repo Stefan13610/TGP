@@ -1,283 +1,238 @@
 # Narzędzia i toolchain dla TGP — 2026-04-14
 
-> Przegląd narzędzi, pluginów, modeli i programów które mogą
-> usprawnić pracę nad programami badawczymi R1–R7.
+> **Cel dokumentu**: Inwentaryzacja dostępnych narzędzi dla agenta (Claude Code)
+> i użytkownika. Aktualizować przy każdej zmianie toolchainu.
+>
+> **Ostatnia weryfikacja**: 2026-04-14
 
 ---
 
-## 1. Systemy algebry symbolicznej (CAS)
+## 0. Status instalacji (AKTUALNE)
 
-### Obecnie używane
-- **Python + SymPy** — w skryptach walidacyjnych (scripts/, nbody/)
-- **NumPy / SciPy** — obliczenia numeryczne, ODE, optymalizacja
+### ✅ ZAINSTALOWANE I DZIAŁAJĄCE
 
-### Rekomendowane do dodania
+| Narzędzie | Wersja | Ścieżka / import | Zastosowanie |
+|-----------|--------|-------------------|-------------|
+| **Python** | 3.14 | `C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\python.exe` | Główny język |
+| **SymPy** | 1.14.0 | `import sympy` | CAS symboliczny |
+| **NumPy** | 2.4.3 | `import numpy` | Obliczenia numeryczne |
+| **SciPy** | 1.17.1 | `import scipy` | ODE, optymalizacja, algebra |
+| **matplotlib** | 3.10.8 | `import matplotlib` | Wykresy |
+| **pandas** | 3.0.1 | `import pandas` | Tabele danych |
+| **galois** | 0.4.10 | `import galois` | **Ciała skończone, GL(n,GF(2))** — R1, R3 |
+| **networkx** | 3.6.1 | `import networkx` | Teoria grafów, struktury grupowe |
+| **emcee** | 3.1.6 | `import emcee` | MCMC sampling |
+| **Lean 4** | 4.29.1 | `C:\Users\Mateusz\.elan\bin\lean.exe` | Dowodzenie twierdzeń — R2 |
+| **Lake** | 5.0.0 | `C:\Users\Mateusz\.elan\bin\lake.exe` | Build system Lean |
+| **elan** | — | `C:\Users\Mateusz\.elan\` | Lean toolchain manager |
+| **Cadabra2** | 2.5.15 | CLI: `C:\Program Files (x86)\Cadabra\cadabra2-cli.exe` | Algebra tensorowa — R4 |
+| **Git** | — | w PATH | Wersjonowanie |
+| **GitHub Actions** | — | `.github/workflows/` | CI: testy + LaTeX |
+| **Claude Code** | — | Agent w terminalu | Agentic coding, refactoring |
 
-| Narzędzie | Do czego | Dla którego problemu | Koszt |
-|-----------|----------|---------------------|-------|
-| **SageMath** | Zunifikowany CAS (integruje SymPy, GAP, Singular, Maxima) | R2 (teoria grup), R3 (GL(N,𝔽₂)), R6 (analiza ODE) | Darmowy |
-| **Cadabra2** | Algebra tensorowa, obliczenia w OW/GR, notacja LaTeX-native | **R4 (metryka z Einsteina)** — idealny do G_μν z g_ij=Φ^p | Darmowy |
-| **Mathematica / Wolfram** | CAS ogólnego zastosowania, mocne w analitycznych ODE | R5 (k=4 z wiriału), R6 (B=√2) | Płatny (~$395/rok) |
-| **FORM** | Wielkoskalowe obliczenia algebraiczne (QFT) | R7 (UV completion, β-functions) | Darmowy |
-| **xAct** (Mathematica) | Pakiety do rachunku tensorowego | R4 (jeśli Mathematica dostępna) | Wymaga Mathematica |
+### ⚠️ ZAINSTALOWANE, OGRANICZENIA
 
-**Konkretna rekomendacja:**
-- **R4 (metryka)**: Zainstaluj Cadabra2. Pozwala wpisać g_ij = Φ^p·δ_ij w notacji LaTeX i obliczyć G_μν, warunki ghost-free, energię — dokładnie to czego potrzebujesz.
-  ```bash
-  # Instalacja (conda)
-  conda install -c conda-forge cadabra2
-  # Lub z pip
-  pip install cadabra2
-  ```
-- **R3 (dlaczego N=3)**: SageMath ma wbudowane GL(n,GF(2)), pozwala eksplorować algebraiczną strukturę dla różnych N.
-  ```python
-  # SageMath
-  G = GL(3, GF(2))
-  print(G.order())  # 168
-  print(G.conjugacy_classes_representatives())
-  ```
-
-### Linki
-- [SageMath](https://www.sagemath.org/) — darmowy, interfejs Pythona
-- [Cadabra2](https://cadabra.science/) — field theory CAS, notacja LaTeX
-- [SymPy ODE docs](https://docs.sympy.org/latest/modules/solvers/ode.html)
-- [FORM](https://github.com/vermaseren/form) — high-energy physics algebra
-
----
-
-## 2. Dowodzenie twierdzeń (theorem provers)
-
-### Lean 4 + Mathlib + PhysLean
-
-**Dla problemów:** R2 (CG-1/3/4), R5 (m∝A⁴), R6 (B=√2)
-
-Lean 4 to najszybciej rozwijający się system dowodzenia twierdzeń. Kluczowe:
-- **Mathlib**: >200 000 sformalizowanych twierdzeń, >750 kontrybutorów
-- **PhysLean**: nowa biblioteka formalizująca fizykę w Lean 4 (analog Mathlib dla fizyki)
-- W 2025 użyto Lean do znalezienia błędu w opublikowanym artykule o potencjale 2HDM
-
-**Jak to pomaga TGP:**
-- CG-1 (kontrakcja Banacha): Lean ma formalizację analizy funkcjonalnej
-- B=√2: Sformalizowanie dowodu uodparnia go na błędy
-- Publikowalność: artykuł z formalnym dowodem w Lean ma wyższy prestiż
-
-**Jak zacząć:**
-1. [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/) — tutorial
-2. [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/) — kurs
-3. [PhysLean](https://physlean.com/) — fizyka w Lean
-
-### AI-wspomagane dowodzenie
-
-| Narzędzie | Model | Co robi | Jak pomaga |
-|-----------|-------|---------|------------|
-| **Goedel-Prover-V2** | 8B / 32B (open-source) | Automatyczne dowodzenie w Lean 4 | Sugeruje taktyki, generuje dowody |
-| **Kimina-Prover** | 72B | Reasoning-driven proving w Lean 4 | Skaluje z rozmiarem modelu |
-| **LeanDojo** | Framework | AI-driven exploration w ekosystemie Lean | Integruje LLM z Lean |
-
-**Konkretna rekomendacja:**
-Zainstaluj Lean 4 + Mathlib. Użyj Goedel-Prover-V2-8B (działa lokalnie na GPU 24GB)
-do eksploracji dowodów CG-1. Nawet jeśli nie zamknie problemu, pomoże sformułować
-go precyzyjnie.
-
-```bash
-# Instalacja Lean 4
-curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh
-# Nowy projekt z Mathlib
-lake init my_project math
-```
-
-### Linki
-- [Lean 4](https://lean-lang.org/)
-- [Goedel-Prover-V2](https://github.com/Goedel-LM/Goedel-Prover-V2) — HuggingFace models
-- [LeanDojo](https://leandojo.org/) — AI + Lean
-- [PhysLean](https://physlean.com/) — fizyka w Lean 4
-
----
-
-## 3. Lokalne modele LLM (do rozumowania matematycznego)
-
-### Najlepsze modele do matematyki/fizyki (2026)
-
-| Model | Rozmiar | MATH benchmark | RAM | Zastosowanie |
-|-------|---------|----------------|-----|-------------|
-| **DeepSeek-R1-0528** | 671B (MoE, ~22B aktywne) | Najlepszy open-source | 48GB+ VRAM | Rozumowanie krok-po-kroku, fizyka |
-| **Qwen3-235B-A22B** | 235B (MoE) | Top 3 | 48GB+ VRAM | Research, scientific reasoning |
-| **Phi-4** | 14B | 80.4% | 16GB | Najlepszy stosunek jakość/RAM |
-| **QwQ-32B** | 32B | Top 3 math | 24GB | Math reasoning, chain-of-thought |
-| **DeepSeek-R1-Distill-32B** | 32B | Bardzo dobry | 24GB | Dystylat z R1, dostępniejszy |
-
-**Konkretna rekomendacja:**
-- **Jeśli masz GPU 24GB** (RTX 4090 / 3090): **QwQ-32B** lub **DeepSeek-R1-Distill-32B**
-- **Jeśli masz GPU 16GB** (RTX 4080): **Phi-4** (14B)
-- **Jeśli masz GPU 8GB** (RTX 4070): **Llama 3.3 8B** (ogólny) lub **Goedel-Prover-V2-8B** (dowody)
-
-**Narzędzia do uruchamiania lokalnie:**
-| Program | Opis | Platform |
-|---------|------|----------|
-| **Ollama** | Najprostszy — `ollama run qwq` | Win/Mac/Linux |
-| **LM Studio** | GUI + API, łatwy wybór modelu | Win/Mac/Linux |
-| **llama.cpp** | Najszybszy inference (GGUF) | Wszędzie |
-| **vLLM** | Serwer API, batching | Linux (GPU) |
-
-```bash
-# Szybki start z Ollama
-curl -fsSL https://ollama.com/install.sh | sh
-ollama run qwq           # 32B reasoning model
-ollama run deepseek-r1    # jeśli masz dużo VRAM
-```
-
-### Jak używać z TGP
-1. **Sprawdzanie dowodów**: Wklej szkic dowodu → model sprawdza logikę
-2. **Eksploracja algebraiczna**: "Pokaż jak GL(3,F₂) działa na przestrzeni CKM"
-3. **Debugowanie ODE**: "Dlaczego to ODE daje B≈√2? Jakie symetrie ma?"
-4. **Pisanie LaTeX**: Generowanie szkiców sekcji z notatek
-
----
-
-## 4. Pluginy Obsidian
-
-### Już w użyciu (prawdopodobnie)
-- Standardowy renderer LaTeX (MathJax)
-
-### Rekomendowane do zainstalowania
-
-| Plugin | Co robi | Dlaczego przydatny |
-|--------|---------|-------------------|
-| **LaTeX Suite** | 100+ snippetów, szybkie wpisywanie równań | Pisanie notatek z fizyką 3x szybciej |
-| **LaTeX Math** | Zintegrowany CAS (SymPy) w notatkach | `$x^2 + 3x + 2 =$` → automatycznie liczy wynik |
-| **Theorem & Equation Referencer** | Indeksowanie twierdzeń i równań z cross-reference | Twierdzenia TGP jako baza danych z linkami |
-| **Calctex** | Auto-obliczanie formuł LaTeX inline | Szybka weryfikacja numeryczna w notatkach |
-| **Dataview** | Zapytania SQL-like na frontmatter | Status tracking problemów R1–R7 |
-| **Kanban** | Tablice kanban | Wizualizacja postępu badawczego |
-| **Git** (Obsidian Git) | Auto-commit vault | Backup notatek |
-| **LaTeX OCR** | Obraz równania → LaTeX | Skanowanie z papierowych notatek |
-| **Excalidraw** | Rysunki diagramów | Schematy dowodów, flow teorii |
-
-**Konkretna rekomendacja:**
-1. **LaTeX Suite** — od razu. Pisanie `@a` zamienia się w `\alpha`, `//` w `\frac{}{}`.
-2. **Theorem & Equation Referencer** — kluczowy. Import z LaTeX (arXiv papers), export do LaTeX.
-   Oznaczasz twierdzenia w notatkach → automatyczny indeks → cross-referencje.
-3. **LaTeX Math (SymPy)** — inline CAS. Wpisujesz równanie → od razu wynik.
-
----
-
-## 5. Narzędzia LaTeX i publikacji
-
-### Kompilacja i edycja
-
-| Narzędzie | Opis | Zastosowanie |
-|-----------|------|-------------|
-| **VS Code + LaTeX Workshop** | Lokalny edytor z preview, synctex | Edycja .tex plików TGP |
-| **Typst** | Nowoczesna alternatywa LaTeX (200-400ms kompilacja vs 2-4min) | Szybkie drafty, notatki |
-| **WebLaTeX** | VS Code + web + Git + Copilot w jednym | Edycja online z GitHub sync |
-| **latexdiff** | Diff między wersjami .tex | Śledzenie zmian w manuskrypcie |
-| **Overleaf CE** (self-hosted) | Własna instancja Overleaf | Jeśli chcesz kolaborację |
-
-### CI/CD (już masz GitHub Actions)
-
-| Narzędzie | Co dodaje |
-|-----------|----------|
-| **tectonic** | Szybsza kompilacja LaTeX (Rust-based) — zastępuje pdflatex |
-| **arXiv submission validator** | Sprawdza zgodność z wymaganiami arXiv przed submisją |
-
----
-
-## 6. Narzędzia numeryczne (rozszerzenie obecnego stacku)
-
-### Dla ODE solitonowych (R5, R6)
-
-| Narzędzie | Co daje | Kiedy użyć |
+| Narzędzie | Problem | Workaround |
 |-----------|---------|------------|
-| **DifferentialEquations.jl** (Julia) | Najszybszy solver ODE/BVP na świecie | Jeśli Python za wolny dla parameter sweeps |
-| **AUTO-07p** | Analiza bifurkacji, kontynuacja | Mapowanie przestrzeni rozwiązań ODE solitonowego |
-| **PyDSTool** | Dynamical systems toolkit (Python) | Analiza stabilności, bifurkacje |
-| **Dedalus** | Spektralne PDE solver (Python) | Jeśli potrzebujesz PDE (nie tylko ODE) |
+| **Cadabra2 Python** | `import cadabra2` nie działa (initialization failed) | Używać CLI: `cadabra2-cli.exe < skrypt.cdb` |
+| **Lean 4** | Nie w PATH basha (Claude Code) | Wywoływać pełną ścieżką lub via Python subprocess |
 
-**Konkretna rekomendacja dla R6 (B=√2):**
-AUTO-07p pozwala śledzić rozwiązania ODE solitonowego jako funkcję parametrów (g₀, α, d).
-Można zobaczyć **dokładnie** gdzie B=√2 pojawia się w przestrzeni parametrów.
+### ❌ NIEDOSTĘPNE (ograniczenia sprzętowe)
 
-```bash
-# AUTO-07p
-pip install auto-07p
-# Lub Julia (szybsze ODE)
-curl -fsSL https://install.julialang.org | sh
-julia -e 'using Pkg; Pkg.add("DifferentialEquations")'
+| Narzędzie | Powód | Alternatywa |
+|-----------|-------|-------------|
+| Lokalne LLM (QwQ-32B, DeepSeek-R1) | Za mało VRAM | Claude Code (API), ChatGPT |
+| Goedel-Prover-V2-8B | Za mało VRAM | Ręczne dowodzenie w Lean + Claude |
+| PyDSTool | Nie wspiera Python 3.14 (numpy.distutils) | SciPy.integrate + SymPy |
+
+---
+
+## 1. Jak agent (Claude Code) powinien używać narzędzi
+
+### Python — standardowy workflow
+```python
+# Dostępne bezpośrednio:
+import sympy, numpy, scipy, galois, networkx, matplotlib, pandas, emcee
+# Uruchamianie skryptów:
+python TGP/TGP_v1/scripts/nazwa_skryptu.py
+python TGP/TGP_v1/nbody/examples/ex200_xxx.py --quick
 ```
 
-### Dla teorii grup (R3)
-
-| Narzędzie | Co daje |
-|-----------|---------|
-| **GAP** | System algebry grup (dedykowany). GL(n,GF(2)), klasy koniugacji, podgrupy |
-| **SageMath** (zawiera GAP) | Interfejs Pythona do GAP |
-
+### galois — GL(n, GF(2)) do R1 i R3
 ```python
-# GAP (standalone)
-G := GL(3, GF(2));
-Size(G);                          # 168
-ConjugacyClasses(G);              # klasy
-NormalSubgroups(G);                # podgrupy normalne
+import galois
+import numpy as np
+GF2 = galois.GF(2)
+# Tworzenie macierzy nad GF(2)
+M = GF2([[1,0,1],[1,1,0],[0,1,1]])
+det = int(np.linalg.det(M.view(np.ndarray).astype(float))) % 2
+# Enumeracja GL(3,GF(2)): 168 elementów
+```
+
+### Cadabra2 — algebra tensorowa do R4
+```bash
+# Uruchamianie skryptu Cadabra2 (.cdb):
+"C:\Program Files (x86)\Cadabra\cadabra2-cli.exe" skrypt.cdb
+
+# Konwersja Cadabra → Python:
+"C:\Program Files (x86)\Cadabra\cadabra2python.exe" skrypt.cdb > skrypt.py
+
+# Konwersja Cadabra → LaTeX:
+"C:\Program Files (x86)\Cadabra\cadabra2latex.exe" skrypt.cdb > output.tex
+```
+
+Przykład skryptu `.cdb` dla R4 (metryka):
+```
+{r, t, \theta, \phi}::Coordinate;
+{a, b, c, d}::Indices(values={r, t, \theta, \phi});
+\Phi::Depends(r);
+g_{a b}::Metric;
+g^{a b}::InverseMetric;
+
+# Ansatz: g_ij = Phi^p * delta_ij
+# Oblicz tensor Ricciego, warunki ghost-free, etc.
+```
+
+### Lean 4 — dowodzenie twierdzeń do R2
+```bash
+# Lean via Python subprocess (bo nie w PATH basha):
+python -c "
+import subprocess
+lean = r'C:\Users\Mateusz\.elan\bin\lean.exe'
+lake = r'C:\Users\Mateusz\.elan\bin\lake.exe'
+# Sprawdzenie pliku .lean:
+r = subprocess.run([lean, 'plik.lean'], capture_output=True, text=True)
+print(r.stdout, r.stderr)
+"
+
+# Nowy projekt Lean z Mathlib:
+# (uruchomić w PowerShell/cmd, nie w bash Claude Code)
+# lake init tgp_proofs math
+# lake build
 ```
 
 ---
 
-## 7. Workflow: jak to wszystko połączyć
+## 2. Systemy algebry symbolicznej (CAS)
 
-### Proponowany stack
+### Zainstalowane
+- **SymPy 1.14.0** — pełne CAS w Pythonie (ODE, algebra, calculus)
+- **Cadabra2 2.5.15** — algebra tensorowa, field theory (CLI)
+- **galois 0.4.10** — ciała skończone, GL(n,GF(q))
+
+### Do rozważenia w przyszłości
+
+| Narzędzie | Do czego | Dla którego problemu | Koszt | Priorytet |
+|-----------|----------|---------------------|-------|-----------|
+| **SageMath** | Pełny CAS + GAP (grupy) w jednym | R2, R3, R6 | Darmowy | ŚREDNI |
+| **Mathematica** | Mocne analityczne ODE | R5, R6 | ~$395/rok | NISKI |
+| **FORM** | Wielkoskalowe obliczenia QFT | R7 | Darmowy | NISKI |
+
+---
+
+## 3. Dowodzenie twierdzeń
+
+### Zainstalowane
+- **Lean 4.29.1** + **Lake 5.0.0** — proof assistant
+- Toolchains: `leanprover--lean4---v4.29.0`, `v4.29.1`
+
+### Jak zacząć (dla użytkownika)
+1. [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/)
+2. [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/)
+3. [PhysLean](https://physlean.com/) — fizyka w Lean 4
+
+### AI-wspomagane dowodzenie (przez API, nie lokalnie)
+- **Claude** (obecny agent) — może pomagać formułować twierdzenia w Lean
+- **Goedel-Prover-V2** — wymaga VRAM, ale można użyć przez API/cloud
+- **LeanDojo** — framework integrujący LLM z Lean
+
+---
+
+## 4. Lokalne LLM — NIEDOSTĘPNE
+
+Za mało VRAM na lokalny model. Alternatywy:
+- **Claude Code** (obecny agent) — do rozumowania, pisania kodu, eksploracji
+- **Claude API** (cloud) — dłuższe sesje rozumowania
+- **ChatGPT / Gemini** (cloud) — drugie opinie, weryfikacja
+
+---
+
+## 5. Pluginy Obsidian (rekomendowane)
+
+| Plugin | Co robi | Status |
+|--------|---------|--------|
+| **LaTeX Suite** | Snippety: `@a`→`\alpha`, `//`→`\frac{}{}` | REKOMENDOWANY |
+| **Theorem & Equation Referencer** | Indeks twierdzeń + cross-ref + import/export LaTeX | REKOMENDOWANY |
+| **LaTeX Math (SymPy)** | Inline CAS: `$2+3=$` → automatycznie oblicza | OPCJONALNY |
+| **Calctex** | Auto-obliczanie formuł LaTeX | OPCJONALNY |
+| **Dataview** | Zapytania na frontmatter (status R1–R7) | REKOMENDOWANY |
+| **Kanban** | Tablice kanban dla postępu | OPCJONALNY |
+| **Excalidraw** | Diagramy, schematy dowodów | OPCJONALNY |
+| **LaTeX OCR** | Obraz → LaTeX | OPCJONALNY |
+
+---
+
+## 6. Narzędzia numeryczne
+
+### Zainstalowane (Python)
+- **SciPy** `solve_ivp`, `solve_bvp` — ODE/BVP solver
+- **SciPy** `optimize` — fsolve, minimize, root
+- **NumPy** — algebra liniowa, FFT
+- **galois** — arytmetyka GF(2), macierze nad ciałami skończonymi
+- **networkx** — grafy, struktury kombinatoryczne
+
+### Do rozważenia
+
+| Narzędzie | Co daje | Dla problemu | Priorytet |
+|-----------|---------|-------------|-----------|
+| **DifferentialEquations.jl** (Julia) | Najszybszy solver ODE/BVP | R5, R6 (jeśli Python za wolny) | NISKI |
+| **AUTO-07p** | Kontynuacja numeryczna, bifurkacje | R6 (B=√2 w przestrzeni param.) | ŚREDNI |
+
+---
+
+## 7. Workflow agenta — szybka referencja
 
 ```
 ┌─────────────────────────────────────────────────┐
-│  OBSIDIAN (notatki + LaTeX Suite + Theorem Ref) │
+│  OBSIDIAN (notatki + pluginy)                   │
 │  ↕ wikilinki do plików .tex i .py               │
 ├─────────────────────────────────────────────────┤
-│  VS Code + LaTeX Workshop (edycja .tex)         │
-│  + GitHub Copilot (inline suggestions)          │
-│  + Claude Code (agentic tasks, refactoring)     │
+│  Claude Code (agent: edycja, testy, git)        │
 ├─────────────────────────────────────────────────┤
-│  Python (SymPy + SciPy + NumPy) — obecny stack  │
-│  + Cadabra2 (tensory, R4)                       │
-│  + SageMath/GAP (grupy, R3)                     │
+│  Python 3.14                                    │
+│  ├── SymPy 1.14   (symboliczne)                 │
+│  ├── NumPy 2.4    (numeryczne)                  │
+│  ├── SciPy 1.17   (ODE, optymalizacja)          │
+│  ├── galois 0.4   (GL(n,GF(2)), ciała)          │
+│  ├── networkx 3.6 (grafy)                       │
+│  ├── matplotlib   (wykresy)                     │
+│  └── emcee        (MCMC)                        │
 ├─────────────────────────────────────────────────┤
-│  Lean 4 + Mathlib + Goedel-Prover (dowody, R2)  │
+│  Cadabra2 2.5.15 (CLI — algebra tensorowa)      │
+│  Ścieżka: "C:\Program Files (x86)\Cadabra\"    │
 ├─────────────────────────────────────────────────┤
-│  Ollama + QwQ-32B (lokalny LLM do rozumowania)  │
+│  Lean 4.29.1 + Lake 5.0.0                      │
+│  Ścieżka: C:\Users\Mateusz\.elan\bin\          │
 ├─────────────────────────────────────────────────┤
-│  GitHub Actions (CI: testy + LaTeX → PDF)       │
-│  + Zenodo (archiwizacja DOI)                    │
+│  GitHub Actions (CI) + Zenodo (DOI)             │
 └─────────────────────────────────────────────────┘
 ```
 
-### Co zainstalować w jakiej kolejności
-
-| Priorytet | Narzędzie | Czas instalacji | Dla problemu |
-|-----------|-----------|-----------------|-------------|
-| 1️⃣ | LaTeX Suite (Obsidian plugin) | 2 min | Codzienne notatki |
-| 2️⃣ | Cadabra2 (`pip install cadabra2`) | 5 min | R4 (metryka) |
-| 3️⃣ | Ollama + QwQ-32B | 10 min + download | Rozumowanie lokalne |
-| 4️⃣ | SageMath | 15 min | R3 (GL(n,𝔽₂)) |
-| 5️⃣ | Lean 4 + Mathlib | 30 min | R2 (dowody formalne) |
-| 6️⃣ | Theorem & Equation Referencer (Obsidian) | 2 min | Indeks twierdzeń |
-| 7️⃣ | AUTO-07p | 5 min | R6 (bifurkacje ODE) |
-| 8️⃣ | Goedel-Prover-V2-8B (HuggingFace) | download | AI-assisted proofs |
-
----
-
-## 8. Podsumowanie: narzędzie → problem
+## 8. Narzędzie → problem (lookup table)
 
 | Problem | Narzędzie #1 | Narzędzie #2 | Narzędzie #3 |
 |---------|-------------|-------------|-------------|
-| **R1** Cabibbo | SageMath (GAP: GL(3,𝔽₂)) | SymPy (algebraiczne) | QwQ-32B (eksploracja) |
-| **R2** CG-1/3/4 | **Lean 4 + Mathlib** | Goedel-Prover | SageMath (analiza funk.) |
-| **R3** N=3 | **GAP / SageMath** | QwQ-32B (heurystyki) | Lean 4 (jeśli dowód) |
-| **R4** Metryka | **Cadabra2** | SymPy (weryfikacja) | xAct (alternatywa) |
-| **R5** m∝A⁴ | SymPy (analityczne ODE) | AUTO-07p (kontynuacja) | QwQ-32B (intuicja) |
-| **R6** B=√2 | **AUTO-07p** (bifurkacje) | SymPy (symetrie Lie) | Lean 4 (formalizacja) |
-| **R7** UV | **FORM** (β-functions) | SymPy (running) | — |
+| **R1** Cabibbo | **galois** (GL(3,GF(2))) | SymPy (algebraiczne) | Claude (eksploracja) |
+| **R2** CG-1/3/4 | **Lean 4 + Mathlib** | SymPy (analiza funk.) | Claude (formułowanie) |
+| **R3** N=3 | **galois** (GL(N,GF(2))) | networkx (struktury) | Lean 4 (jeśli dowód) |
+| **R4** Metryka | **Cadabra2** (tensory) | SymPy (weryfikacja) | — |
+| **R5** m∝A⁴ | SymPy (analityczne ODE) | SciPy (numeryczne) | Claude (intuicja) |
+| **R6** B=√2 | SciPy (ODE sweeps) | SymPy (symetrie Lie) | Lean 4 (formalizacja) |
+| **R7** UV | SymPy (β-functions) | SciPy (running) | — |
 
 ---
 
-> *Dokument utworzony 2026-04-14. Aktualizować w miarę zmian toolchainu.*
+> *Ostatnia aktualizacja: 2026-04-14. Zaktualizować po instalacji nowych narzędzi.*
 
 ## Źródła
 
@@ -285,17 +240,11 @@ NormalSubgroups(G);                # podgrupy normalne
 - [Cadabra2](https://cadabra.science/)
 - [Lean 4](https://lean-lang.org/)
 - [PhysLean](https://physlean.com/)
-- [Goedel-Prover-V2 (GitHub)](https://github.com/Goedel-LM/Goedel-Prover-V2)
+- [Goedel-Prover-V2](https://github.com/Goedel-LM/Goedel-Prover-V2)
 - [LeanDojo](https://leandojo.org/)
+- [galois (Python)](https://github.com/mhostetter/galois)
 - [FORM](https://github.com/vermaseren/form)
 - [AUTO-07p](https://github.com/auto-07p/auto-07p)
-- [Ollama](https://ollama.com/)
 - [LaTeX Suite (Obsidian)](https://github.com/artisticat1/obsidian-latex-suite)
 - [Theorem & Equation Referencer](https://github.com/RyotaUshio/obsidian-latex-theorem-equation-referencer)
-- [LaTeX Math (Obsidian/SymPy)](https://github.com/zarstensen/obsidian-latex-math)
-- [WebLaTeX](https://github.com/sanjib-sen/WebLaTex)
-- [DeepSeek-R1](https://huggingface.co/deepseek-ai/DeepSeek-R1)
-- [QwQ-32B](https://huggingface.co/Qwen/QwQ-32B)
-- [GAP System](https://www.gap-system.org/)
 - [Best LLM for Math 2026](https://pricepertoken.com/leaderboards/math)
-- [Best Open Source LLM for Scientific Research 2026](https://www.siliconflow.com/articles/en/best-open-source-llm-for-scientific-research-academia)
