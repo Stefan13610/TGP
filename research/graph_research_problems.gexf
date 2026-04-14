@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-04-14">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="type" type="string" />
+      <attribute id="1" title="color" type="string" />
+      <attribute id="2" title="priority" type="string" />
+    </attributes>
+    <nodes>
+      <node id="R1: Cabibbo&#10;(Ω_Λ/N)²" label="R1: Cabibbo&#10;(Ω_Λ/N)²">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#F44336" />
+          <attvalue for="2" value="NOW" />
+        </attvalues>
+      </node>
+      <node id="R2: CG-1/3/4&#10;continuum" label="R2: CG-1/3/4&#10;continuum">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#F44336" />
+          <attvalue for="2" value="LONG" />
+        </attvalues>
+      </node>
+      <node id="R3: Why N=3" label="R3: Why N=3">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#FF9800" />
+          <attvalue for="2" value="LONG" />
+        </attvalues>
+      </node>
+      <node id="R4: h(Φ)=Φ&#10;metric" label="R4: h(Φ)=Φ&#10;metric">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#F44336" />
+          <attvalue for="2" value="NOW" />
+        </attvalues>
+      </node>
+      <node id="R5: m∝A⁴&#10;scaling" label="R5: m∝A⁴&#10;scaling">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#FF9800" />
+          <attvalue for="2" value="MED" />
+        </attvalues>
+      </node>
+      <node id="R6: B=√2&#10;Brannen" label="R6: B=√2&#10;Brannen">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#FF9800" />
+          <attvalue for="2" value="MED" />
+        </attvalues>
+      </node>
+      <node id="R7: UV&#10;completion" label="R7: UV&#10;completion">
+        <attvalues>
+          <attvalue for="0" value="problem" />
+          <attvalue for="1" value="#9E9E9E" />
+          <attvalue for="2" value="LOW" />
+        </attvalues>
+      </node>
+      <node id="galois&#10;GL(n,GF(2))" label="galois&#10;GL(n,GF(2))">
+        <attvalues>
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="0" value="tool" />
+        </attvalues>
+      </node>
+      <node id="Cadabra2&#10;tensors" label="Cadabra2&#10;tensors">
+        <attvalues>
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="0" value="tool" />
+        </attvalues>
+      </node>
+      <node id="Lean 4&#10;proofs" label="Lean 4&#10;proofs">
+        <attvalues>
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="0" value="tool" />
+        </attvalues>
+      </node>
+      <node id="SymPy&#10;CAS" label="SymPy&#10;CAS">
+        <attvalues>
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="0" value="tool" />
+        </attvalues>
+      </node>
+      <node id="SciPy&#10;ODE" label="SciPy&#10;ODE">
+        <attvalues>
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="0" value="tool" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="R1: Cabibbo&#10;(Ω_Λ/N)²" target="galois&#10;GL(n,GF(2))" id="0" />
+      <edge source="R2: CG-1/3/4&#10;continuum" target="Lean 4&#10;proofs" id="1" />
+      <edge source="R2: CG-1/3/4&#10;continuum" target="R5: m∝A⁴&#10;scaling" id="2" label="CG proves α=2 → k=4" />
+      <edge source="R3: Why N=3" target="galois&#10;GL(n,GF(2))" id="3" />
+      <edge source="R4: h(Φ)=Φ&#10;metric" target="Cadabra2&#10;tensors" id="4" />
+      <edge source="R5: m∝A⁴&#10;scaling" target="SymPy&#10;CAS" id="5" />
+      <edge source="R5: m∝A⁴&#10;scaling" target="SciPy&#10;ODE" id="6" />
+      <edge source="R5: m∝A⁴&#10;scaling" target="R6: B=√2&#10;Brannen" id="7" label="k=4 → mass formula → B" />
+      <edge source="R6: B=√2&#10;Brannen" target="Lean 4&#10;proofs" id="8" />
+      <edge source="R6: B=√2&#10;Brannen" target="SciPy&#10;ODE" id="9" />
+      <edge source="R6: B=√2&#10;Brannen" target="R1: Cabibbo&#10;(Ω_Λ/N)²" id="10" label="Koide → CKM structure" />
+      <edge source="R7: UV&#10;completion" target="SymPy&#10;CAS" id="11" />
+    </edges>
+  </graph>
+</gexf>
