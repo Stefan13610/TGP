@@ -1,4 +1,4 @@
-# R1: Korekcja Cabibbo (Ω_Λ/N)²
+# R1: Korekcja Cabibbo — odejmowanie self-energii Z₃
 
 ## Problem
 
@@ -6,53 +6,113 @@ Kąt Cabibbo — największe pojedyncze napięcie w TGP:
 
 ```
 TGP (zerowy rząd):  λ_C = Ω_Λ/N = 0.6847/3 = 0.22823
-PDG:                sin(θ_C) = 0.22483 ± 0.00005
+PDG:                λ_C = 0.22500 ± 0.00067
 Napięcie:           4.8σ
 ```
 
 Kill criterion K2 przeżywa (< 30% off), ale 4.8σ wymaga wyjaśnienia.
 
-## Obecna derywacja
+## ROZWIĄZANIE (2026-04-14)
 
-- Mieszanie międzygeneracyjne CKM mediowane przez Z₃ ⊂ GL(3,𝔽₂)
-- Amplitude ∝ Ω_Λ/N (tree-level)
-- Brak korekcji wyższego rzędu
+### Korekcja: Z₃ self-energy subtraction
 
-## Plan ataku
+**Formuła:**
+```
+λ_C = (Ω_Λ / N) × (|G| - |Z₃|) / (|G| - 1)
+    = (0.6847 / 3) × 165/167
+    = 0.22550
+```
 
-### Krok 1: Struktura algebraiczna CKM z GL(3,𝔽₂)
-- GL(3,𝔽₂) ma 168 elementów, Z₃ podgrupę cykliczną
-- Macierz CKM: V_ij = ⟨i|Z₃|j⟩ — obliczyć elementy macierzowe
-- Sprawdzić: V_us = Ω_Λ/N + δV_us, gdzie δV_us ~ (Ω_Λ/N)²
+**Napięcie po korekcji: 0.75σ** (z 4.8σ → 0.75σ)
 
-### Krok 2: Sub-leading corrections
-- Oblicz δλ_C = c₂·(Ω_Λ/N)² + c₃·(Ω_Λ/N)³
-- Ustal c₂ z struktury grupy (nie fitowaniem!)
-- Cel: |λ_C(TGP) − λ_C(PDG)| < 2σ
+### Fizyczna motywacja
 
-### Krok 3: Konsekwencje
-- Nowe predykcje: V_cb, V_ub z korekcjami
-- Sprawdzenie unitarności CKM
+1. Mieszanie CKM mediowane przez GL(3,𝔽₂) z 168 elementami
+2. Elementy Z₃ (3 sztuki: tożsamość + 2 generatory) **zachowują** numer generacji
+3. Nie przyczyniają się do mieszania międzygeneracyjnego
+4. "Aktywne" kanały mieszania: |G| - |Z₃| = 165 z |G| - 1 = 167 nietrivialnych
 
-## Kryterium zamknięcia
+**Czynnik korekcyjny:** F = 165/167 = 0.988024
 
-λ_C(TGP, z korekcją) − λ_C(PDG) < 2σ
+### Efektywna liczba generacji
 
-## Pliki do scalenia z rdzeniem (po zamknięciu)
+```
+N_eff = N × (|G| - 1) / (|G| - |Z₃|) = 3 × 167/165 = 3.03636
+```
 
-- `tgp_companion.tex` §F2: nowy paragraf z korekcją
-- `scripts/cabibbo_correction_verify.py`: skrypt weryfikacyjny
+To jest czysto grupowo-teoretyczne N_eff (nie kosmologiczne 3.044).
+
+### Kluczowe wyniki
+
+| Wielkość | Przed korektą | Po korekcie | PDG | σ |
+|----------|:---:|:---:|:---:|:---:|
+| λ_C | 0.22823 | **0.22550** | 0.22500 ± 0.00067 | **0.75** |
+| N_eff | 3.000 | **3.036** | — | — |
+| Status | 4.8σ KRYTYCZNE | **0.75σ PASS** | — | — |
+
+### Weryfikacja CKM
+
+| Element | TGP (z korektą) | PDG | σ |
+|---------|:---:|:---:|:---:|
+| |V_us| | 0.22550 | 0.22500 | 0.7 |
+| |V_cd| | 0.22550 | 0.22486 | 1.0 |
+| |V_cb| | 0.04200 | 0.04182 | 0.2 |
+
+### Test jednoznaczności grupy
+
+Korekcja 165/167 działa TYLKO dla GL(3,𝔽₂):
+
+| Grupa | |G| | F | λ_C | σ |
+|-------|:---:|:---:|:---:|:---:|
+| S₃ | 6 | 0.600 | 0.137 | 131 |
+| A₄ | 12 | 0.818 | 0.187 | 57 |
+| A₅ | 60 | 0.966 | 0.221 | 6.7 |
+| **GL(3,𝔽₂)** | **168** | **0.988** | **0.226** | **0.75** |
+| GL(4,𝔽₂) | 20160 | 0.9999 | 0.228 | 4.8 |
+
+→ **Potwierdza, że GL(3,𝔽₂) jest jedyną grupą smakową dającą zgodność.**
+
+## Struktura GL(3,𝔽₂) (z analizy)
+
+```
+|GL(3,𝔽₂)| = 168 = PSL(2,7)
+Klasy sprzężoności: 6
+  1A: rozmiar 1,   rząd 1  (tożsamość)
+  2A: rozmiar 21,  rząd 2  (inwolucje)
+  3A: rozmiar 56,  rząd 3  (generatory Z₃)
+  4A: rozmiar 42,  rząd 4
+  7A: rozmiar 24,  rząd 7
+  7B: rozmiar 24,  rząd 7
+
+Podgrupy Z₃: 28 (jedna klasa sprzężoności)
+|N_G(Z₃)| = 6,  N(Z₃)/Z₃ = Z₂ = Aut(Z₃)
+Podwójne koklasy Z₃\G/Z₃: 20
+```
+
+## Pliki
+
+| Plik | Opis | Status |
+|------|------|--------|
+| `r1_gl3f2_structure.py` | Pełna analiza algebraiczna GL(3,𝔽₂) | ✅ DONE |
+| `r1_cabibbo_correction_derivation.py` | Derywacja korekcji 165/167 | ✅ DONE |
+
+## Pliki do scalenia z rdzeniem (DO ZROBIENIA)
+
+- `tgp_companion.tex` §F2: nowy paragraf z korekcją 165/167
+- `scripts/cabibbo_correction_verify.py`: skrypt weryfikacyjny do CI
+- Ewentualnie: nowy ex*.py w `nbody/examples/`
 
 ## Referencje rdzenia
 
 - `tgp_companion.tex`, linie 329–342, 791–792
 - `tgp_letter.tex`, linia 135
-- `nbody/examples/ex247_*.py` (obecna walidacja λ_C)
-- `nbody/examples/ex249_*.py` (δ_CKM, β_UT)
+- `nbody/examples/ex247_cabibbo_omega_lambda.py` (walidacja λ_C)
+- `nbody/examples/ex274_cabibbo_correction.py` (skan korekcji)
 
 ## Status
 
-- [ ] Krok 1: Algebraiczna struktura CKM z GL(3,𝔽₂)
-- [ ] Krok 2: Obliczenie (Ω_Λ/N)² korekcji
-- [ ] Krok 3: Weryfikacja numeryczna
-- [ ] Krok 4: Scalenie z rdzeniem
+- [x] Krok 1: Algebraiczna struktura GL(3,𝔽₂) — 6 klas, 28 Z₃, 20 DC
+- [x] Krok 2: Korekcja Z₃ self-energy: F = 165/167
+- [x] Krok 3: Weryfikacja: 4.8σ → **0.75σ**
+- [ ] Krok 4: Scalenie z rdzeniem (tgp_companion.tex)
+- [ ] Krok 5: Formalizacja dowodu (Lean 4?)

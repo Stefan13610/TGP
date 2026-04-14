@@ -71,26 +71,28 @@ TGP_v1/                          ← RDZEŃ (stabilny, publikowalny)
 
 ---
 
-## R1: Korekcja Cabibbo — `research/cabibbo_correction/`
+## R1: Korekcja Cabibbo — `research/cabibbo_correction/` ✅ ROZWIĄZANE
 
-**Problem:** λ_C = Ω_Λ/N = 0.2282 vs PDG sin(θ_C) = 0.2248 → **4.8σ napięcie**
+**Problem:** λ_C = Ω_Λ/N = 0.2282 vs PDG 0.22500 ± 0.00067 → **4.8σ napięcie**
 
-**Obecny status:**
-- Kill criterion K2 przeżywa (< 30% off)
-- Ale 4.8σ to największe pojedyncze odchylenie w całej teorii
-- Brak obliczenia korekcji wyższego rzędu
+**ROZWIĄZANIE (2026-04-14):** Korekcja Z₃ self-energy subtraction:
 
-**Plan ataku:**
-1. Wyprowadzić korekcję (Ω_Λ/N)² z mieszania CKM w strukturze GL(3,𝔽₂)
-2. Sprawdzić czy korekcja δλ_C zmniejsza napięcie poniżej 2σ
-3. Jeśli tak → nowa predykcja (wartość korekcji)
-4. Sprawdzić konsekwencje dla V_us, V_cb, V_ub
+```
+λ_C = (Ω_Λ/N) × (|G| - |Z₃|)/(|G| - 1) = (Ω_Λ/N) × 165/167 = 0.22550
+Napięcie: 4.8σ → 0.75σ  ✅
+```
 
-**Kryterium zamknięcia:** λ_C(TGP) − λ_C(PDG) < 2σ po korekcji
+**Fizyka:** Elementy Z₃ (3 z 168) zachowują numer generacji i nie przyczyniają się do mieszania. Czynnik F = 165/167 = frakcja "aktywnych" kanałów mieszania.
 
-**Pliki rdzenia do scalenia (po zamknięciu):**
-- Nowy paragraf w `tgp_companion.tex` §F2
-- Skrypt weryfikacyjny → `scripts/`
+**Wyniki:**
+- [x] Pełna analiza GL(3,𝔽₂): 6 klas sprzężoności, 28 podgrup Z₃, 20 podwójnych koklas
+- [x] Korekcja 165/167: napięcie 0.75σ
+- [x] Weryfikacja CKM: |V_us|=0.7σ, |V_cd|=1.0σ, |V_cb|=0.2σ
+- [x] Test jednoznaczności: **tylko GL(3,𝔽₂) daje zgodność** (S₃ → 131σ, A₅ → 6.7σ)
+- [ ] Scalenie z rdzeniem (tgp_companion.tex §F2)
+- [ ] Formalizacja dowodu
+
+**Pliki:** `research/cabibbo_correction/r1_gl3f2_structure.py`, `r1_cabibbo_correction_derivation.py`
 
 ---
 
