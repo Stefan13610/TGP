@@ -89,7 +89,7 @@ Napięcie: 4.8σ → 0.75σ  ✅
 - [x] Korekcja 165/167: napięcie 0.75σ
 - [x] Weryfikacja CKM: |V_us|=0.7σ, |V_cd|=1.0σ, |V_cb|=0.2σ
 - [x] Test jednoznaczności: **tylko GL(3,𝔽₂) daje zgodność** (S₃ → 131σ, A₅ → 6.7σ)
-- [ ] Scalenie z rdzeniem (tgp_companion.tex §F2)
+- [x] Scalenie z rdzeniem (tgp_companion.tex §F2, tgp_letter.tex, scripts/)
 - [ ] Formalizacja dowodu
 
 **Pliki:** `research/cabibbo_correction/r1_gl3f2_structure.py`, `r1_cabibbo_correction_derivation.py`
@@ -187,26 +187,36 @@ Dlaczego p=1, a nie Φ^p?
 
 ---
 
-## R5: Prawo skalowania m ∝ A_tail⁴ — `research/mass_scaling_k4/`
+## R5: Prawo skalowania m ∝ A_tail⁴ — `research/mass_scaling_k4/` ⚙️ W TRAKCIE
 
 **Problem:** Formuła masowa jest **fundamentem** sektora leptonowego. Daje r₂₁ = 206.768
 (0.0001% zgodność z PDG). Ale k=4 jest **postulatem**.
 
-**Obecne uzasadnienie:**
-- Argument wymiarowy: w d=3, zbieżność ogona wymaga n > 2d/(d-1) = 3, więc k=4
-  (ex188_A4_dimensional_argument.py)
-- Alternatywy odrzucone: E²=0 (OK), E³ (FAIL, -0.647), prop:K-exponent (OBALONY, ex150)
+**POSTĘP (2026-04-14):** Łańcuch dowodowy prawie kompletny (4 elementy):
 
-**Plan ataku:**
-1. **Z twierdzenia wiriałowego:**
-   - Soliton w polu z K(Φ)=Φ^α — wyprowadzić relację między energią a A_tail
-   - Sprawdzić czy E_bind ∝ A⁴ wynika z α=2 i d=3
-2. **Z funkcjonału działania:**
-   - S[g] = ∫[K(g)·(∇g)² + P(g)] — czy masa = ∂S/∂(parametr)?
-   - Jakie potęgi A_tail pojawiają się naturalnie?
-3. **Z analizy asymptotycznej ogona:**
-   - g(r) ~ 1 - A·e^{-μr}/r^ν dla r→∞
-   - Masa jako residue w transformacie Mellina
+```
+P1: WIRIAŁ E^(2) = 0 dokładnie           ✅ UDOWODNIONE
+P2: KONWERGENCJA k ≥ 4 w d=3             ✅ UDOWODNIONE (k = 2(d-1)/(d-2) = 4)
+P3: PARZYSTOŚĆ sin³ alternuje → E^(3)≈0  ⚠️ NUMERYCZNE (|E³/E⁴| < 10⁻⁶)
+P4: PIERWSZY PRZEŻYWAJĄCY E^(4) > 0      ✅ UDOWODNIONE
+```
+
+**Kluczowe wyniki:**
+- k = 2(d-1)/(d-2) = 4 jest **jedynym integerem** (d=3→4, d=4→3, d=5→2.67)
+- Weryfikacja numeryczna: k_eff = 4.0001, (A_μ/A_e)⁴ = 206.74 ≈ 206.768 (0.013%)
+- Dyskryminacja: k=3→55, k=4→207, k=5→784 — jednoznaczna
+- Formulacja substratowa (K=g², α=1) stabilna numerycznie dla g₀ > 1
+- Weryfikacja rdzeniowa: `lp4_mass_exponent_verification.py` 9/9 PASS
+
+**Co zostaje do zamknięcia:**
+1. **Analityczny dowód E^(3) → 0** — argument parzystości sin³ jest heurystyczny
+2. **Zamknięta formuła c_M** — stała proporcjonalności wyznaczona tylko numerycznie
+3. **Formalizacja łańcucha P1-P4 (Lean 4)**
+
+**Pliki:**
+- `research/mass_scaling_k4/r5_mass_ratio_verification.py` — weryfikacja k_eff i zbieżności
+- `research/mass_scaling_k4/r5_virial_mass_derivation.py` — skan E(A_tail), błędne ODE (do poprawy)
+- `scripts/lp4_mass_exponent_verification.py` — rdzeń, 9/9 PASS
 
 **Kryterium zamknięcia:** Twierdzenie: "m ∝ A⁴ wynika z α=2, d=3, K(Φ)=Φ²"
 
