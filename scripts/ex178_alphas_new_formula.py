@@ -6,10 +6,10 @@ Sesja v45, 2026-04-05
 NOWA FORMULA alpha_s z ODE substratowym (alpha=1).
 
 ODKRYCIE (ex177, sekcja 4):
-  g0^e * N_c/2 = 0.86901 * 3/2 = 1.30351
+  g0^e * N_c/2 = 0.86941 * 3/2 = 1.30412
   alpha_s = N_c^2 * (g0^e * N_c/2) / (4*Phi_0)
           = N_c^3 * g0^e / (8*Phi_0)
-          = 27 * 0.86901 / (8 * 24.783) = 0.11834
+          = 27 * 0.86941 / (8 * 24.783) = 0.11839
   PDG: 0.1179, odchylenie: +0.38%
 
 INTERPRETACJA:
@@ -73,7 +73,7 @@ def get_Atail(g0, window=(60, 120)):
 print("\n--- 1. alpha_s = N_c^3 * g0^e / (8 * Phi_0) ---\n")
 
 # g0^e from phi-FP (ex174, alpha=1 ODE)
-g0_e = 0.86901
+g0_e = 0.86941
 
 # Refine g0^e: find where (A(phi*g0)/A(g0))^4 = 206.768
 print("  Kalibracja g0^e z r21 = 206.768...")

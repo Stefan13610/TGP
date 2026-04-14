@@ -151,10 +151,10 @@ for label, Phi0, a_bare in [("Phi0=25", PHI0, alpha_s_phi_25), ("Phi0=B", PHI0_B
 # ===== 4. TEST: g0* jako wartosc uniwersalna z phi-FP =====
 print("\n--- 4. Uniwersalne staleCCCC z phi-FP ---\n")
 
-# In alpha=1 ODE, the phi-FP electron is at g0^e = 0.86901
-# The phi-FP gives: g0^mu = phi * g0^e = 1.4054
-# g0^tau = phi^2 * g0^e = 2.274 (approximately)
-g0_e = 0.86901
+# In alpha=1 ODE, the phi-FP electron is at g0^e = 0.86941
+# The phi-FP gives: g0^mu = phi * g0^e = 1.4061
+# g0^tau = phi^2 * g0^e = 2.275 (approximately)
+g0_e = 0.86941
 
 # Key: g0^e depends on the ODE. With alpha=1: g0^e = 0.869
 # With alpha=2 (old): g0^e = 1.2301
@@ -234,7 +234,7 @@ print("\n--- 6. Coupling integral z solitonu alpha=1 ---\n")
 # <g> = integral g(r) * weight(r) dr / integral weight(r) dr
 # Natural weight: r^2 (volume element) or |delta|*r^2
 
-print("  Soliton shape integrals dla g0^e = 0.86901, alpha=1:")
+print("  Soliton shape integrals dla g0^e = 0.86941, alpha=1:")
 r, g = solve_ode(g0_e, r_max=80, alpha=1)
 delta = g - 1.0
 

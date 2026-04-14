@@ -123,8 +123,8 @@ print("\n--- 2. phi-FP punkt z0 (phi-FP fixed point) z alpha=1 ---\n")
 
 # z0 is defined as g0 where phi-FP gives EXACT r21:
 # (A_tail(phi*g0)/A_tail(g0))^4 = r21_lepton
-# For ex174: g0^e = 0.86901
-g0_e = 0.86901
+# For ex174: g0^e = 0.86941
+g0_e = 0.86941
 g0_mu = PHI * g0_e
 
 print(f"  g0^e = {g0_e:.5f} (z phi-FP, ex174)")
