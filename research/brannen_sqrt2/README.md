@@ -23,11 +23,19 @@ Gdyby B=√2 było **udowodnione analitycznie** → Koide staje się **twierdzen
 | K = 2/3 ⟺ fazy 120° | **TWIERDZENIE** | Equidistant cos(2πi/3) → Σcos=0, Σcos²=3/2 |
 | K = 2/3 z PDG mas | **WERYFIKACJA** | Q_K(PDG) = 1.500014 ≈ 3/2 |
 
+### ✅ NOWE (2026-04-14, Fourier analysis)
+
+| Element | Status | Dowód |
+|---------|--------|-------|
+| Fazy 120° TRYWIALNE | **TWIERDZENIE** | Fourier na Z₃: DOWOLNE 3 liczby → fazy 120° (DFT) |
+| B = √2 ↔ K = 2/3 ↔ CV(√m) = 1 | **TWIERDZENIE** | Łańcuch tożsamości algebraicznych |
+| g₀^τ(Koide) → r₃₁ = 3475.36 | **WERYFIKACJA** | 0.05% od PDG 3477.23, B = 1.4142 |
+
 ### ⚠️ OTWARTE
 
 | Element | Status | Problem |
 |---------|--------|---------|
-| Fazy 120° z GL(3,𝔽₂) | HEURYSTYCZNE | Z₃ ⊂ GL(3,𝔽₂) → fazy 120°, ale brak formalnego dowodu |
+| Dlaczego CV(√m) = 1? | OTWARTE | Prawdziwe pytanie — dynamika solitonu, nie symetria |
 | F(φ) = A(φg₀)/A(g₀) | ZMIENNE | F(φ) NIE jest stałe (CV = 220%) — Ścieżka 4 nie działa |
 | φ²-drabinka dla tau | NIEZGODNA | g₀^τ = φ²g₀^e daje A_tail = 0 (substrat); best-fit g₀^τ/g₀^e = 1.99 ≠ φ² |
 | Analityczne μ z ODE | OTWARTE | μ_eff ≈ 0.91 (substrat), ~4.12 (kanoniczne) |
@@ -35,16 +43,27 @@ Gdyby B=√2 było **udowodnione analitycznie** → Koide staje się **twierdzen
 ## Kluczowy wynik R6 (2026-04-14)
 
 ```
-ŁAŃCUCH ALGEBRAICZNY (udowodniony):
-  GL(3,𝔽₂) → Z₃ podgrupa → fazy równoodstępne (120°)
-  → K = 2/3 (Koide dokładne)
-  → B = √2 (Brannen dokładne)
+ŁAŃCUCH DOWODOWY (kompletny do poziomu K=2/3):
 
-BRAKUJĄCE OGNIWO:
-  Dlaczego Z₃ ⊂ GL(3,𝔽₂) wymusza FAZY 120°?
-  ≡ Dlaczego √m_i = M(1 + B·cos(θ + 2πi/3))?
-  ≡ Dlaczego parametryzacja Brannena jest WŁAŚCIWA?
+  Level 0: Fazy 120° TRYWIALNE (Fourier na Z₃)         ✅ UDOWODNIONE
+           Dowolne 3 liczby rzeczywiste → równoodstępne fazy
+           To jest DFT, nie fizyka.
+
+  Level 1: B = √2 ↔ K = 2/3 ↔ CV(√m) = 1             ✅ TOŻSAMOŚCI
+           K = (1 + B²/2)/3, więc K=2/3 → B²=2
+           CV² = NK - 1 = 2 - 1 = 1
+
+  Level 2: K(PDG) = 0.666660 ≈ 2/3                     ✅ EMPIRYCZNE
+           CV(√m) = 0.999991
+
+  Level 3: DLACZEGO CV(√m) = 1 z dynamiki solitonu?    ⚠️ OTWARTE
+           To jest PRAWDZIWE pytanie.
+           NIE chodzi o symetrię Z₃ (fazy są trywialne).
+           Chodzi o DYNAMIKĘ: A_tail(g₀) + φ-drabinka.
 ```
+
+**KLUCZOWY NOWY WYNIK:** g₀^τ wyznaczone z K = 2/3 (wiązanie Koide)
+daje r₃₁ = 3475.36, co zgadza się z PDG 3477.23 do **0.05%**!
 
 ### Negatywne wyniki (ważne!)
 
@@ -73,6 +92,7 @@ BRAKUJĄCE OGNIWO:
 | Plik | Opis | Status |
 |------|------|--------|
 | `research/brannen_sqrt2/r6_atail_ratio_analysis.py` | Ścieżka 4: analiza F(φ), 4/9 PASS | ✅ NOWE |
+| `research/brannen_sqrt2/r6_fourier_z3_proof.py` | Fourier na Z₃ + Koide: 9/9 PASS | ✅ NOWE |
 | `scripts/a3d_soliton_brannen_r.py` | ODE solitonu + Brannen: 5/6 PASS | ✅ RDZEŃ |
 | `scripts/a3_koide_origin_analysis.py` | K=2/3 algebraicznie: 5/5 PASS | ✅ RDZEŃ |
 
