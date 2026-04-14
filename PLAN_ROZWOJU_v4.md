@@ -180,30 +180,36 @@ Dlaczego p=1, a nie Φ^p?
 **Problem:** Formuła masowa jest **fundamentem** sektora leptonowego. Daje r₂₁ = 206.768
 (0.0001% zgodność z PDG). Ale k=4 jest **postulatem**.
 
-**POSTĘP (2026-04-14):** Łańcuch dowodowy prawie kompletny (4 elementy):
+**POSTĘP (2026-04-14):** Łańcuch dowodowy skorygowany po wynikach negatywnych:
 
 ```
 P1: WIRIAŁ E^(2) = 0 dokładnie           ✅ UDOWODNIONE
 P2: KONWERGENCJA k ≥ 4 w d=3             ✅ UDOWODNIONE (k = 2(d-1)/(d-2) = 4)
-P3: PARZYSTOŚĆ sin³ alternuje → E^(3)≈0  ⚠️ NUMERYCZNE (|E³/E⁴| < 10⁻⁶)
-P4: PIERWSZY PRZEŻYWAJĄCY E^(4) > 0      ✅ UDOWODNIONE
+P3: E^(3) → 0                            ❌ OBALONY (E³~A³ dominuje E⁴~A⁴!)
+P3': On-shell identity: E³=-(2π/3)∫h³r²  ✅ UDOWODNIONE (nowe twierdzenie)
+P4: E_full ~ A^{2α} (nieperturbacyjne)    ✅ ZWERYFIKOWANE (k≈4.4 canonical)
 ```
+
+**WYNIK NEGATYWNY:** E^(3) NIE znika! |E³/E⁴| ~ A^{-0.9} → ∞ dla małych solitonów.
+Perturbacyjny dowód m~A⁴ jest **niemożliwy**. Skalowanie mas jest własnością
+**nieperturbacyjną** (core-tail matching + convergence).
 
 **Kluczowe wyniki:**
 - k = 2(d-1)/(d-2) = 4 jest **jedynym integerem** (d=3→4, d=4→3, d=5→2.67)
 - Weryfikacja numeryczna: k_eff = 4.0001, (A_μ/A_e)⁴ = 206.74 ≈ 206.768 (0.013%)
-- Dyskryminacja: k=3→55, k=4→207, k=5→784 — jednoznaczna
-- Formulacja substratowa (K=g², α=1) stabilna numerycznie dla g₀ > 1
-- Weryfikacja rdzeniowa: `lp4_mass_exponent_verification.py` 9/9 PASS
+- On-shell identity (nowe): E³_sub = -(2π/3)∫h³r²dr, E³_can = +(4π/3)∫h³r²dr
+- ∫h³r²dr logarytmicznie rozbieżny dla zlinearyzowanego h, skończony dla pełnego solitonu
+- E_full ~ A^{4.36} (canonical) potwierdza skalowanie nieperturbacyjne
 
 **Co zostaje do zamknięcia:**
-1. **Analityczny dowód E^(3) → 0** — argument parzystości sin³ jest heurystyczny
+1. **Nieperturbacyjny dowód E_full ~ A^{2α}** — mechanizm core-tail matching
 2. **Zamknięta formuła c_M** — stała proporcjonalności wyznaczona tylko numerycznie
-3. **Formalizacja łańcucha P1-P4 (Lean 4)**
+3. **Formalizacja łańcucha (Lean 4)**
 
 **Pliki:**
+- `research/mass_scaling_k4/r5_e3_cancellation.py` — E^(3) NIE znika: 5/7 PASS (**NOWE**)
 - `research/mass_scaling_k4/r5_mass_ratio_verification.py` — weryfikacja k_eff i zbieżności
-- `research/mass_scaling_k4/r5_virial_mass_derivation.py` — skan E(A_tail), błędne ODE (do poprawy)
+- `research/mass_scaling_k4/r5_virial_mass_derivation.py` — skan E(A_tail), błędne ODE
 - `scripts/lp4_mass_exponent_verification.py` — rdzeń, 9/9 PASS
 
 **Kryterium zamknięcia:** Twierdzenie: "m ∝ A⁴ wynika z α=2, d=3, K(Φ)=Φ²"
@@ -282,7 +288,7 @@ Negatywne wyniki (eliminacja ślepych ścieżek):
 | α=2 (kinetic coupling) | ✅ TWIERDZENIE (słabe) | R2 (silne) | Algebraiczne, Lemma A1–A5 |
 | K(ℓ)=2/3 | ✅ NUMERYCZNE (10⁻⁶) | R6 (analityczne) | Zależy od B=√2 |
 | h(Φ)=Φ | 🟡 POSTULAT | R4 | 2 kryteria numeryczne |
-| m ∝ A⁴ | 🟡 POSTULAT + heurystyka | R5 | Argument wymiarowy |
+| m ∝ A⁴ | 🟡 NUMERYCZNE + argument konwergencji | R5 | E³≠0 (neg.result), E_full~A⁴ (niepert.) |
 | N=3 | 🟡 HEURYSTYKA | R3 | Bariera duchowa |
 | λ_C = Ω_Λ/N | 🟠 4.8σ NAPIĘCIE | R1 | Brak korekcji wyższego rzędu |
 | CG-1/3/4 | 🔴 OTWARTE | R2 | Czysta matematyka |
