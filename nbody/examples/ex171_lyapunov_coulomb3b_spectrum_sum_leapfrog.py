@@ -45,11 +45,14 @@ def main() -> None:
     k = 6 * n
 
     if args.quick:
+        # Short horizon + coarse dt → spectrum sum drifts O(1e-3);
+        # on different platforms (Ubuntu vs Windows) FP rounding
+        # changes chaotic trajectory → accept larger tolerance
         t_final = 1.5
         dt = 0.06
         renorm = 5
         jac_eps = 1e-5
-        tol_sum = 5e-4
+        tol_sum = 2e-3
     else:
         t_final = 4.0
         dt = 0.04
