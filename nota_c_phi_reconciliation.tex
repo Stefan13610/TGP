@@ -1,0 +1,110 @@
+% ============================================================
+%  Nota wyjaśniająca: Trzy prędkości światła w TGP
+%  Status: Propozycja (do włączenia w sek04 jako rem:three-speeds)
+% ============================================================
+
+\begin{remark}[Trzy prędkości światła w TGP i ich relacje]%
+\label{rem:three-speeds}
+
+W~formaliźmie TGP współistnieją \textbf{trzy różne} wielkości
+mające wymiar prędkości, które mogą być mylone z~,,prędkością
+światła''. Poniższa tabela eliminuje tę niejednoznaczność.
+
+\medskip
+\begin{center}\small
+\begin{tabular}{@{}lclc@{}}
+\toprule
+\textbf{Symbol} & \textbf{Definicja} & \textbf{Interpretacja}
+  & \textbf{Wykładnik $a$} \\
+\midrule
+$c_{\mathrm{proper}}$ & $c_0$ (zawsze)
+  & prędkość lokalna (zasada równoważności)
+  & $a = 0$ \\[3pt]
+$c_{\mathrm{lok}}(\Phi)$ & $c_0\sqrt{\Phi_0/\Phi}$
+  & odl.~właściwa / czas koordynatowy (Aksjomat~A6)
+  & $a = 1/2$ \\[3pt]
+$c_{\mathrm{koord}}(\Phi)$ & $c_0\,\Phi_0/\Phi$
+  & odl.~koordynatowa / czas koordynatowy (z metryki)
+  & $a = 1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+\noindent\textbf{Wyprowadzenie.}
+Z~metryki efektywnej TGP:
+\begin{equation}
+  ds^2 = -\frac{c_0^2}{\psi}\,dt^2 + \psi\,\delta_{ij}\,dx^i dx^j,
+  \qquad \psi = \Phi/\Phi_0,
+\end{equation}
+geodezyjka zerowa ($ds^2 = 0$) daje:
+\begin{equation}
+  \left(\frac{dr}{dt}\right)^2
+  = \frac{c_0^2}{\psi^2}
+  \quad\Rightarrow\quad
+  c_{\mathrm{koord}} = \frac{c_0}{\psi} = c_0\,\frac{\Phi_0}{\Phi}.
+\end{equation}
+Prędkość mierzona jako \emph{odległość właściwa} (czynnik $\sqrt{h} = \sqrt{\psi}$)
+podzielona przez \emph{czas koordynatowy}:
+\begin{equation}
+  c_{\mathrm{lok}} = \sqrt{h}\cdot\frac{dr}{dt}
+  = \sqrt{\psi}\cdot\frac{c_0}{\psi}
+  = \frac{c_0}{\sqrt{\psi}}
+  = c_0\sqrt{\frac{\Phi_0}{\Phi}}.
+\end{equation}
+Prędkość mierzona w~\emph{obu właściwych miarach}
+(właściwy czas: $d\tau = \sqrt{|g_{00}|/c_0^2}\,dt = dt/\sqrt{\psi}$):
+\begin{equation}
+  c_{\mathrm{proper}}
+  = \frac{\sqrt{h}\,dr}{d\tau}
+  = \frac{\sqrt{\psi}\cdot c_0/\psi}{1/\sqrt{\psi}}
+  = c_0.
+\end{equation}
+
+\noindent\textbf{Relacja między trzema prędkościami:}
+\begin{equation}\label{eq:three-c-relation}
+  \boxed{
+    c_{\mathrm{koord}} = \frac{c_{\mathrm{lok}}^2}{c_0}
+    = \frac{c_0}{\psi},
+    \qquad
+    c_{\mathrm{proper}} = c_0
+    \quad (\text{zawsze}).
+  }
+\end{equation}
+
+\noindent\textbf{Spójność z~metryką:}
+Aksjomat~A6 definiuje $c(\Phi) \equiv c_{\mathrm{lok}}$,
+nie $c_{\mathrm{koord}}$.
+Metryka daje $c_{\mathrm{koord}} = c_0/\psi$,
+co jest \textbf{spójne}, ponieważ:
+\begin{equation}
+  g_{tt} = -\frac{c_0^2}{\psi} = -c_{\mathrm{lok}}^2,
+  \qquad
+  g_{ij} = \psi\,\delta_{ij},
+  \qquad
+  \frac{|g_{tt}|}{g_{rr}} = \frac{c_{\mathrm{lok}}^2}{\psi}
+  = c_{\mathrm{koord}}^2.
+\end{equation}
+Zatem $c_{\mathrm{lok}} = \sqrt{|g_{tt}|}$ (do czynnika $c_0$),
+a~$c_{\mathrm{koord}} = \sqrt{|g_{tt}|/g_{rr}}$. Oba wynikają
+z~tej samej metryki, żadna niespójność nie występuje.
+
+\medskip
+\noindent\textbf{Konsekwencja:} W~testach obserwacyjnych
+(Shapiro delay, ugięcie światła, lensing) obserwable zależą
+od $c_{\mathrm{koord}}$ (pomiar czasu koordinatowego przy
+odległości koordynatowej). To zgadza się z~PPN, gdyż
+$c_{\mathrm{koord}} \approx c_0(1 - 2U/c_0^2)$
+w~słabym polu.
+
+\medskip
+\noindent\textbf{Dlaczego A6 używa $c_{\mathrm{lok}}$, nie $c_{\mathrm{koord}}$?}
+Ponieważ $c_{\mathrm{lok}}$ jest \textbf{jedyną
+z~trzech prędkości, która jest (i) zmienna, (ii) niezależna
+od wyboru układu koordynatowego}. Prędkość $c_{\mathrm{proper}} = c_0$
+jest stała (nieinformatywna), a~$c_{\mathrm{koord}}$ zależy
+od parametryzacji. Natomiast $c_{\mathrm{lok}}$ jest
+skalarem: mierzy fizycznie, jak daleko światło zajedzie
+w~jednostce czasu referencyjnego $dt$ --- to relacyjna
+obserwabla TGP.
+\end{remark}

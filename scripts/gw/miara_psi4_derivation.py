@@ -5,7 +5,13 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='repla
 """
 miara_psi4_derivation.py
 ========================
-TGP — wyprowadzenie miary ψ⁴ w działaniu z metryki efektywnej.
+*** UWAGA: SKRYPT HISTORYCZNY / SUPERSEDED ***
+Poprawny element objętościowy to √(-g_eff) = c₀·ψ (z sek08a),
+NIE ψ⁴. Ten skrypt dokumentuje starą próbę wyprowadzenia ψ⁴
+i sam wykazuje jej niespójność (patrz linia "≠ ψ⁴ ogólnie").
+Zob. consistency_volume_element.py dla poprawnej weryfikacji.
+
+TGP — (historyczna) próba wyprowadzenia miary ψ⁴ w działaniu z metryki efektywnej.
 
 SŁABY PUNKT #1 (zidentyfikowany w ANALIZA_SPOJNOSCI_v15.md §6.4):
   "Miara ψ⁴ w działaniu: uzasadniona post-hoc przez det(g_eff) = ψ⁴,

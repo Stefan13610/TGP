@@ -176,24 +176,56 @@ a~ich tre\'s\'c jako Propozycje (\ref{prop:c-from-metric},
 \ref{prop:G-from-lP}).
 
 \begin{proposition}[$c(\Phi)$ z~metryki pomostowej]\label{prop:c-from-metric}
-Metryka pomostowa TGP (stw.~\ref{prop:conformal-unique}) przyjmuje
-posta\'c pot\k{e}gow\k{a} z~antypodaln\k{a} symetri\k{a} czas--przestrze\'n:
+Metryka pomostowa TGP (tw.~\ref{thm:metric-from-budget},
+sek.~\ref{sec:metryka-z-substratu}) jest \textbf{jednoznacznie}
+wyznaczona przez warunek antypodyczny $f \cdot h = 1$,
+PPN~$\gamma = \beta = 1$ oraz $\ell_P = \text{const}$:
 \begin{equation}\label{eq:metric-bridge-c}
-  ds^2 = -\left(\frac{\PhiZero}{\Phi}\right)^{\!1/2} c_0^2\,dt^2
-         + \left(\frac{\Phi}{\PhiZero}\right)^{\!1/2} \delta_{ij}\,dx^i dx^j.
+  ds^2 = -\frac{c_0^2}{\psi}\,dt^2
+         + \psi\,\delta_{ij}\,dx^i dx^j,
+  \qquad \psi \equiv \frac{\Phi}{\PhiZero}.
 \end{equation}
 Pr\k{e}dko\'s\'c koordynatowa \'swiat\l{}a ($ds^2 = 0$, ruch promieniowy):
 \begin{equation}\label{eq:c-from-metric-deriv}
-  c_{\rm koord}^2 = \frac{|g_{tt}|}{g_{xx}}
-  = \frac{(\PhiZero/\Phi)^{1/2}}{(\Phi/\PhiZero)^{1/2}}
-  = \frac{\PhiZero}{\Phi}
+  c_{\rm koord}^2 = \frac{|g_{tt}|}{g_{rr}}
+  = \frac{c_0^2/\psi}{\psi}
+  = \frac{c_0^2}{\psi^2}
   \quad\Longrightarrow\quad
-  c_{\rm koord} = c_0\sqrt{\frac{\PhiZero}{\Phi}}.
+  c_{\rm koord} = \frac{c_0}{\psi}
+  = c_0\,\frac{\PhiZero}{\Phi}.
 \end{equation}
-Wynik jest \textbf{dok\l{}adnie} r\'owny aksjomat~\ref{ax:c}
-($c(\Phi) = c_0\sqrt{\PhiZero/\Phi}$) --- aksjomat jest zatem
-\textbf{konsekwencj\k{a}} metryki pomostowej, nie niezale\.znym
-postulatem.
+Pr\k{e}dko\'s\'c lokalna (odleg\l{}o\'s\'c w\l{}a\'sciwa / czas koordynatowy):
+\begin{equation}\label{eq:c-lok-derived}
+  c_{\rm lok} = \sqrt{h}\cdot\frac{dr}{dt}
+  = \sqrt{\psi}\cdot\frac{c_0}{\psi}
+  = \frac{c_0}{\sqrt{\psi}}
+  = c_0\sqrt{\frac{\PhiZero}{\Phi}}.
+\end{equation}
+Wynik~\eqref{eq:c-lok-derived} jest \textbf{dok\l{}adnie} r\'owny
+aksjomat~\ref{ax:c} ($c(\Phi) = c_0\sqrt{\PhiZero/\Phi}$),
+kt\'ory definiuje $c_{\rm lok}$, nie $c_{\rm koord}$.
+Aksjomat jest zatem \textbf{konsekwencj\k{a}} metryki pomostowej,
+nie niezale\.znym postulatem.
+
+\medskip\noindent
+\textbf{Trzy pr\k{e}dko\'sci \'swiat\l{}a w~TGP:}
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Warto\'s\'c} & \textbf{Interpretacja} \\
+\midrule
+$c_{\rm proper}$ & $c_0$ (zawsze)
+  & lokalna, obie miary w\l{}a\'sciwe \\
+$c_{\rm lok}$ & $c_0/\sqrt{\psi}$
+  & odl.~w\l{}a\'sciwa / czas koordynatowy (A6) \\
+$c_{\rm koord}$ & $c_0/\psi$
+  & koordynatowa ($= c_{\rm lok}^2/c_0$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent
+Fizyka nie zale\.zy od wyboru miary: $\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$
+w~obu przypadkach (postaci pot\k{e}gowej i~eksponencjalnej).
 
 \medskip\noindent
 \textbf{R\'ownowa\.zna posta\'c eksponencjalna} (do pierwszego rz\k{e}du

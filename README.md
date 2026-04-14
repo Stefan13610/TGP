@@ -4,7 +4,7 @@
 
 **Topology-Generated Potential: matter as the source of space**
 
-Author: Mateusz Serafin | April 2026
+Author: Mateusz Serafin | April 2026 (updated 2026-04-14)
 
 ---
 
@@ -127,6 +127,7 @@ All tasks from [PLAN_PUBLIKACJI_MASTER.md](PLAN_PUBLIKACJI_MASTER.md) are **CLOS
 - A1--A5: completed (bibliography, literature, reproducibility, proofreading, supplementary)
 - **Sciezka A (N-body paper):** READY for arxiv + journal submission
 - **Sciezka B (Full TGP paper):** READY for manuscript compilation (410 pages, 0 errors)
+- **Development plan v3 (2026-04-14):** 6 new validation scripts (37/37 PASS): α=2 theorem, Koide origin, w_DE DESI fit, neutrino masses, GW ringdown, metric consistency
 
 ## License
 

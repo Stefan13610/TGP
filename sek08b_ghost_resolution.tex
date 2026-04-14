@@ -473,3 +473,64 @@ Dualizm $\alpha_{\rm grav} \neq \alpha_{\rm sol}$ jest
 Weryfikacja numeryczna: \texttt{ex166\_alpha1\_vs\_alpha2.py}
 (systematyczne por\'ownanie),
 \texttt{ex167\_ppn\_alpha1.py} (linearyzacja PPN).
+
+\begin{remark}[S\l{}ownik formulacji: $K=g^4$ vs $K=g^2$]%
+\label{rem:formulation-dictionary}
+Poni\.zsza tabela podsumowuje r\'o\.znice mi\k{e}dzy
+Formulacj\k{a}~A (kanoniczn\k{a}, $K = g^4$,
+$\alpha = 2$) i~Formulacj\k{a}~B (substratow\k{a},
+$K = g^2$, $\alpha = 1$).
+Weryfikacja numeryczna: \texttt{lp6\_formulation\_dictionary.py}
+(12/12~PASS).
+
+\medskip
+\begin{center}\footnotesize
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{W\l{}asno\'s\'c} & \textbf{Kanoniczna ($K=g^4$)}
+  & \textbf{Substratowa ($K=g^2$)} \\
+\midrule
+$\alpha$ & 2 & 1 \\
+ODE solitonu & $g'' = \frac{1-g}{g^2} - \frac{2}{g}(g')^2
+  - \frac{2}{r}g'$ & $g'' = (1-g) - \frac{1}{g}(g')^2
+  - \frac{2}{r}g'$ \\[3pt]
+Punkt duchowy & $g^* = e^{-1/4} \approx 0{,}779$
+  & $g^* = e^{-1} \approx 0{,}368$ \\
+$r_{21}^{(\rm ODE)}$ & $1138$ (przy $g_0^e = 0{,}8677$)
+  & $\mathbf{206{,}8}$ ($\delta < 0{,}01\%$) \\
+$r_{31}^{(\rm ODE)}$ z~Koide & $3477$ ($\delta = 0{,}008\%$)
+  & $\mathbf{3477}$ ($\delta = 0{,}008\%$) \\
+$r_{21}$ via $\varphi$-FP & $\times$ (duch blokuje)
+  & $\checkmark$ (ghost-free) \\
+Sl{}abopolowe ($g \to 1$) & identyczne & identyczne \\
+PPN $\gamma$, $\beta$ & $= 1$ & $= 1$ \\
+Kosmologia & identyczna & identyczna \\
+UV completion & problematyczny ($f(g)$ zmienia znak)
+  & naturalny ($f(g) > 0$ dla $g > e^{-1}$) \\
+\midrule
+\textbf{Werdykt} & \multicolumn{2}{c}{Substratowa preferowana
+  (6~argument\'ow, zob.\ skrypt)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Sze\'s\'c argument\'ow za formulacj\k{a} substratow\k{a}:}
+\begin{enumerate}[nosep]
+  \item \textbf{Ghost-free}: $g^* = e^{-1} = 0{,}368$ le\.zy poni\.zej
+    minimalnych warto\'sci profilu solitonowego (nie blokuje dynamiki);
+  \item \textbf{Stabilno\'s\'c numeryczna}: ODE stabilne dla
+    $g_0 \in [0{,}5;\, 2{,}0]$, integracja nie dywerguje;
+  \item \textbf{$r_{21}$ dok\l{}adne}: $206{,}8$ (PDG) bez dostrajania;
+  \item \textbf{Konieczno\'s\'c $\varphi$-FP}: selekcja
+    $g_0^{(2)} = \varphi\,g_0^{(1)}$ jest fizycznie
+    osi\k{a}galna (brak bariery duchowej);
+  \item \textbf{Universalno\'s\'c kwarkowa}: ten sam ODE dzia\l{}a
+    na leptony i~kwarki ($g_0 \in [0{,}817;\, 0{,}891]$);
+  \item \textbf{S\l{}abopolowa to\.zsamo\'s\'c}: nie zmienia
+    \.zadnej predykcji PPN, kosmologicznej ani falowej.
+\end{enumerate}
+\noindent
+Zob.~r\'ownie\.z wyn.~\ref{res:alpha-independent}
+i~wn.~\ref{cor:alpha1-preferred}.
+\end{remark}

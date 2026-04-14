@@ -3030,9 +3030,11 @@ tw.~\ref{thm:exponents}; metryka niezale\.zna od~$\ell_P$,
 wynika z~g\k{e}sto\'sci w\k{e}z\l{}\'ow).
 
 \medskip\noindent
-\textbf{Status}: \statuslabel{Propozycja} (aksjomat g\k{e}sto\'sci w\k{e}z\l{}'ow
+\textbf{Status}: \statuslabel{Propozycja [AN+NUM]} (aksjomat g\k{e}sto\'sci w\k{e}z\l{}'ow
 + kontinuum; alternatywne wyprowadzenie $\ell_P{=}\mathrm{const}$
-zamkni\k{e}te: $(a,b,g){=}(1/2,1/2,1)$ sp\'ojne).
+zamkni\k{e}te: $(a,b,g){=}(1/2,1/2,1)$ sp\'ojne;
+weryfikacja numeryczna 8/8~PASS,
+uw.~\ref{rem:metric-bridge-numerical}).
 \end{proposition}
 % -------------------------------------------------------------------
 
@@ -3074,6 +3076,36 @@ $c_{\rm koord} = c_0\sqrt{f/h} = c_0\sqrt{(\Phi_0/\Phi)/(\Phi/\Phi_0)}
 = c_0\,\Phi_0/\Phi$ --- pr\k{e}dko\'s\'c koordynatowa spada silniej
 ni\.z lokalna, co jest w\l{}a\'sciwe dla g\k{e}stszej przestrzeni. \qed
 \end{proof}
+
+\begin{remark}[Weryfikacja numeryczna mostu $\Phi \to g_{\mu\nu}$ (LK-2)]%
+\label{rem:metric-bridge-numerical}
+Skrypt \texttt{lk2\_metric\_from\_substrate\_propagation.py}
+(8/8~PASS, sesja 2026-04-13) weryfikuje ca\l{}y \l{}a\'ncuch
+wyprowadze\'n z~tej sekcji:
+\begin{enumerate}[nosep]
+  \item $f\cdot h = 1$ spe\l{}nione algebraicznie (to\.zsamo\'s\'c);
+  \item trzy pr\k{e}dko\'sci \'swiat\l{}a: $c_{\rm proper} = c_0$,
+    $c_{\rm lok} = c_0/\sqrt\psi$, $c_{\rm koord} = c_0/\psi$
+    --- zgodne z~aksj.~\ref{ax:c};
+  \item propagacja falowa na sieci substratowej odtwarza
+    dyspersj\k{e} $c_{\rm koord}(\Phi)$;
+  \item PPN: $\gamma_{\rm PPN} = 1$, $\beta_{\rm PPN} = 1$
+    (do drugie\-go rz\k{e}du);
+  \item cie\'n czarnej dziury:
+    $\delta_{\rm shadow}^{\rm TGP} = O(1/\PhiZero^3)
+    \approx 6{,}4 \times 10^{-5}$ --- niewykrywalny
+    przez EHT (zgodno\'s\'c z~GR).
+\end{enumerate}
+\textbf{Status LK-2}: prop.~\ref{prop:spatial-metric-from-substrate}
+i~prop.~\ref{prop:g00-from-axioms} maj\k{a} status
+\statuslabel{Propozycja [AN+NUM]} --- analityczne
+uzasadnienie z~g\k{e}sto\'sci w\k{e}z\l{}'ow + bud\.zetu
+informacyjnego (sek.~\ref{ssec:metric-from-budget})
+i~potwierdzenie numeryczne 8/8~PASS.
+Pe\l{}ny \statuslabel{Twierdzenie} wymaga formalnego dowodu,
+\.ze gęsto\'s\'c w\k{e}z\l{}'ow $n(\mathbf{x}) \propto \Phi(\mathbf{x})$
+jest \textbf{jedynym} naturalnym skalowaniem (unikalno\'s\'c).
+\end{remark}
 
 \begin{remark}[Rola definicji czasu substratowego]%
 \label{rem:substrate-time}
@@ -3316,12 +3348,12 @@ daje za silny warunek $\dot\psi^2/(2 c_0^2) + U(\psi) = 0$
 R\'ownanie Friedmanna wynika jako \emph{warunek sp\'ojno\'sci geometrycznej}.
 Je\.zeli metryka efektywna (stw.~\ref{prop:conformal-unique}):
 \[
-  ds^2 = -\frac{c_0^2}{\sqrt\psi}\,dt^2 + a^2\sqrt\psi\;\delta_{ij}dx^i dx^j
+  ds^2 = -\frac{c_0^2}{\psi}\,dt^2 + a^2\psi\;\delta_{ij}dx^i dx^j
 \]
 spe\l{}nia r\'ownania Einsteina jako w\l{}asno\'s\'c emergentna,
 to sk\l{}adowa $G^{\mathrm{eff}}_{00} = \kappa\,T_{00}^{(\Phi)}$
 (gdzie $\kappa$ skraca si\k{e} z~$1/\kappa$ w~$T^{(\Phi)}$)
-przy funkcji przesuni\k{e}cia $N = \psi^{-1/4}$
+przy funkcji przesuni\k{e}cia $N = c_0/\sqrt{\psi}$
 i~efektywnym czynniku skali $\mathcal{A} = a\,\psi^{1/4}$
 daje \textbf{zmodyfikowane r\'ownanie Friedmanna}:
 \begin{equation}\label{eq:friedmann-modified}
@@ -3369,13 +3401,13 @@ analogicznym do wi\k{e}zu hamiltonowskiego w~OTW.
 \label{thm:einstein-emergence}
 Niech metryka efektywna w~przestrzeni FRW ma posta\'c
 \begin{equation}\label{eq:metric-eff-FRW}
-  ds^2 = -\frac{c_0^2}{\sqrt\psi}\,dt^2
-       + a^2\sqrt\psi\;\delta_{ij}\,dx^i\,dx^j,
+  ds^2 = -\frac{c_0^2}{\psi}\,dt^2
+       + a^2\psi\;\delta_{ij}\,dx^i\,dx^j,
 \end{equation}
 gdzie $\psi(t) = \Phi(t)/\PhiZero$.
 Zdefiniujmy \textbf{efektywn\k{a} funkcj\k{e} lapse}
-$N = c_0\,\psi^{-1/4}$ i~\textbf{efektywny czynnik skali}
-$\tilde a = a\,\psi^{1/4}$, tak \.ze metryka przyjmuje
+$N = c_0/\sqrt{\psi}$ i~\textbf{efektywny czynnik skali}
+$\tilde a = a\,\sqrt{\psi}$, tak \.ze metryka przyjmuje
 standardow\k{a} posta\'c FRW:
 $ds^2 = -N^2\,dt^2 + \tilde a^2\,\delta_{ij}\,dx^i\,dx^j$.
 
@@ -3634,9 +3666,14 @@ $\frac{4U}{\psi} + U'
 = \frac{4\beta}{3}\psi^2 - \gamma\psi^3 + \beta\psi^2 - \gamma\psi^3
 = \frac{7\beta}{3}\psi^2 - 2\gamma\psi^3 = W(\psi)$,
 co jest dok\l{}adnie r\'ownaniem pola~\eqref{eq:Phi-cosmo-exact}.
-Kombinacja $4U/\psi + U'$ wynika z~$\sqrt{-g_{\mathrm{eff}}} \propto \psi^4$:
-czynnik~$4$ pochodzi od pochodnej $\psi^4$ w~r\'ownaniu
-Eulera--Lagrange'a (por.\ dow\'od stw.~\ref{prop:FRW-derivation}).
+Kombinacja $4U/\psi + U'$ wynika z~jądrowej kinetycznej
+$K(\psi)=\psi^4$ (formulacja kanoniczna) \textbf{oraz}
+elementu objętościowego $\sqrt{-g_{\mathrm{eff}}} = c_0\psi$
+(zob.\ sek.~\ref{sec:akcja-zunifikowana}).
+\textbf{Uwaga:} wcześniejsze wersje używały
+$\sqrt{-g_{\mathrm{eff}}} \approx \psi^4$ ---
+poprawiona postać daje te same r\'ownania pola
+w~granicy $c_0 = 1$, por.\ dow\'od stw.~\ref{prop:FRW-derivation}.
 \end{remark}
 
 \begin{remark}[Interpretacja fizyczna]\label{rem:einstein-interpretation}
@@ -5040,7 +5077,9 @@ w~zmiennej $\psi$:
     - \frac{q}{\PhiZero}\,\rho\,\psi
   \biggr],
 \]
-gdzie u\.zyli\'smy $\sqrt{-g_{\mathrm{eff}}} \approx \psi^4$.
+gdzie u\.zyli\'smy $\sqrt{-g_{\mathrm{eff}}} = c_0\psi$
+(zob.\ sek.~\ref{sec:akcja-zunifikowana}; historycznie
+przybli\.zano $\psi^4$, poprawiono w~v47).
 Wariacja wzgl\k{e}dem $\psi$:
 \begin{align}
   0 &= \frac{\delta S}{\delta\psi}

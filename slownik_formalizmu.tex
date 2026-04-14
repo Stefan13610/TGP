@@ -1,0 +1,158 @@
+% ============================================================
+%  Słownik formalizmu TGP — kanoniczne przejścia między formulacjami
+%  TGP v1 — Appendix (do włączenia w main.tex)
+% ============================================================
+\section{Słownik formalizmu TGP}\label{app:formulation-dictionary}
+
+\begin{quote}
+\textbf{Cel}: TGP operuje kilkoma równoważnymi zestawami zmiennych
+i~notacji. Niniejszy słownik definiuje kanoniczne przejścia,
+wskazuje zakres stosowania każdej formulacji i~eliminuje
+wieloznaczności dla recenzenta.
+\end{quote}
+
+% -------------------------------------------------------------------
+\subsection{Formulacje i~ich domeny}
+% -------------------------------------------------------------------
+
+\begin{center}\small
+\begin{tabular}{@{}lcccp{4.0cm}@{}}
+\toprule
+& \textbf{Form.\ A (kan.)} & \textbf{Form.\ Sub} & \textbf{Form.\ B (log)} & \textbf{Uwagi} \\
+\midrule
+\textbf{Zmienna pola} & $\varphi = \Phi/\PhiZero$ & $g = \Phi/\PhiZero$ & $g = \Phi/\PhiZero$ & Ta sama zmienna \\[4pt]
+\textbf{Kinetyczne $K$} & $K(\varphi) = K_{\mathrm{geo}}\,\varphi^4$ & $K_{\mathrm{sub}}(g) = K_{\mathrm{geo}}\,g^2$ & $f(g) = 1 + 4\ln g$ & Trzy postaci \\[4pt]
+\textbf{Eksponent $\alpha$} & $\alpha = 2$ & $\alpha = 1$ & $\alpha = 2$ (w~limicie) & $f = K'/K \cdot g/2$ \\[4pt]
+\textbf{Ghost point} & $g^* = e^{-1/4} \approx 0.779$ & \textbf{brak} ($K > 0\;\forall g > 0$) & $g^* = e^{-1/4}$ & Krytyczna różnica \\[4pt]
+\textbf{Relacja} & $K = K_{\mathrm{geo}}\,g^4$ & $K_{\mathrm{sub}} = K_{\mathrm{geo}}\,g^2$ & $f \approx 1 + 4\ln g$ & $f = K'/K\cdot g/2$ \\
+\midrule
+\textbf{ODE solitonu} &
+  $g^4[g''+(2/r)g'] + 2g^3(g')^2 = V'$ &
+  $g^2 g'' + g(g')^2 + (2/r)g^2 g' = V'$ &
+  $f(g)[g''+(2/r)g'] + (2/g)(g')^2 = V'$ &
+  \\[4pt]
+\textbf{$r_{21}$ (phi-FP)} & 206.77 \checkmark & 206.77 \checkmark & 206.77 \checkmark & \textbf{Identyczny} \\[4pt]
+\textbf{$r_{31}$ (tau)} & bariera: max$\sim$1571 & \textbf{3477} \checkmark & bariera & Sub jedyna pełna \\[4pt]
+\textbf{$g_0^e$} & 0.834 & \textbf{0.869} & 0.899 & Zależy od formy \\
+\midrule
+\textbf{PPN $\gamma,\beta$} & $= 1$ & $= 1$ & $= 1$ & \textbf{Niezależne od $\alpha$} \\[4pt]
+\textbf{$\kappa$} & $3/(4\PhiZero)$ & $3/(4\PhiZero)$ & $3/(4\PhiZero)$ & \textbf{Niezależne} \\[4pt]
+\textbf{$n_s$, $r$} & 0.9662, 0.0033 & 0.9662, 0.0033 & 0.9662, 0.0033 & \textbf{Niezależne} \\[4pt]
+\textbf{Koide $K$} & $2/3$ & $2/3$ & $2/3$ & \textbf{Niezależne} \\[4pt]
+\textbf{$\alpha_s(M_Z)$} & 0.1184 & 0.1184 & 0.1184 & \textbf{Niezależne} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Wybór kanonicznej formulacji]\label{rem:canonical-choice}
+\textbf{Formulacja Substratowa} ($K_{\mathrm{sub}} = g^2$) jest
+\textbf{preferowana} z~trzech powodów:
+\begin{enumerate}[(i)]
+  \item jest \textbf{ghost-free}: $K_{\mathrm{sub}}(g) = K_{\mathrm{geo}}\,g^2 > 0$
+    dla wszystkich $g > 0$;
+  \item reprodukuje \textbf{wszystkie trzy} masy leptonów
+    ($r_{21}$ i~$r_{31}$) — jako jedyna;
+  \item wynika bezpośrednio z~hamiltonianu substratu
+    (lemat~\ref{lem:K_phi2}).
+\end{enumerate}
+Formulacje~A i~B są przybliżeniami lub historycznymi wariantami.
+Formulacja~A jest poprawna w~sektorze słabego pola
+($\varphi \sim 1$), ale niedziałająca w~sektorze solitonowym
+($g_0 > g^*$).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Przejścia kanoniczne}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Przejście Form.~Sub $\to$ Form.~A]\label{prop:sub-to-A}
+Formulacja~A jest ,,modulacją'' Formulacji~Sub:
+\begin{equation}
+  K_A(\varphi) = \frac{d(g^2)}{dg} \cdot g \cdot K_{\mathrm{sub}}(g)
+  = 2g \cdot g \cdot g^2 = 2g^4
+  \quad \Rightarrow \quad
+  K_A \propto g^4.
+\end{equation}
+Różnica wynika z~tego, czy kinetyczny grad pochodzi
+z~$\phi_i$ (Sub) czy z~$\phi_i^2$ (A):
+\begin{itemize}[nosep]
+  \item Sub: $\mathcal{L} \supset J\sum \phi_i \phi_j
+    \to K_{\mathrm{sub}} = g^2$
+  \item A: $\mathcal{L} \supset K_{ij}\sum (\phi_i - \phi_j)^2
+    \to K_A = g^4$ (z modulacją $K_{ij}$)
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Przejście Form.~A $\to$ Form.~B]\label{prop:A-to-B}
+Formulacja~B jest rozwinięciem Taylora Formulacji~A wokół~$g = 1$:
+\begin{equation}
+  f(g) = \frac{d\ln K_A}{d\ln g}
+  = \frac{g \cdot 4g^3}{g^4} = 4.
+\end{equation}
+Ogólniej, definiując $f(g) \equiv 1 + 2\alpha\ln g$
+i~identyfikując z~$K_A(g)/K_A(1) \approx e^{2\alpha\ln g}$,
+dostajemy $f(g) = 1 + 4\ln g$ ($\alpha = 2$) jako
+pierwszorzędowe przybliżenie.
+\end{proposition}
+
+% -------------------------------------------------------------------
+\subsection{Kiedy której formulacji użyć}
+% -------------------------------------------------------------------
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Sektor} & \textbf{Zalecana formulacja} & \textbf{Powód} \\
+\midrule
+Solitony (masy) & Sub & Ghost-free, reprodukuje $\tau$ \\
+Grawitacja (PPN) & dowolna & Wynik niezależny od $\alpha$ \\
+Kosmologia (FRW) & A lub Sub & Identyczne wyniki \\
+Metryka & A & Historycznie, $\sqrt{-g} = c_0\varphi$ \\
+Sektor cechowania & A lub Sub & Faza $\theta$ niezależna od modułu \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Parametry: $\PhiZero$ i~$\PhiEff$}
+% -------------------------------------------------------------------
+
+\begin{remark}[Rozróżnienie $\PhiZero$ i~$\Phi_{\mathrm{eff}}$]
+\begin{itemize}[nosep]
+  \item $\PhiZero = 25$: wartość próżniowa pola $\Phi$
+    (z~warunku $U'(\varphi_0) = 0$, $\varphi_0 = 1$,
+    $\Phi = \PhiZero\varphi$). Jest parametrem \textbf{Warstwy~I}
+    (strukturalnym) jeśli $\PhiZero = N_f^2 = (2N_c - 1)^2$.
+  \item $\Phi_{\mathrm{eff}}$: ewentualna korekcja radiacyjna
+    lub kosmologiczna do $\PhiZero$. W~bieżącej wersji TGP
+    $\Phi_{\mathrm{eff}} = \PhiZero$ (brak poprawek).
+  \item Hipoteza $a_\Gamma \cdot \PhiZero = 1$ łączy parametr
+    substratu z~próżnią: weryfikowana z~danymi DESI
+    (odchylenie $\sim 0.5\%$ na 2026-04).
+\end{itemize}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie relacji kluczowych}
+% -------------------------------------------------------------------
+
+\begin{equation}\label{eq:dictionary-key}
+\boxed{
+\begin{aligned}
+  K_{\mathrm{sub}}(g) &= K_{\mathrm{geo}}\,g^2
+  & &\text{[substrat: } H = -J\sum \phi_i\phi_j]\\
+  K_A(\varphi) &= K_{\mathrm{geo}}\,\varphi^4
+  & &\text{[kanoniczny: modulacja } K_{ij}]\\
+  f(g) &= 1 + 4\ln g
+  & &\text{[logarytmiczny: Taylor wokół } g=1]\\[6pt]
+  \alpha_{\mathrm{Sub}} &= 1, \quad \alpha_A = 2
+  & &\text{[PPN/kosmo: niezależne od $\alpha$]}\\
+  \kappa &= \tfrac{3}{4\PhiZero}
+  & &\text{[z zunifikowanej akcji]}\\
+  g_0^e &= 0.869\;\text{(Sub)},\; 0.834\;\text{(A)}
+  & &\text{[bezwzgl. zależy od formy ODE]}\\
+  r_{21} &= (A_\mu/A_e)^4 = 206.77
+  & &\text{[niezależne od formy ODE — $\varphi$-FP]}
+\end{aligned}
+}
+\end{equation}

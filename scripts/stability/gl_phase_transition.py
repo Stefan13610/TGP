@@ -123,7 +123,7 @@ def test_potential_equivalence():
 
     # The KEY correspondence: GL potencjal is QUADRATIC in psi (bo V ~ psi + psi^2)
     # while TGP potential is CUBIC-QUARTIC in psi (bo U ~ psi^3 - psi^4)
-    # The difference comes from the measure sqrt(-g_eff) = psi^4 in the action.
+    # The difference comes from the measure sqrt(-g_eff) = c_0*psi in the action (corrected from old psi^4).
     # After including the measure:
     # S_eff ~ psi^4 * U(psi) = psi^4 * (beta/3 psi^3 - gamma/4 psi^4)
     # = beta/3 psi^7 - gamma/4 psi^8  — this is what the action sees.
