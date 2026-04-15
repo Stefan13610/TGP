@@ -57,21 +57,41 @@ Substrat α=1 = √g·(∂g)² · √det(g) — PODWÓJNIE liczy √g!
 Naturalna akcja daje α ≤ 3/4 < α_crit → N=3 AUTOMATYCZNIE.
 ```
 
-### ⚠️ Masa solitonowa vs φ-drabinka
+### ⚠️ KRYTYCZNE: Masa solitonowa — excess vs deficit
 
 ```
-m(g₀) = 4π∫ ε·r² dr NIE reprodukuje m_μ/m_e = 206.768
-φ-drabinka PRZECHODZI PRZEZ vacuum: g₀^e=0.869<1, g₀^μ=1.407>1
-To NIE unieważnia N=3 (bariera niezależna od formuły masowej).
+ODKRYCIE (r3_mass_function.py):
+
+Excess solitony (g₀ > 1) mają UJEMNĄ energię całkowitą!
+  m(g₀=1.1) = -0.014, m(g₀=1.5) = -0.340, m(g₀=2.0) = -6.94
+
+Przyczyna: U(g=1) jest MAKSIMUM LOKALNE potencjału U(g)=g³/3-g⁴/4.
+Potencjał δU = U(g) - U(1) jest ZAWSZE ≤ 0, ale głębszy po stronie g>1.
+Kinetic energy nie kompensuje — total energy < 0.
+
+Deficit solitony (g₀ < 1) mają DODATNIĄ masę:
+  m(g₀=0.869) = 0.00543, m(g₀=0.5) = 0.189
+  Skalowanie: m ~ (1-g₀)^2.5
+
+Na stronie DEFICIT (g₀<1) ISTNIEJĄ pary z m_μ/m_e = 206.8:
+  np. g₀^e=0.915, g₀^μ=0.335 (ratio=206.37)
+  ALE: bariera g₀_crit jest po stronie g₀>1 — nie ogranicza deficytów!
+
+IMPLIKACJE:
+1. φ-drabinka (g₀^e=0.869→g₀^μ=1.407) jest NIESPÓJNA z masą
+2. Fizyczne solitony mogą być TYLKO deficit (g₀<1)?
+3. Mechanizm bariery wymaga rewizji (bariera po złej stronie)
+4. Albo: formuła masowa wymaga korekty (|m|? korekty kwantowe?)
 ```
 
 ### ⚠️ Pozostałe pytania
 
 | Element | Problem |
 |---------|---------|
+| Ujemna masa excess solitonów | Fundamentalny problem stabilności |
 | α_Koide ≈ 3 | Bariera = masa τ(Koide) — niezwykły zbieg |
 | Analityczne g₀_crit(3D)? | Brak zamkniętej formy |
-| Masa solitonowa vs ratios | GL(3,F₂) korekty? |
+| Masa solitonowa vs ratios | GL(3,F₂) korekty? Formuła masowa? |
 
 ## Hipoteza auto-przestrzeni
 
@@ -248,6 +268,7 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_el_check.py` | **Poprawny Lagrangian, α/g coefficient** | ✅ NOWE |
 | `r3_alpha_scan.py` | **α_crit=0.882, N=2→3 transition** | ✅ NOWE |
 | `r3_physical_alpha.py` | **Geometryczna analiza α, N=3 z geometrii** | ✅ NOWE |
+| `r3_mass_function.py` | **Pełna analiza m(g₀): ujemna masa excess!** | ✅ NOWE |
 
 ## Kryterium zamknięcia
 
@@ -271,7 +292,9 @@ Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa dla geometrycznych α 
 - [x] α_Koide ≈ 3 (bariera = τ mass) — ODKRYTE
 - [x] Poprawny Lagrangian: L = g^{2α}g'²/2 + g³/3 - g⁴/4 — WYPROWADZONE
 - [x] Geometryczna analiza α — POTWIERDZONE (α≤3/4 → N=3)
-- [x] Masa solitonowa vs φ-drabinka — ZBADANE (nie reprodukuje ratios)
+- [x] Masa solitonowa vs φ-drabinka — ZBADANE (excess m<0, deficit m>0)
+- [x] Excess solitony m<0 — ODKRYTE (fundamentalny problem)
+- [ ] Rewizja mechanizmu bariery (bariera po stronie excess)
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić Koide z teorii solitonów
 - [ ] Masa: korekty GL(3,F₂) lub zmiana mass formula
