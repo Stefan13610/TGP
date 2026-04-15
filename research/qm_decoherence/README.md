@@ -1,49 +1,107 @@
-# Decoherence from hbar(Phi) Suppression
+# Q7: Dekoherencja z dynamiki pola TGP
 
 ## Problem
 
-Explain the quantum-to-classical transition (decoherence) as a
-natural consequence of TGP field dynamics, without invoking
-environment-induced decoherence as a separate mechanism.
+Wyjasnic przejscie kwantowo-klasyczne (dekoherencje) jako naturalna
+konsekwencje dynamiki pola TGP, bez postulowania oddzielnego mechanizmu.
 
-## Connection to TGP
+## Mechanizm -- TRZY DROGI DO DEKOHERENCJI
 
-In TGP, the effective Planck constant hbar depends on the local
-field density: hbar = hbar(Phi). In dense regions (Phi >> Phi_0),
-hbar -> 0 and quantum effects vanish. This provides a SECOND
-classical limit, complementary to the standard N -> infinity
-(large quantum number) limit:
+### Droga 1: Tlumienie hbar(Phi)
+- hbar(Phi) = hbar_0 * sqrt(Phi_0/Phi)
+- Gestzy substrat (Phi >> Phi_0) => hbar -> 0 => klasyczny
+- Tempo dekoherencji: Gamma_1 ~ eps/(1+eps)
 
-- Standard classical limit: N -> infinity, hbar fixed.
-- TGP classical limit: Phi -> large, hbar(Phi) -> 0.
+### Droga 2: Nieliniowe mieszanie modow (z Q3)
+- Superpozycja liniowa dla eps << 1
+- Korekta NL: delta_A/A ~ 0.392*eps
+- Mieszanie modow (k=1 -> k=2) niszczy koherencje fazowa
+- Tempo: Gamma_2 ~ eps^2
 
-Decoherence in TGP is the transition from a dilute Phi
-environment (where hbar is significant and quantum effects
-dominate) to a dense Phi environment (where hbar is suppressed
-and classical behavior emerges).
+### Droga 3: Srodowiskowa back-reakcja (z Q4)
+- N_env solitonow w odleglosci D z amplituda A_env
+- Kazdy rozprzsza faze: delta_phi ~ chi*A_env/D
+- Bladzenie losowe: <delta_phi^2> ~ N_env * chi^2 * A_env^2/D^2
+- Tempo: Gamma_3 ~ eps * (A/D)
 
-This means decoherence is not about "information leaking to
-the environment" but about the local field density crossing
-a threshold where quantum coherence is no longer supported.
+WSZYSTKIE TRZY sa EMERGENTNE z dynamiki TGP, nie postulowane.
 
-## Key Questions
+## Wyniki (2026-04-15) -- q7_decoherence.py (8/8 PASS)
 
-1. What is the functional form of hbar(Phi)?
-   Power law, exponential, or threshold behavior?
-2. Is there a sharp decoherence boundary or a smooth crossover?
-3. How does this connect to the nonlinear breakdown of
-   superposition (see qm_superposition)?
-4. Can we recover standard decoherence rates for known systems?
-5. Does this predict new decoherence effects in high-density
-   environments (e.g., near black holes)?
+### hbar(Phi) i limit klasyczny
+- hbar(Phi) = hbar_0 * sqrt(Phi_0/Phi): zweryfikowany
+- hbar(1e10) = 1e-5 (klasyczny), hbar(0.01) = 10 (kwantowy)
+- Przy Ziemi: delta_hbar/hbar ~ -3.5e-10
 
-## Status
+### Dlugosc koherencji
+- L_coh = 2*Phi / |grad(Phi)| = 2*r^2/A (blisko solitonu)
+- Daleko od solitonu: L_coh >> r (koherentny)
+- Blisko solitonu: L_coh ~ r (dekoherentny)
 
-Conceptual framework is established. Quantitative predictions
-require a concrete form for hbar(Phi), which depends on the
-metric ansatz and soliton profile results.
+### Tempo dekoherencji NL
+- Gamma_NL ~ N^2 dokladnie (skalowanie potwierdzone)
+- N_class = D/(0.39*A) ~ 2551 dla typowego ukladu
+- Zgadza sie z Q3: limit klasyczny przy N ~ D/A_tail
 
-## Dependencies
+### Dekoherencja srodowiskowa
+- Powietrze (STP): Gamma = 2e+28 (natychmiastowa dekoherencja)
+- Pustka kosmiczna: Gamma = 8e-15 (koherencja zachowana)
+- Stosunek: 2.4e+42 (!)
 
-- metric_ansatz: For the form of g(Phi) and hbar(Phi)
-- qm_superposition: Nonlinear corrections to superposition
+### Macierz gestosci
+- Elementy pozadiagonalne: rho_ij(t) = rho_ij(0) * exp(-Gamma*t)
+- Tr(rho) = 1 zachowane (populacje nienaruszone)
+- Czystosc: 1.000 (czysty) -> 0.500 (mieszany)
+
+### Trzy drogi -- ujednolicenie
+- Droga 1 dominuje (Gamma ~ eps), drogi 2,3 ~ eps^2
+- Wszystkie zanikaja gdy eps -> 0 (rezsim kwantowy odzyskany)
+- Hierarchia: hbar-tlumienie >> NL-mieszanie >> back-reakcja
+
+### Darwinizm kwantowy
+- Informacja wzajemna saturuje po 23.3% srodowiska
+- Redundancja R = 4.3x (wielokrotne kopie informacji)
+- TGP wyjasnienie: ogon solitonu odciska faze na CALYM substracie
+
+## Lancuch derywacji
+
+```
+Dynamika pola TGP
+  |
+  +---> Droga 1: hbar(Phi) = hbar_0*sqrt(Phi_0/Phi)
+  |     Gesty substrat => hbar -> 0 => klasyczny
+  |
+  +---> Droga 2: NL mieszanie modow (Q3)
+  |     eps duze => superpozycja lamie sie => klasyczny
+  |
+  +---> Droga 3: Srodowiskowa back-reakcja (Q4)
+  |     N_env solitonow rozpraszaja faze => dekoherencja
+  |
+  v
+DEKOHERENCJA jest EMERGENTNA, nie postulowana
+Darwinizm kwantowy z geometrycznego nakladania ogonow
+```
+
+## Predykcje testowalne
+
+1. Zmiennosc hbar(Phi): eksperymenty kwantowe na roznych wysokosciach
+   delta_hbar/hbar ~ -GM/(2*rc^2) ~ -3.5e-10 (Ziemia)
+2. Tempo dekoherencji TGP vs standardowa QM (rozne skalowanie z N)
+3. Dlugosc koherencji: L_coh ~ r^2/A (przestrzenna zmiennosc)
+4. Modyfikacja BEC: T_BEC ~ hbar(Phi)^2
+
+## STATUS: Q7 ZAMKNIETE
+
+- [x] hbar(Phi) forma funkcyjna i limit klasyczny
+- [x] Dlugosc koherencji z gradientu hbar
+- [x] NL tempo dekoherencji ~ eps^2
+- [x] Srodowiskowa dekoherencja z back-reakcji
+- [x] Ewolucja macierzy gestosci
+- [x] Trzy drogi ujednolicone
+- [x] Darwinizm kwantowy z TGP
+
+## Pliki
+
+| Plik | Opis | Status |
+|------|------|--------|
+| q7_decoherence.py | hbar(Phi), koherencja, NL, srodowisko, darwinizm | 8/8 PASS |
