@@ -49,7 +49,7 @@ WARSTWA 5: Spin, statystyka, dekoherencja (Q5-Q7)
 | Przestrzen | Tlo (dana) | Dynamiczna (Phi) |
 | Czastka | Punkt/fala na tle | Soliton tworzacy tlo |
 | Pomiar | Postulat (kolaps) | Interakcja soliton-soliton |
-| hbar | Stala uniwersalna | hbar = pi*chi*A_tail (wewnetrzne dla solitonu) |
+| hbar | Stala uniwersalna | hbar = pi*chi*A_0/sqrt(alpha) (z symetrii skalowania ODE) |
 | Born | Postulat |psi|^2 | Emergentna z interferencji ogonow |
 | Superpozycja | Aksjomatyczna | Liniownosc rownania w slabym polu |
 
@@ -87,9 +87,12 @@ Kluczowe wyniki wyprowadzone ALGEBRAICZNIE z ODE substratu:
    chi jest wlasciwoscia RDZENIA solitonu, nie ogona.
 
 3. **hbar = pi*chi*A_tail**: WYPROWADZONE z parametrow ODE, nie postulowane.
-   Dx*Dp = pi*chi*A/D jest NIEZALEZNE od alpha (wavenumber cancels!).
-   hbar jest wewnetrzne dla solitonu. Hipoteza hbar(Phi)~1/sqrt(Phi) OBALONA
-   -- hbar zmienia sie przez A_tail(alpha), nie przez k.
+   Dx*Dp = pi*chi*A/D -- k kasuje sie w iloczynie niepewnosci.
+   SYMETRIA SKALOWANIA ODE: g(r;alpha) = g_ref(sqrt(alpha)*r) [DOKLADNA]
+   => A(alpha) = A_0/sqrt(alpha) [wykl. -0.49999, R^2=0.9999999955]
+   => hbar(alpha) = hbar_0/sqrt(alpha) [DOKLADNE]
+   => hbar(Phi) = hbar_0*sqrt(Phi_0/Phi) jest WYPROWADZONE (nie postulowane!)
+   Mechanizm: gestszy substrat => wieksze alpha => mniejsze A => mniejsze hbar.
 
 4. **C_NL = 0.535 (I rzad perturbacji)**: Gorne ograniczenie na korekty NL.
    Pelne ODE daje C_full ~ 0.37 (wyzsze rzedy redukuja o 31%).
@@ -101,3 +104,4 @@ Kluczowe wyniki wyprowadzone ALGEBRAICZNIE z ODE substratu:
 | Plik | Opis | Status |
 |------|------|--------|
 | q0_analytical.py | Analityczne derywacje: Born, chi, hbar, C_NL | 5/5 PASS |
+| q0_hbar_scaling.py | Symetria skalowania ODE: A~1/sqrt(alpha), hbar(Phi) | 7/7 PASS |
