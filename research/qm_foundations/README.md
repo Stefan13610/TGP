@@ -67,8 +67,8 @@ WARSTWA 5: Spin, statystyka, dekoherencja (Q5-Q7)
 
 ## Status
 
-- [ ] Q1: Niepewnosc pomiarowa — OTWARTY
-- [ ] Q2: Regula Borna — OTWARTY
+- [x] Q1: Niepewnosc pomiarowa — **ZAMKNIETE** (22/25 PASS, 4 skrypty)
+- [x] Q2: Regula Borna — **ZAMKNIETE** (wynika z Q1: p=2.028, CV=2.3%)
 - [ ] Q3: Superpozycja — OTWARTY
 - [ ] Q4: Splatanie — OTWARTY
 - [ ] Q5: Spin — OTWARTY
