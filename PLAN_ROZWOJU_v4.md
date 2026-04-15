@@ -237,24 +237,32 @@ Perturbacyjny dowód m~A⁴ jest **niemożliwy**. Skalowanie mas jest własnośc
 **Problem:** Stosunek Brannena B = b/a = √2 jest potwierdzony numerycznie do 10⁻⁶,
 ale brak dowodu analitycznego. Gdyby udowodnić → Koide K=2/3 staje się **twierdzeniem**.
 
-**POSTĘP (2026-04-14):**
+**POSTĘP (2026-04-15):**
 
 Łańcuch algebraiczny KOMPLETNY:
 ```
 GL(3,𝔽₂) → Z₃ podgrupa → fazy 120° → K = 2/3 → B = √2
 ```
 
-Negatywne wyniki (eliminacja ślepych ścieżek):
-- **Ścieżka 4 nie działa:** F(φ) = A(φg₀)/A(g₀) NIE jest stałe (CV = 220%)
-- **φ²-drabinka tau nie działa w substracie:** g₀^τ = φ²g₀^e → A_tail = 0
-- Best-fit g₀^τ = 1.73, co daje B = 1.4143 ≈ √2 z 10⁻⁴
+Wyniki numeryczne:
+- r₂₁ = (A_μ/A_e)⁴ = 206.55 (0.10% od PDG) — z ODE + φ-drabinka
+- g₀^τ(Koide) = 1.729 → r₃₁ = 3474 (0.09% od PDG), B = 1.41421356
+- η(δ) asymmetria c₁ = 0.72538 — stała do 10⁻⁵, z perturbacji ODE
+- g₀^τ/g₀^e ≈ 2 (diff 0.55%), g₀^τ/g₀^μ ≈ √(3/2) (diff 0.37%)
 
-**Brakujące ogniwo:** Formalizacja Z₃ → fazy 120° (dlaczego parametryzacja Brannena?)
+Negatywne wyniki (eliminacja ślepych ścieżek):
+- **F(φ) nie stałe:** CV = 220% — Ścieżka 4 nie prowadzi do B=√2
+- **φ²-drabinka zablokowana:** g₀^τ = φ²g₀^e = 2.28 > g₀_crit = 2.25
+- **c_M = E/A⁴ nie stałe** — CV = 347%, ale stosunki mas działają
+- **r₂₁ nie uniwersalne** — zależy silnie od g₀^e (nie jest czystą liczbą)
+- **g₀^τ = 2·g₀^e daje K = 0.673** — 1% off, nie dokładne
+
+**Brakujące ogniwo:** Co wyznacza g₀^τ = 1.729? (= dlaczego K = 2/3?)
 
 **Co zostaje do zamknięcia:**
-1. **Z₃ → equidistant phases:** formalny dowód z reprezentacji GL(3,𝔽₂)
-2. **Tau z Koide constraint:** m_τ z K(m_e,m_μ,m_τ) = 2/3, nie z drabinki φ²
-3. **Porównanie kanoniczne vs substrat:** a3d (kanoniczne) działa lepiej
+1. **Derywacja g₀^τ:** z ODE lub z zasady symetrii (Z₃ → K=2/3)
+2. **Związek g₀^τ/g₀^μ ≈ √(3/2):** zbadać 3/2 = K⁻¹ (kauzalny?)
+3. **K=2/3 jako INPUT z GL(3,𝔽₂):** formalizacja Z₃ → Koide jako zasada
 
 **Pliki rdzenia do scalenia:**
 - Rozszerzenie `dodatekT3_brannen_geometry.tex`
