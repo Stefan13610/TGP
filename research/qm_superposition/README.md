@@ -1,43 +1,77 @@
-# Superposition from Linearity of Weak-Field Phi
+# Q3: Superpozycja z liniowosci slabego pola
 
 ## Problem
 
-Explain quantum superposition as a consequence of TGP field
-equations, rather than as a fundamental postulate.
+Wyjasnic superpozycje kwantowa jako konsekwencje rownan TGP,
+a nie jako fundamentalny postulat.
 
-## Connection to TGP
+## Mechanizm
 
-The soliton ODE linearizes near vacuum where g(Phi) ~ 1.
-In this regime the radial equation becomes:
+Pelne ODE substratu: g'' + (1/g)g'^2 + (2/r)g' = 1 - g
 
-    f'' + (2/r) f' + f = 0
+W poblizu vacuum (g ~ 1), niech g = 1 + eps*f:
+  f'' + (2/r)f' + f = -eps*f'^2/(1+eps*f)
 
-This is a LINEAR equation, so solutions superpose: any linear
-combination of solutions is also a solution. This is the origin
-of the superposition principle in TGP.
+Dla eps -> 0: **f'' + (2/r)f' + f = 0** -- rownanie LINIOWE!
+Rozwiazania sie superpozycjonuja: kazda kombinacja liniowa jest rozwiazaniem.
 
-However, nonlinearity of g(Phi) becomes important for large
-field amplitudes (dense Phi regions). This means superposition
-is approximate -- it holds in the weak-field (dilute) regime
-but breaks down when soliton cores overlap.
+Nieliniowa korekta RHS = -eps*f'^2/(1+eps*f) lamie superpozycje
+dla silnych pol (duze eps).
 
-## Key Questions
+## Wyniki (2026-04-15) -- q3_superposition.py (7/7 PASS)
 
-1. What is the precise validity range of linearization?
-   At what Phi/Phi_0 ratio does nonlinearity become significant?
-2. How does the breakdown of superposition manifest physically?
-   Is it related to measurement or decoherence?
-3. Can we quantify corrections to superposition from nonlinear
-   terms as a perturbation series?
-4. Does the nonlinear regime connect to the classical limit?
+### Walidacja linearyzacji
+- eps=0.01: blad < 0.4% (quasi-ideal)
+- eps=0.13 (elektron): korekta ~5% (quasi-liniowy rezim)
+- eps=0.5: korekta ~20% (silna nieliniownosc)
 
-## Status
+### Test superpozycji
+- Blad superpozycji ~ eps^0.98 (R^2=0.999) -- dokladnie liniowy
+- Dla eps < 0.01: blad < 0.1%
+- Superpozycja jest EMERGENTNA, nie fundamentalna
 
-The linearization argument is straightforward. Main open work is
-quantifying the nonlinear corrections and connecting the breakdown
-of superposition to decoherence (see qm_decoherence).
+### Korekta nieliniowa
+- dA/A = 0.392 * eps^1.01 (R^2=0.9999)
+- eps_crit(10%) = 0.26
+- eps_crit(50%) = 1.27
+- Skalowanie dokladnie liniowe w eps
 
-## Dependencies
+### Druga harmoniczna (sygnatura nieliniowosci)
+- A_2/A_1 = 0.03% dla elektronu (g0=0.869)
+- A_2/A_1 rosnie z amplituda solitonu
+- Predykcja testowalna: drugie harmoniczne w rozpraszaniu
 
-- Q1: Soliton ODE and g(Phi) profile
-- qm_decoherence: Nonlinear regime and classical limit
+### Limit klasyczny z TGP
+- N solitonow o amplitudzie A_tail w odleglosci D:
+  eps_eff ~ N*A_tail/D
+- Superpozycja lamie sie gdy eps_eff >> 1
+- N_class(atom) ~ 800 czastek
+- Obiekty makroskopowe (N >> 10^23): calkowicie klasyczne
+
+### Dekoherencja
+- Nieliniowe mieszanie modow (k=1 -> k=2) rozprasza informacje fazowa
+- Tempo dekoherencji ~ eps^2 ~ N^2*A^2/D^2
+- Srodowiskowa dekoherencja WYNIKA z dynamiki TGP
+
+## Lancuch derywacji
+
+```
+TGP ODE -> linearyzacja przy vacuum -> rownanie LINIOWE
+-> superpozycja rozwiazan -> SUPERPOZYCJA KWANTOWA
+-> korekty nieliniowe przy silnym polu -> LIMIT KLASYCZNY
+-> mieszanie modow z NL -> DEKOHERENCJA
+```
+
+## STATUS: Q3 ZAMKNIETE ✓
+
+- [x] Walidacja linearyzacji (blad ~ eps)
+- [x] Test superpozycji przeszedl dla slabych pol
+- [x] Skalowanie korekcji nieliniowej ustalone
+- [x] Limit klasyczny z N-solitonowej nieliniowosci
+- [x] Polaczenie z dekoherencja zidentyfikowane
+
+## Pliki
+
+| Plik | Opis | Status |
+|------|------|--------|
+| q3_superposition.py | Linearyzacja, superpozycja, NL korekty | 7/7 PASS |
