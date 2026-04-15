@@ -77,11 +77,22 @@ Na stronie DEFICIT (g₀<1) ISTNIEJĄ pary z m_μ/m_e = 206.8:
   np. g₀^e=0.915, g₀^μ=0.335 (ratio=206.37)
   ALE: bariera g₀_crit jest po stronie g₀>1 — nie ogranicza deficytów!
 
-IMPLIKACJE:
-1. φ-drabinka (g₀^e=0.869→g₀^μ=1.407) jest NIESPÓJNA z masą
-2. Fizyczne solitony mogą być TYLKO deficit (g₀<1)?
-3. Mechanizm bariery wymaga rewizji (bariera po złej stronie)
-4. Albo: formuła masowa wymaga korekty (|m|? korekty kwantowe?)
+REINTERPRETACJA (bound-state picture):
+  g=1 to FALSE VACUUM (max potencjału!)
+  Excess solitony = STANY ZWIĄZANE (E < 0, jak atom wodoru)
+  Deficit solitony = stany rozproszeniowe (E > 0)
+  Bariera g₀_crit ogranicza liczbę bound states → N=3
+
+Skalowanie |m| ~ δ^p (δ = g₀-1):
+  δ→0: p ≈ 2 (kwadratowe, blisko vacuum)
+  δ→1.2: p ≈ 7 (dywergencja blisko bariery!)
+  φ-drabinka amplitud daje N=3, ALE ratio mas ≈ φ² = 2.6 (nie 206.8!)
+  Potrzebne p ≈ 11 dla ratio 206.8 z φ-drabinki
+
+WNIOSEK:
+  N=3 z bariery jest ROBUSTNE (niezależne od mass formula)
+  Masa fizyczna wymaga DODATKOWEGO mechanizmu
+  (GL(3,F₂) korekty, renormalizacja, topologia)
 ```
 
 ### ⚠️ Pozostałe pytania
