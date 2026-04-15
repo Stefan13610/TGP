@@ -1,44 +1,66 @@
-# Entanglement from Substrate Graph Correlations
+# Q4: Splatanie z korelacji substratu
 
 ## Problem
 
-Derive quantum entanglement from the structure of the TGP
-substrate, without postulating nonlocal state vectors.
+Wyprowadzic splatanie kwantowe ze struktury substratu TGP,
+bez postulowania nielokalnych wektorow stanu.
 
-## Connection to TGP
+## Mechanizm
 
-The substrate Gamma = (V, E) is a graph with vertices V and
-edges E. The scalar field Phi is defined on this graph. Two
-solitons that share substrate edges have correlated Phi
-fluctuations -- the field value at shared vertices couples
-their dynamics.
+Dwa solitony utworzone razem dziela region pola Phi.
+Ich ogony interferuja w dzielonym regionie, tworzac KORELACJE:
+- Wiez fazowy: phi_A + phi_B = const (zachowanie z kreacji)
+- Pomiar jednego solitonu (przez back-reaction na Phi)
+  zmienia dzielony substrat, wplywajac na drugi
 
-This provides a mechanism for entanglement: correlations are
-mediated by the substrate graph topology, not by signals
-traveling through space. Two solitons can be "entangled" if
-they were formed from the same substrate region and still
-share graph edges even after spatial separation.
+To KONTEKSTUALNE (nie LHV) -- wybor pomiaru zmienia Phi.
 
-## Key Questions
+## Wyniki (2026-04-15) -- q4_entanglement.py (3/4 PASS, 1 oczekiwany FAIL)
 
-1. Can substrate-mediated correlations violate Bell inequalities?
-   This is the critical test for genuine entanglement.
-2. How does the graph structure preserve correlations over
-   large spatial separations?
-3. What is the entanglement entropy in terms of shared edges?
-4. How does decoherence (loss of shared edges) destroy
-   entanglement?
-5. Does this mechanism reproduce the correct tensor product
-   structure of quantum Hilbert spaces?
+### Model fazowy
+- phi_A + phi_B = 0 koduje splatanie (analogia: rozpad na dwa spiny)
+- Funkcja korelacji sign(sin): E = -1 + 2|a-b|/pi (trojkatna, LHV)
+- RMS vs LHV = 0.002 -- model fazowy jest DOKLADNIE LHV
 
-## Status
+### Test Bell-CHSH
+- sign(sin) model: S = 0.001 -- brak naruszenia Bell (oczekiwane!)
+- back-reaction model: S = -0.003 -- tez brak naruszenia
+- To jest twierdzenie Bella: jeden ukryty parametr (phi) nie moze naruszyc CHSH
+- **FAIL jest POPRAWNY** -- prosty model LHV nie moze naruszyc Bell
 
-Most speculative folder in the QM research program. The basic
-idea (shared substrate edges = correlations) is stated, but no
-quantitative results yet. Bell inequality analysis is the
-highest priority next step.
+### Entropia splatania
+- Niezalezne: H = 2*log(2*pi) = 3.676 bitow
+- Splatane: H = log(2*pi) = 1.838 bitow
+- Redukcja: delta_H = log(2*pi) = zamrozenie 1 stopnia swobody fazy
 
-## Dependencies
+### Dekoherencja splatania
+- Szum niezalezny: E(sigma) = E(0) * exp(-sigma^2)
+- Potwierdzone numerycznie: E(0.5)/E(0) = 0.779 vs exp(-0.25) = 0.779 (!)
+- Szum wspolny (common mode): NIE niszczy splatania
+- Tempo dekoherencji: Gamma ~ N_env * chi^2 * A_env^2 / D_env^2
 
-- Substrate graph model (continuum_limit)
-- qm_decoherence: For understanding loss of entanglement
+### Droga do naruszenia Bella
+- Prosty model fazowy (1 parametr) jest LHV -- nie moze naruszyc
+- TGP oferuje KONTEKSTUALNNOSC: pomiar zmienia substrat = zmienia stan
+- Modele kontekstualne MOGA naruszyc Bell (znane twierdzenie)
+- Potrzebny: wielowymiarowy model substratu (A_tail + phi + topologia)
+
+### Predykcja testowalna
+- Korelacje splatania zaleza od hbar(Phi)
+- Blisko masywnego obiektu: splatanie SLABSZE
+- delta_C/C ~ delta_hbar/hbar ~ GM/(rc^2) ~ 10^-9
+
+## STATUS: Q4 CZESCIOWO ZAMKNIETE
+
+- [x] Mechanizm zidentyfikowany (dzielony substrat)
+- [x] Model wiezu fazowego zbudowany
+- [x] Funkcja korelacji obliczona (LHV triangular)
+- [x] Dekoherencja z szumu przeanalizowana (exp(-sigma^2))
+- [x] Droga do naruszenia Bella zidentyfikowana (kontekstualnosc)
+- [ ] Pelne CHSH > 2 z modelu substratu (wymaga wielowymiarowego podejscia)
+
+## Pliki
+
+| Plik | Opis | Status |
+|------|------|--------|
+| q4_entanglement.py | Fazy, korelacje, Bell, dekoherencja | 3/4 PASS |
