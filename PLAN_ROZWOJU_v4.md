@@ -59,6 +59,19 @@ TGP_v1/                          ← RDZEŃ (stabilny, publikowalny)
 | **R3** | Dlaczego N=3 generacji | `research/why_n3/` | 1–3 mies. | ⭐⭐⭐⭐⭐ |
 | **R7** | UV completion, unifikacja | `research/uv_completion/` | 2–4 tyg. | ⭐⭐ |
 
+### QM: Emergentna mechanika kwantowa z TGP
+
+| ID | Problem | Folder | Priorytet | Impact |
+|----|---------|--------|-----------|--------|
+| **Q0** | Architektura emergentnej QM | `research/qm_foundations/` | RAMOWY | ⭐⭐⭐⭐⭐ |
+| **Q1** | Niepewnosc pomiarowa z samozwrotnosci Phi | `research/qm_measurement/` | NATYCHMIAST | ⭐⭐⭐⭐⭐ |
+| **Q2** | Regula Borna z interferencji ogonow | `research/qm_born_rule/` | WYSOKI | ⭐⭐⭐⭐⭐ |
+| **Q3** | Superpozycja z liniowosci ODE | `research/qm_superposition/` | SREDNI | ⭐⭐⭐⭐ |
+| **Q4** | Splatanie z korelacji substratu | `research/qm_entanglement/` | SREDNI | ⭐⭐⭐⭐ |
+| **Q5** | Spin 1/2 z topologii solitonu | `research/qm_spin/` | NISKI | ⭐⭐⭐ |
+| **Q6** | Fermi-Dirac vs Bose-Einstein | `research/qm_statistics/` | NISKI | ⭐⭐⭐ |
+| **Q7** | Dekoherencja z hbar(Phi) | `research/qm_decoherence/` | NISKI | ⭐⭐⭐ |
+
 ### Nie wymagają osobnych folderów
 
 | Problem | Status | Uwagi |
@@ -287,6 +300,39 @@ Negatywne wyniki (eliminacja ślepych ścieżek):
 **Kryterium zamknięcia:** Wykres running α_i(μ) z TGP, sprawdzenie unifikacji
 
 **Priorytet:** BONUSOWY — nie blokuje publikacji, ale wzmacnia teorię
+
+---
+
+## Q1: Niepewnosc pomiarowa — `research/qm_measurement/` ⚙️ W TRAKCIE
+
+**Problem:** Wyprowadzenie zasady nieoznaczonosci Heisenberga z samozwrotnosci pola Phi.
+Czastka (soliton) tworzy osrodek, w ktorym jest mierzona. Pomiar = interakcja soliton-soliton.
+
+**POSTEP (2026-04-15):**
+
+Pierwszy skrypt `q1_self_referential.py` — 8/9 PASS:
+```
+KLUCZOWE WYNIKI:
+  E_int(d) oscyluje z okresem 2*pi = lambda_Compton (dokladnosc 0.06%)
+  46 przejsc przez zero w zakresie d=[5,150]
+  Obwiednia ~ 1/d^0.96 (zgodna z nakladaniem ogonow)
+  <E^2>/A^2 ~ const (CV=16%) — poczatek reguly Borna
+```
+
+Lancuch fizyczny:
+```
+Phi tworzy przestrzen -> czastki sa solitonami -> ogony oscyluja
+-> pomiar = nakladanie ogonow -> E_int oscyluje z d
+-> nie mozna rozroznic pozycji rozniaczych sie o lambda_C
+-> Delta_x * Delta_p >= h = 2*pi*hbar
+-> intensywnosc sygnalu ~ |A_tail|^2 -> regula Borna
+```
+
+**Do zrobienia:**
+1. Back-reaction: pelne ODE z dwoma solitonami (nie superpozycja)
+2. Lepsza weryfikacja Born rule (3D, wiecej punktow)
+3. Formalna nierownosc z perturbacji analitycznej
+4. Polaczenie z Propozycja 3.3 (sek03)
 
 ---
 
