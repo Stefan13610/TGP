@@ -37,14 +37,41 @@ g₀_crit(α, d=3) maleje z α. Przejście N=2→3 przy α_crit = 0.882:
 Substrat (α=1) jest TUŻ powyżej progu! Deficit to tylko 3.1%.
 ```
 
-### ⚠️ OTWARTE PYTANIE: JAKA WARTOŚĆ α JEST FIZYCZNA?
+### ✅ NOWY WYNIK: Geometria WYMUSZA α ≤ 3/4 → N=3
+
+```
+Metryka: g_ij = g·δ_ij w d=3, √det(g) = g^{3/2}
+Akcja: S = ∫ L · √det(g) · d³x
+
+┌────────────────────────────────────────────┬───────┬──────────┬─────┐
+│ Derywacja geometryczna                     │   α   │  g₀_crit │  N  │
+├────────────────────────────────────────────┼───────┼──────────┼─────┤
+│ Kowariantna |∇g|²/g + √g vol [NATURALNA]  │  1/4  │   3.045  │  3  │
+│ K=g (gęstościowa)                          │  1/2  │   2.618  │  3  │
+│ Płaska (∂g)² + √g vol [NAJPROSTSZA]       │  3/4  │   2.370  │  3  │
+│ ---- α_crit = 0.882 ----                  │       │          │     │
+│ Substrat [OBECNA TGP]                     │  1    │   2.206  │  2  │
+└────────────────────────────────────────────┴───────┴──────────┴─────┘
+
+Substrat α=1 = √g·(∂g)² · √det(g) — PODWÓJNIE liczy √g!
+Naturalna akcja daje α ≤ 3/4 < α_crit → N=3 AUTOMATYCZNIE.
+```
+
+### ⚠️ Masa solitonowa vs φ-drabinka
+
+```
+m(g₀) = 4π∫ ε·r² dr NIE reprodukuje m_μ/m_e = 206.768
+φ-drabinka PRZECHODZI PRZEZ vacuum: g₀^e=0.869<1, g₀^μ=1.407>1
+To NIE unieważnia N=3 (bariera niezależna od formuły masowej).
+```
+
+### ⚠️ Pozostałe pytania
 
 | Element | Problem |
 |---------|---------|
-| Substrat (α=1) daje N=2 | Ale deficit to tylko 3.1% od N=3! |
-| α=1/φ daje N=3 | K = g^{2/φ} — czy ma sens geometryczny? |
 | α_Koide ≈ 3 | Bariera = masa τ(Koide) — niezwykły zbieg |
 | Analityczne g₀_crit(3D)? | Brak zamkniętej formy |
+| Masa solitonowa vs ratios | GL(3,F₂) korekty? |
 
 ## Hipoteza auto-przestrzeni
 
@@ -194,7 +221,7 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 - ✅ g₀_crit(2D) ≈ 1.7324 (nie √3) — DONE
 - ✅ g₀_crit zależy od α — DONE
 - ✅ N=3 z bariery + α=2.35 — DONE
-- ⬜ Rozwiązać napięcie substrat vs kanoniczny
+- ✅ Geometryczna analiza α — DONE (r3_physical_alpha.py)
 - ⬜ Analityczne g₀_crit(3D) — brak zamkniętej formy
 
 ### Ścieżka 5: Z solitonowego WKB
@@ -220,13 +247,14 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_n3_from_barrier.py` | N=3 z bariery + α, mass divergence | ✅ |
 | `r3_el_check.py` | **Poprawny Lagrangian, α/g coefficient** | ✅ NOWE |
 | `r3_alpha_scan.py` | **α_crit=0.882, N=2→3 transition** | ✅ NOWE |
+| `r3_physical_alpha.py` | **Geometryczna analiza α, N=3 z geometrii** | ✅ NOWE |
 
 ## Kryterium zamknięcia
 
-Twierdzenie: "W teorii solitonów z K=Φ², d=3, istnieją dokładnie 3 stabilne
-sektory masowe z powodu singularności metrycznej przy g₀_crit i skalowania mas."
+Twierdzenie: "W teorii solitonów z K=g^{2α}, d=3, istnieją dokładnie 3 stabilne
+sektory masowe z powodu singularności metrycznej przy g₀_crit, gdy α ≤ 3/4 (wynika z geometrii)."
 
-Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa, ale zależy od wyboru K(g).
+Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa dla geometrycznych α ≤ 3/4.
 
 ## Checklist
 
@@ -242,7 +270,9 @@ Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa, ale zależy od wyboru
 - [x] α_crit = 0.882 (N=2→3 transition) — OBLICZONE
 - [x] α_Koide ≈ 3 (bariera = τ mass) — ODKRYTE
 - [x] Poprawny Lagrangian: L = g^{2α}g'²/2 + g³/3 - g⁴/4 — WYPROWADZONE
-- [ ] Ustalić fizyczną wartość α (dlaczego α < 0.882?)
+- [x] Geometryczna analiza α — POTWIERDZONE (α≤3/4 → N=3)
+- [x] Masa solitonowa vs φ-drabinka — ZBADANE (nie reprodukuje ratios)
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić Koide z teorii solitonów
+- [ ] Masa: korekty GL(3,F₂) lub zmiana mass formula
 - [ ] Formalizacja dowodu
