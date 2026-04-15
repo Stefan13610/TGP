@@ -72,5 +72,5 @@ WARSTWA 5: Spin, statystyka, dekoherencja (Q5-Q7)
 - [x] Q3: Superpozycja — **ZAMKNIETE** (7/7 PASS, linearyzacja + NL korekty)
 - [~] Q4: Splatanie — **CZESCIOWO ZAMKNIETE** (3/4 PASS, mechanizm+dekoherencja OK, Bell wymaga kontekstualnosci)
 - [x] Q5: Spin — **ZAMKNIETE** (7/7 PASS, pi_3(S^3)=Z, B=1, FR -> spin 1/2)
-- [ ] Q6: Statystyka — OTWARTY
+- [x] Q6: Statystyka — **ZAMKNIETE** (8/8 PASS, FD/BE z topologii, anyony w 2D)
 - [ ] Q7: Dekoherencja — OTWARTY
