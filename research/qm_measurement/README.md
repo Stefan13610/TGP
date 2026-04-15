@@ -86,8 +86,27 @@ To daje: Dx ~ 2pi / k ~ lambda_Compton
 - [ ] Rozklad wynikow ~ |A_tail|^2
 - [ ] Formalna nierownosc Dx*Dp >= hbar z samozwrotnosci
 
+## Wyniki (2026-04-15)
+
+### q1_self_referential.py (8/9 PASS)
+- E_int(d) oscyluje z okresem 2pi = lambda_C (dokladnosc 0.06%)
+- 46 przejsc przez zero, obwiednia ~ 1/d^0.96
+- Born z E_int: <E^2>/A^2 ~ const (CV=16%)
+
+### q1_back_reaction.py (4/6 PASS)
+- Delta_A OSCYLUJE z okresem 2pi (44 crossings, ratio 1.0014)
+- Delta_A LINIOWE w eps: chi = 0.918, R^2 = 0.9999 (!)
+- 3D E_int oscyluje z okresem 2pi (28 crossings)
+- chi(g0): 0.787 (g0=0.5) do 0.965 (g0=0.95) -- slabo zalezy od g0
+
+### Kluczowy insight: Born z perspektywy detektora
+- Delta_A_particle ~ eps_det ~ A_det/D (NIE zalezy od A_part)
+- Delta_A_detector ~ eps_part ~ A_part/D (ZALEZY od A_part)
+- Sygnal detektora: <dA_det^2> ~ A_part^2 = |psi|^2 --> BORN RULE
+
 ## Pliki
 
 | Plik | Opis | Status |
 |------|------|--------|
-| q1_self_referential.py | Interakcja dwoch solitonow | W TRAKCIE |
+| q1_self_referential.py | E_int oscylacyjne, Born z <E^2> | 8/9 PASS |
+| q1_back_reaction.py | Pelna back-reaction, chi, 3D | 4/6 PASS |
