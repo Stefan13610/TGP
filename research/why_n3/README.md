@@ -197,15 +197,37 @@ Dowód: F(x) = 2x³/3 - x⁴/2 ma zera przy x = 0 i x = 4/3.
 ### Wartości numeryczne (substrat)
 
 ```
-d=1: g₀_crit = 1.3333  = 4/3 (dokładne)
-d=2: g₀_crit = 1.7324  (≠ √3 = 1.7321, Δ = 3.9×10⁻⁴)
-d=3: g₀_crit = 2.2062  (przypadek fizyczny)
-d=4: g₀_crit = 2.7645
-d=5: g₀_crit = 3.4187
-d=6: g₀_crit = 4.1811
-
-Best fit: g₀_crit ≈ 0.218·d^{1.46} + 1.12  (max err 1.6%)
+d=1: g₀_crit = 1.33333333  = 4/3 (dokładne, z prawa zachowania)
+d=2: g₀_crit = 1.73243810  ≈ √3 (diff 0.022%, bracket 1e-11)
+d=3: g₀_crit = 2.20618938  (przypadek fizyczny)
+d=4: g₀_crit = 2.76454858
+d=5: g₀_crit = 3.41867616
+d=6: g₀_crit = 4.18105845
+d=7: g₀_crit = 5.06564893
+d=8: g₀_crit = 6.08802514
 ```
+
+### Empiryczny wzór bariery: g_bar = (4/π)·Q_d
+
+Obserwacja: jeśli g_bar = (4/π)·Q_d, to Q_d daje czyste wartości:
+
+```
+Q_1 = π/3       = 1.04720  (EXACT, bo (4/π)·(π/3) = 4/3)
+Q_2 = π√3/4     = 1.36035  (diff 0.022%)
+Q_3 ≈ √3        = 1.73205  (diff 0.040%)
+```
+
+Kluczowe stosunki:
+```
+g₀_crit(3)/g₀_crit(2) = 1.27346 ≈ 4/π = 1.27324  (0.017%)
+g₀_crit(2)/g₀_crit(1) = 1.29933 ≈ 3√3/4           (0.022%)
+```
+
+Stosunki Q_{d+1}/Q_d maleją monotonicznie: 1.299, 1.273, 1.253, 1.237, 1.223...
+Progresja geometryczna √3·(4/π)^(d-2) działa dobrze dla d=2,3 ale rozpada się od d≥4.
+
+**Status:** SUGESTYWNE ale nie zamknięte. Odchylenia 0.02-0.04% są realne (nie numeryczne).
+Możliwa interpretacja: g₀_crit ≈ czysta_wartość + mała korekta z nieliniowego (1/g)g'².
 
 ### g₀_crit(α) — pełny skan (nowe, poprawione)
 
@@ -312,6 +334,8 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_physical_alpha.py` | **Geometryczna analiza α, N=3 z geometrii** | ✅ NOWE |
 | `r3_mass_function.py` | **Pełna analiza m(g₀): ujemna masa excess!** | ✅ NOWE |
 | `r3_atail_bridge.py` | **Most R3↔R5: A_tail⁴=206.6 dla α=1** | ✅ NOWE |
+| `r3_barrier_Qd.py` | **Wzór g_bar=(4/π)Q_d, test 2D** | ✅ NOWE |
+| `r3_barrier_structural.py` | **Analiza strukturalna g₀_crit(d)** | ✅ NOWE |
 
 ## Kryterium zamknięcia
 
