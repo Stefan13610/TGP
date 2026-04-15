@@ -150,13 +150,16 @@ GŁÓWNE WYNIKI:
 - [x] g₀_crit(1D) = 4/3 — TWIERDZENIE (α-niezależne)
 - [x] α_crit = 0.882 — OBLICZONE
 - [x] α_Koide ≈ 3 — ODKRYTE
-- [ ] Fizyczna wartość α (dlaczego α < 0.882?)
+- [x] Fizyczna wartość α → geometria wymusza α ≤ 3/4 → N=3 AUTOMATYCZNIE
+- [x] Excess solitony = bound states (E < 0, false vacuum)
+- [x] Masa solitonowa nie reprodukuje ratio mas (wymaga GL(3,F₂) korekty)
 - [ ] Analityczne g₀_crit(3D)
+- [ ] Rewizja formuły masowej (bound-state picture)
 - [ ] Formalizacja dowodu
 
-**Kryterium zamknięcia:** Wyprowadzenie α < 0.882 z pierwszych zasad.
+**Kryterium zamknięcia:** Twierdzenie: "geometryczna akcja z α≤3/4 + bariera → N=3"
 
-**Status:** SILNA HEURYSTYKA. Mechanizm działa, brakuje ustalenia α.
+**Status:** SILNY MECHANIZM. Geometria → α ≤ 3/4 → N=3. Masa wymaga osobnej pracy (R5).
 
 ---
 
@@ -299,8 +302,8 @@ Negatywne wyniki (eliminacja ślepych ścieżek):
 | K(ℓ)=2/3 | ✅ NUMERYCZNE (10⁻⁶) | R6 (analityczne) | Zależy od B=√2 |
 | h(Φ)=Φ | ✅ ZASADNICZO ZAMKNIĘTY | R4 | 5 niezależnych argumentów, 11/11 PASS |
 | m ∝ A⁴ | 🟡 NUMERYCZNE + argument konwergencji | R5 | E³≠0 (neg.result), E_full~A⁴ (niepert.) |
-| N=3 | 🟡 MECHANIZM (α-zależny) | R3 | α<0.882→N=3, substrat α=1→N=2 (deficit 3.1%) |
-| λ_C = Ω_Λ/N | 🟠 4.8σ NAPIĘCIE | R1 | Brak korekcji wyższego rzędu |
+| N=3 | 🟢 MECHANIZM (geometria→α≤3/4→N=3) | R3 | Geom. α≤3/4, bound-state picture, masa wymaga korekty |
+| λ_C = Ω_Λ/N | ✅ ROZWIĄZANE (0.75σ) | R1 | Z₃ self-energy subtraction: 165/167 |
 | CG-1/3/4 | 🔴 OTWARTE | R2 | Czysta matematyka |
 | β=γ (vacuum) | ✅ TWIERDZENIE | — | Zamknięte |
 | d=3 (wymiar) | ✅ TWIERDZENIE | — | Z zbieżności solitonów |

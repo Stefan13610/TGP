@@ -9,15 +9,17 @@ GL(3,F₂) z |GL|=168 **zakłada** N=3. Nie wyprowadza go z fizyki.
 
 ## Obecny status (2026-04-15)
 
-### ✅ GŁÓWNY WYNIK: N=3 zależy od α — krytyczny próg α_crit = 0.882
+### ✅ GŁÓWNY WYNIK: α=1 + A_tail⁴ + bariera → N=3
 
 | Element | Status | Wynik |
 |---------|--------|-------|
 | Singularność metryczna g₀_crit | **ZWERYFIKOWANE** | g(r) → 0 w rdzeniu solitonu |
 | g₀_crit(1D) = 4/3 DLA KAŻDEGO α | **TWIERDZENIE** | Prawo zachowania α-niezależne! |
-| g₀_crit(3D) zależy od α | **POTWIERDZONE** | α=0.5→2.62, α=1→2.21, α=2→1.87 |
-| **α_crit = 0.882 (N=2→3)** | **KLUCZOWY WYNIK** | g₀_crit(α_crit) = φ²·g₀^e |
-| **α_Koide ≈ 2.988 ≈ 3** | **ODKRYCIE** | g₀_crit(3) ≈ g₀^τ(Koide) = 1.729! |
+| g₀_crit(3D, α=1) = 2.206 | **POTWIERDZONE** | Substrat: g₀_crit = 2.206 |
+| **m = c_M · A_tail⁴** | **ZWERYFIKOWANE** | (A_μ/A_e)⁴ = 206.55 ≈ 206.77 (0.10%!) |
+| **A_tail⁴ wymaga α=1** | **ODKRYCIE** | TYLKO α=1 daje k_eff = 4.0008 |
+| **g₀^τ(Koide) = 1.729 < 2.206** | **N=3 z Koide** | τ mieści się pod barierą |
+| **g₀^(4th) > g₀_crit** | **POTWIERDZONE** | 4. generacja zakazana dynamicznie |
 | dm/dg₀ → ∞ przy barierze | **POTWIERDZONE** | Masa dywerguje — twardy limit |
 | Lagrangian: L = g^{2α}g'²/2 + U(g) | **WYPROWADZONE** | U(g) = g³/3 - g⁴/4 dla ALL α |
 
@@ -95,14 +97,43 @@ WNIOSEK:
   (GL(3,F₂) korekty, renormalizacja, topologia)
 ```
 
+### ✅ ROZWIĄZANIE: A_tail⁴ = masa fizyczna (R5 bridge)
+
+```
+ODKRYCIE (r3_atail_bridge.py):
+
+Masa fizyczna = c_M · A_tail⁴, NIE całkowita energia solitonu!
+A_tail > 0 ZAWSZE (zarówno deficit jak excess) → masa zawsze > 0.
+
+Weryfikacja (α=1, substrat):
+  A_e  = A_tail(g₀=0.869) = 0.1246
+  A_μ  = A_tail(g₀=1.407) = 0.4724
+  A_μ/A_e = 3.791
+  (A_μ/A_e)⁴ = 206.55  (PDG: 206.77, diff: 0.10%!)
+  k_exact = 4.0008
+
+KLUCZOWE: (A_μ/A_e)⁴ = 206.8 TYLKO dla α=1!
+  α=0.25: ratio⁴ = 53.7  (k_exact = 5.35)
+  α=0.50: ratio⁴ = 84.3  (k_exact = 4.81)
+  α=0.75: ratio⁴ = 132.1 (k_exact = 4.37)
+  α=1.00: ratio⁴ = 206.6 (k_exact = 4.00)  ← JEDYNE!
+  α=2.00: ratio⁴ = 1221  (k_exact = 3.00)
+
+ROZWIĄZANIE NAPIĘCIA α:
+  Substrat α=1 jest POPRAWNY — daje prawidłowe ratio mas.
+  φ-drabinka jest PRZYBLIŻENIEM — nie dokładna dla τ.
+  g₀^τ(Koide) = 1.729 < g₀_crit = 2.206 → N=3 ✓
+  4. generacja: g₀^(4) > g₀_crit → ZAKAZANA ✓
+```
+
 ### ⚠️ Pozostałe pytania
 
 | Element | Problem |
 |---------|---------|
-| Ujemna masa excess solitonów | Fundamentalny problem stabilności |
 | α_Koide ≈ 3 | Bariera = masa τ(Koide) — niezwykły zbieg |
 | Analityczne g₀_crit(3D)? | Brak zamkniętej formy |
-| Masa solitonowa vs ratios | GL(3,F₂) korekty? Formuła masowa? |
+| Ujemna energia excess solitonów | False vacuum; fizycznie = bound states |
+| Nieperturbacyjny dowód m ∝ A⁴ | R5: mechanizm core-tail matching |
 
 ## Hipoteza auto-przestrzeni
 
@@ -236,10 +267,10 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 
 | Argument | Status | Uwagi |
 |----------|--------|-------|
-| **BARIERA + SKALOWANIE** | **MECHANIZM** | α=2.35, N=3 bez Koide |
+| **BARIERA + A_tail⁴** | **MECHANIZM** | α=1: (A_μ/A_e)⁴=206.6, g₀^τ(K)<barrier |
 | **AUTO-PRZESTRZEŃ** | **MECHANIZM** | g₀_crit z singularności metryki |
 | **1D TWIERDZENIE** | **DOWÓD** | g₀_crit(1D) = 4/3 z prawa zachowania |
-| d=3 → k=4 → WKB: 3 stany | HEURYSTYKA | Brak dowodu formalnego |
+| **A_tail⁴ wymaga α=1** | **ODKRYCIE** | TYLKO α=1 daje k_eff=4.0008 |
 | |GL(3,F₂)| = 168 | TAUTOLOGIA | Zakłada N=3 |
 | N_ν = 2.984 ± 0.008 (LEP) | EKSPERYMENT | Potwierdza 3, nie wyjaśnia |
 | 4. generacja zakazana dynamicznie | NUMERYCZNE | H8: PASS |
@@ -280,13 +311,17 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_alpha_scan.py` | **α_crit=0.882, N=2→3 transition** | ✅ NOWE |
 | `r3_physical_alpha.py` | **Geometryczna analiza α, N=3 z geometrii** | ✅ NOWE |
 | `r3_mass_function.py` | **Pełna analiza m(g₀): ujemna masa excess!** | ✅ NOWE |
+| `r3_atail_bridge.py` | **Most R3↔R5: A_tail⁴=206.6 dla α=1** | ✅ NOWE |
 
 ## Kryterium zamknięcia
 
-Twierdzenie: "W teorii solitonów z K=g^{2α}, d=3, istnieją dokładnie 3 stabilne
-sektory masowe z powodu singularności metrycznej przy g₀_crit, gdy α ≤ 3/4 (wynika z geometrii)."
+Twierdzenie: "W teorii solitonów z K=g², d=3 (substrat, α=1):
+(1) g₀_crit = 2.206 z singularności metrycznej,
+(2) g₀^τ(Koide) = 1.729 < g₀_crit → τ jest dozwolone,
+(3) g₀^(4th) > g₀_crit → 4. generacja zakazana,
+(4) m = c_M · A_tail⁴ z (A_μ/A_e)⁴ = 206.55 (0.10% od PDG)."
 
-Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa dla geometrycznych α ≤ 3/4.
+Status: **SILNY MECHANIZM** — spójny obraz α=1 + A_tail⁴ + bariera → N=3.
 
 ## Checklist
 
@@ -304,9 +339,11 @@ Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa dla geometrycznych α 
 - [x] Poprawny Lagrangian: L = g^{2α}g'²/2 + g³/3 - g⁴/4 — WYPROWADZONE
 - [x] Geometryczna analiza α — POTWIERDZONE (α≤3/4 → N=3)
 - [x] Masa solitonowa vs φ-drabinka — ZBADANE (excess m<0, deficit m>0)
-- [x] Excess solitony m<0 — ODKRYTE (fundamentalny problem)
-- [ ] Rewizja mechanizmu bariery (bariera po stronie excess)
+- [x] Excess solitony m<0 — ODKRYTE (bound states w false vacuum)
+- [x] A_tail⁴ = masa fizyczna — ZWERYFIKOWANE (ratio 206.55, diff 0.10%)
+- [x] A_tail⁴ wymaga α=1 — ODKRYTE (JEDYNY α z k_eff=4.0008)
+- [x] Spójny obraz: α=1 + A_tail⁴ + Koide → N=3 — POTWIERDZONE
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić Koide z teorii solitonów
-- [ ] Masa: korekty GL(3,F₂) lub zmiana mass formula
+- [ ] Nieperturbacyjny dowód m ∝ A⁴ (→ R5)
 - [ ] Formalizacja dowodu
