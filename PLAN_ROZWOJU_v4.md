@@ -56,7 +56,7 @@ TGP_v1/                          ← RDZEŃ (stabilny, publikowalny)
 | ID | Problem | Folder | Nakład | Impact |
 |----|---------|--------|--------|--------|
 | **R2** | CG-1/3/4 continuum limit | `research/continuum_limit/` | 6–12 mies. | ⭐⭐⭐⭐⭐ |
-| **R3** | Dlaczego N=3 generacji | `research/why_n3/` | nieznany | ⭐⭐⭐⭐⭐ |
+| **R3** | Dlaczego N=3 generacji | `research/why_n3/` | 1–3 mies. | ⭐⭐⭐⭐⭐ |
 | **R7** | UV completion, unifikacja | `research/uv_completion/` | 2–4 tyg. | ⭐⭐ |
 
 ### Nie wymagają osobnych folderów
@@ -126,27 +126,37 @@ Napięcie: 4.8σ → 0.75σ  ✅
 
 ---
 
-## R3: Dlaczego N=3 generacji — `research/why_n3/`
+## R3: Dlaczego N=3 generacji — `research/why_n3/` ⚙️ DUŻY POSTĘP
 
 **Problem:** NAJFUNDAMENTALNIEJSZE otwarte pytanie. GL(3,𝔽₂) zakłada N=3, nie wyprowadza.
 
-**Obecne heurystyki (żadna nie jest dowodem):**
-- Bariera duchowa: d=3 → k=4 → WKB daje dokładnie 3 stany związane
-- |GL(3,𝔽₂)| = 168 = (2N+1)·2^N·N! — ale to konsekwencja N=3, nie przyczyna
-- Anomaly cancellation wymaga N_gen = N_color = 3 — powiązanie, nie dowód
+**POSTĘP (2026-04-15): Mechanizm auto-przestrzeni + α-zależność**
 
-**Ścieżki ataku:**
-1. **Topologiczna**: Czy π₁(konfiguracji solitonów w d=3) wymusza 3 klasy?
-2. **Dynamiczna**: Czy 4. generacja jest dynamicznie zakazana? (g₀^(4) > g₀_crit = 8/5)
-   - Już sprawdzone numerycznie (H8: PASS) — ale to nie odpowiada "dlaczego"
-3. **Informacyjna**: Czy entropia Shanona na substracie Z₂ w d=3 wymusza 3 sektory?
-4. **Algebraiczna**: Czy GL(N,𝔽₂) dla N≠3 prowadzi do sprzeczności fizycznych?
-   - GL(2,𝔽₂) = S₃: 6 elementów → za mało struktur
-   - GL(4,𝔽₂): 20160 elementów → prowadzi do 4 generacji (zakazanych eksperymentalnie)
+```
+GŁÓWNE WYNIKI:
+1. Singularność metryczna: soliton z g₀ > g₀_crit ma g(r)→0 → dziura w przestrzeni
+2. g₀_crit(1D) = 4/3 DLA KAŻDEGO α (twierdzenie z prawa zachowania)
+3. g₀_crit(3D) zależy od α kinetic coupling:
+     α=0.5: g₀_crit=2.618 → N=3 ✓
+     α=0.882: g₀_crit=2.276 → N=2→3 TRANSITION
+     α=1 (substrat): g₀_crit=2.206 → N=2 (deficit 3.1%)
+     α≈3: g₀_crit=1.728 ≈ g₀^τ(Koide)!
+4. dm/dg₀ → ∞ przy barierze (twardy limit)
+5. Lagrangian: L = g^{2α}·g'²/2 + g³/3 - g⁴/4 (sam U(g) dla all α)
+```
 
-**Kryterium zamknięcia:** Wyprowadzenie N=3 z fizycznego argumentu (nie tautologia)
+**Status:**
+- [x] Mechanizm singularności metrycznej — ZWERYFIKOWANY
+- [x] g₀_crit(1D) = 4/3 — TWIERDZENIE (α-niezależne)
+- [x] α_crit = 0.882 — OBLICZONE
+- [x] α_Koide ≈ 3 — ODKRYTE
+- [ ] Fizyczna wartość α (dlaczego α < 0.882?)
+- [ ] Analityczne g₀_crit(3D)
+- [ ] Formalizacja dowodu
 
-**Status:** Może wymagać nowej fizyki. Ryzyko: NIEZNANE.
+**Kryterium zamknięcia:** Wyprowadzenie α < 0.882 z pierwszych zasad.
+
+**Status:** SILNA HEURYSTYKA. Mechanizm działa, brakuje ustalenia α.
 
 ---
 
@@ -287,9 +297,9 @@ Negatywne wyniki (eliminacja ślepych ścieżek):
 |---------|--------|--------|-------|
 | α=2 (kinetic coupling) | ✅ TWIERDZENIE (słabe) | R2 (silne) | Algebraiczne, Lemma A1–A5 |
 | K(ℓ)=2/3 | ✅ NUMERYCZNE (10⁻⁶) | R6 (analityczne) | Zależy od B=√2 |
-| h(Φ)=Φ | 🟡 POSTULAT | R4 | 2 kryteria numeryczne |
+| h(Φ)=Φ | ✅ ZASADNICZO ZAMKNIĘTY | R4 | 5 niezależnych argumentów, 11/11 PASS |
 | m ∝ A⁴ | 🟡 NUMERYCZNE + argument konwergencji | R5 | E³≠0 (neg.result), E_full~A⁴ (niepert.) |
-| N=3 | 🟡 HEURYSTYKA | R3 | Bariera duchowa |
+| N=3 | 🟡 MECHANIZM (α-zależny) | R3 | α<0.882→N=3, substrat α=1→N=2 (deficit 3.1%) |
 | λ_C = Ω_Λ/N | 🟠 4.8σ NAPIĘCIE | R1 | Brak korekcji wyższego rzędu |
 | CG-1/3/4 | 🔴 OTWARTE | R2 | Czysta matematyka |
 | β=γ (vacuum) | ✅ TWIERDZENIE | — | Zamknięte |

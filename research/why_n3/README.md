@@ -9,43 +9,42 @@ GL(3,F₂) z |GL|=168 **zakłada** N=3. Nie wyprowadza go z fizyki.
 
 ## Obecny status (2026-04-15)
 
-### ✅ GŁÓWNY WYNIK: N=3 z bariery metrycznej
+### ✅ GŁÓWNY WYNIK: N=3 zależy od α — krytyczny próg α_crit = 0.882
 
 | Element | Status | Wynik |
 |---------|--------|-------|
 | Singularność metryczna g₀_crit | **ZWERYFIKOWANE** | g(r) → 0 w rdzeniu solitonu |
-| g₀_crit(1D) = 4/3 analitycznie | **TWIERDZENIE** | Z prawa zachowania F(g₀) = 0 |
-| g₀_crit(2D) ≈ 1.7324 (≠ √3) | **NUMERYCZNE** | Δ = 3.9×10⁻⁴ od √3 |
-| g₀_crit(3D) ≈ 2.2062 (substrat) | **NUMERYCZNE** | Bisection, tol < 10⁻⁸ |
-| g₀_crit(3D, canonical) ≈ 1.546 | **NUMERYCZNE** | K=g⁴ daje NIŻSZĄ barierę! |
-| τ(Koide) < g₀_crit(sub) | **POTWIERDZONE** | g₀^τ = 1.729 < 2.206 ✓ |
-| τ(φ²) > g₀_crit(sub) | **POTWIERDZONE** | g₀^τ(φ²) = 2.276 > 2.206 ✗ |
-| 4. generacja > g₀_crit | **POTWIERDZONE** | g₀^(4) = 2.354 > 2.206 ✗ |
+| g₀_crit(1D) = 4/3 DLA KAŻDEGO α | **TWIERDZENIE** | Prawo zachowania α-niezależne! |
+| g₀_crit(3D) zależy od α | **POTWIERDZONE** | α=0.5→2.62, α=1→2.21, α=2→1.87 |
+| **α_crit = 0.882 (N=2→3)** | **KLUCZOWY WYNIK** | g₀_crit(α_crit) = φ²·g₀^e |
+| **α_Koide ≈ 2.988 ≈ 3** | **ODKRYCIE** | g₀_crit(3) ≈ g₀^τ(Koide) = 1.729! |
 | dm/dg₀ → ∞ przy barierze | **POTWIERDZONE** | Masa dywerguje — twardy limit |
+| Lagrangian: L = g^{2α}g'²/2 + U(g) | **WYPROWADZONE** | U(g) = g³/3 - g⁴/4 dla ALL α |
 
-### ✅ NOWE: N=3 BEZ KOIDE (z α + bariera)
+### ✅ NOWY WYNIK: α < 0.882 → N=3 z φ-drabinki
 
 ```
-Kluczowy wynik (r3_n3_from_barrier.py):
+Kluczowy wynik (r3_alpha_scan.py):
 
-Z skalowania m ~ A^{2α} i eksperymentalnych mas:
-  α = ln(m_μ/m_e) / (2·ln(A_μ/A_e)) = 2.35
+g₀_crit(α, d=3) maleje z α. Przejście N=2→3 przy α_crit = 0.882:
 
-  τ:   g₀ = 1 + A_e·(3477)^{1/4.7} = 1.742 < g₀_crit = 2.206  ✓
-  4th: g₀ = 1 + A_e·(58477)^{1/4.7} = 2.354 > g₀_crit = 2.206  ✗
+  α=0.50 (K=g):    g₀_crit=2.618, n_max=2.29 → N=3 ✓
+  α=0.62 (K=g^{1/φ}): g₀_crit=2.487, n_max=2.18 → N=3 ✓
+  α=0.80:           g₀_crit=2.332, n_max=2.05 → N=3 ✓
+  α=0.88 = α_crit:  g₀_crit=2.276 = φ²·g₀^e  → N=2→3 granica
+  α=1.00 (substrat): g₀_crit=2.206, n_max=1.94 → N=2 (deficit 3.1%!)
 
-  N = 3 wynika z SAMEJ bariery + skalowania mas!
-  Koide jest KONSYSTENTNE ale NIE POTRZEBNE jako input.
+Substrat (α=1) jest TUŻ powyżej progu! Deficit to tylko 3.1%.
 ```
 
-### ⚠️ NAPIĘCIA I OTWARTE PYTANIA
+### ⚠️ OTWARTE PYTANIE: JAKA WARTOŚĆ α JEST FIZYCZNA?
 
 | Element | Problem |
 |---------|---------|
-| g₀_crit zależy od α | Substrate (α=1): g₀_crit=2.206 vs Canonical (α=2): g₀_crit=1.546 |
-| Canonical daje N≤2 | g₀_crit(can)=1.546 — τ NIE mieści się pod barierą! |
-| φ²-drabinka daje N=2 | τ NIE siedzi na prostej drabince φ² |
-| Analityczne g₀_crit(3D)? | Brak zamkniętej formy. Best: 48/π² ≈ g₀_crit² (Δ=0.004) |
+| Substrat (α=1) daje N=2 | Ale deficit to tylko 3.1% od N=3! |
+| α=1/φ daje N=3 | K = g^{2/φ} — czy ma sens geometryczny? |
+| α_Koide ≈ 3 | Bariera = masa τ(Koide) — niezwykły zbieg |
+| Analityczne g₀_crit(3D)? | Brak zamkniętej formy |
 
 ## Hipoteza auto-przestrzeni
 
@@ -119,17 +118,20 @@ d=6: g₀_crit = 4.1811
 Best fit: g₀_crit ≈ 0.218·d^{1.46} + 1.12  (max err 1.6%)
 ```
 
-### g₀_crit ZALEŻY OD α! (nowe)
+### g₀_crit(α) — pełny skan (nowe, poprawione)
 
 ```
-ODE: g'' + (2α-1)/g · (g')² + ((d-1)/r)g' = (1-g)/g²
+POPRAWIONY Lagrangian: L = g^{2α}·g'²/2 + g³/3 - g⁴/4
+ODE: g'' + (α/g)·g'² + ((d-1)/r)g' = (1-g)·g^{2-2α}
 
-d=3:
-  α=1 (substrat, K=g²): g₀_crit = 2.206
-  α=2 (kanoniczny, K=g⁴): g₀_crit = 1.546
+d=3, g₀_crit(α):
+  α=0.1: 3.500    α=0.5: 2.618    α=1.0: 2.206    α=2.0: 1.874
+  α=0.2: 3.171    α=0.6: 2.505    α=1.5: 2.000    α=2.5: 1.789
+  α=0.3: 2.936    α=0.7: 2.411    α=α_crit: 2.276  α=3.0: 1.728
+  α=0.4: 2.758    α=0.8: 2.332    (N=2→3 próg)
 
-Wyższe α → silniejsze sprzężenie → NIŻSZA bariera!
-To fundamentalnie wpływa na liczbę generacji.
+Wyższe α → silniejsze sprzężenie kinetyczne → NIŻSZA bariera!
+g₀_crit(1D) = 4/3 dla KAŻDEGO α (prawo zachowania).
 ```
 
 ## Ile generacji? (analiza wg ODE)
@@ -155,20 +157,21 @@ Koide (K=2/3):
   4th: impossible             → N = 3 ✓
 ```
 
-### Kanoniczny (α=2): N≤2 ⚠️
+### Ogólny (dowolne α): N zależy od α
 
 ```
-g₀_crit(can) = 1.546
-  e:   g₀ = 0.869 < 1.546 ✓
-  μ:   g₀ = 1.407 < 1.546 ✓  (margin tylko 10%!)
-  τ:   g₀ > 1.546            ✗ → N ≤ 2
+N_gen(α, d=3) z φ-drabinki:
+  α < 0.882: N = 3  (e, μ, τ poniżej bariery)
+  α > 0.882: N = 2  (τ powyżej bariery)
 
-NAPIĘCIE: kanoniczny ODE ma za niską barierę dla 3 generacji.
-Możliwe rozwiązania:
-  (a) Fizyczny ODE to substrat, nie kanoniczny
-  (b) Wartości g₀ różnią się między ODE (ten sam fizyczny lepton
-      ma INNY g₀ w substracie vs kanonicznym)
-  (c) Poprawka do prostego skalowania A^{2α}
+Specjalne wartości α:
+  α = 1/φ ≈ 0.618: N=3, n_max=2.18
+  α = 1/2:          N=3, n_max=2.29
+  α = 1 (substrat): N=2, n_max=1.94 (deficit 3.1%)
+  α ≈ 3:            g₀_crit ≈ 1.729 = g₀^τ(Koide)!
+
+WNIOSEK: N=3 wymaga α < 0.882. Substrat (α=1) jest
+marginalnie powyżej — deficit to TYLKO 3.1%.
 ```
 
 ## Obecne heurystyki (żadna nie jest dowodem)
@@ -214,7 +217,9 @@ Możliwe rozwiązania:
 | `r3_metric_singularity.py` | g₀_crit = 2.206, bariera metryczna | ✅ |
 | `r3_self_space_stability.py` | Krajobraz A_tail(g₀), hipoteza auto-przestrzeni | ✅ |
 | `r3_g0crit_analytical.py` | g₀_crit(1D) = 4/3 exact, dimension scan | ✅ |
-| `r3_n3_from_barrier.py` | **N=3 z bariery + α, canonical vs substrate** | ✅ NOWE |
+| `r3_n3_from_barrier.py` | N=3 z bariery + α, mass divergence | ✅ |
+| `r3_el_check.py` | **Poprawny Lagrangian, α/g coefficient** | ✅ NOWE |
+| `r3_alpha_scan.py` | **α_crit=0.882, N=2→3 transition** | ✅ NOWE |
 
 ## Kryterium zamknięcia
 
@@ -233,7 +238,11 @@ Status: **CZĘŚCIOWO UDOWODNIONE** — mechanizm działa, ale zależy od wyboru
 - [x] 4. generacja > g₀_crit — POTWIERDZONE
 - [x] dm/dg₀ → ∞ przy barierze — POTWIERDZONE
 - [x] N=3 z α=2.35 + bariera (bez Koide) — NOWE
-- [ ] Rozwiązać napięcie substrat vs kanoniczny
+- [x] g₀_crit zależy od α — POTWIERDZONE
+- [x] α_crit = 0.882 (N=2→3 transition) — OBLICZONE
+- [x] α_Koide ≈ 3 (bariera = τ mass) — ODKRYTE
+- [x] Poprawny Lagrangian: L = g^{2α}g'²/2 + g³/3 - g⁴/4 — WYPROWADZONE
+- [ ] Ustalić fizyczną wartość α (dlaczego α < 0.882?)
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić Koide z teorii solitonów
 - [ ] Formalizacja dowodu
