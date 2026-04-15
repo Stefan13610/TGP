@@ -71,6 +71,6 @@ WARSTWA 5: Spin, statystyka, dekoherencja (Q5-Q7)
 - [x] Q2: Regula Borna — **ZAMKNIETE** (wynika z Q1: p=2.028, CV=2.3%)
 - [x] Q3: Superpozycja — **ZAMKNIETE** (7/7 PASS, linearyzacja + NL korekty)
 - [~] Q4: Splatanie — **CZESCIOWO ZAMKNIETE** (3/4 PASS, mechanizm+dekoherencja OK, Bell wymaga kontekstualnosci)
-- [ ] Q5: Spin — OTWARTY
+- [x] Q5: Spin — **ZAMKNIETE** (7/7 PASS, pi_3(S^3)=Z, B=1, FR -> spin 1/2)
 - [ ] Q6: Statystyka — OTWARTY
 - [ ] Q7: Dekoherencja — OTWARTY
