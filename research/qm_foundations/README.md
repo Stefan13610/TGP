@@ -49,7 +49,7 @@ WARSTWA 5: Spin, statystyka, dekoherencja (Q5-Q7)
 | Przestrzen | Tlo (dana) | Dynamiczna (Phi) |
 | Czastka | Punkt/fala na tle | Soliton tworzacy tlo |
 | Pomiar | Postulat (kolaps) | Interakcja soliton-soliton |
-| hbar | Stala uniwersalna | hbar(Phi) = hbar_0*sqrt(Phi_0/Phi) |
+| hbar | Stala uniwersalna | hbar = pi*chi*A_tail (wewnetrzne dla solitonu) |
 | Born | Postulat |psi|^2 | Emergentna z interferencji ogonow |
 | Superpozycja | Aksjomatyczna | Liniownosc rownania w slabym polu |
 
@@ -74,3 +74,30 @@ WARSTWA 5: Spin, statystyka, dekoherencja (Q5-Q7)
 - [x] Q5: Spin — **ZAMKNIETE** (7/7 PASS, pi_3(S^3)=Z, B=1, FR -> spin 1/2)
 - [x] Q6: Statystyka — **ZAMKNIETE** (8/8 PASS, FD/BE z topologii, anyony w 2D)
 - [x] Q7: Dekoherencja — **ZAMKNIETE** (8/8 PASS, 3 drogi, darwinizm kwantowy)
+
+## Wyniki analityczne (q0_analytical.py, 5/5 PASS)
+
+Kluczowe wyniki wyprowadzone ALGEBRAICZNIE z ODE substratu:
+
+1. **Born p=2 ANALITYCZNIE**: Z liniowosci perturbacji chi NIE zalezy od A_part
+   => Signal ~ chi^2 * A_part^2 => p=2 dokladnie. Numerycznie: slope=1.014, R^2=0.99998.
+   Odchylenie p=2.028 z wyzszych rzedow perturbacji.
+
+2. **chi ~ 0.86 (prawie uniwersalne)**: CV=7% w zakresie g0=[0.3, 0.95].
+   chi jest wlasciwoscia RDZENIA solitonu, nie ogona.
+
+3. **hbar = pi*chi*A_tail**: WYPROWADZONE z parametrow ODE, nie postulowane.
+   Dx*Dp = pi*chi*A/D jest NIEZALEZNE od alpha (wavenumber cancels!).
+   hbar jest wewnetrzne dla solitonu. Hipoteza hbar(Phi)~1/sqrt(Phi) OBALONA
+   -- hbar zmienia sie przez A_tail(alpha), nie przez k.
+
+4. **C_NL = 0.535 (I rzad perturbacji)**: Gorne ograniczenie na korekty NL.
+   Pelne ODE daje C_full ~ 0.37 (wyzsze rzedy redukuja o 31%).
+
+5. **Druga harmoniczna A_2/A_1 = 1.1%**: Testowalna sygnatura nieliniowosci.
+
+## Pliki
+
+| Plik | Opis | Status |
+|------|------|--------|
+| q0_analytical.py | Analityczne derywacje: Born, chi, hbar, C_NL | 5/5 PASS |
