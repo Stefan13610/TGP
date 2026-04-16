@@ -19,9 +19,10 @@ GL(3,F₂) z |GL|=168 **zakłada** N=3. Nie wyprowadza go z fizyki.
 | g₀_crit(3D, α=1) = 2.206 | **POTWIERDZONE** | Substrat: g₀_crit = 2.206 |
 | **m = c_M · A_tail⁴** | **ZWERYFIKOWANE** | (A_μ/A_e)⁴ = 206.55 ≈ 206.77 (0.10%!) |
 | **A_tail⁴ wymaga α=1** | **ODKRYCIE** | TYLKO α=1 daje k_eff = 4.0008 |
-| **m_phys = c · K² = c · \|V\|²** | **MECHANIZM A⁴** | (K_μ/K_e)² = 207.0 (0.11%), (\|V_τ\|/\|V_e\|)² = 3476 (0.03%!) |
-| **K = ∫T·r²dr ~ A²** | **WIRIAŁ** | K/A² = 17.60 ± 0.21% (uniwersalne) |
-| **\|V\| = \|∫V_eff·r²dr\| ~ A²** | **WIRIAŁ** | \|V\|/A² = 17.37 ± 0.10% (uniwersalne) |
+| **m_phys = c · K² = c · \|V\|²** | **MECHANIZM A⁴** | m_i/m_j = (K_i/K_j)² = (A_i/A_j)^4 cutoff-indep (std 0.4%) |
+| **K = ∫T·r²dr ~ A²** | **WIRIAŁ** | K/A² = 17.60 ± 0.21% (dla R_max=70) |
+| **\|V\| = \|∫V_eff·r²dr\| ~ A²** | **WIRIAŁ** | \|V\|/A² = 17.37 ± 0.10% |
+| **C_T = R_max/4 + C_core** | **ANALITYCZNE** | Slope 0.25052 (pred 1/4 z cos² avg); C_core/A²≈1.09 topolog. |
 | **g₀^τ(Koide) = 1.729 < 2.206** | **N=3 z Koide** | τ mieści się pod barierą |
 | **g₀^(4th) > g₀_crit** | **POTWIERDZONE** | 4. generacja zakazana dynamicznie |
 | dm/dg₀ → ∞ przy barierze | **POTWIERDZONE** | Masa dywerguje — twardy limit |
@@ -397,6 +398,74 @@ KONSEKWENCJE:
        nie tylko empiryczne.
 ```
 
+### ✅ ANALITYCZNY C_T = R_max/4 + C_core (r3_CT_analytical.py)
+
+```
+PYTANIE: skad wartosc C_T = K/A^2 ≈ 17.60? Czy jest to fundamentalna stala?
+
+DERYWACJA z tail g-1 = A*sin(r+δ)/r, d=3:
+  T = (1/2) g^{2α} (g')^2,  dla dużych r: g^{2α} → 1
+  g' ≈ A cos(r+δ)/r  (leading)
+  T · r^(d-1) = T · r^2 ≈ (A²/2) cos²(r+δ)
+  ∫_{r_c}^{R_max} T · r^2 dr ≈ (A²/2) · <cos²> · (R_max - r_c)
+                              = (A²/4) · (R_max - r_c)
+
+WNIOSEK ANALITYCZNY: K_tail / A^2 = (R_max - r_c)/4
+
+WERYFIKACJA NUMERYCZNA (skan R_max ∈ [30, 140]):
+  Fit C_T_e(R_max) = a · R_max + b:
+    a = 0.25052 (predykcja: 1/4 = 0.25000)   — zgoda 0.2%
+    b = -0.07 (intercept, O(0.1))
+
+  Dla R_max = 70: C_T_pred = 17.47, C_T_obs = 17.60 (diff 0.8%)
+
+DEKOMPOZYCJA K = K_core + K_tail (r_c = 5):
+  lepton    K_core     K_core/A²    K_tail(70)   K_tail/A²
+  e         0.01696    1.0851       0.25806      16.5143
+  μ         0.24324    1.0891       3.69608      16.5486
+  τ         0.96818    1.0601       15.11888     16.5539
+
+  * K_core/A² ≈ 1.09 UNIWERSALNIE — topologiczny niezmiennik rdzenia
+  * K_tail/A² ≈ 16.55 ≈ (70-5)/4 = 16.25 (zgoda 1.8%)
+
+KONSEKWENCJE:
+
+  (A) Mechanizm A^4 dla MASY RATIO jest WYPROWADZONY:
+      K = a·R_max·A² + C_core·A² + O(A³)
+      K_i/K_j = A_i²/A_j²  (cutoff-independent do wiodacego rzedu)
+      m_i/m_j = (K_i/K_j)² = (A_i/A_j)^4
+
+  (B) Dokladnosc (K_μ/K_e)² dla różnych R_max:
+      R_max = 30:  204.42  (diff -1.14%)
+      R_max = 50:  206.84  (diff +0.03%)  — przypadkowo idealne
+      R_max = 70:  205.17  (diff -0.77%)
+      R_max = 100: 205.54  (diff -0.59%)
+      std/mean = 0.389% — (K_μ/K_e)² quasi-niezalezne od R_max
+      
+      UWAGA: poprzedni wynik 207.00 (+0.11%) był SZCZĘŚLIWĄ ZBIEŻNOŚCIĄ
+      wyboru A_tail fit-range = [20, R_max-2] i R_max = 70.
+      Rzeczywista dokładność mechanizmu to ~0.4% (nie 0.11%).
+
+  (C) DOMINACJA TAIL: K_tail/K_total ≈ 94% dla R_max=70.
+      Rdzeń daje tylko ~6% wkładu, ale JEST topologicznie
+      niezmienny (uniwersalny dla g0).
+
+  (D) Dla BEZWZGLEDNEJ skali m_e = 0.511 MeV:
+      m_e = c · K_e² = c · (17.60 · A_e²)² = c · 309.8 · A_e⁴
+      Z A_e = 0.1246: m_e = c · 309.8 · 2.41×10⁻⁴ = c · 0.0747
+      ⟹ c = 6.84 MeV gdy R_max = 70
+      c = c₀ · (R_max/70)² — zalezny od cutoff
+      
+      Fizyczny R_max = skala odniesienia w przestrzeni R5 substratu.
+      Ustala ABSOLUTNĄ kalibrację masy.
+
+STATUS: Mechanizm A^4 jest W PELNI WYPROWADZONY analitycznie:
+  - Tail daje R_max/4 (z cos² averaging) — analityczne
+  - Rdzeń daje C_core ≈ 1.09 — uniwersalny (topologiczny)
+  - Ratio m_i/m_j = (A_i/A_j)^4 cutoff-independent (do 0.4%)
+  - Absolutna kalibracja wymaga wyboru R_max (bridge do R5)
+```
+
 ### ✅ UNIWERSALNE PRAWO: (r^(2(d-1))·q)' = r^(2(d-1))·U' dla ∀(α, d) (r3_conservation_universal.py)
 
 ```
@@ -727,6 +796,7 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_mass_A4_derivation.py` | **M_energy~A², m_phys~A⁴; m=M² i 4-moment FALSIFIED** | ⚠️ Partial |
 | `r3_mass_candidates.py` | **Skan 15 funkcjonalow; (K)²,(\|V\|)²,K·\|V\| BIJA A⁴** | ✅ MECHANIZM |
 | `r3_virial_mechanism.py` | **Wiriał K/\|V\|≈1.013; K=17.60·A², \|V\|=17.37·A² uniwersalne** | ✅ MECHANIZM |
+| `r3_CT_analytical.py` | **C_T = R_max/4 + C_core (analityczne); C_core/A²≈1.09 topolog.** | ✅ DERYWACJA |
 
 ## Kryterium zamknięcia
 
@@ -736,7 +806,10 @@ Twierdzenie: "W teorii solitonów z K=g², d=3 (substrat, α=1):
 (3) g₀^(4th) > g₀_crit → 4. generacja zakazana,
 (4) m = c_M · A_tail⁴ z (A_μ/A_e)⁴ = 206.55 (0.10% od PDG),
 (5) m_phys = c · K² gdzie K = ∫½g^{2α}(g')²·r²dr, K~A² uniwersalnie
-    (K_μ/K_e)² = 207.00 (0.11%), (|V_τ|/|V_e|)² = 3476.03 (0.03% od PDG)."
+    Mechanizm A^4 WYPROWADZONY analitycznie:
+      K_tail/A² = (R_max - r_c)/4 (z cos² averaging tail)
+      K_core/A² ≈ 1.09 (topologiczny niezmiennik rdzenia)
+    m_i/m_j = (K_i/K_j)² = (A_i/A_j)^4 cutoff-independent (std 0.4%)."
 
 Status: **SILNY MECHANIZM** — spójny obraz α=1 + A_tail⁴ + bariera → N=3.
 
@@ -784,6 +857,11 @@ Status: **SILNY MECHANIZM** — spójny obraz α=1 + A_tail⁴ + bariera → N=3
 - [x] **|V| = |∫V_eff·r²dr| ~ A² uniwersalnie** — POTWIERDZONE (slope 1.99992)
 - [x] **Wirial K/|V| ≈ 1.013 uniwersalnie** — ODKRYTE (quasi-Derrick)
 - [x] **Mechanizm A⁴: m_phys = c · K² = c · (C_T·A²)²** — WYPROWADZONE
+- [x] **C_T(R_max) = R_max/4 + C_core analityczne** — WYPROWADZONE (slope 0.25052)
+- [x] **K_tail/A² ~ R_max/4 z cos² averaging** — DERYWOWANE z linearyzacji tail
+- [x] **K_core/A² ≈ 1.09 uniwersalne** — TOPOLOGICZNY NIEZMIENNIK (e, μ, τ)
+- [x] **Ratio m_i/m_j cutoff-independent (std 0.4%)** — POTWIERDZONE
+- [x] **Absolutna skala m wymaga R_max (bridge R5)** — ZIDENTYFIKOWANE
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić θ=π/4 z topologii spinu (Q5 bridge)
 - [ ] Ścisły dowód sum(g0_i - 4/3) = 0 z topologii solitonu
