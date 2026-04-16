@@ -8,6 +8,9 @@
 \usepackage{newunicodechar}
 \newunicodechar{✓}{\ensuremath{\checkmark}}
 \newunicodechar{✗}{\ensuremath{\times}}
+% Fallbacks dla \cmark / \xmark (pifont-free)
+\providecommand{\cmark}{\ensuremath{\checkmark}}
+\providecommand{\xmark}{\ensuremath{\times}}
 \newunicodechar{△}{\ensuremath{\triangle}}
 \newunicodechar{★}{\ensuremath{\bigstar}}
 \newunicodechar{∝}{\ensuremath{\propto}}
@@ -31,6 +34,17 @@
 % Fix: \k{} (polskie znaki) w tytulach sekcji nie psuje bookmarkow PDF
 \pdfstringdefDisableCommands{\let\k\@gobble}
 \usepackage{geometry}
+% --- Extended appendix numbering (A, B, ..., Z, AA, AB, ...) ---
+% TGP v1 has >26 appendices; default \Alph{section} overflows at A-Z.
+% alphalph.sty provides \AlphAlph which extends naturally to AA, AB, ...
+\usepackage{alphalph}
+\makeatletter
+\let\tgp@origappendix\appendix
+\renewcommand{\appendix}{%
+  \tgp@origappendix
+  \renewcommand{\thesection}{\AlphAlph{\value{section}}}%
+}
+\makeatother
 \usepackage{longtable,booktabs,tabularx,array}
 \usepackage[shortlabels]{enumitem}
 \usepackage{xcolor}
@@ -42,6 +56,7 @@
 % --- Symbole TGP ---
 \renewcommand{\Phi}{\varPhi}            % pole generujące przestrzeń
 \newcommand{\PhiZero}{\varPhi_0}        % wartość próżniowa / odniesienia
+\newcommand{\PhiEff}{\varPhi_{\mathrm{eff}}}   % efektywna wartość pola
 \newcommand{\Nzero}{N_0}               % absolutna nicość
 \newcommand{\Ffield}{\mathcal{F}}       % funkcja stanu (miara asymetrii)
 \newcommand{\Floc}{\mathcal{F}_{\mathrm{loc}}}
