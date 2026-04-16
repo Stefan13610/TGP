@@ -211,6 +211,21 @@ THE GAP: Step 5. What determines g₀^τ?
      (finite r_max, fit window 100..350, O(δ²) korekcje), nie błąd teorii.
    - **POZYTYWNY WYNIK** — patrz sekcja "BREAKTHROUGH" powyżej.
 
+9. **Ścieżka E: winding number NIE daje Z₃ constraint** (2026-04-16)
+   - Testowano trzy definicje winding/topological index:
+     - `r6_tail_winding_z3.py`: total winding na [0, R] = **−32 identyczne** dla e/μ/τ
+       (trywialne, bo tail asymptotyczny dominuje przy wspólnej częstości ω=1)
+     - `r6_core_winding_z3.py`: core_zeros = **0 dla wszystkich** trzech leptonów
+       (wszystkie są groundstate solitonami bez węzłów wewnętrznych)
+     - `r6_extrema_index_z3.py`: bounce_core = 1,2,2 (e,μ,τ), suma=5, **mod 3 = 2 ≠ 0**
+   - **Wniosek 1**: Z₃ constraint n_e + n_μ + n_τ ≡ 0 (mod 3) **NIE zachodzi**
+     dla żadnej sensownej definicji winding number.
+   - **Wniosek 2 (pozytywny)**: bounce_core jednak ROZRÓŻNIA deficit (e, bounce=1)
+     od excess (μ, τ, bounce=2). To odzwierciedla tę samą asymetrię deficit/excess,
+     którą ilościowo kontroluje **c₁ = 1 − ln(3)/4** (z breakthrough 2026-04-16).
+   - **Wniosek 3**: Koide K=2/3 **NIE wynika z topologii** (liczby węzłów/nawinięć).
+     Pozostaje ścieżka D (przez c₁ i Shannon entropy ln(3)) jako jedyna aktywna.
+
 ## Pliki
 
 | Plik | Opis | Status |
@@ -226,6 +241,9 @@ THE GAP: Step 5. What determines g₀^τ?
 | `r6_c1_high_precision.py` | Wysoko-precyzyjny pomiar c₁ (DOP853) | ✅ NOWE |
 | `r6_c1_richardson.py` | Richardson ekstrapolacja c₁ → δ=0 | ✅ NEGATYWNY |
 | `r6_c1_perturbative.py` | **DOWOD ANALITYCZNY c₁ = 1 − ln(3)/4** | 🎯 **BREAKTHROUGH** |
+| `r6_tail_winding_z3.py` | Test Z₃ na total winding (tail dominuje) | ✅ NEGATYWNY |
+| `r6_core_winding_z3.py` | Test Z₃ na core_zeros (wszystkie = 0) | ✅ NEGATYWNY |
+| `r6_extrema_index_z3.py` | Test Z₃ na bounce_core; deficit vs excess | ✅ NEGATYWNY |
 
 ## Ścieżki dalszego ataku
 
@@ -268,11 +286,17 @@ mamy derywację Koide z asymetrii substrate.
 2. Rozwiązać perturbacyjnie: g = 1 + δ·f, gdzie f spełnia liniowy ODE z Besselem
 3. Jeśli c₁ = ∫... (Bessel integral) to mimo że nie jest "ładne", to ma interpretację
 
-### Ścieżka E (NOWA): Tail winding number jako constraint
+### ~~Ścieżka E: Tail winding number jako constraint~~ — WYKLUCZONA (2026-04-16)
 
-Skoro Z₃ nie działa na **fazach ogona**, może działa na **liczbie nawinięć** (winding).
-Tail-wrap number n(g₀) = integer, bo ogon sin(r+δ)/r jest okresowy.
-Może: n_e + n_μ + n_τ = 0 mod 3 **wymusza** K=2/3?
+Testowano trzy definicje winding number i żadna nie daje Z₃ constraint:
+- **total winding** [0, R]: trywialnie równe (tail dominuje, wszystkie ω=1)
+- **core winding / core_zeros**: wszystkie = 0 (leptony to groundstate solitony)
+- **bounce_core**: deficit (e) = 1, excess (μ,τ) = 2, suma=5, mod 3 = 2 ≠ 0
+
+**Pozytywny side-effect**: bounce_core potwierdza asymetrię deficit/excess, która
+ilościowo odpowiada stałej **c₁ = 1 − ln(3)/4** (breakthrough 2026-04-16).
+Koide K=2/3 **NIE wynika z topologii węzłów/nawinięć**. Pozostaje ścieżka D
+(przez Shannon entropy ln(3) w dynamice ODE).
 
 ## Status checklist
 
@@ -286,7 +310,10 @@ Może: n_e + n_μ + n_τ = 0 mod 3 **wymusza** K=2/3?
 - [x] Z₃ na fazy ogona δᵢ — WYKLUCZONE (negatyw, 2026-04-16)
 - [x] Lokalna zasada wariacyjna dla K=2/3 — WYKLUCZONE (2026-04-16)
 - [x] **Ścieżka D**: c₁ = 1 − ln(3)/4 **UDOWODNIONE ANALITYCZNIE** (2026-04-16) 🎯
-- [ ] **Ścieżka E**: tail winding number n(g₀) → Z₃ constraint
+- [x] **Ścieżka E**: tail winding number n(g₀) → Z₃ constraint — **WYKLUCZONA** (2026-04-16)
+  - total winding trywialnie równe (tail dominuje)
+  - core winding = 0 dla wszystkich (groundstate solitony)
+  - bounce_core daje 1,2,2 (deficit vs excess) ale sum mod 3 ≠ 0
 - [ ] Derywacja g₀^τ z ODE (the gap!)
 - [ ] Związek g₀^τ/g₀^μ ≈ √(3/2) z K
 - [ ] Rozszerzyć dowód c₁ do wyjaśnienia K=2/3 (używając ln(3) asymetrii)
