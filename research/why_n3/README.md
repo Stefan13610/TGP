@@ -160,6 +160,58 @@ PREDYKCJA MASY TAU:
   → 4. generacja (g0_4=φ·g0_τ=2.798) > g0_crit=2.206 ZAKAZANA ✓
 ```
 
+### ⚠️ FALSIFIED: θ_Koide NIE z fazy ogonu δ(α) (r3_tail_phase_vs_alpha.py)
+
+```
+HIPOTEZA: θ_Koide = π·(1-α) wynika z fazy ogonu solitonu
+  δ_tail w (g-1)r = A·sin(r+δ)
+
+TEST: skan δ(α) dla α ∈ [0.1, 1.5]:
+  α=0.10 → δ/π = 0.930
+  α=0.75 → δ/π = 0.968
+  α=1.00 → δ/π = 0.982
+  α=1.25 → δ/π = 0.995
+
+  Liniowy fit: δ = 0.177·α + 2.91 (R²=0.999)
+  Hipoteza pi*(1-α): slope = -π = -3.14, intercept = π
+  BRAK DOPASOWANIA - hipoteza FALSIFIED.
+
+WNIOSEK: θ_Koide = π·(1-α_geom) = π/4 to PRAWIDLOWA ROWNOSC
+  (3/4 + 1/4 = 1), ale NIE wynika z fazy ogonu dynamicznie.
+
+δ(α) jest blisko π zawsze (0.93π - 0.99π), reprezentuje asymptotyczny
+reverse-sign dla deficit solitonów (g<1 zawsze).
+
+>> Koide pi/4 i geometria alpha=3/4 sa skorelowane przez TOPOLOGIE,
+   nie przez dynamike (faza) asymptotycznego ogonu. <<
+```
+
+### ✅ NOWA HIPOTEZA: d+1 jako wspólny mianownik
+
+```
+OBSERWACJA (r3_tail_phase_vs_alpha.py sekcja 10):
+  α_geom = d/(d+1)  dla d=3: α = 3/4
+  θ_Koide = π/(d+1) dla d=3: θ = π/4
+  SUMA: α·π + θ = π  (d/(d+1) + 1/(d+1) = 1)
+
+d+1 to TOPOLOGICZNA liczba:
+  - d+1 wierzchołków (d+1)-simpleksu (tetraedr dla d=3)
+  - SU(d+1) z (d+1)-wym. rep. fundamentalną
+  - 1/(d+1) pełnej rotacji
+
+Predykcje (zakladajac N=d generacji w d-wymiarowej przestrzeni):
+  d=2: α=2/3, θ=π/3, K=2 NIEFIZYCZNE (N=2 sektor musi miec inna formula)
+  d=3: α=3/4, θ=π/4, K=2/3 ✓ KOIDE (PDG verified)
+  d=4: α=4/5, θ=π/5, K=0.382 (hipotetyczny d=4 swiat)
+  d=5: α=5/6, θ=π/6, K=0.267
+
+SPOJNY OBRAZ (hipoteza Z_{d+1}):
+  d=3 przestrzeń → simpleks 4 wierzchołków → 4 stany Z_4
+  3 stany dynamiczne dozwolone (bariera g0_crit), 4. ZAKAZANY
+  α=3/4 kinetyczne + 1/4 "topologiczne" (θ/π)
+  N=3 generacje = 3 dozwolone stany z 4-elementowego simpleksu
+```
+
 ### ✅ UOGOLNIENIE: θ = π/k, wspólny origin z α_geom (r3_koide_pi_over_k.py, 7/7 PASS)
 
 ```
@@ -436,6 +488,7 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_barrier_structural.py` | **Analiza strukturalna g₀_crit(d)** | ✅ NOWE |
 | `r3_koide_derivation.py` | **Derywacja Koide K=2/3, θ=π/4, SUM(g0)=4** | ✅ 13/13 PASS |
 | `r3_koide_pi_over_k.py` | **π/4 = π(1-α_geom), uogólnienie θ=π/(N+1)** | ✅ 7/7 PASS |
+| `r3_tail_phase_vs_alpha.py` | **Faza ogonu ≠ π(1-α) FALSIFIED; d+1 hipoteza** | ✅ 4/5 (1 FALSIFIED) |
 
 ## Kryterium zamknięcia
 
@@ -475,6 +528,8 @@ Status: **SILNY MECHANIZM** — spójny obraz α=1 + A_tail⁴ + bariera → N=3
 - [x] **θ=π(1-α_geom)** — LINK R3 ↔ Koide (wspólny origin)
 - [x] **Kwarki: K_up=0.85, K_down=0.73** — NIE Koide (QCD running)
 - [x] **Neutrina: max K~0.58 < 2/3** — Koide NIE uniwersalny
+- [x] **δ_tail ≠ π(1-α)** — FALSIFIED (Koide nie z fazy asymptotycznej)
+- [x] **d+1 hipoteza: α=d/(d+1), θ=π/(d+1)** — STRUKTURALNA
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić θ=π/4 z topologii spinu (Q5 bridge)
 - [ ] Dowód że SUM(g0)=4 to prawo zachowania ODE 1D
