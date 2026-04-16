@@ -277,6 +277,50 @@ Interpretacja: trzy generacje są "zrównoważone" wokół g0_crit(1D).
   Suma = dokładne 4/3·3 = 4 (prawo zachowania 1D).
 ```
 
+### ⚠️ FALSIFIED: m_phys ≠ M_energy²; m_phys ≠ ∫(g-1)⁴·r²dr (r3_mass_A4_derivation.py)
+
+```
+PYTANIE: Skad sie bierze empiryczne m_phys = c·A_tail⁴?
+
+WYNIK KLUCZOWY: M_energy (pelna energia solitonu) SKALUJE JAK A², NIE A⁴.
+
+  Numeryczny slope log|M_energy| vs log|A_tail|:
+    Deficit (g0<1): slope = 1.93
+    Excess (g0>1):  slope = 1.89
+    All:            slope = 1.92 (oczekiwane: 2.0 z asymptotyki)
+
+  Wynik analityczny wyjaśnia A²:
+    Tail g-1 = A·sin(r+δ)/r, false vacuum (U''(1)=-1)
+    T = g^(2α)(g')²/2 ~ A²·cos²/(2r²)
+    V_eff = V(g)-V(1) ~ -A²·sin²/(2r²)
+    r²·(T+V_eff) ~ A²·cos(2r+2δ)/2 → oscyluje, ale RDZEN sekularny O(A²)
+
+  HIPOTEZY PRZETESTOWANE:
+    H1: m_phys = M_energy² (kwadratowa)
+       μ: (M_μ/M_e)² = 209.5 vs PDG 206.77  (diff +1.3%)   OK dla μ
+       τ: (M_τ/M_e)² = 3078 vs PDG 3477     (diff -11.5%)  FAIL dla τ
+       → H1 FALSIFIED
+
+    H2: m_phys ~ ∫(g-1)⁴·r²·dr  (4-ty moment)
+       μ: M4_μ/M4_e = 107.6 vs PDG 206.77  (diff -48%)    FAIL
+       τ: M4_τ/M4_e = 1436 vs PDG 3477     (diff -59%)    FAIL
+       → H2 FALSIFIED
+
+  STATUS: m_phys = c·A_tail⁴ EMPIRYCZNIE dokładne (0.24%), ale
+    bezpośredni mechanizm fizyczny NIEZNANY.
+
+  Obserwacja kluczowa: **m_phys i M_energy to RÓŻNE obiekty**.
+    M_energy = Euclidean action integral (~ A²)
+    m_phys = PDG rest mass (~ A⁴)
+    Relacja m_phys = f(profil g(r)) wymaga dodatkowego mechanizmu
+    (możliwe: volume integral z wagą zależną od rdzenia, virial typu
+    m = E × size z size ~ A, etc.)
+
+  OTWARTE: derywacja formalna A⁴ pozostaje jednym z najważniejszych
+    problemów bridge R3 ↔ R5. Dotychczasowe naturalne hipotezy
+    FALSIFIED. Potrzebny nietrywialny mechanizm.
+```
+
 ### ✅ UNIWERSALNE PRAWO: (r^(2(d-1))·q)' = r^(2(d-1))·U' dla ∀(α, d) (r3_conservation_universal.py)
 
 ```
@@ -603,6 +647,7 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_tail_phase_vs_alpha.py` | **Faza ogonu ≠ π(1-α) FALSIFIED; d+1 hipoteza** | ✅ 4/5 (1 FALSIFIED) |
 | `r3_sum_conservation.py` | **Dowód (r⁴·q)'=r⁴·U'; liniowy balans sum(g0_i-4/3)=0** | ✅ 3/4 (1 FALSIFIED) |
 | `r3_conservation_universal.py` | **Uniwersalne prawo (r^(2(d-1))q)'=r^(2(d-1))U'; g0_crit(1D)=4/3 ∀α** | ✅ 7/9 PASS |
+| `r3_mass_A4_derivation.py` | **M_energy~A², m_phys~A⁴; m=M² i 4-moment FALSIFIED** | ⚠️ Partial |
 
 ## Kryterium zamknięcia
 
@@ -650,6 +695,10 @@ Status: **SILNY MECHANIZM** — spójny obraz α=1 + A_tail⁴ + bariera → N=3
 - [x] **Predykcja α-zależna: SUM = N·(5-2α)/(4-2α)** — FALSIFIED (błędna formuła)
 - [x] **g₀_crit(1D) = 4/3 UNIWERSALNE dla ∀α** — POTWIERDZONE (r3_conservation_universal)
 - [x] **Uniwersalne prawo (r^(2(d-1))·q)' = r^(2(d-1))·U'** — WYPROWADZONE + WALIDOWANE
+- [x] **M_energy ~ A² (pełna energia solitonu)** — POTWIERDZONE numerycznie (slope 1.9)
+- [x] **m_phys = M_energy² hipoteza** — FALSIFIED (mu OK 1%, tau fail 11%)
+- [x] **m_phys = ∫(g-1)⁴·r²·dr hipoteza** — FALSIFIED (diff 48%, 59%)
+- [ ] **Formalny mechanizm m_phys ~ A⁴** — OTWARTE (empiryczne 0.24%)
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić θ=π/4 z topologii spinu (Q5 bridge)
 - [ ] Ścisły dowód sum(g0_i - 4/3) = 0 z topologii solitonu
