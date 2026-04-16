@@ -13,7 +13,7 @@ Konsekwencja: K = (1 + B²/2)/N = (1 + 1)/3 = **2/3** (Koide)
 
 Gdyby B=√2 było **udowodnione analitycznie** → Koide staje się **twierdzeniem TGP**.
 
-## Obecny status (2026-04-15)
+## Obecny status (2026-04-16)
 
 ### ✅ UDOWODNIONE (algebraicznie)
 
@@ -118,6 +118,35 @@ THE GAP: Step 5. What determines g₀^τ?
 3. **c_M = E/A⁴ nie jest stałe** — zmienia się od -20 do -1200
 4. **r₂₁ NIE jest uniwersalne** — zależy silnie od g₀^e (CV = 460%)
 5. **g₀^τ = 2·g₀^e daje K = 0.673, nie 2/3** — 1% off
+6. **Fazy δᵢ ogona NIE są Z₃-symetryczne** (2026-04-16, `r6_tail_phase_z3.py`)
+   - δ_e ≈ 176.71°, δ_μ ≈ 5.64°, δ_τ ≈ 3.76°
+   - Różnica e↔μ to 171° (nie 120°), μ↔τ to 1.88°
+   - Interpretacja: δ ma **nieciągłość przy g₀=1** (deficit vs excess soliton),
+     więc Koide K=2/3 **NIE pochodzi** od Z₃-działania na fazy ogona.
+   - Test 3/6 PASS (Koide PASS, Z₃/Brannen FAIL)
+7. **K=2/3 NIE jest ekstremum żadnego lokalnego funkcjonału S[g₀^τ]**
+   (2026-04-16, `r6_koide_variational.py`)
+   - Przetestowano 10 fizycznych funkcjonałów: Shannon H, E_solitonic,
+     L2-mass, Fisher info, free energy, CV(√m), Sum log m, K_Koide sama.
+   - **Wszystkie mają ekstrema na brzegu** skanu (g₀=1.40 lub 2.15), nie w interior.
+   - g₀^τ(Koide) = 1.72932 **nie jest punktem krytycznym** żadnego z nich.
+   - g₀^τ/g₀^e zmienia się od 2.00 do 3.40 przy zachowaniu K=2/3
+     (CV = 22% — brak drabinki algebraicznej).
+   - Test 2/4 PASS (Koide inversion PASS, stałe ratio FAIL).
+   - **Wniosek**: K=2/3 **nie pochodzi z lokalnej zasady wariacyjnej**
+     na parametrach g₀.
+8. **c₁ ≠ 1 - ln(3)/4** (2026-04-16, `r6_c1_high_precision.py` + `r6_c1_richardson.py`)
+   - Pomysł: `4·(1-c₁) = ln(3)` ⇔ `exp(4·(1-c₁)) = 3` — asymetria deficit/excess
+     ODE kodowałaby N=3 generacji poprzez entropię log-3.
+   - Pomiar wysoko-precyzyjny (DOP853, rtol=1e-13, δ ∈ [0.002, 0.05]):
+     c₁(δ) = 0.7252580 + (-4.9×10⁻²)·δ² + O(δ⁴), residuum fit < 10⁻⁷
+   - Ekstrapolowane c₁ = 0.72525802
+   - `1 - ln(3)/4 = 0.72534693` — **diff = 8.9×10⁻⁵**, czyli 100× większa
+     niż precyzja ekstrapolacji. **REJECTED**.
+   - Wniosek: c₁ nie ma prostej postaci zamkniętej wśród testowanych
+     kandydatów klasycznych (ln 3, π, e, φ w prostych kombinacjach).
+   - Pozostaje: c₁ ≈ 0.72526 jest **subtelnym artefaktem dynamiki ODE** α=1,
+     być może analityczny w oryginalnym języku funkcji specjalnych (Bessel?).
 
 ## Pliki
 
@@ -128,6 +157,11 @@ THE GAP: Step 5. What determines g₀^τ?
 | `r6_eta_koide_attack.py` | η(δ) korekcja + c₁ = 0.725 | ✅ NOWE |
 | `r6_koide_from_ode.py` | K jako f(g₀^e): g₀^τ inversion | ✅ NOWE |
 | `r6_tau_constraint.py` | Hipotezy na g₀^τ: test 2·g₀^e, √(3/2)·g₀^μ | ✅ NOWE |
+| `r6_tail_phase_z3.py` | Test Z₃ na fazach δᵢ ogona ODE | ✅ NEGATYWNY |
+| `r6_koide_variational.py` | Test zasady wariacyjnej K=2/3 | ✅ NEGATYWNY |
+| `r6_c1_closed_form_test.py` | Skan zamkniętych form c₁ | ✅ NOWE |
+| `r6_c1_high_precision.py` | Wysoko-precyzyjny pomiar c₁ (DOP853) | ✅ NOWE |
+| `r6_c1_richardson.py` | Richardson ekstrapolacja c₁ → δ=0 | ✅ NEGATYWNY |
 
 ## Ścieżki dalszego ataku
 
@@ -137,14 +171,44 @@ THE GAP: Step 5. What determines g₀^τ?
 - Powiązanie z R₃₁: g₀ symetria lustra
 
 ### Ścieżka B: Entropia / topologia
-- Czy g₀^τ minimalizuje jakiś funkcjonał?
-- Entropia Shannona mas: S = -Σpᵢ ln pᵢ
-- Topological charge constraint
+- Czy g₀^τ minimalizuje jakiś funkcjonał? → **WYKLUCZONE lokalne** (`r6_koide_variational.py`, 2026-04-16)
+- Pozostaje: funkcjonał **nielokalny** (np. over tail-wrap number)
+- Topological charge constraint → otwarte
 
 ### Ścieżka C: Z₃ ⊂ GL(3,𝔽₂)
 - Formalizacja: Z₃ na masach → K = 2/3 jako ZASADA SYMETRII
 - Nie potrzeba derywacji z ODE — Koide z GRUPY
 - Ale dlaczego GL(3,𝔽₂) a nie inna grupa?
+
+### Ścieżka D (NOWA, 2026-04-16): Deficit–excess asymmetry c₁ = 0.72538
+
+Po wykluczeniu:
+- (R6.6) Z₃ na fazy δᵢ ogona
+- (R6.7) Lokalnej zasady wariacyjnej S[g₀] z K=2/3 jako ekstremum
+
+**Pozostaje znacząca STAŁA numeryczna:** asymetria deficit/excess
+`c₁ = (η_exc(δ) - η_def(δ))/δ → 0.72538` (stała do 10⁻⁵).
+
+**Hipoteza D1**: c₁ jest **jedyną fizyczną skalą** TGP na której ODE różnicuje
+rozgałęzienia deficit (e) vs excess (μ,τ). Jeśli K=2/3 da się wyrazić przez c₁,
+mamy derywację Koide z asymetrii substrate.
+
+**Hipoteza D2** (TESTOWANE 2026-04-16): c₁ = 1 - ln(3)/4?
+   - Pomysł: `4·(1-c₁) = ln(3)` ⇔ c₁ wiąże N=3 przez Shannon entropię.
+   - Pomiar wysoko-precyzyjny: c₁ = 0.72525802 (Richardson extrap., 10⁻⁷)
+   - `1 - ln(3)/4 = 0.72534693` — diff 8.9×10⁻⁵ → **REJECTED** (100× nad precyzję)
+   - Żaden z klasycznych kandydatów (ln, π, e, φ) nie pasuje.
+
+**Plan ZREWIDOWANY**:
+1. Sprawdzić czy c₁ = limit całki z funkcji Bessela (perturbacyjna struktura ODE)
+2. Rozwiązać perturbacyjnie: g = 1 + δ·f, gdzie f spełnia liniowy ODE z Besselem
+3. Jeśli c₁ = ∫... (Bessel integral) to mimo że nie jest "ładne", to ma interpretację
+
+### Ścieżka E (NOWA): Tail winding number jako constraint
+
+Skoro Z₃ nie działa na **fazach ogona**, może działa na **liczbie nawinięć** (winding).
+Tail-wrap number n(g₀) = integer, bo ogon sin(r+δ)/r jest okresowy.
+Może: n_e + n_μ + n_τ = 0 mod 3 **wymusza** K=2/3?
 
 ## Status checklist
 
@@ -155,5 +219,9 @@ THE GAP: Step 5. What determines g₀^τ?
 - [x] K(g₀^e) skan: K zależy od g₀^e i g₀^τ
 - [x] g₀^τ candidates: 2·g₀^e najlepszy (0.55%), ale nie dokładny
 - [x] r₂₁ nie jest uniwersalne — zależy od g₀^e
+- [x] Z₃ na fazy ogona δᵢ — WYKLUCZONE (negatyw, 2026-04-16)
+- [x] Lokalna zasada wariacyjna dla K=2/3 — WYKLUCZONE (2026-04-16)
+- [ ] **Ścieżka D**: c₁ = 0.72538 analitycznie (czy ln(3)/4?)
+- [ ] **Ścieżka E**: tail winding number n(g₀) → Z₃ constraint
 - [ ] Derywacja g₀^τ z ODE (the gap!)
 - [ ] Związek g₀^τ/g₀^μ ≈ √(3/2) z K
