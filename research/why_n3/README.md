@@ -160,6 +160,46 @@ PREDYKCJA MASY TAU:
   → 4. generacja (g0_4=φ·g0_τ=2.798) > g0_crit=2.206 ZAKAZANA ✓
 ```
 
+### ✅ UOGOLNIENIE: θ = π/k, wspólny origin z α_geom (r3_koide_pi_over_k.py, 7/7 PASS)
+
+```
+OBSERWACJA: theta_Koide = pi/4 to π/k dla k = 4 (EXACT, diff < 0.001°).
+k = 4 nie jest przypadkowe -- to LICZBA CALKOWITA z fizycznym znaczeniem.
+
+ODKRYCIE ŁĄCZĄCE R3 + KOIDE:
+  α_geom = 3/4 (płaska akcja → N=3 z bariery TGP, r3_physical_alpha.py)
+  θ_Koide = π/4 (z K=2/3)
+
+  π/4 = π · (1 − 3/4) = π · (1 − α_geom)
+
+  >> WSPÓLNY ORIGIN: θ = π·(1-α) <<
+
+Interpretacja: α to sprzęenie kinetyczne w Lagrangianie.
+  (1-α) to 'dopełnienie' — część potencjalna/topologiczna.
+  Mnożone przez π daje kąt Koide w przestrzeni generacji.
+
+UOGÓLNIENIE DLA N GENERACJI:
+  H1 (uniwersalne θ=π/4):     K_N = 2/N
+  H2 (θ=π/(N+1)):            K_3=2/3 OK, K_4=0.382 (predykcja)
+  H3 (θ=π/(2N)):             NIE zgadza się z N=3
+
+  Dla charged leptons: k_lep = 4.00002 (PDG)
+  Dla quarks up:       k_up  = 3.52 (bez running QCD)
+  Dla quarks down:     k_down = 3.79
+
+  k całkowite TYLKO dla leptonów — kwarki mają QCD running + różną ładunek.
+
+Z_4 SYMETRIA (hipoteza):
+  Generacje = 3 z 4 stanów Z_4 (faza 0, π/2, π; pheromonowa 4. faza 3π/2 ZAKAZANA)
+  Wszystkie '1/4' w teorii spójne: α_geom=3/4, θ_Koide=π/4, N=3 z 4 stanów
+  1/4 to fundamentalna stała topologiczna.
+
+NEUTRINA (test Koide):
+  Predykcja K_nu = 2/3 dla neutrin NIE zgadza się z danymi.
+  Maksimum K_nu przy m_1→0 wynosi ~0.58, nie dochodzi do 2/3.
+  Sugestia: Koide specyficzny dla charged leptons (nie universal).
+```
+
 ### ✅ NOWE ODKRYCIE: SUM(g0) = 4 = 3·g0_crit(1D)
 
 ```
@@ -395,6 +435,7 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_barrier_Qd.py` | **Wzór g_bar=(4/π)Q_d, test 2D** | ✅ NOWE |
 | `r3_barrier_structural.py` | **Analiza strukturalna g₀_crit(d)** | ✅ NOWE |
 | `r3_koide_derivation.py` | **Derywacja Koide K=2/3, θ=π/4, SUM(g0)=4** | ✅ 13/13 PASS |
+| `r3_koide_pi_over_k.py` | **π/4 = π(1-α_geom), uogólnienie θ=π/(N+1)** | ✅ 7/7 PASS |
 
 ## Kryterium zamknięcia
 
@@ -431,6 +472,9 @@ Status: **SILNY MECHANIZM** — spójny obraz α=1 + A_tail⁴ + bariera → N=3
 - [x] **m_τ z Koide: 1775.3 MeV (PDG 1776.86, 0.09%)** — WERYFIKOWANE
 - [x] **SUM(g0)=4=3·g0_crit(1D)** — ODKRYTE
 - [x] **CV(√m)=1** — ODKRYTE (rozkład eksponencjalny)
+- [x] **θ=π(1-α_geom)** — LINK R3 ↔ Koide (wspólny origin)
+- [x] **Kwarki: K_up=0.85, K_down=0.73** — NIE Koide (QCD running)
+- [x] **Neutrina: max K~0.58 < 2/3** — Koide NIE uniwersalny
 - [ ] Analityczne g₀_crit(3D)
 - [ ] Wyprowadzić θ=π/4 z topologii spinu (Q5 bridge)
 - [ ] Dowód że SUM(g0)=4 to prawo zachowania ODE 1D
