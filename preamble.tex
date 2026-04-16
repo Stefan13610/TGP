@@ -25,6 +25,8 @@
 \usepackage[polish]{babel}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{mathtools}   % \xleftrightarrow, \xrightarrow z etykietą
+% Fallback dla \slashed{D} (operator Diraca) -- uzywany w sek09
+\providecommand{\slashed}[1]{\not #1}
 \usepackage[hidelinks]{hyperref}
 % Fix: \k{} (polskie znaki) w tytulach sekcji nie psuje bookmarkow PDF
 \pdfstringdefDisableCommands{\let\k\@gobble}

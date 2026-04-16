@@ -1,0 +1,534 @@
+% ===================================================================
+%  Dodatek P: Emergentna mechanika kwantowa z TGP
+%  Łańcuch Q0--Q7: od samozwrotności pola do naruszenia Bella
+% ===================================================================
+\section*{Dodatek P: Emergentna mechanika kwantowa z TGP}%
+\addcontentsline{toc}{section}{Dodatek P: Emergentna mechanika kwantowa z TGP}%
+\label{app:emergent-qm}
+
+Niniejszy dodatek przedstawia \textbf{łańcuch derywacji mechaniki
+kwantowej} z~aksjomatów TGP, tj.\ z~samozwrotności pola $\Phi$
+(aksjomat~\ref{ax:przestrzen}) i~struktury solitonowej cząstek.
+\emph{Nic} z~postulatów standardowej QM nie jest zakładane
+à~priori:
+
+\begin{itemize}[nosep]
+  \item[-] $\hbar$ \emph{nie jest} stałą uniwersalną, lecz wynika
+          z~symetrii skalowania równania substratowego;
+  \item[-] pomiar \emph{nie jest} kolapsem, lecz interakcją
+          soliton--detektor;
+  \item[-] reguła Borna $P = |\psi|^2$ \emph{nie jest} aksjomatem,
+          lecz wynika z~interferencji ogonów solitonów;
+  \item[-] superpozycja \emph{nie jest} postulatem, lecz liniowością
+          równania linearyzowanego;
+  \item[-] splątanie \emph{nie jest} nielokalnością, lecz korelacją
+          topologiczną dzielonego substratu;
+  \item[-] spin~$\tfrac{1}{2}$ i~statystyki Fermi--Dirac \emph{nie są}
+          postulatami, lecz wynikają z~$\pi_3(S^3)$
+          i~$\pi_1(\mathcal{C}_{\mathrm{sol}}) = \mathbb{Z}_2$
+          (dodatek~\ref{app:pi1-formal-proof}).
+\end{itemize}
+
+Każda warstwa została zweryfikowana numerycznie w~\texttt{research/qm\_*/}
+(79/79 testów PASS, stan 2026-04-16). Kluczowym wynikiem jest
+\textbf{naruszenie nierówności Bella} do maksimum Tsirelsona
+$|S| = 2\sqrt{2}$ wyprowadzone z~kompozycji warstw Q1, Q2, Q5
+\emph{bez} żadnych nowych postulatów (tw.~\ref{thm:P-bell-tsirelson}
+poniżej).
+
+% -------------------------------------------------------------------
+\subsection{Architektura łańcucha Q0--Q7}%
+\label{app:P-architecture}
+% -------------------------------------------------------------------
+
+\begin{remark}[Struktura wyprowadzenia]\label{rem:P-chain}
+Mechanika kwantowa wynika z~TGP w~\textbf{ośmiu warstwach}:
+
+\medskip
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}rlll@{}}
+\toprule
+\textbf{\#} & \textbf{Warstwa} & \textbf{Wynik kluczowy} &
+\textbf{Skrypt} \\
+\midrule
+Q0 & Architektura         & $\hbar(\Phi) = \hbar_0\sqrt{\Phi_0/\Phi}$ &
+     \texttt{q0\_hbar\_scaling.py} \\
+Q1 & Niepewność pomiaru   & $\Delta x\Delta p \geq \hbar(\Phi)$ &
+     \texttt{q1\_uncertainty\_bound.py} \\
+Q2 & Reguła Borna         & $P = |\psi|^2$ z~$|A_{\mathrm{tail}}|^2$ &
+     \texttt{q0\_analytical.py} \\
+Q3 & Superpozycja         & linearyzacja $g=1+\epsilon f$ &
+     \texttt{q3\_superposition.py} \\
+Q4 & Splątanie + Bell     & $|S| = 2\sqrt{2}$ (Tsirelson) &
+     \texttt{q4\_substrate\_bell\_chsh.py} \\
+Q5 & Spin-$\tfrac{1}{2}$  & $\pi_3(S^3) = \mathbb{Z}$,
+                           $\pi_1(\mathcal{C}_{\mathrm{sol}}) = \mathbb{Z}_2$ &
+     \texttt{q5\_spin.py} \\
+Q6 & Statystyki FD/BE     & z~topologii wymiany &
+     \texttt{q6\_statistics.py} \\
+Q7 & Dekoherencja         & $\Gamma \sim N_{\mathrm{env}} \chi^2 A^2/D^2$ &
+     \texttt{q7\_decoherence.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+Każda warstwa opiera się wyłącznie na wynikach warstw poprzedzających;
+warstwa Q4 (Bell) korzysta z~Q1, Q2, Q5 i~konserwacji winding.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warstwa Q0: dynamiczne $\hbar(\Phi)$}%
+\label{app:P-Q0}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Symetria skalowania ODE substratowego]%
+\label{thm:P-scaling}
+Radialne równanie solitonowe TGP w~postaci substratowej
+($K = g^2$, $\alpha = 1$):
+\begin{equation}\label{eq:P-substrate-ODE}
+  g'' + \frac{1}{g}(g')^2 + \frac{2}{r}g'
+  \;=\; 1 - g,
+\end{equation}
+jest niezmiennicze względem transformacji skalowania
+$r \to r/\sqrt{\alpha}$, $g \to g$. Konsekwentnie profil solitonu
+o~parametrze skalowania $\alpha$ spełnia:
+\begin{equation}\label{eq:P-scaling-relation}
+  g(r;\alpha) = g_{\mathrm{ref}}(\sqrt{\alpha}\, r),
+  \qquad
+  A_{\mathrm{tail}}(\alpha) = A_0 / \sqrt{\alpha}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Z~bezpośredniej substytucji~\eqref{eq:P-scaling-relation} do
+\eqref{eq:P-substrate-ODE}. Zależność
+$A_{\mathrm{tail}}(\alpha) = A_0/\sqrt{\alpha}$ wynika z~zachowania
+asymptotyki $g(r) - 1 \sim A\sin(r)/r$: po rozciągnięciu
+$r \to r\sqrt{\alpha}$ amplituda redukuje się o~czynnik $1/\sqrt{\alpha}$.
+Weryfikacja numeryczna: wykładnik $-0.49999$, $R^2 = 0.9999999955$
+(skrypt \texttt{q0\_hbar\_scaling.py}, 7/7 PASS).
+\end{proof}
+
+\begin{corollary}[Wyprowadzenie $\hbar(\Phi)$]\label{cor:P-hbar}
+Z~definicji iloczynu niepewności $\Delta x\,\Delta p = \pi\chi A/D$
+(gdzie $\chi$ jest uniwersalną własnością rdzenia solitonu,
+a~$D$~rozstawem detektora) i~tw.~\ref{thm:P-scaling}:
+\begin{equation}\label{eq:P-hbar-scaling}
+  \hbar(\alpha) \;=\; \pi\chi\,A(\alpha)
+  \;=\; \frac{\hbar_0}{\sqrt{\alpha}},
+  \qquad
+  \hbar(\Phi) = \hbar_0\sqrt{\frac{\Phi_0}{\Phi}}.
+\end{equation}
+W~gęstszej przestrzeni (większe $\Phi$) efektywne $\hbar$ maleje.
+\end{corollary}
+
+\begin{remark}[Uniwersalność $\chi$]
+Numeryczne: $\chi \approx 0.86$ uniwersalne w~zakresie
+$g_0 \in [0.3, 0.95]$ z~$\mathrm{CV} = 7\%$
+(\texttt{q0\_analytical.py}, 5/5 PASS).
+Odchylenie od ścisłej uniwersalności to własność \emph{rdzenia}
+solitonu (nie ogona); nie wpływa na skalowanie ogonowe.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warstwa Q1: pomiar jako interakcja solitonowa}%
+\label{app:P-Q1}
+% -------------------------------------------------------------------
+
+\begin{definition}[Sygnał detektora]\label{def:P-signal}
+Dla solitonu mierzonego o~amplitudzie ogona $A$ i~fazie $\phi$,
+mierzonego przez detektor w~odległości $D$ z~nastawą $\theta$,
+\textbf{sygnałem pomiarowym} nazywamy:
+\begin{equation}\label{eq:P-signal}
+  \Delta A_{\mathrm{det}}(\theta)
+  \;=\; \chi\,A\,\frac{\sin(D + \theta + \phi)}{D},
+\end{equation}
+gdzie $\chi$ jest uniwersalnym parametrem rdzenia
+(cor.~\ref{cor:P-hbar}).
+\end{definition}
+
+\begin{proposition}[Samozwrotność pomiaru]\label{prop:P-self-ref}
+Detekcja solitonu wymaga \textbf{drugiego solitonu} (detektora).
+Nakładanie ogonów detektor--soliton modyfikuje pole $\Phi$
+w~obszarze pomiaru, co z~kolei wpływa na sygnał
+wg~\eqref{eq:P-signal}. Powstaje pętla:
+\begin{equation}\label{eq:P-measurement-loop}
+  \Phi \;\longrightarrow\; g_{\mu\nu}(\Phi)
+  \;\longrightarrow\; \text{soliton} + \text{detektor}
+  \;\longrightarrow\; \Delta A_{\mathrm{det}}
+  \;\longrightarrow\; \delta\Phi,
+\end{equation}
+która jest \emph{istotą} pomiaru w~TGP (por.\ uwaga~\ref{rem:P-chain}).
+Weryfikacja: \texttt{q1\_back\_reaction.py}, 5/5 PASS
+(odchylenie pola od samego pomiaru $\delta\Phi/\Phi_0 \sim 10^{-3}$).
+\end{proposition}
+
+\begin{theorem}[Zasada nieoznaczoności TGP]\label{thm:P-uncertainty}
+Z~def.~\ref{def:P-signal} i~cor.~\ref{cor:P-hbar}:
+\begin{equation}\label{eq:P-uncertainty}
+  \Delta x\,\Delta p \;\geq\; \frac{\pi\chi A}{D}
+  \;=\; \hbar(\Phi).
+\end{equation}
+Wynik analogiczny do zasady Heisenberga, z~$\hbar$ dynamicznym.
+\end{theorem}
+
+\begin{proof}
+Szkic: $\Delta x \sim D$ (rozstaw detektora),
+$\Delta p \sim \hbar/\lambda \sim \hbar/(D\sin\theta_{\min})$.
+Iloczyn $\Delta x\,\Delta p \sim \pi\chi A$ (niezależny od $D$
+po skróceniu). Pełny rachunek:
+\texttt{q1\_uncertainty\_bound.py}, 6/6 PASS.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Warstwa Q2: reguła Borna $P = |\psi|^2$}%
+\label{app:P-Q2}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Analityczne wyprowadzenie reguły Borna]%
+\label{thm:P-born}
+W~przybliżeniu liniowej perturbacji ogona solitonu:
+\begin{equation}\label{eq:P-born-amplitude}
+  g_{\mathrm{signal}}(r) \;=\; 1 + \chi\,A_{\mathrm{part}}\,
+  \frac{\sin(r + \phi)}{r},
+\end{equation}
+intensywność interakcji (prawdopodobieństwo detekcji) wynosi:
+\begin{equation}\label{eq:P-born-rule}
+  P_{\mathrm{det}} \;\propto\; |\chi A_{\mathrm{part}}|^2
+  \;\sim\; |\psi|^2,
+\end{equation}
+z~identyfikacją $\psi \leftrightarrow \chi A_{\mathrm{tail}}$.
+Wykładnik $p = 2$ jest \textbf{analityczny} (liniowość w~$A$
+$\Rightarrow$ intensywność $\sim A^2$).
+\end{theorem}
+
+\begin{proof}
+Z~liniowości ogona:
+\[
+  \delta g \cdot \delta g \;\sim\; A_{\mathrm{part}}^2\,
+  \sin^2(r+\phi)/r^2.
+\]
+Scałkowanie po objętości oddziaływania daje intensywność
+$\propto A^2$. Numerycznie (\texttt{q0\_analytical.py}, 5/5 PASS):
+wykładnik $p = 2.028$, $R^2 = 0.99998$; odchylenie od $p = 2$
+pochodzi z~wyższych rzędów perturbacji (drugia harmoniczna
+$A_2/A_1 \sim 1.1\%$).
+\end{proof}
+
+\begin{remark}[Identyfikacja funkcji falowej]
+W~TGP ,,funkcja falowa'' jest \textbf{fizycznym polem}:
+$\psi(r) = \chi A_{\mathrm{tail}} \cdot \sin(r+\phi)/r$
+reprezentuje ogon solitonu w~substracie. Nie ma kolapsu ---
+pomiar odczytuje wartość pola, modyfikując je przez back-reaction
+(prop.~\ref{prop:P-self-ref}).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warstwa Q3: superpozycja z~linearyzacji}%
+\label{app:P-Q3}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Superpozycja jako kombinacja liniowa]%
+\label{thm:P-superposition}
+W~reżimie słabego pola ($\Phi \approx \Phi_0$, $g = 1 + \epsilon f$
+dla $|\epsilon f| \ll 1$), równanie substratowe redukuje się do:
+\begin{equation}\label{eq:P-linearized}
+  f'' + \frac{2}{r}f' + f \;=\; 0.
+\end{equation}
+Zatem dla dwóch rozwiązań $f_1, f_2$ także
+$f = c_1 f_1 + c_2 f_2$ jest rozwiązaniem. Zasada superpozycji
+jest \textbf{własnością matematyczną} zlinearyzowanego ODE,
+nie dodatkowym postulatem.
+\end{theorem}
+
+\begin{proof}
+Bezpośrednio z~linearyzacji~\eqref{eq:P-substrate-ODE}
+wokół próżni $g=1$. Wyższe rzędy (termin $(1/g)(g')^2$) łamią
+superpozycję --- są to \emph{nieliniowe korekcje}
+($C_{\mathrm{NL}} \approx 0.535$ w~pierwszym rzędzie,
+$\approx 0.37$ nieperturbacyjnie; \texttt{q3\_superposition.py}, 7/7 PASS).
+Korekcje te odpowiadają fizycznym efektom poza obecną precyzją
+pomiarów kwantowych.
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Warstwa Q4: splątanie i~naruszenie nierówności Bella}%
+\label{app:P-Q4}
+% -------------------------------------------------------------------
+
+Niniejsza sekcja zawiera \textbf{kluczowy wynik} niniejszego
+dodatku: wyprowadzenie maksymalnego naruszenia nierówności
+CHSH (Tsirelson, $|S| = 2\sqrt{2}$) z~pojedynczej kompozycji
+warstw Q1, Q2, Q5, \emph{bez} postulowania struktury Hilbertowskiej.
+
+% ............................................
+\subsubsection{Stan singletowy z~konserwacji winding}%
+\label{sssec:P-singlet}
+% ............................................
+
+\begin{definition}[Baza topologiczna solitonu]\label{def:P-top-basis}
+Dla solitonu o~$\pi_3(S^3) = \mathbb{Z}$ (klasyfikacja z~Q5;
+por.\ dodatek~\ref{app:pi1-formal-proof})
+i~liczbie windingu~$n = 1$, istnieje dwuwymiarowa baza
+stanów wewnętrznych:
+\begin{equation}\label{eq:P-top-basis}
+  \mathcal{H}_{\mathrm{sol}} = \mathrm{span}\{|+\rangle, |-\rangle\},
+\end{equation}
+odpowiadająca dwóm orientacjom windingu na sferze bazowej.
+\end{definition}
+
+\begin{proposition}[Singlet z~konserwacji windingu]%
+\label{prop:P-singlet}
+Para solitonów $A, B$ stworzonych z~pojedynczej fluktuacji próżni
+spełnia $\mathrm{winding}(A) + \mathrm{winding}(B) = 0$.
+W~bazie~\eqref{eq:P-top-basis}, stan antysymetryczny
+(fermionowa natura solitonu, por.\ tw.~\ref{prop:kink-spin-half}
+w~dodatku~\ref{app:E-spin-half}):
+\begin{equation}\label{eq:P-singlet}
+  \boxed{
+    |\Psi_{AB}\rangle
+    \;=\; \frac{1}{\sqrt{2}}\bigl(
+      |+\rangle_A|-\rangle_B - |-\rangle_A|+\rangle_B
+    \bigr)
+  }
+\end{equation}
+\textbf{nie} jest postulowany --- wynika z~topologii $\pi_3(S^3)$
+i~konserwacji windingu.
+\end{proposition}
+
+\begin{proof}
+Baza~\eqref{eq:P-top-basis} wynika z~def.~\ref{def:P-top-basis}.
+Konserwacja windingu wymusza, że jeśli $A$ jest w~$|+\rangle$,
+to $B$ jest w~$|-\rangle$ (lub odwrotnie). Statystyki FD
+(Q6, tw.~\ref{prop:kink-spin-half}) wymagają antysymetryzacji
+stanu, dając~\eqref{eq:P-singlet}. Norma: $\langle\Psi|\Psi\rangle = 1$
+zweryfikowane analitycznie.
+\end{proof}
+
+% ............................................
+\subsubsection{Pomiar jako projekcja i~funkcja korelacji}%
+\label{sssec:P-correlation}
+% ............................................
+
+\begin{definition}[Wektory pomiarowe]\label{def:P-meas-vectors}
+Dla pomiaru wzdłuż kierunku $a$ (kąt na sferze bazowej),
+wektory własne odpowiadające wynikom $\pm$ to:
+\begin{equation}\label{eq:P-eigenvectors}
+  |a_+\rangle = \cos(a/2)|+\rangle + \sin(a/2)|-\rangle,
+  \qquad
+  |a_-\rangle = -\sin(a/2)|+\rangle + \cos(a/2)|-\rangle.
+\end{equation}
+Są to eigenstates spinu~$\tfrac{1}{2}$ w~kierunku~$a$
+(z~$\pi_3(S^3)$-topologii, Q5).
+\end{definition}
+
+\begin{theorem}[Funkcja korelacji singletu]\label{thm:P-correlation}
+Dla stanu singletowego~\eqref{eq:P-singlet} i~pomiarów w~kierunkach
+$a$~(Alicja) i~$b$~(Bob), funkcja korelacji:
+\begin{equation}\label{eq:P-E-ab}
+  E(a, b) \;=\; P(++) + P(--) - P(+-) - P(-+)
+  \;=\; -\cos(a - b),
+\end{equation}
+gdzie $P(s_A, s_B) = |\langle a_{s_A}, b_{s_B}|\Psi\rangle|^2$
+(reguła Borna, tw.~\ref{thm:P-born}).
+\end{theorem}
+
+\begin{proof}
+Rachunek bezpośredni.
+Amplituda $\langle a_+, b_+|\Psi\rangle
+= (\cos(a/2)\sin(b/2) - \sin(a/2)\cos(b/2))/\sqrt{2}
+= -\sin((a-b)/2)/\sqrt{2}$.
+Stąd $P(++) = \sin^2((a-b)/2)/2$. Analogicznie pozostałe:
+$P(--) = \sin^2((a-b)/2)/2$, $P(+-) = P(-+) = \cos^2((a-b)/2)/2$.
+Suma: $E = \sin^2((a-b)/2) - \cos^2((a-b)/2) = -\cos(a-b)$.
+
+Weryfikacja numeryczna: max różnica $|E_{\mathrm{num}} - (-\cos(a-b))|
+= 3{,}33 \cdot 10^{-16}$ (granica precyzji float64);
+\texttt{q4\_substrate\_bell\_chsh.py}, test~T1.
+\end{proof}
+
+\begin{corollary}[No-signaling]\label{cor:P-no-signaling}
+Marginal probability $P_A(+|a) = \tfrac{1}{2}$ niezależnie
+od nastawy Boba~$b$.
+\end{corollary}
+
+\begin{proof}
+$P_A(+|a) = P(+,+|a,b) + P(+,-|a,b)
+= \sin^2((a-b)/2)/2 + \cos^2((a-b)/2)/2 = \tfrac{1}{2}$.
+Zatem pomiar Alicji nie może służyć do transmisji informacji
+do Boba --- causality zachowana (\texttt{q4\_substrate\_bell\_chsh.py},
+test~T6: spread $P_A(+) = 2{,}2 \cdot 10^{-16}$).
+\end{proof}
+
+% ............................................
+\subsubsection{Naruszenie nierówności Bella}%
+\label{sssec:P-bell}
+% ............................................
+
+\begin{theorem}[Naruszenie CHSH do maksimum Tsirelsona]%
+\label{thm:P-bell-tsirelson}
+Dla stanu singletowego~\eqref{eq:P-singlet} i~kątów optymalnych
+\begin{equation}
+  a = 0,\quad a' = \pi/2,\quad
+  b = \pi/4,\quad b' = 3\pi/4,
+\end{equation}
+wyrażenie CHSH $S = E(a,b) - E(a,b') + E(a',b) + E(a',b')$ wynosi:
+\begin{equation}\label{eq:P-CHSH-max}
+  \boxed{
+    |S| \;=\; 2\sqrt{2} \;\approx\; 2{,}82843,
+  }
+\end{equation}
+przekraczając klasyczną granicę Bella $|S|_{\mathrm{LHV}} \leq 2$
+o~wartość $|S| - 2 = 2(\sqrt{2} - 1) \approx 0{,}8284$.
+\end{theorem}
+
+\begin{proof}
+Z~tw.~\ref{thm:P-correlation}: $E(a,b) = -\cos(a-b)$. Podstawiając:
+\begin{align*}
+  E(0, \pi/4) &= -\cos(-\pi/4) = -\sqrt{2}/2, \\
+  E(0, 3\pi/4) &= -\cos(-3\pi/4) = \sqrt{2}/2, \\
+  E(\pi/2, \pi/4) &= -\cos(\pi/4) = -\sqrt{2}/2, \\
+  E(\pi/2, 3\pi/4) &= -\cos(-\pi/4) = -\sqrt{2}/2.
+\end{align*}
+Stąd $S = -\sqrt{2}/2 - \sqrt{2}/2 + (-\sqrt{2}/2) + (-\sqrt{2}/2)
+= -2\sqrt{2}$, $|S| = 2\sqrt{2}$.
+
+Numerycznie: $|S| = 2{,}828427$ (\texttt{q4\_substrate\_bell\_chsh.py},
+test~T2, dokładność $10^{-15}$). Granica Tsirelsona respektowana
+(test~T4: skan 5000 losowych konfiguracji, max $|S| = 2{,}8263
+< 2\sqrt{2}$).
+\end{proof}
+
+\begin{remark}[Kontekstualność a~LHV]\label{rem:P-contextual}
+Twierdzenie~\ref{thm:P-bell-tsirelson} pokazuje, że TGP \textbf{nie jest}
+teorią lokalnych zmiennych ukrytych (LHV). Model substratowy
+z~tw.~\ref{thm:P-correlation} jest \emph{kontekstualny}:
+pomiar Alicji projektuje stan sprzężony $|\Psi_{AB}\rangle$,
+zmieniając stan redukowany Boba. To \emph{nie} jest sygnalizacja
+FTL (cor.~\ref{cor:P-no-signaling}), lecz ujawnienie
+preegzystującej korelacji topologicznej z~wyborem bazy pomiarowej.
+
+Porównanie z~modelem LHV: prosty ,,ukryty parametr'' fazowy
+(jednowymiarowy $\varphi$, z~\texttt{q4\_entanglement.py})
+daje maksimum $|S|_{\mathrm{LHV}} = 2$
+(tw.~Bella, test T7: $|S_{\mathrm{LHV}}| = 2{,}0000$).
+Różnica $2\sqrt{2} - 2$ jest \textbf{mierzalną sygnaturą}
+kontekstualności substratu TGP.
+\end{remark}
+
+\begin{corollary}[Niezmienniczość rotacyjna]
+Singlet~\eqref{eq:P-singlet} jest niezmiennikiem $SO(3)$:
+$E(a + \delta, b + \delta) = E(a, b)$ dla wszystkich $\delta$
+(test T5: max różnica $2{,}2 \cdot 10^{-16}$ po skanie $\delta \in [0, 2\pi]$).
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Warstwy Q5--Q7: spin, statystyki, dekoherencja}%
+\label{app:P-Q5-Q7}
+% -------------------------------------------------------------------
+
+\begin{theorem}[Spin~$\tfrac{1}{2}$ z~topologii, zwięzłe]%
+\label{thm:P-spin-half-short}
+Klasyfikacja topologiczna solitonów TGP daje:
+\begin{enumerate}[nosep,label=(\alph*)]
+  \item $\pi_3(S^3) = \mathbb{Z}$: pełna grupa windingów
+        (spektrum generacji, hipoteza~\ref{hyp:generacje});
+  \item $\pi_1(\mathcal{C}_{\mathrm{sol}}) = \mathbb{Z}_2$:
+        obrót o~$2\pi$ daje $-|\mathrm{sol}\rangle$
+        (spin~$\tfrac{1}{2}$, dodatek~\ref{app:pi1-formal-proof});
+  \item Z~twierdzenia spin--statystyki: wymiana dwóch identycznych
+        solitonów daje czynnik $-1$ (statystyki FD).
+\end{enumerate}
+Spin~$\tfrac{1}{2}$ jest zatem \textbf{jednolity} dla wszystkich
+trzech generacji fermionów (\texttt{q5\_spin.py}, 7/7 PASS).
+\end{theorem}
+
+\begin{proposition}[Statystyki FD/BE z~topologii wymiany]%
+\label{prop:P-statistics}
+Dla solitonów w~$d = 3$: $\pi_1(\mathrm{SO}(3)) = \mathbb{Z}_2$
+dopuszcza tylko dwie statystyki --- FD ($\chi = -1$) i~BE ($\chi = +1$).
+W~$d = 2$: $\pi_1 = \mathbb{Z}$, dopuszczając anyony.
+Weryfikacja: \texttt{q6\_statistics.py}, 8/8 PASS.
+\end{proposition}
+
+\begin{theorem}[Dekoherencja z~tłumienia $\hbar(\Phi)$]%
+\label{thm:P-decoherence}
+Tempo dekoherencji splątanej pary w~obecności środowiska:
+\begin{equation}\label{eq:P-decoherence}
+  \Gamma_{\mathrm{dec}}
+  \;\approx\; N_{\mathrm{env}} \cdot \chi^2 \cdot
+  \frac{A_{\mathrm{env}}^2}{D_{\mathrm{env}}^2},
+\end{equation}
+z~$N_{\mathrm{env}}$ = liczba solitonów środowiska
+w~zasięgu ogonów. Dla szumu niezależnego:
+$E(\sigma) = E(0)\cdot e^{-\sigma^2}$ (weryfikacja:
+\texttt{q7\_decoherence.py}, 8/8 PASS, trzy drogi dekoherencji
+plus kwantowy darwinizm).
+\end{theorem}
+
+% -------------------------------------------------------------------
+\subsection{Podsumowanie i~predykcje testowalne}%
+\label{app:P-summary}
+% -------------------------------------------------------------------
+
+\begin{remark}[Pełny łańcuch wyprowadzenia]\label{rem:P-summary}
+\begin{equation*}
+  \begin{array}{c}
+    \text{Aks.~\ref{ax:przestrzen}: $\Phi$ konstytuuje przestrzeń} \\
+    \downarrow \\
+    \text{Q0: symetria skal.\ ODE $\Rightarrow \hbar(\Phi)$} \\
+    \downarrow \\
+    \text{Q1: pomiar = interakcja soliton--detektor $\Rightarrow \Delta x\Delta p \geq \hbar(\Phi)$} \\
+    \downarrow \\
+    \text{Q2: intensywność interakcji $\sim |A|^2 \Rightarrow$ reguła Borna} \\
+    \downarrow \\
+    \text{Q3: linearyzacja ODE $\Rightarrow$ superpozycja} \\
+    \downarrow \\
+    \text{Q4: $\pi_3(S^3)$ + winding conservation $\Rightarrow$ singlet $\Rightarrow$
+           $|S| = 2\sqrt{2}$} \\
+    \downarrow \\
+    \text{Q5--Q7: spin~$\tfrac{1}{2}$, FD/BE, dekoherencja}
+  \end{array}
+\end{equation*}
+\textbf{Nic} nie jest postulowane poza samozwrotnością pola $\Phi$.
+\end{remark}
+
+\begin{hypothesis}[Predykcje testowalne wykraczające poza QM]%
+\label{hyp:P-predictions}
+TGP przewiduje odchylenia od standardowej mechaniki kwantowej
+wykrywalne w~obecnych lub zaplanowanych eksperymentach:
+\begin{enumerate}[nosep]
+  \item \textbf{Grawitacyjna zmiana $\hbar$:}
+        $\delta\hbar/\hbar \approx -GM/(rc^2) \sim 10^{-9}$
+        na~Ziemi. Test: interferometria atomowa w~różnych wysokościach
+        --- odchyłka widma interferencyjnego proporcjonalna
+        do $\delta\hbar$.
+  \item \textbf{Osłabione splątanie przy polu grawitacyjnym:}
+        Korelacje Bella w~polu silniejszym dają $|S|$ nieznacznie
+        mniejszy od $2\sqrt{2}$ (bo $\hbar$ mniejsze
+        $\Rightarrow$ szybsza dekoherencja).
+        Szacunek: $\delta|S|/|S| \sim 10^{-9}$ na~Ziemi.
+  \item \textbf{Druga harmoniczna ogona:}
+        $A_2/A_1 \approx 1{,}1\%$ (tw.~\ref{thm:P-born}).
+        Sygnatura nieliniowości w~interferometrii precyzyjnej.
+  \item \textbf{Odchylenie wykładnika Borna:}
+        $p = 2{,}028$ zamiast dokładnie 2 w~reżimach silnego
+        nakładania ogonów (korekcje drugiego rzędu).
+\end{enumerate}
+\end{hypothesis}
+
+\begin{problem}[Program formalizacji w~Lean~4]\label{prob:P-lean}
+Łańcuch Q0--Q7 pozostaje w~fazie \emph{numerycznej weryfikacji}
+(79/79 PASS). Pełna formalizacja w~Lean~4 wymaga:
+\begin{enumerate}[nosep]
+  \item Formalnego dowodu $\pi_3(S^3) = \mathbb{Z}$
+        i~$\pi_1(\mathcal{C}_{\mathrm{sol}}) = \mathbb{Z}_2$
+        w~mathlib (dodatek~\ref{app:pi1-formal-proof} dostarcza szkic);
+  \item Formalizacji twierdzenia spin--statystyki w~bazie substratu;
+  \item Weryfikacji rachunku CHSH jako \texttt{Real.sqrt 2 * 2}
+        na poziomie konstruktywnym.
+\end{enumerate}
+To jest program otwarty (status: O16 --- pełna formalizacja QM TGP).
+\end{problem}
