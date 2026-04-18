@@ -1,0 +1,474 @@
+==============================================================================
+  gs24: BULLET CLUSTER (1E 0657-558) IN THE TGP MEMBRANE FRAMEWORK
+==============================================================================
+
+==============================================================================
+  PART A: BULLET CLUSTER OBSERVATIONAL DATA
+==============================================================================
+
+  System: 1E 0657-558 (the "Bullet Cluster")
+  Redshift:         z = 0.296
+  Discovery:        Tucker et al. (1998)
+  Lensing analysis: Clowe et al. (2006), Bradac et al. (2006)
+
+  Main cluster:
+    M_lens (total)  = 1.0e+15 M_sun
+    T_X             = 14 keV
+    M_gas           = 1.2e+14 M_sun  (f_gas = 0.12)
+    M_star          = 2.0e+13 M_sun
+    M_baryon        = 1.4e+14 M_sun
+    r_s (NFW)       = 400 kpc
+    r_200           = 2000 kpc
+
+  Bullet subcluster:
+    M_lens (total)  = 1.0e+14 M_sun
+    T_X             = 6 keV
+    M_gas           = 1.5e+13 M_sun  (f_gas = 0.15)
+    M_star          = 3.0e+12 M_sun
+    M_baryon        = 1.8e+13 M_sun
+    r_s (NFW)       = 150 kpc
+    r_200           = 900 kpc
+
+  Collision parameters:
+    v_collision     = 4700 km/s
+    c_s (main)      = 1495 km/s
+    Mach number     = 3.1
+    Separation      = 720 kpc (between lensing peaks)
+    Lensing offset  = 150 kpc (from gas centroid, per subcluster)
+
+  THE KEY PROBLEM:
+    Baryonic mass is dominated by gas (80-85% of baryons).
+    After collision, gas is ram-pressure stripped --> sits near center.
+    Galaxies (15-20% of baryons) are collisionless --> passed through.
+    Lensing peaks coincide with GALAXIES, not with GAS.
+    In LCDM: collisionless DM halos passed through with galaxies.
+    In TGP:  no DM -- gravitational boost must somehow peak at galaxy positions.
+
+==============================================================================
+  PART B: TGP GRAVITATIONAL FIELD FROM BARYONIC DISTRIBUTION
+==============================================================================
+
+  B.1  Post-collision geometry (1-D model along collision axis)
+  ------------------------------------------------------------
+    Gas centroids:      x_main = -100 kpc,  x_bullet = +100 kpc
+    Galaxy centroids:   x_main = -360 kpc,  x_bullet = +360 kpc
+    Gas separation:     200 kpc  (stripped toward center)
+    Galaxy separation:  720 kpc  (passed through each other)
+
+  B.2  Sphericity assignments
+  ---------------------------
+    Gas:      S = 0.8  (quasi-spherical, gamma = 0.533)
+    Galaxies: S = 0.5  (more extended,   gamma = 0.490)
+
+  B.3  Acceleration profile summary
+  ----------------------------------
+    At x = 0 (midpoint):
+      g_bar   = 1.150e-11 m/s^2
+      y       = 0.103
+      nu(y,S) = 3.863
+      g_TGP   = 4.444e-11 m/s^2
+      boost   = 3.86x
+
+    At x = -360 kpc (main galaxy position):
+      g_bar   = 1.416e-10 m/s^2
+      y       = 1.264
+      nu      = 1.264
+
+    At x = +360 kpc (bullet galaxy position):
+      g_bar   = 1.023e-10 m/s^2
+      y       = 0.913
+      nu      = 1.414
+
+==============================================================================
+  PART C: THE LENSING OFFSET PROBLEM -- PHANTOM DARK MATTER
+==============================================================================
+
+  C.1  What is phantom dark matter?
+  ----------------------------------
+  In GR + MOND/TGP, the total gravitational field is g_obs = nu(y)*g_bar.
+  A GR observer attributes this to total mass:
+      M_total = g_obs * r^2 / G = nu(y) * M_bar
+  The "phantom" or "missing" mass is:
+      M_phantom = M_total - M_bar = (nu - 1) * M_bar
+
+  The distribution of this phantom mass is NOT the same as baryonic mass.
+  Where g_bar is SMALL (y << 1), nu - 1 is LARGE (deep MOND boost).
+  So phantom mass is largest in the OUTSKIRTS, where Newtonian gravity is weak.
+
+  C.2  Peak locations (1-D model)
+  --------------------------------
+    Baryonic (Newtonian) lensing peaks:
+      Left (main):     x = -364 kpc
+      Right (bullet):  x = +169 kpc
+
+    TGP total lensing peaks:
+      Left (main):     x = -364 kpc
+      Right (bullet):  x = +169 kpc
+
+    Phantom mass peaks:
+      Left (main):     x = -156 kpc
+      Right (bullet):  x = +54 kpc
+
+    Observed lensing peaks:
+      Left (main):     x ~ -360 kpc  (at main galaxy centroid)
+      Right (bullet):  x ~ +360 kpc  (at bullet galaxy centroid)
+
+    Gas centroids:
+      Left (main):     x = -100 kpc
+      Right (bullet):  x = +100 kpc
+
+
+  C.3  Offset analysis
+  ---------------------
+    TGP total lensing peak vs gas centroid:
+      Main:   |x_TGP_peak - x_gas|  = 264 kpc
+      Bullet: |x_TGP_peak - x_gas|  = 69 kpc
+
+    Observed offset (lensing peak vs gas centroid):
+      ~150-260 kpc per subcluster
+
+    Key question: does the TGP boost shift the lensing peak AWAY from the gas
+    and TOWARD the galaxy positions?
+
+==============================================================================
+  PART D: MEMBRANE PROPAGATION AND GRAVITATIONAL MEMORY
+==============================================================================
+
+  D.1  Membrane crossover scales
+  --------------------------------
+    r_c(main)   = sqrt(G*M_bar / a0) = 417 kpc
+    r_c(bullet) = sqrt(G*M_bar / a0) = 150 kpc
+
+  D.2  Relaxation timescales
+  ---------------------------
+    tau_relax(main)   = r_c / c = 1.4 Myr
+    tau_relax(bullet) = r_c / c = 0.5 Myr
+
+    t_collision       ~ 150 Myr  (time since core passage)
+    t_cross = d/v     = 150 Myr
+
+  D.3  Memory ratio: tau_relax / t_collision
+  -------------------------------------------
+    Main:   tau / t_coll = 0.0091
+    Bullet: tau / t_coll = 0.0033
+
+  D.4  Interpretation
+  --------------------
+
+    The membrane relaxation time is MUCH SHORTER than the collision timescale.
+    The membrane has fully relaxed to the current baryonic distribution.
+    Gravitational memory CANNOT explain the lensing offset.
+
+    Estimated memory fraction: 0.009
+    (fraction of pre-collision gravitational field that might persist)
+
+
+  D.5  Slow-mode membrane propagation (speculative)
+  ---------------------------------------------------
+  In DGP braneworld models, the graviton has a soft mass m_g ~ 1/r_c.
+  The massive mode propagates with reduced group velocity on the brane:
+      v_group ~ c * sqrt(1 - (m_g*c^2 / E)^2)
+  For modes with wavelength ~ r_c: v_group ~ 0.
+
+  If TGP membrane propagation is similarly dispersive, the relaxation
+  timescale at scale r_c could be MUCH longer than r_c/c.
+
+  Let us parameterize: tau_eff = r_c / v_eff, with v_eff << c.
+
+    v_eff/c     tau_eff(main)    tau/t_coll     Memory?
+    ------------------------------------------------------------
+    1e+00              1.4 Myr         0.009       no
+    1e-01             13.6 Myr         0.091       no
+    1e-02            136.1 Myr         0.907       partial
+    1e-03           1360.5 Myr         9.070       YES
+    1e-04          13605.3 Myr        90.702       YES
+
+  RESULT: Gravitational memory requires v_eff/c < 10^{-4}, i.e., the membrane
+  propagation speed must be 10,000x slower than light.  This is physically
+  implausible for a gravitational mode.  Gravitational memory is NOT a viable
+  mechanism for explaining the Bullet Cluster lensing offset.
+
+==============================================================================
+  PART E: QUANTITATIVE 1-D COLLISION MODEL AND LENSING MAPS
+==============================================================================
+
+  E.1  Pre-collision equilibrium: isolated halos
+  -----------------------------------------------
+  For each subcluster, compute the TGP effective mass profile assuming
+  isolated, spherical baryonic distribution.
+
+  Main cluster (M_bar = 1.40e+14 M_sun):
+    At r = 100 kpc:  M_bar = 5.50e+12,  nu = 1.58
+    At r = 500 kpc:  M_bar = 5.20e+13,  nu = 2.47
+    At r = 1000 kpc: M_bar = 1.02e+14, nu = 3.48
+    At r = 2000 kpc: M_bar = 1.71e+14, nu = 5.35
+    M_TGP(r200)     = 1.54e+15 M_sun
+    M_lens(obs)     = 1.00e+15 M_sun
+    Ratio M_TGP/M_lens = 1.544
+
+  Bullet (M_bar = 1.80e+13 M_sun):
+    At r = 50 kpc:   M_bar = 1.35e+12,  nu = 1.59
+    At r = 200 kpc:  M_bar = 8.11e+12,  nu = 2.49
+    At r = 500 kpc:  M_bar = 1.80e+13,  nu = 4.13
+    M_TGP(r200)     = 7.19e+14 M_sun
+    M_lens(obs)     = 1.00e+14 M_sun
+    Ratio M_TGP/M_lens = 7.191
+
+  E.2  Post-collision lensing maps (1-D projection)
+  ------------------------------------------------------------
+
+  Post-collision convergence map peaks (kappa, normalized):
+
+    Component        Main (left)              Bullet (right)
+                     peak_x    kappa          peak_x    kappa
+    Baryonic:           -364 kpc  0.5415          +169 kpc  0.9011
+    TGP total:          -364 kpc  0.6846          +169 kpc  1.0000
+    Phantom only:       -159 kpc  0.1732           +56 kpc  0.1737
+    Observed:            -360 kpc                  +360 kpc
+
+  Convergence at key positions:
+                     At gas centroid          At galaxy centroid
+    Main:  kappa_TGP = 0.2181 (gas)   vs  0.6845 (gal)
+    Bullet: kappa_TGP = 0.6972 (gas)   vs  0.5531 (gal)
+
+
+  E.3  Mass budget (integrated over each half-space)
+  ---------------------------------------------------
+    Main cluster (x < 0):
+      M_bar_eff  = 5.32e+13 M_sun
+      M_TGP_eff  = 1.02e+14 M_sun
+      Boost      = 1.91x
+      Observed   = 1.00e+15 M_sun
+      Needed boost = 7.1x
+
+    Bullet (x > 0):
+      M_bar_eff  = 5.32e+13 M_sun
+      M_TGP_eff  = 9.94e+13 M_sun
+      Boost      = 1.87x
+      Observed   = 1.00e+14 M_sun
+      Needed boost = 5.6x
+
+
+  E.4  Lensing offset: TGP prediction vs observation
+  ----------------------------------------------------
+    Main cluster:
+      TGP lensing peak:        x = -364 kpc
+      Gas centroid:             x = -100 kpc
+      TGP offset from gas:     264 kpc
+      Observed offset:         260 kpc
+      Fraction explained:      101.5%
+
+    Bullet:
+      TGP lensing peak:        x = +169 kpc
+      Gas centroid:             x = +100 kpc
+      TGP offset from gas:     69 kpc
+      Observed offset:         260 kpc
+      Fraction explained:      26.5%
+
+==============================================================================
+  PART F: COMPARISON WITH MOND LITERATURE AND HONEST ASSESSMENT
+==============================================================================
+
+  F.1  Literature on MOND and the Bullet Cluster
+  ------------------------------------------------
+
+  [1] Clowe et al. (2006, ApJ 648, L109):
+      "A Direct Empirical Proof of the Existence of Dark Matter"
+      - Original weak lensing analysis showing mass-gas offset
+      - Claimed "direct proof" that DM exists independent of gravity theory
+      - Impact: widely cited as falsification of MOND
+
+  [2] Angus, Shan, Zhao & Famaey (2006, ApJ 654, L13):
+      - Proposed MOND + 2 eV ordinary neutrinos
+      - Hot neutrino halos provide ~60% of the missing mass in clusters
+      - Problem: neutrino free-streaming erases structure < 10 Mpc
+      - Can explain ~60% of the Bullet Cluster mass discrepancy
+
+  [3] Angus, Famaey & Zhao (2006, MNRAS 371, 138):
+      - Extended analysis: MOND + 2 eV sterile neutrinos
+      - Sterile neutrinos are collisionless (like DM, would pass through)
+      - Could explain lensing offset IF sterile neutrinos followed galaxies
+      - Problem: 2 eV neutrinos now strongly disfavored by Planck (m_nu < 0.12 eV)
+
+  [4] Milgrom (2008, NewAR 51, 906):
+      "The MOND paradigm of modified dynamics"
+      - Arguments that Bullet Cluster does NOT definitively falsify MOND:
+        (a) The mass discrepancy is only ~2x, not 5-6x as in individual clusters
+        (b) External field effect (EFE) could modify the dynamics
+        (c) The system is highly non-equilibrium; MOND formulae may not apply
+        (d) Residual neutrino mass could contribute
+      - However: does NOT provide a concrete mechanism for the lensing offset
+
+  [5] Skordis & Zlosnik (2021, PRL 127, 161302):
+      - "New relativistic theory for MOND" (RMOND)
+      - Successfully fits CMB power spectrum (major achievement)
+      - Bullet Cluster explicitly NOT addressed in the paper
+      - The vector field in RMOND could in principle behave like "dark matter"
+        in a collision, but this has not been demonstrated
+
+  [6] Brownstein & Moffat (2007, MNRAS 382, 29):
+      - MOG (Modified Gravity) can fit Bullet Cluster lensing
+      - But MOG is not MOND; it has additional vector/scalar fields
+      - The additional fields act as effective dark matter
+
+
+  F.2  TGP boost factor at cluster scales
+  ------------------------------------------------------------
+    r (kpc)    g_bar (m/s^2)    y = g/a0    nu(y, S=0.8)   M_eff/M_bar
+       100     7.672e-11          0.685        1.584         1.58
+       200     5.641e-11          0.504        1.809         1.81
+       500     2.898e-11          0.259        2.465         2.47
+      1000     1.419e-11          0.127        3.485         3.48
+      2000     5.942e-12          0.053        5.352         5.35
+
+  At virial radius (r = 2000 kpc):
+    M_bar_enc   = 1.71e+14 M_sun
+    nu(y, S=0.8)= 5.352
+    M_TGP       = 9.13e+14 M_sun
+    M_lens(obs) = 1.00e+15 M_sun
+    Mass deficit: M_lens / M_TGP = 1.10
+    --> TGP can explain 91% of the lensing mass
+
+
+  F.3  The spatial offset problem: TGP assessment
+  -------------------------------------------------
+  The lensing offset is the HARDER problem.  Even if TGP provided enough total
+  mass, the phantom mass distribution must peak at the galaxy positions.
+
+  In standard (non-relativistic) MOND/TGP:
+    g_obs = nu(g_bar/a0) * g_bar
+    The phantom mass distribution follows g_bar, which is dominated by gas.
+    Therefore: phantom mass peaks at gas positions, NOT galaxy positions.
+
+  This is INDEPENDENT of the interpolation function.  ANY theory where
+  g_obs = f(g_bar) * g_bar will have phantom mass tracing g_bar.
+
+  The only escape routes are:
+    (1) Non-local effects (membrane memory) -- shown in Part D to require
+        v_eff/c < 10^{-4}, which is implausible.
+    (2) Additional collisionless matter (neutrinos, sterile particles)
+    (3) A fundamentally different coupling in which the gravitational
+        enhancement depends on the HISTORY of the mass distribution,
+        not its current state.
+    (4) Relativistic effects in the vector/tensor sector of TGP
+        (analogous to Skordis-Zlosnik RMOND approach).
+
+
+  F.4  HONEST SCORECARD: TGP vs Bullet Cluster
+  ===============================================
+
+  Challenge                        TGP Performance           Score
+  --------------------------------------------------------------------------
+  (1) Total mass at r200           ~2x boost (need ~7x)      FAIL
+      Cluster-scale mass budget    Only ~30% of needed mass   2/10
+      (consistent with known MOND
+       cluster problem, gs13/gs15)
+
+  (2) Lensing peak offset          Peaks track gas, not       FAIL
+      from gas centroid            galaxies                   1/10
+      (the CRITICAL test)
+
+  (3) Mach 3 collision velocity    TGP cannot explain         FAIL
+      ~4700 km/s is hard even     (needs M > M_bar in halo)  3/10
+      for LCDM
+
+  (4) Merger rate / probability    Not addressed (similar     N/A
+                                   to LCDM: very rare)
+
+  (5) Gas temperature profile      TGP predicts less total    PARTIAL
+      and X-ray luminosity         mass -> lower T expected   4/10
+                                   (but clusters are already
+                                    problematic, gs13)
+
+  OVERALL: 2/10
+  --------------------------------------------------------------------------
+
+  VERDICT: The Bullet Cluster remains a SEVERE challenge for TGP, just as it
+  is for all MOND-like theories.  The two fundamental problems are:
+
+    (A) MASS DEFICIT: TGP boosts cluster-scale mass by only ~2x, but the
+        lensing mass is ~7x the baryonic mass.  This is the same "cluster
+        problem" known from gs13/gs15.
+
+    (B) SPATIAL OFFSET: Even if TGP provided enough total mass, the phantom
+        mass distribution traces the baryonic acceleration field, which is
+        dominated by gas.  There is no mechanism in the current TGP framework
+        to shift phantom mass from gas positions to galaxy positions.
+
+  The membrane gravitational memory idea (Part D) is physically interesting
+  but quantitatively fails: the relaxation timescale is ~1000x too short
+  unless membrane propagation is implausibly slow (v_eff < 10^{-4} c).
+
+
+  F.5  POSSIBLE PATHS FORWARD
+  -----------------------------
+  (1) HYBRID APPROACH: TGP + residual dark matter
+      If TGP explains galaxy-scale phenomenology (RAR, BTFR) while
+      a subdominant dark matter component (e.g., light axions or
+      ~0.1 eV neutrinos) provides cluster-scale mass:
+        - Neutrinos (0.05-0.1 eV, Planck-allowed): too light for clusters
+        - Axions (10^{-22} eV): fuzzy DM, might help at cluster scales
+        - This abandons pure modified gravity but retains TGP's predictive
+          power for galaxy phenomenology
+
+  (2) RELATIVISTIC TGP EXTENSION:
+      Following Skordis & Zlosnik (2021), construct a relativistic version
+      of TGP where additional tensor/vector degrees of freedom can decouple
+      from baryons during a collision.  The "membrane" sector could carry
+      gravitational memory through its own dynamics.
+      Status: NOT YET DEVELOPED for TGP
+
+  (3) CLUSTER-SPECIFIC gamma(S):
+      If clusters have S >> 1 (prolate/triaxial geometries), gamma(S) could
+      be much larger, giving stronger boosts.  But gs19 constrains this,
+      and even gamma = 1 (extreme) gives nu ~ 1 + 1/y, which is still
+      insufficient for the mass deficit.
+
+  (4) ACCEPT THE LIMITATION:
+      Acknowledge that TGP, like MOND, is an EFFECTIVE theory valid at
+      galaxy scales.  The Bullet Cluster (and clusters in general) may
+      require additional physics beyond the TGP interpolation function.
+      This does not invalidate TGP's success at galaxy scales, but it
+      limits its scope.
+
+==============================================================================
+  SUMMARY: KEY NUMERICAL RESULTS
+==============================================================================
+
+  Bullet Cluster parameters:
+    M_bar_main     = 1.40e+14 M_sun
+    M_bar_bullet   = 1.80e+13 M_sun
+    M_lens_main    = 1.00e+15 M_sun (observed)
+    M_lens_bullet  = 1.00e+14 M_sun (observed)
+    Needed boost   = 7.1x (main), 5.6x (bullet)
+
+  TGP predictions:
+    nu(y) at r200  = 5.352  (S = 0.8, cluster scale)
+    TGP boost      = 5.4x  (vs needed 7x)
+    Mass explained = 91% of lensing mass
+
+  Lensing offset (1-D model):
+    TGP peak (main):   -364 kpc  (observed: -360 kpc)
+    TGP peak (bullet): +169 kpc  (observed: +360 kpc)
+    Gas centroid:       -100 / +100 kpc
+    TGP offset:        264 kpc (main), 69 kpc (bullet)
+    Observed offset:   ~150-260 kpc
+    Fraction explained: 102% (main), 26% (bullet)
+
+  Membrane memory:
+    r_c(main)       = 417 kpc
+    tau_relax       = 1.4 Myr  (at c_membrane = c)
+    t_collision     = 150 Myr
+    tau/t_coll      = 0.0091  --> NO memory effect
+
+  VERDICT: TGP FAILS the Bullet Cluster test.
+    - Mass: explains ~91% (need 100%)
+    - Offset: phantom mass tracks gas, not galaxies
+    - Memory: relaxation is too fast by factor ~110
+    - Status: KNOWN WEAKNESS, shared with all MOND-like theories
+    - Implication: TGP is likely an effective galaxy-scale theory,
+      not a complete replacement for dark matter at all scales.
+
+==============================================================================
+  gs24 analysis complete.
+==============================================================================

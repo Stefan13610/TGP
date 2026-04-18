@@ -1,0 +1,203 @@
+================================================================================
+gs16: UNIFIED MODEL — GALAXY + CLUSTER
+Can one model explain both scales?
+================================================================================
+
+Loaded 171 galaxies + 29 clusters
+
+================================================================================
+SECTION 0: TGP TRANSITION SCALES
+================================================================================
+
+  H = sqrt(GM / (c*H0)) = sqrt(r_S * r_H)
+  r_H = c/H0 = 4286 Mpc
+
+  System               M (Msun)     R_out (kpc)  H (kpc)    R/H     
+  --------------------------------------------------------------
+  Dwarf (DDO154)       1.00e+09     8            0.5        17.68   
+  MW-like              5.00e+10     20           3.2        6.25    
+  NGC2841              3.00e+11     50           7.8        6.38    
+  Fornax group         2.80e+13     450          75.7       5.94    
+  Virgo cluster        1.40e+14     770          169.3      4.55    
+  Coma cluster         7.20e+14     1310         384.0      3.41    
+  A2390 massive        1.18e+15     1500         491.6      3.05    
+
+================================================================================
+SECTION 1: BASELINES
+================================================================================
+
+  Total data points: 3404 (3375 galaxy + 29 cluster)
+  Baseline chi2 (gamma=0.4): 19026.9 (chi2/dof = 5.590)
+  Baseline chi2 (gamma=0.5): 21201.7 (chi2/dof = 6.228)
+
+  Decomposed:
+  Component            chi2(g=0.4)     chi2(g=0.5)     winner
+  Galaxies             18207.7         20834.0         g=0.4
+  Clusters             819.2           367.7           g=0.5
+  Total                19026.9         21201.7         g=0.4
+
+================================================================================
+MODEL A: gamma(M) = gamma_0 + delta * log10(M / 10^10 Msun)
+================================================================================
+
+  Best fit: gamma_0 = 0.3936, delta = 0.0232, a0 = 1.551e-10
+  chi2 = 17806.2 (vs baseline 19026.9)
+  dchi2 = 1220.7
+
+  Implied gamma at different masses:
+    M = 1e+08: gamma = 0.347
+    M = 1e+09: gamma = 0.370
+    M = 1e+10: gamma = 0.394
+    M = 1e+11: gamma = 0.417
+    M = 1e+12: gamma = 0.440
+    M = 1e+13: gamma = 0.463
+    M = 1e+14: gamma = 0.486
+    M = 1e+15: gamma = 0.510
+
+================================================================================
+MODEL B: a0(R) = a0_gal * (1 + (R/R_c)^n)
+================================================================================
+
+  Best fit: a0_gal = 1.203e-10, R_c = 171 kpc, n = 0.697
+  chi2 = 17515.4 (vs baseline 19026.9)
+  dchi2 = 1511.4
+
+  Implied a0 at different scales:
+    R =     5 kpc: a0 = 1.305e-10 (1.17x galaxy)
+    R =    20 kpc: a0 = 1.473e-10 (1.31x galaxy)
+    R =    50 kpc: a0 = 1.714e-10 (1.53x galaxy)
+    R =   100 kpc: a0 = 2.031e-10 (1.81x galaxy)
+    R =   500 kpc: a0 = 3.744e-10 (3.34x galaxy)
+    R =  1000 kpc: a0 = 5.321e-10 (4.75x galaxy)
+    R =  1500 kpc: a0 = 6.666e-10 (5.95x galaxy)
+
+================================================================================
+MODEL C: Separate gamma for DISKS (galaxies) vs SPHERES (clusters)
+================================================================================
+
+  Best fit: gamma_disk = 0.3923, gamma_sphere = 0.5661, a0 = 1.589e-10
+  chi2 = 17549.0 (vs baseline 19026.9)
+  dchi2 = 1477.9
+  d_eff (disk)   = 2.22
+  d_eff (sphere) = 1.87
+
+================================================================================
+MODEL D: Second transition — extra boost at very low y
+nu = 1 + exp(-y^a)/y^g + A2 * switch(y/y_break) / y^g2
+================================================================================
+
+  Best fit: a0 = 1.547e-10, A2 = 0.0527, gamma2 = 1.0000, y_break = 0.0037
+  chi2 = 18047.6 (vs baseline 19026.9)
+  dchi2 = 979.3
+
+  nu values with double transition:
+    y=0.001 : nu_std=16.786, nu_double=65.794, ratio=3.920
+    y=0.010 : nu_std=7.153, nu_double=7.776, ratio=1.087
+    y=0.050 : nu_std=4.026, nu_double=4.032, ratio=1.001
+    y=0.100 : nu_std=3.144, nu_double=3.144, ratio=1.000
+    y=0.500 : nu_std=1.743, nu_double=1.743, ratio=1.000
+    y=1.000 : nu_std=1.368, nu_double=1.368, ratio=1.000
+    y=5.000 : nu_std=1.014, nu_double=1.014, ratio=1.000
+
+================================================================================
+MODEL E: gamma depends on r/H where H = sqrt(GM/(c*H0))
+gamma(r/H) = gamma_base + gamma_scale * log10(r/H)
+================================================================================
+
+  Best fit: gamma_base = 0.3755, gamma_scale = 0.0170, a0 = 1.590e-10
+  chi2 = 18081.5 (vs baseline 19026.9)
+  dchi2 = 945.4
+
+  Implied gamma for test systems:
+    Dwarf (DDO154)      : r/H = 17.68, gamma = 0.397
+    MW-like             : r/H = 6.25, gamma = 0.389
+    NGC2841             : r/H = 6.38, gamma = 0.389
+    Fornax group        : r/H = 5.94, gamma = 0.389
+    Virgo cluster       : r/H = 4.55, gamma = 0.387
+    Coma cluster        : r/H = 3.41, gamma = 0.385
+    A2390 massive       : r/H = 3.05, gamma = 0.384
+
+================================================================================
+MODEL COMPARISON
+================================================================================
+
+  Model                     chi2         n_params   dchi2 vs base  BIC penalty  net dBIC  
+  -----------------------------------------------------------------------------------
+  B: a0(R)                  17515.4      3          +1511.4        16.3         +1495.2   
+  C: disk vs sphere         17549.0      3          +1477.9        16.3         +1461.6   
+  A: gamma(M)               17806.2      3          +1220.7        16.3         +1204.5   
+  D: second transition      18047.6      4          +979.3         24.4         +954.9    
+  E: gamma(r/H)             18081.5      3          +945.4         16.3         +929.1    
+  Baseline (g=0.4)          19026.9      1          +0.0           0.0          +0.0      
+  Baseline (g=0.5)          21201.7      1          -2174.8        0.0          -2174.8   
+
+================================================================================
+CLUSTER PREDICTIONS WITH BEST UNIFIED MODEL
+================================================================================
+
+  Using Model C: gamma_disk=0.392, gamma_sphere=0.566, a0=1.589e-10
+
+  Cluster        g_obs/g_pred status
+  ----------------------------------------
+  A0122          1.096        OK
+  A1651          1.124        OK
+  A2401          0.897        OK
+  A2721          1.055        OK
+  A2811          1.079        OK
+  A2955          1.004        OK
+  A2984          0.811        OK
+  A3112          0.989        OK
+  A3693          1.000        OK
+  A4010          0.981        OK
+  AS0084         1.107        OK
+  AS0296         1.074        OK
+  Coma           1.127        OK
+  Perseus        1.065        OK
+  Virgo          0.959        OK
+  Centaurus      1.007        OK
+  A2029          1.165        OK
+  A0478          1.015        OK
+  A2390          1.280        close
+  A1795          1.163        OK
+  A2142          1.062        OK
+  A2319          1.222        close
+  A644           1.044        OK
+  A3266          1.114        OK
+  Fornax         0.799        close
+  MKW4           0.842        OK
+  NGC5044g       0.772        close
+  A3571          1.246        close
+  Bullet         1.170        OK
+
+================================================================================
+PHYSICAL INTERPRETATION FOR TGP
+================================================================================
+
+  GEOMETRY HYPOTHESIS:
+
+  Disk galaxies (gamma = 0.392):
+    d_eff = 2.22 -> 22% of full 3D->2D transition
+    Explanation: disk geometry already constrains mass distribution
+    to ~2D -> transition parameter is SMALLER
+
+  Spherical clusters (gamma = 0.566):
+    d_eff = 1.87 -> deeper transition
+    Explanation: full 3D system needs MORE dimensional reduction
+    to produce flat "rotation curves" at cluster scale
+
+  This makes TGP sense:
+    - In a disk, matter is already partially 2D
+    - The substrate deformation is "pre-configured" for 2D
+    - Less gamma needed to reach the modified regime
+    - In a sphere, the substrate must do MORE work
+    - Full 3D->2D transition requires larger gamma
+
+  Testable prediction:
+    - Elliptical galaxies (spheroidal) should prefer gamma closer to 0.57
+    - Edge-on vs face-on shouldn't matter (it's 3D geometry, not projection)
+    - Galaxy groups (intermediate) should have intermediate gamma
+
+================================================================================
+DONE
+================================================================================
+

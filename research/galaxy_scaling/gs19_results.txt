@@ -1,0 +1,231 @@
+================================================================================
+gs19: UNIFIED GEOMETRY MODEL — FULL MORPHOLOGICAL HIERARCHY
+gamma(geometry) across disk -> S0 -> E -> group -> cluster
+================================================================================
+
+Loaded: 171 SPARC galaxies (using 43 subsample)
+        91 elliptical data points (13 galaxies)
+        29 clusters
+
+================================================================================
+SECTION 0: BASELINE — SINGLE UNIVERSAL GAMMA
+================================================================================
+  gamma=0.36: gal=3040 ell=483 cl=1025 total=4549
+  gamma=0.40: gal=2790 ell=458 cl=819 total=4067
+  gamma=0.50: gal=2688 ell=397 cl=368 total=3453
+  gamma=0.54: gal=2941 ell=375 cl=231 total=3547
+
+================================================================================
+SECTION 1: MODEL A — gamma(sphericity)
+gamma = gamma_disk + (gamma_sphere - gamma_disk) * S
+================================================================================
+
+  Best fit:
+    gamma_disk    = 0.4187
+    gamma_sphere  = 0.5615
+    a0            = 1.673e-10
+    chi2          = 2666.3
+
+  Implied gamma by morphology:
+    Pure disk (SPARC)         S=0.00  gamma=0.419  d_eff=2.16
+    S0/fast E (S=0.55)        S=0.55  gamma=0.497  d_eff=2.01
+    Slow E (S=0.85)           S=0.85  gamma=0.540  d_eff=1.92
+    Cluster (S=1.0)           S=1.00  gamma=0.562  d_eff=1.88
+
+  Decomposed chi2:
+    Galaxies (disk):     2341
+    Ellipticals (slow):  250
+    Ellipticals (fast):  27
+    Clusters:            48
+    Total:               2666
+
+================================================================================
+SECTION 2: MODEL B — THREE-CLASS (disk / intermediate / sphere)
+================================================================================
+
+  Best fit:
+    gamma_disk       = 0.4187  (d_eff = 2.16)
+    gamma_intermed   = 0.2319  (d_eff = 2.54)
+    gamma_sphere     = 0.5605  (d_eff = 1.88)
+    a0               = 1.673e-10
+    chi2             = 2654.4
+
+  Decomposed chi2:
+    Disk galaxies:       2341
+    Fast/disky E:        20
+    Slow E + clusters:   293
+    Total:               2654
+
+================================================================================
+SECTION 3: MODEL C — gamma(morphology, mass)
+gamma = gamma_0(morph) + delta * log10(M/M_ref)
+================================================================================
+
+  Best fit:
+    gamma_disk_0     = 0.4209
+    gamma_sphere_0   = 0.5962
+    delta (per dex)  = -0.0101
+    a0               = 1.685e-10
+    chi2             = 2648.2
+
+  Implied gamma for representative systems:
+    Dwarf (10^8)                   gamma=0.441  d_eff=2.12
+    MW-like (5e10)                 gamma=0.414  d_eff=2.17
+    NGC2841 (3e11)                 gamma=0.406  d_eff=2.19
+    NGC3379 fast E (10^11)         gamma=0.586  d_eff=1.83
+    NGC4486 slow E (6e11)          gamma=0.578  d_eff=1.84
+    Fornax group (3e13)            gamma=0.561  d_eff=1.88
+    Coma cluster (7e14)            gamma=0.547  d_eff=1.91
+
+================================================================================
+SECTION 4: EFFECTIVE DIMENSION MODEL
+d_eff = 3 - 2*gamma, gamma = gamma_base * (1 + k*S)
+================================================================================
+
+  Best fit:
+    gamma_base = 0.4187
+    k (geometry factor) = 0.3410
+    a0 = 1.673e-10
+    chi2 = 2666.2
+
+  Implied dimensions:
+    Disk (S=0)           gamma=0.419  d_eff=2.16
+    Fast E (S=0.55)      gamma=0.497  d_eff=2.01
+    Slow E (S=0.85)      gamma=0.540  d_eff=1.92
+    Cluster (S=1)        gamma=0.561  d_eff=1.88
+
+================================================================================
+SECTION 5: CLUSTER PREDICTIONS WITH BEST MODEL
+================================================================================
+
+  Using Model A: gamma_disk=0.419, gamma_sphere=0.562, a0=1.673e-10
+
+  Cluster      g_obs/g_pred status  
+  -----------------------------------
+  A0122               1.082 OK      
+  A1651               1.107 OK      
+  A2401               0.887 OK      
+  A2721               1.039 OK      
+  A2811               1.063 OK      
+  A2955               0.993 OK      
+  A2984               0.800 OK      
+  A3112               0.975 OK      
+  A3693               0.987 OK      
+  A4010               0.967 OK      
+  AS0084              1.093 OK      
+  AS0296              1.062 OK      
+  Coma                1.109 OK      
+  Perseus             1.047 OK      
+  Virgo               0.948 OK      
+  Centaurus           0.994 OK      
+  A2029               1.146 OK      
+  A0478               0.998 OK      
+  A2390               1.258 close   
+  A1795               1.146 OK      
+  A2142               1.044 OK      
+  A2319               1.202 close   
+  A644                1.028 OK      
+  A3266               1.096 OK      
+  Fornax              0.793 close   
+  MKW4                0.834 OK      
+  NGC5044g            0.766 close   
+  A3571               1.228 close   
+  Bullet              1.151 OK      
+
+  OK (0.8-1.2): 24/29
+  Close (0.7-1.3): 29/29
+  Fail: 0/29
+
+================================================================================
+SECTION 6: ELLIPTICAL PREDICTIONS WITH BEST MODEL
+================================================================================
+
+  Galaxy       type     N  med ratio  scatter
+  ---------------------------------------------
+  NGC1399      slow     9      1.670    0.498
+  NGC1407      slow     8      1.293    0.440
+  NGC3379      fast     5      0.952    0.453
+  NGC4278      fast     3      1.633    0.102
+  NGC4374      slow     4      1.616    0.310
+  NGC4406      slow     5      0.882    0.397
+  NGC4472      slow     8      1.306    0.295
+  NGC4486      slow    11      1.791    0.334
+  NGC4636      slow    11      1.000    0.454
+  NGC4649      slow     6      1.505    0.461
+  NGC5044      slow     7      1.203    0.354
+  NGC5813      slow     6      1.101    0.366
+  NGC5846      slow     8      1.086    0.324
+
+================================================================================
+SECTION 7: MODEL COMPARISON
+================================================================================
+
+  Model                           chi2  n_par      dchi2  BIC pen   net dBIC
+  ---------------------------------------------------------------------------
+  C: gamma(morph,M)               2648      4      +1901     20.7      +1880
+  B: 3-class                      2654      4      +1895     20.7      +1874
+  D: d_eff(S)                     2666      3      +1883     13.8      +1869
+  A: gamma(S) linear              2666      3      +1883     13.8      +1869
+  Baseline g=0.5                  3453      1      +1096      0.0      +1096
+  Baseline g=0.54                 3547      1      +1002      0.0      +1002
+  Baseline g=0.4                  4067      1       +482      0.0       +482
+  Baseline g=0.36                 4549      1         +0      0.0         +0
+
+================================================================================
+SECTION 8: PHYSICAL INTERPRETATION FOR TGP
+================================================================================
+
+  GEOMETRY-DEPENDENT DIMENSIONAL REDUCTION:
+
+  gamma_disk   = 0.419  =>  d_eff = 2.16
+  gamma_sphere = 0.562  =>  d_eff = 1.88
+
+  Physical mechanism:
+  1. In DISK geometry (galaxies):
+     - Matter is already distributed in ~2D (thin disk)
+     - Substrate deformation is "pre-configured" for 2D propagation
+     - Less dimensional reduction needed: gamma ~ 0.42
+     - Effective dimension d ~ 2.2 (partial 3D->2D)
+
+  2. In SPHERICAL geometry (ellipticals + clusters):
+     - Matter fills full 3D volume
+     - Substrate must transition from 3D to 2D everywhere
+     - MORE dimensional reduction needed: gamma ~ 0.56
+     - Effective dimension d ~ 1.9 (deeper transition)
+
+  3. INTERMEDIATE geometry (S0 / fast-rotator E):
+     - Partially disky: S ~ 0.55
+     - gamma ~ 0.50 (interpolated)
+     - d_eff ~ 2.01
+
+  HIERARCHY:
+    disk (d=2.16) -> S0 (d~2.08) -> fast E (d~2.01)
+    -> slow E (d~1.92) -> cluster (d=1.88)
+
+  The DEEPER the 3D->2D transition, the stronger the MOND-like boost.
+
+  TESTABLE PREDICTIONS:
+  1. S0 galaxies should have gamma ~ 0.46 (between disk and E)
+  2. BCGs (brightest cluster galaxies): gamma close to cluster value
+  3. Edge-on vs face-on spirals: SAME gamma (it's 3D geometry, not projection)
+  4. Dwarf spheroidals: should prefer higher gamma if truly spheroidal
+  5. Polar ring galaxies: test of geometry vs mass interpretation
+
+================================================================================
+SECTION 9: SPARC BULGE-DOMINATED GALAXIES — do they prefer higher gamma?
+================================================================================
+
+  SPARC bulge-dominated: 32 galaxies
+  SPARC pure-disk:      139 galaxies
+
+  Bulge-dominated (N=16):
+    chi2(0.36)=2835  chi2(0.40)=2644  chi2(0.50)=2958  chi2(0.54)=3444
+    Best: gamma=0.40
+
+  Pure disk (N=35):
+    chi2(0.36)=1104  chi2(0.40)=1077  chi2(0.50)=1262  chi2(0.54)=1470
+    Best: gamma=0.40
+
+================================================================================
+DONE
+================================================================================

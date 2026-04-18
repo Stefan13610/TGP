@@ -1,0 +1,199 @@
+================================================================================
+gs17: ELLIPTICAL GALAXY TEST
+Do spheroidal galaxies prefer gamma ~ 0.54 (geometry hypothesis)?
+================================================================================
+
+Loaded 32 elliptical/S0 galaxies
+
+================================================================================
+SECTION 1: ACCELERATION REGIME OF ELLIPTICALS
+================================================================================
+
+  g_bar range: 1.70e-10 to 2.09e-08 m/s^2
+  y = g_bar/a0: 1.514 to 186.7
+  y median: 6.21
+  nu_obs range: 0.46 to 6.50
+  nu_obs median: 3.88
+
+  Deep MOND (y<0.1):   0
+  Transition (0.1-1):  0
+  Newtonian (1-10):    27
+  High-acc (y>10):     5
+
+  Compare: disk galaxies median y_outer ~ 0.05
+  Ellipticals at R_eff: median y ~ 6.2
+  => Ellipticals probe HIGHER y (more Newtonian) than disk outskirts!
+
+================================================================================
+SECTION 2: MODEL PREDICTIONS vs OBSERVATIONS AT R_eff
+================================================================================
+
+  gamma    med(g_pred/g_obs)    mean ratio   scatter(dex)   chi2      
+  ----------------------------------------------------------------
+  0.30     0.2658               0.3385       0.1955         10.694    
+  0.36     0.2649               0.3380       0.1955         10.720    
+  0.40     0.2643               0.3376       0.1956         10.737    
+  0.45     0.2635               0.3373       0.1956         10.757    
+  0.50     0.2628               0.3369       0.1957         10.776    
+  0.54     0.2621               0.3366       0.1957         10.791    
+  0.60     0.2614               0.3362       0.1957         10.811    
+  McGaugh  0.2928               0.3674       0.1915         9.260     
+  MOND     0.3035               0.3804       0.1893         8.675     
+
+  Best gamma from grid: 0.30
+
+================================================================================
+SECTION 3: BEST-FIT GAMMA FOR ELLIPTICALS
+================================================================================
+
+  Fixed a0=1.12e-10:
+    Best gamma = 0.0500
+    chi2 = 10.5617
+
+  Free (gamma, a0):
+    Best gamma = 0.3066
+    Best a0 = 1.945e-08 (173.65x galaxy)
+    chi2 = 0.7858
+
+================================================================================
+SECTION 4: SLOW-ROTATORS (true E) vs FAST-ROTATORS (disky E/S0)
+================================================================================
+
+  Slow-rotators (true spheroids): 23
+  Fast-rotators (disky component): 9
+
+  Slow-rotators:
+    N = 23
+    Best gamma = 0.0500
+    chi2 = 7.0356
+    median y = 6.22
+    median nu_obs = 3.86
+
+  Fast-rotators:
+    N = 9
+    Best gamma = 0.0500
+    chi2 = 3.5262
+    median y = 4.32
+    median nu_obs = 4.13
+
+================================================================================
+SECTION 5: PER-GALAXY COMPARISON
+================================================================================
+
+  Galaxy       type  y        nu_obs   nu(0.36)  nu(0.54)  0.36/obs  0.54/obs  prefers 
+  -------------------------------------------------------------------------------------
+  NGC4472      E2    6.31     2.336    1.007     1.005     0.431     0.430     g=0.36   *
+  NGC4486      E0    6.25     4.399    1.007     1.005     0.229     0.228     g=0.36   *
+  NGC1600      E3    3.62     5.249    1.038     1.030     0.198     0.196     g=0.36   *
+  NGC4649      E2    8.23     3.717    1.002     1.001     0.270     0.269     g=0.36   *
+  NGC1399      E1    11.18    3.253    1.000     1.000     0.308     0.307     g=0.36   *
+  NGC1407      E0    4.06     3.874    1.028     1.022     0.265     0.264     g=0.36   *
+  NGC5846      E0    3.92     3.289    1.031     1.024     0.313     0.311     g=0.36   *
+  NGC4261      E2    6.65     4.075    1.005     1.004     0.247     0.246     g=0.36   *
+  NGC4374      E1    6.20     3.855    1.007     1.005     0.261     0.261     g=0.36   *
+  NGC4406      E3    2.37     4.160    1.100     1.085     0.264     0.261     g=0.36   *
+  NGC4636      E0    1.51     4.852    1.214     1.198     0.250     0.247     g=0.36   *
+  NGC5813      E1    5.00     3.533    1.015     1.011     0.287     0.286     g=0.36   *
+  NGC5044      E0    5.18     3.889    1.013     1.010     0.261     0.260     g=0.36   *
+  NGC4552      E0    10.24    3.646    1.001     1.000     0.274     0.274     g=0.36   *
+  NGC4382      S0    2.38     3.594    1.099     1.085     0.306     0.302     g=0.36    
+  NGC4125      E6    2.69     6.496    1.077     1.064     0.166     0.164     g=0.36    
+  NGC4526      S0    6.35     4.010    1.006     1.005     0.251     0.251     g=0.36    
+  NGC4697      E6    2.36     4.127    1.101     1.087     0.267     0.263     g=0.36    
+  NGC4278      E1    8.47     5.167    1.002     1.001     0.194     0.194     g=0.36   *
+  NGC3379      E1    6.27     4.202    1.007     1.005     0.240     0.239     g=0.36   *
+  NGC3608      E2    5.29     4.380    1.012     1.009     0.231     0.230     g=0.36   *
+  NGC4473      E5    4.32     5.196    1.023     1.018     0.197     0.196     g=0.36    
+  NGC4564      E6    8.10     3.605    1.002     1.002     0.278     0.278     g=0.36    
+  NGC3377      E5    4.15     4.888    1.026     1.020     0.210     0.209     g=0.36    
+  NGC4478      E2    9.33     3.081    1.001     1.001     0.325     0.325     g=0.36   *
+  NGC4660      E5    12.64    5.274    1.000     1.000     0.190     0.190     g=0.36    
+  NGC4551      E2    6.22     3.292    1.007     1.005     0.306     0.305     g=0.36   *
+  NGC4458      E0    3.17     3.453    1.053     1.043     0.305     0.302     g=0.36   *
+  NGC4387      E5    6.81     3.099    1.005     1.003     0.324     0.324     g=0.36    
+  NGC4489      E0    2.59     1.458    1.083     1.070     0.743     0.734     g=0.36   *
+  NGC4486B     cE    34.57    4.031    1.000     1.000     0.248     0.248     g=0.36   *
+  M32          cE    186.68   0.459    1.000     1.000     2.177     2.177     g=0.54   *
+
+  Prefer gamma=0.36 (disk-like): 31
+  Prefer gamma=0.54 (sphere-like): 1
+
+================================================================================
+SECTION 6: DISCRIMINATING POWER — CAN WE TELL gamma APART?
+================================================================================
+
+  Key issue: at high y (Newtonian regime), ALL models give nu ~ 1
+  The difference between gamma=0.36 and gamma=0.54 is:
+    y=0.01  : nu(0.36)=6.1179, nu(0.54)=12.7244, diff = +108.0%
+    y=0.05  : nu(0.36)=3.6843, nu(0.54)=5.6028, diff = +52.1%
+    y=0.10  : nu(0.36)=2.9551, nu(0.54)=3.9592, diff = +34.0%
+    y=0.50  : nu(0.36)=1.7227, nu(0.54)=1.8187, diff = +5.6%
+    y=1.00  : nu(0.36)=1.3679, nu(0.54)=1.3679, diff = +0.0%
+    y=5.00  : nu(0.36)=1.0149, nu(0.54)=1.0112, diff = -0.4%
+    y=10.00 : nu(0.36)=1.0008, nu(0.54)=1.0005, diff = -0.0%
+    y=50.00 : nu(0.36)=1.0000, nu(0.54)=1.0000, diff = -0.0%
+
+  Ellipticals: median y = 6.2
+  At median y: nu(0.36)=1.0069, nu(0.54)=1.0050, diff = -0.2%
+  => HARD to distinguish at this y range
+
+  Ellipticals with LOWEST y (best discriminating power):
+  Galaxy       y        nu_obs   nu(0.36)  nu(0.54)  diff%   
+  NGC4636      1.514    4.852    1.214     1.198         -1.3%
+  NGC4697      2.356    4.127    1.101     1.087         -1.3%
+  NGC4406      2.371    4.160    1.100     1.085         -1.3%
+  NGC4382      2.381    3.594    1.099     1.085         -1.3%
+  NGC4489      2.593    1.458    1.083     1.070         -1.2%
+  NGC4125      2.692    6.496    1.077     1.064         -1.2%
+  NGC4458      3.175    3.453    1.053     1.043         -0.9%
+  NGC1600      3.617    5.249    1.038     1.030         -0.8%
+  NGC5846      3.921    3.289    1.031     1.024         -0.7%
+  NGC1407      4.064    3.874    1.028     1.022         -0.6%
+
+================================================================================
+SECTION 7: COMBINED FIT — DISK + ELLIPTICAL + CLUSTER
+================================================================================
+
+  Summary across scales:
+  System type               N     med y    med nu_obs best gamma  geometry
+  --------------------------------------------------------------------
+  Disk galaxies (SPARC)     171   0.05     ~3-10      0.40        disk
+  Ellipticals (this work)   32    6.21     3.881      0.050       sphere
+  Galaxy clusters (gs13)    29    0.06     ~7         0.54        sphere
+
+================================================================================
+SECTION 8: VERDICT ON GEOMETRY HYPOTHESIS
+================================================================================
+
+  Geometry hypothesis prediction:
+    Disks (galaxies):    gamma ~ 0.36  (d_eff = 2.29)
+    Spheres (clusters):  gamma ~ 0.54  (d_eff = 1.92)
+    Ellipticals (spheroidal galaxies): should prefer gamma ~ 0.54
+
+  Observed:
+    Ellipticals best gamma = 0.050
+
+  Distance to predictions:
+    |gamma_ell - gamma_disk|    = 0.310
+    |gamma_ell - gamma_sphere|  = 0.490
+
+  Ellipticals are closer to: DISK (gamma=0.36)
+
+  RESULT: Geometry hypothesis is AMBIGUOUS
+
+  Possible interpretations:
+  1. Ellipticals probe mainly HIGH-y regime (y ~ 6)
+     -> gamma poorly constrained (nu ~ 1 regardless of gamma)
+     -> TEST IS INCONCLUSIVE at these accelerations
+  2. Geometry hypothesis needs modification: it's not disk/sphere
+     but something else (total mass? scale? environment?)
+  3. Ellipticals DO follow disk-like gamma, and clusters are different
+     for another reason (mass scale, baryonic composition)
+
+  Discriminating power:
+    Galaxies with y < 0.5 (where gamma matters): 0/32
+    WEAK test — most ellipticals in Newtonian regime
+
+================================================================================
+DONE
+================================================================================

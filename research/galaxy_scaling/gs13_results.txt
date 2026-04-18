@@ -1,0 +1,336 @@
+================================================================================
+gs13: GALAXY CLUSTER COMPARISON
+Does ν(y) = 1 + exp(-y^(4/5))/y^(2/5) work on cluster scales?
+================================================================================
+
+Loaded 29 clusters/groups
+
+================================================================================
+SECTION 1: ACCELERATION REGIME OF GALAXY CLUSTERS
+================================================================================
+
+  g_bar range: 1.72e-12 to 1.18e-11 m/s²
+  g_obs range: 1.81e-11 to 7.31e-11 m/s²
+  y = g_bar/a₀ range: 0.015 to 0.105
+  y median: 0.058
+
+  Compare: galaxy outer RC median y ~ 0.05
+  Clusters at r500: y ~ 0.06 (DEEPER into modified regime)
+
+  Deep MOND (y < 0.1): 26
+  Transition (0.1-1): 3
+  Newtonian (y > 1):  0
+
+================================================================================
+SECTION 2: MODEL PREDICTIONS vs OBSERVATIONS AT r500
+================================================================================
+
+  Model                        med(g_pred/g_obs)    mean ratio   std      scatter(dex)  
+  ----------------------------------------------------------------------------------
+  Exp (γ=0.4, winning)         0.5447               0.5425       0.0441   0.0350        
+  Exp (γ=0.5, MOND-like)       0.6692               0.6788       0.0720   0.0447        
+  McGaugh                      0.6873               0.6960       0.0687   0.0418        
+  MOND simple                  0.6886               0.6974       0.0685   0.0416        
+
+================================================================================
+SECTION 3: PER-CLUSTER PREDICTIONS
+================================================================================
+
+  Cluster        y=gbar/a0  ν_obs    ν_Exp    ν_MOND   ν_McG    Exp/obs  MOND/obs McG/obs 
+  ------------------------------------------------------------------------------------------
+  A0122          0.0398     8.93     4.37     5.72     5.71     0.489    0.640    0.639   
+  A1651          0.0657     7.01     3.65     4.57     4.56     0.521    0.652    0.651   
+  A2401          0.0301     8.48     4.82     6.48     6.48     0.568    0.764    0.763   
+  A2721          0.0578     7.02     3.82     4.83     4.82     0.545    0.689    0.687   
+  A2811          0.0568     7.27     3.85     4.87     4.86     0.529    0.670    0.669   
+  A2955          0.0258     10.31    5.09     6.96     6.95     0.494    0.675    0.674   
+  A2984          0.0399     6.60     4.36     5.70     5.70     0.661    0.865    0.863   
+  A3112          0.0597     6.47     3.78     4.77     4.76     0.584    0.736    0.735   
+  A3693          0.0461     7.53     4.14     5.35     5.34     0.550    0.710    0.709   
+  A4010          0.0504     7.03     4.01     5.14     5.13     0.571    0.731    0.730   
+  AS0084         0.0392     9.08     4.39     5.75     5.74     0.483    0.633    0.632   
+  AS0296         0.0282     10.51    4.93     6.68     6.67     0.469    0.636    0.635   
+  Coma           0.0856     6.10     3.32     4.07     4.06     0.545    0.668    0.666   
+  Perseus        0.0917     5.56     3.24     3.96     3.94     0.584    0.712    0.710   
+  Virgo          0.0353     8.33     4.56     6.03     6.03     0.547    0.724    0.723   
+  Centaurus      0.0416     8.00     4.30     5.60     5.59     0.537    0.700    0.699   
+  A2029          0.0849     6.33     3.33     4.09     4.08     0.527    0.646    0.644   
+  A0478          0.0975     5.13     3.17     3.85     3.84     0.619    0.751    0.749   
+  A2390          0.1051     6.21     3.09     3.73     3.72     0.497    0.601    0.599   
+  A1795          0.0656     7.25     3.65     4.57     4.56     0.504    0.631    0.629   
+  A2142          0.1051     5.15     3.09     3.73     3.72     0.599    0.724    0.721   
+  A2319          0.1044     5.95     3.10     3.74     3.73     0.520    0.629    0.626   
+  A644           0.0627     6.67     3.72     4.67     4.66     0.557    0.700    0.698   
+  A3266          0.0780     6.33     3.44     4.24     4.23     0.543    0.670    0.668   
+  Fornax         0.0163     10.53    5.99     8.61     8.61     0.569    0.818    0.818   
+  MKW4           0.0180     10.53    5.79     8.24     8.23     0.550    0.783    0.782   
+  NGC5044grp     0.0153     10.53    6.13     8.87     8.87     0.582    0.843    0.842   
+  A3571          0.0602     8.13     3.77     4.75     4.74     0.464    0.584    0.583   
+  Bullet         0.0826     6.45     3.37     4.14     4.13     0.522    0.641    0.639   
+
+================================================================================
+SECTION 4: THE MISSING MASS FACTOR IN CLUSTERS
+================================================================================
+
+  MOND prediction for clusters: ν_MOND at y ~ 0.058
+  If MOND underpredicts by factor ~2, then g_obs ~ 2 * g_MOND_pred
+  Our Exp model gives STRONGER boost (γ=0.4 > MOND effective γ=0.5)
+
+  Missing factor = g_obs / g_pred (>1 = underprediction)
+
+  Model                        median missing   mean missing     % underpredicting   
+  --------------------------------------------------------------------------------
+  Exp (γ=0.4, winning)         1.836            1.855            100.0               
+  Exp (γ=0.5, MOND-like)       1.494            1.489            100.0               
+  McGaugh                      1.455            1.450            100.0               
+  MOND simple                  1.452            1.447            100.0               
+
+================================================================================
+SECTION 5: DEEP-MOND vs EXP ASYMPTOTIC BEHAVIOR
+================================================================================
+
+  In deep MOND (y << 1):
+    MOND:     g_obs = √(g_bar · a₀)          i.e. ν ~ 1/√y
+    McGaugh:  g_obs ~ √(g_bar · a₀)          (same deep limit)
+    Exp:      g_obs = g_bar^0.59 · a₀^0.41   i.e. ν ~ 1/y^0.4
+
+  At y=0.01 (typical cluster outskirts):
+    ν_Exp    = 7.15
+    ν_MOND   = 10.51
+    ν_McGaugh = 10.51
+    Ratio Exp/MOND = 0.680
+
+  At y=0.001 (very deep):
+    ν_Exp    = 16.79
+    ν_MOND   = 32.13
+    Ratio Exp/MOND = 0.522
+
+================================================================================
+SECTION 6: RADIAL PROFILES FOR REPRESENTATIVE CLUSTERS
+================================================================================
+
+  --- Coma (M500=7.20e+14 Msun, r500=1.31 Mpc) ---
+  r/r500   y          ν_obs    ν_Exp    ν_MOND   Exp/obs  MOND/obs
+  0.10     0.3197     9.18     2.06     2.40     0.224    0.261   
+  0.32     0.1940     8.05     2.47     2.90     0.307    0.360   
+  0.54     0.1379     7.25     2.80     3.33     0.386    0.459   
+  0.76     0.1066     6.63     3.07     3.71     0.463    0.559   
+  0.98     0.0868     6.13     3.31     4.05     0.540    0.661   
+  1.21     0.0732     5.71     3.52     4.36     0.616    0.764   
+  1.43     0.0633     5.35     3.70     4.65     0.692    0.869   
+
+  --- Perseus (M500=6.60e+14 Msun, r500=1.27 Mpc) ---
+  r/r500   y          ν_obs    ν_Exp    ν_MOND   Exp/obs  MOND/obs
+  0.10     0.3718     7.70     1.94     2.27     0.252    0.295   
+  0.32     0.2137     7.13     2.39     2.79     0.335    0.392   
+  0.54     0.1495     6.53     2.72     3.22     0.416    0.494   
+  0.76     0.1146     6.02     2.99     3.60     0.497    0.598   
+  0.98     0.0929     5.58     3.23     3.93     0.578    0.704   
+  1.21     0.0781     5.21     3.43     4.24     0.659    0.813   
+  1.43     0.0674     4.89     3.62     4.52     0.740    0.923   
+
+  --- Virgo (M500=1.40e+14 Msun, r500=0.77 Mpc) ---
+  r/r500   y          ν_obs    ν_Exp    ν_MOND   Exp/obs  MOND/obs
+  0.10     0.2175     7.60     2.37     2.77     0.312    0.365   
+  0.32     0.0974     9.03     3.17     3.85     0.351    0.427   
+  0.54     0.0621     9.07     3.73     4.68     0.411    0.516   
+  0.76     0.0454     8.76     4.17     5.38     0.476    0.614   
+  0.98     0.0358     8.36     4.53     5.99     0.542    0.717   
+  1.21     0.0295     7.96     4.85     6.54     0.610    0.822   
+  1.43     0.0251     7.58     5.14     7.05     0.678    0.930   
+
+  --- A2029 (M500=8.71e+14 Msun, r500=1.42 Mpc) ---
+  r/r500   y          ν_obs    ν_Exp    ν_MOND   Exp/obs  MOND/obs
+  0.10     0.3246     9.31     2.04     2.38     0.220    0.256   
+  0.32     0.1940     8.29     2.47     2.90     0.298    0.350   
+  0.54     0.1373     7.50     2.80     3.34     0.374    0.445   
+  0.76     0.1059     6.88     3.08     3.72     0.448    0.541   
+  0.98     0.0861     6.36     3.32     4.06     0.521    0.639   
+  1.21     0.0725     5.93     3.53     4.38     0.595    0.738   
+  1.43     0.0627     5.56     3.72     4.66     0.669    0.839   
+
+  --- Fornax (M500=2.80e+13 Msun, r500=0.45 Mpc) ---
+  r/r500   y          ν_obs    ν_Exp    ν_MOND   Exp/obs  MOND/obs
+  0.10     0.1377     7.03     2.80     3.33     0.398    0.474   
+  0.32     0.0526     9.78     3.95     5.04     0.404    0.515   
+  0.54     0.0310     10.63    4.77     6.40     0.449    0.602   
+  0.76     0.0217     10.73    5.41     7.54     0.505    0.703   
+  0.98     0.0166     10.54    5.96     8.54     0.565    0.810   
+  1.21     0.0134     10.25    6.43     9.45     0.627    0.922   
+  1.43     0.0112     9.92     6.86     10.28    0.691    1.036   
+
+  --- A1651 (M500=5.15e+14 Msun, r500=1.18 Mpc) ---
+  r/r500   y          ν_obs    ν_Exp    ν_MOND   Exp/obs  MOND/obs
+  0.10     0.2034     12.73    2.43     2.85     0.191    0.224   
+  0.32     0.1403     9.82     2.78     3.31     0.283    0.337   
+  0.54     0.1032     8.54     3.11     3.76     0.364    0.440   
+  0.76     0.0810     7.70     3.39     4.17     0.441    0.542   
+  0.98     0.0665     7.05     3.64     4.54     0.516    0.645   
+  1.21     0.0564     6.52     3.86     4.89     0.591    0.749   
+  1.43     0.0490     6.09     4.06     5.20     0.666    0.855   
+
+================================================================================
+SECTION 7: BEST-FIT ACCELERATION SCALE FOR CLUSTERS
+================================================================================
+
+  Best-fit a₀ for CLUSTERS:
+  Model                a₀ (m/s²)       a₀/a₀_galaxy    scatter (dex)  
+  -----------------------------------------------------------------
+  Exp (γ=0.4)          6.234e-10       5.57            0.0351         
+  MOND simple          2.676e-10       2.23            0.0438         
+  McGaugh              2.682e-10       2.24            0.0439         
+
+================================================================================
+SECTION 8: BEST-FIT (α, γ, a₀) FOR CLUSTERS ONLY
+================================================================================
+
+  Best-fit for clusters:
+    a₀ = 1.101e-09 m/s² (9.83 × galaxy a₀)
+    α  = 0.4494  (galaxy: 0.80)
+    γ  = 0.3703  (galaxy: 0.40)
+    γ/α = 0.8241
+    scatter = 0.0350 dex
+
+  Chi² comparison (sum of log10 residuals²):
+    Galaxy params (a₀=1.12e-10, α=0.8, γ=0.4): 2.1032
+    Best cluster params: 0.0356
+    With free a₀ only (α=0.8, γ=0.4): 0.0358
+
+================================================================================
+SECTION 9: CLUSTER vs GALAXY RAR — SAME RELATION OR DIFFERENT?
+================================================================================
+
+  Galaxy RAR (McGaugh 2016): g_obs = g_bar/(1 - exp(-√(g_bar/a₀)))
+  with a₀ = 1.2e-10 m/s²
+
+  Cluster RAR (Tian+2020, Eckert+2022): OFFSET from galaxy RAR
+  Effective cluster a₀ ~ 2e-9 m/s² (17× larger)
+  BUT: this could be due to missing baryons (hot gas underestimate)
+
+  Cluster positions on RAR:
+  Cluster        log g_bar  log g_obs  log g_McG  log g_Exp  offset(dex) 
+  ------------------------------------------------------------------
+  A0122          -11.351    -10.400    -10.595    -10.711    +0.311      
+  A1651          -11.133    -10.288    -10.474    -10.571    +0.283      
+  A2401          -11.472    -10.543    -10.660    -10.789    +0.246      
+  A2721          -11.189    -10.342    -10.505    -10.606    +0.264      
+  A2811          -11.196    -10.335    -10.509    -10.611    +0.276      
+  A2955          -11.539    -10.525    -10.696    -10.832    +0.307      
+  A2984          -11.350    -10.530    -10.594    -10.710    +0.180      
+  A3112          -11.175    -10.364    -10.498    -10.597    +0.234      
+  A3693          -11.287    -10.410    -10.560    -10.670    +0.260      
+  A4010          -11.248    -10.401    -10.538    -10.645    +0.243      
+  AS0084         -11.357    -10.399    -10.598    -10.715    +0.316      
+  AS0296         -11.500    -10.479    -10.676    -10.807    +0.328      
+  Coma           -11.018    -10.233    -10.410    -10.497    +0.264      
+  Perseus        -10.989    -10.244    -10.393    -10.478    +0.234      
+  Virgo          -11.403    -10.483    -10.623    -10.745    +0.262      
+  Centaurus      -11.331    -10.428    -10.584    -10.698    +0.270      
+  A2029          -11.022    -10.220    -10.412    -10.499    +0.278      
+  A0478          -10.962    -10.252    -10.378    -10.460    +0.209      
+  A2390          -10.929    -10.136    -10.359    -10.440    +0.303      
+  A1795          -11.134    -10.274    -10.475    -10.571    +0.297      
+  A2142          -10.929    -10.217    -10.359    -10.440    +0.223      
+  A2319          -10.932    -10.157    -10.360    -10.441    +0.284      
+  A644           -11.154    -10.330    -10.486    -10.584    +0.254      
+  A3266          -11.059    -10.257    -10.432    -10.522    +0.265      
+  Fornax         -11.737    -10.715    -10.803    -10.960    +0.245      
+  MKW4           -11.696    -10.674    -10.781    -10.933    +0.259      
+  NGC5044grp     -11.765    -10.742    -10.817    -10.977    +0.235      
+  A3571          -11.171    -10.261    -10.496    -10.595    +0.334      
+  Bullet         -11.034    -10.224    -10.419    -10.507    +0.282      
+
+  Summary of offsets (log g_obs - log g_pred):
+  Exp model:     median = +0.264 dex, mean = +0.267 dex
+  McGaugh/MOND:  median = +0.163 dex, mean = +0.159 dex
+
+  Positive offset = model UNDERPREDICTS (needs more mass)
+  Factor of underprediction:
+    Exp:  1.84× (median)
+    MOND: 1.46× (median)
+
+================================================================================
+SECTION 10: PHYSICAL INTERPRETATION FOR TGP
+================================================================================
+
+  KEY FINDINGS:
+
+  1. Acceleration regime: clusters at r500 have y ~ 0.058
+     This is DEEPER into the modified regime than typical galaxy outskirts (y~0.05).
+
+  2. Our Exp equation (γ=0.4) gives a STRONGER boost than MOND (γ=0.5):
+     ν ~ 1/y^0.4 vs 1/y^0.5 at low y
+     This means Exp predicts MORE "dark matter" effect than MOND.
+
+  3. MOND's cluster problem (factor ~2 underprediction):
+
+     MOND underpredicts by 1.46×
+     Exp underpredicts by  1.84×
+     → Exp does NOT improve the cluster situation
+
+  4. Best-fit cluster a₀:
+     Galaxy a₀ = 1.12e-10 m/s²
+     Cluster a₀ (Exp) = 6.23e-10 m/s² (5.6× larger)
+     → Clusters need a DIFFERENT acceleration scale
+
+  5. TGP interpretation:
+     - If a₀ = c·H₀/(2π) is truly universal, the cluster offset means:
+       a) Missing baryons (hot gas/WHIM not accounted for), OR
+       b) The interpolation function changes form at cluster scales, OR
+       c) d_eff varies with system size (cluster ≠ galaxy transition)
+
+  6. d_eff connection:
+     Galaxy: d_eff = 3 - 2γ = 3 - 0.8 = 2.2 (partial 3D→2D)
+     If clusters need stronger γ → smaller d_eff → MORE transition
+     Cluster best γ = 0.37 → d_eff = 2.26
+
+================================================================================
+SECTION 11: COMPARISON WITH PUBLISHED CLUSTER RAR RESULTS
+================================================================================
+
+  Published findings (for comparison):
+
+  Tian+2020 (CLASH clusters):
+    Effective a₀ = 2.0e-9 m/s² (17× galaxy value)
+    Slope in log-log: 0.51 ± 0.05 (consistent with MOND's 0.5)
+
+  Chan & Del Popolo (2020):
+    52 non-cool-core clusters: scatter = 0.18 dex
+    Overall a₀ ~ 9.5e-10 m/s² (8× galaxy value)
+
+  Eckert+2022 (X-COP):
+    12 clusters: RAR does NOT hold at cluster scale
+    Clusters sit ABOVE galaxy RAR
+
+  Our analysis:
+    Best-fit cluster a₀ (Exp) = 6.23e-10 m/s² (5.6× galaxy)
+    Best-fit cluster a₀ (MOND) = 2.68e-10 m/s² (2.2× galaxy)
+
+  CONCLUSION: Cluster RAR requires ~6× larger a₀ than galaxies.
+  This is a KNOWN problem for ALL MOND-like theories.
+  Our Exp equation does NOT BETTER than MOND
+  (factor 1.84× vs 1.46×), reducing discrepancy by
+  26% but NOT eliminating it.
+
+================================================================================
+SUMMARY
+================================================================================
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ Scale      │ a₀ needed   │ γ best │ d_eff  │ ν underprediction    │
+  ├─────────────────────────────────────────────────────────────────────┤
+  │ Galaxies   │ 1.12e-10    │ 0.40   │ 2.20   │ ×1.00 (by design)   │
+  │ Clusters   │ 6.23e-10    │ 0.37   │ 2.26   │ ×1.84 (with gal a₀)  │
+  │ MOND clust │ 2.68e-10    │ 0.50   │ 2.00   │ ×1.46 (with gal a₀)  │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  Key result: γ=0.4 (Exp) gives stronger boost → does not reduce
+  cluster missing mass from ×1.46 to ×1.84
+
+  The cluster problem remains for ALL modified gravity theories.
+  Possible TGP resolution: a₀ may scale with system size or local
+  expansion rate, not be strictly universal.
+
+================================================================================
+DONE
+================================================================================

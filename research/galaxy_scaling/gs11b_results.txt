@@ -1,0 +1,137 @@
+================================================================================
+gs11b: BTFR VERIFICATION + CONSTRAINED MODEL TESTS
+================================================================================
+Loaded 171 galaxies
+
+================================================================================
+SECTION 1: BTFR FROM SPARC DATA (Vflat vs M_bar)
+================================================================================
+  Galaxies with Vflat > 0 and Q <= 2: 129
+
+  BTFR fit: log(M_bar) = 3.413 * log(Vflat) + 2.917
+  => M_bar ~ Vflat^3.413
+  => Vflat^3.41 ~ M_bar, i.e., BTFR exponent = 3.41
+  R^2 = 0.9110
+  Scatter: 0.248 dex
+
+  Inverse: log(Vflat) = 0.2669 * log(M_bar) + -0.5931
+  => Vflat ~ M_bar^0.2669
+  => M_bar ~ Vflat^3.75
+
+  --- Comparison ---
+  Observed BTFR: M ~ v^3.41 (this sample)
+  McGaugh+ 2012: M ~ v^3.85 +/- 0.09
+  MOND (gamma=0.5): M ~ v^4.00
+  Winning eq (gamma=0.41): M ~ v^3.37 (asymptotic)
+  Discrepancy winning vs observed: 1.3%
+  Discrepancy MOND vs observed: 17.2%
+
+  --- y-range actually probed by SPARC ---
+  y_min per galaxy: median=0.0416, min=1.7388e-03
+  y_max per galaxy: median=0.24, max=43.7
+  y_outer (RC flat part): median=0.0516
+  Galaxies with y_outer < 0.1 (deep MOND): 131
+  Galaxies with y_outer < 0.01 (very deep MOND): 3
+  Galaxies with y_outer 0.1-1 (transition): 38
+  Galaxies with y_outer > 1 (Newtonian-ish): 2
+
+================================================================================
+SECTION 2: CONSTRAINED MODEL gamma = alpha/2
+================================================================================
+  Optimizing (a0, alpha) with gamma=alpha/2...
+  Best: a0 = 1.1164e-10 (0.9303 x 1.2e-10)
+  Best: alpha = 0.8126
+  Implied: gamma = 0.4063
+
+  Constrained (gamma=alpha/2): chi2=10584.8, chi2/ndof=3.3391
+  Unconstrained:              chi2=5623.8
+  Delta chi2 = 4961.0 (constrained worse by this)
+  Good fits (chi2_red < 2): 96/171
+
+  BIC constrained:   12250.3 (n_free=205)
+  BIC unconstrained: 7297.4 (n_free=206)
+  Delta BIC = 4952.9
+  => Unconstrained model still preferred (delta=4952.9)
+
+================================================================================
+SECTION 3: FORCED gamma = 0.5 (exact MOND deep limit)
+================================================================================
+  Optimizing (a0, alpha) with gamma=0.5 fixed...
+  Best: a0 = 8.2672e-11 (0.6889 x 1.2e-10)
+  Best: alpha = 0.6454
+  chi2 = 11400.9
+
+  Comparison:
+  Model                          chi2       chi2/ndof    BIC        Good    
+  ----------------------------------------------------------------------
+  Exp (free alpha,gamma)         5623.8     1.7746       7297.4     128/171 
+  Exp (gamma=alpha/2)            10584.8    3.3391       12250.3    96/171  
+  Exp (gamma=0.5, MOND)          11400.9    3.5965       13066.3    87/171  
+
+--- Per-galaxy: gamma=0.41 vs gamma=0.5 ---
+
+  Galaxies where gamma=0.5 is MUCH WORSE:
+  Galaxy          dchi2      chi2(g=a/2)    chi2(g=0.5)   
+  UGC02953        151.92     301.93         453.85        
+  UGC07125        132.94     300.00         432.94        
+  NGC2903         128.80     392.72         521.52        
+  DDO161          101.38     209.90         311.28        
+  UGC06787        99.83      246.76         346.59        
+  NGC2841         72.18      74.70          146.88        
+  NGC7331         69.52      41.91          111.43        
+  UGC06786        69.46      108.84         178.30        
+  NGC0891         68.09      99.58          167.67        
+  UGC09133        65.10      107.83         172.93        
+  UGC00128        64.02      36.10          100.13        
+  UGC06973        59.04      142.23         201.27        
+  ESO563-G021     56.16      378.93         435.09        
+  NGC0289         49.42      48.93          98.35         
+  UGC04305        40.25      596.88         637.13        
+
+  Galaxies where gamma=0.5 is BETTER:
+  UGC03205        -30.65     146.94         116.30        
+  D631-7          -33.21     118.30         85.09         
+  NGC5585         -33.65     138.25         104.60        
+  NGC0801         -46.28     184.29         138.01        
+  NGC6015         -46.99     198.78         151.79        
+  UGC02455        -53.44     254.18         200.73        
+  NGC5371         -66.67     364.38         297.71        
+  NGC3741         -69.51     120.37         50.87         
+  UGC03580        -90.21     223.04         132.83        
+  NGC1003         -205.64    314.33         108.69        
+
+  Prefer gamma=alpha/2: 66 galaxies
+  Prefer gamma=0.5:     48 galaxies
+  No strong preference: 57
+
+================================================================================
+SECTION 4: MODEL-PREDICTED BTFR AT OBSERVED RADII
+================================================================================
+
+--- Constrained (g=a/2) ---
+  N galaxies: 129
+  V_pred/V_obs: median=0.987, mean=1.001, std=0.105
+  log(Vpred/Vobs): scatter = 0.043 dex
+
+--- Forced g=0.5 ---
+  N galaxies: 129
+  V_pred/V_obs: median=1.011, mean=1.018, std=0.110
+  log(Vpred/Vobs): scatter = 0.044 dex
+
+--- McGaugh ---
+  N galaxies: 129
+  V_pred/V_obs: median=1.002, mean=1.007, std=0.110
+  log(Vpred/Vobs): scatter = 0.044 dex
+
+================================================================================
+SECTION 5: BTFR SLOPE PREDICTED BY EACH MODEL
+================================================================================
+  Constrained (g=a/2)           : M ~ v^3.57 (r2=0.9485, scatter=0.193 dex)
+  Forced g=0.5                  : M ~ v^3.66 (r2=0.9493, scatter=0.196 dex)
+  McGaugh                       : M ~ v^3.57 (r2=0.9466, scatter=0.197 dex)
+  MOND simple                   : M ~ v^3.55 (r2=0.9455, scatter=0.198 dex)
+  Raw observed (Yd=0.5 fixed)   : M ~ v^3.41 (r2=0.9110)
+
+================================================================================
+DONE
+================================================================================

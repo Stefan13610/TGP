@@ -1,0 +1,267 @@
+================================================================================
+gs10: HARD NUMERICS — Galaxy-by-galaxy rotation curve fitting
+================================================================================
+
+Loading galaxies from C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\galaxy_scaling\Rotmod_LTG...
+Loaded 171 galaxies (>= 5 data points)
+Total data points: 3375
+Galaxies with bulge: 32
+
+================================================================================
+PHASE 1: Individual galaxy fits (a0, Yd, Yb, shape params — all free)
+================================================================================
+
+--- Model: McGaugh [g/(1-exp(-sqrt(g/a0)))] ---
+  fitting galaxy 25/171...
+  fitting galaxy 50/171...
+  fitting galaxy 75/171...
+  fitting galaxy 100/171...
+  fitting galaxy 125/171...
+  fitting galaxy 150/171...
+  Fitted: 171/171 (failed: 0)
+  chi2_red: median=0.513, mean=1.009
+  a0 (×1e-10): median=0.743, mean=1.108, std=1.080
+  Yd: median=0.472, mean=0.931
+  Total chi2/ndof = 2936.5/3001 = 0.9785
+
+--- Model: MOND_simple [1/2 + sqrt(1/4 + a0/g)] ---
+  fitting galaxy 25/171...
+  fitting galaxy 50/171...
+  fitting galaxy 75/171...
+  fitting galaxy 100/171...
+  fitting galaxy 125/171...
+  fitting galaxy 150/171...
+  Fitted: 171/171 (failed: 0)
+  chi2_red: median=0.509, mean=1.022
+  a0 (×1e-10): median=0.756, mean=1.130, std=1.101
+  Yd: median=0.451, mean=0.896
+  Total chi2/ndof = 2971.5/3001 = 0.9902
+
+--- Model: Generalized_n [(1 + (g/a0)^(-n))^(1/n)] ---
+  fitting galaxy 25/171...
+  fitting galaxy 50/171...
+  fitting galaxy 75/171...
+  fitting galaxy 100/171...
+  fitting galaxy 125/171...
+  fitting galaxy 150/171...
+  Fitted: 171/171 (failed: 0)
+  chi2_red: median=0.696, mean=1.137
+  a0 (×1e-10): median=0.100, mean=0.196, std=0.268
+  Yd: median=0.565, mean=1.126
+  Total chi2/ndof = 2903.4/2830 = 1.0259
+  n: median=0.7818, mean=1.2306, std=0.9559
+
+--- Model: Hybrid_alpha [1 + 1/(sqrt(y) + y^alpha)] ---
+  fitting galaxy 25/171...
+  fitting galaxy 50/171...
+  fitting galaxy 75/171...
+  fitting galaxy 100/171...
+  fitting galaxy 125/171...
+  fitting galaxy 150/171...
+  Fitted: 171/171 (failed: 0)
+  chi2_red: median=0.525, mean=1.018
+  a0 (×1e-10): median=0.878, mean=1.389, std=1.493
+  Yd: median=0.514, mean=0.978
+  Total chi2/ndof = 2693.5/2830 = 0.9518
+  n: median=1.2563, mean=1.3105, std=0.6098
+
+--- Model: Rescaled_gen [(1 + (y/beta)^(-n))^(1/n)] ---
+  fitting galaxy 25/171...
+  fitting galaxy 50/171...
+  fitting galaxy 75/171...
+  fitting galaxy 100/171...
+  fitting galaxy 125/171...
+  fitting galaxy 150/171...
+  Fitted: 171/171 (failed: 0)
+  chi2_red: median=0.600, mean=1.013
+  a0 (×1e-10): median=0.112, mean=0.194, std=0.237
+  Yd: median=0.552, mean=1.041
+  Total chi2/ndof = 2579.1/2659 = 0.9700
+  n: median=0.5873, mean=1.0691, std=0.9728
+  alpha: median=0.4048, mean=0.7244, std=0.6044
+
+--- Model: Exponential [1 + exp(-y^alpha)/y^gamma] ---
+  fitting galaxy 25/171...
+  fitting galaxy 50/171...
+  fitting galaxy 75/171...
+  fitting galaxy 100/171...
+  fitting galaxy 125/171...
+  fitting galaxy 150/171...
+  Fitted: 171/171 (failed: 0)
+  chi2_red: median=0.390, mean=0.792
+  a0 (×1e-10): median=0.618, mean=1.995, std=2.980
+  Yd: median=0.575, mean=1.117
+  Total chi2/ndof = 1883.9/2659 = 0.7085
+  n: median=1.7689, mean=1.3842, std=0.7147
+  alpha: median=0.4278, mean=0.4621, std=0.2911
+
+================================================================================
+PHASE 2: Global fit — shared a0 + shape params, per-galaxy Yd/Yb
+================================================================================
+
+--- Model: McGaugh ---
+  Global params: 1 (a0 + 0 shape)
+  Per-galaxy params: Yd (+ Yb if bulge)
+  Running differential evolution...
+  Best a0 = 7.6449e-11 (0.6371 × 1.2e-10)
+  Total chi2 = 5890.8
+  Total ndof = 3171
+  chi2/ndof = 1.8577
+  Yd: median=0.612, mean=0.827, std=0.739
+  chi2_red per galaxy: median=1.092, mean=2.167
+  Galaxies with chi2_red < 2: 128/171
+  BIC = 7548.1 (n_free_total = 204)
+
+--- Model: MOND_simple ---
+  Global params: 1 (a0 + 0 shape)
+  Per-galaxy params: Yd (+ Yb if bulge)
+  Running differential evolution...
+  Best a0 = 7.8267e-11 (0.6522 × 1.2e-10)
+  Total chi2 = 6038.2
+  Total ndof = 3171
+  chi2/ndof = 1.9042
+  Yd: median=0.590, mean=0.796, std=0.710
+  chi2_red per galaxy: median=1.072, mean=2.219
+  Galaxies with chi2_red < 2: 125/171
+  BIC = 7695.5 (n_free_total = 204)
+
+--- Model: Generalized_n ---
+  Global params: 2 (a0 + 1 shape)
+  Per-galaxy params: Yd (+ Yb if bulge)
+  Running differential evolution...
+  Best a0 = 3.1623e-11 (0.2635 × 1.2e-10)
+  Best n = 1.522760
+  Total chi2 = 19990.1
+  Total ndof = 3170
+  chi2/ndof = 6.3060
+  Yd: median=0.676, mean=0.958, std=1.024
+  chi2_red per galaxy: median=3.048, mean=7.661
+  Galaxies with chi2_red < 2: 68/171
+  BIC = 21655.6 (n_free_total = 205)
+
+--- Model: Hybrid_alpha ---
+  Global params: 2 (a0 + 1 shape)
+  Per-galaxy params: Yd (+ Yb if bulge)
+  Running differential evolution...
+  Best a0 = 6.3867e-11 (0.5322 × 1.2e-10)
+  Best n = 1.708778
+  Total chi2 = 5895.3
+  Total ndof = 3170
+  chi2/ndof = 1.8597
+  Yd: median=0.659, mean=0.899, std=0.799
+  chi2_red per galaxy: median=1.117, mean=2.155
+  Galaxies with chi2_red < 2: 129/171
+  BIC = 7560.8 (n_free_total = 205)
+
+--- Model: Rescaled_gen ---
+  Global params: 3 (a0 + 2 shape)
+  Per-galaxy params: Yd (+ Yb if bulge)
+  Running differential evolution...
+  Best a0 = 3.1623e-11 (0.2635 × 1.2e-10)
+  Best n = 0.589419
+  Best alpha = 0.300000
+  Total chi2 = 7205.2
+  Total ndof = 3169
+  chi2/ndof = 2.2737
+  Yd: median=0.640, mean=0.854, std=0.801
+  chi2_red per galaxy: median=1.152, mean=2.612
+  Galaxies with chi2_red < 2: 116/171
+  BIC = 8878.8 (n_free_total = 206)
+
+--- Model: Exponential ---
+  Global params: 3 (a0 + 2 shape)
+  Per-galaxy params: Yd (+ Yb if bulge)
+  Running differential evolution...
+  Best a0 = 1.1216e-10 (0.9346 × 1.2e-10)
+  Best n = 0.809518
+  Best alpha = 0.405900
+  Total chi2 = 5623.8
+  Total ndof = 3169
+  chi2/ndof = 1.7746
+  Yd: median=0.630, mean=0.845, std=0.738
+  chi2_red per galaxy: median=0.990, mean=2.050
+  Galaxies with chi2_red < 2: 128/171
+  BIC = 7297.4 (n_free_total = 206)
+
+================================================================================
+PHASE 3: MODEL COMPARISON
+================================================================================
+
+Model                a0 (×1e-10)    Shape                chi2/ndof    BIC          Good/N    
+----------------------------------------------------------------------------------------
+Exponential          1.1216         0.810, 0.406         1.7746       0.0          128/171
+McGaugh              0.7645         —                    1.8577       250.7        128/171
+Hybrid_alpha         0.6387         1.709                1.8597       263.3        129/171
+MOND_simple          0.7827         —                    1.9042       398.1        125/171
+Rescaled_gen         0.3162         0.589, 0.300         2.2737       1581.4       116/171
+Generalized_n        0.3162         1.523                6.3060       14358.2      68/171
+
+================================================================================
+PHASE 4: GALAXY-BY-GALAXY DIAGNOSTICS (best model)
+================================================================================
+
+Best model: Exponential
+a0 = 1.1216e-10
+
+--- 10 BEST-FIT galaxies ---
+Galaxy               Npts   chi2_red   Yd       Yb      
+UGCA281              7      0.0161     0.448    —       
+NGC5005              18     0.1031     0.679    0.459   
+UGC03546             30     0.1096     0.674    0.430   
+UGC04483             8      0.1163     0.200    —       
+NGC5055              28     0.1169     0.431    —       
+F583-4               12     0.1215     0.551    —       
+UGC05414             6      0.1359     0.335    —       
+IC2574               34     0.1406     0.216    —       
+D564-8               6      0.1520     0.200    —       
+UGC12732             16     0.1541     1.046    —       
+
+--- 10 WORST-FIT galaxies ---
+PGC51017             6      9.1420     0.200    —       
+F574-2               5      9.1446     0.200    —       
+UGC06973             9      9.3150     0.378    0.200   
+NGC2903              34     9.7549     0.502    —       
+UGC07125             13     9.7989     0.200    —       
+F561-1               6      10.6125    0.200    —       
+UGC04305             22     11.2750    0.200    —       
+F563-V1              6      14.3012    0.200    —       
+UGC02455             8      19.2717    0.200    —       
+F571-8               13     24.7179    0.536    —       
+
+--- Yd distribution ---
+  5th percentile: Yd = 0.200
+  16th percentile: Yd = 0.221
+  25th percentile: Yd = 0.405
+  50th percentile: Yd = 0.630
+  75th percentile: Yd = 0.987
+  84th percentile: Yd = 1.332
+  95th percentile: Yd = 2.496
+
+  Physically reasonable Yd (0.2–1.2): 112/171 (65%)
+
+================================================================================
+PHASE 5: PER-GALAXY MODEL PREFERENCE
+================================================================================
+
+Comparing Exponential vs McGaugh:
+  Galaxies preferring Exponential (Δχ² < -2): 56
+  Galaxies preferring McGaugh (Δχ² > +2): 33
+  No strong preference: 82
+
+  Strongest preference for Exponential:
+    UGC06787: Δχ² = -43.48
+    UGC07125: Δχ² = -42.22
+    DDO161: Δχ² = -31.31
+    UGC02953: Δχ² = -30.88
+    UGC06786: Δχ² = -28.26
+
+  Strongest preference for McGaugh:
+    UGC03205: Δχ² = 14.65
+    NGC0801: Δχ² = 14.86
+    NGC3741: Δχ² = 21.63
+    NGC5371: Δχ² = 31.19
+    NGC1003: Δχ² = 65.95
+
+================================================================================
+DONE — gs10 complete
+================================================================================
