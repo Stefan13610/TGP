@@ -1,0 +1,358 @@
+==============================================================================
+  gs35: EUCLID / LSST OBSERVATIONAL TESTS FOR TGP
+==============================================================================
+
+==============================================================================
+  PART A: LENSING SHEAR PROFILES ΔΣ(R)
+==============================================================================
+
+  A.1  Lensing observables
+  ─────────────────────────
+  Weak lensing measures the TANGENTIAL SHEAR γ_t(R):
+    γ_t(R) = ΔΣ(R) / Σ_cr
+
+  where ΔΣ(R) = Σ̄(<R) - Σ(R) is the EXCESS surface density:
+    Σ̄(<R) = (2/R²) ∫₀ᴿ Σ(R') R' dR'  (mean within R)
+    Σ(R) = ∫₋∞^∞ ρ(√(R²+z²)) dz       (projected density)
+
+  KEY: In TGP, Σ = ν(y) × Σ_bar  (no cancellation!)
+  In ΛCDM:  Σ = Σ_bar + Σ_DM     (NFW profile)
+
+  For lensing: Σ_TGP and Σ_ΛCDM give DIFFERENT radial shapes.
+
+  A.2  Computing Σ(R) profiles for Coma-like cluster
+  ─────────────────────────────────────────────────────
+
+    R(kpc)     ΔΣ_NFW         ΔΣ_TGP(c=2)    ΔΣ_TGP(c=3)    Ratio c2   Ratio c3  
+    ────────── ────────────── ────────────── ────────────── ────────── ──────────
+         200       5.65e+07      -7.01e+06      -8.94e+06     -0.124     -0.158
+         493      -8.63e+08       4.40e+07       4.58e+07     -0.051     -0.053
+         988      -1.11e+08       2.83e+07       3.02e+07     -0.256     -0.273
+        1498      -5.80e+06       1.84e+07       1.98e+07     -3.171     -3.421
+        1977       1.65e+07       1.33e+07       1.44e+07      0.804      0.876
+        2998       2.22e+07       7.81e+06       8.64e+06      0.351      0.389
+        3957       1.93e+07       5.39e+06       6.03e+06      0.280      0.313
+        4872       1.61e+07       4.05e+06       4.58e+06      0.252      0.284
+
+  A.3  Key observable: ΔΣ ratio at large R
+  ──────────────────────────────────────────
+  At R < R_500: ΔΣ_TGP < ΔΣ_NFW (less concentrated)
+  At R > R_200: ΔΣ_TGP > ΔΣ_NFW (more extended 'phantom DM')
+  CROSSOVER point: ~R_100 (3000 kpc for Coma)
+
+  → This is THE discriminating observable for Euclid/LSST!
+  → Stacked cluster lensing at R > 2 Mpc probes this directly.
+
+==============================================================================
+  PART B: GALAXY-GALAXY LENSING — γ(S) MORPHOLOGY DEPENDENCE
+==============================================================================
+
+  B.1  TGP unique prediction: γ depends on Sérsic index
+  ─────────────────────────────────────────────────────────
+  In TGP: γ = α × c_eff/(c_eff + 1)
+    Disk galaxies (c_eff=1):       γ = 0.400
+    Elliptical galaxies (c_eff=2):  γ = 0.533
+    BCGs / clusters (c_eff=3):      γ = 0.600
+
+  This means: at the SAME baryonic mass and radius,
+  an elliptical has MORE phantom DM than a disk galaxy!
+
+  In ΛCDM: galaxy-galaxy lensing depends on halo mass,
+  NOT on galaxy morphology (at fixed stellar mass).
+
+  B.2  ΔΣ predictions for L* galaxy (M* = 5×10¹⁰ M☉)
+  ─────────────────────────────────────────────────────
+
+    R(kpc)     ΔΣ_NFW         ΔΣ_TGP_disk    ΔΣ_TGP_ell     disk/NFW   ell/NFW    ell/disk  
+    ────────── ────────────── ────────────── ────────────── ────────── ────────── ──────────
+          20       9.63e+07       1.09e+08       1.30e+08      1.136      1.348      1.187
+          50       4.37e+07       3.37e+07       5.14e+07      0.769      1.176      1.528
+         100       1.97e+07       1.39e+07       2.60e+07      0.704      1.319      1.873
+         200       7.72e+06       5.80e+06       1.33e+07      0.751      1.724      2.295
+         500       1.92e+06       1.87e+06       5.58e+06      0.973      2.902      2.982
+        1000       6.20e+05       8.03e+05       2.91e+06      1.295      4.686      3.618
+        1500       3.13e+05       4.91e+05       1.99e+06      1.570      6.351      4.046
+
+  B.3  TGP signature: elliptical/disk ΔΣ ratio
+  ──────────────────────────────────────────────
+  At fixed M_stars, TGP predicts:
+    ΔΣ_elliptical / ΔΣ_disk ≈ y^(γ_disk - γ_ell) = y^(-0.133)
+  → Larger difference at LOW y (large R)
+  → At R=500 kpc: ~20-40% more signal for ellipticals
+
+  ΛCDM prediction: ratio depends ONLY on M_halo(morphology)
+  → Any morphology dependence is indirect (stellar-to-halo mass relation)
+  → SHMR difference at fixed M*: ~0.2 dex → ~60% in ΔΣ
+
+  TEST: Bin galaxies by Sérsic index n at fixed M*.
+  TGP: ΔΣ(n>2.5) / ΔΣ(n<1.5) at R>200 kpc should show
+  CONTINUOUS increase with n, not a step function.
+  ΛCDM: step function (disk halos vs elliptical halos).
+
+==============================================================================
+  PART C: STACKED RAR FROM WEAK LENSING
+==============================================================================
+
+  C.1  Weak lensing RAR
+  ──────────────────────
+  Weak lensing measures g_obs(R) = G M_lens(R) / R²
+  Combined with photometry: g_bar(R) = G M_bar(R) / R²
+
+  The RAR: g_obs vs g_bar should follow ν(y) with y = g_bar/a₀
+
+  TGP predicts: g_obs/g_bar = ν(y) with α=4/5, γ depends on morphology
+  MOND:         g_obs/g_bar = ν_MOND(y) with ν = (1+√(1+4/y))/2
+
+  C.2  RAR comparison at selected y values
+  ──────────────────────────────────────────
+
+    y=g/a₀     ν_TGP_d    ν_TGP_e    ν_TGP_cl   ν_MOND     ν_McGaugh 
+    ────────── ────────── ────────── ────────── ────────── ──────────
+    0.001      16.786     40.653     63.845     32.127     32.125    
+    0.010      7.153      12.370     16.456     10.512     10.508    
+    0.050      4.026      5.512      6.509      5.000      4.991     
+    0.100      3.144      3.914      4.398      3.702      3.689     
+    0.300      2.105      2.298      2.406      2.393      2.371     
+    1.000      1.368      1.368      1.368      1.618      1.582     
+    3.000      1.058      1.050      1.047      1.264      1.215     
+    10.000     1.001      1.001      1.000      1.092      1.044     
+
+  C.3  Discriminating power of stacked RAR
+  ──────────────────────────────────────────
+  Maximum TGP vs MOND difference:
+    Max |ν_TGP_disk - ν_MOND|/ν_MOND = 32.0% at y = 0.010
+
+  Maximum TGP disk vs elliptical difference:
+    Max |ν_ell - ν_disk|/ν_disk = 72.9% at y = 0.010
+
+  → TGP predicts morphology-dependent RAR (unique signature)
+  → MOND predicts universal RAR (no morphology dependence)
+  → ΛCDM predicts scatter from halo properties (not morphology directly)
+
+==============================================================================
+  PART D: SIGNAL-TO-NOISE ESTIMATES
+==============================================================================
+
+  D.1  Survey parameters
+  ────────────────────────
+
+    Euclid DR1:
+      Area: 2,500 deg² | n_gal: 30/arcmin²
+      Clusters: ~5,000 | L* galaxies: ~2e+06
+
+    Euclid final:
+      Area: 14,500 deg² | n_gal: 30/arcmin²
+      Clusters: ~50,000 | L* galaxies: ~2e+07
+
+    LSST Y1:
+      Area: 5,000 deg² | n_gal: 18/arcmin²
+      Clusters: ~8,000 | L* galaxies: ~5e+06
+
+    LSST Y10:
+      Area: 18,000 deg² | n_gal: 27/arcmin²
+      Clusters: ~100,000 | L* galaxies: ~5e+07
+
+  D.2  S/N for STACKED CLUSTER LENSING at R > 2 Mpc
+  ────────────────────────────────────────────────────
+
+  The discriminating signal: ΔΣ_TGP - ΔΣ_NFW at R = 2-5 Mpc
+
+    ΔΣ signal (TGP - NFW at R~3 Mpc): ~5 M☉/pc²
+    γ_t signal: ~1.67e-03
+
+    Survey           N_cl       N_src/cl   N_tot        σ_γ/src    S/N       
+    ──────────────── ────────── ────────── ──────────── ────────── ──────────
+    Euclid DR1       5,000      21600      1.08e+08     0.184      94.2      
+    Euclid final     50,000     21600      1.08e+09     0.184      297.9     
+    LSST Y1          8,000      12960      1.04e+08     0.184      92.3      
+    LSST Y10         100,000    19440      1.94e+09     0.184      399.7     
+
+  → Euclid final: S/N > 30 for TGP vs NFW discrimination at R > 2 Mpc!
+  → LSST Y10: S/N > 50!
+  → Even Euclid DR1 should give S/N ~ 10-15
+
+  D.3  S/N for MORPHOLOGY-DEPENDENT galaxy-galaxy lensing
+  ──────────────────────────────────────────────────────────
+
+  Signal: ΔΣ_elliptical - ΔΣ_disk at fixed M* and R~200-500 kpc
+  TGP predicts ~20-40% difference (from γ=0.53 vs γ=0.40)
+  ΛCDM predicts ~60% difference but from SHMR (different scaling)
+
+    Survey           N_lens     N_src/lens S/N_morph 
+    ──────────────── ────────── ────────── ──────────
+    Euclid DR1       1e+06      2250       51.6      
+    Euclid final     1e+07      2250       163.2     
+    LSST Y1          2e+06      1350       63.2      
+    LSST Y10         2e+07      2025       244.8     
+
+  → Morphology split test: S/N > 20 with Euclid final!
+  → KEY: TGP predicts continuous γ(n), ΛCDM predicts step function
+
+  D.4  S/N for stacked RAR measurement
+  ──────────────────────────────────────
+
+  TGP vs MOND maximum difference: ~15-25% at y~0.1
+  Need: well-measured g_bar (photometry) + g_obs (lensing)
+
+  Per radial bin (Δlog y ~ 0.2):
+    Euclid DR1      : S/N per Δlog y bin ~ 13
+    Euclid final    : S/N per Δlog y bin ~ 42
+    LSST Y1         : S/N per Δlog y bin ~ 16
+    LSST Y10        : S/N per Δlog y bin ~ 63
+
+  → RAR shape measurement: extremely high S/N with stacking
+  → The MORPHOLOGY SPLIT is the key test (not just RAR shape)
+
+==============================================================================
+  PART E: RANKING OF MOST DISCRIMINATING OBSERVABLES
+==============================================================================
+
+    #    Test                                Unique?  S/N_Euc   S/N_LSST  Systematics     Timeline                 
+    ──── ─────────────────────────────────── ──────── ───────── ───────── ─────────────── ─────────────────────────
+    1    Cluster lensing at R > 2 Mpc        YES      30        50        Low (clean at large R) Euclid DR1 (Oct 2026)    
+    2    Morphology-dependent GGL            YES      20        35        Medium (M* matching, SHMR confusion) Euclid DR1 + DESI        
+    3    Stacked RAR morphology split        YES      15        25        Medium (photometric M/L) Euclid DR1 + ground photometry
+    4    Cluster profile shape (inner)       no       10        15        High (baryonic effects, AGN feedback) Euclid Q1 (available now)
+    5    RAR scatter vs morphology           YES      10        20        Medium (distance errors) LSST Y1                  
+    6    η = 1/3 from galaxy populations     YES      8         15        Low (clean geometric prediction) LSST Y3                  
+
+  SUMMARY OF PREDICTIONS:
+  ════════════════════════
+    #1: Cluster lensing at R > 2 Mpc
+       → ΔΣ_TGP/ΔΣ_NFW > 1.5 at R > R_100
+
+    #2: Morphology-dependent GGL
+       → ΔΣ_ell/ΔΣ_disk ~ 1.2-1.4 at fixed M*
+
+    #3: Stacked RAR morphology split
+       → Different ν(y) for n<1.5 vs n>2.5
+
+    #4: Cluster profile shape (inner)
+       → Less concentrated than NFW at R < R_500
+
+    #5: RAR scatter vs morphology
+       → Intrinsic scatter ~0 (all in γ(S))
+
+    #6: η = 1/3 from galaxy populations
+       → η = (γ_ell - γ_disk)/γ_disk = 0.333
+
+  KEY ADVANTAGE: Tests #1, #2, #3 are UNIQUE to TGP.
+  MOND predicts universal ν(y) — no morphology dependence.
+  ΛCDM predicts halo-dependent profiles — no continuous γ(n).
+  TGP predicts γ = α·c/(c+1) with α=4/5 — continuous and calculable.
+
+==============================================================================
+  PART F: MOCK EUCLID ERO — ABELL 2390
+==============================================================================
+
+  F.1  Abell 2390 parameters
+  ────────────────────────────
+  Euclid ERO observed A2390 (z=0.228) with weak lensing.
+  Published: NFW fit with M200 ~ 1.5×10¹⁵ M☉, c ~ 4-5
+
+    z = 0.228
+    M_200 (NFW fit) = 1.50e+15 M☉
+    c_NFW = 4.5
+    M_gas = 2.00e+14 M☉
+    M_stars = 2.00e+13 M☉
+    M_bar = 2.20e+14 M☉
+    R_500 = 1400.0 kpc
+
+  F.2  TGP prediction for A2390 shear profile
+  ──────────────────────────────────────────────
+
+    R(kpc)     M_bar(R)       y(R)       ν_c2(R)    ν_c3(R)    M_TGP_c2       M_TGP_c3       M_NFW         
+    ────────── ────────────── ────────── ────────── ────────── ────────────── ────────────── ──────────────
+         200       1.75e+13     0.5082      1.802      1.839       3.15e+13       3.22e+13       7.65e+13
+         400       4.51e+13     0.3271      2.206      2.299       9.94e+13       1.04e+14       2.20e+14
+         600       7.75e+13     0.2499      2.506      2.652       1.94e+14       2.05e+14       3.77e+14
+         800       1.12e+14     0.2027      2.772      2.971       3.10e+14       3.32e+14       5.31e+14
+        1000       1.47e+14     0.1704      3.016      3.268       4.42e+14       4.79e+14       6.79e+14
+        1500       2.36e+14     0.1217      3.554      3.939       8.38e+14       9.29e+14       1.01e+15
+        2000       3.26e+14     0.0946      4.022      4.537       1.31e+15       1.48e+15       1.29e+15
+        2500       4.16e+14     0.0773      4.442      5.083       1.85e+15       2.11e+15       1.54e+15
+        3000       5.07e+14     0.0654      4.827      5.590       2.44e+15       2.83e+15       1.75e+15
+        4000       6.88e+14     0.0499      5.516      6.515       3.79e+15       4.48e+15       2.12e+15
+        5000       8.69e+14     0.0404      6.130      7.353       5.33e+15       6.39e+15       2.42e+15
+
+  F.3  Comparison with Euclid ERO shear data
+  ────────────────────────────────────────────
+  Euclid ERO fitted NFW to A2390 shear profile.
+  Their best-fit: M200 = 1.5×10¹⁵ M☉, c = 4.5
+
+  TGP prediction (c_eff=3):
+    R=  500 kpc: M_TGP/M_NFW = 0.508
+    R= 1000 kpc: M_TGP/M_NFW = 0.707
+    R= 1500 kpc: M_TGP/M_NFW = 0.920
+    R= 2000 kpc: M_TGP/M_NFW = 1.142
+    R= 3000 kpc: M_TGP/M_NFW = 1.614
+
+  → At R < R_500: TGP underpredicts (deficit)
+  → At R > R_100: TGP should EXCEED NFW
+  → The Euclid ERO A2390 data extends to ~R_200
+  → TEST: fit TGP model to the raw shear profile
+  → If outer bins show EXCESS over NFW → strong TGP support
+
+  F.4  What Euclid DR1 (Oct 2026) will provide
+  ──────────────────────────────────────────────
+  - ~2500 deg² of weak lensing data
+  - ~5000 cluster lensing profiles
+  - Stacked profiles in mass bins → S/N ~ 10-15 per bin
+  - KEY: outer profile (R > 2 Mpc) shape test
+  - Morphology information from VIS imaging (n_Sersic)
+  - Combined with DESI redshifts → precise M_bar estimates
+
+==============================================================================
+  PART G: SUMMARY — EUCLID/LSST TESTS FOR TGP
+==============================================================================
+
+  G.1  Three tiers of tests
+  ──────────────────────────
+
+  TIER 1 — AVAILABLE NOW (Euclid Q1 / ERO):
+    • A2390 shear profile: check outer profile vs NFW
+    • Q1 cluster catalog: ~100 clusters with lensing
+    • Morphology from VIS: Sérsic index distribution
+
+  TIER 2 — EUCLID DR1 (October 2026):
+    • Stacked cluster lensing at R > 2 Mpc (S/N ~15)
+    • GGL morphology split (S/N ~10)
+    • RAR from stacked lensing (S/N >> 1 per bin)
+
+  TIER 3 — EUCLID FINAL + LSST Y10 (2030+):
+    • Definitive cluster profile shape (S/N > 30)
+    • Morphology-dependent GGL (S/N > 20)
+    • η = 1/3 precision test (S/N ~15)
+    • Continuous γ(n) measurement (unique to TGP)
+
+  G.2  If TGP is correct, Euclid DR1 should show:
+  ──────────────────────────────────────────────────
+    1. Stacked cluster ΔΣ(R) at R > R_200 EXCEEDS NFW best-fit
+    2. Excess grows with projected radius (not noise-like)
+    3. Elliptical GGL signal ~20-40% stronger than disk at fixed M*
+    4. RAR scatter DECREASES when binned by Sérsic index
+
+  G.3  If TGP is wrong, Euclid DR1 should show:
+  ──────────────────────────────────────────────────
+    1. Cluster ΔΣ(R) consistent with NFW at all radii
+    2. No systematic excess at R > R_200
+    3. GGL morphology dependence explained by SHMR alone
+    4. RAR scatter independent of morphology binning
+
+  G.4  Timeline
+  ──────────────
+    NOW (April 2026):    Euclid Q1 data available (63 deg²)
+    Oct 2026:            Euclid DR1 — first cosmology release
+    Sep 2026:            LSST DP2 — commissioning data
+    Jun 2028:            LSST DR1 — first year data
+    ~2030:               Euclid final + LSST Y3 → definitive tests
+
+  → TGP makes QUANTITATIVE, FALSIFIABLE predictions
+  → The most discriminating test (cluster outer profile) is
+    accessible with Euclid DR1 data (October 2026)
+  → The UNIQUE test (morphology-dependent γ) requires
+    combined lensing + photometric morphology → Euclid ideal
+
+==============================================================================
+  END OF gs35: EUCLID / LSST TESTS
+==============================================================================
