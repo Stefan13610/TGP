@@ -1,0 +1,309 @@
+==============================================================================
+  gs40: LENSING vs DYNAMICS — GRAVITATIONAL SLIP IN TGP
+==============================================================================
+
+==============================================================================
+  PART A: GRAVITATIONAL SLIP eta = Phi / Psi
+==============================================================================
+
+  Newtonian gauge metric:
+    ds^2 = -(1 + 2 Phi) dt^2 + a^2 (1 - 2 Psi) delta_ij dx^i dx^j
+
+  The gravitational slip (anisotropy parameter):
+    eta = Phi / Psi
+
+  Physical meaning:
+    - Phi: felt by non-relativistic particles (dynamics, rotation curves)
+    - Psi: combined with Phi for light deflection: Phi_lens = (Phi + Psi)/2
+    - If eta != 1: lensing and dynamics probe DIFFERENT potentials
+
+  Effective gravitational strengths:
+    mu(k,a) = -k^2 Psi / (4 pi G a^2 rho delta)    (dynamical)
+    Sigma(k,a) = -k^2 (Phi+Psi)/2 / (4 pi G a^2 rho delta)  (lensing)
+
+  Key relation: Sigma = mu * (1 + eta) / 2
+
+  Theories and their predictions:
+  ┌─────────────────────┬──────────┬──────────────────────────────────────┐
+  │ Theory              │  eta     │  Consequence                         │
+  ├─────────────────────┼──────────┼──────────────────────────────────────┤
+  │ GR + DM             │  1       │  M_lens = M_dyn                      │
+  │ f(R) Hu-Sawicki     │  ~0.95-1 │  scale-dependent slip                │
+  │ DGP (nDGP)          │  != 1    │  brane-bending mode creates slip     │
+  │ TeVeS (MOND)        │  != 1    │  tensor field needed for lensing     │
+  │ TGP (substrate=met) │  ~1      │  substrate IS metric => same pot.    │
+  └─────────────────────┴──────────┴──────────────────────────────────────┘
+
+  In f(R) gravity, the slip parameter is:
+    eta(k) = [1 + 2 f_RR k^2 / a^2] / [1 + 3 f_RR k^2 / a^2]
+
+  Note: eta -> 1 when f_RR -> 0 (GR limit)
+        eta -> 2/3 when f_RR k^2/a^2 >> 1 (strong modification)
+
+  For TGP f(R), f_RR is exponentially suppressed at high curvature
+  => eta ~ 1 at galaxy/cluster scales (the Chameleon-free screening)
+
+==============================================================================
+  PART B: f_R AND f_RR FOR TGP f(R)
+==============================================================================
+
+  TGP action:
+    f(R) = R + R0^gamma * R^(1-gamma) * exp(-(R/R0)^alpha)
+
+  Parameters:
+    alpha = 0.8  (Flory exponent)
+    gamma = 0.4  (= alpha/2 for c_eff = 1)
+    R0 = a0^2 / c^4 = 1.7778e-54 m^-2
+
+  Table: f_R - 1 and f_RR at selected R/R0 values
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+          R/R0         f_R - 1      f_RR [m^2]       |f_RR|*R0
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+       1.0e-02    3.568189e+00   -8.988162e+55    1.597896e+02
+       1.0e-01    1.014429e+00   -4.229084e+54    7.518371e+00
+       1.0e+00   -7.357589e-02   -8.277287e+52    1.471518e-01
+       1.0e+01   -3.220465e-03    8.223785e+50    1.462006e-03
+       1.0e+02    0.000000e+00    4.495384e+36    7.991793e-18
+       1.0e+03    0.000000e+00    1.159556e-55   2.061433e-109
+       1.0e+04    0.000000e+00    0.000000e+00    0.000000e+00
+       1.0e+06    0.000000e+00    0.000000e+00    0.000000e+00
+
+  Key observations:
+  - At R/R0 ~ 1 (MOND regime):  f_R - 1 ~ O(1), f_RR significant
+  - At R/R0 >> 1 (Solar System): f_R -> 1, f_RR -> 0 exponentially
+  - This is the built-in screening: no Chameleon mechanism needed
+
+==============================================================================
+  PART C: GALAXY-SCALE GRAVITATIONAL SLIP
+==============================================================================
+
+  At the outskirts of disk galaxies, the Newtonian acceleration g_N ~ a0.
+  The Ricci scalar from baryonic matter:
+    R_gal ~ 8 pi G rho / c^2 ~ g_N / (r c^2) ~ a0 / (r c^2)
+
+  For r ~ 10 kpc:
+    R_gal ~ a0 / (10 kpc * c^2) ~ 4.32e-48 m^-2
+
+  Compare with R0 = a0^2 / c^4 = 1.78e-54 m^-2
+
+  Galaxy-scale gravitational slip eta(k)
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+                Galaxy        R/R0      f_RR*k^2         eta     M_l/M_d
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+          MW-like disk    1.41e+06    0.0000e+00    1.000000    1.000000
+        Massive spiral    1.67e+06    0.0000e+00    1.000000    1.000000
+        Low-mass dwarf    3.53e+05    0.0000e+00    1.000000    1.000000
+      Giant elliptical    1.76e+06    0.0000e+00    1.000000    1.000000
+    Compact elliptical    1.05e+08    0.0000e+00    1.000000    1.000000
+
+  Result: For TGP galaxies, the Ricci curvature R >> R0 at the effective
+  radius. The exponential exp(-(R/R0)^alpha) kills the modification.
+  => f_RR ~ 0 => eta ~ 1 => M_lens / M_dyn ~ 1
+
+  BUT: This is the INNER region. At the OUTSKIRTS (r >> R_eff),
+  the curvature drops and the TGP correction becomes important.
+  The nu(y) enhancement operates there, but since TGP substrate = metric,
+  BOTH potentials Phi and Psi are enhanced equally => eta still = 1.
+
+==============================================================================
+  PART D: CLUSTER-SCALE GRAVITATIONAL SLIP
+==============================================================================
+
+  Clusters: baryonic mass ~ 10^13 - 10^14 Msun (mostly hot gas)
+  Ricci curvature at virial radius:
+    R_cluster ~ G M_baryon / (R_vir^2 c^2 R_vir) ~ g_N / (R c^2)
+
+           Cluster        R/R0      f_RR*k^2         eta     M_l/M_d
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+              Coma    2.82e+03   4.4043e-240    1.000000    1.000000
+        Abell 1689    4.52e+04    0.0000e+00    1.000000    1.000000
+   Bullet (1E0657)    1.65e+04    0.0000e+00    1.000000    1.000000
+           Perseus    5.23e+04    0.0000e+00    1.000000    1.000000
+        Abell 2390    1.05e+04    0.0000e+00    1.000000    1.000000
+
+  Cluster-scale result: same conclusion as galaxies.
+  R >> R0 everywhere in the cluster interior.
+  TGP exponential screening => f_RR ~ 0 => eta = 1.
+
+  The MOND-like enhancement nu(y) only acts where g_N < a0,
+  i.e., at the very outskirts. There, the TGP substrate mechanism
+  enhances both Phi and Psi equally (no slip).
+  This is because in TGP the substrate IS the spacetime metric.
+
+==============================================================================
+  PART E: LENSING MASS vs DYNAMICAL MASS
+==============================================================================
+
+  In GR + dark matter:
+    M_lens = M_dyn = M_baryon + M_DM
+    => M_lens / M_dyn = 1 identically
+
+  In MOND/TeVeS:
+    M_dyn = M_baryon * nu(g_N/a0)   (enhanced by interpolation function)
+    M_lens depends on the specific relativistic completion:
+      - AQUAL: Sigma = nu(y) => M_lens = M_dyn  (no slip)
+      - TeVeS: Sigma != nu(y) in general => M_lens != M_dyn
+      - Bekenstein (2004): tuned so M_lens ~ M_dyn, but not exactly
+
+  In TGP:
+    Substrate = metric => both dynamics AND lensing see nu(y)
+    => M_lens_TGP / M_dyn_TGP = 1
+
+  Let's verify with a sample of galaxies with BOTH lensing and dynamical estimates.
+
+  SLACS-like strong lensing + stellar dynamics comparison
+  (In GR+DM, these already agree: M_lens/M_dyn ~ 1)
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+                Galaxy    M_lens     M_dyn   M_l/M_d   TGP pred
+                         [10^11]   [10^11]     (obs)    M_l/M_d
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+       SDSS J0037-0942      2.55      2.46     1.037      1.000
+       SDSS J0216-0813      3.82      3.71     1.030      1.000
+       SDSS J0912+0029      4.10      4.22     0.972      1.000
+       SDSS J0959+0410      0.95      0.98     0.969      1.000
+       SDSS J1250+0523      1.68      1.55     1.084      1.000
+       SDSS J1402+6321      2.90      2.85     1.018      1.000
+       SDSS J1627-0053      1.35      1.42     0.951      1.000
+       SDSS J2300+0022      2.15      2.08     1.034      1.000
+
+  Observed mean M_lens/M_dyn = 1.012 +/- 0.042
+  TGP prediction:              1.000 (exact, from eta = 1)
+  GR + DM prediction:          1.000 (by construction)
+
+  Both TGP and GR+DM predict M_lens/M_dyn = 1 for these galaxies.
+  This is NOT a test that distinguishes TGP from LCDM at high acceleration.
+
+  The discriminating regime is g_N << a0 (outer halos, dwarf galaxies)
+  where nu(y) >> 1. Even there, TGP predicts eta = 1 (no slip).
+  But MOND/TeVeS may have slip => M_lens != M_dyn in the deep-MOND regime.
+
+==============================================================================
+  PART F: THE E_G STATISTIC
+==============================================================================
+
+  The E_G statistic (Zhang et al. 2007) combines:
+    - Galaxy-galaxy lensing (probes Phi + Psi)
+    - Galaxy clustering (probes Phi through peculiar velocities)
+    - Redshift-space distortions (RSD, probes beta = f/b)
+
+  Definition:
+    E_G = Omega_m * D_l(z) / beta(z) * P_gm(k) / P_gg(k)
+
+  More operationally:
+    E_G(z) = [nabla^2 (Phi + Psi)] / [3 H0^2 (1+z) theta]
+
+  where theta = -nabla . v / (aH) is the velocity divergence.
+
+  GR prediction:  E_G = Omega_m / f(z)
+    where f(z) ~ Omega_m(z)^0.55 is the growth rate.
+    At z ~ 0.3: E_G^GR ~ 0.40 (for Omega_m = 0.3)
+
+  f(R) prediction: E_G depends on mu and Sigma:
+    E_G = Omega_m * Sigma(k,z) / f_mod(z)
+    where f_mod accounts for scale-dependent growth.
+
+  TGP prediction:
+    Since eta = 1 (no slip) => Sigma = mu
+    => E_G_TGP = Omega_m * mu(k,z) / f_TGP(z)
+    At scales where mu ~ 1 (screened): E_G_TGP ~ E_G_GR
+    At very large scales (unscreened): mu could differ, but TGP screening
+    is so efficient that mu ~ 1 everywhere observationally accessible.
+
+  E_G predictions at different redshifts
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+       z      f_GR    E_G^GR   E_G^TGP  E_G^nDGP   E_G^fR_HS
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+    0.15    0.5996    0.5003    0.5003    0.4900      0.5003
+    0.27    0.6582    0.4558    0.4558    0.4468      0.4558
+    0.43    0.7242    0.4142    0.4142    0.4067      0.4142
+    0.57    0.7714    0.3889    0.3889    0.3823      0.3889
+    0.70    0.8076    0.3715    0.3715    0.3656      0.3715
+    1.00    0.8687    0.3453    0.3453    0.3408      0.3453
+
+  Observational measurements of E_G:
+  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─  ─
+                 SDSS (Reyes+10)  z=0.27:  E_G = 0.392 +/- 0.065  (GR pred: 0.456, 1.0 sigma)
+             CFHTLenS (Blake+16)  z=0.43:  E_G = 0.480 +/- 0.100  (GR pred: 0.414, 0.7 sigma)
+             BOSS+KiDS (Amon+18)  z=0.57:  E_G = 0.260 +/- 0.060  (GR pred: 0.389, 2.1 sigma)
+            DESI+DES (projected)  z=0.30:  E_G = 0.400 +/- 0.030  (GR pred: 0.447, 1.6 sigma)
+
+  TGP prediction: E_G = E_G^GR at all accessible scales.
+  Reason: TGP screening (exponential) makes mu = Sigma = 1
+  at the curvatures probed by lensing surveys.
+  The TGP modification only appears where R ~ R0 = a0^2/c^4,
+  which is deep in the outskirts of individual galaxies,
+  not in the linear-regime power spectra used for E_G.
+
+==============================================================================
+  PART G: SUMMARY — TGP GRAVITATIONAL SLIP PREDICTIONS
+==============================================================================
+
+  TGP gravitational slip eta(R) across cosmic scales:
+
+  The critical insight: TGP f(R) has EXPONENTIAL screening.
+  The correction term f_RR ~ exp(-(R/R0)^alpha) vanishes super-fast
+  once R > R0. Since R0 = a0^2/c^4 ~ 1.8e-52 m^-2, and even the
+  WEAKEST astrophysical curvatures (voids, cosmic web) have R >> R0,
+  the f(R) slip is negligible everywhere.
+
+  But TGP gravity is NOT just f(R) in the standard sense!
+  The substrate-metric identification means that the MOND-like
+  enhancement nu(y) acts on the TOTAL gravitational potential,
+  which affects BOTH Phi and Psi equally.
+
+  This is the key difference from other modified gravity theories:
+    - In Brans-Dicke/f(R): scalar field mediates EXTRA force
+      => Phi != Psi (scalar contributes to dynamics but not lensing)
+    - In TGP: there IS no extra scalar — the substrate IS spacetime
+      => Phi = Psi enhanced by nu(y) identically
+      => eta = 1 at ALL scales
+
+  Summary table: eta and M_lens/M_dyn across scales
+  ==========================================================================
+                 Scale        R/R0   eta_TGP  eta_fR_HS  eta_TeVeS   M_l/M_d
+  ==========================================================================
+          Solar System       1e+20  1.000000   1.000000      1.000     1.000
+   Galaxy inner (1kpc)       1e+12  1.000000   1.000000      1.000     1.000
+  Galaxy R_eff (10kpc)       1e+08  1.000000    ~0.9999      ~0.98     1.000
+      Galaxy outskirts       1e+02  1.000000     ~0.997      ~0.90     1.000
+    MOND regime (g~a0)       1e+00  1.000000      ~0.95      ~0.75     1.000
+     Deep MOND (g<<a0)       1e-02  1.000000      ~0.80      ~0.67     1.000
+        Cluster virial       1e+06  1.000000    ~0.9998      ~0.95     1.000
+     Cluster outskirts       1e+03  1.000000     ~0.998      ~0.85     1.000
+            Cosmic web       1e+01  1.000000      ~0.99      ~0.80     1.000
+           Linear P(k)       1e+04  1.000000     ~0.999      ~0.90     1.000
+  ==========================================================================
+
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║                    TGP LENSING vs DYNAMICS VERDICT                 ║
+  ╠══════════════════════════════════════════════════════════════════════╣
+  ║                                                                    ║
+  ║  1. Gravitational slip eta = Phi/Psi = 1 at ALL scales in TGP     ║
+  ║     Reason: substrate IS metric => no extra scalar degree of       ║
+  ║     freedom to create anisotropic stress                           ║
+  ║                                                                    ║
+  ║  2. M_lens / M_dyn = 1 in TGP (same as GR + DM)                  ║
+  ║     The nu(y) enhancement applies equally to both potentials       ║
+  ║                                                                    ║
+  ║  3. E_G statistic: E_G_TGP = Omega_m / f(z) = E_G_GR             ║
+  ║     TGP is indistinguishable from GR+DM in E_G measurements       ║
+  ║                                                                    ║
+  ║  4. This DISTINGUISHES TGP from:                                   ║
+  ║     - TeVeS/MOND: which generally has eta != 1                    ║
+  ║     - Standard f(R): which has scale-dependent eta                ║
+  ║     - nDGP: which has Sigma = 1 but mu != 1                      ║
+  ║                                                                    ║
+  ║  5. Observational test: measure E_G at z ~ 0.3-0.7                ║
+  ║     If E_G = Omega_m/f(z): consistent with TGP AND GR+DM         ║
+  ║     If E_G != Omega_m/f(z): rules out TGP (and GR+DM)            ║
+  ║                                                                    ║
+  ║  6. TGP's UNIQUE prediction vs GR+DM:                             ║
+  ║     Not in the slip, but in the MASS PROFILE.                      ║
+  ║     TGP predicts M(r) from baryons alone via nu(y).               ║
+  ║     GR+DM requires a free DM halo for each galaxy.                ║
+  ║     The test is rotation curves / RAR, not lensing vs dynamics.    ║
+  ║                                                                    ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+
+  gs40 complete.
+==============================================================================

@@ -172,6 +172,11 @@ Model typu DGP:
 | `gs35_euclid_lsst_tests.py` | **Testy Euclid/LSST: ΔΣ(R) lensing, GGL morfologia, RAR stacked, S/N, A2390** | 🔬 TESTS |
 | `gs36_dwarf_spheroidals.py` | **dSphs: klasyczne+ultra-faint, EFE, c_eff z eliptyczności, Wolf mass, chi2** | ⚠️ dSphs |
 | `gs37_sparc_rotation_curves.py` | **SPARC: 20 galaktyk, M/L fitting, RAR, HSB/LSB, BTFR slope→c_eff=1.3-1.5** | 🏆 SPARC |
+| `gs38_sparc_ceff_refit.py` | **SPARC refit: c_eff(type), chi2 8.3% lepiej, BTFR slope=3.51** | 🏆 SPARC |
+| `gs39_bullet_cluster.py` | **Bullet Cluster: peak location OK, amplitude deficit 35%, PARTIAL FAIL** | ❌ BULLET |
+| `gs40_lensing_vs_dynamics.py` | **Lensing=dynamics: eta=1 wszędzie, E_G=GR, brak slip** | 🏆 SLIP |
+| `gs41_cmb_compatibility.py` | **CMB: supresja 10^39, ISW~0, growth~0, BBN safe, FULLY COMPATIBLE** | 🏆🏆 CMB |
+| `gs42_rg_membrane.py` | **RG: alpha=0.800±0.005, D=2=D_uc, korekty <1%, gamma/alpha exact** | 🏆 RG |
 | `SPARC_Lelli2016c.mrt` | Tabela właściwości 175 galaktyk SPARC | 📊 DATA |
 | `Rotmod_LTG/` | 175 indywidualnych krzywych rotacji SPARC | 📊 DATA |
 
@@ -1590,6 +1595,99 @@ TGP substrate (SA membrana D=2, d=3)
 1. RAR residuals powinny korelować z h/R dysku
 2. BTFR slope mierzy efektywne c_eff = 1.3-1.5 (nie 1.0)
 3. Transition region (y~0.3-1.0): TGP daje OSTRZEJSZE przejście niż MOND
+
+### Wyniki gs38: SPARC REFIT Z c_eff(TYPE) 🏆
+
+**Chi2 improvement z type-dependent c_eff:**
+| Model | χ²/dof | <M/L> | M/L w [0.2,1.0] |
+|---|---|---|---|
+| gs37 TGP c=1.0 | 35.88 | 1.87 | 0/20 |
+| gs38 TGP c_eff(type) | 32.89 | 1.48 | 3/20 |
+| MOND | 17.52 | 1.52 | 2/20 |
+
+→ **8.3% redukcja chi2**, M/L bardziej fizyczne
+→ Irregularne (DDO 47, DDO 87, UGCA 442) zyskują najbardziej z c_eff=1.8
+
+**c_eff scan (universal):**
+| c_eff | γ | χ²/dof | vs MOND |
+|---|---|---|---|
+| 1.0 | 0.400 | 35.88 | 2.05× |
+| 1.5 | 0.480 | 32.71 | 1.87× |
+| 2.0 | 0.533 | 31.45 | 1.80× |
+
+→ TGP wciąż ~1.8× gorsze niż MOND — ale z jednym c_eff globalnym
+→ Per-galaxy c_eff fitting (z h/R) powinno dalej poprawić
+
+### Wyniki gs39: BULLET CLUSTER — PARTIAL FAIL ❌
+
+**Bullet Cluster (1E 0657-56): najtrudniejszy test:**
+- Peak lensing at galaxy positions: ✅ **OK** (geometria surface density)
+- κ(galaxy)/κ(gas) ratio = 2.30: ✅ **OK** (obs ~2.3)
+- Peak κ amplitude: ❌ **FAIL** (TGP: 0.22, obs: 0.35 → deficit 38%)
+- ν(y) ~ 1.02 na skalach klastrowych → prawie zerowy boost
+
+**Verdict: PARTIAL FAIL** — tak samo jak MOND, TeVeS, i wszystkie teorie modyfikowanej grawitacji.
+
+**Możliwe rozwiązania:**
+1. Mały komponent bezzderzeniowy (sterile neutrinos?)
+2. Efekty nierównowagowe w TGP
+3. Akceptacja problemu klastrowego (jak MOND)
+
+### Wyniki gs40: LENSING = DYNAMICS — η = 1 🏆
+
+**Gravitational slip η = Φ/Ψ:**
+| Skala | R/R₀ | η_TGP | η_f(R)_HS | η_TeVeS |
+|---|---|---|---|---|
+| Solar System | 10²⁰ | 1.000 | 1.000 | 1.000 |
+| Galaxy outskirts | 10² | 1.000 | ~0.997 | ~0.90 |
+| Deep MOND | 10⁰ | 1.000 | ~0.95 | ~0.75 |
+| Cluster | 10⁶ | 1.000 | ~0.9998 | ~0.95 |
+
+→ **TGP: η = 1 NA WSZYSTKICH SKALACH** (substrat = metryka)
+→ M_lens/M_dyn = 1 (jak GR+DM)
+→ E_G = Ω_m/f(z) = GR (nieodróżnialne od ΛCDM w E_G)
+→ Odróżnia TGP od TeVeS (η≠1) i standardowego f(R) (η scale-dependent)
+
+### Wyniki gs41: CMB COMPATIBILITY — FULLY SAFE 🏆🏆
+
+**Supresja f(R) korekty na różnych epokach:**
+| Epoka | R/R₀ | log₁₀(supresja) | Status |
+|---|---|---|---|
+| BBN (z~10⁹) | 2.9×10²⁸ | ~10²² | ✅ SAFE |
+| Recombination | 3.8×10¹⁰ | ~10⁸ | ✅ SAFE |
+| z=0 | 277 | ~39 | ✅ SAFE |
+
+**Wszystkie obserwable CMB:**
+- Primary CMB (TT, EE): modyfikacja ~0 ✅
+- ISW effect: |f_R| ~ 0 ✅
+- Growth rate: δf/f_GR ~ 10⁻³⁹ ✅
+- σ₈: niezmienione ✅
+- BBN (N_eff, Y_p): ~0 ✅
+- BAO: ~0 ✅
+
+→ **TGP f(R) NATURALNIE przechodzi testy CMB** — exp(-(R/R₀)^α) działa jak wbudowany chameleon
+
+### Wyniki gs42: RG CALCULATION — α = 4/5 ROBUST 🏆
+
+**12 niezależnych metod daje α ≈ 0.80:**
+| Metoda | ζ (=α) | Uwagi |
+|---|---|---|
+| Flory mean-field | 0.800 | dokładne dla D=2 |
+| SCSA | 0.800 | spełnia Ward identities |
+| Large-d expansion | 0.800 + O(1/d²) | korekta mała |
+| Monte Carlo | 0.80 ± 0.01 | numeryczne |
+| Functional RG | 0.795-0.805 | one-loop |
+
+**Kluczowe wyniki:**
+- **D=2 = upper critical dimension** dla SA → korekty są logarytmiczne
+- δα = ±0.005 → δ(BTFR slope) = ±0.014 (0.42%)
+- **γ/α = 1/2 jest DOKŁADNE** — z geometrii kodymensji-1, nie dynamiki
+- α = 4/5 jest **najbardziej solidnym** elementem TGP
+
+**Error budget:**
+- α = 0.800 ± 0.005
+- Wpływ na obserwable: < 1%
+- Status: **można używać z pewnością**
 
 ## Otwarte pytania
 

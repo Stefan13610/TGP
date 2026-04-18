@@ -1,0 +1,363 @@
+
+==============================================================================
+  gs39: BULLET CLUSTER (1E 0657-56) -- TGP LENSING ANALYSIS
+==============================================================================
+
+
+==============================================================================
+  PART A: BULLET CLUSTER GEOMETRY
+==============================================================================
+
+  Bullet Cluster system: 1E 0657-56
+  Redshift: z = 0.296
+
+  Main cluster:
+    M_gas           = 1.5e+14 Msun
+    M_stars         = 3.0e+13 Msun
+    M_baryon (tot)  = 1.8e+14 Msun
+    f_gas           = 0.83
+    R_500           = 1200 kpc
+    r_c (gas core)  = 250 kpc
+    a_h (stellar)   = 80 kpc
+
+  Subcluster (bullet):
+    M_gas           = 3.0e+13 Msun
+    M_stars         = 8.0e+12 Msun
+    M_baryon (tot)  = 3.8e+13 Msun
+    f_gas           = 0.79
+    R_500           = 700 kpc
+    r_c (gas core)  = 120 kpc
+    a_h (stellar)   = 40 kpc
+
+  Post-collision geometry:
+    Gas offset      = 720 kpc (gas stripped between subclusters)
+    Galaxies:         passed through each other (collisionless)
+    Gas:              ram-pressure stripped, concentrated between subclusters
+
+  Key observational fact:
+    Lensing peaks are at GALAXY positions, NOT at gas peaks.
+    This is the fundamental challenge for any modified-gravity theory.
+
+
+==============================================================================
+  PART B: TGP LENSING PREDICTION -- PROJECTED SURFACE DENSITY
+==============================================================================
+
+  In TGP, the effective lensing surface density is:
+
+    Sigma_TGP(R) = nu(y(R)) * Sigma_bar(R)
+
+  where y(R) = g_bar(R) / a0 and Sigma_bar is the projected baryonic
+  surface density.  The "phantom DM" contribution is:
+
+    Sigma_phantom(R) = (nu(y) - 1) * Sigma_bar(R)
+
+  We compute this for each subcluster at the galaxy position
+  (high stellar, low gas) vs the gas position (high gas, low stellar).
+
+
+  B.1  Surface density profiles for main cluster
+  ----------------------------------------------
+  Radial range: 5 - 2400 kpc
+  y range:      2.474e-02 - 4.825e+00
+
+  c_eff   gamma  nu(y_center)   nu(y_R500)  Sigma_TGP/Sigma_bar (center)
+  ----------------------------------------------------------------------
+      1   0.400         1.016        3.926                         1.016
+      2   0.533         1.013        5.321                         1.013
+      3   0.600         1.011        6.252                         1.011
+      5   0.667         1.010        7.382                         1.010
+
+  B.2  Surface density profiles for subcluster
+  --------------------------------------------
+  Radial range: 5 - 1400 kpc
+  y range:      1.581e-02 - 4.591e+00
+
+==============================================================================
+  PART C: CAN TGP PHANTOM DM PEAK AT GALAXY POSITIONS?
+==============================================================================
+
+  After the collision, the 1D geometry along the merger axis is:
+
+    <- main galaxies -- gas blob -- bullet galaxies ->
+              |                         |
+         x = -360 kpc              x = +360 kpc
+                     gas peak at x = 0
+
+  Observed lensing peaks are at galaxy positions (x ~ +/-360 kpc).
+  Gas centroid is between them (x ~ 0).
+
+  In TGP, phantom DM = (nu(y) - 1) * rho_bar.
+  The question: does nu(y)*Sigma_bar peak at galaxy or gas positions?
+
+
+  C.1  y(x) along the merger axis
+  -------------------------------
+  At gas center (x=0):         y = 1.6519
+  At main galaxies (x=-360):   y = 4.4088
+  At bullet galaxies (x=+360): y = 3.5053
+
+  C.2  nu(y) and Sigma_TGP along the merger axis
+  ----------------------------------------------
+
+  Using c_eff = 1 (gamma = 0.400)
+
+                Position     Sigma_bar     nu(y)     Sigma_TGP   Sigma_phantom
+  --------------------------------------------------------------------------
+        Gas center (x=0)  4.7271e-01     1.184  5.5951e-01  8.6800e-02
+       Main gal (x=-360)  1.2616e+00     1.021  1.2879e+00  2.6309e-02
+     Bullet gal (x=+360)  1.0031e+00     1.040  1.0428e+00  3.9707e-02
+
+  Peak positions:
+    Sigma_bar peak:     x = -352 kpc
+    Sigma_TGP peak:     x = -352 kpc
+    Sigma_phantom peak: x = -585 kpc
+
+  Offset from galaxy position:
+    Sigma_bar peak offset:     8 kpc
+    Sigma_TGP peak offset:     8 kpc
+    Sigma_phantom peak offset: 225 kpc
+
+  Gas/stellar density ratio at gas center: 308.1
+  --> Gas dominates the baryonic surface density at gas position
+  --> But gas is spread over ~400 kpc while stars are compact (~100 kpc)
+  --> Peak surface density can be at galaxy positions despite lower total mass
+
+==============================================================================
+  PART D: THE OFFSET TEST -- nu(y) WEIGHTING
+==============================================================================
+
+  In TGP, phantom DM = (nu(y) - 1) * rho_bar.
+  The key insight is that nu(y) is LARGER at low y (weak fields).
+  So nu partially compensates for lower baryon density at galaxy positions.
+
+  Two questions:
+    1. Does Sigma_TGP peak at the right POSITION? (galaxy, not gas)
+    2. Does Sigma_TGP reach the right AMPLITUDE? (kappa ~ 0.35)
+
+  The competition:
+    - Gas center:    high Sigma_bar * low nu(y)  [y is high where Sigma is high]
+    - Galaxy center: compact Sigma_bar * slightly higher nu(y)
+
+  Because gas is ram-pressure spread over ~400 kpc while stars remain
+  compact (~100 kpc), the surface density peak CAN be at galaxy positions
+  even though total gas mass >> stellar mass.  The real test is amplitude.
+
+
+  D.1  Competition analysis for multiple c_eff
+  --------------------------------------------
+
+  c_eff   gamma    nu_gas    nu_gal   Sigma_TGP(gas)   Sigma_TGP(gal)  Ratio gas/gal    Peak at?
+  ----------------------------------------------------------------------------------------------------
+    0.5   0.267     1.196     1.025       5.6552e-01       1.2937e+00           0.44      GALAXY
+    1.0   0.400     1.184     1.021       5.5951e-01       1.2879e+00           0.43      GALAXY
+    2.0   0.533     1.172     1.017       5.5389e-01       1.2832e+00           0.43      GALAXY
+    3.0   0.600     1.166     1.015       5.5122e-01       1.2812e+00           0.43      GALAXY
+    5.0   0.667     1.161     1.014       5.4863e-01       1.2793e+00           0.43      GALAXY
+   10.0   0.727     1.156     1.013       5.4636e-01       1.2778e+00           0.43      GALAXY
+
+  INTERPRETATION:
+    For ALL c_eff values, Sigma_TGP peaks at the GALAXY position.
+    This is because even though gas MASS >> stellar mass (factor 5x),
+    the gas is spread over a much larger volume after ram-pressure
+    stripping (~400 kpc), while the collisionless galaxies remain
+    compact (~100 kpc).  The stellar surface density can thus exceed
+    the gas surface density at the galaxy centroid.
+
+    However, nu(y) ~ 1.0 at these high-y positions, so the TGP
+    enhancement is negligible.  The peak location is set entirely
+    by the baryonic surface density, not by phantom DM.
+    The phantom DM contribution is at most ~18% of Sigma_bar.
+
+
+  D.2  Amplitude problem: what nu would be needed?
+  ------------------------------------------------
+  The peak is at the galaxy position (good), but the amplitude is too low.
+  Observed kappa ~ 0.35, TGP gives kappa ~ 0.22 (baryons alone give ~0.21)
+  TGP provides only ~2-3% boost via nu(y) at these positions.
+  Would need nu(y_gal) ~ 1.7 to match observations, but get nu ~ 1.02.
+
+    c_eff=1: nu at galaxy position = 1.0209  (need ~1.7)
+    c_eff=2: nu at galaxy position = 1.0171  (need ~1.7)
+    c_eff=5: nu at galaxy position = 1.0140  (need ~1.7)
+
+  The deficit factor ~ 1.6x must come from somewhere else (DM or new physics).
+
+==============================================================================
+  PART E: 2D LENSING CONVERGENCE kappa(x,y)
+==============================================================================
+
+  The lensing convergence is:
+    kappa(x,y) = Sigma(x,y) / Sigma_cr
+
+  where Sigma_cr = c^2 D_s / (4*pi*G D_l D_ls)
+
+  For the Bullet Cluster (z_l=0.296, z_s~1):
+    D_l ~ 900 Mpc, D_s ~ 1700 Mpc, D_ls ~ 1100 Mpc
+    Sigma_cr ~ 3.5 kg/m^2 ~ 1.7e12 Msun/Mpc^2
+
+  Sigma_cr = 5.971e+00 kg/m^2 = 2.859e+15 Msun/Mpc^2
+
+  E.1  Peak convergence values
+  ----------------------------
+  Along merger axis (y=0):
+    kappa_bar peak: 0.2113 at x = -360 kpc
+    kappa_TGP peak: 0.2157 at x = -360 kpc
+
+  kappa at key positions (merger axis, y=0):
+                   Position   kappa_bar   kappa_TGP   kappa_obs
+  ------------------------------------------------------------
+       Main galaxy (x=-360)      0.2113      0.2157        0.35
+           Gas center (x=0)      0.0792      0.0937       ~0.15
+     Bullet galaxy (x=+360)      0.1680      0.1746        0.25
+
+  E.2  Peak offset from observed
+  ------------------------------
+  TGP kappa peak position:      x = -360 kpc
+  Observed main kappa peak:     x ~ -360 kpc (galaxy position)
+  Observed bullet kappa peak:   x ~ +360 kpc (galaxy position)
+  TGP prediction:               peak near galaxy position (qualitatively OK)
+  Offset from observation:      ~0 kpc (location OK)
+  BUT: TGP kappa amplitude is too low (see below)
+
+  E.3  Can varying c_eff shift the lensing peak?
+  ----------------------------------------------
+
+  c_eff   gamma    kappa_TGP peak x  kappa at gas  kappa at gal   Peak at
+  ----------------------------------------------------------------------
+    0.5   0.267                -360 kpc        0.0947        0.2167    GALAXY
+    1.0   0.400                -360 kpc        0.0937        0.2157    GALAXY
+    2.0   0.533                -360 kpc        0.0928        0.2149    GALAXY
+    3.0   0.600                -360 kpc        0.0923        0.2146    GALAXY
+    5.0   0.667                -360 kpc        0.0919        0.2143    GALAXY
+   10.0   0.727                -360 kpc        0.0915        0.2140    GALAXY
+   50.0   0.784                -360 kpc        0.0912        0.2138    GALAXY
+
+==============================================================================
+  PART F: HONEST ASSESSMENT -- DOES TGP PASS THE BULLET CLUSTER TEST?
+==============================================================================
+
+  QUANTITATIVE SUMMARY
+  ---------------------
+  Observable                      TGP prediction    Observed       Match?
+  -----------------------------------------------------------------------
+  Lensing peak position           galaxy pos.   galaxy pos.    YES
+  kappa(galaxy) / kappa(gas)      2.30           ~2.3            ~YES
+  Peak kappa at galaxy pos.       0.2157         ~0.35          FAIL (62%)
+  Peak kappa at bullet pos.       0.1746         ~0.25          FAIL (70%)
+
+  NOTE: The peak POSITION is qualitatively correct because compact
+  stellar distributions have higher surface density than ram-pressure
+  spread gas.  But the AMPLITUDE is ~60-70% of observed, indicating
+  that TGP gravity enhancement (nu ~ 1.02 at cluster y-values) is
+  far too weak to account for the missing mass at cluster scales.
+
+  FUNDAMENTAL REASON FOR FAILURE
+  --------------------------------
+  In TGP, the effective gravitational acceleration is:
+      g_TGP = nu(g_bar/a0) * g_bar
+
+  Therefore:
+      Sigma_TGP = nu(y) * Sigma_bar
+
+  Since nu(y) >= 1 everywhere, Sigma_TGP is simply a rescaled version
+  of Sigma_bar.  The rescaling factor nu(y) is MONOTONICALLY DECREASING
+  in y (more boost at lower acceleration), which means:
+
+      - Where Sigma_bar is HIGH (gas center): y is high, nu is low,
+        but Sigma_bar * nu is still large because Sigma_bar dominates.
+
+      - Where Sigma_bar is LOW (galaxy position): y is lower, nu is higher,
+        but the product cannot exceed the gas-center value because the
+        gas mass is 3-5x the stellar mass.
+
+  This is a GENERIC feature of ANY modified gravity theory where:
+      g_obs = f(g_bar) * g_bar,   f >= 1
+
+  The phantom mass is inseparable from baryonic mass.  It can only be
+  separated in theories with a separate dark-matter field.
+
+  POSSIBLE ESCAPE ROUTES (discussed in gs24, gs26)
+  ---------------------------------------------------
+  1. Differential gamma(S): gas has S~0.3, galaxies have S~0.8
+     -> Different nu amplification for gas vs stars
+     -> gs26 showed this shifts the peak by ~50-100 kpc but NOT enough
+
+  2. Non-equilibrium effects: the collision is highly dynamic
+     -> TGP field phi(r,t) may not track baryons instantaneously
+     -> "Gravitational memory" from pre-collision configuration
+     -> Speculative; not calculable without full time-dependent solution
+
+  3. Massive neutrinos (m_nu ~ 2 eV): relic neutrinos form a halo
+     -> Collisionless, would stay with galaxies like DM
+     -> But m_nu = 2 eV is now excluded by cosmology (Planck+DESI)
+
+  4. This analysis uses simplified 1D/2D geometry
+     -> Full 3D hydrodynamic simulation with TGP gravity needed
+     -> Unlikely to qualitatively change the conclusion
+
+
+  F.1  VERDICT
+  ------------
+
+  The Bullet Cluster remains the MOST CHALLENGING observation for TGP.
+
+  TGP predicts:
+    - Lensing peak at galaxy positions (qualitatively correct)
+    - kappa(galaxy)/kappa(gas) ratio ~ 2.30 (observed ~ 2.3, OK)
+    - BUT peak kappa amplitude only 0.2157 vs observed ~0.35
+    - TGP needs 1.6x more convergence at galaxy positions
+
+  Status: PARTIAL FAIL (peak location OK, amplitude deficit ~38%)
+
+  This is the same failure mode as ALL modified gravity theories:
+    - TeVeS (Bekenstein 2004): also fails
+    - MOND (Milgrom 1983): acknowledged as a problem
+    - MOG (Moffat 2006): claims to explain via vector field
+    - Emergent gravity (Verlinde 2016): unclear prediction
+
+  The Bullet Cluster is evidence for COLLISIONLESS mass (dark matter
+  or equivalent), which modified gravity alone cannot provide.
+
+  TGP's honest position:
+    TGP successfully explains galaxy-scale phenomena (rotation curves,
+    RAR, dwarf spheroidals) through nu(y) enhancement.  At cluster
+    scales, the Bullet Cluster reveals a genuine deficit that may
+    require either:
+      (a) an additional collisionless component (sterile neutrinos?), or
+      (b) non-equilibrium field effects in TGP not captured here, or
+      (c) acceptance that TGP, like MOND, has a cluster-scale problem.
+
+
+==============================================================================
+  SUMMARY
+==============================================================================
+
+  gs39 BULLET CLUSTER ANALYSIS -- KEY RESULTS
+  =============================================
+
+  1. With realistic post-collision geometry (gas spread ~400 kpc,
+     stars compact ~100 kpc), SURFACE DENSITY peaks at galaxy
+     positions even for baryons alone.
+
+  2. TGP lensing Sigma_TGP = nu(y)*Sigma_bar also peaks at galaxy
+     positions for ALL c_eff values (0.5 to 50).  This is good.
+
+  3. BUT: the lensing AMPLITUDE is only ~60-70% of observed.
+     nu(y) ~ 1.02 at cluster y-values provides negligible boost.
+     TGP needs ~1.6x more convergence to match observations.
+
+  4. The kappa(galaxy)/kappa(gas) RATIO is ~2.3, close to observed.
+     This is because the ratio is set by geometry, not by nu(y).
+
+  5. VERDICT: TGP PARTIALLY FAILS the Bullet Cluster test.
+     Peak location OK, but amplitude deficit ~35%.
+     This is the well-known cluster mass deficit in MOND-type theories.
+
+  6. Possible mitigation: non-equilibrium effects, differential gamma,
+     or a small collisionless component (hybrid model).
+
+  =============================================
+  Script: gs39_bullet_cluster.py
+  Dependencies: numpy, scipy
+
