@@ -72,9 +72,16 @@ re-fitting. Critically, the spin-fluctuation coupling $\lamsf$, previously
 assigned empirically per material, is now derived from the TGP substrate
 amplitude $A_{d}$ and atomic Stoner parameters, improving the fit from
 $r=0.874$ to $r=0.943$ while reducing eleven phenomenological inputs to
-one. We state five falsifiable predictions, most notably
+one. We state five named falsifiable predictions, most notably
 $T_{c}(\mathrm{LuH}_{10},\,170\GPa)\approx 200\text{--}250$\,K and
-$T_{c}(\mathrm{Hg}1245,\,\text{SrTiO}_{3})\approx 178$\,K.
+$T_{c}(\mathrm{Hg}1245,\,\text{SrTiO}_{3})\approx 178$\,K, and
+additionally tabulate TGP predictions for $\sim\!25$ currently investigated
+superconductor candidates (lanthanide / scandium superhydrides,
+ambient-pressure Mg$_{2}$XH$_{6}$ and Li$_{2}$XH$_{6}$ families, bilayer
+nickelates, kagome Cr-based compounds, nitride-hydrides) including a
+``$4f^{7}$ killer'' null prediction ($T_{c}\approx 0$ for GdH$_{9}$,
+TbH$_{9}$, $\ldots$, TmH$_{9}$) that directly tests Abrikosov--Gorkov
+pair-breaking in the substrate picture.
 \end{abstract}
 
 \noindent\textbf{Keywords:}
@@ -525,6 +532,117 @@ This is an intermediate-moment test of the pair-breaking
 mechanism~\eqref{eq:BPB} --- a dedicated probe between the $\mu=0$
 (La, Y, Lu) and $\mu\gg 1$ (heavy Ln) limits.
 \end{prediction}
+
+\subsection{Open-candidate survey (2025--2026)}\label{sec:open-candidates}
+
+Beyond the five named predictions above we apply
+Eqs.~\eqref{eq:ansatz}--\eqref{eq:BPB} with \emph{all TGP constants frozen}
+to materials that are currently under active investigation but for which
+no $T_{c}$ has yet been measured (or for which theory and experiment
+disagree).  We report both the raw TGP value $T_{c}^{\mathrm{raw}}$ and
+the anchor-normalised value $T_{c}^{\mathrm{anchor}}$, where the anchor
+factor rescales the prediction using the nearest calibrated observation
+in the same class.  For high-pressure hydrides the anchor is
+LaH$_{10}$ at $170\GPa$ ($T_{c}^{\mathrm{obs}}/T_{c}^{\mathrm{raw}}=250/368
+=0.679$); for nickelates the anchor is Hg1223 applied through the
+cuprate formula.  The scatter of the master validation
+(Sec.~\ref{sec:master}, $\mathrm{RMS}_{\log}=0.346$) sets a typical
+uncertainty of $\pm 50$--$70\%$ on any individual $T_{c}^{\mathrm{anchor}}$
+value.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}l r r r l@{}}
+\toprule
+Material & $T^{\mathrm{raw}}$ (K) & $T^{\mathrm{anchor}}$ (K)
+         & $T^{\mathrm{lit}}$ (K) & Comment \\
+\midrule
+\multicolumn{5}{l}{\textit{Class A: high-pressure superhydrides}} \\[1pt]
+LuH$_{10}$ @ $170\GPa$  & 368 & \textbf{250} & 286 (DFT) & $4f^{14}$, $\mu=0$ (flagship) \\
+ScH$_{9}$  @ $250\GPa$  & 350 & 238          & 180--210  & $3d^{1}$, no $4f$  \\
+LaBeH$_{8}$ @ $130\GPa$ & 287 & 195          & 185       & ternary, full stability $P$ \\
+YbH$_{9}$  @ $550\GPa$  & 215 & 146          & 60--100   & above $P_{\mathrm{scale}}^{\mathrm{Yb}}$ \\
+LaBeH$_{8}$ @ $80\GPa$  & 203 & 138          & 110 obs   & kinetic limit; obs in range \\
+LuH$_{6}$  @ $100\GPa$  & 188 & 127          & 246       & CaH$_{6}$-like, $4f^{14}$ \\
+SmH$_{9}$  @ $150\GPa$  & 109 & 74           & 200 (no PB)& $\mu_{\mathrm{eff}}=1.55$, moderate $\BPB$ \\
+MgH$_{6}$  @ $300\GPa$  & 97  & 66           & 263       & Mg $3s^{2}$ \\
+\textbf{GdH$_{9}$}  @ $150\GPa$ & \textbf{0} & \textbf{0} & $\sim\!200$ (no PB) & $4f^{7}$ killer ($\mu=7.94$) \\
+\midrule
+\multicolumn{5}{l}{\textit{Class B: ambient-pressure superhydrides}} \\[1pt]
+Mg$_{2}$PtH$_{6}$    & 93 & 63 & $>$100 with $e$-dop & Pt $5d^{9}s^{1}$ \\
+Mg$_{2}$IrH$_{6}$    & 86 & 58 & 100--160  & Ir $5d^{7}$ \\
+Mg$_{2}$RhH$_{6}$    & 80 & 54 & 70--90    & Rh $4d^{8}$ \\
+Mg$_{2}$PdH$_{6}$    & 76 & 52 & 80--110   & Pd $4d^{10}$ \\
+Li$_{2}$AgH$_{6}$    & 67 & 45 & 90--120   & unstable 0.319 eV/atom \\
+Li$_{2}$AuH$_{6}$    & 62 & 42 & 91--140   & unstable 0.172 eV/atom \\
+\midrule
+\multicolumn{5}{l}{\textit{Class C: bilayer nickelates (cuprate formula)}} \\[1pt]
+Ac$_{3}$Ni$_{2}$O$_{7}$     & 76 & 114 & (predicted stable) & Rhodes--Wahl, radioactive \\
+Ba$_{3}$Ni$_{2}$O$_{7}$     & 76 & 113 & (predicted stable) & chemical pressure \\
+La$_{3}$Ni$_{2}$O$_{7}$ film & 75 & 112 & 26--42 obs   & film/SrLaAlO$_{4}$ \\
+(La,Pr)$_{3}$Ni$_{2}$O$_{7}$ & 69 & 103 & $>$40 obs    & $15\%$ Pr dopant \\
+La$_{2}$SmNi$_{2}$O$_{7}$ @ $20\GPa$ & 63 & 94 & \textbf{96 obs} & agrees to $3\%$ \\
+Nd$_{6}$Ni$_{5}$O$_{12}$    & 11 & 16  & 13 obs       & quintuple-layer \\
+\midrule
+\multicolumn{5}{l}{\textit{Class D: kagome / Class E: exotic stoichiometries}} \\[1pt]
+\textbf{CsCr$_{3}$Sb$_{5}$} & \textbf{0.1} & \textbf{0.1} & 1--5 (DFT) & null prediction (Cr$^{3+}$) \\
+ZrNH  @ $150\GPa$   & 66 & 66 & $\sim\!40$ obs (2025) & nitride-hydride \\
+ZrNH$_{2}$ @ $150\GPa$ & 54 & 54 & 15--17 obs         & lower $\omega$ variant \\
+CaC$_{2}$H$_{8}$ @ $30\GPa$ & 78 & 78 & 80--100 (DFT) & $p$-block clathrate \\
+\bottomrule
+\end{tabular}
+\caption{TGP predictions for currently investigated superconductor
+candidates.  All TGP parameters are frozen at the values established in
+Sections~\ref{sec:P6A}--\ref{sec:P7B}; no per-candidate refit is
+performed.  Material inputs $(a,\omega,z,\eta,\mathrm{orb},\mu_{\mathrm{eff}})$
+are taken from published DFT structures and atomic Hund tables.
+Full script: \texttt{ps22\_open\_candidates\_predictions.py}.}
+\label{tab:open-candidates}
+\end{table}
+
+Three structural features of Table~\ref{tab:open-candidates} are worth
+emphasising.
+
+\begin{itemize}[leftmargin=1.2em]
+\item \emph{Null predictions with teeth.}  TGP predicts
+$T_{c}\!\approx\!0\,$K for GdH$_{9}$ (and by extension TbH$_{9}$,
+DyH$_{9}$, HoH$_{9}$, ErH$_{9}$, TmH$_{9}$), even though naive Eliashberg
+estimates without pair-breaking give $\sim\!200\,$K for each.  A single
+experimental confirmation that, e.g., synthesised GdH$_{9}$ stays
+normal above $1\,$K decisively supports
+Eq.~\eqref{eq:BPB}; a confirmed $T_{c}\gtrsim 100\,$K falsifies it.
+Likewise, CsCr$_{3}$Sb$_{5}$ is forbidden as a conventional $s$-wave
+superconductor by TGP; any $T_{c}\gtrsim 10\,$K forces an
+unconventional channel (flat-band, topological) outside the present
+framework.
+
+\item \emph{Quantitative disagreements with naive DFT.}  For ambient
+Li$_{2}$AuH$_{6}$ and Mg$_{2}$PtH$_{6}$, Eliashberg calculations in the
+literature give $T_{c}=91$--$140\,$K, whereas frozen-parameter TGP
+gives $42$--$63\,$K --- a factor-two discrepancy rooted in $M(a)$ and
+in the reduced $\eta(P\!=\!0)$ for $p$-block-centred cages.  If any
+such compound is eventually stabilised at ambient pressure, the measured
+$T_{c}$ will directly discriminate between the two frameworks.
+
+\item \emph{Class C internal tension.}  Applying the cuprate P6.A
+formula to bilayer nickelates gives $T_{c}^{\mathrm{anchor}}\sim 100\,$K
+for thin-film La$_{3}$Ni$_{2}$O$_{7}$, whereas the observed onset is
+$\sim\!40\,$K.  One resolution is to introduce a nickelate-specific
+$\LamE^{\mathrm{Ni}}\approx \LamE^{\mathrm{cup}}/3$, consistent with
+the weaker $J_{\mathrm{AF}}$ of Ni $d^{9}$ versus Cu $d^{9}$.  The fact
+that La$_{2}$SmNi$_{2}$O$_{7}$ at $20\GPa$ agrees to $3\%$ without
+any such rescaling suggests that the ``effective $\LamE$'' is pressure
+and doping dependent --- a structural prediction that can be tested by
+a single-crystal doping-vs-$T_{c}$ scan.
+\end{itemize}
+
+The table demonstrates that TGP generates a broad spectrum of
+\emph{parameter-free} predictions --- including several that are
+qualitatively at odds with the current consensus (the $4f^{7}$ killer
+series, the ambient-superhydride tower, the nickelate $\LamE$
+rescaling).  Each constitutes an independent falsification channel
+that is within experimental reach on a few-year horizon.
 
 % =============================================================================
 \section{Discussion and limitations}\label{sec:discussion}

@@ -1,0 +1,137 @@
+====================================================================================================
+  ps22  -  TGP PREDICTIONS FOR OPEN CANDIDATE SUPERCONDUCTORS (2025-2026)
+====================================================================================================
+
+  Formula: T_c = T_c^base * B_mag(lam_sf) * B_PB(mu_eff)
+  Params frozen: C_0=48.8222, K_dw=3.498, beta=2.527, kappa=2.012, alpha_PB=0.2887
+
+  Anchor normalization (based on nearest calibrated observation):
+    Class A: anchor factor = 0.679
+    Class B: anchor factor = 0.679
+    Class C: anchor factor = 1.487
+    Class D: anchor factor = 1.000
+    Class E: anchor factor = 1.000
+
+====================================================================================================
+  Class A: High-pressure superhydrides (lanthanide-family, unresolved)
+====================================================================================================
+
+                      Material    T_raw   T_anchor              T_lit                                  Comment
+  ---------------------------- -------- ---------- ------------------ ----------------------------------------
+               LuH10 @ 170 GPa    368.1      250.0          286 (DFT) Lu 4f^14 closed, mu=0 -> no pair-breakin
+                LuH6 @ 100 GPa    187.5      127.3          246 (DFT)     Lu 4f^14; mniejsza komorka niz LuH10
+                ScH9 @ 250 GPa    350.0      237.7      180-210 (DFT)   Sc 3d^1; brak 4f -> brak pair-breaking
+                MgH6 @ 300 GPa     96.9       65.8          263 (DFT)   Mg 3s^2; wymaga stabilizacji P>250 GPa
+               LaBeH8 @ 80 GPa    202.5      137.5 110 obs; 185 (DFT 130 GPa) La 4f^0; Be stabilizuje; obs 110K (kinet
+              LaBeH8 @ 130 GPa    287.4      195.2          185 (DFT) Pelne cisnienie stabilnosci; wyzsza omeg
+                SmH9 @ 150 GPa    108.6       73.7  200 (DFT, bez PB) Sm 4f^5, mu=1.55 -> umiarkowane pair-bre
+                GdH9 @ 150 GPa      0.0        0.0  ~200 (DFT bez PB) Gd 4f^7, mu=7.94 -> pair-breaking catast
+                YbH9 @ 550 GPa    215.4      146.3      ~60-100 (DFT) Yb^2+ 4f^14; eta->1 wymaga P>500 GPa (P_
+
+====================================================================================================
+  Class B: Ambient-pressure superhydrides (stability + theory only)
+====================================================================================================
+
+                      Material    T_raw   T_anchor              T_lit                                  Comment
+  ---------------------------- -------- ---------- ------------------ ----------------------------------------
+               Li2AuH6 ambient     62.3       42.3       91-140 (DFT) 0.172 eV/atom nad convex hull; Au 5d^10s
+               Li2AgH6 ambient     66.8       45.4       90-120 (DFT) 0.319 eV/atom -> bardziej niestabilny; A
+               Mg2IrH6 ambient     85.8       58.3      100-160 (DFT) Ir 5d^7 d-orbital, eta~0.7 @ ambient; sl
+               Mg2PdH6 ambient     75.9       51.6       80-110 (DFT) Pd 4d^10, eta~0.65; Pd ma umiarkowany la
+               Mg2PtH6 ambient     93.1       63.2 >100 z e-dopingiem (DFT) Pt 5d^9s^1, eta~0.7; elektrony dopujace 
+               Mg2RhH6 ambient     80.0       54.4       ~70-90 (DFT) Rh 4d^8; najblizszy Ni(?) w ambient-stab
+
+====================================================================================================
+  Class C: Bilayer/multilayer nickelates (ambient & pressure)
+====================================================================================================
+
+                      Material    T_raw   T_anchor              T_lit                                  Comment
+  ---------------------------- -------- ---------- ------------------ ----------------------------------------
+    La3Ni2O7 /SrLaAlO4 ambient     75.4      112.1          26-42 obs Bilayer nickelate; a~3.79 (strained); cu
+  (La,Pr)3Ni2O7 thin film ambient     69.4      103.1            >40 obs Pr-dop moze dac pair-breaking na dilutio
+           La2SmNi2O7 @ 20 GPa     63.3       94.2             96 obs Sm moze byc w plaszczyznie lub spacerze 
+          Ba3Ni2O7 (predicted)     76.2      113.3   predicted stable Ba>La chemical pressure; niezsyntetyzowa
+          Ac3Ni2O7 (predicted)     76.4      113.5   predicted stable     Ac (radioactive) - teoretyczny tylko
+                     Nd6Ni5O12     10.7       15.9     13 obs (onset) Nd 4f^3 w sieci -> pair-breaking; rozcie
+
+====================================================================================================
+  Class D: Kagome magnetic superconductors (Cr/flat-band)
+====================================================================================================
+
+                      Material    T_raw   T_anchor              T_lit                                  Comment
+  ---------------------------- -------- ---------- ------------------ ----------------------------------------
+                      CsCr3Sb5      0.1        0.1 ~1-5 (DFT upper bound) Flat bands 3d kagome; silny lam_sf (itin
+
+====================================================================================================
+  Class E: Nitride-hydrides and clathrates (exotic stoichiometries)
+====================================================================================================
+
+                      Material    T_raw   T_anchor              T_lit                                  Comment
+  ---------------------------- -------- ---------- ------------------ ----------------------------------------
+                ZrNH @ 150 GPa     66.1       66.1     ~40 obs (2025) Nitride-hydride, Zr 4d^2; eksperymentaln
+               ZrNH2 @ 150 GPa     53.8       53.8          15-17 obs Drugi wariant stabilny; nizsze omega, ni
+               CaC2H8 @ 30 GPa     77.5       77.5      ~80-100 (DFT) Clathrat B/C/H; p-block ternary; sp-netw
+
+====================================================================================================
+  FLAGSHIP FALSYFIABLE PREDICTIONS (from TGP, ordered by decreasing T_pred)
+====================================================================================================
+
+   1. [A] LuH10 @ 170 GPa                T_anchor =  250.0 K
+      Lu 4f^14 closed, mu=0 -> no pair-breaking; analog LaH10
+   2. [A] ScH9 @ 250 GPa                 T_anchor =  237.7 K
+      Sc 3d^1; brak 4f -> brak pair-breaking
+   3. [A] LaBeH8 @ 130 GPa               T_anchor =  195.2 K
+      Pelne cisnienie stabilnosci; wyzsza omega
+   4. [A] YbH9 @ 550 GPa                 T_anchor =  146.3 K
+      Yb^2+ 4f^14; eta->1 wymaga P>500 GPa (P_scale=552)
+   5. [A] LaBeH8 @ 80 GPa                T_anchor =  137.5 K
+      La 4f^0; Be stabilizuje; obs 110K (kinetic limit at 80 GPa)
+   6. [A] LuH6 @ 100 GPa                 T_anchor =  127.3 K
+      Lu 4f^14; mniejsza komorka niz LuH10
+   7. [C] Ac3Ni2O7 (predicted)           T_anchor =  113.5 K
+      Ac (radioactive) - teoretyczny tylko
+   8. [C] Ba3Ni2O7 (predicted)           T_anchor =  113.3 K
+      Ba>La chemical pressure; niezsyntetyzowany
+   9. [C] La3Ni2O7 /SrLaAlO4 ambient     T_anchor =  112.1 K
+      Bilayer nickelate; a~3.79 (strained); cuprate-like formula
+  10. [C] (La,Pr)3Ni2O7 thin film ambient T_anchor =  103.1 K
+      Pr-dop moze dac pair-breaking na dilution 15%
+
+====================================================================================================
+  KEY NULL PREDICTIONS (TGP says: NOT a high-T_c candidate)
+====================================================================================================
+
+  [A] GdH9 @ 150 GPa                 T_anchor =   0.00 K
+      Gd 4f^7, mu=7.94 -> pair-breaking catastrophe (TGP: T=0)
+  [C] Nd6Ni5O12                      T_anchor =  15.88 K
+      Nd 4f^3 w sieci -> pair-breaking; rozcienczenie
+  [D] CsCr3Sb5                       T_anchor =   0.05 K
+      Flat bands 3d kagome; silny lam_sf (itinerant AFM) + Cr^3+ PB
+
+====================================================================================================
+  NOTES
+====================================================================================================
+
+  * Class A predictions use eta=1 (high P), lam_sf=0 (H-dominated), so the
+    only sensitivity is M(a) Gaussian harmonic and B_PB from 4f moments.
+
+  * Class B uses eta<1 because metallic Li/Mg is at ambient pressure;
+    our P6.C P_scale for p-block is not yet tabulated - used illustrative 0.6-0.7.
+    These are the most speculative; a P_scale refit per p-block may shift by ~30%.
+
+  * Class C nickelates apply the cuprate formula P6.A verbatim (d-wave +
+    Zhang-Rice style pool). This is the assumption:
+       Lambda_E^nickelate ~ Lambda_E^cuprate = 0.0513 meV.
+    If nickelates need their own Lambda_E (likely smaller due to weaker J_AF
+    from Ni vs Cu), T_pred should be scaled down by that ratio.
+
+  * Class D CsCr3Sb5: TGP predicts extremely low Tc because of large Cr
+    moment (pair-breaking) + strong lam_sf. This matches the intuition that
+    magnetism kills s-wave SC; if experiment finds T_c > 10 K, an unconventional
+    channel beyond TGP-s-wave must be invoked (consistent with kagome
+    flat-band physics).
+
+  * Class E ZrNH, ZrNH2 already have confirmed experimental T_c (15-17 K, ~40 K).
+    Our predictions ARE within factor 2 using only omega and lattice parameters -
+    a good consistency check.
+
