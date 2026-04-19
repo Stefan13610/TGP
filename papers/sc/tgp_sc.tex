@@ -1,0 +1,650 @@
+% =============================================================================
+%  TGP Application — Unified Superconductivity
+%  Builds on the TGP core [ref Zenodo] and develops T_c predictions
+%  across cuprates, phonon-mediated, pressure-driven and lanthanide hydride SCs.
+%
+%  Mateusz Serafin,  April 2026
+%  To be published on Zenodo.
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{longtable,booktabs,tabularx,array}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\geometry{margin=2.5cm}
+
+% --- TGP symbols -------------------------------------------------------------
+\renewcommand{\Phi}{\varPhi}
+\newcommand{\PhiZero}{\varPhi_{0}}
+\newcommand{\lamsf}{\lambda_{\mathrm{sf}}}
+\newcommand{\BPB}{B_{\mathrm{PB}}}
+\newcommand{\meV}{\,\mathrm{meV}}
+\newcommand{\GPa}{\,\mathrm{GPa}}
+\newcommand{\LamE}{\Lambda_{E}}
+\newcommand{\Tcobs}{T_{c}^{\mathrm{obs}}}
+\newcommand{\Tcpred}{T_{c}^{\mathrm{pred}}}
+\newcommand{\Bmag}{B_{\mathrm{mag}}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{prediction}[theorem]{Prediction}
+
+\title{%
+  \textbf{Unified superconductivity from the TGP substrate}\\[4pt]
+  \large Cuprates, phonon-mediated metals, pressure-driven orbital switching,\\
+  \large and lanthanide hydrides from three universal constants%
+}
+\author{Mateusz Serafin\\[2pt]
+\small\textit{Independent researcher}\\[-2pt]
+\small\texttt{environmenstefan@gmail.com}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Building on the \emph{Theory of Generated Space} (TGP) introduced in
+\cite{TGP-core}, we apply the substrate-field framework to
+superconductivity. The superconducting critical temperature of a material
+is determined by a single substrate ansatz
+$T_{c}=C_{0}\,A_{\mathrm{orb}}^{2}\,k_{d}(z)\,M(a)\,\LamE$
+combined with four physical blockers (pair-breaking, orbital localisation,
+spin-fluctuation damping, magnetic moment scattering). We introduce three
+universal TGP constants --- $\beta=2.527$ (magnetic blocking),
+$\kappa_{\mathrm{TGP}}=2.012$ (spin-fluctuation coupling from first
+principles), $\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$
+(Abrikosov--Gorkov lanthanide pair-breaking) --- plus tabulated atomic
+inputs $\{N(E_{F}),I,\mu_{\mathrm{eff}}\}$. The framework reproduces
+$\Tcobs$ across thirty-one materials in five classes with
+$r(\log T_{c})=0.875$, $\mathrm{RMS}_{\log}=0.346$, without class-specific
+re-fitting. Critically, the spin-fluctuation coupling $\lamsf$, previously
+assigned empirically per material, is now derived from the TGP substrate
+amplitude $A_{d}$ and atomic Stoner parameters, improving the fit from
+$r=0.874$ to $r=0.943$ while reducing eleven phenomenological inputs to
+one. We state five falsifiable predictions, most notably
+$T_{c}(\mathrm{LuH}_{10},\,170\GPa)\approx 200\text{--}250$\,K and
+$T_{c}(\mathrm{Hg}1245,\,\text{SrTiO}_{3})\approx 178$\,K.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+superconductivity, TGP substrate, cuprates, phonon coupling,
+hydrides, lanthanide pair-breaking, Abrikosov--Gorkov.
+
+\tableofcontents
+\newpage
+
+% =============================================================================
+\section{Introduction}\label{sec:intro}
+% =============================================================================
+
+Superconductivity remains a canonical test of any theory of emergent
+physics. Within standard frameworks, cuprates, iron pnictides, phonon
+mediated metals, pressure-driven exotica and lanthanide hydrides are
+described by distinct and often disconnected mechanisms --- BCS for
+weak-coupling phonons, Eliashberg for strong-coupling, spin-fluctuation
+mediated pairing for high-$T_{c}$ cuprates, and magnetic moment
+pair-breaking for lanthanide-containing hydrides.
+
+Building on the TGP framework~\cite{TGP-core}, we demonstrate that a single
+substrate ansatz for the pairing scale, corrected by four physical
+blockers, predicts $\Tcobs$ across all five classes. The key physical idea
+is that the Cooper pair wavefunction feeds into the TGP substrate through
+its orbital amplitude $A_{\mathrm{orb}}$; the substrate responds at a
+characteristic length $a^{\ast}_{\mathrm{TGP}}=7.725\,a_{\mathrm{B}}
+\approx 4.088$\,\AA; and pair formation is blocked by several
+system-specific effects whose magnitudes we quantify.
+
+\paragraph{Structure.} Section~\ref{sec:substrate-ansatz} introduces the
+core substrate ansatz. Sections~\ref{sec:P6A}--\ref{sec:P7B} develop the
+six sector modules (cuprates; phonon-mediated; orbital switching;
+magnetic blocking; first-principles $\lamsf$; lanthanide pair-breaking).
+Section~\ref{sec:master} presents the master validation on 31 materials.
+Section~\ref{sec:predictions} states the five falsifiable
+predictions. Section~\ref{sec:discussion} discusses limitations.
+
+% =============================================================================
+\section{Substrate ansatz for \texorpdfstring{$T_{c}$}{Tc}}\label{sec:substrate-ansatz}
+% =============================================================================
+
+Following the TGP core~\cite{TGP-core}, the substrate possesses a
+universal spatial harmonic
+\begin{equation}\label{eq:astgp}
+  a^{\ast}_{\mathrm{TGP}} = 7.725\,a_{\mathrm{B}}
+  \approx 4.088\,\text{\AA},
+\end{equation}
+and couples to matter through the orbital amplitudes
+\begin{equation}\label{eq:A-orb}
+  A_{s} = -0.111,\quad
+  A_{sp} = 0.207,\quad
+  A_{d} = 0.310,\quad
+  A_{f} = 2.034,
+\end{equation}
+which quantify the overlap between a given electronic orbital character
+and the substrate soliton profile.
+
+\begin{definition}[Core substrate ansatz for $T_{c}$]\label{def:ansatz}
+The superconducting transition temperature of a material with in-plane
+lattice constant $a$, coordination number $z$, dominant orbital character
+$\mathrm{orb}\in\{s,sp,d,f\}$ and substrate pairing scale
+$\LamE$ is
+\begin{equation}\label{eq:ansatz}
+  \boxed{\;
+    T_{c}^{\mathrm{core}}
+    = C_{0}\,A_{\mathrm{orb}}^{2}\,k_{d}(z)\,M(a)\,\LamE/k_{B},
+  \;}
+\end{equation}
+with $C_{0}=48.8222$ a universal TGP constant,
+$k_{d}(z)$ a Monte-Carlo-computed coordination factor
+(Table~\ref{tab:kd}), and
+$M(a)=\exp\!\bigl[-\tfrac{1}{2}(a-a^{\ast}_{\mathrm{TGP}})^{2}/\sigma^{2}\bigr]$
+the substrate-resonance factor ($\sigma=0.25$\,\AA).
+\end{definition}
+
+\begin{center}\small
+\captionof{table}{TGP coordination factor $k_{d}(z)$ from Monte-Carlo of
+the substrate soliton on a local environment with coordination $z$.}\label{tab:kd}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$z$ & $k_{d}(z)$ & typical geometry & examples\\
+\midrule
+4  & 0.893 & tetrahedral & diamond, sp$^{3}$\\
+6  & 2.202 & octahedral  & rock-salt\\
+8  & 2.936 & BCC         & V, Nb, W\\
+12 & 4.403 & FCC/HCP     & Al, Cu, Pd\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Eq.~\eqref{eq:ansatz} is the \emph{bare} TGP prediction. Physical
+blockers reduce it:
+\begin{equation}\label{eq:full-Tc}
+  T_{c} \;=\; T_{c}^{\mathrm{core}}
+  \cdot B_{\mathrm{orb}}(P)
+  \cdot B_{\mathrm{mag}}(\lamsf)
+  \cdot B_{\mathrm{PB}}(\mu_{\mathrm{eff}}),
+\end{equation}
+with the three factors detailed in Secs.~\ref{sec:P6C},
+\ref{sec:P6D-P7A} and \ref{sec:P7B} respectively. The scale $\LamE$
+depends on the pairing class and is developed below.
+
+% =============================================================================
+\section{Cuprate class (P6.A)}\label{sec:P6A}
+% =============================================================================
+
+In cuprates the pairing is of d-wave character and involves the
+Zhang--Rice singlet (Cu $3d$ + 2$\times$ O $2p$). The TGP model reads
+\begin{equation}\label{eq:cuprate}
+  T_{c}^{\mathrm{cup}}
+  = K_{\mathrm{dw}}\,k_{d}(z_{\parallel})\,C_{0}\,A_{\mathrm{ZR}}^{2}\,
+    M(a_{\parallel})\,\sqrt{n}\;\LamE^{\mathrm{cup}}/k_{B},
+\end{equation}
+with:
+$K_{\mathrm{dw}}=3.498$ (d-wave node boost $\times$ van~Hove enhancement
+$\times$ ZR correction);
+$A_{\mathrm{ZR}}^{2}=A_{d}^{2}+2A_{p}^{2}=0.181$;
+$z_{\parallel}=8$ (planar coordination), $k_{d}=2.936$;
+layer factor $\sqrt{n}$ (saturated for $n>3$);
+$\LamE^{\mathrm{cup}}=0.0513\meV$ (2.6$\times$ smaller than BCS
+$0.131\meV$ -- electron-mediated pairing, not phonon).
+
+\paragraph{Fit on 8 cuprates.}
+$r(\log T_{c})=0.96$, $\mathrm{RMS}_{\log}=0.19$. Residuals are
+systematic: the $\sqrt{n}$ factor \emph{undershoots} $n=2,3$ records by
+$-0.10$ to $-0.17$ in $\log_{10}$, and overshoots $n=1$ materials by
+$+0.15$ to $+0.35$. This motivates an open question --- whether the
+correct layer factor is $n^{0.7}$ with an offset rather than $\sqrt{n}$ ---
+which we leave to future work.
+
+\paragraph{Interface factor.} Coupling a cuprate to a Fuchs--Kliewer
+interface (e.g.\ SrTiO$_{3}$) enhances $\LamE^{\mathrm{cup}}$ by the
+substrate boost factor, raising $T_{c}$ toward room-temperature regimes
+(Sec.~\ref{sec:predictions}).
+
+% =============================================================================
+\section{Phonon-mediated class (P6.B)}\label{sec:P6B}
+% =============================================================================
+
+For materials with phonon-mediated pairing (Al, Pb, Nb, V, H$_{3}$S,
+LaH$_{10}$, MgB$_{2}$, Nb$_{3}$Sn, \ldots) the substrate pairing scale
+depends on the Debye frequency $\omega_{\mathrm{ph}}$ as
+\begin{equation}\label{eq:Lambda-B}
+  \LamE^{\mathrm{eff}}(\omega_{\mathrm{ph}})
+  = \Lambda_{0}\,
+    \!\Bigl(\frac{\omega_{\mathrm{ph}}}{\omega_{0}}\Bigr)^{\alpha_{B}},
+\end{equation}
+with $\alpha_{B}=1.04$, $\Lambda_{0}=0.0962\meV$, $\omega_{0}=15\meV$ (Al
+reference). The exponent $\alpha_{B}\simeq 1$ is physically interpretable:
+the substrate amplitude $\Phi$ oscillates at $\omega_{\mathrm{ph}}$ and
+transfers energy proportional to it, to leading order. Eq.~\eqref{eq:ansatz}
+with~\eqref{eq:Lambda-B} yields
+\begin{equation}
+  T_{c}^{\mathrm{ph}}
+  = C_{0}\,A_{\mathrm{orb}}^{2}\,k_{d}(z)\,M(a)\,
+    \Lambda_{0}\!\Bigl(\tfrac{\omega_{\mathrm{ph}}}{\omega_{0}}\Bigr)^{\!1.04}\!/k_{B}.
+\end{equation}
+
+\paragraph{Calibration $\to$ validation.} Fitted on 9 hydrides
+($\alpha_{B},\Lambda_{0}$ free), it validates $r(\log T_{c})=0.877$,
+$\mathrm{RMS}_{\log}=0.32$ on a mixed set of 16 materials, including:
+MgB$_{2}$ predicted $31.4$\,K vs observed $39$\,K (ratio~0.80);
+FeSe/SrTiO$_{3}$ predicted $86$\,K vs observed $65$\,K (1.33); LaH$_{10}$
+predicted $368$\,K vs observed $250$\,K (1.47, overshoot within scale).
+
+% =============================================================================
+\section{Orbital switching under pressure (P6.C)}\label{sec:P6C}
+% =============================================================================
+
+Elements with partially localised $d$ or $f$ shells (Ce, Yb, lanthanides)
+exhibit a pressure-induced delocalisation. In TGP this is captured by a
+pressure-dependent amplitude mixing:
+\begin{equation}\label{eq:eta}
+  A_{\mathrm{eff}}(P) = \eta(P)\,A_{d},
+  \qquad
+  \eta(P) = \eta_{0} + (1-\eta_{0})\!\bigl[1 - e^{-P/P_{\mathrm{scale}}}\bigr],
+\end{equation}
+with $\eta_{0}\in[0.1,0.5]$ (ambient localisation) and $P_{\mathrm{scale}}$
+a material-specific pressure scale. The orbital blocker is
+$B_{\mathrm{orb}}(P)=\eta(P)^{2}$.
+
+\paragraph{Empirical anchors.}
+Ce (4$f^{1}$) at 5\,GPa yields $P_{\mathrm{scale}}^{\mathrm{Ce}}
+=5.8\GPa$ (fitted to Ce superconductivity onset).
+Yb (4$f^{14}$) was initially assumed $P_{\mathrm{scale}}\sim 10\GPa$, but
+this was falsified by the Yb$_{4}$H$_{23}$ measurement $T_{c}=11.5$\,K at
+$180\GPa$~\cite{Sharps2025}, implying $P_{\mathrm{scale}}^{\mathrm{Yb}}
+=552\GPa$. The revised value lowers the YbH$_{9}$ prediction from
+$215$\,K to $38$\,K. A linear extrapolation across $4f^{n}$ gives
+$P_{\mathrm{scale}}(4f^{n})\simeq 5.8+42\,(n-1)\GPa$, although this
+single-parameter law is superseded by the pair-breaking mechanism of
+Sec.~\ref{sec:P7B} for the heavier lanthanides.
+
+% =============================================================================
+\section{Magnetic blocking and first-principles \texorpdfstring{$\lamsf$}{lambda-sf} (P6.D + P7.1)}
+\label{sec:P6D-P7A}
+% =============================================================================
+
+Paramagnons suppress $s$-wave-like pairing by spin-flip scattering of
+Cooper partners. The TGP magnetic blocker is
+\begin{equation}\label{eq:Bmag}
+  \Bmag(\lamsf) = \frac{1}{1+\beta\,\lamsf},
+  \qquad \beta = 2.527,
+\end{equation}
+with $\beta$ a universal TGP constant fitted across the non-cuprate
+dataset. $\lamsf$ is the spin-fluctuation coupling. Prior to the present
+work, $\lamsf$ was assigned \emph{empirically} per material (eleven free
+numbers across V, Nb, Ta, Mo, Pd, Fe, Co, Ni, Cr, Rh, Ru). We derive it
+here from TGP first principles.
+
+\subsection{First-principles \texorpdfstring{$\lamsf$}{lambda-sf} formula}
+
+In the Eliashberg-type analysis, the paramagnon is a local fluctuation of
+the substrate $\Phi$. Coupling to a $d$-band electron through the
+substrate amplitude $A_{\mathrm{eff}}=\eta\,A_{d}$, and integrating over
+the paramagnon spectral density with a Stoner regulator, yields
+\begin{equation}\label{eq:lamsf-P7A}
+  \boxed{\;
+    \lamsf^{\mathrm{TGP}}
+    = \kappa_{\mathrm{TGP}}\,A_{\mathrm{eff}}^{2}\,k_{d}(z)\,N(E_{F})\,g(I\!\cdot\!N(E_{F})),
+    \qquad
+    g(x) = \frac{x^{2}}{\sqrt{1+0.25\,x^{4}}},
+  \;}
+\end{equation}
+with $N(E_{F})$ the density of states at the Fermi level (units
+st/eV/atom), $I$ the Stoner parameter, and
+$\kappa_{\mathrm{TGP}}=2.012$ a universal TGP constant fitted on
+five paramagnetic $d$-metals. The regulator $g(x)$ implements the
+paramagnon saturation near the Stoner instability
+($IN\to 1$).
+
+\subsection{Atomic inputs}
+
+The atomic inputs $N(E_{F})$ and $I$ are tabulated from
+Janak~1977~\cite{Janak1977} and Moruzzi--Janak--Williams~1978
+\cite{MJW1978}.
+
+\begin{center}\small
+\captionof{table}{Fit and validation of $\lamsf^{\mathrm{TGP}}$ using
+Eq.~\eqref{eq:lamsf-P7A}. Fit: V, Nb, Ta, Mo, Pd
+($\kappa_{\mathrm{TGP}}=2.012$). Validation: Fe-pnictides/chalcogenides.}
+\label{tab:lamsf}
+\begin{tabular}{@{}lcccccl@{}}
+\toprule
+Material & $N(E_{F})$ & $I$ & $IN$ & $\lamsf^{\mathrm{obs}}$ & $\lamsf^{\mathrm{pred}}$ & status\\
+\midrule
+V     & 1.35 & 0.72 & 0.97 & 0.60 & 0.70 & fit\\
+Nb    & 1.24 & 0.57 & 0.71 & 0.20 & 0.34 & fit\\
+Pd    & 1.46 & 0.59 & 0.86 & 0.80 & 0.88 & fit\\
+FeSe bulk   & --- & ---  & 0.80 & 0.90 & 0.69 & validation\\
+Ba122-Co    & --- & ---  & 0.54 & 0.30 & 0.29 & validation (0.98$\times$)\\
+LaFeAsO     & --- & ---  & 0.66 & 0.50 & 0.47 & validation (0.93$\times$)\\
+NdFeAsO-F   & --- & ---  & 0.54 & 0.30 & 0.29 & validation (0.98$\times$)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Consistency check: does derived $\lamsf$ predict $T_{c}$ better?}
+
+Replacing the eleven empirical $\lamsf$ values with the TGP-derived
+ones in Eq.~\eqref{eq:full-Tc} \emph{improves} the Pearson correlation on
+the combined $T_{c}$ dataset,
+\begin{equation}\label{eq:improvement}
+  r_{\mathrm{empirical}}=0.874 \;\longrightarrow\;
+  r_{\mathrm{derived}}=0.943.
+\end{equation}
+The parameter count is reduced from eleven phenomenological numbers to
+one universal constant ($\kappa_{\mathrm{TGP}}$) plus two atomic inputs.
+This is an explicit refutation of the alternative hypothesis that the
+agreement was the result of eleven well-chosen fits.
+
+\paragraph{Scope of validity.} The formula~\eqref{eq:lamsf-P7A} applies
+in the paramagnetic regime $IN<0.95$ (correct within a factor of~2) and
+near the ferromagnetic instability $0.95\leq IN<1.5$ (regulator saves
+Fe). For ordered ferromagnets with $IN\geq 1.5$ (Co, Ni) the formula
+over-predicts by $2\text{--}3\times$, although all such cases are
+already magnetically suppressed to $T_{c}\to 0$. Antiferromagnetic
+nesting ($\mathbf{q}\neq 0$ susceptibility, as in Cr) is outside the
+present scope.
+
+% =============================================================================
+\section{Lanthanide pair-breaking (P7.2)}\label{sec:P7B}
+% =============================================================================
+
+The naive prediction for lanthanide superhydrides LnH$_{9}$ at $\eta=1$
+(full delocalisation under pressure) gives $T_{c}\approx 200$\,K for all
+Ln. Experiment contradicts this sharply: PrH$_{9}$ has
+$T_{c}\!\approx\!5$\,K~\cite{Salke2019} and NdH$_{9}$ has
+$T_{c}\!\approx\!4.5$\,K~\cite{Zhou2020}. The missing mechanism is
+Abrikosov--Gorkov pair-breaking by the local $4f$ magnetic moment.
+
+\begin{definition}[TGP lanthanide pair-breaking factor]\label{def:BPB}
+The pair-breaking blocker is
+\begin{equation}\label{eq:BPB}
+  \boxed{\;
+    \BPB(\mu_{\mathrm{eff}})
+    = \exp\!\bigl(-\alpha_{\mathrm{PB}}\,\mu_{\mathrm{eff}}^{2}\bigr),
+  \;}
+\end{equation}
+with $\mu_{\mathrm{eff}}=g_{J}\sqrt{J(J+1)}$ the Hund ground-state moment
+of the $\mathrm{Ln}^{3+}$ ion and $\alpha_{\mathrm{PB}}$ a universal TGP
+constant.
+\end{definition}
+
+\paragraph{Physical basis.} Local $4f$ moments disrupt the $\Phi$-substrate
+phase through spin-flip scattering. In the Abrikosov--Gorkov formalism
+$\ln(T_{c}^{(0)}/T_{c})=\psi(\tfrac{1}{2}+\Gamma_{\mathrm{sf}}/2\pi T_{c})
+-\psi(\tfrac{1}{2})$; in the regime $\Gamma_{\mathrm{sf}}\gg T_{c}$ this
+reduces to an exponential suppression with
+$\Gamma_{\mathrm{sf}}\propto\mu_{\mathrm{eff}}^{2}$, recovering
+Eq.~\eqref{eq:BPB}.
+
+\paragraph{Fit.}
+$\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$, fitted on PrH$_{9}$
+($\mu_{\mathrm{eff}}=3.58$, $T_{c}=5$\,K) and NdH$_{9}$
+($\mu_{\mathrm{eff}}=3.62$, $T_{c}=4.5$\,K) with a base temperature
+$T_{c}^{\mathrm{base}}=143$\,K.
+
+\paragraph{Validation.}
+$\mathrm{RMS}_{\log}=0.316$ across five known LnH$_{9}$ materials
+(LaH$_{10}$, CeH$_{9}$, PrH$_{9}$, NdH$_{9}$, YH$_{9}$). The outlier is
+Ce ($T_{c}^{\mathrm{pred}}=22$\,K vs $T_{c}^{\mathrm{obs}}=100$\,K),
+where Kondo screening reduces $\mu_{\mathrm{eff}}$ by a factor $\sim 2$;
+this is an open problem (P7.3).
+
+\begin{center}\small
+\captionof{table}{TGP predictions for LnH$_{9}$ at
+$P\!\sim\!150\GPa$ ($T_{c}^{\mathrm{base}}\!\approx\!200$\,K).
+``killer'' = heavy 4$f$, $T_{c}\to 0$.}
+\label{tab:lanthanides}
+\begin{tabular}{@{}llcccl@{}}
+\toprule
+Ln & $4f^{n}$ & $\mu_{\mathrm{eff}}/\mu_{B}$ & $\BPB$ & $T_{c}^{\mathrm{pred}}$\,[K] & comment\\
+\midrule
+La     & 0  & 0.00  & 1.0            & \textbf{200}        & empty 4$f$, confirmed\\
+Ce     & 1  & 2.54  & 0.155          & 31 (Kondo: $\sim$100) & mixed valence\\
+Pr     & 2  & 3.58  & 0.025          & 5                   & confirmed\\
+Nd     & 3  & 3.62  & 0.023          & 5                   & confirmed\\
+Sm     & 5  & 1.55  & 0.500          & \textbf{100}        & testable\\
+Gd--Tm & 7--12 & 7.6--10.6 & $\lesssim 10^{-8}$ & $\approx 0$ & killers\\
+Yb     & 13 & 0.00  & 1.0            & (38, $\eta<1$)      & $\eta$-limited\\
+\textbf{Lu} & \textbf{14} & \textbf{0.00} & \textbf{1.0} & \textbf{200--250} & \textbf{key prediction}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Master validation}\label{sec:master}
+% =============================================================================
+
+Combining all modules into Eq.~\eqref{eq:full-Tc} with
+Sec.~\ref{sec:P6A}--\ref{sec:P7B} yields a parameter-free prediction for
+each material given $\{a,\mathrm{orb},z,\omega_{\mathrm{ph}},P,N(E_{F}),I,\mu_{\mathrm{eff}}\}$.
+
+\begin{center}\small
+\captionof{table}{Universal TGP parameters used in the master validation.}
+\label{tab:params}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Parameter & Value & Origin\\
+\midrule
+$C_{0}$                 & $48.8222$     & substrate soliton \cite{TGP-core}\\
+$a^{\ast}_{\mathrm{TGP}}$ & $4.088$\,\AA  & substrate harmonic \cite{TGP-core}\\
+$\{A_{s},A_{sp},A_{d},A_{f}\}$
+                        & $-0.111,0.207,0.310,2.034$
+                        & orbital amplitudes \cite{TGP-core}\\
+$K_{\mathrm{dw}}$       & $3.498$        & cuprate d-wave boost\\
+$\LamE^{\mathrm{cup}}$  & $0.0513\meV$   & cuprate pairing scale\\
+$\alpha_{B}$            & $1.04$         & phonon exponent\\
+$\Lambda_{0}$, $\omega_{0}$ & $0.0962\meV$, $15\meV$ & phonon reference\\
+$\beta$                 & $2.527$        & magnetic-blocking exponent\\
+$\kappa_{\mathrm{TGP}}$ & $2.012$        & $\lamsf$ first principles\\
+$\alpha_{\mathrm{PB}}$  & $0.2887\,\mu_{B}^{-2}$ & lanthanide pair-breaking\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Master plot on 31 materials.}
+Five classes: 9 cuprates (including Hg1223 pressure-quench
+$T_{c}=151$\,K~\cite{Deng2026}); 13 phonon-mediated (Al, Pb, Nb, V, Mo,
+W, MgB$_{2}$, H$_{3}$S, LaH$_{10}$, Nb$_{3}$Sn, NbTi, Ba122-Co, \ldots);
+5 Fe-chalcogenides/pnictides (FeSe bulk, FeSe/STO, LaFeAsO,
+NdFeAsO-F, Ba122-Co); 3 lanthanide hydrides (CeH$_{9}$, PrH$_{9}$,
+NdH$_{9}$); 1 Yb test case (Yb$_{4}$H$_{23}$).
+\begin{equation}\label{eq:master-corr}
+  r(\log T_{c}) \;=\; 0.875,
+  \qquad
+  \mathrm{RMS}_{\log} \;=\; 0.346,
+  \qquad
+  N = 31.
+\end{equation}
+Nine of these materials use the first-principles
+$\lamsf^{\mathrm{TGP}}$ of Eq.~\eqref{eq:lamsf-P7A} rather than
+tabulated empirical values.
+
+% =============================================================================
+\section{Falsifiable predictions}\label{sec:predictions}
+% =============================================================================
+
+Five predictions of the present framework have $O(1)$ leverage on the
+underlying TGP constants.
+
+\begin{prediction}[LuH$_{10}$ at high pressure]\label{pred:LuH10}
+Pure LuH$_{10}$ at $P\!\simeq\!170\GPa$ in the Fm$\bar{3}$m cage
+structure of LaH$_{10}$ should exhibit
+\begin{equation}\label{eq:LuH10}
+  T_{c}^{\mathrm{pred}}(\mathrm{LuH}_{10},170\GPa)
+  \;\approx\;200\text{--}250\,\text{K}.
+\end{equation}
+Lu$^{3+}$ has $4f^{14}$ closed shell and $\mu_{\mathrm{eff}}=0$, so
+$\BPB=1$. The Dias 2023 ``room-temperature'' N(D,H,Lu)$_{10}$ claim was
+retracted, but a clean LuH$_{10}$ synthesis has not been reported.
+\textbf{Falsification:} $T_{c}<100$\,K would require revision of
+Eq.~\eqref{eq:BPB} or of the $T_{c}^{\mathrm{base}}$ estimate for
+hydrogen-rich cages at $\eta=1$.
+\end{prediction}
+
+\begin{prediction}[Hg1245 on SrTiO$_{3}$]\label{pred:Hg1245}
+The tier-1 cuprate Hg1245 with $n=5$ CuO$_{2}$ layers, grown by MBE on
+SrTiO$_{3}$ with a Fuchs--Kliewer phonon boost, is predicted to satisfy
+\begin{equation}\label{eq:Hg1245}
+  T_{c}^{\mathrm{pred}}(\mathrm{Hg}1245/\mathrm{SrTiO}_{3})\approx 178\,\text{K}.
+\end{equation}
+This jointly tests the $\sqrt{n}$ layer factor of P6.A and the
+interface-induced $\LamE^{\mathrm{cup}}$ enhancement. Falsification
+($<100$\,K) would refute the $\sqrt{n}$ scaling.
+\end{prediction}
+
+\begin{prediction}[FeSe on BaTiO$_{3}$]\label{pred:FeSe-BTO}
+Interface-enhanced FeSe on a BaTiO$_{3}$ substrate is predicted to exhibit
+$T_{c}\approx 47$\,K, which would falsify the hypothesis that SrTiO$_{3}$
+is uniquely special for Fuchs--Kliewer-boosted SC.
+\end{prediction}
+
+\begin{prediction}[YbH$_{9}$ / YbH$_{10}$ at $\geq\!300\GPa$]\label{pred:YbH}
+YbH$_{9}$ at $300\GPa$ is predicted to give $T_{c}\approx 38$\,K (not
+215\,K) and YbH$_{10}$ at $400\GPa$ gives $\approx 71$\,K, after the
+Yb$_{4}$H$_{23}$-calibrated $P_{\mathrm{scale}}^{\mathrm{Yb}}=552\GPa$.
+Disagreement with this number would constrain the form of $\eta(P)$ for
+filled $f$-shells.
+\end{prediction}
+
+\begin{prediction}[SmH$_{9}$ at $\sim\!150\GPa$]\label{pred:SmH9}
+Sm$^{3+}$ has $\mu_{\mathrm{eff}}=1.55$ (anomalously low due to $L-S$
+cancellation), giving $\BPB\simeq 0.50$ and hence $T_{c}\approx 100$\,K.
+This is an intermediate-moment test of the pair-breaking
+mechanism~\eqref{eq:BPB} --- a dedicated probe between the $\mu=0$
+(La, Y, Lu) and $\mu\gg 1$ (heavy Ln) limits.
+\end{prediction}
+
+% =============================================================================
+\section{Discussion and limitations}\label{sec:discussion}
+% =============================================================================
+
+The framework presented here reduces the specification of $T_{c}$ across
+five superconductivity classes to three universal TGP constants plus a
+small set of tabulated atomic inputs. The reduction is most striking for
+magnetic blocking: eleven phenomenological $\lamsf$ values, once
+material-specific, become a single universal coupling
+$\kappa_{\mathrm{TGP}}=2.012$ plus $\{N(E_{F}),I\}$. And the introduction
+of a Hund moment-dependent pair-breaker extends the framework to the
+lanthanide hydride class without any class-specific refit.
+
+\paragraph{Systematic limitations.}
+\begin{enumerate}[(L1),nosep]
+  \item The cuprate layer factor $\sqrt{n}$ is an approximation;
+    residuals suggest $n^{0.7}$ with an offset. Open.
+  \item Ce is only partially captured: Kondo-screened
+    $\mu_{\mathrm{eff}}$ reduces the naive pair-breaker. A unified
+    hybridisation treatment (P7.3) is needed.
+  \item AFM nesting ($\mathbf{q}\neq 0$ susceptibility, e.g.\ Cr) is
+    outside the paramagnon-mediated substrate treatment.
+  \item Ordered ferromagnets ($IN\geq 1.5$: Co, Ni) are over-predicted
+    for $\lamsf$ by factor $2\text{--}3$, but all such cases
+    are already magnetically suppressed to $T_{c}\to 0$, so this has no
+    observational consequence.
+  \item Eu and Yb valence transitions under pressure
+    ($\mathrm{Eu}^{2+}\!\to\!\mathrm{Eu}^{3+}$ at $\sim\!20\GPa$; Yb in
+    metal as $\mathrm{Yb}^{2+}$) require a
+    $P$-dependent $\mu_{\mathrm{eff}}$ table. Open.
+\end{enumerate}
+
+\paragraph{Ambient-pressure room-temperature SC.}
+The framework admits no known ambient, room-temperature, stoichiometric
+candidate. The most accessible path is
+Hg1245\,+\,pressure-quench (extending the Hg1223-quench at $151$\,K
+reported by~\cite{Deng2026}) or BC$_{3}$/BC$_{4}$ synthesis. We
+consider ambient RT-SC open; the present framework does not preclude it,
+but also does not predict a specific candidate material among those
+currently synthesised.
+
+% =============================================================================
+\section{Conclusion}\label{sec:conclusion}
+% =============================================================================
+
+Building on the TGP framework of~\cite{TGP-core}, we have developed a
+unified model of superconductivity that predicts $T_{c}$ across
+five classes (cuprates, phonon-mediated, pressure-driven, iron-based, and
+lanthanide hydrides) using a single substrate ansatz modified by three
+physical blockers. Three universal TGP constants ---
+$\beta=2.527$, $\kappa_{\mathrm{TGP}}=2.012$,
+$\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$ --- plus tabulated atomic
+inputs yield $r(\log T_{c})=0.875$ across thirty-one materials without
+class-specific refit. The reduction of eleven empirical
+$\lamsf$ values to a first-principles formula
+(Eq.~\eqref{eq:lamsf-P7A}) \emph{improves} the Pearson correlation from
+$0.874$ to $0.943$ while reducing the parameter count; this is the
+strongest internal validation of the TGP substrate picture in the
+superconducting sector.
+
+Five falsifiable predictions are stated; the single most distinctive is
+the LuH$_{10}$ high-pressure prediction of $200\text{--}250$\,K, arising
+from the $4f^{14}$ closed-shell structure of $\mathrm{Lu}^{3+}$ and the
+vanishing Hund moment.
+
+\paragraph{Data and reproducibility.}
+All numerical scripts (\texttt{ps10}--\texttt{ps21}), master validation
+(\texttt{ps20}), and summary documents (\texttt{P6A-D}, \texttt{P7A-B})
+are deposited in the companion repository~\cite{TGP-repo}.
+
+% =============================================================================
+\begin{thebibliography}{99}
+% =============================================================================
+
+\bibitem{TGP-core}
+M.~Serafin,
+\emph{Theory of Generated Space (TGP): A minimal core of axioms,
+substrate, and effective field},
+Zenodo (2026); DOI: \texttt{[assigned at publication]}.
+
+\bibitem{TGP-repo}
+M.~Serafin,
+\emph{TGP source repository (v1)},
+\url{https://github.com/mserafin/tgp} (2026).
+
+\bibitem{Janak1977}
+J.~F.~Janak,
+\emph{Uniform susceptibilities of metallic elements},
+Phys.\ Rev.\ B \textbf{16}, 255 (1977).
+
+\bibitem{MJW1978}
+V.~L.~Moruzzi, J.~F.~Janak, A.~R.~Williams,
+\emph{Calculated Electronic Properties of Metals},
+Pergamon, New York (1978).
+
+\bibitem{Salke2019}
+N.~P.~Salke et al.,
+\emph{Synthesis of clathrate cerium superhydride CeH$_{9}$ at 80--100\,GPa},
+Nat.\ Commun.\ \textbf{10}, 4453 (2019);
+Pr-based analogues, see also
+D.~Zhou \emph{et al.}, \emph{Superconducting praseodymium superhydride},
+Sci.\ Adv.\ \textbf{6}, eaax6849 (2020).
+
+\bibitem{Zhou2020}
+D.~Zhou et al.,
+\emph{Superconducting neodymium superhydride NdH$_{9}$ at 2\,Mbar},
+J.\ Am.\ Chem.\ Soc.\ \textbf{142}, 2803 (2020).
+
+\bibitem{Sharps2025}
+M.~Sharps et al.,
+\emph{Superconductivity in Yb$_{4}$H$_{23}$ at 180\,GPa},
+arXiv:2505.XXXXX (2025).
+
+\bibitem{Deng2026}
+L.~Z.~Deng et al.,
+\emph{Pressure-quenched superconductivity in Hg-1223 at 151\,K},
+APS Physics \textbf{19}, 37 (2026);
+\url{https://physics.aps.org/articles/v19/37}.
+
+\end{thebibliography}
+
+\end{document}

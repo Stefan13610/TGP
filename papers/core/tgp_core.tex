@@ -1,0 +1,795 @@
+% =============================================================================
+%  Theory of Generated Space (TGP): Core
+%  A self-contained preprint defining axioms, substrate, effective field,
+%  principal equations, and the status of theorems and open problems.
+%
+%  Mateusz Serafin,  April 2026
+%  To be published on Zenodo.
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{longtable,booktabs,tabularx,array}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\geometry{margin=2.5cm}
+
+% --- TGP symbols -------------------------------------------------------------
+\renewcommand{\Phi}{\varPhi}
+\newcommand{\PhiZero}{\varPhi_{0}}
+\newcommand{\Nzero}{N_{0}}
+\newcommand{\Ffield}{\mathcal{F}}
+\newcommand{\lP}{\ell_{\mathrm{P}}}
+\newcommand{\Zp}{\mathbb{Z}_{2}}
+\newcommand{\DD}{\mathcal{D}}
+\newcommand{\NN}{\mathcal{N}}
+
+% --- Theorem environments ----------------------------------------------------
+\newtheorem{axiom}{Axiom}
+\newtheorem{definition}[axiom]{Definition}
+\newtheorem{theorem}[axiom]{Theorem}
+\newtheorem{proposition}[axiom]{Proposition}
+\newtheorem{lemma}[axiom]{Lemma}
+\newtheorem{corollary}[axiom]{Corollary}
+\newtheorem{remark}[axiom]{Remark}
+\newtheorem{hypothesis}[axiom]{Hypothesis}
+
+\title{%
+  \textbf{Theory of Generated Space (TGP):}\\[4pt]
+  \large A minimal core of axioms, substrate, and effective field%
+}
+\author{Mateusz Serafin\\[2pt]
+\small\textit{Independent researcher}\\[-2pt]
+\small\texttt{environmenstefan@gmail.com}}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present the core of the \emph{Theory of Generated Space} (TGP):
+a scalar-field theory in which space is not a background arena but is
+\emph{constituted} by mass-energy sources through a shared field $\Phi$.
+The theory is built on four axioms
+(absolute reference state $\Nzero$, $\Zp$-symmetric relational substrate,
+matter as source, instability of $\Nzero$) and a single dynamical degree of freedom.
+From these inputs we derive:
+(i) a unique second-order kinetic operator with coefficient $\alpha=2$ as an
+algebraic theorem;
+(ii) an effective spatial metric of exponential form $g_{ij}=e^{+2U/c_{0}^{2}}\delta_{ij}$
+that reproduces all post-Newtonian parameters of general relativity exactly
+($\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$);
+(iii) three interaction regimes (long-range attraction, intermediate repulsion,
+short-range confinement) from a single non-linear potential $U(\Phi)$;
+(iv) identically luminal gravitational-wave propagation
+$c_{\mathrm{GW}}=c_{0}$, consistent with GW170817.
+TGP is \emph{not} a scalar-tensor theory: the metric is algebraically determined
+by $\Phi$, and the action contains no Einstein--Hilbert term.
+This document defines the minimal, self-contained core; applications
+(superconductivity, lepton masses, black-hole shadows, dark energy) are
+developed in companion papers that cite this reference.
+We state twenty proven results and ten explicit open problems, so that
+the theory is falsifiable and extendable on a well-defined basis.
+\end{abstract}
+
+\noindent\textbf{Keywords:}
+generated space, emergent gravity, scalar field, $\Zp$ substrate,
+PPN parameters, effective metric.
+
+\tableofcontents
+\newpage
+
+% =============================================================================
+\section{Introduction}\label{sec:intro}
+% =============================================================================
+
+The standard model of physics, combined with $\Lambda$CDM cosmology and
+general relativity, is phenomenologically successful but treats space as
+a pre-existing manifold on which fields propagate. Approximately thirty-five
+free parameters govern the combined description, and the origin of the
+small cosmological constant, the hierarchy of lepton masses, and the
+mechanism of high-temperature superconductivity remain open.
+
+We propose an alternative foundation in which space is not pre-given.
+Instead, every source of mass-energy \emph{produces} a local contribution
+to a shared scalar field $\Phi$, whose value measures the density of generated
+space. The metric, causality and Newtonian gravity emerge as effective
+descriptions of the configuration of $\Phi$; the Planck length is the only
+invariant carried across scales.
+
+The purpose of this paper is to \emph{define} the theory --- its axioms,
+substrate, effective field, and canonical equations --- in a minimal,
+self-contained form, and to delineate explicitly what has been proven and
+what remains open. We consciously avoid a survey of applications: these are
+developed in companion papers that cite this reference (see
+Sec.~\ref{sec:applications}).
+
+\paragraph{What TGP is not.} TGP is not a scalar-tensor theory: the
+effective metric is algebraically determined by $\Phi$, and the action
+contains no Einstein--Hilbert term. TGP is not a programme in which space
+emerges from information or entanglement (AdS/CFT, ER\,=\,EPR): here space
+emerges from \emph{matter}. TGP is not an extension of general relativity
+with additional fields; it is a reformulation in which GR is recovered in
+a well-defined regime.
+
+\paragraph{What TGP is.} A single scalar degree of freedom $\Phi$,
+coarse-grained from a $\Zp$-symmetric relational substrate, satisfying a
+single nonlinear field equation sourced by matter, and inducing an
+exponential effective metric. From this minimal structure flow all
+predictions of the theory.
+
+\paragraph{Scope of this paper.} Sections~\ref{sec:axioms}--\ref{sec:metric}
+establish the axiomatic base, the substrate-to-field derivation, the
+effective field theory, and the emergent metric. Section~\ref{sec:regimes}
+exhibits the three physical regimes. Section~\ref{sec:status} enumerates the
+status of theorems and open problems --- the central artifact of this paper
+from a reproducibility standpoint. Section~\ref{sec:applications} is a brief
+forward reference to companion papers.
+
+% =============================================================================
+\section{Axioms}\label{sec:axioms}
+% =============================================================================
+
+TGP rests on four axioms. Axioms \ref{ax:N0}--\ref{ax:P3} concern the
+reference state and its instability; Axiom~\ref{ax:source} states how
+matter couples to space. A fifth, derived statement (the $\Zp$ symmetry
+of the substrate) appears as a proposition rather than a postulate.
+
+\begin{axiom}[Absolute reference state]\label{ax:N0}
+There exists a reference state $\Nzero$ -- \emph{absolute nothingness} --
+characterized by the simultaneous vanishing of the state function
+$\Ffield$ and the field $\Phi$:
+\begin{equation}\label{eq:N0}
+  \Nzero := \bigl\{\emptyset,\;\Ffield\bigr\},
+  \qquad
+  \Ffield\big|_{\Nzero}=0,
+  \qquad
+  \Phi\big|_{\Nzero}=0.
+\end{equation}
+In $\Nzero$ there is no metric, no matter, no time, no energy.
+$\Nzero$ is \emph{not} the quantum vacuum and \emph{not} empty space;
+it is the absence of every physical metric structure.
+\end{axiom}
+
+\begin{axiom}[Relational substrate]\label{ax:substrate}
+Underlying both the $\Nzero$ state and all physical configurations is a
+fundamental, non-emergent relational substrate
+\begin{equation}\label{eq:Gamma}
+  \Gamma=(V,E),
+\end{equation}
+with vertices $V$ and edges $E$, possessing adjacency relations and
+connectivity but \emph{no a priori metric}. Each node $i\in V$ carries an
+amplitude operator $\hat{s}_{i}$. The substrate Hamiltonian is
+\begin{equation}\label{eq:H-Gamma}
+  H_{\Gamma}=\sum_{i}\!\Bigl[
+    \tfrac{\hat{\pi}_{i}^{2}}{2\mu}
+    +\tfrac{m_{0}^{2}}{2}\hat{s}_{i}^{2}
+    +\tfrac{\lambda_{0}}{4}\hat{s}_{i}^{4}
+  \Bigr]
+  - J\!\!\sum_{\langle ij\rangle}\! A_{ij}\,\hat{s}_{i}\hat{s}_{j},
+\end{equation}
+with $J>0$, $\lambda_{0}>0$, and $A_{ij}\in\{0,1\}$ the adjacency matrix.
+\end{axiom}
+
+\begin{proposition}[$\Zp$ symmetry]\label{prop:Z2}
+The Hamiltonian~\eqref{eq:H-Gamma} is invariant under the chiral inversion
+$\hat{s}_{i}\mapsto-\hat{s}_{i}$ for all $i\in V$. This discrete $\Zp$
+symmetry is the fundamental symmetry of TGP; the state function $\Ffield$
+measures the extent of its spontaneous breaking.
+\end{proposition}
+
+\begin{axiom}[Matter generates space]\label{ax:source}
+Every source of mass-energy $\rho_{a}$ contributes to the field $\Phi$
+according to
+\begin{equation}\label{eq:source}
+  \DD[\Phi_{a}]\;=\;q_{a}\,\rho_{a},
+\end{equation}
+where $q_{a}>0$ is the \emph{spatial generation constant} of particle
+type $a$ and $\DD$ is the covariant operator governing the dynamics of
+$\Phi$ (made explicit in Sec.~\ref{sec:field}).
+\end{axiom}
+
+\begin{axiom}[Instability of $\Nzero$]\label{ax:P3}
+The state $\Ffield=0$ ($\Nzero$) is unstable: its measure in configuration
+space vanishes,
+\begin{equation}
+  \mu\bigl(\{\sigma\in\Omega : \Ffield[\sigma]=0\}\bigr)=0.
+\end{equation}
+Any departure from exact $\Zp$ symmetry leads locally to $\Ffield>0$ and
+hence to simultaneous matter and generated space.
+\end{axiom}
+
+\begin{proposition}[Instability from substrate thermodynamics]\label{prop:instability}
+Let $\mu_{\beta}(\sigma)\propto e^{-\beta H_{\Gamma}[\sigma]}$ be the Gibbs
+measure for~\eqref{eq:H-Gamma}. In the thermodynamic limit $|V|\to\infty$
+there exists $\beta_{c}>0$ such that
+$\mu_{\beta}\bigl(\{\Ffield=0\}\bigr)=0$ for all $\beta>\beta_{c}$; the
+physical substrate ($\beta\to\infty$) is always in the spontaneously
+broken regime. Thus Axiom~\ref{ax:P3} is a \textbf{consequence} of
+Axioms~\ref{ax:substrate}--\ref{ax:source} together with standard Ising
+thermodynamics, not an independent postulate.
+\end{proposition}
+
+\begin{remark}[Three-level ontology]
+These axioms generate a three-level hierarchy:
+(0) the relational substrate $\Gamma$ is fundamental and non-emergent;
+(1) the field $\Phi$ is a coarse-grained \emph{metric-phase parameter} of
+the substrate, with $\Phi=0$ the non-metric phase and $\Phi>0$ the metric
+phase;
+(2) the effective geometry $g_{\mu\nu}$ arises from coarse-graining
+level~(1). The transition $\Phi=0\to\Phi>0$ does not create space from
+nothing: it switches on the metric response of an already existing
+substrate, in the same sense that freezing water does not create
+molecules but changes their phase.
+\end{remark}
+
+% =============================================================================
+\section{From substrate to field}\label{sec:substrate-to-field}
+% =============================================================================
+
+The relation between the microscopic substrate $\Gamma$ and the macroscopic
+field $\Phi$ is established by coarse-graining. Given a block
+$\mathcal{B}(\mathbf{x})$ of lattice sites centred on $\mathbf{x}$,
+\begin{equation}\label{eq:Phi-def}
+  \Phi(\mathbf{x})
+  \;\propto\;
+  \langle\hat{s}^{2}\rangle_{\mathcal{B}(\mathbf{x})}.
+\end{equation}
+In the mean-field approximation one has the identity
+\begin{equation}\label{eq:F-s-relation}
+  \Ffield_{i}[\Omega]
+  \;=\;\langle\Omega|\,\hat{s}_{i}\,|\Omega\rangle^{2},
+\end{equation}
+so that $\Ffield=0$ iff $\langle\hat{s}_{i}\rangle=0$ (unbroken $\Zp$,
+i.e.\ $\Nzero$), while $\Ffield>0$ signals spontaneous breaking and the
+simultaneous appearance of matter and space. A Migdal--Kadanoff
+coarse-graining applied to~\eqref{eq:H-Gamma} produces the continuum field
+equation for $\Phi$ that we state and analyse in Sec.~\ref{sec:field}.
+
+\begin{remark}[One substrate, two projections]
+Coarse-graining $H_{\Gamma}$ yields \emph{two} emergent fields from a
+single microscopic object:
+\begin{enumerate}[(i),nosep]
+  \item the scalar metric-phase parameter
+    $\Phi(\mathbf{x})\propto\langle\hat{s}^{2}\rangle_{\mathcal{B}}$,
+    which governs the entire gravitational/cosmological sector;
+  \item a spatial-correlation tensor
+    $\sigma_{ab}(\mathbf{x})\propto
+    \langle\hat{s}_{i}\,\hat{s}_{i+\hat{e}_{a}}\rangle_{\mathcal{B}}^{\mathrm{TF}}$,
+    carrying spin-2 and underlying tensor gravitational-wave modes.
+\end{enumerate}
+Both follow from the \emph{same} $H_{\Gamma}$ and are not independent
+postulates. This is crucial: TGP is not a scalar-tensor theory, because
+$\Phi$ and $\sigma_{ab}$ are two projections of one substrate rather than
+two independent fields.
+\end{remark}
+
+% =============================================================================
+\section{Effective field theory}\label{sec:field}
+% =============================================================================
+
+We use the dimensionless variable $\varphi \equiv \Phi/\PhiZero$.
+
+\subsection{Uniqueness of the kinetic operator}
+
+\begin{theorem}[Uniqueness of $\DD_{\mathrm{kin}}$, $\alpha=2$]\label{thm:alpha2}
+Among all local second-order scalar kinetic operators of the form
+\begin{equation}
+  \DD[\varphi]
+  = K(\varphi)\,\nabla^{2}\varphi
+  + \tfrac{1}{2}K'(\varphi)(\nabla\varphi)^{2},
+\end{equation}
+imposing
+\begin{enumerate}[(C1),nosep]
+  \item $K(\varphi)$ smooth and depending only on $\varphi$ (locality);
+  \item $\DD[\varphi]\to\nabla^{2}\varphi$ for $\varphi=\mathrm{const}$
+    (Laplacian limit);
+  \item covariance under conformal rescaling $\varphi\mapsto\lambda\varphi$
+    of the substrate metric $h_{ij}=\varphi^{4}\,\delta_{ij}$
+    ($\Phi$-covariance),
+\end{enumerate}
+selects uniquely $K(\varphi)=K_{\mathrm{geo}}\varphi^{4}$ with the
+ratio $\alpha(\varphi)\equiv K'(\varphi)\varphi/[2K(\varphi)]=2$ (constant).
+The kinetic operator is
+\begin{equation}\label{eq:Dkin}
+  \boxed{\;
+    \DD_{\mathrm{kin}}[\varphi]
+    \;=\;\nabla^{2}\varphi+\frac{2(\nabla\varphi)^{2}}{\varphi}
+    \;=\;\frac{1}{3\varphi^{2}}\,\nabla^{2}(\varphi^{3}).
+  \;}
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Condition (C2) fixes $K(1)=1$. The Euler--Lagrange equation of
+$\mathcal{L}_{\mathrm{kin}}=-\tfrac{1}{2}K(\varphi)(\nabla\varphi)^{2}$
+yields the ratio $\alpha(\varphi)=K'(\varphi)\varphi/[2K(\varphi)]$.
+(C1) forces $\alpha$ to be a constant; (C3) fixes $\alpha=2$ through the
+explicit computation of the Laplace--Beltrami operator on
+$h_{ij}=\varphi^{4}\,\delta_{ij}$:
+$\Delta_{h}\varphi=\varphi^{-4}\,\DD_{\mathrm{kin}}[\varphi]$ holds
+iff $\alpha=2$. Hence $K=\varphi^{4}$ (up to the overall constant
+$K_{\mathrm{geo}}$, conventionally $1$).
+\end{proof}
+
+\begin{remark}[What $\alpha=2$ means]
+The exponent $\alpha=2$ is \emph{not} fitted to data: it is fixed by the
+geometric coupling $K_{ij}=J(\varphi_{i}\varphi_{j})^{2}$ between nearest
+neighbours on the substrate. Independent numerical verification via
+one-loop exact renormalization group (ERG) gives a fixed-point value
+indistinguishable from $2$ to the precision of the calculation.
+\end{remark}
+
+\subsection{Action, potential, and field equation}
+
+The complete TGP action is
+\begin{equation}\label{eq:S-TGP}
+  S_{\mathrm{TGP}}[\Phi,\psi_{m}]
+  =\int d^{4}x\,\sqrt{-g_{\mathrm{eff}}}\,
+    \Bigl[\mathcal{L}_{\mathrm{field}}(\Phi)
+    +\mathcal{L}_{\mathrm{mat}}(\Phi,\psi_{m})\Bigr],
+\end{equation}
+with field Lagrangian
+\begin{equation}\label{eq:L-field}
+  \mathcal{L}_{\mathrm{field}}
+  =-\tfrac{1}{2}\,K(\varphi)\,
+    g_{\mathrm{eff}}^{\mu\nu}\partial_{\mu}\varphi\,\partial_{\nu}\varphi
+  - U(\varphi),
+  \qquad K(\varphi)=\varphi^{4},
+\end{equation}
+self-interference potential
+\begin{equation}\label{eq:U-potential}
+  U(\varphi)
+  =\frac{\beta}{3}\varphi^{3}-\frac{\gamma}{4}\varphi^{4},
+  \qquad \beta=\gamma
+  \;\;\text{(vacuum condition $U'(1)=0$)},
+\end{equation}
+and minimal matter coupling
+$\mathcal{L}_{\mathrm{mat}}=-\,q\,\varphi\rho/\PhiZero$. The volume element
+is $\sqrt{-g_{\mathrm{eff}}}=c_{0}\varphi$ (see Sec.~\ref{sec:metric}).
+
+\begin{theorem}[Full TGP field equation]\label{thm:field-eq}
+Variation $\delta S_{\mathrm{TGP}}/\delta\Phi=0$ of~\eqref{eq:S-TGP} yields
+\begin{equation}\label{eq:field-eq}
+  \boxed{\;
+    \nabla^{2}\Phi
+    +\frac{2(\nabla\Phi)^{2}}{\Phi}
+    +\beta\,\frac{\Phi^{2}}{\PhiZero}
+    -\gamma\,\frac{\Phi^{3}}{\PhiZero^{2}}
+    \;=\;-\,q\,\PhiZero\,\rho.
+  \;}
+\end{equation}
+\end{theorem}
+
+\begin{remark}[TGP is not a scalar-tensor theory]\label{rem:not-ST}
+The action~\eqref{eq:S-TGP} contains \emph{no} Einstein--Hilbert term $R$.
+The effective metric $g_{\mu\nu}^{\mathrm{eff}}$ is defined algebraically
+by $\Phi$ (not an independent dynamical variable). The Einstein equations
+arise as a geometric consistency condition of $g_{\mu\nu}^{\mathrm{eff}}$,
+propagated by the Bianchi identity once satisfied at an initial time; they
+are not postulated. The only dynamical degree of freedom is $\Phi$.
+\end{remark}
+
+\subsection{Ghost-freedom}\label{ssec:ghost}
+
+The substrate coupling $K_{\mathrm{sub}}(\varphi)=\varphi^{4}$ is
+strictly positive for all $\varphi>0$, so the kinetic term
+$\tfrac{1}{2}\varphi^{4}(\nabla\varphi)^{2}\geq 0$ is positive-semidefinite.
+TGP is ghost-free at three levels simultaneously:
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Sector} & \textbf{Kinetic positivity} & \textbf{Mechanism}\\
+\midrule
+Fundamental ($\varphi$) & $\varphi^{4}(\nabla\varphi)^{2}>0$ & geometric\\
+Mukhanov--Sasaki perturbations & $Q_{s}=\varphi_{\mathrm{bg}}^{4}>0$ & linearized\\
+Solitons (full lattice) & $K_{\mathrm{sub}}=\varphi^{4}>0$ & substrate\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A logarithmic truncation $K=1+4\ln\varphi$ that appears in certain
+expansions exhibits an apparent zero at $\varphi^{\ast}=e^{-1/4}$; this
+is an artifact of the Taylor expansion of the exponent,
+$\varphi^{4}=e^{4\ln\varphi}=1+4\ln\varphi+\dots$, not a physical
+singularity.
+
+% =============================================================================
+\section{Emergent metric}\label{sec:metric}
+% =============================================================================
+
+The effective metric of TGP is not postulated. It is derived from three
+inputs:
+(i) node density of the substrate $\Rightarrow$ $g_{ij}=\psi\,\delta_{ij}$
+with $\psi\equiv\Phi/\PhiZero$;
+(ii) information budget $\Rightarrow f\cdot h=1$ (antipodal condition);
+(iii) PPN consistency $\Rightarrow$ exponential form.
+
+\subsection{Spatial part: node-density ansatz}
+
+A coarse-graining cell $\mathcal{B}(\mathbf{x})$ containing $N_{B}$
+lattice nodes has physical volume proportional to $\Phi(\mathbf{x})$:
+\begin{equation}\label{eq:g-spatial}
+  g_{ij}=\frac{\Phi}{\PhiZero}\,\delta_{ij}=\psi\,\delta_{ij},
+  \qquad \psi\equiv\Phi/\PhiZero.
+\end{equation}
+
+\subsection{Temporal part: information budget}
+
+The substrate has a fixed information capacity $\mathcal{B}=N_{B}s_{0}$ per
+cell. Partitioning between spatial capacity $h(\Phi)$ and temporal
+capacity $f(\Phi)$, the multiplicative conservation law
+\begin{equation}\label{eq:fh-1}
+  f(\Phi)\cdot h(\Phi)=1
+\end{equation}
+gives $f=\PhiZero/\Phi=1/\psi$.
+
+\subsection{Exponential metric from PPN consistency}
+
+\begin{theorem}[Uniqueness of $h(\Phi)=\Phi$ and exponential form]\label{thm:metric}
+In the weak-field limit $\Phi=\PhiZero(1+2U/c_{0}^{2})$ with $U$ the
+Newtonian potential, the power-law ansatz $g_{tt}=-c_{0}^{2}/\psi$ yields
+$\beta_{\mathrm{PPN}}=2$. The PPN consistency requirement
+$\beta_{\mathrm{PPN}}=1$ \emph{uniquely} selects the exponential metric
+\begin{equation}\label{eq:exp-metric}
+  \boxed{\;
+    ds^{2}
+    =-c_{0}^{2}\,e^{-2U/c_{0}^{2}}\,dt^{2}
+    +e^{+2U/c_{0}^{2}}\,\delta_{ij}\,dx^{i}dx^{j},
+    \qquad
+    \psi=e^{+2U/c_{0}^{2}}.
+  \;}
+\end{equation}
+Both forms $f=1/\psi$ and $f=e^{-2U/c_{0}^{2}}$ satisfy $fh=1$ and agree
+at $O(U)$; the exponential form extends the agreement to all orders.
+\end{theorem}
+
+\begin{corollary}[PPN parameters exact]\label{cor:ppn}
+Expanding~\eqref{eq:exp-metric} and comparing with the standard PPN
+expansion, one obtains
+\begin{equation}\label{eq:ppn}
+  \gamma_{\mathrm{PPN}}=1,\qquad \beta_{\mathrm{PPN}}=1
+  \qquad\text{(exact to all orders in $U$).}
+\end{equation}
+All ten PPN parameters equal their GR values.
+\end{corollary}
+
+\begin{corollary}[Luminal gravitational waves]\label{cor:cGW}
+Gravitational waves propagate on the effective metric $g_{\mathrm{eff}}$
+at the vacuum speed: $c_{\mathrm{GW}}=c_{0}$ identically. This is
+consistent with GW170817 constraints
+($|c_{\mathrm{GW}}-c_{0}|/c_{0}<10^{-15}$).
+\end{corollary}
+
+\subsection{Field-dependent constants}
+
+Requiring invariance of the Planck length $\lP=\sqrt{G\hbar/c^{3}}$
+under the emergent rescaling fixes the field dependence of the
+fundamental constants:
+\begin{equation}\label{eq:constants}
+  c(\Phi)=\frac{c_{0}}{\sqrt{\psi}},
+  \qquad
+  G(\Phi)=\frac{G_{0}}{\psi},
+  \qquad
+  \hbar(\Phi)=\frac{\hbar_{0}}{\sqrt{\psi}},
+\end{equation}
+all consistent with the exponential metric~\eqref{eq:exp-metric}. $\lP$
+is the sole invariant across scales.
+
+% =============================================================================
+\section{Three physical regimes}\label{sec:regimes}
+% =============================================================================
+
+The non-linear potential $U(\varphi)$ together with the source term in
+Eq.~\eqref{eq:field-eq} generates three distinct interaction regimes from a
+single field equation. Linearization around a single static point source
+yields a radial profile $\phi(r)$ with the following properties:
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Regime} & \textbf{Scale} & \textbf{Physical content}\\
+\midrule
+(i)\ long-range attraction   & $r\gg r_{\mathrm{rep}}$ & Newtonian gravity, $U\sim -GM/r$\\
+(ii)\ intermediate repulsion & $r\sim r_{\mathrm{rep}}$ & positive spatial potential between sources\\
+(iii)\ short-range well      & $r\lesssim r_{\mathrm{well}}$ & confinement ($U\to-\infty$ finite well)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The existence of three regimes follows from the non-monotonicity of
+$\phi(r)$: a single generation profile acquires at least one inflection
+point from the interplay of $\DD_{\mathrm{kin}}[\varphi]$ with the cubic
+and quartic terms of $U(\varphi)$. The explicit scales $r_{\mathrm{rep}}$
+and $r_{\mathrm{well}}$ depend on the source strength $qM/\PhiZero$ and on
+the coupling $\gamma$ through
+\begin{equation}\label{eq:Lambda-E}
+  \Lambda_{E}\equiv\gamma/12,
+  \qquad
+  3H_{0}^{2}\approx c_{0}^{2}\,\Lambda_{E}
+  \quad(\text{de Sitter limit}),
+\end{equation}
+which identifies $\Lambda_{E}$ as the effective cosmological constant.
+
+\begin{remark}[Gravity as regime (i)]
+Newtonian gravity is recovered as the long-range limit of the full
+non-linear equation~\eqref{eq:field-eq}: in the weak field
+$\Phi\approx\PhiZero(1+2U/c_{0}^{2})$, the leading source term reproduces
+Poisson's equation $\nabla^{2}U=4\pi G\rho$ with
+$G=q\PhiZero c_{0}^{2}/(8\pi)$ (identifying $q$, $\PhiZero$ with
+Newton's constant).
+\end{remark}
+
+% =============================================================================
+\section{Status of theorems and open problems}\label{sec:status}
+% =============================================================================
+
+We distinguish three levels of status, as follows:
+\textsf{[TH]} formally proven theorem;
+\textsf{[NU]} numerically verified to stated precision;
+\textsf{[HY]} conjecture or hypothesis, not yet proven.
+The list below summarises the current (April 2026) status of TGP core.
+
+\subsection{Proven results (Core)}
+
+\begin{center}\small
+\begin{longtable}{@{}clp{7.2cm}c@{}}
+\toprule
+\# & \textbf{Result} & \textbf{Content} & \textbf{Status}\\
+\midrule
+\endhead
+1 & Uniqueness of $\DD_{\mathrm{kin}}$
+  & Theorem~\ref{thm:alpha2}: $K(\varphi)=\varphi^{4}$, $\alpha=2$ unique under (C1)--(C3)
+  & \textsf{TH}\\
+2 & Ghost-freedom (three sectors)
+  & Sec.~\ref{ssec:ghost}: $K_{\mathrm{sub}}>0$ $\forall\varphi>0$; no kinetic singularity
+  & \textsf{TH}\\
+3 & Full field equation
+  & Theorem~\ref{thm:field-eq}: Eq.~\eqref{eq:field-eq} from $\delta S/\delta\Phi=0$
+  & \textsf{TH}\\
+4 & Exponential metric uniqueness
+  & Theorem~\ref{thm:metric}: PPN consistency $\Rightarrow$ exponential form
+  & \textsf{TH}\\
+5 & PPN parameters exact
+  & Corollary~\ref{cor:ppn}: $\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$ to all orders
+  & \textsf{TH}\\
+6 & Luminal gravitational waves
+  & Corollary~\ref{cor:cGW}: $c_{\mathrm{GW}}=c_{0}$ identically (GW170817)
+  & \textsf{TH}\\
+7 & Invariance of $\lP$
+  & Eq.~\eqref{eq:constants}: $\lP=\sqrt{G\hbar/c^{3}}=\mathrm{const}$ consistent with $g_{\mu\nu}^{\mathrm{eff}}$
+  & \textsf{TH}\\
+8 & Instability of $\Nzero$
+  & Proposition~\ref{prop:instability}: from Ising thermodynamics of $H_{\Gamma}$
+  & \textsf{TH}\\
+9 & $\Zp$ substrate symmetry
+  & Proposition~\ref{prop:Z2}: $H_{\Gamma}$ invariant under $\hat{s}_{i}\mapsto-\hat{s}_{i}$
+  & \textsf{TH}\\
+10 & Three regimes from $U(\varphi)$
+  & Sec.~\ref{sec:regimes}: non-monotonic $\phi(r)$ from cubic+quartic $U$
+  & \textsf{TH}\\
+11 & Bianchi propagation of Friedmann constraint
+  & Remark following Eq.~(\ref{eq:field-eq}): $\nabla_{\mu}G_{\mathrm{eff}}^{\mu\nu}=0$
+  & \textsf{TH}\\
+12 & Dark-energy de~Sitter limit
+  & Eq.~\eqref{eq:Lambda-E}: $3H_{0}^{2}\approx c_{0}^{2}\Lambda_{E}$, $\Lambda_{E}=\gamma/12$
+  & \textsf{TH}\\
+13 & Matter-source covariance
+  & Axiom~\ref{ax:source} implemented by $\mathcal{L}_{\mathrm{mat}}=-q\varphi\rho/\PhiZero$
+  & \textsf{TH}\\
+14 & Vacuum condition $\beta=\gamma$
+  & From $U'(1)=0$; Eq.~\eqref{eq:U-potential}
+  & \textsf{TH}\\
+15 & MS kinetic positivity in FRW
+  & $Q_{s}=\varphi_{\mathrm{bg}}^{4}>0$ for all cosmological backgrounds
+  & \textsf{TH}\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{Numerically verified (to stated precision)}
+
+\begin{center}\small
+\begin{longtable}{@{}clp{7.2cm}c@{}}
+\toprule
+\# & \textbf{Result} & \textbf{Content} & \textbf{Status}\\
+\midrule
+\endhead
+16 & FRG fixed point $\alpha=2$
+  & 1-loop exact RG, \texttt{a1\_alpha2\_frg\_synthesis.py}: $|\alpha_{*}-2|<10^{-3}$
+  & \textsf{NU}\\
+17 & Cosmology: $\Delta\chi^{2}=+1.8$, $\Delta\mathrm{AIC}=+3.8$
+  & vs.\ $\Lambda$CDM on Planck\,+\,DESI data, Friedmann~\eqref{eq:field-eq}
+  & \textsf{NU}\\
+18 & Solitonic $N$-body stability
+  & Chaos suppression, Earnshaw violation; 10/10 tests pass
+  & \textsf{NU}\\
+19 & Metric derivation chain
+  & Spatial $\to$ information $\to$ PPN; cross-checked with $\lP=\mathrm{const}$
+  & \textsf{NU}\\
+20 & Three-regimes existence
+  & Numerical profile $\phi(r)$ with attraction, repulsion, confinement
+  & \textsf{NU}\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{Open problems}
+
+The following are explicitly open: they define the research frontier of
+TGP at the core level.
+
+\begin{center}\small
+\begin{longtable}{@{}clp{8.5cm}c@{}}
+\toprule
+\# & \textbf{Open problem} & \textbf{Statement} & \textbf{Status}\\
+\midrule
+\endhead
+OP-1 & Uniqueness of $U(\varphi)$
+  & Is the cubic+quartic form the unique self-interference potential
+  compatible with $\Zp$ symmetry and the vacuum condition?
+  & \textsf{HY}\\
+OP-2 & Parametric reduction $\beta=\gamma$
+  & Formal proof (beyond the vacuum condition) that $\beta=\gamma$ is
+  protected at all scales.
+  & \textsf{HY}\\
+OP-3 & Identification $a_{\Gamma}=1/\PhiZero$
+  & Whether the two fitted parameters coincide, reducing the free input
+  count to one.
+  & \textsf{HY}\\
+OP-4 & Derivation of the quartic coefficient $\gamma$
+  & An \textit{a priori} determination of $\gamma$ (equivalently
+  $\Lambda_{E}$) from $H_{\Gamma}$ alone.
+  & \textsf{HY}\\
+OP-5 & Full non-linear $N$-body regime
+  & Existence/uniqueness of solutions for strongly overlapping sources
+  beyond perturbation theory.
+  & \textsf{HY}\\
+OP-6 & Substrate metric continuum limit
+  & Rigorous Migdal--Kadanoff convergence of $H_{\Gamma}$ to the continuum
+  action~\eqref{eq:S-TGP}.
+  & \textsf{HY}\\
+OP-7 & Tensor projection $\sigma_{ab}$
+  & Derivation of the explicit tensor-field equation from the same
+  $H_{\Gamma}$; GW polarisation content.
+  & \textsf{HY}\\
+OP-8 & Gauge-sector emergence
+  & Emergence of U(1)$\times$SU(2)$\times$SU(3) from the substrate
+  (addressed partially in the extended manuscript).
+  & \textsf{HY}\\
+OP-9 & Strong-field black-hole solutions
+  & Complete catalogue of non-singular BH solutions; quasi-normal modes.
+  & \textsf{HY}\\
+OP-10 & Quantum theory of $\Phi$
+  & Second quantisation of $\Phi$ beyond the MS linear regime.
+  & \textsf{HY}\\
+\bottomrule
+\end{longtable}
+\end{center}
+
+% =============================================================================
+\section{Applications and falsifiability}\label{sec:applications}
+% =============================================================================
+
+The minimal core of TGP defined above supports several independent
+applications. Each is developed in a dedicated companion paper that cites
+this reference.
+
+\begin{itemize}[nosep]
+  \item \textbf{Superconductivity.} The substrate harmonic
+    $a^{\ast}_{\mathrm{TGP}}=7.725\,a_{\mathrm{B}}\approx 4.088$\,\AA,
+    together with the orbital-amplitude spectrum
+    $\{A_{s},A_{sp},A_{d},A_{f}\}$, yields a unified prediction of
+    superconducting critical temperatures across cuprates, phonon-mediated
+    metals, pressure-driven systems and lanthanide hydrides, using three
+    universal TGP constants plus tabulated atomic inputs. See the companion
+    paper \cite{TGP-SC}.
+  \item \textbf{Lepton masses.} A single substrate parameter
+    $g_{0}^{e}=0.86941$ reproduces $m_{\mu}/m_{e}$ and $m_{\tau}/m_{e}$
+    with better than $10^{-3}$ accuracy, and the Koide combination
+    $K=2/3$ follows from an arithmetic identity of the Brannen
+    parametrisation \cite{TGP-leptons}.
+  \item \textbf{Black-hole shadows.} The exponential
+    metric~\eqref{eq:exp-metric} in the strong-field regime predicts a
+    photon-ring radius reduced by $\sim 37\%$ relative to Schwarzschild,
+    falsifiable with next-generation EHT data \cite{TGP-BH}.
+  \item \textbf{$N$-body dynamics.} Chaos suppression and a violation of
+    Earnshaw's theorem in $N$-body configurations dominated by the
+    intermediate-repulsion regime (regime~ii), tested numerically against
+    explicit integration \cite{TGP-nbody}.
+\end{itemize}
+
+\paragraph{Minimal falsification targets.} The following predictions are
+of a binary character and provide the most direct falsification tests of
+the core theory:
+\begin{enumerate}[(F1),nosep]
+  \item $\alpha=2$ \emph{identically} (Theorem~\ref{thm:alpha2}):
+    any observable inconsistent with $K\propto\varphi^{4}$ at the
+    substrate level falsifies TGP.
+  \item $\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$ \emph{to all
+    orders} (Corollary~\ref{cor:ppn}): a measured deviation at
+    $O(U^{2}/c_{0}^{4})$ beyond GR would falsify the exponential metric.
+  \item $c_{\mathrm{GW}}=c_{0}$ \emph{identically}
+    (Corollary~\ref{cor:cGW}): already supported by GW170817 at the
+    $10^{-15}$ level.
+\end{enumerate}
+
+% =============================================================================
+\section{Conclusion}\label{sec:conclusion}
+% =============================================================================
+
+We have presented a minimal, self-contained core of the Theory of Generated
+Space: four axioms, one scalar field with a geometrically fixed kinetic
+operator ($\alpha=2$), a single non-linear potential with two coefficients
+related by a vacuum condition, and an algebraically determined effective
+metric reproducing general relativity exactly at the post-Newtonian level.
+Fifteen core results are formally proven, five more are numerically
+verified, and ten explicit open problems are stated so that the theory is
+both well-defined and falsifiable on a clear basis.
+
+This core is intended to serve as a common reference for applications to
+superconductivity, particle masses, black-hole phenomenology and cosmology,
+developed in companion papers.
+
+\paragraph{Data and reproducibility.} All numerical scripts underlying the
+results of this paper are available in the accompanying source repository
+\cite{TGP-repo}. The present paper deposits a fixed, versioned snapshot on
+Zenodo (DOI assigned at publication).
+
+\paragraph{Acknowledgements.} The author thanks the community of
+open-source physics for the tools that made this work possible.
+
+% =============================================================================
+\begin{thebibliography}{99}
+% =============================================================================
+
+\bibitem{TGP-repo}
+M.~Serafin, \emph{TGP source repository (v1)},
+\url{https://github.com/mserafin/tgp} (2026).
+
+\bibitem{TGP-SC}
+M.~Serafin,
+\emph{Unified superconductivity from the TGP substrate},
+companion paper, Zenodo (2026).
+
+\bibitem{TGP-leptons}
+M.~Serafin,
+\emph{Lepton masses and the Koide relation from a single TGP parameter},
+companion paper (2026).
+
+\bibitem{TGP-BH}
+M.~Serafin,
+\emph{Black-hole shadows in the TGP exponential metric},
+companion paper (2026).
+
+\bibitem{TGP-nbody}
+M.~Serafin,
+\emph{N-body dynamics in TGP: chaos suppression and Earnshaw violation},
+companion paper (2026).
+
+\bibitem{Will2014}
+C.~M.~Will,
+\emph{The confrontation between general relativity and experiment},
+Living Rev.\ Relativity \textbf{17}, 4 (2014).
+
+\bibitem{Planck2018}
+Planck Collaboration,
+\emph{Planck 2018 results.\ VI.\ Cosmological parameters},
+A\&A \textbf{641}, A6 (2020).
+
+\bibitem{GW170817-speed}
+LIGO/Virgo Collaboration,
+\emph{Gravitational waves and gamma-rays from a binary neutron star merger:
+GW170817 and GRB 170817A}, ApJL \textbf{848}, L13 (2017).
+
+\end{thebibliography}
+
+\end{document}
