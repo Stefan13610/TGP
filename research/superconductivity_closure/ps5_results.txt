@@ -1,0 +1,172 @@
+==============================================================================
+  ps5_global_fit.py
+==============================================================================
+
+  Program P5 #5: globalny fit T_c do 19 znanych SC
+  Warianty: 5a (pure-TGP), 5b (sp-free), 5c (all-free)
+
+==============================================================================
+  Part A.  Baseline (ps3): Lambda_E tylko z Al, A_orb = A_e (bez orbitali)
+==============================================================================
+
+  Lambda_E (baseline, Al FCC z=12, A=A_e):  0.0303 meV
+
+  Statystyki baseline (ps3 styl):
+    r(log-log) = 0.3037
+    RMS_log    = 1.8084  (czynnik 10^RMS = 64.32x)
+    MAE_log    = 1.6700
+
+==============================================================================
+  Part B.  Wariant 5a (PURE-TGP): A_s=A_e, A_d=A_mu, A_f=A_tau fix z P4
+==============================================================================
+
+  Parametry fit:
+    Lambda_E = 0.0993 meV  (99.35 ueV)
+    sigma_a  = 4.0122     (1.277 * pi)
+
+  Fit ilosciowy:
+    r(log-log) = 0.4190  (baseline: 0.3037)
+    RMS_log    = 0.7146  (baseline: 1.8084)
+    MAE_log    = 0.5910  (baseline: 1.6700)
+    loss       = 9.7014
+
+==============================================================================
+  Part C.  Wariant 5b (SP-FREE): A_sp swobodne, reszta fix z P4
+==============================================================================
+
+  Parametry fit:
+    Lambda_E = 0.0635 meV
+    A_sp     = 0.2999   (A_e_P4 = 0.1246)
+              stosunek A_sp / A_e = 2.407
+    sigma_a  = 2.5399
+
+  Fit ilosciowy:
+    r(log-log) = 0.4415
+    RMS_log    = 0.6152
+    MAE_log    = 0.4771
+    loss       = 7.1905
+
+==============================================================================
+  Part D.  Wariant 5c (ALL-FREE): {Lambda_E, A_s, A_sp, A_d, A_f, sigma_a}
+==============================================================================
+
+  Parametry fit:
+    Lambda_E = 0.1309 meV
+    A_s      = -0.1110   (P4: A_e   = 0.1246,  stosunek -0.891)
+    A_sp     = 0.2067   (ref A_e  = 0.1246,  stosunek 1.659)
+    A_d      = 0.3096   (P4: A_mu  = 0.4722,  stosunek 0.656)
+    A_f      = 2.0336   (P4: A_tau = 0.9560,  stosunek 2.127)
+    sigma_a  = 2.5856
+
+  Fit ilosciowy:
+    r(log-log) = 0.4799
+    RMS_log    = 0.6050
+    MAE_log    = 0.4463
+    loss       = 6.9536
+
+==============================================================================
+  Part E.  Podsumowanie 4 wariantow
+==============================================================================
+
+  Wariant      params        r   RMS_log       loss
+  ------------ ------  -------  --------  ---------
+  Baseline          1   0.3037    1.8084          -
+  5a (pure)         2   0.4190    0.7146     9.7014
+  5b (sp-free)      3   0.4415    0.6152     7.1905
+  5c (all-free)      6   0.4799    0.6050     6.9536
+
+==============================================================================
+  Part F.  Predykcja T_c dla 19 znanych SC - wszystkie warianty
+==============================================================================
+
+        SC      obs        5a        5b        5c     r5c
+  --------  -------  --------  --------  --------  ------
+        Al     1.18      3.85     14.23     13.94   11.86
+        Zn     0.85      2.46      4.65      4.73    5.57
+        Sn     3.72      1.47      2.38      2.44    0.66
+        In     3.41      3.63     12.33     12.13    3.56
+        Hg     4.15      1.47      3.66      3.67    0.88
+        Pb     7.20      3.26      9.44      9.38    1.30
+        Nb     9.26     32.11     16.71     14.99    1.62
+         V     5.30     28.70     12.63     11.44    2.16
+        Ta     4.47     32.14     16.74     15.01    3.36
+        Tc     7.80     36.91     12.90     11.84    1.52
+       NbN    16.10     54.17     33.60     29.82    1.85
+      V3Si    17.10     58.92     32.91     29.39    1.72
+     Nb3Sn    18.30     46.79     18.52     16.87    0.92
+     Nb3Ge    23.20     50.06     21.91     19.85    0.86
+      MgB2    39.00      3.08      8.17      8.16    0.21
+      YBCO    92.00     27.19     16.97     15.06    0.16
+    BiSCCO   110.00     27.18     16.95     15.04    0.14
+       H3S   203.00      2.06      5.47      5.46    0.03
+     LaH10   250.00    163.61     85.99    250.00    1.00
+
+==============================================================================
+  Part G.  Predykcja T_c dla kandydatow non-SC (model 5c)
+==============================================================================
+
+  Uwaga: Tc_pred dotyczy sytuacji gdy material jest fazowo-koherentny.
+        Dla non-SC przy ambient presumujemy: inny mechanizm blokuje faze
+        (magnetyzm, lokalizacja, Mott). Pod cisnieniem moze sie odblokowac.
+
+     Mat    a[A]   orb    z   Tc_5c[K]  Komentarz                          
+  ------  ------  ----  ---  ---------  -----------------------------------
+      Yb   3.883     f   12   1320.055  f-electron, ambient para           
+      Ce   3.650     f   12   1218.563  f-electron                         
+       Y   3.647     d   12     28.206  SC pod cisnieniem ~12 GPa T_c=2K   
+    FeTe   3.813     d    8     20.036  parent compound                    
+    CaB6   4.149    sp    8      9.281  borek wapnia                       
+    BeB2   3.058    sp   12      7.916                                     
+      Ba   5.018     s    8      1.690  SC pod 5.5 GPa T_c=5K              
+
+==============================================================================
+  Part H.  Reszty per-material (5c)
+==============================================================================
+
+        SC      obs        5c   log10(p/o)  komentarz                
+  --------  -------  --------  -----------  -------------------------
+        Al     1.18     13.94      +1.0741  BCS klasyczny            
+        Zn     0.85      4.73      +0.7455  HCP                      
+        Sn     3.72      2.44      -0.1827  white Sn, tetragon       
+        In     3.41     12.13      +0.5515  FCC                      
+        Hg     4.15      3.67      -0.0535  pierwszy SC              
+        Pb     7.20      9.38      +0.1151  FCC, silnie sprz.        
+        Nb     9.26     14.99      +0.2091  BCC, pierwiastek rekord  
+         V     5.30     11.44      +0.3340  BCC                      
+        Ta     4.47     15.01      +0.5261  BCC                      
+        Tc     7.80     11.84      +0.1812  HCP radioaktywny         
+       NbN    16.10     29.82      +0.2677  NaCl binarny             
+      V3Si    17.10     29.39      +0.2352  A15                      
+     Nb3Sn    18.30     16.87      -0.0353  A15                      
+     Nb3Ge    23.20     19.85      -0.0678  A15                      
+      MgB2    39.00      8.16      -0.6794  dwu-przerwowy            
+      YBCO    92.00     15.06      -0.7860  cuprate, 2D-like         
+    BiSCCO   110.00     15.04      -0.8643  Bi2Sr2CaCu2O8            
+       H3S   203.00      5.46      -1.5705  155 GPa                  
+     LaH10   250.00    250.00      -0.0000  clathrate 170 GPa        
+
+==============================================================================
+  Part I.  Werdykt ps5
+==============================================================================
+
+  Poprawa r(log-log) od baseline: 0.304
+    5a: r = 0.4190  (poprawa Delta = +0.1153)
+    5b: r = 0.4415  (poprawa Delta = +0.1378)
+    5c: r = 0.4799  (poprawa Delta = +0.1761)
+
+  Najwyzsze r: wariant 5c (r = 0.4799)
+
+  Status ilosciowy: SLABY fit -> potrzebne dalsze poprawki (ps6+)
+
+  Test P4-P5 mapowania (wariant 5c vs particle sector P4):
+    A_d (fit) / A_mu (P4) = 0.656
+    A_f (fit) / A_tau (P4) = 2.127
+
+  P4-P5 mapowanie JAKOSCIOWE (rzad wielkosci OK)
+
+  STATUS ps5: Hipoteza -> HIPOTEZA (slaba)
+              Formula T_c pasuje z r = 0.480 na 19 SC.
+
+==============================================================================
+  ps5 complete.
+==============================================================================
