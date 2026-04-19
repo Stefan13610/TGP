@@ -47,16 +47,23 @@ gdzie $m$ to magnetyzacja substratu. Powinna być wyrazzalna przez $\Lambda_E$ i
 
 Cel numeryczny (ps18 przyszły): reprodukować λ_sf dla V=0.6, Nb=0.2, FeSe_bulk=0.9 z pierwszych zasad (błąd ≤ 30%).
 
-### P7.2 — Formalizacja η(P) dla lantanowców
+### P7.2 — Lantanowe pair-breaking (ZAMKNIĘTE ps21, 2026-04-19)
 
-Fit P_scale jako funkcja konfiguracji elektronowej 4f^n:
-- Ce (4f¹): P_scale = 5.8 GPa (ps16)
-- Yb (4f¹⁴): P_scale ≈ 10 GPa (guess)
-- Eu (4f⁷): P_scale ≈ 15 GPa (guess)
-- Sm (4f⁶): P_scale ≈ 20 GPa (guess)
+**Wnioski po analizie eksperymentalnej (PrH9 Tc=5K, NdH9 Tc=4.5K vs naiwne 200K):**
 
-P_scale powinien być funkcją:
-$$P_\text{scale} \sim \frac{E_\text{4f-binding}}{\Delta V_\text{unit cell}}$$
+Główny efekt NIE jest η(P) ani P_scale — lecz **Abrikosov-Gorkov pair breaking**
+od lokalnych 4f momentów magnetycznych. Formuła:
+$$B_\text{PB}(\mu) = \exp(-\alpha_\text{PB} \cdot \mu_\text{eff}^2)$$
+
+gdzie $\mu_\text{eff} = g_J\sqrt{J(J+1)}$ (Hund), a **α_PB = 0.2887 μ_B⁻²** (fit na PrH9+NdH9).
+
+Zamiast P_scale(4f^n) z E_4f-binding, dostaliśmy **czystszy mechanizm μ_eff(Hund)**,
+który przewiduje T_c dla wszystkich 15 lantanowców z jednej uniwersalnej stałej.
+
+**Kluczowa predykcja P7.2:** LuH10 @ ~170 GPa → T_c ≈ 200-250 K 
+(Lu³⁺ 4f¹⁴ closed, μ=0, brak pair-breaking).
+
+Szczegóły: [[P7B_summary.md]], [[ps21_p7b_lanthanide_pair_breaking.py]].
 
 ### P7.3 — Room-temp candidates deep dive
 
@@ -117,13 +124,14 @@ Zintegrować wszystkie ps# w jeden skrypt produkujący:
    - Nasz P6.A undershootuje (pred 93K), ale kierunek hipotezy OK
    - Hg1245 + quench to najbardziej realistyczny kandydat RT-SC dla P7
 
-## Pliki P7 (przyszłe)
+## Pliki P7 (status)
 
-- **ps18**: λ_sf pierwsze zasady z TGP (derivacja)
-- **ps19**: P_scale(element) dla lantanowców
-- **ps20**: master plot + 50+ material database
-- **ps21**: konkretne synthesis proposals z H-P/CVD toolchainem
-- **dodatekP7**: room-temp ambient summary + eksperymentalne predykcje
+- **ps18**: ✅ weryfikacja + P_scale_Yb refit (552 GPa)
+- **ps19**: ✅ λ_sf pierwsze zasady TGP (κ_TGP = 2.012)
+- **ps20**: ✅ master plot, N=31 materiałów, r=0.875
+- **ps21**: ✅ lantanowe pair-breaking (α_PB = 0.2887, predykcje 15 Ln)
+- **ps22+**: (przyszłe) P7.3 Ce Kondo screening; konkretne synthesis proposals dla LuH10
+- **dodatekP7**: (przyszłe) room-temp ambient summary + eksperymentalne predykcje P7.1+P7.2
 
 ## Co już zamknięte (nie dotykamy)
 

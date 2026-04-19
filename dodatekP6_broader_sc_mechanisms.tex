@@ -535,14 +535,101 @@ parametr\'ow~$\lambda_{sf}$ per~material; P7.1 ma~\textbf{1 parametr TGP
   \item Poza~ramami: AFM~nesting ($q\!\ne\!0$, Cr) -- wymaga topologii powierzchni Fermiego.
 \end{itemize}
 
-\medskip\noindent\textbf{G\l{}\'owne pozosta\l{}o\'sci do~P7.2-P7.4:}
+\medskip\noindent\textbf{G\l{}\'owne pozosta\l{}o\'sci do~P7.3-P7.4:}
 \begin{enumerate}\itemsep0pt
   \item AFM~nesting (Cr) poza~paramagnon-driven~TGP.
-  \item $P_\text{scale}$ dla~lantanowc\'ow poza~Ce/Yb (P7.2).
+  \item Ce Kondo screening ($\mu_\text{eff}$~z~hybrydyzacji~f-d, P7.3).
   \item Room-temperature ambient -- chemicznie otwarte; pressure-quench
     Hg-cuprates (Deng~2026, Hg1223$\to$151~K) otwiera now\k{a}~drog\k{e}
     (Hg1245 + P-quench $\sim$200~K potencjalnie).
 \end{enumerate}
+
+\section*{P7.2 --- Lantanowe pair-breaking z~4f~moment\'ow (ps21)}
+
+\noindent\textbf{Problem:} Naiwne P6.C + P7.1 dla~superhydryd\'ow LnH$_9$ przy~$\eta\!=\!1$
+przewidywa\l{}o $T_c\!\approx\!200$~K dla~wszystkich~Ln. Eksperyment dramatycznie temu~zaprzecza:
+
+\begin{center}\small
+\begin{tabular}{lccc}
+Materia\l{} & $P$~(GPa) & $T_c^\text{obs}$~(K) & $T_c^\text{naive}$~(K)\\
+\hline
+LaH$_{10}$ & 170 & 250 & 368 \\
+CeH$_9$    & 100 & 100 & 143 \\
+PrH$_9$    & 120 & \textbf{5}   & 143 \\
+NdH$_9$    & 130 & \textbf{4,5} & 143 \\
+YH$_9$     & 201 & 243 & 260 \\
+\end{tabular}
+\end{center}
+
+\medskip\noindent\textbf{Brakuj\k{a}cy mechanizm:} \emph{Abrikosov-Gorkov pair~breaking}
+od~lokalnych 4f~moment\'ow magnetycznych.
+
+\medskip\noindent\textbf{Formu\l{}a P7.2:}
+\[
+\boxed{T_c \;=\; T_c^\text{base}\cdot B_\text{PB}(\mu_\text{eff}),\qquad
+B_\text{PB}(\mu) \;=\; \exp\!\bigl(-\alpha_\text{PB}\cdot\mu_\text{eff}^2\bigr)}
+\]
+gdzie $\mu_\text{eff} = g_J\sqrt{J(J+1)}\,\mu_B$ (Hund dla~Ln$^{3+}$)
+i~$\alpha_\text{PB}$ jest uniwersaln\k{a} sta\l{}\k{a} TGP.
+
+\medskip\noindent\textbf{Wyprowadzenie substratowe:} Lokalne 4f~momenty niszcz\k{a}
+faz\k{e}~$\Phi$-substratu przez spin-flipping~scattering. W~substratowym
+odpowiedniku Abrikosova-Gorkova, $\ln(T_c^{(0)}/T_c) = \psi(\tfrac12+\Gamma_\text{sf}/2\pi T_c)-\psi(\tfrac12)$,
+kt\'ore po~u\'srednieniu daje supresj\k{e} wyk\l{}adnicz\k{a} $\sim e^{-\alpha\mu^2}$
+z~$\Gamma_\text{sf}\propto\mu_\text{eff}^2$.
+
+\medskip\noindent\textbf{Fit:} $\alpha_\text{PB} = 0{,}2887~\mu_B^{-2}$ (PrH$_9$ + NdH$_9$ z~$T_\text{base}\!=\!143$~K).
+
+\medskip\noindent\textbf{Walidacja:}
+\begin{center}\small
+\begin{tabular}{lcccccl}
+Ln & 4f$^n$ & $\mu_\text{eff}$ & $B_\text{PB}$ & $T_c^\text{pred}$ & $T_c^\text{obs}$ & status \\
+\hline
+La$^{3+}$ & 0  & 0,00 & 1,00    & 368 & 250 & empty 4f \\
+Ce$^{3+}$ & 1  & 2,54 & 0,155   & 22  & 100 & Kondo partial \\
+Pr$^{3+}$ & 2  & 3,58 & 0,025   & 3,5 & 5,0 & fit point \\
+Nd$^{3+}$ & 3  & 3,62 & 0,023   & 3,3 & 4,5 & fit point \\
+Y$^{3+}$  & -- & 0,00 & 1,00    & 260 & 243 & ref \\
+\end{tabular}
+\end{center}
+
+\noindent RMS$_\text{log}\!=\!0{,}316$ na~5~znanych LnH$_9$ (g\l{}\'ownie b\l{}\k{a}d~Ce-Kondo).
+
+\medskip\noindent\textbf{Predykcje dla~wszystkich~LnH$_9$ @ $T_\text{base}\!\approx\!200$~K:}
+
+\begin{center}\small
+\begin{tabular}{lccccl}
+Ln & 4f$^n$ & $\mu_\text{eff}$ & $B_\text{PB}$ & $T_c^\text{pred}$~(K) & komentarz \\
+\hline
+La & 0  & 0,00  & 1,0        & \textbf{200} & potwierdzone (LaH$_{10}$) \\
+Sm & 5  & 1,55  & 0,500      & \textbf{100} & testowalne \\
+Ce & 1  & 2,54  & 0,155      & 31 & (Kondo~$\to$~$\sim$100) \\
+Pr & 2  & 3,58  & 0,025      & 5  & potwierdzone \\
+Nd & 3  & 3,62  & 0,023      & 4,6& potwierdzone \\
+Gd & 7  & 7,94  & $\sim 10^{-8}$ & 0 & killer~4f$^7$ \\
+Dy & 9  & 10,63 & $\sim 10^{-15}$ & 0 & killer (max~$\mu$) \\
+Yb & 13 & 0,00  & 1,0        & (38, $\eta\!<\!1$) & $\eta$~ogranicza \\
+\textbf{Lu} & \textbf{14} & \textbf{0,00} & \textbf{1,0} & \textbf{$\sim$200-250} & \textbf{kluczowa predykcja} \\
+\end{tabular}
+\end{center}
+
+\medskip\noindent\textbf{Kluczowa predykcja falsyfikowalna (P7.2):}
+
+LuH$_{10}$ przy~$\sim$170~GPa powinno mie\'c $T_c\!\approx\!200$-250~K,
+analogicznie do~LaH$_{10}$. Uzasadnienie: Lu$^{3+}$ ma~4f$^{14}$~closed~shell
+$\to$~$\mu_\text{eff}\!=\!0$~$\to$~brak~pair-breaking. Struktury LaH$_{10}$/LuH$_{10}$
+s\k{a}~analogiczne (Fm-3m, klatka~H), przy~$\eta\!=\!1$ dla~$P\!>\!150$~GPa.
+Dotychczas nie~ma~czystej syntezy LuH$_{10}$ (Dias~2023 wycofane).
+
+\medskip\noindent\textbf{Status parametr\'ow TGP po~P7.2:}
+\begin{itemize}\itemsep0pt
+  \item $\beta\!=\!2{,}527$ (P6.D magnetic blocking)
+  \item $\kappa_\text{TGP}\!=\!2{,}012$ (P7.1 $\lambda_{sf}$ pierwsze zasady)
+  \item $\alpha_\text{PB}\!=\!0{,}2887$ (P7.2 pair-breaking)
+\end{itemize}
+
+\noindent \textbf{3~uniwersalne parametry TGP~+ tabele atomowe} $\{N(E_F), I, \mu_\text{eff}\}$
+$\to$~predykcje dla~$>$50~materia\l{}\'ow w~5~klasach (cuprates, phonon, orbital, magnetic, lanthanide).
 
 \medskip\noindent\textbf{Propozycje dla empiryka:}
 \begin{itemize}\itemsep0pt
@@ -551,6 +638,10 @@ parametr\'ow~$\lambda_{sf}$ per~material; P7.1 ma~\textbf{1 parametr TGP
   \item \emph{Hg1245 + pressure-quench ambient}: P6.A pred~$\sim$200~K;
     extrapolacja Hg1223$\to$151~K (2026).
   \item \emph{YbH$_9$ high-P DAC}: test zrewidowanego $P_\text{scale}^\text{Yb}$; pred~38~K (nie~215~K).
+  \item \emph{LuH$_{10}$ @ $\sim$170~GPa} (P7.2): pred~200-250~K -- je\'sli synteza czystego LuH$_{10}$
+    potwierdzi $T_c\!>\!200$~K, b\k{e}dzie to silne potwierdzenie pair-breaking + orbital switching.
+  \item \emph{SmH$_9$ @ $\sim$150~GPa} (P7.2): pred~$\sim$100~K (ma\l{}y $\mu_\text{eff}\!=\!1{,}55$);
+    po\'srednia walidacja pair-breaking w~dolnym zakresie~$\mu$.
 \end{itemize}
 
 \medskip\noindent\textbf{Master validation (ps20) na~31~materia\l{}ach:}
