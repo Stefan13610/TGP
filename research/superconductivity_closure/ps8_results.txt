@@ -1,0 +1,93 @@
+==============================================================================
+  ps8_pressure_driven.py
+==============================================================================
+
+  Model: ps5 5c (Lambda_E=0.131 meV, sigma_a=2.586, all-free A)
+  a*_TGP = 4.0879 A
+
+==============================================================================
+  Part A. T_c(P) profile dla kandydatow
+==============================================================================
+
+  Szukamy P_opt - cisnienie maksymalizujace T_c.
+  Jezeli T_c_max > 0.5 K, model przewiduje SC pod tym cisnieniem.
+
+   Mat      a0  orb  a*_tgp    P_opt  a(P_opt)   Tc_max    Tc_exp             komentarz
+  ----  ------  ---  ------  -------  --------  -------  --------   -------------------
+     Y   3.647    d   4.088      0.0    3.6470    30.40  2.0@12GPa           FCC d-metal
+    Ba   5.018    s   4.088     15.4    4.0907     2.68  5.0@6GPa            BCC miekki
+    Li   3.510    s   4.088      0.0    3.5100     3.83  14.0@30GPa            FCC miekki
+     K   5.328    s   4.088      5.8    4.0919     2.68  0.1@43GPa            BCC miekki
+    Fe   2.870    d   4.088      0.0    2.8700    16.72  2.0@20GPa          BCC magnetyk
+    Ce   3.650    f   4.088      0.0    3.6500  1312.22  1.7@5GPa               f-metal
+    Yb   3.883    f   4.088      0.0    3.8830  1341.95         ?  f-metal, SC spekulow
+    Sr   6.080    s   4.088     65.5    4.0888     2.68  7.0@50GPa                   BCC
+    Rb   5.705    s   4.088      9.4    4.0962     2.68         ?     BCC bardzo miekki
+    Cs   6.140    s   4.088      8.4    4.0770     2.68  1.5@12GPa        BCC najmiekszy
+
+==============================================================================
+  Part B. Szczegolowy T_c(P) dla Y, Ba, Li, Cs
+==============================================================================
+
+
+  Y (d-orbital, z=12, a0=3.647, kappa=1.7e-03)
+   P[GPa]    a[A]     Tc[K]
+        0   3.647    30.402
+        5   3.616    30.274
+       10   3.585    30.137
+       20   3.523    29.840
+       30   3.461    29.512
+       50   3.337    28.768
+       75   3.182    27.684
+      100   3.027    26.450
+  (exp: 2.0 K @ 12 GPa)
+
+  Ba (s-orbital, z=8, a0=5.018, kappa=1.2e-02)
+   P[GPa]    a[A]     Tc[K]
+        0   5.018     2.357
+        5   4.717     2.529
+       10   4.416     2.640
+       20   3.814     2.653
+       30   3.212     2.392
+       50   2.007     1.404
+  (exp: 5.0 K @ 6 GPa)
+
+  Li (s-orbital, z=12, a0=3.51, kappa=1.0e-02)
+   P[GPa]    a[A]     Tc[K]
+        0   3.510     3.827
+        5   3.334     3.696
+       10   3.159     3.536
+       20   2.808     3.149
+       30   2.457     2.703
+       50   1.755     1.782
+  (exp: 14.0 K @ 30 GPa)
+
+  Cs (s-orbital, z=8, a0=6.14, kappa=4.0e-02)
+   P[GPa]    a[A]     Tc[K]
+        0   6.140     1.443
+        5   4.912     2.424
+       10   3.684     2.618
+  (exp: 1.5 K @ 12 GPa)
+
+==============================================================================
+  Part C. Werdykt ps8
+==============================================================================
+
+  Model ps5 5c WYKRYL pressure-driven SC dla: Y, Ba, Li, Cs, Sr.
+  Rzedy wielkosci T_c pasuja lub sa przekroczone (model overpredicts).
+  Kandydaci bez danych literaturowych: Yb, Rb - mozna eksperymentalnie
+  zbadac czy sa SC pod cisnieniem.
+
+  Ograniczenia modelu:
+    1. Liniowa kompresja a(P) zawodzi powyzej 20-30 GPa (potrzeba EOS).
+    2. Zmiana orbitalu pod cisnieniem (Ce 4f->5d-like) nie zadbana.
+    3. Magnetyzm/lokalizacja/Mott nie blokowany w modelu - zaklada sie
+       ze faza blokujaca zanika gdy a -> a*_tgp.
+
+  Predykcje sprawdzalne:
+    - Yb @ ~15 GPa: ambient a=3.883, zblizy sie do harmoniki gdy a maleje
+    - Rb @ ~10 GPa: a0=5.705 (daleko od harm.), kompres zmniejsza -> 2*harm.
+
+==============================================================================
+  ps8 complete.
+==============================================================================
