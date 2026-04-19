@@ -472,23 +472,88 @@ $K_{dw}\!=\!3{,}50$, $A_{ZR}^2\!=\!0{,}18$ (P6.A cuprates).
     (obs~8~K), poprawa $r$~z~0{,}88~do~0{,}93.
   \item Konkretne eksperymentalne predykcje w~zakresie~170-240~K
     przy ambient pressure (Hg1245/STO, FeSe/diament).
-  \item Nowa predykcja YbH$_9$~@~300~GPa: T$_c\!\ge\!215$~K (P6.C).
+  \item Predykcja YbH$_9$~@~300~GPa po rewizji ps18: $T_c\!\approx\!38$~K
+    (P$_\text{scale}^\text{Yb}\!=\!552$~GPa, kalibracja z~Yb$_4$H$_{23}$).
 \end{enumerate}
 
-\medskip\noindent\textbf{G\l{}\'owne pozosta\l{}o\'sci:}
+\section*{P7.1 --- $\lambda_{sf}$ z pierwszych zasad TGP (ps19)}
+
+Fenomenologiczne warto\'sci $\lambda_{sf}$ z~P6.D (11~liczb na~material)
+w~P7.1~zostaj\k{a}~wyprowadzone z~uniwersalnej formu\l{}y TGP:
+\[
+\boxed{\;\lambda_{sf}^\text{TGP} = \kappa_\text{TGP}\,A_\text{eff}^2\,k_d(z)\,N(E_F)\,g\!\bigl(I\cdot N(E_F)\bigr)\;}
+\]
+gdzie $g(x)\!=\!x^2/\sqrt{1+0{,}25\,x^4}$ to regulator zapobiegaj\k{a}cy
+rozbie\.zno\'sci w~re\.zimie~FM, a~$N(E_F)$ oraz~$I$ (Stoner) s\k{a}
+tabelarycznymi parametrami atomowymi (Janak~1977, Moruzzi--Janak--Williams).
+
+\medskip\noindent\textbf{Parametr TGP:} $\kappa_\text{TGP}\!=\!2{,}012$
+(fit na~5~paramagnetycznych~d-metalach: V, Nb, Ta, Mo, Pd).
+
+\medskip\noindent\textbf{Wyprowadzenie fizyczne:} Paramagnon w~TGP to
+lokalna fluktuacja~$\Phi$ na skali~$E_F$. Stoner~$I$ wynika z~drugiej
+pochodnej funkcjona\l{}u $E[\Phi]$ po magnetyzacji, a~sprz\k{e}\.zenie
+elektron-paramagnon jest t\k{a}~sam\k{a} amplitud\k{a}~$A_\text{eff}$ co
+w~phonon channel. Eliashbergowska posta\'c
+$\lambda_{sf}\sim g_\text{e-p}^2\,N(E_F)/\omega_{sf}$
+po integracji po spektralnej g\k{e}sto\'sci paramagnonowej daje
+skalowanie~$(I\cdot N)^2$.
+
+\medskip\noindent\textbf{Walidacja (Fe-pnictidy, kluczowe):}
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\hline
+Zwi\k{a}zek & $\lambda_{sf}$ (P6.D emp.) & $\lambda_{sf}$ (P7.1 derived) & ratio \\
+\hline
+FeSe$_\text{bulk}$  & 0,90 & 0,69 & 0,77$\times$ \\
+Ba122-Co            & 0,30 & 0,29 & 0,98$\times$ \\
+LaFeAsO             & 0,50 & 0,47 & 0,93$\times$ \\
+NdFeAsO-F           & 0,30 & 0,29 & 0,98$\times$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip\noindent\textbf{Zast\k{a}pienie w~formule T$_c$ (N=7 d-metali):}
+po~substytucji wyprowadzonych~$\lambda_{sf}$ do~formu\l{}y pe\l{}nej~P6:
+\[
+r_\text{P6.D emp.}\!=\!0{,}874\;\longrightarrow\;
+r_\text{P7.1 derived}\!=\!0{,}943,
+\]
+$\text{RMS}_\text{log}$ bez~zmian (0,21). P7.1~\emph{poprawia}
+predyktywno\'s\'c pomimo redukcji parametr\'ow.
+
+\medskip\noindent\textbf{Redukcja parametr\'ow:} P6.D mia\l{}o~11~lu\'znych
+parametr\'ow~$\lambda_{sf}$ per~material; P7.1 ma~\textbf{1 parametr TGP
++ 2 inputy atomowe} (N(E$_F$), I), co w~sumie daje 11~$\to$~1.
+
+\medskip\noindent\textbf{Zakres stosowalno\'sci:}
+\begin{itemize}\itemsep0pt
+  \item OK: paramagnetyczny re\.zim $I\cdot N\!<\!0{,}95$ (V, Nb, Ta, Mo, Pd, Fe-pnictidy).
+  \item OK~z~regulatorem: bliski-FM $0{,}95\!\le\!I\cdot N\!<\!1{,}5$ (Fe).
+  \item Limit: uporz\k{a}dkowany FM ($I\cdot N\!\ge\!1{,}5$) -- Co, Ni daj\k{a} overshoot~2-3$\times$ (jako\'sciowo jednak ,,silne blokowanie, $T_c\to0$'').
+  \item Poza~ramami: AFM~nesting ($q\!\ne\!0$, Cr) -- wymaga topologii powierzchni Fermiego.
+\end{itemize}
+
+\medskip\noindent\textbf{G\l{}\'owne pozosta\l{}o\'sci do~P7.2-P7.4:}
 \begin{enumerate}\itemsep0pt
-  \item P6.C: $P_\text{scale}$ dla innych~f-metali (Yb, Eu, Sm, Nd)
-    wymaga~eksperymentalnych~danych.
-  \item P6.D: $\lambda_{sf}$ warto\'sci bior\k{a} si\k{e} z~literatury
-    (Stoner enhancement)~---~derivacja z~TGP substratu otwarta (P7).
-  \item Room-temperature ambient~---~matematycznie dost\k{e}pny,
-    chemicznie otwarty problem (brak znanego metalicznego $\omega>200$
-    meV materia\l{}u w~harmonice $a^*$).
+  \item AFM~nesting (Cr) poza~paramagnon-driven~TGP.
+  \item $P_\text{scale}$ dla~lantanowc\'ow poza~Ce/Yb (P7.2).
+  \item Room-temperature ambient -- chemicznie otwarte; pressure-quench
+    Hg-cuprates (Deng~2026, Hg1223$\to$151~K) otwiera now\k{a}~drog\k{e}
+    (Hg1245 + P-quench $\sim$200~K potencjalnie).
 \end{enumerate}
 
-\textbf{Propozycja dla empiryka:} \emph{Hg1245 na~SrTiO$_3$}---jeden
-eksperyment mo\.ze jednocze\'snie falsyfikowa\'c/potwierdzi\'c P6.A
-(zale\.zno\'s\'c od~$n$) i~P6.B (interface phonon boost).
-Je\'sli~$T_c>200$~K obserwowane, TGP~P6~jest~potwierdzony pe\l{}ne.
+\medskip\noindent\textbf{Propozycje dla empiryka:}
+\begin{itemize}\itemsep0pt
+  \item \emph{Hg1245 na~SrTiO$_3$}: jeden eksperyment falsyfikuje/potwierdza
+    jednocze\'snie P6.A (zale\.zno\'s\'c od~$n$) i~P6.B (interface boost).
+  \item \emph{Hg1245 + pressure-quench ambient}: P6.A pred~$\sim$200~K;
+    extrapolacja Hg1223$\to$151~K (2026).
+  \item \emph{YbH$_9$ high-P DAC}: test zrewidowanego $P_\text{scale}^\text{Yb}$; pred~38~K (nie~215~K).
+\end{itemize}
+
+\medskip\noindent\textbf{Master validation (ps20) na~31~materia\l{}ach:}
+\[r(\log T)=0{,}875,\quad \text{RMS}_\text{log}=0{,}346.\]
 
 % koniec dodatku P6
