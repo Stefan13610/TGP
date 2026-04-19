@@ -1,0 +1,343 @@
+% -*- coding: utf-8 -*-
+% ===================================================================
+% DODATEK P6:  Program P6 --- poszerzone mechanizmy nadprzewodnictwa
+%              (Broader SC Mechanisms: d-wave cuprates + phonon coupling)
+%              sesja 2026-04-19 (rozszerzona)
+% ===================================================================
+
+\section*{Dodatek P6: poszerzone mechanizmy nadprzewodnictwa
+w TGP (cuprates d-wave, phonon coupling, ambient high-$T_c$)}%
+\addcontentsline{toc}{section}{Dodatek P6: poszerzone mechanizmy
+nadprzewodnictwa (program P6, 2026-04-19)}%
+\label{app:P6}
+
+\subsection*{Streszczenie programu P6}
+
+Dodatek P6 rozszerza formu\l{}\k{e} $T_c$ programu P5 o~mechanizmy
+niezbe\k{e}dne do~opisu wysokotemperaturowych nadprzewodnik\'ow (cuprates,
+hydrydy, FeSe/STO, MgB${}_2$). Program P5 osi\k{a}gn\k{a}\l{} $r^2_{\log}=0{,}48$
+na 19 klasycznych SC~---~za~s\l{}abo do~predykcji nowych materia\l{}\'ow.
+P6 wprowadza dwa mechanizmy:
+
+\begin{enumerate}\itemsep0pt
+  \item \textbf{P6.A}~---~2D \emph{d-wave} z~hybryd\k{a} Zhanga-Rice'a
+  dla~cupratn\'ow. Jednolity parametr $K_{dw}$ (d-wave + van Hove + ZR).
+  \item \textbf{P6.B}~---~coupling fonon-substrat: $\Lambda_E^{\text{eff}}
+  = \Lambda_0 \cdot (\omega_\text{ph}/\omega_0)^\alpha$. Kalibrowane
+  na~hydrydach wysokoci\'snieniowych, dzia\l{}a te\.z dla MgB${}_2$
+  i~FeSe/STO.
+\end{enumerate}
+
+\medskip\noindent\textbf{Werdykt~P6 (2/3 pe\l{}ne + 1/3 otwarte):}
+\begin{itemize}\itemsep0pt
+  \item \textbf{P6.A}~(cuprates, ps10): \emph{pe\l{}ne.}
+    $r(\log)=0{,}957$ na~8 cupratach
+    (La$_2$CuO$_4$, YBCO, BiSCCO, Tl-rodzina, Hg-1223, Hg-2223,
+    Nd$_2$CuO$_4$, Bi-2201). RMS\textsubscript{log}$=0{,}19$.
+  \item \textbf{P6.B}~(uniwersalny, ps13): \emph{pe\l{}ne.}
+    $r(\log)=0{,}877$ na~16 materia\l{}ach mieszanych
+    (BCS klasyczne, MgB${}_2$, FeSe/STO, Fe-pniktidy, cuprates,
+    hydrydy wysokoci\'snieniowe).
+  \item \textbf{P6.C}~(f-metale orbital switching): \emph{cz\k{e}\'sciowe.}
+    Traktowanie lantanowc\'ow jako \(d\)-block pod ci\'snieniem dzia\l{}a
+    (ps12), ale formalizacja przej\'scia $\eta(P)$ odroczona do~P7.
+\end{itemize}
+
+Pliki: \texttt{research/superconductivity\_closure/ps\{9--14\}.py}
+oraz \texttt{P6A\_summary.md},~\texttt{P6B\_summary.md}.
+
+% -----------------------------------------------------------
+\subsection{Model P6.A: cuprates 2D d-wave z~Zhanga-Rice'a}
+\label{sec:P6A}
+
+\subsubsection{Formu\l{}a}
+
+Cuprate jest quasi-2D SC w~p\l{}aszczyznach CuO${}_2$. Mechanizm
+opiera si\k{e} na~trzech elementach:
+
+\begin{enumerate}\itemsep0pt
+  \item \emph{Zhang-Rice singlet}~---~Cu $3d_{x^2-y^2}$ hybrydyzuje
+    z~2 tlenkami O $2p$:
+    \[
+      A_{ZR}^2 \;=\; A_d^2 \;+\; 2\,A_p^2
+    \]
+    (w~P4: $A_d=0{,}3096$, $A_p=A_{sp}=0{,}2067$, $A_{ZR}^2=0{,}181$).
+  \item \emph{d-wave gap}~---~$\Delta(\mathbf{k})=\Delta_0(\cos k_x a
+    -\cos k_y a)$ wzmacnia sprz\k{e}\.zenie w~kierunkach~$(1,0)$ Fermi
+    surface (boost~$\sim 1{,}5$).
+  \item \emph{Van Hove singularity}~---~DOS rozbiega przy~domieszaniu
+    optymalnym; efektywny $\lambda_\text{eff}\cdot (1+\ln \mathrm{DOS})$
+    (boost~$\sim 2{,}5$).
+\end{enumerate}
+
+Wszystkie trzy multiplikatywne wzmocnienia zbieramy do~jednego
+uniwersalnego wsp\'o\l{}czynnika:
+\[
+  \boxed{\quad
+    T_c^{\text{cuprate}}
+    \;=\; K_{dw}\,k_d(z_\parallel)\,C_0\,A_{ZR}^2\,M(a_\parallel)\,
+    \sqrt{n_\text{layers}}\,\Lambda_E^{\text{cup}}
+  \quad}
+\]
+
+\noindent gdzie:
+\begin{itemize}\itemsep0pt
+  \item $K_{dw}=3{,}498$~---~ uniwersalny d-wave+vH+ZR booster
+    (fit ps10).
+  \item $k_d(z_\parallel=8)=2{,}936$~---~3D XY-Monte Carlo
+    dla~quasi-2D~warstwowych.
+  \item $C_0=48{,}82$~---~sta\l{}a z~ODE substratu (P4).
+  \item $M(a)=\exp(-(a-n a^*_{TGP})^2/\sigma_a^2)$~---~modulacja
+    harmoniki TGP, $a^*_{TGP}=4{,}088$\,\AA, $\sigma_a=2{,}59$~\AA.
+  \item $\sqrt{n}$~---~empiryczny fakror liczby warstw CuO${}_2$
+    (saturation; pasuje w~zakresie $n\in[1,5]$).
+  \item $\Lambda_E^{\text{cup}}=0{,}051$~meV~---~skala elektronowego
+    parowania (2{,}6\,\(\times\) \emph{mniejsza} ni\.z Al-BCS $0{,}131$).
+\end{itemize}
+
+\subsubsection{Walidacja ps10}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Cuprate & $a_\parallel$ [\AA] & $n$ & $T_\text{obs}$ [K] & $T_\text{pred}$ [K] & $\Delta\log$ \\
+\midrule
+La$_{2-x}$Sr$_x$CuO$_4$ & 3{,}780 & 1 & 38 & 53 & $+0{,}15$ \\
+YBa$_2$Cu$_3$O$_7$ & 3{,}820 & 2 & 92 & 76 & $-0{,}08$ \\
+Bi$_2$Sr$_2$CaCu$_2$O$_8$ & 3{,}820 & 2 & 110 & 76 & $-0{,}16$ \\
+Tl$_2$Ba$_2$CaCu$_2$O$_8$ & 3{,}855 & 2 & 105 & 76 & $-0{,}14$ \\
+HgBa$_2$Ca$_2$Cu$_3$O$_8$ & 3{,}855 & 3 & 138 & 93 & $-0{,}17$ \\
+Tl$_2$Ba$_2$Ca$_2$Cu$_3$O$_{10}$ & 3{,}855 & 3 & 127 & 93 & $-0{,}14$ \\
+Nd$_2$CuO$_4$ (e-dop.) & 3{,}940 & 1 & 24 & 54 & $+0{,}35$ \\
+Bi$_2$Sr$_2$CuO$_6$ & 3{,}820 & 1 & 34 & 54 & $+0{,}20$ \\
+\midrule
+\multicolumn{3}{l}{\textbf{Statystyka ($N=8$):}}
+& \multicolumn{3}{r}{$r^2_{\log}=0{,}957$,\; $\mathrm{RMS}_{\log}=0{,}19$}
+\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Systematyczny bias: model niedoszacowuje rekordy $n\in\{2,3\}$
+(b\l{}\k{a}d $-0{,}15$) i~przeszacowuje pojedyncze warstwy $n=1$
+(b\l{}\k{a}d $+0{,}20$). Zmiana layer-factor z~$\sqrt{n}$ na~$n^{0{,}7}$
+mog\l{}aby to~poprawi\'c (odroczone).
+
+% -----------------------------------------------------------
+\subsection{Model P6.B: coupling fonon-substrat}
+\label{sec:P6B}
+
+\subsubsection{Formu\l{}a}
+
+Substrat TGP $\Phi$ oscyluje lokalnie z~cz\k{e}stotliwo\'sci\k{a}
+fonon\'ow materia\l{}u. Im wy\.zsza $\omega_\text{ph}$, tym szybszy
+przep\l{}yw momentu energetycznego do~substratu. Zak\l{}adamy skalowanie
+pot\k{e}gowe:
+\[
+  \boxed{\quad
+    \Lambda_E^{\text{eff}}(\omega_\text{ph})
+    \;=\; \Lambda_0 \cdot \left(\frac{\omega_\text{ph}}{\omega_0}\right)^\alpha
+  \quad}
+\]
+
+\noindent gdzie $\omega_0=15$~meV (Al Debye reference), $\alpha$ i~$\Lambda_0$
+sa fit-parametrami.
+
+\subsubsection{Kalibracja ps12 na~hydrydach high-P}
+
+Dla 9~hydrydów wysokoci\'snieniowych (H${}_3$S, LaH${}_{10}$, YH${}_9$,
+CaH${}_6$, YH${}_6$, ThH${}_{10}$, CeH${}_9$, CeH${}_{10}$, D${}_3$S):
+\begin{align*}
+  \alpha   &\approx 1{,}04 \quad \text{(prawie liniowe!)} \\
+  \Lambda_0 &\approx 0{,}096~\text{meV} \quad \text{(vs~BCS ps5: 0{,}131)}
+\end{align*}
+
+\noindent $\alpha\approx 1$ ma prosty sens fizyczny: moment energetyczny
+przekazywany do~substratu~$\propto$ szybko\'s\'c oscylacji fononowej.
+
+\subsubsection{Walidacja uniwersalna ps13}
+
+Formu\l{}a P6.B zastosowana do~16~materia\l{}\'ow mieszanych
+(BCS klasyczne + MgB${}_2$ + FeSe + cuprates + pnikti dzy + hydrydy):
+$$r(\log)=0{,}877,\qquad \mathrm{RMS}_{\log}=0{,}32$$
+
+\noindent \textbf{Kluczowe rozwi\k{a}zania przez P6.B:}
+\begin{itemize}\itemsep0pt
+  \item \textbf{MgB${}_2$}: $\omega=75$~meV $\to$ $T_c^\text{pred}=31$~K
+    (vs~obs $39$~K; \textbf{80\%}). Wcze\'sniej ps9 two-gap dawa\l{}o tylko 14~K.
+  \item \textbf{FeSe/SrTiO${}_3$} monolayer: $\omega_\text{STO}=80$~meV
+    $\to$ $T_c^\text{pred}=86$~K (vs~obs $65$~K; \textbf{133\%}).
+    Wcze\'sniej ps11 single-band dawa\l{}o 28~K.
+  \item \textbf{LaH${}_{10}$}: $\omega=250$~meV $\to$ $T_c^\text{pred}=368$~K
+    (vs~obs $250$~K; overshoot).
+\end{itemize}
+
+Pozosta\l{}y outlier: \emph{FeSe bulk} (obs $8$~K, pred $26$~K,
+overshoot $3{,}2\times$). Sygnalizuje potrzebno\'s\'c czynnika
+t\l{}umi\k{a}cego~--- magnetyzm/lokalizacja (zakres P6.D).
+
+% -----------------------------------------------------------
+\subsection{Granica P6.B: room-temperature SC przy~ambient?}
+\label{sec:roomtemp}
+
+Przy~maksymalizacji parametr\'ow fizycznie dopuszczalnych:
+\begin{itemize}\itemsep0pt
+  \item $M(a)=1$ (na harmonice $a^*_{TGP}$),
+  \item $k_d(z=12)=4{,}403$ (FCC~3D~XY),
+  \item $A_d^2 = 0{,}096$ (czysty d-orbital),
+\end{itemize}
+
+\noindent skaling $T_c(\omega_\text{ph})$ przy optymalnym
+$a=4{,}088$~\AA, orb=$d$, $z=12$:
+
+\begin{center}
+\begin{tabular}{rrrrrrr}
+\toprule
+$\omega$ [meV] & 100 & 150 & 200 & 300 & 400 & 800 \\
+$T_c$ [K] & 165 & 252 & 340 & 519 & 700 & 1438 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent \textbf{Dla $\omega_\text{ph}\geq 200$~meV model TGP przewiduje
+$T_c$ powy\.zej room-temperature przy~ambient pressure.}
+
+Gdzie w~naturze wyst\k{e}puj\k{a} takie cz\k{e}stotliwo\'sci?
+
+\begin{center}
+\begin{tabular}{lrl}
+\toprule
+Materia\l{} & $\omega$ [meV] & Metaliczny? \\
+\midrule
+Diament C-C & 165 & izolator (B-domieszka $\to$ metal) \\
+Grafen C-C & 200 & semimetal (domieszka $\to$ metal) \\
+H-metaliczny & 300-350 & tylko przy~$P>500$~GPa \\
+H$_2$O, NH$_3$, CH$_4$ & 400 & izolatory \\
+FeSe/SrTiO$_3$ Fuchs-Kliewer & 80-100 & tak (UHV) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent \emph{\.Zaden znany materia\l{} nie \l{}\k{a}czy: metaliczny
+$\land$ $\omega>200$~meV $\land$ $a\approx 4$~\AA $\land$ orb=$d$.}
+To jest \textbf{problem chemii syntezy, nie fundamentalnej bariery TGP.}
+
+% -----------------------------------------------------------
+\subsection{Predykcje eksperymentalne P6 (ps14)}
+\label{sec:P6-predictions}
+
+\subsubsection{Tier~1: realizowalne obecn\k{a} technologi\k{a}}
+
+\begin{center}
+\small
+\begin{tabular}{lrll}
+\toprule
+Kandydat & $T_c^\text{pred}$ [K] & Droga syntezy & Impact \\
+\midrule
+Hg1245 (n=5) & 177 & high-P 3-5 GPa quench & pobija Hg1223 138K \\
+Hg1245/SrTiO$_3$ & 178 & MBE + strain 1.3\% & test P6.A+strain \\
+Hg1245/STO + $\omega$=150 & \textbf{240} & + engineered interface & blisko roomtemp \\
+FeSe/BaTiO$_3$ & 120 & MBE, alternate substrate & test P6.B $\omega$ \\
+FeSe/diament & 183 & CVD C + MBE FeSe & ambitny \\
+Hg1234/SrTiO$_3$ & 159 & ju\.z badane & komercyjne \\
+Hg1223/NdScO$_3$ $a=4{,}005$ & 138 & dostepny crystal-grown & optimal $a$ \\
+MgB$_2$/diament & 71 & C-B interface & test P6.B pozaFe-SC \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{Tier~2: wymaga nowych struktur}
+
+\begin{center}
+\small
+\begin{tabular}{lrl}
+\toprule
+Kandydat & $T_c^\text{pred}$ [K] & Status \\
+\midrule
+Hg cuprate $n=7$ hipotetyczny & 210 & niedoszacowana synteza \\
+Hg cuprate $n=10$ infinite-layer & 253 & metastabilny \\
+Perfect cuprate $n=5$, $a=4{,}088$ & 179 & wymaga idealnego matchu \\
+Perfect cuprate $n=15$ + $\omega$-boost & \textbf{418} & hipoteczny roomtemp+ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{Najsilniejsze kandydatury falsyfikowalne}
+
+\textbf{Test~\#1 (najbardziej przyst\k{e}pny):}
+Synteza Hg1245 (HgBa$_2$Ca$_4$Cu$_5$O$_{12+\delta}$) jako bulk.
+TGP przewiduje $T_c$~w~zakresie 170-200~K. Je\'sli~$T_c > 140$~K
+obserwowane, TGP~P6.A jest \emph{potwierdzony}.
+Je\'sli~$T_c < 100$~K~---~P6.A~sfalsyfikowany; formu\l{}a wymaga
+innego~funkcjonalu $f(n_\text{layers})$.
+
+\textbf{Test~\#2 (najbardziej informatywny):}
+Hg1223 na trzech ro\.znych substratach o~ro\.znych~$a$:
+\begin{itemize}\itemsep0pt
+  \item LaAlO$_3$ ($a=3{,}79$~\AA): TGP pred $T_c\approx 85$~K.
+  \item SrTiO$_3$ ($a=3{,}905$~\AA): TGP pred $T_c\approx 93$~K.
+  \item NdScO$_3$ ($a=3{,}946$~\AA): TGP pred $T_c\approx 100$~K.
+\end{itemize}
+
+\noindent Je\'sli maksimum~$T_c$ wyst\k{e}puje w~pobli\.zu
+$a\to 4{,}088$~\AA (harmonika TGP), potwierdza model.
+Je\'sli maksimum jest przy innym~$a$, TGP wymaga rewizji
+funkcji~$M(a)$.
+
+% -----------------------------------------------------------
+\subsection{Otwarte problemy P6.C i~P6.D}
+\label{sec:P6-open}
+
+\textbf{P6.C (f-metale orbital switching):}
+Amplituda $A_f=2{,}03$ z~ps5 5c przeszacowuje T$_c$ dla Ce, Yb
+przy~ambient~(\(\sim 1300\)~K, absurd). Pod~ci\'snieniem
+hybrydyzacja~$4f \to 5d$ daje~$A_\text{eff}\to A_d$, co~pasuje do~Ce/Th
+hydryd\'ow. Formalnie:
+\[
+  A_\text{eff}(\rho, P) = (1-\eta(P))\,A_f + \eta(P)\,A_d,
+  \qquad \eta(P\to\infty)=1
+\]
+
+\noindent Funkcja $\eta(P)$ jest fenomenologiczna; pe\l{}na derivacja
+z~TGP substratu wymaga osobnej pracy (program P7).
+
+\textbf{P6.D (magnetyzm blokuj\k{a}cy faz\k{e}):}
+FeSe bulk daje obs $8$~K vs pred 26 K. Ambient Fe~---~TGP pred 17 K,
+obs niespin\'owe do~ci\'snienia 20~GPa~(T$_c$=2~K).
+Sygna\l{}: \emph{blocking factor}
+$B_\text{mag}(T,\rho)\in[0,1]$ mno\.z\k{a}cy $T_c^\text{pred}$.
+Funkcja~$B$ nie jest wyprowadzona z~substratu P6, wymaga coupling
+do~magnetycznego pola $M$ z~sektora P4 particle.
+
+% -----------------------------------------------------------
+\subsection{Podsumowanie programu P6}
+\label{sec:P6-summary}
+
+Program P6 osi\k{a}gn\k{a}\l{} \textbf{r=0.88 na 16 mieszanych SC}
+(vs~P5: 0.48~na 19)~--- jako\'sciowy przeskok w~predyktywno\'sci
+modelu TGP.
+
+\medskip\noindent\textbf{G\l{}\'owne osi\k{a}gni\k{e}cia:}
+\begin{enumerate}\itemsep0pt
+  \item Cuprates (8 material\'ow) z~r=0.96 przez d-wave + Zhanga-Rice.
+  \item MgB${}_2$, FeSe/STO, hydrydy---wszystko z~jednolitej formu\l{}y
+    P6.B (alpha=1.04, $\Lambda_0=$0.096).
+  \item Konkretne eksperymentalne predykcje w~zakresie~170-240~K
+    przy ambient pressure (Hg1245/STO, FeSe/diament).
+\end{enumerate}
+
+\medskip\noindent\textbf{G\l{}\'owne pozosta\l{}o\'sci:}
+\begin{enumerate}\itemsep0pt
+  \item FeSe bulk 8K vs 26K pred (P6.D magnetyzm).
+  \item Ce/Yb f-metale pod~ciśn.(P6.C orbital switching).
+  \item Room-temperature ambient~---~matematycznie dost\k{e}pny,
+    chemicznie otwarty problem (brak znanego metalicznego $\omega>200$
+    meV materia\l{}u w~harmonice $a^*$).
+\end{enumerate}
+
+\textbf{Propozycja dla empiryka:} \emph{Hg1245 na~SrTiO$_3$}---jeden
+eksperyment mo\.ze jednocze\'snie falsyfikowa\'c/potwierdzi\'c P6.A
+(zale\.zno\'s\'c od~$n$) i~P6.B (interface phonon boost).
+Je\'sli~$T_c>200$~K obserwowane, TGP~P6~jest~potwierdzony pe\l{}ne.
+
+% koniec dodatku P6

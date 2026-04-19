@@ -1,0 +1,160 @@
+==============================================================================
+  ps14_ambient_roomtemp_hunt.py
+==============================================================================
+
+==============================================================================
+  Part A. Istniejace rekordy ambient + TGP interpretacja
+==============================================================================
+
+      Material   T_obs   Mech                       Parametry                  Komentarz
+  ------------ ------- ------  ------------------------------  -------------------------
+        Hg1223   138.0   P6.A                    a=3.855, n=3     Rekord ambient od 1993
+   HgBaCa3Cu4O   125.0   P6.A                    a=3.855, n=4      Hg1234 rzadka synteza
+        BiSCCO   110.0   P6.A                    a=3.820, n=2                 powszechny
+          YBCO    92.0   P6.A                    a=3.820, n=2                 komercyjny
+      FeSe/STO    65.0   P6.B           a=3.770, omega_STO=80              monolayer UHV
+          LSCO    38.0   P6.A                    a=3.780, n=1             domieszka opt.
+          MgB2    39.0   P6.B               a=3.086, omega=75                B-B ambient
+     NdFeAsO-F    55.0  mixed                   a=3.970, 1111             optymalny 1111
+         K3C60    19.0   P6.B              a=14.24, fulleride               intercalated
+          CaC6    11.5   P6.B              a=2.610, omega=140         graphite intercal.
+
+==============================================================================
+  Part B. TGP predykcje dla ambient high-Tc (realizowalne)
+==============================================================================
+
+  Kategoria: materialy, ktorych synteza jest w zasieglu obecnej technologii.
+
+                          Kandydat  T_pred[K]                             Droga syntezy
+  --------------------------------  ---------  ----------------------------------------
+                      Hg1245 (n=5)      177.2          high-P synthesis 3-5 GPa, quench !!
+         Hg1234 / SrTiO3 epitaxial      159.0                  MBE/PLD na STO substrate !!
+            Hg1223 / NdScO3 strain      138.3                      silny strain a=4.005
+          Hg cuprate n=7 hypothet.      209.7                       super-stack cuprate !!
+                     FeSe / BaTiO3      120.0                   BTO omega_Fuchs~110 meV
+                     FeSe / LaAlO3      131.6                          LAO wyzsza omega
+         FeSe monolayer na diamond      182.9                      diament omega~165meV !!
+           MgB2 / SrTiO3 interface       64.5                  Mg-B-STO heterostruktura
+          MgB2 / diament substrate       71.2                             C-B interface
+                  LiC6 ultra-doped       51.0                    Li-graphene wzmocniony
+             Bilayer graphene / BN       43.1                       vdW heterostruktura
+      Ca-doped graphite multilayer       43.4                              doped grafit
+
+==============================================================================
+  Part C. Spekulatywne - czy TGP dopuszcza T_c = 293 K przy ambient?
+==============================================================================
+
+                              Scenariusz  T_pred[K]                  Rationale
+  --------------------------------------  ---------  -------------------------
+                        Hg1245 na SrTiO3      177.8              P6.A z strain
+         Hg cuprate n=10 (infinite-like)      250.7         hipotetyczny stack <<< >200K
+                Hg n=5 na DyScO3 a=3.946      178.2             strain extreme
+            Hg n=7 na substracie wysokim      211.4      combined strain+stack <<< >200K
+            Perfect cuprate a=4.088, n=5      178.7        idealny w harmonice
+           Perfect cuprate a=4.088, n=10      252.7   idealny + infinite-layer <<< >200K
+                   Metallic Li-H ambient      121.1    spekulowana metalizacja
+                BC4 / boron-carbon metal       71.7               hypothetical
+                   Diament doped + boron       79.5           metallic diamond
+                        Li-BC3 intercal.       56.3           eksperymentalnie
+            Hypothetical C-H metalliczna      146.4               metastabilne
+        Hg1245 na interface wysoki omega      224.0     cuprate + phonon boost <<< >200K
+      Hg cuprate + FeSe/STO-like interf.      185.5             dual mechanism
+
+==============================================================================
+  Part D. Mapa parametrow dla cupratow (P6.A, boost omega_phonon)
+==============================================================================
+
+  Tabela T_c(n_layers, a_inplane, omega_cup):
+
+  omega_cup = 55 meV (std cuprate)
+      a/n      1      2      3      5      7     10     15
+    3.800   78.9  111.6  136.7  176.5  208.8  249.6  305.7
+    3.850   79.2  112.1  137.2  177.2  209.6  250.6  306.9
+    3.900   79.5  112.4  137.7  177.8  210.3  251.4  307.9
+    4.000   79.8  112.9  138.3  178.5  211.2  252.4  309.1
+    4.088   79.9  113.0  138.4  178.7  211.4  252.7  309.5
+    4.200   79.8  112.8  138.2  178.4  211.0  252.2  308.9
+
+  omega_cup = 150 meV (interface engineered)
+      a/n      1      2      3      5      7     10     15
+    3.800  106.6  150.8  184.7  238.5  282.2  337.3  413.0
+    3.850  107.1  151.4  185.4  239.4  283.3  338.6  414.7
+    3.900  107.4  151.9  186.0  240.2  284.2  339.7  416.0
+    4.000  107.9  152.5  186.8  241.2  285.4  341.1  417.7
+    4.088  108.0  152.7  187.0  241.4  285.7  341.5  418.2
+    4.200  107.8  152.4  186.7  241.0  285.1  340.8  417.4
+
+==============================================================================
+  Part E. KONKRETNE EKSPERYMENTALNE PROPOZYCJE TGP
+==============================================================================
+
+  [1] Hg1245 na SrTiO3 (a=3.905)
+      Setup: MBE wzrost film 20nm + oxygen annealing
+      T_c pred (TGP) = 177.8 K
+      Trudnosc:       SREDNIA: Hg toksyczny, synteza n=5 nieustabilizowana
+      Impact:         HIGH: pobija Hg1223 rekord, test P6.A + strain
+
+  [2] FeSe monolayer / BaTiO3
+      Setup: MBE FeSe 1ML na BTO z precyzyjnym tenzylnym strain
+      T_c pred (TGP) = 120.0 K
+      Trudnosc:       SREDNIA: znana technika dla FeSe/STO
+      Impact:         HIGH: testuje P6.B omega scaling przez nowy substrate
+
+  [3] Hg1223 / diament substrate
+      Setup: CVD diament + epitaxial Hg1223 film
+      T_c pred (TGP) = 190.9 K
+      Trudnosc:       WYSOKA: niezgodnosc strukturalna Hg-cuprate vs diament
+      Impact:         EXTREME: test dual P6.A+P6.B mechanism
+
+  [4] MgB2 / SrTiO3 interface
+      Setup: MgB2 thin film na STO z oksydowana warstwa posrednia
+      T_c pred (TGP) = 64.5 K
+      Trudnosc:       SREDNIA: MgB2 thin films juz zrobione
+      Impact:         MEDIUM: test P6.B universalnosci poza Fe-SC
+
+  [5] Hg1223 na NdScO3 (a=4.005)
+      Setup: specialne substrat NdScO3 dla optimal a
+      T_c pred (TGP) = 138.3 K
+      Trudnosc:       SREDNIA: NdScO3 dostepny crystal-grown
+      Impact:         HIGH: maksymalne zblizenie do a*_TGP harmonika
+
+  [6] Li-BC3 syntetyczny
+      Setup: solid-state synthesis + post Li-intercalation
+      T_c pred (TGP) = 56.3 K
+      Trudnosc:       NOWA: niesyntetyzowany material
+      Impact:         MEDIUM: test TGP dla layered non-cuprate metal
+
+==============================================================================
+  Werdykt koncowy ps14
+==============================================================================
+
+  CO TGP MOZE DO UZNANIA:
+    - ambient T_c do ~150 K (cuprate multilayer, a optimal)
+    - interface-boost T_c 100-200 K (FeSe/STO + engineered substrate)
+    - MgB2-klasa ambient do ~80 K (strain + strong-coupling)
+
+  ROOM-TEMPERATURE AMBIENT (T_c >= 293 K):
+    - Matematycznie TAK (vide ps13: 699K max przy omega=400meV, ideal a/orb/z)
+    - Realistycznie: WYMAGA
+        * metaliczny crystal z omega_phonon >= 200 meV
+        * a_cell w granicach +/-0.1 A od a*_TGP = 4.088
+        * orbital d lub hybryd d+p
+        * struktura layered n>=5 (dla cuprate-like)
+    - Kandydaci HIPOTETYCZNI:
+        * Li-H metalliczny przy ambient (ciagle prawnie metastable)
+        * boron-carbon metallic layered Li-BC3
+        * cuprate-inf-layer + ultra-strain substrate
+
+  PROZNIA (UHV):
+    - NIEZBEDNA dla monolayer (FeSe/STO, nickelates)
+    - stabilizuje metastabilne fazy wysokotempowe
+    - Nie podnosi T_c bezposrednio, ale umozliwia istnienie fazy 'high-T_c'
+
+  NAJBARDZIEJ OBIECUJACY KIERUNEK EKSPERYMENTALNY:
+    Hg1245 na SrTiO3 substrate (combine n=5 + optimal strain)
+    Przewidywany T_c (TGP P6.A): 177.8 K
+    Jesli P6.B interface coupling: 240.2 K
+
+==============================================================================
+  ps14 complete.
+==============================================================================

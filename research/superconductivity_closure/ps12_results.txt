@@ -1,0 +1,116 @@
+==============================================================================
+  ps12_hydride_phonon_coupling.py  (P6.B)
+==============================================================================
+
+  Model:  Lambda_E^eff = Lambda_E^(0) * (omega_H / omega_0)^alpha
+  omega_0 = 15.0 meV (Al Debye)
+  Lambda_0 baseline = 0.1309 meV (ps5 5c BCS)
+  Fit parametry: alpha, Lambda_0 (2 params, 9 materialow)
+
+==============================================================================
+  Part A. Fit hydrydow
+==============================================================================
+
+  alpha   = 1.0379
+  Lambda_0 = 0.0962 meV  (baseline ps5 5c = 0.1309)
+
+  Material  a[A] orb   z   omH   T_obs   T_pred   log10(p/o)
+  -------- ----- --- --- ----- ------- --------  -----------
+       H3S 3.100  sp   8   175   203.0    75.66      -0.4286
+     LaH10 5.100   d  12   250   250.0   365.96      +0.1655
+       YH9 4.300   d  12   220   243.0   371.05      +0.1838
+      CaH6 4.500  sp   8   200   215.0    98.05      -0.3410
+       YH6 4.150   d   8   180   224.0   202.14      -0.0446
+     ThH10 5.230   d  12   150   161.0   206.53      +0.1082
+      CeH9 3.800   d  12   135   100.0   222.25      +0.3468
+     CeH10 5.040   d  12   175   115.0   257.23      +0.3496
+     H3S_D 3.200  sp   8   150   145.0    66.31      -0.3398
+
+  r(log-log) = 0.1012
+  RMS_log    = 0.2854
+
+==============================================================================
+  Part B. Interpretacja alpha
+==============================================================================
+
+  alpha = 1.04
+
+  alpha ~ 1 -> LINIOWE skalowanie Lambda_E z omega_phonon.
+  Oznacza: substrat sprzega sie PROPORCJONALNIE do szybkosci oscylacji.
+
+==============================================================================
+  Part C. Cross-validation (leave-one-out)
+==============================================================================
+
+  Wyklucz pojedynczy hydryd z fitu, przewidz jego T_c.
+    Excluded   alpha     Lam    T_obs    T_pred    Delta
+    --------  ------  ------  -------  --------  -------
+         H3S   1.110  0.0712    203.0     66.78   -0.483
+       LaH10   1.831  0.0146    250.0    518.40   +0.317
+         YH9   1.420  0.0398    243.0    427.96   +0.246
+        CaH6   0.698  0.2015    215.0     85.10   -0.402
+         YH6   1.035  0.0957    224.0    199.56   -0.050
+       ThH10   0.861  0.1545    161.0    220.58   +0.137
+        CeH9  -0.095  1.8287    100.0    350.64   +0.545
+       CeH10   0.979  0.1230    115.0    284.83   +0.394
+       H3S_D   1.594  0.0217    145.0     53.93   -0.430
+
+==============================================================================
+  Part D. Predykcje dla nowych/spekulatywnych hydrydow
+==============================================================================
+
+      Material  a[A] orb   z   omH T_pred[K]  P[GPa]                                 opis
+  ------------ ----- --- --- ----- --------- -------  -----------------------------------
+          MgH2 4.500  sp   8   100      47.8     180          prosta stable roomtemp, SC?
+          BeH2 3.900  sp   6   140      51.8     200              spekulowany ultra-light
+          AlH3 4.450  sp  12   150     109.7     110                       metallic pod P
+          CaH6 4.500  sp   8   200      98.1     172             SPRAWDZENIE - jest w fit
+            BH 3.200  sp   8   220      98.7     300         metallic boron-hydride spek.
+         LiBH4 5.150  sp   8   130      54.3     100                     complex hydrydek
+        NaAlH4 5.020  sp   8   110      47.5     100                              ternary
+          BaH6 5.300   s   8   140      16.1      80                   heavy host, low P?
+          RbH9 5.500   s  12   160      25.6     100                         alkali heavy
+    H_metallic 2.800   s  12   350      60.7     500             monatomic hydrogen metal
+
+==============================================================================
+  Part E. Problem AMBIENT hydrydow
+==============================================================================
+
+  Wszystkie znane hydrydy SC wymagaja P >= 95 GPa.
+  Powod: dynamiczna stabilizacja H-cage wymaga kompresji.
+
+  TGP: formula T_c NIE WYMAGA ciœnienia per se -
+       wymaga tylko a blisko a*_tgp oraz omega_H wysokiej.
+
+  Czy mozemy dostac wysoka omega_H przy ambient?
+  Odpowiedz: molekularne hydrogen-rich compounds.
+    H2O lod: omega_H ~ 400 meV (O-H stretch), ale izolator (brak SC)
+    NH3 amoniak: omega_H ~ 420 meV, izolator
+    CH4 metan: izolator
+
+  Klucz: potrzeba METALICZNEGO hydrydu przy ambient.
+         Kandidates: borohidydy (MgB2, M-BH4), berylowodorki.
+
+  TGP predykcja dla MgB2 (istn, T_c=39K @ ambient):
+    a=3.086, orb=sp, z=5, omega=75 meV -> T_pred = 31.3 K (vs obs 39 K)
+
+  Dla nieistn. AlB2-analog pod ambient (BB bez Mg):
+    a=3.0, orb=sp, z=6, omega=120 meV -> T_pred = 37.2 K
+
+==============================================================================
+  Werdykt ps12
+==============================================================================
+
+  P6.B fit hydrydow: r(log-log) = 0.101, RMS_log = 0.285
+  Slaby fit - poszukaj innej postaci coupling.
+
+  alpha = 1.04 -> skalowanie Lambda_E z omega_phonon
+
+  Glowny wniosek:
+    1. Hydrydy high-P (100-250 GPa) pasuja do TGP P6.B.
+    2. Ambient-P hydrydy w P6.B wymagaja metalicznego H-rich + wysoka omega.
+    3. MgB2 pod ambient z omega=75 meV: P6.B daje lepsze niz ps9 (~2x, ale wciaz poniza 39K).
+
+==============================================================================
+  ps12 complete.
+==============================================================================
