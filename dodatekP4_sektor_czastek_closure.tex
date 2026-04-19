@@ -10,7 +10,7 @@
 \providecommand{\Cl}{\operatorname{Cl}}
 
 \section*{Dodatek P4: domkni\k{e}cie sektora cz\k{a}stek
-(α₃ $+$ $g_0^\tau$ $+$ kwarki $+$ neutrina)}%
+($\alpha_3$ $+$ $g_0^\tau$ $+$ kwarki $+$ neutrina)}%
 \addcontentsline{toc}{section}{Dodatek P4: domkni\k{e}cie sektora cz\k{a}stek
 (program P4, 2026-04-19)}%
 \label{app:P4}
@@ -41,7 +41,7 @@ oraz w~statusie TGP z~12~kwietnia 2026
     Koide dla lepton\'ow naładowanych jest \textbf{derywowany},
     nie za\l{}o\.zeniem.
   \item \textbf{P4~\#3}\,---\,Koide kwark\'ow: \emph{pe\l{}ne domkni\k{e}cie}.
-    QCD 2-loop RG zachowuje $K$ (γ$_m$ jest flavor-blind $\Rightarrow$
+    QCD 2-loop RG zachowuje $K$ ($\gamma_m$ jest flavor-blind $\Rightarrow$
     czynnik $R(\mu)$ kasuje si\k{e} w~wyra\.zeniu Koidego).
     $K_\text{up}=0{,}8746$ i~$K_\text{down}=0{,}7398$ s\k{a}
     \textbf{RG-niezmienne}: Koide $K=2/3$ jest zjawiskiem
@@ -237,7 +237,7 @@ $\mu \in [50~\mathrm{MeV},\,100~\mathrm{TeV}]$.
 \paragraph{Setup.}
 Skrypt \texttt{ps3\_quark\_koide\_qcd.py}: 2-loop RGE dla $\alpha_s(\mu)$
 z~progami $m_c, m_b, m_t$ (integrowane od $M_Z$ i~w d\'o\l{} do $\mu=50$~MeV)
-oraz 2-loop γ$_m$ dla mas. Po optymalizacji
+oraz 2-loop $\gamma_m$ dla mas. Po optymalizacji
 (precomputowany $\alpha_s(\mu)$ na log-grid z~interpolacj\k{a} O(1))
 czas wykonania $\sim 1$~s.
 
@@ -270,8 +270,8 @@ Amplituda r\'o\.znicy $\max_\mu K - \min_\mu K < 10^{-5}$ w~obu sektorach
 na 6~rz\k{e}dach $\mu$.
 
 \paragraph{Analityczny argument niezmienniczo\'sci.}
-QCD γ$_m$ jest flavor-blind na poziomie wiod\k{a}cym:
-$dm_i/d\ln\mu = -\gamma_m(\alpha_s)\,m_i$ \emph{z~t\k{a} sam\k{a}} γ$_m$
+QCD $\gamma_m$ jest flavor-blind na poziomie wiod\k{a}cym:
+$dm_i/d\ln\mu = -\gamma_m(\alpha_s)\,m_i$ \emph{z~t\k{a} sam\k{a}} $\gamma_m$
 dla wszystkich zapach\'ow. Wtedy $m_i(\mu) = R(\mu)\cdot m_i(\mu_0)$ ze wsp\'olnym
 $R(\mu) = \exp(-\int \gamma_m\,d\ln\mu)$. Koide'owski ilorad:
 \begin{equation}
@@ -282,7 +282,7 @@ $R(\mu) = \exp(-\int \gamma_m\,d\ln\mu)$. Koide'owski ilorad:
 \end{equation}
 $R(\mu)$ kasuje si\k{e} identycznie. Residualna $\mu$-zale\.zno\'s\'c pochodzi
 jedynie z~(i)~skok\'ow $n_f$ (rz\k{e}d $10^{-3}$ relatywnie), (ii)~korekcji
-γ$_m$ wy\.zszego rz\k{e}du ($O(\alpha_s^2) \sim 10^{-3}$).
+$\gamma_m$ wy\.zszego rz\k{e}du ($O(\alpha_s^2) \sim 10^{-3}$).
 
 \paragraph{Wniosek (closure).}
 Kwarki \emph{nie mog\k{a}} osi\k{a}gn\k{a}\'c $K=2/3$ przez QCD running:
@@ -318,7 +318,7 @@ $\Delta m^2_{21} = 7{,}42\!\times\!10^{-5}$~eV$^2$,
 $|\Delta m^2_{32}| = 2{,}517\!\times\!10^{-3}$~eV$^2$;
 ograniczenie kosmologiczne $\Sigma m_\nu < 0{,}072$~eV (95\% CL).
 Skan $m_\text{lightest} \in [10^{-4}, 0{,}5]$~eV w~obu NO i~IO;
-trzy r\'o\.zne macierze Majorana α$_i$.
+trzy r\'o\.zne macierze Majorana $\alpha_i$.
 
 \paragraph{Czysty Dirac: skan $K_\nu$.}
 \begin{center}\footnotesize
@@ -470,7 +470,7 @@ CV($\sqrt m$)$=1$ (Brannen, leptony)
 $K_\text{down} = 0{,}731$ (tree), RG-niezm.
   & \statuslabel{Prop. [NUM]}
   & \statuslabel{Tw. [AN+NUM]}
-  & \textbf{awans} (dow\'od γ$_m$ blind)
+  & \textbf{awans} (dow\'od $\gamma_m$ blind)
   & ps3, X \\[3pt]
 $K_\text{up} = 0{,}875$ (tree), RG-niezm.
   & \statuslabel{Prop. [NUM]}
@@ -554,7 +554,7 @@ Nazwane sta\l{}e TGP (polilog)
   \item Koide dla lepton\'ow na\l{}adowanych: \textbf{propozycja $\to$ twierdzenie}
     (0{,}04\% mass-vs-Koide bisection).
   \item $K_\text{quark}$ RG-niezmienniczo\'s\'c: \textbf{propozycja [NUM]$\to$ twierdzenie [AN+NUM]}
-    (dow\'od γ$_m$ blind).
+    (dow\'od $\gamma_m$ blind).
   \item $K(\nu)=1/2$: \textbf{hipoteza $\to$ propozycja}
     (numeryczna granica $K_\nu \le 0{,}553$).
   \item Nowa sta\l{}a: \textbf{TGP\_Pcos} $= 0{,}01261593929\ldots$ (dod.\ do bazy nazwanych).
