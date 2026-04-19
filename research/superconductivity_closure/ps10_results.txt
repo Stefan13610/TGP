@@ -1,0 +1,97 @@
+  Zhang-Rice: A_ZR^2 = A_d^2 + 2*A_p^2 = 0.0959 + 2*0.0427 = 0.1813
+              A_ZR   = 0.4258  (vs A_d = 0.3096)
+
+==============================================================================
+  ps10: Fit modelu cuprates 2D-ZR-dwave
+==============================================================================
+
+  Fit: K_dw = 3.498,  Lambda_E = 0.0513 meV
+
+    Cuprate  a[A]   n   T_obs  T_pred   log10(p/o)
+  --------- ----- --- ------- -------  -----------
+      La214 3.780   1    38.0   53.33      +0.1472
+       YBCO 3.820   2    92.0   75.68      -0.0848
+     BiSCCO 3.820   2   110.0   75.68      -0.1624
+     Tl2212 3.855   2   105.0   75.88      -0.1411
+     Hg1223 3.855   3   138.0   92.93      -0.1717
+     Tl2223 3.855   3   127.0   92.93      -0.1356
+      Nd214 3.940   1    24.0   53.91      +0.3515
+     Bi2201 3.820   1    34.0   53.51      +0.1970
+
+  r(log-log) = 0.9565
+  RMS_log    = 0.1889
+  MAE_log    = 0.1739
+
+==============================================================================
+  Part B. Interpretacja K_dw
+==============================================================================
+
+  K_dw = 3.498
+
+  Sklad K_dw ~ (d-wave boost) * (vH enhancement) * (ZR correction):
+  - d-wave boost: ~1.5 (kalkulacja BCS na Fermi surface z D_0(cos kx - cos ky))
+  - vH enhancement: ln(D(E_F)/D_0) ~ 2-3 dla domieszkan optymalnych
+  - ZR correction: inkl. oxygen-bridge mediated hopping ~ 1.2
+  Oczekiwane: 1.5 * 2.5 * 1.2 = 4.5. Fit: 3.50.
+
+==============================================================================
+  Part C. Predykcja: kandydaci ambient-pressure high-Tc
+==============================================================================
+
+  Szukamy materialow z:
+    a_inplane bliskie a*_TGP = 4.088 A
+    CuO2-like plaszczyzny (d-orbital przewodnictwa)
+    n_layers = 3-5 (wiecej -> wyzsze T_c)
+
+  Propozycje literaturowe (eksperymentalne targets):
+      Material  a[A]   n T_pred[K]                                 komentarz
+  ------------ ----- --- ---------  ----------------------------------------
+    NdNiO2-inf 3.916   1     53.85  infinite-layer nickelate; exp: T_c ~10K 
+      La3Ni2O7 3.830   2     75.74  bilayer Nd nickelate P>14 GPa; exp: T_c=
+       Sr2CuO3 3.910   1     53.84        simple Cu-chain-oxide; exp: non-SC
+    HgCuO2-max 3.855   5    119.97  hypothetic 5-layer Hg cuprate; exp: nie 
+    HgCuO2-inf 3.855  10    169.67  HYPOTHESIS infinite-layer Hg; exp: przy 
+   (Ba,Sr)CuO2 4.010   1     54.04   apical-free parent; exp: non-SC ambient
+     Na-Tl2212 3.800   2     75.55             alkali-doped Tl; exp: mozliwe
+     La114-ovd 3.750   1     53.18       LSCO overdoped x=0.25; exp: T_c=25K
+
+==============================================================================
+  Part D. Idealny kandydat: maksymalizacja T_c przy ambient
+==============================================================================
+
+    a[A]    n=1    n=2    n=3    n=4    n=5    n=6    n=8   n=10
+   3.600   52.2   73.8   90.4  104.4  116.7  127.9  147.6  165.1
+   3.650   52.6   74.3   91.0  105.1  117.5  128.7  148.7  166.2
+   3.700   52.9   74.8   91.6  105.8  118.3  129.5  149.6  167.2
+   3.750   53.2   75.2   92.1  106.4  118.9  130.3  150.4  168.2
+   3.800   53.4   75.6   92.5  106.8  119.5  130.9  151.1  168.9
+   3.850   53.6   75.9   92.9  107.3  119.9  131.4  151.7  169.6
+   3.900   53.8   76.1   93.2  107.6  120.3  131.8  152.2  170.1
+   3.950   53.9   76.3   93.4  107.9  120.6  132.1  152.6  170.6
+   4.000   54.0   76.4   93.6  108.1  120.8  132.3  152.8  170.9
+   4.050   54.1   76.5   93.7  108.2  120.9  132.5  153.0  171.0
+   4.100   54.1   76.5   93.7  108.2  120.9  132.5  153.0  171.0
+   4.150   54.1   76.5   93.6  108.1  120.9  132.4  152.9  171.0
+   4.200   54.0   76.4   93.5  108.0  120.7  132.2  152.7  170.7
+   4.250   53.9   76.2   93.3  107.8  120.5  132.0  152.4  170.4
+   4.300   53.7   76.0   93.1  107.5  120.1  131.6  152.0  169.9
+
+  Maksimum mapy: T_c = 171.1 K przy a = 4.086 A, n = 10
+  Dla porownania: Hg1223 (obs rekord ambient) = 138 K przy a=3.855, n=3.
+
+==============================================================================
+  Part E. Werdykt ps10
+==============================================================================
+
+  r(log-log) = 0.957 >> ps5 5c 0.48 - BARDZO DOBRY fit cuprates.
+  Model P6.A dziala dla high-Tc cupratow przy ambient.
+
+  K_dw universal = 3.50
+  Lambda_E cuprate = 0.051 meV  (vs ps5 5c: 0.1309 meV)
+
+  Lambda_E cuprate != Lambda_E BCS (0.39x).
+  Sygnal ze Lambda_E zalezy od klasy SC -> P6.B (coupling-dependent).
+
+==============================================================================
+  ps10 complete.
+==============================================================================

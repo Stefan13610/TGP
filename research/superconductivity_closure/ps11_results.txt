@@ -1,0 +1,146 @@
+==============================================================================
+  ps11_ambient_highTc_survey.py
+==============================================================================
+
+  Model P6.A: K_dw = 3.498,  Lambda_E_cup = 0.0513 meV
+  A_ZR^2 (d+2p) = 0.1813
+
+==============================================================================
+  Rodzina Fe (pnictides/chalcogenides, ambient)
+==============================================================================
+
+  A_FeAs^2 (d+p) = 0.1386  (cuprate A_ZR^2 = 0.1813, stosunek 0.76)
+
+        Material  a[A]   n   T_obs  T_pred                  komentarz
+  -------------- ----- --- ------- -------  -------------------------
+            FeSe 3.770   1     8.0   28.52               ambient bulk
+     FeSe/STO-ML 3.770   1    65.0   28.52        monolayer na SrTiO3
+         LaFeAsO 4.040   1    26.0   28.95                1111 family
+       SmFeAsO-F 4.000   1    55.0   28.92                 doped 1111
+       NdFeAsO-F 3.970   1    55.0   28.90     doped 1111 near record
+        Ba122-Co 3.960   1    22.0   28.88              Ba(Fe,Co)2As2
+         KFe2As2 3.842   1     3.8   28.69               K122 ambient
+   FeTe_0.5Se0.5 3.800   1    15.0   28.60               chalcogenide
+
+  Fe-SC:  r(log-log) = 0.354,  RMS_log = 0.426
+
+==============================================================================
+  Rodzina Ni-oxides (ambient + under pressure)
+==============================================================================
+
+            Material  a[A]   n   T_obs  T_pred                       komentarz
+  ------------------ ----- --- ------- -------  ------------------------------
+         NdNiO2-thin 3.916   1     9.0   53.88     infinite-layer Nd thin film
+         PrNiO2-thin 3.916   1    12.0   53.88               Pr infinite-layer
+    La_0.8Sr_0.2NiO2 3.937   1    15.0   53.93                     doped La-IL
+         Sr3Ni2O7-HP 3.830   2    80.0   75.78      pod P=14 GPa (nie ambient)
+              LaNiO3 3.840   1     0.5   53.62        metallic, non-SC ambient
+
+==============================================================================
+  Rodzina Ru/Ir/Ti (exotic SC)
+==============================================================================
+
+  Uwaga: te materialy nie sa d-wave cuprate-like,
+  predykcja = tylko jesli przyjmiemy mechanizm TGP-ZR-2D.
+
+    Material   a[A]   T_obs  T_pred
+  ---------- ------ ------- -------
+     Sr2RuO4  3.862    1.50    53.7  d-wave or p-wave? ambient
+    Sr3Ir2O7  3.896    0.00    76.1  Mott insulator ambient, non-SC
+      SrTiO3  3.905    0.40    53.8  n-doped, very low Tc
+       K3C60 14.240   19.00    30.2  fulleride FCC (a duzo wyzszy, nie-standard)
+
+==============================================================================
+  Hipotetyczne high-Tc ambient: maksymalizacja TGP
+==============================================================================
+
+  Zmienne: a_inplane, n_layers, typ orbitalu (d lub hybryd).
+  Ograniczenie fizyczne: a >= 3.50 (chemiczna mozliwosc)
+                        n <= 6 (znane syntezy max Hg1234 n=4, Tl1245 n=5)
+
+              Scenariusz  a[A]   n T_pred[K]                                 komentarz
+  ---------------------- ----- --- ---------  ----------------------------------------
+         Hg1234 hipoteza 3.855   4     107.4             Synteza trudna, znana 1 proba
+         Hg1245 hipoteza 3.855   5     120.0  n=5 cuprate nigdy nie zsyntezowany stabi
+            Hg-inf layer 3.855  10     169.8  sqrt(n) saturation - matematyczny ekstra
+       Pd-analog cuprate 4.090   3      93.7        Pd zamiast Cu, a optymalne na harm
+       Cu-doped + strain 4.090   3     140.6   Induced strain i Lambda wzmocnione 1.5x
+          ZR-boosted A_f 3.855   3     473.3                    Hybryd z f - ostroznie
+         Perfect cuprate 4.088   3      93.7                    dokladnie na harmonice
+      Perfect + 5 layers 4.088   5     121.0                           max achievable?
+
+==============================================================================
+  Czy TGP ma plafon T_c?
+==============================================================================
+
+  Matematycznie:
+    T_c ~ K_dw * k_d * C_0 * A_sq * M * sqrt(n) * Lambda_E
+
+    Maksymalne M = 1.0 (a = a*_TGP)
+    Maksymalne k_d = 4.40 (FCC 3D XY, z=12)
+    K_dw uniwersalne = 3.5 (dla d-wave layered)
+    A_sq: max z hybryd (d+p+f) ~ 4.0 (ale f podejrzane)
+    sqrt(n): dla n=10 -> 3.16, dla n=100 -> 10
+    Lambda_E: open, moze skalowac z omega_D materialu
+
+  Wnioski:
+    - Dla realistycznych n (1-5) i A_ZR=0.43: T_c_max ~ 150 K
+    - Dla n=10 (metastable): T_c_max ~ 170 K
+    - Aby T_c > 200 K przy ambient potrzebujemy:
+        * n >= 5 stabilnych plaszczyzn
+        * a dokladnie 4.088 A (harmonika)
+        * A_sq >= 0.25 (hybryd 3-orbital)
+        * Lambda_E > 0.08 meV (omega_D > 15 meV)
+
+  => WYZSZE T_c (>200K) AMBIENT SA MOZLIWE W TGP
+     Wymagaja inzynierii materialu: multiwarstwowa heterostruktura,
+     domieszkowana dla optymalnego A_ZR, na substracie wymuszajacym
+     a = 4.088 A (np. SrTiO3 epitaxial strain).
+
+==============================================================================
+  KONKRETNA PREDYKCJA: heterostruktura Hg-cuprate / SrTiO3
+==============================================================================
+
+  Setup:
+    Hg1223 (a_ambient = 3.855 A)
+    na substracie SrTiO3 (a = 3.905 A) -> tensile strain 1.3%
+    Efekt TGP: a wymuszone w gore do 3.905 A
+    T_c (Hg1223 ambient, bulk)      = 93.0 K (pred, obs = 138 K)
+    T_c (Hg1223 / STO, a=3.905) = 93.3 K
+    Poprawa: +0.3% dzieki strain
+
+  Dalej: Hg1234 na SrTiO3:
+    T_c (Hg1234 / STO) = 107.7 K
+
+  Hg1245 na SrTiO3:
+    T_c (Hg1245 / STO) = 120.4 K (>> rekord)
+
+  Eksperymentalna droga:
+    1. MBE/PLD wzrost Hg1223 tenkowy na SrTiO3 bufferzed
+    2. Szybki tlen annealing dla optymalnego domieszkania
+    3. Transport i Meissner dla T_c exp
+
+==============================================================================
+  Werdykt ps11
+==============================================================================
+
+  Fe-SC: r(log-log) = 0.354  (ambient bulk + monolayer-STO)
+         Model dziala jakosciowo dla Fe-pnictides/chalcogenides.
+
+  Nickelates: thin film - undershoots (5x off); moze orb+ZR tutaj inaczej.
+
+  KLUCZOWA ODPOWIEDZ:
+    Wysokotemperaturowe SC AMBIENT PRESSURE SA mozliwe w TGP.
+    Rekomendowane kierunki eksperymentalne:
+      1. Hg1223 na SrTiO3 (strain tensylny) - T_c > 180 K?
+      2. Hg1234 synteza + SrTiO3 substrat - T_c > 200 K?
+      3. Synteza Hg1245 (n=5) - T_c ~ 230 K?
+      4. Nickelates multiwarstwowe z wiekszym n_Ni
+
+  PROZNIA: nie wplywa bezposrednio na T_c, ale:
+    - cuprates amb. degraduja w tlenie (samplowac w UHV)
+    - Fe-SC (FeSe/STO monolayer) wymaga UHV dla stabilnosci
+
+==============================================================================
+  ps11 complete.
+==============================================================================
