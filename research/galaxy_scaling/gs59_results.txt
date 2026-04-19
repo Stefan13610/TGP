@@ -1,0 +1,359 @@
+======================================================================
+  gs59_neutrino_halo.py
+  Full Poisson-Boltzmann neutrino halo calculation for TGP
+  Sterile neutrino halos in galaxy clusters
+======================================================================
+
+  Cosmic neutrino density: n = 5.60e+07 /m^3 = 56 /cm^3
+  Cosmic neutrino T: 1.95 K
+  a0 = 1.2e-10 m/s^2
+  Spin states g_s = 2
+
+  m_s = 1.5 eV:
+    rho_cosmic     = 1.498e-28 kg/m^3
+    rho_TG(1000)   = 1.473e-24 kg/m^3
+    enhancement    = 9.837e+03
+
+  m_s = 2.0 eV:
+    rho_cosmic     = 1.997e-28 kg/m^3
+    rho_TG(1000)   = 4.656e-24 kg/m^3
+    enhancement    = 2.332e+04
+
+  m_s = 5.0 eV:
+    rho_cosmic     = 4.992e-28 kg/m^3
+    rho_TG(1000)   = 1.819e-22 kg/m^3
+    enhancement    = 3.643e+05
+
+  m_s = 11.0 eV:
+    rho_cosmic     = 1.098e-27 kg/m^3
+    rho_TG(1000)   = 4.261e-21 kg/m^3
+    enhancement    = 3.879e+06
+
+  m_s = 20.0 eV:
+    rho_cosmic     = 1.997e-27 kg/m^3
+    rho_TG(1000)   = 4.656e-20 kg/m^3
+    enhancement    = 2.332e+07
+
+======================================================================
+  CLUSTER: Coma
+======================================================================
+  M_bar     = 1.00e+14 Msun
+  M_obs     = 7.00e+14 Msun
+  R500      = 1200 kpc
+  sigma     = 1000 km/s
+  r_c       = 250 kpc
+  beta      = 0.667
+
+  [Part A] Baryonic mass profile:
+    rho_0 (central)   = 1.0038e-23 kg/m^3
+    M_bar(R500) check = 1.000e+14 Msun (target: 1.00e+14)
+    Phi_TGP(center)   = -4.9602e+12 m^2/s^2
+    Phi_TGP(R500)     = -3.1373e+12 m^2/s^2
+    Phi_TGP(2*R500)   = -1.6601e+12 m^2/s^2
+    Delta_Phi(center) = -3.3001e+12 m^2/s^2
+    Delta_Phi/sigma^2 = -3.300
+
+    M_TGP_dyn(R500)   = 4.687e+14 Msun
+    M_deficit         = 2.313e+14 Msun
+    Deficit fraction  = 33.0%
+
+  [Part B] Non-self-consistent neutrino mass at R500:
+      m_s (eV)     M_nu_Boltz     M_nu_Fermi         rho_TG     rho_center
+                       (Msun)         (Msun)       (kg/m^3)       (kg/m^3)
+           1.5      1.183e+11      3.037e+15      1.473e-24      4.061e-27
+           2.0      1.577e+11      9.599e+15      4.656e-24      5.415e-27
+           5.0      3.942e+11      3.749e+17      1.819e-22      1.354e-26
+          11.0      8.673e+11      8.783e+18      4.261e-21      2.978e-26
+          20.0      1.577e+12      9.599e+19      4.656e-20      5.415e-26
+
+  [Part C] Self-consistent iteration results:
+      m_s (eV)     M_nu(R500)   Iterations   Deficit filled
+           1.5      1.184e+11            2             0.1%
+           2.0      1.579e+11            2             0.1%
+           5.0      3.958e+11            2             0.2%
+          11.0      8.749e+11            2             0.4%
+          20.0      1.602e+12            3             0.7%
+
+  [Part D] Deficit analysis:
+    M_obs             = 7.000e+14 Msun
+    M_TGP_dyn(R500)   = 4.687e+14 Msun
+    M_deficit         = 2.313e+14 Msun
+    Deficit fraction  = 33.0%
+    m_s=  1.5 eV: M_total = 4.688e+14, deficit filled = 0.1%
+    m_s=  2.0 eV: M_total = 4.689e+14, deficit filled = 0.1%
+    m_s=  5.0 eV: M_total = 4.691e+14, deficit filled = 0.2%
+    m_s= 11.0 eV: M_total = 4.696e+14, deficit filled = 0.4%
+    m_s= 20.0 eV: M_total = 4.703e+14, deficit filled = 0.7%
+    => No tested mass fills >90% of deficit
+
+  [Part E] Neutrino density profiles rho_nu(r) [kg/m^3]:
+       r (kpc)        m=1.5eV        m=2.0eV        m=5.0eV       m=11.0eV       m=20.0eV         NFW_DM
+            10     4.0551e-27     5.4096e-27     1.3567e-26     3.0037e-26     5.5151e-26     3.5876e-21
+            50     3.9360e-27     5.2508e-27     1.3168e-26     2.9154e-26     5.3527e-26     5.6290e-22
+           100     3.7200e-27     4.9626e-27     1.2445e-26     2.7552e-26     5.0583e-26     2.1549e-22
+           200     3.2152e-27     4.2892e-27     1.0756e-26     2.3809e-26     4.3703e-26     6.8955e-23
+           500     1.9359e-27     2.5824e-27     6.4741e-27     1.4323e-26     2.6267e-26     1.0775e-23
+          1000     8.7567e-28     1.1680e-27     2.9261e-27     6.4648e-27     1.1831e-26     2.0401e-24
+          1500     4.3799e-28     5.8412e-28     1.4623e-27     3.2257e-27     5.8891e-27     7.0957e-25
+
+======================================================================
+  CLUSTER: Perseus
+======================================================================
+  M_bar     = 8.00e+13 Msun
+  M_obs     = 5.50e+14 Msun
+  R500      = 1100 kpc
+  sigma     = 900 km/s
+  r_c       = 200 kpc
+  beta      = 0.667
+
+  [Part A] Baryonic mass profile:
+    rho_0 (central)   = 1.3111e-23 kg/m^3
+    M_bar(R500) check = 8.000e+13 Msun (target: 8.00e+13)
+    Phi_TGP(center)   = -4.4533e+12 m^2/s^2
+    Phi_TGP(R500)     = -2.7689e+12 m^2/s^2
+    Phi_TGP(2*R500)   = -1.4532e+12 m^2/s^2
+    Delta_Phi(center) = -3.0001e+12 m^2/s^2
+    Delta_Phi/sigma^2 = -3.704
+
+    M_TGP_dyn(R500)   = 3.850e+14 Msun
+    M_deficit         = 1.650e+14 Msun
+    Deficit fraction  = 30.0%
+
+  [Part B] Non-self-consistent neutrino mass at R500:
+      m_s (eV)     M_nu_Boltz     M_nu_Fermi         rho_TG     rho_center
+                       (Msun)         (Msun)       (kg/m^3)       (kg/m^3)
+           1.5      1.134e+11      1.948e+15      1.074e-24      6.081e-27
+           2.0      1.512e+11      6.157e+15      3.394e-24      8.108e-27
+           5.0      3.779e+11      2.405e+17      1.326e-22      2.027e-26
+          11.0      8.313e+11      5.634e+18      3.106e-21      4.459e-26
+          20.0      1.512e+12      6.157e+19      3.394e-20      8.108e-26
+
+  [Part C] Self-consistent iteration results:
+      m_s (eV)     M_nu(R500)   Iterations   Deficit filled
+           1.5      1.135e+11            2             0.1%
+           2.0      1.515e+11            2             0.1%
+           5.0      3.798e+11            2             0.2%
+          11.0      8.409e+11            3             0.5%
+          20.0      1.544e+12            3             0.9%
+
+  [Part D] Deficit analysis:
+    M_obs             = 5.500e+14 Msun
+    M_TGP_dyn(R500)   = 3.850e+14 Msun
+    M_deficit         = 1.650e+14 Msun
+    Deficit fraction  = 30.0%
+    m_s=  1.5 eV: M_total = 3.851e+14, deficit filled = 0.1%
+    m_s=  2.0 eV: M_total = 3.851e+14, deficit filled = 0.1%
+    m_s=  5.0 eV: M_total = 3.853e+14, deficit filled = 0.2%
+    m_s= 11.0 eV: M_total = 3.858e+14, deficit filled = 0.5%
+    m_s= 20.0 eV: M_total = 3.865e+14, deficit filled = 0.9%
+    => No tested mass fills >90% of deficit
+
+======================================================================
+  CLUSTER: Virgo
+======================================================================
+  M_bar     = 4.00e+13 Msun
+  M_obs     = 3.00e+14 Msun
+  R500      = 900 kpc
+  sigma     = 700 km/s
+  r_c       = 180 kpc
+  beta      = 0.667
+
+  [Part A] Baryonic mass profile:
+    rho_0 (central)   = 1.0188e-23 kg/m^3
+    M_bar(R500) check = 4.000e+13 Msun (target: 4.00e+13)
+    Phi_TGP(center)   = -3.1326e+12 m^2/s^2
+    Phi_TGP(R500)     = -1.9558e+12 m^2/s^2
+    Phi_TGP(2*R500)   = -1.0112e+12 m^2/s^2
+    Delta_Phi(center) = -2.1214e+12 m^2/s^2
+    Delta_Phi/sigma^2 = -4.329
+
+    M_TGP_dyn(R500)   = 2.250e+14 Msun
+    M_deficit         = 7.498e+13 Msun
+    Deficit fraction  = 25.0%
+
+  [Part B] Non-self-consistent neutrino mass at R500:
+      m_s (eV)     M_nu_Boltz     M_nu_Fermi         rho_TG     rho_center
+                       (Msun)         (Msun)       (kg/m^3)       (kg/m^3)
+           1.5      9.519e+10      6.342e+14      5.053e-25      1.137e-26
+           2.0      1.269e+11      2.004e+15      1.597e-24      1.516e-26
+           5.0      3.173e+11      7.829e+16      6.239e-23      3.789e-26
+          11.0      6.980e+11      1.834e+18      1.461e-21      8.336e-26
+          20.0      1.269e+12      2.004e+19      1.597e-20      1.516e-25
+
+  [Part C] Self-consistent iteration results:
+      m_s (eV)     M_nu(R500)   Iterations   Deficit filled
+           1.5      9.547e+10            2             0.1%
+           2.0      1.274e+11            2             0.2%
+           5.0      3.204e+11            2             0.4%
+          11.0      7.136e+11            3             1.0%
+          20.0      1.322e+12            3             1.8%
+
+  [Part D] Deficit analysis:
+    M_obs             = 3.000e+14 Msun
+    M_TGP_dyn(R500)   = 2.250e+14 Msun
+    M_deficit         = 7.498e+13 Msun
+    Deficit fraction  = 25.0%
+    m_s=  1.5 eV: M_total = 2.251e+14, deficit filled = 0.1%
+    m_s=  2.0 eV: M_total = 2.251e+14, deficit filled = 0.2%
+    m_s=  5.0 eV: M_total = 2.253e+14, deficit filled = 0.4%
+    m_s= 11.0 eV: M_total = 2.257e+14, deficit filled = 1.0%
+    m_s= 20.0 eV: M_total = 2.263e+14, deficit filled = 1.8%
+    => No tested mass fills >90% of deficit
+
+======================================================================
+  CLUSTER: A1689
+======================================================================
+  M_bar     = 2.00e+14 Msun
+  M_obs     = 1.20e+15 Msun
+  R500      = 1300 kpc
+  sigma     = 1200 km/s
+  r_c       = 300 kpc
+  beta      = 0.667
+
+  [Part A] Baryonic mass profile:
+    rho_0 (central)   = 1.3349e-23 kg/m^3
+    M_bar(R500) check = 2.000e+14 Msun (target: 2.00e+14)
+    Phi_TGP(center)   = -7.0881e+12 m^2/s^2
+    Phi_TGP(R500)     = -4.6083e+12 m^2/s^2
+    Phi_TGP(2*R500)   = -2.5455e+12 m^2/s^2
+    Delta_Phi(center) = -4.5426e+12 m^2/s^2
+    Delta_Phi/sigma^2 = -3.155
+
+    M_TGP_dyn(R500)   = 7.066e+14 Msun
+    M_deficit         = 4.934e+14 Msun
+    Deficit fraction  = 41.1%
+
+  [Part B] Non-self-consistent neutrino mass at R500:
+      m_s (eV)     M_nu_Boltz     M_nu_Fermi         rho_TG     rho_center
+                       (Msun)         (Msun)       (kg/m^3)       (kg/m^3)
+           1.5      1.404e+11      6.798e+15      2.546e-24      3.511e-27
+           2.0      1.872e+11      2.149e+16      8.046e-24      4.682e-27
+           5.0      4.680e+11      8.393e+17      3.143e-22      1.170e-26
+          11.0      1.030e+12      1.966e+19      7.363e-21      2.575e-26
+          20.0      1.872e+12      2.149e+20      8.046e-20      4.682e-26
+
+  [Part C] Self-consistent iteration results:
+      m_s (eV)     M_nu(R500)   Iterations   Deficit filled
+           1.5      1.405e+11            2             0.0%
+           2.0      1.874e+11            2             0.0%
+           5.0      4.691e+11            2             0.1%
+          11.0      1.035e+12            2             0.2%
+          20.0      1.889e+12            2             0.4%
+
+  [Part D] Deficit analysis:
+    M_obs             = 1.200e+15 Msun
+    M_TGP_dyn(R500)   = 7.066e+14 Msun
+    M_deficit         = 4.934e+14 Msun
+    Deficit fraction  = 41.1%
+    m_s=  1.5 eV: M_total = 7.067e+14, deficit filled = 0.0%
+    m_s=  2.0 eV: M_total = 7.068e+14, deficit filled = 0.0%
+    m_s=  5.0 eV: M_total = 7.070e+14, deficit filled = 0.1%
+    m_s= 11.0 eV: M_total = 7.076e+14, deficit filled = 0.2%
+    m_s= 20.0 eV: M_total = 7.085e+14, deficit filled = 0.4%
+    => No tested mass fills >90% of deficit
+
+======================================================================
+  CLUSTER: Bullet
+======================================================================
+  M_bar     = 3.40e+14 Msun
+  M_obs     = 5.50e+14 Msun
+  R500      = 1000 kpc
+  sigma     = 1000 km/s
+  r_c       = 200 kpc
+  beta      = 0.667
+
+  [Part A] Baryonic mass profile:
+    rho_0 (central)   = 6.3133e-23 kg/m^3
+    M_bar(R500) check = 3.400e+14 Msun (target: 3.40e+14)
+    Phi_TGP(center)   = -9.8846e+12 m^2/s^2
+    Phi_TGP(R500)     = -6.5438e+12 m^2/s^2
+    Phi_TGP(2*R500)   = -3.9300e+12 m^2/s^2
+    Delta_Phi(center) = -5.9546e+12 m^2/s^2
+    Delta_Phi/sigma^2 = -5.955
+
+    M_TGP_dyn(R500)   = 6.993e+14 Msun
+    M_deficit         = -1.493e+14 Msun
+    Deficit fraction  = -27.1%
+
+  [Part B] Non-self-consistent neutrino mass at R500:
+      m_s (eV)     M_nu_Boltz     M_nu_Fermi         rho_TG     rho_center
+                       (Msun)         (Msun)       (kg/m^3)       (kg/m^3)
+           1.5      3.717e+11      5.159e+15      1.473e-24      5.774e-26
+           2.0      4.957e+11      1.631e+16      4.656e-24      7.699e-26
+           5.0      1.239e+12      6.369e+17      1.819e-22      1.925e-25
+          11.0      2.726e+12      1.492e+19      4.261e-21      4.234e-25
+          20.0      4.957e+12      1.631e+20      4.656e-20      7.699e-25
+
+  [Part C] Self-consistent iteration results:
+      m_s (eV)     M_nu(R500)   Iterations   Deficit filled
+           1.5      3.725e+11            2             0.0%
+           2.0      4.970e+11            2             0.0%
+           5.0      1.248e+12            2             0.0%
+          11.0      2.768e+12            3             0.0%
+          20.0      5.096e+12            3             0.0%
+
+  [Part D] Deficit analysis:
+    M_obs             = 5.500e+14 Msun
+    M_TGP_dyn(R500)   = 6.993e+14 Msun
+    M_deficit         = -1.493e+14 Msun
+    NOTE: TGP already EXCEEDS M_obs (no deficit)
+    m_s=  1.5 eV: M_total = 6.996e+14, deficit filled = 0.0%
+    m_s=  2.0 eV: M_total = 6.998e+14, deficit filled = 0.0%
+    m_s=  5.0 eV: M_total = 7.005e+14, deficit filled = 0.0%
+    m_s= 11.0 eV: M_total = 7.020e+14, deficit filled = 0.0%
+    m_s= 20.0 eV: M_total = 7.044e+14, deficit filled = 0.0%
+    => No deficit to fill (TGP alone overshoots)
+
+======================================================================
+  PART G: SUMMARY TABLE
+======================================================================
+
+     Cluster      M_deficit      M_nu(2eV)     M_nu(11eV)    fill(2eV)   fill(11eV)  min_ms_90
+                (1e14 Msun)    (1e14 Msun)    (1e14 Msun)          (%)          (%)       (eV)
+  ------------------------------------------------------------------------------------------
+        Coma          2.313          0.002          0.009          0.1          0.4        >20
+     Perseus          1.650          0.002          0.008          0.1          0.5        >20
+       Virgo          0.750          0.001          0.007          0.2          1.0        >20
+       A1689          4.934          0.002          0.010          0.0          0.2        >20
+      Bullet         -1.493          0.005          0.028          0.0          0.0       N/A*
+
+  * N/A means TGP alone already exceeds M_obs (no deficit)
+
+  Clusters with positive deficit: Coma, Perseus, Virgo, A1689
+
+  Global minimum m_s for >90% deficit fill (clusters with deficit):
+    => No tested mass fills >90% for ALL deficit clusters simultaneously
+       Coma: 0.7% filled at 20 eV
+       Perseus: 0.9% filled at 20 eV
+       Virgo: 1.8% filled at 20 eV
+       A1689: 0.4% filled at 20 eV
+
+  Global minimum m_s for >90% deficit fill (ALL clusters incl Bullet):
+    => No tested mass fills >90% for ALL clusters
+
+  Comparison with literature:
+    Sanders (2003): ~2 eV neutrinos can partially explain cluster mass
+      in MOND. Central densities reach TG limit for m > few eV.
+    Angus (2009): 11 eV sterile neutrinos can explain cluster masses
+      in MOND with full self-consistent Poisson-Boltzmann calculation.
+
+    TGP advantage: smaller deficit (~32% vs ~40% for MOND)
+    => TGP needs LESS neutrino mass to close the gap.
+
+  Assessment: Is TGP + 2 eV sterile neutrino sufficient?
+    NO - 2 eV is insufficient for some clusters.
+    Cluster-by-cluster at 2 eV:
+            Coma: 0.1% [INSUFFICIENT]
+         Perseus: 0.1% [INSUFFICIENT]
+           Virgo: 0.2% [INSUFFICIENT]
+           A1689: 0.0% [INSUFFICIENT]
+          Bullet: no deficit (TGP exceeds M_obs)
+
+    => Even 20 eV is not enough for all clusters.
+    Additional physics may be needed (e.g., non-thermal neutrino
+    distributions, cluster-specific baryon fractions, or
+    higher-order TGP effects).
+
+======================================================================
+  gs59 complete.
+======================================================================

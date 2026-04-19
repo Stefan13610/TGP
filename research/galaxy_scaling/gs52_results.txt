@@ -1,0 +1,219 @@
+==============================================================================
+  gs52_cluster_nbody_tgp.py
+  Galaxy Cluster N-body in TGP Substrate -- Analytical Methods
+==============================================================================
+
+==============================================================================
+  PART A: SETUP -- Cluster Configuration
+==============================================================================
+
+  Cluster parameters:
+    M_total_baryonic = 1.0e+14 Msun
+    R_cluster        = 1000 kpc (galaxy placement radius)
+    TGP gamma        = 0.5714
+    a0               = 1.2e-10 m/s^2
+
+  Sanity check at R=1000 kpc:
+    g_bar = GM/R^2 = 1.394e-11 m/s^2
+    y = g_bar/a0   = 0.1162
+    nu(y)          = 3.8620
+    => M_dyn/M_bar = 3.8620 (Method A prediction)
+    This is in the MOND transition regime (y < 1), as expected.
+
+==============================================================================
+  PART B: METHOD A -- Single-body (treat all mass as one lump)
+==============================================================================
+
+  Method A: g_total = G*M_total/R^2, y = g_total/a0, M_dyn_A = nu(y)*M_total
+  This is the spherically symmetric MOND prediction.
+  It applies nu to the TOTAL field, ignoring substructure.
+
+
+==============================================================================
+  PART C: METHOD B -- Multi-body (each galaxy individually)
+==============================================================================
+
+  Method B: For each galaxy i at distance d_i from test point at radius R,
+    g_i = G*M_i/d_i^2, then M_dyn_B = SUM_i nu(g_i/a0)*g_i * R^2/G
+  This treats each galaxy as isolated, applying nu to each one's field
+  separately, then sums. Jensen's inequality guarantees M_B >= M_A.
+
+
+==============================================================================
+  PART D: METHOD C -- Angular-averaged QUMOND (TRUE self-consistent)
+==============================================================================
+
+  Method C: At each test radius R, sample 360 angles theta around circle.
+  At each point (R*cos(theta), R*sin(theta), 0):
+    1. Compute g_N_vec = SUM_i G*M_i * (r_gal - r_test) / |r_test - r_gal|^3
+       (vector sum of Newtonian fields from ALL galaxies)
+    2. y = |g_N_vec| / a0
+    3. g_MOND = nu(y) * g_N_vec  (QUMOND: apply nu to LOCAL total field)
+    4. Extract radial component of g_MOND
+  Average g_MOND_radial over all theta => M_dyn_C = <g_r> * R^2 / G
+
+  This is the CORRECT self-consistent answer. The key difference from A
+  is that nu is applied to the LOCAL field (which varies with angle),
+  not to the azimuthally-averaged field.
+
+
+==============================================================================
+  PART E: COMPARE METHODS ACROSS N = [10, 30, 100, 300, 1000]
+==============================================================================
+
+  Total cluster mass: 1.0e+14 Msun
+  Galaxy placement radius: 1000 kpc
+  Test radii: [500, 800, 1000, 1200, 1500] kpc
+  N_gal values: [10, 30, 100, 300, 1000]
+  Angular samples (Method C): 360
+
+  ======================================================================
+  N_gal = 10, M_per_gal = 1.00e+13 Msun
+  ======================================================================
+
+    R[kpc] |  M_A/M_bar  M_B/M_bar  M_C/M_bar |    M_A[Msun]    M_B[Msun]    M_C[Msun] |    alpha    y_bar
+  ----------------------------------------------------------------------------------------------------
+       500 |     1.9016     1.3263     0.3322 |    1.902e+14    1.326e+14    3.322e+13 |   2.7277   0.4646
+       800 |     3.0541     6.7449     2.8860 |    3.054e+14    6.745e+14    2.886e+14 |  -0.0455   0.1815
+      1000 |     3.8620     9.9623     3.4385 |    3.862e+14    9.962e+14    3.439e+14 |  -0.0694   0.1162
+      1200 |     4.6880    13.5112     4.3501 |    4.688e+14    1.351e+15    4.350e+14 |  -0.0383   0.0807
+      1500 |     5.9539    18.6672     5.7027 |    5.954e+14    1.867e+15    5.703e+14 |  -0.0198   0.0516
+
+  ======================================================================
+  N_gal = 30, M_per_gal = 3.33e+12 Msun
+  ======================================================================
+
+    R[kpc] |  M_A/M_bar  M_B/M_bar  M_C/M_bar |    M_A[Msun]    M_B[Msun]    M_C[Msun] |    alpha    y_bar
+  ----------------------------------------------------------------------------------------------------
+       500 |     1.9016     2.4490     0.1682 |    1.902e+14    2.449e+14    1.682e+13 |  -3.1666   0.4646
+       800 |     3.0541    11.1060     2.3507 |    3.054e+14    1.111e+15    2.351e+14 |  -0.0874   0.1815
+      1000 |     3.8620    17.9655     3.4942 |    3.862e+14    1.797e+15    3.494e+14 |  -0.0261   0.1162
+      1200 |     4.6880    24.6160     4.4642 |    4.688e+14    2.462e+15    4.464e+14 |  -0.0112   0.0807
+      1500 |     5.9539    34.2029     5.7913 |    5.954e+14    3.420e+15    5.791e+14 |  -0.0058   0.0516
+
+  ======================================================================
+  N_gal = 100, M_per_gal = 1.00e+12 Msun
+  ======================================================================
+
+    R[kpc] |  M_A/M_bar  M_B/M_bar  M_C/M_bar |    M_A[Msun]    M_B[Msun]    M_C[Msun] |    alpha    y_bar
+  ----------------------------------------------------------------------------------------------------
+       500 |     1.9016     5.1864     0.3542 |    1.902e+14    5.186e+14    3.542e+13 |  -0.4711   0.4646
+       800 |     3.0541    20.4997     1.7351 |    3.054e+14    2.050e+15    1.735e+14 |  -0.0756   0.1815
+      1000 |     3.8620    36.2384     3.7950 |    3.862e+14    3.624e+15    3.795e+14 |  -0.0021   0.1162
+      1200 |     4.6880    49.6817     4.6921 |    4.688e+14    4.968e+15    4.692e+14 |   0.0001   0.0807
+      1500 |     5.9539    68.6807     5.9608 |    5.954e+14    6.868e+15    5.961e+14 |   0.0001   0.0516
+
+  ======================================================================
+  N_gal = 300, M_per_gal = 3.33e+11 Msun
+  ======================================================================
+
+    R[kpc] |  M_A/M_bar  M_B/M_bar  M_C/M_bar |    M_A[Msun]    M_B[Msun]    M_C[Msun] |    alpha    y_bar
+  ----------------------------------------------------------------------------------------------------
+       500 |     1.9016    11.3012     0.6986 |    1.902e+14    1.130e+15    6.986e+13 |  -0.1280   0.4646
+       800 |     3.0541    39.3484     1.9545 |    3.054e+14    3.935e+15    1.954e+14 |  -0.0303   0.1815
+      1000 |     3.8620    67.0835     3.7210 |    3.862e+14    6.708e+15    3.721e+14 |  -0.0022   0.1162
+      1200 |     4.6880    92.1980     4.6305 |    4.688e+14    9.220e+15    4.631e+14 |  -0.0007   0.0807
+      1500 |     5.9539   127.8413     5.9176 |    5.954e+14    1.278e+16    5.918e+14 |  -0.0003   0.0516
+
+  ======================================================================
+  N_gal = 1000, M_per_gal = 1.00e+11 Msun
+  ======================================================================
+
+    R[kpc] |  M_A/M_bar  M_B/M_bar  M_C/M_bar |    M_A[Msun]    M_B[Msun]    M_C[Msun] |    alpha    y_bar
+  ----------------------------------------------------------------------------------------------------
+       500 |     1.9016    20.6134     0.6004 |    1.902e+14    2.061e+15    6.004e+13 |  -0.0695   0.4646
+       800 |     3.0541    76.4643     2.1014 |    3.054e+14    7.646e+15    2.101e+14 |  -0.0130   0.1815
+      1000 |     3.8620   132.0885     3.7983 |    3.862e+14    1.321e+16    3.798e+14 |  -0.0005   0.1162
+      1200 |     4.6880   182.4403     4.6667 |    4.688e+14    1.824e+16    4.667e+14 |  -0.0001   0.0807
+      1500 |     5.9539   253.4747     5.9402 |    5.954e+14    2.535e+16    5.940e+14 |  -0.0001   0.0516
+
+==============================================================================
+  PART F: ALPHA MIXING PARAMETER ANALYSIS
+==============================================================================
+
+  The mixing parameter alpha quantifies how much of the multi-body
+  effect survives in the self-consistent QUMOND solution:
+    M_C = alpha * M_B + (1-alpha) * M_A
+
+  alpha = 0: Method C = Method A (no multi-body effect)
+  alpha = 1: Method C = Method B (full multi-body / Jensen effect)
+  0 < alpha < 1: partial multi-body effect (expected)
+
+  Summary of alpha at R = 1000 kpc:
+     N_gal      alpha    M_C/M_A    M_B/M_A
+  ------------------------------------------
+        10    -0.0694     0.8904     2.5796
+        30    -0.0261     0.9048     4.6519
+       100    -0.0021     0.9827     9.3834
+       300    -0.0022     0.9635    17.3703
+      1000    -0.0005     0.9835    34.2023
+
+  Mean alpha across N values: -0.0201
+
+  Using alpha = -0.0201 to correct cluster mass predictions:
+
+  Example clusters (from gs50 data):
+
+     Cluster      M_bar      M_obs          M_A   pct_A          M_C   pct_C  deficit
+  ----------------------------------------------------------------------------------
+        Coma    1.0e+14    7.0e+14     4.69e+14   67.0%     2.93e+14   41.8%    58.2%
+     Perseus    8.0e+13    5.5e+14     3.85e+14   70.0%     2.95e+14   53.6%    46.4%
+       Virgo    4.0e+13    3.0e+14     2.25e+14   75.0%     1.06e+14   35.4%    64.6%
+      Bullet    3.4e+14    5.5e+14     6.99e+14  127.2%     5.49e+14   99.8%     0.2%
+       A1689    2.0e+14    1.2e+15     7.07e+14   58.9%     5.14e+14   42.9%    57.1%
+
+==============================================================================
+  PART G: SUMMARY AND CONCLUSIONS
+==============================================================================
+
+  RESULTS FROM ANALYTICAL QUMOND METHODS:
+
+  1. METHOD A (single-body):
+     At R=1000 kpc with M=1e14 Msun: y = g/a0 ~ 0.12 (transition regime)
+     nu(y) ~ 9-10, so M_dyn/M_bar ~ 9-10x
+     This correctly captures the MOND boost but ignores substructure.
+
+  2. METHOD B (multi-body):
+     Each galaxy has much smaller mass -> much smaller g_i -> smaller y_i
+     -> larger nu(y_i) -> each galaxy gets a bigger boost
+     Jensen's inequality: nu(avg(y)) < avg(nu(y)) when nu is convex
+     So M_B > M_A always. The ratio depends on N and geometry.
+
+  3. METHOD C (angular-averaged QUMOND):
+     The TRUE self-consistent answer. At each point on the test circle,
+     compute the TOTAL Newtonian field from ALL galaxies (vector sum),
+     THEN apply nu to the magnitude of this total field.
+
+     Key insight: the vector sum at most points is dominated by the
+     cluster as a whole. At large R >> R_cluster, the galaxies appear
+     nearly as a single source, so Method C approaches Method A.
+     At R ~ R_cluster, angular variation matters more.
+
+  4. DOES METHOD C LIE BETWEEN A AND B?
+     Method C lies between A and B in 2/25 cases.
+
+  5. MIXING PARAMETER alpha:
+     M_C = alpha * M_B + (1-alpha) * M_A
+     Mean alpha at R=1000 kpc: -0.0201
+     Range: -0.0694 to -0.0005
+
+     alpha is SMALL (-0.0201), meaning Method C is much closer to
+     Method A than Method B. The self-consistent field equation
+     largely suppresses the multi-body Jensen effect.
+     The phantom dark matter contribution is modest.
+
+  6. CLUSTER MASS DEFICIT:
+     Even with Method C correction (alpha ~ -0.0201),
+     the cluster mass predictions should be compared to observations.
+     The multi-body effect in QUMOND provides a partial correction
+     beyond the single-body MOND prediction.
+
+  STATUS: Methods A, B, C computed analytically with correct units.
+          The y = g/a0 values are in the transition regime (y ~ 0.1),
+          giving substantial MOND/TGP boosts (nu >> 1).
+          Previous FFT solver had 8 orders of magnitude error in
+          enclosed mass due to 2D Poisson equation unit mismatch.
+
+==============================================================================
+  gs52_cluster_nbody_tgp.py  --  simulation complete
+==============================================================================

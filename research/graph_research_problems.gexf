@@ -1,108 +1,240 @@
 <?xml version='1.0' encoding='utf-8'?>
 <gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
-  <meta lastmodifieddate="2026-04-14">
+  <meta lastmodifieddate="2026-04-19">
     <creator>NetworkX 3.6.1</creator>
   </meta>
   <graph defaultedgetype="directed" mode="static" name="">
     <attributes mode="static" class="node">
       <attribute id="0" title="type" type="string" />
       <attribute id="1" title="color" type="string" />
-      <attribute id="2" title="priority" type="string" />
+      <attribute id="2" title="status" type="string" />
+      <attribute id="3" title="folder" type="string" />
     </attributes>
     <nodes>
-      <node id="R1: Cabibbo&#10;(Ω_Λ/N)²" label="R1: Cabibbo&#10;(Ω_Λ/N)²">
+      <node id="R1: cabibbo&#10;RESOLVED 0.75σ" label="R1: cabibbo&#10;RESOLVED 0.75σ">
         <attvalues>
-          <attvalue for="0" value="problem" />
+          <attvalue for="0" value="problem_R" />
           <attvalue for="1" value="#F44336" />
-          <attvalue for="2" value="NOW" />
+          <attvalue for="2" value="RESOLVED" />
+          <attvalue for="3" value="cabibbo_correction" />
         </attvalues>
       </node>
-      <node id="R2: CG-1/3/4&#10;continuum" label="R2: CG-1/3/4&#10;continuum">
+      <node id="R2: continuum&#10;OPEN 6-12mo" label="R2: continuum&#10;OPEN 6-12mo">
         <attvalues>
-          <attvalue for="0" value="problem" />
-          <attvalue for="1" value="#F44336" />
-          <attvalue for="2" value="LONG" />
-        </attvalues>
-      </node>
-      <node id="R3: Why N=3" label="R3: Why N=3">
-        <attvalues>
-          <attvalue for="0" value="problem" />
+          <attvalue for="0" value="problem_R" />
           <attvalue for="1" value="#FF9800" />
-          <attvalue for="2" value="LONG" />
+          <attvalue for="2" value="OPEN" />
+          <attvalue for="3" value="continuum_limit" />
         </attvalues>
       </node>
-      <node id="R4: h(Φ)=Φ&#10;metric" label="R4: h(Φ)=Φ&#10;metric">
+      <node id="R3: why_n3&#10;SOLID 13/13" label="R3: why_n3&#10;SOLID 13/13">
         <attvalues>
-          <attvalue for="0" value="problem" />
-          <attvalue for="1" value="#F44336" />
-          <attvalue for="2" value="NOW" />
+          <attvalue for="0" value="problem_R" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="SOLID" />
+          <attvalue for="3" value="why_n3" />
         </attvalues>
       </node>
-      <node id="R5: m∝A⁴&#10;scaling" label="R5: m∝A⁴&#10;scaling">
+      <node id="R4: metric&#10;COMPLETE 11/11" label="R4: metric&#10;COMPLETE 11/11">
         <attvalues>
-          <attvalue for="0" value="problem" />
+          <attvalue for="0" value="problem_R" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="metric_ansatz" />
+        </attvalues>
+      </node>
+      <node id="R5: mass_scaling&#10;BREAKTHROUGH 7/7" label="R5: mass_scaling&#10;BREAKTHROUGH 7/7">
+        <attvalues>
+          <attvalue for="0" value="problem_R" />
+          <attvalue for="1" value="#CDDC39" />
+          <attvalue for="2" value="BREAKTHROUGH" />
+          <attvalue for="3" value="mass_scaling_k4" />
+        </attvalues>
+      </node>
+      <node id="R6: brannen_sqrt2&#10;PARTIAL" label="R6: brannen_sqrt2&#10;PARTIAL">
+        <attvalues>
+          <attvalue for="0" value="problem_R" />
           <attvalue for="1" value="#FF9800" />
-          <attvalue for="2" value="MED" />
+          <attvalue for="2" value="PARTIAL" />
+          <attvalue for="3" value="brannen_sqrt2" />
         </attvalues>
       </node>
-      <node id="R6: B=√2&#10;Brannen" label="R6: B=√2&#10;Brannen">
+      <node id="R7: uv_completion&#10;EMPTY" label="R7: uv_completion&#10;EMPTY">
         <attvalues>
-          <attvalue for="0" value="problem" />
-          <attvalue for="1" value="#FF9800" />
-          <attvalue for="2" value="MED" />
-        </attvalues>
-      </node>
-      <node id="R7: UV&#10;completion" label="R7: UV&#10;completion">
-        <attvalues>
-          <attvalue for="0" value="problem" />
+          <attvalue for="0" value="problem_R" />
           <attvalue for="1" value="#9E9E9E" />
-          <attvalue for="2" value="LOW" />
+          <attvalue for="2" value="EMPTY" />
+          <attvalue for="3" value="uv_completion" />
+        </attvalues>
+      </node>
+      <node id="Q0: foundations&#10;COMPLETE 12/12" label="Q0: foundations&#10;COMPLETE 12/12">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_foundations" />
+        </attvalues>
+      </node>
+      <node id="Q1: measurement&#10;COMPLETE 22/22" label="Q1: measurement&#10;COMPLETE 22/22">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_measurement" />
+        </attvalues>
+      </node>
+      <node id="Q2: born_rule&#10;EMPTY placeholder" label="Q2: born_rule&#10;EMPTY placeholder">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#9E9E9E" />
+          <attvalue for="2" value="EMPTY" />
+          <attvalue for="3" value="qm_born_rule" />
+        </attvalues>
+      </node>
+      <node id="Q3: superposition&#10;COMPLETE 7/7" label="Q3: superposition&#10;COMPLETE 7/7">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_superposition" />
+        </attvalues>
+      </node>
+      <node id="Q4: entanglement&#10;COMPLETE 10/10" label="Q4: entanglement&#10;COMPLETE 10/10">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_entanglement" />
+        </attvalues>
+      </node>
+      <node id="Q5: spin&#10;COMPLETE 7/7" label="Q5: spin&#10;COMPLETE 7/7">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_spin" />
+        </attvalues>
+      </node>
+      <node id="Q6: statistics&#10;COMPLETE 8/8" label="Q6: statistics&#10;COMPLETE 8/8">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_statistics" />
+        </attvalues>
+      </node>
+      <node id="Q7: decoherence&#10;COMPLETE 8/8" label="Q7: decoherence&#10;COMPLETE 8/8">
+        <attvalues>
+          <attvalue for="0" value="problem_Q" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="COMPLETE" />
+          <attvalue for="3" value="qm_decoherence" />
+        </attvalues>
+      </node>
+      <node id="Galaxy: scaling&#10;46+ scripts PASS" label="Galaxy: scaling&#10;46+ scripts PASS">
+        <attvalues>
+          <attvalue for="0" value="problem_G" />
+          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="2" value="PASS" />
+          <attvalue for="3" value="galaxy_scaling" />
+        </attvalues>
+      </node>
+      <node id="Cosmo: tensions&#10;CLOSED no mechanism" label="Cosmo: tensions&#10;CLOSED no mechanism">
+        <attvalues>
+          <attvalue for="0" value="problem_C" />
+          <attvalue for="1" value="#F44336" />
+          <attvalue for="2" value="CLOSED" />
+          <attvalue for="3" value="cosmo_tensions" />
+        </attvalues>
+      </node>
+      <node id="Cosmo: H0&#10;OUTSIDE SCOPE" label="Cosmo: H0&#10;OUTSIDE SCOPE">
+        <attvalues>
+          <attvalue for="0" value="problem_C" />
+          <attvalue for="1" value="#2196F3" />
+          <attvalue for="2" value="OUTSIDE_SCOPE" />
+          <attvalue for="3" value="hubble_tension" />
+        </attvalues>
+      </node>
+      <node id="Cosmo: S8&#10;NEGLIGIBLE" label="Cosmo: S8&#10;NEGLIGIBLE">
+        <attvalues>
+          <attvalue for="0" value="problem_C" />
+          <attvalue for="1" value="#2196F3" />
+          <attvalue for="2" value="NEGLIGIBLE" />
+          <attvalue for="3" value="s8_tension" />
+        </attvalues>
+      </node>
+      <node id="Cosmo: DESI w(z)&#10;INCOMPATIBLE" label="Cosmo: DESI w(z)&#10;INCOMPATIBLE">
+        <attvalues>
+          <attvalue for="0" value="problem_C" />
+          <attvalue for="1" value="#F44336" />
+          <attvalue for="2" value="INCOMPATIBLE" />
+          <attvalue for="3" value="desi_dark_energy" />
         </attvalues>
       </node>
       <node id="galois&#10;GL(n,GF(2))" label="galois&#10;GL(n,GF(2))">
         <attvalues>
-          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="1" value="#81D4FA" />
           <attvalue for="0" value="tool" />
         </attvalues>
       </node>
       <node id="Cadabra2&#10;tensors" label="Cadabra2&#10;tensors">
         <attvalues>
-          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="1" value="#81D4FA" />
           <attvalue for="0" value="tool" />
         </attvalues>
       </node>
       <node id="Lean 4&#10;proofs" label="Lean 4&#10;proofs">
         <attvalues>
-          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="1" value="#81D4FA" />
           <attvalue for="0" value="tool" />
         </attvalues>
       </node>
       <node id="SymPy&#10;CAS" label="SymPy&#10;CAS">
         <attvalues>
-          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="1" value="#81D4FA" />
           <attvalue for="0" value="tool" />
         </attvalues>
       </node>
       <node id="SciPy&#10;ODE" label="SciPy&#10;ODE">
         <attvalues>
-          <attvalue for="1" value="#4CAF50" />
+          <attvalue for="1" value="#81D4FA" />
           <attvalue for="0" value="tool" />
         </attvalues>
       </node>
     </nodes>
     <edges>
-      <edge source="R1: Cabibbo&#10;(Ω_Λ/N)²" target="galois&#10;GL(n,GF(2))" id="0" />
-      <edge source="R2: CG-1/3/4&#10;continuum" target="Lean 4&#10;proofs" id="1" />
-      <edge source="R2: CG-1/3/4&#10;continuum" target="R5: m∝A⁴&#10;scaling" id="2" label="CG proves α=2 → k=4" />
-      <edge source="R3: Why N=3" target="galois&#10;GL(n,GF(2))" id="3" />
-      <edge source="R4: h(Φ)=Φ&#10;metric" target="Cadabra2&#10;tensors" id="4" />
-      <edge source="R5: m∝A⁴&#10;scaling" target="SymPy&#10;CAS" id="5" />
-      <edge source="R5: m∝A⁴&#10;scaling" target="SciPy&#10;ODE" id="6" />
-      <edge source="R5: m∝A⁴&#10;scaling" target="R6: B=√2&#10;Brannen" id="7" label="k=4 → mass formula → B" />
-      <edge source="R6: B=√2&#10;Brannen" target="Lean 4&#10;proofs" id="8" />
-      <edge source="R6: B=√2&#10;Brannen" target="SciPy&#10;ODE" id="9" />
-      <edge source="R6: B=√2&#10;Brannen" target="R1: Cabibbo&#10;(Ω_Λ/N)²" id="10" label="Koide → CKM structure" />
-      <edge source="R7: UV&#10;completion" target="SymPy&#10;CAS" id="11" />
+      <edge source="R1: cabibbo&#10;RESOLVED 0.75σ" target="galois&#10;GL(n,GF(2))" id="0" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="R1: cabibbo&#10;RESOLVED 0.75σ" id="1" label="foundational" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="R3: why_n3&#10;SOLID 13/13" id="2" label="foundational" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="R4: metric&#10;COMPLETE 11/11" id="3" label="foundational" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="R5: mass_scaling&#10;BREAKTHROUGH 7/7" id="4" label="foundational" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="R6: brannen_sqrt2&#10;PARTIAL" id="5" label="foundational" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="R7: uv_completion&#10;EMPTY" id="6" label="foundational" />
+      <edge source="R2: continuum&#10;OPEN 6-12mo" target="Lean 4&#10;proofs" id="7" />
+      <edge source="R3: why_n3&#10;SOLID 13/13" target="galois&#10;GL(n,GF(2))" id="8" />
+      <edge source="R4: metric&#10;COMPLETE 11/11" target="Galaxy: scaling&#10;46+ scripts PASS" id="9" label="metric ansatz" />
+      <edge source="R4: metric&#10;COMPLETE 11/11" target="Cadabra2&#10;tensors" id="10" />
+      <edge source="R5: mass_scaling&#10;BREAKTHROUGH 7/7" target="R3: why_n3&#10;SOLID 13/13" id="11" label="K^2 mechanism" />
+      <edge source="R5: mass_scaling&#10;BREAKTHROUGH 7/7" target="SymPy&#10;CAS" id="12" />
+      <edge source="R5: mass_scaling&#10;BREAKTHROUGH 7/7" target="SciPy&#10;ODE" id="13" />
+      <edge source="R6: brannen_sqrt2&#10;PARTIAL" target="R3: why_n3&#10;SOLID 13/13" id="14" label="Koide K=2/3" />
+      <edge source="R6: brannen_sqrt2&#10;PARTIAL" target="Lean 4&#10;proofs" id="15" />
+      <edge source="R6: brannen_sqrt2&#10;PARTIAL" target="SciPy&#10;ODE" id="16" />
+      <edge source="R7: uv_completion&#10;EMPTY" target="SymPy&#10;CAS" id="17" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q1: measurement&#10;COMPLETE 22/22" id="18" label="hbar" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q2: born_rule&#10;EMPTY placeholder" id="19" label="hbar" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q3: superposition&#10;COMPLETE 7/7" id="20" label="hbar" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q4: entanglement&#10;COMPLETE 10/10" id="21" label="hbar" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q5: spin&#10;COMPLETE 7/7" id="22" label="hbar" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q6: statistics&#10;COMPLETE 8/8" id="23" label="hbar" />
+      <edge source="Q0: foundations&#10;COMPLETE 12/12" target="Q7: decoherence&#10;COMPLETE 8/8" id="24" label="hbar" />
+      <edge source="Q1: measurement&#10;COMPLETE 22/22" target="Q4: entanglement&#10;COMPLETE 10/10" id="25" label="Born rule" />
+      <edge source="Q3: superposition&#10;COMPLETE 7/7" target="Q7: decoherence&#10;COMPLETE 8/8" id="26" label="NL mixing" />
+      <edge source="Q5: spin&#10;COMPLETE 7/7" target="Q6: statistics&#10;COMPLETE 8/8" id="27" label="winding number B" />
+      <edge source="Galaxy: scaling&#10;46+ scripts PASS" target="Cosmo: tensions&#10;CLOSED no mechanism" id="28" label="scope boundary" />
+      <edge source="Galaxy: scaling&#10;46+ scripts PASS" target="Cosmo: H0&#10;OUTSIDE SCOPE" id="29" label="predictions" />
+      <edge source="Galaxy: scaling&#10;46+ scripts PASS" target="Cosmo: S8&#10;NEGLIGIBLE" id="30" label="predictions" />
+      <edge source="Galaxy: scaling&#10;46+ scripts PASS" target="Cosmo: DESI w(z)&#10;INCOMPATIBLE" id="31" label="predictions" />
     </edges>
   </graph>
 </gexf>

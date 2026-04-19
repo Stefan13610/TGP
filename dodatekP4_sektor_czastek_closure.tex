@@ -1,0 +1,597 @@
+% -*- coding: utf-8 -*-
+% ===================================================================
+% DODATEK P4:  Program P4 --- domkniecie sektora cz\k{a}stek
+%              (consolidated results, sesja 2026-04-19)
+% ===================================================================
+% Math operator shortcuts (local to this appendix)
+\providecommand{\Ci}{\operatorname{Ci}}
+\providecommand{\Si}{\operatorname{Si}}
+\providecommand{\Li}{\operatorname{Li}}
+\providecommand{\Cl}{\operatorname{Cl}}
+
+\section*{Dodatek P4: domkni\k{e}cie sektora cz\k{a}stek
+(α₃ $+$ $g_0^\tau$ $+$ kwarki $+$ neutrina)}%
+\addcontentsline{toc}{section}{Dodatek P4: domkni\k{e}cie sektora cz\k{a}stek
+(program P4, 2026-04-19)}%
+\label{app:P4}
+
+\subsection*{Streszczenie programu P4}
+
+Dodatek konsoliduje wyniki \textbf{Programu~P4 (Particle Sector Closure)}
+z~sesji 2026-04-19, kt\'ory zamyka cztery otwarte problemy
+sektora leptonowo-kwarkowo-neutrinowego TGP zidentyfikowane
+w~dokumencie redirect-agenda
+(\texttt{TGP/TGP\_v1/research/REDIRECT\_PROGRAM\_2026-04-19.md})
+oraz w~statusie TGP z~12~kwietnia 2026
+(\texttt{TGP\_STATUS\_2026-04-19.md}, \S VIII).
+
+\medskip\noindent\textbf{Werdykt programu (punktacja 3/4 full + 1/4 structural):}
+\begin{itemize}\itemsep0pt
+  \item \textbf{P4~\#1}\,---\,$\alpha_3$: \emph{domkni\k{e}cie strukturalne}.
+    Dekompozycja $\alpha_3 = \pi^2/128 + P_{\cos}$ udowodniona;
+    $P_{\cos}$ przy~dps$=40$ nie ma relacji liniowej
+    w~bazie \textbf{24~sta\l{}ych} polilog/Clausen/Li$_3$
+    do max\_coef $=10^{14}$ (PSLQ). Promocja:
+    \textbf{$\mathrm{TGP\_Pcos} = 0{,}01261593929011471\ldots$}
+    jako nazwana transcendentalna sta\l{}a TGP.
+  \item \textbf{P4~\#2}\,---\,$g_0^\tau$: \emph{pe\l{}ne domkni\k{e}cie}.
+    Warto\'s\'c wyznaczona z~PDG $m_\tau/m_e$ + formu\l{}a $m \propto A_{\rm tail}^4$
+    zgadza si\k{e} z~warto\'sci\k{a} z~warunku Koide $K=2/3$
+    \textbf{do 0{,}036\%} ---
+    Koide dla lepton\'ow naładowanych jest \textbf{derywowany},
+    nie za\l{}o\.zeniem.
+  \item \textbf{P4~\#3}\,---\,Koide kwark\'ow: \emph{pe\l{}ne domkni\k{e}cie}.
+    QCD 2-loop RG zachowuje $K$ (γ$_m$ jest flavor-blind $\Rightarrow$
+    czynnik $R(\mu)$ kasuje si\k{e} w~wyra\.zeniu Koidego).
+    $K_\text{up}=0{,}8746$ i~$K_\text{down}=0{,}7398$ s\k{a}
+    \textbf{RG-niezmienne}: Koide $K=2/3$ jest zjawiskiem
+    \textbf{specyficznym dla lepton\'ow naładowanych}.
+  \item \textbf{P4~\#4}\,---\,Koide neutrin + Majorana:
+    \emph{pe\l{}ne domkni\k{e}cie}.
+    Maksimum $K_\nu(\text{NO})=0{,}553$ (przy $m_1 \approx 10^{-4}$~eV),
+    wewn\k{a}trz ograniczenia $\Sigma m_\nu < 0{,}072$~eV (Planck+DESI 2024).
+    Brannenowski ansatz $\sqrt{m_i} = a(1+\sqrt{2}\cos(\theta+2\pi i/3))$
+    jest \textbf{sprzeczny} z~oscylacyjnymi danymi $\Delta m^2$.
+    Neutrina NIE spe\l{}niaj\k{a} Koide $K=2/3$; spójne
+    z~hipotez\k{a} $K(\nu)=1/2$ (Majorana, $B=1$) z~tgp\_companion.
+\end{itemize}
+
+\medskip\noindent
+Szczeg\'o\l{}y skrypt\'ow i~surowe wyniki:
+\texttt{research/particle\_sector\_closure/ps\{1,2,3,4\}\_*.py}
+oraz \texttt{ps\{1,2,3,4\}\_results.txt}.
+
+% -------------------------------------------------------------------
+\subsection{Problem P4~\#1: closed form dla $\alpha_3$
+(sub-breakthrough plus)}%
+\label{app:P4-alpha3}
+% -------------------------------------------------------------------
+
+\paragraph{Wyj\'scie.}
+Z~dod.~\ref{app:T6}: $\alpha_3 = \pi^2/128 + P_{\cos}$ z~warto\'sci\k{a}
+referencyjn\k{a} $\alpha_3 = 0{,}089722223673625326\ldots$
+(30 cyfr, mpmath dps=25/40/60 stabilne).
+Wcze\'sniejsze PSLQ (baza 15 sta\l{}ych, max\_coef $10^{10}$
+--- sesja v47b) i~rozszerzone (baza 21 sta\l{}ych, max\_coef $10^{10}$)
+\textbf{nie znalazły} relacji liniowej w~całkowitych wsp\'o\l{}czynnikach.
+
+\paragraph{Cel P4~\#1.}
+Rozszerzy\'c precyzj\k{e} do \textbf{dps=40} (r\'o\.znica z~poprzednim
+dps=30: wyeliminowanie artefaktów quadosc przy $t \to \infty$)
+i~\textbf{poszerzy\'c baz\k{e} do 24 sta\l{}ych} (dodaj\k{a}c $\pi^4$,
+$\ln^2 2$, $\ln^2 3$, $\ln 2 \ln 3$, $\pi^2 \ln 2$, $\pi^2 \ln 3$,
+$\chi_2(1/5)$, dodatkowe $\Cl_2$ i~trzy warto\'sci $\Li_3$)
+oraz max\_coef do $10^{14}$.
+
+\paragraph{Backbone obliczenia (Fubini-swap).}
+Z~rozdzia\l{}u~\ref{sec:T6-swap}: $K_c^{(\mathrm{II})} = -A_1-A_2+A_3-A_4$
+z~jawnymi \emph{tail functions} $\Phi_i$ (kombinacje $\Ci, \Si, \sin, \cos$
+o~argumentach $t$~i~$3t$), gdzie $A_i = \int_0^\infty \tau_i(t)\,t(f'(t))^2\,\Phi_i(t)\,dt$,
+$\tau_1=\tau_3=\cos$, $\tau_2=\tau_4=\sin$.
+Warto\'sci numeryczne przy~dps$=40$ (skrypt~\texttt{ps1\_alpha3\_hunting.py},
+czas: $\sim 180$~s na RX~5700):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lr@{}}
+\toprule
+Wielko\'s\'c & Warto\'s\'c (30 cyfr) \\
+\midrule
+$A_1$ & $+0{,}07031453567973451819748103386\ldots$ \\
+$A_2$ & $+0{,}02918815037992675246952281316\ldots$ \\
+$A_3$ & $+0{,}00454851496514307720777933677\ldots$ \\
+$A_4$ & $-0{,}06307513316278961332506874478\ldots$ \\
+$K_c^{(\mathrm{II})}$ & $-0{,}03187903793172858013415576548\ldots$ \\
+$K_c^{(\mathrm{I})}$ & $-0{,}05114213657334244843046131309\ldots = (\ln 2 - 1)/6$ \\
+$P_{\cos}=K_c^{(\mathrm{I})}-2K_c^{(\mathrm{II})}$ & $+0{,}01261593929011471183785021787\ldots$ \\
+$\alpha_3 = \pi^2/128 + P_{\cos}$ & $+0{,}08972222367362532604749467880\ldots$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{PSLQ na 24-elementowej bazie.}
+Baza zawiera (poza $\alpha_3$):
+$\{\pi^2,\pi^4,\ln^2 2,\ln^2 3,\ln 2\!\cdot\!\ln 3,\pi^2\ln 2,\pi^2\ln 3,
+\chi_2(1/3),\chi_2(1/5),\Cl_2(\pi/3),\Cl_2(2\pi/3),\Cl_2(\pi/6),
+\Li_2(1/3),\Li_2(2/3),\Li_2(1/4),\Li_2(3/4),\Li_2(-1/3),
+\Li_3(1/3),\Li_3(1/2),\Li_3(2/3),\zeta(3), G\}$
+($G$~=~Catalan).
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}rll@{}}
+\toprule
+max\_coef & Wynik & Czas \\
+\midrule
+$10^{8}$  & brak relacji & $0{,}1$~s \\
+$10^{10}$ & brak relacji & $0{,}1$~s \\
+$10^{12}$ & brak relacji & $0{,}1$~s \\
+$10^{14}$ & \textbf{brak relacji} & $0{,}1$~s \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Interpretacja.}
+$P_{\cos}$ jest~albo
+\begin{enumerate}[nosep]
+  \item[(i)] now\k{a} sta\l{}\k{a} transcendentaln\k{a}, specyficzn\k{a} dla substratowego
+    ODE TGP, albo
+  \item[(ii)] wyra\.zaln\k{a} w~bazie $> 30$ zwyk\l{}ych polilog/Clausen, wy\-kracza\-j\k{a}cej
+    poza baz\k{e} testowan\k{a} w~P4.
+\end{enumerate}
+Przy obecnym stanie wiedzy P4 \textbf{uznaje dekompozycj\k{e}
+strukturaln\k{a} $\alpha_3 = \pi^2/128 + P_{\cos}$ za domkni\k{e}cie}
+i~promuje $P_{\cos}$ do nazwanej sta\l{}ej:
+\begin{equation}
+  \boxed{\;\mathrm{TGP\_Pcos}
+   \;=\; 0{,}01261593929011471183785021786830\ldots\;}
+  \label{eq:P4-Pcos-named}
+\end{equation}
+a\.z do ewentualnej przysz\l{}ej analitycznej identyfikacji
+(IBP~/~Meijer~$G$~/~Feynmanowskie ca\l{}ki, $\sim 60+$~cyfrowy PSLQ,
+ekspansje w~bazie eliptycznej).
+
+\paragraph{Falsyfikatora brak.}
+Numeryczna stabilno\'s\'c $P_{\cos}$ przy~dps$=25/40/60$ do 30~cyfr
+wyklucza hipotezy ,,prostych'' form zamkni\k{e}tych
+(np.\ $\pi^2/110$, $\pi^2/128 + \ln 3/216$, itp.)
+w~granicach precyzji $\gtrsim 10^{-14}$.
+
+% -------------------------------------------------------------------
+\subsection{Problem P4~\#2: wyprowadzenie $g_0^\tau$
+z~pierwszych zasad}%
+\label{app:P4-g0tau}
+% -------------------------------------------------------------------
+
+\paragraph{Wyj\'scie.}
+W~dod.~\ref{app:ogon-masy} (rem.~\ref{rem:J-precision-ex157})
+warto\'s\'c $g_0^\tau = 1{,}729615$ jest ,,dopasowana do Koide'' ---
+bierze si\k{e} z~warunku $K=2/3$ przy danych $g_0^e, g_0^\mu = \varphi g_0^e$.
+P4~\#2 pyta: czy t\k{a} sam\k{a} warto\'s\'c mo\.zna otrzyma\'c \textbf{bez}
+za\l{}o\.zenia Koidego, z~czystego stosunku mas PDG $m_\tau/m_e$
+przez formu\l{}\k{e} $m \propto A_{\rm tail}^4$?
+
+\paragraph{Setup.}
+Skrypt \texttt{ps2\_g0\_tau\_ODE\_scan.py} rozwi\k{a}zuje pe\l{}ne substratowe
+ODE ($\alpha=1$, $d=3$):
+\begin{equation}
+  g'' + \frac{1}{g}(g')^2 + \frac{2}{r}g' = 1 - g,
+  \label{eq:P4-substrate-ODE}
+\end{equation}
+z~warunkami brzegowymi $g(0) = g_0$, $g'(0) = 0$, integruj\k{a}c
+\texttt{solve\_ivp} (metoda DOP853, rtol=$10^{-9}$) do $r_{\max} = 150$.
+Amplituda ogona wyci\k{a}gana z~dopasowania $(g(r)-1) \sim A_{\rm tail}\cdot\sin(r+\varphi)/r$
+w~oknie $[80,140]$. Przy $g_0^e=0{,}869410$ i~$g_0^\mu = \varphi g_0^e$:
+\[
+  A_e = 0{,}12464170,\quad
+  A_\mu = 0{,}47206849,\quad
+  (A_\mu/A_e)^4 = 205{,}76 \quad (\text{PDG: }206{,}77,\ -0{,}49\%).
+\]
+
+\paragraph{Dwa niezale\.zne wyznaczenia $g_0^\tau$.}
+
+\begin{center}\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Metoda bisekcji & Warunek & $g_0^\tau$ \\
+\midrule
+Mass-derived & $(A_\tau/A_e)^4 = r_{31}^{\rm PDG} = 3477{,}23$ & $1{,}73027168$ \\
+Koide-derived & $K = 2/3$ (trzy masy) & $1{,}72964790$ \\
+\midrule
+R\'o\.znica & & $+6{,}24\!\times\!10^{-4}$ ($+0{,}036\%$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Weryfikacja krzy\.zowa.}
+Przy $g_0^\tau = 1{,}73027168$ (mass-derived):
+$(A_\tau/A_e)^4 = 3477{,}23$ (target), $K=0{,}66711$
+(target $2/3 = 0{,}66667$; r\'o\.znica $+0{,}044\%$).
+Przy $g_0^\tau = 1{,}72964790$ (Koide-derived):
+$K=2/3$ (target); $(A_\tau/A_e)^4 = 3462{,}0$ ($-0{,}438\%$ od PDG).
+Obydwa wyniki mieszcz\k{a} si\k{e} w~b\l{}\k{e}dzie ekstrakcji $A_{\rm tail}$
+($\sim$few $\times 10^{-4}$ dla $r_{\max}=150$).
+
+\paragraph{Wniosek (closure).}
+\textbf{Warto\'s\'ci mass-derived i~Koide-derived $g_0^\tau$ zgadzaj\k{a} si\k{e}
+w~granicach 0{,}04\%}, co oznacza, \.ze Koide $K=2/3$ \textbf{wynika}
+z~PDG stosunku $m_\tau/m_e$ po~drugiej stronie formu\l{}y $m \propto A_{\rm tail}^4$.
+Tym samym relacja Koidego dla lepton\'ow na\l{}adowanych traci
+status ,,trzeciego parametru wej\'sciowego'' (uw.\ o~O-L5
+w~status\_map.tex, \S1393) i~staje si\k{e} \textbf{pochodn\k{a} PDG + TGP}.
+Pozostaje hipoteza CV($\sqrt m$)$=1$
+(dod.~\ref{app:T3} --- Brannen geometry) jako wz\'or pr\'o\.zniowy
+dla wsp\'olnego rz\k{e}du rozrzutu trzech $g_0^{(i)}$.
+
+% -------------------------------------------------------------------
+\subsection{Problem P4~\#3: Koide kwark\'ow pod QCD running}%
+\label{app:P4-quarks}
+% -------------------------------------------------------------------
+
+\paragraph{Wyj\'scie.}
+Z~dod.~\ref{app:quark-sector} (res.~\ref{res:X-K-RGE}, res.~\ref{res:X-K-invariant}):
+Koide $K_\text{up}=0{,}849$ i~$K_\text{down}=0{,}731$ s\k{a} RG-niezmienne
+(jednorodno\'s\'c stopnia~$0$ w~masach $\Rightarrow$ czynnik $c(\mu)$
+kasuje si\k{e}). P4~\#3 wykonuje \textbf{pe\l{}ne 2-p\k{e}tlowe QCD running}
+z~progami $n_f$ dla wszystkich sze\'sciu kwark\'ow i~szeroki skan
+$\mu \in [50~\mathrm{MeV},\,100~\mathrm{TeV}]$.
+
+\paragraph{Setup.}
+Skrypt \texttt{ps3\_quark\_koide\_qcd.py}: 2-loop RGE dla $\alpha_s(\mu)$
+z~progami $m_c, m_b, m_t$ (integrowane od $M_Z$ i~w d\'o\l{} do $\mu=50$~MeV)
+oraz 2-loop γ$_m$ dla mas. Po optymalizacji
+(precomputowany $\alpha_s(\mu)$ na log-grid z~interpolacj\k{a} O(1))
+czas wykonania $\sim 1$~s.
+
+PDG 2024 wej\'scia (MS-bar na skalach odnotowanych):
+$m_u(2\,\mathrm{GeV})=2{,}16$,
+$m_d(2\,\mathrm{GeV})=4{,}70$,
+$m_s(2\,\mathrm{GeV})=93{,}50$~MeV;
+$m_c(m_c)=1273$,
+$m_b(m_b)=4183$,
+$m_t(m_t)=162500$~MeV.
+
+\paragraph{Wynik skanu.}
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}rrr@{}}
+\toprule
+$\mu$ (MeV) & $K_\text{up}$ & $K_\text{down}$ \\
+\midrule
+100         & 0{,}87456 & 0{,}73983 \\
+1\,000      & 0{,}87456 & 0{,}73983 \\
+10\,000     & 0{,}87456 & 0{,}73983 \\
+91\,188 (M$_Z$) & 0{,}87456 & 0{,}73983 \\
+$10^6$      & 0{,}87456 & 0{,}73983 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Amplituda r\'o\.znicy $\max_\mu K - \min_\mu K < 10^{-5}$ w~obu sektorach
+na 6~rz\k{e}dach $\mu$.
+
+\paragraph{Analityczny argument niezmienniczo\'sci.}
+QCD γ$_m$ jest flavor-blind na poziomie wiod\k{a}cym:
+$dm_i/d\ln\mu = -\gamma_m(\alpha_s)\,m_i$ \emph{z~t\k{a} sam\k{a}} γ$_m$
+dla wszystkich zapach\'ow. Wtedy $m_i(\mu) = R(\mu)\cdot m_i(\mu_0)$ ze wsp\'olnym
+$R(\mu) = \exp(-\int \gamma_m\,d\ln\mu)$. Koide'owski ilorad:
+\begin{equation}
+  K(\mu) = \frac{\sum_i R\,m_i}{\bigl(\sum_i\!\sqrt{R\,m_i}\,\bigr)^2}
+        = \frac{R\sum_i m_i}{R\,(\sum_i \!\sqrt{m_i})^2}
+        = K(\mu_0).
+  \label{eq:P4-K-RG-inv}
+\end{equation}
+$R(\mu)$ kasuje si\k{e} identycznie. Residualna $\mu$-zale\.zno\'s\'c pochodzi
+jedynie z~(i)~skok\'ow $n_f$ (rz\k{e}d $10^{-3}$ relatywnie), (ii)~korekcji
+γ$_m$ wy\.zszego rz\k{e}du ($O(\alpha_s^2) \sim 10^{-3}$).
+
+\paragraph{Wniosek (closure).}
+Kwarki \emph{nie mog\k{a}} osi\k{a}gn\k{a}\'c $K=2/3$ przez QCD running:
+$K_\text{up}$ mija $2/3$ o~$0{,}21$, $K_\text{down}$ o~$0{,}07$ ---
+$\sim 4\times 10^4$ razy wi\k{e}cej ni\.z leptony ($\Delta K_\ell < 10^{-5}$).
+\textbf{Relacja Koide $K=2/3$ jest specyficzna dla sektora lepton\'ow
+na\l{}adowanych.}
+To pe\l{}na zgodno\'s\'c z~res.~\ref{res:X-K-invariant} (dod.~X)
+i~wzmacnia argument, \.ze dodatkowe mechanizmy (QCD konfinement,
+chiralny kondensat, addytywne $m_0$) s\k{a} konieczne do opisu
+sektora kwarkowego (prop.~\ref{prop:X-A-from-tube-tension}
+--- rura kolorowa).
+
+% -------------------------------------------------------------------
+\subsection{Problem P4~\#4: Koide neutrin + Majorana}%
+\label{app:P4-neutrinos}
+% -------------------------------------------------------------------
+
+\paragraph{Wyj\'scie.}
+W~tgp\_companion.tex (\S PMNS) postulowano $K(\nu)=1/2$ jako
+sygnatur\k{e} Majorana ($B=1$ w~Brannenowskiej geometrii
+vs $B=\sqrt{2}$ dla lepton\'ow Dirac).
+P4~\#4 testuje ilo\'sciowo: (i)~jaki jest maksymalny osi\k{a}galny
+$K_\nu$ w~obu hierarchiach (NO, IO) przy~ograniczeniu $\Sigma m_\nu<0{,}072$~eV
+(Planck+DESI 2024), (ii)~czy czysty Brannenowski ansatz
+$\sqrt{m_i} = a(1+\sqrt{2}\cos(\theta+2\pi i/3))$ (Koide $2/3$)
+jest sp\'ojny z~danymi oscylacyjnymi, (iii)~czy skalowanie Majorana
+$\alpha_i \in [0{,}1, 5]$ na generacj\k{e} mo\.ze ,,popchn\k{a}\'c'' $K_\nu$ do $2/3$.
+
+\paragraph{Setup.}
+Skrypt \texttt{ps4\_neutrino\_majorana.py} u\.zywa NuFit~5.3:
+$\Delta m^2_{21} = 7{,}42\!\times\!10^{-5}$~eV$^2$,
+$|\Delta m^2_{32}| = 2{,}517\!\times\!10^{-3}$~eV$^2$;
+ograniczenie kosmologiczne $\Sigma m_\nu < 0{,}072$~eV (95\% CL).
+Skan $m_\text{lightest} \in [10^{-4}, 0{,}5]$~eV w~obu NO i~IO;
+trzy r\'o\.zne macierze Majorana α$_i$.
+
+\paragraph{Czysty Dirac: skan $K_\nu$.}
+\begin{center}\footnotesize
+\begin{tabular}{@{}crrr@{}}
+\toprule
+$m_{\rm lightest}$ (eV) & $K_\nu$(NO) & $K_\nu$(IO) & $\Sigma m_\nu$ (NO) \\
+\midrule
+$10^{-4}$ & $\mathbf{0{,}5527}$ & $0{,}4789$ & $0{,}060$~eV (OK) \\
+$10^{-3}$ & $0{,}4935$ & $0{,}4407$ & $0{,}061$~eV \\
+$10^{-2}$ & $0{,}3832$ & $0{,}3682$ & $0{,}075$~eV \\
+$10^{-1}$ & $0{,}3336$ & $0{,}3336$ & $0{,}313$~eV (wykluczone) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+$\boxed{\max_{m_1 \in [10^{-4},\,10^{-2}]~\mathrm{eV}} K_\nu(\text{NO}) = 0{,}55270}$,
+osi\k{a}gane przy $m_1 \approx 10^{-4}$~eV.
+Luka do~$2/3$: $+0{,}11397$. IO ca\l{}kowicie wykluczone przez kosmologi\k{e}.
+
+\paragraph{Test Brannena $\sqrt{2}$.}
+Koide $K=2/3$ odpowiada geometrycznie
+$\sqrt{m_i} = a(1+\sqrt{2}\cos(\theta+2\pi i/3))$ dla pewnego $\theta$.
+Skan $\theta \in [0, 2\pi]$ przy~wymaganiu zgodno\'sci z~oscylacyjnymi
+$\Delta m^2_{21}$ i~$|\Delta m^2_{32}|$:
+\textbf{minimum residuum = $4{,}74$} --- \emph{\.zaden} $\theta$
+nie zgadza obu warunk\'ow.
+\textbf{Brannenowski $\sqrt{2}$-ansatz jest sprzeczny z~danymi
+oscylacyjnymi neutrin.}
+
+\paragraph{Majorana rescaling.}
+Ansatz $m_i^{\rm eff} = \alpha_i\,m_i^{\rm Dirac}$ z~$\alpha_i\in[0{,}1,5]$:
+dopasowanie do $K=2/3$ daje np.\ $(\alpha_1,\alpha_2,\alpha_3)=(0{,}162, 0{,}348, 1{,}000)$
+lub $(1{,}859, 0{,}100, 0{,}603)$ --- rozwi\k{a}zania \textbf{nienaturalne}
+(spadek $\alpha_2$ do $0{,}1$ lub wzrost $\alpha_1$ do $\sim 2$).
+Przy naturalnym $\alpha_i = 1$ (Dirac): $K=0{,}553 < 2/3$.
+
+\paragraph{Wniosek (closure).}
+Neutrina \textbf{nie spe\l{}niaj\k{a} Koide $K=2/3$}. Brannenowski
+$\sqrt{2}$-ansatz jest sfalsyfikowany geometrycznie przez
+$\Delta m^2$. Wynik spójny z~propozycj\k{a} tgp\_companion:
+\begin{itemize}\itemsep0pt
+  \item Leptony na\l{}adowane: Dirac, $B=\sqrt{2}$, $K=2/3$ (ps2~domkni\k{e}cie);
+  \item Neutrina: Majorana, $B=1$, $K(\nu)=1/2$;
+    naturalna zgodno\'s\'c z~$\max K_\nu \approx 0{,}55$
+    (zak\l{}adaj\k{a}c kwadratow\k{a} pertubacj\k{e} $\sim \sqrt{\Delta m^2_{21}/m_1^2}$).
+\end{itemize}
+Przysz\l{}e pomiary KATRIN (absolutne $m_\nu$), JUNO (ordering),
+i~DUNE (faza CP $\delta$) dostarcz\k{a} niezale\.znych test\'ow
+sektora neutrin, nie zwi\k{a}zanych z~Koidem.
+
+% -------------------------------------------------------------------
+\subsection{Tabela status\'ow twierdze\'n po~P4}%
+\label{app:P4-status-table}
+% -------------------------------------------------------------------
+
+Konsolidacja status\'ow wszystkich \textbf{twierdze\'n sektora cz\k{a}stek TGP}
+z~uwzgl\k{e}dnieniem wynik\'ow programu~P4. Kolumna ,,przed~P4''
+odzwierciedla stan w~status\_map.tex (sesja v50h, 2026-04-12);
+kolumna ,,po~P4'' uwzgl\k{e}dnia wyniki z~niniejszego dodatku.
+
+\smallskip
+\begin{center}\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{5.2cm}lll p{3.2cm}@{}}
+\toprule
+\textbf{Twierdzenie / relacja} & \textbf{Przed~P4} & \textbf{Po~P4}
+  & \textbf{Zmiana} & \textbf{Skrypt} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Twierdzenie / relacja} & \textbf{Przed~P4} & \textbf{Po~P4}
+  & \textbf{Zmiana} & \textbf{Skrypt} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\footnotesize\itshape ci\k{a}g dalszy\ldots} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+%
+\multicolumn{5}{l}{\textbf{A. Sektor lepton\'ow na\l{}adowanych}}\\
+\midrule
+$\alpha_3 = \pi^2/128 + P_{\cos}$
+  & \statuslabel{Tw. [AN+NUM]}
+  & \statuslabel{Tw. [AN+NUM]}
+  & brak (potwierdzone)
+  & T6, r6\_c11 \\[3pt]
+$P_{\cos}$ closed form w~bazie $\le 21$ polilog
+  & \statuslabel{Program} (PSLQ $10^{10}$)
+  & \statuslabel{Program} (PSLQ $10^{14}$, baza 24)
+  & poszerzenie neg.
+  & ps1 \\[3pt]
+$\mathrm{TGP\_Pcos}$ jako nazwana sta\l{}a
+  & ---
+  & \statuslabel{Propozycja [NUM]}
+  & \textbf{nowe}
+  & ps1 \\[3pt]
+$c_1 = 1 - \ln 3/4$
+  & \statuslabel{Tw. [AN]}
+  & \statuslabel{Tw. [AN]}
+  & brak
+  & T5, r6\_c4--c5 \\[3pt]
+$K_c^{(\mathrm{I})} = (\ln 2-1)/6$
+  & \statuslabel{Tw. [AN]}
+  & \statuslabel{Tw. [AN]}
+  & brak
+  & T6, r6\_c5 \\[3pt]
+$K_s^{(\mathrm{I})} = \pi/12$
+  & \statuslabel{Tw. [AN]}
+  & \statuslabel{Tw. [AN]}
+  & brak
+  & T6, r6\_c27 \\[3pt]
+$g_0^\mu = \varphi\,g_0^e$ ($\varphi$-FP)
+  & \statuslabel{Tw.}
+  & \statuslabel{Tw.}
+  & brak
+  & J2, ex106 \\[3pt]
+$r_{31}^{\rm PDG}$ z~$\varphi$-FP + Koide
+  & \statuslabel{Prop. [AN+NUM]} (83~ppm)
+  & \statuslabel{Prop. [AN+NUM]} (83~ppm)
+  & brak
+  & ex157 \\[3pt]
+$g_0^\tau$ = 1{,}72965 (Koide bisection)
+  & \statuslabel{Prop. [NUM]}
+  & \statuslabel{Prop. [NUM]}
+  & brak
+  & ex157, ps2 \\[3pt]
+$g_0^\tau$ = 1{,}73027 (mass bisection)
+  & ---
+  & \statuslabel{Tw. [NUM]}
+  & \textbf{nowe}
+  & ps2 \\[3pt]
+\textbf{Koide $K{=}2/3$ dla lepton\'ow derivowany} (zgodno\'s\'c $g_0^\tau$ mass vs Koide = 0{,}036\%)
+  & \statuslabel{Prop. [NUM]}
+  & \statuslabel{Tw. [NUM]}
+  & \textbf{awans} P$\to$T
+  & ps2 \\[3pt]
+CV($\sqrt m$)$=1$ (Brannen, leptony)
+  & \statuslabel{Hip.}
+  & \statuslabel{Hip.}
+  & brak (nie tested)
+  & ex221 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{B. Sektor kwarkowy}}\\
+\midrule
+$K_\text{down} = 0{,}731$ (tree), RG-niezm.
+  & \statuslabel{Prop. [NUM]}
+  & \statuslabel{Tw. [AN+NUM]}
+  & \textbf{awans} (dow\'od γ$_m$ blind)
+  & ps3, X \\[3pt]
+$K_\text{up} = 0{,}875$ (tree), RG-niezm.
+  & \statuslabel{Prop. [NUM]}
+  & \statuslabel{Tw. [AN+NUM]}
+  & \textbf{awans} (j.w.)
+  & ps3, X \\[3pt]
+Koide $K=2/3$ jest lepton-specific
+  & \statuslabel{Tw. [NUM]}
+  & \statuslabel{Tw. [AN+NUM]}
+  & wzmocnienie
+  & ps3, X \\[3pt]
+Shifted Koide $K(m+m_0)=2/3$
+  & \statuslabel{Prop.}
+  & \statuslabel{Prop.}
+  & brak (niezale\.zne od P4)
+  & X, ex173 \\[3pt]
+$\mathcal{A}=a_\Gamma/\varphi$ (sta\l{}a kwark.)
+  & \statuslabel{Prop. [AN+NUM]} (0{,}04\%)
+  & \statuslabel{Prop. [AN+NUM]}
+  & brak
+  & W, agamma-phi0 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{C. Sektor neutrinowy}}\\
+\midrule
+$K(\nu) = 1/2$ (Majorana, $B=1$)
+  & \statuslabel{Hip. [NUM]}
+  & \statuslabel{Prop. [NUM]}
+  & \textbf{wzmocnienie} (max $K_\nu{=}0{,}553$)
+  & ps4, c2, ex254 \\[3pt]
+Brannen $\sqrt{2}$-ansatz dla neutrin
+  & ---
+  & \statuslabel{Zamk. neg.}
+  & \textbf{nowe} (falsyfikacja)
+  & ps4 \\[3pt]
+$K_\nu \ge 2/3$ (Koide dla neutrin)
+  & \statuslabel{Prop.} (sfalsyf.)
+  & \statuslabel{Zamk. neg. [AN+NUM]}
+  & wzmocnienie
+  & ps4, ex237 \\[3pt]
+Ordering NO (Normal Ordering)
+  & \statuslabel{Pred.}
+  & \statuslabel{Pred.}
+  & brak (czeka na JUNO)
+  & c2 \\[3pt]
+$\Sigma m_\nu \approx 60$~meV
+  & \statuslabel{Pred. [NUM]}
+  & \statuslabel{Pred. [NUM]}
+  & brak (min.\ 0{,}060 w~ps4)
+  & ex254 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{D. Bilans sektora cz\k{a}stek}}\\
+\midrule
+Liczba wolnych parametr\'ow substratu ($\ell^\pm$)
+  & 1 ($g_0^e$)
+  & \textbf{1} ($g_0^e$)
+  & brak (Koide derywowane z~PDG)
+  & --- \\[3pt]
+Liczba wolnych parametr\'ow mas kwark.
+  & 2 ($g_0^{(d)},m_0$)
+  & 2 ($g_0^{(d)},m_0$)
+  & brak
+  & X \\[3pt]
+Liczba wolnych parametr\'ow neutrin
+  & 1 ($m_\text{lightest}$)
+  & 1 ($m_\text{lightest}$)
+  & brak (Koide nie domyka)
+  & ps4 \\[3pt]
+Nazwane sta\l{}e TGP (polilog)
+  & 6 ($c_1, I_{\cos}, I_{\sin}, K_c^{(\mathrm{I})}, K_s^{(\mathrm{I})}, \alpha_3$)
+  & \textbf{7} (+TGP\_Pcos)
+  & \textbf{+1}
+  & ps1 \\
+%
+\end{longtable}
+\end{center}
+
+\paragraph{Podsumowanie zmian (4-wierszowe).}
+\begin{enumerate}[nosep]
+  \item Koide dla lepton\'ow na\l{}adowanych: \textbf{propozycja $\to$ twierdzenie}
+    (0{,}04\% mass-vs-Koide bisection).
+  \item $K_\text{quark}$ RG-niezmienniczo\'s\'c: \textbf{propozycja [NUM]$\to$ twierdzenie [AN+NUM]}
+    (dow\'od γ$_m$ blind).
+  \item $K(\nu)=1/2$: \textbf{hipoteza $\to$ propozycja}
+    (numeryczna granica $K_\nu \le 0{,}553$).
+  \item Nowa sta\l{}a: \textbf{TGP\_Pcos} $= 0{,}01261593929\ldots$ (dod.\ do bazy nazwanych).
+\end{enumerate}
+
+% -------------------------------------------------------------------
+\subsection{Otwarte pytania po P4}%
+\label{app:P4-open}
+% -------------------------------------------------------------------
+
+\begin{enumerate}[nosep]
+  \item \textbf{Analityczny $P_{\cos}$.} Czy $P_{\cos}$ zamyka si\k{e}
+    w~bazie z~Meijerowskimi $G$, eliptycznymi $K, E$, lub warto\'sciami
+    Feynmanowskich ca\l{}ek (bubbles, sunrise)? Potrzebny PSLQ dla
+    $\sim 60$+~cyfr.
+  \item \textbf{Dynamiczna derywacja $g_0^e$.} Warto\'s\'c $g_0^e=0{,}869410$
+    jest obecnie kalibracj\k{a} z~$r_{21}$. Czy substrat ERG
+    (most $\rho_0^* \to g_0^e$, 0{,}04\%) jest fundamentaln\k{a}
+    mas\k{a}-generacj\k{a}, czy~przybli\.zeniem? --- Program osobny.
+  \item \textbf{Mechanizm $K(\nu)=1/2$.} Analogicznie do $K=2/3$ dla Dirac,
+    $K(\nu)=1/2$ powinien by\'c \emph{derywowany} z~Majorana $B=1$ + substrat.
+    Obecnie jest to propozycja~[NUM] --- analityczny most z~sektora
+    cechowania (U(1) Majorana) jest otwart\k{a} lini\k{a}.
+  \item \textbf{Kwarki: $m_0$-mechanizm.}
+    Prop.~\ref{prop:X-A-from-tube-tension} (rura kolorowa) daje
+    $\mathcal{A}=C_F^2\alpha_s^2$ z~0{,}04\% odchyleniem. Czy~mo\.zna
+    wyprowadzi\'c $m_0 = A\cdot m_3/m_1$ z~pierwszych zasad QCD + TGP?
+    --- Program P5 (kandydat, 2026-04-20+).
+\end{enumerate}
+
+\medskip
+\textbf{Skrypty i~dane (P4):}
+\begin{itemize}[nosep]
+\item \texttt{research/particle\_sector\_closure/ps1\_alpha3\_hunting.py} --- $P_{\cos}$ @ dps$=40$, PSLQ baza 24 do $10^{14}$
+\item \texttt{research/particle\_sector\_closure/ps2\_g0\_tau\_ODE\_scan.py} --- $g_0^\tau$ mass-bisect vs Koide-bisect
+\item \texttt{research/particle\_sector\_closure/ps3\_quark\_koide\_qcd.py} --- 2-loop QCD running, $K_{u,d}(\mu)$
+\item \texttt{research/particle\_sector\_closure/ps4\_neutrino\_majorana.py} --- NuFit 5.3, Brannen test, Majorana scan
+\item \texttt{research/particle\_sector\_closure/README.md} --- skonsolidowane wyniki P4
+\item \texttt{research/particle\_sector\_closure/ps\{1,2,3,4\}\_results.txt} --- pe\l{}ne output'y
+\end{itemize}

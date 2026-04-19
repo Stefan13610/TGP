@@ -1,0 +1,307 @@
+========================================================================
+gs56: FORM 4 DEEP ANALYSIS
+nu(y) = 1 / (1 - exp(-y^delta))
+========================================================================
+
+Loaded 14 RAR bins
+log(gbar) range: -11.69 to -8.91
+log(gobs) range: -10.75 to -8.90
+
+========================================================================
+PART A: FORM 4 PROPERTIES
+========================================================================
+
+1. Definition: nu4(y, delta) = 1 / (1 - exp(-y^delta))
+
+2. Asymptotic limits:
+   y >> 1 (Newtonian regime):
+     exp(-y^delta) -> 0, so nu4 -> 1/(1-0) = 1  [GOOD]
+   y << 1 (deep MOND regime):
+     y^delta -> 0, exp(-y^delta) -> 1 - y^delta
+     nu4 -> 1/y^delta
+     g_obs = nu4 * g_bar = g_bar / y^delta = g_bar / (g_bar/a0)^delta
+          = g_bar^(1-delta) * a0^delta
+
+3. BTFR requirement:
+   V^4 = G*M*a0 requires g_obs = sqrt(g_bar * a0) at low g_bar
+   Form 4 at small y: g_obs = g_bar^(1-delta) * a0^delta
+   For BTFR slope 4: need 1-delta = 0.5, i.e., delta = 0.5 EXACTLY
+
+   Numerical verification:
+   y=1e-04: g_form4/g_btfr = 1.00500833 (ratio->1 means exact BTFR)
+   y=1e-03: g_form4/g_btfr = 1.01589472 (ratio->1 means exact BTFR)
+   y=1e-02: g_form4/g_btfr = 1.05083319 (ratio->1 means exact BTFR)
+
+4. Value at y=1:
+   nu4(y=1, any delta) = 1/(1 - 1/e) = e/(e-1) = 1.581977
+   nu_tgp(y=1) = 1 + exp(-1)/1^0.5714 = 1 + 0.367879 = 1.367879
+   nu_mond(y=1) = 0.5 + sqrt(1.25) = 1.618034
+
+========================================================================
+PART B: RAR FIT COMPARISON (5 FORMS)
+========================================================================
+
+Form                          chi2 red_chi2      BIC   Parameters
+------------------------------------------------------------------------
+1. MOND standard            0.4151   0.0296   0.4151         none
+2. MOND simple              0.1944   0.0139   0.1944         none
+3. TGP standard             3.0823   0.2202   3.0823 a=0.8,g=0.57
+4. Form 4 (fit delta)       0.1919   0.0148   2.8310     d=0.4974
+5. Form 5                   0.4151   0.0296   0.4151         none
+
+Form 5 vs MOND standard difference check:
+  max |nu_form5 - nu_mond| over y in [0.01, 100] = 0.00e+00
+  -> Form 5 IS IDENTICAL to MOND standard (algebraically equivalent)
+
+Form 2 (MOND simple) vs Form 4 (delta=0.5):
+  MOND simple chi2 = 0.1944
+  Form 4 (delta=0.5) chi2 = 0.1944
+  -> These ARE the same function: 1/(1-exp(-y^0.5)) = 1/(1-exp(-sqrt(y)))
+
+========================================================================
+PART C: DELTA TENSION ANALYSIS
+========================================================================
+
+1. TGP predicts delta = alpha/2 = 0.8/2 = 0.40
+2. Data best fit: delta = 0.4974
+3. BTFR requires: delta = 0.50 exactly
+
+4. Physical scenarios for different delta values:
+   delta = alpha/2 mapping:
+   delta = 0.40 -> alpha = 0.80 (Flory exponent in d=3: nu_F = 3/5)
+   delta = 0.50 -> alpha = 1.00 (random walk: nu_F = 1/2 in d=2)
+   delta = 5/12 = 0.417 -> alpha = 5/6 (d=3 SAW Flory exact)
+   Or: delta = 1/2 may arise directly from BTFR constraint,
+       independent of Flory exponent
+
+5. Chi2 scan over delta:
+
+   delta        chi2       red_chi2   note      
+   ----------------------------------------------------
+   0.4000       3.4466     0.2651     TGP pred
+   0.4500       0.9737     0.0749     intermed
+   0.4974       0.1919     0.0148     best fit
+   0.5000       0.1944     0.0150     BTFR exact
+   0.5500       1.1823     0.0909     overshoot
+
+   Chi2 degradation from 0.4974 to 0.40: 0.1919 -> 3.4466 (factor 18.0)
+   Delta-chi2 = 3.2547
+   For 1 parameter, delta-chi2 > 1 means > 1-sigma tension
+   For 1 parameter, delta-chi2 > 4 means > 2-sigma tension
+   For 1 parameter, delta-chi2 > 9 means > 3-sigma tension
+   -> delta=0.40 is 1.8-sigma from best fit
+
+========================================================================
+PART D: CLUSTER PREDICTIONS WITH FORM 4
+========================================================================
+
+Cluster         M_bar      M_obs    M_form4      M_TGP     M_MOND  y_cluster
+------------------------------------------------------------------------
+Coma         1.00e+14   7.00e+14   4.02e+14   4.69e+14   4.06e+14     0.0807
+Perseus      8.00e+13   5.50e+14   3.29e+14   3.85e+14   3.31e+14     0.0768
+Virgo        4.00e+13   3.00e+14   1.87e+14   2.25e+14   1.88e+14     0.0574
+Bullet       3.40e+14   5.50e+14   7.27e+14   6.99e+14   7.37e+14     0.3949
+A1689        2.00e+14   1.20e+15   6.43e+14   7.07e+14   6.49e+14     0.1375
+
+Cluster deficit analysis (M_predicted / M_obs):
+Cluster       Form4/obs      TGP/obs     MOND/obs
+--------------------------------------------------
+Coma             0.5745       0.6697       0.5795
+Perseus          0.5974       0.7000       0.6026
+Virgo            0.6219       0.7501       0.6274
+Bullet           1.3226       1.2715       1.3402
+A1689            0.5357       0.5889       0.5405
+
+========================================================================
+PART E: ROTATION CURVES (NGC 2403-like)
+========================================================================
+
+Rotation curves for NGC 2403-like galaxy:
+M_disk = 5.0e+09 Msun, M_gas = 3.5e+09 Msun, R_d = 2.1 kpc
+
+R(kpc)   Newton     MOND      TGP   F4best  F4_0.40
+------------------------------------------------------
+   0.5     35.2     47.5     44.7     47.1     46.5
+   3.0     61.7     93.1     91.6     92.6     89.1
+   5.5     62.5    105.3    107.7    104.8     98.4
+   8.0     58.9    109.6    115.5    109.2    100.2
+  10.5     54.7    111.2    119.9    110.8     99.6
+  13.0     50.7    111.8    122.6    111.3     98.3
+  15.5     47.3    111.8    124.5    111.3     96.8
+  18.0     44.4    111.7    125.9    111.2     95.3
+  20.5     41.8    111.5    126.9    111.0     93.9
+  23.0     39.6    111.3    127.8    110.7     92.6
+
+Percentage difference relative to MOND standard:
+R(kpc)    TGP-MOND% F4best-MOND% F4_040-MOND%
+------------------------------------------------
+   0.5        -5.99        -0.89        -2.12
+   3.0        -1.63        -0.61        -4.29
+   5.5         2.26        -0.49        -6.53
+   8.0         5.35        -0.44        -8.61
+  10.5         7.77        -0.43       -10.46
+  13.0         9.72        -0.44       -12.07
+  15.5        11.32        -0.46       -13.48
+  18.0        12.67        -0.48       -14.72
+  20.5        13.84        -0.50       -15.81
+  23.0        14.87        -0.53       -16.79
+
+========================================================================
+PART F: CAN FORM 4 BE DERIVED FROM TGP?
+========================================================================
+
+ANALYSIS: TGP Standard vs Form 4 Relationship
+
+1. TGP standard form:
+   nu_TGP(y) = 1 + exp(-y^alpha) / y^gamma
+   where alpha = 0.8, gamma = 0.5714
+
+   Asymptotes:
+   - y >> 1: nu_TGP -> 1 (Newtonian)
+   - y << 1: nu_TGP -> 1/y^gamma (deep MOND-like)
+   - For BTFR: g_obs ~ g_bar^(1-gamma) * a0^gamma
+     Need gamma = 0.5 for BTFR slope 4, but gamma = 0.5714
+     -> TGP standard does NOT give exact BTFR slope 4
+
+2. Form 4:
+   nu4(y) = 1 / (1 - exp(-y^delta))
+
+   Asymptotes:
+   - y >> 1: nu4 -> 1 (Newtonian)
+   - y << 1: nu4 -> 1/y^delta (deep MOND-like)
+   - For BTFR: need delta = 0.5 exactly
+
+3. Algebraic relationship:
+   Write nu4 = 1 + F(y) where F(y) = exp(-y^delta) / (1 - exp(-y^delta))
+
+   Compare with TGP: F_TGP(y) = exp(-y^alpha) / y^gamma
+
+   For these to be equal:
+   exp(-y^delta) / (1 - exp(-y^delta)) = exp(-y^alpha) / y^gamma
+
+   Small-y expansion (y << 1):
+   LHS: exp(-y^delta) / (1 - exp(-y^delta))
+      ~ (1 - y^delta) / y^delta
+      ~ 1/y^delta - 1
+   RHS: exp(-y^alpha) / y^gamma
+      ~ (1 - y^alpha) / y^gamma
+      ~ 1/y^gamma
+
+   Leading terms match when gamma = delta.
+
+   Next order: LHS has correction -1, RHS has correction -y^alpha/y^gamma = -y^(alpha-gamma)
+   These match when alpha - gamma = 0, i.e., alpha = gamma = delta.
+
+   -> Form 4 corresponds to TGP with alpha = gamma = delta ~ 0.5
+
+4. TGP constraint: gamma = alpha * c_eff / (c_eff + 1)
+   If alpha = gamma: c_eff / (c_eff + 1) = 1 -> c_eff = infinity
+
+   Physical meaning:
+   c_eff = morphological codimension of the galaxy in the substrate
+   c_eff -> infinity means the galaxy occupies zero volume fraction
+   in the substrate (point-like embedding)
+
+   This is UNPHYSICAL for extended objects like galaxies.
+
+   However: in the limit c_eff >> 1, gamma -> alpha, which gives
+   nearly Form-4 behavior. For c_eff = 10: gamma = 10/11 * alpha.
+   For alpha = 0.5: gamma = 0.4545 (close but not exact).
+
+5. Alternative interpretation:
+   Form 4 may NOT be derivable from TGP standard form.
+   Instead, it could arise from a DIFFERENT TGP mechanism:
+   - Modified substrate propagator
+   - Non-perturbative polymer effects
+   - Exact resummation of the TGP series
+
+   The fact that Form 4 = MOND simple (when delta = 0.5) suggests
+   it may be a more fundamental form than the TGP perturbative result.
+
+Numerical verification: Form 4 vs TGP with alpha=gamma=0.5:
+
+       y   Form4(0.5) TGP(a=g=0.5)        ratio
+------------------------------------------------
+   0.010    10.508332    10.048374     1.045774
+   0.050     4.990754     4.576052     1.090625
+   0.100     3.688586     3.304963     1.116075
+   0.500     1.972654     1.697304     1.162227
+   1.000     1.581977     1.367879     1.156518
+   2.000     1.321208     1.171909     1.127397
+   5.000     1.119668     1.047797     1.068592
+  10.000     1.044200     1.013386     1.030407
+
+Key finding: Form 4 != TGP(alpha=gamma=0.5)
+The exponential structures differ:
+  Form 4: F(y) = exp(-y^d) / (1 - exp(-y^d))   [geometric series]
+  TGP:    F(y) = exp(-y^a) / y^g                [power-law denominator]
+These converge only asymptotically for y << 1 and y >> 1,
+but differ at intermediate y (transition region).
+
+========================================================================
+PART G: SUMMARY AND IMPLICATIONS
+========================================================================
+
+KEY RESULTS:
+
+1. FORM 4 PERFORMANCE:
+   - Best fit delta = 0.4974 (very close to 0.5)
+   - Chi2 = 0.1919 on 14 RAR bins (reduced chi2 = 0.0148)
+   - DRAMATICALLY better than MOND standard (chi2 = 0.4151)
+   - Better than TGP standard (chi2 = 3.0823)
+
+2. FORM 4 = MOND SIMPLE (when delta = 0.5):
+   nu = 1/(1-exp(-sqrt(y)))  [MOND simple interpolating function]
+   This is a KNOWN form in the MOND literature (McGaugh 2008).
+   The fact that the best fit gives delta ~ 0.5 means:
+   Form 4 rediscovers MOND simple as the optimal interpolating function.
+
+3. BTFR:
+   - Form 4 with delta = 0.5 gives BTFR slope EXACTLY 4
+   - TGP standard with gamma = 0.5714 gives slope 4/(1+0.5714) ~ 2.54
+     (in the sense that g_obs ~ g_bar^(1-gamma), not exactly slope 4)
+   - This is a SIGNIFICANT advantage of Form 4
+
+4. DELTA TENSION:
+   - Data prefer delta = 0.4974
+   - TGP predicts delta = 0.40 (from alpha = 0.8)
+   - Chi2 at delta=0.40 vs best: 3.4466 vs 0.1919
+   - Tension: 1.8 sigma
+
+5. CLUSTER PREDICTIONS:
+   Form 4 gives similar cluster mass predictions to MOND and TGP.
+   All forms underpredict observed cluster masses.
+   The cluster deficit persists regardless of interpolating function,
+   suggesting it is a genuine physical effect (hot gas, non-thermal
+   pressure, or actual missing mass).
+
+6. ROTATION CURVES:
+   Form 4 (delta=0.497) and MOND simple (delta=0.5) give nearly
+   identical rotation curves. The difference from MOND standard
+   is small (<5%%) at most radii, largest in the transition region.
+
+7. TGP COMPATIBILITY:
+   Form 4 CANNOT be directly derived from TGP standard form
+   (nu = 1 + exp(-y^a)/y^g) with physical parameters.
+   It would require alpha = gamma (i.e., c_eff -> infinity),
+   which is unphysical.
+
+   POSSIBLE RESOLUTIONS:
+   a) TGP standard form is only the leading-order approximation;
+      higher-order corrections could yield Form 4
+   b) The true TGP nu(y) is obtained by resummation, giving
+      the geometric-series structure of Form 4
+   c) alpha is not exactly 4/5 but closer to 1/2
+   d) The interpolating function depends on galaxy properties
+      (not universal), and Form 4 is an effective average
+
+8. BOTTOM LINE:
+   Form 4 with delta ~ 0.5 is phenomenologically excellent.
+   It equals the well-known MOND simple function.
+   The tension with TGP (delta=0.4 vs 0.5) is real but modest.
+   This tension could CONSTRAIN TGP parameters or indicate
+   that the perturbative TGP form needs modification.
+
+========================================================================
+END gs56_form4_analysis.py
+========================================================================

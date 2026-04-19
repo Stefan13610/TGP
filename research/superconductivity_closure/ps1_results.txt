@@ -1,0 +1,178 @@
+==============================================================================
+  ps1_zero_resistance_condition.py
+==============================================================================
+
+  Program P5 #1:  IFF-warunek na faze zerooporowa w sieci solitonow TGP
+
+==============================================================================
+  Part A.  Soliton g_0(r) z ODE substratu (alpha=1, d=3)
+==============================================================================
+
+  g_0^e:  g(0) = 0.869470  g(r_max=80.0) = 1.001502  (cel: 1.0)
+  g_0^mu:  g(0) = 1.406832  g(r_max=80.0) = 0.994099  (cel: 1.0)
+  g_0^tau:  g(0) = 1.729615  g(r_max=80.0) = 0.988047  (cel: 1.0)
+
+==============================================================================
+  Part B.  Asymptota ogona:  g(r) - 1 ~ A sin(r + delta)/r
+==============================================================================
+
+  Wniosek fizyczny: ogon OSCYLUJE (Friedel-like), nie zanika eksponencjalnie.
+  Dlugosc falowa = 2pi (jednostki substratu), amplituda ~ A/r.
+  Dlugosc 'lokalizacji' = dlugosc falowa / (2 pi) = 1 jednostka substratu.
+
+  g_0^e:   A = +0.124587   delta = +3.0843 rad   rms_fit = 2.04e-04
+  g_0^mu:   A = +0.472198   delta = +0.0997 rad   rms_fit = 2.94e-03
+  g_0^tau:   A = +0.956027   delta = +0.0705 rad   rms_fit = 1.21e-02
+
+  Dlugosc lokalizacji (dla e):  xi_loc ~ |A_e| = 0.1246 (jedn. substr.)
+
+==============================================================================
+  Part C.  Sprzezenie Josephsona J(a) = integral overlap dwoch solitonow
+==============================================================================
+
+  Definicja:  J(a) = int d^3 r  h_A(r) h_B(|r - a z|),  h = g - 1
+  Oczekiwana forma: oscylacja J(a) z dlugoscia falowa ~ pi (produkt dwoch sin/r)
+  => Friedel-like RKKY oscillations.
+
+  a (jedn. substr.)    J(a)
+        1.00        +4.928371e+00
+        2.00        +2.667277e+00
+        3.00        +2.824356e-01
+        4.00        -1.103403e+00
+        5.00        -1.123914e+00
+        6.00        -2.775094e-01
+        7.00        +5.454967e-01
+        8.00        +7.246719e-01
+        9.00        +2.730144e-01
+       10.00        -3.133062e-01
+       11.00        -5.308945e-01
+       12.00        -2.649456e-01
+       13.00        +1.848428e-01
+       14.00        +4.128125e-01
+       15.00        +2.566729e-01
+       16.00        -1.006272e-01
+       17.00        -3.284017e-01
+       18.00        -2.454225e-01
+       19.00        +4.284264e-02
+       20.00        +2.651164e-01
+       21.00        +2.345221e-01
+       22.00        +3.716054e-03
+       23.00        -2.056817e-01
+       24.00        -2.135256e-01
+       25.00        -3.269569e-02
+
+  Liczba zmian znaku J(a) w zakresie a in [1, 25]: 7
+  Pozycje zer (pierwsze 6):
+    a_0 = 3.150
+    a_0 = 6.290
+    a_0 = 9.435
+    a_0 = 12.577
+    a_0 = 15.721
+    a_0 = 18.861
+  Sredni polperiod oscylacji:  3.1422  (teoria: pi = 3.1416)
+  Pelny okres oscylacji:       6.2843  (teoria: 2pi = 6.2832)
+
+==============================================================================
+  Part D.  Preferowane stale sieci  (minima J(a) z J > 0)
+==============================================================================
+
+  Dla SC: szukamy a* gdzie J(a*) > 0 (atrakcyjne, stabilne, spojne fazowo)
+  - minima J(a) < 0 sa REPULSYWNE (wykluczone dla SC)
+  - maksima J(a) > 0 sa ATRAKCYJNE  (dopuszczalne)
+
+  Liczba lokalnych maksimow J > 0 w [1, 25]:  3
+  Pierwsze maksima (a*, J*):
+    a* =   7.75   J* = +7.5068e-01
+    a* =  14.00   J* = +4.1281e-01
+    a* =  20.50   J* = +2.8403e-01
+
+  Preferowana stala sieci TGP (pierwsze maksimum):  a* = 7.750
+  Sprzezenie w tym punkcie:                         J* = +7.5068e-01
+
+==============================================================================
+  Part E.  T_c w modelu XY na sieciach Bravais
+==============================================================================
+
+  k_B T_c / J  w modelu XY (Monte Carlo + BKT):
+
+  Siec             z    k_B T_c/J     T_c [J/k_B]
+  ---------------- --  -----------    -----------
+  SC (simple cubic)   6      2.2017    +1.6528e+00
+  BCC               8      2.9356    +2.2037e+00
+  FCC              12      4.4034    +3.3055e+00
+  2D square         4      0.8929    +6.7031e-01
+
+  UWAGA: T_c podana w jednostkach substratu TGP (bezwymiarowa).
+        Konwersja do Kelvin wymaga mapowania skal TGP->SI (ps3).
+
+==============================================================================
+  Part F.  Topologiczna ochrona prądu persystentnego
+==============================================================================
+
+  Parametr porzadku:  psi(r) = |psi|(r) exp(i theta(r))  (U(1) field)
+  Pierwsza grupa homotopii:  pi_1(U(1)) = Z
+  => kwantyzowane winding numbers n in Z:  loop_integral(grad_theta . dl) = 2 pi n
+
+  Dla d=3 rozwiciem windingu jest VORTEX-RING o promieniu R.
+  Energia ringa (standardowy wynik XY/London):
+     E_ring(R) = 2 pi J R [ ln(R/xi_core) - 1 ]
+
+  Bariera rozwicia rosnie liniowo z promieniem R => ekstensywnie z objętoscia.
+  Stan n != 0 nie moze rozpasc sie bez pokonania bariery.
+
+  Przyklad: dla J* = 7.5068e-01, xi_core = 1.0
+    R =     10:  E_ring = +6.144e+01   E/k_B T_c^SC = 3.72e+01
+    R =    100:  E_ring = +1.700e+03   E/k_B T_c^SC = 1.03e+03
+    R =   1000:  E_ring = +2.786e+04   E/k_B T_c^SC = 1.69e+04
+
+  Wniosek: bariera E_ring / k_B T_c rosnie z R (roznica skali).
+  Makroskopowy prad persystentny (R ~ rozmiar probki) jest topologicznie
+  chroniony: E_barrier >> k_B T dla T < T_c.
+
+==============================================================================
+  Part G.  Werdykt IFF dla fazy zerooporowej w TGP
+==============================================================================
+
+  Warunek:  faza zerooporowa w sieci solitonow TGP istnieje <=>
+
+    (i)   J(a) > 0  dla stalej sieci a  (atrakcyjne sprzezenie faz)
+    (ii)  T < T_c^XY(J, z, d)  (ponizej progu koherencji)
+    (iii) pi_1(U(1)) = Z  (netrywialna topologia parametru porzadku)
+
+  (i)  J(a*) > 0 ?       TAK  (a* = 7.750, J* = +7.5068e-01)
+  (ii) T_c > 0 ?         TAK  (dla SC: T_c = +1.6528e+00 J/k_B)
+  (iii) pi_1(U(1)) = Z ? TAK  (struktura U(1) substratu TGP)
+
+  WERDYKT:  Wszystkie trzy warunki SPELNIONE => faza SC istnieje w TGP.
+
+  Konieczność:  wystarczy zaobserwowac zanik J(a) (np. dla a poza maksimum)
+     lub podgrzac probke ponad T_c aby SC zanikl.
+  Wystarczalność:  dla a = a*, T < T_c^XY, U(1)-phase koherentna na calej
+     probce => prad persystentny topologicznie chroniony (vortex-ring barrier).
+
+  STATUS ps1: Hipoteza -> PROPOZYCJA  (warunek IFF spelniony numerycznie
+     dla substratowego solitonu g_0^e. Dowod analityczny bariery vortex-ring
+     jest klasyczny (London/Ginzburg-Landau); nowoscią jest identyfikacja
+     Friedel-like oscylacji J(a) z ODE substratu TGP.)
+
+==============================================================================
+  KLUCZOWY WYNIK ps1: Friedel-like sprzezenie J(a) z ODE substratu
+==============================================================================
+
+  Ogon solitonu TGP h(r) ~ A sin(r + delta)/r wymusza JAWNE Friedel-like
+  oscylacje sprzezenia faz J(a) o dlugosci falowej 2pi (jedn. substratu).
+
+  Konsekwencja fizyczna:  istnieje DYSKRETNY zestaw preferowanych stalych
+  sieci a* (pierwsze maksima J(a) > 0) -- dokladnie jak w RKKY / oscillations
+  Friedela. TGP naturalnie selekcjonuje stale sieci materialow SC-friendly.
+
+  Pierwsze a* = 7.750  (jedn. substratu)
+  Nastepne maksima: 7.75, 14.00, 20.50
+
+  Dla materialu rzeczywistego potrzebna mapa TGP-jednostki <-> Angstrem
+  (to jest zadanie ps3). Ale struktura OSCYLACYJNA jest wlasnosca generic
+  substratu TGP, NIE zalezy od kalibracji skal.
+
+==============================================================================
+  ps1 complete.
+==============================================================================

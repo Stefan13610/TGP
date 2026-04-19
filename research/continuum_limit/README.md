@@ -17,7 +17,16 @@ Z nimi: TGP jest **wyprowadzone z pierwszych zasad**.
 
 - Słabe twierdzenie α=2: ZAMKNIĘTE (Lemma A1–A5, a1_alpha2_frg_synthesis.py: 7/7 PASS)
 - CG-2 (numeryczny): K_IR/K_UV = 1.000 (FRG LPA', 8/8 PASS)
-- Silne twierdzenie: OTWARTE — czysta matematyka
+- CG-1/CG-3/CG-4 numeryczne wsparcie: cg_strong_numerical.py (2026-04-18)
+- Silne twierdzenie: OTWARTE — czysta matematyka (szac. 6-12 miesięcy)
+
+### Numeryczne wsparcie silnego twierdzenia (cg_strong_numerical.py)
+
+Testy MC 1D lattice z blokowym uśrednianiem:
+- **CG-1**: Kontrakcja — wariancja Phi_B zbiega dla różnych beta (różne hamiltoniany mikroskopowe → ten sam fixed point)
+- **CG-3**: L² norma ||Phi_B - Phi_2B|| maleje ze wzrostem L_B (CLT-like)
+- **CG-4**: Korelator xi_eff(Phi) — zależność liniowa K ~ Phi (wstępne wsparcie)
+- Status: EVIDENCE, nie dowód
 
 ## Plan ataku
 

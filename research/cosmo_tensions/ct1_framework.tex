@@ -1,0 +1,208 @@
+% -*- coding: utf-8 -*-
+% ===================================================================
+% CT1: Unified TGP framework for cosmological tensions
+%      H_0 tension + S_8 tension + DESI w(z) != -1
+% ===================================================================
+
+\section*{CT1: Kosmologiczne napi\k{e}cia jako backreaction substratu TGP}%
+\addcontentsline{toc}{section}{CT1: Kosmologiczne napi\k{e}cia z backreaction TGP}%
+\label{sec:CT1}
+
+\subsection{Teza centralna}
+
+Trzy g\l{}\'owne napi\k{e}cia wsp\'o\l{}czesnej kosmologii obserwacyjnej
+--- napi\k{e}cie Hubble'a ($H_0$: 73 vs 67~km/s/Mpc),
+napi\k{e}cie $S_8$ (struktury g\l{}adsze ni\.z ACDM),
+oraz sygnalizowana przez DESI ewolucja ciemnej energii ($w(z) \neq -1$)
+--- maj\k{a} \textbf{wsp\'olne \'zr\'od\l{}o} w~TGP:
+nieliniowe sprz\k{e}\.zenie pomi\k{e}dzy lokalnym skupianiem materii (soliton\'ow)
+a globaln\k{a} ekspansj\k{a} substratu.
+
+\subsection{R\'ownanie pola TGP w kosmologii}
+
+Pole substratu $\psi = \Phi/\Phi_0$ spe\l{}nia (prop:FRW-derivation):
+\begin{equation}
+  \ddot\psi + 3H\dot\psi + \frac{3\dot\psi^2}{\psi}
+  = c_0^2\,W(\psi),
+  \label{eq:CT1-field}
+\end{equation}
+gdzie $W(\psi) = \gamma(\psi - 1)$ w~granicy $\beta = \gamma$ (warunek pr\'o\.zni).
+
+Zmodyfikowane r\'ownanie Friedmanna (z~$G_{00} = T_{00}$, $\kappa$ si\k{e} redukuje):
+\begin{equation}
+  3\!\left(H + \frac{\dot\psi}{4\psi}\right)^{\!2}\sqrt{\psi}
+  = c_0^2\!\left[\frac{\sqrt\psi\,\dot\psi^2}{2c_0^2} + U(\psi)\right],
+  \label{eq:CT1-friedmann}
+\end{equation}
+z~potencja\l{}em $U(\psi)$ emergentnym z~akcji TGP.
+
+\subsection{Backreaction z niejednorodnego substratu}
+\label{sec:CT1-backreaction}
+
+Dotychczasowa analiza TGP zak\l{}ada\l{}a \textbf{jednorodne} $\psi(t)$.
+Fizyczny Wszech\'swiat jest niejednorodny: solitony (masy) tworz\k{a}
+lokalne deformacje $\psi \neq 1$, otoczone pustkami z~$\psi \approx 1$.
+
+Dzielimy pole na \'sredni\k{a} i~fluktuacj\k{e}:
+\begin{equation}
+  \psi(\mathbf{x}, t) = \bar\psi(t) + \delta\psi(\mathbf{x}, t),
+  \qquad
+  \langle \delta\psi \rangle = 0.
+  \label{eq:CT1-split}
+\end{equation}
+
+\subsubsection{Kluczowy term nieliniowy}
+
+Term $3\dot\psi^2/\psi$ w~r\'ownaniu pola \eqref{eq:CT1-field} jest
+\textbf{nieliniowy} w~$\psi$. Przy u\'srednianiu przestrzennym:
+\begin{equation}
+  \left\langle \frac{3\dot\psi^2}{\psi} \right\rangle
+  \neq \frac{3\langle\dot\psi\rangle^2}{\langle\psi\rangle}.
+  \label{eq:CT1-nonlinear}
+\end{equation}
+
+Rozwijaj\k{a}c do drugiego rz\k{e}du w~$\delta\psi/\bar\psi$:
+\begin{align}
+  \frac{\dot\psi^2}{\psi} &= \frac{(\dot{\bar\psi} + \delta\dot\psi)^2}{\bar\psi + \delta\psi}
+  = \frac{\dot{\bar\psi}^2}{\bar\psi}\left(1 + \frac{2\delta\dot\psi}{\dot{\bar\psi}}
+  + \frac{(\delta\dot\psi)^2}{\dot{\bar\psi}^2}\right)
+  \left(1 - \frac{\delta\psi}{\bar\psi} + \frac{(\delta\psi)^2}{\bar\psi^2} + \dots\right).
+\end{align}
+
+Po u\'srednieniu ($\langle\delta\psi\rangle = 0$):
+\begin{equation}
+  \boxed{\;
+  \left\langle\frac{\dot\psi^2}{\psi}\right\rangle
+  = \frac{\dot{\bar\psi}^2}{\bar\psi}
+    + \frac{1}{\bar\psi}\left\langle(\delta\dot\psi)^2\right\rangle
+    - \frac{\dot{\bar\psi}^2}{\bar\psi^2}\left\langle(\delta\psi)^2\right\rangle
+    - \frac{2\dot{\bar\psi}}{\bar\psi}\langle\delta\psi\,\delta\dot\psi\rangle
+    + O(\delta^3)
+  \;\;}
+  \label{eq:CT1-backreaction-expansion}
+\end{equation}
+
+Definiujemy \textbf{backreaction substratu}:
+\begin{equation}
+  \mathcal{B}_\psi \equiv 3\left[
+    \frac{\langle(\delta\dot\psi)^2\rangle}{\bar\psi}
+    - \frac{\dot{\bar\psi}^2\,\sigma_\psi^2}{\bar\psi^2}
+    - \frac{2\dot{\bar\psi}\,\langle\delta\psi\,\delta\dot\psi\rangle}{\bar\psi}
+  \right],
+  \label{eq:CT1-B-psi}
+\end{equation}
+gdzie $\sigma_\psi^2 \equiv \langle(\delta\psi)^2\rangle / \bar\psi^2$
+jest wzgl\k{e}dna wariancja pola.
+
+\subsubsection{Efektywne r\'ownanie Friedmanna}
+
+U\'srednione r\'ownanie \eqref{eq:CT1-friedmann} przyjmuje posta\'c:
+\begin{equation}
+  \boxed{\;
+  3H_{\rm eff}^2
+  = \frac{8\pi G}{c^2}\!\left(\rho_m + \rho_r + \rho_\Lambda\right)
+    + \mathcal{B}_\psi(a)
+  \;\;}
+  \label{eq:CT1-friedmann-eff}
+\end{equation}
+gdzie $\mathcal{B}_\psi(a)$ zale\.zy od \textbf{stopnia niejednorodnosci}
+substratu, kt\'ory ro\'snie w~czasie (formowanie struktur).
+
+\subsection{Ewolucja backreaction ze struktur\k{a}}
+\label{sec:CT1-evolution}
+
+Stopie\'n niejednorodnosci $\sigma_\psi^2$ jest powi\k{a}zany z~frakcj\k{a}
+obj\k{e}tosci zaj\k{e}t\k{a} przez solitony:
+\begin{equation}
+  \sigma_\psi^2(a) \propto f_{\rm struct}(a) \cdot \langle(\delta_{\rm sol})^2\rangle,
+  \label{eq:CT1-sigma-struct}
+\end{equation}
+gdzie $f_{\rm struct}(a)$ to frakcja materii w~strukturach (galaktyki, gromady)
+i~$\delta_{\rm sol} = g_0 - 1$ to amplituda soliton\'ow.
+
+\textbf{Fizyka}: we wczesnym Wszech\'swiecie ($a \ll 1$) materia by\l{}a
+jednorodna, $\sigma_\psi^2 \approx 0$, $\mathcal{B}_\psi \approx 0$
+$\Rightarrow$ Friedmann standardowy.
+W~p\'o\'znym Wszech\'swiecie ($a \to 1$) materia si\k{e} skupi\l{}a,
+$\sigma_\psi^2 > 0$, $\mathcal{B}_\psi > 0$
+$\Rightarrow$ \textbf{szybsza efektywna ekspansja}.
+
+\subsection{Rozwi\k{a}zanie trzech napi\k{e}\'c}
+
+\subsubsection{Napi\k{e}cie $H_0$}
+
+Pomiary CMB ($z \approx 1100$): $\sigma_\psi^2 \approx 0$
+$\Rightarrow$ $H_0^{\rm CMB} = H_0^{\rm bare}$.
+
+Pomiary lokalne ($z < 0.1$): $\sigma_\psi^2 > 0$ (struktury uformowane)
+$\Rightarrow$ $H_0^{\rm local} = \sqrt{H_0^{{\rm bare}\,2} + \mathcal{B}_\psi(a_0)/3}$.
+
+Wymaga: $\mathcal{B}_\psi(a_0)/3 \approx H_0^2 \cdot [(73/67)^2 - 1] \approx 0.19\,H_0^2$.
+
+\subsubsection{Napi\k{e}cie $S_8$}
+
+Zmodyfikowany growth factor:
+\begin{equation}
+  \ddot\delta_m + 2H_{\rm eff}\dot\delta_m
+  = 4\pi G\rho_m\delta_m - \mu_\psi\,\delta_m,
+  \label{eq:CT1-growth}
+\end{equation}
+gdzie $\mu_\psi \propto d\mathcal{B}_\psi/d\sigma_\psi^2 > 0$ (t\l{}umienie
+od backreaction substratu). To daje \textbf{wolniejszy wzrost struktur}
+$\Rightarrow$ $S_8^{\rm late} < S_8^{\rm CMB}$.
+
+Dodatkowo: bariera krytyczna $\delta_{\rm crit} = 1.206$ (z~analizy soliton\'ow)
+ogranicza \textbf{maksymaln\k{a} deformacj\k{e}} substratu
+$\Rightarrow$ naturalny mechanizm nasycenia wzrostu.
+
+\subsubsection{DESI $w(z) \neq -1$}
+
+Definiuj\k{a}c efektywn\k{a} g\k{e}sto\'s\'c ciemnej energii:
+\begin{equation}
+  \rho_{\rm DE}^{\rm eff}(a) = \rho_\Lambda + \frac{\mathcal{B}_\psi(a)}{8\pi G/c^2},
+\end{equation}
+efektywne r\'ownanie stanu:
+\begin{equation}
+  w_{\rm eff}(a) = -1 + \frac{a}{3\rho_{\rm DE}^{\rm eff}}
+  \frac{d\rho_{\rm DE}^{\rm eff}}{da}
+  = -1 + \frac{a\,\mathcal{B}_\psi'(a)}{3(8\pi G\rho_\Lambda/c^2 + \mathcal{B}_\psi)}.
+  \label{eq:CT1-w-eff}
+\end{equation}
+
+Poniewa\.z $\mathcal{B}_\psi(a)$ \textbf{ro\'snie} (struktury formuj\k{a} si\k{e}):
+$\mathcal{B}_\psi' > 0$ $\Rightarrow$ $w_{\rm eff} > -1$.
+
+We wczesnym Wszech\'swiecie: $\mathcal{B}_\psi \approx 0$
+$\Rightarrow$ $w \approx -1$ (czysta $\Lambda$).
+
+W~parametryzacji CPL: $w(a) = w_0 + w_a(1-a)$, oczekujemy:
+\begin{align}
+  w_0 &> -1 \qquad \text{(dzi\'s: backreaction > 0)}, \\
+  w_a &< 0 \qquad \text{(ro\'snie w~czasie $\Rightarrow$ maleje ku przesz\l{}o\'sci)}.
+\end{align}
+Dok\l{}adnie to obserwuje DESI!
+
+\subsection{Kluczowa predykcja: korelacja napi\k{e}\'c}
+
+Trzy napi\k{e}cia s\k{a} \textbf{skorelowane} --- kontrolowane
+przez jedn\k{a} funkcj\k{e} $\mathcal{B}_\psi(a)$:
+\begin{itemize}
+  \item $\Delta H_0^2 / H_0^2 = \mathcal{B}_\psi(a_0) / (3H_0^2)$
+  \item $\Delta S_8 / S_8 \propto -\int_0^1 \mu_\psi(a)\,da$
+  \item $w_0 + 1 = a_0\,\mathcal{B}_\psi'(a_0) / [3(8\pi G\rho_\Lambda/c^2 + \mathcal{B}_\psi(a_0))]$
+\end{itemize}
+
+Je\'sli znamy $\mathcal{B}_\psi(a)$, \textbf{jeden parametr TGP}
+determinuje wszystkie trzy napi\k{e}cia. To jest \textbf{testowalna predykcja}:
+zmierzenie dowolnych dw\'och napi\k{e}\'c wyznacza trzecie.
+
+\subsection{Status}
+
+\begin{itemize}
+  \item Formalizm: r\'ownanie \eqref{eq:CT1-friedmann-eff} --- NOWE
+  \item Numeryczny model $\mathcal{B}_\psi(a)$: \texttt{ct2\_rho\_tgp.py} --- w~toku
+  \item Fit do danych: planowany
+  \item Powi\k{a}zanie z~solitonow\k{a} fizyk\k{a} TGP ($\delta_{\rm crit}$, $c_1$): otwarte
+\end{itemize}
+
+\end{document}

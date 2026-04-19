@@ -1,0 +1,140 @@
+==============================================================================
+  gs61_sparc_membrane_fit.py
+  Full SPARC 175-galaxy fit with gs9d membrane + gs60 a0 = cH0/(2pi)
+==============================================================================
+
+Constants:
+  H0       = 2.1844e-18 s^-1  (67.4 km/s/Mpc)
+  a0_obs   = 1.200e-10 m/s^2  (MOND empirical)
+  a0_TGP   = c*H0/(2pi) = 1.042e-10 m/s^2  (TGP prediction gs60)
+  c*H0     = 6.549e-10 m/s^2  (membrane v^4 normalization)
+  ratio    = c*H0 / a0_obs = 5.457
+  kappa_MOND = a0_obs/(c*H0) = 0.1832  (needed if gs9d is off by 2pi^2)
+
+==============================================================================
+  Loading SPARC Table I (Lelli+2016)
+==============================================================================
+  Loaded 175 galaxies from Table I
+  Q=1 (flat RC reliable) with Vflat>0: 87 galaxies
+
+==============================================================================
+  Loading rotmod files from Rotmod_LTG/
+==============================================================================
+  Found 175 rotmod files
+
+  Matched 175 galaxies with Table I entries
+
+==============================================================================
+  Per-galaxy chi2_red (fixed M/L_disk=0.5, M/L_bul=0.7)
+==============================================================================
+
+  Aggregate chi2_red over all galaxies:
+  Model                mean    median       std   wins
+  ----------------------------------------------------
+  Newton             267.79     85.23    481.70     20
+  MOND                29.69     10.54     48.94     14
+  TGP_std             43.69     14.46     69.36     39
+  Form4               28.86     10.20     46.92     71
+  Memb_k=1           441.92    162.81    748.09      6
+  Memb_k=0.183        47.96     14.96    105.42     25
+
+  Per-galaxy chi2_red (showcase):
+  Galaxy          N         Newton          MOND       TGP_std         Form4      Memb_k=1  Memb_k=0.183
+  --------------------------------------------------------------------------------------------------------
+  DDO154         12          532.22         16.19         88.57         14.66        638.37         28.31
+  NGC2403        73          926.62         15.61         15.23         17.74        889.55         19.76
+  NGC3198        43          737.74         13.99         68.56         12.01       1314.35         59.61
+  NGC7331        36          241.70         43.91         18.12         35.56       1350.87        170.61
+  NGC2841        50          746.29         81.37         83.41         87.77        183.01         30.03
+  UGC02885       19          131.85          2.29          5.41          2.87        165.52          4.02
+
+==============================================================================
+  BTFR (Baryonic Tully-Fisher Relation)
+  Empirical: log(M_bar) = 4 * log(V_flat) - log(G*a0)
+==============================================================================
+
+  BTFR sample size (Q=1 with Vflat>0, matched rotmod): 87
+
+  BTFR fit: log10(M_bar/Msun) = slope * log10(V_flat/[km/s]) + intercept
+
+  Source                   slope   se_slope   intercept         a0_eff   scatter
+  ------------------------------------------------------------------------
+  Observed (SPARC)         3.558  +/-  0.111       2.586      1.686e-10     0.229
+  MOND simple              3.633  +/-  0.045       2.405      1.776e-10     0.095
+  Form 4                   3.637  +/-  0.045       2.407      1.737e-10     0.093
+  Membrane k=1             3.694  +/-  0.041       1.624      9.062e-10     0.084
+  Membrane k=MOND          3.534  +/-  0.051       2.532      2.215e-10     0.109
+
+  Interpretation:
+    * Observed slope should be ~ 4.0 (MOND BTFR)
+    * Forced slope=4, a0_eff:
+      - Observed SPARC: should give ~ 1.2e-10
+      - Membrane k=1:   would give ~ c*H0 = 6.55e-10
+      - Membrane k=MOND: should give ~ 1.2e-10
+
+==============================================================================
+  Global kappa fit (membrane model)
+==============================================================================
+
+  Scanned kappa in [0.010, 3.162]
+  Best kappa = 0.1155
+  Min chi2_red_total = 42.243
+
+  Predicted kappas:
+    gs9d geometric-mean (derived):      1.0000
+    MOND match (a0_obs/(c*H0)):         0.1832
+    Best fit to SPARC:                  0.1155
+
+  Scan table (selected kappa values):
+     kappa    chi2_red
+    0.0100     187.419
+    0.0205     131.793
+    0.0422      78.915
+    0.0866      44.777
+    0.1155      42.243 <-- best
+    0.1778      58.130
+    0.3652     167.186
+    0.7499     449.168
+    1.5399    1023.899
+    3.1623    2073.262
+
+==============================================================================
+  Mass-scale systematic trends (median chi2_red per category)
+==============================================================================
+
+  Category         N       Newton         MOND      TGP_std        Form4     Memb_k=1  Memb_k=0.183
+  --------------------------------------------------------------------------------------------------
+  dwarf           35          30.01         7.60         9.27         7.82        76.83         9.48
+  sub-MW          73          78.49         5.97        10.86         6.08        96.71         9.24
+  MW-like         47         103.41        13.38        18.20        12.36       337.41        32.48
+  massive         20         266.59        36.64        47.09        33.64       717.51        65.60
+
+==============================================================================
+  SUMMARY & FALSIFICATION CRITERIA
+==============================================================================
+
+  Aggregate results for 175 galaxies:
+    Mean chi2_red:
+      MOND simple:          29.691
+      Form 4 (delta=.497):   28.858
+      TGP standard (gs57):   43.687
+      Membrane kappa=1:     441.919
+      Membrane kappa_M:      47.957
+
+    Best-fit global kappa: 0.1155
+      (gs9d predicts 1.0;  renormalization suggests 0.1832)
+
+  VERDICTS:
+    [!] gs9d kappa=1 is WRONG by factor 8.66
+        -> 2pi factor in gs9d argument needs repair
+    [!] Membrane worse than MOND by 62%
+        -> smooth transition, not hard 3D->2D switch, likely needed
+
+  NEXT STEPS (gs62-gs64):
+    gs62: cluster test with Hubble damping (Bullet overshoot dissolution?)
+    gs63: Euclid a0(z) detection design
+    gs64: substrate oscillation derivation from sek05 V(psi)
+
+==============================================================================
+  gs61 complete.
+==============================================================================

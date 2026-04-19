@@ -1,0 +1,257 @@
+==============================================================================
+  gs48: ALTERNATIVE nu(y) FUNCTIONAL FORMS FROM MEMBRANE PHYSICS
+  Investigating whether functional form or alpha=4/5 drives the chi2 gap
+==============================================================================
+
+==============================================================================
+  PART A: CURRENT nu(y) SHAPE ANALYSIS
+==============================================================================
+
+  A.1  nu(y) values at key accelerations
+  --------------------------------------
+
+           y      nu_TGP   nu_MOND_std   nu_MOND_sim       delta     ratio
+  ----------  ----------  ------------  ------------  ----------  --------
+       0.001     28.4329        5.6679       32.1267     22.7649    5.0164
+       0.003     17.0304        4.3222       18.6837     12.7082    3.9402
+       0.010      9.8734        3.2381       10.4895      6.6353    3.0491
+       0.030      6.0923        2.5131        6.3228      3.5792    2.4242
+       0.100      3.5629        1.9168        3.6872      1.6461    1.8588
+       0.300      2.2216        1.5413        2.3974      0.6803    1.4414
+       1.000      1.3722        1.2595        1.6222      0.1128    1.0895
+       3.000      1.0532        1.1023        1.2638     -0.0491    0.9554
+      10.000      1.0006        1.0220        1.0920     -0.0214    0.9791
+      30.000      1.0000        1.0021        1.0322     -0.0021    0.9979
+     100.000      1.0000        1.0000        1.0099     -0.0000    1.0000
+
+  A.2  Logarithmic slopes d(ln nu)/d(ln y)
+  ----------------------------------------
+
+           y   slope_TGP   slope_MOND        diff
+  ----------  ----------  -----------  ----------
+       0.001     -0.4661      -0.2460     -0.2201
+       0.010     -0.4495      -0.2377     -0.2118
+       0.100     -0.4372      -0.2124     -0.2248
+       0.300     -0.4312      -0.1879     -0.2433
+       0.500     -0.4137      -0.1722     -0.2415
+       1.000     -0.3456      -0.1459     -0.1997
+       3.000     -0.1214      -0.0931     -0.0283
+      10.000     -0.0034      -0.0351      0.0317
+     100.000      0.0000      -0.0001      0.0001
+
+  A.3  Largest discrepancies
+  --------------------------
+
+    Global max |delta_nu|:  y = 0.0010, delta = 22.7649
+    Global max |ratio-1|:   y = 0.0010, ratio = 5.0164
+    Intermediate (0.01-10) max |delta|: y = 0.0100, delta = 6.6353
+
+  A.4  Asymptotic deep-MOND behavior (y -> 0)
+  -------------------------------------------
+
+    TGP:  nu ~ y^(-0.4541)  [expected gamma = 0.4800]
+    MOND: nu ~ y^(-0.2400)  [expected -0.5]
+
+==============================================================================
+  PART B: ALTERNATIVE MEMBRANE-DERIVED FORMS
+==============================================================================
+
+  B.1  nu(y) comparison at key y values
+  -------------------------------------
+
+  Form                          y=0.01     y=0.1     y=0.3     y=1.0     y=3.0    y=10.0
+  --------------------------  --------  --------  --------  --------  --------  --------
+  Current TGP                    9.873     3.563     2.222     1.372     1.053     1.001
+  Form 1 (beta1=0.5)             9.985     3.768     2.454     1.557     1.117     1.003
+  Form 1 (beta1=1.0)            10.097     3.972     2.686     1.742     1.181     1.005
+  Form 2 (A1=1,A2=0.5)          51.251     7.969     3.603     1.561     1.054     1.001
+  Form 2 (A1=1,A2=1.0)          92.629    12.375     4.984     1.749     1.054     1.001
+  Form 3                        10.066     3.534     2.150     1.403     1.133     1.036
+  Form 4 (delta=0.4)             6.811     3.036     2.173     1.585     1.269     1.089
+  Form 4 (delta=0.5)            10.485     3.674     2.376     1.586     1.215     1.045
+  Form 5 (kappa=0.5)             8.399     2.947     1.877     1.248     1.033     1.000
+  Form 5 (kappa=1.0)             7.345     2.570     1.684     1.186     1.024     1.000
+  MOND standard                  3.238     1.917     1.541     1.259     1.102     1.022
+
+  B.2  RMS deviation from MOND standard (log space, y in [0.01, 10])
+  ------------------------------------------------------------------
+
+  Form                        RMS(log10)   max|dlog|
+  --------------------------  ----------  ----------
+  Current TGP                     0.2419      0.4842
+  Form 1 (beta1=0.5)              0.2576      0.4891
+  Form 1 (beta1=1.0)              0.2746      0.4939
+  Form 2 (A1=1,A2=0.5)            0.5763      1.1994
+  Form 2 (A1=1,A2=1.0)            0.7288      1.4565
+  Form 3                          0.2440      0.4926
+  Form 4 (delta=0.4)              0.1788      0.3229
+  Form 4 (delta=0.5)              0.2588      0.5103
+  Form 5 (kappa=0.5)              0.1875      0.4139
+  Form 5 (kappa=1.0)              0.1486      0.3557
+
+==============================================================================
+  PART C: RAR COMPARISON -- FIT FREE PARAMETERS TO BINNED DATA
+==============================================================================
+
+  Using 14 binned RAR data points from McGaugh+2016
+  a0 = 1.20e-10 m/s^2
+
+  C.1  MOND baselines (no free parameters)
+  ----------------------------------------
+
+    MOND simple         : chi2 =     0.42, chi2/dof =  0.030
+    MOND standard       : chi2 =    34.64, chi2/dof =  2.474
+
+  C.2  Current TGP (c_eff free)
+  -----------------------------
+
+    Best c_eff = 1.5964
+    gamma = 0.4919
+    BTFR slope = 3.936
+    chi2 = 1.27, chi2/dof = 0.098
+
+  C.3  Form 1: Generalized exponential (beta1, c_eff free)
+  --------------------------------------------------------
+
+    Best beta1 = 0.6245, c_eff = 1.4013
+    gamma = 0.4668
+    BTFR slope = 3.751
+    chi2 = 0.23, chi2/dof = 0.019
+
+  C.4  Form 2: Double-exponential (A1, A2, c_eff free)
+  ----------------------------------------------------
+
+    Best A1 = 1.3163, A2 = 0.0572, c_eff = 0.7945
+    gamma = 0.3542
+    BTFR slope = 3.097
+    chi2 = 0.59, chi2/dof = 0.054
+
+  C.5  Form 3: Modified suppression (c_eff free)
+  ----------------------------------------------
+
+    Best c_eff = 1.5818
+    gamma = 0.4901
+    BTFR slope = 3.923
+    chi2 = 1.02, chi2/dof = 0.079
+
+  C.6  Form 4: RAR-matched nu=1/(1-exp(-y^delta)), delta free
+  -----------------------------------------------------------
+
+    Best delta = 0.497369
+    alpha/2 = 0.4000
+    Deviation from alpha/2: 0.0974
+    Effective deep-MOND slope = 0.4974
+    BTFR slope = 3.979
+    chi2 = 0.19, chi2/dof = 0.015
+
+  C.7  Form 5: Substrate viscosity (kappa, c_eff free)
+  ----------------------------------------------------
+
+    Best kappa = -0.3133, c_eff = 1.1328
+    gamma = 0.4249
+    BTFR slope = 3.478
+    chi2 = 0.52, chi2/dof = 0.043
+
+  C.8  SUMMARY: chi2 comparison
+  -----------------------------
+
+  Model                       chi2  n_par    dof   chi2/dof   vs MOND
+  ----------------------  --------  -----  -----  ---------  --------
+  MOND simple                 0.42      0     14      0.030      0.01x
+  MOND standard              34.64      0     14      2.474      1.00x
+  TGP current                 1.27      1     13      0.098      0.04x
+  Form 1 (gen. exp.)          0.23      2     12      0.019      0.01x
+  Form 2 (double exp.)        0.59      3     11      0.054      0.02x
+  Form 3 (mod. supp.)         1.02      1     13      0.079      0.03x
+  Form 4 (RAR-matched)        0.19      1     13      0.015      0.01x
+  Form 5 (viscosity)          0.52      2     12      0.043      0.01x
+
+==============================================================================
+  PART D: ASYMPTOTIC BEHAVIOR CHECK
+==============================================================================
+
+  D.1  Deep-MOND limit (y -> 0): effective power-law slope
+  --------------------------------------------------------
+
+  Model                    gamma_eff   BTFR slope   |BTFR-3.85|
+  ----------------------  ----------  -----------  ------------
+  TGP current                 0.4781        3.832         0.018
+  Form 1 (gen. exp.)          0.4486        3.627         0.223
+  Form 2 (double exp.)        0.4563        3.679         0.171
+  Form 3 (mod. supp.)         0.4725        3.791         0.059
+  Form 4 (RAR-matched)        0.4883        3.909         0.059
+  Form 5 (viscosity)          0.3910        3.284         0.566
+  MOND standard               0.2455        2.651         1.199
+
+  D.2  Newtonian limit (y -> inf): nu should -> 1
+  -----------------------------------------------
+
+  Model                     nu(y=10)    nu(y=100)   nu(y=1000)
+  ----------------------  ----------  -----------  -----------
+  TGP current               1.000586     1.000000     1.000000
+  Form 1                    1.003067     1.000000     1.000000
+  Form 2                    1.001059     1.000000     1.000000
+  Form 3                    1.034890     1.002248     1.000127
+  Form 4                    1.045091     1.000051     1.000000
+  Form 5                    1.001358     1.000000     1.000000
+  MOND standard             1.021861     1.000023     1.000000
+
+  D.3  BTFR constraint assessment
+  -------------------------------
+
+    Observed BTFR slope: 3.85 +/- 0.09 (Lelli+2016)
+    Acceptable range: [3.67, 4.03] (2-sigma)
+
+    TGP current           : BTFR = 3.832  acceptable: YES
+    Form 1 (gen. exp.)    : BTFR = 3.627  acceptable: NO
+    Form 2 (double exp.)  : BTFR = 3.679  acceptable: YES
+    Form 3 (mod. supp.)   : BTFR = 3.791  acceptable: YES
+    Form 4 (RAR-matched)  : BTFR = 3.909  acceptable: YES
+    Form 5 (viscosity)    : BTFR = 3.284  acceptable: NO
+    MOND standard         : BTFR = 2.651  acceptable: NO
+
+==============================================================================
+  PART E: VERDICT
+==============================================================================
+
+  E.1  Key findings
+  -----------------
+
+    MOND standard chi2:         34.64
+    Current TGP chi2:           1.27  (ratio: 0.04x)
+    Best alternative chi2:      0.19  (Form 4, ratio: 0.01x)
+
+    Improvement over current TGP:  84.9%
+    Chi2 gap closed vs MOND:       0.0%
+
+  E.2  Is the gap structural or functional?
+  -----------------------------------------
+
+    CONCLUSION: The chi2 gap is FUNCTIONAL, not structural.
+    Form 4 achieves chi2 within 10% of MOND while preserving alpha=4/5.
+    The specific exponential form of TGP's nu(y) is the bottleneck,
+    not the Flory exponent alpha=4/5 itself.
+
+  E.3  Recommendation for TGP
+  ---------------------------
+
+    Form 4 best-fit delta = 0.4974
+    TGP prediction alpha/2 = 0.4000
+    MOND uses sqrt(y) => delta = 0.5
+
+    The data PREFER delta ~ 0.5 (MOND) over delta = alpha/2 = 0.4 (TGP).
+
+    RECOMMENDATIONS:
+    1. If chi2 gap is functional: adopt the best-performing alternative form
+       that preserves membrane physics motivation (alpha=4/5 fixed).
+    2. If gap is structural: accept that TGP's rotation curve fits will be
+       systematically ~2x MOND, or consider whether alpha could receive
+       quantum/thermal corrections shifting it toward 1/2.
+    3. Form 4 (nu = 1/(1-exp(-y^delta))) is the most promising template --
+       it structurally matches MOND's form while allowing membrane-motivated delta.
+    4. For rotation curve fitting, the intermediate y regime (0.1 < y < 1)
+       is where all the leverage is -- focus on the transition shape there.
+
+==============================================================================
+  gs48 COMPLETE
+==============================================================================

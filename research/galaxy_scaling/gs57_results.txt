@@ -1,0 +1,426 @@
+========================================================================
+gs57: ALPHA TENSION ANALYSIS
+TGP nu(y) = 1 + exp(-y^alpha) / y^gamma
+gamma = alpha * c_eff / (c_eff + 1),  c_eff = 2.5 (standard)
+========================================================================
+
+Loaded 14 RAR bins from RARbins.mrt
+log(gbar) range: -11.69 to -8.91
+log(gobs) range: -10.75 to -8.90
+
+========================================================================
+PART A: ALPHA SCAN ON RAR DATA (c_eff = 2.5 fixed)
+========================================================================
+
+Best-fit alpha (c_eff=2.5): 0.7040
+Best-fit gamma:            0.5029
+Best-fit chi2:             1.3015 (reduced: 0.1001)
+
+TGP standard (alpha=0.8):
+  gamma = 0.5714
+  chi2  = 3.0836 (reduced: 0.2203)
+
+Delta-chi2 (alpha=0.8 vs best): 1.7821
+Sigma tension:                  1.33 sigma
+
+Alpha scan table (selected values):
+alpha    gamma    chi2       red_chi2  
+----------------------------------------
+0.30     0.2143   31.6459    2.4343    
+0.40     0.2857   18.7110    1.4393    
+0.50     0.3571   9.2264     0.7097    
+0.60     0.4286   3.3839     0.2603    
+0.70     0.5000   1.3050     0.1004    
+0.80     0.5714   3.0836     0.2372    
+0.90     0.6429   8.8024     0.6771    
+1.00     0.7143   18.5369    1.4259    
+1.10     0.7857   32.3566    2.4890    
+1.20     0.8571   50.3241    3.8711    
+1.30     0.9286   72.4946    5.5765    
+1.40     1.0000   98.9154    7.6089    
+1.50     1.0714   129.6267   9.9713    
+
+Best-fit alpha: 0.7040 (marked with *)
+0.7040   0.5029   1.3015     0.1001     *
+
+========================================================================
+PART B: c_eff DEGENERACY
+========================================================================
+
+B1: Fixed alpha=0.8, scan c_eff
+c_eff    gamma    chi2       red_chi2  
+----------------------------------------
+0.500    0.2667   13.2169    1.0167    
+0.750    0.3429   6.8136     0.5241    
+1.000    0.4000   3.4641     0.2665    
+1.333    0.4571   1.6000     0.1231    
+1.500    0.4800   1.3132     0.1010    
+2.000    0.5333   1.7565     0.1351    
+2.500    0.5714   3.0836     0.2372    
+3.000    0.6000   4.6628     0.3587    
+4.000    0.6400   7.7505     0.5962    
+5.000    0.6667   10.3963    0.7997    
+7.000    0.7000   14.3853    1.1066    
+10.000   0.7273   18.2260    1.4020    
+20.000   0.7619   23.8692    1.8361    
+50.000   0.7843   27.9861    2.1528    
+100.000  0.7921   29.4992    2.2692    
+
+Best c_eff for alpha=0.8: 1.600
+Corresponding gamma:     0.4923
+Chi2:                    1.2748
+
+
+B2: gamma = 0.5 constraint (BTFR requirement)
+gamma = alpha * c_eff / (c_eff + 1) = 0.5
+=> c_eff = 0.5 / (alpha - 0.5)  [valid only for alpha > 0.5]
+
+alpha    c_eff      physical basis
+--------------------------------------------------
+0.510    50.000     
+0.550    10.000     
+0.588    5.682      d=3 SAW (nu_F exact)
+0.600    5.000      d=3 Flory (3/5)
+0.650    3.333      
+0.700    2.500      
+0.750    2.000      d=2 SAW (3/4)
+0.800    1.667      current TGP
+0.900    1.250      
+1.000    1.000      random walk / ideal chain
+1.200    0.714      
+1.500    0.500      
+
+Note: alpha = 0.5 requires c_eff -> infinity (unphysical)
+      alpha < 0.5 cannot achieve gamma = 0.5 with positive c_eff
+      alpha = 0.8 requires c_eff = 4/3 = 1.333 (not 2.5!)
+      alpha = 1.0 requires c_eff = 1.0
+
+
+B3: (alpha, c_eff) curve for gamma = 0.5
+alpha    c_eff     
+--------------------
+0.550    10.0000   
+0.600    5.0000    
+0.650    3.3333    
+0.700    2.5000    
+0.750    2.0000    
+0.800    1.6667    
+0.850    1.4286    
+0.900    1.2500    
+0.950    1.1111    
+1.000    1.0000    
+1.050    0.9091    
+1.100    0.8333    
+1.150    0.7692    
+1.200    0.7143    
+1.250    0.6667    
+1.300    0.6250    
+1.350    0.5882    
+1.400    0.5556    
+1.450    0.5263    
+1.500    0.5000    
+1.550    0.4762    
+1.600    0.4545    
+1.650    0.4348    
+1.700    0.4167    
+1.750    0.4000    
+1.800    0.3846    
+1.850    0.3704    
+1.900    0.3571    
+1.950    0.3448    
+2.000    0.3333    
+
+========================================================================
+PART C: BTFR SLOPE ANALYSIS
+========================================================================
+
+TGP deep-MOND asymptote:
+  For y << 1: nu(y) ~ 1/y^gamma
+  => g_obs = nu(y) * g_bar = g_bar / (g_bar/a0)^gamma = g_bar^(1-gamma) * a0^gamma
+
+BTFR: V^4 = G*M*a0
+  => g_obs = V^2/R, g_bar = G*M/R^2
+  => g_obs = sqrt(g_bar * a0)  [for circular orbit at large R]
+  => g_obs = g_bar^0.5 * a0^0.5
+  => Requires: 1 - gamma = 0.5, i.e., gamma = 0.5 exactly
+
+BTFR slope in log-log:
+  log(g_obs) = (1-gamma)*log(g_bar) + gamma*log(a0)
+  Slope in log(g_obs) vs log(g_bar) = 1 - gamma
+  BTFR slope 4: V^4 ~ M => V ~ M^(1/4) => slope in log(V) vs log(M) = 1/4
+  Equivalently: slope in log(g_obs) vs log(g_bar) = 0.5 at low g_bar
+
+Scenarios for the deep-MOND slope:
+alpha    c_eff    gamma    MOND_slope     BTFR_exp       interpretation      
+--------------------------------------------------------------------------------
+0.500    2.500    0.3571   0.6429         1.5556         alpha=nu_F(d=4)
+0.588    2.500    0.4200   0.5800         1.7241         alpha=nu_F(d=3,exact)
+0.600    2.500    0.4286   0.5714         1.7500         alpha=3/5 Flory
+0.750    2.500    0.5357   0.4643         2.1538         alpha=nu_F(d=2)
+0.800    2.500    0.5714   0.4286         2.3333         CURRENT TGP
+1.000    2.500    0.7143   0.2857         3.5000         alpha=1 ideal chain
+0.800    1.333    0.4571   0.5429         1.8419         alpha=0.8, BTFR-forced
+1.000    1.000    0.5000   0.5000         2.0000         alpha=1.0, BTFR-forced
+0.600    5.000    0.5000   0.5000         2.0000         alpha=0.6, BTFR-forced
+0.588    6.682    0.5115   0.4885         2.0469         alpha=0.588, BTFR-forced
+
+BTFR exponent: V ~ M^(1/btfr_exp), standard = 4.0
+MOND slope: d(log gobs)/d(log gbar) at low gbar, standard = 0.5
+
+Physical interpretations:
+
+1. alpha = 0.8, c_eff = 2.5 (current TGP):
+   gamma = 0.5714, BTFR slope = 3.50 (14% below 4)
+   The polymer SAW exponent gives too steep a deep-MOND falloff.
+   BTFR observations constrain slope = 4.0 +/- 0.1 (Lelli+ 2016).
+   -> 14% discrepancy is EXCLUDED by data.
+
+2. alpha = 0.8, c_eff = 1.333 (BTFR-forced):
+   gamma = 0.5000 exactly. BTFR slope = 4.00
+   But c_eff = 1.333 means codimension ~ 1.3, not 2.5.
+   Physical: galaxy is closer to a 2D membrane in 3D substrate
+   (c_eff=1 would be exactly codimension 1).
+
+3. alpha = 1.0, c_eff = 1.0 (BTFR-forced):
+   gamma = 0.5000 exactly. BTFR slope = 4.00
+   alpha=1 corresponds to ideal chain / random walk.
+   c_eff = 1 means codimension 1 (2D membrane in 3D).
+   This is the SIMPLEST TGP scenario giving exact BTFR.
+
+4. alpha = 0.588, c_eff = 6.68 (BTFR-forced):
+   gamma = 0.5000 exactly. Uses exact SAW exponent.
+   But c_eff = 6.68 is very high (galaxy very localized).
+   Less physical for extended objects.
+
+5. alpha = 0.5 (d=4 random walk):
+   gamma = 0.3571, BTFR slope = 6.23
+   EXCLUDED - slope way too high.
+
+
+========================================================================
+PART D: PHYSICAL SCENARIOS FOR DIFFERENT ALPHA
+========================================================================
+
+Mapping between polymer physics and TGP alpha parameter:
+
+In TGP, the interpolation function arises from the substrate's
+response function. The exponent alpha comes from the polymer
+propagator's anomalous dimension.
+
+Possible mappings:
+  (a) alpha = nu_F (Flory exponent directly)
+  (b) alpha = 2*nu_F (related to end-to-end distance scaling)
+  (c) alpha = d_s * nu_F (spectral dimension * Flory)
+
+The current TGP assumes alpha = 4/5 = 0.8 = 2 * (2/5)?
+No: 0.8 = 4/5. And Flory: nu_F = 3/(d+2).
+
+Let's check: If alpha = d*nu_F/(d-1) for d=3:
+  alpha = 3 * 0.6 / 2 = 0.9. No, that doesn't give 0.8 either.
+
+Actually, the simplest assignment: alpha = 4/5 was chosen as
+the Flory exponent for SAW in d=3 with the formula nu_F = 3/(d+2).
+Wait: nu_F(d=3) = 3/5 = 0.6, NOT 0.8.
+And 4/5 = 0.8... this might be nu_F for d=3/2 or some other mapping.
+
+Let me just tabulate the Flory exponents and see what matches:
+
+Flory exponent table: nu_F = 3/(d+2)
+d        nu_F       2*nu_F    
+------------------------------
+1.0      1.0000     2.0000    
+1.5      0.8571     1.7143    
+2.0      0.7500     1.5000    
+2.5      0.6667     1.3333    
+3.0      0.6000     1.2000    
+3.5      0.5455     1.0909    
+4.0      0.5000     1.0000    
+5.0      0.4286     0.8571    
+6.0      0.3750     0.7500    
+
+Note: alpha = 0.8 = 4/5 matches:
+  - nu_F(d=3/2) = 3/3.5 = 6/7 = 0.857... no
+  - 2*nu_F(d=11/2) = 6/7.5 = 0.8 ... unusual
+  - nu_F(d=1.75) = 3/3.75 = 0.8 ... possible if effective dimension is 1.75
+
+The precise mapping is model-dependent. For this analysis, we treat
+alpha as a free parameter and ask what values are:
+  (a) preferred by RAR data
+  (b) consistent with BTFR slope 4
+  (c) physically motivated
+
+Scenario table:
+
+#      alpha        c_eff    gamma    BTFR_exp chi2_RAR   physical_basis
+--------------------------------------------------------------------------------
+1      0.5000       2.500    0.3571   1.56       9.2264     random walk d>=4
+2      0.5880       2.500    0.4200   1.72       3.8884     d=3 SAW (exact)
+3      0.6000       2.500    0.4286   1.75       3.3839     d=3 Flory
+4      0.7500       2.500    0.5357   2.15       1.7068     d=2 SAW
+5      0.8000       2.500    0.5714   2.33       3.0836     CURRENT TGP
+6      1.0000       2.500    0.7143   3.50       18.5369    ideal chain/mean field
+7      0.8000       1.333    0.4571   1.84       1.6000     TGP + BTFR fix
+8      1.0000       1.000    0.5000   2.00       1.4530     simplest BTFR
+9      0.5880       6.682    0.5115   2.05       1.4042     d=3 SAW + BTFR fix
+10     0.6000       5.000    0.5000   2.00       1.4517     Flory + BTFR fix
+
+========================================================================
+PART E: JOINT FIT OF (alpha, c_eff) ON RAR
+========================================================================
+
+2D Grid scan results:
+  Best-fit alpha:  0.8290
+  Best-fit c_eff:  1.440
+  Implied gamma:   0.4892
+  MOND slope:      0.5108
+  BTFR exponent:   1.96
+  Chi2:            1.2734 (reduced: 0.1061)
+
+  Does best fit give gamma = 0.5?
+  YES - gamma = 0.4892 is within 0.02 of 0.5
+
+  Comparison with TGP standard (alpha=0.8, c_eff=2.5):
+  chi2(standard) = 3.0836
+  chi2(best-fit) = 1.2734
+  Delta-chi2 = 1.8102
+  Sigma tension (2 params): 1.35 sigma
+
+  Chi2 landscape (selected points):
+  alpha    c_eff    gamma    chi2       dchi2     
+  --------------------------------------------------
+  0.800    2.500    0.5714   3.0836     1.8102      TGP standard
+  0.829    1.440    0.4892   1.2734     0.0000      best fit
+  0.800    1.333    0.4571   1.6000     0.3266      BTFR-forced a=0.8
+  1.000    1.000    0.5000   1.4530     0.1796      BTFR-forced a=1.0
+  0.600    5.000    0.5000   1.4517     0.1783      BTFR-forced a=0.6
+  0.588    6.682    0.5115   1.4042     0.1308      SAW + BTFR
+  1.000    2.500    0.7143   18.5369    17.2635     alpha=1, c_eff=2.5
+  0.500    2.500    0.3571   9.2264     7.9530      alpha=0.5
+
+  Best fit along gamma = 0.5 constraint:
+  Best (alpha, c_eff) with gamma=0.5: (0.7600, 1.9231)
+  Chi2: 1.2862 (reduced: 0.0989)
+  Delta-chi2 vs unconstrained best: 0.0128
+
+========================================================================
+PART F: COMPARISON WITH MOND FORMS
+========================================================================
+
+Form                                           chi2   npar red_chi2    gamma   BTFR_exp
+--------------------------------------------------------------------------------------
+TGP standard (a=0.8, c=2.5)                  3.0836      0   0.2203   0.5714       2.33
+TGP best-fit (a=0.829, c=1.44)               1.2734      2   0.1061   0.4892       1.96
+MOND simple                                  0.1944      0   0.0139   0.5000       2.00
+MOND standard                                0.4151      0   0.0296   0.5000       2.00
+Form 4 best (d=0.497)                        0.1920      1   0.0148   0.4970       1.99
+Form 4 BTFR (d=0.5)                          0.1944      0   0.0139   0.5000       2.00
+TGP gamma=0.5 best (a=0.760, c=1.92)         1.2862      1   0.0989   0.5000       2.00
+
+Delta-chi2 relative to best model:
+  TGP standard (a=0.8, c=2.5)                dchi2 =   2.8916  (1.7 sigma)
+  TGP best-fit (a=0.829, c=1.44)             dchi2 =   1.0814  (1.0 sigma)
+  MOND simple                                dchi2 =   0.0024  (0.0 sigma)
+  MOND standard                              dchi2 =   0.2231  (0.5 sigma)
+  Form 4 best (d=0.497)                      dchi2 =   0.0000  (0.0 sigma)
+  Form 4 BTFR (d=0.5)                        dchi2 =   0.0024  (0.0 sigma)
+  TGP gamma=0.5 best (a=0.760, c=1.92)       dchi2 =   1.0942  (1.0 sigma)
+
+========================================================================
+PART G: SUMMARY AND IMPLICATIONS
+========================================================================
+
+QUESTION 1: Is there a TGP parameter set that matches data AND gives BTFR slope 4?
+
+  BTFR slope 4 requires gamma = 0.5 exactly.
+  gamma = alpha * c_eff / (c_eff + 1) = 0.5
+
+  Best fit along gamma = 0.5: alpha = 0.7600, c_eff = 1.9231
+  Chi2 = 1.2862 (reduced: 0.0989)
+
+  Compare to unconstrained best fit:
+  alpha = 0.8290, c_eff = 1.440, gamma = 0.4892
+  Chi2 = 1.2734 (reduced: 0.1061)
+
+  Delta-chi2 = 0.0128 (0.1 sigma)
+
+QUESTION 2: What is the theoretical cost?
+
+  Current TGP (alpha=0.8, c_eff=2.5):
+  - alpha=0.8 motivated by polymer/SAW physics
+  - c_eff=2.5 from galaxy morphological codimension
+  - gamma = 0.5714, BTFR exponent = 2.33 (NOT 4.0)
+  - This is EXCLUDED by BTFR data (slope 4.0 +/- 0.1)
+
+  To fix BTFR with alpha=0.8:
+  - Need c_eff = 4/3 = 1.333 instead of 2.5
+  - Physical meaning: galaxy codimension drops from 2.5 to 1.33
+  - This means galaxy is more "membrane-like" (2D in 3D substrate)
+  - Theoretically possible but requires reinterpretation of c_eff
+
+  To fix BTFR with c_eff=2.5:
+  - Need alpha = 0.5 * (c_eff+1)/c_eff = 0.5 * 3.5/2.5 = 0.70
+  - alpha=0.70 does not correspond to any standard polymer exponent
+  - Less theoretically motivated
+
+  Simplest BTFR-compatible scenario:
+  - alpha = 1.0, c_eff = 1.0, gamma = 0.5
+  - alpha=1 means Gaussian/random-walk substrate fluctuations
+  - c_eff=1 means codimension 1 (pure membrane)
+  - SIMPLEST possible parameter set
+  - But alpha=1 loses the SAW physics that motivated TGP
+
+
+QUESTION 3: Comprehensive scenario table
+
+#    alpha   c_eff   gamma   chi2     BTFR_e   BTFR?   physical_basis                
+-----------------------------------------------------------------------------------------------
+1    0.800   2.500   0.5714  3.0836   2.33     no      CURRENT TGP
+2    0.829   1.440   0.4892  1.2734   1.96     no      RAR best fit (2D)
+3    0.800   1.333   0.4571  1.6000   1.84     no      alpha=0.8, BTFR forced
+4    1.000   1.000   0.5000  1.4530   2.00     YES     simplest BTFR
+5    0.588   6.682   0.5115  1.4042   2.05     no      d=3 SAW exact + BTFR
+6    0.600   5.000   0.5000  1.4517   2.00     YES     Flory d=3 + BTFR
+7    0.700   2.500   0.5000  1.3050   2.00     YES     BTFR with c_eff=2.5
+8    0.760   1.923   0.5000  1.2862   2.00     YES     best along gamma=0.5
+9    1.000   2.500   0.7143  18.5369  3.50     no      alpha=1, c_eff=2.5
+10   0.500   2.500   0.3571  9.2264   1.56     no      random walk d>=4
+
+KEY FINDINGS:
+
+1. ALPHA TENSION CONFIRMED:
+   - With c_eff = 2.5 fixed, data prefer alpha ~ 0.704, not 0.800
+   - Standard TGP (alpha=0.8, c_eff=2.5) is 1.3 sigma from best fit
+   - But this is a MILD tension (< 3 sigma)
+
+2. BTFR TENSION IS MORE SEVERE:
+   - Standard TGP gives gamma = 0.5714, BTFR exponent = 2.33
+   - Observed BTFR demands exponent = 4.0 (+/- 0.1)
+   - This is a QUALITATIVE failure, not just quantitative
+   - The deep-MOND slope is WRONG by ~14%
+
+3. RESOLUTION OPTIONS:
+   a) Change c_eff: from 2.5 to ~1.33 (with alpha=0.8)
+      -> Requires reinterpretation of morphological codimension
+   b) Change alpha: to ~0.70 (with c_eff=2.5)
+      -> No clear polymer physics motivation
+   c) Change both: best fit along gamma=0.5 is (0.760, 1.923)
+      -> May or may not have physical motivation
+   d) Different functional form: Form 4 = 1/(1-exp(-y^delta))
+      -> Best fit, gives BTFR exactly, but harder to derive from TGP
+
+4. MOST PROMISING SCENARIO:
+   - TGP with alpha ~ 0.8, c_eff ~ 1.33: keeps SAW physics,
+     changes only the codimension interpretation
+   - Or: alpha = 1.0, c_eff = 1.0: simplest, but loses SAW
+   - The choice depends on whether SAW physics is fundamental
+     or whether Gaussian fluctuations (alpha=1) suffice
+
+5. FORM 4 REMAINS PHENOMENOLOGICALLY SUPERIOR:
+   - Form 4 (delta~0.5) gives chi2 = 0.1920
+   - Best TGP: chi2 = 1.2734
+   - The geometric-series structure of Form 4 may hint at
+     a non-perturbative TGP derivation
+
+========================================================================
+END gs57_alpha_tension.py
+========================================================================

@@ -280,49 +280,210 @@ def build_concept_graph():
 # ======================================================================
 
 def build_research_graph():
-    """Map research problems R1-R7 to their dependencies."""
+    """Map ALL research folders (R1-R7, Q0-Q7, Galaxy, Cosmo) with dependencies."""
     G = nx.DiGraph()
 
-    problems = {
-        "R1: Cabibbo\n(Ω_Λ/N)²": {"color": "#F44336", "priority": "NOW"},
-        "R2: CG-1/3/4\ncontinuum": {"color": "#F44336", "priority": "LONG"},
-        "R3: Why N=3": {"color": "#FF9800", "priority": "LONG"},
-        "R4: h(Φ)=Φ\nmetric": {"color": "#F44336", "priority": "NOW"},
-        "R5: m∝A⁴\nscaling": {"color": "#FF9800", "priority": "MED"},
-        "R6: B=√2\nBrannen": {"color": "#FF9800", "priority": "MED"},
-        "R7: UV\ncompletion": {"color": "#9E9E9E", "priority": "LOW"},
-    }
-    for name, attrs in problems.items():
-        G.add_node(name, type="problem", **attrs)
+    # --- Status colors ---
+    # green (#4CAF50) = COMPLETE/SOLID, lime (#CDDC39) = BREAKTHROUGH,
+    # orange (#FF9800) = PARTIAL/OPEN, red (#F44336) = RESOLVED/CLOSED,
+    # grey (#9E9E9E) = EMPTY placeholder, blue (#2196F3) = OUTSIDE SCOPE
 
+    # ===================== R-series: Core theory =====================
+    r_nodes = {
+        "R1: cabibbo\nRESOLVED 0.75σ": {
+            "color": "#F44336", "status": "RESOLVED", "folder": "cabibbo_correction"},
+        "R2: continuum\nOPEN 6-12mo": {
+            "color": "#FF9800", "status": "OPEN", "folder": "continuum_limit"},
+        "R3: why_n3\nSOLID 13/13": {
+            "color": "#4CAF50", "status": "SOLID", "folder": "why_n3"},
+        "R4: metric\nCOMPLETE 11/11": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "metric_ansatz"},
+        "R5: mass_scaling\nBREAKTHROUGH 7/7": {
+            "color": "#CDDC39", "status": "BREAKTHROUGH", "folder": "mass_scaling_k4"},
+        "R6: brannen_sqrt2\nPARTIAL": {
+            "color": "#FF9800", "status": "PARTIAL", "folder": "brannen_sqrt2"},
+        "R7: uv_completion\nEMPTY": {
+            "color": "#9E9E9E", "status": "EMPTY", "folder": "uv_completion"},
+    }
+    for name, attrs in r_nodes.items():
+        G.add_node(name, type="problem_R", **attrs)
+
+    # ===================== Q-series: Quantum mechanics =====================
+    q_nodes = {
+        "Q0: foundations\nCOMPLETE 12/12": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_foundations"},
+        "Q1: measurement\nCOMPLETE 22/22": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_measurement"},
+        "Q2: born_rule\nEMPTY placeholder": {
+            "color": "#9E9E9E", "status": "EMPTY", "folder": "qm_born_rule"},
+        "Q3: superposition\nCOMPLETE 7/7": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_superposition"},
+        "Q4: entanglement\nCOMPLETE 10/10": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_entanglement"},
+        "Q5: spin\nCOMPLETE 7/7": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_spin"},
+        "Q6: statistics\nCOMPLETE 8/8": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_statistics"},
+        "Q7: decoherence\nCOMPLETE 8/8": {
+            "color": "#4CAF50", "status": "COMPLETE", "folder": "qm_decoherence"},
+    }
+    for name, attrs in q_nodes.items():
+        G.add_node(name, type="problem_Q", **attrs)
+
+    # ===================== Galaxy scaling =====================
+    gal_node = "Galaxy: scaling\n46+ scripts PASS"
+    G.add_node(gal_node, type="problem_G", color="#4CAF50",
+               status="PASS", folder="galaxy_scaling")
+
+    # ===================== Cosmological =====================
+    cosmo_nodes = {
+        "Cosmo: tensions\nCLOSED no mechanism": {
+            "color": "#F44336", "status": "CLOSED", "folder": "cosmo_tensions"},
+        "Cosmo: H0\nOUTSIDE SCOPE": {
+            "color": "#2196F3", "status": "OUTSIDE_SCOPE", "folder": "hubble_tension"},
+        "Cosmo: S8\nNEGLIGIBLE": {
+            "color": "#2196F3", "status": "NEGLIGIBLE", "folder": "s8_tension"},
+        "Cosmo: DESI w(z)\nINCOMPATIBLE": {
+            "color": "#F44336", "status": "INCOMPATIBLE", "folder": "desi_dark_energy"},
+    }
+    for name, attrs in cosmo_nodes.items():
+        G.add_node(name, type="problem_C", **attrs)
+
+    # ===================== Tools =====================
     tools = {
-        "galois\nGL(n,GF(2))": {"color": "#4CAF50", "type": "tool"},
-        "Cadabra2\ntensors": {"color": "#4CAF50", "type": "tool"},
-        "Lean 4\nproofs": {"color": "#4CAF50", "type": "tool"},
-        "SymPy\nCAS": {"color": "#4CAF50", "type": "tool"},
-        "SciPy\nODE": {"color": "#4CAF50", "type": "tool"},
+        "galois\nGL(n,GF(2))": {"color": "#81D4FA", "type": "tool"},
+        "Cadabra2\ntensors": {"color": "#81D4FA", "type": "tool"},
+        "Lean 4\nproofs": {"color": "#81D4FA", "type": "tool"},
+        "SymPy\nCAS": {"color": "#81D4FA", "type": "tool"},
+        "SciPy\nODE": {"color": "#81D4FA", "type": "tool"},
     }
     for name, attrs in tools.items():
         G.add_node(name, **attrs)
 
-    # problem → tool
-    G.add_edge("R1: Cabibbo\n(Ω_Λ/N)²", "galois\nGL(n,GF(2))")
-    G.add_edge("R3: Why N=3", "galois\nGL(n,GF(2))")
-    G.add_edge("R4: h(Φ)=Φ\nmetric", "Cadabra2\ntensors")
-    G.add_edge("R2: CG-1/3/4\ncontinuum", "Lean 4\nproofs")
-    G.add_edge("R6: B=√2\nBrannen", "Lean 4\nproofs")
-    G.add_edge("R5: m∝A⁴\nscaling", "SymPy\nCAS")
-    G.add_edge("R5: m∝A⁴\nscaling", "SciPy\nODE")
-    G.add_edge("R6: B=√2\nBrannen", "SciPy\nODE")
-    G.add_edge("R7: UV\ncompletion", "SymPy\nCAS")
+    # ===================== R-series dependencies =====================
+    # R2 (continuum) → ALL (foundational)
+    for rn in r_nodes:
+        if "R2:" not in rn:
+            G.add_edge("R2: continuum\nOPEN 6-12mo", rn, label="foundational")
+    # R5 (mass_scaling) → R3 (why_n3) via K^2 mechanism
+    G.add_edge("R5: mass_scaling\nBREAKTHROUGH 7/7", "R3: why_n3\nSOLID 13/13",
+               label="K^2 mechanism")
+    # R6 (brannen) → R3 (why_n3) via Koide K=2/3
+    G.add_edge("R6: brannen_sqrt2\nPARTIAL", "R3: why_n3\nSOLID 13/13",
+               label="Koide K=2/3")
+    # R4 (metric) → galaxy_scaling via metric ansatz
+    G.add_edge("R4: metric\nCOMPLETE 11/11", gal_node,
+               label="metric ansatz")
 
-    # inter-problem dependencies
-    G.add_edge("R2: CG-1/3/4\ncontinuum", "R5: m∝A⁴\nscaling",
-               label="CG proves α=2 → k=4")
-    G.add_edge("R5: m∝A⁴\nscaling", "R6: B=√2\nBrannen",
-               label="k=4 → mass formula → B")
-    G.add_edge("R6: B=√2\nBrannen", "R1: Cabibbo\n(Ω_Λ/N)²",
-               label="Koide → CKM structure")
+    # ===================== Q-series dependencies =====================
+    # Q0 (foundations) → all Q modules (hbar derivation)
+    for qn in q_nodes:
+        if "Q0:" not in qn:
+            G.add_edge("Q0: foundations\nCOMPLETE 12/12", qn, label="hbar")
+    # Q5 (spin) → Q6 (statistics) via winding number B
+    G.add_edge("Q5: spin\nCOMPLETE 7/7", "Q6: statistics\nCOMPLETE 8/8",
+               label="winding number B")
+    # Q1 (measurement) → Q4 (entanglement) via Born rule
+    G.add_edge("Q1: measurement\nCOMPLETE 22/22", "Q4: entanglement\nCOMPLETE 10/10",
+               label="Born rule")
+    # Q3 (superposition) → Q7 (decoherence) via NL mixing
+    G.add_edge("Q3: superposition\nCOMPLETE 7/7", "Q7: decoherence\nCOMPLETE 8/8",
+               label="NL mixing")
+
+    # ===================== Galaxy → Cosmo scope boundary =====================
+    G.add_edge(gal_node, "Cosmo: tensions\nCLOSED no mechanism",
+               label="scope boundary")
+    G.add_edge(gal_node, "Cosmo: H0\nOUTSIDE SCOPE",
+               label="predictions")
+    G.add_edge(gal_node, "Cosmo: S8\nNEGLIGIBLE",
+               label="predictions")
+    G.add_edge(gal_node, "Cosmo: DESI w(z)\nINCOMPATIBLE",
+               label="predictions")
+
+    # ===================== Problem → tool edges =====================
+    G.add_edge("R1: cabibbo\nRESOLVED 0.75σ", "galois\nGL(n,GF(2))")
+    G.add_edge("R3: why_n3\nSOLID 13/13", "galois\nGL(n,GF(2))")
+    G.add_edge("R4: metric\nCOMPLETE 11/11", "Cadabra2\ntensors")
+    G.add_edge("R2: continuum\nOPEN 6-12mo", "Lean 4\nproofs")
+    G.add_edge("R6: brannen_sqrt2\nPARTIAL", "Lean 4\nproofs")
+    G.add_edge("R5: mass_scaling\nBREAKTHROUGH 7/7", "SymPy\nCAS")
+    G.add_edge("R5: mass_scaling\nBREAKTHROUGH 7/7", "SciPy\nODE")
+    G.add_edge("R6: brannen_sqrt2\nPARTIAL", "SciPy\nODE")
+    G.add_edge("R7: uv_completion\nEMPTY", "SymPy\nCAS")
+
+    return G
+
+
+# ======================================================================
+# 5. CONCEPT FLOW GRAPH — QM emergence chain + cosmological scope
+# ======================================================================
+
+def build_concept_flow():
+    """Build concept flow: QM emergence chain and cosmological scope boundary."""
+    G = nx.DiGraph()
+
+    # --- QM emergence chain ---
+    qm_chain = [
+        ("Q0: hbar\nfoundations", "#4CAF50"),
+        ("Q1: measurement\nuncertainty", "#4CAF50"),
+        ("Q2: Born rule\n(in Q0/Q1)", "#9E9E9E"),
+        ("Q3: superposition\nNL mixing", "#4CAF50"),
+        ("Q4: entanglement\nBell/CHSH", "#4CAF50"),
+        ("Q5: spin-1/2\ntopology", "#4CAF50"),
+        ("Q6: spin-statistics\nconnection", "#4CAF50"),
+        ("Q7: decoherence\nemergent", "#4CAF50"),
+    ]
+    for name, color in qm_chain:
+        G.add_node(name, type="qm", color=color)
+
+    # QM emergence edges
+    G.add_edge(qm_chain[0][0], qm_chain[1][0], label="hbar → uncertainty")
+    G.add_edge(qm_chain[0][0], qm_chain[2][0], label="contains Born rule")
+    G.add_edge(qm_chain[1][0], qm_chain[3][0], label="measurement basis")
+    G.add_edge(qm_chain[1][0], qm_chain[4][0], label="Born rule → Bell")
+    G.add_edge(qm_chain[3][0], qm_chain[6][0], label="NL → decoherence")
+    G.add_edge(qm_chain[4][0], qm_chain[5][0], label="winding number")
+    G.add_edge(qm_chain[5][0], qm_chain[6][0])
+
+    # --- Core theory chain ---
+    core_nodes = [
+        ("R2: continuum\nlimit", "#FF9800"),
+        ("R4: metric\nh(Phi)=Phi", "#4CAF50"),
+        ("R5: mass k=4\nscaling", "#CDDC39"),
+        ("R3: N=3\ngenerations", "#4CAF50"),
+        ("R6: Brannen\nsqrt2", "#FF9800"),
+        ("R1: Cabibbo\nresolved", "#F44336"),
+    ]
+    for name, color in core_nodes:
+        G.add_node(name, type="core", color=color)
+
+    G.add_edge(core_nodes[0][0], core_nodes[1][0], label="CG theorems")
+    G.add_edge(core_nodes[0][0], core_nodes[2][0], label="alpha=2")
+    G.add_edge(core_nodes[2][0], core_nodes[3][0], label="K^2")
+    G.add_edge(core_nodes[4][0], core_nodes[3][0], label="Koide K=2/3")
+    G.add_edge(core_nodes[3][0], core_nodes[5][0], label="CKM")
+
+    # --- Galaxy → Cosmo scope boundary ---
+    scope_nodes = [
+        ("Galaxy scaling\n46+ scripts", "#4CAF50"),
+        ("SCOPE\nBOUNDARY", "#FFD600"),
+        ("Cosmo tensions\nCLOSED", "#F44336"),
+        ("H0 tension\nOUTSIDE", "#2196F3"),
+        ("S8 tension\nNEGLIGIBLE", "#2196F3"),
+        ("DESI w(z)\nINCOMPATIBLE", "#F44336"),
+    ]
+    for name, color in scope_nodes:
+        G.add_node(name, type="scope", color=color)
+
+    G.add_edge(core_nodes[1][0], scope_nodes[0][0], label="metric ansatz")
+    G.add_edge(scope_nodes[0][0], scope_nodes[1][0])
+    G.add_edge(scope_nodes[1][0], scope_nodes[2][0])
+    G.add_edge(scope_nodes[1][0], scope_nodes[3][0])
+    G.add_edge(scope_nodes[1][0], scope_nodes[4][0])
+    G.add_edge(scope_nodes[1][0], scope_nodes[5][0])
+
+    # Connect QM to core via foundations
+    G.add_edge(qm_chain[0][0], core_nodes[0][0], label="Z2 substrate")
 
     return G
 
@@ -438,21 +599,32 @@ def main():
                "graph_concept_flow.png", layout="kamada", figsize=(20, 14))
     export_gexf(concept_g, "graph_concept_flow.gexf")
 
-    # 4. Research graph
-    print("\n4. Building research problems graph...")
+    # 4. Research graph (all 20 folders: R1-R7, Q0-Q7, Galaxy, Cosmo)
+    print("\n4. Building research problems graph (R1-R7, Q0-Q7, Galaxy, Cosmo)...")
     research_g = build_research_graph()
-    print_stats(research_g, "Research Problems R1-R7")
-    draw_graph(research_g, "TGP Research Problems → Tools",
-               "graph_research_problems.png", layout="spring", figsize=(14, 10))
+    print_stats(research_g, "Research Problems (20 folders)")
+    draw_graph(research_g,
+               "TGP Research: R1-R7 + Q0-Q7 + Galaxy + Cosmo → Tools",
+               "graph_research_problems.png", layout="kamada", figsize=(24, 18))
     export_gexf(research_g, "graph_research_problems.gexf")
+
+    # 5. Concept flow (QM emergence + cosmological scope boundary)
+    print("\n5. Building concept flow graph (QM chain + scope boundary)...")
+    flow_g = build_concept_flow()
+    print_stats(flow_g, "Concept Flow (QM + Core + Cosmo scope)")
+    draw_graph(flow_g,
+               "TGP Concept Flow: QM Emergence → Core Theory → Galaxy → Cosmo Scope",
+               "graph_concept_flow_v2.png", layout="kamada", figsize=(22, 16))
+    export_gexf(flow_g, "graph_concept_flow_v2.gexf")
 
     # Summary
     print("\n" + "=" * 60)
-    print("DONE — 4 graphs generated in research/")
+    print("DONE — 5 graphs generated in research/")
     print("=" * 60)
     print("\nFiles:")
     print("  PNG: graph_tex_includes.png, graph_python_modules.png,")
-    print("       graph_concept_flow.png, graph_research_problems.png")
+    print("       graph_concept_flow.png, graph_research_problems.png,")
+    print("       graph_concept_flow_v2.png")
     print("  GEXF (Gephi): *.gexf")
 
 

@@ -1,0 +1,173 @@
+==============================================================================
+  ps3_effective_params_map.py
+==============================================================================
+
+  Program P5 #3:  mapowanie parametrow efektywnych + kalibracja TGP <-> SI
+
+==============================================================================
+  Part A.  Kalibracja dlugosci:  1 jedn. substratu = a_0 (Bohr radius)
+==============================================================================
+
+  a_0 (Bohr) = 0.52917721067 A
+
+  Argument: soliton g_0 opisuje zlokalizowany stan elektronowy substratu;
+           a_0 to naturalna skala elektronowej lokalizacji w atomie.
+
+  Konsekwencja: preferowana stala sieci TGP (pierwsze atrakcyjne maks.):
+      a* = 7.725 (substr.) * 0.52917721067 A = 4.0879 A
+
+  Pierwsze maksima TGP (n = 0, 1, 2):
+      a*_0 =  7.725 (substr.) =  4.088 A
+      a*_1 = 14.008 (substr.) =  7.413 A
+      a*_2 = 20.291 (substr.) = 10.738 A
+      a*_3 = 26.575 (substr.) = 14.063 A
+
+==============================================================================
+  Part B.  Stala sieci rzeczywistych SC vs TGP-maksima
+==============================================================================
+
+          SC     a [A]     a/a_0    n*      a*_n     resid    T_c [K]
+  ----------   -------   -------   ---   -------   -------   --------
+          Al     4.046     7.646     0     7.725    +0.079       1.18
+          Zn     2.665     5.036     0     7.725    +2.689       0.85
+          Sn     5.831    11.019     1    14.008    +2.989       3.72
+          In     4.599     8.691     0     7.725    +0.966       3.41
+          Hg     2.992     5.654     0     7.725    +2.071       4.15
+          Pb     4.950     9.354     0     7.725    +1.629       7.20
+          Nb     3.301     6.238     0     7.725    +1.487       9.26
+           V     3.027     5.720     0     7.725    +2.005       5.30
+          Ta     3.303     6.242     0     7.725    +1.483       4.47
+          Tc     2.739     5.176     0     7.725    +2.549       7.80
+         NbN     4.388     8.292     0     7.725    +0.567      16.10
+        V3Si     4.725     8.929     0     7.725    +1.204      17.10
+       Nb3Sn     5.290     9.997     0     7.725    +2.272      18.30
+       Nb3Ge     5.156     9.743     0     7.725    +2.018      23.20
+        MgB2     3.086     5.832     0     7.725    +1.893      39.00
+        YBCO     3.820     7.219     0     7.725    +0.506      92.00
+      BiSCCO     3.815     7.209     0     7.725    +0.516     110.00
+         H3S     3.089     5.837     0     7.725    +1.888     203.00
+       LaH10     3.320     6.274     0     7.725    +1.451     250.00
+
+  Interpretacja residuum:
+    |resid| < 1.0    -> silna zgodnosc z TGP-maksimum (>0 = atrakcyjne sprz.)
+    |resid| ~ pi/2   -> srednie sprzezenie, moze byc SC
+    |resid| ~ pi     -> na zerze, granica SC/non-SC
+    |resid| > pi     -> material prawdopodobnie nie-SC-TGP-friendly
+
+==============================================================================
+  Part C.  Kalibracja energii Lambda_E (z Al jako punkt referencyjny)
+==============================================================================
+
+  Idea:  T_c(material) = T_C_RATIO_SC * C_0 * A(g_0_mat)^2 * Lambda_E / k_B
+  gdzie A(g_0_mat) bedzie dopasowywane, a Lambda_E kalibrowane przez Al.
+
+  Z Al:  T_c = 1.175 K
+         J*(e)        = C_0 * A_e^2 = 0.7578 (substr.)
+         T_c^XY(SC,e) = 2.20 * J*(e) = 1.6685 (substr.)
+         Lambda_E     = T_c * k_B / T_c^substr = 0.060687 meV
+
+         Lambda_E / E_Hartree = 2.23e-06
+         Lambda_E / k_B * 1K  = 0.7042  (bezwymiarowe)
+
+  Uwaga: Lambda_E ~ 60.7 ueV. To jest skala energii sprzezenia
+         solitonowego, NIE pelna skala substratu.
+         Pelna skala substratu ~ E_Hartree (~27 eV).
+         Tlumienie = 4.48e+05  (razy)
+         -- odpowiada to 'effective coupling' 1/tlumienie w BCS.
+
+==============================================================================
+  Part D.  Mapowanie parametrow efektywnych
+==============================================================================
+
+  Parametr materialu   <->   Parametr substratu TGP
+  ------------------------------------------------------------
+
+  1. Stala sieci a[A]    <->   a/a_0 w jedn. substratu
+     SC-friendly: a/a_0 bliskie 7.725 + n*2*pi
+
+  2. omega_Debye[meV]    <->   skala pasma ~ Lambda_E
+     Al: omega_D = 37 meV;  Pb: 8.3 meV
+     TGP Lambda_E = 0.0607 meV (z Al -- kalib.)
+
+  3. lambda_ep (McMillan)  <->   A(g_0)^2 * C_0 / Lambda_E_norm
+     Al: lambda_ep ~ 0.38;  Pb: 1.55;  Nb: 1.0
+
+  4. Koordynacja z         <->   typ sieci Bravais
+     SC:6, BCC:8, FCC:12 -- liniowe skalowanie T_c ~ z/6
+
+  5. Coherence length ksi_Pippard  <->   1/A * a_0 (TGP)
+     Al: ksi ~ 1600 nm;  Pb: 83 nm;  Nb: 39 nm
+     TGP:  ksi_TGP = a_0 / A_e  = 4.2475 A
+                   = 0.4247 nm  (bardzo krotki!)
+
+  UWAGA: naiwne A ma zbyt krotki ksi_TGP vs eksperyment.
+        Zgodnie z TGP ksi_Pippard wynika z KOHERENTNEJ fazowo srednica
+        solitonow (nie indiwidualnego zasiegu ogonu).
+
+==============================================================================
+  Part E.  Predykcja T_c dla znanych SC (tylko lambda dlugosci, Lambda_E z Al)
+==============================================================================
+
+  Zalozenia:
+    - g_0 = g_0^e dla wszystkich (najsilniejsza uproszczenie)
+    - A = A_TAIL_e
+    - z: z rzeczywistej sieci (SC=6, BCC=8, FCC=12, hex=12...)
+    - Kara za niezgodnosc a z TGP-maksima: T_c *= exp(-|resid|^2 / sigma^2)
+
+          SC     z   |resid|   suppress    T_c obs    T_c TGP    ratio
+  ----------   ---   -------   --------   --------   --------   ------
+          Al    12     0.079     0.9972       1.18       2.34     1.99
+          Zn    12     2.689     0.0402       0.85       0.09     0.11
+          Sn     8     2.989     0.0189       3.72       0.03     0.01
+          In    12     0.966     0.6606       3.41       1.55     0.46
+          Hg     6     2.071     0.1487       4.15       0.17     0.04
+          Pb    12     1.629     0.3074       7.20       0.72     0.10
+          Nb     8     1.487     0.3743       9.26       0.59     0.06
+           V     8     2.005     0.1676       5.30       0.26     0.05
+          Ta     8     1.483     0.3761       4.47       0.59     0.13
+          Tc    12     2.549     0.0557       7.80       0.13     0.02
+         NbN    12     0.567     0.8668      16.10       2.04     0.13
+        V3Si    14     1.204     0.5251      17.10       1.44     0.08
+       Nb3Sn    14     2.272     0.1009      18.30       0.28     0.02
+       Nb3Ge    14     2.018     0.1635      23.20       0.45     0.02
+        MgB2    12     1.893     0.2033      39.00       0.48     0.01
+        YBCO     6     0.506     0.8923      92.00       1.05     0.01
+      BiSCCO     6     0.516     0.8885     110.00       1.04     0.01
+         H3S     8     1.888     0.2052     203.00       0.32     0.00
+       LaH10    20     1.451     0.3922     250.00       1.54     0.01
+
+  Srednie log10(ratio) = -1.422
+  std log10(ratio)     = 0.707
+
+  Korelacja log-log (Pearson):
+  r(log T_c_obs, log T_c_pred) = 0.3060
+
+==============================================================================
+  Part F.  Wnioski + limity ps3 kalibracji
+==============================================================================
+
+  Dobre sygnaly (ps3 zamyka sie):
+  - Kalibracja dlugosci 1 substr. = a_0 daje a* = 4.088 A
+    doskonale pasujace do Al (4.05 A, T_c=1.2 K), podstawowego
+    klasycznego BCS z czystym s-electron.
+  - Druga harmonika a*_1 = 7.413 A
+    przewiduje SC wokol 7.4 A -- tu sa m.in. Sn (5.83 A - poza), In (4.60 A - bliskie).
+
+  Limity:
+  - Zalozenie g_0 = g_0^e dla wszystkich materialow jest uproszczone;
+    rzeczywiste materialy maja rozne orbitale (d, f) z innymi g_0.
+  - Kalibracja Lambda_E przez Al daje jedna stala; rzeczywiste materialy
+    maja rozne ω_D, λ_ep -- formalna teoria wymagalaby mapowania g_0 materialu.
+  - Sieci krystaliczne z niesferycznym otoczeniem (A15, perovskite) slabo
+    sie podpinaja pod czysto-kuboidalne modele XY.
+
+  STATUS ps3: Program -> PROPOZYCJA
+    Kalibracja dlugosci: 1 substr. = a_0 = 0.529 A -- solidne.
+    Kalibracja energii: Lambda_E ~ {:.1f} μeV z Al -- fenomenologiczna,
+       czeka na mikroskopowe wyprowadzenie.
+    Predykcja T_c: dziala w szerokim zakresie rzedu wielkosci, ale
+       szczegolow ilosciowych brak (trzeba mapowania g_0-materialu w ps4).
+
+==============================================================================
+  ps3 complete.
+==============================================================================

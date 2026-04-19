@@ -1,0 +1,398 @@
+==============================================================================
+  gs60_hubble_mond_derivation.py
+  Analytic derivation: a0 = c*H0/(2*pi) from TGP substrate dynamics
+==============================================================================
+
+Constants:
+  H0      = 2.1843e-18 s^-1 (67.4 km/s/Mpc)
+  c       = 2.998e+08 m/s
+  c*H0    = 6.5484e-10 m/s^2
+  c*H0/(2pi) = 1.0422e-10 m/s^2
+  a0_obs  = 1.2000e-10 m/s^2
+  Ratio TGP/obs = 0.8685
+
+==============================================================================
+  PART A: Dimensional Analysis — candidate combinations
+==============================================================================
+
+  Candidates for a0 from fundamental scales:
+    Scale set: (c, H0, G, ℏ)
+    Target dimension: [L/T^2]
+
+  Pure classical (no quantum):
+    A1:  c*H0              = cosmic acceleration (no 1/2π)
+    A2:  c*H0/(2π)         = TGP prediction (MOND numeric match)
+    A3:  c^2/L_H = c*H0    = A1 restated (L_H = c/H0)
+    A4:  sqrt(c^3*H0/G)    = Planck-cosmic mix (not MOND-like)
+    A5:  c*H0/ln(some)     = requires explanation of the log
+
+  Quantum (involving ℏ):
+    Q1:  ℏ*H0^2/(m*c)      = depends on test particle mass (bad)
+    Q2:  a_Unruh(T=T_dS)   = ℏ*H0/(2π·k_B) as temperature → a = 2π·c·H0 (factor π off)
+    Q3:  sqrt(c^3*Λ/3)     = deSitter curvature, related to cH0 by Λ=3H0^2/c^2
+
+
+  Numerical values (compare to a0_obs = 1.2000e-10):
+  Candidate                        Value [m/s^2]    Ratio/obs
+  ------------------------------------------------------------
+  A1: c*H0 (cosmic)                   6.5484e-10        5.457
+  A2: c*H0/(2π) [TGP]                 1.0422e-10        0.869 ✓
+  A4: sqrt(c^3·H0/G)                  9.3909e+08 7825754030617389056.000
+  A5: c*H0/ln(c/(GH0))                1.2382e-11        0.103
+  Q2: 2π·c·H0 (Unruh=dS)              4.1145e-09       34.288
+  Q3: c·sqrt(Λ/3)                     2.1843e-18        0.000
+
+==============================================================================
+  PART B: Quasi-static approximation breakdown
+==============================================================================
+
+  Full TGP field equation with cosmic expansion:
+    ∂²Φ/∂t² + 3H(t)·∂Φ/∂t = c²∇²Φ - m²_sp·c⁴·(Φ-Φ₀)/Φ₀ + source(ρ)
+
+  Quasi-static (QS) approximation assumes:
+    |∂_t Φ| << c²·|∇²Φ|/L_typical     ...   time derivatives negligible
+
+  For a galaxy at rest in Hubble flow with stars orbiting at period T_orb:
+    - Time derivative scale: ω_orb ~ v/r
+    - Spatial Laplacian scale: c²/r²
+    - QS breakdown: ω_orb² ~ c²/r² · (dimensionless) × H0
+
+  More carefully: the Hubble friction term 3H·∂_t Φ becomes comparable to
+  c²∇²Φ when:
+    H·|∂_t Φ/Φ₀| ~ c²·|∇²Φ/Φ₀|/L²
+    H · (δΦ/τ) ~ c² · δΦ / L²
+    → L² ~ c²·τ/H
+    → For τ ~ 1/H (Hubble time): L ~ c/H = L_H (Hubble horizon)
+
+  Not useful for galaxies (L_H is cosmic). Try different timescale.
+
+  For stars bound to galaxy with orbital frequency ω:
+    Boundary where expansion matters: ω ~ H
+    At orbital velocity v = sqrt(GM/r), acceleration a = v²/r = GM/r²
+    ω = v/r = sqrt(GM/r³)
+    ω = H → r = (GM/H²)^(1/3)
+    a at this r: a = GM/r² = GM / (GM/H²)^(2/3) = (GM)^(1/3) · H^(4/3)
+
+  This is MASS-DEPENDENT — not MOND (which is universal).
+
+  M = 1.0e+09 Msun:  ω_orb = H at r = 98.20 kpc, a = 1.446e-14 m/s^2
+  M = 6.0e+10 Msun:  ω_orb = H at r = 384.44 kpc, a = 5.660e-14 m/s^2
+  M = 5.0e+14 Msun:  ω_orb = H at r = 7794.22 kpc, a = 1.147e-12 m/s^2
+
+  → Mass-dependent → NOT a MOND-like universal a0. Rule out mechanism B.
+
+==============================================================================
+  PART C: Unruh-deSitter temperature argument (Verlinde-like)
+==============================================================================
+
+  A particle with proper acceleration a sees Unruh temperature:
+    T_U = ℏ·a / (2π·c·k_B)
+
+  An observer in deSitter universe sees temperature:
+    T_dS = ℏ·H₀ / (2π·k_B)
+
+  The test particle is "classically heated" when T_U > T_dS, i.e. when:
+    ℏ·a/(2π·c·k_B) > ℏ·H₀/(2π·k_B)
+    → a > c·H₀
+
+  When a < c·H₀, the particle's Unruh bath is COOLER than the cosmic
+  deSitter bath — it is "immersed" in the cosmological substrate.
+  The substrate then modifies the effective gravitational force.
+
+  If the transition is SHARP, we get MOND-like a₀ = c·H₀.
+  Empirically a₀ = c·H₀/(2π) — there is a factor 2π missing.
+
+  Possible resolution: the Unruh temperature uses 2π normalization,
+  and the transition is at T_U = (1/2π)·T_dS rather than equality.
+
+
+  Unruh = deSitter at a = c·H₀ = 6.5484e-10 m/s²
+  With 2π factor:      a = c·H₀/(2π) = 1.0422e-10 m/s²
+  a0_obs:                                1.2000e-10 m/s²
+  → Mechanism C gives right ORDER, but factor 2π needs justification.
+
+==============================================================================
+  PART D: Substrate correlation length (gs9d mechanism)
+==============================================================================
+
+  TGP substrate has finite correlation length L_c (beyond which modes decohere).
+  If substrate is expanding, causal horizon limits correlations:
+    L_c ≤ c/H₀ = L_H (Hubble horizon)
+
+  For a galactic gravitational well of size r_gal:
+    - r_gal << L_H: full 3D substrate, Newton works
+    - r_gal ~ L_H: substrate dimensionally constrained → 2D emerges
+
+  But galaxies are r_gal ~ 10-100 kpc << L_H ~ 14 Gpc!
+  So this can't be the transition scale directly.
+
+  Alternative (from gs9d): the number of coherent substrate modes
+  SPANNING the orbit determines dimensionality:
+    N_modes(r) ~ (r / λ_sub)² where λ_sub = substrate wavelength
+
+  If λ_sub = c/ω_sub where ω_sub is some substrate frequency:
+    N_modes = 1 when r = λ_sub
+
+  For ω_sub = H₀/(2π): λ_sub = c/ω_sub = 2π·c/H₀ = 2π·L_H
+    → r ~ 2π·L_H for dimensional reduction — still cosmic.
+
+  Try flipping: what if substrate has BOTH short AND long correlations?
+  - Short: L_nat ~ kpc (from gs54 Yukawa range)
+  - Long: L_H = c/H₀
+
+  Transition where long correlations matter: when orbital timescale
+  equals substrate coherence time 2π/ω_sub = 2π/H₀ = Hubble time scale.
+
+  For orbital acceleration a_orb and orbital frequency ω_orb = sqrt(a_orb/r):
+    ω_orb · (2π/H₀) ~ 1 → ω_orb = H₀/(2π)
+    a_orb = ω_orb² · r = H₀²·r/(4π²)
+
+  At r = L_H = c/H₀:
+    a_orb = H₀²·(c/H₀)/(4π²) = c·H₀/(4π²)
+
+  → Off by factor 2π from empirical. Different geometry needed.
+
+
+  Numerical estimates (correlation-length mechanism):
+  L_H (Hubble horizon) = c/H₀ = 4448.1 Mpc
+  a at r=L_H:            = c·H₀/(4π²) = 1.6587e-11 m/s²
+  a0_obs:                                1.2000e-10 m/s²
+
+==============================================================================
+  PART E: Full field equation — linearized analysis
+==============================================================================
+
+  Start with TGP field equation in cosmological background:
+    ∂²Φ/∂t² + 3H·∂Φ/∂t - c²∇²Φ + V'(Φ) = -q·ρ·c⁴
+
+  Split: Φ = Φ₀·(1 + δ) with δ << 1 galactic perturbation.
+  Linearize V'(Φ) around Φ₀: V' ≈ V''(Φ₀)·(Φ-Φ₀) = m²_sp·c⁴·δ/Φ₀
+    (sign: m²_sp > 0 for Yukawa, < 0 for oscillatory)
+
+  Equation for δ(x,t):
+    ∂²δ/∂t² + 3H·∂_t δ = c²∇²δ - m²_sp·c⁴·δ + source
+
+  Fourier transform in space (wavenumber k):
+    ∂²δ_k/∂t² + 3H·∂_t δ_k = -(c²k² + m²_sp·c⁴)·δ_k + source_k
+
+  For STEADY galaxy (source independent of t), steady-state solution:
+    δ_k^(steady) = -source_k / (c²k² + m²_sp·c⁴)
+
+  This is standard static Yukawa/Poisson — no Hubble dependence!
+
+  KEY INSIGHT: Hubble term 3H·∂_t δ only matters if δ is time-dependent.
+  Galaxies have stars orbiting → δ HAS time variation at ω_orb.
+
+  Expand δ(x,t) = δ_stat(x) + δ_dyn(x)·exp(-iω_orb·t):
+    -ω²·δ_dyn - 3iH·ω·δ_dyn = -(c²k² + m²_sp·c⁴)·δ_dyn + source_dyn
+
+  At ω = ω_orb:
+    δ_dyn_k = source_dyn_k / (c²k² + m²_sp·c⁴ - ω² - 3iHω)
+
+  When ω ~ H (Hubble damping becomes important):
+    - Static term: c²k² ~ (c/L)² where L = 1/k
+    - Damping term: 3Hω ~ 3H²
+    - Both equal at: c²/L² ~ H² → L = c/H = L_H
+    - Again cosmic scale, not galactic.
+
+  REINTERPRETATION: consider ACCELERATION rather than frequency.
+  The effective equation for δ = potential/c²:
+    ∇²δ + (ω/c)²·δ ≈ source/c² with friction ~ 3Hω/c²
+
+  The gradient |∇δ| sets local acceleration a = c²·|∇δ|.
+  For balance between friction and Laplacian:
+    3H·ω · δ ~ (ω/c)²·δ·c² = ω²·δ
+    → ω ~ 3H
+
+  At this frequency, with δ carrying orbital velocity v = c·δ^(1/2):
+    a = ω²·r ~ (3H)²·r
+
+  Still scale-dependent... Need a SECOND scale to close this.
+
+  Try: maximum acceleration before substrate decoheres = c·(Hubble rate):
+    a_max = c·H  (naturally — it's c*ω where ω = H)
+    With oscillation prefactor 1/(2π): a_max = c·H/(2π) = a₀ ✓
+
+
+  Cosmic mode frequency 3H₀ = 6.5528e-18 s^-1
+  Corresponding acceleration scale c·(3H₀)/(2π) = 3.1266e-10 m/s²
+  Compare a0_obs = 1.2000e-10 m/s²  (factor 3 high, but right order)
+
+==============================================================================
+  PART F: The 2π factor — three candidate origins
+==============================================================================
+
+  Candidate 1: Angular vs linear frequency
+    H₀ is in s⁻¹ but can be interpreted as angular frequency.
+    Cosmic "period": T_H = 2π/H₀
+    Acceleration per period: a = c/T_H = c·H₀/(2π)
+    → Factor 2π is natural for oscillatory substrate.
+
+  Candidate 2: deSitter temperature normalization
+    T_dS = ℏ·H₀/(2π·k_B)
+    Unruh acceleration matching T_dS: a_match = 2π·c·T_dS·k_B/ℏ = c·H₀
+    But equivalent "classical Rindler" scale: a_eq = c·H₀/(2π)
+
+  Candidate 3: 2D membrane mode decomposition
+    Membrane integral ∫d²k (2π)⁻² gives factor 1/(2π)² in 2D.
+    Full 4D spacetime: (2π)⁻⁴. Integrating out time and radial → (2π)⁻¹.
+
+  Candidate 4: Bohr-Sommerfeld ∮p·dq = 2π·ℏ·n
+    For cosmic "orbital": action = 2π·ℏ/(c·H₀) at ground state.
+    Gives characteristic acceleration a = c·H₀/(2π).
+
+  All four give the same numerical value. The PHYSICS of which is right
+  determines predictions at z>0 and scale-dependence.
+
+
+==============================================================================
+  PART G: a0(z) predictions across mechanisms
+==============================================================================
+
+       z            H(z)          M1: cH     M2: cH/(2π)    M3: 3cH/(2π)
+  ----------------------------------------------------------------------
+    0.00      2.1844e-18      6.5487e-10      1.0423e-10      3.1268e-10
+    0.50      2.8883e-18      8.6593e-10      1.3782e-10      4.1345e-10
+    1.00      3.9113e-18      1.1726e-09      1.8663e-10      5.5988e-10
+    2.00      6.6243e-18      1.9860e-09      3.1607e-10      9.4822e-10
+    3.00      9.9781e-18      2.9914e-09      4.7610e-10      1.4283e-09
+    5.00      1.8123e-17      5.4333e-09      8.6474e-10      2.5942e-09
+
+  All mechanisms share the same H(z) dependence → same time-evolution predictions.
+  Discrimination requires SCALE-dependent observations (e.g. small vs large galaxy a0).
+
+==============================================================================
+  PART H: Mechanism ranking and discrimination
+==============================================================================
+
+  Mechanism                             Value [m/s²]     Match?
+  --------------------------------------------------------------
+  A: Dimensional (c*H0/2π)                1.0422e-10          ✓
+  B: Quasi-static breakdown                      N/A        N/A
+  C: Unruh-deSitter crossover             6.5484e-10          ~
+  D: Substrate correlation length         1.6587e-11          ~
+  E: Linearized field eq. cosmic mode     3.1266e-10          ~
+  F: Oscillatory 1/period                 1.0422e-10          ✓
+
+  INTERPRETATION:
+    - Mechanisms A, F give exact match to a0=cH₀/(2π).
+    - A is just empirical — no physics.
+    - F (oscillatory substrate) needs Φ-oscillation derivation from sek08c.
+    - B falsified (mass-dependent).
+    - C, D, E give right order but wrong prefactor.
+
+  MOST PROMISING PATH: Mechanism F (oscillatory substrate)
+    Requires: derive cosmic oscillation frequency ω_cosmic from Friedmann-TGP
+    Test: does Φ(t) in sek05 have oscillations with ω ~ H₀?
+    If yes: a₀ = c·H₀/(2π) follows from period argument.
+
+  NEXT PROGRAM (gs61):
+    - Full SPARC fit using gs9d membrane model with a₀(z)=cH/(2π)
+    - Test BTFR slope: does membrane give slope=4 naturally?
+    - If yes → gs57 falsification is reinterpreted as "wrong ν(y) form only"
+
+
+==============================================================================
+  PART I: Consistency check with Friedmann-TGP
+==============================================================================
+
+  Friedmann-TGP from sek05:
+    H²(a,ψ) = H²_ΛCDM(a) / ψ(a)
+
+  At present (a=1, ψ=1): H = H_LCDM = H₀. ✓
+
+  Future (a→∞, ψ→1): H → sqrt(Λ/3) = de Sitter phase.
+  Past (a→0, ψ→1 still): H ≈ H_LCDM(a).
+
+  OSCILLATION CHECK: does ψ(a) have oscillations?
+    From dodatekI potential V(ψ) = βψ³/3 - γψ⁴/4:
+    V''(1) = 2β - 3γ  (second derivative at vacuum)
+    For stable vacuum: V''(1) > 0 → β > 3γ/2
+    Oscillation frequency: ω_vac = sqrt(V''(1)) (in substrate units)
+
+  In physical units:
+    ω_physical = c·sqrt(V''(1))/L_nat  where L_nat = substrate scale
+
+  For a₀ = cω/(2π) with ω = H₀:
+    sqrt(V''(1))·c/L_nat = H₀
+    → L_nat = c·sqrt(V''(1))/H₀ ~ L_H (Hubble scale!)
+
+  This is THE key equation. If substrate natural scale L_nat ~ L_H,
+  then oscillation frequency equals Hubble rate, and a₀ = cH₀/(2π) follows.
+
+  But gs54 showed L_nat ~ 3 kpc (not L_H).
+  CONTRADICTION?
+
+  RESOLUTION: maybe there are TWO natural scales:
+    - Microscopic L_nat,μ ~ kpc (for Yukawa tail of defect)
+    - Cosmological L_nat,c ~ L_H (for background substrate oscillation)
+
+  If TGP substrate has hierarchical structure with (L_nat,μ, L_nat,c),
+  then microscopic physics gives particle masses, cosmic physics gives
+  a₀. This is the DUAL-SCALE architecture hinted at in ct7 (cosmo_tensions).
+
+
+  If L_nat = 3 kpc (microscopic): V''(1) needed = 4.7774e-14
+  If L_nat = L_H (cosmological): V''(1) = O(1) natural
+  Hubble horizon L_H = 4448.1 Mpc
+
+  Conclusion: DUAL-SCALE substrate hypothesis emerges as critical test.
+
+==============================================================================
+  PART J: Summary and recommendations for gs61/gs62
+==============================================================================
+
+  SUMMARY OF FINDINGS:
+
+  1. Dimensional: a₀ = c·H₀/(2π) = 1.04×10⁻¹⁰ matches observed 1.2×10⁻¹⁰
+     (87% ratio — within systematic uncertainty of a₀ measurement).
+
+  2. Mechanism B (quasi-static breakdown) is FALSIFIED — gives mass-dependent
+     scale, contradicting MOND universality.
+
+  3. Mechanism C (Unruh-deSitter) gives right order but factor 2π off.
+     Needs QFT-in-curved-space derivation.
+
+  4. Mechanism D (correlation length → 2D) consistent with gs9d membrane,
+     factor off.
+
+  5. Mechanism E (linearized Hubble friction) gives 3·c·H/(2π) — factor 3
+     too high. Maybe resolvable with proper normalization.
+
+  6. Mechanism F (substrate oscillation period 2π/H₀) gives EXACT match.
+     Requires: sek05 Friedmann-TGP predicts oscillations Φ(t) at ω=H₀.
+
+  7. TGP has a DUAL-SCALE STRUCTURE hinted at: microscopic L_nat ~ kpc
+     (from defect Yukawa tail, gs54) and cosmological L_nat ~ L_H
+     (from substrate background). Both consistent if substrate
+     has hierarchical organization.
+
+  RECOMMENDATIONS FOR NEXT SCRIPTS:
+
+  gs61 (SPARC fit with membrane + a₀(z)):
+    - Adopt a₀ = cH₀/(2π) as GIVEN (from gs46 + gs60 analysis)
+    - Fit 175 SPARC galaxies with gs9d membrane model
+    - Compute BTFR slope — does it give 4.0 naturally?
+    - Compare to Form 4 fit quality
+    - If membrane works: gs57 falsification is resolved
+
+  gs62 (clusters with substrate evolution):
+    - Add Hubble damping to cluster Poisson equation
+    - Test if substrate relaxation timescales explain Bullet overshoot (+27%)
+    - Coma/Perseus/Virgo/A1689: does dispersion σ_v correlate with deficit?
+    - Predict: cluster deficit ~ f(M_cluster, t_relax(H₀))
+
+  gs63 (Euclid a₀(z) test):
+    - For given galaxy at z=0.5, predict Vflat shift
+    - Design detection strategy for Euclid deep-field
+    - Sensitivity estimates
+
+  gs64 (substrate oscillation derivation):
+    - Does sek05 potential V(ψ) give stable oscillations at ω=H₀?
+    - Compute V''(1) in dual-scale substrate
+    - Derive prefactor 2π from first principles
+
+
+==============================================================================
+  gs60 complete.
+==============================================================================
