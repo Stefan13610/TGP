@@ -74,10 +74,17 @@ $$P_\text{scale} \sim \frac{E_\text{4f-binding}}{\Delta V_\text{unit cell}}$$
 - Warstwowa struktura — można dostroić a
 - Wymaga synthesis (nie jest jeszcze eksperymentalnie stabilna)
 
-**Kandydat 3: Yb superhydride pod P**
-- YbH₉ @ 300 GPa: P6.C predict 215 K
-- YbH₁₀ @ 400 GPa: 267 K
-- Wymaga P ≥ 200 GPa (DAC experiments)
+**Kandydat 3: Yb superhydride pod P** *(ZREWIDOWANY ps18, 2026-04-19)*
+- ~~YbH₉ @ 300 GPa: 215 K~~ → po refit z Yb4H23 (Sharps 2025, 11.5 K @ 180 GPa): **38 K**
+- ~~YbH₁₀ @ 400 GPa: 267 K~~ → **71 K**
+- P_scale_Yb = 552 GPa (nie 10 GPa jak wcześniej zakładano)
+- **Wniosek:** Yb superhydrydy NIE są ścieżką do RT-SC. 4f¹⁴ zbyt zlokalizowane.
+
+**Kandydat 4 (NOWY po weryfikacji 2026): pressure-quench Hg-cuprates**
+- Hg1223 ambient po P-quench = 151 K ([Deng/Chu UH 2026](https://physics.aps.org/articles/v19/37))
+- Hg1245 ambient TGP-pred = 178 K (nasz P6.A Tier 1)
+- Potencjalnie Hg1245 + P-quench → bliżej 200 K bez wysokiego ciśnienia
+- Wymaga: MBE + P-quench toolchain (np. 20 GPa → quench → ambient lock)
 
 ### P7.4 — Unified Tc master plot
 
@@ -101,9 +108,14 @@ Zintegrować wszystkie ps# w jeden skrypt produkujący:
    - Falsyfikuje P6.D (obserwowane PdH ma T_c~9K przy małej zawartości H)
    - Wymaga wyższej zawartości H i ω > 60 meV
 
-4. **YbH₉/YbH₁₀ high-P**: T_c_pred 215-267 K (P6.C)
-   - Test orbital switching dla Yb
+4. **YbH₉/YbH₁₀ high-P**: T_c_pred **38-71 K** (po rewizji ps18)
+   - Test orbital switching dla Yb z P_scale=552 GPa
    - Synteza nie jest jeszcze wykonana
+   - Weryfikator: Yb4H23 @ 180 GPa = 11.5 K (Sharps 2025) już zwalidowany
+
+5. **Hg1223 pressure-quench Tc=151K** (Deng/Chu 2026) — POTWIERDZONE
+   - Nasz P6.A undershootuje (pred 93K), ale kierunek hipotezy OK
+   - Hg1245 + quench to najbardziej realistyczny kandydat RT-SC dla P7
 
 ## Pliki P7 (przyszłe)
 

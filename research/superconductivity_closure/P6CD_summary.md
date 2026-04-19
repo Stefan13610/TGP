@@ -76,15 +76,52 @@ Rozwiązuje artefakt z ps5 5c: $A_f = 2.03$ był overfittingiem LaH10
 
 ## Nowe predykcje P6.C
 
-Hipotetyczne ytterbium hydrides:
+### Rewizja 2026-04-19 (ps18): P_scale_Yb z eksperymentu Yb4H23
 
-| Kandydat | P [GPa] | ω [meV] | η | T_pred [K] |
-|----------|---------|---------|---|------------|
-| YbH4 | 200 | 150 | 1.00 | **164** |
-| YbH9 | 300 | 200 | 1.00 | **215** |
-| YbH10 | 400 | 250 | 1.00 | **267** |
+**Pierwsze predykcje (ps16) zakładały P_scale_Yb = 10 GPa — to było zbyt optymistyczne.**
 
-Synteza YbH_x nieprzebadana eksperymentalnie — otwarta propozycja.
+Eksperyment **Yb4H23 @ 180 GPa = 11.5 K** ([Sharps 2025](https://sharps.ac.cn/en/uploads/soft/20250725/2-250H515444B06.pdf))
+pozwala skalibrować P_scale_Yb. Odwracając formułę:
+
+$$
+\eta_{\text{needed}}(180\,\text{GPa}) = \sqrt{T_{\text{obs}} / T_{\text{pred}}(\eta=1)} = \sqrt{11.5/148.6} = 0.278
+$$
+
+$$
+\boxed{P_\text{scale}^{Yb} = -180 / \ln(1 - 0.278) = 552\,\text{GPa}}
+$$
+
+Stosunek P_scale_Yb / P_scale_Ce ≈ 95× odzwierciedla że 4f¹⁴ Yb ma 13 elektronów
+więcej niż 4f¹ Ce i każdy z nich jest silniej związany.
+
+### Zaktualizowane predykcje (P_scale_Yb = 552 GPa)
+
+| Kandydat | P [GPa] | ω [meV] | η_old | T_old | η_new | **T_new** |
+|----------|---------|---------|-------|-------|-------|-----------|
+| YbH4  | 200 | 150 | 1.00 | 164 | 0.30 | **15 K** |
+| YbH6  | 250 | 170 | 1.00 | 185 | 0.36 | **24 K** |
+| YbH9  | 300 | 200 | 1.00 | 215 | 0.42 | **38 K** |
+| YbH10 | 400 | 250 | 1.00 | 267 | 0.52 | **71 K** |
+| Yb4H23 @ 180 GPa (obs) | 180 | 140 | — | — | 0.28 | 11.5 ← cal |
+
+**Wniosek:** Yb superhydrydy **nie są** drogą do RT-SC. Lantanowce 4f^n z dużym n
+są zbyt silnie zlokalizowane. Lepsze kierunki to lekkie lantanowce (La, Ce) lub
+pressure-quench cuprates (Hg1223 ambient 151 K).
+
+### Liniowa ekstrapolacja P_scale(4f^n)
+
+$$P_\text{scale}(4f^n) \approx 5.8 + 42 \cdot (n - 1) \quad [\text{GPa}]$$
+
+| Element | config | P_scale [GPa] |
+|---------|--------|---------------|
+| Ce | 4f¹ | 6 |
+| Pr | 4f³ | 90 |
+| Nd | 4f⁴ | 132 |
+| Sm | 4f⁶ | 216 |
+| Eu/Gd | 4f⁷ | 258 |
+| Yb | 4f¹⁴ | 552 |
+
+Gd (4f⁷ półwypełniony) może być anomalnie stabilny — wymaga osobnej kalibracji.
 
 ## Scenariusze SF damping (P6.D jako droga do high-T_c)
 
@@ -121,6 +158,7 @@ $$
 | P6.B (phonon coupling) | Λ_0 | 0.0962 meV |
 | P6.B (phonon coupling) | ω_0 | 15.0 meV |
 | P6.C (orbital switching) | P_scale_Ce | 5.8 GPa |
+| P6.C (orbital switching) | P_scale_Yb | 552 GPa (ps18) |
 | P6.D (magnetic blocking) | β | 2.527 |
 
 **Performance:**
@@ -134,7 +172,10 @@ $$
 ## Pliki
 
 - [[ps15_p6d_magnetic_blocking.py]] — β=2.527 fit
-- [[ps16_p6c_orbital_switching.py]] — P_scale_Ce=5.8 GPa, YbH_x predykcje
+- [[ps16_p6c_orbital_switching.py]] — P_scale_Ce=5.8 GPa, pierwsze YbH_x predykcje
+- [[ps17_full_p6_validation.py]] — master P6 validation (31 materiałów)
+- [[ps18_verification_corrections.py]] — rewizja P_scale_Yb (552 GPa) + Hg1223-quench
+- [[VERIFICATION_2026-04-19.md]] — weryfikacja literaturowa
 - [[P6A_summary.md]] — cuprates d-wave
 - [[P6B_summary.md]] — phonon coupling
 - [[P6CD_summary.md]] — ten plik

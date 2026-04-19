@@ -100,6 +100,7 @@ cuprates = [
     ("BiSCCO2212", 3.820, 2, 85.0),
     ("Tl2212",     3.850, 2, 108.0),
     ("Hg1223",     3.855, 3, 138.0),
+    ("Hg1223_quench", 3.830, 3, 151.0),  # Deng/Chu UH 2026 pressure-quench ambient
     ("Tl2223",     3.820, 3, 125.0),
     ("Nd2CuO4",    3.945, 1, 24.0),
     ("Bi2201",     3.810, 1, 34.0),
@@ -136,6 +137,7 @@ phonon = [
     ("LaH10",       5.100, 1.0,  12, 250.0, 0.00, 250.0),
     ("CeH9",        3.500, 1.0,   8, 135.0, 0.00, 100.0),
     ("CeH10",       3.500, 1.0,   8, 175.0, 0.00, 115.0),
+    ("Yb4H23",      3.500, 0.278, 8, 140.0, 0.00,  11.5),  # Sharps 2025 @180 GPa, eta z P_scale_Yb=552
 
     # --- f-metale ambient (z P6.C eta<1) ---
     ("La_amb",      3.770, 1.0,  12,  12.0, 0.10,  6.00),
@@ -181,7 +183,7 @@ log_obs_cup = np.array(log_obs_cup)
 log_pred_cup = np.array(log_pred_cup)
 r_cup = np.corrcoef(log_obs_cup, log_pred_cup)[0, 1]
 rms_cup = np.sqrt(np.mean((log_pred_cup - log_obs_cup)**2))
-print(f"  Cuprates (N=8): r={r_cup:.4f}, RMS_log={rms_cup:.4f}")
+print(f"  Cuprates (N={len(log_obs_cup)}): r={r_cup:.4f}, RMS_log={rms_cup:.4f}")
 print()
 
 # --- Phonon-mediated + others ---
