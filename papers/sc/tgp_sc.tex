@@ -62,17 +62,19 @@ $T_{c}=C_{0}\,A_{\mathrm{orb}}^{2}\,k_{d}(z)\,M(a)\,\LamE$
 combined with four physical blockers (pair-breaking, orbital localisation,
 spin-fluctuation damping, magnetic moment scattering). We introduce three
 universal TGP constants --- $\beta=2.527$ (magnetic blocking),
-$\kappa_{\mathrm{TGP}}=2.012$ (spin-fluctuation coupling from first
-principles), $\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$
-(Abrikosov--Gorkov lanthanide pair-breaking) --- plus tabulated atomic
-inputs $\{N(E_{F}),I,\mu_{\mathrm{eff}}\}$. The framework reproduces
+$\kappa_{\mathrm{TGP}}=2.012$ (spin-fluctuation coupling calibrated on
+five paramagnetic $d$-metals),
+$\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$ (Abrikosov--Gorkov lanthanide
+pair-breaking) --- plus tabulated atomic inputs
+$\{N(E_{F}),I,\mu_{\mathrm{eff}}\}$. The framework reproduces
 $\Tcobs$ across thirty-one materials in five classes with
 $r(\log T_{c})=0.875$, $\mathrm{RMS}_{\log}=0.346$, without class-specific
 re-fitting. Critically, the spin-fluctuation coupling $\lamsf$, previously
-assigned empirically per material, is now derived from the TGP substrate
-amplitude $A_{d}$ and atomic Stoner parameters, improving the fit from
-$r=0.874$ to $r=0.943$ while reducing eleven phenomenological inputs to
-one. We state five named falsifiable predictions, most notably
+assigned empirically per material, is replaced by a TGP-structured
+closed-form expression with a single fitted constant
+$\kappa_{\mathrm{TGP}}$ and tabulated Stoner parameters, improving the
+fit from $r=0.874$ to $r=0.943$ while reducing eleven phenomenological
+inputs to one. We state five named falsifiable predictions, most notably
 $T_{c}(\mathrm{LuH}_{10},\,170\GPa)\approx 200\text{--}250$\,K and
 $T_{c}(\mathrm{Hg}1245,\,\text{SrTiO}_{3})\approx 178$\,K, and
 additionally tabulate TGP predictions for $\sim\!25$ currently investigated
@@ -81,7 +83,12 @@ ambient-pressure Mg$_{2}$XH$_{6}$ and Li$_{2}$XH$_{6}$ families, bilayer
 nickelates, kagome Cr-based compounds, nitride-hydrides) including a
 ``$4f^{7}$ killer'' null prediction ($T_{c}\approx 0$ for GdH$_{9}$,
 TbH$_{9}$, $\ldots$, TmH$_{9}$) that directly tests Abrikosov--Gorkov
-pair-breaking in the substrate picture.
+pair-breaking in the substrate picture. We flag two outstanding open
+subproblems on the same footing as the positive results: the Ce/Kondo
+case (mixed-valence screening of $\mu_{\mathrm{eff}}$ required to match
+$T_{c}\!\sim\!100$\,K for CeH$_{9}$, labelled P7.3), and the partial
+$n^{0.7}$ correction to the cuprate $\sqrt{n}$ layer factor (L1 in
+Sec.~\ref{sec:discussion}).
 \end{abstract}
 
 \noindent\textbf{Keywords:}
@@ -115,10 +122,16 @@ system-specific effects whose magnitudes we quantify.
 \paragraph{Structure.} Section~\ref{sec:substrate-ansatz} introduces the
 core substrate ansatz. Sections~\ref{sec:P6A}--\ref{sec:P7B} develop the
 six sector modules (cuprates; phonon-mediated; orbital switching;
-magnetic blocking; first-principles $\lamsf$; lanthanide pair-breaking).
+magnetic blocking; TGP-derived $\lamsf$; lanthanide pair-breaking).
 Section~\ref{sec:master} presents the master validation on 31 materials.
 Section~\ref{sec:predictions} states the five falsifiable
-predictions. Section~\ref{sec:discussion} discusses limitations.
+predictions. Section~\ref{sec:discussion} discusses limitations,
+including two open subproblems that are stated here for full
+transparency: (i) the Ce/CeH$_{9}$ Kondo-screened pair-breaker, where
+the naive Hund moment $\mu_{\mathrm{eff}}=2.54$ over-predicts the
+observed $T_{c}$ by a factor $\sim\!3$ and requires a mixed-valence
+correction (P7.3); and (ii) the cuprate layer-factor approximation
+$\sqrt{n}$ (L1).
 
 % =============================================================================
 \section{Substrate ansatz for \texorpdfstring{$T_{c}$}{Tc}}\label{sec:substrate-ansatz}
@@ -290,15 +303,18 @@ Cooper partners. The TGP magnetic blocker is
 with $\beta$ a universal TGP constant fitted across the non-cuprate
 dataset. $\lamsf$ is the spin-fluctuation coupling. Prior to the present
 work, $\lamsf$ was assigned \emph{empirically} per material (eleven free
-numbers across V, Nb, Ta, Mo, Pd, Fe, Co, Ni, Cr, Rh, Ru). We derive it
-here from TGP first principles.
+numbers across V, Nb, Ta, Mo, Pd, Fe, Co, Ni, Cr, Rh, Ru). We replace
+this per-material tuning by a TGP-motivated closed-form expression
+calibrated on five paramagnetic $d$-metals.
 
-\subsection{First-principles \texorpdfstring{$\lamsf$}{lambda-sf} formula}
+\subsection{TGP-derived \texorpdfstring{$\lamsf$}{lambda-sf} formula
+(calibrated on five $d$-metals)}
 
 In the Eliashberg-type analysis, the paramagnon is a local fluctuation of
 the substrate $\Phi$. Coupling to a $d$-band electron through the
 substrate amplitude $A_{\mathrm{eff}}=\eta\,A_{d}$, and integrating over
-the paramagnon spectral density with a Stoner regulator, yields
+the paramagnon spectral density with a Stoner regulator, yields the
+closed-form expression
 \begin{equation}\label{eq:lamsf-P7A}
   \boxed{\;
     \lamsf^{\mathrm{TGP}}
@@ -308,11 +324,18 @@ the paramagnon spectral density with a Stoner regulator, yields
   \;}
 \end{equation}
 with $N(E_{F})$ the density of states at the Fermi level (units
-st/eV/atom), $I$ the Stoner parameter, and
-$\kappa_{\mathrm{TGP}}=2.012$ a universal TGP constant fitted on
-five paramagnetic $d$-metals. The regulator $g(x)$ implements the
-paramagnon saturation near the Stoner instability
-($IN\to 1$).
+st/eV/atom), $I$ the Stoner parameter, and $\kappa_{\mathrm{TGP}}=2.012$
+a single universal coupling calibrated on five paramagnetic $d$-metals
+(\{V,Nb,Ta,Mo,Pd\}). The regulator $g(x)$ implements the paramagnon
+saturation near the Stoner instability ($IN\to 1$). We emphasise that
+this is a \emph{TGP-structured} formula with one fitted constant
+($\kappa_{\mathrm{TGP}}$), not an \emph{ab initio} derivation from
+electronic structure: the analytic dependence on $\{A_{d},k_{d},N(E_{F}),
+I\cdot N(E_{F})\}$ is the TGP content, while the overall normalisation
+is set empirically. The validation criterion is whether the same formula,
+once calibrated, transfers without retuning to an independent test set
+(Fe-pnictides / chalcogenides); it does, at the $0.9\text{--}1.0\times$
+level (Table~\ref{tab:lamsf}).
 
 \subsection{Atomic inputs}
 
@@ -438,27 +461,46 @@ Sec.~\ref{sec:P6A}--\ref{sec:P7B} yields a parameter-free prediction for
 each material given $\{a,\mathrm{orb},z,\omega_{\mathrm{ph}},P,N(E_{F}),I,\mu_{\mathrm{eff}}\}$.
 
 \begin{center}\small
-\captionof{table}{Universal TGP parameters used in the master validation.}
+\captionof{table}{Parameters used in the master validation, grouped by
+\emph{provenance}. Category~\textsf{C} (``Core''): inherited unchanged
+from the TGP core paper~\cite{TGP-core} and not re-fitted here.
+Category~\textsf{F} (``SC-fit''): fitted once on a specific calibration
+subset (stated in the Notes column) and then held fixed for the entire
+31-material master validation. Category~\textsf{D}
+(``SC-derived''): follows from an analytic TGP construction plus atomic
+inputs and is not a free parameter. No parameter is re-fitted
+per-material; no parameter is re-fitted per-class.}
 \label{tab:params}
-\begin{tabular}{@{}lll@{}}
+\begin{tabular}{@{}llll@{}}
 \toprule
-Parameter & Value & Origin\\
+Parameter & Value & Cat. & Notes / calibration set\\
 \midrule
-$C_{0}$                 & $48.8222$     & substrate soliton \cite{TGP-core}\\
-$a^{\ast}_{\mathrm{TGP}}$ & $4.088$\,\AA  & substrate harmonic \cite{TGP-core}\\
+$C_{0}$                 & $48.8222$           & \textsf{C} & substrate soliton \cite{TGP-core}\\
+$a^{\ast}_{\mathrm{TGP}}$ & $4.088$\,\AA       & \textsf{C} & substrate harmonic \cite{TGP-core}\\
 $\{A_{s},A_{sp},A_{d},A_{f}\}$
                         & $-0.111,0.207,0.310,2.034$
-                        & orbital amplitudes \cite{TGP-core}\\
-$K_{\mathrm{dw}}$       & $3.498$        & cuprate d-wave boost\\
-$\LamE^{\mathrm{cup}}$  & $0.0513\meV$   & cuprate pairing scale\\
-$\alpha_{B}$            & $1.04$         & phonon exponent\\
-$\Lambda_{0}$, $\omega_{0}$ & $0.0962\meV$, $15\meV$ & phonon reference\\
-$\beta$                 & $2.527$        & magnetic-blocking exponent\\
-$\kappa_{\mathrm{TGP}}$ & $2.012$        & $\lamsf$ first principles\\
-$\alpha_{\mathrm{PB}}$  & $0.2887\,\mu_{B}^{-2}$ & lanthanide pair-breaking\\
+                                              & \textsf{C} & orbital amplitudes \cite{TGP-core}\\
+$K_{\mathrm{dw}}$       & $3.498$             & \textsf{F} & cuprate $d$-wave boost; fitted on 8 cuprates (P6.A)\\
+$\LamE^{\mathrm{cup}}$  & $0.0513\meV$        & \textsf{F} & cuprate pairing scale; fitted on 8 cuprates (P6.A)\\
+$\alpha_{B}$            & $1.04$              & \textsf{F} & phonon exponent; fitted on 9 hydrides (P6.B)\\
+$\Lambda_{0}$, $\omega_{0}$ & $0.0962\meV$, $15\meV$
+                                              & \textsf{F} & phonon reference; fitted on 9 hydrides (P6.B)\\
+$\beta$                 & $2.527$             & \textsf{F} & magnetic-blocking exponent; fitted on non-cuprate $d$-metals\\
+$\kappa_{\mathrm{TGP}}$ & $2.012$             & \textsf{F/D} & $\lamsf$ coupling, calibrated on \{V,Nb,Ta,Mo,Pd\}; analytic regulator (P7.1)\\
+$\alpha_{\mathrm{PB}}$  & $0.2887\,\mu_{B}^{-2}$ & \textsf{F} & lanthanide pair-breaking; fitted on \{PrH$_{9}$,NdH$_{9}$\}\\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\paragraph{Scope of each fit.} Each \textsf{F}-category constant above is
+fitted once on a \emph{named} calibration subset (P6.A cuprates; P6.B
+hydrides; the five paramagnetic $d$-metals for $\kappa_{\mathrm{TGP}}$;
+the two PrH$_{9}$/NdH$_{9}$ lanthanides for $\alpha_{\mathrm{PB}}$),
+and then used unchanged on the rest of the 31-material dataset plus
+the $\sim\!25$ open candidates of
+Table~\ref{tab:open-candidates}. No step in the pipeline reads a target
+$T_{c}^{\mathrm{obs}}$ during the ``prediction'' phase, and no per-material
+tuning is applied.
 
 \paragraph{Master plot on 31 materials.}
 Five classes: 9 cuprates (including Hg1223 pressure-quench
@@ -509,6 +551,17 @@ SrTiO$_{3}$ with a Fuchs--Kliewer phonon boost, is predicted to satisfy
 This jointly tests the $\sqrt{n}$ layer factor of P6.A and the
 interface-induced $\LamE^{\mathrm{cup}}$ enhancement. Falsification
 ($<100$\,K) would refute the $\sqrt{n}$ scaling.
+
+\paragraph{Caveat on the $\sqrt{n}$ extrapolation.} The $\sqrt{n}$ factor
+is an empirical approximation fitted on Hg$n$-series cuprates with
+$n\leq 3$; residuals on the calibration set suggest a slightly weaker
+exponent of $\sim n^{0.7}$ (see systematic limitation L1 in
+Sec.~\ref{sec:discussion}). Propagating that uncertainty, the value
+$178$\,K in Eq.~\eqref{eq:Hg1245} carries an estimated $\pm 25$\,K
+envelope before any interface systematics are included. A measured
+$T_{c}$ between $100$ and $200$\,K would be consistent with TGP; only
+$T_{c}<100$\,K would constitute a \emph{binary} falsification of the
+combined $\sqrt{n}$\,$+\,$interface-boost mechanism.
 \end{prediction}
 
 \begin{prediction}[FeSe on BaTiO$_{3}$]\label{pred:FeSe-BTO}
@@ -532,6 +585,43 @@ This is an intermediate-moment test of the pair-breaking
 mechanism~\eqref{eq:BPB} --- a dedicated probe between the $\mu=0$
 (La, Y, Lu) and $\mu\gg 1$ (heavy Ln) limits.
 \end{prediction}
+
+\subsection{Testability hierarchy of the five named predictions}
+\label{sec:test-hierarchy}
+
+Not all five predictions above are equally accessible experimentally.
+Table~\ref{tab:test-hierarchy} classifies them by the nature of the
+required synthesis and the time-horizon on which a definitive
+measurement is plausible. ``Tier-S'' = short-term, within current
+high-pressure diamond-anvil and thin-film capabilities; ``Tier-M'' =
+medium-term, requires a new or refined synthesis route; ``Tier-H'' =
+high-risk, depends on materials that are theoretically allowed but
+not yet synthesised.
+
+\begin{center}\small
+\captionof{table}{Testability tiers of the five named predictions of
+Sec.~\ref{sec:predictions}. ``Falsification leverage'' indicates how
+directly a definitive measurement would bear on a specific TGP equation.}
+\label{tab:test-hierarchy}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Tier & Prediction & Required capability & Falsification leverage\\
+\midrule
+\textsf{S} & SmH$_{9}$ at $\sim\!150\GPa$     & DAC + laser heating   & $\BPB$ intermediate-moment (Eq.~\eqref{eq:BPB})\\
+\textsf{S} & YbH$_{9}$ / YbH$_{10}$ at $\geq\!300\GPa$ & DAC high-$P$ & form of $\eta(P)$ for filled $f$-shell\\
+\textsf{S} & FeSe on BaTiO$_{3}$              & MBE on BTO            & specificity of Fuchs--Kliewer boost\\
+\textsf{M} & LuH$_{10}$ at $\sim\!170\GPa$    & clean Lu--H synthesis & $T_{c}^{\mathrm{base}}$ at $\eta=1$, $\BPB$=1\\
+\textsf{M} & Hg1245/SrTiO$_{3}$               & 5-layer cuprate MBE   & $\sqrt{n}$ layer scaling + interface $\LamE$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Tiers \textsf{S} are the immediate falsification targets. The two
+Tier-\textsf{M} predictions carry the largest $T_{c}$ numerical values
+and are the flagship tests in the long run, but they also have the
+largest synthesis uncertainty and therefore the weakest
+``binary'' character on a short horizon.
 
 \subsection{Open-candidate survey (2025--2026)}\label{sec:open-candidates}
 
@@ -685,6 +775,27 @@ consider ambient RT-SC open; the present framework does not preclude it,
 but also does not predict a specific candidate material among those
 currently synthesised.
 
+\paragraph{Cross-sector consistency with other TGP applications.}
+The substrate inputs used here --- the harmonic $a^{\ast}_{\mathrm{TGP}}=
+4.088$\,\AA\ and the orbital-amplitude spectrum
+$\{A_{s},A_{sp},A_{d},A_{f}\}$ --- are \emph{not} superconductivity-specific:
+they are fixed by the core theory~\cite{TGP-core} and reused without
+rescaling in several independent applications that are developed in
+companion analyses. In particular, the universal substrate constant
+$c_{\mathrm{TGP}}=1/(4\pi)$ appears (i) as the leading-order coefficient
+in the TGP derivation of the Kovtun--Son--Starinets viscosity bound
+$\eta/s \geq 1/(4\pi)$ for liquids (see
+\texttt{research/liquid\_viscosity/}); (ii) as the prefactor in the
+substrate self-interference potential that fixes the cosmological
+$\Lambda_{E}=\gamma/12$ limit~\cite{TGP-core}; and (iii) as the
+normalisation of the Casimir-force correction in MOFs
+(\texttt{research/casimir\_mof/}). The three superconductivity-specific
+constants isolated here --- $\beta=2.527$, $\kappa_{\mathrm{TGP}}=2.012$,
+$\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$ --- are channels-specific
+couplings within the universal substrate framework, not independent
+fitting parameters: each is fixed once on its calibration subset and then
+used unchanged across the remainder of the 31-material dataset.
+
 % =============================================================================
 \section{Conclusion}\label{sec:conclusion}
 % =============================================================================
@@ -697,11 +808,12 @@ physical blockers. Three universal TGP constants ---
 $\beta=2.527$, $\kappa_{\mathrm{TGP}}=2.012$,
 $\alpha_{\mathrm{PB}}=0.2887\,\mu_{B}^{-2}$ --- plus tabulated atomic
 inputs yield $r(\log T_{c})=0.875$ across thirty-one materials without
-class-specific refit. The reduction of eleven empirical
-$\lamsf$ values to a first-principles formula
-(Eq.~\eqref{eq:lamsf-P7A}) \emph{improves} the Pearson correlation from
-$0.874$ to $0.943$ while reducing the parameter count; this is the
-strongest internal validation of the TGP substrate picture in the
+class-specific refit. The reduction of eleven empirical $\lamsf$ values to a single
+TGP-structured closed-form expression (Eq.~\eqref{eq:lamsf-P7A}), with
+one fitted coupling $\kappa_{\mathrm{TGP}}$ calibrated on five
+$d$-metals, \emph{improves} the Pearson correlation from $0.874$ to
+$0.943$ while reducing the parameter count from eleven to one; this is
+the strongest internal validation of the TGP substrate picture in the
 superconducting sector.
 
 Five falsifiable predictions are stated; the single most distinctive is

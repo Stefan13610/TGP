@@ -75,8 +75,9 @@ by $\Phi$, and the action contains no Einstein--Hilbert term.
 This document defines the minimal, self-contained core; applications
 (superconductivity, lepton masses, black-hole shadows, dark energy) are
 developed in companion papers that cite this reference.
-We state twenty proven results and ten explicit open problems, so that
-the theory is falsifiable and extendable on a well-defined basis.
+We state twenty-one proven or numerically verified results and ten
+explicit open problems, so that the theory is falsifiable and extendable
+on a well-defined basis.
 \end{abstract}
 
 \noindent\textbf{Keywords:}
@@ -132,6 +133,17 @@ exhibits the three physical regimes. Section~\ref{sec:status} enumerates the
 status of theorems and open problems --- the central artifact of this paper
 from a reproducibility standpoint. Section~\ref{sec:applications} is a brief
 forward reference to companion papers.
+
+\paragraph{Main open caveat.} The passage from the discrete substrate
+Hamiltonian $H_{\Gamma}$ to the continuum TGP action is \emph{not yet}
+a rigorous theorem. Numerical block-spin Monte Carlo and FRG LPA'
+computations on a one-dimensional substrate chain support convergence
+to the $\alpha=2$ fixed point (see row~21 of
+Sec.~\ref{sec:status}), but a Banach/$\Gamma$-convergence proof remains
+open (OP-6). Throughout this paper we therefore present the continuum
+field theory of Sec.~\ref{sec:field} as a well-posed effective theory
+whose numerical coarse-graining has been checked, while flagging the
+rigorous continuum-limit statement as outstanding.
 
 % =============================================================================
 \section{Axioms}\label{sec:axioms}
@@ -279,7 +291,7 @@ We use the dimensionless variable $\varphi \equiv \Phi/\PhiZero$.
 
 \subsection{Uniqueness of the kinetic operator}
 
-\begin{theorem}[Uniqueness of $\DD_{\mathrm{kin}}$, $\alpha=2$]\label{thm:alpha2}
+\begin{theorem}[Uniqueness of $\DD_{\mathrm{kin}}$ within class (C1)--(C3), $\alpha=2$]\label{thm:alpha2}
 Among all local second-order scalar kinetic operators of the form
 \begin{equation}
   \DD[\varphi]
@@ -322,9 +334,15 @@ $K_{\mathrm{geo}}$, conventionally $1$).
 \begin{remark}[What $\alpha=2$ means]
 The exponent $\alpha=2$ is \emph{not} fitted to data: it is fixed by the
 geometric coupling $K_{ij}=J(\varphi_{i}\varphi_{j})^{2}$ between nearest
-neighbours on the substrate. Independent numerical verification via
-one-loop exact renormalization group (ERG) gives a fixed-point value
-indistinguishable from $2$ to the precision of the calculation.
+neighbours on the substrate, under the three conditions (C1)--(C3). The
+statement is therefore a uniqueness result \emph{within} the stated
+class of local, $\Phi$-covariant second-order scalar operators; relaxing
+any of (C1)--(C3) (non-locality, higher derivatives, or departures from
+the conformal rescaling of the substrate metric) would open additional
+channels that are not considered by TGP. Independent numerical
+verification via one-loop exact renormalization group (ERG) gives a
+fixed-point value indistinguishable from $2$ to the precision of the
+calculation (row~16 of Sec.~\ref{sec:status}).
 \end{remark}
 
 \subsection{Action, potential, and field equation}
@@ -375,6 +393,32 @@ by $\Phi$ (not an independent dynamical variable). The Einstein equations
 arise as a geometric consistency condition of $g_{\mu\nu}^{\mathrm{eff}}$,
 propagated by the Bianchi identity once satisfied at an initial time; they
 are not postulated. The only dynamical degree of freedom is $\Phi$.
+\end{remark}
+
+\begin{remark}[Formal contrast with scalar-tensor theories]\label{rem:ST-formal}
+Structurally TGP differs from the Brans--Dicke / Horndeski family on three
+counts, each visible at the level of the action and the equations of
+motion:
+\begin{enumerate}[(i),nosep]
+  \item \emph{Independent tensor d.o.f.\ absent.} In scalar-tensor
+    theories the action is $S=\int\sqrt{-g}\,[f(\phi)R/16\pi G+\ldots]$
+    with $g_{\mu\nu}$ varied independently. Here the only field varied
+    is $\Phi$; the metric is algebraically determined by
+    $g_{\mu\nu}^{\mathrm{eff}}[\Phi]$ through Eq.~\eqref{eq:exp-metric}.
+  \item \emph{No conformal frame ambiguity.} Scalar-tensor theories
+    admit Jordan/Einstein frame reparametrisations. TGP has a single
+    frame: the substrate metric $h_{ij}=\Phi^{4}\delta_{ij}$ is fixed by
+    the $\Zp$ substrate structure; no conformal redefinition of the
+    ``physical'' metric is available.
+  \item \emph{Kinetic operator not a free function.} In scalar-tensor
+    theories $f(\phi)$ is an input function to be fitted. Here
+    $K(\varphi)=\varphi^{4}$ is fixed by
+    Theorem~\ref{thm:alpha2} under (C1)--(C3), not chosen by hand.
+\end{enumerate}
+These three properties preclude TGP from being recast as a standard
+scalar-tensor theory in any frame; the GR limit is recovered only as an
+effective low-curvature description, not as a conformal transformation
+of a two-metric theory.
 \end{remark}
 
 \subsection{Ghost-freedom}\label{ssec:ghost}
@@ -434,11 +478,18 @@ gives $f=\PhiZero/\Phi=1/\psi$.
 
 \subsection{Exponential metric from PPN consistency}
 
-\begin{theorem}[Uniqueness of $h(\Phi)=\Phi$ and exponential form]\label{thm:metric}
-In the weak-field limit $\Phi=\PhiZero(1+2U/c_{0}^{2})$ with $U$ the
-Newtonian potential, the power-law ansatz $g_{tt}=-c_{0}^{2}/\psi$ yields
-$\beta_{\mathrm{PPN}}=2$. The PPN consistency requirement
-$\beta_{\mathrm{PPN}}=1$ \emph{uniquely} selects the exponential metric
+\begin{theorem}[Selection of $h(\Phi)=\Phi$ and exponential form,
+within the TGP ansatz class]\label{thm:metric}
+Within the ansatz class
+\begin{equation}
+  g_{tt}=-c_{0}^{2}/\psi,\qquad g_{ij}=h(\Phi)\,\delta_{ij},
+  \qquad fh=1\ \text{(antipodal projection)},
+\end{equation}
+and in the weak-field limit $\Phi=\PhiZero(1+2U/c_{0}^{2})$ with $U$ the
+Newtonian potential, the power-law choice $h=(\Phi/\PhiZero)^{p}$ forces
+$\beta_{\mathrm{PPN}}=2p$; PPN consistency $\beta_{\mathrm{PPN}}=1$ then
+selects $p=1$ uniquely. Continuing the same power-law structure to
+\emph{all} orders in $U$ requires the exponential closure
 \begin{equation}\label{eq:exp-metric}
   \boxed{\;
     ds^{2}
@@ -452,14 +503,34 @@ Both forms $f=1/\psi$ and $f=e^{-2U/c_{0}^{2}}$ satisfy $fh=1$ and agree
 at $O(U)$; the exponential form extends the agreement to all orders.
 \end{theorem}
 
-\begin{corollary}[PPN parameters exact]\label{cor:ppn}
-Expanding~\eqref{eq:exp-metric} and comparing with the standard PPN
-expansion, one obtains
+\begin{remark}[Scope of the selection statement]\label{rem:metric-scope}
+Theorem~\ref{thm:metric} is a selection statement \emph{within} the TGP
+ansatz class $fh=1$ and power-law $h(\Phi)$. It is not a uniqueness
+statement against every conceivable $(f,h)$; a parametrically distinct
+metric structure (e.g.\ bi-metric or tensor-valued) would not be in
+competition here. Five independent arguments support the choice $p=1$
+(substrate-density interpretation, volume element, Cassini/LLR PPN,
+soliton mass ratio, information budget); see
+\texttt{research/metric\_ansatz/} for details.
+\end{remark}
+
+\begin{corollary}[PPN parameters exact, within the ansatz of Theorem~\ref{thm:metric}]\label{cor:ppn}
+As an algebraic consequence of the exponential ansatz~\eqref{eq:exp-metric}
+(selected within the TGP ansatz class; see
+Remark~\ref{rem:metric-scope}), expanding the metric and comparing with
+the standard PPN expansion, one obtains
 \begin{equation}\label{eq:ppn}
   \gamma_{\mathrm{PPN}}=1,\qquad \beta_{\mathrm{PPN}}=1
   \qquad\text{(exact to all orders in $U$).}
 \end{equation}
-All ten PPN parameters equal their GR values.
+All ten PPN parameters equal their GR values. The prediction is
+consistent with every current solar-system test:
+Cassini Shapiro-delay tracking gives
+$|\gamma_{\mathrm{PPN}}-1|\leq 2.3\times 10^{-5}$~\cite{BertottiCassini},
+and Lunar Laser Ranging (Nordtvedt effect) gives
+$|\beta_{\mathrm{PPN}}-1|\leq 6\times 10^{-5}$~\cite{WilliamsLLR};
+a dedicated cross-check on all ten PPN parameters is reported in
+\texttt{research/metric\_ansatz/} (8/8 PASS).
 \end{corollary}
 
 \begin{corollary}[Luminal gravitational waves]\label{cor:cGW}
@@ -618,6 +689,12 @@ The list below summarises the current (April 2026) status of TGP core.
 20 & Three-regimes existence
   & Numerical profile $\phi(r)$ with attraction, repulsion, confinement
   & \textsf{NU}\\
+21 & Coarse-graining $H_{\Gamma}\!\to\!S_{\mathrm{TGP}}$ (numerical)
+  & Block-spin Monte Carlo and FRG LPA' on a 1D substrate chain show
+    $K_{\mathrm{IR}}/K_{\mathrm{UV}}=1.000$ at the $\alpha=2$ fixed point
+    (8/8 PASS, \texttt{research/continuum\_limit/}): numerical support for
+    OP-6; rigorous proof open.
+  & \textsf{NU}\\
 \bottomrule
 \end{longtable}
 \end{center}
@@ -653,9 +730,11 @@ OP-5 & Full non-linear $N$-body regime
   & Existence/uniqueness of solutions for strongly overlapping sources
   beyond perturbation theory.
   & \textsf{HY}\\
-OP-6 & Substrate metric continuum limit
+OP-6 & Substrate metric continuum limit (rigorous)
   & Rigorous Migdal--Kadanoff convergence of $H_{\Gamma}$ to the continuum
-  action~\eqref{eq:S-TGP}.
+  action~\eqref{eq:S-TGP} (Banach contraction of the block-spin map;
+  $\Gamma$-convergence of the energy functional). Numerical evidence
+  reported in row~21; fully rigorous proof open.
   & \textsf{HY}\\
 OP-7 & Tensor projection $\sigma_{ab}$
   & Derivation of the explicit tensor-field equation from the same
@@ -679,32 +758,38 @@ OP-10 & Quantum theory of $\Phi$
 \section{Applications and falsifiability}\label{sec:applications}
 % =============================================================================
 
-The minimal core of TGP defined above supports several independent
-applications. Each is developed in a dedicated companion paper that cites
-this reference.
+The minimal core of TGP defined above motivates several companion
+studies in which the same substrate and exponential metric are
+confronted with separate empirical domains. Each companion paper cites
+this reference for its foundational content; the items below are
+pointers, not self-contained derivations.
 
 \begin{itemize}[nosep]
-  \item \textbf{Superconductivity.} The substrate harmonic
-    $a^{\ast}_{\mathrm{TGP}}=7.725\,a_{\mathrm{B}}\approx 4.088$\,\AA,
+  \item \textbf{Superconductivity.} Using the substrate harmonic
+    $a^{\ast}_{\mathrm{TGP}}=7.725\,a_{\mathrm{B}}\approx 4.088$\,\AA\
     together with the orbital-amplitude spectrum
-    $\{A_{s},A_{sp},A_{d},A_{f}\}$, yields a unified prediction of
-    superconducting critical temperatures across cuprates, phonon-mediated
-    metals, pressure-driven systems and lanthanide hydrides, using three
-    universal TGP constants plus tabulated atomic inputs. See the companion
-    paper \cite{TGP-SC}.
+    $\{A_{s},A_{sp},A_{d},A_{f}\}$, the companion paper \cite{TGP-SC}
+    presents a single-formula fit of $T_{c}$ across cuprates,
+    phonon-mediated metals, pressure-driven systems and lanthanide
+    hydrides in terms of three universal TGP constants plus tabulated
+    atomic inputs. Scope, systematics and excluded families are
+    discussed there.
   \item \textbf{Lepton masses.} A single substrate parameter
     $g_{0}^{e}=0.86941$ reproduces $m_{\mu}/m_{e}$ and $m_{\tau}/m_{e}$
-    with better than $10^{-3}$ accuracy, and the Koide combination
-    $K=2/3$ follows from an arithmetic identity of the Brannen
-    parametrisation \cite{TGP-leptons}.
-  \item \textbf{Black-hole shadows.} The exponential
-    metric~\eqref{eq:exp-metric} in the strong-field regime predicts a
-    photon-ring radius reduced by $\sim 37\%$ relative to Schwarzschild,
-    falsifiable with next-generation EHT data \cite{TGP-BH}.
-  \item \textbf{$N$-body dynamics.} Chaos suppression and a violation of
-    Earnshaw's theorem in $N$-body configurations dominated by the
-    intermediate-repulsion regime (regime~ii), tested numerically against
-    explicit integration \cite{TGP-nbody}.
+    to better than $10^{-3}$, and the Koide combination $K=2/3$ is
+    recovered as an arithmetic identity of the Brannen parametrisation
+    \cite{TGP-leptons}; the identification of $g_{0}^{e}$ with a
+    substrate quantity is a working hypothesis of that companion paper.
+  \item \textbf{Black-hole shadows.} In the strong-field regime the
+    exponential metric~\eqref{eq:exp-metric} leads to a photon-ring
+    radius reduced by $\sim 37\%$ relative to Schwarzschild, offering a
+    concrete target for next-generation EHT measurements
+    \cite{TGP-BH}.
+  \item \textbf{$N$-body dynamics.} Numerical integration of
+    Eq.~\eqref{eq:field-eq} in configurations dominated by the
+    intermediate-repulsion regime (regime~ii) exhibits chaos suppression
+    and a violation of Earnshaw's theorem; see \cite{TGP-nbody} for the
+    test suite.
 \end{itemize}
 
 \paragraph{Minimal falsification targets.} The following predictions are
@@ -722,6 +807,29 @@ the core theory:
     $10^{-15}$ level.
 \end{enumerate}
 
+\paragraph{Closed-branch negative checks.} Three potential near-term
+falsification channels have been analysed in dedicated companion
+studies and found to lie \emph{below} current experimental precision,
+closing them as viable discovery avenues without contradicting the
+theory:
+\begin{itemize}[nosep]
+  \item \emph{Muon $(g\!-\!2)$:} the TGP-substrate correction to the
+    anomalous magnetic moment is $\Delta a_{\mu}\lesssim 10^{-12}$,
+    three orders of magnitude below the current experimental
+    uncertainty; see \texttt{research/muon\_g\_minus\_2/}.
+  \item \emph{Wiedemann--Franz in bad metals:} the substrate-diffusion
+    correction to $L/L_{0}$ is $\mathcal{O}(10^{-4})$ at $300$\,K, three
+    to four orders of magnitude smaller than observed deviations in
+    cuprates and heavy-fermion compounds, which are therefore \emph{not}
+    of TGP origin; see \texttt{research/thermal\_transport\_molecular/}.
+  \item \emph{Casimir force in MOFs:} the TGP correction is at the
+    $10^{-4}$--$10^{-3}$ level, below current torsion-balance precision;
+    see \texttt{research/casimir\_mof/}.
+\end{itemize}
+These null results are stated not as corroborations but as explicit
+constraints on where a TGP-specific signature could plausibly emerge
+with present instrumentation.
+
 % =============================================================================
 \section{Conclusion}\label{sec:conclusion}
 % =============================================================================
@@ -731,7 +839,7 @@ Space: four axioms, one scalar field with a geometrically fixed kinetic
 operator ($\alpha=2$), a single non-linear potential with two coefficients
 related by a vacuum condition, and an algebraically determined effective
 metric reproducing general relativity exactly at the post-Newtonian level.
-Fifteen core results are formally proven, five more are numerically
+Fifteen core results are formally proven, six more are numerically
 verified, and ten explicit open problems are stated so that the theory is
 both well-defined and falsifiable on a clear basis.
 
@@ -779,6 +887,16 @@ companion paper (2026).
 C.~M.~Will,
 \emph{The confrontation between general relativity and experiment},
 Living Rev.\ Relativity \textbf{17}, 4 (2014).
+
+\bibitem{BertottiCassini}
+B.~Bertotti, L.~Iess, and P.~Tortora,
+\emph{A test of general relativity using radio links with the Cassini spacecraft},
+Nature \textbf{425}, 374 (2003).
+
+\bibitem{WilliamsLLR}
+J.~G.~Williams, S.~G.~Turyshev, and D.~H.~Boggs,
+\emph{Progress in lunar laser ranging tests of relativistic gravity},
+Phys.\ Rev.\ Lett.\ \textbf{93}, 261101 (2004).
 
 \bibitem{Planck2018}
 Planck Collaboration,
