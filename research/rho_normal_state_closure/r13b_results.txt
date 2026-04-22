@@ -1,0 +1,98 @@
+============================================================================================
+  r13b_loo_sweep.py - LOO robustness across U0..U_full
+============================================================================================
+  N = 37
+
+--------------------------------------------------------------------------------------------
+  (A) Model quality: AIC, full RMS, LOO RMS, LOO profile RMS
+--------------------------------------------------------------------------------------------
+  model       k       RMS       AIC   LOO_RMS    overfit    prof_m  prof_max
+  U0          5    0.2690   -87.168    0.3431      1.28x    0.3140    0.8926
+  U1          6    0.2471   -91.440    0.3966      1.60x    0.3041    1.6906
+  U2          8    0.1944  -105.205    0.3140      1.62x    0.2578    1.1789
+  U3          8    0.2417   -89.076    0.4696      1.94x    0.3350    1.8108
+  U4          8    0.1903  -106.796    0.2911      1.53x    0.2708    1.0118
+  U24        10    0.1556  -117.693    0.2610      1.68x    0.2289    0.8061
+  U_full     12    0.1378  -122.679    0.3614      2.62x    0.2778    1.0817
+
+--------------------------------------------------------------------------------------------
+  (B) Robust model selection (kryteria: min LOO-profile-RMS)
+--------------------------------------------------------------------------------------------
+
+  Ranking po mean LOO profile RMS:
+    U24       mean prof RMS = 0.2289  (overfit 1.68x) <-- ROBUST
+    U2        mean prof RMS = 0.2578  (overfit 1.62x)
+    U4        mean prof RMS = 0.2708  (overfit 1.53x)
+    U_full    mean prof RMS = 0.2778  (overfit 2.62x)
+    U1        mean prof RMS = 0.3041  (overfit 1.60x)
+    U0        mean prof RMS = 0.3140  (overfit 1.28x)
+    U3        mean prof RMS = 0.3350  (overfit 1.94x)
+
+  Best robust model: U24
+    k = 10, full RMS = 0.1556, LOO RMS = 0.2610
+    mean LOO profile RMS = 0.2289
+
+    Coefficients:
+      a(d)     = +0.5845
+      as       = -2.0908
+      asp      = -1.7916
+      b        = +0.7856
+      c        = +0.4147
+      d(v)     = -0.0996
+      ds       = +0.6007
+      dsp      = +0.2926
+      cs       = -0.3863
+      csp      = -0.8046
+
+--------------------------------------------------------------------------------------------
+  (C) Per-klasa LOO profile RMS z best robust
+--------------------------------------------------------------------------------------------
+  Per-klasa:
+    s   (N= 5): mean = 0.2660, median = 0.1393, max = 0.5285
+    sp  (N= 8): mean = 0.2931, median = 0.2293, max = 0.8061
+    d   (N=24): mean = 0.1997, median = 0.1586, max = 0.4746
+
+  Top 7 LOO profile RMS outliers (best robust):
+    Bi    (sp ): prof RMS = 0.8061, dlog_R = +0.852
+    Ca    (s  ): prof RMS = 0.5285, dlog_R = +0.541
+    Tc    (d  ): prof RMS = 0.4746, dlog_R = -0.409
+    W     (d  ): prof RMS = 0.4620, dlog_R = +0.373
+    Sr    (s  ): prof RMS = 0.4341, dlog_R = -0.541
+    Be    (sp ): prof RMS = 0.4269, dlog_R = -0.114
+    Re    (d  ): prof RMS = 0.3893, dlog_R = -0.345
+
+--------------------------------------------------------------------------------------------
+  (D) Porownanie U24-robust vs U_full (LOO profile RMS per mat.)
+--------------------------------------------------------------------------------------------
+  name   cls      robust      U_full      diff
+  Cu     s        0.1171      0.2683   +0.1511  R>F
+  Ag     s        0.1110      0.1880   +0.0770  R>F
+  Au     s        0.1393      0.3001   +0.1609  R>F
+  Pt     d        0.0369      0.1504   +0.1135  R>F
+  Pd     d        0.0723      0.1356   +0.0633  R>F
+  Cd     sp       0.1050      0.2214   +0.1164  R>F
+  Ta     d        0.2322      0.1795   -0.0527  F>R
+  W      d        0.4620      0.4021   -0.0599  F>R
+  Ti     d        0.3017      0.2502   -0.0515  F>R
+  Be     sp       0.4269      0.6547   +0.2279  R>F
+  Bi     sp       0.8061      1.0817   +0.2756  R>F
+  Hf     d        0.0362      0.0906   +0.0544  R>F
+  Sc     d        0.2393      0.1869   -0.0524  F>R
+  La     d        0.1276      0.0684   -0.0592  F>R
+  Ca     s        0.5285      0.9702   +0.4417  R>F
+  Sr     s        0.4341      0.7571   +0.3230  R>F
+
+  Wins: robust = 20, U_full = 10, tie = 7
+
+============================================================================================
+  VERDICT r13b
+============================================================================================
+
+  Robust model: U24  (k=10)
+  Mean LOO profile RMS = 0.2289  (full fit: 0.2778)
+
+  Class-specific intercept + ONE slope-modifier jest optimum:
+    Formula: log R = a_cls + b*logTh + c_cls*logNF + d_cls*v
+    b uniwersalne; c, d class-specific.
+
+  Overfit ratio 1.68x -> ostrozna interpretacja.

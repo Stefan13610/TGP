@@ -1,0 +1,130 @@
+============================================================================================
+  r06_extension.py - rozszerzenie datasetu do N=23
+  + test stability wykladnikow D4
+============================================================================================
+
+  Total N = 23 (baseline 15 + ext 8)
+
+  Nowe materialy (N=8):
+  name   cls    Th_D  a[A]     N_F   rho295  lam_ep    z       Z
+  Mo       d     450  3.15   0.600    5.340   0.410    8      42
+  Ta       d     240  3.30   0.820   13.150   0.690    8      73
+  W        d     310  3.17   0.420    5.280   0.280    8      74
+  Ti       d     420  2.95   1.000   42.000   0.380   12      22
+  Be      sp    1440  2.29   0.040    3.560   0.230   12       4
+  Bi      sp     119  4.55   0.006  107.000   0.200    6      83
+  Co       d     445  2.51   1.950    6.240   0.300   12      27
+  Rh       d     480  3.80   0.750    4.510   0.370   12      45
+
+--------------------------------------------------------------------------------------------
+  Fit BG amplitudy R dla N=23 materialow
+--------------------------------------------------------------------------------------------
+  Sukces fit dla 23/23 materialow
+
+--------------------------------------------------------------------------------------------
+  D4 fit: R = C * F_TGP^a * Theta_D^b * N_F^c
+  (porownaj z N=15: a=-1.888, b=+1.211, c=+1.045, RMS=0.1972)
+--------------------------------------------------------------------------------------------
+    N = 23:  C = 2.346e+01, a = +0.419, b = +0.461, c = -0.003
+    RMS_log = 0.3841  (vs N=15 RMS=0.1972)
+    delta exp: da = +2.307, db = -0.750, dc = -1.048
+
+--------------------------------------------------------------------------------------------
+  Pe³ne porównanie form na N=23
+--------------------------------------------------------------------------------------------
+
+  Forma                             RMS_log   params
+  D0: C * F_TGP                      0.3994        2
+  D2: C * F * Th^p                   0.3980        2
+  D3: C * F^a * Th^b                 0.3841        3
+  D4: C * F^a * Th^b * NF^c          0.3841        4
+  D5: C * lam_lit * Th               0.3690        2
+  D6: C * lam^a * Th^b               0.3532        3
+  D7: C * Th^p * NF^q                0.3864        3
+
+  Best: D6: C * lam^a * Th^b (RMS = 0.3532)
+
+--------------------------------------------------------------------------------------------
+  D4 per-material residuum (porownaj nowe vs base)
+--------------------------------------------------------------------------------------------
+  name   cls   lam_lit      R_obs       R_D4     dlog   new?
+  Cu      sp     0.130      9.686     42.391   +0.641       <- out
+  Ag      sp     0.120      5.856     33.144   +0.753       <- out
+  Au      sp     0.150      5.328     26.942   +0.704       <- out
+  Al      sp     0.430     22.210     50.660   +0.358       <- out
+  Pb      sp     1.550     34.934     20.066   -0.241      
+  Sn      sp     0.720     35.140     26.022   -0.130      
+  Nb       d     1.120     66.714     46.142   -0.160      
+  V        d     0.820    136.483     55.138   -0.394       <- out
+  Fe       d     0.250    118.675     61.966   -0.282      
+  Ni       d     0.180     85.242     70.019   -0.085      
+  Pt       d     0.660     41.235     47.625   +0.063      
+  Pd       d     0.350     50.771     51.904   +0.010      
+  Cd      sp     0.400     24.825     28.117   +0.054      
+  Zn      sp     0.380     37.443     35.968   -0.017      
+  Mg      sp     0.350     37.082     44.882   +0.083      
+  Mo       d     0.410     46.310     62.980   +0.134   new
+  Ta       d     0.690     53.200     42.151   -0.101   new
+  W        d     0.280     31.136     49.239   +0.199   new
+  Ti       d     0.380    248.946     62.223   -0.602   new <- out
+  Be      sp     0.230    179.112     90.355   -0.297   new
+  Bi      sp     0.200    162.157     19.729   -0.915   new <- out
+  Co       d     0.300     66.801     59.688   -0.049   new
+  Rh       d     0.370     39.847     75.323   +0.277   new
+
+--------------------------------------------------------------------------------------------
+  LOO dla D4: stabilnosc wykladnikow?
+--------------------------------------------------------------------------------------------
+    a LOO: mean +0.393 +/- 0.350  range [-1.172, +0.730]
+    b LOO: mean +0.471 +/- 0.267  range [-0.087, +1.574]
+    c LOO: mean +0.014 +/- 0.152  range [-0.094, +0.708]
+
+  Sensitivity D4 (delta_a, delta_b, delta_c):
+    Au   : da=+0.184, db=-0.226, dc=-0.091  (|d|=0.306)
+    Be   : da=+0.134, db=-0.548, dc=+0.087  (|d|=0.570)
+    Bi   : da=-1.590, db=+1.113, dc=+0.711  (|d|=2.067)
+    Rh   : da=+0.311, db=-0.071, dc=-0.064  (|d|=0.326)
+
+--------------------------------------------------------------------------------------------
+  Profil rho(T_i) - 4 T points na N=23
+--------------------------------------------------------------------------------------------
+  mean profile RMS_log = 0.3185
+  median             = 0.1860
+  max                = 0.9620  (Bi)
+
+  Histogram per-material RMS_log:
+    [0.0, 0.1):  4  Pt, Pd, Zn, Ta
+    [0.1, 0.2):  9  Pb, Sn, Nb, Fe, Ni, Cd, Mg, Mo, Co
+    [0.2, 0.3):  2  W, Rh
+    [0.3, 0.5):  2  Al, V
+    [0.5, 1.0):  6  Cu, Ag, Au, Ti, Be, Bi
+
+============================================================================================
+  VERDICT r06 (N=23 extension)
+============================================================================================
+
+  D4 exponents:
+    N=15:  a = -1.888, b = +1.211, c = +1.045, RMS = 0.1972
+    N=23:  a = +0.419, b = +0.461, c = -0.003, RMS = 0.3841
+    Relative drift: |da|/a = 122.2%, |db|/b = 62.0%, |dc|/c = 100.3%
+    Max drift = 122.2%  ->  DUZY DRYF (>35%)
+
+
+  Konkluzja:
+    - Jesli exponents stabilne (<15% drift): forma D4 jest uniwersalna
+      i gotowa do paperu v3.
+    - Jesli moderat dryf (15-35%): D4 jest bliska uniwersalnej,
+      brakuje formalnej regularyzacji lub obejmowac nowa klasa materialow.
+    - Jesli duzy dryf (>35%): D4 byl overfitted na N=15. Wymaga ponownej
+      analizy i/lub dodania 5-tej zmiennej (np. Z dla SOC).
+
+  Najlepsze predykcje D4 to RMS < 0.2 dla wiekszosci materialow.
+  Profil rho(T_i) mean RMS < 0.25 pokazuje ze TGP + Theta_D + N_F zamyka
+  pelna krzywa BG.
+
+  Nastepne kroki:
+    - r07: inwersja D4 - dla SC materialow (Nb, V, Pb, Al, Sn, Mo, Ta, W)
+           wyciagnij "lambda_TGP" z predykcji R przez BG-lambda relacje
+           R = 4.225 * A_BG * Theta_D * lambda; porownaj z McMillan lambda z Tc
+    - r08: paper v3 prep: plots, tabele, sensitivity analysis
+

@@ -1,0 +1,80 @@
+============================================================================================
+  r03_class_split.py - klasowa struktura residuow + alternatywne
+  parametryzacje
+============================================================================================
+
+--------------------------------------------------------------------------------------------
+  (A) C_R per klasa  (R = C_R^(cls) * F_TGP)
+--------------------------------------------------------------------------------------------
+  cls      N    median C_R     mean+/-sd      CoV
+  sp       9      5.83e+03      4.89e+03   65.1%
+  d        6      5.78e+03      6.77e+03   49.1%
+
+  Per-class C_R RMS_log = 0.3605
+  (vs H0 global C_R = 0.3391)
+
+--------------------------------------------------------------------------------------------
+  (B) Non-linear: R = C * F_TGP^alpha
+--------------------------------------------------------------------------------------------
+    Fit: alpha = 1.108, logC = 3.875 -> C = 7.491e+03
+    RMS_log = 0.3384
+
+--------------------------------------------------------------------------------------------
+  (C) R = C * F_TGP * N_F^q  (dodajemy jawny N_F exponent)
+--------------------------------------------------------------------------------------------
+    Fit: q = 0.245, logC = 3.738 -> C = 5.471e+03
+    RMS_log = 0.3108
+
+--------------------------------------------------------------------------------------------
+  (D) R = C * lambda_ep^p  (literatura lambda_ep)
+--------------------------------------------------------------------------------------------
+    Fit: p = 0.672, C = 6.244e+01
+    RMS_log = 0.3459  (N = 15)
+    Pearson r(log R, log lam_ep) = 0.537, p = 0.0390
+
+--------------------------------------------------------------------------------------------
+  (E) R = C * lambda_ep * Theta_D  (high-T BG scaling)
+--------------------------------------------------------------------------------------------
+    Fit: p = 1.025, C = 2.744e-01
+    RMS_log = 0.2494
+    Pearson r(log R, log(lam*Theta)) = 0.794, p = 0.0004
+
+--------------------------------------------------------------------------------------------
+  (F) Fizyczna hipoteza: R = C * lambda_ep / N_F  (Ziman Eq.9.59)
+--------------------------------------------------------------------------------------------
+    Fit: p = -0.343, C = 3.202e+01
+    RMS_log = 0.3645
+    Pearson r(log R, log(lam/NF)) = -0.458, p = 0.0858
+
+============================================================================================
+  VERDICT r03
+============================================================================================
+
+  Fit                             RMS_log   params
+  H0 global C_R                    0.3391        2
+  (A) class C_R                    0.3605        3
+  (B) C * F^alpha                  0.3384        2
+  (C) C * F * N_F^q                0.3108        2
+  (D) C * lambda_ep^p              0.3459        2
+  (E) C * (lambda*Theta)^p         0.2494        2
+  (F) C * (lambda/NF)^p            0.3645        2
+
+  Best: (E) C * (lambda*Theta)^p (RMS = 0.2494)
+
+    Interpretacja:
+      - H0 = TGP Eq.5 structure (bez g). 0.34 log-RMS jest moderate.
+      - (D) lambda_ep alone: test czy R jest przede wszystkim funkcja lambda.
+      - (F) Ziman: R ~ lambda/N_F (fizyczne BG).
+
+    Jesli (F) wygrywa:
+      TGP_transport = (powerful Ziman formula) + N_F normalization
+      Dla paper v3: "TGP daje lambda_ep, a ta daje R(T) przez uniwersalny BG".
+
+    Jesli (A) wygrywa o klasa-specyficznym C_R:
+      Orbital-class separacja jest fizyczna; potrzebujemy wiecej materialow.
+
+    Nastepny krok:
+      - Rozszerzyc dataset (Mo, Ta, W, Be, Ti) + niskie T (20K, 50K)
+      - Sprawdzic czy model r03 najlepszy predykuje rho(T) na kazdym T, nie
+        tylko amplitude R
+

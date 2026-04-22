@@ -1,0 +1,118 @@
+====================================================================================================
+  r16_alloys_test.py - OSTRZAL U24 na stopach (alloys)
+====================================================================================================
+  Pure metals calibration: N = 37
+  U24 on pure metals: RMS (log R) = 0.1556
+
+  U24 coefs (pure-metal calibration):
+    a(d)               = +0.5845
+    as(s-d)            = -2.0908
+    asp(sp-d)          = -1.7916
+    b(logTh)           = +0.7856
+    c(logNF)           = +0.4147
+    d(v)               = -0.0996
+    ds(v*s)            = +0.6007
+    dsp(v*sp)          = +0.2926
+    cs(s*logNF)        = -0.3863
+    csp(sp*logNF)      = -0.8046
+
+----------------------------------------------------------------------------------------------------
+  (A) Alloy R fits + U24 predictions
+----------------------------------------------------------------------------------------------------
+  alloy                   cls     Theta     N_F      v      R_obs     R_pred      dlogR   BG_rms
+  Cu70Ni30 (Cupronickel)  d       330.0    1.80   3.70     41.565    199.634     -0.682   0.0053
+  Cu55Ni45 (Constantan)   d       320.0    2.00   5.05      5.537    149.349     -1.431   0.0008
+  Ni80Cr20 (Nichrome V)   d       400.0    2.20   9.20     42.458     71.452     -0.226   0.0016
+  Brass Cu70Zn30          sp      320.0    0.30   1.30     12.827     16.432     -0.108   0.0051
+  Bronze Cu90Sn10         sp      310.0    0.32   1.30     14.842     15.629     -0.022   0.0037
+  Manganin Cu86Mn12Ni2    d       340.0    1.20   1.90      5.324    261.060     -1.691   0.0008
+  Monel Ni65Cu33Fe2       d       380.0    2.50   6.99     47.942    120.152     -0.399   0.0040
+  Ag50Au50                s       200.0    0.27   1.00     14.089      6.113     +0.363   0.0023
+  Ag90Au10 (dilute)       s       220.0    0.27   1.00     15.272      6.588     +0.365   0.0093
+  Cu3Au disordered        s       285.0    0.30   1.00     23.983      8.098     +0.472   0.0079
+  Cu3Au ordered L1_2      s       285.0    0.30   1.00     25.427      8.098     +0.497   0.0269
+  Sn63Pb37 solder         sp      135.0    0.40   4.00     10.888     24.752     -0.357   0.0016
+  Yellow brass Cu63Zn37   sp      310.0    0.31   1.37     13.895     16.324     -0.070   0.0051
+
+----------------------------------------------------------------------------------------------------
+  (B) Per-class RMS (log R alloy vs U24)
+----------------------------------------------------------------------------------------------------
+  cls     N  mean_dlog        rms  max|dlog|
+  s       4     +0.424     0.4284      0.497
+  sp      4     -0.139     0.1899      0.357
+  d       5     -0.886     1.0564      1.691
+
+  OVERALL (alloys):  N = 13, bias = -0.253, RMS = 0.7048, max|dlog| = 1.691
+  OVERALL (pure):    N = 37, bias = -0.000, RMS = 0.1556
+
+----------------------------------------------------------------------------------------------------
+  (C) Kluczowe testy kontrolne
+----------------------------------------------------------------------------------------------------
+  [C1] Cu3Au ordered vs disordered (same U24 input -> powinny miec ten sam R_pred)
+    R_obs (ord)  = 25.427   R_pred = 8.098   dlog = +0.497
+    R_obs (dis)  = 23.983   R_pred = 8.098   dlog = +0.472
+    R_obs ratio (ord/dis) = 1.060,  R_pred ratio = 1.000
+    [OK] Matthiessen rule dziala: rho_0 sie rozni ale R ~= niezmienione.
+
+  [C2] Matthiessen extreme (alpha ~= 0) - powinny miec male drho/dT
+    Cu55Ni45 (Constantan rho_0/rho_295 = 97.8%  |  phonon 2.2%  |  dlog(R) = -1.431
+    Manganin Cu86Mn12Ni2 rho_0/rho_295 = 97.7%  |  phonon 2.3%  |  dlog(R) = -1.691
+    Ni80Cr20 (Nichrome V rho_0/rho_295 = 93.8%  |  phonon 6.2%  |  dlog(R) = -0.226
+
+  [C3] AgAu dilute series (Linde's rule)
+    Ag90Au10 (dilute)     R_obs = 15.272  R_pred = 6.588  dlog = +0.365
+    Ag50Au50              R_obs = 14.089  R_pred = 6.113  dlog = +0.363
+
+----------------------------------------------------------------------------------------------------
+  (D) Full profile rho(T) - U24 vs obserwacje
+----------------------------------------------------------------------------------------------------
+  alloy                    prof_rms  prof_rms_%  max_rel_err
+  Cu70Ni30 (Cupronickel)     0.1653      16.53%       78.01%
+  Cu55Ni45 (Constantan)      0.1347      13.47%       62.33%
+  Ni80Cr20 (Nichrome V)      0.0113       1.13%        4.39%
+  Brass Cu70Zn30             0.0250       2.50%       10.00%
+  Bronze Cu90Sn10            0.0046       0.46%        1.81%
+  Manganin Cu86Mn12Ni2       0.2200      22.00%      117.38%
+  Monel Ni65Cu33Fe2          0.0560       5.60%       23.00%
+  Ag50Au50                   0.0575       5.75%       18.26%
+  Ag90Au10 (dilute)          0.1232      12.32%       32.45%
+  Cu3Au disordered           0.0782       7.82%       23.37%
+  Cu3Au ordered L1_2         0.2455      24.55%       52.62%
+  Sn63Pb37 solder            0.0943       9.43%       35.93%
+  Yellow brass Cu63Zn37      0.0152       1.52%        5.42%
+
+  MEAN profile RMS (alloys) = 0.0947
+  U24 MEAN profile RMS (pure, from r13b) ~= 0.229
+
+====================================================================================================
+  VERDICT r16
+====================================================================================================
+
+  Alloys stress-test:
+    N_alloy = 13
+    logR bias = -0.253
+    logR RMS = 0.7048
+    profile RMS = 0.0947  <-- UWAGA: myslace dla Matthiessen-flat
+
+  [VERDICT C] U24 NIE generalizuje na stopy (log R RMS = 0.705).
+    Pure-metal formula NIE dziala dla stopow:
+      * d-class: R_obs << R_pred (alloy disorder quenches phonon coupling)
+      * s-class: R_obs >  R_pred (Ag-Au ma dodatkowy scatter wzgl. pure)
+      * sp-class: OK (Cu-Zn, Cu-Sn zachowuje pure-metal-like transport)
+
+  [KLUCZOWE] Profile RMS = 0.0947 tylko dlatego ze Matthiessen-extreme alloys
+   (Manganin 97.8% rho_0, Constantan 97.8% rho_0) maja b. maly phonon component
+   i blad w R rzedu 30x ledwo widoczny w calkowitym rho(T).
+
+  [Matthiessen test OK] Cu3Au ord/dis: R_obs ratio = 1.06 mimo rho_0 ratio = 5.8x
+   -> rho_0 i rho_i(T) dekomponuja sie fizycznie niezaleznie.
+
+  Nastepne kroki:
+    - U24 = pure-metals-only. Uniwersalna rola TGP A_orb jest zachowana (pure).
+    - Dla stopow potrzebny Nordheim-like term: x*(1-x)*residual
+    - r17: test sensitivity na Theta_D/N_F perturbacje (pure data)
+
+  Nastepny krok:
+    - jesli VERDICT A: przejsc do paper v3 (formula uniwersalna pure+alloy)
+    - jesli VERDICT B: zidentifikowac najgorsze outliers, refit z alloy data
+    - jesli VERDICT C: nowe zmienne (residual disorder, nsubst * dZ^2)
