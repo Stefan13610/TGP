@@ -14,7 +14,7 @@ V_eff(Phi) is fitted to extract beta_eff, gamma_eff.
 
 Wilson-Fisher fixed point (MK-RG): r* = -2.251, u* = 3.917, |r*|/u* = 0.575
 
-Outputs (to scripts/plots/):
+Outputs (to tooling/scripts/plots/):
     mc_phase_diagram.png       -- v(r) and chi(r) for different L
     mc_effective_potential.png  -- V_eff(Phi) at several r values
     mc_beta_gamma_ratio.png    -- beta_eff/gamma_eff vs r

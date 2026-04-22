@@ -27,7 +27,7 @@ Physical regimes visible in the solution:
 
 Vacuum condition: beta_hat = gamma_hat ensures f = 1 is background solution.
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     radial_phi.png                  -- f(x) profiles
     radial_derivatives.png          -- f'(x) and f''(x)
     radial_force_decomposition.png  -- force term breakdown

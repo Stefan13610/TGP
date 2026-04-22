@@ -36,7 +36,7 @@ consistent results, forming a single chain:
     - Level 1 vs Level 2: w_DE(z=0) agrees (both ~ -1)
     - All levels: phi(today) ~ 1 (field stays at vacuum)
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     cosmological_chain_validation.png
 """
 

@@ -39,7 +39,7 @@ survives — consistent with observation.
 
 Source sign: TGP convention (mass generates excess space, -qΦ₀ρ on RHS).
 
-Outputs  (saved to scripts/plots/):
+Outputs  (saved to tooling/scripts/plots/):
     effective_potential.png    -- V_eff(d) at beta=gamma (vacuum), three regimes
     regime_map.png             -- parameter space scan (beta=gamma, C)
 """

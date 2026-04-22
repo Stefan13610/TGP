@@ -28,6 +28,10 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
+# Plots output folder, resolved relative to this file (post-reorg safe).
+_PLOTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'plots')
+os.makedirs(_PLOTS, exist_ok=True)
+
 # ============================================================
 # 1. Rownanie radialne TGP (bezwymiarowe)
 # ============================================================
@@ -153,8 +157,9 @@ ax.legend()
 ax.set_ylim(0, 3.5)
 ax.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('scripts/soliton_profiles.png', dpi=150)
-print("   Zapisano: scripts/soliton_profiles.png")
+_out = os.path.join(_PLOTS, 'soliton_profiles.png')
+plt.savefig(_out, dpi=150)
+print(f"   Zapisano: {_out}")
 
 # ============================================================
 # 5. Energia vs chi_0 (V_orig)
@@ -185,8 +190,9 @@ ax2.set_title('TGP soliton energy vs central value (V_orig)')
 ax2.grid(True, alpha=0.3)
 ax2.set_ylim(-0.5, 0.5)
 plt.tight_layout()
-plt.savefig('scripts/soliton_energy_orig.png', dpi=150)
-print("   Zapisano: scripts/soliton_energy_orig.png")
+_out = os.path.join(_PLOTS, 'soliton_energy_orig.png')
+plt.savefig(_out, dpi=150)
+print(f"   Zapisano: {_out}")
 
 # ============================================================
 # 6. Energia vs chi_0 z V_mod (trzy generacje)
@@ -224,8 +230,9 @@ ax3.set_title('TGP soliton energy with V_mod (Wilson RG stabilization)')
 ax3.legend()
 ax3.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('scripts/soliton_energy_vmod.png', dpi=150)
-print("   Zapisano: scripts/soliton_energy_vmod.png")
+_out = os.path.join(_PLOTS, 'soliton_energy_vmod.png')
+plt.savefig(_out, dpi=150)
+print(f"   Zapisano: {_out}")
 
 # ============================================================
 # 7. Ogon oscylacyjny i A_tail
@@ -284,8 +291,9 @@ if len(xi_tail) > 10:
         ax4b.grid(True, alpha=0.3)
 
         plt.tight_layout()
-        plt.savefig('scripts/soliton_tail.png', dpi=150)
-        print("   Zapisano: scripts/soliton_tail.png")
+        _out = os.path.join(_PLOTS, 'soliton_tail.png')
+        plt.savefig(_out, dpi=150)
+        print(f"   Zapisano: {_out}")
     except Exception as e:
         print(f"   Fit nieudany: {e}")
 

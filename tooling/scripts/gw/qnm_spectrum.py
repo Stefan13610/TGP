@@ -52,7 +52,7 @@ GR comparison:
     Regge-Wheeler potential: V_RW = (1-r_s/r)[l(l+1)/r^2 + (1-s^2)r_s/r^3]
 
 Output:
-    scripts/plots/qnm_spectrum.png  -- V_eff comparison, complex spectrum, deviations
+    tooling/scripts/plots/qnm_spectrum.png  -- V_eff comparison, complex spectrum, deviations
 """
 
 import sys

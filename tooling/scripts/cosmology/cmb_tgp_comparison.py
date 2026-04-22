@@ -31,6 +31,7 @@ Uruchomienie: python scripts/cmb_tgp_comparison.py
 Wymagane: numpy, scipy, matplotlib
 """
 
+import os
 import sys
 import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -38,6 +39,10 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='repla
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import quad
+
+# Plots directory: tooling/scripts/plots/ (resolved from __file__).
+_PLOTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'plots')
+os.makedirs(_PLOTS, exist_ok=True)
 from scipy.interpolate import interp1d
 import warnings
 warnings.filterwarnings('ignore')
@@ -497,9 +502,10 @@ ax.grid(True, alpha=0.3)
 ax.set_xlim(2, 800)
 
 plt.tight_layout()
-plt.savefig('scripts/plots/cmb_tgp_comparison.png', dpi=120, bbox_inches='tight')
+_outpath = os.path.join(_PLOTS, 'cmb_tgp_comparison.png')
+plt.savefig(_outpath, dpi=120, bbox_inches='tight')
 plt.close()
-print("\n  -> Wykres zapisany: scripts/plots/cmb_tgp_comparison.png")
+print(f"\n  -> Wykres zapisany: {_outpath}")
 
 # ─────────────────────────────────────────────────────────
 # PODSUMOWANIE

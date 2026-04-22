@@ -28,7 +28,7 @@ reproduces Lambda_obs. The value Phi_0 ~ 115 is FIXED by the DE
 constraint; all other constraints are then CHECKED (not fitted).
 
 Output:
-  scripts/plots/lambda_eff_quantitative.png
+  tooling/scripts/plots/lambda_eff_quantitative.png
 """
 
 import os

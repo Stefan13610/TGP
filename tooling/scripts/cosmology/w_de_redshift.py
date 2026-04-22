@@ -28,7 +28,7 @@ any foreseeable observational threshold (current: ~0.03; future: ~0.01).
 
 Outputs
 -------
-  scripts/plots/w_de_redshift.png   -- 4-panel diagnostic plot
+  tooling/scripts/plots/w_de_redshift.png   -- 4-panel diagnostic plot
 
 Refs: lambda_eff_quantitative.py, growth_factor_tgp.py, w_de_exact.py
 """

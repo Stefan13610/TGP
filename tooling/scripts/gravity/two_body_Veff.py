@@ -15,7 +15,7 @@ Key results:
   3. For C >> 1 (macroscopic), only regime I (gravity) survives
   4. Yukawa correction e^{-√γ·r} is negligible on sub-Hubble scales (r << λ_sp)
 
-Output (scripts/plots/):
+Output (tooling/scripts/plots/):
   two_body_Veff.png          -- V_eff(d) for multiple parameter sets
   two_body_force.png         -- F(d) = -dV/dd showing zero crossings
   two_body_regimes.png       -- regime map in (β, C) parameter space

@@ -45,7 +45,7 @@ Phi0 ~ 25                           (from Lambda_eff matching, sek08)
 gamma ~ Phi0 H0^2 / c0^2            (from tau0 ~ 1/H0, sek08)
 Lambda_eff = gamma / 12             (residual vacuum energy, sek08)
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     three_regimes_quantitative.png    -- 4-panel figure: V_eff, force, sensitivity
     three_regimes_force.png           -- standalone force plot with equilibria
 

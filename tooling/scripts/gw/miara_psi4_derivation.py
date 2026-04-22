@@ -518,7 +518,7 @@ ax.legend(fontsize=8); ax.grid(True, alpha=0.3)
 ax.set_xlim(0, 0.3); ax.set_ylim(0.95, 1.45)
 
 plt.tight_layout()
-plot_path = "TGP/TGP_v1/scripts/plots/miara_psi4_derivation.png"
+plot_path = "TGP/TGP_v1/tooling/scripts/plots/miara_psi4_derivation.png"
 try:
     import os
     os.makedirs(os.path.dirname(plot_path), exist_ok=True)

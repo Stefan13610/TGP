@@ -38,7 +38,7 @@ fixed point.  The gradient coupling exponent alpha_TGP = 2 + O(eta).
 Critical exponents are compared with 3D Ising universality class:
     nu = 0.6300,  eta = 0.0364,  alpha_TGP = 2 + O(eta)
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     rg_flow_trajectories.png    -- RG flow in (m0^2/J, lam0/J) plane
     rg_beta_gamma_ratio.png     -- beta_eff/gamma_eff vs RG step
     rg_critical_exponents.png   -- Exponents compared to 3D Ising

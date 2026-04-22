@@ -61,7 +61,7 @@ Observational constraint (GW170817):
     |c_GW - c0| / c0 < 1e-15
     This bounds the combination (a m_sp / k)^2 at LIGO frequencies.
 
-Outputs  (saved to scripts/plots/):
+Outputs  (saved to tooling/scripts/plots/):
     gw_dispersion.png           -- omega(k) vs GR massless relation
     gw_velocities.png           -- phase and group velocity vs frequency
     gw_cutoff_vs_gamma.png      -- f_cut as function of gamma

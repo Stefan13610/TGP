@@ -18,7 +18,7 @@ Modes:
   python tgp_cosmo.py              -- scan Phi0 values, produce all plots
   python tgp_cosmo.py --mcmc       -- MCMC fit of Phi0 to observational data
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
   tgp_w_de.png         -- w_DE(z) for different Phi0
   tgp_w0_wa.png        -- w0-wa plane with observational constraints
   tgp_psi.png          -- psi(z) field evolution

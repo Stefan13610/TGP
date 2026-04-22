@@ -42,7 +42,7 @@ Where:
 
 We use exact Dirac hydrogen wavefunctions and compute ⟨δH⟩ analytically.
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     dirac_tgp_corrected.png  -- 4-panel diagnostic plot
 """
 

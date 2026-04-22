@@ -30,7 +30,7 @@ Physics:
   - epsilon = min(Phi) provides UV regularization for Phi -> 0 singularity
 
 Output:
-  scripts/plots/substrate_constants.png  (4-panel figure)
+  tooling/scripts/plots/substrate_constants.png  (4-panel figure)
 
 Usage:
   python substrate_constants.py

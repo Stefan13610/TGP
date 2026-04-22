@@ -53,7 +53,7 @@ NUMERICAL VERIFICATION:
   2. Show Q_eff=1/2 is energetically preferred over Q_eff=1
   3. Verify ZS1 constraint for optimal profiles
 
-Outputs: scripts/plots/zs1_spin_half_proof.png (4-panel)
+Outputs: tooling/scripts/plots/zs1_spin_half_proof.png (4-panel)
 """
 
 import os

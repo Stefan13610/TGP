@@ -17,7 +17,7 @@ Method:
 
   Force F(d) = -dV/dd zeros give regime transitions.
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     three_regimes_beta_eq_gamma.png  -- V_eff and F for several C/beta ratios
     regime_phase_diagram.png         -- phase diagram in (C, beta) space
     critical_mass_scaling.png        -- M_crit vs beta
@@ -316,6 +316,6 @@ if __name__ == "__main__":
     plot_phase_diagram()
     plot_transition_scales()
 
-    print("\nDone. Plots saved to scripts/plots/")
+    print("\nDone. Plots saved to tooling/scripts/plots/")
     if not ok:
         print("WARNING: Some validation tests FAILED!")

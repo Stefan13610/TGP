@@ -42,7 +42,7 @@ Cases tested:
   (f) Gradient-only (alpha term): same 1/d as Newton -> ONE regime
   (g) Higher-order polynomials: can give three regimes if sign alternation is correct
 
-Output: scripts/plots/three_regimes_uniqueness.png
+Output: tooling/scripts/plots/three_regimes_uniqueness.png
 
 References: sek03 (prob:jednoznacznosc), sek08 (eq:Eint-decomp)
 """

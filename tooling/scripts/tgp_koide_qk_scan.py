@@ -36,6 +36,7 @@ Sesja: TGP v42 (2026-04-01)
 import sys
 import io
 import math
+import os
 import warnings
 import json
 
@@ -445,7 +446,8 @@ results_dict = {
     "session": "v42-2026-04-01"
 }
 
-out_path = "scripts/koide_qk_scan_results.json"
+_here = os.path.dirname(os.path.abspath(__file__))
+out_path = os.path.join(_here, "koide_qk_scan_results.json")
 try:
     with open(out_path, "w", encoding="utf-8") as fh:
         json.dump(results_dict, fh, ensure_ascii=False, indent=2)

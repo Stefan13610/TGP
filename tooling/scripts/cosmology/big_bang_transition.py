@@ -22,6 +22,7 @@ Uruchomienie: python scripts/big_bang_transition.py
 Wymagane: numpy, scipy, matplotlib
 """
 
+import os
 import sys
 import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -32,6 +33,10 @@ from scipy.integrate import odeint, solve_ivp
 from scipy.optimize import brentq
 import warnings
 warnings.filterwarnings('ignore')
+
+# Plots directory: tooling/scripts/plots/ (resolved from __file__).
+_PLOTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'plots')
+os.makedirs(_PLOTS, exist_ok=True)
 
 # ─────────────────────────────────────────────────────────
 # PARAMETRY FIZYCZNE TGP
@@ -507,9 +512,10 @@ ax.legend()
 ax.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('scripts/plots/big_bang_transition.png', dpi=120, bbox_inches='tight')
+_outpath = os.path.join(_PLOTS, 'big_bang_transition.png')
+plt.savefig(_outpath, dpi=120, bbox_inches='tight')
 plt.close()
-print("\n  → Wykres zapisany: scripts/plots/big_bang_transition.png")
+print(f"\n  → Wykres zapisany: {_outpath}")
 
 # ─────────────────────────────────────────────────────────
 # PODSUMOWANIE

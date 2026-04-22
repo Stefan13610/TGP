@@ -38,7 +38,7 @@ Therefore:
 The ratio Lambda_obs / Lambda_eff ~ 117 / Phi_0, so Phi_0 ~ 100-120
 gives the correct order of magnitude WITHOUT fine-tuning.
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     lambda_eff_vs_Phi0.png        -- Lambda_eff / Lambda_obs vs Phi_0
     lambda_eff_components.png     -- Potential vs backreaction contributions
     lambda_eff_parameter_space.png -- Contour plot in (gamma, Phi_0) plane

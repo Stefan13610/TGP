@@ -32,7 +32,7 @@ In dimensionless psi = Phi/Phi0 the action reads:
 Usage:
     python global_stability_analysis.py
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     global_stability_ghost.png
     global_stability_gradient.png
     global_stability_tachyon.png

@@ -31,7 +31,7 @@ This script:
 
 Outputs:
     - Console summary table
-    - Diagnostic plot saved to scripts/plots/spin_connection_2nd_order.png
+    - Diagnostic plot saved to tooling/scripts/plots/spin_connection_2nd_order.png
 """
 
 import os

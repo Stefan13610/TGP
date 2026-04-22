@@ -37,7 +37,7 @@ SELF-CONSISTENCY:
   from the demonstration.
 
 Outputs:
-  scripts/plots/psi_phi_delta_coupling.png  (4-panel diagnostic)
+  tooling/scripts/plots/psi_phi_delta_coupling.png  (4-panel diagnostic)
 """
 
 import os

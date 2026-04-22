@@ -26,7 +26,7 @@ The script:
 3. Maps the constraint onto allowed (beta, gamma) parameter space
 4. Checks Helium-4 abundance sensitivity
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     bbn_G_evolution.png        -- G(z)/G_0 from BBN epoch to today
     bbn_parameter_space.png    -- allowed (beta, gamma) from BBN
 """
@@ -347,7 +347,7 @@ if __name__ == "__main__":
     plot_G_evolution()
     plot_bbn_parameter_space()
 
-    print("\nDone. Plots saved to scripts/plots/")
+    print("\nDone. Plots saved to tooling/scripts/plots/")
     print("\nConclusion: TGP with phi_ini ~ 0 (post-symmetry-breaking)")
     print("is automatically BBN-consistent. The constraint becomes")
     print("non-trivial only for large initial phi perturbations.")

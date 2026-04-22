@@ -28,7 +28,7 @@ Key results:
   3. Strong-field QNMs differ qualitatively from GR: no horizon → rising barrier → box modes
   4. Explicit dependence of ω on γ̂ and source compactness
 
-Output: scripts/plots/qnm_strong_field.png (6-panel diagnostic)
+Output: tooling/scripts/plots/qnm_strong_field.png (6-panel diagnostic)
 """
 
 import sys

@@ -37,7 +37,7 @@ Key scales:
     r_crit = 1 / (2 beta C)    (onset of nonlinear regime)
     r_0                         (inner boundary, from V_eff zero crossing)
 
-Outputs (saved to scripts/plots/):
+Outputs (saved to tooling/scripts/plots/):
     profile_intermediate.png  -- 4-panel figure:
         (a) phi(r): full numerical vs matched approximation
         (b) Effective DM density profile vs NFW
