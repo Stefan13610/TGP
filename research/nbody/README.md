@@ -17,7 +17,7 @@ python -m nbody.examples.verify_nbody_eom_quick
 
 Read first:
 
-- `nbody/THEORY_SYNC_NBODY.md`
+- `nbody/docs/THEORY_SYNC_NBODY.md`
 - `nbody/examples/STATUS_MAP.md`
 
 Recommended interpretation order:
@@ -34,6 +34,19 @@ Recommended interpretation order:
 - matplotlib >= 3.8 (for plotting scripts only)
 
 See `requirements.txt`.
+
+## Package layout
+
+```
+research/nbody/
+├── *.py                # Core engine (23 modules, imported as `nbody.*`)
+├── __init__.py         # Package surface
+├── docs/               # Planning + analysis markdown (8 files)
+├── paper/              # LaTeX fragments + publication PDFs (34 .tex + .bib + 2 .pdf)
+├── examples/           # ex100-ex290 + verify_* scripts (reproduction)
+├── plots/              # Static plot outputs
+└── _archiwum_docs/     # Archived documents
+```
 
 ## Package structure
 
@@ -86,7 +99,7 @@ Do not treat all `exNNN` scripts equally. The canonical map lives in:
 
 ## Reproducing publication results
 
-The clean publication document is `tgp_nbody_results_clean.tex` (compile with `pdflatex`, 3 passes).
+The clean publication document is `paper/tgp_nbody_results_clean.tex` (compile with `pdflatex`, 3 passes).
 
 ### Manifest: Result -> Script -> Output
 
@@ -190,17 +203,22 @@ I_Y^eq(t) ~ A_eq * t^(-3/2) * exp(-sqrt(3) * t)
 7. **Analytical equilibria**: Closed-form d_well, omega^2, Hill sphere
 8. **Phase diagram**: beta_crit = (3/2)*sqrt(gamma*(C1+C2)); escape velocity; breathing mode
 
-## LaTeX documents (nbody/)
+## LaTeX documents (nbody/paper/)
 
-22 `.tex` files document specific N-body derivations. Key files:
-- `tgp_nbody_results_clean.tex` -- publication-ready draft (10 pages, 8 Results)
-- `tgp_nbody_lagrangian_eom.tex` -- EOM derivation
-- `tgp_lyapunov_benettin.tex` -- Benettin chaos analysis and synthesis
+34 `.tex` files document specific N-body derivations. Key files:
+- `paper/tgp_nbody_results_clean.tex` -- publication-ready draft (10 pages, 8 Results)
+- `paper/tgp_nbody_lagrangian_eom.tex` -- EOM derivation
+- `paper/tgp_lyapunov_benettin.tex` -- Benettin chaos analysis and synthesis
+- `paper/tgp_yukawa_exact_reduction.tex` -- aggregator for 18 fragments
 
-## Analysis documents
+See `paper/README.md` for the full index, including which fragments are
+`\input{}`-ed by the main monograph.
 
-- `PLAN_ROZWOJU_NBODY.md` -- Development plan with status of all phases (P1-P9)
-- `ANALIZA_NBODY_ROZWOJ.md` -- Full analysis: inventory, consistency, roadmap
+## Analysis documents (nbody/docs/)
+
+- `docs/PLAN_ROZWOJU_NBODY.md` -- Development plan with status of all phases (P1-P9)
+- `docs/ANALIZA_NBODY_ROZWOJ.md` -- Full analysis: inventory, consistency, roadmap
+- `docs/THEORY_SYNC_NBODY.md` -- Theory <-> implementation sync log
 - `_archiwum_docs/ODPOWIEDZ_NA_RECENZJE_ZEWNETRZNA.md` -- Response to external review critique (archived)
 
 ## Citation

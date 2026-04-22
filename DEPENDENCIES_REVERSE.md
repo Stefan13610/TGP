@@ -52,6 +52,8 @@
   - partial_proofs/hierarchia_mas (2x | ref:2)
   - research (1x | wikilink:1)
   - research/atomic_shells_closure (3x | wikilink:3)
+  - research/nbody/docs (1x | wikilink:1)
+  - research/nbody/paper (1x | wikilink:1)
   - research/particle_sector_closure (5x | wikilink:5)
 
 ### axioms/roznica_N0
@@ -218,7 +220,7 @@
   - core/sek08_formalizm (5x | ref:5)
   - partial_proofs/bh_ringdown (1x | ref:1)
   - partial_proofs/wielki_wybuch (3x | ref:3)
-  - research/nbody (2x | ref:2)
+  - research/nbody/paper (2x | ref:2)
 
 ### core/sek07_predykcje
 - depended on by:
@@ -272,7 +274,7 @@
   - partial_proofs/quark_sector (3x | ref:3)
   - partial_proofs/trojcialowe_nbody (3x | ref:3)
   - partial_proofs/wielki_wybuch (9x | ref:9)
-  - research/nbody (12x | ref:12)
+  - research/nbody/paper (12x | ref:12)
 
 ### core/sek08a_akcja_zunifikowana
 - depended on by:
@@ -286,7 +288,7 @@
   - core/sek08c_metryka_z_substratu (4x | ref:4)
   - core/sek09_cechowanie (1x | ref:1)
   - partial_proofs/most_gamma_phi (1x | ref:1)
-  - research/nbody (1x | ref:1)
+  - research/nbody/paper (1x | ref:1)
 
 ### core/sek08b_ghost_resolution
 - depended on by:
@@ -309,7 +311,7 @@
   - core/sek02_pole (1x | ref:1)
   - core/sek04_stale (2x | ref:2)
   - core/sek08_formalizm (3x | ref:3)
-  - research/nbody (3x | ref:3)
+  - research/nbody/paper (3x | ref:3)
 
 ### core/sek09_cechowanie
 - depended on by:
@@ -345,7 +347,7 @@
 
 ### papers_external/arxiv_submission
 - depended on by:
-  - research/nbody (24x | ref:24)
+  - research/nbody/paper (24x | ref:24)
 
 ### papers_external/paper_bh_shadow
 - depended on by:
@@ -517,7 +519,7 @@
   - <root> (2x | input:2)
   - core/sek07_predykcje (1x | ref:1)
   - core/sek08_formalizm (2x | ref:2)
-  - research/nbody (1x | ref:1)
+  - research/nbody/paper (1x | ref:1)
 
 ### partial_proofs/wielki_wybuch
 - depended on by:
@@ -615,14 +617,11 @@
 
 ### research/nbody
 - depended on by:
-  - core/sek02_pole (1x | ref:1)
-  - core/sek04_stale (2x | input:2)
-  - core/sek07_predykcje (2x | input:2)
-  - core/sek08_formalizm (2x | input:2)
-  - core/sek08c_metryka_z_substratu (2x | input:2)
   - partial_proofs/fermion_from_soliton (1x | wikilink:1)
-  - partial_proofs/nuclear_from_soliton (11x | wikilink:11)
-  - partial_proofs/trojcialowe_nbody (1x | input:1)
+  - partial_proofs/nuclear_from_soliton (8x | wikilink:8)
+
+### research/nbody/docs
+- depended on by: --
 
 ### research/nbody/examples
 - depended on by:
@@ -630,6 +629,16 @@
 
 ### research/nbody/examples/_outputs
 - depended on by: --
+
+### research/nbody/paper
+- depended on by:
+  - core/sek02_pole (1x | ref:1)
+  - core/sek04_stale (2x | input:2)
+  - core/sek07_predykcje (2x | input:2)
+  - core/sek08_formalizm (2x | input:2)
+  - core/sek08c_metryka_z_substratu (2x | input:2)
+  - partial_proofs/nuclear_from_soliton (3x | wikilink:3)
+  - partial_proofs/trojcialowe_nbody (1x | input:1)
 
 ### research/neutrino_msw
 - depended on by: --

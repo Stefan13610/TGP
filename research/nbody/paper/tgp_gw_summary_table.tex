@@ -1,0 +1,70 @@
+% tgp_gw_summary_table.tex -- Gravitational wave predictions summary
+% Self-contained table for \input{} into main manuscript or nbody results.
+% Synchronized with sek07_predykcje.tex (prop:cT, thm:amplitude-matching).
+
+\begin{table}[htbp]
+\centering
+\caption{TGP gravitational wave predictions vs.\ observational constraints.
+  All modes propagate at $c_{\rm GW} = c_0$ exactly (Prop.~\ref{prop:cT}).}
+\label{tab:gw-summary}
+\small
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{Mode} & \textbf{Spin} & \textbf{Properties} & \textbf{Constraint} & \textbf{Status} \\
+\midrule
+%
+Tensor $+/\times$
+  & 2
+  & $c_{\rm GW} = c_0$; massless; amplitude matched to GR via
+    $\xi_{\rm eff} = 4\pi G_0 \sigma_0 \Phi_0$
+  & GW170817+GRB170817A: $|c_{\rm GW}/c - 1| < 3{\times}10^{-15}$
+  & \textsc{Pass} (algebraic identity) \\[6pt]
+%
+Breathing (scalar)
+  & 0
+  & $c_{\rm GW} = c_0$; massive ($m_{\rm sp} = \sqrt{\gamma} \sim H_0$);
+    dispersion: $\omega^2 = c_0^2(k^2 + m_{\rm sp}^2)$;
+    isotropic strain $\delta g_{ij}/g_{ij} = 2\delta\Phi/\Phi_0\,\delta_{ij}$
+  & LIGO/Virgo: screened ($f_{\rm cut} \sim c_0 m_{\rm sp}/(2\pi) \sim 10^{-18}$\,Hz);
+    non-detection in GW170817 consistent
+  & \textsc{Pass} (screened) \\[6pt]
+%
+Breathing (PTA band)
+  & 0
+  & Same mode, but nHz band $\gg f_{\rm cut}$;
+    predicted amplitude $h_{\rm br} \sim 10^{-17}$
+  & IPTA DR3: not yet detected; SKA: projected sensitivity
+  & \textsc{Testable} \\[6pt]
+%
+Vector
+  & 1
+  & Not predicted by TGP (no vector d.o.f.\ in minimal model)
+  & ---
+  & N/A \\[6pt]
+%
+Additional scalar
+  & 0
+  & Possible in disformal extension; $c_{\rm GW} = c_0$
+    (velocity unchanged by disformal coupling)
+  & Model-dependent
+  & \textsc{Conditional} \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\noindent\textbf{Key results:}
+\begin{enumerate}[nosep]
+  \item $c_{\rm GW} = c_0$ is an \textbf{algebraic identity} in TGP:
+        gravitational and electromagnetic waves propagate through the same
+        substrate $\Gamma$, so their phase velocities are equal by construction.
+        This is not a fine-tuned parameter but a structural consequence.
+  \item The scalar breathing mode has mass $m_{\rm sp} = \sqrt{\gamma}$
+        of order $H_0 \sim 10^{-18}$\,Hz, placing its cutoff frequency
+        far below the LIGO band ($\sim 10$--$10^3$\,Hz).
+        Non-detection in GW170817 is therefore \textbf{expected}.
+  \item The breathing mode is detectable in the PTA band ($\sim$\,nHz)
+        with amplitude $\sim 10^{-17}$, distinguishable from
+        the stochastic GW background by its monopolar (isotropic)
+        angular pattern.
+\end{enumerate}
+\end{table}

@@ -1,0 +1,304 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+
+\title{TGP: Algebraiczne wyprowadzenia dla szczególnych konfiguracji \texorpdfstring{$N$}{N}-ciał w sektorze pairwise}
+\author{}
+\date{}
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Propozycja}
+\theoremstyle{remark}
+\newtheorem*{remark}{Uwaga}
+
+\begin{document}
+\maketitle
+
+\section{Cel notatki}
+
+Celem tej notatki jest zapisanie w zwartej formie wyprowadzeń dla klas szczególnych konfiguracji w sektorze \emph{pairwise} TGP, dla których warunek równowagi redukuje się do pojedynczego równania algebraicznego drugiego stopnia dla parametru skali.
+
+Punktem wyjścia jest potencjał pairwise dla równych źródeł $C$:
+\begin{equation}
+V_2(d) = -\frac{4\pi C^2}{d} + \frac{8\pi \beta C^2}{d^2} - \frac{24\pi \gamma C^3}{d^3}.
+\end{equation}
+
+W wielu wcześniejszych rozważaniach szczególny przypadek odpowiadał $\gamma = \beta$, ale poniżej pozostawiamy oba parametry jawnie, ponieważ algebraiczne wyprowadzenia nie wymagają ich utożsamienia.
+
+\section{Konfiguracje jednoskalowe}
+
+Rozważmy układ $N$ równych źródeł, którego geometria ma stały kształt i zależy wyłącznie od jednej skali $\lambda$. Oznacza to, że wszystkie odległości między ciałami mają postać
+\begin{equation}
+d_{ij} = a_{ij} \lambda,
+\end{equation}
+ gdzie $a_{ij} > 0$ są bezwymiarowymi stałymi geometrycznymi określającymi kształt konfiguracji.
+
+Całkowita energia pairwise wynosi wtedy
+\begin{equation}
+V(\lambda) = \sum_{i<j} V_2(d_{ij})
+= \sum_{i<j} \left(
+-\frac{4\pi C^2}{a_{ij}\lambda}
++ \frac{8\pi\beta C^2}{a_{ij}^2\lambda^2}
+- \frac{24\pi\gamma C^3}{a_{ij}^3\lambda^3}
+\right).
+\end{equation}
+
+Wprowadzamy sumy geometryczne:
+\begin{equation}
+S_1 = \sum_{i<j}\frac{1}{a_{ij}},
+\qquad
+S_2 = \sum_{i<j}\frac{1}{a_{ij}^2},
+\qquad
+S_3 = \sum_{i<j}\frac{1}{a_{ij}^3}.
+\end{equation}
+
+Wtedy energia przyjmuje postać
+\begin{equation}
+V(\lambda) = -\frac{4\pi C^2}{\lambda}S_1
++ \frac{8\pi\beta C^2}{\lambda^2}S_2
+- \frac{24\pi\gamma C^3}{\lambda^3}S_3.
+\end{equation}
+
+\begin{lemma}[Ogólna redukcja algebraiczna dla konfiguracji jednoskalowych]
+Dla dowolnej konfiguracji o stałym kształcie i jednej skali $\lambda$, warunek równowagi w sektorze pairwise,
+\begin{equation}
+\frac{dV}{d\lambda}=0,
+\end{equation}
+redukuje się do równania kwadratowego
+\begin{equation}
+\boxed{S_1\lambda^2 - 4\beta S_2\lambda + 18\gamma C S_3 = 0.}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Różniczkujemy energię po $\lambda$:
+\begin{equation}
+\frac{dV}{d\lambda}
+= \frac{4\pi C^2}{\lambda^2}S_1
+- \frac{16\pi\beta C^2}{\lambda^3}S_2
++ \frac{72\pi\gamma C^3}{\lambda^4}S_3.
+\end{equation}
+
+Warunek stacjonarności ma więc postać
+\begin{equation}
+\frac{4\pi C^2}{\lambda^2}S_1
+- \frac{16\pi\beta C^2}{\lambda^3}S_2
++ \frac{72\pi\gamma C^3}{\lambda^4}S_3 = 0.
+\end{equation}
+
+Po pomnożeniu przez $\lambda^4/(4\pi C^2)$ dostajemy
+\begin{equation}
+S_1\lambda^2 - 4\beta S_2\lambda + 18\gamma C S_3 = 0.
+\end{equation}
+To kończy dowód.
+\end{proof}
+
+\begin{remark}
+Powyższy wynik nie rozwiązuje ogólnego problemu $N$-ciał. Pokazuje natomiast, że szeroka klasa konfiguracji samopodobnych w sektorze pairwise redukuje się do pojedynczego równania algebraicznego dla parametru skali.
+\end{remark}
+
+\section{Przykłady}
+
+\subsection{Dwa ciała}
+
+Dla dwóch ciał istnieje tylko jedna odległość, więc można przyjąć
+\begin{equation}
+d = \lambda, \qquad a_{12}=1.
+\end{equation}
+Stąd
+\begin{equation}
+S_1=S_2=S_3=1.
+\end{equation}
+Warunek równowagi daje
+\begin{equation}
+\boxed{\lambda^2 - 4\beta \lambda + 18\gamma C = 0.}
+\end{equation}
+
+W przypadku $\gamma = \beta$ otrzymujemy
+\begin{equation}
+\lambda^2 - 4\beta \lambda + 18\beta C = 0.
+\end{equation}
+
+\subsection{Trójkąt równoboczny}
+
+Niech $d$ oznacza długość boku trójkąta równobocznego. Wszystkie trzy odległości są równe $d$, zatem
+\begin{equation}
+S_1=S_2=S_3=3.
+\end{equation}
+Warunek równowagi ma postać
+\begin{equation}
+3d^2 - 12\beta d + 54\gamma C = 0,
+\end{equation}
+co po skróceniu przez $3$ daje
+\begin{equation}
+\boxed{d^2 - 4\beta d + 18\gamma C = 0.}
+\end{equation}
+
+W szczególności dla $\gamma = \beta$:
+\begin{equation}
+d^2 - 4\beta d + 18\beta C = 0.
+\end{equation}
+
+\subsection{Tetraedr foremny}
+
+Niech $a$ oznacza długość krawędzi tetraedru foremnego. Liczba par wynosi $6$, a wszystkie odległości są równe $a$. Zatem
+\begin{equation}
+S_1=S_2=S_3=6.
+\end{equation}
+Stąd
+\begin{equation}
+6a^2 - 24\beta a + 108\gamma C = 0,
+\end{equation}
+więc po skróceniu:
+\begin{equation}
+\boxed{a^2 - 4\beta a + 18\gamma C = 0.}
+\end{equation}
+
+Widać więc, że dwa ciała, trójkąt równoboczny i tetraedr foremny dają to samo równanie dla wspólnej odległości, ponieważ wszystkie pary są równoodległe.
+
+\subsection{Kwadrat}
+
+Niech $a$ oznacza długość boku kwadratu. Występują następujące odległości:
+\begin{itemize}
+    \item $4$ boki długości $a$,
+    \item $2$ przekątne długości $\sqrt{2}\,a$.
+\end{itemize}
+
+Wobec tego
+\begin{equation}
+S_1 = 4 + \frac{2}{\sqrt{2}} = 4 + \sqrt{2},
+\end{equation}
+\begin{equation}
+S_2 = 4 + \frac{2}{2} = 5,
+\end{equation}
+\begin{equation}
+S_3 = 4 + \frac{2}{2\sqrt{2}} = 4 + \frac{1}{\sqrt{2}}.
+\end{equation}
+
+Warunek równowagi przyjmuje postać
+\begin{equation}
+\boxed{(4+\sqrt{2})a^2 - 20\beta a + 18\gamma C\left(4+\frac{1}{\sqrt{2}}\right)=0.}
+\end{equation}
+
+Jest to pierwszy nietrywialny przykład, w którym nie wszystkie odległości są jednakowe, a mimo to całość redukuje się do pojedynczego równania kwadratowego.
+
+\subsection{Symetryczny układ współliniowy trzech ciał}
+
+Rozważmy pozycje
+\begin{equation}
+(-x,0,+x).
+\end{equation}
+Odległości między ciałami są równe
+\begin{equation}
+x,\quad x,\quad 2x.
+\end{equation}
+
+Stąd
+\begin{equation}
+S_1 = 2 + \frac{1}{2} = \frac{5}{2},
+\end{equation}
+\begin{equation}
+S_2 = 2 + \frac{1}{4} = \frac{9}{4},
+\end{equation}
+\begin{equation}
+S_3 = 2 + \frac{1}{8} = \frac{17}{8}.
+\end{equation}
+
+Warunek równowagi daje więc
+\begin{equation}
+\frac{5}{2}x^2 - 4\beta\frac{9}{4}x + 18\gamma C\frac{17}{8}=0,
+\end{equation}
+czyli po uproszczeniu
+\begin{equation}
+\boxed{10x^2 - 36\beta x + 153\gamma C = 0.}
+\end{equation}
+
+\subsection{Regularny \texorpdfstring{$n$}{n}-kąt}
+
+Niech $R$ oznacza promień okręgu opisanego na regularnym $n$-kącie. Odległości od ustalonego wierzchołka do pozostałych mają postać
+\begin{equation}
+d_k = 2R\sin\frac{\pi k}{n},
+\qquad k=1,\dots,n-1.
+\end{equation}
+
+Wygodnie wprowadzić sumy geometryczne zależne od $n$:
+\begin{equation}
+\Sigma_p(n) = \sum_{i<j}\frac{1}{a_{ij}^p},
+\end{equation}
+ gdzie $a_{ij}$ są bezwymiarowymi odległościami w regularnym $n$-kącie po wyłączeniu skali $R$.
+
+Równoważnie można je zapisać przez klasy odległości cięciwowych. Wtedy warunek równowagi ma postać
+\begin{equation}
+\boxed{\Sigma_1(n)R^2 - 4\beta\Sigma_2(n)R + 18\gamma C\Sigma_3(n)=0.}
+\end{equation}
+
+Dla $n=3$ otrzymujemy trójkąt równoboczny jako przypadek szczególny.
+
+\begin{remark}
+Dokładna postać sum $\Sigma_p(n)$ zależy od przyjętej konwencji liczenia par i może być zapisana albo jako suma po wszystkich parach $(i,j)$, albo jako suma po klasach odległości w regularnym $n$-kącie z odpowiednimi krotnościami.
+\end{remark}
+
+\subsection{Równoodległy układ współliniowy \texorpdfstring{$N$}{N}-ciał}
+
+Rozważmy $N$ równych ciał na prostej, rozmieszczonych co odległość $x$:
+\begin{equation}
+0,\ x,\ 2x,\ \dots,\ (N-1)x.
+\end{equation}
+
+Odległości między parami mają postać
+\begin{equation}
+mx,\qquad m=1,\dots,N-1,
+\end{equation}
+przy czym każda odległość $mx$ występuje z krotnością $(N-m)$.
+
+Dlatego sumy geometryczne wynoszą
+\begin{equation}
+S_p(N)=\sum_{m=1}^{N-1}\frac{N-m}{m^p},
+\qquad p=1,2,3.
+\end{equation}
+
+Warunek równowagi redukuje się do
+\begin{equation}
+\boxed{S_1(N)x^2 - 4\beta S_2(N)x + 18\gamma C S_3(N)=0.}
+\end{equation}
+
+Dla $N=3$ otrzymujemy ponownie wynik dla układu $(-x,0,+x)$.
+
+\section{Interpretacja wyniku}
+
+Najmocniejszy wniosek z powyższych obliczeń nie brzmi: ``problem $N$-ciał stał się algebraicznie rozwiązywalny''.
+
+Wniosek jest słabszy, ale nadal istotny:
+\begin{quote}
+W sektorze pairwise TGP szeroka klasa konfiguracji o stałym kształcie i jednej skali redukuje warunek równowagi do pojedynczego równania kwadratowego dla parametru skali.
+\end{quote}
+
+To oznacza, że pairwise TGP nie daje pełnego rozwiązania ogólnego problemu $N$-ciał, ale selekcjonuje klasy figur, dla których struktura energii jest wyjątkowo prosta.
+
+\section{Granice zastosowania}
+
+Wszystkie powyższe wyprowadzenia dotyczą wyłącznie sektora \emph{pairwise}. W pełnej teorii energia ma schematycznie postać
+\begin{equation}
+V_{\mathrm{total}} = \sum_{i<j}V_2(d_{ij}) + \sum_{i<j<k}V_3(d_{ij},d_{ik},d_{jk}),
+\end{equation}
+co oznacza, że po uwzględnieniu rzeczywistego członu trójciałowego prostota algebraiczna może zostać utracona.
+
+W szczególności, jeśli człon $V_3$ zawiera nietrywialne całki overlapu albo screening typu Yukawy, to pełna energia może przestać być prostą kombinacją składników $1/\lambda$, $1/\lambda^2$, $1/\lambda^3$, a wtedy redukcja do równania kwadratowego nie musi już zachodzić.
+
+\section{Dalsze kierunki}
+
+Naturalne dalsze kroki:
+\begin{enumerate}
+    \item sprawdzić, które z powyższych rodzin przeżywają po dołączeniu członu 3-body jako perturbacji,
+    \item zbadać stabilność małych zaburzeń wokół uzyskanych konfiguracji,
+    \item sklasyfikować wszystkie figury jednoskalowe, dla których sumy geometryczne $S_1,S_2,S_3$ przyjmują szczególnie proste postaci,
+    \item sprawdzić, czy istnieją rodziny samopodobnych konfiguracji w 3D (np. inne wielościany foremne lub półforemne), które również poddają się tej redukcji.
+\end{enumerate}
+
+\end{document}

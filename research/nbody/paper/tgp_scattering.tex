@@ -1,0 +1,141 @@
+\section{Three-body TGP scattering dynamics for Planck-scale objects}
+\label{sec:scattering}
+
+\subsection{Setup}
+
+We simulate three Planck-scale objects with coupling
+$C = 1/(2\sqrt{\pi}) \approx 0.282$ [Planck] and scalar screening mass
+$m_{\rm sp}=1\,m_{\rm Pl}^{-1}$.  The interaction potential is
+\begin{equation}
+  V = \underbrace{-\sum_{i<j} C^2\,\frac{e^{-m_{\rm sp}r_{ij}}}{r_{ij}}}_{V_2}
+    \underbrace{-\sum_{i<j<k} C^3\,I_Y(r_{ij},r_{ik},r_{jk};\,m_{\rm sp})}_{V_3},
+\end{equation}
+with $I_Y$ the Feynman two-parameter integral (eq.~\ref{eq:IY_feynman_2D}).
+The equations of motion are integrated with the Velocity Verlet scheme
+($\Delta t = 0.02\,t_{\rm Pl}$, $T_{\rm max}=25\,t_{\rm Pl}$).
+
+\subsection{Static energetics}
+
+For an equilateral triangle of side $d$:
+\begin{equation}
+  V_2 = -3C^2\,\frac{e^{-d}}{d},\qquad
+  V_3 = -C^3\,I_Y(d,d,d;\,m_{\rm sp}=1).
+\end{equation}
+
+\begin{table}[h]
+\centering
+\caption{Potential energies and ratio $V_3/V_2$ for equilateral triangle,
+$C=C_{\rm Pl}=1/(2\sqrt{\pi})$, $m_{\rm sp}=1$.}
+\label{tab:Ep_equilat}
+\begin{tabular}{rccr}
+\hline
+$d$ [$l_{\rm Pl}$] & $V_2$ [$E_{\rm Pl}$] & $V_3$ [$E_{\rm Pl}$] & $V_3/V_2$ \\
+\hline
+$1.0$ & $-0.0878$ & $-0.0200$ & $22.8\%$ \\
+$1.5$ & $-0.0355$ & $-0.0060$ & $16.8\%$ \\
+$2.0$ & $-0.0162$ & $-0.0019$ & $11.9\%$ \\
+$2.5$ & $-0.0078$ & $-0.0007$ & $ 8.3\%$ \\
+$3.0$ & $-0.0040$ & $-0.0002$ & $ 5.7\%$ \\
+$4.0$ & $-0.0011$ & $-0.00003$ & $ 2.7\%$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+\textbf{Key result:} at Planck separations $d\sim 1$--$2\,l_{\rm Pl}$, the
+three-body interaction contributes $10$--$23\%$ of the total potential
+energy.  This is not a perturbative correction; it is a \emph{leading-order
+effect}.
+
+\subsection{Collision dynamics: observer displacement}
+
+Configuration: bodies~1 and~2 collide head-on along the $x$-axis with
+$v_0=0.25\,l_{\rm Pl}/t_{\rm Pl}$; body~3 (observer) sits at impact
+parameter $b=2\,l_{\rm Pl}$ on the $y$-axis.
+
+By symmetry, body~3 moves only along $y$.  The position discrepancy between
+the ``2-body only'' and ``2-body+3-body'' trajectories grows with time:
+
+\begin{table}[h]
+\centering
+\caption{Position of observer (body~3) under 2B vs 2B+3B forces.}
+\label{tab:observer_pos}
+\begin{tabular}{rccr}
+\hline
+$t$ [$t_{\rm Pl}$] & $y_3$ (2B only) & $y_3$ (2B+3B) & $|\delta y_3|$ \\
+\hline
+$ 5$  & $2.010$ & $2.010$ & $1.8\times10^{-4}$ \\
+$10$  & $2.087$ & $2.082$ & $4.1\times10^{-3}$ \\
+$15$  & $2.344$ & $2.298$ & $4.5\times10^{-2}$ \\
+$20$  & $2.764$ & $2.621$ & $1.4\times10^{-1}$ \\
+$25$  & $3.234$ & $2.997$ & $2.4\times10^{-1}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+At $t=25\,t_{\rm Pl}$ the three-body force has displaced the observer by
+$|\delta y_3| \approx 0.24\,l_{\rm Pl}$ — a measurable Planck-scale
+deviation.
+
+\subsection{Triangle stability: three-body compactness}
+
+An equilateral triangle ($d=2\,l_{\rm Pl}$, $\omega=0.1$) is unbound under
+2-body forces alone (total $E_0>0$).  With three-body forces the binding
+energy deepens:
+\begin{equation}
+  E_0^{(3B)} = E_0^{(2B)} + V_3 = 0.00885 - 0.00192 = 0.00693\,E_{\rm Pl}.
+\end{equation}
+Even though the triangle is still unbound, the separation grows more slowly:
+
+\begin{table}[h]
+\centering
+\caption{Side length $d_{12}$ of the expanding triangle: 2B vs 2B+3B.}
+\label{tab:triangle_stability}
+\begin{tabular}{rccr}
+\hline
+$t$ [$t_{\rm Pl}$] & $d_{12}$ (2B) & $d_{12}$ (2B+3B) & $\delta d_{12}$ \\
+\hline
+$ 5$  & $2.49$ & $2.45$ & $-0.040$ \\
+$10$  & $3.54$ & $3.44$ & $-0.099$ \\
+$15$  & $4.78$ & $4.63$ & $-0.148$ \\
+$20$  & $6.06$ & $5.87$ & $-0.190$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+The three-body interaction makes the triangle $\sim3\%$ more compact
+throughout the evolution.  For configurations with $E_0^{(2B)}<0$ (bound),
+the three-body term would deepen the bound state energy by $\sim12\%$ at
+$d=2\,l_{\rm Pl}$.
+
+\subsection{Summary}
+
+\begin{table}[h]
+\centering
+\caption{Summary of three-body scattering results for Planck-scale objects
+($C\approx0.282$, $m_{\rm sp}=1$).}
+\label{tab:scattering_summary}
+\begin{tabular}{ll}
+\hline
+Observable & Result \\
+\hline
+$V_3/V_2$ at $d=1\,l_{\rm Pl}$   & $22.8\%$ \\
+$V_3/V_2$ at $d=2\,l_{\rm Pl}$   & $11.9\%$ \\
+Observer displacement at $t=25$    & $0.24\,l_{\rm Pl}$ \\
+Triangle compactness increase (2B+3B vs 2B) & $\approx3\%$ \\
+Bound-state energy deepening       & $\approx12\%$ at $d=2$ \\
+Standard particles ($C\sim10^{-20}$) & $V_3/V_2\sim10^{-20}$ (undetectable) \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+\textbf{Main conclusion:} for hypothetical Planck-scale objects,
+three-body TGP interactions are \emph{not a perturbative correction}
+but contribute at the $10$--$23\%$ level to the total potential energy.
+The dynamical signature — a $\sim0.24\,l_{\rm Pl}$ observer displacement
+over $25\,t_{\rm Pl}$ — is of the same order as the Planck length and
+therefore, in principle, measurable within Planck-scale physics.
+For all known particles the effect is $\sim10^{-20}$ and completely negligible.

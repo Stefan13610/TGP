@@ -5,12 +5,12 @@
 
 ## Summary
 
-- Folders analyzed (fine): 89
+- Folders analyzed (fine): 91
 - Folders analyzed (coarse): 10
-- Total dependencies found: 1655
+- Total dependencies found: 1657
   - `\input`  edges: 69
   - `\ref`    edges: 1436
-  - `[[wiki]]` edges: 150
+  - `[[wiki]]` edges: 152
 - `\cite{}` usages counted (bib keys): 100
 - Bibliography keys in tgp_main.bib: 25
 
@@ -271,7 +271,7 @@
   - core/sek06_czarne_dziury (1x)
   - core/sek08_formalizm (9x)
   - core/sek08c_metryka_z_substratu (1x)
-  - research/nbody (1x)
+  - research/nbody/paper (1x)
 - Wikilinks to:
   - --
 - Cite count: 0
@@ -290,7 +290,7 @@
 
 ### core/sek04_stale
 - `\input`:
-  - research/nbody (2x)
+  - research/nbody/paper (2x)
 - `\ref` to other folders:
   - core/sek01_ontologia (1x)
   - core/sek08_formalizm (11x)
@@ -328,7 +328,7 @@
 
 ### core/sek07_predykcje
 - `\input`:
-  - research/nbody (2x)
+  - research/nbody/paper (2x)
 - `\ref` to other folders:
   - core/formalizm (14x)
   - core/sek01_ontologia (2x)
@@ -361,7 +361,7 @@
 
 ### core/sek08_formalizm
 - `\input`:
-  - research/nbody (2x)
+  - research/nbody/paper (2x)
 - `\ref` to other folders:
   - axioms/substrat (24x)
   - core/_meta_latex (2x)
@@ -411,7 +411,7 @@
 
 ### core/sek08c_metryka_z_substratu
 - `\input`:
-  - research/nbody (2x)
+  - research/nbody/paper (2x)
 - `\ref` to other folders:
   - axioms/substrat (2x)
   - core/sek04_stale (4x)
@@ -683,7 +683,8 @@
   - partial_proofs/hierarchia_mas (2x)
   - research/atom_from_soliton (2x)
   - research/cohesion_closure (1x)
-  - research/nbody (11x)
+  - research/nbody (8x)
+  - research/nbody/paper (3x)
 - Cite count: 0
 
 ### partial_proofs/particle_sector
@@ -738,7 +739,7 @@
 
 ### partial_proofs/trojcialowe_nbody
 - `\input`:
-  - research/nbody (1x)
+  - research/nbody/paper (1x)
 - `\ref` to other folders:
   - core/sek03_rezimy (1x)
   - core/sek04_stale (2x)
@@ -977,15 +978,19 @@
 - `\input`:
   - --
 - `\ref` to other folders:
-  - core/sek06_czarne_dziury (2x)
-  - core/sek08_formalizm (12x)
-  - core/sek08a_akcja_zunifikowana (1x)
-  - core/sek08c_metryka_z_substratu (3x)
-  - papers_external/arxiv_submission (24x)
-  - partial_proofs/trojcialowe_nbody (1x)
+  - --
 - Wikilinks to:
   - --
-- Cite count: 3
+- Cite count: 0
+
+### research/nbody/docs
+- `\input`:
+  - --
+- `\ref` to other folders:
+  - --
+- Wikilinks to:
+  - axioms/notacja (1x)
+- Cite count: 0
 
 ### research/nbody/examples
 - `\input`:
@@ -1004,6 +1009,20 @@
 - Wikilinks to:
   - --
 - Cite count: 0
+
+### research/nbody/paper
+- `\input`:
+  - --
+- `\ref` to other folders:
+  - core/sek06_czarne_dziury (2x)
+  - core/sek08_formalizm (12x)
+  - core/sek08a_akcja_zunifikowana (1x)
+  - core/sek08c_metryka_z_substratu (3x)
+  - papers_external/arxiv_submission (24x)
+  - partial_proofs/trojcialowe_nbody (1x)
+- Wikilinks to:
+  - axioms/notacja (1x)
+- Cite count: 3
 
 ### research/neutrino_msw
 - `\input`:

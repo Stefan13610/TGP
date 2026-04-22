@@ -1,0 +1,124 @@
+\section{Galactic rotation curves: TGP vs CDM and MOND}
+\label{sec:rotation_curve}
+
+\subsection{Setup}
+
+We compute rotation curves for a Milky-Way-like galaxy under four
+scenarios: baryons only (Newtonian), TGP with Yukawa screening,
+CDM with NFW halo, and MOND.
+
+\paragraph{Galaxy model.}
+Exponential stellar disk ($M_{\rm disk}=5\times10^{10}\,M_\odot$,
+$R_d=3.5\,{\rm kpc}$), Hernquist bulge
+($M_{\rm bulge}=10^{10}\,M_\odot$, $r_b=0.7\,{\rm kpc}$),
+gas disk ($M_{\rm gas}=5\times10^9\,M_\odot$, $R_{\rm gas}=7\,{\rm kpc}$).
+NFW halo: $M_{200}=10^{12}\,M_\odot$, $c_{\rm NFW}=15$,
+$r_s=13.6\,{\rm kpc}$.
+MOND acceleration constant $a_0=1.2\times10^{-10}\,{\rm m\,s}^{-2}$.
+
+\paragraph{TGP rotation curve.}
+For TGP Path~B, the 2-body coupling is $C=m/(2\sqrt{\pi}m_{\rm Pl})$,
+giving $C^2=Gm_1m_2$ — identical to Newtonian gravity.
+The radial acceleration from TGP is
+\begin{equation}
+  a_{\rm TGP}(r) = \frac{GM(r)}{r^2}\,e^{-m_{\rm sp}r}(1+m_{\rm sp}r),
+\end{equation}
+where the Yukawa screening factor $f(r)=e^{-m_{\rm sp}r}(1+m_{\rm sp}r)$
+satisfies $f(0)=1$ and $f(r)\to0$ exponentially for $r\gg1/m_{\rm sp}$.
+
+\subsection{Results}
+
+\begin{table}[h]
+\centering
+\caption{Circular velocity $v_{\rm circ}$ [km/s] for each model.
+TGP with any $m_{\rm sp}>0$ gives \emph{less} gravity than Newton at
+large $r$ — opposite to what flat rotation curves require.}
+\label{tab:rotation_curve}
+\begin{tabular}{rllllll}
+\hline
+$r$ & Baryons & TGP & TGP & TGP & CDM & MOND \\
+[kpc] & (Newton) & $\lambda=1$ & $\lambda=5$ & $\lambda=15$ & +NFW & \\
+& & [kpc] & [kpc] & [kpc] & & \\
+\hline
+$ 1$ & $138$ & $118$ & $137$ & $138$ & $157$ & $139$ \\
+$ 5$ & $170$ & $ 34$ & $145$ & $166$ & $222$ & $182$ \\
+$10$ & $165$ & $  4$ & $105$ & $153$ & $239$ & $195$ \\
+$15$ & $145$ & $  0$ & $ 65$ & $124$ & $235$ & $194$ \\
+$20$ & $126$ & $  0$ & $ 38$ & $ 99$ & $228$ & $190$ \\
+$30$ & $100$ & $  0$ & $ 13$ & $ 64$ & $217$ & $185$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Yukawa screening factor $f(r)=e^{-m_{\rm sp}r}(1+m_{\rm sp}r)$.
+At $r=20\,{\rm kpc}$, even $\lambda=15\,{\rm kpc}$ gives $f=0.62$ —
+a $38\%$ reduction in gravity relative to Newton.}
+\label{tab:yukawa_screening}
+\begin{tabular}{rrrrr}
+\hline
+$r$ [kpc] & $\lambda=1\,{\rm kpc}$ & $\lambda=5\,{\rm kpc}$ &
+$\lambda=15\,{\rm kpc}$ \\
+\hline
+$ 1$ & $0.736$ & $0.983$ & $0.998$ \\
+$ 5$ & $0.040$ & $0.736$ & $0.955$ \\
+$10$ & $0.0005$ & $0.406$ & $0.856$ \\
+$20$ & $\approx0$ & $0.092$ & $0.615$ \\
+$30$ & $\approx0$ & $0.017$ & $0.406$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+\paragraph{Why TGP cannot explain flat rotation curves.}
+The Yukawa potential $e^{-m_{\rm sp}r}/r$ satisfies
+\begin{equation}
+  \frac{e^{-m_{\rm sp}r}}{r} < \frac{1}{r} \quad \forall\,m_{\rm sp}>0,\;r>0.
+\end{equation}
+Therefore TGP acceleration is \emph{always less than or equal to}
+Newtonian.  Flat rotation curves ($v={\rm const}$) require
+$a(r)\propto1/r$ — more gravity at large $r$ than the baryonic
+Newtonian prediction.  TGP provides systematically less gravity,
+moving in the \emph{wrong direction}.
+
+\paragraph{CDM (NFW halo) works.}
+The NFW halo provides an additional $\sim100\,{\rm km/s}$ at $r=20\,{\rm kpc}$,
+sustaining a flat curve of $v\approx220\,{\rm km/s}$ consistent with
+the observed Milky Way rotation velocity.
+
+\paragraph{MOND works.}
+In the deep-MOND limit ($a\ll a_0$), Milgrom's relation gives
+$a^2/a_0=a_N\Rightarrow v^4=GMa_0$ (Tully-Fisher relation).
+For $M_{\rm bar}=6.5\times10^{10}\,M_\odot$, the MOND prediction is
+$v_{\rm TF}=(GM_{\rm bar}a_0)^{1/4}=179\,{\rm km/s}$, consistent with
+the computed curve $v(30\,{\rm kpc})=185\,{\rm km/s}$.
+
+\paragraph{Three-body TGP correction.}
+For ordinary baryonic matter ($C\sim10^{-19}$), the three-body
+coupling is $C^3\sim10^{-57}$, completely negligible for galactic dynamics.
+Even summing over $N\sim10^{11}$ stellar triples within a 1~kpc sphere
+gives a relative correction $\delta a_{\rm 3B}/a\sim NC^3\sim10^{-46}$.
+
+\subsection{Conclusion}
+
+TGP Path~B (for baryonic matter with $C\sim10^{-19}$) is
+indistinguishable from screened Newtonian gravity.  It:
+\begin{enumerate}
+\item Reproduces Newtonian gravity exactly at $r\ll\lambda_{\rm sp}$.
+\item Predicts \emph{less} gravity than Newton at $r\gtrsim\lambda_{\rm sp}$.
+\item Cannot produce flat rotation curves for any $m_{\rm sp}>0$.
+\item Has negligible ($\sim10^{-57}$) three-body corrections for baryons.
+\end{enumerate}
+
+TGP cannot substitute for dark matter or MOND in explaining rotation curves.
+A TGP dark-matter candidate would require near-Planck-mass particles
+($C\sim1$, $m\sim m_{\rm Pl}$), but their interaction with baryons
+(coupling $\propto C_{\rm baryon}\cdot C_{\rm DM}\sim10^{-19}$) would
+be observationally indistinguishable from zero.
+
+The Yukawa screening is a generic property: any Lagrangian with a
+\emph{positive} scalar mass $m_{\rm sp}^2>0$ yields a screened potential.
+Only a tachyonic scalar ($m_{\rm sp}^2<0$) or a massless scalar ($m_{\rm sp}=0$)
+could produce long-range enhancement — but these lie outside TGP Path~B.

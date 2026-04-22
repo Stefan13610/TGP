@@ -1,0 +1,136 @@
+% Fragment: \input z poziomu tgp_yukawa_exact_reduction.tex
+% Wybrany wariant P4 (plan): rozwinięcie multipolowe = szereg Legendre'a / Gegenbauera
+% dla jądra Yukawy, redukcja I_Y do całek radialnych + całek kątowych (Gaunt).
+
+%==========================================================================
+\section{Wybrana \'{s}cie\.{z}ka P4: multipolowo\'s\'c (Legendre / Gegenbauer)}
+\label{sec:p4_multipole_gegenbauer}
+%==========================================================================
+
+Zamiast poszukiwa\'c sko\'nczonej kombinacji funkcji Bessela (por.
+twierdzenie~\ref{thm:nonelementary} poni\.{z}ej), naturalnym \textbf{kontynuacj\k{a}
+wyprowadzenia} $I_Y$ jest rozwini\k{e}cie kuliste j\k{a}dra
+$G_m(R)=e^{-mR}/R$ w szereg wielomian\'ow Legendre'a --- tj.\ rozwini\k{e}cie
+typu Gegenbauera $C_\ell^{(1/2)}=P_\ell$ dla zielonej funkcji operatora
+Helmholtza w $\mathbb{R}^3$.
+
+\subsection{Twierdzenie dodawania (trzy wymiary)}
+
+Niech $i_\ell,\,k_\ell$ oznaczaj\k{a} \emph{sferyczne} zmodyfikowane funkcje Bessela
+(DLMF~10.47; w Pythonie \texttt{scipy.special.spherical\_in},
+\texttt{spherical\_kn}). Dla $r=|\mathbf{r}|$, $r'=|\mathbf{r}'|$,
+$r_<\!=\min(r,r')$, $r_>\!=\max(r,r')$ oraz
+$\cos\gamma=(\mathbf{r}\cdot\mathbf{r}')/(rr')$ zachodzi klasyczna reprezentacja
+\begin{equation}
+\label{eq:addition_yukawa}
+G_m\bigl(|\mathbf{r}-\mathbf{r}'|\bigr)
+=
+\sum_{\ell=0}^{\infty} (2\ell+1)\,
+\mathsf{w}_\ell(m,r,r')\,
+P_\ell(\cos\gamma),
+\end{equation}
+gdzie wsp\'o\l{}czynnik radialny ma posta\'c iloczynu fal cz\k{a}stkowych Yukawy:
+\begin{equation}
+\label{eq:w_l_yukawa}
+\mathsf{w}_\ell(m,r,r')
+\;\equiv\;
+\frac{2m}{\pi}\,
+i_\ell(m r_<)\, k_\ell(m r_>).
+\end{equation}
+
+\begin{remark}[Konwencja i sp\'ojno\'s\'c]
+Wsp\'o\l{}czynnik \eqref{eq:w_l_yukawa} jest standardowy przy powy\.{z}szej
+normalizacji $i_\ell,k_\ell$ jak w DLMF; w praktyce runtime nale\.{z}y
+\textbf{zweryfikowa\'c numerycznie} zgodno\'s\'c \eqref{eq:addition_yukawa} z
+reprezentacj\k{a} Schwingera \eqref{eq:IY_schwinger_2D} na kilku parach
+$(r,r',\gamma)$ zanim u\.{z}yje si\k{e} szeregu do przybli\.{z}ania $I_Y$.
+Granica $m\to0$ powinna odtwarza\'c rozwini\k{e}cie Laplace'a
+$\sum_\ell r_<^\ell r_>^{-\ell-1}P_\ell$ (test prefaktora).
+\end{remark}
+
+\subsection{Jeden \'{s}rodek rozwini\k{e}cia: $\mathbf{x}_3=\mathbf{0}$}
+
+Obieramy uk\l{}ad z $\mathbf{x}_3=\mathbf{0}$, $|\mathbf{x}_1|=d_{13}$,
+$|\mathbf{x}_2|=d_{23}$, a $\omega$ --- k\k{a}tem mi\k{e}dzy promieniami
+$\mathbf{x}_1,\mathbf{x}_2$ wzgl\k{e}dem $\mathbf{x}_3$:
+\[
+\cos\omega=\frac{d_{13}^2+d_{23}^2-d_{12}^2}{2d_{13}d_{23}}.
+\]
+Wtedy
+\begin{align}
+G_m(|\mathbf{x}-\mathbf{x}_1|)
+&=
+\sum_{\ell=0}^{\infty}(2\ell+1)\,
+\mathsf{w}_\ell(m,r,d_{13})\,
+P_\ell\bigl(\hat{\mathbf{x}}\cdot\widehat{\mathbf{x}_1}\bigr),
+\\
+G_m(|\mathbf{x}-\mathbf{x}_2|)
+&=
+\sum_{\ell'=0}^{\infty}(2\ell'+1)\,
+\mathsf{w}_{\ell'}(m,r,d_{23})\,
+P_{\ell'}\bigl(\hat{\mathbf{x}}\cdot\widehat{\mathbf{x}_2}\bigr),
+\\
+G_m(|\mathbf{x}-\mathbf{x}_3|) &= G_m(r)=\frac{e^{-mr}}{r},
+\qquad r=|\mathbf{x}|.
+\end{align}
+
+Ca\l{}ka po k\k{a}cie w
+$I_Y=\int d^3x\,G_m(r)\,G_m(|\mathbf{x}-\mathbf{x}_1|)\,G_m(|\mathbf{x}-\mathbf{x}_2|)$
+sprowadza si\k{e} do ca\l{}ek postaci
+\begin{equation}
+\label{eq:angular_A}
+\mathcal{A}_{\ell\ell'}(\omega)
+\;\equiv\;
+\int_{S^2}
+P_\ell\bigl(\hat{\mathbf{x}}\cdot\hat{\mathbf{n}}_1\bigr)\,
+P_{\ell'}\bigl(\hat{\mathbf{x}}\cdot\hat{\mathbf{n}}_2\bigr)\,d\Omega,
+\qquad
+\hat{\mathbf{n}}_1\cdot\hat{\mathbf{n}}_2=\cos\omega,
+\end{equation}
+kt\'ore s\k{a} \textbf{wielomianami} zmiennej $\cos\omega$ (kombinacje symboli
+$3j$ / wsp\'o\l{}czynnik\'ow Gaunta dla zonalnych harmonic sferycznych).
+Dla $\ell\neq\ell'$ ca\l{}ka \eqref{eq:angular_A} nie znika w og\'olno\'sci ---
+pojawia si\k{e} pe\l{}na podw\'ojna suma po $(\ell,\ell')$.
+
+\subsection{Szkielet radialny}
+
+Po rozdzieleniu $d^3x=r^2\,dr\,d\Omega$ otrzymujemy
+\begin{equation}
+\label{eq:IY_multipole_double_sum}
+\boxed{
+I_Y
+=
+\sum_{\ell=0}^{\infty}\sum_{\ell'=0}^{\infty}
+(2\ell+1)(2\ell'+1)\,
+\int_{0}^{\infty} dr\; r^2\,\frac{e^{-mr}}{r}\,
+\mathsf{w}_\ell(m,r,d_{13})\,
+\mathsf{w}_{\ell'}(m,r,d_{23})\,
+\mathcal{A}_{\ell\ell'}(\omega).
+}
+\end{equation}
+Wielko\'s\'c $I_Y$ zale\.{z}y tylko od $(d_{12},d_{13},d_{23},m)$, wi\k{e}c
+$\omega$ wyra\.{z}a si\k{e} przez prawo cosinus\'ow jak wy\.{z}ej; symetria
+permutacyjna tripletu mo\.{z}e by\'c odzyskana przez u\'srednienie lub wyb\'or
+innego centrum rozwini\k{e}cia.
+
+\subsection{Co daje ten wariant w praktyce (runtime)}
+
+\begin{itemize}
+\item \textbf{Semianalityka.} Uci\k{e}cie $\ell,\ell'\le L_{\max}$ zamienia 2D
+simpleks z \texttt{three\_body\_force\_exact.py} na ci\k{a}g 1D ca\l{}ek
+radialnych (kwadratura Gaussa na $r$) z \textbf{sta\l{}\k{a}} liczb\k{a}
+wyraz\'ow podw\'ojnej sumy $O(L_{\max}^2)$ --- dogodne do GPU / tabulacji
+$(d_{ij},m)$ po wst\k{e}pnym wyliczeniu $\mathcal{A}_{\ell\ell'}$ jako
+wielomian\'ow w $\cos\omega$.
+\item \textbf{Zwi\k{a}zek z nieelementarno\'sci\k{a}.} Szereg
+\eqref{eq:IY_multipole_double_sum} jest co do zasady \textbf{niesko\'nczony};
+nie zaprzecza twierdzeniu~\ref{thm:nonelementary} o braku sko\'nczonej
+kombinacji $K_\nu(a_k t)$ dla $f_\triangle(t)$ --- pokazuje natomiast, \.{z}e
+$I_Y$ jest naturalnie reprezentowalne jako granica sum cz\k{e}\'{s}ciowych
+fal multipolowych.
+\item \textbf{Nast\k{e}pny krok techniczny (do kodu).} Wypisa\'c jawnie
+$\mathcal{A}_{\ell\ell'}(\omega)$ dla ma\l{}ych $L_{\max}$ (np.\ $2$ lub $3$)
+oraz por\'owna\'c \eqref{eq:IY_multipole_double_sum} z
+\texttt{yukawa\_overlap\_exact} na siatce $(d_{12},d_{13},d_{23})$ --- to
+zamknie p\k{e}tl\k{e} weryfikacyjn\k{a} dla prefaktora \eqref{eq:w_l_yukawa}.
+\end{itemize}

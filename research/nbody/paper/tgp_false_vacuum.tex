@@ -1,0 +1,198 @@
+
+\section{False vacuum structure and spontaneous nucleation in TGP}
+\label{sec:false_vacuum}
+
+\medskip\noindent\textbf{Canonical note (2026-04-07).} This document uses Formulation~B ($f(g) = 1+4\ln g$, ghost point $g^* = e^{-1/4}$). The canonical TGP formulation uses $K(g) = g^4$ with no ghost point. See \texttt{tgp\_companion.tex}, Sec.~2.2.\medskip
+
+\subsection{The inverted potential: $V(g=1)$ is a maximum}
+
+The TGP interaction potential, in dimensionless units $g=\Phi/\Phi_0$
+with $\beta=\gamma=1$, reads
+\begin{equation}
+  V(g) = \frac{g^3}{3} - \frac{g^4}{4},
+  \qquad
+  V'(g) = g^2(1-g),
+  \qquad
+  V''(g) = 2g - 3g^2.
+\end{equation}
+The critical points satisfy $V'=0$: these are $g=0$ (inflection,
+$V''(0)=0$) and $g=1$ ($V''(1)=-1<0$, a \textbf{maximum}).  There is
+no local minimum for $g\in(0,1)$.  The values at the
+structurally important points are:
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+Point & $g$ & $V(g)$ & Type \\
+\hline
+``Nothingness'' & $0$ & $0$ & inflection \\
+Ghost boundary & $g^*=e^{-1/4}\approx0.7788$ & $0.0655$ & --- \\
+``Space'' (vacuum) & $1$ & $\tfrac{1}{12}\approx0.0833$ & \textbf{maximum} \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+Since $V(0)<V(g^*)<V(1)$, the vacuum $g=1$ has the \emph{highest}
+potential energy among the accessible field values.  It is a
+\textbf{false vacuum}.
+
+\subsection{Linearised field equation and oscillatory tails}
+
+Setting $g=1-\delta$, $|\delta|\ll1$, and linearising gives
+$(\nabla^2+1)\delta=0$, whose spherically symmetric solution is
+$\delta(r)=A\sin r/r$ — oscillatory, not Yukawa.  This follows
+\emph{directly} from $V''(1)=-1<0$: the negative second derivative
+is the field-theoretic origin of the oscillatory far field.
+
+\subsection{Defect energy landscape}
+
+The total energy of a spherically symmetric defect profile $g(r)$
+relative to the vacuum is
+\begin{equation}
+  E_{\rm def} = 4\pi\int_0^\infty r^2
+  \Bigl[\tfrac{1}{2}f(g)(g')^2 + V(g) - V(1)\Bigr]\,dr,
+\end{equation}
+with the nonlinear kinetic function $f(g)=1+2\alpha\ln g$
+($\alpha=2$) and ghost boundary $g^*=e^{-1/4}$.
+
+Numerical integration of the full ODE~\eqref{eq:defect_ode} with
+$g(0)=g_0$, $g'(0)=0$ (ex16) yields the following energy landscape:
+
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+$g_0$ & $E_{\rm def}$ [Planck] & Character \\
+\hline
+$0.780$ & $+0.019$ & unfavourable (E$>$0) \\
+$0.849$ & $+0.003$ & near-critical \\
+$0.869$ & $-0.000$ & \textbf{zero crossing} \\
+$0.914$ & $-0.0043$ & \textbf{optimal (E minimum)} \\
+$0.958$ & $-0.0020$ & shallow, nearly zero \\
+$0.999$ & $\to 0^-$ & trivial (no defect) \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+The energy changes sign at $g_0\approx0.87$:
+\begin{itemize}
+\item $g_0\in(g^*,\,0.87)$: \textbf{deep defects, $E>0$} — energetically
+  unfavourable; the kinetic cost at the ghost boundary dominates.
+\item $g_0\in(0.87,\,1)$: \textbf{shallow defects, $E<0$} — energetically
+  favourable; the potential energy gain $V(g_0)-V(1)<0$ dominates.
+\end{itemize}
+
+The \textbf{minimum-energy defect} has $g_0\approx0.91$,
+$E_{\rm min}\approx-0.0043$\,Planck.
+
+\subsection{Metastability and the nucleation barrier}
+
+The sign reversal at $g_0\approx0.87$ implies a \textbf{nucleation
+barrier}: to create a stable ($E<0$) defect, a fluctuation must
+overshoot the $g_0\approx0.87$ threshold.  The thin-wall approximation
+for a spherical bubble of radius $R$ gives
+\begin{equation}
+  E_{\rm bubble}(R) = -\frac{4\pi}{3}R^3\,|\varepsilon(g_0)|
+                    + 4\pi R^2\,\sigma(g_0),
+\end{equation}
+with $\varepsilon(g_0)=V(g_0)-V(1)<0$ the volumetric energy gain and
+$\sigma(g_0)$ the wall surface energy.  The critical radius and
+barrier height are
+\begin{equation}
+  R_{\rm crit} = \frac{2\sigma}{|\varepsilon|},
+  \qquad
+  E_{\rm barrier} = \frac{16\pi\sigma^3}{3\varepsilon^2}.
+\end{equation}
+For the optimal depth $g_0=0.90$ with $\sigma_{\rm eff}\approx0.045$
+and $|\varepsilon|\approx0.0044$:
+\begin{equation}
+  R_{\rm crit} \approx 21\,l_{\rm Pl},
+  \qquad
+  E_{\rm barrier} \approx 81\,E_{\rm Pl}.
+\end{equation}
+The vacuum lifetime is $\tau\sim\exp(E_{\rm barrier}/\hbar)\sim
+\exp(81)\sim10^{35}\,t_{\rm Pl}$.  In SI units, $10^{35}\,t_{\rm Pl}
+\approx 5\times10^{-9}$\,s — surprisingly short, but in Planck units
+enormous compared to the Planck time.
+
+\textbf{Important caveat on energy convergence.}  The oscillatory
+tail $g(r)-1\sim A\sin r/r$ contributes a kinetic term
+$(g')^2\sim A^2/r^2$, giving an integrand $\sim r^2/r^2=A^2$ that
+does not decay.  Thus $E_{\rm def}$ as defined is \emph{IR-divergent}
+for isolated defects.  The physical implication is that \textbf{TGP
+bodies must appear in pairs (defect + anti-defect)}, whose
+oscillatory tails cancel at large $r$, leaving a finite pair energy.
+This mirrors the UV divergence of point charges in classical
+electrodynamics, and predicts a matter–antimatter pairing structure.
+
+\subsection{Cosmological scenario: matter nucleation from the vacuum}
+
+The false-vacuum structure of TGP suggests the following cosmological
+scenario:
+
+\begin{enumerate}
+\item \textbf{Initial state:} Universe at $g=1$ everywhere —
+  ``pure space'', the false vacuum.  This corresponds to the axiom
+  $\mathcal{N}_0$ of TGP.
+
+\item \textbf{Quantum fluctuations:} At the Planck scale, field
+  configurations with $g<1$ are continuously generated.  Fluctuations
+  with $g_0>0.87$ are energetically favoured and grow.
+
+\item \textbf{Critical bubble nucleation:} Bubbles reaching
+  $R>R_{\rm crit}\approx21\,l_{\rm Pl}$ grow without bound,
+  converting the false vacuum locally to a defect state.
+
+\item \textbf{Defect = body:} Each stable defect pair (defect +
+  anti-defect) constitutes a TGP body with rest energy
+  $E_{\rm pair}\approx 2|E_{\rm min}|\approx 0.0086\,E_{\rm Pl}
+  \approx 1.9\times10^{-19}\,{\rm kg}\cdot c^2$.
+
+\item \textbf{Ghost boundary as stabiliser:} Defects cannot deepen
+  below $g^*\approx0.778$ because the kinetic term $f(g^*)=0$
+  creates an impenetrable kinematic barrier.  Bodies are
+  ``coated'' by this ghost layer.
+\end{enumerate}
+
+\noindent
+The analogy with Schwinger pair production in QED is close: just as
+a strong electromagnetic field can nucleate electron--positron pairs
+from the QED vacuum, the TGP vacuum (false vacuum at $g=1$) can
+nucleate body--antibody pairs from its own instability.
+
+\subsection{Energy scale of nucleated bodies}
+
+With $\beta=\gamma=1$ (natural Planck-scale TGP), the pair energy
+$E_{\rm pair}\approx 0.0086\,E_{\rm Pl}$, corresponding to a mass
+\begin{equation}
+  m_{\rm TGP} \approx 0.0086\,m_{\rm Pl} \approx 1.9\times10^{-10}\,{\rm kg}.
+\end{equation}
+This is the mass of a dust grain — not a fundamental particle.  For
+TGP to describe quarks or electrons, the coupling constants must
+satisfy $m_{\rm body}\sim 10^{-19}\,m_{\rm Pl}$, requiring
+$\beta,\gamma\ll1$.  The ratio
+\begin{equation}
+  m_{\rm body}/m_{\rm Pl} \sim (\beta\gamma)^{1/2}/12
+\end{equation}
+relates the TGP coupling constants to the observed particle masses.
+
+\subsection{Summary of vacuum structure}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Property & Value / Conclusion \\
+\hline
+Vacuum type & False vacuum ($V''(1)<0$) \\
+True minimum & $g=0$ (nothingness), $V=0$ \\
+Ghost boundary & $g^*=e^{-1/4}\approx0.778$, $f(g^*)=0$ \\
+Energy barrier crossing & $g_0^{\rm crit}\approx0.87$ \\
+Optimal defect depth & $g_0^{\rm opt}\approx0.91$ \\
+Min.\ defect energy & $E_{\rm min}\approx-0.0043\,E_{\rm Pl}$ \\
+Critical bubble radius & $R_{\rm crit}\approx21\,l_{\rm Pl}$ \\
+Nucleation barrier & $E_{\rm bar}\approx81\,E_{\rm Pl}$ \\
+IR convergence & Requires defect pairs (oscillatory tails cancel) \\
+\hline
+\end{tabular}
+\end{center}
