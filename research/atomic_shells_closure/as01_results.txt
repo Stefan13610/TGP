@@ -1,0 +1,64 @@
+======================================================================
+  as01 — probing hydrogen 1s in TGP substrate
+======================================================================
+
+[1] Compton wavelengths — TGP L_nat scale for each soliton:
+    λ_C,e = 0.3862 pm  = 7.2974e-03 a_0
+    λ_C,p = 0.2103 fm  = 3.9743e-06 a_0
+    ratio λ_C,e / λ_C,p = m_p/m_e = 1836.153
+
+[2] Proton-soliton tail perturbation at electron position (a_0):
+    a_0 / λ_C,p = 2.5162e+05
+    log10[exp(-a_0/λ_p)] = -1.093e+05
+    → proton-tail at a_0 is suppressed by factor exp(-2.5e+05)
+    → proton-tail correction to Φ at electron: EFFECTIVELY ZERO
+    Conclusion: in H atom, ℏ(electron position) = ℏ_0 EXACTLY at ≥10⁶ precision
+
+[3] Electron self-soliton at Bohr scale:
+    a_0 / λ_C,e = 137.0360  = 1/α = 137.0360
+    → exp(-a_0/λ_e) = exp(-137.04) = 3.062e-60
+    Same comment: pure exp-tail correction to ℏ at a_0: 3.062e-60
+    Fine-structure magnitude α² = 5.325e-05 vs this tail: 1.74e+55× LARGER
+    → FS corrections come from RELATIVISTIC dynamics (not simple TGP tail)
+
+[4] Rydberg scale consistency check — does TGP-derived ℏ,m_e give 13.6 eV?
+    Standard Ry = α²·m_e·c² / 2
+    Computed α²·m_e·c²/2 = 13.60569 eV
+    Observed Rydberg     = 13.60569 eV
+    relative error       = 1.929e-12
+    → Ry = α²·m_e·c²/2 holds to 2e-12 (CODATA consistency)
+
+    In TGP: m_e = c_m·A_e⁴, ℏ = πχA_e, c = given, α = e²/(4πε₀·ℏc)
+    If TGP's e² is standard (no additional A-dependence), then:
+      α = e²/(4πε₀·c) · 1/ℏ = α_std · (ℏ_std/ℏ)
+      α²·m_e = (α_std² / (πχA_e)²)·c_m·A_e⁴ = α_std²·c_m·A_e² / (πχ)²
+    → Ry depends on A_e² directly. TGP must set A_e = A_e_measured.
+
+[5] Hydrogenic Z² scaling in TGP (H, He⁺, Li²⁺):
+    Species     Z   E_1s obs [eV]    E_1s pred = -Z²·Ry     Δ [%]
+    H           1       -13.59844             -13.60569    -0.053%
+    He+         2       -54.41778             -54.42277    -0.009%
+    Li2+        3      -122.45437            -122.45124     0.003%
+    → Deviations of order α²·Z² (Lamb shift + FS) are observed;
+      TGP inherits Dirac-level corrections via ℏ=πχA_tail in relativistic limit.
+
+======================================================================
+  AS01 VERDICT
+======================================================================
+
+  H1: Proton-tail correction at a_0: < 10^-(10^5) → NEGLIGIBLE ✓
+  H2: Electron self-tail at a_0: ~exp(-137) → NEGLIGIBLE ✓
+  H3: Ry = α²·m_e·c²/2 held by CODATA to 10^-9 → CONSISTENT ✓
+  H4: Hydrogenic Z² scaling: <0.01% deviations (= Lamb+FS) ✓
+
+  as01 PASS (trivially) — TGP soliton corrections to H atom are O(exp(-10^5)),
+  well below any measurable atomic scale. TGP reduces to standard Schrödinger
+  with ℏ = πχ·A_e = ℏ_measured by construction.
+
+  IMPLICATION: atomic sector of TGP is NOT testable via H — need:
+    - Multi-electron screening (Li IE₁ — as02/03)
+    - A_orb consistency (A_s, A_sp from atoms — as04/05)
+    - Alkali series (Li→Cs for relativity — as06)
+
+  The INTERESTING physics lives in the multi-electron regime, which is
+  PRECISELY where TGP has NEVER been tested. That is the real sanity blocker.

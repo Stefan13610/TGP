@@ -1,0 +1,100 @@
+======================================================================
+  as02 — Lithium ionization chain vs TGP
+======================================================================
+
+[1] Li IE chain as hydrogenic with Z_eff:
+    stage        IE [eV]   n       Z_eff    δ_n (defect)
+    IE_1         5.39171   2     1.25902          0.4115
+    IE_2        75.64018   1     2.35785             n/a
+    IE_3       122.45437   1     3.00004             n/a
+    IE₃ = 122.454 eV;  hydrogenic 13.6·3² = 122.451 eV;  diff 0.003%
+    → IE₃ jest DOKŁADNIE hydrogenic (zgodnie z as01). Sanity: OK.
+    → IE₂ wymaga Z_eff ≈ 2.36 (<3 ze względu na screening 1s-elektronu)
+    → IE₁ wymaga Z_eff ≈ 1.26 (quantum defect δ_s ≈ 0.41)
+
+[2] Koide-style relation for Li IE:
+    K_Li = Σ IE / (Σ √IE)² = 203.4863 / 487.7496 = 0.417194
+    Leptony naładowane (e, μ, τ): K = 2/3 = 0.666667
+    Li IE: K = 0.417194, różnica od 2/3: -0.2495 (-37.4%)
+
+    Brannen √2 ansatz test: Czy Li IE chain pasuje do √m_i = a(1+√2·cos(θ+2πi/3))?
+    Best residual²/norm² = 3.0475e-01  (leptons: ~10⁻¹⁵ dokładnie)
+    → Li IE chain NIE obeysuje Brannen ansatz. Nie jest drabiną solitonową.
+
+[3] Alkali series: czy A_valence skalą czteropotęgowo?
+    atom   Z   n    IE₁ [eV]     Z_eff     (IE/Ry)^(1/4)
+    H      1   1    13.59844   0.99973           0.99987
+    Li     3   2     5.39171   1.25902           0.79342
+    Na    11   3     5.13908   1.84376           0.78396
+    K     19   4     4.34066   2.25932           0.75155
+    Rb    37   5     4.17713   2.77044           0.74437
+    Cs    55   6     3.89390   3.20984           0.73142
+    Fr    87   7     4.07272   3.82983           0.73968
+
+    A_proxy(Li) = (IE_Li/Ry)^(1/4) = 0.7938
+    Porównanie do empirycznego |A_s|(SC) = 0.111 — RZĄD WIELKOŚCI INNY (7×)
+    → 'IE ∝ A⁴' dla alkali NIE daje wartości zgodnych z A_s(SC).
+    → A_s(SC) jest w innej skali — prawdopodobnie NIE jest A_tail elektronu izolowanego
+
+[4] Tail-phase hypothesis: ψ_2s node flips sign at r = 2a_0
+    Hydrogenic 2s: ψ_2s(r) = (1/√(8π))(1/a_0)^(3/2)·(2 - r/a_0)·exp(-r/2a_0)
+    NODE at r = 2a_0 → tail (r→∞) has NEGATIVE sign
+
+    Li 2s (Z_eff=1.259) radial amplitude R_2s(r) at tail points:
+      r =  3.0 a_0:  R_2s = -1.342814e-01  (sign: negative)
+      r =  5.0 a_0:  R_2s = -9.215415e-02  (sign: negative)
+      r = 10.0 a_0:  R_2s = -9.761258e-03  (sign: negative)
+
+    Znak A_s(SC) = -0.111 (UJEMNY)
+    Znak tail R_2s(Li) = UJEMNY (za nodem)
+    → ZGODA JAKOŚCIOWA: oba znaki ujemne!
+
+[5] Alkali ns¹ tail-sign prediction:
+    n=2 (Li): 2s ma 1 radial node → tail sign NEGATIVE
+    n=3 (Na): 3s ma 2 radial nodes → tail sign POSITIVE (2 flips)
+    n=4 (K):  4s ma 3 radial nodes → NEGATIVE
+    n=5 (Rb): 5s ma 4 radial nodes → POSITIVE
+    n=6 (Cs): 6s ma 5 radial nodes → NEGATIVE
+
+    Jeśli A_s(SC) = -0.111 byłoby tylko dla Li, przewidywalibyśmy
+    PRZESKOKI ZNAKU wzdłuż kolumny s metali... ale w SC paper A_s = -0.111
+    traktowane jest JAKO STAŁA dla wszystkich s-metali (Hg, Tl, Sn dowodne).
+
+    → hipoteza 'A_s = R_2s tail sign' ZAWODZI: nie wyjaśnia stałości A_s
+    → A_s(SC) musi odnosić się do STANU FERMIEGO w metalu (delokalizowanego),
+      nie izolowanego atomu. Koherentny fermion sea ma WSPÓLNY fazowy ogon.
+
+======================================================================
+  AS02 VERDICT
+======================================================================
+
+  T1 (Li IE chain):      hydrogenic Z_eff - trywialne skalowanie ✓ OK
+  T2 (Koide-like):       K_Li = 0.4172 ≠ 2/3. Brannen NIE pasuje.
+                         → Li IE NIE JEST drabiną solitonową.
+  T3 (A ∝ IE^(1/4)):    A_Li ≈ 0.79, ale A_s(SC) ≈ 0.11. Rząd wielkości niezgodny.
+                         → Naiwne TGP przenoszenie A^4 na atomy ZAWODZI.
+  T4 (tail-phase sign):  Li 2s tail ujemne ✓ zgodne znakiem A_s.
+                         Magnituda niezgodna.
+  T5 (alkali consistency): stałość A_s w SC wyklucza hypoteza per-atom tail-sign.
+                         → A_s(SC) jest WŁASNOŚCIĄ MNOGOCIAŁOWĄ Fermi morza.
+
+  WNIOSEK as02:
+    A_s, A_sp, A_d, A_f z SC paper NIE SĄ A_tail izolowanych atomów.
+    Są to EMPIRYCZNE markery Fermi-level stanów w solidach.
+
+    To wyjaśnia pewien observ: w ps41 (d-class closure) Lu pozostało
+    nierozwiązane. TGP jako "orbital-class theory" nie ma pierwszych zasad
+    do derywacji A_orb z atomowej fizyki.
+
+  Pierwsze zadokumentowane miejsce, gdzie TGP-core NIE LĄCZY się z TGP-stosowanym:
+    • core: mass ∝ A_tail⁴ DLA IZOLOWANEGO solitonu
+    • applied (SC/ρT): A_orb klas w SIATCE metalu (empiryczne)
+    • brakuje: derywacja A_orb z wieloelektronowej fizyki atomowej w metalu
+
+  Kierunek dla as03/04:
+    (a) porzucić ambicję "A_s = A_tail(2s Li)" — to nieprawda.
+    (b) zamiast tego: testować ZUPEŁNIE inny aspekt, np. polaryzowalność
+        atomu α_pol(Li) = 164 a.u. i jej związek z substratem.
+    (c) lub: energia spójności (cohesive energy) Li metal — mostek
+        atom↔metal, gdzie A_orb faktycznie ma sens.
+
