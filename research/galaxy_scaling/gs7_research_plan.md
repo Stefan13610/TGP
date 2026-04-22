@@ -169,6 +169,6 @@ Mechanizm jest **odrzucony** jeśli:
 
 ## Powiązania
 
-- [[TGP/TGP_v1/research/galaxy_scaling/gs6_assessment.py]] — ocena obalonych mechanizmów
-- [[TGP/TGP_v1/research/galaxy_scaling/gs1_flat_well_model.py]] — fenomenologia (cel do reprodukcji)
-- [[TGP/TGP_v1/research/cosmo_tensions/ct6_mechanism_diagnosis.py]] — analogiczny problem ze skalami
+- [[gs6_assessment.py]] — ocena obalonych mechanizmów
+- [[gs1_flat_well_model.py]] — fenomenologia (cel do reprodukcji)
+- [[ct6_mechanism_diagnosis.py]] — analogiczny problem ze skalami

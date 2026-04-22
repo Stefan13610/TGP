@@ -147,7 +147,7 @@ Model jest **odrzucony** jeśli:
 
 ## Powiązania
 
-- [[TGP/TGP_v1/research/galaxy_scaling/gs8_disformal_coupling.py]] — analiza przejścia 3D→2D
-- [[TGP/TGP_v1/research/galaxy_scaling/gs7f_comparison.py]] — porównanie 5 mechanizmów
-- [[TGP/TGP_v1/research/galaxy_scaling/gs1_flat_well_model.py]] — fenomenologia do reprodukcji
-- [[TGP/TGP_v1/research/cosmo_tensions/ct6_mechanism_diagnosis.py]] — problem dwóch skal
+- [[gs8_disformal_coupling.py]] — analiza przejścia 3D→2D
+- [[gs7f_comparison.py]] — porównanie 5 mechanizmów
+- [[gs1_flat_well_model.py]] — fenomenologia do reprodukcji
+- [[ct6_mechanism_diagnosis.py]] — problem dwóch skal

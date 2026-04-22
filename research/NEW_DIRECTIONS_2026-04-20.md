@@ -52,8 +52,8 @@ sygnał do uwiarygodnienia TGP:
 
 ## Relacje z papers
 
-- **Paper 1 TGP Core** [[papers/core/tgp_core.pdf]] — fundament dla wszystkich.
-- **Paper 2 TGP-SC** [[papers/sc/tgp_sc.pdf]] — wzór struktury aplikacyjnej.
+- **Paper 1 TGP Core** [[tgp_core.pdf]] — fundament dla wszystkich.
+- **Paper 2 TGP-SC** [[tgp_sc.pdf]] — wzór struktury aplikacyjnej.
 - Planowane kolejne preprints Zenodo (w kolejności gotowości):
   - `papers/viscosity/tgp_viscosity.tex` — jeśli VFT unifikacja wyjdzie
   - `papers/leptons/tgp_leptons.tex` — mass + Koide + Cabibbo + g-2 unified

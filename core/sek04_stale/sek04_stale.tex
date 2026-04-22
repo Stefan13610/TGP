@@ -1,0 +1,782 @@
+% ============================================================
+% §4  Dynamiczne stałe fundamentalne
+% ============================================================
+\section{Dynamiczne sta\l{}e fundamentalne}\label{sec:stale}
+
+W~standardowej fizyce $c$, $\hbar$ i~$G$ s\k{a} uniwersalnymi sta\l{}ymi.
+W~TGP, gdzie przestrze\'n jest generowana przez materi\k{e}, te
+,,sta\l{}e'' staj\k{a} si\k{e} \textbf{polami zale\.znymi od lokalnej
+g\k{e}sto\'sci wygenerowanej przestrzeni $\Phi$}. Jedyn\k{a} prawdziwie
+sta\l{}\k{a} wielko\'sci\k{a} jest d\l{}ugo\'s\'c Plancka $\lP$.
+
+% ----------------------------------------------------------
+\subsection{Uzasadnienie: sta\l{}e opisuj\k{a} propagacj\k{e}}\label{ssec:uzasadnienie}
+
+$c$ okre\'sla pr\k{e}dko\'s\'c propagacji \'swiat\l{}a,
+$\hbar$ --- skal\k{e} efekt\'ow kwantowych,
+$G$ --- si\l{}\k{e} oddzia\l{}ywania grawitacyjnego.
+Wszystkie trzy opisuj\k{a} w\l{}asno\'sci
+\emph{przestrzeni, w~kt\'orej zachodzi propagacja}.
+
+Skoro przestrze\'n w~TGP nie jest sta\l{}ym t\l{}em, lecz dynamicznym
+polem $\Phi$, naturalne jest, \.ze w\l{}asno\'sci propagacji
+--- a~wi\k{e}c warto\'sci $c$, $\hbar$, $G$ --- zale\.z\k{a} od
+lokalnego stanu tego pola.
+
+% ----------------------------------------------------------
+\subsection{Pr\k{e}dko\'s\'c \'swiat\l{}a $c(\Phi)$}\label{ssec:c}
+
+\begin{axiom}[Pr\k{e}dko\'s\'c \'swiat\l{}a jako pole]\label{ax:c}
+Pr\k{e}dko\'s\'c \'swiat\l{}a jest lokalnym polem zale\.znym od $\Phi$:
+\begin{equation}\label{eq:cPhi}
+    c(\Phi) = c_0 \left(\frac{\PhiZero}{\Phi}\right)^{1/2},
+\end{equation}
+gdzie $c_0$ jest obserwowaną pr\k{e}dko\'sci\k{a} \'swiat\l{}a w~warunkach
+referencyjnych ($\Phi = \PhiZero$).
+\end{axiom}
+
+Interpretacja:
+\begin{itemize}[nosep]
+  \item Im g\k{e}\'sciej wygenerowana przestrze\'n (wi\k{e}ksze $\Phi$),
+        tym \textbf{wolniej} propaguje si\k{e} \'swiat\l{}o.
+  \item Dla $\Phi \to \infty$: $c \to 0$ --- propagacja zanika
+        (,,zamro\.zona'' przestrze\'n, wn\k{e}trze czarnej dziury).%
+        \footnote{W~sformu\l{}owaniu kanonicznym (Formulacja~A) dynamiczne
+        sta\l{}e przyjmuj\k{a} posta\'c $c(g)$, $\hbar(g)$, $G(g)$
+        z~$g = \Phi/\PhiZero < 1$ blisko materii.
+        Czarna dziura: $g \to 0$ (nie $\Phi \to \infty$).
+        Brak punktu duchowego w~Formulacji~A.
+        Patrz: \texttt{tgp\_companion.tex}.}
+  \item Dla $\Phi \to 0$: $c \to \infty$ --- ale ten limit jest
+        niefizyczny, bo $\Phi = 0$ oznacza brak przestrzeni.
+\end{itemize}
+
+G\k{e}sta przestrze\'n spowalnia \'swiat\l{}o --- analogicznie do
+o\'srodka materialnego o~du\.zym wsp\'o\l{}czynniku za\l{}amania.
+Ale tu nie ma o\'srodka: to sama \emph{tkanka przestrzeni}
+jest g\k{e}\'sciejsza.
+
+\begin{remark}[Interpretacja $c(\Phi)$: pr\k{e}dko\'s\'c
+lokalna fizyczna]\label{rem:c-interpretacja}
+W~standardowej OTW lokalna pr\k{e}dko\'s\'c \'swiat\l{}a
+mierzona przyrz\k{a}dami obserwatora w~jego bezpo\'srednim
+otoczeniu wynosi \emph{zawsze} $c_0$ (zasada r\'ownowa\.zno\'sci).
+Zmienno\'s\'c $c$ jest widoczna dopiero w~por\'ownaniu
+mi\k{e}dzy \textbf{r\'o\.znymi regionami}.
+
+W~TGP aksjomat~\ref{ax:c} definiuje $c(\Phi)$ jako
+\textbf{lokaln\k{a} fizyczn\k{a} pr\k{e}dko\'s\'c \'swiat\l{}a}
+--- pr\k{e}dko\'s\'c wynikaj\k{a}c\k{a} z~metryki efektywnej
+$g_{\mu\nu}^{\mathrm{eff}}(\Phi)$ w~danym punkcie:
+\begin{equation}\label{eq:c-lok}
+    c_{\mathrm{lok}}(\Phi)
+    = c_0\sqrt{\frac{\PhiZero}{\Phi}}.
+\end{equation}
+Wielko\'s\'c ta r\'o\.zni si\k{e} od pr\k{e}dko\'sci
+koordynatowej. Dla metryki eksponencjalnej
+(stw.~\ref{prop:conformal-unique}):
+$c_{\mathrm{koord}}^2 = c_0^2\,e^{-4\delta\Phi/\PhiZero}$,
+natomiast $c_{\mathrm{lok}}^2 = c_0^2\,e^{-2\delta\Phi/\PhiZero}
+\approx c_0^2\,\PhiZero/\Phi$.
+To w\l{}a\'snie $c_{\mathrm{lok}}$ jest tre\'sci\k{a}
+aksjomatu~\ref{ax:c}.
+
+Obserwator \emph{operacyjnie lokalny} (zanurzony w~regionie o~$\Phi$)
+u\.zywaj\k{a}c przyrz\k{a}d\'ow zbudowanych z~materii
+podlegaj\k{a}cej temu samemu $\Phi$ --- mierzy $c_0$
+(samokonsystencja), bo wszystkie jego standardy pomiarowe
+skaluj\k{a} si\k{e} sp\'ojnie ($c$, $\hbar$, $G$ zale\.z\k{a}
+od $\Phi$ w~spos\'ob zachowuj\k{a}cy $\lP$).
+Zmienno\'s\'c $c(\Phi)$ jest zatem
+\emph{relacyjna}: ujawnia si\k{e} tylko przy por\'ownywaniu
+region\'ow o~r\'o\.znym $\Phi$.
+
+To r\'o\.zni TGP od standardowej OTW, gdzie zmienna
+pr\k{e}dko\'s\'c koordynatowa jest artefaktem wyboru
+uk\l{}adu wsp\'o\l{}rz\k{e}dnych, natomiast w~TGP $c(\Phi)$ jest
+\textbf{fizyczn\k{a}} konsekwencj\k{a} r\'o\.znej
+g\k{e}sto\'sci wygenerowanej przestrzeni. R\'o\.znica
+jest testowalna: w~TGP stosunek $c(\Phi_1)/c(\Phi_2)$
+jest \textbf{obserwowalny} i~zale\.zy od $\Phi_1/\Phi_2$;
+w~OTW analogiczny stosunek zale\.zy od \emph{krzywizny},
+nie od \.zadnego pola skalarnego.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Sta\l{}a Plancka $\hbar(\Phi)$}\label{ssec:hbar}
+
+\begin{axiom}[Emergentna sta\l{}a Plancka]\label{ax:hbar}
+Efektywna sta\l{}a Plancka jest polem:
+\begin{equation}\label{eq:hbarPhi}
+    \hbar(\Phi) = \hbar_0 \left(\frac{\PhiZero}{\Phi}\right)^{1/2},
+\end{equation}
+gdzie $\hbar_0$ jest obserwowaną sta\l{}\k{a} Plancka.
+\end{axiom}
+
+Interpretacja:
+\begin{itemize}[nosep]
+  \item W~g\k{e}stej przestrzeni ($\Phi \gg \PhiZero$):
+        $\hbar \to 0$ --- efekty kwantowe s\k{a} t\l{}umione.
+        Materia zachowuje si\k{e} klasycznie nawet na poziomie
+        pojedynczych cz\k{a}stek.
+  \item W~rzadkiej przestrzeni ($\Phi \sim \PhiZero$):
+        $\hbar \sim \hbar_0$ --- standardowa mechanika kwantowa.
+\end{itemize}
+
+To daje \textbf{dwie drogi do granicy klasycznej}:
+\begin{enumerate}[nosep]
+  \item Droga statystyczna: $N \to \infty$ (wiele cz\k{a}stek,
+        fluktuacje wzgl\k{e}dne zanikaj\k{a}).
+  \item Droga przestrzenna: $\Phi \to \infty$ (g\k{e}sta
+        przestrze\'n t\l{}umi kwantowo\'s\'c).
+\end{enumerate}
+
+\begin{remark}[Czarna dziura a~kwantowo\'s\'c]
+Blisko czarnej dziury $\Phi$ jest ogromne, wi\k{e}c $\hbar \to 0$:
+materia staje si\k{e} \textbf{klasyczna} w~silnym polu grawitacyjnym.
+To jest przeciwie\'nstwo standardowego oczekiwania (w~OTW
+efekty kwantowe powinny \emph{narastać} przy osobliwo\'sci).
+W~TGP osobliwo\'s\'c klasyczna jest \emph{naturalnie usuni\k{e}ta}:
+materia nie mo\.ze ,,skondensowa\'c si\k{e} w~punkt'', bo przestrze\'n
+wok\'o\l{} niej jest zbyt g\k{e}sta.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Sta\l{}a grawitacyjna $G(\Phi)$}\label{ssec:G}
+
+\begin{axiom}[Dynamiczna sta\l{}a grawitacyjna]\label{ax:G}
+Sta\l{}a grawitacyjna jest polem wyznaczonym przez warunek
+sta\l{}o\'sci d\l{}ugo\'sci Plancka:
+\begin{equation}\label{eq:GPhi}
+    G(\Phi) = G_0 \cdot \frac{\PhiZero}{\Phi},
+\end{equation}
+gdzie $G_0$ jest obserwowaną sta\l{}\k{a} grawitacyjn\k{a}.
+\end{axiom}
+
+Interpretacja:
+\begin{itemize}[nosep]
+  \item W~g\k{e}stej przestrzeni: $G$ maleje --- grawitacja jest
+        \textbf{s\l{}absza}. Wi\k{e}cej przestrzeni ,,rozcieńcza''
+        oddzia\l{}ywanie.
+  \item W~rzadkiej przestrzeni: $G$ ro\'snie --- grawitacja jest
+        silniejsza (ale te\.z mniej przestrzeni).
+\end{itemize}
+
+% ----------------------------------------------------------
+\subsection{Wyprowadzenie sta\l{}ych z~metryki i~substratu}\label{ssec:stalych-deriv}
+% ----------------------------------------------------------
+
+Aksjomaty~\ref{ax:c}--\ref{ax:G} powy\.zej s\k{a} sformu\l{}owane
+jako aksjomaty dla wygody pedagogicznej --- ich postulowanie nie jest
+konieczne. Poni\.zej pokazujemy, \.ze warto\'sci $c(\Phi)$, $\hbar(\Phi)$,
+$G(\Phi)$ \textbf{wynikaj\k{a}} z~metryki pomostowej i~warunku
+sta\l{}o\'sci d\l{}ugo\'sci Plancka. Status aksjomat\'ow A6--A8
+nale\.zy traktowa\'c jako \textbf{wygod\k{e} prezentacyjn\k{a}},
+a~ich tre\'s\'c jako Propozycje (\ref{prop:c-from-metric},
+\ref{prop:G-from-lP}).
+
+\begin{proposition}[$c(\Phi)$ z~metryki pomostowej]\label{prop:c-from-metric}
+Metryka pomostowa TGP (tw.~\ref{thm:metric-from-substrate-full},
+sek.~\ref{ssec:metric-from-budget}) jest \textbf{jednoznacznie}
+wyznaczona przez warunek antypodyczny $f \cdot h = 1$,
+PPN~$\gamma = \beta = 1$ oraz $\ell_P = \text{const}$:
+\begin{equation}\label{eq:metric-bridge-c}
+  ds^2 = -\frac{c_0^2}{\psi}\,dt^2
+         + \psi\,\delta_{ij}\,dx^i dx^j,
+  \qquad \psi \equiv \frac{\Phi}{\PhiZero}.
+\end{equation}
+Pr\k{e}dko\'s\'c koordynatowa \'swiat\l{}a ($ds^2 = 0$, ruch promieniowy):
+\begin{equation}\label{eq:c-from-metric-deriv}
+  c_{\rm koord}^2 = \frac{|g_{tt}|}{g_{rr}}
+  = \frac{c_0^2/\psi}{\psi}
+  = \frac{c_0^2}{\psi^2}
+  \quad\Longrightarrow\quad
+  c_{\rm koord} = \frac{c_0}{\psi}
+  = c_0\,\frac{\PhiZero}{\Phi}.
+\end{equation}
+Pr\k{e}dko\'s\'c lokalna (odleg\l{}o\'s\'c w\l{}a\'sciwa / czas koordynatowy):
+\begin{equation}\label{eq:c-lok-derived}
+  c_{\rm lok} = \sqrt{h}\cdot\frac{dr}{dt}
+  = \sqrt{\psi}\cdot\frac{c_0}{\psi}
+  = \frac{c_0}{\sqrt{\psi}}
+  = c_0\sqrt{\frac{\PhiZero}{\Phi}}.
+\end{equation}
+Wynik~\eqref{eq:c-lok-derived} jest \textbf{dok\l{}adnie} r\'owny
+aksjomat~\ref{ax:c} ($c(\Phi) = c_0\sqrt{\PhiZero/\Phi}$),
+kt\'ory definiuje $c_{\rm lok}$, nie $c_{\rm koord}$.
+Aksjomat jest zatem \textbf{konsekwencj\k{a}} metryki pomostowej,
+nie niezale\.znym postulatem.
+
+\medskip\noindent
+\textbf{Trzy pr\k{e}dko\'sci \'swiat\l{}a w~TGP:}
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Warto\'s\'c} & \textbf{Interpretacja} \\
+\midrule
+$c_{\rm proper}$ & $c_0$ (zawsze)
+  & lokalna, obie miary w\l{}a\'sciwe \\
+$c_{\rm lok}$ & $c_0/\sqrt{\psi}$
+  & odl.~w\l{}a\'sciwa / czas koordynatowy (A6) \\
+$c_{\rm koord}$ & $c_0/\psi$
+  & koordynatowa ($= c_{\rm lok}^2/c_0$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent
+Fizyka nie zale\.zy od wyboru miary: $\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$
+w~obu przypadkach (postaci pot\k{e}gowej i~eksponencjalnej).
+
+\medskip\noindent
+\textbf{R\'ownowa\.zna posta\'c eksponencjalna} (do pierwszego rz\k{e}du
+w~$\delta\Phi = \Phi - \PhiZero$, stw.~\ref{hyp:metric-exp}):
+\begin{equation}
+  ds^2 \approx -e^{-\delta\Phi/\PhiZero}\,c_0^2\,dt^2
+         + e^{+\delta\Phi/\PhiZero}\,\delta_{ij}\,dx^i dx^j,
+\end{equation}
+kt\'ora daje $c_{\rm koord} = c_0\,e^{-\delta\Phi/\PhiZero}
+\approx c_0\,(1 - \delta\Phi/\PhiZero) = c_0\sqrt{\PhiZero/\Phi}
++ \mathcal{O}((\delta\Phi/\PhiZero)^2)$.
+Obie postaci (pot\k{e}gowa i~eksponencjalna) s\k{a} sp\'ojne
+w~re\.zimie s\l{}abego pola; r\'o\.zni\k{a} si\k{e} dopiero
+w~drugim rz\k{e}dzie post-newtonowskim, gdzie eksponencjalna
+daje poprawne $\beta_{\rm PPN} = 1$
+(uw.~\ref{rem:power-vs-exp}).
+\end{proposition}
+
+\begin{proposition}[$G(\Phi)$ z~warunku sta\l{}o\'sci $\ell_P$]\label{prop:G-from-lP}
+Za\l{}\'o\.zmy:
+\begin{enumerate}[nosep]
+  \item $c(\Phi) = c_0(\PhiZero/\Phi)^{1/2}$ (wynika z~metryki, prop.~\ref{prop:c-from-metric}),
+  \item $\hbar(\Phi) = \hbar_0(\PhiZero/\Phi)^{b}$ (ogolna pot\k{e}gowa),
+  \item $\ell_P^2 = \hbar G/c^3 = \mathrm{const}$.
+\end{enumerate}
+Warunek (3) daje: $G(\Phi) \propto c^3/\hbar \propto (\PhiZero/\Phi)^{3/2 - b}/(\PhiZero/\Phi)^b
+= (\PhiZero/\Phi)^{3/2 - 2b}$.
+Aby $c/\hbar = c_0/\hbar_0 = \mathrm{const}$ (masa cz\k{a}stki niezale\.zna od $\Phi$,
+warunek~W3 tw.~\ref{thm:exponents}): $b = 1/2$. Wtedy:
+\begin{equation}
+  G(\Phi) = G_0\,\frac{\PhiZero}{\Phi},
+\end{equation}
+czyli aksjomat~\ref{ax:G} wynika z~$\ell_P = \mathrm{const}$ + metryki + sp\'ojno\'sci.
+Status aksjomat\'ow A6--A8: \textbf{Propozycje wyprowadzone z~A1, A3, A6}.
+\end{proposition}
+
+\begin{remark}[Status epistemiczny stałych]\label{rem:stalych-status}
+W~\'swietle propozycji~\ref{prop:c-from-metric}--\ref{prop:G-from-lP}
+i~twierdzenia~\ref{thm:exponents}:
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Stała} & \textbf{Forma} & \textbf{Formalny status} & \textbf{Źródło} \\
+\midrule
+$c(\Phi)$ & $c_0(\Phi_0/\Phi)^{1/2}$ & Propozycja &
+  metryka pomostowa (stw.~\ref{prop:conformal-unique}) \\
+$\hbar(\Phi)$ & $\hbar_0(\Phi_0/\Phi)^{1/2}$ & Propozycja &
+  $c/\hbar = \mathrm{const}$ (warunek W3) \\
+$G(\Phi)$ & $G_0\,\Phi_0/\Phi$ & Twierdzenie &
+  $\ell_P = \mathrm{const}$ (tw.~\ref{thm:lP}) \\
+$\ell_P$ & $\sqrt{\hbar_0 G_0/c_0^3}$ & Twierdzenie &
+  tw.~\ref{thm:lP}: inwariant substratowy \\
+\bottomrule
+\end{tabular}
+\end{center}
+Wszystkie trzy ``sta\l{}e'' s\k{a} \textbf{wyprowadzone} z~jednego pola $\Phi$
+i~warunków wewn\k{e}trznych TGP. Nie ma potrzeby postulowania ich
+jako niezale\.znych aksjomat\'ow.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Hierarchia uzasadnienia wyk\l{}adnik\'ow}\label{ssec:hierarchia-uzasad}
+
+Zanim przejdziemy do formalnego dowodu jednoznaczno\'sci
+wyk\l{}adnik\'ow, warto wskaza\'c \textbf{hierarchi\k{e} logiczn\k{a}}
+prowadz\k{a}c\k{a} od ontologii TGP do konkretnych pot\k{e}g
+skalowania:
+
+\begin{remark}[Trzy kroki do $(a,b,g) = (1/2, 1/2, 1)$]\label{rem:hierarchia-skalowania}
+\begin{enumerate}
+  \item \textbf{Metryka efektywna z~$\Phi$}
+    (stw.~\ref{prop:conformal-unique}):
+    Aksjomat~\ref{ax:przestrzen} (jedynym polem jest $\Phi$)
+    + warunek Minkowskiego przy $\Phi = \PhiZero$
+    + interpretacja fizyczna pr\k{e}dko\'sci \'swiat\l{}a
+    jednoznacznie daj\k{a} antypodaln\k{a} metryk\k{e}
+    z~wyk\l{}adnikiem $p = 1/2$. St\k{a}d:
+    $c(\Phi) = c_0(\PhiZero/\Phi)^{1/2}$, czyli $a = 1/2$.
+
+  \item \textbf{Wymuszenie sta\l{}o\'sci $\lP$}
+    (tw.~\ref{thm:lP}):
+    D\l{}ugo\'s\'c Plancka jest jedyn\k{a} fundamentaln\k{a}
+    skal\k{a} TGP (niezale\.zn\k{a} od $\Phi$).
+    Warunek $\lP^2 = \hbar G / c^3 = \mathrm{const}$
+    daje zwi\k{a}zek $b + g - 3a = 0$.
+
+  \item \textbf{Sp\'ojno\'s\'c propagatora}:
+    Kwanty pola $\Phi$ (fonony przestrzenno\'sci) musz\k{a}
+    mie\'c standardow\k{a} dyspersj\k{e} $\omega = ck$
+    w~ramce lokalnej. Wymaga to, by d\l{}ugo\'s\'c fali
+    de Broglie'a $\lambda_{\mathrm{dB}} = \hbar/(mc)$
+    skalowa\l{}a si\k{e} tak samo jak $c^{-1}$, co daje $a = b$.
+\end{enumerate}
+
+Razem: $a = 1/2$ (krok~1), $b = a = 1/2$ (krok~3),
+$g = 3a - b = 1$ (krok~2). \.Zaden wyk\l{}adnik nie jest
+wstawiany r\k{e}cznie --- ka\.zdy wynika z~wewn\k{e}trznych
+zasad TGP. Dowodzimy tego formalnie poni\.zej.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Wyprowadzenie wyk\l{}adnik\'ow z~zasad
+  wewn\k{e}trznych}\label{ssec:wykladniki}
+
+Aksjomaty~\ref{ax:c}--\ref{ax:G} postuluj\k{a} konkretne
+zale\.zno\'sci pot\k{e}gowe: $c \propto \Phi^{-1/2}$,
+$\hbar \propto \Phi^{-1/2}$, $G \propto \Phi^{-1}$.
+Poni\.zej pokazujemy, \.ze te wyk\l{}adniki s\k{a}
+\textbf{jedynymi} zgodnymi z~trzema wewn\k{e}trznymi
+wymaganiami TGP:
+
+\begin{theorem}[Jednoznaczno\'s\'c wyk\l{}adnik\'ow]\label{thm:exponents}
+Niech $c(\Phi) = c_0(\PhiZero/\Phi)^a$,
+$\hbar(\Phi) = \hbar_0(\PhiZero/\Phi)^b$,
+$G(\Phi) = G_0(\PhiZero/\Phi)^g$. Za\l{}\'o\.zmy:
+\begin{enumerate}[nosep]
+  \item[(W1)] \textbf{Sta\l{}o\'s\'c $\lP$:}
+    $\lP^2 = \hbar G/c^3 = \mathrm{const}$
+    (fundamentalna skala nie zale\.zy od $\Phi$).
+  \item[(W2)] \textbf{Pr\k{e}dko\'s\'c \'swiat\l{}a z~metryki:}
+    Metryka antypodaln\k{a} $f = (\PhiZero/\Phi)^p$,
+    $h = (\Phi/\PhiZero)^p$ (stwierdzenie~\ref{prop:conformal-unique})
+    daje $c^2 = c_0^2\,f/h
+    = c_0^2\,(\PhiZero/\Phi)^{2p}$; aksjomat~\ref{ax:c}
+    wymaga $2p = 1$, czyli $p = 1/2$, sk\k{a}d $a = 1/2$.
+    (Dla metryki minimalnej $c_{\mathrm{koord}} = c_{\mathrm{lok}}$;
+    dla eksponencjalnej por.\ stw.~\ref{prop:conformal-unique}.)
+  \item[(W3)] \textbf{Sp\'ojno\'s\'c propagatora (uniwersalno\'s\'c
+    fizyki lokalnej):}
+    Propagator Kleina--Gordona cz\k{a}stki o~masie spoczynkowej~$m$
+    ma w~ramce lokalnej posta\'c
+    \[
+      G(k) \;=\; \frac{1}{k^2 + m_{\mathrm{eff}}^2},
+      \qquad
+      m_{\mathrm{eff}} \;=\; \frac{mc(\Phi)}{\hbar(\Phi)},
+    \]
+    gdzie $m_{\mathrm{eff}}$ jest odwrotn\k{a} d\l{}ugo\'sci\k{a}
+    Comptona --- fizycznym parametrem masowym
+    (biegunem propagatora). Skalowanie:
+    \[
+      \frac{c(\Phi)}{\hbar(\Phi)}
+      \;=\; \frac{c_0}{\hbar_0}
+            \left(\frac{\PhiZero}{\Phi}\right)^{\!a-b}.
+    \]
+    Wymag\-amy, aby fizyka lokalna by\l{}a \textbf{uniwersalna}:
+    masa mierzona lokalnie nie zale\.zy od po\l{}o\.zenia
+    (tzn.\ $m_{\mathrm{eff}}$ jest sta\l{}e przy sta\l{}ym~$m$).
+    St\k{a}d $a - b = 0$, czyli $a = b$.
+\end{enumerate}
+Wtedy $a = b = 1/2$ (z~W2 i~W3). Warunek W1 daje:
+\begin{equation}
+  b + g - 3a = 0
+  \quad\Longrightarrow\quad
+  g = 3a - b = 3\cdot\tfrac{1}{2} - \tfrac{1}{2} = 1.
+\end{equation}
+\textbf{Jedynym} rozwi\k{a}zaniem jest $(a,b,g) = (1/2,\;1/2,\;1)$
+--- dok\l{}adnie aksjomaty~\ref{ax:c}--\ref{ax:G}.
+\end{theorem}
+
+\begin{proof}
+\textbf{(W1)} Kombinacja $\lP^2 = \hbar G/c^3$ daje:
+\[
+  \lP^2 = \frac{\hbar_0\,G_0}{c_0^3}
+  \left(\frac{\PhiZero}{\Phi}\right)^{b+g-3a}.
+\]
+Sta\l{}o\'s\'c $\lP$ wymaga $b + g - 3a = 0$.
+
+\textbf{(W2)} Metryka konforemna z~stwierdzenia~\ref{prop:conformal-unique}
+daje $a = 1/2$.
+
+\textbf{(W3)} Stosunek $c(\Phi)/\hbar(\Phi) = (c_0/\hbar_0)(\PhiZero/\Phi)^{a-b}$.
+Uniwersalno\'s\'c fizyki lokalnej (biegun propagatora $m_{\mathrm{eff}} = mc/\hbar$
+niezale\.zny od $\Phi$) wymaga $a - b = 0$, czyli $b = a = 1/2$.
+
+Podstawiaj\k{a}c do~(W1): $g = 3a - b = 3\cdot\frac{1}{2} - \frac{1}{2} = 1$.
+
+Uk\l{}ad trzech r\'owna\'n jest liniowy i~niezdegenerowany
+(macierz wsp\'o\l{}czynnik\'ow ma rz\k{a}d~3), wi\k{e}c
+rozwi\k{a}zanie jest \textbf{jednoznaczne}.
+\end{proof}
+
+\begin{remark}[Konsekwencja: aksjomaty A6--A8 nie s\k{a} niezale\.zne]
+Twierdzenie~\ref{thm:exponents} pokazuje, \.ze spo\'sr\'od
+trzech aksjomat\'ow A6--A8 wystarczy postulowa\'c \textbf{jeden}
+(np.~A6: $c \propto \Phi^{-1/2}$) wraz z~warunkami W1 i~W3.
+Pozosta\l{}e dwa s\k{a} \emph{konsekwencjami}. Redukuje to
+liczb\k{e} niezale\.znych za\l{}o\.ze\'n TGP.
+\end{remark}
+
+\begin{remark}[Jednoznaczno\'s\'c w~klasie pot\k{e}gowej]\label{rem:power-law-class}
+Twierdzenie~\ref{thm:exponents} zak\l{}ada pot\k{e}gowe postacie
+$c(\Phi)\propto\Phi^{-a}$, $\hbar(\Phi)\propto\Phi^{-b}$,
+$G(\Phi)\propto\Phi^{-g}$. Jednoznaczno\'s\'c $(a,b,g)=(1/2,1/2,1)$
+obowi\k{a}zuje \textbf{wewn\k{a}trz tej klasy}.
+Rozwa\.zmy og\'olniejsze postacie, np.~logarytmiczne
+$c = c_0 f(\ln\Phi/\PhiZero)$ lub saturuj\k{a}ce
+$c = c_0/(1 + \Phi/\Phi_*)^a$. Warunki W1--W3 generuj\k{a} wtedy
+uk\l{}ad r\'owna\'n funkcyjnych, kt\'orego jedynymi
+\emph{ci\k{a}g\l{}ymi i~regularnym} rozwi\k{a}zaniami z~granicami
+$c \to c_0$ dla $\Phi\to\PhiZero$ s\k{a} w\l{}a\'snie postacie
+pot\k{e}gowe --- co wynika z~liniowo\'sci warunku $b+g-3a=0$ oraz
+multiplikatywnej struktury skalowa\'n. Ma\l{}e odchylenia
+$\delta f(\Phi) = \varepsilon\,h(\Phi)$ od klasy pot\k{e}gowej
+prowadz\k{a} do zmian obserwabli bezwymiarowych rz\k{e}du
+$O(\varepsilon\,\Phi_*/\PhiZero)$, co dla $\Phi_*\gg\PhiZero$
+(realistyczne warunki) mo\.ze by\'c dost\k{e}pne testom
+zmienno\'sci sta\l{}ych~\cite{Uzan2011}.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Sta\l{}o\'s\'c d\l{}ugo\'sci Plancka}\label{ssec:lP}\label{ssec:naturalunits}
+
+D\l{}ugo\'s\'c Plancka jest zdefiniowana jako:
+\begin{equation}
+    \lP^2 = \frac{\hbar\,G}{c^3}.
+\end{equation}
+
+Podstawiaj\k{a}c zale\.zno\'sci~\eqref{eq:cPhi}, \eqref{eq:hbarPhi},
+\eqref{eq:GPhi}:
+\begin{equation}
+    \lP^2
+    = \frac{\hbar_0\left(\frac{\PhiZero}{\Phi}\right)^{1/2}
+            \cdot G_0\left(\frac{\PhiZero}{\Phi}\right)}
+           {\left[c_0\left(\frac{\PhiZero}{\Phi}\right)^{1/2}\right]^3}
+    = \frac{\hbar_0\,G_0}{c_0^3}
+      \cdot \left(\frac{\PhiZero}{\Phi}\right)^{1/2+1-3/2}
+    = \frac{\hbar_0\,G_0}{c_0^3}
+      \cdot \left(\frac{\PhiZero}{\Phi}\right)^{0}
+    = \frac{\hbar_0\,G_0}{c_0^3}.
+\end{equation}
+
+\begin{theorem}[Sta\l{}o\'s\'c skali Plancka]\label{thm:lP}
+D\l{}ugo\'s\'c Plancka jest \textbf{niezmienna}:
+\begin{equation}\label{eq:lP-const}
+    \boxed{\lP = \sqrt{\frac{\hbar_0\,G_0}{c_0^3}} = \mathrm{const},}
+\end{equation}
+niezale\.znie od lokalnej warto\'sci $\Phi$. Jest to jedyna
+prawdziwie fundamentalna skala TGP.
+\end{theorem}
+
+To jest \textbf{warunek sp\'ojno\'sci wewn\k{e}trznej}: pomimo
+dynamiczno\'sci $c$, $\hbar$, $G$, skala kwantowej grawitacji
+pozostaje sta\l{}a. \'Swiadczy to o~tym, \.ze zale\.zno\'sci
+$c(\Phi)$, $\hbar(\Phi)$, $G(\Phi)$ nie s\k{a} niezale\.znymi
+za\l{}o\.zeniami, lecz \textbf{jednym sp\'ojnym warunkiem}
+wynikaj\k{a}cym z~natury pola $\Phi$.
+W~istocie, twierdzenie~\ref{thm:exponents} pokazuje, \.ze
+wyk\l{}adniki $(1/2,\;1/2,\;1)$ s\k{a} \textbf{jedynym}
+rozwi\k{a}zaniem trzech warunk\'ow wewn\k{e}trznych TGP
+(sta\l{}o\'s\'c $\lP$, metryka konforemna, sp\'ojno\'s\'c
+propagatora).
+
+% ----------------------------------------------------------
+\subsection{Konsekwencje}\label{ssec:stale-kons}
+
+\begin{enumerate}[nosep]
+  \item \textbf{Nie ma problemu sta\l{}ej kosmologicznej}
+        w~standardowym sensie: $G$ zmienia si\k{e} z~$\Phi$,
+        wi\k{e}c ,,st a\l{}a'' kosmologiczna wyra\.zona przez $G$
+        nie jest sta\l{}\k{a}.
+  \item \textbf{Soczewkowanie grawitacyjne}: w~regionach
+        o~wy\.zszym $\Phi$ \'swiat\l{}o porusza si\k{e} wolniej ---
+        to daje soczewkowanie bez potrzeby krzywizny
+        jako osobnego poj\k{e}cia.
+  \item \textbf{Czerwone przesuni\k{e}cie}: foton id\k{a}cy
+        z~regionu o~wy\.zszym $\Phi$ do ni\.zszego przyspiesza
+        ($c$ ro\'snie), co powoduje przesuni\k{e}cie ku
+        czerwieni --- odtwarza grawitacyjne czerwone
+        przesuni\k{e}cie OTW.
+  \item \textbf{Granica klasyczna} przy silnych polach:
+        blisko masywnych obiekt\'ow $\hbar \to 0$, usuwaj\k{a}c
+        potrzeb\k{e} kwantowej grawitacji w~silnym polu.
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsection{Mapa obserwabilno\'sci dynamicznych sta\l{}ych}%
+\label{ssec:obserwabilnosc-stalych}
+% ----------------------------------------------------------
+
+Zmiany $c(\Phi)$, $\hbar(\Phi)$, $G(\Phi)$ s\k{a} \textbf{relacyjne}:
+lokalny obserwator zawsze mierzy warto\'sci referencyjne $c_0$, $\hbar_0$,
+$G_0$, poniewa\.z r\'ownie\.z jego \textbf{wzorce} (linijki, zegary,
+spektrometry) skaluj\k{a} si\k{e} z~$\Phi$ w~identyczny spos\'ob.
+Efekty s\k{a} wykrywalne tylko przez \emph{por\'ownanie} dw\'och
+region\'ow o~r\'o\.znym $\Phi$.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{3.2cm}p{2.8cm}p{2.5cm}p{5.5cm}@{}}
+\toprule
+\textbf{Wielko\'s\'c} & \textbf{Zale\.zno\'s\'c od~$\Phi$}
+  & \textbf{Lokalna obserwowalno\'s\'c}
+  & \textbf{Jak wykry\'c} \\
+\midrule
+Pr\k{e}dko\'s\'c \'swiat\l{}a $c$
+  & $c_0\sqrt{\PhiZero/\Phi}$
+  & NIE (lokalnie zawsze $c_0$)
+  & Por\'ownanie cz\k{e}sto\'sci foton\'ow z~region\'ow
+    o~r\'o\.znym $\Phi$ (czerwone przesuni\k{e}cie) \\
+\midrule
+Sta\l{}a Plancka $\hbar$
+  & $\hbar_0\sqrt{\PhiZero/\Phi}$
+  & NIE
+  & Zmiana widma atomowego mi\k{e}dzy regionami;
+    poziom K6 (K6 OTWARTY) \\
+\midrule
+Sta\l{}a grawitacyjna $G$
+  & $G_0\,\PhiZero/\Phi$
+  & NIE (lokalnie $G_0$)
+  & $G(z)$ z~BBN/CMB; SPARC galactic scaling; K5 ZAMKNI\k{E}TY \\
+\midrule
+D\l{}ugo\'s\'c Plancka $\ell_P$
+  & $\sqrt{\hbar_0 G_0/c_0^3}$ --- \textbf{CONST}
+  & TAK (inwariant)
+  & Fundamentalna skala TGP; K7 ZAMKNI\k{E}TY \\
+\midrule
+Stosunek $G/c^3$
+  & $G_0/c_0^3 \cdot (\PhiZero/\Phi)^{1/2}$
+  & NIE (lokalnie const)
+  & Amplituda fal grawitacyjnych (K20); LISA 2034+ \\
+\midrule
+Hubble $H(z)$
+  & $H_{\Lambda\mathrm{CDM}}(z)/\sqrt{\phi(z)}$
+  & TAK (relacja $d_L$--$z$)
+  & DESI, Euclid; K2 OTWARTY \\
+\midrule
+Masa substratu $m_{\mathrm{sp}}$
+  & $\sqrt\gamma \cdot \PhiZero$ (sta\l{}a)
+  & TAK (wyznacza skal\k{e} Higgsa)
+  & K15 ZAMKNI\k{E}TY (12/12 PASS) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Zasada obserwabilno\'sci relacyjnej]\label{rem:relacyjna}
+  W~TGP \emph{obserwowalne s\k{a} tylko stosunki wielko\'sci z~r\'o\.znych
+  region\'ow przestrzeni}.
+  Nie istnieje obiektywna ``absolutna'' warto\'s\'c $c$, $\hbar$ ani $G$
+  --- s\k{a} one numerycznie r\'owne referencyjnym $c_0$, $\hbar_0$, $G_0$
+  \emph{z~definicji} dla obserwatora lokalnego. Efekty TGP objawiaj\k{a}
+  si\k{e} jako anomalie w~przeskalowaniu standardowych relacji
+  (Hubble, wielko\'s\'c kszta\l{}t galaktyk, czas \.zycia gwiazd neutronowych).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Termodynamiczna sp\'ojno\'s\'c dynamicznych sta\l{}ych}%
+\label{ssec:thermo-consistency}
+
+Dynamiczne $c(\Phi)$, $\hbar(\Phi)$, $G(\Phi)$ zmieniaj\k{a}
+wielko\'sci termodynamiczne --- np.\ sta\l{}\k{a}
+Stefana--Boltzmanna $\sigma_{\mathrm{SB}}$ zale\.zy od $\hbar$ i~$c$.
+Poni\.zej pokazujemy, \.ze to\.zsamo\'sci termodynamiczne
+pozostaj\k{a} spe\l{}nione \textbf{lokalnie}, a~zmienione
+warto\'sci globalnych wielko\'sci s\k{a} \emph{predykcjami}, nie
+nisp\'ojno\'sciami.
+
+\begin{proposition}[Lokalna sp\'ojno\'s\'c termodynamiczna]%
+\label{prop:thermo-consistency}
+Niech obserwator znajduje si\k{e} w~regionie o~sta\l{}ym $\Phi$.
+Wszystkie jego przyrz\k{a}dy pomiarowe podlegaj\k{a} temu samemu
+$\Phi$ (aksjomat~\ref{ax:metric-coupling}). Wtedy:
+\begin{enumerate}[nosep]
+  \item Stosunek $k_B T / (\hbar\,\omega)$ jest niezmienniczy
+        wzgl\k{e}dem $\Phi$-przeskalowania, gdy cz\k{e}sto\'s\'c
+        $\omega \propto c/\lambda \propto \Phi^{-1/2}$
+        i~temperatura lokalna dostosowuje si\k{e} jak
+        $T_{\mathrm{lok}} \propto \hbar\,\omega / k_B$.
+  \item Czynniki Boltzmanna
+        $\exp(-E/(k_B T))$ s\k{a} zachowane lokalnie,
+        bo $E \propto \hbar\,\omega$ skaluje si\k{e} sp\'ojnie z~$T$.
+  \item R\'ownowaga termodynamiczna (rozk\l{}ad Plancka,
+        rozk\l{}ad Maxwella--Boltzmanna) ma \textbf{identyczn\k{a}}
+        posta\'c funkcyjn\k{a} dla ka\.zdego $\Phi$.
+\end{enumerate}
+Obserwator lokalny mierzy te same prawa termodynamiki niezale\.znie
+od $\Phi$ --- zmienno\'s\'c jest \emph{relacyjna}, tak jak
+w~przypadku $c(\Phi)$ (por.\ uwaga~\ref{rem:c-interpretacja}).
+\end{proposition}
+
+\begin{proof}
+Sta\l{}a Boltzmanna $k_B$ jest wielko\'sci\k{a} statystyczn\k{a}
+(przelicznik temperatura--energia) i~\textbf{nie zale\.zy} od
+$\Phi$. Energia fotonu $E = \hbar(\Phi)\,\omega(\Phi)$, gdzie
+$\omega = 2\pi c(\Phi)/\lambda$. Poniewa\.z $\hbar \propto
+\Phi^{-1/2}$ i~$c \propto \Phi^{-1/2}$, mamy
+$E \propto \Phi^{-1}$. Temperatura lokalna,
+wyznaczona przez $k_B T = E_{\mathrm{char}}$, skaluje si\k{e}
+tak samo: $T_{\mathrm{lok}} \propto \Phi^{-1}$.
+St\k{a}d stosunek $E/(k_B T)$ jest niezale\.zny od $\Phi$,
+a~wszystkie rozk\l{}ady r\'ownowagowe zachowuj\k{a} posta\'c.
+\end{proof}
+
+\begin{remark}[Skalowanie Stefana--Boltzmanna jako predykcja]%
+\label{rem:stefan-boltzmann}
+Sta\l{}a Stefana--Boltzmanna $\sigma_{\mathrm{SB}}
+= \pi^2 k_B^4 / (60\,\hbar^3 c^2)$ skaluje si\k{e} z~$\Phi$:
+\begin{equation}\label{eq:sigma-SB-Phi}
+  \sigma_{\mathrm{SB}}(\Phi)
+  = \sigma_{\mathrm{SB},0}
+    \left(\frac{\Phi}{\PhiZero}\right)^{5/2},
+\end{equation}
+bo $\hbar^{-3} \propto \Phi^{3/2}$ i~$c^{-2} \propto \Phi$.
+Nie jest to nisp\'ojno\'s\'c, lecz \textbf{predykcja TGP}:
+g\k{e}sto\'s\'c energii promieniowania cieplnego jest
+\emph{wi\k{e}ksza} w~regionach o~wy\.zszym $\Phi$
+(g\k{e}\'sciejsza przestrze\'n $\to$ wi\k{e}cej stopni swobody
+na jednostk\k{e} obj\k{e}to\'sci koordynatowej).
+Lokalny obserwator tego nie zauwa\.zy, bo jego detektory
+r\'ownie\.z skaluj\k{a} si\k{e} z~$\Phi$.
+\end{remark}
+
+\begin{remark}[Kosmologiczna zachowawczo\'s\'c entropii]%
+\label{rem:entropy-conservation}
+G\k{e}sto\'s\'c entropii promieniowania $s_{\mathrm{rad}}
+= (2\pi^2/45)\,k_B\,(k_B T/(\hbar c))^3$ skaluje si\k{e} jako
+$s_{\mathrm{rad}}(\Phi) = s_{\mathrm{rad},0}\,(\Phi/\PhiZero)^{3/2}$
+przy ustalonym~$T$. W~kosmologii FRW z~jednorodnym $\Phi = \PhiZero\psi$
+(gdzie $\psi$ \'sledzi atraktor --- por.~\S\ref{ssec:friedmann})
+ekspansja adiabatyczna zachowuje $s\,a^3 = \mathrm{const}$,
+bo $\psi$ jest jednorodne i~nie generuje gradient\'ow entropii.
+Ewolucja kosmologiczna $\psi$ jest dostatecznie powolna,
+by lokalna r\'ownowaga termodynamiczna by\l{}a utrzymana w~ka\.zdej epoce.
+
+Kowariantna zachowawczo\'s\'c $\nabla_\mu T^{\mu\nu} = 0$
+obowi\k{a}zuje dla materii sprz\k{e}\.zonej z~metryk\k{a} TGP
+(aksjomat~\ref{ax:metric-coupling}). Pozorna wymiana energii
+mi\k{e}dzy $\Phi$ a~materi\k{a} jest ujmowana przez r\'ownanie
+polowe --- energia nie jest ,,tracona''.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Otwarty problem}\label{ssec:stale-problem}
+
+\begin{problem}[Obserwowalno\'s\'c dynamicznych sta\l{}ych]\label{prob:stale}
+Zale\.zno\'sci $c(\Phi)$, $\hbar(\Phi)$, $G(\Phi)$ s\k{a} testowalne
+tylko wtedy, gdy $\Phi$ zmienia si\k{e} mierzalnie mi\k{e}dzy r\'o\.znymi
+regionami. W~warunkach laboratoryjnych $\Phi \approx \PhiZero$
+wsz\k{e}dzie, wi\k{e}c odchylenia s\k{a} minimalne. Predykcje:
+\begin{itemize}[nosep]
+  \item efekty powinny by\'c mierzalne w~silnych polach
+        (blisko gwiazd neutronowych, czarnych dziur),
+  \item kosmologicznie: $\Phi$ w~p\'o\'znym Wszech\'swiecie
+        mo\.ze r\'o\.zni\'c si\k{e} od $\Phi$ we wczesnym ---
+        obserwowalne przez stosunek $G_{\mathrm{wczesny}}/G_{\mathrm{teraz}}$.
+\end{itemize}
+\end{problem}
+
+% ----------------------------------------------------------
+\subsection{Interpretacja w~kontek\'scie SI i~obserwabli bezwymiarowych}%
+\label{ssec:si-metrologia}
+
+\begin{remark}[Stale fundamentalne a~definicje SI]\label{rem:SI-constants}
+W~uk\l{}adzie SI (BIPM, 2019) sta\l{}e $c$ i~$\hbar$ maj\k{a}
+\emph{ustalone dok\l{}adne warto\'sci liczbowe}: $c = 299\,792\,458$~m/s,
+$\hbar = 1{,}054\,571\,817\ldots \times 10^{-34}$~J$\cdot$s.
+Twierdzenie o~,,zmiennym $c$'' nie oznacza zmiany tej liczby
+--- oznacza zmian\k{e} \emph{relacji mi\k{e}dzy procesami fizycznymi}
+mierzon\k{a} w~jednostkach SI.
+
+\medskip\noindent
+\textbf{Precyzyjnie:} aksjomat A6 ($c(\Phi) = c_0\sqrt{\PhiZero/\Phi}$)
+m\'owi, \.ze \emph{metryka efektywna}, w~kt\'orej propaguje si\k{e}
+\'swiat\l{}o, zale\.zy od pola $\Phi$. Obserwator lokalny
+(u\.zywaj\k{a}cy zegar\'ow i~pr\k{e}t\'ow sprzegni\k{e}tych
+z~tym samym $\Phi$) zmierzy \emph{zawsze} $c = c_0$
+--- to jest wymaganie zasady r\'ownowa\.zno\'sci (EEP).
+
+\medskip\noindent
+\textbf{Obserwowalne s\k{a} tylko bezwymiarowe kombinacje:}
+\begin{itemize}[nosep]
+  \item $\alpha_{\mathrm{em}} = e^2/(4\pi\varepsilon_0 \hbar c)$
+    --- je\'sli $\hbar$ i~$c$ zmieniaj\k{a} si\k{e} tak samo
+    (aksj.~A6--A7), to $\alpha_{\mathrm{em}}$
+    \emph{nie dryfuje} z~$\Phi$.
+  \item $\mu \equiv m_p/m_e$ --- stosunek mas niezale\.zny od $\Phi$
+    (masy skaluj\k{a} si\k{e} jak $m \propto A_{\rm tail}^4$,
+    wsp\'olna skala $\Phi$-zale\.zna si\k{e} redukuje).
+  \item $G(\Phi)\,m_p^2/(\hbar c)$ --- \emph{ten} stosunek dryfuje:
+    $\propto \PhiZero/\Phi$. Jest to jedyna bezwymiarowa kombinacja
+    w~TGP zmieniaj\k{a}ca si\k{e} z~$\Phi$.
+\end{itemize}
+
+\medskip\noindent
+\textbf{Testowalno\'s\'c:}
+dryf $G$ wzgl\k{e}dem ska\l{} atomowych mierzony jest przez
+\emph{Lunar Laser Ranging} (LLR: $|\dot G/G| < 2 \times 10^{-2}\,H_0$)
+i~obserwacje BBN ($\Delta G/G \lesssim 0{,}05$).
+TGP daje $|\dot G/G|/H_0 = 0{,}009$ (numerycznie,
+\texttt{p\_frw\_full\_evolution.py}), co jest \emph{zgodne}
+z~obecnymi ograniczeniami.
+
+\medskip\noindent
+\textbf{Podsumowuj\k{a}c:} TGP \emph{nie} postuluje zmienno\'sci
+sta\l{}ych fizycznych w~sensie zmiany definicji SI,
+lecz zmienno\'s\'c \emph{metryki efektywnej} i~\emph{sprz\k{e}\.ze\'n},
+prowadz\k{a}c\k{a} do jednej testowalnej konsekwencji:
+dryfu $G\,m_p^2/(\hbar c)$ na poziomie $\lesssim 1\%$ na $H_0^{-1}$.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Mechanizm hierarchii mas ferm\-ion\'ow}\label{ssec:yukawa-kink}
+% v24: F-III-1, scripts/yukawa_mass_hierarchy_v24.py (15/15 PASS)
+
+\begin{proposition}[Mechanizm wzmocnienia Yukawa]\label{prop:yukawa-kink}
+Masa $m_n$ fermion\'ow $n$-tej generacji ($n=0,1,2$) sk\l{}ada si\k{e}
+z~dw\'och czynnik\'ow:
+\begin{equation}\label{eq:yukawa-kink}
+  m_n \;=\; m_0 \cdot \frac{E_n}{E_0}
+        \cdot \exp\!\bigl(\kappa_Y \cdot \Delta V_{\mathrm{kin}}^{(n)}\bigr),
+\end{equation}
+gdzie:
+\begin{itemize}[nosep]
+  \item $E_n$ --- energia WKB $n$-tego stanu zwi\k{a}zanego w~potencjale
+    Sturm--Liouville'a kinku substratu
+    ($E_0{:}E_1{:}E_2 \approx 1{:}2.14{:}2.79$, por.\
+    dodatek~F, prop.~\ref{prop:no-4th-generation}),
+  \item $\Delta V_{\mathrm{kin}}^{(n)}
+         = V_{\mathrm{kin}}^{(n)} - V_{\mathrm{kin}}^{(0)}$
+    --- przyrost obj\k{e}to\'sci kinetycznej kinku:
+    \(
+      V_{\mathrm{kin}}^{(n)}
+      = \int_0^\infty \!\bigl(\tfrac{d\chi_n}{d\xi}\bigr)^2\xi^2\,d\xi,
+    \)
+  \item $\kappa_Y$ --- bezwymiarowy parametr sprzężenia substratu
+    z~sektorem elektros\l{}abym, zdeterminowany przez
+    $\{J,\,C_{\mathrm{kin}},\,C_\gamma\}$.
+\end{itemize}
+Z~obserwowanych mas lepton\'ow:
+\begin{equation}\label{eq:kappaY}
+  \kappa_Y = \frac{\ln(m_\mu/m_e)/(E_1/E_0)}{\Delta V_{\mathrm{kin}}^{(1)}}
+           \approx 0.061\,V_{\mathrm{kin}}^{-1}
+           \quad (\text{spójne z~}\kappa_Y(m_\tau)\ \text{do}\ 9\%),
+\end{equation}
+z~predykcją $m_\tau/m_e \approx 2.0 \times 3477 = 6954$
+(dok\l{}adno\'s\'c rzędu wielkości; pełna predykcja wymaga MC).
+\end{proposition}
+
+\begin{remark}[Status O16 -- v24]\label{rem:O16-v24}
+Mechanizm wzmocnienia Yukawa (prop.~\ref{prop:yukawa-kink}) jest
+\textbf{ustalony} (v24): dwa sk\l{}adniki hierarchii $m_n$ zidentyfikowane,
+$\kappa_Y$ wyznaczony z~obserwacji do precyzji~$9\%$. Problem O16
+pozostaje \textbf{cz\k{e}\'sciowo otwarty}: precyzyjne wartości
+$V_{\mathrm{kin}}^{(n)}$ dla $n=1,2$ wymagaj\k{a} BVP z~w\k{e}z\l{}ami
+oraz symulacji FSS MC~3D ($N^3 \geq 32^3$).
+Weryfikacja numeryczna: \texttt{scripts/yukawa\_mass\_hierarchy\_v24.py}
+-- 15/15~PASS\@.
+\end{remark}
+
+% --- Dimensionless observables and metrological protocol (H5 deliverable) ---
+\input{research/nbody/tgp_metrology_observables}
+
+% --- Time glossary and EEP analysis (H1 deliverable) ---
+\input{research/nbody/tgp_time_glossary}
+

@@ -153,6 +153,6 @@ może być jednym z **kilku testów TGP z precyzją $10^{-10}$ w ciągu 2 lat**.
 
 ## 10. Link do rdzenia TGP
 
-Core paper [[papers/core/tgp_core.pdf]] § *Emergent metric* + *Applications*.
+Core paper [[tgp_core.pdf]] § *Emergent metric* + *Applications*.
 Sugerowany companion paper docelowy: `papers/leptons/tgp_leptons.tex`
 (po uzyskaniu konkretnych predykcji dla $a_e, a_\mu, a_\tau$).

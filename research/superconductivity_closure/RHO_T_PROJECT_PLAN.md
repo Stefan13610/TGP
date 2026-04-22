@@ -153,14 +153,14 @@ Plan nie jest finalny — jest pierwszym szkicem. Uaktualnić po Etapie 1 (fakty
 
 ### Skrypty
 
-- [[rho_normal_state_closure/r00_dataset.py]] — dataset N=15 (Cu/Ag/Au/Al/Pb/Sn/Nb/V/Fe/Ni/Pt/Pd/Cd/Zn/Mg)
-- [[rho_normal_state_closure/r00_results.txt]] — tabela, sanity checks (monotonia, RRR 300-2800, slope ratios)
-- [[rho_normal_state_closure/r01_bg_baseline.py]] — klasyczny BG fit (ρ_0, R, Θ_D)
-- [[rho_normal_state_closure/r01_results.txt]] — R per material CoV=80%, Θ_D free-fit dryfuje +200%
-- [[rho_normal_state_closure/r02_tgp_formula.py]] — test H1 (z P7.12 g) vs H0 (bez g)
-- [[rho_normal_state_closure/r02_results.txt]] — H0 lepsze: RMS=0.34, r=0.57 (p=0.03)
-- [[rho_normal_state_closure/r03_class_split.py]] — 7 alternatywnych parametryzacji
-- [[rho_normal_state_closure/r03_results.txt]] — **(E) R ∝ (λ·Θ_D)^1.025, RMS=0.25, r=0.79 (p=0.0004)**
+- [[r00_dataset.py]] — dataset N=15 (Cu/Ag/Au/Al/Pb/Sn/Nb/V/Fe/Ni/Pt/Pd/Cd/Zn/Mg)
+- [[r00_results.txt]] — tabela, sanity checks (monotonia, RRR 300-2800, slope ratios)
+- [[r01_bg_baseline.py]] — klasyczny BG fit (ρ_0, R, Θ_D)
+- [[r01_results.txt]] — R per material CoV=80%, Θ_D free-fit dryfuje +200%
+- [[r02_tgp_formula.py]] — test H1 (z P7.12 g) vs H0 (bez g)
+- [[r02_results.txt]] — H0 lepsze: RMS=0.34, r=0.57 (p=0.03)
+- [[r03_class_split.py]] — 7 alternatywnych parametryzacji
+- [[r03_results.txt]] — **(E) R ∝ (λ·Θ_D)^1.025, RMS=0.25, r=0.79 (p=0.0004)**
 
 ### Kluczowe odkrycia
 
@@ -200,7 +200,7 @@ Etap 1 **zamknięty** z mocnym sygnałem: $(\lambda \cdot \Theta_D)$ jest dominu
 
 ### r04 — wynik **NEGATYWNY** dla bezpośredniej unifikacji przez λ_ep
 
-**Skrypt:** [[rho_normal_state_closure/r04_lambda_tgp.py]] | [[rho_normal_state_closure/r04_results.txt]]
+**Skrypt:** [[r04_lambda_tgp.py]] | [[r04_results.txt]]
 
 **Testowana hipoteza:** $\lambda_\text{ep} = C \cdot F_\text{TGP}$, gdzie $F_\text{TGP} = k_d \cdot A_\text{orb}^2 \cdot M_\text{gauss} \cdot \Lambda_\text{eff}$ (struktura Eq. 5 bez suppresji SC-specific).
 
@@ -223,7 +223,7 @@ Etap 1 **zamknięty** z mocnym sygnałem: $(\lambda \cdot \Theta_D)$ jest dominu
 
 ### r05 — wynik **POZYTYWNY** dla bezpośredniej predykcji ρ(T)
 
-**Skrypt:** [[rho_normal_state_closure/r05_rho_direct.py]] | [[rho_normal_state_closure/r05_results.txt]]
+**Skrypt:** [[r05_rho_direct.py]] | [[r05_results.txt]]
 
 **Testowane formy** (R = amplituda BG):
 
@@ -289,7 +289,7 @@ gdzie $\mathcal{G}(F, N_F) = F_\text{TGP}^{-1.89} \cdot N_F^{+1.05}$ jest **now�
 
 ### r06 — rozszerzenie datasetu do N=23, D4 niestabilny
 
-**Skrypt:** [[rho_normal_state_closure/r06_extension.py]] | [[rho_normal_state_closure/r06_results.txt]]
+**Skrypt:** [[r06_extension.py]] | [[r06_results.txt]]
 
 **Dodane materiały (N+8):**
 
@@ -317,7 +317,7 @@ gdzie $\mathcal{G}(F, N_F) = F_\text{TGP}^{-1.89} \cdot N_F^{+1.05}$ jest **now�
 
 ### r07 — analiza outlierów + class-specific fit
 
-**Skrypt:** [[rho_normal_state_closure/r07_outlier_class.py]] | [[rho_normal_state_closure/r07_results.txt]]
+**Skrypt:** [[r07_outlier_class.py]] | [[r07_results.txt]]
 
 **Testowanie wykluczeń i reklasyfikacji D4 (N=23 baseline):**
 
@@ -379,7 +379,7 @@ Ale:
 
 ## UPDATE 2026-04-21 (Etap 4): r08 — class-specific profil ρ(T_i)
 
-**Skrypt:** [[rho_normal_state_closure/r08_class_profile.py]] | [[rho_normal_state_closure/r08_results.txt]]
+**Skrypt:** [[r08_class_profile.py]] | [[r08_results.txt]]
 
 ### Class-specific fit na pełnym profilu ρ(T_i)
 
@@ -480,7 +480,7 @@ Ograniczenia:
 
 ## UPDATE 2026-04-21 (Etap 5): r10 — weryfikacja N=34, **FALSYFIKACJA d-class wykładnika Θ_D**
 
-**Skrypt:** [[rho_normal_state_closure/r10_extension_v2.py]] | [[rho_normal_state_closure/r10_results.txt]]
+**Skrypt:** [[r10_extension_v2.py]] | [[r10_results.txt]]
 
 ### Rozszerzenie datasetu z N=23 → N=34
 
@@ -593,7 +593,7 @@ Status ogólny projektu: teza "TGP klasowa" przetrwała, ale **skala wymagana do
 
 ## UPDATE 2026-04-21 (Etap 6): r11 — **POZYTYWNE** odkrycie: d-class rozkłada się wg grupy PT
 
-**Skrypt:** [[rho_normal_state_closure/r11_dshell_subclass.py]] | [[rho_normal_state_closure/r11_results.txt]]
+**Skrypt:** [[r11_dshell_subclass.py]] | [[r11_results.txt]]
 
 ### Motywacja
 
@@ -700,7 +700,7 @@ Status ogólny projektu: **Fundament strukturalny potwierdzony na N=34, forma pe
 
 ## UPDATE 2026-04-21 (Etap 7): r12 — **ODKRYCIE PRAWDZIWEJ FORMY**: g-intercept shift
 
-**Skrypt:** [[rho_normal_state_closure/r12_gparam_model.py]] | [[rho_normal_state_closure/r12_results.txt]]
+**Skrypt:** [[r12_gparam_model.py]] | [[r12_results.txt]]
 
 ### Motywacja
 
@@ -821,7 +821,7 @@ Jeśli b, c są uniwersalne → **jedna formuła TGP dla całego normal-state tr
 
 ## UPDATE 2026-04-21 (Etap 8): r13 + r13b — **UNIFIKACJA 3 klas TGP** (s + sp + d)
 
-**Skrypty:** [[rho_normal_state_closure/r13_unified_all_classes.py]] | [[rho_normal_state_closure/r13b_loo_sweep.py]] | [[rho_normal_state_closure/r13_results.txt]] | [[rho_normal_state_closure/r13b_results.txt]]
+**Skrypty:** [[r13_unified_all_classes.py]] | [[r13b_loo_sweep.py]] | [[r13_results.txt]] | [[r13b_results.txt]]
 
 ### Rozszerzenie formalizmu M1 na N=37
 

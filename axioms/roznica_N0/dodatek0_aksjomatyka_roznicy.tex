@@ -1,0 +1,434 @@
+% ===================================================================
+%  Dodatek 0: Aksjomatyka różnicy — Z_2 jako akt ustanowienia substratu
+%  TGP v1 — Warstwa pre-substratowa (przed Γ, przed wymiarem, przed wszystkim)
+% ===================================================================
+\section{Aksjomatyka r\'o\.znicy: $\Zp$ jako akt ustanowienia substratu}%
+\label{app:aksjomatyka-roznicy}
+
+Niniejszy dodatek formalizuje \textbf{warstw\k{e} pre-substratow\k{a}}
+TGP --- logicznie wcze\'sniejsz\k{a} ni\.z substrat $\Gamma$, wymiar
+$d=3$, a~tym bardziej ni\.z pole $\Phi$. Proponuje si\k{e} promocj\k{e}
+dotychczasowej \emph{propozycji} o~symetrii $\Zp$
+(\ref{prop:Z2} w~\S\ref{ssec:chiralna}) do rangi \textbf{Aksjomatu~0}:
+symetria $\Zp$ nie jest cech\k{a} hamiltonianu substratu, lecz
+\textbf{aktem ustanowienia samego substratu}.
+
+Intuicja przewodnia: stan nicości $\Nzero$ nie jest
+niestabilny ,,fizycznie'' (bo fizyka wymaga ju\.z substratu), lecz
+\textbf{niestabilny logicznie} --- nie istnieje niezdegenerowany
+opis $\Nzero$ bez wprowadzenia pierwszej r\'o\.znicy, a~najmniejsza
+nietrywialna r\'o\.znica to w\l{}a\'snie $\Zp$. Substrat $\Gamma$
+wy\l{}ania si\k{e} w konsekwencji jako \emph{minimalna realizacja
+konceptu r\'o\.znicy}.
+
+Taki uk\l{}ad zamyka \l{}a\'ncuch przyczynowy:
+\[
+  \Nzero \;\longrightarrow\; \Zp
+  \;\longrightarrow\; \hat{s}_i \in \{+,-\}
+  \;\longrightarrow\; \Gamma
+  \;\longrightarrow\; \Phi
+  \;\longrightarrow\; g_{\mu\nu}
+  \;\longrightarrow\; \text{SM + kosmologia},
+\]
+przy czym ka\.zda strza\l{}ka jest albo twierdzeniem ([AN]), albo
+konieczno\'sci\k{a} logiczn\k{a} ([LOG]), z~dok\l{}adnie jedn\k{a}
+hipotez\k{a} [HYP] (CV=1, por.\ dod.~\ref{app:R2-qk-z3}).
+
+% -------------------------------------------------------------------
+\subsection{Motywacja: dlaczego ,,pod substratem'' nie jest dobrze
+            postawionym pytaniem}%
+\label{app:0-motywacja}
+% -------------------------------------------------------------------
+
+Fizyka operuje na \emph{r\'o\.znicach}. Obserwable to zawsze relacje
+mi\k{e}dzy stanami, nie ,,stany bezwzgl\k{e}dne''. St\k{a}d pytanie
+,,co jest pod $\Gamma$?'' wymaga punktu odniesienia
+\emph{spoza} $\Gamma$, ale je\'sli $\Gamma$ jest fundamentalny, to
+takiego punktu z~definicji nie ma --- pytanie unieważnia si\k{e}
+operacyjnie.
+
+Pozostaje jednak \textbf{sensowne pytanie przeformu\l{}owane}: czy
+$\Gamma$ jest \emph{konieczny} w~sensie strukturalnym, tzn.~czy
+istnieje minimalna forma matematyczna, z~kt\'orej $\Gamma$ wy\l{}ania
+si\k{e} bez dodatkowego wyboru? Celem niniejszego dodatku jest
+odpowied\'z twierdz\k{a}ca: t\k{a} form\k{a} jest \textbf{koncept
+r\'o\.znicy}, a~jego minimaln\k{a} matematyczn\k{a} realizacj\k{a}
+--- grupa $\Zp$.
+
+\begin{remark}[Horyzont epistemiczny]
+\label{rem:0-horyzont}
+$\Gamma$ nie jest ,,\l{}ukiem'' TGP, lecz jej \textbf{horyzontem
+epistemicznym}. Aksjomat~0 nie usuwa tego horyzontu --- przesuwa go
+z~,,substrat jest postulowany'' na ,,r\'o\.znica jest postulowana''.
+R\'o\.znica zaś jest warunkiem mo\.zliwo\'sci jakiegokolwiek
+dyskursu (tak\.ze dyskursu o~nicości), wi\k{e}c jest to
+\emph{najtańszy mo\.zliwy} punkt oparcia.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Aksjomat~0 i jego trzy r\'ownowa\.zne sformu\l{}owania}%
+\label{app:0-aksjomat}
+% -------------------------------------------------------------------
+
+\begin{axiom}[R\'o\.znica jako warunek istnienia]\label{ax:0-roznica}
+Istnienie czegokolwiek wy\l{}\k{a}cza nicość absolutn\k{a} $\Nzero$.
+Najmniejsza nietrywialna struktura zgodna z~tym wy\l{}\k{a}czeniem
+to dyskretna, inwolutywna grupa rz\k{e}du~2:
+\[
+  \Zp \;=\; \{\mathbf{1},\,\sigma\},
+  \qquad \sigma^2 = \mathbf{1},
+  \qquad \sigma \neq \mathbf{1}.
+\]
+Generator $\sigma$ nazywamy \textbf{aktem r\'o\.znicy}; jego
+dzia\l{}anie na dowoln\k{a} struktur\k{e} pochodn\k{a} indukuje
+chiraln\k{a} inwersj\k{e} $\hat{s} \mapsto -\hat{s}$.
+\end{axiom}
+
+Aksjomat~\ref{ax:0-roznica} ma trzy r\'ownowa\.zne sformu\l{}owania
+--- kategoryjne, algebraiczne i dynamiczne --- kt\'ore poni\.zej
+przedstawiamy jako twierdzenia o~r\'ownowa\.zności (dowody w~app.~\ref{app:0-dowody}).
+
+% -------------------------------------------------------------------
+\subsubsection{Sformu\l{}owanie kategoryjne}%
+\label{app:0-kategoryjne}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Endofunktor negacji na kategorii pustej]%
+\label{prop:0-endofunktor}
+Niech $\mathbf{Cat}_{\min}$ oznacza klas\k{e} kategorii posiadaj\k{a}cych
+endofunktor $\neg$ spe\l{}niaj\k{a}cy $\neg\circ\neg = \mathrm{id}$ i
+$\neg \neq \mathrm{id}$. W\'owczas:
+\begin{enumerate}[label=(\roman*), nosep]
+  \item Kategoria pusta $\mathbf{0}$ nie nale\.zy do $\mathbf{Cat}_{\min}$
+    (endofunktor $\neg$ wymaga dziedziny niepustej).
+  \item Minimalny obiekt $\mathbf{Cat}_{\min}$ to kategoria dyskretna
+    z~dok\l{}adnie dwoma obiektami $\{+, -\}$ i~dwiema identyczno\'sciami,
+    z~$\neg(+) = -$, $\neg(-) = +$.
+  \item Grupa automorfizm\'ow tej kategorii jest izomorficzna z~$\Zp$.
+\end{enumerate}
+\end{proposition}
+
+Interpretacja: sam \emph{koncept negacji} --- rozumiany jako
+endofunktor inwolutywny, nietrywialny --- wymusza istnienie co
+najmniej jednego obiektu (bo inaczej funktor nie ma na czym
+dzia\l{}a\'c) i~grupy jego automorfizm\'ow, kt\'ora jest dok\l{}adnie
+$\Zp$. Nicość $\mathbf{0}$ jest w~tym sensie \textbf{niestabilna
+kategoryjnie}: nie przyjmuje nietrywialnego endofunktora
+inwolutywnego.
+
+% -------------------------------------------------------------------
+\subsubsection{Sformu\l{}owanie algebraiczne (Clifford)}%
+\label{app:0-clifford}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Minimalna wie\.za Clifforda]\label{prop:0-clifford}
+Rozwa\.zmy rodzin\k{e} algebr Clifforda $\mathrm{Cl}(p,q)$ nad
+$\mathbb{R}$. W\'owczas:
+\begin{enumerate}[label=(\roman*), nosep]
+  \item $\mathrm{Cl}(0,0) \cong \mathbb{R}$ --- algebra trywialna,
+    brak struktury rozr\'o\.zniaj\k{a}cej.
+  \item $\mathrm{Cl}(1,0) \cong \mathbb{R} \oplus \mathbb{R}$
+    --- pierwsza algebra z~nietrywialn\k{a} $\Zp$-gradacj\k{a}.
+  \item Gradacja $\Zp$ w~$\mathrm{Cl}(1,0)$ jest \textbf{jedyn\k{a}
+    mo\.zliw\k{a}} gradacj\k{a} nie wymagaj\k{a}c\k{a} uprzedniego
+    za\l{}o\.zenia o~ciele liczb zespolonych ani o~wymiarze.
+\end{enumerate}
+\end{proposition}
+
+Interpretacja: przej\'scie od ,,braku struktury'' do ,,minimalnej
+struktury z~rozr\'o\.znieniem'' polega na dodaniu jednego generatora
+$e$ z~$e^2 = +1$, co automatycznie wprowadza $\Zp$-gradacj\k{e}.
+Dalsze wie\.ze Clifforda (spin, orientacja, geometria spinorowa)
+wy\l{}aniaj\k{a} si\k{e} jako iteracje tego samego aktu.
+
+% -------------------------------------------------------------------
+\subsubsection{Sformu\l{}owanie dynamiczne (niestabilność degeneracji)}%
+\label{app:0-dynamiczne}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Niestabilność punktu sta\l{}ego identyczno\'sci]%
+\label{prop:0-niestabilnosc}
+Niech $\mathcal{T}$ b\k{e}dzie przestrzeni\k{a} stan\'ow, a~$\mathrm{id}:
+\mathcal{T} \to \mathcal{T}$ operatorem identyczno\'sciowym. W\'owczas:
+\begin{enumerate}[label=(\roman*), nosep]
+  \item Ka\.zdy stan $x \in \mathcal{T}$ jest punktem sta\l{}ym
+    $\mathrm{id}$ --- ca\l{}a $\mathcal{T}$ jest zdegenerowana.
+  \item Zdegenerowany zbi\'or punkt\'ow sta\l{}ych nie wyznacza
+    \.zadnego stanu wyr\'o\.znionego; operacyjnie r\'ownowa\.zny
+    nicości $\Nzero$.
+  \item Pierwsza nieidentyczno\'sciowa inwolucja $\sigma: \mathcal{T}
+    \to \mathcal{T}$ z~$\sigma^2 = \mathrm{id}$, $\sigma \neq \mathrm{id}$
+    roz\l{}amuje t\k{e} degeneracj\k{e} na dwie orbity $\{x, \sigma x\}$,
+    generuj\k{a}c $\Zp$-strukturę.
+\end{enumerate}
+\end{proposition}
+
+Interpretacja: ,,nicość'' rozumiana jako stan o~maksymalnej
+degeneracji jest dynamicznie niestabilna --- najmniejsze zaburzenie,
+kt\'ore roz\l{}amuje degeneracj\k{e}, musi by\'c inwolucj\k{a}
+(bo inaczej nie powr\'oci do stanu wyj\'sciowego), a~najmniejsza
+nietrywialna inwolucja generuje $\Zp$.
+
+\begin{theorem}[R\'ownowa\.zność trzech sformu\l{}owa\'n]%
+\label{thm:0-rownowaznosc}
+Sformu\l{}owania~\ref{prop:0-endofunktor},
+\ref{prop:0-clifford} i~\ref{prop:0-niestabilnosc} s\k{a}
+logicznie r\'ownowa\.zne w~nast\k{e}puj\k{a}cym sensie: ka\.zde z~nich
+wymusza istnienie minimalnej struktury inwolutywnej
+$(\mathcal{T}_{\min}, \sigma)$ z~$|\mathcal{T}_{\min}| = 2$ i~grup\k{a}
+automorfizm\'ow $\Zp$, a~ka\.zda dw\'ojka takich struktur jest
+izomorficzna.
+\end{theorem}
+
+% -------------------------------------------------------------------
+\subsection{\L{}a\'ncuch przyczynowy: od $\Nzero$ do $\Gamma$}%
+\label{app:0-lancuch}
+% -------------------------------------------------------------------
+
+Aksjomat~\ref{ax:0-roznica} zamyka \l{}a\'ncuch przyczynowy TGP
+od strony ,,wej\'sciowej''. Poni\.zej formalna rekonstrukcja.
+
+\begin{chain}[Krok 0.1: od $\Nzero$ do dw\'ojki $\{+,-\}$]%
+\label{chain:0-krok1}
+Aksjomat~\ref{ax:0-roznica} $\Rightarrow$
+istnieje co najmniej jeden obiekt i~jego $\Zp$-obraz.
+Zbi\'or minimalny: $\{+, -\}$. Status: \textbf{[LOG]}.
+\end{chain}
+
+\begin{chain}[Krok 0.2: od $\{+,-\}$ do sieci $V$]%
+\label{chain:0-krok2}
+Jeden obiekt z~$\Zp$-inwolucj\k{a} nie mo\.ze generowa\'c dynamiki
+(brak s\k{a}siad\'ow, brak sprz\k{e}\.ze\'n). Minimalna struktura
+relacyjna to \emph{zbi\'or} $V$ z~dyskretn\k{a} topologi\k{a}
+s\k{a}siedztwa. \textbf{Liczba element\'ow $V$ nie jest jednak
+okre\'slona przez aksjomat~\ref{ax:0-roznica}}; jest to dodatkowy
+stopień swobody, kt\'ory domyka aksjomat relacyjno\'sci
+(A1, \S\ref{app:0-aksjomat}). Status: \textbf{[LOG + aks.~A1]}.
+\end{chain}
+
+\begin{chain}[Krok 0.3: od sieci $V$ do hamiltonianu $H_\Gamma$]%
+\label{chain:0-krok3}
+Wymaganie symetrii $\Zp$ ka\.zdemu wierzcho\l{}kowi $i \in V$ przypisuje
+zmienn\k{a} $\hat{s}_i \in \mathbb{R}$ z~transformacj\k{a}
+$\hat{s}_i \mapsto -\hat{s}_i$.
+Najbardziej og\'olny $\Zp$-niezmienniczy hamiltonian lokalny z~czynnikiem
+sprz\k{e}\.zenia do najbli\.zszych s\k{a}siad\'ow to:
+\begin{equation}\label{eq:0-H-general}
+  H_\Gamma = \sum_i \Bigl[
+    \tfrac{1}{2}\hat{\pi}_i^2
+    + \tfrac{m_0^2}{2}\hat{s}_i^2
+    + \tfrac{\lambda_0}{4}\hat{s}_i^4
+    + \mathcal{O}(\hat{s}_i^6)
+  \Bigr]
+  - J\!\sum_{\langle ij\rangle} \hat{s}_i\hat{s}_j.
+\end{equation}
+Wy\.zsze pot\k{e}gi $\hat{s}_i^{2n}$ s\k{a} \emph{dozwolone}, lecz
+\textbf{nieistotne w~IR} (uniwersalno\'s\'c Wilsona--Fishera,
+dod.~\ref{app:notacja}). Status: \textbf{[LOG + uniwersalno\'s\'c IR]}.
+\end{chain}
+
+\begin{chain}[Krok 0.4: od $H_\Gamma$ do $\Phi$]%
+\label{chain:0-krok4}
+Coarse-graining $\Phi(x) = \langle \hat{s}^2 \rangle_{\mathrm{blok}}$
+(dod.~\ref{app:substrat}, r\'own.~\ref{eq:B-block}) jest
+\textbf{$\Zp$-niezmienniczy} ($\hat{s}^2 \to \hat{s}^2$), wi\k{e}c
+$\Phi \geq 0$ automatycznie (aksjomat~\ref{ax:przestrzen}).
+Status: \textbf{[AN]}.
+\end{chain}
+
+\begin{chain}[Krok 0.5: od $\Phi$ do geometrii]%
+\label{chain:0-krok5}
+Metryka efektywna $g_{\mu\nu}^{\mathrm{eff}}$ i sta\l{}e $c(\Phi)$,
+$\hbar(\Phi)$, $G(\Phi)$ wy\l{}aniaj\k{a} si\k{e} jako funkcjona\l{}y
+gradient\'ow $\Phi$ (sek.~\ref{sec:formalizm}). Status: \textbf{[AN]}.
+\end{chain}
+
+\begin{corollary}[Ontologiczna jednoznaczno\'s\'c]\label{cor:0-jednoznacznosc}
+Przy za\l{}o\.zeniu aksjomatu~\ref{ax:0-roznica}, aksjomatu
+relacyjności A1 oraz wymiaru $d=3$ (dod.~\ref{app:R2-qk-z3}, krok
+\emph{wymiar}), struktura TGP jest \textbf{jednoznaczna w~IR}
+z~dok\l{}adnością do klasy uniwersalności 3D Isinga.
+\end{corollary}
+
+% -------------------------------------------------------------------
+\subsection{Relacja do dotychczasowych aksjomat\'ow TGP}%
+\label{app:0-relacja}
+% -------------------------------------------------------------------
+
+Dotychczasowa struktura aksjomatyczna TGP (sek.~\ref{sec:ontologia})
+sk\l{}ada\l{}a si\k{e} z:
+\begin{itemize}[nosep]
+  \item \textbf{A1} --- relacyjno\'s\'c substratu,
+  \item \textbf{A2} --- d\'zwigar ($\Phi \geq 0$),
+  \item \textbf{A3} --- dynamika (Hamilton/Lagrange),
+  \item \textbf{A4} --- niestabilność $\Nzero$,
+  \item \textbf{P1--P3} --- postulaty pomocnicze,
+  \item \textbf{prop:Z2} --- symetria $\Zp$ jako w\l{}asność
+    $H_\Gamma$.
+\end{itemize}
+
+Niniejszy dodatek proponuje \textbf{reorganizacj\k{e}}:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+Status dotychczasowy & Status proponowany & Uzasadnienie \\
+\midrule
+prop:Z2 (w\l{}asno\'s\'c $H_\Gamma$) &
+  \textbf{Aksjomat 0} (konstytutywny) &
+  $\Zp$ \emph{ustanawia} $\Gamma$, nie jest \emph{cech\k{a}}
+  gotowego $\Gamma$ \\
+A4 (niestabilność $\Nzero$) &
+  \emph{Twierdzenie} z~aks.~0 &
+  Wynika z~prop.~\ref{prop:0-niestabilnosc} \\
+A2 ($\Phi \geq 0$) &
+  \emph{Twierdzenie} z~aks.~0 &
+  Wynika z~$\Zp$-parzysto\'sci $\hat{s}^2$ \\
+A1 (relacyjno\'s\'c) &
+  \textbf{Aksjomat~1} (bez zmian) &
+  Niezale\.zny stopień swobody: \emph{rozmiar} $|V|$ \\
+A3 (dynamika) &
+  \textbf{Aksjomat~2} (bez zmian) &
+  Niezale\.zny: wyb\'or re\.zimu czasowego $\tau$ \\
+\bottomrule
+\end{tabular}
+\caption{Propozycja reorganizacji bazy aksjomatycznej TGP po
+promocji $\Zp$ do Aksjomatu~0.}
+\label{tab:0-reorganizacja}
+\end{table}
+
+\textbf{Redukcja:} baza aksjomatyczna maleje z~4+3 = 7 element\'ow
+do 3 aksjomat\'ow (0, 1, 2) + aksjomat wymiaru ($d=3$, dod.~\ref{app:R2-qk-z3})
++ jedna hipoteza CV=1 (dod.~\ref{app:R2-qk-z3}). To istotne zag\k{e}szczenie
+strukturalne bez utraty mocy predykcyjnej.
+
+% -------------------------------------------------------------------
+\subsection{Co aksjomat~0 domyka, a~co pozostawia otwarte}%
+\label{app:0-otwarte}
+% -------------------------------------------------------------------
+
+\paragraph{Domyka:}
+\begin{itemize}[nosep]
+  \item pytanie ,,dlaczego $\Zp$ a~nie inna grupa'' ---
+    $\Zp$ jest minimalna logicznie (tw.~\ref{thm:0-rownowaznosc});
+  \item pytanie ,,sk\k{a}d $\Phi \geq 0$'' ---
+    z~$\Zp$-parzysto\'sci (krok~\ref{chain:0-krok4});
+  \item pytanie ,,dlaczego niestabilność $\Nzero$'' ---
+    z~niestabilności degeneracji (prop.~\ref{prop:0-niestabilnosc});
+  \item pytanie ,,dlaczego kwartyczny $\phi^4$'' ---
+    nie dos\l{}ownie, ale w~IR przez uniwersalno\'s\'c
+    (krok~\ref{chain:0-krok3}).
+\end{itemize}
+
+\paragraph{Nie domyka (uczciwie):}
+\begin{itemize}[nosep]
+  \item \textbf{Rozmiar $|V|$ i topologia grafu $\Gamma$}: aksjomat~0
+    wymusza istnienie $V$, ale nie jego kardynalno\'s\'c ani struktur\k{e}
+    s\k{a}siedztwa. To jest w\l{}a\'snie rol\k{a} aksjomatu~A1.
+  \item \textbf{Wymiar $d=3$}: nie wynika z~$\Zp$; pozostaje zamkni\k{e}ty
+    niezale\.znie przez zbie\.zno\'s\'c ogona solitonu (dod.~\ref{app:R2-qk-z3}).
+  \item \textbf{Hipoteza CV=1}: $Q_K = 3/2$ wymaga trzeciego ogniwa
+    w~\l{}a\'ncuchu entropijnym --- aksjomat~0 nie wp\l{}ywa na t\k{e}
+    spraw\k{e}.
+  \item \textbf{Istnienie ,,konceptu r\'o\.znicy''}: pytanie
+    \emph{dlaczego w~og\'ole negacja}. Moim zdaniem to pytanie le\.zy
+    poza fizyk\k{a} i~poza matematyk\k{a} --- jest warunkiem
+    mo\.zliwości jakiegokolwiek dyskursu, nie jego przedmiotem
+    (uw.~\ref{rem:0-horyzont}).
+\end{itemize}
+
+% -------------------------------------------------------------------
+\subsection{Dowody}%
+\label{app:0-dowody}
+% -------------------------------------------------------------------
+
+\begin{proof}[Dow\'od prop.~\ref{prop:0-endofunktor}]
+(i) Endofunktor $\neg: \mathbf{0} \to \mathbf{0}$ jest funkcj\k{a}
+pust\k{a} i~zachodzi $\neg = \mathrm{id}_{\mathbf{0}}$; warunek
+$\neg \neq \mathrm{id}$ sprzeczny. (ii) Rozwa\.zmy kategori\k{e}
+dyskretn\k{a} $\mathcal{D}_n$ z~$n \geq 1$ obiektami. Endofunktor
+$\neg$ musi by\'c permutacj\k{a} obiekt\'ow z~$\neg^2 = \mathrm{id}$
+i~$\neg \neq \mathrm{id}$, czyli inwolucj\k{a} bez punkt\'ow
+sta\l{}ych. Dla $n=1$: brak takiej permutacji. Dla $n=2$: jedyna
+mo\.zliwo\'s\'c $+ \leftrightarrow -$. (iii) Automorfizmy
+$\mathcal{D}_2$ zachowuj\k{a}ce $\neg$ to $\{\mathrm{id}, \neg\}
+\cong \Zp$. \qed
+\end{proof}
+
+\begin{proof}[Szkic dow.~prop.~\ref{prop:0-clifford}]
+(i) Brak generator\'ow: $\mathrm{Cl}(0,0) = \mathbb{R}$ bez $\Zp$-gradacji.
+(ii) Jeden generator $e$, $e^2 = +1$: $\mathrm{Cl}(1,0) = \mathbb{R}[e]/(e^2-1)
+\cong \mathbb{R} \oplus \mathbb{R}$ z~projekcjami $(1 \pm e)/2$.
+Gradacja $\Zp$: cz\k{e}\'s\'c parzysta $\mathbb{R}\cdot 1$, nieparzysta
+$\mathbb{R}\cdot e$. (iii) Alternatywne gradacje $\mathbb{Z}_n$ dla
+$n \geq 3$ wymagaj\k{a} pierwiastk\'ow jedno\'sci w~ciele, czyli
+uprzedniego rozszerzenia do $\mathbb{C}$ --- sprzeczne z~minimalno\'sci\k{a}.
+\qed
+\end{proof}
+
+\begin{proof}[Dow\'od prop.~\ref{prop:0-niestabilnosc}]
+(i) Trywialne: $\mathrm{id}(x) = x$ dla ka\.zdego $x$. (ii)
+Obserwacyjna r\'ownowa\.zno\'s\'c wynika z~braku struktury wyr\'o\.zniaj\k{a}cej
+--- dwa stany r\'o\.znice si\k{e} tylko ,,etykietami'' niewidocznymi
+spoza przestrzeni stan\'ow. (iii) Dla $\sigma \neq \mathrm{id}$
+z~$\sigma^2 = \mathrm{id}$, ka\.zda orbita ma rozmiar 1 (punkty
+sta\l{}e $\sigma$) lub 2. Odrzucaj\k{a}c trywialny przypadek wszystkich
+punkt\'ow sta\l{}ych ($\sigma = \mathrm{id}$), istnieje co najmniej
+jedna orbita $\{x, \sigma x\}$ rozmiaru~2, generuj\k{a}ca $\Zp$. \qed
+\end{proof}
+
+\begin{proof}[Szkic dow.~tw.~\ref{thm:0-rownowaznosc}]
+Ka\.zde z~trzech sformu\l{}owa\'n produkuje minimaln\k{a} struktur\k{e}
+$(\mathcal{T}_{\min}, \sigma)$ z~$|\mathcal{T}_{\min}| = 2$,
+$\sigma^2 = \mathrm{id}$, $\sigma$ bez punkt\'ow sta\l{}ych.
+Przez jednoznaczno\'s\'c grupy rz\k{e}du 2 wszystkie takie struktury
+s\k{a} izomorficzne. Szczeg\'o\l{}y kategoryjne: tw.~Cayleya dla
+grup sko\'nczonych + funktor zapominaj\k{a}cy kategoria\,$\to$\,grupa
+automorfizm\'ow. \qed
+\end{proof}
+
+% -------------------------------------------------------------------
+\subsection{Status epistemiczny i~propozycja publikacyjna}%
+\label{app:0-status}
+% -------------------------------------------------------------------
+
+\begin{itemize}[nosep]
+  \item Aksjomat~0 nie jest twierdzeniem empirycznym; jest
+    \textbf{warunkiem mo\.zliwo\'sci} sformu\l{}owania TGP.
+  \item Nie jest te\.z ,,wolnym parametrem'' --- nie mo\.zna go
+    zast\k{a}pi\'c inn\k{a} grup\k{a} bez utraty minimalno\'sci.
+  \item Wszystkie predykcje numeryczne TGP pozostaj\k{a} bez zmian;
+    aksjomat~0 jedynie \textbf{reorganizuje fundament} logiczny.
+  \item Propozycja publikacyjna: w\l{}\k{a}czy\'c niniejszy dodatek
+    do pe\l{}nego manuskryptu jako \emph{Dodatek~0} (przed
+    dod.~\ref{app:notacja}), a~w~sek.~\ref{sec:ontologia} doda\'c
+    jednoakapitow\k{a} wzmiank\k{e} z~odnośnikiem.
+\end{itemize}
+
+\begin{remark}[Filozoficzny kontekst]\label{rem:0-filozofia}
+Konstrukcja ta jest zbie\.zna z~programami Peirce'a (,,distinction
+as primitive''), Wheelera (,,it from bit''), Spencera-Browna
+(,,laws of form''), a~z~filozoficznej strony --- z~Hegla
+dialektyk\k{a} bycia i nicości. Nie jest to jednak argument
+filozoficzny: trzy sformu\l{}owania prop.~\ref{prop:0-endofunktor},
+\ref{prop:0-clifford} i~\ref{prop:0-niestabilnosc} s\k{a}
+matematycznie \'scis\l{}e i~weryfikowalne w~ramach teorii kategorii,
+algebry Clifforda i~dynamiki przestrzeni stan\'ow odpowiednio.
+\end{remark}
+
+\begin{observation}[Linia otwarta --- przysz\l{}a praca]%
+\label{obs:0-linia}
+Trzy r\'ownowa\.zne sformu\l{}owania sugeruj\k{a} istnienie
+\textbf{czwartego} --- topologicznego: \'sladu $\pi_0$ na kategorii
+przestrzeni topologicznych. Hipoteza: ,,nicość topologiczna'' (zbi\'or
+pusty) ma $\pi_0 = 0$, a~minimalny obiekt o~$\pi_0 = \Zp$ to
+$S^0 = \{+, -\}$ --- zero-sfera. To mog\l{}oby po\l{}\k{a}czy\'c
+aksjomat~0 z~topologi\k{a} solitonu (dod.~\ref{app:pi1-formal-proof}),
+dodatkowo domykaj\k{a}c struktur\k{e} przez $\pi_1 = \Zp$ ju\.z
+obecn\k{a} w~TGP.
+\end{observation}
+
+% ===================================================================
+%  Koniec dodatku 0
+% ===================================================================

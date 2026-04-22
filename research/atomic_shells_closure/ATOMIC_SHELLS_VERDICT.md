@@ -143,7 +143,7 @@ Kierunek: `research/superconductivity_closure/P7.13_lanthanide_descriptor.py` �
 lokalna poprawka w SC.
 
 ### 4. **Cieczy, transport cieplny, muon g-2** (już otwarte)
-Zgodnie z [[TGP/TGP_v1/research/NEW_DIRECTIONS_2026-04-20.md]], 5 alternatywnych
+Zgodnie z [[NEW_DIRECTIONS_2026-04-20.md]], 5 alternatywnych
 frontów które są w zakresie TGP (nie wymagają atomowej chemii). Priorytet:
 - `liquid_viscosity` — bazy danych VFT, szybka walidacja
 - `muon_g_minus_2` — krótki horyzont, FNAL Run-6 do 2028
@@ -175,13 +175,13 @@ atomowej chemii, która fundamentalnie nie należy do zakresu TGP.
 | Plik | Opis | Status |
 |------|------|--------|
 | [[TGP/TGP_v1/research/atomic_shells_closure/PLAN.md]] | Plan programu (A1-A4) | ✓ |
-| [[TGP/TGP_v1/research/atomic_shells_closure/as01_hydrogen_probe.py]] | H 1s sanity | ✓ PASS (trivially) |
-| [[TGP/TGP_v1/research/atomic_shells_closure/as01_results.txt]] | Output as01 | ✓ |
-| [[TGP/TGP_v1/research/atomic_shells_closure/as02_lithium_ionization.py]] | Li IE chain + Koide + A_orb | ✓ (A_s NIE atomowe) |
-| [[TGP/TGP_v1/research/atomic_shells_closure/as02_results.txt]] | Output as02 | ✓ |
-| [[TGP/TGP_v1/research/atomic_shells_closure/as03_polarizability_probe.py]] | α_pol(alkali) test | ✓ (brak TGP invariantu) |
-| [[TGP/TGP_v1/research/atomic_shells_closure/as03_results.txt]] | Output as03 | ✓ |
-| [[TGP/TGP_v1/research/atomic_shells_closure/ATOMIC_SHELLS_VERDICT.md]] | Ten dokument | ✓ |
+| [[as01_hydrogen_probe.py]] | H 1s sanity | ✓ PASS (trivially) |
+| [[as01_results.txt]] | Output as01 | ✓ |
+| [[as02_lithium_ionization.py]] | Li IE chain + Koide + A_orb | ✓ (A_s NIE atomowe) |
+| [[as02_results.txt]] | Output as02 | ✓ |
+| [[as03_polarizability_probe.py]] | α_pol(alkali) test | ✓ (brak TGP invariantu) |
+| [[as03_results.txt]] | Output as03 | ✓ |
+| [[ATOMIC_SHELLS_VERDICT.md]] | Ten dokument | ✓ |
 
 as04, as05, as06 z PLAN.md **nie są potrzebne** — as01-03 już daje odpowiedź:
 TGP atomowo nie rozróżnia Li od innych elementów, bo efekty substratu są poniżej

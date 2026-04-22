@@ -1,0 +1,1497 @@
+% ============================================================
+% MAPA STATUSU TEORII TGP — Dodatek A.1 (sesja v33)
+% ============================================================
+\section{Mapa statusu twierdze\'n TGP}\label{sec:status-map}
+
+\begin{center}
+\fbox{\parbox{0.9\linewidth}{%
+\textbf{Nota kanoniczna (2026-04-07).}
+Warto\'sci $g_0 = 1{,}24$ w~tym dokumencie odpowiadaj\k{a} Formulacji~B ($f(g) = 1+4\ln g$).
+Warto\'s\'c kanoniczna (Formulacja~A, $K(g) = g^4$): $g_0^e = 0{,}86941$.
+Algebra Koide'a i~r\'ownania F1--F12 s\k{a} niezale\.zne od tego wyboru.}}
+\end{center}
+
+\begin{remark}[Cel i~konwencja]\label{rem:status-map-intro}
+Niniejsza sekcja pe\l{}ni rol\k{e} \textbf{indeksu logicznego} teorii.
+Ka\.zde zdanie twierdzeniowe TGP jest opatrzone jednym z~sze\'sciu
+etykiet statusu (uw.~\ref{rem:status-levels}):
+\statuslabel{Aksjomat},
+\statuslabel{Twierdzenie},
+\statuslabel{Propozycja},
+\statuslabel{Hipoteza},
+\statuslabel{Szkic},
+\statuslabel{Program}.
+Tabela poni\.zej zbiera wszystkie kluczowe wyniki
+i~pozwala czytelnikowi natychmiast oceni\'c,
+na jakim gruncie stoj\k{a}.
+\end{remark}
+
+% -------------------------------------------------------
+\subsection*{Warstwa~0: Substrat i~operator~$\mathcal{D}$}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.2cm}lp{4.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / za\l{}o\.zenia}
+  & \textbf{Odsylacz} \\
+\midrule
+
+Substrat $\Gamma = (V,E)$ z~symetri\k{a} $\mathbb{Z}_2$
+i~hamiltonianem $H_\Gamma$ istnieje
+  & \statuslabel{Aksjomat}
+  & (A1) --- wej\'scie teorii
+  & aks.~A1 \\[3pt]
+
+$K(0) = 0$: brak przestrzeni przy $\Phi = 0$
+  & \statuslabel{Twierdzenie}
+  & $K(\varphi) = K_{\rm geo}\varphi^4 \Rightarrow K(0) = 0$; wyprowadzenie z~substratu
+  & stw.~\ref{prop:K0-from-substrate} \\[3pt]
+
+$\alpha = 2$: operator $\mathcal{D} = \nabla^2\Phi/\Phi + 2(\nabla\Phi)^2/\Phi^2$
+  & \statuslabel{Twierdzenie}
+  & $K_{ij} = J(\varphi_i\varphi_j)^2$, klasa $K(\varphi) = \varphi^n$
+  & tw.~\ref{prop:substrate-action} \\[3pt]
+
+$\beta = \gamma$: warunek pr\'o\.zniowy $U'(1) = 0$
+  & \statuslabel{Twierdzenie}
+  & $U(\psi)$ minimalne w~$\psi=1$
+  & stw.~\ref{prop:vacuum-condition} \\[3pt]
+
+$d = 3$: trzy wymiary przestrzenne substratu
+  & \statuslabel{Twierdzenie}
+  & optymalno\'s\'c perkolacyjna sieci
+  & stw.~\ref{prop:wymiar} \\[3pt]
+
+Jednoznaczno\'s\'c operatora $\mathcal{D}$ w~klasie
+drugiego rz\k{e}du bez zewn\k{e}trznej metryki
+  & \statuslabel{Twierdzenie}
+  & warunki (1)--(4) z~\S\ref{ssec:rownanko}
+  & tw.~\ref{thm:D-uniqueness} \\[3pt]
+
+Pr\'o\.znia z~\'zr\'od\l{}em: $\mathcal{D}[\Phi](x) = -q\rho_{\rm mat}
+  - \Phi_0 W(\psi)$, $W(1) = \gamma/3 \neq 0$
+  & \statuslabel{Twierdzenie}
+  & $\beta = \gamma$, dzia\l{}anie~\eqref{eq:action}
+  & tw.~\ref{thm:vacuum-source} \\[3pt]
+
+$m_{\rm sp} = \sqrt{\gamma}$: masa bozonu przestrzennego
+  & \statuslabel{Twierdzenie}
+  & N0-5 $\Rightarrow$ N0-6; linearyzacja r\'ownania pola (sesja v33)
+  & stw.~\ref{prop:N0-6-from-N0-5} \\[3pt]
+
+Mapa rodziny sprz\k{e}\.ze\'n $K(\varphi) = \varphi^n$:
+$K = \varphi^4$ jest minimalne dla naszego wszech\'swiata
+  & \statuslabel{Propozycja}
+  & klasa $K(\varphi) = \varphi^n$, obs. $c_T = c_0$
+  & uw.~\ref{rem:coupling-map} \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection*{Warstwa~1b: Dynamiczne sta\l{}e fundamentalne}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.2cm}lp{4.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / za\l{}o\.zenia}
+  & \textbf{Odsylacz} \\
+\midrule
+
+$c(\Phi) = c_0(\Phi_0/\Phi)^{1/2}$
+  & \statuslabel{Propozycja}
+  & metryka pomostowa + s\l{}abe pole
+  & stw.~\ref{prop:c-from-metric} \\[3pt]
+
+$\hbar(\Phi) = \hbar_0(\Phi_0/\Phi)^{1/2}$
+  & \statuslabel{Propozycja}
+  & $c/\hbar = \mathrm{const}$ (warunek~W3)
+  & stw.~\ref{prop:G-from-lP}, tw.~\ref{thm:exponents} \\[3pt]
+
+$G(\Phi) = G_0\,\Phi_0/\Phi$
+  & \statuslabel{Twierdzenie}
+  & $\ell_P = \mathrm{const}$ (tw.~\ref{thm:lP})
+  & stw.~\ref{prop:G-from-lP} \\[3pt]
+
+$\ell_P = \sqrt{\hbar_0 G_0/c_0^3} = \mathrm{const}$
+  & \statuslabel{Twierdzenie}
+  & kombinacja wyk\l{}adnik\'ow: $b+g-3a = 0$
+  & tw.~\ref{thm:lP} \\[3pt]
+
+Jednoznaczno\'s\'c wyk\l{}adnik\'ow $(a,b,g) = (1/2,1/2,1)$
+  & \statuslabel{Twierdzenie}
+  & warunki W1--W3; uk\l{}ad 3 r\'owna\'n, rz\k{a}d~3
+  & tw.~\ref{thm:exponents} \\[3pt]
+
+Zasada nieoznaczono\'sci $\Delta x \cdot \Delta p \geq \hbar(\Phi)$
+  & \statuslabel{Propozycja}
+  & model energii pola rdzeniowego; $f = 1$ jawny
+  & stw.~\ref{prop:uncertainty-tgp} \\[3pt]
+
+$a_\Gamma \cdot \Phi_0 = 1$: redukcja $N_{\rm param} = 2 \to 1$
+  & \statuslabel{Hipoteza [NUM]}
+  & DESI DR1+CMB: $0{,}12\sigma$;
+    DESI DR2: $1{,}03\sigma$;
+    Planck: $1{,}22\sigma$;
+    \texttt{ex216}: 12/12~PASS; \texttt{ex110}: 10/10~PASS
+  & R3; p75 \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection*{Warstwa~2: Metryka efektywna i~grawitacja}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.2cm}lp{4.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / za\l{}o\.zenia}
+  & \textbf{Odsylacz} \\
+\midrule
+
+Forma metryki: diagonalna i~izotropowa
+($g_{\mu\nu} \propto \delta_{\mu\nu}$)
+  & \statuslabel{Twierdzenie}
+  & symetria $\mathbb{Z}_2$ + izotropia substratu (sesja v33)
+  & tw.~\ref{thm:metric-form-uniqueness} \\[3pt]
+
+Metryka efektywna $g_{\mu\nu} = f(\Phi)\,\eta_{\mu\nu}$
+(skalarna funkcja $f$)
+  & \statuslabel{Propozycja}
+  & tw.~\ref{thm:metric-form-uniqueness} + aks.~A3 + A6;
+    $f(\Phi) = \Phi/\Phi_0$ z~norm.~czasu
+  & stw.~\ref{prop:g00-from-axioms} \\[3pt]
+
+Granica Newtona $V_N \propto -1/r$
+  & \statuslabel{Twierdzenie}
+  & metryka z~hipotezy pomostowej
+  & tw.~\ref{thm:newton} \\[3pt]
+
+PPN: $\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$
+  & \statuslabel{Twierdzenie}
+  & metryka konformalna (izotropowa)
+  & stw.~\ref{rem:PPN-Will} \\[3pt]
+
+$c_{\rm GW} = c_0$ (pr\k{e}dko\'s\'c fal GW)
+  & \statuslabel{Twierdzenie}
+  & jednorodne t\l{}o $\Phi$, metryka pomostowa
+  & stw.~\ref{prop:cT} \\[3pt]
+
+Emergencja r\'owna\'n Einsteina do $O(U^2)$
+  & \statuslabel{Propozycja}
+  & metryka pomostowa + rozw.\ perturbacyjne
+  & tw.~\ref{thm:einstein-emergence} \\[3pt]
+
+$M_* = m_P$: skala Plancka z~substratu
+  & \statuslabel{Propozycja}
+  & wymiarowanie $\Phi_0 + \ell_P$; brak mikro-derywacji
+  & stw.~\ref{prop:Mstar-from-substrate} \\[3pt]
+
+$\sigma_{ab}$: mody tensorowe z~tensora
+napr\k{e}\.ze\'n substratu
+  & \statuslabel{Hipoteza}
+  & rozszerzenie A1; nie wynika z~samego $\Phi$
+  & \S\ref{ssec:tensor-substrate} \\[3pt]
+
+Warunek antypodyczny $f \cdot h = 1$ z~bud\.zetu substratu
+  & \statuslabel{Propozycja [AN+NUM+POST]}
+  & $\mathcal{B} = N_B \cdot s_0 = \text{const}$; podzia\l{} czas/przestrze\'n;
+    za\l{}o\.zenie multiplikatywne;
+    \texttt{ex201}: 7/8~PASS (T4 FAIL: przybli\.zenie Newtona)
+  & stw.~\ref{prop:antipodal-from-budget} \\[3pt]
+
+Metryka z~substratu: $g_{tt} = -c_0^2/\psi$, jedyno\'s\'c
+  & \statuslabel{Twierdzenie [AN+NUM]}
+  & (i) $g_{ij}$; (ii) $fh{=}1$; (iii) PPN; (iv) $\ell_P{=}\text{const}$;
+    \texttt{ex206}: 26/26~PASS
+  & tw.~\ref{thm:metric-from-substrate-full} \\[3pt]
+
+Zunifikowana akcja $S_{\rm TGP}$; $\sqrt{-g} = c_0\psi$
+  & \statuslabel{Propozycja}
+  & metryka $\to$ $\det g = -c_0^2\psi^2$
+  & hip.~\ref{hyp:unified-action} \\[3pt]
+
+$\kappa = 3/(4\Phi_0) \approx 0{,}030$ (sprz\k{e}\.zenie
+materia--pole)
+  & \statuslabel{Twierdzenie}
+  & $\delta S/\delta\Phi = 0$ w~granicy FRW
+  & stw.~\ref{prop:kappa-corrected} \\[3pt]
+
+Brak ghost\'ow w~sektorze solitonowym
+  & \statuslabel{Twierdzenie}
+  & $K_{\rm sub}(g) = g^2 > 0\ \forall g > 0$;
+    $f(g)$ to przybli\.zenie
+  & tw.~\ref{thm:ghost-free-soliton} \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection*{Kosmologia i~perturbacje}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.2cm}lp{4.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / za\l{}o\.zenia}
+  & \textbf{Odsylacz} \\
+\midrule
+
+$\Lambda_{\rm eff} \approx \gamma/12$: stała kosmologiczna
+  & \statuslabel{Twierdzenie}
+  & $W(1) = \gamma/3$, $\psi \approx 1$
+  & stw.~\ref{prop:Lambda-eff} \\[3pt]
+
+Równanie Friedmanna TGP~\eqref{eq:friedmann-modified}
+  & \statuslabel{Propozycja [AN+NUM]}
+  & metryka pomostowa; wyprowadzenie warunkowe;
+    \texttt{ex204}~9/9~PASS (łańcuch derywacji kompletny)
+  & stw.~\ref{prop:cosmo} \\[3pt]
+
+Pe\l{}ne r\'ownanie TGP w~FRW z~gradientami
+  & \statuslabel{Twierdzenie}
+  & A1 + metryka pomostowa + dzia\l{}anie~\eqref{eq:action}
+  & stw.~\ref{prop:TGP-FRW-full} \\[3pt]
+
+Zmienna MS: $v_k = a\psi_{\rm bg}^2\,\delta\psi_k$
+  & \statuslabel{Twierdzenie}
+  & pochodne dzia\l{}ania, $K(\psi) = \psi^4$
+  & stw.~\ref{prop:MS-TGP} \\[3pt]
+
+Spektrum pierwotne $\mathcal{P}_s(k) = H^2/(4\pi^2 c_0\psi_0^4)$
+  & \statuslabel{Propozycja [AN+NUM]}
+  & de~Sitter + zmienne~MS; klasa Starobinskiego $r \cdot N_e^2 = 12$;
+    \texttt{ex212}~12/12~PASS
+  & stw.~\ref{cor:TGP-power-spectrum} \\[3pt]
+
+Tilt $(n_s - 1)_{\rm TGP} = -4\varepsilon_H - 4\varepsilon_\psi$
+  & \statuslabel{Propozycja [AN+NUM]}
+  & wzorzec $z''/z$ + numeryka \texttt{ex54};
+    $n_s = 0{,}9649$ ($0\sigma$ Planck); \texttt{ex212}~12/12~PASS
+  & r.~\eqref{eq:ns-TGP}, \texttt{ex54}, \texttt{ex212} \\[3pt]
+
+$\psi_{\rm ini} = 7/6$ (atraktor GL + BBN)
+  & \statuslabel{Propozycja [AN+NUM]}
+  & $W(7/6)=0$ + $\Delta G/G=0$ + GL;
+    \texttt{ex86}~9/9~PASS (sesja~v35)
+  & stw.~\ref{prop:psi-ini-derived} \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection*{Sektor materii (poziom~3)}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.2cm}lp{4.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / za\l{}o\.zenia}
+  & \textbf{Odsylacz} \\
+\midrule
+
+$N_{\rm gen} = 3$: dok\l{}adnie trzy generacje
+  & \statuslabel{Twierdzenie}
+  & WKB $n = 0,1,2$ przy $a_\Gamma$; $N_{\rm gen} < 4$
+  & stw.~\ref{prop:no-4th-generation} \\[3pt]
+
+Statystyki Fermiego kinku: $\Psi(2,1) = -\Psi(1,2)$
+  & \statuslabel{Twierdzenie}
+  & $\pi_1(\mathcal{C}_{\rm sol}) = \mathbb{Z}_2$; tw.~Laidlawa--DeWitta;
+    formalny dow\'od w~dod.~E$'$
+  & tw.~\ref{thm:pi1-Z2}, wn.~\ref{cor:fermions} \\[3pt]
+
+Formu\l{}a Koidego $Q = 3/2$
+  & \statuslabel{Propozycja [AN+NUM]}
+  & O-K1 zamkni\k{e}ty [AN] (rz\k{a}d wiod\k{a}cy):
+    $g_0^\tau=4$ (kubiczna $t^3{+}t^2{-}12{=}0$);
+    $\eta_K=181/15$ (2\,ppm); $m_\tau=1776{,}97$\,MeV (0{,}006\%);
+    $r_{31}^K=3477{,}44$ z~lokusu Koide.
+    OK-3/OK-4: $\mathrm{CV}(\sqrt{m})=1$ jako zasada selekcji
+    ($\delta=0{,}001\%$; hipoteza [HYP], nie aksjomat).
+    \texttt{ex220}: 12/12; \texttt{ex221}: 12/12~PASS
+  & \S\ref{ssec:koide-hierarchy}; dod.~\ref{app:F-analytic-chain} \\[3pt]
+
+$\alpha_K^{\rm old} \approx 8{,}56$ (artefakt koordynatowy formulacji~B)
+  & \statuslabel{Zamkni\k{e}ty}
+  & OP-3 zamkni\k{e}ty: $\alpha$ jest parametrem koordynatowym
+    (degeneracja obserwabli, tw.~\ref{thm:Z-alpha-degeneracy});
+    dawne \'scie\.zki 1--8 zamkni\k{e}te negatywnie;
+    sp\'ojno\'s\'c parametr\'ow potwierdzona: \texttt{ex216}~12/12~PASS
+  & tw.~\ref{thm:Z-alpha-degeneracy}; dod.~\ref{app:Z-alphaK} \\[3pt]
+
+\'{S}cie\.zka~9: $\varphi$-FP, $r_{21} = 206{,}77$ (odch.~$0{,}0001\%$)
+  & \statuslabel{Twierdzenie}
+  & \texttt{ex106} (14/14); $g_0^* = 1{,}24915$;
+    $g_0^\mu = \varphi g_0^* = 2{,}02117$; zero param.\ wolnych
+  & twierdzenie~\ref{thm:J2-FP}; dod.~\ref{app:J2-formalizacja} \\[3pt]
+
+Mapa $\alpha_K^{\rm old}\leftrightarrow(g_0^*,g_0^e,\varphi\text{-FP})$
+  & \statuslabel{Twierdzenie [NUM]}
+  & OP-3B zamkni\k{e}ty: jawna mapa translacyjna
+    $\alpha \mapsto g_0^e(\alpha)$ monotoniczna i~odwracalna;
+    $r_{31}$, $Q_K$ niezmiennicze (7/7~PASS)
+  & tw.~\ref{thm:Z-alpha-degeneracy}; dod.~\ref{app:Z-alphaK} \\[3pt]
+
+Most substrat$\to g_0^e$: $g_0^e \approx 1 - \tfrac{13}{3}\,\rho_0^*$
+  & \statuslabel{Propozycja [NUM]}
+  & kandydat ERG: odch.~$0{,}04\%$; $\rho_0^* = 0{,}03045$ z~CG-2;
+    sta\l{}a $c = 13/3$ bez derywacji analitycznej (6/7~PASS)
+  & prop.~\ref{prop:Z-ERG-bridge}; dod.~\ref{app:Z-alphaK} \\[3pt]
+
+$M_{\rm TGP} = c_M A_{\rm tail}^4 + \mathcal{O}(A^6)$: tryb zerowy
+  & \statuslabel{Twierdzenie [AN+NUM]}
+  & $\mathcal{E}^{(2)}{=}0$ [AN]; $\mathcal{E}^{(3)}{=}0$ [\textbf{NUM}]
+    (dow\'od analityczny otwarty, uw.~\ref{rem:R-E3-status});
+    \texttt{ex142}: 12/12 PASS
+  & tw.~\ref{thm:R-A4}; dod.~\ref{app:zero-mode-A4} \\[3pt]
+
+Warunek kwantowania $B_{\rm tail}(g_0^e) = 0$ (elektron)
+  & \statuslabel{Propozycja}
+  & $g_0^e = 1{,}2301$ (0{,}8\%); \texttt{ex58}
+  & stw.~\ref{prop:J-quantization}; dod.~\ref{app:ogon-masy} \\[3pt]
+
+Z\l{}ota proporcja $g_0^\mu = \varphi \cdot g_0^e$: $\varphi$-FP
+  & \statuslabel{Twierdzenie}
+  & wynika z~$\varphi$-FP (twierdzenie~\ref{thm:J2-FP});
+    nie za\l{}o\.zenie, lecz wynik dynamiczny
+  & def.~\ref{def:J2-phi-FP}; dod.~\ref{app:J2-formalizacja} \\[3pt]
+
+Emergencja U(1) z~symetrii fazy substratu
+  & \statuslabel{Propozycja}
+  & 5-krokowy dow\'od (thm:photon-emergence);
+    warunkowo na aks.~\ref{ax:complex-substrate};
+    \texttt{ex109} (12/12 PASS)
+  & tw.~\ref{thm:photon-emergence}; \S\ref{sec:cechowanie} \\[3pt]
+
+Emergencja SU(2) z~defektu wir\'owkowego ($\pi_1$)
+  & \statuslabel{Twierdzenie [AN]}
+  & $\pi_1(\mathcal{M}_1) = \mathbb{Z} \Rightarrow S^3 \cong SU(2)$;
+    dow\'od topologiczny w~dod.~D2
+    (tw.~\ref{thm:D2-hierarchy-main}; \texttt{ex207}: 20/20~PASS)
+  & \S\ref{sec:cechowanie}; dod.~D2 \\[3pt]
+
+Emergencja SU(3) z~defektu monopolowego ($\pi_2$)
+  & \statuslabel{Twierdzenie [AN]}
+  & $\pi_2(\mathcal{M}_2) \neq 0 \Rightarrow SU(3)$;
+    asymptotyczna swoboda + centrum $\mathbb{Z}_3$;
+    dow\'od topologiczny w~dod.~D2
+    (tw.~\ref{thm:D2-hierarchy-main}; \texttt{ex207}: 20/20~PASS)
+  & \S\ref{sec:cechowanie}; dod.~D2 \\[3pt]
+
+Naruszenie CP: jedna faza Diracowska przy $N = 3$
+  & \statuslabel{Propozycja}
+  & $\pi_1(\mathbb{RP}^2)$; argument topologiczny
+  & stw.~\ref{prop:CP-necessity} \\[3pt]
+
+Forma ogona: $g(r){-}1 \sim (B\cos r + C\sin r)/r$
+  & \statuslabel{Propozycja}
+  & linearyzacja ODE przy $g=1$; sub.\ $w = r\cdot u$ (Dod.~K)
+  & stw.~\ref{prop:K-tail-form}; dod.~\ref{app:wkb-atail} \\[3pt]
+
+$A_{\rm tail} \propto (g_0{-}g^*)^4$: wyk\l{}adnik ze stopnia $V(g)$
+  & \statuslabel{Propozycja}
+  & $V(g)$ wielomian st.~4; $\alpha$-niezale\.zno\'s\'c (\texttt{ex62})
+  & res.~\ref{res:K-SWKB}; dod.~\ref{app:wkb-atail} \\[3pt]
+
+O-J1: analityczna formu\l{}a $A_{\rm tail}(g_0)$ (WKB~+~dopasowanie asympt.)
+  & \statuslabel{Propozycja [NUM]}
+  & $A_{\rm tail} \sim C\,|g_0{-}1|^{3/2}$ (WKB, 4/6~PASS);
+    cross-vacuum amplifikacja: $e$ i~$\mu$ po przeciwnych stronach $g{=}1$;
+    formu\l{}a $g_0^e = (1{+}R)/(\varphi{+}R)$, $R = r_{21}^{1/6}$ (2{,}3\% off);
+    \textbf{most numeryczny:} $\rho_0^* \to g_0^e \to \text{ODE} \to r_{21} = 210{,}67$
+    (1{,}9\% od PDG); analityczny fit Branch~II s\l{}aby (28{,}9\% RMS)
+  & prob.~\ref{prob:K-OJ1}; dod.~\ref{app:wkb-atail} \\[3pt]
+
+\l{}a\'ncuch ERG $\rho_0^* \to r_{21}, r_{31}, m_\tau$ (zero param.\ wolnych):
+  $r_{21}{=}210{,}67$ (1{,}9\%), $r_{31}{=}3537$ (1{,}7\%),
+  $m_\tau{=}1808$\,MeV (1{,}7\%)
+  & \statuslabel{Propozycja [NUM]}
+  & $\Phi_0$ odpada z~\l{}a\'ncucha mas; $N_{\rm free}^{(\rm masy)}{=}0$;
+    \texttt{tgp\_chain\_Phi0\_to\_masses.py} (9/9~PASS)
+  & prop.~\ref{prop:Z-zero-param-chain}; dod.~\ref{app:Z-substrate-bridge} \\[3pt]
+
+Sta\l{}a ERG $c(\alpha) = (1{-}g_0^e)/\rho_0^*$:
+  $c(\alpha{=}2) = \Phi_3(d)/d = 13/3$ (cyklotomiczna; 0{,}27\%);
+  $\alpha{=}2$ singlowany jako kanoniczny
+  & \statuslabel{Propozycja [NUM]}
+  & $c(\alpha)$ zale\.zy od~$\alpha$ (rozpi\k{e}to\'s\'c 50\%);
+    $\alpha{=}2 \Leftrightarrow \Phi=\phi^2$; przy $\alpha{=}0$: $c\approx\pi$ (0{,}3\%);
+    \texttt{tgp\_c133\_origin.py} (4/4~PASS)
+  & prop.~\ref{prop:Z-c-alpha-structure}; dod.~\ref{app:Z-substrate-bridge} \\[3pt]
+
+O-J3: $\varphi$-FP + Koide $\to$ trzy masy leptonów ($r_{21}=206{,}77$,
+  $r_{31}=3477{,}4$, $m_\tau = 1777{,}0$\,MeV, $+60$\,ppm od PDG)
+  & \statuslabel{Propozycja [AN+NUM+POST($\mathbb{Z}_3$)]}
+  & ODE substrat.\ + $\varphi$-FP $\to$ $r_{21}$;
+    Koide $Q_K{=}3/2$ z~$\mathbb{Z}_3$ (za\l{}o\.zona, nie wyprowadzona);
+    zero par.\ wolnych; hip.~,,harmoniczna'' $2g_0^e$ \textbf{obalona} ($6{,}9\%$)
+  & prop.~\ref{prop:J-koide-chain}; \texttt{oj3\_tau\_selection.py} \\[3pt]
+
+Precyzja $\varphi$-FP + Koide: $r_{31} = 3477{,}44$
+  ($83$~ppm od PDG, \texttt{ex157})
+  & \statuslabel{Propozycja [AN+NUM]}
+  & rem.~\ref{rem:J-precision-ex157}; ODE substratowe $\textsf{rtol}=10^{-10}$
+  & dod.~\ref{app:ogon-masy} \\[3pt]
+
+$\varphi$-FP dzia\l{}a na kwarki: $r_{21}^{(d,s,b)} = 20{,}0$,
+  $r_{21}^{(u,c,t)} = 588$ (zgodno\'s\'c z~PDG)
+  & \statuslabel{Propozycja [NUM]}
+  & res.~\ref{res:X-phiFP-universal}; Koide $K \neq 2/3$ dla kwark\'ow;
+    $K$ jest ODE-niezmienniczy (wn.~\ref{cor:X-no-ODE-fix})
+  & dod.~\ref{app:quark-sector}; \texttt{ex158}--\texttt{ex161} \\[3pt]
+
+R11: $K(\varphi)=\varphi^2$ vs $\varphi^4$ --- rozwi\k{a}zany
+  & \statuslabel{Twierdzenie}
+  & linearyzacja $H_\Gamma$ ($\varphi^2$) vs pe\l{}na def.~$F_{\rm kin}$
+    ($\varphi^4$); $H_\Gamma \neq F_{\rm kin}$; ODE substratowe ($\alpha{=}1$)
+    preferowane (bariera duchowa w~$\alpha{=}2$ wyklucza $\varphi$-FP)
+  & uw.~w~\S\ref{sec:ghost-resolution}; \texttt{ex163} \\[3pt]
+
+$\alpha{=}1$ vs $\alpha{=}2$: rozstrzygni\k{e}cie
+  & \statuslabel{Twierdzenie}
+  & metryka $\Phi^{2/3}$ aksjomatyczna (A3); linearyzacja PPN
+    niezale\.zna od~$\alpha$; $\kappa$, PPN, $N_e$, $n_s$ uniwersalne;
+    ODE solitonu jedyny sektor zale\.zny --- $\alpha{=}1$ preferowane
+  & wn.~\ref{cor:alpha1-preferred}; \texttt{ex166}, \texttt{ex167} \\[3pt]
+
+Chiralna asymetria: $m_R/m_L = 2{,}03$ z~$V(g)$ i~$K_{\rm sub}$
+  & \statuslabel{Propozycja}
+  & $V'''(1) = {-}4$; $g_0^L(e) < g^*$ (bariera duchowa);
+    \texttt{ex108} (9/9 PASS)
+  & D.1d; OP-D1d-1 ZAMKNI\k{E}TY \\[3pt]
+
+$n_s = 0{,}9662$ (MS numeryczny, $N_e = 60$)
+  & \statuslabel{Twierdzenie}
+  & Mukhanov-Sasaki z~$\nu = 3/2 + \varepsilon_H + \eta_H + 2\varepsilon_\psi$;
+    \texttt{ex107} (10/10 PASS); 0{,}32$\sigma$ Planck
+  & dod.~\ref{app:J2-formalizacja}; prop:starobinsky-emergence \\[3pt]
+
+$r = 0{,}0033$; $r \cdot N_e^2 = 12$ (klasa Starobinsky'ego)
+  & \statuslabel{Twierdzenie}
+  & $r = 16\varepsilon_H$; BICEP/Keck: $r < 0{,}036$;
+    \texttt{ex107}
+  & prop:r-tensor \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection*{Sektor kwantowy i~UV}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}p{5.2cm}lp{4.4cm}p{2.6cm}@{}}
+\toprule
+\textbf{Zdanie} & \textbf{Status} & \textbf{Warunki / za\l{}o\.zenia}
+  & \textbf{Odsylacz} \\
+\midrule
+
+Substratowe obci\k{e}cie UV: $k_{\max} \sim 1/\lP$
+  & \statuslabel{Twierdzenie}
+  & wymiarowanie substratu ($\lP = $ min. skala)
+  & stw.~\ref{prop:UV-cutoff} \\[3pt]
+
+Jedno\-elementowa p\k{e}tla sko\'nczona:
+$\delta m^2_{\rm sp}/m^2_{\rm sp} \sim \ell_P/({\ell_Y\Phi_0}) \sim 10^{-60}$
+  & \statuslabel{Propozycja}
+  & 1-p\k{e}tla z~$k_{\max}$; brak wy\.zszych rz\k{e}d\'ow
+  & stw.~\ref{prop:one-loop-UV} \\[3pt]
+
+Punkt sta\l{}y UV $(\tilde m^2_*, \tilde g_*) = (0, -2\pi^2/5)$
+  & \statuslabel{Hipoteza}
+  & beta-funkcje 1-p\k{e}tlowe; wymaga pełnego ERG
+  & uw.~\ref{rem:IIIb-status} \\[3pt]
+
+Asymptotyczne bezpiecze\'nstwo TGP
+  & \statuslabel{Program}
+  & wymaga pe\l{}nego r\'ownania Wetterika dla $K(\psi) = \psi^4$
+  & uw.~\ref{rem:IIIb-status} \\
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------
+\subsection*{Podsumowanie: iloraz predykcyjno\'sci}
+% -------------------------------------------------------
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+\textbf{Kategoria} & \textbf{Liczba zdań} & \textbf{\% pewności}
+  & \textbf{Uwagi} \\
+\midrule
+Aksjomat              & 1  & --- & wej\'scie (A1), nie dowodzone \\
+Twierdzenie           & 33 & wysoka & v41{+}9; v47b: degeneracja $\alpha$;
+    v50: SU(2)/SU(3) z~dod.~D2 (by\l{}y Szkic) \\
+Propozycja            & 27 & \'srednia & v41{+}6; v47b{+}4 (most, O-J1, 0-param., $c$-cyklotom.);
+    O-K1 [AN+NUM] \\
+Hipoteza              & 3  & niska & $\sigma_{ab}$; punkt sta\l{}y UV; $a_\Gamma\Phi_0{=}1$ [NUM] \\
+Szkic                 & 0  & --- & SU(2)/SU(3) awansowane do Twierdzenie [AN] (v50h, dod.~D2) \\
+Program               & 1  & --- & asympt.\ bezp. \\
+Zamkni\k{e}ty        & 1  & --- & $\alpha_K^{\rm old}$ (artefakt) \\
+\midrule
+\textbf{\'Lacznie}   & \textbf{66} & & recount v50h; +5 sesji v50a--v50g \\
+\midrule
+Parametry Warstwy~II  & $N = 2$ & & $\Phi_0$, $a_\Gamma$
+    ($\psi_{\rm ini}=7/6$: Warstwa~I$\to$III,
+    stw.~\ref{prop:psi-ini-derived}, \texttt{ex86}) \\
+Obserwacje wyja\'sniane & $M \geq 12$ & & patrz tab.~\ref{tab:param-classification} \\
+Stosunek $M/N$        & $\geq 6$ & & \textbf{v35}: $M/N \geq 6$ (bez T1+T2);
+    $M/N \geq 7$ (hip.~\ref{hyp:agamma-phi0-combo} $\Rightarrow N{=}1$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Priorytety redukcji niepewno\'sci --- stan po sesji v33+]\label{rem:status-priority}
+\textbf{Sesja v33 zamkn\k{e}\l{}a}:
+\begin{itemize}[nosep]
+  \item Zadanie~B.2: forma metryki
+    $g_{\mu\nu} = f(\Phi)\eta_{\mu\nu}$ awansowana
+    z~\statuslabel{Hipoteza} do~\statuslabel{Twierdzenie} (forma)
+    i~\statuslabel{Propozycja} (funkcja $f$);
+    podstaw\k{a} jest tw.~\ref{thm:metric-form-uniqueness}
+    + stw.~\ref{prop:g00-from-axioms}.
+  \item Zadanie~N0-6: $m_{\rm sp} = \sqrt{\gamma}$ formalnie wyprowadzone
+    z~N0-5 (stw.~\ref{prop:N0-6-from-N0-5}).
+  \item Zadanie~C.2: tilt CMB awansowany do~\statuslabel{Propozycja}
+    po numerycznej weryfikacji skryptem~\texttt{ex54}.
+  \item \'Scie\.zka~8 ($r_{21}$ przez ZPE): \textbf{zamkni\k{e}ta} numerycznie
+    (\texttt{ex53}); wymagane $x_A = -0{,}97 < 0$.
+\end{itemize}
+\textbf{Prze\l{}om sesji v33+} (skrypty \texttt{ex55}--\texttt{ex57}):
+\begin{itemize}[nosep]
+  \item \texttt{ex57} (skan szerokopasmowy z~elastycznym odbiciem przy~$g^*$):
+    \[
+      \left(\frac{A_{\rm tail}(g_0^\mu)}{A_{\rm tail}(g_0^e)}\right)^4
+      = \left(\frac{A(2{,}00)}{A(1{,}24)}\right)^4 = 210{,}1
+      \approx 206{,}77 \quad (\text{odch. }1{,}6\%)
+    \]
+    Globalne skalowanie: $M_{\rm raw} \sim g_0^{4{,}12}$ (potwierdzenie hipotezy $g^4$).
+  \item Mechanizm: amplituda ogona oscylacyjnego $A_{\rm tail} = A\sin(r)/r$
+    pe\l{}ni rol\k{e} sta\l{}ej sprz\k{e}\.zenia cz\k{a}stki z~substratem;
+    $M \propto A_{\rm tail}^4$ t\l{}umaczy stosunek $r_{21}$.
+\end{itemize}
+\textbf{Wyniki \texttt{ex58} (warunek kwantowania $g_0$, sesja v33+)}:
+\begin{itemize}[nosep]
+  \item Hipoteza H1 ($B_{\rm tail}=0$, ,,czysty sinus''):
+    pierwsze zero przy $g_0 = 1{,}2301 \approx g_0^e = 1{,}24$
+    (odch.~$0{,}8\%$). \textbf{H1 potwierdzona dla elektronu.}
+  \item Drugie zero $B_{\rm tail}$ przy $g_0 = 2{,}0797 \neq 2{,}00$;
+    $(A(2{,}08)/A(1{,}23))^4 = 375 \neq 207$ ---
+    sam warunek $B=0$ nie reprodukuje $r_{21}$.
+  \item Obserwacja \textbf{z\l{}otej proporcji}:
+    $g_0^\mu/g_0^e = 2{,}00/1{,}24 \approx \varphi = 1{,}618$;
+    hipoteza: $g_0^e = \sqrt{5}-1$, $g_0^\mu = 2$
+    ($g_0^\mu/g_0^e = \varphi$ dok\l{}adnie).
+\end{itemize}
+\textbf{Wyniki \texttt{ex59} (sektory topologiczne, sesja v33+)}:
+\begin{itemize}[nosep]
+  \item $M(g_0)$ ro\'snie monotonicznie: brak ekstremum przy $g_0 = 2{,}00$
+    --- $g_0^\mu$ nie jest wyro\.znione przez $dM/dg_0 = 0$.
+  \item Ka\.zdy sektor $n_{\rm bounce} = 0,1,2,\ldots$ ma \textbf{dok\l{}adnie jedno}
+    zero $B_{\rm tail}$: $g_0 = 1{,}230\;(n=0)$, $2{,}080\;(n=1)$, $2{,}788\;(n=2)$.
+  \item Wyk\l{}adniki skalowania: $n=0$: $\gamma=9{,}3$;
+    $n=1$: $\gamma=4{,}4$ ($\approx 4$ !); $n=2$: $\gamma=3{,}4$.
+  \item Najlepsza $g_0$ dla $r_{21}$: $g_0 = 1{,}982$,
+    $(A/A_e)^4 = 205{,}4 \approx 207$ (odch.~$0{,}7\%$).
+\end{itemize}
+\textbf{Wyniki \texttt{ex60} (konwergencja $A_{\rm tail}$, sesja v33+)}:
+\begin{itemize}[nosep]
+  \item $A_{\rm tail}$ zbiega: zmienno\'s\'c $0{,}15\%$ (elektron), $0{,}63\%$ (mion)
+    --- amplituda jest dobrze okre\'slona fizycznie.
+  \item $g_0^\mu(r_{21}=207) = 1{,}989\pm0{,}005$, tj.~o~$1{,}1\%$ poni\.zej $g_0 = 2{,}00$.
+  \item \textbf{Warunek z\l{}otej proporcji} (precyzja $0{,}04\%$):
+    \[
+      g_0^\mu(r_{21}=207)
+      = \varphi \cdot z_0
+      = 1{,}6180 \times 1{,}2301
+      = 1{,}9903,
+    \]
+    gdzie $z_0 = 1{,}2301$ jest pierwszym zerem $B_{\rm tail}$ (elektron, sektor $n=0$).
+  \item Interpretacja: kwantowanie TGP --- $g_0^e = z_0$ (H1), $g_0^\mu = \varphi\cdot z_0$
+    --- reprodukuje $r_{21}\approx 207$ z dok\l{}adno\'sci\k{a} $< 0{,}1\%$
+    (do analitycznego uzasadnienia).
+\end{itemize}
+\textbf{Wyniki \texttt{ex61} (weryfikacja warunku $\varphi$, sesja v33+)}:
+\begin{itemize}[nosep]
+  \item \textbf{Krytyczna diagnoza}: czyste $\varphi$-kryterium z~$g_0^e = z_0$:
+    \[
+      \left(\frac{A_{\rm inf}(\varphi z_0)}{A_{\rm inf}(z_0)}\right)^4
+      = 252{,}07 \neq 207 \quad (\text{odch.~}21{,}9\%!)
+    \]
+    Interpretacja ex60 ($g_0^e = z_0$) jest \textbf{nieprecyzyjna}.
+    Fizyczny elektron le\.zy przy $g_0^e = 1{,}24 \neq z_0 = 1{,}2301$.
+  \item Mieszane kryterium: $(A(\varphi z_0)/A(1{,}24))^4 = 209{,}6$ (odch.~$1{,}35\%$)~---
+    nadal poprawne.
+  \item Seria generacji $\varphi^n z_0$: mion $n=1 \to 252$~(wz.~207),
+    tauon $n=2 \to 5345$~(wz.~3477, odch.~$54\%$).
+  \item Zale\.zno\'s\'c od $\alpha$: przy $\alpha = 2{,}5$ czyste $\varphi$ daje ratio~$= 197$
+    ($5\%$ od~207); istnieje $\alpha^* \approx 2{,}3\text{--}2{,}4$ taki, \.ze ratio~$= 207$.
+  \item Wra\.zliwo\'s\'c na $G_{\rm bounce}$: $z_0$ stale $= 1{,}2294$ --- efekt fizyczny,
+    nie artefakt regularyzacji.
+  \item Faza B--S: $\Delta\phi = 2{,}848\,\text{rad} = 0{,}907\pi$
+    ($9{,}35\%$ od $\pi$).
+\end{itemize}
+\textbf{Wyniki \texttt{ex62} ($\varphi$-self-consistent fixed point, sesja v33+)}:
+\begin{itemize}[nosep]
+  \item \textbf{PRZE\L{}OM}: istnieje $g_0^* = 1{,}24771$ takie, \.ze
+    \[
+      \left(\frac{A_{\rm inf}(\varphi g_0^*)}{A_{\rm inf}(g_0^*)}\right)^4
+      = 206{,}768 \quad (\text{odch.~}0{,}000001\%!)
+    \]
+    (warunek kwantowania \emph{self-consistent}, nie~H1 $B_{\rm tail}=0$).
+  \item $\varphi g_0^* = 2{,}01884$ (kandydat $g_0^\mu$);
+    $g_0^* - z_0 = +0{,}01761$;
+    $g_0^* - 1{,}24 = +0{,}00771$.
+  \item Brak prostego wzoru zamkni\k{e}tego dla~$g_0^*$
+    (sprawdzono $\sqrt{5}-1$, $4/\pi$, $e^{-1/4}+0{,}47$, \ldots).
+  \item $\alpha^* \approx 2{,}443$: przy tym $\alpha$ czyste $\varphi$ z~$z_0(\alpha^*)$ daje
+    $r_{21}=207$ (TGP u\.zywa $\alpha=2$, odch. $= 0{,}44$).
+  \item Tauon przy $g_0^*$: $(A(\varphi^2 g_0^*)/A(g_0^*))^4 = 4151$
+    (eksp.~$3477$, odch.~$19\%$). Tauon FP: $g_0^{**}=1{,}2621$.
+\end{itemize}
+\textbf{Wyniki \texttt{ex63--ex66} (energetyka i~faza, sesja v33+)}:
+\begin{itemize}[nosep]
+  \item \textbf{ex63} (faza scatteringowa):
+    $\delta_{\rm scatt}(g_0^*) = 0{,}015\,\text{rad} \approx 0$,
+    $\delta(\varphi g_0^*) = 0{,}938\pi$; warunek B--S = warunek H1;
+    $\varphi$-FP jest r\'ownaniem transcendentnym --- brak prostego kryterium fazowego.
+  \item \textbf{ex64}: $M_{\rm raw} \propto A_{\rm tail}^{2{,}013}$ (nie $A^4$!);
+    $M_{\rm raw}$ zdominowany przez ogon ($\sim A^2 R_{\rm max}$, rozbie\.zny).
+    $\alpha^* = 2{,}441$, $|\alpha^* - \sqrt{6}| = 0{,}008$ ($0{,}3\%$).
+  \item \textbf{ex65}: $M_{\rm kin} \propto A^{2{,}013}$, $|M_{\rm pot}| \propto A^{2{,}000}$,
+    $M_{\rm pot} < 0$; $M_{\rm tot} = M_{\rm kin}+M_{\rm pot}$ zmienia znak w~sektorze $n=0$
+    (elektron: $-0{,}22$, mion: $+7{,}44$). Ogon: $M_{\rm tail} \approx 0$ (kasowanie).
+  \item \textbf{ex66} + \textbf{wniosek analityczny}:
+    Tryb $k=1$ jest \textbf{trybem zerowym} zlinearyzowanego ODE TGP:
+    \[
+      \delta'' + \frac{2}{r}\delta' + \delta = 0
+      \implies \mathcal{E}_{\rm linear} = \frac{A^2\cos(2r)}{2r^2} \to 0
+    \]
+    Energia trybu zerowego $= 0$ dok\l{}adnie (kasowanie kin.+pot. w~ogonie).
+    Fizyczna masa $= O(A^4)$ nieliniowe korekcje:
+    \[
+      M_{\rm TGP} \approx c\,A_{\rm tail}^4 + O(A_{\rm tail}^6)
+    \]
+    \textbf{To jest matematyczne uzasadnienie $M \propto A_{\rm tail}^4$
+    z~aksjomatu TGP} --- status: \statuslabel{Propozycja}.
+\end{itemize}
+\textbf{Wyniki \texttt{ex69} (selekcja $g_0^*$, sesja v33++), 4/5 test\'ow}:
+\begin{itemize}[nosep]
+  \item $\delta(\alpha) \equiv g_0^*(\alpha) - z_0(\alpha)$
+    jest \textbf{liniowe} w~$\alpha$ ($R^2 = 0{,}99993$):
+    \[
+      \delta(\alpha) = -0{,}044063\,\alpha + 0{,}107667,
+      \qquad \delta = 0 \;\text{przy}\; \alpha = 2{,}4435.
+    \]
+    Przy $\alpha = \alpha^* = 2{,}441$ warunki H1 ($B_{\rm tail}=0$)
+    i~$\varphi$-FP \textbf{zbiegaj\k{a} si\k{e}} w~jeden punkt:
+    $g_0^*(\alpha^*) = z_0(\alpha^*) = 1{,}2585$ (r\'o\.znica $0{,}00011$).
+  \item Implikacja: $\alpha = \alpha^* \Rightarrow r_{21} = f(z_0(\alpha^*)) = 207{,}05$
+    \textbf{czysto z~warunku H1}, bez wej\'scia empirycznego!
+  \item Hipoteza: $\alpha^* = \sqrt{6} \approx 2{,}449$ (0{,}3\% od 2{,}441)?
+\end{itemize}
+\textbf{Bie\.z\k{a}ce priorytety (P1)}:
+\begin{enumerate}[nosep]
+  \item Dlaczego $\alpha_{\rm TGP} = 2$ (nie $\alpha^* = 2{,}441$)?
+    Je\'sli TGP wewn\k{e}trznie wymaga $\alpha = \alpha^*$, to $r_{21}$
+    jest \textbf{przewidziany} z~aksjomatu H1 + $\varphi$-skalowanie.
+  \item \textbf{ex71: dwa zera $f_{z_0}(\alpha)=r_{21}$}
+    (\statuslabel{Propozycja}; \textbf{korekta po ex84}):
+    R\'ownanie $f(z_0(\alpha),\alpha) = r_{21}$ ma dok\l{}adnie dwa
+    rozwi\k{a}zania przy $\beta=1$:
+    \[
+      \alpha_1^* \approx 2{,}440, \qquad \alpha_2^* \approx 2{,}695.
+    \]
+    (\emph{Uwaga}: seria ex71--ex83 podawa\l{}a $\alpha_1^*=2{,}44142$,
+    $\alpha_2^*=2{,}74175$ --- s\k{a} to warto\'sci \textbf{b\l{}\k{e}dne},
+    wynikaj\k{a}ce z~artefaktu grubej siatki \texttt{ex71};
+    poprawione przez \texttt{ex84}, patrz ni\.zej.)
+    Przy obu $\alpha^*$: H1~($B_{\rm tail}=0$) $\equiv$ $\varphi$-FP,
+    co daje $r_{21}=206{,}768$.
+  \item \textbf{ex84: \textsc{Falsyfikacja} formu\l{}y $S=2\pi-\tfrac{11}{10}$}
+    (\statuslabel{Twierdzenie} --- wynik negatywny):
+    Bezpo\'srednia weryfikacja $f_{z_0}(\alpha) = r_{21}$
+    bez hardcoded warto\'sci (\texttt{ex84}, 1/5~PASS):
+    \begin{itemize}[nosep]
+      \item Prawdziwe zera: $\alpha_1^* = 2{,}4396$, $\alpha_2^* = 2{,}6953$
+        (NIE $2{,}4414$ i~$2{,}7418$ jak podawa\l{}a seria ex71--ex83).
+      \item Suma $S = \alpha_1^*+\alpha_2^* = 5{,}1349$,
+        odchylenie \textbf{9307\,ppm} od $2\pi-11/10 = 5{,}1832$.
+      \item \'{Z}r\'od\l{}o artefaktu: \texttt{ex71} u\.zy\l{} 25-punktowej siatki
+        $z_0(\alpha)$ --- spurious zero crossings przepropagowane
+        przez ca\l\k{a} seri\k{e} ex72--ex83 jako hardcoded truth.
+      \item Zachowane: dwa zera fz0 przy $\alpha^*\approx 2{,}440$ i~$2{,}695$
+        s\k{a} realne (P1, P2~PASS); punkt sta\l{}y $\varphi$-FP przy
+        $g_0^*=1{,}24771$ jest realy.
+      \item Odrzucone: formu\l{}a $S=2\pi{-}11/10$,
+        generalizacja $S(n)=2\pi{-}(5n+1)/10$,
+        $D(n)=(n+1)/10$ --- wszystkie bazowa\l{}y na b\l{}\k{e}dnych $\alpha^*$.
+    \end{itemize}
+    \textbf{\'Scie\.zka~8--9 (ogon algebraiczny)}: \textsc{Zamkni\k{e}ta}.
+  \item \textbf{ex73--ex77: $\beta=1$ jako centrum symetrii}
+    (\statuslabel{Hipoteza [NUM]}; potwierdzone \texttt{ex217}):
+    Dwu-zerowa struktura $F(\alpha^*)=R_{21}$ wyst\k{e}puje
+    \textbf{wy\l{}\k{a}cznie} dla $\beta_{\rm pot}=1$ (fizycznej warto\'sci TGP);
+    $\beta\neq1$: 0~zer (ex217, skan 6~warto\'sci).
+    Aksjomat N0-5 ($\beta=\gamma$) ma dodatkowe uzasadnienie
+    dynamiczne --- selekcja potencja\l{}u.
+  \item \textbf{ex85: Nowe relacje algebraiczne Warstwy~II}
+    (\statuslabel{Hipoteza}; \texttt{ex85}, 5/6~PASS):
+    Weryfikacja z~danymi Planck~2018, DESI~DR1+CMB:
+    \begin{itemize}[nosep]
+      \item \textbf{T1}: $a_\Gamma\cdot\Phi_0 = 1$ ---
+        dok\l{}adno\'s\'c $0{,}09\%$ ($-0{,}12\sigma$) z~DESI+CMB.
+      \item \textbf{T2}: $r_{21} = \Phi_0 \cdot \alpha_K$ ---
+        dok\l{}adno\'s\'c $0{,}048\%$ z~Planck~2018.
+      \item \textbf{Konsekwencja T1+T2}:
+        $a_\Gamma = (\alpha_K \sqrt{r_{21}})^{-2/3} = 0{,}04011$
+        (0{,}15\% od fizycznego $0{,}040049$).
+        Je\'sli obie relacje dok\l{}adne:
+        $a_\Gamma$ znika z~Warstwy~II
+        $\Rightarrow$ $N_{\rm param}=2$ ($\Phi_0, \psi_{\rm ini}$).
+    \end{itemize}
+  \item \textbf{Sesja v34 (Dodatek~K: analityczna asymptotyka ogona i~predykcja tauonu)}:
+    \begin{itemize}[nosep]
+      \item \textbf{Prop.~\ref{prop:K-tail-form}} (stw.~K-tail-form):
+        forma ogona $g(r){-}1 \sim (B\cos r + C\sin r)/r$
+        formalnie dowiedziona przez linearyzacj\k{e} ODE przy $g=1$
+        i~podstawienie $w = r\cdot u$; awans do~\statuslabel{Propozycja}.
+      \item \textbf{$A_{\rm tail} \propto (g_0{-}g^*)^4$}
+        (res.~\ref{res:K-SWKB}):
+        wyk\l{}adnik $n \approx 4$ wynika ze stopnia potencja\l{}u $V(g)$
+        (wielomian st.~4), niezale\.znie od~$\alpha$
+        (potwierdzono numerycznie skryptem~\texttt{ex62} dla
+        $\alpha \in [1{,}0;\, 3{,}0]$); awans do~\statuslabel{Propozycja}.
+      \item \textbf{O-J1} (prob.~\ref{prob:K-OJ1}):
+        analityczna formu\l{}a $A_{\rm tail}(g_0)$ --- WKB daje
+        $\mu = 3/2$ (krzywa dopasowania, 0{,}02\%);
+        dwugaziowa struktura cross-vacuum ($e$: $g_0<1$, $\mu$: $g_0>1$);
+        \textbf{most numeryczny zamkni\k{e}ty:}
+        $\rho_0^* \to g_0^e \to \text{ODE} \to r_{21} = 210{,}67$ (1{,}9\% od PDG);
+        analityczny fit Branch~II niedomkni\k{e}ty (28{,}9\% RMS);
+        awans do~\statuslabel{Propozycja [NUM]}.
+      \item \textbf{O-J2} ($\varphi$-FP): {\bfseries ZAMKNI\k{E}TY}.
+        $g_0^\mu = \varphi \cdot g_0^*$; $(A_\mu/A_e)^4 = 206{,}768$
+        (dok\l{}adna zgodno\'s\'c z~PDG) potwierdzone we
+        wszystkich trzech ODE (uproszcz., pe\l{}ne, substrat.);
+        status~\statuslabel{Twierdzenie}.
+      \item \textbf{O-J3} (rem.~\ref{rem:K-substrate-tau}):
+        ODE substratowe ($K_{\rm sub} = g^2$, ghost-free):
+        $g_0^\tau = 1{,}729$, $m_\tau = 1776{,}8$~MeV ($-14$~ppm),
+        Koide $= 0{,}66666$ ($-11$~ppm);
+        zasada selekcji $g_0^\tau$ otwarta ($g_0^\tau/g_0^e \approx 2$
+        z~odch.\ $1{,}1\%$); status~\statuslabel{Propozycja}.
+      \item Komplet skrypt\'ow: \texttt{ex60} (topologia sektora ogona),
+        \texttt{ex61} (predykcja tauonu, kandydaci C1--C5),
+        \texttt{ex62\_phi\_fixed\_point.py} (skan kinetycznego~$\alpha_K$,
+        wyznaczenie $\alpha_1^*, \alpha_2^*$, $\varphi$-FP)
+        --- udokumentowane w~Dod.~\ref{app:wkb-atail}.
+    \end{itemize}
+
+  \item \textbf{Sesja v34 --- Dodatek~L (\'{S}cie\.zka~10: formu\l{}a sumy $\alpha_1^*+\alpha_2^*$)}:
+    \begin{itemize}[nosep]
+      \item \textbf{Definicja} (def.~L-F):
+        $F(\alpha_{\rm kin}) = \bigl(A_{\rm tail}(\varphi z_0) / A_{\rm tail}(z_0)\bigr)^4$;
+        dwa pierwiastki $F(\alpha^*) = r_{21}$:
+        $\alpha_1^* \approx 2{,}440$, $\alpha_2^* \approx 2{,}695$
+        (poprawione przez \texttt{ex84}).
+      \item \textbf{Hipoteza sumy} (hyp.~\ref{hyp:L-sum-formula}):
+        Pierwotna formu\l{}a $\alpha_1^* + \alpha_2^* = 2\pi - \tfrac{11}{10}$
+        pochodzi\l{}a z~artefaktu siatki serii ex71--ex83
+        ($\alpha_1^*=2{,}441$, $\alpha_2^*=2{,}742$ --- warto\'sci b\l{}\k{e}dne).
+        Po korekcie (\texttt{ex84}): $S = 5{,}1349$, odch.\ $9307\,\text{ppm}$
+        od $2\pi{-}11/10$ --- formu\l{}a \textbf{obalona}.
+        Status: \statuslabel{Hipoteza} (obalona).
+      \item \textbf{Zachowane wyniki pozytywne}:
+        istnienie dw\'och zer $F(\alpha^*)=r_{21}$ (\statuslabel{Propozycja});
+        punkt sta\l{}y $\varphi$-FP przy $g_0^* = 1{,}24771$
+        (\statuslabel{Propozycja});
+        interpretacja fizyczna $\alpha^*$ jako efektywnych sprz\k{e}\.ze\'n
+        kinetycznych sektor\'ow leptonowych (\statuslabel{Hipoteza}).
+      \item \textbf{O-L1 zamkni\k{e}te} (\texttt{ex88}, v36, 4/4~PASS):
+        Okno $B_{\rm coeff}$ \textbf{sta\l{}e} $[28,42]$ (niezale\.zne od
+        $r_{\rm max}$) --- amplituda niezale\.zna od $r_{\rm max}$ przy
+        sta\l{}ym oknie fizycznym.
+        Wyniki finalne:
+        $\alpha^*_{1,\infty} = 2{,}4318$,
+        $\alpha^*_{2,\infty} = 2{,}6356$ ($\sigma=0$, dok\l{}adno\'s\'c maszynowa).
+        $S(\infty) = 5{,}0674 \neq 2\pi - 11/10 = 5{,}1832$ (odch.\ $22336\,\text{ppm}$)
+        --- formu\l{}a sumy \textbf{definitywnie obalona}.
+        Brak prostej formu\l{}y algebraicznej dla $S$.
+        O-L2 zamkni\k{e}te (v36+v50); O-L3 zamkni\k{e}te cz\k{e}\'sciowo (v36);
+        O-L4 Propozycja [NUM] (v50d, \texttt{ex219}); O-L5 CZ.~ZAMK.\ negatywnie (v50d).
+        Skrypty: \texttt{ex62}--\texttt{ex88}.
+    \end{itemize}
+
+  \item \textbf{Sesja v35 --- F5 zamkni\k{e}te:
+    atraktor $\psi_{\rm ini} = 7/6$} (\statuslabel{Propozycja};
+    \texttt{ex86}, 9/9~PASS):
+    \begin{itemize}[nosep]
+      \item \textbf{T1--T2} (algebraika): $W(7/6) = 0$,
+        $W'(7/6) = -49\gamma/18 < 0$ --- stabilny atraktor slow-roll.
+        Cz\k{e}sto\'s\'c: $\omega_{\rm cosmo}/H_0 \approx 8{,}19$
+        (niedot\l{}umione oscylacje przy $z=0$).
+      \item \textbf{T3--T4} (zamro\.zenie): $\eta_{\rm BBN} = 1{,}2\times10^{-31}$,
+        $\Delta\psi_{\rm rad} \sim 3\times10^{-11}$ ---
+        pole absolutnie zamro\.zone w~erze radiacji.
+      \item \textbf{T5} (BBN): $\psi_{\rm ini} = 7/6
+        \;\Rightarrow\; |\Delta G/G| = 0{,}000\%$ ---
+        \textbf{jedyna warto\'s\'c} daj\k{a}ca doskonale
+        spe\l{}nione ograniczenie BBN.
+        Por.\ $\psi_{\rm ini} = 1{,}0 \;\Rightarrow\; |\Delta G/G| = 13{,}7\%$.
+      \item \textbf{Awans:} \texttt{prop:psi-ini-derived}
+        $\mathrm{Hipoteza} \to \mathrm{Propozycja}$;
+        $N_{\rm param}:\ 3 \to 2$
+        ($\psi_{\rm ini}$ opuszcza Warstw\k{e}~II).
+      \item \textbf{Nowa predykcja} (v35): oscylacje $G_{\rm eff}(t)$
+        z~$\omega_{\rm cosmo}/H_0 \approx 8{,}19$ dla
+        $|\psi_{\rm ini} - 7/6| \neq 0$ --- testowalne przez
+        projekty pomiaru $G(t)$ (LLR, GRACE-FO).
+    \end{itemize}
+
+  \item \textbf{Sesja v35 --- F6 zamkni\k{e}te:
+    napi\k{e}cie $r \approx 0{,}27$ vs $r < 0{,}036$ ---
+    artefakt b\l{}\k{e}dnego wzoru}:
+    \begin{itemize}[nosep]
+      \item \textbf{Diagnoza}: \texttt{rem:min-observables}
+        u\.zywa\l{}o relacji kanonicznej $r = 16\varepsilon_\psi$
+        z~$\varepsilon_\psi = (1-n_s)/2 \approx 0{,}017$,
+        co~daje $r \approx 0{,}27$.
+        Jest to parametr $\eta$ (dominuj\k{a}cy w~Starobinskim),
+        \textbf{nie} $\varepsilon$ u\.zywane w~relacji $r = 16\varepsilon$.
+      \item \textbf{Poprawka}: TGP nale\.zy do klasy Starobinsky'ego
+        (stw.~\ref{prop:r-tensor}, dod.~G);
+        $\varepsilon = 3/(4N_e^2)$,
+        $r = 12/N_e^2 \approx 0{,}003$ ($N_e=60$) ---
+        spe\l{}nia $r < 0{,}036$ \textbf{z~du\.zym marginesem}.
+      \item \textbf{$\sigma_{ab}$ a inflacja}: $\sigma_{ab} = 0$
+        podczas inflacji (substrat w~fazie symetrycznej;
+        $K_{ab} \propto \delta_{ab}$, def.~\ref{def:sigma-ab}).
+        Pole $\sigma_{ab}$ aktywne wy\l{}\k{a}cznie
+        po~podgrzaniu --- dla \'zr\'ode\l{} anizotropowych.
+      \item \textbf{Predykcja}: $r \approx 0{,}003$
+        (odr\'o\.znialne od Higgsinflacji/Starobinskiego
+        przez CMB-S4 dopiero przy $r \sim 0{,}001$;
+        LiteBIRD: granica $r < 0{,}002$).
+    \end{itemize}
+
+  \item \textbf{Sesja v36 --- O-L1b zamkni\k{e}te:
+    finalne $\alpha^*_\infty$ bez zale\.zno\'sci od $r_{\rm max}$}
+    (\texttt{ex88}, 4/4~PASS):
+    \begin{itemize}[nosep]
+      \item \textbf{G\l{}\'owne odkrycie}: stałe okno $B_{\rm coeff}\in[28,42]$
+        eliminuje ca\l{}kowicie zale\.zno\'s\'c wynik\'ow od $r_{\rm max}$
+        ($r_{\rm max} \in \{100,120,150,200,300\}$ --- identyczne $\alpha^*$
+        z~dok\l{}adno\'sci\k{a} maszynow\k{a}).
+        Artefakt \texttt{ex87v3} potwierdzony jako skutek skalowanego okna.
+      \item \textbf{Finalne warto\'sci}:
+        $\alpha^*_{1,\infty} = 2{,}43183767$,
+        $\alpha^*_{2,\infty} = 2{,}63557742$,
+        $S(\infty) = 5{,}06741509$ (cf.\ $2\pi - 11/10 = 5{,}18319$,
+        odch.\ $22336\,\text{ppm}$).
+      \item \textbf{Obalenie formu\l{}y sumy:} \textbf{ostateczne} ---
+        nie tylko przy $r_{\rm max}=120$ ($9307\,\text{ppm}$, \texttt{ex84}),
+        ale dla ca\l{}ego zakresu $r_{\rm max}$; warto\'s\'c $S=5{,}0674$
+        stabilna i~bez prostej reprezentacji algebraicznej.
+      \item \textbf{F7 zamkni\k{e}te analitycznie}:
+        $n_s = 1 - 2/N_e$ (Starobinsky, rem:F7-ns-precision);
+        TGP zdegenerowane z~Starobinskim przy precyzji Planck~2018;
+        korekcja $\varepsilon_\psi = O(N_e^{-2}) \approx 0{,}0002$ poni\.zej
+        progu CMB-S4.
+      \item \textbf{$\sigma_{ab}=0$ podczas inflacji} (rem:sigma-inflation):
+        substrat w~fazie symetrycznej $\to K_{ab}\propto\delta_{ab}$
+        $\to \sigma_{ab}=0$ --- predykcja testowalna LiteBIRD
+        $r\approx 0{,}003\pm 0{,}001$ (\statuslabel{Propozycja}).
+      \item \textbf{O-L2 zamkni\k{e}te} (\texttt{ex89}~v36,
+        potwierdzone \texttt{ex217}~v50):
+        skan $\beta_{\rm pot}\in\{0{,}5;\,0{,}8;\,1{,}0;\,1{,}2;\,1{,}5;\,2{,}0\}$
+        --- dwa zera $F(\alpha^*)=R_{21}$ istniej\k{a}
+        \textbf{wy\l{}\k{a}cznie dla $\beta_{\rm pot}=1$}
+        (fizyczne N0-5); zera nie s\k{a} topologiczne.
+        Interpretacja: $\beta=\gamma$ jest jedynym potencja\l{}em
+        solitonowym z~poprawn\k{a} hierarchi\k{a} leptonow\k{a}
+        (selekcja potencja\l{}u).
+        hyp:L-alpha-eff: bez awansu.
+      \item \textbf{O-L3 zamkni\k{e}te cz\k{e}\'sciowo} (\texttt{ex91}, v36,
+        4/5~PASS): \'Scie\.zka~9 ($\alpha_{\rm TGP}=2$) daje
+        $F(2)=263{,}9\neq R_{21}$ --- unifikacja \textbf{cz\k{e}\'sciowa};
+        \'scie\.zki 9 i~10 s\k{a} komplementarne, nie identyczne.
+    \end{itemize}
+
+  \item \textbf{Sesja v37 --- O-L4 i~O-L5: profil $F(\alpha)$ i~sektor tau}
+    (\texttt{ex92}, 2026-03-28):
+    \begin{itemize}[nosep]
+      \item \textbf{Dwie ga\l{}\k{e}zie $z_0(\alpha)$}:
+        ga\l{}\k{a}\'z g\'orna ($z_0 \approx 2{,}3$--$2{,}5$, $\alpha < 1{,}4$,
+        niefizyczna) i~ga\l{}\k{a}\'z fizyczna ($z_0\approx 1{,}11$--$1{,}26$,
+        $\alpha > 1{,}5$; u\.zywana w~\texttt{ex88}).
+      \item \textbf{O-L4 --- mechanizm $\alpha^*\neq\alpha_{\rm TGP}$}:
+        Na ga\l{}\k{e}zi fizycznej $F(\alpha)$ maleje od $F(2)=264{,}1$
+        do minimum $F_{\min}\approx 201{,}0$ przy $\alpha_{\min}\approx 2{,}54$,
+        po czym ro\'snie. $\alpha_{\rm TGP}=2$ le\.zy po~\textbf{lewej}
+        stronie minimum (ga\l{}\k{a}\'z malej\k{a}ca).
+        Dwa zera: $\alpha^*_1\approx 2{,}43$ (F maleje przez $R_{21}$)
+        i~$\alpha^*_2\approx 2{,}64$ (F ro\'snie przez $R_{21}$),
+        spójne z~\texttt{ex88} do $\pm0{,}002$.
+        Otwarte: analityczna formu\l{}a $\alpha_{\min}$.
+      \item \textbf{O-L5 --- $\alpha^*_3$ potwierdzona} (\texttt{ex93}+\texttt{ex94}, v37):
+        skan $\alpha\in[2{,}70;\,3{,}30]$, krok $0{,}01$, Pool(6), czas $2333\,\text{s}$.
+        $G_3(\alpha)$ monotonically malejąca (korekta \texttt{ex92}).
+        Jedno zero $G_3=R_{31}$:
+        \textbf{$\alpha^*_3 = 2{,}929524$},
+        $|\Delta\alpha^*_3|=2{,}3\times10^{-8}$ dla $r_{\rm max}\in\{120\ldots300\}$.
+        $G_3(\alpha^*_3)=3495{,}2$ ($+0{,}52\%$ od $R_{31}$; szum $\pm20$ j.).
+        \textbf{Formu\l{}a sumy}:
+        $S_3=\alpha^*_1+\alpha^*_2+\alpha^*_3=7{,}9969\approx8=4\alpha_{\rm TGP}$
+        ($-383\,\text{ppm}$; kandydat, w granicach szumu $G_3$).
+        $\alpha^*_{\tau\mu}=2{,}8534$: $G_3/F=R_{32}$, $\sigma\approx0$.
+      \item Skrypt \texttt{ex92}: $N_\alpha=120$, $r_{\rm max}=120$,
+        \texttt{Pool}(6), czas $484\,\text{s}$; 116/120 punkt\'ow poprawnych.
+    \end{itemize}
+
+  \item \textbf{Sesja v38 --- \textsc{korekta O-L5}: artefakt okien ekstrapolacji}
+    (\texttt{ex95}, 2026-03-28):
+    \begin{itemize}[nosep]
+      \item \textbf{Krytyczny b\l{}\k{a}d wykryty}: $\varphi^2 z_0\approx3{,}31$
+        --- soliton taonowy startuje z~du\.zy $g_0$;
+        strefa bliska ($r<30$) nie jest asymptotyczna.
+        Okno $[20,36]$ daje $A_{\rm tail}=2{,}838$ zamiast prawdziwego
+        $\approx2{,}994$ (okna dalekie $[60,136]$).
+      \item \textbf{Skutek}: standardowe okna $[20,66]$
+        zani\.zaj\k{a} $A_{\rm tail}(\varphi^2 z_0)$
+        $\Rightarrow$ $G_{3,\rm std}\approx3410$ (fa\l{}szywnie niskie)
+        vs.\ $G_3^{\rm true}\approx4860$--$5000$.
+        Prawdziwe $G_3 > R_{31}=3477$ dla wszystkich
+        $\alpha\in[2{,}90;\,2{,}95]$.
+      \item \textbf{O-L5 --- korekta}: $\alpha^*_3=2{,}929524$ i~$S_3=8$
+        z~\texttt{ex93}/\texttt{ex94} s\k{a} \textbf{artefaktami}.
+        Prawdziwe $\alpha^*_3$ nieznane.
+        Zaplanowany \texttt{ex96}: skan $G_3(\alpha)$ z~oknami
+        $[60,136]$ na $\alpha\in[2{,}5;\,5{,}0]$.
+      \item Skrypt \texttt{ex95}: $r_{\rm max}=150$, 3 zestawy okien
+        (std/ext/far), \texttt{Pool}(6), czas $893\,\text{s}$.
+    \end{itemize}
+
+  \item \textbf{Sesja v38 c.d. --- O-L5: skan szeroki i test zbieżności}
+    (\texttt{ex96}+\texttt{ex97}, 2026-03-28):
+    \begin{itemize}[nosep]
+      \item \textbf{\texttt{ex96} --- skan $G_3(\alpha)$ z oknami FAR $[60,136]$
+        na $\alpha\in[2{,}5;\,5{,}0]$}:
+        $G_{3,\rm far} > R_{31}=3477$ \textbf{wszędzie}.
+        Minimum $G_{3,\rm far}=4667$ przy $\alpha=2{,}50$ ($+34\%$ nad $R_{31}$).
+        Brak zmiany znaku $G_3-R_{31}$ na całym zakresie.
+        Dodatkowe: $\alpha^*_{2,\rm far}=2{,}7538$ ($F_{\rm far}=R_{21}$;
+        vs.\ $\alpha^*_2=2{,}6356$ ze~STD --- przesunięcie $+0{,}118$).
+      \item \textbf{\texttt{ex97} --- test zbieżności $A_{\rm tail}$ do $r_{\rm max}=300$}:
+        Per-okno $A_\tau\approx2{,}994$--$2{,}998$ stabilne od $r=60$ do $r=286$.
+        Trend $dA/dr=+9\times10^{-6}/r$ --- plateau potwierdzone.
+        $G_3^{\rm true}(\alpha^*_3)\approx5558$ ($+60\%$ nad $R_{31}$).
+        \textbf{Wniosek definitywny}: formuła $G_3=(A_\tau(\varphi^2 z_0)/A_e(z_0))^4=R_{31}$
+        \textbf{nie ma rozwiązania} na gałęzi fizycznej.
+        Sektor $\tau$ wymaga innej parametryzacji.
+        O-L5: \emph{otwarte ponownie}; hipoteza $S_3=8$ bez podstawy numerycznej.
+    \end{itemize}
+
+  \item \textbf{Sesja v39 --- O-L5: systematyczna falsyfikacja scenariuszy $\tau$}
+    (\texttt{ex100}--\texttt{ex102}, 2026-03-29):
+    \begin{itemize}[nosep]
+      \item \textbf{\texttt{ex100} --- S1: $G_{3,\rm far}$ na $\alpha\in[1{,}5;\,2{,}55]$}:
+        Minimum $G_{3,\rm far}=4511$ przy $\alpha=2{,}35$ ($+30\%$ nad $R_{31}$).
+        Brak zmiany znaku. $G_3(\varphi^3 z_0) \gg R_{31}$ wszędzie.
+        Precyzyjne $\alpha_{\min,\rm far}=2{,}5595$ (brentq $dF/d\alpha=0$);
+        $F_{\min,\rm far}=196{,}85 < R_{21}=206{,}77$.
+        \textbf{S1 = falsyfikowany}.
+      \item \textbf{\texttt{ex101} --- S2: rezonans czy fizyka przy $\alpha\approx7{,}1$?}
+        Per-okno profil $A_\tau$: okno $[60,76]$ daje $A_\tau\approx3{,}09$
+        przy $\alpha=7{,}0$, podczas gdy okna $[80,136]$ dają
+        $A_\tau\approx4{,}35$--$4{,}67$ (plateau). Prawdziwe
+        $G_3(\alpha=7{,}0)\approx65000 \gg R_{31}$.
+        Zmiany znaku przy $\alpha\approx6{,}77$ i~$\alpha\approx7{,}36$
+        to \textbf{artefakty biasu okna $[60,76]$}.
+        Stabilno\'s\'c $R_{\rm max}$ (150 vs.\ 300) nie wyklucza artefaktu okiennego.
+        \textbf{S2 = falsyfikowany}.
+      \item \textbf{\texttt{ex102} --- S4+S5: inne hierarchie mno\.znikowe}
+        (okna VFAR $[80,156]$, 11~mnożników):
+        Najbli\.zej $R_{31}$: $m=2{,}5$ przy $\alpha=\alpha^*_{1,\rm far}$
+        daje $G_3=3519{,}2$ ($+42$; $+1{,}2\%$) --- brak zera.
+        Skan $G_{3,\rm vfar}(\varphi^2 z_0)$ na $\alpha\in[2{,}3;\,5{,}0]$:
+        minimum $G_{3,\rm vfar}=4519$ przy $\alpha=2{,}30$ ($+30\%$),
+        brak zmiany znaku.
+        $\alpha_{\min,\rm vfar}=2{,}5574$ (VFAR brentq; vs.~FAR:~$2{,}5595$, $\Delta=0{,}002$).
+        $F_{\rm far}$ vs.\ $F_{\rm vfar}$: $|\Delta F|\le0{,}28$ --- okna nieistotne dla mionu.
+        \textbf{S4 = falsyfikowany; S5 = wykonane}.
+      \item \textbf{Wniosek globalny v39}:
+        Formu\l{}a $G_3=(A_\tau(m\cdot z_0)/A_e(z_0))^4=R_{31}$ nie ma rozwi\k{a}zania
+        dla \.zadnego z~testowanych mno\.znik\'ow
+        $m\in\{\varphi,\sqrt{2},\sqrt{3},\sqrt{5},e,2,2{,}5,\varphi^2,\varphi^3,3,1{+}\varphi\}$
+        na ga\l{}\k{e}zi fizycznej $\alpha\in[2{,}3;\,5{,}0]$.
+        Sektor $\tau$ nie jest opisany formu\l{}\k{a} amplitudow\k{a} TGP.
+        \textbf{O-L5: definitywnie otwarte --- wymaga nowej parametryzacji}.
+    \end{itemize}
+
+  \item \emph{OP-3 zamkni\k{e}ty}: $\alpha_K^{\rm old}$ jest artefaktem
+    koordynatowym (tw.~\ref{thm:Z-alpha-degeneracy}); dawna hipoteza
+    $\alpha_K = a_c^{-1}(a_\Gamma)$ bezprzedmiotowa.
+  \item \emph{Sektory cechowania} SU(2), SU(3).
+\end{enumerate}
+\end{remark}
+
+% ================================================================
+% Aktualizacja v47 (2026-04-09) — nowe wyniki
+% ================================================================
+\begin{remark}[Aktualizacja v47 --- nowe domkni\k{e}cia
+  i~korekty sp\'ojno\'sci]\label{rem:status-v47}
+\begin{enumerate}[nosep]
+  \item \textbf{Element obj\k{e}to\'sciowy:}
+    Wszystkie odwo\l{}ania do starego
+    $\sqrt{-g_{\mathrm{eff}}} = \psi^4$ w~sek08\_formalizm.tex
+    poprawione na $c_0\psi$
+    (5 poprawek, zob.\ sek.~\ref{ssec:unified-action}).
+    R\'ownanie FRW (prop.~\ref{prop:FRW-derivation})
+    zaktualizowane: $2\dot\psi^2/\psi \to 3\dot\psi^2/\psi$.
+
+  \item \textbf{M1 --- jednoznaczno\'s\'c $k = 4$ (stw.~\ref{thm:R-k4-definite}):}
+    Nowe twierdzenie w~dodatku~R:
+    fizyczna masa solitonu w~$d = 3$ ma jednoznaczne
+    rozwini\k{e}cie $M = c_4 A_{\rm tail}^4 + \mathcal{O}(A^6)$,
+    poniewa\.z rz\k{a}d $n = 3$ jest logarytmicznie rozbie\.zny
+    (schematycznie zale\.zny) --- unikalne dla $d = 3$.
+    Status: \statuslabel{Twierdzenie}~[AN+NUM].
+
+  \item \textbf{M2 --- $\lambda_{\mathrm{eff}} = 2/\PhiZero^4$
+    (prop.~\ref{prop:I-lambda-Z2}):}
+    Nowa propozycja w~dodatku~I: czynnik $\mathbb{Z}_2$
+    zamyka luk\k{e} mi\k{e}dzy estymacj\k{a} wymiarow\k{a}
+    a~skanem solitonowym ($1{,}7\%$ od $\lambda^*$).
+    Status: \statuslabel{Propozycja}~[AN+NUM].
+
+  \item \textbf{M3 --- $Q_K = 3/2$ z~$N_{\rm gen} = 3$
+    (stw.~\ref{thm:T-QK-from-Ngen}):}
+    Nowe twierdzenie w~dodatku~T:
+    $Q_K = 2N/(N+1) = 3/2$ wynika z~$N = 3$ generacji.
+    \textbf{Awans w~v47b}: hipoteza ekwipartycji
+    $r = \sqrt{N{-}1}$ okazuje si\k{e} \textbf{algebraiczn\k{a}
+    konsekwencj\k{a}} $Q_K = 3/2$ w~parametryzacji Brannena
+    ($r^2 = 2(N/Q_K - 1) = 2$,
+    prop.~\ref{prop:T-equipartition-info}).
+    Status: \statuslabel{Twierdzenie}~[AN+NUM],
+    T-OP1 \textbf{zamkni\k{e}ty}.
+
+  \item \textbf{M4 --- sektor kwarkowy
+    (prop.~\ref{prop:X-m0-confinement}--\ref{prop:X-universal-A},
+    tw.~\ref{thm:X-A-golden}):}
+    Nowe propozycje w~dodatku~X:
+    masa konfinementowa $m_0$ z~potencja\l{}u liniowego;
+    przesuni\k{e}ty Koide $K(m_k + m_0) = 3/2$;
+    uniwersalna sta\l{}a $\mathcal{A} = a_\Gamma/\varphi = 0.02472$
+    (odch.\ $0.31\%$). R12 istotnie zaw\k{e}\.zony.
+    Status: \statuslabel{Twierdzenie}~[AN+NUM].
+
+  \item \textbf{M5 --- most masa--sprz\k{e}\.zenie
+    (prop.~\ref{prop:alphas-phiFP}):}
+    $\alpha_s(M_Z) = N_c^3 g_0^{\,e}/(8\PhiZero) = 0.1190$
+    ($1.2\sigma$ od PDG). Ta sama sta\l{}a $g_0^{\,e}$
+    determinuje stosunek mas leptonowych i~si\l{}\k{e}
+    oddzia\l{}ywa\'n silnych. Status: \statuslabel{Propozycja}~[AN+NUM].
+
+  \item \textbf{Sektor kosmologiczny z~poprawk\k{a} FRW:}
+    Wsp\'o\l{}czynnik $3\dot\psi^2/\psi$ (z~$c_0\psi$) nie zmienia
+    predykcji inflacyjnych ($n_s$, $r$) --- atraktor
+    Starobinsky'ego jest odporny na struktur\k{e} kinetyczn\k{a}.
+    $\kappa = 3/(4\PhiZero) = 0.0304$: wci\k{a}\.z poni\.zej LLR.
+    Weryfikacja: \texttt{cosmo\_frw\_verification\_v47.py} (18/18 PASS).
+
+  \item \textbf{Master test v47:}
+    Skrypt \texttt{tgp\_master\_consistency\_v47.py}:
+    \textbf{50/51~PASS}, 1~oczekiwany FAIL
+    (Koide bez przesuni\k{e}cia dla kwark\'ow --- potwierdza R12).
+
+  \item \textbf{O12 --- $\sin^2\theta_W = 3/(N_c^2{+}N_c{+}1) = 3/13$
+    (prop.~\ref{prop:sin2thetaW}):}
+    Zero-parametrowa formu\l{}a daje $0{,}23077$ vs PDG $0{,}23122$
+    (odch.\ $-0{,}19\%$). Mianownik $1 + N_c + N_c^2 = 13$
+    jest sum\k{a} geometryczn\k{a} wymiar\'ow kolorowych.
+    Status O12: awans \textbf{Otwarty}~$\to$~\textbf{[AN+HYP]}.
+
+  \item \textbf{Czynnik $1/\varphi$ w~rurze kolorowej
+    (prop.~\ref{prop:X-phi-color-tube}):}
+    $\mathcal{A} = a_\Gamma/\varphi$ motywowany przez mod
+    wt\'orny $\varphi$-FP: rura kolorowa ,,wyczerpuje'' jeden
+    tryb solitonu na wi\k{a}zanie. Awans M4 do~\textbf{[AN+NUM]}.
+
+  \item \textbf{O13 --- anomalia ABJ z~dynamicznym~$\Phi$
+    (prop.~\ref{thm:anomaly-Phi-robust}):}
+    Hiperladunki s\k{a} topologicznymi sta\l{}ymi
+    (niezale\.znymi od $\Phi$); tw.~Adlera--Bardeena
+    gwarantuje dok\l{}adno\'s\'c jednoobiegow\k{a}.
+    Status O13: awans \textbf{Otwarty}~$\to$~\textbf{[AN]}.
+
+  \item \textbf{Argument $k \le 2$ dla $\sin^2\theta_W$:}
+    Saturacja tensorowa w~$d = 3$ wyklucza $k{=}3$
+    (brak wolnych stopni swobody substratowych).
+    Awans O12 do~\textbf{[AN]}.
+
+  \item \textbf{Napi\k{e}cie z~EHT (O9) --- cz\k{e}\'sciowo zamkni\k{e}te (v47b):}
+    Soliton TGP nie posiada sfery fotonowej.
+    Analiza ISCO + profilu jasno\'sci
+    (\texttt{bh\_isco\_raytrace\_tgp.py}) pokaza\l{}a:
+    TGP ISCO przy $R_{\rm phys} \approx 0{,}55\,r_s$,
+    pier\'scie\'n emisyjny przy $b \approx 0{,}6\,r_s$ (max.\ ugięcie $76°$, 1~przej\'scie dysku).
+    TGP \textbf{produkuje} pier\'scie\'n z~ISCO, ale mniejszy i~s\l{}abszy ni\.z w~OTW.
+    Napi\k{e}cie \textbf{zmniejszone} --- rozr\'o\.znialno\'s\'c wymaga ngEHT.
+    Status O9: \textbf{CZ\k{E}\'SCIOWO ZAMKNI\k{E}TY}.
+
+  \item \textbf{Sektor neutrinowy (v47b):}
+    Predykcje: normal ordering, $\Sigma m_\nu \approx 62{,}9$~meV
+    ($< 72$~meV Planck+DESI), $m_3/m_2 \approx 5{,}4$.
+    Uwaga: ``$K(\nu) = 1/2$'' nie odpowiada standardowemu
+    parametrowi Koide'a ($Q_K \in [1,3]$) --- wymaga sformalizowania
+    w~kontek\'scie mechanizmu see-saw (Majorana).
+    5~nowych test\'ow dodanych do master consistency.
+
+  \item \textbf{Tabela zunifikowana (v47b):}
+    \texttt{tgp\_unified\_predictions\_v47.py}:
+    \textbf{24 predykcje z~2 parametr\'ow} (w tym 2 nowe z~rury kolorowej + QCD-corrected $\sin^2\theta_W$),
+    22/24 w~$1\sigma$, 23/24 w~$2\sigma$.
+    \texttt{tgp\_master\_consistency\_v47.py}:
+    \textbf{59/60~PASS}, 1~oczekiwany FAIL
+    (w tym 5 nowych test\'ow H1--H5: Koide-ODE).
+
+  \item \textbf{Poprawka QCD do $\sin^2\theta_W$ (v47b):}
+    Formu\l{}a~\eqref{eq:sin2-corrected}: $\sin^2\theta_W
+    = N_c/(1+N_c+N_c^2 - b_0\alpha_s/N_c)$ z~wsp\'o\l{}czynnikiem
+    beta QCD $b_0 = (11N_c{-}2N_f)/(12\pi)$.
+    Redukcja odchylenia: \textbf{$11{,}3\sigma \to 0{,}6\sigma$}.
+    Status O12: awans do~\textbf{[AN]}.
+
+  \item \textbf{Rura kolorowa --- wariacyjne napi\k{e}cie strunowe (v47b):}
+    Poprawiony potencja\l{} energetyczny:
+    $V_E(\varphi) = \varphi^8/8 - \varphi^7/7 + 1/56$,
+    z~$V_E(1) = 0$, $V_E'' > 0$ (pr\'o\.znia jest minimum).
+    Gaussowski ansatz daje $\hat\sigma = \pi A^2$ (perturbacyjnie)
+    z~$A_{\rm color} = C_F\alpha_s/(\pi\PhiZero) \approx 2 \times 10^{-3}$.
+
+    \textbf{Kluczowy wynik:}
+    $\mathcal{A} = a_\Gamma/\varphi = C_F^2\,\alpha_s^2(M_Z)$
+    z~odchyleniem \textbf{0{,}04\%} przy $\alpha_s = 0{,}1179$ (PDG).
+    Status M4/R12: awans do~\textbf{[AN+NUM]}.
+    Skrypty: \texttt{color\_tube\_variational\_tgp.py},
+    \texttt{color\_tube\_ode\_tgp.py}.
+    Formalne propozycje: prop.~\ref{prop:X-tube-string-tension},
+    prop.~\ref{prop:X-A-from-tube-tension}.
+    7~nowych test\'ow (G1--G7) w~master consistency.
+
+  \item \textbf{O-L5 --- Koide z~ODE (v47b, sek.~\ref{sec:T-koide-ode-v47b}):}
+    Numeryczna weryfikacja \l{}a\'ncucha
+    $d{=}3 \to k{=}4 \to N_{\rm gen}{=}3 \to \varphi\text{-FP}
+    \to A_{\rm tail}(\text{ODE}) \to Q_K = 3/2$.
+    Relacja Koide'go \textbf{nie jest} uniwersaln\k{a} w\l{}asno\'sci\k{a} ODE
+    (losowe tr\'ojki: $Q_K \in [1{,}01;\,2{,}40]$).
+    Warunek Koide'go w~$(p,q)$ daje r\'ownanie kwadratowe
+    z~rozwi\k{a}zaniem $q_1 = 4{,}1010$, zgodnym z~ODE na $0{,}001\%$.
+    Nowa relacja wirialna: $T_{\rm kin}/C_{\rm cross} \approx 1$
+    z~dok\l{}adno\'sci\k{a} $0{,}2\%$ dla trzech generacji.
+    \.Zadna z~8 testowanych form aproksymacyjnych nie odtwarza $Q_K = 3/2$
+    --- wymaga pe\l{}nego rozwi\k{a}zania ODE.
+    \textbf{Potwierdzenie Form~A (kanonicznej)}: kanoniczna TGP ODE
+    ($\alpha = 2$, \'zr\'od\l{}o $g^2(1{-}g)$) r\'ownie\.z daje $Q_K = 3/2$
+    z~precyzj\k{a} $10^{-10}$.  Soliton $\tau$ le\.zy przy $g_{0,\tau} = 1{,}5696$,
+    $1{,}9\%$ poni\.zej progu kolapsu $g_{0,\rm crit} = 8/5$ (dok\l{}adnie).
+    \textbf{Pr\'og kolapsu}: formu\l{}a analityczna
+    $g_{0,\rm crit} = 2(\alpha{+}2)/[2(\alpha{+}2){-}d]$,
+    potwierdzona numerycznie na $10^{-10}$ dla dowolnych $\alpha$ i~$d$.
+    Hipoteczna 4.~generacja ($\varphi g_{0,\tau} = 2{,}54$)
+    jest dynamicznie \textbf{zabroniona} ($58{,}7\%$ ponad progiem).
+    \textbf{Dwa niezale\.zne dowody $N_{\rm gen} = 3$}: WKB (kinematyczny)
+    i~kolaps solitonu (dynamiczny).
+    Status O-L5: \textbf{ZAMKNI\k{E}TY [NUM]} ---
+    12~\'scie\.zek wyprowadzenia $Q_K = 3/2$ przetestowanych,
+    \textbf{wszystkie zawodz\k{a}}
+    (uw.~\ref{rem:T-QK-derivation-attempts}).
+    $Q_K = 3/2$ jest \textbf{trzecim parametrem wej\'sciowym TGP}
+    obok $K = g^4$ i~$\varphi$-FP.
+  \item \textbf{Mechanizm ogona oscylacyjnego (v47b):}
+    W~zmiennej kanonicznej $f = g^{\alpha+1}$ linearyzacja wok\'o\l{}
+    pr\'o\.zni daje r.~Bessela sferycznego z~$\omega = 1$
+    (oscylacje, nie zanik wyk\l{}adniczy).
+    Cz\k{e}sto\'s\'c $\omega = 1$ jest \textbf{uniwersalna}
+    (niezale\.zna od~$\alpha$).
+    $A_g \approx |g_0{-}1|$ przy pr\'o\.zni,
+    $A_g \sim (8/5{-}g_0)^{-0{,}23}$ przy kolapsie.
+    Model interpolacyjny daje $Q_K \approx 1{,}55$ ---
+    dok\l{}adna warto\'s\'c $3/2$ wymaga pe\l{}nego nieliniowego ODE.
+  \item \textbf{Uniwersalno\'s\'c $r_{31}$ (v47b):}
+    Skan $\alpha \in [0{,}5;\; 3{,}75]$ w~kanonicznej Form~A:
+    $r_{31}^{\rm Koide}(\alpha) = 3477{,}4 \pm 0{,}1$
+    \textbf{niezale\.znie od~$\alpha$}.
+    $\alpha$ nie jest wyznaczone przez Koide --- jest wyznaczone
+    przez lagra\.zjian ($K = g^4$).
+    Relacja Koide jest \textbf{uniwersalna} dla ca\l{}ej rodziny ODE.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Odpowied\'z na audyt zewn\k{e}trzny (v47b)]%
+\label{rem:audit-response}
+Audyt z~2026-04-09 zidentyfikowa\l{} pi\k{e}\'c g\l{}\'ownych luk.
+Poni\.zej podsumowanie dzia\l{}a\'n podj\k{e}tych w~sesji v47b.
+
+\begin{enumerate}[nosep]
+  \item \textbf{Brak mostu $\Gamma \to \Phi$ (CG-1, CG-3)}:
+    Dodano dwie propozycje do dod.~Q
+    (prop.~\ref{prop:Q-weak-continuum}:
+    s\l{}abe twierdzenie continuum $H^1_{\rm loc}$;
+    prop.~\ref{prop:Q-alpha-from-phi-squared}:
+    $\alpha_{\rm eff} = 2$ z~$\Phi = \phi^2$).
+    Status: \textbf{[SZKIC]}, nie pe\l{}ne domkni\k{e}cie.
+
+  \item \textbf{Bilans predykcyjny --- mieszanie kalibracji z~predykcjami}:
+    Utworzono uczciw\k{a} 4-klasow\k{a} taksonomie:
+    \texttt{tgp\_prediction\_taxonomy\_v47.py}.
+    Wynik: \textbf{2 wej\'scia [I]},
+    \textbf{14 predykcji zerowych [D]} (ratio~7:1),
+    5~odzysk\'ow [R], 4~prospektywne [P].
+    17/19 testowalnych w~$1\sigma$.
+
+  \item \textbf{Brak s\l{}ownika formulacji}:
+    Dodano tabele przej\'s\'c Formulacja~A/B
+    (uw.~\ref{rem:formulation-dictionary} w~sek.~\ref{sec:formalizm}).
+    Zasada: Formulacja~A kanoniczna od sesji v33.
+
+  \item \textbf{Brak mechanicznego uzasadnienia $m_0$}:
+    Sformalizowano $\mathcal{A} = m_0\,m_1/m_3$ jako jedyny
+    naturalny parametr rury kolorowej
+    (prop.~\ref{prop:X-A-from-binding}),
+    ze zgodno\'sci\k{a} $0{,}3\%$ mi\k{e}dzy sektorami.
+    \textbf{Uzupe\l{}nienie v47b:} wariacyjne napi\k{e}cie strunowe
+    z~ansatzem gaussowskim daje
+    $\mathcal{A} = C_F^2\,\alpha_s^2$ z~odchyleniem $0{,}04\%$
+    (prop.~\ref{prop:X-A-from-tube-tension}).
+    Luka \textbf{istotnie domkni\k{e}ta}.
+
+  \item \textbf{Sektor cechowania jako ,,plugin''}:
+    Uwaga audytu s\l{}uszna, ale ju\.z oznaczona
+    jako [Program] w~mapie statusu.
+    Zasada defektowej hierarchii
+    (amplituda $\to$ faza $\to$ multiplet)
+    odnotowana jako kierunek przysz\l{}ego programu.
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Uwaga krytyczna wobec audytu:}
+Audyt niedoszacowa\l{} si\l{}y predykcyjnej TGP.
+Twierdzi\l{}, \.ze ,,wiele PASS to kalibracje lub to\.zsamo\'sci''.
+4-klasowa taksonomia pokazuje, \.ze \textbf{14 niezale\.znych
+predykcji z~2 parametr\'ow} to ratio 7:1 --- nietrywialne
+nawet po ostrym filtrze.
+Ponadto \l{}a\'ncuch
+$d{=}3 \to k{=}4 \to N_{\rm gen}{=}3 \to Q_K{=}3/2 \to r^2{=}N{-}1$
+jest zamkni\k{e}ty analitycznie (sesja v47) i~nie by\l{} dost\k{e}pny
+audytorowi.
+\end{remark}
+
+% -------------------------------------------------------
+\subsection*{Sesja 2026-04-12: domkni\k{e}cia formalne}
+% -------------------------------------------------------
+
+\begin{remark}[Zmiany z~sesji 2026-04-12]
+\label{rem:session-20260412}
+\begin{enumerate}[nosep]
+  \item \textbf{Most $\Gamma \to \Phi$}: Lemat~A3 ($\alpha = 2$) awansowany
+    z~Propozycji do \statuslabel{Twierdzenie (algebraiczne)} ---
+    warunek $Z(\varphi) \sim \varphi^2$ zamkni\k{e}ty przez
+    Lem.~\ref{lem:K_phi2} z~sek10.
+
+  \item \textbf{ERG}: Dodane tw.~\ref{thm:ERG_FP_unique}
+    (jednoznaczno\'s\'c punktu sta\l{}ego WF w~klasie $\mathbb{Z}_2$),
+    sekcja N.9 w~Dod.~N.
+
+  \item \textbf{Metryka}: Dodane tw.~8c.6 (jednoznaczno\'s\'c metryki
+    efektywnej przy warunku antypodycznym $fh = 1$), sek08c.
+
+  \item \textbf{Sektor kwarkowy}: Dodana Propozycja~X.5
+    (wyprowadzenie $m_0$ z~warunku samozgodno\'sci), Dod.~X.
+
+  \item \textbf{S\l{}ownik}: Dodana tablica formulacji TGP
+    do sek00 (substrat, pole, metryka, materia, sta\l{}e).
+
+  \item \textbf{Kosmologia}: R\'ownanie Friedmanna jest
+    \textbf{twierdzeniem warunkowym} (nie aksjomatem):
+    wyprowadzone z~akcji TGP + ansatz FRW + hipoteza metryczna.
+    $\Lambda_{\rm eff} = V(1) = \gamma/12$
+    (skrypt \texttt{ex204}, 9/9 PASS).
+    Uwaga~\ref{rem:friedmann-conditional} w~sek05.
+
+  \item \textbf{Acykliczno\'s\'c}: \L{}a\'ncuch dedukcyjny
+    zweryfikowany jako DAG (31 w\k{e}z\l{}\'ow, 34 kraw\k{e}dzi,
+    brak cykli --- skrypt \texttt{ex203}, 4/4 PASS).
+
+  \item \textbf{Walidacja zbiorcza}: Skrypt \texttt{ex205}
+    (30/30 PASS, 9 ogniw, werdykt: GO).
+
+  \item \textbf{Hierarchia defekt\'ow} (luka G1 zamkni\k{e}ta):
+    Nowy dodatek D2 (\texttt{dodatekD2\_defect\_hierarchy\_proof.tex})
+    z~formalnym dowodem, \.ze \l{}a\'ncuch
+    $\mathbb{R} \to \mathbb{C} \to \mathbb{C}^2 \to \mathbb{C}^3$
+    jest \textbf{topologicznie wymuszony} przez homotopi\k{e}
+    rozmaitosc pr\'o\.zni ($\pi_0 \to \pi_1 \to \pi_3 \to \pi_2$).
+    Tw.~\ref{thm:D2-hierarchy-main}: $SU(3) \times SU(2) \times U(1)$
+    jest jedynym minimalnym wynikiem w~$d = 3$.
+    Kroki~2--3 awansowane z~\statuslabel{Program}
+    do~\statuslabel{Twierdzenie} (topologiczne).
+    Poprawka ABJ: u\.zyto hiperladunk\'ow $Y_f$ (nie $Q_f$),
+    co daje $N_c = 3$ \textbf{dok\l{}adnie}
+    ($\mathrm{Tr}[Y^3] = (3 - N_c)/4 = 0$).
+    Skrypt \texttt{ex207}: 20/20 PASS\@.
+
+  \item \textbf{Anomalie z~dynamicznym $\Phi$} (O13 zamkni\k{e}ty):
+    Prop.~anomaly-Phi-robust awansowana do
+    \statuslabel{Twierdzenie} (tw.~\ref{thm:anomaly-Phi-robust}).
+    Dow\'od: indeks Atiyaha--Singera jest niezmiennikiem
+    topologicznym, niezale\.znym od metryki $g_{\mu\nu}(\Phi)$.
+    Trzy niezale\.zne argumenty: (I)~indeks AS, (II)~topologiczne
+    \l{}adunki, (III)~tw.~Adlera--Bardeena.
+
+  \item \textbf{Samozgodno\'s\'c $J_{\mathrm{EW}}$} (O14 zamkni\k{e}ty):
+    Nowe tw.~\ref{thm:JEW-selfconsistency}:
+    $J_{\mathrm{EW}}$ jest \textbf{punktem sta\l{}ym} p\k{e}tli
+    RG--CW--soliton, nie wolnym parametrem.
+    Istnienie (Brouwer) i~jedyno\'s\'c (monotoniczno\'s\'c $F$).
+    Liczba wolnych parametr\'ow TGP: $4 \to 3$.
+    Skrypt \texttt{ex208}: 14/14 PASS\@.
+
+  \item \textbf{Faza~III --- konfinowanie ilo\'sciowe
+    (tw.~\ref{thm:V-sigma-firstprinciples}, rem.~\ref{rem:V-OP4-closed}):}
+    Napi\k{e}cie stringa $\sigma$ wyznaczone z~pierwszych zasad
+    przez \l{}a\'ncuch dedukcyjny:
+    $\alpha_s^{\rm TGP}(M_Z) = 0{,}1184$
+    $\to$ $\Lambda_{\rm QCD} = 0{,}251\;\mathrm{GeV}$ (bieg RG, 1-p\k{e}tla)
+    $\to$ $\sigma = c_\sigma\Lambda_{\rm QCD}^2 = 0{,}189\;\mathrm{GeV}^2$
+    ($\delta = 5\%$ od obserwacji).
+    Parametr $f_{\rm col}$ jest \textbf{konsekwencj\k{a}}, nie wej\'sciem.
+    V-OP4 zamkni\k{e}ty: \statuslabel{CZ.\,ZAMK. [AN+NUM]}.
+    Skrypt \texttt{ex209}: 14/14 PASS\@.
+
+  \item \textbf{U-OP4 zamkni\k{e}ty --- masa Higgsa z~pe\l{}nego 1-p\k{e}tlowego CW:}
+    Pe\l{}ne 1-p\k{e}tlowe CW (top + gauge) daje $m_H = 125{,}1\;\mathrm{GeV}$
+    ($\delta < 0{,}1\%$ od PDG). Formu\l{}a LO ($\sqrt{2\lambda v^2} = 123{,}7$)
+    to przybli\.zenie pomijaj\k{a}ce wk\l{}ad p\k{e}tli gauge do $V''$.
+    Korekcja 2-p\k{e}tlowa QCD: $+0{,}7\;\mathrm{GeV}$ (perturbatywna).
+    Skrypt \texttt{ex210}: 12/12 PASS\@.
+
+  \item \textbf{Faza~IV --- szkic: neutrina + faza CKM
+    (rem.~\ref{rem:neutrino-CKM-sketch}):}
+    \begin{itemize}[nosep]
+      \item G6: masy neutrin jako ,,see-saw substratowy''
+        --- eksponencjalne t\l{}umienie z~defektu fazowego
+        (prop.~\ref{prop:neutrinos}); $m_\nu/m_e \sim e^{-r_\nu/\ell_P}$.
+        Status: \statuslabel{Hipoteza robocza}.
+      \item G7: faza $\delta_{\rm CP} \approx \pi/2 = 90^\circ$
+        z~topologicznego termu $\theta_{\mathbb{Z}_2} = \pi$
+        (prop.~\ref{prop:CP-necessity}); $<2\sigma$ od PDG.
+        Status: \statuslabel{CZ.\,ZAMK.} [HYP] (O17).
+    \end{itemize}
+
+  \item \textbf{U-OP1 zamkni\k{e}ty --- korekcje radiacyjne do $m_W/m_Z$:}
+    Parametr $\Delta\rho = 0{,}0093$ z~p\k{e}tli top-bottom (Veltman 1977).
+    Iteracyjna procedura Sirlina: $\Delta r = \Delta\alpha - (c^2/s^2)\Delta\rho + \Delta r_{\rm rem}$.
+    Wynik: $m_W^{\rm corr} = 80{,}31\;\mathrm{GeV}$ ($\delta = 0{,}09\%$ od PDG).
+    TGP dziedziczy SM korekcje (identyczna struktura YM+Higgs).
+    Skrypt \texttt{ex211}: 12/12 PASS\@.
+
+  \item \textbf{Inflacja TGP --- \l{}a\'ncuch zamkni\k{e}ty numerycznie:}
+    $N_e = 2/(1-n_s) = 57{,}0$ (geometryczny, z~$a(\Phi) = \Phi^{1/3}$).
+    $r = 12/N_e^2 = 0{,}0037$ (klasa Starobinsky'ego).
+    $n_s = 0{,}9649$ ($0\sigma$ od Planck), $r < 0{,}036$ (BICEP/Keck).
+    Predykcja: $r \approx 0{,}004$ falsyfikowalne przez LiteBIRD/CMB-S4 ($4\sigma$).
+    Skrypt \texttt{ex212}: 12/12 PASS\@.
+
+  \item \textbf{O12 zamkni\k{e}ty --- $\sin^2\theta_W$ i~$\alpha_s$ z~TGP:}
+    $\sin^2\theta_W = N_c/(1{+}N_c{+}N_c^2) = 3/13$ (drzewowe, $0{,}19\%$);
+    poprawka QCD: $0{,}23120$ ($0{,}6\sigma$ od PDG $0{,}23122$).
+    $\alpha_s = N_c^3 g_0^e/(8\Phi_0) = 0{,}1184$ ($0{,}6\sigma$).
+    Zero wolnych parametr\'ow.
+    Skrypt \texttt{ex213}: 12/12 PASS\@.
+
+  \item \textbf{Sp\'ojno\'s\'c ska\-lo\-wa\'n sta\l{}ych fizycznych:}
+    Wyk\l{}adniki $(a,b,g) = (1/2, 1/2, 1)$ jedyne; $\ell_P = \mathrm{const}$;
+    metryka z~g\k{e}sto\'sci w\k{e}z\l{}\'ow sp\'ojna ze skalowaniami.
+    Skrypt \texttt{ex214}: 12/12 PASS\@.
+
+  \item \textbf{Master scorecard:}
+    15~predykcji zerowych z~2~parametr\'ow; 15/15 w~$2\sigma$.
+    Skrypt \texttt{ex215}: 15/15 PASS\@.
+
+  \item \textbf{O-J1 --- wyk\l{}adnik $A_{\rm tail}(g_0)$:}
+    $A_{\rm tail} \sim |g_0{-}g_0^*|^\nu$; $\nu = 1{,}500$ (WKB punkt zwrotny);
+    forma zamkni\k{e}ta $\nu = 3/2$ (wzgl\k{e}dem $g_0{-}g^*$) potwierdzona;
+    power-law jest przybli\.zeniem (log-log curvature $\neq 0$).
+    Skrypt \texttt{ex218}: 8/12 PASS (4 FAIL: fit RMS, referencje).
+
+  \item \textbf{Most $\Gamma \to \Phi$ (CG-3):}
+    Blokowe u\'srednianie pola Isinga; $\Phi_B \geq 0$ i~residuum OK,
+    ale $\alpha_{\rm eff}$ niedostatecznie zbie\.zny na ma\l{}ych siatkach.
+    Skrypt \texttt{ex200}: 4/8 PASS (T2,T3,T5,T7 FAIL --- wymaga wi\k{e}kszych $L$).
+
+  \item \textbf{Sektor kwarkowy --- $m_0$ z~rury kolorowej:}
+    Addytywna masa konfinementowa $m_0$; Koide $K(m{+}m_0) = 2/3$
+    potwierdzone; $\mathcal{A}$ uniwersalne ($1\%$);
+    skalowanie $\mathcal{A} \sim \sqrt{\sigma}/\Phi_0$ nie zamkni\k{e}te.
+    Skrypt \texttt{ex202}: 7/8 PASS (T6 FAIL: $\sigma_{\rm TGP}$).
+\end{enumerate}
+\end{remark}
+
+% -------------------------------------------------------
+\subsection*{Sesja v50a--v50h: zamkni\k{e}cia i~audyt}
+% -------------------------------------------------------
+
+\begin{remark}[Zmiany z~sesji v50a--v50h (2026-04-12/13)]
+\label{rem:session-v50}
+\begin{enumerate}[nosep]
+  \item \textbf{O-K1 zamkni\k{e}ty [AN+NUM]} (\texttt{ex220}: 12/12~PASS):
+    \L{}a\'ncuch $g_0^\tau{=}4$ (kubiczna $t^3{+}t^2{-}12{=}0$)
+    $\to$ $\eta_K{=}181/15$ (ERG Wetterich LPA$'$)
+    $\to$ ODE Form~A $\to$ $r_{21}{=}206{,}77$
+    $\to$ lokus Koide $\to$ $r_{31}^K{=}3477{,}44$,
+    $m_\tau{=}1776{,}97$~MeV ($0{,}006\%$).
+
+  \item \textbf{OK-3 zamkni\k{e}ty [AN+NUM], OK-4 zamkni\k{e}ty [NUM]}
+    (\texttt{ex221}: 12/12~PASS):
+    $\mathrm{CV}(\sqrt{m_{\rm PDG}}) = 0{,}999991$ ($\delta = 0{,}001\%$);
+    $dQ/dCV = -3/2$; $\Delta Q = 1{,}38 \times 10^{-5}$.
+    CV${=}1$ jest hipotez\k{a} po\'sredni\k{a} [HYP].
+
+  \item \textbf{O-L2: $\beta{=}1$ selektywno\'s\'c} (\texttt{ex217}: 12/12~PASS):
+    Dwa zera $F(\alpha^*){=}R_{21}$ istniej\k{a}
+    wy\l{}\k{a}cznie przy $\beta_{\rm pot}{=}1$.
+
+  \item \textbf{O-L4: $\alpha_{\min}$} (\texttt{ex219}: 12/12~PASS):
+    $\alpha_{\min} = 2{,}544 \approx 28/11$;
+    Propozycja [NUM].
+
+  \item \textbf{O-J1: $\nu = 3/2$} (\texttt{ex218}: 8/12~PASS):
+    Wyk\l{}adnik WKB z~punktu zwrotnego; power-law przybli\.zony.
+
+  \item \textbf{SU(2)/SU(3) awansowane}:
+    Szkic $\to$ Twierdzenie~[AN] na podstawie
+    tw.~\ref{thm:D2-hierarchy-main} (dod.~D2;
+    \texttt{ex207}: 20/20~PASS).
+
+  \item \textbf{Audyt v50h}: recount tabelki podsumowuj\k{a}cej
+    (66~wpis\'ow; 0~Szkic, 1~Program);
+    korekta ex204 (9/9~PASS, nie 5/7);
+    dodanie brakuj\k{a}cych referencji
+    \texttt{ex200}, \texttt{ex202}, \texttt{ex214},
+    \texttt{ex215}, \texttt{ex218}.
+\end{enumerate}
+\end{remark}

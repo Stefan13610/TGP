@@ -214,7 +214,7 @@ osobny program `nuclear_from_soliton`, nie należy do atom_from_soliton.
 > silnego i słabego (które TGP ma w sek10 formalnie, ale nie numerycznie).
 >
 > **Co zostało zamknięte w tej sesji**: „czy TGP ma atom wodoru" —
-> **TAK**, przy czym G6 z [[research/em_from_substrate/EM_VERDICT.md]]
+> **TAK**, przy czym G6 z [[EM_VERDICT.md]]
 > (wysoka priorytet) jest teraz zamknięte przez afs01.
 
 ---
@@ -222,18 +222,18 @@ osobny program `nuclear_from_soliton`, nie należy do atom_from_soliton.
 ## 7. Pliki sesji
 
 - [[research/atom_from_soliton/PLAN.md]] — plan programu
-- [[research/atom_from_soliton/REVISION.md]] — rewizja atomic_shells verdict
-- [[research/atom_from_soliton/afs01_hydrogen_from_substrate.py]] — 8/8 PASS
-- [[research/atom_from_soliton/afs02_Z_scaling.py]] — 5/5 PASS
-- [[research/atom_from_soliton/ATOM_FROM_SOLITON_VERDICT.md]] — ten plik
+- [[REVISION.md]] — rewizja atomic_shells verdict
+- [[afs01_hydrogen_from_substrate.py]] — 8/8 PASS
+- [[afs02_Z_scaling.py]] — 5/5 PASS
+- [[ATOM_FROM_SOLITON_VERDICT.md]] — ten plik
 
 ## Powiązane werdyki
 
-- [[research/em_from_substrate/EM_VERDICT.md]] — zamyka kroki 1-5 (EM emergence)
+- [[EM_VERDICT.md]] — zamyka kroki 1-5 (EM emergence)
   * **G6 zamknięte** przez afs01 (było oznaczone "wysoki priorytet, em06 nie zrobione")
-- [[research/atomic_shells_closure/ATOMIC_SHELLS_VERDICT.md]] — stary werdyk
+- [[ATOMIC_SHELLS_VERDICT.md]] — stary werdyk
   * **Do rewizji**: zbyt mocne stwierdzenie "brak aparatu atomowego"
-- [[research/cohesion_closure/COHESION_VERDICT.md]] — E_coh metali
+- [[COHESION_VERDICT.md]] — E_coh metali
   * Nadal ważne: TGP nie daje jellium/DFT natywnie
 
 ## Liczbowe podsumowanie

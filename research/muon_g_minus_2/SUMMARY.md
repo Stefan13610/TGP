@@ -290,5 +290,5 @@ Option 3 is the recommended path: [[../liquid_viscosity/SUMMARY.md]] is clean, w
 - [[ps05_trace_anomaly_channel.py]] — trace-anomaly channel suppressed by $10^{10}$, dilaton dominance confirmed
 - [[ps06_phi0_scale_consistency.py]] — $\Phi_0$ cross-check: minimal dilaton excluded by LEP Z-pole
 - [[../liquid_viscosity/SUMMARY.md]] — parallel closure paper (cheaper sector)
-- [[../superconductivity_closure/P6_closure.md]] — template for multi-parameter TGP closure
-- [[../NEW_DIRECTIONS_2026-04-20.md]] — research directions index
+- [[../superconductivity_closure/P6_plan.md]] — template for multi-parameter TGP closure
+- [[NEW_DIRECTIONS_2026-04-20.md]] — research directions index

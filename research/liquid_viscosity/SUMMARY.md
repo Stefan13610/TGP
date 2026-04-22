@@ -170,5 +170,5 @@ These are predictable physics-based sub-class refinements, not failures of unive
 - [[ps01_fragility_universality.py]] — x_TGP per class extraction
 - [[ps02_trachenko_bound_TGP.py]] — quantum floor check
 - [[PLAN.md]] — research plan
-- [[../NEW_DIRECTIONS_2026-04-20.md]] — index
-- [[../superconductivity_closure/P6_closure.md]] — parallel template (SC)
+- [[NEW_DIRECTIONS_2026-04-20.md]] — index
+- [[../superconductivity_closure/P6_plan.md]] — parallel template (SC)

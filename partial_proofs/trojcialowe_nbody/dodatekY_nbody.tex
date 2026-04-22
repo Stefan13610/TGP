@@ -1,0 +1,82 @@
+% =============================================================================
+% dodatekY_nbody.tex -- N-body dynamics from TGP Lagrangian (Appendix Y)
+% Integrates the N-body results into the main manuscript.
+% Content from: nbody/tgp_nbody_lagrangian_eom.tex (EOM)
+%               + summary of 8 Results from tgp_nbody_results_clean.tex.
+% =============================================================================
+
+\section{N-body dynamics from TGP Lagrangian}%
+\label{app:nbody}
+
+This appendix summarizes the complete $N$-body dynamics arising from the
+TGP scalar-field Lagrangian with quartic self-interaction.
+The full derivations and numerical verification are given in the
+standalone paper (Serafin 2026, ``N-body dynamics of TGP'',
+\texttt{nbody/tgp\_nbody\_results\_clean.tex}).
+
+% --- EOM subsection (already formatted for \input{}) ---
+\input{research/nbody/tgp_nbody_lagrangian_eom}
+
+% --- Summary of principal results ---
+\subsection{Summary of principal results}%
+\label{subsec:nbody-results-summary}
+
+The $N$-body analysis yields \textbf{eight} principal results,
+each verified by dedicated regression tests (59/59 PASS,
+102 active scripts in the \texttt{nbody/examples/} directory).
+
+\begin{center}\small
+\begin{tabular}{@{}clp{8.5cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Result} & \textbf{Key finding} \\
+\midrule
+1 & Earnshaw violation
+  & Equilateral 3-body configurations admit stable static equilibria
+    with all normal modes $\omega^2 > 0$; Newton gives marginal modes. \\[4pt]
+2 & Chaos suppression
+  & TGP suppresses 3-body chaos by 35--45\% (maximal Lyapunov exponent)
+    for $\beta \gtrsim 0.025$; enhanced by $V_3$. \\[4pt]
+3 & $C_{\rm eff}$ from EFT
+  & Yukawa source coupling derived from EFT projection of
+    classical topological defect profile. \\[4pt]
+4 & Classical $\neq$ Yukawa
+  & Classical soliton interaction is oscillatory with power-law decay;
+    Yukawa law requires the EFT mass gap. \\[4pt]
+5 & $I_Y$ multipole form
+  & Irreducible three-body Feynman integral admits semi-analytic
+    multipole representation ($< 0.01\%$ at $L_{\max} = 15$). \\[4pt]
+6 & $V_3/V_2$ regime map
+  & Perturbative ($\sim 1\%$) in Lyapunov regime; exponential
+    suppression for $m_{\rm sp}\,d > 3$. \\[4pt]
+7 & Analytical equilibria
+  & Closed-form equilibrium distances $d_{\rm rep}$, $d_{\rm well}$;
+    radial normal-mode frequency; TGP Hill sphere generically expanded
+    relative to Newton. \\[4pt]
+8 & Unequal-mass phase diagram
+  & Phase boundary $\beta_{\rm crit} = \frac{3}{2}\sqrt{\gamma(C_1+C_2)}$;
+    escape velocity $v_{\rm esc} = \sqrt{2|V_2(d_{\rm well})|/\mu}$;
+    breathing mode $\omega_{\rm br}^2 = \frac{3}{2}\,\omega_{\rm rad}^2$
+    (exact), $V_3$ correction $-1.3\%$. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Relation to main manuscript.}
+The pairwise potential $V_2$ (gradient + repulsion + confinement)
+corresponds to the three regimes of
+Section~\ref{sec:rezimy}\footnote{If the label differs in
+the actual manuscript, adjust accordingly.}.
+The three-body force $V_3$ arises from the $\Phi^4$
+self-interaction term in the TGP action
+(Section~\ref{sec:formalizm}\footnotemark[\value{footnote}]).
+The Yukawa EFT coupling $C_{\rm eff}$ provides the microscopic
+origin of the source strength $C_i$ used throughout the
+$N$-body analysis, connecting to the soliton mass hierarchy
+of Section~\ref{sec:stale}\footnotemark[\value{footnote}].
+
+\paragraph{Reproducibility.}
+All results are reproduced by
+\texttt{python nbody/reproduce\_all.py -{}-quick}
+(10/10 stages PASS in ${\sim}100$\,s).
+See \texttt{nbody/README.md} for the full manifest.
+

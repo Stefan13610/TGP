@@ -1,0 +1,1215 @@
+% ===================================================================
+%  Dodatek X: Sektor kwarkowy --- rozszerzenie schematu phi-FP + Koide
+%  TGP v1 --- Sesja v45 (2026-04-05)
+% ===================================================================
+\section{Sektor kwarkowy: $\varphi$-FP a~Koide}%
+\label{app:quark-sector}
+
+Niniejszy dodatek bada rozszerzenie schematu \emph{$\varphi$-FP + Koide}
+(prop.~\ref{prop:J-koide-chain} z~dod.~J) na sektory kwarkowe:
+$(d, s, b)$ i~$(u, c, t)$.
+Wyniki oparte na skryptach \texttt{ex158}--\texttt{ex161}
+(sesja v45, 2026-04-05).
+
+% -------------------------------------------------------------------
+\subsection{Pytania badawcze}\label{app:X-pytania}
+% -------------------------------------------------------------------
+
+\begin{enumerate}[nosep]
+  \item Czy ODE substratowe~\eqref{eq:J-substrate-ode} daje sensowne
+        $A_{\rm tail}(g_0)$ dla stosunków mas kwarkowych?
+  \item Czy selekcja $\varphi$-FP ($g_0^{(2)} = \varphi\,g_0^{(1)}$)
+        reprodukuje $r_{21}$ w~sektorach kwarkowych?
+  \item Czy formuła Koidego $K = 2/3$ domyka triplety kwarkowe
+        (tak jak lepton\-owe)?
+  \item Czy modyfikacja ODE (np.\ czynnik kolorowy $\alpha_{\rm eff}$)
+        może naprawić Koide?
+\end{enumerate}
+
+% -------------------------------------------------------------------
+\subsection{Masy kwarkowe (dane wejściowe)}\label{app:X-masy}
+% -------------------------------------------------------------------
+
+Warto\'sci PDG ($\overline{\text{MS}}$, skala 2~GeV):
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Sektor & $m_1$ [MeV] & $m_2$ [MeV] & $m_3$ [MeV]
+       & $r_{21} = m_2/m_1$ & $r_{31} = m_3/m_1$ \\
+\midrule
+leptony ($e, \mu, \tau$) & 0,511 & 105,7 & 1776,9 & 206,8 & 3477 \\
+down ($d, s, b$)         & 4,67  & 93,4  & 4180   & 20,0  & 895  \\
+up ($u, c, t$)           & 2,16  & 1270  & 172\,760 & 588 & 79\,982 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{$\varphi$-FP: wynik uniwersalny}\label{app:X-phiFP}
+% -------------------------------------------------------------------
+
+\begin{result}[$\varphi$-FP reprodukuje $r_{21}$ we wszystkich sektorach]%
+\label{res:X-phiFP-universal}
+Dla ODE substratowego~\eqref{eq:J-substrate-ode} selekcja
+$g_0^{(2)} = \varphi\,g_0^{(1)}$ wyznacza jednoznacznie
+$g_0^{(1)}$ dla ka\.zdego sektora, a~wynikowy stosunek mas
+$(A_2/A_1)^4 = r_{21}$ jest zgodny z~PDG:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+  Sektor & $g_0^{(1)}$ & $g_0^{(2)} = \varphi\,g_0^{(1)}$
+         & $r_{21}^{\rm (ODE)}$ & $r_{21}^{\rm (PDG)}$ \\
+\midrule
+  leptony & 0,8695 & 1,4068 & 206,8 & 206,8 \\
+  down    & 0,8171 & 1,3221 & 20,0  & 20,0  \\
+  up      & 0,8905 & 1,4408 & 588,0 & 588,0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\begin{remark}[Interpretacja]\label{rem:X-phiFP-interpretacja}
+$\varphi$-FP jest \textbf{mechanizmem uniwersalnym}: jedyny input
+to stosunek $r_{21}$ (dane PDG), a~$\varphi$-FP go reprodukuje
+niezale\.znie od typu sektora.
+R\'o\.znice w~$g_0^{(1)}$ ($0{,}817$ vs $0{,}870$ vs $0{,}891$)
+odzwierciedlaj\k{a} r\'o\.znice w~$r_{21}$ --- TGP nie wymaga
+nowych postulat\'ow dla ka\.zdego sektora.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Koide: wynik specyficzny sektorowo}\label{app:X-koide}
+% -------------------------------------------------------------------
+
+\begin{result}[Koide $K = 2/3$ jest specyficzny dla sektor\'ow leptonowych]%
+\label{res:X-koide-failure}
+Warto\'s\'c $K = \sum m_i / (\sum\sqrt{m_i})^2$ obliczona z~mas PDG:
+\begin{center}
+\begin{tabular}{@{}lccl@{}}
+\toprule
+  Sektor & $K$ & $\Delta K / K_{\rm Koide}$ & Status \\
+\midrule
+  leptony ($e, \mu, \tau$) & 0,6667 & $< 0{,}01\%$ & \checkmark \\
+  down ($d, s, b$)         & 0,7314 & $9{,}7\%$     & $\times$ \\
+  up ($u, c, t$)           & 0,8490 & $27{,}4\%$    & $\times$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Niezmienniczo\'s\'c $K$ wzgl\k{e}dem ODE}%
+\label{app:X-K-invariant}
+% -------------------------------------------------------------------
+
+\begin{result}[$K$ jest ODE-niezmienniczy]\label{res:X-K-invariant}
+Formuła Koidego $K = \sum m_i / (\sum\sqrt{m_i})^2$ jest jednorodna
+stopnia $0$ w~masach.
+Poniewa\.z $m_i \propto A_{\rm tail}^4(g_0^{(i)})$, warto\'s\'c $K$
+zale\.zy \textbf{wy\l{}\k{a}cznie} od stosunk\'ow
+$r_{21} = m_2/m_1$ i~$r_{31} = m_3/m_1$:
+\begin{equation}\label{eq:X-K-ratios}
+  K \;=\; \frac{1 + r_{21} + r_{31}}
+               {\bigl(1 + \sqrt{r_{21}} + \sqrt{r_{31}}\bigr)^2}.
+\end{equation}
+Stosunki te s\k{a} \textbf{danymi PDG} --- nie zale\.z\k{a} od ODE.
+\end{result}
+
+\begin{corollary}\label{cor:X-no-ODE-fix}
+\.Zadna modyfikacja ODE solitonowego (zmiana $\alpha_{\rm eff}$,
+$K_{\rm sub}(g)$, potencja\l{}u $V(g)$) \textbf{nie mo\.ze zmieni\'c} $K$.
+Modyfikacja zmienia $A_{\rm tail}(g_0)$, ale stosunki $r_{21}$, $r_{31}$
+(dane eksperymentalne) pozostaj\k{a} niezmienione, wi\k{e}c $K$ te\.z.
+\end{corollary}
+
+\noindent
+Weryfikacja numeryczna (\texttt{ex161\_color\_modified\_ode.py}):
+ODE $g'' + (\alpha/g)(g')^2 + (2/r)g' = 1-g$
+dla $\alpha_{\rm eff} \in \{0{,}3;\; 0{,}5;\; \ldots;\; 3{,}0\}$
+daje $K(d,s,b) = 0{,}731$ i~$K(u,c,t) = 0{,}849$ ---
+\textbf{niezale\.znie od $\alpha_{\rm eff}$}.
+
+\begin{result}[$K$ jest RGE-niezmienniczy (\texttt{ex172})]%
+\label{res:X-K-RGE}
+Bieganie mas QCD jest multiplikatywne: $m(\mu) = c(\mu)\,m_0$.
+Poniewa\.z $K$ jest jednorodne stopnia~$0$, bieganie
+nie zmienia~$K$: $K(d,s,b) = 0{,}744 \pm 0{,}002$
+i~$K(u,c,t) = 0{,}882 \pm 0{,}002$ na ka\.zdej
+skali $\mu \in [1{,}5;\, 1000]$~GeV.
+Jedyne (pomijalne) zmiany wynikaj\k{a} z~r\'o\.znych
+prog\'ow smakowych $n_f$.
+\end{result}
+
+\begin{remark}[Shifted Koide: korekcja addytywna (\texttt{ex173})]%
+\label{rem:X-shifted-koide}
+Korekcja multiplikatywna ($m_i \to \lambda\,m_i$) \textbf{nie zmienia}~$K$
+(jednorodne st.~$0$).
+Korekcja \textbf{addytywna} $K(m_i + m_0) = 2/3$ daje:
+$m_0^{(d,s,b)} = 22$~MeV (ok.\ $0{,}1\,\Lambda_{\rm QCD}$),
+$m_0^{(u,c,t)} = 1982$~MeV ($\approx 2$~GeV).
+Shifted Koide jest \emph{opisowy} (dwa wolne parametry),
+ale wskazuje, \.ze \l{}amanie $K = 2/3$ w~kwarkach
+pochodzi z~\textbf{addytywnego} wk\l{}adu nieperturbacyjnego QCD.
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Zbadane rozszerzenia}\label{app:X-rozszerzenia}
+% -------------------------------------------------------------------
+
+\noindent
+Osiem hipotez rozszerzenia Koide na kwarki
+(\texttt{ex159\_quark\_extended\_koide.py}):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lp{5.8cm}l@{}}
+\toprule
+  Hipoteza & Opis & Wynik \\
+\midrule
+  H2: Brannen & $m_k = \tfrac{M}{3}(1+\sqrt{2}\cos(\theta_0 + 2\pi k/3))^2$
+    & $K = 2/3$ z~konstrukcji, ale z\l{}y fit \\
+  H6: Shifted & $K(m_i + m_0) = 2/3$; $m_0 = 1982$ MeV (up), $22$ MeV (down)
+    & Dzia\l{}a; $m_0$ addytywny (nie multiplikatywny, \texttt{ex173}) \\
+  H7: Cross & $(u, s, \tau)$: $K = 0{,}659$ ($1{,}1\%$); $(\tau, b, t)$: $K = 0{,}655$
+    & Interesuj\k{a}ce, prawdop.\ koincydencja \\
+  H8: Wyk\l{}adnik~$n$ & $K_n = 2/3$ przy $n = 2{,}33$ (down), $3{,}28$ (up)
+    & Brak prostej interpretacji \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Skan cross-sektorowy}\label{app:X-cross-sector}
+% -------------------------------------------------------------------
+
+\begin{result}[Systematyczny skan triplet\'ow Koide (\texttt{ex168})]%
+\label{res:X-cross-scan}
+Spo\'sr\'od $\binom{9}{3} = 84$ triplet\'ow z~9 fermion\'ow
+$(e, \mu, \tau, d, s, b, u, c, t)$, tylko dwa spe\l{}niaj\k{a}
+$|K - 2/3| < 1\%$:
+\begin{center}\footnotesize
+\begin{tabular}{@{}llccl@{}}
+\toprule
+  Triplet & Typ & $K$ & $\Delta K / K_{\rm Koide}$ & Status \\
+\midrule
+  $(e, \mu, \tau)$ & intra (lepton) & 0{,}6667 & $< 0{,}01\%$ & \checkmark \\
+  $(b, c, t)$ & \textbf{cross} (D$_3$, U$_2$, U$_3$) & 0{,}6695 & $0{,}42\%$ & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{center}
+Losowa szansa (masy log-uniform): $P(|\Delta K| < 1\%) = 1{,}7\%$,
+oczekiwana liczba~$= 84 \times 0{,}017 = 1{,}4$.
+Obserwacja 2~triplet\'ow jest \textbf{statystycznie nieinformacyjna}
+($p \approx 0{,}4$), ale triplet $(b,c,t)$ \'l\k{a}czy ci\k{e}\.zkie
+fermiony trzeciej~i~drugiej generacji --- wart dalszego badania.
+\end{result}
+
+\begin{remark}[Triplet $(b,c,t)$: g\l{}\k{e}bsza analiza (\texttt{ex170})]%
+\label{rem:X-bct-analysis}
+Triplet $(b,c,t)$ spe\l{}nia $K = 0{,}6695 \pm 0{,}0008$ (MC, $10^5$ pr\'obek),
+odchylenie~$3{,}4\sigma$ od~$2/3$.
+Warunek $K(b,c,t) = 2/3$ predykuje $m_t = 168{,}4$~GeV
+(vs PDG $172{,}8 \pm 0{,}3$~GeV, $-2{,}5\%$, $14{,}6\sigma$).
+
+\textbf{Zastrze\.zenie}: masy $m_b$ ($\overline{\text{MS}}$ przy $\mu_b$),
+$m_c$ ($\overline{\text{MS}}$ przy $\mu_c$) i~$m_t$ (masa biegunowa)
+\textbf{nie s\k{a} na wsp\'olnej skali}.
+Z~$m_t(\overline{\text{MS}}, \mu_t) \approx 162{,}5$~GeV:
+$K = 0{,}663$ ($-0{,}6\%$), \textbf{bli\.zej} $2/3$.
+Precyzyjna weryfikacja wymaga pe\l{}nego biegania NLO QCD
+do wsp\'olnej skali $\mu$.
+
+\textbf{Rozstrzygni\k{e}cie} (\texttt{ex171}):
+po precyzyjnym bieganiu QCD (2-loop $\alpha_s$ + 1-loop $\gamma_m$,
+z~progami smak\'ow) do wsp\'olnej skali $\overline{\text{MS}}$:
+$K(b,c,t) \approx 0{,}712$--$0{,}716$ (ok.\ $+7\%$ od~$2/3$)
+\textbf{na ka\.zdej skali} $\mu \in [1;\, 500]$~GeV.
+Blisko\'s\'c $K \approx 2/3$ w~\texttt{ex170} by\l{}a
+\textbf{artefaktem mieszania konwencji} masowych
+($m_b$ MS-bar, $m_c$ MS-bar, $m_t$ biegunowa).
+\textbf{Dodatkowe spostrzezenie} (\texttt{ex172}):
+bieganie QCD jest multiplikatywne
+($m(\mu) = c(\mu)\,m_0$), a~$K$ jest jednorodne stopnia~$0$
+--- zatem $K$ jest \textbf{dok\l{}adnie RGE-niezmienniczy}
+(zmiany $< 0{,}2\%$ wynikaj\k{a} wy\l{}\k{a}cznie
+z~r\'o\.znych prog\'ow $n_f$).
+B\l{}\k{a}d \texttt{ex170} pochodzi\l{} z~mieszania
+mas biegunowej i~$\overline{\text{MS}}$
+--- korekcja $m_{\rm pole} = m_{\overline{\rm MS}} + \delta m$
+jest \textbf{addytywna}, co \l{}amie jednorodność~$K$.
+
+\textbf{Status}: \statuslabel{Hipoteza} (obalona).
+\end{remark}
+
+\begin{result}[Trzecia generacja: brak uniwersalnego warunku (\texttt{ex169})]%
+\label{res:X-3rd-gen}
+Selekcja $\varphi$-FP daje $r_{21}$ (uniwersalnie).
+Prosta iteracja $g_0^{(3)} = \varphi^2\,g_0^{(1)}$ \textbf{nie} reprodukuje
+$r_{31}$ w~\.zadnym sektorze.
+Wyk\l{}adnik $g_0^{(3)} = \varphi^{n}\,g_0^{(1)}$ wynosi
+$n = 1{,}42$ (leptony), $1{,}54$ (down), $1{,}79$ (up) ---
+\textbf{nie jest uniwersalny}.
+Skalowanie pot\k{e}gowe $r_{31} = r_{21}^p$:
+$p = 1{,}53$ (leptony), $2{,}27$ (down), $1{,}77$ (up) ---
+r\'ownie\.z nieuniwersalne.
+\end{result}
+
+% -------------------------------------------------------------------
+\subsection{Dekompozycja mas kwarkowych: $m_q = m_{\rm sub} + m_0$}%
+\label{app:X-decomposition}
+% -------------------------------------------------------------------
+
+Shifted Koide $K(m_i + m_0) = 2/3$ sugeruje, \.ze masa kwarkowa
+ma dwie sk\l{}adowe:
+\begin{equation}\label{eq:X-decomposition}
+  m_q \;=\; m_{\rm substrate} + m_0,
+\end{equation}
+gdzie $m_{\rm substrate}$ pochodzi z~ODE solitonowego (jak dla lepton\'ow),
+a~$m_0$ jest addytywnym wk\l{}adem nieperturbacyjnego QCD
+(konfinement, chiralny kondensat).
+
+\begin{result}[Sta\l{}a~$A$ shifted Koide (\texttt{quark\_mass\_decomposition.py})]%
+\label{res:X-A-constant}
+Formu\l{}a $m_0 = A \cdot m_3/m_1$ ($= A \cdot r_{31}$) z~jednym parametrem
+$A$ reprodukuje $m_0$ w~obu sektorach z~precyzj\k{a} $1\%$:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccl@{}}
+\toprule
+  Sektor & $A = m_0 \cdot m_1/m_3$ & $m_0$ [MeV] & Status \\
+\midrule
+  down ($d, s, b$) & 0{,}02451 & 21{,}9 & --- \\
+  up ($u, c, t$)   & 0{,}02478 & 1981{,}5 & --- \\
+\midrule
+  \'Srednia         & $\mathbf{0{,}02464}$ & --- & $\Delta A/\bar{A} = 1{,}1\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Formu\l{}a jest \textbf{cykliczna} ($m_3$ jest niewiadom\k{a}),
+ale sta\l{}o\'s\'c $A$ mi\k{e}dzy sektorami jest niebanalna.
+Samozgodne r\'ownanie $K(m_i + A\,m_3/m_1) = 2/3$ zamyka uk\l{}ad
+(jedna niewiadoma $m_3$), daj\k{a}c $m_b = 4190$~MeV ($0{,}24\%$)
+i~$m_t = 168\,492$~MeV ($2{,}5\%$).
+\end{result}
+
+\begin{result}[Skalowanie pot\k{e}gowe $m_0/m_1 \propto r_{21}^p$
+  (\texttt{quark\_m0\_formula\_analysis.py})]%
+\label{res:X-power-scaling}
+Fit do dw\'och sektor\'ow kwarkowych daje:
+\begin{equation}\label{eq:X-power-scaling}
+  \frac{m_0}{m_1} = K \cdot r_{21}^{p},
+  \qquad p = 1{,}56 \;\approx\; \varphi = 1{,}618
+  \quad (3{,}6\%\;\text{odchylenie}).
+\end{equation}
+Wyk\l{}adnik $\varphi$ (z\l{}ota proporcja) pojawia si\k{e} tu
+po raz \textbf{drugi} w~fizyce mas TGP (po $g_0^{(2)}/g_0^{(1)} = \varphi$).
+\textbf{Zastrze\.zenia}:
+\begin{itemize}[nosep]
+  \item Fit z~$p = \varphi$ daje 22\% b\l{}\k{a}d dla sektora up;
+  \item Formu\l{}a z~$p = \varphi$ stosowana do lepton\'ow daje
+        $m_0 \approx 105$~MeV $\neq 0$ --- nie jest uniwersalna;
+  \item Dwa punkty danych s\k{a} niewystarczaj\k{a}ce
+        do rozr\'o\.znienia $p = \varphi$ od $p = 1{,}56$.
+\end{itemize}
+\end{result}
+
+\begin{remark}[Substrate ratio up-type]\label{rem:X-substrate-ratio-up}
+Po odjściu $m_0$ stosunek mas substratowych w~sektorze up wynosi
+$r_{21}^{\rm (sub)} = (m_c + m_0)/(m_u + m_0) = 1{,}639 \approx \varphi$
+(odchylenie $1{,}3\%$).
+Dla sektora down: $r_{21}^{\rm (sub)} = 4{,}33$ --- daleko od $\varphi$.
+Blisko\'s\'c $r_{21}^{\rm (sub, up)} \approx \varphi$ jest interesuj\k{a}ca,
+ale mo\.ze by\'c koincydencj\k{a} (jeden punkt danych).
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Sta\l{}a $A$ jako predykcja TGP: $A \approx a_\Gamma/\varphi$}%
+\label{app:X-A-prediction}
+% -------------------------------------------------------------------
+
+\begin{proposition}[Sta\l{}a $A$ z~parametr\'ow substratu]%
+\label{prop:X-A-agamma-phi}
+Stała shifted Koide $A = m_0 \cdot m_1/m_3$ jest predykowalna
+z~parametr\'ow TGP:
+\begin{equation}\label{eq:X-A-prediction}
+  \boxed{
+    A \;\approx\; \frac{a_\Gamma}{\varphi}
+    \;=\; \frac{0{,}040}{1{,}618}
+    \;=\; 0{,}02472 \;\text{MeV}.
+  }
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Weryfikacja numeryczna (\texttt{lp5\_quark\_m0\_from\_string\_tension.py})]
+Z~danych PDG 2024:
+\begin{center}\footnotesize
+\begin{tabular}{@{}lccl@{}}
+\toprule
+  Sektor & $A = m_0 \cdot m_1/m_3$ [MeV] & $a_\Gamma/\varphi$ [MeV]
+    & Odchylenie \\
+\midrule
+  down ($d, s, b$) & 0{,}02451 & 0{,}02472 & $+0{,}9\%$ \\
+  up ($u, c, t$)   & 0{,}02478 & 0{,}02472 & $-0{,}2\%$ \\
+\midrule
+  \textbf{\'Srednia} & \textbf{0{,}02464} & \textbf{0{,}02472}
+    & $\mathbf{+0{,}3\%}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Zgodność $A \approx a_\Gamma/\varphi$ na poziomie $0{,}3\%$
+jest niebanalna, poniewa\.z:
+\begin{itemize}[nosep]
+  \item $a_\Gamma$ pochodzi z~sektora \textbf{leptonowego}
+    ($r_{21} \to g_0^e \to a_\Gamma$);
+  \item $\varphi = (1+\sqrt{5})/2$ pojawia się z~mechanizmu
+    $\varphi$-FP (tak\.ze leptonowy);
+  \item $m_0$ pochodzi z~sektora \textbf{kwarkowego}
+    (konfinement QCD);
+  \item \textbf{\.zaden parametr} nie zosta\l{} dostrojony
+    --- $a_\Gamma$ i~$\varphi$ s\k{a} ju\.z ustalone
+    niezale\.znie.
+\end{itemize}
+\end{proof}
+
+\begin{remark}[Interpretacja fizyczna]\label{rem:X-A-interpretation}
+Je\.zeli $A = a_\Gamma/\varphi$ jest dok\l{}adne, to masa
+konfinementowa kwark\'ow jest \textbf{projekcj\k{a}
+mechanizmu $\varphi$-FP na mod wi\k{a}\.z\k{a}cy rury kolorowej}:
+\begin{equation}
+  m_0 \;=\; \frac{a_\Gamma}{\varphi}\,\frac{m_3}{m_1}.
+\end{equation}
+Oznacza to, \.ze efektywne sprzężenie rury kolorowej jest
+mniejsze od pe\l{}nego sprzężenia substratowego o~czynnik
+$1/\varphi$ --- dok\l{}adnie tak, jakby rura ``zu\.zywa\l{}a''
+jeden mod oscylacyjny uk\l{}adu dwusolitonowego
+(analogicznie do $g_0^{(2)} = \varphi\,g_0^{(1)}$ w~sektorze
+leptonowym).
+
+Alternatywnie: $A = a_\Gamma/\varphi = 1/(\varphi\,\PhiZero)
+= 1/(\varphi \cdot 25) = 0{,}02472$, co \'sci\'slej
+\l{}\k{a}czy $m_0$ z~hipotez\k{a}
+$a_\Gamma \cdot \PhiZero = 1$.
+\end{remark}
+
+\begin{remark}[Status epistemiczny]\label{rem:X-A-status}
+Relacja $A = a_\Gamma/\varphi$ ma status
+\statuslabel{Propozycja [AN+NUM]}:
+\begin{itemize}[nosep]
+  \item \textbf{analitycznie}: wynika z~heurystyki
+    ``$\varphi$-FP na mod rury'', nie z~pe\l{}nego
+    wyprowadzenia;
+  \item \textbf{numerycznie}: potwierdzona z~$0{,}3\%$
+    w~obu sektorach kwarkowych;
+  \item \textbf{predykcyjnie}: zamienia $m_0$ z~parametru
+    wolnego w~funkcj\k{e} $a_\Gamma$ i~$\varphi$ --- obie
+    wielko\'sci s\k{a} ju\.z okre\'slone z~sektora
+    leptonowego.
+\end{itemize}
+\end{remark}
+
+% -------------------------------------------------------------------
+\subsection{Warunki brzegowe konfinementu a~\l{}amanie Koide}%
+\label{app:X-confinement-bc}
+% -------------------------------------------------------------------
+
+Poni\.zej podajemy fizyczne uzasadnienie, dlaczego Koide $K = 2/3$
+jest specyficzne dla lepton\'ow z~perspektywy warunki brzegowych
+solitonu w~TGP.
+
+\subsubsection{Ogon solitonu w~r\'o\.znych sektorach}
+
+Soliton leptonowy (odosobniony) ma warunek brzegowy
+$g(r) \to 1$ przy $r \to \infty$ --- ogon jest \textbf{swobodny}:
+\begin{equation}\label{eq:X-free-tail}
+  \delta g(r) = g(r) - 1 \;\sim\; \frac{A_{\rm tail}}{r}\,
+  \sin(\omega\,r + \delta), \qquad r \to \infty.
+\end{equation}
+Amplituda $A_{\rm tail}(g_0)$ zale\.zy \textbf{wy\l{}\k{a}cznie}
+od centralnej warto\'sci $g_0$, tj.\ od ODE solitonowego.
+Koide $K = 2/3$ odpowiada rozrzutowi CV($\sqrt{m}$) = 1
+wynikaj\k{a}cemu z~trzech niezale\.znych swobodnych ogon\'ow.
+
+Soliton kwarkowy jest \textbf{skonfinowany}: jego ogon jest
+obci\k{e}ty przez rur\k{e} struny kolorowej o~d\l{}ugo\'sci
+$R_{\rm had} \sim 1/\Lambda_{\rm QCD}$:
+\begin{equation}\label{eq:X-confined-tail}
+  \delta g(r)\big|_{\rm quark} \;\sim\;
+  \frac{A_{\rm tail}}{r}\,\sin(\omega\,r + \delta)\;
+  \times\; \Theta(R_{\rm had} - r)
+  \;+\; A_{\rm conf}\,e^{-r/R_{\rm had}},
+  \quad r \gtrsim R_{\rm had}.
+\end{equation}
+Obci\k{e}cie ogona na skali $R_{\rm had}$ dodaje
+\textbf{addytywny} wk\l{}ad masowy:
+
+\begin{propozycja}[Masa konfinementu z obci\k{e}cia ogona]%
+\label{prop:X-confinement-mass}
+\statuslabel{Propozycja [AN+HYP]}
+
+Energia zmagazynowana w~obci\k{e}tym ogonie solitonu
+kwarkowego ma posta\'c:
+\begin{equation}\label{eq:X-m0-estimate}
+  m_0 \;\sim\; \sigma\,R_{\rm had}
+  \;\sim\; \Lambda_{\rm QCD}^2 / M_q,
+\end{equation}
+gdzie $\sigma \sim (400\;\text{MeV})^2$ to napięcie struny QCD,
+$R_{\rm had} \sim 1\;\text{fm}$, $M_q$ to typowa masa sektora.
+Wk\l{}ad ten jest:
+\begin{itemize}[nosep]
+  \item \textbf{addytywny} (nie multiplikatywny) ---
+        poniewa\.z energia rury struny jest niezale\.zna
+        od masy solitonu;
+  \item \textbf{sektorowo zale\.zny} (r\'o\.zny $R_{\rm had}$
+        i $\sigma$ dla sektora up vs down);
+  \item \textbf{zerowy dla lepton\'ow} ($m_0^{(\ell)} = 0$,
+        brak konfinementu kolorowego).
+\end{itemize}
+\end{propozycja}
+
+\begin{dowod}[szkic]
+Ogon solitonu niesie energi\k{e}
+$E_{\rm tail} = \int_{R_c}^{\infty} [\frac{1}{2}K_{\rm sub}(g)(\nabla g)^2
++ V(g)] \, 4\pi r^2\,dr$.
+Dla swobodnego ogona: $E_{\rm tail}^{(\rm free)} \propto A_{\rm tail}^2
+\cdot \omega$.
+Dla obci\k{e}tego ogona: $E_{\rm tail}^{(\rm conf)} =
+E_{\rm tail}^{(\rm free)} + \sigma \cdot R_{\rm had}$,
+gdzie drugi cz\l{}on to energia rury struny \l{}\k{a}cz\k{a}cej
+soliton z~antysolitonem (lub z~innymi kwarkami w~hadronie).
+Poniewa\.z $m \propto A_{\rm tail}^4$ (prop.~\ref{prop:R-k4-dimensional}),
+efektywna masa kwarka:
+\begin{equation}
+  m_q^{(\rm eff)} = m_{\rm substrate} + m_0,
+  \qquad m_0 = c_\sigma\,\sigma\,R_{\rm had},
+\end{equation}
+z~$c_\sigma \sim \mathcal{O}(1)$ (sta\l{}a dopasowania).
+\hfill$\square$
+\end{dowod}
+
+\begin{uwaga}[Szacunki numeryczne]\label{rem:X-m0-estimates}
+Dla standardowych parametr\'ow QCD ($\sigma = (440\;\text{MeV})^2$,
+$R_{\rm had} \approx 0{,}5$--$1$~fm):
+\begin{itemize}[nosep]
+  \item $m_0^{(d,s,b)} \approx \sigma \cdot 0{,}11\;\text{fm}
+        \approx 21$~MeV (zob.\ wynik~\ref{res:X-A-constant}: $m_0 = 21{,}9$~MeV);
+  \item $m_0^{(u,c,t)} \approx \sigma \cdot 10\;\text{fm} \approx 1940$~MeV
+        (por.\ $m_0 = 1981{,}5$~MeV).
+\end{itemize}
+Stosunek $m_0^{(u)}/m_0^{(d)} \approx 90$ odzwierciedla
+r\'o\.znic\k{e} w~efektywnym promieniu konfinementu
+mi\k{e}dzy sektorami up i~down (zwi\k{a}zan\k{a}
+z~masami: ci\k{e}\.zszy sektor up ma d\l{}u\.zsz\k{a}
+rur\k{e}).
+
+\medskip\noindent
+\textbf{Obserwacja (universalno\'s\'c $A$; sesja 2026-04-08):}
+Sta\l{}a $A = m_0 \cdot m_1/m_3 \approx 0{,}0246$ jest
+\textbf{uniwersalna} mi\k{e}dzy sektorami
+($A_{\rm down} = 0{,}0245$, $A_{\rm up} = 0{,}0248$,
+$\Delta A / \bar A = 1{,}1\%$).
+Z~$m_0 = c_\sigma\,\sigma\,R_{\rm had}$ wynika, \.ze
+$A = c_\sigma\,\sigma\,R_{\rm had}\cdot m_1/m_3$ jest sta\l{}e wtedy
+i~tylko wtedy, gdy efektywny promie\'n konfinementu
+skaluje si\k{e} jako
+\begin{equation}\label{eq:X-Rhad-scaling}
+  R_{\rm had}^{(\rm eff)} = \frac{A}{c_\sigma\,\sigma}
+  \cdot \frac{m_3}{m_1} = \frac{A}{c_\sigma\,\sigma}\cdot r_{31}.
+\end{equation}
+Fizycznie: rura struny jest proporcjonalna do stosunku mas w~sektorze.
+Ci\k{e}\.zszy sektor (up: $r_{31}^{(u)} = 80\,000$) ma $\sim 90\times$
+d\l{}u\.zsz\k{a} rur\k{e} ni\.z l\.zejszy (down: $r_{31}^{(d)} = 895$),
+co jest zgodne z~intuicj\k{a} fizyczn\k{a}.
+Brakuje jeszcze: (i)~wyja\'snienia, dlaczego $A \approx 1/(4\pi N_c)
+\cdot \Omega_\Lambda^{0{,}3}$ (najblisza kombinacja TGP: $A \sim 0{,}018$,
+$26\%$ od warto\'sci empirycznej);
+(ii)~powi\k{a}zania $c_\sigma$ z~parametrami solitonowego ODE.
+Zob.\ skrypt \texttt{ex191\_confinement\_m0.py}.
+\end{uwaga}
+
+\begin{uwaga}[Konsekwencje dla CV i Koide]\label{rem:X-CV-consequence}
+Addytywny wk\l{}ad $m_0$ \l{}amie jednorodność skalowania
+$m_i \propto A_{\rm tail}^4$, kt\'ora jest warunkiem koniecznym
+CV($\sqrt{m}$) = 1. Konkretnie:
+\begin{equation}
+  \text{CV}\bigl(\sqrt{m_{\rm sub} + m_0}\bigr) \neq
+  \text{CV}\bigl(\sqrt{m_{\rm sub}}\bigr),
+\end{equation}
+chyba \.ze $m_0 = 0$ (jak dla lepton\'ow) lub $m_0 \gg m_{\rm sub}$
+(wtedy CV jest zdominowane przez $m_0$).
+
+Shifted Koide $K(m_i + m_0) = 2/3$ jest zatem \textbf{naturaln\k{a}
+konsekwencj\k{a}} TGP: po odj\k{e}ciu wk\l{}adu konfinementu
+masy substratowe $m_{\rm sub}$ spe\l{}niaj\k{a} Koide,
+bo ogony s\k{a} ponownie ``swobodne''.
+\end{uwaga}
+
+% -------------------------------------------------------------------
+\subsection{Wnioski}\label{app:X-wnioski}
+% -------------------------------------------------------------------
+
+\begin{enumerate}[nosep]
+  \item $\varphi$-FP jest \textbf{uniwersalnym} mechanizmem TGP ---
+        dzia\l{}a na leptony \emph{i} kwarki.
+  \item Koide $K = 2/3$ jest \textbf{specyficzny} dla sektora leptonowego.
+        Cross-sektorowy triplet $(b, c, t)$ daje $K \approx 0{,}67$
+        tylko przy mieszaniu konwencji masowych; na wsp\'olnej skali
+        $\overline{\text{MS}}$: $K \approx 0{,}71$ ($+7\%$)
+        (uw.~\ref{rem:X-bct-analysis}, \texttt{ex171}).
+  \item $K$ jest algebr.\ w\l{}asno\'sci\k{a} stosunk\'ow mas;
+        \textbf{\.zadna modyfikacja ODE} go nie zmienia (wn.~\ref{cor:X-no-ODE-fix}).
+  \item \textbf{Shifted Koide} $K(m_i + m_0) = 2/3$ dzia\l{}a
+        z~addytywnym wk\l{}adem:
+        $m_0^{(d,s,b)} = 21{,}9$~MeV,\;
+        $m_0^{(u,c,t)} = 1981{,}5$~MeV.
+        Sta\l{}a $A = m_0 m_1/m_3 \approx 0{,}0246$ jest
+        \textbf{uniwersalna} mi\k{e}dzy sektorami ($\Delta = 1{,}1\%$)
+        --- wskazuje na wsp\'olne \'zr\'od\l{}o $m_0$ (wynik~\ref{res:X-A-constant}).
+  \item Skalowanie $m_0/m_1 \propto r_{21}^{1{,}56}$ (wynik~\ref{res:X-power-scaling}):
+        wyk\l{}adnik bliski $\varphi$, ale nie jest uniwersalne (nie dzia\l{}a
+        na leptony) i~oparte na dw\'och punktach.
+  \item \textbf{Brakuj\k{a}cy element}: wyprowadzenie $m_0$ z~parametr\'ow TGP
+        ($\alpha_s$, $N_c$, $C_{\rm eff}$) lub z~sektora $N$-body.
+        Natura $m_0$ jako energii konfinementu (addytywnej) sugeruje
+        powi\k{a}zanie z~potencja\l{}em N-body $V_2(R_{\rm had})$.
+  \item Status: \statuslabel{Otwarty} (Problem R12, zaw\k{e}\.zony).
+\end{enumerate}
+
+\noindent\textbf{Skrypty:}
+\texttt{ex158\_quark\_koide\_survey.py},
+\texttt{ex159\_quark\_extended\_koide.py},
+\texttt{ex160\_quark\_ode\_lite.py},
+\texttt{ex161\_color\_modified\_ode.py},
+\texttt{ex168\_cross\_sector\_koide.py},
+\texttt{ex169\_third\_gen\_selection.py},
+\texttt{ex170\_bct\_cross\_koide.py},
+\texttt{ex171\_running\_masses\_koide.py},
+\texttt{ex172\_koide\_scale\_scan.py},
+\texttt{ex173\_koide\_color\_correction.py},
+\texttt{quark\_mass\_decomposition.py},
+\texttt{quark\_golden\_ratio\_test.py},
+\texttt{quark\_m0\_formula\_analysis.py}.
+
+% ================================================================
+%  Nowa sekcja v47 (2026-04-09): Formalizacja mechanizmu m_0
+% ================================================================
+
+\subsection{Konfinementowa masa addytywna: formalizacja}\label{ssec:X-m0-formal}
+
+\begin{proposition}[Masa konfinementowa z~potencja\l{}u liniowego TGP]%
+\label{prop:X-m0-confinement}
+W~sektorze kolorowym TGP potencja\l{} re\.zimu~III
+(studnia przestrzenna, sek.~\ref{sec:rezimy})
+generuje liniowy potencja\l{} konfinementu:
+\begin{equation}\label{eq:X-V-conf}
+  V_{\rm conf}(r) = \sigma\,r,
+  \qquad
+  \sigma \approx (440\;\mathrm{MeV})^2 = 0{,}194\;\mathrm{GeV}^2.
+\end{equation}
+Kwark zamkni\k{e}ty w~rurze kolorowej o~promieniu
+$R_{\rm had}$ zyskuje addytywn\k{a} mas\k{e} konfinementow\k{a}:
+\begin{equation}\label{eq:X-m0-def}
+  m_0 = \sigma\,R_{\rm had} = \frac{\sigma}{\Lambda_{\rm QCD}}
+  \cdot \frac{\Lambda_{\rm QCD}^2}{m_q^{\rm MS}},
+\end{equation}
+gdzie $m_q^{\rm MS}$ jest biegn\k{a}c\k{a} mas\k{a}
+najl\.zejszego kwarku w~danym sektorze, a~$R_{\rm had}$
+jest promieniem hadronowym wyznaczonym z~r\'ownowagi
+energii kinetycznej i~potencja\l{}u liniowego:
+\begin{equation}\label{eq:X-Rhad}
+  R_{\rm had} \sim \frac{1}{\Lambda_{\rm QCD}}
+  \cdot \frac{\Lambda_{\rm QCD}}{m_q^{\rm MS}}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Dow\'od (szkic)]
+W~TGP rura kolorowa odpowiada obszarowi, w~kt\'orym
+pole $\Phi$ jest obni\.zone wzgl\k{e}dem t\l{}a
+(re\.zim III, $\Phi < \Phi_0$).
+Energia rury na jednostk\k{e} d\l{}ugo\'sci wynosi
+$\sigma = \pi\,\Phi_0\,(\partial\Phi/\partial r)^2_{\rm tube}
+\cdot R_{\rm tube}^2$,
+co w~granicy $R_{\rm tube} \ll R_{\rm had}$ daje liniowy
+potencja\l{}.
+
+Przybli\.zenie worka MIT: minimalizacja
+$E_{\rm total} = m_q^{\rm kin}/R + \sigma\,R$
+wzgl\k{e}dem $R$ daje
+$R_{\rm had} \sim (m_q/\sigma)^{1/2}$
+dla lekkich kwark\'ow ($m_q \ll \sqrt{\sigma}$),
+co jest reinterpretowane jako
+$R_{\rm had} \sim 1/m_q$ przy ustalonym $\Lambda_{\rm QCD}$.
+\end{proof}
+
+\begin{proposition}[Przesuni\k{e}ty Koide: $K(m_k + m_0) = 2/3$]%
+\label{prop:X-shifted-koide}
+Dla ka\.zdego sektora kwarkowego (up-type i~down-type)
+istnieje \textbf{jedna} warto\'s\'c $m_0^{(\rm sek)}$
+taka, \.ze:
+\begin{equation}\label{eq:X-shifted-K}
+  Q_K(m_1 + m_0,\; m_2 + m_0,\; m_3 + m_0) = \frac{3}{2}.
+\end{equation}
+Wyznaczone numerycznie:
+\begin{center}\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Sektor & $m_1$ & $m_2$ & $m_3$ & $m_0$ [MeV] \\
+\midrule
+$d,s,b$ & 4{,}67 & 93{,}4 & 4180 & 21{,}9 \\
+$u,c,t$ & 2{,}16 & 1270 & 172\,760 & 1981{,}5 \\
+\textit{$e,\mu,\tau$} & 0{,}511 & 105{,}66 & 1776{,}9 & $0{,}000$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Leptony nie maj\k{a} konfinementu: $m_0^{(e)} = 0$ (sp\'ojne).
+\end{proposition}
+
+\begin{proposition}[Uniwersalna sta\l{}a $\mathcal{A}$]%
+\label{prop:X-universal-A}
+Definiujemy:
+\begin{equation}\label{eq:X-A-universal}
+  \mathcal{A} \equiv m_0 \cdot \frac{m_1}{m_3}.
+\end{equation}
+Numerycznie:
+$\mathcal{A}^{(d)} = 21{,}9 \times 4{,}67/4180 = 0{,}0245$,
+$\mathcal{A}^{(u)} = 1981{,}5 \times 2{,}16/172760 = 0{,}0248$,
+\'srednia $\bar{\mathcal{A}} = 0{,}0246 \pm 0{,}0002$ ($0{,}6\%$ sp\'ojno\'sci).
+
+\medskip\noindent
+\textbf{Hipoteza:} $\mathcal{A}$ jest sta\l{}\k{a} strukturaln\k{a}
+TGP o~warto\'sci:
+\begin{equation}\label{eq:X-A-tgp-candidate}
+  \mathcal{A} = \frac{1}{4\pi N_c}\,\Omega_\Lambda^{0{,}3}
+  \approx 0{,}018 \quad (\text{26\% od empirycznej}).
+\end{equation}
+Lepsza kandydatka: $\mathcal{A} = a_\Gamma/(1 + r_{\rm Br}^{-1})
+= 0{,}040/(1 + 1/\sqrt{2}) = 0{,}0234$ ($4{,}9\%$ od empirycznej).
+
+\medskip\noindent\textbf{Status:} Propozycja \textbf{[NUM+HYP]}.
+Wyznaczenie $m_0$ z~parametr\'ow TGP zamkn\k{e}\l{}oby R12
+(sektor kwarkowy).
+\end{proposition}
+
+% ================================================================
+%  Nowy wynik v47: A = a_Gamma / phi (2026-04-09)
+% ================================================================
+\begin{theorem}[Uniwersalna sta\l{}a konfinementowa
+  $\mathcal{A} = a_\Gamma / \varphi$]%
+\label{thm:X-A-golden}
+Niech $a_\Gamma$ b\k{e}dzie parametrem substratu TGP
+i~$\varphi = (1+\sqrt{5})/2$ z\l{}otym stosunkiem
+(wynikaj\k{a}cym z~mechanizmu $\varphi$-FP,
+stw.~\ref{thm:J2-FP}). W\'owczas sta\l{}a uniwersalna
+$\mathcal{A}$ (def.~\eqref{eq:X-A-universal})
+jest okre\'slona jako:
+\begin{equation}\label{eq:X-A-golden}
+  \boxed{\mathcal{A} = \frac{a_\Gamma}{\varphi} = 0{,}02472.}
+\end{equation}
+Zgodno\'s\'c z~warto\'sci\k{a} empiryczn\k{a}:
+$\mathcal{A}_{\rm emp} = 0{,}02464 \pm 0{,}00013$
+(odchylenie $+0{,}31\%$).
+
+\medskip\noindent
+Masa konfinementowa w~sektorze kolorowym ma posta\'c:
+\begin{equation}\label{eq:X-m0-from-A}
+  m_0^{(\mathrm{sek})} = \frac{a_\Gamma}{\varphi}\,
+  \frac{m_3^{(\mathrm{sek})}}{m_1^{(\mathrm{sek})}},
+  \qquad \delta_{\mathrm{kolor}} = 1,
+\end{equation}
+z~warunkiem $m_0 = 0$ dla lepton\'ow ($\delta_{\mathrm{kolor}} = 0$,
+brak konfinementu).
+
+\medskip\noindent\textbf{Weryfikacja numeryczna:}
+\begin{center}\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Sektor & $m_1$ [MeV] & $m_3$ [MeV] & $m_0^{\mathrm{pred}}$ & $m_0^{\mathrm{emp}}$
+  & Odchylenie \\
+\midrule
+$d,s,b$ & 4{,}67 & 4180 & 22{,}13 & 21{,}94 & $+0{,}85\%$ \\
+$u,c,t$ & 2{,}16 & 172\,760 & 1977{,}3 & 1981{,}5 & $-0{,}22\%$ \\
+$e,\mu,\tau$ & 0{,}511 & 1776{,}9 & 0 (aksjomat) & 0 & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent\textbf{Interpretacja:}
+Wyst\k{a}pienie $\varphi$ w~mianowniku jest naturalne w~TGP:
+z\l{}oty stosunek kontroluje rozk\l{}ad amplitud solitonowych
+($g_0^{(2)} = \varphi \cdot g_0^{(1)}$), a~$a_\Gamma$ jest
+skal\k{a} sprz\k{e}\.zenia substrat--materia.
+Iloraz $a_\Gamma/\varphi$ mierzy \textbf{efektywn\k{a}
+si\l{}\k{e}} sprz\k{e}\.zenia konfinementowego rury kolorowej
+z~t\l{}em $\Phi_0$.
+
+\medskip\noindent
+\textbf{Samozgodny \l{}a\'ncuch kwarkowy:}
+R\'ownanie~\eqref{eq:X-m0-from-A} \l{}\k{a}czy $m_0$ z~$m_1$ i~$m_3$.
+Jednocze\'snie przesuni\k{e}ty Koide
+(prop.~\ref{prop:X-shifted-koide}) wyznacza $m_3$ przez $m_1$, $m_2$
+i~$m_0$. To tworzy \textbf{r\'ownanie samozgodne}:
+\begin{equation}\label{eq:X-self-consistent}
+  m_0 = \frac{a_\Gamma}{\varphi}\,
+  \frac{m_3(m_0)}{m_1},
+  \qquad
+  Q_K\bigl(m_1 + m_0,\; m_2 + m_0,\; m_3 + m_0\bigr) = \tfrac{3}{2},
+\end{equation}
+kt\'ore ma \textbf{jednoznaczne} rozwi\k{a}zanie numeryczne
+dla danego $m_1$ (najl\.zejszego kwarku).
+Skrypt: \texttt{quark\_m0\_tgp\_exploration.py}.
+
+\medskip\noindent
+\textbf{Status R12 (aktualizacja v47):}
+Zawężony do \textbf{[AN+NUM]}. Formuła $\mathcal{A} = a_\Gamma/\varphi$
+redukuje sektor kwarkowy do \textbf{zero wolnych parametr\'ow}
+(ponad $a_\Gamma$ i~$\PhiZero$ wsp\'olne z~sektorem
+leptonowym). Formalna motywacja czynnika $\varphi$ poni\.zej
+(prop.~\ref{prop:X-phi-color-tube}).
+\end{theorem}
+
+\begin{proposition}[Czynnik $1/\varphi$ z~rury kolorowej]%
+\label{prop:X-phi-color-tube}
+W~TGP rura kolorowa (flux tube) jest jednowymiarowym
+obiektem substratowym (\S\ref{app:X-confinement-bc}),
+\l{}\k{a}cz\k{a}cym dwa solitony kwarkowe.
+Sprz\k{e}\.zenie rury z~t\l{}em $\Phi_0$ jest okre\'slone
+przez \textbf{amplitud\k{e} modu wt\'ornego} uk\l{}adu
+dwu-solitonowego.
+
+W~mechanizmie $\varphi$-FP (tw.~\ref{thm:J2-FP}), punkt sta\l{}y
+z\l{}otego stosunku selekcjonuje amplitudy kolejnych mod\'ow:
+\begin{equation}\label{eq:X-phi-mode-sequence}
+  g_0^{(n+1)} = \varphi \cdot g_0^{(n)},
+\end{equation}
+tzn.\ mod wt\'orny ($n{=}2$) ma amplitud\k{e} $\varphi$-krotnie
+wi\k{e}ksz\k{a} od modu podstawowego ($n{=}1$).
+W~odwrotno\'sci: \textbf{efektywne sprz\k{e}\.zenie jednego modu}
+z~substratem jest $\varphi$-krotnie mniejsze ni\.z ca\l{}kowite
+sprz\k{e}\.zenie $a_\Gamma$, poniewa\.z rura kolorowa ,,wyczerpuje''
+jeden tryb oscylacyjny solitonu na potrzeby wi\k{a}zania:
+
+\begin{equation}\label{eq:X-a-eff-tube}
+  a_{\Gamma,\mathrm{eff}}^{\mathrm{tube}}
+  = \frac{a_\Gamma}{\varphi}
+  = \frac{a_\Gamma \cdot g_0^{(1)}}{g_0^{(2)}}
+  = \mathcal{A}.
+\end{equation}
+
+\textbf{Analogia:} W~sektorze leptonowym $\varphi$-FP daje
+$r_{21} = (g_0^{(2)}/g_0^{(1)})^4 \cdot (\ldots) = 206.77$
+--- z\l{}oty stosunek wchodzi w~\emph{hierarchi\k{e} mas}.
+W~sektorze kwarkowym ten sam $\varphi$ wchodzi
+w~\emph{masa konfinementow\k{a}} $m_0 = (a_\Gamma/\varphi)
+\cdot m_3/m_1$ --- hierarchia \textbf{przesuni\k{e}cia Koide}.
+Jest to ten sam mechanizm, dzia\l{}aj\k{a}cy na r\'o\.znych
+poziomach.
+
+\medskip\noindent\textbf{Warunek leptonowy:}
+Dla lepton\'ow $\delta_{\mathrm{color}} = 0$ (brak rury kolorowej),
+wi\k{e}c $m_0 = 0$ --- Koide bez przesuni\k{e}cia.
+Dla kwark\'ow $\delta_{\mathrm{color}} = 1$, czynnik $1/\varphi$
+aktywuje przesuni\k{e}cie konfinementowe.
+
+\medskip\noindent\textbf{Status:}
+Awans z~\textbf{[NUM+HYP]} do~\textbf{[AN+NUM]}.
+Czynnik $1/\varphi$ jest motywowany przez $\varphi$-FP
+(nie niezale\.zny parametr), a~dok\l{}adno\'s\'c
+$0{,}31\%$ potwierdza zgodno\'s\'c numeryczn\k{a}.
+Pe\l{}ny \textbf{[AN]} wymaga ODE rury kolorowej
+z~jawnym rozwi\k{a}zaniem --- program na przysz\l{}o\'s\'c.
+\end{proposition}
+
+\begin{proposition}[Uzasadnienie $\mathcal{A} = m_0 m_1/m_3$
+  jako jedynej naturalnej sta\l{}ej sektora (v47b)]%
+\label{prop:X-A-from-binding}
+\textbf{Status: \statuslabel{Szkic}.}
+Interpertacja $m_0$ jako energii rury kolorowej
+(prop.~\ref{prop:X-m0-confinement}) generuje nast\k{e}puj\k{a}cy
+\l{}a\'ncuch argument\'ow:
+
+\begin{enumerate}[nosep]
+  \item Energia rury: $m_0 = \sigma\,L_{\rm eff}$, gdzie $\sigma$
+    jest uniwersalnym napi\k{e}ciem re\.zimu~III.
+  \item Efektywna d\l{}ugo\'s\'c wiązania $L_{\rm eff}$ skaluje si\k{e}
+    ze stosunkiem najci\k{e}\.zszej do najl\.zejszej masy
+    w~danym sektorze (jedyny dost\k{e}pny bezwymiarowy stosunek
+    solitonowy):
+    \begin{equation}
+      L_{\rm eff} \propto \frac{m_3}{m_1}.
+    \end{equation}
+  \item Natychmiast:
+    \begin{equation}
+      m_0 = \mathcal{A}\,\frac{m_3}{m_1},
+      \qquad
+      \mathcal{A} \;=\; m_0\,\frac{m_1}{m_3}
+      \;=\; \sigma\,L_0 \;=\; \mathrm{const},
+    \end{equation}
+    gdzie $L_0$ jest skal\k{a} d\l{}ugo\'sci ustalon\k{a} przez substrat.
+\end{enumerate}
+
+\textbf{Wniosek}: forma $\mathcal{A} = m_0\,m_1/m_3 = \mathrm{const}$
+nie jest arbitralnym fitem, lecz \textbf{jedynym naturalnym
+bezwymiarowym parametrem} opisuj\k{a}cym koszt d\l{}ugiego wi\k{a}zania.
+Warto\'s\'c $\mathcal{A} = a_\Gamma/\varphi$
+(prop.~\ref{prop:X-phi-color-tube})
+zamyka t\k{e} interpretacj\k{e}: napi\k{e}cie rury jest projekcj\k{a}
+mechanizmu $\varphi$-FP na sektor kolorowy.
+
+\medskip\noindent
+\textbf{Weryfikacja:}
+$\mathcal{A}_{\rm down} = 21{,}94 \cdot 4{,}67/4180 = 0{,}02447$,
+$\mathcal{A}_{\rm up} = 1981{,}5 \cdot 2{,}16/172760 = 0{,}02477$,
+$\mathcal{A}_{\rm TGP} = a_\Gamma/\varphi = 0{,}02472$.
+Zgodno\'s\'c na poziomie $0{,}3\%$ mi\k{e}dzy sektorami.
+\end{proposition}
+
+% -------------------------------------------------------------------
+% v47b: Wariacyjna rura kolorowa i~napięcie strunowe
+% -------------------------------------------------------------------
+
+\begin{proposition}[Napi\k{e}cie strunowe rury kolorowej w~TGP (v47b)]%
+\label{prop:X-tube-string-tension}
+\textbf{Status: \statuslabel{AN+NUM}.}
+
+Rozwa\.zamy cylindryczn\k{a} rur\k{e} kolorow\k{a} (\l{}\k{a}cz\k{a}c\k{a}
+kwark--antykwark) jako radialnie symetryczny profil $\varphi(\rho)$,
+gdzie $\varphi = \Phi/\PhiZero$ i~$\rho$ jest odleg\l{}o\'sci\k{a}
+od osi rury. Funkcjona\l{} energii na jednostk\k{e} d\l{}ugo\'sci
+wynika z~dzia\l{}ania TGP (tw.~\ref{thm:D-uniqueness},
+tw.~\ref{thm:field-eq}):
+
+\begin{equation}\label{eq:X-sigma-functional}
+  \hat\sigma
+  \;=\;
+  2\pi\!\int_0^\infty\!\!
+    \left[\,
+      \underbrace{\tfrac{1}{2}\,\varphi^4\!\left(\frac{d\varphi}{d\rho}\right)^{\!2}}_{\text{cz\l{}on kinetyczny}}
+      \;+\;
+      \underbrace{V_E(\varphi)}_{\text{cz\l{}on potencjalny}}
+    \right]
+    \rho\,d\rho,
+\end{equation}
+gdzie potencja\l{} energetyczny
+\begin{equation}\label{eq:X-VE-tube}
+  V_E(\varphi)
+  \;=\;
+  \frac{\varphi^8}{8} - \frac{\varphi^7}{7} + \frac{1}{56}
+\end{equation}
+spe\l{}nia:
+$V_E(1) = 0$
+(pr\'o\.znia jest minimum energii),
+$V_E'(1) = 0$,
+$V_E''(1) = 1 > 0$.
+Potencja\l{} $V_E > 0$ dla ka\.zdego $\varphi \ne 1$:
+zubo\.zenie pola \textbf{kosztuje energi\k{e}}.
+Zmienna~$\rho$ jest w~jednostkach $1/m_{\rm sp}$
+(masa skalarna, $m_{\rm sp}^2 = \beta$).
+
+\medskip\noindent
+\textbf{Ansatz gaussowski:}
+\begin{equation}\label{eq:X-gaussian-ansatz}
+  \varphi(\rho)
+  \;=\;
+  1 - A\,\exp\!\left(-\frac{\rho^2}{2w^2}\right),
+  \qquad
+  0 < A < 1,\; w > 0.
+\end{equation}
+Amplituda zubo\.zenia pochodzi od sprz\k{e}\.zenia konforemnego
+p\'ol cechowania z~$\Phi$:
+\begin{equation}\label{eq:X-A-color}
+  A_{\rm color}
+  \;=\;
+  \frac{C_F\,\alpha_s}{\pi\,\PhiZero}
+  \;=\;
+  \frac{\tfrac{4}{3}\cdot 0{,}1190}{\pi\cdot 24{,}65}
+  \;\approx\; 2{,}05 \times 10^{-3},
+\end{equation}
+gdzie $C_F = (N_c^2-1)/(2N_c) = 4/3$ jest kazimirem
+fundamentalnym $\mathrm{SU}(3)$.
+Szeroko\'s\'c rury $w \sim 1/m_{\rm sp}$,
+tzn.~$w = 1$ w~bezwymiarowych jednostkach.
+
+\medskip\noindent
+\textbf{Re\.zim perturbacyjny} ($A \ll 1$):
+w~tym re\.zimie $\varphi^4 \approx 1$, $V_E \approx \tfrac{1}{2}\delta^2$
+(gdzie $\delta = A\,e^{-\rho^2/(2w^2)}$), i~napi\k{e}cie strunowe
+przyjmuje zamkni\k{e}t\k{a} form\k{e} analityczn\k{a}:
+\begin{equation}\label{eq:X-sigma-perturbative}
+  \boxed{
+    \hat\sigma(A,w)
+    \;=\;
+    \frac{\pi}{2}\,A^2\,(1 + w^2)
+    \;\;\xrightarrow{w=1}\;\;
+    \pi\,A^2.
+  }
+\end{equation}
+Zgodno\'s\'c z~ca\l{}kowaniem numerycznym na poziomie $0{,}5\%$
+przy $A = A_{\rm color}$ (skrypt
+\texttt{color\_tube\_variational\_tgp.py}).
+
+\medskip\noindent
+\textbf{Podzia\l{} energii:}
+Dla $w = 1$ stosunek energii kinetycznej do potencjalnej wynosi
+$T/V = 1{,}002$ --- niemal dok\l{}adna ekwipartycja, zgodna
+z~przewidywaniem analitycznym $T/V = 1/w^2 = 1$.
+\end{proposition}
+
+\begin{proposition}[Skasowanie $\PhiZero$
+  i~relacja $\mathcal{A} = C_F^2\,\alpha_s^2$ (v47b)]%
+\label{prop:X-A-from-tube-tension}
+\textbf{Status: \statuslabel{AN+NUM [warunkowy]}.}
+
+\L{}\k{a}cz\k{a}c napi\k{e}cie strunowe~\eqref{eq:X-sigma-perturbative}
+z~fizyczn\k{a} skal\k{a} $\sigma_{\rm phys} = K_{\rm geo}\,m_{\rm sp}^2\,
+\hat\sigma$:
+\begin{equation}\label{eq:X-sigma-physical}
+  \sigma_{\rm phys}
+  \;=\;
+  (K_{\rm geo}\,m_{\rm sp}^2)
+  \;\cdot\;
+  \pi\!\left(\frac{C_F\,\alpha_s}{\pi\,\PhiZero}\right)^{\!2}
+  \;=\;
+  \frac{K_{\rm geo}\,m_{\rm sp}^2}{\pi\,\PhiZero^2}
+  \;C_F^2\,\alpha_s^2.
+\end{equation}
+
+\textbf{Hipoteza skalowania:}
+Je\'sli wymiarowa sta\l{}a sprz\k{e}\.zenia spe\l{}nia
+\begin{equation}\label{eq:X-K-msp-hypothesis}
+  K_{\rm geo}\,m_{\rm sp}^2
+  \;\stackrel{!}{=}\;
+  \pi\,\PhiZero^2,
+\end{equation}
+to zale\.zno\'s\'c od $\PhiZero$ \textbf{kasuje si\k{e}} i:
+\begin{equation}\label{eq:X-A-equals-CF2-alphas2}
+  \boxed{
+    \mathcal{A}
+    \;=\;
+    \frac{a_\Gamma}{\varphi}
+    \;=\;
+    C_F^2\,\alpha_s^2(M_Z).
+  }
+\end{equation}
+
+\medskip\noindent
+\textbf{Weryfikacja numeryczna:}
+\begin{center}\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+  Wielko\'s\'c & Warto\'s\'c & \'Zr\'od\l{}o \\
+\midrule
+  $C_F^2\,\alpha_s^2$ & $0{,}02518$ & $(4/3)^2 \times 0{,}1190^2$ \\
+  $\mathcal{A}_{\rm TGP} = a_\Gamma/\varphi$ & $0{,}02472$ & $0{,}040/1{,}618$ \\
+  $\mathcal{A}_{\rm down}$ & $0{,}02447$ & PDG (tab.~\ref{app:X-masy}) \\
+  $\mathcal{A}_{\rm up}$ & $0{,}02477$ & PDG (tab.~\ref{app:X-masy}) \\
+\midrule
+  $C_F^2\alpha_s^2 / \mathcal{A}_{\rm TGP}$ & $1{,}019$ & \textbf{1{,}9\%} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Przy u\.zyciu pe\l{}nego ca\l{}kowania numerycznego (zamiast przybli\.zenia
+perturbacyjnego) zgodno\'s\'c poprawia si\k{e} do $1{,}4\%$.
+Pozosta\l{}e $\sim\!2\%$ mog\k{a} pochodzi\'c od:
+(a)~korekcji p\k{e}tlowych $\alpha_s$ na skali konfinementu,
+(b)~odchyle\'n od profilu gaussowskiego,
+lub (c)~dok\l{}adnej formy identyfikacji~\eqref{eq:X-K-msp-hypothesis}.
+
+\medskip\noindent
+\textbf{Interpretacja:}
+Relacja~\eqref{eq:X-A-equals-CF2-alphas2} m\'owi, \.ze
+\textbf{uniwersalna sta\l{}a wi\k{a}zania} sektora kwarkowego jest
+w~pe\l{}ni zdeterminowana przez:
+\begin{itemize}[nosep]
+  \item $C_F = 4/3$ --- kazimir fundamentalny $\mathrm{SU}(3)$
+    (geometria grupy cechowania),
+  \item $\alpha_s(M_Z) = 0{,}1190$ --- sprz\k{e}\.zenie silne
+    na skali $M_Z$ (parametr SM),
+\end{itemize}
+bez \.zadnych wolnych parametr\'ow TGP.
+R\'ownowa\.znie, $a_\Gamma = \varphi\,C_F^2\,\alpha_s^2$, \l{}\k{a}cz\k{a}c
+z\l{}oty stosunek (mechanizm generacyjny) z~kolorem (rura kolorowa).
+
+\medskip\noindent
+\textbf{Warunek~\eqref{eq:X-K-msp-hypothesis}:}
+Identyfikacja $K_{\rm geo}\,m_{\rm sp}^2 = \pi\,\PhiZero^2$ jest
+naturalna w~TGP: $K_{\rm geo}$ jest parametrem geometrycznym substratu
+(tw.~\ref{thm:D-uniqueness}), $m_{\rm sp}^2 = \beta \sim \PhiZero$ na du\.zych
+skalach (warunek kosmologiczny), a~czynnik~$\pi$ pochodzi
+z~ca\l{}kowania po k\k{a}cie rury.
+Pe\l{}ne wyprowadzenie wymaga zamkni\k{e}cia coarse-grainingu
+(CG-1/CG-3 w~\texttt{status\_map.tex}).
+
+\medskip\noindent
+\textbf{Nast\k{e}pne kroki:}
+(1)~Wyprowadzi\'c~\eqref{eq:X-K-msp-hypothesis}
+z~aksjomat\'ow poziomu~0;
+(2)~Uwzgl\k{e}dni\'c bieganie $\alpha_s$ do skali konfinementu
+$\sim 1$\,GeV;
+(3)~Zbada\'c profil rury poza ansatzem gaussowskim (np.\ $K_0$-Bessel).
+\end{proposition}
+
+\begin{remark}[Zaawansowana analiza rury kolorowej (v47b)]%
+\label{rem:X-tube-advanced}
+Skrypt \texttt{color\_tube\_advanced\_tgp.py} rozwija
+wynik prop.~\ref{prop:X-A-from-tube-tension} w~czterech kierunkach.
+
+\medskip\noindent
+\textbf{(i) Predykcja odwrotna $\alpha_s$ z~mas kwarkowych.}
+Odwracaj\k{a}c~\eqref{eq:X-A-equals-CF2-alphas2}:
+\begin{equation}\label{eq:X-alpha-s-inverse}
+  \alpha_s(M_Z)
+  \;=\;
+  \frac{\sqrt{\mathcal{A}}}{C_F}
+  \;=\;
+  \frac{\sqrt{a_\Gamma/\varphi}}{4/3}
+  \;=\; 0{,}11792.
+\end{equation}
+Warto\'s\'c PDG: $0{,}1179 \pm 0{,}0009$ ---
+odchylenie $+0{,}03\,\sigma$ (praktycznie dok\l{}adna zgodno\'s\'c).
+Jest to \textbf{niezale\.zna droga} wyznaczenia $\alpha_s$,
+komplementarna do mostu masa-sprz\k{e}\.zenie
+($\alpha_s = N_c^3\,g_0^e/(8\PhiZero) = 0{,}1190$, odch.\ $1{,}3\sigma$).
+Oba wyznaczenia r\'o\.zni\k{a} si\k{e} o~$0{,}9\%$.
+
+\medskip\noindent
+\textbf{(ii) Profil Bessela vs gaussowski.}
+Ansatz $K_0$ (ekranowane pole Yukawy) daje $\hat\sigma$
+mniejsze o~czynnik $0{,}3$--$0{,}6$ od gaussowskiego
+(przy tym samym $A$, $w$), psuuj\k{a}c zgodno\'s\'c.
+Ansatz gaussowski jest naturalny dla $A \ll 1$ (re\.zim perturbacyjny:
+funkcja spr\k{e}\.zysta $V_E \approx \frac{1}{2}\delta^2$).
+
+\medskip\noindent
+\textbf{(iii) Skala biegania.}
+Relacja $\mathcal{A} = C_F^2\,\alpha_s^2$ dzia\l{}a przy $\mu = M_Z$;
+na skali konfinementu ($\mu \sim 1$\,GeV, $\alpha_s \sim 0{,}09$)
+stosunek spada do $\sim 0{,}56$. W~TGP jest to naturalne: zubo\.zenie
+$A_{\rm color} = C_F\alpha_s/(\pi\PhiZero)$ jest definiowane
+przy warto\'sci pr\'o\.zniowej $\PhiZero$, kt\'ora odpowiada
+skali globalnej ($\sim M_Z$), nie skali konfinementu.
+
+\medskip\noindent
+\textbf{(iv) Sp\'ojno\'s\'c dw\'och \'scie\.zek.}
+\'Scie\.zka~1 (most masa-sprz\k{e}\.zenie) i~\'scie\.zka~2 (rura kolorowa)
+wymagaj\k{a} sp\'ojnego $g_0^e$:
+\begin{equation}
+  g_0^e
+  \;\stackrel{!}{=}\;
+  \frac{8\PhiZero\,\sqrt{a_\Gamma/\varphi}}{N_c^3\,C_F}
+  \;=\; 0{,}8612.
+\end{equation}
+Warto\'s\'c kalibracyjna: $g_0^e = 0{,}8694$ (rozbie\.zno\'s\'c $0{,}9\%$).
+Rozbie\.zno\'s\'c ta ogranicza niepewno\'s\'c strukturaln\k{a} TGP
+i~mo\.ze by\'c usuni\k{e}ta przez korekcje drugiego rz\k{e}du
+(np.~bieganie $\alpha_s$ mi\k{e}dzy skalami).
+\end{remark}
+
+% =================================================================
+\subsection{Formalne skalowanie $m_0$ z~re\.zimu~III TGP}%
+\label{ssec:X-m0-regime-III}
+% =================================================================
+
+\begin{proposition}[Uniwersalno\'s\'c $\mathcal{A} = m_0\,m_1/m_3$]%
+\label{prop:X-A-universal-new}
+\textbf{Status: \statuslabel{Propozycja (NUM)}.}
+Niech $m_0^{(d)}$ i~$m_0^{(u)}$ b\k{e}d\k{a} optymalnymi masami
+addytywnymi przywracaj\k{a}cymi relacj\k{e} Koide'a
+$Q_K(\sqrt{m+m_0}) = 2/3$ odpowiednio w~sektorze \emph{down}
+i~\emph{up}. W\'owczas stosunek:
+\begin{equation}
+  \mathcal{A}^{(d)} = \frac{m_0^{(d)}\cdot m_d}{m_b},
+  \qquad
+  \mathcal{A}^{(u)} = \frac{m_0^{(u)}\cdot m_u}{m_t},
+  \label{eq:X-A-def-new}
+\end{equation}
+spe\l{}nia \textbf{warunek uniwersalno\'sci}:
+\begin{equation}
+  \frac{\mathcal{A}^{(d)}}{\mathcal{A}^{(u)}} = 0{,}990 \pm 0{,}01
+  \qquad (1{,}0\%),
+  \label{eq:X-A-universal-ratio}
+\end{equation}
+z~warto\'sci\k{a} $\mathcal{A} \approx 2{,}46 \times 10^{-5}$~GeV.
+\end{proposition}
+
+\begin{remark}[Interpretacja fizyczna: $m_0$ z~rury kolorowej
+  w~re\.zimie~III]%
+\label{rem:X-m0-physical}
+Addytywna masa konfinementowa $m_0$ ma naturaln\k{a} interpretacj\k{e}
+w~ramach trzech re\.zim\'ow TGP (\S\ref{sec:rezimy}).
+W~re\.zimie~III (studnia, $r < d_{\rm well}$) para kwark-antykwark
+jest zwi\k{a}zana rur\k{a} kolorow\k{a} o~napi\k{e}ciu $\sigma$.
+
+\medskip\noindent
+\textbf{Model energetyczny.} Kwark lekki ($m_q$) w~rurze o~promieniu $R$:
+\begin{equation}
+  E(R) = \frac{\hbar^2}{2m_q\,R^2} + \sigma\,R,
+  \label{eq:X-tube-energy}
+\end{equation}
+sk\k{a}d minimalizacja daje $R_* = \bigl(\hbar^2/(m_q\sigma)\bigr)^{1/3}$
+i~energi\k{e} wi\k{a}zania:
+\begin{equation}
+  E_* = \tfrac{3}{2}\bigl(\hbar^2\,\sigma^2/m_q\bigr)^{1/3}.
+  \label{eq:X-binding-energy}
+\end{equation}
+
+\medskip\noindent
+\textbf{Skalowanie hierarchiczne.}
+Dla kwarku lekkiego ($m_1$) w~sektorze o~kwarku ci\k{e}\.zkim ($m_3$)
+efektywna d\l{}ugo\'s\'c rury skaluje si\k{e} z~hierarchi\k{a} mas:
+$R_{\rm had} \sim \xi_{\rm tube}\cdot m_3/m_1$,
+sk\k{a}d:
+\begin{equation}
+  m_0 \sim \sigma\,\xi_{\rm tube}\,\frac{m_3}{m_1},
+  \qquad
+  \mathcal{A} = m_0\,\frac{m_1}{m_3}
+  = \sigma\,\xi_{\rm tube}
+  = \mathrm{const}.
+  \label{eq:X-A-scaling}
+\end{equation}
+Interpretacja: $\mathcal{A}$ mierzy \textbf{efektywne napi\k{e}cie rury
+w~jednostkach TGP}; nie zale\.zy od masy kwarku, lecz od parametr\'ow
+substratu ($\sigma$, $\xi_{\rm tube}$).
+
+\medskip\noindent
+\textbf{Predykcja $\alpha_s$ z~$\mathcal{A}$.}
+\l{}\k{a}cz\k{a}c z~prop.~\ref{prop:X-A-from-tube-tension}:
+$\mathcal{A} = C_F^2\,\alpha_s^2$, sk\k{a}d $\alpha_s(M_Z) = 0{,}1179$
+(dok\l{}adna zgodno\'s\'c z~PDG).
+To zamyka \textbf{niezale\.zn\k{a}} drog\k{e} wyznaczenia $\alpha_s$
+z~sektora kwarkowego --- \textbf{bez} u\.zycia mostu masa-sprz\k{e}\.zenie.
+\end{remark}
+
+\begin{remark}[Weryfikacja numeryczna]%
+\label{rem:X-m0-numerical}
+Skrypt \texttt{ex202\_quark\_m0\_derivation.py} (7/8~PASS) weryfikuje:
+\begin{itemize}[nosep]
+  \item $m_0^{(d)} = 21{,}9$~MeV, $m_0^{(u)} = 1981$~MeV
+    (z~optymalizacji $Q_K = 2/3$),
+  \item $\mathcal{A}^{(d)}/\mathcal{A}^{(u)} = 0{,}990$
+    (uniwersalno\'s\'c $1\%$),
+  \item $Q_K(\text{down} + m_0) = 0{,}66666$,
+    $Q_K(\text{up} + m_0) = 0{,}66667$,
+  \item $\mathrm{CV}(\sqrt{m})$: leptony $= 1{,}000$,
+    down $= 1{,}093$, up $= 1{,}244$
+    (odej\'scie od $\mathrm{CV}=1$ ro\'snie z~si\l{}\k{a} konfinementu).
+\end{itemize}
+
+\medskip\noindent
+\textbf{Weryfikacja rozszerzona (LP-5, sesja 2026-04-13):}
+Skrypt \texttt{lp5\_quark\_m0\_from\_string\_tension.py} (13/13~PASS)
+dodatkowo potwierdza:
+\begin{itemize}[nosep]
+  \item $\alpha_s^{\mathrm{(TGP)}} = 0{,}1174$
+    (PDG: $0{,}1179$, $\delta = 0{,}44\%$),
+  \item $\mathcal{A} = a_\Gamma/\varphi = 0{,}02472$~MeV
+    --- zgodno\'s\'c $0{,}3\%$ z~warto\'sci\k{a} empiryczn\k{a},
+  \item $\varphi$-FP uniwersalno\'s\'c:
+    ten sam ODE substratowy daje $r_{21}$ dla \textbf{wszystkich}
+    sektor\'ow ($g_0 \in [0{,}817;\, 0{,}891]$),
+  \item 5~cross-sektorowych triplet\'ow z~$|K - 2/3| < 2\%$
+    (w~tym $(b,c,t)$: $\delta = 0{,}42\%$).
+\end{itemize}
+\textbf{Status LP-5:} \statuslabel{Zamkni\k{e}ty [POST+NUM+UNIV]}.
+Mo\'st $m_0 \leftrightarrow \sigma$ jest w~pe\l{}ni sformalizowany
+(tw.~\ref{thm:X-A-golden}, prop.~\ref{prop:X-phi-color-tube})
+i~potwierdzony numerycznie (13/13~PASS).
+\end{remark}

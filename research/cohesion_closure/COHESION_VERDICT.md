@@ -10,10 +10,10 @@
 Użytkownik poprosił o **wyprowadzenie aparatu subatomowego w języku TGP**:
 najpierw `em_from_substrate` (Maxwell), potem `cohesion_closure` (energie kohezji metali).
 
-Po pozytywnym zamknięciu Maxwella (patrz [[research/em_from_substrate/EM_VERDICT.md]]),
+Po pozytywnym zamknięciu Maxwella (patrz [[EM_VERDICT.md]]),
 to jest drugi test: **czy TGP ma predykcyjny aparat dla chemii stałej**?
 
-Konkretny cel: zamknąć lukę L3 z [[research/atomic_shells_closure/ATOMIC_SHELLS_VERDICT.md]]
+Konkretny cel: zamknąć lukę L3 z [[ATOMIC_SHELLS_VERDICT.md]]
 — most między izolowanym atomem (TGP FAIL) a metalem (SC/Tc PASS). Jeśli TGP
 potrafi dać E_coh bez zapożyczania z DFT/Ashcroft-Mermin, to atomic-shells-FAIL
 zostaje zlokalizowany do problemu jednociałowego. Jeśli NIE potrafi,
@@ -188,15 +188,15 @@ ale nie wnosi nowego pryncypium.
 ## Pliki sesji
 
 - [[research/cohesion_closure/PLAN.md]] — plan programu
-- [[research/cohesion_closure/coh00_baseline.py]] — baseline + jellium scaling
-- [[research/cohesion_closure/coh01_Aorb_correlation.py]] — H1, 3/5 PASS
-- [[research/cohesion_closure/coh02_koide_and_jellium.py]] — H2+H3, 3/5 PASS
-- [[research/cohesion_closure/COHESION_VERDICT.md]] — ten plik
+- [[coh00_baseline.py]] — baseline + jellium scaling
+- [[coh01_Aorb_correlation.py]] — H1, 3/5 PASS
+- [[coh02_koide_and_jellium.py]] — H2+H3, 3/5 PASS
+- [[COHESION_VERDICT.md]] — ten plik
 
 ## Powiązane werdyki
 
-- [[research/em_from_substrate/EM_VERDICT.md]] — EM zamknięte pozytywnie
-- [[research/atomic_shells_closure/ATOMIC_SHELLS_VERDICT.md]] — atomic shells FAIL (jeśli istnieje)
+- [[EM_VERDICT.md]] — EM zamknięte pozytywnie
+- [[ATOMIC_SHELLS_VERDICT.md]] — atomic shells FAIL (jeśli istnieje)
 
 ## Liczbowe podsumowanie
 

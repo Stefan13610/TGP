@@ -115,6 +115,6 @@ zgodny z TGP-correction.
 
 ## 9. Link do rdzenia TGP
 
-Core paper [[papers/core/tgp_core.pdf]] § "Effective field theory" + § "Emergent metric".
+Core paper [[tgp_core.pdf]] § "Effective field theory" + § "Emergent metric".
 Casimir to pierwszy test TGP **na próżni** (nie na materii), uzupełniający
 grawitacyjny reżim (PPN) i kondensowaną materię (SC).

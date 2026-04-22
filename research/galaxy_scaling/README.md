@@ -1,7 +1,7 @@
 # Galaxy Scaling — galaktyka jako płaska studnia potencjału
 
 > **⚠ STATUS 2026-04-19: FORMAL DERIVATION PROGRAM CLOSED (Path C).**
-> Po rigorous derywacjach **gs65** (statyczne) i **gs66** (linear FRW) udowodniono **żadne liniowe rozszerzenie sek02+sek05 nie produkuje MOND** (Fourier-power theorem: log(r) ↔ G̃(k)~1/k³; żaden wielomianowy D(k) z TGP tego nie daje). Patrz: [[TGP/TGP_v1/research/galaxy_scaling/CLOSURE_2026-04-19.md|Formal Closure Document]].
+> Po rigorous derywacjach **gs65** (statyczne) i **gs66** (linear FRW) udowodniono **żadne liniowe rozszerzenie sek02+sek05 nie produkuje MOND** (Fourier-power theorem: log(r) ↔ G̃(k)~1/k³; żaden wielomianowy D(k) z TGP tego nie daje). Patrz: [[CLOSURE_2026-04-19.md|Formal Closure Document]].
 >
 > **Co pozostaje ważne:** Fenomenologiczne dopasowania ν(y) (gs10-gs49) do SPARC/RAR/BTFR/dwarfs pozostają ważne jako *parameterizations*. Liczbowa koincydencja a₀ = c·H₀/(2π) ≈ 1.04×10⁻¹⁰ m/s² pozostaje jako empiryczna obserwacja, bez wyprowadzenia z aksjomatów.
 >

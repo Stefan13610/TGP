@@ -139,10 +139,10 @@ Rekomendacja dla drugiego papera TGP-SC (Zenodo):
 
 ## Powiązania
 
-- [[P6_closure.md]] — zamknięcie P6.A-D
+- [[P6_plan.md]] — zamknięcie P6.A-D
 - [[P7A_summary.md]] — P7.1 λ_sf z pierwszych zasad
 - [[P7B_summary.md]] — P7.2 lanthanide pair-breaking
 - [[ps20_master_plot.py]] — master walidacja P6+P7.1
 - [[ps21_p7b_lanthanide_pair_breaking.py]] — P7.2 ps script
 - [[ps22_open_candidates_predictions.py]] — **ten plik** (P7.C)
-- [[../../papers/sc/tgp_sc.tex]] — paper SC, dokąd idzie tabela predykcyjna
+- [[tgp_sc.tex]] — paper SC, dokąd idzie tabela predykcyjna

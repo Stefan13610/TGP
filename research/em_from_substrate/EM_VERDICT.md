@@ -23,10 +23,10 @@ elektromagnetyzm z substratu (nie postulować).
 | Maxwell emergencja w 5 krokach | sek09 thm:photon-emergence | dowód ✓ |
 | O-1 (transwersalność), O-2 (kwant. ładunku), O-3 (α) | [[dodatekO_u1_formalizacja.tex]] | zamknięte ✓ |
 | Hierarchia U(1)→SU(2)→SU(3) | sek09 + sssec:su2-chiral | 20/20 PASS |
-| 12 testów numerycznych | [[nbody/examples/ex109_u1_gauge_emergence.py]] | 12/12 PASS |
-| RG flow α(m_e)→α(ℓ_P)≈1/94.09 | [[scripts/gauge/alpha_em_rg_flow.py]] | 9/9 PASS |
-| α_em z topologii (hipoteza) | [[scripts/gauge/alpha_em_substrate_v2.py]] | rzędowa |
-| a_Γ·Φ₀=1 z Brannen | [[scripts/tgp_agamma_phi0_test.py]] | n-1/n PASS |
+| 12 testów numerycznych | [[ex109_u1_gauge_emergence.py]] | 12/12 PASS |
+| RG flow α(m_e)→α(ℓ_P)≈1/94.09 | [[alpha_em_rg_flow.py]] | 9/9 PASS |
+| α_em z topologii (hipoteza) | [[alpha_em_substrate_v2.py]] | rzędowa |
+| a_Γ·Φ₀=1 z Brannen | [[tgp_agamma_phi0_test.py]] | n-1/n PASS |
 
 ## 3. Nowa weryfikacja (em00–em02)
 
@@ -151,7 +151,7 @@ ansatzem ψ=φe^(iθ).
 ## Pliki sesji
 
 - [[research/em_from_substrate/PLAN.md]] — plan programu
-- [[research/em_from_substrate/em00_baseline_diagnostic.py]] — inwentaryzacja
-- [[research/em_from_substrate/em01_alpha_em_direct_substrate.py]] — 8/9 PASS
+- [[em00_baseline_diagnostic.py]] — inwentaryzacja
+- [[em01_alpha_em_direct_substrate.py]] — 8/9 PASS
 - [[research/em_from_substrate/em02_two_charge_coulomb.py]] — 4/6 PASS (T1, T5, T6 krytyczne PASS)
-- [[research/em_from_substrate/EM_VERDICT.md]] — ten plik
+- [[EM_VERDICT.md]] — ten plik

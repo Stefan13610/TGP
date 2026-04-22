@@ -1,7 +1,7 @@
 # DESI w(z) Phantom-Crossing Falsification — Program P2 (TGP Redirect)
 
 > **STATUS 2026-04-19: P2 ACTIVE — FORMAL DERIVATION + FALSIFICATION ROADMAP COMPLETE.**
-> This is program **P2** from the [[TGP/TGP_v1/research/REDIRECT_PROGRAM_2026-04-19.md|post-closure redirect]].
+> This is program **P2** from the [[REDIRECT_PROGRAM_2026-04-19.md|post-closure redirect]].
 > TGP makes a **structural, derived, falsifiable** prediction for dark energy: **w(z) ≥ −1 for all z, no phantom crossing.** DESI DR2 (2026 Q3) is the decisive test point.
 
 ---
@@ -34,7 +34,7 @@ TGP is **indistinguishable from ΛCDM** within ~10⁻⁴ on (w₀, wₐ). Both s
 ## 2. Why P2 is a clean falsifier
 
 1. **TGP-unique**: no adjustable parameters; w(z) follows from sek05 ansatz.
-2. **Orthogonal to galaxy-MOND**: does not rely on the ν(y) claim retracted in [[TGP/TGP_v1/research/galaxy_scaling/gs65_formal_derivation.py|gs65]]/[[TGP/TGP_v1/research/galaxy_scaling/gs66_frw_propagator.py|gs66]].
+2. **Orthogonal to galaxy-MOND**: does not rely on the ν(y) claim retracted in [[gs65_formal_derivation.py|gs65]]/[[gs66_frw_propagator.py|gs66]].
 3. **Cannot be rescued**: bridge-(b)/(c) substrate modifications affect structure growth, not the sign of kinetic energy; the w ≥ −1 bound is a theorem.
 4. **Falsifier timeline**: DR2 in ~6 months, DR3 in ~18 months.
 
@@ -122,8 +122,8 @@ Bayes factor log B(CPL/TGP) = 2.46 → "positive" for CPL (Jeffreys scale), but 
 
 - **H₀ tension**: TGP structurally cannot resolve (gs20 + de1; ~8 orders of magnitude too weak). *Not in scope.*
 - **S₈ tension**: TGP substrate effect ~0.001%, 8500× too weak ([[TGP/TGP_v1/research/s8_tension/]]). *Not in scope.*
-- **Galaxy-MOND**: retracted as first-principles derivation ([[TGP/TGP_v1/research/galaxy_scaling/CLOSURE_2026-04-19.md]]). *Separate program.*
-- **Clusters**: handled by P1 ([[TGP/TGP_v1/research/cluster_anomaly/]] + sterile ν hybrid).
+- **Galaxy-MOND**: retracted as first-principles derivation ([[CLOSURE_2026-04-19.md]]). *Separate program.*
+- **Clusters**: handled by P1 (`research/cluster_anomaly/` (planowane) + sterile ν hybrid).
 
 P2 is narrowly targeted on the **phantom-crossing falsification** — the cleanest, fastest, most TGP-unique cosmological test available.
 
@@ -134,9 +134,9 @@ P2 is narrowly targeted on the **phantom-crossing falsification** — the cleane
 - DESI Collaboration DR1 (arXiv:2404.03002, 2024)
 - DESI Collaboration DR2 (expected 2026 Q3)
 - Chevallier & Polarski 2001, Linder 2003 — CPL parametrization
-- [[TGP/TGP_v1/research/galaxy_scaling/gs08b_ghost_free_verification.py]] — kinetic sign verification in sek02+sek05
-- [[TGP/TGP_v1/research/REDIRECT_PROGRAM_2026-04-19.md]] — parent redirect program
-- [[TGP/TGP_v1/research/TGP_STATUS_2026-04-19.md]] — overall TGP status post-closure
+- `research/galaxy_scaling/gs08b_ghost_free_verification.py` (planowane) — kinetic sign verification in sek02+sek05
+- [[REDIRECT_PROGRAM_2026-04-19.md]] — parent redirect program
+- [[TGP_STATUS_2026-04-19.md]] — overall TGP status post-closure
 
 ---
 

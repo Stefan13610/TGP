@@ -117,7 +117,7 @@ to na warunek $\nabla\Phi$-heterogeneity > scale $\ell_T$.
 
 ## 9. Link do rdzenia TGP
 
-Core paper [[papers/core/tgp_core.pdf]] § *Three regimes from non-monotonic
+Core paper [[tgp_core.pdf]] § *Three regimes from non-monotonic
 $\Phi$* — bezpośrednia baza (confinement regime = glass-like).
 
 Potencjalnie sector mający największe połączenia z istniejącą fenomenologią

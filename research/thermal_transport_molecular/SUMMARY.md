@@ -208,10 +208,10 @@ part of a larger TGP compendium.
 ## 6. File index
 
 - [[TGP/TGP_v1/research/thermal_transport_molecular/PLAN.md]]
-- [[TGP/TGP_v1/research/thermal_transport_molecular/ps01_thermal_substrate_diffusion.py]]
-- [[TGP/TGP_v1/research/thermal_transport_molecular/ps02_plateau_molecular_crystals.py]]
-- [[TGP/TGP_v1/research/thermal_transport_molecular/ps03_perovskite_hybrid_scan.py]]
-- [[TGP/TGP_v1/research/thermal_transport_molecular/ps04_WF_ratio_TGP.py]]
+- [[ps01_thermal_substrate_diffusion.py]]
+- [[ps02_plateau_molecular_crystals.py]]
+- [[ps03_perovskite_hybrid_scan.py]]
+- [[ps04_WF_ratio_TGP.py]]
 
 ## 7. Cross-references with other sectors
 

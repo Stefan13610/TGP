@@ -175,7 +175,7 @@ exp-metric hypothesis is falsified.
 | Programme | Connection |
 |-----------|------------|
 | [[../liquid_viscosity/SUMMARY.md]] | Uses substrate ZPE constant $c_{\text{TGP}} = 1/(4\pi)$; Casimir and viscosity both probe substrate zero-point physics. |
-| [[../superconductivity_closure/P6_closure.md]] | Electron-phonon coupling via exp-metric provides analog to $\beta$-coefficient here. |
+| [[../superconductivity_closure/P6_plan.md]] | Electron-phonon coupling via exp-metric provides analog to $\beta$-coefficient here. |
 | [[../muon_g_minus_2/SUMMARY.md]] | Also uses QED trace anomaly (ps05 there); but for Casimir the anomaly is suppressed, whereas for $a_\mu$ it competes with direct Yukawa. |
 
 ## Next research direction
@@ -204,4 +204,4 @@ With Casimir-MOF now a documented null prediction, best-return TGP research dire
 - [[ps04_osmotic_vs_casimir.py]] — osmotic subtraction strategy.
 - [[ps05_gradient_phi_correction.py]] — TGP trace-anomaly correction.
 - [[PLAN.md]] — original research plan (2026-04-20).
-- [[../NEW_DIRECTIONS_2026-04-20.md]] — index of active TGP programmes.
+- [[NEW_DIRECTIONS_2026-04-20.md]] — index of active TGP programmes.

@@ -217,12 +217,12 @@ albo się zamyka, albo daje **pierwszy uczciwie udokumentowany fundamentalny lim
 
 ## 9. Link do rdzenia TGP
 
-- [[TGP/TGP_v1/papers/core/tgp_core.tex]] — Paper 1 (fundament)
+- [[tgp_core.tex]] — Paper 1 (fundament)
 - [[TGP/TGP_v1/research/qm_foundations/README.md]] — emergentna QM
 - [[TGP/TGP_v1/research/mass_scaling_k4/README.md]] — m∝A⁴
 - [[TGP/TGP_v1/research/particle_sector_closure/README.md]] — sektor leptonowy
-- [[TGP/TGP_v1/research/superconductivity_closure/D_CLASS_SC_CLOSURE.md]] — co domknął ps41, co pozostało
-- [[TGP/TGP_v1/research/superconductivity_closure/RHO_SC_CROSSCHECK.md]] — A_orb jako wspólny invariant
+- [[D_CLASS_SC_CLOSURE.md]] — co domknął ps41, co pozostało
+- [[RHO_SC_CROSSCHECK.md]] — A_orb jako wspólny invariant
 
 ---
 

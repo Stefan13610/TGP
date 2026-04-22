@@ -111,5 +111,5 @@ $L_0 = \pi^2 k_B^2/3e^2$ przez czynnik związany z $\Lambda_E$ substratu.
 
 ## 9. Link do rdzenia TGP
 
-Core paper [[papers/core/tgp_core.pdf]] + Zenodo DOI.
-SC paper [[papers/sc/tgp_sc.pdf]] jako wzór struktury aplikacyjnej.
+Core paper [[tgp_core.pdf]] + Zenodo DOI.
+SC paper [[tgp_sc.pdf]] jako wzór struktury aplikacyjnej.

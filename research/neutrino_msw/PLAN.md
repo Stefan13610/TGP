@@ -120,7 +120,7 @@ kosmologią ($<0.12$ eV, Planck 2018).
 
 ## 9. Link do rdzenia TGP
 
-Core paper [[papers/core/tgp_core.pdf]] Theorem *Matter generates space*
+Core paper [[tgp_core.pdf]] Theorem *Matter generates space*
 (A-IV) i § *Emergent metric* — podstawa dla geometrycznego wyprowadzenia
 oscylacji.
 

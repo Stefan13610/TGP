@@ -158,8 +158,8 @@ pytania są **oddzielne** od „czy TGP ma atom wodoru".
 
 ## Pliki powiązane
 
-- [[research/atomic_shells_closure/ATOMIC_SHELLS_VERDICT.md]] — stary werdyk (do zrewidowania)
-- [[research/em_from_substrate/EM_VERDICT.md]] — zamknięcie kroków 1–5
+- [[ATOMIC_SHELLS_VERDICT.md]] — stary werdyk (do zrewidowania)
+- [[EM_VERDICT.md]] — zamknięcie kroków 1–5
 - [[research/em_from_substrate/em02_two_charge_coulomb.py]] — weryfikacja Coulomba
-- [[sekcje_tex/sek09_cechowanie.tex]] — formalizm substratu
-- [[dodatki/dodatekO_u1_formalizacja.tex]] — formalizacja U(1)
+- [[sek09_cechowanie.tex]] — formalizm substratu
+- [[dodatekO_u1_formalizacja.tex]] — formalizacja U(1)

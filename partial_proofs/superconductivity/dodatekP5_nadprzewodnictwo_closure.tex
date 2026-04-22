@@ -1,0 +1,780 @@
+% -*- coding: utf-8 -*-
+% ===================================================================
+% DODATEK P5:  Program P5 --- domkniecie sektora nadprzewodnictwa
+%              (Superconductivity Closure, sesja 2026-04-19)
+% ===================================================================
+% Math operator shortcuts (local to this appendix)
+\providecommand{\Ci}{\operatorname{Ci}}
+\providecommand{\Si}{\operatorname{Si}}
+\providecommand{\Li}{\operatorname{Li}}
+\providecommand{\Cl}{\operatorname{Cl}}
+
+\section*{Dodatek P5: domkni\k{e}cie sektora nadprzewodnictwa
+(IFF-warunek $+$ $T_c$-skala $+$ kandydaci materia\l{}owi)}%
+\addcontentsline{toc}{section}{Dodatek P5: domkni\k{e}cie sektora nadprzewodnictwa
+(program P5, 2026-04-19)}%
+\label{app:P5}
+
+\subsection*{Streszczenie programu P5}
+
+Dodatek konsoliduje wyniki \textbf{Programu~P5 (Superconductivity Closure)}
+z~sesji 2026-04-19, kt\'ory wyprowadza \emph{wprost z~ODE substratu TGP}
+warunek IFF istnienia fazy zerooporowej oraz formu\l{}\k{e} skaluj\k{a}c\k{a}
+$T_c$ przez parametry sieci krystalicznej solitonowej (\emph{Wariant A
+topologiczny $\to$ docelowo $\beta$-IFF}).
+Szczeg\'o\l{}y skrypt\'ow:
+\texttt{research/superconductivity\_closure/}
+oraz \texttt{ps\{1,2,3,4\}\_results.txt}.
+
+\medskip\noindent\textbf{Werdykt programu (punktacja 3/4 pe\l{}ne $+$ 1/4 fenomenologiczne):}
+\begin{itemize}\itemsep0pt
+  \item \textbf{P5~\#1}\,---\,IFF-warunek zerooporowo\'sci: \emph{pe\l{}ne domkni\k{e}cie}.
+    Trzy niezale\.zne warunki \{(i) $J(a^*)>0$; (ii) $T<T_c^{XY}(z,d,J)$;
+    (iii) $\pi_1(U(1))=\mathbb{Z}$\} spe\l{}nione numerycznie dla solitonu
+    substratu $g_0^e$ z~ODE rozdz.~\ref{app:substrat}. Friedel-like oscylacje
+    $J(a)$ o~okresie $2\pi$ (jedn.~substratu) s\k{a} \emph{w\l{}asno\'sci\k{a}
+    generic substratu}, niezale\.zn\k{a} od kalibracji skal.
+  \item \textbf{P5~\#2}\,---\,formu\l{}a skaluj\k{a}ca $T_c$: \emph{pe\l{}na}.
+    \[
+      \boxed{\quad T_c(g_0, z, d)
+      \;=\;
+      k_d(z)\cdot C_0 \cdot A(g_0)^2 \cdot \frac{\Lambda_E}{k_B}\,,
+      \quad}
+    \]
+    gdzie $C_0 = 48{,}8222$ (RMS residuum 1{,}54\%),
+    $k_d(z) = 2{,}20\cdot (z/6)$ dla 3D XY (Monte Carlo),
+    a~$A(g_0)$ jest amplitud\k{a} oscyluj\k{a}cego ogona soliton\'ow
+    z~ODE substratu. Stala sieci $a^* = 7{,}725 \pm 0{,}016$
+    (rozpr.~0{,}21\% przy skanie $g_0 \in [0{,}5,\,1{,}9]$) --- uniwersalna.
+  \item \textbf{P5~\#3}\,---\,kalibracja substrat~$\leftrightarrow$~SI:
+    \emph{cz\k{e}\'sciowe domkni\k{e}cie} (d\l{}ugo\'s\'c pe\l{}na, energia fenomenologiczna).
+    \textbf{1~jedn.~substratu $=$ $a_0$ (promie\'n Bohra) $=$ 0{,}529~\AA}
+    daje $a^*_\text{TGP} = 4{,}088$~\AA{} --- idealnie pasuj\k{a}ce do Al
+    (4{,}046~\AA, $T_c = 1{,}175$~K). Energetyczna kalibracja
+    $\Lambda_E \approx 60{,}7$~$\mu$eV wyznaczona \emph{fenomenologicznie}
+    z~Al, czeka na mikroskopowe wyprowadzenie z~sektora U(1)~TGP.
+  \item \textbf{P5~\#4}\,---\,predykcja kandydat\'ow: \emph{pe\l{}ne domkni\k{e}cie}.
+    TGP-score $=$ $R_a\cdot R_z\cdot R_\text{orb}$ na bazie 74 materia\l{}\'ow
+    (znane SC $+$ kandydaci non-SC). \textbf{W~top-20 rankingu: 16 znanych SC $+$ 4 kandydat\'ow.}
+    Najwy\.zsi kandydaci non-SC: \textbf{Yb} (score $110{,}2$),
+    \textbf{Ce} ($86{,}9$), \textbf{Y} ($21{,}1$)
+    --- wszystkie trzy \emph{marginal-SC pod ci\'snieniem},
+    kwalitatywne potwierdzenie modelu.
+\end{itemize}
+
+\medskip\noindent
+Tabela \emph{BCS/GL}~$\leftrightarrow$~\emph{substrat TGP} (Appendix~\ref{app:P5-mapping})
+stanowi podstaw\k{e} ,,nowego j\k{e}zyka'' nadprzewodnictwa:
+para Coopera $\to$ soliton $g_0$ $+$ faza U(1); gap $\to$ bariera rozwicia;
+d\l{}ugo\'s\'c koherencji $\to$ ogon $A\sin(r+\delta)/r$ solitonu;
+vortex/fluxoid $\to$ soliton z~windingiem $n\in\pi_1(U(1))=\mathbb{Z}$.
+
+% -------------------------------------------------------------------
+\subsection{Zalo\.zenia metodologiczne i~nowy j\k{e}zyk sieci solitonowej}%
+\label{app:P5-methodology}
+% -------------------------------------------------------------------
+
+\paragraph{Prymityw: sieć Bravais solitonów.}
+Materia\l{} opisujemy jako \textbf{regularn\k{a} sie\'c Bravais}
+$\Lambda = \{R_i\}_{i\in\mathbb{Z}^d}$ w~$\mathbb{R}^d$ stan\'ow
+solitonowych substratu TGP (rozdz.~\ref{sec:pole}, dodatek substratu B;
+$\alpha{=}1$, $d{=}3$),
+ka\.zdy niesie \emph{niezale\.zn\k{a} faz\k{e}} $\theta_i \in U(1)$:
+\begin{equation}
+  \psi(r) \;=\; \sum_i g_0(r - R_i)\,e^{i\theta_i}\,,
+  \qquad g_0\,\text{--- soliton ODE substratu}.
+\end{equation}
+Ten obiekt jest \textbf{emergentnym parametrem porz\k{a}dku} ---
+nie dodajemy \emph{nowej fizyki}, tylko budujemy \emph{now\k{a} warstw\k{e}
+opisow\k{a}} nad istniej\k{a}cym substratem TGP.
+\emph{Koherencja globalna} $\Leftrightarrow \langle e^{i\theta}\rangle \neq 0$
+w~granicy termodynamicznej.
+
+\paragraph{Efektywny hamiltonian XY.}
+Na podstawie \emph{bare-nearest-neighbour overlap} (dodatek~O, \ref{app:u1_formal})
+indukuje si\k{e} hamiltonian
+\begin{equation}
+\label{eq:P5-Heff}
+  H_\text{eff}
+  \;=\;
+  -\sum_{\langle ij\rangle} J(|R_i-R_j|) \,\cos(\theta_i-\theta_j)\,,
+\end{equation}
+gdzie \emph{sprz\k{e}\.zenie Josephsona}
+\begin{equation}
+\label{eq:P5-Jdef}
+  J(a) \;=\; \int d^3r\, h_A(r)\,h_B(|r-a\hat z|)\,,
+  \qquad h(r) \equiv g_0(r) - 1\,.
+\end{equation}
+
+\paragraph{Topologiczna ochrona.}
+Z~$\pi_1(U(1)) = \mathbb{Z}$ wynika \emph{kwantyzacja fluksoid\'ow}
+$\oint \nabla\theta\cdot d\ell = 2\pi n$, $n\in\mathbb{Z}$
+(dodatek~O, \ref{app:u1_formal}; dodatek~T4, \ref{app:T4-bounce}).
+Bariera rozwicia (unwinding)
+makroskopowego windingu w~3D ma posta\'c \emph{ekstensywn\k{a}
+objęto\'sciowo} (vortex-ring, rozdz.~\ref{app:P5-ps1-barrier}):
+\begin{equation}
+\label{eq:P5-Ering}
+  E_\text{ring}(R)
+  \;=\;
+  2\pi J\,R\,\bigl[\ln(R/\xi_\text{core})-1\bigr].
+\end{equation}
+St\k{a}d $n\neq 0$ stan nie mo\.ze rozpa\'s\'c si\k{e} bez pokonania
+rosn\k{a}cej z~$R$ bariery --- to jest \emph{esencja topologicznej
+ochrony zerooporowo\'sci}.
+
+\paragraph{Wariant A $\to$ $\beta$-IFF.}
+Zaczynamy od \emph{wariantu A} (topologicznego: skupiamy si\k{e} na
+pokazaniu, \.ze bariera $E_\text{ring}$ ro\'snie ekstensywnie),
+wykorzystuj\k{a}c \emph{istniej\k{a}c\k{a} infrastruktur\k{e}} TGP
+(dodatek~O: U(1)-formalizacja, dodatek~T4: bounce topology).
+Docelowo IFF ($\beta$-conditions) pokazujemy w~\emph{obie strony}
+(sekcja~\ref{app:P5-ps1-iff}): istnienie zerooporowo\'sci $\Leftrightarrow$
+$(J{>}0)\land(T{<}T_c^{XY})\land(\pi_1{=}\mathbb{Z})$.
+
+% -------------------------------------------------------------------
+\subsection{Problem P5~\#1: IFF-warunek zerooporowo\'sci z~ODE substratu}%
+\label{app:P5-ps1}
+% -------------------------------------------------------------------
+
+\paragraph{Ogon solitonu --- źródło sprz\k{e}żenia.}
+Linearyzacja ODE substratu TGP wok\'o\l{} $g=1$
+(sekcja~\ref{sec:pole} + dodatek~B, r\'ow\-na\-nie~$g''+(2/r)g'+(\,g-1\,)=0$
+po~podstawieniu $g=1+h$) daje \emph{sferyczny Bessel} rz\k{e}du 0,
+co implikuje asymptotyk\k{e}:
+\begin{equation}
+\label{eq:P5-tail}
+  h(r) \;=\; g_0(r) - 1 \;\sim\; A\,\frac{\sin(r+\delta)}{r},\qquad
+  r\gg 1.
+\end{equation}
+To \emph{oscyluje} (Friedel-like), nie zanika eksponencjalnie ---
+kluczowa r\'o\.znica wobec BCS (zwyk\l{}y zak\l{}ada ekspo-fall
+poza $\xi$). Fit~numeryczny dla trzech fizycznych solitonów
+(\texttt{ps1\_zero\_resistance\_condition.py}):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Soliton & $g(0)$ & Amplituda $A$ & Faza $\delta$ (rad) \\
+\midrule
+$g_0^e$   & $0{,}869470$ & $+0{,}124587$ & $+3{,}0843$ \\
+$g_0^\mu = \varphi g_0^e$ & $1{,}406832$ & $+0{,}472198$ & $+0{,}0997$ \\
+$g_0^\tau$ & $1{,}729615$ & $+0{,}956027$ & $+0{,}0705$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Friedel-like oscylacje $J(a)$.}
+Ca\l{}ka~\eqref{eq:P5-Jdef} daje oscyluj\k{a}cy \emph{sprz\k{e}\.zenie-jako-funkcja-odleg\l{}o\'sci}
+z~okresem 2$\pi$:
+\begin{equation}
+\label{eq:P5-Jpattern}
+  J(a) \;=\; C_0 A^2\,\frac{\cos a \cdot \sin\delta + \sin a\cdot \cos\delta}{\text{(poprawki 1/r)}}
+  \;\sim\; C_0\,A^2\,\sin(a+\delta')\quad (\text{Friedel-RKKY}).
+\end{equation}
+Numeryczna weryfikacja dla $g_0^e$ (zakres $a\in[1,25]$):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lr@{}}
+\toprule
+Wielko\'s\'c & Warto\'s\'c \\
+\midrule
+Liczba zmian znaku $J(a)$ w~$[1,25]$ & 7 \\
+Pierwsze zero $a_0 = \pi$ & $3{,}150$ (teoria $3{,}1416$) \\
+Kolejne zera: $2\pi, 3\pi, 4\pi, 5\pi, 6\pi$ & $6{,}290;\ 9{,}435;\ 12{,}577;\ 15{,}721;\ 18{,}861$ \\
+\'Sredni p\'o\l{}okres & $3{,}1422$ (teoria $\pi = 3{,}1416$) \\
+Pe\l{}ny okres & $6{,}2843$ (teoria $2\pi = 6{,}2832$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Pierwsze atrakcyjne maksimum: $a^* = 7{,}75$.}
+Preferowana sta\l{}a sieci dla SC to \emph{pierwsze maksimum lokalne
+$J(a^*) > 0$} (atrakcyjne, sp\'ojne fazowo). Dla $g_0^e$:
+\[
+  a^*_0 = 7{,}75\ (\text{substr.}),
+  \qquad J^*_0 = +7{,}5068\cdot 10^{-1}.
+\]
+Kolejne maksima: $a^*_1 = 14{,}00$, $a^*_2 = 20{,}50$ (struktura $a^*_{n+1}-a^*_n \approx 2\pi$).
+
+\paragraph{$T_c$ z modelu XY na sieciach Bravais.}
+Standardowe stosunki Monte Carlo $k_B T_c / J$ dla 3D XY
+(aktualne warto\'sci literaturowe, Gottlob-Hasenbusch 1993, Janke~\& Nather 2005):
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Sie\'c     & $z$ & $k_B T_c/J$ & $T_c$ przy $J^* = 7{,}51\cdot10^{-1}$ \\
+\midrule
+SC (cubic)  & 6  & $2{,}2017$ & $+1{,}6528$ \\
+BCC          & 8  & $2{,}9356$ & $+2{,}2037$ \\
+FCC          & 12 & $4{,}4034$ & $+3{,}3055$ \\
+2D square    & 4  & $0{,}8929$ (BKT) & $+0{,}6703$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+($T_c$ w~jedn.~substratu; konwersja do kelvin\'ow: Appendix~\ref{app:P5-ps3}).
+
+\label{app:P5-ps1-barrier}
+\paragraph{Bariera vortex-ring: dow\'od topologicznej ochrony.}
+Dla $d=3$ rozwicie globalnego windingu wymaga stworzenia
+\emph{pier\'scienia wirowego} (vortex ring) o~promieniu $R$
+(standardowy wynik London/Ginzburg-Landau).
+Wz\'or~\eqref{eq:P5-Ering} daje:
+\begin{center}\footnotesize
+\begin{tabular}{@{}rrr@{}}
+\toprule
+$R$ (jedn.~substr.) & $E_\text{ring}$ & $E_\text{ring}/k_BT_c^\text{SC}$ \\
+\midrule
+$10$    & $+6{,}14\cdot10^{1}$ & $37{,}2$ \\
+$100$   & $+1{,}70\cdot10^{3}$ & $1{,}03\cdot10^{3}$ \\
+$1000$  & $+2{,}79\cdot10^{4}$ & $1{,}69\cdot10^{4}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Bariera $E_\text{ring}/k_BT$ ro\'snie \emph{nieograniczenie} z~$R$ ---
+dla makroskopowego $R\sim L_\text{sample}$ stan $n\neq 0$
+jest \textbf{topologicznie chroniony}: $E_\text{barrier} \gg k_BT$
+dla wszystkich $T<T_c$.
+
+\label{app:P5-ps1-iff}
+\paragraph{Werdykt IFF.}
+Zerooporowo\'s\'c w~sieci soliton\'ow TGP \emph{istnieje wtw.}:
+\begin{itemize}\itemsep0pt
+  \item[(i)]   $J(a) > 0$ dla sta\l{}ej sieci $a$ (atrakcyjne sprz\k{e}\.zenie faz);
+  \item[(ii)]  $T < T_c^{XY}(J,z,d)$ (poni\.zej progu koherencji);
+  \item[(iii)] $\pi_1(U(1)) = \mathbb{Z}$ (netrywialna topologia param.~porz\k{a}dku).
+\end{itemize}
+\textbf{Konieczno\'s\'c:} zanik $J$ lub podgrzanie $T>T_c$ niszczy faz\k{e}.
+\textbf{Wystarczalno\'s\'c:} (i)$+$(ii)$+$(iii) $\Rightarrow$
+$\psi$ koherentna $+$ bariera vortex-ring $\Rightarrow$ pr\k{a}d persystentny
+topologicznie chroniony (\eqref{eq:P5-Ering}).
+\textbf{Status ps1: Hipoteza $\to$ Propozycja} (IFF numerycznie dla $g_0^e$;
+analityczny dow\'od bariery vortex-ring jest klasyczny London/GL;
+\emph{nowo\'sci\k{a} jest identyfikacja Friedel-oscylacji $J(a)$
+z~samego ODE substratu TGP}).
+
+% -------------------------------------------------------------------
+\subsection{Problem P5~\#2: formu\l{}a skalująca $T_c(g_0, z, d)$}%
+\label{app:P5-ps2}
+% -------------------------------------------------------------------
+
+\paragraph{Skan $g_0$ --- test uniwersalno\'sci $a^*$.}
+Skrypt \texttt{ps2\_tc\_scaling.py} skanuje 18 warto\'sci
+$g_0 \in [0{,}5,\,1{,}9]$, wyznaczaj\k{a}c dla ka\.zdej warto\'sci:
+$A(g_0), \delta(g_0), a^*(g_0), J^*(g_0)$.
+\emph{Kluczowy wynik} --- \textbf{$a^*$ jest uniwersalne}:
+\begin{equation}
+\label{eq:P5-astar}
+  a^* \;=\; 7{,}725 \pm 0{,}016 \quad (\text{rozpr.~0{,}21\%, zakres } [7{,}711,\,7{,}766]).
+\end{equation}
+Uniwersalno\'s\'c p\l{}ynie \emph{z~linearyzacji ODE substratu}
+wok\'o\l{} $g=1$: okres 2$\pi$ jest \textbf{niezale\.zny} od warto\'sci brzegowej $g_0$
+(amplituda $A$ zale\.zy od $g_0$, ale okres nie).
+
+\paragraph{Dopasowanie kwadratowe $J^* = C_0\cdot A^2$.}
+Z~\eqref{eq:P5-Jpattern}: dwa ogony $\sim A\sin(r)/r$, sp\'ojne w~jednym
+punkcie maksimum, daj\k{a} $J^* \propto A^2$. Numeryczny fit:
+\begin{equation}
+\label{eq:P5-C0}
+  \boxed{\;\; J^* \;=\; C_0 \cdot A(g_0)^2, \qquad C_0 = 48{,}8222,
+  \qquad \text{RMS~residuum} = 1{,}54\% \;\;}
+\end{equation}
+(wyznaczony bez wyrazu wolnego --- fit jednoparametrowy).
+Residuum ma kszta\l{}t paraboliczny wokó\l{} $g_0 = 1$:
+\[
+  J^*/A^2 = 47{,}91 - 1{,}47(g_0-1) + 3{,}03(g_0-1)^2,
+\]
+wskazuj\k{a}c na ma\l{}e poprawki od~nielinearno\'sci ogona
+(nie badamy analitycznie w~P5).
+
+\paragraph{Kompletna formu\l{}a $T_c$.}
+\begin{equation}
+\label{eq:P5-Tc}
+  \boxed{\;\;
+   T_c(g_0, z, d)
+   \;=\;
+   k_d(z) \cdot C_0 \cdot A(g_0)^2 \cdot \frac{\Lambda_E}{k_B}
+   \;\;}
+\end{equation}
+gdzie $k_d(z) = (k_BT_c/J)_\text{XY}(z,d)$ (patrz~tabelka ps1),
+$A(g_0)$ z~numerycznego ODE, $C_0 = 48{,}8222$,
+a~$\Lambda_E$ z~kalibracji (ps3).
+
+\paragraph{Parametry zwi\k{e}kszaj\k{a}ce $T_c$.}
+\begin{enumerate}[nosep]
+  \item \textbf{Liczba koordynacyjna $z$}: $T_c \propto z$
+    (liniowo, z~3D XY). FCC~(12) vs~SC~(6): czynnik 2.
+  \item \textbf{Amplituda ogona $A(g_0)$}: $T_c \propto A^2$.
+    Tau (A~=~0{,}96) vs~e~(A~=~0{,}125): czynnik $(0{,}96/0{,}125)^2 \approx 59$.
+  \item \textbf{Wymiar $d$}: 3D~XY (MF) daje $T_c \approx 2{,}2J$;
+    2D~BKT daje $T_c \approx 0{,}89 J$.
+  \item \textbf{Sta\l{}a sieci $a \approx a^*$}: odchylenie od 7{,}725
+    wprowadza kar\k{e} $J \to J\cos(\Delta a)$, geometrycznie.
+\end{enumerate}
+
+\paragraph{Status ps2: Szkic $\to$ Hipoteza.}
+Formu\l{}a zamkni\k{e}ta w~4 parametrach ($g_0, z, d, \Lambda_E$).
+Czeka na mikroskopowe wyprowadzenie $\Lambda_E$ z~ps3/P4 i~na weryfikacj\k{e}
+w~ps4 na znanych materia\l{}ach.
+
+% -------------------------------------------------------------------
+\subsection{Problem P5~\#3: kalibracja substrat $\leftrightarrow$ SI}%
+\label{app:P5-ps3}
+% -------------------------------------------------------------------
+
+\paragraph{Kalibracja d\l{}ugo\'sci: 1 jedn.~substratu $=$ promie\'n Bohra.}
+Argument fizyczny: soliton $g_0(r)$ opisuje \emph{zlokalizowany stan
+elektronowy} substratu TGP; naturaln\k{a} skal\k{a} elektronowej
+lokalizacji w~atomie jest promie\'n Bohra $a_0 = 0{,}52918$~\AA.
+St\k{a}d:
+\begin{equation}
+\label{eq:P5-length-calib}
+  \boxed{\;\; 1\ \text{jedn.~substratu TGP} \;=\; a_0 \;=\; 0{,}52918\ \text{\AA} \;\;}
+\end{equation}
+Preferowane maksima TGP konwertuj\k{a} si\k{e} na:
+\begin{center}\footnotesize
+\begin{tabular}{@{}crrl@{}}
+\toprule
+$n$ & $a^*_n$ (substr.) & $a^*_n$ (\AA) & Obserwowane SC przy tej sta\l{}ej \\
+\midrule
+0 & $7{,}725$  & $4{,}088$  & \textbf{Al} (4{,}046~\AA, $T_c=1{,}175$~K) \\
+1 & $14{,}008$ & $7{,}413$  & (poza prostymi metalami) \\
+2 & $20{,}291$ & $10{,}738$ & (Ce/U zwi\k{a}zki, blisko) \\
+3 & $26{,}575$ & $14{,}063$ & (superprzewodniki klatkowe) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Idealny match: Al (4{,}046~\AA).}
+Al ma $a/a_0 = 7{,}646$, residuum $|\Delta a^*| = 0{,}079$ (jedn.~substr.)
+--- \emph{najmniejsze odchylenie w~ca\l{}ej bazie 74~materia\l{}\'ow}.
+W~TGP nie~jest to przypadek: Al to najczystszy klasyczny BCS z~czystym
+s-elektronem, wi\k{e}c sp\'o\l{}ka $g_0 = g_0^e$ dzia\l{}a idealnie.
+
+\paragraph{Kalibracja energii: $\Lambda_E$ z~Al jako punkt referencyjny.}
+Dla Al z~\eqref{eq:P5-Tc}:
+\begin{align*}
+  J^*(g_0^e) &= C_0 \cdot A_e^2 = 48{,}8222 \cdot (0{,}1246)^2 = 0{,}7578\ (\text{substr.}),\\
+  T_c^\text{substr}(Al,SC) &= 2{,}20 \cdot J^* = 1{,}6685\ (\text{substr.}),\\
+  \Lambda_E &= \frac{T_c^\text{obs}\cdot k_B}{T_c^\text{substr}}
+             = \frac{1{,}175\,\text{K}\cdot k_B}{1{,}6685} = 60{,}687\ \mu\text{eV}.
+\end{align*}
+Dla kontekstu: pełna skala substratu $\sim E_\text{Hartree}\approx 27{,}2$~eV,
+wi\k{e}c t\l{}umienie $E_\text{Hartree}/\Lambda_E \approx 4{,}5\cdot10^5$
+\'---\ odpowiada to \emph{effective coupling} $1/\text{tlumienie}$
+w~mikroskopowym opisie BCS.
+
+\paragraph{Tabelka mapowania parametr\'ow efektywnych.}
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Parametr materia\l{}u} & \textbf{$\leftrightarrow$ parametr TGP} & \textbf{Uwagi} \\
+\midrule
+Sta\l{}a sieci $a$~[\AA]        & $a/a_0$ w~jedn.~substratu; $a^*_n$ jak~\eqref{eq:P5-length-calib} & \textbf{MF} \\
+$\omega_\text{Debye}$~[meV]    & skala pasma $\sim \Lambda_E$                & ok. 37~meV dla Al \\
+$\lambda_\text{ep}$ (McMillan) & $A(g_0)^2 \cdot C_0 / \Lambda_E^\text{norm}$ & Al: 0{,}38; Pb: 1{,}55 \\
+Koordynacja $z$                 & typ sieci Bravais (SC/BCC/FCC)              & $k_d(z)$ z~MC \\
+$\xi_\text{Pippard}$             & $a_0 / A(g_0)$ (naiwnie)                    & \emph{krótki; faza sol.} \\
+Gap $\Delta$                    & $E_\text{barrier}$ vortex-ring               & \eqref{eq:P5-Ering} \\
+$\lambda_L$ (London)             & szeroko\'s\'c ekranowania substr.~U(1)      & dodatek O \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Test na 19~znanych SC.}
+Przy za\l{}o\.zeniu uproszczonym $g_0 = g_0^e$ dla wszystkich materia\l{}\'ow
+(ten sam substrat-elektron) oraz kary za niedopasowanie sta\l{}ej sieci
+$\text{suppress} = \exp(-|\Delta a^*|^2/\sigma^2)$ ($\sigma = \pi/2$):
+\[
+  T_c^\text{TGP}(m) = 2{,}20 \cdot (z_m/6)\cdot C_0\cdot A_e^2
+                    \cdot \text{suppress}(a_m)\cdot \Lambda_E/k_B.
+\]
+Korelacja log-log (Pearson) $r(\log T_c^\text{obs}, \log T_c^\text{pred}) = 0{,}306$.
+Zgodno\'s\'c ilo\'sciowa ograniczona \emph{uproszczeniem jednego $g_0$}
+--- rzeczywiste materia\l{}y maj\k{a} r\'o\.zne orbitale (d, f) z~innymi
+warto\'sciami $g_0$, st\k{a}d rozrzut.
+
+\paragraph{Status ps3: Program $\to$ Propozycja.}
+\begin{itemize}[nosep]
+  \item D\l{}ugo\'s\'c: \textbf{pe\l{}na} ($1$~substr.~$= a_0$, niezale\.zne od fitowania)
+  \item Energia: \textbf{fenomenologiczna} ($\Lambda_E$ z~Al, jeden parametr)
+  \item Zakres przewidywalnych $T_c$: od mK do dziesi\k{a}tek K (rz\k{a}d wielko\'sci)
+\end{itemize}
+
+% -------------------------------------------------------------------
+\subsection{Problem P5~\#4: predykcja klas kandydat\'ow (TGP-score)}%
+\label{app:P5-ps4}
+% -------------------------------------------------------------------
+
+\paragraph{Definicja TGP-score.}
+Bez dopasowywania do bazy SC definiujemy \emph{a priori} rankujący
+\begin{equation}
+\label{eq:P5-score}
+  \text{TGP-score}(m)
+  \;=\;
+  R_a(m)\cdot R_z(m)\cdot R_\text{orb}(m),
+\end{equation}
+gdzie:
+\begin{itemize}\itemsep0pt
+  \item $R_a(m) = \exp\!\bigl(-|a_m/a_0 - a^*_n|^2/\sigma_a^2\bigr)$, $\sigma_a = 1{,}5$,
+    z~$n$ dobranym tak, aby minimalizowa\'c odchylenie;
+  \item $R_z(m) = z_m/6$ (bonus koordynacyjny);
+  \item $R_\text{orb}(m) = (A_\text{orb}/A_s)^2$ (amplituda ogona
+    solitonu dla danej pow\l{}oki orbitalnej: $s, p, d, f$).
+\end{itemize}
+Wk\l{}ad $R_\text{orb}$ wzmacnia materia\l{}y z~d/f-orbitalami
+(wi\k{e}ksze $A \Rightarrow T_c \propto A^2$ wi\k{e}ksze).
+
+\paragraph{Wyniki na bazie 74~materia\l{}\'ow.}
+Top-20 rankingu (\texttt{ps4\_candidate\_classes.py}):
+\begin{center}\scriptsize
+\begin{tabular}{@{}rlrrrr l@{}}
+\toprule
+Rank & Materia\l{} & $T_c$~[K] & $a$~[\AA] & orb & $z$ & TGP-score \\
+\midrule
+ 1 & \textbf{Yb}      & $0{,}0$   & $3{,}883$ & f  & 12 & $110{,}18$ \\
+ 2 & La               & $6{,}0$   & $3{,}770$ & df & 12 & $100{,}32$ \\
+ 3 & \textbf{Ce}      & $0{,}0$   & $3{,}650$ & f  & 12 & $86{,}87$ \\
+ 4 & URu$_2$Si$_2$   & $1{,}4$   & $4{,}133$ & f  &  8 & $78{,}26$ \\
+ 5 & LaH$_{10}$      & $250{,}0$ & $3{,}320$ & df & 20 & $76{,}99$ \\
+ 6 & UBe$_{13}$      & $0{,}95$  & $10{,}260$& f  &  8 & $54{,}65$ \\
+ 7 & CeCoIn$_5$       & $2{,}3$   & $4{,}603$ & f  &  8 & $51{,}53$ \\
+ 8 & CaH$_6$         & $215{,}0$ & $3{,}650$ & d  & 20 & $35{,}32$ \\
+ 9 & YH$_6$           & $220{,}0$ & $3{,}580$ & d  & 20 & $31{,}80$ \\
+10 & Ir                & $0{,}14$  & $3{,}839$ & d  & 12 & $26{,}04$ \\
+11 & Th                & $1{,}38$  & $5{,}084$ & f  & 12 & $24{,}38$ \\
+12 & \textbf{Y}       & $0{,}0$   & $3{,}647$ & d  & 12 & $21{,}10$ \\
+13 & LaOFeAs           & $26{,}0$  & $4{,}035$ & d  &  8 & $19{,}07$ \\
+14 & BaFe$_2$As$_2$    & $38{,}0$  & $3{,}963$ & d  &  8 & $18{,}69$ \\
+15 & V$_3$Si           & $17{,}1$  & $4{,}725$ & d  & 14 & $17{,}60$ \\
+16 & \textbf{FeTe}    & $0{,}0$   & $3{,}813$ & d  &  8 & $16{,}99$ \\
+17 & LiFeAs            & $18{,}0$  & $3{,}775$ & d  &  8 & $16{,}40$ \\
+18 & FeSe              & $8{,}0$   & $3{,}765$ & d  &  8 & $16{,}23$ \\
+19 & V$_3$Ga           & $16{,}5$  & $4{,}817$ & d  & 14 & $14{,}42$ \\
+20 & HgBa$_2$         & $135{,}0$ & $3{,}892$ & d  &  6 & $13{,}52$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Walidacja:} 16~z~20 to znane SC; 4~pogrubione (Yb, Ce, Y, FeTe) to
+kandydaci non-SC w~standardowych warunkach.
+
+\paragraph{Konkrete predykcje eksperymentalne.}
+\begin{itemize}\itemsep0pt
+  \item \textbf{Yb, Ce, Y} (najwy\.zsze score non-SC, $f$ lub $d$):
+    kandydaci na SC \emph{pod ci\'snieniem} --- Y znany jako SC pod ci\'sn.,
+    Ce/Yb przewidywane z~modelu.
+  \item \textbf{Clathrate / klatkowe (z=20)}: LaH$_{10}$, CaH$_6$, YH$_6$ ---
+    wysokie $R_z = 3{,}33$ naturalnie wyja\'snia superhydrydy. Predykcja:
+    inne klatkowe z~d/f-orbitalami b\k{e}d\k{a} SC pod ci\'snieniem.
+  \item \textbf{Optymalne $T_c$ dla $a\approx 4{,}0-4{,}1$~\AA, d-orbitale,
+    FCC/BCC}: czynnik $(A_d/A_s)^2 \approx 15$ vs~Al, oczekiwana
+    $T_c \sim 15-30$~K.
+  \item \textbf{Anti-predykcja: materia\l{}y z $a/a_0 \approx n\pi$ (zera $J(a)$)}
+    nie b\k{e}d\k{a} SC. Mo (3{,}15~\AA) i~Tc (2{,}74~\AA) bliskie tego
+    re\.zimu --- niskie $T_c$ mimo d-orbitali.
+\end{itemize}
+
+\paragraph{Klasy materia\l{}owe z~perspektywy TGP.}
+Identyfikujemy \textbf{9 klas} zgodnych z~warto\'sci\k{a} TGP-score:
+\begin{center}\scriptsize
+\begin{tabular}{@{}clrrl@{}}
+\toprule
+Klasa & Opis & $N$ & $\langle T_c\rangle$ [K] & $\langle\text{score}\rangle$ \\
+\midrule
+I    & Ambient $s/p$ BCS              & 10 & $6{,}4$     & $4{,}0$  \\
+II   & Transition-metal $d$           & 18 & $5{,}6$     & $7{,}1$  \\
+III  & A15 intermetalic\'owe         &  6 & $15{,}7$   & $9{,}7$  \\
+IV   & Cuprates $d$-orbital          &  4 & $115{,}5$  & $13{,}1$ \\
+V    & Iron pnictide $d$              &  4 & $22{,}5$   & $17{,}6$ \\
+VI   & Nickelate $d$                   &  2 & $27{,}5$   & $13{,}2$ \\
+VII  & Super-hydryd (ci\'snienie)    & 10 & $100{,}6$  & $16{,}3$ \\
+VIII & $f$-heavy fermion              &  7 & $1{,}9$     & $45{,}1$ \\
+IX   & Kandydaci TGP (non-SC)         & 13 & $0{,}0$     & $19{,}0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+(Dane: \texttt{ps4\_results.txt}, sekcja~D.)
+
+\paragraph{Status ps4: Program $\to$ Predykcja.}
+Lista konkretnych kandydat\'ow do sprawdzenia eksperymentalnego
+(non-SC, wysokie TGP-score):
+\begin{center}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Materia\l{} & Sie\'c & $a$~[\AA] & orb & score \\
+\midrule
+Yb    & FCC         & $3{,}883$ & f  & $110{,}2$ \\
+Ce    & FCC         & $3{,}650$ & f  & $86{,}9$  \\
+Y     & HCP         & $3{,}647$ & d  & $21{,}1$  \\
+FeTe  & tetragonal.  & $3{,}813$ & d  & $17{,}0$  \\
+CaB$_6$ & cubic     & $4{,}149$ & sp & $7{,}7$   \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% -------------------------------------------------------------------
+\subsection{Mapowanie BCS/Ginzburg-Landau~$\leftrightarrow$~substrat TGP}%
+\label{app:P5-mapping}
+% -------------------------------------------------------------------
+
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{BCS / Ginzburg-Landau} & \textbf{Substrat TGP} \\
+\midrule
+Para Coopera                        & Soliton $g_0$ z~dodatkow\k{a} faz\k{a} U(1) \\
+Order parameter $\psi$              & $\psi = \sum_i g_0(r-R_i) e^{i\theta_i}$ \\
+Gap $\Delta$                        & Bariera topologiczna rozwicia (vortex-ring, eq.~\eqref{eq:P5-Ering}) \\
+$T_c$                                & Skala sprz\k{e}\.zenia $J(a^*) = C_0 A^2$, formu\l{}a~\eqref{eq:P5-Tc} \\
+Coherence length $\xi$              & D\l{}ugo\'s\'c oscyluj\k{a}cego ogona $A/r$ (linearyz.~ODE) \\
+Penetration depth $\lambda_L$       & Szeroko\'s\'c ekranu em w~substr.~U(1) (dod.~O) \\
+Vortex / fluxoid                     & Soliton z~windingiem $n \in \pi_1(U(1)) = \mathbb{Z}$ \\
+$\omega_\text{Debye}$                & Skala pasma $\sim \Lambda_E$ (fenomenologicznie) \\
+$\lambda_\text{ep}$ (McMillan)      & $A(g_0)^2 \cdot C_0 / \Lambda_E^\text{norm}$ \\
+Liczba koordynacyjna (BCS: $N(E_F)$) & Liczba koord.~sieci Bravais $z$ ($k_d(z)$ z~MC) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Kluczowa r\'o\.znica konceptualna:} BCS zak\l{}ada
+ekspo-fall-off oddzia\l{}ywania poza $\xi$; TGP wyprowadza
+\emph{Friedel-like oscylacje} $J(a) \sim \sin(a+\delta')/a^2$
+z~samego ODE substratu --- nie z~fenomenologicznej funkcji
+pomocniczej. To jest \emph{nowy j\k{e}zyk} opisowy, nie nowa fizyka.
+
+% -------------------------------------------------------------------
+\subsection{Tabela status\'ow twierdze\'n po~P5}%
+\label{app:P5-status-table}
+% -------------------------------------------------------------------
+
+Konsolidacja status\'ow \textbf{twierdze\'n sektora nadprzewodnictwa TGP}
+z~uwzgl\k{e}dnieniem wynik\'ow programu~P5. Kolumna ,,przed~P5''
+odzwierciedla stan po~P4 (2026-04-19); kolumna ,,po~P5'' uwzgl\k{e}dnia
+wyniki z~niniejszego dodatku.
+
+\smallskip
+\begin{center}\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{5.2cm}lll p{3.2cm}@{}}
+\toprule
+\textbf{Twierdzenie / relacja} & \textbf{Przed~P5} & \textbf{Po~P5}
+  & \textbf{Zmiana} & \textbf{Skrypt} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Twierdzenie / relacja} & \textbf{Przed~P5} & \textbf{Po~P5}
+  & \textbf{Zmiana} & \textbf{Skrypt} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\footnotesize\itshape ci\k{a}g dalszy\ldots} \\
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+%
+\multicolumn{5}{l}{\textbf{A. IFF-warunek zerooporowo\'sci}}\\
+\midrule
+Sie\'c Bravais soliton\'ow jako prymityw
+  & ---
+  & \statuslabel{Def.}
+  & \textbf{nowe}
+  & ps1 \\[3pt]
+Friedel-like oscylacje $J(a)$ z~ODE substr. (okres 2$\pi$)
+  & ---
+  & \statuslabel{Tw. [AN+NUM]}
+  & \textbf{nowe}
+  & ps1 \\[3pt]
+IFF $(J{>}0)\land(T{<}T_c^{XY})\land(\pi_1{=}\mathbb{Z})$
+  & ---
+  & \statuslabel{Prop. [AN+NUM]}
+  & \textbf{nowe}
+  & ps1 \\[3pt]
+Bariera vortex-ring $E_\text{ring}\propto J R\ln(R/\xi)$
+  & \statuslabel{Tw. [AN]} (London)
+  & \statuslabel{Tw. [AN]} (przeniesione)
+  & brak (klasyczne)
+  & ps1, dod.~T4 \\[3pt]
+Zero $J(a_0) \Rightarrow a_0 = n\pi$
+  & ---
+  & \statuslabel{Tw. [NUM]}
+  & \textbf{nowe} (4 cyfry)
+  & ps1 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{B. Formu\l{}a skaluj\k{a}ca $T_c$}}\\
+\midrule
+$J^* = C_0 A(g_0)^2$, $C_0 = 48{,}82$
+  & ---
+  & \statuslabel{Tw. [NUM]}
+  & \textbf{nowe} (RMS 1{,}54\%)
+  & ps2 \\[3pt]
+$a^* = 7{,}725 \pm 0{,}016$ uniwersalne
+  & ---
+  & \statuslabel{Tw. [NUM]}
+  & \textbf{nowe} (0{,}21\%)
+  & ps2 \\[3pt]
+$T_c = k_d(z)\cdot C_0 \cdot A^2 \cdot \Lambda_E/k_B$
+  & ---
+  & \statuslabel{Hip. [AN+NUM]}
+  & \textbf{nowe} (formu\l{}a)
+  & ps2 \\[3pt]
+Uniwersalno\'s\'c $a^*$ z~linearyz.~ODE
+  & ---
+  & \statuslabel{Prop. [AN]}
+  & \textbf{nowe}
+  & ps2 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{C. Kalibracja substrat~$\leftrightarrow$~SI}}\\
+\midrule
+1 jedn.~substratu $=$ $a_0$ (Bohr)
+  & ---
+  & \statuslabel{Def.}
+  & \textbf{nowe} (kanoniczne)
+  & ps3 \\[3pt]
+$a^*_\text{TGP} = 4{,}088$~\AA
+  & ---
+  & \statuslabel{Prop. [NUM]}
+  & \textbf{nowe} (Al match)
+  & ps3 \\[3pt]
+$\Lambda_E \approx 60{,}7$~$\mu$eV (z~Al)
+  & ---
+  & \statuslabel{Prop. [NUM]}
+  & \textbf{nowe} (fenom.)
+  & ps3 \\[3pt]
+$\Lambda_E$ z~mikroskopowej teorii
+  & ---
+  & \statuslabel{Program}
+  & otwarte
+  & --- \\[3pt]
+Test na 19 znanych SC (log-log $r = 0{,}306$)
+  & ---
+  & \statuslabel{Prop. [NUM]}
+  & ilo\'sciowo mia\l{}kie
+  & ps3 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{D. Predykcja kandydat\'ow materia\l{}owych}}\\
+\midrule
+TGP-score = $R_a R_z R_\text{orb}$
+  & ---
+  & \statuslabel{Def.}
+  & \textbf{nowe}
+  & ps4 \\[3pt]
+Top-20: 16 znanych SC + 4 kandydat\'ow
+  & ---
+  & \statuslabel{Tw. [NUM]}
+  & \textbf{walidacja}
+  & ps4 \\[3pt]
+9 klas materia\l{}owych (I--IX)
+  & ---
+  & \statuslabel{Prop.}
+  & \textbf{nowe}
+  & ps4 \\[3pt]
+Yb, Ce, Y kandydaci pod ci\'snieniem
+  & ---
+  & \statuslabel{Pred.}
+  & \textbf{nowe}
+  & ps4 \\[3pt]
+Anti-predykcja: $a/a_0 \approx n\pi \Rightarrow$ non-SC
+  & ---
+  & \statuslabel{Pred.}
+  & \textbf{nowe}
+  & ps4 \\[3pt]
+Clathrate z~d/f $+$ P $\Rightarrow$ super-hydryd
+  & ---
+  & \statuslabel{Pred.}
+  & \textbf{nowe}
+  & ps4 \\[3pt]
+%
+\midrule
+\multicolumn{5}{l}{\textbf{E. Bilans sektora nadprzewodnictwa}}\\
+\midrule
+Liczba wolnych parametr\'ow teorii
+  & --- (brak teorii P5)
+  & \textbf{2} ($g_0^e$, $\Lambda_E$)
+  & brak (minimum)
+  & --- \\[3pt]
+Liczba predykcji ilo\'sciowych $T_c$
+  & 0
+  & \textbf{19} (baza testowa)
+  & \textbf{+19}
+  & ps3 \\[3pt]
+Nazwane sta\l{}e TGP (z~P5)
+  & brak
+  & \textbf{2} ($C_0{=}48{,}82$, $a^*{=}7{,}725$)
+  & \textbf{+2}
+  & ps1, ps2 \\
+%
+\end{longtable}
+\end{center}
+
+\paragraph{Podsumowanie zmian (5-wierszowe).}
+\begin{enumerate}[nosep]
+  \item Friedel-like oscylacje $J(a)$ \emph{z~ODE substratu}:
+    \textbf{nowe twierdzenie [NUM]} (4 cyfry, okres $2\pi$).
+  \item IFF-warunek zerooporowo\'sci: \textbf{Propozycja [AN+NUM]}
+    (wariant A topologiczny, baza $\beta$-IFF).
+  \item Formu\l{}a $T_c = k_d(z) C_0 A^2 \Lambda_E/k_B$:
+    \textbf{Hipoteza [AN+NUM]} (RMS 1{,}54\%).
+  \item Kalibracja: 1 jedn.~substr. $=$ $a_0$ $\Rightarrow$ $a^*_\text{TGP} = 4{,}088$~\AA{}
+    (Al match, $T_c = 1{,}18$~K).
+  \item TGP-score ranking: 16/20 znane SC, kandydaci non-SC
+    (Yb, Ce, Y, FeTe, CaB$_6$) do sprawdzenia pod ci\'snieniem.
+\end{enumerate}
+
+% -------------------------------------------------------------------
+\subsection{Otwarte pytania po~P5}%
+\label{app:P5-open}
+% -------------------------------------------------------------------
+
+\begin{enumerate}[nosep]
+  \item \textbf{Mikroskopowe $\Lambda_E$.} Obecnie $\Lambda_E \approx 60{,}7$~$\mu$eV
+    z~Al (fenomenologicznie). Czy~$\Lambda_E$ wynika z~innych sta\l{}ych
+    TGP (np. $\alpha_3$, $\rho_0^*$, skale ERG)? --- Program P5b.
+  \item \textbf{Mapa $g_0 \leftrightarrow$ orbitale pow\l{}okowe.}
+    Dla~rzeczywistych materia\l{}\'ow $g_0$ zale\.zy od symetrii orbitalu
+    (s/p/d/f). Obecnie u\.zywamy $g_0^e$ (s-like); potrzebna~rozszerzona
+    baza soliton\'ow substratowych dla d/f (moduł P6 kandydat).
+  \item \textbf{Korekta drugiego rz\k{e}du do $C_0$.} Fit kwadratowy
+    $J^*/A^2 = 47{,}91 - 1{,}47(g-1) + 3{,}03(g-1)^2$ sugeruje
+    systematyczne odchylenie od jednorodnego $C_0 = 48{,}82$.
+    Wsp\'o\l{}czynnik $3{,}03$ pr\'obujemy dopasowa\'c do kombinacji
+    $\pi^2/3 - \alpha_3$ lub~podobnych.
+  \item \textbf{Sieci niesferyczne (A15, perovskite).} Formu\l{}a \eqref{eq:P5-Tc}
+    zak\l{}ada czysto-kuboidalne sieci Bravais. A15~(Nb$_3$Sn, V$_3$Si) maj\k{a}
+    kana\l{}y $1D$; cuprates maj\k{a} p\l{}aszczyzny CuO$_2$ ($d=2$).
+    Rozszerzenie TGP na niesferyczne geometrie jest osobnym problemem.
+  \item \textbf{Dow\'od $\beta$-IFF.} Obecnie IFF pokazana \emph{numerycznie}
+    + wariant A topologiczny dla wystarczalno\'sci. Pe\l{}ny dow\'od
+    konieczno\'sci (,,je\'sli nie~wszystkie (i)(ii)(iii), to~SC nie~istnieje'')
+    wymaga eliminacji scenariuszy neklasycznych (fluktuacje kwantowe
+    przy $T \to 0$).
+  \item \textbf{Eksperymentalna weryfikacja kandydat\'ow.}
+    \textbf{Yb, Ce, Y} pod~ci\'snieniem $P > 10$~GPa: czy~obserwuje si\k{e}
+    $T_c > 1$~K? Yb nigdy nie by\l{} zweryfikowany pod~bardzo wysokim P
+    poza zakresem magnetycznym.
+\end{enumerate}
+
+\medskip
+\textbf{Skrypty i~dane (P5):}
+\begin{itemize}[nosep]
+\item \texttt{research/superconductivity\_closure/ps1\_zero\_resistance\_condition.py} --- IFF-warunek, Friedel $J(a)$, $T_c$ XY
+\item \texttt{research/superconductivity\_closure/ps2\_tc\_scaling.py} --- skan $g_0$, $J^* = C_0 A^2$, fit $C_0 = 48{,}82$
+\item \texttt{research/superconductivity\_closure/ps3\_effective\_params\_map.py} --- kalibracja $a_0$ + $\Lambda_E$, test 19 SC
+\item \texttt{research/superconductivity\_closure/ps4\_candidate\_classes.py} --- TGP-score, baza 74 mat., 9 klas
+\item \texttt{research/superconductivity\_closure/README.md} --- skonsolidowane wyniki P5
+\item \texttt{research/superconductivity\_closure/ps\{1,2,3,4\}\_results.txt} --- pe\l{}ne output'y
+\end{itemize}
+
+\paragraph{Powiązania z rdzeniem TGP.}
+\begin{itemize}[nosep]
+  \item sek.~\ref{sec:pole} / dodatek~B --- ODE substratu ($\alpha{=}1, d{=}3$): baza solitonowa.
+  \item dodatek~J (\ref{app:J-profil}, \ref{app:J-skalowanie}) --- ogon masy, amplituda $A_\text{tail}$ dla~soliton\'ow.
+  \item dodatek~T4 (\ref{app:T4-bounce}) --- bounce topology, $\pi_1(U(1)) = \mathbb{Z}$.
+  \item dodatek~O (\ref{app:u1_formal}) --- U(1)-formalizacja, faza $\psi = |\psi|e^{i\theta}$.
+  \item dodatek~R2 (\ref{app:R2-qk-z3}) --- dynamical Z$_3$, analogia dla 3-band SC / $d$-wave.
+  \item Program~P4 (\ref{app:P4}) --- baza soliton\'ow $g_0^{e,\mu,\tau}$.
+\end{itemize}

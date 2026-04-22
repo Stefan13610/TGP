@@ -1,7 +1,7 @@
 # TGP Redirect Program — Post-Galaxy-Closure Research Agenda
 
 **Date:** 2026-04-19
-**Context:** After [[TGP/TGP_v1/research/galaxy_scaling/CLOSURE_2026-04-19.md|galaxy-scaling program closure]] (Path C), TGP predictive focus redirects to domains where the theory retains **unique, derived, falsifiable** predictions.
+**Context:** After [[CLOSURE_2026-04-19.md|galaxy-scaling program closure]] (Path C), TGP predictive focus redirects to domains where the theory retains **unique, derived, falsifiable** predictions.
 
 ## Selection criteria
 
@@ -70,7 +70,7 @@ A research program is **HIGH PRIORITY** if:
 
 ### P3. Black Hole Shadow / Ringdown
 
-**Status:** Papers drafted ([[TGP/TGP_v1/paper_bh_shadow/tgp_bh_shadow.tex]], [[TGP/TGP_v1/dodatekC_ringdown.tex]]).
+**Status:** Papers drafted ([[tgp_bh_shadow.tex]], [[dodatekC_ringdown.tex]]).
 
 **TGP-unique prediction:** Shadow radius and ringdown QNM frequencies depend on substrate metric h(Φ)=Φ ansatz, which differs from pure Kerr at strong field. Specific predicted offsets at 0.1-1% level for M87* and Sgr A*.
 
@@ -148,7 +148,7 @@ A research program is **HIGH PRIORITY** if:
 
 ## Publication strategy adjustment
 
-The [[TGP/TGP_v1/research/TGP_STATUS_2026-04-19.md]] §XI "Publication Strategy" must be updated:
+The [[TGP_STATUS_2026-04-19.md]] §XI "Publication Strategy" must be updated:
 
 - **Foundations paper**: unchanged. Core results (k=4, N=3, Koide, QM emergence) are intact.
 - **Galaxy paper**: REWRITE. Present ν(y) phenomenology honestly — "TGP is *consistent with* MOND under parameterization" — not "TGP *derives* MOND". Cite gs65/gs66 explicitly as the formal result bounding the claim.

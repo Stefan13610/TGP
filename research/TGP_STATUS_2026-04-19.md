@@ -11,7 +11,7 @@ TGP (Theory of Gravitational Potential) is a modified gravity theory where gravi
 
 - **gs65** (static derivation): sek02 + point-source in vacuum yields `ψ ~ r^(−1/3)`, i.e. v_rot ~ r^(−1/6) (faster falloff than Newton), **not log(r)**.
 - **gs66** (linear FRW propagator, Fourier-power theorem): any polynomial D(k) from sek02 gives `G̃(k) → const` or `1/k²`, **never** the `1/k³` required for log(r). Rigorous no-go.
-- **Decision: Path C (honest closure)** of galaxy-scale first-principles program. See [[TGP/TGP_v1/research/galaxy_scaling/CLOSURE_2026-04-19.md|CLOSURE_2026-04-19.md]].
+- **Decision: Path C (honest closure)** of galaxy-scale first-principles program. See [[CLOSURE_2026-04-19.md|CLOSURE_2026-04-19.md]].
 
 **Revised Bottom Line:**
 - TGP has **strong, derived predictions** in: lepton masses (0.013%), Koide relation (0.0006%), k=4 exponent, N=3 generations, α₃ new constant, Cabibbo (0.75σ after GL(3,F2)), QM emergence (79/79 tests pass), spin-statistics, Born rule.
@@ -72,7 +72,7 @@ Galaxy-scaling is **CLOSED** as a first-principles derivation target. Predictive
 
 ## II. GALAXY-SCALE RESULTS (y ~ 0.01-1) — PHENOMENOLOGY ONLY (Path C closure)
 
-> **Program status:** First-principles derivation CLOSED 2026-04-19 ([[TGP/TGP_v1/research/galaxy_scaling/CLOSURE_2026-04-19.md|CLOSURE document]]). Phenomenological fits below remain valid as ν(y) parameterizations but are NOT TGP-unique derivations.
+> **Program status:** First-principles derivation CLOSED 2026-04-19 ([[CLOSURE_2026-04-19.md|CLOSURE document]]). Phenomenological fits below remain valid as ν(y) parameterizations but are NOT TGP-unique derivations.
 
 ### Successes (as ν(y) phenomenology, not as TGP derivations)
 
@@ -246,7 +246,7 @@ Galaxy-scaling is **CLOSED** as a first-principles derivation target. Predictive
   5. **Consequence**: TGP must be EXPLICITLY EXTENDED (bridge b = dual-scale, or bridge c = smooth membrane) to describe MOND. Neither is derivable from axioms. The galaxy-scaling program transitions from "TGP predicts MOND" to "TGP is consistent with MOND under phenomenological ν(y)".
 - **gs67** (planned, conditional): If choosing Path A (theory extension): formalize Bridge (b) dual-scale with γ_μ ~ 1/(kpc)² and γ_c ~ H₀². Derive 2π geometric factor for a₀ = c·H₀/(2π). Test against SPARC with smooth ν(y).
 - **gs68** (planned, conditional on gs67): EFE predictions for Draco/Fornax/Carina/Sextans.
-- **Current model** (post-gs66, **Path C CHOSEN 2026-04-19**): **GALAXY-SCALING PROGRAM FORMALLY CLOSED** as first-principles derivation target. See [[TGP/TGP_v1/research/galaxy_scaling/CLOSURE_2026-04-19.md|CLOSURE_2026-04-19.md]].
+- **Current model** (post-gs66, **Path C CHOSEN 2026-04-19**): **GALAXY-SCALING PROGRAM FORMALLY CLOSED** as first-principles derivation target. See [[CLOSURE_2026-04-19.md|CLOSURE_2026-04-19.md]].
   - **Retained (phenomenology)**: gs10-gs49 ν(y) fits to SPARC/RAR/BTFR/dwarfs remain valid parameterizations. Numerical coincidence a₀ = c·H₀/(2π) remains as empirical observation.
   - **Retracted (derivation claim)**: TGP does NOT uniquely derive MOND from sek02+sek05. All axiomatic paths (static gs65, linear FRW gs66) yield non-MOND dynamics. Theory extensions (bridge b/c) would require new axioms.
   - **Rationale for Path C**: TGP has multiple independently strong predictions (lepton masses 0.013%, Koide 0.0006%, k=4 exact, N=3 gen) that do NOT depend on galaxy-MOND. Forcing MOND via ad-hoc extensions would weaken overall parsimony. Competing theories (MOND/AQUAL/QUMOND) also lack first-principles a₀; TGP is no worse but claiming uniqueness was overreach.

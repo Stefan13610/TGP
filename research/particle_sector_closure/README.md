@@ -1,7 +1,7 @@
 # Program P4 — Particle Sector Closure
 
 > **STATUS 2026-04-19: CLOSED.**
-> Program **P4** z [[TGP/TGP_v1/research/REDIRECT_PROGRAM_2026-04-19.md|redirect agenda]].
+> Program **P4** z [[REDIRECT_PROGRAM_2026-04-19.md|redirect agenda]].
 > Czysto matematyczny (no observational dependency), ale predyktywne wyniki mają obserwacyjne konsekwencje (PDG masses, KATRIN/DUNE/JUNO).
 >
 > **Verdict: 3/4 full closure + 1/4 structural closure** — przekracza minimum 2/4 z sekcji §4.
@@ -23,7 +23,7 @@
 
 ## 1. Scope — cztery otwarte problemy (original)
 
-Z [[TGP/TGP_v1/research/TGP_STATUS_2026-04-19.md]] §VIII — specyficzne "structural closures" pozostałe po pełnym programie badawczym leptonów:
+Z [[TGP_STATUS_2026-04-19.md]] §VIII — specyficzne "structural closures" pozostałe po pełnym programie badawczym leptonów:
 
 | # | Problem | Stan przed P4 | Stan po P4 |
 |---|---------|---------------|------------|
@@ -38,10 +38,10 @@ Z [[TGP/TGP_v1/research/TGP_STATUS_2026-04-19.md]] §VIII — specyficzne "struc
 
 | Skrypt | Cel | Wynik numeryczny | Status |
 |--------|-----|------------------|--------|
-| [[TGP/TGP_v1/research/particle_sector_closure/ps1_alpha3_hunting.py]] | α₃ PSLQ ultra-HP (dps=40, baza 24) | α₃ = π²/128 + 0.0126159...  brak relacji w PSLQ | 🔹 structural |
-| [[TGP/TGP_v1/research/particle_sector_closure/ps2_g0_tau_ODE_scan.py]] | g₀^τ Brannen ODE bisection | g₀^τ = 1.73027 ⇔ K=2/3 (0.036%) | ✅ closed |
-| [[TGP/TGP_v1/research/particle_sector_closure/ps3_quark_koide_qcd.py]] | Quark Koide + 2-loop QCD RGE | K_up=0.8746, K_down=0.7398 invariant | ✅ closed |
-| [[TGP/TGP_v1/research/particle_sector_closure/ps4_neutrino_majorana.py]] | Neutrino Koide + Majorana | max K_ν=0.553 (NO), inconsistent z Δm² | ✅ closed |
+| [[ps1_alpha3_hunting.py]] | α₃ PSLQ ultra-HP (dps=40, baza 24) | α₃ = π²/128 + 0.0126159...  brak relacji w PSLQ | 🔹 structural |
+| [[ps2_g0_tau_ODE_scan.py]] | g₀^τ Brannen ODE bisection | g₀^τ = 1.73027 ⇔ K=2/3 (0.036%) | ✅ closed |
+| [[ps3_quark_koide_qcd.py]] | Quark Koide + 2-loop QCD RGE | K_up=0.8746, K_down=0.7398 invariant | ✅ closed |
+| [[ps4_neutrino_majorana.py]] | Neutrino Koide + Majorana | max K_ν=0.553 (NO), inconsistent z Δm² | ✅ closed |
 
 Outputs: [[TGP/TGP_v1/research/particle_sector_closure/ps1_results.txt]] · [[TGP/TGP_v1/research/particle_sector_closure/ps2_results.txt]] · [[TGP/TGP_v1/research/particle_sector_closure/ps3_results.txt]] · [[TGP/TGP_v1/research/particle_sector_closure/ps4_results.txt]]
 
@@ -194,8 +194,8 @@ Otwarta pozostaje analityczna identyfikacja P_cos w bazie większej niż 30 elem
 - [[TGP/TGP_v1/research/why_n3/README.md]] — background N=3, g₀_crit, A⁴ mass formula
 - [[TGP/TGP_v1/research/mass_scaling_k4/README.md]] — background m = c·K²
 - [[TGP/TGP_v1/research/cabibbo_correction/README.md]] — GL(3,𝔽₂) self-energy, relevant dla kwarków
-- [[TGP/TGP_v1/research/REDIRECT_PROGRAM_2026-04-19.md]] — parent program (P1–P4 orchestration)
-- [[TGP/TGP_v1/research/TGP_STATUS_2026-04-19.md]] — status document §VIII (sektor cząstek)
+- [[REDIRECT_PROGRAM_2026-04-19.md]] — parent program (P1–P4 orchestration)
+- [[TGP_STATUS_2026-04-19.md]] — status document §VIII (sektor cząstek)
 
 ---
 

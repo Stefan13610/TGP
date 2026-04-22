@@ -1,0 +1,262 @@
+% ============================================================
+% §2  Pole Φ — źródła, superpozycja, interferencja
+% ============================================================
+\section{Pole generuj\k{a}ce przestrze\'n}\label{sec:pole}
+
+\subsection{Definicja pola $\Phi$}
+
+\begin{definition}[Pole przestrzenno\'sci $\Phi$]\label{def:Phi}
+Pole $\Phi$ jest rzeczywistym polem skalarnym, kt\'orego warto\'s\'c
+w~danym punkcie mierzy \textbf{g\k{e}sto\'s\'c wygenerowanej przestrzeni}
+w~tym miejscu. Nie jest ono polem na gotowej rozmaito\'sci ---
+jest polem, kt\'ore t\k{e} rozmaito\'s\'c \emph{konstytuuje}:
+\begin{itemize}[nosep]
+  \item $\Phi = 0$: brak przestrzeni (nico\'s\'c $\Nzero$),
+  \item $\Phi > 0$: przestrze\'n istnieje, jej ,,g\k{e}sto\'s\'c''
+        wynosi~$\Phi$,
+  \item $\Phi \to \infty$: ekstremalnie g\k{e}sta przestrze\'n
+        (wn\k{e}trze obiekt\'ow masywnych).%
+        \footnote{W~sformu\l{}owaniu kanonicznym (Formulacja~A) u\.zywa si\k{e}
+        zmiennej bezwymiarowej $g = \Phi/\PhiZero$ z~$g < 1$ blisko materii
+        i~$g \to 0$ w~czarnej dziurze (zamiast $\Phi \to \infty$).
+        Punkt r\'ownowagi pr\'o\.zniowej: $g_0^e = 0{,}86941$.
+        Patrz: \texttt{tgp\_companion.tex}.}
+\end{itemize}
+\end{definition}
+
+Pole $\Phi$ nie jest \textbf{dodatkowym polem} w~przestrzeni.
+Jest polem, \textbf{z~kt\'orego} przestrze\'n si\k{e} sk\l{}ada.
+Metryka, odleg\l{}o\'s\'c, przyczynowo\'s\'c --- to w\l{}asno\'sci
+konfiguracji $\Phi$, nie oddzielne byty.
+
+\begin{remark}[Interpretacja fizyczna]
+Mo\.zna my\'sle\'c o~$\Phi$ jak o~,,g\k{e}sto\'sci eteru'' ---
+ale nie eteru jako o\'srodka materialnego, lecz jako samej
+\emph{zdolno\'sci do istnienia relacji przestrzennych}.
+Tam, gdzie $\Phi = 0$, nie ma niczego --- nawet pustki.
+Tam, gdzie $\Phi > 0$, obiekty mog\k{a} wzgl\k{e}dem siebie
+istnie\'c, oddzia\l{}ywa\'c, porusza\'c si\k{e}.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Materia jako \'zr\'od\l{}o pola $\Phi$}\label{ssec:zrodla}
+
+Ka\.zda cz\k{a}stka fundamentalna generuje wk\l{}ad do pola~$\Phi$.
+Nie jest to sprzężenie ,,zewn\k{e}trzne'' (materia w~przestrzeni
+sprz\k{e}\.zona z~polem), lecz \textbf{akt konstytutywny}: cz\k{a}stka
+\emph{jest} lokalnym wzbudzeniem, kt\'ore jednocze\'snie wytwarza
+pole przestrzenno\'sci wok\'o\l{} siebie.
+
+\begin{axiom}[Materia generuje przestrze\'n]\label{ax:zrodlo}
+Ka\.zde \'zr\'od\l{}o masy--energii $\rho_a$ wytwarza wk\l{}ad do pola $\Phi$:
+\begin{equation}\label{eq:Phi-source}
+    \mathcal{D}[\Phi_a] = q_a \cdot \rho_a,
+\end{equation}
+gdzie $q_a > 0$ jest \textbf{sta\l{}\k{a} generacji przestrzennej}
+cz\k{a}stki typu~$a$ (analogiczna do \l{}adunku, ale dla przestrzeni),
+a~$\mathcal{D}$ jest operatorem opisuj\k{a}cym dynamik\k{e} pola $\Phi$.
+\end{axiom}
+
+\begin{remark}[Sta\l{}a generacji $q_a$]
+Sta\l{}a $q_a$ okre\'sla, jak silnie dany typ cz\k{a}stki generuje
+przestrze\'n. Mo\.ze zale\.ze\'c od masy, spinu, lub innych w\l{}asno\'sci
+cz\k{a}stki. Jest to nowy parametr fizyczny, w\l{}a\'sciwy TGP,
+nieobecny w~standardowej fizyce. W~granicy jednorodnej
+($q_a = q$ dla wszystkich typ\'ow) teoria upraszcza si\k{e}
+do jednoparametrowej.
+\end{remark}
+
+\begin{remark}[Natura operatora $\mathcal{D}$]\label{rem:D-natura}
+Operator $\mathcal{D}$ w~r\'ownaniu~\eqref{eq:Phi-source} nie jest
+standardowym laplasjanem na gotowej rozmaito\'sci --- to
+narusza\l{}oby aksjomat~\ref{ax:przestrzen}. Musi by\'c
+\textbf{wewn\k{e}trzny wzgl\k{e}dem $\Phi$}: zdefiniowany
+przez sam\k{a} konfiguracj\k{e} pola konstytuuj\k{a}cego
+przestrze\'n. Jego jawna posta\'c jest wyprowadzona
+w~sekcji~\ref{sec:formalizm} (definicja~\ref{def:D}).
+
+Dla referencji: cz\k{e}\'s\'c liniowa operatora wynosi
+\begin{equation}\label{eq:D-preview}
+  \mathcal{D}[\Phi]\big|_{\mathrm{lin}}
+  = \frac{1}{\PhiZero}\,\nabla^2\Phi,
+\end{equation}
+a~pe\l{}ne r\'ownanie pola zawiera dodatkowo nieliniowy cz\l{}on
+samointerferencji $\mathcal{N}[\Phi]$ (definicja~\ref{def:N},
+sekcja~\ref{sec:formalizm}):
+\begin{equation}\label{eq:N-preview}
+  \mathcal{N}[\Phi]
+  = \frac{\alpha}{\PhiZero}\,\frac{(\nabla\Phi)^2}{\Phi}
+  + \beta\,\frac{\Phi^2}{\PhiZero^2}
+  - \gamma\,\frac{\Phi^3}{\PhiZero^3},
+\end{equation}
+gdzie $\alpha = 2$ (z~wariacji dzia\l{}ania),
+$\beta, \gamma > 0$, $[\beta] = [\gamma] = \mathrm{L}^{-2}$.
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Pojedyncze \'zr\'od\l{}o: sferyczna
+  przestrze\'n generowana}\label{ssec:pojedyncze}
+
+Dla izolowanej, statycznej cz\k{a}stki punktowej o~masie $M$
+w~punkcie $\mathbf{x}_0$ pole generowane ma symetri\k{e} sferyczn\k{a}:
+\begin{equation}\label{eq:Phi-single}
+    \Phi_{\mathrm{poj}}(r)
+    = \frac{q\,M}{4\pi}\,\phi(r),
+    \qquad
+    r = |\mathbf{x} - \mathbf{x}_0|,
+\end{equation}
+gdzie $\phi(r)$ jest \textbf{profilem generacji} --- funkcj\k{a}
+zale\.zn\k{a} od odleg\l{}o\'sci od \'zr\'od\l{}a.
+
+Profil $\phi(r)$ \textbf{nie jest} z~g\'ory za\l{}o\.zony jako
+$e^{-mr}/r$ (Yukawa) ani $1/r$ (Coulomb). Jego posta\'c wynika
+z~pe\l{}nej, nieliniowej dynamiki pola $\Phi$ i~musi by\'c
+\textbf{wyprowadzona} z~r\'owna\'n teorii. Na obecnym etapie
+mo\.zemy jedynie za\l{}o\.zy\'c og\'olne w\l{}asno\'sci:
+\begin{enumerate}[nosep]
+  \item $\phi(r) > 0$ wsz\k{e}dzie (przestrze\'n jest generowana,
+        nie ,,ujemna''),
+  \item $\phi(r) \to \infty$ dla $r \to 0$ (w~centrum
+        \'zr\'od\l{}a g\k{e}sto\'s\'c przestrzeni dywerguje),
+  \item $\phi(r) \to 0$ dla $r \to \infty$ (daleko od \'zr\'od\l{}a
+        przestrze\'n zanika),
+  \item $\phi(r)$ jest niemonotoniczny --- posiada punkt przegi\k{e}cia
+        lub lokalne ekstremum, co prowadzi do trzech re\.zim\'ow
+        (sekcja~\ref{sec:rezimy}).
+\end{enumerate}
+
+% ----------------------------------------------------------
+\subsection{Wiele \'zr\'ode\l{}: nak\l{}adanie
+  i~interferencja}\label{ssec:interferencja}
+
+W~obecno\'sci wielu cz\k{a}stek ca\l{}kowite pole $\Phi$ nie jest
+prost\k{a} sum\k{a} wk\l{}ad\'ow poszczeg\'olnych \'zr\'ode\l{}.
+Jest wynikiem \textbf{nieliniowej interferencji}.
+
+\subsubsection{Przybli\.zenie liniowe (s\l{}abe pole)}
+
+W~granicy s\l{}abego pola ($\Phi \ll \Phi_{\mathrm{char}}$, gdzie
+$\Phi_{\mathrm{char}}$ jest skal\k{a} nieliniowo\'sci) wk\l{}ady
+superponu\k{a} si\k{e} liniowo:
+\begin{equation}\label{eq:Phi-linear}
+    \Phi(\mathbf{x})
+    \simeq \sum_{i} \Phi_i(\mathbf{x})
+    = \sum_{i} \frac{q_i\,M_i}{4\pi}\,\phi(|\mathbf{x}-\mathbf{x}_i|).
+\end{equation}
+To przybli\.zenie odpowiada granicy newtonowskiej i~jest
+wystarczaj\k{a}ce na du\.zych skalach.
+
+\subsubsection{Pe\l{}ny re\.zim nieliniowy}
+
+W~obszarach, gdzie wk\l{}ady od wielu \'zr\'ode\l{} nak\l{}adaj\k{a} si\k{e}
+silnie (g\k{e}ste skupiska materii, wn\k{e}trza gwiazd, j\k{a}dra atom\'ow),
+r\'ownanie pola staje si\k{e} \textbf{nieliniowe}:
+\begin{equation}\label{eq:Phi-nonlinear}
+    \mathcal{D}[\Phi]
+    = \sum_{i} q_i \rho_i
+    + \mathcal{N}[\Phi],
+\end{equation}
+gdzie $\mathcal{N}[\Phi]$ opisuje \textbf{samointerferencj\k{e}}
+pola --- nieliniowe sprz\k{e}\.zenie wygenerowanej przestrzeni
+samej z~sob\k{a}. Jawna posta\'c $\mathcal{N}[\Phi]$ podana jest
+w~r\'ownaniu~\eqref{eq:N-preview} powy\.zej
+oraz definicji~\ref{def:N} (sekcja~\ref{sec:formalizm});
+jawna posta\'c pe\l{}nego r\'ownania pola ---
+w~twierdzeniu~\ref{thm:field-eq}.
+
+To w\l{}a\'snie cz\l{}on $\mathcal{N}[\Phi]$ jest odpowiedzialny za:
+\begin{itemize}[nosep]
+  \item odpychanie na \'srednich skalach (wysoki potencja\l{}
+        przestrzenny mi\k{e}dzy bliskimi \'zr\'od\l{}ami),
+  \item studni\k{e} na ekstremalnie ma\l{}ych skalach (sklejenie),
+  \item wzmocnienia i~wyga\'szenia pola w~zale\.zno\'sci od
+        wzgl\k{e}dnej konfiguracji \'zr\'ode\l{}.
+\end{itemize}
+
+\begin{remark}[Interferencja, nie superpozycja]
+S\l{}owo ,,interferencja'' jest celowe. W~fizyce fal interferencja
+oznacza, \.ze wynik na\l{}o\.zenia zale\.zy od \emph{fazy} --- mog\k{a}
+wyst\k{a}pi\'c wzmocnienia i~wyga\'szenia. W~TGP analogiczn\k{a} rol\k{e}
+pe\l{}ni \textbf{gradient pola} $\nabla\Phi$: dwa bliskie \'zr\'od\l{}a
+generuj\k{a} mi\k{e}dzy sob\k{a} obszar o~\emph{wy\.zszym} $\Phi$ ni\.z ka\.zde
+z~osobna (konstruktywne na\l{}o\.zenie); ale si\l{}a wypadkowa na obiekty
+zale\.zy od \emph{gradientu} $\Phi$, kt\'ory mo\.ze by\'c skierowany
+zar\'owno ku \'zr\'od\l{}u, jak i~od niego --- w~zale\.zno\'sci od skali.
+To jest mechanizm trzech re\.zim\'ow (sekcja~\ref{sec:rezimy}).
+\end{remark}
+
+% ----------------------------------------------------------
+\subsection{Pole $\Phi$ a~metryka}\label{ssec:metryka}
+
+Metryka nie jest obiektem fundamentalnym. Jest \textbf{opisem
+efektywnym} konfiguracji pola~$\Phi$. W~regionach, gdzie
+$\Phi > 0$ i~zmienia si\k{e} g\l{}adko, mo\.zna zdefiniowa\'c
+efektywn\k{a} metryk\k{e}:
+\begin{equation}\label{eq:metric-from-Phi}
+    g_{\mu\nu}^{\mathrm{eff}} = g_{\mu\nu}[\Phi, \partial\Phi, \ldots\,].
+\end{equation}
+Dok\l{}adna posta\'c tej relacji jest \textbf{otwartym problemem} TGP.
+Na obecnym etapie mo\.zna jedynie stwierdzi\'c:
+\begin{itemize}[nosep]
+  \item metryka jest okre\'slona tylko tam, gdzie $\Phi > 0$;
+  \item jednorodne $\Phi = \mathrm{const} > 0$ daje p\l{}ask\k{a}
+        metryk\k{e} (Minkowski);
+  \item gradienty $\Phi$ generuj\k{a} krzywizn\k{e} --- to jest
+        grawitacja w~TGP;
+  \item du\.ze $\Phi$ z~du\.zymi gradientami odpowiada silnemu
+        polu grawitacyjnemu.
+\end{itemize}
+
+\begin{hypothesis}[Metryka minimalna]\label{hyp:metric}
+W~najprostszym uj\k{e}ciu metryka efektywna ma posta\'c:
+\begin{equation}\label{eq:metric-minimal}
+    ds^2 = -\frac{c(\Phi)^2}{c_0^2}\,dt^2
+    + \frac{\Phi}{\PhiZero}\,\delta_{ij}\,dx^i dx^j,
+\end{equation}
+gdzie $c(\Phi)$ jest lokaln\k{a} pr\k{e}dko\'sci\k{a} \'swiat\l{}a
+(sekcja~\ref{sec:stale}), a~$\PhiZero$ warto\'sci\k{a} referencyjn\k{a}.
+Cz\l{}on przestrzenny jest modulowany przez $\Phi/\PhiZero$ ---
+wi\k{e}cej wygenerowanej przestrzeni oznacza wi\k{e}ksz\k{a}
+,,obj\k{e}to\'s\'c'' dost\k{e}pn\k{a} w~danym regionie.
+\end{hypothesis}
+
+Ta forma metryki jest \textbf{hipotez\k{a} robocz\k{a}}, nie
+aksjomatem. Jej sp\'ojno\'s\'c z~obserwacjami musi by\'c
+zweryfikowana. Poprawiona posta\'c (eksponencjalna), daj\k{a}ca
+poprawne parametry post-newtonowskie, jest wyprowadzona
+w~sekcji~\ref{ssec:metryka-popr}.
+
+\begin{remark}[Warunkowe wyniki --- zakres wa\.zno\'sci hipotezy
+  metrycznej]\label{rem:conditional-results}
+Poniewa\.z metryka efektywna~\eqref{eq:metric-minimal}
+(i~jej eksponencjalna wersja, stw.~\ref{prop:conformal-unique})
+jest \emph{hipotez\k{a}}, a~nie aksjomatem ani twierdzeniem,
+nast\k{e}puj\k{a}ce wyniki s\k{a} \textbf{warunkowe} wzgl\k{e}dem
+tej hipotezy:
+\begin{enumerate}[nosep]
+  \item parametry post-newtonowskie $\gamma_{\mathrm{PPN}} = \beta_{\mathrm{PPN}} = 1$
+        (sek.~\ref{ssec:ppn-full});
+  \item pr\k{e}dko\'s\'c \'swiat\l{}a $c(\Phi)$ i~jej interpretacja
+        fizyczna (sek.~\ref{sec:stale});
+  \item model kosmologiczny FRW i~$\Lambda_{\mathrm{eff}}$
+        (sek.~\ref{sec:ciemna});
+  \item termodynamika czarnych dziur: I~zasada i~entropia BH
+        (sek.~\ref{ssec:first-law}).
+\end{enumerate}
+Je\'sli przysz\l{}a analiza wyka\.ze, \.ze pe\l{}na relacja
+$g_{\mu\nu}[\Phi,\partial\Phi,\ldots]$ r\'o\.zni si\k{e}
+od~\eqref{eq:metric-minimal}, powy\.zsze wyniki mog\k{a} wymaga\'c
+korekty. Pe\l{}ne wyprowadzenie metryki z~dynamiki substratu
+pozostaje otwartym problemem (por.~sek.~\ref{ssec:metric-from-budget}).
+\end{remark}
+
+\begin{remark}[Metryka a~$\Ffield$]\label{rem:metryka-F}
+Metryka efektywna jest okre\'slona tylko w~$\mathcal{S}_1$
+(sekcja~\ref{ssec:sektory}), czyli tam, gdzie $\Ffield > 0$
+i~$\Phi > 0$. W~$\mathcal{S}_0$ ($\Ffield = 0$, $\Phi = 0$)
+poj\k{e}cie metryki traci sens --- nie ma ,,odleg\l{}o\'sci''
+w~nico\'sci. Metryka jest zatem \textbf{bytem emergentnym}
+wzgl\k{e}dem pola $\Phi$ --- polem, kt\'ore konstytuuje
+mo\.zliwo\'s\'c mierzenia odleg\l{}o\'sci, nie polem ,,na''
+gotowej przestrzeni.
+\end{remark}
