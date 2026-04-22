@@ -1,0 +1,95 @@
+==============================================================================
+  ps32_negative_validation.py
+  Czy Eq. 5 prawidlowo przewiduje T_c ~ 0 dla nie-nadprzewodnikow?
+==============================================================================
+
+  name             T_obs     T_TGP    ratio    verdict  komentarz
+  ----------------------------------------------------------------------------
+  Cu                  ~0    42.575        -       FAIL  nigdy SC
+  Ag              0.0003    33.448 95565.9x       FAIL  < 0.35 mK
+  Au              0.0001    26.200        -       FAIL  < 50 uK
+  Pt                  ~0    37.190        -       FAIL  paramagn., nie SC
+  Pd                  ~0    39.224        -       FAIL  blisko-ferromagn.
+  Li              0.0004     3.857  9641.3x       FAIL  marginalne, 0.4 mK
+  Na                  ~0     1.689        -       FAIL  nigdy SC
+  K                   ~0     0.878        -     BORDER  nigdy SC
+  Fe                  ~0     3.456        -       FAIL  FERROMAGNET (lam=3)
+  Co                  ~0     5.123        -       FAIL  FERROMAGNET
+  Ni                  ~0     9.520        -       FAIL  FERROMAGNET
+  Ca_amb              ~0     2.700        -       FAIL  ambient; SC dopiero >100GPa
+  Sr_amb              ~0     1.295        -       FAIL  ambient; SC 8 GPa
+  Ba_amb              ~0     1.172        -       FAIL  ambient; SC 5 GPa
+  Mg                  ~0     7.307        -       FAIL  nigdy SC ambient
+  Zn              0.8500    13.392    15.8x     BORDER  MARGINAL SC 0.85 K
+  Cd              0.5200     9.126    17.5x     BORDER  MARGINAL SC 0.52 K
+  Diamond             ~0    24.187        -       FAIL  insulator
+  Si_amb              ~0     6.132        -       FAIL  insulator ambient
+  Ge_amb              ~0     3.471        -       FAIL  insulator ambient
+  Graphite            ~0    57.443        -       FAIL  semimetal
+  NaCl                ~0     6.337        -       FAIL  insulator (jonowy)
+  LiF                 ~0    29.227        -       FAIL  insulator (jonowy)
+
+==============================================================================
+  Wynik: 0 PASS, 3 BORDER, 20 FAIL  (z 23 materialow)
+==============================================================================
+
+  FAIL (model spuriously przewiduje SC gdzie go nie ma):
+    Cu            T_TGP = 42.575 K  vs  T_obs <= 0.000 mK
+    Ag            T_TGP = 33.448 K  vs  T_obs <= 0.350 mK
+    Au            T_TGP = 26.200 K  vs  T_obs <= 0.050 mK
+    Pt            T_TGP = 37.190 K  vs  T_obs <= 0.000 mK
+    Pd            T_TGP = 39.224 K  vs  T_obs <= 0.000 mK
+    Li            T_TGP = 3.857 K  vs  T_obs <= 0.400 mK
+    Na            T_TGP = 1.689 K  vs  T_obs <= 0.000 mK
+    Fe            T_TGP = 3.456 K  vs  T_obs <= 0.000 mK
+    Co            T_TGP = 5.123 K  vs  T_obs <= 0.000 mK
+    Ni            T_TGP = 9.520 K  vs  T_obs <= 0.000 mK
+    Ca_amb        T_TGP = 2.700 K  vs  T_obs <= 0.000 mK
+    Sr_amb        T_TGP = 1.295 K  vs  T_obs <= 0.000 mK
+    Ba_amb        T_TGP = 1.172 K  vs  T_obs <= 0.000 mK
+    Mg            T_TGP = 7.307 K  vs  T_obs <= 0.000 mK
+    Diamond       T_TGP = 24.187 K  vs  T_obs <= 0.000 mK
+    Si_amb        T_TGP = 6.132 K  vs  T_obs <= 0.000 mK
+    Ge_amb        T_TGP = 3.471 K  vs  T_obs <= 0.000 mK
+    Graphite      T_TGP = 57.443 K  vs  T_obs <= 0.000 mK
+    NaCl          T_TGP = 6.337 K  vs  T_obs <= 0.000 mK
+    LiF           T_TGP = 29.227 K  vs  T_obs <= 0.000 mK
+
+  Analiza FAIL:
+    Model bez jawnej zaleznosci od N(E_F) moze dawac spuriously
+    wysokie T_c dla materialow bez Fermi surface (insulatory),
+    oraz bez B_ferromagn dla ferromagnetykow bez podanego lam_sf.
+
+  BORDER (nie-krytyczne, T_TGP w zakresie 0.1-1 K):
+    K             T_TGP = 0.878 K
+    Zn            T_TGP = 13.392 K
+    Cd            T_TGP = 9.126 K
+
+==============================================================================
+  Analiza sub-kategoryczna:
+==============================================================================
+  Szlachetne (Cu,Ag,Au,Pt,Pd)            0/5 PASS, 0 BORDER, 5 FAIL  [ISSUE]
+  Alkaliczne (Li,Na,K)                   0/3 PASS, 1 BORDER, 2 FAIL  [ISSUE]
+  Ferromagnetyki (Fe,Co,Ni)              0/3 PASS, 0 BORDER, 3 FAIL  [ISSUE]
+  Ziemie alk. (Ca,Sr,Ba,Mg)              0/4 PASS, 0 BORDER, 4 FAIL  [ISSUE]
+  Marginal SC (Zn,Cd)                    0/2 PASS, 2 BORDER, 0 FAIL  [OK]
+  Insulatory (diamond,Si,Ge,NaCl,LiF)    0/5 PASS, 0 BORDER, 5 FAIL  [ISSUE]
+  Graphite                               0/1 PASS, 0 BORDER, 1 FAIL  [ISSUE]
+
+==============================================================================
+  Sugestie dla paperu SC v2 (sekcja 'Domain of validity')
+==============================================================================
+
+  Model (Eq. 5) z B_mag(lam_sf) automatycznie tlumi SC dla ferromagnetykow
+  gdy lam_sf >> 1. Dla insulatorow model NIE MA bezposredniego mechanizmu
+  (brak zaleznosci od N(E_F)) — ale ma M_gauss(a) penalty ktory tlumi
+  materialy z nietypowym a.
+
+  Potencjalny P7.10 (na przyszlosc): dodac explicit N(E_F) factor w Eq. 5
+    A^2 -> A^2 * g(N_F / N_F_ref)  z g(0) = 0 (insulatory -> T_c = 0)
+
+  Dla paperu v2: rozdzial 'Domain of validity' powinien explicite stwierdzic:
+    - Dziala: phonon-mediated SC, cuprates, hydrydy (z d_F > 0)
+    - Nie dziala: heavy-fermion (non-phonon), insulators (N_F=0), ferromagnetyki
+      (wymagana lam_sf kalibracja), czyste 5d elementy (P7.6 partial fix)
+

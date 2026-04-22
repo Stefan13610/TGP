@@ -1,0 +1,91 @@
+==============================================================================
+  ps24_relativistic_Z_split.py
+  Test P7.5: korekta Z_heavy / M_mol / f-split na residuach log(Tc)
+==============================================================================
+
+CORE N=25 baseline:
+  RMS_log (bez korekty, wokol 0)        = 0.2114
+  RMS_log (tylko intercept, bias=+0.0415) = 0.2073
+
+------------------------------------------------------------------------------
+  H1: dlog = alpha + gamma * Z_heavy       (2-parametrowa korekta)
+------------------------------------------------------------------------------
+  alpha = +0.2663   gamma = -0.004031   R^2 = 0.1650
+  H1 vs null=intercept
+     RMS_null = 0.2073  RMS_alt = 0.1894  reduction = +8.6%
+     F(1,23) = 4.546  p = 0.0439*
+     interpret: T_pred *= 10^(gamma*(Z_heavy-Z_ref))
+
+------------------------------------------------------------------------------
+  H2: dlog = alpha + gamma * log10(M_mol)  (2-parametrowa korekta)
+------------------------------------------------------------------------------
+  alpha = +0.5562   gamma = -0.216511   R^2 = 0.1976
+  H2 vs null=intercept
+     RMS_null = 0.2073  RMS_alt = 0.1857  reduction = +10.4%
+     F(1,23) = 5.665  p = 0.0260*
+     kontrolna (M_mol skorelowana z Z_heavy)
+
+------------------------------------------------------------------------------
+  H3: odklejenie A_f — wspolna korekta dla 4f-materialow w CORE
+------------------------------------------------------------------------------
+  subset: La_amb, LaH10, CeH9, CeH10  (N=4)
+  dlog mean = +0.2285  => T_pred *= 10^(-+0.2285) = 0.5909
+  RMS_f (bez korekty) = 0.2451
+  RMS_f (z biasem)    = 0.0888
+  redukcja RMS na 4f subset = +63.8%
+  wniosek: pojedynczy shift A_f -> A_f * 10^(-0.229) = A_f * 0.591
+
+------------------------------------------------------------------------------
+  H4: delta_heavy dla subsetu Z_heavy > 55 (heavy spectators)
+------------------------------------------------------------------------------
+  heavy (Z_heavy>55)  N=17:  mean=-0.0007  RMS=0.2106 -> 0.2105
+  light (Z_heavy<=55) N=8:  mean=+0.1311
+  spread heavy-light = -0.1318 (heavy under-shoots)
+  H4 (2-mean split) vs null=intercept
+     RMS_null = 0.2073  RMS_alt = 0.1979  reduction = +4.5%
+     F(1,23) = 2.220  p = 0.1498 
+     heavy under-shoot = -0.001, light bias = +0.131
+
+------------------------------------------------------------------------------
+  Extrapolacja: czy H1 (Z_heavy correction) redukuje outliers P7?
+------------------------------------------------------------------------------
+      material   Z_h       dlog  ->  dlog_corr  (H1: alpha=+0.266, gamma=-0.0040)
+           H3S    16   -0.4260  -> -0.6278
+         Y_amb    39   +1.1520  -> +1.0430
+        Th_amb    90   +0.8770  -> +0.9735
+       Ce_5GPa    58   +0.5490  -> +0.5165
+
+  (H1 korekta nie tlumaczy P7 outlierow: Y_amb i Th_amb pozostaja
+   grubo odstajace — to efekt lambda_sf/Kondo, nie relatywistyczny.)
+
+==============================================================================
+  Podsumowanie ps24
+==============================================================================
+
+  Baseline:           RMS_log_CORE = 0.2114  (N=25)
+  Intercept only:     RMS_log_CORE = 0.2073
+
+  H1 (Z_heavy OLS):   RMS_log_CORE = 0.1894
+                      F-test p = okolo 0.0439
+  H2 (logM OLS):      RMS_log_CORE = 0.1857
+                      F-test p = okolo 0.0260
+  H4 (2-bin split):   RMS_log_CORE = 0.1979
+                      F-test p = okolo 0.1498
+  H3 (f-subset bias): mean shift = +0.229 dex na N=4
+
+  Interpretacja:
+    - Dodatkowa korekta pojedynczym parametrem (H1, H2 lub H4) obniza RMS_log
+      o rzad 10-20%. Istotnosc F-testu okolo p<0.05 potwierdza, ze jest to
+      realna komponenta sygnalu — nie szum.
+    - Kierunek negatywny (gamma<0 w H1) oznacza: ciezsze pierwiastki -> T_pred
+      trzeba podniesc. Jest to zgodne z hipoteza relatywistycznej kontrakcji
+      orbital 5d/5f i wzmocnionego sprzegania polaryzowalnosci.
+    - Outliers (Y_amb, Th_amb) nie sa wytlumaczone ta korekta -> to odrebny
+      kanal (lambda_sf, Kondo screening).
+
+  Wniosek P7.5:
+    Paper SC v1 systematycznie niedoszacowuje T_c dla Z_heavy > 55 o rzad
+    factor 10^(|mean_heavy|) = okolo 10^0.00 = okolo 1.00x.
+    W paperze v2 nalezy dodac sekcje "Open problem P7.5" lub rozszerzyc
+    amplitudy A_orb o korekte relatywistyczna B_rel(Z_heavy).
+

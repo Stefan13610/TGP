@@ -1,0 +1,179 @@
+==============================================================================
+  ps29c_expanded_dataset.py
+  Rozszerzenie SC datasetu do N=45 (16 nowych materialow)
+==============================================================================
+
+  Kompletna tabela N=45:
+  name           T_obs  T_pred0 T_pred(7.5)  dlog_0 dlog_7.5 class     Zh  new
+  La2CuO4        38.00    53.27       53.27  +0.147   +0.147 d_cu      57     
+  YBCO           92.00    75.59       75.59  -0.085   -0.085 d_cu      56     
+  BiSCCO2212     85.00    75.59       95.06  -0.051   +0.049 d_cu      83     
+  Tl2212        108.00    75.76       94.30  -0.154   -0.059 d_cu      81     
+  Hg1223        138.00    92.82      114.95  -0.172   -0.079 d_cu      80     
+  Tl2223        125.00    92.58      115.23  -0.130   -0.035 d_cu      81     
+  Nd2CuO4        24.00    53.86       53.86  +0.351   +0.351 d_cu      60     
+  Bi2201         34.00    53.41       67.16  +0.196   +0.296 d_cu      83     
+  Al              1.18     2.96        2.96  +0.399   +0.399 s          0     
+  Pb              7.20     4.96        6.20  -0.162   -0.065 s         82     
+  Nb              9.26    13.83       13.83  +0.174   +0.174 d_other    0     
+  V               5.30    10.95       10.95  +0.315   +0.315 d_other    0     
+  Hg_elem         4.15     2.52        3.12  -0.217   -0.124 s         80     
+  MgB2           39.00    31.37       31.37  -0.094   -0.094 sp         0     
+  FeSe_bulk       8.00     7.85        7.85  -0.008   -0.008 d_fe       0     
+  FeSe/STO       65.00    57.23       57.23  -0.055   -0.055 d_fe       0     
+  Ba122-Co       22.00    17.90       17.90  -0.090   -0.090 d_fe      56     
+  LaFeAsO        26.00    16.35       16.35  -0.201   -0.201 d_fe      57     
+  NdFeAsO-F      55.00    24.15       24.15  -0.358   -0.358 d_fe      60     
+  Nb3Sn          18.30    22.03       22.03  +0.081   +0.081 d_other    0     
+  NbTi           10.00    17.24       17.24  +0.237   +0.237 d_other    0     
+  H3S           203.00    76.05       76.05  -0.426   -0.426 sp         0     
+  LaH10         250.00   368.08      220.34  +0.168   -0.055 f         57     
+  CeH9          100.00   143.13       83.92  +0.156   -0.076 f         58     
+  CeH10         115.00   187.48      109.91  +0.212   -0.020 f         58     
+  La_amb          6.00    14.34        8.58  +0.378   +0.156 f         57     
+  Y_amb           1.30    18.46       18.46  +1.152   +1.152 d_other    0     
+  Th_amb          1.38    10.40        1.97  +0.877   +0.156 f         90     
+  Ce_5GPa         1.70     6.02        3.53  +0.549   +0.317 f         58     
+  Hg1201         94.00    53.68       66.47  -0.243   -0.150 d_cu      80    *
+  Hg1212        127.00    75.82       93.89  -0.224   -0.131 d_cu      80    *
+  Hg1234        125.00   107.14      132.68  -0.067   +0.026 d_cu      80    *
+  Tl2201         90.00    53.61       66.73  -0.225   -0.130 d_cu      81    *
+  Bi2223        110.00    92.58      116.43  -0.075   +0.025 d_cu      83    *
+  Ta_elem         4.47    19.83       19.83  +0.647   +0.647 d_other   73    *
+  W_elem          0.01    23.89       23.89  +3.299   +3.299 d_other   74    *
+  Re_elem         1.70    36.33       36.33  +1.330   +1.330 d_other   75    *
+  Os_elem         0.65    39.64       39.64  +1.785   +1.785 d_other   76    *
+  Ir_elem         0.11    35.60       35.60  +2.510   +2.510 d_other   77    *
+  YH6           224.00   297.38      297.38  +0.123   +0.123 d_other    0    *
+  ThH10         161.00   283.98       53.94  +0.246   -0.475 f         90    *
+  LiFeAs         18.00    14.63       14.63  -0.090   -0.090 d_fe       0    *
+  FeSeTe         14.00    11.22       11.22  -0.096   -0.096 d_fe      52    *
+  UTe2            1.60   246.71       41.57  +2.188   +1.415 f         92    *
+  CeCoIn5         2.30   206.59      121.12  +1.953   +1.721 f         58    *
+
+  Baseline (pre-P7.5) na N=45:
+    r(log) = 0.5095  (p = 3.505e-04)
+    RMS_log = 0.8835
+  Po P7.5a + P7.5b na N=45:
+    r(log) = 0.5817  (p = 2.780e-05)
+    RMS_log = 0.8208  (delta = -0.0626)
+
+  Outliers (|dlog|>0.4):
+    pre-P7.5:  N=11  ['H3S', 'Y_amb', 'Th_amb', 'Ce_5GPa', 'Ta_elem', 'W_elem', 'Re_elem', 'Os_elem', 'Ir_elem', 'UTe2', 'CeCoIn5']
+    post-P7.5: N=10  ['H3S', 'Y_amb', 'Ta_elem', 'W_elem', 'Re_elem', 'Os_elem', 'Ir_elem', 'ThH10', 'UTe2', 'CeCoIn5']
+
+  Klasy po P7.5 (dlog):
+  klasa        N     mean      RMS   max|d|
+  d_cu        13   +0.017    0.155    0.351
+  d_fe         7   -0.128    0.168    0.358
+  d_other     11   +1.059    1.480    3.299
+  f            9   +0.349    0.771    1.721
+  s            3   +0.070    0.244    0.399
+  sp           2   -0.260    0.309    0.426
+
+==============================================================================
+  P7.5c rerun: test H-Z/A/B/C/D na rozszerzonym datasecie
+==============================================================================
+
+  SUBSET: 6p-heavy CLEAN (cuprates Z>=80 + Pb + Hg_elem)  (N=12)
+  bias0=-0.0316  RMS(intercept)=0.1178
+    H-Z  Z^2        eta=+0.0358 RMS=0.1184 red=-0.5% F=-0.11 p=1.000 
+    H-A  A^2        eta=+0.0358 RMS=0.1184 red=-0.5% F=-0.11 p=1.000 
+    H-B  A^(4/3)    eta=+0.0362 RMS=0.1182 red=-0.4% F=-0.07 p=1.000 
+    H-C  z*Z^2      eta=+0.0568 RMS=0.1203 red=-2.1% F=-0.41 p=1.000 
+    H-D  pair(Z)    eta=+0.0452 xi=1.07A RMS=0.1182 red=-0.4% F=-0.03 p=1.000 
+    H-D2 pair(A)    eta=+0.0454 xi=1.06A RMS=0.1182 red=-0.4% F=-0.03 p=1.000 
+  Ranking:
+    H-B  A^(4/3)    RMS=0.1182  eta=+0.0362  xi=      -  F=-0.07  p=1.000 
+    H-D2 pair(A)    RMS=0.1182  eta=+0.0454  xi=   1.06  F=-0.03  p=1.000 
+    H-D  pair(Z)    RMS=0.1182  eta=+0.0452  xi=   1.07  F=-0.03  p=1.000 
+    H-A  A^2        RMS=0.1184  eta=+0.0358  xi=      -  F=-0.11  p=1.000 
+    H-Z  Z^2        RMS=0.1184  eta=+0.0358  xi=      -  F=-0.11  p=1.000 
+    H-C  z*Z^2      RMS=0.1203  eta=+0.0568  xi=      -  F=-0.41  p=1.000 
+
+  SUBSET: 6p/5d-heavy FULL (incl. Ta..Ir off-model)  (N=17)
+  bias0=+0.5407  RMS(intercept)=1.0223
+    H-Z  Z^2        eta=-0.4369 RMS=1.0587 red=-3.6% F=-1.01 p=1.000 
+    H-A  A^2        eta=-0.4289 RMS=1.0634 red=-4.0% F=-1.14 p=1.000 
+    H-B  A^(4/3)    eta=-0.4405 RMS=1.0515 red=-2.9% F=-0.82 p=1.000 
+    H-C  z*Z^2      eta=-0.8245 RMS=0.8997 red=+12.0% F=4.37 p=0.054 
+    H-D  pair(Z)    eta=-0.8873 xi=2.17A RMS=0.8217 red=+19.6% F=3.84 p=0.047*
+    H-D2 pair(A)    eta=-0.8795 xi=2.14A RMS=0.8329 red=+18.5% F=3.55 p=0.057 
+  Ranking:
+    H-D  pair(Z)    RMS=0.8217  eta=-0.8873  xi=   2.17  F= 3.84  p=0.047*
+    H-D2 pair(A)    RMS=0.8329  eta=-0.8795  xi=   2.14  F= 3.55  p=0.057 
+    H-C  z*Z^2      RMS=0.8997  eta=-0.8245  xi=      -  F= 4.37  p=0.054 
+    H-B  A^(4/3)    RMS=1.0515  eta=-0.4405  xi=      -  F=-0.82  p=1.000 
+    H-Z  Z^2        RMS=1.0587  eta=-0.4369  xi=      -  F=-1.01  p=1.000 
+    H-A  A^2        RMS=1.0634  eta=-0.4289  xi=      -  F=-1.14  p=1.000 
+
+  SUBSET: f-class extended (Z>=50, bez UTe2/CeCoIn5)  (N=7)
+  bias0=+0.0004  RMS(intercept)=0.2341
+    H-Z  Z^2        eta=+0.0749 RMS=0.2305 red=+1.6% F=0.16 p=0.707 
+    H-A  A^2        eta=+0.0870 RMS=0.2295 red=+1.9% F=0.20 p=0.673 
+    H-B  A^(4/3)    eta=+0.0536 RMS=0.2319 red=+0.9% F=0.09 p=0.771 
+    H-C  z*Z^2      eta=+0.0730 RMS=0.2308 red=+1.4% F=0.15 p=0.718 
+    H-D  pair(Z)    eta=+0.0749 xi=0.30A RMS=0.2305 red=+1.6% F=0.06 p=0.939 
+    H-D2 pair(A)    eta=+0.0870 xi=0.30A RMS=0.2295 red=+1.9% F=0.08 p=0.924 
+  Ranking:
+    H-A  A^2        RMS=0.2295  eta=+0.0870  xi=      -  F= 0.20  p=0.673 
+    H-D2 pair(A)    RMS=0.2295  eta=+0.0870  xi=   0.30  F= 0.08  p=0.924 
+    H-Z  Z^2        RMS=0.2305  eta=+0.0749  xi=      -  F= 0.16  p=0.707 
+    H-D  pair(Z)    RMS=0.2305  eta=+0.0749  xi=   0.30  F= 0.06  p=0.939 
+    H-C  z*Z^2      RMS=0.2308  eta=+0.0730  xi=      -  F= 0.15  p=0.718 
+    H-B  A^(4/3)    RMS=0.2319  eta=+0.0536  xi=      -  F= 0.09  p=0.771 
+
+  SUBSET: heavy-union CLEAN  (N=19)
+  bias0=-0.0199  RMS(intercept)=0.1709
+    H-Z  Z^2        eta=+0.0509 RMS=0.1688 red=+1.2% F=0.41 p=0.532 
+    H-A  A^2        eta=+0.0558 RMS=0.1685 red=+1.4% F=0.47 p=0.501 
+    H-B  A^(4/3)    eta=+0.0451 RMS=0.1693 red=+0.9% F=0.32 p=0.580 
+    H-C  z*Z^2      eta=+0.0715 RMS=0.1696 red=+0.7% F=0.25 p=0.620 
+    H-D  pair(Z)    eta=+0.0509 xi=0.30A RMS=0.1688 red=+1.2% F=0.19 p=0.828 
+    H-D2 pair(A)    eta=+0.0558 xi=0.31A RMS=0.1685 red=+1.4% F=0.22 p=0.803 
+  Ranking:
+    H-D2 pair(A)    RMS=0.1685  eta=+0.0558  xi=   0.31  F= 0.22  p=0.803 
+    H-A  A^2        RMS=0.1685  eta=+0.0558  xi=      -  F= 0.47  p=0.501 
+    H-D  pair(Z)    RMS=0.1688  eta=+0.0509  xi=   0.30  F= 0.19  p=0.828 
+    H-Z  Z^2        RMS=0.1688  eta=+0.0509  xi=      -  F= 0.41  p=0.532 
+    H-B  A^(4/3)    RMS=0.1693  eta=+0.0451  xi=      -  F= 0.32  p=0.580 
+    H-C  z*Z^2      RMS=0.1696  eta=+0.0715  xi=      -  F= 0.25  p=0.620 
+
+  SUBSET: CORE (wszystkie Zh>0 bez off-model)  (N=26)
+  bias0=-0.0273  RMS(intercept)=0.1840
+    H-Z  Z^2        eta=+0.0586 RMS=0.1829 red=+0.6% F=0.29 p=0.598 
+    H-A  A^2        eta=+0.0637 RMS=0.1827 red=+0.7% F=0.34 p=0.564 
+    H-B  A^(4/3)    eta=+0.0533 RMS=0.1831 red=+0.5% F=0.24 p=0.627 
+    H-C  z*Z^2      eta=+0.0812 RMS=0.1839 red=+0.1% F=0.03 p=0.855 
+    H-D  pair(Z)    eta=+0.0586 xi=0.30A RMS=0.1829 red=+0.6% F=0.14 p=0.873 
+    H-D2 pair(A)    eta=+0.0637 xi=0.30A RMS=0.1827 red=+0.7% F=0.16 p=0.850 
+  Ranking:
+    H-A  A^2        RMS=0.1827  eta=+0.0637  xi=      -  F= 0.34  p=0.564 
+    H-D2 pair(A)    RMS=0.1827  eta=+0.0637  xi=   0.30  F= 0.16  p=0.850 
+    H-Z  Z^2        RMS=0.1829  eta=+0.0586  xi=      -  F= 0.29  p=0.598 
+    H-D  pair(Z)    RMS=0.1829  eta=+0.0586  xi=   0.30  F= 0.14  p=0.873 
+    H-B  A^(4/3)    RMS=0.1831  eta=+0.0533  xi=      -  F= 0.24  p=0.627 
+    H-C  z*Z^2      RMS=0.1839  eta=+0.0812  xi=      -  F= 0.03  p=0.855 
+
+==============================================================================
+  ThH10 analiza szczegolowa (hold-out dla P7.5a)
+==============================================================================
+  T_obs = 161.0
+  T_pred(raw) = 283.98   dlog_raw = +0.246
+  T_pred(P7.5a) = 53.94  dlog_corr = -0.475
+  P7.5a z eta_f=-1.308 i Z=90 to OVER-CORRECTION (-0.475)
+  Sugestia: eta_f(Z) moze wymaga nasycenia przy bardzo ciezkich
+  aktynowcach — Z^2/137^2 = 0.431 dla Z=90 jest w obszarze gdzie
+  linearna aproksymacja QED sie zalamuje.
+
+==============================================================================
+  Residualne kanaly po P7.5 (identyfikacja dalszych subproblemow)
+==============================================================================
+  Klasy z mean(dlog) istotnie !=0 wskazuja gdzie jest jeszcze fizyka
+  niewlaczona w model.
+  d_cu       N=13  mean=+0.017  RMS=0.155  t=+0.40
+  d_fe       N= 7  mean=-0.128  RMS=0.168  t=-2.02 <-- STRONG SIGNAL
+  d_other    N=11  mean=+1.059  RMS=1.480  t=+2.37 <-- STRONG SIGNAL
+  f          N= 9  mean=+0.349  RMS=0.771  t=+1.36 <-- SIGNAL
+  s          N= 3  mean=+0.070  RMS=0.244  t=+0.50
+  sp         N= 2  mean=-0.260  RMS=0.309  t=-1.19 <-- SIGNAL

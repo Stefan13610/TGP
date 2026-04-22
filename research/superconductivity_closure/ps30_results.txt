@@ -1,0 +1,66 @@
+==============================================================================
+  ps30_P76_mass_damping.py  (nowy subproblem P7.6)
+  Mass-damping korekta A_d dla ciezkich d-klasowych pierwiastkow
+==============================================================================
+
+  Baseline (bez P7.6, gamma_M = 0):
+  name        M   T_obs   T_pred    dlog
+  V          51    5.30    10.95  +0.315
+  Nb         93    9.26    13.83  +0.174
+  Ta        181    4.47    19.83  +0.647 <-- 5d OUT
+  W         184    0.01    23.89  +3.299 <-- 5d OUT
+  Re        186    1.70    36.33  +1.330 <-- 5d OUT
+  Os        190    0.65    39.64  +1.785 <-- 5d OUT
+  Ir        192    0.11    35.60  +2.510 <-- 5d OUT
+
+------------------------------------------------------------------------------
+  FIT gamma_M na subset = ['Ta', 'Re', 'Os'] (srodkowe 5d)
+------------------------------------------------------------------------------
+  gamma_M = 4.219   RMS(dlog) = 0.4315
+
+  Po P7.6 (gamma_M=4.219):
+  name        M   T_obs   T_pred    dlog   w fit?
+  V          51    5.30    10.95  +0.315      ref
+  Nb         93    9.26    13.83  +0.174      ref
+  Ta        181    4.47     1.19  -0.573      FIT
+  W         184    0.01     1.34  +2.049     HOLD
+  Re        186    1.70     1.95  +0.060      FIT
+  Os        190    0.65     1.95  +0.476      FIT
+  Ir        192    0.11     1.67  +1.182     HOLD
+
+------------------------------------------------------------------------------
+  FIT gamma_M na pelny subset = ['Ta', 'W', 'Re', 'Os', 'Ir']
+------------------------------------------------------------------------------
+  gamma_M = 6.360   RMS(dlog) = 0.9008
+
+  Po P7.6 (gamma_M=6.360, fit na 5):
+  name        M   T_obs   T_pred    dlog
+  V          51    5.30    10.95  +0.315
+  Nb         93    9.26    13.83  +0.174
+  Ta        181    4.47     0.29  -1.192
+  W         184    0.01     0.31  +1.414
+  Re        186    1.70     0.44  -0.585
+  Os        190    0.65     0.42  -0.188
+  Ir        192    0.11     0.35  +0.508
+
+------------------------------------------------------------------------------
+  LOO na {Ta, Re, Os}:
+------------------------------------------------------------------------------
+    held-out Ta      gamma_M_fit = 5.106  pred dlog = -0.829
+    held-out Re      gamma_M_fit = 4.119  pred dlog = +0.090
+    held-out Os      gamma_M_fit = 3.371  pred dlog = +0.739
+
+==============================================================================
+  P7.6 verdict
+==============================================================================
+
+  fit na core {Ta,Re,Os}:  gamma_M = 4.219  max|dlog_core| = 0.573
+  fit na full {Ta..Ir}:    gamma_M = 6.360  max|dlog_full| = 1.414
+
+  Interpretacja:
+    core-fit NIE zamyka nawet srednich 5d — jeden gamma_M nie wystarcza.
+    full-fit NIE zamyka W i Ir — sa anomalnie ponad trend mass.
+    To sugeruje dodatkowy czynnik band-structure/filling dla W (d^4) i Ir (d^7).
+
+  Nowa stala TGP: gamma_M = 4.219 (z rekomendacja
+  'domeny zastosowania: ciezkie d-pierwiastki M > 93 amu')

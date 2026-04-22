@@ -1,0 +1,132 @@
+==============================================================================
+  ps26_validation_P75ab_N29.py
+  Walidacja P7.5a+b na pelnym N=29 datasecie (baseline ps17)
+==============================================================================
+
+  eta_f  = -1.3080  (P7.5a, 4f Kondo/Hund screening)
+  eta_6p = +0.3310  (P7.5b, 6p SOC boost)
+
+  Baseline N=29:
+    r(log)   = 0.8752   (p = 5.265e-10)
+    RMS_log  = 0.3571
+    outliers (|dlog|>0.4): 4
+       H3S           dlog = -0.426
+       Y_amb         dlog = +1.152
+       Th_amb        dlog = +0.877
+       Ce_5GPa       dlog = +0.549
+
+  klasa         N      mean       RMS   max|dlog|
+  d_cu          8  +0.0126  0.1815      0.3511
+  d_fe          5  -0.1424  0.1895      0.3574
+  d_other       5  +0.3917  0.5513      1.1523
+  s             3  +0.0070  0.2785      0.3994
+  sp            2  -0.2605  0.3088      0.4264
+  f             6  +0.3901  0.4676      0.8772
+
+==============================================================================
+  Po zastosowaniu P7.5a + P7.5b
+==============================================================================
+
+  N=29 (wszystkie materialy):
+    r(log)   = 0.9171   (baseline 0.8752, zmiana +0.0419)
+    RMS_log  = 0.2925   (baseline 0.3571, redukcja +18.1%)
+    outliers (|dlog|>0.4): 2  (bylo 4)
+       H3S           dlog = -0.426  flags: -
+       Y_amb         dlog = +1.152  flags: -
+
+  klasa         N      mean       RMS   max|dlog|
+  d_cu          8  +0.0729  0.1778      0.3511
+  d_fe          5  -0.1424  0.1895      0.3574
+  d_other       5  +0.3917  0.5513      1.1523
+  s             3  +0.0703  0.2443      0.3994
+  sp            2  -0.2605  0.3088      0.4264
+  f             6  +0.0796  0.1624      0.3173
+
+------------------------------------------------------------------------------
+  Pelna tabela po P7.5a+b
+------------------------------------------------------------------------------
+  material       Z_p   Z_h  orb         T_obs    T_pred     dlog  flag      
+  La2CuO4         29    57  d_cu        38.00     53.27  +0.147  -         
+  YBCO            29    56  d_cu        92.00     75.59  -0.085  -         
+  BiSCCO2212      29    83  d_cu        85.00     95.06  +0.049  7.5b      
+  Tl2212          29    81  d_cu       108.00     94.30  -0.059  7.5b      
+  Hg1223          29    80  d_cu       138.00    114.94  -0.079  7.5b      
+  Tl2223          29    81  d_cu       125.00    115.23  -0.035  7.5b      
+  Nd2CuO4         29    60  d_cu        24.00     53.86  +0.351  -         
+  Bi2201          29    83  d_cu        34.00     67.17  +0.296  7.5b      
+  Al              13    13  s            1.18      2.96  +0.399  -         
+  Pb              82    82  s            7.20      6.21  -0.065  7.5b      
+  Nb              41    41  d_other      9.26     13.83  +0.174  -         
+  V               23    23  d_other      5.30     10.95  +0.315  -         
+  Hg_elem         80    80  s            4.15      3.12  -0.124  7.5b      
+  MgB2             5    12  sp          39.00     31.37  -0.095  -         
+  FeSe_bulk       26    34  d_fe         8.00      7.85  -0.008  -         
+  FeSe/STO        26    34  d_fe        65.00     57.23  -0.055  -         
+  Ba122-Co        26    56  d_fe        22.00     17.90  -0.090  -         
+  LaFeAsO         26    57  d_fe        26.00     16.35  -0.201  -         
+  NdFeAsO-F       26    60  d_fe        55.00     24.15  -0.357  -         
+  Nb3Sn           41    50  d_other     18.30     22.03  +0.081  -         
+  NbTi            41    41  d_other     10.00     17.24  +0.237  -         
+  H3S             16    16  sp         203.00     76.05  -0.426* -         
+  LaH10           57    57  f          250.00    220.34  -0.055  7.5a      
+  CeH9            58    58  f          100.00     83.91  -0.076  7.5a      
+  CeH10           58    58  f          115.00    109.92  -0.020  7.5a      
+  La_amb          57    57  f            6.00      8.58  +0.156  7.5a      
+  Y_amb           39    39  d_other      1.30     18.46  +1.152* -         
+  Th_amb          90    90  f            1.38      1.98  +0.156  7.5a      
+  Ce_5GPa         58    58  f            1.70      3.53  +0.317  7.5a      
+
+==============================================================================
+  Leave-one-out cross-validation eta_f na 4f core (N=4)
+==============================================================================
+
+  LOO on 4f core (N=4):
+  held-out     eta_f fit     A_f_eff@Z    dlog held (pred)
+  LaH10          -1.3962        1.5427             -0.0722
+  CeH9           -1.4392        1.5096             -0.1032
+  CeH10          -1.3427        1.5447             -0.0267
+  La_amb         -1.0502        1.6644             +0.2042
+
+  LOO mean eta_f = -1.3071  +- 0.1757
+  full fit eta_f = -1.3080  (ps25)
+  spread/ful = 13.4%  (nizej = stabilniejszy)
+
+==============================================================================
+  Residualne kanaly po P7.5a+b
+==============================================================================
+
+  Klasy, gdzie mean(dlog) wciaz daleko od 0:
+
+  klasa         N      mean       RMS  sugestia
+  d_other       5  +0.3917  0.5513  phonon-TM nad-szacowane  Eliashberg mu* ? -> P7.7?
+  sp            2  -0.2605  0.3088  (niezdefiniowane)
+  d_fe          5  -0.1424  0.1895  Fe-SC pod-szacowane  nesting/Hund/multi-orbital -> P7.6?
+
+==============================================================================
+  Podsumowanie ps26
+==============================================================================
+
+  Baseline (ps17):
+    r = 0.8752   RMS_log = 0.3571   outliers = 4
+
+  Po P7.5a + P7.5b:
+    r = 0.9171   RMS_log = 0.2925   outliers = 2
+
+  Zmiana:
+    delta r    = +0.0419
+    delta RMS  = -0.0646   (+18.1%)
+    outliers:  4 -> 2  (2 zamknietych)
+
+  Werdykt:
+    - Jesli r wzroslo o >= +0.03 i outliers spadly o >= 1 przy JEDNEJ nowej
+      stalej (eta_f alone, bo eta_6p ma marginalne efekty) -> P7.5a jest
+      zaakceptowane do paperu SC v2.
+    - Jesli Th_amb przestal byc outlierem po P7.5a -> silna walidacja.
+    - Rezidualne sygnaly w d_fe i d_other wskazuja kolejne potencjalne
+      sub-problemy P7.6/P7.7 (spoza P7.5 Z-relatywistycznego).
+
+  Uwaga: ta walidacja jest self-consistent (eta_f fitowane na 4 z 6
+  materialow f-klasy, potem zastosowane do wszystkich 6 vs baseline).
+  Th_amb i Ce_5GPa NIE byly uzyte do fitu eta_f w ps25 (byly outlierami)
+  -> ich poprawa jest WALIDACJA HOLD-OUT, nie fit.
+

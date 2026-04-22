@@ -1,0 +1,43 @@
+================================================================================
+  ps23_residual_correlation_Z_Mmol.py
+  Test: czy residua log-pred(Tc) korelują z Z lub M_mol?
+================================================================================
+
+================================================
+  FULL N=29 (z outlierami)   (N = 29)
+================================================
+     var_y     var_x    Pearson r  (p)       Spearman rho (p)
+    |dlog|    Z_pair   +0.2843 (0.135)    +0.2001 (0.298) 
+    |dlog|   Z_heavy   -0.0427 (0.826)    +0.0146 (0.940) 
+    |dlog|     M_mol   -0.3161 (0.095)    -0.3769 (0.044)*
+      dlog    Z_pair   +0.3177 (0.093)    +0.3120 (0.099) 
+      dlog   Z_heavy   -0.0596 (0.759)    -0.1203 (0.534) 
+      dlog     M_mol   -0.3064 (0.106)    -0.3163 (0.095) 
+
+
+================================================
+  CORE N=25 (bez P7-outlierów: H3S, Y_amb, Th_amb, Ce_5GPa)   (N = 25)
+================================================
+     var_y     var_x    Pearson r  (p)       Spearman rho (p)
+    |dlog|    Z_pair   +0.0706 (0.737)    +0.1093 (0.603) 
+    |dlog|   Z_heavy   -0.1251 (0.551)    +0.0378 (0.858) 
+    |dlog|     M_mol   -0.2887 (0.162)    -0.2654 (0.200) 
+      dlog    Z_pair   +0.0034 (0.987)    +0.0774 (0.713) 
+      dlog   Z_heavy   -0.4062 (0.044)*   -0.3555 (0.081) 
+      dlog     M_mol   -0.3758 (0.064)    -0.4101 (0.042)*
+
+================================================================================
+  Interpretacja
+================================================================================
+
+  Progowe |r| wg Cohena dla N=25-29:
+     |r| < 0.10  :  brak efektu
+     |r| < 0.30  :  słaby
+     |r| < 0.50  :  umiarkowany
+     |r| >= 0.50 :  silny
+
+  Aby zarzut agenta ('model pomija efekt jądrowy') miał moc,
+  potrzeba CO NAJMNIEJ umiarkowanej korelacji (|r| > 0.30)
+  statystycznie istotnej (p < 0.05) DLA CORE (N=25).
+  Słaba/nieistotna korelacja odrzuca zarzut.
+

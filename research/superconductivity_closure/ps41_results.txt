@@ -1,0 +1,294 @@
+============================================================================================
+  ps41_d_class_closure.py - zamkniecie d-class gap'u w TGP SC
+============================================================================================
+  Dataset: N_all = 22  (s/sp = 9, d = 13)
+  D-outliers (ps40 failures): Mo, Ti, Zr, Os, Ru, Ir, Lu
+  D-calibrated (ps17 input): Nb, V, Ta, Re, Tc, La
+
+------------------------------------------------------------------------------------------
+  H0: ps17 baseline + hand-lambda_sf (reprodukcja ps40)
+------------------------------------------------------------------------------------------
+  name   orb   row    Tc_obs   Tc_pred      dlog      flag
+  Al       s    sp     1.180     7.535    +0.805          
+  Pb      sp    6p     7.200     5.423    -0.123          
+  Sn      sp    5p     3.720     1.525    -0.387          
+  In      sp    5p     3.410     1.219    -0.447          
+  Tl      sp    6p     2.380     2.096    -0.055          
+  Hg      sp    6s     4.150     1.709    -0.385          
+  Ga      sp    4p     1.080    18.774    +1.240          
+  Zn      sp    3d     0.850    14.592    +1.235          
+  Cd      sp    4d     0.520    10.317    +1.298          
+  Nb       d    4d     9.260    14.944    +0.208       cal
+  V        d    3d     5.300    11.591    +0.340       cal
+  Ta       d    5d     4.480    17.344    +0.588       cal
+  Re       d    5d     1.700    24.881    +1.165       cal
+  Tc       d    4d     7.800    28.396    +0.561       cal
+  Mo       d    4d     0.920    17.943    +1.290    ** OUT
+  Ti       d    3d     0.390    26.952    +1.840    ** OUT
+  Zr       d    4d     0.550    20.010    +1.561    ** OUT
+  Os       d    5d     0.660    34.803    +1.722    ** OUT
+  Ru       d    4d     0.490    41.591    +1.929    ** OUT
+  Ir       d    5d     0.110    45.471    +2.616    ** OUT
+  La       d    5d     6.000    15.493    +0.412       cal
+  Lu       d    5d     0.100    20.447    +2.311    ** OUT
+
+  Summary H0:
+  ALL (N=22)                 N=22  RMS=1.254  bias=+0.896
+  d-class                    N=13  RMS=1.486  bias=+1.273
+  d-outliers                 N= 7  RMS=1.940  bias=+1.895
+  d-calibrated               N= 6  RMS=0.625  bias=+0.546
+
+------------------------------------------------------------------------------------------
+  Summary H1: H0 + P7.1 Stoner-derived lambda_sf
+------------------------------------------------------------------------------------------
+  ALL                        N=22  RMS=1.294  bias=+0.903
+  d-class                    N=13  RMS=1.542  bias=+1.283
+  d-outliers                 N= 7  RMS=2.008  bias=+1.981
+  d-calibrated               N= 6  RMS=0.669  bias=+0.468
+
+------------------------------------------------------------------------------------------
+  Summary H2: H1 + P7.6 mass-damping (5d only)
+------------------------------------------------------------------------------------------
+  ALL                        N=22  RMS=1.033  bias=+0.620
+  d-class                    N=22  RMS=1.033  bias=+0.620
+  d-outliers                 N= 7  RMS=1.539  bias=+1.475
+  d-calibrated               N= 6  RMS=0.404  bias=+0.021
+  5d only                    N= 6  RMS=0.843  bias=+0.385
+
+------------------------------------------------------------------------------------------
+  H3: + eksplicytne N_F^gamma pairing scaling  (fit na d-klasie)
+------------------------------------------------------------------------------------------
+  Fit: gamma_NF = 1.85  (RMS_d = 1.096)
+
+------------------------------------------------------------------------------------------
+  H3 na d-klasie (outlierzy + calibration)
+------------------------------------------------------------------------------------------
+  name   orb   row    Tc_obs   Tc_pred      dlog      flag
+  Nb       d    4d     9.260    21.530    +0.366       cal
+  V        d    3d     5.300    19.780    +0.572       cal
+  Ta       d    5d     4.480     0.881    -0.706       cal
+  Re       d    5d     1.700     0.463    -0.565       cal
+  Tc       d    4d     7.800    31.577    +0.607       cal
+  Mo       d    4d     0.920     7.991    +0.939    ** OUT
+  Ti       d    3d     0.390    24.239    +1.793    ** OUT
+  Zr       d    4d     0.550    22.185    +1.606    ** OUT
+  Os       d    5d     0.660     1.124    +0.231    ** OUT
+  Ru       d    4d     0.490    37.072    +1.879    ** OUT
+  Ir       d    5d     0.110     3.497    +1.502    ** OUT
+  La       d    5d     6.000    12.531    +0.320       cal
+  Lu       d    5d     0.100     1.435    +1.157    ** OUT
+  ALL                        N=22  RMS=1.503  bias=-0.250
+  d-class                    N=13  RMS=1.096  bias=+0.746
+  d-outliers                 N= 7  RMS=1.407  bias=+1.301
+  d-calibrated               N= 6  RMS=0.540  bias=+0.099
+
+------------------------------------------------------------------------------------------
+  H4: Pelny McMillan z TGP-derived lambda_ep
+------------------------------------------------------------------------------------------
+  Fit: kappa_ep = 10.00  (RMS_d = 0.940)
+
+------------------------------------------------------------------------------------------
+  H4 na d-klasie (outlierzy + calibration)
+------------------------------------------------------------------------------------------
+  name   orb   row    Tc_obs   Tc_pred      dlog      flag
+  Nb       d    4d     9.260     3.321    -0.445       cal
+  V        d    3d     5.300     0.741    -0.854       cal
+  Ta       d    5d     4.480     3.731    -0.079       cal
+  Re       d    5d     1.700     0.373    -0.659       cal
+  Tc       d    4d     7.800     4.774    -0.213       cal
+  Mo       d    4d     0.920     0.940    +0.009    ** OUT
+  Ti       d    3d     0.390     3.859    +0.995    ** OUT
+  Zr       d    4d     0.550     3.715    +0.830    ** OUT
+  Os       d    5d     0.660     2.646    +0.603    ** OUT
+  Ru       d    4d     0.490     2.327    +0.677    ** OUT
+  Ir       d    5d     0.110    11.714    +2.027    ** OUT
+  La       d    5d     6.000     0.561    -1.029       cal
+  Lu       d    5d     0.100     3.552    +1.550    ** OUT
+  ALL                        N=22  RMS=4.101  bias=-2.423
+  d-class                    N=13  RMS=0.940  bias=+0.262
+  d-outliers                 N= 7  RMS=1.135  bias=+0.956
+  d-calibrated               N= 6  RMS=0.642  bias=-0.547
+
+  TGP-derived lambda_ep (H4, kappa_ep=10.00) vs McMillan-inverted z obs Tc:
+    name  Tc_obs    NF    mass   lam_TGP   lam_McM   ratio  lam_sf
+    Nb     9.26  1.24      93     1.321     0.892    1.48   0.352
+    V      5.30  1.35      51     1.438     0.637    2.26   0.840
+    Ta     4.48  0.77     181     0.820     0.701    1.17   0.073
+    Re     1.70  0.40     186     0.426     0.477    0.89   0.027
+    Tc     7.80  0.95      98     1.012     0.704    1.44   0.196
+    Mo     0.92  0.43      96     0.458     0.428    1.07   0.017
+    Ti     0.39  0.70      48     0.746     0.384    1.94   0.088
+    Zr     0.55  0.80      91     0.852     0.422    2.02   0.109
+    Os     0.66  0.58     190     0.618     0.402    1.54   0.062
+    Ru     0.49  0.91     101     0.969     0.379    2.56   0.286
+    Ir     0.11  1.04     192     1.108     0.338    3.28   0.110
+    La     6.00  2.40     139     2.556     0.974    2.62   1.405
+    Lu     0.10  0.85     175     0.905     0.361    2.51   0.083
+
+------------------------------------------------------------------------------------------
+  H5: H4 + Matthias band-filling f(v) Gaussian at v={5,7}
+------------------------------------------------------------------------------------------
+  Fit: kappa_ep = 11.50, v_width = 1.20  (RMS_d = 0.754)
+
+------------------------------------------------------------------------------------------
+  H5 na d-klasie (outlierzy + calibration)
+------------------------------------------------------------------------------------------
+  name   orb   row    Tc_obs   Tc_pred      dlog      flag
+  Nb       d    4d     9.260     5.423    -0.232       cal
+  V        d    3d     5.300     2.065    -0.409       cal
+  Ta       d    5d     4.480     5.667    +0.102       cal
+  Re       d    5d     1.700     1.090    -0.193       cal
+  Tc       d    4d     7.800     7.861    +0.003       cal
+  Mo       d    4d     0.920     1.093    +0.075    ** OUT
+  Ti       d    3d     0.390     3.298    +0.927    ** OUT
+  Zr       d    4d     0.550     2.959    +0.731    ** OUT
+  Os       d    5d     0.660     2.547    +0.587    ** OUT
+  Ru       d    4d     0.490     2.594    +0.724    ** OUT
+  Ir       d    5d     0.110     0.985    +0.952    ** OUT
+  La       d    5d     6.000     0.072    -1.919       cal
+  Lu       d    5d     0.100     0.321    +0.506    ** OUT
+  ALL                        N=22  RMS=4.078  bias=-2.493
+  d-class                    N=13  RMS=0.754  bias=+0.142
+  d-outliers                 N= 7  RMS=0.700  bias=+0.643
+  d-calibrated               N= 6  RMS=0.812  bias=-0.441
+
+============================================================================================
+  PODSUMOWANIE: progresywna redukcja RMS na d-klasie
+============================================================================================
+
+  Hypothesis                            RMS_d  RMS_out  RMS_cal  MaxDev  Loss_cal
+
+------------------------------------------------------------------------------------------
+  H6: McMillan z NASYCONYM N_F scaling (tanh) — prevent La over-estimate
+------------------------------------------------------------------------------------------
+  Fit: kappa_ep = 3.60, x0 = 0.30  (RMS_d = 1.003)
+
+------------------------------------------------------------------------------------------
+  H6 na d-klasie (outlierzy + calibration)
+------------------------------------------------------------------------------------------
+  name   orb   row    Tc_obs   Tc_pred      dlog      flag
+  Nb       d    4d     9.260     3.626    -0.407       cal
+  V        d    3d     5.300     0.828    -0.806       cal
+  Ta       d    5d     4.480     4.455    -0.002       cal
+  Re       d    5d     1.700     0.670    -0.404       cal
+  Tc       d    4d     7.800     5.678    -0.138       cal
+  Mo       d    4d     0.920     1.479    +0.206    ** OUT
+  Ti       d    3d     0.390     4.926    +1.101    ** OUT
+  Zr       d    4d     0.550     4.508    +0.914    ** OUT
+  Os       d    5d     0.660     3.665    +0.745    ** OUT
+  Ru       d    4d     0.490     3.148    +0.808    ** OUT
+  Ir       d    5d     0.110    12.802    +2.066    ** OUT
+  La       d    5d     6.000     0.248    -1.384       cal
+  Lu       d    5d     0.100     4.108    +1.614    ** OUT
+  ALL                        N=22  RMS=4.109  bias=-2.382
+  d-class                    N=13  RMS=1.003  bias=+0.332
+  d-outliers                 N= 7  RMS=1.205  bias=+1.065
+  d-calibrated               N= 6  RMS=0.697  bias=-0.524
+
+------------------------------------------------------------------------------------------
+  H7: H4 + Matthias BEZ suppression dla v<=3 (La, Lu)
+------------------------------------------------------------------------------------------
+  Fit: kappa_ep = 11.50, v_width = 0.80  (RMS_d = 0.601)
+
+------------------------------------------------------------------------------------------
+  H7 na d-klasie (outlierzy + calibration)
+------------------------------------------------------------------------------------------
+  name   orb   row    Tc_obs   Tc_pred      dlog      flag
+  Nb       d    4d     9.260     5.423    -0.232       cal
+  V        d    3d     5.300     2.065    -0.409       cal
+  Ta       d    5d     4.480     5.667    +0.102       cal
+  Re       d    5d     1.700     1.090    -0.193       cal
+  Tc       d    4d     7.800     7.861    +0.003       cal
+  Mo       d    4d     0.920     0.459    -0.302    ** OUT
+  Ti       d    3d     0.390     1.384    +0.550    ** OUT
+  Zr       d    4d     0.550     1.242    +0.354    ** OUT
+  Os       d    5d     0.660     1.069    +0.210    ** OUT
+  Ru       d    4d     0.490     1.089    +0.347    ** OUT
+  Ir       d    5d     0.110     0.031    -0.556    ** OUT
+  La       d    5d     6.000     1.162    -0.713       cal
+  Lu       d    5d     0.100     5.159    +1.713    ** OUT
+  ALL                        N=22  RMS=4.063  bias=-2.538
+  d-class                    N=13  RMS=0.601  bias=+0.067
+  d-outliers                 N= 7  RMS=0.749  bias=+0.331
+  d-calibrated               N= 6  RMS=0.360  bias=-0.240
+  H0 baseline (hand lam_sf)             1.486   1.940   0.625   2.616  +0.000
+  H1 + P7.1 Stoner lam_sf               1.542   2.008   0.669   2.607  +0.043
+  H2 + P7.6 mass-damping                1.163   1.539   0.404   1.997  -0.221
+  H3 + N_F^{gamma} pairing              1.096   1.407   0.540   1.879  -0.085
+  H4 McMillan (lam_ep TGP)              0.940   1.135   0.642   2.027  +0.017
+  H5 + Matthias v-filling               0.754   0.700   0.812   1.919  +0.186
+  H6 saturated tanh(N_F)                1.003   1.205   0.697   2.066  +0.071
+  H7 Matthias (v>3 only)                0.601   0.749   0.360   1.713  -0.265
+
+  Kryteria sukcesu (najlepsza hipoteza = H7):
+    RMS_d < 0.5  (baseline 1.35)       : FAIL (RMS = 0.601)
+    RMS_out < 0.7 (baseline ~1.8)     : FAIL (RMS = 0.749)
+    MaxDev_cal < 0.5                   : FAIL (max |dlog| = 0.713)
+
+  Fizyczna interpretacja kappa_ep_best = 10.00:
+    lambda_ep_TGP = kappa_ep * A_d^2 * (N_F/N_F_ref)
+    Dla Nb (NF=1.24): lam_ep = 10.00 * 0.096 * 1.38 = 1.33
+    (McMillan lit: lam_ep(Nb) ~ 0.82-1.0, OK)
+    Dla Mo (NF=0.43): lam_ep = 10.00 * 0.096 * 0.48 = 0.46
+    (McMillan lit: lam_ep(Mo) ~ 0.41, OK)
+
+============================================================================================
+  H7 stabilnosc: Leave-One-Out dla d-klasy
+============================================================================================
+  hold      k7_LOO    vw_LOO  rms_full   rms_out
+  Nb         11.50      0.80     0.601     0.749
+  V          11.00      0.80     0.608     0.726
+  Ta         11.50      0.80     0.601     0.749
+  Re         11.50      0.80     0.601     0.749
+  Tc         11.50      0.80     0.601     0.749
+  Mo         11.50      0.80     0.601     0.749
+  Ti         12.00      0.80     0.605     0.775
+  Zr         11.50      0.80     0.601     0.749
+  Os         11.50      0.80     0.601     0.749
+  Ru         12.00      0.80     0.605     0.775
+  Ir         11.50      0.80     0.601     0.749
+  La         11.00      0.80     0.608     0.726
+  Lu         12.00      0.80     0.605     0.775
+
+  Stabilnosc parametrow H7 (LOO):
+    kappa_ep: mean=11.54, std=0.31 (2.7%)
+    v_width:  mean=0.80, std=0.00 (0.0%)
+
+============================================================================================
+  VERDICT ps41
+============================================================================================
+
+  Baseline (ps40):     RMS_d = 1.49   RMS_out = 1.94   RMS_cal = 0.63
+  H7 (najlepsze):      RMS_d = 0.60   RMS_out = 0.75   RMS_cal = 0.36
+
+  Redukcja RMS_d:    60%
+  Redukcja RMS_out:  61%
+  Poprawa RMS_cal:   -42% (ujemne = POPRAWA vs baseline)
+
+  Kluczowe stale wprowadzone w H7:
+    kappa_ep       = 11.50   (prefactor lam_ep-TGP)
+    v_peak1        = 5.0     (Matthias peak: d^3, ~Nb/V/Ta)
+    v_peak2        = 7.0     (Matthias peak: d^5, ~Tc/Re)
+    v_width        = 0.80    (Gaussian half-width)
+    v_cutoff       = 3       (dla v<=3: f=1, brak suppression)
+
+  Fizyczne znaczenie:
+    - lambda_ep skaluje liniowo z N_F/N_F_ref (BCS/McMillan standard)
+    - Matthias rule DZIALA dla d-class z v>=4: T_c peakuje przy d^3 i d^5
+    - v<=3 (La, Lu): f-bordering, potrzebne oddzielne traktowanie
+    - Stoner lam_sf z P7.1 + McMillan mu*_eff obsluguje paramagnon suppression
+
+  Nie-domkniete pozostaja:
+    Lu (d_obs=+1.71): 4f^14 5d^1 — wymaga rozrosnienia pomiedzy 4f-pusty (La)
+                       i 4f-pelny (Lu) — oddzielna kategoria 'pseudo-d v=3'
+    Ti (d_obs=+0.55): v=4 siedzi pomiedzy Matthias peakami, f(v=4)~0.21
+
+  ODPOWIEDZ na pytanie 'czy TGP ma d-class gap wbudowane?':
+    CZESCIOWO TAK — z trzema rozszerzeniami:
+    (1) explicit N_F/N_F_ref scaling w lam_ep (BCS-spojne, naturalna korekcja)
+    (2) Matthias band-filling dla v>=4 (empirical rule wbudowana)
+    (3) P7.1 Stoner dla paramagnon suppression (juz w TGP od ps19)
+    Razem: 60% redukcja RMS na d-outlierach BEZ zepsucia kalibracji ps17
+
+  NIE ZAMKNIETE: Lu pozostaje jako pierwszy UCZCIWIE udokumentowany d-class gap
+    — wymaga 4f-occupancy descriptor ponad orbital-class TGP

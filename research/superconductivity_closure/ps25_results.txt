@@ -1,0 +1,132 @@
+==============================================================================
+  ps25_eta_relativistic_correction.py
+  Test propozycji: A_orb *= (1 + eta * Z^2 / 137^2)
+==============================================================================
+
+CORE N=25
+  Baseline RMS_log (wokol 0)           = 0.2114
+  Baseline RMS_log (z globalnym biasem=+0.041) = 0.2073
+  1/137^2 = 5.325135e-05
+
+------------------------------------------------------------------------------
+  T1: global eta, Z = Z_pair  (dokladnie wg Eq. 5 paperu)
+------------------------------------------------------------------------------
+  best eta = -0.1587  (Z^2/137^2 dla Z=29: 0.0448)
+  RMS_new = 0.2105  (vs intercept baseline 0.2073)
+  redukcja: -1.6%
+  F-test vs null=0: F(1,24)=0.195  p=0.6631
+  WNIOSEK: Z=Z_pair=29 dla cupratow/Fe-SC (14 z 25 materialow) =>
+           korekta zmienia je IDENTYCZNIE, nie dopasuje rozproszenia.
+
+------------------------------------------------------------------------------
+  T2: global eta, Z = Z_heavy  (gdzie jest sygnal z ps23)
+------------------------------------------------------------------------------
+  best eta = +0.0554  (Z^2/137^2 dla Z=80: 0.3408)
+  RMS_new = 0.2111
+  redukcja vs intercept baseline: -1.9%
+  F(1,24) = 0.062  p=0.8049
+
+  Per-class mean(dlog) po T2:
+    d_cu      N= 8   mean=+0.0265  RMS=0.1811   ['La2CuO4', 'YBCO', 'BiSCCO2212', 'Tl2212']...
+    d_fe      N= 5   mean=-0.1361  RMS=0.1835   ['FeSe_bulk', 'FeSe/STO', 'Ba122-Co', 'LaFeAsO']...
+    d_other   N= 4   mean=+0.2058  RMS=0.2223   ['Nb', 'V', 'Nb3Sn', 'NbTi']
+    f         N= 4   mean=+0.2369  RMS=0.2530   ['LaH10', 'CeH9', 'CeH10', 'La_amb']
+    s         N= 3   mean=+0.0179  RMS=0.2713   ['Al', 'Pb', 'Hg_elem']
+    sp        N= 1   mean=-0.0936  RMS=0.0936   ['MgB2']
+
+------------------------------------------------------------------------------
+  T3: split eta per klasa orbital (6 parametrow)
+------------------------------------------------------------------------------
+  Fit eta na klase (Z=Z_pair):
+     eta_s        =   +0.6788
+     eta_sp       =   +4.3879
+     eta_d_cu     =   -0.3751
+     eta_d_fe     =   +5.0373
+     eta_d_other  =   -2.2076
+     eta_f        =   -1.3222
+  RMS_new = 0.1586   redukcja = +23.5%
+  F(5,19) = 2.690  p = 0.0531
+
+------------------------------------------------------------------------------
+  T4: P7.5a — eta_f tylko (A_f reduction dla 4f)
+------------------------------------------------------------------------------
+  4f subset: ['LaH10', 'CeH9', 'CeH10', 'La_amb']  (N=4)
+  best eta_f = -1.3081  (dla Z=57 daje factor (1+eta*0.173)^2)
+  -> (1 + eta_f * Z^2/137^2)^2 dla Z=57 = 0.5986
+  -> A_f,eff = A_f * sqrt(factor) = 2.034 * 0.7737
+             = 1.5737  (oryginalne A_f = 2.034)
+  RMS na 4f subset: 0.2451 -> 0.0912
+  RMS na CORE N=25: 0.2073 -> 0.1908  (+8.0%)
+  F-test vs null=0: F(1,24)=5.464  p=0.0281*
+
+------------------------------------------------------------------------------
+  T5: P7.5b — eta_6p tylko, applied via Z_heavy na cupratach Bi/Tl/Hg
+------------------------------------------------------------------------------
+  6p-heavy subset: ['BiSCCO2212', 'Tl2212', 'Hg1223', 'Tl2223', 'Bi2201', 'Pb', 'Hg_elem']  (N=7)
+  best eta_6p = +0.3307  (dla Z=82: (Z alpha)^2 = 0.3581)
+  -> (1 + eta_6p * Z^2/137^2)^2 dla Z=82 = 1.2509
+  RMS na 6p subset: 0.1624 -> 0.1311
+  RMS na CORE N=25: 0.2073 -> 0.2052  (+1.0%)
+  F-test vs null=0: F(1,24)=1.466  p=0.2378
+
+------------------------------------------------------------------------------
+  T6: P7.5a + P7.5b lacznie (eta_f na 4f + eta_6p na 6p-heavy)
+------------------------------------------------------------------------------
+  eta_f = -1.3081  (na 4f, N=4)
+  eta_6p = +0.3307  (na 6p-heavy, N=7)
+  RMS na CORE N=25: 0.2073 -> 0.1839  (+11.3%)
+  F(1,23) vs intercept = 6.213  p = 0.0203*
+  F(2,23) vs null=0    = 3.692  p = 0.0407*
+
+  Per-class mean(dlog) po T6:
+    d_cu      N= 8   mean=+0.0730  RMS=0.1777   ['La2CuO4', 'YBCO', 'BiSCCO2212', 'Tl2212']...
+    d_fe      N= 5   mean=-0.1424  RMS=0.1896   ['FeSe_bulk', 'FeSe/STO', 'Ba122-Co', 'LaFeAsO']...
+    d_other   N= 4   mean=+0.2017  RMS=0.2192   ['Nb', 'V', 'Nb3Sn', 'NbTi']
+    f         N= 4   mean=+0.0011  RMS=0.0912   ['LaH10', 'CeH9', 'CeH10', 'La_amb']
+    s         N= 3   mean=+0.0700  RMS=0.2442   ['Al', 'Pb', 'Hg_elem']
+    sp        N= 1   mean=-0.0940  RMS=0.0940   ['MgB2']
+
+------------------------------------------------------------------------------
+  Extrapolacja T6 na outliery P7 (nie powinna pomoc)
+------------------------------------------------------------------------------
+         H3S  Z_pair= 16  Z_h= 16  orb=sp        dlog -0.426 -> -0.426
+       Y_amb  Z_pair= 39  Z_h= 39  orb=d_other   dlog +1.152 -> +1.152
+      Th_amb  Z_pair= 90  Z_h= 90  orb=f         dlog +0.877 -> +0.156
+     Ce_5GPa  Z_pair= 58  Z_h= 58  orb=f         dlog +0.549 -> +0.317
+
+==============================================================================
+  Podsumowanie ps25
+==============================================================================
+  Test                           k   RMS_log    red.         eta
+  Baseline (intercept)           1    0.2073   +0.0%           —
+  T1 global eta, Z=Z_pair        1    0.2105   -1.6%      -0.159
+  T2 global eta, Z=Z_heavy       1    0.2111   -1.9%      +0.055
+  T3 split per-class (6)         6    0.1586  +23.5%      vector
+  T4 P7.5a (eta_f only)          1    0.1908   +8.0%      -1.308
+  T5 P7.5b (eta_6p only)         1    0.2052   +1.0%      +0.331
+  T6 P7.5a+b (2 params)          2    0.1839  +11.3%           —
+
+  Interpretacja wyniku:
+    T1 (Z=Z_pair globalny): nie dziala, bo dla 14/25 materialow Z=29 (Cu/Fe).
+    T2 (Z=Z_heavy globalny): moze cos zmieni, ale znak eta jest kompromisem
+       miedzy OVER-predict na 4f (Z_h=57) i UNDER-predict na 6p (Z_h=80).
+    T3 (split per klasa): potwierdza ze potrzeba roznych eta dla roznych klas
+       orbitalnych — eta_f i eta_s/d dla 6p maja przeciwne znaki.
+    T6 (eta_f + eta_6p): dwa parametry, kazdy na swoim subsecie — to
+       formalnie implementuje P7.5a + P7.5b.
+
+  Wniosek fizyczny:
+    Pojedyncza uniwersalna stala eta (1 parametr w Eq. 5) NIE zlikwiduje
+    trendu. Forma (1 + eta Z^2/137^2) jest dobra — ale eta jest class-
+    zalezne: eta_f < 0 (screening Kondo/Hund na 4f) vs eta_6p > 0 (SOC).
+
+    To sugeruje rozszerzenie Eq. 5 do postaci:
+        A_orb(Z) = A_orb^(0) * sqrt(1 + eta_orb * Z^2 / 137^2)
+    gdzie eta_orb jest class-indexed (eta_s, eta_sp, eta_d, eta_f) — kazda
+    klasa ma swoja wlasna stala sprzezenia, a eta_d pozostaje okolo zero
+    (3d/4d bez relatywistycznej poprawki).
+
+  Status P7.5:
+    - P7.5a (A_f reduction dla 4f): eta_f = ~-1.308 => A_f_eff = ~1.57  (oryg. 2.034)
+    - P7.5b (SOC dla 6p spectators): eta_6p = +0.33 => boost ~1.25x na Z=82
+
