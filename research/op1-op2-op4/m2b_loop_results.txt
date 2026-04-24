@@ -1,0 +1,250 @@
+========================================================================
+M2b one-loop V_eff(Phi) -- numerical correction to M2a tree-level
+v2 bond: K_Phi(q) = 2 J Phi^2 sum (1 - cos q_mu),  Lambda = pi,  a = 1
+========================================================================
+
+=== case A: m0^2=-4.0, lambda0=1.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            3.732051
+  A(Phi_0) = V''_onsite(Phi_0):   +4.641016e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.320508e-01, c_3 = +3.206314e-03, c_4 = -6.443470e-04
+                    beta_eff = +9.618943e-03,  gamma_eff = +2.577388e-03
+  BZ: n_q=32^3 = 32768 nodes;  Phi-grid: 400 pts in [1.3062, 9.3301];  A > 0 threshold = 1.0000
+  Tree FIT vs analytical:
+    c_2 fit = +2.320516e-01  (an +2.320508e-01, relerr +3.34e-06)
+    c_3 fit = +3.236544e-03  (an +3.206314e-03, relerr +9.43e-03)
+    c_4 fit = -6.544424e-04  (an -6.443470e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -3.521279e-02
+    dc_3 = +6.270071e-03
+    dc_4 = -1.257930e-03
+  1-LOOP TOTAL:
+    c_2 = +1.968388e-01  (tree +2.320508e-01)
+    c_3 = +9.506615e-03  (tree +3.206314e-03)
+    c_4 = -1.912372e-03  (tree -6.443470e-04)
+    beta_eff_1loop   = +2.851984e-02   (tree +9.618943e-03,  ratio +2.9650)
+    gamma_eff_1loop  = +7.649489e-03   (tree +2.577388e-03, ratio +2.9679)
+    beta/gamma (dim, raw ratio)     = +3.728333  (Phi_0 = 3.7321; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.999004  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 4.0000):
+    C_gamma (tree)   = +1.0310e-02
+    C_gamma (1-loop) = +3.0598e-02   (shift: +1.968)
+    C_beta  (tree)   = +3.8476e-02
+    C_beta  (1-loop) = +1.1408e-01
+    C_beta/C_gamma (1-loop) = +3.7283  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+=== case B: m0^2=-5.0, lambda0=2.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            2.280776
+  A(Phi_0) = V''_onsite(Phi_0):   +9.038820e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +4.519410e-01, c_3 = +1.404755e-02, c_4 = -4.619332e-03
+                    beta_eff = +4.214265e-02,  gamma_eff = +1.847733e-02
+  BZ: n_q=32^3 = 32768 nodes;  Phi-grid: 400 pts in [0.7983, 5.7019];  A > 0 threshold = 0.7071
+  Tree FIT vs analytical:
+    c_2 fit = +4.519431e-01  (an +4.519410e-01, relerr +4.59e-06)
+    c_3 fit = +1.417999e-02  (an +1.404755e-02, relerr +9.43e-03)
+    c_4 fit = -4.691706e-03  (an -4.619332e-03, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -8.836402e-02
+    dc_3 = +2.514175e-02
+    dc_4 = -8.428452e-03
+  1-LOOP TOTAL:
+    c_2 = +3.635791e-01  (tree +4.519410e-01)
+    c_3 = +3.932175e-02  (tree +1.404755e-02)
+    c_4 = -1.312016e-02  (tree -4.619332e-03)
+    beta_eff_1loop   = +1.179652e-01   (tree +4.214265e-02,  ratio +2.7992)
+    gamma_eff_1loop  = +5.248063e-02   (tree +1.847733e-02, ratio +2.8403)
+    beta/gamma (dim, raw ratio)     = +2.247786  (Phi_0 = 2.2808; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.985536  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 2.5000):
+    C_gamma (tree)   = +1.1548e-02
+    C_gamma (1-loop) = +3.2800e-02   (shift: +1.840)
+    C_beta  (tree)   = +5.2678e-02
+    C_beta  (1-loop) = +1.4746e-01
+    C_beta/C_gamma (1-loop) = +4.4956  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+=== case C: m0^2=-2.0, lambda0=1.0, T=0.1, J=1.0 ===
+  Phi_0 (tree saddle):            1.948683
+  A(Phi_0) = V''_onsite(Phi_0):   +4.868330e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.434165e-01, c_3 = +2.252293e-03, c_4 = -8.668520e-04
+                    beta_eff = +6.756880e-03,  gamma_eff = +3.467408e-03
+  BZ: n_q=32^3 = 32768 nodes;  Phi-grid: 400 pts in [0.6820, 4.8717];  A > 0 threshold = 0.3162
+  Tree FIT vs analytical:
+    c_2 fit = +2.434168e-01  (an +2.434165e-01, relerr +1.17e-06)
+    c_3 fit = +2.273528e-03  (an +2.252293e-03, relerr +9.43e-03)
+    c_4 fit = -8.804335e-04  (an -8.668520e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -1.215622e-02
+    dc_3 = +3.909734e-03
+    dc_4 = -1.395368e-03
+  1-LOOP TOTAL:
+    c_2 = +2.312606e-01  (tree +2.434165e-01)
+    c_3 = +6.183262e-03  (tree +2.252293e-03)
+    c_4 = -2.275802e-03  (tree -8.668520e-04)
+    beta_eff_1loop   = +1.854978e-02   (tree +6.756880e-03,  ratio +2.7453)
+    gamma_eff_1loop  = +9.103207e-03   (tree +3.467408e-03, ratio +2.6254)
+    beta/gamma (dim, raw ratio)     = +2.037720  (Phi_0 = 1.9487; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +1.045691  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 2.0000):
+    C_gamma (tree)   = +6.9348e-03
+    C_gamma (1-loop) = +1.8206e-02   (shift: +1.625)
+    C_beta  (tree)   = +1.3514e-02
+    C_beta  (1-loop) = +3.7100e-02
+    C_beta/C_gamma (1-loop) = +2.0377  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+========================================================================
+Convergence scan of n_q (BZ 1D Gauss-Legendre nodes) for case A
+========================================================================
+
+-- n_q = 8 (512 total) --
+
+=== case A(n_q=8): m0^2=-4.0, lambda0=1.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            3.732051
+  A(Phi_0) = V''_onsite(Phi_0):   +4.641016e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.320508e-01, c_3 = +3.206314e-03, c_4 = -6.443470e-04
+                    beta_eff = +9.618943e-03,  gamma_eff = +2.577388e-03
+  BZ: n_q=8^3 = 512 nodes;  Phi-grid: 400 pts in [1.3062, 9.3301];  A > 0 threshold = 1.0000
+  Tree FIT vs analytical:
+    c_2 fit = +2.320516e-01  (an +2.320508e-01, relerr +3.34e-06)
+    c_3 fit = +3.236544e-03  (an +3.206314e-03, relerr +9.43e-03)
+    c_4 fit = -6.544424e-04  (an -6.443470e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -3.521318e-02
+    dc_3 = +6.270111e-03
+    dc_4 = -1.257906e-03
+  1-LOOP TOTAL:
+    c_2 = +1.968384e-01  (tree +2.320508e-01)
+    c_3 = +9.506655e-03  (tree +3.206314e-03)
+    c_4 = -1.912349e-03  (tree -6.443470e-04)
+    beta_eff_1loop   = +2.851997e-02   (tree +9.618943e-03,  ratio +2.9650)
+    gamma_eff_1loop  = +7.649394e-03   (tree +2.577388e-03, ratio +2.9679)
+    beta/gamma (dim, raw ratio)     = +3.728395  (Phi_0 = 3.7321; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.999020  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 4.0000):
+    C_gamma (tree)   = +1.0310e-02
+    C_gamma (1-loop) = +3.0598e-02   (shift: +1.968)
+    C_beta  (tree)   = +3.8476e-02
+    C_beta  (1-loop) = +1.1408e-01
+    C_beta/C_gamma (1-loop) = +3.7284  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+-- n_q = 16 (4096 total) --
+
+=== case A(n_q=16): m0^2=-4.0, lambda0=1.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            3.732051
+  A(Phi_0) = V''_onsite(Phi_0):   +4.641016e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.320508e-01, c_3 = +3.206314e-03, c_4 = -6.443470e-04
+                    beta_eff = +9.618943e-03,  gamma_eff = +2.577388e-03
+  BZ: n_q=16^3 = 4096 nodes;  Phi-grid: 400 pts in [1.3062, 9.3301];  A > 0 threshold = 1.0000
+  Tree FIT vs analytical:
+    c_2 fit = +2.320516e-01  (an +2.320508e-01, relerr +3.34e-06)
+    c_3 fit = +3.236544e-03  (an +3.206314e-03, relerr +9.43e-03)
+    c_4 fit = -6.544424e-04  (an -6.443470e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -3.521279e-02
+    dc_3 = +6.270071e-03
+    dc_4 = -1.257929e-03
+  1-LOOP TOTAL:
+    c_2 = +1.968388e-01  (tree +2.320508e-01)
+    c_3 = +9.506615e-03  (tree +3.206314e-03)
+    c_4 = -1.912372e-03  (tree -6.443470e-04)
+    beta_eff_1loop   = +2.851984e-02   (tree +9.618943e-03,  ratio +2.9650)
+    gamma_eff_1loop  = +7.649488e-03   (tree +2.577388e-03, ratio +2.9679)
+    beta/gamma (dim, raw ratio)     = +3.728334  (Phi_0 = 3.7321; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.999004  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 4.0000):
+    C_gamma (tree)   = +1.0310e-02
+    C_gamma (1-loop) = +3.0598e-02   (shift: +1.968)
+    C_beta  (tree)   = +3.8476e-02
+    C_beta  (1-loop) = +1.1408e-01
+    C_beta/C_gamma (1-loop) = +3.7283  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+-- n_q = 24 (13824 total) --
+
+=== case A(n_q=24): m0^2=-4.0, lambda0=1.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            3.732051
+  A(Phi_0) = V''_onsite(Phi_0):   +4.641016e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.320508e-01, c_3 = +3.206314e-03, c_4 = -6.443470e-04
+                    beta_eff = +9.618943e-03,  gamma_eff = +2.577388e-03
+  BZ: n_q=24^3 = 13824 nodes;  Phi-grid: 400 pts in [1.3062, 9.3301];  A > 0 threshold = 1.0000
+  Tree FIT vs analytical:
+    c_2 fit = +2.320516e-01  (an +2.320508e-01, relerr +3.34e-06)
+    c_3 fit = +3.236544e-03  (an +3.206314e-03, relerr +9.43e-03)
+    c_4 fit = -6.544424e-04  (an -6.443470e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -3.521279e-02
+    dc_3 = +6.270071e-03
+    dc_4 = -1.257930e-03
+  1-LOOP TOTAL:
+    c_2 = +1.968388e-01  (tree +2.320508e-01)
+    c_3 = +9.506615e-03  (tree +3.206314e-03)
+    c_4 = -1.912372e-03  (tree -6.443470e-04)
+    beta_eff_1loop   = +2.851984e-02   (tree +9.618943e-03,  ratio +2.9650)
+    gamma_eff_1loop  = +7.649489e-03   (tree +2.577388e-03, ratio +2.9679)
+    beta/gamma (dim, raw ratio)     = +3.728333  (Phi_0 = 3.7321; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.999004  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 4.0000):
+    C_gamma (tree)   = +1.0310e-02
+    C_gamma (1-loop) = +3.0598e-02   (shift: +1.968)
+    C_beta  (tree)   = +3.8476e-02
+    C_beta  (1-loop) = +1.1408e-01
+    C_beta/C_gamma (1-loop) = +3.7283  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+-- n_q = 32 (32768 total) --
+
+=== case A(n_q=32): m0^2=-4.0, lambda0=1.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            3.732051
+  A(Phi_0) = V''_onsite(Phi_0):   +4.641016e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.320508e-01, c_3 = +3.206314e-03, c_4 = -6.443470e-04
+                    beta_eff = +9.618943e-03,  gamma_eff = +2.577388e-03
+  BZ: n_q=32^3 = 32768 nodes;  Phi-grid: 400 pts in [1.3062, 9.3301];  A > 0 threshold = 1.0000
+  Tree FIT vs analytical:
+    c_2 fit = +2.320516e-01  (an +2.320508e-01, relerr +3.34e-06)
+    c_3 fit = +3.236544e-03  (an +3.206314e-03, relerr +9.43e-03)
+    c_4 fit = -6.544424e-04  (an -6.443470e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -3.521279e-02
+    dc_3 = +6.270071e-03
+    dc_4 = -1.257930e-03
+  1-LOOP TOTAL:
+    c_2 = +1.968388e-01  (tree +2.320508e-01)
+    c_3 = +9.506615e-03  (tree +3.206314e-03)
+    c_4 = -1.912372e-03  (tree -6.443470e-04)
+    beta_eff_1loop   = +2.851984e-02   (tree +9.618943e-03,  ratio +2.9650)
+    gamma_eff_1loop  = +7.649489e-03   (tree +2.577388e-03, ratio +2.9679)
+    beta/gamma (dim, raw ratio)     = +3.728333  (Phi_0 = 3.7321; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.999004  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 4.0000):
+    C_gamma (tree)   = +1.0310e-02
+    C_gamma (1-loop) = +3.0598e-02   (shift: +1.968)
+    C_beta  (tree)   = +3.8476e-02
+    C_beta  (1-loop) = +1.1408e-01
+    C_beta/C_gamma (1-loop) = +3.7283  (M3 gives -0.57; M3 vs M2b are different regimes)
+
+-- n_q = 40 (64000 total) --
+
+=== case A(n_q=40): m0^2=-4.0, lambda0=1.0, T=1.0, J=1.0 ===
+  Phi_0 (tree saddle):            3.732051
+  A(Phi_0) = V''_onsite(Phi_0):   +4.641016e-01  (loop stable: YES)
+  TREE analytical:  c_2 = +2.320508e-01, c_3 = +3.206314e-03, c_4 = -6.443470e-04
+                    beta_eff = +9.618943e-03,  gamma_eff = +2.577388e-03
+  BZ: n_q=40^3 = 64000 nodes;  Phi-grid: 400 pts in [1.3062, 9.3301];  A > 0 threshold = 1.0000
+  Tree FIT vs analytical:
+    c_2 fit = +2.320516e-01  (an +2.320508e-01, relerr +3.34e-06)
+    c_3 fit = +3.236544e-03  (an +3.206314e-03, relerr +9.43e-03)
+    c_4 fit = -6.544424e-04  (an -6.443470e-04, relerr +1.57e-02)
+  Loop-only FIT (coefficient shifts):
+    dc_2 = -3.521279e-02
+    dc_3 = +6.270071e-03
+    dc_4 = -1.257930e-03
+  1-LOOP TOTAL:
+    c_2 = +1.968388e-01  (tree +2.320508e-01)
+    c_3 = +9.506615e-03  (tree +3.206314e-03)
+    c_4 = -1.912372e-03  (tree -6.443470e-04)
+    beta_eff_1loop   = +2.851984e-02   (tree +9.618943e-03,  ratio +2.9650)
+    gamma_eff_1loop  = +7.649489e-03   (tree +2.577388e-03, ratio +2.9679)
+    beta/gamma (dim, raw ratio)     = +3.728333  (Phi_0 = 3.7321; tree: beta/gamma = Phi_0)
+    beta_natural / gamma_natural    = +0.999004  (tree = 1.0)
+  Dodatek B matching  (v^2 = |m0^2|/lambda0 = 4.0000):
+    C_gamma (tree)   = +1.0310e-02
+    C_gamma (1-loop) = +3.0598e-02   (shift: +1.968)
+    C_beta  (tree)   = +3.8476e-02
+    C_beta  (1-loop) = +1.1408e-01
+    C_beta/C_gamma (1-loop) = +3.7283  (M3 gives -0.57; M3 vs M2b are different regimes)
