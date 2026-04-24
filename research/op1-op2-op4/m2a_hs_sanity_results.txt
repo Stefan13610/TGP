@@ -1,0 +1,60 @@
+M2a tree-level H-S sanity check -- testing beta_eff/gamma_eff = Phi_0
+(analytical vs. direct numerical integration vs. MC sampling)
+
+=== case A  (m0^2=-4.0, lambda0=1.0, T=1.0) ===
+  Phi_0 (analytical):        3.732051
+  c_2 (analytical):          +2.320508e-01
+  c_3 (analytical):          +3.206314e-03
+  c_4 (analytical):          -6.443470e-04
+  beta_eff (analytical):     +9.618943e-03
+  gamma_eff (analytical):    +2.577388e-03
+  beta_eff/gamma_eff:        3.732051  (expect Phi_0 = 3.732051)
+  In natural units (phi=Phi/Phi_0):
+    beta  = beta_eff  * Phi_0^3 = +0.500000  (expect T/2 = +0.500000)
+    gamma = gamma_eff * Phi_0^4 = +0.500000  (expect T/2 = +0.500000)
+    beta/gamma = 1.000000  (expect 1.0)
+  [direct integration]  c_2 = +2.320520e-01   c_3 = +3.254990e-03   c_4 = -6.567322e-04
+                        beta_eff = +9.764971e-03   gamma_eff = +2.626929e-03
+                        beta_eff/gamma_eff = 3.717257  (rel.err. vs Phi_0: -3.96e-03)
+  [MC, acc=0.64]   c_2 = +2.869921e-01   c_3 = +6.559821e-02   c_4 = -3.464626e-01
+                        beta_eff = +1.967946e-01   gamma_eff = +1.385851e+00
+                        beta_eff/gamma_eff = 0.142003  (rel.err. vs Phi_0: -9.62e-01)
+
+=== case B  (m0^2=-5.0, lambda0=2.0, T=1.0) ===
+  Phi_0 (analytical):        2.280776
+  c_2 (analytical):          +4.519410e-01
+  c_3 (analytical):          +1.404755e-02
+  c_4 (analytical):          -4.619332e-03
+  beta_eff (analytical):     +4.214265e-02
+  gamma_eff (analytical):    +1.847733e-02
+  beta_eff/gamma_eff:        2.280776  (expect Phi_0 = 2.280776)
+  In natural units (phi=Phi/Phi_0):
+    beta  = beta_eff  * Phi_0^3 = +0.500000  (expect T/2 = +0.500000)
+    gamma = gamma_eff * Phi_0^4 = +0.500000  (expect T/2 = +0.500000)
+    beta/gamma = 1.000000  (expect 1.0)
+  [direct integration]  c_2 = +4.519442e-01   c_3 = +1.426081e-02   c_4 = -4.708122e-03
+                        beta_eff = +4.278243e-02   gamma_eff = +1.883249e-02
+                        beta_eff/gamma_eff = 2.271736  (rel.err. vs Phi_0: -3.96e-03)
+  [MC, acc=0.62]   c_2 = +2.895090e-01   c_3 = -3.116090e-01   c_4 = +7.480245e-01
+                        beta_eff = -9.348270e-01   gamma_eff = -2.992098e+00
+                        beta_eff/gamma_eff = 0.312432  (rel.err. vs Phi_0: -8.63e-01)
+
+=== case C  (m0^2=-2.0, lambda0=1.0, T=0.1) ===
+  Phi_0 (analytical):        1.948683
+  c_2 (analytical):          +2.434165e-01
+  c_3 (analytical):          +2.252293e-03
+  c_4 (analytical):          -8.668520e-04
+  beta_eff (analytical):     +6.756880e-03
+  gamma_eff (analytical):    +3.467408e-03
+  beta_eff/gamma_eff:        1.948683  (expect Phi_0 = 1.948683)
+  In natural units (phi=Phi/Phi_0):
+    beta  = beta_eff  * Phi_0^3 = +0.050000  (expect T/2 = +0.050000)
+    gamma = gamma_eff * Phi_0^4 = +0.050000  (expect T/2 = +0.050000)
+    beta/gamma = 1.000000  (expect 1.0)
+  [direct integration]  c_2 = +2.434169e-01   c_3 = +2.286486e-03   c_4 = -8.835141e-04
+                        beta_eff = +6.859458e-03   gamma_eff = +3.534056e-03
+                        beta_eff/gamma_eff = 1.940959  (rel.err. vs Phi_0: -3.96e-03)
+  [MC, acc=0.37]   c_2 = +2.429172e-01   c_3 = +2.717008e-02   c_4 = -1.287793e-01
+                        beta_eff = +8.151024e-02   gamma_eff = +5.151174e-01
+                        beta_eff/gamma_eff = 0.158236  (rel.err. vs Phi_0: -9.19e-01)
+
