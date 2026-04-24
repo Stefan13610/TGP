@@ -733,16 +733,27 @@ lokalny stopie\'n wzbudzenia substratu.
 
 \begin{axiom}[Symetria $\Zp$ jako akt konstytutywny]%
 \label{ax:Z2-konstytutywny}\label{prop:Z2}
-Hamiltoniano substratu:
+Hamiltonian substratu (v2, pivot aksjomatyczny 2026-04-24; por.
+\texttt{KNOWN\_ISSUES.md} w~\texttt{tgp-core-paper/}):
 \begin{equation}\label{eq:H-Gamma}
     H_\Gamma = \sum_i \biggl[
       \frac{\hat{\pi}_i^2}{2\mu}
     + \frac{m_0^2}{2}\hat{s}_i^2
     + \frac{\lambda_0}{4}\hat{s}_i^4
     \biggr]
-    - J\!\sum_{\langle ij\rangle} A_{ij}\,\hat{s}_i\hat{s}_j
+    + J\!\sum_{\langle ij\rangle} A_{ij}\,
+      \hat{s}_i^2\,\hat{s}_j^2\,
+      \bigl(\hat{s}_j^2 - \hat{s}_i^2\bigr)^2
 \end{equation}
-jest niezmienniczy wzgl\k{e}dem \textbf{chiralnej inwersji}:
+(z $J>0$, $\lambda_0>0$, $A_{ij}\in\{0,1\}$). Wi\k{a}zanie jest gradientowym
+cz\l{}onem Ginzburga--Landaua w~$\Zp$-parzystym z\l{}o\.zonym
+$\hat{\Phi}_i \equiv \hat{s}_i^2$; w~granicy ci\k{a}g\l{}ej odpowiada
+$\mathcal{F}^{\mathrm{geo}}_{\mathrm{kin}}[\varphi] = (K_{\mathrm{geo}}/2)
+\int \varphi^4 (\nabla\varphi)^2\,d^dx$ (dod.~B,
+prop.~\ref{prop:substrate-action}) i~znika to\.zsamo\'sciowo na ka\.zdej
+konfiguracji z~$\hat{s}_i = 0$, co kodyfikuje zasad\k{e}
+,,brak substratu $\Rightarrow$ brak geometrii''. Jest niezmienniczy
+wzgl\k{e}dem \textbf{chiralnej inwersji}:
 \begin{equation}\label{eq:Z2-chiral}
     \hat{s}_i \;\mapsto\; -\hat{s}_i
     \qquad \forall\, i \in V.

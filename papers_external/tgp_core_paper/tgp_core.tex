@@ -185,9 +185,19 @@ amplitude operator $\hat{s}_{i}$. The substrate Hamiltonian is
     +\tfrac{m_{0}^{2}}{2}\hat{s}_{i}^{2}
     +\tfrac{\lambda_{0}}{4}\hat{s}_{i}^{4}
   \Bigr]
-  - J\!\!\sum_{\langle ij\rangle}\! A_{ij}\,\hat{s}_{i}\hat{s}_{j},
+  + J\!\!\sum_{\langle ij\rangle}\! A_{ij}\,
+    \hat{s}_{i}^{2}\,\hat{s}_{j}^{2}\,
+    \bigl(\hat{s}_{j}^{2}-\hat{s}_{i}^{2}\bigr)^{2},
 \end{equation}
 with $J>0$, $\lambda_{0}>0$, and $A_{ij}\in\{0,1\}$ the adjacency matrix.
+The bond is a Ginzburg--Landau (GL) gradient term in the Z$_{2}$-even
+composite $\hat{\Phi}_{i}\equiv\hat{s}_{i}^{2}$, equivalent in continuum
+to $\mathcal{F}_{\mathrm{kin}}^{\mathrm{geo}}[\varphi]=
+(K_{\mathrm{geo}}/2)\int\varphi^{4}(\nabla\varphi)^{2}\,d^{d}x$ (see
+App.~B, Prop.~\ref{prop:substrate-action}); it vanishes identically on
+any configuration with $\hat{s}_{i}=0$, encoding the fact that
+\emph{an empty substrate cannot support geometry}. This is a change
+from v1 (axiom pivot 2026-04-24; see \texttt{KNOWN\_ISSUES.md}).
 \end{axiom}
 
 \begin{proposition}[$\Zp$ symmetry]\label{prop:Z2}

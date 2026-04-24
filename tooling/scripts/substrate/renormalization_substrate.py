@@ -8,7 +8,20 @@ Hamiltonian on a 3D cubic lattice.
 Substrate Hamiltonian (eq:H-Gamma from sek01_ontologia.tex):
 ------------------------------------------------------------
     H_Gamma = Sum_i [m0^2/2 * s_i^2 + lam0/4 * s_i^4]
-              - J Sum_{<ij>} s_i * s_j
+              - J Sum_{<ij>} s_i * s_j        (v1 bilinear form)
+
+v2 STATUS (2026-04-24 axiom pivot; see tgp-core-paper/KNOWN_ISSUES.md):
+The v2 axiom uses a Ginzburg-Landau bond
+    + J Sum_{<ij>} A_ij s_i^2 s_j^2 (s_j^2 - s_i^2)^2
+rather than the bilinear form. The MK analysis in this script
+operates on the on-site part (m0^2, lam0) and determines the
+3D Ising universality class (WF fixed point, nu ~ 0.60). This is
+valid independently of the bond form; the script is retained as
+the WF-universality probe. The separate claim that MK generates
+K(phi) ~ phi^4 from the bilinear bond was ruled out by M3-a and
+M3-c (see TGP_v1/research/op6/). In v2, K(phi) ~ phi^4 is a
+direct consequence of the GL axiom via prop:substrate-action, not
+derived by MK.
 
 This script implements the Migdal-Kadanoff (MK) approximate real-space
 RG with scale factor b = 2 in d = 3 dimensions.

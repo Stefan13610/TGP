@@ -226,16 +226,22 @@ $i \in V$ carries an \textbf{amplitude operator} $\hat{s}_i$ ---
 a scalar describing the local degree of excitation.
 
 \begin{proposition}[$\Zp$ symmetry from microdynamics]\label{prop:Z2}
-The substrate Hamiltonian
+The substrate Hamiltonian (v2, axiom pivot 2026-04-24; see
+\texttt{tgp-core-paper/KNOWN\_ISSUES.md})
 \begin{equation}\label{eq:H-Gamma}
     H_\Gamma = \sum_i \biggl[
       \frac{\hat{\pi}_i^2}{2\mu}
     + \frac{m_0^2}{2}\hat{s}_i^2
     + \frac{\lambda_0}{4}\hat{s}_i^4
     \biggr]
-    - J\!\sum_{\langle ij\rangle} A_{ij}\,\hat{s}_i\hat{s}_j
+    + J\!\sum_{\langle ij\rangle} A_{ij}\,
+      \hat{s}_i^2\,\hat{s}_j^2\,
+      \bigl(\hat{s}_j^2 - \hat{s}_i^2\bigr)^2
 \end{equation}
-is invariant under \textbf{chiral inversion}:
+is a Ginzburg--Landau gradient bond in the $\Zp$-even composite
+$\hat{\Phi}_i \equiv \hat{s}_i^2$; it vanishes on any configuration with
+$\hat{s}_i = 0$ (``no substrate $\Rightarrow$ no geometry''). It is
+invariant under \textbf{chiral inversion}:
 \begin{equation}\label{eq:Z2-chiral}
     \hat{s}_i \;\mapsto\; -\hat{s}_i
     \qquad \forall\, i \in V.

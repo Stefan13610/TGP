@@ -17,9 +17,13 @@ PROBLEM:
 
 SOLUTION:
   The substrate H_Γ contains MORE than what Φ = ⟨ŝ²⟩ captures.
-  The nearest-neighbor coupling J·Σ A_ij·ŝ_i·ŝ_j encodes DIRECTIONAL
-  correlations. Block-averaging these gives a TENSOR field σ_ab that
-  is invisible to Φ but couples to the metric.
+  The nearest-neighbor bond in H_Γ encodes DIRECTIONAL correlations
+  (in v2, a GL gradient bond + J Σ A_ij ŝ_i² ŝ_j² (ŝ_j² - ŝ_i²)²;
+  see tgp-core-paper/KNOWN_ISSUES.md for the 2026-04-24 axiom pivot).
+  Block-averaging the directional correlators ⟨ŝ_i ŝ_{i+â_b}⟩ gives
+  a TENSOR field σ_ab that is invisible to Φ but couples to the metric.
+  The construction below uses these correlators directly and is
+  independent of the specific bond form in H_Γ.
 
 This script:
   Part 1: Why Φ alone is insufficient (recap thm:no-tensor + disformal)
