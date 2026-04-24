@@ -355,6 +355,35 @@ fixed-point value indistinguishable from $2$ to the precision of the
 calculation (row~16 of Sec.~\ref{sec:status}).
 \end{remark}
 
+\begin{remark}[Status of $\alpha=2$ after the v2 pivot --- 2026-04-25]
+\label{rem:alpha2-pivot-status}
+The form $K_{ij}=J(\varphi_i\varphi_j)^2$ used above is \emph{the v2
+axiom for the substrate bond} (Ginzburg--Landau gradient bond in the
+$\Z2$-even composite $\hat{\Phi}_i = \hat{s}_i^2$), \emph{not} a
+derivation from a minimal bilinear substrate. The earlier programme
+(M2-a/b/c, M3-a/c) attempted to derive $K(\varphi) \propto \varphi^4$
+from MK coarse-graining of the bilinear bond
+$-J\sum\hat{s}_i\hat{s}_j$ and was \textbf{falsified} numerically and
+analytically (see \texttt{KNOWN\_ISSUES.md}, entry 2026-04-24:
+``OP-6 closed via axiom pivot''). Consequently:
+\begin{itemize}[nosep]
+  \item Theorem~\ref{thm:alpha2} is a \emph{selection} statement
+    within the GL-substrate ansatz of conditions (C1)--(C3); it is
+    \textbf{not} a derivation of $\alpha=2$ from a minimal substrate.
+  \item The v1-style claim ``$\alpha=2$ is derived from a bilinear
+    nearest-neighbour bond on the substrate'' is \textbf{retracted}.
+  \item The fact that $\alpha=2$ remains the unique exponent
+    consistent with $h_{ij}=\varphi^{4}\delta_{ij}$ under (C1)--(C3)
+    is non-trivial: dropping or modifying any of the three
+    conditions (e.g.\ admitting non-local kernels or
+    higher-derivative operators) would in general permit other
+    values; this defines the \emph{scope} of the claim.
+\end{itemize}
+This remark addresses external review critique C5 (2026-04-25); see
+\texttt{research/external\_review\_2026-04-25/review\_response\_plan.md}
+and \texttt{KNOWN\_ISSUES.md}.
+\end{remark}
+
 \subsection{Action, potential, and field equation}
 
 The complete TGP action is

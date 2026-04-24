@@ -1013,6 +1013,26 @@ To\.zsamo\'s\'c~\eqref{eq:Dkin-unique} to~\eqref{eq:phi3-identity}
 z~dod.~B (\S\ref{app:B-geo-coupling}).
 \end{proof}
 
+\begin{remark}[Status $\alpha=2$ po~v2-pivocie --- 2026-04-25]%
+\label{rem:alpha2-pivot-status-pl}
+Twierdzenie~\ref{thm:D-uniqueness} jest \emph{wynikiem
+selekcji} w~klasie operator\'ow lokalnych II~rz\k{e}du
+$\Phi$-kowariantnych (warunki C1--C3) na ansatzu z~v2-aksjomatem
+GL ($K_{ij} = J(\varphi_i\varphi_j)^2$). Nie jest to
+\emph{wyprowadzenie} $\alpha=2$ z~minimalnego bilinearnego
+substratu. Pr\'oba takiego wyprowadzenia (linia M2-a/b/c, M3-a/c
+w~\texttt{research/op6/}) zosta\l{}a \textbf{sfalsyfikowana}
+numerycznie i~analitycznie (zob.\ \texttt{KNOWN\_ISSUES.md},
+wpis 2026-04-24: ,,OP-6 closed via axiom pivot''). V1-style
+twierdzenie ,,$\alpha=2$ wyprowadzone z~bilinearnego wi\k{a}zania
+$-J\sum\hat{s}_i\hat{s}_j$'' \textbf{wycofane}. Nietrywialno\'s\'c
+twierdzenia~\ref{thm:D-uniqueness} polega na jednoznaczno\'sci
+$\alpha=2$ \emph{wewn\k{a}trz} klasy~(C1--C3); rozlu\'znienie
+kt\'oregokolwiek z~warunk\'ow (nielokalno\'s\'c, wy\.zsze pochodne,
+inna $\Phi$-kowariancja) otwiera\l{}oby inne warto\'sci.
+Odpowied\'z na C5 z~recenzji 2026-04-25.
+\end{remark}
+
 \begin{remark}[Zwi\k{a}zek z~laplasjanem Laplace'a--Beltramiego]%
 \label{rem:LB-alpha2}
 Operator $\mathcal{D}_{\mathrm{kin}}$ z~$\alpha = 2$
@@ -3090,7 +3110,10 @@ wyprowadze\'n z~tej sekcji:
   \item propagacja falowa na sieci substratowej odtwarza
     dyspersj\k{e} $c_{\rm koord}(\Phi)$;
   \item PPN: $\gamma_{\rm PPN} = 1$, $\beta_{\rm PPN} = 1$
-    (do drugie\-go rz\k{e}du);
+    (do drugie\-go rz\k{e}du, w~\emph{statycznej, izotropowej,
+    s\l{}abo-po\-low\-ej} granicy; pe\l{}ny zestaw 10~parametr\'ow
+    PPN poza~$\gamma,\beta$ wymaga zamkni\k{e}cia OP-7,
+    rem.~\ref{rem:PPN-scope-2026});
   \item cie\'n czarnej dziury:
     $\delta_{\rm shadow}^{\rm TGP} = O(1/\PhiZero^3)
     \approx 6{,}4 \times 10^{-5}$ --- niewykrywalny
@@ -3105,6 +3128,42 @@ i~potwierdzenie numeryczne 8/8~PASS.
 Pe\l{}ny \statuslabel{Twierdzenie} wymaga formalnego dowodu,
 \.ze gęsto\'s\'c w\k{e}z\l{}'ow $n(\mathbf{x}) \propto \Phi(\mathbf{x})$
 jest \textbf{jedynym} naturalnym skalowaniem (unikalno\'s\'c).
+\end{remark}
+
+\begin{remark}[Zakres twierdzenia PPN w~TGP --- 2026-04-25]%
+\label{rem:PPN-scope-2026}
+Formalizm PPN Willa--Nordtvedta wprowadza \textbf{10 parametr\'ow}
+charakteryzuj\k{a}cych odst\k{e}pstwa od OTW: $\gamma$, $\beta$
+(zakrzywienie przestrzeni, nieliniowo\'s\'c grawitacji),
+$\xi$ (efekty preferowanej lokalizacji), $\alpha_1,\alpha_2,\alpha_3$
+(efekty preferowanego uk\l{}adu odniesienia) oraz
+$\zeta_1,\zeta_2,\zeta_3,\zeta_4$ (efekty naruszenia zachowania
+p\k{e}du i~energii). W~niniejszym dodatku wyprowadzamy
+\emph{wy\l{}\k{a}cznie}:
+\begin{itemize}[nosep]
+  \item $\gamma_{\rm PPN} = 1$ --- ze~statycznej, izotropowej
+    formy metryki (r\'owne czynniki konforemne w~$g_{00}$
+    i~$g_{ij}$);
+  \item $\beta_{\rm PPN} = 1$ --- z~drugiego rz\k{e}du metryki
+    eksponencjalnej $g_{00} \approx -(1 - 2U + 2U^2)$.
+\end{itemize}
+Pozosta\l{}e osiem parametr\'ow ($\xi, \alpha_{1,2,3},
+\zeta_{1,2,3,4}$) \textbf{nie jest obliczonych} w~bie\.z\k{a}cej
+wersji TGP, poniewa\.z~ich wyznaczenie wymaga:
+\begin{enumerate}[nosep]
+  \item analizy \emph{ruchomych} \'zr\'ode\l{} (p\k{e}d\'ow)
+    w~polu $\Phi$ (a nie tylko statycznych mas);
+  \item sektora tensorowego metryki (2~polaryzacje
+    transwersalno-bezsinowe typu OTW), kt\'ory w~TGP jest
+    aktualnie \textbf{otwartym problemem OP-7} (por.\
+    \texttt{research/external\_review\_2026-04-25/review\_response\_plan.md}).
+\end{enumerate}
+Zatem twierdzenie ,,wszystkie 10 parametr\'ow PPN TGP zgadzaj\k{a}
+si\k{e} z~GR'' by\l{}oby \emph{nadu\.zyciem}; bie\.z\k{a}cy stan:
+\emph{dwa z~10 zamkni\k{e}te} (zgodne z~Cassini, LLR, binarnymi
+pulsarami w~zakresie $\gamma, \beta$), \emph{osiem otwarte}
+do zamkni\k{e}cia OP-7. Odpowied\'z na krytyk\k{e} zewn\k{e}trzn\k{a}
+C3 z~2026-04-25.
 \end{remark}
 
 \begin{remark}[Rola definicji czasu substratowego]%
@@ -5052,6 +5111,47 @@ sprz\k{e}\.zonym z~$\Phi$ przez metryk\k{e} efektywn\k{a} ---
 materia ,,czuje'' przestrze\'n wygenerowan\k{a} przez $\Phi$.
 \end{hypothesis}
 
+\begin{remark}[Dziedzina wa\.zno\'sci $U(\Phi)$ --- 2026-04-25]
+\label{rem:U-validity-domain}
+Potencja\l{}~\eqref{eq:U-potential} w~postaci
+$U(\Phi) = (\beta/3)\,\Phi^3/\PhiZero^3
+- (\gamma/4)\,\Phi^4/\PhiZero^4$ przy $\gamma > 0$
+d\k{a}\.zy do $-\infty$ dla $\Phi \to \infty$. Nie jest to
+globalna niestabilno\'s\'c teorii, lecz \emph{artefakt Taylorowego
+obci\k{e}cia}:
+\begin{itemize}[nosep]
+  \item Pe\l{}ny potencja\l{} efektywny w~substratowej postaci
+    GL wynosi $V_{\mathrm{eff}}(\Phi) = (m_0^2/2)\Phi + (\lambda_0/4)\Phi^2
+    + (T/2)\ln\Phi + \text{(poprawki p\k{e}tli)}$
+    (dod.~\ref{app:substrat}, \S\ref{app:B-continuum},
+    oraz \texttt{research/op1-op2-op4/M2b\_loop\_derivation.md}).
+    Przy du\.zym $\Phi$ dominuje cz\l{}on $\lambda_0 \Phi^2/4 > 0$ ---
+    $V_{\mathrm{eff}}$ jest \emph{ograniczony z~do\l{}u}.
+  \item Posta\'c~\eqref{eq:U-potential} jest rozwini\k{e}ciem
+    $V_{\mathrm{eff}}(\Phi)$ wok\'o\l{} pr\'o\.zni $\Phi_0 = \PhiZero$
+    w~zmiennej $\varphi = (\Phi - \PhiZero)/\PhiZero$
+    i~\emph{nie jest wa\.zne} poza okolic\k{a} $|\varphi| \ll 1$.
+    Dopasowanie wsp\'o\l{}czynnik\'ow $\beta$, $\gamma$ pochodzi
+    ze~skalowania $\partial^3 V/\partial\Phi^3$, $\partial^4 V/\partial\Phi^4$
+    w~$\Phi_0$ (por.~M2b, rozdz.~4--5); ekstrapola\-cja
+    obci\k{e}cia Taylora na $\Phi \to \infty$ nie ma sensu
+    fizycznego.
+  \item Zgodnie ze~\S\ref{para:basin-stability} (tw.~o~basenie
+    stabilno\'sci, \eqref{eq:basin-boundary}), lokalna
+    stabilno\'s\'c rozwi\k{a}za\'n $\psi = \Phi/\PhiZero$
+    jest kontrolowana w~basenie $0 < \psi < 4/3$; poza
+    basenem Taylor-truncated $U$ przestaje by\'c
+    wiarygodnym modelem dynamiki, a~pe\l{}na stabilno\'s\'c
+    zapewniona jest przez $\lambda_0$ w~$V_{\mathrm{eff}}$.
+  \item Wniosek: $U(\Phi)$ \emph{nie jest} potencja\l{}em
+    fundamentalnym, lecz \emph{lokaln\k{a} reprezentacj\k{a}}
+    $V_{\mathrm{eff}}$ wok\'o\l{} $\Phi_0$. Krytyk\k{e} z~recenzji
+    zewn\k{e}trznej 2026-04-25 (C2: ,,$U \to -\infty$'') uchyla
+    \eqref{eq:U-potential} interpretowane jako truncation,
+    a~nie jako pe\l{}na dynamika.
+\end{itemize}
+\end{remark}
+
 \begin{remark}[Brak tensora metrycznego jako fundamentu]
 Dzia\l{}anie~\eqref{eq:action} \emph{nie} jest dzia\l{}aniem
 Einsteina--Hilberta z~dodatkowym polem. Metryka
@@ -6445,6 +6545,55 @@ $c_T^2 = c_0^2$, co ko\'nczy dow\'od punktu~(i).
 Punkty (ii) i~(iii) wynikaj\k{a} z~rozszerzenia
 Taylor'a przy ma\l{}ych $\dot\delta$ i~$U_N$.
 \end{proof}
+
+\begin{remark}[Zakres twierdzenia GW: pr\k{e}dko\'s\'c vs.\ polaryzacje --- 2026-04-25]%
+\label{rem:GW-scope-2026}
+Stwierdzenie~\ref{prop:cT} dowodzi \emph{r\'owno\'sci pr\k{e}dko\'sci}
+$c_T = c_0$ dla mod\'ow propaguj\k{a}cych si\k{e} po efektywnej
+metryce $g_{\mathrm{eff}}^{\mu\nu}$ na jednorodnym tle. Nie
+jest to jednak r\'ownowa\.zne pe\l{}nej zgodno\'sci z~OTW
+w~sektorze GW:
+\begin{itemize}[nosep]
+  \item OTW przewiduje \textbf{dwie polaryzacje tensorowe}
+    transwersalno-bezsinowe (TT, ,,plus'' i~,,cross''),
+    nios\k{a}ce 2 stopnie swobody helikalne $h = \pm 2$.
+  \item TGP w~obecnej v2-aksjomatyce ma \textbf{jedno pole
+    skalarne}~$\Phi$. Perturbacja $\delta\Phi$ na metryce
+    $g_{\mathrm{eff}}$ daje co najwy\.zej \emph{skalarn\k{a}}
+    fal\k{e} grawitacyjn\k{a} (mod oddechowy / ang.\ \emph{breathing}).
+    Notacja $\delta\Phi^{TT}$ w~dowodzie powy\.zej oznacza
+    \emph{efektywn\k{a} cz\k{e}\'s\'c bez\'sladow\k{a} indukowanej
+    perturbacji metryki}, a~nie niezale\.zne tensorowe stopnie
+    swobody --- to nie jest sektor spin-2 w~sensie OTW.
+  \item Konsekwencja: $c_T = c_0$ z~prop.~\ref{prop:cT} jest
+    zgodne z~GW170817 \emph{warunkiem}, \.ze powstaj\k{a}cy mod
+    ma cechy dyspersyjne identyczne z~GR. Pe\l{}na zgodno\'s\'c
+    z~detekcjami LIGO/Virgo (GW150914 i~podobne) wymaga
+    wytworzenia \emph{dw\'och} polaryzacji tensorowych --- co
+    w~bie\.z\k{a}cej v2 \textbf{nie jest udowodnione} i~stanowi
+    otwarty problem \textbf{OP-7}: czy TGP mo\.ze wygenerowa\'c
+    sektor tensorowy przez (a)~stan z\l{}o\.zony spin-2,
+    (b)~pomocnicze pole $\sigma_{ab}$ dy\-sfor\-mal\-ne
+    (por.~sek.~\ref{ssec:disformal} i~$\sigma_{ab}$
+    w~r.~\eqref{eq:Phi-sigma-action}), czy~(c)~projekcj\k{e}
+    geometryczn\k{a} z~$\nabla_\mu\nabla_\nu\Phi$.
+  \item Falsyfikowalno\'s\'c: je\'sli OP-7 nie poda kana\l{}u
+    daj\k{a}cego dwie polaryzacje tensorowe \emph{i} amplitudy
+    zgodne z~obserwacjami, TGP zostanie sfalsyfikowane przez
+    obecne ograniczenia LIGO/Virgo na sk\l{}adow\k{a} skalarn\k{a}
+    fali ($\lesssim$~kilka~\% amplitudy tensorowej).
+  \item Dot\k{a}d \emph{kosmologiczne i~du\.zo-skalowe} ograniczenia
+    ($c_T = c_0$, GW170817; PTA dla mod\'ow oddechowych) s\k{a}
+    sp\'ojne z~TGP; brak detekcji w~mod\'ach skalarnych w~LIGO
+    jest zgodny z~ekranowaniem przez mas\k{e} oddechow\k{a}
+    $m_{\mathrm{sp}} \sim H_0$
+    (\S\ref{ssec:disformal-spectrum-tests}).
+\end{itemize}
+Uwaga ta odpowiada na krytyk\k{e} zewn\k{e}trzn\k{a} C4
+z~2026-04-25 (\texttt{research/external\_review\_2026-04-25/%
+review\_response\_plan.md}); pe\l{}ne zamkni\k{e}cie wymaga
+realizacji P3.3 (OP-7).
+\end{remark}
 
 \begin{problem}[Emergencja mod\'ow tensorowych ---
   ROZWI\k{A}ZANY]\label{prob:tensor-modes}

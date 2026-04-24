@@ -52,6 +52,53 @@ Parametry:
   \item $z$ --- koordynacja (np.\ $z = 6$ dla sieci kubicznej).
 \end{itemize}
 
+\begin{remark}[Mechanizm SSB w~v2 vs.\ v1 --- 2026-04-25]
+\label{rem:B-ssb-v2}
+Rozr\'o\.znienie mechanizmu spontanicznego \l{}amania symetrii
+$\Zp$ mi\k{e}dzy wersj\k{a} v1 (bilinearn\k{a}, u\.zywan\k{a}
+powy\.zej dla transparentno\'sci MK) i~v2 (gradientow\k{a}
+Ginzburga--Landaua, kanoniczn\k{a} w~\eqref{eq:H-Gamma}) jest
+\emph{fizycznie istotne}:
+\begin{itemize}[nosep]
+  \item \textbf{v1:} wi\k{a}zanie $-J\sum_{\langle ij\rangle}
+    \hat{s}_i\hat{s}_j$ jest ferromagnetyczne; na poziomie
+    \'sredniopolowym daje cz\l{}on $-Jz\,s^2$, a~zatem warunek
+    SSB ma posta\'c $Jz > m_0^2$, kt\'ory mo\.ze by\'c
+    spe\l{}niony \emph{tak\.ze dla} $m_0^2 > 0$. V1 MFT
+    daje $v^2 = (Jz - m_0^2)/\lambda_0$.
+  \item \textbf{v2:} wi\k{a}zanie $J\,A_{ij}\,\hat{\Phi}_i
+    \hat{\Phi}_j\,(\hat{\Phi}_j - \hat{\Phi}_i)^2$ z~defini\-cji
+    znika na ka\.zdej konfiguracji jednorodnej $\hat{\Phi}_i
+    \equiv \hat{\Phi}$. W~szczeg\'olno\'sci \textbf{nie wnosi
+    \.zadnego wk\l{}adu do \'sredniopolowego $v^2$}. V2 MFT
+    daje:
+    \begin{equation}\label{eq:B-v2-vacuum}
+      v^2 = \frac{|m_0^2|}{\lambda_0}
+      \qquad (m_0^2 < 0,\; T < T_c),
+    \end{equation}
+    a~SSB wymaga \emph{wy\l{}\k{a}cznie} $m_0^2(T_{\mathrm{sub}})
+    < 0$.
+  \item Konsekwencja: w~v2 istnienie temperatury krytycznej
+    $T_c$ i~zmiany znaku $m_0^2(T_{\mathrm{sub}})$ \emph{pomi\k{e}dzy}
+    fazami $\mathcal{S}_0$ i~$\mathcal{S}_1$ jest \textbf{aksjo\-ma\-tycz\-nym
+    wej\'sciem}, a~nie dynamiczn\k{a} konsekwencj\k{a} oddzia\-\l{}ywa\'n
+    wi\k{a}za\'n. Nie istnieje alternatywny kana\l{} SSB
+    ,,J-driven'' typu v1, kt\'ory mia\l{}by zapewni\'c SSB
+    przy $m_0^2 > 0$.
+  \item Skutek dla aksjomatyki: Aksjomat~\ref{ax:substrat} musi
+    zapewnia\'c istnienie skali temperatury substratu, przy
+    kt\'orej $m_0^2$ zmienia znak. Formalnie zapewnia to
+    za\l{}o\.zenie A5 w~dod.~\ref{app:A-aksjomaty} (parametr
+    $m_0^2(T_{\mathrm{sub}})$ zmienia znak w~$T_c$); nie jest
+    to twierdzenie, lecz \emph{postulat} kodyfikuj\k{a}cy
+    istnienie fazy niemetrycznej $\Nzero$.
+\end{itemize}
+Powy\.zsze cz\k{e}\'sciowo uchyla formu\l{}\k{e} $v^2
+= (Jz - m_0^2)/\lambda_0$ u\.zywan\k{a} w~\S\ref{app:B-mapa-params}
+--- ta pozostaje \emph{v1-posta\'ci\k{a}} dla sp\'ojno\'sci
+historycznej z~MK cz\k{e}\'sci\k{a} rachunku.
+\end{remark}
+
 Blokowe \'sredniowanie (o~rozmiarze $b = L_B / a_{\mathrm{sub}}$):
 \begin{equation}\label{eq:B-block}
   \Phi_B(x) = \frac{1}{N_B} \sum_{i \in \mathcal{B}(x)}
@@ -297,7 +344,7 @@ Geometria ($\Phi = \phi^2$)
 Energia defektu
   & $q$ & $q_{\mathrm{eff}} = 8\pi G_0/c_0^2$
     (twierdzenie~\ref{thm:newton}) \\
-$v^2 = (Jz - m_0^2)/\lambda_0$
+$v^2$ (v1: $(Jz-m_0^2)/\lambda_0$; v2: $|m_0^2|/\lambda_0$, rem.~\ref{rem:B-ssb-v2})
   & $\PhiZero$ & $\PhiZero \propto v^2 / \Phi_{\mathrm{skala}}$
     (stwierdzenie~\ref{prop:GL-breaking}) \\
 $m_0^2$ zmienia znak
