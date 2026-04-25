@@ -95,7 +95,7 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 | **T1** | No-tensor dla M9.1'' | Dowód, że δg_eff[δψ] ma tylko mod S | sympy: SVT decomposition perturbacji | **POSITIVE 2026-04-25** ([[OP7_T1_results.md]]) |
 | **T2** | Definicja σ_ab z H_Γ | Pokazać, że gradient strain `K_ab - (1/3)δ_ab Tr(K)` jest dobrze zdefiniowanym operatorem coarse-grainingu | analitycznie + sympy + lattice MC | **POSITIVE 2026-04-25** ([[OP7_T2_results.md]]) |
 | **T3** | Dynamika σ_ab | Wyprowadzić □σ_ab + m_σ²σ_ab = -ξ T_ab^TT z S_TGP | wariacyjnie | **POSITIVE (44/47=94%) 2026-04-26**: T3.1-T3.4 ([[OP7_T3_results.md]]) + T3.5-T3.6 ([[OP7_T3_extended_results.md]]); Φ₀/m_σ tension RESOLVED przez decoupling |
-| **T4** | Metryka rozszerzona | Postać `g_ij = h(ψ)δ_ij + Λ(ψ)·σ_ij`; zachowanie M9.1'' przy σ=0 | analitycznie | open (T3-extended scenario A vs B identyfikacja) |
+| **T4** | Metryka rozszerzona | Postać `g_ij = h(ψ)δ_ij + Λ(ψ)·σ_ij`; zachowanie M9.1'' przy σ=0 | analitycznie | **POSITIVE (13/13=100%) 2026-04-25** ([[OP7_T4_results.md]]): Λ(ψ)=const=1 strukturalnie unikalne; scenario A (decoupling) RATIFIED |
 | **T5** | Formuła kwadrupolowa | h_+, h_× ∝ Q̈_ij/r; dopasowanie do GW150914 | analitycznie + dane LIGO | **partial (T3.4) 2026-04-25**: ξ/G ≈ 1.06 |
 | **T6** | Konsystencja | PPN niezmienione, c_GW = c₀, ghost-free, Z₂ | sympy + skrypty | **partial (T3.3) 2026-04-25**: ghost-free PASS; pełne PPN open |
 
@@ -137,6 +137,9 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 - `op7_t3_6_symmetry_protection.py` — T3.6 symmetry/decoupling/ULDM scenarios.
 - `op7_t3_6_symmetry_protection.txt` — raw output T3.6 (9/9 PASS).
 - `OP7_T3_extended_results.md` — synteza T3-extended (19/19 PASS; tension RESOLVED przez decoupling).
+- `op7_t4_metric_coupling.py` — T4 implementacja (sympy ansatz analysis + 5 candidates Λ(ψ)).
+- `op7_t4_metric_coupling.txt` — raw output T4 (13/13 PASS).
+- `OP7_T4_results.md` — werdykt T4 (Λ=const=1 unique; scenario A RATIFIED).
 - `eht_photon_ring_m911.py` (w tooling/scripts/gravity/) — EHT-quick analysis.
 - `eht_photon_ring_m911.txt` — raw output EHT (5/6 PASS).
 - `EHT_quick_results.md` — werdykt EHT (INCONCLUSIVE-leaning-NEGATIVE: +14.6% photon ring; Sgr A* tension).

@@ -23,7 +23,14 @@ Author: Mateusz Serafin | 2026
   T1 (no-tensor for single-Φ M9.1''): only breathing mode.
   T2 (σ_ab as gradient strain composite): `σ_ab = K_ab − (1/3)δ_ab Tr(K)`
   with `K_ab = ⟨(∂_a ŝ)(∂_b ŝ)⟩_B`, validated 12/12 PASS.
-  **OP-7 dynamical half (T3-T6) OPEN** — gates GW170817 unconditional.
+- **2026-04-25 — OP-7 T3 + T3-extended + T4:** dynamical core of tensor
+  sector strukturalnie domknięte. T3 (σ_ab dynamics, EOM, ξ coupling):
+  44/47 PASS, ξ/G ≈ 1.06. T3-extended (Bethe-Salpeter + decoupling):
+  19/19 PASS, Φ₀/m_σ tension RESOLVED via spectral decoupling.
+  T4 (Λ(ψ) metric coupling, `g_ij = h δ + Λ σ`): 13/13 PASS,
+  **Λ(ψ) = const = 1 strukturalnie unique**, scenario A (decoupling)
+  RATIFIED, Sakharov B FAIL C6. **OP-7 T5-T6 OPEN** (full quadrupole +
+  pełne PPN); T1-T4 strukturalnie complete.
 
 The substrate v2 pivot itself:
 
@@ -41,11 +48,12 @@ The substrate v2 pivot itself:
   2026-04-25):** g_tt = -c₀²(4-3ψ)/ψ, g_rr = ψ/(4-3ψ); γ_PPN = β_PPN = 1
   **exact at 1PN** (8 remaining PPN parameters pending OP-7 T4-T6 +
   M9.2 moving-source analysis); c_GW = c₀ in the scalar sector
-  (tensor sector OP-7 T1-T3 + T3-extended structurally resolved
-  2026-04-25; T4-T6 pending). All 40 quantitative predictions
+  (tensor sector OP-7 T1-T4 strukturalnie complete 2026-04-25;
+  T5-T6 pending). All 40 quantitative predictions
   below remain valid; the GW prediction row now reads "scalar breathing
-  mode (T1 closed); composite σ_ab tensor (T2-T3 closed; T3-extended
-  resolved Φ₀/m_σ tension via spectral decoupling)".
+  mode (T1 closed); composite σ_ab tensor (T2-T4 closed: definicja,
+  dynamika z decoupling resolution Φ₀/m_σ, metric coupling Λ=const=1
+  unique selection)".
 - **Companion papers** (N-body, lepton masses, BH shadow, letter,
   tgp-qm, tgp-sc) all work at the coarse-grained Φ level and are
   **transparent to this pivot** — no changes needed.
@@ -80,7 +88,7 @@ From three inputs — the TGP coupling $g_0^e = 0.86941$, the cosmological const
 - Neutrino mass sum $\Sigma m_\nu = 59.6$ meV (normal ordering only; IO excluded)
 - Dark energy $w(z=0) = -0.994$, $\chi^2_\mathrm{TGP} \approx \chi^2_{\Lambda\mathrm{CDM}}$
 - Kinetic coupling $\alpha = 2$: algebraic theorem, not a fit
-- GW prediction (M9.1'' single-Φ, 2026-04-25): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) provides the two TT polarisations through the dynamics of OP-7 T3 (44/47 PASS, structural positive). **Φ₀/m_σ tension structurally RESOLVED via T3-extended spectral decoupling: σ_ab spectral gap 2 m_s ~ meV vs ω_LIGO ~ 10⁻¹³ eV ⇒ effective masslessness in LIGO band ⇒ GW170817 trivially safe.** Final amplitude matching ξ/G ≈ 1.06; T4 (Λ(ψ) metric coupling) pending for full closure.
+- GW prediction (M9.1'' single-Φ, 2026-04-25): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) provides the two TT polarisations through the dynamics of OP-7 T3 (44/47 PASS, structural positive). **Φ₀/m_σ tension structurally RESOLVED via T3-extended spectral decoupling: σ_ab spectral gap 2 m_s ~ meV vs ω_LIGO ~ 10⁻¹³ eV ⇒ effective masslessness in LIGO band ⇒ GW170817 trivially safe.** Final amplitude matching ξ/G ≈ 1.06. **OP-7 T4 (metric coupling) closes structural positive (13/13 PASS): `g_ij = h(ψ) δ + Λ(ψ) σ` with `Λ(ψ) = const = 1` (in Φ₀=1 units) strukturalnie unique selection through 5 independent constraints; scenario A (decoupling) RATIFIED, h_TT = σ_ij exact.** T5 (full quadrupole z continuum) i T6 (pełne PPN + nonperturbative) pending.
 
 ---
 
