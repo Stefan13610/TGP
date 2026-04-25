@@ -1,0 +1,63 @@
+C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\op-eht\op_eht_t1_pn_truncation.py:186: RuntimeWarning: invalid value encountered in sqrt
+  r_ph_areal = r_ph * np.sqrt(B_ph)
+======================================================================
+ OP-EHT T1 — PN truncation robustness audit
+ Question: is +14.6% deviation in b_crit robust vs PN truncation?
+======================================================================
+
+[GR baselines]
+  r_ph (areal)   = 3.000000 r_g
+  b_crit         = 5.196152 r_g
+
+[A] Deriving PN tail coefficients c_1..c_15 (sympy):
+    c_ 1 = 1  (+1.000000)
+    c_ 2 = -1  (-1.000000)
+    c_ 3 = 5/3  (+1.666667)
+    c_ 4 = -10/3  (-3.333333)
+    c_ 5 = 22/3  (+7.333333)
+    c_ 6 = -154/9  (-17.111111)
+    c_ 7 = 374/9  (+41.555556)
+    c_ 8 = -935/9  (-103.888889)
+    c_ 9 = 21505/81  (+265.493827)
+    c_10 = -55913/81  (-690.283951)
+    c_11 = 147407/81  (+1819.839506)
+    c_12 = -1179256/243  (-4852.905350)
+    c_13 = 3174920/243  (+13065.514403)
+    c_14 = -8617640/243  (-35463.539095)
+    c_15 = 70664648/729  (+96933.673525)
+
+[B] Photon ring + b_crit at increasing n_max:
+      n    r_ph (iso)    r_ph (areal)      b_crit   dev vs GR
+    ---  ------------  --------------  ----------  ----------
+      5      2.576903        3.925304    5.979276     +15.07%
+      6  b_crit unphysical
+      7      2.544756        3.894089    5.958895     +14.68%
+      8  b_crit unphysical
+      9      2.534544        3.884711    5.954118     +14.59%
+     10  b_crit unphysical
+     11      2.531242        3.881781    5.952897     +14.56%
+     12  b_crit unphysical
+     13      2.530163        3.880846    5.952567     +14.56%
+     14  b_crit unphysical
+     15      2.529807        3.880543    5.952474     +14.56%
+
+[C] Convergence test:
+      n->n+1    |d b_crit|  |d b_crit|/b
+      5->7        2.04e-02      3.42e-03
+      7->9        4.78e-03      8.02e-04
+      9->11       1.22e-03      2.05e-04
+     11->13       3.30e-04      5.54e-05
+     13->15       9.29e-05      1.56e-05
+
+[D] T1 PASS/FAIL:
+  T1.1 c_n recurrence to n=15: PASS (achieved n=15)
+  T1.2 |b(15) - b(11)|/b(15) < 1%: PASS (rel_change=7.104395434747472e-05)
+  T1.3 asymptotic deviation eps_inf = +14.56% -> [ROBUST] ROBUST GENUINE — outside Sgr A* 4.4%, T2-T5 critical
+  T1.4 convergence ratio (last 3) < 1: PASS (ratio=0.2690891547095411)
+
+======================================================================
+ SUMMARY: 4/4 PASS
+ OP-EHT T1 verdict: OP-EHT T1 confirms genuine deviation — +14.6% is robust prediction.
+ ⇒ T2-T5 must determine if EHT envelope absorbs deviation,
+    or M9.2 pivot becomes mandatory.
+======================================================================

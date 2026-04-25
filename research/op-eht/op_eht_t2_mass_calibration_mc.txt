@@ -1,0 +1,41 @@
+======================================================================
+ OP-EHT T2 — Mass calibration Monte Carlo
+ Question: does effective EHT envelope absorb +14.6% TGP deviation?
+======================================================================
+
+[Constants]
+  b_crit_GR    = 5.196152 r_g
+  b_crit_TGP   = 5.952474 r_g
+  TGP/GR       = 1.1456 (+14.56%)
+
+[T2.1] M87* posterior (N=10000):
+  GR mean predicted theta:  39.87 +/- 4.65 uas
+  TGP mean predicted theta: 45.68 +/- 5.33 uas
+  EHT 2019 observed:        42.00 +/- 3.00 uas
+  Fraction TGP within 95% CL of EHT obs: 59.1%
+  Fraction GR  within 95% CL of EHT obs: 67.4%
+  T2.1 M87* TGP consistent at 95% CL: PASS
+
+[T2.2] Sgr A* posterior (N=10000):
+  GR mean predicted theta:  53.26 +/- 0.26 uas
+  TGP mean predicted theta: 61.02 +/- 0.30 uas
+  EHT 2022 observed:        51.80 +/- 2.30 uas
+  Fraction TGP within 95% CL of EHT obs: 2.1%
+  Fraction GR  within 95% CL of EHT obs: 90.2%
+  Mean TGP residual (sigma units): +4.01
+  Mean GR  residual (sigma units): +0.64
+  T2.2 Sgr A* TGP consistent at 95% CL: FAIL
+
+[T2.3] Combined M87* + Sgr A* (joint chi^2):
+  chi2 95% CL (2 dof) = 5.991
+  Mean chi2_TGP: 22.68
+  Mean chi2_GR:  5.32
+  Fraction TGP in joint 95% CL: 2.3%
+  Fraction GR  in joint 95% CL: 69.3%
+  T2.3 Combined TGP at joint 95% CL: FAIL
+
+======================================================================
+ SUMMARY: 1/3 PASS
+ OP-EHT T2 verdict: M87* OK, Sgr A* TENSION — TGP outside Sgr A* 95% CL.
+ ⇒ Sgr A* is the discriminator. Defers to T3-T4.
+======================================================================

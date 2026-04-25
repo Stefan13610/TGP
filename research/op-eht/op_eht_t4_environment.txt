@@ -1,0 +1,46 @@
+======================================================================
+ OP-EHT T4 — Non-vacuum environment correction
+ Question: does accretion disk + plasma absorb +14.56% deviation?
+======================================================================
+
+[Constants]
+  TGP/GR ratio in b_crit:        1.1456
+  Universal +deviation:          +14.56%
+
+[T4.1] M87* environment budget:
+  Source: Psaltis 2020, Younsi 2023, EHT 2019 paper IV/V
+  Mass accretion rate: M_dot ~ 1e-4 M_sun/yr (high)
+  GRMHD emission ring vs photon ring: delta = +/- 5%
+  SSA correction at 230 GHz: ~ +/- 1% (transparent disk)
+  Plasma scattering: negligible (M87 ISM column low)
+  Net: delta_theta / theta = +/- 5% (1-sigma)
+  M87* residual after T2 (best M, D priors): +8.3%
+  Environment 95%-CL reach (2-sigma): +/- 9.8%
+  T4.1 M87* env can absorb residual: PASS
+
+[T4.2] Sgr A* environment budget:
+  Source: EHT 2022 paper II/III/V, Bower 2014 (scattering)
+  Mass accretion rate: M_dot ~ 1e-8 M_sun/yr (very low)
+  Galactic-center plasma scattering: theta_scatt ~ 22 uas at 230 GHz
+    (deconvolved by EHT 2022; residual systematic ~ 1-2%)
+  GRMHD emission ring vs photon ring: delta = +/- 2-3%
+  Variability + flaring: +/- 2% on ring diameter
+  Net: delta_theta / theta = +/- 4% (1-sigma; conservative)
+  Sgr A* full deviation (TGP vs EHT obs): +19.7%
+  Environment 95%-CL reach (2-sigma): +/- 7.8%
+  T4.2 Sgr A* env can absorb deviation: FAIL
+  Gap remaining after env: +11.9% (~3.0 sigma)
+
+[T4.3] Combined OP-EHT environment verdict:
+  M87* residual absorbed by env: YES
+  Sgr A* residual absorbed by env: NO
+  T4.3 Both sources reconciled by env: FAIL
+  ⇒ M87* OK, Sgr A* CANNOT be saved by environment alone.
+  ⇒ Deferral to T5 (ngEHT 2030+) MANDATORY.
+  ⇒ Or: Q-renorm scenario (e) from T3 must be derived.
+
+======================================================================
+ SUMMARY: 1/3 PASS
+ OP-EHT T4 verdict: M87* env OK, Sgr A* env INSUFFICIENT.
+ ⇒ Sgr A* tension persists — T5 ngEHT needed for falsification.
+======================================================================
