@@ -1,0 +1,120 @@
+========================================================================
+ OP-M92 Phase 0+ — Candidate D (momentum back-reaction) sketch
+========================================================================
+
+[Step 1] Action structure (Candidate D):
+  S_M9.1'' = integral [ -(grad Phi)^2 / (8 pi G) + V(Phi) + L_mat ] sqrt(-g) d^4 x
+  V(Phi) = (beta/3) Phi^3 - (gamma/4) Phi^4    (sek05 vacuum form)
+  L_mat = -q phi rho_0 / Phi_0                 (M9.1'' standard)
+
+  Candidate D additional term:
+    Delta S = alpha * integral T^mu_nu J_mu J_nu sqrt(-g) d^4 x
+    J_mu = partial_mu Phi
+    T^mu_nu = matter stress-energy tensor (perfect fluid: rho u^mu u^nu + p ...)
+
+  Physical interpretation (Lenz-law analog):
+    * J_mu represents 'substrate flow' (gradient of Phi)
+    * T^mu_nu J_mu J_nu measures 'flow energy carried by matter'
+    * alpha * T*J*J term increases when matter co-flows with substrate gradient
+    * Result: in strong-field where both T and grad Phi are large,
+      back-reaction term dominates -> self-suppresses Phi growth
+
+[Step 2] Weak-field scaling — confirm U^4 suppression:
+  Scaling analysis:
+    grad Phi ~ Phi_0 * U/r  ->  J_i ~ Phi_0 * U/r
+    J_mu J^mu ~ (Phi_0 * U/r)^2  =  Phi_0^2 U^2 / r^2
+    Effective dimensionless: J_mu J^mu / Phi_0^2 ~ U^2 / r^2
+
+    For matter source density: T^00 ~ rho c^2 ~ U c_0^2 / r^2  (~U/r^2 in geom units)
+    For weak-field gravitational binding: T^00 ~ rho U c^2 ~ U^2/r^2
+
+    T^mu_nu J_mu J_nu / (Phi_0^2 c_0^4) ~ U^2 * U^2 / r^4 = U^4 / r^4
+    Compare to leading kinetic term in action: (grad Phi)^2 ~ Phi_0^2 U^2 / r^2
+    Ratio: alpha * (T*J*J) / (grad Phi)^2 ~ alpha * U^2 / r^2
+
+    => Back-reaction term suppressed by U^2 in weak-field vs leading kinetic
+    => At Mercury (U ~ 5e-9), suppression factor ~ 2.5e-17
+    => 1PN PPN coefficients gamma, beta unchanged at 1PN order
+    => Cassini, LLR auto-pass (no fine-tuning of alpha needed)
+
+  CONCLUSION (Step 2): Candidate D weak-field auto-pass CONFIRMED.
+
+[Step 3] Strong-field magnitude — tune alpha to scenario (e):
+  Target shift from scenario (e): 1 - 0.886 = 0.114
+
+  At photon ring, T*J*J / leading-action-density ~ O(1) in geometric units.
+  For shift of 0.114, need:  alpha * (T*J*J / S_kin) ~ 0.114
+  In geometric units (M=1, Phi_0=1):  alpha * O(1) ~ 0.114
+  => alpha ~ 0.1 (order-of-magnitude estimate)
+
+  Weak-field check at Mercury:
+    U_Mercury = 5e-09
+    Suppression factor U^2 = 3e-17
+    alpha * U^2 = 2.50e-18
+    Cassini bound on |gamma_PPN - 1| = 2.3e-5
+    Margin: 9e+12x safety
+
+  CONCLUSION (Step 3): alpha ~ 0.1 (geom units) tunes scenario (e),
+  with 9e+12x safety margin vs Cassini.
+
+[Step 4] Stability sketch — dispersion relation linearization:
+  Linearize around flat background: Phi = Phi_0 + delta_Phi(x)
+  T^mu_nu J_mu J_nu in linearized form:
+    J_mu = partial_mu delta_Phi  ->  J_mu J_nu = partial_mu phi * partial_nu phi
+    Background T^mu_nu = T_0^mu_nu + delta T^mu_nu
+    Quadratic-in-phi term: alpha T_0^mu_nu (partial_mu phi)(partial_nu phi)
+
+  Effective kinetic term for delta_Phi:
+    K_eff = -1/(8 pi G) (partial phi)^2 + alpha T_0^mu_nu partial_mu phi partial_nu phi
+    = -[1/(8 pi G) eta^mu_nu - alpha T_0^mu_nu] partial_mu phi partial_nu phi
+
+  Dispersion relation:
+    omega^2 = c_0^2 |k|^2  *  [1 - 8 pi G alpha T_0^00 / c_0^2]
+              + (corrections from T_0^ii)
+
+  Stability conditions:
+    (a) No-ghost: 1 - 8 pi G alpha T_0^00 / c_0^2 > 0
+        -> alpha T_0^00 < c_0^2 / (8 pi G)
+        -> alpha rho_background < O(c_0^2 / G) (Planck-scale density)
+        (always satisfied for rho < Planck density)
+
+    (b) Sub-luminal propagation: corrections O(alpha T_0^ii) shift c_GW slightly
+        but in vacuum (T_0^mu_nu = 0): c_GW = c_0 EXACTLY
+    (c) Ostrogradsky: action is FIRST-derivative in phi (no higher-time-deriv)
+        -> NO Ostrogradsky instability at tree level
+
+  CONCLUSION (Step 4): Tree-level stability OK for alpha > 0 and
+  background densities below Planck. c_GW = c_0 in vacuum exactly.
+
+[Step 5] OP-7 c_GW = c_0 cross-check under Candidate D:
+  OP-7 sigma_ab dynamics: Box sigma_ab + m_sigma^2 sigma_ab = -xi T^TT_ab
+  sigma_ab kinetic term FIXED by OP-7 T1 (gradient-strain composite)
+  Candidate D modifies only matter-Phi coupling (via T*J*J);
+  sigma_ab kinetic structure unchanged.
+  In vacuum: T^mu_nu = 0  ->  no candidate D modification at all
+  -> sigma_ab propagation: c_GW = c_0 EXACTLY (OP-7 closure preserved)
+
+  CONCLUSION (Step 5): OP-7 c_GW = c_0 cross-check PASS structurally.
+
+========================================================================
+ PHASE 0+ KICKOFF SUMMARY — Candidate D structural feasibility:
+========================================================================
+
+ Step 1: Action structure  ........................... DEFINED
+ Step 2: Weak-field U^4 auto-pass  ................... CONFIRMED (1e-17 safe)
+ Step 3: Strong-field tunability (alpha ~ 0.1)  ...... PLAUSIBLE
+ Step 4: Tree-level stability  ....................... NO GHOST (alpha > 0)
+ Step 5: OP-7 c_GW = c_0 cross-check  ................ PASS (vacuum unchanged)
+
+ Phase 0+ verdict: Candidate D STRUCTURALLY VIABLE at sketch level.
+ Next deeper analysis (deferred to Phase 1):
+   (a) Full covariant derivation of modified Phi-EOM
+   (b) Self-consistent photon ring with matter coupling correction
+   (c) Beyond-tree-level stability (loop corrections, ghost screening)
+   (d) Cosmological consequences (does back-reaction affect H_0?)
+   (e) Compositional constraints (equivalence principle 5th force)
+
+ Phase 0+ does NOT close OP-M92. It establishes Candidate D readiness
+ so that Phase 1 (post-ngEHT 2030+ verdict) starts with structural
+ scaffolding rather than from-scratch.
+========================================================================

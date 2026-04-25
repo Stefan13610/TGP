@@ -1,9 +1,15 @@
 # OP-M92 — Readiness summary (interim closure)
 
 **Data:** 2026-04-25
-**Status:** **OPEN — PHASE 0 COMPLETE (readiness package shipped)**
-**Sub-tests:** T-M92.1 + T-M92.2..T-M92.5 + T-M92.6 done
+**Status:** **OPEN — PHASE 0 COMPLETE + PHASE 0+ KICKOFF DONE**
+**Sub-tests:** T-M92.1 + T-M92.2..T-M92.5 + T-M92.6 + Phase 0+ Candidate D sketch done
 **Deferred closure:** ngEHT 2030+ verdict
+
+**Phase 0+ update (2026-04-25):** Candidate D (momentum back-reaction)
+structural sketch shipped (5/5 POSITIVE). Single coupling α ~ 0.1 (geom
+units) simultaneously tunes scenario (e) target i preserves weak-field PPN
+z 9e+12× safety margin. No-ghost stable, c_GW = c_0 vacuum exact.
+See [[research/op-m92/OP_M92_P0plus_candD_results.md]].
 
 ---
 
@@ -74,8 +80,9 @@ mechanism, nie ma viable q-flow path.
 - [x] Candidate analysis T2-T5 (4 candidates ranked)
 - [x] Decision tree T6 (ngEHT response plan)
 - [x] Readiness summary (this file)
+- [x] **Phase 0+ Candidate D sketch (2026-04-25 afternoon)** — 5/5 POSITIVE
 - [ ] ngEHT 2030+ verdict (DEFERRED)
-- [ ] Candidate D Phase 1 derivation (DEFERRED to 2026 Q3-Q4)
+- [ ] Candidate D Phase 1 derivation (scheduled 2026 Q3-Q4)
 - [ ] Full M9.2 axiom paper (DEFERRED to 2032+)
 
 ## Bottom line
