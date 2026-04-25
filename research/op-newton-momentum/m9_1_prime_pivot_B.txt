@@ -1,0 +1,82 @@
+==========================================================================================
+M9.1' Pivot B: natural f(psi) candidates with f*h=1 + alpha=2 + beta_PPN=1
+==========================================================================================
+
+Constraint (alpha=2, c_2=-1):  f''(1) = f'(1) * (f'(1) + 2)
+
+Candidates:
+------------------------------------------------------------------------------------------
+(1) Pure power f(psi) = psi^p:
+      p = -1.000                       f'(1)=-1.0000  f''(1)=+2.0000  |  target f''(1) = -1.0000  resid=+3.0000  |  beta_PPN=+4.0000  | f = psi^-1.0
+      p = -0.500                       f'(1)=-0.5000  f''(1)=+0.7500  |  target f''(1) = -0.7500  resid=+1.5000  |  beta_PPN=+7.0000  | f = psi^-0.5
+      p = -2.000                       f'(1)=-2.0000  f''(1)=+6.0000  |  target f''(1) = -0.0000  resid=+6.0000  |  beta_PPN=+2.5000  | f = psi^-2.0
+      p = -0.333                       f'(1)=-0.3333  f''(1)=+0.4444  |  target f''(1) = -0.5556  resid=+1.0000  |  beta_PPN=+10.0000  | f = psi^-0.3333333333333333
+      p = +1.000                       f'(1)=+1.0000  f''(1)=+0.0000  |  target f''(1) = +3.0000  resid=-3.0000  |  beta_PPN=-2.0000  | f = psi^1.0
+      p = +0.500                       f'(1)=+0.5000  f''(1)=-0.2500  |  target f''(1) = +1.2500  resid=-1.5000  |  beta_PPN=-5.0000  | f = psi^0.5
+
+(2) Exponential f(psi) = exp(a*(psi-1)):
+      a = -2.000                       f'(1)=-2.0000  f''(1)=+4.0000  |  target f''(1) = -0.0000  resid=+4.0000  |  beta_PPN=+2.0000  | f = exp(-2.00(psi-1))
+      a = -1.000                       f'(1)=-1.0000  f''(1)=+1.0000  |  target f''(1) = -1.0000  resid=+2.0000  |  beta_PPN=+3.0000  | f = exp(-1.00(psi-1))
+      a = -0.500                       f'(1)=-0.5000  f''(1)=+0.2500  |  target f''(1) = -0.7500  resid=+1.0000  |  beta_PPN=+5.0000  | f = exp(-0.50(psi-1))
+      a = +0.000                       f'(1)=+0.0000  f''(1)=+0.0000  |  target f''(1) = +0.0000  resid=+0.0000  |  beta_PPN=+nan  | f = exp(+0.00(psi-1))
+      a = +0.500                       f'(1)=+0.5000  f''(1)=+0.2500  |  target f''(1) = +1.2500  resid=-1.0000  |  beta_PPN=-3.0000  | f = exp(+0.50(psi-1))
+      a = +1.000                       f'(1)=+1.0000  f''(1)=+1.0000  |  target f''(1) = +3.0000  resid=-2.0000  |  beta_PPN=-1.0000  | f = exp(+1.00(psi-1))
+
+(3) Rational f(psi) = 1/(1 + a*(psi-1)):
+      a = -2.000                       f'(1)=+2.0000  f''(1)=+8.0000  |  target f''(1) = +8.0000  resid=+0.0000  |  BETA_PPN=1  | f = 1/(1+-2.00(psi-1))  pole psi=1.500
+      a = -1.000                       f'(1)=+1.0000  f''(1)=+2.0000  |  target f''(1) = +3.0000  resid=-1.0000  |  beta_PPN=+0.0000  | f = 1/(1+-1.00(psi-1))  pole psi=2.000
+      a = -0.500                       f'(1)=+0.5000  f''(1)=+0.5000  |  target f''(1) = +1.2500  resid=-0.7500  |  beta_PPN=-2.0000  | f = 1/(1+-0.50(psi-1))  pole psi=3.000
+      a = +0.000                       f'(1)=-0.0000  f''(1)=+0.0000  |  target f''(1) = -0.0000  resid=+0.0000  |  beta_PPN=+nan  | f = 1/(1++0.00(psi-1))  pole psi=inf
+      a = +0.500                       f'(1)=-0.5000  f''(1)=+0.5000  |  target f''(1) = -0.7500  resid=+1.2500  |  beta_PPN=+6.0000  | f = 1/(1++0.50(psi-1))  pole psi=-1.000
+      a = +1.000                       f'(1)=-1.0000  f''(1)=+2.0000  |  target f''(1) = -1.0000  resid=+3.0000  |  beta_PPN=+4.0000  | f = 1/(1++1.00(psi-1))  pole psi=0.000
+      a = +2.000                       f'(1)=-2.0000  f''(1)=+8.0000  |  target f''(1) = -0.0000  resid=+8.0000  |  beta_PPN=+3.0000  | f = 1/(1++2.00(psi-1))  pole psi=0.500
+
+(4) Form f(psi) = 1 + a*(1-psi)/psi:
+      a = +4.000                       f'(1)=-4.0000  f''(1)=+8.0000  |  target f''(1) = +8.0000  resid=+0.0000  |  BETA_PPN=1  | f = 1 + +4.00*(1-psi)/psi
+      a = +3.000                       f'(1)=-3.0000  f''(1)=+6.0000  |  target f''(1) = +3.0000  resid=+3.0000  |  beta_PPN=+1.3333  | f = 1 + +3.00*(1-psi)/psi
+      a = +2.000                       f'(1)=-2.0000  f''(1)=+4.0000  |  target f''(1) = -0.0000  resid=+4.0000  |  beta_PPN=+2.0000  | f = 1 + +2.00*(1-psi)/psi
+      a = +1.000                       f'(1)=-1.0000  f''(1)=+2.0000  |  target f''(1) = -1.0000  resid=+3.0000  |  beta_PPN=+4.0000  | f = 1 + +1.00*(1-psi)/psi
+      a = +0.000                       f'(1)=-0.0000  f''(1)=+0.0000  |  target f''(1) = -0.0000  resid=+0.0000  |  beta_PPN=+nan  | f = 1 + +0.00*(1-psi)/psi
+      a = -1.000                       f'(1)=+1.0000  f''(1)=-2.0000  |  target f''(1) = +3.0000  resid=-5.0000  |  beta_PPN=-4.0000  | f = 1 + -1.00*(1-psi)/psi
+
+(5) Log: f(psi) = 1 + a*ln(psi) + b*ln(psi)^2 + ...:
+      a=-1.00, b=+0.00                 f'(1)=-1.0000  f''(1)=+1.0000  |  target f''(1) = -1.0000  resid=+2.0000  |  beta_PPN=+3.0000  | f = 1 + -1.00 ln(psi) + +0.00 ln^2(psi)
+      a=-1.00, b=+0.50                 f'(1)=-1.0000  f''(1)=+2.0000  |  target f''(1) = -1.0000  resid=+3.0000  |  beta_PPN=+4.0000  | f = 1 + -1.00 ln(psi) + +0.50 ln^2(psi)
+      a=-1.00, b=-0.50                 f'(1)=-1.0000  f''(1)=+0.0000  |  target f''(1) = -1.0000  resid=+1.0000  |  beta_PPN=+2.0000  | f = 1 + -1.00 ln(psi) + -0.50 ln^2(psi)
+      a=-2.00, b=+1.00                 f'(1)=-2.0000  f''(1)=+4.0000  |  target f''(1) = -0.0000  resid=+4.0000  |  beta_PPN=+2.0000  | f = 1 + -2.00 ln(psi) + +1.00 ln^2(psi)
+      a=-1.00, b=+0.75                 f'(1)=-1.0000  f''(1)=+2.5000  |  target f''(1) = -1.0000  resid=+3.5000  |  beta_PPN=+4.5000  | f = 1 + -1.00 ln(psi) + +0.75 ln^2(psi)
+
+(6) Quadratic Taylor f(psi) = 1 + a(psi-1) + b(psi-1)^2:
+      a = -3.000                       f'(1)=-3.0000  f''(1)=+3.0000  |  target f''(1) = +3.0000  resid=+0.0000  |  BETA_PPN=1  | b = a(a+2)/2 = +1.500; f = 1 + -3.00(psi-1) + +1.50(psi-1)^2
+      a = -2.000                       f'(1)=-2.0000  f''(1)=-0.0000  |  target f''(1) = -0.0000  resid=+0.0000  |  BETA_PPN=1  | b = a(a+2)/2 = -0.000; f = 1 + -2.00(psi-1) + -0.00(psi-1)^2
+      a = -1.000                       f'(1)=-1.0000  f''(1)=-1.0000  |  target f''(1) = -1.0000  resid=+0.0000  |  BETA_PPN=1  | b = a(a+2)/2 = -0.500; f = 1 + -1.00(psi-1) + -0.50(psi-1)^2
+      a = -0.500                       f'(1)=-0.5000  f''(1)=-0.7500  |  target f''(1) = -0.7500  resid=+0.0000  |  BETA_PPN=1  | b = a(a+2)/2 = -0.375; f = 1 + -0.50(psi-1) + -0.38(psi-1)^2
+      a = +0.500                       f'(1)=+0.5000  f''(1)=+1.2500  |  target f''(1) = +1.2500  resid=+0.0000  |  BETA_PPN=1  | b = a(a+2)/2 = +0.625; f = 1 + +0.50(psi-1) + +0.62(psi-1)^2
+      a = +1.000                       f'(1)=+1.0000  f''(1)=+3.0000  |  target f''(1) = +3.0000  resid=+0.0000  |  BETA_PPN=1  | b = a(a+2)/2 = +1.500; f = 1 + +1.00(psi-1) + +1.50(psi-1)^2
+
+==========================================================================================
+Conclusion: the constraint f''(1) = f'(1)(f'(1)+2) with alpha=2 and f*h=1
+is a SINGLE EQUATION in TWO Taylor coefficients of f.
+
+Hence a 1-parameter family of admissible f exists. The QUESTION is whether
+any such f has a NATURAL substrate-level derivation (substrate budget,
+substrate action, conformal coupling, etc.).
+
+Forms tested:
+  (1) Pure power:        FAIL (only trivial p=0).
+  (2) Exponential:       FAIL (only trivial a=0).
+  (3) Rational:          a=-2 (pole psi=3/2, near basin boundary).
+  (4) Hyperbolic:        a=+4 (zero at psi=4/3 = basin boundary).
+  (5) Logarithmic:       always satisfies f'(1)=a, f''(1)=-a+2b;
+                         constraint -a + 2b = a(a+2)  =>  b = (a^2+3a)/2.
+                         For a=-1: b=-1; for a=-2: b=-1; for a=-3: b=0.
+  (6) Quadratic Taylor:  by construction, infinite family.
+
+Of these, only (4) shows a NATURAL connection to TGP physics:
+  f(psi) = 1 + 4*(1-psi)/psi = (4 - 3*psi)/psi
+  Zero precisely at psi = 4/3 -- the BASIN BOUNDARY of TGP
+  (cf. action `eq:action-full-psi`, ghost-free range psi in (0, 4/3)).
+
+This is suspicious enough to warrant follow-up: is this a 'natural'
+metric choice, or a coincidence?
+==========================================================================================
