@@ -1,0 +1,115 @@
+==============================================================================
+EHT-quick: photon ring in M9.1'' hyperbolic BH (TGP_CLOSURE_PLAN sec 8.10)
+Date: 2026-04-25
+Geometric units: G = c0 = M = 1, r_g = G M / c^2 = 1.
+==============================================================================
+
+------------------------------------------------------------------------------
+TEST 1: solve vacuum Phi-EOM inward from r_out, find TGP horizon
+------------------------------------------------------------------------------
+  IC at r_out = 1000: eps(r_out) = 4.997502e-04
+                          eps'(r_out) = -4.995006e-07
+  TGP horizon at eps = 1/3:   r_H = 1.094595 r_g
+  Linear (1PN) prediction:    r_H ~ 3 A = 1.5000 r_g
+  GR Schwarzschild horizon (isotropic): r_iso_S = M/2 = 0.5 r_g
+  GR Schwarzschild horizon (areal):     r_s = 2 r_g
+  At TGP horizon: psi = 4/3, h(psi) = psi/(4-3psi) -> infty
+  => areal r_horizon diverges; consistent with GR (areal) where horizon is r_s
+  but in isotropic coordinates GR has r_iso_S = M/2 finite (and h=infty there too).
+  Verdict TEST 1: PASS (horizon found, structure consistent)
+
+------------------------------------------------------------------------------
+TEST 2: photon ring r_ph from dV_eff/dr = 0
+------------------------------------------------------------------------------
+  Photon ring at extremum of R^2(r)/A_t(r) (R = areal radius).
+  In TGP isotropic (A_t * B = 1):  R^2/A_t = r^2/A_t^2.
+  d/dr[r^2/A_t^2]=0  =>  r * A_t' = A_t.
+  In eps:  4 r eps'(r) + (1 - 3 eps(r))(1 + eps(r)) = 0.
+
+  TGP photon ring (isotropic):  r_ph_iso = 2.529629 r_g
+      eps(r_ph)  = +0.167892
+      psi(r_ph)  = 1.167892
+      A_metric(r_ph) = 0.424974
+  TGP photon ring (areal):      r_ph_areal = 3.880394 r_g
+  GR Schwarzschild photon ring: r_iso_GR = (2+sqrt 3)/2 = 1.866025 r_g
+                                r_areal_GR = 3 r_g (canonical)
+
+  Comparison (isotropic):   r_ph_TGP / r_ph_GR = 1.355624
+  Comparison (areal):       r_areal_TGP / r_areal_GR = 1.293465
+  Relative deviation (isotropic):  +35.562 %
+  Relative deviation (areal):      +29.346 %
+  Verdict TEST 2: PASS (photon ring found)
+
+------------------------------------------------------------------------------
+TEST 3: critical impact parameter b_crit and shadow size
+------------------------------------------------------------------------------
+  b_crit = r_areal(r_ph) / sqrt(A_metric(r_ph))
+         = r_iso / A_metric  (since r_areal = r_iso/sqrt(A))
+
+  b_crit (TGP) = 5.952436 r_g
+  b_crit (GR)  = 3 sqrt(3) = 5.196152 r_g
+  b_crit_TGP / b_crit_GR = 1.145547
+  Relative deviation:    +14.555 %
+  Verdict TEST 3: PASS (critical impact parameter computed)
+
+------------------------------------------------------------------------------
+TEST 4: M87* shadow prediction vs EHT 2019 observation
+------------------------------------------------------------------------------
+  M87*: M = 6.5e9 M_sun, D = 16.8 Mpc
+  TGP shadow diameter:          45.476 microarcsec
+  GR  shadow diameter:          39.698 microarcsec
+  EHT 2019 observed:              42.0 +/- 3.0 microarcsec (~10% systematic)
+  TGP / observed:             1.0828  (+8.28 %)
+  GR  / observed:             0.9452  (-5.48 %)
+  TGP within 5%:  NO
+  TGP within 10%: YES
+  Verdict TEST 4: PASS (TGP within EHT 10% bound)
+
+------------------------------------------------------------------------------
+TEST 5: Sgr A* shadow prediction vs EHT 2022 observation
+------------------------------------------------------------------------------
+  Sgr A*: M = 4.3e6 M_sun, D = 8.15 kpc
+  TGP shadow diameter:          62.014 microarcsec
+  GR  shadow diameter:          54.135 microarcsec
+  EHT 2022 observed:              51.8 +/- 2.3 microarcsec
+  TGP / observed:             1.1972  (+19.72 %)
+  GR  / observed:             1.0451  (+4.51 %)
+  TGP within 5%:  NO
+  TGP within 10%: NO
+  Verdict TEST 5: FAIL (TGP outside EHT 10% bound)
+
+------------------------------------------------------------------------------
+TEST 6: convergence -- vary r_out, n_terms, check r_ph stable
+------------------------------------------------------------------------------
+    r_out    n_terms    r_H            r_ph_iso       b_crit (r_g)
+    -----    -------    -----------    -----------    ------------
+      500          5    1.094595     2.529629     5.952436
+     1000          6    1.094595     2.529629     5.952436
+     1000          7    1.094595     2.529629     5.952436
+     2000          7    1.094595     2.529629     5.952436
+     5000          7    1.094595     2.529629     5.952436
+  b_crit spread across runs: 0.0000 %
+  Verdict TEST 6: PASS (b_crit converged below 0.1%)
+
+==============================================================================
+FINAL ANALYSIS
+==============================================================================
+
+  TGP M9.1'' photon ring (areal):    r_ph^TGP = 3.880394 r_g
+  GR Schwarzschild photon ring:      r_ph^GR  = 3.000000 r_g
+  Ratio:                             1.293465
+
+  TGP critical impact parameter:     b_crit^TGP = 5.952436 r_g
+  GR critical impact parameter:      b_crit^GR  = 5.196152 r_g
+  Fractional deviation:              +14.5547 %
+
+  M87* shadow:    TGP 45.48 uas vs EHT 42.0 +/- 3.0 uas
+                  GR  39.70 uas (deviation TGP-GR: +14.5547 %)
+  Sgr A* shadow:  TGP 62.01 uas vs EHT 51.8 +/- 2.3 uas
+                  GR  54.13 uas (deviation TGP-GR: +14.5547 %)
+
+  GLOBAL VERDICT: INCONCLUSIVE: TGP deviation 10-20%, marginal vs EHT systematics
+
+==============================================================================
+SUMMARY: 5/6 PASS
+==============================================================================

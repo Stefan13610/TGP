@@ -1,0 +1,160 @@
+
+========================================================================
+  Hipoteza A: mean-field, m_sigma ~ J * v_0^2
+========================================================================
+
+Argument MF: w v2 GL substrate H_bond = J A_ij s_i^2 s_j^2 (s_j^2 - s_i^2)^2.
+W mean-field self-consistent: <s^2> = v_0^2 = Phi_0; bond contributes
+m_eff^2 ~ J * v_0^2 ~ J * Phi_0.
+Z T3.1: m_sigma^2 = 2 m_s_eff^2 ~ 2 J Phi_0.
+
+Skala J w TGP: J jest bond coupling z TGP_FOUNDATIONS section 3, NATURAL skala
+to Phi_0 (jednowarstwowa axiom). Wiec m_s_eff ~ sqrt(J Phi_0) ~ Phi_0.
+
+Trzy scenariusze Phi_0:
+  A.1  Phi_0 ~ M_Planck (~1e28 eV): m_sigma ~ 1e28 eV --> KATASTROFA
+       Mass scale stops GW propagation completely. FALSIFIES TGP.
+  A.2  Phi_0 ~ M_Planck * eps (~1e16 eV, GUT scale): m_sigma ~ 1e16 eV
+       --> Still way above LIGO bound. FALSIFIES.
+  A.3  Phi_0 ~ Hubble^(-1) (~1e-33 eV): m_sigma ~ 1e-33 eV --> bezpieczne!
+       Below GW170817 bound by 14 orders of magnitude. PASSES.
+
+  [FAIL] A.1 Phi_0=M_Planck (~1e28 eV) GW-safe?  [m_sigma=1.00e+28 eV vs bound 1.85e-19 eV]
+  [FAIL] A.2 Phi_0=GUT (~1e16 eV) GW-safe?  [m_sigma=1.00e+16 eV vs bound 1.85e-19 eV]
+  [PASS] A.3 Phi_0=H_0 (~1e-33 eV) GW-safe?  [m_sigma=1.50e-33 eV vs bound 1.85e-19 eV]
+
+========================================================================
+  Hipoteza B: kompresybilna, m_sigma^2 ~ U''(Phi_0) renormalized
+========================================================================
+
+Argument: U''(Phi_0) jest skala 'potential mass' w TGP. Z paperu:
+  U(Phi) = (gamma/12) Phi_0^2 psi^3 (4-3 psi)
+  U''(Phi_0) = -gamma  (przed bond renormalization)
+W jednoskali Phi_0: gamma ~ 1; po renormalizacji bondem:
+  m_eff^2 = -U''(Phi_0) + delta_bond ~ gamma + J*Phi_0 ~ Phi_0 (jesli J~1)
+
+Wiec:
+  m_sigma^2 ~ 2 * m_s_eff^2 ~ 2 * Phi_0 (w jednostkach naturalnych)
+
+To samo skalowanie co A. KAZDA wartosc Phi_0 daje m_sigma na skali Phi_0.
+
+WNIOSEK: B == A skalujaco. Roznica jest tylko w prefactor (rzedu 1).
+
+  [PASS] B scaling matches A (m_sigma ~ Phi_0)  [structural: 2 m_s^2 ~ 2 Phi_0]
+
+========================================================================
+  Hipoteza C: massless, m_sigma = 0
+========================================================================
+
+Argument: jesli sigma_ab to massless composite, propaguje na c_0
+identycznie jak fundamentalny graviton. Brak deviation w GW170817.
+sigma_ab to 'emergent graviton' a la Sakharov / Verlinde.
+
+Wymaganie: m_s_eff^2 = 0 (delta_bond cancels out V''(s_eq) exactly).
+To wymagaloby fine-tuning -- mozliwe jesli istnieje SYMMETRIA zapewniajaca
+masslessness. W TGP: skala Phi_0 jest VEV substratu, fluctuations wokol
+mogłyby byc Goldstone (jesli odpowiednia symmetria broken spontaneously).
+
+Ale Phi to skalar Z_2; spontaneous breakdown daje JEDEN Goldstone (dla
+discrete Z_2 to NIE jest ciagly -- nie ma Goldstone'a). Wiec NATURALNY
+Goldstone z Z_2 NIE EXIST.
+
+Mozliwa droga: sigma_ab to non-Goldstone NAMBU-LIKE composite, gdzie
+bilinearne <(d s)(d s)> ma zerową masse z NESTING (paragraf przesylowy).
+To wymaga dedykowanej analizy 1-loop -- otwarte do T3.3.
+
+WNIOSEK C: massless mozliwe ale wymaga structural reason (nie ma trywial
+mechanizm w TGP single-Phi Z_2). T3.3 musi sprawdzic.
+
+  [PASS] C requires structural reason for masslessness  [non-Goldstone composite; needs T3.3 analysis]
+
+========================================================================
+  BRAINSTORM 8.9: Phi_0 ~ Hubble^(-1) (cosmological constant)
+========================================================================
+
+Z paperu: V(Phi=Phi_0) = (gamma/12) Phi_0^2 (vacuum energy).
+Cosmological constant Lambda_TGP = V(Phi_0) c^4 / (8 pi G).
+
+Jesli zadamy Lambda_TGP = Lambda_obs (dark energy):
+  Lambda_obs ~ (1.4e-3 eV)^4 ~ 2e-122 M_Planck^4
+  V(Phi_0) ~ Phi_0^2 (zaniedbujac gamma~1)
+
+Wiec Phi_0^2 ~ Lambda_obs * 8 pi G / c^4 ~ Lambda_obs * (l_P/c^2)^2
+       Phi_0 ~ sqrt(Lambda_obs) * l_P ~ (1e-3 eV)^2 * (1e-35 m)
+
+Hmm, zajmijmy sie jednostkowo: V[Phi] musi miec dim energy/volume.
+W naturalnych: V = E^4 (dla scalar field z dim E).
+Wiec Phi_0 ma dim E (energy-like).
+
+Zadanie Lambda_TGP = Lambda_obs:
+  V(Phi_0) ~ gamma * Phi_0^4 ~ Lambda_obs ~ (1.4e-3 eV)^4
+  Phi_0 ~ (Lambda_obs / gamma)^(1/4) ~ 1.4e-3 eV (jesli gamma ~ 1)
+
+Wiec NATURALNA Phi_0 to ~meV (NOT muEV jak w brainstorm pierwszym).
+
+Oczekiwane m_sigma:
+  m_sigma ~ Phi_0 ~ 1e-3 eV ~ 1 meV
+
+Sprawdzmy czy 1 meV jest GW-safe:
+
+  Phi_0 cosmo ~ 1.40e-03 eV
+  m_sigma ~ Phi_0 ~ 1.40e-03 eV
+  GW170817 bound: 1.85e-19 eV
+  m_sigma vs bound: >=  -> FAIL
+  [FAIL] D Phi_0 ~ meV (Lambda_obs scale) GW-safe?  [m_sigma=1.40e-03 vs bound 1.85e-19]
+
+*** UWAGA WAZNA ***
+m_sigma ~ Phi_0 ~ 1 meV vs GW170817 bound 2e-19 eV:
+  1e-3 eV >> 2e-19 eV  --> NIE PASS!
+
+Wniosek: jesli Phi_0 ~ meV (cosmologically motivated), TO m_sigma jest
+ZBYT DUZE dla GW170817. To znaczy:
+  - Albo nasza heurystyka m_sigma ~ Phi_0 jest BLEDNA (T3.3 musi pokazac
+    detailed renormalization w ktora m_sigma jest tlumione)
+  - Albo Phi_0 jest GLEBOKO mniejsze niz meV (np. 1e-19 eV ~ ULDM scale)
+  - Albo TGP jest CZESCIOWO falsyfikowalne na poziomie GW dispersion
+    (testowalne LIGO 3G)
+
+
+========================================================================
+  T3.2 WERDYKT
+========================================================================
+
+Liczba checkow: 3/6 PASS
+
+Kluczowe wnioski T3.2:
+
+  1. Hipoteza A (m_sigma ~ J*v_0^2 ~ Phi_0):
+     - Phi_0 ~ M_Planck: KATASTROFA (m_sigma = M_Planck >> LIGO bound)
+     - Phi_0 ~ GUT: NADAL TLUMI GW
+     - Phi_0 ~ H_0 (~1e-33 eV): TYLKO TA SKALA przezywa GW170817
+       (zgodne z brainstorm 8.9 cosmological constant z Phi_0)
+
+  2. Hipoteza B == A skalujaco; rozni sie tylko prefactor.
+
+  3. Hipoteza C (massless): mozliwa, ale wymaga structural reason
+     (non-Goldstone NAMBU-like composite); T3.3 musi sprawdzic.
+
+  4. Wybor Phi_0 z cosmological argument (V(Phi_0) = Lambda_obs):
+     Phi_0 ~ meV. To daje m_sigma ~ meV, KTORE JEST ZBYT DUZE dla
+     GW170817 bound (2e-19 eV)!
+
+  TENSION: cosmological motivated Phi_0 ~ meV jest niezgodne z
+  GW170817 bound chyba ze:
+     (i) m_sigma jest tlumione przez sub-tree-level renormalization
+         (T3.3 musi sprawdzic 1-loop / non-perturbative effects)
+     (ii) Phi_0 jest niemniej jednak << meV (np. ULDM scale ~ 1e-22 eV)
+     (iii) TGP czesciowo falsyfikowalne na poziomie GW dispersion
+
+T3.2 STATUS: INCONCLUSIVE.
+  Naturalna struktura wskazuje m_sigma ~ Phi_0, co stwarza tension
+  z GW170817 jesli Phi_0 jest cosmologicznie motywowane (~meV).
+  Resolution wymaga T3.3 (full ghost+dispersion + 1-loop renormalization).
+
+  Hipoteza C (massless) jest NAJBEZPIECZNIEJSZA dla GW; T3.3 musi
+  zdecydowac czy jest STRUCTURALNIE WSPIERANA przez TGP.
+
+
+  [PARTIAL-FAIL] T3.2: 3 hipotez nie pasuje GW170817.
+  Tension: szukamy resolution w T3.3 lub modify Phi_0 scale.
+

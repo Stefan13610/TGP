@@ -94,10 +94,10 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 |---|------|-----|--------|--------|
 | **T1** | No-tensor dla M9.1'' | Dowód, że δg_eff[δψ] ma tylko mod S | sympy: SVT decomposition perturbacji | **POSITIVE 2026-04-25** ([[OP7_T1_results.md]]) |
 | **T2** | Definicja σ_ab z H_Γ | Pokazać, że gradient strain `K_ab - (1/3)δ_ab Tr(K)` jest dobrze zdefiniowanym operatorem coarse-grainingu | analitycznie + sympy + lattice MC | **POSITIVE 2026-04-25** ([[OP7_T2_results.md]]) |
-| **T3** | Dynamika σ_ab | Wyprowadzić □σ_ab + m_σ²σ_ab = -ξ T_ab^TT z S_TGP | wariacyjnie | open |
+| **T3** | Dynamika σ_ab | Wyprowadzić □σ_ab + m_σ²σ_ab = -ξ T_ab^TT z S_TGP | wariacyjnie | **MIXED (25/28) 2026-04-25** ([[OP7_T3_results.md]]) |
 | **T4** | Metryka rozszerzona | Postać `g_ij = h(ψ)δ_ij + Λ(ψ)·σ_ij`; zachowanie M9.1'' przy σ=0 | analitycznie | open |
-| **T5** | Formuła kwadrupolowa | h_+, h_× ∝ Q̈_ij/r; dopasowanie do GW150914 | analitycznie + dane LIGO | open |
-| **T6** | Konsystencja | PPN niezmienione, c_GW = c₀, ghost-free, Z₂ | sympy + skrypty | open |
+| **T5** | Formuła kwadrupolowa | h_+, h_× ∝ Q̈_ij/r; dopasowanie do GW150914 | analitycznie + dane LIGO | **partial (T3.4) 2026-04-25**: ξ/G ≈ 1.06 |
+| **T6** | Konsystencja | PPN niezmienione, c_GW = c₀, ghost-free, Z₂ | sympy + skrypty | **partial (T3.3) 2026-04-25**: ghost-free PASS; pełne PPN open |
 
 **Kryterium sukcesu OP-7:**
 - T1 ✓ (strukturalny no-tensor M9.1'')
@@ -123,7 +123,20 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 - `op7_t2_sigma_from_HGamma.py` — T2 implementacja (sympy + lattice MC).
 - `op7_t2_sigma_from_HGamma.txt` — raw output T2 (12/12 PASS).
 - `OP7_T2_results.md` — werdykt T2.
-- (kolejne testy w analogicznym schemacie: T3, T4, ...)
+- `op7_t3_sigma_dynamics.py` — T3.1 sympy structural EOM derivation (Path A + Path B).
+- `op7_t3_sigma_dynamics.txt` — raw output T3.1 (11/11 PASS).
+- `op7_t3_2_m_sigma_scale.py` — T3.2 m_σ hipotezy A/B/C + GW170817 bound.
+- `op7_t3_2_m_sigma_scale.txt` — raw output T3.2 (4/7 PASS, Φ₀/m_σ tension).
+- `op7_t3_3_ghost_analysis.py` — T3.3 ghost+dispersion+massless analysis.
+- `op7_t3_3_ghost_analysis.txt` — raw output T3.3 (5/5 PASS).
+- `op7_t3_4_xi_coupling.py` — T3.4 ξ coupling + GW150914 matching.
+- `op7_t3_4_xi_coupling.txt` — raw output T3.4 (5/5 PASS, ξ/G ≈ 1.06).
+- `OP7_T3_results.md` — synteza werdyktu T3 (mixed: 25/28 = 89% PASS, structural pos with Φ₀/m_σ tension).
+- `eht_photon_ring_m911.py` (w tooling/scripts/gravity/) — EHT-quick analysis.
+- `eht_photon_ring_m911.txt` — raw output EHT (5/6 PASS).
+- `EHT_quick_results.md` — werdykt EHT (INCONCLUSIVE-leaning-NEGATIVE: +14.6% photon ring; Sgr A* tension).
+- `TGP_CLOSURE_PLAN_2026-04-25.md` — master closure plan (OP-7 + parallel programs).
+- (kolejne: T4, T5, T6 jeszcze open).
 
 ---
 

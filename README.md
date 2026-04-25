@@ -37,9 +37,13 @@ The substrate v2 pivot itself:
   ⇒ no geometry" is now a property of the axiom (bond vanishes
   identically when ŝ = 0).
 - **All coarse-grained physics preserved:** K(φ) = φ⁴, α = 2,
-  U(φ) = (β/3)φ³ − (γ/4)φ⁴ with β = γ, algebraic metric
-  g_ij = e^{2U/c₀²}δ_ij, γ_PPN = β_PPN = 1, c_GW = c₀. All 40
-  quantitative predictions below are unaffected.
+  U(φ) = (β/3)φ³ − (γ/4)φ⁴ with β = γ, **hyperbolic metric (M9.1'',
+  2026-04-25):** g_tt = -c₀²(4-3ψ)/ψ, g_rr = ψ/(4-3ψ); γ_PPN = β_PPN = 1
+  **exact at 1PN** (8 remaining PPN parameters pending OP-7 T3-T6 +
+  M9.2 moving-source analysis); c_GW = c₀ in the scalar sector
+  (tensor sector pending OP-7 T3-T6). All 40 quantitative predictions
+  below remain valid; the GW prediction row now reads "scalar breathing
+  mode (T1 closed); TT polarisations pending OP-7 dynamical half".
 - **Companion papers** (N-body, lepton masses, BH shadow, letter,
   tgp-qm, tgp-sc) all work at the coarse-grained Φ level and are
   **transparent to this pivot** — no changes needed.
@@ -74,7 +78,7 @@ From three inputs — the TGP coupling $g_0^e = 0.86941$, the cosmological const
 - Neutrino mass sum $\Sigma m_\nu = 59.6$ meV (normal ordering only; IO excluded)
 - Dark energy $w(z=0) = -0.994$, $\chi^2_\mathrm{TGP} \approx \chi^2_{\Lambda\mathrm{CDM}}$
 - Kinetic coupling $\alpha = 2$: algebraic theorem, not a fit
-- GW prediction: scalar breathing mode (3rd polarization, testable by ET/LISA)
+- GW prediction (M9.1'' single-Φ, 2026-04-25): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) is expected to provide the two TT polarisations once OP-7 T3-T6 dynamics close. **Until OP-7 dynamical half is closed, GW170817 unconditional pass remains pending.**
 
 ---
 
