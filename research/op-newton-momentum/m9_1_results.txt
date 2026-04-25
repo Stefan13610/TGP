@@ -1,0 +1,107 @@
+================================================================
+M9.1 -- Statyka i PPN: numeryczny solver Phi-EOM TGP
+Date: 2026-04-25
+Reference: M9_1_setup.md, TGP_FOUNDATIONS.md
+================================================================
+
+================================================================
+T1: Limit beta -> 0, weak field, gaussian source
+    Expected: eps(r) ~ qM/(4 pi r) for r >> sigma
+----------------------------------------------------------------
+    M=1.0, sigma=1.0, q=0.05  =>  A=qM/(4 pi) = 3.978874e-03
+    Mean rel error (5 sigma < r < 20 sigma): 3.2701e-03
+    Max  rel error (5 sigma < r < 20 sigma): 3.4092e-03
+    Verdict T1: PASS
+
+================================================================
+T2: Linearization -> PPN parameters (analytical readout)
+    Linearized Phi-EOM:   nabla^2 eps - beta eps = -q rho
+    Power form metric:    g_tt = -c^2/(1+eps), g_rr = 1+eps
+----------------------------------------------------------------
+    Linearized solver:
+    A = qM/(4 pi) = 7.957747e-03
+    Mean |eps_num - A/r|: 3.8353e-07
+    Max  |eps_num - A/r|: 7.9367e-07  (should be ~ 0)
+
+    Analytical PPN readout (linearized eps = u, u = 2U/c^2):
+      g_rr = 1 + eps = 1 + 2U/c^2     => gamma_PPN = 1.0000  (exact, by metric ansatz)
+      g_tt = -c^2/(1+eps)
+           = -c^2(1 - u + u^2 - u^3 + ...) 
+           = -c^2(1 - 2U/c^2 + 4 U^2/c^4 + ...)
+       PPN: g_tt = -c^2(1 - 2U/c^2 + 2 beta_PPN U^2/c^4)
+           => 2 beta_PPN = 4   =>  beta_PPN = 2.0000  (power form, NO dynamical c_2)
+
+    Verdict T2: gamma_PPN = 1.0000 (PASS), beta_PPN_linearized = 2.0000
+    NB: beta_PPN = 2 from linearization alone is in TENSION with observation
+        (Mercury perihelion: beta_PPN = 1.000 +/- 1e-4, GR predicts beta_PPN = 1).
+        T3 below tests whether nonlinear Phi-EOM corrections fix this.
+
+================================================================
+T3: Full nonlinear Phi-EOM -> beta_PPN extraction (KEY TEST)
+    Method: free fit eps(r) = a_1/r + a_2/r^2 + a_3/r^3 + a_4/r^4
+            A_eff := a_1 (renormalized);  c_2 := a_2 / A_eff^2
+            beta_PPN = 2 (1 - c_2)
+    Reference:
+      Power form (linear, c_2 = 0):                   beta_PPN = 2  [excluded]
+      Exponential form (eps = e^u - 1, c_2 = +1/2):   beta_PPN = 1  [GR]
+      TGP analytic (eps_2 = -A_0^2/r^2, c_2 = -1):    beta_PPN = 4  [strongly excluded]
+----------------------------------------------------------------
+    Solver: R_max=800 (chosen by convergence study), n_pts=5000
+    Convergence vs R_max (M=q=sigma=1):
+      R_max=100 -> c_2=-0.71;  R_max=200 -> -0.87
+      R_max=400 -> c_2=-0.97;  R_max=800 -> -0.99
+    -> R_max=800 sufficient for ~1% accuracy on c_2.
+
+    Sweep over A_0; extrapolate c_2 -> 0 (weak-field limit):
+
+       q       A_0=qM/(4pi)   A_eff (a_1)    a_2          c_2 = a_2/A_eff^2   beta_PPN
+       ---     ------------   -----------    ----------   -----------------   --------
+        0.500       0.03979      0.041604   -1.7167e-03             -0.9918    +3.9836
+        1.000       0.07958      0.087173   -7.5368e-03             -0.9918    +3.9836
+        2.000       0.15915      0.192010   -3.6567e-02             -0.9918    +3.9837
+        3.000       0.23873      0.318587   -1.0067e-01             -0.9919    +3.9838
+
+    Linear extrapolation c_2(A_0) = c_2_inf + slope * A_0:
+      c_2_inf  = -0.9918   (limit A_0 -> 0)
+      slope    = -0.0005
+      => beta_PPN(A_0 -> 0) = +3.9835
+
+    Best match: Forma DYNAMICZNA TGP (c_2 = -1, beta_PPN = 4)
+    Numeric beta_PPN vs candidate beta_PPN: +3.984 vs +4.000
+
+    Werdykt T3: DYN_TGP_C2_MINUS_ONE
+      TGP nonlinear correction gives c_2 ~ -1, beta_PPN ~ 4 -- STRONGLY EXCLUDED by Mercury (10^-4 precision).
+      M9.1 = falsification of pure power-form metric with full Phi-EOM.
+      Pivot needed: alternative metric ansatz (exponential), matter back-reaction, or accept M9.1 as negative closure of OP-2b..
+
+================================================================
+T4: Skonczone beta > 0 -- weryfikacja obciecia Yukawy
+    Oczekiwane:  eps(r) ~ A exp(-sqrt(beta) r) / r
+    R_Y = 1/sqrt(beta)
+----------------------------------------------------------------
+    M=1.0, sigma=1.0, q=0.05  =>  A = 3.97887e-03
+
+       beta     R_Y_th     sqrt(beta)_rec   R_Y_rec    rel_err
+       -----    -------    --------------   --------   --------
+       0.010     10.000           0.09967    10.0332   3.310e-03 [OK]
+       0.100      3.162           0.31528     3.1717   2.983e-03 [OK]
+       1.000      1.000    -- range too narrow --
+
+    Verdict T4: Yukawa damping confirmed numerically: PASS
+
+================================================================
+T5: Rozszerzone zrodlo (gauss sigma) -- regularnosc w r=0
+----------------------------------------------------------------
+    eps(r=0.001 sigma) = +4.4299e-33
+    eps(r=0.5 sigma)   = +3.0466e-03
+    eps gradient max in (0, 0.5 sigma): 1.7470e-01
+    eps stays bounded, no singularity at r=0:  PASS
+
+================================================================
+Podsumowanie M9.1:
+   T1: PASS
+   T2: PASS
+   T3: DYN_TGP_C2_MINUS_ONE
+   T4: PASS
+   T5: PASS
+================================================================
