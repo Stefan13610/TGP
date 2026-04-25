@@ -1,0 +1,34 @@
+======================================================================
+ OP-EHT-A T-A3 — Self-consistent Track A photon ring
+ Question: does naive proper-time coupling reduce deviation < 5%?
+======================================================================
+
+[T-A3.1] Self-consistent iteration:
+  A_baseline = 0.5000
+  Initial A_eff = 0.5000
+  iter     A_eff    psi_ph      b_crit    dev_GR    weight
+     0    0.5000    1.1679      5.9525   +14.56%    0.6519
+     1    0.3260    1.1679      3.8805   -25.32%    0.6519
+  T-A3.1 self-consistent solution converges: PASS
+
+[T-A3.2] Final self-consistent state:
+  A_eff_final = 0.3260
+  psi_ph_final = 1.1679
+  b_crit_final = 3.8805 r_g
+  deviation vs GR = -25.32%
+  T-A3.2 |deviation| <= 5%: FAIL
+
+[T-A3.3] Compare with OP-EHT T3 scenario (e) target:
+  Scenario (e) target:  A_eff = 0.4428, b_crit = 5.272, dev = +1.46%
+  Track A self-consistent: A_eff = 0.3260, b_crit = 3.8805, dev = -25.32%
+  Gap to scenario (e): 26.78% (in deviation units)
+  ⇒ Track A NIE PASUJE scenario (e) (gap > 2%)
+  T-A3.3 Track A approximates scenario (e): FAIL
+
+======================================================================
+ SUMMARY: T-A3 = 1/3 PASS
+ OP-EHT-A T-A3 verdict: PARTIAL — converges but magnitude OFF from scenario (e)
+ ⇒ Naive proper-time coupling INSUFFICIENT for M9.1'' rescue
+ ⇒ Refined coupling f(psi) = sqrt(g_tt^GR/g_tt^TGP) needed
+    but lacks first-principles derivation in M9.1''.
+======================================================================

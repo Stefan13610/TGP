@@ -1,0 +1,50 @@
+======================================================================
+ OP-EHT-A T-A4 + T-A5 — combined validation
+======================================================================
+
+[T-A4] M9.1'' P3 weak-field re-validation:
+  Mercury U_N = 5e-09
+  Track A f(psi) at Mercury = 0.9999999800
+  |f - 1| = 2.00e-08
+  Cassini bound (γ_PPN - 1): 2.3e-5
+  LLR bound    (β_PPN - 1): 8e-5
+
+  Cassini U_grazing ~ 5e-06
+  Track A f(psi) at Cassini = 0.99998000
+  |f - 1| = 2.00e-05
+
+  γ_PPN derivation: from g_tt - g_rr ratio (M9.1'' metric form fixed)
+  ⇒ Track A NIE shifts γ_PPN at 1PN (structural)
+  ⇒ γ_PPN = 1 EXACTLY (z M9.1'' P1 audit)
+  ⇒ β_PPN = 1 EXACTLY (z M9.1'' P1 audit)
+
+  2PN deviation Mercury (O(U^3)): 1.25e-25
+  Cassini bound: 2.3e-5
+  Ratio: 5.43e-21 (auto-pass)
+
+  T-A4 result: PASS — Mercury/Cassini/LLR auto-pass under Track A
+
+[T-A5] OP-7 c_GW = c_0 cross-check under Track A:
+  Tensor sector EOM (OP-7 T3 closure):
+    Box sigma_ab + m_sigma^2 sigma_ab = -xi T^TT_ab
+    xi = 4 pi G EXACT (OP-7 T6 reconciliation)
+    spectral decoupling: m_sigma << omega_LIGO ~ 10^-13 eV
+
+  Track A modification: matter coupling f(psi) renormalizes T^TT
+    T^TT' = T^TT × f(psi)
+  ⇒ source amplitude shifts, NOT propagation kinematics
+  ⇒ wave equation sigma_ab kinetic structure unchanged
+  ⇒ c_GW determined by sigma_ab kinetic term, INDEPENDENT of T^TT
+
+  Linearized wave eq (vacuum):
+    Box sigma_ab + m_sigma^2 sigma_ab = 0
+    -> dispersion: omega^2 = c_0^2 (k^2 + m_sigma^2/c_0^2)
+    -> phase velocity at large k: c_GW = c_0 EXACT
+  ⇒ Track A NIE narusza OP-7 c_GW = c_0 prediction
+
+  T-A5 result: PASS — c_GW = c_0 structurally preserved (matter coupling-independent)
+
+======================================================================
+ SUMMARY: T-A4 + T-A5 = 2/2 PASS
+ Both weak-field PPN and GW propagation auto-preserved under Track A.
+======================================================================
