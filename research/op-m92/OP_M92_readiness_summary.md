@@ -17,6 +17,13 @@ phantom transition pushed to z ≈ 1e+11 (pre-BBN, unobservable régime).
 de2 theorem strukturalnie zachowane.
 See [[research/op-m92/OP_M92_P0plus_candD_cosmology_results.md]].
 
+**Phase 0+ WEP cross-check (2026-04-25 wieczór):** Candidate D modyfikuje
+TYLKO sektor grawitacyjny (matter EOM niezmodyfikowane) → UFF preserved
+strukturalnie. Residual Nordvedt-like η_MICROSCOPE ~ 1.6e-16 vs bound
+1.1e-15 (margin 6.7× TIGHT); η_LLR ~ 4.7e-29 vs 1.4e-13 (margin 3e+15×).
+MICROSCOPE = tightest constraint, wymaga rigorous Phase 1 derivation.
+See [[research/op-m92/OP_M92_P0plus_candD_wep_results.md]].
+
 ---
 
 ## TL;DR
@@ -88,6 +95,7 @@ mechanism, nie ma viable q-flow path.
 - [x] Readiness summary (this file)
 - [x] **Phase 0+ Candidate D sketch (2026-04-25 afternoon)** — 5/5 POSITIVE
 - [x] **Phase 0+ Candidate D cosmology cross-check (2026-04-25)** — POSITIVE (w(z) ≥ −1 preserved)
+- [x] **Phase 0+ Candidate D WEP cross-check (2026-04-25)** — POSITIVE (UFF structural; MICROSCOPE margin 6.7× TIGHT)
 - [ ] ngEHT 2030+ verdict (DEFERRED)
 - [ ] Candidate D Phase 1 derivation (scheduled 2026 Q3-Q4)
 - [ ] Full M9.2 axiom paper (DEFERRED to 2032+)
