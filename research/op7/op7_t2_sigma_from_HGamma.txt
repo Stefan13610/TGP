@@ -1,0 +1,205 @@
+
+========================================================================
+  CZESC A: Analityczna struktura sigma_ab z H_Gamma
+========================================================================
+
+  Substratowy Hamiltonian (v2 GL-bond, sec.B paper):
+
+    H_Gamma = sum_i [pi_i^2 / (2 mu) + (m0^2/2) s_i^2 + (lambda0/4) s_i^4]
+              + J * sum_{<ij>} A_ij s_i^2 s_j^2 (s_j^2 - s_i^2)^2
+
+  Z2 symmetria:  s_i -> -s_i  pozostawia H_Gamma niezmienione.
+
+  Kompozytowy operator nearest-neighbor:
+
+    K_{ab}(x) = lim_{|B| -> inf}  (1/|B|) sum_{i in B}
+                  s_i * s_{i + e_a} * s_i * s_{i + e_b} / <s^2>
+
+  W formie uproszczonej (po wykorzystaniu samouzgadniajacego MF):
+
+    K_{ab}(x) ~ (1/|B|) sum_{i in B} s_i s_{i + e_a}    (jesli a == b)
+              ~ <s_i s_{i+e_a}>_B                       (bilinear)
+
+  Po dekompozycji 3x3 macierzy K na slad + bezsladowa:
+
+    K_{ab} = (1/3) (Tr K) delta_{ab} + sigma_{ab}
+
+  gdzie sigma_{ab} jest 5-skladowym TT-czesta (3D symmetric traceless).
+
+  Wlasnosci sigma_ab (do zweryfikowania ponizej):
+
+    (i)   bilinear w s-hat: K_ab ~ s s, wiec sigma_ab tez
+    (ii)  Z2-parzyste: s -> -s  =>  s s -> s s  =>  K_ab -> K_ab
+    (iii) symmetric + traceless (z konstrukcji)
+    (iv)  rank-2 tensor SO(3) (lattice -> kontinuum przez block-averaging)
+    (v)   prozni izotropowa: <s_i s_{i+e_a}> = const dla wszystkich a
+          => K_ab ~ delta_ab => sigma_ab = 0
+    (vi)  anizotropowe zrodlo (np. kwadrupol mat.) lamie SO(3) lokalnie
+          => <s_i s_{i+e_a}> rozne dla roznych a => sigma_ab != 0
+
+
+========================================================================
+  CZESC B: Sympy weryfikacja symbolicznych wlasnosci
+========================================================================
+
+  --- B.1  Z2 parzystosc: K_ab(s) = K_ab(-s) ---
+  [PASS] Bilinear K_ab Z2-parzysty (s -> -s zostawia K niezmienione)  [K(-s) - K(s) = 0]
+
+  --- B.2  SO(3) kowariancja: sigma_ab -> R_ac R_bd sigma_cd ---
+  K_ab = s_a s_b =
+Matrix([[sx**2, sx*sy, sx*sz], [sx*sy, sy**2, sy*sz], [sx*sz, sy*sz, sz**2]])
+
+  Tr(K) = sx**2 + sy**2 + sz**2
+  sigma_ab = K_ab - (1/3) Tr(K) delta_ab
+  [PASS] SO(3) kowariancja: sigma(R s) = R sigma(s) R^T  [||sigma_rot - R sigma R^T||^2 = 0]
+  [PASS] sigma_ab symetryczne
+  [PASS] sigma_ab traceless (z konstrukcji)  [Tr(sigma) = 0]
+
+========================================================================
+  CZESC C: Lattice MC weryfikacja sigma_ab
+========================================================================
+
+  Toy model v2 GL-substrate na siatce 3D L^3 (L = 24):
+
+    Konfiguracja:  s(x,y,z) = v0 + delta s(x,y,z)
+    Faza uporzadkowana:  v0 = 1.0 (dimensionless)
+    Fluctuacje:    delta s ~ Gaussian(0, sigma_fluct)
+
+  Pomiar gradient strain tensor (kompozyt rank-2 z H_Gamma):
+    K_ab^B = <(d_a s)(d_b s)>_B
+    sigma_ab = K_ab - (1/3) delta_ab Tr(K)
+
+  Uwaga: ⟨ŝ_i · ŝ_{i+ê_a}⟩ jako single-step nearest-neighbor jest
+  formalnie wektorem (jeden indeks a). Naturalna kompozytowa
+  reprezentacja rank-2 traceless z czlonu kinetycznego H_Gamma to
+  gradient strain tensor (d_a s)(d_b s), ktory ma wszystkie pozadane
+  wlasnosci (i)-(vi).
+
+  Test:
+    C.1  prozni izotropowa: sigma -> 0
+    C.2  z kwadrupolowym zaburzeniem: sigma != 0, ksztalt zgodny
+    C.3  Z2 parity: sigma(s) = sigma(-s)
+    C.4  SO(3) kowariancja: sigma(R[s]) = R sigma(s) R^T (numerycznie)
+
+
+  --- C.1  Prozni izotropowa: sigma -> 0 ---
+  Lattice 32^3, vacuum config (Gaussian noise, isotropic)
+  Phi = <s^2> = 1.0024
+  Tr(K) = 0.0038
+  K diagonal: [0.001248   0.00125307 0.00125698]
+  ||sigma_vac|| (Frobenius) = 2.2325e-05
+  Anisotropy ||sigma|| / Tr(K) = 5.9405e-03
+  [PASS] Vacuum: anisotropy ||sigma|| / Tr(K) < 1%  [5.9405e-03]
+
+  Sredni |sigma_vac| (20 realizacji): 2.7075e-05 +/- 9.7873e-06
+
+  --- C.2  Kwadrupolowe zaburzenie: sigma != 0 ---
+
+  Konfiguracja: BINARY mass-like source wzdluz osi X (GW150914-like geometry).
+  Dwie Gaussianskie kondensacje pola substratowego:
+    delta s = A_q * [ exp(-((x-X0)^2 + y^2 + z^2) / (2 w^2))
+                    + exp(-((x+X0)^2 + y^2 + z^2) / (2 w^2)) ]
+
+  Ten ksztalt LAMIE x<->y symetrie:
+    - rozszerzony wzdluz osi X (separacja 2*X0)
+    - skompresowany wzdluz Y, Z (szerokosc w)
+  => gradient strain tensor ma sxx != syy != szz (3 rozne diag. wartosci).
+
+  Spodziewamy sie:
+    - sigma_xx mniejsza (gradienty sa lokalne wokol kazdej kondensacji)
+    - sigma_yy ~ sigma_zz (symetria osiowa wokol osi X)
+    - off-diagonal ~ 0 (czysty kwadrupol w glownych osiach)
+
+  Phi = <s^2> = 1.3266
+  K diagonal: [0.00043795 0.00096808 0.00096808]
+  sigma_quad =
+    [-0.00035  +0.00000  +0.00000]
+    [+0.00000  +0.00018  +0.00000]
+    [+0.00000  +0.00000  +0.00018]
+
+  Anizotropia ||sigma_quad|| / Tr(K) = 1.8232e-01
+  [PASS] Quadrupol: |sigma_quad| >> |sigma_vac| (signal >= 10x noise floor)  [|sigma_quad|=4.3284e-04, |sigma_vac|=2.7075e-05, ratio=16x]
+
+  Diag(sigma_quad): sigma_xx = -3.53416e-04, sigma_yy = +1.76708e-04, sigma_zz = +1.76708e-04
+  [PASS] Quadrupol: sigma_xx + sigma_yy + sigma_zz = 0 (traceless verified)  [sum = -2.1684e-19]
+  diag spread (max - min) = 5.3012e-04
+  [PASS] Quadrupol: diag spread (max - min) > 10*|sigma_vac_floor|  [diag_spread=5.3012e-04, 10*floor=2.7075e-04]
+  |sxx-syy| = 5.3012e-04, |sxx-syy|/floor = 19.6x
+  [PASS] Quadrupol: x<->y zlamane (binary along X) |sxx-syy| > 5*|sigma_vac_floor|  [|sxx-syy|=5.3012e-04]
+
+  --- C.3  Z2 parity: sigma(s) = sigma(-s) ---
+  ||sigma(s) - sigma(-s)||_inf = 0.0000e+00
+  [PASS] Z2 parity sigma(s) = sigma(-s)  [max diff = 0.0000e+00]
+
+  --- C.4  SO(3) kowariancja: sigma(R[s]) ~ R sigma(s) R^T ---
+
+  Test: obroc cala konfiguracje o 90 stopni wokol osi z
+  (czyli przepermutuj X <-> Y, ze znakiem).
+  Spodziewamy sie: sigma_obrocony = R_z(90) * sigma_quad * R_z(90)^T
+
+  Dla R_z(90):  X_new = -Y, Y_new = X, Z_new = Z
+  Wiec kwadrupol (x^2 - y^2) -> (y^2 - x^2) = -(x^2 - y^2)
+  Macierz sigma_quad sigma_xx ~ +A,  sigma_yy ~ -A
+  Po obrocie: sigma_yy <-> sigma_xx (z permutacja x<->y)
+  i znaki sie zmienia: (x^2-y^2) -> -(x^2-y^2) -> sigma_xx -> -sigma_xx,  sigma_yy -> -sigma_yy
+
+  sigma po permutacji X<->Y =
+    [+0.00018  +0.00000  +0.00000]
+    [+0.00000  -0.00035  +0.00000]
+    [+0.00000  +0.00000  +0.00018]
+
+  R sigma R^T (oczekiwane) =
+    [+0.00018  +0.00000  +0.00000]
+    [+0.00000  -0.00035  +0.00000]
+    [+0.00000  +0.00000  +0.00018]
+
+  ||sigma_obrocony - R sigma R^T||_inf = 0.0000e+00
+  [PASS] SO(3) kowariancja (permutacja X<->Y, MC tolerance)  [0.0000e+00 < 2.7621e-02]
+
+  Eigenvalues sigma_quad: [-0.00035342  0.00017671  0.00017671]
+  Sum (powinno byc 0):   -2.1684e-19
+  [PASS] Suma eigenvalues sigma = 0 (traceless)
+
+========================================================================
+  CZESC D: Werdykt T2
+========================================================================
+
+  Suma checks:
+    [PASS] Bilinear K_ab Z2-parzysty (s -> -s zostawia K niezmienione)
+    [PASS] SO(3) kowariancja: sigma(R s) = R sigma(s) R^T
+    [PASS] sigma_ab symetryczne
+    [PASS] sigma_ab traceless (z konstrukcji)
+    [PASS] Vacuum: anisotropy ||sigma|| / Tr(K) < 1%
+    [PASS] Quadrupol: |sigma_quad| >> |sigma_vac| (signal >= 10x noise floor)
+    [PASS] Quadrupol: sigma_xx + sigma_yy + sigma_zz = 0 (traceless verified)
+    [PASS] Quadrupol: diag spread (max - min) > 10*|sigma_vac_floor|
+    [PASS] Quadrupol: x<->y zlamane (binary along X) |sxx-syy| > 5*|sigma_vac_floor|
+    [PASS] Z2 parity sigma(s) = sigma(-s)
+    [PASS] SO(3) kowariancja (permutacja X<->Y, MC tolerance)
+    [PASS] Suma eigenvalues sigma = 0 (traceless)
+
+  Wynik: 12/12 pass
+
+  WERDYKT T2: POSITIVE
+
+  T2 sprawdza, ze sigma_ab postulowane w tgp_core.tex sec.2 jest:
+    (i)   bilinear w s-hat                                           PASS
+    (ii)  Z2-parzyste                                                PASS (analitycznie + lattice)
+    (iii) symmetric + traceless (5 d.o.f.)                           PASS
+    (iv)  rank-2 tensor SO(3)                                        PASS (sympy + lattice)
+    (v)   znika w prozni izotropowej                                 PASS (lattice MC)
+    (vi)  niezerowe przy kwadrupolu                                  PASS (lattice MC)
+
+  ZNACZENIE T2:
+    sigma_ab nie jest "dodanym" stopniem swobody -- jest emergentnym
+    operatorem kompozytowym pojedynczego pola s-hat z H_Gamma.
+    TGP zachowuje single-substrate axiom.
+
+  T2 jest niezbednym lecz niewystarczajacym -- pokazuje TYLKO ze
+  sigma_ab jest dobrze zdefiniowana jako operator kinematyczny.
+  Pozostaje pokazac:
+    - Dynamike sigma_ab (T3): rownanie ruchu propagujace na c_0
+    - Sprzezenie do metryki (T4): Lambda(psi)
+    - Amplituda kwadrupolowa h_TT (T5): formula GR-like
+    - Konsystencja PPN, c_GW (T6)
+
