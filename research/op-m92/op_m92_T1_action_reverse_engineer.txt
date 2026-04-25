@@ -1,0 +1,72 @@
+======================================================================
+ OP-M92 T-M92.1 — Reverse-engineer scenario (e) action requirements
+======================================================================
+
+[T-M92.1.1] Scenario (e) coupling at photon ring:
+  f_e(psi, r, M) = sqrt(psi)*sqrt((2*M - r)/(3*psi - 4))/sqrt(r)
+
+  Two interpretations of where to evaluate g_tt^GR:
+  (i) at TGP photon ring (r=3.88 M):    f_e = 1.0682
+  (ii) at GR photon ring (r=3 M):       f_e = 0.8860
+  Target from OP-EHT T3 scenario (e):   0.886
+  Matches target (interpretation ii): True
+  ⇒ Scenario (e) ansatz is doubly non-local: compares
+    TGP at r_ph^TGP=3.88M to GR at r_ph^GR=3M (DIFFERENT r values)
+
+[T-M92.1.2] Power-law approximation f(psi) = psi^(-alpha):
+  alpha (fitted at psi_ph, target 0.8860) = 0.7796
+  Closest rational: 3/4 = 0.7500
+  Match within 5%: True
+
+[T-M92.1.3] 1PN expansion of scenario (e) coupling:
+  f^2_e(U) = 192*U**3 + 32*U**2 + 6*U + 1
+  f_e(U) ≈ 23*U**2/2 + 3*U + 1
+  f_e(U=0) = 1 (must be 1 for 1PN preservation)
+
+[T-M92.1.4] Action principle minimum requirements:
+  Required structure of L_mat for scenario (e):
+    L_mat^(e) = -q × phi × rho × f_e(psi, r) / Phi_0
+  
+  Decomposition needed:
+    f_e(psi, r) = sqrt(g_tt^GR(r) / g_tt^TGP(psi))
+
+  Problem: g_tt^GR(r) = -(1 - 2M/r) = -(1 - 2 phi_GR(r))
+           where phi_GR is GR Newtonian potential.
+  In M9.1'', phi_TGP(r) is the TGP scalar field;
+  there is NO independent phi_GR object in single-field substrate.
+
+  ⇒ M9.2 must introduce a SECOND structure that mimics phi_GR(r)
+    in the strong-field while reducing to phi_TGP(r) in weak-field.
+
+  Three structural options:
+    (a) Auxiliary field sigma(x) with non-minimal coupling
+    (b) Conformal frame g_mat = Omega^2(psi) g
+    (c) ψ-dependent matter charge q(psi) with q(1)=q_0
+  Each option needs T-M92.2..T-M92.5 analysis
+
+[T-M92.1.5] Power-law f(psi) = psi^(-3/4) as M9.2 candidate baseline:
+  f_pow(psi=1.168) = 0.8901
+  vs scenario (e) target: 0.886
+  Discrepancy: 0.4%
+
+  1PN expansion: f_pow(1+2U) = -77*U**3/16 + 21*U**2/8 - 3*U/2 + 1
+  Linear-in-U coefficient: -3/2 (vs scenario (e): +3 from above)
+  ⇒ Power-law has WRONG sign at 1PN — Mercury γ_PPN shift
+
+======================================================================
+ T-M92.1 SUMMARY — action principle requirements:
+======================================================================
+
+ Findings:
+  1. Scenario (e) coupling f(psi, r) = sqrt(g_tt^GR(r)/g_tt^TGP(psi))
+     is INHERENTLY non-local (depends on r as well as psi).
+  2. Single-field M9.1'' cannot reproduce non-locality structurally.
+  3. Power-law approx psi^(-3/4) matches at photon ring but breaks
+     1PN preservation (linear-U coefficient wrong sign).
+  4. M9.2 must introduce a SECOND structure (sigma field, conformal
+     factor, q(psi) flow, or back-reaction) to bridge non-locality.
+
+ Verdict: DIAGNOSTIC — establishes that scenario (e) coupling
+          requires non-trivial structural extension of M9.1''.
+          This justifies the 4-candidate M9.2 program in OP_M92_setup.md.
+======================================================================

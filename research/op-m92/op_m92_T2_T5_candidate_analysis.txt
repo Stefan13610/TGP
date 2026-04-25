@@ -1,0 +1,119 @@
+======================================================================
+ OP-M92 T-M92.2..T-M92.5 — M9.2 candidate structural analysis
+======================================================================
+
+[T-M92.2] CANDIDATE A: Dual-field (Phi + sigma)
+  Action: S = ∫ [-(∇Φ)²/(8πG) + α(∇σ)² + V(Φ,σ)
+             + L_mat[Φ, σ]] √-g d⁴x
+  Matter coupling: f(Phi, sigma) ~ sqrt(g_tt^GR/g_tt^TGP)
+  Mechanism: sigma sources GR-like backbone, decouples in weak-field
+
+  Cost (a) Strong-field rescue: PLAUSIBLE
+    - sigma can source backbone via dynamical equation:
+      Box sigma = beta × T^mat_mu^mu (sourced by matter)
+    - tunable to mimic scenario (e) at photon ring
+
+  Cost (b) Weak-field PPN: STRINGENT (Brans-Dicke)
+    - In Brans-Dicke: γ_PPN = (1+ω)/(2+ω) where ω is BD coupling
+    - Cassini bound |γ_PPN-1| < 2.3e-5 → ω > 40000
+    - Strong constraint: sigma must be heavy or screened
+    - Vainshtein/chameleon screening required
+
+  Cost (c) Structural risk: HIGH
+    - Violates single-Φ Z_2 substrate principle
+    - Two-field potential V(Φ,σ) introduces tuning
+    - Requires explanation: why two fields?
+
+  Verdict A: VIABLE but expensive structurally
+
+[T-M92.3] CANDIDATE B: Conformal frame (g_mat = Omega^2(psi) g)
+  Matter coupling: g_mat^μν = Omega²(psi) g^μν
+  Mechanism: matter sees rescaled metric via Omega(psi)
+
+  Cost (a) Strong-field rescue: PLAUSIBLE if Omega²(1.168) = 0.785
+    - Omega²(psi) functional form: requires non-trivial profile
+
+  Cost (b) Weak-field PPN: PROBLEMATIC
+    - Conformal transformations shift γ_PPN unless Omega(1) = 1, Omega'(1) = 0
+    - But Omega²(1.168) ≠ 1 requires Omega'(1) ≠ 0 (unless Omega is highly
+      non-monotonic)
+    - Similar to Brans-Dicke: ω_BD > 40000 needed → fine-tuning
+
+  Cost (c) Structural risk: MEDIUM
+    - Conformal frames are well-studied (scalar-tensor theories)
+    - But equivalence principle (composition-independence) constrains
+      Omega(psi) tightly via 5th force experiments (|η| < 1e-13)
+
+  Verdict B: VIABLE but constrained, similar to scalar-tensor gravity
+
+[T-M92.4] CANDIDATE C: q-flow (q(psi) RG-style running)
+  Matter coupling: L_mat = -q(psi) × phi × rho / Phi_0
+  with q(psi=1) = q_0 and q(psi_ph=1.168) = q_0 × 0.886
+
+  Power-law q(psi) = q_0 × psi^(-0.7794) ≈ q_0 × psi^(-3/4)
+
+  Cost (a) Strong-field rescue: VIABLE
+    - Power-law q(psi) ~ psi^(-3/4) matches 0.4% at photon ring
+    - But this is a fitted form, not derived from RG
+
+  Cost (b) Weak-field PPN: FAIL (as in T-M92.1.5)
+    - q(1+2U) ≈ q_0 × (1 - 3U/2 + ...) → effective shift of φ-source
+    - This translates to γ_PPN shift O(1) at Mercury → BREAKS Cassini
+    - Unless q(psi) flows ONLY in strong-field (psi-threshold)
+
+  Cost (c) Structural risk: HIGH
+    - q(psi) flow lacks first-principles motivation
+    - RG analogy (running coupling QED) is illustrative not rigorous
+    - Quantum coherence: variable q affects atom spectroscopy bounds
+      (|Δα/α| < 1e-17 from Al+/Hg+ clocks → tight constraint)
+
+  Verdict C: NOT VIABLE without psi-threshold mechanism
+
+[T-M92.5] CANDIDATE D: Momentum back-reaction
+  Action: S = S_M9.1'' + α ∫ T^μν J_μ J_ν √-g d⁴x
+  with J_μ = ∂_μ Φ (substrate flow)
+  Mechanism: stress-energy back-reaction self-suppresses Φ in strong-field
+
+  Cost (a) Strong-field rescue: PLAUSIBLE
+    - In strong-field T^μν is large, J_μ J^μ is large → α × T·J·J term grows
+    - Effective Φ-EOM gets modified by back-reaction term
+    - Matches Lenz-law intuition (substrate resists curvature)
+
+  Cost (b) Weak-field PPN: AUTO-PASS
+    - In weak-field T^μν ~ U², J_μ ~ U, so T·J·J ~ U^4
+    - Negligible vs leading O(U) terms → γ_PPN, β_PPN preserved at 1PN
+    - Naturally activates only in strong-field (no fine-tuning)
+
+  Cost (c) Structural risk: MEDIUM-HIGH
+    - Non-linear in T^μν → ghost modes if α has wrong sign
+    - Higher-derivative terms after integration by parts
+    - Unitarity analysis required (Ostrogradsky instability check)
+    - But: physically motivated (substrate self-back-reaction)
+
+  Verdict D: PROMISING — natural strong-field activation,
+             auto-preserves weak-field, but stability nontrivial
+
+======================================================================
+ T-M92.2..T-M92.5 SUMMARY — candidate map for ngEHT 2030+ response:
+======================================================================
+
+ Candidate           | Strong-field | Weak-field | Structural | Overall
+ --------------------|--------------|------------|------------|--------
+ A: Dual-field       |  Plausible   |  Stringent |  HIGH      | VIABLE*
+ B: Conformal frame  |  Plausible   |  Problematic | MEDIUM   | VIABLE*
+ C: q-flow           |  Viable      |  FAIL      |  HIGH      | NOT VIABLE
+ D: Momentum b-r     |  Plausible   |  AUTO-PASS |  MEDIUM-HI | PROMISING
+
+ * VIABLE means structurally possible but requires fine-tuning/screening
+
+ Recommendation for M9.2 priority order (if ngEHT 2030+ confirms GR):
+   1. CANDIDATE D (momentum back-reaction): natural activation,
+      auto-preserves weak-field, physically motivated
+   2. CANDIDATE A (dual-field): well-studied scalar-tensor framework,
+      requires Vainshtein/chameleon screening
+   3. CANDIDATE B (conformal frame): scalar-tensor analog,
+      tightly constrained but tractable
+   4. CANDIDATE C (q-flow): only if ψ-threshold mechanism emerges
+
+ Next: T-M92.6 decision tree synthesis (separate doc)
+======================================================================
