@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script (uses pre-M9.1'' background metric for MS perturbations).
+# Should be redone on M9.1'' hyperbolic background once σ_ab dynamics
+# (OP-7 T3) close, since CMB tensor power r requires both scalar and
+# tensor sectors to be self-consistent in the new metric.
+# Replaced by:
+#   - M9.1'' hyperbolic metric: research/op-newton-momentum/M9_1_pp_*.md
+#   - OP-7 T1+T2: research/op7/OP7_T{1,2}_results.md
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 """
 p73_perturbations_CMB.py — TGP: Numeryczne rozwiazanie rownan Mukhanowa–Sasakiego
 ===================================================================================

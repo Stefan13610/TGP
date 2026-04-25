@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script (relies on disformal metric, which was falsified).
+# CMB tensor perturbation analysis must be redone on the M9.1''
+# hyperbolic background once OP-7 σ_ab dynamics (T3) close.
+# Replaced by:
+#   - M9.1'' hyperbolic metric: research/op-newton-momentum/M9_1_pp_*.md
+#   - OP-7 T1+T2: research/op7/OP7_T{1,2}_results.md
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 """

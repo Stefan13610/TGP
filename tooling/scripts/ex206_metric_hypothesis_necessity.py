@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script (proves uniqueness of the *exponential* metric,
+# which is now superseded by M9.1'' hyperbolic form). Exponential
+# is equivalent to M9.1'' only at O(U); 2PN+ deviations are explicit.
+# Replaced by:
+#   - M9.1'' hyperbolic metric: research/op-newton-momentum/M9_1_pp_*.md
+#   - OP-7 T1+T2: research/op7/OP7_T{1,2}_results.md
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 """
 ex206_metric_hypothesis_necessity.py
 =====================================

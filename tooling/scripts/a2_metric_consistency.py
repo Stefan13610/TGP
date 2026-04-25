@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script (assumes power-law metric ψ^p, falsified by M9.1).
+# Replaced by:
+#   - M9.1'' hyperbolic metric: research/op-newton-momentum/M9_1_pp_*.md
+#   - OP-7 T1+T2: research/op7/OP7_T{1,2}_results.md
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 """
 a2_metric_consistency.py
 =========================

@@ -1,4 +1,15 @@
 # -*- coding: utf-8 -*-
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script (disformal waveform mechanism FALSIFIED by 18 orders
+# of magnitude in pre-pivot analysis). The tensor sector in TGP is now
+# being closed via OP-7 σ_ab composite (gradient strain), not disformal.
+# Replaced by:
+#   - M9.1'' hyperbolic metric: research/op-newton-momentum/M9_1_pp_*.md
+#   - OP-7 T1+T2: research/op7/OP7_T{1,2}_results.md
+#   - OP-7 T3-T6 (in progress)
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 """

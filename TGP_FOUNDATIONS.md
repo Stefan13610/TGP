@@ -34,9 +34,9 @@ Patrz `rem:hierarchia-sektorow` w `core/sek08_formalizm.tex` (lin. 15–47).
 
 | Poziom | Obiekt | Zawartość | Status |
 |---|---|---|---|
-| **0** | Substrat dyskretny `Γ = (V, E)` | Hamilton `H_Γ`, symetria Z₂, coarse-graining; `Φ = ⟨ŝ²⟩`, `σ_ab = ⟨ŝ ŝ_+a⟩` | (W) |
+| **0** | Substrat dyskretny `Γ = (V, E)` | Hamilton `H_Γ` (GL-bond, v2 2026-04-24), symetria Z₂, coarse-graining; `Φ = ⟨ŝ²⟩`, **`σ_ab = K_ab − (1/3)δ_ab Tr(K)`, `K_ab = ⟨(∂_a ŝ)(∂_b ŝ)⟩`** (gradient strain composite, OP-7 T2 2026-04-25) | (W) |
 | **1** | Równanie pola Φ | Operator `D_kin`, samointerferencja `N`, akcja TGP, α=2, β=γ | (W) |
-| **2** | Metryka efektywna `g_eff^μν[Φ, σ_ab]` | Metryka eksponencjalna, emergencja Einsteina, FRW, PPN | (E) |
+| **2** | Metryka efektywna `g_eff^μν[Φ, σ_ab]` | **Metryka hiperboliczna (M9.1'', 2026-04-25)** `g_tt = -c₀²(4-3ψ)/ψ`, emergencja w limicie GR, FRW, PPN (γ=β=1 exact) | (E) |
 | **3** | Materia i pola cechowania | Sprzężenie metryczne, Dirac, U(1)×SU(2)×SU(3), generacje | (P) |
 
 **Materia (poziom 3) sprzęga się z `Φ` wyłącznie przez `g_eff`**, nie
@@ -61,14 +61,19 @@ z:
 - **L_mat** = -(q/Φ_0) φ ρ
   (sprzężenie minimalne źródła ρ z Φ przez czynnik φ).
 
-- **Metryka efektywna** (forma potęgowa, izotropowa diagonalna):
+- **Metryka efektywna** (forma hiperboliczna, M9.1'' 2026-04-25, izotropowa diagonalna):
   ```
-  ds² = -(c_0²/φ) dt² + φ δ_ij dx^i dx^j
+  ds² = -c_0² (4-3ψ)/ψ · dt² + ψ/(4-3ψ) · δ_ij dx^i dx^j,    ψ = Φ/Φ_0
   ```
-  Forma eksponencjalna (równoważna do O(U), wybór z PPN):
-  ```
-  g_tt = -c_0² e^(-2U),   g_rr = e^(+2U),   gdzie U = potencjał Newtona.
-  ```
+  Daje **γ_PPN = β_PPN = 1 exact** w 1PN; współczynniki PPN wyższych rzędów
+  c₂=-1, c₃=+5/3, c₄=-10/3 (Schwarzschild reproduced, M9.1'' P1).
+
+  **Forma potęgowa** `g_tt = -c²/ψ` (poprzednie M9.1) **została sfalsyfikowana**
+  2026-04-25 (M9.1 T3: β_PPN=4 vs obs 1, 3·10⁴σ).
+
+  **Forma eksponencjalna** `g_tt = -c² e^(-2U)` (pre-pivot 2026-04-24, weak-field)
+  jest **równoważna M9.1'' do O(U)** ale różni się przy 2PN+:
+  M9.1'' przewiduje explicit `|Δg_tt| = (5/6)U³` deviation od GR (testowalne LIGO 3G).
 
 - **Element objętościowy:** √(-g_eff) = c_0 · φ (dokładnie).
 

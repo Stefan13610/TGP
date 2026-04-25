@@ -1,3 +1,16 @@
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script: assumes exponential metric g_tt = -exp(-2U), which
+# is now superseded by M9.1'' hyperbolic g_tt = -c²(4-3ψ)/ψ.
+# The 2PN/3PN deviation is now explicit and analytically known:
+#   |Δg_tt| = (5/6)U³ from M9.1'' P1 (Schwarzschild PPN c₃=+5/3, c₄=-10/3).
+# This script's predictions for QNM/perihelion 3PN are obsolete; redo
+# on hyperbolic background.
+# Replaced by:
+#   - M9.1'' P1: research/op-newton-momentum/M9_1_pp_P1_results.md
+#   - M9.1'' P3: research/op-newton-momentum/M9_1_pp_P3_results.md
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 """
 TGP v1 — Korekcje 3PN metryki eksponencjalnej
 ===============================================

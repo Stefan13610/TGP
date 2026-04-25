@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+# ============================================================
+# DEPRECATED 2026-04-25
+# Pre-pivot script (assumes antipodal f·h = 1 + power-law metric).
+# Falsified: M9.1 (g_tt = -c²/ψ) gives β_PPN = 4 vs obs 1.
+# Replaced by:
+#   - M9.1'' hyperbolic metric: research/op-newton-momentum/M9_1_pp_*.md
+#   - OP-7 T1+T2: research/op7/OP7_T{1,2}_results.md
+# Kept for reference; do NOT use for new analyses.
+# ============================================================
 """
 ex201_antipodal_metric_derivation.py
 =====================================

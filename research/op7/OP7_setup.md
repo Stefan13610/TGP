@@ -5,6 +5,12 @@
 **Następnik:** M9.1'' P3 (NOT-FALSIFIED, weak field) i P4 (paper integration).
 **Punkt wyjścia ontologiczny:** `tgp-core-paper/paper/tgp_core.tex` §2,
 `Remark: One substrate, two projections` (Φ ∝ ⟨ŝ²⟩, σ_ab ∝ ⟨ŝ·ŝ_{+â}⟩^TF).
+**Aktualizacja po T2 (2026-04-25):** definicja σ_ab z H_Γ jest **gradientowym
+naprężeniem** `σ_ab = K_ab − (1/3)δ_ab Tr(K)`, gdzie `K_ab = ⟨(∂_a ŝ)(∂_b ŝ)⟩_B`.
+Postać `⟨ŝ·ŝ_{+â}⟩^TF` (nearest-neighbor) jest *równoważna do leading order
+gradient expansion* na siatce, ale gradient-strain forma jest **kanoniczna**:
+pochodzi z kinetycznego termu H_Γ, naturalnie traceless+symmetric, ma 5 d.o.f.
+w 3D, znika w izotropowej próżni. Patrz [[OP7_T2_results.md]].
 **Wcześniejsze pre-pivotowe rozważania:** `tooling/scripts/substrate/tensor_from_substrate.py`,
 `tooling/scripts/gw/disformal_waveform.py`, `tooling/scripts/gw/gw_breathing_mode.py`.
 

@@ -8,11 +8,24 @@ Author: Mateusz Serafin | 2026
 
 ---
 
-## Status: v2 axiom pivot (2026-04-24)
+## Status: M9.1'' hyperbolic metric + OP-7 T1+T2 (2026-04-25)
 
-The substrate Hamiltonian `eq:H-Gamma` was changed from a v1 bilinear bond
-`−J Σ ŝ_i ŝ_j` to a v2 Ginzburg–Landau gradient bond
-`+J Σ A_ij ŝ_i² ŝ_j² (ŝ_j² − ŝ_i²)²` in the Z₂-even composite `Φ = ŝ²`.
+**Latest pivot chain (chronological):**
+- **2026-04-24 — v2 axiom pivot:** substrate Hamiltonian `eq:H-Gamma`
+  changed from v1 bilinear bond `−J Σ ŝ_i ŝ_j` to v2 Ginzburg–Landau
+  gradient bond `+J Σ A_ij ŝ_i² ŝ_j² (ŝ_j² − ŝ_i²)²` in `Φ = ŝ²`.
+- **2026-04-25 — M9.1'' hyperbolic metric:** algebraic form
+  `g_tt = -c₀²(4-3ψ)/ψ`, `g_rr = ψ/(4-3ψ)` (replaces previously
+  conjectured exponential `e^(2U/c₀²)`). Produces β_PPN = γ_PPN = 1
+  **exact at 1PN** + Schwarzschild PPN higher orders (c₂=-1, c₃=+5/3,
+  c₄=-10/3). Power-law `g_tt = -c²/ψ` (M9.1) **falsified** (β_PPN=4 vs 1).
+- **2026-04-25 — OP-7 T1+T2:** kinematic half of tensor sector closed.
+  T1 (no-tensor for single-Φ M9.1''): only breathing mode.
+  T2 (σ_ab as gradient strain composite): `σ_ab = K_ab − (1/3)δ_ab Tr(K)`
+  with `K_ab = ⟨(∂_a ŝ)(∂_b ŝ)⟩_B`, validated 12/12 PASS.
+  **OP-7 dynamical half (T3-T6) OPEN** — gates GW170817 unconditional.
+
+The substrate v2 pivot itself:
 
 - **Closes OP-6** at the axiom level (M1-A′ pivot): α = 2 follows
   directly via `prop:substrate-action` in dodatek B, no longer needing
