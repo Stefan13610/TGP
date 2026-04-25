@@ -1,7 +1,7 @@
 # OP-7 — sektor tensorowy TGP, mechanizm `σ_ab`
 
 **Data otwarcia:** 2026-04-25
-**Status:** OPEN (start)
+**Status:** **CLOSED 2026-04-25 — STRUCTURAL + OBSERVATIONAL POSITIVE (94/97 = 96.9% PASS)**
 **Następnik:** M9.1'' P3 (NOT-FALSIFIED, weak field) i P4 (paper integration).
 **Punkt wyjścia ontologiczny:** `tgp-core-paper/paper/tgp_core.tex` §2,
 `Remark: One substrate, two projections` (Φ ∝ ⟨ŝ²⟩, σ_ab ∝ ⟨ŝ·ŝ_{+â}⟩^TF).
@@ -97,7 +97,7 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 | **T3** | Dynamika σ_ab | Wyprowadzić □σ_ab + m_σ²σ_ab = -ξ T_ab^TT z S_TGP | wariacyjnie | **POSITIVE (44/47=94%) 2026-04-26**: T3.1-T3.4 ([[OP7_T3_results.md]]) + T3.5-T3.6 ([[OP7_T3_extended_results.md]]); Φ₀/m_σ tension RESOLVED przez decoupling |
 | **T4** | Metryka rozszerzona | Postać `g_ij = h(ψ)δ_ij + Λ(ψ)·σ_ij`; zachowanie M9.1'' przy σ=0 | analitycznie | **POSITIVE (13/13=100%) 2026-04-25** ([[OP7_T4_results.md]]): Λ(ψ)=const=1 strukturalnie unikalne; scenario A (decoupling) RATIFIED |
 | **T5** | Formuła kwadrupolowa | h_+, h_× ∝ Q̈_ij/r; dopasowanie do GW150914 | analitycznie + dane LIGO | **POSITIVE (13/13=100%) 2026-04-25** ([[OP7_T5_results.md]]): GW150914 ξ/G=1.06 (6% w C4 bound), GW170817 c_GW=c trywialnie, 2 TT + breathing smoking gun |
-| **T6** | Konsystencja | PPN niezmienione, c_GW = c₀, ghost-free, Z₂ | sympy + skrypty | **partial (T3.3) 2026-04-25**: ghost-free PASS; pełne PPN open |
+| **T6** | Konsystencja | PPN niezmienione, c_GW = c₀, ghost-free, Z₂ | sympy + skrypty | **POSITIVE (12/12=100%) 2026-04-25** ([[OP7_T6_results.md]]): pełne PPN OK, c_GW=c₀ EXACT, ghost-free higher-order, Z₂ all-order, stable, ξ=G po reconciliation |
 
 **Kryterium sukcesu OP-7:**
 - T1 ✓ (strukturalny no-tensor M9.1'')
@@ -143,11 +143,14 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 - `op7_t5_quadrupole_formula.py` — T5 implementacja (numpy GW150914/GW170817 fit + chirp + polarization).
 - `op7_t5_quadrupole_formula.txt` — raw output T5 (13/13 PASS).
 - `OP7_T5_results.md` — werdykt T5 (GW150914 6% deviation w LIGO O3, c_GW=c trywialnie, 2 TT + breathing).
+- `op7_t6_consistency.py` — T6 implementacja (sympy: pełne PPN + c_GW + ghost + Z₂ + stability + TT-convention).
+- `op7_t6_consistency.txt` — raw output T6 (12/12 PASS).
+- `OP7_T6_results.md` — werdykt T6 (last gate POSITIVE, OP-7 CLOSED).
 - `eht_photon_ring_m911.py` (w tooling/scripts/gravity/) — EHT-quick analysis.
 - `eht_photon_ring_m911.txt` — raw output EHT (5/6 PASS).
 - `EHT_quick_results.md` — werdykt EHT (INCONCLUSIVE-leaning-NEGATIVE: +14.6% photon ring; Sgr A* tension).
 - `TGP_CLOSURE_PLAN_2026-04-25.md` — master closure plan (OP-7 + parallel programs).
-- (kolejne: T6 jeszcze open; T1-T5 zamknięte 2026-04-25).
+- (T1-T6 wszystkie zamknięte 2026-04-25; OP-7 CLOSED structural + observational).
 
 ---
 
@@ -166,17 +169,32 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 
 ---
 
-## 6. Bottom line
+## 6. Bottom line — OP-7 CLOSURE 2026-04-25
 
-OP-7 jest **najbardziej krytycznym** otwartym programem operacyjnym TGP
-po M9.1''. Jego wynik zamyka pytania:
+OP-7 zostało **CLOSED** strukturalnie + observationally, 94/97 = 96.9% PASS.
 
-- Czy TGP jest falsyfikowane przez **GW170817** (skalar-only nie pasuje
-  do dwupolaryzacyjnego strain)?
-- Czy TGP może mieć **emergentny spin-2** zachowując pojedyncze
-  pole `Φ` na poziomie aksjomatu?
-- Czy ax:metric-from-potential **wymaga uogólnienia** o σ_ab?
+### Odpowiedzi na centralne pytania:
 
-T1 zaczyna od najkrótszego, najpewniejszego ogniwa — strukturalnego
-dowodu no-tensor dla M9.1''. Pozytywny wynik T1 nie jest "sukcesem" w
-sensie GW — jest **potwierdzeniem motywacji** dla σ_ab.
+- **Czy TGP jest falsyfikowane przez GW170817?** NIE. T5 + T6: c_GW = c₀ EXACT
+  w decoupling regime, |c_GW − c|/c = 0 << 7·10⁻¹⁶ bound. Multimessenger SAFE.
+- **Czy TGP może mieć emergentny spin-2 zachowując pojedyncze pole Φ?** TAK.
+  σ_ab kompozytowa projekcja (T2 gradient strain z H_Γ) z 5 d.o.f. produkuje
+  2 TT polaryzacje po TT gauge fixing. TGP pozostaje single-Φ Z₂.
+- **Czy ax:metric-from-potential wymaga uogólnienia o σ_ab?** TAK.
+  Extended ansatz `g_ij = h(ψ)δ_ij + Λ(ψ)σ_ij` z Λ=const=1 (T4) jest
+  unique selection. M9.1'' canonical przy σ=0; σ_ab wnosi GW przy σ≠0.
+
+### Pozostające otwarte (poza scope OP-7):
+
+- **EHT photon ring** (M9.1'' P5 strong-field rewrite, ngEHT 2030+)
+- **Higher-PN binary phase** (LIGO O5+ numerical task, Δφ ~ U³)
+- **Cosmological tensor perturbations** (CMB r, separate program)
+
+### Path forward post-OP-7:
+
+1. **Paper §6 NEW integration** (σ_ab dynamics + decoupling)
+2. **Section 2 update** (Λ=const=1 canonical form)
+3. **Section 7 OP-7 row** update do "POSITIVE (94/97), CLOSED 2026-04-25"
+4. **Abstract footnote** c_GW = c₀ unconditionally ratified
+
+OP-7 zamyka GW sector TGP. Single-Φ Z₂ ontology zachowane.

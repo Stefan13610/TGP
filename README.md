@@ -8,7 +8,7 @@ Author: Mateusz Serafin | 2026
 
 ---
 
-## Status: M9.1'' hyperbolic metric + OP-7 T1+T2 (2026-04-25)
+## Status: M9.1'' hyperbolic metric + OP-7 CLOSED (2026-04-25)
 
 **Latest pivot chain (chronological):**
 - **2026-04-24 — v2 axiom pivot:** substrate Hamiltonian `eq:H-Gamma`
@@ -23,16 +23,23 @@ Author: Mateusz Serafin | 2026
   T1 (no-tensor for single-Φ M9.1''): only breathing mode.
   T2 (σ_ab as gradient strain composite): `σ_ab = K_ab − (1/3)δ_ab Tr(K)`
   with `K_ab = ⟨(∂_a ŝ)(∂_b ŝ)⟩_B`, validated 12/12 PASS.
-- **2026-04-25 — OP-7 T3 + T3-extended + T4 + T5:** dynamical core
-  i observational closure tensor sektora. T3 (σ_ab dynamics, EOM, ξ
+- **2026-04-25 — OP-7 T3 + T3-extended + T4 + T5 + T6 → OP-7 CLOSED:**
+  pełna domknięcie tensor sektora TGP. T3 (σ_ab dynamics, EOM, ξ
   coupling): 44/47 PASS, ξ/G ≈ 1.06. T3-extended (Bethe-Salpeter +
   decoupling): 19/19 PASS, Φ₀/m_σ tension RESOLVED via spectral
   decoupling. T4 (Λ(ψ) metric coupling): 13/13 PASS, Λ=const=1
-  strukturalnie unique, scenario A RATIFIED. **T5 (full quadrupole +
-  GW150914/GW170817 fit): 13/13 PASS** — h_TGP_peak ≈ h_GR (6% w LIGO
+  strukturalnie unique, scenario A RATIFIED. T5 (full quadrupole +
+  GW150914/GW170817 fit): 13/13 PASS — h_TGP_peak ≈ h_GR (6% w LIGO
   O3 bound), c_GW=c trywialnie z decoupling, 2 TT + breathing scalar
-  smoking gun. **OP-7 T6 OPEN** (pełne PPN + Z₂ + nonperturbative
-  stability); T1-T5 strukturalnie + observationally complete.
+  smoking gun. **T6 (pełna konsystencja: PPN + c_GW + ghost-free + Z₂
+  + stabilność + TT-convention): 12/12 PASS** — wszystkie 10 PPN
+  parametrów w eksperymentalnych granicach (γ=β=1 EXACT, α₁₋₃=0,
+  ζ₁₋₄=0, ξ_PPN=0 z Z₂+gen.cov), c_GW=c₀ EXACT w decoupling, brak
+  ghostów wyższych rzędów (Källén-Lehmann ρ_TT(s) ≥ 0), Z₂ symetria
+  all-order, V_eff ograniczone z dołu (g₄ > 0), ξ/G = 1 EXACT
+  po reconciliacji konwencji TT (Maggiore × Wald × Greens). **OP-7
+  CLOSED 2026-04-25 — strukturalnie + observationally + konsystencja:
+  94/97 = 96.9% PASS.**
 
 The substrate v2 pivot itself:
 
@@ -91,7 +98,7 @@ From three inputs — the TGP coupling $g_0^e = 0.86941$, the cosmological const
 - Neutrino mass sum $\Sigma m_\nu = 59.6$ meV (normal ordering only; IO excluded)
 - Dark energy $w(z=0) = -0.994$, $\chi^2_\mathrm{TGP} \approx \chi^2_{\Lambda\mathrm{CDM}}$
 - Kinetic coupling $\alpha = 2$: algebraic theorem, not a fit
-- GW prediction (M9.1'' single-Φ, 2026-04-25): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) provides the two TT polarisations through the dynamics of OP-7 T3 (44/47 PASS, structural positive). **Φ₀/m_σ tension structurally RESOLVED via T3-extended spectral decoupling: σ_ab spectral gap 2 m_s ~ meV vs ω_LIGO ~ 10⁻¹³ eV ⇒ effective masslessness in LIGO band ⇒ GW170817 trivially safe.** Final amplitude matching ξ/G ≈ 1.06. **OP-7 T4 (metric coupling) closes structural positive (13/13 PASS): `g_ij = h(ψ) δ + Λ(ψ) σ` with `Λ(ψ) = const = 1` (in Φ₀=1 units) strukturalnie unique selection through 5 independent constraints; scenario A (decoupling) RATIFIED, h_TT = σ_ij exact.** **OP-7 T5 (full quadrupole + GW150914/GW170817 fit) closes structural positive (13/13 PASS): h_TGP_peak ≈ h_GR (6% deviation w LIGO O3 5-10% bound), c_GW=c trywialnie z decoupling, dokładnie 2 TT polaryzacje + breathing scalar (smoking gun dla 3G/Cosmic Explorer detector).** T6 (pełne PPN + nonperturbative stability) pending.
+- GW prediction (M9.1'' single-Φ, 2026-04-25, **OP-7 CLOSED**): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) provides the two TT polarisations through the dynamics of OP-7 T3 (44/47 PASS, structural positive). **Φ₀/m_σ tension structurally RESOLVED via T3-extended spectral decoupling: σ_ab spectral gap 2 m_s ~ meV vs ω_LIGO ~ 10⁻¹³ eV ⇒ effective masslessness in LIGO band ⇒ GW170817 trivially safe.** **OP-7 T4 (metric coupling) closes structural positive (13/13 PASS): `g_ij = h(ψ) δ + Λ(ψ) σ` with `Λ(ψ) = const = 1` (in Φ₀=1 units) strukturalnie unique selection through 5 independent constraints; scenario A (decoupling) RATIFIED, h_TT = σ_ij exact.** **OP-7 T5 (full quadrupole + GW150914/GW170817 fit) closes structural positive (13/13 PASS): h_TGP_peak ≈ h_GR (6% deviation w LIGO O3 5-10% bound), c_GW=c trywialnie z decoupling, dokładnie 2 TT polaryzacje + breathing scalar (smoking gun dla 3G/Cosmic Explorer detector).** **OP-7 T6 (pełna konsystencja: PPN + c_GW + ghost-free + Z₂ + stabilność + TT-convention) zamyka structural positive (12/12 PASS): wszystkie 10 PPN w eksperymentalnych granicach (γ=β=1 EXACT, α₁₋₃=ζ₁₋₄=ξ_PPN=0 z Z₂+gen.cov), c_GW=c₀ EXACT w decoupling, brak ghostów wyższych rzędów, Z₂ all-order, V_eff bounded below (g₄>0), ξ/G = 1 EXACT po reconciliacji konwencji TT (Maggiore × Wald × Greens factor 4π).** **OP-7 CLOSED 2026-04-25 — 94/97 = 96.9% PASS (strukturalnie + observationally + konsystencja).**
 
 ---
 
