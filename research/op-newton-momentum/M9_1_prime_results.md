@@ -521,7 +521,7 @@ wyprowadzeniem. Jego status badawczy:
 |------|--------|-----|
 | **P1**: wyższe rzędy PPN (c_3, c_4, ...) | **POZYTYWNE 2026-04-25** ([[M9_1_pp_P1_results.md]]) | spójność z GR poza β,γ |
 | **P2**: wyprowadzenie wariacyjne | **POZYTYWNY POSTULAT 2026-04-25** ([[M9_1_pp_P2_results.md]]) | brak akcji jednokrokowej; potrójna motywacja substratowa (P2-C ∧ P2-D ∧ P2-E) |
-| **P3**: testy obserwacyjne (LLR, GW170817) | otwarte | spójność dynamiczna |
+| **P3**: testy obserwacyjne (LLR, GW170817) | **NIE SFALSYFIKOWANE 2026-04-25** ([[M9_1_pp_P3_results.md]]) | weak-field PASS; GW170817 conditional tension; EHT open |
 | **P4**: rewrite sek08c, sek_stale | otwarte | dokumentacja nowej formy |
 
 **P2 — wynik:** Trzy niezależne pryncypia substratowe (P2-C: rozszerzony budżet
