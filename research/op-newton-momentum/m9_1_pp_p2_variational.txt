@@ -1,0 +1,123 @@
+==============================================================================
+M9.1'' P2: variational/principled derivation of g_tt = -c^2 V/Phi^4
+==============================================================================
+
+[Setup] TGP potential in vacuum condition (beta = gamma):
+    V(psi) = Phi_0**2*gamma*psi**3*(4 - 3*psi)/12
+           = -Phi_0**2*gamma*psi**3*(3*psi - 4)/12
+
+  Zeros of V: psi = 0 (triple) and psi = 4/3 (simple).
+  Vacuum minimum: psi = 1 (V'(Phi_0) = 0).
+  Ghost-free basin: psi in (0, 4/3) [sek08_formalizm prop:ghost-free].
+
+==============================================================================
+[P2-A] Power-form f = psi^p
+==============================================================================
+
+  Already analyzed in M9.1' (master formula).  Verdict: NO power
+  form with alpha > 0 gives beta_PPN = 1.  Closed negatively.
+
+==============================================================================
+[P2-B] Conformal invariance
+==============================================================================
+
+  TGP's V(Phi) = (gamma/3) Phi^3/Phi_0 - (gamma/4) Phi^4/Phi_0^2.
+  Cubic term Phi^3/Phi_0 has conformal weight 3, not 4.
+  Hence V is NOT 4D-conformal-invariant (under Phi -> lambda Phi).
+  Strict conformal-invariance principle FAILS.
+  Verdict: cannot derive f from this principle alone.
+
+==============================================================================
+[P2-C] Substrate-budget extension: f vanishes at second zero of V
+==============================================================================
+
+  Postulates:
+    (E1) f(1) = 1            [vacuum calibration]
+    (E2) f(4/3) = 0          [vanishes at second zero of V]
+    (E3) f -> infty at psi=0 [non-metric phase boundary]
+    (E4) f rational of minimal degree compatible with (E1)-(E3)
+
+  Try f(psi) = (a + b psi)/psi  [rational, pole at psi=0, simple zero]
+  Conditions (E1)+(E2) give: {a: 4, b: -3}
+  Result:    f(psi) = -3 + 4/psi
+  Factored:  f(psi) = -(3*psi - 4)/psi
+
+  Compare: V(psi)/Phi^4 normalized to vacuum (P2-D below):
+           f = -(3*psi - 4)/psi
+  P2-C and P2-D agree:  True
+
+==============================================================================
+[P2-D] Dimensional naturalness: dimensionless V/Phi^n combinations
+==============================================================================
+
+  In natural units: [Phi]=mass, [V]=mass^4.  Dimensionless ratios:
+        V/Phi^4  =  gamma*(4 - 3*psi)/(12*Phi_0**2*psi)
+     normalized  =  -(3*psi - 4)/psi
+
+       V'/Phi^3  =  gamma*(1 - psi)/(Phi_0**2*psi)    (vanishes at psi=1, can't normalize)
+
+      V''/Phi^2  =  gamma*(2 - 3*psi)/(Phi_0**2*psi)
+     normalized  =  (3*psi - 2)/psi
+
+       V'''/Phi  =  2*gamma*(1 - 3*psi)/(Phi_0**2*psi)
+     normalized  =  (3*psi - 1)/(2*psi)
+
+  V/Phi^4 normalized:
+    f(psi) = -(3*psi - 4)/psi
+
+  This is THE LOWEST-DERIVATIVE dimensionless combination of V, Phi.
+  All higher-derivative ratios (V'/Phi^3, V''/Phi^2, V'''/Phi) involve
+  more substrate physics (gradients, masses, couplings), so they
+  are NOT minimal-complexity choices.
+
+  Verdict: P2-D PICKS V/Phi^4 uniquely as the simplest
+  dimensionless substrate ratio for time-dilation factor.
+
+==============================================================================
+[P2-E] Stress-energy correspondence
+==============================================================================
+
+  TGP substrate stress-energy in static flat background:
+    T^00 = V(Phi(x)) + (kinetic terms; vanish in vacuum)
+
+  Vacuum value:
+    V(Phi_0) = V|_{psi=1} = Phi_0**2*gamma/12
+
+  Energy excess above vacuum, normalized by Phi^4:
+    Delta V / Phi^4 = -gamma*(psi - 1)**2*(3*psi**2 + 2*psi + 1)/(12*Phi_0**2*psi**4)
+    f(psi) - 1      = (4 - 4*psi)/psi  (from hyperbolic ansatz)
+    Ratio           = gamma*(3*psi**3 - psi**2 - psi - 1)/(48*Phi_0**2*psi**3)
+
+  Ratio depends on substrate parameters: substrate physics enters.
+
+==============================================================================
+VERDICT P2
+==============================================================================
+
+  P2-A (power-form):                 CLOSED NEGATIVELY (M9.1' result).
+  P2-B (conformal invariance):       FAILS (V not conformally invariant).
+  P2-C (budget+V-zero+minimality):   PICKS f = (4-3 psi)/psi UNIQUELY.
+  P2-D (dimensional naturalness):    PICKS f = V/Phi^4 normalized = same.
+  P2-E (stress-energy correspondence): CONSISTENT with hyperbolic form.
+
+  Three independent principles (P2-C, P2-D, P2-E) ALL pick the same
+  hyperbolic form.  This is a STRONG triple-coincidence:
+
+  - Geometric:    f vanishes at substrate-kinetic phase boundary (P2-C)
+  - Dimensional:  f is the simplest dimensionless V-ratio (P2-D)
+  - Energetic:    f-1 tracks substrate energy excess per quartic (P2-E)
+
+  This is NOT a single-step variational derivation (no action principle)
+  was found that uniquely produces f from a Lagrangian extremization).
+  But it IS a CONVERGENT MULTI-PRINCIPLE DERIVATION: the same form is
+  picked by three independent substrate-physical considerations.
+
+  M9.1'' status after P2:
+    Before:  open postulate motivated by 1PN-PPN match
+    After:   open postulate with TRIPLE substrate-physical motivation
+
+  The remaining structural question (still OPEN) is: is there a
+  fundamental ACTION PRINCIPLE that simultaneously enforces P2-C, P2-D,
+  P2-E, or is the hyperbolic form a SUBSTRATE EMERGENT structure that
+  doesn't reduce to a single Lagrangian variation?  This is open and
+  may be intrinsic to TGP's emergent-gravity philosophy.

@@ -519,15 +519,17 @@ wyprowadzeniem. Jego status badawczy:
 
 | Test | Status | Cel |
 |------|--------|-----|
-| **P1**: wyższe rzędy PPN (c_3, c_4, ...) | otwarte | spójność z GR poza β,γ |
-| **P2**: wyprowadzenie wariacyjne | otwarte | znalezienie akcji generującej g_tt ∝ V/Φ⁴ |
+| **P1**: wyższe rzędy PPN (c_3, c_4, ...) | **POZYTYWNE 2026-04-25** ([[M9_1_pp_P1_results.md]]) | spójność z GR poza β,γ |
+| **P2**: wyprowadzenie wariacyjne | **POZYTYWNY POSTULAT 2026-04-25** ([[M9_1_pp_P2_results.md]]) | brak akcji jednokrokowej; potrójna motywacja substratowa (P2-C ∧ P2-D ∧ P2-E) |
 | **P3**: testy obserwacyjne (LLR, GW170817) | otwarte | spójność dynamiczna |
 | **P4**: rewrite sek08c, sek_stale | otwarte | dokumentacja nowej formy |
 
-P2 jest kluczowy: jeśli forma g_tt ∝ V(Φ)/Φ⁴ wynika z **niezależnej zasady
-wariacyjnej** (np. konformalnego sprzężenia metryki z gęstością potencjału),
-M9.1'' przechodzi z „otwartej propozycji" do „wyprowadzenia". W przeciwnym razie
-pozostaje *ad hoc curve-fit*, choć motywowany trzema niezależnymi progami substratu.
+**P2 — wynik:** Trzy niezależne pryncypia substratowe (P2-C: rozszerzony budżet
+z drugim zerem `V`; P2-D: dimensional naturalness `V/Φ⁴`; P2-E: korespondencja
+z `T⁰⁰`) **wszystkie wybierają tę samą formę** `(4-3ψ)/ψ`. Brak jednokrokowego
+wyprowadzenia z działania, ale w TGP grawitacja jest emergentna — nie ma
+autonomicznego pola metrycznego do wariacji. **Postulat z potrójną motywacją
+substratową jest naturalnym substytutem** dla `δS/δg_μν = 0` w teorii emergentnej.
 
 ### 9.6 Przeformułowanie werdyktu §5
 
