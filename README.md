@@ -39,11 +39,13 @@ The substrate v2 pivot itself:
 - **All coarse-grained physics preserved:** K(φ) = φ⁴, α = 2,
   U(φ) = (β/3)φ³ − (γ/4)φ⁴ with β = γ, **hyperbolic metric (M9.1'',
   2026-04-25):** g_tt = -c₀²(4-3ψ)/ψ, g_rr = ψ/(4-3ψ); γ_PPN = β_PPN = 1
-  **exact at 1PN** (8 remaining PPN parameters pending OP-7 T3-T6 +
+  **exact at 1PN** (8 remaining PPN parameters pending OP-7 T4-T6 +
   M9.2 moving-source analysis); c_GW = c₀ in the scalar sector
-  (tensor sector pending OP-7 T3-T6). All 40 quantitative predictions
+  (tensor sector OP-7 T1-T3 + T3-extended structurally resolved
+  2026-04-25; T4-T6 pending). All 40 quantitative predictions
   below remain valid; the GW prediction row now reads "scalar breathing
-  mode (T1 closed); TT polarisations pending OP-7 dynamical half".
+  mode (T1 closed); composite σ_ab tensor (T2-T3 closed; T3-extended
+  resolved Φ₀/m_σ tension via spectral decoupling)".
 - **Companion papers** (N-body, lepton masses, BH shadow, letter,
   tgp-qm, tgp-sc) all work at the coarse-grained Φ level and are
   **transparent to this pivot** — no changes needed.
@@ -78,7 +80,7 @@ From three inputs — the TGP coupling $g_0^e = 0.86941$, the cosmological const
 - Neutrino mass sum $\Sigma m_\nu = 59.6$ meV (normal ordering only; IO excluded)
 - Dark energy $w(z=0) = -0.994$, $\chi^2_\mathrm{TGP} \approx \chi^2_{\Lambda\mathrm{CDM}}$
 - Kinetic coupling $\alpha = 2$: algebraic theorem, not a fit
-- GW prediction (M9.1'' single-Φ, 2026-04-25): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) is expected to provide the two TT polarisations once OP-7 T3-T6 dynamics close. **Until OP-7 dynamical half is closed, GW170817 unconditional pass remains pending.**
+- GW prediction (M9.1'' single-Φ, 2026-04-25): **only** scalar breathing mode at the kinematic level (OP-7 T1, no TT modes); the composite tensor projection $\sigma_{ab}$ (OP-7 T2, gradient strain) provides the two TT polarisations through the dynamics of OP-7 T3 (44/47 PASS, structural positive). **Φ₀/m_σ tension structurally RESOLVED via T3-extended spectral decoupling: σ_ab spectral gap 2 m_s ~ meV vs ω_LIGO ~ 10⁻¹³ eV ⇒ effective masslessness in LIGO band ⇒ GW170817 trivially safe.** Final amplitude matching ξ/G ≈ 1.06; T4 (Λ(ψ) metric coupling) pending for full closure.
 
 ---
 
