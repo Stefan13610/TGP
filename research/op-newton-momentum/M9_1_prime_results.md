@@ -428,3 +428,130 @@ Jeśli akceptujemy M9.1+M9.1' jako falsyfikację OP-2b:
 > wymagający wyprowadzenia z substratu. **W obecnym sformułowaniu
 > sek08c TGP jest sfalsyfikowane; forma hiperboliczna jako pivot B
 > jest otwartym problemem badawczym (M9.1'').**
+
+---
+
+## 9. M9.1'' — przełom: wyprowadzenie z V(Φ)/Φ⁴
+
+**Data dodania:** 2026-04-25 (kontynuacja w tym samym dniu).
+**Setup analityczny:** [[M9_1_pp_setup.md]].
+**Skrypt weryfikacyjny:** `m9_1_pp_verify.py` (output: `m9_1_pp_verify.txt`).
+
+### 9.1 Tożsamość algebraiczna
+
+Potencjał TGP w warunku próżni (β=γ, `sek08a` `prop:vacuum-condition`):
+
+```
+   V(Φ) = (β/3)·Φ³/Φ₀ - (γ/4)·Φ⁴/Φ₀²
+        = (γ/12)·Φ₀²·ψ³·(4 - 3ψ)
+```
+
+Definiując **znormalizowaną gęstość potencjału**:
+
+```
+   F(ψ) := V(Φ)/Φ⁴ = γ·(4 - 3ψ) / (12·Φ₀²·ψ)
+   F(1)  = γ / (12·Φ₀²)
+
+   f(ψ) := F(ψ)/F(1) = (4 - 3ψ)/ψ        ← TOŻSAMOŚĆ EXACT
+```
+
+To oznacza: **forma hiperboliczna z §4.2.1 NIE jest *post hoc* — to
+dokładnie znormalizowane V(Φ)/Φ⁴.** Jeden krok algebraiczny od potencjału
+TGP do GR-zgodnej metryki.
+
+### 9.2 Numeryczna weryfikacja
+
+`m9_1_pp_verify.py` wykorzystuje istniejące dane M9.1 ε(r):
+
+```
+Setup: M=q=σ=1, R_max=800, n_pts=5000
+Fit asymptotyczny:  c_2 = -0.99180  (analityczny limit: -1.0)
+
+Case (a) BOXED metryka f=1/ψ:
+   β_PPN (numeric):  +3.9836
+   β_PPN (c_2=-1):   +4.0000     [SFALSYFIKOWANE]
+
+Case (b) HIPERBOLICZNA f=(4-3ψ)/ψ:
+   β_PPN (numeric):  +0.9959
+   β_PPN (c_2=-1):   +1.0000     [ZGODNE Z GR EXACT]
+```
+
+Resztkowe 0.4% to ten sam bias R_max=800 co w M9.1 §2.3 (zbiega do
+zera w R_max → ∞). γ_PPN = 1 automatycznie (oba ansatze spełniają f·h=1).
+
+### 9.3 Trzy progi fizyczne
+
+Hiperboliczna forma jest „świadoma" trzech naturalnych progów substratu:
+
+```
+   ψ = 0    : V/Φ⁴ → ∞,  f → ∞     (faza niemetryczna, N0-4)
+   ψ = 1    : V'(Φ) = 0, f = 1     (próżnia, kalibracja g_tt = -c²)
+   ψ = 4/3  : V(Φ) = 0,  f = 0     (drugie zero V, brzeg basenu ghost-free)
+```
+
+Trzeci próg ψ=4/3 to dokładnie brzeg basenu kinetycznego z
+`prop:ghost-free-fundamental` (sek08_formalizm linia ~2562). **Forma
+metryki znika dokładnie tam, gdzie sprzężenie kinetyczne substratu
+przestaje być dodatnio określone** — geometryczna interpretacja:
+„brzeg sfery wpływu metrycznego".
+
+### 9.4 Postulat M9.1''
+
+Zaproponowany aksjomat (nadbudowa nad obecnym sek08c):
+
+```
+   ax:metric-from-potential
+   ─────────────────────────
+   g_tt(x) = -c² · (12·Φ₀²/γ) · V(Φ(x)) / Φ(x)⁴
+   g_rr(x) = +δ_ij / [(12·Φ₀²/γ) · V(Φ(x)) / Φ(x)⁴]      (z f·h=1)
+```
+
+Implikacje:
+- W formie znormalizowanej: f(ψ) = (4-3ψ)/ψ, h(ψ) = ψ/(4-3ψ).
+- **β_PPN = γ_PPN = 1 dokładnie** (zgodne z Mercury, Cassini, LLR).
+- Sprzężenie Newtona: q = 2πG/c² (4× mniejsze niż w boxed sek08c —
+  szczegóły w `M9_1_pp_setup.md` §5.4).
+
+### 9.5 Status logiczny
+
+`ax:metric-from-potential` jest **nowym postulatem**, nie
+wyprowadzeniem. Jego status badawczy:
+
+| Test | Status | Cel |
+|------|--------|-----|
+| **P1**: wyższe rzędy PPN (c_3, c_4, ...) | otwarte | spójność z GR poza β,γ |
+| **P2**: wyprowadzenie wariacyjne | otwarte | znalezienie akcji generującej g_tt ∝ V/Φ⁴ |
+| **P3**: testy obserwacyjne (LLR, GW170817) | otwarte | spójność dynamiczna |
+| **P4**: rewrite sek08c, sek_stale | otwarte | dokumentacja nowej formy |
+
+P2 jest kluczowy: jeśli forma g_tt ∝ V(Φ)/Φ⁴ wynika z **niezależnej zasady
+wariacyjnej** (np. konformalnego sprzężenia metryki z gęstością potencjału),
+M9.1'' przechodzi z „otwartej propozycji" do „wyprowadzenia". W przeciwnym razie
+pozostaje *ad hoc curve-fit*, choć motywowany trzema niezależnymi progami substratu.
+
+### 9.6 Przeformułowanie werdyktu §5
+
+**Aktualizacja §5 (po §9):**
+- §5 stwierdzał: „brak minimalnego pivotu w obecnym sformułowaniu sek08c".
+- §9 pokazuje: **istnieje pivot z naturalnym wyprowadzeniem algebraicznym
+  z V(Φ)** (jeden krok od potencjału TGP do hiperbolicznej formy).
+- Otwartym pytaniem nie jest „CZY forma istnieje" (istnieje, exact),
+  lecz „CZY g_tt ∝ V/Φ⁴ jest wymuszone deeper principle (P2) lub
+  ad-hoc selekcja".
+
+**Konkluzja zaktualizowana:**
+TGP w obecnym **boxed** sformułowaniu sek08c (g_tt = -c²/ψ) jest
+**sfalsyfikowane** (β_PPN=4). Pivot do **g_tt = -c² · V/Φ⁴**
+(po normalizacji: f=(4-3ψ)/ψ) **rescuje teorię na poziomie PPN**
+(β_PPN=γ_PPN=1) i ma naturalne wyprowadzenie algebraiczne z
+samego potencjału. Status M9.1'' = **otwarta hipoteza pivotu B**
+do testowania (P1–P4).
+
+### 9.7 Pliki M9.1''
+
+| Plik | Rola |
+|------|------|
+| `M9_1_pp_setup.md` | Setup analityczny M9.1'' (postulat, derivation, test plan) |
+| `m9_1_pp_verify.py` | Numeryczna weryfikacja β_PPN=0.996 z istniejącymi danymi M9.1 |
+| `m9_1_pp_verify.txt` | Wyjście weryfikacji |
+| `M9_1_prime_results.md` | Ten dokument (§9 = breakthrough M9.1'') |
