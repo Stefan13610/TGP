@@ -166,9 +166,14 @@ schedulowane do **2026 Q3-Q4 (start)** lub **post-ngEHT 2030+ verdict
   (margin 1.24e+33× today, phantom transition z ≈ 1e+11 pre-BBN unobservable)
 - ✅ **Phase 0+ WEP** (2026-04-25): UFF strukturalnie zachowane (matter EOM
   unchanged), MICROSCOPE η ~ 1.6e-16 vs bound 1.1e-15 (margin 6.7× TIGHT),
-  LLR margin 3e+15×. WEP = highest-priority Phase 1 item.
+  LLR margin 3e+15×. WEP = high-priority Phase 1 item.
+- ⚠️ **Phase 0+ multi-source self-consistency** (2026-04-25): ISSUE FLAGGED.
+  Naive constant α implies α_SI scales as M_BH² (2.3e+6 mismatch M87* vs
+  Sgr A*). Resolution Path E (α(ψ) z threshold) preferred. WEP margin
+  becomes calibration-dependent. **NEW Phase 1 priority #1: multi-source
+  consistency derivation.**
 - ⏳ **Phase 1** (deferred to 2026 Q3-Q4 OR post-ngEHT 2030+):
-  full covariant derivation + photon ring + cosmology + **rigorous WEP/Nordvedt**
+  multi-source consistency + WEP rigorous + photon ring + cosmology pertubations
 - ⏳ **Phase 2** (post-Phase 1): full M9.2 axiom paper / vindication paper
 
 ## 5. Files (Phase 0+)

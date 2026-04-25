@@ -1,0 +1,153 @@
+========================================================================
+ OP-M92 Phase 0+ — Candidate D multi-source self-consistency
+========================================================================
+
+[Setup] Sources for multi-source alpha extraction:
+  Sgr A*             M = 4.30e+06 M_sun, R_S = 1.269e+10 m  [EHT 2022]
+  M87*               M = 6.50e+09 M_sun, R_S = 1.920e+13 m  [EHT 2019]
+  GW150914 final     M = 6.50e+01 M_sun, R_S = 1.920e+05 m  [LIGO ringdown]
+  Neutron star       M = 1.40e+00 M_sun, R_S = 4.135e+03 m  [Stellar mass]
+
+[Step 1] Phase 0+ sketch heuristic recap:
+  Scenario (e) target: factor 0.886 at photon ring (r=3.88M, psi=1.168)
+  Required shift: 1 - 0.886 = 0.114 (universal in geom units)
+  Sketch: T*J*J / S_kin ~ O(1) in geom units at photon ring
+  => alpha (in M_BH^2 units) = 0.114 / O(1) ~ 0.1
+
+  IMPLICATION: alpha_geom ~ 0.1 is UNIVERSAL in geom units.
+  Converting to SI: alpha_SI = alpha_geom × R_S^2 (source-dependent!)
+
+[Step 2] alpha_SI extraction per source (assuming universal alpha_geom):
+  Source             R_S (m)        alpha_SI (m^2)     alpha_SI/L_Pl^2
+  ------------------------------------------------------------------------
+  Sgr A*             1.269e+10      1.611e+19          6.169e+88      
+  M87*               1.920e+13      3.686e+25          1.412e+95      
+  GW150914 final     1.920e+05      3.686e+09          1.412e+79      
+  Neutron star       4.135e+03      1.710e+06          6.549e+75      
+
+[Step 3] Self-consistency: is alpha_SI a single physical constant?
+  Reference: alpha_SI(Sgr A*) = 1.611e+19 m^2
+
+  Pairwise mismatch ratios:
+  Source             alpha_SI/alpha_ref     mass ratio^2   
+  ------------------------------------------------------------------------
+  Sgr A*             1.000e+00              1.000e+00      
+  M87*               2.288e+06              2.288e+06      
+  GW150914 final     2.288e-10              2.288e-10      
+  Neutron star       1.062e-13              1.062e-13      
+
+  CRITICAL FINDING: alpha_SI mismatches by orders of magnitude
+  M87*/SgrA*: factor (M_M87/M_SgrA)^2 ~ 2.3e6
+  GW150914/SgrA*: factor (65/4.3e6)^2 ~ 2.3e-10 (NS-like also)
+
+  => Phase 0+ heuristic 'alpha_geom ~ 0.1 universal' implies
+     alpha_SI is NOT a single physical constant — it scales as M_BH^2.
+     This violates universality of physical constants.
+
+[Step 4] Resolution paths (Phase 1 derivation requirements):
+
+  PATH A: TGP-intrinsic length scale L_TGP
+  -----
+  Candidate D action: alpha_dim × L_TGP^2 × T^mu_nu J_mu J_nu
+  with alpha_dim dimensionless and L_TGP a fundamental TGP scale.
+  Strong-field rescue requires L_TGP^2 ~ R_S(source)^2 / 0.1.
+
+    L_TGP required by Sgr A*: ~ 4.014e+09 m
+    L_TGP required by M87*:   ~ 6.072e+12 m
+  These differ by factor 1.513e+03
+  => Single L_TGP cannot satisfy both — PATH A FAILS for naive sketch.
+
+  PATH B: T^mu_nu refers to source-enhanced substrate density
+  -----
+  If substrate density rho_sub near BH scales as rho_sub ~ M_BH/R_S^3
+  (mass-density-like accretion), then T*J*J ~ M/R_S^3 × 1/R_S^2 = M/R_S^5
+  In geom units (M=R_S/2): T*J*J ~ 1/R_S^4 = 1/M^4
+  Then for rescue O(0.1):  alpha ~ 0.1 × M^4 (source-dependent)
+  => Same problem; PATH B FAILS without explicit M-dependence absorption.
+
+  PATH C: alpha is dimensionless, action term has M_Pl^-2 prefactor
+  -----
+  Action: alpha / M_Pl^2 × T*J*J  with alpha dimensionless O(1)
+  Effective alpha_SI = alpha / M_Pl_SI^2 = ?
+  In geom: alpha / 1 (since M_Pl=1 in geom) = alpha_dimensionless
+  Strong-field rescue at photon ring (r ~ M_BH):
+  T*J*J ~ rho_eff × (1/r)^2 with rho_eff = M/R_S^3 ~ M_Pl^4/M^2 (using M ~ M_BH)
+  Hmm: alpha/M_Pl^2 × M_Pl^4/M^2 × 1/M^2 = alpha × M_Pl^2/M^4
+    M_Pl/M_SgrA = 2.546e-45
+    factor M_Pl^2/M^4 ~ 6.482e-90
+  => rescue requires alpha ~ 1/M_Pl^2/M^4 ~ 1.543e+89
+  Astronomically large alpha — unphysical without further suppression.
+  => PATH C requires careful Phase 1 dimensional analysis.
+
+  PATH D: Scenario (e) target shift is NOT universal (re-examine T-M92.1)
+  -----
+  Possibility: scenario (e) factor f(psi)=sqrt(g_tt^GR/g_tt^TGP) at photon
+  ring depends on relative position r_ph^TGP=3.88M vs r_ph^GR=3M which IS
+  universal. So target +1.46% IS universal in geom units.
+  => PATH D NOT a viable resolution.
+
+  PATH E: Candidate D must be modified — non-minimal coupling
+  -----
+  Add explicit psi-dependence: alpha(psi) instead of constant alpha.
+  E.g., alpha(psi) ~ alpha_0 × (psi - 1)^n with threshold near psi=1.
+  This introduces extra parameter but allows source-independent
+  reproduction of strong-field rescue while preserving weak-field.
+  => PATH E adds tuning but is technically viable.
+
+[Step 5] Verdict — Phase 0+ multi-source self-consistency:
+
+  STATUS: ISSUE FLAGGED, not yet a fatal blow but requires
+          rigorous Phase 1 derivation to resolve.
+
+  Phase 0+ heuristic 'alpha ~ 0.1 (geom units)' is PHYSICALLY
+  INCONSISTENT across BH sources of different masses. Either:
+  - alpha is source-dependent (violates universality), OR
+  - the heuristic O(1) factor in T*J*J / S_kin needs revision, OR
+  - Candidate D needs non-minimal psi-coupling (PATH E)
+
+  Implications for Phase 0+ cross-checks done earlier today:
+
+  - Cosmology (margin 1e+33×): SAFE — even with alpha_SI varying by
+    factor 10^10, ratio still << 1 → w(z) ≥ -1 robust
+  - WEP MICROSCOPE (margin 6.7×): RECONSIDER — if alpha_SI for the
+    laboratory experiment scale is *LARGER* than Sgr A* calibration,
+    margin shrinks. Calibrating to local Earth gravity scale rather
+    than Sgr A* could give different number.
+  - GW vacuum c_GW = c_0: STRUCTURAL — unaffected (T=0 in vacuum)
+  - Strong-field rescue: REQUIRES PATH E (non-minimal coupling) or
+    re-examination of heuristic
+
+  PHASE 1 PRIORITY (REVISED):
+  1. (NEW) Multi-source self-consistency derivation — establish if
+     simple Candidate D action gives universal physical alpha
+  2. WEP rigorous Nordvedt analysis (previously top priority)
+  3. Photon ring numerical verification
+  4. Cosmology perturbation scale dependence
+
+========================================================================
+ PHASE 0+ MULTI-SOURCE SELF-CONSISTENCY SUMMARY:
+========================================================================
+
+ Heuristic alpha_geom ~ 0.1 (M_BH=1) implies alpha_SI scales as R_S^2:
+   Sgr A*:   alpha_SI = 1.61e+19 m^2
+   M87*:     alpha_SI = 3.69e+25 m^2  (factor 2.3e6 larger)
+   GW150914: alpha_SI = 3.69e+09 m^2  (factor 2.3e-10 smaller)
+
+ => alpha is NOT a universal physical constant under naive Candidate D.
+ => Phase 0+ structural sketch's heuristic was a STRUCTURAL PLAUSIBILITY
+    check only. Multi-source self-consistency requires either:
+    - Modified action with non-minimal psi-coupling (PATH E)
+    - TGP-intrinsic length scale L_TGP (PATH A — fails for naive)
+    - Source-enhanced substrate density (PATH B — fails)
+
+ Verdict: Phase 0+ self-consistency = OPEN ISSUE FLAGGED.
+ Candidate D ranking remains 'lead candidate' but with explicit caveat:
+   STRUCTURAL SKETCH SUCCESSFUL, but Phase 1 covariant derivation
+   MUST resolve multi-source consistency before Candidate D can claim
+   to fully reproduce scenario (e) for general Schwarzschild BHs.
+
+ Other candidates (A, B) similarly require multi-source verification.
+ This issue is CANDIDATE-INDEPENDENT — any M9.2 pivot reproducing
+ universal +14.56% deviation must explain how a single physical
+ parameter handles BHs across 9 orders of magnitude in mass.
+========================================================================

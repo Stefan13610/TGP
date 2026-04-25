@@ -24,6 +24,16 @@ strukturalnie. Residual Nordvedt-like η_MICROSCOPE ~ 1.6e-16 vs bound
 MICROSCOPE = tightest constraint, wymaga rigorous Phase 1 derivation.
 See [[research/op-m92/OP_M92_P0plus_candD_wep_results.md]].
 
+**Phase 0+ multi-source self-consistency (2026-04-25 noc):** ⚠️ ISSUE
+FLAGGED. Naive α_geom ~ 0.1 universal implies α_SI scales as M_BH²
+(2.3×10⁶ mismatch M87* vs Sgr A*, 13 orders of magnitude span across
+sources). α NIE jest single physical constant. Resolution paths A-D
+fail; Path E (α(ψ) z threshold) preferred ale introduces extra parameter.
+Phase 1 priority elevated — multi-source consistency #1.
+WEP MICROSCOPE margin **calibration-dependent** (M87*-calibrated α
+fails MICROSCOPE by 10⁵×).
+See [[research/op-m92/OP_M92_P0plus_candD_multisource_results.md]].
+
 ---
 
 ## TL;DR
@@ -35,11 +45,19 @@ See [[research/op-m92/OP_M92_P0plus_candD_wep_results.md]].
 > **Phase 0 deliverable:** zamiast 2-3 lat from-scratch po verdict,
 > M9.2 paper response time 2-4 weeks po ngEHT decisive measurement.
 >
-> **Recommendation ranking (pre-verdict):**
-> 1. Candidate D (momentum back-reaction) — PROMISING
-> 2. Candidate A (dual-field) — VIABLE z screening
-> 3. Candidate B (conformal frame) — VIABLE constrained
-> 4. Candidate C (q-flow) — NOT VIABLE bez ψ-threshold
+> **Recommendation ranking (pre-verdict, post Phase 0+ full):**
+> 1. Candidate D + Path E (momentum back-reaction z α(ψ) threshold) — LEAD
+>    z multi-source consistency caveat
+> 2. Candidate A (dual-field) — VIABLE z screening, multi-source TBD
+> 3. Candidate B (conformal frame) — VIABLE constrained, multi-source TBD
+> 4. Candidate C (q-flow) — NOT VIABLE bez ψ-threshold (basically Path E
+>    of original framework)
+>
+> **Phase 0+ full closure note:** naive Candidate D fails multi-source
+> self-consistency (α scales as M_BH², not a universal constant). Path E
+> modification (α(ψ) z threshold near ψ=1.05) resolves but introduces
+> extra parameter — interestingly converges Candidate D + Path E toward
+> Candidate C (q-flow) z ψ-threshold philosophy.
 >
 > M9.1'' standalone status: **alive, falsifiable in 4-6 lat.**
 
@@ -96,6 +114,7 @@ mechanism, nie ma viable q-flow path.
 - [x] **Phase 0+ Candidate D sketch (2026-04-25 afternoon)** — 5/5 POSITIVE
 - [x] **Phase 0+ Candidate D cosmology cross-check (2026-04-25)** — POSITIVE (w(z) ≥ −1 preserved)
 - [x] **Phase 0+ Candidate D WEP cross-check (2026-04-25)** — POSITIVE (UFF structural; MICROSCOPE margin 6.7× TIGHT)
+- [x] **Phase 0+ Candidate D multi-source self-consistency (2026-04-25)** — ⚠️ ISSUE FLAGGED (α scales M_BH²; Path E preferred)
 - [ ] ngEHT 2030+ verdict (DEFERRED)
 - [ ] Candidate D Phase 1 derivation (scheduled 2026 Q3-Q4)
 - [ ] Full M9.2 axiom paper (DEFERRED to 2032+)
