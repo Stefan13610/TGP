@@ -144,7 +144,7 @@ teorią substratową, z dwiema projekcjami efektywnymi.
 - `eht_photon_ring_m911.txt` — raw output EHT (5/6 PASS).
 - `EHT_quick_results.md` — werdykt EHT (INCONCLUSIVE-leaning-NEGATIVE: +14.6% photon ring; Sgr A* tension).
 - `TGP_CLOSURE_PLAN_2026-04-25.md` — master closure plan (OP-7 + parallel programs).
-- (kolejne: T4, T5, T6 jeszcze open).
+- (kolejne: T5, T6 jeszcze open; T4 zamknięte 2026-04-25).
 
 ---
 
