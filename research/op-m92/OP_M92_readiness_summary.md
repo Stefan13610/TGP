@@ -11,6 +11,12 @@ units) simultaneously tunes scenario (e) target i preserves weak-field PPN
 z 9e+12× safety margin. No-ghost stable, c_GW = c_0 vacuum exact.
 See [[research/op-m92/OP_M92_P0plus_candD_results.md]].
 
+**Phase 0+ cosmology cross-check (2026-04-25 popołudnie):** Candidate D
+preserves OP-DESI w(z) ≥ −1. Ratio 8πG α ρ_m ~ 8e-34 today, ~5e-8 at BBN,
+phantom transition pushed to z ≈ 1e+11 (pre-BBN, unobservable régime).
+de2 theorem strukturalnie zachowane.
+See [[research/op-m92/OP_M92_P0plus_candD_cosmology_results.md]].
+
 ---
 
 ## TL;DR
@@ -81,6 +87,7 @@ mechanism, nie ma viable q-flow path.
 - [x] Decision tree T6 (ngEHT response plan)
 - [x] Readiness summary (this file)
 - [x] **Phase 0+ Candidate D sketch (2026-04-25 afternoon)** — 5/5 POSITIVE
+- [x] **Phase 0+ Candidate D cosmology cross-check (2026-04-25)** — POSITIVE (w(z) ≥ −1 preserved)
 - [ ] ngEHT 2030+ verdict (DEFERRED)
 - [ ] Candidate D Phase 1 derivation (scheduled 2026 Q3-Q4)
 - [ ] Full M9.2 axiom paper (DEFERRED to 2032+)

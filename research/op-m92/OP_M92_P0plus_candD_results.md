@@ -162,6 +162,8 @@ schedulowane do **2026 Q3-Q4 (start)** lub **post-ngEHT 2030+ verdict
 
 - ✅ **Phase 0** (2026-04-25 morning): scope + 4 candidates + decision tree
 - ✅ **Phase 0+** (2026-04-25 afternoon): Candidate D structural sketch POSITIVE
+- ✅ **Phase 0+ cosmology** (2026-04-25): Candidate D preserves OP-DESI w(z) ≥ −1
+  (margin 1.24e+33× today, phantom transition z ≈ 1e+11 pre-BBN unobservable)
 - ⏳ **Phase 1** (deferred to 2026 Q3-Q4 OR post-ngEHT 2030+):
   full covariant derivation + photon ring + cosmology + 5th force
 - ⏳ **Phase 2** (post-Phase 1): full M9.2 axiom paper / vindication paper

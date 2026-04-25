@@ -1,0 +1,87 @@
+========================================================================
+ OP-M92 Phase 0+ — Candidate D cosmology cross-check (w(z) bound)
+========================================================================
+
+[Constants]
+  H0 = 67.4 km/s/Mpc = 2.184e-18 s^-1
+  rho_crit_today = 8.531e-27 kg/m^3
+  rho_m_today (Omega_m=0.315) = 2.687e-27 kg/m^3
+  rho_Planck ~ 5.154e+96 kg/m^3
+  rho_m_today / rho_Planck = 5.214e-124
+
+[Step 1] Effective Phi kinetic term in FRW under Candidate D:
+  Standard kinetic coefficient: K_std = -1 / (8 pi G)
+  Candidate D shift:            Delta K = +alpha * rho_m
+  Effective: K_eff = -1/(8 pi G) + alpha * rho_m
+
+  Phantom transition: K_eff > 0 requires alpha * rho_m > 1/(8 pi G)
+  i.e., 8 pi G alpha rho_m > 1
+  i.e., alpha > 1 / (8 pi G rho_m)
+
+[Step 2] Dimensionless ratio at cosmological epochs:
+  In geometric units (G = c = 1), alpha ~ 0.1 has dim [length]^2.
+  Convert to SI: alpha_SI = alpha_geom * (G/c^4)
+    alpha_geom = 0.1
+    alpha_SI = 8.262e-46  [m^2 kg^-1 s^4 / kg-units...]
+
+  In geometric units (G=c=1, length-only):
+    [alpha] = L^2,  [rho_m] = L^-2  => alpha * rho_m dimensionless
+    Convert: rho_m_geom = (G/c^2) rho_m  (units 1/m^2)
+
+  Calibrate alpha to Sgr A* photon ring scale:
+    R_S(Sgr A*) = 1.269e+10 m
+    alpha_SI = 0.1 * R_S^2 = 1.611e+19 m^2 = 1.792e+02 s^2
+
+[Step 2.1] Dimensionless ratio TODAY:
+    8 pi G alpha rho_m_today = 3 alpha H_0^2 Omega_m
+    = 3 * 1.792e+02 * 4.770e-36 * 0.315
+    = 8.080e-34
+  Compare to threshold for phantom: > 1
+  Margin: 1.238e+33x below phantom threshold
+
+[Step 3] Ratio at various epochs (rho_m scales as (1+z)^3):
+  Epoch                            (1+z)        ratio          safety        
+  ------------------------------------------------------------------------
+  Today                            1.00e+00     8.080e-34      1.24e+33x below
+  DE-matter equality               1.30e+00     1.775e-33      5.63e+32x below
+  Matter-radiation equality        3.40e+03     3.179e-23      3.15e+22x below
+  Recombination                    1.09e+03     1.049e-24      9.53e+23x below
+  BBN                              4.00e+08     5.171e-08      1.93e+07x below
+  z = 10^15 (early)                1.00e+15     8.080e+11      PHANTOM (>1)  
+  z = 10^25 (Planck)               1.00e+25     8.080e+41      PHANTOM (>1)  
+
+[Step 4] Phantom transition redshift:
+    (1+z_phantom)^3 = 1 / ratio_today
+    z_phantom = (1/ratio_today)^(1/3) - 1 = 1.07e+11
+
+  Compare to Planck epoch redshift z_P ~ 10^32 (T ~ M_Planck)
+  z_phantom = 1.07e+11 -- check against BBN/recomb
+
+[Step 5] OP-DESI w(z) >= -1 prediction under Candidate D:
+  de2 theorem: w_psi + 1 = psi_dot^2 / rho_psi >= 0 (canonical kinetic)
+
+  Under Candidate D, kinetic coefficient becomes:
+    K_eff = -[1/(8 pi G)] [1 - 8 pi G alpha rho_m]
+          = -[1/(8 pi G)] [1 - 8.080e-34 (today)]
+  Sign of K_eff: NEGATIVE for all observable epochs (z << z_phantom)
+  => canonical kinetic structure PRESERVED
+  => w_psi + 1 >= 0 still holds (with minuscule 8e-34 correction)
+
+  CONCLUSION: Candidate D does NOT break OP-DESI prediction.
+  TGP under M9.2 (Candidate D pivot) preserves w(z) >= -1.
+  DESI DR2/DR3 phantom crossing (if observed) would falsify BOTH M9.1''
+  AND M9.2-D. This is NOT a redundant test — it remains independent.
+
+========================================================================
+ PHASE 0+ COSMOLOGY CROSS-CHECK SUMMARY:
+========================================================================
+
+ Today (z=0)              ratio = 8.08e-34  (1e+33x safe)
+ Recombination (z=1090)   ratio = 1.05e-24  (1e+24x safe)
+ BBN (z=4e8)              ratio = 5.17e-08  safe
+ Phantom transition       z_phantom = 1.07e+11  (post-Planck)
+
+ Verdict: Candidate D STRUCTURALLY PRESERVES OP-DESI w(z) >= -1.
+ Cross-program impact: M9.2-D pivot does NOT trigger DESI falsification.
+ OP-DESI remains independent test of TGP (M9.1'' OR M9.2-D unchanged).
+========================================================================
