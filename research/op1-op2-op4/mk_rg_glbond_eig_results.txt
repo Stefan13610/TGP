@@ -1,0 +1,64 @@
+M7 -- J_GL eigenvalue at M3 fixed point
+==============================================================================
+
+=== (1) M3 fixed point (n_ops=8, n_quad=1200, s_max=10.0) ===
+  converged: True in 98 iterations
+  cb_FP[:4]: r*=-2.45694  u*=+3.01611  B*=-5.12163  G*=+9.00600
+  K_new at M3 FP = +5.376940
+
+=== (2) Linear-response dF/dJ_GL_pre on 2D outer grid (n_outer=30, n_max_proj=12) ===
+  Projected coefficients of dF/dJ_GL_pre on monomials s_1^a s_3^b:
+    (a, b) = (2, 2):  +2.512285e+02
+    (a, b) = (2, 4):  -5.991780e+00    [(4, 2) = -5.991780e+00]
+    (a, b) = (2, 6):  -1.488201e-01    [(6, 2) = -1.488201e-01]
+    (a, b) = (4, 4):  +5.244873e-01
+    (a, b) = (4, 8):  -1.295256e-05    [(8, 4) = -1.295256e-05]
+    (a, b) = (6, 6):  +5.444490e-05
+  bilateral symmetry  |c(2,6) - c(6,2)| / max = 1.735e-08
+  shape c(4,4)/c(2,6) = -3.5243   (GL bond expects -2.0000)
+
+  lambda_pre = -c(2,6) = +1.488201e-01
+  lambda_pre = -c(6,2) = +1.488201e-01   (bilateral check)
+  lambda_pre (avg)     = +1.488201e-01
+  lambda_GL = lambda_pre / K_new = +1.488201e-01 / +5.376940 = +2.767747e-02
+
+=== (3) L^2 projection onto O_GL = s_1^2 s_3^6 - 2 s_1^4 s_3^4 + s_1^6 s_3^2 ===
+  <dF, O_GL>            = -1.434878e+15
+  <O_GL, O_GL>          = +3.788804e+15
+  proj  = <dF, O_GL>/<O_GL,O_GL> = -3.787154e-01
+  lambda_pre_norm = -proj  = +3.787154e-01
+  lambda_GL_norm  = lambda_pre_norm / K_new = +7.043326e-02
+
+=== (4) Numerical-perturbation cross-check (eps=0.001) ===
+  numerical-perturbation lambda_pre = +1.461290e-02    (analytic: +1.488201e-01)
+  relative error = 9.018e-01
+  numerical-perturbation lambda_GL  = +2.717699e-03
+  shape c(4,4)/c(2,6) [num]: +0.0050  (expected -2 if pure GL)
+
+=== (5) Canonical-scaling baseline ===
+  Canonical lambda_GL = b^(d-1) / K_new^4 = 4 / 5.376940^4 = +4.785412e-03
+  Numerical lambda_GL = +2.767747e-02
+  ratio (numerical / canonical) = +5.783718  (if ~ 1, canonical estimate ~ correct)
+
+=== (6) Verdict ===
+  |lambda_GL| = 0.02768  -> STRONGLY IRRELEVANT
+  -> J_GL decays fast; M3 + GL ~ M3 in the IR; M6 closure-in-principle was an artefact of unphysically large bare J_GL.
+
+==============================================================================
+=== ROBUSTNESS scan: vary n_outer in {20, 30, 40, 50}, n_max_proj in {8, 12, 16} ===
+==============================================================================
+
+  (n_outer, n_max_proj) lambda_GL_avg    lambda_GL_norm    lambda_GL_num    sym_err     shape(4,4)/(2,6)
+  --------------------- --------------   --------------    --------------   ---------   --------
+  ( 20,  8)             +6.780588e-04   +7.043522e-02    -6.449708e-04   1.83e-10   -16.4158
+  ( 20, 12)             +2.775450e-02   +7.043522e-02    +3.200440e-03   3.70e-10   -3.5317
+  ( 20, 16)             +8.908706e-02   +7.043522e-02    -2.334986e-02   1.41e-06   -2.2588
+  ( 30,  8)             +6.143288e-04   +7.043326e-02    -6.651281e-04   3.40e-10   -17.9771
+  ( 30, 12)             +2.767747e-02   +7.043326e-02    +2.717699e-03   1.73e-08   -3.5243
+  ( 30, 16)             +8.902926e-02   +7.043326e-02    -2.302250e-02   2.13e-06   -2.2480
+  ( 40,  8)             +6.091272e-04   +7.043310e-02    -6.432432e-04   1.78e-10   -18.1139
+  ( 40, 12)             +2.763635e-02   +7.043310e-02    +2.513259e-03   6.14e-09   -3.5295
+  ( 40, 16)             +9.476391e-02   +7.043310e-02    -3.695821e-03   4.71e-07   -2.0843
+  ( 50,  8)             +6.086321e-04   +7.043309e-02    -6.528013e-04   1.43e-10   -18.1264
+  ( 50, 12)             +2.762738e-02   +7.043309e-02    +2.886620e-03   1.93e-08   -3.5307
+  ( 50, 16)             +9.477081e-02   +7.043309e-02    -3.182411e-03   2.72e-07   -2.0839
