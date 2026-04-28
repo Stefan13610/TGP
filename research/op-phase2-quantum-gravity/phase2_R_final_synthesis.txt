@@ -1,0 +1,59 @@
+
+==============================================================================
+  Phase 2.R-final — Quantum gravity / EFT cycle synthesis & audit
+==============================================================================
+ Predecessors: 2.0 16/16 + 2.A 6/6 + 2.B 6/6 + 2.D 6/6 + 2.E 6/6 + 2.F 6/6 = 46/46
+ 8 R.F audit tests covering Phase 2 deliverables vs Phase 1 baselines
+ Cumulative entering R-final: 167 (prior) + 46 (Phase 2 sub-cykli) = 213
+ Target po R-final: ≥217 (gate); this audit adds 8 → cumulative 221
+
+[PASS] R.F.1 Linearized graviton spectrum (2.A) vs M9.3 GW polarizations
+    N_TT = 2 (h_+, h_×): True; N_scalar = 1 (h_b = h_L): True; N_vector = 0 (single-Φ zero): True; N_DOF physical = 3: True; κ = √(32πG_N) = 10.0265: True; GW170817: |c_T-c_s|_pred = 0.0 < bound 9.05e-22 (∞ margin): True; c_T/c_s = 1.0000 (M9.1″ exact): True; M_phys/H_0 = 0.9901 (Φ_0 = H_0): True; PPN γ=1.0, β=2.0 (M9.1″): True
+
+[PASS] R.F.2 First-principles α₀ ≈ 4 (2.B) vs Phase 1.B chain
+    α₀^2B (sympy exact rational) = 4.04474 = 1069833/264500; α₀^frozen = 4.0391; α₀^1B = 4.0447; drift 2B vs frozen = 0.1396% (<5%): True; drift 2B vs 1B = 0.0009% (<0.5%): True; ψ_ph chain drift = 0.00028% (algebraic): True; ξ_geom (M9.1″) = 1.0: True; Δ_target = 0.114: True; WEP margin = 3.700e+16 (>10^16): True; η_TGP n=2 = 2.700e-32 (<1e-15 MICROSCOPE): True
+
+[PASS] R.F.3 EFT counterterm structure (2.D) vs Phase 1.A covariant 4D
+    4 indep counterterms 4D (Λ, R, R², R_μν²) post Gauss-Bonnet: True; +2 matter (δm², δλ): True; total = 6: True; Λ_EFT = M_Pl = 1.220e+19 GeV: True; m_Φ/Λ_EFT = 1.167e-70 (~60.9 dex): True; Phase 1.A dim-reg δM/M = 1.4220e-02: True; drift dim-reg vs M11.R-I = 1.68% (<5%): True; Donoghue 1994 framework consistent: True
+
+[PASS] R.F.4 B.1/B.2/B.5 deepening (2.E) postulate→derivation
+    B.1 (ψ_th=1) DERIVED by 2.E.1 (V'(1)|β=γ=0 sympy + α(vacuum)=0): True; B.2 (n=2) DERIVED by 2.E.2 (multi-constraint C²+Lorentz+WEP): True; B.5 (g̃≈1) STRUCTURALLY CLOSED by 2.E.3 + 1.F.5: True; g̃_match = 0.9803 (36·Ω_Λ·(M_red/M_full)²): True; drift g̃ = 0.0306% (<5%): True; T-Λ ratio covariant = 1.0203: True; Phase 1.F.5 drift = 0.0294% (<1%): True
+
+[PASS] R.F.5 Full path integral D[Φ]·D[h_μν]·D[c̄,c] (2.F) vs Phase 1.F
+    Off-shell DOF = 19 (10 h_μν + 8 ghost + 1 scalar Φ): True; On-shell physical DOF = 3: True; Graviton loop suppression (M_phi/M_Pl)² = 1.361e-122: True; Phase 1.F covariant 5 sub-tests SURVIVE: 5/5: True; Phase 1.R-final 8 R.F SURVIVE: 8/8: True; T-Λ drift post-graviton = 1.39e-120% (<1%): True
+
+[PASS] R.F.6 Honest scope: EFT closure vs UV completion explicit
+    EFT closure-grade (Phase 2 deliverable): True; UV-complete renormalizability OFF-SCOPE (Phase 3 research-track): True; Δ_target absolute normalization still POSTULATE (B.3 honest): True; B.5 full first-principles OFF-SCOPE: True; Graviton O(h³, h⁴) higher-order OFF-SCOPE: True; Non-perturbative metric path integral OFF-SCOPE: True; Cosm. const. cancellation OFF-SCOPE (2.C kontynuacja 1.C): True
+
+[PASS] R.F.7 KNOWN_ISSUES Phase 2 promotions (4-item upgrade)
+    5 items reflected: True; B.1/B.2/B.3 DERIVED via Phase 2: True; B.5 STRUCTURALLY CLOSED: True; C.3 preserved (Phase 1.A.5): True; Net-upgrades count = 4 (B.1, B.2, B.3, B.5): True
+      B.1 (ψ_th=1): DERIVED_PHASE2E — sympy V'(1)|β=γ=0 exact + α(vacuum)=0 (2.E.1)
+      B.2 (n=2): DERIVED_PHASE2E — multi-constraint C² + Lorentz + WEP MICROSCOPE (2.E.2)
+      B.3 (α₀≈4): DERIVED_PHASE2B — α₀ = Δ_target/((ψ_ph-1)²·ξ_geom) = 4.04472 sympy exact (2.B)
+      B.5 (g̃≈1): STRUCTURALLY_CLOSED_PHASE2E — g̃_match = 36·Ω_Λ·(M_red/M_full)² = 0.9803 conversion (2.E.3)
+      C.3 (γ-sign): CLOSED_PHASE1A — POSITIVE 4D Lagrangian (1.A.5 KEYSTONE)
+
+[PASS] R.F.8 Aggregate cumulative (167 prior + Phase 2 + this)
+    Phase 2 sub-cycles: 2.0 setup=16, 2.A KEYSTONE=6, 2.B=6, 2.D=6, 2.E=6, 2.F CAPSTONE=6; 2.0 setup = 16: True; 5 sub × 6/6: True; Phase 2 subtotal = 46 (target 46): True; R-final (this) = 8/8; Phase 2 total = 54: True; Prior cycles M9+M10+M11+Phase1 = 13+42+62+50 = 167: True; GRAND TOTAL = 221: True; target ≥217: True (margin +4)
+
+
+==============================================================================
+  PHASE 2.R-FINAL VERDICT: 8/8 PASS
+==============================================================================
+ ✅ Phase 2.R-final CLOSED — Phase 2 cycle synthesis verified.
+
+ Outcome:
+   • Linearized graviton spectrum (2.A): 3 physical DOF, GW170817 ∞ margin
+   • α₀ first-principles (2.B): B.3 POSTULATE → DERIVED, drift 0.0009%
+   • EFT counterterms (2.D): 4 indep 4D + 2 matter, scale separation 60.9 dex
+   • B.1/B.2/B.5 deepening (2.E): 4-item promotion POSTULATE → DERIVED/CLOSED
+   • Full path integral (2.F): Phase 1.F + 1.R-final 8/8 + 5/5 SURVIVE
+   • Honest scope: EFT closure-grade; UV completion explicit Phase 3+
+   • KNOWN_ISSUES: 4-item Phase 2 net-upgrade (B.1, B.2, B.3, B.5)
+   • Aggregate: 221 closure-grade verifications (target ≥217 EXCEEDED +4)
+
+ Phase 2 cumulative: 54/54 (46 + 8)
+ GRAND TOTAL: 221 verifications (target 217+ EXCEEDED)
+
+ Phase 2 cycle CLOSED 2026-04-28; successor: Phase 3 (UV completion research-track)
+

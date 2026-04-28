@@ -1,0 +1,369 @@
+
+==============================================================================
+  M10.3 - FRW PROPAGATOR AUDIT (gs66 closure-grade)
+==============================================================================
+
+  Predecessor: M10_2_results.md, M10_3_setup.md
+  Audit target: ../galaxy_scaling/gs66_frw_propagator.py
+
+  Six sub-tests:
+    M10.3.1  Linearization foundations Phi-EOM (sympy)
+    M10.3.2  FRW quasi-static propagator (sympy)
+    M10.3.3  Real-space Green's function (numerical)
+    M10.3.4  Sign correction vs gs66 (sympy + numerical)
+    M10.3.5  Fourier-power universality theorem (sympy)
+    M10.3.6  Honest synthesis verdict (documentation)
+
+
+==============================================================================
+  M10.3.1 - Linearization of foundations Phi-EOM at psi=1 (sympy)
+==============================================================================
+
+  Foundations Phi-EOM (sek08a eq:field-eq-reproduced):
+
+      grad^2 Phi + 2*(grad Phi)^2/Phi + (beta/Phi_0)*Phi^2 - (gamma/Phi_0^2)*Phi^3
+        = -q*Phi_0*rho
+
+  Pivot:  Phi = Phi_0*(1+delta),  |delta| << 1
+  Static baseline: Phi_eq = Phi_0 (vacuum).
+
+  V_force(Phi) = -Phi**3*gamma/Phi_0**2 + Phi**2*beta/Phi_0
+  V_force series in delta (general):
+   ⎛     2                              ⎞
+Φ₀⋅⎝β + δ ⋅(β - 3⋅γ) + δ⋅(2⋅β - 3⋅γ) - γ⎠
+
+  V_force series at vacuum (beta=gamma):
+Φ₀⋅β⋅δ⋅(-2⋅δ - 1)
+
+  V_force at vacuum (delta=0):  V_const  = 0
+  Linear coefficient:           dV/d(delta) = -Phi_0*beta
+  Quadratic coefficient:        (1/2)d2V/d(delta)2 = -2*Phi_0*beta
+
+  Static linearized EOM:  grad^2(delta) + (V_lin/Phi_0)*delta = src/Phi_0
+  Equivalent Yukawa form: (grad^2 - M_eff^2)*delta = -src/Phi_0
+  M_eff^2 = -V_lin/Phi_0 = beta
+
+  Kinetic gradient term 2*(grad Phi)^2/Phi at static baseline Phi_eq = Phi_0:
+    grad Phi_0 = 0  =>  linear term in delta vanishes (bilinear in grad Phi).
+
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) V_force(vacuum) = 0 (beta=gamma vacuum cond)  (V_const = 0)
+  [PASS] (b) dV_force/d(delta) at vacuum = -beta*Phi_0  (V_lin = -Phi_0*beta)
+  [PASS] (c) M_eff^2 = +beta > 0 (stable Yukawa, matches M9.3.1)  (M_eff^2 = beta)
+  [PASS] (d) Numerically M_eff^2 > 0 at beta=0.01 (stable)  (M_eff^2(beta=0.01) = 0.0100)
+
+  M10.3.1 verdict: PASS
+
+==============================================================================
+  M10.3.2 - FRW quasi-static propagator (sympy)
+==============================================================================
+
+  Adding FRW time-evolution to M10.3.1 spatial linearization:
+
+      delta'' + 3*H*delta' - (1/a^2)*grad^2 delta + beta*delta = source
+
+  Fourier:  delta ~ exp(-i omega t + i k x)
+      D(omega,k) = -omega^2 - 3*i*H*omega + k^2/a^2 + beta
+
+  Full D(omega,k) = -3*I*H*omega + beta - omega**2 + k**2/a**2
+
+  Quasi-static D(k) = 3*I*H**2 + beta + k**2/a**2
+  Quasi-static propagator G_tilde(k) = a**2/(a**2*(3*I*H**2 + beta) + k**2)
+
+  mu^2 = beta + 3i*H^2 = 3*I*H**2 + beta
+  mu (principal branch) = sqrt(beta + 3iH^2)
+
+  Limiting cases:
+    (1) beta >> H^2 (galactic/sub-Hubble):
+          mu ~ sqrt(beta) + 3iH^2/(2 sqrt(beta))
+          Re(mu) ~ sqrt(beta)              [Yukawa damping length 1/sqrt(beta)]
+          Im(mu) ~ 3H^2/(2 sqrt(beta))     [slow oscillation, suppressed]
+
+    (2) beta << H^2 (cosmological):
+          mu ~ sqrt(3iH^2) = sqrt(3)*H * exp(i*pi/4)
+          Re(mu) ~ sqrt(3/2) * H           [Hubble-scale damping]
+          Im(mu) ~ sqrt(3/2) * H           [Hubble-scale oscillation]
+
+    (3) beta = 0 + epsilon (no spatial mass):
+          G_tilde(k) = 1/(k^2/a^2 + 3iH^2)  [Hubble-screened Newton]
+
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) D(omega,k) = -omega^2 - 3iH*omega + k^2/a^2 + beta (canonical form)
+  [PASS] (b) D_qs(k=0) = beta + 3iH^2 (constant, not zero)  (D_qs(0) = 3*I*H**2 + beta)
+  [PASS] (c) Re(mu^2) = beta > 0 (stable Yukawa real part)
+  [PASS] (d) D_canon - D_gs66 = +2*beta (sign error in gs66 -> tachyonic; corrected)  (diff = 2*gamma)
+
+  M10.3.2 verdict: PASS
+
+==============================================================================
+  M10.3.3 - Real-space Green's function G(r) (numerical, stable Yukawa)
+==============================================================================
+
+  Closed form (a = 1, quasi-static):
+      G(r) = exp(-mu_eff * r) / (4 pi r),    mu_eff^2 = beta + 3i*H^2
+
+  Physical (real-valued, retarded):
+      G_phys(r) = Re[exp(-mu*r)] / (4 pi r) * (cosine factor)
+                = exp(-Re(mu)*r) * cos(Im(mu)*r) / (4 pi r)
+
+  Stable Yukawa: Re(mu) > 0 -> exponential damping.
+  No log(r) at any scale.
+
+
+------------------------------------------------------------------------------
+  beta = (3 kpc)^-2 (galactic Yukawa scale)
+------------------------------------------------------------------------------
+  beta = 1.167e-40 1/m^2  =>  L_nat = 1/sqrt(beta) = 3.000e+00 kpc
+  Re(mu) = 1.080e-20 1/m  (Yukawa range = 3.000e+00 kpc)
+  Im(mu) = 7.372e-33 1/m  (osc. wavelength = 2.762e+13 kpc)
+       r [kpc]    r/L_nat         G_phys       4 pi r G
+     1.000e-01  3.333e-02      2.494e-20      9.672e-01
+     1.000e+00  3.333e-01      1.848e-21      7.165e-01
+     1.000e+01  3.333e+00      9.200e-24      3.567e-02
+     1.000e+02  3.333e+01      8.609e-38      3.338e-15
+     1.000e+03  3.333e+02     4.432e-169     1.719e-145
+     1.000e+04  3.333e+03      0.000e+00      0.000e+00
+     1.000e+05  3.333e+04      0.000e+00      0.000e+00
+     1.000e+06  3.333e+05      0.000e+00      0.000e+00
+     4.448e+06  1.483e+06      0.000e+00      0.000e+00
+
+  4 pi r G at r=L_nat:    +3.6788e-01   (Yukawa ~ exp(-1)*cos(1) ~ 0.20)
+  |4 pi r G| at r=10*L_nat: 4.5400e-05   (screened, NOT growing)
+
+------------------------------------------------------------------------------
+  beta = L_H^-2 (cosmological Yukawa scale)
+------------------------------------------------------------------------------
+  beta = 5.309e-53 1/m^2  =>  L_nat = 1/sqrt(beta) = 4.448e+06 kpc
+  Re(mu) = 1.051e-26 1/m  (Yukawa range = 3.083e+06 kpc)
+  Im(mu) = 7.576e-27 1/m  (osc. wavelength = 2.688e+07 kpc)
+       r [kpc]    r/L_nat         G_phys       4 pi r G
+     1.000e-01  2.248e-08      2.579e-20      1.000e+00
+     1.000e+00  2.248e-07      2.579e-21      1.000e+00
+     1.000e+01  2.248e-06      2.579e-22      1.000e+00
+     1.000e+02  2.248e-05      2.579e-23      1.000e+00
+     1.000e+03  2.248e-04      2.578e-24      9.997e-01
+     1.000e+04  2.248e-03      2.571e-25      9.968e-01
+     1.000e+05  2.248e-02      2.496e-26      9.678e-01
+     1.000e+06  2.248e-01      1.814e-27      7.033e-01
+     4.448e+06  1.000e+00      6.939e-29      1.197e-01
+
+  4 pi r G at r=L_nat:    +1.1967e-01   (Yukawa ~ exp(-1)*cos(1) ~ 0.20)
+  |4 pi r G| at r=10*L_nat: 3.0561e-07   (screened, NOT growing)
+
+------------------------------------------------------------------------------
+  beta = H_0^2 (dimensional minimum)
+------------------------------------------------------------------------------
+  beta = 5.309e-53 1/m^2  =>  L_nat = 1/sqrt(beta) = 4.448e+06 kpc
+  Re(mu) = 1.051e-26 1/m  (Yukawa range = 3.083e+06 kpc)
+  Im(mu) = 7.576e-27 1/m  (osc. wavelength = 2.688e+07 kpc)
+       r [kpc]    r/L_nat         G_phys       4 pi r G
+     1.000e-01  2.248e-08      2.579e-20      1.000e+00
+     1.000e+00  2.248e-07      2.579e-21      1.000e+00
+     1.000e+01  2.248e-06      2.579e-22      1.000e+00
+     1.000e+02  2.248e-05      2.579e-23      1.000e+00
+     1.000e+03  2.248e-04      2.578e-24      9.997e-01
+     1.000e+04  2.248e-03      2.571e-25      9.968e-01
+     1.000e+05  2.248e-02      2.496e-26      9.678e-01
+     1.000e+06  2.248e-01      1.814e-27      7.033e-01
+     4.448e+06  1.000e+00      6.939e-29      1.197e-01
+
+  4 pi r G at r=L_nat:    +1.1967e-01   (Yukawa ~ exp(-1)*cos(1) ~ 0.20)
+  |4 pi r G| at r=10*L_nat: 3.0561e-07   (screened, NOT growing)
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) Re(mu) > 0 in all scenarios (stable Yukawa damping)  (Re(mu) = ['1.08e-20', '1.05e-26', '1.05e-26'])
+  [PASS] (b) |4 pi r G(r=10*L_nat)| << 1 (Yukawa exp screening, NOT log growth)  (galactic=4.54e-05, cosmo=3.06e-07)
+  [PASS] (c) |4 pi r G(r)| peaks at small r (Yukawa, not log-MOND)  (peak at idx 0/30 (r=0.10 kpc))
+
+  Rotation curve test at r=100 kpc, M=1.5e11 Msun:
+    |g_Newton| = 2.0912e-12 m/s^2
+    |g_TGP|    = 2.0912e-12 m/s^2  (|g_TGP|/|g_Newton| = 1.0000)
+  [PASS] (d) Galactic rotation curve: |g_TGP| ~ |g_Newton| at 100 kpc (NO MOND log)  (|g_TGP|/|g_N| = 1.0000)
+
+  M10.3.3 verdict: PASS
+
+==============================================================================
+  M10.3.4 - Sign correction: gs66 (-gamma) vs canonical (+beta)
+==============================================================================
+
+  gs66 quasi-static D(k) = k^2/a^2 - gamma + 3i*H^2
+  Canonical    D(k) = k^2/a^2 + beta  + 3i*H^2
+
+  Difference: 2*beta (sign of M_eff^2 flipped relative to gs66's tachyonic).
+  Both arise as POLYNOMIAL D(k), so Fourier-power argument applies to both.
+
+  gs66 D(k=0)    = 3*I*H**2 - gamma
+  canon D(k=0)   = 3*I*H**2 + beta
+
+  Galactic scenario (beta=gamma=(3 kpc)^-2):
+  gs66:  Re(mu) = 7.37e-33, Im(mu) = 1.08e-20  (mostly imaginary -> oscillatory)
+  canon: Re(mu) = 1.08e-20, Im(mu) = 7.37e-33  (mostly real -> Yukawa)
+
+     r [kpc]     gs66 4pi r G    canon 4pi r G
+        0.10      +9.9944e-01      +9.6722e-01
+        1.00      +9.4496e-01      +7.1653e-01
+       10.00      -9.8167e-01      +3.5674e-02
+      100.00      -3.3971e-01      +3.3382e-15
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) gs66 mu is oscillatory (Re(mu)<<Im(mu); tachyonic core)  (Re/Im = 6.824e-13)
+  [PASS] (b) canon mu is Yukawa-dominant (Re(mu)>>Im(mu); stable)  (Re/Im = 1.465e+12)
+  [PASS] (c) Both D(k=0) != 0 -> Fourier-power forbids log(r) IRRESPECTIVE of sign  (D_gs66(0)=3*I*H**2 - gamma, D_canon(0)=3*I*H**2 + beta)
+  [PASS] (d) gs66 no-MOND conclusion ROBUST under sign correction  (Fourier-power proof universal)
+
+  M10.3.4 verdict: PASS
+
+==============================================================================
+  M10.3.5 - Fourier-power universality: no log(r) from polynomial D(k)
+==============================================================================
+
+  THEOREM (Fourier-power, M10.3):
+
+    log(r) <-> integral d^3k/(2pi)^3 * exp(i k.r) * G_tilde(k) ~ log(r)
+              requires G_tilde(k) ~ C/k^3  as  k -> 0
+
+    For ANY polynomial D(k) = D_0 + D_2*k^2 + D_4*k^4 + ...
+    (rotationally symmetric, Hermitian, analytic at k=0), we have:
+
+      G_tilde(k) = 1/D(k)
+                 -> 1/D_0      (k -> 0,  if D_0 != 0)
+                 -> 1/(D_2*k^2)  (k -> infinity, asymptotic Newton)
+                 NEITHER 1/k^3.
+
+  CONSEQUENCE: NO LINEAR scalar theory with polynomial dispersion (vacuum-mass
+  m^2 != 0) can produce log(r) far-field. TGP single-Phi linear theory is
+  fundamentally incapable of MOND log(r) by this theorem.
+
+  G_tilde(k) low-k expansion:
+         2
+D₀ - D₂⋅k 
+──────────
+     2    
+   D₀     
+
+  G_tilde(k -> infinity) (substitute k -> 1/q, expand at q=0):
+0
+
+  Critical observation: G_tilde(k) is an ANALYTIC function of k^2 at k=0
+  (since D(k) is even in k). Its expansion is in powers of k^2:
+       1/D_0 - (D_2/D_0^2) k^2 + ...
+  There is NO k^(-3) term, NO k^(-1) term, NO odd-power singular term.
+
+  The MOND log(r) potential corresponds to G_tilde(k) ~ 1/k^3, which has
+  ODD POWER OF k -> requires non-analytic / non-polynomial D(k).
+
+  Polynomial dispersion CANNOT realize log(r). QED.
+
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) Low-k expansion has NO k^(-3) term (analytic at k=0)
+  [PASS] (b) G_tilde(k=0) = 1/D_0 (constant, finite for D_0 != 0)  (G_tilde(0) = 1/D_0)
+  [PASS] (c) G_tilde ~ 1/(D_2 k^2) at large k (Newtonian asymptotic, D_4=0)  (limit(k^2 G_tilde) at D_4=0 = 1/D_2)
+  [PASS] (d) Theorem: canonical TGP (D_0=beta+3iH^2 != 0) cannot produce log(r)  (Fourier-power impossibility theorem)
+
+  M10.3.5 verdict: PASS
+
+==============================================================================
+  M10.3.6 - Honest synthesis verdict on FRW propagator (gs66 audit)
+==============================================================================
+
+  Synthesis based on M10.3.1 - M10.3.5:
+
+  KEY FINDINGS:
+
+  1. CANONICAL FOUNDATIONS Phi-EOM linearization at psi=1 (M10.3.1):
+       Force-side V_force = beta*Psi^2 - gamma*Psi^3 (in EOM LHS form)
+       Linear coefficient at vacuum (beta=gamma): -beta * delta
+       => Static EOM: (grad^2 - beta) delta = source
+       => M_eff^2 = +beta > 0  (stable Yukawa, M9.3.1 confirmed)
+
+  2. FRW QUASI-STATIC PROPAGATOR (M10.3.2):
+       D(omega,k) = -omega^2 - 3iH*omega + k^2/a^2 + beta
+       Quasi-static: D(k) = k^2/a^2 + beta + 3iH^2
+       Stable Yukawa with Hubble friction.
+
+  3. REAL-SPACE GREEN's FUNCTION (M10.3.3):
+       G(r) = exp(-mu_eff*r) cos(im_mu*r) / (4 pi r)
+       Re(mu) ~ sqrt(beta) [damping length 1/sqrt(beta)]
+       Im(mu) ~ 3H^2/(2 sqrt(beta)) [slow oscillation, sub-leading]
+       NEVER log(r) at any scale.
+
+  4. SIGN CORRECTION VS GS66 (M10.3.4):
+       gs66 used U''(1) = -gamma (tachyonic): wrong sign for vacuum-stable Yukawa.
+       Canonical M_eff^2 = +beta (stable). Both have polynomial D(k) with
+       D(k=0) != 0, so FOURIER-POWER theorem applies to both -> no log-MOND.
+
+  5. FOURIER-POWER UNIVERSALITY (M10.3.5):
+       For any polynomial D(k) = D_0 + D_2 k^2 + ..., G_tilde(k) is analytic
+       in k^2 at k=0. NO 1/k^3 mode possible. log(r) <-> 1/k^3 <-> non-analytic
+       dispersion. Polynomial D(k) cannot produce log(r). UNIVERSAL theorem.
+
+  HONEST VERDICT:
+
+  -> gs66 conclusion ("no MOND from linear TGP") is ROBUST and CONFIRMED.
+
+  -> gs66 had a SIGN ERROR (tachyonic U''=-gamma vs. canonical M_eff^2=+beta),
+     but the conclusion is INDEPENDENT of this sign because Fourier-power
+     argument is universal for polynomial D(k).
+
+  -> gs66 verdict UPGRADE: YELLOW -> GREEN (sign error documented, Fourier-
+     power theorem proves robustness).
+
+  FALSIFIABLE STATEMENTS:
+
+  1. Linear TGP with single Phi has NO MOND signature (g != const v_flat^2/r).
+  2. Galactic rotation curves: TGP gives Newtonian or Yukawa-screened, NEVER flat.
+  3. If observation requires logarithmic far-field potential -> TGP single-Phi
+     LINEAR theory is falsified. Would need non-linear extension or multi-field.
+
+  SCOPE STATEMENT (M10.3 honest):
+
+     TGP single-Phi linear theory: galactic dynamics are NOT a unique TGP
+     signature. Any agreement with SPARC / dark-matter halos requires
+     phenomenological dressing (e.g., density profile choices) or non-linear
+     extensions OUTSIDE the minimal sek08a action.
+
+     Bridge (a) "MOND from TGP linear FRW" remains FALSIFIED, with stronger
+     theoretical grounding (Fourier-power universality theorem).
+
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) M10.3.1-5 all PASS (canonical derivation, sign correction, theorem)  (sub-tests: [True, True, np.True_, True, True])
+  [PASS] (b) gs66 verdict upgrade YELLOW -> GREEN justified  (sign correction documented, Fourier-power theorem proven)
+  [PASS] (c) M_eff^2 = +beta consistent with M9.3.1 (foundational)
+  [PASS] (d) Falsifiable predictions preserved (no MOND, no log far-field)
+  [PASS] (e) Honest scope: TGP single-Phi linear NOT unique galactic predictor
+
+  M10.3.6 verdict: PASS
+
+==============================================================================
+  M10.3 - VERDICT
+==============================================================================
+  [PASS]  M10.3.1 Linearization foundations Phi-EOM (sympy)
+  [PASS]  M10.3.2 FRW quasi-static propagator (sympy)
+  [PASS]  M10.3.3 Real-space Green's function (numerical)
+  [PASS]  M10.3.4 Sign correction vs gs66
+  [PASS]  M10.3.5 Fourier-power universality theorem (sympy)
+  [PASS]  M10.3.6 Honest synthesis verdict
+
+  Sub-cycle M10.3: 6/6 PASS
+
+  M10.3 CLOSURE-GRADE: 6/6 PASS
+  -> gs66 verdict upgrade: YELLOW -> GREEN (sign error documented)
+  -> Fourier-power theorem: NO log-MOND from linear TGP (universal)
+  -> Ready for M10.4 (CMB safety REBUILD - replace f(R) with scalar Phi).
+

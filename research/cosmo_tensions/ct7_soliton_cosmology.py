@@ -4,6 +4,26 @@
 ct7: SOLITON POPULATION COSMOLOGY + RUNNING GAMMA + HONEST VERDICT
 ===================================================================
 
+*** CONFIRMED 2026-04-26 by M10.5 (H_0/S_8 tensions audit) ***
+*** See: ../op-cosmology-closure/M10_5_results.md (6/6 PASS) ***
+
+POST-M10.5 STATUS (2026-04-26):
+- HONEST VERDICT (this file): CONFIRMED. TGP scope = galaxy-scale (y < 1),
+  NOT cosmology tensions (y >> 1). B_psi/H0^2 ~ 10^-9 estimate
+  preserved and refined: M10.5 canonical Buchert-style estimate gives
+  B_psi/H0^2 = 1.08e-8 (gap 7.2 orders below 0.17 needed for H_0).
+- RG running gamma(k) with eta = 0.044 (LPA' from CG-2 continuum_limit):
+  RETAINED as analytic tool. M10.5.4 quantifies: 24% gamma variation
+  CMB->LSS, sub-leading on S_8 (NOT sufficient to bridge tension).
+- ct3's optimistic B_psi/H0^2 ~ 0.03-0.3 claim SUPERSEDED (used canonical
+  K=1 + spurious "tachyonic amplification" — M9.3.1 confirms M_eff^2 = +beta
+  STABLE Yukawa, no spatial tachyonic instability).
+- M10.5.5 adds structural bound: w_eff >= -1 algebraic (K(phi)>=0 +
+  V>0 near vacuum) ⇒ DESI DR3 phantom > 3sigma would falsify TGP DE.
+- See [[../op-cosmology-closure/M10_5_results.md]] for full ct3/ct7
+  reconciliation and 6/6 PASS audit.
+
+ORIGINAL DRAFT NOTES (pre-M10.5, retained for reference):
 ct5/ct6 definitively ruled out tachyonic amplification:
   - B_psi/H0^2 ~ 10^-9 (need ~0.17)
   - Scale mismatch: tachyonic only at super-Hubble (5600 Mpc)

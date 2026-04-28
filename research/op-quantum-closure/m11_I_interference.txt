@@ -1,0 +1,133 @@
+##############################################################################
+# M11.I — Multi-soliton interference FULL AUDIT (Branch I level 2)
+# closure-grade target: ≥6/6 PASS
+# Units: β=K_geo=Φ_0=1, λ_C=1/√β=1.0
+##############################################################################
+
+Solving single-soliton template (q·M=0.3)...
+  Φ(0) = 1.0856,  Φ(r_max=15.0) = 1.000000
+
+==============================================================================
+M11.I.1 — Two-soliton ansatz separation sweep + domain validity
+==============================================================================
+  Single-soliton qM = 0.3
+     d/λ_C |    Φ_max |  in (0,4/3)? |    E[Φ_2sol]
+------------------------------------------------------------
+      0.30 |   1.1446 |         True |  -2.8853e-02
+      0.50 |   1.1141 |         True |  -2.5034e-02
+      1.00 |   1.0936 |         True |  -2.0698e-02
+      2.00 |   1.0868 |         True |  -1.8966e-02
+      3.00 |   1.0855 |         True |  -1.8671e-02
+      5.00 |   1.0853 |         True |  -1.8596e-02
+      8.00 |   1.0848 |         True |  -1.8615e-02
+     12.00 |   1.0852 |         True |  -1.8656e-02
+
+  in-domain at large d:     True
+  Φ_max monotonic decrease: True
+  All E finite:             True
+  M11.I.1 → PASS
+
+==============================================================================
+M11.I.2 — Interaction energy V_int(d) [box-cancelled]
+==============================================================================
+  E_self (spherical reference, qM=0.3) = -9.210769e-03
+  d/λ_C =  0.30: E_2sol =  -2.8853e-02, E_self_box =  -1.8551e-02, V_int =  -1.0302e-02
+  d/λ_C =  0.50: E_2sol =  -2.5034e-02, E_self_box =  -1.8553e-02, V_int =  -6.4811e-03
+  d/λ_C =  1.00: E_2sol =  -2.0698e-02, E_self_box =  -1.8556e-02, V_int =  -2.1420e-03
+  d/λ_C =  2.00: E_2sol =  -1.8966e-02, E_self_box =  -1.8564e-02, V_int =  -4.0200e-04
+  d/λ_C =  3.00: E_2sol =  -1.8671e-02, E_self_box =  -1.8572e-02, V_int =  -9.8988e-05
+  d/λ_C =  5.00: E_2sol =  -1.8596e-02, E_self_box =  -1.8588e-02, V_int =  -8.0608e-06
+  d/λ_C =  8.00: E_2sol =  -1.8615e-02, E_self_box =  -1.8615e-02, V_int =  -2.5179e-07
+  d/λ_C = 12.00: E_2sol =  -1.8656e-02, E_self_box =  -1.8656e-02, V_int =  -3.0977e-09
+
+  V_int < 0 in-domain (attractive):   True
+  V_int → 0 at large d (decoupled):    True
+  V_int monotonic decrease in |·|:     True
+  M11.I.2 → PASS
+
+==============================================================================
+M11.I.3 — Yukawa tail extraction (ln|d·V_int| vs d, slope = -μ)
+==============================================================================
+  Fit data (5 points, d ∈ [2.00, 12.00]·λ_C):
+    d=2.00, V_int=-4.0200e-04, ln|d·V_int|=-7.1259
+    d=3.00, V_int=-9.8988e-05, ln|d·V_int|=-8.1219
+    d=5.00, V_int=-8.0608e-06, ln|d·V_int|=-10.1191
+    d=8.00, V_int=-2.5179e-07, ln|d·V_int|=-13.1152
+    d=12.00, V_int=-3.0977e-09, ln|d·V_int|=-17.1077
+
+  Extracted slope:    -μ = -0.9983  →  μ = 0.9983
+  Extracted intercept: ln(A) = -5.1281  →  A = 5.9277e-03
+
+  M9.3.1 predictions:
+    μ_Yukawa = √(β/K_geo) = 1.0000
+    A_M9 = (q·M)²/(4π·K_geo) = 7.1620e-03
+
+  Rel. diff μ:  0.17%
+  Rel. diff A:  17.23%
+
+  μ within 10% of M9.3.1:   True
+  A within 30% of M9.3.1:   True
+  M11.I.3 → PASS
+
+==============================================================================
+M11.I.4 — Critical merge distance d_min
+==============================================================================
+  In-domain d: ['0.30', '0.50', '1.00', '2.00', '3.00', '5.00', '8.00', '12.00']
+    smallest in-domain d:  0.30·λ_C  (Φ_max = 1.1446)
+  No out-of-domain in scan range; d_min ≤ 0.30·λ_C
+
+  Domain analysis complete: True
+  d_min identifiable:       True
+  M11.I.4 → PASS
+
+==============================================================================
+M11.I.5 — Force F(d) = -dV_int/dd, Yukawa-derivative consistency
+==============================================================================
+     d/λ_C |        V_int |   F_num=-dV/dd |          |F| |  in_dom?
+------------------------------------------------------------------------------
+      0.30 |  -1.0302e-02 |    -1.9104e-02 |   1.9104e-02 |     True
+      0.50 |  -6.4811e-03 |    -1.6125e-02 |   1.6125e-02 |     True
+      1.00 |  -2.1420e-03 |    -6.3655e-03 |   6.3655e-03 |     True
+      2.00 |  -4.0200e-04 |    -1.0215e-03 |   1.0215e-03 |     True
+      3.00 |  -9.8988e-05 |    -2.1716e-04 |   2.1716e-04 |     True
+      5.00 |  -8.0608e-06 |    -2.8319e-05 |   2.8319e-05 |     True
+      8.00 |  -2.5179e-07 |    -1.5141e-06 |   1.5141e-06 |     True
+     12.00 |  -3.0977e-09 |    -6.2173e-08 |   6.2173e-08 |     True
+
+  F < 0 at large d (attractive, pulls together):  True
+  |F| decays monotonically with d (Yukawa):       True
+  M11.I.5 → PASS
+
+==============================================================================
+M11.I.6 — Single-source amplitude cross-check (M9.3.1 Yukawa)
+==============================================================================
+  Far-tail fit: r ∈ [3, 10]·λ_C, 280 points
+  Numerical extraction:
+    μ_extracted = 1.0000
+    A_extracted = 2.175507e-02
+  M9.3.1 prediction (sympy):
+    A_M9 = q·M / (4π·K_geo)  = qM/(4*pi*K_geo)  →  2.387324e-02
+    μ_M9 = √(β/K_geo)        = sqrt(beta)/sqrt(K_geo)  →  1.0000
+  Relative diffs:
+    μ:  0.003%
+    A:  8.873%
+
+  μ within 5%:               True
+  A within 10%:              True
+  Symbolic A form correct:   True
+  M11.I.6 → PASS
+
+==============================================================================
+ M11.I — FINAL VERDICT
+==============================================================================
+  Sub-tests passed: 6/6
+    [v] M11.I.1: PASS
+    [v] M11.I.2: PASS
+    [v] M11.I.3: PASS
+    [v] M11.I.4: PASS
+    [v] M11.I.5: PASS
+    [v] M11.I.6: PASS
+
+  >> M11.I CLOSED (6/6 PASS) — Branch I multi-soliton interference COMPLETE
+  >> Ready for M11.G (global field, source extraction) launch
+

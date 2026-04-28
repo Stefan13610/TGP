@@ -2,6 +2,11 @@
 
 **Cykl badawczy:** następnik archiwalnego M3–M8.
 **Data otwarcia:** 2026-04-25.
+**Status post 2026-04-26:**
+  - **M9.1''** ✅ CLOSED (3 PASS + 1 conditional + 1 open) — hiperboliczna metryka, β=γ=1
+  - **M9.2** ✅ CLOSED 2026-04-26 — **5/5 PASS** (pęd, bezwładność, WEP) — [[M9_2_results.md]]
+  - **M9.3** ✅ **CLOSED 2026-04-26 — 5/5 PASS** (linearyzacja, dyspersja, Peters-Mathews, polaryzacje, GW170817) — [[M9_3_results.md]]
+  - **Cykl M9 (klasyczna grawitacja TGP) KOMPLETNY**
 **Punkt wyjścia ontologiczny:** `TGP_FOUNDATIONS.md` (top-level), §5 (grawitacja
 = efekt fluktuacji pola), §6 (pęd jako Lenz-podobny back-reakcja), §7 (M3–M8
 archiwum).

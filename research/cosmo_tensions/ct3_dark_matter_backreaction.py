@@ -3,6 +3,24 @@
 """
 ct3_dark_matter_backreaction.py: Refined backreaction with dark matter.
 
+*** SUPERSEDED 2026-04-26 by M10.5 (H_0/S_8 tensions audit, canonical sek08a) ***
+*** See: ../op-cosmology-closure/M10_5_results.md (6/6 PASS)                ***
+
+POST-M10.5 STATUS (2026-04-26):
+- This script's "tachyonic amplification" interpretation of V''(1)=-gamma
+  was conflation of cosmological slow-roll (cosmic time, Hubble-DAMPED)
+  with spatial linearization (M9.3.1: M_eff^2 = +beta > 0 stable Yukawa).
+- Optimistic claim B_psi/H0^2 ~ 0.03-0.3 SUPERSEDED. Correct canonical
+  sek08a value: B_psi/H0^2 ~ 1.08e-8 (gap 7.2 orders below 0.17 needed
+  for H_0 tension). Source of error: canonical K=1 used, plus spurious
+  amplification factor from misread linearization.
+- Honest verdict (ct7) CONFIRMED: TGP scope = galaxy/PPN, NOT cosmology
+  tensions. See [[../op-cosmology-closure/M10_5_results.md]] for full
+  reconciliation and 6/6 PASS audit.
+- This file kept for audit traceability; do NOT use its numerical
+  conclusions in derivative work.
+
+ORIGINAL DRAFT NOTES (pre-M10.5, retained for reference):
 KEY INSIGHT from ct2: naive baryon-only estimate gives B₀/H₀² = 0.04,
 but we need 0.57. The factor ~14 gap suggests:
 1. Dark matter (Ωm = 0.315 >> Ωb = 0.049) dominates backreaction

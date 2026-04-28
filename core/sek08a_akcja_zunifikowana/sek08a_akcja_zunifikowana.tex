@@ -673,3 +673,39 @@ podniesienia statusu do \statuslabel{Twierdzenie}.
     do~\statuslabel{Twierdzenie}.
 \end{enumerate}
 \end{remark}
+
+\begin{remark}[Faza 3.E: pog\l{}\k{e}bienie B.4 / B.6 (2026-04-28)]%
+\label{rem:phase3-E-deepening}
+W~ramach Fazy~3 cyklu \texttt{op-phase3-uv-completion}
+(60/60 PASS, GRAND TOTAL 281) potwierdzono i~pog\l{}\k{e}biono
+dwa kluczowe \textsl{B-net items} dotycz\k{a}ce sektora $\kappa$/$\Lambda$:
+
+\begin{itemize}[nosep]
+\item \textbf{B.6 \textsc{partial derived}}: tradycyjnie wprowadzany
+  bridge factor $V(\Phi_{\rm eq}) \to V(\Phi_{\rm eq})/2$ (uw.~\ref{rem:kappa-verification}-
+  preceding) zosta\l{} \emph{cz\k{e}\'sciowo wyprowadzony} przez sympy:
+  na warunku pr\'o\.zniowym $\beta = \gamma$ (stw.~\ref{prop:vacuum-condition}),
+  $V(\Phi_{\rm eq})|_{\beta=\gamma} = \gamma/6$, co po zastosowaniu
+  bridge factor $1/2$ daje $\gamma/12$. Friedmann match:
+  $3\,\Omega_\Lambda/(8\pi) = 0{,}0817$ vs $1/12 = 0{,}0833$
+  (ratio $0{,}9808$, w~granicy 5\%).
+\item \textbf{B.4 \textsc{strengthened}}: hierarchia
+  $\PhiZero \approx 115$ vs $M_{\rm Pl} \sim 10^{18}$~GeV
+  (\textbf{60{,}93~dex}) wykluczona poprzez T-FP IR fixed point
+  + unikalno\'s\'c IR-scale: $\PhiZero$ jest \emph{jedyn\k{a}}
+  spe\l{}niaj\k{a}c\k{a} skal\k{a} w~ca\l{}ej zakresie
+  RG-flow do IR.
+\item \textbf{$\Delta_{\rm target} = 0{,}114$}: promowany do statusu
+  \statuslabel{Postulat strukturalny} w~UV-PTR przez heat-kernel $a_2$
+  (referencja: Faza 3.A NGFP).
+\end{itemize}
+
+\noindent
+Zachowanie wyniku Path~B: $m_\sigma^2 / m_s^2 = 2$ (sympy exact integer)
+zachowane jednolicie w~4/4 kandydatach UV (AS, KKLT, LQG, CDT)
+--- czyli stosunek mass scaling \emph{nie zale\.zy} od wyboru
+UV completion. Szczeg\'o\l{}y: \texttt{research/op-phase3-uv-completion/Phase3\_E\_results.md}.
+Otwarte pierwsze pochodne (residua $0{,}9808$ ratio, $1/12$ exact)
+przeniesione do \texttt{research/op-uv-renormalizability-research/}
+(Sub-track F: Phase 3.E residua first-principles).
+\end{remark}

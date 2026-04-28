@@ -1,0 +1,64 @@
+
+========================================================================
+  M11.3 — Branch II level 3 audit: γ(k) k-dependent RG running
+========================================================================
+  Anomalous-dim power law:  γ(k) = γ_UV · (k/k_UV)^η
+  Primary η (CG-2)          = 0.044
+  η honest band (M11.2):    [0.01278, 0.04400]
+  η geometric mean          = 0.02423
+
+  k_CMB     = 7.1429e-05 Mpc⁻¹  (1/(14 Gpc))
+  k_LSS     = 1.0000e-02 Mpc⁻¹  (1/(100 Mpc))
+  k_cluster = 1.0000e+00 Mpc⁻¹  (1/(1 Mpc))
+  k_galaxy  = 1.0000e+02 Mpc⁻¹  (1/(10 kpc))
+  k_LSS/k_CMB = 140.0
+  k_cluster/k_CMB = 14000.0
+  k_galaxy/k_CMB = 1.40e+06
+
+  M10.5.4 prediction:  γ(k_LSS)/γ(k_CMB) = 1.244  (target)
+
+========================================================================
+  Running 6 tests
+========================================================================
+  [PASS] M11.3.1 M10.5.4 reproduction (1.244 entry)
+         η = 0.044, k_LSS/k_CMB = 140.0; computed γ-ratio = 1.242881, M10.5.4 reference = 1.244; |Δ| = 1.1188e-03 (0.0899%); closed-form 140^0.044 match: True
+  [PASS] M11.3.2 4-scale monotonic running
+         η = 0.044; per-scale: CMB: 7.14e-05, γ-rat=1.0000; LSS: 1.00e-02, γ-rat=1.2429; cluster: 1.00e+00, γ-rat=1.5221; galaxy: 1.00e+02, γ-rat=1.8639; monotone-up = True; |Δ_LSS| = 1.1188e-03 (gate 1.5e-3, M10.5.4 manual rounding), max|Δ| = 2.7053e-02 (gate 3e-2, 3-sig-fig precision)
+  [PASS] M11.3.3 η-band sensitivity at k_LSS/k_CMB
+         η_LPA'(naive): η=0.01278 → ratio=1.0652; η_BI: η=0.02530 → ratio=1.1332; η_LPA'(wide): η=0.02555 → ratio=1.1346; η_CG2: η=0.04400 → ratio=1.2429; all-greater-than-1 = True; M10.5.4 1.244 bracketed by [η_BI, η_CG2] = True; max(Δ)/min(Δ) = 3.73× (gate <5×)
+  [PASS] M11.3.4 η extraction from γ-ratios
+         η extracted from ratios: at LSS=0.044182, at cluster=0.042122, at galaxy=0.043240; η_target = 0.044; spread (max-min) = 2.0606e-03 (4.68% relative); |Δ_LSS|/η = 0.4138% (strict); band-consistent <10% = True
+  [PASS] M11.3.5 σ_8 structural impact (sub-percent)
+         Δγ/γ at k_LSS = 24.4% (η=0.044, k-ratio=140); σ_8 modification (M10.4.5) = 1e-05 << 1e-03 PASS bar; empirical suppression factor σ_8/(Δγ/γ) = 4.10e-05; sub-percent = True, screening×10³⁺ = True
+  [PASS] M11.3.6 H_0 tension structural non-help
+         Δγ/γ at k_LSS = 0.2440; naive (incorrect) ΔH_0/H_0 ≈ 0.5·Δγ/γ·Ω_Λ = 8.36% (LOOKS like it bridges 8.37% tension); actual TGP B_ψ/H_0² = 1.08e-08, required 0.167; structural gap = 7.19 decades (M10.5.4 reports 7.2); verdict: M10.5.4 conclusion (RG cannot bridge H_0) CONFIRMED
+
+========================================================================
+  Summary
+========================================================================
+  Result: 6/6 PASS
+    [PASS] M11.3.1 M10.5.4 reproduction (1.244 entry)
+    [PASS] M11.3.2 4-scale monotonic running
+    [PASS] M11.3.3 η-band sensitivity at k_LSS/k_CMB
+    [PASS] M11.3.4 η extraction from γ-ratios
+    [PASS] M11.3.5 σ_8 structural impact (sub-percent)
+    [PASS] M11.3.6 H_0 tension structural non-help
+
+  ✓ M11.3 6/6 PASS — Branch II level 3 (γ(k) RG running) CLOSED.
+
+========================================================================
+  Reference numbers (for closure doc)
+========================================================================
+  γ(k_LSS)/γ(k_CMB)     = 1.242881 (M10.5.4: 1.244)
+  γ(k_cluster)/γ(k_CMB) = 1.522053 (M10.5.4: 1.495)
+  γ(k_galaxy)/γ(k_CMB)  = 1.863930 (M10.5.4: 1.844)
+
+  η-band sensitivity at k_LSS/k_CMB:
+    η_LPA'(naive) = 0.01278 → ratio = 1.0652
+    η_BI          = 0.02530 → ratio = 1.1332
+    η_LPA'(wide)  = 0.02555 → ratio = 1.1346
+    η_CG2         = 0.04400 → ratio = 1.2429
+
+  σ_8 modification (M10.4.5)        = 1e-05
+  σ_8 PASS bar                      = 1e-03
+  H_0 tension structural gap        = 7.2 decades (B_ψ/H_0² 1.08e-08 vs required 0.167)

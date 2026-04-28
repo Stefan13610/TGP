@@ -1,0 +1,96 @@
+==============================================================================
+T-PB | sigma_ab Path B audit (single-substrate-faithful)
+==============================================================================
+
+[Setup] Linearized substrate EOM around vacuum s_eq = sqrt(Phi_0):
+                          2                         2                          >
+   2                     d                         d                         d >
+m_s *ds(t, x1, x2, x3) - ---(ds(t, x1, x2, x3)) + ----(ds(t, x1, x2, x3)) + -- >
+                           2                         2                         >
+                         dt                       dx1                       dx >
+
+> 2                         2                                       
+>                          d                                        
+> --(ds(t, x1, x2, x3)) + ----(ds(t, x1, x2, x3)) = J(t, x1, x2, x3)
+>  2                         2                                      
+> 2                       dx3                                       
+
+------------------------------------------------------------------------------
+T-PB.1  Derive heredity equation by applying box to bilinear
+------------------------------------------------------------------------------
+
+  LHS = box[(d_a ds)(d_b ds)] after substituting box(ds) -> J - m_s^2 ds:
+    Reconstruction matches LHS  (LHS - reconstruction): 0
+  [PASS] T-PB.1a  Heredity-form decomposition holds -- box[bilinear] = -2 m_s^2 (d_a ds)(d_b ds) + d_a J*B + A*d_b J + 2 d_mu A d^mu B
+  [PASS] T-PB.1b  Composite-mass shift M^2 = 2 m_s^2 emerges automatically -- box[K_ab] + 2 m_s^2 K_ab = TT-source(J) + grad-coupling
+
+  Result: K_ab = (d_a ds)(d_b ds) satisfies
+    box K_ab + (2 m_s^2) K_ab = source(J,ds) + 2 d_mu(d_a ds) d^mu(d_b ds)
+  After coarse-grain <...>_B and trace removal -> heredity for sigma_ab.
+
+------------------------------------------------------------------------------
+T-PB.2  Composite-mass identification via OPE / spectral function
+------------------------------------------------------------------------------
+
+  m_s (numeric)            = 1.0
+  Heredity EOM mass^2 (M^2) = 2.0    (coeff in box sigma + M^2 sigma)
+  Spectral threshold s_min  = 4.0    (= 4 m_s^2; sets continuum cut)
+  [PASS] T-PB.2a  Heredity mass^2 = 2 m_s^2 (derived, not postulated) -- from box[bilinear] algebra
+  [PASS] T-PB.2b  Spectral threshold sqrt(s_min) = 2 m_s -- two-particle continuum lower bound
+  [PASS] T-PB.2c  Decoupling: M_eff / omega_LIGO >> 1 (effective masslessness) -- M_eff = 7.07e-04 eV, omega_LIGO ~ 1.00e-13 eV, ratio = 7.07e+09
+
+------------------------------------------------------------------------------
+T-PB.3  Ghost-freeness inherited from substrate Hamiltonian
+------------------------------------------------------------------------------
+
+  Hamiltonian Hessian eigenvalues (substrate scalar): [1, m_s**2]
+  [PASS] T-PB.3a  H_s >= 0 (positive-definite) -- trivially: all kinetic + mass terms positive
+  K_ab is a Gram matrix of gradient field components
+  -> eigenvalues >= 0 -> sigma_ab carries no negative-norm modes
+  [PASS] T-PB.3b  Ghost-free by Gram-matrix positivity of K_ab -- K_ab = <(d_a ds)(d_b ds)>_B has non-negative eigenvalues by construction
+
+------------------------------------------------------------------------------
+T-PB.4  Degrees-of-freedom counting (single-substrate axiom)
+------------------------------------------------------------------------------
+
+  Phase-space d.o.f. of substrate scalar: 1
+  Emergent breathing mode (OP-7 T1):        1
+  sigma_ab as new independent d.o.f.:       0  (composite, derived)
+  [PASS] T-PB.4a  No new canonical d.o.f. introduced by sigma_ab -- sigma_ab is correlator-valued, derived from <(d_a ds)(d_b ds)>
+  [PASS] T-PB.4b  Single-Phi axiom (TGP_FOUNDATIONS section 1) preserved -- exactly one scalar field in the action; everything else emergent
+
+------------------------------------------------------------------------------
+T-PB.5  Static spherical reduction (consistency with M9.1'' P3 PPN)
+------------------------------------------------------------------------------
+
+  K_ab (sph., isotropic avg.)  = (1/3) (ds/dr)^2 delta_ab
+  Tr K                          = (ds/dr)^2
+  sigma_ab = K_ab - (1/3) delta_ab Tr K = 0
+  [PASS] T-PB.5a  sigma_ab = 0 for static spherical (analytic) -- isotropy forces traceless part to vanish
+
+  Numerical sphere check (N=32, Gaussian density):
+    Tr K          = 4.896522e-03
+    ||sigma||/TrK = 2.201761e-18  (should be << 1 for spherical)
+  [PASS] T-PB.5b  sigma_ab = 0 for static spherical (numeric) -- discrete grid floor; analytic exact = 0, numeric = 2.20e-18
+
+==============================================================================
+Summary
+==============================================================================
+
+PASS: 11
+  + T-PB.1a  Heredity-form decomposition holds
+  + T-PB.1b  Composite-mass shift M^2 = 2 m_s^2 emerges automatically
+  + T-PB.2a  Heredity mass^2 = 2 m_s^2 (derived, not postulated)
+  + T-PB.2b  Spectral threshold sqrt(s_min) = 2 m_s
+  + T-PB.2c  Decoupling: M_eff / omega_LIGO >> 1 (effective masslessness)
+  + T-PB.3a  H_s >= 0 (positive-definite)
+  + T-PB.3b  Ghost-free by Gram-matrix positivity of K_ab
+  + T-PB.4a  No new canonical d.o.f. introduced by sigma_ab
+  + T-PB.4b  Single-Phi axiom (TGP_FOUNDATIONS section 1) preserved
+  + T-PB.5a  sigma_ab = 0 for static spherical (analytic)
+  + T-PB.5b  sigma_ab = 0 for static spherical (numeric)
+
+FAIL: 0
+
+Total: 11/11
+Verdict: POSITIVE

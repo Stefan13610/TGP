@@ -1,0 +1,116 @@
+##############################################################################
+# M11.E — Emergent-source addendum to M11.G (Branch I)
+# Question: does ρ = ρ_loc(Φ) restore translation invariance + Goldstone?
+# Closure-grade target: ≥6/6 PASS
+##############################################################################
+
+Solving single-soliton template (q·M = 0.3, external Gaussian source)...
+  Φ(0) = 1.0856,  Φ(r_max) = 1.000000
+
+Constructing emergent ρ_loc(Φ) from Φ_sol(r) and ρ_src(r)...
+  Φ range covered: [1.0000, 1.0856]
+  ρ_loc peak value: 1.0363e-01
+==============================================================================
+M11.E.1 — emergent ρ_loc(Φ) construction validity
+==============================================================================
+  Φ range: [1.0000, 1.0856]
+  ρ_loc(Φ_0=1) = +3.3997e-241 (BC: should be ≈ 0)
+  ρ_loc(Φ_max) = +1.0363e-01 (peak)
+  Φ_sol monotonic in r:                  True
+  ρ_loc finite throughout:               True
+  d[Φ·ρ_loc]/dΦ ↔ ρ_src round-trip:
+    relative error (mean):                1.537e-02
+    relative error (max in core):         3.942e-02
+
+  Φ_sol monotonic:                        True
+  ρ_loc finite:                           True
+  ρ_loc(Φ_0) ≈ 0 (vacuum BC):             True
+  Round-trip < 5% (core):                  True
+  M11.E.1 → PASS
+
+==============================================================================
+M11.E.2 — translation invariance: emergent vs external
+==============================================================================
+  Translation: shift Φ(x) → Φ(x − 0.100·ẑ)
+  Characteristic action scale:           1.1781e+03
+  External  ΔS (source breaks invar):    +6.7219e-04  (rel 5.706e-07)
+  Emergent  ΔS (source-coupling part):   +2.0768e-08  (rel 1.763e-11)
+
+  External translation breaking (rel ΔS > 0):     True
+  Emergent ≥ 100× more invariant (ratio < 0.01):  True
+  Ratio rel_emerg / rel_ext =                    3.090e-05
+  M11.E.2 → PASS
+
+==============================================================================
+M11.E.3 — EOM self-consistency in emergent theory
+==============================================================================
+  Scale (max(|ρ_src|, |V'|)):              5.6438e+00
+  External EOM residual / scale (BVP):     1.2372e-03
+  Emergent EOM residual / scale:           5.0521e-03
+  Ratio emergent/external:                 4.0837e+00
+
+  Φ_sol solves emergent EOM:               True
+  M11.E.3 → PASS
+
+==============================================================================
+M11.E.4 — l=1 zero mode in emergent operator (Goldstone test)
+==============================================================================
+  l=1 lowest 5 eigenvalues (ω²):
+    External (fixed ρ_src):  [+1.0334, +1.1662, +1.3857, +1.6930, +2.0884]
+    Emergent (ρ = ρ_loc(Φ)): [+0.0494, +1.0335, +1.1674, +1.3909, +1.7062]
+    Free (Φ_0 background):   [+1.0334, +1.1660, +1.3853, +1.6922, +2.0871]
+
+  Emergent |ω²_l=1| < β/4 (Goldstone signature):   True  (+4.9411e-02)
+  External ω²_l=1 > β/2 (no zero mode):           True  (+1.0334e+00)
+  Emergent ≥ 4× smaller than external (ratio):     True  (4.781e-02)
+  M11.E.4 → PASS
+
+==============================================================================
+M11.E.5 — Goldstone correspondence: zero mode ∝ ∂_z Φ_sol
+==============================================================================
+  Predicted Goldstone:  u_zero(r) = r · Φ_sol'(r)
+  Lowest l=1 eigvec (D̂_emergent) normalized
+  Inner product |<u_zero | eigvec>| = 0.999984
+  (Should be ≈ 1 for pure translational mode)
+
+  |<u_zero | eigvec>| > 0.95:               True
+  M11.E.5 → PASS
+
+==============================================================================
+M11.E.6 — Derrick-instability detection in emergent-source theory
+==============================================================================
+  Physics: emergent self-consistent ρ_loc(Φ) → V_eff''(Φ) has sharp
+  well at soliton core (no external anchor). Expect ≥1 negative
+  mode at l=0 (radial breathing); l≥2 stable (centrifugal protection).
+
+  l=0 lowest 5 ω² (External, anchored):  [+1.0107, +1.0960, +1.2666, +1.5229, +1.8649]
+  l=0 lowest 5 ω² (Emergent):             [-70.0092, +1.0110, +1.0993, +1.2759, +1.5409]
+  l=2 lowest 5 ω² (Emergent):             [+1.0665, +1.2459, +1.5096, +1.8606, +2.2993]
+
+  External l=0 stable (anchored):            True
+  Emergent l=0 has Derrick mode (ω² < 0):     True  (lowest ω² = -7.0009e+01)
+  Negative mode localized at core (r<5·a):    True  (peak r = 0.151, a_source = 0.150)
+  Emergent l=2 stable (centrifugal protect):  True
+  M11.E.6 → PASS
+
+  INTERPRETATION: Derrick-type breathing instability surfaces in the
+  simplest emergent-source construction (no external anchor) — confirms
+  matter-soliton stability requires additional mechanism (topological
+  charge, K(Φ)=K_geo·Φ⁴ + Φ→0 degeneracy, or geometric coupling).
+  l=2 stability shows the obstruction is purely radial (not a generic
+  failure of self-consistency).
+
+==============================================================================
+ M11.E — FINAL VERDICT
+==============================================================================
+  Sub-tests passed: 6/6
+    [v] M11.E.1: PASS
+    [v] M11.E.2: PASS
+    [v] M11.E.3: PASS
+    [v] M11.E.4: PASS
+    [v] M11.E.5: PASS
+    [v] M11.E.6: PASS
+
+  >> M11.E CLOSED (6/6 PASS) — emergent source restores translation
+  >> invariance & Goldstone zero mode. Confirms M11.G structural finding
+  >> on the path to M11.4 (matter solitons with self-consistent sources).

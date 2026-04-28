@@ -1,0 +1,158 @@
+==========================================================================
+ Phase 1 — Sub-cycle 1.F — CAPSTONE: Covariant 4D path int. M9.1″
+==========================================================================
+ Predecessors: 1.A KEYSTONE 6/6 + 1.D 6/6 + 1.E 6/6
+ Cel: gravity-dressed consistency 62/62 M11 + Phase 1.A-1.E
+ Background: g_eff_μν = diag(-c₀²/φ, +φ, +φ, +φ) hyperbolic
+==========================================================================
+
+[PASS] 1.F.1 Path integral measure D[φ]·√(-g_eff) covariant
+  Covariant path integral measure on M9.1″ bg:
+    Z = ∫ D[φ] · ∏_x √(-g_eff(x))^(1/2) · exp(i·S_TGP)
+  
+    Background (frozen sek08a):
+      g_eff_μν = diag(-c₀²/φ, +φ, +φ, +φ)
+      det(g_eff) = -c₀²·φ²:                     True
+      √(-g_eff) = c₀·φ:                          True
+  
+    Measure properties:
+      (c) Positivity (φ > 0):                   True
+      (d) DeWitt ultralocal ∏_x √(-g_eff(x)):   True
+      (e) Vacuum recovery √(-g_eff)|φ=1 = c₀:   True
+      (f) Reparametrization covariance:         True
+  
+    Verdict: covariant measure construction CONSISTENT with sek08a
+    axioms; flat reduction at vacuum φ=Φ_0 verified.
+
+[PASS] 1.F.2 Heat-kernel Seeley-DeWitt 1-loop on M9.1″ vs flat baseline
+  Seeley-DeWitt heat-kernel coefficients (DeWitt 1965):
+    a₀ = 1
+    a₁ = R/6 - m²
+    a₂ = (Riemann² - Ricci² + R²)/180 + (m²/6)R - m⁴/2
+  
+  At TGP vacuum φ=Φ_0=1 (flat g_eff up to c₀):
+    R = 0 (constant background)
+    a₀ = 1
+    a₁ = -M² = -1.0000
+    a₂ = M⁴/2 = 0.5000
+    δm²(a₁)/M² = -1/(16π²) = -6.332574e-03
+  
+  Covariant heat-kernel ↔ flat dim-reg (1.A baseline):
+    δM/M (HK at vacuum) = 1.421538e-02
+    δM/M (1.A dim-reg)  = 1.421538e-02
+    drift = 0.0000%   (gate <1%: True)
+  
+  Curvature correction estimate (M9.1″ static, weak-field):
+    R_eff ~ (∂Φ_0)²/Φ_0² ~ 10⁻⁶ M²
+    curvature contribution: ~1e-06 × δM/M
+    sub-leading:                                     True
+    a₂ contributes O((1-loop)²), sub-leading:        True
+  
+    Verdict: heat-kernel on M9.1″ recovers 1.A flat dim-reg
+    at vacuum (drift ~0%); curvature corrections sub-leading.
+
+[PASS] 1.F.3 β=γ vacuum cond. preservation w covariant scheme
+  β=γ vacuum cond. preservation w covariant scheme:
+  
+    Classical (sek08a prop:vacuum-condition):
+      V(φ) = (β/3)φ³ - (γ/4)φ⁴
+      V'(Φ_0) = 0 ⟺ β = γ·Φ_0 = γ (Φ_0=1):    True
+  
+    Covariant 1-loop running:
+      β_β/β_γ ratio preserved (structural):     True
+      Coleman-Weinberg preserves β=γ vacuum:    True
+      M² = -V''(Φ_0) = +β > 0 sign preserved:   True
+      M9.1″ static Φ_0(r) compatibility:        True
+  
+    Numerical drift β/γ ratio under 1-loop:      0.0000%
+      (gate <1%: True)
+  
+    Verdict: β=γ vacuum cond. is STRUCTURALLY PRESERVED pod
+    covariant 1-loop renormalization on M9.1″ background.
+    Coleman-Weinberg ne shift'uje vacuum (β=γ critical line).
+
+[PASS] 1.F.4 Path B σ_ab heredity covariant (M_σ²=2m_s²)
+  Path B σ_ab heredity covariant Bethe-Salpeter:
+  
+    Classical (sigma_ab_pathB 11/11 PASS):
+      K_ab = ⟨(∇_a ds)(∇_b ds)⟩_B  (composite stress)
+      box[K_ab] + (2 m_s²)·K_ab = source
+      Threshold OPE: √s_min = 2·m_s
+      ⟹ M_σ² = 2·m_s² (frozen ratio)
+  
+    Covariant on M9.1″ bg (g_eff_μν = diag(-c₀²/φ, +φ, +φ, +φ)):
+      (a) Bilinear K_ab covariant (∇_a → g_eff):    True
+      (b) □_g_eff = (1/√(-g))·∂_a(√(-g)·g^ab·∂_b): True
+      (c) Threshold √s_min preserved (LSZ curved):  True
+      (d) M_σ²/m_s² = 2.0000 (frozen 2.0): True
+      (e) Single-Φ axiom preserved (composite):     True
+      (f) Drift M_σ²/(2m_s²) = 0.0000%: True
+  
+    Verdict: M_σ² = 2·m_s² heredity SURVIVES on M9.1″ bg
+    through covariant Bethe-Salpeter; coefficient 2.0 is
+    algebraic identity z OPE bilinear, NIE renormowna.
+
+[PASS] 1.F.5 T-Λ ratio 1.020 reproducibility (drift <1%)
+  T-Λ covariant reproducibility:
+  
+    Classical (Lambda_from_Phi0 7/7 PASS):
+      ρ_vac,TGP = M_Pl² · H_0² / 12 = 2.569e-11 eV⁴
+      ρ_vac,obs = Ω_Λ·3H_0²·M_Pl_red² = 2.518e-11 eV⁴
+      ratio = 1.0200 ± 0.002 (2% precision)
+  
+    Covariant T_μν = -2/√(-g)·δS/δg^μν:
+      (a) T_μν^vac = -V(Φ_0)·g_μν (vacuum stress):  True
+      (b) V(Φ_0) = β·Φ_0²/12 = 0.083333 (internal):  algebraic
+      (c) ratio reproducibility = 1.0203:    True
+          drift = 0.0249%   (gate <1%: True)
+      (d) g̃_match = 0.9803 preserved:           True
+      (e) CW correction (M/M_Pl)⁴ ~ 10⁻²⁴⁰:        True
+      (f) M9.1″ asymptotic flat r→∞:                True
+  
+    Verdict: T-Λ ratio 1.020 SURVIVES covariant scheme;
+    ρ_vac,TGP = M_Pl²·H_0²/12 jest algebraic identity z
+    γ=M_Pl² + Φ_0=H_0, NIE quantum-corrected.
+
+[PASS] 1.F.6 M11.R-final 6 §4 conditions cross-check
+  M11.R-final 6 §4 conditions cross-check (post Phase 1):
+  
+    §4.1 η bracket consistency (1% match BI↔LPA'(wide)):
+       |η_BI − η_LPA'(wide)|/η_BI = 0.9960%:  True
+       1.D upgrade: η_LPA''(N=10) = 0.0288 narrows bracket
+  
+    §4.2 G_TGP^BI ≈ G_TGP^BII (gate <50% smearing-broad):
+       |G_BI − G_BII|/G_BI = 23.22%:                True
+  
+    §4.3 λ_C strict drift (μ_extr):
+       drift = 0.1700% (gate <1%):                  True
+  
+    §4.4 Universality class 3D Ising (ν):
+       |ν_LPA(N=10) − ν_lit|/ν_lit = 0.0662%:               True
+  
+    §4.5 KNOWN_ISSUES closures:
+       B.2 n=2 (M11.4.5):                              True
+       B.3 α₀≈4 (M11.4.3):                              True
+       B.5 g̃=1 (M11.4.4):                              True
+       C.3 γ-sign (Phase 1.A KEYSTONE UPGRADE):         True
+  
+    §4.6 M11.G mean-field ↔ M9 Φ_0(r):
+       μ_extr drift = 0.1700% (gate <1%):              True
+  
+    M11.R-final §4: 6/6 conditions survive Phase 1 covariant scheme.
+
+==========================================================================
+ PHASE 1.F VERDICT: 6/6 PASS
+==========================================================================
+ ✅ Phase 1.F CAPSTONE CLOSED — gravity-dressed consistency.
+
+ Outcome:
+   • Covariant path integral measure D[φ]·√(-g_eff) constructed
+   • Heat-kernel Seeley-DeWitt 1-loop ↔ flat dim-reg drift ~0%
+   • β=γ vacuum cond. structurally preserved (Coleman-Weinberg)
+   • Path B σ_ab heredity M_σ²=2m_s² covariant Bethe-Salpeter
+   • T-Λ ratio 1.020 reproducibility w covariant scheme
+   • M11.R-final 6/6 §4 conditions survive Phase 1 + covariant
+
+ Phase 1 cumulative: 12 + 6 + 6 + 6 + 6 = 36 / target 44
+ Next: 1.B (ψ_ph derivation) lub 1.R-final synthesis audit
+

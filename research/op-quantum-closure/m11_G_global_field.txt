@@ -1,0 +1,175 @@
+##############################################################################
+# M11.G — Global field decomposition & 1-loop FULL AUDIT (Branch I level 3)
+# closure-grade target: ≥6/6 PASS
+# Units: β = γ = K_geo = Φ_0 = 1, μ_Yukawa = 1, λ_C = 1
+##############################################################################
+
+Solving single-soliton template (q·M = 0.3)...
+  Φ(0) = 1.0856,  Φ(r_max=15.0) = 1.000000
+
+==============================================================================
+M11.G.1 — M11.S erratum: E_cl recalc with EOM-consistent Hamiltonian
+==============================================================================
+  Single soliton qM = 0.3, a_source = 0.15
+  E_cl_old (M11.S original convention):  +2.364839e-02
+  E_cl_new (EOM-consistent):              -9.210769e-03
+  E_bind (linearized -½·q·∫δφ·ρ):         -8.723226e-03
+  M_inertia (Christ-Lee, sign-indep):     +4.812540e-03
+
+  E_cl_new < 0 (binding):                 True
+  Sign correction non-trivial:             True
+  E_new ≈ -½·q·∫δφ·ρ within 30%:           True (rel diff 5.59%)
+  M_inertia > 0 (Christ-Lee):              True
+  M11.G.1 → PASS
+
+==============================================================================
+M11.G.2 — Decomposition Φ = Φ_cl + δΦ_rad linearization regime
+==============================================================================
+  Probe: δΦ_rad = ε·exp(-(r-2.0)²/0.5²) on Φ_sol
+       ε |    |δφ|max |  |δφ/Φ|max |        S_2 |        S_3 |    |S₃/S₂|
+------------------------------------------------------------------------------
+   0.001 |     0.0010 |     0.0010 | +7.203e-05 | +2.481e-08 |  3.444e-04
+   0.010 |     0.0100 |     0.0100 | +7.203e-03 | +2.481e-05 |  3.444e-03
+   0.100 |     0.1000 |     0.0999 | +7.203e-01 | +2.481e-02 |  3.444e-02
+   0.300 |     0.3000 |     0.2996 | +6.482e+00 | +6.698e-01 |  1.033e-01
+
+  ε=0.001: |S_3/S_2| < 0.01:               True
+  ε=0.01:  |S_3/S_2| < 0.05:               True
+  S_2 scales as ε² (factor 100):           True (actual 100.00)
+  S_3 scales as ε³ (factor 1000):          True (actual 1000.00)
+  M11.G.2 → PASS
+
+==============================================================================
+M11.G.3 — Partial-wave spectrum of fluctuation operator D̂[Φ_sol]
+==============================================================================
+  Setup: source ρ_src external & localized → translation broken in
+  this sector. Christ-Lee zero mode is COLLECTIVE (moves φ+ρ),
+  not eigenmode of D̂ at fixed ρ. We test SPECTRAL STABILITY.
+
+  l = 0:  lowest 5 ω² = [ +1.0107,  +1.0960,  +1.2666,  +1.5229,  +1.8649]
+
+  l = 1:  lowest 5 ω² = [ +1.0334,  +1.1662,  +1.3857,  +1.6930,  +2.0884]
+
+  l = 2:  lowest 5 ω² = [ +1.0665,  +1.2459,  +1.5096,  +1.8606,  +2.2993]
+
+  l=0 lowest ω² = 1.0107e+00    (mass gap: ω² ~ β):              True
+  l=1 lowest ω² = 1.0334e+00    (p-wave excitation, no zero):    True
+  l=2 lowest ω² = 1.0665e+00    (d-wave centrifugal):            True
+
+  All ω² > 0 (stability):                       True
+  Mass gap ω²_l=0 ≈ β within 20%:              True
+  Centrifugal monotonicity ω²_l=0 ≤ l=1 ≤ l=2:   True
+
+  M11.G.3 → PASS
+
+==============================================================================
+M11.G.4 — M² scaling: V_int(d) ∝ (qM)² across qM sweep
+==============================================================================
+  d-fit window: [np.float64(2.0), np.float64(3.0), np.float64(5.0), np.float64(8.0)]·λ_C
+      qM |       A_extr | A_M9 (qM²/4πK) |     μ_extr |   A rel diff
+------------------------------------------------------------------------------
+   0.150 |   1.6292e-03 |     1.7905e-03 |     0.9987 |        9.01%
+   0.200 |   2.8012e-03 |     3.1831e-03 |     0.9986 |       12.00%
+   0.300 |   5.9286e-03 |     7.1620e-03 |     0.9983 |       17.22%
+
+  M² scaling A(0.30)/A(0.15) ≈ 4:           True (actual 3.64)
+  μ universal (within 2%):                   True
+  A within 25% of M9.3.1:                    True
+  M11.G.4 → PASS
+
+==============================================================================
+M11.G.5 — 1-loop δM partial-wave Λ-structure (extends M11.S H4)
+==============================================================================
+  Honest scope: 4D ZPE divergent without regularization (M11.R).
+  Closure-grade tests at this level:
+    (i)   per-l δE_l finite at fixed cutoff
+    (ii)  l=0 sub-quadratic a_0 < 2  (matches M11.S H4)
+    (iii) high-mode shift decays with l (centrifugal UV screening)
+
+  l = 0 (multiplicity 2l+1 = 1):
+    N= 30: δE_l = +9.2737e-01, |δE_l/N| = 3.0912e-02
+    N= 50: δE_l = +1.5304e+00, |δE_l/N| = 3.0607e-02
+    N= 80: δE_l = +2.7073e+00, |δE_l/N| = 3.3841e-02
+    N=120: δE_l = +4.9415e+00, |δE_l/N| = 4.1179e-02
+    Λ-scaling exponent a_l = 1.202  (sub-quadratic: a_l < 2: True)
+    Mode shift: low ω₀: 5.316e-03, high ω_max: 1.309e-01
+
+  l = 1 (multiplicity 2l+1 = 3):
+    N= 30: δE_l = +4.6542e-01, |δE_l/N| = 1.5514e-02
+    N= 50: δE_l = +1.6367e+00, |δE_l/N| = 3.2733e-02
+    N= 80: δE_l = +4.6807e+00, |δE_l/N| = 5.8509e-02
+    N=120: δE_l = +1.0957e+01, |δE_l/N| = 9.1309e-02
+    Λ-scaling exponent a_l = 2.278  (sub-quadratic: a_l < 2: False)
+    Mode shift: low ω₀: 2.433e-06, high ω_max: 1.246e-01
+
+  l = 2 (multiplicity 2l+1 = 5):
+    N= 30: δE_l = +5.3267e-01, |δE_l/N| = 1.7756e-02
+    N= 50: δE_l = +2.1034e+00, |δE_l/N| = 4.2067e-02
+    N= 80: δE_l = +6.6567e+00, |δE_l/N| = 8.3209e-02
+    N=120: δE_l = +1.6622e+01, |δE_l/N| = 1.3851e-01
+    Λ-scaling exponent a_l = 2.484  (sub-quadratic: a_l < 2: False)
+    Mode shift: low ω₀: 4.687e-07, high ω_max: 1.204e-01
+
+  l = 3 (multiplicity 2l+1 = 7):
+    N= 30: δE_l = +5.5609e-01, |δE_l/N| = 1.8536e-02
+    N= 50: δE_l = +2.3660e+00, |δE_l/N| = 4.7320e-02
+    N= 80: δE_l = +8.0218e+00, |δE_l/N| = 1.0027e-01
+    N=120: δE_l = +2.1123e+01, |δE_l/N| = 1.7603e-01
+    Λ-scaling exponent a_l = 2.626  (sub-quadratic: a_l < 2: False)
+    Mode shift: low ω₀: 1.535e-07, high ω_max: 1.150e-01
+
+  Per-mode shift convergence in l (high-mode tail):
+    l=0: <|ω_int - ω_free|> over modes 100-119: 1.2152e-01
+    l=1: <|ω_int - ω_free|> over modes 100-119: 1.1493e-01
+    l=2: <|ω_int - ω_free|> over modes 100-119: 1.1041e-01
+    l=3: <|ω_int - ω_free|> over modes 100-119: 1.0468e-01
+
+  All δE_l(N) finite:                                  True
+  l=0 sub-quadratic a_0 < 2 (matches M11.S H4):       True  (a_0 = 1.202)
+  Centrifugal screening (high shift mono. ↓ in l):    True
+  M11.G.5 → PASS
+
+  NOTE: Total ZPE Σ_l(2l+1)·δE_l requires regularization (M11.R scope).
+  Per-l a_l for l ≥ 1 is divergent (standard 4D scalar ZPE) — this is
+  expected QFT physics absorbed by mass/wavefunction counterterms.
+  Closure-grade benchmarks at this level: l=0 sub-quadratic + screening.
+
+==============================================================================
+M11.G.6 — η anomalous-dim consistency vs CG-2 LPA' (η = 0.044)
+==============================================================================
+  Vertex couplings (sek08a, Φ_0 = 1):
+    g_3_V (cubic V):        +4.0000   (= -V'''(1) = +4β)
+    g_4_V (quartic V):      +6.0000   (= -V''''(1) = +6β)
+    K'(Φ_0) (K-coupling):   +4.0000  (= 4·K_geo)
+  Effective mass-squared M² = -V''(1) = β = 1.0
+
+  η contributions (one-loop, MS-bar in 4D):
+    η_V_cubic  = g_3²/[6M²(4π)²]            =   0.016887
+    η_K_cubic (estimate) ≈ (4·K_geo)²·M²/(12·K_geo²·(4π)²) =   0.008443
+    η_total (1-loop) ≈                         0.025330
+
+  Target:      η_CG2 (LPA' Wetterich-Litim) = 0.044
+  Rel. diff:   42.4%
+  Order of magnitude (factor): 0.58× CG-2
+
+  η_1loop > 0 (correct sign):           True
+  η_1loop finite:                       True
+  η within factor 5 of CG-2 (0.044):    True
+  M11.G.6 → PASS
+
+  NOTE: Full LPA' Wetterich-Litim with K-corrections is M11.2 scope.
+  M11.G.6 verifies one-loop η > 0 + order-of-magnitude consistency.
+
+==============================================================================
+ M11.G — FINAL VERDICT
+==============================================================================
+  Sub-tests passed: 6/6
+    [v] M11.G.1: PASS
+    [v] M11.G.2: PASS
+    [v] M11.G.3: PASS
+    [v] M11.G.4: PASS
+    [v] M11.G.5: PASS
+    [v] M11.G.6: PASS
+
+  >> M11.G CLOSED (6/6 PASS) — Branch I global field decomposition COMPLETE
+  >> Ready for M11.R (renormalization synthesis)

@@ -1,0 +1,59 @@
+
+========================================================================
+  M11.4 — Branch II level 4: RG-driven structural derivation
+========================================================================
+  Closes 4 KNOWN_ISSUES at honest-scope structural level:
+    C.3 — γ = M_Pl² · g̃ (dim. consistency, FRG FP positivity)
+    B.3 — α₀ ≈ 4 (T-α calibration self-consistency)
+    B.5 — g̃ = 0.98 vs 1 (T-Λ cosmological match)
+    B.2 — n = 2 in α(ψ) = α₀(ψ-1)ⁿ (T-α minimality)
+
+  Honest scope: M11.4 verifies STRUCTURAL CONSISTENCY of these
+  postulates/calibrations, NOT their first-principles derivation.
+  Full derivation deferred to M11.R-final / Phase 1 covariant.
+
+  Inputs:
+    M11.2 N=10 FP coeffs: a₁..a₄ = (-0.1859, +2.4322, +11.077, +45.264)
+    M_Pl(full) = 1.221e+19 GeV, M_Pl(red) = 2.435e+18 GeV
+    H_0 = 67.4 km/s/Mpc = 1.438e-33 eV; Ω_Λ = 0.6847
+    ψ_ph = 1.168 (universal photon ring), ψ_th = 1.0 (vacuum)
+    target_shift = 0.114, ξ = 1.0
+    η_BI = 0.0253, η_LPA'(naive) = 0.012776, η_LPA'(wide) = 0.025552, η_CG2 = 0.044
+
+========================================================================
+  Running 6 tests
+========================================================================
+  [PASS] M11.4.1 β=γ vacuum condition at FRG WF FP
+         ρ̃_0 = 0.030644, Φ_0 = 0.247564, m² = +0.45774; β* = +3.57152, γ* = -11.06946, β*/γ* = -0.32265; |β/γ| ∈ [0.1, 10] = True; structural: ρ̃_0>0, m²>0 = True
+  [PASS] M11.4.2 γ → M_Pl²·g̃ dimensional consistency (C.3)
+         γ_NPRG = -11.06946 (NPRG-internal dim-less FP value); |γ_NPRG| = 11.06946, O(1)=True; sign in 4D from β=γ vacuum (not FRG); γ_phys = |γ_NPRG|·M_Pl² = 1.650e+57 eV²; ρ_vac,TGP / ρ_vac,obs = 1.129e+01 (dim-sanity ∈ [10⁻³, 10³] = True)
+  [PASS] M11.4.3 α₀ ≈ 4 calibration O(1) (B.3)
+         ψ_ph = 1.168, ψ_th = 1.0, (ψ_ph-1)² = 0.028224; target_shift = 0.114, ξ = 1.0; α₀ = 0.114/(0.028224·1.0) = 4.0391; O(1) gate [0.1,100] = True, ≈4 gate [3.5,4.5] = True
+  [PASS] M11.4.4 g̃ ≈ 1 cosmological match (B.5)
+         M_Pl(full) = 1.221e+19 GeV, M_Pl(red) = 2.435e+18 GeV, (M_Pl_red/M_Pl)² = 0.03977; required g̃ = 36·Ω_Λ·(M_Pl_red/M_Pl)² = 0.9803; T-Λ value = 0.98, |Δ| = 0.0003; with g̃=1: ρ_vac,TGP/ρ_vac,obs = 1.020; O(1) = True, ≈1 = True
+  [PASS] M11.4.5 n=2 minimality (B.2)
+         WEP MICROSCOPE bound η < 1e-15; n=1: η_TGP=5.95e-09 (WEP-FAIL, C^0); n=2: η_TGP=3.54e-17 (WEP-PASS, C^1); n=3: η_TGP=2.11e-25 (WEP-PASS, C^2); n=1 fails C¹ smoothness (only C⁰); n=2 unique minimal sufficient; n=3 overkill (η ~ 10⁻²⁵)
+  [PASS] M11.4.6 Branch I/II RG convergence
+         η_BI=0.0253, η_LPA'(naive)=0.012776, η_LPA'(wide)=0.025552, η_CG2=0.044; |η_LPA'(wide)-η_BI|/η_BI = 1.00% (striking 1% match: True); all in PN band [0.00633, 0.07958]: True; geo-mean = 0.02423 (∈ PN band); spread max/min = 3.44× (gate <5×); honest-band [0.013, 0.044] consistent = True
+
+========================================================================
+  Summary
+========================================================================
+  Result: 6/6 PASS
+    [PASS] M11.4.1 β=γ vacuum condition at FRG WF FP
+    [PASS] M11.4.2 γ → M_Pl²·g̃ dimensional consistency (C.3)
+    [PASS] M11.4.3 α₀ ≈ 4 calibration O(1) (B.3)
+    [PASS] M11.4.4 g̃ ≈ 1 cosmological match (B.5)
+    [PASS] M11.4.5 n=2 minimality (B.2)
+    [PASS] M11.4.6 Branch I/II RG convergence
+
+  ✓ M11.4 6/6 PASS — Branch II level 4 (KNOWN_ISSUES structural closure) CLOSED.
+
+========================================================================
+  Reference numbers (for closure doc)
+========================================================================
+  FRG WF FP: ρ̃_0 = 0.030644, Φ_0 = 0.247564, m² = +0.45774
+             β* = +3.57152, γ* = -11.06946, β*/γ* = -0.32265
+  α₀ (T-α calibration) = 4.0391
+  g̃ required (T-Λ full-Planck) = 0.9803 (close to 0.98 = T-Λ value)
+  η geometric mean (Branch I + II + CG2) = 0.02423

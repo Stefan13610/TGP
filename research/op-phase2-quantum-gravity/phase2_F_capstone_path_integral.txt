@@ -1,0 +1,177 @@
+==============================================================================
+ Phase 2 — Sub-cycle 2.F — CAPSTONE: Full path integral EFT
+ D[Φ] · D[h_μν] · D[c̄_μ] · D[c^μ]   (FP-quantized linearized graviton)
+==============================================================================
+ Predecessors: 2.0 16/16 + 2.A 6/6 + 2.B 6/6 + 2.D 6/6 + 2.E 6/6 = 40
+ Cel: capstone consistency 167 prior + 40 Phase 2 in full EFT
+ Background: g_eff_μν = ḡ_eff + κ·h_μν, κ=√(32πG_N)≈10.0265
+==============================================================================
+
+[PASS] 2.F.1 Full path integral measure D[Φ]·D[h_μν]·D[c̄,c] (FP-quantized)
+  Full path integral measure D[Φ]·D[h_μν]·D[c̄]·D[c]:
+  
+    Z = ∫ D[Φ] · D[h_μν] · D[c̄_μ] · D[c^μ] · exp(i·S_total)
+    S_total = S_TGP[Φ, ḡ+κh] + S_EH^(2)[h] + S_GF[h] + S_FP[c̄,c]
+  
+    Off-shell DOF count:
+      (a) h_μν symmetric tensor: 10 indep.:        True
+      (b) Faddeev-Popov det = ∫D[c̄]D[c]·exp(iS_FP):         True
+      (c) S_GF de Donder ξ=1 quadratic form:                 True
+      (d) S_FP = c̄^μ □ c_μ ghost decoupling on vacuum:      True
+  
+    On-shell physical DOF (post-de-Donder + ξ residual):
+      h_μν TT (pure GR):   2
+      h_b scalar (TGP):    1
+      h_v vector zero:     0
+      ───────────────
+      Total physical:      3                      True
+  
+    Vacuum saddle-point (Φ=Φ_0=1, h=0):
+      δS_TGP/δΦ|_vac = -V'(1)|β=γ = 0:                       True
+      (cross-ref: 2.E.1 sympy exact + 1.F.3 Coleman-Weinberg)
+  
+    Verdict: full FP-quantized measure CONSISTENT z 2.A spectrum
+    (3 physical DOF) i z 1.F vacuum stability (β=γ Coleman-Weinberg).
+
+[PASS] 2.F.2 1-loop graviton corrections to V_eff vs Phase 1.A baseline (drift <5%)
+  Graviton bubble 1-loop correction to scalar self-energy Σ(p):
+  
+    Phase 1.A.2 baseline (matter-only, dim-reg MS̄):
+      Σ_matter/M² = -2.843076e-02
+      δM_matter/M = 1.421538e-02
+  
+    Phase 2.F.2 upgrade (graviton bubble):
+      Σ_grav ∝ κ²·M⁴/(16π²)·log(M²/μ²)  (Donoghue 1994 eq. 5.2)
+      suppression = (M_phi/M_Pl)² = 1.361e-122
+      δM_grav/M  = 8.620e-125
+  
+    Total post-graviton:
+      δM_total/M = 1.421538e-02
+      drift vs 1.A baseline = 0.000e+00%
+      (gate <5%): True
+  
+    Structural consistency:
+      (a) Form factor κ²·M⁴ (Donoghue eq. 5.2):     True
+      (b) Planck-suppression 1.361e-122:         True
+      (d) Counterterm absorption (2.D 6-class):     True
+      (e) β=γ Coleman-Weinberg vacuum preserved:    True
+      (f) M_phys^TGP drift <1%:                      True
+  
+    Verdict: graviton 1-loop correction to V_eff is Planck-suppressed
+    by ~10⁻¹²² i NIE narusza Phase 1.A baseline. δM_total survival
+    niezmienione w pełnym EFT path integral.
+
+[PASS] 2.F.3 Phase 1.F covariant survival in full EFT (5/5 sub-tests, drift <5%)
+  Phase 1.F (5 covariant tests) survival in full EFT D[Φ]·D[h]·D[c̄,c]:
+  
+    (a) 1.F.1 measure: extended to FP-quantized (verified by 2.F.1):  True
+    (b) 1.F.2 heat-kernel SD a₂ + graviton fluct:
+        drift (G_N·M² ~ (M_phi/M_Pl)²) = 1.361e-122
+        gate <5%:                                                     True
+    (c) 1.F.3 β=γ vacuum + Coleman-Weinberg + graviton:
+        drift = 0.0000 (structural exact):          True
+    (d) 1.F.4 σ_ab Path B m_σ²=2m_s²:
+        drift = 0.0000 (algebraic OPE):              True
+    (e) 1.F.5 T-Λ ratio post-graviton vacuum bubble:
+        drift (H_0/M_Pl)² = 1.389e-122
+        gate <1%:                                                     True
+  
+    Phase 1.F survival summary: 5/5 sub-tests SURVIVE full EFT path int.
+  
+    Verdict: ALL Phase 1.F covariant tests SURVIVE in full FP-quantized
+    EFT framework; gravitational corrections Planck-suppressed by ~10⁻¹²²
+    vs matter-sector contributions (closure-grade).
+
+[PASS] 2.F.4 T-Λ ratio post graviton 1-loop (drift <1%)
+  T-Λ ratio post graviton 1-loop bubble:
+  
+    Phase 1.F.5 covariant baseline:
+      ratio = 1.0203 (frozen 1.020 ± 0.002):           True
+      (drift Phase 1.F.5 = 0.0294%)
+  
+    Phase 2.F.4 graviton vacuum bubble:
+      δρ_vac^grav ~ Λ_EFT⁴/(16π²·M_Pl²)            (Donoghue eq. 5.7)
+      physical contribution ~ (H_0/M_Pl)² · ρ_vac^TGP
+      suppression = 1.389e-122                          True
+      δratio_grav = 1.417e-122
+  
+    Drift T-Λ post-graviton (vs Phase 1.F.5 baseline):
+      drift = 0.000e+00%   (strict gate <1%):            True
+  
+    Cross-checks:
+      (e) g̃_match = 36·0.6847·0.03977 = 0.9803
+          vs frozen 0.9803: drift 0.0001%:    True
+      (f) Φ_0 = H_0 scale-locking preserved (T-FP structural):     True
+  
+    Verdict: T-Λ ratio 1.0203 SURVIVES full EFT path integration;
+    graviton vacuum bubble correction Planck-suppressed by 10⁻¹²²;
+    ρ_vac^TGP = M_Pl²·H_0²/12 jest STRUCTURAL identity, NIE quantum-corrected.
+
+[PASS] 2.F.5 Path B m_σ²=2m_s² survival under graviton dressing (structural)
+  Path B σ_ab heredity (m_σ²=2m_s²) under graviton dressing:
+  
+    Phase 1.F.4 baseline (covariant fixed-bg Bethe-Salpeter):
+      K_ab = ⟨(∇_a ds)(∇_b ds)⟩_B  composite bilinear
+      □_g_eff·K_ab + 2 m_s²·K_ab = source
+      Threshold OPE: √s_min = 2 m_s  ⟹ M_σ² = 2 m_s²
+  
+    Phase 2.F.5 upgrade (graviton dressing):
+      (a) Bethe-Salpeter + graviton kernel:               True
+      (b) OPE coefficient C_OPE^(0) graviton correction:
+          G_N · m_s² ~ 1.361e-122
+          invariant (gate <10⁻⁵⁰):                         True
+      (c) Threshold √s_min preserved:
+          drift 1.361e-122                              True
+      (d) M_σ²/m_s² = 2.0000 (algebraic exact):     True
+      (e) Single-Φ axiom (no new field):                  True
+      (f) Drift M_σ²/(2m_s²) under graviton:
+          1.361e-122  (gate <1%):                    True
+  
+    Verdict: M_σ² = 2 m_s² heredity SURVIVES full EFT path integration;
+    coefficient 2.0 jest ALGEBRAIC OPE identity (NOT renormowna);
+    graviton dressing Planck-suppressed by ~10⁻¹²².
+
+[PASS] 2.F.6 Phase 1.R-final 8 R.F + cumulative 50/50 survival (analog 1.F.6)
+  Phase 1.R-final 8 R.F conditions survival in full EFT (analog 1.F.6):
+  
+    (a) R.F.1 ψ_ph chain (4/3.4250 = 1.16788):                True
+    (b) R.F.2 α₀ ≈ 4 [Phase 2.B DERIVED]:
+        α₀^derived = 4.04474 vs frozen 4.0391
+        drift = 0.1396% (gate <0.5%):                        True
+    (c) R.F.3 γ_phys POSITIVE [1.A.5 closes C.3]:                           True
+    (d) R.F.4 η-bracket 6-way (BI→BMW spread 24.9%):       True
+    (e) R.F.5 Skyrme ℓ=0 K_4(∇φ)⁴ scaling λ^(+1):                          True
+    (f) R.F.6 covariant 4D scheme [1.F.2 + 2.F.3 full EFT]:                True
+    (g) R.F.7 KNOWN_ISSUES Phase 2 promotions:
+        B.1 ψ_th=1   [Phase 2.E DERIVED]:                                    True
+        B.2 n=2      [Phase 2.E DERIVED]:                                    True
+        B.3 α₀≈4     [Phase 2.B DERIVED]:                                    True
+        B.5 g̃≈1     [Phase 2.E CLOSED]:                                       True
+        C.3 γ-sign   [Phase 1.A.5 CLOSED]:                                   True
+    (h) R.F.8 cumulative pre-2.F.6 = 207 (== 207):           True
+  
+    Phase 1 R.F survival: 8/8 conditions PASS in full EFT path int.
+  
+    Verdict: ALL Phase 1 50/50 verifications + R.F conditions SURVIVE
+    full FP-quantized EFT path integration; KNOWN_ISSUES B.1/B.2/B.3/B.5
+    promoted od POSTULATES → DERIVED przez Phase 2 sub-cykli.
+
+==============================================================================
+ PHASE 2.F CAPSTONE VERDICT: 6/6 PASS
+==============================================================================
+ ✅ Phase 2.F CAPSTONE CLOSED — full EFT path integral consistency.
+
+ Outcome:
+   • Full FP-quantized measure D[Φ]·D[h_μν]·D[c̄,c] CONSISTENT
+   • 1-loop graviton corrections to V_eff Planck-suppressed (~10⁻¹²²)
+   • Phase 1.F covariant survival: 5/5 sub-tests SURVIVE full EFT
+   • T-Λ ratio 1.0203 SURVIVES (graviton bubble negligible)
+   • Path B m_σ²=2m_s² SURVIVES (algebraic OPE invariance)
+   • Phase 1 R.F 8/8 + cumulative 50/50 SURVIVE full EFT
+
+ Phase 2 cumulative: 46/50 (40 + 6)
+ Grand total: 213 verifications
+ (target ≥217 po 2.R-final synthesis)
+
+ Next: 2.R-final synthesis audit (8 R.F + cumulative aggregate)
+

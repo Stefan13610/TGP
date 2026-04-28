@@ -3,6 +3,28 @@
 gs41: CMB COMPATIBILITY CHECK FOR TGP f(R) FORMULATION
 =======================================================
 
+==============================================================================
+*** SUPERSEDED 2026-04-26 by M10.4 (canonical scalar Phi REBUILD) ***
+==============================================================================
+This script uses f(R) = R + R0^gamma * R^(1-gamma) * exp(-(R/R0)^alpha),
+which violates the TGP single-Phi axiom (sek08a). It is structurally a
+DIFFERENT theory (f(R) modified gravity), not canonical TGP.
+
+REBUILD reference:
+  ../op-cosmology-closure/M10_4_results.md  (6/6 PASS, 2026-04-26)
+  ../op-cosmology-closure/m10_4_cmb.py      (canonical scalar Phi rebuild)
+
+In canonical TGP (sek08a), CMB safety arises from:
+  (a) Hubble friction:   m_s ~ H_0 << H(z>0) freezes super-horizon delta Phi
+  (b) Yukawa screening:  Compton scale 1/sqrt(beta) ~ L_H today
+  (c) Vacuum cond:       V'(Phi_0)=0 (no driving force on background)
+  (d) Stable lineariz.:  m_s^2 = +beta (M9.3.1, NOT R-curvature dependent)
+
+gs41 conclusions ("CMB safe via R-exponential suppression") are not derivable
+from sek08a. M10.4 replaces them with theoretically-grounded equivalents.
+Verdict status: RED -> SUPERSEDED (kept for historical reference only).
+==============================================================================
+
 TGP uses f(R) = R + R0^gamma * R^(1-gamma) * exp(-(R/R0)^alpha)
   with alpha = 4/5, gamma = scale-dependent (0.4 disk, 0.53 sphere, ...)
 

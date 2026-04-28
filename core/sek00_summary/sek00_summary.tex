@@ -161,6 +161,58 @@ $\varphi = (1+\sqrt{5})/2$:
 \end{itemize}
 
 % ----------------------------------------------------------
+\subsection*{Strukturalny audyt UV (Faza 3, 2026-04-28)}
+
+\noindent
+W~ramach domkni\k{e}cia cyklu \textbf{Faza~3 (UV-completion compatibility audit)}
+zweryfikowano \textbf{60/60 PASS} (cykl \texttt{op-phase3-uv-completion},
+2026-04-28). \textsl{Cumulative grand total: \textbf{281 weryfikacji}}
+(M9~13 + M10~42 + M11~62 + closure\_2026-04-26~35 +
+Faza~1~50 + Faza~2~54 + Faza~3~60).
+Audyt stwierdza \emph{strukturaln\k{a} kompatybilno\'s\'c}
+TGP z~czterema niezale\.znymi kandydatami UV:
+\begin{itemize}[nosep]
+\item \textbf{Asymptotyczne bezpiecze\'nstwo (Reuter NGFP)}: niezmiennik
+  Litima $g^\star \!\cdot\! \lambda^\star = 0{,}1349$ (oczekiwany przedzia\l{}
+  $[0{,}10;\,0{,}20]$); \textsl{KEYSTONE} Fazy 3.A.
+\item \textbf{String / KKLT dS}: stosunek $T/\Lambda = 1{,}0203$
+  $\in [0{,}5;\,2{,}0]$; TGP-EFT $\subset$ string-EFT (Faza 3.B).
+\item \textbf{LQG (Ashtekar--Lewandowski)}: parametr Immirziego
+  $\gamma_{\rm Imm} \approx 0{,}2375$; kinematyczna kompatybilno\'s\'c
+  z~obszarami/obj\k{e}to\'sciami (Faza 3.C).
+\item \textbf{CDT (Ambj\o rn--Loll, Faza C)}: spectral dimension
+  $d_s = 3{,}948$ vs $4{,}02 \pm 0{,}10$ ($0{,}72\sigma$); zgodno\'s\'c
+  z~Hausdorff $d_H = 4$ (Faza 3.D).
+\end{itemize}
+
+\noindent
+Faza 3.E pog\l{}\k{e}bi\l{}a \emph{B.x net items}:
+$B.6$ \textsc{partial derived} przez sympy
+$V(\Phi_{\rm eq})|_{\beta=\gamma} = \gamma/6$ z~bridge factor $1/2 \to \gamma/12$
+(zgodno\'s\'c z~Friedmann match $3\,\Omega_\Lambda/8\pi = 0{,}0817$ vs $1/12 = 0{,}0833$,
+ratio $0{,}9808$); $B.4$ \textsc{strengthened} przez T-FP IR fixed point
++ unikalno\'s\'c IR-scale ($M_{\rm Pl}$ wykluczony przez 60{,}93 dex);
+$\Delta_{\rm target} = 0{,}114$ promowany do \textsc{structural postulate}
+w~UV-PTR przez heat-kernel $a_2$. Wynik Path~B
+$m_\sigma^2 / m_s^2 = 2$ (sympy exact integer) zachowany w~4/4 UV.
+
+\medskip\noindent
+\textbf{Honest scope}: audyt strukturalny \emph{nie} jest dowodem
+pe\l{}nej UV-renormalizowalno\'sci --- otwarte pozostaj\k{a}:
+(i) dow\'od istnienia NGFP w~AS poza \textsl{truncations},
+(ii) selekcja stringowego pr\'o\.zni / KKLT,
+(iii) dynamika hamiltonianu w~LQG,
+(iv) granica continuum w~CDT,
+(v) eksperymentalna dyskryminacja UV-kandydat\'ow,
+(vi) pierwsze pochodne residua Fazy 3.E (ratio $0{,}9808$, $1/12$ exact).
+Te problemy s\k{a} przeniesione do dedykowanego folderu
+\texttt{research/op-uv-renormalizability-research/}
+(research-track wieloletni, 5--20+ lat) i~prowadzone r\'ownolegle
+do empirycznej Fazy~4 (ngEHT 2030+, MICROSCOPE-2, LIGO~O5, LISA, DESI~DR2/DR3).
+Szczeg\'o\l{}y: \texttt{research/op-phase3-uv-completion/Phase3\_R\_final\_results.md}
+oraz \texttt{research/op-uv-renormalizability-research/README.md}.
+
+% ----------------------------------------------------------
 % Kanoniczna klasyfikacja epistemiczna (v47b)
 % Zastepuje dawna tabele 19/19 PASS
 \input{core/_meta_latex/tabela_epistemiczna}

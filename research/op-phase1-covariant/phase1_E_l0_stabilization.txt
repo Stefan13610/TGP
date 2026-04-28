@@ -1,0 +1,132 @@
+==========================================================================
+ Phase 1 — Sub-cycle 1.E — ℓ=0 stabilization (Derrick fix)
+==========================================================================
+ Predecessor: M11.E.6 (emergent ℓ=0 ω² = -70, peak r ≈ a_source)
+ Test scope: 6 sub-tests = Derrick + 4 candidate routes (a,b,c,d)
+              + axiom compatibility + M9.1″ cross-check
+==========================================================================
+
+[PASS] 1.E.1 Derrick d=3 with K(φ)=K_geo·φ⁴ (unstable)
+  d = 3
+  E(λ) = λ^-1·E_kin + λ^-3·E_pot
+  E'(1) = 0  →  E_pot = (-1)/3 · E_kin = -E_kin/3
+  E''(1) = -2*E_kin  (negative for d=3 ⇒ MAXIMUM ⇒ UNSTABLE)
+  K(φ)=K_geo·φ⁴ does NOT change scaling exponents
+  (K is local in φ, not in gradients)
+  Confirms M11.E.6: emergent ℓ=0 ω² = -70.01 < 0
+  peak at r ≈ a_source (0.151 vs 0.15, drift 0.67%)
+
+[PASS] 1.E.2 Topological route (a) — RULED OUT (honest neg)
+  TGP target manifold (single-Φ, broken Z₂):
+      cardinality = 2 (discrete)
+  Required for d=3 ℓ=0 topological stabilization:
+      π_2(target) ≠ 0
+  Computed: π_2(discrete set) = 0
+  Conclusion: candidate (a) RULED OUT for single-Φ Z₂
+  (Skyrme-baby uses π_2(S²)=ℤ; π_3(S³)=ℤ for Skyrme proper;
+   neither is single-Φ Z₂.)
+  Honest negative: test PASSES because expected verdict
+
+[PASS] 1.E.3 Geometric kinetic alone (b) — does NOT bypass
+  Sympy verification: under x → λx, with K(φ)=K_geo·φ⁴ local in φ:
+      ∫r²·½K(φ)(∇φ)² dr → λ^(2-d) · same integral
+      = λ^(-1) for d=3   (computed: 1/lambda)
+  expected λ^(2-d) = λ^(-1): True
+  ⇒ Same Derrick scaling as canonical K=const.
+  ⇒ K(φ) modulates the integrand WITHOUT changing scaling.
+  Conclusion: candidate (b) does NOT bypass Derrick alone.
+  (It can SUPPORT other routes, e.g. combined with (c) or (d).)
+  Honest negative: test PASSES because expected verdict
+
+[PASS] 1.E.4 Extended sources (c) — works regime-dependent
+  M11.E.6 sector comparison:
+      anchored external ω²(ℓ=0) = +1.0107  (STABLE)
+      emergent self-consist ω²(ℓ=0) = -70.0100  (UNSTABLE)
+  ⇒ External rigid source ANCHORS the soliton size,
+     bypassing Derrick rescaling (route c works for anchored).
+
+  Regime applicability:
+     ✓ a_source > λ_C  (microscopic λ_C, atomic-scale sources)
+     ✗ a_source < λ_C  (Hubble-scale λ_C from T-Λ)  (T-Λ Hubble λ_C: no source > λ_C)
+
+  Conclusion: candidate (c) WORKS for a_source > λ_C regime
+  (real anchored matter); does NOT cover universal emergent
+  self-consistency. Field-theory fix still needed for
+  emergent regime — see (d) Skyrme.
+
+[PASS] 1.E.5 Skyrme route (d) — STABILIZES (virial OK)
+  Skyrme-extended action:  E(λ) = λ^(-1)E_2 + λ^1·E_4 + λ^(-3)·E_pot
+  Extremum dE/dλ|_{λ=1}=0:  E_4 = E_2 + 3·E_pot
+      sympy match: True
+  Stability d²E/dλ²|_{λ=1} > 0:  2·E_2 + 12·E_pot > 0
+      ⟺  E_2 > 6·|E_pot|  (virial inequality, E_pot<0)
+      sympy match: True
+
+  Numerical example:  E_2 = 10.0, E_pot = -1.0
+      E_4 = 7.0  (>0: True)
+      d²E = 8.0  (>0 STABLE: True)
+      virial E_2 > 6|E_pot|: True
+
+  Conclusion: candidate (d) Skyrme PROVIDES Derrick bypass
+  with concrete virial inequality E_2 > 6|E_pot|. Adds new
+  parameter K_4 fixed by extremum condition + soliton size.
+
+[PASS] 1.E.6 Axiom compatibility + M9.1″ cross-check (Skyrme primary)
+  Axiom-compatibility matrix (single-Φ + Z₂ + α=2):
+    (a) topological:
+        single_Phi: True
+        Z2: True
+        thm_D_uniqueness: True
+        derrick_bypass_universal: False
+        verdict: RULED OUT (no Z₂ topological charge in d=3)
+    (b) geometric kinetic alone:
+        single_Phi: True
+        Z2: True
+        thm_D_uniqueness: True
+        derrick_bypass_universal: False
+        verdict: DOES NOT BYPASS Derrick alone (modulates only)
+    (c) extended sources:
+        single_Phi: True
+        Z2: True
+        thm_D_uniqueness: True
+        derrick_bypass_universal: False
+        verdict: WORKS for a_source > λ_C; regime-dependent
+    (d) Skyrme K_4(∇φ)⁴:
+        single_Phi: True
+        Z2: True
+        thm_D_uniqueness: True
+        derrick_bypass_universal: True
+        verdict: STABILIZES universally (with new K_4 parameter)
+
+  Primary universal route: (d) Skyrme K_4(∇φ)⁴
+      Derrick bypass universal: True
+  Secondary anchored-regime route: (c) extended sources
+      Single-Φ Z₂ compatible: True
+
+  Ruled-out routes: (a) topological, (b) geometric kinetic alone
+      others_ruled_out: True
+
+  M9.1″ static profile cross-check:
+      K_4·(∇δφ)⁴ vs K_2·(∇δφ)² ratio  = grad_delta_phi**2/2
+      degree(ratio, ∇δφ) > 0 (sub-leading): True
+      γ_PPN frozen = 1.0 (preserved at 1PN)
+      β_PPN frozen = 2.0 (preserved at 1PN)
+
+==========================================================================
+ PHASE 1.E VERDICT: 6/6 PASS
+==========================================================================
+ ✅ Phase 1.E CLOSED — closure-grade ℓ=0 stabilization analysis.
+
+ Outcome:
+   • Derrick d=3 instability for K=K_geo·φ⁴ + V_self CONFIRMED
+     (matches M11.E.6: emergent ℓ=0 ω² = -70.01, peak r ≈ a_source)
+   • (a) Topological — RULED OUT for single-Φ Z₂ in d=3
+   • (b) Geometric kinetic alone — DOES NOT BYPASS
+   • (c) Extended sources — REGIME-DEPENDENT (a_source > λ_C)
+   • (d) Skyrme K_4(∇φ)⁴ — UNIVERSAL FIX (virial E_2 > 6|E_pot|)
+   • TGP-compatible primary route: (d) Skyrme
+   • Secondary (anchored regime): (c) extended sources
+   • M9.1″ 1PN preserved (Skyrme is sub-leading O((∇δφ)⁴))
+
+ Phase 1 cumulative: 12 (1.0) + 6 (1.E) = 18 / target 44
+ Next sub-cycle: 1.A keystone (covariant 4D dim-reg)

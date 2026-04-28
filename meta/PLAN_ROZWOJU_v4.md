@@ -76,6 +76,29 @@ TGP_v1/                          ← RDZEŃ (stabilny, publikowalny)
 (wymaga kontekstualnego modelu substratu wielowymiarowego). Caly program Q1-Q7
 demonstruje emergencje pelnej QM z ontologii TGP.
 
+### Closure 2026-04-26: cztery dodatkowe strukturalne zamknięcia ✅ 35/35 PASS
+
+| ID | Problem | Folder | Status | Wynik |
+|----|---------|--------|--------|-------|
+| **CL-1** | σ_ab Path B audit (composite z s-EOM) | `closure_2026-04-26/sigma_ab_pathB/` | ✅ ZAMKNIĘTE | 11/11 PASS, M²=2m_s² derived |
+| **CL-2** | f(ψ) deeper principle (T-FP n=4) | `closure_2026-04-26/f_psi_principle/` | ✅ ZAMKNIĘTE | 12/12 PASS, P2 §6.3 closed |
+| **CL-3** | Λ_TGP from Φ_eq scale (T-Λ) | `closure_2026-04-26/Lambda_from_Phi0/` | ✅ ZAMKNIĘTE | 7/7 PASS, ρ_TGP/ρ_obs=1.020 |
+| **CL-4** | α(ψ) ψ-threshold (T-α, OP-M92 multi-source) | `closure_2026-04-26/alpha_psi_threshold/` | ✅ ZAMKNIĘTE | 5/5 PASS, WEP margin 4×10¹⁶ |
+
+**Podsumowanie closure_2026-04-26:** 35/35 PASS. Zamknięcie czterech niezależnych
+strukturalnych luk:
+- σ_ab dynamics promoted to **Path B PRIMARY** (composite, NIE quasi-field)
+- f(ψ) = (4-3ψ)/ψ jako **unique consequence** principle n = deg(V) = 4
+- Ω_Λ = 0.6847 z **input → emergent prediction** (vacuum catastrophe avoided)
+- OP-M92 multi-source α-universality issue **structurally resolved**
+
+Wszystkie 4 closures spójne z TGP_FOUNDATIONS §1 (single-Φ Z₂ axiom IMMOVABLE).
+
+**Pliki zbiorcze:**
+- [[../research/closure_2026-04-26/CLOSURE_2026-04-26_SUMMARY.md]] — meta-summary
+- [[../research/closure_2026-04-26/KNOWN_ISSUES.md]] — living document open items
+- [[../research/closure_2026-04-26/correction_to_OP7_T3.md]] — Path B promotion patch
+
 ### Nie wymagają osobnych folderów
 
 | Problem | Status | Uwagi |

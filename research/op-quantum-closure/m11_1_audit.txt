@@ -1,0 +1,196 @@
+##############################################################################
+# M11.1 — 1-loop V_eff(Φ) closure audit (Branch II level 1)
+# Audyt closure-grade pre-existing M2b (op1-op2-op4) loop derivation
+# Cel: zweryfikować strukturalne preservation β=γ w canonical sek08a,
+# BZ convergence, loop stability, oraz η boundary condition (CG-2).
+##############################################################################
+
+==============================================================================
+M11.1.1 — V_eff 1-loop reproducibility (cases A, B, C)
+==============================================================================
+
+  Case A: m0²=-4.0, λ_0=1.0, T=1.0
+    Φ_0 (tree saddle):       3.732051  (ref 3.7321, drift 0.001%)
+    A(Φ_0):                  +4.6410e-01  (STABLE)
+    c_3 (1-loop):            +9.5066e-03  (ref +9.5070e-03, drift 0.004%)
+    c_4 (1-loop):            -1.9124e-03  (ref -1.9120e-03, drift 0.019%)
+    β_nat/γ_nat (1-loop):    0.9990  (ref 0.9990, drift 0.000%)
+    β amplification:         2.937× tree
+    γ amplification:         2.922× tree
+    → PASS
+
+  Case B: m0²=-5.0, λ_0=2.0, T=1.0
+    Φ_0 (tree saddle):       2.280776  (ref 2.2808, drift 0.001%)
+    A(Φ_0):                  +9.0388e-01  (STABLE)
+    c_3 (1-loop):            +3.9322e-02  (ref +3.9320e-02, drift 0.004%)
+    c_4 (1-loop):            -1.3120e-02  (ref -1.3120e-02, drift 0.001%)
+    β_nat/γ_nat (1-loop):    0.9855  (ref 0.9855, drift 0.004%)
+    β amplification:         2.773× tree
+    γ amplification:         2.796× tree
+    → PASS
+
+  Case C: m0²=-2.0, λ_0=1.0, T=0.1
+    Φ_0 (tree saddle):       1.948683  (ref 1.9487, drift 0.001%)
+    A(Φ_0):                  +4.8683e-01  (STABLE)
+    c_3 (1-loop):            +6.1833e-03  (ref +6.1830e-03, drift 0.004%)
+    c_4 (1-loop):            -2.2758e-03  (ref -2.2760e-03, drift 0.009%)
+    β_nat/γ_nat (1-loop):    1.0457  (ref 1.0457, drift 0.001%)
+    β amplification:         2.720× tree
+    γ amplification:         2.585× tree
+    → PASS
+
+  All 3 cases reproduce M2b values within tolerance: True
+  M11.1.1 → PASS
+
+==============================================================================
+M11.1.2 — ln K_Φ = 2 ln Φ + const  structural identity
+==============================================================================
+  Tożsamość: <ln K_Φ(q;Φ)>_BZ = 2·ln Φ + C_BZ  (C_BZ Φ-independent)
+  → To wyjaśnia β=γ preservation w 1-loop V_eff (M2b §4)
+
+  Φ test grid: [0.5 0.8 1.  1.5 2.  3.  5. ]
+  <ln K_Φ>_BZ values:
+     Φ =  0.50:  <ln K_Φ>_BZ = +0.287095
+     Φ =  0.80:  <ln K_Φ>_BZ = +1.227102
+     Φ =  1.00:  <ln K_Φ>_BZ = +1.673389
+     Φ =  1.50:  <ln K_Φ>_BZ = +2.484320
+     Φ =  2.00:  <ln K_Φ>_BZ = +3.059684
+     Φ =  3.00:  <ln K_Φ>_BZ = +3.870614
+     Φ =  5.00:  <ln K_Φ>_BZ = +4.892265
+
+  Linear fit  <ln K_Φ>_BZ  =  slope · ln Φ + intercept:
+     slope     = 2.000000    (predicted exact 2.0)
+     intercept = 1.673389    (predicted C_BZ = 1.673389)
+     |slope - 2|     = 8.88e-16
+     |intercept - C| = 2.22e-16
+
+  Slope = 2 (exact, < 1e-6):                  True
+  Intercept = C_BZ (predicted, < 1e-6):       True
+  M11.1.2 → PASS
+
+  STRUCTURAL: identyfikacja `2 ln Φ` w stiffness loop integrand wyjaśnia
+  multiplikatywne wzmocnienie H-S Jacobianu (T/2 → 3T/2 effective). β i γ
+  oba wzmacniają się ~3× preserving ratio β/γ. To jest STRUKTURALNA przyczyna
+  M2a → M2b stability of `β = γ` w canonical sek08a units.
+
+==============================================================================
+M11.1.3 — Loop stability + BZ integrand positivity
+==============================================================================
+
+  Case A: Φ_0 = 3.7321
+    A(Φ_0) = +4.6410e-01  (loop stable: True)
+    K(q,Φ_0) + A range over BZ:
+        min = +4.6487e-01   max = +1.6760e+02
+    Integrand positive ∀q ∈ BZ:  True
+    → PASS
+
+  Case B: Φ_0 = 2.2808
+    A(Φ_0) = +9.0388e-01  (loop stable: True)
+    K(q,Φ_0) + A range over BZ:
+        min = +9.0417e-01   max = +6.3327e+01
+    Integrand positive ∀q ∈ BZ:  True
+    → PASS
+
+  Case C: Φ_0 = 1.9487
+    A(Φ_0) = +4.8683e-01  (loop stable: True)
+    K(q,Φ_0) + A range over BZ:
+        min = +4.8704e-01   max = +4.6055e+01
+    Integrand positive ∀q ∈ BZ:  True
+    → PASS
+
+  All 3 cases: A(Φ_0) > 0 AND K+A > 0 ∀q:    True
+  M11.1.3 → PASS
+
+==============================================================================
+M11.1.4 — BZ Gauss-Legendre convergence (case A, n_q scan)
+==============================================================================
+
+   n_q |     c_3 (1-loop) |     c_4 (1-loop) |       |Δc_3| |       |Δc_4|
+  -----+------------------+------------------+--------------+-------------
+     8 |    +9.506655e-03 |    -1.912349e-03 |    0.000e+00 |    0.000e+00
+    16 |    +9.506615e-03 |    -1.912372e-03 |    4.025e-08 |    2.331e-08
+    24 |    +9.506615e-03 |    -1.912372e-03 |    5.357e-11 |    2.841e-10
+    32 |    +9.506615e-03 |    -1.912372e-03 |    2.700e-12 |    2.549e-12
+    40 |    +9.506615e-03 |    -1.912372e-03 |    8.193e-15 |    3.316e-14
+
+  Max relative drift c_3 (n_q≥16 vs n_q=40):  5.920e-09
+  Max relative drift c_4 (n_q≥16 vs n_q=40):  1.499e-07
+
+  c_3 stable to 5+ digits (rel < 1e-5):       True
+  c_4 stable to 5+ digits (rel < 1e-5):       True
+  M11.1.4 → PASS
+
+==============================================================================
+M11.1.5 — β=γ preservation cross-cases (M2b central claim)
+==============================================================================
+  Test: |β_nat/γ_nat - 1| < 5% for all 3 cases
+  (φ_natural = Φ/Φ_0 ⇒ β_nat = β·Φ_0³, γ_nat = γ·Φ_0⁴)
+
+  Case A:
+    β_nat / γ_nat (1-loop):  0.9990
+    Deviation from 1:        -0.0010  (-0.10%)
+    Within 5%:                True
+
+  Case B:
+    β_nat / γ_nat (1-loop):  0.9855
+    Deviation from 1:        -0.0145  (-1.45%)
+    Within 5%:                True
+
+  Case C:
+    β_nat / γ_nat (1-loop):  1.0457
+    Deviation from 1:        +0.0457  (+4.57%)
+    Within 5%:                True
+
+  All 3 cases preserve β=γ within 5% (|β_nat/γ_nat - 1|):
+    ✓ Case A:  ratio = 0.9990, deviation = -0.10%
+    ✓ Case B:  ratio = 0.9855, deviation = -1.45%
+    ✓ Case C:  ratio = 1.0457, deviation = +4.57%
+  M11.1.5 → PASS
+
+  STRUCTURAL: β=γ preservation w 1-loop jest konsekwencją tożsamości
+  M11.1.2 (ln K_Φ = 2 ln Φ + const). M2a tree-level β=γ pochodzi z H-S
+  Jacobianu `(T/2) ln Φ`; M2b dodaje stiffness piece który MULTIPLIKATYWNIE
+  wzmacnia ten Jacobian o factor 3 — preserves β:γ ratio strukturalnie.
+
+==============================================================================
+M11.1.6 — η boundary condition consistency (CG-2 ↔ Branch I)
+==============================================================================
+  Honest scope: M11.1 weryfikuje BOUNDARY CONDITION (CG-2 LPA'),
+  NIE pełne η_BII (M11.2 scope: explicit FRG flow).
+
+  η_CG2  (LPA' Wetterich-Litim, 3D Ising WF):     0.0440
+  η_BI   (Branch I emergent, M11.G.6):            0.0253
+  Ratio η_BI / η_CG2:                              0.5750
+  Perturbative upper 1/(4π):                       0.0796
+
+  η_CG2 ∈ (1e-4, 1/(4π)):                          True
+  η_BI  ∈ (1e-4, 1/(4π)):                          True
+  Ratio in band [0.3, 2.0]:                       True
+  Both η > 0 (Wilson-Fisher universality):        True
+
+  M11.1.6 → PASS
+
+  KOMENTARZ STRUKTURALNY: factor 0.58× między η_BI = 0.0253 a η_CG2 = 0.044
+  jest dokumentowany w M11.G.6 jako spodziewana scheme-dependence:
+  - η_BI: bottom-up soliton 1-loop, hard cutoff Λ, Branch I scheme
+  - η_CG2: top-down LPA' Wetterich-Litim regulator, 3D Ising WF FP
+  Pełna §4.1 consistency (η_BI = η_BII = η_CG2 within 0.01) wymaga
+  M11.2 (explicit FRG flow) + M11.R-final (multi-branch synthesis).
+
+==============================================================================
+ M11.1 — FINAL VERDICT
+==============================================================================
+  Sub-tests passed: 6/6
+    [v] M11.1.1: PASS
+    [v] M11.1.2: PASS
+    [v] M11.1.3: PASS
+    [v] M11.1.4: PASS
+    [v] M11.1.5: PASS
+    [v] M11.1.6: PASS
+
+  >> M11.1 CLOSED (6/6 PASS) — 1-loop V_eff audit complete:
+  >> structural β=γ preservation (M2b central claim) verified;
+  >> ln K_Φ = 2 ln Φ + const identity exact; BZ convergence < 1e-5;
+  >> loop stability A(Φ_0) > 0 wszystkie 3 cases; η_CG2 boundary
+  >> condition consistent z Branch I (factor 0.58×, scheme-explained).
+  >> Branch II rozpoczęty. Kolejny etap: M11.2 (β-functions z Wetterich FRG).

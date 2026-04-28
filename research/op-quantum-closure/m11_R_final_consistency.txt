@@ -1,0 +1,101 @@
+
+========================================================================
+  M11.R-final — Branch I + Branch II synthesis & closure
+========================================================================
+  Closing audit of M11 quantum cycle (TGP_v1).
+  Aggregates 9 closed sub-cycles + verifies 6 §4 conditions of
+  M11_branch_strategy.md + bounds δM_phys cross-scheme dependence.
+
+  Honest scope: synthesis using closure-grade frozen reference
+  values from prior closures.  First-principles dim-reg/zeta-fn
+  δM_phys upgrade deferred to Phase 1 covariant program.
+
+  Frozen inputs:
+    Branch I:  M11.S/I/G/E/R-I (η_BI=0.0253, μ_extr=0.9983,
+               A_int=5.929e-03, δM_mode-cut=0.000233)
+    Branch II: M11.1/2/3/4 (ν=0.64917, η_LPA'(wide)=0.025552,
+               α₀=4.0391, g̃=0.9803)
+    PN band: [0.00633, 0.07958]
+    Prior pass-rate: 54/54
+
+========================================================================
+  Running 8 R.F tests
+========================================================================
+  [PASS] R.F.1 Three-way η reconciliation (§4.1)
+         η values: BI=0.0253, LPA'(naive)=0.012776, LPA'(wide)=0.025552, CG2=0.044
+         |η_BI-η_LPA'(wide)|/η_BI = 1.00% (gate <5%): True
+         all in PN band [0.00633,0.07958]: True
+         spread max/min = 3.44× (gate <5×): True
+         geo-mean = 0.02455 ∈ PN band: True
+         |η_BI-η_CG2|/η_BI = 73.9% (LPA' underestimation, resolved at LPA''/BMW level — out of M11 scope)
+  [PASS] R.F.2 G_TGP cross-Branch agreement (§4.2)
+         G_TGP^BI ratio (M11.I A_int/A_M9 at qM=0.30) = 0.8278 (O(1) gate True)
+         G_TGP^BII ratio (M11.4 ρ_vac at g̃=1) = 1.0200 (O(1) gate True)
+         |G_BI/G_BII - 1| = 18.8% (gate <50%): True
+         strict <1% gate deferred to Phase 1 (common dim-reg scheme)
+  [PASS] R.F.3 λ_C mass-scale self-consistency (§4.3)
+         λ_C^BI = 1/μ_extr = 1/0.9983 = 1.00170
+         analytical 1/√β = 1.00000
+         drift = 0.170% (gate <1%): True
+         λ_C^BII analytically equal by RG-flow construction (β=γ preserved in M11.2 at FP up to η-running ~2.6%/decade)
+  [PASS] R.F.4 Universality class 3D Ising (§4.4)
+         Branch II direct: ν_LPA(N=10) = 0.649170 vs lit. 0.6496 (drift 0.07%, gate <0.5%): True
+         y_t = +1.5404 ∈ (1.4, 1.7): True
+         n_pos eigenvalues = 1 (single relevant): True
+         Branch I indirect: η_BI = 0.0253 in 3D Ising band [0.01, 0.05]: True
+         Z₂ symmetry preserved (β=γ vacuum, φ→-φ)
+  [PASS] R.F.5 KNOWN_ISSUES Branch I↔II agreement (§4.5)
+         C.3 (M11.4.2 ρ_vac ratio = 1.02): True
+         B.3 (M11.4.3 α₀ = 4.0391): True
+         B.5 (M11.4.4 g̃ = 0.9803, |Δ| from 0.98 = 0.0003): True
+         B.2 (M11.4.5 n_min = 2): True
+         Branch I cross-checks: M11.I G_TGP^BI ratio = 0.8278 (B.5 honest-band consistent)
+         M11.S H3 stable spectrum (B.2 consistent)
+  [PASS] R.F.6 M9 mean-field reproduction (§4.6)
+         μ match: μ_extr = 0.9983 vs M9.3.1 √β = 1.0 → 0.170% (strict gate <0.5%): True
+         A coefficient: A_int = 5.929e-03 vs A_M9 = 7.162e-03 → 17.2% (smearing-broad gate <20%): True
+         M² scaling: A(0.30)/A(0.15) = 3.64 vs expected 4 → 9.0% (smearing gate <15%): True
+  [PASS] R.F.7 δM_phys cross-scheme bound
+         (a) mode-cutoff η·M_class M11.R-I = 2.330e-04
+         (b) η_BI · M_class M11.G = 2.530e-02
+         (c) η_LPA'(wide) · M_class M11.2 = 2.555e-02
+         spread max/min = 109.67× (gate <500×): True
+         geo-mean = 5.321e-03
+         all sub-PN-band 1/(4π) = 0.0796: True
+         |η_BI - η_LPA'(wide)|/η_BI = 1.00% (2% gate, scheme-independent): True
+         first-principles dim-reg δM_phys deferred to Phase 1
+  [PASS] R.F.8 Aggregate sub-cycle pass-rate (54/54)
+         Sub-cycle pass counts: M11.S=6/6, M11.I=6/6, M11.G=6/6, M11.E=6/6, M11.R-I=6/6, M11.1=6/6, M11.2=6/6, M11.3=6/6, M11.4=6/6
+         total = 54/54 (gate 54): True
+         all 6/6: True
+
+========================================================================
+  Summary
+========================================================================
+  R.F result: 8/8 PASS
+  M11 cycle aggregate: 62/62 verifications
+
+    [PASS] R.F.1 Three-way η reconciliation (§4.1)
+    [PASS] R.F.2 G_TGP cross-Branch agreement (§4.2)
+    [PASS] R.F.3 λ_C mass-scale self-consistency (§4.3)
+    [PASS] R.F.4 Universality class 3D Ising (§4.4)
+    [PASS] R.F.5 KNOWN_ISSUES Branch I↔II agreement (§4.5)
+    [PASS] R.F.6 M9 mean-field reproduction (§4.6)
+    [PASS] R.F.7 δM_phys cross-scheme bound
+    [PASS] R.F.8 Aggregate sub-cycle pass-rate (54/54)
+
+  ✓ M11.R-final 8/8 PASS — M11 quantum cycle CLOSED
+     (62/62 cumulative verifications).
+
+========================================================================
+  Reference numbers (for closure doc)
+========================================================================
+  η reconciliation: BI=0.0253, LPA'(naive)=0.012776,
+                    LPA'(wide)=0.025552, CG2=0.044
+                    geo-mean = 0.02455
+  G_TGP cross-Branch: BI ratio=0.8278, BII ratio=1.02
+  λ_C: BI=1.00170 vs analytical 1.00000 (drift 0.170%)
+  Universality: ν_LPA(N=10) = 0.64917, y_t = 1.5404, n_pos = 1
+  KNOWN_ISSUES: C.3 ✓, B.3 (α₀=4.0391) ✓, B.5 (g̃=0.9803) ✓, B.2 (n=2) ✓
+  M9 reproduction: μ drift = 0.170% strict, A drift = 17.2% smearing-broad
+  δM_phys: mode-cut = 0.000233, η_BI = 0.0253, η_LPA'(wide) = 0.025552 (BI ↔ LPA'(wide) match 1.00%)

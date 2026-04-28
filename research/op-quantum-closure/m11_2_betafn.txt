@@ -1,0 +1,50 @@
+
+========================================================================
+  M11.2 — Branch II level 2 audit: β-functions / Wetterich FRG (LPA')
+========================================================================
+  Litim regulator, d=3, Z_2 scalar; c_loop = 1/(6π²) = 0.016887
+  v_3 (loop volume) = 0.012665
+  Reference η values: η_BI=0.0253, η_CG2=0.044
+  PN band: [0.00633, 0.07958] = [1/(4π)², 1/(4π)]
+  ν gate: [0.649, 0.65] (lit. LPA = 0.6496)
+
+
+========================================================================
+  Running 6 tests
+========================================================================
+  [PASS] M11.2.1 LPA FP reproducibility
+         N=10, ν_LPA=0.649170 (lit=0.6496, gate=[0.649,0.65]), residual=6.52e-09, a_1=-0.18593, a_2=+2.43220, a_3=+11.0767, a_4=+45.2635; a_1<0 ∧ a_2>0 = True
+  [PASS] M11.2.2 LPA' η extraction
+         ρ̃_0=0.030648, u_2=7.46238, m̃²=+0.45742; η_LPA'(naive 8v_d/d)=0.012776, η_LPA'(wide 16v_d/d)=0.025552; v_3=0.012665; positivity=True, η<0.10=True, m̃²-finite=True
+  [PASS] M11.2.3 η band consistency
+         PN band = [0.00633, 0.07958]; η_LPA'(naive)=0.01278 (in), η_LPA'(wide)=0.02555 (in), η_CG2=0.04400 (in), η_BI=0.02530 (in); max/min spread=3.44× (gate <30×); all-in-band=True, spread-ok=True
+  [PASS] M11.2.4 ν convergence
+         N → ν_LPA: N=6:0.65488, N=8:0.64914, N=10:0.64917; spread=0.00575; |ν(N=10)-lit|=0.00043; monotone-to-lit=True
+  [PASS] M11.2.5 WF eigenspectrum
+         n_pos=1, n_neg=9, n_zero=0; y_t (leading)=+1.54043; top-6 eigvals=[+1.5404, -0.6666, -3.0533, -6.4243, -14.7826, -30.4929]; 1-positive=True, y_t∈(1.4,1.55)=True
+  [PASS] M11.2.6 Branch I/II η reconciliation
+         η_BI/η_LPA'=1.980, η_CG2/η_LPA'=3.444, η_BI/η_CG2=0.575; all-within-decade=True; geometric-mean η ≈ 0.02423 (∈ PN band)
+
+========================================================================
+  Summary
+========================================================================
+  Result: 6/6 PASS
+    [PASS] M11.2.1 LPA FP reproducibility
+    [PASS] M11.2.2 LPA' η extraction
+    [PASS] M11.2.3 η band consistency
+    [PASS] M11.2.4 ν convergence
+    [PASS] M11.2.5 WF eigenspectrum
+    [PASS] M11.2.6 Branch I/II η reconciliation
+
+  ✓ M11.2 6/6 PASS — Branch II level 2 (β-functions) CLOSED.
+
+
+========================================================================
+  Reference numbers (for closure doc)
+========================================================================
+  N=10 LPA FP coefficients: a_1=-0.18593, a_2=+2.43220, a_3=+11.07667, a_4=+45.26351, a_5=+111.43225, a_6=-274.56571
+  ν_LPA(N=10) = 0.649170  (lit. 0.6496)
+  ρ̃_0 = 0.030648, u_2 = 7.46238, m̃² = +0.45742
+  η_LPA' (naive 8v_d/d)  = 0.012776
+  η_LPA' (wide  16v_d/d) = 0.025552
+  Three-way geometric mean η = 0.02423

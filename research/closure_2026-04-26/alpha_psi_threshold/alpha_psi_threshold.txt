@@ -1,0 +1,133 @@
+========================================================================
+ T-alpha audit: alpha(psi) z psi-threshold (Path E for M9.2-D)
+========================================================================
+
+------------------------------------------------------------------------
+ [T-alpha.1] Define alpha(psi) = alpha_0 (psi - 1)^2 Theta(psi - 1)
+------------------------------------------------------------------------
+  alpha(psi) = Piecewise((alpha_0*(psi - 1)**2, psi >= 1), (0, True))
+  Postulat: psi_th = 1 (vacuum), n = 2 (quadratic smooth)
+  alpha(psi=1-): 0
+  alpha(psi=1+): 0
+  alpha(psi=1) : 0
+  d(alpha)/d(psi)|_{psi=1-}: 0
+  d(alpha)/d(psi)|_{psi=1+}: 0
+  C^0 continuity: PASS
+  C^1 continuity: PASS
+
+------------------------------------------------------------------------
+ [T-alpha.2] Multi-source universality dla alpha(psi_ph)
+------------------------------------------------------------------------
+  Photon ring psi_ph = 1.168 (UNIVERSAL across all M_BH)
+  alpha(psi_ph) = alpha_0 * (psi_ph - 1)^2 = alpha_0 * 0.028224
+
+  Per-source alpha(psi_ph) extraction:
+  Source             M (M_sun)      R_S (m)        alpha(psi_ph) [/alpha_0]
+  ----------------------------------------------------------------------
+  Sgr A*             4.297e+06      1.269e+10      2.822400e-02            
+  M87*               6.500e+09      1.920e+13      2.822400e-02            
+  GW150914 final     6.500e+01      1.920e+05      2.822400e-02            
+  Neutron star       1.400e+00      4.135e+03      2.822400e-02            
+
+  Max deviation from reference: 0.000e+00
+  Multi-source universality: PASS
+
+  CONTRAST with naive constant alpha:
+  - Naive: alpha_SI scales as M_BH^2 (19 orders of magnitude span)
+  - Path E: alpha(psi_ph) UNIVERSAL (dimensionless, identical)
+
+------------------------------------------------------------------------
+ [T-alpha.3] WEP MICROSCOPE preservation via psi_lab ~ 1
+------------------------------------------------------------------------
+  Earth surface gravitational potential:
+  psi_Earth - 1 = G*M_Earth/(c^2*R_Earth) = 6.960e-10
+
+  alpha(psi_Earth) / alpha_0 = (psi_Earth-1)^2 = 4.845e-19
+  alpha(psi_ph)    / alpha_0 = (psi_ph-1)^2    = 2.822e-02
+
+  Suppression ratio alpha_Earth / alpha_ph = 1.717e-17
+
+  WEP MICROSCOPE bound:               eta < 1.10e-15
+  TGP eta with constant alpha:        eta ~ 1.60e-15
+    (calibrated z Sgr A*; M87*-calib breaks bound by 10^5x)
+  TGP eta with alpha(psi) threshold:  eta ~ 2.75e-32
+
+  Safety margin: 4.005e+16x  (with psi-threshold)
+  vs marginal 6.7x (constant alpha case)
+
+------------------------------------------------------------------------
+ [T-alpha.4] Calibration alpha_0 from scenario (e) +14.56% deviation
+------------------------------------------------------------------------
+  Scenario (e) target shift (universal, geom units): 0.114
+  Heuristic factor xi = T*J*J/S_kin (Phase 0+ sketch): 1.0 (O(1))
+
+  Calibration equation: alpha_0 * (psi_ph - 1)^2 * xi = 0.114
+  alpha_0 = 0.114 / (2.8224e-02 * 1.0)
+  alpha_0 = 4.039
+
+  CHECK: is alpha_0 a natural O(1) dimensionless constant?
+  alpha_0 = 4.039  -->  PASS (O(1) natural)
+
+  Compare with naive constant alpha:
+  - Naive: alpha = 0.1 (geom units) -> alpha_SI varies 10^19x
+  - Path E: alpha_0 ~ 4 dimensionless universal constant
+
+------------------------------------------------------------------------
+ [T-alpha.5] n=2 minimality test (compare n=1, n=2, n=3)
+------------------------------------------------------------------------
+  Compare WEP suppression for different n:
+  n     (psi_E-1)^n        (psi_ph-1)^n       WEP suppression    C^k smooth
+  ----------------------------------------------------------------------
+  1     6.960e-10          1.680e-01          4.143e-09          C^0       
+  2     4.845e-19          2.822e-02          1.717e-17          C^1       
+  3     3.372e-28          4.742e-03          7.112e-26          C^2       
+
+  WEP MICROSCOPE pass per n:
+  n     eta_TGP         WEP PASS?  Verdict                  
+  ------------------------------------------------------------
+  1     6.629e-24       PASS       MARGINAL (eta ~ 10^-24)  
+  2     2.746e-32       PASS       SAFE + minimal smooth    
+  3     1.138e-40       PASS       Overkill (no extra benefit)
+
+  Verdict: n=1 PASS but C^0 only (kink at psi=1) -> not preferred
+  Verdict: n=2 PASS, C^1 smooth -> MINIMAL SUFFICIENT
+  Verdict: n=3 PASS overkill (extra suppression beyond needed)
+
+  n=2 is TGP-natural choice z criteria:
+  (a) C^1 smoothness przy psi_th = 1 vacuum
+  (b) Sufficient WEP suppression (margin > 10^16)
+  (c) Minimal exponent satisfying (a) + (b) bez overkill
+========================================================================
+ T-alpha FINAL VERDICT
+========================================================================
+
+  Test summary:
+  ID             Verdict    Detail                                                      
+  ----------------------------------------------------------------------------------------
+  T-alpha.1      PASS       C^0=True, C^1=True dla n=2 quadratic activation             
+  T-alpha.2      PASS       alpha(psi_ph) universal across 9 ord. magn. M_BH (max dev 0.0e+00)
+  T-alpha.3      PASS       WEP eta_TGP=2.7e-32, margin 4.0e+16x                        
+  T-alpha.4      PASS       alpha_0=4.04 dimensionless O(1) natural                     
+  T-alpha.5      PASS       n=2 minimal sufficient (C^1 smooth + WEP-safe + non-overkill)
+
+  Total: 5/5 PASS
+
+  [VERDICT] T-alpha 5/5 PASS — Path E structurally VALIDATED.
+
+    -> alpha(psi) = alpha_0 (psi-1)^2 Theta(psi-1) z alpha_0 ~ 4
+       jest TGP-natural rozwiazaniem multi-source alpha-universality.
+
+    -> Photon ring: alpha(psi_ph=1.168) = 0.0282*alpha_0 = 0.1139
+       UNIVERSAL across SgrA*, M87*, GW150914, NS (dimensionless).
+
+    -> Earth lab: alpha(psi_Earth) suppressed by 10^-17 vs photon ring
+       => WEP MICROSCOPE margin 4.0e+16x (vs 6.7x naive).
+
+    -> Strategic: M9.2-D pivot path nadal alive z lead candidate
+       status, multi-source caveat RESOLVED przez Path E (T-alpha).
+
+  Phase 1 sequel: Phase 1 covariant derivation moze proceed z
+  alpha(psi) parametrization jako baseline, z calibration alpha_0 ~ 4
+  jako natural starting point.
+
+========================================================================

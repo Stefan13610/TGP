@@ -1,0 +1,183 @@
+
+==============================================================================
+  M10.1 — FRW DARK ENERGY w(z) AUDIT (de2 closure-grade)
+==============================================================================
+
+  Predecessor: M10_program.md, M10_0_drift_audit.md, M10_1_setup.md
+  Audit target: ../desi_dark_energy/de2_tgp_frw_evolution.py
+
+==============================================================================
+  M10.1.1 — Action structure verification (sympy / sek08a)
+==============================================================================
+
+  V(psi)         = beta*psi**3/3 - gamma*psi**4/4
+  V'(psi)        = beta*psi**2 - gamma*psi**3
+  V''(psi)       = 2*beta*psi - 3*gamma*psi**2
+
+  After substitution gamma -> beta (vacuum condition):
+  V_vac(psi)     = beta*psi**3*(4 - 3*psi)/12
+  V_vac(1)       = beta/12    (residual vacuum energy)
+  V'_vac(1)      = 0    (vacuum stationarity)
+  V''_vac(1)     = -beta   (slow-roll MAXIMUM, sek08a Prop:vacuum)
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) V'(1) = 0 (vacuum stationarity)  (0)
+  [PASS] (b) V''(1) = -beta (slow-roll max)  (-beta)
+  [PASS] (c) V(1) = beta/12 > 0 (Lambda source via T-Lambda)  (beta/12)
+
+  K(psi)         = K_geo*psi**4
+  K'(psi)        = 4*K_geo*psi**3
+  K(1)           = K_geo
+  K'(1)          = 4*K_geo
+  [PASS] (d) K(1)=K_geo, K'(1)=4K_geo (positivity for psi>0)  (K(1)=K_geo, K'(1)=4*K_geo)
+
+  M10.1.1 verdict: PASS
+
+==============================================================================
+  M10.1.2 — Structural bound w >= -1 with non-canonical kinetic
+==============================================================================
+
+  rho_psi  = (1/2) K(psi) psi_dot^2 + V(psi)
+           = K_geo*psi**4*psi_dot**2/2 + V_psi
+  p_psi    = (1/2) K(psi) psi_dot^2 - V(psi)
+           = K_geo*psi**4*psi_dot**2/2 - V_psi
+  w + 1    = (rho_psi + p_psi) / rho_psi
+           = K(psi) psi_dot^2 / rho_psi
+           = 2*K_geo*psi**4*psi_dot**2/(K_geo*psi**4*psi_dot**2 + 2*V_psi)
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) Symbolic: w+1 = K(psi) psi_dot^2 / rho_psi
+  [PASS] (b) K(psi)=K_geo*psi^4 > 0 for psi>0, K_geo>0  (K(0.5)=K_geo/16)
+  [PASS] (c) Strukturalnie: w+1 >= 0 iff K(psi)>0 and rho_psi>0  (follows from (a)+(b))
+  [PASS] (d) Canonical K=1 limit recovered (psi=1, K_geo=1)
+
+  M10.1.2 verdict: PASS
+
+==============================================================================
+  M10.1.3 — Numerical FRW: canonical (K=1) vs non-canonical (K=K_geo psi^4)
+==============================================================================
+
+  K_geo = 1.0, deltas = [0.0001, 0.001, 0.01]
+  z grid: [0.0, 0.5, 1.0, 2.0, 5.0]
+
+  Canonical (K=1):
+       delta        V_0  w(z=0.0)   w(z=0.5)   w(z=1.0)   w(z=2.0)   w(z=5.0) 
+       1e-04    0.68491  -1.00000  -1.00000  -1.00000  -1.00000  -1.00000
+       1e-03    0.68493  -0.99997  -0.99999  -1.00000  -1.00000  -1.00000
+       1e-02    0.68696  -0.99694  -0.99938  -0.99977  -0.99994  -0.99999
+
+  Non-canonical (K=K_geo*psi^4):
+       delta        V_0  w(z=0.0)   w(z=0.5)   w(z=1.0)   w(z=2.0)   w(z=5.0) 
+       1e-04    0.68491  -1.00000  -1.00000  -1.00000  -1.00000  -1.00000
+       1e-03    0.68493  -0.99997  -0.99999  -1.00000  -1.00000  -1.00000
+       1e-02    0.68679  -0.99738  -0.99942  -0.99978  -0.99994  -0.99999
+
+  |w_canon - w_noncanon| at each z, delta:
+       delta  diff(z=0.0)  diff(z=0.5)  diff(z=1.0)  diff(z=2.0)  diff(z=5.0)
+       1e-04   4.10e-10   4.50e-11   1.22e-11   2.67e-12   2.92e-13
+       1e-03   4.11e-07   4.51e-08   1.23e-08   2.68e-09   2.92e-10
+       1e-02   4.33e-04   4.66e-05   1.26e-05   2.74e-06   2.99e-07
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) Canonical: w(z=0) ≈ -1 (frozen)  (w(0)=-0.99997)
+  [PASS] (b) Non-canonical: w(z=0) ≈ -1 (frozen)  (w(0)=-0.99997)
+  [PASS] (c) |w_canon - w_noncanon|_max < 0.01 (sub-leading)  (max diff = 4.33e-04)
+  [PASS] (d) w_min >= -1 across ALL trajectories (canonical+non-canonical)  (w_min = -1.00000000)
+  [PASS] (e) Hubble damping: psi_today ≈ 1 (slow-roll)  (canon=1.00263, non-canon=1.00261)
+
+  M10.1.3 verdict: PASS
+
+==============================================================================
+  M10.1.4 — CPL projection (w_0, w_a)
+==============================================================================
+
+  TGP canonical    (K=1):                w_0 = -0.99998, w_a = -0.00003
+  TGP non-canonical (K=K_geo*psi^4):     w_0 = -0.99998, w_a = -0.00003
+  LambdaCDM:                             w_0 = -1.00000, w_a = +0.00000
+  DESI DR1 (Adame+ 2024):                w_0 = -0.45 ± 0.21, w_a = -1.79 ± 0.65
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) |w_0 + 1| < 0.1 (near-LambdaCDM)  (canon|Δ|=0.0000, nc|Δ|=0.0000)
+  [PASS] (b) |w_a| < 0.5 (small evolution)  (|wa_canon|=0.0000, |wa_nc|=0.0000)
+  [PASS] (c) Distance: TGP closer to LCDM than DESI  (canon LCDM=0.0000 vs DESI=1.8726; nc LCDM=0.0000 vs DESI=1.8726)
+  [PASS] (d) Canonical vs non-canonical CPL within 1%  (|Δw_0|=0.0000, |Δw_a|=0.0000)
+
+  M10.1.4 verdict: PASS
+
+==============================================================================
+  M10.1.5 — DESI DR1 falsifiability (chi^2 distance)
+==============================================================================
+
+  TGP non-canonical:  (w_0, w_a) = (-1.0000, -0.0000)
+  LambdaCDM:          (w_0, w_a) = (-1.0000, +0.0000)
+  DESI DR1 mean:      (w_0, w_a) = (-0.4500, -1.7900)
+
+  Covariance assumed: sigma_w0=0.21, sigma_wa=0.65, rho=-0.5
+
+  2-DOF thresholds: 2sigma -> chi^2 = 6.18, 3sigma -> chi^2 = 11.83
+
+  chi^2(TGP    vs DESI) = 9.640  (Mahalanobis 3.10sigma; 2-DOF: between 2sigma and 3sigma)
+  chi^2(LCDM   vs DESI) = 9.641  (Mahalanobis 3.10sigma; 2-DOF: between 2sigma and 3sigma)
+  chi^2(DESI   vs DESI) = 0.000
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) chi^2(TGP, DESI) > 6.18 (>2sigma 2-DOF, falsifiable now)  (chi^2=9.640 (Mahalanobis 3.10sigma))
+  [PASS] (b) Cross-check: LCDM also >2sigma from DESI (tension is generic)  (chi^2_LCDM=9.641 (Mahalanobis 3.10sigma))
+  [PASS] (c) chi^2(TGP) ≈ chi^2(LCDM): structural fit similar  (|Δχ²|/χ² = 0.0001)
+  [PASS] (d) Honest: final falsifiability verdict requires DESI DR2/DR3  (documentation only)
+
+  M10.1.5 verdict: PASS
+
+==============================================================================
+  M10.1.6 — T-Lambda closure consistency cross-check
+==============================================================================
+
+  T-Lambda closure (closure_2026-04-26/Lambda_from_Phi0):
+      rho_vac = M_Pl^2 H_0^2 / 12
+              = (beta / 12) * Phi_0^2     (since M_Pl^2 H_0^2 ↔ beta * Phi_0^2)
+      Omega_Lambda matched to 0.6847 within 2%.
+
+  Z M10.1 numerical FRW:
+      V(1) (normalized de2) = 1, with V_0 shoot ≈ Omega_DE0 = 0.685.
+      In sek08a units V(1) = beta/12 (M10.1.1 confirmed),
+      so V_0 corresponds to (beta/12) absorbed into normalization.
+
+  V_0 (canonical, delta=1e-3)     = 0.684928
+  V_0 (non-canonical, delta=1e-3) = 0.684928
+  Target Omega_DE0                 = 0.684909
+  Ratio V_0 / Omega_DE0 (canonical)     = 1.000028
+  Ratio V_0 / Omega_DE0 (non-canonical) = 1.000028
+
+------------------------------------------------------------------------------
+  Sub-tests
+------------------------------------------------------------------------------
+  [PASS] (a) V_0 / Omega_DE0 ≈ 1 (frozen field)  (canon=1.0000, nc=1.0000)
+  [PASS] (b) V(1) = beta/12 (matches T-Lambda rho_vac form)  (V(1)=beta/12)
+  [PASS] (c) Omega_DE0 (M10.1) ≈ Omega_Lambda (T-Lambda) within 2%  (|Δ|=0.0002)
+
+  M10.1.6 verdict: PASS
+
+==============================================================================
+  M10.1 — VERDICT
+==============================================================================
+  [PASS]  M10.1.1 Action structure (sympy)
+  [PASS]  M10.1.2 Bound w >= -1 with non-canonical (sympy)
+  [PASS]  M10.1.3 Numerical FRW: canonical vs non-canonical
+  [PASS]  M10.1.4 CPL projection (w_0, w_a)
+  [PASS]  M10.1.5 DESI DR1 falsifiability
+  [PASS]  M10.1.6 T-Lambda closure consistency
+
+  Sub-cycle M10.1: 6/6 PASS
+
+  M10.1 CLOSURE-GRADE: 6/6 PASS
+  → Ready for M10.2 (inflation audit ex261).

@@ -1,0 +1,125 @@
+==========================================================================
+ Phase 2 — Sub-cycle 2.D — EFT renormalizability (Donoghue 1994)
+                          + counterterm structure
+==========================================================================
+
+[PASS] 2.D.1 TGP power-counting w EFT (S_TGP + S_EH)
+  (a) Field dimensions at d=4:
+      [φ] = 1, [g_μν] = 0, [h_μν] = 1, [∂] = 1
+  (b) S_EH operators by mass dim (curvature inv.):
+      Λ                        dim = 0
+      R                        dim = 2
+      R²                       dim = 4
+      R_μν R^μν                dim = 4
+      R_μνρσ R^μνρσ            dim = 4
+      □R                       dim = 4
+      R³                       dim = 6
+      R·R_μν R^μν              dim = 6
+  (c) S_TGP operators (sek08a + β=γ vacuum):
+      V(φ) = (β/3)φ³ - (γ/4)φ⁴         dim = 4
+      K(φ)·g^μν ∂_μφ ∂_νφ              dim = 4
+      (q/Φ_0)·φ·ρ                      dim = 4
+  (d) Marginal/relevant (dim ≤ 4): 9 operators
+      Irrelevant (dim > 4) Λ_EFT-suppressed: 2 operators
+  (e) Suppression Λ_EFT^(d-4) for irrelevant: ✓
+      [coeff(R)] = M² (M_Pl²); [coeff(R²)] = M⁰ (dimensionless): ✓
+
+[PASS] 2.D.2 Counterterm structure 1-loop graviton (Donoghue 1994)
+  (a) Initial candidate dim-4 curvature operators:
+      ['Λ', 'R', 'R²', 'R_μν R^μν', 'R_μνρσ R^μνρσ', '□R']
+      count = 6 = 6: ✓
+  (b) Gauss-Bonnet topological identity in 4D:
+      G_GB = R² - 4 R_μν R^μν + R_μνρσ R^μνρσ = total deriv
+      sympy: G_GB = R_sq - 4*Ric_sq + Riem_sq
+      ⟹ Riem² ≡ G_GB - R² + 4·Ric² (mod boundary)
+      Riemann² eliminable from local action in 4D: ✓
+  (c) □R is total derivative (boundary term):
+      ∫d⁴x √(-g) □R = surface integral (no local contribution): ✓
+  (d) Independent counterterms in 4D after reductions:
+      ['Λ', 'R', 'R²', 'R_μν R^μν']
+      count = 4 = 4: ✓
+  (e) Donoghue 1994 result (4 independent dim-4 counterterm
+      coefficients in 4D after Gauss-Bonnet reduction): ✓
+      Coefficients: {c_Λ, c_R = -1/(16πG_N), c_R², c_Ric²}
+
+[PASS] 2.D.3 Λ_EFT cutoff + scale separation (M_Pl-suppressed)
+  (a) Λ_EFT = M_Pl = 1.220e+19 GeV = 1.220e+28 eV: ✓
+      M_Pl_reduced = 2.435e+18 GeV (κ-normalization)
+  (b) m_Φ = M_phys^TGP = 1.4234e-33 eV (1.A.6, Φ_0=H_0):
+      hubble-scale band [1e-34, 1e-32] eV: ✓
+  (c) Scale separation m_Φ / Λ_EFT = 1.17e-61
+      < 1e-50 (extreme separation): ✓
+  (d) EFT validity range: ~60.9 dex of energy
+      gate > 50 dex: ✓
+  (e) ngEHT empirical probe (mm-wave ~1e-03 eV)
+      ≪ Λ_EFT ⟹ EFT framework applicable to ngEHT predictions: ✓
+
+[PASS] 2.D.4 Cross-check Phase 1.A counterterms (covariant 4D)
+  (a) Phase 1.A.2 dim-reg MS̄: |δM|/M_BARE = 1.422e-02
+      Phase 2.D EFT reproduces: 1.422e-02
+      drift = 0.0000% (gate <5%): ✓
+  (b) Phase 1.A.3 ζ-fn drift vs MS̄: 0.0000%
+      EFT scheme independence preserved: ✓
+  (c) Counterterm structure consistency:
+      matter sector (Phase 1.A): M, λ → 2 CTs
+      GR-EFT (Phase 2.D.2):      Λ, R, R², R_μν² → 4 CTs
+      combined total = 6: ✓
+  (d) Aggregate drift = 0.0000% (closure-grade <5%): ✓
+  (e) Total counterterm count check: ✓
+
+[PASS] 2.D.5 Asymptotic safety pointer (Weinberg-Reuter)
+  (a) Weinberg 1979 vision (asymptotic safety / NGFP):
+      "Weinberg, 'Ultraviolet divergences in quantum theories of gravitation' (1979)"
+      structural hypothesis: non-trivial UV fixed point exists
+  (b) Reuter 1998 functional RG framework:
+      "Reuter, 'Nonperturbative evolution equation for quantum gravity' (1998)"
+      FRG implementation searches for NGFP in g̃, λ̃ flow
+  (c) Phase 2.D EFT closure-grade does NOT prove AS: ✓
+      EFT gives predictions at E < Λ_EFT only;
+      UV completion requires resummation of irrelevant tower
+  (d) Phase 3 / off-cycle research-track for AS verification: ✓
+      (alternative UV completions: string, LQG, causal sets)
+  (e) Phase 2 closure-grade EXPLICITLY EFT, NIE UV-complete: ✓
+  (f) Off-scope partition (Phase2_program.md §1.5) explicit: ✓
+  STRUCTURAL OPEN: Weinberg-Reuter asymptotic safety pointer
+  documented but NOT verified within Phase 2 closure scope.
+
+[PASS] 2.D.6 Honest scope: EFT closure-grade, NIE UV-complete
+  (a) Phase 2.D delivers EFT closure-grade (Donoghue 1994): ✓
+  (b) Predictive at E < Λ_EFT = 1.22e+19 GeV: ✓
+  (c) UV completion EXPLICITLY off-scope research-track:
+      • asymptotic safety (Weinberg-Reuter)
+      • string theory
+      • loop quantum gravity (LQG)
+      • causal dynamical triangulations
+      explicit: ✓
+  (d) TGP introduces NO new counterterms beyond GR-EFT minimal set:
+      single-Φ axiom + sek08a structure compatible with
+      4 GR-EFT counterterms (Λ, R, R², R_μν²) + 2 matter (M, λ): ✓
+  (e) Scope partition (Phase2_program.md §5.4):
+      in-scope (5):
+        • EFT framework (Donoghue 1994)
+        • counterterm structure 1-loop graviton
+        • Λ_EFT cutoff
+        • naturalness (dim ≤ 4 vs > 4)
+        • Phase 1.A counterterm cross-check
+      off-scope (4):
+        • UV-complete renormalizability
+        • asymptotic safety verification (Phase 3)
+        • string / LQG embedding
+        • non-perturbative metric path integral (deferred to 2.F)
+      overlap: none: ✓
+
+==========================================================================
+ PHASE 2.D EFT RENORMALIZABILITY VERDICT: 6/6 PASS
+==========================================================================
+ ✅ EFT renormalizability (Donoghue 1994) closure-grade.
+    - Power-counting: dim ≤ 4 marginal/relevant; dim > 4 irrelevant
+    - Counterterm structure: 6 candidates → 4 independent in 4D
+      (Λ, R, R², R_μν R^μν) after Gauss-Bonnet + boundary reduction
+    - Λ_EFT = M_Pl ≈ 1.22e+19 GeV
+    - Scale separation m_Φ/Λ_EFT ≈ 1.17e-61
+    - Phase 1.A cross-check: |δM|/M_BARE = 1.422e-2 reproduced (drift 0%)
+    - Asymptotic safety: STRUCTURAL OPEN (research-track)
+    - Honest scope: EFT closure-grade, NIE UV-complete
+ ✅ 2.D CLOSED — proceed to 2.B / 2.E (parallel) / 2.F (CAPSTONE)

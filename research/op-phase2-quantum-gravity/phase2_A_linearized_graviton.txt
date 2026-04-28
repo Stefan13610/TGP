@@ -1,0 +1,77 @@
+==========================================================================
+ Phase 2 — Sub-cycle 2.A — Linearized graviton h_μν on M9.1″
+                          (KEYSTONE)
+==========================================================================
+
+[PASS] 2.A.1 linearized action S_lin[h, Φ] na M9.1″
+  (a) ḡ_eff_μν|Φ_0=c_0=1 = diag(-1,+1,+1,+1) = η_μν: ✓
+  (b) √(-ḡ_eff)|vac = c_0·Φ_0 = 1: ✓
+  (c) κ² = 32πG_N = 100.5310
+      κ = √(32πG_N) = 10.0265: ✓
+  (d) δh_μν = ∂_μξ_ν + ∂_νξ_μ symmetric (gauge structure): ✓
+  L_EH^(2) ¼[∂h∂h - ∂h_νρ∂h^νρ + 2∂h^μν∂h_μν - 2∂h^μν∂_νh]
+
+[PASS] 2.A.2 de Donder gauge + FP ghosts
+  (a) tr(h̄) + tr(h) = 0 in 4D (trace-reverse): ✓
+  (b) Propagator P_μνρσ = ½(η_μρη_νσ+η_μση_νρ-η_μνη_ρσ): ✓
+      P_0011 = 0 (off-diagonal trace): ✓
+  (c) Feynman iε prescription 1/(k² - iε): ✓ (convention)
+  (d) FP ghost L_FP = c̄^μ □ c_μ decoupled on flat bg: ✓
+  (e) Pure-GR DOF: 10 - 4 (de Donder) - 4 (residual)
+      = 2 (TT polarizations h_+, h_×): ✓
+      [2.A.4 will add scalar h_b for total 3 DOF in TGP]
+
+[PASS] 2.A.3 TT spectrum (h_+, h_×) dispersion c_T(k)
+  (a) tr(ε^+) = 0, tr(ε^×) = 0
+      traceless: ✓
+      k^μ ε^+_μν = 0, k^μ ε^×_μν = 0: ✓
+  (b) □ h^TT = 0 → ω² = c_T²·k²
+      vacuum dispersion: ✓
+  (c) c_T = c_0 = 1.0 (TT inherits background): ✓
+  (d) N_TT polarizations = 2: ✓
+  (e) M9.3 no-dispersion at leading order preserved: ✓
+
+[PASS] 2.A.4 scalar mode h_b = h_L (single-Φ M9.3.4)
+  (a) Single-Φ axiom: N_scalar = 1 (h_b = h_L only): ✓
+  (b) m_h_b² = +β > 0 (Yukawa stable, 1.A.5): ✓
+  (c) Coupling K(Φ)·g^μν·∂Φ∂Φ → κ·h_b·tr_Φ at O(h):
+      K(Φ_0=1) = K_geo > 0 (sek08a thm:D-uniqueness): ✓
+  (d) Mass scale: M_phys^TGP = 1.4234e-33 eV
+      H_0 ≈ 1.4e-33 eV; drift = 1.67%: ✓
+  (e) Path B m_σ² = 2·m_s² inheritance (1.F.4): ✓
+      Total Phase 2 DOF = N_TT + N_scalar = 3 = 3
+
+[PASS] 2.A.5 GW170817 + 1.F path integral measure
+  (a) GW170817 bound |c_T - c_s|/c < 9.05e-22: ✓
+  (b) M9.1″ vacuum: c_T = c_s = c_0 = 1.0
+      |c_T - c_s|_predicted = 0.0: ✓
+  (c) Margin: bound/predicted = ∞ (exact equality)
+      gate ≥ 10¹⁵×: ✓
+  (d) 1.F.5 T-Λ ratio = 1.0203 (cov.) drift 0.0294%: ✓
+  (e) Phase 2 EFT preserves c_T = c_s on M9.1″ vacuum: ✓
+
+[PASS] 2.A.6 vector mode strukturalny zero (single-Φ)
+  (a) Single-Φ axiom blocks vector h_v_μ:
+      N_vector = 0: ✓
+  (b) M9.3.4 missing modes: ['h_vx', 'h_vy']: ✓
+  (c) DOF accounting:
+      pure-GR TT      = 2
+      TGP scalar h_b  = 1
+      TGP vector      = 0  (structural zero)
+      ─────────────────
+      total physical = 3: ✓
+  (d) PPN no-vector consistency: γ_PPN = 1.0, β_PPN = 1.0: ✓
+  (e) Phase 2 inheritance (2.A linearized preserves single-Φ): ✓
+
+==========================================================================
+ PHASE 2.A KEYSTONE VERDICT: 6/6 PASS
+==========================================================================
+ ✅ Linearized graviton h_μν on M9.1″ closure-grade.
+    - 2 TT polarizations (h_+, h_×) at c_T = c_0
+    - 1 scalar mode h_b = h_L (single-Φ heritage)
+    - 0 vector modes (single-Φ structural zero)
+    - Total physical DOF: 3
+    - GW170817 (c_T - c_s)/c = 0 exact at vacuum (∞ margin)
+ ✅ 2.A KEYSTONE CLOSED — proceed to:
+    - 2.B / 2.D / 2.E (parallelizable)
+    - 2.F CAPSTONE (depends on 2.A)

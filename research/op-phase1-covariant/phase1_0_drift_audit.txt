@@ -1,0 +1,82 @@
+==========================================================================
+ Phase 1 — Sub-cycle 1.0 — Drift audit & frozen reference values
+==========================================================================
+
+[PASS] DRIFT.1 η in PN-perturbative band
+  band = [0.00633, 0.07958]
+  η_BI = 0.025300  ✓
+  η_LPA'(naive) = 0.012776  ✓
+  η_LPA'(wide) = 0.025552  ✓
+  η_CG2 = 0.044000  ✓
+
+[PASS] DRIFT.2 striking 1% match (η_BI ≈ η_LPA'(wide))
+  |η_BI − η_LPA'(wide)| / η_BI = 0.9960%
+  gate <5% (striking finding 1.00%)
+
+[PASS] DRIFT.3 G_TGP ratios O(1)
+  G_BI/G_M9 = 0.8278  (band [0.5, 1.5])
+  G_BII/G_M9 = 1.02  (band [0.5, 1.5])
+  |G_BI/G_BII − 1| = 18.8431%  (gate <50% smearing-broad)
+
+[PASS] DRIFT.4 A_int / A_M9 reproduces G_BI ratio
+  A_int^BI / A_M9 = 0.82784
+  G_BI ratio frozen = 0.8278
+  drift = 0.0050%  (gate <1%)
+
+[PASS] DRIFT.5 universality 3D Ising LPA(N=10)
+  ν_LPA(N=10) = 0.64917
+  ν_lit (3D Ising) = 0.6496
+  drift = 0.0662%  (gate <1%)
+  y_t = +1.5404  (>0 ✓)
+  n_pos = 1  (==1 ✓)
+
+[PASS] DRIFT.6 λ_C self-consistency
+  λ_C^BI = 1/μ_extr = 1.00170
+  analytical 1/√β (β=1) = 1.00000
+  drift = 0.1703%  (gate <1%)
+
+[PASS] DRIFT.7 α₀ arithmetic identity (T-α)
+  Δ_target / ((ψ_ph−1)²·ξ_geom)
+      = 0.114 / (0.168²·1.0)
+      = 4.0391
+  M11.4.3 frozen α₀ = 4.0391
+  drift = 0.0004%  (gate <1%)
+  band [3.5, 4.5]: ✓
+
+[PASS] DRIFT.8 g̃_match full-Planck conversion (B.5)
+  g̃_match formula = 36·Ω_Λ·(M_Pl_red/M_Pl)² = 0.980300
+  M11.4.4 frozen g̃_match = 0.9803
+  drift = 0.000000%  (gate <0.1%)
+  T-Λ ratio = 1/g̃ = 1.0201
+  vs frozen 1.020: drift = 0.0094%  (gate <0.5%)
+
+[PASS] DRIFT.9 prior-cycle aggregate count
+  M9 cycle: 13/13 (M9.1'' 3 + M9.2 5 + M9.3 5)
+  M10 cycle: 42/42 (M10.0 + 6×6 + 6 R)
+  M11 cycle: 62/62 (9 sub × 6 + 8 R.F)
+  cumulative = 117/117
+
+[PASS] DRIFT.10 sympy foundational identities (M10.R.1)
+  V'(1)|β=γ = 0: ✓
+  V''(1)|β=γ = -β: ✓
+  V(1)|β=γ = β/12: ✓
+  K(1) = K_geo: ✓
+  K'(1) = 4·K_geo: ✓
+
+[PASS] DRIFT.11 Phase 1 critical-path topological
+  topological order: ['1.A', '1.B', '1.D', '1.E', '1.F', '1.R-final']
+  1.A before 1.F: ✓
+  1.F before 1.R-final: ✓
+
+[PASS] DRIFT.12 1.C OP-CC explicit out-of-scope partition
+  in-scope: ['1.0', '1.A', '1.B', '1.D', '1.E', '1.F', '1.R-final']
+  out-of-scope: ['1.C']
+  overlap: none
+
+==========================================================================
+ PHASE 1.0 DRIFT AUDIT VERDICT: 12/12 PASS
+==========================================================================
+ ✅ All M9/M10/M11 frozen reference values clean — Phase 1
+    inputs locked. Cumulative prior verification count: 117
+    (M9: 13 + M10: 42 + M11: 62)
+ ✅ 1.0 setup CLOSED — proceed to 1.E (warmup) or 1.A (keystone).

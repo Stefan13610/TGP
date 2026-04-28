@@ -1,0 +1,64 @@
+==============================================================================
+M11.S — Mini-PoC: single soliton Φ_sol(r) feasibility
+==============================================================================
+Units: β=K_geo=Φ_0=q/Φ_0=1; M_source=1.0, a_source=0.15
+Yukawa mass μ = √(β/K_geo) = 1.0000  (λ_C = 1.0)
+Grid: r ∈ [0.001, 12.0], 600 points
+
+------------------------------------------------------------------------------
+PoC.1 — Linear Yukawa benchmark
+------------------------------------------------------------------------------
+Linear δφ_Yuk(r) at r ∈ [np.float64(0.5), np.float64(1.0), np.float64(2.0), np.float64(5.0), np.float64(10.0)]:
+   r= 0.50:  δφ = +9.653235e-02   (Φ_0 + δφ = 1.096532)
+   r= 1.00:  δφ = +2.927492e-02   (Φ_0 + δφ = 1.029275)
+   r= 2.00:  δφ = +5.384820e-03   (Φ_0 + δφ = 1.005385)
+   r= 5.00:  δφ = +1.072378e-04   (Φ_0 + δφ = 1.000107)
+   r=10.00:  δφ = +3.612812e-07   (Φ_0 + δφ = 1.000000)
+  Yukawa decay rate verified (e^-μ·Δr ratio): True
+
+------------------------------------------------------------------------------
+PoC.2 — Nonlinear ODE solver Φ_sol(r)
+------------------------------------------------------------------------------
+  Φ_sol(r_min=0.001) = 3.762396
+  Φ_sol(r=1.0)         = 1.027044
+  Φ_sol(r=2.0)         = 1.005097
+  Φ_sol(r_max=12.0) = 1.000000
+  max|Φ_sol - Φ_0|     = 2.7624e+00
+  finite at origin: True
+  asymptotic Φ_0:   True
+  nontrivial:       True
+  H1 (existence) + H2 (asymptotic) verdict: PASS
+
+------------------------------------------------------------------------------
+PoC.3 — Linear vs nonlinear comparison
+------------------------------------------------------------------------------
+  max relative diff (lin vs nonlin) for r > 0.44999999999999996: 13.84%
+  At r=2.0:   lin=+5.3512e-03,  nonlin=+5.0966e-03
+  At r=5.0:   lin=+1.0609e-04,  nonlin=+1.0166e-04
+  tail (r > 4 λ_C) max relative diff: 4.21%
+  Tail consistency verdict: PASS
+
+------------------------------------------------------------------------------
+PoC.4 — Linearization spectrum (radial s-wave)
+------------------------------------------------------------------------------
+  Number of negative ω² modes:  0
+  Number of near-zero modes:    0
+  Lowest 5 ω² values:           [np.float64(1.0687165264727871), np.float64(1.273464209553849), np.float64(1.6127913684350172), np.float64(2.0865482483430617), np.float64(2.6951203401171697)]
+  Asymptotic ω² (continuum):    expect ω² → β + k² ≈ 1 + k²
+  Highest ω² in grid:           10007.213
+  H3 (s-wave stability) verdict: PASS
+
+==============================================================================
+PoC.5 — VERDICT (M11.S feasibility for full audit)
+==============================================================================
+  Tests passed: 4/4
+    ✓ PoC.1: PASS
+    ✓ PoC.2: PASS
+    ✓ PoC.3: PASS
+    ✓ PoC.4: PASS
+
+  ✅ M11.S FEASIBILITY CONFIRMED
+  Φ_sol(r) classical solution exists, asymptotically matches Yukawa,
+  s-wave linearization spectrum is non-negative.
+  → READY for full M11.S audit (Branch I bottom-up start)
+
