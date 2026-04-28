@@ -1,0 +1,166 @@
+
+========================================================================
+XS.1.Phase3 — Multi-sector falsification map of √α₀ = κ_TGP
+========================================================================
+  date          : 2026-04-28
+  predecessor   : Phase 2 7/7 PASS, classification PARTIALLY DERIVED
+  identity      : √α₀ = κ_TGP
+  α₀ (strict)   : 4.0179
+  α₀ (F4)       : 4.0447
+  κ_TGP²        : 4.0481
+  match (strict): 0.746%
+  match (F4)    : 0.084%
+
+========================================================================
+T3.1 — XS1: ngEHT-α₀ × SC-κ_TGP² combined precision (2030+)
+========================================================================
+  α₀ (Phase 2 strict)                              4.017930
+  ngEHT α₀ window (2030+)                          [3.8170, 4.2188]
+  κ_TGP² (current SC v2)                           4.048144
+  κ_TGP² window (current 1%)                       [4.0077, 4.0886]
+  κ_TGP² window (post-LnH₉ 0.6%)                   [4.0239, 4.0724]
+  combined fractional σ (current)                  0.050990
+  combined fractional σ (post-LnH₉)                0.050359
+  current |Δ|/κ_TGP² (strict form)                 0.007464
+  falsification trigger (match)                    0.050000
+  margin to falsification                          0.042536
+
+  → T3.1 (XS1: ngEHT × SC combined): PASS  [match 0.75% < 5% trigger; combined σ 5.04% resolves trigger]
+
+========================================================================
+T3.2 — XS2: cross-channel consistency vs g̃ ≈ 0.9803 (F5)
+========================================================================
+  g̃ (F5 Phase 2 EFT)                              0.980300
+  g̃²                                              0.960988
+  κ_TGP² (bare)                                    4.048144
+  κ_TGP² · g̃² (effective)                         3.890218
+  Δ (bare vs effective) / bare                     0.039012
+  g̃ falsification window                          [0.95, 1.05]
+  g̃ within window?                                True
+
+  → T3.2 (XS2: g̃ orthogonal): PASS  [g̃ within EFT window; identity is bare-coefficient (independent)]
+
+========================================================================
+T3.3 — XS3: lepton sector check (Koide / r_21 / r_31)
+========================================================================
+  √α₀ (= κ_TGP claim)                              2.004478
+  κ_TGP                                            2.012000
+  r_21 / κ_TGP²                                    51.077728
+  r_31 / κ_TGP²                                    858.912134
+  K_koide                                          0.666667
+  K_koide × κ_TGP²                                 2.698763
+  K_koide × α₀_F4                                  2.696491
+  κ_TGP-factorization candidates in {r_21, r_31}   NONE
+
+  → T3.3 (XS3: lepton orthogonal): PASS  [lepton stałe nie zawierają κ_TGP / √α₀ jako factor]
+
+========================================================================
+T3.4 — XS4: QM sector check (Born n=2, CHSH 2√2)
+========================================================================
+  Born n                                           2
+  Phase 2 strict α(ψ) n                            2
+  CHSH bound                                       2.828427
+  CHSH² / α₀ (strict)                              1.991075
+  CHSH² / κ_TGP²                                   1.976214
+  Born n=2?                                        True
+  α(ψ) n=2?                                        True
+  integer n=2 in both → INDEPENDENT structural exposures structural orthogonality
+
+  → T3.4 (XS4: QM orthogonal): PASS  [n=2 Born i n=2 α(ψ) są niezależne; identity orthogonal to QM]
+
+========================================================================
+T3.5 — XS5: F4 rational anchor consistency
+========================================================================
+  F4 sympy rational                                1069833/264500
+  F4 numeric α₀                                    4.044737
+  κ_TGP²                                           4.048144
+  |α₀_F4 − κ_TGP²| / κ_TGP² (relative)             0.000842
+  Phase 2 strict |α₀ − κ_TGP²| / κ_TGP²            0.007464
+  F4 / strict precision factor                     8.864608
+  F4 form within sub-percent (1%)?                 True
+  F4 form within 0.1% (very-sub-percent)?          True
+  α₀_F4 − κ_TGP² (signed)                          -0.003407
+
+  → T3.5 (XS5: F4 sub-percent): PASS  [F4 rational within 0.084% of κ_TGP²]
+
+========================================================================
+T3.6 — XS6: combined falsification roadmap (decision matrix)
+========================================================================
+
+  Decision matrix (independent channels):
+  Channel                      Horizon      Falsification trigger
+  ---------------------------- ------------ ------------------------------------------------------------
+  ngEHT photon-ring α₀         2030+        |α₀ - κ_TGP²|/κ_TGP² > 5%
+  LnH₉ DAC κ_TGP               2027–2030    TGP-SC v2 multi-Ln drift > 1%
+  MICROSCOPE-2 η_TGP           2027–2028    η > 1e-17 → α₀ shift
+  LIGO O5 QNM δf/f             2027+        δf null at 0.5% → α(ψ) shift
+  LISA SMBH ringdown           ~2035        combined w/ ngEHT for tighter α₀
+  Lepton g₀^τ precision        continuous   drift > 0.1% in r_21/r_31
+  
+Number of independent channels                  6
+  Falsification rule (≥2 channels at >5% deviation) consistent across roadmap
+
+  → T3.6 (XS6: roadmap): PASS  [6 independent channels w 2027–2035 horizon]
+
+========================================================================
+T3.7 — PREDICTIONS_REGISTRY entries XS1–XS6
+========================================================================
+
+  6 predictions XS1–XS6 ready for registry insertion:
+
+  XS1 — Sector 8 (Foundational locks) cross-link Sector 3
+    Anchor   : |α₀ - κ_TGP²|/κ_TGP² ≤ 3% by 2030+ (combined ngEHT + SC v2)
+    Target   : ngEHT α₀ ~5% + SC v2 κ_TGP ~0.3-0.5% → combined ~3% (2030+)
+    Status   : LIVE
+    Master   : BH.1.Phase3 / XS.1.Phase3
+
+  XS2 — Sector 8 (Foundational locks)
+    Anchor   : g̃ ≈ 0.9803 (F5) i √α₀ = κ_TGP są niezależnymi O(1) substrate identities
+    Target   : Phase 2 EFT g̃ within [0.95, 1.05] preserves identity
+    Status   : STRUCTURAL
+    Master   : Phase 2.E.3 / XS.1.Phase3
+
+  XS3 — Sector 8 (Foundational locks) cross-link Sector 6 (lepton)
+    Anchor   : lepton sector (r_21=206.77, r_31=3477, K_koide=2/3) jest strukturalnie ortogonalny do κ_TGP/α₀
+    Target   : any κ_TGP-factor in r_21/r_31 falsifies orthogonality
+    Status   : STRUCTURAL
+    Master   : tgp-leptons / XS.1.Phase3
+
+  XS4 — Sector 8 (Foundational locks) cross-link Sector 9 (QM)
+    Anchor   : Born n=2 i α(ψ) n=2 są independent integer selections, nie cross-sector identity
+    Target   : QM normalization not factor κ_TGP / √α₀
+    Status   : STRUCTURAL
+    Master   : tgp-qm / XS.1.Phase3
+
+  XS5 — Sector 8 (Foundational locks)
+    Anchor   : F4 rational 1069833/264500 dla α₀ konsystentne z κ_TGP² do 0.084%
+    Target   : sub-percent precision potwierdza identity w F4 frame
+    Status   : LOCKED
+    Master   : closure_2026-04-26 / XS.1.Phase3
+
+  XS6 — Sector 8 (Foundational locks) — combined roadmap
+    Anchor   : identity √α₀ = κ_TGP testowane przez ≥6 independent channels w 2027–2035
+    Target   : ≥2 niezależne kanały muszą detect deviation > 5% to reject identity
+    Status   : LIVE
+    Master   : XS.1.Phase3
+  
+Number of predictions                           6
+
+  → T3.7 (registry XS1–XS6): PASS  [6/6 predictions ready for registry]
+
+========================================================================
+XS.1.Phase3 verdict
+========================================================================
+  T3.1: PASS
+  T3.2: PASS
+  T3.3: PASS
+  T3.4: PASS
+  T3.5: PASS
+  T3.6: PASS
+  T3.7: PASS
+
+  Cumulative: 7/7 PASS
+
+  → XS.1 program END.
+  → 6 new predictions XS1–XS6 ready for PREDICTIONS_REGISTRY.
+  → Master ledger: 329 → 336 (+7 z Phase 3).

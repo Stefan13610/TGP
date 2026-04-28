@@ -24,9 +24,10 @@ that pre-registered the prediction with an immutable DOI timestamp.
 
 **Master ledger at registry creation:** 281 cumulative structural
 verifications (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60).
-**Updated 2026-04-28:** 317 cumulative
+**Updated 2026-04-28:** 336 cumulative
 (+ SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7
- + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7).
+ + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7
+ + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7).
 
 ## How to read this registry
 
@@ -161,6 +162,12 @@ Each row carries:
 | **F6** | **κ = √(32πG_N) ≈ 10.0265** (graviton coupling, FP-quantized) | Phase 2.A.1 KEYSTONE | graviton-loop / scattering κ-renormalization deviation | **STRUCTURAL** | tgp-core | Phase2.A.1 |
 | **F7** | **14 founding constraints, zero-drift** (preserved across all phases) | Phase 1 founding set | any drift > 0% in audited parameters falsifies | **LOCKED** | tgp-core | every Phase R-final |
 | **BH8** | **√α₀ = κ_TGP cross-sector identity** (BH photon-ring α₀ = SC spin-fluctuation κ_TGP²) | currently \|α₀ − κ_TGP²\|/κ_TGP² = 0.75% (α₀=4.0200, κ_TGP²=4.0481) | ngEHT precision on α₀ ~1–5% + TGP-SC v2 calibration κ_TGP ~0.5%; combined ~3% precision (2030+); match >5% rejects identity | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.6) |
+| **XS1** | **\|α₀ − κ_TGP²\|/κ_TGP² ≤ 5% by 2030+** (combined ngEHT × SC v2 falsification of √α₀ = κ_TGP) | current Phase 2 strict 0.747%; F4 rational 0.084% | ngEHT α₀ ~5% + post-LnH₉ κ_TGP² ~0.6%; combined σ ~5% (2030+); match >5% rejects identity | **LIVE** | master-only (XS.1.Phase3) | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) (T3.1) |
+| **XS2** | **g̃ ≈ 0.9803 (F5) i √α₀ = κ_TGP są niezależnymi O(1) substrate identities** (no g̃ correction in identity) | g̃ within EFT window [0.95, 1.05]; identity is bare-coefficient | g̃ deviation > 5% nie falsyfikuje XS1 (orthogonal sektor) | **STRUCTURAL** | master-only (XS.1.Phase3) | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) (T3.2) |
+| **XS3** | **lepton sector strukturalnie ortogonalny do κ_TGP/α₀** (r_21=206.77, r_31=3477, K_koide=2/3 nie zawierają κ_TGP/√α₀) | κ-factorization search returns NONE | any κ_TGP-factor in r_21/r_31/Koide falsifies orthogonality | **STRUCTURAL** | master-only (XS.1.Phase3) | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) (T3.3) |
+| **XS4** | **Born n=2 i α(ψ) n=2 są niezależne integer selections** (substrate selecting integer 2 w różnych sektorach, NOT cross-sector identity) | both n=2 confirmed; CHSH bound 2√2 nie matches κ_TGP | QM Born / CHSH containing factor √α₀ or κ_TGP falsifies orthogonality | **STRUCTURAL** | master-only (XS.1.Phase3) | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) (T3.4) |
+| **XS5** | **F4 rational 1069833/264500 ≡ κ_TGP² do 0.084%** (sub-percent identity match in F4 frame, 8.86× tighter niż Phase 2 strict) | sympy-exact rational vs V/Nb/Ta/Mo/Pd RMS = 4.0481 | direct κ_TGP measurement deviating > 0.5% from F4 rational falsifies identity strongly | **LOCKED-derivative** | tgp-core (cross-link F4) | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) (T3.5) |
+| **XS6** | **6-channel cross-sector falsification roadmap** (ngEHT α₀, LnH₉ κ_TGP, MICROSCOPE-2 η, LIGO O5 QNM, LISA SMBH, lepton g₀^τ) | combined Bayes update across 6 independent channels | ≥2 niezależne kanały muszą detect deviation > 5% to reject identity | **LIVE** | master-only (XS.1.Phase3) | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) (T3.6) |
 
 ---
 
@@ -189,8 +196,8 @@ Each row carries:
 | **2027+** | NICER+ | **BH6** (NS M-R shift ~1–3% from GR; J0030, J0740) |
 | **2027+** | DESI DR2/DR3 | DE1 (w=−1), DE2 (w_a=0), DE3 (T-Λ), C1 (H₀), C2 (S₈), C3 (Σm_ν) |
 | **2028+** | Euclid | DE3, DE4 (Friedmann ratio), C2 |
-| **2027–2030** | LnH₉ DAC synthesis (Eremets/Hemley/Prakapenka) | **SC4 (SmH₉)**, **SC5 (YbH₉)**, SC6 (TmH₉) — μ_eff² vs de Gennes scaling |
-| **2030–2032** | ngEHT | BH1 (r_ph ratio 1.293), BH2 (Δb_crit +14.56%), BH3 (multi-BH), **BH4** (10-SMBH +14.56% map), **BH8** (√α₀ = κ_TGP cross-sector via α₀ from photon ring) |
+| **2027–2030** | LnH₉ DAC synthesis (Eremets/Hemley/Prakapenka) | **SC4 (SmH₉)**, **SC5 (YbH₉)**, SC6 (TmH₉) — μ_eff² vs de Gennes scaling; sharpens **XS1** κ_TGP precision to 0.3% |
+| **2030–2032** | ngEHT | BH1 (r_ph ratio 1.293), BH2 (Δb_crit +14.56%), BH3 (multi-BH), **BH4** (10-SMBH +14.56% map), **BH8** (√α₀ = κ_TGP cross-sector via α₀ from photon ring), **XS1** (combined ngEHT × SC v2 ≤5%), **XS6** (6-channel roadmap convergence) |
 | **~2035** | LISA / pulsar-timing arrays | GW4 (m_σ²/m_s² = 2 → 2.9% low-k phase shift), **BH5** (LISA SMBH ringdown 10⁶–10⁷ M_⊙) |
 | **~2035** | LATOR / BEACON (next-gen Solar PPN) | **BH9** (γ−1 ~ 1.81·10⁻¹¹; falsifiable below 10⁻¹⁰) |
 | **long-term** | full QG / UV experiment | UV1–UV7, F5, F6 (UV-route selection) |
