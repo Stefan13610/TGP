@@ -20,15 +20,16 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 
 ## At a glance
 
-- **Master verification ledger:** **291** cumulative closures
-  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6;
+- **Master verification ledger:** **298** cumulative closures
+  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7;
   closure_2026-04-26's 35 tests are tracked in the phase-ledger table but
   overlap conceptually with Phase 1/2/3 follow-ups so are not double-counted here).
 - **All major cycles CLOSED** as of 2026-04-28.
+- **SC.1 program (3 phases) END:** α_PB scaling map registered, 5 new SC predictions (SC2–SC7) in registry.
 - **4 Zenodo flask papers** deposited as immutable timestamped predictions.
 - **1 predictions registry** ([`PREDICTIONS_REGISTRY.md`](PREDICTIONS_REGISTRY.md))
   cross-linking every flask to falsification target + horizon.
-- **Active queued work:** SC.1.Phase3 (multi-LnH₉ validation — SmH₉/YbH₉ falsification targets).
+- **Active queued work:** none (all open cycles closed; experimental wait on SmH₉/YbH₉ DAC synthesis 2027–2030).
 
 ## Top-level entry points
 
@@ -51,7 +52,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **tgp-qm** | [10.5281/zenodo.19712596](https://doi.org/10.5281/zenodo.19712596) | Emergent QM (Born, CHSH, spin, decoherence) | clean (orthogonal to Phase 1/2/3) | [tgp-qm-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-qm-paper) |
 | **tgp-sc** v2 | [10.5281/zenodo.19670557](https://doi.org/10.5281/zenodo.19670557) | Superconductivity T_c closure (5 families) | clean (v2 already current with L6–L10) | [tgp-sc-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-sc-paper) |
 
-## Phase ledger (291 cumulative)
+## Phase ledger (298 cumulative)
 
 | Block | Tests | Status | Master file |
 |-------|------:|--------|-------------|
@@ -64,6 +65,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **Phase 3** UV-completion structural-consistency audit | 60 | CLOSED 2026-04-28 | [`research/op-phase3-uv-completion/Phase3_R_final_results.md`](research/op-phase3-uv-completion/Phase3_R_final_results.md) |
 | **SC.1.Phase1** α_PB ↔ α_0 unit-bridge audit (negative) | 4 | CLOSED 2026-04-28 | [`research/op-sc-alpha-origin/Phase1_results.md`](research/op-sc-alpha-origin/Phase1_results.md) |
 | **SC.1.Phase2** α_PB Abrikosov–Gorkov first-principles audit (H_AG_PARTIAL; SmH₉/YbH₉ targets) | 6 | CLOSED 2026-04-28 | [`research/op-sc-alpha-origin/Phase2_results.md`](research/op-sc-alpha-origin/Phase2_results.md) |
+| **SC.1.Phase3** multi-LnH₉ falsification map (15 lantanowców; TGP RMS 0.42 < AG 1.53) | 7 | CLOSED 2026-04-28 | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
 
 Sub-cycle results for the most recent cycle:
 [3.A KEYSTONE (AS NGFP)](research/op-phase3-uv-completion/Phase3_A_results.md) ·
@@ -97,6 +99,7 @@ this is just the time-ordered scan of currently-LIVE entries.
 | **2027–2028** | MICROSCOPE-2 | G1 (η = 3.54·10⁻¹⁷) — clean shot at n=2 |
 | **2027+** | LIGO O5 | GW2 (3 polarization DOF), GW5 (no vector), GW6 (dispersion bound) |
 | **2027+** | DESI DR2 / DR3 | DE1 (w = −1), DE2 (w_a = 0), DE3 (T-Λ), C1 (H₀), C2 (S₈), C3 (Σm_ν) |
+| **2027–2030** | LnH₉ DAC synthesis (Eremets/Hemley) | SC4 (SmH₉ T_c ~100 K), SC5 (YbH₉ T_c ~0.6 K), SC6 (TmH₉) — μ_eff² vs de Gennes |
 | **2028+** | Euclid | DE3, DE4 (Friedmann ratio), C2 |
 | **2030–2032** | ngEHT | BH1 (r_ph 1.293), BH2 (Δb_crit +14.56%), BH3 |
 | **~2035** | LISA / PTA | GW4 (m_σ²/m_s² = 2 → 2.9% low-k phase shift) |

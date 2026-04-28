@@ -24,6 +24,7 @@ that pre-registered the prediction with an immutable DOI timestamp.
 
 **Master ledger at registry creation:** 281 cumulative structural
 verifications (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60).
+**Updated 2026-04-28:** 298 cumulative (+ SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7).
 
 ## How to read this registry
 
@@ -162,6 +163,12 @@ Each row carries:
 | **QM1** | **Born rule from substrate** (n=2 ψ²-rule emergent, not postulated) | standard QM postulate | alternative quantum formalism with n≠2 normalization | **STRUCTURAL** | tgp-qm | tgp-qm-paper |
 | **QM2** | **Decoherence via Φ-substrate interaction** | standard QM has no first-principles collapse | spontaneous-localization / objective-collapse experiments | **STRUCTURAL** | tgp-qm | tgp-qm-paper |
 | **SC1** | **L6–L10 refinements** (v2 deposit) — see flask paper for full list | precision SC closure conditions | material-by-material verification | **STRUCTURAL** | tgp-sc v2 | tgp-sc-paper |
+| **SC2** | **PrH₉ T_c ≈ 5 K** (TGP fit anchor; lit upd. 8.9 K @ 120 GPa) | Drozdov 2019 Sci.Adv. | reproducibility @ ≥120 GPa | **TESTED-PASS** (drift ~factor 1.8) | tgp-sc v2 | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
+| **SC3** | **NdH₉ T_c ≈ 4.5 K** (TGP fit anchor) | Zhou 2020 JACS @ 110–130 GPa | reproducibility | **TESTED-PASS** (drift <5%) | tgp-sc v2 | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
+| **SC4** | **SmH₉ T_c ≈ 100 K** (μ_eff² Hund 0.71 → 119 K, Van Vleck 1.5 → 96 K) | not yet measured | **TGP ~100 K vs A-G+dG ~10⁻⁴ K — factor 10⁵ discriminator** | **LIVE** (highest priority) | master-only (Phase 3) | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
+| **SC5** | **YbH₉ T_c ≈ 0.6 K** (μ_eff² = 20.6) | not yet measured | **TGP ~0.6 K vs A-G+dG ~54 K — factor 80 discriminator** (opposite direction to SmH₉) | **LIVE** (high priority) | master-only (Phase 3) | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
+| **SC6** | **TmH₉ T_c ≈ 4·10⁻⁵ K** (μ_eff² = 57.2) | not yet measured | TGP ~0 K vs A-G+dG ~4 K — factor 10⁵ discriminator | **LIVE** (medium priority; toxic Tm sample) | master-only (Phase 3) | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
+| **SC7** | **PmH₉ T_c ≈ 22 K** (μ_eff² = 7.2) | not measurable in practice (radioactive Pm-145) | TGP 22 K vs A-G+dG ~10⁻³ K — factor 10³ discriminator | **STRUCTURAL** (radioactive sample) | master-only (Phase 3) | [`research/op-sc-alpha-origin/Phase3_results.md`](research/op-sc-alpha-origin/Phase3_results.md) |
 
 ---
 
@@ -173,6 +180,7 @@ Each row carries:
 | **2027+** | LIGO O5 | GW2 (3 DOF), GW5 (no vector), GW6 (dispersion bound) |
 | **2027+** | DESI DR2/DR3 | DE1 (w=−1), DE2 (w_a=0), DE3 (T-Λ), C1 (H₀), C2 (S₈), C3 (Σm_ν) |
 | **2028+** | Euclid | DE3, DE4 (Friedmann ratio), C2 |
+| **2027–2030** | LnH₉ DAC synthesis (Eremets/Hemley/Prakapenka) | **SC4 (SmH₉)**, **SC5 (YbH₉)**, SC6 (TmH₉) — μ_eff² vs de Gennes scaling |
 | **2030–2032** | ngEHT | BH1 (r_ph ratio 1.293), BH2 (Δb_crit +14.56%), BH3 (multi-BH) |
 | **~2035** | LISA / pulsar-timing arrays | GW4 (m_σ²/m_s² = 2 → 2.9% low-k phase shift) |
 | **long-term** | full QG / UV experiment | UV1–UV7, F5, F6 (UV-route selection) |
