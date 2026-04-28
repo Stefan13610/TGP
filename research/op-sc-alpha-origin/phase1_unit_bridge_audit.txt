@@ -1,0 +1,75 @@
+========================================================================
+Phase 1 unit-bridge audit  (op-sc-alpha-origin)
+alpha_PB (SC v2, eq:BPB) vs  alpha_0 (T-alpha threshold)
+========================================================================
+
+--- T1.1  dimensional analysis (sympy dimsys_SI) -------------------
+  dim(mu_B)       = {Dimension(length): 2, Dimension(current): 1}
+  dim(alpha_PB)   = {Dimension(length): -4, Dimension(current): -2}
+  dim(alpha_0)    = {}
+  dim(alpha_PB) == dim(alpha_0)?  False
+  T1.1 RESULT: dimensions DIFFER -> H0 (unit cousin) REJECTED
+                alpha_PB is dimensional [mu_B^-2];
+                alpha_0 is dimensionless [1].
+                No pure unit conversion can identify them.
+
+--- T1.2  geometric-unit equivalence check ------------------------
+  alpha_0 (dimensionless)                = 4.04
+  mu_B^2 (J^2/T^2)                       = 8.601e-47
+  alpha_PB^pred = alpha_0 / mu_B^2 [SI]  = 4.697e+46  J^-2 T^2
+  alpha_PB^observed (TGP SC v2)          = 0.2887    mu_B^-2
+  alpha_PB^observed in J^-2 T^2          = 3.357e+45
+  alpha_PB^observed_SI / alpha_PB^pred_geom = 0.0715
+  T1.2 RESULT: ratio = 0.0715, not 1
+
+  Structural test:  alpha_0 in mu_B^-2 units (i.e. setting mu_B=1)  = 4.04
+                    alpha_PB^observed                                = 0.2887
+                    ratio                                            = 0.0715
+  -> alpha_0 != alpha_PB  even after setting mu_B=1.  Off by factor ~14.
+     No closed-form TGP relation alpha_PB = f(alpha_0) with f=1 is consistent.
+
+--- T1.3  mu_eff calibration: alpha_PB * <mu_eff^2> vs alpha_0 -----
+  PrH9: mu_eff = 3.58 mu_B,  mu_eff^2 = 12.8164
+  NdH9: mu_eff = 3.62 mu_B,  mu_eff^2 = 13.1044
+  avg(mu_eff^2)                                  = 12.960
+  alpha_PB * avg(mu_eff^2)  (dimensionless product) = 3.7417
+  alpha_0 (T-alpha)                                 = 4.04
+
+  T-alpha residue:  alpha(psi_ph) = alpha_0 * (psi_ph-1)^2 = 0.1140
+  alpha_PB * avg(mu_eff^2)                                = 3.7417
+  ratio                                                    = 32.81
+
+  Numerical observation: alpha_PB * <mu_eff^2> ~ alpha_0 (3.74 vs 4.04, off ~7.5%)
+  But this requires choosing mu_eff^2 = avg(LnH9)  -> 'fit' on the SAME data
+  that determined alpha_PB.  No INDEPENDENT TGP determination of mu_eff yields this.
+  -> numerical coincidence at best, NOT structural identity.
+
+--- T1.4  structural identity criterion ---------------------------
+  Threshold for accepting H0 (structural identity):
+    (a) closed-form alpha_PB = f(TGP core constants only); AND
+    (b) deviation < 0.1% from observed value.
+
+  Observed  alpha_PB = 0.2887 mu_B^-2
+  T-alpha   alpha_0  = 4.0400 (dimensionless)
+  Ratio     alpha_PB / alpha_0 = 0.0715
+
+  No closed-form relation alpha_PB = f(alpha_0, kappa_TGP, beta) is
+  available in the current TGP literature.  alpha_PB was FITTED on a
+  2-point (PrH9, NdH9) calibration in the SC v2 paper; its connection
+  to TGP core constants is an OPEN problem (Phase 2 of this cycle).
+
+  Verdict T1.4: H1 supported  -- alpha_PB and alpha_0 are STRUCTURALLY
+                DISTINCT couplings with no unit-bridge identification.
+
+========================================================================
+Phase 1 SUMMARY
+========================================================================
+  T1.1  dimensional analysis           : H0_REJECTED
+  T1.2  geometric-unit equivalence     : H0_REJECTED
+  T1.3  mu_eff calibration coincidence : NUMERICAL_COINCIDENCE_NOT_STRUCTURAL
+  T1.4  structural identity criterion  : H1_SUPPORTED
+
+  Verdict: 4/4 PASS for H1 (structurally distinct).
+           alpha_PB and alpha_0 are NOT unit-cousins.
+           Phase 1 CLOSED.  Recommend Phase 2 (Abrikosov-Gorkov first-
+           principles derivation of alpha_PB from kappa_TGP, beta, N(0), tau_sf).
