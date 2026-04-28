@@ -1,0 +1,116 @@
+==============================================================================
+XS.1.Phase1  cross-sector identity sqrt(alpha_0) = kappa_TGP audit
+op-cross-sector-charge / 5 sub-tests
+==============================================================================
+
+--- T1.1  Dimensional audit alpha_0 vs kappa_TGP^2 ---
+  alpha_0 enters alpha(psi) = alpha_0 (psi-1)^2
+    psi = 2GM/(c^2 r) is dimensionless ratio
+    alpha(psi) = photon-ring fractional shift = dimensionless O(0.1)
+    -> alpha_0 is DIMENSIONLESS
+
+  kappa_TGP enters T_c formula (TGP-SC v2):
+    T_c = T_c^base * F(lambda_sf, kappa_TGP, beta)
+    kappa_TGP = pair-breaking coupling normalization
+    T_c^base = 143 K carries units; kappa_TGP enters F as bare ratio
+    -> kappa_TGP is DIMENSIONLESS
+
+  Both alpha_0 and kappa_TGP^2 are DIMENSIONLESS O(1) constants
+  -> identity sqrt(alpha_0) = kappa_TGP is dimensionally COMPATIBLE
+
+  T1.1 RESULT: PASS  (both dimensionless)
+
+--- T1.2  Numerical match in combined uncertainty ---
+  alpha_0       = 4.0179 +/- 0.0400
+  kappa_TGP^2   = 4.0481 +/- 0.0402
+  |Delta|       = 0.0302
+  |Delta|/kappa_TGP^2 = 0.7471%
+  combined 1-sigma   = 0.0567
+  distance / sigma   = 0.533 sigma
+
+  T1.2 RESULT: PASS  (0.53 sigma < 3 sigma)
+
+--- T1.3  Multi-anchor consistency of kappa_TGP ---
+  Anchor-by-anchor kappa_TGP from TGP-SC v2:
+      V: kappa_TGP = 2.0080  | delta from sqrt(alpha_0)=2.0045: 0.0035
+     Nb: kappa_TGP = 2.0145  | delta from sqrt(alpha_0)=2.0045: 0.0100
+     Ta: kappa_TGP = 2.0125  | delta from sqrt(alpha_0)=2.0045: 0.0080
+     Mo: kappa_TGP = 2.0095  | delta from sqrt(alpha_0)=2.0045: 0.0050
+     Pd: kappa_TGP = 2.0155  | delta from sqrt(alpha_0)=2.0045: 0.0110
+
+  Ensemble mean kappa_TGP = 2.0120
+  Ensemble std            = 0.0032  (0.159%)
+  TGP-SC v2 published     = 2.0120  (RMS calibration)
+
+  T1.3 RESULT: PASS  (0.159% spread < 5%)
+        -> kappa_TGP is anchor-stable; identity hypothesis well-defined
+
+--- T1.4  Data independence (BH vs SC datasets) ---
+  BH dataset:
+         source: EHT photon-ring imaging + M9.2-D rate
+         sector: BH gravitational
+         anchor: shadow shift target = (1/2)(1 - 3/3.88) = 0.1134
+       data_pts: M87* (2019) + Sgr A* (2022)
+     fit_params: ['alpha_0', 'psi_th', 'n']
+  SC dataset:
+         source: T_c at ambient/standard P from NIST/PDG
+         sector: SC superconductivity
+         anchor: 5-element calibration V/Nb/Ta/Mo/Pd
+       data_pts: 5 BCS metals + extension to 15 LnH9 (high-P) for cross-check
+     fit_params: ['kappa_TGP', 'beta', 'T_c^base']
+
+  Common fit parameters: NONE
+  Common data points: NONE
+  Common physical scale: NONE  (BH: GM/c^2 ~ kpc-scale; SC: lambda_F ~ A-scale)
+
+  T1.4 RESULT: PASS  (datasets fully disjoint)
+        -> any match is structural, not fit-by-construction
+
+--- T1.5  Bayesian prior on coincidence vs structural origin ---
+  Inventory of 6 TGP O(1) structural constants:
+                          beta = 2.5270
+                    gamma_core = 1.2337
+                         K_geo = 1.0000
+                  kappa_TGP_sq = 4.0481
+        m_sigma_sq_over_m_s_sq = 2.0000
+                       alpha_0 = 4.0179
+
+  All 15 pairwise comparisons at threshold 0.75%:
+                          beta vs                 gamma_core: 51.179%
+                          beta vs                      K_geo: 60.427%
+                          beta vs               kappa_TGP_sq: 37.576%
+                          beta vs     m_sigma_sq_over_m_s_sq: 20.855%
+                          beta vs                    alpha_0: 37.106%
+                    gamma_core vs                      K_geo: 18.943%
+                    gamma_core vs               kappa_TGP_sq: 69.524%
+                    gamma_core vs     m_sigma_sq_over_m_s_sq: 38.315%
+                    gamma_core vs                    alpha_0: 69.295%
+                         K_geo vs               kappa_TGP_sq: 75.297%
+                         K_geo vs     m_sigma_sq_over_m_s_sq: 50.000%
+                         K_geo vs                    alpha_0: 75.111%
+                  kappa_TGP_sq vs     m_sigma_sq_over_m_s_sq: 50.595%
+                  kappa_TGP_sq vs                    alpha_0: 0.747%  <-- MATCH
+        m_sigma_sq_over_m_s_sq vs                    alpha_0: 50.223%
+
+  Theoretical chance per pair (uniform [1,10]) = 0.167%
+  Expected matches by chance for 15 pairs = 0.025
+  Observed matches: 1
+  Bayes factor B(H1/H0) = 1 / 0.167% = 600
+
+  P(match by chance) = 2.50% < 30% threshold
+
+  T1.5 RESULT: PASS  (Bayes factor ~600; structural origin favored)
+
+==============================================================================
+XS.1.Phase1 SUMMARY
+==============================================================================
+  T1.1 dimensional audit                   : PASS
+  T1.2 numerical match in 1-sigma          : PASS
+  T1.3 multi-anchor stability              : PASS
+  T1.4 data independence                   : PASS
+  T1.5 Bayesian prior odds                 : PASS
+
+  VERDICT: 5/5 PASS
+           Cross-sector identity sqrt(alpha_0) = kappa_TGP
+           is INTERNALLY CONSISTENT.
+           -> Proceed to Phase 2 (substrate-action derivation).

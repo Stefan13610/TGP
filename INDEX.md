@@ -12,6 +12,7 @@ related:
   - "[[research/op-phase3-uv-completion/Phase3_R_final_results.md]]"
   - "[[research/op-bh-alpha-threshold/Phase3_results.md]]"
   - "[[research/op-sc-alpha-origin/Phase3_results.md]]"
+  - "[[research/op-cross-sector-charge/Phase1_results.md]]"
 ---
 
 # TGP_v1 — Index hub
@@ -22,17 +23,18 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 
 ## At a glance
 
-- **Master verification ledger:** **317** cumulative closures
-  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7;
+- **Master verification ledger:** **322** cumulative closures
+  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5;
   closure_2026-04-26's 35 tests are tracked in the phase-ledger table but
   overlap conceptually with Phase 1/2/3 follow-ups so are not double-counted here).
-- **All major cycles CLOSED** as of 2026-04-28.
-- **SC.1 program (3 phases) END:** α_PB scaling map registered, 5 new SC predictions (SC2–SC7) in registry.
-- **BH.1 program (3 phases) END:** multi-source ISSUE strukturalnie zamknięty; ψ_th=1 i n=2 promoted to DERIVED (Z₂ + WEP-MICROSCOPE-2); α₀ ≈ 4.02 PARTIALLY DERIVED z cross-sector STRUCTURAL HINT α₀ = κ_TGP² (match 0.75% z TGP-SC); 6 new BH predictions (BH4–BH9) registered with horizons 2027–2035.
+- **Active program:** **XS.1 cross-sector identity √α₀ = κ_TGP** — Phase 1 CLOSED 2026-04-28 (5/5 PASS, all feasibility conditions met); Phase 2 (substrate-action derivation) queued.
+- **Recently closed cycles:**
+  - **SC.1 program (3 phases) END:** α_PB scaling map registered, 5 new SC predictions (SC2–SC7) in registry.
+  - **BH.1 program (3 phases) END:** multi-source ISSUE strukturalnie zamknięty; ψ_th=1 i n=2 promoted to DERIVED (Z₂ + WEP-MICROSCOPE-2); α₀ ≈ 4.02 PARTIALLY DERIVED z cross-sector STRUCTURAL HINT α₀ = κ_TGP² (match 0.75% z TGP-SC); 6 new BH predictions (BH4–BH9) registered with horizons 2027–2035.
 - **4 Zenodo flask papers** deposited as immutable timestamped predictions.
 - **1 predictions registry** ([`PREDICTIONS_REGISTRY.md`](PREDICTIONS_REGISTRY.md))
   cross-linking every flask to falsification target + horizon.
-- **Active queued work:** none — all four programs (M9/M10/M11/closure_2026-04-26 + Phase 1/2/3 + SC.1 + BH.1) are CLOSED. Experimental wait on ngEHT 2030+, LIGO O5 2027+, LISA 2035+, MICROSCOPE-2 2030+, NICER+ 2027+, LATOR/BEACON 2035+, SmH₉/YbH₉ DAC synthesis 2027–2030.
+- **Active queued work:** XS.1.Phase2 (substrate-action derivation of √α₀ = κ_TGP); XS.1.Phase3 (multi-sector falsification map). Experimental wait on ngEHT 2030+, LIGO O5 2027+, LISA 2035+, MICROSCOPE-2 2030+, NICER+ 2027+, LATOR/BEACON 2035+, SmH₉/YbH₉ DAC synthesis 2027–2030.
 
 ## Top-level entry points
 
@@ -55,7 +57,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **tgp-qm** | [10.5281/zenodo.19712596](https://doi.org/10.5281/zenodo.19712596) | Emergent QM (Born, CHSH, spin, decoherence) | clean (orthogonal to Phase 1/2/3) | [tgp-qm-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-qm-paper) |
 | **tgp-sc** v2 | [10.5281/zenodo.19670557](https://doi.org/10.5281/zenodo.19670557) | Superconductivity T_c closure (5 families) | clean (v2 already current with L6–L10) | [tgp-sc-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-sc-paper) |
 
-## Phase ledger (317 cumulative)
+## Phase ledger (322 cumulative)
 
 | Block | Tests | Status | Master file |
 |-------|------:|--------|-------------|
@@ -72,6 +74,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **BH.1.Phase1** multi-source dimensional + mass-scaling audit (M² scaling; H₀ rejected; Path E α(ψ) unique) | 5 | CLOSED 2026-04-28 | [`research/op-bh-alpha-threshold/Phase1_results.md`](research/op-bh-alpha-threshold/Phase1_results.md) |
 | **BH.1.Phase2** substrate-physics upgrade of (α₀, n, ψ_th); ψ_th=1, n=2 DERIVED; α₀ ≈ κ_TGP² (0.75%) | 7 | CLOSED 2026-04-28 | [`research/op-bh-alpha-threshold/Phase2_results.md`](research/op-bh-alpha-threshold/Phase2_results.md) |
 | **BH.1.Phase3** multi-source falsification map of α(ψ); 10-SMBH ngEHT, LIGO/LISA ringdown, NICER NS, MICROSCOPE-2 WEP, Cassini-class PPN, cross-sector √α₀=κ_TGP; 6 new predictions BH4–BH9 — **BH.1 program END** | 7 | CLOSED 2026-04-28 | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) |
+| **XS.1.Phase1** cross-sector identity √α₀ = κ_TGP feasibility audit (dimension, numerical 1σ, multi-anchor, data independence, Bayes factor 600); 5/5 PASS → Phase 2 viable | 5 | CLOSED 2026-04-28 | [`research/op-cross-sector-charge/Phase1_results.md`](research/op-cross-sector-charge/Phase1_results.md) |
 
 Sub-cycle results for the most recent cycle:
 [3.A KEYSTONE (AS NGFP)](research/op-phase3-uv-completion/Phase3_A_results.md) ·
