@@ -20,15 +20,15 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 
 ## At a glance
 
-- **Master verification ledger:** **285** cumulative closures
-  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4;
+- **Master verification ledger:** **291** cumulative closures
+  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6;
   closure_2026-04-26's 35 tests are tracked in the phase-ledger table but
   overlap conceptually with Phase 1/2/3 follow-ups so are not double-counted here).
 - **All major cycles CLOSED** as of 2026-04-28.
 - **4 Zenodo flask papers** deposited as immutable timestamped predictions.
 - **1 predictions registry** ([`PREDICTIONS_REGISTRY.md`](PREDICTIONS_REGISTRY.md))
   cross-linking every flask to falsification target + horizon.
-- **Active queued work:** SC.1.Phase2 (α_PB Abrikosov–Gorkov derivation), SC.1.Phase3 (multi-LnH₉ validation).
+- **Active queued work:** SC.1.Phase3 (multi-LnH₉ validation — SmH₉/YbH₉ falsification targets).
 
 ## Top-level entry points
 
@@ -51,7 +51,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **tgp-qm** | [10.5281/zenodo.19712596](https://doi.org/10.5281/zenodo.19712596) | Emergent QM (Born, CHSH, spin, decoherence) | clean (orthogonal to Phase 1/2/3) | [tgp-qm-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-qm-paper) |
 | **tgp-sc** v2 | [10.5281/zenodo.19670557](https://doi.org/10.5281/zenodo.19670557) | Superconductivity T_c closure (5 families) | clean (v2 already current with L6–L10) | [tgp-sc-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-sc-paper) |
 
-## Phase ledger (281 cumulative)
+## Phase ledger (291 cumulative)
 
 | Block | Tests | Status | Master file |
 |-------|------:|--------|-------------|
@@ -63,6 +63,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **Phase 2** quantum gravity / EFT (Donoghue-grade) | 54 | CLOSED | [`research/op-phase2-quantum-gravity/Phase2_R_final_results.md`](research/op-phase2-quantum-gravity/Phase2_R_final_results.md) |
 | **Phase 3** UV-completion structural-consistency audit | 60 | CLOSED 2026-04-28 | [`research/op-phase3-uv-completion/Phase3_R_final_results.md`](research/op-phase3-uv-completion/Phase3_R_final_results.md) |
 | **SC.1.Phase1** α_PB ↔ α_0 unit-bridge audit (negative) | 4 | CLOSED 2026-04-28 | [`research/op-sc-alpha-origin/Phase1_results.md`](research/op-sc-alpha-origin/Phase1_results.md) |
+| **SC.1.Phase2** α_PB Abrikosov–Gorkov first-principles audit (H_AG_PARTIAL; SmH₉/YbH₉ targets) | 6 | CLOSED 2026-04-28 | [`research/op-sc-alpha-origin/Phase2_results.md`](research/op-sc-alpha-origin/Phase2_results.md) |
 
 Sub-cycle results for the most recent cycle:
 [3.A KEYSTONE (AS NGFP)](research/op-phase3-uv-completion/Phase3_A_results.md) ·
