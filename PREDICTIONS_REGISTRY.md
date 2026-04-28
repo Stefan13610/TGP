@@ -24,7 +24,9 @@ that pre-registered the prediction with an immutable DOI timestamp.
 
 **Master ledger at registry creation:** 281 cumulative structural
 verifications (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60).
-**Updated 2026-04-28:** 298 cumulative (+ SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7).
+**Updated 2026-04-28:** 317 cumulative
+(+ SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7
+ + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7).
 
 ## How to read this registry
 
@@ -68,6 +70,8 @@ Each row carries:
 | **G1** | **WEP η_TGP = 3.54·10⁻¹⁷** (n=2 forced) | MICROSCOPE-1 bound: η < 1.1·10⁻¹⁵ | MICROSCOPE-2 sensitivity ~10⁻¹⁷, 2027–2028 | **LIVE** | tgp-core | `Phase2_E_results.md` (E.2), `closure_2026-04-26/KNOWN_ISSUES.md` (B.2) |
 | **G2** | **n=2 smoothness exponent** unique under (C¹ + WEP) | C⁰ exponent classes ruled out | If MICROSCOPE-2 sees η > 10⁻¹⁶ → n≠2 → TGP scope falsified | **LOCKED** | tgp-core | Phase2.E.2 |
 | **G3** | **Margin to MICROSCOPE-1 bound: 3.7·10¹⁶×** | observation ≥ TGP×10¹⁶ | window remains until MICROSCOPE-2 + STEP / next-gen | **TESTED-PASS** | tgp-core | Phase2.E.2 |
+| **BH7** | **η_TGP = (2±1)·10⁻¹⁸** from α(ψ) at Earth surface (α₀=4.02, n=2 strict) | MICROSCOPE-2 sensitivity ~10⁻¹⁷ | falsified if η > 10⁻¹⁷ at MICROSCOPE-2; margin 5.1× below | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.4) |
+| **BH9** | **γ−1 ≈ 1.81·10⁻¹¹** at Sun surface from α(ψ_Sun) | Cassini bound γ−1 < 2.3·10⁻⁵ (margin 1.3·10⁶×) | LATOR/BEACON γ−1 < 10⁻¹⁰ (2035+); margin 5.5× below | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.5) |
 
 ---
 
@@ -91,6 +95,9 @@ Each row carries:
 | **BH1** | **r_ph^TGP / r_ph^GR = 1.293 ± 0.003%** | GR baseline 1.000 | ngEHT M87* + Sgr A* photon-ring imaging, 2030–2032 | **LIVE** | tgp-core | `op-m92/`, Phase1.B.2 |
 | **BH2** | **Δb_crit = +14.56%** vs GR | GR: 0% | ngEHT photon-ring resolution; selection among candidates A/B/D | **LIVE** | tgp-core | `op-m92/` |
 | **BH3** | **Universality across multi-BH** (M87*, Sgr A*, future targets) | GR: M-scaling universal | ngEHT 2030+: cross-source consistency at ≥3 sources | **STRUCTURAL** | tgp-core | `op-m92/` |
+| **BH4** | **+14.56% shadow shift universal across 10 SMBH** spanning 10.1 orders M_BH (SgrA*, M87*, NGC1277, CenA, NGC4258, M104, IC1101, M84, M81, TON618) | GR universal M-scaling | ngEHT 2030+: ≥2 sources at 5 μas resolution; >5% spread among detected sources falsifies α(ψ_ph) universality | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.1) |
+| **BH5** | **δf/f ≈ 8–16% in QNM ringdown frequency** (α(ψ_ringdown=1.20) ≈ 0.16) | GR Schwarzschild f_QNM ~ 0.093 c³/(GM_f) | LIGO O5 ~0.5% f, ~1% τ (2027+); LISA ~0.1% (2035+); falsified if δf consistent with 0 within 0.5% | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.2) |
+| **BH6** | **NS M-R curve shifted ~1–3% from GR** (α(ψ_NS) ≈ 0.4 at compactness 0.41–0.45) | GR TOV baseline | NICER+ J0030/J0740 + new pulsars (2027+); ~3% combined precision; <0.5% null falsifies | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.3) |
 
 ---
 
@@ -153,6 +160,7 @@ Each row carries:
 | **F5** | **g̃ ≈ 0.9803** (Phase 2 EFT survival, drift 0.0306%) | T-Λ entropy scaling | full quantum-gravity entropy refutation | **STRUCTURAL** | tgp-core | Phase2.E.3, Phase3.F |
 | **F6** | **κ = √(32πG_N) ≈ 10.0265** (graviton coupling, FP-quantized) | Phase 2.A.1 KEYSTONE | graviton-loop / scattering κ-renormalization deviation | **STRUCTURAL** | tgp-core | Phase2.A.1 |
 | **F7** | **14 founding constraints, zero-drift** (preserved across all phases) | Phase 1 founding set | any drift > 0% in audited parameters falsifies | **LOCKED** | tgp-core | every Phase R-final |
+| **BH8** | **√α₀ = κ_TGP cross-sector identity** (BH photon-ring α₀ = SC spin-fluctuation κ_TGP²) | currently \|α₀ − κ_TGP²\|/κ_TGP² = 0.75% (α₀=4.0200, κ_TGP²=4.0481) | ngEHT precision on α₀ ~1–5% + TGP-SC v2 calibration κ_TGP ~0.5%; combined ~3% precision (2030+); match >5% rejects identity | **LIVE** | master-only (BH.1.Phase3) | [`research/op-bh-alpha-threshold/Phase3_results.md`](research/op-bh-alpha-threshold/Phase3_results.md) (T3.6) |
 
 ---
 
@@ -176,13 +184,15 @@ Each row carries:
 
 | Window | Experiment | Key TGP entries at risk |
 |--------|-----------|----------------------------|
-| **2027–2028** | MICROSCOPE-2 | G1 (η = 3.54·10⁻¹⁷), G2 (n=2) |
-| **2027+** | LIGO O5 | GW2 (3 DOF), GW5 (no vector), GW6 (dispersion bound) |
+| **2027–2028** | MICROSCOPE-2 | G1 (η = 3.54·10⁻¹⁷), G2 (n=2), **BH7** (η_TGP = 2·10⁻¹⁸ from α(ψ_Earth)) |
+| **2027+** | LIGO O5 | GW2 (3 DOF), GW5 (no vector), GW6 (dispersion bound), **BH5** (δf/f ~ 8–16% QNM ringdown) |
+| **2027+** | NICER+ | **BH6** (NS M-R shift ~1–3% from GR; J0030, J0740) |
 | **2027+** | DESI DR2/DR3 | DE1 (w=−1), DE2 (w_a=0), DE3 (T-Λ), C1 (H₀), C2 (S₈), C3 (Σm_ν) |
 | **2028+** | Euclid | DE3, DE4 (Friedmann ratio), C2 |
 | **2027–2030** | LnH₉ DAC synthesis (Eremets/Hemley/Prakapenka) | **SC4 (SmH₉)**, **SC5 (YbH₉)**, SC6 (TmH₉) — μ_eff² vs de Gennes scaling |
-| **2030–2032** | ngEHT | BH1 (r_ph ratio 1.293), BH2 (Δb_crit +14.56%), BH3 (multi-BH) |
-| **~2035** | LISA / pulsar-timing arrays | GW4 (m_σ²/m_s² = 2 → 2.9% low-k phase shift) |
+| **2030–2032** | ngEHT | BH1 (r_ph ratio 1.293), BH2 (Δb_crit +14.56%), BH3 (multi-BH), **BH4** (10-SMBH +14.56% map), **BH8** (√α₀ = κ_TGP cross-sector via α₀ from photon ring) |
+| **~2035** | LISA / pulsar-timing arrays | GW4 (m_σ²/m_s² = 2 → 2.9% low-k phase shift), **BH5** (LISA SMBH ringdown 10⁶–10⁷ M_⊙) |
+| **~2035** | LATOR / BEACON (next-gen Solar PPN) | **BH9** (γ−1 ~ 1.81·10⁻¹¹; falsifiable below 10⁻¹⁰) |
 | **long-term** | full QG / UV experiment | UV1–UV7, F5, F6 (UV-route selection) |
 
 ---

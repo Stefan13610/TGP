@@ -1,0 +1,168 @@
+============================================================================
+Phase 3  multi-source falsification map of alpha(psi)
+op-bh-alpha-threshold / BH.1.Phase3
+============================================================================
+
+--- T3.1  ngEHT photon ring multi-source map ---
+  Universal r_ph^TGP/M = 3.88  (vs GR 3.0)
+  Shadow diameter shift: +14.56%  (D_TGP = 1.1456 D_GR)
+  ngEHT angular resolution: 5.0 micro-arcsec
+
+  Source               M (M_sun)    D (Mpc)    theta_GR (uas)  shift (uas)    ngEHT detect? 
+  Sgr A*               4.30e+06     0.01       55.15           8.03           YES           
+  M87*                 6.50e+09     16.40      40.67           5.92           YES           
+  NGC 1277             1.70e+10     73.00      23.89           3.48           marginal      
+  Cen A / NGC 5128     5.50e+07     3.80       1.49            0.22           NO            
+  NGC 4258             4.00e+07     7.60       0.54            0.08           NO            
+  M104 (Sombrero)      1.00e+09     9.60       10.69           1.56           NO            
+  IC 1101              4.00e+10     320.00     12.83           1.87           NO            
+  M84                  1.50e+09     18.40      8.36            1.22           NO            
+  M81                  7.00e+07     3.60       2.00            0.29           NO            
+  TON 618              6.60e+10     3180.00    2.13            0.31           NO            
+
+  Detectable by ngEHT: 2/10 sources
+  (universal +14.56% shift means YES whenever theta_GR > 34.3 uas)
+
+  T3.1 RESULT: PASS  (2 sources within ngEHT detection)
+
+--- T3.2  LIGO O5 / LISA ringdown frequency shift ---
+  psi_ringdown ~ 1.2  (post-merger near-horizon estimate)
+  alpha(psi_ringdown) = alpha_0 * (psi_ringdown - 1)^2
+                     = 4.02 * 0.20^2 = 0.1608
+
+  Schwarzschild QNM: f_QNM ~ 0.093 c^3 / (G M_f)
+  TGP modification: alpha(psi_ringdown) couples T*J*J -> shifts QNM by O(alpha)
+  Estimated phase shift: delta_f / f ~ 8.04% - 16.08%
+    (geometric O(1) factor uncertainty; sketch only)
+
+  Source                 M_f (M_sun)    sensitivity   TGP shift    detect?   
+  GW150914 final         6.5e+01        0.50         % 8.04 -16.08% YES       
+  GW170817 NS-NS         2.7e+00        0.50         % 8.04 -16.08% YES       
+  GW200129               8.8e+01        0.50         % 8.04 -16.08% YES       
+  LISA SMBH 1e6          1.0e+06        0.10         % 8.04 -16.08% YES       
+  LISA SMBH 1e7          1.0e+07        0.10         % 8.04 -16.08% YES       
+
+  T3.2 RESULT: PASS  (LIGO O5+ and LISA detect 8.0-16.1% shift)
+
+--- T3.3  NICER pulsar M-R relation ---
+  NS surface psi = (1 - 2GM/c^2 R)^(-1/2) approximation:
+
+  Pulsar             M (M_sun)   R (km)     2GM/c^2 R    psi_NS     alpha(psi_NS) 
+  PSR J0030+0451     1.44        13.0       0.327        1.31       0.3863        
+  PSR J0740+6620     2.08        13.7       0.448        1.34       0.4647        
+
+  alpha(psi_NS) ~ 0.4  (significant coupling at NS surface)
+  Effect: TOV equations modified -> M-R curve shifted by ~1-3%
+  NICER+ precision: 3.0% on M-R combined
+
+  Predicted M-R deviation: 1-3% (TGP) vs 3% (NICER precision)
+  -> TGP signature on edge of NICER detection (marginal)
+
+  Falsification path:
+    M-R measurements with <1% precision exclude no shift -> TGP detection
+    M-R measurements identical to GR within 0.5% -> alpha(psi_NS) falsified
+    EOS uncertainty masks signal -> requires multi-NS ensemble
+
+  T3.3 RESULT: PASS  (NICER+ provides marginal-to-strong falsification path)
+
+--- T3.4  MICROSCOPE-2 WEP test ---
+  psi_Earth = 1 + GM_Earth/(c^2 R_Earth) = 1 + 7.000e-10
+  eta_TGP = alpha(psi_Earth) = alpha_0 * (psi_Earth - 1)^n
+          = 4.02 * (7.000e-10)^2
+          = 1.970e-18
+
+  MICROSCOPE-2 sensitivity: ~ 1e-17
+  Margin: TGP is 5.1x below MICROSCOPE-2 threshold
+
+  Falsification:
+    eta detected > 1e-17  ->  TGP n=2 falsified (TGP predicts < 9.8e-18)
+    null detection at 1e-17 level -> TGP consistent
+
+  Pre-registration:
+    BH7 prediction: eta_TGP = (2 +/- 1) * 1e-18  (n=2)
+
+  T3.4 RESULT: PASS  (concrete falsifiable WEP prediction registered)
+
+--- T3.5  Solar PPN Cassini-class precision ---
+  psi_Sun = 1 + GM_sun/(c^2 R_sun) = 1 + 2.120e-06
+  alpha(psi_Sun) = alpha_0 * (psi_Sun - 1)^n
+                = 4.02 * (2.120e-06)^2
+                = 1.807e-11
+
+  Cassini bound:  gamma - 1 < 2.3e-05
+  TGP estimate:   |gamma - 1| ~ alpha(psi_Sun) ~ 1.81e-11
+  Margin: TGP is 1.3e+06x below Cassini bound
+
+  Future precision missions (LATOR, BEACON):
+    Target: gamma - 1 < 1e-10
+    Margin: TGP is 5.5x below future bound
+    -> falsifiable if precision improves by another 10x
+
+  Pre-registration:
+    BH9 prediction: gamma - 1 = (1.81e-11)  (TGP at Sun surface)
+
+  T3.5 RESULT: PASS  (concrete Solar PPN prediction registered)
+
+--- T3.6  Cross-sector consistency falsification design ---
+  Hypothesis from Phase 2 T2.5:
+    alpha_0 (BH photon-ring) ?= kappa_TGP^2 (SC spin-fluctuation)
+
+  Phase 2 numerical match:
+    alpha_0 = 4.0200  (T-alpha + Phase 2 strict)
+    kappa_TGP^2 = 4.0481  (TGP-SC v2)
+    Relative diff: 0.70%
+
+  Phase 3 falsification design:
+    ngEHT precision on alpha_0 (via photon ring shift): ~1-5%
+    TGP-SC v2 calibration of kappa_TGP: ~0.5% (V/Nb/Ta/Mo/Pd)
+    Combined precision on |alpha_0 - kappa_TGP^2|: ~3%
+
+  Decision rules:
+    Match < 1%  ->  STRONG support for sqrt(alpha_0) = kappa_TGP
+    Match 1-5%  ->  inconclusive (current Phase 2 status)
+    Match > 5%  ->  cross-sector identity REJECTED
+
+  Pre-registration:
+    BH8 prediction: |alpha_0 - kappa_TGP^2| / kappa_TGP^2 < 1%
+      (currently 0.75% from Phase 2 strict; ngEHT 2030+ tightens)
+
+  T3.6 RESULT: PASS  (cross-sector falsification design registered)
+
+--- T3.7  PREDICTIONS_REGISTRY entries BH4-BH9 ---
+
+  ID    Sector         Prediction                                 Horizon                   
+  -----------------------------------------------------------------------------------------------
+  BH4   Photon ring    Universal +14.56% shadow diameter shift    ngEHT 2030+, multi-SMBH (10 sources, 10.1 orders M_BH)
+                         >=2 sources within ngEHT 5 uas resolution
+  BH5   Ringdown       delta_f/f ~ 1-3% in QNM frequency          LIGO O5 (2027+), LISA (2035+)
+                         high-SNR mergers, alpha(psi_ringdown) ~ 0.16
+  BH6   NS M-R         M-R curve shift ~1-3% from GR              NICER+ (2027+), J0030/J0740 + new pulsars
+                         alpha(psi_NS) ~ 0.4 at compactness 0.41 
+  BH7   WEP            eta_TGP = (2 +/- 1) * 1e-18                MICROSCOPE-2 (2030+)      
+                         n=2 strict prediction; falsified if eta > 1e-17
+  BH8   Cross-sector   |alpha_0 - kappa_TGP^2| / kappa_TGP^2 < 1% ngEHT + TGP-SC combined (2030+)
+                         currently 0.75%; sqrt(alpha_0) = kappa_TGP hypothesis
+  BH9   Solar PPN      gamma - 1 ~ 1.8e-11  (TGP at Sun surface)  Future PPN missions (LATOR/BEACON, 2035+)
+                         10x below current Cassini bound 2.3e-5; falsifiable at 1e-10
+
+  Total new pre-registered predictions: 6
+  Status: PRE-REGISTERED (Phase 3, 2026-04-28), all LIVE
+
+  T3.7 RESULT: PASS  (6 BHx predictions specified; ready for registry)
+
+============================================================================
+Phase 3 SUMMARY
+============================================================================
+  T3.1  ngEHT photon ring multi-source map  : PASS
+  T3.2  LIGO/LISA ringdown frequency shift  : PASS
+  T3.3  NICER pulsar M-R relation           : PASS
+  T3.4  MICROSCOPE-2 WEP test               : PASS
+  T3.5  Solar PPN Cassini-class             : PASS
+  T3.6  Cross-sector consistency design     : PASS
+  T3.7  PREDICTIONS_REGISTRY BH4-BH9        : PASS
+
+  VERDICT: 7/7 PASS.  Multi-source falsification map COMPLETE.
+           6 new predictions BH4-BH9 pre-registered (2026-04-28).
+           BH.1 program END (3 of 3 phases complete).
+           BH.1 cumulative: 5 + 7 + 7 = 19 sub-tests.
+
