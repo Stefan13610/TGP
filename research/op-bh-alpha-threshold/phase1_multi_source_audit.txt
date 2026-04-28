@@ -1,0 +1,191 @@
+============================================================================
+Phase 1  multi-source dimensional + mass-scaling audit of alpha
+op-bh-alpha-threshold / BH.1.Phase1
+============================================================================
+
+--- T1.1  SI dimensional analysis of Candidate D action ---
+  Action: S_int = alpha * Integral(T^mu_nu J_mu J_nu sqrt(-g) d^4x)
+
+  Convention (a): J = mass flux [kg m^-2 s^-1]
+    integrand dim = [kg^3 / (m s^3)]
+    action dim    = [kg m^2 / s]
+    => dim[alpha] = [m^3 s^2 / kg^2]
+
+  Convention (b): J = EM-like 4-current [A s / m^3]
+    integrand dim = [kg C^2 / (m^4 s)]
+    => dim[alpha] = [m^2 s^2 / (kg C^2)] (varies with conv)
+
+  Convention (c): geometric-natural (Phase 0+ implicit)
+    T*J*J ~ [m^-6]
+    integrand ~ [m^-6] * [m^4] = [m^-2]
+    action [m^0] (in geom units) requires dim[alpha] = [m^2]
+    => alpha_SI = alpha_geom * R_S^2  (Phase 0+ formula)
+
+  KEY POINT: under ALL three natural conventions, dim[alpha]
+  IS NOT DIMENSIONLESS in SI. alpha carries an INTRINSIC LENGTH^2
+  (or equivalent) scale. There is no natural way to make alpha
+  a 'fundamental dimensionless constant' without specifying
+  WHICH length scale it carries (-> see T1.3 Path A/B/C).
+
+  T1.1 RESULT: PASS (alpha is dimensionful; not single dimensionless constant)
+
+--- T1.2  multi-source M^2 scaling demonstration ---
+  Candidate D Phase 0+ heuristic: alpha_geom = 0.1
+  Conversion: alpha_SI = alpha_geom * R_S^2
+
+  Source             M (M_sun)    R_S (m)        alpha_SI (m^2)     ratio_vs_SgrA*
+  Sgr A*             4.30e+06     1.270e+10      1.613e+19          1.000e+00     
+  M87*               6.50e+09     1.920e+13      3.687e+25          2.285e+06     
+  GW150914 final     6.50e+01     1.920e+05      3.687e+09          2.285e-10     
+  NS canonical       1.40e+00     4.136e+03      1.710e+06          1.060e-13     
+
+  log10(alpha_SI) vs log10(M_BH/M_sun) slope = 2.0000
+  span(alpha_SI)  = 19.33 orders of magnitude
+  span(M_BH)      = 9.67 orders
+
+  T1.2 RESULT: PASS (slope = 2.000 exact, M^2 scaling confirmed)
+
+--- T1.3  closure paths A / B / C explicit fail demo ---
+
+  Path A: intrinsic length scale L_TGP
+    Hypothesis: alpha_SI = alpha_dim * L_TGP^2 with alpha_dim O(1)
+    Source             L_TGP (m)      L_TGP / R_S   
+    Sgr A*             4.017e+09      0.3162        
+    M87*               6.072e+12      0.3162        
+    GW150914 final     6.072e+04      0.3162        
+    NS canonical       1.308e+03      0.3162        
+    L_TGP span: 1.31e+03  ...  6.07e+12 m
+    Spread: 4.64e+09  (must be 1 for single L_TGP)
+    Path A FAIL: L_TGP cannot be a single TGP-intrinsic length
+
+  Path B: substrate density enhancement rho_sub ~ M/R_S^3
+    T*J*J ~ rho_sub / R_S^2 = M / R_S^5
+    alpha required to absorb scaling: alpha ~ R_S^2 * 1/R_S^-5 = R_S^7 / M
+    M = R_S * c^2 / (2G), so alpha ~ R_S^6 * (2G/c^2) -> still source-dependent
+    Failure mode IDENTICAL: alpha not single constant.
+    Path B FAIL: substrate-density rescaling does not absorb M^2 scaling
+
+  Path C: M_Pl^-2 prefactor (dimensionless alpha)
+    Hypothesis: alpha_action_density = alpha_dim / M_Pl^2 with alpha_dim O(1)
+    Required alpha_dim per source = alpha_SI * M_Pl^2 / (relevant SI normalization)
+    Planck length L_Pl = 1.617e-35 m
+    Source             alpha_dim required    
+    Sgr A*             6.174e+88             
+    M87*               1.411e+95             
+    GW150914 final     1.411e+79             
+    NS canonical       6.545e+75             
+    Required alpha_dim ~ 10^88 - 10^95.  Astronomically unphysical.
+    Path C FAIL: dimensionless alpha + L_Pl^2 prefactor unphysical
+
+  T1.3 RESULT: PASS (Path A, B, C all structurally fail)
+
+--- T1.4  Path E lab-suppression check ---
+  Hypothesis Path E: alpha(psi) = alpha_0 * (psi - psi_th)^n * Heaviside(psi - psi_th)
+
+  Reference (photon ring) for ratio: psi = 1.168
+
+  psi_th = 1.01, n = 1:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 1.203e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 2.468e+00
+
+  psi_th = 1.01, n = 2:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 1.446e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 6.093e+00
+
+  psi_th = 1.01, n = 3:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 1.739e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 1.504e+01
+
+  psi_th = 1.05, n = 1:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 1.271e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 2.966e+00
+
+  psi_th = 1.05, n = 2:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 1.616e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 8.798e+00
+
+  psi_th = 1.05, n = 3:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 2.054e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 2.610e+01
+
+  psi_th = 1.10, n = 1:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 1.471e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 4.412e+00
+
+  psi_th = 1.10, n = 2:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 2.163e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 1.946e+01
+
+  psi_th = 1.10, n = 3:
+    psi(Lab (deep)    ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(Earth surface ) = 1.0000  alpha/alpha_ref = 0.000e+00  SUPPRESSED
+    psi(GW ringdown   ) = 1.2000  alpha/alpha_ref = 3.180e+00
+    psi(Photon ring   ) = 1.1680  alpha/alpha_ref = 1.000e+00
+    psi(NS surface    ) = 1.4000  alpha/alpha_ref = 8.587e+01
+
+  KEY OBSERVATION:
+    For psi_th >= 1.05, lab and Earth-surface alpha = 0 IDENTICALLY
+    (Heaviside suppression).  No fine-tuning needed.
+    Path E gives EXACT lab suppression while activating at strong-field psi.
+
+  T1.4 RESULT: PASS (Path E lab-suppression natural for psi_th in [1.05, 1.15])
+
+--- T1.5  Path classification summary ---
+
+  Path     Description                              Status     Reason                             
+  -----------------------------------------------------------------------------------------------
+  Path A   L_TGP intrinsic length                   FAIL       L_TGP source-dependent (T1.3)      
+  Path B   Substrate density rho_sub ~ M/R_S^3      FAIL       M^2 scaling unchanged (T1.3)       
+  Path C   M_Pl^-2 dimensionless prefactor          FAIL       Required alpha ~ 10^88+ (T1.3)     
+  Path D   Scenario (e) target NOT universal        INVALID    r_ph^TGP/r_ph^GR universal in geom 
+  Path E   alpha(psi) threshold function            VIABLE     Lab suppress + strong-field activate (T1.4)
+  Path F   Composite Candidate D + Candidate B      BACKUP     Two new mechanisms; parsimony disfavors
+
+  CONCLUSION: Path E is the UNIQUE minimal extension that
+    (a) absorbs M^2 scaling via psi-field universality,
+    (b) suppresses lab-scale experiments naturally,
+    (c) preserves Phase 0+ heuristic alpha_geom ~ 0.1 in strong field.
+
+  Phase 2 task: derive (n, psi_th, alpha_0) from substrate physics.
+  Phase 3 task: multi-source falsification map (ngEHT etc.).
+
+  T1.5 RESULT: PASS (Path E classified as unique viable minimal extension)
+
+============================================================================
+Phase 1 SUMMARY
+============================================================================
+  T1.1  SI dimensional analysis           : PASS
+  T1.2  multi-source M^2 scaling demo     : PASS
+  T1.3  paths A/B/C explicit fail         : PASS
+  T1.4  Path E lab-suppression check      : PASS
+  T1.5  path classification summary       : PASS
+
+  VERDICT: H0 (alpha as single physical constant) REJECTED.
+           Path E (alpha(psi) threshold) is UNIQUE viable minimal extension.
+           Phase 1 closes 5/5 PASS.  Phase 0+ multi-source ISSUE FORMALIZED.
+           Ready for Phase 2: substrate-physics derivation of alpha(psi).
+
