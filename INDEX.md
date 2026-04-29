@@ -15,6 +15,7 @@ related:
   - "[[research/op-cross-sector-charge/Phase1_results.md]]"
   - "[[research/op-cross-sector-charge/Phase2_results.md]]"
   - "[[research/op-cross-sector-charge/Phase3_results.md]]"
+  - "[[research/op-xi-photon-ring/Phase1_results.md]]"
 ---
 
 # TGP_v1 — Index hub
@@ -25,11 +26,11 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 
 ## At a glance
 
-- **Master verification ledger:** **336** cumulative closures
-  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7;
+- **Master verification ledger:** **341** cumulative closures
+  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7 + ξ.1.Phase1 5;
   closure_2026-04-26's 35 tests are tracked in the phase-ledger table but
   overlap conceptually with Phase 1/2/3 follow-ups so are not double-counted here).
-- **Active program:** none currently active. **XS.1 program END** 2026-04-28 — identity √α₀ = κ_TGP **PARTIALLY DERIVED** + 6-channel falsification roadmap registered (XS1–XS6).
+- **Active program:** **ξ.1 ξ-factor photon-ring resolution** — Phase 1 CLOSED 2026-04-29 (5/5 PASS, all premise inputs LOCKED with zero free parameters); Phase 2 (heat-kernel a₂ derivation) queued. Aim: promote XS.1 PARTIALLY DERIVED → DERIVED by resolving 0.527% split between F4 rational (0.114) i Phase 2 strict (11/97) target_shift forms.
 - **Recently closed cycles:**
   - **SC.1 program (3 phases) END:** α_PB scaling map registered, 5 new SC predictions (SC2–SC7) in registry.
   - **BH.1 program (3 phases) END:** multi-source ISSUE strukturalnie zamknięty; ψ_th=1 i n=2 promoted to DERIVED (Z₂ + WEP-MICROSCOPE-2); α₀ ≈ 4.02 PARTIALLY DERIVED z cross-sector STRUCTURAL HINT α₀ = κ_TGP² (match 0.75% z TGP-SC); 6 new BH predictions (BH4–BH9) registered with horizons 2027–2035.
@@ -37,7 +38,7 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 - **4 Zenodo flask papers** deposited as immutable timestamped predictions.
 - **1 predictions registry** ([`PREDICTIONS_REGISTRY.md`](PREDICTIONS_REGISTRY.md))
   cross-linking every flask to falsification target + horizon.
-- **Active queued work:** none — workshop tree quiescent post-XS.1 END. Experimental wait on ngEHT 2030+, LIGO O5 2027+, LISA 2035+, MICROSCOPE-2 2030+, NICER+ 2027+, LATOR/BEACON 2035+, SmH₉/YbH₉ DAC synthesis 2027–2030.
+- **Active queued work:** ξ.1.Phase2 (a₂ heat-kernel derivation, 7 sub-tests); ξ.1.Phase3 (predictions XI1–XI3 or XS7–XS9 + UV-route map). Experimental wait on ngEHT 2030+, LIGO O5 2027+, LISA 2035+, MICROSCOPE-2 2030+, NICER+ 2027+, LATOR/BEACON 2035+, SmH₉/YbH₉ DAC synthesis 2027–2030.
 
 ## Top-level entry points
 
@@ -60,7 +61,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **tgp-qm** | [10.5281/zenodo.19712596](https://doi.org/10.5281/zenodo.19712596) | Emergent QM (Born, CHSH, spin, decoherence) | clean (orthogonal to Phase 1/2/3) | [tgp-qm-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-qm-paper) |
 | **tgp-sc** v2 | [10.5281/zenodo.19670557](https://doi.org/10.5281/zenodo.19670557) | Superconductivity T_c closure (5 families) | clean (v2 already current with L6–L10) | [tgp-sc-paper/research/POST_PHASE3_NOTE_2026-04-28.md](https://github.com/Stefan13610/tgp-sc-paper) |
 
-## Phase ledger (336 cumulative)
+## Phase ledger (341 cumulative)
 
 | Block | Tests | Status | Master file |
 |-------|------:|--------|-------------|
@@ -80,6 +81,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **XS.1.Phase1** cross-sector identity √α₀ = κ_TGP feasibility audit (dimension, numerical 1σ, multi-anchor, data independence, Bayes factor 600); 5/5 PASS → Phase 2 viable | 5 | CLOSED 2026-04-28 | [`research/op-cross-sector-charge/Phase1_results.md`](research/op-cross-sector-charge/Phase1_results.md) |
 | **XS.1.Phase2** substrate-action derivation of √α₀ = κ_TGP; single-Φ + Z₂ unify g_TGP across BH/SC; common-generator M_BH = M_SC = M_universal ≈ 4.03–4.05; RG-invariant ratio under common γ_an; **classification PARTIALLY DERIVED** (ξ unresolved: F4 rational 0.084% vs Phase 2 strict 0.747% rel diff) | 7 | CLOSED 2026-04-28 | [`research/op-cross-sector-charge/Phase2_results.md`](research/op-cross-sector-charge/Phase2_results.md) |
 | **XS.1.Phase3** multi-sector falsification map of √α₀ = κ_TGP; XS1 ngEHT × SC v2 (≤5% by 2030+), XS2 g̃ orthogonality, XS3 lepton orthogonality, XS4 QM Born/CHSH orthogonality, XS5 F4 sub-percent (0.084%) match, XS6 6-channel roadmap; 6 new predictions XS1–XS6 — **XS.1 program END** | 7 | CLOSED 2026-04-28 | [`research/op-cross-sector-charge/Phase3_results.md`](research/op-cross-sector-charge/Phase3_results.md) |
+| **ξ.1.Phase1** ξ-factor photon-ring frame audit (ξ_geom=1, α(α−1)=2, ψ_ph=1.168, F4 rational provenance, Phase 2 strict 11/97 sympy-exact); 5/5 PASS → all 5 inputs LOCKED w istniejących closurach; F4 vs strict split = 0.527% (z target_shift) | 5 | CLOSED 2026-04-29 | [`research/op-xi-photon-ring/Phase1_results.md`](research/op-xi-photon-ring/Phase1_results.md) |
 
 Sub-cycle results for the most recent cycle:
 [3.A KEYSTONE (AS NGFP)](research/op-phase3-uv-completion/Phase3_A_results.md) ·

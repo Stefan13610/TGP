@@ -1,0 +1,92 @@
+
+========================================================================
+ξ.1.Phase1 — EFT photon-ring frame audit
+========================================================================
+  date          : 2026-04-29
+  predecessor   : XS.1 program END (PARTIALLY DERIVED)
+  goal          : verify 5 fundamental inputs LOCKED for Phase 2 a₂ derivation
+
+========================================================================
+ξ1.1 — ξ_geom = 1 (M9.1″ vacuum / Phase 2.B.2)
+========================================================================
+  ξ_geom (LOCKED)                                  1
+  ξ_geom (numeric)                                 1.00000000
+  ξ_geom = α(α-1)/2 pod F2+F3                      1
+  ξ_geom = α(α-1)/2 self-consistent?               True
+  ξ_geom is integer exactly 1?                     True
+
+  → ξ1.1 (ξ_geom = 1 LOCKED): PASS  [ξ_geom = 1 sympy-exact, derived z F2+F3+vacuum]
+
+========================================================================
+ξ1.2 — α(α-1) = 2 (Phase 1.A.1 Theorem alpha2)
+========================================================================
+  α(α-1) = 2 has solutions                         [2]
+  positive integer solutions                       [2]
+  α (LOCKED, F2)                                   2
+  α(α-1)                                           2
+  α(α-1) = 2 exactly?                              True
+  α=1 → α(α-1) = 0 → V'' degenerate (violates C1)  
+  α=3 → α(α-1) = 6 → V'' overconfining (violates C2) 
+  α=4+ → α(α-1) ≥ 12 → no Phase 1 root → falsified 
+
+  → ξ1.2 (α(α-1) = 2 LOCKED): PASS  [α=2 unique sympy positive-integer solution]
+
+========================================================================
+ξ1.3 — ψ_ph - 1 = 0.168 (M9.2-D photon-ring universal)
+========================================================================
+  ψ_ph (M9.2-D)                                    1.16800000
+  ψ_ph (M9.1″ refined)                             1.16788000
+  |drift| M9.2-D vs M9.1″ refined                  0.00010275
+  drift gate (0.5%)                                0.00500000
+  ε_ph = ψ_ph - 1                                  0.16800000
+  ε_ph² = (ψ_ph - 1)²                              0.02822400
+  ε_ph² (sympy exact)                              441/15625
+  ε_ph² matches sympy exact?                       True
+
+  → ξ1.3 (ψ_ph - 1 = 0.168 LOCKED): PASS  [M9.2-D drift 0.0103% < 0.5% gate; ε_ph² = 0.028224 sympy-exact]
+
+========================================================================
+ξ1.4 — F4 rational 1069833/264500 provenance audit
+========================================================================
+  F4 sympy rational                                1069833/264500
+  F4 numeric                                       4.04473724
+  ψ_ph (M9.1″) - 1                                 0.16788000
+  (ψ_ph_M9_1″ - 1)²                                0.02818369
+  F4 reconstructed = 0.114 / (0.16788² · 1.0)      4.04489200
+  |F4 reconstructed - F4 sympy| (relative)         0.00003826
+  Arithmetic identity holds within 0.5%?           True
+  F4 LOCKED in PREDICTIONS_REGISTRY?               YES (closure_2026-04-26)
+  F4 status in registry                            LOCKED
+
+  → ξ1.4 (F4 rational provenance): PASS  [F4 rational reconstructed within 0.004%; LOCKED in closure_2026-04-26]
+
+========================================================================
+ξ1.5 — Phase 2 strict (1/2)(1 - 3/3.88) provenance
+========================================================================
+  r_ph^GR (Schwarzschild)                          3
+  r_ph^TGP                                         3.88000000
+  target_shift = (1/2)(1 - r_ph^GR/r_ph^TGP)       11/97
+  target_shift (numeric)                           0.11340206
+  matches anchor (1/2)(1 - 3/3.88)?                True
+  α₀_strict = target_shift / ε_ph²                 4.01793020
+  α₀_strict matches anchor 4.0179?                 True
+  0.114 - 0.1134 (split)                           0.00059794
+  split / target_shift_strict (relative)           0.00527273
+  Strict form = bare photon-ring shift?            YES (direct geometric)
+  F4 form = post-a₂-corrected?                     PROPOSED (Phase 2 hypothesis)
+
+  → ξ1.5 (Phase 2 strict provenance): PASS  [strict form sympy-exact; split z F4 frame 0.527%]
+
+========================================================================
+ξ.1.Phase1 verdict
+========================================================================
+  ξ1.1: PASS
+  ξ1.2: PASS
+  ξ1.3: PASS
+  ξ1.4: PASS
+  ξ1.5: PASS
+
+  Cumulative: 5/5 PASS
+
+  → Phase 1 CLOSED — proceed Phase 2 (a₂ heat-kernel derivation).
+  → All 5 fundamental inputs LOCKED with zero free parameters.
