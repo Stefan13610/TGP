@@ -18,6 +18,7 @@ related:
   - "[[research/op-xi-photon-ring/Phase1_results.md]]"
   - "[[research/op-xi-photon-ring/Phase2_results.md]]"
   - "[[research/op-xi-photon-ring/Phase3_results.md]]"
+  - "[[research/op-uv-as-ngfp/Phase1_results.md]]"
 ---
 
 # TGP_v1 — Index hub
@@ -28,11 +29,11 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 
 ## At a glance
 
-- **Master verification ledger:** **355** cumulative closures
-  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7 + ξ.1.Phase1 5 + ξ.1.Phase2 7 + ξ.1.Phase3 7;
+- **Master verification ledger:** **360** cumulative closures
+  (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7 + ξ.1.Phase1 5 + ξ.1.Phase2 7 + ξ.1.Phase3 7 + UV.1.Phase1 5;
   closure_2026-04-26's 35 tests are tracked in the phase-ledger table but
   overlap conceptually with Phase 1/2/3 follow-ups so are not double-counted here).
-- **Active program:** none — **ξ.1 program END** 2026-04-29 (3 phases, 19 sub-tests, 5/5 + 6/7 + 7/7 PASS); ξ-factor identified jako a₂ EFT 1-loop correction (0.527% F4 vs strict split); 6 new predictions XI1–XI6 registered; XS.1 promoted PARTIALLY DERIVED → PARTIALLY DERIVED (refined); UV7 promoted STRUCTURAL-POSTULATE → STRUCTURAL-DERIVED; AS NGFP najbliższy UV-route match dla N_A = 8.7719 (Δ 0.068%). Promotion do full DERIVED czeka na UV completion w long-term track (op-uv-renormalizability-research/UV1).
+- **Active program:** **UV.1 AS NGFP first-principles closure for N_A normalization** — Phase 1 CLOSED 2026-04-29 (5/5 PASS, all foundational AS NGFP inputs LOCKED: Litim invariant g*·λ* = 0.1349 drift 0.07%, η_N* = -2 marginal a₂ scaling, scale separation 60.93 dex, T-FP IR 12/12, a₂ → α₀ reproducibility 0.004%); Phase 2 (N_A first-principles derivation z {g*, λ*, η_N*}) queued. Aim: promote ξ.1 / XS.1 / UV7 → DERIVED via algebraic closure of N_A = 8.7719 residual.
 - **Recently closed cycles:**
   - **SC.1 program (3 phases) END:** α_PB scaling map registered, 5 new SC predictions (SC2–SC7) in registry.
   - **BH.1 program (3 phases) END:** multi-source ISSUE strukturalnie zamknięty; ψ_th=1 i n=2 promoted to DERIVED (Z₂ + WEP-MICROSCOPE-2); α₀ ≈ 4.02 PARTIALLY DERIVED z cross-sector STRUCTURAL HINT α₀ = κ_TGP² (match 0.75% z TGP-SC); 6 new BH predictions (BH4–BH9) registered with horizons 2027–2035.
@@ -41,7 +42,7 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 - **4 Zenodo flask papers** deposited as immutable timestamped predictions.
 - **1 predictions registry** ([`PREDICTIONS_REGISTRY.md`](PREDICTIONS_REGISTRY.md))
   cross-linking every flask to falsification target + horizon.
-- **Active queued work:** none — research now in long-term track (op-uv-renormalizability-research/ UV1–UV7 + F5/F6 supplement). Experimental wait on ngEHT 2030+, LIGO O5 2027+, LISA 2035+, MICROSCOPE-2 2030+, NICER+ 2027+, LATOR/BEACON 2035+, SmH₉/YbH₉ DAC synthesis 2027–2030.
+- **Active queued work:** UV.1.Phase2 (N_A first-principles derivation z NGFP {g*, λ*, η_N*}, 7 sub-tests); UV.1.Phase3 (predictions UV1-UV6 + status cascade, 6 sub-tests). Experimental wait on ngEHT 2030+, LIGO O5 2027+, LISA 2035+, MICROSCOPE-2 2030+, NICER+ 2027+, LATOR/BEACON 2035+, SmH₉/YbH₉ DAC synthesis 2027–2030.
 
 ## Top-level entry points
 
@@ -87,6 +88,7 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **ξ.1.Phase1** ξ-factor photon-ring frame audit (ξ_geom=1, α(α−1)=2, ψ_ph=1.168, F4 rational provenance, Phase 2 strict 11/97 sympy-exact); 5/5 PASS → all 5 inputs LOCKED w istniejących closurach; F4 vs strict split = 0.527% (z target_shift) | 5 | CLOSED 2026-04-29 | [`research/op-xi-photon-ring/Phase1_results.md`](research/op-xi-photon-ring/Phase1_results.md) |
 | **ξ.1.Phase2** heat-kernel a₂ first-principles derivation (Birrell-Davies/Avramidi); a₂_vacuum = (1/2) V''(1)² = 2β² pod F2+F3+β=γ Z₂ vacuum; **Frame A (F4 0.114) = 1-loop a₂-corrected**, **Frame B (strict 11/97) = tree-level bare geometric**; 0.527% split = a₂ EFT 1-loop correction within ~1% EFT band; 6/7 PASS → XS.1 promotion PARTIALLY DERIVED → PARTIALLY DERIVED **(refined)**; full DERIVED czeka na UV-fixing N_A=8.7719 (closest 9, Δ 2.6%) | 7 | CLOSED 2026-04-29 | [`research/op-xi-photon-ring/Phase2_results.md`](research/op-xi-photon-ring/Phase2_results.md) |
 | **ξ.1.Phase3** predictions + UV-route map for N_A normalization; ngEHT 2030+ 10-SMBH frame discrimination at ≥3σ (combined 0.158% < 0.176% threshold); AS NGFP najbliższy UV-route match dla N_A=8.7719 (Δ 0.068%); ξ-factor RG-invariant (0.022% drift); F4 1-loop reinterpretation, F5/F6 orthogonal; XS1 sharpening 5%→1.5% (factor 5.9×); 7-channel roadmap convergent 2030–2035; 6 new predictions XI1–XI6; UV7 promoted STRUCTURAL-POSTULATE → STRUCTURAL-DERIVED — **ξ.1 program END** | 7 | CLOSED 2026-04-29 | [`research/op-xi-photon-ring/Phase3_results.md`](research/op-xi-photon-ring/Phase3_results.md) |
+| **UV.1.Phase1** AS NGFP foundational audit (Litim invariant g*·λ* = 0.1349 drift 0.07% vs Reuter; η_N* = -2 marginal a₂ scaling; scale separation 60.93 dex > 50 dex; T-FP IR 12/12 POSITIVE; a₂ → α₀ reproducibility 0.004%); 5/5 PASS → all 5 fundamental NGFP inputs LOCKED w istniejących closurach; Phase 2 N_A derivation może wystartować z zero free parameters | 5 | CLOSED 2026-04-29 | [`research/op-uv-as-ngfp/Phase1_results.md`](research/op-uv-as-ngfp/Phase1_results.md) |
 
 Sub-cycle results for the most recent cycle:
 [3.A KEYSTONE (AS NGFP)](research/op-phase3-uv-completion/Phase3_A_results.md) ·

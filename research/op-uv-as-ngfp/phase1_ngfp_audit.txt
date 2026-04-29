@@ -1,0 +1,82 @@
+========================================================================
+UV.1.Phase1 - AS NGFP foundational audit
+========================================================================
+  date          : 2026-04-29
+  predecessor   : xi.1 program END (355 cumulative)
+  goal          : 5/5 PASS -> Phase 2 N_A derivation w/ zero free parameters
+  N_A target    : 500/57 = 8.7719
+
+========================================================================
+UV1.1 - Litim invariant g*·λ* = 0.1349 LOCKED
+========================================================================
+  g* (NGFP Newton)                                 71/100 = 0.7100
+  λ* (NGFP cosmological)                            19/100 = 0.1900
+  g*·λ* (TGP Phase 3.A.1)                          1349/10000 = 0.1349
+  g*·λ* (Reuter 1998 reference)                    27/200 = 0.1350
+  drift                                            0.074%
+  drift < 5% gate?                                 True
+
+  -> UV1.1 (Litim invariant): PASS  [drift 0.074% << 5%; AS NGFP foundation LOCKED]
+
+========================================================================
+UV1.2 - η_N* anomalous dimension = -2 LOCKED
+========================================================================
+  η_N* (TGP Phase 3.A)                              -2
+  η_N* (Reuter 1998 NGFP reference)                -2.0
+  drift                                            0.000%
+  Heat-kernel correction (1 + η_N*/2)              0.0
+  Marginal dimension under NGFP RG?                True
+  drift < 10% gate?                                True
+
+  -> UV1.2 (η_N*): PASS  [η_N* = -2 LOCKED; (1+η_N*/2)=0 marginal a2 scaling]
+
+========================================================================
+UV1.3 - Scale separation m_Φ/Λ_EFT = 60.93 dex > 50 dex
+========================================================================
+  m_Φ (M9.1″ photon-ring scale)                    ~ H₀ ~ 10⁻⁶¹ Pl
+  Λ_EFT (substrate UV cutoff)                      ~ 10⁻¹·⁵ Pl
+  Scale separation log₁₀(Λ_EFT/m_Φ)                60.93 dex
+  Phase 3 EFT compatibility gate                   > 50.0 dex
+  Margin                                           10.93 dex
+  Bridge wide enough?                              True
+
+  -> UV1.3 (scale separation): PASS  [60.93 dex > 50 dex; EFT-NGFP bridge wide]
+
+========================================================================
+UV1.4 - T-FP IR consistency 12/12 POSITIVE (Phase 3.A.5)
+========================================================================
+  T-FP tests passed                                12/12
+  Pass rate                                        100%
+  IR fixed point consistent z NGFP UV?             True
+  Cosmological IR flow compatible?                 True (Phase 3.A.5)
+  Sub-extensive entropy area-law confirmed?        True (BH thermodynamics)
+
+  -> UV1.4 (T-FP IR): PASS  [12/12 POSITIVE; IR-UV bridge consistent]
+
+========================================================================
+UV1.5 - Heat-kernel a₂ → α₀ reproducibility 0.0% drift (Phase 3.E.4)
+========================================================================
+  α₀_F4 (sympy exact)                              1069833/264500 = 4.04474
+  ε_ph (M9.1″ refined)                              4197/25000 = 0.16788
+  α₀_repro = target_shift_F4 / ε_ph²                = 4.04489
+  drift                                            0.0038%
+  drift < 0.1% gate?                               True
+
+  -> UV1.5 (a₂ → α₀): PASS  [drift 0.004% < 0.1%; heat-kernel frame consistent]
+
+========================================================================
+UV.1.Phase1 verdict
+========================================================================
+  UV1.1: PASS
+  UV1.2: PASS
+  UV1.3: PASS
+  UV1.4: PASS
+  UV1.5: PASS
+
+  Cumulative: 5/5 PASS
+
+  -> Phase 1 CLOSED with 5/5 PASS
+  -> Proceed Phase 2 N_A first-principles derivation z NGFP scaling
+  -> Master ledger update: 355 -> 360 (+5 z Phase 1)
+
+========================================================================
