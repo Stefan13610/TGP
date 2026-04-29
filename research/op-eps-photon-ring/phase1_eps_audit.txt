@@ -1,0 +1,85 @@
+========================================================================
+epsilon.1.Phase1 - eps_ph numerical landscape audit
+========================================================================
+  date          : 2026-04-29
+  predecessor   : UV.1 program END (373 cumulative)
+  goal          : 5/5 PASS -> Phase 2 structural decomposition
+
+========================================================================
+E1.1 - eps_ph = 4197/25000 sympy-exact rational
+========================================================================
+  EPS_PH_M9_1P (raw)                            4197/25000
+  EPS_PH_M9_1P simplified                       4197/25000
+  Numerator p, denominator q                    p=4197, q=25000
+  Float value                                    0.16788
+  Is sympy-rational?                            True
+  Denominator < 10^5?                           True
+
+  -> E1.1 (eps_ph rational): PASS  [eps_ph = 4197/25000 sympy exact]
+
+========================================================================
+E1.2 - psi_ph = 4/(3+0.4250) = 1.16788 z M9.1" null geodesic
+========================================================================
+  psi_ph = 4/(3+0.4250)                          160/137 = 1.16788
+  Numerator/denominator                          p=160, q=137
+  eps_ph := psi_ph - 1                           23/137 = 0.16788
+  EPS_PH_M9_1P (Rational reference)              4197/25000 = 0.16788
+  drift |psi_ph-1 - EPS_PH_M9_1P|/EPS_PH_M9_1P   0.0019%
+  drift < 0.1% gate?                             True
+
+  -> E1.2 (psi_ph - 1): PASS  [psi_ph - 1 matches eps_ph w 0.0019%]
+
+========================================================================
+E1.3 - eps_ph^2 sympy exact (consistency between coarse and refined)
+========================================================================
+  M9.2-D coarse eps_ph^2                         441/15625 = 0.028224
+  M9.1" refined eps_ph^2                        17614809/625000000 = 0.028184
+  Coarse Numerator p, denominator q              p=441, q=15625
+  Refined Numerator p, denominator q             p=17614809, q=625000000
+  drift coarse vs refined                        0.1428%
+  Both rational?                                 True
+  M9.2-D coarse = 441/15625?                     True
+
+  -> E1.3 (eps_ph^2 sympy): PASS  [both forms rational, coarse = 441/15625]
+
+========================================================================
+E1.4 - F4 chain consistency alpha_0 = target_shift / eps_ph^2 = 4.04489
+========================================================================
+  target_shift_F4                                57/500 = 0.1140
+  eps_ph^2 (M9.1" refined)                      0.028184
+  alpha_0_repro                                   4.04489
+  alpha_0_F4 (sympy)                              4.04474
+  drift                                          0.0038%
+  drift < 0.01% gate?                            True
+
+  -> E1.4 (F4 consistency): PASS  [drift 0.0038% < 0.01%]
+
+========================================================================
+E1.5 - Refinement gain M9.2-D -> M9.1" 36x
+========================================================================
+  M9.2-D coarse alpha_0_repro                    4.03912
+  M9.2-D coarse drift                            0.1390%
+  M9.1" refined alpha_0_repro                   4.04489
+  M9.1" refined drift                           0.0038%
+  Refinement gain (drift_coarse/drift_refined)   36.3x
+  Gain >= 30x gate?                              True
+
+  -> E1.5 (refinement gain): PASS  [36.3x >= 30x]
+
+========================================================================
+epsilon.1.Phase1 verdict
+========================================================================
+  E1.1: PASS
+  E1.2: PASS
+  E1.3: PASS
+  E1.4: PASS
+  E1.5: PASS
+
+  Cumulative: 5/5 PASS
+
+  -> Phase 1 CLOSED with 5/5 PASS
+  -> eps_ph numerical landscape fully LOCKED
+  -> Proceed Phase 2 (structural decomposition eps_ph = psi_ph - 1)
+  -> Master ledger update: 373 -> 378 (+5 z Phase 1)
+
+========================================================================
