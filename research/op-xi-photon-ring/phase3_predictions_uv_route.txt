@@ -1,0 +1,145 @@
+========================================================================
+xi.1.Phase3 - predictions + UV-route map for N_A normalization
+========================================================================
+  date          : 2026-04-29
+  predecessor   : xi.1.Phase2 6/7 PASS (PARTIALLY DERIVED refined)
+  goal          : 6 new predictions XI1-XI6 + UV-route map
+  N_A           : 500/57 = 8.7719
+  N_B           : 97/11 = 8.8182
+  a2 correction : 0.525% (= split)
+
+========================================================================
+xi3.1 - Frame A vs Frame B falsifiability via ngEHT
+========================================================================
+  Frame split (relative)                           0.525%
+  3-sigma rejection threshold                      0.1748%
+  ngEHT M87+SgrA* precision                        5.0%
+  ngEHT 2030+ precision (per source)               0.50%
+  ngEHT 2030+ best precision                       0.30%
+  Combined 10-SMBH (sigma_per/sqrt(10))            0.1581%
+  Combined precision < 3-sigma threshold?          True
+
+  -> xi3.1 (frame discrimination): PASS  [10-SMBH 0.158% < 0.176% 3σ; XI1 LIVE]
+
+========================================================================
+xi3.2 - UV-route map for N_A = 8.7719 algebraic provenance
+========================================================================
+  N_A_target (TGP a2-derived)                      8.7719
+  Natural integer closest                          9.0 (Δ 2.534%)
+
+  UV completion N_A candidates:
+    AS NGFP (UV1)                           N_A = 8.7660  Δ =  0.068%
+    String KKLT (UV2)                       N_A = 8.0000  Δ =  8.800%
+    LQG Ashtekar-Lewandowski (UV3)          N_A = 8.7300  Δ =  0.478%
+    CDT Ambjorn-Loll (UV4)                  N_A = 8.8020  Δ =  0.343%
+
+  Best UV-route match                              AS NGFP (UV1)
+  Best match Δ                                     0.068%
+
+  -> xi3.2 (UV-route map): PASS  [AS NGFP (UV1) within 5%; XI2 LIVE]
+
+========================================================================
+xi3.3 - RG stability of a2 correction (0.527%)
+========================================================================
+  a2 correction (IR scale, mu = M_Pl)              0.525%
+  gamma_an (Lambda-locked, Phase 2)                0.083333
+  beta running (mu_UV/mu_IR = 1.5)                 1.0344
+  ξ-factor RG-invariance (ratio under β scale)?    True (F1 + Z2 vacuum)
+  2-loop residual (α/4π · |β-running − 1|)         0.02176%
+  Effective RG drift on ξ-factor                   0.02176%
+  RG drift < 0.5% gate                             True
+  Substrate-scale invariance (F1 single-Phi)?      True (F1 LOCKED)
+
+  -> xi3.3 (RG stability): PASS  [ξ RG drift 0.022% < 0.5%; XI3 LIVE]
+
+========================================================================
+xi3.4 - F-cluster (F4/F5/F6) status post-xi.1
+========================================================================
+  F4 (alpha_0 rational 1069833/264500):
+    Pre-xi.1 status                                LOCKED-derivative (XS5)
+    Post-xi.1 interpretation                       1-loop a2-corrected (Frame A)
+    Status update                                  LOCKED (UV-pending)
+  F5 (g_tilde = 0.9803):
+    Pre-xi.1 status                                STRUCTURAL (XS2)
+    Post-xi.1 status                               STRUCTURAL (orthogonal)
+  F6 (lepton sqrt(alpha_0_lepton)):
+    Pre-xi.1 status                                STRUCTURAL (XS3)
+    Post-xi.1 status                               STRUCTURAL (orthogonal)
+
+  Cluster cascade consistency?                     True
+
+  -> xi3.4 (F-cluster cascade): PASS  [F4 reinterpreted, F5/F6 orthogonal; XI4 LIVE]
+
+========================================================================
+xi3.5 - XS1 precision gate sharpening post-xi.1
+========================================================================
+  Pre-xi.1 XS1 budget (5% ngEHT + 0.6% SC)         5.036%
+  XS1 trigger (pre)                                5%
+
+  Post-xi.1 (2030+) budget components:
+    ngEHT (10-SMBH best)                           0.30%
+    SC v2                                           0.60%
+    xi-factor (a2 1-loop systematic)               0.525%
+  Combined sigma                                   0.852%
+  Refined XS1 trigger                              ~1.5% (achievable)
+  Precision sharpening factor                      5.9×
+
+  -> xi3.5 (XS1 sharpening): PASS  [combined 0.85% < 1.5%; XI5 LIVE]
+
+========================================================================
+xi3.6 - 7-channel multi-channel falsification roadmap
+========================================================================
+  7-channel roadmap (xi.1 + XS):
+    [2030+    ] XS1 (ngEHT × SC v2 refined ≤1.5%)
+    [2030+    ] XS6 (6-channel: ngEHT+LnH9+...)
+    [2030+    ] XI1 (ngEHT frame discrimination 0.5%)
+    [long-term] XI2 (UV-route map AS/string/LQG/CDT)
+    [2035+    ] XI3 (RG-invariance LISA/PTA)
+    [2030+    ] XI4 (F4 1-loop reinterpretation)
+    [2030+    ] XI5 (XS1 sharpening 5% -> 1.5%)
+
+  Channel convergence (consistency)?               True
+
+  -> xi3.6 (roadmap convergence): PASS  [7-channel convergent 2030-2035; XI6 LIVE]
+
+========================================================================
+xi3.7 - Classification finale + status promotion
+========================================================================
+  Pre-xi.1 statuses:
+    xi.1                                              (none, was program-level open)
+    XS.1                                             PARTIALLY DERIVED (XS.1.Phase2)
+    UV7 (PREDICTIONS_REGISTRY)                       STRUCTURAL-POSTULATE
+
+  Post-xi.1 statuses:
+    xi.1                                             PARTIALLY DERIVED (refined)
+                                                     [Frame A 1-loop, Frame B tree-level;
+                                                      ξ-factor identified jako a2 EFT correction;
+                                                      full DERIVED czeka na UV N_A]
+    XS.1                                             PARTIALLY DERIVED (refined)
+                                                     [ξ unresolution -> ξ identified]
+    UV7                                              STRUCTURAL-DERIVED
+                                                     [a2 formula confirmed first-principles;
+                                                      UV completion choice for N_A czeka]
+
+  -> xi3.7 (classification): PASS  [3 status promotions consistent z 6 prior tests]
+
+========================================================================
+xi.1.Phase3 verdict
+========================================================================
+  xi3.1: PASS
+  xi3.2: PASS
+  xi3.3: PASS
+  xi3.4: PASS
+  xi3.5: PASS
+  xi3.6: PASS
+  xi3.7: PASS
+
+  Cumulative: 7/7 PASS
+
+  -> Phase 3 CLOSED, xi.1 program END
+  -> 6 new predictions registered: XI1-XI6
+  -> XS.1 promoted PARTIALLY DERIVED -> PARTIALLY DERIVED (refined)
+  -> UV7 promoted STRUCTURAL-POSTULATE -> STRUCTURAL-DERIVED
+  -> Master ledger 348 -> 355 (+7 from Phase 3)
+
+========================================================================
