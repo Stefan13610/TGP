@@ -1,0 +1,86 @@
+========================================================================
+zeta.1.Phase1 - Sigma m_nu = 59.6 meV neutrino mass-spectrum robustness
+========================================================================
+  date          : 2026-04-29
+  predecessor   : epsilon.1 program END (391 cumulative)
+  K(nu)         : 1/2 = 0.50000
+  Sigma m_nu    : 59.6 meV target
+  goal          : 5/5 PASS -> proceed Phase 2 PMNS
+
+========================================================================
+Z1.1 - K(nu) = 1/2 (Majorana, B^2=1) LOCKED
+========================================================================
+  Koide formula: K = (2 + B^2) / (2N) for N=3 generations
+  Lepton (Dirac, B^2=2)       K_lep = 2/3 = 0.66667
+  Neutrino (Majorana, B^2=1)  K_nu  = 1/2 = 0.50000
+  K_lep matches PDG (2/3) to 1e-5 level: True
+  K_nu = 1/2 sympy exact rational
+  Chirality-counting framework: 2 Dirac, 1 Majorana
+
+  -> Z1.1 (K(nu)=1/2): PASS  [chirality-counting LOCKED]
+
+========================================================================
+Z1.2 - Delta m^2 observational inputs (NuFit 5.3)
+========================================================================
+  Delta m^2_21 (KamLAND+solar)                 7.530e-05 eV^2
+  |Delta m^2_31| (atmospheric+reactor+accel)   2.453e-03 eV^2
+  Hierarchy ratio Delta m^2_31 / Delta m^2_21  32.6
+  Both observational inputs (not derived from substrate)
+  NuFit 5.3 reference (publicly available global fit)
+
+  -> Z1.2 (Delta m^2 inputs): PASS  [NuFit 5.3 inputs sane]
+
+========================================================================
+Z1.3 - Sigma m_nu = 59.6 meV via K(nu) = 1/2 closure (NO ordering)
+========================================================================
+  m_1 (lightest, NO)                            0.76 meV
+  m_2 = sqrt(m1^2 + Delta m^2_21)                8.71 meV
+  m_3 = sqrt(m1^2 + |Delta m^2_31|)              49.53 meV
+  Sigma m_nu = m1 + m2 + m3                      59.01 meV
+  TGP target (59.6 meV)                          59.6 meV
+  Drift |Sigma - target|/target                  0.992%
+  K closure at m_1                                0.50000  (target 0.5)
+
+  -> Z1.3 (Sigma m_nu closure): PASS  [drift 0.992% < 5%]
+
+========================================================================
+Z1.4 - DESI DR2/DR3 bound vs TGP 59.6 meV
+========================================================================
+  TGP Sigma m_nu                                 59.01 meV = 0.0590 eV
+  DESI DR2 (current 95% CL)                      < 72 meV
+  DESI DR3 (projected 2027+ 95% CL)              < 40 meV
+  Margin DR2: (bound - TGP)/TGP                  +22.0%
+  Margin DR3: (bound - TGP)/TGP                  -32.2%
+  Within DR2 bound?                              True
+  Could be falsified by DR3?                     True
+
+  -> Z1.4 (DESI bounds): PASS  [TGP within DR2; DR3 falsifiable]
+
+========================================================================
+Z1.5 - Inverted ordering FORBIDDEN by K(nu) = 1/2
+========================================================================
+  IO Koide residual at m_3 = 1 ueV               -0.00222
+  IO Koide residual at m_3 = 1 eV                -0.16667
+  No sign change in residual -> NO IO root z K=1/2 closure
+  IO ordering structurally FORBIDDEN by K(nu) = 1/2
+
+  -> Z1.5 (IO forbidden): PASS  [IO incompatible z K(nu)=1/2 + cosmology]
+
+========================================================================
+zeta.1.Phase1 verdict
+========================================================================
+  Z1.1: PASS
+  Z1.2: PASS
+  Z1.3: PASS
+  Z1.4: PASS
+  Z1.5: PASS
+
+  Cumulative: 5/5 PASS
+
+  -> Phase 1 CLOSED with 5/5 PASS
+  -> Sigma m_nu = 59.01 meV LOCKED via K(nu)=1/2 + NuFit 5.3
+  -> Normal ordering EXCLUSIVE; IO FORBIDDEN
+  -> Proceed Phase 2 (PMNS first-principles, 7 sub-tests)
+  -> Master ledger update: 391 -> 396 (+5 z Phase 1)
+
+========================================================================
