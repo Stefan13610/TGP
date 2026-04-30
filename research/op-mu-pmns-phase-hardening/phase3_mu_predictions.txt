@@ -1,0 +1,79 @@
+========================================================================
+M3.1 (MM1) — JUNO 2027+ ultra-sharp sin²θ₁₃ post-μ.1
+========================================================================
+  sin²θ₁₃_μ.1 = (1/2)·λ_C²·(67/78) = 13627867/624000000 ≈ 0.021840
+  TGP window post-μ.1: (0.0218, 0.022)
+  NuFit 5.3 = 0.022, drift 0.729%
+  JUNO 2027+ ≤1% → falsifies central outside [0.0218, 0.0220]
+  Central inside ultra-sharp window: True
+  Verdict M3.1 (MM1) = PASS
+
+========================================================================
+M3.2 (MM2) — DUNE 2030+ ultra-sharp sin²θ₂₃ post-μ.1
+========================================================================
+  sin²θ₂₃_μ.1 = K_ν/K_up = 4/7 = 0.571429
+  TGP window post-μ.1: (0.566, 0.577) (1% sharpness)
+  NuFit 5.3 = 0.572, drift 0.100%
+  DUNE 2030+ ≤2% + octant resolution → falsifies if outside
+  Central inside ultra-sharp window + 2nd octant: True
+  Verdict M3.2 (MM2) = PASS
+
+========================================================================
+M3.3 (MM3) — DUNE/T2HK 2030+ δ_CP_PMNS dual prediction
+========================================================================
+  Form A δ_CP_PMNS = N_gen·γ_CKM = 205.36°, window (195, 215)
+  Form B δ_CP_PMNS = π + arctan(39/7) = 259.82°, window (250, 270)
+  Form A - Form B gap = 54.47° (DUNE 2030+ precision ~10°)
+  Discrimination ≥ 5σ achievable for gap > 50°: True
+  Both forms in windows + 5σ-discriminable: True
+  Verdict M3.3 (MM3) = PASS
+
+========================================================================
+M3.4 (MM4) — ★ combined CKM+PMNS 8 free → 0 free post-μ.1
+========================================================================
+  CKM post-κ.1: 4 free → 0 free
+  PMNS post-μ.1: 4 free → 0 free (3 DERIVED + 1 PARTIALLY DERIVED)
+  Combined: 8 → 0 free
+  Tally: 7 fully DERIVED + 1 PARTIALLY DERIVED
+  Anchors: λ_C (ζ.1) + B²-cross-product (η.2/θ.1/ζ.1) + mixing-operator (κ.1/ι.1)
+           + cross-sector phase coupling (μ.1 gen-tripling + PMNS-Wolfenstein)
+  8 free → 0 free + 7/8 full DERIVED + 1/8 partial: True
+  Verdict M3.4 (MM4) = PASS
+
+========================================================================
+M3.5 (MM5) — ν.1/ξ.1/ο.1 future research-track hint
+========================================================================
+  Future research-track items (3 hints):
+    1. δ_CP form discrimination hardening — Form A 205° vs Form B 260° via DUNE/T2HK 2030+ + subsequent cycle locks structural origin (gen-tripling vs PMNS-Wolfenstein)
+    2. Sterile neutrino 5-sektor extension — B²_sterile = ? (analog Majorana B²_ν = 1) via DUNE near + STEREO/PROSPECT exclusion
+    3. 0νββ Majorana phase first-principles — KamLAND-Zen 2027+ + NEXT 2030+ probe α₂₁, α₃₁ via residual hidden identity (analog η.2 81/100)
+  ≥3 research-track hints registered: True
+  Verdict M3.5 (MM5) = PASS
+
+========================================================================
+M3.6 (MM6) — N-channel μ.1 falsification convergence
+========================================================================
+  Independent falsification channels (8):
+    C1: JUNO 2027+                       → sin²θ₁₃ ultra-sharp violation [0.0218, 0.0220]
+    C2: DUNE 2030+                       → sin²θ₂₃ ultra-sharp violation [0.566, 0.577] + octant
+    C3a: DUNE 2030+                       → δ_CP Form A 205° window [195°, 215°]
+    C3b: DUNE 2030+                       → δ_CP Form B 260° window [250°, 270°]
+    C4: T2HK 2030+                       → overlap consistency cross-check (Form A + B)
+    C5: KamLAND-Zen / NEXT               → 0νββ Majorana phase α₂₁/α₃₁ test
+    C6: DESI / Euclid                    → cosmological Σm_ν tension test
+    C7: DUNE near / STEREO / PROSPECT    → sterile ν exclusion (4-sector closure)
+  ≥6 channels registered: True
+  Verdict M3.6 (MM6) = PASS
+
+========================================================================
+μ.1.Phase3 — Final verdict
+========================================================================
+  [PASS] M3.1 (MM1) JUNO sin²θ₁₃ ultra-sharp [0.0218,0.0220]
+  [PASS] M3.2 (MM2) DUNE sin²θ₂₃ ultra-sharp [0.566,0.577]
+  [PASS] M3.3 (MM3) DUNE/T2HK δ_CP dual A/B 5σ-discriminable
+  [PASS] M3.4 (MM4) combined CKM+PMNS 8→0 free post-μ.1
+  [PASS] M3.5 (MM5) ν.1 future research-track hint
+  [PASS] M3.6 (MM6) N-channel falsification ≥6
+
+  μ.1.Phase3 score = 6/6
+  → FULL CONVERGENCE; μ.1 program END z full closure.

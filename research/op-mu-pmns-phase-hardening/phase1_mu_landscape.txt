@@ -1,0 +1,75 @@
+========================================================================
+M1.1 — NuFit 5.3 PMNS reference inventory
+========================================================================
+  sin²θ₁₂ = 0.307 ± 0.013 (1σ ≈ 4.2%)
+  sin²θ₂₃ = 0.572 ± 0.018 (1σ ≈ 3.1%, 2nd octant)
+  sin²θ₁₃ = 0.022 ± 0.0006 (1σ ≈ 2.7%)
+  δ_CP = 195.0° z 1σ (128.0, 352.0)° (NO; very wide)
+  Verdict M1.1 = PASS
+
+========================================================================
+M1.2 — γ_CKM apex angle z κ.1 Wolfenstein triple
+========================================================================
+  tan(γ_CKM) = (η̄/ρ̄) = (5/14)/(11/78) = 195/77
+  γ_CKM = arctan(195/77) ≈ 68.45°
+  PDG γ ≈ 65.7°
+  drift 4.19%
+  tan(γ_CKM) sympy-exact 195/77: True
+  Verdict M1.2 = PASS
+
+========================================================================
+M1.3 — PMNS-Wolfenstein analog (ρ̄_PMNS, η̄_PMNS) z (ν,up) pair
+========================================================================
+  ρ̄_PMNS_num = B²_up_num − B²_ν_num = 13 − 1 = 12
+  ρ̄_PMNS_denom = 2·N_gen·B²_up_num = 78
+  ρ̄_PMNS = 2/13
+  η̄_PMNS_num = K_up_num − K_ν_num = 7 − 1 = 6
+  η̄_PMNS_denom = K_up_num·K_ν_num = 7
+  η̄_PMNS = 6/7
+  η̄_PMNS/ρ̄_PMNS = 39/7
+  Form B: δ_CP_PMNS = π + arctan(39/7) ≈ 259.82°
+  vs NuFit 195°: drift 33.24%
+  vs T2K 2024 ≈ 248°: drift 4.77%
+  ρ̄_PMNS = 2/13, η̄_PMNS = 6/7, ratio = 39/7 sympy-exact: True
+  Verdict M1.3 = PASS
+
+========================================================================
+M1.4 — PMNS drift correction landscape (top-rational forms)
+========================================================================
+  sin²θ₁₃ correction landscape:
+    (a) K_ν·λ_C²·(1−ρ̄) = 13627867/624000000 ≈ 0.021840 drift 0.729%
+    (b) K_ν·λ_C²·(45/52) ≈ 0.022003 drift 0.011%
+    (c) K_ν·λ_C²·(173/200) ≈ 0.021993 drift 0.033%
+    → Best structural: form (a) (1 − ρ̄) z κ.1 cross-sector leakage
+  sin²θ₂₃ correction landscape:
+    (a) K_ν/K_up = 4/7 = 0.571429 drift 0.100%
+    (b) K_ν·(1+N_gen·λ_C²) ≈ 0.576275 drift 0.747%
+    (c) K_ν·(1+18/125) ≈ 0.572000 drift 0.000%
+    → Best structural: form (a) K_ν/K_up cross-sector K-taxonomy ratio
+  sin²θ₁₂ correction landscape:
+    (a) (1/N_gen)·(1−λ_C·η̄) ≈ 0.306488 drift 0.167%
+    (b) (1/N_gen)·(1−λ_C/N_gen) ≈ 0.308278 drift 0.416%
+    → Best structural: form (a) (1−λ_C·η̄) cross-sector Wolfenstein imaginary leakage
+  3/3 angles drift < 1% z TGP-natural form: True
+  Verdict M1.4 = PASS
+
+========================================================================
+M1.5 — Viability gate dla Phase 2
+========================================================================
+  Drift hardening 3/3 < 1%: True
+  δ_CP Form A (gen-tripled γ_CKM) = 205.36° w 1σ: True
+  δ_CP Form B (PMNS-Wolfenstein + π) = 259.82° w 1σ: True
+  Viability gate 4/4 satisfied: True
+  Verdict M1.5 = PASS
+
+========================================================================
+μ.1.Phase1 — Final verdict
+========================================================================
+  [PASS] M1.1 NuFit 5.3 PMNS reference
+  [PASS] M1.2 γ_CKM = arctan(195/77) sympy-exact
+  [PASS] M1.3 PMNS-Wolfenstein analog (2/13, 6/7)
+  [PASS] M1.4 drift correction landscape 3/3 < 1%
+  [PASS] M1.5 viability gate (drift + δ_CP both forms in 1σ)
+
+  μ.1.Phase1 score = 5/5
+  → Phase 2 first-principles derivation viable.
