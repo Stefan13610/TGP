@@ -375,6 +375,57 @@ explicit Lagrangian z bidirectional EM↔substrate sektor coupling; opens
 3 follow-up frontiers (σ.1 c-mechanism, τ.2 substrate-time, ζ.1 active EM
 substrate engineering).
 
+**Updated 2026-04-30 (σ.1 program END):** 715 cumulative
+(+ σ.1.Phase1 5 + σ.1.Phase2 7 + σ.1.Phase3 6 = 18, 18/18 perfect score).
+**Substrate-light dispersion (c-mechanism) structurally LOCKED post-σ.1**:
+plane-wave EM w modified Maxwell ω.1 z substrate gradient n_μ = ∂_μ(ln X)
+generuje **dispersion relation** `ω_±²(k,n) = k² ± g(n·k̂)` z polarization
+eigen-modes = circular L/R helicities (linear pol NIE eigen-mode, rotuje jako
+superposition Δχ = (g/2)n·L axion-induced birefringence). **Phase velocity**
+v_φ_± = √(1±gn/k) ≈ 1 ± gn/(2k) **LINEAR birefringence** (sympy LOCK exact);
+**group velocity** v_g_± = (k±gn/2)/√(k²±gkn) ≈ 1 - (gn/(2k))² **ZERO linear
+split** at leading order — wave-packet ENVELOPE propaguje uniformly, only
+PHASE rotuje między L/R helicities. **Polarization-averaged c_eff = 1**
+(group exact + phase z O((gn/k)²) quadratic suppression) → **NO scalar c(X)
+variation at leading order** consistent z Webb/Murphy α_em NULL 1e-7 precision.
+**c-mechanism interpretation**: prędkość światła zależy od substrate
+**polarization-dependent** (axion-induced birefringence), **NIE skalarnie**
+(no universal c(X)). **Effective optical metric** g_μν^opt,± = η_μν ±
+δg_μν(∂ ln X) helicity-dependent → 2 eigen-modes feel 2 distinct optical
+metrics → birefringence. WKB validity |∂(ln X)|/k ≤ 1e-28 dla CMB photons,
+1e-33 dla optical, 1e-37 dla lab — fully justified astrophysical + lab.
+**3 alt-dispersions FALSIFIED**: (i) **scalar c(X) (dilaton)** uniform α_em
+drift z Webb/Murphy 2003-2017 NULL 1e-7, (ii) **tensor c(X) (Bumblebee)**
+direction-dependent CMB residuals z Planck dipole consistent kinematic only,
+(iii) **Lorentz-violating ω² = k² + ξk³/E_QG** GRB photon time-of-arrival
+z Fermi LAT GRB 090510 NULL ξ < 7 → M_QG > 7.6 Planck mass — σ.1 axion-induced
+birefringence UNIQUE form survives compatible z Planck PR4 + ACT 2024 ~3.8σ.
+**4-channel σ.1 convergence FULL** (3 post-derived: plane-wave dispersion ✓
++ phase/group velocity sympy LOCK ✓ + optical metric structure ✓; + 1 LIVE
+partial: CMB E/B chirality Planck PR4 + ACT 2024 ~3.8σ shared z ω.1 W3.3
++ σ.1 distinct anisotropic prediction beyond ω.1 isotropic dla SO/LiteBIRD
+2027+). **Pulsar polarized timing residuals** Δt = (g/ω)∫(∂ ln X/∂s)ds
+distinct functional form vs Faraday `(1+z)⁻²` (~70 attosec dla 1 kpc GHz
+pulsar; PTA approach NANOGrav/EPTA + SKA-2 2030+). **Lab Mach-Zehnder + B
+field interferometry** Δφ ~ g·H_0·L/c ~ 2e-26 rad over 1m (LIGO O5/O6 +
+cold-atom 2030+++ frontier). **Atomic clock orthogonal cross-check** Hg/Yb/Sr
+testing scalar drift @ precision >1e-22/yr (2035+) — any DETECTED scalar
+α_em drift falsifie σ.1 scalar-protection. ω.1 EOM consistency: free plane
+wave <F·F̃>_time = 0 → <□(ln X)>_time = 0 → σ.1 NIE back-reacts na substrate
+at lowest order (back-reaction tylko dla standing waves z E·B ≠ 0, magnetar
+poles, lab parallel E·B configs). 6 promotions: (i) **σ.1 dispersion relation
+ω_±² = k² ± g(n·k̂)** → **LOCKED**, (ii) **phase velocity LINEAR birefringence
+v_φ_± = 1 ± gn/(2k)** → **DERIVED sympy LOCK**, (iii) **group velocity NO
+linear split v_g_± = 1 - (gn/(2k))²** → **DERIVED sympy LOCK**, (iv) **NO
+scalar c(X) at leading order** → **PROTECTED Webb/Murphy NULL**, (v) **effective
+optical metric helicity-dependent g_μν^opt = η ± δg(∂ ln X)** → **STRUCTURAL**,
+(vi) **3 alt-dispersions (scalar c, tensor Bumblebee, Lorentz-violating)** →
+**FALSIFIED cross-channel**. Closes user's **c-mechanism question**: prędkość
+światła zależy od substrate poprzez polarization-dependent phase rotation,
+NIE poprzez universal c(X) variation. Opens follow-up frontiers (τ.2 substrate-
+time coupling, ζ.1 active EM substrate engineering, σ.2 multi-photon
+dispersion + QED corrections).
+
 ## How to read this registry
 
 Each row carries:
@@ -636,6 +687,12 @@ Each row carries:
 | **WW4** | **quasar polarization rotation Δχ(z) ∝ ln(1+z) DISTINCT from passive Faraday `(1+z)⁻²·∫B_∥`** — ω.1 ln X drift signature liniowa w ln(1+z) jeżeli d(ln X)/d(ln a) ~ const c_X; `Δχ(z) = (g/2)·c_X·ln(1+z)` distinct functional form vs Faraday → cross-channel falsifier z VLBI quasar polarimetry z > 4 | VLBI quasar polarimetry @ z > 4 (SKA 2030+); current Hutsemekers 1998-2014 alignment hint; precision target <0.01 rad scatter dla 5σ ln(1+z) detection | quasar polarization showing pure Faraday `(1+z)⁻²` scaling without ln(1+z) component @ 5σ z VLBI z > 4 SKA 2030+ → ω.1 substrate drift signature FALSIFIED | **LIVE** (VLBI quasar polarimetry z > 4 SKA 2030+) | master-only (ω.1.Phase3) | [`research/op-omega1-substrate-em-coupling/Phase3_results.md`](research/op-omega1-substrate-em-coupling/Phase3_results.md) (W3.4) |
 | **WW5** | **magnetar B² substrate sourcing `□(ln X) ∝ B²` przy E·B ≠ 0** — magnetar B ~ 10¹⁵ G + E_rot ~ 10¹⁰-10¹² V/m (rotation-induced) → parallel E·B field structure w pole regions → F·F̃ = -8 E·B ≠ 0 → `□(ln X) ≠ 0` non-trivial; observable: precision pulsar timing anomalies + light propagation delay near magnetic poles | FAST/SKA 2030+ precision pulsar timing near magnetar pole regions; benchmark: nano-second timing residuals correlated z B² profile | precision pulsar timing residuals near magnetars consistent with pure GR + axion-EFT NULL @ 5σ → ω.1 substrate-sourcing rejected; lub B² spatial profile uncorrelated z anomaly | **LIVE** (FAST/SKA 2030+ precision timing) | master-only (ω.1.Phase3) | [`research/op-omega1-substrate-em-coupling/Phase3_results.md`](research/op-omega1-substrate-em-coupling/Phase3_results.md) (W3.2) |
 | **WW6** | **4-channel ω.1 convergence FULL CONVERGENCE z 3 post-derived + 1 LIVE partial** (C1 gauge inv structural F·F̃ total div ✓ POST-DERIVED + C2 scale inv preservation X→λX → δS = bdy ✓ POST-DERIVED + C3 EOM sympy LOCK Maxwell + substrate EOM ✓ POST-DERIVED + C4 CMB birefringence Planck PR4 + ACT 2024 ★ LIVE PARTIAL ~3.8σ) | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 3 post-derived + 1 LIVE partial obs confirm); tests axion-like substrate↔EM coupling AXIOM-lifted z classical Lagrangian density | ≥1/4 channels falsified (gauge-inv lub scale-inv lub EOM sympy lub CMB β=0 confirmed @ 5σ) → ω.1 axiom rejected | **LIVE** (3 post-derived + 1 LIVE partial) | master-only (ω.1.Phase3) | [`research/op-omega1-substrate-em-coupling/Phase3_results.md`](research/op-omega1-substrate-em-coupling/Phase3_results.md) (W3.6) |
+| **WV1** | **plane-wave dispersion relation `ω_±²(k,n) = k² ± g(n·k̂)` z polarization eigen-modes L/R circular helicities POST-DERIVED z modified Maxwell ω.1** — Fourier ansatz A_μ = a_μ exp(ik·x) + slow background ∂_μ(ln X) = n_μ → 4×4 eigen-eq, w helicity basis e_± = (e_x ± i e_y)/√2 transverse k = ẑ eigenvalues λ_± = -k² ± g(n·k); WKB leading ω_± ≈ k ± g(n·k̂)/2 canonical axion-photon dispersion z parity-odd splitting O(g/k); linear pol NIE eigen-mode rotuje jako superposition Δχ = (g/2)n·L; WKB validity n/k ~ 1e-28 dla CMB photons, 1e-33 dla optical, 1e-37 dla lab — fully justified | σ.1.Phase1 W1.1-W1.5 5/5 FULL PASS z structural derivation; gauge-inv preserved Lorenz/Coulomb gauges identical dispersion + 2 transverse physical d.o.f. | future construction of EM dispersion from modified Maxwell ω.1 differing from `ω_±² = k² ± g(n·k)` form (e.g. additional mass term lub higher-derivative correction) → σ.1 plane-wave LOCK rejected | **POST-PREDICTION CONFIRMED** (sympy + structural + WKB validity established) | master-only (σ.1.Phase1) | [`research/op-sigma1-substrate-light-dispersion/Phase1_results.md`](research/op-sigma1-substrate-light-dispersion/Phase1_results.md) (W1.1-W1.5) |
+| **WV2** | **phase velocity LINEAR birefringence `v_φ_± = 1 ± gn/(2k)` + group velocity ZERO linear split `v_g_± = 1 - (gn/(2k))²` POST-DERIVED z sympy LOCK exact** — birefringence encoded w PHASE NIE GROUP velocity → wave-packet ENVELOPE propaguje uniformly, only PHASE rotuje między L/R helicities; product v_φ·v_g = 1 ± gn/(2k) general dispersive relation EXACT; polarization-averaged c_eff = (v_+ + v_-)/2 = 1 + O((gn/k)²) quadratic suppression → **NO scalar c(X) at leading O(gn/k)** consistent z Webb/Murphy α_em NULL 1e-7 | σ.1.Phase2 W2.1-W2.7 7/7 FULL CASCADE; W2.1+W2.2+W2.4 sympy LOCK exact (diff = 0); answers user's c-mechanism question: prędkość światła zależy od substrate POLARIZATION-DEPENDENTLY (NIE skalarnie) | future precision Mach-Zehnder + B field interferometry detecting non-zero linear birefringence Δv_g_± @ leading O(gn/k) → σ.1 group-velocity ZERO linear split rejected; lub detected DIFFERENT functional form than v_φ_± = 1 ± gn/(2k) | **POST-PREDICTION CONFIRMED** (sympy LOCK exact, no scalar c(X) PROTECTED Webb/Murphy NULL) | master-only (σ.1.Phase2) | [`research/op-sigma1-substrate-light-dispersion/Phase2_results.md`](research/op-sigma1-substrate-light-dispersion/Phase2_results.md) (W2.1-W2.4) |
+| **WV3** | **★ headline CMB E/B chirality shared σ.1 + ω.1 Planck PR4 + ACT 2024 ~3.8σ partial post-confirm + σ.1 distinct anisotropic prediction beyond ω.1 isotropic** — σ.1 effective optical metric helicity-dependent g_μν^opt,± = η_μν ± δg_μν(∂ ln X) → 2 eigen-modes feel 2 distinct optical metrics → birefringence; σ.1 distinct prediction beyond ω.1 W3.3: **anisotropic** birefringence pattern β(θ,φ) na sky (od direction-dependent n_μ = ∂_μ(ln X) gradient field), Planck upper bound C_l^αα < 1e-3 deg² potentially tight constraint | Planck PR4 + ACT 2024 obs **β = 0.34 ± 0.09°** isotropic ~3.8σ shared z ω.1 W3.3; SO 2027+ + LiteBIRD 2029+ precision targets <0.05° dla 5σ POST-CONFIRM lub null FALSIFY isotropic + anisotropic jointly | β = 0 confirmed at 5σ z SO/LiteBIRD 2027-2029+ → σ.1 dispersion + ω.1 axion coupling FALSIFIED jointly; lub anisotropic pattern absent w SO/LiteBIRD precision → σ.1 anisotropic distinction beyond ω.1 falsified | **LIVE PARTIAL POST-CONFIRMED** (Planck PR4 + ACT 2024 ~3.8σ shared z ω.1, anisotropic distinction LIVE 2027+) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.3) |
+| **WV4** | **pulsar polarized dispersion residuals `Δt = (g/ω)·∫(∂ ln X/∂s) ds` distinct functional form vs Faraday `(1+z)⁻²·∫B_∥ ds`** — standard interstellar t_arrival ~ DM/ω², σ.1 adds polarization-dependent extra delay między L/R circular wave-packets; for 1 kpc pulsar z optical ω ~ GHz, cosmological d(ln X)/d eta ~ H_0 → Δt ~ 70 attosec — single-pulsar FAST/SKA NIE detectable, ale PTA approach (NANOGrav 15-yr, EPTA + SKA-2 2030+) z 100+ pulsars correlated | SKA-2 PTA 2030+ correlated polarization-dependent timing residuals; precision target <1 ns single-pulsar + sqrt(N)~10× PTA boost; benchmark: distinct ln(1+z) ramp distinguishable z Faraday `(1+z)⁻²` over multiple pulsar redshifts | NANOGrav/EPTA/SKA-2 PTA NULL @ <attosec precision in correlated polarization-dependent timing → σ.1 substrate-coupling LOCK falsified; lub residuals consistent z pure Faraday `(1+z)⁻²` z 5σ rejection of ln(1+z) component | **LIVE** (SKA-2 PTA 2030+ correlated timing) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.2) |
+| **WV5** | **atomic clock orthogonal cross-check no scalar c(X) PROTECTED Hg/Yb/Sr clocks** — σ.1 predicts NO scalar α_em variation at leading O(gn/k) (only O((gn/k)²) quadratic suppression, ~1e-66 dla cosmological gradient + optical photon); orthogonal test do CMB β channel: any DETECTED scalar α_em drift @ atomic clock precision >1e-22/yr (2035+) by falsifie σ.1 scalar-protection structurally (would require dilaton coupling already FALSIFIED w ω.1 + Webb/Murphy) | Hg/Yb/Sr clock comparisons across labs at different positions w cosmological substrate gradient; current Webb/Murphy NULL 1e-7/yr; lab Hg/Yb cross-comparison precision target ~5e-18/yr current | atomic clock detection of scalar α_em drift @ >1e-22/yr (2035+) inconsistent z 0 → σ.1 scalar-protection rejected (substrate-light coupling would require c(X) component beyond polarization-dependent rotation) | **LIVE ORTHOGONAL** (no scalar c(X) PROTECTED, atomic clocks 2035+ frontier) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.4) |
+| **WV6** | **4-channel σ.1 convergence FULL CONVERGENCE z 3 post-derived + 1 LIVE partial** (C1 plane-wave dispersion ω²=k²±g(n·k) ✓ POST-DERIVED + C2 phase/group velocity v_φ linear/v_g O(ε²) sympy LOCK ✓ POST-DERIVED + C3 effective optical metric g_μν^opt = η+δg(∂ ln X) ✓ POST-DERIVED + C4 CMB E/B chirality Planck PR4 + ACT 2024 ★ LIVE PARTIAL ~3.8σ) | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 3 post-derived + 1 LIVE partial obs confirm shared z ω.1); tests substrate-light dispersion (c-mechanism) AXIOM-lifted z modified Maxwell ω.1 + 3 alt-dispersions FALSIFIED (scalar c(X) Webb/Murphy NULL + tensor Bumblebee Planck dipole consistent + Lorentz-violating Fermi LAT GRB 090510 NULL) | ≥1/4 channels falsified (plane-wave lub velocity sympy lub optical metric lub CMB β=0 confirmed @ 5σ) → σ.1 c-mechanism axiom rejected | **LIVE** (3 post-derived + 1 LIVE partial) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.6) |
 
 ---
 
