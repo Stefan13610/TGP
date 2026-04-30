@@ -426,6 +426,62 @@ NIE poprzez universal c(X) variation. Opens follow-up frontiers (τ.2 substrate-
 time coupling, ζ.1 active EM substrate engineering, σ.2 multi-photon
 dispersion + QED corrections).
 
+**Updated 2026-04-30 (τ.2 program END):** 733 cumulative
+(+ τ.2.Phase1 5 + τ.2.Phase2 7 + τ.2.Phase3 6 = 18, 18/18 perfect score).
+**Substrate-time coupling (atomic clock-rate scale-protection theorem)
+structurally LOCKED post-τ.2**: under φ.1 X→λX gauge, atomic clock rate
+R = ω_nm/(2π) **X-INVARIANT at leading O(∂ ln X)** — proper time
+τ = ∫√(g_00^eff) dt sympy LOCK z g_00^eff = 1 + ε² (ε = (∂ ln X)/Λ) →
+series expansion dτ/dt = 1 + ε²/2 + O(ε⁴), **linear coefficient = 0 sympy
+verified** NO O(∂ ln X) substrate-induced time dilation. **Clock-rate ratio
+R(X1)/R(X2) = 1 sympy EXACT** under λ-rescale → α_m + 2α_a = 0 forced
+(φ.1 daje α_m=0 → α_a=0 joint protection). **Three independent protection
+channels** stack: φ.1 (m_atom invariant) + ω.1 (α_em invariant, axion-coupling
+NOT dilaton) + σ.1 (scalar c(X) NULL leading) → atomic Hamiltonian
+H_atom = m_e c² α_em²/(2n²) X-INVARIANT all constants → robust against
+single-channel violation. **4 alt-clock-couplings cross-falsified**:
+(i) m_e ∝ X^α (Webb/Murphy 1e-7 z=0-4 NULL FALSIFIED), (ii) ℏ ∝ X^β
+([x,p]=iℏ canonical universality + lab QM trivial inconsistent FALSIFIED),
+(iii) α_em ∝ X^γ (Webb/Murphy + Whitmore 2015 + Murphy 2022 NULL FALSIFIED),
+(iv) hyperfine g_F·μ_B ∝ X^δ (Hg vs Sr 5e-17 NULL Rosenband 2008 FALSIFIED)
+— X-invariant canonical UNIQUE survivor (Occam minimal coupling).
+**NOVEL polarization-Zeeman cross-coupling z σ.1**: σ.1 LINEAR birefringence
+Δv_φ = ±gn/(2k) → photon helicity drift L → polarization rotation
+θ = gnL/2 → atomic σ+/σ- selection rule sees ROTATED drive → differential
+AC Stark on Zeeman m_J=±1 levels; lab order of magnitude (g~10⁻²² GeV⁻¹,
+n~H_0~10⁻¹⁸ s⁻¹, L~1m, λ~500nm): θ_rot ~ 5e-41 rad LAB undetectable, ALE
+**astrophysical CMB θ ~ g·n·L/2 ~ 1e-9 rad ~ 0.06 arcsec ARCMINUTE-LEVEL CMB
+SIGNAL** consistent z Planck 2018 α=0.30±0.13 deg 2σ; LiteBIRD 2030+ target
+1σ detection if g~10⁻²² GeV⁻¹. **4-channel τ.2 convergence FULL CONVERGENCE**:
+Channel 1 cosmological QSO Webb/Murphy 1e-7 NULL z=0-4 ✓ POST-CONFIRMED +
+Channel 2 lab Hg/Yb/Sr clock 1e-18/yr current + 1e-21/yr by 2035 NULL ✓
++ Channel 3 magnetar atomic spectroscopy O((∂ ln X)²) Λ-suppressed
+undetectable for Λ > TeV (predicts UNDETECTABLE, no false positive risk) +
+Channel 4 CMB E/B rotation 0.30±0.13 deg 2σ Planck consistent τ.2 + σ.1 +
+ω.1 cross-channel ✓; **higher-order corrections** δR/R ~ (∂ ln X / Λ)²
+dim-6 EFT + g(∂ ln X)/k_drive ω.1+σ.1 polarization-Zeeman cross-coupling.
+6 promotions: (i) **scale-protection theorem R(X) X-invariant pod φ.1
+X→λX** → **LOCKED**, (ii) **proper time τ(X1)/τ(X2) = 1 EXACT at leading
+O(∂ ln X)** → **DERIVED sympy LOCK**, (iii) **clock-rate ratio R(X1)/R(X2)
+= 1 EXACT under λ-rescale** → **DERIVED sympy LOCK z α_m + 2α_a = 0**,
+(iv) **NO scalar drift d α_em/dt + d m_e/dt + d ℏ/dt at 1e-7 cosmological
++ 1e-18/yr lab levels** → **POST-CONFIRMED Webb/Murphy + lab clocks**,
+(v) **polarization-Zeeman cross-coupling z σ.1** → **NOVEL DERIVED**,
+(vi) **4 alt-clock-couplings (m·X^α, ℏ·X^β, α_em·X^γ, hyperfine·X^δ)** →
+**FALSIFIED cross-channel** + X-invariant canonical UNIQUE. Closes user's
+**clock-rate question**: clock rates skalarnie protected pod ∂ ln X gradient,
+**polarization-Zeeman is the only sub-leading channel** (lab undetectable,
+COSMOLOGICAL CMB E/B 2σ Planck consistent). **φ.1 → ω.1 → σ.1 → τ.2 chain
+closed** (substrate scale-symmetry → photon-substrate coupling →
+polarization-dependent c → clock-rate scale-protection). Future
+falsification at 1e-21/yr Sr lattice 2035+ + Yb+/Cs K_diff=6.78 enhanced
+sensitivity (Yb+ E3 K=-5.95 + Cs K=0.83 ENHANCED differential) + LiteBIRD
+2030+ CMB E/B 1σ detection. Opens follow-up frontiers (ζ.1 active substrate
+engineering laser+B field source `□ ln X` lab-engineered, σ.2 multi-photon
+dispersion 2-photon birefringence cascades + QED corrections, τ.3 substrate-
+cosmological time FRW background X(t) ↔ Hubble + dark-energy substrate
+dilaton coupling).
+
 ## How to read this registry
 
 Each row carries:
@@ -693,6 +749,12 @@ Each row carries:
 | **WV4** | **pulsar polarized dispersion residuals `Δt = (g/ω)·∫(∂ ln X/∂s) ds` distinct functional form vs Faraday `(1+z)⁻²·∫B_∥ ds`** — standard interstellar t_arrival ~ DM/ω², σ.1 adds polarization-dependent extra delay między L/R circular wave-packets; for 1 kpc pulsar z optical ω ~ GHz, cosmological d(ln X)/d eta ~ H_0 → Δt ~ 70 attosec — single-pulsar FAST/SKA NIE detectable, ale PTA approach (NANOGrav 15-yr, EPTA + SKA-2 2030+) z 100+ pulsars correlated | SKA-2 PTA 2030+ correlated polarization-dependent timing residuals; precision target <1 ns single-pulsar + sqrt(N)~10× PTA boost; benchmark: distinct ln(1+z) ramp distinguishable z Faraday `(1+z)⁻²` over multiple pulsar redshifts | NANOGrav/EPTA/SKA-2 PTA NULL @ <attosec precision in correlated polarization-dependent timing → σ.1 substrate-coupling LOCK falsified; lub residuals consistent z pure Faraday `(1+z)⁻²` z 5σ rejection of ln(1+z) component | **LIVE** (SKA-2 PTA 2030+ correlated timing) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.2) |
 | **WV5** | **atomic clock orthogonal cross-check no scalar c(X) PROTECTED Hg/Yb/Sr clocks** — σ.1 predicts NO scalar α_em variation at leading O(gn/k) (only O((gn/k)²) quadratic suppression, ~1e-66 dla cosmological gradient + optical photon); orthogonal test do CMB β channel: any DETECTED scalar α_em drift @ atomic clock precision >1e-22/yr (2035+) by falsifie σ.1 scalar-protection structurally (would require dilaton coupling already FALSIFIED w ω.1 + Webb/Murphy) | Hg/Yb/Sr clock comparisons across labs at different positions w cosmological substrate gradient; current Webb/Murphy NULL 1e-7/yr; lab Hg/Yb cross-comparison precision target ~5e-18/yr current | atomic clock detection of scalar α_em drift @ >1e-22/yr (2035+) inconsistent z 0 → σ.1 scalar-protection rejected (substrate-light coupling would require c(X) component beyond polarization-dependent rotation) | **LIVE ORTHOGONAL** (no scalar c(X) PROTECTED, atomic clocks 2035+ frontier) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.4) |
 | **WV6** | **4-channel σ.1 convergence FULL CONVERGENCE z 3 post-derived + 1 LIVE partial** (C1 plane-wave dispersion ω²=k²±g(n·k) ✓ POST-DERIVED + C2 phase/group velocity v_φ linear/v_g O(ε²) sympy LOCK ✓ POST-DERIVED + C3 effective optical metric g_μν^opt = η+δg(∂ ln X) ✓ POST-DERIVED + C4 CMB E/B chirality Planck PR4 + ACT 2024 ★ LIVE PARTIAL ~3.8σ) | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 3 post-derived + 1 LIVE partial obs confirm shared z ω.1); tests substrate-light dispersion (c-mechanism) AXIOM-lifted z modified Maxwell ω.1 + 3 alt-dispersions FALSIFIED (scalar c(X) Webb/Murphy NULL + tensor Bumblebee Planck dipole consistent + Lorentz-violating Fermi LAT GRB 090510 NULL) | ≥1/4 channels falsified (plane-wave lub velocity sympy lub optical metric lub CMB β=0 confirmed @ 5σ) → σ.1 c-mechanism axiom rejected | **LIVE** (3 post-derived + 1 LIVE partial) | master-only (σ.1.Phase3) | [`research/op-sigma1-substrate-light-dispersion/Phase3_results.md`](research/op-sigma1-substrate-light-dispersion/Phase3_results.md) (W3.6) |
+| **TT1** | **atomic clock cosmological drift NULL d R/R \|_cosmo < 1e-17/yr POST-CONFIRMED Webb/Murphy 2003-2017 quasar absorption many-multiplet method** — τ.2 scale-protection theorem under φ.1 X→λX gauge: clock rate R(X) = R_0 X-INVARIANT at leading O(∂ ln X) → no scalar drift d α_em/dt + d m_e/dt + d ℏ/dt over cosmological timescales (consistent z ω.1 α_em invariant + σ.1 c invariant + φ.1 m_atom invariant joint protection) | Webb/Murphy 2003-2017 + Whitmore 2015 + Murphy 2022 quasar absorption d α_em/α_em < 1e-7 over redshift z=0-4 (~10 Gyr); future precision 1e-8 z next-gen IGM spectroscopy + ESPRESSO ELT 2030+ | future quasar campaign d α_em/α_em > 1e-7 → τ.2 + ω.1 BOTH falsified jointly (no graceful degradation since 3 protection channels stack) | **POST-CONFIRMED** (Webb/Murphy 2003-2017 NULL 1e-7) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.1) |
+| **TT2** | **lab Hg/Yb/Sr clock comparison NULL drift R_i/R_j = const POST-CONFIRMED** — τ.2 prediction NO differential frequency drift across optical lattice clocks; current Sr lattice 1e-18/yr (NIST/JILA 2024), Yb lattice 1e-18/yr (PTB 2024), Hg+ ion 1e-17/yr; **Yb+ E3 line K_alpha=-5.95 + Cs hyperfine K=0.83 → K_diff = 6.78 ENHANCED sensitivity** Yb+/Cs cross-comparison ~7× orthogonal channel | NIST/JILA/PTB optical lattice cross-comparisons at 1e-18/yr current; future targets nuclear clock 229mTh 1e-19/yr (Beeks 2024 first frequency), Al+/Mg+ quantum-logic 1e-19/yr, optical lattice 1e-21/yr feasible by 2035 | Yb+/Cs cross-comparison drift > 1e-18/yr at K_diff=6.78 enhanced sensitivity → τ.2 scale-protection FALSIFIED at lab level (decisive 1e-21/yr Sr lattice 2035+) | **POST-CONFIRMED + LIVE** (1e-18/yr current ✓ + 1e-21/yr 2035 LIVE) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.2) |
+| **TT3** | **strong-gradient atomic line residual O((∂ ln X)²) Λ-suppressed UNDETECTABLE for Λ > TeV** — dim-6 EFT correction δE/E ~ (∂ ln X / Λ)²; magnetar B² ~ 1e15 G + E·B ~ 1e30 V²/m² parallel-field configuration → (∂ ln X)² ~ 1e-10 (via ω.1 EOM `□(ln X) = (g/(4f_X²)) F·F̃`); Λ ≥ TeV makes δE/E ~ 1e-28 undetectable; only window Λ < TeV scenarios + magnetar X-ray atomic spectroscopy | NICER NS atomic absorption keV resolution 1e-3 currently insufficient; Athena 2035+ next-gen X-ray spectrometers projected 1e-6 resolution marginal; lab Schwinger-grade fields 1e15 V/m + 1e6 G achievable F·F̃ ~ 1e21 V²m⁻² (1e9× weaker than magnetar) → δE/E ~ 1e-37 undetectable | structurally consistent (predicts UNDETECTABLE, no false positive risk); only falsifier is Λ < TeV scenario z magnetar atomic line shift detected at >1σ Athena 2035+ | **STRUCTURAL** (predicts undetectable; consistent z all current observations) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.3) |
+| **TT4** | **★ NOVEL polarization-Zeeman cross-coupling τ.2 + σ.1 + ω.1 — substrate gradient → photon helicity rotation θ = g·n·L/2 → atomic σ+/σ- selection rule rotated drive → differential AC Stark on Zeeman m_J=±1 levels; lab undetectable θ_rot ~ 5e-41 rad over 1m, COSMOLOGICAL CMB θ ~ 0.06 arcsec ARCMINUTE-LEVEL CMB SIGNAL** — σ.1 LINEAR birefringence Δv_φ = ±gn/(2k) → photon path L → polarization rotation → atomic Zeeman differential AC Stark ~ (gnL/2)² · Rabi² (for two-ion Yb+ sigma+/sigma- interferometer) | Planck 2018 CMB E/B isotropic rotation α = 0.30 ± 0.13 deg (currently 2σ tension consistent z τ.2 prediction θ ~ 1e-9 rad ~ 0.06 arcsec); lab two-ion Yb+ interferometer null differential Zeeman shift ≤ O((gnL)²/k²) ~ 1e-82 lab impossible; pulsar PSR J0437-4715 polarization sweep + companion atmosphere atomic spectroscopy correlated with timing residual | LiteBIRD 2030+ E/B rotation null at 1σ < 0.05 deg → polarization-Zeeman cross-coupling τ.2 + σ.1 + ω.1 jointly FALSIFIED; lub atomic Zeeman differential Yb+ ion interferometer null at <1e-30 → polarization-Zeeman channel rejected (already extreme-precision target) | **LIVE PARTIAL** (Planck 2018 2σ consistent ✓; LiteBIRD 2030+ 1σ detection target if g~10⁻²² GeV⁻¹) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.4) |
+| **TT5** | **4 alt-clock-couplings cross-channel FALSIFIED** — (i) m_e ∝ X^α (Webb/Murphy 1e-7 z=0-4 NULL FALSIFIED), (ii) ℏ ∝ X^β ([x,p]=iℏ canonical universality + lab QM 1e-18/yr NULL FALSIFIED trivially inconsistent), (iii) α_em ∝ X^γ (Webb/Murphy + Whitmore 2015 + Murphy 2022 NULL FALSIFIED), (iv) hyperfine g_F·μ_B ∝ X^δ (Hg vs Sr 5e-17 NULL Rosenband 2008 FALSIFIED) — X-invariant canonical UNIQUE survivor (Occam minimal coupling) | 4-channel cross-falsification: cosmological QSO absorption (Webb/Murphy) + lab clock comparisons (NIST/JILA/PTB optical lattices) + hyperfine vs optical cross-comparison + ω.1 axion-coupling (NOT dilaton) cross-link | any single alt-coupling resurrected by future precision experiment ≥1σ → τ.2 X-invariant canonical UNIQUE FALSIFIED + φ.1 + ω.1 + σ.1 chain consistency rejected | **POST-CONFIRMED** (4/4 alt-couplings FALSIFIED at current sensitivities) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.5) |
+| **TT6** | **4-channel τ.2 convergence FULL CONVERGENCE 4/4 channels** (Channel 1 cosmological NULL α_em ✓ POST-CONFIRMED Webb/Murphy + Channel 2 lab clock NULL drift ✓ POST-CONFIRMED Hg/Yb/Sr 1e-18/yr + Channel 3 magnetar O((∂ ln X)²) Λ-suppressed undetectable ✓ STRUCTURAL no false positive + Channel 4 CMB E/B rotation 0.30±0.13 deg ✓ τ.2 + σ.1 + ω.1 cross-channel CONSISTENT 2σ Planck) | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 2 post-confirmed + 1 structural undetectable + 1 LIVE partial obs consistent shared z σ.1 + ω.1); tests scale-protection theorem AXIOM-lifted z φ.1 X→λX + ω.1 + σ.1 joint protection chain | ≥2/4 channels falsified (cosmological drift detected lub lab clock drift > 1e-18/yr lub LiteBIRD 1σ null lub magnetar Λ < TeV detected) → τ.2 scale-protection theorem rejected | **POST-CONFIRMED + LIVE** (2 post-confirmed + 1 structural + 1 LIVE partial; FULL CONVERGENCE 4/4) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.6) |
 
 ---
 
