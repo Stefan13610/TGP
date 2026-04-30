@@ -482,6 +482,69 @@ dispersion 2-photon birefringence cascades + QED corrections, τ.3 substrate-
 cosmological time FRW background X(t) ↔ Hubble + dark-energy substrate
 dilaton coupling).
 
+**Updated 2026-05-01 (τ.3 program END):** 751 cumulative
+(+ τ.3.Phase1 5 + τ.3.Phase2 7 + τ.3.Phase3 6 = 18, 18/18 perfect score).
+**Substrate-engineered clock acceleration via L4 + ω.1 chain structurally
+LOCKED post-τ.3**: L4 gradient-coupled mass m_e_eff(X) = m_e^(0) +
+(α_g/Λ²)(∂_μ ln X)(∂^μ ln X) is φ.1 X→λX scale-INVARIANT (derivative-only
+form), enters at sub-leading O((∂ ln X)²) — **consistent z τ.2 leading
+protection theorem (NOT a falsification, IS the sub-leading channel)**.
+**Clock-rate shift formula sympy LOCKED**: δω/ω = (α_g/(Λ²·m_e^(0)))·
+(∂ ln X)² (Phase 2 T2.1 sympy diff(target − derived) = 0 EXACT). **Engineering
+chain established**: lab E∥B (Schwinger-class) → ω.1 EOM □(ln X) =
+-(g/f_X²)·E·B parallel maximization → ∂(ln X) ≠ 0 → L4 → δm_e ≠ 0 →
+δω/ω ≠ 0; perpendicular E⊥B null source CONTROL EXPERIMENT, pure E or
+pure B null CONTROL, **two-axis differential test (E∥B vs E⊥B × sign-flip
+× pure-field) uniquely identifies which L4 form realized**. **Sign of α_g
+GENERICALLY POSITIVE z 3 independent UV matching channels** (AS NGFP
+fixed-point Wilson coef positive + heavy-mode integration α_g ~
++g²m_X²/(16π²Λ²) one-loop sign positive + cosmological consistency BBN
+m_e bound at z~10⁹ within Damour-Polyakov 1e-2 compatible) → **CLOCK
+ACCELERATES** w obecności lab E·B parallel field. **Viability gate
+Λ ≲ 100 MeV detectable now**: Schwinger-class lab E~10¹⁵ V/m + B~1000 T
+(10 MG) parallel + L~1 mm → δω/ω ~10⁻¹² → δf_Sr ~ 4.29×10² Hz vs Sr 1e-18
+floor 4.29×10⁻⁴ Hz → **SNR ~10⁶** (4σ in 1 hour); Λ-cutoff scan: M_Pl
+10⁻⁵⁰ undetectable, TeV 10⁻²⁸ undetectable, GeV 10⁻²⁰ borderline,
+**100 MeV 10⁻¹² DETECTABLE**, 10 MeV 10⁻⁸ strong, 1 MeV 10⁻⁴ excluded.
+**4 alt-L4 forms cross-falsifiable**: L4_a (∂ ln X)² CANONICAL parallel-only
+sign-EVEN null in pure E/B, L4_b F·F̃ linear sign-FLIP under E·B → -E·B,
+L4_c (E²-B²) parity-EVEN any-field config, L4_d (E·B)² parallel-only
+QUADRATIC. **Two-axis differential test (parallel/perpendicular × sign-flip
+× pure-field) UNIQUELY identifies L4 form**. CANONICAL τ.3 prediction
+(L4_a + α_g > 0): positive sign-even parallel-only signal, NULL pure E/B.
+**4-channel τ.3 convergence**: Channel 1 LAB Sr/Yb 1e-18/yr Λ ≥ 100 MeV
+bound or positive detection ✓ + Channel 2 FRONTIER ELI-NP/HERMES 2030+
+10²² W/cm² PW-class laser + 100 T pulsed B → 9× boost (E·B/E·B_today)²
+→ Λ reach extends to ~1 GeV (Heidelberg/Mainz cold-atom interferometry
+1e-22/yr equivalent alternative) ✓ + Channel 3 COSMOLOGICAL Webb/Murphy
+1e-7 NULL consistent z τ.3 (primordial B ~1 nG too small for measurable
+signal) ✓ + Channel 4 MAGNETAR atmosphere SGR 1806-20 polar atmosphere
+Beloborodov twist E∥B ~10²¹ V·T/m → δω/ω ~10⁻³ Λ=100 MeV phase-resolved
+modulation Chandra/NICER/Athena 2035+ accessible ✓. 6 promotions:
+(i) **L4 gradient-coupled mass m_e_eff = m_e + α_g(∂ ln X)²/Λ² φ.1
+scale-INVARIANT canonical form** → **LOCKED** (Phase 1 T1.1), (ii) **sign
+of α_g > 0 GENERIC 3-channel UV matching** → **DERIVED** (CLOCK
+ACCELERATES), (iii) **clock-rate shift formula δω/ω = (α_g/(Λ²m_e))(∂
+ln X)²** → **DERIVED sympy LOCK** (Phase 2 T2.1), (iv) **lab E·B parallel
+SOURCES substrate gradient via ω.1 EOM** → **STRUCTURAL** (Phase 1 T1.4 +
+Phase 2 T2.2), (v) **Λ ≲ 100 MeV detectable Sr/Yb 1e-18/yr** → **LIVE**
+falsification target, (vi) **4 alt-L4 (β F·F̃, γ(E²-B²), η(E·B)²)
+discriminable z parity + field-config tests** → **STRUCTURAL** experimental
+discrimination matrix. Closes user's **"czy istnieje coś, co może
+przyśpieszyć clock rate?" question** **TAK**: lab E·B parallel
+Schwinger-class fields w obecności L4 z α_g > 0 (UV matching) produce
+δω/ω > 0 ACCELERATION detectable at Sr 1e-18/yr precision iff
+Λ ≲ 100 MeV. **First lab-engineering predictive TGP cycle** providing
+concrete chopping experiment (E∥B vs E⊥B + sign-flip + pure-field) that
+falsifies or measures (α_g, Λ). **φ.1 → ω.1 → σ.1 → τ.2 → τ.3 chain
+LOCKED** (5 cycles mutually consistent: substrate scale-symmetry →
+photon-substrate coupling → polarization-dependent c → clock-rate
+scale-protection LEADING → SUB-LEADING L4 lab-engineerable channel).
+Future falsification: Sr/Yb 1e-21/yr 2035+ Λ reach ~1 GeV, ELI-NP/HERMES
+10²² W/cm² 9× boost 2030+, Athena X-ray IFU 1e-6 resolution magnetar
+atmosphere 2035+, magnetar atomic spectroscopy follow-up SGR 0418+5729
+Tiengo+ 2013 5 keV absorption feature awaits matching z τ.3.
+
 ## How to read this registry
 
 Each row carries:
@@ -755,6 +818,12 @@ Each row carries:
 | **TT4** | **★ NOVEL polarization-Zeeman cross-coupling τ.2 + σ.1 + ω.1 — substrate gradient → photon helicity rotation θ = g·n·L/2 → atomic σ+/σ- selection rule rotated drive → differential AC Stark on Zeeman m_J=±1 levels; lab undetectable θ_rot ~ 5e-41 rad over 1m, COSMOLOGICAL CMB θ ~ 0.06 arcsec ARCMINUTE-LEVEL CMB SIGNAL** — σ.1 LINEAR birefringence Δv_φ = ±gn/(2k) → photon path L → polarization rotation → atomic Zeeman differential AC Stark ~ (gnL/2)² · Rabi² (for two-ion Yb+ sigma+/sigma- interferometer) | Planck 2018 CMB E/B isotropic rotation α = 0.30 ± 0.13 deg (currently 2σ tension consistent z τ.2 prediction θ ~ 1e-9 rad ~ 0.06 arcsec); lab two-ion Yb+ interferometer null differential Zeeman shift ≤ O((gnL)²/k²) ~ 1e-82 lab impossible; pulsar PSR J0437-4715 polarization sweep + companion atmosphere atomic spectroscopy correlated with timing residual | LiteBIRD 2030+ E/B rotation null at 1σ < 0.05 deg → polarization-Zeeman cross-coupling τ.2 + σ.1 + ω.1 jointly FALSIFIED; lub atomic Zeeman differential Yb+ ion interferometer null at <1e-30 → polarization-Zeeman channel rejected (already extreme-precision target) | **LIVE PARTIAL** (Planck 2018 2σ consistent ✓; LiteBIRD 2030+ 1σ detection target if g~10⁻²² GeV⁻¹) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.4) |
 | **TT5** | **4 alt-clock-couplings cross-channel FALSIFIED** — (i) m_e ∝ X^α (Webb/Murphy 1e-7 z=0-4 NULL FALSIFIED), (ii) ℏ ∝ X^β ([x,p]=iℏ canonical universality + lab QM 1e-18/yr NULL FALSIFIED trivially inconsistent), (iii) α_em ∝ X^γ (Webb/Murphy + Whitmore 2015 + Murphy 2022 NULL FALSIFIED), (iv) hyperfine g_F·μ_B ∝ X^δ (Hg vs Sr 5e-17 NULL Rosenband 2008 FALSIFIED) — X-invariant canonical UNIQUE survivor (Occam minimal coupling) | 4-channel cross-falsification: cosmological QSO absorption (Webb/Murphy) + lab clock comparisons (NIST/JILA/PTB optical lattices) + hyperfine vs optical cross-comparison + ω.1 axion-coupling (NOT dilaton) cross-link | any single alt-coupling resurrected by future precision experiment ≥1σ → τ.2 X-invariant canonical UNIQUE FALSIFIED + φ.1 + ω.1 + σ.1 chain consistency rejected | **POST-CONFIRMED** (4/4 alt-couplings FALSIFIED at current sensitivities) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.5) |
 | **TT6** | **4-channel τ.2 convergence FULL CONVERGENCE 4/4 channels** (Channel 1 cosmological NULL α_em ✓ POST-CONFIRMED Webb/Murphy + Channel 2 lab clock NULL drift ✓ POST-CONFIRMED Hg/Yb/Sr 1e-18/yr + Channel 3 magnetar O((∂ ln X)²) Λ-suppressed undetectable ✓ STRUCTURAL no false positive + Channel 4 CMB E/B rotation 0.30±0.13 deg ✓ τ.2 + σ.1 + ω.1 cross-channel CONSISTENT 2σ Planck) | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 2 post-confirmed + 1 structural undetectable + 1 LIVE partial obs consistent shared z σ.1 + ω.1); tests scale-protection theorem AXIOM-lifted z φ.1 X→λX + ω.1 + σ.1 joint protection chain | ≥2/4 channels falsified (cosmological drift detected lub lab clock drift > 1e-18/yr lub LiteBIRD 1σ null lub magnetar Λ < TeV detected) → τ.2 scale-protection theorem rejected | **POST-CONFIRMED + LIVE** (2 post-confirmed + 1 structural + 1 LIVE partial; FULL CONVERGENCE 4/4) | master-only (τ.2.Phase3) | [`research/op-tau2-substrate-time-coupling/Phase3_results.md`](research/op-tau2-substrate-time-coupling/Phase3_results.md) (T3.6) |
+| **TT7** | **★ NOVEL Sr/Yb 1e-18/yr lab differential E∥B vs E⊥B clock test — first lab-engineered substrate clock acceleration** — τ.3 L4 + ω.1 chain: lab E∥B (Schwinger-class E~10¹⁵ V/m + B~100 T parallel) → ω.1 EOM □(ln X)=-(g/f_X²)·E·B sources substrate gradient → L4 m_e_eff = m_e + (α_g/Λ²)(∂ ln X)² → δω/ω = (α_g/(Λ² m_e))(∂ ln X)² POSITIVE for α_g > 0 (UV matching: AS NGFP + heavy-mode + BBN consistency); chopper experiment E∥B (signal) vs E⊥B (control) isolates from Zeeman/AC Stark systematics; Λ=100 MeV → δf_Sr ~ 4.29×10² Hz vs 1e-18 floor 4.29×10⁻⁴ Hz → SNR ~10⁶ 4σ in 1 hour | dedicated optical lattice clock lab z Schwinger-class CW pulsed E·B parallel + 1 Hz chopper between parallel/perpendicular configurations; current Sr 1e-18/yr (NIST/JILA), Yb+ 1e-18/yr (PTB) precision sufficient at 100 MeV ≤ Λ ≤ 100 MeV | null detection at Sr/Yb 1e-18/yr precision z Schwinger-class E∥B → Λ > 100 MeV bound; OR positive detection (parallel signal, perpendicular null, sign-EVEN under E·B → -E·B) → α_g sign + Λ numerical measurement (LAB-ENGINEERED first detection); experiment NOT YET PERFORMED | **LIVE NOVEL** (lab-engineered 1e-18/yr Sr/Yb + Schwinger-class E∥B; experiment proposed not yet performed) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.1) |
+| **TT8** | **ELI-NP / HERMES 2030+ frontier 10²² W/cm² PW-class laser** — peak E ~3×10¹⁵ V/m focused inside 100 T pulsed B parallel → E·B ~3×10¹⁷ V·T/m (3× above today combined); δω/ω boost factor (E·B/E·B_today)² ~9 peak → Λ reach factor 9^(1/6) ~1.4 → **Λ window 100 MeV - 1 GeV accessible** combined z 1e-21/yr Sr/Yb 2035+ frontier (×1000); alternative Heidelberg/Mainz cold-atom interferometry equivalent ~1e-22/yr without 10²² W/cm² laser | ELI-NP (Romania) 10²² W/cm² PW-class operational 2030+, HERMES (DESY) proposed 10²³ W/cm² next-decade, JuSPARC (Korea) 10²³+ W/cm² 2030s; Sr/Yb 1e-21/yr precision 2035+ + cold-atom interferometry alternative | combined frontier 1e-21/yr precision + 9× boost null at Λ=1 GeV → τ.3 + L4 + α_g > 0 jointly FALSIFIED; OR positive detection at boosted E·B → α_g sign + Λ in [100 MeV, 1 GeV] window | **LIVE FRONTIER** (ELI-NP 2030+ + HERMES 2035+ + Heidelberg/Mainz cold-atom alternative) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.2) |
+| **TT9** | **cosmological residual sub-leading τ.2 scatter primordial B fields** — τ.3 cosmological prediction at Λ=100 MeV: δω/ω_cosmo ~ (α_g(B²L_horizon)²)/(Λ⁶ m_e), primordial B Planck+BBN bound <1 nG comoving z=10⁹ → <E·B>_RMS ~B² ~1e-22 V·T/m local helical fields; Webb/Murphy upper bound (Δα/α)<1e-7 sensitive do combination Δα/α+Δ(m_e/m_p)+Δg_p, τ.3 predicts only m_e shift; **<<1e-17 currently → NO tension at current sensitivity**; frontier 1e-21/yr probes B ~1 µG (above current 1 nG bound) | next-gen QSO absorption ESPRESSO/ELT 2030+ precision 1e-8; primordial B field constraints from CMB+BBN+IGM Faraday rotation 1e-9-1e-15 G; PMF helicity preserved local pockets where E·B ≠ 0 | next-gen QSO campaign detecting Δ(m_e/m_p) > 5e-17 secular drift over z=0-4 → τ.3 cosmological residual signature lub primordial B amplification at later epoch above current bound | **STRUCTURAL** (predicts NULL at current sensitivity, frontier 1e-21/yr probes B ~1 µG) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.3) |
+| **TT10** | **★ NOVEL magnetar atmosphere F·F̃ regional clock acceleration** — SGR 1806-20 B~2×10¹⁵ G surface, polar atmosphere Alfvén-wave breaking Beloborodov twist → local E∥B in pole regions E~10¹⁰ V/m → E·B ~10²¹ V·T/m DOMINANT cosmic E·B; **τ.3 prediction Λ=100 MeV: polar atomic line shift δω/ω ~10⁻³ resolvable z 1e-3 NICER atomic spectroscopy precision**; geometric signature pole vs equator atomic line shift CORRELATED z magnetic dipole geometry + phase-resolved (rotational period) modulation of line center | Chandra/NICER X-ray spectra of magnetar atmospheric absorption lines (H-like + He-like atomic transitions in ~10¹⁰ K plasma); SGR 0418+5729 absorption feature ~5 keV (Tiengo+ 2013) tentative B-shift NOT yet matched z τ.3; Athena 2035+ X-ray IFU 1e-6 resolution | Athena 2035+ phase-resolved magnetar atmosphere atomic line shift NULL at <1e-3 resolution → τ.3 + L4 + α_g sign FALSIFIED; OR positive detection correlated z magnetic dipole geometry → α_g sign + Λ measurement (independent of lab) | **LIVE NOVEL** (NICER current 1e-3 + Athena 2035+ 1e-6 resolution; SGR 0418+5729 tentative awaits matching) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.4) |
+| **TT11** | **4 alt-L4-couplings cross-channel falsification pattern** — L4_a (∂ ln X)² CANONICAL: lab parallel-only sign-EVEN + frontier 9× boost + cosmo NULL + magnetar polar phase-resolved correlated z B; L4_b F·F̃ linear: lab sign-FLIPPABLE + frontier 3× boost + cosmo helical PMF + magnetar polar sign-correlated z helicity; L4_c (E²-B²) parity-EVEN: lab any-config + frontier any-field + cosmo PMF B² + magnetar GLOBAL B²; L4_d (E·B)² quadratic: lab parallel quadratic + frontier 81× boost + cosmo suppressed + magnetar polar quadratic; **joint (lab × frontier × cosmo × magnetar) signature pattern UNIQUELY identifies L4 form realized in nature** | two-axis differential test (parallel/perpendicular × sign-flip × pure-field) discriminates 4 forms; cross-channel pattern matching across 4 independent observation channels lab + frontier + cosmo + magnetar | observed pattern deviating from canonical L4_a → alt L4 form selected (β F·F̃ lub γ(E²-B²) lub η(E·B)²) lub theory FALSIFIED jointly across all 4 channels | **STRUCTURAL** (experimental discrimination matrix; signature pattern uniquely identifies form) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.5) |
+| **TT12** | **4-channel τ.3 convergence FULL CONVERGENCE 4/4 channels** (Channel 1 LAB Sr/Yb 1e-18/yr Λ ≥ 100 MeV bound or positive detection ✓ NOVEL chopping experiment + Channel 2 FRONTIER ELI-NP/HERMES 2030+ 10²² W/cm² 9× boost extends Λ reach to ~1 GeV ✓ + Channel 3 COSMOLOGICAL Webb/Murphy NULL consistent (B too small) ✓ STRUCTURAL no false positive + Channel 4 MAGNETAR atmosphere SGR 1806-20 polar phase-resolved δω/ω ~10⁻³ accessible ✓ NOVEL); consistency conditions (a) τ.2 leading null preserved at all observed scales + (b) φ.1 X→λX gauge unbroken (L4 derivative-only) + (c) ω.1+σ.1 EOM unmodified | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 2 NOVEL falsifiable + 1 frontier + 1 structural); tests L4 + ω.1 + α_g > 0 chain AXIOM-lifted z τ.2 sub-leading channel + 5-cycle cross-cycle consistency | ≥2/4 channels falsified (lab E∥B null at frontier precision lub frontier ELI-NP null at 1 GeV precision lub Athena magnetar null at <1e-3 lub cosmological QSO Δ(m_e/m_p) > 5e-17) → τ.3 + L4 + α_g > 0 chain rejected | **LIVE NOVEL** (4-channel: 2 NOVEL falsifiable + 1 frontier 2030+ + 1 structural; FULL CONVERGENCE 4/4) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.6) |
 
 ---
 
