@@ -1,0 +1,98 @@
+========================================================================
+κ.1.Phase1 — numerator landscape audit + mixing-operator hypothesis
+========================================================================
+
+========================================================================
+K1.1 — Inventory of sympy-LOCKED numerators across closed cycles
+========================================================================
+  η.1 A num                 =   64 = 64, primes = {2: 6}
+  η.1 ρ̄ num                =   11 = 11 (TARGET), primes = {11: 1}
+  η.1 η̄ num                =    5 = 5 (TARGET), primes = {5: 1}
+  θ.1 K_up num              =    7 = 7, primes = {7: 1}
+  θ.1 K_down num            =   37 = 37, primes = {37: 1}
+  ζ.1 K_lepton num          =    2 = 2, primes = {2: 1}
+  ζ.1 K_ν num               =    1 = 1, primes = {}
+  ε.1 ψ_ph num              =  160 = 160 = 2⁵·5, primes = {2: 5, 5: 1}
+  ε.1 ε_ph num              =   23 = 23, primes = {23: 1}
+  α.1 residual num          =    9 = 9 = 3², primes = {3: 2}
+  η.2 A_TGP_recon num       =   64 = 8² = K_up_denom², primes = {2: 6}
+  η.2 residual num          =    9 = N_gen², primes = {3: 2}
+
+  ≥ 10 numerators inventoried: True
+  Verdict K1.1                = PASS
+
+========================================================================
+K1.2 — Sector-unique primes inventory + structural status
+========================================================================
+   11 η.1 ρ̄ num             sector-unique → STRUCTURAL HINT, derivation TARGET κ.1
+   13 θ.1 B²_up num          sector-unique → DERIVED z chirality-counting Dirac+QCD
+   23 ε.1 ε_ph num           sector-unique → DERIVED z F4 chain (160-137)
+   37 θ.1 K_down num         sector-unique → STRUCTURAL refined (denom 50 soft)
+  167 lep form factor        sector-unique → DERIVED z GL(3,𝔽₂)
+
+  Cascade-core primes {2, 3, 5, 7}: 5 appears w η̄ num (TARGET κ.1)
+     5 = K_lepton_num + N_gen = 2 + 3 (cross-sector composite)
+     5 also w α-residual denom 250 = 2·5³, K_down denom 50 = 2·5²
+  ≥ 4 sector-unique primes identified: True
+  Verdict K1.2                = PASS
+
+========================================================================
+K1.3 — Mixing-operator B²-extension hypothesis sympy test
+========================================================================
+  11 = B²_up_num − B²_lepton = 13 − 2 = 11 → match RHO_BAR num: True
+  5  = K_up_num − K_lepton_num = 7 − 2 = 5 → match ETA_BAR num: True
+  5  = K_up_num − B²_lepton    = 7 − 2 = 5 → match (dual): True
+  Identity K_lepton_num = B²_lepton = 2 (since K_lepton = (2+B²_lep)/(2N) = (2+2)/6 = 2/3)
+  Both numerators sympy-exact under proposed rule: True
+  Verdict K1.3                = PASS
+
+========================================================================
+K1.4 — Alternative numerator forms ranked z parsimony criterion
+========================================================================
+  Alternatives for 11:
+    PROPOSED: B²_up_num − B²_lepton               =  11 (= 11? True) [2 const, cross-sector difference]
+    ALT-1: K_up_denom + K_lepton_denom            =  11 (= 11? True) [2 const, additive combination, denoms]
+    ALT-2: K_up_num + B²_up_denom                 =  11 (= 11? True) [2 const, additive, mixed levels]
+    ALT-3: 2·B²_up_num − N_gen·5                  =  11 (= 11? True) [3 const, 3 const, drift from primitives]
+    ALT-4: 4·N_gen − 1                            =  11 (= 11? True) [2 const, uses arbitrary 1, 4]
+    ALT-5: B²_up_num·K_lepton_denom − K_up_denom·... = complex (complex) [≥3 const, ad-hoc]
+
+  Alternatives for 5:
+    PROPOSED: K_up_num − K_lepton_num             =   5 (= 5? True) [2 const, cross-sector difference (dual: K_up_num − B²_lep)]
+    ALT-1: N_gen + B²_lepton                      =   5 (= 5? True) [2 const, additive, no diff structure]
+    ALT-2: K_up_denom − N_gen                     =   5 (= 5? True) [2 const, diff but mixed level (denom vs gen)]
+    ALT-3: K_up_num − B²_neutrino·2               =   5 (= 5? True) [2 const, uses ν sector, parallel]
+    ALT-4: B²_up_num − K_up_denom                 =   5 (= 5? True) [2 const, all up-sector, no cross-sector]
+    ALT-5: 2·N_gen − 1                            =   5 (= 5? True) [2 const, uses arbitrary 1]
+
+  Parsimony analysis:
+    PROPOSED mixing-operator form uses 2 framework const + cross-sector diff structure
+    Multiple alternatives also yield sympy-exact results with 2 const
+    HOWEVER PROPOSED is UNIQUE in pairing structurally z denom decomposition:
+    - denom(ρ̄) uses B²_up_num → num(ρ̄) uses B²-level diff
+    - denom(η̄) uses K_up_num → num(η̄) uses K-level diff
+    Tj. denom-num pairing structure narzuca jednoznaczność wyboru levelu
+  Proposed form unique under denom-num structural pairing: True
+  Verdict K1.4                = PASS
+
+========================================================================
+K1.5 — Viability gate dla mixing-operator B² extension framework
+========================================================================
+  (a) Both numerators sympy-exact under unified rule:                True
+  (b) Rule has cross-sector structural interpretation (up vs lep):   True
+  (c) Rule uses minimal framework constants (2 each):                True
+  (d) Rule pairs denom-num structurally (level-matching):            True
+  Conditions satisfied: 4/4 (threshold ≥3)
+  Verdict K1.5                = PASS
+
+========================================================================
+κ.1.Phase1 — Final verdict
+========================================================================
+  [PASS] K1.1 numerator inventory
+  [PASS] K1.2 sector-unique primes
+  [PASS] K1.3 mixing-operator hypothesis
+  [PASS] K1.4 alternative forms ranked
+  [PASS] K1.5 viability gate
+
+  κ.1.Phase1 score = 5/5
+  → Phase 2 viable; mixing-operator B² extension framework proceeds.
