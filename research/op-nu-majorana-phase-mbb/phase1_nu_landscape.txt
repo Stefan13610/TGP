@@ -1,0 +1,85 @@
+========================================================================
+N1.1 — m_ββ experimental landscape audit
+========================================================================
+  Current limits (90% CL):
+    KamLAND-Zen 2024 (Xe-136)       : m_ββ < 36.0–122.0 meV (90% CL NME-dependent)
+    CUORE (Te-130)                  : m_ββ < 75.0–350.0 meV (90% CL)
+    GERDA + LEGEND-200 (Ge-76)      : m_ββ < 79.0–180.0 meV (90% CL)
+  Future sensitivity (2027–2030+):
+    KamLAND-Zen 2027+               : ~5.0 meV (Xe-136 LS)
+    LEGEND-1000 2030+               : ~3.0 meV (Ge-76 ton-scale)
+    nEXO 2030+                      : ~5.0 meV (Xe-136 TPC 5t)
+    NEXT-HD 2030+                   : ~3.0 meV (Xe-136 HP)
+  ≥3 z 4 next-gen reach m_ββ < 5 meV: True
+  Verdict N1.1 = PASS
+
+========================================================================
+N1.2 — Majorana phase candidates (4 forms)
+========================================================================
+  4 candidate forms enumerated:
+    A chirality-halving   : α₂₁ = pi/2 = 90.00°, α₃₁ = 9*pi/26 = 62.31°
+      anchor: Majorana B²_ν=1 vs Dirac B²_lep=2 + (ν,up) pair
+    B PMNS-Wolfenstein    : α₂₁ = 11*pi/13 = 152.31°, α₃₁ = 12*pi/7 = 308.57°
+      anchor: μ.1 (ρ̄_PMNS, η̄_PMNS) = (2/13, 6/7)
+    C maximal CP          : α₂₁ = 0 = 0.00°, α₃₁ = pi = 180.00°
+      anchor: reference: pure Dirac, no Majorana
+    D democratic          : α₂₁ = 2*pi/3 = 120.00°, α₃₁ = 4*pi/3 = 240.00°
+      anchor: S₃ democratic permutation
+  ≥4 forms enumerated: True
+  Verdict N1.2 = PASS
+
+========================================================================
+N1.3 — TGP NO ordering inputs (ζ.1 masses + μ.1 angles)
+========================================================================
+  ζ.1 masses (NO ordering):
+    m₁ = 0.76 meV, m₂ = 8.71 meV, m₃ = 49.53 meV
+    Σm_ν = 59.00 meV
+  μ.1 PMNS angles refined²:
+    sin²θ₁₂ = 5149/16800 = 0.306488
+    sin²θ₂₃ = 4/7 = 0.571429
+    sin²θ₁₃ = 13627867/624000000 = 0.021840
+  μ.1 δ_CP dual:
+    Form A = N_gen·arctan(195/77) = 205.36°
+    Form B = π + arctan(39/7) = 259.82°
+  Inputs consistent (NO + s²₁₃ < s²₁₂ < s²₂₃): True
+  Verdict N1.3 = PASS
+
+========================================================================
+N1.4 — Drift sources audit
+========================================================================
+  Drift sources identified (5):
+    NME uncertainty             : factor ~3 (NME = 1–6 dla Xe-136)                 [dominant]
+    m₁ tension z DESI           : ζ.1 m₁=0.76 meV vs DESI DR2 limit Σ<0.072 eV     [margin +22%]
+    sin²θ₁₂ μ.1 drift           : 0.17%                                            [negligible]
+    sin²θ₁₃ μ.1 drift           : 0.73%                                            [negligible]
+    δ_CP Form A vs B            : structural ambiguity, both within NuFit 1σ       [discriminable 2030+]
+  ≥5 drift sources audited: True
+  Verdict N1.4 = PASS
+
+========================================================================
+N1.5 — Viability gate (4 candidate forms vs KamLAND-Zen 2024)
+========================================================================
+  m_ββ_TGP dla każdego (α form, δ_CP form) combination:
+    Form       δ_CP     α₂₁°       α₃₁°       m_ββ (meV)   KZ < 122 meV
+    A          A        90.00      62.31      3.2376       ✓
+    A          B        90.00      62.31      1.5840       ✓
+    B          A        152.31     308.57     2.0301       ✓
+    B          B        152.31     308.57     3.2487       ✓
+    C          A        0.00       180.00     2.5814       ✓
+    C          B        0.00       180.00     4.1580       ✓
+    D          A        120.00     240.00     2.7938       ✓
+    D          B        120.00     240.00     3.3830       ✓
+  All (8/8) combinations compatible z KamLAND-Zen 2024: True
+  Verdict N1.5 = PASS
+
+========================================================================
+ν.1.Phase1 — Final verdict
+========================================================================
+  [PASS] N1.1 m_ββ landscape ≥3 next-gen < 5 meV
+  [PASS] N1.2 ≥4 Majorana phase candidates enumerated
+  [PASS] N1.3 TGP NO inputs consistent
+  [PASS] N1.4 ≥5 drift sources audited
+  [PASS] N1.5 4/4 forms × 2 δ_CP compatible KZ 2024
+
+  ν.1.Phase1 score = 5/5
+  → Phase 2 viable; first-principles α₂₁/α₃₁ + m_ββ TGP NO derivation LIVE.

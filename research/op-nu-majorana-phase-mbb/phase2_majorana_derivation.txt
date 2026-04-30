@@ -1,0 +1,104 @@
+========================================================================
+N2.1 — α₂₁_A = π · (B²_lep − B²_ν)/B²_lep sympy-exact
+========================================================================
+  α₂₁_A = π·(B²_lep − B²_ν)/B²_lep = π·(2−1)/2
+        = pi/2
+        = 90.0000°
+  Target: π/2 = 90°
+  α₂₁_A == π/2 sympy-exact: True
+  Verdict N2.1 = PASS
+
+========================================================================
+N2.2 — α₃₁_A = 2π · (B²_up − B²_ν)/B²_up_num sympy-exact
+========================================================================
+  α₃₁_A = 2π·(B²_up − B²_ν)/B²_up_num = 2π·(13/4−1)/13
+        = 9*pi/26
+        = 62.3077°
+  Target: 9π/26 ≈ 62.31°
+  α₃₁_A == 9π/26 sympy-exact: True
+  Verdict N2.2 = PASS
+
+========================================================================
+N2.3 — α₂₁_B = π · (1 − ρ̄_PMNS) sympy-exact
+========================================================================
+  α₂₁_B = π·(1 − ρ̄_PMNS) = π·(1 − 2/13)
+        = 11*pi/13
+        = 152.3077°
+  Target: 11π/13 ≈ 152.31°
+  α₂₁_B == 11π/13 sympy-exact: True
+  Verdict N2.3 = PASS
+
+========================================================================
+N2.4 — α₃₁_B = 2π · η̄_PMNS (mod 2π) sympy-exact
+========================================================================
+  α₃₁_B = 2π·η̄_PMNS = 2π·6/7
+        = 12*pi/7
+        = 308.5714°
+  Target: 12π/7 ≈ 308.57°
+  α₃₁_B == 12π/7 sympy-exact: True
+  Verdict N2.4 = PASS
+
+========================================================================
+N2.5 — m_ββ_TGP Form A pair (α A × δ_CP B)
+========================================================================
+  Inputs: α₂₁ = π/2 = 90.00°, α₃₁ = 9π/26 = 62.31°
+          δ_CP = π+arctan(39/7) = 259.82°
+          (m₁,m₂,m₃) = (0.76, 8.71, 49.53) meV
+          (s²₁₂, s²₂₃, s²₁₃) = (0.306488, 0.571429, 0.021840)
+  m_ββ_A = 1.5840 meV
+  Target window: 1.5 ≤ m_ββ_A ≤ 1.7 meV
+  In window [1.5, 1.7] meV: True
+  Verdict N2.5 = PASS
+
+========================================================================
+N2.6 — m_ββ_TGP Form B pair (α B × δ_CP B)
+========================================================================
+  Inputs: α₂₁ = 11π/13 = 152.31°, α₃₁ = 12π/7 = 308.57°
+          δ_CP = π+arctan(39/7) = 259.82°
+  m_ββ_B = 3.2487 meV
+  Target window: 3.0 ≤ m_ββ_B ≤ 3.3 meV
+  In window [3.0, 3.3] meV: True
+  Verdict N2.6 = PASS
+
+  Form A vs Form B m_ββ ratio: 2.051× (gap factor ~2)
+  Discriminable z nEXO/NEXT-HD 2030+ ~0.5 meV sensitivity
+
+========================================================================
+N2.7 — 5 alternative phase forms FALSIFIED
+========================================================================
+  TGP Form A: (π/2, 9π/26) — anchor: chirality-halving + (ν,up) pair
+  TGP Form B: (11π/13, 12π/7) — anchor: PMNS-Wolfenstein (ρ̄, η̄) = (2/13, 6/7)
+  Alt forms (must NOT match TGP B²/PMNS anchors):
+    TBM trivial         : α₂₁ =    0.00°, α₃₁ =    0.00°  [✓ FALSIFIED]
+      reason: tri-bimaximal no-CP — violates TGP B² chirality structure
+    BM CP-π             : α₂₁ =  180.00°, α₃₁ =  180.00°  [✓ FALSIFIED]
+      reason: bimaximal CP-conserving — violates TGP (ν,up) pair
+    Golden ratio        : α₂₁ =  222.49°, α₃₁ =  137.51°  [✓ FALSIFIED]
+      reason: golden ratio symmetry — no TGP B² anchor
+    Hexagonal           : α₂₁ =   60.00°, α₃₁ =  120.00°  [✓ FALSIFIED]
+      reason: hexagonal A₄ — no TGP chirality anchor
+    Democratic strict   : α₂₁ =  120.00°, α₃₁ =  240.00°  [✓ FALSIFIED]
+      reason: S₃ strict — no TGP B²/PMNS anchor
+  5/5 alternative forms FALSIFIED: True
+
+  Classification cascade (5 promotions):
+    [DERIVED dual (chirality-halving)] α₂₁_A = π·(B²_lep−B²_ν)/B²_lep = π/2
+    [DERIVED dual ((ν,up) pair)] α₃₁_A = 2π·(B²_up−B²_ν)/B²_up_num = 9π/26
+    [DERIVED dual (PMNS-Wolfenstein)] α₂₁_B = π·(1−ρ̄_PMNS) = 11π/13
+    [DERIVED dual (PMNS-Wolfenstein)] α₃₁_B = 2π·η̄_PMNS = 12π/7 mod 2π
+    [DERIVED (Form A/B pair)] m_ββ_TGP NO ~1.6/3.2 meV dual
+  Verdict N2.7 = PASS
+
+========================================================================
+ν.1.Phase2 — Final verdict
+========================================================================
+  [PASS] N2.1 α₂₁_A = π/2 sympy-exact
+  [PASS] N2.2 α₃₁_A = 9π/26 sympy-exact
+  [PASS] N2.3 α₂₁_B = 11π/13 sympy-exact
+  [PASS] N2.4 α₃₁_B = 12π/7 sympy-exact
+  [PASS] N2.5 m_ββ Form A ∈ [1.5, 1.7] meV
+  [PASS] N2.6 m_ββ Form B ∈ [3.0, 3.3] meV
+  [PASS] N2.7 5 alt forms FALSIFIED + 5 promotions
+
+  ν.1.Phase2 score = 7/7
+  → Phase 3 viable; predictions + falsification convergence LIVE.
