@@ -1,0 +1,67 @@
+========================================================================
+P1.1 — NME inventory (QRPA / IBM-2 / NSM / EDF × Ge-76 / Te-130 / Xe-136)
+========================================================================
+  Isotope      QRPA  IBM-2    NSM    EDF |   mean   span
+  Ge-76        5.00   4.60   3.00   4.60 |   4.30   2.00
+  Te-130       4.20   4.10   1.90   5.10 |   3.82   3.20
+  Xe-136       3.40   3.30   1.80   4.20 |   3.17   2.40
+  12-cell matrix complete: True
+  Verdict P1.1 = PASS
+
+========================================================================
+P1.2 — Phase-space factor inventory (Kotila & Iachello 2012)
+========================================================================
+  Ge-76      G_0ν =  2.36 × 10⁻¹⁵ yr⁻¹
+  Te-130     G_0ν = 14.22 × 10⁻¹⁵ yr⁻¹
+  Xe-136     G_0ν = 14.58 × 10⁻¹⁵ yr⁻¹
+  g_A = 1.27 unquenched (literature default)
+  Verdict P1.2 = PASS
+
+========================================================================
+P1.3 — m_ββ Form A/B anchored from ν.1
+========================================================================
+  m_ββ_TGP_A = 1.584 meV (Form A — chirality halving)
+  m_ββ_TGP_B = 3.249 meV (Form B — PMNS-Wolfenstein)
+  Δm_ββ (B−A) = 1.665 meV; ratio B/A = 2.051× (= 4.207× in T_1/2)
+  Verdict P1.3 = PASS
+
+========================================================================
+P1.4 — NME method-spread σ_NME = span/mean per isotope
+========================================================================
+  Isotope      mean   span   σ_NME
+  Ge-76        4.30   2.00   0.465
+  Te-130       3.82   3.20   0.837
+  Xe-136       3.17   2.40   0.756
+  Most NME-stable isotope: Ge-76 (σ_NME = 0.465)
+  Verdict P1.4 = PASS
+
+========================================================================
+P1.5 — Rate-only viability vs current 90% CL bounds
+========================================================================
+  Iso      Method         T_A (yr)       T_B (yr)          Bound  OK?
+  Ge-76    QRPA          1.764e+30      4.193e+29      1.800e+26    ✓
+  Ge-76    IBM-2         2.084e+30      4.954e+29      1.800e+26    ✓
+  Ge-76    NSM           4.900e+30      1.165e+30      1.800e+26    ✓
+  Ge-76    EDF           2.084e+30      4.954e+29      1.800e+26    ✓
+  Te-130   QRPA          4.149e+29      9.861e+28      2.200e+25    ✓
+  Te-130   IBM-2         4.354e+29      1.035e+29      2.200e+25    ✓
+  Te-130   NSM           2.027e+30      4.819e+29      2.200e+25    ✓
+  Te-130   EDF           2.814e+29      6.688e+28      2.200e+25    ✓
+  Xe-136   QRPA          6.175e+29      1.468e+29      2.300e+26    ✓
+  Xe-136   IBM-2         6.555e+29      1.558e+29      2.300e+26    ✓
+  Xe-136   NSM           2.203e+30      5.236e+29      2.300e+26    ✓
+  Xe-136   EDF           4.046e+29      9.618e+28      2.300e+26    ✓
+  All cells (12 isotope×method × 2 forms = 24) above 90% CL bounds: True
+  Verdict P1.5 = PASS
+
+========================================================================
+π.1.Phase1 — Final verdict
+========================================================================
+  [PASS] P1.1 NME inventory 12-cell matrix
+  [PASS] P1.2 PSF + g_A inventory
+  [PASS] P1.3 m_ββ Form A/B from ν.1
+  [PASS] P1.4 Method-spread σ_NME
+  [PASS] P1.5 Rate-only viability vs 90% CL
+
+  π.1.Phase1 score = 5/5
+  → π.1.Phase2 OK (full landscape PASS).
