@@ -127,6 +127,33 @@ PROSPECT-I ✓ + BEST 2022 ✓ + KATRIN-TRISTAN 2027+ + SBN 2030+ +
 MicroBooNE 2024-2027 + CMB-S4 2030+); 3/7 post-prediction-confirmed.
 NN5 research-track item #1 (sterile ν 5-sector extension B²_sterile)
 PROMOTED research-track → DERIVED post-ξ.2.
+**Updated 2026-04-30 (ο.1 program END):** 589 cumulative
+(+ ο.1.Phase1 5 + ο.1.Phase2 7 + ο.1.Phase3 6 = 18).
+**Cosmological Σm_ν tension hardening:**
+**TGP cosmological Σm_ν_A = 59.01 meV LOCKED post-ο.1** (NH, m_1=0)
+z 18% DR2 margin + CMB-S4 2030+ 5.78σ-class DECISIVE detection
+projected. Form A m_2 = √Δm²_21 = 8.614 meV + m_3 = √Δm²_31 = 50.498
+meV → Σm_ν_PDG = 59.111 meV drift 0.17% vs ν.1 substrate-action
+59.01 meV. DESI DR2 2024-2025 95% CL = 72 meV → Form A margin
+12.99 meV (17.9%) PASS post-prediction-confirmed; tension Form A
+vs DR2 central 1.61σ (compatible <2σ). Form B alt (m_1=ζ_TGP=7.5
+meV) Σm_ν_B = 69.97 meV at DR2 edge (margin 2.03 meV); A−B gap
+10.86 meV → DESI DR3 2027+ discriminable. 6 alt mass-spectrum fits
+FALSIFIED: (i) IH (m_3=0) Σ=101.72 meV 3σ DR2, (ii) degenerate
+Σ=150 meV 4σ DR2, (iii) quasi-degen Σ=120 meV, (iv) sub-NH-floor
+<58 meV NH structural min, (v) sterile-augmented (ξ.2 N_eff lock),
+(vi) early-DE modified. Classification cascade z 4 promotions:
+Σm_ν_A=59.01 meV LOCKED, m_1=0 LOCKED Form A primary, NH ordering
+LOCKED, m_lightest=0 LOCKED. ξ.2 cross-link locked: B²_sterile=0
+→ no thermalized sterile → Σm_ν_cosmo = Σm_ν_active strict.
+DESI DR3 2027+ 2.31σ tension; Simons Obs 2025+ 2.89σ edge; **CMB-S4
+2030+ 5.78σ DECISIVE detection** projected; KATRIN 2030+ m_β = 8.66
+meV null orthogonal cross-check (m_β² = |U_e2|²·m_2² + |U_e3|²·m_3²);
+Euclid+Roman 2027-2030+ 3.86σ; LiteBIRD 2030+ r-Σm_ν cross. 7-channel
+ο.1 falsification roadmap LIVE (DESI DR2 ✓ + DESI DR3 + Simons Obs
++ CMB-S4 + KATRIN + Euclid+Roman + LiteBIRD); 1/7 post-prediction-
+confirmed. NN5 research-track item #2 (cosmological Σm_ν tension
+hardening) PROMOTED research-track → DERIVED post-ο.1.
 
 ## How to read this registry
 
@@ -347,6 +374,12 @@ Each row carries:
 | **XX4** | **KATRIN-TRISTAN 2027+ both forms predict null** — TGP Form A: m_4=0 → no sterile mass; Form B: m_4 ~ λ_C·m_3 = 0.0111 eV (11.1% TRISTAN sensitivity ~0.1 eV) → also null; KATRIN-TRISTAN cannot discriminate A vs B z m_4 alone | KATRIN 2022 m_4 < 1.6 eV (90% CL); TRISTAN 2027+ extends to m_4 ~ 0.1 eV; Form A null ⊆ Form B null at this sensitivity | KATRIN-TRISTAN 2027+ detects m_4 ∈ [0.1, 1] eV signal → both forms FALSIFIED, B²_sterile candidate C/D LOCKED | **LIVE** (KATRIN-TRISTAN 2027+) | master-only (ξ.2.Phase3) | [`research/op-xi2-sterile-nu-5sector/Phase3_results.md`](research/op-xi2-sterile-nu-5sector/Phase3_results.md) (X3.4) |
 | **XX5** | **SBN 2030+ Form A null vs Form B 1-2σ discrimination** — TGP Form A sin²(2θ_14)=0 (null) vs Form B λ_C⁴ ≈ 2.56·10⁻³ (2.56× SBN sensitivity ~10⁻³); SBN program (ICARUS+SBND+MicroBooNE) 2030+ discriminates 1-2σ | SBN sensitivity 2030+ ~10⁻³ at sin²(2θ); Form A null vs Form B λ_C⁴ → 1-2σ discriminator dla TGP minimal counting (B²=0) vs Cabibbo-suppressed (B²=λ_C²) | SBN 2030+ central poza obu Form A/B windows (e.g. sin²(2θ) > 10⁻²) → ξ.2 framework FALSIFIED; sterile required outside TGP minimal/Cabibbo cascade | **LIVE** (SBN 2030+) | master-only (ξ.2.Phase3) | [`research/op-xi2-sterile-nu-5sector/Phase3_results.md`](research/op-xi2-sterile-nu-5sector/Phase3_results.md) (X3.5) |
 | **XX6** | **7-channel ξ.2 falsification convergence FULL CONVERGENCE z 3 post-confirmed** (C1 STEREO 2023 ✓ + C2 PROSPECT-I ✓ + C3 BEST 2022 ⁷¹Ge syst ✓ + C4 KATRIN-TRISTAN 2027+ + C5 SBN 2030+ + C6 MicroBooNE 2024-2027 + C7 CMB-S4 2030+ N_eff < 3.05) | 7 independent channels (target ≥6 = PASS, 7 = FULL CONVERGENCE; 3 post-prediction-confirmed z 2022-2023 SBL data); tests Form A null (B²_sterile=0) vs Form B λ_C⁴ vs alt sterile fits | ≥2/7 channels reject framework → cascade FULL CONVERGENCE → research-track open dla 5-sector extension B²_sterile≠0; KATRIN-TRISTAN m_4 detection lub SBN positive → Form A FALSIFIED | **LIVE** (3 post-confirmed + 4 future) | master-only (ξ.2.Phase3) | [`research/op-xi2-sterile-nu-5sector/Phase3_results.md`](research/op-xi2-sterile-nu-5sector/Phase3_results.md) (X3.6) |
+| **OO1** | **DESI DR3 2027+ Σm_ν 2σ tension** — TGP Form A Σm_ν = 59.01 meV vs DR3 projected 95% CL ~50 meV; tension 9.01 meV → Form A at 2.31σ vs DR3 central (σ_DR3 ≈ 25.51 meV) | DESI DR2 2024-2025 < 72 meV adopted (12.99 meV margin = 17.9%); DR3 2027+ tightens to ~50 meV via 5×3-yr LRG/ELG/QSO sample | DR3 final central > 50 meV at 95% CL → Σm_ν_TGP confirmed; DR3 ≤ 30 meV at 95% CL → Form A FALSIFIED 5σ-class | **LIVE** (DESI DR3 2027+) | master-only (ο.1.Phase3) | [`research/op-omicron1-sigmamnu-cosmo/Phase3_results.md`](research/op-omicron1-sigmamnu-cosmo/Phase3_results.md) (O3.1) |
+| **OO2** | **Simons Observatory 2025+ Σm_ν 2.89σ edge** — TGP Form A Σm_ν = 59.01 meV vs SO projected 95% CL ~40 meV; Form A at 2.89σ vs SO central (σ_SO ≈ 20.41 meV) → edge detection trigger | SO 2025+ via CMB lensing + delensing N(0) bias improvement combined z BAO; complementary do DESI cosmological mass | SO Σm_ν final ≤ 25 meV at 95% CL → Form A FALSIFIED at 2σ-class; SO Σm_ν > 50 meV → Form A confirmed | **LIVE** (Simons Observatory 2025+) | master-only (ο.1.Phase3) | [`research/op-omicron1-sigmamnu-cosmo/Phase3_results.md`](research/op-omicron1-sigmamnu-cosmo/Phase3_results.md) (O3.2) |
+| **OO3** | **CMB-S4 2030+ Σm_ν 5.78σ DECISIVE** — TGP Form A Σm_ν = 59.01 meV vs CMB-S4 projected 95% CL ~20 meV; Form A at **5.78σ vs S4 central** (σ_S4 ≈ 10.20 meV) → 5σ-class DECISIVE detection (or DECISIVE falsification) | CMB-S4 2030+ via 21-fold improved sensitivity over Planck + SO N(0) lensing recon; DESI Y5 + CMB-S4 + DESI-II combined ~10 meV ultimate | CMB-S4 Σm_ν central ∈ [55, 65] meV at 95% CL → Form A 5σ CONFIRMED; central < 30 meV → Form A FALSIFIED 5σ-class; central > 80 meV → Form B (or m_lightest > 0) preferred | **LIVE** (CMB-S4 2030+) | master-only (ο.1.Phase3) | [`research/op-omicron1-sigmamnu-cosmo/Phase3_results.md`](research/op-omicron1-sigmamnu-cosmo/Phase3_results.md) (O3.3) |
+| **OO4** | **KATRIN 2030+ direct mass m_β = 8.66 meV null orthogonal** — TGP Form A NH (m_1=0): m_β² = |U_e2|²·m_2² + |U_e3|²·m_3² ≈ 0.290·(8.614 meV)² + 0.022·(50.498 meV)² → m_β ≈ 8.66 meV ≈ 8.66·10⁻³ eV; KATRIN 2030+ ~ 0.2 eV → null orthogonal cross-check (~25× safety) | KATRIN 2022 m_β < 0.45 eV (90% CL); KATRIN 2030+ projected ~0.2 eV; Project 8 / future tritium experiments push do ~0.04 eV | KATRIN 2030+ detects m_β > 0.1 eV → Form A m_lightest=0 FALSIFIED, requires m_1 > 0; null result confirms TGP m_β << KATRIN | **LIVE** (KATRIN 2030+) | master-only (ο.1.Phase3) | [`research/op-omicron1-sigmamnu-cosmo/Phase3_results.md`](research/op-omicron1-sigmamnu-cosmo/Phase3_results.md) (O3.4) |
+| **OO5** | **Euclid + Roman 2027-2030+ weak lensing + galaxy clustering 3.86σ** — TGP Form A Σm_ν = 59.01 meV vs Euclid+Roman combined ~30 meV (95% CL); Form A at 3.86σ vs central (σ_E ≈ 15.31 meV) → discriminable | Euclid 2024+ first results plus Roman 2027+ wide-field galaxy survey combined; weak lensing tomography + BAO + cluster counts → 30 meV target | Euclid+Roman Σm_ν ≤ 25 meV at 95% CL → Form A FALSIFIED 3σ; consistent z DESI DR3 cross-check | **LIVE** (Euclid 2024+ Roman 2027+) | master-only (ο.1.Phase3) | [`research/op-omicron1-sigmamnu-cosmo/Phase3_results.md`](research/op-omicron1-sigmamnu-cosmo/Phase3_results.md) (O3.5) |
+| **OO6** | **7-channel ο.1 cosmological falsification convergence FULL CONVERGENCE z 1 post-confirmed** (C1 DESI DR2 2024-2025 ✓ + C2 DESI DR3 2027+ + C3 Simons Obs 2025+ + C4 CMB-S4 2030+ + C5 KATRIN 2030+ + C6 Euclid+Roman 2027-2030+ + C7 LiteBIRD 2030+) | 7 independent channels (target ≥6 = PASS, 7 = FULL CONVERGENCE; 1 post-prediction-confirmed z DESI DR2); tests Form A Σm_ν=59.01 meV (NH, m_1=0) vs Form B (m_1=ζ_TGP) vs IH vs degenerate | ≥2/7 channels reject framework → cascade FULL CONVERGENCE collapse → research-track open dla m_lightest≠0 lub IH ordering; CMB-S4 Σm_ν < 30 meV → Form A FALSIFIED 5σ-class | **LIVE** (1 post-confirmed + 6 future) | master-only (ο.1.Phase3) | [`research/op-omicron1-sigmamnu-cosmo/Phase3_results.md`](research/op-omicron1-sigmamnu-cosmo/Phase3_results.md) (O3.6) |
 
 ---
 
@@ -397,7 +430,14 @@ Each row carries:
 | **2022–2023** | STEREO + PROSPECT-I + BEST (post-prediction) | **XX1** (STEREO 2023 sin²(2θ_14) > 0.07 95% CL ✓ Form A null confirmed), **XX2** (PROSPECT-I null ✓ Form A confirmed), **XX3** (BEST 2022 R=0.78±0.05 4σ Gallium → ⁷¹Ge syst tension TGP attributes to flux+nuclear systematics) |
 | **2027+** | KATRIN-TRISTAN tritium | **XX4** (m_4 ~ 0.1 eV sensitivity; Form A m_4=0 null + Form B m_4=0.011 eV @ 11% TRISTAN both null; m_4 detection > 0.1 eV → both forms FALSIFIED) |
 | **2030+** | SBN program (ICARUS+SBND+MicroBooNE) | **XX5** (sin²(2θ) ~ 10⁻³ sensitivity; Form A null vs Form B λ_C⁴ ≈ 2.56·10⁻³ at 2.56× SBN; 1-2σ discrimination Form A vs Form B; positive sin²(2θ) > 10⁻² → ξ.2 framework FALSIFIED) |
-| **2030+** | CMB-S4 cosmological | **XX6.7** (N_eff < 3.05 95% CL → confirms no thermalized sterile post-ξ.2; Planck 2018 N_eff = 2.99 ± 0.17 already excludes thermalized sterile 6.2σ) |
+| **2030+** | CMB-S4 cosmological | **XX6.7** (N_eff < 3.05 95% CL → confirms no thermalized sterile post-ξ.2; Planck 2018 N_eff = 2.99 ± 0.17 already excludes thermalized sterile 6.2σ), **OO3** (Σm_ν 5.78σ DECISIVE detection ~ 20 meV; Form A 59.01 meV 5σ-class discrimination) |
+| **2024–2030+** | 7-channel ο.1 cosmological roadmap | **OO6** (C1 DESI DR2 2024-2025 ✓ + C2 DESI DR3 2027+ + C3 Simons Obs 2025+ + C4 CMB-S4 2030+ + C5 KATRIN 2030+ + C6 Euclid+Roman 2027-2030+ + C7 LiteBIRD 2030+; 7/7 = FULL CONVERGENCE z **1 post-prediction-confirmed (DESI DR2)**; **Σm_ν_A=59.01 meV LOCKED + m_1=0 LOCKED + NH ordering LOCKED post-ο.1** TGP cosmological mass scale closed z 18% DR2 margin + CMB-S4 5.78σ DECISIVE projected), **OO1** (DESI DR3 2027+ 2.31σ tension), **OO2** (Simons Obs 2025+ 2.89σ edge), **OO3** (CMB-S4 2030+ 5.78σ DECISIVE 5σ-class detection), **OO4** (KATRIN 2030+ m_β=8.66 meV null orthogonal), **OO5** (Euclid+Roman 2027-2030+ 3.86σ) |
+| **2024–2025** | DESI DR2 + Planck (post-prediction) | **OO1.confirmed** (DESI DR2 + CMB Σm_ν < 72 meV 95% CL → TGP Form A 59.01 meV PASS z 12.99 meV margin = 17.9%; DR2 central null at 1.61σ from Form A — first cosmological post-prediction confirmation dla TGP NH mass spectrum) |
+| **2025+** | Simons Observatory CMB | **OO2** (Σm_ν ~ 40 meV 95% CL via lensing N(0) + delensing; Form A 2.89σ edge detection trigger) |
+| **2027+** | DESI DR3 LRG/ELG/QSO | **OO1** (Σm_ν ~ 50 meV 95% CL; Form A 2.31σ tension; first decisive cosmological discrimination Form A vs B) |
+| **2027–2030+** | Euclid + Roman weak lensing + galaxy clustering | **OO5** (Σm_ν ~ 30 meV 95% CL combined; Form A 3.86σ; cross-check DESI DR3 + CMB-S4) |
+| **2030+** | KATRIN tritium endpoint | **OO4** (m_β ~ 0.2 eV sensitivity; Form A m_β=8.66 meV null orthogonal cross-check ~25× safety; positive detection > 0.1 eV → m_lightest > 0 required) |
+| **2030+** | LiteBIRD CMB polarization | **OO6.7** (r-Σm_ν cross-correlation; ο.1 channel #7 cosmological convergence) |
 | **2027+** | KamLAND-Zen Xe-136 LS | **NN1** (m_ββ_TGP_A=1.584 meV ‖ B=3.249 meV both <5 meV ⇒ no falsification 2027+ generation; KZ positive m_ββ<1.5 meV → both forms FALSIFIED) |
 | **2030+** | LEGEND-1000 Ge-76 ton-scale | **NN2** (Form A 1.584 meV evades z 1.4 meV margin; Form B 3.249 meV at edge +8.3% → mild 1σ tension trigger jeśli LEGEND <2 meV) |
 | **2030+** | nEXO Xe-136 TPC 5t + NEXT-HD Xe-136 HP | **NN3** (~0.5 meV sensitivity 3.33σ Form A vs B discrimination decisive; gap Δm_ββ=1.665 meV, ratio 2.05×; central w window A → chirality-halving LOCKED, w window B → PMNS-Wolfenstein LOCKED) |

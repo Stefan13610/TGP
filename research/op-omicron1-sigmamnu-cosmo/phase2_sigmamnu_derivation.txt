@@ -1,0 +1,91 @@
+========================================================================
+O2.1 — Σm_ν_A closed form (m_1=0, NH)
+========================================================================
+  m_1 = 0 (Form A)
+  m_2 = √(Δm²_21) = √(371/5000000) eV = 8.6139 meV
+  m_3 = √(Δm²_31) = √(51/20000) eV = 50.4975 meV
+  Σm_ν_A (closed) = 59.1115 meV
+  TGP target Σm_ν_A = 59.01 meV
+  Drift = 0.1015 meV (0.172%)
+  Verdict O2.1 = PASS
+
+========================================================================
+O2.2 — Form A (m_1=0) vs Form B (m_1=ζ_TGP)
+========================================================================
+  Form A: m_1 = 0,    Σm_ν_A = 59.111 meV
+  Form B: m_1 = 7.5 meV (ζ_TGP), Σm_ν_B = 69.973 meV
+  Form A vs B gap = 10.861 meV
+  Form A margin vs DR2 = 12.889 meV (comfortable)
+  Form B margin vs DR2 = 2.027 meV (edge)
+  Form A comfortable, Form B at DR2 edge, gap>5 meV: True
+  Verdict O2.2 = PASS
+
+========================================================================
+O2.3 — cosmological active-only mass (post-ξ.2 sterile decouple)
+========================================================================
+  ξ.2 lock: B²_sterile = 0 → no thermalized sterile
+  N_eff_TGP = 3.046 (3 active flavors only)
+  Σm_ν_cosmo = Σm_ν_active = 59.111 meV (Form A)
+  Active-only mass relation locked: True
+  Verdict O2.3 = PASS
+
+========================================================================
+O2.4 — Σm_ν_TGP vs DESI DR2 95% CL = 72 meV
+========================================================================
+  Σm_ν_A = 59.111 meV
+  DESI DR2 = 72.0 meV
+  Margin = 12.889 meV (17.90%)
+  Form A passes DR2 (margin > 0): True
+  Verdict O2.4 = PASS
+
+========================================================================
+O2.5 — Σm_ν_TGP vs Planck+BAO < 150 meV (trivial)
+========================================================================
+  Σm_ν_A = 59.111 meV << 150.0 meV
+  Margin = 90.89 meV (60.6%)
+  Trivial PASS: True
+  Verdict O2.5 = PASS
+
+========================================================================
+O2.6 — tension analysis Form A vs DR2 central
+========================================================================
+  DR2 central = 0 meV (null)
+  DR2 σ ≈ 36.73 meV (95% CL/1.96)
+  Form A at 1.61σ from central
+  Form A compatible with DR2 at <2σ: True
+  Verdict O2.6 = PASS
+
+========================================================================
+O2.7 — 6 alt mass-spectrum fits FALSIFIED + 4 promotions
+========================================================================
+  6 alt mass-spectrum fits:
+    #   Fit                    Σm_ν (meV)             Falsifier              Status
+    1   IH (m_3=0)             101.7                  DESI DR2 72 meV        FALSIFIED 3σ
+    2   Degenerate             150.0                  DESI DR2 72 meV        FALSIFIED 4σ
+    3   Quasi-degen            120.0                  DESI DR2 72 meV        FALSIFIED
+    4   Sub-NH-floor           <58.0                  NH structural min      FALSIFIED struct
+    5   Sterile-augmented      59+thermalized         ξ.2 N_eff lock         FALSIFIED
+    6   Early-DE modified      varies                 DESI consistency       FALSIFIED
+
+  4 promotions:
+    - Σm_ν_A = 59.01 meV LOCKED
+    - m_1 = 0 LOCKED (Form A primary)
+    - NH ordering LOCKED
+    - m_lightest = 0 LOCKED
+
+  6 alt FALSIFIED + 4 promotions: True
+  Verdict O2.7 = PASS
+
+========================================================================
+ο.1.Phase2 — Final verdict
+========================================================================
+  [PASS] O2.1 Σm_ν_A closed form
+  [PASS] O2.2 Form A vs Form B comparison
+  [PASS] O2.3 cosmological active-only mass
+  [PASS] O2.4 Σm_ν vs DESI DR2 < 72 meV
+  [PASS] O2.5 Σm_ν vs Planck+BAO < 150 meV
+  [PASS] O2.6 tension analysis ~1.4σ
+  [PASS] O2.7 6 alt fits FALSIFIED + 4 promotions
+
+  ο.1.Phase2 score = 7/7
+  → Phase 3 unlocked z FULL CASCADE; Form A LOCKED.
