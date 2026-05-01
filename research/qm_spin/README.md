@@ -98,3 +98,74 @@ SPIN 1/2 + SPIN-STATYSTYKA + g = 2
 | Plik | Opis | Status |
 |------|------|--------|
 | q5_spin.py | Nawijanie, FR, widmo, spin-statystyka, g=2 | 7/7 PASS |
+
+## Podwójna derywacja spin-1/2: Q5 (S³ winding) + why_n3 Phase 3 (RP² + Berry π) [2026-05-01]
+
+**Status:** dwa **niezależne strukturalne wyprowadzenia** spin-1/2 w TGP,
+oparte na **odrębnych topologiach**. Cross-check zwiększa pewność do
+"podwójnie wyprowadzony".
+
+### Ścieżka A — Q5 (ten dokument): π₃(S³) = ℤ + Finkelstein-Rubinstein
+
+- **Topologia:** mapa skompaktyfikowanego R³ ~ S³ → SU(2) ~ S³ przez
+  vielbein hedgehog ansatz `e^a_i = √g · R^a_i`.
+- **Klasyfikacja:** liczba nawijania B ∈ ℤ z `π₃(S³) = ℤ`.
+- **Jednostkowa liczba:** B=1 dla fundamentalnego solitonu TGP
+  (analityczne + numeryczne dla g₀ ∈ [0.3, 0.95]).
+- **Kwantyzacja:** Finkelstein-Rubinstein: 2π obrót → (-1)^B = -1 dla B=1
+  ⟹ **fermion (spin 1/2)**.
+
+### Ścieżka B — why_n3 Phase 3: π₂(RP²) + holonomia Berry'ego
+
+- **Topologia:** RP² = S²/ℤ₂ jako przestrzeń docelowa odwzorowania
+  hedgehog z symetrii ℤ₂ substratu.
+- **Klasyfikacja:** Q_eff = n/2 z `π₂(RP²) = ℤ`; minimalny stabilny
+  ładunek Q_eff = 1/2 (rozszczepienie wyższych Q jest energetycznie
+  korzystne, Q < 1 nie może).
+- **Jednostkowa liczba:** Q_eff = 1/2 dla minimalnego stabilnego defektu.
+- **Kwantyzacja:** **faza Berry'ego γ = π** pod 2π loop w RP²
+  ⟹ Ψ(2π) = -Ψ ⟹ **fermion (spin 1/2)**.
+
+Patrz: `research/why_n3/PHASE3_RP2_defect_quantization.md` (Phase 3
+closure document) + sek08_formalizm `thm:zs1-spin` + `proof:zs1-spin`
+(dowód w core).
+
+### Comparison
+
+| Aspekt | Q5 (Skyrmion path) | why_n3 Phase 3 (RP² Berry) |
+|--------|--------------------|----------------------------|
+| Przestrzeń docelowa | S³ ~ SU(2) | RP² = S²/ℤ₂ |
+| Grupa homotopii | π₃(S³) = ℤ | π₂(RP²) = ℤ |
+| Klasyfikator | B (winding) | Q_eff = n/2 |
+| Wartość minimalna | B=1 | Q_eff = 1/2 |
+| Mechanizm fazy (-1) | Finkelstein-Rubinstein | Berry phase γ=π |
+| Vielbein/symetria | hedgehog SU(2) | hedgehog ℤ₂ + ZS1 |
+| Pole TGP | g(r) (skalar radialny) | Δ_a (asymetria chiralna) |
+| Werifikacja PDG | g=2 Diraca + E(3/2)/E(1/2)=5 | Spektrum mass formula 6/6 PASS |
+
+### Status epistemiczny (HONEST)
+
+- ✅ **Obie ścieżki są GENUINE strukturalnie**: każda używa standardowych
+  matematycznych narzędzi (homotopia, holonomia) i daje spin-1/2 jako
+  konkluzję, nie postulat.
+- ✅ **Dwie różne topologie** (S³ ~ SU(2) vs RP² = S²/ℤ₂) → niezależne
+  wyprowadzenia, NIE redundancja jednego pomysłu.
+- ✅ **Cross-check structural**: dwie różne topologie dające ten sam
+  fizyczny wynik (spin-1/2) jest klasyczną sygnaturą GENUINE structure
+  vs accidental coincidence.
+- ⚠ **Otwarta otwarta hipoteza:** czy obie ścieżki są **manifestacjami
+  jednego głębszego mechanizmu** (np. kompozyt S³-skyrmion z RP²-defect
+  reagującym na chiral asymmetry Δ), czy to **dwa odrębne TGP-internal
+  mechanizmy** dla różnych typów defektów? — Phase 6+ research-track.
+- ⚠ **NIE doprowadza do empirical caveat dla X = e²/4** (które jest
+  problemem mass spectrum, nie spin) — ale jeśli kompozyt obie ścieżki
+  + dynamika n(α), to potencjalnie clue do RG-derivacji X.
+
+### Cross-references
+
+- `research/why_n3/PHASE3_RP2_defect_quantization.md` (Phase 3 closure)
+- `research/why_n3/README.md` (RESOLUTION 2026-05-01 + emergent Dirac
+  program)
+- `core/sek08_formalizm/sek08_formalizm.tex` (`thm:zs1-spin`,
+  `proof:zs1-spin`, `rem:fermion-status` 6th bullet z why_n3 cross-ref)
+- `meta/AUDYT_TGP_2026-05-01.md` § AB (cross-cycle structural deepening)

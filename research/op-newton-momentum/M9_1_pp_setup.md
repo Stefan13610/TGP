@@ -215,6 +215,57 @@ ją wzmocnić lub obalić:
    (G_eff(z), Λ_eff). Forma hiperboliczna może dawać różne
    przewidywania niż boxed forma.
 
+### 4.4 Niezależny test cross-cycle: R3 barrier ≡ ψ=4/3 (added 2026-05-01)
+
+**Czwarty test, niezależny od M9 cyklu**, znaleziony w cyklu
+[[research/why_n3]] Phase 1 (`PHASE1_psi_g0_identification.md`):
+
+**Ustawienie.** R3 ODE (radialny soliton) ma topologiczną barierę
+fixed-point bifurcation `g₀_crit = 1.874`, wyznaczoną z analizy
+bifurkacyjnej **niezależnie** od metryki M9.1'' (R3 jest osobnym
+formalizmem, korzysta tylko z `K(φ)=K_geo·φ⁴` i potencjału cubic-quartic
+`V(φ)`). Phase 1 znalazł empiryczną liniową identyfikację
+`ψ = 0.3814·g + 0.6186` z fit residuum <0.1% w domenie fizycznej.
+
+**Predykcja M9.1''.** Lorentzian horizon `f(ψ)=0` daje algebraicznie
+**ψ = 4/3 = 1.3333…** (z `(4-3ψ)/ψ = 0`).
+
+**Test.** Rozwiązując ψ=4/3 dla g przez inverse identyfikację:
+```
+   g = (4/3 - 0.6186) / 0.3814 = 1.8744
+```
+porównaj z R3 barierą: **g₀_crit = 1.874** (4 cyfry znaczące zgodności).
+
+**Status epistemiczny (HONEST):** to jest **niezależny strukturalny
+test M9.1''**, ale nie jest ścisłym matematycznym dowodem:
+- R3 g₀_crit = 1.874 jest GENUINE (analiza bifurkacyjna ODE,
+  niezależna od metryki).
+- ψ↔g linear identification (slope 0.3814, intercept 0.6186) jest
+  **empiryczna** (numerical fit, residuum <0.1%) — patrz
+  `PHASE1_psi_g0_identification.md` dla szczegółu i HONEST STATUS.
+- ψ=4/3 jako horyzont M9.1'' jest ALGEBRAIC (z postaci hiperbolicznej).
+
+Koincydencja **dwóch empirycznych numerów (g₀_crit, slope/intercept ψ↔g)
+spełniających algebraiczne równanie M9.1'' (ψ=4/3) z dokładnością do
+4 cyfr** stanowi:
+- ✓ Niezależny test geometrycznej kanoniczności formy hiperbolicznej
+  M9.1'' względem alternatyw (forma potęgowa, eksponencjalna,
+  power-law z innymi wykładnikami).
+- ✓ Spójność dwóch logicznie odrębnych formalizmów TGP (M9.x klasyczna
+  grawitacja + R3 mass spectrum) na pojedynczym strukturalnym punkcie
+  (basen substratu = ψ ∈ (0, 4/3)).
+- ⚠ NIE: niezależnym dowodem analitycznym M9.1''. Test 1 (wariacyjny)
+  z §4.3 pozostaje OPEN.
+
+Cross-references:
+- `research/why_n3/PHASE1_psi_g0_identification.md` (Phase 1 closure
+  + Discovery 1: R3 ≡ M9.1'' Lorentzian horizon)
+- `research/why_n3/README.md` (RESOLUTION 2026-05-01)
+- `meta/AUDYT_TGP_2026-05-01.md` § AB (cross-cycle structural
+  deepening, AB.2 Resolution audytu A1+A2 — niezależny test)
+- `core/sek08c_metryka_z_substratu/sek08c_metryka_z_substratu.tex`
+  (audit header (IV) M9.1'' — NIEZALEŻNE POTWIERDZENIE 2026-05-01)
+
 ## 5. Implikacje dla rdzenia TGP
 
 ### 5.1 Zmiany w sek08c

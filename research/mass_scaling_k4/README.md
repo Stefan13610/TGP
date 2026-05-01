@@ -172,6 +172,97 @@ k_eff = ln(r₂₁)/ln(A_μ/A_e) = 4.0001
     - Absolutna kalibracja c_m wymaga fizycznego R_max (bridge R5)
 5. **Formalizacja w Lean 4** — cały łańcuch P1-P4
 
+## Otwarta tensja 2026-05-01: A⁴ (R5) vs A^(5-α) (why_n3 RESOLUTION)
+
+**Status:** OPEN reconciliation, NIE blokuje zamknięcia R5 dla α=1
+substrate ODE (gdzie m ~ A⁴ pozostaje GENUINE z mechanizmem K²).
+
+### Ustawienie problemu
+
+Cykl `research/why_n3/` (RESOLUTION 2026-05-01, patrz
+`CORRECTIONS_2026-05-01.md`) odkrył że dla TGP-canonical α=2
+(z `K(φ) = K_geo·φ⁴` w sek08a), formuła obserwowalnej masy ma
+postać:
+
+```
+m_obs(g₀, α) = c · A_tail^(5−α)
+```
+
+z:
+- α=1 (substrate ODE, K=g²): p = 4 → m ~ A⁴ ✓ **zgadza się z R5 K²
+  mechanizmem** (slope 1.9997)
+- α=2 (TGP-canonical, K=g⁴): p = 3 → m ~ A³ (6/6 PASS PDG: μ/e
+  −0.099%, τ/e −0.085%, τ/μ +0.015%)
+
+### Tensja
+
+R5 mechanizm `m = c·K²` z `K ~ A²` daje **m ~ A⁴ uniwersalnie**
+(dla obu α=1 substrate slope 1.9997 i α=2 canonical slope 1.9965 —
+patrz § "Łańcuch dowodowy" P4). To jest **niezależne od α**.
+
+But why_n3 RESOLUTION 2026-05-01 mówi że obserwowalna masa skaluje
+**α-zależnie** jako A^(5−α).
+
+Dla α=1 obie formuły zgadzają się (p=4, R5 0.013% PDG, why_n3
+identycznie). **Dla α=2 są niespójne** (R5 daje m~A⁴, why_n3 daje
+m~A³).
+
+### Możliwe rozwiązania
+
+| # | Hipoteza | Konsekwencja |
+|---|----------|--------------|
+| 1 | R5 K² mechanizm jest specyficzny dla α=1 substrate; dla α=2 canonical operuje **inny** mechanizm (np. tail-coupling z `m_obs = c·A^(5-α)`) | A⁴ jest accidentalne dla α=1, nie strukturalne. Mechanizm K² wymaga rewizji dla α=2. |
+| 2 | R5 K² daje **M_full** (pełną energię wewnętrzną), why_n3 A^(5-α) daje **m_obs** (obserwowalną via tail-coupling) — distinction analogiczny do GR ADM vs Komara, QFT bare vs renormalized | Obie formuły GENUINE, ale opisują różne wielkości. Faktor A^(α-1) między nimi ma interpretację physical (np. core dressing, tail-screening). Brakuje analitycznego mostu m_obs ↔ M_full dla α=2. |
+| 3 | n(α) = e²(1-α/4) z why_n3 Phase 2 jest EMPIRICAL fit (residuum <0.1%), być może p(α)=5−α też EMPIRICAL i nie strukturalne. Prawdziwy mechanizm to K² (R5) z α-zależną korektą tail | Phase 6+ work: re-derive m_obs from K² + tail correction; sprawdzić czy A^(5-α) wypada jako leading approximation. |
+
+**Najmocniejsze:** Hipoteza 2 (m_obs vs M_full distinction).
+Cykl why_n3 RESOLUTION explicite postuluje tę distinction
+(`CORRECTIONS_2026-05-01.md` §"Strukturalna interpretacja insight'u"):
+
+> m_obs = c · A_tail^(5−α) = "wagę z dystans" przez tail-coupling
+> M_full (= K + V_eff lub podobnie) = pełna energia struktury wewnętrznej
+> Bariera g₀_crit = własność topologiczna ODE = działa na M_full
+
+R5 K² mechanizm (m = c·K², K = ∫(1/2)g^(2α)(g')²r²dr) operuje na
+**całce kinetycznej akcji** — nie jest jasne czy `c·K²` to m_obs
+czy M_full. Kontekst R5 (lp4 + r5_k_squared_mechanism) używa PDG
+mass ratios jako weryfikacji, więc operacyjnie traktuje to jako m_obs.
+Ale to może być artefakt α=1 specific case.
+
+### Honest framing po 2026-05-01
+
+- ✅ R5 closure dla α=1 substrate ODE: GENUINE — m ~ A⁴ z K²
+  mechanizmu, 7/7 PASS, 0.013% PDG.
+- ✅ why_n3 RESOLUTION dla α=2 TGP-canonical: GENUINE — m ~ A³
+  z `m_obs = c·A^(5-α)`, 6/6 PASS PDG.
+- ⚠ Reconciliation A⁴ ↔ A^(5-α) dla α=2: **OPEN** — Phase 6+
+  problem badawczy. Proponowany kierunek: derivacja K²→m_obs
+  z explicit `m_obs/M_full` ratio jako funkcji α (analog
+  ADM/Komara coupling).
+- ⚠ X = e²/4 w `n(α) = e²(1−α/4)` why_n3: EMPIRICAL discovery
+  awaiting RG-derivation (Phase 6 Q5 R⁵-bridge: NEGATIVE — patrz
+  `research/why_n3/PHASE6_Q5_R5_bridge_first_attempt.md`).
+
+### Cross-references
+
+- `research/why_n3/CORRECTIONS_2026-05-01.md` (RESOLUTION sekcja —
+  insight m_obs vs M_full + p(α)=5−α odkrycie)
+- `research/why_n3/PHASE2_n_alpha_derivation.md` (mass formula
+  derivation z fitu numerycznego)
+- `research/why_n3/PHASE4_5_yukawa_propagator.md` (§ 8 open issues:
+  τ-drift dla A²·g₀^(e²/2) reconciliation)
+- `research/why_n3/PHASE6_Q5_R5_bridge_first_attempt.md` (negatywna
+  próba R⁵-bridge dla X=e²/4)
+- `meta/AUDYT_TGP_2026-05-01.md` § AB.3 (outstanding Phase 6+ items)
+
+### Nowy dodatkowy item do "Co jeszcze brakuje"
+
+6. **Reconciliation A⁴ (R5 K² universal) vs A^(5-α) (why_n3 m_obs)
+   dla α=2** — OPEN, Phase 6+. Proponowany kierunek: explicit
+   m_obs/M_full ratio jako analytic α-zależna funkcja. Możliwe
+   znalezienie unifikującego mechanizmu, lub akceptacja że R5
+   K² jest specific dla α=1 substrate.
+
 ## Pliki
 
 | Plik | Opis | Status |
