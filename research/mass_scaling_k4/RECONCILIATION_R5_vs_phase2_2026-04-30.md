@@ -418,3 +418,92 @@ n(α) = e²(1−α/4) **jest** Euler², nie przypadkowy fit-konstant.
   (legacy α=1 substrate kontekst) — to pozostaje GENUINE w swoim kontekście
 - 🔓 **X = e²/4 RG-derivation** pozostaje OPEN (osobny agent / Phase 7+);
   Sub-tensja g₀_τ była innym problemem, niezależnym od X.
+
+---
+
+## 10. Analytical Bridge: R5 K² ↔ Phase 2 (2026-05-02)
+
+> **Status:** ✅ THEOREM PROVED + numerical verification
+> **Skrypt:** [[r5_phase2_analytical_bridge.py]] · **Output:** [[r5_phase2_analytical_bridge.txt]]
+> **Pełny opis:** [[R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02]]
+
+### 10.1 Twierdzenie (closed-form)
+
+**R5 mass formula `m = c·K²` (z K~A² universal) jest równoważna Phase 2 universal
+`m_obs = c_M·A²·g₀^[e²(1-α/4)]` wtedy i tylko wtedy gdy α = 1.**
+
+### 10.2 Dowód
+
+Empirical scaling: `m_obs ~ A^(5-α)`.
+
+Phase 2 ⇒ `g₀^n(α) ~ A^(3-α)`, więc `slope_Phase2 = (3-α)/n(α)`.
+
+R5 K² = Phase 2 wymaga `c·A⁴ = c_M·A²·g₀^n(α)`, czyli `g₀^n(α) ~ A²`,
+więc `slope_R5_req = 2/n(α)`.
+
+Equate: `(3-α)/n(α) = 2/n(α) ⇔ 3-α = 2 ⇔ α = 1`. ∎
+
+### 10.3 Theoretical slopes log(g₀)/log(A)
+
+| α | slope_Phase2 | slope_R5_req | Status |
+|---|---:|---:|:---|
+| **1.0** | **0.36089** | **0.36089** | ✓ EQUAL |
+| 2.0 | 0.27067 | 0.54134 | ✗ DIFFERENT |
+
+### 10.4 Numerical verification (2-point fit g₀_e, g₀_μ)
+
+**α=1 substrate:**
+- slope_emp = 0.361097, vs theory 0.360894 (diff +0.056%, OBA spełnione)
+- Phase 2 m_μ/m_e = 206.86 (PDG diff +0.046%)
+- R5 K² m_μ/m_e = 206.50 (PDG diff −0.132%)
+- Phase 2 vs R5 K² diff = +0.178% ✓ EQUIVALENT
+
+**α=2 canonical:**
+- slope_emp = 0.270820, vs Phase 2 = 0.270671 (diff +0.055% ✓)
+- slope_emp vs R5_req = 0.541341 (diff −49.97% ✗)
+- Phase 2 m_μ/m_e = 206.77 (PDG diff −0.001%)
+- R5 K² m_μ/m_e = 1221.24 (PDG diff **+490.6%** ✗)
+- Phase 2 vs R5 K² diff = −83.07% ✗ DIFFERENT
+
+### 10.5 m_obs/K² ratio test (decisive)
+
+R5 ≡ Phase 2 ⇔ m_obs/K² = const.
+
+- **α=1:** ratio_μ/ratio_e = 1.0018 → STAŁE (R5 = Phase 2 ✓)
+- **α=2:** ratio_μ/ratio_e = 0.1693 → ROZBIEŻNE (R5 fails ✗)
+
+### 10.6 Strukturalne implikacje
+
+1. **Phase 2 jest fundamentalne**, R5 K² to **strukturalna konsekwencja**
+   Phase 2 dla specyficznego α=1.
+2. **R5 "universal" claim ZAWĘŻONY** do α=1 substratu (NIE działa dla α=2).
+3. **Hierarchia mechanizmów:**
+   ```
+   Phase 2 m_obs(g₀, α)  ← FUNDAMENTAL (universal α)
+           │
+           ▼ specialize α=1
+   R5 K² mechanism       ← DERIVATIVE (special case)
+   ```
+4. **K~A² universal** (verified to 0.006% dla α=1, 0.002% dla α=2) pozostaje
+   ważnym wynikiem **niezależnie**, ale m=cK² jest słabsze i ważne tylko α=1.
+
+### 10.7 Status cykli
+
+| Cykl | Pre-bridge | Post-bridge |
+|---|---|---|
+| mass_scaling_k4 (R5) | "universal mass" | GENUINE jako Phase 2 specialization |
+| why_n3 (Phase 2) | universal m_obs | STRENGTHENED (zawiera R5) |
+
+### 10.8 Konkluzja końcowa
+
+**Tensja R5 K² ↔ Phase 2 została domknięta analitycznie + numerycznie:**
+- Główna tensja A⁴ vs A^(5-α) dla α≠1: **artefakt R5 universality claim**, nie fizyka
+- Sub-tensja g₀_τ kalibracji: **artefakt A³ skrótu** w r3 (rozwiązany w §9)
+- Bridge analitycznie: **R5 = Phase 2(α=1)** strukturalnie, closed-form
+
+Cykl mass_scaling_k4 jest GENUINE w kontekście α=1; cykl why_n3 jest fundamental.
+
+🔓 **OPEN dalsze:**
+- X = e²/4 RG-derivation (osobny agent)
+- K~A² universal generalization na inne integrals (sekcja 9 R5_PHASE2_BRIDGE)
+- Sub-leading corrections do A^(5-α) (~0.05% slope diff)

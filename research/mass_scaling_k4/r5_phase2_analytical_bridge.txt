@@ -1,0 +1,148 @@
+==============================================================================
+  R5 K^2 <-> Phase 2 ANALYTICAL BRIDGE
+==============================================================================
+
+  e^2 = exp(2) = 7.389056099  (Euler^2)
+
+  ANALYTICAL THEOREM:
+  R5 K^2 = Phase 2 m_obs IFF alpha = 1
+
+  Dowód:
+    Phase 2: m_obs = c*A^2*g0^n(alpha), n(alpha) = e^2*(1-alpha/4)
+    Empiryczne scaling: m_obs ~ A^(5-alpha)
+    => g0^n(alpha) ~ A^(3-alpha)
+    => slope_Phase2 = log(g0)/log(A) = (3-alpha)/n(alpha)
+
+    R5: m = c*K^2 ~ A^4 (K~A^2 universal)
+    R5 = Phase 2 ⇔ c*A^2*g0^n = c*A^4 ⇔ g0^n ~ A^2
+    => slope_R5 = log(g0)/log(A) = 2/n(alpha)
+
+    Equate: (3-alpha)/n(alpha) = 2/n(alpha)
+    => 3 - alpha = 2 => alpha = 1 ◻
+
+  Theoretical slopes log(g0)/log(A):
+    alpha=1: slope_Phase2 = 0.360894, slope_R5_req = 0.360894 -> EQUAL ✓
+    alpha=2: slope_Phase2 = 0.270671, slope_R5_req = 0.541341 -> DIFFERENT (R5 fails)
+
+==============================================================================
+  CASE 1: 2-point fit (g0_e, g0_mu) dla alpha=1 substrate
+==============================================================================
+
+  g0_e = 0.86941, g0_mu = phi*g0_e = 1.406735
+  A_e (alpha=1)  = 0.124613
+  A_mu (alpha=1) = 0.472412
+  K_e (alpha=1)  = 1.164635
+  K_mu (alpha=1) = 16.735773
+
+  slope_empirical (alpha=1) = log(g0_mu/g0_e) / log(A_mu/A_e)
+                            = 0.4812 / 1.3326
+                            = 0.361097
+  slope_theory_Phase2 (alpha=1) = (3-1)/(e^2*0.75) = 8/(3*e^2) = 0.360894
+  slope_theory_R5_required (alpha=1) = 2/(e^2*0.75) = 8/(3*e^2) = 0.360894
+  Diff slope_emp vs slope_Phase2 = +0.0561%
+  Diff slope_emp vs slope_R5    = +0.0561%
+
+  slope_K_A_empirical (alpha=1) = log(K_mu/K_e)/log(A_mu/A_e) = 1.999895
+  slope_K_A_theory (R5 universal) = 2.0
+  Diff = -0.0053%
+
+  m_obs Phase 2 ratio (mu/e, alpha=1) = (A_mu/A_e)^2 * (g0_mu/g0_e)^5.5418
+                                     = 206.8630
+  R5 K^2 ratio (mu/e, alpha=1)       = (K_mu/K_e)^2 = 206.4962
+  PDG m_mu/m_e                       = 206.7682
+  Phase 2 vs PDG diff                = +0.0459%
+  R5 K^2 vs PDG diff                 = -0.1316%
+  Phase 2 vs R5 K^2 diff             = +0.1777%
+
+  ===> dla alpha=1: Phase 2 ratio i R5 K^2 ratio sa **rownowazne** (diff ~ 0.2%)
+
+==============================================================================
+  CASE 2: 2-point fit (g0_e, g0_mu) dla alpha=2 canonical
+==============================================================================
+
+  A_e (alpha=2)  = 0.110028
+  A_mu (alpha=2) = 0.650411
+  K_e (alpha=2)  = 0.908009
+  K_mu (alpha=2) = 31.731519
+
+  slope_empirical (alpha=2) = log(g0_mu/g0_e)/log(A_mu/A_e)
+                            = 0.270820
+  slope_theory_Phase2 (alpha=2) = (3-2)/(e^2*0.5) = 2/e^2 = 0.270671
+  slope_theory_R5_required (alpha=2) = 2/(e^2*0.5) = 4/e^2 = 0.541341
+  Diff slope_emp vs slope_Phase2 = +0.0553%
+  Diff slope_emp vs slope_R5    = -49.9723%
+
+  slope_K_A_empirical (alpha=2) = log(K_mu/K_e)/log(A_mu/A_e) = 2.000043
+  slope_K_A_theory (R5 universal) = 2.0
+  Diff = +0.0021%
+
+  m_obs Phase 2 ratio (mu/e, alpha=2) = (A_mu/A_e)^2 * (g0_mu/g0_e)^3.6945
+                                     = 206.7656
+  R5 K^2 ratio (mu/e, alpha=2)       = (K_mu/K_e)^2 = 1221.2400
+  PDG m_mu/m_e                       = 206.7682
+  Phase 2 vs PDG diff                = -0.0012%
+  R5 K^2 vs PDG diff                 = +490.6324%
+  Phase 2 vs R5 K^2 diff             = -83.0692%
+
+  ===> dla alpha=2: Phase 2 PASS PDG, ale R5 K^2 daje +490% mismatch
+       ANALITYCZNIE expected: slope_emp (0.2708) != slope_R5_req (0.5413)
+
+==============================================================================
+  CASE 3: skala alpha (3-point fit g0_e, g0_mu, sredni-vacuum dla kazdego alpha)
+==============================================================================
+
+   alpha    slope_emp   slope_Phase2     slope_R5    slope_emp matches
+    0.50     0.434068       0.386672     0.309338              Phase 2
+    0.75     0.394174       0.374775     0.333133              Phase 2
+    1.00     0.361097       0.360894     0.360894                   R5
+    1.25     0.333222       0.344490     0.393703              Phase 2
+    1.50     0.309406       0.324805     0.433073              Phase 2
+    1.75     0.288813       0.300745     0.481192              Phase 2
+    2.00     0.270820       0.270671     0.541341              Phase 2
+    2.25     0.254954       0.232003     0.618676              Phase 2
+    2.50     0.240846       0.180447     0.721788              Phase 2
+
+  Theorem prediction: dla alpha=1 slope_emp matches BOTH (Phase 2 = R5)
+                      dla alpha != 1 slope_emp matches Phase 2, NIE R5
+
+==============================================================================
+  CASE 4: m_obs/K^2 ratio dla lepton g0 (e, mu) - test R5 = Phase 2
+==============================================================================
+
+  alpha=1: m_obs(e)/K_e^2  = 0.005272
+           m_obs(mu)/K_mu^2 = 0.005281
+           ratio_mu / ratio_e = 1.0018
+           Diff (mu vs e)  = +0.1777%   -> STALEZ (R5 = Phase 2)
+
+  alpha=2: m_obs(e)/K_e^2  = 0.008756
+           m_obs(mu)/K_mu^2 = 0.001482
+           ratio_mu / ratio_e = 0.1693
+           Diff (mu vs e)  = -83.0692%   -> ROZBIEZNE (R5 fails)
+
+==============================================================================
+  ANALYTICAL BRIDGE - KONKLUZJA
+==============================================================================
+
+  1. ANALYTICAL THEOREM PROVED (closed-form):
+     R5 K^2 mechanism = Phase 2 m_obs IFF alpha = 1
+
+  2. NUMERYCZNA WERYFIKACJA:
+     alpha=1: Phase 2 vs R5 K^2 diff = +0.1777% (R5 = Phase 2 SPOJNE)
+     alpha=2: Phase 2 vs R5 K^2 diff = -83.0692% (R5 fails)
+
+  3. STRUKTURALNA INTERPRETACJA:
+     R5 K^2 NIE jest 'fundamental' mass formula - to STRUKTURALNA
+     KONSEKWENCJA Phase 2 universal m_obs dla specific alpha=1.
+     Phase 2 jest fundamental, R5 K^2 to derivative result.
+
+  4. FALSYFIKACJA R5 'uniwersalności':
+     R5 README claim: 'm = c*K^2 jest uniwersalne'
+     -> Wartosc to TYLKO dla alpha=1 substrate
+     -> Dla alpha=2 (TGP-canonical), Phase 2 IS uniwersalne
+
+  5. CYCLE STATUS:
+     R5 cycle (alpha=1 substrate) - GENUINE w swoim kontekscie
+     why_n3 Phase 2 (universal alpha) - GENUINE jako fundamental
+     Bridge analitycznie zamknięty - obie strony spojne dla alpha=1
+
+==============================================================================

@@ -172,22 +172,34 @@ k_eff = ln(r₂₁)/ln(A_μ/A_e) = 4.0001
     - Absolutna kalibracja c_m wymaga fizycznego R_max (bridge R5)
 5. **Formalizacja w Lean 4** — cały łańcuch P1-P4
 
-## Otwarta tensja 2026-05-01 → FULL RESOLUTION 2026-05-01
+## Otwarta tensja 2026-05-01 → FULL RESOLUTION + ANALYTICAL BRIDGE 2026-05-02
 
-**Status:** FULL RESOLUTION — główna tensja A⁴ (R5) vs A^(5-α) (why_n3
-Phase 2) **strukturalnie rozwiązana** (PARTIAL 2026-04-30). Sub-tensja
-g₀_τ kalibracji **CLOSED 2026-05-01** — diagnostic pokazał że trzy g₀_τ
+**Status:** FULL RESOLUTION + ANALYTICAL BRIDGE — główna tensja A⁴ (R5) vs A^(5-α)
+(why_n3 Phase 2) **strukturalnie rozwiązana** (PARTIAL 2026-04-30 → BRIDGED 2026-05-02).
+Sub-tensja g₀_τ kalibracji **CLOSED 2026-05-01** — diagnostic pokazał że trzy g₀_τ
 (1.72931, 2.276, 1.75505) to różne paradygmaty (różne α/ODE), nie
 konkurencyjne kalibracje. Residue −0.085% w r3_alpha2_full_closure.py
 to artefakt empirycznego A³ skrótu — pełna formuła Phase 2 daje +0.006%
 (w PDG error bars), a prawidłowe g₀_τ Phase 2 (TGP-canonical α=2) to
 **1.77472** (nie 1.75505).
 
+🆕 **2026-05-02 — Analytical Bridge:** R5 mass formula `m = c·K²` jest
+**równoważna** Phase 2 universal `m_obs = c_M·A²·g₀^[e²(1-α/4)]` **wtedy
+i tylko wtedy gdy α = 1** (closed-form proof). Phase 2 jest fundamental,
+R5 K² jest **strukturalną konsekwencją** Phase 2 dla specyficznego α=1.
+Numerical verification: α=1 daje slope_emp = slope_Phase2 = slope_R5 =
+0.361 (diff 0.05%); α=2 daje slope_emp = slope_Phase2 = 0.271 ale
+slope_R5_req = 0.541 (diff 50%). m_obs/K² ratio test: stałe dla α=1
+(ratio_μ/ratio_e = 1.0018), rozbieżne dla α=2 (0.169). R5 K² m_μ/m_e
+dla α=2 daje 1221 vs PDG 207 (+490% mismatch). Patrz [[R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02]].
+
 Bonus: **e² w Phase 2 = exp(2) = 7.389** (Euler², nie elektryczny ładunek)
 — numerical fit z μ/e exact match potwierdza identyfikację (PHASE2_n_alpha_derivation.md).
 
 Patrz:
-- [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] §9 (sub-tension closure)
+- [[R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02.md]] (analytical theorem + verification)
+- [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] §10 (bridge), §9 (sub-tension)
+- `r5_phase2_analytical_bridge.py` + `.txt` (closed-form bridge proof)
 - `g0_tau_subtension_diagnostic.py` + `.txt` (independent verification)
 - `r5_phase2_reconciliation.py` (główna tensja closure)
 
@@ -303,6 +315,14 @@ A⁴ scaling z dokładnością ~0.5%.
    (Euler²) potwierdzone z μ/e exact fit do 0.0007%. Patrz
    `g0_tau_subtension_diagnostic.py` + RECONCILIATION §9.
 
+8. ~~**R5 K² ↔ Phase 2 cross-cycle mapping for α≠1**~~ → **✅ BRIDGED 2026-05-02**.
+   Analytical theorem (closed-form): R5 `m = c·K²` ≡ Phase 2 `m_obs = c_M·A²·g₀^n(α)`
+   **iff α = 1**. Slope_Phase2 = (3-α)/n(α), slope_R5_req = 2/n(α), equal ⇔ α=1.
+   Numerical verification: α=1 slope_emp 0.361 (matches both), α=2 slope_emp 0.271
+   (matches Phase 2, NOT R5 req 0.541). Phase 2 jest fundamental, R5 K² to
+   derivative dla specific α=1. Patrz [[R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02.md]]
+   + `r5_phase2_analytical_bridge.py` + RECONCILIATION §10.
+
 ## Pliki
 
 | Plik | Opis | Status |
@@ -314,6 +334,11 @@ A⁴ scaling z dokładnością ~0.5%.
 | `r5_virial_mass_derivation.py` | Skan E(A_tail) — błędne ODE | ⚠️ DO POPRAWY |
 | `r5_mass_ratio_verification.py` | Weryfikacja z poprawnym ODE | ✅ BADAWCZY |
 | `r5_k_squared_mechanism.py` | **m = c·K², K~A² uniwersalnie** | ✅ **7/7 PASS** (PRZEŁOM) |
+| `r5_phase2_reconciliation.py` | Reconciliation R5 ↔ why_n3 Phase 2 (główna tensja) | ✅ PARTIAL RES 2026-04-30 |
+| `g0_tau_subtension_diagnostic.py` | g₀_τ sub-tension closure (4 hipotezy, e²=Euler²) | ✅ CLOSED 2026-05-01 |
+| `r5_phase2_analytical_bridge.py` | **Closed-form theorem R5 K² = Phase 2 IFF α=1** | ✅ **BRIDGED 2026-05-02** |
+| `R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02.md` | Bridge document (proof + α-scan + verification) | ✅ NOWE |
+| `RECONCILIATION_R5_vs_phase2_2026-04-30.md` | Cross-cycle reconciliation (§9 sub-tension, §10 bridge) | ✅ AKTUALNE |
 
 ## Referencje rdzenia
 
