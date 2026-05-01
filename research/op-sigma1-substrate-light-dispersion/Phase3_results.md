@@ -47,7 +47,9 @@ For 1 kpc pulsar, optical ω ~ GHz: Δt ~ 70 attosec — below single-pulsar FAS
 sensitivity, ale PTA approach (NANOGrav, EPTA) zsumowując over 100+ pulsars
 może osiągnąć poziom σ.1. Distinct functional form vs Faraday `(1+z)^{-2}`.
 
-### W3.3 — CMB E/B chirality ✓ PASS (PARTIAL POST-CONFIRM)
+### W3.3 — CMB E/B chirality ✓ PASS (LIVE PARTIAL candidate, downgraded 2026-05-01)
+
+> **NOTE 2026-05-01 (ψ.1.v2 critique cycle)**: Earlier "PARTIAL POST-CONFIRM" wording downgraded to **LIVE PARTIAL candidate** — Planck PR4 + ACT 2024 β = 0.34±0.09° at ~3.8σ is a *partial detection / hint*, NOT a confirmed signal. Awaits SO/LiteBIRD 2027+ corroboration to upgrade.
 
 Shared signature with ω.1 W3.3 — Planck PR4 + ACT 2024 β = 0.34±0.09° (~3.8σ).
 

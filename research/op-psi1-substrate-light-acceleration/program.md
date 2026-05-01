@@ -1,13 +1,13 @@
 ---
-title: "ψ.1 program — substrate-engineered light acceleration via L₅ + ω.1 chain"
+title: "ψ.1 program — substrate-engineered light acceleration via L₅ + ω.1 chain (v1 NEGATIVE → v2 CORRECTED)"
 date: 2026-05-01
 cycle: ψ.1
 parent: "[[INDEX.md]]"
-status: ACTIVE
+status: CLOSED (v1 NEGATIVE structural, v2 CORRECTED with tensor operator)
 projection:
-  ledger_master: "751 → 769"
-  ledger_phase: "503 → 521"
-  pattern: "5+7+6 = 18 sub-tests"
+  ledger_master: "751 → 784"
+  ledger_phase: "503 → 536"
+  pattern: "v1: 5+7+6 = 18 sub-tests (NEGATIVE) + v2: 5+5+5 = 15 sub-tests (CORRECTED)"
 tags:
   - TGP
   - psi1
@@ -16,7 +16,24 @@ tags:
   - omega1
   - sigma1-subleading
   - program
+  - v1-negative
+  - v2-corrected
+  - tensor-operator
 ---
+
+> **STATUS UPDATE (2026-05-01)**: ψ.1.v1 (Phases 1-3) yielded **NEGATIVE structural result** —
+> scalar L₅ = $-(1/4)(β_g/Λ^2)(\partial\ln X)^2 F^2$ is wave-function renormalization
+> (Bekenstein/Sandvik dilaton-photon coupling) → varying-$α_{em}$, **NOT** varying-$c$.
+> Sympy LOCK was algebraic only; physical interpretation was wrong. Sagnac SNR ~3×10⁴ was artifact.
+> **TT13-TT18 WITHDRAWN.**
+>
+> **ψ.1.v2 correction (Phases 4-6)**: tensor operator
+> $L_5'_a = -(|β_g|/Λ^2)(\partial_\mu\ln X)(\partial_\nu\ln X)F^{\mu\rho}F^\nu_\rho$
+> uniquely identified, gives anisotropic effective optical metric and
+> $c_{eff}^2(\theta) = 1 - (\xi n^2/\Lambda^2)\cos^2\theta$. Adams-Arkani-Hamed-Dubovsky-Nicolis-Rattazzi
+> positivity bound forces β_g < 0 (subluminal, Cherenkov-safe).
+> **TT19-TT23 LIVE** (mostly NULL/sub-leading on top of σ.1 leading birefringence).
+> See [[Phase4_results.md]], [[Phase5_results.md]], [[Phase6_results.md]].
 
 # ψ.1 — Substrate-engineered light acceleration via L₅
 
@@ -150,7 +167,136 @@ For propagation L = 10 cm, photon $\lambda$ = 1064 nm ($\omega = 1.77 \times 10^
 
 This is the **second lab-engineering predictive TGP cycle** — τ.3 was first (atomic clocks), ψ.1 is second (interferometric phase / TOF).
 
-## Phase verdict (anticipated)
+## Phase verdict (anticipated for v1 — invalidated)
 
-If 18/18 PASS: ψ.1 program END, ledger 751 → 769. **First TGP cycle providing concrete LIGO-class Sagnac experiment WYKONALNY DZIŚ** that falsifies or measures (β_g, Λ) — eksperyment dostępny w 2026, nie 2030+.
+If 18/18 PASS: ψ.1 program END, ledger 751 → 769. ~~**First TGP cycle providing concrete LIGO-class Sagnac experiment WYKONALNY DZIŚ** that falsifies or measures (β_g, Λ) — eksperyment dostępny w 2026, nie 2030+.~~ **WITHDRAWN — see v2 correction below.**
+
+---
+
+## ψ.1.v1 NEGATIVE structural result (formal documentation)
+
+**Critique source**: external agent technical analysis (2026-05-01).
+
+**Critical error identified**: $L_{em}+L_5 = -(1/4)[1+\varepsilon]F^2$ → $c_{local} = c_0/\sqrt{1+\varepsilon}$ derivation is illegitimate. Scalar $Z(x)F^2$ coupling is **wave-function renormalization** type Bekenstein/Sandvik dilaton-photon coupling, which:
+1. After field redefinition $A'_\mu = Z^{1/2}A_\mu$, restores standard kinetic term
+2. Modifies effective electromagnetic coupling: $e_{eff} = e/\sqrt{Z}$ → varying-$\alpha_{em}$
+3. **Does NOT modify the null cone** — light cone determined by $\eta^{\mu\nu}$, independent of $Z(x) > 0$
+
+**Implication**: ψ.1.v1 mechanism gives $\Delta\alpha/\alpha$ (constrained by Webb/Murphy at $10^{-7}$ level), **NOT** $\Delta c/c$. Sagnac SNR ~3×10⁴ artefact — Phase 1 T1.3 + Phase 2 T2.1 sympy LOCK verified algebraic Taylor expansion only, not physical light-cone structure.
+
+**Withdrawn predictions (TT13-TT18):**
+- TT13 Sagnac fazowy E∥B substrate light acceleration → WITHDRAWN (false Δc)
+- TT14 TOF dual-arm zs-precision → WITHDRAWN
+- TT15 Cosmological scalar c shift residual → re-confirmed NULL via TT21
+- TT16 FRB time-of-flight delay correlated z B²·DM → WITHDRAWN (subsumed by TT22 ω⁰ residual)
+- TT17 4 alt-L₅ couplings falsification → WITHDRAWN (replaced by TT5.5 tensor matrix)
+- TT18 4-channel ψ.1 convergence → WITHDRAWN (replaced by TT23 v2)
+
+**Lessons learned (formally documented):**
+1. Algebraic sympy LOCK ≠ physical interpretation — must verify principal symbol/light-cone separately via eikonal limit
+2. $Z(x)F^2$ coupling = wave-function renormalization (Bekenstein/Sandvik) — gives varying-α NOT varying-c
+3. Positivity bounds (Adams-Arkani-Hamed-Dubovsky-Nicolis-Rattazzi, arXiv:hep-th/0602178) UV-INDEPENDENT — bypass need for full UV completion in sign determination
+4. External agent critique cycle effective at catching subtle EFT misinterpretation
+
+## ψ.1.v2 correction (Phases 4-6)
+
+### Canonical tensor operator (uniquely identified Phase 4 T4.1)
+
+$$\boxed{L_5'_a = -\frac{|\beta_g|}{\Lambda^2}\,(\partial_\mu \ln X)(\partial_\nu \ln X)\,F^{\mu\rho}F^\nu_{\;\rho}}$$
+
+with $\xi = +2|\beta_g| > 0$ (Adams-forced subluminal).
+
+**Operator scan (T4.1):**
+
+| Operator | φ.1 inv | Tensor | Parity-even | Irreducible | Status |
+|----------|:---:|:---:|:---:|:---:|--------|
+| **L₅'_a** $(\partial\ln X)(\partial\ln X) F^{\mu\rho}F^\nu_\rho$ | ✓ | ✓ | ✓ | ✓ | **CANONICAL** |
+| L₅'_b $(\partial\ln X)(\partial\ln X) F^{\mu\rho}\tilde F^\nu_\rho$ | ✓ | ✓ | ✗ | ✓ | parity-odd helicity (σ.1 territory) |
+| L₅'_c $(\partial\partial\ln X) F^{\mu\rho}F^\nu_\rho$ | ✓ | ✓ | ✓ | ✗ | reduces to L₅'_a |
+| L₅'_d $\Box(\ln X) F^2$ | ✓ | ✗ | ✓ | ✗ | **SCALAR — same v1 pathology**, no Δc |
+
+### Effective optical metric + anisotropic c (Phase 4 T4.3, Phase 5 T5.1-T5.2)
+
+$$g^{\mu\nu}_{eff} = \eta^{\mu\nu} + \frac{\xi}{\Lambda^2}n^\mu n^\nu, \qquad n^\mu = \partial^\mu \ln X$$
+
+Eikonal dispersion: $g^{\mu\nu}_{eff} k_\mu k_\nu = (\omega^2 - |\vec{k}|^2) + (\xi/\Lambda^2)(n\cdot k)^2 = 0$
+
+Static substrate, $\theta = \angle(\vec{k}, \vec\nabla\ln X)$:
+
+$$c_{eff}^2(\theta) = 1 - \frac{\xi |\vec\nabla\ln X|^2}{\Lambda^2}\cos^2\theta$$
+
+- $\theta = 0$ (parallel): max slowdown $c_{eff}^2 = 1 - \xi n^2/\Lambda^2$
+- $\theta = \pi/2$ (perpendicular): no effect $c_{eff}^2 = 1$
+
+### β_g sign forced by Adams positivity (Phase 4 T4.5)
+
+| Channel | Argument | Result |
+|---------|----------|--------|
+| A: AS NGFP | UV fixed-point Wilson coef tensor class | UNDETERMINED without explicit AS+matter calc |
+| B: heavy-mode 1-loop | $β_g \sim -(Q_f^2 m_f^2)/(48π^2 Λ^2)$ × tensor projection | suggestywnie negative |
+| **C: Adams positivity [arXiv:hep-th/0602178]** | causality + analyticity → forced subluminality | **DECISIVE: β_g < 0 strict** |
+
+UV-INDEPENDENT positivity bound forces sign. Adams-Arkani-Hamed-Dubovsky-Nicolis-Rattazzi.
+
+### Corrected predictions (TT19-TT23, replacing WITHDRAWN TT13-TT18)
+
+| ID | Prediction | Channel | Status |
+|----|-----------|---------|--------|
+| **TT19** | Sagnac chopper differential A-B (parallel-vs-perp loop) — NULL prediction in lab realistic | lab | **NULL** |
+| **TT20** | TOF dual-arm directional anisotropy — NULL prediction in lab | lab | **NULL** |
+| **TT21** | Cosmological NULL re-confirmation (CMB, BBN, LSS) — directional avg = 0 | cosmo | **NULL re-confirmed** |
+| **TT22** | Magnetar FRB ω-INDEPENDENT residual TOF on top of σ.1 ω² leading | astrophysical | **sub-leading** |
+| **TT23** | 4-channel ψ.1.v2 convergence (A,B,C,D) with Adams DECISIVE | meta | **LIVE structural** |
+
+### v2 sub-test plan (5+5+5 = 15 sub-tests)
+
+#### Phase 4 — tensor operator structural derivation (5 tests, FULL CASCADE 5/5)
+- T4.1 Tensor candidate scan + φ.1 X→λX scale-invariance
+- T4.2 Formal proof scalar Z(x)F² fails to modify light cones (sympy LOCK on null cone equality)
+- T4.3 Effective optical metric $g^{\mu\nu}_{eff}$ derivation
+- T4.4 Causality + positivity bounds (Cherenkov, CTC checks)
+- T4.5 UV matching β_g sign 3 channels (Adams DECISIVE)
+
+#### Phase 5 — eikonal + dispersion + corrected Sagnac (5 tests, FULL CASCADE 5/5)
+- T5.1 Eikonal dispersion $g^{μν}_{eff}k_μk_ν=0$ sympy LOCK
+- T5.2 Anisotropic $c_{eff}(θ)$ sympy LOCK
+- T5.3 Sagnac chopper differential SNR realistic (~10⁻²⁴ lab — NULL)
+- T5.4 Yukawa Greens for tensor source (exp(-Λr) cutoff, no long-range)
+- T5.5 4 alt-tensor falsification matrix (L₅'_a unique on Sagnac chopper)
+
+#### Phase 6 — corrected predictions + 4-channel convergence (5 tests, FULL CASCADE 5/5)
+- T6.1 (TT19) Sagnac chopper differential lab NULL
+- T6.2 (TT20) TOF dual-arm directional lab NULL
+- T6.3 (TT21) Cosmological NULL re-confirmation
+- T6.4 (TT22) Magnetar FRB ω⁰ residual sub-leading vs σ.1 ω² leading
+- T6.5 (TT23) 4-channel convergence (A,B,C,D) Adams DECISIVE
+
+## Cross-cycle status post-ψ.1 (final)
+
+| Cycle | Status | Connection to ψ.1 |
+|-------|--------|--------------------|
+| **φ.1** | CLOSED | Provides $\partial\ln X$ to ψ.1.v2 tensor operator |
+| **ω.1** | CLOSED | Scalar potential channel — orthogonal |
+| **σ.1** | CLOSED LIVE | Helicity-dispersion ω² leading; ψ.1.v2 ω⁰ sub-leading on top |
+| **τ.2** | CLOSED LIVE | Mass channel — orthogonal to ψ.1.v2 anisotropy |
+| **τ.3** | CLOSED LIVE | Mass cascade — orthogonal |
+| **ψ.1.v1** | NEGATIVE STRUCTURAL | Replaced by ψ.1.v2 |
+| **ψ.1.v2** | CLOSED CORRECTED | Sub-leading anisotropic correction to σ.1 |
+
+## Phase verdict (final)
+
+**ψ.1 program END (TRUE close-out)**:
+- v1 = formal NEGATIVE structural result documented
+- v2 = corrected tensor operator + anisotropic predictions + Adams-forced β_g < 0
+- 4-channel convergence with Channel C decisive
+- ledger 751 → 784, phase ledger 503 → 536
+- 18 (v1 NEGATIVE) + 15 (v2 PASS) = 33 sub-tests total
+
+**Realistic detection landscape (v2):**
+- Lab Sagnac: NULL prediction (sub-detection by ~23 OOM)
+- Magnetar FRB: ω⁰ sub-leading residual on top of σ.1 ω² leading
+- Cosmological: NULL (no large-scale anisotropy from ∂lnX background-isotropic)
+
+**No new "WYKONALNY DZIŚ" lab experiment** from ψ.1.v2 — that was v1's artifact.
+The structural result is rigorous; the lab-engineering claim was wrong.
 

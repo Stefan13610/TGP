@@ -50,7 +50,9 @@ Magnetar B ~ 10¹⁵ G, E_rot ~ 10¹⁰–10¹² V/m → E·B ≠ 0 w pole regio
 $\Box(\ln X) ∝ B^2$ non-zero. Observable: precision pulsar timing anomalies
 near magnetic poles (FAST/SKA 2030+).
 
-### W3.3 — CMB cosmological birefringence Δχ ✓ PASS (PARTIAL POST-CONFIRM)
+### W3.3 — CMB cosmological birefringence Δχ ✓ PASS (LIVE PARTIAL candidate, downgraded 2026-05-01)
+
+> **NOTE 2026-05-01 (ψ.1.v2 critique cycle)**: Earlier "PARTIAL POST-CONFIRM" wording downgraded to **LIVE PARTIAL candidate** — Planck PR4 + ACT 2024 β = 0.34±0.09° at ~3.8σ is a *partial detection / hint*, NOT a confirmed signal. Awaits SO/LiteBIRD 2027+ corroboration to upgrade.
 
 **Planck PR4 + ACT 2024**: β = **0.34 ± 0.09°** (≈3.8σ hint of isotropic
 birefringence). ω.1 prediction:
@@ -107,7 +109,7 @@ distinct from Faraday `(1+z)⁻²·∫B_∥`. VLBI quasar polarimetry z > 4
 - **Modified substrate EOM**: $\Box(\ln X) = (g/(4f_X^2))F\tilde F$ (sympy LOCK)
 - **G3 gap CLOSED** (em_from_substrate/PLAN.md): EM ↔ substrate back-reaction CHANNEL OPEN
 - **EM acts on substrate space** when E·B ≠ 0 (parallel field configuration)
-- **CMB isotropic birefringence β ≠ 0** as ω.1 partial post-confirm (Planck PR4 + ACT 2024 ~3.8σ)
+- **CMB isotropic birefringence β ≠ 0** as ω.1 LIVE PARTIAL candidate (Planck PR4 + ACT 2024 ~3.8σ; downgraded from "post-confirm" 2026-05-01 per ψ.1.v2 critique cycle — awaits SO/LiteBIRD 2027+ corroboration)
 - **3 alt-couplings FALSIFIED** structurally + cross-channel (minimal/dilaton/gradient)
 - **g LOCK candidates** identified: κ_TGP, α_em, 1/(2π), η_chir; f_a ~ M_TGP
 - **Bianchi preserved** (no monopoles), Lorenz consistency 0=0 (no anomaly)
