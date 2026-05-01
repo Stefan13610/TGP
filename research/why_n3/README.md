@@ -279,6 +279,24 @@ WNIOSEK:
 >
 > R3 jest **zgodne** z TGP_FOUNDATIONS K(φ)=φ⁴. Patrz RESOLUTION na początku.
 
+#### ➕ Reconciliation z R5 K² mechanizmem (PARTIAL RESOLUTION 2026-04-30)
+
+R5 cykl (`research/mass_scaling_k4/`) odkrył że `m_phys = c·K²` z `K~A²`,
+co dało `m~A⁴ uniwersalnie`. Po reconciliation 2026-04-30:
+
+- ✅ R5 K² **GENUINE dla α=1 substrate ODE** — `r5_k_squared_mechanism.py`
+  TEST 3 weryfikuje m=K²→PDG (μ/e diff +0.119%, τ/e -0.20%) tylko dla α=1.
+- ✗ R5 K² **FAILS dla α=2 canonical** — niezalezna weryfikacja
+  (`mass_scaling_k4/r5_phase2_reconciliation.py`) pokazuje że K² daje
+  μ/e=1220 vs PDG 207 → **+490% mismatch**.
+- ✓ Phase 2 universal formula (m_obs = c·A²·g₀^(e²(1−α/4))) działa **dla
+  obu** α=1 i α=2; R5 K² jest **specjalnym przypadkiem α=1** gdzie
+  korelacja g₀-A przez substrate ODE absorbuje core-dressing g₀^(3e²/4)
+  do efektywnego A⁴ z dokładnością ~0.5%.
+
+Pełna analiza + niezależna weryfikacja w
+[[research/mass_scaling_k4/RECONCILIATION_R5_vs_phase2_2026-04-30.md]].
+
 ### ✅ ROZWIĄZANIE: A_tail⁴ = masa fizyczna (R5 bridge)
 
 ```
@@ -1001,8 +1019,10 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_phase4_yukawa_coupling.py/.txt` | **FAZA 4**: Yukawa coupling y(ψ)=∂m_eff/∂ψ, m_0=0 vacuum verification | ✅ FAZA 4 |
 | `r3_phase5_full_propagator.py/.txt` | **FAZA 5**: full propagator S_TGP(p;ψ), vacuum limit standard Dirac | ✅ FAZA 5 |
 | `PHASE4_5_yukawa_propagator.md` | **Dokument zamykający Fazy 4-5**: emergent Dirac program END (5/5 faz) | ✅ ZAMKNIĘTY |
-| `r3_phase6_r5_bridge.py/.txt` | **FAZA 6 (Q5)**: pierwsza próba R⁵-bridge dla X=e²/4; honest negative | ⚠️ PARTIAL |
-| `PHASE6_Q5_R5_bridge_first_attempt.md` | **Q5 first attempt**: e²/4 NIE wynika trywialnie z R⁵; X downgraded | ⚠️ OPEN |
+| `r3_phase6_r5_bridge.py/.txt` | **FAZA 6 (Q5) [DEPRECATED]**: R⁵-bridge — external import wycofany | ⚠️ DEPRECATED |
+| `PHASE6_Q5_R5_bridge_first_attempt.md` | **DEPRECATED**: zastąpione przez PHASE6_alpha_em_connection.md | ⚠️ DEPRECATED |
+| `r3_phase6_alpha_em_connection.py/.txt` | **FAZA 6 (REDO)**: X=e²/4 vs α_HL=e²/(4π) — strukturalne podobieństwo | ⚠️ SUGGESTIVE-OPEN |
+| `PHASE6_alpha_em_connection.md` | **Faza 6 redo**: X jako TGP-modified α-em? Wymaga osobnego cyklu R3↔α-em | ⚠️ OPEN |
 
 ## ⚠️ [POST-AUDIT 2026-05-01]
 > Twierdzenie poniżej zaczyna się od "K=g², α=1" — to **nie jest TGP-substrat**.

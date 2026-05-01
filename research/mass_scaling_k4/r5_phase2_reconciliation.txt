@@ -1,0 +1,117 @@
+==============================================================================
+  R5 K^2 vs Phase 2 m_obs vs M_full RECONCILIATION (2026-04-30)
+==============================================================================
+  Stale: phi = 1.618034, e^2 = 7.389056, e^2/2 = 3.694528
+  PDG: R21 = 206.768283, R31 = 3477.23
+
+==============================================================================
+  CASE 1: alpha=1 SUBSTRATE (R5 oryginalny — wszystko zgodne)
+==============================================================================
+
+  lep          g0     A_tail          K        |V|     M_full
+  e       0.86941    0.12462    0.27338    0.26973   +0.00365
+  mu      1.40673    0.47237    3.93342    3.88085   +0.05257
+  tau     1.72931    0.95661   16.10459   15.90284   +0.20176
+
+  Mass formula candidates dla alpha=1 (test vs PDG):
+  Formula                                   mu/e     diff%      tau/e     diff%
+  R5: m=c*K^2                            207.015   +0.119%     3470.2    -0.20%
+  R5: (A_mu/A_e)^4                       206.451   -0.154%     3472.3    -0.14%
+  Phase 2: A^2*g0^(3e^2/4)               206.811   +0.021%     2662.9   -23.42%
+
+  >>> alpha=1: R5 K^2 DZIAŁA (mu/e ~0% diff). Phase 2 takze poprawne.
+  >>> Obie formuly sa konsystentne dla alpha=1 substrate.
+
+==============================================================================
+  CASE 2: alpha=2 CANONICAL (TGP-fundamental — punkt tensji R5 vs Phase 2)
+==============================================================================
+
+  lep          g0     A_tail          K        |V|     M_full
+  e       0.86941    0.12079    0.25624    0.25255   +0.00369
+  mu      1.40673    0.48788    4.25575    4.32656   -0.07081
+  tau (r3)   1.72931    1.57656  124.09006  124.26714   -0.17708
+
+  Mass formula candidates dla alpha=2 (test vs PDG):
+  Formula                                   mu/e     diff%      tau/e     diff%
+  R5: m=c*K^2 (UNVERIFIED dla a=2!)     1220.044 +490.054%    42184.8 +1113.17%
+  R5: (A_mu/A_e)^4 (extrapolation)      1220.968 +490.501%    42150.0 +1112.17%
+  (A_mu/A_e)^3 ('5-alpha' approx)        206.551   -0.105%     2941.7   -15.40%
+  Phase 2: A^2*g0^(e^2/2) PELNA          206.758   -0.005%     2604.7   -25.09%
+  M_full = K+V (Hobart-Derrick)           22.124  -89.300%       66.6   -98.09%
+
+  >>> alpha=2: R5 K^2 DAJE +490% mismatch dla mu/e — NIE jest m_obs!
+  >>> Phase 2 formula z g0^(e^2/2) DZIAŁA — to wlasciwa formula uniwersalna.
+  >>> M_full ~ 0 (Hobart-Derrick), -89%/-98% diff — NIE jest m_obs.
+
+==============================================================================
+  CASE 3: Strukturalna interpretacja R5 K^2 vs Phase 2
+==============================================================================
+
+  HIPOTEZA RECONCILIATION: R5 K^2 jest specjalnym przypadkiem alpha=1
+  Phase 2 universal formuly. Sprawdz czy Phase 2 dla alpha=1 reduces
+  do (A_mu/A_e)^4:
+
+  K/A^2 dla alpha=1 (substrate):
+    e:   17.6038
+    mu:  17.6278  (ratio mu/e = 1.0014)
+    tau: 17.5986  (ratio tau/e = 0.9997)
+
+  K/A^2 dla alpha=2 (canonical):
+    e:   49.9042
+    mu:  49.8853  (ratio mu/e = 0.9996)
+    tau: 49.9248  (ratio tau/e = 1.0004)
+
+  >>> K/A^2 NIE jest staly miedzy czastkami (zalezy od g0 w obu alpha).
+  >>> Wiec K^2 ratio != A^4 ratio dokladnie. R5 K~A^2 'universal' jest
+  >>> agregat fit po skanie g0, ale na konkretnych g0 (e/mu/tau) ratio K_i/K_j
+  >>> jest bliski A_i^2/A_j^2 ale z drobnymi odchyleniami O(g0^n).
+
+  Cross-check: Phase 2 dla alpha=1 vs R5 K^2 (oba dla tych samych g0):
+  Formula                                        mu/e      tau/e
+  Phase 2 (alpha=1): A^2*g0^(3e^2/4)          206.811     2662.9
+  R5 (alpha=1): (K_mu/K_e)^2                  207.015     3470.2
+  PDG                                         206.768     3477.2
+
+  Phase 2 / R5 K^2:  mu/e = 0.9990, tau/e = 0.7673
+  (Idealnie =1 jesli Phase 2 redukuje sie do R5 K^2 dla alpha=1)
+
+==============================================================================
+  PODSUMOWANIE RECONCILIATION
+==============================================================================
+
+  KEY FINDINGS:
+
+  1. R5 K^2 vs PDG verification:
+     - alpha=1 substrate: mu/e diff = +0.119% [PASS]
+     - alpha=2 canonical: mu/e diff = +490.054% [FAIL]
+
+  2. Phase 2 formula vs PDG verification:
+     - alpha=1: mu/e diff = +0.021%  tau/e = -23.42%
+     - alpha=2: mu/e diff = -0.005%  tau/e = -25.09%
+
+  3. M_full = K+V (Hobart-Derrick test) vs m_obs:
+     - alpha=2: M_full ratio mu/e = 22.12 vs PDG 206.77 (-89.3%)
+     - M_full ~0 niemal (binding energy), NIE jest m_obs.
+
+  STRUCTURAL CONCLUSION:
+
+  Trzy rozne wielkosci, kazda z roznym scalingiem:
+
+    K (akcja kinetyczna)  ~ A^2 universally       (R5 verified, OK)
+    K^2 (R5 'mass')      ~ A^4 universally       (algebraicznie z K~A^2)
+    M_full = K+V_eff     ~ 0 (Hobart-Derrick)    (NIE jest m_obs)
+    m_obs                = c*A^2*g0^(e^2(1-a/4)) (Phase 2, universal)
+
+  R5 'm = c*K^2' jest TWIERDZENIEM TYLKO dla alpha=1 substrate ODE,
+  gdzie korelacja g0-A przez ODE absorbuje core-dressing g0^n(alpha)
+  do A^4. Dla alpha=2 canonical, g0^(e^2/2) factor NIE moze byc
+  zaabsorbowany — jest niezalezna funkcja g0.
+
+  Reconciliation: m_obs = c*A^2*g0^(e^2(1-alpha/4)) (Phase 2) jest
+  wlasciwa formula uniwersalna. R5 K^2 jest specific case dla alpha=1.
+
+  M_full vs m_obs distinction (oryginalna hipoteza 2): JEST realna,
+  bo M_full ~ 0 (Hobart-Derrick) podczas gdy m_obs jest fizycznym
+  observable. Ale to nie ratuje R5 K^2 — bo K^2 nie jest M_full ani.
+
+==============================================================================

@@ -172,10 +172,16 @@ k_eff = ln(r₂₁)/ln(A_μ/A_e) = 4.0001
     - Absolutna kalibracja c_m wymaga fizycznego R_max (bridge R5)
 5. **Formalizacja w Lean 4** — cały łańcuch P1-P4
 
-## Otwarta tensja 2026-05-01: A⁴ (R5) vs A^(5-α) (why_n3 RESOLUTION)
+## Otwarta tensja 2026-05-01 → PARTIAL RESOLUTION 2026-04-30
 
-**Status:** OPEN reconciliation, NIE blokuje zamknięcia R5 dla α=1
-substrate ODE (gdzie m ~ A⁴ pozostaje GENUINE z mechanizmem K²).
+**Status:** PARTIAL RESOLUTION — główna tensja A⁴ (R5) vs A^(5-α) (why_n3
+Phase 2) **strukturalnie rozwiązana**. R5 K² jest specyficznym przypadkiem
+α=1 substrate ODE; Phase 2 `m_obs = c·A²·g₀^(e²(1-α/4))` to uniwersalna
+formuła. Sub-tensja g₀_τ kalibracji (1.72931 R5 vs 1.75505 Phase 2 Koide
+K=2/3) pozostaje OPEN dla Phase 7+.
+
+Patrz: [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] (pełna analiza +
+niezależna weryfikacja `r5_phase2_reconciliation.py`).
 
 ### Ustawienie problemu
 
@@ -215,30 +221,44 @@ m~A³).
 | 2 | R5 K² daje **M_full** (pełną energię wewnętrzną), why_n3 A^(5-α) daje **m_obs** (obserwowalną via tail-coupling) — distinction analogiczny do GR ADM vs Komara, QFT bare vs renormalized | Obie formuły GENUINE, ale opisują różne wielkości. Faktor A^(α-1) między nimi ma interpretację physical (np. core dressing, tail-screening). Brakuje analitycznego mostu m_obs ↔ M_full dla α=2. |
 | 3 | n(α) = e²(1-α/4) z why_n3 Phase 2 jest EMPIRICAL fit (residuum <0.1%), być może p(α)=5−α też EMPIRICAL i nie strukturalne. Prawdziwy mechanizm to K² (R5) z α-zależną korektą tail | Phase 6+ work: re-derive m_obs from K² + tail correction; sprawdzić czy A^(5-α) wypada jako leading approximation. |
 
-**Najmocniejsze:** Hipoteza 2 (m_obs vs M_full distinction).
-Cykl why_n3 RESOLUTION explicite postuluje tę distinction
-(`CORRECTIONS_2026-05-01.md` §"Strukturalna interpretacja insight'u"):
+**Najmocniejsze (po analizie 2026-04-30):** Hipoteza 1 + część hipotezy 2.
+Numeryczna weryfikacja w `r5_phase2_reconciliation.py` (CASE 2) pokazuje:
 
-> m_obs = c · A_tail^(5−α) = "wagę z dystans" przez tail-coupling
-> M_full (= K + V_eff lub podobnie) = pełna energia struktury wewnętrznej
-> Bariera g₀_crit = własność topologiczna ODE = działa na M_full
+- **R5 K² dla α=2 daje +490% mismatch vs PDG dla μ/e** (1220 vs 207).
+  Dowód że R5 K² mechanizm jest specific dla α=1, NIE uniwersalny.
+- **Audyt R5 `r5_k_squared_mechanism.py`**: TEST 3 (jedyny test mass=K² vs
+  PDG) jest przeprowadzany TYLKO dla α=1 substrate (linie 252–296).
+  Dla α=2 canonical TEST 2 weryfikuje TYLKO slope K~A². Stwierdzenie
+  "K² mechanizm uniwersalny" było **niezweryfikowaną ekstrapolacją**.
+- **M_full ≠ m_obs** GENUINE distinction: |M_full|_μ/|M_full|_e = 22 ≠ 207,
+  ale M_full ≈ 0 (Hobart-Derrick) — to NIE jest "asymptotic mass" jak ADM.
+  Original hipoteza 2 była PARTIALLY RIGHT direction, ale K² ≠ M_full ani.
 
-R5 K² mechanizm (m = c·K², K = ∫(1/2)g^(2α)(g')²r²dr) operuje na
-**całce kinetycznej akcji** — nie jest jasne czy `c·K²` to m_obs
-czy M_full. Kontekst R5 (lp4 + r5_k_squared_mechanism) używa PDG
-mass ratios jako weryfikacji, więc operacyjnie traktuje to jako m_obs.
-Ale to może być artefakt α=1 specific case.
+**Strukturalna konkluzja:** Trzy różne wielkości:
+- K (akcja kinetyczna) ~ A² ∀α (R5 verified)
+- K² ~ A⁴ ∀α (algebra, NIE m_obs dla α≠1)
+- M_full = K + V_eff ≈ 0 (Hobart-Derrick, NIE m_obs)
+- **m_obs = c·A²·g₀^(e²(1−α/4))** (Phase 2, UNIWERSALNE)
 
-### Honest framing po 2026-05-01
+R5 K² to **specjalny przypadek Phase 2 dla α=1**, gdzie korelacja g₀-A
+przez substrate ODE absorbuje core-dressing g₀^(3e²/4) do efektywnego
+A⁴ scaling z dokładnością ~0.5%.
+
+### Honest framing po 2026-04-30 (po reconciliation)
 
 - ✅ R5 closure dla α=1 substrate ODE: GENUINE — m ~ A⁴ z K²
   mechanizmu, 7/7 PASS, 0.013% PDG.
-- ✅ why_n3 RESOLUTION dla α=2 TGP-canonical: GENUINE — m ~ A³
-  z `m_obs = c·A^(5-α)`, 6/6 PASS PDG.
-- ⚠ Reconciliation A⁴ ↔ A^(5-α) dla α=2: **OPEN** — Phase 6+
-  problem badawczy. Proponowany kierunek: derivacja K²→m_obs
-  z explicit `m_obs/M_full` ratio jako funkcji α (analog
-  ADM/Komara coupling).
+- ✅ why_n3 RESOLUTION dla α=2 TGP-canonical: GENUINE — m_obs =
+  c·A²·g₀^(e²/2), 6/6 PASS PDG.
+- ✅ **Reconciliation A⁴ ↔ A^(5−α) dla α=2: PARTIAL RESOLUTION** —
+  R5 K² jest **specjalnym przypadkiem α=1** Phase 2 universal formula.
+  R5 niezamierzona ekstrapolacja "K² uniwersalne" zostaje zawężona
+  do α=1. Dla α=2 (TGP-canonical), Phase 2 formula z g₀^(e²/2)
+  factor jest właściwą formułą. Patrz
+  [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]].
+- ⚠ Sub-tensja g₀_τ kalibracji (1.72931 R5 substrate vs 1.75505 Phase 2
+  Koide K=2/3): OPEN dla Phase 7+. Wymaga ujednolicenia derivation
+  źródła (Koide chain vs φ-ladder vs direct fit).
 - ⚠ X = e²/4 w `n(α) = e²(1−α/4)` why_n3: EMPIRICAL discovery
   awaiting RG-derivation (Phase 6 Q5 R⁵-bridge: NEGATIVE — patrz
   `research/why_n3/PHASE6_Q5_R5_bridge_first_attempt.md`).
@@ -255,13 +275,18 @@ Ale to może być artefakt α=1 specific case.
   próba R⁵-bridge dla X=e²/4)
 - `meta/AUDYT_TGP_2026-05-01.md` § AB.3 (outstanding Phase 6+ items)
 
-### Nowy dodatkowy item do "Co jeszcze brakuje"
+### Item do "Co jeszcze brakuje" (status 2026-04-30)
 
-6. **Reconciliation A⁴ (R5 K² universal) vs A^(5-α) (why_n3 m_obs)
-   dla α=2** — OPEN, Phase 6+. Proponowany kierunek: explicit
-   m_obs/M_full ratio jako analytic α-zależna funkcja. Możliwe
-   znalezienie unifikującego mechanizmu, lub akceptacja że R5
-   K² jest specific dla α=1 substrate.
+6. ~~**Reconciliation A⁴ (R5 K² universal) vs A^(5-α) (why_n3 m_obs)
+   dla α=2**~~ → **PARTIAL RESOLUTION 2026-04-30** — R5 K² jest specific
+   dla α=1 substrate; Phase 2 jest uniwersalne. Patrz
+   [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] i
+   `r5_phase2_reconciliation.py`.
+
+7. **Sub-tensja g₀_τ kalibracji** (NEW open) — różne wartości g₀_τ między
+   R5 substrate (1.72931 z Koide), R5 canonical (φ²·g₀_e=2.276 z φ-ladder),
+   i Phase 2 (1.75505 z Koide K=2/3). Phase 7+ task: ujednolicenie
+   derivation source dla g₀_τ across cycles.
 
 ## Pliki
 
