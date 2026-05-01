@@ -9180,16 +9180,27 @@ explicit form $S_{\rm TGP}(p;\psi) = i[\gamma^0 E/(c\sqrt{A})
 - \gamma^i\sqrt{A}\,p_i + m_{\rm eff}(\psi)] /
 [E^2/(c^2 A) - A|\mathbf{p}|^2 - m_{\rm eff}^2(\psi) + i\varepsilon]$
 z~$A(\psi) = (4-3\psi)/\psi$ oraz vacuum limit ($\psi \to 1$)
-odtwarza standardowy propagator Diraca. Mass formula
-$m_{\rm obs} = c \cdot A_{\rm tail}^{(5-\alpha)}$ dla
-$\alpha=2$ (TGP-canonical $K(\phi)=K_{\rm geo}\phi^4$) daje
-6/6~PASS w~PDG ($m_\mu/m_e$ diff~$-0.099\%$,
-$m_\tau/m_e$ diff~$-0.085\%$). Patrz
+odtwarza standardowy propagator Diraca. Universal mass formula
+$m_{\rm obs}(g_0,\alpha) = c_M \cdot A_{\rm tail}^2(g_0,\alpha)
+\cdot g_0^{\,e^2(1-\alpha/4)}$ (Phase~2, why\_n3) daje
+dla $\alpha=2$ (TGP-canonical $K(\phi)=K_{\rm geo}\phi^4$):
+$m_{\rm obs} = c_M \cdot A_{\rm tail}^2 \cdot g_0^{\,e^2/2}$ ---
+6/6~PASS w~PDG ($m_\mu/m_e$ diff~$-0.005\%$,
+$m_\tau/m_e$ diff~$-0.085\%$). Empiryczne scaling
+$m \propto A^{(5-\alpha)} = A^3$ jest \emph{aproksymacj\k{a}}
+wynikaj\k{a}c\k{a} z~korelacji $g_0$--$A_{\rm tail}$ przez ODE
+substratu (nie fundamental). Reconciliation z~R$^5$
+K$^2$-mechanizmem ($m \sim A^4$ dla $\alpha=1$ substratu)
+zako\'nczona PARTIAL RESOLVED 2026-04-30: K$^2$ jest
+$\alpha=1$ specyficznym przypadkiem uniwersalnej formu\l{}y
+Phase~2, nie konkurencyjnym mechanizmem. Patrz
 \texttt{PHASE4\_5\_yukawa\_propagator.md},
-\texttt{CORRECTIONS\_2026-05-01.md} (sekcja RESOLUTION).
-Otwarte: analityczne wyprowadzenie $X = e^2/4$ w~$n(\alpha) = e^2(1-\alpha/4)$,
-reconciliation A$^{(5-\alpha)}$ vs A$^2 \cdot g_0^{e^2/2}$ dla
-$\tau/e$ (Phase~6+ research-track).
+\texttt{CORRECTIONS\_2026-05-01.md} (sekcja RESOLUTION),
+\texttt{research/mass\_scaling\_k4/RECONCILIATION\_R5\_vs\_phase2\_2026-04-30.md}.
+Otwarte: analityczne wyprowadzenie $X = e^2/4$ w~$n(\alpha) = e^2(1-\alpha/4)$
+(Phase~6+ research-track), kalibracja $g_{0,\tau}$
+(R$^5$ substrat $1{,}729$ vs Phase~2 Koide $1{,}755$ ---
+sub-tension residualna $-0{,}085\%$ dla $\tau/e$).
 \end{remark}
 
 \begin{hypothesis}[Spin z~asymetrii chiralnej substratu]%
@@ -9333,8 +9344,13 @@ Powy\.zszy zarys formalizacji fermion\'ow ma status
     --- pierwsza pr\'oba wyprowadzenia z R$^5$-bridge w~Phase~6
     \texttt{PHASE6\_Q5\_R5\_bridge\_first\_attempt.md} dala wynik
     NEGATIVE, $X$ downgraded do "leading candidate, nie fundamental";
-    mass formula $m_{\rm obs} = c \cdot A^{(5-\alpha)}$ dla $\alpha=2$
-    daje 6/6~PASS PDG, $m_\mu/m_e$ diff~$-0.099\%$);
+    universal mass formula $m_{\rm obs} = c_M \cdot A_{\rm tail}^2
+    \cdot g_0^{\,e^2(1-\alpha/4)}$ dla $\alpha=2$ daje 6/6~PASS PDG
+    ($m_\mu/m_e$ diff~$-0.005\%$); empiryczne $m\propto A^{(5-\alpha)}=A^3$
+    jest aproksymacj\k{a} z~korelacji $g_0$--$A_{\rm tail}$;
+    reconciliation z~R$^5$ K$^2$-mechanizmem PARTIAL RESOLVED
+    2026-04-30 ($\alpha=1$-specyfika R$^5$, patrz
+    \texttt{research/mass\_scaling\_k4/RECONCILIATION\_R5\_vs\_phase2\_2026-04-30.md});
     Phase~3 (RP$^2$ topologia $\to$ Berry phase $\pi$ $\to$
     spin-$\frac{1}{2}$ emergent strukturalnie); Phase~4
     (Yukawa coupling, $m_0=0$ EXACT w~pr\'o\.zni); Phase~5
