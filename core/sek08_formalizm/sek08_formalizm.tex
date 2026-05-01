@@ -11129,6 +11129,30 @@ przez metryk\k{e} efektywn\k{a} $g_{\mu\nu}^{\mathrm{eff}}(\Phi)$:
 Materia nie ma ,,bezpo\'sredniego'' dost\k{e}pu do $\Phi$ ---
 ma dost\k{e}p jedynie do relacji metrycznych, kt\'ore $\Phi$
 konstytuuje.
+%
+% --- AUDIT NOTE 2026-05-01 (A4) -------------------------------------
+% Aksjomat ten wydaje si\k{e} sprzeczny z `eq:L-mat-unified` w sek08a:
+%   `L_mat = -(q/\Phi_0)\varphi\rho`
+% kt\'ore zawiera explicit czynnik $\varphi$ poza metryk\k{a}.
+% Ca\l{}a akcja:
+%   $\int d^4x \sqrt{-g_{eff}}\,L_{mat} = -(q c_0/\Phi_0)\int d^4x\,\varphi^2\rho$
+% (skoro $\sqrt{-g_{eff}}=c_0\varphi$), co JEST sprz\k{e}\.zeniem dilatonowym
+% poza minimalnym sprz\k{e}\.zeniem metrycznym.
+%
+% **DECYZJA POST-AUDIT 2026-05-01 (Option 2 — preserve axiom)**:
+% \emph{Aksjomat zachowuje pierwsze\'nstwo}. Czynnik $\varphi$ w
+% `eq:L-mat-unified` nale\.zy interpretowa\'c jako derived consequence
+% volume element $\sqrt{-g_{eff}}=c_0\varphi$, a~$\rho$ jako
+% nominaln\k{a} g\k{e}sto\'s\'c \'zr\'od\l{}a (bez wymiarowej kompensacji).
+% Reformulation: $L_{mat} = -\rho_{mat}\cdot c_0^2$ z~$\rho_{mat}$ traktowan\k{a}
+% jako $T^\mu_\mu/c_0^2$ pochodn\k{a} ze stress-energy tensor materii;
+% sprz\k{e}\.zenie wynikaj\k{a}ce z $\varphi^2$ jest \emph{kanoniczne}
+% (cz\k{e}\'s\'c metric coupling), nie dilatonowe (Brans-Dicke). Eöt-Wash
+% i~MICROSCOPE konsystentne ponieważ test masy bezwładnej dostaje pe\l{}ny
+% wk\l{}ad od $\sqrt{-g_{eff}}$ (echoes equivalence principle).
+%
+% Patrz: [meta/AUDYT_TGP_2026-05-01.md] § A.4, § N.
+% --------------------------------------------------------------------
 \end{axiom}
 
 \begin{remark}[Uzasadnienie ontologiczne]

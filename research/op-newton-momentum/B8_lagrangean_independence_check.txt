@@ -1,0 +1,210 @@
+==============================================================================
+ B8: M9.1'' Lagrangean derivation status -- INDEPENDENCE CHECK
+==============================================================================
+
+  Audit reference: meta/AUDYT_TGP_2026-05-01.md  (B8 HIGH)
+  Predecessor:     M9_1_pp_P2_results.md  (claims potrojna motywacja)
+  Question:        Are P2-C, P2-D, P2-E genuinely independent, or do
+                   they reduce to a single foundational postulate?
+
+------------------------------------------------------------------------------
+ Step 1: P2-C internal structure (E1 + E2 + E4 force f uniquely)
+------------------------------------------------------------------------------
+
+  E4 (minimal rational ansatz consistent with E3 limit at psi=0):
+    f(psi) = (a + b psi) / psi
+
+  E1: f(1) = 1                  =>  a + b = 1
+  E2: f(4/3) = 0                =>  3 a + 4 b = 0
+  Sympy solution                {a: 4, b: -3}
+    a = 4,  b = -3  =>  f(psi) = (4 + (-3) psi)/psi
+                                 = (4 - 3 psi)/psi    [target form]
+
+  E3: lim_{psi -> 0+} f(psi) = ?  (should be +infty, AUTOMATIC)
+    sympy limit                 = oo
+
+  =>  E3 is AUTOMATIC given E1 + E2 + E4 (NOT an independent constraint).
+  [PASS] E1+E2 (with E4 ansatz) determine f uniquely as (4-3 psi)/psi  -- a=4, b=-3
+  [PASS] E3 is REDUNDANT given E1+E2+E4 (automatic)  -- limit at psi->0+ = oo
+
+  Independent constraints in P2-C: E1 + E2 + E4 = 3 axioms
+    E1 (vacuum normalization) -- physically natural
+    E2 (second zero at psi=4/3) -- THIS is the ad-hoc structural input
+    E4 (minimal rational degree) -- methodological (Occam)
+    E3 (psi -> 0 divergence) -- AUTOMATIC, not an independent input
+
+------------------------------------------------------------------------------
+ Step 2: P2-D dimensional naturalness (V/Phi^4 forced by V form)
+------------------------------------------------------------------------------
+
+  TGP potential (sek08a):  V(Phi) = (beta/3) Phi^3 - (gamma/4) Phi^4
+    dV/dPhi |_{Phi=Phi_0} = 0  =>  beta = [Phi_0*gamma]  (vacuum cond.)
+    With Phi_0 = 1 (natural units): beta = gamma  (closure_2026-04-26).
+
+  P2-D dimensional ratio at vacuum-locked V (beta = gamma Phi_0):
+    V/Phi^4               = -gamma/4 + Phi_0*gamma/(3*Phi)
+    V/Phi^4 (psi-form)    = -gamma/4 + Phi_0*gamma/(3*Phi)
+
+  Target form:  (4 - 3 psi)/psi
+  ratio (V/Phi^4) / (target form) = gamma/12
+  Is ratio independent of psi? -> True
+
+  =>  V/Phi^4 IS proportional to (4 - 3 psi)/psi.
+      But this is a TAUTOLOGY of the V form (cubic + quartic with
+      beta = gamma Phi_0): V has a *non-trivial second zero* at
+      Phi = (4/3) Phi_0, which is precisely E2 of P2-C.
+
+  Locate the second zero of V analytically:
+    V(Phi) = 0  =>  Phi in [4*Phi_0/3]
+    Non-trivial roots in psi units = [4/3]
+  [PASS] V/Phi^4 proportional to (4-3 psi)/psi
+  [PASS] V's non-trivial second zero is at psi = 4/3 (= E2)
+
+  =>  P2-D 'dimensional naturalness' is NOT INDEPENDENT of P2-C E2;
+      both flow from the same V structure (cubic+quartic + beta=gamma).
+
+------------------------------------------------------------------------------
+ Step 3: P2-E T^{00} correspondence (consistent but not unique)
+------------------------------------------------------------------------------
+
+  Delta V / Phi^4    = -gamma*(psi - 1)**2*(3*psi**2 + 2*psi + 1)/(12*Phi_0**2*psi**4)
+  f(psi) - 1         = -4 + 4/psi    [from hyperbolic ansatz]
+  Ratio (Delta V / Phi^4) / (f-1) = gamma*(3*psi**3 - psi**2 - psi - 1)/(48*Phi_0**2*psi**3)
+
+  Ratio depends on substrate parameters (gamma, Phi_0):
+    => P2-E is CONSISTENT (correspondence holds) but NOT UNIQUE
+       (does not fix f independently of substrate parameter choice).
+  [PASS] P2-E ratio depends on substrate parameters (NOT a unique determination)
+
+------------------------------------------------------------------------------
+ Step 4: Honest count of INDEPENDENT foundational postulates
+------------------------------------------------------------------------------
+
+  Claim of M9_1_pp_P2_results.md:
+    'Three independent principles (P2-C, P2-D, P2-E) converge.'
+
+  Audit B8 critique (AUDYT_TGP_2026-05-01.md):
+    'M9.1'' potrojna motywacja cyrkularna --
+     3 zasady (E1/E2/E3) sprowadzaja sie do jednego ad-hoc postulatu
+     f(4/3) = 0.'
+
+  Honest counting under sympy LOCK:
+
+    + E1: f(1) = 1                    (vacuum normalization)
+    +     -- physically natural (calibration only)
+
+    + E2: f(4/3) = 0                  (second zero of V at boundary)
+    +     -- THIS is the ad-hoc structural postulate
+    +        equivalent to: V(Phi) cubic+quartic with beta=gamma
+    +        has a non-trivial second zero at Phi = (4/3) Phi_0.
+
+    + E4: minimal rational degree     (Occam)
+    +     -- methodological
+
+    - E3: psi -> 0 divergence         (NOT INDEPENDENT)
+    -     -- automatic from E1 + E2 + E4
+
+    - P2-D V/Phi^4 minimal ratio       (NOT INDEPENDENT)
+    -     -- consequence of V form (cubic+quartic + beta=gamma)
+    -     -- shares E2 root (non-trivial second zero of V at 4/3)
+
+    - P2-E T^{00} correspondence       (NOT UNIQUE)
+    -     -- consistent with f, but does not determine its form
+    -     -- depends on substrate parameters (gamma, Phi_0)
+
+  =>  GENUINE INDEPENDENT POSTULATE COUNT:  ONE.
+
+      Foundational postulate (FP-1):
+        V(Phi) = (beta/3) Phi^3 - (gamma/4) Phi^4
+        with beta = gamma (vacuum condition)
+        AND non-trivial second zero of V at Phi = (4/3) Phi_0
+        marks the boundary of the Lorentzian patch psi < 4/3.
+
+  This is NOT a defect of TGP -- it is HONEST acknowledgment that
+  the hyperbolic metric form is ANCHORED in the V structure of the
+  substrate sector (sek08a), not in three independent reasonings.
+
+  P2-D and P2-E remain valuable as INTERPRETIVE rephrasings:
+    - P2-D explains WHY (4-3 psi)/psi is dimensionally preferred
+      (no derivative coupling needed)
+    - P2-E confirms ENERGETIC consistency (no contradiction with T^00)
+  But neither provides INDEPENDENT determination.
+  [PASS] Honest count: ONE foundational postulate (V structure)  -- P2-D, P2-E reduce; E3 redundant; E1 calibration; E4 methodological
+
+------------------------------------------------------------------------------
+ Step 5: Variational status -- emergent metric, not autonomous field
+------------------------------------------------------------------------------
+
+  Standard scalar-tensor variational principle:
+    delta S / delta g_munu = 0  ->  Einstein-like equations
+    delta S / delta Phi    = 0  ->  scalar field equation
+
+  TGP architecture (TGP_FOUNDATIONS.md, sek08a):
+    g_eff(Phi) is DEFINED ALGEBRAICALLY by Phi:
+      g_tt = -c_0^2 (4 - 3 psi)/psi      (Form-IV M9.1'')
+      g_ii = psi/(4 - 3 psi)
+    with psi = Phi / Phi_0.
+
+    g_eff is NOT an autonomous tensor field; it is a derived
+    operational descriptor of substrate behaviour under V(Phi).
+
+  Consequence:
+    delta S / delta g_munu CANNOT be defined independently;
+    the only physical degree of freedom is Phi.
+
+    Variational extremalization gives:
+      delta S / delta Phi  ->  Phi-EOM  (sek08a eq:field-eq-reproduced)
+
+    Einstein equations emerge as a CONSISTENCY THEOREM at slow-source
+    limit (sek08a remark rem:not-scalar-tensor), NOT as a co-equal
+    variational equation.
+
+  This means:
+    The hyperbolic metric form CANNOT be derived from a 'field-
+    theoretic' variational principle of the conventional type.
+    This is a STRUCTURAL FEATURE of TGP's emergent gravity:
+    metric is the *signature* of substrate-Phi behaviour, not a
+    co-equal field.
+
+    The 'B8 dedicated cycle' as proposed in the audit (search for
+    L_metric whose variation yields hyperbolic f) is in fact
+    CATEGORICALLY MISGUIDED inside TGP architecture.  A more
+    constructive direction is to derive the V form (cubic+quartic
+    with beta=gamma + second zero at Phi=4/3 Phi_0) from a
+    LEVEL-0 substrate Hamiltonian H_Gamma (TGP_FOUNDATIONS sec 3),
+    which is a separate (and harder) program.
+  [PASS] Variational principle status documented honestly  -- g_eff algebraic (not autonomous); delta S / delta Phi = field eq only
+==============================================================================
+ B8 FINAL VERDICT
+==============================================================================
+
+  [PASS] Step 1 (P2-C internal: E3 redundant)
+  [PASS] Step 2 (P2-D not independent of E2)
+  [PASS] Step 3 (P2-E consistent but not unique)
+  [PASS] Step 4 (honest count: ONE postulate)
+  [PASS] Step 5 (variational status documented)
+
+  Total: 5/5 PASS
+
+  >> B8 HONEST CLOSURE:
+     'Potrojna motywacja P2-C/D/E' REDUCES to ONE foundational
+     postulate (FP-1):  V(Phi) cubic+quartic with beta=gamma
+     vacuum condition + non-trivial second zero of V at psi=4/3.
+     P2-D and P2-E are INTERPRETIVE rephrasings (dimensional and
+     energetic angles), not independent determinations of f.
+
+     Standard variational principle delta S / delta g_munu DOES
+     NOT exist in TGP architecture: g_eff is algebraic in Phi,
+     not an autonomous field.  Hence the audit B8 'open dedicated
+     cycle' direction (find S whose extremal yields hyperbolic
+     f via metric variation) is CATEGORICALLY MISGUIDED inside
+     TGP.  Constructive direction:  derive V structure from
+     LEVEL-0 substrate Hamiltonian H_Gamma (separate program).
+
+     M9.1''-P2 'potrojna motywacja konwergentna' claim downgraded
+     to: ONE foundational postulate (V structure) with two
+     consistent interpretive viewpoints (dimensional, energetic).
+
+  >> AUDYT B8 CLOSED via honesty acknowledgment.
+
+==============================================================================

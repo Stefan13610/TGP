@@ -7,6 +7,18 @@
 **Output:** [[m9_1_pp_p2_variational.txt]]
 **Test plan:** [[M9_1_pp_setup.md]] §6 P2
 
+> **🛠 B8-CLOSED 2026-05-01 — honest independence count under sympy LOCK:**
+> Werdykt P2 "potrójna motywacja konwergentna" downgraded do **ONE foundational postulate (FP-1)**: `V(Φ) = (β/3)Φ³ - (γ/4)Φ⁴` z β=γ + non-trivial second zero V przy `Φ=(4/3)Φ₀`.
+> - **E3** (ψ→0 divergence) — **redundant** od E1+E2+E4 (sympy: `sp.limit(f,ψ,0,'+') = oo` automatycznie)
+> - **P2-D** (V/Φ⁴ ratio) — **tautologia** struktury V (cubic+quartic + β=γ); drugie zero V przy ψ=4/3 **JEST E2**
+> - **P2-E** (T⁰⁰ correspondence) — **NOT UNIQUE** (zależy od substrate parameters γ, Φ₀); konsystentne ale nie determinujące
+> - **Standard variational `δS/δg_μν`** — **CATEGORICALLY DOES NOT EXIST** w TGP (g_eff algebraiczne w Φ, nie autonomiczne pole); audit-proposed "B8 dedicated cycle: find L_metric" **categorically misguided**
+> - **Konstruktywny kierunek alternatywny:** derive V structure z LEVEL-0 substrate Hamiltonian H_Γ (TGP_FOUNDATIONS sec 3) — separate program, nie B8
+>
+> P2-D i P2-E pozostają wartościowe jako **interpretive rephrasings** (dimensional + energetic angles), nie niezależne determinacje of f.
+>
+> Skrypt: [[B8_lagrangean_independence_check.py]] (5/5 PASS) | Synteza: [[B8_lagrangean_independence_check_results.md]] | Audit § V: [[../../meta/AUDYT_TGP_2026-05-01.md]] § V
+
 ---
 
 ## 1. Cel testu
@@ -146,14 +158,16 @@ postaci `f` jednoznacznie).
 
 ### Trzy niezależne pryncypia (P2-C, P2-D, P2-E) wybierają tę samą formę
 
-**To jest silny potrójny zbieg fizyczny:**
+> **🛠 B8-CLOSED 2026-05-01:** Pod sympy LOCK *honest count* daje **ONE foundational postulate**, nie trzy niezależne. P2-D jest tautologią struktury V (drugie zero V przy ψ=4/3 = E2 z P2-C); P2-E zależy od substrate parameters γ, Φ₀ (consistent ≠ unique). Poniższe pozostaje jako **interpretive rephrasings** (dimensional + energetic angles), nie jako triple-independence claim.
+
+**To jest silny potrójny zbieg fizyczny** (poprawka B8: ten sam jeden postulat oglądany z 3 stron):
 
 - **Geometryczny (P2-C):** `f` znika na granicy fazowej kinetyki substratu
-  (drugie zero `V`, koniec basenu ghost-free).
+  (drugie zero `V`, koniec basenu ghost-free) — **THE structural postulate (E2)**.
 - **Wymiarowy (P2-D):** `f` jest najprostszym bezwymiarowym stosunkiem
-  `V/Φⁿ` — nie wymaga dodatkowych pochodnych ani parametrów substratu.
+  `V/Φⁿ` — *interpretive rephrasing*: V/Φ⁴ ∝ (4-3ψ)/ψ to tautologia V (cubic+quartic + β=γ), nie niezależne pryncypium.
 - **Energetyczny (P2-E):** `f - 1` koreluje z nadwyżką gęstości energii
-  substratu nad próżnią (z poprawkami substratowymi).
+  substratu nad próżnią — *test konsystencji*; ratio zależy od (γ, Φ₀), nie unique.
 
 ### To **nie jest** jednokrokowe wyprowadzenie wariacyjne
 
@@ -162,11 +176,15 @@ Nie znaleziono **jednego** pryncypium z działania
 hyperboliczną formę przez Euler-Lagrange. Forma nadal pozostaje
 **postulatem** ax:metric-from-potential.
 
+> **🛠 B8 elaboracja:** Pod sympy LOCK pokazano, że standardowe `δS/δg_μν = 0` **kategorialnie nie istnieje** w architekturze TGP — `g_eff(Φ)` jest algebraiczne, nie autonomiczne pole. Jedyny variational equation to `δS/δΦ → Φ-EOM`; Einstein equations emergują jako consistency theorem (sek08a `rem:not-scalar-tensor`). Audit-proposed "B8 dedicated cycle: find L_metric" jest categorically misguided. Konstruktywny następca: derive V structure z LEVEL-0 substrate Hamiltonian H_Γ (TGP_FOUNDATIONS sec 3) — osobny i trudniejszy program.
+
 ### Ale jest to **konwergentne wieloszczeblowe wyprowadzenie**
 
-Trzy niezależne motywacje substratowo-fizyczne wybierają **identyczną**
-postać. To eliminuje arbitralność. **Hyperboliczna metryka nie jest
-wymyślona** — jest **wymuszana przez trzy odrębne fizyczne wymagania**.
+> **🛠 B8 downgrade:** "Konwergentne" w słabszym sensie: jedna struktura V (cubic+quartic z β=γ + drugie zero przy ψ=4/3) generuje formę f, oglądaną z 3 stron (geometryczna, wymiarowa, energetyczna). To **eliminuje arbitralność** w słabszym sensie niż triple-independence — forma jest **anchored w strukturze V**, a nie wymyślona, ale opiera się na **JEDNYM** strukturalnym postulacie (FP-1: `V cubic+quartic + β=γ + non-trivial second zero przy ψ=4/3`).
+
+Trzy interpretive rephrasings wybierają **identyczną**
+postać, **bo wszystkie wynikają z tej samej struktury V**.
+**Hyperboliczna metryka nie jest wymyślona** — jest **wymuszana przez strukturę V sektora substratowego** (FP-1).
 
 ---
 
@@ -176,7 +194,9 @@ wymyślona** — jest **wymuszana przez trzy odrębne fizyczne wymagania**.
 |---|---|
 | **M9.1'' przed P1** | postulat ad hoc (motywowany 1PN-zgodnością) |
 | **M9.1'' po P1** | postulat z weryfikacją analityczną przez 1PN, falsyfikowalna predykcja od 2PN |
-| **M9.1'' po P2** | postulat z **potrójną motywacją substratową** (P2-C ∧ P2-D ∧ P2-E), brak jednoaktowego wyprowadzenia z działania |
+| **M9.1'' po P2** | postulat z ~~potrójną motywacją substratową~~ (P2-C ∧ P2-D ∧ P2-E), brak jednoaktowego wyprowadzenia z działania |
+| **M9.1'' po P3** | β_PPN=1 EXACT (post-B6 Form-IV + c₂=-1), γ_PPN=1 EXACT (z f·h=1), 2PN falsifiable |
+| **M9.1'' po B8** | postulat z **JEDNĄ foundational structural input** (FP-1: V cubic+quartic z β=γ + drugie zero V przy `Φ=(4/3)Φ₀`); P2-D, P2-E to interpretive rephrasings; standard `δS/δg_μν` categorically not applicable (emergent gravity) |
 
 **Forma nie jest wybrana arbitralnie** — przeciwnie, jest **najbardziej
 naturalnym wyborem** spośród wszystkich rozważonych kandydatów,
@@ -222,14 +242,21 @@ substratu, zasada zachowania budżetu w fazach metrycznych)? **Otwarty**.
 
 ## 7. Werdykt P2
 
-> **POZYTYWNY POSTULAT:** Forma `g_tt = -c² · V(Φ)/Φ⁴` (znormalizowana
-> do próżni, dająca `f(ψ) = (4-3ψ)/ψ`) jest **wybierana jednoznacznie**
-> przez **trzy niezależne pryncypia substratowe**: P2-C (rozszerzony
-> budżet), P2-D (dimensional naturalness), P2-E (korespondencja `T⁰⁰`).
-> Brak jednoaktowego wyprowadzenia z działania **nie podważa** statusu
-> formy, gdyż w TGP grawitacja jest emergentna i metryka nie jest
-> fundamentalnym polem do wariacji. **M9.1'' przechodzi do statusu
-> postulatu z potrójną motywacją.**
+> **POZYTYWNY POSTULAT (post-B8 honest version):** Forma `g_tt = -c² · V(Φ)/Φ⁴` (znormalizowana
+> do próżni, dająca `f(ψ) = (4-3ψ)/ψ`) jest **anchored** w **JEDNEJ
+> foundational structural input** (FP-1: V cubic+quartic z β=γ + non-trivial
+> second zero V przy `Φ=(4/3)Φ₀`). P2-C E2 jest tym strukturalnym
+> postulatem; P2-D (dimensional naturalness, V/Φ⁴) i P2-E (korespondencja `T⁰⁰`)
+> to **interpretive rephrasings** wynikające z tej samej struktury V,
+> nie niezależne determinacje (B8 sympy LOCK). Brak jednoaktowego wyprowadzenia
+> z działania **nie podważa** statusu formy, gdyż w TGP grawitacja
+> jest emergentna i metryka nie jest fundamentalnym polem do wariacji
+> — `δS/δg_μν` **kategorialnie nie istnieje** w TGP architecture.
+> **M9.1'' przechodzi do statusu postulatu z JEDNYM foundational
+> postulatem (V structure) i dwoma interpretive viewpoints
+> (dimensional, energetic).**
+
+> **🛠 B8-CLOSED 2026-05-01:** "Potrójna motywacja konwergentna" downgraded do honest count: ONE foundational postulate. Konstruktywny następca: derive V structure z LEVEL-0 H_Γ (TGP_FOUNDATIONS sec 3, separate program).
 
 ### Konsekwencje dla planu testów
 
@@ -260,9 +287,7 @@ P2 zamknięte **POZYTYWNIE**. Następne testy:
 
 ## 9. Podsumowanie w jednym zdaniu
 
-P2 ustala, że hyperboliczna metryka `g_tt = -c² · V(Φ)/Φ⁴` **nie jest
-arbitralna** — jest **jednoznacznie wybrana** przez trzy niezależne
-substratowe pryncypia (geometryczne, wymiarowe, energetyczne) — i
-choć brak jednoaktowego wyprowadzenia z działania (kategorialnie
-zgodnie z emergentną naturą grawitacji w TGP), jej forma jest
-**wymuszona** przez fundamentalne wymagania, nie wymyślona.
+P2 (post-B8 honest version) ustala, że hyperboliczna metryka `g_tt = -c² · V(Φ)/Φ⁴` **nie jest
+arbitralna** — jest **anchored w JEDNEJ foundational structural input** (FP-1: V cubic+quartic z β=γ + drugie zero V przy `Φ=(4/3)Φ₀`), oglądanej z trzech stron (geometrycznej, wymiarowej, energetycznej) jako interpretive rephrasings — i choć brak jednoaktowego wyprowadzenia z `δS/δg_μν` (kategorialnie zgodnie z emergentną naturą grawitacji w TGP, gdzie `g_eff` jest algebraiczne w Φ, nie autonomiczne pole), jej forma jest **wymuszona** przez strukturę V sektora substratowego, nie wymyślona; konstruktywny kierunek następczy to derive V z LEVEL-0 substrate Hamiltonian H_Γ (separate program).
+
+> **🛠 B8-CLOSED 2026-05-01** — pełna synteza: [[B8_lagrangean_independence_check_results.md]] (5/5 PASS sympy LOCK).

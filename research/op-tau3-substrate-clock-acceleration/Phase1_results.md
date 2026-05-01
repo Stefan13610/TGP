@@ -45,12 +45,29 @@ Three independent UV channels:
 **Synthesis: α_g > 0 → CLOCK ACCELERATION in lab E·B regions.**
 
 ### T1.3: Effective mass + clock-rate shift formula
-$$m_{e,eff}(X) = m_e^{(0)} + \frac{\alpha_g}{\Lambda^2}(\partial_\mu \ln X)(\partial^\mu \ln X)$$
+
+> **⚠ AUDIT 2026-05-01 (A5) PATCH**: original additive form
+> `m_e_eff = m_e^(0) + (α_g/Λ²)(∂lnX)²` jest **dimensionally niespójna**
+> ([α_g]=0, [Λ²]=mass², [(∂lnX)²]=mass² → (α_g/Λ²)(∂lnX)² = bezwymiarowe;
+> dodawanie do m_e [mass] = niedopuszczalne). Poprawiona forma **multiplikatywna**
+> (kanoniczny dim-6 EFT operator c·(∂lnX)²·ψ̄ψ/Λ² × Higgs/Yukawa scale matching):
+
+$$\boxed{\;m_{e,eff}(X) = m_e^{(0)}\!\left[1 + \frac{\alpha_g}{\Lambda^2}(\partial_\mu \ln X)(\partial^\mu \ln X)\right]\;}$$
 
 For atomic transition ω_nm ∝ m_e c² α_em²:
-$$\frac{\delta \omega}{\omega} = \frac{\delta m_e}{m_e} = \frac{\alpha_g}{\Lambda^2 m_e^{(0)}} (\partial \ln X)^2$$
+$$\boxed{\;\frac{\delta \omega}{\omega} = \frac{\delta m_e}{m_e^{(0)}} = \frac{\alpha_g}{\Lambda^2}(\partial \ln X)^2\;}$$
+
+(bez podziału przez m_e^(0) — usunięte vs original).
 
 For α_g > 0: ω_nm shift POSITIVE → CLOCK ACCELERATES.
+
+**Konsekwencja A5 patch**:
+- δω/ω = (α_g/Λ²)(∂lnX)² **bez** 1/m_e^(0) — dim-coherent
+- Λ-scan T2.4 (Phase 2) wymaga re-run: gate detektowalności przesuwa się
+  z Λ ≲ 100 MeV do **Λ ≲ √(m_e × δω_threshold) × κ ~ O(10 GeV)** scale
+- Sr/Yb 1e-18/yr threshold: nowa Λ-frontier ~ GeV scale (poprzednio MeV)
+- m_X = 100 MeV phenomenological "lock" pozostaje **wolnym parametrem**
+  (zgodnie z D4 audytu) — patrz audit-aware T2.4 update w Phase2.
 
 ### T1.4: Substrate gradient source via ω.1 EOM
 ω.1 substrate EOM (from ω.1.W2.5):

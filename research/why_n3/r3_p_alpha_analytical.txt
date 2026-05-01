@@ -1,0 +1,168 @@
+==============================================================================
+  R3 — Analityczne dochodzenie p(alpha) = 5 - alpha
+==============================================================================
+
+==============================================================================
+  SEKCJA 1: Decomposition K = K_core + K_tail dla e/mu (alpha-skan)
+==============================================================================
+
+  alpha |       A_e      A_mu |  K_core_e  K_core_mu |  K_tail_e  K_tail_mu |  <g^2a>_e  <g^2a>_mu
+  ----------------------------------------------------------------------------------------------------
+   0.50 |   0.13266   0.40197 |   0.01903    0.17856 |   0.85865    7.88706 |    0.9553     1.0955
+   0.75 |   0.12857   0.43584 |   0.01790    0.20777 |   0.80658    9.27154 |    0.9369     1.1719
+   1.00 |   0.12461   0.47241 |   0.01684    0.24252 |   0.75774   10.89184 |    0.9209     1.2749
+   1.25 |   0.12078   0.51190 |   0.01586    0.28416 |   0.71193   12.78735 |    0.9070     1.4119
+   1.50 |   0.11708   0.55454 |   0.01495    0.33439 |   0.66896   15.00442 |    0.8950     1.5923
+   1.75 |   0.11350   0.60061 |   0.01410    0.39535 |   0.62865   17.59800 |    0.8847     1.8273
+   2.00 |   0.11003   0.65041 |   0.01331    0.46949 |   0.59084   20.63361 |    0.8759     2.1310
+
+==============================================================================
+  SEKCJA 2: Test hypothesis m_obs = c * A^a * g0^b (TWO exponents)
+==============================================================================
+
+  PDG: m_mu/m_e = 206.77
+  Equation: (A_mu/A_e)^a * (g0_mu/g0_e)^b = 206.77
+  g0_mu/g0_e = phi = 1.6180
+
+  alpha |  A_mu/A_e |  log207 |  log_ratio |  a (z log) |   p=5-α
+  -------------------------------------------------------------------------------------
+   0.50 |   3.03014 |  5.3316 |    1.10861 |    4.80927 |  4.5000  (diff +6.87%)
+   0.75 |   3.38994 |  5.3316 |    1.22081 |    4.36726 |  4.2500  (diff +2.76%)
+   1.00 |   3.79104 |  5.3316 |    1.33264 |    4.00078 |  4.0000  (diff +0.02%)
+   1.25 |   4.23811 |  5.3316 |    1.44412 |    3.69194 |  3.7500  (diff -1.55%)
+   1.50 |   4.73639 |  5.3316 |    1.55528 |    3.42807 |  3.5000  (diff -2.06%)
+   1.75 |   5.29186 |  5.3316 |    1.66617 |    3.19991 |  3.2500  (diff -1.54%)
+   2.00 |   5.91131 |  5.3316 |    1.77687 |    3.00056 |  3.0000  (diff +0.02%)
+
+==============================================================================
+  SEKCJA 3: Decomposition m_obs ~ A^2 * (core_dressing)^?
+==============================================================================
+
+  Hipoteza: K_total = K_tail + K_core
+    K_tail ~ A^2 (universal, z linearyzacji tail)
+    K_core ~ A^? (zalezy od alpha)
+  Jesli m_obs ~ K_total^q dla pewnego q, to p_eff zalezy od mieszania.
+
+  alpha | K_t/A^2 (e) |  K_t/A^2 (mu) | K_c/A^2 (e) |  K_c/A^2 (mu)
+  ---------------------------------------------------------------------------
+   0.50 |     48.7929 |       48.8127 |      1.0816 |        1.1051
+   0.75 |     48.7951 |       48.8089 |      1.0827 |        1.0938
+   1.00 |     48.7971 |       48.8044 |      1.0846 |        1.0867
+   1.25 |     48.7991 |       48.7990 |      1.0873 |        1.0844
+   1.50 |     48.8010 |       48.7924 |      1.0907 |        1.0874
+   1.75 |     48.8028 |       48.7844 |      1.0948 |        1.0960
+   2.00 |     48.8045 |       48.7752 |      1.0996 |        1.1098
+
+  Obserwacja: K_t/A^2 ~= const (universal tail), ale K_c/A^2 zalezy od g0.
+
+==============================================================================
+  SEKCJA 4: Hipoteza A^p z core wavefn-renormalization Z(g0, alpha)
+==============================================================================
+
+  Idea: dla pola Phi w substracie sprzezonego z grawitacja przez metryke
+  g_eff[Phi]=Phi^4 (w sek08c), masa ZEWNETRZNA jaka widzi obserwator dla solitonu
+  z A_tail amplituda jest:
+
+    m_obs ~ A_tail^2 * Z(g0, alpha)
+
+  gdzie Z to "wave-function renormalization factor" rdzenia. Wtedy:
+
+    m_mu/m_e = (A_mu/A_e)^2 * Z(g0_mu)/Z(g0_e)
+
+  Dla Z(g0) = g0^{n(alpha)} z liniowym n(alpha):
+    log(m_mu/m_e) = 2*log(A_mu/A_e) + n(alpha) * log(g0_mu/g0_e)
+
+  Solve dla n(alpha):
+
+  alpha |  log r_A |  log phi |  2 log r_A |  n(alpha) | p_eff = 2 + n*log(phi)/log(r_A)
+  ------------------------------------------------------------------------------------------
+   0.50 |   1.1086 |   0.4812 |     2.2172 |    6.4720
+   0.75 |   1.2208 |   0.4812 |     2.4416 |    6.0056
+   1.00 |   1.3326 |   0.4812 |     2.6653 |    5.5408
+   1.25 |   1.4441 |   0.4812 |     2.8882 |    5.0775
+   1.50 |   1.5553 |   0.4812 |     3.1106 |    4.6155
+   1.75 |   1.6662 |   0.4812 |     3.3323 |    4.1546
+   2.00 |   1.7769 |   0.4812 |     3.5537 |    3.6946
+
+==============================================================================
+  SEKCJA 5: Czy n(alpha) ma postac liniowa? Empiryczny fit
+==============================================================================
+
+  Linear fit n(alpha) = a*alpha + b:
+    a = -1.85136
+    b = 7.39429
+
+  alpha |  n_numerical |     n_fit |     diff
+  -------------------------------------------------------
+   0.50 |      6.47196 |   6.46861 | +0.00334
+   0.75 |      6.00562 |   6.00577 | -0.00015
+   1.00 |      5.54084 |   5.54293 | -0.00209
+   1.25 |      5.07752 |   5.08009 | -0.00257
+   1.50 |      4.61553 |   4.61725 | -0.00173
+   1.75 |      4.15463 |   4.15441 | +0.00022
+   2.00 |      3.69455 |   3.69158 | +0.00298
+
+==============================================================================
+  SEKCJA 6: Sprzezenie z odkrytym p(alpha) = 5-alpha
+==============================================================================
+
+  Empirycznie: m_obs / m_e = (A_mu/A_e)^p z p = 5-alpha
+
+  Z dwuwykladnikowej hipotezy:
+    m_obs / m_e = (A_mu/A_e)^2 * (g0_mu/g0_e)^n(alpha)
+                = (A_mu/A_e)^2 * phi^n(alpha)
+
+  Rownanie p-fitu:
+    (A_mu/A_e)^(5-alpha) = (A_mu/A_e)^2 * phi^n(alpha)
+    log(A_mu/A_e) * (5-alpha) = 2 log(A_mu/A_e) + n(alpha) * log(phi)
+    (3-alpha) * log(A_mu/A_e) = n(alpha) * log(phi)
+    n(alpha) = (3-alpha) * log(A_mu/A_e) / log(phi)
+
+  Dla alpha=1: n(1) = 2 * log(3.79) / log(1.618) = 2 * 1.333 / 0.481 = 5.54
+  Dla alpha=2: n(2) = 1 * log(5.91) / log(1.618) = 1.778 / 0.481 = 3.69
+
+  TAK — n(alpha) NIE jest stale! Zaleznosc od alpha pochodzi z TEGO ze
+  A_mu/A_e zalezy od alpha.
+
+  Liniowy fit n(alpha) wyzej daje informacje czy powiazanie jest ladne.
+
+
+  Bezposredni test p(alpha) = 5-alpha:
+  alpha |    p_emp |  5-alpha |   diff%
+   0.50 |   4.8093 |   4.5000 |   +6.87%
+   0.75 |   4.3673 |   4.2500 |   +2.76%
+   1.00 |   4.0008 |   4.0000 |   +0.02%
+   1.25 |   3.6919 |   3.7500 |   -1.55%
+   1.50 |   3.4281 |   3.5000 |   -2.06%
+   1.75 |   3.1999 |   3.2500 |   -1.54%
+   2.00 |   3.0006 |   3.0000 |   +0.02%
+
+==============================================================================
+  SEKCJA 7: KLUCZOWY OPEN PROBLEM
+==============================================================================
+
+  Empiryczna p(alpha) = 5-alpha jest PRZYBLIZONA, dokladna dla alpha=1, 2.
+  Nie zostala derywowana analitycznie z fizyki solitonu — pozostaje OPEN PROBLEM.
+
+  Dwa silnik dowody numeryczne ze relacja jest realna (nie artefakt):
+  1. p = 4.001 dla alpha=1 (R3 oryginalne)
+  2. p = 3.001 dla alpha=2 (TGP-canonical, sympy diff zero)
+
+  Mozliwe sciezki derywacji:
+  (A) Decomposition K_total = K_tail (~ A^2 universal) + K_core (~ A^? z alpha)
+  (B) Wave-function renormalization Z(g0, alpha): m_obs = A^2 * Z
+  (C) Field theory PDE analysis: solving Phi-EOM far-field with source-multipole
+
+  Bez derywacji p(alpha)=5-alpha pozostaje EMPIRYCZNYM ODKRYCIEM, nie
+  FIRST-PRINCIPLES wzoru. To jest OK — wiele formul w fizyce zostalo odkrytych
+  empirycznie zanim derywowano (Rydberg, Balmer, Bohr, Planck...). Status:
+
+    [EMPIRICAL DISCOVERY] — sprawdzone numerycznie, czeka na derywacje analityczna
+
+  Sciezka A wydaje sie najobiecujaca — zaleznosc od alpha wchodzi przez core
+  contribution K_core ~ A^2 * <g^{2*alpha}>, gdzie srednia po profilu rdzenia
+  zalezy nieliniowo od g0 (i przez to od alpha).
+
+  AKCJA: ten skrypt udokumentowuje JAWNIE ze p(alpha)=5-alpha jest empiryczny,
+  nie analityczny. Wymaga osobnego studium — proponowany cykl R3-Q5 (z R5 bridge).
+

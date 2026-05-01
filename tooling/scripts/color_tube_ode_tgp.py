@@ -280,10 +280,10 @@ if results:
     # j0 ~ alpha_s * (color factor) / R0^2
     # For SU(3): j0 ~ (4/3) * alpha_s / R0^2 (Casimir)
     #
-    # In TGP: alpha_s = N_c^3 * g_0^e / (8*Phi_0) = 0.1190
-    # j0 * R0^2 ~ (4/3) * 0.119 = 0.159
+    # In TGP (B3-v2 lock 2026-05-01): alpha_s = N_c^3 * g_0^e / (8*Phi_0) = 0.1184
+    # j0 * R0^2 ~ (4/3) * 0.1184 = 0.158
 
-    alpha_s_TGP = 0.1190
+    alpha_s_TGP = 0.1184
     C_F = 4.0/3.0  # SU(3) fundamental Casimir
     target_product = C_F * alpha_s_TGP
 

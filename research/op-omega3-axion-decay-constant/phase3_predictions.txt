@@ -1,0 +1,82 @@
+========================================================================
+ω.3.Phase3 — predictions + 4-channel convergence
+========================================================================
+f_a       = 4.8456e+17 GeV   (sympy: 3125·π²·M_GUT/1273)
+g_aγ      = 1.7129e-20 GeV^-1
+g_axion   = 8.3002e-03
+E_TGP     = 7.146667   (= 536/75)
+N_A       = 8.771930   (= 500/57)
+K_struct  = 173.150954   (= N_A·2π²)
+M_TGP     = 3.4630e+18 GeV   (= K·M_GUT)
+
+------------------------------------------------------------------------
+O3.1  PVLAS-V 2030+ Light-Shining-Through-Walls NULL
+------------------------------------------------------------------------
+  PVLAS-V proj    = 6.60e-11 GeV^-1
+  TGP g_aγ        = 1.71e-20 GeV^-1
+  ratio TGP/PVLAS = 2.60e-10  (9.59 OOM below)
+  P_LSW signal    ∝ (g_aγ/sens)^4 = 4.54e-39  → STRUCTURAL NULL
+  O3.1 verdict    : PASS — NULL forecast LOCKED
+------------------------------------------------------------------------
+O3.2  ALPS-II / IAXO 2030+ NULL
+------------------------------------------------------------------------
+  ALPS-II 2030+   = 2.00e-11 GeV^-1   (9.07 OOM above TGP)
+  IAXO 2030+      = 1.00e-12 GeV^-1   (7.77 OOM above TGP)
+  O3.2 verdict    : PASS — NULL helioscope/regen forecast
+------------------------------------------------------------------------
+O3.3  ADMX/HAYSTAC haloscope NULL
+------------------------------------------------------------------------
+  ADMX/HAYSTAC    = 1.00e-15 GeV^-1   (4.77 OOM above TGP)
+  ALP m_a free    : haloscope only sensitive in [μeV, meV] band
+  TGP m_a undetermined → coupling alone forces structural NULL
+  P_halo ratio    ∝ (g_aγ/sens)^2 = 2.93e-10  → STRUCTURAL NULL
+  O3.3 verdict    : PASS — structural NULL (coupling+m_a free)
+------------------------------------------------------------------------
+O3.4  CMB birefringence β cross-check
+------------------------------------------------------------------------
+  β_obs Planck PR4+ACT = 0.342°  (3.8σ candidate)
+  TGP-canonical band   = [0.2, 0.5]°
+  obs ∈ band           : True
+  Note: signal downgraded 2026-05-01 to LIVE PARTIAL hint
+        (awaits SO/LiteBIRD 2027+ corroboration)
+  O3.4 verdict    : PASS — TGP β-band reproduces ω.1+ω.2 hint
+------------------------------------------------------------------------
+O3.5  ALP fuzzy DM forward-gate
+------------------------------------------------------------------------
+  TGP axion type   : ALP (E-only, no QCD N anomaly)
+  m_a              : FREE PARAMETER post-ω.3
+  → no specific TGP DM mass band prediction
+  → forward-gate ω.4+ structural m_a derivation noted
+  Phase consistent: f_a > 10^16 GeV super-GUT, anthropic θ_i compatible
+  O3.5 verdict    : PASS — forward-gate ω.4+ noted, no current inconsistency
+------------------------------------------------------------------------
+O3.6  4-channel ω.3 convergence summary
+------------------------------------------------------------------------
+  Channel 1 UV.1 g*       = 71/100              (= 0.71)
+  Channel 2 ξ.1  N_A      = 500/57            (= 500/57)
+  Channel 3 UV.2 K        = N_A·2π²        (≈ 173.15)
+  Channel 4 ω.2  E_TGP    = 536/75            (= 536/75)
+
+  f_a (full cascade)      = 3125*pi**2*M_GUT/1273
+  f_a (sympy LOCK)        = 3125*pi**2*M_GUT/1273
+  sympy diff              = 0   (EXACT 0)
+  O3.6 verdict    : PASS — 4-channel cascade EXACT
+
+========================================================================
+ω.3.Phase3 SUMMARY
+========================================================================
+  O3.1: PASS
+  O3.2: PASS
+  O3.3: PASS
+  O3.4: PASS
+  O3.5: PASS
+  O3.6: PASS
+
+  SCORE: 6/6 PASS  (gate ≥5/6)
+  GATE : PASS
+
+  → ω.3 program END — FULL CONVERGENCE
+     f_a = 3125·π²·M_GUT/1273 ≈ 4.85·10^17 GeV
+     g_aγ = 1.71·10^-20 GeV^-1 → all axion-photon experiments NULL
+     Forward-gate ω.4+ : structural m_a derivation
+========================================================================

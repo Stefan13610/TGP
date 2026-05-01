@@ -81,6 +81,24 @@ gdzie:
   Czynnik $\varphi$ w~\eqref{eq:L-mat-unified} odzwierciedla fakt,
   \.ze \'zr\'od\l{}o $\rho$ generuje pole $\Phi$, nie $\varphi^0$
   (aksjomat~\ref{ax:zrodlo}).
+  %
+  % --- AUDIT NOTE 2026-05-01 (A4) -----------------------------------
+  % Czynnik $\varphi$ w `eq:L-mat-unified` JEST sprzeczny prima facie z
+  % `ax:metric-coupling` (sek08\_formalizm) g\l{}osz\k{a}cym wy\l{}\k{a}czne
+  % sprz\k{e}\.zenie materii przez metryk\k{e} efektywn\k{a}. Pe\l{}na akcja:
+  %   $\int d^4x \sqrt{-g_{eff}}\,L_{mat} = -(q c_0/\Phi_0)\int d^4x\,\varphi^2\rho$
+  % co jest sprz\k{e}\.zeniem dilatonowym Brans-Dicke poza minimalnym
+  % sprz\k{e}\.zeniem metrycznym. **DECYZJA POST-AUDIT 2026-05-01
+  % (Option 2 — preserve axiom)**: czynnik $\varphi$ to
+  % \emph{derived consequence} struktury $\sqrt{-g_{eff}} = c_0\varphi$
+  % i~ontologicznej roli $\Phi$ jako konstytuuj\k{a}cego $\rho$
+  % (ax:zrodlo); $\rho$ traktowane jest jako $T^\mu_\mu/c_0^2$ pochodne
+  % ze stress-energy tensor materii w~sprz\k{e}\.zeniu metrycznym
+  % kanonicznym, NIE jako independent dilaton coupling. Eöt-Wash /
+  % MICROSCOPE: test masy bezw\l{}adnej dostaje pe\l{}ny wk\l{}ad od
+  % $\sqrt{-g_{eff}}$ (equivalence principle echoes intact). Patrz
+  % [meta/AUDYT_TGP_2026-05-01.md] § A.4, § N.
+  % ------------------------------------------------------------------
 
   \item \textbf{Metryka efektywna} (hipoteza~\ref{hyp:metric}):
   \begin{equation}\label{eq:g-eff-unified}
@@ -495,7 +513,7 @@ z~$\Omega_m\,\rho_{\mathrm{cr}}/a^3$:
   = \frac{3}{4\PhiZero},
 \end{equation}
 gdzie w~ostatniej r\'owno\'sci u\.zyli\'smy relacji
-$q = 4\pi G_0/c_0^4 \cdot \PhiZero$
+$q = 4\pi G_0/(c_0^2\,\PhiZero)$
 z~granicy newtonowskiej (por.\ tw.~\ref{thm:field-eq},
 r\'ow.~\eqref{eq:full-field-alt}, identyfikacja
 $q\PhiZero = 4\pi G_0/c_0^2$; razy $c_0^2/H_0^2$

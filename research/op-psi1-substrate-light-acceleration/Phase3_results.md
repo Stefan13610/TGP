@@ -1,8 +1,8 @@
 ---
-title: "ψ.1.Phase3 results — predictions + 4-channel convergence 6/6 PASS"
+title: "ψ.1.Phase3 results — predictions + 4-channel convergence 6/6 PASS [INVALIDATED 2026-05-01]"
 date: 2026-05-01
 cycle: ψ.1.Phase3
-status: PASS
+status: INVALIDATED
 parent: "[[program.md]]"
 tags:
   - TGP
@@ -10,9 +10,25 @@ tags:
   - phase3
   - predictions
   - results
+  - INVALIDATED
+  - withdrawn
 ---
 
-# ψ.1.Phase3 results — 6/6 FULL CONVERGENCE
+> # ⛔ INVALIDATED 2026-05-01 (post-audit A6 + A8)
+>
+> **Status: WITHDRAWN.** Phase 3 predictions + convergence dziedziczą fałszywą
+> interpretację Z(x)F² → Δc/c z Phase 1+2. **TT13** ("PIERWSZY TGP cycle z lab
+> falsyfikacją WYKONALNĄ DZIŚ", Sagnac SNR ~3×10⁴) jest artefaktem.
+>
+> **Replacement:** [[Phase6_results.md]] (ψ.1.v2 predictions z poprawną
+> tensor operator interpretation).
+>
+> **Patrz**: [[Phase4_results.md]] T4.2 + [[../../meta/AUDYT_TGP_2026-05-01.md]]
+> A6/A8.
+
+---
+
+# ψ.1.Phase3 results — 6/6 FULL CONVERGENCE [INVALIDATED — see header above]
 
 ## Sub-test outcomes
 

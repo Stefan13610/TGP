@@ -36,12 +36,18 @@ from scipy.integrate import quad
 # ============================================================
 # TGP Parameters
 # ============================================================
+# NOTE (B3-v2 2026-05-01): Phi_0 = 24.6492 here is the Planck-based
+# value 36*Omega_Lambda used INSIDE this script's variational chain.
+# The canonical TGP value (Brannen) is Phi_0 = 24.783, which yields
+# alpha_s = 0.1184 and is the value reported in core LaTeX/papers.
+# We keep 24.6492 here so the variational checks against derived
+# quantities (kappa, m_sp etc.) remain internally consistent.
 Phi_0 = 24.6492
 kappa = 3.0 / (4 * Phi_0)  # = 0.03043
 a_Gamma = 0.040
 phi_golden = (1 + np.sqrt(5)) / 2
 A_target = a_Gamma / phi_golden  # = 0.02472
-alpha_s_TGP = 0.1190
+alpha_s_TGP = 0.1184  # B3-v2 lock 2026-05-01; canonical with Brannen Phi_0=24.783
 N_c = 3
 C_F = (N_c**2 - 1) / (2*N_c)  # = 4/3
 

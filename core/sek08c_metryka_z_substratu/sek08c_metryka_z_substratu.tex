@@ -2,6 +2,57 @@
 % §8c  Wyprowadzenie metryki efektywnej z substratu
 % Wstawić po sek08b_ghost_resolution.tex
 % ============================================================
+%
+% =====================================================================
+% AUDIT 2026-05-01 (A1 + A2 + A3) — METRIC-FORM DRIFT NOTICE
+% =====================================================================
+% W tym pliku wspó\l{}istniej\k{a} 4 wzajemnie sprzeczne formy metryki:
+%
+%   (I)   `eq:metric-full-derived` (ok. lin. 154, BOXED, twierdzenie
+%         derywacyjne): g_tt = -c²/ψ, g_rr = ψ.  STATUS:
+%         **FALSIFIED 2026-04-25** (M9.1: β_PPN=4 vs Mercury 1±10⁻⁴
+%         → 3·10⁴σ niezgodno\'s\'c). Pozostaje w tek\'scie historycznie
+%         jako "krok 3 mostu" — NIE u\.zywa\'c do nowych wyprowadze\'n.
+%
+%   (II)  Forma eksponencjalna (ok. lin. 208-211): g_tt = -c²·e^(-2U).
+%         STATUS: **OBSOLETE / PRZEJ\'SCIOWA** — by\l{}a u\.zywana
+%         dla \beta_PPN=1 dok\l{}adnie, ale pozostaje sprzeczna z
+%         (I) i (III). Nie ma niezale\.znego wyprowadzenia z bud\.zetu.
+%
+%   (III) `thm:antipodal-uniqueness` (ok. lin. 345-371): f = ψ^(-1/2),
+%         h = ψ^(+1/2). STATUS: **NIESP\'OJNE WEWN\k{E}TRZNIE**
+%         (M9.1' §2.1, 2026-04-25): linearyzacja daje γ=1 ✓, ale pe\l{}ne
+%         O(ε²) daje β_metric=3 (nie 1 jak deklaruje rem:antipodal-implications);
+%         z α=2 dynamic\k{a} (c_2=-1) → β_PPN=7. Twierdzenie
+%         "jedyno\'sci" nie obejmuje pe\l{}nej nieliniowo\'sci.
+%
+%   (IV)  M9.1'' hiperboliczna (TGP_FOUNDATIONS.md:64-69, **NIE w sek08c**):
+%         g_tt = -c²·(4-3ψ)/ψ. STATUS: **OPEN, KANONICZNA wg FOUNDATIONS**
+%         post-2026-04-25 — daje β_PPN=γ_PPN=1 algebraically (M9.1''
+%         z c_2=-1 master formula). **AUDIT A2-A3 WARNING**:
+%
+%       (a) A2: dla M9.1'' poprawne `√(-g) = c·ψ/(4-3ψ)`, NIE `c·ψ`.
+%           Wszystkie wyprowadzenia w sek08a (κ=3/(4Φ_0)), Φ-EOM,
+%           M9.2 m_field, M9.3 Peters-Mathews u\.zywaj\k{a} obsoletnego
+%           `√(-g) = c·ψ` z formy (I). **Pe\l{}ny re-run M9.x z
+%           poprawnym volume element OPEN** (B6/dedicated repair cycle).
+%
+%       (b) A3: \beta_PPN=1 dla M9.1'' wymaga "master formula"
+%           β = f''(1)/f'(1)² + 2c_2/f'(1) = 1/2 + 1/2, gdzie c_2=-1
+%           pochodzi z **tej samej** nieliniowo\'sci α=2 co M9.1.
+%           Czysto metryczna identyfikacja daje β_PPN_metric = 1/2.
+%           **OBOWI\k{A}ZUJ\k{A}CA KONWENCJA (post-audit 2026-05-01)**:
+%           "master formula z kinetic correction" — \emph{algebraiczne
+%           dopasowanie} metryki+kinetyki, nie niezale\.zne potwierdzenie.
+%           Linearyzacja w lin. 183-191 (β=2 dla potęgowej) jest
+%           KONSYSTENTNA z konwencj\k{a} metryczn\k{a}, ale formalnie
+%           niespójna z M9.1'' β=1 master.
+%
+% Konsekwencja: poni\.zsze tre\'sci dotycz\k{a} historycznie form (I)+(II)+(III).
+% **Aktualna kanoniczna metryka TGP = M9.1'' (forma IV)**, dokumentowana
+% w `TGP_FOUNDATIONS.md` i `op-newton-momentum/M9_1_pp_*`. Patrz:
+% [meta/AUDYT_TGP_2026-05-01.md] § A.1, § A.2, § A.3, § M.
+% =====================================================================
 
 \subsection{Metryka efektywna: wyprowadzenie z~bud\.zetu substratu}%
 \label{ssec:metric-from-budget}
@@ -157,6 +208,14 @@ metryka efektywna jest \textbf{jednoznacznie} wyznaczona:
     \qquad \psi \equiv \frac{\Phi}{\PhiZero}.
   }
 \end{equation}
+%
+% --- STATUS (audit 2026-05-01, A1) -----------------------------------
+% Forma (I) "boxed power" `g_tt = -c²/ψ` jest **FALSIFIED 2026-04-25**:
+% M9.1 daje β_PPN=4, niezgodne z Mercury (3·10⁴σ). Aktualna kanoniczna
+% metryka TGP = M9.1'' hiperboliczna `g_tt = -c²(4-3ψ)/ψ`. Pozostawione
+% historycznie; **NIE u\.zywa\'c do nowych derivations**. Patrz nag\l{}\'owek
+% audit-aware tego pliku.
+% ---------------------------------------------------------------------
 
 W~szczeg\'olno\'sci:
 \begin{itemize}[nosep]
@@ -209,6 +268,14 @@ fundamentalnym --- wyboru dokonuje warunek~(iii):
   \quad fh = 1 \quad\checkmark
 \end{equation}
 co daje $\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$ dok\l{}adnie.
+%
+% --- STATUS (audit 2026-05-01, A1) -----------------------------------
+% Forma (II) eksponencjalna `g_tt = -c²·e^{-2U}` jest **OBSOLETE /
+% PRZEJ\'SCIOWA**: nie ma niezale\.znego wyprowadzenia z bud\.zetu, by\l{}a
+% u\.zywana wy\l{}\k{a}cznie do uzyskania β_PPN=1 dok\l{}adnie. Aktualnie
+% zast\k{a}piona przez M9.1'' hiperboliczn\k{a} (TGP_FOUNDATIONS.md:64-69).
+% **NIE u\.zywa\'c do nowych derivations.**
+% ---------------------------------------------------------------------
 
 \smallskip
 \textbf{Krok~3} (zgodno\'s\'c z~$\ell_P = \text{const}$).
@@ -368,6 +435,16 @@ wyznacza:
   \quad f \cdot h = 1.}
   \label{eq:antipodal-unique-solution}
 \end{equation}
+%
+% --- STATUS (audit 2026-05-01, A1) -----------------------------------
+% Forma (III) antypodyczna `f=ψ^(-1/2), h=ψ^(+1/2)` jest **NIESP\'OJNA
+% WEWN\k{E}TRZNIE** (M9.1' §2.1, 2026-04-25): linearyzacja daje γ_PPN=1 ✓,
+% ale pe\l{}ne O(ε²) daje β_metric=3 (NIE 1 jak deklaruje
+% rem:antipodal-implications punkt 3). Z α=2 dynamic\k{a} (c_2=-1):
+% β_PPN=7. Twierdzenie "jedyno\'sci" nie obejmuje pe\l{}nej nieliniowo\'sci.
+% Aktualna kanoniczna metryka TGP = M9.1'' hiperboliczna.
+% **NIE u\.zywa\'c do nowych derivations.**
+% ---------------------------------------------------------------------
 \end{theorem}
 
 \begin{proof}

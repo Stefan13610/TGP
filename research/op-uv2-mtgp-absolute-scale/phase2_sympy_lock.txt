@@ -1,0 +1,117 @@
+======================================================================
+  U2.1 -- TGP dim-less invariant ledger
+======================================================================
+  Level-0 (LOCKED structural):
+    g*    = 71/100  = 0.710000  (UV.1 NGFP)
+    N_A   = 500/57  = 8.771930  (xi.1 photon-ring)
+    eta_N* = -2 (marginal IR)
+    c_chi = sqrt(3) = 1.732051  (chi.1 canonical)
+    alpha_0 = 1069833/264500 = 4.044737  (F4)
+    g_tilde = 9803/10000 = 0.980300  (F5)
+    kappa = sqrt(32*pi) = 10.026513  (F6)
+    kappa_TGP = 2.0120 (XS1)
+
+  Level-1 (combinations):
+    g*/N_A          = 0.080940
+    sqrt(g*/N_A)    = 0.284500  (chi.1 M_TGP/M_Pl)
+    N_A^(3/2)       = 25.9802
+    sqrt(alpha_0)   = 2.011153  (XS1 = kappa_TGP)
+    32*pi           = 100.530965
+    2*pi^2          = 19.739209  (S^3 vol)
+
+  [PASS] Dim-less invariant ledger self-consistent (XS1 within 0.5%)
+
+======================================================================
+  U2.2 -- K_struct sympy form derivation
+======================================================================
+  K_struct LOCK (sympy):  K = N_A * 2*pi^2 = (500/57) * 2*pi^2
+  K_struct numerical:     173.150954
+  K target (M_TGP/M_GUT): 173.671334
+  drift K_struct vs target: 0.2996%
+
+  Structural interpretation:
+    N_A = 500/57 = xi.1 photon-ring inheritance (BH closed-orbit)
+    2*pi^2 = vol(S^3 unit) = geometric (4-vol element scaling)
+    -> K = (BH photon-ring count) * (S^3 geometric volume)
+  [PASS] K_struct sympy LOCK reproduces target within 0.5%
+         drift = 0.2996%, gate = 0.5%
+
+======================================================================
+  U2.3 -- M_Pl/M_GUT structural prediction
+======================================================================
+  Predicted: M_Pl/M_GUT = 2*pi^2 * N_A^(3/2) / sqrt(g*)
+             sympy:  2*pi^2 * (500/57)^(3/2) / sqrt(71/100)
+             num:    608.6159
+  Observed:  M_Pl/M_GUT = 1.2209e+19/2.00e+16 = 610.4450
+  drift:                  0.2996%
+  [PASS] M_Pl/M_GUT structural prediction within 1%
+         drift = 0.2996%, gate = 1%
+
+======================================================================
+  U2.4 -- M_TGP numerical reproduction
+======================================================================
+  M_TGP_UV.2 = K_struct * M_GUT = 173.1510 * 2.00e+16
+             = 3.4630e+18 GeV
+  M_TGP_chi.1 (joint-lock z M_Pl PDG)
+             = 3.4734e+18 GeV
+  drift:       0.2996%
+  [PASS] M_TGP_UV.2 reproduces chi.1 anchor within 0.5%
+
+======================================================================
+  U2.5 -- G_N -> M_Pl chain post-UV.2 (no M_Pl PDG input)
+======================================================================
+  G_N_UV.2 (GeV^-2)  = g*/(M_TGP_UV.2^2 * N_A) = 6.7492e-39
+  M_Pl_UV.2 (GeV)    = G_N^-1/2                = 1.2172e+19
+  M_Pl PDG           =                          1.2209e+19
+  drift M_Pl         = 0.2996%
+
+  G_N_UV.2 (SI)      = 6.7145e-11 m^3 kg^-1 s^-2
+  G_N CODATA 2022    = 6.6743e-11
+  drift G_N          = 0.6020%
+  [PASS] G_N + M_Pl chain post-UV.2 within 1%
+
+======================================================================
+  U2.6 -- UV-IR cascade self-consistency
+======================================================================
+  AS NGFP marginal IR: eta_N* + 2 = 0 -> dg/d ln k = 0 (leading)
+  Threshold matching k = M_TGP: G(M_TGP) * M_TGP^2 = g* = 0.7100
+  Lambda_AS (UV cutoff) ~ M_TGP (substrate-grav merger scale)
+  M_TGP / Lambda_AS                      = 1.0000
+  alpha_NGFP = g*/(2*pi)                 = 0.1130
+  2-loop FRG correction (sub-percent)    = alpha_NGFP^2 = 1.2769%
+  IR running residual                    < 1.2769%  (UV-IR cascade-stable)
+  [PASS] UV-IR cascade self-consistent (marginal IR + 2-loop sub-percent)
+
+======================================================================
+  U2.7 -- F-cluster post-UV.2 preservation
+======================================================================
+  F4 alpha_0 = 1069833/264500 = 4.0447  (algebraic, untouched)
+  F5 g_tilde = 9803/10000     = 0.9803  (EFT scaling, untouched)
+  F6 kappa  (chi.1 DERIVED)   = sqrt(32*pi) = 10.026513
+  F6 anchor                   = 10.0265
+  F6 drift                    = 0.0001%
+  XS1 sqrt(alpha_0) vs kappa_TGP drift = 0.0421%
+
+  Verdict: UV.2 K-LOCK is anchor-swap (M_Pl PDG -> M_GUT)
+           F4/F5/F6/XS1 all G_N-independent -> ALL preserved
+  [PASS] F-cluster preserved post-UV.2
+
+======================================================================
+  PHASE 2 VERDICT
+======================================================================
+  [PASS] U2.1  -- XS1 sqrt(alpha_0) vs kappa_TGP drift 0.0421%
+  [PASS] U2.2  -- K = N_A*2*pi^2, drift 0.2996%
+  [PASS] U2.3  -- M_Pl/M_GUT drift 0.2996%
+  [PASS] U2.4  -- M_TGP drift 0.2996%
+  [PASS] U2.5  -- G_N drift 0.6020%, M_Pl drift 0.2996%
+  [PASS] U2.6  -- ratio 1.0000, 2-loop 1.28%
+  [PASS] U2.7  -- XS1 0.0421%, F6 0.0001%
+
+  SCORE: 7/7
+  GATE: PASS (>=6/7) -> Phase 3 enabled
+
+  K_struct LOCK: K = N_A * 2*pi^2 = (500/57) * 2*pi^2 = 173.1510
+  M_TGP_UV.2 (predicted z M_GUT alone): 3.4630e+18 GeV
+  M_Pl_UV.2 (chain):                    1.2172e+19 GeV (drift 0.2996% vs PDG)
+  G_N_UV.2 (SI):                        6.7145e-11 m^3 kg^-1 s^-2 (drift 0.6020% vs CODATA)
+  M_Pl/M_GUT struct prediction:         608.6159 vs 610.4450

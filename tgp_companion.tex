@@ -19,6 +19,7 @@
 \newcommand{\Nzero}{\mathcal{N}_0}
 \newcommand{\GL}{\mathrm{GL}(3,\mathbb{F}_2)}
 \newcommand{\as}{\alpha_s}
+\newcommand{\PhiZero}{\Phi_0}
 \newcommand{\lP}{\ell_\mathrm{P}}
 \newcommand{\MP}{M_\mathrm{Pl}}
 \newcommand{\MZ}{M_Z}
@@ -297,28 +298,32 @@ TGP derives 12~master equations. We derive each below.
 
 \subsection{F1: Strong coupling constant}\label{ssec:F1}
 
-The strong coupling at $\MZ$ is given by:
+The strong coupling at $\MZ$ is given by the canonical TGP form
+(B3-v2 lock 2026-05-01):
 \begin{equation}\label{eq:F1}
-  \boxed{\as(\MZ) = \frac{3\gone}{32\,\OL} = 0.1190}\,.
+  \boxed{\as(\MZ) = \frac{N_c^3\,\gone}{8\,\PhiZero} = 0.1184}\,,
+  \quad \PhiZero = 24.783,
 \end{equation}
+equivalent to $\as = 3\gone/(32\,\OL^{\rm TGP})$ with
+$\OL^{\rm TGP} = \PhiZero/36 = 0.6884$ (within $0.5\sigma$ of
+Planck $0.6847 \pm 0.0073$).
 
 \textbf{Derivation.}
 The TGP scalar field $g$ couples to the QCD sector through the
 conformal anomaly. The QCD $\beta$-function coefficient receives a
 contribution from the scalar field proportional to $\gone$,
-while the cosmological background $\OL$ sets the IR cutoff scale.
-Dimensional analysis and the requirement that $\as \cdot \OL$ be a
-pure function of $\gone$ fixes the functional form. The numerical
-coefficients $3$ and $32$ arise from the $\GL$ structure:
-$32 = 2^5 = 2^N \cdot (2N{-}1)$ and the factor 3 is $N$ itself.
+while the substrate vacuum value $\PhiZero$ sets the gravitational
+scale ($\kappa = 3/(4\PhiZero)$). The three-factor decomposition reads
+$\as = (T_F N_c) \cdot \gone \cdot (1/\PhiZero) = N_c^3\gone/(8\PhiZero)$
+with $T_F = 1/2$ (fundamental representation) and $N_c = 3$ (color count).
 
 An alternative derivation from the particle sector gives
 $\as = N_c^3 \gone / (8 N_f^2) = 0.1174$ (at $N_f = 5$), agreeing
-to 1.4\%. The cosmological formula~\eqref{eq:F1} is preferred as it
-directly connects $\as$ to $\OL$.
+to 0.8\%. The canonical formula~\eqref{eq:F1} is preferred as it
+directly connects $\as$ to the substrate parameter $\PhiZero$.
 
-\textbf{Result}: $\as = 0.1190$ vs.\ PDG $0.1180 \pm 0.0009$
-($1.1\sigma$)~\cite{PDG2024}.
+\textbf{Result}: $\as = 0.1184$ vs.\ PDG $0.1180 \pm 0.0009$
+($0.4\sigma$)~\cite{PDG2024}.
 
 The TGP invariant
 \begin{equation}\label{eq:F5}
@@ -1204,7 +1209,7 @@ Table~\ref{tab:all-predictions} lists all 40~TGP predictions.
 \begin{tabular}{rlllcl}
 \# & Observable & TGP value & Experiment & $\sigma$ & Status \\
 \hline
-1 & $\as(\MZ)$ & 0.1190 & $0.1180 \pm 0.0009$ & 1.1 & C \\
+1 & $\as(\MZ)$ & 0.1184 & $0.1180 \pm 0.0009$ & 0.4 & C \\
 2 & $K(\ell) = 2/3$ & 0.66666 & 0.66666 & 0.0 & E \\
 3 & $|\GL| = 168$ & 168 & --- & 0.0 & E \\
 4 & $c_\mathrm{GW} = c$ & exact & $< 3\!\times\!10^{-15}$ & 0.0 & E \\

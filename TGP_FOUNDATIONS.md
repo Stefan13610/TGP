@@ -93,7 +93,7 @@ Trzy warstwy operacyjne, **każdą z innym statusem**:
 |---|---|---|---|
 | **3a — Pola materii** ψ_m (fermiony, cechowania, płyn) | Klasyczne i kwantowe pola standardowego modelu, żyjące na `g_eff` | `g_eff^μν[Φ]` w `L_mat`, **nie** `Φ` bezpośrednio | (P) |
 | **3b — Gęstość ρ** | Skalarna gęstość w `L_mat = -(q/Φ_0) φ ρ` | Bezpośrednie sprzężenie minimalne (czynnik φ) | (W) — to jest źródło dla Φ-EOM |
-| **3c — Kinki / defekty** (cząstka = radialny kink Φ + topologia chiralna) | **Hipoteza/roadmap** alternatywnego opisu fermionów jako struktur w samym Φ; otwarty problem propagatora Diraca | (otwarty problem) — `rem:materia-hierarchia` | (Hipoteza) |
+| **3c — Kinki / defekty** (cząstka = radialny kink Φ + topologia chiralna) | **Hipoteza/roadmap** alternatywnego opisu fermionów jako struktur w samym Φ; emergent Dirac propagator. **Strukturalny szkic 5-fazowy zamknięty 2026-05-01** w `research/why_n3/` (Phase 1: ψ↔g₀ liniowa identyfikacja, bariera R3 ≡ M9.1'' Lorentzian horizon ψ=4/3; Phase 2: n(α)=e²(1−α/4); Phase 3: spin-1/2 z RP² + Berry phase π; Phase 4: Yukawa + m₀=0 vacuum; Phase 5: pełen S_TGP(p;ψ)). Otwarte (Phase 6+): X=e²/4 analytic derivation, A^(5−α) vs A²·g₀^(e²/2) reconciliation dla τ/e | (otwarty problem) — `rem:materia-hierarchia` | (Hipoteza, strukturalny szkic CLOSED) |
 
 **Operacyjne źródło dla Φ-EOM** to **ρ** (warstwa 3b). Punkt do
 których wraca każdy rachunek typu Newton/PPN/GW.

@@ -1,0 +1,94 @@
+﻿======================================================================
+  ω.2.Phase1 — anomaly-based g unique selection (5 sub-tests)
+  Date: 2026-05-01
+======================================================================
+
+======================================================================
+  W2.1.1 — Triangle anomaly E_TGP from chirality B²
+======================================================================
+  N_c·[Q_u²·B²_up + Q_d²·B²_down]  = 3·[(4/9)·(13/4) + (1/9)·(61/25)]
+                                  = 3·[13/9 + 61/225]
+                                  = 3·386/225
+                                  = 386/75
+  + Q_l²·B²_lep                   = 1·2 = 2
+  = 386/75 + 150/75
+  E_TGP = 536/75 = 7.146667
+  [PASS] E_TGP = 536/75 sympy-exact
+         computed=536/75, expected=536/75
+
+  Alt form check:
+    flat sum = 536/75 (should match)
+
+======================================================================
+  W2.1.2 — Bare-coupling structural form g_bare = η_chir = 1 − C6
+======================================================================
+  η_chir = 1 − C6 = 1 − 5/24 = 19/24 = 0.791667
+  η_chir alt form (K_up_num + 2·N_gen·K_lep_num)/(K_up_denom·N_gen)
+        = (7 + 2·3·2)/(8·3) = 19/24 = 19/24
+  [PASS] η_chir = 19/24 (1 − C6 form)
+  [PASS] η_chir = 19/24 (K-num+ form)
+
+======================================================================
+  W2.1.3 — IR effective g_eff = α_em·E_TGP/(2π)
+======================================================================
+  α_em       = 7.297353e-03
+  E_TGP      = 7.1467 (= 536/75)
+  g_eff(IR)  = α_em·E_TGP/(2π) = 8.300208e-03
+
+  Drift vs LOCK candidates:
+    α_em       drift =  13.74%
+    1/(2π)     drift =  94.78%
+    19/24      drift =  98.95%
+    κ_TGP      drift =  99.59%
+
+  IR closest match: α_em (drift 13.74%)
+  [PASS] g_eff(IR) closest to α_em or 1/(2π) within 50%
+         min(drift) = 13.74%
+
+======================================================================
+  W2.1.4 — Dimensional consistency + scale-symmetry X→λX
+======================================================================
+  L_ω.1 ⊃ (g/4)(ln X)·F·F̃
+  - ln X is dimensionless (X is scale ratio)
+  - F·F̃ has dim mass⁴ in natural units
+  - L has dim mass⁴
+  → g must be dimensionless ✓
+
+  Scale-symmetry X → λX:
+  ln X → ln X + ln λ
+  ∫(ln X)·F·F̃ d⁴x → ∫(ln X)·F·F̃ d⁴x + ln λ·∫F·F̃ d⁴x
+  ∫F·F̃ d⁴x = 4·∫∂_μ(A_ν F̃^μν) d⁴x = boundary integral
+  → axion coupling shift = boundary term, EOM unchanged ✓
+
+  [PASS] g dimensionless
+         L_ω.1 dim mass⁴ requires g ~ M⁰
+  [PASS] scale-symm preserved (mod boundary)
+         F·F̃ total divergence
+  [PASS] g_bare = 19/24 dimensionless rational
+  [PASS] f_X ~ M_TGP UV-IR matching
+         ω.1 W3.1: f_a ~ M_TGP for all g LOCK candidates
+
+======================================================================
+  W2.1.5 — Alt-form falsification (5 alts)
+======================================================================
+  ✗ α_em (no anomaly)              → fail: E_TGP omitted; not TGP-structural
+  ✗ 1/(2π) standard EFT            → fail: no TGP B²-content
+  ✗ κ_TGP cross-sector SC          → fail: XS3 lepton-orthogonal, wrong sector
+  ✗ C6 = 5/24 directly             → fail: K-diff is partial, not complement
+  ✓ η_chir = 19/24 (1 − C6)        → PASS: TGP-native bare coupling
+  [PASS] exactly 1/5 alt PROBE-passes (η_chir = 19/24)
+         pass_count = 1
+
+======================================================================
+  PHASE 1 VERDICT
+======================================================================
+  [PASS] W2.1.1
+  [PASS] W2.1.2
+  [PASS] W2.1.3
+  [PASS] W2.1.4
+  [PASS] W2.1.5
+
+  SCORE: 5/5
+  GATE: PASS (≥4/5) → Phase 1 forward; Phase 2 enabled
+  PROBE candidate: g_bare = η_chir = 19/24
+  IR effective:    g_eff(IR) = α_em·(536/75)/(2π) ≈ 8.3002e-03

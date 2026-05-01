@@ -1,0 +1,134 @@
+==============================================================================
+  R3 FAZA 4: Yukawa coupling z R3 solitonu
+==============================================================================
+
+Cel: pochodzić y_eff = ∂m_eff/∂ψ|_{ψ=ψ_gen} dla każdej generacji,
+identyfikujac ją jako Yukawa coupling do fluktuacji ψ wokół tła.
+
+==============================================================================
+  SEKCJA 1: m_eff(ψ) numerycznie dla generacji
+==============================================================================
+
+  Kalibracja: m_e = 1 (anchor)
+  A_e = 0.110028
+  m_e (uncalibrated) = A_e² · g₀_e^(e²/2) = 0.007219
+  c_M = 1 / m_e_unc = 138.526350
+
+  Generacje (z Faza 1):
+    ψ_e   = 0.950194, g₀_e = 0.86941
+    ψ_μ   = 1.155125, g₀_μ = 1.40673
+    ψ_τ   = 1.287967, g₀_τ = 1.75505
+
+  m_eff(ψ) numerycznie:
+    m_e   = 1.000000  (target 1.000)
+    m_μ   = 206.797152  (PDG ratio 206.77)
+    m_τ   = 3074.883464  (PDG ratio 3477.23)
+
+==============================================================================
+  SEKCJA 2: Yukawa coupling y = ∂m_eff/∂ψ — wyprowadzenie
+==============================================================================
+
+m_eff(ψ) = c_M · A_tail²(g₀(ψ)) · g₀(ψ)^(e²/2)
+
+Logarithmic derivative:
+  ln(m_eff) = ln(c_M) + 2·ln(A_tail(g₀)) + (e²/2)·ln(g₀)
+
+  d(ln m_eff)/dψ = 2·(dA_tail/dg₀)/A_tail · dg₀/dψ + (e²/2)/g₀ · dg₀/dψ
+
+  dg₀/dψ = 1/0.3814 = 2.622  (z Faza 1)
+
+Yukawa coupling (logarithmic):
+  y_log = d(ln m_eff)/dψ |_{ψ=ψ_gen}
+  y_eff = m_eff · y_log = ∂m_eff/∂ψ
+
+  Dla generacji obliczenie dA_tail/dg₀ / A_tail:
+
+    gen |         g₀ |     A_tail |     dlnA/dg₀ |   y_log = dlnm/dψ |  y_eff [m_e units]
+  ------------------------------------------------------------------------------------------
+      e |    0.86941 |    0.11003 |     -6.30970 |         -21.94588 |          -21.94588
+      μ |    1.40673 |    0.65046 |      3.49316 |          25.20422 |         5212.16195
+      τ |    1.75505 |    1.66680 |      2.11876 |          16.63024 |        51136.06350
+
+==============================================================================
+  SEKCJA 3: Effective Yukawa Lagrangian
+==============================================================================
+
+Effective action wokół ψ_vacuum = 1:
+  m_eff(ψ) = m_0 + y · (ψ - 1) + O((ψ-1)²)
+  gdzie:
+    m_0 = m_eff(1) — bare mass (DLA SOLITONU vacuum-stable JEST 0)
+    y   = ∂m_eff/∂ψ |_{ψ=1}
+
+  ψ_vacuum = 1.000
+  g₀(ψ=1) = 1.000000  (powinno być 1)
+  A_tail(g₀=1) = 0.000000  (powinno być małe — vacuum amplitude)
+  m_0 = m_eff(ψ=1) = 0.000000e+00  (bare mass at vacuum)
+
+  >> m_0 ≈ 0 (vacuum mass znika) — emergent fermion ma zero bare mass
+     w vacuum, all mass comes from displacement (ψ - 1).
+
+==============================================================================
+  SEKCJA 4: Yukawa hierarchy — y_gen / m_gen ratios
+==============================================================================
+
+Standard Yukawa: m = y · v (Higgs vacuum). y_τ/y_e = m_τ/m_e ratio.
+Sprawdzamy: czy y_eff(R3)/m_eff(R3) jest w przybliżeniu stałe?
+
+    gen |        m_eff |        y_eff |    y_eff/m_eff
+  -------------------------------------------------------
+      e |      1.00000 |    -21.94588 |      -21.94588
+      μ |    206.79715 |   5212.16195 |       25.20422
+      τ |   3074.88346 |  51136.06350 |       16.63024
+
+  Spread y_eff/m_eff: ~711.2%
+  >> Ratio NOT constant — ratio zalezy od g0, czyli Yukawa
+     w R3 NIE jest standardowe (m = y·v stara) — to jest
+     bardziej generalna struktura.
+
+==============================================================================
+  SEKCJA 5: Path integral fragment dla solitonu
+==============================================================================
+
+Partition function (Euclidean) dla solitonu jako bound state:
+
+  Z_soliton = ∫ Dψ Dψ̄ exp(-S[ψ̄, ψ; soliton bg])
+
+Effective action dla spinora w soliton background:
+  S = ∫ d⁴x ψ̄ [iγ^μ ∂_μ - m_eff(ψ_loc)] ψ
+    = S_kin + ∫ d⁴x m_eff(ψ_loc) ψ̄ψ
+
+Splitting wokół vacuum:
+  ψ_loc = 1 + δψ_loc
+  m_eff(ψ_loc) = m_0 + y · δψ_loc + O(δψ²)
+
+  S = S_kin + m_0 ∫ ψ̄ψ + y ∫ δψ_loc · ψ̄ψ + O(δψ² ψ̄ψ)
+
+  --> Drugi term: STANDARD Yukawa coupling y · δψ · ψ̄ψ
+      w action. Coupling y wyznaczony powyzej dla każdej generacji.
+
+==============================================================================
+  PODSUMOWANIE FAZY 4
+==============================================================================
+
+ODKRYCIA:
+
+1. m_eff(ψ) z Faza 2 jest analityczne wyprowadzona — Yukawa coupling
+   y_eff = ∂m_eff/∂ψ jest WELL-DEFINED dla każdej ψ.
+
+2. Effective Lagrangian:
+   L_eff = ψ̄ [iγ^μ ∂_μ - m_eff(ψ)] ψ
+
+3. Yukawa coupling do fluktuacji vacuum (linearyzacja wokół ψ=1):
+   y_eff = ∂m_eff/∂ψ |_{ψ_gen}
+   Dla generacji obliczone numerycznie (Sekcja 2).
+
+4. Path integral fragment:
+   Z = ∫ Dψ̄Dψ exp(-S_kin - m_0 ∫ψ̄ψ - y ∫δψ·ψ̄ψ - ...)
+   Standardowa Yukawa structure dla emergent fermion.
+
+STATUS: Faza 4 strukturalnie zamknięta.
+
+OPEN dla Fazy 5:
+  - Pełne 4D dynamics (time-dependent ψ)
+  - Loop corrections (1-loop renormalization Z_ψ)
+  - Anomaly cancellation, gauge couplings

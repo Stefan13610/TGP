@@ -1,5 +1,20 @@
 # M9.1'' P3: Testy obserwacyjne hiperbolicznej metryki TGP
 
+> **✅ AUDIT 2026-05-01 (A.2 + A.3) — B6 CLOSED 2026-05-01.** A.2 finding
+> (volume element √(-g)) closed by [[B6_m9x_sqrtg_rerun_results.md]] 6/6
+> PASS: Form-IV `√(-g) = c·ψ/(4-3ψ)` sympy-LOCKED (algebraic identity
+> sqrt(-g)² = -det(g), point-wise check at ψ ∈ {1/2, 1, 5/4}). PPN
+> derivation upgraded "conditional" → "EXACT": β_PPN = f''(1)/f'(1)² +
+> 2c₂/f'(1) = 8/16 + 2·(−1)/(−4) = 0.5 + 0.5 = **1 EXACT** in Form-IV
+> with closure_2026-04-26 c₂=−1; γ_PPN = −h'(1)/f'(1) = 1 EXACT from
+> f·h=1 substrate budget. Form-I would have required c₂=0 (different
+> vertex structure, FAILED Cassini for c₂=−1). A.3 status (c₂=−1
+> "kinetic correction" calibration) remains as outstanding follow-up
+> for first-principles derivation of c₂. Strukturalna sukcesyjność
+> M9.1'' P1+P2+P3 (3 PASS + 1 CONDITIONAL + 1 OPEN) preserved; β_PPN=1
+> now LOCKED post-B6.
+> Patrz: [[B6_m9x_sqrtg_rerun_results.md]], [[../../meta/AUDYT_TGP_2026-05-01.md]] § A.1, § A.2, § A.3, § U.
+
 **Data:** 2026-04-25
 **Autor:** Mateusz (zapis: Claudian)
 **Status:** P3 zamknięty z werdyktem **NIE SFALSYFIKOWANE** (3 PASS, 1 CONDITIONAL TENSION, 1 OPEN).

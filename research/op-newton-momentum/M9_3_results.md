@@ -17,6 +17,19 @@ tags:
 
 # M9.3 — Results: gravitational-wave polarizations & dispersion
 
+> **✅ AUDIT 2026-05-01 (A.2) — B6 CLOSED 2026-05-01.** A.2 finding (M9.3
+> dispersion + Peters-Mathews used `√(-g) = c·ψ` legacy Form-I) closed by
+> [[B6_m9x_sqrtg_rerun_results.md]] 6/6 PASS. **Vacuum/asymptotic GW
+> phenomenology UNCHANGED:** at ψ=1 both forms agree (√(-g)/c₀ = 1), so
+> dispersion ω(k), c_GW=c₀, GW170817 bound 1.81×10⁻²¹ (5.5×10⁵× safe),
+> Path B m_σ²=2m_s² (vacuum OPE) — all preserved verbatim. **Strong-field
+> NS interior** requires form-IV throughout: at ψ=1.1 (canonical NS)
+> the measure correction is **+43%** (form-IV vs form-I). NS-NS ringdown
+> numerical follow-up (post-M9.3 outstanding) inherits this requirement.
+> Structural M9.3 5/5 PASS verdict (3 polarizations, dispersion, PM
+> kwadrupol, GW170817, single-Φ axiom h_v=0) **PRESERVED**.
+> Patrz: [[B6_m9x_sqrtg_rerun_results.md]], [[../../meta/AUDYT_TGP_2026-05-01.md]] § A.2, § U.
+
 > **Status:** ✅ **CLOSED 2026-04-26** — **5/5 PASS** (M9.3.1, M9.3.2, M9.3.3, M9.3.4, M9.3.5).
 > **Cykl M9 (M9.1'' + M9.2 + M9.3):** klasyczna fenomenologia grawitacji TGP **KOMPLETNA**.
 

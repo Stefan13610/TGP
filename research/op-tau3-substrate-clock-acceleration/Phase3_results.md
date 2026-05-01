@@ -1,8 +1,8 @@
 ---
-title: "τ.3.Phase3 results — predictions + 4-channel convergence 6/6 PASS"
+title: "τ.3.Phase3 results — predictions + 4-channel convergence 6/6 PASS [A5-patched 2026-05-01]"
 date: 2026-05-01
 cycle: τ.3.Phase3
-status: PASS
+status: PASS-A5-PATCHED
 parent: "[[program.md]]"
 tags:
   - TGP
@@ -10,9 +10,22 @@ tags:
   - phase3
   - predictions
   - results
+  - audit-A5-patched-2026-05-01
 ---
 
-# τ.3.Phase3 results — 6/6 FULL CONVERGENCE
+> **⚠ AUDIT 2026-05-01 (A5) PATCH applied**: δω/ω formula corrected from
+> additive-with-1/m_e to multiplicative-without-1/m_e. **Numerical
+> predictions w TT7-TT12 inheritują original błędne 1/m_e factor —
+> wymagają full re-derivation post-B7 closure** (explicit ω.1 EOM × Schwinger
+> E·B Greens function dla (∂lnX)²). Phase 3 verdict 6/6 PASS pozostaje
+> structurally valid (cross-falsification logika niezmieniona), ale
+> NUMERYCZNE MARGINESY DETEKTOWALNOŚCI Λ-scan przesuwają się o ~3 OOM:
+> Sr/Yb 1e-18/yr gate od **Λ ≲ 100 MeV** do **Λ ≲ ~GeV scale**. Patrz
+> [[Phase2_results.md]] T2.4 audit-aware re-scan + [[../../meta/AUDYT_TGP_2026-05-01.md]] A5.
+
+---
+
+# τ.3.Phase3 results — 6/6 FULL CONVERGENCE [A5-patched 2026-05-01]
 
 ## Sub-test outcomes
 

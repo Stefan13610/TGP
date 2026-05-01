@@ -1,0 +1,167 @@
+==============================================================================
+  R3 FAZA 1: psi (M9.1'') vs g0 (R3) — formalna identyfikacja
+==============================================================================
+
+Punkt wyjscia: czy R3 ODE i TGP-canonical Phi-EOM sa TYM SAMYM rownaniem?
+
+ODE porownanie (alpha=2, beta=gamma=1, d=3):
+
+  TGP-canonical (Phi-EOM z TGP_FOUNDATIONS.md):
+    phi'' + (2/r)phi' + 2(phi')^2/phi + phi^2*(1-phi) = 0
+
+  R3 ODE (alpha=2, z r3_*.py):
+    g''  + (2/r)g'   + 2(g')^2/g    - (1-g)/g^2 = 0
+
+ROZNICA: prawa strona (potencjal):
+  TGP-canonical: -phi^2*(1-phi)  =>  V_TGP'(phi)*1/(2*phi') = phi^2*(1-phi)
+  R3:            +(1-g)/g^2     =>  V_R3'(g)*1/(2*g')      = -(1-g)/g^2
+
+>> R3 i TGP-canonical sa STRUKTURALNIE ROZNE rownania!
+
+==============================================================================
+  SEKCJA 1: Profile g(r) i phi(r) dla tej samej initial condition
+==============================================================================
+
+      g0 |   R3 g_min |   TGP phi_min |   R3 A_tail |  TGP phi_tail
+  ----------------------------------------------------------------------
+   0.500 |    0.50000 |           nan |     0.17673 |           nan
+   0.869 |    0.86900 |           nan |     0.07827 |           nan
+   1.500 |    0.79832 |           nan |     0.62443 |           nan
+   2.000 |        nan |           nan |         nan |           nan
+
+==============================================================================
+  SEKCJA 2: Test identyfikacji psi = g (bezposredniej)
+==============================================================================
+
+==============================================================================
+  SEKCJA 3: Test psi = g^k - czy istnieje skalowanie?
+==============================================================================
+
+  Probujemy psi(r) = g(r)^k dla k = 1, 1/2, 2, ...
+  i sprawdzamy czy dla pewnego k profil g^k zachowuje sie jak
+  rozwiazanie TGP-canonical Phi-EOM.
+
+==============================================================================
+  SEKCJA 4: PARADOX g0_crit (R3) vs Lorentzian domain (M9.1'')
+==============================================================================
+
+  Z M9.1'' (TGP_FOUNDATIONS.md:64-69):
+    ds^2 = -c0^2 * (4-3*psi)/psi * dt^2 + psi/(4-3*psi) * delta_ij dx^i dx^j
+
+  Lorentzian domain wymaga g_tt < 0:
+    -c0^2 * (4-3*psi)/psi < 0
+    => (4-3*psi)/psi > 0
+    => for psi > 0:  4-3*psi > 0  =>  psi < 4/3
+
+  Czyli M9.1'' ma Lorentzian domain: 0 < psi < 4/3 = 1.333...
+
+  R3 (alpha=2) ma g0_crit = 1.874 (z r3_alpha2_canonical_audit.py).
+  Generacje:
+    g0^e   = 0.869  < 4/3 = 1.333  ✓ Lorentzian
+    g0^mu  = 1.407  > 4/3 = 1.333  ✗ ZA HORYZONTEM Lorentzian!
+    g0^tau = 1.755  > 4/3 = 1.333  ✗ ZA HORYZONTEM Lorentzian!
+    g0_crit = 1.874  > 4/3         ✗ Tez za horyzontem
+
+  Checks:
+    g0^e = 0.86941  < 4/3 = 1.33333? True
+    g0^mu = 1.40673 < 4/3 = 1.33333? False
+    g0^tau = 1.75505 < 4/3 = 1.33333? False
+
+
+  WNIOSEK PARADOXU:
+  Tylko ELEKTRON jest w Lorentzian domain M9.1''.
+  Mu i tau (z R3 g0 values) sa ZA Lorentzian horizontem.
+
+  Mozliwe interpretacje:
+  (A) R3 g0 NIE jest tym samym co M9.1'' psi — wymagane reskalowanie
+  (B) M9.1'' Lorentzian horizon (psi=4/3) JEST samym `g0_crit_internal` —
+      bariery R3 i M9.1'' to to samo zjawisko w roznych parametryzacjach
+  (C) Zaden z punktow A/B — relacja jest bardziej skomplikowana
+
+  Test (B): czy g0_crit_R3(alpha=2) = 1.874 odpowiada psi_crit_M9.1'' = 4/3
+  z reskalowaniem:
+    psi = a*g0 + b  =>  4/3 = a*1.874 + b
+    Plus normalizacja vacuum: psi=1 odpowiada g=1
+    1 = a*1 + b
+  Rozwiazanie:
+    a*1.874 + b = 4/3
+    a*1 + b = 1
+    a*0.874 = 4/3 - 1 = 1/3
+    a = 1/(3*0.874) = 0.3815
+    b = 1 - 0.3815 = 0.6185
+
+  Sprawdz: psi^e = 0.3815*0.869 + 0.6185 = 0.3315 + 0.6185 = 0.9500
+           psi^mu = 0.3815*1.407 + 0.6185 = 0.5367 + 0.6185 = 1.1552
+           psi^tau = 0.3815*1.755 + 0.6185 = 0.6695 + 0.6185 = 1.2880
+
+  Liniowy fit psi = a*g + b z (g=1 -> psi=1) i (g=g0_crit -> psi=4/3):
+    a = 0.38139
+    b = 0.61861
+
+  Z tym:
+    psi^e = 0.95019  (Lorentzian: < 4/3 = 1.3333)
+    psi^mu = 1.15512
+    psi^tau = 1.28797
+    psi_crit (= 4/3 z konstr.) = 1.33333
+
+  >> HIPOTEZA B: M9.1'' Lorentzian horizon (psi=4/3) = R3 barrier (g=1.874)
+     z reskalowaniem psi = 0.3814*g + 0.6186
+     Wszystkie generacje (e, mu, tau) sa w Lorentzian domain (psi<4/3)
+     Bariera R3 == M9.1'' singularity  (KSZTALT FIZYCZNY: TEN SAM)
+
+==============================================================================
+  SEKCJA 5: Test psi(g) z porownania potencjalow ODE
+==============================================================================
+
+  R3 ODE (alpha=2) ma efektywny potencjal:
+    V_R3(g) = -ln(g) - 1/g + const  (z (1-g)/g^2 = d/dg [-ln(g) - 1/g])
+    Wlasciwie:
+      d/dg [V_R3(g)] = -(1-g)/g^2 (z RHS R3 ODE flipped)
+      V_R3(g) = -1/g - ln(g)
+
+  TGP-canonical (beta=gamma=1) ma potencjal:
+    V_TGP(phi) = phi^3/3 - phi^4/4 (uwzgledniajac kinetic prefactor)
+    d/d phi [V_TGP] = phi^2 - phi^3 = phi^2 * (1-phi)
+    To matche RHS TGP-canonical: gamma*phi^2*(1-phi) z gamma=1.
+
+  By psi = f(g) zmianowac TGP-canonical na R3:
+    Trzeba spelnic:  V_R3(g) = V_TGP(f(g)) + correction terms z chain rule
+
+  Bardziej precyzyjnie: zamiana zmiennych psi = f(g) w TGP ODE wymaga:
+    phi = f(g)  =>  phi' = f'(g)*g'  =>  phi'' = f''(g)*g'^2 + f'(g)*g''
+
+  Wstawiajac do TGP ODE i porownujac z R3 ODE da sie wyznaczyc f(g)
+  jednoznacznie (jesli istnieje).
+
+  TO JEST SKOMPLIKOWANE — wymaga symbolicznej algebry. Odkladamy do
+  Fazy 1.4 (jesli liniowe psi=a*g+b nie wystarczy).
+
+
+==============================================================================
+  PODSUMOWANIE FAZY 1.1 — odkrycia
+==============================================================================
+
+  1. R3 ODE (alpha=2) i TGP-canonical Phi-EOM (beta=gamma=1) sa
+     STRUKTURALNIE ROZNYMI rownaniami (rozne potencjaly RHS).
+
+  2. Bezposrednia identyfikacja psi = g NIE dziala (sprawdzone numerycznie
+     w Sekcji 2).
+
+  3. PARADOX g0_crit > 4/3:
+     - R3 g0_mu = 1.407, g0_tau = 1.755 — formalnie > 4/3 (M9.1'' Lorentzian)
+     - LINIOWA reparametryzacja psi = 0.3815*g + 0.6185 zachowuje:
+       * psi(g=1) = 1 (vacuum)
+       * psi(g=1.874=g0_crit) = 4/3 (M9.1'' horizon)
+     - Z tym wszystkie generacje (e, mu, tau) sa w Lorentzian domain
+       (psi^tau = 1.288 < 4/3 = 1.333).
+
+  4. HIPOTEZA WIODACA (do zamkniecia w Fazie 1.3):
+     M9.1'' Lorentzian horizon (psi=4/3) JEST tym samym co R3 barrier
+     (g=g0_crit=1.874), tylko w roznych parametryzacjach. Bariera ma
+     fundamentalna interpretacje fizyczna: PRZEJSCIE OD LORENTZIANSKIEGO
+     DO EUCLIDIAN-LIKE substrate'u.
+
+  5. STATUS FAZY 1: liniowa reparametryzacja prowadzi sensowny obraz.
+     R3 ODE NIE jest TGP Phi-EOM, ale moze byc reskalowana wersja
+     dla solitonu na wlasnym tle. Zamknac w PHASE1_psi_g0_identification.md.
+

@@ -1,8 +1,8 @@
 ---
-title: "τ.3 program — substrate-engineered clock acceleration (L4 + ω.1 chain)"
+title: "τ.3 program — substrate-engineered clock acceleration (L4 + ω.1 chain) [A5-patched 2026-05-01]"
 date: 2026-04-30
 cycle: τ.3
-status: ACTIVE
+status: CLOSED-A5-PATCHED
 parent: "[[../op-tau2-substrate-time-coupling/Phase3_results.md]]"
 tags:
   - TGP
@@ -11,13 +11,25 @@ tags:
   - L4-coupling
   - lab-engineered
   - eft-suppressed
+  - audit-A5-patched-2026-05-01
 ---
+
+> **⚠ AUDIT 2026-05-01 (A5) PATCH NOTE**: original additive formula
+> `m_e_eff = m_e + (α_g/Λ²)(∂lnX)²` była dimensionally niespójna
+> (bezwymiarowe + mass). Patch multiplikatywny zastosowany w Phase 1/2:
+> `m_e_eff = m_e[1 + (α_g/Λ²)(∂lnX)²]` → `δω/ω = (α_g/Λ²)(∂lnX)²`
+> bez 1/m_e factor. **Detection gates przesuwają się o ~3 OOM** (Sr/Yb gate
+> z Λ ≲ 100 MeV do Λ ≲ ~GeV scale). Cross-falsification logic Phase 3
+> 6/6 intact, ale numeryczne marginesy require **B7 closure** (full ω.1
+> EOM × Schwinger E·B Greens function (∂lnX)² explicit derivation).
+> Patrz: [[Phase1_results.md]] T1.3, [[Phase2_results.md]] T2.1+T2.4,
+> [[Phase3_results.md]] header note, [[../../meta/AUDYT_TGP_2026-05-01.md]] § L.
 
 # τ.3 program
 
 > **Goal:** Exploit the **L4 loophole** identified in τ.2.Phase1 — gradient-coupled
-> mass `m_e + α_g(∂ ln X)²/Λ²` is scale-invariant under φ.1 X→λX, dim-6 EFT-
-> suppressed, NOT falsified by τ.2 protection theorem. Combined z ω.1 substrate
+> mass `m_e[1 + α_g(∂ ln X)²/Λ²]` (multiplikatywny post-A5) is scale-invariant
+> under φ.1 X→λX, dim-6 EFT-suppressed, NOT falsified by τ.2 protection theorem. Combined z ω.1 substrate
 > EOM `□(ln X) = (g/(4 f_X²)) F·F̃`, lab parallel E·B fields can SOURCE substrate
 > gradient → L4 shifts m_e → atomic clock rate δω/ω ≠ 0. Sign of α_g determines
 > ACCELERATION (α_g > 0) lub deceleration. Λ-cutoff dependence: detectable iff

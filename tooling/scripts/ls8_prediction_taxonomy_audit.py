@@ -118,8 +118,8 @@ predictions = [
     (21, "r (tensor/scalar)",    "P", 0.004,     0.036,    None,
      "TGP inflation (Φ₀)", "PROSPECTIVE",
      "r > 0.01 (LiteBIRD)"),
-    (22, "α_s(M_Z)",            "P", 0.1190,    0.1179,   1.2,
-     "N_c³g₀ᵉ/(8Φ₀)", "OUT-OF-SAMPLE",
+    (22, "α_s(M_Z)",            "P", 0.1184,    0.1180,   0.4,
+     "N_c³g₀ᵉ/(8Φ₀), Φ₀=24.783 (B3-v2 lock)", "OUT-OF-SAMPLE",
      "α_s outside [0.115, 0.122]"),
     (23, "α_s(m_τ)",            "P", 0.326,     0.330,    0.3,
      "Discrete running", "OUT-OF-SAMPLE",
@@ -378,7 +378,7 @@ tests = [
     ("DESI DR3 (2026)",  "w_DE precision",          "w_DE ≈ -1",    "#37"),
     ("EHT ngEHT",        "BH shadow at 1%",        "= GR + 0.006%","LK-2"),
     ("LISA (2037+)",     "Breathing mode GW",       "f(m_sp)",       "#34"),
-    ("Lattice QCD",      "α_s(M_Z) precision",     "0.1190",        "#22"),
+    ("Lattice QCD",      "α_s(M_Z) precision",     "0.1184",        "#22"),
 ]
 
 print(f"\n  {'Experiment':20s} {'Measurement':30s} {'TGP prediction':18s} {'Entry':>5s}")

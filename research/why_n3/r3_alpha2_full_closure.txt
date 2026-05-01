@@ -1,0 +1,123 @@
+==============================================================================
+  R3 — Pelne zamkniecie dla TGP-canonical alpha=2 z p(alpha)=5-alpha=3
+==============================================================================
+
+  alpha = 2.0 (TGP-canonical, K(phi) = K_geo * phi^4)
+  p(alpha) = 5 - alpha = 3.0  (z empirycznego wzoru r3_observable_vs_full_mass)
+  Mass formula:  m_obs = c * A_tail^3.0
+  Koide K = 0.666667 = 2/3 (INPUT z PDG)
+  g0^e = 0.86941, g0^mu = phi*g0^e = 1.40673 (INPUT, R3 calibration)
+
+==============================================================================
+  SEKCJA 1: A_tail dla e i mu (alpha=2)
+==============================================================================
+
+  A_e  = 0.110028  (g0=0.86941)
+  A_mu = 0.650411  (g0=1.40673)
+  A_mu/A_e = 5.9113
+
+  m_mu/m_e = (A_mu/A_e)^3.0 = 206.562
+  PDG m_mu/m_e = 206.7682
+  Diff = -0.099%
+  PASS S1 m_mu/m_e match PDG (within 1%)  diff -0.099%
+
+==============================================================================
+  SEKCJA 2: Re-derivacja g0^tau z Koide K=2/3 + mass formula A^3.0
+==============================================================================
+
+  Koide:  K = (m_e+m_mu+m_tau) / (sqrt(m_e)+sqrt(m_mu)+sqrt(m_tau))^2 = 2/3
+
+  Z m = c*A^3:
+    sum_m       = c * (A_e^3 + A_mu^3 + A_tau^3)
+    sum_sqrt_m  = sqrt(c) * (A_e^{3/2} + A_mu^{3/2} + A_tau^{3/2})
+
+  K = (A_e^3 + A_mu^3 + A_tau^3) / (A_e^{3/2} + A_mu^{3/2} + A_tau^{3/2})^2 = 2/3
+
+  Solve for A_tau, then back-out g0^tau via ODE inversion.
+
+  A_tau (z Koide K=2/3) = 1.666452
+  Verify K = 0.666667 vs target 0.666667
+  PASS S2.1 Koide solver convergent  K = 0.666667
+
+==============================================================================
+  SEKCJA 3: Back-out g0^tau z A_tau via ODE inversion
+==============================================================================
+
+  g0^tau (alpha=2, Koide) = 1.755046
+  Verify A_tau = 1.666457  (target 1.666452)
+
+  Comparison z R3 oryginalnym (alpha=1) g0^tau = 1.72931:
+  alpha=2 daje g0^tau = 1.75505
+  Diff = +0.02574
+  PASS S3.1 g0^tau pod bariera (alpha=2)  1.7550 < 1.8744, margin = +0.1194
+
+==============================================================================
+  SEKCJA 4: Mass ratio m_tau/m_e (z A^3.0 formula)
+==============================================================================
+
+  m_tau/m_e = (A_tau/A_e)^3.0 = 3474.28
+  PDG m_tau/m_e = 3477.23
+  Diff = -0.085%
+
+  m_tau/m_mu = (A_tau/A_mu)^3.0 = 16.820
+  PDG m_tau/m_mu = 16.817
+  Diff = +0.015%
+  PASS S4.1 m_tau/m_e match PDG (within 5%)  diff -0.085%
+  PASS S4.2 m_tau/m_mu match PDG (within 5%)  diff +0.015%
+
+==============================================================================
+  SEKCJA 5: 4-ta generacja zakazana? (φ-drabinka g0^4 = phi*g0^tau)
+==============================================================================
+
+  g0^4 = phi * g0^tau = 1.6180 * 1.75505 = 2.83972
+  g0_crit (alpha=2) = 1.8744
+  g0^4 > g0_crit?  True
+  Margin za bariera: +0.96532
+  PASS S5.1 4-ta generacja za bariera (zakazana)  g0^4=2.8397 > g0_crit=1.8744
+
+==============================================================================
+  SEKCJA 6: Pelen obraz N=3 dla TGP-canonical alpha=2
+==============================================================================
+
+  TGP-canonical:  K(phi) = K_geo * phi^4  =>  alpha = 2
+
+  Empiryczna mass formula:  m = c * A_tail^(5-alpha) = c * A_tail^3
+
+  Generacje:
+    g0^e   = 0.86941  (calibration INPUT)
+    g0^mu  = 1.40673  (phi-drabinka g0^e * phi)
+    g0^tau = 1.75505  (z Koide K=2/3 + mass formula A^3)
+    g0^4   = 2.83972  (phi-drabinka g0^tau * phi) - ZAKAZANA
+
+  Bariera:
+    g0_crit (alpha=2) = 1.8744
+
+  Selection rule N=3:
+    e (0.869) < mu (1.407) < tau (1.755) < g0_crit (1.8744) < 4-ta (2.840) ✓
+
+==============================================================================
+  PODSUMOWANIE: PASS=6  FAIL=0
+==============================================================================
+
+  WNIOSEK STRUKTURALNY:
+
+  R3 z TGP-canonical alpha=2 i p(alpha)=5-alpha=3 jest PELNYM, SPOJNYM
+  obrazem N=3 generacji:
+
+    [DERIVED]    Bariera g0_crit istnieje strukturalnie z ODE
+    [DERIVED]    p(alpha) = 5-alpha (empiryczna z numerycznego skanu)
+    [COMPATIBLE] Mass formula m = c*A^p(alpha) zgodna z PDG (mu/e, tau/e <5%)
+    [COMPATIBLE] Koide K=2/3 wybiera g0^tau pod bariera
+    [DERIVED]    4-ta generacja > bariera => N=3 z constraint
+
+  R3 jest TERAZ ZGODNE z TGP_FOUNDATIONS K(phi)=phi^4.
+
+  Insight uzytkownika 2026-05-01 ROZWIAZUJE sprzecznosc audytu:
+    'A_tail^4 to masa OBSERWOWALNA, bariera operuje na FULL mass.'
+
+  Konsekwencja: aktualizowac CORRECTIONS_2026-05-01.md i README.md aby
+  odzwierciedlic ze:
+    - Mass formula = c*A^(5-alpha) [zalezna od alpha kinetic prefactor]
+    - Bariera = wlasnosc strukturalna ODE [niezalezna od mass formula]
+    - R3 i TGP-canonical alpha=2 sa SPOJNE
+

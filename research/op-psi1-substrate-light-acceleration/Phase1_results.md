@@ -1,17 +1,45 @@
 ---
-title: "ψ.1.Phase1 results — L₅ coupling structural derivation 5/5 PASS"
+title: "ψ.1.Phase1 results — L₅ coupling structural derivation 5/5 PASS [INVALIDATED 2026-05-01]"
 date: 2026-05-01
 cycle: ψ.1.Phase1
-status: PASS
+status: INVALIDATED
 parent: "[[program.md]]"
 tags:
   - TGP
   - psi1
   - phase1
   - results
+  - INVALIDATED
+  - withdrawn
 ---
 
-# ψ.1.Phase1 results — 5/5 FULL CASCADE
+> # ⛔ INVALIDATED 2026-05-01 (post-audit A6 + A8)
+>
+> **Status: WITHDRAWN.** Cała ścieżka ψ.1.v1 (Phases 1-3) została strukturalnie
+> unieważniona przez ψ.1.v2 (Phase 4 T4.2) + audit A6/A8.
+>
+> **Powód:** Lagrangian L_em + L₅ = -¼[1+ε]F² to kanoniczny model
+> Bekensteina/Sandvika dla **varying-α**, NIE varying-c. Po redefinicji
+> A'_μ = √(1+ε)·A_μ kinetyka standardowa, principal symbol η^μν k_μ k_ν,
+> stożek świetlny **nieruszony** — Δc/c = 0 fizycznie, sympy LOCK na Δc/c
+> jest tylko algebraiczną tożsamością ε-Taylora bez treści fizycznej.
+>
+> **Sagnac SNR ≈ 3×10⁴ "WYKONALNY DZIŚ"** = artefakt błędnej interpretacji.
+> Phase 5 v2 daje realistyczne SNR ~ 8×10⁻²⁴ (sub-detection 23 OOM).
+>
+> **Replacement:** [[Phase4_results.md]] (ψ.1.v2 tensor operator L₅'_a) —
+> uniquely identified parity-EVEN tensor operator z poprawną fizyczną
+> interpretacją.
+>
+> **Ledger entries TT13-TT18 → [WITHDRAWN]** w PREDICTIONS_REGISTRY.md
+> (audit A6 + A8 strikethrough).
+>
+> **Patrz**: [[Phase4_results.md]] T4.2 + [[../../meta/AUDYT_TGP_2026-05-01.md]]
+> A6/A8.
+
+---
+
+# ψ.1.Phase1 results — 5/5 FULL CASCADE [INVALIDATED — see header above]
 
 ## Sub-test outcomes
 

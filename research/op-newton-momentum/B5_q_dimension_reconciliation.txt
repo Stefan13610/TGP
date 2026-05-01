@@ -1,0 +1,105 @@
+
+######################################################################
+# B5  q-dimension reconciliation across TGP_v1 LaTeX core
+# AUDYT 2026-05-01  closure script
+######################################################################
+
+======================================================================
+STEP 1 — Lock [q] from field EOM:  ∇² Φ = -q · ρ
+======================================================================
+  LHS  ∇²Φ            : [L**(-2)]
+  [ρ]                  : [M/L**3]
+  [q]  (mass-density)  : [L/M]
+  [q]  (energy-dens.)  : [T**2/(L*M)]    (alternative convention)
+  → LOCK   [q] = [M⁻¹ L]   ✓
+
+======================================================================
+STEP 2 — Lock [q] from Newton boundary:  q = 8π G / c²
+======================================================================
+  [G]                  : [L**3/(M*T**2)]
+  [c²]                 : [L**2/T**2]
+  [G / c²]             : [L/M]
+  → LOCK   [q] = [M⁻¹ L]   ✓
+  ✓ same dimension for both q_min = 8πG/c² and q_exp = 4πG/c²
+
+======================================================================
+STEP 3 — Action closure: expose the two-face q convention
+======================================================================
+  Role (1) ∇²Φ = -q·ρ          : [q] = [L/M]
+  Role (2) g_eff ~ exp(q·φ)·g₀ : [q] = [-]  (dimensionless)
+
+  The two q's are NOT the same symbol — they are connected by
+  a dimensionful mass scale.  Canonical TGP picks role (1):
+      q ≡ 8π G₀ / c₀²    →  [q] = [M⁻¹ L]
+  consistent with steps 1 and 2.
+
+  Role (2) appears in g_eff conformal expansion where the
+  exponent is q·ρ·V_ref  (dimensionless when ρ·V_ref → mass)
+  i.e. q-source convention with explicit volume factor.
+
+  → CANONICAL LOCK   [q] = [M⁻¹ L]   ✓
+
+  Natural-units alternative (c=ℏ=1):
+     dodatekA table line ~176 prints [q]=[-] tacitly using
+     c=1 and ρ→ρ_E.  Inconsistent with same file's line 30
+     glossary that gives q = 8πG₀/c₀², dimensionful.
+
+  CROSS-CHECK: all three paths agree on [q] = [M⁻¹ L]   ✓
+
+======================================================================
+STEP 4 — Audit inconsistent LaTeX strings
+======================================================================
+
+  [A] axioms/notacja/dodatekA_notacja.tex line ~176
+      Current:  q  & ... & [-]
+      Earlier in same file (line 30):  q_a := 8πG₀/c₀² ,
+          with [q] = [M⁻¹ L]  (CORRECT canonical glossary)
+      Verdict: INCONSISTENT.  Either
+        (i)  change [-]  →  [M⁻¹L]   (preferred — SI),  OR
+        (ii) keep [-]  but add explicit footnote stating
+             'natural-units convention with c=ℏ=1'.
+
+  [B] core/sek08a_akcja_zunifikowana/...tex line ~516
+      Current:  q = (4πG₀ / c₀⁴) · Φ₀
+      Line 519:  q·Φ₀ = 4πG₀/c₀²       ← CORRECT
+      Solving (519) for q:  q = 4πG₀/(c₀² · Φ₀)
+      Line 516 has TWO errors vs (519):
+        - power of c₀ : c₀⁴  →  c₀²
+        - position of Φ₀ : numerator  →  denominator
+      Verdict: TYPO.  Fix to  q = 4πG₀ / (c₀² · Φ₀).
+      [4πG₀/(c₀²·Φ₀)]      : [L/M]   ✓
+      [4πG₀/c₀⁴ · Φ₀]      : [T**2/(L*M)]   ✗
+
+======================================================================
+STEP 5 — Canonical convention summary
+======================================================================
+
+  CANONICAL TGP (SI-style):
+    [q]   = [M⁻¹ L]
+    q     = 4π G₀ / (c₀² · Φ₀)        (exponential metric form)
+    q     = 8π G₀ / (c₀² · Φ₀)        (Newton's-theorem form)
+    Newton-boundary identity (Φ₀-free):
+    q · Φ₀ = 4π G₀ / c₀²              ← always dimensionally [L]
+
+  NATURAL-UNITS (c=ℏ=1, dimensionless q):
+    [q]   = [-]
+    must be flagged in any table that lists q-dim as [-].
+
+  Cross-walk:
+    q_SI  =  q_natural  ·  (c₀² )⁻¹    when ρ→ρ_E and S→S/ℏ.
+
+
+======================================================================
+B5 SUMMARY
+======================================================================
+  Steps passed         : 5/5  ✓
+  Canonical [q]        : [M⁻¹ L]
+  Inconsistencies found: 2
+     - dodatekA_line176: q dim entry [-] without natural-units footnote
+     - sek08a_line516: typo: c₀⁴·Φ₀ should read c₀² in denominator with Φ₀
+
+  → action: Edit dodatekA_notacja.tex line ~176
+            Edit sek08a_akcja_zunifikowana.tex line ~516
+
+B5 CLOSURE — PASS (5/5).
+

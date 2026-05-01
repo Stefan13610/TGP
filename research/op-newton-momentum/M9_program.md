@@ -7,6 +7,20 @@
   - **M9.2** ✅ CLOSED 2026-04-26 — **5/5 PASS** (pęd, bezwładność, WEP) — [[M9_2_results.md]]
   - **M9.3** ✅ **CLOSED 2026-04-26 — 5/5 PASS** (linearyzacja, dyspersja, Peters-Mathews, polaryzacje, GW170817) — [[M9_3_results.md]]
   - **Cykl M9 (klasyczna grawitacja TGP) KOMPLETNY**
+
+**⚠ D3-status-update 2026-05-01 (audit-aware downgrade)**: "KOMPLETNY" jest
+  zbyt mocny — właściwy status to **1PN-CLOSED, 2PN+strong-field-OPEN,
+  GW-tensor-OPEN**. M9.1'' covers 1PN PPN (β=γ=1) i M9.3 covers Peters-Mathews
+  quadrupole + GW170817 dyspersja, ale **nie pokrywa**:
+  - 2PN (post-Newtonian higher-order corrections)
+  - strong-field regime (Kerr/Schwarzschild horizon physics, BH merger)
+  - tensor-mode origin (M9.3 wprowadza σ_ab przez kompozyt ⟨∂s∂s⟩ — patrz E.4
+    cross-cycle tension; linearyzacja jednoskalarnej Φ-EOM daje TYLKO scalar
+    modes h_b, h_L; tensor h_+, h_× wymagają niezależnego pola, niespójność
+    z aksjomatem §1 FOUNDATIONS).
+  
+  → **Properly: 1PN-CLOSED ✓, 2PN-OPEN, strong-field-OPEN, GW-tensor-OPEN**.
+    Ref: AUDYT_TGP_2026-05-01.md § Q (D-cluster).
 **Punkt wyjścia ontologiczny:** `TGP_FOUNDATIONS.md` (top-level), §5 (grawitacja
 = efekt fluktuacji pola), §6 (pęd jako Lenz-podobny back-reakcja), §7 (M3–M8
 archiwum).

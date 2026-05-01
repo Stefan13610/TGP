@@ -1,8 +1,8 @@
 ---
-title: "ψ.1.Phase2 results — sympy LOCK Δc/c + Sagnac/TOF engineering 7/7 PASS"
+title: "ψ.1.Phase2 results — sympy LOCK Δc/c + Sagnac/TOF engineering 7/7 PASS [INVALIDATED 2026-05-01]"
 date: 2026-05-01
 cycle: ψ.1.Phase2
-status: PASS
+status: INVALIDATED
 parent: "[[program.md]]"
 tags:
   - TGP
@@ -10,9 +10,25 @@ tags:
   - phase2
   - sympy
   - results
+  - INVALIDATED
+  - withdrawn
 ---
 
-# ψ.1.Phase2 results — 7/7 FULL CASCADE
+> # ⛔ INVALIDATED 2026-05-01 (post-audit A6 + A8)
+>
+> **Status: WITHDRAWN.** Phase 2 sympy LOCK Δc/c + Sagnac engineering jest
+> matematycznie poprawny ale **fizycznie pusty** — Z(x)F² to wave-function
+> renormalization (varying-α, NIE varying-c). Phase 5 v2 (eikonal Sagnac)
+> daje realistyczne SNR ~ 8×10⁻²⁴ zamiast 3×10⁴.
+>
+> **Replacement:** [[Phase5_results.md]] (ψ.1.v2 eikonal Sagnac).
+>
+> **Patrz**: [[Phase4_results.md]] T4.2 + [[../../meta/AUDYT_TGP_2026-05-01.md]]
+> A6/A8.
+
+---
+
+# ψ.1.Phase2 results — 7/7 FULL CASCADE [INVALIDATED — see header above]
 
 ## Sub-test outcomes
 

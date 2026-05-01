@@ -28,25 +28,29 @@ def t21_sympy_lock_formula():
 
     if sympy_ok:
         alpha_g, Lambda, m_e0, dlnX = sp.symbols('alpha_g Lambda m_e0 dlnX', positive=True, real=True)
-        # m_e_eff = m_e0 + (alpha_g/Lambda^2) * dlnX^2
-        m_e_eff = m_e0 + (alpha_g / Lambda**2) * dlnX**2
+        # AUDIT 2026-05-01 (A5) PATCH: multiplicative form (dim-coherent)
+        # original additive form m_e0 + (alpha_g/Lambda^2)*dlnX^2 was dim-incoherent
+        # because (alpha_g/Lambda^2)*dlnX^2 = mass^2/mass^2 = dimensionless
+        # cannot be added to m_e0 [mass]. Correct dim-6 EFT form is multiplicative.
+        m_e_eff = m_e0 * (1 + (alpha_g / Lambda**2) * dlnX**2)
         delta_m_e = m_e_eff - m_e0
         # omega ~ m_e c^2 alpha_em^2 -> delta omega/omega = delta m_e/m_e
         delta_omega_over_omega = sp.simplify(delta_m_e / m_e0)
-        print(f"  m_e_eff(X) = {m_e_eff}")
+        print(f"  m_e_eff(X) = m_e0 * [1 + (alpha_g/Lambda^2) (d ln X)^2]   [A5 patch — multiplicative]")
         print(f"  delta omega/omega = (m_e_eff - m_e0)/m_e0 = {delta_omega_over_omega}")
-        target = alpha_g * dlnX**2 / (Lambda**2 * m_e0)
+        # AUDIT-AWARE TARGET: dim-coherent (no 1/m_e0 factor)
+        target = alpha_g * dlnX**2 / Lambda**2
         diff = sp.simplify(delta_omega_over_omega - target)
-        print(f"  Target form: alpha_g (d ln X)^2 / (Lambda^2 m_e0)")
+        print(f"  Target form (AUDIT A5): alpha_g (d ln X)^2 / Lambda^2  [dim-coherent, bez 1/m_e0]")
         print(f"  diff (should be 0): {diff}")
         ok = (diff == 0)
     else:
-        print("  Hand-derivation:")
-        print("    m_e_eff = m_e0 + (alpha_g/Lambda^2)(d ln X)^2")
-        print("    delta_m_e/m_e0 = (alpha_g/Lambda^2)(d ln X)^2 / m_e0")
-        print("                  = alpha_g (d ln X)^2 / (Lambda^2 m_e0)")
+        print("  Hand-derivation [AUDIT 2026-05-01 A5 PATCH — multiplicative]:")
+        print("    m_e_eff = m_e0 * [1 + (alpha_g/Lambda^2) (d ln X)^2]")
+        print("    delta_m_e/m_e0 = (alpha_g/Lambda^2)(d ln X)^2  [dimensionless]")
         print("    omega_nm ~ m_e c^2 alpha_em^2 (Bohr-like) -> delta omega/omega = delta m/m")
-        print("    -> delta omega/omega = (alpha_g/(Lambda^2 m_e0))(d ln X)^2 q.e.d.")
+        print("    -> delta omega/omega = (alpha_g/Lambda^2)(d ln X)^2  q.e.d. [bez 1/m_e0]")
+        print("    PRE-AUDIT (WITHDRAWN): (alpha_g/(Lambda^2 m_e0))(d ln X)^2 — błędne 1/m_e0")
         ok = True
 
     print()

@@ -1,0 +1,117 @@
+============================================================================
+  R3 AUDIT z TGP-canonical alpha=2 (z K(phi) = K_geo * phi^4)
+============================================================================
+
+Backstory: sek08a definiuje akcje z K(phi) = K_geo * phi^4. W radialnej
+notacji to oznacza alpha = 2 w L = (1/2) g^{2*alpha} (g')^2. Wczesniejsze
+skrypty R3 uzywaly alpha = 1 jako 'substrat' bez wyjasnienia.
+
+============================================================================
+  SEKCJA 1: g0_crit(alpha) — bariera topologiczna
+============================================================================
+
+  g0_crit(alpha=0.75, d=3) = 2.3703  (R3 'geometryczne')
+  g0_crit(alpha=1.00, d=3) = 2.2062  (R3 'substrat')
+  g0_crit(alpha=2.00, d=3) = 1.8744  (TGP-canonical phi^4)
+  PASS S1.1 alpha=1 g0_crit ~ 2.206 (R3 reproduces)  = 2.2062
+  PASS S1.2 alpha=2 g0_crit < 2.206 (lower barrier)  = 1.8744 < 2.2062
+
+============================================================================
+  SEKCJA 2: Czy phi-drabinka + g0^tau(Koide) miesci sie pod bariera?
+============================================================================
+
+  g0^e   = 0.8694  (R3 calibration, INPUT)
+  g0^mu  = 1.4067  (phi-drabinka g0^e * phi, INPUT)
+  g0^tau = 1.7293  (Koide K=2/3 derived, INPUT)
+
+  alpha=1.0 (R3 substrat): g0_crit = 2.2062
+     g0^e   = 0.8694 < 2.2062?  True
+     g0^mu  = 1.4067 < 2.2062?  True
+     g0^tau = 1.7293 < 2.2062?  True
+     g0^4 (=phi*g0^tau) = 2.7981 > 2.2062?  True
+
+  alpha=2.0 (TGP-canonical phi^4): g0_crit = 1.8744
+     g0^e   = 0.8694 < 1.8744?  True
+     g0^mu  = 1.4067 < 1.8744?  True
+     g0^tau = 1.7293 < 1.8744?  True
+     g0^4 (=phi*g0^tau) = 2.7981 > 1.8744?  True
+
+  Margin do bariery (g0_crit - g0^tau):
+    alpha=1.0: +0.4769  (komfortowy)
+    alpha=2.0: +0.1451  (wciaz dziala)
+  PASS S2.1 alpha=2: g0^tau pod bariera  margin = +0.1451
+  PASS S2.2 alpha=2: g0^4 nad bariera (4. zakazana)  g0^4=2.7981 > 1.8744
+  PASS S2.3 alpha=2: N=3 wciaz spojne z bariera  
+
+============================================================================
+  SEKCJA 3: A_tail i mass formula A^4 dla alpha = 2
+============================================================================
+
+  alpha = 1.0 (R3 substrat) — REPRODUKCJA:
+    A_e   = 0.12461
+    A_mu  = 0.47241
+    A_tau = 0.95669
+    (A_mu/A_e)^4  = 206.55  vs PDG 206.7682 (diff -0.10%)
+    (A_tau/A_e)^4 = 3474.1  vs PDG 3477.23 (diff -0.09%)
+  PASS S3.1 alpha=1: m_mu/m_e ~ 207 z A^4  diff -0.10%
+
+  alpha = 2.0 (TGP-canonical phi^4):
+    A_e   = 0.11003
+    A_mu  = 0.65041
+    A_tau = 1.57656
+    (A_mu/A_e)^4  = 1221.06  vs PDG 206.7682 (diff +490.54%)
+    (A_tau/A_e)^4 = 42152.8  vs PDG 3477.23 (diff +1112.25%)
+  FAIL S3.2 alpha=2: m_mu/m_e ~ 207 z A^4  diff +490.54%
+
+============================================================================
+  SEKCJA 4: Mass mechanism m = c * K^2 dla alpha = 1 vs 2
+============================================================================
+
+  alpha = 1.0 (R3 substrat):
+    K_e   = 0.77460
+    K_mu  = 11.13472
+    K_tau = 45.63619
+    (K_mu/K_e)^2  = 206.64  vs PDG 206.7682 (diff -0.06%)
+    (K_tau/K_e)^2 = 3471.1  vs PDG 3477.23 (diff -0.18%)
+
+  alpha = 2.0 (TGP-canonical):
+    K_e   = 0.60417
+    K_mu  = 21.10313
+    K_tau = 124.09006
+    (K_mu/K_e)^2  = 1220.04  vs PDG 206.7682 (diff +490.05%)
+    (K_tau/K_e)^2 = 42184.8  vs PDG 3477.23 (diff +1113.17%)
+  FAIL S4.1 alpha=2: m_mu/m_e ~ 207 z K^2  diff +490.05%
+  FAIL S4.2 alpha=2: m_tau/m_e ~ 3477 z K^2  diff +1113.17%
+
+============================================================================
+  DIAGNOZA
+============================================================================
+
+OBSERWACJE z numerycznego audytu:
+
+  1. Bariera topologiczna g0_crit JEST UNIWERSALNA strukturalnie
+     (zalezy od alpha, ale MECHANIZM 'soliton ODE konczy sie
+     singularnoscia g_min=0' istnieje dla wszystkich alpha).
+
+  2. Dla alpha=1 (R3 'substrat'): g0_crit ~ 2.21, mass formula A^4 OK.
+     Dla alpha=2 (TGP-canonical phi^4): g0_crit ~ 1.87, mass formula?
+
+  3. Czy alpha=2 daje N=3? TAK strukturalnie:
+     g0^e=0.87 < g0^mu=1.41 < g0^tau=1.73 < g0_crit=1.87 < g0^4=2.80
+     ALE margin g0_crit - g0^tau = 0.14 (wezszy niz dla alpha=1: 0.48)
+
+  4. Czy mass formula A^4 dziala dla alpha=2? NUMERYCZNIE SPRAWDZONE
+     wyzej w SEKCJI 3.
+
+WNIOSEK: alpha = 2 (TGP-canonical) JEST kompatybilne z N=3 z bariery.
+Wczesniejsze R3 wnioski 'substrat alpha=1 daje N=2 deficit 3.1%' bylo
+BLEDNE z perspektywy TGP-canonical, bo R3 'substrat' to nie TGP-substrat.
+
+Mass formula: jesli A^4 / K^2 daje OK ratio dla alpha=2, R3 jest
+fundamentalnie zgodne z TGP. Jesli LAMIE - R3 jest niespojne z TGP
+i wymaga albo zmiany TGP (sek08a K(phi) = phi^2 zamiast phi^4),
+albo zmiany R3 (porzucenie A^4 mass formula).
+
+============================================================================
+  WYNIK: PASS=6  FAIL=3
+============================================================================

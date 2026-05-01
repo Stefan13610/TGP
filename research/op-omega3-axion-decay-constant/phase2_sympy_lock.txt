@@ -1,0 +1,109 @@
+==============================================================================
+omega.3.Phase2 — sympy LOCK + numerical + cosmological + F-cluster
+==============================================================================
+
+Locked inputs:
+  g* = 71/100, N_A = 500/57, E_TGP = 536/75
+  K_struct = N_A * 2*pi^2 = 1000*pi**2/57 ≈ 173.1510
+  M_GUT = 2.00e+16 GeV (SM 2-loop)
+  M_TGP = K * M_GUT ≈ 3.4630e+18 GeV
+  alpha_em = 0.007297
+  g_axion (omega.2) = 8.3002e-03
+
+------------------------------------------------------------------------------
+O2.1 — f_a sympy LOCK rigorous
+------------------------------------------------------------------------------
+  f_a symbolic = M_TGP/E_TGP
+             = (N_A * 2*pi^2 * M_GUT) / E_TGP
+             = (500/57 * 2*pi^2 * M_GUT) / (536/75)
+             = 3125*pi**2*M_GUT/1273
+  diff (sym - expanded) = 0
+  [GATE] sympy diff == 0 EXACT? True -> PASS
+
+------------------------------------------------------------------------------
+O2.2 — f_a numerical reproduction
+------------------------------------------------------------------------------
+  f_a (UV.2: K*M_GUT/E_TGP)  = 4.845642e+17 GeV
+  f_a (chi.1: M_TGP_chi1/E_TGP) = 4.860205e+17 GeV
+  drift                       = 0.2996%
+  [GATE] drift < 1%? -> PASS
+
+------------------------------------------------------------------------------
+O2.3 — g_a-gamma direct vs inversion sympy diff = 0
+------------------------------------------------------------------------------
+  g_a-gamma direct    = 1.712922e-20 GeV^-1
+  g_a-gamma inversion = 1.712922e-20 GeV^-1
+  numerical diff      = 3.009266e-36
+  sympy diff (sym)    = 0
+  [GATE] sympy diff == 0 + numerical diff < 1e-25? -> PASS
+
+------------------------------------------------------------------------------
+O2.4 — cosmological ALP misalignment consistency
+------------------------------------------------------------------------------
+  TGP f_a = 4.8456e+17 GeV
+  super-GUT threshold = 1e+16 GeV
+  TGP f_a above threshold? True
+  consistent with anthropic theta_i / kinetic alignment / axiverse
+  (m_a free in ALP regime - cosmological abundance NOT fixed by TGP framework)
+  [GATE] TGP f_a in super-GUT band (cosmologically viable ALP)? -> PASS
+
+------------------------------------------------------------------------------
+O2.5 — isocurvature pre-inflation PQ constraint
+------------------------------------------------------------------------------
+  Delta_iso bound (Planck PR4)  = 1e-11
+  theta_i (default)             = 1.0
+  H_inf max bound               = 2*pi*f_a*theta_i*Delta_iso
+                                = 3.0446e+07 GeV
+  comparison: standard slow-roll inflation H_inf ~ 10^13 GeV (high-scale)
+                                          H_inf ~ 10^7  GeV (low-scale)
+  derived: r_TGP_max (theta_i=1) = 3.1667e-23
+  -> low-scale inflation prediction (r essentially zero) IF pre-inflation PQ + theta_i=1
+  -> alternative: post-inflation PQ avoids isocurvature; or theta_i tuning
+  [GATE] non-trivial H_inf constraint emerges (H_inf_max < 1e10 GeV)? -> PASS
+
+------------------------------------------------------------------------------
+O2.6 — F-cluster post-omega.3 preservation
+------------------------------------------------------------------------------
+  F4 (alpha_0)        = 4.044737 vs ref 4.0447, drift 0.0009%
+  F5 (g_tilde)        = 0.980300 vs ref 0.9803, drift 0.0000%
+  F6 (kappa)          = 10.026513 vs ref 10.0265, drift 0.0001%
+  XS1 (|alpha_0-kappa^2|/kappa^2) drift = 0.0831%
+  -> omega.3 doesn't perturb F-cluster (all preservation conditions met)
+  max F-cluster drift = 0.0831%
+  [GATE] max F-cluster drift < 0.1%? -> PASS
+
+------------------------------------------------------------------------------
+O2.7 — 4-channel omega.3 cascade self-consistency
+------------------------------------------------------------------------------
+  Channel 1: g* = 71/100 (UV.1) -> M_TGP cascade ✓
+  Channel 2: N_A = 500/57 (xi.1) -> K_struct ✓
+  Channel 3: K_struct = N_A*2*pi^2 (UV.2) ≈ 173.1510 ✓
+  Channel 4: E_TGP = 536/75 (omega.2) ✓
+  cascade diff (subbed vs target) = 0
+  All 4 channels flow into f_a structurally consistent
+  [GATE] 4-channel cascade sympy diff == 0? -> PASS
+
+==============================================================================
+Phase 2 summary
+==============================================================================
+  ID     Test                                          Verdict   
+  ------ --------------------------------------------- ----------
+  O2.1   f_a sympy LOCK rigorous                       PASS
+  O2.2   f_a numerical drift < 1%                      PASS
+  O2.3   g_a-gamma direct vs inversion diff = 0        PASS
+  O2.4   cosmological ALP super-GUT consistency        PASS
+  O2.5   isocurvature H_inf bound non-trivial          PASS
+  O2.6   F-cluster preservation < 0.1%                 PASS
+  O2.7   4-channel cascade self-consistency            PASS
+
+  SCORE: 7/7  Gate >=6/7 -> PASS - Phase 3 ENABLED
+
+  Key numerics for Phase 3:
+    f_a            = 4.845642e+17 GeV
+    g_a-gamma      = 1.712922e-20 GeV^-1
+    H_inf max bound = 3.0446e+07 GeV (theta_i=1)
+    F-cluster max drift = 0.083070%
+
+==============================================================================
+END omega.3.Phase2
+==============================================================================

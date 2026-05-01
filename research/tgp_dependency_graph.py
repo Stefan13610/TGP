@@ -191,7 +191,7 @@ def build_concept_graph():
 
     # PREDICTIONS
     predictions = {
-        "F1: α_s = 0.1190": {"type": "prediction", "color": "#2196F3", "sigma": "1.1σ"},
+        "F1: α_s = 0.1184": {"type": "prediction", "color": "#2196F3", "sigma": "0.4σ"},
         "F2: λ_C = 0.2282": {"type": "prediction", "color": "#FF5722", "sigma": "4.8σ"},
         "F3: K(ℓ)=2/3": {"type": "prediction", "color": "#2196F3", "sigma": "0σ"},
         "F6: Ω_DM = 0.262": {"type": "prediction", "color": "#2196F3", "sigma": "0.3σ"},
@@ -237,9 +237,9 @@ def build_concept_graph():
     G.add_edge("TW: N=3 generacji", "TW: |GL(3,F₂)|=168")
 
     # theorem + param → prediction
-    G.add_edge("PARAM: g₀ᵉ = 0.86941", "F1: α_s = 0.1190")
-    G.add_edge("PARAM: Ω_Λ = 0.6847", "F1: α_s = 0.1190")
-    G.add_edge("TW: |GL(3,F₂)|=168", "F1: α_s = 0.1190")
+    G.add_edge("PARAM: g₀ᵉ = 0.86941", "F1: α_s = 0.1184")
+    G.add_edge("PARAM: Ω_Λ = 0.6847", "F1: α_s = 0.1184")
+    G.add_edge("TW: |GL(3,F₂)|=168", "F1: α_s = 0.1184")
 
     G.add_edge("PARAM: Ω_Λ = 0.6847", "F2: λ_C = 0.2282")
     G.add_edge("TW: N=3 generacji", "F2: λ_C = 0.2282")

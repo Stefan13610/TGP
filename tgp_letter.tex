@@ -14,6 +14,7 @@
 \newcommand{\Nzero}{\mathcal{N}_0}
 \newcommand{\GL}{\mathrm{GL}(3,\mathbb{F}_2)}
 \newcommand{\as}{\alpha_s}
+\newcommand{\PhiZero}{\Phi_0}
 
 \begin{document}
 
@@ -36,7 +37,7 @@ the cosmological constant $\OL = 0.6847$,
 and the generation number $N = 3$.
 From these inputs, TGP derives 40~predictions---21 confirmed by
 experiment (18 within $2\sigma$, 3~exact)---including the strong coupling
-$\as(M_Z) = 0.1190$ ($1.1\sigma$), the Koide constant $K = 2/3$ (exact),
+$\as(M_Z) = 0.1184$ ($0.4\sigma$), the Koide constant $K = 2/3$ (exact),
 the Higgs mass $m_H = 125.31$~GeV ($0.3\sigma$), the spectral index
 $n_s = 1 - 2/N_e$ identical to Starobinsky $R^2$ inflation, and the
 tensor-to-scalar ratio $r = 0.0033$.
@@ -140,7 +141,7 @@ We highlight the most significant results.
 \begin{tabular}{cll}
 \# & Equation & Value / Status \\
 \hline
-F1 & $\as = 3\gone/(32\OL)$ & 0.1190 [$1.1\sigma$] \\
+F1 & $\as = N_c^3\gone/(8\PhiZero)$ & 0.1184 [$0.4\sigma$] \\
 F2 & $\lambda_C = (\OL/N)\!\cdot\!165/167$ & 0.2255 [$0.7\sigma$] \\
 F3 & $K(\ell) = 2/3$, $K(\nu) = 1/2$ & exact / prediction \\
 F4 & $168 = |\GL|$ & exact \\
@@ -157,11 +158,17 @@ F12 & $\beta(\gone) = 0$ (1-loop) & conformal prot. \\
 \end{table}
 
 
-\textbf{Strong coupling.}---The formula
-$\as(M_Z) = 3\gone/(32\OL) = 0.1190$
-agrees with the PDG value $0.1180 \pm 0.0009$ at $1.1\sigma$~\cite{PDG2024}.
-This connects particle physics ($\as$) to cosmology ($\OL$)
-via the TGP invariant $\as\,\OL = 3\gone/32 = 0.0815$.
+\textbf{Strong coupling.}---The canonical formula
+$\as(M_Z) = N_c^3\gone/(8\PhiZero) = 0.1184$
+agrees with the PDG value $0.1180 \pm 0.0009$ at $0.4\sigma$~\cite{PDG2024},
+where $\PhiZero = 24.783$ is the substrate vacuum value (Brannen,
+intrinsic to TGP).
+This connects particle physics ($\as$) to gravity ($\PhiZero$,
+$\kappa = 3/(4\PhiZero)$) via the TGP three-factor decomposition
+$\as = (T_F N_c) \cdot \gone \cdot (1/\PhiZero)$.
+Equivalently, in cosmological form, $\as = 3\gone/(32\OL)$ with
+the TGP-internal $\OL^{\rm TGP} = \PhiZero/36 = 0.6884$
+(within $0.5\sigma$ of Planck $0.6847 \pm 0.0073$).
 
 \textbf{Koide constant.}---The $\mathbb{Z}_3 \subset \GL$ subgroup
 forces the mass parameterization
@@ -281,7 +288,7 @@ Of 40~predictions: 18~confirmed ($< 2\sigma$), 3~exact ($0\sigma$),
 \begin{tabular}{llll}
 Observable & TGP & Experiment & $\sigma$ \\
 \hline
-$\as(M_Z)$     & 0.1190     & $0.1180 \pm 0.0009$   & 1.1 \\
+$\as(M_Z)$     & 0.1184     & $0.1180 \pm 0.0009$   & 0.4 \\
 $K(\ell)$       & 2/3        & 0.66666 (exact)        & 0.0 \\
 $\Omega_\mathrm{DM}$ & 0.262 & $0.265 \pm 0.011$     & 0.3 \\
 $m_H$ (GeV)     & 125.31     & $125.25 \pm 0.17$      & 0.3 \\

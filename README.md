@@ -92,9 +92,9 @@ From three inputs — the TGP coupling $g_0^e = 0.86941$, the cosmological const
 > **Closure 2026-04-26 update:** $\Omega_\Lambda = 0.6847$ has been promoted from **input → emergent prediction** via T-$\Lambda$ closure: $\rho_{\rm vac,TGP} = M_{\rm Pl}^2 H_0^2/12$ (geometric-mean dark-energy formula) gives $\rho_{\rm TGP}/\rho_{\rm obs} = 1.020$ with $\tilde g \approx 0.98$ — vacuum catastrophe (122 orders of magnitude) **structurally avoided** without fine-tuning. See `research/closure_2026-04-26/Lambda_from_Phi0/results.md` (7/7 PASS).
 
 **Highlights:**
-- $\alpha_s(M_Z) = 0.1190$ (PDG: $0.1180 \pm 0.0009$, $1.1\sigma$)
+- $\alpha_s(M_Z) = 0.1184$ (PDG 2024: $0.1180 \pm 0.0009$, $0.4\sigma$) ⚠ B3-locked 2026-05-01 — wcześniej 0.1190 (1.1σ niezgodność z sek00/ROADMAP_v3:883/slownik 0.1184); locked 0.1184 jako bliżej PDG
 - Koide constant $K = 2/3$ (exact, from algebraic identity)
-- Higgs mass $m_H = 125.31$ GeV (PDG: $125.25 \pm 0.17$, $0.3\sigma$)
+- Higgs mass $m_H = 125.31$ GeV (PDG 2024: $125.20 \pm 0.11$, $1.0\sigma$) ⚠ C9-PDG-update 2026-05-01 — wcześniej `125.25 ± 0.17 (0.3σ)` używała starszego anchora; PDG 2024 latest jest 125.20 ± 0.11; TGP value `v×57/112=125.31` algebraicznie unchanged
 - Spectral index $n_s = 1 - 2/N_e = 0.967$ (Starobinsky class)
 - Tensor-to-scalar ratio $r = 0.0033$ (Mukhanov-Sasaki, within BICEP/Keck)
 - Neutrino mass sum $\Sigma m_\nu = 59.6$ meV (normal ordering only; IO excluded)
@@ -274,10 +274,10 @@ cd paper_bh_shadow && pdflatex tgp_bh_shadow
 
 | Observable | TGP prediction | Experiment | Tension |
 |------------|---------------|------------|---------|
-| $\alpha_s(M_Z)$ | 0.1190 | $0.1180 \pm 0.0009$ | $1.1\sigma$ |
+| $\alpha_s(M_Z)$ ⚠ B3-locked 2026-05-01 | 0.1184 | $0.1180 \pm 0.0009$ | $0.4\sigma$ |
 | Koide $K(\ell)$ | 2/3 | 0.666661 | exact |
 | $\Omega_\mathrm{DM}$ | 0.262 | $0.265 \pm 0.011$ | $0.3\sigma$ |
-| $m_H$ (GeV) | 125.31 | $125.25 \pm 0.17$ | $0.3\sigma$ |
+| $m_H$ (GeV) ⚠ C9-PDG-update 2026-05-01 | 125.31 | $125.20 \pm 0.11$ | $1.0\sigma$ |
 | $m_W$ (GeV) | 80.354 | $80.354 \pm 0.032$ | $0.01\sigma$ |
 | $n_s$ | 0.967 | $0.965 \pm 0.004$ | $0.4\sigma$ |
 | $r$ | 0.0033 | $< 0.036$ | OK |

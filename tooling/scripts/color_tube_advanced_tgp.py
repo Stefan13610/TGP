@@ -26,6 +26,11 @@ from scipy.optimize import brentq
 # ============================================================
 # Parameters
 # ============================================================
+# NOTE (B3-v2 2026-05-01): Phi_0 = 24.6492 here is Planck-based
+# 36*Omega_Lambda used inside this script's advanced chain.
+# The canonical TGP value (Brannen) is Phi_0 = 24.783 yielding
+# alpha_s = 0.1184; the script-internal value is kept at 24.6492
+# so the K_geo and Phi_0^2 scaling checks remain consistent.
 Phi_0 = 24.6492
 a_Gamma = 0.040
 phi_golden = (1 + np.sqrt(5)) / 2
@@ -351,8 +356,11 @@ print(f"  Deviation:  {(alpha_s_from_tgp - alpha_s_MZ)/alpha_s_err:.2f} sigma")
 print(f"\n\n[5] CROSS-CHECK: TWO alpha_s PATHS")
 print("-" * 50)
 
-# Path 1: Mass-coupling bridge (from session v47)
-# alpha_s = N_c^3 * g_0^e / (8 * Phi_0) = 27 * 0.8694 / (8 * 24.6492) = 0.1190
+# Path 1: Mass-coupling bridge.
+# Canonical TGP value (B3-v2 lock 2026-05-01) is alpha_s = N_c^3*g_0^e/(8*Phi_0)
+# = 27 * 0.86941 / (8 * 24.783) = 0.1184 with Brannen Phi_0 = 24.783.
+# This script's chain uses the Planck-based Phi_0 = 24.6492, so the
+# computed bridge value here is 0.1190 (within 0.5% of the canonical).
 g_0_e = 0.8694
 alpha_s_bridge = N_c**3 * g_0_e / (8 * Phi_0)
 

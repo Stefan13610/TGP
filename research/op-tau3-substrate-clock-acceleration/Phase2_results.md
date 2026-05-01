@@ -32,11 +32,19 @@ tags:
 
 ### T2.1: Clock-rate shift formula sympy LOCK
 
-$$m_{e,eff}(X) = m_e^{(0)} + \frac{\alpha_g}{\Lambda^2}(\partial \ln X)^2$$
+> **⚠ AUDIT 2026-05-01 (A5) PATCH**: original additive form
+> `m_e_eff = m_e + (α_g/Λ²)(∂lnX)²` dimensionally niespójna. Patch
+> multiplikatywny applied. Audit-aware sympy LOCK form:
 
-$$\boxed{\frac{\delta \omega}{\omega} = \frac{\alpha_g}{\Lambda^2 m_e^{(0)}}(\partial \ln X)^2}$$
+$$\boxed{\;m_{e,eff}(X) = m_e^{(0)}\!\left[1 + \frac{\alpha_g}{\Lambda^2}(\partial \ln X)^2\right]\;}$$
 
-sympy diff(target - derived) = 0 (LOCK confirmed).
+$$\boxed{\;\frac{\delta \omega}{\omega} = \frac{\delta m_e}{m_e^{(0)}} = \frac{\alpha_g}{\Lambda^2}(\partial \ln X)^2\;}$$
+
+sympy diff(target_corrected - derived) = 0 (LOCK confirmed post-A5 patch).
+
+**Original form (PRE-AUDIT, dimensionally incoherent)**:
+~~$\delta\omega/\omega = (\alpha_g/(\Lambda^2 m_e^{(0)}))(\partial \ln X)^2$~~
+[WITHDRAWN 2026-05-01 — błędne 1/m_e^(0) dimensional artifact].
 
 ### T2.2: F·F̃ = -4 E·B parallel maximization
 - F_μν F̃^μν = -4|E||B|cos(θ) where θ = angle(E,B)
@@ -57,17 +65,49 @@ Two regimes:
 
 ### T2.4: Λ-cutoff scan (Schwinger-class fields, L ~ 1 mm)
 
-| Λ | Λ/m_e | δω/ω numerical | Status |
+> **⚠ AUDIT 2026-05-01 (A5) PATCH**: Λ-scan poniżej dziedziczy original
+> δω/ω = (α_g/Λ²)(∂lnX)²/m_e formula z błędnym 1/m_e factor. Audit-aware
+> re-scan: nowy δω/ω = (α_g/Λ²)(∂lnX)² jest **m_e razy większy** od original
+> przy tych samych (Λ, ∂lnX) — m_e ≈ 5.11·10⁵ eV. Detection thresholds
+> przesuwają się o ~5.7 OOM w górę w Λ. **Dodatkowo**: (∂lnX)² behavior
+> z ω.1 EOM × Schwinger E·B Greens NIE explicit derived (audit B7 OPEN
+> globally) → Λ-scan jest scaling-only, nie absolutnym numerycznym scanem.
+
+**Original Λ-scan (PRE-AUDIT, 1/m_e factor incorrect)**:
+
+| Λ | Λ/m_e | δω/ω original (błędne) | Status |
 |---|-------|----------------|--------|
 | M_Pl | 2.4×10²² | ~10⁻⁵⁰ | undetectable |
 | TeV | 1.96×10⁶ | ~10⁻²⁸ | undetectable |
 | GeV | 1.96×10³ | ~10⁻²⁰ | borderline |
-| **100 MeV** | **196** | **~10⁻¹²** | **DETECTABLE** Sr 1e-18/yr |
-| 10 MeV | 19.6 | ~10⁻⁸ | strongly detectable |
-| 1 MeV | 1.96 | ~10⁻⁴ | potentially excluded |
+| 100 MeV | 196 | ~10⁻¹² | claimed detectable (artefakt) |
+| 10 MeV | 19.6 | ~10⁻⁸ | claimed strongly detectable (artefakt) |
+| 1 MeV | 1.96 | ~10⁻⁴ | claimed potentially excluded (artefakt) |
 
-Sr/Yb 1e-18/yr threshold ⟹ Λ < ~100 MeV detectable now.
-Frontier 1e-21/yr (2035+) ⟹ Λ < ~1 GeV reachable.
+**Audit-aware corrected Λ-scan (multiplikatywne, × m_e factor)**:
+
+| Λ | Λ/m_e | δω/ω corrected | Status |
+|---|-------|----------------|--------|
+| M_Pl | 2.4×10²² | ~5.1·10⁻⁴⁵ | undetectable |
+| TeV | 1.96×10⁶ | ~5.1·10⁻²³ | undetectable Sr/Yb |
+| **GeV** | **1.96×10³** | **~5.1·10⁻¹⁵** | **borderline** Sr 1e-18/yr |
+| **100 MeV** | **196** | **~5.1·10⁻⁷** | **strongly detectable** (was ~10⁻¹²) |
+| 10 MeV | 19.6 | ~5.1·10⁻³ | excluded (LEP/SLC bounds) |
+| 1 MeV | 1.96 | ~5.1·10¹ | excluded |
+
+**A5-patch corrected gates**:
+- Sr/Yb 1e-18/yr threshold ⟹ **Λ ≲ √(m_e × δω_threshold) × scaling ~ O(GeV)**
+  scale (poprzednio MeV) — frontier shift +3 OOM
+- Frontier 1e-21/yr (2035+) ⟹ Λ ≲ ~10–100 GeV reachable (poprzednio ~GeV)
+- m_X = 100 MeV phenomenological reference pozostaje **wolnym parametrem**
+  (audit D4); samodzielnie nie zmienia gates do czasu B7 closure
+
+**Konsekwencja audit-aware**:
+- Detection regime przesuwa się z **MeV** do **GeV** scale
+- m_e ≈ 100 MeV phenomenological "lock" w op-psi1 staje się luźniejszym
+  ograniczeniem
+- Cross-channel (Sr/Yb, magnetar, frontier) re-evaluation needed po B7
+  closure (full ω.1 EOM × Schwinger derivation (∂lnX)²)
 
 ### T2.5: Sr/Yb numerical signal-to-noise
 - Sr 1S0-3P0: ω = 2π × 429 THz = 2.7×10¹⁵ rad/s

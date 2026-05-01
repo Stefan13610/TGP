@@ -1,0 +1,102 @@
+======================================================================
+  U3.1 -- M_GUT structural prediction (TGP-side derivation)
+======================================================================
+  TGP-side: M_GUT = M_TGP_chi.1 / (N_A * 2*pi^2)
+                 = 3.4734e+18 / 173.1510
+                 = 2.0060e+16 GeV
+  SM 2-loop central: 2.00e+16 GeV
+  SM 2-loop band:    [1.00e+16, 2.50e+16]
+  drift vs central:  0.3005%
+  In SM band:        True
+  [PASS] M_GUT_TGP within 5% of SM 2-loop central + within SM theory band
+
+======================================================================
+  U3.2 -- M_Pl reproduction post-UV.2 (no PDG anchor)
+======================================================================
+  M_Pl_UV.2 = M_GUT * 2*pi^2 * N_A^(3/2) / sqrt(g*)
+            = 2.00e+16 * 608.6159
+            = 1.2172e+19 GeV
+  M_Pl PDG  = 1.2209e+19 GeV
+  drift     = 0.2996%
+  [PASS] M_Pl reproduction post-UV.2 within 1%
+
+======================================================================
+  U3.3 -- G_N(SI) reproduction post-UV.2 (no PDG)
+======================================================================
+  G_N_UV.2 (GeV^-2) = g*/(M_TGP_UV.2^2 * N_A)
+                    = 6.7492e-39
+  G_N_UV.2 (SI)     = hbar*c / M_Pl_UV.2(kg)^2
+                    = 6.7145e-11 m^3 kg^-1 s^-2
+  G_N CODATA 2022   = 6.6743e-11
+  drift             = 0.6020%
+  gate              < 1% (M_GUT 2-loop SM unc. propagates as K^2)
+  [PASS] G_N(SI) reproduction post-UV.2 within 1%
+
+======================================================================
+  U3.4 -- f_a axion decay constant prediction (omega.3 enabling)
+======================================================================
+  omega.2 LOCK: g_axion = alpha_em * E_TGP / (2*pi) = 8.3002e-03
+  E_TGP = 536/75 = 7.1467 (omega.2 triangle anomaly)
+  TGP-canonical f_a relation:
+    g_a-photon = (alpha_em / (2*pi*f_a)) * E_TGP
+    -> f_a = M_TGP_UV.2 / E_TGP
+           = 3.4630e+18 / 7.1467
+           = 4.8456e+17 GeV
+
+  TGP f_a band: ~10^17 GeV (super-heavy GUT-scale axion)
+  Standard QCD axion classical band: [1e9, 1e12] GeV (decoupled)
+  -> TGP axion is GUT-scale (UV-coupled, distinct from standard QCD axion)
+  -> Opens omega.3 mini-cycle: f_a structural derivation post-UV.2
+  [PASS] f_a in super-GUT band [1e16, 1e19] GeV (omega.3 input)
+
+======================================================================
+  U3.5 -- Gauge-grav unification structural
+======================================================================
+  Pre-UV.2: M_GUT observational only (SM 2-loop running)
+  Post-UV.2: M_GUT_TGP = M_TGP_chi.1/(N_A*2*pi^2) = 2.0060e+16 GeV
+  Conservative threshold-corrected SM band: [1.50e+16, 2.50e+16]
+  TGP M_GUT in SM band: True
+  -> Gauge-grav unification structural cross-link CONFIRMED
+  -> M_GUT promoted observational -> STRUCTURAL (TGP-side derived)
+  alpha_GUT (SM 2-loop) ~ 0.0250 ~ 1/40 (gauge unification)
+  [PASS] Gauge-grav unification structural lock
+
+======================================================================
+  U3.6 -- 4-channel UV.2 convergence summary
+======================================================================
+  Channel 1 -- UV-anchor (g* = 71/100):     [OK] value = 0.7100
+  Channel 2 -- Photon-ring (N_A = 500/57):  [OK] value = 8.7719
+  Channel 3 -- M_GUT independent:            [OK] drift = 0.3005% < 5%
+  Channel 4 -- M_Pl reproduction:            [OK] drift = 0.2996% < 1%
+  [PASS] All 4 channels convergent (4/4)
+
+======================================================================
+  PHASE 3 VERDICT
+======================================================================
+  [PASS] U3.1  -- M_GUT drift 0.3005%, in_band=True
+  [PASS] U3.2  -- M_Pl drift 0.2996%
+  [PASS] U3.3  -- G_N(SI) drift 0.6020%
+  [PASS] U3.4  -- f_a = 4.85e+17 GeV super-GUT band
+  [PASS] U3.5  -- M_GUT_TGP 2.01e+16 in band True
+  [PASS] U3.6  -- channels 4/4 OK
+
+  SCORE: 6/6
+  GATE: PASS (>=5/6) -> UV.2 program END (FULL CONVERGENCE)
+
+  K_struct LOCK     = N_A * 2*pi^2 = 173.1510
+  M_TGP_UV.2        = 3.4630e+18 GeV (drift 0.30% vs chi.1)
+  M_Pl_UV.2         = 1.2172e+19 GeV (drift 0.2996% vs PDG)
+  M_GUT_TGP         = 2.0060e+16 GeV (drift 0.3005% vs SM 2-loop central)
+  G_N_UV.2 (SI)     = 6.7145e-11 m^3/(kg s^2) (drift 0.6020% vs CODATA)
+  f_a (omega.3 input) = 4.8456e+17 GeV (super-GUT band)
+
+  STRUCTURAL FORM (LOCKED):
+    M_TGP = N_A * 2*pi^2 * M_GUT = (500/57) * 2*pi^2 * M_GUT
+    M_Pl/M_GUT = 2*pi^2 * N_A^(3/2) / sqrt(g*)
+
+  Open frontiers post-UV.2:
+    omega.3: f_a = M_TGP/E_TGP super-GUT axion mini-cycle
+    sigma.2 + psi.1.v2: c_0 vacuum-substrate light speed
+    phi.2: hbar quantum substrate
+    Lambda.1: single Lambda_TGP unification
+    zeta.2: m_e electron Yukawa from substrate

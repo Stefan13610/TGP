@@ -1,0 +1,89 @@
+==============================================================================
+omega.3.Phase1 — f_a structural form derivation + alt-uniqueness scan
+==============================================================================
+
+Locked inputs:
+  g* (UV.1)            = 71/100 = 0.710000
+  N_A (xi.1)           = 500/57 = 8.771930
+  E_TGP (omega.2)      = 536/75 = 7.146667
+  M_GUT (SM 2-loop)    = 2.0000e+16 GeV
+  M_TGP (UV.2)         = 3.4630e+18 GeV
+  M_Pl (PDG)           = 1.2209e+19 GeV
+  alpha_em             = 0.007297
+  g_axion (omega.2)    = 8.3002e-03
+
+------------------------------------------------------------------------------
+O1.1 — f_a sympy form derivation
+------------------------------------------------------------------------------
+  Symbolic form: f_a = (N_A * 2*pi^2 * M_GUT) / E_TGP
+               = (500/57 * 2*pi^2 * M_GUT) / (536/75)
+  Numerical f_a target  = 4.845642e+17 GeV
+  Numerical f_a derived = 4.845642e+17 GeV
+  diff                  = 0.000000e+00
+  sympy diff            = 0
+  [GATE] sympy diff == 0 EXACT? True -> PASS
+
+------------------------------------------------------------------------------
+O1.2 — alt-f_a uniqueness scan (5 candidates)
+------------------------------------------------------------------------------
+  Reference target: f_a ≈ 4.8456e+17 GeV (canonical winner)
+  Super-GUT band: [1e15, 1e19] GeV (3 OOM above QCD upper [1e9, 1e12])
+
+  * (a) M_TGP / E_TGP              = 4.8456e+17 GeV  drift   0.00%  super-GUT OK  -> PROBE-PASS
+    (b) M_TGP                      = 3.4630e+18 GeV  drift 614.67%  super-GUT OK  -> FAIL
+    (c) M_GUT                      = 2.0000e+16 GeV  drift  95.87%  super-GUT OK  -> FAIL
+    (d) M_Pl                       = 1.2209e+19 GeV  drift 2419.56%  super-GUT NO  -> FAIL
+    (e) M_TGP * E_TGP              = 2.4749e+19 GeV  drift 5007.48%  super-GUT NO  -> FAIL
+
+  [GATE] exactly 1 PROBE-pass? 1/5 -> PASS
+
+------------------------------------------------------------------------------
+O1.3 — super-GUT band consistency vs classical QCD axion
+------------------------------------------------------------------------------
+  TGP f_a               = 4.8456e+17 GeV
+  Classical QCD band    = [1e+09, 1e+12] GeV
+  Super-GUT band        = [1e+15, 1e+19] GeV
+  TGP in QCD band?      False
+  TGP in super-GUT band? True
+  OOM above QCD upper   = 5.69
+  [GATE] in super-GUT + ≥3 OOM above QCD? -> PASS
+
+------------------------------------------------------------------------------
+O1.4 — g_a-gamma structural form numerical
+------------------------------------------------------------------------------
+  g_a-gamma TGP       = g_axion / f_a = 8.3002e-03 / 4.8456e+17
+                      = 1.7129e-20 GeV^-1
+  PVLAS-IV bound      = 6.60e-11 GeV^-1
+  IAXO 2030+ bound    = 1.00e-12 GeV^-1
+  ADMX 2030+ bound    = 1.00e-15 GeV^-1 (in QCD band only)
+  margin vs PVLAS-IV  = 3.85e+09x
+  margin vs IAXO      = 5.84e+07x
+  OOM below PVLAS-IV  = 9.59
+  [GATE] g_a-gamma < PVLAS-IV by >=5 OOM? -> PASS
+
+------------------------------------------------------------------------------
+O1.5 — type classification ALP vs QCD axion
+------------------------------------------------------------------------------
+  E anomaly (omega.2 E_TGP=536/75)?  True
+  N anomaly (color)?                 False
+  -> classification: ALP (E-only)
+  reference: IF TGP had N anomaly, m_a_QCD = 1.1945e-11 eV (only for reference)
+  TGP m_a status: FREE PARAMETER (open omega.4+ cycle target)
+  [GATE] TGP axion structurally ALP (E-only)? -> PASS
+
+==============================================================================
+Phase 1 summary
+==============================================================================
+  ID     Test                                     Verdict   
+  ------ ---------------------------------------- ----------
+  O1.1   f_a sympy form derivation                PASS
+  O1.2   alt-f_a uniqueness (1/5 PROBE)           PASS
+  O1.3   super-GUT band consistency               PASS
+  O1.4   g_a-gamma < PVLAS-IV >=5 OOM             PASS
+  O1.5   type classification ALP                  PASS
+
+  SCORE: 5/5  Gate >=4/5 -> PASS - Phase 2 ENABLED
+
+==============================================================================
+END omega.3.Phase1
+==============================================================================

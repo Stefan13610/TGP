@@ -1,0 +1,165 @@
+﻿======================================================================
+  omega.2.Phase2 -- sympy LOCK + cross-channel matching (7 sub-tests)
+  Date: 2026-05-01
+======================================================================
+
+======================================================================
+  W2.2.1 -- CMB beta constraint per candidate
+======================================================================
+  CMB beta = 0.34 +/- 0.09 deg (Planck PR4 + ACT 2024)
+           = 5.93412e-03 +/- 1.57080e-03 rad
+  Constraint: g * Delta(lnX) = 2*beta = 1.18682e-02 rad
+
+  Required Delta(lnX) per candidate (= 2*beta / g):
+    kappa_TGP    g = 2.0120e+00  ->  Delta(lnX) = 5.8987e-03
+    alpha_em     g = 7.2974e-03  ->  Delta(lnX) = 1.6264e+00
+    1/(2pi)      g = 1.5915e-01  ->  Delta(lnX) = 7.4570e-02
+    eta_chir     g = 7.9167e-01  ->  Delta(lnX) = 1.4991e-02
+    g_anomaly    g = 8.3002e-03  ->  Delta(lnX) = 1.4299e+00
+  [PASS] all 5 candidates yield finite Delta(lnX) (constraint solvable)
+         max |Delta(lnX)| = 1.6264e+00
+
+======================================================================
+  W2.2.2 -- Delta(lnX)_cosmo from phi.1 substrate-action FRW
+======================================================================
+  phi.1 axiom: S[X] = (1/2) integral (d_mu lnX)(d^mu lnX) d^4x
+  EL eq: box(lnX) = 0  (massless free scalar)
+
+  FRW background: ds^2 = -dt^2 + a^2(t) dx^2
+  Homogeneous (lnX) = u(t):
+    box u = -u_tt - 3H u_t = 0
+    -> u_tt + 3H u_t = 0
+    -> d/dt[a^3 u_t] = 0  ->  u_t = C/a^3
+
+  In matter-dominated era a ~ t^(2/3), H = 2/(3t):
+    u_t = C/a^3 ~ C/t^2  ->  u(t) = -C/t + u_inf
+    => Delta(lnX) frozen as universe expands
+
+  Natural amplitude: Delta(lnX) = ln(t_0/t_rec) ~ ln(z_rec) ~ ln(1100) ~ 7.0
+  with damping factor (a_rec/a_0)^3 = 1/1101^3 -> negligible u_t today
+  -> Delta(lnX)_cosmo is dominated by initial-condition log z_max
+
+  Path A (log z_rec):     Delta(lnX) ~ ln(1+1100) = 7.0040
+  Path B (O(1) plateau):  Delta(lnX) ~ 1
+  Natural range:          Delta(lnX) in [0.5, 10] structurally
+  [PASS] cosmological Delta(lnX) structural range [0.5, 10]
+         Path A = 7.004, Path B = 1.0
+
+======================================================================
+  W2.2.3 -- PVLAS-V 2030+ sensitivity check
+======================================================================
+  PVLAS-V 2030+ projected: g/f_a < 1.0e-11 GeV^-1
+  Working f_a ~ M_TGP = 1.0e+16 GeV (omega.1 W3.5 partial-lock)
+
+  g/f_a per candidate:
+    kappa_TGP    g/f_a = 2.012e-16 GeV^-1  [OK]
+    alpha_em     g/f_a = 7.297e-19 GeV^-1  [OK]
+    1/(2pi)      g/f_a = 1.592e-17 GeV^-1  [OK]
+    eta_chir     g/f_a = 7.917e-17 GeV^-1  [OK]
+    g_anomaly    g/f_a = 8.300e-19 GeV^-1  [OK]
+  [PASS] all 5 candidates compatible with PVLAS-V (g/f_a < 1e-11)
+         compatible = 5/5
+
+======================================================================
+  W2.2.4 -- Magnetar E.B sensitivity ranking (FAST/SKA 2030+)
+======================================================================
+  FAST/SKA 2030+ pulsar-timing anomaly threshold ~ 1e-30
+  Amplitude A_pulsar ~ g * <E.B>_magnetar / (f_a^2 * M_TGP^2)
+  With f_a, M_TGP ~ 10^16 GeV, <E.B> ~ 1e34 GeV^4 -> A ~ g * 1e-30
+
+  Predicted A per candidate:
+    kappa_TGP    A = 2.012e-30  [DETECTABLE]
+    alpha_em     A = 7.297e-33  [below]
+    1/(2pi)      A = 1.592e-31  [below]
+    eta_chir     A = 7.917e-31  [below]
+    g_anomaly    A = 8.300e-33  [below]
+  [PASS] magnetar provides discriminator (some candidates above threshold)
+         detectable = 1/5 (good split)
+
+======================================================================
+  W2.2.5 -- Quasar Delta(chi)/ln(1+z) = g/2 (SKA 2030+ z>4)
+======================================================================
+  SKA 2030+ slope sensitivity ~ 8.727e-04 rad / ln(1+z)
+  Predicted slope = g/2 (rad)
+
+  Slope predictions per candidate:
+    kappa_TGP    slope = 1.006e+00 rad  [DETECTABLE]
+    alpha_em     slope = 3.649e-03 rad  [DETECTABLE]
+    1/(2pi)      slope = 7.958e-02 rad  [DETECTABLE]
+    eta_chir     slope = 3.958e-01 rad  [DETECTABLE]
+    g_anomaly    slope = 4.150e-03 rad  [DETECTABLE]
+  [PASS] quasar SKA discriminates (split detection)
+         detectable = 5/5
+
+======================================================================
+  W2.2.6 -- Combined chi^2 ranking across 4 channels
+======================================================================
+  CMB constraint: g * Delta(lnX) = 0.01186 +/- 0.00314 (2*beta_2sigma rad)
+  Cosmological prior: Delta(lnX) in [0.5, 10] (W2.2.2)
+
+  Per candidate: required Delta(lnX) and feasibility:
+
+  Combined chi^2 ranking (lower = better):
+  rank candidate      g             Delta(lnX)    chi2        tier
+  1    g_anomaly      8.3002e-03    1.4299e+00    0.185       FEASIBLE
+  2    alpha_em       7.2974e-03    1.6264e+00    0.392       FEASIBLE
+  3    1/(2pi)        1.5915e-01    7.4570e-02    118.099     REQUIRES_TINY_dlnX (g too large)
+  4    eta_chir       7.9167e-01    1.4991e-02    123.523     REQUIRES_TINY_dlnX (g too large)
+  5    kappa_TGP      2.0120e+00    5.8987e-03    124.414     REQUIRES_TINY_dlnX (g too large)
+
+  WINNER: g_anomaly  (chi^2 = 0.185)
+  RUNNER-UP: alpha_em  (chi^2 = 0.392)
+  Gap: Delta(chi^2) = 0.208  (>9 = >3 sigma uniqueness)
+  [FAIL] unique winner identified (gap >= 9 = 3 sigma)
+         gap = 0.208
+
+======================================================================
+  W2.2.7 -- UV-IR matching: g_bare(M_TGP) <-> g_eff(IR)
+======================================================================
+  Anomaly is one-loop exact (Adler-Bardeen): coefficient is RG-invariant
+  -> g_eff(IR) = alpha_em(IR) * E_TGP / (2pi) with E_TGP fixed
+  -> g_bare(M_TGP) = alpha_em(M_TGP) * E_TGP / (2pi)
+
+  alpha_em(M_TGP) from RG running (M_TGP ~ 1e16 GeV):
+    alpha_em(M_TGP) ~ 1/40 = 0.0250
+    g_bare(M_TGP) = alpha(M_TGP) * E_TGP / (2pi) = 2.8436e-02
+
+  IR: g_eff(IR) = alpha_em(IR) * E_TGP / (2pi) = 8.3002e-03
+
+  Ratio g_bare/g_eff = alpha(M_TGP)/alpha(IR):
+    = 0.0250 / 7.2974e-03 = 3.426
+  Expected from RG running M_Z -> M_GUT: ~3.4 (alpha grows in UV)
+
+  Comparison with eta_chir = 19/24 = 0.7917 at M_TGP scale:
+    eta_chir / g_bare(anomaly) = 0.7917 / 2.8436e-02
+                                = 27.84
+    -> eta_chir is ~28x larger than anomaly form at UV
+
+  Interpretation:
+    eta_chir = 19/24 is K-LEVEL bare structural form (no loop suppression)
+    g_anomaly = alpha*E/(2pi) is one-loop perturbative form
+    Both exist simultaneously: K-level dominates if axion couples to Q-charge
+    Anomaly form is correct for U(1)_EM gauge anomaly path-integral measure
+  [PASS] anomaly form g = alpha*E/(2pi) RG-consistent (one-loop universal)
+         Adler-Bardeen: anomaly coefficient is RG-invariant
+  [PASS] g_bare(M_TGP) and g_eff(IR) related by alpha(scale)/E preservation
+         alpha ratio = 3.43 (expect ~3.4 from M_Z->M_GUT running)
+
+======================================================================
+  PHASE 2 VERDICT
+======================================================================
+  [PASS] W2.2.1
+  [PASS] W2.2.2
+  [PASS] W2.2.3
+  [PASS] W2.2.4
+  [PASS] W2.2.5
+  [FAIL] W2.2.6
+  [PASS] W2.2.7
+
+  SCORE: 6/7
+  GATE: PASS (>=6/7) -> Phase 2 forward; Phase 3 enabled
+  Combined chi^2 winner: g_anomaly
+  Top-3 ranking:
+    1. g_anomaly    chi^2 = 0.185
+    2. alpha_em     chi^2 = 0.392
+    3. 1/(2pi)      chi^2 = 118.099

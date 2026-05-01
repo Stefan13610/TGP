@@ -307,8 +307,8 @@ print(f"    = {sin2_best1:.7f}")
 print(f"    Sigma: {sig_best1:+.1f}")
 print()
 
-# What if we use TGP alpha_s = 0.1190 instead of PDG 0.1179?
-alpha_s_TGP = 0.1190
+# What if we use TGP alpha_s = 0.1184 (B3-v2 lock 2026-05-01) instead of PDG 0.1180?
+alpha_s_TGP = 0.1184
 sin2_tgp = sin2_tree * (1 + alpha_s_TGP**2/(2*np.pi))
 sig_tgp = (sin2_tgp - sin2_PDG)/sin2_err
 print(f"  With alpha_s(TGP) = {alpha_s_TGP}:")

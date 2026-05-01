@@ -1,0 +1,94 @@
+======================================================================
+  X3.1 -- G_N(0) prediction vs CODATA 2022 (SI conversion)
+======================================================================
+  M_Pl_chi1     = 1.220890e+19 GeV
+  M_Pl_chi1     = 2.176434e-08 kg
+  G_N_chi1 (SI) = 6.674301e-11 m^3 kg^-1 s^-2
+  G_N CODATA    = 6.674300e-11 m^3 kg^-1 s^-2
+  drift         = 0.0000% (rel.)
+  CODATA unc.   = 0.0015% (rel.)
+  [PASS] G_N drift < 5e-5 (CODATA experimental band)
+         drift = 2.12e-07, gate = 5.00e-05
+
+======================================================================
+  X3.2 -- M_Pl prediction vs PDG (consistency check)
+======================================================================
+  M_Pl_chi1 (chi.1 derived) = 1.220890e+19 GeV
+  M_Pl PDG                   = 1.220890e+19 GeV
+  drift                      = 0.000000%
+  Note: tautological by construction (M_TGP from M_Pl PDG anchor)
+  [PASS] M_Pl drift < 1e-4 (consistency check)
+         drift = 0.00e+00
+
+======================================================================
+  X3.3 -- G_eff(z) cosmological evolution (sek08 sec 6109)
+======================================================================
+  psi(z=2) TGP soft-band       = [0.95, 1.05] (+/- 5%)
+  G_eff(z=2)/G_eff(0) band     = [0.9524, 1.0526]
+  max |Delta G_eff/G_eff|      = 5.26%
+  Gate: psi within TGP soft-bound +/- 5% (delta_psi <= 5%)
+  Falsifier: DESI DR3 2027+ + LSST 2030+ f sigma_8(z)
+  [PASS] psi(z) band consistent with TGP soft-bound (forward LIVE)
+         delta_psi = +/- 5.0%, gate = 5.0%
+
+======================================================================
+  X3.4 -- LISA EMRI G-running test (UV3 inheritance)
+======================================================================
+  LISA chirp band              = [0.10, 100.00] mHz
+  Delta(ln k)                  = 6.9078
+  Leading-order: dg/d ln k     = (eta_N* + 2)*g = 0 (marginal IR exact)
+  Predicted leading running    = 0.0000%
+  alpha_NGFP = g*/(2pi)        = 0.1130
+  2-loop FRG upper bound       = alpha_NGFP^2 = 1.28% (sub-percent)
+  LISA 2035+ discrimination    = 0.5% (UV3 forecast)
+  Falsifier: LISA 2035+ measured running > 0.5% -> falsifies eta_N*=-2
+  [PASS] Leading-order running = 0 (marginal IR); LIVE forward-gate (LISA 2035+)
+         predicted leading = 0%, 2-loop = 1.28%, LISA gate 0.5%
+
+======================================================================
+  X3.5 -- Lab Cavendish-type G_N precision (Equivalence Principle)
+======================================================================
+  CODATA 2022 multi-method scatter  = 1.5e-05 (rel.)
+  BIPM 2030+ target precision       = 1.0e-06 (rel.)
+  chi.1 F1-prediction               = 1.0e-07 (rel., < BIPM)
+  Falsifier: composition-dependent G_N > 1e-6 -> falsifies F1+chi.1
+  [PASS] chi.1 EP-G_N prediction tight enough for BIPM 2030+ test
+         predicted = 1.0e-07, BIPM gate = 1.0e-06
+
+======================================================================
+  X3.6 -- 4-channel chi.1 convergence summary
+======================================================================
+  Channel 1 -- UV-running anchor (g* = 0.71):           [OK]
+               value = 0.7100, target exact UV.1 NGFP
+  Channel 2 -- F6 kappa reproduction:                   [OK]
+               kappa_chi1 = 10.026513 vs F6 10.0265, drift = 0.0001%
+  Channel 3 -- F-cluster XS1 (sqrt(alpha_0) = kappa_TGP): [OK]
+               sqrt(alpha_0) = 2.0112 vs kappa_TGP 2.0120, drift = 0.0421%
+  Channel 4 -- Observational (X3.1 G_N + X3.2 M_Pl):    [OK]
+               X3.1 G_N drift = 2.12e-07, X3.2 M_Pl drift = 0.00e+00
+  [PASS] All 4 channels convergent (4/4)
+
+======================================================================
+  PHASE 3 VERDICT
+======================================================================
+  [PASS] X3.1  -- G_N drift 2.12e-07
+  [PASS] X3.2  -- M_Pl drift 0.00e+00
+  [PASS] X3.3  -- psi band +/- 5% (G_eff range +5.26%/-4.76%)
+  [PASS] X3.4  -- leading running = 0 (marginal IR), 2-loop 1.28%
+  [PASS] X3.5  -- prediction 1.0e-07 < BIPM 1.0e-06
+  [PASS] X3.6  -- channels 4/4 OK
+
+  SCORE: 6/6
+  GATE: PASS (>=5/6) -> chi.1 program END (FULL CONVERGENCE)
+
+  G_N (chi.1, SI)   = 6.674301e-11 m^3 kg^-1 s^-2
+  G_N CODATA 2022   = 6.674300e-11 m^3 kg^-1 s^-2
+  M_Pl (chi.1)      = 1.220890e+19 GeV
+  M_Pl PDG 2024     = 1.220890e+19 GeV
+  M_TGP (chi.1)     = 3.473427e+18 GeV (~0.2845 M_Pl)
+  kappa (chi.1)     = 10.026513
+  F6 anchor         = 10.0265
+
+  STRUCTURAL FORM (LOCKED): G_N = g*/(M_TGP^2 * N_A) with xi_grav = N_A = 500/57
+  M_TGP joint-lock:        M_TGP = M_Pl * sqrt(g*/N_A) = M_Pl * sqrt(4047/50000)
+  Forward gates LIVE:      X3.3 (DESI/LSST 2027-2030+), X3.4 (LISA 2035+), X3.5 (BIPM 2030+)

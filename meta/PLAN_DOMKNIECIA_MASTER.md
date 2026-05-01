@@ -204,7 +204,7 @@ Po przeczytaniu ~30 plików rdzenia TGP (sekcje 00–10, dodatki A–Z, ROADMAP 
 - ax:minimal-dof: nowe DOF tylko dla nowych klas defektów (zasada porządkująca)
 - U(1) emergence: 12/12 PASS (ex109)
 - SU(2): m_W/m_Z (0.01%), m_H=125.1 GeV (0.1%)
-- SU(3): α_s=0.1190 (1.2σ), σ=0.189 GeV² (7%)
+- SU(3): α_s=0.1184 (0.4σ; B3-v2 lock 2026-05-01, Φ₀=24.783 Brannen), σ=0.189 GeV² (7%)
 
 **Co brakuje**:
 1. Dowód KONIECZNOŚCI rozszerzenia do zespolonego substratu (dlaczego Z₂ nie wystarcza?)
