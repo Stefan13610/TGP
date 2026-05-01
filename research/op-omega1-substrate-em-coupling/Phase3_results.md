@@ -22,7 +22,7 @@ tags:
 > **Headline:** Substrate ↔ EM axion-like topological coupling
 > $\mathcal{L}_{\omega.1} = -\tfrac{1}{4}F^2 + \tfrac{1}{2}f_X^2(\partial \ln X)^2 + \tfrac{g}{4}(\ln X)F\tilde F$
 > generuje 4 falsifiable experimental channels: lab vacuum birefringence
-> (PVLAS-bounded), magnetar B² substrate sourcing (FAST/SKA 2030+), **CMB
+> (PVLAS-bounded), magnetar **E·B** substrate sourcing (rotation-induced E ∥ B in pole regions; F·F̃ ∝ E·B, NOT B² — FAST/SKA 2030+), **CMB
 > isotropic birefringence β ≈ 0.34±0.09° (Planck PR4 + ACT 2024 ~3.8σ partial-confirm)**,
 > quasar polarization rotation ∝ ln(1+z). 3 alt-couplings cross-channel
 > FALSIFIED. ω.1 closes G3 gap z em_from_substrate: **EM CAN strukturalnie
@@ -44,11 +44,16 @@ Substrate scale candidates M_TGP ~ 10¹⁶–10¹⁹ GeV (Planckian/GUT) → **w
 g LOCK candidates compatible z PVLAS bound** jeżeli f_a ~ M_TGP. Falsifier:
 PVLAS-V / OSQAR-III sensitivity 2030+.
 
-### W3.2 — Magnetar B² substrate sourcing ✓ PASS
+### W3.2 — Magnetar **E·B** substrate sourcing ✓ PASS  *(corrected 2026-05-01: F·F̃ ∝ E·B, not B²)*
 
-Magnetar B ~ 10¹⁵ G, E_rot ~ 10¹⁰–10¹² V/m → E·B ≠ 0 w pole regions →
-$\Box(\ln X) ∝ B^2$ non-zero. Observable: precision pulsar timing anomalies
-near magnetic poles (FAST/SKA 2030+).
+Magnetar B ~ 10¹⁵ G, rotation-induced E_rot ~ 10¹⁰–10¹² V/m in pole regions →
+**E ∥ B (parallel) component** gives F·F̃ = −4 E·B ≠ 0 →
+$$\Box(\ln X) = \tfrac{g}{4 f_X^2}\,F\tilde F \;\propto\; E\!\cdot\!B \neq 0$$
+Pure B² with E = 0 gives F·F̃ = 0 and does NOT source `□(ln X)` (earlier wording
+"B² sourcing" was misleading; the magnetar mechanism requires the rotation-
+induced parallel E component, which is naturally present in pulsar/magnetar
+pole geometry). Observable: precision pulsar timing anomalies near magnetic
+poles (FAST/SKA 2030+).
 
 ### W3.3 — CMB cosmological birefringence Δχ ✓ PASS (LIVE PARTIAL candidate, downgraded 2026-05-01)
 
@@ -77,7 +82,7 @@ distinct from Faraday `(1+z)⁻²·∫B_∥`. VLBI quasar polarimetry z > 4
 | dilaton `(ln X)F²` | uniform α_em(z) variation | NULL Webb/Murphy 2003-17 | ✗ |
 | minimal `eA^μ∂_μ(ln X)` | no observable | gauge-trivial → no physics | ✗ |
 | gradient `(∂ln X)²F²` | dim-8 suppressed | cosmologically irrelevant | ✗ |
-| **axion `(ln X)F·F̃`** | β ≠ 0, ln(1+z) scaling, B² delays | **Planck ~3.8σ hint** | **✓** |
+| **axion `(ln X)F·F̃`** | β ≠ 0, ln(1+z) scaling, E·B-sourced delays | **Planck ~3.8σ hint** | **✓** |
 
 3 alts cross-channel FALSIFIED, axion UNIQUE.
 

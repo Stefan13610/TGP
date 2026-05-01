@@ -18,7 +18,7 @@ tags:
 
 ## Sub-tests
 
-- **W3.1** Lab phase-velocity measurement (Mach-Zehnder + B field)
+- **W3.1** Lab phase-velocity measurement (Mach-Zehnder + parallel E·B field; F·F̃ ∝ E·B is the σ.1 source — pure B alone insufficient)
 - **W3.2** Pulsar polarized dispersion residuals (PSR J0030/J0740, NICER + IXPE)
 - **W3.3** CMB E/B-mode chirality (Planck PR4 + ACT 2024 + SO 2027+ + LiteBIRD 2029+)
 - **W3.4** Atomic clock ratio gradient sensitivity (Hg/Yb/Sr clock comparisons)

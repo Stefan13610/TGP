@@ -19,8 +19,14 @@ tags:
 
 **Score: 6/6 FULL CONVERGENCE → σ.1 program END.**
 
-> **Headline:** σ.1 c-mechanism dispersion ω_±² = k² ± g(n·k) generuje
-> **4 falsifiable channels**: lab Mach-Zehnder + B field interferometry
+> **NOTE 2026-05-01 (σ.1 critique patch):** dispersion form rewritten
+> dimensionally-explicit `ω_±² = k² ± g·k·n_∥` (with `n_∥ ≡ k̂·∇ln X`); group
+> velocity sign corrected to POSITIVE `v_g,± = 1 + (g·n_∥)²/(8k²)`; "effective
+> optical metric" softened to **helicity-dependent optical cone**; CMB W3.3
+> already downgraded to LIVE PARTIAL candidate.
+
+> **Headline:** σ.1 c-mechanism dispersion ω_±² = k² ± g·k·n_∥ generuje
+> **4 falsifiable channels**: lab Mach-Zehnder + parallel E·B field interferometry
 > (LIGO O5/O6 + cold-atom 2030+++), pulsar polarized timing residuals
 > distinct from Faraday (FAST/SKA-2 PTA 2030+), CMB E/B chirality
 > isotropic + anisotropic (Planck PR4 + ACT 2024 ~3.8σ + SO/LiteBIRD 2027+),
@@ -31,12 +37,15 @@ tags:
 
 ## Sub-test results
 
-### W3.1 — Lab Mach-Zehnder + B field ✓ PASS
+### W3.1 — Lab Mach-Zehnder + parallel E·B field ✓ PASS
 
-Setup: interferometer arm w static B field region, mierzy Δφ_+- między L/R
-circular photons. Cosmological substrate drift induces n_par ~ H_0 → expected
-Δφ ~ g·H_0·L/c ~ 2e-26 rad over 1 m dla g = κ_TGP. Below LIGO O4, ale LIGO O5/O6
-+ cold-atom interferometers 2030+++ frontier.
+Setup: interferometer arm w region z parallel `E·B ≠ 0` (NOT pure B alone, since
+F·F̃ ∝ E·B is the σ.1 source for non-trivial substrate gradient n_∥).
+Cosmological substrate drift induces n_∥ ~ H_0 → expected
+Δφ_+− ~ g·H_0·L/c ~ 2e-26 rad over 1 m dla g = κ_TGP. Below LIGO O4, ale LIGO O5/O6
++ cold-atom interferometers 2030+++ frontier. Lab-engineered parallel E·B
+configurations (ζ.1 active substrate engineering candidate) provide complementary
+channel beyond cosmological background drift.
 
 ### W3.2 — Pulsar polarized dispersion ✓ PASS
 
@@ -60,7 +69,7 @@ C_l^{αα} < 1e-3 deg² → potentially tight. SO 2027+ + LiteBIRD 2029+ targets
 
 ### W3.4 — Atomic clock orthogonal cross-check ✓ PASS
 
-σ.1 predicts NO scalar α_em variation at leading O(gn/k) — **orthogonal**
+σ.1 predicts NO scalar α_em variation at leading O(g·n_∥/k) — **orthogonal**
 test: any DETECTED scalar drift @ Hg/Yb/Sr precision >1e-22/yr (2035+) by
 falsifie σ.1 scalar-protection. Current Webb/Murphy NULL z 1e-7 = consistent.
 
@@ -79,7 +88,7 @@ falsifie σ.1 scalar-protection. Current Webb/Murphy NULL z 1e-7 = consistent.
 
 | # | Channel | Form | Method | Status |
 |---|---|---|---|---|
-| 1 | Plane-wave dispersion | ω² = k² ± g(n·k) | Phase1 W1.1-W1.5 | POST-DERIVED |
+| 1 | Plane-wave dispersion | ω² = k² ± g·k·n_∥ (n_∥ = k̂·∇ln X) | Phase1 W1.1-W1.5 | POST-DERIVED |
 | 2 | Phase/group velocity | v_φ linear, v_g O(ε²) | Phase2 sympy 7/7 | POST-DERIVED |
 | 3 | Optical metric | g_μν^opt = η + δg(∂ ln X) | Phase2 W2.5 | POST-DERIVED |
 | 4 | CMB E/B chirality | Planck PR4 + ACT 2024 | obs ~3.8σ | LIVE PARTIAL |
@@ -98,14 +107,14 @@ falsifie σ.1 scalar-protection. Current Webb/Murphy NULL z 1e-7 = consistent.
 
 ## Promotions post-σ.1
 
-- **σ.1 dispersion relation LOCKED**: ω_±² = k² ± g(n·k)
-- **Phase velocity LINEAR birefringence**: v_φ_± = 1 ± gn/(2k)
-- **Group velocity NO linear split**: v_g_± = 1 - (gn/(2k))² (envelope uniformly propagating)
+- **σ.1 dispersion relation LOCKED** (WKB special case, n_i ∥ k_i): `ω_±² = k² ± g·k·n_∥` with `n_∥ ≡ k̂·∇ln X` (covariant: `p_μ = g ∂_μ ln X`, special case `ω² = k² ± k p_∥`)
+- **Phase velocity LINEAR birefringence**: `v_φ,± = 1 ± g·n_∥/(2k)`
+- **Group velocity NO linear split** (sign-corrected 2026-05-01): `v_g,± = 1 + (g·n_∥)²/(8k²)` POSITIVE quadratic, polarization-INDEPENDENT (envelope ~uniformly propagating)
 - **NO scalar c(X) at leading order** (consistent z Webb/Murphy NULL)
 - **c-mechanism = polarization-dependent phase rotation** (NIE universal c(X))
-- **Effective optical metric helicity-dependent**: g_μν^opt = η ± δg(∂ ln X)
+- **Helicity-dependent optical cone** (effective dispersion geometry, NOT full classical pseudo-Riemannian metric — WKB special case; full CFJ-class structure `(k²)² + p²k² − (p·k)² = 0` more general, beyond σ.1 derivation)
 - **3 alt-dispersions FALSIFIED**: scalar c(X), tensor Bumblebee, Lorentz-violating
-- **CMB anisotropic birefringence prediction** beyond ω.1 isotropic (SO/LiteBIRD 2027+)
+- **CMB anisotropic birefringence prediction** beyond ω.1 isotropic (SO/LiteBIRD 2027+; CMB channel = LIVE PARTIAL candidate, ~3.8σ hint, not confirmed)
 - **PTA pulsar polarized timing signature** (SKA-2 2030+) distinct from Faraday
 
 ## Open frontiers (post-σ.1)

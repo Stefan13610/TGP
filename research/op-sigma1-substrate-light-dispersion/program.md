@@ -4,6 +4,7 @@ date: 2026-04-30
 cycle: σ.1
 status: ACTIVE
 parent: "[[../op-omega1-substrate-em-coupling/Phase3_results.md]]"
+notation_patch: "2026-05-01 dimensional + sign + framing critique applied"
 tags:
   - TGP
   - sigma1
@@ -14,10 +15,25 @@ tags:
 
 # σ.1 program
 
+> **NOTE 2026-05-01 (σ.1 critique patch):** Notation harmonized after technical critique:
+> (i) dispersion written in dimensionally-consistent form `ω_±² = k² ± g·k·n_∥`
+> with `n_∥ ≡ k̂·∇ln X` (covariant: `p_μ = g ∂_μ ln X`, special case `ω² = k² ± k p_∥`),
+> NOT `ω² = k² ± g(n·k̂)` (which would mix dim 1/L² and 1/L·1/L = 1/L²
+> only if `(n·k̂)` is read as `n_∥` — the explicit form removes ambiguity);
+> (ii) group-velocity sign corrected: `v_g,± ≈ 1 + (gn_∥)²/(8k²)` (positive,
+> earlier draft erroneously wrote `1 − …`); (iii) "effective optical metric LOCKED"
+> softened to **helicity-dependent optical cone / effective dispersion geometry**
+> — the WKB result is a leading null-cone for static spatial gradient `n_i ∥ k_i`,
+> NOT a full classical pseudo-Riemannian metric (full CFJ-class structure
+> `(k²)² + p²k² − (p·k)² = 0` is more general and beyond the present derivation).
+> All physical conclusions (linear phase birefringence, no scalar c(X), Δχ rotation)
+> are unchanged.
+
 > **Goal:** From modified Maxwell ω.1 EOM derive **dispersion relation
 > ω²(k, ∂ ln X)** for plane-wave EM in slowly-varying substrate gradient,
 > giving **polarization-dependent phase/group velocity** v_±(X) =
-> 1 ± (g/(2k))·n̂·∂(ln X) i emergent **effective optical metric** g_μν^opt.
+> 1 ± (g/(2k))·n_∥ (where `n_∥ = k̂·∇ln X`) i emergent **helicity-dependent
+> optical cone** (Carroll-Field-Jackiw-class effective dispersion geometry).
 > Closes user's c-mechanism question: prędkość światła zależy od substrate
 > gradient w sposób polarization-dependent (axion-photon mixing).
 
@@ -39,13 +55,14 @@ Phase 1 by scale-invariance + Webb/Murphy α_em NULL).
 
 What ω.1 DOES allow: **chirality-dependent phase velocity** for left/right
 circular polarizations:
-$$v_\pm(k, \partial \ln X) = 1 \pm \frac{g\,n̂\cdot\partial(\ln X)}{2k}$$
+$$v_{\varphi,\pm}(k, n_\parallel) = 1 \pm \frac{g\,n_\parallel}{2k},\qquad n_\parallel \equiv \hat k\cdot\nabla\ln X$$
 
 Average velocity (polarization-averaged): `c_eff = 1` at this order
 (consistent z Webb/Murphy NULL in α_em).
 
-Difference: birefringence Δv = v_+ - v_- = g·n̂·∂(ln X)/k → integrates
-over path do polarization rotation Δχ (już zaobserwowane w CMB Planck PR4).
+Difference: birefringence Δv_φ = v_+ − v_− = g·n_∥/k → integrates
+over path do polarization rotation Δχ = (g/2)∫n_∥ ds = (g/2)∫d(ln X)
+(LIVE PARTIAL hint w CMB Planck PR4 + ACT 2024, ~3.8σ candidate).
 
 ## Phase plan (5+7+6 = 18 sub-tests)
 

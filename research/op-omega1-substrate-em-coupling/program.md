@@ -86,7 +86,7 @@ to **dokładnie axion-like coupling** $\propto (\ln X) F\tilde{F}$.
 ### Phase 3 — predictions + 4-channel convergence (6 sub-tests)
 
 - **W3.1** — Vacuum birefringence prediction (PVLAS/OSQAR lab limits)
-- **W3.2** — Magnetar B² substrate sourcing (∼10¹⁵ G fields, B·E channel)
+- **W3.2** — Magnetar **E·B** substrate sourcing (∼10¹⁵ G B + 10¹⁰–10¹² V/m rotation-induced E in pole regions; F·F̃ ∝ E·B — pure B alone gives F·F̃ = 0)
 - **W3.3** — CMB cosmological birefringence Δχ (Planck/SO/LB constraints)
 - **W3.4** — Quasar polarization rotation vs redshift z (radio + optical)
 - **W3.5** — Alt-coupling cross-channel falsification (dilaton/minimal predictions FAIL)

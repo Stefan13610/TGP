@@ -21,8 +21,8 @@ tags:
 - **W2.1** Phase velocity v_φ_± = ω_±/k via sympy LOCK
 - **W2.2** Group velocity v_g_± = ∂ω_±/∂k
 - **W2.3** Polarization-averaged c_eff = (v_+ + v_-)/2 = 1 (no scalar c(X))
-- **W2.4** Birefringence Δv = v_+ - v_- = g·∂(ln X)/k
-- **W2.5** Effective optical metric g_μν^opt = η_μν + δg_μν(∂ ln X)
+- **W2.4** Birefringence Δv_φ = v_+ − v_− = g·n_∥/k (where n_∥ ≡ k̂·∇ln X)
+- **W2.5** Helicity-dependent optical cone Q^(±)_μν(p) k^μ k^ν = 0 (effective dispersion geometry, NOT full classical metric)
 - **W2.6** Scale-invariance preservation X→λX (Δv invariant)
 - **W2.7** ω.1 EOM back-reaction consistency
 

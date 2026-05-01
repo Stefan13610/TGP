@@ -21,7 +21,7 @@ tags:
 ## Sub-tests (6)
 
 - **W3.1** — Vacuum birefringence (PVLAS/OSQAR limits)
-- **W3.2** — Magnetar B² substrate sourcing
+- **W3.2** — Magnetar **E·B** substrate sourcing (F·F̃ ∝ E·B — pure B alone gives F·F̃ = 0; magnetar pole regions provide rotation-induced E ∥ B)
 - **W3.3** — CMB cosmological birefringence Δχ
 - **W3.4** — Quasar polarization rotation vs redshift
 - **W3.5** — Alt-coupling cross-channel falsification

@@ -52,19 +52,27 @@ def w31_vacuum_birefringence():
 
 
 def w32_magnetar_substrate_sourcing():
-    banner("W3.2 -- Magnetar B^2 substrate sourcing (B ~ 10^15 G)")
+    banner("W3.2 -- Magnetar E.B substrate sourcing (corrected 2026-05-01)")
+    print("  [SIGN/CHANNEL CORRECTION 2026-05-01: F F~ \\propto E.B, NOT B^2.")
+    print("   Pure B alone (E = 0) gives F F~ = 0 and does NOT source box(ln X).")
+    print("   Magnetar mechanism requires the rotation-induced E parallel to B,")
+    print("   which is naturally present in pulsar/magnetar pole geometry.]")
+    print()
     B_magnetar = 1e15      # Gauss
     B_in_GeV2  = B_magnetar / 4.41e13   # 1 GeV^2 = 4.41e13 G
     print(f"  Magnetar B field: B ~ {B_magnetar:.1e} G ~ {B_in_GeV2:.3f} GeV^2")
-    print(f"  Required E.B for substrate sourcing:")
+    print(f"  Pseudoscalar invariant:")
     print(f"    F F~ = -8 E.B  (Minkowski (+,-,-,-))")
+    print(f"    -> sourcing requires E . B != 0, NOT just |B|")
     print()
     print(f"  Pulsar/magnetar electric field (rotation-induced):")
     print(f"    E_rot ~ Omega R B / c, Omega ~ 1 Hz, R ~ 10 km")
-    print(f"    -> E ~ 1e10-1e12 V/m component aligned with B in pole regions")
+    print(f"    -> E_par ~ 1e10-1e12 V/m parallel to B in pole regions")
     print()
     print(f"  Substrate response: box(ln X) = (g/4 f_X^2) F F~")
-    print(f"    Magnitude scale: |box(ln X)| ~ (g/f_X^2) * B^2 (in natural units)")
+    print(f"    Magnitude scale: |box(ln X)| ~ (g/f_X^2) * |E.B| in pole regions")
+    print(f"    For E_par ~ 1e11 V/m, B ~ 1e15 G (~ 1e9 V/m equivalent in natural units),")
+    print(f"    |E.B| in natural units ~ 1e20 (V/m)^2 -- non-trivial sourcing.")
     print()
     print(f"  Observable: magnetar-region time/length-scale anomalies")
     print(f"    (e.g. radio echo timing, light propagation delay near magnetic poles)")
@@ -195,7 +203,7 @@ def main():
 
     results = []
     results.append(("W3.1 vacuum birefringence",     w31_vacuum_birefringence()))
-    results.append(("W3.2 magnetar B^2 sourcing",    w32_magnetar_substrate_sourcing()))
+    results.append(("W3.2 magnetar E.B sourcing",    w32_magnetar_substrate_sourcing()))
     results.append(("W3.3 CMB Δχ birefringence",    w33_cmb_birefringence()))
     results.append(("W3.4 quasar pol vs z",          w34_quasar_polarization_redshift()))
     results.append(("W3.5 alt cross-channel falsif", w35_alt_coupling_cross_channel_falsification()))
