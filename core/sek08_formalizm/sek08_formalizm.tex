@@ -9106,6 +9106,14 @@ jedynie na powierzchni gwiazdy neutronowej ($\sim 20\%$ tetrady).
 Sekcja ta wprowadza sektor fermionowy w~czterech \textbf{oddzielnych} krokach,
 ka\.zdy z~w\l{}asnym statusem logicznym. Czytelnik mo\.ze zaakceptowa\'c
 kroki~D.1a i~D.1b bez~D.1c--D.1d. Kroki~D.1c--D.1d to otwarte problemy badawcze.
+\textbf{Aktualizacja 2026-05-01:} szkic strukturalny dla~D.1c (statystyka
+Fermiego przez holonomi\k{e} Berry'ego, faza $\pi$ pod $2\pi$ obrotem)
+i~D.1d (sprz\k{e}\.zenie Yukawa $y(\psi)$ z~$m_0=0$ w~pr\'o\.zni)
+zamkni\k{e}ty w~programie 5-fazowym \texttt{research/why\_n3/}
+(Phase 3: RP$^2$ defect quantization; Phase 4: Yukawa coupling;
+patrz \texttt{PHASE3\_RP2\_defect\_quantization.md},
+\texttt{PHASE4\_5\_yukawa\_propagator.md}). Pe\l{}ne formalne
+zamkni\k{e}cie hipotezy Diraca pozostaje otwarte.
 \end{remark}
 
 \begin{center}\footnotesize
@@ -9165,6 +9173,23 @@ pokazania, \.ze kwantowy kink pola $\Phi$ reprodukuje
 propagator Diraca w~granicy d\l{}ugofalowej. Jest to
 \textbf{otwarty problem} analogiczny do derywacji
 fermion\'ow z~modelu Skyrme'a.
+\textbf{Cz\k{e}\'sciowa rezolucja 2026-05-01:} 5-fazowy szkic
+strukturalny w~\texttt{research/why\_n3/} konstruuje effective
+propagator $S_{\rm TGP}(p; \psi)$ na tle M9.1''. Phase~5 daje
+explicit form $S_{\rm TGP}(p;\psi) = i[\gamma^0 E/(c\sqrt{A})
+- \gamma^i\sqrt{A}\,p_i + m_{\rm eff}(\psi)] /
+[E^2/(c^2 A) - A|\mathbf{p}|^2 - m_{\rm eff}^2(\psi) + i\varepsilon]$
+z~$A(\psi) = (4-3\psi)/\psi$ oraz vacuum limit ($\psi \to 1$)
+odtwarza standardowy propagator Diraca. Mass formula
+$m_{\rm obs} = c \cdot A_{\rm tail}^{(5-\alpha)}$ dla
+$\alpha=2$ (TGP-canonical $K(\phi)=K_{\rm geo}\phi^4$) daje
+6/6~PASS w~PDG ($m_\mu/m_e$ diff~$-0.099\%$,
+$m_\tau/m_e$ diff~$-0.085\%$). Patrz
+\texttt{PHASE4\_5\_yukawa\_propagator.md},
+\texttt{CORRECTIONS\_2026-05-01.md} (sekcja RESOLUTION).
+Otwarte: analityczne wyprowadzenie $X = e^2/4$ w~$n(\alpha) = e^2(1-\alpha/4)$,
+reconciliation A$^{(5-\alpha)}$ vs A$^2 \cdot g_0^{e^2/2}$ dla
+$\tau/e$ (Phase~6+ research-track).
 \end{remark}
 
 \begin{hypothesis}[Spin z~asymetrii chiralnej substratu]%
@@ -9296,7 +9321,26 @@ Powy\.zszy zarys formalizacji fermion\'ow ma status
     $\Delta_0$ jest zdeterminowane przez ZS1 na tle $\Phi$.
     System jest \textbf{formalnie zamkni\k{e}ty}, cho\'c
     efekt fizyczny le\.zy 35+ rz\k{e}d\'ow poni\.zej wszystkich
-    znanych korekt (QED, hyperfine, rozmiar j\k{a}dra).
+    znanych korekt (QED, hyperfine, rozmiar j\k{a}dra),
+  \item[\checkmark] (\textbf{2026-05-01, niezale\.zna \'scie\.zka})
+    5-fazowy strukturalny szkic emergent Dirac propagator
+    z~R3 solitonu w~\texttt{research/why\_n3/}: Phase~1
+    ($\psi \leftrightarrow g_0$ liniowa identyfikacja, bariera R3
+    $g_{0,\rm crit}=1{,}874 \equiv $ M9.1'' Lorentzian horyzont
+    $\psi=4/3$ --- niezale\.zny test M9.1''); Phase~2 ($n(\alpha)
+    = e^2(1-\alpha/4)$ analitycznie, $X=e^2/4$, mass formula
+    $m_{\rm obs} = c \cdot A^{(5-\alpha)}$ dla $\alpha=2$
+    daje 6/6~PASS PDG, $m_\mu/m_e$ diff~$-0.099\%$);
+    Phase~3 (RP$^2$ topologia $\to$ Berry phase $\pi$ $\to$
+    spin-$\frac{1}{2}$ emergent strukturalnie); Phase~4
+    (Yukawa coupling, $m_0=0$ EXACT w~pr\'o\.zni); Phase~5
+    (pe\l{}ny propagator $S_{\rm TGP}(p;\psi)$, vacuum limit
+    standard Dirac). Patrz \texttt{PHASE1\_psi\_g0\_identification.md},
+    \texttt{PHASE2\_n\_alpha\_derivation.md},
+    \texttt{PHASE3\_RP2\_defect\_quantization.md},
+    \texttt{PHASE4\_5\_yukawa\_propagator.md},
+    \texttt{CORRECTIONS\_2026-05-01.md} (sekcja RESOLUTION),
+    [meta/AUDYT\_TGP\_2026-05-01.md] \S~AB.
 \end{enumerate}
 \end{remark}
 
