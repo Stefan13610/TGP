@@ -505,5 +505,64 @@ Cykl mass_scaling_k4 jest GENUINE w kontekście α=1; cykl why_n3 jest fundament
 
 🔓 **OPEN dalsze:**
 - X = e²/4 RG-derivation (osobny agent)
-- K~A² universal generalization na inne integrals (sekcja 9 R5_PHASE2_BRIDGE)
+- ~~K~A² universal generalization na inne integrals~~ → **CLOSED 2026-05-02 (negative): brak klasy** — patrz §11
 - Sub-leading corrections do A^(5-α) (~0.05% slope diff)
+- C_core ≈ 1.09 zamknięta forma analityczna
+- m_obs vs M_full distinction (Hobart-Derrick / ADM-Komar)
+
+---
+
+## 11. K-like Universals Scan: NEGATIVE CLOSURE (2026-05-02)
+
+> **Status:** ✅ NEGATIVE RESULT — strukturalny lock-in K-interpretation
+> **Skrypt:** [[r5_phase2_k_like_universals_scan.py]]
+> **Dokument:** [[K_LIKE_UNIVERSALS_SCAN_2026-05-02]]
+
+### 11.1 Pytanie z bridge §9.2
+
+Bridge zostawił otwarte: czy K~A² to deeper structure (topological invariant), czy izolowany przypadek? Test: skan klasy I(p, q, s) = ∫g^p·|g'|^q·r^s·dr.
+
+### 11.2 Odkrycie
+
+Dla wszystkich (p, q, s) z dobrym scaling:
+$$I(p, q, s) \sim A^q$$
+
+**niezależnie od p, s, oraz α (substrate vs canonical).**
+
+Linear fit (50 tight universals): `slope ≈ 0.0005·p + 0.9997·q − 0.0011·s + 0.0018` (residue ≤0.008).
+
+### 11.3 Strukturalna implikacja (NEGATIVE)
+
+| Pre-scan claim | Post-scan |
+|---|---|
+| K~A² to "topological invariant" | ✗ **FALSE** — to tail derivative scaling |
+| Generic K-like universals (różne k) | ✗ **FALSE** — wszystkie redukują do (g')^q type |
+| Bridge α=1 closure ma deeper structure | ✗ **FALSE** — algebra, nie struktura |
+| Phase 2 A² factor to fundamental | ✗ **FALSE** — kinematic prefactor |
+| g₀^n(α) factor to fundamental | ✓ **STRENGTHENED** |
+
+### 11.4 Mechanizm
+
+W tail regime: g(r) → 1 + A·cos(r-φ)/r (vacuum z amplitudą A). Więc:
+- `g^p ≈ 1` (vacuum dominates, NIE skaluje z A)
+- `(g')^q ≈ A^q · O(1/r^q)` (skaluje z A^q)
+- `r^s` — niezmienny przy g₀ change
+
+Stąd `I(p, q, s) ≈ A^q · const(g₀)`. Const(g₀) zawiera core contribution (numerical różnica), ale NIE A-scaling.
+
+### 11.5 Konsekwencja dla TGP fundamentality
+
+**Phase 2 mass formula:**
+$$m_{obs} = c_M \cdot A^2 \cdot g_0^{n(\alpha)}$$
+
+- **A² factor:** trywialny (g')² scaling, generic kinematic
+- **g₀^n(α) factor:** non-trivial g₀-dependence, n(α) = e²(1-α/4), **TUTAJ FUNDAMENTAL**
+
+**R5 K² mechanism:**
+$$m_{R5} = c \cdot K^2 = c \cdot \left[\int(1/2)g^{2\alpha}(g')^2 r^2 dr\right]^2$$
+
+- K² = [(g')²]² to "outer square" konstrukcja, A^4 algebraicznie
+- NIE generic (g')^4 — to `(K)^2`, specyficzna kombinacja
+- Działa tylko dla α=1 (z bridge §10)
+
+**Strukturalny insight:** Fundamental question TGP to **derywacja n(α)**, NIE A^k scaling. Bridge α=1 closure i K~A² universality to obie kinematic algebra. X=e²/4 RG-derivation (osobny agent) jest właściwym kierunkiem badań.

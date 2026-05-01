@@ -323,6 +323,18 @@ A⁴ scaling z dokładnością ~0.5%.
    derivative dla specific α=1. Patrz [[R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02.md]]
    + `r5_phase2_analytical_bridge.py` + RECONCILIATION §10.
 
+9. ~~**K-like universals: czy istnieje klasa I~A^k beyond K~A²?**~~ →
+   **✅ NEGATIVE CLOSURE 2026-05-02**. Skan I(p, q, s) = ∫g^p·|g'|^q·r^s·dr na siatce
+   100 (p, q, s) pokazał: **slope = q** dla wszystkich, niezależnie od p, s, α.
+   Linear fit: `slope ≈ 0.0005·p + 0.9997·q − 0.0011·s + 0.0018` (residue ≤0.008).
+   **Konsekwencja:** K~A² NIE jest "topological invariant" — to **tail derivative
+   scaling** (g→1 vacuum, g'~A·O(1/r), więc (g')^q~A^q generic). Phase 2 A² factor
+   to kinematic prefactor; **fundamental content** Phase 2 leży w `g₀^n(α)`
+   non-trivial g₀-dependence. R5 K² = [(g')²]² to "outer square" algebra,
+   NIE generic (g')^4. Falsyfikuje "K-like topological invariants" hipotezę.
+   Patrz [[K_LIKE_UNIVERSALS_SCAN_2026-05-02.md]] + `r5_phase2_k_like_universals_scan.py`
+   + RECONCILIATION §11.
+
 ## Pliki
 
 | Plik | Opis | Status |
@@ -338,7 +350,9 @@ A⁴ scaling z dokładnością ~0.5%.
 | `g0_tau_subtension_diagnostic.py` | g₀_τ sub-tension closure (4 hipotezy, e²=Euler²) | ✅ CLOSED 2026-05-01 |
 | `r5_phase2_analytical_bridge.py` | **Closed-form theorem R5 K² = Phase 2 IFF α=1** | ✅ **BRIDGED 2026-05-02** |
 | `R5_PHASE2_ANALYTICAL_BRIDGE_2026-05-02.md` | Bridge document (proof + α-scan + verification) | ✅ NOWE |
-| `RECONCILIATION_R5_vs_phase2_2026-04-30.md` | Cross-cycle reconciliation (§9 sub-tension, §10 bridge) | ✅ AKTUALNE |
+| `r5_phase2_k_like_universals_scan.py` | **K-like universals scan: slope = q discovery** | ✅ **NEGATIVE CLOSURE 2026-05-02** |
+| `K_LIKE_UNIVERSALS_SCAN_2026-05-02.md` | K-like scan document (slope=q falsification) | ✅ NOWE |
+| `RECONCILIATION_R5_vs_phase2_2026-04-30.md` | Cross-cycle reconciliation (§9 sub-tension, §10 bridge, §11 K-like) | ✅ AKTUALNE |
 
 ## Referencje rdzenia
 
