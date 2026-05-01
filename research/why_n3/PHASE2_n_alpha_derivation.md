@@ -97,7 +97,13 @@ Skrypt `r3_phase2b_X_constant.py` przeszukał kandydatów analitycznych dla
 | 22/3 | 7.333 | -0.838% |
 | φ⁴ + 2/φ | 8.090 | +9.4% |
 
-**e² wygrywa** czystością (single fundamental constant, no φ admixture).
+**e² ma najlepszy match** czystością formy (single classical constant,
+no φ admixture). **Honest framing (post-Phase 6 audit):** to jest
+**EMPIRICAL discovery** z fit residuum <0.1%, NIE "fundamental constant
+DERIVED" — analityczne wyprowadzenie X = e²/4 z RG-flow lub Hobart-Derrick
+balance pozostaje **OPEN** (Phase 6 Q5 R⁵-bridge: pierwsza próba NEGATIVE,
+patrz `PHASE6_Q5_R5_bridge_first_attempt.md` linie 170-179: X = e²/4
+downgraded do "leading candidate dla X ≈ 1.85, ale nie definitive").
 
 ### Werifikacja: n(α) = e²·(1 - α/4)
 
@@ -218,10 +224,12 @@ osobnego cyklu badawczego.
 │   - g₀ (soliton central value)                                 │
 │   - A_tail (asymptotic tail amplitude, z ODE solve)            │
 │                                                                 │
-│ DERIVED:                                                        │
-│   - n(α) = e²·(1 - α/4) ANALITYCZNIE z fit < 0.1% diff         │
+│ DERIVED (NUMERICALLY):                                          │
+│   - n(α) = e²·(1 - α/4) z fit < 0.1% diff (EMPIRICAL match)    │
 │   - n(4) = 0 (Hobart-Derrick balance, exact numerical zero)     │
-│   - X = e²/4 (zaskakująca czystość)                            │
+│   - X = e²/4 = EMPIRICAL discovery, awaiting RG-derivation     │
+│     (Phase 6 Q5 R⁵-bridge: NEGATIVE — downgraded do "leading   │
+│     candidate dla X ≈ 1.85, nie definitive")                   │
 │                                                                 │
 │ VERIFIED dla TGP-canonical α=2:                                │
 │   - m_μ/m_e: -0.001% PDG (n=e²/2)                              │

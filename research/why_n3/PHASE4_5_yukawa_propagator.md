@@ -197,8 +197,11 @@ matche PDG <0.1%).
 │                                                                         │
 │  ↓                                                                      │
 │  FAZA 2: m_eff(ψ) = c_M · A_tail²(g₀(ψ)) · g₀^(e²/2)                   │
-│          n(α) = e²·(1-α/4), X = e²/4 fundamentalna stała                │
-│          μ/e diff -0.001% PDG                                           │
+│          n(α) = e²·(1-α/4); X = e²/4 = EMPIRICAL discovery,             │
+│          awaiting RG-derivation (Phase 6 Q5 R⁵-bridge: NEGATIVE,        │
+│          downgraded do "leading candidate, not fundamental")            │
+│          μ/e diff -0.001% PDG (numerical match niezależny od            │
+│          formal status X)                                               │
 │                                                                         │
 │  ↓                                                                      │
 │  FAZA 3: RP² topologia → spin-1/2 + Berry phase π                       │
@@ -288,8 +291,13 @@ może być realnie zamknięta — nie tylko jako "long-term hypothesis".
    **predyktywne mass spectrum**. Razem z M9+ (klasyczna grawitacja) to są
    dwa core-cycles z najmocniejszymi wynikami numerycznymi.
 
-2. **e² jako stała fundamentalna w R3** sugeruje że R3 ma głębsze RG-structure
-   wymagające osobnego cyklu derywacji (kandydat: Q5 z R⁵ bridge).
+2. **e² jako EMPIRICAL match (NIE fundamental constant DERIVED)** w R3
+   sugeruje że R3 może mieć głębszą RG-structure wymagającą osobnego cyklu
+   derywacji (kandydat: Q5 z R⁵ bridge — pierwsza próba w Phase 6 dała
+   wynik NEGATIVE, patrz `PHASE6_Q5_R5_bridge_first_attempt.md`).
+   **Honest status:** X = e²/4 jest leading candidate analitycznym dla
+   X ≈ 1.85 z fit residuum <0.1%, ale **nie jest analitycznie wyprowadzone**
+   z RG-flow ani z Hobart-Derrick balance proof.
 
 3. **M9.1'' metryka jest mocniej wsparta** — Lorentzian horizon ψ=4/3 = R3 bariera
    z Faza 1, spin connection daje konkretne predykcje time-dilation dla każdej

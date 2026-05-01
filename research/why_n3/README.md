@@ -1001,6 +1001,8 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `r3_phase4_yukawa_coupling.py/.txt` | **FAZA 4**: Yukawa coupling y(ψ)=∂m_eff/∂ψ, m_0=0 vacuum verification | ✅ FAZA 4 |
 | `r3_phase5_full_propagator.py/.txt` | **FAZA 5**: full propagator S_TGP(p;ψ), vacuum limit standard Dirac | ✅ FAZA 5 |
 | `PHASE4_5_yukawa_propagator.md` | **Dokument zamykający Fazy 4-5**: emergent Dirac program END (5/5 faz) | ✅ ZAMKNIĘTY |
+| `r3_phase6_r5_bridge.py/.txt` | **FAZA 6 (Q5)**: pierwsza próba R⁵-bridge dla X=e²/4; honest negative | ⚠️ PARTIAL |
+| `PHASE6_Q5_R5_bridge_first_attempt.md` | **Q5 first attempt**: e²/4 NIE wynika trywialnie z R⁵; X downgraded | ⚠️ OPEN |
 
 ## ⚠️ [POST-AUDIT 2026-05-01]
 > Twierdzenie poniżej zaczyna się od "K=g², α=1" — to **nie jest TGP-substrat**.
