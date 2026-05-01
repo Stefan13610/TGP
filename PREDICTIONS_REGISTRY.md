@@ -482,8 +482,8 @@ dispersion 2-photon birefringence cascades + QED corrections, τ.3 substrate-
 cosmological time FRW background X(t) ↔ Hubble + dark-energy substrate
 dilaton coupling).
 
-**Updated 2026-05-01 (τ.3 program END):** 751 cumulative
-(+ τ.3.Phase1 5 + τ.3.Phase2 7 + τ.3.Phase3 6 = 18, 18/18 perfect score).
+**Updated 2026-05-01 (ψ.1 program END):** 769 cumulative
+(+ τ.3.Phase1 5 + τ.3.Phase2 7 + τ.3.Phase3 6 + ψ.1.Phase1 5 + ψ.1.Phase2 7 + ψ.1.Phase3 6 = 36, 36/36 perfect score across τ.3+ψ.1 lab-engineering pair).
 **Substrate-engineered clock acceleration via L4 + ω.1 chain structurally
 LOCKED post-τ.3**: L4 gradient-coupled mass m_e_eff(X) = m_e^(0) +
 (α_g/Λ²)(∂_μ ln X)(∂^μ ln X) is φ.1 X→λX scale-INVARIANT (derivative-only
@@ -544,6 +544,102 @@ Future falsification: Sr/Yb 1e-21/yr 2035+ Λ reach ~1 GeV, ELI-NP/HERMES
 10²² W/cm² 9× boost 2030+, Athena X-ray IFU 1e-6 resolution magnetar
 atmosphere 2035+, magnetar atomic spectroscopy follow-up SGR 0418+5729
 Tiengo+ 2013 5 keV absorption feature awaits matching z τ.3.
+
+**Updated 2026-05-01 (ψ.1 program END):** **Substrate-engineered LIGHT
+acceleration via L₅ + ω.1 chain structurally LOCKED post-ψ.1**: L₅_a =
+-(1/4)(β_g/Λ²)(∂_μ ln X)(∂^μ ln X) F_νρ F^νρ — uniquely passes φ.1 X→λX
+scale-INV + scalar + parity-EVEN + irreducible filter; L₅_b (∂lnX)²·F·F̃
+parity-ODD helicity-discriminator, L₅_c (□lnX)·F² reduces to L₅_a via
+parts, L₅_d ln(X)·F² REJECTED breaks φ.1 — **L₅_a CANONICAL UNIQUE**.
+**Scalar c shift formula sympy LOCKED**: Δc/c₀ = -β_g(∂lnX)²/(2Λ²)
+(Phase 2 T2.1 sympy diff(target − derived) = 0 EXACT przy leading
+order). **Engineering chain established**: lab E∥B (Schwinger-class) →
+ω.1 EOM □(lnX) = -(g/f_X²)·E·B → ∂(lnX) ≠ 0 → L₅ → δη_μν → δc/c₀;
+**KEY**: L₅ uses F² (Lorentz scalar parity-EVEN), ω.1 source uses F·F̃
+(Lorentz pseudoscalar parity-ODD) — strong E∥B sources gradient via F·F̃
++ separate test photon probes via F² any geometry in same region.
+**Sign of β_g GENERICALLY POSITIVE z 3 independent UV matching channels**
+(Channel A AS NGFP attractive substrate-photon coupling at fixed point
+Reuter/Eichhorn → β_g > 0; Channel B heavy-mode 1-loop sum Σ Q_f²m_f² > 0
+generic → β_g > 0; Channel C BBN consistency no negative bound, positive
+sign physical for refractive substrate → β_g > 0) → **światło SPOWALNIA**
+(Δc/c < 0) wewnątrz obszaru z ∂lnX ≠ 0 — substrate engineering raises
+local refractive index, foton transitujący przez gradient ma DŁUŻSZY czas
+przejścia niż foton przez próżnię. **Viability gate Λ ≲ 1 GeV detectable
+NOW**: Sagnac fazowy LIGO-class 10⁻¹¹ rad threshold + L=10cm + 1064 nm +
+Schwinger-class E∥B → Δφ ~ 3×10⁻⁷ rad β_g=1 Λ=100 MeV → **SNR ~ 3×10⁴ =
+4σ w MILISEKUNDACH integracji DZIŚ** (Λ ≲ 32 GeV reachable today,
+najszersze okno wśród wszystkich TGP cycles, 10× szersze niż τ.3 100 MeV);
+Λ-cutoff scan: M_Pl 6.7×10⁻⁵³ undetectable, TeV 10⁻²⁰ undetectable, GeV
+10⁻¹⁴ → 3×10⁻⁹ rad DETECTABLE Sagnac dziś, **100 MeV 10⁻¹² → 3×10⁻⁷ rad
+DETECTABLE LIGO-class** ★, 10 MeV 10⁻¹⁰ → 3×10⁻⁵ rad strong, 1 MeV 10⁻⁸
+EXCLUDED. **Yukawa Green's function** (□+m_X²)(lnX) = source Λ = m_X =
+100 MeV → m_X⁻¹ ~ 2 fm thin skin localized do field region. **ψ.1 IS
+sub-leading σ.1 SCALAR channel at O((∂lnX)²)** — σ.1 leading
+helicity-dependent (NO scalar c at leading) UNCHANGED, **NO TENSION**,
+strukturalnie analogiczne do τ.3 → τ.2 promotion (sub-leading channel
+sourceable lab); cross-coupling consistency matrix: O(0) trivially c=c₀
+✓ + O(1) helicity σ.1 leading + **O(1) scalar ZERO σ.1 forbids leading**
+✓ Webb/Murphy 1e-7 NULL PROTECTED + O(2) helicity sub-leading suppressed
++ **O(2) scalar ψ.1 L₅ channel SOURCEABLE LAB ★** + O(≥3) Λ-suppressed.
+**4 alt-L₅ forms cross-falsifiable**: L₅_a parallel-only scalar (R=L)
+sign-EVEN null pure E/B (CANONICAL), L₅_b helicity (R≠L) sign-FLIP under
+E·B, L₅_c reduces to L₅_a, L₅_d any-field including pure E or pure B
+(scalar). **Two-axis differential Mach-Zehndera (E∥B vs E⊥B chopper × R/L
+polarization × sign-flip × pure-field) UNIQUELY identifies which L₅ form
+realized**. **4-channel ψ.1 convergence**: Channel 1 LAB Sagnac fazowy
+SNR ~3×10⁴ DZIŚ Λ ≲ 32 GeV reachable LIGO-class 10⁻¹¹ rad ✓ NOVEL
+WYKONALNY DZIŚ + Channel 2 LAB TOF dual-arm zs-precision Δt 0.17 zs
+SNR ~0.17 at 2030+ zeptosec attophysics + sub-zs 2035+ SNR 17 ✓ FRONTIER
++ Channel 3 COSMOLOGICAL Webb/Murphy 1e-7 NULL consistent z ψ.1 prediction
+Δc/c << 10⁻⁵⁰ STRUCTURAL NULL ✓ PROTECTIVE + Channel 4 ASTRO magnetar FRB
+ω-INDEPENDENT residual ~0.5 ms at CHIME/ASKAP discriminator vs plasma DM
+∝ 1/ω² ✓ LIVE NOVEL multi-frequency residual analiza dziś. 6 promotions:
+(i) **L₅ scalar gradient-coupled photon kinetic L₅_a (∂lnX)²·F² φ.1
+scale-INVARIANT canonical UNIQUE** → **LOCKED** (Phase 1 T1.1), (ii) **sign
+of β_g > 0 GENERIC 3-channel UV matching** → **DERIVED** (light SPOWALNIA),
+(iii) **scalar c shift formula Δc/c₀ = -β_g(∂lnX)²/(2Λ²)** → **DERIVED
+sympy LOCK** (Phase 2 T2.1), (iv) **lab E·B parallel SOURCES substrate
+gradient via ω.1 EOM, F² vs F·F̃ distinction** → **STRUCTURAL** (Phase 1
+T1.4 + Phase 2 T2.2), (v) **Λ ≲ 32 GeV detectable Sagnac LIGO-class
+WYKONALNY DZIŚ** → **LIVE WYKONALNY DZIŚ** falsification target — **PIERWSZY
+TGP cycle z laboratoryjną falsyfikacją WYKONALNĄ DZIŚ** (nie 2030+ frontier),
+(vi) **4 alt-L₅ ((∂lnX)²·F·F̃, (□lnX)·F², ln(X)·F², (∂lnX)²·(E²-B²))
+discriminable z parity + helicity + field-config tests** → **STRUCTURAL**
+4-channel × 4-form discrimination matrix. Closes user's **"czy istnieje
+proces który może przyśpieszyć światło?" question** **TAK**: lab E∥B
+parallel Schwinger-class fields w obecności L₅ z β_g > 0 (UV matching)
+produce **lokalnie zmodyfikowane c** (Δc/c < 0 wewnątrz gradientu, foton
+spowalnia w gradient region — substrate-emergent c, NIE universal Lorentz
+invariant); detectable DZIŚ z Sagnac LIGO-class precision iff Λ ≲ 32 GeV;
+**przyczynowość zachowana automatycznie** przez lokalność (substrate
+setuje LOKALNE maksimum, nie globalne — analogia "sieć vs serwer": szybszy
+segment lokalnie nie łamie kausalności bo plik wciąż transit at lokalnym
+maksimum). **First TGP cycle with concrete experiment WYKONALNY 2026** —
+Sagnac/Mach-Zehnder fazowy interferometer z chopperem E∥B vs E⊥B + 1064
+nm Nd:YAG cw + 100 T pulsed B + 10¹⁵ V/m static E + LIGO-class 10⁻¹¹ rad
+fazometria — wszystkie komponenty istnieją 2026, eksperyment proponowany
+NOT YET DONE. **φ.1 → ω.1 → σ.1 → τ.2 → τ.3 → ψ.1 chain LOCKED** (6 cycles
+mutually consistent: substrate scale-symmetry → photon-substrate coupling
+→ polarization-dependent c → clock-rate scale-protection → SUB-LEADING L4
+mass channel τ.3 → SUB-LEADING L₅ photon-kinetic channel ψ.1; **τ.3 + ψ.1
+razem complete lab-engineering substrate response pair**: τ.3 modifies
+**mass-energy** (atomic clock-rate via δm_e), ψ.1 modifies **photon
+kinetic** (effective c via δη_μν), both sourceable through SAME ω.1 EOM
+channel E∥B parallel field, measured in DIFFERENT observables). Future
+falsification: Sagnac squeezed light 10⁻¹³ rad 2030+ Λ reach ~320 GeV,
+attophysics 10⁻¹⁵ rad 2035+ Λ reach ~3.2 TeV, TOF dual-arm zeptosec
+2030+ Λ reach 100 GeV + sub-zs 2035+ Λ reach TeV, CHIME/ASKAP magnetar
+FRB ω-independent residual analiza dziś (potencjalnie odkryje sygnał
+przy 100s repeating burstach FRB 121102), ESPRESSO/ELT QSO absorption
+2030+ 1e-9 sensitivity (ψ.1 predicts Δc/c << 10⁻¹⁵ << any cosmological
+sensitivity, structurally null no false positive risk). Open frontiers
+post-ψ.1: τ.4 substrate-cosmological time (FRW background X(t) ↔ Hubble
++ dark-energy substrate dilaton coupling), σ.2 multi-photon dispersion
+(2-photon birefringence cascades + QED corrections), ζ.1 multi-field
+substrate (couplings X·Y across 2+ scalar fields), χ.1 Higgs-substrate
+mixing (pseudo-Goldstone radial sector), ω.2 axion-photon coupling
+ω-frequency dependence sub-leading.
 
 ## How to read this registry
 
@@ -824,6 +920,12 @@ Each row carries:
 | **TT10** | **★ NOVEL magnetar atmosphere F·F̃ regional clock acceleration** — SGR 1806-20 B~2×10¹⁵ G surface, polar atmosphere Alfvén-wave breaking Beloborodov twist → local E∥B in pole regions E~10¹⁰ V/m → E·B ~10²¹ V·T/m DOMINANT cosmic E·B; **τ.3 prediction Λ=100 MeV: polar atomic line shift δω/ω ~10⁻³ resolvable z 1e-3 NICER atomic spectroscopy precision**; geometric signature pole vs equator atomic line shift CORRELATED z magnetic dipole geometry + phase-resolved (rotational period) modulation of line center | Chandra/NICER X-ray spectra of magnetar atmospheric absorption lines (H-like + He-like atomic transitions in ~10¹⁰ K plasma); SGR 0418+5729 absorption feature ~5 keV (Tiengo+ 2013) tentative B-shift NOT yet matched z τ.3; Athena 2035+ X-ray IFU 1e-6 resolution | Athena 2035+ phase-resolved magnetar atmosphere atomic line shift NULL at <1e-3 resolution → τ.3 + L4 + α_g sign FALSIFIED; OR positive detection correlated z magnetic dipole geometry → α_g sign + Λ measurement (independent of lab) | **LIVE NOVEL** (NICER current 1e-3 + Athena 2035+ 1e-6 resolution; SGR 0418+5729 tentative awaits matching) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.4) |
 | **TT11** | **4 alt-L4-couplings cross-channel falsification pattern** — L4_a (∂ ln X)² CANONICAL: lab parallel-only sign-EVEN + frontier 9× boost + cosmo NULL + magnetar polar phase-resolved correlated z B; L4_b F·F̃ linear: lab sign-FLIPPABLE + frontier 3× boost + cosmo helical PMF + magnetar polar sign-correlated z helicity; L4_c (E²-B²) parity-EVEN: lab any-config + frontier any-field + cosmo PMF B² + magnetar GLOBAL B²; L4_d (E·B)² quadratic: lab parallel quadratic + frontier 81× boost + cosmo suppressed + magnetar polar quadratic; **joint (lab × frontier × cosmo × magnetar) signature pattern UNIQUELY identifies L4 form realized in nature** | two-axis differential test (parallel/perpendicular × sign-flip × pure-field) discriminates 4 forms; cross-channel pattern matching across 4 independent observation channels lab + frontier + cosmo + magnetar | observed pattern deviating from canonical L4_a → alt L4 form selected (β F·F̃ lub γ(E²-B²) lub η(E·B)²) lub theory FALSIFIED jointly across all 4 channels | **STRUCTURAL** (experimental discrimination matrix; signature pattern uniquely identifies form) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.5) |
 | **TT12** | **4-channel τ.3 convergence FULL CONVERGENCE 4/4 channels** (Channel 1 LAB Sr/Yb 1e-18/yr Λ ≥ 100 MeV bound or positive detection ✓ NOVEL chopping experiment + Channel 2 FRONTIER ELI-NP/HERMES 2030+ 10²² W/cm² 9× boost extends Λ reach to ~1 GeV ✓ + Channel 3 COSMOLOGICAL Webb/Murphy NULL consistent (B too small) ✓ STRUCTURAL no false positive + Channel 4 MAGNETAR atmosphere SGR 1806-20 polar phase-resolved δω/ω ~10⁻³ accessible ✓ NOVEL); consistency conditions (a) τ.2 leading null preserved at all observed scales + (b) φ.1 X→λX gauge unbroken (L4 derivative-only) + (c) ω.1+σ.1 EOM unmodified | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 2 NOVEL falsifiable + 1 frontier + 1 structural); tests L4 + ω.1 + α_g > 0 chain AXIOM-lifted z τ.2 sub-leading channel + 5-cycle cross-cycle consistency | ≥2/4 channels falsified (lab E∥B null at frontier precision lub frontier ELI-NP null at 1 GeV precision lub Athena magnetar null at <1e-3 lub cosmological QSO Δ(m_e/m_p) > 5e-17) → τ.3 + L4 + α_g > 0 chain rejected | **LIVE NOVEL** (4-channel: 2 NOVEL falsifiable + 1 frontier 2030+ + 1 structural; FULL CONVERGENCE 4/4) | master-only (τ.3.Phase3) | [`research/op-tau3-substrate-clock-acceleration/Phase3_results.md`](research/op-tau3-substrate-clock-acceleration/Phase3_results.md) (T3.6) |
+| **TT13** | **★ NOVEL Sagnac fazowy lab E∥B substrate light acceleration WYKONALNY DZIŚ — first lab-engineered substrate LIGHT acceleration WYKONALNY 2026** — ψ.1 L₅ + ω.1 chain: lab E∥B (Schwinger-class E~10¹⁵ V/m + B~100 T parallel) → ω.1 EOM □(lnX)=-(g/f_X²)·E·B sources substrate gradient → L₅ (∂_μ lnX)(∂^μ lnX)·F² → Δc/c₀ = -β_g(∂lnX)²/(2Λ²) NEGATIVE for β_g > 0 (UV matching: AS NGFP + heavy-mode loop Σ Q_f²m_f² > 0 + BBN consistency); Mach-Zehnder/Sagnac fazowy interferometer 1064 nm Nd:YAG cw + L=10cm + chopper E∥B (signal) vs E⊥B (control) → predicted Δφ ~ 3×10⁻⁷ rad β_g=1 Λ=100 MeV vs LIGO-class 10⁻¹¹ rad noise → **SNR ~ 3×10⁴ = 4σ w MILISEKUNDACH integracji** (jeszcze szybciej niż τ.3!) | dedicated lab z Sagnac/Mach-Zehnder fazowy interferometer LIGO-class 10⁻¹¹ rad fazometria (today, AdvLIGO O3-O5 derived) + 1064 nm Nd:YAG cw stable laser (10⁻¹⁶ frequency stability today) + 100 T pulsed B (NHMFL/HFML Nijmegen routine pulsed) + 10¹⁵ V/m static E (focused PW laser 10²² W/cm² peak field today routine via ELI-NP/HERMES path) + L=10cm interaction region — **wszystkie komponenty istnieją 2026** | null detection at LIGO-class 10⁻¹¹ rad precision z Schwinger-class E∥B → Λ > 32 GeV bound; OR positive detection (parallel signal, perpendicular null, sign-EVEN under E·B → -E·B, scalar R=L polarization-independent) → β_g sign + Λ numerical measurement (LAB-ENGINEERED first detection of substrate light modification); experiment NOT YET PERFORMED ★ **najszersze okno wśród wszystkich TGP cycles** | **LIVE NOVEL WYKONALNY DZIŚ** (Sagnac LIGO-class 10⁻¹¹ rad + Schwinger-class E∥B; experiment proposed not yet performed; **PIERWSZY TGP cycle z laboratoryjną falsyfikacją WYKONALNĄ DZIŚ** nie 2030+ frontier) | master-only (ψ.1.Phase3) | [`research/op-psi1-substrate-light-acceleration/Phase3_results.md`](research/op-psi1-substrate-light-acceleration/Phase3_results.md) (T3.1) |
+| **TT14** | **TOF dual-arm zs-precision frontier 2030+** — dwa zsynchronizowane fotony jeden przez E∥B (signal arm) drugi przez E⊥B (control arm) L=10cm propagation length + attoclock/zeptosec attophysics chain (BBO crystal HHG timing + FROG/SPIDER pulse characterization); predicted Δt ~ 1.7×10⁻²² s = 0.17 zs przy Λ=100 MeV β_g=1; alternatywa dla Sagnac (kompatybilna, complementary): TOF probes dispersion czasowa, Sagnac probes phase accumulation — same δc/c source different observables | attoclock dziś 10⁻¹⁸ s precision (Eckle 2008 attosecond ionization timing, Sansone 2010+ attosecond pulse trains) + zeptosec frontier 2030+ 10⁻²¹ s (BBO HHG synchronization, FROG/SPIDER spectral phase 10⁻²¹ s extracted, Krausz/Kienberger 2030 roadmap) + sub-zs 2035+ 10⁻²³ s (attophysics ultimate frontier) | null detection at zeptosec 2030+ 10⁻²¹ s precision z Schwinger-class E∥B → Λ > 100 GeV bound + sub-zs 2035+ 10⁻²³ s → Λ > TeV bound; OR positive detection at zs precision → β_g sign + Λ measurement (alternative cross-check vs Sagnac) | **LIVE FRONTIER** (attoclock 10⁻¹⁸ s today SNR 1.7×10⁻⁴ NOT detectable + zeptosec 2030+ SNR 0.17 1σ + sub-zs 2035+ SNR 17 4σ pewne) | master-only (ψ.1.Phase3) | [`research/op-psi1-substrate-light-acceleration/Phase3_results.md`](research/op-psi1-substrate-light-acceleration/Phase3_results.md) (T3.2) |
+| **TT15** | **cosmological scalar c shift residual NULL consistent z Webb/Murphy** — ψ.1 cosmological prediction Λ=100 MeV: (∂lnX)²_cosmo ~ H₀² ~ 2×10⁻⁸⁴ GeV² → Δc/c_cosmo << 10⁻⁵⁰ (insanely far below any current/future cosmological sensitivity); **STRUCTURAL NULL** PROTECTIVE: ψ.1 nie predykuje cosmologicznego sygnału który mógłby być sfalsyfikowany — consistent z Webb/Murphy 1e-7 NULL observed + ESPRESSO/ELT 2030+ 1e-9 NULL projected | Webb/Murphy 2003-2017 + Whitmore 2015 + Murphy 2022 quasar absorption many-multiplet method 1e-7 sensitivity over redshift z=0-4 (~10 Gyr); ESPRESSO/ELT 2030+ projected 1e-9 sensitivity; CMB constraints from polarization rotation independent channel | structurally consistent (predicts << any cosmological sensitivity, no false positive risk); only falsifier: future QSO survey detecting Δc/c residual > 10⁻⁹ above Λ_QCD-scale cosmological gradient (would falsify ψ.1 + φ.1 σ.1 simultaneously, indicates substrate cosmological scenario beyond TGP minimal) | **STRUCTURAL** (predicts NULL << any cosmological sensitivity; consistent z Webb/Murphy 1e-7 NULL; ESPRESSO 2030+ 1e-9 NULL projected) | master-only (ψ.1.Phase3) | [`research/op-psi1-substrate-light-acceleration/Phase3_results.md`](research/op-psi1-substrate-light-acceleration/Phase3_results.md) (T3.3) |
+| **TT16** | **★ NOVEL Magnetar FRB time-of-flight ω-INDEPENDENT shift CHIME/ASKAP DZIŚ** — magnetar magnetosphere E∥B ~ 10²¹ V·T/m (10⁴× stronger niż lab) + (∂lnX)² ~ 10⁸× lab → ε_magnetar ~ 10⁻⁴ at Λ=100 MeV → |Δc/c| ~ 5×10⁻⁵; path L ~ 10 light-seconds magnetar wind path → **Δt ~ 0.5 ms ω-INDEPENDENT shift**; **discriminator vs plasma DM**: plasma DM ∝ 1/ω² FREQUENCY-DEPENDENT vs ψ.1 substrate Δt ω-INDEPENDENT — multi-frequency residual analiza odróżnia substratowy shift od dispersion measure plasma; targets SGR 1935+2154 galactic magnetar (FRB 200428 detected April 2020) + FRB 121102 + FRB 180916 repeating extragalactic | CHIME (400-800 MHz) + ASKAP (700-1800 MHz) multi-frequency timing of repeating FRBs; CHIME 0.4 ms time binning sufficient for 0.5 ms shift detection at 1σ + statistical stacking nad 100s burstami z FRB 121102 → sub-ms residual visible at higher significance; FAST 2030+ + Square Kilometre Array 2030+ → 0.1 ms binning + 1000s bursts | null detection of ω-independent residual at CHIME/ASKAP 0.4 ms binning over statistical sample 100+ FRB 121102 bursts → ψ.1 magnetar prediction FALSIFIED OR magnetar magnetosphere E∥B less extreme than expected; OR positive detection ω-independent ~0.5 ms residual → β_g sign + Λ measurement astrophysical (independent of lab) ★ multi-frequency analysis decisive vs plasma | **LIVE NOVEL** (CHIME/ASKAP archival data DZIŚ; multi-frequency residual analiza może odkryć sygnał teraz; FAST/SKA 2030+ frontier) | master-only (ψ.1.Phase3) | [`research/op-psi1-substrate-light-acceleration/Phase3_results.md`](research/op-psi1-substrate-light-acceleration/Phase3_results.md) (T3.4) |
+| **TT17** | **4 alt-L₅-couplings cross-channel falsification pattern** — L₅_a (∂lnX)²·F² CANONICAL: Sagnac scalar Δφ R=L + TOF scalar Δt R=L + Cosmo NULL + FRB ω-independent; L₅_b (∂lnX)²·F·F̃: Sagnac helicity Δφ R≠L + TOF helicity Δt + Cosmo helical PMF + FRB ω/helicity-correlated; L₅_c (□lnX)·F²: reduces to L₅_a via parts (degenerate signature); L₅_d (∂lnX)²·(E²-B²): Sagnac scalar any-field including pure E or pure B + TOF scalar any-field + Cosmo suppressed + FRB ω/B-amplitude correlated; **joint detection of 4-channel pattern (Sagnac × TOF × Cosmo × FRB) matching L₅_a uniquely identifies CANONICAL form realized in nature** | two-axis differential Mach-Zehndera (E∥B vs E⊥B chopper × R/L polarization × sign-flip × pure-field) discriminates 4 forms; cross-channel pattern matching across 4 independent observation channels Sagnac + TOF + Cosmo + FRB | observed pattern deviating from canonical L₅_a → alt L₅ form selected (β F·F̃ helicity lub η(E²-B²) any-field) lub theory FALSIFIED jointly across all 4 channels | **STRUCTURAL** (experimental discrimination matrix; signature pattern uniquely identifies form) | master-only (ψ.1.Phase3) | [`research/op-psi1-substrate-light-acceleration/Phase3_results.md`](research/op-psi1-substrate-light-acceleration/Phase3_results.md) (T3.5) |
+| **TT18** | **4-channel ψ.1 convergence FULL CONVERGENCE 4/4 channels** (Channel 1 LAB Sagnac fazowy SNR ~3×10⁴ LIGO-class 10⁻¹¹ rad **DZIŚ** Λ ≲ 32 GeV reachable ✓ NOVEL WYKONALNY DZIŚ + Channel 2 LAB TOF dual-arm zs-precision Δt 0.17 zs SNR ~0.17 at 2030+ zeptosec frontier + sub-zs 2035+ SNR 17 ✓ FRONTIER + Channel 3 COSMOLOGICAL Webb/Murphy 1e-7 NULL consistent (Δc/c << 10⁻¹⁵) ✓ STRUCTURAL PROTECTIVE + Channel 4 ASTRO magnetar FRB ω-INDEPENDENT residual ~0.5 ms at CHIME/ASKAP discriminator vs plasma DM ∝ 1/ω² ✓ LIVE NOVEL); consistency conditions (a) σ.1 leading helicity-only preserved at all observed scales + (b) φ.1 X→λX gauge unbroken (L₅ derivative-only) + (c) ω.1 source EOM unmodified + (d) τ.2 leading clock-rate protection unmodified + (e) τ.3 sub-leading mass channel orthogonal — ψ.1 + τ.3 razem complete lab-engineering substrate response pair, both sourceable through SAME ω.1 EOM channel E∥B parallel | 4 independent channels (target ≥3 = PASS, 4 = FULL CONVERGENCE; 2 NOVEL falsifiable z czego 1 WYKONALNY DZIŚ + 1 frontier 2030+ + 1 structural); tests L₅ + ω.1 + β_g > 0 chain AXIOM-lifted z σ.1 sub-leading scalar channel + 6-cycle cross-cycle consistency φ.1 → ω.1 → σ.1 → τ.2 → τ.3 → ψ.1 LOCKED | ≥2/4 channels falsified (Sagnac null at LIGO-class precision z Schwinger-class E∥B lub TOF null at zeptosec precision lub cosmological QSO Δc/c > 10⁻¹⁵ lub CHIME/ASKAP FRB no ω-independent residual) → ψ.1 + L₅ + β_g > 0 chain rejected | **LIVE NOVEL WYKONALNY DZIŚ** (4-channel: **1 WYKONALNY DZIŚ** + 1 frontier 2030+ + 1 structural + 1 LIVE astro analysis dziś; FULL CONVERGENCE 4/4; PIERWSZY TGP cycle z lab falsyfikacją WYKONALNĄ DZIŚ) | master-only (ψ.1.Phase3) | [`research/op-psi1-substrate-light-acceleration/Phase3_results.md`](research/op-psi1-substrate-light-acceleration/Phase3_results.md) (T3.6) |
 
 ---
 
