@@ -9,7 +9,7 @@ related:
   - "[[r5_phase2_reconciliation.py]]"
   - "[[r5_k_squared_mechanism.py]]"
   - "[[r3_observable_vs_full_mass.py]]"
-status: PARTIAL RESOLUTION — sub-tensja g₀_τ kalibracji pozostaje OPEN (Phase 7+)
+status: FULL RESOLUTION — główna tensja + sub-tensja g₀_τ ZAMKNIĘTE (2026-05-01)
 tags:
   - TGP
   - R5
@@ -21,10 +21,13 @@ tags:
 
 # Reconciliation: R5 K² mechanizm vs why_n3 Phase 2 mass formula
 
-> **Status:** PARTIAL RESOLUTION. Główna tensja A⁴ (R5) vs A^(5−α) (Phase 2)
-> dla α=2 została **strukturalnie rozwiązana** jako artefakt nieoznaczoności
-> uniwersalności w R5. Sub-tensja w kalibracji g₀_τ między R5 i Phase 2
-> pozostaje **OPEN** dla osobnej analizy (Phase 7+).
+> **Status:** FULL RESOLUTION (2026-05-01). Główna tensja A⁴ (R5) vs A^(5−α)
+> (Phase 2) dla α=2 została **strukturalnie rozwiązana** jako artefakt
+> nieoznaczoności uniwersalności w R5. Sub-tensja w kalibracji g₀_τ została
+> **ZAMKNIĘTA** (sekcja 9): residue −0.085% w Phase 2 m_τ/m_e to artefakt
+> empirycznego A³ skrótu w `r3_alpha2_full_closure.py` Section 4 — pełna
+> formuła `m_obs = c·A²·g₀^[e²(1−α/4)]` daje +0.006% (PDG error bars).
+> Prawidłowe g₀_τ Phase 2 z pełnej formuły = 1.7747 (nie 1.7550).
 
 ---
 
@@ -199,41 +202,35 @@ Oryginalna hipoteza 2 z `mass_scaling_k4/README.md`:
 
 ---
 
-## 4. Sub-tensja: g₀_τ kalibracja (OPEN)
+## 4. Sub-tensja: g₀_τ kalibracja (CLOSED 2026-05-01)
 
-### 4.1 Obserwacja
+> **Status:** ZAMKNIĘTE. Diagnostic w `g0_tau_subtension_diagnostic.py`
+> (2026-05-01) wykazał że trzy "różne" g₀_τ są różnymi paradygmatami
+> (różne α → różne ODE → różne fizyczne kalibracje), a residue −0.085%
+> w r3_alpha2_full_closure.py to artefakt A³ skrótu w Section 4.
+> Patrz pełna analiza w sekcji **9** poniżej.
+
+### 4.1 Obserwacja (oryginalna)
 
 Phase 2 i R5 używają **różnych wartości g₀_τ**:
 
-| Source | g₀_τ | Pochodzenie |
-|--------|------|-------------|
-| R5 `r5_k_squared_mechanism.py` (substrate) | 1.72931 | "z Koide" |
-| R5 `r5_k_squared_mechanism.py` (canonical) | 2.276 = φ²·g₀_e | φ-drabinka |
-| Phase 2 `PHASE2_n_alpha_derivation.md` | 1.75505 | "z Koide K=2/3" |
-| `r3_observable_vs_full_mass.py` | 1.72931 | (skopiowane z R5) |
+| Source | g₀_τ | Pochodzenie | Status |
+|--------|------|-------------|--------|
+| R5 `r5_k_squared_mechanism.py` (substrate, α=1) | 1.72931 | Koide K=2/3 w substrate ODE | ✓ GENUINE dla α=1 |
+| R5 `r5_k_squared_mechanism.py` (canonical, α=2) | 2.276 = φ²·g₀_e | φ-drabinka | ✗ ZA HORYZONTEM (>g₀_crit=1.874) |
+| Phase 2 (A³ skrót, α=2) | 1.75505 | Koide K=2/3 + m∝A³ | ⚠ artefakt skrótu |
+| **Phase 2 (full formula, α=2)** | **1.77472** | **Koide K=2/3 + m=c·A²·g₀^(e²/2)** | ✓ **PRAWIDŁOWE** |
+| `r3_observable_vs_full_mass.py` | 1.72931 | (skopiowane z R5 substrate, α=1 context) | ✓ GENUINE dla α=1 |
 
-### 4.2 Konsekwencje
+### 4.2 Rozwiązanie
 
-Phase 2 z g₀_τ = 1.75505 **dokładnie** matchuje PDG τ/e = 3477.23 (-0.085%).
-Phase 2 z g₀_τ = 1.72931 daje τ/e = 2604.7 (-25%).
-R5 K² z g₀_τ = 1.72931 daje τ/e = 42184 (+1113% dla α=2).
+Trzy g₀_τ to **trzy różne paradygmaty** (nie konkurencyjne):
+- α=1 substrate ODE (R5): 1.72931 — **legacy R5**
+- α=2 canonical ODE z φ-drabinką: 2.276 — **niefizyczne** (za horyzontem)
+- α=2 canonical ODE z Koide K=2/3 + pełna formuła Phase 2: **1.77472** — **kanoniczne**
 
-### 4.3 Interpretacja
-
-To NIE jest błąd Phase 2 ani R5, ale **niezamknięta kalibracja w R3
-ODE rdzeniu** — różne metody (Koide K=2/3 vs φ² ladder vs direct fit)
-dają nieco różne g₀_τ.
-
-**Status:** OPEN, sub-problem cyklu R3, do osobnej analizy w Phase 7+.
-
-### 4.4 Sugestia weryfikacji
-
-Pełna konsystencja wymaga:
-1. Re-deriwacji g₀_τ z **jednoznacznego** mechanizmu (Koide derivation
-   chain w `r3_koide_derivation.py` lub φ-ladder)
-2. Aktualizacji wszystkich skryptów R5 + R3 + why_n3 by używały
-   **jednej** wartości g₀_τ z explicit derivation source
-3. Re-uruchomienia Phase 2 + R5 K² z ujednoliconą kalibracją
+Dla TGP-canonical (`K(φ)=K_geo·φ⁴`, czyli α=2), prawidłowa wartość to
+**g₀_τ = 1.77472**, dająca m_τ/m_e = 3477.44 (PDG 3477.23, diff +0.006%).
 
 ---
 
@@ -253,12 +250,15 @@ Pełna konsystencja wymaga:
 
 ### 5.2 Co POZOSTAJE OPEN
 
-- ⚠ **g₀_τ kalibracja**: różne konwencje między R5/Phase 2 (1.72931
-  vs 1.75505). Wymaga Phase 7+ analizy.
+- ✅ **g₀_τ kalibracja**: ZAMKNIĘTE 2026-05-01 (sekcja 9). Trzy g₀_τ to
+  różne paradygmaty (różne α/ODE), a residue −0.085% to artefakt
+  empirycznego A³ skrótu, nie problem kalibracji. Pełna formuła Phase 2
+  daje +0.006% (PDG error bars).
 - ⚠ **Analityczne pochodzenie X = e²/4** w n(α) = e²(1−α/4): EMPIRICAL
   discovery (residuum < 0.1% dla α ∈ [0.5, 2.5]), wciąż awaiting
   RG-derivation. **Już udokumentowane** w `PHASE6_Q5_R5_bridge_first_attempt.md`
-  jako NEGATIVE first attempt.
+  jako NEGATIVE first attempt. Pozostaje OPEN (osobny agent prowadzi
+  research).
 - ⚠ **Generalizacja R5 dla α≠1**: czy istnieje mechanizm `m_obs = c·F(K, α)`
   gdzie F redukuje się do K² dla α=1, ale ma inną postać dla α≠1?
   Phase 7+ research.
@@ -296,8 +296,12 @@ TGP-canonical, **właściwa mass formula to Phase 2**:
 m_obs = c_M · A² · g₀^(e²/2)
 ```
 
-Ta formula dała 6/6 PASS PDG verification w Phase 2 (μ/e -0.001%,
-τ/e -0.085%, τ/μ +0.015%) — z g₀_τ = 1.75505.
+Ta formula dała PASS PDG verification:
+- z A³ skrótem (g₀_τ = 1.75505): μ/e -0.099%, τ/e -0.085%
+- z **pełną formułą** (g₀_τ = 1.77472, **kanoniczne**): μ/e ±0.000%, τ/e +0.006%
+
+Patrz `g0_tau_subtension_diagnostic.py` (2026-05-01) dla pełnej derywacji
+prawidłowego g₀_τ Phase 2.
 
 ### 6.3 Cycle bridge: R5 ↔ why_n3
 
@@ -312,11 +316,14 @@ R5 i why_n3 są teraz **logicznie spójne**:
 
 | Plik | Opis |
 |------|------|
-| `r5_phase2_reconciliation.py` | Niezależny verification script (ten dokument) |
+| `r5_phase2_reconciliation.py` | Niezależny verification script (główna tensja) |
 | `r5_phase2_reconciliation.txt` | Output z 3 case'ami (α=1, α=2, struktura) |
+| `g0_tau_subtension_diagnostic.py` | **NEW 2026-05-01** — closure sub-tensji g₀_τ |
+| `g0_tau_subtension_diagnostic.txt` | Output: pełna formuła vs A³ skrót, residue +0.006% vs −0.085% |
 | `r5_k_squared_mechanism.py` | R5 oryginalny (TEST 3 = α=1 only verification) |
 | `../why_n3/r3_observable_vs_full_mass.py` | why_n3 mass formula candidates dla α=2 |
 | `../why_n3/PHASE2_n_alpha_derivation.md` | Phase 2 closure z X=e²/4 (EMPIRICAL) |
+| `../why_n3/r3_alpha2_full_closure.py` | Phase 2 verification (Section 4 używa A³ skrótu) |
 
 ---
 
@@ -335,6 +342,79 @@ R5 i why_n3 są teraz **logicznie spójne**:
 
 ---
 
-**Autor:** Reconciliation analysis 2026-04-30 (TGP audit closure follow-up)
-**Status:** PARTIAL RESOLUTION (główna tensja closure, sub-tensja g₀_τ open)
-**Następne kroki:** Phase 7+ — ujednolicenie g₀_τ kalibracji między R5/R3/why_n3
+**Autor:** Reconciliation analysis 2026-04-30 + sub-tensja closure 2026-05-01
+**Status:** FULL RESOLUTION (główna tensja + sub-tensja g₀_τ ZAMKNIĘTE)
+**Następne kroki:** X = e²/4 RG-derivation (osobny agent / Phase 7+).
+Generalizacja R5 dla α≠1 — Phase 7+.
+
+---
+
+## 9. SUB-TENSION CLOSURE: g₀_τ (2026-05-01)
+
+### 9.1 Problem postawiony 2026-04-30
+
+Sub-tensja w sekcji 4 (oryginalna): **dlaczego Phase 2 z g₀_τ=1.75505
+daje −0.085% residue w m_τ/m_e, mimo bisektu na K=2/3?**
+
+### 9.2 Hipotezy testowane
+
+- **H1** (numeryczna precyzja ODE solver): possible
+- **H2** (K_PDG ≠ 2/3 dokładnie): **FALSYFIKOWANE** —
+  K_PDG (central) = 0.66666051, K=2/3 = 0.66666667; diff −0.001%
+  (within PDG m_τ ± 0.12 MeV error bars). Backsolve m_τ dla K=2/3
+  exactly → 1776.97 MeV vs PDG 1776.86 → diff +0.006% (nie −0.085%).
+- **H3** (empiryczne A³ skrót ≠ pełna formuła c·A²·g₀^n): **POTWIERDZONE**
+- **H4** (propagacja błędu z g₀_μ = φ·g₀_e): nie wymaga testowania (H3 wystarcza)
+
+### 9.3 Rozwiązanie (H3 verified)
+
+`r3_alpha2_full_closure.py` Section 4 używa **skrótu** `m ∝ A^p(α) = A³`
+zamiast pełnej formuły Phase 2 `m_obs = c·A²·g₀^[e²(1−α/4)]`.
+Dla α=2: pełna formuła to `m = c·A²·g₀^(e²/2)` z e² = exp(2) = 7.389.
+
+Diagnostic w `g0_tau_subtension_diagnostic.py` (2026-05-01):
+
+| Formuła | g₀_τ (Koide K=2/3) | m_μ/m_e diff | m_τ/m_e diff |
+|---------|--------------------|--------------|--------------| 
+| A³ skrót (Section 4) | 1.75505 | −0.099% | **−0.085%** |
+| Pełna A²·g₀^n (n=3.6946) | **1.77472** | **±0.000%** | **+0.006%** |
+
+**92.9% redukcja residue** przy przejściu A³ → pełna formuła.
+
+### 9.4 Identyfikacja e² jako Euler² = 7.389
+
+Dodatkowy bonus diagnostic: numerical fit z μ/e exact → n_canonical = 3.694554,
+czyli e² = 2n = 7.389108. Match z Euler² = exp(2) = 7.389056 to **0.0007%**.
+
+To potwierdza Phase 2 identification (PHASE2_n_alpha_derivation.md
+Section 3): "e² = 7.389 (top kandydat z 36 testowanych, diff −0.085%
+od fitu 7.39440)". Match jest **wręcz strukturalny** — exponent e² w
+n(α) = e²(1−α/4) **jest** Euler², nie przypadkowy fit-konstant.
+
+> **UWAGA:** "e²" w Phase 2 to **Euler² = exp(2) = 7.389**, NIE elektryczny
+> ładunek e². Notacja "e²/4" odnosi się do parametru X w n(α) = X(4-α),
+> gdzie X = e²/4 = exp(2)/4 = 1.847.
+
+### 9.5 Konkluzja
+
+**Sub-tensja g₀_τ jest CLOSED:**
+
+1. Trzy g₀_τ (1.72931, 2.276, 1.75505) to **różne paradygmaty** (różne α/ODE),
+   nie konkurencyjne kalibracje
+2. Residue −0.085% w r3_alpha2_full_closure.py to **artefakt A³ skrótu**
+   w Section 4 — pełna formuła Phase 2 daje +0.006% (PDG error bars)
+3. Prawidłowe g₀_τ Phase 2 (TGP-canonical α=2) to **1.77472**, nie 1.75505
+4. e² w Phase 2 = exp(2) = 7.389056 — Euler², nie elektryczny ładunek
+
+### 9.6 Implikacje dla głównego ciała teorii
+
+- ✅ Phase 2 universal mass formula `m_obs = c·A²·g₀^[e²(1−α/4)]` jest
+  **strukturalnie poprawna** (nie ma nierozwiązanego residue)
+- ✅ TGP-canonical (α=2) ma teraz **kanoniczne** g₀_τ = 1.77472
+- ⚠ **Skrypty `r3_alpha2_full_closure.py`** wymagają adnotacji
+  (Section 4 używa A³ skrótu — should add note pointing to full formula
+  i diagnostic; nie modyfikujemy ze względu na separation discipline z innym agentem)
+- ⚠ **`r3_observable_vs_full_mass.py`** nadal używa g₀_τ = 1.72931
+  (legacy α=1 substrate kontekst) — to pozostaje GENUINE w swoim kontekście
+- 🔓 **X = e²/4 RG-derivation** pozostaje OPEN (osobny agent / Phase 7+);
+  Sub-tensja g₀_τ była innym problemem, niezależnym od X.

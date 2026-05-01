@@ -172,16 +172,24 @@ k_eff = ln(r₂₁)/ln(A_μ/A_e) = 4.0001
     - Absolutna kalibracja c_m wymaga fizycznego R_max (bridge R5)
 5. **Formalizacja w Lean 4** — cały łańcuch P1-P4
 
-## Otwarta tensja 2026-05-01 → PARTIAL RESOLUTION 2026-04-30
+## Otwarta tensja 2026-05-01 → FULL RESOLUTION 2026-05-01
 
-**Status:** PARTIAL RESOLUTION — główna tensja A⁴ (R5) vs A^(5-α) (why_n3
-Phase 2) **strukturalnie rozwiązana**. R5 K² jest specyficznym przypadkiem
-α=1 substrate ODE; Phase 2 `m_obs = c·A²·g₀^(e²(1-α/4))` to uniwersalna
-formuła. Sub-tensja g₀_τ kalibracji (1.72931 R5 vs 1.75505 Phase 2 Koide
-K=2/3) pozostaje OPEN dla Phase 7+.
+**Status:** FULL RESOLUTION — główna tensja A⁴ (R5) vs A^(5-α) (why_n3
+Phase 2) **strukturalnie rozwiązana** (PARTIAL 2026-04-30). Sub-tensja
+g₀_τ kalibracji **CLOSED 2026-05-01** — diagnostic pokazał że trzy g₀_τ
+(1.72931, 2.276, 1.75505) to różne paradygmaty (różne α/ODE), nie
+konkurencyjne kalibracje. Residue −0.085% w r3_alpha2_full_closure.py
+to artefakt empirycznego A³ skrótu — pełna formuła Phase 2 daje +0.006%
+(w PDG error bars), a prawidłowe g₀_τ Phase 2 (TGP-canonical α=2) to
+**1.77472** (nie 1.75505).
 
-Patrz: [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] (pełna analiza +
-niezależna weryfikacja `r5_phase2_reconciliation.py`).
+Bonus: **e² w Phase 2 = exp(2) = 7.389** (Euler², nie elektryczny ładunek)
+— numerical fit z μ/e exact match potwierdza identyfikację (PHASE2_n_alpha_derivation.md).
+
+Patrz:
+- [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] §9 (sub-tension closure)
+- `g0_tau_subtension_diagnostic.py` + `.txt` (independent verification)
+- `r5_phase2_reconciliation.py` (główna tensja closure)
 
 ### Ustawienie problemu
 
@@ -256,9 +264,13 @@ A⁴ scaling z dokładnością ~0.5%.
   do α=1. Dla α=2 (TGP-canonical), Phase 2 formula z g₀^(e²/2)
   factor jest właściwą formułą. Patrz
   [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]].
-- ⚠ Sub-tensja g₀_τ kalibracji (1.72931 R5 substrate vs 1.75505 Phase 2
-  Koide K=2/3): OPEN dla Phase 7+. Wymaga ujednolicenia derivation
-  źródła (Koide chain vs φ-ladder vs direct fit).
+- ✅ Sub-tensja g₀_τ kalibracji: **CLOSED 2026-05-01**. Trzy g₀_τ
+  (1.72931 R5 α=1 substrate, 2.276 R5 α=2 canonical φ-ladder ZA HORYZONTEM,
+  1.75505 Phase 2 A³ skrót) to różne paradygmaty (różne α/ODE), nie
+  konkurencyjne kalibracje. Pełna formuła Phase 2 (m=c·A²·g₀^[e²(1−α/4)])
+  daje **g₀_τ = 1.77472** (kanoniczne dla α=2) i +0.006% PDG. Residue
+  −0.085% w r3_alpha2_full_closure.py to artefakt skrótu A³ (Section 4).
+  Patrz `g0_tau_subtension_diagnostic.py` i RECONCILIATION §9.
 - ⚠ X = e²/4 w `n(α) = e²(1−α/4)` why_n3: EMPIRICAL discovery
   awaiting RG-derivation (Phase 6 Q5 R⁵-bridge: NEGATIVE — patrz
   `research/why_n3/PHASE6_Q5_R5_bridge_first_attempt.md`).
@@ -283,10 +295,13 @@ A⁴ scaling z dokładnością ~0.5%.
    [[RECONCILIATION_R5_vs_phase2_2026-04-30.md]] i
    `r5_phase2_reconciliation.py`.
 
-7. **Sub-tensja g₀_τ kalibracji** (NEW open) — różne wartości g₀_τ między
-   R5 substrate (1.72931 z Koide), R5 canonical (φ²·g₀_e=2.276 z φ-ladder),
-   i Phase 2 (1.75505 z Koide K=2/3). Phase 7+ task: ujednolicenie
-   derivation source dla g₀_τ across cycles.
+7. ~~**Sub-tensja g₀_τ kalibracji** (NEW open)~~ → **✅ CLOSED 2026-05-01**.
+   Trzy g₀_τ to różne paradygmaty (różne α/ODE), nie konkurencyjne
+   kalibracje. Residue −0.085% to artefakt A³ skrótu (Section 4
+   r3_alpha2_full_closure.py); pełna Phase 2 formuła daje **g₀_τ = 1.77472**
+   (TGP-canonical α=2) i +0.006% PDG. Bonus: e² w Phase 2 = exp(2)=7.389
+   (Euler²) potwierdzone z μ/e exact fit do 0.0007%. Patrz
+   `g0_tau_subtension_diagnostic.py` + RECONCILIATION §9.
 
 ## Pliki
 

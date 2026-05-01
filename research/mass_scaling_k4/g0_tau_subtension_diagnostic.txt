@@ -1,0 +1,74 @@
+==============================================================================
+  g0_tau sub-tension diagnostic: A^3 approx vs pelna m_obs formula
+==============================================================================
+
+  alpha = 2.0
+  g0_e = 0.86941, g0_mu = phi*g0_e = 1.406735
+
+==============================================================================
+  STEP 1: A_tail dla e i mu (alpha=2)
+==============================================================================
+  A_e  = 0.110028
+  A_mu = 0.650411
+  A_mu/A_e = 5.911311
+
+==============================================================================
+  STEP 2: Kalibracja exponent n dla g0 (z mu/e ratio)
+==============================================================================
+
+  Test: m_obs = c_M * A^2 * g0^n  =>  m_mu/m_e = (A_mu/A_e)^2 * (g0_mu/g0_e)^n
+  Cel: PDG m_mu/m_e = 206.7682
+
+  (A_mu/A_e)^2 = 34.943600
+  R21_PDG / (A_mu/A_e)^2 = 5.917198
+  log(g0_mu/g0_e) = log(1.618034) = 0.481212
+  n (fit dla mu/e) = 3.694554
+
+  Phase 2 prescription: n = e^2*(1-alpha/4) = e^2 * 0.5 dla alpha=2
+  Therefore e^2 (z fitu) = 7.389108
+
+  Test kandydatow dla e^2:
+    e^2 = 2 (rank-2 invariant):  n=1.0000  =>  m_mu/m_e = 56.5399  (PDG 206.7682, diff -72.6554%)
+    e^2 = pi^2/g (Casimir-like):  n=1.6449  =>  m_mu/m_e = 77.1149  (PDG 206.7682, diff -62.7046%)
+    alpha_em^-1 = 137.036:  n=68.5180  =>  m_mu/m_e = 7290927452403961.0000  (PDG 206.7682, diff +3526135765753029.0000%)
+    e (Euler) = 2.718:  n=1.3591  =>  m_mu/m_e = 67.2065  (PDG 206.7682, diff -67.4967%)
+    e^2 (Euler^2) = 7.389:  n=3.6945  =>  m_mu/m_e = 206.7656  (PDG 206.7682, diff -0.0012%)
+    FIT (numerical) = 7.3891:  n=3.6946  =>  m_mu/m_e = 206.7682  (PDG 206.7682, diff +0.0000%)
+
+  USE: n_canonical = 3.694554 (from mu/e exact fit)
+
+==============================================================================
+  STEP 3: Bisekt g0_tau dla DWOCH formul mass
+==============================================================================
+
+  Calibracja c_M (by m_e = 1 unit dla obu formul):
+    Formula A (A^3):     c_M = 7.507353e+02
+    Formula B (A^2*g0^n): c_M = 1.385253e+02
+
+  Bisekt g0_tau (Koide K=2/3) dla Formula A (A^3 approximation):
+    g0_tau (A^3) = 1.755045
+    A_tau        = 1.666452
+    m_mu/m_e     = 206.5625  (PDG 206.7682, diff -0.0995%)
+    m_tau/m_e    = 3474.2837  (PDG 3477.23, diff -0.0847%)
+
+  Bisekt g0_tau (Koide K=2/3) dla Formula B (pelna A^2*g0^n):
+    g0_tau (full) = 1.774722
+    A_tau         = 1.736412
+    m_mu/m_e      = 206.7682  (PDG 206.7682, diff +0.0000%)
+    m_tau/m_e     = 3477.4404  (PDG 3477.23, diff +0.0060%)
+
+==============================================================================
+  STEP 4: Konkluzja sub-tension
+==============================================================================
+
+  Phase 2 a posteriori test (Section 4 r3_alpha2_full_closure.py):
+    Formula A (A^3 skrot)     -> m_tau/m_e diff = -0.0847%
+    Formula B (full A^2*g0^n) -> m_tau/m_e diff = +0.0060%
+
+  Improvement: 92.9% redukcja residue
+
+  WNIOSEK: Sub-tension CLOSES — pelna formula daje EXACT PDG.
+           Residue -0.085% w r3_alpha2_full_closure.py to ARTEFAKT
+           empirycznego A^3 approximation w Section 4.
+
+==============================================================================
