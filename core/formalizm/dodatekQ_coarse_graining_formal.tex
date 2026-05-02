@@ -129,7 +129,7 @@ gdzie $T_\mathrm{eff}$ jest efektywną temperaturą substratu przy
 obecnym wieku Wszechświata.
 \end{propozycja}
 
-\begin{propozycja}[Hipoteza $a_\Gamma \cdot \Phi_0 = 1$ jako warunek samospójności]
+\begin{propozycja}[Hipoteza $a_\Gamma \cdot \Phi_{\rm eff} = 1$ jako warunek samospójności]
 \label{prop:agamma_phi0}
 Definiując skalę korelacji substratu:
 \begin{equation}
@@ -137,9 +137,9 @@ Definiując skalę korelacji substratu:
   \quad \nu \approx 0{,}63 \text{ (3D Ising)},
 \end{equation}
 i identyfikując $a_\Gamma \equiv 1/\xi_\mathrm{corr}$, hipoteza
-$a_\Gamma \cdot \Phi_0 = 1$ jest równoznaczna z:
+$a_\Gamma \cdot \Phi_{\rm eff} = 1$ jest równoznaczna z:
 \begin{equation}
-  \xi_\mathrm{corr} = \Phi_0
+  \xi_\mathrm{corr} = \Phi_{\rm eff}
   \quad\Longleftrightarrow\quad
   a_\mathrm{sub} \cdot |1 - T_\mathrm{eff}/T_c|^{-\nu} = v^2(T_\mathrm{eff}).
   \label{eq:self_consistency}
@@ -148,16 +148,30 @@ Warunek \eqref{eq:self_consistency} jest \emph{równaniem samospójnym}
 wyznaczającym $T_\mathrm{eff}$ z parametrów substratu $(J, a_\mathrm{sub}, T_c)$.
 \end{propozycja}
 
+\begin{uwaga}[Identyfikacja $\Phi_0$ vs $\Phi_{\rm eff}$ (op-uv3 closure 2026-05-02)]
+\label{rem:agamma-Phi-eff-identification}
+Wcze\'sniejsze sformu\l{}owania hipotezy u\.zywa\l{}y notacji
+``$a_\Gamma \cdot \Phi_0 = 1$''. UV.3 cycle (\texttt{research/op-uv3-phi0-renormalization/},
+16/16 PASS) explicit pokazuje, \.ze $\Phi$ w tej hipotezie to
+$\Phi_{\rm eff}$ (skala IR), \emph{nie} $\Phi_0^{\rm bare} \approx 115$
+(skala UV, kalibracja Warstwy~II z $168\,\Omega_\Lambda$). Pod
+$Z_\Phi = \Phi_0^{\rm bare}/\Phi_{\rm eff} = 14/3$:
+$a_\Gamma \cdot \Phi_0^{\rm bare} = Z_\Phi \cdot (a_\Gamma \cdot \Phi_{\rm eff}) = 14/3$,
+co \emph{nie} jest warunkiem ``samospójno\'sci'' (definiowanym na poziomie IR).
+\end{uwaga}
+
 \begin{uwaga}[Weryfikacja numeryczna]
-Skrypt \texttt{tgp\_agamma\_phi0\_test.py} sprawdza, czy $a_\Gamma \cdot \Phi_0 = 1$
-jest spełnione numerycznie z trzech niezależnych ścieżek obserwacyjnych:
+Skrypt \texttt{tgp\_agamma\_phi0\_test.py} sprawdza, czy
+$a_\Gamma \cdot \Phi_{\rm eff} = 1$
+jest spełnione numerycznie z trzech niezależnych ścieżek obserwacyjnych
+(wszystkie wyznaczają $\Phi_{\rm eff}$, IR-side):
 \begin{enumerate}
-  \item $\Phi_0(\Lambda) = 96\pi G_0 \rho_\Lambda / H_0^2 \approx 23{,}3$
-  \item $\Phi_0(r_{21}) = (\alpha_K \sqrt{r_{21}})^{3/5} \approx 25{,}4$
-  \item $\Phi_0(\kappa) = 3/(4\kappa_\mathrm{obs}) \approx 24{,}7$
+  \item $\Phi_{\rm eff}(\Lambda) = 96\pi G_0 \rho_\Lambda / H_0^2 \approx 23{,}3$
+  \item $\Phi_{\rm eff}(r_{21}) = (\alpha_K \sqrt{r_{21}})^{3/5} \approx 25{,}4$
+  \item $\Phi_{\rm eff}(\kappa) = 3/(4\kappa_\mathrm{obs}) \approx 24{,}7$
 \end{enumerate}
 Rozrzut $< 10\%$ (patrz ANALIZA\_SPOJNOSCI\_v3.md), a DESI DR2 mierzy
-$a_\Gamma \cdot \Phi_0 = 1{,}005 \pm 0{,}005$.
+$a_\Gamma \cdot \Phi_{\rm eff} = 1{,}005 \pm 0{,}005$ (drift $0{,}50\%$).
 \end{uwaga}
 
 \subsection*{Q.5 Mapa otwartego problemu OP-2}

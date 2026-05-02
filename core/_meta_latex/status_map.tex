@@ -1,6 +1,16 @@
 % ============================================================
 % MAPA STATUSU TEORII TGP — Dodatek A.1 (sesja v33)
 % ============================================================
+%
+% G.0 CLOSURE 2026-05-02 (Phase 4): sek08a v1.x → v2.0
+%   - V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12 (kanoniczne, NEW)
+%   - sqrt(-g) = c0*psi/(4-3*psi) (M9.1'' canonical, A2 closure sek08c)
+%   - Phi-EOM (statyczna) = R3 ODE EXACT
+%   - q*c^2/Phi_0 = (4/5)*pi*G_0 (Newton-limit, P32)
+%   - kappa = 3/(4*Phi_0) INVARIANT po re-fit Phi_0
+% Wartosci ponizej i wszystkie observables IDENTYCZNE w v1.x i v2.0 po re-fit.
+% Patrz: research/op-g0-r3-from-canonical-projection/ (Phase 1+2+3 PASS 4/4 each).
+% ============================================================
 \section{Mapa statusu twierdze\'n TGP}\label{sec:status-map}
 
 \begin{center}
@@ -10,6 +20,20 @@ Warto\'sci $g_0 = 1{,}24$ w~tym dokumencie odpowiadaj\k{a} Formulacji~B ($f(g) =
 Warto\'s\'c kanoniczna (Formulacja~A, $K(g) = g^4$): $g_0^e = 0{,}86941$.
 Algebra Koide'a i~r\'ownania F1--F12 s\k{a} niezale\.zne od tego wyboru.}}
 \end{center}
+
+\begin{remark}[Nota kanoniczna G.0 (2026-05-02)]\label{rem:status-map-G0}
+Po G.0 closure (\texttt{research/op-g0-r3-from-canonical-projection/},
+Phase 1+2+3 PASS 4/4 ka\.zda) sek08a otrzyma\l{}o major version bump
+v1.x $\to$ v2.0 z~kanoniczn\k{a} formulacj\k{a} $V_{M911}(\psi) =
+-\gamma\psi^2(4-3\psi)^2/12$ + $\sqrt{-g} = c_0\psi/(4-3\psi)$ (M9.1''
+canonical). Statyczne $\Phi$-EOM = R3 ODE EXACT, st\k{a}d wszystkie
+sukcesy R3 ($N=3$ generacji, $m_\mu/m_e$, $m_\tau/m_e$, Koide $K=2/3$,
+spin-$1/2$, 4-th gen forbidden) staj\k{a} si\k{e} \emph{automatycznymi}
+sukcesami sek08a v2.0. Warto\'s\'c $\kappa = 3/(4\Phi_0)$ INVARIANT
+po re-fit $\Phi_0$ (P32 sympy LOCK); wszystkie observables (Newton's
+$G_0$, PPN, BBN, LLR, CMB) IDENTYCZNE w~v1.x i~v2.0. Patrz:
+sek08a v2.0 ADDENDUM (\texttt{sssec:g0-closure-v2}).
+\end{remark}
 
 \begin{remark}[Cel i~konwencja]\label{rem:status-map-intro}
 Niniejsza sekcja pe\l{}ni rol\k{e} \textbf{indeksu logicznego} teorii.
@@ -211,16 +235,30 @@ Metryka z~substratu: $g_{tt} = -c_0^2/\psi$, jedyno\'s\'c
     \texttt{ex206}: 26/26~PASS
   & tw.~\ref{thm:metric-from-substrate-full} \\[3pt]
 
-Zunifikowana akcja $S_{\rm TGP}$; $\sqrt{-g} = c_0\psi$
+Zunifikowana akcja $S_{\rm TGP}$ v1.x; $\sqrt{-g} = c_0\psi$
   & \statuslabel{Propozycja}
   & metryka $\to$ $\det g = -c_0^2\psi^2$
   & hip.~\ref{hyp:unified-action} \\[3pt]
 
-$\kappa = 3/(4\Phi_0) \approx 0{,}030$ (sprz\k{e}\.zenie
-materia--pole)
+Zunifikowana akcja $S_{\rm TGP}$ v2.0 (G.0); $\sqrt{-g} = c_0\psi/(4{-}3\psi)$,
+$V_{M911} = -\gamma\psi^2(4{-}3\psi)^2/12$
+  & \statuslabel{Twierdzenie [G.0]}
+  & M9.1'' + Phase 1+2+3 PASS 4/4 ka\.zda; $\Phi$-EOM = R3 ODE EXACT
+  & stw.~\ref{prop:V-M911-canonical}, stw.~\ref{prop:psi-EOM-R3} \\[3pt]
+
+$\kappa = 3/(4\Phi_{\rm eff}) = 7/(2\Phi_0^{\rm bare}) \approx 0{,}030$
+(sprz\k{e}\.zenie materia--pole; INVARIANT w~v2.0 po re-fit $\Phi_0$;
+EXACT pod $Z_\Phi = 14/3$, op-uv3)
   & \statuslabel{Twierdzenie}
   & $\delta S/\delta\Phi = 0$ w~granicy FRW
-  & stw.~\ref{prop:kappa-corrected} \\[3pt]
+  & stw.~\ref{prop:kappa-corrected}, stw.~\ref{prop:kappa-corrected-G0} \\[3pt]
+
+$Z_\Phi \equiv \Phi_0^{\rm bare}/\Phi_{\rm eff} = V(1)/P(1) = 14/3 \approx 4{,}667$
+(wave-function renormalization UV$\to$IR, substrate dielectric screening)
+  & \statuslabel{Twierdzenie [UV.3]}
+  & $P(1) = \gamma/56$, $V(1) = \gamma/12$ (sympy EXACT z sek00 eq.~\eqref{eq:P-action-summary});
+    cross-channel cosmo/gauge drift 0{,}88\%; predykcja $\Omega_\Lambda \cdot \alpha_s = 3 g_0^e/32$
+  & \texttt{research/op-uv3-phi0-renormalization/} (16/16 PASS) \\[3pt]
 
 Brak ghost\'ow w~sektorze solitonowym
   & \statuslabel{Twierdzenie}

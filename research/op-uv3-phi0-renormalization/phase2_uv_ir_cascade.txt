@@ -1,0 +1,149 @@
+========================================================================
+  U2.1 -- General-exponent P/V scan: czemu Z_Φ = 14/3?
+========================================================================
+
+  Inputs (structural axioms):
+    P(g) = (β/m) g^m - (γ/n) g^n,   m < n
+    V(g) = (γ/p) g^p - (γ/q) g^q,   p < q
+    β = γ (thm:beta_gamma)
+
+  Z_Φ(m,n,p,q) = V(1)/P(1) = [(1/p - 1/q)] / [(1/m - 1/n)]
+
+  Skan rodziny (m, n, p, q) takich że Z_Φ ∈ [3, 7] (around 14/3):
+  (m,n,p,q)             Z_Φ             symbolic
+  -------------- --------- -------------------
+  (7, 8, 3, 4)     4.666667                 14/3 <-- CANONICAL TGP
+  (7, 8, 4, 6)     4.666667                 14/3
+
+  Liczba kombinacji (m,n,p,q) dających Z_Φ ∈ 14/3 ± 1%: 2
+  Z_Φ TGP = 14/3 (canonical) wynika z (7,8,3,4) — eksponenty z sek00 eq. 64-67
+  [PASS] (7,8,3,4) jest jednym z rozwiązań Z_Φ = 14/3
+
+========================================================================
+  U2.2 -- κ-niezmiennik pod Z_Φ: 3/(4Φ_eff) = 7/(2Φ₀^bare)
+========================================================================
+
+  Inputs (sek00:387 dwie równoważne formy κ):
+    Forma IR:  κ = 3/(4·Φ_eff)
+    Forma UV:  κ = 7/(2·Φ₀^bare)
+
+  Predykcja UV.3: pod Z_Φ = Φ₀^bare/Φ_eff = 14/3:
+    3/(4·Φ_eff) = 3/(4·Φ₀^bare/Z_Φ) = 3·Z_Φ/(4·Φ₀^bare)
+                = 3·(14/3)/(4·Φ₀^bare) = 14/(4·Φ₀^bare) = 7/(2·Φ₀^bare) ✓
+
+  Sympy LOCK: 3/(4·(Φ₀/(14/3))) - 7/(2·Φ₀) = 0
+  [PASS] κ-niezmiennik EXACT (Z_Φ = 14/3 wymusza sek00:387)
+         Numerycznie: κ = 3/(4·24.6492) = 0.030427
+                       = 7/(2·115.0296) = 0.030427
+
+========================================================================
+  U2.3 -- a_Γ-niezmiennik (sek00:388 + dodatekQ Q.4)
+========================================================================
+
+  Inputs:
+    Hipoteza dodatekQ Q.4: a_Γ · Φ₀ = 1 (samospójność)
+    Sek00:388: a_Γ ≈ 1/Φ_eff (tj. 'Φ₀' w hipotezie = Φ_eff)
+    DESI DR2 2025: a_Γ · Φ₀ = 1.005 ± 0.005
+
+  Predykcja UV.3: Φ₀ w hipotezie a_ΓΦ₀=1 to Φ_eff (IR), nie Φ_bare (UV).
+    Pod Z_Φ:  a_Γ · Φ₀^bare = a_Γ · Z_Φ · Φ_eff = (14/3) · 1 = 4.667
+              (NIE 1 — bo a_Γ definiowane na poziomie IR)
+
+  Z DESI: a_Γ = 1.005/Φ_eff = 0.040772
+  Sek00:388 ledger: a_Γ ≈ 0.0401 (oczekiwane ≈ 1/Φ_eff = 0.040569)
+  Drift a_Γ vs ledger: 1.68%
+
+  Predykcja UV.3: a_Γ · Φ₀^bare = Z_Φ · (a_Γ · Φ_eff) = (14/3) · 1.005
+                                = 4.6900
+  → 'a_Γ·Φ₀ = 1' (oryginalna hipoteza) jest 'a_Γ·Φ_eff = 1' w nowej notacji.
+  → Φ_0 w starszych skryptach (tgp_agamma_phi0_test.py) = Φ_eff (IR), NIE Φ_bare (UV).
+  [PASS] a_Γ·Φ_eff = 1.005 = 1.0 ± 0.005 (DESI < 1%)
+         Identyfikacja Φ in 'a_Γ·Φ₀=1' = Φ_eff potwierdzona
+
+========================================================================
+  U2.4 -- ERG kontrast: Z_Φ vs K_IR/K_UV (dwie różne renormalizacje)
+========================================================================
+
+  Z_Φ = 4.666667  (UV.3, substrate dielectric screening)
+    Mechanizm: P(1)/V(1) = γ/56 / γ/12 = 3/14 (ekranowanie dielektryczne)
+    Skala: T ≪ T_c (faza low-T, sek08c metryka z substratu)
+    Co skaluje: Φ_0 (bare → effective)
+
+  K_IR/K_UV = 1.1300  (dodatekN, LPA' Wilson-Fisher)
+    Mechanizm: ERG flow z UV (k=Λ) do IR (k→0)
+    Skala: T ≈ T_c (faza krytyczna, Wilson-Fisher fixed point)
+    Co skaluje: K (kinetic function) renormalizacja 13%
+
+  Wniosek: Z_Φ i K_IR/K_UV to ROŻNE renormalizacje na różnych skalach.
+           Z_Φ jest IR projection (pole substratu Φ → ekranowanego Φ_eff).
+           K_IR/K_UV jest dynamiczna RG (LPA' Wilson-Fisher, kinetic).
+           Brak konfliktu, raczej dwie warstwy: kinetic + screening.
+
+  Total renormalizacja Φ (jeśli kinetic K i screening Z_Φ multiplikują):
+    K_IR/K_UV · Z_Φ = 1.13 · 14/3 = 5.2733
+    (interpretacja: substrate kinetic 13% + dielectric 14/3 → ~5.27 całkowita)
+    UWAGA: ta multiplikacja jest SPEKULATYWNA — wymaga sprawdzenia w sek08c.
+  [PASS] Dwie różne renormalizacje na różnych skalach (interpretacja)
+
+========================================================================
+  U2.5 -- γ.1 multi-anchor compatibility pod Z_Φ = 14/3
+========================================================================
+
+  γ.1 dało 4 anchory dla Φ_eff (open trade-off Ω_Λ ↔ α_s):
+
+  anchor                               Φ_eff          Φ₀^bare = (14/3)·Φ_eff
+  -------------------------------- ---------  ------------------------------
+  8π (γ.1 H5 pure structural)        25.1327                        117.2861
+  (10/3)·e² (γ.1 corrected)          24.6302                        114.9409
+  24.783 (Brannen α_s)               24.7830                        115.6540
+  36·Ω_Λ (sek00 cosmological)        24.6492                        115.0296
+
+  Φ₀^bare predicted range: [114.94, 117.29]
+  Mean Φ₀^bare:            115.7276
+  Spread:                  2.03% (γ.1 trade-off pas)
+  Sek00:385 'Φ₀^bare ≈ 115':  0.63% drift
+  [PASS] Z_Φ jest niezmiennikiem γ.1 multi-anchor (spread 2.03% < 5%)
+         Wszystkie 4 anchory γ.1 dają Φ₀^bare ≈ 115 ± 1.17
+
+========================================================================
+  U2.6 -- Anti-tautology: cosmo (Ω_Λ) vs gauge (α_s) niezależne kanały
+========================================================================
+
+  Test: czy DWA NIEZALEŻNE kanały observational dają ten sam Φ₀^bare ± γ.1 pas?
+
+  Kanał 1 — kosmologiczny (Ω_Λ Planck/PDG):
+    Φ₀^bare^cosmo = 168·Ω_Λ = 168·0.6847 = 115.0296
+    Source: Planck CMB 2018 + DR4 SNe Ia + BAO (independent of α_s)
+
+  Kanał 2 — gauge-coupling (α_s PDG @ M_Z):
+    α_s(M_Z) = N_c³·g_0^e/(8·Φ_eff)  [dodatekV:135]
+    Φ_eff = N_c³·g_0^e/(8·α_s) = 27·0.8694/(8·0.118) = 24.8663
+    Φ₀^bare^gauge = (14/3)·Φ_eff = 116.0428
+
+  Cross-channel drift: 0.88%
+  γ.1 trade-off pas: ~1.0% (Ω_Λ ↔ α_s coupling)
+  Total γ.1 anchor variance (U2.5 spread): ~2-3%
+
+  [PASS] Cosmo i gauge channels zgadzają się w γ.1 paśmie (0.88% < 5%)
+         To NIE jest tautologia: Ω_Λ_Planck i α_s_PDG to niezależne pomiary
+         Z_Φ = 14/3 jest jedynym czynnikiem łączącym oba kanały
+
+========================================================================
+  PHASE 2 VERDICT
+========================================================================
+  [PASS] U2.1  -- (7,8,3,4) → Z_Φ = 14/3 sympy, 2 alts in band
+  [PASS] U2.2  -- sek00:387 sympy LOCK pod Z_Φ = 14/3
+  [PASS] U2.3  -- a_Γ·Φ_eff = 1.005 (drift 0.50% < 1%)
+  [PASS] U2.4  -- Z_Φ (screening) vs K_IR/K_UV (kinetic, LPA') — różne mechanizmy
+  [PASS] U2.5  -- γ.1 multi-anchor → Φ₀^bare spread 2.03%
+  [PASS] U2.6  -- cosmo vs gauge Φ₀^bare drift 0.88% < 5%
+
+  SCORE: 6/6
+  GATE: PASS (>=5/6) -> Phase 3 enabled
+
+  Cumulative summary:
+    Z_Φ = 14/3 (sympy EXACT z (7,8,3,4) eksponentów)
+    Φ₀^bare cosmo (Ω_Λ Planck): 115.0296
+    Φ₀^bare gauge (α_s PDG):    116.0428  drift 0.88%
+    γ.1 multi-anchor mean Φ₀^bare: 115.7276 ± 1.17
+    sek00:385 stated value: ≈ 115

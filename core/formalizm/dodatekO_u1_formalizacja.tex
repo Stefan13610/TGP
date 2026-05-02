@@ -361,27 +361,31 @@ podwójne użycie relacji. Wzór~\eqref{eq:alpha_formal} jest
 \textbf{poprawny} jako wynikający bezpośrednio z~\eqref{eq:mu0-substrate}.
 \end{uwaga}
 
-\subsubsection*{O.4.3 Relacja do hipotezy $a_\Gamma \cdot \Phi_0 = 1$}
+\subsubsection*{O.4.3 Relacja do hipotezy $a_\Gamma \cdot \Phi_{\rm eff} = 1$}
 
-Identyfikując $v^2 = \langle\phi^2\rangle = \Phi_0$ (tło próżni, sek10)
-oraz $a_\mathrm{sub} = a_\Gamma$ z~hipotezą samospójności $a_\Gamma\Phi_0 = 1$:
+Identyfikując $v^2 = \langle\phi^2\rangle = \Phi_{\rm eff}$
+(t\l{}o pr\'o\.zni IR-side, sek10; op-uv3 closure 2026-05-02
+explicit potwierdza identyfikacj\k{e} $\Phi_{\rm eff}$, NIE
+$\Phi_0^{\rm bare} = 168\,\Omega_\Lambda \approx 115$)
+oraz $a_\mathrm{sub} = a_\Gamma$ z~hipotezą samospójności
+$a_\Gamma\Phi_{\rm eff} = 1$ (dodQ Q.4 prop.~\ref{prop:agamma_phi0}):
 \begin{equation}
-  a_\mathrm{sub} = a_\Gamma = \frac{1}{\Phi_0}
+  a_\mathrm{sub} = a_\Gamma = \frac{1}{\Phi_{\rm eff}}
   \quad\Longrightarrow\quad
-  a_\mathrm{sub}^2 = \frac{1}{\Phi_0^2}.
+  a_\mathrm{sub}^2 = \frac{1}{\Phi_{\rm eff}^2}.
   \label{eq:asub_from_phi0}
 \end{equation}
 
 Podstawiając do~\eqref{eq:alpha_formal}:
 \begin{equation}
   \alpha_\mathrm{em}^\mathrm{(sub)}
-  = \frac{1}{8\pi J \cdot \Phi_0 \cdot \Phi_0^{-2}}
-  = \frac{\Phi_0}{8\pi J},
+  = \frac{1}{8\pi J \cdot \Phi_{\rm eff} \cdot \Phi_{\rm eff}^{-2}}
+  = \frac{\Phi_{\rm eff}}{8\pi J},
   \label{eq:alpha_UV}
 \end{equation}
 gdzie stała sprzężenia substratowego $J$ jest \emph{jedynym} wolnym
 parametrem sektora elektromagnetycznego (przy ustalonej hipotezie
-$a_\Gamma\Phi_0 = 1$ i~$v^2 = \Phi_0$).
+$a_\Gamma\Phi_{\rm eff} = 1$ i~$v^2 = \Phi_{\rm eff}$).
 
 \begin{propozycja}[$J_\mathrm{sub}$ z warunku $\alpha_\mathrm{em}^\mathrm{(sub)}$]
 \label{prop:J_from_alpha}
@@ -390,7 +394,7 @@ Wymagając, by $\alpha_\mathrm{em}^\mathrm{(sub)} = \alpha_\mathrm{em}(\ell_P)$
 w~sek09: $\alpha_\mathrm{em}(\ell_P) \approx 1/94.09$):
 \begin{equation}
   J_\mathrm{sub}
-  = \frac{\Phi_0 \cdot 94.09}{8\pi}
+  = \frac{\Phi_{\rm eff} \cdot 94.09}{8\pi}
   = \frac{24.66 \times 94.09}{8\pi}
   \approx 92.5.
   \label{eq:J_from_alpha}
@@ -424,15 +428,18 @@ nie koniecznością --- stanowi dodatkowy program badań.
 
 \begin{propozycja}[Relacja między $\alpha_\mathrm{em}$ i $\kappa$]
 \label{prop:alpha_kappa}
-Stała unifikacji TGP $\kappa = 3/(4\Phi_0)$ (sek08) i~stała
-elektromagnetyczna są powiązane przez:
+% G.0 closure (2026-05-02): kappa = 3/(4*Phi_eff) INVARIANT po re-fit
+% Phi_eff (sek08a v2.0, prop:kappa-corrected-G0). Relacja ponizej zachowana.
+% Op-uv3 closure (2026-05-02): symbol Phi_0 w starszych rownaniach = Phi_eff (IR).
+Stała unifikacji TGP $\kappa = 3/(4\Phi_{\rm eff}) = 7/(2\Phi_0^{\rm bare})$
+(sek08, EXACT pod $Z_\Phi = 14/3$) i~stała elektromagnetyczna są powiązane przez:
 \begin{equation}
   \frac{\alpha_\mathrm{em}^\mathrm{(sub)}}{\kappa}
-  = \frac{\Phi_0/(8\pi J)}{3/(4\Phi_0)}
-  = \frac{\Phi_0^2}{6\pi J}.
+  = \frac{\Phi_{\rm eff}/(8\pi J)}{3/(4\Phi_{\rm eff})}
+  = \frac{\Phi_{\rm eff}^2}{6\pi J}.
   \label{eq:alpha_kappa_ratio}
 \end{equation}
-Dla $\Phi_0 = 24.66$, $J = J_\mathrm{phase}$:
+Dla $\Phi_{\rm eff} = 24.66$, $J = J_\mathrm{phase}$:
 \begin{equation}
   \frac{\alpha_\mathrm{em}^\mathrm{(sub)}}{\kappa}
   = \frac{24.66^2}{6\pi J_\mathrm{phase}}
@@ -509,7 +516,7 @@ O-3 & Prop.~\ref{prop:alpha-em} & Prop.~\ref{prop:alpha_em_formal}, eq.~\eqref{e
 \begin{itemize}
   \item $J_\mathrm{amp} \neq J_\mathrm{phase}$: czy przepływ ERG rozdziela oba sprzężenia?
         (program badań w~ramach LPA', dodatek N).
-  \item $\alpha_\mathrm{em}$ z~parametrów $(J, \Phi_0)$ numerycznie:
+  \item $\alpha_\mathrm{em}$ z~parametrów $(J, \Phi_{\rm eff})$ numerycznie:
         weryfikacja eq.~\eqref{eq:alpha_UV} skryptem \texttt{tgp\_agamma\_phi0\_test.py}.
   \item Formalne twierdzenie Goldstone'a dla sieci skończonej → granica $N\to\infty$.
 \end{itemize}

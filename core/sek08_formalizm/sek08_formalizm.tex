@@ -1,6 +1,37 @@
 % ============================================================
 % §8  Formalizm matematyczny — wyprowadzenia
 % ============================================================
+%
+% =====================================================================
+% G.0 CLOSURE 2026-05-02 (Phase 4 implementation)
+% =====================================================================
+% Ten plik zawiera obszerne historyczne derivacje z V_orig(psi) =
+% (beta/3)psi^3 - (gamma/4)psi^4 oraz sqrt(-g) = c0*psi (forma I, M9.1).
+% Po G.0 closure (research/op-g0-r3-from-canonical-projection/), kanoniczna
+% forma sek08a v2.0 to:
+%   V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12
+%   sqrt(-g) = c0*psi/(4-3*psi) (M9.1'' canonical)
+%   Phi-EOM (statyczna) = R3 ODE EXACT
+%   q*c^2/Phi_0 = (4/5)*pi*G_0 (Newton-limit, P32)
+%   m_sp^2 = +gamma (vacuum stability, FIX bug v1.x)
+%
+% Wartosc kappa = 3/(4*Phi_0) jest INVARIANT po re-fit Phi_0 (Phase 3 P32
+% sympy LOCK), wiec wszystkie cross-references kappa = 3/(4*Phi_0) w tym
+% pliku pozostaja STRUKTURALNIE POPRAWNE. Wszystkie observables (Newton G_0,
+% PPN gamma=beta=1, BBN, LLR, CMB, mass spectrum lepton z PDG <0.01%)
+% IDENTYCZNE w v1.x i v2.0 po re-fit.
+%
+% Historyczne derivacje ponizej z V_orig + sqrt(-g)=c0*psi sa zachowane
+% jako "v1.x kontekst i sledzenie historii". Kanoniczna G.0-closed
+% formulacja: sek08a v2.0 (sssec:g0-closure-v2 ADDENDUM) +
+% prop:V-M911-canonical, prop:psi-EOM-R3, prop:vacuum-stability-G0,
+% prop:kappa-corrected-G0, eq:newton-limit-G0.
+%
+% Patrz:
+%   research/op-g0-r3-from-canonical-projection/README.md
+%   research/op-g0-r3-from-canonical-projection/sek08a_v2_specification.md
+%   core/sek08a_akcja_zunifikowana.tex (sssec:g0-closure-v2)
+% =====================================================================
 \section{Formalizm matematyczny}\label{sec:formalizm}
 
 Niniejsza sekcja zamyka g\l{}\'owne luki formalne teorii:
@@ -411,12 +442,15 @@ Relacja & $g_0^{(A)} = \exp\!\bigl((g_0^{(B)} - 1)/4\bigr)$ &
 \midrule
 R\'ownanie pola & $\alpha = 2$ (kanoniczne TGP) & to\.zsame \\
 Wyk\l{}adniki & $a = b = \tfrac12$, $g = 1$ & to\.zsame \\
-$\Phi_0$ & $\mathbf{24{,}65}$ (bare, z~$\Lambda_{\rm obs}$) & to\.zsame \\
-$\Phi_{\rm eff}$ & $\Phi_0\,(1+\delta)$ z~p\k{e}tl\k{a} 1-loop
+$\Phi_{\rm eff}$ & $\mathbf{24{,}65}$ (IR, z~$\Lambda_{\rm obs}$;
+  UV anchor: $\Phi_0^{\rm bare} = 168\,\Omega_\Lambda \approx 115$,
+  $Z_\Phi = 14/3$, op-uv3 closure 2026-05-02) & to\.zsame \\
+$\Phi_0\,(1+\delta)$ & p\k{e}tla 1-loop wok\'o\l{} $\Phi_{\rm eff}$
   & to\.zsame (nie u\.zywane numerycznie) \\
 \midrule
 Element obj\k{e}to\'sci & $\sqrt{-g} = c_0\psi$
-  & to\.zsame (poprawione v47, by\l{}o $\psi^4$) \\
+  & to\.zsame (poprawione v47, by\l{}o $\psi^4$;
+    G.0 v2.0: $c_0\psi/(4{-}3\psi)$ M9.1'') \\
 Metryka & $f = \Phi_0/\Phi$, $h = \Phi/\Phi_0$
   & to\.zsame \\
 \bottomrule
@@ -4087,12 +4121,18 @@ kosmologiczn\k{a}.
 
 \begin{proposition}[R\'ownanie kosmologiczne z~dzia\l{}ania TGP]%
 \label{prop:FRW-derivation}
+% G.0 closure (2026-05-02): kanoniczna forma sqrt(-g) = c0*psi/(4-3*psi)
+% (M9.1''), patrz sek08a v2.0 (sssec:g0-closure-v2). Forma c0*psi (ponizej)
+% jest historyczna v1.x. Predykcje observable IDENTYCZNE po re-fit Phi_0.
 W~przestrzeni FRW ze~skalowaniem $a(t)$, dla jednorodnego pola
 $\Phi(t)$ ($\nabla\Phi = 0$), r\'ownanie ruchu wynikaj\k{a}ce
 z~dzia\l{}ania~\eqref{eq:action} z~elementem obj\k{e}to\'sciowym
 $\sqrt{-g_{\mathrm{eff}}} = a^3\,c_0\,\psi$ (gdzie $\psi = \Phi/\PhiZero$)%
 \footnote{Poprawiono z~wcze\'sniejszego $a^3\psi^4$;
-  zob.\ prop.~\ref{prop:kappa-corrected}.}
+  zob.\ prop.~\ref{prop:kappa-corrected}.
+  G.0 closure 2026-05-02: forma kanoniczna M9.1''
+  to $\sqrt{-g} = c_0\psi/(4-3\psi)$,
+  prop.~\ref{prop:V-M911-canonical}.}
 i~p\l{}askim cz\l{}onem kinetycznym $\frac{1}{\kappa}(-\frac{1}{2}\dot\psi^2/c_0^2 - U)$
 ma posta\'c:
 \begin{equation}\label{eq:Phi-cosmo-exact}
