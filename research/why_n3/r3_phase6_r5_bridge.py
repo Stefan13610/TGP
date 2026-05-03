@@ -2,11 +2,22 @@
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 """
-r3_phase6_r5_bridge.py
-========================
+r3_phase6_r5_bridge.py  [DEPRECATED 2026-05-01]
+================================================
 
-PURPOSE
--------
+⚠️ DEPRECATED: ten skrypt został wycofany jako external conceptual import.
+"R⁵-bridge" było moim założeniem wzietym z 5D Kaluza-Klein theory, NIE
+naturalnym rozszerzeniem TGP. "R5" w TGP (r3_atail_bridge.py) to wewnętrzny
+alias dla mass formula sector, NIE 5-wymiarowa przestrzeń.
+
+ZAMIENNIK: r3_phase6_alpha_em_connection.py — bada hipotezę użytkownika
+że X = e²/4 ma związek ze stałą struktury subtelnej (α_HL = e²/(4π)).
+
+Ten skrypt zachowany jako historical record błędnej ścieżki.
+========================================================
+
+ORIGINAL PURPOSE
+----------------
 Q5 — Pierwsza próba derywacji X = e²/4 z R⁵-bridge structure.
 
 POINT OF DEPARTURE

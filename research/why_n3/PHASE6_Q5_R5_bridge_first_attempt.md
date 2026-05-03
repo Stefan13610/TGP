@@ -1,24 +1,49 @@
 ---
-title: "FAZA 6 / Q5: pierwsza próba R⁵-bridge derywacji X = e²/4"
+title: "FAZA 6 / Q5 (DEPRECATED): R⁵-bridge — wycofane jako external import"
 date: 2026-05-01
-type: phase-results
+type: phase-results-deprecated
 phase: 6
-status: PARTIAL — eksploracyjna pierwsza próba; e²/4 nadal empiryczne
+status: DEPRECATED — zastąpione przez PHASE6_alpha_em_connection.md
 parent: "[[tgp_emergent_dirac_propagator.md]]"
+deprecated_by: "[[PHASE6_alpha_em_connection.md]]"
 related:
   - "[[r3_phase6_r5_bridge.py]]"
   - "[[PHASE2_n_alpha_derivation.md]]"
+  - "[[PHASE6_alpha_em_connection.md]]"
 tags:
   - TGP
   - R3
   - Q5
   - R5-bridge
-  - e-squared-derivation
-  - HONEST-OPEN
-  - exploratory
+  - DEPRECATED
+  - external-import-error
 ---
 
-# FAZA 6 / Q5 — pierwsza próba R⁵-bridge
+# FAZA 6 / Q5 (DEPRECATED) — pierwsza próba R⁵-bridge
+
+> ## ⚠️ DEPRECATED 2026-05-01
+>
+> Ta faza została **wycofana** po feedback'u użytkownika. Hipoteza
+> "R⁵-bridge" była **zewnętrznym conceptual import** z 5D Kaluza-Klein
+> theory, **nieugruntowanym** w TGP-formalizmie:
+>
+> - "R5" w TGP (`r3_atail_bridge.py`) to **wewnętrzny alias** dla mass
+>   formula sector, **nie** 5-wymiarowa przestrzeń
+> - TGP_FOUNDATIONS §1 explicit: "jedno fundamentalne pole skalarne Φ z Z₂"
+>   (brak extra dimension)
+> - 5D Kaluza-Klein ma poważne problemy (kompaktyfikacja, higher modes,
+>   Lorentz invariance) których TGP nie adresuje
+>
+> **Aktualna wersja Fazy 6:** `PHASE6_alpha_em_connection.md` — bada
+> hipotezę użytkownika że X = e²/4 ma związek ze stałą struktury subtelnej
+> w naturalnych jednostkach (algebraiczne podobieństwo do α_HL = e²/(4π)).
+>
+> Ten dokument **zachowany jako historical record** błędnej ścieżki
+> eksploracji, NIE jako aktualne stanowisko.
+
+---
+
+# FAZA 6 / Q5 — pierwsza próba R⁵-bridge (HISTORICAL)
 
 > **Status:** **EKSPLORACYJNY**, niedomknięty. Pierwsza próba pokazała że
 > hipoteza R⁵-bridge JEST plausible ścieżką, ale `X = e²/4` **nie wynika

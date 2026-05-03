@@ -1,0 +1,180 @@
+==============================================================================
+  λ.1 L1.4 — Cross-test ζ.1 neutrino spectrum dla e²-trace
+==============================================================================
+
+  Neutrino masses (ζ.1):
+    m_1 = 0.8 meV
+    m_2 = 8.65 meV
+    m_3 = 50.11 meV
+    Σm_ν = 59.56 meV
+
+  Mass ratios:
+    m_2/m_1 = 10.812
+    m_3/m_1 = 62.637
+    m_3/m_2 = 5.793
+
+==============================================================================
+  SEKCJA 2: Hipoteza A — czy neutrino mają φ-drabinkę z e²/2?
+==============================================================================
+
+  Charged leptons:
+    g₀_e = 0.86941, g₀_μ = phi·g₀_e = 1.4067
+    m_μ/m_e = 206.77 z (A_μ/A_e)² · phi^(e²/2)
+
+  Hipoteza A: neutrina też mają g₀_ν z phi-drabinką:
+    g₀_ν1 = X, g₀_ν2 = phi·X, g₀_ν3 = phi²·X
+    m_ν2/m_ν1 = (A_ν2/A_ν1)² · phi^(e²/2)
+
+  Sprawdzamy: szukamy X takiego że g₀_ν2/g₀_ν1 = phi i mass ratio matche.
+
+  Reference: phi^(e²/2) = 5.9171
+  Charged: (A_μ/A_e)² · phi^(e²/2) = 34.94 · 5.917 = 206.7 ✓
+
+  Neutrino ratio m_ν2/m_ν1 = 10.812
+  Jeśli phi-drabinka działa, to (A_ν2/A_ν1)² · phi^(e²/2) = 10.812
+  Czyli (A_ν2/A_ν1)² = 10.812 / 5.9171 = 1.8273
+  A_ν2/A_ν1 = 1.3518
+
+  Neutrino ratio m_ν3/m_ν2 = 5.793
+  Jeśli phi-drabinka, to (A_ν3/A_ν2)² · phi^(e²/2) = 5.793
+  (A_ν3/A_ν2)² = 0.9790
+  A_ν3/A_ν2 = 0.9895
+
+  OBSERVATION:
+  Charged leptons (A_μ/A_e) ≈ 5.91 (g₀ phi-spaced 0.87→1.41)
+  Neutrino A_ν2/A_ν1 ≈ 1.352  (znacznie MNIEJSZE)
+
+  Neutrina mają DUŻO mniejszą amplitudę soliton'u niż charged leptons,
+  consistent z 'sub-solitons' interpretation (m_ν << m_e).
+
+==============================================================================
+  SEKCJA 3: Hipoteza B — R3 mass formula bezpośrednio dla neutrin
+==============================================================================
+
+  Załóżmy że neutrino g₀_ν są małe (sub-soliton, blisko vacuum g=1).
+  Test różne g₀_ν1, sprawdzić które daje correct mass ratios.
+
+     g₀_ν1 |    g₀_ν2 |    g₀_ν3 |    m_2/m_1 |    m_3/m_1
+    (test) |   phi·ν1 |  phi²·ν1 |        TGP |        TGP
+  Target:                                    10.812 |     62.637
+  ------------------------------------------------------------
+     0.950 |    1.537 |    2.487 | (failed)
+     0.920 |    1.489 |    2.409 | (failed)
+     0.900 |    1.456 |    2.356 | (failed)
+     0.870 |    1.408 |    2.278 | (failed)
+     0.850 |    1.375 |    2.225 | (failed)
+     0.800 |    1.294 |    2.094 | (failed)
+     0.750 |    1.214 |    1.964 | (failed)
+     0.500 |    0.809 |    1.309 |      2.086 |    111.519
+     0.300 |    0.485 |    0.785 |      5.365 |     13.033
+     0.200 |    0.324 |    0.524 |      5.821 |     30.045
+     0.100 |    0.162 |    0.262 |      5.913 |     34.765
+     0.050 |    0.081 |    0.131 |      5.917 |     35.000
+
+==============================================================================
+  SEKCJA 4: Hipoteza C — neutrino K=1/2 (Majorana) vs charged K=2/3
+==============================================================================
+
+  Charged leptons: K = (m_e+m_μ+m_τ)/(√m_e+√m_μ+√m_τ)² = 2/3
+  Neutrinos:       K_ν = ?
+
+  K_ν (z mas ζ.1) = 59.560 / 10.914² = 0.5000
+  Target K_ν = 1/2 = 0.5000
+  Diff = -0.003%
+
+  Koide angle θ:
+    Charged (K=2/3): θ = 45.00° = π/4 = 45°
+    Neutrino (K=1/2): θ = 35.26° = arccos(√(2/3))
+
+  Ratio θ_neutrino / θ_charged = 0.7837
+  Kandydaci:
+    0.7837 vs e/π = 0.8653
+    0.7837 vs 4/5 = 0.8000
+    0.7837 vs ln(2)·... (testing)
+
+==============================================================================
+  SEKCJA 5: Hipoteza D — n(α) dla neutrin: e²/2 czy inny wykładnik?
+==============================================================================
+
+  Numerical search dla g₀_ν1 takiego że phi-drabinka + n(2)=e²/2 daje correct ratios:
+
+  g₀_ν1 = 0.500: m_2/m_1 = 2.086 vs target 10.812, diff -80.706%
+  g₀_ν1 = 0.550: m_2/m_1 = 0.922 vs target 10.812, diff -91.469%
+  g₀_ν1 = 0.600: m_2/m_1 = 0.088 vs target 10.812, diff -99.188%
+  g₀_ν1 = 0.650: m_2/m_1 = 0.383 vs target 10.812, diff -96.458%
+  g₀_ν1 = 0.700: m_2/m_1 = 3.619 vs target 10.812, diff -66.532%
+  g₀_ν1 = 0.750: m_2/m_1 = 14.175 vs target 10.812, diff +31.097%
+  g₀_ν1 = 0.800: m_2/m_1 = 43.939 vs target 10.812, diff +306.372%
+
+  Brak istotnego matchu dla phi-drabinka + n(2)=e²/2 z neutrino ratios.
+  Sugeruje: neutrino mass formula jest INNA niż charged.
+
+==============================================================================
+  SEKCJA 6: Hipoteza E — neutrina mają INNĄ strukturę
+==============================================================================
+
+  Z ζ.1 wiadomo:
+    K_ν = 1/2 (Majorana, NIE 2/3 jak charged)
+    Σm_ν = 59.6 meV (input z Δm² + K=1/2)
+
+  Wniosek L1.4:
+    Neutrina pochodzą z **innego mechanizmu** niż charged leptons.
+    Koide K=1/2 vs K=2/3 to fundamentalna różnica strukturalna.
+    Mass ratios neutrin (10.81, 62.64, 5.79) NIE matche R3 charged formula.
+
+  IMPLIKACJE dla λ.1:
+    - e² może NIE być uniwersalna dla wszystkich amplitude solitons
+    - Charged leptons (K=2/3) używają e²/2; neutrina (K=1/2) używają
+      INNEGO wykładnika (do zbadania)
+    - To NIE jest klasyczne PASS dla L1.4 (cross-test pozytywny dla e²)
+    - Ale NIE jest też FAIL — neutrina są inną klasą
+
+==============================================================================
+  SEKCJA 7: Quick test — jakie n_ν dawałoby correct ratios?
+==============================================================================
+
+  Test g₀_ν1 = 0.5:
+    (A_2/A_1)² = 0.3526
+    (A_3/A_1)² = 3.1851
+    n_ν z m_2/m_1 = 7.1138
+    n_ν z m_3/m_1 = 6.1903
+
+  e²/2 = 3.6945 (charged leptons)
+  Inne kandydaci dla n_ν:
+    e/2 = 1.3591
+    e²/4 = 1.8473
+    e   = 2.7183
+
+==============================================================================
+  SEKCJA 8: PASS / FAIL judgment dla L1.4
+==============================================================================
+
+
+  Wyniki L1.4:
+
+  1. Neutrina mają RÓŻNĄ Koide constant K_ν=1/2 (vs K_lep=2/3).
+     To fundamentalna różnica strukturalna.
+
+  2. Neutrino mass ratios (10.81, 62.64, 5.79) NIE matche R3 charged
+     formula z phi-drabinką + n(2)=e²/2.
+
+  3. Hipoteza λ.1 że "e² jest uniwersalna w amplitude sector" wymaga
+     refinement: może e² jest related TYLKO do Koide K=2/3 sektora,
+     a neutrina (K=1/2) używają innej stałej.
+
+  PASS criterion (L1.4):
+    "Neutrino mass ratios match z e²-mechanism do <5%"
+
+  Status: **NEGATIVE** dla simple e²-application.
+
+  ALE: nie automatic FAIL — neutrina pochodzą z innego mechanizmu
+  (Majorana, K=1/2), więc UNCONNECTED do hipotezy λ.1 jest możliwe.
+
+  Recommendation: count L1.4 jako **0 PASS** (neutrino sector odrzucony
+  jako cross-test dla e², ale to nie wyklucza e² w charged lepton sector).
+
+  IMPLIKACJA dla λ.1:
+    - λ.1 musi się ograniczyć do charged amplitude sector (K=2/3)
+    - Neutrino sector (K=1/2) wymaga osobnego analizowania
+    - X = e²/4 może być fundamental TYLKO dla "K=2/3 klasy" cząstek
+

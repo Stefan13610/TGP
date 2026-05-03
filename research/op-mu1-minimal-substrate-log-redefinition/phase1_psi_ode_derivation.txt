@@ -1,0 +1,67 @@
+==============================================================================
+  μ.1 P1.1 — Sympy derivation ψ-ODE z g-ODE
+==============================================================================
+
+Oznaczenia:
+  g(r)  = exp(ψ(r))
+  g'(r) = exp(psi(r))*Derivative(psi(r), r)
+  g''(r) = (Derivative(psi(r), r)**2 + Derivative(psi(r), (r, 2)))*exp(psi(r))
+
+g-ODE LHS (substituted g = exp(ψ), g^(2-2α) → exp((2-2α)ψ)):
+  (-r*(1 - exp(psi(r))) + r*(alpha*Derivative(psi(r), r)**2 + Derivative(psi(r), r)**2 + Derivative(psi(r), (r, 2)))*exp((2*alpha - 1)*psi(r)) + 2*exp((2*alpha - 1)*psi(r))*Derivative(psi(r), r))*exp(-2*(alpha - 1)*psi(r))/r
+
+ψ-ODE LHS (after dividing by exp(ψ)):
+  alpha*Derivative(psi(r), r)**2 - exp((1 - 2*alpha)*psi(r)) + exp(-2*alpha*psi(r) + 2*psi(r)) + Derivative(psi(r), r)**2 + Derivative(psi(r), (r, 2)) + 2*Derivative(psi(r), r)/r
+
+Expected ψ-ODE LHS:
+  alpha*Derivative(psi(r), r)**2 - exp((1 - 2*alpha)*psi(r)) + exp(-2*alpha*psi(r) + 2*psi(r)) + Derivative(psi(r), r)**2 + Derivative(psi(r), (r, 2)) + 2*Derivative(psi(r), r)/r
+
+Difference (should be 0): 0
+
+  ✓ DERIVATION CONFIRMED: ψ-ODE is
+
+    ψ'' + (1+α)(ψ')² + (2/r)ψ' = (1 - e^ψ)·e^((1-2α)ψ)
+
+==============================================================================
+  α=2 specific analysis
+==============================================================================
+
+RHS dla α=2: -exp(-2*psi) + exp(-3*psi)
+           = e^(-3ψ) - e^(-2ψ)
+
+RHS w ψ=0: 0  (oczekiwane 0 — vacuum fixed point)
+
+Linearyzacja wokół ψ=0: RHS ≈ -psi
+  (ψ ≈ 0, RHS ≈ -ψ — restoring force, vacuum stabilny)
+
+Asymptotyka dla α=2:
+  ψ → +∞ (g → ∞):  RHS = e^(-3ψ) - e^(-2ψ) → 0⁻ (oba człony → 0)
+  ψ → -∞ (g → 0):  RHS = e^(-3ψ) - e^(-2ψ) → +∞ (singular)
+
+UWAGA: ψ → -∞ odpowiada g → 0 (zerowanie metryki).
+Fizyczne soliton solutions z g₀=1.77 → ψ₀=0.57 → ψ ∈ [0, ψ₀] — bezpieczne.
+
+==============================================================================
+  α=1 special case (Bridge theorem)
+==============================================================================
+
+RHS dla α=1: -1 + exp(-psi)
+           = e^(-ψ) - 1
+
+Linearyzacja: psi*(psi - 2)/2
+
+OBSERWACJA: dla α=1 RHS = e^(-ψ) - 1, czysta exp-funkcja (BEZ r-zależności!)
+            ma najprostszą exp-strukturę z całej rodziny α — możliwe że
+            ODE jest integrable. To zgodne z bridge theorem (α=1 critical).
+
+==============================================================================
+  P1.1 verdict
+==============================================================================
+
+  ψ-ODE derivation: ✓ PASS (sympy potwierdza algebrę)
+  α=2 RHS analysis:  vacuum stabilny, soliton range ψ≥0 bezpieczny
+  α=1 special case: czysta exp-struktura, possibly integrable
+
+  → przechodzimy do P1.2 (numerical soliton)
+
+==============================================================================

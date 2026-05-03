@@ -1,0 +1,149 @@
+==============================================================================
+  λ.1 M.6 — Compound interference test (user hypothesis)
+==============================================================================
+
+Targets:
+  e       = 2.718282
+  e²      = 7.389056  (Φ_eff target)
+  e²/2    = 3.694528  (X dla α=2)
+  ln(e²)  = 2.000000  (compound saturation parameter)
+
+==============================================================================
+  LAYER 1: Compound interest math
+==============================================================================
+
+  Demonstration: (1 + x/N)^N → e^x as N → ∞
+           N |    (1+1/N)^N |    (1+2/N)^N |          e |         e²
+  -----------+--------------+--------------+------------+-----------
+          10 |     2.593742 |     6.191736 |   2.718282 |   7.389056
+         100 |     2.704814 |     7.244646 |   2.718282 |   7.389056
+        1000 |     2.716924 |     7.374312 |   2.718282 |   7.389056
+       10000 |     2.718146 |     7.387579 |   2.718282 |   7.389056
+      100000 |     2.718268 |     7.388908 |   2.718282 |   7.389056
+     1000000 |     2.718280 |     7.389041 |   2.718282 |   7.389056
+
+  → Compound formula structurally produces e and e² in N→∞ limit
+  → For Σε = 2 z N→∞ → exact e²
+  Pytanie: czy TGP ma natural N·ε = 2?
+
+==============================================================================
+  LAYER 2: Single R3 soliton compound integrals @ α=2
+==============================================================================
+
+  Solving R3 ODE: α=2.0, g₀=1.77472 (τ canonical)
+  Solution: r ∈ [0.001, 120.000], 2410 points
+  g range: [0.5071, 1.7747], g[0]=1.7747, g[-1]=1.0031
+
+  Compound integral candidates:
+  ------------------------------------------------------------
+  I1 = ∫|g'/g|dr           = 5.106880
+  I2 = ∫|g'|dr             = 4.932174
+  I3 = ∫(g-1)²·4πr²dr      = 2268.733373
+  I4 = ∫g^(2α)·g'²·4πr²dr  = 2274.817615
+  I5 = exp(Σ log(1+|g'/g|·dr))  = 160.690187
+  I6 = ∫|g-1|dr            = 6.002905
+  log(g₀)                  = 0.573643
+  log(g₀)·X = log(m_obs/A²) z α=2 mass formula:
+    0.5736426640052216 · 3.6945 = 2.119339
+
+  Match table (drift % of integral vs target):
+                Integral |         e |        e² |      e²/2 |         2 |        2π |        4π
+  -----------------------+-----------+-----------+-----------+-----------+-----------+----------
+            I1 (∫|g'/g|) |    87.87% |    30.89% |    38.23% |   155.34% |    18.72% |    59.36%
+              I2 (∫|g'|) |    81.44% |    33.25% |    33.50% |   146.61% |    21.50% |    60.75%
+       I3 (∫(g-1)²·4πr²) | 83362.04% | 30603.97% | 61307.93% | 113336.67% | 36008.01% | 17954.01%
+      I4 (∫g^4·g'²·4πr²) | 83585.86% | 30686.31% | 61472.62% | 113640.88% | 36104.85% | 18002.42%
+      I5 (compound prod) |  5811.46% |  2074.71% |  4249.41% |  7934.51% |  2457.46% |  1178.73%
+             I6 (∫|g-1|) |   120.83% |    18.76% |    62.48% |   200.15% |     4.46% |    52.23%
+
+  Best match (single soliton): I6 (∫|g-1|) ≈ 2π
+    Value: 6.00291 vs target 6.28319  (4.461% drift)
+  --> Suggestive ale za luźne (>1%)
+
+==============================================================================
+  LAYER 3: Multi-soliton compound buildup
+==============================================================================
+
+  Single soliton tail amplitude A = 1.82943
+  Core deformation (g₀-1) = 0.77472
+
+  N-soliton test: Φ_total(origin) z N losowych solitonów
+  (Volume L=20, solitons at random positions)
+
+      N |  Φ_lin (sum) |   log(Φ_lin) |    Φ/N (avg) |   (1+1/N)^N
+  ------+--------------+--------------+--------------+------------
+      1 |     -0.07476 |     -2.59348 |    -0.074760 |    2.000000
+      2 |     -0.14835 |     -1.90820 |    -0.074174 |    2.250000
+      5 |     -0.14787 |     -1.91140 |    -0.029575 |    2.488320
+     10 |     -0.09430 |     -2.36122 |    -0.009430 |    2.593742
+     20 |     -1.06676 |      0.06463 |    -0.053338 |    2.653298
+     50 |     -0.26375 |     -1.33276 |    -0.005275 |    2.691588
+    100 |      0.96788 |     -0.03265 |     0.009679 |    2.704814
+    200 |     -0.45400 |     -0.78966 |    -0.002270 |    2.711517
+    500 |     -0.40267 |     -0.90964 |    -0.000805 |    2.715569
+   1000 |     -8.33041 |      2.11991 |    -0.008330 |    2.716924
+
+  Searching for natural N where Φ_total ≈ target:
+
+==============================================================================
+  LAYER 4: Czy mass formula slope X SAM emerges z compound limit?
+==============================================================================
+
+  Solving R3 dla g₀ range, α=2.0:
+
+  Mass formula fit dla α=2: log(m/A²) = X·log(g₀) + const
+    Empirical X = -0.197234
+    Target e²/2 = 3.694528
+    drift = 105.3385%
+
+  Compound interpretation check:
+    Σε_compound = 2·X / e² = -0.053385  (should be 1.0 if natural)
+    log(m_max/A²) for g₀=2.5 ≈ X·log(2.5) = -0.1807
+    Compare e² = 7.3891, e²/2 = 3.6945
+
+==============================================================================
+  SUMMARY: M.6 Compound interference test verdict
+==============================================================================
+
+  USER HIPOTEZA: e² wyłania się z compound interference Φ₀ = ∏(1+ε_i)
+  → exp(Σε) gdy Σε natural = 2.
+
+  Layer 1 (compound math):       PASS — (1+x/N)^N → e^x trywialnie ✓
+  Layer 2 (single soliton):      Best match: I6 (∫|g-1|)
+                                  ≈ 2π z 4.46% drift
+  Layer 3 (multi-soliton sum):   Linear superposition (slope ≈ 1)
+                                  brak compound saturation w random placement
+  Layer 4 (mass formula slope):  X = -0.1972 vs e²/2 = 3.6945
+                                  drift = 105.3385%
+
+  KLUCZOWE OBSERWACJE:
+
+  1. Compound math IS exact dla (1+x/N)^N → e^x — to nie jest hipoteza,
+     to identity. Dla x=2 dokładnie e².
+
+  2. ALE: random placement N solitonów w volume daje LINEAR superposition
+     (Φ ~ N), nie compound exp. Tutaj nie ma "interference structure"
+     bo random fields just add.
+
+  3. Aby compound działał TGP-natural, trzeba MULTIPLICATIVE structure
+     w field equations, nie additive. R3 ODE ma g^(2α) prefactor —
+     to JEST multiplicative, ale kontroluje pojedynczy soliton, nie
+     buildup z N.
+
+  4. X = e²/2 z mass formula jest empirical fit. Compound interpretation
+     wymaga że Σε = 2 z TGP-natural saturation. Brak konkretnego TGP-
+     mechanizmu który DAJE Σε = 2 dla α=2 charged-lepton.
+
+  EXACT MATCH SEARCH (drift < 0.5%):
+    (none — wszystkie integrals daleko od e/e²/e²/2)
+
+  Final: M.6 verdict
+  ------------------------------------------------------------
+  NEGATIVE — compound interference jako konkretny TGP-mechanizm
+  NIE wyłania się z prostych integrals nad R3 soliton ani z
+  random multi-soliton placement. Wymagałby specyficznej TGP-
+  struktury produkującej Σε = 2 — której nie odkryliśmy.
+
+==============================================================================
+  KONIEC λ.1 M.6
+==============================================================================

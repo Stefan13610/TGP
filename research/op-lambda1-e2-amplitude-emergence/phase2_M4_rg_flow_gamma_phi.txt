@@ -1,0 +1,142 @@
+==============================================================================
+  λ.1 M.4 — RG flow γ_φ ~ e² test (audit-recommended last attempt)
+==============================================================================
+
+Targets:
+  e^2          = 7.389056
+  e^2 / 2      = 3.694528  <-- target for γ_φ at α=2
+  e^2 / 4      = 1.847264  <-- in formula n(α) = (e^2/4)(4-α)
+
+==============================================================================
+  SEKCJA 1: R3 effective Lagrangian @ α=2 (linearization wokol g=1)
+==============================================================================
+
+  Kinetic prefactor g^(2α) expansion:
+    g^(2α) = 2*alpha*epsilon**3*(alpha - 1)*(2*alpha - 1)/3 + alpha*epsilon**2*(2*alpha - 1) + 2*alpha*epsilon + 1
+
+  Potential V(1+ε) - V(1) expansion:
+    V = epsilon**2*(3*epsilon**2*(2*alpha**2 - 3*alpha + 1) + 8*epsilon*(1 - alpha) + 6)/12
+
+  Dla α=2 (TGP-canonical R3 charged-lepton):
+    Kinetic prefactor: 4*epsilon**3 + 6*epsilon**2 + 4*epsilon + 1
+    Potential V(ε):    epsilon**2*(9*epsilon**2 - 8*epsilon + 6)/12
+
+  Identified couplings (bare, before canonical normalization):
+    m^2           = 1.00000  (mass^2 of fluctuation)
+    λ_3 (eps^3)   = -4.00000  (cubic self-interaction)
+    g_kin (eps·(∂eps)^2) = 4.00000  (derivative coupling)
+
+==============================================================================
+  SEKCJA 2: 1-loop γ_φ standard scalar QFT estimate
+==============================================================================
+
+  Standard 1-loop estimate (d=4 normalization, scale-illustrative):
+    γ_φ from λ_3²/[6·(4π)²]   = 0.016887
+    γ_φ from g_kin²·m²/[8·(4π)²] = 0.012665
+    Total 1-loop γ_φ_estimate    = 0.029552
+
+  Target (z empirical n(α=2)/2):  γ_φ = e²/2 = 3.694528
+  Ratio target/1-loop:          125.02x
+
+  --> 1-LOOP gamma_phi << e^2/2: MISS by factor >125x
+      Standard perturbative QFT NIE moze produkowac e^2/2.
+
+==============================================================================
+  SEKCJA 3: Required coupling for γ_φ = e²/2 in standard scalar QFT
+==============================================================================
+
+  Z formuły γ_φ = X²/(16π²) (typical 1-loop kinetic):
+    X_required = 4π · sqrt(e²/2) = 24.1540
+
+  Bare R3 couplings @ α=2:
+    |λ_3|   = 4.00
+    |g_kin| = 4.00
+
+  Required coupling X_req = 24.15 jest
+    6.0x wieksze niz natural g_kin
+    6.0x wieksze niz natural λ_3
+
+  --> Non-perturbative regime: standard 1-loop NOT applicable.
+      To dostac γ_φ = e²/2 z 1-loop trzeba bare coupling rzędu 24,
+      co jest poza perturbacja. R3 effective ma couplings rzedu 4.
+
+==============================================================================
+  SEKCJA 4: Empirical γ_φ z R3 ODE numerical solution
+==============================================================================
+
+  Solving R3 ODE for α=2.0, g₀ ∈ [1.5, 2.5]:
+
+      g₀ |     A_tail |      m_obs |   log(g₀) |   log(A²) |    log(m)
+  -------+------------+------------+-----------+-----------+----------
+   1.500 |    0.92906 |  385.90327 |   0.40547 |  -0.14717 |   5.95559
+   1.600 |    1.25060 |  674.70115 |   0.47000 |   0.44725 |   6.51427
+   1.700 |    1.63259 | 1105.71998 |   0.53063 |   0.98033 |   7.00825
+   1.800 |    2.08057 | 1731.41596 |   0.58779 |   1.46528 |   7.45669
+
+  Slopes z polyfit:
+    slope_m  (d log m / d log g₀)  = 8.22978
+    slope_A² (d log A² / d log g₀) = 8.84338
+    slope_Z = slope_m - slope_A²   = -0.61360
+
+  Interpretation: m_obs = c · A² · g₀^X, gdzie X = slope_Z
+    Empirical X    = -0.61360
+    e²/2 (target)  = 3.69453
+    diff           = 4.30813  (116.608%)
+
+==============================================================================
+  SEKCJA 5: Czy X = γ_φ z RG flow jest sensowna interpretacja?
+==============================================================================
+
+  Argument PRO (RG flow interpretation):
+    - W RG flow Z(g₀) = exp(γ_φ · log(g₀/Λ))
+    - Empirically log(m/A²) = X · log(g₀) ± const → X = γ_φ formal
+    - Dla α=2: X ≈ 3.69 ≈ e²/2 z 0.0007% match (mass_scaling_k4)
+
+  Argument CONTRA (M.4 audit):
+    - γ_φ z 1-loop standard scalar QFT @ α=2: γ_φ ~ 0.0296 (orders below 3.69)
+    - Required X ~ 24 dla γ_φ = e²/2 — non-perturbative regime
+    - R3 effective theory NIE jest standardowy scalar field theory:
+      * Kinetic prefactor g^(2α) modyfikuje propagator
+      * Soliton background NIE jest perturbative vacuum
+      * "RG flow" w r-direction nie jest standardowy Wilson RG
+    - "X = γ_φ" jest formal mapping, nie field-theoretic derivation
+    - mass_scaling_k4 K-like NEGATIVE: K~A² to generic tail-scaling, nie
+      topological, więc empirical slope opiera się na kinematice ogona
+      ODE, nie strukturalnym Z(g₀)
+
+
+==============================================================================
+  SEKCJA 6: Final verdict M.4
+==============================================================================
+
+  M.4 (RG flow γ_φ ~ e²) — ANALYSIS:
+
+  1. Standard 1-loop γ_φ z R3 effective theory @ α=2: ~0.0296
+     Target e²/2 = 3.6945
+     MISS by factor ~125x
+
+  2. Required bare coupling dla γ_φ = e²/2 standardowo: ~24.2
+     Natural R3 couplings: |g_kin|=4, |λ_3|=4
+     MISS: factor ~6x non-perturbative regime
+
+  3. Empirical slope numerical: X = e²/2 to coincidence z fitting,
+     nie field-theoretic derivation
+
+  4. R3 effective theory NIE jest standardowy scalar QFT:
+     - Soliton background, nie vacuum
+     - g^(2α) kinetic non-trivial
+     - "RG flow w r-direction" nie jest Wilsonian
+
+  CONCLUSION:
+  M.4 NIE produkuje e²/2 z first-principles RG flow w obecnym TGP-formalism.
+  Wymagane coupling jest non-perturbative (~6x natural), brak standardowego
+  mechanizmu który daje takie wartości naturalnie.
+
+  Zgodne z Phase 2 P2.1 (log det O K=-0.97) — to ten sam fundamental
+  obstacle: perturbative/semiclassical R3 NIE produkuje e²/2 numerycznie.
+
+  STATUS: M.4 NEGATIVE → λ.1 audit-rekomendowane zamknięcie.
+
+==============================================================================
+  KONIEC λ.1 M.4 RG flow γ_φ test
+==============================================================================

@@ -1,0 +1,218 @@
+==============================================================================
+  μ.1 Phase 2 — Compound emergence + topological Σε=2
+==============================================================================
+
+==============================================================================
+  P2.1 — Multi-soliton ψ-superposition (analytic)
+==============================================================================
+
+Założenie podstawowe (μ.1 hipoteza):
+  ψ jest pierwotną zmienną substratu, więc multi-soliton background
+  spełnia LINEAR superposition w ψ:
+
+    ψ_total(x) = Σ_i ψ_i(x − x_i)        [aksjomat]
+
+Konsekwencja dla g (geometric metric):
+    g_total(x) = exp(ψ_total(x)) = exp(Σ_i ψ_i)
+              = ∏_i exp(ψ_i(x))
+              = ∏_i g_i(x)              [multiplicative composition]
+
+LINEARYZACJA dla małych perturbacji od vacuum (g_i ≈ 1, ψ_i ≈ 0):
+    g_i = 1 + ε_i  ⟹  ψ_i = log(1 + ε_i) ≈ ε_i − ε_i²/2 + O(ε³)
+
+    ψ_total ≈ Σ_i ε_i − (1/2)Σ_i ε_i² + ...
+
+    g_total = exp(Σψ_i) ≈ exp(Σε_i)·exp(−Σε_i²/2)
+
+    Dla N małych równych perturbacji (ε_i = ε << 1):
+    g_total ≈ exp(N·ε)·exp(−N·ε²/2)
+
+    W limit N → ∞, ε → 0, N·ε = const = S:
+    g_total → exp(S)·exp(−ε·S/2)·... → exp(S) [dominant]
+
+  ⇒ Φ_total → exp(Σε)  (compound formula AUTOMATIC pod ψ-redef.)
+
+  Sympy expansion (N solitonów, ε small):
+    g_total ≈ N**3*epsilon**3/6 - N**2*epsilon**3/2 + N**2*epsilon**2/2 + N*epsilon**3/3 - N*epsilon**2/2 + N*epsilon + 1
+
+  W limit N·ε = S fixed, ε → 0:
+    g_total → exp(S) precisely
+
+  ✓ P2.1 ANALYTIC PASS: compound emergence trywialna w ψ-substrate
+
+
+==============================================================================
+  P2.2 — Topological Σε = 2 constraint test (4 kandydaci)
+==============================================================================
+
+  GATE: AT LEAST 1/4 musi PASS jako 'first-principles' argument.
+        Score >= 7/10 = PASS, < 7/10 = FAIL.
+
+--- Kandydat (a): Electric charge — particle + antiparticle ---
+
+  Argument:
+    Charged lepton (e⁻, μ⁻, τ⁻) ma ładunek q=−1 (elementarny).
+    Vacuum w QFT zawiera quantum fluctuations e⁺e⁻ pairs.
+    ε kontrybucja per particle: 1 (dla particle) + 1 (dla antiparticle)
+    bo |q|² = 1 dla obu, integrating |amplitude|² over both contributions:
+
+    Σε = |q_particle|² + |q_antiparticle|² = 1 + 1 = 2
+
+  PROBLEMY:
+    1. Czemu QED-like Σ|q|² zamiast Σq (gdzie ładunki by się znosiły)?
+    2. Dla photon-mediated effects, normalna kontrybucja to fine-structure
+       α ≈ 1/137, nie unit Σ.
+    3. Argument wymaga że TGP-substrate liczy charged-lepton self-energy
+       jako particle + antiparticle pair — ale to NIE jest soliton-like,
+       to QFT fluctuation.
+
+  SCORE: 2/10 — argument ad hoc, nie z first principles
+
+--- Kandydat (b): Spinor double-cover — SU(2) → SO(3) ---
+
+  Argument:
+    Grupa SO(3) (rotations 3D) ma double-cover SU(2). Spin-1/2 stany
+    transformują się pod SU(2): rotation 2π zwraca −ψ_state, rotation 4π
+    zwraca +ψ_state (identity).
+
+    Topologicznie: π₁(SO(3)) = ℤ/2ℤ, więc closed loop w SO(3) ma
+    homotopy class 0 (trivial) lub 1 (nontrivial).
+
+    DLA charged-lepton (spin-1/2): substrate background musi 'closure'
+    pod spin-rotation. Background z homotopy class 1 = single windings,
+    z class 0 = double windings. Background ψ closure wymaga 4π:
+
+    Σε_substrate = 4π·(1/2π) = 2  [normalizacja przez 2π = unit angle]
+
+  PROBLEMY:
+    1. Substrate ψ jest skalarne — czy 'spinor closure' applies?
+    2. Jeśli ψ_background nie nosi spin, to argument ψ ↔ spinor
+       wymaga dodatkowego mappingu.
+    3. Result Σε = 2 dependent on normalizacji jednostek.
+
+  SCORE: 4/10 — geometryczny ale skalar/spinor mapping wymagany
+
+--- Kandydat (c): R3 winding number n=2 z homotopy ---
+
+  Argument:
+    R3 substrate dla α=2 (3D space), soliton jest mapem
+    R³ → ℝ⁺ (dla g) ≅ ℝ (dla ψ). Homotopy:
+      π₃(ℝ⁺) = trivial (kontraktibilny)
+      π₃(target with internal symmetry) = ℤ jeśli target jest S²/S³
+
+    Dla TGP charged-lepton z internal U(1) charge: target = S¹ × ℝ⁺,
+    i nontrivial homotopy w π₃(S¹) = 0 — banały, brak topology.
+
+    ALE: jeśli rozważyć GROUP STRUCTURE substratu jako ψ ∈ Lie(ℝ⁺),
+    multiplicative composition g₁·g₂ jest natural, i Σε = 2 może
+    być wymuszone przez topology of the bundle R³ → R³/(±1) double-cover.
+
+  PROBLEMY:
+    1. R3 substrate w α=2 nie ma natural topological charge (ψ ∈ ℝ).
+    2. Argument requires TGP-specific bundle structure która nie
+       jest jeszcze udokumentowana w obecnym substrate definition.
+    3. Brak konkretnego mechanizm produkujący n=2 z geometrii.
+
+  SCORE: 2/10 — wymagałby nowej topology TGP-substratu
+
+--- Kandydat (d): Compound saturation — natural substrate cutoff ---
+
+  Argument:
+    Compound interest formula: (1 + S/N)^N → exp(S) jako N → ∞.
+    Substrate Φ₀ jako produkt nieskończony: Φ₀ = ∏(1 + ε_i)
+    saturates dla różnych S = Σε:
+
+      S = 1 ⟹ Φ₀ = e ≈ 2.718
+      S = 2 ⟹ Φ₀ = e² ≈ 7.389
+      S = 3 ⟹ Φ₀ = e³ ≈ 20.09
+
+    NATURALNY argument dla S = 2:
+      Substrate ma DWA kanały (amplitude + phase per Section 11.5 audytu).
+      Każdy kanał wnosi unit ε per soliton (background contribution = 1).
+      Total: Σε = 1 (amplitude) + 1 (phase) = 2.
+
+    LUB: dla charged-lepton (massive, charged), background musi sumować
+    DWA charges (lepton + reflected antiparticle from vacuum):
+      Σε = ε_self + ε_image = 1 + 1 = 2
+
+  PROBLEMY:
+    1. Argument z 'two channels' jest plausible ale wymaga że amplitude
+       i phase contribute równo (po 1 each) — to jest empirical assumption.
+    2. 'Image charge' argument wymaga that vacuum reflects soliton —
+       nie ma direct source w R3 ODE.
+    3. NIE wybiera unikalnie S=2 vs S=1 — czemu nie e zamiast e²?
+
+  SCORE: 5/10 — najlepszy z 4 ale nadal motivated, nie derived
+
+==============================================================================
+  P2.2 summary: topology candidates dla Σε = 2
+==============================================================================
+
+  Kandydat                          Score   Pass
+  --------------------------------------------------
+  (a) electric charge            2/10        FAIL
+  (b) spinor double-cover        4/10        FAIL
+  (c) winding n=2                2/10        FAIL
+  (d) natural saturation         5/10        FAIL
+
+  P2.2 GATE: 0/4 kandydatów PASS (wymagane >= 1)
+
+  ✗ P2.2 FAIL — żaden kandydat nie daje Σε=2 z first principles
+
+  IMPLIKACJA: μ.1 redukuje się do PURE REPARAMETRIZATION.
+  ψ-substrate jest matematycznie identyczny z g-substrate
+  (P1 udowodnił to do floating-point precision), ALE:
+
+  - compound emergence formy g_total = exp(Σε) JEST present strukturalnie
+  - VALUE of Σε dla charged-lepton α=2 NIE jest derived z first principles
+  - dla matching mass formula X = e²/2, musimy POSTULATE Σε = 2 — ad hoc
+
+  ⇒ μ.1 nie znajduje fizycznego mechanizmu, tylko zmienia język.
+
+==============================================================================
+  P2.3 — Compound value verification (assuming Σε=2 postulated)
+==============================================================================
+
+  Direct relationship Σε ↔ X niejasny:
+
+    Background g_bg = exp(Σε) opisuje multi-soliton vacuum.
+    Mass formula slope X = e²/2 = 3.6945 jest pochodną
+    log(m/A²) względem ψ₀_lepton.
+
+    Pytanie: czy slope X = exp(Σε)/2 (jeśli Σε = 2)?
+    Test: exp(2)/2 = 3.694528
+          X observed = 3.694528
+          drift: 0%
+
+  TO JEST KONSYSTENTNE, ALE TAUTOLOGICZNE:
+    X = e²/2 z λ.1 mass formula (empirical fit)
+    Σε = 2 postulated jako compound saturation
+    → 'derivation' X = exp(2)/2 jest po prostu definicja
+
+  KLUCZOWE: bez NIEZALEŻNEGO derivation Σε = 2 (P2.2 FAIL),
+  P2.3 jest cyrkularny.
+
+  ✗ P2.3 NEUTRAL: structural form match, ale brak independence.
+
+==============================================================================
+  Phase 2 verdict
+==============================================================================
+
+  P2.1 (multi-soliton ψ analytic):       PASS
+  P2.2 (topology Σε=2 candidates):       FAIL
+  P2.3 (compound→X structural match):    NEUTRAL
+
+  → Phase 2 PARTIAL/FAIL
+
+  KEY FINDING: P1 udowodnił że ψ ≡ log g jest mathematically
+  invariant (drift 1e-13%), ale P2.2 nie znajduje natural source
+  dla Σε = 2 z TGP-substrate first principles.
+
+  Best candidate: (d) compound saturation z 2 channels (5/10).
+  Wymaga: explicit definition kanałów amplitude/phase substrate.
+
+  μ.1 verdict: REPARAMETRIZATION SUKCES, MECHANISM PARTIAL.
+  Pole g_total = exp(Σε) emerges automatycznie z ψ-substrate,
+  ale value Σε = 2 dla α=2 charged-lepton nie ma derivation.
+
+==============================================================================

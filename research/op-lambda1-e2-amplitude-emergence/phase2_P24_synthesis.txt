@@ -1,0 +1,152 @@
+==============================================================================
+  λ.1 P2.4 — Sympy LOCK + final synthesis
+==============================================================================
+
+==============================================================================
+  SEKCJA 1: Phase 2 results aggregation
+==============================================================================
+
+  Sub-task |  Score | Match                              
+  ------------------------------------------------------------
+  P2.1     |    0.0 | NO MATCH (off by factor ~2-4 + wrong sign)
+  P2.2     |    0.5 | PARTIAL (-5.92 ≈ -e²+1.5 lub similar approx)
+  P2.3     |    0.0 | ANCHOR-DEPENDENT (numerologiczne)  
+
+  Phase 2 partial total (P2.1+P2.2+P2.3): 0.5 / 3 max
+
+==============================================================================
+  SEKCJA 2: Numerical match summary
+==============================================================================
+
+  Empirical R3 (z why_n3 Phase 2):
+    n(α) = e²·(1-α/4) = (e²/4)·(4-α)
+    n(2) = e²/2 = 3.6945
+    Mass formula match PDG μ/e: 0.014%
+
+  Empirical Φ (z why_n3 Phase 7):
+    Φ_eff (cosmological 36·Ω_Λ) = 24.66
+    (10/3)·e² = 24.6302
+    Diff = -0.121%
+    BUT Φ_eff (Brannen canonical) = 24.783
+    Diff Brannen vs (10/3)·e² = -0.617%
+
+  Mechanisms tested:
+    P2.1 numerical K (log det O):  -0.965  (vs target 3.69)
+    P2.2 numerical K (S_sol):      -5.919  (vs target 3.69 or 7.39)
+    P2.3 Brannen anchor diff:      -0.62%   (vs target <0.1%)
+
+  ŻADEN z testowanych mechanizmów NIE produkuje exactly e²/4 lub e²/2.
+  Numerical values są **różne**, nie just off by sign or factor.
+
+==============================================================================
+  SEKCJA 3: Sympy verification — co da się zlockować?
+==============================================================================
+
+  Empirical: n(α) = (e²/4)·(4-α)
+  n(2) = exp(2)/2
+  n(2) numerical = 3.694528
+
+  Mass formula contribution: g₀^n(α) = exp(n(α)·log g₀)
+  Dla α=2: g0**(exp(2)/2)
+         = exp((e²/2)·log g₀) = g₀^(e²/2)
+
+  Attempts to derive e²/4 from TGP integers:
+    e²/4 (target): 1.8473, diff vs e²/4: +0.000%
+    11/6 (P+V testing): 1.8333, diff vs e²/4: -0.754%
+    phi + 1/4: 1.8680, diff vs e²/4: +1.124%
+    (2+phi)/2: 1.8090, diff vs e²/4: -2.070%
+
+  Status: brak natural sympy expression dająca e²/4 z TGP integers.
+  e²/4 pozostaje **transcendental** value, brak rational/algebraic form.
+
+==============================================================================
+  SEKCJA 4: Decision tree dla λ.1
+==============================================================================
+
+
+  PHASE 2 SCORE GATE:
+    Required: ≥ 3/4 PASS
+    Achieved: 0.5 (z P2.1, P2.2, P2.3) + P2.4 (= 0 lub 1)
+    Maximum possible: 1.5 = 38%
+
+  Czy P2.4 może dać 1 PASS?
+    Jeśli sympy LOCK potwierdziła by mechanizm znaleziony — TAK.
+    Ale **żaden mechanizm nie został znaleziony** w P2.1-P2.3.
+    P2.4 sympy verification jest **redundant** bez mechanizmu.
+
+  P2.4 honest score: **0 PASS** (no mechanism to lock).
+
+  TOTAL PHASE 2: 0.5 / 4 = 12%
+
+  GATE DECISION: **NOT PASSED** (0.5/4 < 3/4 required)
+
+  CONSEQUENCE:
+    λ.1 program END (Phase 3 NOT pursued).
+    Honest postmortem z negative result.
+
+==============================================================================
+  SEKCJA 5: Honest postmortem dla λ.1
+==============================================================================
+
+
+  CO λ.1 PRÓBOWAŁA UDOWODNIĆ:
+    e²/4 jest **fundamentally derived** w TGP amplitude sector
+    (nie tylko empirical fit).
+
+  CO λ.1 ODKRYŁA:
+
+  ✓ POSITIVE results:
+    - Phase 1 L1.5: amplitude sector strukturalnie pozwala na e_Euler
+      (phase compact U(1) wyklucza); λ.1 hypothesis is internally
+      consistent z TGP
+    - Phase 1 L1.3: exp factor pojawia się trywialnie w partition function
+    - Phase 1 L1.1: 10/3 = (gravity DOF in 4D)/N_gen counting
+      argument plausible
+
+  ✗ NEGATIVE results:
+    - Phase 1 L1.4: neutrina (K=1/2) NIE matche e²-formula z charged
+    - Phase 2 P2.1: log det O linear fit (K=-0.97) NIE matche e²-family
+    - Phase 2 P2.3: Φ_eff Brannen anchor (canonical 24.783) NIE matche
+      (10/3)·e²; tylko cosmological match → numerologiczne
+    - Phase 2 P2.2: S_sol linear fit (K=-5.92) NIE matche e²/2 lub e²
+    - Phase 2 P2.4: brak sympy expression dająca e²/4 z TGP integers
+
+  WNIOSEK:
+  e²/4 w R3 mass formula pozostaje **EMPIRICAL FIT** bez derivation
+  z TGP-fundamentu. Trzy hint'y (n(α), PDG match, Φ_eff·(10/3)) mogą
+  być **niezależnymi numerologicznymi zbieżnościami** — żaden nie wynika
+  z konkretnego TGP-mechanizmu testowanego w Phase 1-2.
+
+  IMPLIKACJA dla R3 (why_n3):
+  - X = e²/4 zostaje **EMPIRICAL** (nie DERIVED) w PREDICTIONS_REGISTRY
+  - Match PDG μ/e 0.014% jest **realny** (mass formula działa)
+  - Ale fundamentalność e_Euler w TGP **nie udowodniona**
+
+  RECOMMENDATION:
+  - λ.1 program END z honest negative status
+  - X = e²/4 zostaje jako "best empirical fit", nie "fundamental constant"
+  - Phase 3 NOT pursued (gate failed)
+
+==============================================================================
+  SEKCJA 6: Final synthesis P2.4
+==============================================================================
+
+
+  P2.4 ROLE:
+    Original: sympy LOCK final formula jeśli mechanism znaleziony.
+    Actual: synthesis P2.1-P2.3 results + decision (mechanism NIE znaleziony).
+
+  P2.4 SCORE: **0 PASS** (no mechanism to lock).
+
+  PHASE 2 FINAL SCORE: 0.5 / 4 = 12.5%
+
+  GATE: < 3/4 → **NOT PASSED**
+
+  λ.1 DECISION: **PROGRAM END** (Phase 3 not pursued)
+
+  Honest classification:
+  - X = e²/4 w R3 = LOCKED EMPIRICAL (nie DERIVED)
+  - Three hint'y (n(α), PDG μ/e, Φ_eff·(10/3)) = numerologiczne
+    coincidences, nie cross-validated mechanism
+  - λ.1 hipoteza "e² fundamentally w amplitude sector" = NEGATIVE
+

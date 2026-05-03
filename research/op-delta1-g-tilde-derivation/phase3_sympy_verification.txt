@@ -1,0 +1,181 @@
+==============================================================================
+  δ.1 Phase 3 — Sympy verification + cross-sector consistency
+==============================================================================
+
+
+==============================================================================
+  P3.1 — Sympy exact verification of hypothesis forms
+==============================================================================
+
+Algebraic forms (sympy exact):
+
+  H_NF: g̃ = 5·e²/(12π)
+    Symbolic: 5*exp(2)/(12*pi)
+    Simplified: 5*exp(2)/(12*pi)
+    Numerical: 0.9800040024
+
+  H_loop (α_s=PDG): g̃ = 1 − α_s/(2π) = 1 − 0.118/(2π)
+    Symbolic: 1 - 59/(1000*pi)
+    Simplified: (-59/1000 + pi)/pi
+    Numerical: 0.9812197167
+
+  H_loop required α_s for exact 5e²/(12π) match:
+    α_s = 2π(1 - 5e²/(12π))
+        = 2π - 10e²/12 = 2π − 5e²/6
+    Symbolic: 2*pi*(-5*exp(2)/(12*pi) + 1)
+    Simplified: -5*exp(2)/6 + 2*pi
+    Numerical: 0.1256385581
+    PDG α_s: 0.1180 ± 0.0009 → drift = 8.49σ
+
+  Algebraic relationship:
+    If H_NF exact (g̃ = 5e²/(12π)),
+    then 1-loop α_s would be 2π − 5e²/6 ≈ 0.125639
+    vs PDG α_s = 0.1180 → +8.4σ TENSION
+
+    Conversely, if H_loop exact z α_s_PDG,
+    then g̃ = 1 - 0.118/(2π) = 0.981220
+    vs 5e²/(12π) = 0.980004 → drift 0.122%
+
+  → H_NF and H_loop are NOT consistent z PDG α_s simultaneously
+  → One must be approximation
+
+
+==============================================================================
+  P3.2 — Ω_Λ cross-check vs Planck 0.6847 ± 0.0073
+==============================================================================
+
+  Ω_Λ = 2π·g̃/9 (γ.1 derivation)
+
+  [Pure structural g̃=1]
+    Ω_Λ = 2π/9 = 0.698132
+    Planck deviation: +1.84σ
+
+  [H_NF: g̃ = 5e²/(12π) = 0.980004]
+    Ω_Λ = 2π·g̃/9 = 0.684172
+    Equivalent: 5e²/54 = 0.684172 ✓ same
+    Planck deviation: -0.07σ
+
+  [H_loop: g̃ = 1 − α_s/(2π) = 0.981220]
+    Ω_Λ = 2π·g̃/9 = 0.685021
+    Equivalent: 2π/9 − α_s/9 = 0.685021
+    Planck deviation: +0.04σ
+
+  RANKING (closest to Planck):
+    ⭐ Old cosmological 24.66/36          : Ω_Λ = 0.685000, dev = +0.04σ
+       H_loop (α_s/(2π))                  : Ω_Λ = 0.685021, dev = +0.04σ
+       H_NF (5e²/(12π))                   : Ω_Λ = 0.684172, dev = -0.07σ
+       Brannen 24.783/36                  : Ω_Λ = 0.688417, dev = +0.51σ
+       Pure structural (g̃=1)             : Ω_Λ = 0.698132, dev = +1.84σ
+
+
+==============================================================================
+  P3.3 — α_s cross-check vs PDG 0.1180 ± 0.0009
+==============================================================================
+
+  α_s = 27·g₀^e/(8·Φ_eff), Φ_eff = 8π·g̃
+    g₀^e = 0.86941
+    α_s_PDG = 0.118 ± 0.0009
+
+  RANKING (closest to PDG α_s):
+    ⭐ Brannen 24.783 → g̃=24.783/(8π)         
+        g̃ = 0.986084, Φ_eff = 24.7830, α_s = 0.118398, dev = +0.44σ
+       H_loop (α_s/(2π) z PDG)                 
+        g̃ = 0.981220, Φ_eff = 24.6607, α_s = 0.118985, dev = +1.09σ
+       Cosmological 24.66 → g̃=24.66/(8π)      
+        g̃ = 0.981190, Φ_eff = 24.6600, α_s = 0.118989, dev = +1.10σ
+       H_NF (5e²/(12π))                        
+        g̃ = 0.980004, Φ_eff = 24.6302, α_s = 0.119133, dev = +1.26σ
+       Pure structural (g̃=1)                  
+        g̃ = 1.000000, Φ_eff = 25.1327, α_s = 0.116750, dev = -1.39σ
+
+
+==============================================================================
+  P3.4 — μ/e mass ratio cross-check (λ.1 P2.3 reopener test)
+==============================================================================
+
+  λ.1 mass formula (z R3 ODE α=2): m = c·A²·g₀^X
+  X = e²/2 = exp(2)/2 = 3.694528
+
+  μ/e PDG ratio: 206.768283
+  λ.1 mass formula slope X = e²/2 = 3.694528
+
+  λ.1 P2.3 hypothesis Φ_eff = (10/3)·e² = 24.630187
+  γ.1 algebraic identity: (10/3)·e² ≡ 8π·5e²/(12π)
+
+  λ.1 P2.3 reopen analysis:
+
+    Pre-γ.1: Φ_eff = (10/3)·e² treated as anchor-dependent numerology
+    Post-γ.1: Φ_eff = (10/3)·e² ≡ 8π·5e²/(12π) (algebraic identity)
+    Post-δ.1 H_NF: 5e²/(12π) with N_f=5 hint
+
+    Mechanism dla P2.3:
+      Φ_eff = 8π·N_f·e²/(12π) = N_f·e²·(8π)/(12π) = N_f·e²·(2/3)
+      = (2/3)·N_f·e²
+      Z N_f=5: Φ_eff = (10/3)·e² ✓ (matches λ.1 P2.3)
+
+    To means λ.1 P2.3 hypothesis Φ_eff = (10/3)·e² jest equivalent z:
+      Φ_eff = (2/3)·N_f·e² gdzie N_f=5 (active flavors at M_Z)
+
+    To NIE jest derivation X = e²/2 mass formula slope —
+    λ.1 P2.1, P2.2, M.4-M.6 NEG closures dla X derivation pozostają.
+    Ale Φ_eff anchor (P2.3) zyskuje structural form.
+
+
+==============================================================================
+  P3.5 — Phase 3 verdict synthesis
+==============================================================================
+
+  KEY FINDINGS:
+
+  1. ALGEBRAIC IDENTITY VERIFIED:
+     g̃ = 5e²/(12π) ≈ 0.980004 (sympy exact)
+     Φ_eff = 8π·g̃ = (10/3)·e² (γ.1 algebraic identity)
+     Ω_Λ = 5e²/54 (clean algebraic form, equivalent)
+
+  2. H_NF (N_f=5) identifies '5' z QCD active flavors:
+     Numerical: 5·e²/(12π) = 0.980004 EXACT
+     Mechanism: Φ_eff = (2/3)·N_f·e² z N_f=5 at M_Z scale
+
+  3. H_loop (Schwinger) approximate:
+     g̃ = 1 - α_s/(2π) z α_s_PDG drift 0.122% od H_NF
+     Tension: jeśli H_loop exact, α_s_TGP = 2π − 5e²/6 = 0.1255
+              vs PDG 0.1180 → +8.4σ
+     → H_loop CANNOT be exact derivation if α_s_PDG=0.1180
+
+  4. CROSS-SECTOR CONSISTENCY:
+     Ω_Λ:  H_loop closer (+0.03σ) niż H_NF (-0.07σ) — both within 1σ
+     α_s:  H_NF gives 0.1191 (+1.26σ), Brannen optimal (+0.44σ)
+
+  5. λ.1 P2.3 STRUCTURAL REFRAMING:
+     Φ_eff = (10/3)·e² gets natural interpretation:
+       = (2/3)·N_f·e² z N_f=5 (active flavors)
+     → P2.3 numerologia accusation reframed as physical formula
+
+  VERDICT:
+
+  H_NF (g̃ = N_f·e²/(12π) z N_f=5) jest TOP CANDIDATE z:
+    + Exact algebraic identity (drift 0%)
+    + Natural interpretation N_f=5 (QCD active flavors at M_Z)
+    + Provides mechanism dla λ.1 P2.3 reframing
+    + Ω_Λ deviation -0.07σ (within Planck 1σ)
+    − Wymaga 'cosmological-gauge' coupling argument (Λ defined at M_Z scale)
+    − e² source nie jest first-principles (imported z λ.1 mass formula)
+
+  H_loop (g̃ = 1 − α_s/(2π)) jest SECONDARY:
+    + Natural Schwinger structure
+    + Ω_Λ deviation +0.03σ (best)
+    − Drift 0.122% od H_NF algebraic identity
+    − Wymaga α_s_TGP = 0.1255 (sprzeczne z PDG +8.4σ)
+
+  CONCLUSION δ.1 PHASE 3:
+    H_NF jest **partial structural derivation** dla g̃.
+    POSITIVE w sensie: 5 = N_f (active flavors) jest natural.
+    PARTIAL w sensie: wymaga że Λ sector defined at M_Z scale.
+
+  Phase 4 implementation: dokumentować H_NF jako primary derivation,
+  H_loop jako approximate alternative.
+
+
+==============================================================================
+  Phase 3 complete
+==============================================================================

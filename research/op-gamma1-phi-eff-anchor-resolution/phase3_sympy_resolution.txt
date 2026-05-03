@@ -1,0 +1,181 @@
+==============================================================================
+  γ.1 Phase 3 — Sympy verification + resolution
+==============================================================================
+
+==============================================================================
+  P3.1 — Sympy verification of all numerical claims
+==============================================================================
+
+  [1] Old cosmological:
+      Ω_Λ_old = 137/200 = 0.685
+      Φ_eff = 36·Ω_Λ = 24.66  (sek00 quoted 24.66)
+      Match: True
+
+  [2] PDG 2024 cosmological:
+      Ω_Λ_PDG = 0.6847
+      Φ_eff = 36·Ω_Λ = 24.649200
+
+  [3] Brannen (sek09 B3-v2 lock 2026-05-01):
+      Φ_eff = 24.783
+      Implied Ω_Λ^TGP = 24.783/36 = 0.688417
+      sek09:1052 quoted Ω_Λ^TGP = 0.6884
+      Match: True
+
+  α_s(M_Z) computation: α_s = 27·g₀^e / (8·Φ_eff)
+
+  Inputs:
+    N_c³ = 27
+    g₀^e = 0.86941
+    α_s_PDG = 0.118 ± 0.0009
+
+  Anchor                                        Φ_eff        α_s   σ from PDG
+  ---------------------------------------- ---------- ---------- ------------
+  Old cosmological (24.66)                    24.6600   0.118989       +1.10σ
+  PDG 2024 cosmological (Ω_Λ=0.6847)          24.6492   0.119041       +1.16σ
+  Brannen B3-v2 (24.783)                      24.7830   0.118398       +0.44σ
+  Mid-range (24.7)                            24.7000   0.118796       +0.88σ
+  PPN (25.0)                                  25.0000   0.117370       -0.70σ
+
+
+==============================================================================
+  P3.2 — Hypothesis trade-off analysis
+==============================================================================
+
+  H1 (Cosmological PDG 24.6492 wins):
+    PRO: T-Λ (Lambda_from_Phi0) gives structural derivation Ω_Λ=0.6847
+    PRO: Avoids reverse-engineering from α_s match
+    CON: α_s degrades 0.44σ → 1.11σ (worse PDG match)
+    CON: Requires sek09 update — TGP-core change
+    Score: 7/10 (honest, structurally sound)
+
+  H2 (Brannen 24.783 wins):
+    PRO: Best α_s match (0.44σ)
+    PRO: Already canonical lock B3-v2 2026-05-01
+    CON: NO explicit derivation in sek09 (admitted gap)
+    CON: Ω_Λ=0.6884 reverse-engineered, +0.5σ from Planck 0.6847
+    CON: T-Λ structural derivation explicitly uses 0.6847, not 0.6884
+    Score: 4/10 (best phenomenology, weakest derivation)
+
+  H3 (Multi-anchor sectoral):
+    PRO: Could explain 0.5% mismatch via RG running
+    CON: No natural mechanism (screening 3/14 is algebraic, not energy-dep)
+    CON: Mass scale gap M_Z vs H_0 is 10⁴¹ — no natural Φ_eff drift
+    CON: Adds complexity without benefit
+    Score: 3/10 (descriptive not explanatory)
+
+  H4 (Both fits, formal acknowledgment):
+    PRO: Most honest given Phase 1+2 findings
+    PRO: Preserves both: cosmological for T-Λ, Brannen for α_s phenomenology
+    PRO: λ.1 EXTERNAL_AUDIT verdict consistent with this
+    CON: Φ_eff is parameter, not derivable from first principles
+    CON: TGP-program loses 'unique fundamental constant' claim
+    Score: 8/10 (best epistemic standing)
+
+
+==============================================================================
+  P3.3 — Verdict synthesis
+==============================================================================
+
+  WINNER: H4 (Both fits, formal acknowledgment) z H1 STRUCTURAL PRIMACY
+
+  Rationale:
+    1. T-Λ provides INDEPENDENT structural derivation of Ω_Λ ≈ 0.6847
+       (Φ_eq=H₀ + V=γΦ²/12 + γ=M_Pl² → ρ_vac=M_Pl²H₀²/12 → 2% match Planck)
+
+    2. Brannen 24.783 has NO explicit derivation in sek09.
+       Phase 2 audit confirmed: 0.6884 = 24.783/36 reverse-computed.
+
+    3. Therefore, FUNDAMENTAL Φ_eff = 36·Ω_Λ = 36·0.6847 ≈ 24.6492
+       (anchored in T-Λ structural derivation + PDG observation)
+
+    4. Brannen 24.783 = PHENOMENOLOGICAL fit dla α_s formula,
+       NIE fundamental constant. Sek09 must be updated.
+
+    5. α_s degradation 0.44σ → 1.11σ jest acceptable cost dla honesty;
+       α_s = 0.1190 vs PDG 0.1180 z σ=0.0009 = 1.11σ tension exists,
+       może być signal of missing 1-loop correction lub other physics.
+
+
+==============================================================================
+  P3.4 — Resolution recommendations dla TGP-core
+==============================================================================
+
+  Recommendation 1: Update sek00 cosmological derivation
+    OLD: Φ_eff = 36·Ω_Λ ≈ 24.66 (Ω_Λ=0.685, rounded)
+    NEW: Φ_eff = 36·Ω_Λ ≈ 24.6492 (Ω_Λ=0.6847 PDG 2024 + T-Λ confirmation)
+    Add reference: T-Λ structural derivation (Lambda_from_Phi0 closure)
+
+  Recommendation 2: Update sek09 α_s formula
+    OLD: 'intrinsic vacuum equation' Φ_eff = 24.783 → α_s = 0.1184 (0.44σ)
+    NEW: 'phenomenological lock' Φ_eff = 24.783 → α_s = 0.1184 (0.44σ)
+         + DISCLAIMER: 'fundamental cosmological Φ_eff = 24.6492 gives 1.11σ;'
+         + OPEN PROBLEM: 'remaining 0.5% difference may indicate missing
+           1-loop correction or additional substrate physics'
+
+  Recommendation 3: γ.1 README documentation
+    State explicit verdict: H4 with H1 primacy
+    Document chronological order: 24.783 fitted to α_s, then Ω_Λ^TGP reverse-computed
+    Reference T-Λ as structural authority
+
+  Recommendation 4: Pod G.0 v2.0 update
+    Wszystkie wartości skalują się factor 5/2:
+      Φ_eff_fund (post-G.0) = 24.6492 · (5/2) = 61.6230
+      Brannen (post-G.0) = 24.783 · (5/2) = 61.9575
+    Ratio invariant: 61.9575/61.6230 = 1.0054 = 0.54%
+    Czyli **0.5% inconsistency persists post-G.0** — gauge change nie resolves
+
+  Recommendation 5: λ.1 reopen NOT recommended
+    λ.1 NEGATIVE CLOSURE pozostaje — γ.1 nie zmienia X = e²/2 derivation
+    γ.1 confirms: (10/3)·e² = 24.6302 vs fundamental 24.6492 = 0.077% drift
+    To jest CLOSER niż λ.1 P2.3 reported 0.12% — but still empirical
+
+
+==============================================================================
+  P3.5 — Independent check: T-Λ structural derivation
+==============================================================================
+
+  T-Λ structural derivation (Lambda_from_Phi0 closure 2026-04-26):
+    ρ_vac,TGP = M_Pl² · H₀² / 12
+    ρ_crit = 3 M_Pl² · H₀² / (8π)
+    Ω_Λ_TGP = ρ_vac/ρ_crit = (1/12) / (3/(8π)) = 8π/36 = 2π/9
+    Ω_Λ_TGP = 2π/9 = 0.698132
+    Planck observed: 0.6847 ± 0.0073
+    Match: 1.84σ
+
+  Consistency check:
+    Ω_Λ_TGP (T-Λ) = 2π/9 = 0.6981
+    Ω_Λ (Planck) = 0.6847
+    Ratio TGP/obs = 1.0196 (T-Λ reports 1.020 ✓)
+
+  Φ_eff under T-Λ structural Ω_Λ_TGP = 2π/9:
+    Φ_eff = 36·(2π/9) = 8π = 25.132741
+    8π = 25.132741
+
+  ⚠ KEY INSIGHT: jeśli T-Λ jest correct structural derivation,
+     fundamental Φ_eff = 8π ≈ 25.1327, NIE 24.6492 ani 24.783!
+
+  Anchor comparison vs T-Λ structural Φ_eff = 8π = 25.1327:
+    Old cosmological 24.66             : drift = -1.881%
+    PDG cosmological 24.6492           : drift = -1.924%
+    Brannen 24.783                     : drift = -1.392%
+    PPN 25.0                           : drift = -0.528%
+
+  α_s pod Φ_eff = 8π:
+    α_s = 27·0.86941 / (8·8π) = 0.116750
+    PDG 0.1180 ± 0.0009: drift = -1.39σ
+
+
+==============================================================================
+  γ.1 Phase 3 final verdict
+==============================================================================
+
+  H4 z H1 PRIMACY (cosmological wins z structural support T-Λ)
+
+  ALE jest jeszcze jeden insight: T-Λ structural Ω_Λ = 2π/9 ≈ 0.6981
+  daje Φ_eff = 8π ≈ 25.1327 — to jest SOLID FIRST-PRINCIPLES candidate
+  którego nikt jeszcze nie uznał za fundamental Φ_eff!
+
+  Phase 3 ujawnia trzecią opcję H5: Φ_eff = 8π z T-Λ.
+  Test α_s: 27·0.86941/(8·8π) = ? potrzebne sprawdzenie
+
+==============================================================================

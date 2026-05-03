@@ -1,0 +1,197 @@
+==============================================================================
+  R3 Faza 7 — Φ₀ screening 3/14 vs e²/4
+==============================================================================
+
+  Φ₀ (bare)        = 115.0
+  Φ_eff (renorm)   = 24.66
+  Screening 3/14   = 0.214286
+  Inverse 14/3     = 4.666667
+  X_R3 = e²/4      = 1.847264
+
+==============================================================================
+  SEKCJA 1: Direct numerical comparisons
+==============================================================================
+
+  Expression                |          Value
+  ---------------------------------------------
+  3/14                      |       0.214286
+  14/3                      |       4.666667
+  (14/3) - e                |       1.948385
+  e^(π/2)                   |       4.810477
+  (14/3) / e                |       1.716771
+  (14/3)²                   |      21.777778
+  e² · 3/14                 |       1.583369
+  e²/4 · (14/3)             |       8.620565
+  X · (14/3)                |       8.620565
+  8·X / (14/3)              |       3.166738
+  ln(14/3)                  |       1.540445
+  ln(14/3) / (π/2)          |       0.980678
+  e^(3/14)                  |       1.238977
+  3/14 vs 1/e²              |       0.078950
+
+==============================================================================
+  SEKCJA 2: Czy 14/3 = exp(coś) ma natural origin?
+==============================================================================
+
+  ln(14/3) = 1.540445
+
+  Kandydaci dla ln(14/3) = c:
+    π/2                            =   1.57080, diff  +1.970%
+    3/2                            =   1.50000, diff  -2.626%
+    ln(7/2) - ln(3/2) + 1          =   1.84730, diff +19.920%
+    e/π                            =   0.86526, diff -43.831%
+    ln(5)                          =   1.60944, diff  +4.479%
+    3/π·ln(2)·e                    =   1.79925, diff +16.801%
+    Pure ln(14/3)                  =   1.54045, diff  +0.000% <<<
+    φ                              =   1.61803, diff  +5.037%
+    ln(4) + 1/4                    =   1.63629, diff  +6.222%
+
+==============================================================================
+  SEKCJA 3: Strukturalne pochodzenie 3/14 w TGP
+==============================================================================
+
+Z sek00_summary.tex:74-77:
+  P(φ) = (β/7)φ⁷ - (γ/8)φ⁸    [potencjał akcji]
+  V(φ) = (γ/3)φ³ - (γ/4)φ⁴    [potencjał EOM]
+  P(1) = γ/56
+  V(1) = γ/12
+  P(1)/V(1) = 12/56 = 3/14 = SCREENING
+
+To NIE jest e-related. To czysto algebraiczne z form akcji + potencjału.
+
+  3/14 pochodzi z:
+    - (1/7 - 1/8) = 1/56  [P(1) numerator]
+    - (1/3 - 1/4) = 1/12  [V(1) numerator]
+    - 1/56 / (1/12) = 12/56 = 3/14
+
+Czyli ekranowanie 3/14 to **strukturalna konsekwencja**
+wyboru K(φ)=φ⁴ + V(φ)=γφ³/3 - γφ⁴/4 + akcja P=K·V/dφ
+Brak e-content w tym łańcuchu — jest pure power-law algebra.
+
+==============================================================================
+  SEKCJA 4: Hipotezy kumulatywne w TGP które mogłyby produkować e
+==============================================================================
+
+User's intuicja: e = lim(1+1/n)^n powstaje z kumulatywnego procesu.
+
+Możliwe TGP-mechanizmy:
+
+(A) RG flow Z(μ) = exp(∫γ d log μ)
+    Jeśli γ_Φ = const i flow over [μ_UV, μ_IR],
+    Z = (μ_IR/μ_UV)^γ — to jest power-law, nie exp.
+    Ale jeśli γ_Φ varies w specific way, Z = exp(coś).
+
+(B) Soliton dressing through layers
+    R3 soliton ma profile g(r). Każda warstwa r → r+dr 'ubiera' pole.
+    Iteracyjnie: g(r+dr) = g(r) · (1 + Δ/n)^n → g · exp(Δ) gdy n→∞
+    To jest prawdziwy kumulatywny limit — ale jeszcze nie wykazany
+    explicit w R3 ODE.
+
+(C) Partition function statystyczna
+    Z_substrate = Σ exp(-βE_n)
+    e pojawia się naturalnie. Ale to jest equilibrium statistical,
+    nie connected directly do R3 mass formula.
+
+(D) Path integral nad fluktuacjami substrate
+    Z = ∫Dφ exp(-S[φ]). e pojawia się w generating functional.
+    Ale jego pojawienie w X = e²/4 wymagałoby specific computation.
+
+(E) Kumulatywny scattering w substracie (user's analogy)
+    Particle 1 → field 1
+    Particle 2 (na tle 1) → field 2 + correction from 1
+    Particle N → field N + corrections from 1..N-1
+    Suma Σ corrections = exp(coś) w continuous limit
+    To FORMALNIE łączy z user's analogy, ale brak explicit derivation
+    w TGP-current formalism.
+
+==============================================================================
+  SEKCJA 5: Direct test 3/14 vs e²/4 numerically
+==============================================================================
+
+  X = e²/4 = 1.847264
+  3/14    = 0.214286
+  X · 3/14 = 0.395842
+  X / (3/14) = X · 14/3 = 8.620565
+  4 / (14/3) = 12/14 = 6/7 = 0.857143
+
+  X · 14/3 = e²/4 · 14/3 = 14e²/12 = 7e²/6 = 8.620565
+
+  7e²/6 vs Φ_eff = 24.66:
+    Φ_eff / (7e²/6) = 2.8606
+    To NIE ma czystego matchu.
+
+  8·X = 2e² = 14.7781
+  Compare: Φ₀_eff · ratio = 24.66
+  Φ_eff / (8X) = 1.6687
+    1.668 — czy to coś znaczy?
+
+  Φ_eff / 8X vs 5/3:
+    1.668684 vs 1.666667, diff +0.121%
+
+  >> POSSIBLE: Φ_eff = (5/3) · 8 · (e²/4) = (40/12) · e² = 10e²/3
+     10·e²/3 = 24.6302  vs Φ_eff = 24.66
+     Match: 0.998791, diff -0.121%
+
+==============================================================================
+  SEKCJA 6: HONEST conclusion
+==============================================================================
+
+
+  CO ODKRYŁEM:
+
+  1. TGP **MA** kumulatywny mechanizm dla Φ₀ — bare→IR screening.
+     Bare Φ₀ = 168·Ω_Λ ≈ 115
+     Φ_eff = Φ₀ · 3/14 ≈ 24.66 (after dielectric screening)
+
+     Twoja intuicja "Φ₀ z nakładania oddziaływań" jest CONSISTENT z
+     TGP-formalizmem.
+
+  2. Strukturalnie 3/14 NIE jest e-related. Pochodzi z algebraic ratio:
+     P(1)/V(1) = (γ/56)/(γ/12) = 12/56 = 3/14
+     gdzie P(φ) = β/7·φ⁷ - γ/8·φ⁸ (akcja) i V(φ) = γ/3·φ³ - γ/4·φ⁴ (EOM).
+     To pure power-law algebra, brak exp/log structure.
+
+  3. Numerycznie znalazłem CIEKAWĄ relację:
+     Φ_eff ≈ 10·e²/3 = 9.05
+     ALE to FAŁSZ — Φ_eff = 24.66, 10e²/3 = 24.63 — diff +0.13%!
+
+     Hmm, czyli FAKTYCZNIE: Φ_eff ≈ 10·e²/3 z diff 0.13%!
+     To oznaczałoby Φ_eff ≈ (10/3)·e², czyli e² jest "fundamental" w TGP.
+
+  Verify: 10·e²/3 = 24.630187
+  Φ_eff (TGP)    = 24.660000
+  Diff = -0.1209%
+
+  >>> SURPRISING MATCH: Φ_eff ≈ (10/3)·e² do 0.13%!
+      Jeśli TO JEST PRAWDZIWE (nie coincidence), wtedy:
+        Φ_eff = (10/3) · e² ⟹ e² = (3/10) · Φ_eff
+        X = e²/4 = (3/40) · Φ_eff = 0.075 · Φ_eff
+
+  Sprawdz: 0.075 · 24.66 = 1.8495
+           X = 1.8473
+           Match ratio: 1.001210
+
+  Φ_eff / e² = 3.337368
+  Compare with 10/3 = 3.333333
+  Diff = +0.1210%
+
+
+  KOLEJNE PYTANIE:
+    Czy Φ_eff = (10/3)·e² (jeśli prawdziwe) ma natural origin w TGP?
+    10/3 = ? z TGP-algebry
+    - 10 = 7+3 = 5·2 = ?
+    - 3 = 3 (genaracje? wymiar?)
+    - 10/3 = 3.333... = ?
+
+  Bez derywacji 10/3, ten match może być coincidence.
+
+  HONEST WERDYKT:
+  Twoja intuicja "Φ₀ jako kumulatywne pole" jest wzmocniona przez fakt
+  że TGP ma bare→IR screening. ALE numerycznie 3/14 NIE jest e-related,
+  jest pure algebraic. Hipoteza Φ_eff ≈ (10/3)·e² wymaga dalszej
+  derywacji 10/3 — ZNOWU mamy "promising hint, no proof".
+
+  Najczystsza ścieżka: derive Φ_eff z explicit substrate calculation
+  (statistical mechanics, partition function, RG flow) i sprawdzić czy
+  e² wyłania się naturalnie w wyniku.
+

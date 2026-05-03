@@ -1,0 +1,151 @@
+==============================================================================
+  λ.1 L1.1 — Algebraic search dla 10/3 w TGP integers
+==============================================================================
+
+Target: 10/3 = 3.333333
+
+Origin: Φ_eff (24.66) ≈ (10/3)·e² z diff 0.12%
+Hypoteza: jeśli 10/3 jest TGP-algebraic, e² jest fundamentally derived.
+
+==============================================================================
+  SEKCJA 1: TGP integer rationals candidating dla 10/3
+==============================================================================
+
+      n |   d |       n/d | diff% from 10/3
+  --------------------------------------------------
+     10 |   3 |   3.33333 |          0.0000%
+     20 |   6 |   3.33333 |          0.0000%
+
+==============================================================================
+  SEKCJA 2: Physical interpretations dla 10
+==============================================================================
+
+  - T_4 = sum(1..4) (triangular number): topological count
+  - 4·5/2 = 10 (symmetric 2-tensor 4D): g_μν independent components
+  - Poincare group dim = 6 + 4: spacetime symmetry
+  - 8 + 2 (gluons + EM photons?): gauge boson count
+  - 2·5 = 10 (di-quarks?): particle physics
+  - 3 + 7 (N_gen + (P-V)·56): TGP-internal sum
+  - 4 + 6 (Hobart-Derrick + Lorentz dim): TGP×relativity
+
+  KEY CANDIDATE: 4·5/2 = 10 = N_gravity_DOF (spin-2 tensor 4D)
+  Physical motivation:
+    - g_μν symmetric tensor w 4D ma 4·(4+1)/2 = 10 niezależnych components
+    - To jest dokładnie 'gravity degrees of freedom' przed gauge fixing
+    - W TGP grawitacja jest emergent z amplitude sector → naturalna relacja
+
+==============================================================================
+  SEKCJA 3: Physical interpretations dla 3
+==============================================================================
+
+  - N_gen (number of fermion generations): fermion taxonomy
+  - d_spatial = 3: spatial dimensions
+  - 3 = P(1) numerator factor (γ/7 - γ/8 = γ/56, 12/56 = 3/14): TGP algebraic
+  - 3 = κ·4·Φ_eff (z κ = 3/(4Φ_eff)): TGP gravity coupling
+  - 3 colors SU(3)_C: gauge
+  - 3 = N_gen = 3 dla R3 + bariera (why_n3): R3 result
+
+  KEY CANDIDATE: 3 = N_gen (R3 result z why_n3)
+  Physical motivation:
+    - 3 generacje fermionów to fundamental TGP prediction (R3 closure)
+    - W amplitude sector emergent fermions = 3 generations
+    - 10/3 = (gravity DOF) / (fermion generations)
+
+==============================================================================
+  SEKCJA 4: Hipoteza H_10/3
+==============================================================================
+
+
+  HIPOTEZA H_10/3:
+    10/3 = N_gravity_DOF / N_gen
+         = (4·5/2) / 3
+         = (symmetric 2-tensor 4D components) / (fermion generations)
+
+  Fizyczna interpretacja:
+    Φ_eff jest kumulatywnym polem (z bare→IR screening, sek00:77).
+    Każdy fermion (3 generacje) "wnosi wkład" z grawitacyjnego coupling
+    w 4D (10 components g_μν). Stosunek:
+      Φ_eff per generation = (gravity DOF) / N_gen × (jakaś fundamental scale)
+      Φ_eff = (10/3) · e²
+
+    Gdzie e² byłaby "fundamental scale per gravity DOF per fermion generation".
+
+  STATUS: SUGESTYWNE — physical motivation jest plausible, ale wymaga
+  konkretnej derywacji (nie tylko counting argument).
+
+  Co byłoby potrzebne żeby TO ZAMKNĄĆ:
+    1. Pochodzić Φ_eff z explicit substrate calculation
+    2. Pokazać że result faktoryzuje się jako (gravity DOF) × (e²) / N_gen
+    3. Wyjaśnić dlaczego e² jest "fundamental scale" per DOF
+
+==============================================================================
+  SEKCJA 5: Numerical verification trzech wariantów Φ_eff
+==============================================================================
+
+  (10/3) · e² = 24.630187
+
+  Φ_eff cosmological (36·Ω_Λ)              = 24.66, diff -0.1209% <<< CLOSE
+  Φ_eff Brannen lock (sek09:1077)          = 24.783, diff -0.6166%
+  Φ_eff = 25 (PPN preferred)               = 25.0, diff -1.4793%
+
+==============================================================================
+  SEKCJA 6: Inne potencjalne źródła 10/3 w TGP
+==============================================================================
+
+  Testy kombinacji TGP integers:
+  expression                          |      value |  10/3 match
+  -----------------------------------------------------------------
+  (7+3)/3 = N(P)+N_gen / N_gen        |    3.33333 |      0.000%  ✓ MATCH
+  (8+2)/3                             |    3.33333 |      0.000%  ✓ MATCH
+  4·5/(3·2) = 10/6 = 5/3              |    3.33333 |      0.000%  ✓ MATCH
+  (4+6)/3                             |    3.33333 |      0.000%  ✓ MATCH
+  Tetragonal: 4/(0.4·3)               |    3.33333 |      0.000%  ✓ MATCH
+  2·5/3                               |    3.33333 |      0.000%  ✓ MATCH
+  (P+V)/(P-V) for P=7,V=4: 11/3       |    3.66667 |     10.000%
+  Polynomial degree ratio: 8/2.4      |    3.33333 |      0.000%  ✓ MATCH
+  ζ(2)·something...                   |    1.64493 |     50.652%
+  κ_TGP·Φ_eff·X                       |    1.36661 |     59.002%
+
+==============================================================================
+  SEKCJA 7: PASS / FAIL judgment dla L1.1
+==============================================================================
+
+
+  Co znaleziono:
+
+  1. 10/3 = T_4/N_gen ALBO 10/3 = (gravity DOF in 4D) / N_gen
+     - 10 = 4·5/2 = liczba components symmetric 2-tensor w 4D
+     - 3 = N_gen (z R3 result + N_gen=3 bariera)
+     - Kombinacja **fizycznie motywowana** w TGP-context
+
+  2. Match numerczny:
+     - (10/3)·e² = 24.6302
+     - Φ_eff_cosmological = 24.66, diff -0.12% ✓
+     - Φ_eff_Brannen = 24.783, diff -0.62% (gorzej)
+
+  3. ALE: argument "10 = gravity DOF / N_gen" jest **counting argument**,
+     nie **derivation**. Bez konkretnego mechanizmu który łączy:
+     (gravity DOF) × (fundamental scale) / (generations) = Φ_eff
+     to jest **post-hoc rationalization**, nie mass derivation.
+
+  PASS criterion (L1.1):
+    "Znalezienie kombinacji TGP-integers z explicit fizyczną motywacją
+     która daje 10/3 z diff <0.5% Φ_eff/e²"
+
+  Spełnione:
+    ✓ Kombinacja: 4·5/(2·3) = 10/3 ✓ (algebraic identity)
+    ✓ Fizyczna motywacja: gravity DOF / N_gen ✓ (TGP-natural)
+    ✓ Match: 0.12% dla Φ_eff cosmological ✓ (<0.5%)
+
+  ALE caveat:
+    ⚠️ Argument jest **counting**, nie **derivation**
+    ⚠️ Wymagane jest pokazanie że Φ_eff *faktycznie* faktoryzuje się
+       jako (10/3)·e² z fizycznego mechanizmu, nie tylko że LICZBOWO matche
+
+  STATUS: **PARTIAL PASS**
+    L1.1 spełnia formalne PASS criterion (counting + diff <0.5%)
+    ALE motivation jest weak — wymaga L1.3 (partition function) lub
+    L1.2 (β-function) żeby ZAMKNĄĆ derywację z fundamentu.
+
+  Recommendation: count L1.1 jako 0.5 PASS (suggestive ale niedomknięte).
+

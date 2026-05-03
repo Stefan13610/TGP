@@ -1,0 +1,175 @@
+==============================================================================
+  λ.1 P2.3 — Φ_eff = (10/3)·e²: derivation od substrate
+==============================================================================
+
+==============================================================================
+  SEKCJA 1: Dekompozycja Φ_eff = (10/3)·e²
+==============================================================================
+
+  Z TGP (sek00:74-77):
+    Φ_0 (bare)  = 168·Ω_Λ
+    Φ_eff       = Φ_0·(3/14) = 36·Ω_Λ
+
+  Empirical hipoteza:
+    Φ_eff = (10/3)·e²
+    36·Ω_Λ = (10/3)·e²
+    => Ω_Λ = (10·e²)/(3·36) = 5·e²/54
+
+  Numerical:
+    5·e²/54 = 0.684172
+    PDG Ω_Λ = 0.6889 ± 0.0056
+    Diff: -0.686%
+
+  TGP raw used: Ω_Λ = 0.685
+    Diff vs 5·e²/54: -0.121%
+
+==============================================================================
+  SEKCJA 2: Three Φ_eff anchors vs (10/3)·e²
+==============================================================================
+
+  (10/3)·e² = 24.630187
+
+  Anchor                                   |     Value |   (10/3)e² diff
+  ---------------------------------------------------------------------------
+  Φ_eff = 36·Ω_Λ_PDG                       |   24.8004 |       -0.6863%
+  Φ_eff = 36·Ω_Λ_TGP_raw (=24.66)          |   24.6600 |       -0.1209% ✓
+  Φ_eff = 24.66 (sek00:77 quoted)          |   24.6600 |       -0.1209% ✓
+  Φ_eff = 24.7 (sek05:545)                 |   24.7000 |       -0.2826% ✓
+  Φ_eff = 24.783 (Brannen sek09:1077)      |   24.7830 |       -0.6166%
+  Φ_eff = 25.0 (PPN preferred sek08a:672)  |   25.0000 |       -1.4793%
+
+==============================================================================
+  SEKCJA 3: Reverse — skąd 10/3 w TGP?
+==============================================================================
+
+
+  Obserwacja: Φ_eff = 36·Ω_Λ. Hipoteza Φ_eff = (10/3)·e² implies:
+    Ω_Λ = 5·e²/54
+
+  Pytanie: czy 5·e²/54 wynika z fundamental TGP-cosmology, czy to
+  numerologia?
+
+  Z TGP (sek00:75):
+    Λ_eff = c_0² · γ/56
+    Φ_eff = 12·Λ_eff·c_0²/H_0² (sek05:604)
+
+  W ratio:
+    Φ_eff/Φ_0 = (3/14) (P(1)/V(1) screening)
+
+  Z cosmological:
+    Ω_Λ = Λ_eff·c_0² / (3H_0²)
+    Φ_0 = 168·Ω_Λ → 168 = ?
+
+  TGP integer factorizations:
+    168 = 12 · 14 = 8·21 = 24·7 (= |GL(3,F₂)|)
+    36 = 12 · 3 = 4·9 (= 12·N_gen, where 12 = V(1) denom)
+    3/14 = 12/56 = 3/14 screening (P(1)/V(1))
+
+  Φ_eff = 36·Ω_Λ = 12·N_gen·Ω_Λ
+
+  Hipoteza: jeśli Ω_Λ = (5/54)·e², to:
+    Φ_eff = 12·3·(5/54)·e² = (12·3·5)/(54)·e² = 180/54·e² = 10/3·e² ✓
+
+  Ale skąd 5/54? Możliwe dekompozycje:
+    5/54 = 5/(2·27) = 5/(2·3³)
+    5 = ? (number of leptons w SM? 3 charged + 2 lekkie neutrinos?)
+    27 = 3³ (cosmological? z 3 gen-3 colors?)
+    54 = 2·27 = 2·3³ (mass·N_gen·N_gen²?)
+
+==============================================================================
+  SEKCJA 4: Cross-check z TGP cosmology + GL(3,F₂)
+==============================================================================
+
+
+  TGP MASS RATIOS (z why_n3 + sek00):
+    m_μ/m_e = 206.77 = (φ²-something)·factor (φ-drabinka)
+    Σm_ν = 59.6 meV (z Δm² + K_ν=1/2)
+
+  TGP COSMOLOGICAL:
+    Λ_eff·c²/(3H²) = Ω_Λ ≈ 0.685
+    Φ_0 = 168·Ω_Λ ≈ 115 (sek00:76)
+    Φ_eff = 36·Ω_Λ ≈ 24.66 (sek00:77)
+
+  HIPOTEZA λ.1 (TENTATIVE):
+    Ω_Λ = 5·e²/54
+
+  Sprawdz: czy istnieje COSMOLOGICAL formula w TGP która daje to?
+
+  Ω_Λ = 5·e²/54 — possible TGP-decomposition:
+  - 5/54 = 5/(2·3³)
+  - 54 = 2·27 = 2·3³ (N_gen³ × 2?)
+  - 5 = ? (SU(5) fundamental? 4 generations + 1? 5 lepton states?)
+
+  Bez **explicit derivation** w TGP-formalizm, 5/54 pozostaje
+  numerologiczne. Wymaga formalnego cyklu w cosmology sector.
+
+==============================================================================
+  SEKCJA 5: Alternative — czy match jest accident wyboru Φ_eff?
+==============================================================================
+
+  Φ_eff ma trzy różne wartości w TGP:
+    24.66 (kosmologiczne, 36·Ω_Λ)
+    24.783 (Brannen lock 2026-05-01)
+    25.0 (PPN preferred)
+
+  Match z (10/3)·e² = 24.6302:
+    Φ_eff = 24.66: diff -0.1209%
+    Φ_eff = 24.783: diff -0.6166%
+    Φ_eff = 25.0: diff -1.4793%
+
+  KEY OBSERVATION:
+  Match jest 0.12% TYLKO dla cosmological 24.66.
+  Brannen lock (canonical 2026-05-01) daje 0.62% — 5× gorzej.
+  Ten fakt SUGERUJE że (10/3)·e² match może być coincidence z
+  konkretnym wyborem Ω_Λ w TGP-cosmological calibracji.
+
+  Argument przeciw fundamentalnemu (10/3)·e²:
+  - Gdyby było fundamental, powinno match WSZYSTKIE TGP-anchors
+  - Match TYLKO dla cosmological (najmniej fundamental anchor)
+  - Brannen (najbardziej fundamental, derived from m_e calibration)
+    nie matche z taką precyzją
+
+==============================================================================
+  SEKCJA 6: HONEST conclusion P2.3
+==============================================================================
+
+
+  Co odkryłem w P2.3:
+
+  1. Φ_eff = 36·Ω_Λ z TGP cosmology (sek00:77).
+     Hipoteza Φ_eff = (10/3)·e² wymaga:
+       Ω_Λ = 5·e²/54 ≈ 0.6842
+     vs PDG Ω_Λ = 0.6889 — diff -0.68%
+
+  2. **Bez explicit TGP derivation 5/54**, hipoteza pozostaje
+     numerologiczna. Możliwe dekompozycje:
+       - 54 = 2·3³ (N_gen³ × 2?)
+       - 5 = ? (SU(5)? Lepton count?)
+     Ale żadna nie ma natural fizycznej motywacji.
+
+  3. **Match jest 0.12% TYLKO dla cosmological Φ_eff**:
+       cosmological 24.66: diff -0.12% ✓
+       Brannen 24.783:     diff -0.62%
+       PPN 25.0:           diff -1.48%
+
+  4. **Argument przeciw fundamentalności**: Brannen (z calibracji
+     m_e via R3 mass formula, **najbardziej fundamental** anchor) NIE
+     matche. Sugeruje że match z cosmological jest coincidence.
+
+  PASS criterion P2.3:
+    "Pokazać explicit formula Φ_eff = K · e² gdzie K wynika z TGP-substrate
+     calculation"
+
+  Status: **NEGATIVE** ✗
+
+  Brak explicit derivation 5/54 lub 10/3 z TGP-fundamentu. Match z
+  cosmological Φ_eff jest numerologiczne — zalezne od wyboru anchor.
+
+  Recommendation: count P2.3 jako **0 PASS**.
+
+  IMPLIKACJA:
+  - Hipoteza Φ_eff = (10/3)·e² traci wsparcie po sprawdzeniu z Brannen anchor
+  - Dla λ.1 program: e² może NIE być fundamental w Φ_eff
+  - X = e²/4 w R3 mass formula może być OD TEGO ODDZIELONE
+    (X jest fundamentalne, Φ_eff to oddzielny problem)
+

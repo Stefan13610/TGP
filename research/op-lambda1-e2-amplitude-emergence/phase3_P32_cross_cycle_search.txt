@@ -1,0 +1,202 @@
+==============================================================================
+  λ.1 P3.2 — Cross-cycle search dla e² traces
+==============================================================================
+
+==============================================================================
+  SEKCJA 1: Neutrinos (ζ.1, K_ν=1/2 Majorana)
+==============================================================================
+
+  Neutrino masses (ζ.1):
+    m_1 = 0.8 meV, m_2 = 8.65 meV, m_3 = 50.11 meV
+
+  Mass ratios:
+    m_2/m_1 = 10.8125
+    m_3/m_1 = 62.6375
+    m_3/m_2 = 5.7931
+
+  Test: czy istnieje n_ν które fittuje neutrino ratios z phi-drabinką?
+  (A_ν2/A_ν1)² · phi^n_ν = m_ν2/m_ν1 = 10.8125
+
+  Inne kandydaci dla n_ν (jeśli phi-drabinka):
+   (A2/A1)^2 |   n_ν z m_2/m_1 |   n_ν z m_3/m_1 |  consistent?
+  ----------------------------------------------------------------------
+      0.5000 |          6.3877 |          4.0191 |           NO
+      1.0000 |          4.9473 |          3.2989 |           NO
+      2.0000 |          3.5069 |          2.5787 |           NO
+      5.0000 |          1.6028 |          1.6266 |          YES
+     10.0000 |          0.1623 |          0.9064 |           NO
+
+  e² = 7.3891
+  e²/2 = 3.6945 (charged lepton n)
+  e²/4 = 1.8473
+  e = 2.7183
+
+  Dla A_ν2/A_ν1 = 1 (równe amplitudy): n_ν = log(R21)/log(phi) = 4.9473
+  Compare: e² = 7.3891, e = 2.7183, π = 3.1416, 5 = 5
+
+  Najbliższy match: n_ν ≈ 5 (diff -1.1%)
+  N_lepton states (3 charged + 3 neutrinos = 6, nope), but 5 = ?
+
+  Hipoteza λ.1 cross-test: n_ν = e²/2 · g(K_ν) gdzie g(K=2/3)=1
+  Numerical n_ν z neutrino masses ≈ 4.95
+  Implied g(K_ν=1/2) = n_ν / (e²/2) = 1.3391
+
+  g_neutrino ≈ 1.34 — does it match anything?
+  Compare: K_lep/K_ν = (2/3)/(1/2) = 4/3 = 1.3333
+  Match: 1.34 vs 1.333... DIFF +0.5%!
+
+  HIPOTEZA: g(K) = 2/(3K)? Dla K=2/3: g = 2/(3·2/3) = 1 ✓
+           Dla K=1/2: g = 2/(3·1/2) = 4/3 ≈ 1.333 (consistent z 1.34?)
+
+  Albo g(K) = K_lep/K = (2/3)/K? Identyczna formuła.
+
+  Test przy g(K) = 2/(3K):
+    n_ν = e²/2 · 4/3 = (2/3)·e² = 4.9260
+    PASTA z numerical n_ν = 4.9473 — match -0.43%
+
+==============================================================================
+  SEKCJA 2: Newton constant (χ.1)
+==============================================================================
+
+
+  Z χ.1 program (op-chi1-newton-constant-derivation):
+    G_N = g* / (M_TGP² · ξ_grav)
+
+  Gdzie:
+    g* = 0.71 (AS NGFP fixed point)
+    M_TGP ≈ 0.2845 · M_Pl ≈ 3.473·10¹⁸ GeV
+    ξ_grav = TGP-strukturalny dim-less factor (do wyznaczenia)
+
+  Pytanie: czy ξ_grav zawiera e²?
+
+  Inferred ξ_grav (jeśli G_N·M_Pl² = 1): 8.7719
+
+  Compare with e²:
+    e² = 7.3891
+    ξ_grav / e² = 1.1871
+    ξ_grav vs e²: diff +18.71%
+
+  Match z e² nie jest exact (8.77 vs 7.39)
+
+  Inne kandydaci dla ξ_grav = 8.7719:
+    e² · 1.188 = 8.7782 (lambda*-related?)
+    π² = 9.8696 (geom)
+    e² + 4/3 = 8.7224
+    8.776 (numerical) ≈ 168/19.14 ≈ ? non-trivial
+
+==============================================================================
+  SEKCJA 3: α-em (phase sector — NEGATIVE confirm)
+==============================================================================
+
+
+  Z dodatekO_u1_formalizacja.tex (Phase 6 result):
+    α_em^(sub) = Φ₀/(8π·J_phase) ≈ 1/94.09 (Planck)
+
+  Składniki:
+    - Φ₀ = TGP fundamental scale (sek00:76)
+    - J_phase = phase coupling constant
+    - 8π = 2·(4π) z full sphere integration
+
+  e_Euler NIE pojawia się w α_em derivation.
+
+  Confirm: phase sector używa **Φ₀, J, π** (NIE e_Euler).
+  λ.1 hipoteza ma być **specific dla amplitude sector**.
+
+  Status: NEGATIVE confirm — e² izolowana w amplitude.
+
+==============================================================================
+  SEKCJA 4: K-taxonomia Brannen (r=√2, K_lep=2/3, K_ν=1/2)
+==============================================================================
+
+
+  Z Brannen lattice + R3 closure:
+    r = √2 (substrate ratio)
+    K_lep = 2/3 (charged leptons Koide)
+    K_ν = 1/2 (neutrinos Majorana)
+    Φ_0 = 24.783 (Brannen lock)
+    K_geo · φ⁴ kinetic prefactor
+
+  Sprawdzamy czy e² wyłania się z Brannen K-taxonomy:
+
+  Expression                          |      Value
+  --------------------------------------------------
+  r² = 2                              |     2.0000
+  K_lep = 2/3                         |     0.6667
+  K_ν = 1/2                           |     0.5000
+  K_lep + K_ν = 7/6                   |     1.1667
+  1/K_ν - 1/K_lep = 2 - 3/2 = 1/2     |     0.5000
+  3·K_lep = 2                         |     2.0000
+  e² · r = 10.45                      |    10.4497
+  e² · K_lep = e²·2/3 ≈ 4.93          |     4.9260
+  e² · K_ν = e²/2 = 3.69              |     3.6945
+  Φ_0/K_lep = 24.783/(2/3) = 37.17    |    37.1745
+
+  KEY OBSERVATION:
+    e² · K_ν = e² · 1/2 = e²/2 = 3.6945  ← Charged lepton n(α=2)!
+    e² · K_lep = e² · 2/3 = 4.926  ← potential neutrino n?
+
+  Hipoteza: n(K) = e² · K (alternative do n = e²/2)?
+    K_lep = 2/3 → n = 2e²/3 = 4.9260 (charged value 3.69 NIE matche)
+
+  Lub: n = e² · (1 - K) ?
+    K_lep = 2/3 → n = e²/3 = 2.4630 (NIE matche 3.69)
+    K_ν = 1/2 → n = e²/2 = 3.6945 (charged value!)
+
+
+  Wniosek z Brannen analysis:
+  - e² · K_ν = e²/2 = charged n(α=2) — INTERESUJĄCA zbieżność
+  - Może implikować że n(K) = e² · (1 - K) lub similar
+  - Charged: K=2/3 → n = e²·(1-2/3) = e²/3 = 2.46 (NOPE, charged daje 3.69)
+  - To NIE jest clean Brannen-derivation dla e²
+
+==============================================================================
+  SEKCJA 5: Summary — co znaleziono w cross-cycle search?
+==============================================================================
+
+
+  CO ZNALAZŁEM:
+
+  1. NEUTRINA (ζ.1):
+     - n_ν z naive fit (równe amplitudy A_ν2/A_ν1 = 1) ≈ 4.95
+     - Hipoteza n(K) = e²/2 · 2/(3K) daje n_ν = (2/3)e² = 4.9260
+     - Match z numerical: ratio 0.9957
+     - Status: SUGESTYWNE, ale brak explicit g₀_ν kalibracji
+     - PARTIAL MATCH
+
+  2. NEWTON (χ.1):
+     - Inferred ξ_grav = 8.78 (z G_N relations)
+     - Compare e² = 7.39: diff +18.71%
+     - Status: NIE matche e² directly, ale w bliskości
+     - NEGATIVE (no clean match)
+
+  3. α-em (phase sector):
+     - 8π/(Φ₀·J_phase·...) — brak e_Euler
+     - Status: NEGATIVE confirm — e² izolowane w amplitude
+     - NEGATIVE (jako cross-test, ale POSITIVE jako boundary)
+
+  4. K-taxonomia (Brannen):
+     - e² · K_ν = e²/2 = charged n(α=2) — interesująca zbieżność
+     - Brak clean derivation
+     - NEGATIVE (numerologiczne hint)
+
+  PASS criterion P3.2:
+    "Identify ≥1 dodatkowy sektor z e² hint LUB strukturalna izolacja
+     R3-amplitude (e² specific tylko dla charged K=2/3)"
+
+  Wynik:
+    - **Strukturalna izolacja**: phase sector NIE ma e_Euler ✓
+      (z dodatekO_u1, confirms boundary)
+    - **Hint w neutrinach**: n_ν ≈ (2/3)e² jest sugesytywne ale weak
+    - **Newton**: nie matche e² directly (8.78 vs 7.39)
+
+  Status: **PARTIAL PASS** (0.5)
+    - Boundary R3-amplitude vs phase sector confirmed (POSITIVE)
+    - No clear additional sector z e² (NEGATIVE for expansion)
+    - Sugestywne hint w neutrinach, ale wymaga osobnego cyklu
+
+  IMPLIKACJA:
+  - λ.1 hipoteza może być zawężona do: "e² jest specific dla R3 charged
+    K=2/3 amplitude sector"
+  - Cross-cycle linkage do innych sektorów (neutrina, Newton, α) nie
+    jest fundamental — to są **separate** mechanisms
+
