@@ -1,6 +1,7 @@
 ---
 title: "M10.5 — H_0/S_8 tensions audit results (ct3 SUPERSEDED, ct7 CONFIRMED)"
 date: 2026-04-26
+last_yaml_update: "2026-05-03"
 cycle: M10.5
 status: CLOSED
 verdict: "6/6 PASS — ct3 optimistic estimate SUPERSEDED by M9.3.1; ct7 honest verdict REAFFIRMED"
@@ -186,6 +187,19 @@ w_eff + 1 = 2·ρ_kin/ρ_total  ≥ 0   (since ρ_kin ≥ 0, ρ_total > 0)
 
 **TGP cannot reproduce w(0.5)=-1.05.** Jeśli DESI DR2/DR3 confirm phantom crossing → **TGP DE FALSIFIED**.
 
+> **Uwaga 2026-05-03 (post-DR2 release):** Powyższy przykład używa DESI DR1
+> (2024) values `(w₀, wₐ) = (-0.45, -1.79)`. **DESI DR2** (2025-03,
+> arXiv:2503.14738) dał inne `(-0.75 ± 0.10, -0.90 ± 0.35)` przy 3.1σ
+> (BAO+CMB+SN). DR2 central values **przesunęły się ku ΛCDM** vs DR1, ale
+> nadal `w(z) < -1` w pewnym przedziale w fitcie CPL (artefakt parametryzacji).
+> W obu przypadkach `w_eff ≥ -1` strukturalna granica TGP pozostaje testowalna
+> przez **bezpośrednią rekonstrukcję `w(z)` w binach z** (np. arXiv:2603.21125 —
+> Model-Independent Reconstruction of Quintessence Potential, DR2+Pantheon+).
+> **Bottom line strukturalny niezmieniony:** TGP `w_eff ≥ -1` ALGEBRAIC,
+> phantom crossing >3σ at any z = TGP DE FALSIFIED. Aktualnie 3.1σ — yellow
+> zone, NOT falsified. Patrz [[M10_R_results.md#125-post-m10-addenda-2026-04-28--2026-05-02]]
+> dla updated falsification matrix.
+
 ### M10.5.6 — Synthesis
 
 **ct3 status revision:**
@@ -215,6 +229,8 @@ w_eff + 1 = 2·ρ_kin/ρ_total  ≥ 0   (since ρ_kin ≥ 0, ρ_total > 0)
 | T-Λ closure β ~ H_0² | M10.5.3 numerical scale | ✅ |
 | Hyperbolic g_eff M9.1'' | implicit w cosmological slow-roll | ✅ |
 | ρ_kin ≥ 0 (positive kinetic) | M10.5.5 K=K_geo·φ⁴ > 0 | ✅ |
+| **Phase 3.E B.6 PARTIAL DERIVED** (2026-04-28, post-M10.5 addendum) | `V(Φ_eq)\|β=γ = γ/6` cross-confirms M10.5.5 V form niezależnie z UV-side; M10.R.1.d cross-cited | ✅ |
+| **UV.3 Z_Φ = 14/3** (2026-05-02, op-uv3 closure) | Φ_0 absolute scale renaming (Φ_0^bare ≈ 115 / Φ_eff = 24.65); **NIE wpływa na B_ψ/H_0² perturbation** (orthogonal — UV.3 = absolute scale, M10.5 = backreaction perturbation) | ✅ (orthogonal) |
 
 **Drift status M10.5: ZERO drift** vs sek08a foundations.
 

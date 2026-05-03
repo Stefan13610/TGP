@@ -1,6 +1,7 @@
 ---
 title: "M10.R — M10 cycle final synthesis (closure-grade)"
 date: 2026-04-26
+last_yaml_update: "2026-05-03"
 cycle: M10.R
 status: CLOSED
 verdict: "6/6 PASS — M10 cycle CLOSED (36/36 PASS sub-cykli + R synthesis)"
@@ -293,6 +294,58 @@ Konsolidacja **10 predykcji** z M10 + M9 + closure_2026-04-26 (wybór reprezenta
 | **JUNO** | NO neutrino ordering | WAITING; IO ⇒ FALSIFIED |
 
 **Kategoria:** 3 CONFIRMED + 7 WAITING (data 2026-2030+).
+
+---
+
+## 12.5 Post-M10 addenda (2026-04-28 → 2026-05-02)
+
+> **Status:** addytywne updates **post-M10 closure (2026-04-26)**, dodane
+> 2026-05-03 w ramach [[../audyt_cosmology_drift_2026-05-03/README.md]].
+> **Zero strukturalnych konfliktów; M10.x sub-results IDENTYCZNE liczbowo.**
+> Wszystkie addenda są **kompatybilne** z 11/11 cross-check w sekcji 7
+> (M10.R.5).
+
+Po zamknięciu M10 dodano kolejne **kompatybilne** zamknięcia, **bez**
+modyfikacji żadnego z M10.x sub-results:
+
+| Date | Closure | Test impact on M10 |
+|---|---|---|
+| 2026-04-28 | **Phase 3.E** (op-phase3-uv-completion 60/60 PASS, GRAND TOTAL 281) — sek08a `rem:phase3-E-deepening`: B.6 PARTIAL DERIVED `V(Φ_eq)\|β=γ = γ/6 → bridge ½ → γ/12` (Friedmann ratio 0.9808); B.4 STRENGTHENED Φ_0 ≈ 115 vs M_Pl ~ 10¹⁸ GeV (60.93 dex hierarchy excluded via T-FP IR fixed point) | M10.R.1.d (`V(1)=β/12`) **cross-confirmed niezależnie** z UV-side; m_σ²/m_s² = 2 preserved across 4 UV completions (AS, KKLT, LQG, CDT) |
+| 2026-05-02 | **UV.3 closure** (op-uv3-phi0-renormalization 3 phases) — `Z_Φ = V(1)/P(1) = 14/3` (sympy EXACT), `Φ_0^bare = 168·Ω_Λ ≈ 115` (UV anchor), `Φ_eff = 24.65` (IR; previously called "Φ_0"), `κ = 7/(2·Φ_0^bare) ≈ 0.030` EXACT pod Z_Φ | M10.R.2 scale propagation `β ~ H_0²` gets **algebraic UV anchor**; F1 macierz dostaje sub-entry F1.5 (Ω_Λ·α_s) |
+| 2026-05-02 | **γ.1 closure** (op-gamma1-phi-eff-anchor-resolution) — `Ω_Λ^TGP,pure = 2π/9 ≈ 0.6981` (czysta predykcja, g̃=1); `Φ_eff^pure = 8π ≈ 25.13` | M10.1.6 T-Λ closure dostaje **3-channel UV-derivation** (T-Λ + γ.1 + UV.3); F12 dodać do macierzy 12 |
+| 2026-05-02 | **δ.1 + δ.2 closures** — `g̃ = N_f·e²/(12π) ≈ 0.98003` (correction); `Ω_Λ^TGP,corr = 5e²/54 ≈ 0.68417` (Planck −0.07σ); `N_f = 5` derivable strukturalnie z TGP mass spectrum (5 quarks below M_Z, top above) | Ω_Λ z input → algebraic prediction **CASCADE COMPLETE**; M10.1.5 χ² fit cosmologii zachowany |
+| earlier | **op-omicron1** (commit f4bc714) — `Σm_ν = 59.6 meV` Phase 2 DERIVED z CMB-S4 5σ DECISIVE projected | F11 dodać do macierzy 12 (dotychczas tylko F2 dla CMB-S4) |
+
+### 12.5.1 Updated falsification matrix (post-cascade)
+
+Dodatkowe falsifikatory **F1.5 / F11 / F12** (poza F1-F10 z sekcji 12):
+
+| ID | Source | Prediction | Falsification threshold |
+|---|---|---|---|
+| **F1.5** | UV.3 + γ.1 closure | `Ω_Λ · α_s = 3·g_0^e/32 ≈ 0.0815` (drift 0.88%) | >3σ deviation → falsified; CMB-S4 + Z-pole α_s 2030+ |
+| **F11** | op-omicron1 (Phase 2 DERIVED) | `Σm_ν = 59.6 meV` (normal ordering only) | CMB-S4 5σ DECISIVE projected; >3σ deviation → IO TGP falsifies |
+| **F12** | γ.1 + δ.1+δ.2 cascade | `Ω_Λ ∈ {2π/9, 5e²/54, 0.6847_obs}` (algebraic, 3 forms) | >2σ deviation od jednej z 3 form → tension; Planck PR5 / LiteBIRD / DESI Y5 |
+
+**Konsekwencja strukturalna:** TGP cosmology post-cascade ma **falsifiability
+redundancy** — nawet jeśli DESI ostatecznie potwierdzi `(w₀, wₐ) = (−1, 0)`
+(F1 TGP exonerated w sektorze DE), niezależne kanały F1.5 / F11 / F12 nadal
+zachowują testowalność TGP w `Ω_Λ` algebraicznym, `Σm_ν` cosmologicznym
+i `Ω_Λ·α_s` cross-sektorowym. Macierz teraz **12 falsifikatorów**, target
+≥7 zachowany.
+
+### 12.5.2 Cross-references
+
+- [[../closure_2026-04-26/CLOSURE_2026-04-26_SUMMARY.md]] — input baseline
+- [[../op-uv3-phi0-renormalization/]] — UV.3 (Z_Φ = 14/3)
+- [[../op-gamma1-phi-eff-anchor-resolution/]] — γ.1 (Ω_Λ^pure = 2π/9)
+- [[../op-delta1-g-tilde-derivation/]] — δ.1
+- [[../op-delta2-Nf-derivation/]] — δ.2 (N_f = 5)
+- [[../op-omicron1-sigmamnu-cosmo/]] — Σm_ν cosmology
+- [[../audyt_cosmology_drift_2026-05-03/README.md]] — niniejsza addytywna actualizacja
+- core/sek00_summary (UV.3 tabela `Φ_0^bare/Z_Φ/Φ_eff`)
+- core/sek08_formalizm (G.0 closure header + UV.3 entry)
+- DESI DR2 actual: arXiv:2503.14738 (2025-03)
+- DESI Y3 (2026-04): 47 mln galaktyk, 2.8-4.2σ evolving DE
 
 ---
 
