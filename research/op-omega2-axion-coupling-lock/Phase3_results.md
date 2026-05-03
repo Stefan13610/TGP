@@ -1,12 +1,18 @@
 ---
 title: "ω.2.Phase3 results — predictions + 4-channel convergence 6/6 PASS — ω.2 program END"
 date: 2026-05-01
+last_revised: 2026-05-04
 cycle: ω.2.Phase3
 status: COMPLETE
 parent: "[[program.md]]"
 predecessor: "[[Phase2_results.md]]"
 program_status: ENDED
-g_LOCK: "α_em·E_TGP/(2π) = 8.300·10⁻³ (PARTIAL DERIVED, FORWARD GATE 5σ post-2027)"
+g_LOCK: "α_em·E_TGP/(2π) = 8.300·10⁻³ (LIVE PARTIAL, FORWARD GATE 5σ post-2027)"
+verdict: LIVE_PARTIAL
+verdict_history:
+  - 2026-05-01: PARTIAL_DERIVED (claimed in registry: STRUCTURAL_WINNER)
+  - 2026-05-01: LIVE_PARTIAL (audit §A.7 downgrade, m_X free)
+  - 2026-05-04: LIVE_PARTIAL (mini-audit confirms — no new critique)
 tags:
   - TGP
   - omega2
@@ -16,11 +22,31 @@ tags:
   - results
   - PASS
   - program-end
+  - LIVE-PARTIAL
+  - cascade-from-theta1
 ---
 
 # ω.2.Phase3 results — ω.2 PROGRAM END
 
-**Score: 6/6 PASS** ≥5/6 gate → **ω.2 program ENDED, g LOCKED**.
+> ⚠ **EPISTEMIC STATUS 2026-05-04 — LIVE PARTIAL (already-downgraded), confirmed by mini-audit.**
+>
+> Per [[AUDIT_omega2_2026-05-04.md]]: E_TGP = 536/75 jest **mechanicznie**
+> wyprowadzone z θ.1 anchors (B²_up=13/4, B²_down=61/25, B²_lep=2) przez
+> standardową triangle-anomaly formułę QED. **NIE jest post-hoc fitted.**
+>
+> Phase 2 W2.2.6 jawnie raportuje **FAIL Δχ²=0.21 < 9 (3σ)** — to **honest
+> nie-rozstrzygający wynik**, nie over-claim. Phase 3 status `PARTIAL DERIVED`
+> + forward-gate SO 2027+/LiteBIRD 2029+ pozostaje aktualny.
+>
+> **Kontrast z χ.1/UV.2:** ω.2 NIE ma analogicznej algebraicznej tautologii
+> ani post-hoc fittingu. Mini-audit potwierdza, że LIVE PARTIAL status z
+> AUDYT 2026-05-01 §A.7 jest poprawny i wystarczający.
+>
+> **Action 2026-05-04:** prose-blok w [[../../PREDICTIONS_REGISTRY.md]]:722-787
+> "ω.2 STRUCTURAL WINNER + FULL CONVERGENCE 18/18" oznaczony jako
+> over-claimed (synchronizacja z §A.7 LIVE PARTIAL). Sub-tests PASS preserved.
+
+**Score: 6/6 PASS** ≥5/6 gate → **ω.2 program ENDED, g LIVE PARTIAL** (claimed LOCKED 2026-05-01; downgraded LIVE PARTIAL 2026-05-01 §A.7; confirmed LIVE PARTIAL 2026-05-04 mini-audit).
 
 ## Sub-test results
 

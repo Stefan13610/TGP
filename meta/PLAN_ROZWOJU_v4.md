@@ -6,6 +6,22 @@
 
 > **Poprzednie plany**: PLAN_ROZWOJU_v3.md (zamknięty), PLAN_DOMKNIECIA_MASTER.md (zamknięty)
 
+> **Audit consolidation 2026-05-04 — non-breaking sweep:** wykonany
+> 5-fazowy audyt spójności + sprzątanie:
+> - Faza 1: ledger pollution z 74394a8 oznaczona (mark-as-unproven Option B);
+>   `856 effective uncontested 784, contested 72` w INDEX/PREDICTIONS_REGISTRY.
+> - Faza 2: omicron2 Stage 1 NULL closed → cosmology drift README + M10_5 + M10_1
+>   zsynchronizowane.
+> - Faza 3: nowy [[CALIBRATION_PROTOCOL.md]] jako binding gate.
+> - Faza 4: `_archiwum/README.md` freeze marker; `.gitignore` confirmed complete.
+> - Faza 5: `slownik_formalizmu.tex` post-UV.3 update; ten cross-link.
+>
+> **Forward-research opens** (NIE w scope tego audit-cleanup, dedicated future cycles):
+> - **ω.4** strukturalna derywacja m_a (substrate-action / instanton / explicit PQ)
+> - **UV.4** niezależna derywacja M_TGP (FRG flow, NIE z M_Pl PDG, NIE z M_GUT 2-loop)
+> - **B7-v2** τ.3 numerical re-derivation TT7-TT12 z geometric edge analysis
+> - **M10.1 v2** (Path A, w_today ≈ -0.93) post-DESI DR3 2027+
+
 ---
 
 ## Architektura folderów

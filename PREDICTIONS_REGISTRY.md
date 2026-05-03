@@ -779,6 +779,97 @@ band — reproduces ω.1+ω.2 LIVE PARTIAL ~3.8σ hint (downgraded 2026-05-01) a
 - **ZZ1, ZZ5, ZZ6** retain LOCKED (pure structural sympy/cascade — niezależne od ω.2 fitting).
 - ω.3 **NIE dotyka** A1/A2/A3/A4/A5/A6/A8 (other CRITICAL items są poza domeną ω.3).
 
+**REVISION 2026-05-04 — circular-anchor critique propagation (forward-patch 74394a8 ledger pollution):**
+
+Subset of 2026-05-01 ω.2/χ.1/UV.2/ω.3 promotions retracted post algebraic
+circularity audit. Source critiques + plan:
+- [[research/op-chi1-newton-constant-derivation/CRITIQUE_circular_anchor_2026-05-02.md]]
+- [[research/op-uv2-mtgp-absolute-scale/CRITIQUE_repackaged_circularity_2026-05-02.md]]
+- [[research/op-omega2-axion-coupling-lock/AUDIT_omega2_2026-05-04.md]] (mini-audit)
+- [[research/op-omega3-axion-decay-constant/AUDIT_omega3_2026-05-04.md]] (mini-audit, cascade-conditional)
+- [[meta/SUBAGENT_AUDIT_74394a8_2026-05-02.md]] (root cause + plan)
+- [[meta/AUDYT_TGP_2026-05-01.md]] (parent audit, sec. AB cross-cycle)
+
+**Specific retractions:**
+- **χ.1 G_N "DERIVED" → ANSATZ.** Stueckelberg + AS NGFP framework is structural
+  ansatz, not derivation. G_N tautologically reduces to 1/M_Pl² with `g*` and
+  `ξ_grav` cancelling identically (substitution X2.3 → X1.5).
+  Sub-tests X2.4/X2.5/X3.1/X3.2 are unit-system identities + float-precision
+  noise + mechanical consistency (NOT independent verifications). XX1-XX6
+  entries: status `PARTIAL CONDITIONAL — circular anchor`.
+- **UV.2 M_TGP "DERIVED FULL" → DERIVED PARTIAL (NUMEROLOGICAL).**
+  K_struct = N_A·2π² ≈ 173.15 is post-hoc fitted to empirical
+  `(M_Pl_PDG/M_GUT_2loop)·√(g*/N_A)` ≈ 173.65 (drift 0.29%). M_GUT 2-loop
+  theoretical band 10–30% > 0.29% drift → non-falsifiable in current SM
+  uncertainties. 4 alt-K_struct candidates Phase 1 selected by drift-min
+  aesthetic, not from first principles. YY1-YY6 entries: status
+  `PARTIAL CONDITIONAL — K_struct fitted in M_GUT band`.
+- **F6 STRUCTURAL → DERIVED upgrade RETRACTED → STRUCTURAL** (no change).
+  κ = √(32π) is unit-system identity in natural units where `G_N ≡ 1`,
+  NOT field-theory derivation from TGP-substrate.
+- **"Circularity z χ.1 joint-lock BROKEN" claim retracted** — repackaged via
+  M_GUT anchor (also empirical, also wide band), not field-theoretic break.
+- **"All Planck-scale physics TGP-grounded post-trio" claim retracted** —
+  M_GUT remains PDG/SM-2loop anchored (10–30% theoretical uncertainty band
+  larger than claimed 0.30% drift).
+- **ω.2 g_axion = α_em·E_TGP/(2π) status:** structural cascade from θ.1/ρ.1/η.2
+  (E_TGP = 536/75 mechanically inherited) is OK; lab-numerical verdict
+  Δχ²=0.21 < 9 (3σ) keeps ω.2 status as **LIVE PARTIAL** (already audited
+  AUDYT 2026-05-01 §A.7). WW7-WW12 entries pending mini-audit
+  AUDIT_omega2_2026-05-04 final classification.
+- **ω.3 cascade-conditional** on UV.2 K_struct rollback. f_a sympy-rational
+  LOCK `3125·π²·M_GUT/1273` is mechanically correct as algebraic identity
+  (ZZ1 LOCKED retained), but **numerical magnitude inherits UV.2 PARTIAL**
+  status (ZZ2 LOCKED-CONDITIONAL, ZZ3 LIVE PARTIAL forecast). ZZ1-ZZ6
+  entries: see AUDIT_omega3_2026-05-04 mini-audit per-row outcome.
+
+**Counter rollback (mark-only, no entry deletions):**
+856 cumulative → **856 (effective uncontested 784, contested 72 marked
+PARTIAL CONDITIONAL pending audit closures).** No sub-test PASS deleted —
+all mechanical sympy LOCKs preserved. Only **interpretation status** of
+chi.1/UV.2/ω.2/ω.3 promotions downgraded.
+
+**Why mark-only (not rollback):**
+1. Sub-tests are mechanically correct (Stueckelberg ansatz, K_struct ≈ 173
+   numerical observation, E_TGP cascade from θ.1/ρ.1/η.2) — they preserve
+   real structural work for forward research.
+2. Per [[meta/SUBAGENT_AUDIT_74394a8_2026-05-02.md]] §"Decyzja użytkownika":
+   no rollback, forward-patch.
+3. Self-correction discipline (audit-CI culture) better served by visible
+   downgrade markers than clean revert.
+
+**Per-row epistemic status (post-2026-05-04):**
+
+| Section | Pre-audit label | Post-audit status | Critique pointer |
+|---|---|---|---|
+| F6 (κ = √(32π)) | DERIVED | **STRUCTURAL** (rollback) | unit-system identity |
+| XX1 (g* tetrad seed) | LOCKED-derivative | **STRUCTURAL** | chi.1 §1 |
+| XX2 (h_TGP scalar) | LOCKED-derivative | **STRUCTURAL ANSATZ** | chi.1 §2 |
+| XX3 (G_N AS NGFP) | DERIVED | **ANSATZ — circular** | chi.1 §1.3 |
+| XX4 (M_Pl reproduction) | DERIVED | **TAUTOLOGY** | chi.1 §1.4 |
+| XX5 (κ-LOCK) | LOCKED | **STRUCTURAL** | chi.1 §3.1 |
+| XX6 (cχ = √3) | LOCKED | **STRUCTURAL** (Phase 1 only) | chi.1 §2.2 |
+| YY1 (K_struct = N_A·2π²) | LOCKED | **NUMEROLOGICAL OBSERVATION** | UV.2 §1.5 |
+| YY2 (K_struct sympy-LOCK) | LOCKED | **POST-HOC FITTED** | UV.2 §2.1 |
+| YY3 (M_Pl/M_GUT prediction) | DERIVED | **ALGEBRAIC CONSEQUENCE** | UV.2 §2.2 |
+| YY4 (M_TGP reproduction) | DERIVED | **TAUTOLOGY** | UV.2 §2.3 |
+| YY5 (M_GUT anchor swap) | DERIVED FULL | **PARTIAL CONDITIONAL** | UV.2 §2 |
+| YY6 (4-channel cascade) | LOCKED | **CASCADE-CONDITIONAL** | UV.2 §2.5 |
+| WW7 (E_TGP = 536/75) | LOCKED | **PENDING audit** | AUDIT_omega2_2026-05-04 |
+| WW8-WW12 (ω.2 cross-channel) | LIVE PARTIAL | **PENDING audit** (already LIVE PARTIAL post-A7) | AUDIT_omega2 |
+| ZZ1 (f_a sympy-rational) | LOCKED | **LOCKED-ALGEBRAIC** (cascade-conditional on UV.2 PARTIAL) | AUDIT_omega3 §1 |
+| ZZ2 (g_aγ algebraic) | LOCKED | **LOCKED-CONDITIONAL** (already downgraded §J.2) | AUDIT_omega3 §1 |
+| ZZ3 (5/5 NULL forecast) | LOCKED forecast | **LIVE PARTIAL forecast** (already §J.2) | AUDIT_omega3 §1 |
+| ZZ4 (r < 3.17·10⁻²³) | STRUCTURAL forecast | **STRUCTURAL** (B7 gap noted) | AUDIT_omega3 §1 |
+| ZZ5 (super-GUT ALP class.) | LOCKED | **STRUCTURAL** (cascade-conditional) | AUDIT_omega3 §1 |
+| ZZ6 (4-channel sympy diff=0) | LOCKED | **LOCKED-ALGEBRAIC** (cascade-conditional) | AUDIT_omega3 §1 |
+
+**No sub-test PASS deleted, no Phase result file modified beyond YAML
+verdict + opening blockquote.** Numerical sympy LOCKs (e.g. 3125·π²·M_GUT/1273)
+remain mechanically valid as algebraic identities — only their interpretation
+as "first-principles derivations" is downgraded to "anchor-conditional
+algebraic consequences".
+
 ## How to read this registry
 
 Each row carries:

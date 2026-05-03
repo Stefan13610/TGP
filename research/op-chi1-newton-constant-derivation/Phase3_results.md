@@ -1,12 +1,17 @@
 ---
 title: "χ.1.Phase3 results — predictions + 4-channel convergence 6/6 PASS → χ.1 program END (FULL CONVERGENCE)"
 date: 2026-05-01
+last_revised: 2026-05-04
 cycle: χ.1.Phase3
 status: COMPLETE
 parent: "[[program.md]]"
 predecessor: "[[Phase2_results.md]]"
 program_status: END
-verdict: FULL_CONVERGENCE
+verdict: STRUCTURAL_ANSATZ
+verdict_history:
+  - 2026-05-01: FULL_CONVERGENCE (claimed)
+  - 2026-05-02: BLOCKING_CRITIQUE (CRITIQUE_circular_anchor)
+  - 2026-05-04: STRUCTURAL_ANSATZ (downgraded; sub-tests PASS preserved)
 tags:
   - TGP
   - chi1
@@ -15,13 +20,36 @@ tags:
   - results
   - PASS
   - program-END
-  - F6-DERIVED
-  - G3-grav-CLOSED
+  - F6-DERIVED-RETRACTED
+  - G3-grav-PARTIAL
+  - circular-anchor-flagged
 ---
 
 # χ.1.Phase3 results
 
-**Score: 6/6 PASS** ≥5/6 gate → **χ.1 program END (FULL CONVERGENCE)**.
+> ⚠ **EPISTEMIC STATUS DOWNGRADED 2026-05-04 — STRUCTURAL ANSATZ, not derivation.**
+>
+> Per [[CRITIQUE_circular_anchor_2026-05-02.md]]: `G_N = g*/(M_TGP²·ξ_grav)`
+> with joint-lock `M_TGP = M_Pl·√(g*/ξ_grav)` substitutes algebraically to
+> `G_N = 1/M_Pl²` — the natural-units identity. **All Phase 2/3 sub-tests
+> are unit-system identities + float-precision noise + mechanical consistency
+> checks**, not independent verifications.
+>
+> Sub-tests PASS (6/6) **mechanically preserved** — they correctly verify
+> that *if* the Stueckelberg + AS NGFP ansatz holds, *then* consequences
+> κ = √(32π), G_N(SI) = CODATA, etc. follow. They do **not** verify that
+> the ansatz itself is field-theoretically derived.
+>
+> **Status downgrades (per [[../../PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04"):**
+> - F6 STRUCTURAL → DERIVED upgrade **RETRACTED** → STRUCTURAL (no change)
+> - G_N "DERIVED" → **ANSATZ** (Stueckelberg + AS NGFP, research-track)
+> - M_Pl "DERIVED" → **PDG-ANCHORED** (input, not output)
+> - G3-grav gap "CLOSED" → **PARTIALLY CLOSED** (ansatz; field-theory test pending)
+> - "FULL CONVERGENCE 17/18" → **STRUCTURAL ANSATZ — sub-tests mechanically PASS**
+>
+> See also: [[../../meta/SUBAGENT_AUDIT_74394a8_2026-05-02.md]] §2.1.
+
+**Score: 6/6 PASS** ≥5/6 gate → **χ.1 program END (FULL CONVERGENCE)** [claimed 2026-05-01; downgraded to STRUCTURAL ANSATZ 2026-05-04 — see banner above].
 
 ## Sub-test results
 

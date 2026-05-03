@@ -352,3 +352,64 @@ w_eff + 1 = 2·ρ_kin/ρ_total  ≥ 0   (since ρ_kin ≥ 0, ρ_total > 0)
 ---
 
 *M10.5 closed 2026-04-26. M10 cycle complete (6/6 sub-cycles). Proceed to M10.R synthesis.*
+
+---
+
+## 11. Addendum 2026-05-04 — REINFORCED via omicron2 NULL (independent mechanism)
+
+> **Binding:** [[../op-omicron2-phi-mean-shift-cosmo/results.md]] (Stage 1 NULL closed 2026-05-03),
+> [[../audyt_cosmology_drift_2026-05-03/README.md]] §"POST-AUDIT DEVELOPMENT".
+
+### 11.1 Co stało się post-M10.5
+
+User session 2026-05-03 zakwestionował M10.5 verdict ("TGP NIE solver
+H_0 tension") hipotezą głębszą: **Φ_0(t) tracking globalnej rozkład materii**
+(sek01 ontology). Jeśli matter source w sek08a działa kosmologicznie,
+M10.5 mógłby przegapić mechanism (used Buchert variance, nie source term).
+
+### 11.2 Stage 0 → Stage 1 (omicron2 cycle)
+
+- **Stage 0 (2026-05-03 popołudnie):** Z-test naiwny dał `dH/H = 8.93%`
+  vs required 8.37% → **wyglądało jak 107% pokrycie**.
+- **Stage 1 (2026-05-03 wieczór):** re-shoot V_0 + proper D_A integration.
+  Stage 0 magnitude formula był **strukturalnie błędny**
+  (`dH/H = 0.5·|dL/L|·Ω_L` LDE-style zamiast EDE D_A ratio).
+  Stage 1 result: **0.6% pokrycia (5/5 ICs), 14× za mało**.
+
+### 11.3 Verdict: M10.5 REINFORCED
+
+**M10.5 conclusion (TGP NIE solver H_0 tension) jest poprawne, niezależnie
+od mechanism.** M10.5 użył argumentu Buchert variance (B_ψ/H_0² ~ 10⁻⁸,
+7 OOM below required 0.17). Omicron2 użył **niezależnego mechanism**
+(D_A integration, Λ_recomb << ρ_total_recomb, matter source-on EDE-like
+boost ~0.6% << required 8.4%). **Dwa niezależne mechanizmy dają tę
+samą NULL conclusion** — M10.5 robust verdict.
+
+### 11.4 Co omicron2 ZACHOWAŁO (positive findings)
+
+1. **sek01 ontology potwierdzona strukturalnie** — matter source term istnieje
+   w sek08a, ψ tracks ρ̄(t) (~20% cosmological shift).
+2. **M10.1 w(today) ≈ -0.93** (z matter source ON) — **NIE -1** jak M10.1
+   claimed; **kompatybilne z DESI DR2** (-0.75 ± 0.10) bliżej niż ΛCDM.
+   To jest **Path A** dla osobnego cyklu (NIE M10.5).
+3. **sek01 ↔ sek08a NIE sprzeczne** — matter coupling minimalne, NIE
+   Brans-Dicke fifth force (Eöt-Wash MICROSCOPE intact, ax:metric-coupling
+   §A.4 Option 2 confirmed).
+
+### 11.5 Status
+
+| element M10.5 | post-omicron2 |
+|---|---|
+| ct3 backreaction estimate B_ψ/H_0² ~ 10⁻⁸ | **INTACT** |
+| ct7 TGP scope = galaxy, NOT cosmology tensions | **REINFORCED** (independent confirm) |
+| DESI DR2/DR3 phantom crossing falsifier | **INTACT** (post-omicron2 path A: w_today=-0.93 in [-1,-0.7] safe) |
+| Buchert variance mechanism | **INTACT** (M10.5 original) |
+| D_A integration mechanism | **NEW** (omicron2 Stage 1, same NULL) |
+| 6/6 PASS sub-tests | **INTACT** |
+
+→ M10.5 **CLOSED-REINFORCED 2026-05-04**. Path A (w(today) audit) opens
+as separate forward-research cycle (NOT in M10 scope).
+
+---
+
+*M10.5 reinforced 2026-05-04 via independent omicron2 NULL mechanism.*

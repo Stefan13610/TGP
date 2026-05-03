@@ -18,6 +18,21 @@ tags:
 
 # χ.1.Phase1 results
 
+> ⚠ **Terminology note 2026-05-04 (FOUNDATIONS §5.1 compliance):**
+> "Stueckelberg log-conformal mode" i "AS NGFP threshold" są używane
+> w tym pliku jako **research-track structural language** dla
+> opisu mechanizmu sprzęgania substrate↔grawitacja. **NIE są endorsement**
+> programu Asymptotic Safety jako TGP-internal interpretation —
+> [[../../TGP_FOUNDATIONS.md]] §5.1 explicit zakazuje "scalar-tensor /
+> Brans-Dicke / Horndeski" framingu. W TGP "graviton" w sensie
+> propagującej cząstki spin-2 NIE istnieje (§5.1: "Nie ma grawitonu —
+> ani fundamentalnego, ani kompozytowego").
+>
+> Stueckelberg jako **algebraiczny ansatz** dla `h_b = c_χ·ln X` jest OK
+> jako structural sketch, ale post 2026-05-02 critique (CRITIQUE_circular_anchor)
+> ten ansatz **NIE wyprowadza** G_N — tylko dopasowuje się algebraicznie
+> do `G_N · M_Pl² = 1`. Zob. Phase3_results.md banner.
+
 **Score: 5/5 PASS** ≥4/5 gate → **Phase 2 ENABLED**.
 
 ## Sub-test results

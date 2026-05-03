@@ -18,6 +18,22 @@ tags:
 
 # UV.2.Phase1 results
 
+> ⚠ **Terminology note 2026-05-04 (FOUNDATIONS §5.1 compliance):**
+> "M_GUT anchor", "AS NGFP threshold", "gauge-unification scale" są
+> używane jako **research-track structural language** dla opisu
+> hierarchii Planck/GUT/TGP. **NIE są endorsement** programu Asymptotic
+> Safety lub SUSY-GUT jako TGP-internal interpretation — TGP nie wymaga
+> grand unification w sensie SU(5)/SO(10), ani AS NGFP attractor jako
+> field-theoretic mechanism. M_GUT jest **empirycznie observable scale**
+> z SM 2-loop running; jego użycie jako anchor w UV.2 jest **conditional
+> external input**, nie TGP-derived.
+>
+> Post 2026-05-02 critique (CRITIQUE_repackaged_circularity): K_struct
+> = N_A·2π² jest **post-hoc fitted** do empirycznego ratio
+> `(M_Pl_PDG/M_GUT_2loop)·√(g*/N_A)` w drift 0.29% < theoretical band
+> 10–30% M_GUT 2-loop → **NUMEROLOGICAL OBSERVATION**, nie field-theoretic
+> derivation. Zob. Phase3_results.md banner.
+
 **Score: 5/5 PASS** ≥4/5 gate → **Phase 2 ENABLED**.
 
 ## Sub-test results

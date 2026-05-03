@@ -76,3 +76,46 @@ danych z DESI" + drift-check 4 plików). Wykryto:
    wiedzą o Phase 3.E + UV.3 + γ.1/δ.1/δ.2.
 
 Pełna diagnoza: [[PRE_PATCH_SNAPSHOT.md]].
+
+## ⚠️ POST-AUDIT DEVELOPMENT 2026-05-03 → STAGE 1 NULL CLOSED 2026-05-04
+
+**Po zamknięciu tego audytu**, dyskusja kontynuowała się z user na temat
+głębszej hipotezy: Φ_0 jako observable powinno tracking globalny rozkład
+materii w czasie (sek01 ontology claim).
+
+**Stage 0 result (2026-05-03 popołudnie, ~~PRELIMINARY~~ → INVALIDATED):**
+w nowym folderze [[../op-omicron2-phi-mean-shift-cosmo/README.md]]
+przeprowadzono Z-test → wynik 8.93% vs required 8.37% **wyglądał jak
+107% pokrycie**.
+
+**Stage 1 verification (2026-05-03 wieczór, NULL):**
+[[../op-omicron2-phi-mean-shift-cosmo/results.md]] re-shoot V_0 + proper
+D_A integration ujawnił że Stage 0 magnitude formula był **strukturalnie
+błędny** (`dH/H = 0.5·|dL/L|·Ω_L` LDE-style zamiast EDE-style D_A ratio).
+Stage 1 magnitude: **0.6% pokrycia (5/5 ICs), 14× za mało**. **TGP NIE
+rozwiązuje Hubble tension via Φ_0(t) tracking.**
+
+**Final verdict (2026-05-04):**
+- M10.5 verdict (TGP NIE jest H₀ solver) **EFFECTIVELY REINFORCED**
+  via independent mechanism (D_A integration vs Buchert variance).
+- M10.1 w(today) ≈ -0.93 (z matter source ON) **strukturalnie istnieje**
+  ale jest **separate research path** (Path A), NIE blokuje tego audytu.
+- M10.R falsification matrix **INTACT** — TGP nie obejmuje Hubble tension.
+- ten audyt **drift remediation 4 plików** **CLOSED 2026-05-03**, no further
+  updates needed.
+
+**Co Stage 1 NULL ujawniło (zachowane jako positive finding):**
+1. Matter source term efektywnie istnieje w sek08a (potwierdza sek01 ontology) ✓
+2. ψ rzeczywiście tracks ρ̄(t) cosmologically (~20% shift) ✓
+3. M10.1 w(today)≈-0.93 vs DESI DR2 -0.75±0.10 — kompatybilne (NIE -1) →
+   open Path A jako separate cycle (NIE w tym audycie)
+
+**Status:** ten audyt **CLOSED 2026-05-03**, post-Stage-1 NULL **CONFIRMED
+2026-05-04**. M10.x revisions are NOT BLOCKED — Stage 1 dał honest NULL,
+nie potrzeba czekać na Stage 4-7 (abandoned post-NULL).
+
+Cross-link:
+- [[../op-omicron2-phi-mean-shift-cosmo/results.md]] (Stage 1 NULL final)
+- [[../op-omicron2-phi-mean-shift-cosmo/ROADMAP.md]] (Stages 2-7 ABANDONED)
+- [[../op-cosmology-closure/M10_5_results.md]] §"REINFORCED 2026-05-04"
+- [[../op-cosmology-closure/M10_1_results.md]] §"Path A note 2026-05-04"

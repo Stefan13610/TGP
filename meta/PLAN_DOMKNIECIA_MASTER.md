@@ -6,6 +6,17 @@ Audytor: Claudian (fizyk teoretyczny + kosmolog)
 > **STATUS KOŃCOWY: ✅ WSZYSTKIE 10 LUK ZAMKNIĘTE. ZERO OTWARTYCH CHECKBOXÓW.**
 > 15 skryptów numerycznych, ~115/121 testów PASS. Plan domknięcia kompletny.
 
+> **Audit consolidation 2026-05-04 — non-breaking:** dodano forward-patch
+> ledger pollution z 74394a8 (4 cykle: chi.1/UV.2/ω.2/ω.3 mark-as-unproven).
+> Counter master ledger: 856 → 856 (effective uncontested **784**, contested 72).
+> Cosmology drift README zsynchronizowane z omicron2 Stage 1 NULL (TGP NIE
+> Hubble tension solver, M10.5 reinforced). CALIBRATION_PROTOCOL.md introduced
+> as binding gate dla nowych claimów DERIVED.
+> **Original 10 luki ZAMKNIĘTE 2026-04-14 — bez zmian.** Patrz:
+> - [[AUDYT_TGP_2026-05-01.md]] (8 CRITICAL + 12 HIGH closed §J-§AB)
+> - [[SUBAGENT_AUDIT_74394a8_2026-05-02.md]] §8 (forward-patch executed 2026-05-04)
+> - [[CALIBRATION_PROTOCOL.md]] (binding 2026-05-04+)
+
 ## Podsumowanie diagnostyczne
 
 Po przeczytaniu ~30 plików rdzenia TGP (sekcje 00–10, dodatki A–Z, ROADMAP v3, AUDYT, status_map, tabela epistemiczna, łańcuch wyprowadzeń) identyfikuję **10 otwartych luk formalnych**, z czego **3 są krytyczne** (blokują twierdzenie o kompletności), **4 poważne** (osłabiają wiarygodność), i **3 średnie** (do domknięcia redakcyjnego/numerycznego).

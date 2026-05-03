@@ -254,4 +254,46 @@ Sub-cykl M10.1 zamknięty 6/6 PASS — przejście do **M10.2 (inflation audit)**
 
 ---
 
-*M10.1 closed 2026-04-26. Cykl M10 — kontynuacja w M10.2 (inflation).*
+## Path A note 2026-05-04 — w(today) ≈ -0.93 with matter source ON
+
+> **Binding:** [[../op-omicron2-phi-mean-shift-cosmo/results.md]] §"What WAS revealed".
+> Stage 1 NULL closed 2026-05-03; M10.1 verdict (w ≈ -1) holds **for matter
+> source OFF** but **separate Path A** opens for source-ON case.
+
+### Discovery (omicron2 Stage 1, 2026-05-03)
+
+Z proper Φ-EOM linearization wokół Φ_eq z explicit matter source term:
+```
+ψ_today  ≈ 0.78  (NIE 1.0 jak M10.1.4 implicit assumed)
+w_DE_today ≈ -0.93  (NIE -1.0)
+Λ_recomb / Λ_today = 35,319  (large ratio, but Λ_recomb still negligible)
+```
+
+**Compatibility z DESI DR2** (-0.75 ± 0.10, arXiv:2503.14738):
+- M10.1 (source off): w = -1 → tension 2.5σ
+- Path A (source on): w_today = -0.93 → tension 1.8σ (closer)
+
+**Co to NIE jest:**
+- NIE jest pivot M10.1 verdict — M10.1 6/6 PASS intact dla source-off case
+- NIE jest H_0 tension solver (Stage 1 NULL: dH/H ~ 0.6% << required 8.4%)
+- NIE jest phantom crossing (w_today = -0.93 ≥ -1, structural bound preserved)
+
+**Co to JEST:**
+- **Open Path A** dla osobnego cyklu (M10.1 v2 lub w-z-audit)
+- Strukturalnie consistent z sek01 ontology (matter source generuje shift ψ)
+- Strukturalnie consistent z DESI DR2 ~3σ evolving DE hint (B2 audit caveat)
+- **NIE wykonywane w tym audycie** — flag dla forward-research
+
+### Status
+
+M10.1 **NIE jest revised** w tym audycie — zachowuje verdict "w ≈ -1
+intact" z 2026-04-26. Path A (matter source-on case z w_today = -0.93)
+otwiera jako **separate research direction**, NIE blokuje obecnego M10.1
+ledger entry. Decyzja o ewentualnym M10.1 v2 cycle: forward-gate post-DESI
+DR3 (2027+).
+
+---
+
+*M10.1 closed 2026-04-26. Path A opens 2026-05-04 (separate cycle, forward-gate DESI DR3).*
+
+*Cykl M10 — kontynuacja w M10.2 (inflation).*

@@ -133,6 +133,32 @@ Sektor cechowania & A lub Sub & Faza $\theta$ niezależna od modułu \\
 \end{remark}
 
 % -------------------------------------------------------------------
+\begin{remark}[Update post-UV.3 (2026-05-02): $\Phi_0^{\text{bare}}$ vs $\PhiEff$]%
+\label{rem:slownik-uv3-update}
+% -------------------------------------------------------------------
+Po zamknięciu UV.3 (\texttt{research/op-uv3-phi0-renormalization/}) rozróżnienie zostało wyostrzone:
+\begin{itemize}[nosep]
+  \item $\Phi_0^{\text{bare}} \equiv \Phi_0^{\text{bare}} = 168\cdot\Omega_\Lambda \approx 115$
+        --- UV anchor (prze-renormalizowana wartość substratowa).
+  \item $Z_\Phi = V(1)/P(1) = 14/3$ --- współczynnik renormalizacji
+        wave-function (sympy LOCK; \texttt{op-uv3-phi0-renormalization/Phase2}).
+  \item $\PhiEff = \Phi_0^{\text{bare}}/Z_\Phi \approx 24.65$ --- IR observable
+        (poprzednio nazywane \emph{$\PhiZero$}). Numerycznie zbliżone
+        do $\PhiZero=25$, ale strukturalnie distinct: $\PhiEff$ jest
+        \emph{derived} z UV anchor + RG, nie input.
+  \item Po γ.1 closure (\texttt{op-gamma1-phi-eff-anchor-resolution/}):
+        $\PhiEff^{\text{pure}} = 8\pi \approx 25.13$ (czysta predykcja
+        z $\Omega_\Lambda^{\text{pure}} = 2\pi/9$); po δ.1+δ.2 correction
+        ($N_f = 5$ active QCD flavors): $\PhiEff^{\text{corr}} = (10/3)\cdot e^2 \approx 24.6302$,
+        $\Omega_\Lambda^{\text{corr}} = 5e^2/54 \approx 0.68417$ (Planck 0.6847, drift $-0.07\sigma$).
+\end{itemize}
+\textbf{Zachowane:} $\PhiZero = 25$ jako \emph{shorthand} dla
+$\PhiEff^{\text{corr}} \approx 24.63$ w pre-UV.3 derivations.
+\textbf{Nowe:} cytaty post-2026-05-02 muszą rozróżniać $\Phi_0^{\text{bare}}$ vs $\PhiEff$
+(zob. \texttt{core/sek00\_summary.tex} lin. 80--110, \texttt{rem:Lambda-post-uv3} w sek05).
+\end{remark}
+
+% -------------------------------------------------------------------
 \subsection{Podsumowanie relacji kluczowych}
 % -------------------------------------------------------------------
 

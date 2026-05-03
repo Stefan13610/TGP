@@ -1,12 +1,17 @@
 ---
 title: "UV.2.Phase3 results — predictions + 4-channel convergence 6/6 PASS → UV.2 program END (FULL CONVERGENCE)"
 date: 2026-05-01
+last_revised: 2026-05-04
 cycle: UV.2.Phase3
 status: COMPLETE
 parent: "[[program.md]]"
 predecessor: "[[Phase2_results.md]]"
 program_status: END
-verdict: FULL_CONVERGENCE
+verdict: NUMEROLOGICAL_OBSERVATION
+verdict_history:
+  - 2026-05-01: FULL_CONVERGENCE (claimed)
+  - 2026-05-02: BLOCKING_CRITIQUE (CRITIQUE_repackaged_circularity)
+  - 2026-05-04: NUMEROLOGICAL_OBSERVATION (downgraded; PARTIAL CONDITIONAL pending M_GUT field-theory anchor)
 tags:
   - TGP
   - UV2
@@ -15,14 +20,41 @@ tags:
   - results
   - PASS
   - program-END
-  - M_TGP-DERIVED-FULL
-  - M_GUT-STRUCTURAL
-  - omega3-enabled
+  - M_TGP-DERIVED-PARTIAL
+  - M_GUT-PDG-ANCHORED
+  - omega3-cascade-conditional
+  - K-struct-fitted-flagged
 ---
 
 # UV.2.Phase3 results
 
-**Score: 6/6 PASS** ≥5/6 gate → **UV.2 program END (FULL CONVERGENCE)**.
+> ⚠ **EPISTEMIC STATUS DOWNGRADED 2026-05-04 — NUMEROLOGICAL OBSERVATION, not derivation.**
+>
+> Per [[CRITIQUE_repackaged_circularity_2026-05-02.md]]: `K_struct = N_A·2π² ≈ 173.15`
+> is **post-hoc fitted** to empirical `(M_Pl_PDG/M_GUT_2loop)·√(g*/N_A) ≈ 173.65`
+> (drift 0.29%). M_GUT 2-loop theoretical band 10–30% > 0.29% drift →
+> **non-falsifiable** in current SM uncertainties. Phase 1 4-candidate alt-K_struct
+> scan {N_A·2π², N_A²·√(2π), 4π·N_A·κ_TGP, α₀·4π²·√N_A} selected by
+> drift-min aesthetic, not first-principles.
+>
+> Circularity from χ.1 NOT broken — repackaged via M_GUT (also empirical, also
+> wide band) instead of M_Pl. "All Planck-scale physics TGP-grounded post-trio"
+> claim retracted.
+>
+> Sub-tests PASS (6/6) **mechanically preserved** — they correctly verify
+> algebraic consistency of the K_struct fit. They do **not** verify that
+> K_struct itself is derivable from TGP first principles.
+>
+> **Status downgrades (per [[../../PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04"):**
+> - M_TGP "DERIVED FULL" → **DERIVED PARTIAL (NUMEROLOGICAL)**
+> - "Circularity z χ.1 BROKEN" → **REPACKAGED** (M_GUT also empirical)
+> - "M_GUT promoted observational → STRUCTURAL" → **RETRACTED** (M_GUT remains PDG-anchored)
+> - "All Planck-scale physics TGP-grounded" → **PARTIAL** (M_GUT external anchor)
+> - K_struct = N_A·2π² LOCKED → **POST-HOC FITTED** (algebraic identity in M_GUT band)
+>
+> See also: [[../../meta/SUBAGENT_AUDIT_74394a8_2026-05-02.md]] §2.2.
+
+**Score: 6/6 PASS** ≥5/6 gate → **UV.2 program END (FULL CONVERGENCE)** [claimed 2026-05-01; downgraded to NUMEROLOGICAL OBSERVATION 2026-05-04 — see banner above].
 
 ## Sub-test results
 

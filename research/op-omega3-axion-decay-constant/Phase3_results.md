@@ -1,10 +1,16 @@
 ---
 title: "ω.3.Phase3 results — predictions + 4-channel convergence + program END 6/6 PASS"
 date: 2026-05-01
+last_revised: 2026-05-04
 cycle: ω.3.Phase3
 status: COMPLETE
 parent: "[[program.md]]"
 predecessor: "[[Phase2_results.md]]"
+verdict: LOCKED_ALGEBRAIC_CASCADE_CONDITIONAL
+verdict_history:
+  - 2026-05-01: FULL_CONVERGENCE (claimed)
+  - 2026-05-01: ZZ2/ZZ3 downgrade (audit §J.2)
+  - 2026-05-04: cascade-conditional na UV.2 K_struct extension (mini-audit)
 tags:
   - TGP
   - omega3
@@ -15,11 +21,27 @@ tags:
   - results
   - PASS
   - audit-reconciled-2026-05-01
+  - cascade-conditional-2026-05-04
 ---
 
 # ω.3.Phase3 results
 
-**Score: 6/6 PASS** ≥5/6 gate → **ω.3 program END (FULL CONVERGENCE)**.
+> ⚠ **EPISTEMIC STATUS 2026-05-04 — LOCKED-ALGEBRAIC + cascade-conditional na UV.2.**
+>
+> Per [[AUDIT_omega3_2026-05-04.md]]: algebraic sympy LOCKs (`f_a · E_TGP / M_GUT = K_struct`,
+> `g_aγ = α_em·E_TGP/(2π·f_a)`, 4-channel cascade diff=0) są **mechanicznie
+> poprawne**, ale **magnitude cascade-conditional** na UV.2 K_struct (post-hoc
+> fitted w M_GUT band, drift 0.29% w teoretycznym 10-30% paśmie) i M_GUT
+> (PDG-anchored).
+>
+> ZZ2/ZZ3 już downgraded w [[../../meta/AUDYT_TGP_2026-05-01.md]] §J.2.
+> Mini-audit 2026-05-04 rozszerza per-row downgrade na ZZ1, ZZ4-ZZ6
+> (cascade-conditional). Sub-tests PASS preserved.
+>
+> **NIE jest BLOCKING critique** — algebra OK, cascade flagged. Forward-gate
+> ω.4+ explicit dla strukturalnej derywacji m_a (ALP, free parameter).
+
+**Score: 6/6 PASS** ≥5/6 gate → **ω.3 program END** [claimed FULL CONVERGENCE 2026-05-01; downgraded LOCKED-ALGEBRAIC + cascade-conditional 2026-05-04 — see banner above].
 
 ## Sub-test results
 
