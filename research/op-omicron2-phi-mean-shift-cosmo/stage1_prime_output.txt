@@ -1,0 +1,80 @@
+==============================================================================
+STAGE 1 PRIME: Proper TGP Friedmann z G(psi) running included
+==============================================================================
+
+  Cosmology: Omega_m = 0.315, Omega_DE0_obs = 0.6849
+  s_precise = 2.0737e-02
+  Required Hubble shift: |dH/H| = 0.0837
+
+==============================================================================
+Test 1: H_TGP / H_LCDM ratio with G(psi) included
+==============================================================================
+
+  Pre-shooting test: just compute H_TGP using Stage 1 psi values,
+  with G(psi) modification.
+
+  At today (psi = 0.78): G(psi)/G_0 = 1.2821
+    H_TGP_today / H_LCDM_today = sqrt(1/psi) = 1.1323
+    Boost = 13.23% (required: 8.37%)
+    Ratio TGP/required: 1.58x
+
+  At recomb (psi = 0.984): G(psi)/G_0 = 1.0163
+    H_TGP_recomb / H_LCDM_recomb = 1.0081
+    Boost at recomb = 0.81%
+
+==============================================================================
+Test 2: Re-shoot V_0 with modified Friedmann (G(psi) included)
+==============================================================================
+
+  IC: psi_init = 1 - 1e-3
+    Shot V_0 = 0.571346 (converged in 14 iter)
+    psi_today  = 0.819382, psi_recomb = 0.983544
+    H_today_TGP = 0.999995, H_today_LCDM = 1.000000
+    Boost (TGP/LCDM): 0.999995 = +-0.00%
+    Required: +8.37%
+    Match: -0.0% of required
+    G_BBN/G_today = 0.8202 (BBN OK if in [0.95, 1.05])
+    BBN check: FAIL (-18% drift)
+
+  IC: psi_init = 1 + 1e-3
+    Shot V_0 = 0.572291 (converged in 15 iter)
+    psi_today  = 0.822061, psi_recomb = 0.985513
+    H_today_TGP = 1.000004, H_today_LCDM = 1.000000
+    Boost (TGP/LCDM): 1.000004 = +0.00%
+    Required: +8.37%
+    Match: 0.0% of required
+    G_BBN/G_today = 0.8212 (BBN OK if in [0.95, 1.05])
+    BBN check: FAIL (-18% drift)
+
+  IC: psi_init = 1 + 1e-2
+    Shot V_0 = 0.576792 (converged in 15 iter)
+    psi_today  = 0.834359, psi_recomb = 0.994374
+    H_today_TGP = 1.000009, H_today_LCDM = 1.000000
+    Boost (TGP/LCDM): 1.000009 = +0.00%
+    Required: +8.37%
+    Match: 0.0% of required
+    G_BBN/G_today = 0.8261 (BBN OK if in [0.95, 1.05])
+    BBN check: FAIL (-17% drift)
+
+==============================================================================
+STAGE 1' VERDICT
+==============================================================================
+
+  IC                             V_0   psi_today    boost       %     G_BBN   BBN
+  ------------------------- -------- ----------- -------- ------- --------- -----
+  psi_init = 1 - 1e-3         0.5713    0.819382   1.0000  -0.00    0.8202  FAIL
+  psi_init = 1 + 1e-3         0.5723    0.822061   1.0000  +0.00    0.8212  FAIL
+  psi_init = 1 + 1e-2         0.5768    0.834359   1.0000  +0.00    0.8261  FAIL
+
+  Required Hubble boost: +8.37%
+
+  Sweet spot (5-12% AND BBN OK): 0 scenarios
+  Overshoot (>12%): 0 scenarios
+  Undershoot (<5%): 2 scenarios
+  BBN fail: 3 scenarios
+
+  >>> STAGE 1' BBN_PROBLEM — G(psi) running gives correct H_0 but BBN tension
+      Self-consistency principle (sek04 A4) may save this — needs further analysis
+
+==============================================================================
+Done.
