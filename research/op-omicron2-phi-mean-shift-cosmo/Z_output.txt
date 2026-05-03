@@ -1,0 +1,133 @@
+==============================================================================
+STEP 1: Symbolic Phi-EOM derivation z sek08a action
+==============================================================================
+
+  V(phi)         = gamma*phi**3*(4 - 3*phi)/12
+  V'(phi)        = gamma*phi**2*(1 - phi)
+  V'(phi=1)      = 0
+  V''(phi=1)     = -gamma
+
+  Full EOM (Phi-coupled):
+    (Phi_0*phi**2*(3*H*K_geo*phi**2*phi_dot + K_geo*phi**2*phi_ddot + 2*K_geo*phi*phi_dot**2 - gamma*(phi - 1)) + q*rho)/Phi_0
+
+  phi_ddot = -3*H*phi_dot - 2*phi_dot**2/phi + gamma/(K_geo*phi) - gamma/(K_geo*phi**2) - q*rho/(K_geo*Phi_0*phi**4)
+
+==============================================================================
+STEP 2: De2 dimensionless reduction
+==============================================================================
+
+  Konwencja de2:
+    - Units: H_0 = 1, c = 1, 8 pi G/3 = 1, rho_crit_0 = 1
+    - psi = Phi / Phi_0
+    - tau = H_0 * t
+    - Friedmann: H^2 = Omega_r/a^4 + Omega_m/a^3 + rho_psi
+    - rho_psi = (1/2) psi_dot^2 + V_0 V_norm(psi)
+    - V_0 = Omega_DE0 (shooting parameter; absorbs gamma/12 normalization)
+    - V_norm(psi) = 4 psi^3 - 3 psi^4 (V_norm(1)=1, V_norm'(1)=0)
+
+
+  KORRECTA dimensional analysis (z K_geo non-canonical kinetic):
+    Source term in physical EOM: (q/Phi_0) rho_m [from L_mat]
+    Divided through by K(psi=1) = K_geo:
+       Effective source = (q/Phi_0) rho_m / K_geo
+
+    From Newton limit: q*Phi_0 = 4 pi G / c^2
+    So: q/Phi_0 = 4 pi G / (c^2 Phi_0^2)
+
+    Source in dimensionless de2 form:
+       s_de2 * Omega_m = (4 pi G rho_m) / (c^2 Phi_0^2 K_geo H_0^2)
+       Using rho_m = Omega_m * rho_crit, rho_crit = 3 H_0^2 c^2 / (8 pi G c^4):
+       s_de2 = 3 / (2 Phi_0^2 K_geo)
+
+  K_geo derivation:
+    From T-Lambda: gamma = M_Pl^2 H_0^2 g_tilde
+    V_0 (de2) = gamma/(12 K_geo H_0^2) = Omega_DE0
+    => K_geo = g_tilde * M_Pl^2 / (12 Omega_DE0)
+    g_tilde = 5 e^2/(12 pi) = 0.980004  (delta.1+delta.2 closure)
+    K_geo (Planck units, M_Pl=1) = 0.119274
+
+  Cross-check: Phi_eff = 8 pi * g_tilde = 24.6302
+  Sek00 value: Phi_eff = 24.6302 (10/3 * e^2)
+
+  s_de2 = 3 / (2 Phi_0^2 K_geo) = 3 / (2 * 24.63^2 * 0.1193) = 2.0730e-02
+
+==============================================================================
+STEP 3: Direct cross-check from sek08a Lagrangian densities
+==============================================================================
+
+  Direct method: match physical and dimensionless EOMs term by term.
+
+  Physical EOM at vacuum (K = K_geo, V_0 = gamma/12, V_norm = de2):
+    K_geo phi_ddot + 3H K_geo phi_dot + V_0' V_norm'(phi) + (q/Phi_0) rho_m = 0
+
+  De2 form: psi_ddot + 3 H psi_dot + V_0_de2 V_norm'(psi) + s_de2 Omega_m = 0
+
+  Identifying: psi = phi (dimensionless), tau = H_0 t (so psi_ddot in tau is phi_ddot / H_0^2)
+
+  For physical gamma/12 V_norm' to match V_0_de2 V_norm':
+    V_0_de2 = gamma/(12 K_geo H_0^2)
+
+  Setting V_0_de2 = Omega_DE0 (de2 shooting):
+    Omega_DE0 = gamma/(12 K_geo H_0^2)
+
+  T-Lambda closure: gamma = g_tilde M_Pl^2 H_0^2:
+    Omega_DE0 = g_tilde M_Pl^2 / (12 K_geo)
+
+  Solving: K_geo = g_tilde M_Pl^2 / (12 Omega_DE0)
+
+  K_geo (Planck units M_Pl=1) = g_tilde / (12 Omega_DE0) = 0.119274
+
+  s_de2 (precise) = 18 Omega_DE0 / (Phi_0^2 g_tilde)
+                  = 18 * 0.6847 / (24.63^2 * 0.9800)
+                  = 2.0730e-02
+
+  Compare to naive (no K_geo): s_naive = 3/(2 Phi_0^2) = 2.4726e-03
+  Amplification factor: K_geo correction = s_precise/s_naive = 8.38
+
+==============================================================================
+STEP 4: Closed-form expression using closure cascade
+==============================================================================
+
+  Closed form: s_de2 = 18 Omega_DE0 / (64 pi^2 g_tilde^3)
+                    = 18 * 0.6847 / (64 * pi^2 * 0.9800^3)
+                    = 2.0730e-02
+
+  Alt closed form: s_de2 = 1/(2 Phi_0 g_tilde) = 2.0714e-02
+  (Cross-check should match above)
+
+  >>> S_PRECISE (using all closures) = 2.073047e-02
+  >>> S_NAIVE (initial estimate)     = 2.472609e-03
+  >>> Ratio = 8.38x
+
+==============================================================================
+STEP 5: Re-run FRW solver with precise s coupling
+==============================================================================
+
+  Required Hubble shift: |dH/H| = 0.0837 (8.37%)
+
+  Scenario                                  psi_today  psi_recomb        dpsi        dL/L     |dH/H|
+  ---------------------------------------- ---------- ----------- ----------- ----------- ----------
+  s = 0 (no source, baseline)                0.997386    0.999000  -1.614e-03  -3.488e-05  1.194e-05
+  s = naive (no K_geo, ~2.5e-3)              0.967679    0.997143  -2.946e-02  -5.988e-03  2.050e-03
+  s = PRECISE (with K_geo)                   0.782574    0.983431  -2.009e-01  -2.608e-01  8.928e-02
+  s = 2 x precise (uncertainty band)         0.618656    0.967864  -3.492e-01  -9.581e-01  3.280e-01
+  s = 0.5 x precise (uncertainty band)       0.881347    0.991215  -1.099e-01  -7.675e-02  2.627e-02
+
+==============================================================================
+STEP 6: FINAL VERDICT
+==============================================================================
+
+  Precise s_natural derivation (z UV.3 + gamma.1 + delta.1+2 + K_geo non-canonical):
+    s_de2 = 18 Omega_DE0 / (Phi_eff^2 g_tilde)
+          = 18 * 0.6847 / (24.6302^2 * 0.9800)
+          = 2.0730e-02
+
+  Hubble tension shift:
+    Required:   |dH/H| = 0.0837
+    TGP gives:  |dH/H| = 8.9279e-02
+    Ratio:      TGP / required = 1.0667 (106.7%)
+
+  >>> TGP rozwiazuje H_0 tension w wiekszosci - **DUZA DROGE PRZESZLISMY**
+
+==============================================================================
+Done.

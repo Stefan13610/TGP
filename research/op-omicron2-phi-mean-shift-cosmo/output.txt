@@ -1,0 +1,134 @@
+========================================================================
+omicron.2 quick check: Phi_0(z) cosmological evolution & H_0 tension
+========================================================================
+
+  Cosmology: Omega_m = 0.315, Omega_L = 0.685, H_0 = 67.4
+  Observed sigma_Psi (CMB+LSS) = 3e-05
+
+========================================================================
+TEST 1: Linear cosmological mean <delta Phi>_V
+========================================================================
+
+  Theorem (statystyczna homogenicznosc kosmologii):
+    <delta(x)>_V = 0  EXACT  dla dowolnej V wystarczajaco duzej.
+
+  Uzasadnienie:
+    - W FRW perturbacje delta(x, t) sa stat. jednorodne i izotropowe.
+    - Wartosc oczekiwana <delta(x)> = 0 z definicji ensemble average.
+    - Linear theory NIE generuje deterministic mean shift.
+
+  Wniosek:
+    Linear theory daje DOKLADNIE ZERO mean shift z formacja struktur.
+    Mean shift wymaga (a) nieliniowosci albo (b) zlamania homogenicznosci.
+
+  Test 1 result: <delta Phi>_V (linear) = 0.0
+
+========================================================================
+TEST 2: Linear variance <delta Phi^2>(z) — cosmological evolution
+========================================================================
+
+       z       D(z)     sigma_Psi     <delta^2>    dLambda/Lambda
+  ------  ---------  ------------  ------------  ----------------
+       0     1.0000     3.000e-05     3.600e-09         2.160e-08
+     0.5     0.7702     3.466e-05     4.805e-09         2.883e-08
+       1     0.6076     3.646e-05     5.317e-09         3.190e-08
+       2     0.4176     3.759e-05     5.651e-09         3.391e-08
+       5     0.2114     3.805e-05     5.791e-09         3.475e-08
+      10     0.1155     3.811e-05     5.809e-09         3.485e-08
+     100     0.0126     3.812e-05     5.812e-09         3.487e-08
+    1100     0.0012     3.812e-05     5.812e-09         3.487e-08
+
+  Cosmological evolution recomb -> today:
+    dLambda/Lambda(z=0)    = 2.160e-08
+    dLambda/Lambda(z=1100) = 3.487e-08
+    Delta (cosmological)   = -1.327e-08
+
+  Test 2 result (linear variance, today): 2.160e-08
+
+========================================================================
+TEST 3: Nonlinear Buchert Q_D — czy M10.5 missed mean shift?
+========================================================================
+
+  Growth rate index: f = Omega_m^0.55 = 0.5297
+  sigma_delta (horizon scale) = 6.000e-05
+  Q_D/H^2 ~ <delta^2> · f^2 = 1.010e-09
+  Effective Lambda shift: dLambda/Lambda = Q_D/(H^2 Omega_L) = 1.475e-09
+  Ratio Buchert/variance = 0.07x
+
+  Interpretacja:
+    Q_D jest 2nd-order w perturbacjach (variance of theta), wiec ten sam
+    rzad co linear variance. NIE jest niezalezny mechanism dla mean shift.
+
+  Wniosek strukturalny:
+    Mean shift jako efekt nieliniowy w rownaniu Phi-EOM (z czlonu ~Phi²/Phi_0)
+    daje wkład rzędu <delta^2>/Phi_0 — TEN SAM rzad co Buchert variance.
+
+    M10.5 NIE missed mean shift — Buchert formula juz captures rectification
+    of <delta^2> przez nonlinearity.
+
+  Test 3 result (Buchert nonlinear): 1.475e-09
+
+========================================================================
+TEST 4: Hubble tension requirement (target)
+========================================================================
+  H_0(SH0ES)  = 73.04 km/s/Mpc
+  H_0(Planck) = 67.40 km/s/Mpc
+  Delta H/H   = 0.0837 (8.37%)
+  Required dLambda/Lambda = 0.2545 (25.5%)
+
+========================================================================
+FINAL VERDICT
+========================================================================
+
+  Quantity                                                Value Notes               
+  ------------------------------------------------ ------------ --------------------
+  Linear mean <delta Phi>_V (theorem)                 0 (exact) EXACT 0
+  Linear variance dLambda/Lambda today                2.160e-08 sek05 lemma
+  Linear cosmological shift (recomb -> today)         1.327e-08 growth × variance
+  Nonlinear Buchert Q_D / Omega_L                     1.475e-09 rectified <delta^2>
+  Hubble tension requirement                          2.545e-01 target
+
+  Gap analysis (Hubble tension vs largest TGP-derived effect):
+    Required:         2.545e-01
+    TGP best (Q_D):   1.475e-09
+    Gap (ratio):      1.726e+08
+    Gap (orders):     8.2 dekad
+
+============================================================================
+WNIOSEK:
+
+  Q1: Czy Phi_0 jako observable shifts cosmologically?
+  A1: TAK strukturalnie (sek05 §de-struktury thesis), ALE:
+      - Linear: 0 (statystyczna homogenicznosc)
+      - Nonlinear (Buchert Q_D): ~ 1.5e-09
+      - Cosmological evolution recomb -> today: ~ 1.3e-08
+
+  Q2: Czy M10.5 had blind spot na mean shift?
+  A2: NIE. Buchert formula juz captures nonlinear rectification of
+      <delta^2> w mean shift. M10.5 verdict reinforced.
+
+  Q3: Czy to rozwiazuje Hubble tension?
+  A3: NIE. Gap = 8.2 dekad miedzy TGP best (1.5e-09)
+      i required (2.5e-01).
+
+  Q4: Twoja intuicja ontologiczna byla bledna?
+  A4: NIE — byla strukturalnie poprawna (sek05 explicit potwierdza).
+      Tylko quantitative coupling przez Psi ~ 10^-5 (CMB bound) jest
+      za slaby. To nie jest blad teorii — to jest wlasciwosc TGP coupled
+      do gravitational potential (PPN gamma=1 minimal coupling).
+
+  Q5: Co bymoze zmienilo wynik?
+  A5: Direct rho-Phi coupling poza ax:metric-coupling axiom (TGP_FOUNDATIONS §4).
+      To bylby strukturalna modyfikacja TGP, NIE w current formalism.
+
+  STATUS koncowy:
+      - Twoja teza: <Phi>(t) tracks matter distribution(t)         CONFIRMED
+      - M10.5 verdict: TGP nie jest H_0 tension solver               CONFIRMED
+      - Gap strukturalny: 7+ dekad                                   CONFIRMED
+      - M10.5 mean-shift blind spot: NIE EXISTS                      VERIFIED
+      - Required physics: poza current TGP                           OPEN
+
+  TGP scope statement (M10 cycle): TGP_v1 = galaxy-scale + structural DE
+  (w >= -1) + CMB safety; NIE H_0 tension solver. POTWIERDZONE drugi raz.
+============================================================================
+

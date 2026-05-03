@@ -1,0 +1,102 @@
+==============================================================================
+STAGE 1: Re-shoot V_0 + initial conditions sensitivity test
+==============================================================================
+
+  Cosmology: Omega_m = 0.315, Omega_DE0_obs = 0.6849
+  Phi_0 = 24.6302, g_tilde = 0.9800
+  s_precise = 2.0737e-02
+  Required Hubble shift: |dH/H| = 0.0837
+
+==============================================================================
+Testing multiple initial conditions (with shooting V_0):
+==============================================================================
+
+  IC: psi_init = 1 - 1e-3 (Stage 0)
+    Shot V_0 = 0.830240 (converged in 16 iter)
+    psi_today  = 0.764794, psi_recomb = 0.983427
+    Lambda_today = 0.684913 (should = 0.6849)
+    Lambda_recomb = 24190.455895
+    Lambda_recomb / Lambda_today = 35319.0372
+    Direction: EDE-like (recomb > today: SOLVES tension)
+    H_TGP(recomb) / H_LCDM(recomb) = 1.000022
+    D_A(z_recomb,today) ratio TGP/LCDM = 0.993899
+    Implied H_0_inferred shift via D_A: +0.0061 (+0.61%)
+
+  IC: psi_init = 1 (vacuum exact)
+    Shot V_0 = 0.827224 (converged in 16 iter)
+    psi_today  = 0.767139, psi_recomb = 0.984427
+    Lambda_today = 0.684910 (should = 0.6849)
+    Lambda_recomb = 24190.453019
+    Lambda_recomb / Lambda_today = 35319.1744
+    Direction: EDE-like (recomb > today: SOLVES tension)
+    H_TGP(recomb) / H_LCDM(recomb) = 1.000022
+    D_A(z_recomb,today) ratio TGP/LCDM = 0.994012
+    Implied H_0_inferred shift via D_A: +0.0060 (+0.60%)
+
+  IC: psi_init = 1 + 1e-3
+    Shot V_0 = 0.824253 (converged in 16 iter)
+    psi_today  = 0.769481, psi_recomb = 0.985427
+    Lambda_today = 0.684910 (should = 0.6849)
+    Lambda_recomb = 24190.450177
+    Lambda_recomb / Lambda_today = 35319.1748
+    Direction: EDE-like (recomb > today: SOLVES tension)
+    H_TGP(recomb) / H_LCDM(recomb) = 1.000022
+    D_A(z_recomb,today) ratio TGP/LCDM = 0.994123
+    Implied H_0_inferred shift via D_A: +0.0059 (+0.59%)
+
+  IC: psi_init = 1 + 1e-2
+    Shot V_0 = 0.799294 (converged in 14 iter)
+    psi_today  = 0.790427, psi_recomb = 0.994427
+    Lambda_today = 0.684919 (should = 0.6849)
+    Lambda_recomb = 24190.425924
+    Lambda_recomb / Lambda_today = 35318.6827
+    Direction: EDE-like (recomb > today: SOLVES tension)
+    H_TGP(recomb) / H_LCDM(recomb) = 1.000022
+    D_A(z_recomb,today) ratio TGP/LCDM = 0.995071
+    Implied H_0_inferred shift via D_A: +0.0050 (+0.50%)
+
+  IC: psi_init = 1 + 1e-1
+    Shot V_0 = 0.685027 (converged in 16 iter)
+    psi_today  = 1.005676, psi_recomb = 1.084427
+    Lambda_today = 0.684911 (should = 0.6849)
+    Lambda_recomb = 24190.277351
+    Lambda_recomb / Lambda_today = 35318.8701
+    Direction: EDE-like (recomb > today: SOLVES tension)
+    H_TGP(recomb) / H_LCDM(recomb) = 1.000022
+    D_A(z_recomb,today) ratio TGP/LCDM = 0.999976
+    Implied H_0_inferred shift via D_A: +0.0000 (+0.00%)
+
+==============================================================================
+SUMMARY OF ALL INITIAL CONDITIONS
+==============================================================================
+
+  IC                          V_0_shot   psi_today   psi_recomb   L_ratio      dH/H
+  ------------------------- ---------- ----------- ------------ --------- ---------
+  psi_init = 1 - 1e-3 (Sta      0.8302    0.764794     0.983427 35319.0372   +0.0061
+  psi_init = 1 (vacuum exa      0.8272    0.767139     0.984427 35319.1744   +0.0060
+  psi_init = 1 + 1e-3           0.8243    0.769481     0.985427 35319.1748   +0.0059
+  psi_init = 1 + 1e-2           0.7993    0.790427     0.994427 35318.6827   +0.0050
+  psi_init = 1 + 1e-1           0.6850    1.005676     1.084427 35318.8701   +0.0000
+
+  Required Hubble tension: dH/H = +0.0837
+  (POSITIVE delta_H means TGP increases inferred H_0, helping resolve tension)
+
+  Best match initial condition: psi_init = 1 - 1e-3 (Stage 0)
+  delta_H = +0.0061 vs required +0.0837
+  Match: 7.3% of required
+
+==============================================================================
+STAGE 1 VERDICT
+==============================================================================
+
+  Out of 5 initial conditions tested:
+    5 show EDE-like (Lambda_recomb > Lambda_today)
+    0 show LDE-like (Lambda_recomb < Lambda_today)
+
+  Initial conditions with dH/H in [0.05, 0.12] AND positive direction: 0 / 5
+
+  >>> STAGE 1 NULL — all scenarios give dH/H < 1%
+      Stage 0 magnitude estimate was wrong; tension impact negligible
+
+==============================================================================
+Done.
