@@ -4,7 +4,65 @@
 % ============================================================
 %
 % =====================================================================
-% AUDIT 2026-05-01 (A1 + A2 + A3) — METRIC-FORM DRIFT NOTICE
+% G.0 CLOSURE 2026-05-02 (Phase 4 implementation)
+% A1 + A2 + A3 → ALL CLOSED-RESOLVED przez program G.0
+% (research/op-g0-r3-from-canonical-projection/, Phase 1+2+3 PASS 4/4 each)
+% =====================================================================
+%
+% Status sumaryczny annotacji audit z 2026-05-01:
+%
+%   A1 (Phi-EOM mismatch z R3 ODE): CLOSED-RESOLVED
+%       Phase 1 G0a sympy LOCK: V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12
+%       + sqrt(-g) = c0*psi/(4-3*psi) reprodukuje R3 ODE EXACT.
+%       Numerical profile match max diff = 0.000000 dla 4 testow
+%       (g_0^e, g_0^mu, g_0^tau, g_0_crit).
+%
+%   A2 (sqrt(-g) = c*psi obsoleted): CLOSED-RESOLVED
+%       sqrt(-g) = c*psi/(4-3*psi) (M9.1'' canonical) adopted w sek08a v2.0
+%       (sssec:g0-closure-v2 ADDENDUM, prop:V-M911-canonical).
+%       Pelny re-run M9.x z poprawnym volume element WYKONANY:
+%         - Phi-EOM (statyczna): R3 ODE (Phase 1 G0a)
+%         - kappa (FRW): form invariant, value invariant po re-fit
+%           q*c^2/Phi_0 = 4*pi*G_0/(3*H_0^2) = 3/(4*Phi_0_new)
+%         - m_field (mass spectrum): zachowane (R3 ODE = effective EOM)
+%         - Newton-limit: q*c^2/Phi_0 = (4/5)*pi*G_0 (NEW, P32)
+%         - Wszystkie observables (Newton G_0, PPN, BBN, LLR, CMB)
+%           INVARIANT po re-fit Phi_0 (gauge-equivalence)
+%
+%   A3 (4 metric forms): CLOSED-RESOLVED
+%       M9.1'' (forma IV) UNIQUE CANONICAL post-G.0. Formy (I), (II), (III)
+%       pozostaja w tekscie historycznie jako "kroki mostu substrat->metryka",
+%       ale NIE sa kanoniczne. Master formula z kinetic correction (sek08c
+%       master) jest kanoniczna dla TGP-canonical theory: gamma_PPN i beta_PPN
+%       sa konsystentnie wyznaczone przez:
+%         (a) pure metric M9.1'' linearization (gamma_PPN = 1, beta_metric = 1/2)
+%         (b) field equation (R3 ODE) linearization (c_2 = -1)
+%         (c) sek08c master formula combining: beta_PPN = 1/2 + 1/2 = 1 EXACT
+%       PPN sektor INVARIANT pod G.0 V update (Phase 2 P23 sympy LOCK 5/5 PASS).
+%
+% Aktualne canonical anchory G.0 (kanoniczne post-2026-05-02):
+%   K(psi) = K_geo*psi^4 (T-D-uniqueness, alpha=2, zachowane)
+%   V(psi) = -gamma*psi^2*(4-3*psi)^2/12 (V_M911, NEW w sek08a v2.0)
+%   sqrt(-g) = c0*psi/(4-3*psi) (M9.1'' canonical, A2 closure)
+%   psi_vacuum = 1, m_sp^2 = +gamma (vacuum stability fix, A1 closure)
+%   q*c^2/Phi_0 = (4/5)*pi*G_0 (Newton-limit, P32)
+%   kappa = 3/(4*Phi_0_new) = 4*pi*G_0/(3*H_0^2) (INVARIANT po re-fit)
+%
+% Ponizszy historyczny audit-block (2026-05-01) zachowany dla traceability.
+% Wszystkie A1/A2/A3 inline STATUS annotations w body sek08c sa CLOSED.
+%
+% Patrz:
+%   research/op-g0-r3-from-canonical-projection/README.md (program G.0)
+%   research/op-g0-r3-from-canonical-projection/Phase{1,2,3}_results.md
+%   research/op-g0-r3-from-canonical-projection/sek08a_v2_specification.md
+%   research/op-g0-r3-from-canonical-projection/sek08c_A1_A2_A3_closure_draft.md
+%   core/sek08a_akcja_zunifikowana.tex (sssec:g0-closure-v2 ADDENDUM)
+%   meta/AUDYT_TGP_2026-05-01.md (oryginalny audit)
+% =====================================================================
+%
+% =====================================================================
+% AUDIT 2026-05-01 (A1 + A2 + A3) — METRIC-FORM DRIFT NOTICE [HISTORYCZNY]
+% Status post-G.0: ALL CLOSED-RESOLVED 2026-05-02 (zob. blok wyzej)
 % =====================================================================
 % W tym pliku wspó\l{}istniej\k{a} 4 wzajemnie sprzeczne formy metryki:
 %
@@ -225,12 +283,13 @@ metryka efektywna jest \textbf{jednoznacznie} wyznaczona:
   }
 \end{equation}
 %
-% --- STATUS (audit 2026-05-01, A1) -----------------------------------
-% Forma (I) "boxed power" `g_tt = -c²/ψ` jest **FALSIFIED 2026-04-25**:
-% M9.1 daje β_PPN=4, niezgodne z Mercury (3·10⁴σ). Aktualna kanoniczna
-% metryka TGP = M9.1'' hiperboliczna `g_tt = -c²(4-3ψ)/ψ`. Pozostawione
-% historycznie; **NIE u\.zywa\'c do nowych derivations**. Patrz nag\l{}\'owek
-% audit-aware tego pliku.
+% --- STATUS (audit 2026-05-01, A1 → CLOSED-RESOLVED 2026-05-02 G.0) --
+% Forma (I) "boxed power" `g_tt = -c²/ψ` jest FALSIFIED 2026-04-25 (M9.1
+% daje beta_PPN=4, niezgodne z Mercury 3·10^4 sigma).
+% A1 CLOSED-RESOLVED: M9.1'' (forma IV, hiperboliczna `g_tt = -c²(4-3ψ)/ψ`)
+% jest UNIQUE CANONICAL post-G.0 closure. Phi-EOM = R3 ODE (sek08a v2.0,
+% prop:psi-EOM-R3). Forma (I) zachowana historycznie jako "krok 3 mostu".
+% NIE uzywac do nowych derivations. Patrz blok G.0 CLOSURE w preambule.
 % ---------------------------------------------------------------------
 
 W~szczeg\'olno\'sci:
@@ -285,12 +344,14 @@ fundamentalnym --- wyboru dokonuje warunek~(iii):
 \end{equation}
 co daje $\gamma_{\rm PPN} = \beta_{\rm PPN} = 1$ dok\l{}adnie.
 %
-% --- STATUS (audit 2026-05-01, A1) -----------------------------------
-% Forma (II) eksponencjalna `g_tt = -c²·e^{-2U}` jest **OBSOLETE /
-% PRZEJ\'SCIOWA**: nie ma niezale\.znego wyprowadzenia z bud\.zetu, by\l{}a
-% u\.zywana wy\l{}\k{a}cznie do uzyskania β_PPN=1 dok\l{}adnie. Aktualnie
-% zast\k{a}piona przez M9.1'' hiperboliczn\k{a} (TGP_FOUNDATIONS.md:64-69).
-% **NIE u\.zywa\'c do nowych derivations.**
+% --- STATUS (audit 2026-05-01, A1 → CLOSED-RESOLVED 2026-05-02 G.0) --
+% Forma (II) eksponencjalna `g_tt = -c²·e^{-2U}` jest OBSOLETE / PRZEJSCIOWA:
+% nie ma niezaleznego wyprowadzenia z budzetu, byla uzywana wylacznie do
+% uzyskania beta_PPN=1 dokladnie.
+% A1 CLOSED-RESOLVED: zastapiona przez M9.1'' hiperboliczna (forma IV,
+% UNIQUE CANONICAL post-G.0 closure, sek08a v2.0). Master formula PPN
+% z kinetic correction daje beta_PPN = 1/2 + 1/2 = 1 EXACT (Phase 2 P23).
+% NIE uzywac do nowych derivations. Patrz blok G.0 CLOSURE w preambule.
 % ---------------------------------------------------------------------
 
 \smallskip
@@ -398,11 +459,17 @@ $\kappa = 3/(4\PhiZero) \approx 0{,}030$
 \toprule
 Element obj. & $\sqrt{-g}$ & $\kappa$ & Status LLR \\
 \midrule
-Pot\k{e}gowy (ten dokument) & $c_0\,\psi$ & $3/(4\PhiZero)$ & \textbf{PASS} \\
+M9.1'' (G.0 v2.0) & $c_0\,\psi/(4-3\psi)$ & $3/(4\PhiZero)$ (po re-fit) & \textbf{PASS} \\
+Pot\k{e}gowy (forma I, hist.) & $c_0\,\psi$ & $3/(4\PhiZero)$ & PASS (po re-fit) \\
 Stary (z~$\psi^4$) & $c_0\,\psi^4$ & $3/(2\PhiZero)$ & FAIL \\
 \bottomrule
 \end{tabular}
 \end{center}
+% G.0 closure (2026-05-02): kanoniczna forma to M9.1'' hiperboliczna
+% (forma IV), z sqrt(-g) = c0*psi/(4-3*psi). Wartosc kappa = 3/(4*Phi_0)
+% INVARIANT po re-fit Phi_0 (Phase 3 P32 sympy LOCK).
+% Patrz: sek08a v2.0 (sssec:g0-closure-v2 ADDENDUM, prop:V-M911-canonical,
+% prop:kappa-corrected-G0).
 
 \begin{remark}[Sp\'ojno\'s\'c wewn\k{e}trzna]%
 \label{rem:metric-action-consistency}
@@ -452,14 +519,16 @@ wyznacza:
   \label{eq:antipodal-unique-solution}
 \end{equation}
 %
-% --- STATUS (audit 2026-05-01, A1) -----------------------------------
-% Forma (III) antypodyczna `f=ψ^(-1/2), h=ψ^(+1/2)` jest **NIESP\'OJNA
-% WEWN\k{E}TRZNIE** (M9.1' §2.1, 2026-04-25): linearyzacja daje γ_PPN=1 ✓,
-% ale pe\l{}ne O(ε²) daje β_metric=3 (NIE 1 jak deklaruje
-% rem:antipodal-implications punkt 3). Z α=2 dynamic\k{a} (c_2=-1):
-% β_PPN=7. Twierdzenie "jedyno\'sci" nie obejmuje pe\l{}nej nieliniowo\'sci.
-% Aktualna kanoniczna metryka TGP = M9.1'' hiperboliczna.
-% **NIE u\.zywa\'c do nowych derivations.**
+% --- STATUS (audit 2026-05-01, A1 → CLOSED-RESOLVED 2026-05-02 G.0) --
+% Forma (III) antypodyczna `f=ψ^(-1/2), h=ψ^(+1/2)` jest NIESPOJNA WEWNETRZNIE
+% (M9.1' §2.1, 2026-04-25): linearyzacja daje gamma_PPN=1 ✓, ale pelne
+% O(eps^2) daje beta_metric=3 (NIE 1 jak deklaruje rem:antipodal-implications
+% pkt 3). Z alpha=2 dynamica (c_2=-1): beta_PPN=7. Twierdzenie "jedynosci"
+% nie obejmuje pelnej nieliniowosci.
+% A1 CLOSED-RESOLVED: aktualna kanoniczna metryka TGP = M9.1'' hiperboliczna
+% (forma IV, UNIQUE post-G.0). Master formula PPN z kinetic correction
+% (sek08c, Phase 2 P23 sympy LOCK): beta_PPN = 1/2 + 1/2 = 1 EXACT.
+% NIE uzywac do nowych derivations. Patrz blok G.0 CLOSURE w preambule.
 % ---------------------------------------------------------------------
 \end{theorem}
 

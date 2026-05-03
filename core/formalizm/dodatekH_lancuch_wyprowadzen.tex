@@ -3,6 +3,18 @@
 %  TGP v1 — Od aksjomatu do obserwabl
 % ===================================================================
 %
+% G.0 CLOSURE 2026-05-02 (Phase 4): łańcuch A11b zachowany jako
+% kanoniczny — kappa = 3/(4*Phi_0) jest INVARIANT po re-fit Phi_0
+% (Phase 3 P32 sympy LOCK). G.0 update sek08a v1.x -> v2.0 wprowadza:
+%   sqrt(-g) = c0*psi/(4-3*psi) (M9.1'' canonical)
+%   V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12
+%   q*c^2/Phi_0 = (4/5)*pi*G_0 (P32 NEW)
+%   Phi-EOM (statyczna) = R3 ODE EXACT
+% Wartosc kappa = 3/(4*Phi_0) i wszystkie observables (Newton G_0, PPN,
+% BBN, LLR, CMB, mass spectrum) IDENTYCZNE w v1.x i v2.0 po re-fit.
+% Patrz: research/op-g0-r3-from-canonical-projection/, sek08a v2.0 ADDENDUM.
+% ===================================================================
+%
 %  CEL: Jeden dokument ukazujący KOMPLETNY łańcuch logiczny
 %  od fundamentalnego aksjomatu (A1: materia generuje przestrzeń)
 %  do wszystkich kluczowych przewidywalnych obserwabli (K1–K20).
@@ -268,7 +280,11 @@ Fenomenologiczny & \textbf{[PHE]} & Por\'ownanie z~danymi;
   i~$\kappa = 3/(4\Phi_0)$]\label{chain:A11b}
   \textbf{[AN]}$\;$Z~metryki~\eqref{eq:H-gtt}
   wyznaczamy element obj\k{e}to\'sciowy $\sqrt{-g} = c_0\psi$
-  ($\psi = \Phi/\Phi_0$, NIE $\psi^4$).
+  ($\psi = \Phi/\Phi_0$, NIE $\psi^4$).%
+  \footnote{G.0 closure 2026-05-02 (sek08a v2.0,
+  prop.~\ref{prop:V-M911-canonical}): forma kanoniczna M9.1''
+  to $\sqrt{-g} = c_0\psi/(4-3\psi)$. Warto\'s\'c $\kappa = 3/(4\Phi_0)$
+  pozostaje INVARIANT po re-fit $\Phi_0$ (Phase 3 P32 sympy LOCK).}
   Wariacja dzia\l{}ania $S_{\rm TGP}$
   (hip.~\ref{hyp:unified-action}) daje:
   \begin{equation}

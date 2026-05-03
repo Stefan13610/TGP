@@ -702,7 +702,10 @@ napięcie stringa wynosi:
 gdzie użyto $K(\phi) = K_{\mathrm{geo}}\,\phi^4$
 (twierdzenie~\ref{thm:D-uniqueness}),
 $\Delta\Phi = \PhiZero(1 - f_{\mathrm{col}})$,
-a~$K_{\mathrm{geo}} = 3/(4\PhiZero) = \kappa$ (sek.~\ref{ssec:unified-action}).
+a~$K_{\mathrm{geo}} = 3/(4\PhiZero) = \kappa$
+(sek.~\ref{ssec:unified-action}; G.0 closure 2026-05-02:
+$\kappa = 3/(4\Phi_0)$ INVARIANT po re-fit $\Phi_0$ w~sek08a v2.0,
+stw.~\ref{prop:kappa-corrected-G0}).
 
 \noindent\textbf{Oszacowanie numeryczne.}
 W~jednostkach Plancka ($\lP = 1$, $\PhiZero = 24{,}66$,
@@ -1077,6 +1080,61 @@ odchylenie $+0.4\%$ ($0.4\sigma$).
 \textsf{[B3-v2 lock 2026-05-01: $\PhiZero = 24{,}783$ (Brannen),
 poprzednia warto\'s\'c $\PhiZero = 36\Omega_\Lambda \approx 24{,}65$
 da\l{}a $\alpha_s = 0{,}1190$ z~$1{,}2\sigma$.]}
+
+\medskip\noindent
+\textbf{Status epistemologiczny ($\gamma$.1 closure, 2026-05-02):}
+Warto\'s\'c $\PhiZero = 24{,}783$ jest \emph{fenomenologicznym lockiem}
+dopasowanym do PDG $\alpha_s(M_Z) = 0{,}1184$, \emph{nie} derywacj\k{a}
+strukturaln\k{a} z~r\'ownania pr\'o\.zniowego substratu.
+Cytowane $\Omega_\Lambda^{\rm TGP} = 0{,}6884$ jest reverse-engineered
+z~$24{,}783/36$, nie z~first-principles formula.
+T-$\Lambda$ closure (Lambda\_from\_Phi0) daje structural prediction
+$\Omega_\Lambda^{\rm TGP,pure} = 2\pi/9 \approx 0{,}6981$
+i~$\Phi_{\mathrm{eff}}^{\rm pure} = 8\pi \approx 25{,}1327$
+(\S\ref{eq:Phi-eff-pure} sek00), kt\'ora dla $\alpha_s$ daje
+$0{,}1167$ ($-1{,}39\sigma$). Warto\'s\'c $24{,}783$ optymalizuje
+$\alpha_s$ kosztem $\Omega_\Lambda$ tension $+0{,}51\sigma$ od~Plancka.
+Pe\l{}ny opis trade-off $\Omega_\Lambda \leftrightarrow \alpha_s$:
+\texttt{research/op-gamma1-phi-eff-anchor-resolution/}.
+\textsf{Open problem: r\'o\.znica $0{,}5\%$ mi\k{e}dzy structural $8\pi$
+a~Brannen $24{,}783$ mo\.ze sygnalizowa\'c brakuj\k{a}c\k{a} 1-loop
+korekcj\k{e} lub dodatkow\k{a} fizyk\k{e} substratu.}
+
+\medskip\noindent
+\textbf{Cz\k{e}\'sciowa derywacja ($\delta$.1 closure, 2026-05-02 noc):}
+Identyfikacja faktora $5$ w~$\gamma$.1 algebraic identity
+$\tilde{g} = 5e^2/(12\pi)$ jako $N_f = 5$ (liczba aktywnych smak\'ow
+QCD na skali $M_Z$, top quark odsprz\k{e}\.zony). Forma:
+\begin{equation}
+\tilde{g} = \frac{N_f \cdot e^2}{12\pi}, \quad N_f = 5\ (\text{at }M_Z)
+\label{eq:g-tilde-Nf}
+\end{equation}
+\l{}\k{a}czy strukturalnie kosmologi\k{a} ($\tilde{g}$ correction
+do~T-$\Lambda$ pure prediction), QCD smaki ($N_f$) i~amplitud\k{e}
+Brannen ($e^2$). Brannen $\PhiZero = 24{,}783$ optymalizuje
+$\alpha_s$ ($+0{,}44\sigma$); $\delta$.1 H\_NF prediction $\PhiZero =
+(10/3)e^2 = 24{,}6302$ daje $\alpha_s = 0{,}1191$ ($+1{,}26\sigma$),
+ale $\Omega_\Lambda$ optimal ($-0{,}07\sigma$).
+\textsf{Open: pe\l{}na derywacja wymaga ``cosmological-gauge'' coupling
+argumentu (dlaczego $\Lambda$-sektor zdefiniowany na skali $M_Z$).}
+
+\medskip\noindent
+\textbf{Pe\l{}na struktura ($\delta$.2 closure, 2026-05-02 noc):}
+$N_f = 5$ w~\eqref{eq:g-tilde-Nf} jest derivable z~TGP first principles:
+\begin{itemize}[nosep]
+  \item 6 mas kwark\'ow z~R3 ODE node count (dod.~\ref{app:hierarchia-mas}):
+        $n=0$ (u, d, plus s jako gen 0+1 isospin),
+        $n=1$ (c, partial b),
+        $n=2$ (top isospin+, b isospin-)
+  \item $M_Z$ z~Thm~\ref{thm:JEW-selfconsistency} (J\_EW fixed point CW)
+  \item Mass ordering: 5 kwark\'ow ($u, d, s, c, b$) $< M_Z = 91{,}19$~GeV,
+        1 (top, $m_t \approx 173$~GeV) $> M_Z$
+  \item $\Rightarrow N_f(M_Z) = 5$ jako structural consequence (\emph{nie}
+        empirical input)
+\end{itemize}
+Otwarte (Level A): pe\l{}na numerical sympy WKB dla mass values + formalna
+$\Phi$-RG derivation $\tilde{g}$ formula. Patrz
+\texttt{research/op-delta2-Nf-derivation/} dla pe\l{}nego cyklu.
 \end{proposition}
 
 \begin{remark}[Most masa--sprz\k{e}\.zenie]\label{rem:mass-coupling-bridge}

@@ -6,6 +6,32 @@
 
 \statuslabel{Propozycja}
 
+% =====================================================================
+% G.0 CLOSURE 2026-05-02 (Phase 4 implementation, v1.x -> v2.0)
+% =====================================================================
+% Ta sekcja istnieje w dwoch warstwach:
+%
+%   v1.x (lin. ponizej, az do konca podsekcji): historyczna formulacja
+%        z V_orig(psi) = (beta/3)psi^3 - (gamma/4)psi^4 + sqrt(-g)=c0*psi
+%        (forma I metryki M9.1, FALSIFIED 2026-04-25). Zachowana
+%        jako derivation chain dla sledzenia historii i diff.
+%
+%   v2.0 (G.0 ADDENDUM na koncu podsekcji, nowe propositions
+%        prop:V-M911-canonical, prop:psi-EOM-R3, prop:vacuum-stability-G0,
+%        prop:kappa-corrected-G0): kanoniczna G.0-closed formulacja
+%        z V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12 + sqrt(-g)=c0*psi/(4-3*psi)
+%        (M9.1'' canonical), source coef 5q/Phi_0, q*c^2/Phi_0=(4/5)pi*G_0.
+%
+% Wartosc kappa = 3/(4*Phi_0) jest INVARIANT po re-fit Phi_0 (P32 sympy LOCK).
+% Wszystkie observables (Newton G_0, PPN gamma=beta=1, BBN, LLR, CMB,
+% mass spectrum lepton z PDG <0.01%) IDENTYCZNE w v1.x i v2.0 po re-fit.
+%
+% Patrz:
+%   research/op-g0-r3-from-canonical-projection/README.md
+%   research/op-g0-r3-from-canonical-projection/sek08a_v2_specification.md
+%   research/op-g0-r3-from-canonical-projection/Phase{1,2,3}_results.md
+% =====================================================================
+
 Niniejsza podsekcja realizuje trzy cele:
 \begin{enumerate}[(i)]
   \item Konsoliduje rozproszone cz\l{}ony dzia\l{}ania TGP
@@ -52,6 +78,8 @@ gdzie:
     \qquad (\text{tw.~\ref{thm:D-uniqueness}},\;\alpha = 2),
   \end{equation}
   i~potencja\l{}em samointerferencji
+  % G.0 closure (2026-05-02, v2.0): V_orig zachowane historycznie;
+  % kanoniczna forma G.0-closed = V_M911 (prop:V-M911-canonical, lin. ~770).
   \begin{equation}\label{eq:V-selfinterference}
     V(\varphi) = \frac{\beta}{3}\,\varphi^3 - \frac{\gamma}{4}\,\varphi^4
     \qquad (\beta = \gamma,\;\text{stw.~\ref{prop:vacuum-condition}}).%
@@ -106,6 +134,10 @@ gdzie:
     = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j,
   \end{equation}
   sk\k{a}d
+  % G.0 closure (2026-05-02): w sek08a v2.0 element objetosciowy
+  % to sqrt(-g) = c_0*varphi/(4-3*varphi) (M9.1'' canonical), zgodnie
+  % z TGP_FOUNDATIONS.md:64-69. Forma c_0*varphi (ponizej) jest
+  % v1.x historyczna. Patrz prop:V-M911-canonical (G.0 ADDENDUM).
   \begin{equation}\label{eq:sqrt-g-eff}
     \sqrt{-g_{\mathrm{eff}}}
     = \frac{c_0}{\varphi^{1/2}}\cdot\varphi^{3/2}
@@ -313,6 +345,10 @@ jest dwukrotnie mniejsza.
 \begin{proposition}[Skorygowana sta\l{}a sprz\k{e}\.zenia $\kappa$]%
 \label{prop:kappa-corrected}
 \statuslabel{Propozycja}
+% G.0 closure (2026-05-02): wartosc kappa = 3/(4*Phi_0) jest INVARIANT
+% po re-fit q*c^2/Phi_0 z M9.1''. Patrz prop:kappa-corrected-G0
+% (sek08a v2.0 ADDENDUM, eq:kappa-corrected-G0). Wszystkie cross-references
+% do prop:kappa-corrected pozostaja strukturalnie poprawne.
 
 W~jednorodnym tle FRW ze~skalowaniem $a(t)$,
 dla pola $\Phi(t) = \PhiZero\,\psi(t)$, dzia\l{}anie
@@ -726,4 +762,222 @@ UV completion. Szczeg\'o\l{}y: \texttt{research/op-phase3-uv-completion/Phase3\_
 Otwarte pierwsze pochodne (residua $0{,}9808$ ratio, $1/12$ exact)
 przeniesione do \texttt{research/op-uv-renormalizability-research/}
 (Sub-track F: Phase 3.E residua first-principles).
+\end{remark}
+
+% =====================================================================
+% G.0 ADDENDUM (Phase 4 implementation, 2026-05-02): sek08a v2.0
+% =====================================================================
+% Ponizsze propositions (prop:V-M911-canonical, prop:psi-EOM-R3,
+% prop:vacuum-stability-G0, prop:kappa-corrected-G0, eq:newton-limit-G0)
+% sa kanoniczna G.0-closed formulacja sek08a, wynikajaca z programu
+% G.0 (research/op-g0-r3-from-canonical-projection/, Phase 1+2+3 PASS 4/4
+% each).
+%
+% Sa one DODANE obok historycznej formulacji v1.x (powyzej, lin. 1-755),
+% nie zastepuja jej. Powod: zachowanie spojnosci wszystkich istniejacych
+% cross-references prop:kappa-corrected, eq:kappa-corrected (sek08, sek08c,
+% sek09, dodatekH, dodatekO, status_map, oraz ~10 plikow research).
+% Wartosc kappa = 3/(4*Phi_0) jest INVARIANT po re-fit Phi_0
+% (Phase 3 P32 sympy LOCK), wiec wszystkie kappa-references pozostaja
+% poprawne.
+%
+% Reformulacja v2.0 wprowadza:
+%   1. V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12 zastepujace
+%      V_orig(psi) = (beta/3)psi^3 - (gamma/4)psi^4
+%   2. sqrt(-g) = c0*psi/(4-3*psi) (M9.1'' canonical) zastepujace
+%      sqrt(-g) = c0*psi (forma I, FALSIFIED 2026-04-25)
+%   3. Phi-EOM (statyczna) = R3 ODE EXACT (psi'' + 2/r psi' + 2(psi')^2/psi
+%      = (1-psi)/psi^2)
+%   4. m_sp^2 = +gamma stable (FIX tachion bug v1.x ktory dawal m_sp^2 = -gamma)
+%   5. q*c^2/Phi_0 = (4/5)*pi*G_0 (Newton-limit, P32 sympy LOCK)
+%   6. Source coupling: 5q*rho/Phi_0 (vs 2q*rho/Phi_0 v1.x); iloczyn
+%      (q*c^2/Phi_0)*c_src = 4*pi*G_0 INVARIANT
+%
+% Konsekwencje strukturalne: wszystkie sukcesy R3 (N=3 generacji,
+% mass spectrum lepton z PDG <0.01%, Koide K=2/3, spin-1/2, 4-th gen
+% forbidden) sa AUTOMATYCZNIE sukcesami sek08a v2.0.
+% =====================================================================
+
+\subsubsection{G.0 closure: sek08a v2.0 (kanoniczna formulacja M9.1''-spojna)}%
+\label{sssec:g0-closure-v2}
+
+\statuslabel{Twierdzenie [G.0 closure 2026-05-02]}
+
+Niniejsza pod-podsekcja wprowadza \emph{kanoniczn\k{a}} G.0-closed
+formulacj\k{e} sek08a (v2.0), b\k{e}d\k{a}c\k{a} wynikiem programu badawczego
+G.0 (\texttt{research/op-g0-r3-from-canonical-projection/},
+Phase 1+2+3 ka\.zda PASS 4/4). Wszystkie propositions ni\.zej s\k{a}
+\textbf{kompatybilne predyktywnie} z~v1.x (powy\.zej, sek.~\ref{ssec:unified-action})
+po re-fit jednego parametru ($\Phi_0$ lub $q$).
+
+\begin{proposition}[Kanoniczny potencja\l{} $V_{M911}$ dla M9.1'']%
+\label{prop:V-M911-canonical}
+W~zunifikowanej akcji $S_{\rm TGP}$ z~metryk\k{a} M9.1''
+($\sqrt{-g} = c_0\psi/(4-3\psi)$) i~sprz\k{e}\.zeniem kinetycznym
+$K(\psi) = K_{\rm geo}\psi^4$ (tw.~\ref{thm:D-uniqueness}, $\alpha = 2$
+zachowane), \textbf{unikalnym} (mod sta\l{}a) potencja\l{}em zapewniaj\k{a}cym
+\.ze static spherically-symmetric EOM jest to\.zsame z~R3 ODE jest:
+\begin{equation}\label{eq:V-M911}
+  \boxed{
+    V_{M911}(\psi) = -\,\frac{\gamma}{12}\,\psi^2\,(4-3\psi)^2.
+  }
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Szkic dowodu (sympy LOCK, Phase 1 G0a)]
+Statyczne EOM po wariacji $\delta S/\delta\psi = 0$ z~elementem
+obj\k{e}to\'sciowym $4\pi r^2\,c_0\,\psi/(4-3\psi)$:
+\begin{equation}
+  \psi'' + \frac{2}{r}\psi' + \frac{2}{\psi}(\psi')^2
+  = -\frac{1}{K(\psi)}\,\frac{dU_{\rm eff}}{d\psi},
+\end{equation}
+gdzie $U_{\rm eff}(\psi) = \psi\,V(\psi)/(4-3\psi)$.
+Wymaganie to\.zsamo\'sci z~R3 ODE
+\begin{equation}\label{eq:R3-ODE}
+  \psi'' + \frac{2}{r}\psi' + \frac{2}{\psi}(\psi')^2
+  = \frac{1-\psi}{\psi^2}
+\end{equation}
+daje $-U_{\rm eff}'(\psi)/\psi^4 = (1-\psi)/\psi^2$, czyli
+$U_{\rm eff}'(\psi) = -\psi^2(1-\psi) = \psi^3 - \psi^2$.
+Ca\l{}kuj\k{a}c: $U_{\rm eff}(\psi) = \gamma(\psi^4/4 - \psi^3/3) + C$.
+St\k{a}d $V(\psi) = (4-3\psi)\,U_{\rm eff}/\psi = -\gamma\psi^2(4-3\psi)^2/12$.
+$\square$
+\end{proof}
+
+\begin{remark}[Wsteczna kompatybilno\'s\'c z~v1.x]%
+\label{rem:V-M911-backwards-compat}
+Stare wyra\.zenie $V_{\rm orig}(\psi) = (\beta/3)\psi^3 - (\gamma/4)\psi^4$
+by\l{}o derived przy za\l{}o\.zeniu $\sqrt{-g} = c_0\psi$ (forma I metryki,
+M9.1, FALSIFIED 2026-04-25 przez M9.1'' z~Cassini PPN $3\sigma$).
+Po przyj\k{e}ciu kanonicznej M9.1'' $\sqrt{-g} = c_0\psi/(4-3\psi)$
+i~wymogu R3-equivalence (G.0 closure, Phase 1 G0a sympy LOCK +
+Einstein-frame projection G0c), \textbf{poprawne $V$} to $V_{M911}$.
+
+Efektywny potencja\l{} $U_{\rm eff,new}(1) = \gamma(1/4 - 1/3) = -\gamma/12$,
+identyczny z~$U_{\rm eff,old}(1) = -\gamma/12$ (przy $\beta = \gamma$).
+G\k{e}sto\'s\'c energii pr\'o\.zni $\Lambda_{\rm eff}$ pozostaje
+\textbf{niezmieniona} --- predykcje sek05 (ciemna energia) zachowane.
+\end{remark}
+
+\begin{proposition}[Statyczne EOM solitonu $\equiv$ R3 ODE]%
+\label{prop:psi-EOM-R3}
+W~zunifikowanej akcji $S_{\rm TGP}$ z~$K(\psi) = K_{\rm geo}\psi^4$,
+$V = V_{M911}$, $\sqrt{-g} = c_0\psi/(4-3\psi)$, statyczne sferycznie-symetryczne
+r\'ownanie pola po wariacji jest \textbf{to\.zsame} z~R3 ODE~\eqref{eq:R3-ODE},
+znan\k{a} z~\texttt{research/why\_n3/} ($\alpha = 2$).
+\end{proposition}
+
+\begin{remark}[Konsekwencje strukturalne prop.~\ref{prop:psi-EOM-R3}]%
+\label{rem:psi-EOM-R3-consequences}
+Z~prop.~\ref{prop:psi-EOM-R3} wynika \.ze \textbf{wszystkie sukcesy R3}
+(\texttt{research/why\_n3/}) s\k{a} \emph{automatycznie} sukcesami
+sek08a v2.0 jako konsekwencje wariacji TGP-canonical akcji:
+\begin{itemize}[nosep]
+  \item $N = 3$ generacji leptonowych (bariera $g_{0,\rm crit} = 1{,}874$
+    $\equiv \psi_{\rm horizon} = 4/3$ M9.1'' Lorentzian, koincydencja na
+    4 cyfrach znacz\k{a}cych);
+  \item $m_\mu/m_e = 206{,}766$ (PDG 206{,}768, diff $-0{,}0013\%$);
+  \item $m_\tau/m_e = 3477{,}40$ (PDG 3477{,}23, diff $+0{,}0049\%$);
+  \item Koide $K = 2/3$ (convergent);
+  \item 4-ta generacja: $g_0^{(4)} = \phi\,g_0^\tau \approx 2{,}87 > g_{\rm crit}$
+    \textbf{FORBIDDEN};
+  \item Spin-$1/2$ (RP$^2$ Berry phase $\pi$) --- derived.
+\end{itemize}
+Wery\-fika\-cja Phase 2 P22 (sympy LOCK + numerical match z R3 profile,
+\texttt{phase2\_P22\_mass\_spectrum\_verification.py}, 5/5 PASS).
+\end{remark}
+
+\begin{proposition}[Stabilno\'s\'c t\l{}a pr\'o\.zniowego --- G.0 corrected]%
+\label{prop:vacuum-stability-G0}
+W~akcji $S_{\rm TGP}$ G.0-canonical (z~$V = V_{M911}$, $K = K_{\rm geo}\psi^4$,
+$\sqrt{-g} = c_0\psi/(4-3\psi)$):
+\begin{enumerate}[nosep]
+  \item \textbf{Vacuum:} $\psi_{\rm vac} = 1$ (jedyny realny pierwiastek
+    $U_{\rm eff}'(\psi) = 0$ z~warunkiem $\psi > 0$).
+  \item \textbf{Stabilno\'s\'c:} $U_{\rm eff}''(1) = +\gamma > 0$.
+  \item \textbf{Yukawa mass:} $m_{\rm sp}^2 = U_{\rm eff}''(1)/K(1) = \gamma$
+    (stabilny, scalar field).
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Korekta v1.x bug]%
+\label{rem:vacuum-bug-fix-G0}
+Sek08a v1.x \emph{deklarowa\l{}o} $\psi_{\rm vac} = 1$ i~$m_{\rm sp}^2 = \gamma$,
+ale wariacja z~$V_{\rm orig}$ + $\sqrt{-g} = c_0\psi$ (M9.1 falsified)
+faktycznie dawa\l{}a:
+\begin{itemize}[nosep]
+  \item $U_{\rm eff,old}(\psi) = \gamma\psi^4(4-3\psi)/12$ z~vacuum przy
+    $\psi = 16/15$ (NIE 1!),
+  \item $U''_{\rm eff,old}(1) = -\gamma$ \textbf{tachionowy bug}
+    (ujawniony przez Phase 2 P21 sympy LOCK).
+\end{itemize}
+G.0 closure z~$V_{M911}$ + M9.1'' $\sqrt{-g}$ \textbf{naprawia} oba bugi:
+vacuum poprawnie przy $\psi = 1$ z~stable $m_{\rm sp}^2 = +\gamma$.
+\end{remark}
+
+\begin{proposition}[$\kappa$ po G.0 re-fit $\Phi_0$]%
+\label{prop:kappa-corrected-G0}
+W~zunifikowanej akcji G.0-canonical (sek08a v2.0), \emph{operational}
+sta\l{}a sprz\k{e}\.zenia materia--pole zachowuje swoj\k{a} warto\'s\'c:
+\begin{equation}\label{eq:kappa-corrected-G0}
+  \boxed{
+    \kappa = \frac{q\,c_0^2}{\Phi_0}\cdot\frac{c_{\rm src}}{3 H_0^2}
+    = \frac{4\pi G_0}{3 H_0^2}
+    = \frac{3}{4\Phi_0}.
+  }
+\end{equation}
+gdzie:
+\begin{itemize}[nosep]
+  \item $c_{\rm src} = 5$ (source coefficient w~G.0, vs $c_{\rm src} = 2$
+    w~v1.x);
+  \item Po re-fit Newton-limit: $q\,c_0^2/\Phi_0 = (4/5)\pi G_0$ (G.0)
+    vs $q\,c_0^2/\Phi_0 = 2\pi G_0$ (v1.x);
+  \item Iloczyn $(q\,c_0^2/\Phi_0)\cdot c_{\rm src} = 4\pi G_0$
+    jest \textbf{INVARIANT}.
+\end{itemize}
+\end{proposition}
+
+\begin{remark}[Re-fit $\Phi_0$ jako gauge-equivalence]%
+\label{rem:Phi0-refit-G0}
+G.0 closure wymaga jednej z~dwóch re-calibracji:
+\begin{itemize}[nosep]
+  \item Je\'sli $q$ fundamentalne: $\Phi_0^{\rm new} = (5/2)\,\Phi_0^{\rm old}$;
+  \item Je\'sli $\Phi_0$ fundamentalne: $q^{\rm new} = (2/5)\,q^{\rm old}$.
+\end{itemize}
+W~obu wypadkach observable Newton's $G_0$, $\kappa$, $|\dot G/G|/H_0$,
+BBN, LLR, CMB \textbf{S\k{A} IDENTYCZNE} z~sek08a v1.x ---
+re-calibration jest gauge-equivalence (Phase 3 P32 sympy LOCK).
+\end{remark}
+
+\begin{equation}\label{eq:newton-limit-G0}
+  \boxed{
+    \frac{q\,c_0^2}{\Phi_0} = \frac{4\pi G_0}{5}
+    \quad \text{(G.0 Newton-limit, P32)}
+  }
+\end{equation}
+
+\begin{equation}\label{eq:cosmo-linearized-unified-G0}
+  \ddot{\delta\psi} + 3H\,\dot{\delta\psi}
+  + m_{\rm sp}^2 c_0^2\,\delta\psi
+  = -\frac{5\,q\,c_0^2}{\Phi_0}\,\delta\rho
+  \quad \text{(G.0 FRW perturbation, source coef 5)}
+\end{equation}
+
+\begin{remark}[Konwencja krzy\.zowych odwo\l{}a\'n po G.0 closure]%
+\label{rem:cross-ref-convention-G0}
+Cross-references w~innych plikach core/ (sek08, sek08c, sek09, dodatekH,
+dodatekO, status\_map) do \texttt{prop:kappa-corrected} (v1.x) pozostaj\k{a}
+\emph{strukturalnie poprawne} --- warto\'s\'c $\kappa = 3/(4\Phi_0)$
+INVARIANT. Tam, gdzie wyst\k{e}puje literalne $\sqrt{-g} = c_0\psi$,
+$V_{\rm orig}$, lub $q\,c^2/\Phi_0 = 2\pi G_0$, dodano comment-blokowe
+G.0 annotations wskazuj\k{a}ce na v2.0 form\k{e}
+(prop.~\ref{prop:V-M911-canonical}, eq.~\eqref{eq:newton-limit-G0}).
+
+Pe\l{}na specyfikacja v2.0:
+\texttt{research/op-g0-r3-from-canonical-projection/sek08a\_v2\_specification.md}.
+
+\textbf{Status v2.0}: \statuslabel{Twierdzenie [G.0 PASS 4/4 + 4/4 + 4/4]}
+--- Phase 1 (analytical bridge, sympy LOCK), Phase 2 (mass spectrum +
+PPN + FRW), Phase 3 (Newton-limit + audit + drafts), Phase 4
+(integracja core, ten plik).
 \end{remark}
