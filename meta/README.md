@@ -2,22 +2,38 @@
 
 Dokumenty meta-poziomu: audyty calosci, plany domkniecia, plany rozwoju, plany publikacji oraz propozycje programow badawczych. Nie zawieraja dowodow — sluza do zarzadzania rozprawa.
 
-## Zawartosc — point-in-time audyty i master plany
+## Zawartosc — aktywne audyty i master plany (post-2026-05-04 cleanup)
 
-- `AUDYT_TGP_2026-04-09.md` — audyt TGP (kwiecien 2026, v1)
-- `AUDYT_TGP_2026-04-14_v2.md` — audyt TGP (kwiecien 2026, v2)
-- `AUDYT_TGP_2026-05-01.md` — audyt TGP (maj 2026, 8 CRITICAL + 12 HIGH)
-- `SUBAGENT_AUDIT_74394a8_2026-05-02.md` — audyt incydentu agentowego (commit 74394a8)
-- `ANALIZA_ALPHAK_STATUS_I_DOMKNIECIE_2026-04-12.md` — analiza statusu alpha_K i plan domkniecia
-- `ANALIZA_KRYTYCZNA_v6.md` — analiza krytyczna teorii (v6)
-- `PLAN_DOMKNIECIA_MASTER.md` — master-plan domkniecia otwartych punktow
-- `PLAN_NUMERYCZNY_CG3_CG4.md` — plan numeryczny CG3/CG4 (coarse-graining)
+### Audyty (canonical)
+- `AUDYT_TGP_2026-05-01.md` — canonical audit (maj 2026, 8 CRITICAL + 12 HIGH, all closed §J-§AB)
+- `SUBAGENT_AUDIT_74394a8_2026-05-02.md` — audyt incydentu agentowego (CLOSED 2026-05-04 §8 forward-patch)
+- `CALIBRATION_PROTOCOL.md` — anti-overclaim discipline (BINDING 2026-05-04+)
+
+### Master plany (active)
+- `PLAN_DOMKNIECIA_MASTER.md` — master-plan domkniecia otwartych punktow (10/10 closed)
 - `PLAN_PUBLIKACJI_MASTER.md` — master-plan publikacji
-- `PLAN_ROZWOJU_v3.md` — plan rozwoju TGP (wersja 3)
-- `PLAN_ROZWOJU_v4.md` — plan rozwoju TGP (wersja 4)
-- `ROADMAP_v3.md` — roadmap (wersja 3)
-- `KOIDE_OPEN_PROPOSALS.md` — otwarte propozycje dla sektora Koidego
-- `PROPOZYCJA_MOST_GAMMA_DO_PHI.md` — propozycja mostu Gamma -> Phi
+- `PLAN_ROZWOJU_v4.md` — plan rozwoju TGP (current dev roadmap)
+- `PLAN_RESEARCH_WORKFLOW_v1.md` — workflow `research/` (multi-agent + status layer)
+
+### Zarchiwizowane 2026-05-04 (zob. [`../_archiwum/old_meta_2026-04/`](../_archiwum/old_meta_2026-04/))
+
+Następujące plany/analizy/audyty z kwietnia 2026 zostały zarchiwizowane jako
+**superseded** przez canonical AUDYT_TGP_2026-05-01 + PLAN_ROZWOJU_v4 +
+PLAN_DOMKNIECIA_MASTER:
+- `AUDYT_TGP_2026-04-09.md` (superseded by AUDYT_2026-05-01)
+- `AUDYT_TGP_2026-04-14_v2.md` (superseded by AUDYT_2026-05-01)
+- `ANALIZA_ALPHAK_STATUS_I_DOMKNIECIE_2026-04-12.md` (alpha_K closed via cycles ε.1+α.1)
+- `ANALIZA_KRYTYCZNA_v6.md` (superseded by AUDYT_2026-05-01)
+- `PLAN_NUMERYCZNY_CG3_CG4.md` (CG3/CG4 done w `research/continuum_limit/`)
+- `PLAN_ROZWOJU_v3.md` (superseded by PLAN_ROZWOJU_v4)
+- `ROADMAP_v3.md` (superseded by PLAN_ROZWOJU_v4 + AUDYT_2026-05-01 §B-cluster;
+  cytowane historycznie w 6× AUDYT references + 5× tooling/scripts comments)
+- `KOIDE_OPEN_PROPOSALS.md` (open issues addressed via cycles θ.1, ζ.1, η.1, η.2, κ.1, ι.1)
+- `PROPOZYCJA_MOST_GAMMA_DO_PHI.md` (propozycja zrealizowana w `partial_proofs/most_gamma_phi/dodatekQ2_*.tex`)
+
+> **Reading rule:** zarchiwizowane pliki są **read-only historical record**.
+> Nie cytować jako authoritative — używać canonical replacements. Patrz
+> [`../_archiwum/README.md`](../_archiwum/README.md) §"Mapping: superseded → current".
 
 ## Workflow `research/` + `core/` (od 2026-05-02)
 
