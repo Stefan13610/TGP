@@ -1,3 +1,28 @@
+---
+title: "Hubble Tension w kontekście TGP"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: L1
+  kind: phenomenology
+  core_compatibility: "unknown"
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: true
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'Hubble Tension w kontekście TGP'"
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # Hubble Tension w kontekście TGP
 
 ## Problem
@@ -81,4 +106,29 @@ do propagacji fotonów na kosmologicznych dystansach → wpływ na distance ladd
 - Planck 2020 — CMB H₀
 - Freedman 2024/2025 — TRGB jako trzecia droga
 - Di Valentino et al. — przegląd Hubble tension
-- DESI DR2 (2025/2026) — BAO H₀
+- **DESI DR2 (arXiv:2503.14738, 2025-03)** — BAO+CMB+SN: H₀ = 68.17 ± 0.28
+- **DESI Y3 (2026-04)** — 47 mln galaktyk, 2.8-4.2σ evolving DE
+
+---
+
+## Status post-cascade 2026-05-02
+
+Wnioski tego folderu są **strukturalnie zachowane** po kaskadzie zamknięć
+2026-04-26 → 2026-05-02 (closure_2026-04-26 + Phase 3.E + UV.3 + γ.1/δ.1/δ.2):
+
+- `B_ψ/H_0² ~ 10⁻⁸` (gap 7.2 orders below required 0.17 dla H₀ tension)
+  — **strukturalnie niezmienione** przez UV.3 (orthogonal: UV.3 = `Φ_0`
+  absolute scale, hubble_tension = perturbacja backreaction)
+- "TGP NIE rozwiązuje H₀ tension" — **wzmocnione** przez algebraiczne
+  predykcje `Ω_Λ` z γ.1 + δ.1 + δ.2; cosmologia TGP ma teraz `Ω_Λ^pure = 2π/9`
+  i `Ω_Λ^corr = 5e²/54` jako fixed prediction (bez room for H₀ shift)
+- DESI DR2 (2025-03) actual `H₀ = 68.17 ± 0.28` — środek między Planck (67.36)
+  i SH0ES (73.04), nadal ~5σ tension nierozwiązane
+- TGP scope statement: GALAXY-SCALE GRAVITY + structural DE + CMB safety;
+  **NOT** H_0 / S_8 tension solver
+
+**Cross-link:**
+- [[../op-cosmology-closure/M10_5_results.md]] — H₀/S₈ tensions audit (6/6 PASS, ct7 GREEN)
+- [[../op-cosmology-closure/M10_R_results.md#125-post-m10-addenda-2026-04-28--2026-05-02]]
+  — pełna updated falsification matrix
+- [[../audyt_cosmology_drift_2026-05-03/README.md]] — audyt drift remediation 2026-05-03

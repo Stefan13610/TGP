@@ -1,3 +1,28 @@
+---
+title: "Kosmologiczne napięcia jako jednorodny efekt substratu TGP"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: L1
+  kind: phenomenology
+  core_compatibility: "unknown"
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: true
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'Kosmologiczne napięcia jako jednorodny efekt substratu TGP'"
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # Kosmologiczne napięcia jako jednorodny efekt substratu TGP
 
 ## Teza centralna
@@ -148,3 +173,28 @@ To fundamentalna kwestia architektoniczna teorii.
 - **DESI w(z)**: NIEKOMPATYBILNY (TGP daje w≥-1, DESI sugeruje phantom crossing)
 
 **Konkluzja:** TGP = teoria GALAKTYCZNA. Ten sam mechanizm chameleonowy exp(-y⁰·⁸) który zapewnia bezpieczeństwo CMB i Układu Słonecznego eliminuje wpływ na kosmologiczne napięcia.
+
+---
+
+## Status post-cascade 2026-05-02
+
+Wnioski tego folderu są **strukturalnie zachowane** po kaskadzie zamknięć
+2026-04-26 → 2026-05-02 (closure_2026-04-26 + Phase 3.E + UV.3 + γ.1/δ.1/δ.2):
+
+- `B_ψ/H_0² ~ 10⁻⁸` struktura **niezmieniona** (UV.3 dotyczy `Φ_0` absolute
+  scale, NIE perturbacji backreaction; orthogonal)
+- "TGP scope = galaxy, NIE cosmology tensions" — **wzmocnione** przez
+  algebraiczne predykcje `Ω_Λ` z γ.1 + δ.1 + δ.2 (`Ω_Λ^pure = 2π/9`,
+  `Ω_Λ^corr = 5e²/54 ≈ 0.68417` Planck −0.07σ)
+- Nowy falsifikator cross-sektorowy `Ω_Λ · α_s = 3·g_0^e/32 ≈ 0.0815`
+  (UV.3 + γ.1) — TESTOWALNY przez CMB-S4 + Z-pole α_s 2030+, **niezależny**
+  od H₀/S₈ napięć
+- Punkt "DESI w(z) NIEKOMPATYBILNY" zachowany strukturalnie (TGP `w ≥ -1`
+  ALGEBRAIC), ale faktyczne DESI DR2 (2025-03) `(w₀, wₐ) = (−0.75, −0.90)`
+  przy 3.1σ — **bliżej ΛCDM niż DR1 i nadal NIE 5σ** — TGP w yellow zone,
+  NOT falsified.
+
+**Cross-link:**
+- [[../op-cosmology-closure/M10_R_results.md#125-post-m10-addenda-2026-04-28--2026-05-02]]
+  — pełna updated falsification matrix (12 predykcji post-cascade)
+- [[../audyt_cosmology_drift_2026-05-03/README.md]] — audyt drift remediation 2026-05-03

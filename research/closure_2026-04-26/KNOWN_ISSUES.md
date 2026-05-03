@@ -1092,6 +1092,40 @@ Każdy item sklasyfikowany jako:
   vacuum selection / LQG dynamics / CDT continuum limit / UV discrimination /
   Phase 3.E residua first-principles); Phase 4 fokusuje na empirical falsification.
 
+### A.13 ✅ CLOSED 2026-05-03 — Cosmology drift remediation 4-file alignment
+
+**Problem:** Po kaskadzie 5 zamknięć (closure_2026-04-26 + M10 + Phase 3.E
++ UV.3 + γ.1/δ.1/δ.2 + op-omicron1) i publikacji DESI DR2 (2025-03) /
+Y3 (2026-04), 4 pliki kosmologiczne zostały zidentyfikowane jako zaległe
+względem aktualnego rdzenia:
+
+| Plik | Pre-patch | Post-patch | Główny drift item |
+|---|:---:|:---:|---|
+| `core/sek05_ciemna_energia/sek05_ciemna_energia.tex` | 🔴 RED | 🟢 GREEN | Ontological contradiction: "Φ_0 fitted" (sek05) vs "Ω_Λ algebraic" (sek00 UV.3) |
+| `research/desi_dark_energy/README.md` | 🔴 RED | 🟢 GREEN | Pre-cascade, treats DR2 as future (was already past) |
+| `research/op-cosmology-closure/M10_R_results.md` | 🟡 YELLOW | 🟢 GREEN | Captures closure_2026-04-26, missing Phase 3.E + UV.3 + γ.1/δ.1/δ.2 + op-omicron1 |
+| `research/op-cosmology-closure/M10_5_results.md` | 🟡 YELLOW | 🟢 GREEN | Same; M10.5.5 phantom example uses DR1 numbers |
+
+**Resolution 2026-05-03:** non-breaking patch w 5 fazach
+([[../audyt_cosmology_drift_2026-05-03/README.md]]):
+- **Faza 1:** sek05.tex `\rem:Lambda-post-uv3` + footnote G.0 v2.0 + `prob:Lambda` status = ROZWIĄZANY + DR1↔DR2 uwaga (4 edits, +85 linii)
+- **Faza 2:** desi_README "Status update 2026-05-03" + sekcja 9 (post-cascade falsifikatory F1.5/F11/F12) + tabele DR2 (3 edits, +63 linii)
+- **Faza 3:** M10_R sekcja 12.5 (Post-M10 addenda) + M10_5 cross-cite (3 edits, +71 linii)
+- **Faza 4:** KNOWN_ISSUES A.13 (this entry) + cosmo_tensions/hubble_tension status update + main.pdf rebuild
+- **Faza 5:** validation smoke tests + 5 osobnych commitów
+
+**Strukturalne gwarancje:** wszystkie patche **addytywne**; żadna istniejąca
+derywacja, twierdzenie, ani test PASS NIE jest modyfikowany. Stare sformułowania
+zachowane jako historical record (oznaczone "nieaktualne" przez nowy remark).
+M10.x sub-results IDENTYCZNE liczbowo. **Zero structural conflicts.**
+
+**Cross-check vs sekcja G (falsification matrix) tego pliku:** F1.5
+(Ω_Λ·α_s = 0.0815) + F11 (Σm_ν op-omicron1) + F12 (Ω_Λ algebraic 3-form)
+**rozszerzają macierz** z 7 do 10 falsifikatorów post-cascade — pełna lista
+w [[../op-cosmology-closure/M10_R_results.md#125-post-m10-addenda-2026-04-28--2026-05-02]].
+
+**Status:** ✅ **CLOSED 2026-05-03.**
+
 ---
 
 ## B. STRUCTURAL POSTULATES (silna motywacja, brak pełnej derivation)
