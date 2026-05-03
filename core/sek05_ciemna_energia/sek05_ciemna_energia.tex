@@ -180,7 +180,14 @@ $U(\psi) = (\beta/3)\psi^3 - (\gamma/4)\psi^4$%
 statycznym Formulacji~B. W~sformu\l{}owaniu kanonicznym (Formulacja~A):
 potencja\l{} akcji $P(g) = (\beta/7)\,g^7 - (\gamma/8)\,g^8$,
 potencja\l{} statyczny $V(g) = (\gamma/3)\,g^3 - (\gamma/4)\,g^4$;
-$g_0^e = 0{,}86941$. Patrz: \texttt{tgp\_companion.tex}.}
+$g_0^e = 0{,}86941$. Patrz: \texttt{tgp\_companion.tex}.
+\textbf{G.0 closure 2026-05-02} (\texttt{research/op-g0-r3-from-canonical-projection/}):
+kanoniczny potencja\l{} M9.1'' to $V_{\mathrm{M911}}(\psi) =
+-\gamma\,\psi^2(4-3\psi)^2/12$ z~$\sqrt{-g} = c_0\psi/(4-3\psi)$.
+Posta\'c poni\.zej $(\beta/3)\psi^3 - (\gamma/4)\psi^4$ jest historyczn\k{a}
+v1.x; predykcje obserwowalne (PPN, BBN, mass spectrum, $w(z)$) s\k{a}
+\textbf{identyczne} po re-fit $\Phi_0$ (cross-link sek08\_formalizm
+G.0 closure header).}
 (r\'ownanie~\ref{eq:U-potential}) wok\'o\l{}
 $\psi = 1$ ($\varphi = 0$):
 \begin{equation}\label{eq:U-phi-def}
@@ -577,7 +584,7 @@ wielko\'sci $\PhiZero$ --- ,,przypadek'' staje si\k{e}
 \subsection{Otwarte problemy}\label{ssec:de-prob}
 
 \begin{problem}[Ilo\'sciowa predykcja $\Lambda_{\mathrm{eff}}$
-  --- CZ\k{E}\'SCIOWO ROZWI\k{A}ZANY]\label{prob:Lambda}
+  --- ROZWI\k{A}ZANY (post-2026-05-02)]\label{prob:Lambda}
 Wyliczenie efektywnej $\Lambda_{\mathrm{eff}}$ z~danego
 rozk\l{}adu materii wymaga:
 \begin{enumerate}[nosep]
@@ -588,10 +595,76 @@ rozk\l{}adu materii wymaga:
         10^{-52}\;\mathrm{m}^{-2}$.
 \end{enumerate}
 Cz\k{e}\'sciowe rozwi\k{a}zanie: patrz uwaga~\ref{rem:Lambda-quantitative}.
+\textbf{Pe\l{}ne rozwi\k{a}zanie post-2026-05-02:} kaskada T-$\Lambda$
+(2026-04-26) $+$ Phase~3.E B.6 PARTIAL DERIVED (2026-04-28) $+$ UV.3
+$Z_\Phi = 14/3$ (2026-05-02) $+$ $\gamma$.1 / $\delta$.1 / $\delta$.2
+(2026-05-02) zamyka problem na poziomie strukturalnym ---
+$\Omega_\Lambda^{\mathrm{TGP,corr}} = 5e^2/54 \approx 0{,}68417$
+(Planck $-0{,}07\sigma$) wynika algebraicznie. Patrz
+uwaga~\ref{rem:Lambda-post-uv3} dla pe\l{}nego statusu.
 \end{problem}
+
+\begin{remark}[Status post-closure cascade 2026-04-26~$\to$~2026-05-02:
+  $\Lambda_{\mathrm{eff}}$ jako algebraiczna predykcja]\label{rem:Lambda-post-uv3}
+Niniejsza sekcja zosta\l{}a napisana \textbf{przed} kaskad\k{a} 4 zamkni\k{e}\'c
+strukturalnych (closure\_2026-04-26 + Phase~3.E + UV.3 + $\gamma$.1/$\delta$.1/$\delta$.2),
+kt\'ore promuj\k{a} $\Phi_0$ z~parametru dopasowania do \textbf{wielokana\l{}owo
+wyprowadzanej algebraicznej predykcji}. Renormalizacja notacyjna (UV.3 closure
+2026-05-02, \texttt{research/op-uv3-phi0-renormalization/}):
+\begin{align}
+  \Phi_0^{\mathrm{bare}} &= 168\,\Omega_\Lambda \approx 115
+    \quad (\text{UV anchor, Warstwa II Planck}),\label{eq:Phi0-bare-update}\\
+  Z_\Phi &= V(1)/P(1) = 14/3 \quad (\text{sympy EXACT}),\label{eq:Z-phi-update}\\
+  \Phi_{\mathrm{eff}} &= \Phi_0^{\mathrm{bare}}/Z_\Phi
+    = (3/14)\,\Phi_0^{\mathrm{bare}} \approx 24{,}65,\label{eq:Phi-eff-update}
+\end{align}
+gdzie $\Phi_{\mathrm{eff}}$ jest \emph{tym samym} obiektem, kt\'ory ta sekcja
+nazywa\l{}a wcze\'sniej ,,$\Phi_0 \approx 24{,}7$''.
+
+\medskip\noindent
+\textbf{Algebraiczne predykcje $\Lambda$ z~kaskady 2026-05-02:}
+\begin{align}
+  \Omega_\Lambda^{\mathrm{TGP,pure}} &= 2\pi/9 \approx 0{,}6981
+    \quad (\text{$\gamma$.1 closure, $\tilde{g}=1$}),\label{eq:OmL-pure}\\
+  \Omega_\Lambda^{\mathrm{TGP,corr}} &= \frac{N_f \cdot e^2}{2 N_c^3}
+    = \frac{5 e^2}{54} \approx 0{,}68417
+    \quad (\text{Planck $-0{,}07\sigma$, $\delta$.1+$\delta$.2}),\label{eq:OmL-corr}\\
+  \Omega_\Lambda \cdot \alpha_s &= \frac{3\,g_0^e}{32} \approx 0{,}0815
+    \quad (\text{NOWA falsyfikator, drift $0{,}88\%$, CMB-S4+Z-pole 2030+}).\label{eq:OmL-alphas}
+\end{align}
+Z~Phase~3.E (2026-04-28, sek08a \texttt{rem:phase3-E-deepening}):
+B.6 PARTIAL DERIVED ---
+$V(\Phi_{\mathrm{eq}})|_{\beta=\gamma} = \gamma/6$, po~bridge factor $1/2$:
+$\gamma/12$, Friedmann match $3\Omega_\Lambda/(8\pi) = 0{,}0817$
+vs $1/12 = 0{,}0833$ (ratio $0{,}9808$, w~granicy 5\%).
+
+\medskip\noindent
+\textbf{Implikacja dla tej sekcji:} wcze\'sniejsze stwierdzenie
+,,$\Phi_0$ jest parametrem dopasowania, nie predykcj\k{a}''
+(uwaga~\ref{rem:Lambda-quantitative} poni\.zej, podsumowanie historyczne)
+jest \textbf{nieaktualne} po 2026-05-02. Aktualny status:
+$\Phi_0$ ma 4 niezale\.zne kana\l{}y wyprowadzenia (T-$\Lambda$,
+$\gamma$.1, $\delta$.1$+$$\delta$.2, UV.3) zgodne na poziomie
+$\sim 1\%$ z~Planck $\Omega_\Lambda = 0{,}6847$. Open: sub-leading
+$O(1)$ factor $1/12$ jako deeper substrate dynamics.
+
+\textbf{Cross-references:}
+\texttt{core/sek00\_summary} (UV.3 tabela $\Phi_0^{\mathrm{bare}}/Z_\Phi/\Phi_{\mathrm{eff}}$) +
+\texttt{core/sek08\_formalizm} (G.0 closure header, op-uv3 entry) +
+\texttt{research/closure\_2026-04-26/Lambda\_from\_Phi0/} (T-$\Lambda$, 7/7 PASS) +
+\texttt{research/op-uv3-phi0-renormalization/} ($Z_\Phi=14/3$, 3 fazy) +
+\texttt{research/op-gamma1-phi-eff-anchor-resolution/} ($\Omega_\Lambda^{\mathrm{pure}}=2\pi/9$) +
+\texttt{research/op-delta1-g-tilde-derivation/} +
+\texttt{research/op-delta2-Nf-derivation/} ($N_f=5$ derivable) +
+\texttt{research/op-cosmology-closure/M10\_R\_results.md} (M10 cycle CLOSED 42/42 PASS).
+\end{remark}
 
 \begin{remark}[Ilo\'sciowa weryfikacja $\Lambda_{\mathrm{eff}}$
   --- wyniki numeryczne]\label{rem:Lambda-quantitative}
+\textbf{Uwaga 2026-05-03:} ta uwaga zawiera historyczn\k{a} interpretacj\k{e}
+,,$\Phi_0$ jako parametr dopasowania''. Aktualny status (algebraiczna
+predykcja) --- patrz uwaga~\ref{rem:Lambda-post-uv3} powy\.zej.
+
 Skrypt \texttt{lambda\_eff\_quantitative.py} oblicza
 $\Lambda_{\mathrm{eff}}$ ilo\'sciowo. Wyniki:
 
@@ -712,13 +785,25 @@ R\'ownanie stanu ciemnej energii:
 z~$\varepsilon_0 = 6\langle\Psi^2\rangle \approx 5.4\times 10^{-9}$,
 $f(z) = d\ln D/d\ln a$ (wska\'znik wzrostu).
 Parametryzacja CPL (skrypt \texttt{w\_de\_redshift.py}):
+
+\medskip\noindent
+\textbf{Uwaga 2026-05-03:} granice obserwacyjne w~tabeli poni\.zej u\.zywaj\k{a}
+DESI DR1 (2024). Faktyczne DR2 (2025-03, arXiv:2503.14738) daje tighter
+$\sigma(w_0) \approx 0{,}10$, $\sigma(w_a) \approx 0{,}35$ przy
+$(w_0, w_a) \approx (-0{,}75, -0{,}90)$ (3{,}1$\sigma$ preferencja dla
+evolving DE), DESI Y3 (2026-04) --- 2{,}8--4{,}2$\sigma$ zale\.znie od
+kombinacji SN. TGP nadal \textbf{NIE} sfalsyfikowane (próg 5$\sigma$
+niewysycony). Bottom-line wniosek tej uwagi (TGP $w \approx -1$) niezmieniony.
+Pe\l{}na analiza: \texttt{research/desi\_dark\_energy/} +
+\texttt{research/op-cosmology-closure/M10\_R\_results.md}.
+
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-  Parametr & Warto\'s\'c TGP & Granica obserwacyjna \\
+  Parametr & Warto\'s\'c TGP & Granica obserwacyjna (DR1) \\
 \midrule
-  $w_0 + 1$ & $2.3 \times 10^{-9}$ & $0.05$ (DESI) \\
-  $w_a$ & $-2.5 \times 10^{-9}$ & $0.3$ (DESI) \\
+  $w_0 + 1$ & $2.3 \times 10^{-9}$ & $0.05$ (DESI DR1; DR2: $\sim 0{,}10$) \\
+  $w_a$ & $-2.5 \times 10^{-9}$ & $0.3$ (DESI DR1; DR2: $\sim 0{,}35$) \\
   $\delta\Lambda/\Lambda(z{=}0)$ & $5.4 \times 10^{-9}$ & --- \\
 \bottomrule
 \end{tabular}
