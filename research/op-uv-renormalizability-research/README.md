@@ -20,6 +20,26 @@ tags:
   - foundational-open-problem
   - research-track-long-term
   - future-research
+tgp_status:
+  folder_status: "needs-bridge"
+  level: L1
+  kind: derivation
+  core_compatibility: "unknown"
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: false
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'OP-UV-RENORMALIZABILITY-RESEARCH — UV-complete renormalizability (research-track wieloletni)'"
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
 ---
 
 # OP-UV-RENORMALIZABILITY-RESEARCH — UV-complete renormalizability (research-track wieloletni)

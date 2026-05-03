@@ -1,3 +1,28 @@
+---
+title: "R3: Dlaczego N=3 generacji? (T-OP3)"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: L1
+  kind: derivation
+  core_compatibility: "unknown"
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: false
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'R3: Dlaczego N=3 generacji? (T-OP3)'"
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # R3: Dlaczego N=3 generacji? (T-OP3)
 
 > ## ✅ RESOLUTION (2026-05-01) — sprzeczność rozwiązana
@@ -1021,8 +1046,9 @@ marginalnie powyżej — deficit to TYLKO 3.1%.
 | `PHASE4_5_yukawa_propagator.md` | **Dokument zamykający Fazy 4-5**: emergent Dirac program END (5/5 faz) | ✅ ZAMKNIĘTY |
 | `r3_phase6_r5_bridge.py/.txt` | **FAZA 6 (Q5) [DEPRECATED]**: R⁵-bridge — external import wycofany | ⚠️ DEPRECATED |
 | `PHASE6_Q5_R5_bridge_first_attempt.md` | **DEPRECATED**: zastąpione przez PHASE6_alpha_em_connection.md | ⚠️ DEPRECATED |
-| `r3_phase6_alpha_em_connection.py/.txt` | **FAZA 6 (REDO)**: X=e²/4 vs α_HL=e²/(4π) — strukturalne podobieństwo | ⚠️ SUGGESTIVE-OPEN |
-| `PHASE6_alpha_em_connection.md` | **Faza 6 redo**: X jako TGP-modified α-em? Wymaga osobnego cyklu R3↔α-em | ⚠️ OPEN |
+| `r3_phase6_alpha_em_connection.py/.txt` | **FAZA 6 (FINAL)**: X=e²/4 vs α-em — separate sectors w TGP | ⚠️ CLOSED-NEGATIVE |
+| `PHASE6_alpha_em_connection.md` | **Faza 6 FINAL**: α-em bridge odrzucone (TGP-equations w dodatekO_u1); X pozostaje empirical w R3 amplitude sector | ⚠️ CLOSED-NEGATIVE |
+| `r3_phase7_phi0_screening_e2.py/.txt` | **FAZA 7 (EXPLORATORY)**: Φ_eff ≈ (10/3)·e² match 0.12%; bare→IR screening jako kumulatywny mechanizm | 🟢 EXPLORATORY HINT |
 
 ## ⚠️ [POST-AUDIT 2026-05-01]
 > Twierdzenie poniżej zaczyna się od "K=g², α=1" — to **nie jest TGP-substrat**.

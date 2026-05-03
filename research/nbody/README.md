@@ -1,3 +1,29 @@
+---
+title: "TGP N-body package"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: L1
+  kind: phenomenology
+  core_compatibility: current
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: false
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'TGP N-body package'"
+    - audit-aware markers=7 (B6/B8/B9/A5/etc.)
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # TGP N-body package
 
 **Topology-Generated Potential: N-body dynamics, chaos, and analytical structure**

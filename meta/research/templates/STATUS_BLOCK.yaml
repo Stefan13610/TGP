@@ -1,0 +1,149 @@
+# =============================================================================
+# STATUS_BLOCK.yaml — kanoniczny schemat `tgp_status:` dla README.md
+# =============================================================================
+#
+# Ten plik jest źródłem prawdy dla bloku `tgp_status:` osadzanego we
+# frontmatterze `README.md` każdego folderu w `research/`.
+#
+# Schemat dotyczy wariantu MINIMALNEGO (decyzja człowieka 2026-05-02):
+# status żyje w YAMLu, nie w fizycznej ścieżce. Pełny opis pól + reguły:
+# [[meta/PLAN_RESEARCH_WORKFLOW_v1.md#4-yaml-status-block]].
+#
+# REGUŁA "ANTY-OVERCLAIM" (twarda):
+#   `level: L4` LUB `folder_status: core-promoted` jest dopuszczalne TYLKO
+#   gdy `promoted_to_core` zawiera weryfikowalną referencję do pliku core
+#   (np. `core/sek08c_metryka_z_substratu/m911.tex §3.2` lub
+#   `main.tex §X.Y` lub `axioms/M1A_substrate_v2/`). W przeciwnym razie:
+#   `folder_status: core-ready` + `level: L3` + wniosek
+#   `meta/core/intake/INTAKE_<folder>_<date>.md`.
+# =============================================================================
+
+tgp_status:
+  # ── Status folderu ─────────────────────────────────────────────────────────
+  # Jedna z wartości:
+  #   active           — aktywny research (większość op-*, qm_*, topic)
+  #   core-ready       — L3 i kandydat do promocji, ale jeszcze nie w core
+  #   core-promoted    — wynik JUŻ jest w core/main.tex (folder żyje jako
+  #                      historia/uzasadnienie)
+  #   needs-bridge     — numerka/derivacja istnieją, brak pełnego mostu
+  #                      analitycznego LUB folder oczekuje rezultatu z innego
+  #   needs-migration  — folder wymaga aktualizacji po zmianie core
+  #                      (np. M9.x post-pivot M9.1'')
+  #   audit            — audyt wewnętrzny (audyty agentów / cross-checks)
+  #   review           — audyt zewnętrzny / external review
+  #   program-doc      — programowy dokument (status / redirect /
+  #                      new-directions / closure-summary)
+  #   sandbox          — luźna eksploracja, NIE część teorii
+  #   archive          — fizycznie w `research/_archive/`,
+  #                      zachowane jako historia obsoletnych podejść
+  folder_status: active
+
+  # ── Poziom dojrzałości ─────────────────────────────────────────────────────
+  # L0 — pomysł / sandbox; brak skryptów, brak weryfikacji
+  # L1 — szkic numeryczny; skrypt biegnie, brak interpretacji analitycznej
+  # L2 — analityczny szkic; derivation / bridge istnieje,
+  #      weryfikacja częściowa
+  # L3 — domknięty wynik; derivation + numeryka spójne, brak otwartych
+  #      bridge'y, audyt dat OK; gotowy do core-ready
+  # L4 — promowany do core; wynik w main.tex / core/ / axioms/
+  # mixed — folder zawiera podzbiory na różnych poziomach
+  #         (typowo closure-aggregator)
+  # unknown — przed klasyfikacją lub po nieudanym audycie
+  level: L2
+
+  # ── Charakter pracy w folderze ─────────────────────────────────────────────
+  # derivation         — analityczne wyprowadzenie
+  # numerical          — głównie skrypty / wyniki numeryczne
+  # phenomenology      — dopasowania do danych, predykcje obserwacyjne
+  # bridge             — folder dostarcza brakującego lemat / mostu
+  # audit              — audyt / cross-check
+  # review             — review zewnętrzny
+  # program-doc        — dokument programowy
+  # closure-aggregator — folder-rodzic z wieloma podzamknięciami
+  kind: derivation
+
+  # ── Zgodność z aktualnym core ──────────────────────────────────────────────
+  # current  — w pełni zgodny z aktualnym main.tex / core/
+  # partial  — zgodny w części; istnieją lokalne tensje
+  # stale    — folder jest poprawny pod swoje założenia, ale core się ruszył
+  #            (typowo M9.x post-pivot M9.1'' — wymaga re-runu)
+  # broken   — istnieje strukturalna sprzeczność z core; należy traktować
+  #            jako needs-migration
+  # unknown  — niesprawdzane lub niemożliwe do określenia bez human review
+  core_compatibility: unknown
+
+  # Data ostatniej weryfikacji folderu wobec core. Format: YYYY-MM-DD lub
+  # "unknown". Po każdej istotnej edycji core — należy zaktualizować
+  # (lub przesunąć folder do `needs-migration`).
+  last_reviewed_against_core: unknown
+
+  # ── Uprawnienia względem core ──────────────────────────────────────────────
+  # `may_edit_core: false` jest DOMYŚLNYM stanem dla wszystkich folderów
+  # research/. Tylko człowiek może zmienić na true (przez akceptację
+  # konkretnego INTAKE_*.md). Agent NIGDY nie ustawia true samodzielnie.
+  may_edit_core: false
+
+  # Czy folder eksportuje wyniki dla innych folderów (czy ma żywy FINDINGS.md)?
+  exports_findings: false
+  has_needs_file: false
+  has_findings_file: false
+
+  # ── Listy relacji międzyfolderowych ───────────────────────────────────────
+  # Każda lista zawiera ścieżki względne od TGP/TGP_v1/ albo "—" jeśli pusta.
+
+  # Otwarte luki / mosty wymagane do domknięcia tego folderu.
+  open_bridges: []
+  # Przykład:
+  # open_bridges:
+  #   - "M9.1'' volume element re-derivation (needs op-newton-momentum)"
+  #   - "ξ.1 N_A first-principles closure (needs op-uv-as-ngfp)"
+
+  # Foldery, których wyników ten folder potrzebuje na wejściu.
+  depends_on: []
+  # Przykład:
+  # depends_on:
+  #   - "research/op-phase3-uv-completion"
+  #   - "research/closure_2026-04-26/sigma_ab_pathB"
+
+  # Foldery, które mogą skonsumować wyniki tego folderu.
+  impacts: []
+  # Przykład:
+  # impacts:
+  #   - "research/op-uv-as-ngfp"
+  #   - "research/op-cosmology-closure"
+
+  # ── Anty-overclaim: weryfikowalne źródła statusu ──────────────────────────
+  # Każdy item musi cytować KONKRETNY plik + sekcję / linijkę / PASS-count.
+  # Reguła twarda: bez source_of_status status > L1 / poza "active|sandbox"
+  # nie jest dopuszczalny.
+  source_of_status: []
+  # Przykład:
+  # source_of_status:
+  #   - "Phase3_results.md (94/97 PASS, 2026-04-25)"
+  #   - "meta/AUDYT_TGP_2026-05-01.md §A1 (CRITICAL)"
+  #   - "closure_2026-04-26/CLOSURE_SUMMARY.md (35/35 PASS)"
+
+  # ── Promocja do core (TYLKO po decyzji człowieka) ──────────────────────────
+  # null            — folder nie jest promowany
+  # "main.tex §X.Y" — wynik znajduje się w sekcji X.Y main.tex
+  # "core/sek0Z_*"  — wynik jest w core/sek0Z_*
+  # "axioms/*"      — wynik jest w axioms/*
+  # "partial_proofs/*" — wynik jest w partial_proofs/*
+  promoted_to_core: null
+
+  # ── Flagi kontekstu (informacyjne) ─────────────────────────────────────────
+  # Polluted incydentem 74394a8 (zob.
+  # meta/SUBAGENT_AUDIT_74394a8_2026-05-02.md). Plan: foldery w tej grupie
+  # MUSZĄ zostać `level: unknown` + `core_compatibility: unknown` do czasu
+  # forward-patch decyzji człowieka.
+  polluted_74394a8: false
+
+  # Folder jest "pre-existing" — istniał przed Sesją 5 z FINDINGS/NEEDS, agent
+  # NIE nadpisał (zob. decyzja Q4 z 2026-05-03).
+  pre_existing_findings: false
+  pre_existing_needs: false
+
+  # ── Audyt dat ──────────────────────────────────────────────────────────────
+  # ISO date — kiedy frontmatter został zaktualizowany ostatni raz.
+  # Skrypt-checker w Sesji 8 sprawdza: `last_yaml_update <= today`.
+  last_yaml_update: unknown

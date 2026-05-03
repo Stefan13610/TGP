@@ -1,3 +1,30 @@
+---
+title: "OP-6 rework — rigorous continuum limit of H_Γ"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: mixed
+  kind: derivation
+  core_compatibility: current
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: false
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - Legacy folder (op6) — gęsto linkowany w INDEX/DEPENDENCIES
+    - "PASS count=1, CLOSED=3"
+    - op6/v2_pivot_summary.md (substrate v2 axiom — promoted to axioms/M1A)
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # OP-6 rework — rigorous continuum limit of H_Γ
 
 This folder is the clean workspace for a fresh attempt at **OP-6**

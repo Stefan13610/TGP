@@ -1,3 +1,28 @@
+---
+title: "Program P4 — Particle Sector Closure"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: L1
+  kind: derivation
+  core_compatibility: "unknown"
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: true
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'Program P4 — Particle Sector Closure'"
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # Program P4 — Particle Sector Closure
 
 > **STATUS 2026-04-19: CLOSED.**

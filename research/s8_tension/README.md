@@ -1,3 +1,28 @@
+---
+title: "S₈ Tension w kontekście TGP"
+date: 2026-05-03
+tgp_status:
+  folder_status: active
+  level: L1
+  kind: phenomenology
+  core_compatibility: "unknown"
+  last_reviewed_against_core: "unknown"
+  may_edit_core: false
+  exports_findings: true
+  has_needs_file: true
+  has_findings_file: true
+  open_bridges: []
+  depends_on: []
+  impacts: []
+  source_of_status:
+    - "README.md H1: 'S₈ Tension w kontekście TGP'"
+  promoted_to_core: null
+  polluted_74394a8: false
+  pre_existing_findings: false
+  pre_existing_needs: false
+  last_yaml_update: "2026-05-03"
+---
+
 # S₈ Tension w kontekście TGP
 
 ## Problem
