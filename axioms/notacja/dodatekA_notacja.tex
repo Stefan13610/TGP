@@ -156,12 +156,101 @@ $C_\beta, C_\gamma$ & Wsp\'o\l{}czynniki coarse-grainingu: $\beta,\gamma = f(\la
 \end{longtable}
 
 % ----------------------------------------------------------
+\subsection{Konwencja notacyjna: $\beta, \gamma$ jako wsp\'o\l{}czynniki GL
+vs wyk\l{}adniki krytyczne WF}\label{app:A-beta-gamma-distinction}
+% ----------------------------------------------------------
+
+% =====================================================================
+% AUDIT 2026-05-04 (L02 — \beta/\gamma semantic distinction).
+% Audit luki [[../../audyt/L02_beta_gamma_semantics/]] zauwa\.zy\l{},
+% \.ze symbol $\beta/\gamma$ wyst\k{e}puje w~TGP w~dw\'och r\'o\.znych
+% znaczeniach, co prowadzi do potencjalnej semantycznej kolizji przy
+% odwo\l{}aniach do M3--M8 (krytyczne wyk\l{}adniki WF FP) vs LK-1d
+% (warunek pr\'o\.zniowy GL). Niniejsza podsekcja explicitnie odr\'o\.znia
+% obie konwencje. Patrz [[audyt/L02_beta_gamma_semantics/POST_ACTION_UPDATE_2026-05-04.md]].
+% =====================================================================
+
+W~TGP wsp\'o\l{}istniej\k{a} \textbf{dwa r\'o\.zne znaczenia} symbol\'ow
+$\beta, \gamma$ --- pochodz\k{a}ce z~r\'o\.znych warstw formalizmu
+i~daj\k{a}ce \emph{r\'o\.zne warto\'sci liczbowe}. Niniejsza podsekcja
+odr\'o\.znia obie konwencje, aby unikn\k{a}\'c semantycznej kolizji.
+
+\medskip\noindent
+\textbf{(I) $(\beta, \gamma)_{\rm GL}$ --- wsp\'o\l{}czynniki GL w~fazie z\l{}amanej.}
+
+W~potencjale efektywnym (formalizm $(3,4)$):
+\begin{equation*}
+  V_{\rm eff}(g) = \frac{\beta}{3}g^3 - \frac{\gamma}{4}g^4
+\end{equation*}
+$\beta, \gamma$ s\k{a} \textbf{wsp\'o\l{}czynnikami funkcji potencja\l{}u}
+o~wymiarze $[\mathrm{L}^{-2}]$. Warunek pr\'o\.zniowy
+(N0-5, $V'(1)=0$) wymusza $\beta = \gamma$, co daje
+$(\beta/\gamma)_{\rm GL} = 1$ \textbf{algebraicznie} (tożsamo\'s\'c, nie pomiar).
+
+To jest u\.zycie u\.zywane w:
+\begin{itemize}\itemsep0pt
+  \item~r\'ownaniu pola~\eqref{eq:full-field-alt}
+  \item~warunku stabilno\'sci pr\'o\.zniowej (N0-2, N0-5)
+  \item~masie pola $m_{\rm sp}^2 = 3\gamma - 2\beta = \gamma$ (N0-6)
+  \item~LK-1d weryfikacji 6/6 PASS (PLAN\_DOMKNIECIA\_MASTER), $R = 0.88 \pm 0.38$
+  \item~G.0 closure 2026-05-02 (V\_M911 LOCK $V_{\rm M9.1''} = -\gamma\psi^2(4-3\psi)^2/12$)
+\end{itemize}
+
+\medskip\noindent
+\textbf{(II) $(\beta, \gamma)_{\rm WF}$ --- wyk\l{}adniki krytyczne w~punkcie
+sta\l{}ym Wilsona--Fishera.}
+
+W~kontek\'scie analizy klasy uniwersalno\'sci (cykle M3--M8, kwiecie\'n 2026)
+$\beta, \gamma$ s\k{a} \textbf{wyk\l{}adnikami krytycznymi} bezwymiarowymi:
+\begin{itemize}\itemsep0pt
+  \item~$\beta$ --- wyk\l{}adnik order-parameter: $m \sim |T-T_c|^\beta$
+  \item~$\gamma$ --- wyk\l{}adnik podatno\'sci: $\chi \sim |T-T_c|^{-\gamma}$
+\end{itemize}
+W~3D Ising universality class:
+$\beta_{\rm WF} \approx 0.326$, $\gamma_{\rm WF} \approx 1.237$
+$\Rightarrow (\beta/\gamma)_{\rm WF} \approx 0.264$ (warto\'s\'c LPA daje
+rough $-0.3$ do $-0.5$, dok\l{}adne z~conformal bootstrap).
+
+To jest u\.zycie w:
+\begin{itemize}\itemsep0pt
+  \item~M3 MK-RG (Migdal-Kadanoff renormalization)
+  \item~M8 NPRG/Wetterich-LPA
+  \item~analizach klasy uniwersalno\'sci 3D Z$_2$
+\end{itemize}
+
+\medskip\noindent
+\textbf{Dlaczego nie ma sprzeczno\'sci.}
+
+TGP fizycznie nie \.zyje na $T = T_c$ (faza krytyczna), tylko w~\emph{fazie
+z\l{}amanej} ($m_0^2 < 0$, $v^2 = |m_0^2|/\lambda_0$), z~klasyczn\k{a}
+dynamik\k{a} $\Phi$-EOM plus poprawki z~fluktuacji. Wielko\'s\'c
+$(\beta/\gamma)_{\rm WF}$ w~punkcie sta\l{}ym WF \textbf{nie jest} liczb\k{a}
+wi\k{a}\.z\k{a}c\k{a} dla fenomenologii TGP. Wi\k{a}\.z\k{a}ce jest
+$(\beta/\gamma)_{\rm GL} = 1$ (warunek pr\'o\.zniowy), kt\'ory jest
+to\.zsamo\'sci\k{a} algebraiczn\k{a}, nie pomiarem WF.
+
+\textbf{Konwencja w~tek\'scie:}
+\begin{itemize}\itemsep0pt
+  \item~Domy\'slnie $\beta, \gamma$ bez subskryptu = \textbf{(I) GL coefficients}
+    (warstwa 1 hierarchii formalizmu, sek08a).
+  \item~Przy odwo\l{}aniach do cykli M3--M8 lub klasy uniwersalno\'sci
+    --- explicit dopisek $\beta_{\rm WF}, \gamma_{\rm WF}$ lub
+    \textbf{(II) WF exponents} dla unikni\k{e}cia kolizji.
+  \item~Patrz~[[../../TGP\_FOUNDATIONS.md]] \S 7 oraz audyt L02
+    [[../../audyt/L02\_beta\_gamma\_semantics/]] dla pe\l{}nej dyskusji.
+\end{itemize}
+
+% ----------------------------------------------------------
 \subsection{Tablica konwersji wymiarowej}\label{app:A-wymiary}
 % ----------------------------------------------------------
 
 W~r\'o\.znych cz\k{e}\'sciach tekstu sta\l{}e $\beta$, $\gamma$ wyst\k{e}puj\k{a}
 zar\'owno z~wymiarem $[\mathrm{L}^{-2}]$ (uk\l{}ad fizyczny) jak i~jako bezwymiarowe
 $\hat\beta, \hat\gamma$ (uk\l{}ad siatki). Poni\.zsza tablica zbiera konwencje.
+\textbf{Wszystkie $\beta, \gamma$ w~niniejszej tablicy odnosz\k{a} si\k{e}
+do (I) GL coefficients} (patrz~\ref{app:A-beta-gamma-distinction}); WF exponents
+$\beta_{\rm WF}, \gamma_{\rm WF}$ s\k{a} u\.zywane wy\l{}\k{a}cznie w~kontek\'scie
+M3--M8 i~klasy uniwersalno\'sci.
 
 \medskip\noindent
 \textbf{A.~Wielko\'sci fundamentalne:}
