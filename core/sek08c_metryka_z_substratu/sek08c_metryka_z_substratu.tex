@@ -255,13 +255,146 @@ na poziomie fundamentalnym).\qed
 \end{proof}
 
 % ------------------------------------------------------------------
-\subsubsection{Sk\l{}adowa czasowa: jedyno\'s\'c $g_{tt}$}%
+\subsubsection{Sk\l{}adowa czasowa: M9.1'' kanoniczna (post-G.0 closure
+2026-05-02)}%
 \label{sssec:g00-uniqueness}
 % ------------------------------------------------------------------
+%
+% --- CORE-CLEANUP-B 2026-05-04 sesja 3 ---
+% Pe\l{}ne wyprowadzenie deprecated thm:metric-from-substrate-full
+% (formy~I i~II, linie 262-397 oryginalne) wraz z~rem:step3-elimination,
+% rem:metric-action-consistency, eq:metric-full-derived,
+% eq:vol-element-derived przeniesione do
+% \ref{app:metric-form-I} (\texttt{dodatek\_pivot\_history.tex}).
+%
+% Powod relokacji: forma~(I) `g_tt = -c²/ψ` jest FALSIFIED 2026-04-25
+% (M9.1 PPN: β_PPN=4 vs Mercury 3·10⁴σ); forma~(II) eksponencjalna jest
+% OBSOLETE workaround. Canonical: M9.1'' hiperboliczna (G.0 closure 2026-05-02).
+%
+% Body sek08c po cleanup: NEW canonical M9.1'' theorem
+% (thm:metric-from-budget-M911-canonical, eq:metric-M911-canonical,
+% eq:vol-element-M911) zast\k{e}puje deprecated formy I/II.
+% ---
 
+\begin{theorem}[Metryka efektywna z~substratu~--- M9.1'' kanoniczna
+post-G.0]%
+\label{thm:metric-from-budget-M911-canonical}
+\statuslabel{Twierdzenie [G.0 closure 2026-05-02 + Phase~2 P22+P23 sympy LOCK 5/5+5/5 PASS]}
+
+Pod nast\k{e}puj\k{a}cymi za\l{}o\.zeniami (post-G.0 closure 2026-05-02):
+\begin{enumerate}[(i),nosep]
+  \item $g_{ij} = h(\psi)\,\delta_{ij}$ z~$h(\psi) = \psi/(4-3\psi)$
+        (M9.1'' canonical, \texttt{prop:V-M911-canonical} sek08a v2.0);
+  \item $f(\Phi)\cdot h(\Phi) = 1$
+        (prop.~\ref{prop:antipodal-from-budget}: bud\.zet substratowy);
+  \item Master formula PPN z~kinetic correction:
+        $\beta_{\rm PPN} = f''(1)/f'(1)^2 + 2c_2/f'(1) = 1/2 + 1/2 = 1$
+        EXACT (P23 sympy LOCK);
+  \item $\ell_P = \sqrt{G\hbar/c^3} = \text{const}$ (aksjomat A7).
+\end{enumerate}
+Metryka efektywna jest \textbf{jednoznacznie} wyznaczona:
+\begin{equation}\label{eq:metric-M911-canonical}
+  \boxed{
+    ds^2 = -\frac{c_0^2(4-3\psi)}{\psi}\,dt^2
+         + \frac{\psi}{4-3\psi}\,\delta_{ij}\,dx^i\,dx^j,
+    \qquad \psi \equiv \frac{\Phi}{\PhiZero}.
+  }
+\end{equation}
+W~szczeg\'olno\'sci:
+\begin{itemize}[nosep]
+  \item $f(\psi) = (4-3\psi)/\psi$ (z~(i)+(ii));
+  \item $\sqrt{-g_{\rm eff}} = c_0\,\psi/(4-3\psi)$;
+  \item $g_{\rm eff}^{tt} = -\psi/[c_0^2(4-3\psi)]$,
+        $g_{\rm eff}^{ii} = (4-3\psi)/\psi$;
+  \item Lorentzian horizon at $\psi = 4/3$ (g$_{tt}=0$),
+        koincydencja z~$g_0_{\rm crit} = 1{,}874$ (R3 ODE bariera, why\_n3
+        PHASE1 4-cyfrowy match).
+\end{itemize}
+\end{theorem}
+
+\begin{proof}[Strukturalny szkic --- pe\l{}ne dowody w~sek08a v2.0 ADDENDUM
+i~Phase~1+2 G.0]
+Krok~1 (warunki (i)+(ii) $\Rightarrow$ $f$): z~(i): $h = \psi/(4-3\psi)$.
+Z~warunku $fh=1$ (ii): $f = 1/h = (4-3\psi)/\psi$.
+
+Krok~2 (PPN matching): bezpo\'srednia ekspansja $g_{tt} = -c_0^2(4-3\psi)/\psi$
+wok\'o\l{} $\psi=1+\varepsilon$: $g_{tt} = -c_0^2(1 - 4\varepsilon/1
++ 4\varepsilon^2 - \ldots)$. Newton matching $-4\varepsilon = -2U$ daje
+$\varepsilon = U/2$, st\k{a}d $g_{tt}/(-c_0^2) = 1 - 2U + U^2/2 + \ldots$
+$\Rightarrow \beta_{\rm metric} = 1/2$. Master formula z~kinetic correction
+($c_2 = -1$ z~$\alpha=2$ R3 ODE): $\beta_{\rm PPN} = 1/2 + 1/2 = 1$ EXACT.
+$\gamma_{\rm PPN} = 1$ z~master formula (Phase~2 P23 sympy LOCK 5/5 PASS).
+
+Krok~3 (volume element): $\det(g_{\mu\nu}) = -c_0^2\psi^2/(4-3\psi)^2$,
+sk\k{a}d $\sqrt{-g_{\rm eff}} = c_0\psi/(4-3\psi)$
+(\texttt{prop:V-M911-canonical}, A2 audit closure).
+
+Krok~4 ($\ell_P = \text{const}$): aksjomat A8 + A6 + A7 daj\k{a}
+$\ell_P^2 = G_0\hbar_0/c_0^3$ (stała) automatycznie z~warunku
+antypodycznego~(ii).
+
+Mass spectrum lepton (P22 sympy LOCK 5/5 PASS):
+$m_\mu/m_e = 206{,}766$ (PDG diff $-0{,}0013\%$),
+$m_\tau/m_e = 3477{,}40$ (PDG diff $+0{,}0049\%$). \qed
+\end{proof}
+
+\begin{remark}[Element obj\k{e}to\'sciowy a~zunifikowana akcja]%
+\label{rem:vol-element-M911}
+Z~metryki M9.1''~\eqref{eq:metric-M911-canonical}:
+\begin{align}
+  \det(g_{\mu\nu})
+  &= -c_0^2\,\psi^2/(4-3\psi)^2, \nonumber\\[4pt]
+  \sqrt{-g_{\rm eff}}
+  &= c_0\,\psi/(4-3\psi).
+  \label{eq:vol-element-M911}
+\end{align}
+
+Jest to \textbf{kanoniczny element obj\k{e}to\'sciowy} (post-G.0
+closure 2026-05-02) u\.zywany w~sek08a v2.0 ADDENDUM
+(\texttt{sssec:g0-closure-v2}, \texttt{prop:V-M911-canonical}).
+Warto\'s\'c $\kappa = 3/(4\PhiZero)$ jest \textbf{INVARIANT po re-fit}
+$\PhiZero$ (P32 sympy LOCK 5/5 PASS).
+
+\medskip\noindent
+\textbf{Por\'ownanie z~deprecated formami:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{l|c|c|c}
+\toprule
+Element obj. & $\sqrt{-g}$ & $\kappa$ & Status \\
+\midrule
+M9.1'' (G.0 v2.0, body) & $c_0\,\psi/(4-3\psi)$ & $3/(4\PhiZero)$ & \textbf{KANONICZNE} \\
+Pot\k{e}gowy (forma I, app:pivot) & $c_0\,\psi$ & $3/(4\PhiZero)$ (po re-fit) & FALSIFIED \\
+Stary $\psi^4$ (pre-pivot) & $c_0\,\psi^4$ & $3/(2\PhiZero)$ & FAIL \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Historyczna treść (deprecated):} pe\l{}en proof formy~(I) wraz
+z~rem:step3-elimination i~rem:metric-action-consistency relocated do
+\ref{app:metric-form-I} (\texttt{dodatek\_pivot\_history.tex}); zachowane
+oryginalne labels (\texttt{thm:metric-from-substrate-full},
+\texttt{eq:metric-full-derived}, \texttt{rem:step3-elimination},
+\texttt{eq:vol-element-derived}, \texttt{rem:metric-action-consistency})
+dla cross-reference compatibility.
+\end{remark}
+
+% =================================================================
+% PLACEHOLDER for original thm:metric-from-substrate-full + proof
+% (lin. 262-488 oryginalne) — relocated to app:metric-form-I.
+% Body sek08c continues at sssec:antipodal-uniqueness below
+% (forma III, already relocated in Phase 2 step 1).
+% =================================================================
+
+\iffalse
+% =================================================================
+% Original thm:metric-from-substrate-full body content removed
+% in sesja 3 (CORE-CLEANUP-B 2026-05-04). Pe\l{}na tre\'s\'c
+% w \ref{app:metric-form-I}. Komentarz \iffalse...\fi pomi\.za stary
+% blok w~kompilacji bez utraty pliku-historycznego rekord.
 \begin{theorem}[Metryka efektywna z~substratu --- pe\l{}ne
-wyprowadzenie]%
-\label{thm:metric-from-substrate-full}
+wyprowadzenie ORIG]%
+\label{thm:metric-from-substrate-full-DEPRECATED}
 Pod nast\k{e}puj\k{a}cymi za\l{}o\.zeniami:
 \begin{enumerate}[(i),nosep]
   \item $g_{ij} = (\Phi/\PhiZero)\,\delta_{ij}$
@@ -486,103 +619,60 @@ Stary (z~$\psi^4$) & $c_0\,\psi^4$ & $3/(2\PhiZero)$ & FAIL \\
         substratem a~obserwacj\k{a}.
 \end{enumerate}
 \end{remark}
+\fi
+% =================================================================
+% End of \iffalse block (sesja 3 cleanup CORE-CLEANUP-B 2026-05-04)
+% Body sek08c kontynuuje poni\.zej.
+% =================================================================
 
 % =================================================================
-\subsubsection{Twierdzenie o jednoznaczno\'sci warunku antypodycznego}%
+\subsubsection{Twierdzenie o jednoznaczno\'sci warunku antypodycznego
+[HISTORYCZNE — RELOCATED 2026-05-04]}%
 \label{sssec:antipodal-uniqueness}
 % =================================================================
-
-\begin{theorem}[Jednoznaczno\'s\'c warunku antypodycznego]%
-\label{thm:antipodal-uniqueness}
-\textbf{Status: \statuslabel{Twierdzenie (analityczne)}.}
-Niech metryka efektywna TGP ma posta\'c diagonaln\k{a} izotropow\k{a}:
-\begin{equation}
-  ds^2 = -f(\psi)\,c_0^2\,dt^2 + h(\psi)\,\delta_{ij}\,dx^i dx^j,
-  \qquad \psi = \Phi/\Phi_0,
-  \label{eq:antipodal-metric-ansatz}
-\end{equation}
-i~niech spe\l{}nione s\k{a} warunki:
-\begin{enumerate}[nosep]
-  \item[(C1)] aksjomat pr\k{e}dko\'sci: $c^2 = c_0^2\,f/h = c_0^2/\psi$
-    (aksjomat~\ref{ax:c}),
-  \item[(C2)] relacja pot\k{e}gowa: $f\cdot h^s = 1$ dla pewnego $s > 0$
-    (wz.~\ref{rem:metric-action-consistency}),
-  \item[(C3)] normalizacja: $f(1) = h(1) = 1$.
-\end{enumerate}
-W\'owczas \textbf{jedynym} $s$ daj\k{a}cym
-$\gamma_{\rm PPN} = 1$ jest $s = 1$, co jednoznacznie
-wyznacza:
-\begin{equation}
-  \boxed{f(\psi) = \psi^{-1/2},
-  \quad h(\psi) = \psi^{1/2},
-  \quad f \cdot h = 1.}
-  \label{eq:antipodal-unique-solution}
-\end{equation}
 %
-% --- STATUS (audit 2026-05-01, A1 → CLOSED-RESOLVED 2026-05-02 G.0) --
-% Forma (III) antypodyczna `f=ψ^(-1/2), h=ψ^(+1/2)` jest NIESPOJNA WEWNETRZNIE
-% (M9.1' §2.1, 2026-04-25): linearyzacja daje gamma_PPN=1 ✓, ale pelne
-% O(eps^2) daje beta_metric=3 (NIE 1 jak deklaruje rem:antipodal-implications
-% pkt 3). Z alpha=2 dynamica (c_2=-1): beta_PPN=7. Twierdzenie "jedynosci"
-% nie obejmuje pelnej nieliniowosci.
-% A1 CLOSED-RESOLVED: aktualna kanoniczna metryka TGP = M9.1'' hiperboliczna
-% (forma IV, UNIQUE post-G.0). Master formula PPN z kinetic correction
-% (sek08c, Phase 2 P23 sympy LOCK): beta_PPN = 1/2 + 1/2 = 1 EXACT.
-% NIE uzywac do nowych derivations. Patrz blok G.0 CLOSURE w preambule.
-% ---------------------------------------------------------------------
-\end{theorem}
+% --- CORE-CLEANUP-B 2026-05-04 ---
+% Pe\l{}na tre\'s\'c twierdzenia thm:antipodal-uniqueness (forma III metryki)
+% wraz z~remarkiem rem:antipodal-implications zosta\l{}a przeniesiona do
+% \ref{app:metric-form-III} (\texttt{dodatek\_pivot\_history.tex}) w~ramach
+% cyklu cleanup. Zachowane labels: \texttt{thm:antipodal-uniqueness},
+% \texttt{rem:antipodal-implications}, \texttt{eq:antipodal-metric-ansatz},
+% \texttt{eq:antipodal-unique-solution}, \texttt{eq:anti-c1},
+% \texttt{eq:anti-c2}, \texttt{eq:anti-general-solution},
+% \texttt{eq:anti-gamma-of-s}.
+%
+% POW\'OD: forma (III) antypodalna $f=\psi^{-1/2}, h=\psi^{+1/2}$ jest
+% NIESP\'OJNA WEWN\k{E}TRZNIE (deklaruje $\beta_{\rm PPN}=1$ ale pe\l{}na
+% ekspansja daje $\beta_{\rm metric}=3$). Canonical replacement:
+% M9.1'' hiperboliczna (forma IV), patrz body~sek08c (post-Phase 2)
+% lub nag\l{}\'owek tego pliku (G.0 CLOSURE block).
+% ---
 
-\begin{proof}
-Z~(C1) i~(C2):
-\begin{align}
-  f/h &= 1/\psi \quad\text{(z C1)}, \label{eq:anti-c1} \\
-  f \cdot h^s &= 1 \quad\text{(z C2)}. \label{eq:anti-c2}
-\end{align}
-Eliminuj\k{a}c $f = h^{-s}$ z~\eqref{eq:anti-c2}
-i~wstawiaj\k{a}c do~\eqref{eq:anti-c1}:
-$h^{-s}/h = 1/\psi$, tj.~$h^{-(s+1)} = 1/\psi$, sk\k{a}d:
-\begin{equation}
-  h(\psi) = \psi^{1/(s+1)},
-  \qquad
-  f(\psi) = \psi^{-s/(s+1)}.
-  \label{eq:anti-general-solution}
-\end{equation}
-Parametry PPN (rozwinięcie do $O(U)$, $\psi = 1 - \delta\psi$, $|\delta\psi| \ll 1$):
-\begin{align}
-  g_{tt} &= -\bigl(1 - \delta\psi\bigr)^{-s/(s+1)}
-  \approx -\bigl(1 + \tfrac{s}{s+1}\,\delta\psi\bigr), \nonumber\\
-  g_{rr} &= \bigl(1 - \delta\psi\bigr)^{1/(s+1)}
-  \approx 1 - \tfrac{1}{s+1}\,\delta\psi.
-\end{align}
-Konwencja PPN: $g_{tt} = -(1 - 2U)$, $g_{rr} = 1 + 2\gamma_{\rm PPN}\,U$:
-\begin{equation}
-  U = \frac{s}{2(s+1)}\,\delta\psi,
-  \qquad
-  \gamma_{\rm PPN} = \frac{1/\!(s+1)}{s/\!(s+1)} = \frac{1}{s}.
-  \label{eq:anti-gamma-of-s}
-\end{equation}
-Warunek $\gamma_{\rm PPN} = 1$ $\Longrightarrow$ $s = 1$.
-Przy $s = 1$: $h = \psi^{1/2}$, $f = \psi^{-1/2}$, $f\cdot h = 1$.
-\end{proof}
+\begin{remark}[Forma~(III) antypodalna~--- relokowana do dodatku pivot history]%
+\label{rem:form-III-relocated}
+Twierdzenie~\ref{thm:antipodal-uniqueness} (forma~(III) antypodalna
+$f=\psi^{-1/2}, h=\psi^{+1/2}$) by\l{}o pierwotnie dowodzone w~tym
+miejscu. Po G.0 closure 2026-05-02 forma~(III) jest \textbf{NIESP\'OJNA
+WEWN\k{E}TRZNIE} (deklarowane $\beta_{\rm PPN}=1$ niesp\'ojne z~pe\l{}n\k{a}
+nieliniowo\'sci\k{a}~--- pe\l{}na ekspansja daje $\beta_{\rm metric}=3$).
 
-\begin{remark}[Implikacje jednoznaczno\'sci]%
-\label{rem:antipodal-implications}
-Twierdzenie~\ref{thm:antipodal-uniqueness} ma trzy fundamentalne konsekwencje:
-\begin{enumerate}[nosep]
-  \item \textbf{Warunek antypodyczny nie jest dodatkow\k{a} hipotez\k{a}.}
-    Jest \textbf{konieczno\'sci\k{a}} wymuszn\k{a} przez obserwacyjny
-    warunek $\gamma_{\rm PPN} = 1$
-    (pomiary Cassini: $|\gamma - 1| < 2{,}3 \times 10^{-5}$).
-  \item \textbf{Obalenie alternatyw}: $\det(g) = -1$ (tj.~$s = 3$) daje
-    $\gamma = 1/3$ --- wykluczone; VSL ($s = 0$) daje $\gamma = \infty$
-    --- niefizyczne.
-  \item \textbf{Automatyczny $\beta_{\rm PPN} = 1$}:
-    Rozwinięcie~\eqref{eq:anti-general-solution} do $O(U^2)$
-    przy $s = 1$ daje $\beta_{\rm PPN} = 1$ dok\l{}adnie.
-\end{enumerate}
-Weryfikacja numeryczna: \texttt{ex201\_antipodal\_metric\_derivation.py}
-(7/8~PASS; jedyny niezdany test T4 dotyczy przybli\.zonego modelu
-$\Phi(r)$, nie struktury twierdzenia).
+\textbf{Pe\l{}na tre\'s\'c twierdzenia oraz remarku
+\texttt{rem:antipodal-implications} przeniesiona do
+\ref{app:metric-form-III}} (\texttt{dodatek\_pivot\_history.tex})
+w~ramach cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04}. Wszystkie
+oryginalne labels (\texttt{thm:antipodal-uniqueness},
+\texttt{rem:antipodal-implications},
+\texttt{eq:antipodal-metric-ansatz},
+\texttt{eq:antipodal-unique-solution}, \texttt{eq:anti-c1},
+\texttt{eq:anti-c2}, \texttt{eq:anti-general-solution},
+\texttt{eq:anti-gamma-of-s}) zachowane w~appendix~--- istniej\k{a}ce
+cross-references dzia\l{}aj\k{a}.
+
+\textbf{Canonical replacement (post-G.0 2026-05-02):} M9.1'' hiperboliczna
+$g_{tt}=-c_0^2(4-3\psi)/\psi$, $g_{rr}=\psi/(4-3\psi)$, z~master formula
+PPN: $\beta_{\rm PPN} = 1/2 + 1/2 = 1$ EXACT (Phase~2 P23 sympy LOCK
+5/5 PASS). Patrz \texttt{prop:V-M911-canonical} (sek08a v2.0 ADDENDUM)
+i~\texttt{TGP\_FOUNDATIONS.md:64-69}.
 \end{remark}
 
 % --- Summary table: metric bridge Phi -> g_eff (H2 deliverable) ---

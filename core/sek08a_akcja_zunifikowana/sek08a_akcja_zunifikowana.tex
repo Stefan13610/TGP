@@ -77,19 +77,36 @@ gdzie:
     K(\varphi) = K_{\mathrm{geo}}\,\varphi^4
     \qquad (\text{tw.~\ref{thm:D-uniqueness}},\;\alpha = 2),
   \end{equation}
-  i~potencja\l{}em samointerferencji
-  % G.0 closure (2026-05-02, v2.0): V_orig zachowane historycznie;
-  % kanoniczna forma G.0-closed = V_M911 (prop:V-M911-canonical, lin. ~770).
+  i~potencja\l{}em samointerferencji.
+  %
+  % --- CORE-CLEANUP-B 2026-05-04 sesja 4 ---
+  % \texttt{eq:V-selfinterference} (poni\.zej, V_orig formulacja (3,4))
+  % jest \textbf{DEPRECATED} 2026-05-02 G.0 closure. Canonical replacement:
+  % $V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$
+  % (\texttt{prop:V-M911-canonical}, sek08a v2.0 ADDENDUM lin. ~689+,
+  % Phase 1 G0a sympy LOCK 4/4 PASS).
+  %
+  % Body cross-references do \texttt{eq:V-selfinterference} pozostaj\k{a}
+  % aktywne (nie usuwam label), ale ka\.zde u\.zycie powinno by\'c
+  % uzupe\l{}nione canonical reference do \texttt{prop:V-M911-canonical}.
+  % Pe\l{}na deprecated derivation z~$V_{\rm orig}$: patrz
+  % \ref{app:V-orig-deprecated} w~\texttt{dodatek\_pivot\_history.tex}.
+  % ---
   \begin{equation}\label{eq:V-selfinterference}
-    V(\varphi) = \frac{\beta}{3}\,\varphi^3 - \frac{\gamma}{4}\,\varphi^4
+    V_{\rm orig}(\varphi) = \frac{\beta}{3}\,\varphi^3 - \frac{\gamma}{4}\,\varphi^4
+    \qquad \textbf{[DEPRECATED 2026-05-02; see \texttt{prop:V-M911-canonical}]}
     \qquad (\beta = \gamma,\;\text{stw.~\ref{prop:vacuum-condition}}).%
-    \footnote{Formulacja kanoniczna TGP u\.zywa potencja\l{}u
-    $P(g) = \tfrac{\beta}{7}\,g^7 - \tfrac{\gamma}{8}\,g^8$
-    ze sprz\k{e}\.zeniem kinetycznym $K(g) = g^4$, daj\k{a}c akcj\k{e}
-    $S[g] = \int\!\bigl[\tfrac{1}{2}\,g^4(\nabla g)^2
-    + \tfrac{\beta}{7}\,g^7 - \tfrac{\gamma}{8}\,g^8\bigr]\,d^3x$.
-    Obie formulacje dziel\k{a} t\k{e} sam\k{a} praw\k{a} stron\k{e}
-    r\'ownania solitonowego: $g^2(1-g)$.}
+    \footnote{\textbf{STATUS post-G.0 closure 2026-05-02:}
+    formulacja $V_{\rm orig}$ jest \textbf{DEPRECATED}; canonical TGP
+    używa $V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$
+    (\texttt{prop:V-M911-canonical}, sek08a v2.0 ADDENDUM,
+    Phase~1 G0a sympy LOCK 4/4 PASS reprodukuje R3 ODE EXACT). Stara
+    formulacja kanoniczna z~potencja\l{}em $P(g) = \tfrac{\beta}{7}\,g^7
+    - \tfrac{\gamma}{8}\,g^8$ ze sprz\k{e}\.zeniem $K(g) = g^4$ jest
+    r\'ownie\.z deprecated; zachowane w~\texttt{tgp\_companion.tex}
+    Sec.~2.2 jako historic record. Mass spectrum lepton (P22 sympy LOCK
+    5/5 PASS): $m_\mu/m_e$ diff $-0{,}0013\%$ PDG, $m_\tau/m_e$ diff
+    $+0{,}0049\%$ PDG.}
   \end{equation}
 % ── Nota kanoniczna (2026-04-07) ──────────────────────────────────
 % Formulacja kanoniczna TGP używa potencjału P(g) = (β/7)g⁷ − (γ/8)g⁸
@@ -127,24 +144,150 @@ gdzie:
   % $\sqrt{-g_{eff}}$ (equivalence principle echoes intact). Patrz
   % [meta/AUDYT_TGP_2026-05-01.md] § A.4, § N.
   % ------------------------------------------------------------------
+  %
+  % --- L01 FORMAL DEFINITION 2026-05-04 -----------------------------
+  % `ρ` w `eq:L-mat-unified` jest formalnie zdefiniowane przez
+  % stress-energy tensor materii sprz\k{e}\.zonej kanonicznie do `g_eff`:
+  %
+  %     ρ(x) ≡ -T^μ_μ(x) / c_0²       [M·L⁻³]
+  %
+  % Mapping na sektory SM (skr\'ot z formal_definition.md):
+  %  - Dirac fermion (m≠0): ρ_Dirac = m·|ψ_D|²/c_0² ≥ 0
+  %  - Massive scalar (Higgs): ρ_scalar = ((∂φ)² - 4V)/c_0²
+  %  - Photon (massless EM): T^μ_μ_EM = 0 (conformal) ⇒ ρ_EM = 0
+  %  - Yang-Mills classical: T = 0 ⇒ ρ_YM = 0
+  %  - QCD quantum (gluon condensate): ρ_QCD ~ Λ_QCD⁴/c_0² (trace anomaly)
+  %  - Dust (p=0): ρ_dust = ρ_e/c_0² (= ρ_rest, standard)
+  %  - Radiation (p=ρ_e/3): ρ_rad = 0 (NIE generuje Φ przez L_mat)
+  %  - Dark Energy (p=-ρ_e): ρ_DE = 4ρ_e/c_0² (silne sprzęganie)
+  %
+  % Definicja ρ ≡ -T^μ_μ/c_0² **rozwi\k{a}zuje** A4 audytu **strukturalnie**:
+  % Option-2 zostaje promowane z DECYZJA do DERIVED przez explicit
+  % perturbation theory wokół ψ=1: derywacja w
+  % `research/op-L01-rho-stress-energy-bridge-2026-05-04/formal_definition.md`
+  % §4 pokazuje, \.ze `L_mat = -(q/Φ_0)·φ·ρ` jest derived consequence
+  % `ax:metric-coupling` + `√(-g_eff)=c_0·ψ/(4-3ψ)` (M9.1'' canonical),
+  % NIE independent dilaton coupling Brans-Dicke type.
+  %
+  % Konsystencja: B9 6/6 PASS (η_TGP=1.32·10⁻²⁶ << MICROSCOPE 1.1·10⁻¹⁵)
+  % potwierdza brak pi\k{a}tej si\l{}y obserwowalnej. GW170817 c_GW=c_EM
+  % automatyczne (z wsp\'olnej metryki g_eff dla GW i fotonu).
+  %
+  % Open: quantum trace anomaly EM/QCD (NEEDS N1, N2 cyklu L01).
+  %
+  % Patrz:
+  %   research/op-L01-rho-stress-energy-bridge-2026-05-04/README.md
+  %   research/op-L01-rho-stress-energy-bridge-2026-05-04/formal_definition.md
+  %   research/op-L01-rho-stress-energy-bridge-2026-05-04/SM_sector_mapping.md
+  %   research/op-L01-rho-stress-energy-bridge-2026-05-04/photon_treatment.md
+  %   audyt/L01_rho_operational/POST_ACTION_UPDATE_2026-05-04.md
+  % --------------------------------------------------------------------
 
   \item \textbf{Metryka efektywna} (hipoteza~\ref{hyp:metric}):
+  %
+  % --- CORE-CLEANUP-B 2026-05-04 sesja 4 ---
+  % \texttt{eq:g-eff-unified} (forma I potęgowa) jest DEPRECATED
+  % 2026-04-25 (M9.1 PPN: $\beta=4$ vs Mercury $3\cdot10^4\sigma$).
+  % Canonical replacement: M9.1'' hiperboliczna metryka
+  % \texttt{eq:metric-M911-canonical} (sek08c body post-Phase 2.2 cleanup).
+  % Body cross-refs zachowane (label aktywne); pe\l{}na deprecated
+  % derivation w~\ref{app:metric-form-I}.
+  % ---
   \begin{equation}\label{eq:g-eff-unified}
     ds^2 = g_{\mu\nu}^{\mathrm{eff}}\,dx^\mu dx^\nu
-    = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j,
+    = -\frac{c_0^2}{\varphi}\,dt^2 + \varphi\,\delta_{ij}\,dx^i dx^j
+    \qquad \textbf{[DEPRECATED 2026-04-25 forma I; canonical = M9.1'',
+    see \texttt{eq:metric-M911-canonical}]},
   \end{equation}
-  sk\k{a}d
-  % G.0 closure (2026-05-02): w sek08a v2.0 element objetosciowy
-  % to sqrt(-g) = c_0*varphi/(4-3*varphi) (M9.1'' canonical), zgodnie
-  % z TGP_FOUNDATIONS.md:64-69. Forma c_0*varphi (ponizej) jest
-  % v1.x historyczna. Patrz prop:V-M911-canonical (G.0 ADDENDUM).
+  sk\k{a}d (deprecated derivation z formy~I):
+  %
+  % --- CORE-CLEANUP-B 2026-05-04 sesja 4 ---
+  % \texttt{eq:sqrt-g-eff} ($c_0\varphi$) jest DEPRECATED 2026-05-02.
+  % Canonical replacement: $\sqrt{-g_{\rm eff}} = c_0\psi/(4-3\psi)$
+  % (M9.1'', \texttt{prop:V-M911-canonical} sek08a v2.0 ADDENDUM,
+  % \texttt{eq:vol-element-M911} sek08c body, A2 audit closure).
+  % Warto\'s\'c $\kappa = 3/(4\PhiZero)$ INVARIANT po re-fit $\PhiZero$
+  % (P32 sympy LOCK).
+  % Body cross-refs zachowane (5 \eqref u\.zy\'c w body); pe\l{}na
+  % deprecated derivation w~\ref{app:sqrt-g-orig-deprecated}.
+  % ---
   \begin{equation}\label{eq:sqrt-g-eff}
     \sqrt{-g_{\mathrm{eff}}}
     = \frac{c_0}{\varphi^{1/2}}\cdot\varphi^{3/2}
-    = c_0\,\varphi.
+    = c_0\,\varphi
+    \qquad \textbf{[DEPRECATED 2026-05-02; canonical
+    $\sqrt{-g}=c_0\psi/(4-3\psi)$, see \texttt{eq:vol-element-M911}]}.
   \end{equation}
 \end{enumerate}
 \end{hypothesis}
+
+% =============================================================
+% --- CORE-CLEANUP-B 2026-05-04 sesja 4 ---
+% NEW canonical M9.1''-spojny ekstension hyp:unified-action
+% (post-G.0 closure 2026-05-02 + Phase 1 G0a 4/4 PASS)
+% =============================================================
+\begin{remark}[Hipoteza zunifikowanej akcji~--- canonical M9.1''
+post-G.0 closure 2026-05-02]\label{rem:hyp-unified-action-M911-canonical}
+\statuslabel{Twierdzenie [G.0 closure 2026-05-02]}
+
+Hipoteza~\ref{hyp:unified-action} zawiera 3 \textbf{deprecated} equations
+(\texttt{eq:V-selfinterference}, \texttt{eq:g-eff-unified},
+\texttt{eq:sqrt-g-eff}) zachowane historycznie z~oryginalnymi labels
+dla cross-reference compatibility. \textbf{Canonical replacements
+post-G.0 closure 2026-05-02} (sek08a v2.0 ADDENDUM
+\texttt{sssec:g0-closure-v2}):
+
+\begin{itemize}\itemsep0pt
+  \item \textbf{Potencja\l{} samointerferencji}:
+    $V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$
+    (\texttt{prop:V-M911-canonical}, \texttt{eq:V-M911}, lin. 695+).
+    Phase~1 G0a sympy LOCK reprodukuje R3 ODE EXACT (4/4 PASS).
+  \item \textbf{Metryka efektywna}: M9.1'' hiperboliczna
+    $ds^2 = -c_0^2(4-3\psi)/\psi\,dt^2 + \psi/(4-3\psi)\,\delta_{ij}\,dx^i dx^j$
+    (\texttt{eq:metric-M911-canonical}, sek08c body).
+  \item \textbf{Element obj\k{e}to\'sciowy}:
+    $\sqrt{-g_{\rm eff}} = c_0\,\psi/(4-3\psi)$ (M9.1'' canonical,
+    \texttt{eq:vol-element-M911}, sek08c body; A2 audit closure 2026-05-02).
+\end{itemize}
+
+Hipoteza zunifikowanej akcji TGP w~M9.1''-spojnej formie:
+\begin{equation}\label{eq:S-TGP-unified-M911-canonical}
+  \boxed{
+    S_{\rm TGP}^{\rm M9.1''}[\Phi,\psi_m]
+    = \int d^4x\;\frac{c_0\,\psi}{4-3\psi}\;\biggl[
+      \frac{1}{2}\,K_{\rm geo}\,\psi^4\,g_{\rm eff}^{\mu\nu(\rm M9.1'')}\,
+      \partial_\mu\psi\,\partial_\nu\psi
+      - V_{\rm M9.1''}(\psi)
+      + \mathcal{L}_{\rm mat}(\psi,\psi_m)
+    \biggr]
+  }
+\end{equation}
+
+z~$V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$ + $K(\psi) = K_{\rm geo}\psi^4$
+($\alpha=2$ z~\texttt{thm:D-uniqueness}) +
+$\mathcal{L}_{\rm mat} = -(q/\PhiZero)\psi\rho$ (\texttt{eq:L-mat-unified},
+$\rho \equiv -T^\mu_\mu/c_0^2$ z~L01 formal definition).
+
+\textbf{Konsekwencje strukturalne:}
+\begin{enumerate}[nosep]
+  \item Wariacja $\delta S/\delta\psi=0$ daje R3 ODE
+    $\psi'' + (2/r)\psi' + 2(\psi')^2/\psi = (1-\psi)/\psi^2$
+    (\texttt{eq:R3-ODE}, \texttt{prop:psi-EOM-R3}, P22 sympy LOCK 5/5 PASS).
+  \item Mass spectrum lepton: $m_\mu/m_e$ diff $-0{,}0013\%$ PDG,
+    $m_\tau/m_e$ diff $+0{,}0049\%$ PDG.
+  \item PPN $\gamma=\beta=1$ EXACT (master formula z~kinetic correction,
+    P23 sympy LOCK 5/5 PASS).
+  \item $\kappa = 3/(4\PhiZero)$ INVARIANT po re-fit $\PhiZero$
+    (P32 sympy LOCK 5/5 PASS).
+  \item Mass formula universal:
+    $m_{\rm obs}(g_0,\alpha) = c_M \cdot A_{\rm tail}^2 \cdot g_0^{e^2(1-\alpha/4)}$
+    (Phase~2, why\_n3); dla $\alpha=2$ daje $g_0^{e^2/2} \approx g_0^{3{,}69}$.
+  \item Konsystencja z~ax:metric-coupling przez L01 formal definition
+    $\rho \equiv -T^\mu_\mu/c_0^2$.
+\end{enumerate}
+
+Pe\l{}na derivation w~\texttt{sssec:g0-closure-v2} (lin. 677+).
+\end{remark}
 
 \begin{remark}[Element obj\k{e}to\'sciowy $\sqrt{-g_{\mathrm{eff}}}$]%
 \label{rem:volume-element}
@@ -329,6 +472,24 @@ dok\l{}adnie jak w~jawnej wariacji \S\ref{ssec:action}
 (r\'ow.~\eqref{eq:variation-explicit}).
 \end{proof}
 
+% --- CORE-CLEANUP-B 2026-05-04 NOTE -----------------------------------
+% Powy\.zszy proof (lin. 261-368) jest deprecated derivation u\.zywaj\k{a}cym
+% $\sqrt{-g_{\rm eff}}=c_0\psi$ (forma~I, FALSIFIED 2026-04-25)
+% i~$V_{\rm orig}=(β/3)\psi^3-(γ/4)\psi^4$ (deprecated, V_M911 canonical
+% post-G.0). Canonical derivation: \texttt{prop:psi-EOM-R3}
+% sek08a v2.0 ADDENDUM (\texttt{eq:R3-ODE}).
+%
+% Equations z~labels eq:S-unified-psi, eq:EL-unified-raw,
+% eq:EL-unified-divided, eq:S-static-correct r\'ownie\.z skopiowane do
+% \ref{app:field-eq-deprecated-proof} dla traceability + wsp\'o\l{}praca
+% z~appendix relocations innych deprecated proofs.
+%
+% Phase 4 cross-ref audit cyklu CORE-CLEANUP-B sprawdzi czy te 4 labels
+% s\k{a} cytowane gdzie\'s extern; je\'sli nie ---
+% body proof mo\.zna usun\k{a}\'c. Tymczasowo body proof zachowany
+% z~explicit STATUS marker dla bezpiecze\'nstwa cross-references.
+% ---------------------------------------------------------------------
+
 % =============================================================
 \subsubsection{Granica FRW: wyprowadzenie $\kappa$ z~akcji}%
 \label{sssec:kappa-derivation}\label{ssec:kappa-obs}
@@ -370,213 +531,50 @@ wzgl\k{e}dem przybli\.zenia $\psi^4$
 u\.zywanego w~poprzednich wyprowadzeniach.
 \end{proposition}
 
-\begin{proof}
-\textbf{Krok 1: Zredukowane dzia\l{}anie FRW.}
+\begin{proof}[Pe\l{}en dow\'od~--- relocated to \texttt{app:pivot-history} 2026-05-04]
+% --- CORE-CLEANUP-B 2026-05-04 ---
+% Pe\l{}en dow\'od stw.~\ref{prop:kappa-corrected} (lin. 411-618 oryginalne)
+% przeniesiony do dodatku \ref{app:kappa-corrected-orig} w~ramach
+% cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04}.
+%
+% Zachowane labels (cross-refs dzia\l{}aj\k{a}):
+%   eq:volume-FRW, eq:Lkin-FRW, eq:S-FRW-reduced, eq:ddt-pdotpsi,
+%   eq:dpsi-direct, eq:EL-FRW-full, eq:EL-FRW-simplified,
+%   eq:EL-FRW-divided, eq:psi-eq-unified, eq:cosmo-linearized-unified,
+%   eq:poisson-frw, eq:kappa-def-operational
+%
+% Powod relokacji: dow\'od u\.zywa\l{} $\sqrt{-g_{\rm eff}} = c_0\psi$
+% (forma~I, FALSIFIED 2026-04-25). Warto\'s\'c $\kappa = 3/(4\PhiZero)$
+% pozostaje INVARIANT post-G.0 closure (P32 sympy LOCK 5/5 PASS), wi\k{e}c
+% \texttt{eq:kappa-corrected} (boxed value) zachowany w~body. Canonical
+% derivation w~v2.0 ADDENDUM: \texttt{prop:kappa-corrected-G0}
+% (lin. ~957+).
+% ---
 
-Dla jednorodnego $\psi(t)$ ($\nabla\psi = 0$) w~tle FRW
-ze~skalowaniem $a(t)$, element obj\k{e}to\'sciowy 4-wymiarowy wynosi:
-\begin{equation}\label{eq:volume-FRW}
-  \sqrt{-g_{\mathrm{eff}}}\;d^4x
-  = \frac{c(\Phi)}{c_0}\cdot\left(\frac{\Phi}{\PhiZero}\right)^{3/2}
-    \cdot a^3\;c_0\,dt\,d^3x
-  = \psi^{-1/2}\cdot\psi^{3/2}\cdot a^3\;c_0\,dt\,d^3x
-  = \psi\,a^3\;c_0\,dt\,d^3x.
-\end{equation}
-Jawnie: $c(\Phi)/c_0 = (\PhiZero/\Phi)^{1/2} = \psi^{-1/2}$;
-$\sqrt{\det(g_{ij})} = (\Phi/\PhiZero)^{3/2}\cdot a^3 = \psi^{3/2}\,a^3$.
+\textbf{Pe\l{}en dow\'od (12 equations z~labels) przeniesiony do
+\ref{app:kappa-corrected-orig}} (\texttt{dodatek\_pivot\_history.tex}
+\S~Pre-G.0 sek08a v1.x). Strukturalne kroki:
 
-Cz\l{}on kinetyczny pola (w~FRW, $\nabla\psi = 0$):
-\begin{equation}\label{eq:Lkin-FRW}
-  \mathcal{L}_{\mathrm{kin}}
-  = \frac{1}{2}\,K(\psi)\,g_{\mathrm{eff}}^{00}\,\dot\psi^2
-  = \frac{1}{2}\,\psi^4\cdot\left(-\frac{\psi}{c_0^2}\right)\cdot\dot\psi^2
-  = -\frac{\psi^5\dot\psi^2}{2c_0^2},
-\end{equation}
-gdzie $g_{\mathrm{eff}}^{00} = -\psi/c_0^2$
-(inwersja $g_{00} = -c_0^2/\psi$).
+\begin{enumerate}[(1),nosep]
+  \item Krok 1: Zredukowane dzia\l{}anie FRW z~$\sqrt{-g_{\rm eff}}=c_0\psi$
+    (forma~I deprecated).
+  \item Krok 2: Wariacja $\delta S/\delta\psi = 0 \to$ r\'ownanie
+    Eulera-Lagrange'a.
+  \item Krok 3: Linearyzacja $\psi \approx 1$, $|\delta\psi| \ll 1$.
+  \item Krok 4: Identyfikacja $\kappa$ przez por\'ownanie
+    z~r\'ownaniem Poissona FRW.
+\end{enumerate}
 
-Zredukowane dzia\l{}anie (pomijaj\k{a}c sta\l{}\k{a} $c_0 V_0$):
-\begin{equation}\label{eq:S-FRW-reduced}
-  S_{\mathrm{FRW}}
-  = \int dt\;a^3\,\psi\;\biggl[
-    -\frac{\psi^5\dot\psi^2}{2c_0^2}
-    - V(\psi)
-    - \frac{q}{\PhiZero}\,\psi\,\rho
-  \biggr]
-  = \int dt\;a^3\;\biggl[
-    -\frac{\psi^6\dot\psi^2}{2c_0^2}
-    - \psi\,V(\psi)
-    - \frac{q}{\PhiZero}\,\psi^2\,\rho
-  \biggr].
-\end{equation}
+Wynik: $\boxed{\kappa = 3/(4\PhiZero) \approx 0{,}030}$
+(\eqref{eq:kappa-corrected} powy\.zej, BOXED VALUE INVARIANT post-G.0).
 
-\medskip\noindent\textbf{Por\'ownanie z~dotychczasowym wynikiem.}
-W~stw.~\ref{prop:FRW-derivation} (r\'ow.~\eqref{eq:Phi-cosmo-exact})
-u\.zywano elementu obj\k{e}to\'sciowego $\sqrt{-g_{\mathrm{eff}}} = a^3\psi^4$
-(przybli\.zenie eksponencjalne z~hipotezy~\ref{hyp:action}).
-Dzia\l{}anie mia\l{}o posta\'c:
-\[
-  S_{\mathrm{FRW}}^{(\mathrm{stare})}
-  = \int dt\;a^3\psi^4\;\biggl[
-    -\frac{\dot\psi^2}{2c_0^2}
-    - V(\psi)
-    - \frac{q}{\PhiZero}\,\psi\,\rho
-  \biggr].
-\]
-R\'o\.znica kluczowa: w~\eqref{eq:S-FRW-reduced}
-element obj\k{e}to\'sciowy daje $\psi^1$ (a~nie $\psi^4$),
-co po pomno\.zeniu z~cz\l{}onem kinetycznym $\propto \psi^5$
-daje $\psi^6\dot\psi^2$ (zamiast $\psi^4\dot\psi^2$),
-a~cz\l{}on \'zr\'od\l{}owy daje $\psi^2\rho$ (zamiast $\psi^5\rho$).
-
-\medskip\noindent\textbf{Krok 2: Wariacja $\delta S_{\mathrm{FRW}}/\delta\psi = 0$.}
-
-Lagran\.zjan $\mathcal{L} = a^3\bigl[
-  -\psi^6\dot\psi^2/(2c_0^2)
-  - \psi\,V(\psi)
-  - (q/\PhiZero)\,\psi^2\,\rho
-\bigr]$.
-
-Pochodna po $\dot\psi$:
-$\frac{\partial\mathcal{L}}{\partial\dot\psi}
-= -\frac{a^3\psi^6\dot\psi}{c_0^2}$.
-
-Pochodna czasowa:
-\begin{equation}\label{eq:ddt-pdotpsi}
-  \frac{d}{dt}\!\left(\frac{\partial\mathcal{L}}{\partial\dot\psi}\right)
-  = -\frac{a^3\psi^6}{c_0^2}
-  \left[\ddot\psi + 3H\dot\psi + \frac{6\dot\psi^2}{\psi}\right].
-\end{equation}
-
-Pochodna po $\psi$:
-\begin{equation}\label{eq:dpsi-direct}
-  \frac{\partial\mathcal{L}}{\partial\psi}
-  = a^3\biggl[
-    -\frac{3\psi^5\dot\psi^2}{c_0^2}
-    - V(\psi) - \psi V'(\psi)
-    - \frac{2q}{\PhiZero}\,\psi\,\rho
-  \biggr].
-\end{equation}
-
-R\'ownanie EL $\frac{\partial\mathcal{L}}{\partial\psi}
-- \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial\dot\psi} = 0$:
-\begin{equation}\label{eq:EL-FRW-full}
-  \frac{\psi^6}{c_0^2}\!\left[\ddot\psi + 3H\dot\psi
-    + \frac{6\dot\psi^2}{\psi}\right]
-  - \frac{3\psi^5\dot\psi^2}{c_0^2}
-  - V - \psi V'
-  - \frac{2q}{\PhiZero}\,\psi\,\rho
-  = 0.
-\end{equation}
-Upraszczaj\k{a}c cz\l{}ony $\dot\psi^2$:
-$\frac{6\psi^5\dot\psi^2}{c_0^2} - \frac{3\psi^5\dot\psi^2}{c_0^2}
-= \frac{3\psi^5\dot\psi^2}{c_0^2}$,
-st\k{a}d:
-\begin{equation}\label{eq:EL-FRW-simplified}
-  \frac{\psi^6}{c_0^2}\!\left[\ddot\psi + 3H\dot\psi\right]
-  + \frac{3\psi^5\dot\psi^2}{c_0^2}
-  = V + \psi V'
-  + \frac{2q}{\PhiZero}\,\psi\,\rho.
-\end{equation}
-
-Dziel\k{a}c przez $\psi^5/c_0^2$:
-\begin{equation}\label{eq:EL-FRW-divided}
-  \psi\!\left[\ddot\psi + 3H\dot\psi\right]
-  + 3\dot\psi^2
-  = c_0^2\!\left[
-    \frac{V + \psi V'}{\psi^5}
-    + \frac{2q}{\PhiZero}\,\frac{\rho}{\psi^4}
-  \right].
-\end{equation}
-
-Po dalszym podzieleniu przez $\psi$:
-\begin{equation}\label{eq:psi-eq-unified}
-  \ddot\psi + 3H\dot\psi + \frac{3\dot\psi^2}{\psi}
-  = c_0^2\!\left[
-    \frac{V + \psi V'}{\psi^6}
-    + \frac{2q}{\PhiZero}\,\frac{\rho}{\psi^5}
-  \right].
-\end{equation}
-
-\medskip\noindent\textbf{Krok 3: Wyliczenie cz\l{}onu potencja\l{}owego.}
-
-% ── Nota kanoniczna (2026-04-07): kanonicznie P(g) = (β/7)g⁷ − (γ/8)g⁸ ──
-Dla $V(\psi) = \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4$:
-\begin{align}
-  V'(\psi) &= \beta\psi^2 - \gamma\psi^3, \\
-  V + \psi V' &= \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4
-    + \beta\psi^3 - \gamma\psi^4
-    = \frac{4\beta}{3}\psi^3 - \frac{5\gamma}{4}\psi^4.
-\end{align}
-St\k{a}d:
-\[
-  \frac{V + \psi V'}{\psi^6}
-  = \frac{4\beta}{3}\,\psi^{-3} - \frac{5\gamma}{4}\,\psi^{-2}.
-\]
-
-\medskip\noindent\textbf{Krok 4: Przybli\.zenie $\psi \approx 1$ i~identyfikacja $\kappa$.}
-
-W~granicy kosmologicznej $\psi \approx 1$,
-$|\delta\psi| \equiv |\psi - 1| \ll 1$ r\'ownanie
-pola~\eqref{eq:psi-eq-unified} redukuje si\k{e} do
-(liniowo w~$\delta\psi$, z~$\beta = \gamma$):
-\begin{equation}\label{eq:cosmo-linearized-unified}
-  \ddot{\delta\psi} + 3H\,\dot{\delta\psi}
-  + m_{\mathrm{sp}}^2 c_0^2\,\delta\psi
-  = -\frac{2q\,c_0^2}{\PhiZero}\,\delta\rho
-  = -\frac{2q\,c_0^2}{\PhiZero}\,\delta\rho.
-\end{equation}
-(Tutaj $m_{\mathrm{sp}}^2 = \gamma$,
-a~cz\l{}on $\delta\rho = \rho - \bar\rho$ jest fluktuacj\k{a}
-g\k{e}sto\'sci wzgl\k{e}dem t\l{}a.)
-
-Dla por\'ownania, r\'ownanie Poissona w~kosmologii FRW:
-\begin{equation}\label{eq:poisson-frw}
-  \nabla^2\Psi_N = 4\pi G_0\,a^2\,\delta\rho
-  = \frac{3}{2}\,H_0^2\,\Omega_m\,a^{-1}\,\delta,
-\end{equation}
-gdzie $\delta = \delta\rho/\bar\rho$ i~$\Psi_N$ jest
-potencja\l{}em newtonowskim.
-
-W~TGP $G = G_0/\psi \approx G_0(1 - \delta\psi)$,
-wi\k{e}c fluktuacja $\delta G/G_0 = -\delta\psi$.
-Sprz\k{e}\.zenie materia--pole definiujemy jako
-wsp\'o\l{}czynnik \l{}\k{a}cz\k{a}cy $\delta\psi$
-z~$\Omega_m\,\rho_{\mathrm{cr}}/a^3$:
-\begin{equation}\label{eq:kappa-def-operational}
-  \kappa \equiv \frac{q\,c_0^2}{\PhiZero}
-  \cdot\frac{2}{3H_0^2}
-  = \frac{3}{4\PhiZero},
-\end{equation}
-gdzie w~ostatniej r\'owno\'sci u\.zyli\'smy relacji
-$q = 4\pi G_0/(c_0^2\,\PhiZero)$
-z~granicy newtonowskiej (por.\ tw.~\ref{thm:field-eq},
-r\'ow.~\eqref{eq:full-field-alt}, identyfikacja
-$q\PhiZero = 4\pi G_0/c_0^2$; razy $c_0^2/H_0^2$
-i~$(8\pi G_0/3 = H_0^2/\rho_{\mathrm{cr}})$).
-
-\medskip\noindent\textbf{Krok 5: Pochodzenie czynnika $1/2$.}
-
-W~dotychczasowym wyprowadzeniu (stw.~\ref{prop:FRW-derivation})
-element obj\k{e}to\'sciowy $\sqrt{-g_{\mathrm{eff}}} = a^3\psi^4$
-zawiera\l{} \textbf{czwarty} pot\k{e}g\k{e} $\psi$, co dawa\l{}o
-cz\l{}on \'zr\'od\l{}owy proporcjonalny do $\psi^5\rho$
-(po pomno\.zeniu z~$\psi\rho$ z~lagran\.zjanu materii).
-Wariacja $\delta(\psi^5)/\delta\psi = 5\psi^4$ dawa\l{}a silniejsze
-sprz\k{e}\.zenie.
-
-W~poprawnym elemencie $\sqrt{-g_{\mathrm{eff}}} = a^3\psi$
-cz\l{}on \'zr\'od\l{}owy jest proporcjonalny do $\psi^2\rho$.
-Wariacja $\delta(\psi^2)/\delta\psi = 2\psi$ daje s\l{}absze
-sprz\k{e}\.zenie --- dok\l{}adnie o~czynnik $2/5 \times 5/4 = 1/2$
-wzgl\k{e}dem starego wyniku.
-
-\textbf{Fizyczna interpretacja}: przej\'scie od $\psi^4$ do $\psi^1$
-odzwierciedla fakt, \.ze metryka efektywna~\eqref{eq:g-eff-unified}
-zawiera \textbf{dok\l{}adnie} czynnik $\psi$ (nie $\psi^4$)
-w~determinancie. Czynnik $\psi^4$ by\l{} artefaktem przybli\.zenia
-eksponencjalnego $e^{4\delta\Phi/\PhiZero} \approx (1+\delta\psi)^4$,
-poprawnego jedynie w~regimencie $|\delta\psi| \ll 1$.
+\textbf{Canonical derivation (post-G.0 2026-05-02):} kanoniczna
+derivation z~M9.1'' poprawnym $\sqrt{-g_{\rm eff}} = c_0\psi/(4-3\psi)$:
+patrz \texttt{prop:kappa-corrected-G0} (sek08a v2.0 ADDENDUM,
+\texttt{sssec:g0-closure-v2}). Warto\'s\'c $\kappa = 3/(4\PhiZero)$
+\textbf{INVARIANT po re-fit $\PhiZero$} (Phase~3 P32 sympy LOCK 5/5 PASS);
+wszystkie cross-references do \texttt{prop:kappa-corrected} pozostaj\k{a}
+strukturalnie poprawne.
 \end{proof}
 
 % =============================================================

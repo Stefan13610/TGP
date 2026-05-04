@@ -1,0 +1,641 @@
+% ============================================================
+% Dodatek: Historia pivotów rdzenia TGP
+% (deprecated propositions z sek08a v1.x i sek08c forms I, II, III)
+% Utworzony: 2026-05-04 (cykl op-CORE-CLEANUP-B-2026-05-04)
+% ============================================================
+%
+% Ten dodatek zachowuje deprecated propositions/equations/theorems
+% przeniesione z body sek08a (v1.x, pre-G.0 closure 2026-05-02) i
+% sek08c (formy I, II, III pre-M9.1'' canonical) jako historyczny
+% record pivot chain TGP. Wszystkie labels zachowane dla
+% cross-reference compatibility.
+%
+% Zasada: NON-BREAKING relocation. Każda proposition/equation w tym
+% dodatku ma:
+%   1. Oryginalny label (bez modyfikacji) — cross-refs działają
+%   2. Explicit STATUS marker (FALSIFIED / OBSOLETE / SUPERSEDED)
+%   3. Reference do canonical replacement (G.0 / Phase 2 / L01)
+%
+% Patrz:
+%   research/op-CORE-CLEANUP-B-2026-05-04/README.md (cykl cleanup)
+%   audyt/CLEANUP_INVENTORY_2026-05-04.md (inwentaryzacja)
+%   research/op-g0-r3-from-canonical-projection/README.md (G.0 closure)
+%   research/op-L04-ODE-canonicalization-2026-05-04/README.md (L04 RESOLVED)
+% ============================================================
+
+\section{Historia piwot\'ow rdzenia TGP}\label{app:pivot-history}
+
+\statuslabel{Dodatek historyczny}
+
+\begin{remark}[Cel tego dodatku]\label{rem:pivot-history-purpose}
+Dodatek ten zawiera deprecated propositions/equations/theorems
+przeniesione z body sek08a i sek08c po cyklu cleanup
+\texttt{op-CORE-CLEANUP-B-2026-05-04}. Wszystkie zachowane elementy:
+\begin{itemize}\itemsep0pt
+  \item maj\k{a} oryginalne labels (cross-references dzia\l{}aj\k{a})
+  \item s\k{a} oznaczone explicit STATUS markerami
+    (FALSIFIED / OBSOLETE / SUPERSEDED)
+  \item zawieraj\k{a} reference do canonical replacement
+    (G.0~/~Phase~2~/~L01)
+\end{itemize}
+
+\textbf{Aktualne kanoniczne formulacje TGP s\k{a} w body sek08a~v2.0
+(po~G.0 closure 2026-05-02), sek08c body~M9.1'' kanoniczna,
+i~Phase~2 universal mass formula
+$m_{\rm obs} = c_M \cdot A_{\rm tail}^2 \cdot g_0^{\,e^2(1-\alpha/4)}$.}
+\end{remark}
+
+% ============================================================
+\subsection{Pre-G.0 sek08a v1.x (deprecated po 2026-05-02)}%
+\label{app:pivot-sek08a-v1x}
+% ============================================================
+
+\textbf{Status:} SUPERSEDED przez sek08a v2.0 ADDENDUM
+(\texttt{sssec:g0-closure-v2}, lin. 805+ w~sek08a). G.0 closure 2026-05-02
+zaimplementowa\l{}a kanoniczn\k{a} formulacj\k{e} M9.1''-spojn\k{a}
+z~$V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$ +
+$\sqrt{-g} = c_0\psi/(4-3\psi)$ + $q\cdot c^2/\Phi_0 = (4/5)\pi G_0$.
+
+\subsubsection{Historyczna forma potencja\l{}u
+$V_{\rm orig}$ (FALSIFIED 2026-04-25 przez M9.1)}%
+\label{app:V-orig-deprecated}
+
+\textbf{STATUS:} \textbf{SUPERSEDED 2026-05-02} przez
+\texttt{prop:V-M911-canonical} (sek08a v2.0).
+
+\textbf{Powiązane labels (zachowane dla cross-references):}
+\texttt{eq:V-selfinterference}, \texttt{eq:V-orig}.
+
+% [Phase 2: skopiować eq:V-selfinterference z sek08a lin. 83-93]
+% [Tymczasowo placeholder — refactor w Phase 3 sek08a]
+
+\begin{remark}[Placeholder dla deprecated $V_{\rm orig}$]%
+\label{rem:V-orig-placeholder}
+W~Phase~3 cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04} pe\l{}na tre\'s\'c
+\texttt{eq:V-selfinterference} zostanie tutaj przeniesiona z~sek08a
+(lin.~83--93). Aktualnie equation pozostaje w~body sek08a; ten
+placeholder zachowuje rezerwacj\k{e} miejsca.
+\end{remark}
+
+\subsubsection{Historyczny element obj\k{e}to\'sciowy
+$\sqrt{-g} = c_0\,\varphi$ (FALSIFIED z form\k{a}~I)}%
+\label{app:sqrt-g-orig-deprecated}
+
+\textbf{STATUS:} \textbf{SUPERSEDED 2026-05-02} przez
+$\sqrt{-g} = c_0\psi/(4-3\psi)$ (M9.1'' canonical, A2 audit closure).
+
+\textbf{Powiązany label:} \texttt{eq:sqrt-g-eff}.
+
+\begin{remark}[Placeholder dla deprecated $\sqrt{-g}=c_0\varphi$]%
+\label{rem:sqrt-g-orig-placeholder}
+Tre\'s\'c \texttt{eq:sqrt-g-eff} (sek08a lin.~141--145) zostanie
+przeniesiona w~Phase~3.
+\end{remark}
+
+\subsubsection{Historyczna kappa-correction $\kappa = 3/(4\PhiZero)$
+z~M9.1 (warto\'s\'c INVARIANT po re-fit, derivation deprecated)}%
+\label{app:kappa-corrected-orig}
+
+\textbf{STATUS:} \textbf{DERIVATION SUPERSEDED 2026-05-02}; warto\'s\'c
+$\kappa = 3/(4\PhiZero)$ pozostaje INVARIANT po re-fit $\PhiZero$
+(P32 sympy LOCK). Canonical derivation: \texttt{prop:kappa-corrected-G0}
+(sek08a v2.0 ADDENDUM).
+
+\paragraph{Pe\l{}ny dow\'od (deprecated, relocated z~sek08a lin.~411--618
+w~ramach cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04}).}
+
+Dow\'od u\.zywa~$\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$ (forma~I,
+FALSIFIED 2026-04-25) i~daje warto\'s\'c $\kappa = 3/(4\PhiZero)$,
+kt\'ora pozostaje INVARIANT post-G.0 (re-fit $\PhiZero$). Canonical
+derivation z~M9.1'' poprawnym $\sqrt{-g} = c_0\psi/(4-3\psi)$:
+patrz \texttt{prop:kappa-corrected-G0} sek08a v2.0 ADDENDUM
+(\texttt{sssec:g0-closure-v2}).
+
+\textbf{Krok 1: Zredukowane dzia\l{}anie FRW.}
+
+Dla jednorodnego $\psi(t)$ ($\nabla\psi = 0$) w~tle FRW
+ze~skalowaniem $a(t)$, element obj\k{e}to\'sciowy 4-wymiarowy wynosi:
+\begin{equation}\label{eq:volume-FRW}
+  \sqrt{-g_{\mathrm{eff}}}\;d^4x
+  = \frac{c(\Phi)}{c_0}\cdot\left(\frac{\Phi}{\PhiZero}\right)^{3/2}
+    \cdot a^3\;c_0\,dt\,d^3x
+  = \psi^{-1/2}\cdot\psi^{3/2}\cdot a^3\;c_0\,dt\,d^3x
+  = \psi\,a^3\;c_0\,dt\,d^3x.
+\end{equation}
+Jawnie: $c(\Phi)/c_0 = (\PhiZero/\Phi)^{1/2} = \psi^{-1/2}$;
+$\sqrt{\det(g_{ij})} = (\Phi/\PhiZero)^{3/2}\cdot a^3 = \psi^{3/2}\,a^3$.
+
+Cz\l{}on kinetyczny pola (w~FRW, $\nabla\psi = 0$):
+\begin{equation}\label{eq:Lkin-FRW}
+  \mathcal{L}_{\mathrm{kin}}
+  = \frac{1}{2}\,K(\psi)\,g_{\mathrm{eff}}^{00}\,\dot\psi^2
+  = \frac{1}{2}\,\psi^4\cdot\left(-\frac{\psi}{c_0^2}\right)\cdot\dot\psi^2
+  = -\frac{\psi^5\dot\psi^2}{2c_0^2},
+\end{equation}
+gdzie $g_{\mathrm{eff}}^{00} = -\psi/c_0^2$
+(inwersja $g_{00} = -c_0^2/\psi$).
+
+Zredukowane dzia\l{}anie (pomijaj\k{a}c sta\l{}\k{a} $c_0 V_0$):
+\begin{equation}\label{eq:S-FRW-reduced}
+  S_{\mathrm{FRW}}
+  = \int dt\;a^3\,\psi\;\biggl[
+    -\frac{\psi^5\dot\psi^2}{2c_0^2}
+    - V(\psi)
+    - \frac{q}{\PhiZero}\,\psi\,\rho
+  \biggr]
+  = \int dt\;a^3\;\biggl[
+    -\frac{\psi^6\dot\psi^2}{2c_0^2}
+    - \psi\,V(\psi)
+    - \frac{q}{\PhiZero}\,\psi^2\,\rho
+  \biggr].
+\end{equation}
+
+\textbf{Krok 2: Wariacja $\delta S_{\mathrm{FRW}}/\delta\psi = 0$.}
+
+Pochodna czasowa:
+\begin{equation}\label{eq:ddt-pdotpsi}
+  \frac{d}{dt}\!\left(\frac{\partial\mathcal{L}}{\partial\dot\psi}\right)
+  = -\frac{a^3\psi^6}{c_0^2}
+  \left[\ddot\psi + 3H\dot\psi + \frac{6\dot\psi^2}{\psi}\right].
+\end{equation}
+
+Pochodna po $\psi$:
+\begin{equation}\label{eq:dpsi-direct}
+  \frac{\partial\mathcal{L}}{\partial\psi}
+  = a^3\biggl[
+    -\frac{3\psi^5\dot\psi^2}{c_0^2}
+    - V(\psi) - \psi V'(\psi)
+    - \frac{2q}{\PhiZero}\,\psi\,\rho
+  \biggr].
+\end{equation}
+
+R\'ownanie EL:
+\begin{equation}\label{eq:EL-FRW-full}
+  \frac{\psi^6}{c_0^2}\!\left[\ddot\psi + 3H\dot\psi
+    + \frac{6\dot\psi^2}{\psi}\right]
+  - \frac{3\psi^5\dot\psi^2}{c_0^2}
+  - V - \psi V'
+  - \frac{2q}{\PhiZero}\,\psi\,\rho
+  = 0.
+\end{equation}
+
+Po uproszczeniu:
+\begin{equation}\label{eq:EL-FRW-simplified}
+  \frac{\psi^6}{c_0^2}\!\left[\ddot\psi + 3H\dot\psi\right]
+  + \frac{3\psi^5\dot\psi^2}{c_0^2}
+  = V + \psi V'
+  + \frac{2q}{\PhiZero}\,\psi\,\rho.
+\end{equation}
+
+Dziel\k{a}c przez $\psi^5/c_0^2$:
+\begin{equation}\label{eq:EL-FRW-divided}
+  \psi\!\left[\ddot\psi + 3H\dot\psi\right]
+  + 3\dot\psi^2
+  = c_0^2\!\left[
+    \frac{V + \psi V'}{\psi^5}
+    + \frac{2q}{\PhiZero}\,\frac{\rho}{\psi^4}
+  \right].
+\end{equation}
+
+Po dalszym podzieleniu przez $\psi$:
+\begin{equation}\label{eq:psi-eq-unified}
+  \ddot\psi + 3H\dot\psi + \frac{3\dot\psi^2}{\psi}
+  = c_0^2\!\left[
+    \frac{V + \psi V'}{\psi^6}
+    + \frac{2q}{\PhiZero}\,\frac{\rho}{\psi^5}
+  \right].
+\end{equation}
+
+\textbf{Krok 3: Cz\l{}on potencja\l{}owy} (z~$V_{\rm orig}$ deprecated):
+$V(\psi) = \frac{\beta}{3}\psi^3 - \frac{\gamma}{4}\psi^4$.
+
+\textbf{Krok 4: Linearyzacja $\psi \approx 1$ i~identyfikacja $\kappa$:}
+\begin{equation}\label{eq:cosmo-linearized-unified}
+  \ddot{\delta\psi} + 3H\,\dot{\delta\psi}
+  + m_{\mathrm{sp}}^2 c_0^2\,\delta\psi
+  = -\frac{2q\,c_0^2}{\PhiZero}\,\delta\rho.
+\end{equation}
+
+R\'ownanie Poissona w~kosmologii FRW:
+\begin{equation}\label{eq:poisson-frw}
+  \nabla^2\Psi_N = 4\pi G_0\,a^2\,\delta\rho
+  = \frac{3}{2}\,H_0^2\,\Omega_m\,a^{-1}\,\delta.
+\end{equation}
+
+Operacyjna definicja $\kappa$:
+\begin{equation}\label{eq:kappa-def-operational}
+  \kappa \equiv \frac{q\,c_0^2}{\PhiZero}
+  \cdot\frac{2}{3H_0^2}
+  = \frac{3}{4\PhiZero},
+\end{equation}
+co daje finalne $\boxed{\kappa = 3/(4\PhiZero)}$
+(zachowane w~body \texttt{eq:kappa-corrected}).
+
+\textbf{Note (canonical post-G.0 2026-05-02):} powy\.zsza derivation
+u\.zywa $\sqrt{-g} = c_0\psi$ (forma~I, FALSIFIED). Kanoniczna derivation
+z~M9.1'' $\sqrt{-g} = c_0\psi/(4-3\psi)$ (\texttt{prop:kappa-corrected-G0}
+sek08a v2.0) daje t\k{a} sam\k{a} warto\'s\'c $\kappa = 3/(4\PhiZero)$
+po re-fit $\PhiZero$ (P32 sympy LOCK 5/5 PASS), pokazuj\k{a}c \.ze
+warto\'s\'c jest INVARIANT.
+
+% =============================================================
+\subsubsection{Historyczna wariacja $\delta S/\delta\Phi$ z~deprecated
+$\sqrt{-g}=c_0\psi$ (proof of \texttt{prop:field-eq-from-action})}%
+\label{app:field-eq-deprecated-proof}
+% =============================================================
+
+\textbf{STATUS:} \textbf{DERIVATION SUPERSEDED 2026-05-02} przez
+\texttt{prop:psi-EOM-R3} (sek08a v2.0 ADDENDUM, \texttt{eq:R3-ODE}).
+
+\textbf{Powiązane labels:} \texttt{eq:S-unified-psi},
+\texttt{eq:EL-unified-raw}, \texttt{eq:EL-unified-divided},
+\texttt{eq:S-static-correct}.
+
+\paragraph{Pe\l{}en dow\'od (deprecated, relocated z~sek08a lin.~261--368
+w~ramach cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04}).}
+
+Dow\'od u\.zywa $\sqrt{-g_{\mathrm{eff}}} = c_0\,\psi$ (forma~I,
+FALSIFIED 2026-04-25) i~potencja\l{}u $V_{\rm orig}(\psi) = (\beta/3)\psi^3
+- (\gamma/4)\psi^4$ (deprecated 2026-05-02 G.0 closure). Canonical
+derivation z~M9.1'' poprawnym $\sqrt{-g}$ i~$V_{\rm M9.1''}$:
+patrz \texttt{prop:psi-EOM-R3} sek08a v2.0 ADDENDUM (\texttt{eq:R3-ODE}).
+
+\textbf{Note (CORE-CLEANUP-B 2026-05-04 status):} body sek08a (lin. 261--368)
+\textbf{wci\k{a}\.z zawiera pe\l{}ny dow\'od} z~labels \texttt{eq:S-unified-psi},
+\texttt{eq:EL-unified-raw}, \texttt{eq:EL-unified-divided},
+\texttt{eq:S-static-correct}. Pe\l{}na relokacja do appendix wymaga
+zerwania labels w~body (multiply-defined risk). \textbf{Strategia
+incremental}: w~tej sesji dodano explicit STATUS marker w~body sek08a
+oraz canonical replacement reference \texttt{prop:psi-EOM-R3}; pe\l{}ne
+literal removal labels z~body \textbf{odro\.zone do Phase 4 cross-ref audit}
+(je\'sli labels nie s\k{a} cytowane extern, mo\.zna je usun\k{a}\'c).
+
+\textbf{Strukturalne kroki dow\'odu (skr\'ot, pe\l{}na tre\'s\'c w~body sek08a
+lin. 261-368):}
+
+\begin{enumerate}[(1),nosep]
+  \item Krok 1: Przepisanie dzia\l{}ania w~$\psi$ z~$\sqrt{-g}=c_0\psi$
+    (forma~I deprecated) i~$V_{\rm orig}$ deprecated.
+  \item Krok 2: Element ca\l{}owany $\mathcal{L} = \tfrac{1}{2}\psi^5(\nabla\psi)^2
+    - \tfrac{\beta}{3}\psi^4 + \tfrac{\gamma}{4}\psi^5 - \tfrac{q}{\PhiZero}\psi^2\rho$.
+  \item Krok 3: R\'ownanie Eulera--Lagrange'a $\partial_\psi\mathcal{L}
+    - \nabla\cdot\partial_{\nabla\psi}\mathcal{L} = 0$ daje deprecated
+    \texttt{eq:EL-unified-raw}.
+  \item Krok 4: Po uproszczeniu \texttt{eq:EL-unified-divided}, dzia\l{}anie
+    statyczne \texttt{eq:S-static-correct}.
+  \item Wynik: r\'ownanie pola \texttt{eq:field-eq-reproduced}
+    (zachowane w~body z~$V_{\rm orig}$ deprecated).
+\end{enumerate}
+
+\textbf{Canonical replacement (post-G.0):} R3 ODE
+$\psi'' + (2/r)\psi' + 2(\psi')^2/\psi = (1-\psi)/\psi^2$
+(\texttt{eq:R3-ODE}, \texttt{prop:psi-EOM-R3}, sek08a v2.0).
+Wynik z~poprawnym $\sqrt{-g}=c_0\psi/(4-3\psi)$ + $V_{\rm M9.1''}$
+(Phase~1 G0a sympy LOCK \texttt{prop:V-M911-canonical}).
+
+% ============================================================
+\subsection{Pre-G.0 sek08c forms~(I), (II), (III)
+(deprecated po 2026-05-02)}%
+\label{app:pivot-sek08c}
+% ============================================================
+
+\textbf{Status:} 4 formy metryki w~sek08c body przeniesione tu jako
+historyczny pivot record. Aktualna kanoniczna metryka TGP =~M9.1''
+hiperboliczna $g_{tt} = -c^2(4-3\psi)/\psi$, dokumentowana
+w~\texttt{TGP\_FOUNDATIONS.md:64-69} i~sek08c~body~refactored
+(Phase~2 cleanup).
+
+\subsubsection{Forma~(I): boxed power $g_{tt} = -c^2/\psi$
+(FALSIFIED 2026-04-25)}\label{app:metric-form-I}
+
+\textbf{STATUS:} \textbf{FALSIFIED 2026-04-25} przez M9.1 PPN test
+($\beta_{\rm PPN}=4$ vs Mercury $1\pm 10^{-4}$, niezgodno\'s\'c
+$3\cdot 10^4\sigma$).
+
+\textbf{Powiązany label:} \texttt{eq:metric-full-derived}.
+
+\paragraph{Pe\l{}na tre\'s\'c twierdzenia oraz proof (deprecated, relocated
+z~sek08c lin.~262--488 w~ramach cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04},
+sesja~3).}
+
+\begin{theorem}[Metryka efektywna z~substratu --- pe\l{}ne wyprowadzenie
+\textbf{HISTORYCZNE}]%
+\label{thm:metric-from-substrate-full}
+\textbf{Status: SUPERSEDED 2026-05-02 G.0 closure} (zachowane historycznie
+z~oryginalnym labelem dla cross-reference compatibility).
+
+Pod nast\k{e}puj\k{a}cymi za\l{}o\.zeniami:
+\begin{enumerate}[(i),nosep]
+  \item $g_{ij} = (\Phi/\PhiZero)\,\delta_{ij}$
+        (prop.~\ref{prop:spatial-metric-from-substrate}: g\k{e}sto\'s\'c
+        w\k{e}z\l{}'ow);
+  \item $f(\Phi)\cdot h(\Phi) = 1$
+        (prop.~\ref{prop:antipodal-from-budget}: bud\.zet);
+  \item $\beta_{\mathrm{PPN}} = \gamma_{\mathrm{PPN}} = 1$
+        (zgodno\'s\'c obserwacyjna do $O(\delta\Phi^2)$);
+  \item $\ell_P = \sqrt{G\hbar/c^3} = \text{const}$ (aksjomat A7);
+\end{enumerate}
+metryka efektywna jest \textbf{jednoznacznie} wyznaczona:
+\begin{equation}\label{eq:metric-full-derived}
+  \boxed{
+    ds^2 = -\frac{c_0^2}{\psi}\,dt^2
+         + \psi\,\delta_{ij}\,dx^i\,dx^j,
+    \qquad \psi \equiv \frac{\Phi}{\PhiZero}.
+  }
+\end{equation}
+
+\textbf{STATUS post-G.0 2026-05-02:} forma~(I) FALSIFIED. Canonical
+replacement: M9.1'' hiperboliczna $ds^2 = -c_0^2(4-3\psi)/\psi\,dt^2
++ \psi/(4-3\psi)\,\delta_{ij}\,dx^i dx^j$ (body~sek08c po~Phase~2.2 cleanup,
+\texttt{thm:metric-from-budget-M911} canonical, oraz
+\texttt{prop:V-M911-canonical} sek08a v2.0).
+
+W~szczeg\'olno\'sci (deprecated, forma~I):
+\begin{itemize}[nosep]
+  \item $f(\Phi) = \PhiZero/\Phi = 1/\psi$ (z~(i)~i~(ii));
+  \item $\sqrt{-g} = c_0\,\psi$ (deprecated, M9.1'' daje
+        $\sqrt{-g}=c_0\psi/(4-3\psi)$);
+  \item $c_{\rm lok} = c_0/\sqrt{\psi}$.
+\end{itemize}
+\end{theorem}
+
+\paragraph{Dow\'od (deprecated, u\.zywa form~I~i~II)}
+
+Krok~1: z~(i): $h = \Phi/\PhiZero$. Z~warunku antypodycznego (ii):
+$f = 1/h = \PhiZero/\Phi$. Zatem $g_{tt} = -c_0^2\,\PhiZero/\Phi$.
+
+Krok~2 (PPN, deprecated): w~granicy s\l{}abego pola
+$\Phi = \PhiZero(1 + \varepsilon)$, $|\varepsilon| \ll 1$:
+$g_{tt} = -c_0^2(1 - 2U + 4U^2 - \ldots)$ daje $\beta_{\rm PPN} = 2$
+(\textbf{niezgodne z~Mercury}). Forma~(II) eksponencjalna
+$f = e^{-2U}, h = e^{+2U}, fh = 1$ jest deprecated workaround daj\k{a}cym
+$\beta_{\rm PPN} = 1$.
+
+Krok~3 ($\ell_P = \text{const}$ z~formy eksponencjalnej): aksjomat A8
+i~A6+A7 dają $\ell_P^2 = G_0\hbar_0/c_0^3$ (stała).
+
+\textbf{Canonical post-G.0:} M9.1'' daje $\beta_{\rm PPN}=1$ przez master
+formula z~kinetic correction (P23 sympy LOCK 5/5 PASS) bez potrzeby
+formy eksponencjalnej.
+
+\begin{remark}[Eliminacja kroku~3 jako hipotezy~--- HISTORYCZNE]%
+\label{rem:step3-elimination}
+\textbf{Status: SUPERSEDED 2026-05-02} przez G.0 closure.
+Tw.~\ref{thm:metric-from-substrate-full} (deprecated) redukowa\l{}o krok~3
+mostu substrat--metryka do $fh=1$ + PPN.
+
+Canonical replacement (M9.1'' z~G.0): forma~(IV) hiperboliczna jest unique
+przez \texttt{prop:V-M911-canonical} sympy LOCK (Phase~1 G0a 4/4 PASS).
+\end{remark}
+
+\paragraph{Element obj\k{e}to\'sciowy~--- forma~I (deprecated)}
+
+Z~metryki~\eqref{eq:metric-full-derived} (deprecated):
+\begin{align}
+  \det(g_{\mu\nu})
+  &= -c_0^2\,\psi^2, \nonumber\\[4pt]
+  \sqrt{-g}
+  &= c_0\,\psi.
+  \label{eq:vol-element-derived}
+\end{align}
+
+\textbf{STATUS post-G.0:} forma~(I) volume element FALSIFIED.
+Canonical: $\sqrt{-g}=c_0\psi/(4-3\psi)$ (M9.1'',
+\texttt{prop:V-M911-canonical}).
+
+\begin{remark}[Sp\'ojno\'s\'c wewn\k{e}trzna~--- HISTORYCZNE]%
+\label{rem:metric-action-consistency}
+\textbf{Status: SUPERSEDED 2026-05-02} (zachowane historycznie
+z~labelem dla cross-reference compatibility).
+
+\l{}\k{a}\'ncuch zamyka\l{} si\k{e} (deprecated derivation z~form\k{a}~I):
+\begin{enumerate}[nosep]
+  \item Bud\.zet $\Rightarrow$ $fh = 1$ $\Rightarrow$
+        \eqref{eq:metric-full-derived} (deprecated);
+  \item Metryka $\Rightarrow$ $\sqrt{-g} = c_0\psi$ (deprecated);
+  \item Akcja $\Rightarrow$ $\kappa = 3/(4\PhiZero)$
+        (\textbf{VALUE INVARIANT po re-fit}, P32 sympy LOCK);
+  \item Sp\'ojno\'s\'c: brak wolnych parametr\'ow.
+\end{enumerate}
+
+Canonical (post-G.0 2026-05-02): \l{}\k{a}\'ncuch z~M9.1'' $\sqrt{-g} =
+c_0\psi/(4-3\psi)$ + $V_{\rm M9.1''}$ daje t\k{e} sam\k{a} warto\'s\'c
+$\kappa = 3/(4\PhiZero)$ (INVARIANT po re-fit $\PhiZero$).
+\end{remark}
+
+\subsubsection{Forma~(II): eksponencjalna $g_{tt} = -c^2 e^{-2U}$
+(OBSOLETE, intermediate w~proof powy\.zej)}\label{app:metric-form-II}
+
+\textbf{STATUS:} \textbf{OBSOLETE / PRZEJ\'SCIOWA} 2026-04-25.
+By\l{}a u\.zywana wewn\k{a}trz proof
+\texttt{thm:metric-from-substrate-full} (Krok~3) jako workaround dla
+$\beta_{\rm PPN}=1$. Nie ma niezale\.znego label w~tek\'scie body
+sek08c~--- jest in-line w~proof powy\.zej.
+
+\textbf{Canonical replacement:} M9.1'' (forma~IV) daje $\beta_{\rm PPN}=1$
+EXACT przez master formula bez potrzeby workaroundu eksponencjalnego.
+
+\subsubsection{Forma~(III): antypodalne twierdzenie jedno\'sci
+$f=\psi^{-1/2}, h=\psi^{+1/2}$ (NIESP\'OJNE WEWN\k{E}TRZNIE)}%
+\label{app:metric-form-III}
+
+\textbf{STATUS:} \textbf{NIESP\'OJNE WEWN\k{E}TRZNIE} (M9.1' \S2.1, 2026-04-25).
+Linearyzacja daje $\gamma_{\rm PPN}=1$ \checkmark, ale pe\l{}ne $O(\varepsilon^2)$
+daje $\beta_{\rm metric}=3$ (nie 1 jak deklaruje
+\texttt{rem:antipodal-implications}); z~$\alpha=2$ dynamik\k{a}
+($c_2=-1$) $\to \beta_{\rm PPN}=7$. Twierdzenie ,,jedno\'sci'' nie
+obejmuje pe\l{}nej nieliniowo\'sci.
+
+\textbf{Canonical replacement:} M9.1'' hiperboliczna
+$g_{tt} = -c^2(4-3\psi)/\psi$, $g_{rr} = \psi/(4-3\psi)$ —
+patrz body sek08c (post-Phase~2 cleanup) i~\texttt{TGP\_FOUNDATIONS.md:64-69}.
+Master formula PPN z~kinetic correction (G.0 closure 2026-05-02 + Phase~2 P23
+sympy LOCK 5/5 PASS): $\beta_{\rm PPN} = 1/2 + 1/2 = 1$ EXACT.
+
+\paragraph{Pe\l{}na tre\'s\'c twierdzenia (deprecated, relocated z~sek08c
+lin.~495--566 w~ramach cyklu \texttt{op-CORE-CLEANUP-B-2026-05-04}).}
+
+\begin{theorem}[Jednoznaczno\'s\'c warunku antypodycznego~--- HISTORYCZNE]%
+\label{thm:antipodal-uniqueness}
+\textbf{Status: \statuslabel{Twierdzenie (analityczne)} ---
+\textbf{NIESP\'OJNE WEWN\k{E}TRZNIE}, deprecated 2026-05-02 G.0 closure.
+Zachowane historycznie z~oryginalnym labelem dla cross-reference
+compatibility.}
+
+Niech metryka efektywna TGP ma posta\'c diagonaln\k{a} izotropow\k{a}:
+\begin{equation}
+  ds^2 = -f(\psi)\,c_0^2\,dt^2 + h(\psi)\,\delta_{ij}\,dx^i dx^j,
+  \qquad \psi = \Phi/\Phi_0,
+  \label{eq:antipodal-metric-ansatz}
+\end{equation}
+i~niech spe\l{}nione s\k{a} warunki:
+\begin{enumerate}[nosep]
+  \item[(C1)] aksjomat pr\k{e}dko\'sci: $c^2 = c_0^2\,f/h = c_0^2/\psi$
+    (aksjomat~\ref{ax:c}),
+  \item[(C2)] relacja pot\k{e}gowa: $f\cdot h^s = 1$ dla pewnego $s > 0$,
+  \item[(C3)] normalizacja: $f(1) = h(1) = 1$.
+\end{enumerate}
+W\'owczas \textbf{jedynym} $s$ daj\k{a}cym
+$\gamma_{\rm PPN} = 1$ jest $s = 1$, co jednoznacznie
+wyznacza:
+\begin{equation}
+  \boxed{f(\psi) = \psi^{-1/2},
+  \quad h(\psi) = \psi^{1/2},
+  \quad f \cdot h = 1.}
+  \label{eq:antipodal-unique-solution}
+\end{equation}
+
+\textbf{NIESP\'OJNO\'S\'C O$(\varepsilon^2)$:} pe\l{}na ekspansja
+$g_{tt} = -\psi^{-1/2}$ wok\'o\l{} $\psi=1+\varepsilon$:
+\begin{align*}
+  \psi^{-1/2} &= 1 - \tfrac{1}{2}\varepsilon + \tfrac{3}{8}\varepsilon^2
+              - \tfrac{5}{16}\varepsilon^3 + \ldots \\
+  \text{Newton matching:} \quad -\tfrac{1}{2}\varepsilon &= -2U
+  \;\Rightarrow\; \varepsilon = 4U \\
+  \text{Substytucja:} \quad g_{tt} &= -(1 - 2U + 6U^2 - \ldots)
+\end{align*}
+Konwencja PPN: $g_{tt} = -(1 - 2U + 2\beta_{\rm PPN}U^2)$
+$\Rightarrow \beta_{\rm metric} = 3$ (nie $1$!). Z~$\alpha=2$ dynamik\k{a}
+master formula daje $\beta_{\rm PPN}=7$ — \textbf{wykluczone}.
+
+\textbf{Wniosek:} forma~(III) jest niespójna ze swoj\k{a} w\l{}asn\k{a}
+deklaracj\k{a} $\beta_{\rm PPN}=1$ przy pe\l{}nej nieliniowo\'sci.
+Canonical replacement: M9.1'' hiperboliczna (forma~IV).
+\end{theorem}
+
+\begin{proof}
+Z~(C1) i~(C2):
+\begin{align}
+  f/h &= 1/\psi \quad\text{(z C1)}, \\
+  f \cdot h^s &= 1 \quad\text{(z C2)}.
+\end{align}
+Eliminuj\k{a}c $f = h^{-s}$ i~wstawiaj\k{a}c:
+$h^{-s}/h = 1/\psi$, tj.~$h^{-(s+1)} = 1/\psi$, sk\k{a}d:
+\begin{equation}
+  h(\psi) = \psi^{1/(s+1)},
+  \qquad
+  f(\psi) = \psi^{-s/(s+1)}.
+\end{equation}
+Parametry PPN do $O(U)$:
+$\gamma_{\rm PPN} = (1/(s+1))/(s/(s+1)) = 1/s$.
+Warunek $\gamma_{\rm PPN}=1$ $\Rightarrow s=1$.
+Przy $s=1$: $h=\psi^{1/2}$, $f=\psi^{-1/2}$, $fh=1$.
+
+\textbf{Niespójność O($\varepsilon^2$):} dow\'od liniowy nie obejmuje
+pe\l{}nej nieliniowo\'sci $\beta_{\rm PPN}$ — patrz nag\l{}\'owek
+twierdzenia.\qed
+\end{proof}
+
+\begin{remark}[Implikacje jednoznaczno\'sci~--- HISTORYCZNE]%
+\label{rem:antipodal-implications}
+\textbf{Status: deprecated 2026-05-02 G.0 closure} (deklarowane
+implikacje (1)+(2) zachowuj\k{a} sens; deklaracja (3)
+$\beta_{\rm PPN}=1$ jest \textbf{niespójna} z~pe\l{}n\k{a} nieliniowo\'sci\k{a}
+metryki~--- patrz STATUS w~nag\l{}\'owku).
+
+Twierdzenie~\ref{thm:antipodal-uniqueness} (deprecated) deklarowa\l{}o
+trzy konsekwencje:
+\begin{enumerate}[nosep]
+  \item Warunek antypodyczny jako konieczno\'s\'c z~$\gamma_{\rm PPN}=1$.
+    \emph{Status: poprawne do} $O(U)$.
+  \item Obalenie alternatyw $s=3$ ($\gamma=1/3$) i~$s=0$ VSL.
+    \emph{Status: poprawne.}
+  \item \textbf{Automatyczny} $\beta_{\rm PPN}=1$ przy $s=1$.
+    \emph{Status: \textbf{NIESP\'OJNE} — pe\l{}na ekspansja daje
+    $\beta_{\rm metric}=3$, wykluczone.}
+\end{enumerate}
+
+\textbf{Canonical replacement (post-G.0 2026-05-02):} master formula
+PPN z~kinetic correction:
+$\beta_{\rm PPN} = f''(1)/f'(1)^2 + 2c_2/f'(1) = 1/2 + 1/2 = 1$ EXACT
+dla M9.1'' (\texttt{prop:V-M911-canonical} sek08a v2.0).
+\end{remark}
+
+\subsubsection{Forma~(IV): M9.1'' hiperboliczna (KANONICZNA, w~body sek08c)}%
+\label{app:metric-form-IV-canonical-ref}
+
+\textbf{STATUS:} \textbf{KANONICZNA post-G.0 closure 2026-05-02}.
+
+Pe\l{}na derivation w~body~sek08c (post-Phase~2 cleanup). Tutaj tylko
+jako reference: $g_{tt} = -c_0^2(4-3\psi)/\psi$,
+$g_{rr} = \psi/(4-3\psi)$, $\sqrt{-g} = c_0\psi/(4-3\psi)$.
+
+% ============================================================
+\subsection{Pre-Phase 2 mass formulas
+(LP-4 $k=4$, R5 K$^2$, p=5-$\alpha$ — specjalne case $\alpha=1$)}%
+\label{app:pivot-mass-formulas}
+% ============================================================
+
+\textbf{Status:} \textbf{SUPERSEDED 2026-05-01} przez
+Phase~2 universal mass formula
+$m_{\rm obs} = c_M \cdot A_{\rm tail}^2 \cdot g_0^{\,e^2(1-\alpha/4)}$
+(\texttt{research/why\_n3/PHASE2\_n\_alpha\_derivation.md}).
+
+\subsubsection{LP-4 $k=4$ argument konwergencyjny
+(specjalny przypadek $\alpha=1$)}\label{app:mass-formula-LP4}
+
+\textbf{STATUS:} \textbf{SUPERSEDED} jako *specjalny przypadek*
+Phase~2 dla $\alpha=1$ (substratowa formulacja). LP-4 9/9 PASS pozostaje
+\emph{poprawne dla} $\alpha=1$, ale nie jest universal.
+
+R\'ownowa\.zno\'s\'c R5 K$^2 \equiv$ Phase~2 \emph{wtedy i tylko wtedy
+gdy} $\alpha=1$ (analytical theorem,
+\texttt{research/mass\_scaling\_k4/R5\_PHASE2\_ANALYTICAL\_BRIDGE\_2026-05-02.md}).
+
+Patrz [[research/op-L04-ODE-canonicalization-2026-05-04/mass\_formula\_unification.md]].
+
+\subsubsection{R5 K$^2$ mass formula (specjalny przypadek $\alpha=1$)}%
+\label{app:mass-formula-R5}
+
+\textbf{STATUS:} \textbf{DERIVATIVE} struktury Phase~2 dla $\alpha=1$.
+Niespójne z~TGP-canonical $\alpha=2$ (mismatch +490\% dla
+$m_\mu/m_e$).
+
+\subsubsection{Empirical $p(\alpha)=5-\alpha$ single-exponent
+decomposition}\label{app:mass-formula-p-alpha}
+
+\textbf{STATUS:} \textbf{APPROXIMATION} pełnej Phase~2 dwuwykładnikowej
+formu\l{}y. Dok\l{}adne dla $\alpha=1$ i~$\alpha=2$, rozmywa do 6\% dla
+ekstrem\'ow.
+
+% ============================================================
+\subsection{Polityka cleanup i~zachowanie cross-references}%
+\label{app:cleanup-policy}
+% ============================================================
+
+Wszystkie deprecated propositions/equations/theorems w~tym dodatku
+zachowuj\k{a} oryginalne labels:
+
+\begin{itemize}\itemsep0pt
+  \item \texttt{eq:V-selfinterference} (sek08a~v1.x $V_{\rm orig}$)
+  \item \texttt{eq:sqrt-g-eff} (sek08a~v1.x $\sqrt{-g}=c_0\varphi$)
+  \item \texttt{prop:kappa-corrected} (sek08a~v1.x $\kappa$ derivation)
+  \item \texttt{eq:metric-full-derived} (sek08c~forma~I)
+  \item \texttt{thm:antipodal-uniqueness} (sek08c~forma~III)
+  \item \texttt{rem:antipodal-implications} (sek08c~forma~III implications)
+\end{itemize}
+
+\textbf{Cross-references zewn\k{e}trzne} (jak \texttt{prop:kappa-corrected}
+referowane z~sek09, dodatekH, dodatekO, status\_map, oraz $\sim$10 plik\'ow
+research/) \textbf{pozostaj\k{a} dzia\l{}aj\k{a}ce} przez retencj\k{e}
+labels w~tym dodatku.
+
+\textbf{Canonical replacements (kt\'orych nale\.zy u\.zywa\'c w~nowych pracach):}
+
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Deprecated} & \textbf{Canonical replacement} & \textbf{Source} \\
+\midrule
+\texttt{eq:V-selfinterference} & \texttt{prop:V-M911-canonical} & sek08a v2.0 \\
+\texttt{eq:sqrt-g-eff} ($c_0\varphi$) & $\sqrt{-g}=c_0\psi/(4-3\psi)$ & sek08a v2.0 \\
+\texttt{prop:kappa-corrected} & \texttt{prop:kappa-corrected-G0} & sek08a v2.0 \\
+\texttt{eq:metric-full-derived} & M9.1'' hiperboliczna & sek08c body refactored \\
+\texttt{thm:antipodal-uniqueness} & (n.d. — superseded by M9.1'') & sek08c body \\
+LP-4 $k=4$ & Phase 2 universal $n(\alpha)=e^2(1-\alpha/4)$ & why\_n3 PHASE2 \\
+R5 K$^2$ & Phase 2 universal & mass\_scaling\_k4 R5\_bridge \\
+\bottomrule
+\end{tabular}
+
+% ============================================================
+% End of dodatek_pivot_history.tex
+% ============================================================
