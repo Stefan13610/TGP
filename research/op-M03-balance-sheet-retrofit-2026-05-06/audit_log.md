@@ -408,6 +408,55 @@ tags:
   - **M03 cumulative status post-sesja-B:** 61% (20/33 effective scope), Phase 1+2+5draft+6 COMPLETE; Phase 3 IN_PROGRESS 20%; Phase 4 + Phase 5 full PENDING
   - LaTeX compile: 548 stron clean baseline (no regression — sesja B nie modyfikowała core)
   - **Total session 2026-05-06 (A+B):** 15 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 start = **61% M03 complete + future protection**
+
+[2026-05-06 SESSION_C_END] Claudian | Phase 3 medium-risk continuation (3 cykle)
+  - 3 cykle medium-risk audited (kontynuacja Phase 3):
+    * op-phi1-substrate-action-variational (φ.1):  DONE_STRUCTURAL ★
+        - Lagrangian L=½(∂ ln X)² unique w EFT dim-4 + scale-symmetric class
+        - 5 alt-actions FALSIFIED (∫½(∂X)², ∫½(∂X)²-V, ∫X(∂X)², ∫(∂ln X)⁴, X^a(∂X)^b)
+        - EL → linear ln X → closure (X_ref/X_obs)^(1/N_gen) z postulate sampling
+        - 6 isotopes (⁷Be, ³⁷Ar, ⁵¹Cr, ⁷¹Ga 1.13σ, ⁹⁸Mo, ¹³⁷Cs) z single L
+        - "AXIOM-LIFTED" framing = unified Lagrangian description, NIE N_gen=3 derivation
+        - "FULL CONVERGENCE 4/4" framing borderline promotional (analog ω.1)
+        - Falsifier: R_TGP RG-running observed → φ.1 falsified (FRIB 2030+)
+        - Cross-reference: ω.1 uses φ.1 jako AXIOM (consistent classification)
+    * op-nu-majorana-phase-mbb (ν.1):  DONE_NUMEROLOGICAL ⚠ CRITICAL CASCADE
+        - **4-ty członek mixing-operator family contagion** (κ.1+ι.1+μ.1+ν.1)
+        - Form A α₂₁=π/2 (chirality halving B²_lep=2 vs B²_ν=1) STRUCTURAL salvageable
+        - Form A α₃₁=9π/26 (B²-taxonomy z θ.1) STRUCTURAL salvageable
+        - **Form B α₂₁=11π/13 = π·(1-2/13)** ⚠ direct ρ̄_PMNS μ.1 NUMEROLOGICAL inheritance
+        - **Form B α₃₁=12π/7 = 2π·6/7** ⚠ direct η̄_PMNS μ.1 NUMEROLOGICAL inheritance
+        - m_ββ_A=1.584, m_ββ_B=3.249 meV inherit μ.1 angles + δ_CP cascade contagion
+        - 3.33σ Form A vs B separation = composite μ.1+ν.1, NIE specific ν.1 falsifier
+        - "8 fundamental → 0 free + 2 Majorana DERIVED dual" untenable (identical do μ.1)
+        - "FULL CONVERGENCE 7/7" framing — channels 6+7 są μ.1 input dependencies, NIE niezależne
+        - Phase 6 gate: 0/8 ☑ PASS (worst score, comparable do ι.1+μ.1)
+        - Cascade structure: κ.1 → ι.1 → μ.1 → **ν.1** (4-cycle CRITICAL family confirmed)
+    * op-sc-alpha-origin (SC.1):  DONE_STRUCTURAL ★
+        - Phase 1 H₀ rejected explicit (α_PB ≠ unit-cousin α_0, dimensional analysis)
+        - Phase 2 H_AG_PARTIAL explicit "α_PB JEST A-G-like ale a priori J_sf=2.59"
+        - Phase 3 **bidirectional falsification map**:
+            SmH₉ TGP wins 10⁵·⁸× (factor 600,000+, cleanest TGP discriminator)
+            YbH₉ A-G wins 84× (opposite direction!)
+            TmH₉ A-G wins 10⁵× (opposite direction!)
+        - 2-point fit (PrH₉+NdH₉) explicit disclosure
+        - PmH₉ STRUCTURAL only (radioactive, factor 10³ TGP direction, non-testable)
+        - 5 LIVE 2027-2030 + 1 STRUCTURAL = 6 honestly classified entries
+        - Cross-sector α₀=κ_TGP² 0.75% gap STRUCTURAL HINT (consistent z BH.1 retrofit)
+        - 15-Ln³⁺ Hund GS table z analytical inputs (Jensen & Mackintosh)
+        - TGP RMS_log 0.42 vs A-G 1.53 — dominated by NdH₉ anchor (honest acknowledged)
+  - Tracker updated (3 entries: φ.1, ν.1, SC.1)
+  - Audit_log + Statystyka updated (12+3+3=18 audited tej sesji 2026-05-06; 23 cumulative w/ pre-M03)
+  - **Pattern recognition expanded:**
+    - Mixing-operator family **EXPANDED** od 3 (κ.1+ι.1+μ.1) do **4 cykli** (κ.1+ι.1+μ.1+**ν.1**)
+    - "8 fundamental → 0 free" pattern w 2 cyklach: μ.1 + ν.1 (oba untenable post-retrofit)
+    - "FULL CONVERGENCE N/N" framing borderline w 3 cyklach: ω.1, φ.1, ν.1 (Phase 5 annotation)
+    - Honest reporting wzmocnione: 11/18 = 61% baseline, vs 42% post-sesja-A
+  - Phase 3 progress: **6/15 audited (40%)**; pozostałe 9 medium-risk PENDING
+  - **Następna sesja Phase 3:** ψ.1, σ.1, τ.1, τ.2, τ.3, υ.1, UV.3, M10/M11 cosmology, quantum-closure
+  - **M03 cumulative status post-sesja-C:** **70%** (23/33 effective scope)
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja C nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B+C):** 18 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate = **70% M03 complete + 4-cycle mixing-operator family confirmed**
 ```
 
 ## Statystyka aktualna
@@ -419,14 +468,16 @@ tags:
 | Effective scope | ~33 (po deduplikacji) |
 | DONE pre-M03 (subagent_audit + AUDIT_omega) | 5 (chi.1, UV.2, λ.1, ω.2, ω.3) |
 | DONE 2026-05-06 sesja A (Phase 1+2+ζ.1+Phase 5 draft+Phase 6) | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1 PMNS, ζ.1) |
-| **DONE 2026-05-06 sesja B (Phase 3 medium-risk start)** | **3 (BH.1, ω.1, μ.1' substrate-log)** |
-| PENDING (effective scope minus DONE) | ~13 |
-| Progress percentage | **61%** (20/33 effective scope) |
+| DONE 2026-05-06 sesja B (Phase 3 medium-risk start) | 3 (BH.1, ω.1, μ.1' substrate-log) |
+| **DONE 2026-05-06 sesja C (Phase 3 continuation)** | **3 (φ.1, ν.1, SC.1)** |
+| PENDING (effective scope minus DONE) | ~10 |
+| Progress percentage | **70%** (23/33 effective scope) |
 | **Phase 2 high-risk** | ✅ **COMPLETE** (all 11 high-risk cykli audited) |
-| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (3/15 audited; honest reporting 3/3 — wszystkie ★) |
+| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (6/15 audited 40%; **5 ★ honest** + 1 ⚠ NUMEROLOGICAL ν.1 cascade) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
 | **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
-| **Honest reporting baseline** | **8/15 audited (53%)** ★ — 5 z sesji A + 3 z sesji B (BH.1, ω.1, μ.1') |
+| **Honest reporting baseline** | **11/18 audited (61%)** ★ — empiryczna walidacja Phase 6 enforcement |
+| **Mixing-operator family** | **⚠ EXPANDED do 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade) |
 
 ## Notable patterns observed
 

@@ -71,7 +71,7 @@ Razem: **54** (z `ls research/op-*`)
 | 24 | **op-mu-pmns-phase-hardening** | HIGH | DONE_NUMEROLOGICAL | NUMEROLOGICAL | Claudian | 2026-05-06 | μ.1 — **CRITICAL DOWNGRADE** z "DERIVED FULL CASCADE, 8 free→0 free"; "drift hardening" via (1-ρ̄), K_ν/K_up, (1-λ_C·η̄) = fitting parameters z κ.1 NUMEROLOGICAL cascade; lift factors 21×/126×/51× exactly compensate ι.1 zeroth drift; δ_CP dual form (205° vs 260°) accommodating ([[retrofit_op-mu_2026-05-06.md]]) |
 | 25 | **op-mu1-minimal-substrate-log-redefinition** | MEDIUM | DONE_STRUCTURAL_NO_GO | STRUCTURAL_NO_GO | Claudian | 2026-05-06 | μ.1' (NIE μ.1!) — ★★ EXEMPLARY honest NO-GO closure per PLAN §7; reparametryzacja PASS (Phase 1 3/3); compound mechanism FAIL (Phase 2.2 0/4 candidates dla Σε=2); P2.3 cyrkularny self-acknowledged; canonical example pre-derivation GATE discipline ([[retrofit_op-mu1prime_2026-05-06.md]]) |
 | 26 | op-newton-momentum | LOW | PENDING | — | — | — | B9, M9 PPN, post-G.0 |
-| 27 | **op-nu-majorana-phase-mbb** | MEDIUM | PENDING | — | — | — | ν.1 Majorana phase |
+| 27 | **op-nu-majorana-phase-mbb** | MEDIUM | DONE_NUMEROLOGICAL | NUMEROLOGICAL | Claudian | 2026-05-06 | ν.1 — ⚠ **CRITICAL CASCADE** 4-ty członek mixing-operator family contagion (κ.1+ι.1+μ.1+**ν.1**); Form A α₂₁=π/2 + α₃₁=9π/26 STRUCTURAL salvageable (chirality halving + B²-taxonomy); Form B α₂₁=11π/13, α₃₁=12π/7 direct μ.1 NUMEROLOGICAL inheritance (ρ̄=2/13, η̄=6/7); m_ββ_A=1.584, m_ββ_B=3.249 meV inherit μ.1 angles + δ_CP cascade contagion; "8 free→0 free" untenable identical do μ.1 ([[retrofit_op-nu1_2026-05-06.md]]) |
 | 28 | **op-omega1-substrate-em-coupling** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ω.1 — ★ POSITIVE EXAMPLE; axion-like (ln X)F·F̃ unique form w EFT dim-4 + scale-symmetric class; modified EOMs sympy LOCK; **self-correction 2026-05-01** "POST-CONFIRM" → "LIVE PARTIAL" (β Planck 3.8σ hint); **mathematical correction** "B² sourcing" → "F·F̃∝E·B"; g multi-candidate honest open (NIE constructed criterion); "FULL CONVERGENCE" framing borderline promotional ([[retrofit_op-omega1_2026-05-06.md]]) |
 | 29 | **op-omega2-axion-coupling-lock** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega2 | 2026-05-04 | **Already audited** post-CRITIQUE; LIVE_PARTIAL |
 | 30 | **op-omega3-axion-decay-constant** | HIGH | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega3 | 2026-05-04 | **Already audited** post-CRITIQUE; cascade-conditional |
@@ -80,12 +80,12 @@ Razem: **54** (z `ls research/op-*`)
 | 33 | op-phase1-covariant | LOW | PENDING | — | — | — | covariant 1 |
 | 34 | op-phase2-quantum-gravity | LOW | PENDING | — | — | — | QG phase |
 | 35 | op-phase3-uv-completion | LOW | PENDING | — | — | — | UV completion phase 3 |
-| 36 | op-phi1-substrate-action-variational | MEDIUM | PENDING | — | — | — | φ.1 substrate action |
+| 36 | **op-phi1-substrate-action-variational** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | φ.1 — ★ POSITIVE EXAMPLE; Lagrangian L=½(∂ ln X)² unique w EFT dim-4 + scale-symmetric class (5 alt FALSIFIED); EL→linear ln X→closure z postulate sampling x=L/N_gen; 6 isotope predictions (⁷Be, ³⁷Ar, ⁵¹Cr, ⁷¹Ga 1.13σ POST-CONFIRMED, ⁹⁸Mo, ¹³⁷Cs); RG-stability falsifier FRIB 2030+; "AXIOM-LIFTED" framing = unified Lagrangian description (NIE N_gen=3 derivation); "FULL CONVERGENCE 4/4" framing borderline promotional (analog ω.1) ([[retrofit_op-phi1_2026-05-06.md]]) |
 | 37 | op-pi1-bb0nu-nme-isotope | LOW | PENDING | — | — | — | π.1 NME isotope |
 | 38 | op-psi1-substrate-light-acceleration | MEDIUM | PENDING | — | — | — | ψ.1 (relevant dla S05) |
 | 39 | op-quantum-closure | MEDIUM | PENDING | — | — | — | quantum closure |
 | 40 | op-rho1-71Ge-cross-section | LOW | PENDING | — | — | — | ρ.1 cross-section |
-| 41 | op-sc-alpha-origin | MEDIUM | PENDING | — | — | — | SC.1 (BCS analog) |
+| 41 | **op-sc-alpha-origin** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | SC.1 — ★ POSITIVE EXAMPLE; Phase 1 H₀ rejected explicit (α_PB ≠ unit-cousin α_0); Phase 2 H_AG_PARTIAL explicit "α_PB JEST A-G-like ale a priori J_sf=2.59"; Phase 3 **bidirectional falsification map** (SmH₉ TGP wins 10⁵·⁸×, YbH₉+TmH₉ A-G wins 84×+10⁵×); 2-point fit explicit disclosure; 5 LIVE 2027-2030 + 1 STRUCTURAL (PmH₉ radioactive); cross-sector α₀=κ_TGP² 0.75% gap STRUCTURAL HINT (consistent z BH.1) ([[retrofit_op-sc1_2026-05-06.md]]) |
 | 42 | op-sigma1-substrate-light-dispersion | MEDIUM | PENDING | — | — | — | σ.1 light dispersion |
 | 43 | op-tau1-closure-overlap-coulomb | MEDIUM | PENDING | — | — | — | τ.1 |
 | 44 | op-tau2-substrate-time-coupling | MEDIUM | PENDING | — | — | — | τ.2 |
@@ -140,12 +140,12 @@ Z M03 audit §"Konkretne podejrzane" + my analysis:
 1. op-bh-alpha-threshold (BH.1)                                   ✅ DONE 2026-05-06 (DERIVED_CONDITIONAL ★)
 2. op-cosmology-closure (M10/M11)                                  PENDING
 3. op-mu1-minimal-substrate-log-redefinition (μ.1' substrate-log)  ✅ DONE 2026-05-06 (STRUCTURAL_NO_GO ★★)
-4. op-nu-majorana-phase-mbb (ν.1)                                  PENDING — next priority
+4. op-nu-majorana-phase-mbb (ν.1)                                  ✅ DONE 2026-05-06 (NUMEROLOGICAL ⚠ cascade contagion z μ.1)
 5. op-omega1-substrate-em-coupling (ω.1)                            ✅ DONE 2026-05-06 (STRUCTURAL ★)
-6. op-phi1-substrate-action-variational (φ.1)                      PENDING — referenced jako AXIOM przez ω.1
+6. op-phi1-substrate-action-variational (φ.1)                      ✅ DONE 2026-05-06 (STRUCTURAL ★)
 7. op-psi1-substrate-light-acceleration (ψ.1)                      PENDING (relevant dla S05)
 8. op-quantum-closure                                              PENDING
-9. op-sc-alpha-origin (SC.1)                                       PENDING — wzorzec mini-cyklu, BH.1 odniesienie
+9. op-sc-alpha-origin (SC.1)                                       ✅ DONE 2026-05-06 (STRUCTURAL ★)
 10. op-sigma1-substrate-light-dispersion (σ.1)                      PENDING
 11. op-tau1-closure-overlap-coulomb (τ.1)                          PENDING
 12. op-tau2-substrate-time-coupling (τ.2)                          PENDING
@@ -154,8 +154,11 @@ Z M03 audit §"Konkretne podejrzane" + my analysis:
 15. op-uv3-phi0-renormalization (UV.3)                             PENDING
 ```
 
-**Phase 3 progress: 3/15 audited (20%)**. Wszystkie 3 ★ honest reporting
-positive examples — wzmacnia Phase 6 gate enforcement empirically.
+**Phase 3 progress: 6/15 audited (40%)**. **5 ★ honest reporting**
++ **1 ⚠ NUMEROLOGICAL** (ν.1 cascade contagion z μ.1 mixing-operator
+family — 4-ty członek confirmed). Honest reporting baseline post-Phase
+3 partial: 11/18 audited (61%) — empirical confirmation Phase 6 gate
+enforcement skuteczności.
 
 ## Low-risk queue (Phase 4)
 
@@ -181,7 +184,8 @@ positive examples — wzmacnia Phase 6 gate enforcement empirically.
 |------|-------|---------------------|---------|
 | 2026-05-06 | Sesja A: Phase 1+2+ζ.1+Phase 5 draft+Opcja C+Phase 6 | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1 PMNS, ζ.1) | Claudian |
 | 2026-05-06 | Sesja B: Phase 3 medium-risk start (3 cykle) | 3 (BH.1, ω.1, μ.1' substrate-log) — wszystkie ★ honest reporting | Claudian |
-| ... | Phase 3 continuation | 12 medium-risk PENDING | future agent |
+| 2026-05-06 | Sesja C: Phase 3 continuation (3 cykle) | 3 (φ.1, ν.1, SC.1) — 2 ★ + 1 ⚠ NUMEROLOGICAL (ν.1 cascade contagion) | Claudian |
+| ... | Phase 3 continuation | 9 medium-risk PENDING (M10/M11, ψ.1, σ.1, τ.1-3, υ.1, UV.3, quantum-closure) | future agent |
 
 ## Cross-references
 
