@@ -47,6 +47,23 @@ XS.1 PARTIALLY DERIVED (refined) → DERIVED (refined²); UV7 STRUCTURAL-DERIVED
 **α⁻¹(0)_TGP = 137 + 9/250 = 137.036** drift vs CODATA 0.000001% (within 81 ppt absolute).
 **FULL CASCADE ACTIVATION:** η.1 Wolfenstein triple PARTIALLY DERIVED → DERIVED (denoms);
 α.1 residual STRUCTURAL HINT → PARTIALLY DERIVED; H4 + A5 promoted; K-taxonomy 4/4 universal pattern (2+B²)/(2N) LOCKED.
+⚠ **M03 RETROFIT 2026-05-06 — CRITICAL NOTE for κ.1, ι.1, μ.1 (mixing-operator family):**
+Wszystkie 3 cykli reklasyfikowane do **research-track only** (NOT registry-DERIVED) po
+formal Phase 0 balance sheet retrofit:
+- **κ.1: NUMEROLOGICAL** — mixing-operator post-hoc construction; 4 sympy-exact paths
+  convergent dla każdego numeratora (11, 5); "denom-num level-pairing criterion"
+  constructed by select C0 z multi-candidate set. Analog UV.2 K_struct.
+- **ι.1: ANSATZ** — PMNS angles 3-5σ outside NuFit 5.3 1σ band; "zeroth-order gate <25%"
+  non-standard accommodating gate; mixing-operator inherited z κ.1 NUMEROLOGICAL.
+- **μ.1: NUMEROLOGICAL** — "drift hardening" via (1-ρ̄), K_ν/K_up, (1-λ_C·η̄) corrections =
+  fitting parameters z κ.1 cascade; lift factors 21×/126×/51× exactly compensate ι.1
+  zeroth drift; δ_CP dual form (205° vs 260°, 55° gap) accommodating.
+Promotion claims **CKM 4→0 free, PMNS 4→1 free, 8 free→0 free post-μ.1** są **WITHDRAWN**.
+Counter contribution -54 (3 × 18 entries → research-track).
+Estimated post-M03 effective uncontested: 856 → ~712.
+See research/op-M03-balance-sheet-retrofit-2026-05-06/ + Phase5_registry_refactor_draft.md
++ retrofit_op-{kappa,iota,mu}_2026-05-06.md.
+
 **Updated 2026-04-30 (κ.1 program END):** 499 cumulative
 (+ κ.1.Phase1 5 + κ.1.Phase2 7 + κ.1.Phase3 6 = 18).
 **Wolfenstein numerator derivation:** ρ̄ num = **11 = B²_up_num − B²_lepton** (B²-level diff);

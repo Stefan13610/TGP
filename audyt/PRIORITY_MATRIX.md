@@ -28,14 +28,14 @@ related:
 | S06 | χ.1/UV.2 cyrkularność | Strukturalny | ~~P1~~ **CLOSED substantially via CRITIQUE 2026-05-02 + AUDIT_omega2/3 2026-05-04** | F6 rollback decyzja autora; counter reconciliation | F6, M_TGP, f_a (ω.3) |
 | L01 | ρ operacyjna definicja | Ontologiczny | ~~P2~~ **EXECUTED 2026-05-04 via cykl L01** | research/op-L01-rho-stress-energy-bridge-2026-05-04 (formal `ρ ≡ -T^μ_μ/c_0²` + mapping SM 5 sektorów + photon treatment + sek08a addytywne) | L_mat, MICROSCOPE, S04 N1 closure |
 | L02 | β/γ WF FP vs faza złamana | Ontologiczny | ~~P2~~ **EXECUTED 2026-05-04** | dodatekA `app:A-beta-gamma-distinction` dodana | M3-M8, LK-1d |
-| L03 | V''(1)<0 + K(φ)=K_geo·φ⁴ | Ontologiczny | **P2** | full-spectral-analysis | wszystkie soliton ODE |
+| L03 | V''(1)<0 + K(φ)=K_geo·φ⁴ | Ontologiczny | ~~P2~~ **EXECUTED 2026-05-06 via cykl L03** | research/op-L03-spectral-stability-2026-05-06 (synteza pre-existing 70% + mode counting Z₂ + tachyon check 4 profile + S-L thm:spectral-synthesis-L03; sek08b ssec:spectral-synthesis-L03 addytywne) | wszystkie soliton ODE |
 | L04 | α=1 vs α=2, K=g² vs K=g⁴ | Ontologiczny | ~~P2~~ **RESOLVED 2026-05-04 via cykl L04** | research/op-L04-ODE-canonicalization-2026-05-04 (analytical decision: α=2 canonical via thm:D-uniqueness + Phase 2 universal mass formula + R5 ↔ Phase 2 IFF α=1) | LP-6 reframing pending |
 | L05 | k=4 vs p=5-α | Ontologiczny | **P2** | mass-formula-reconcile | LP-4, R3, masa leptonów |
 | L06 | m_X "locked" 100 MeV | Ontologiczny | **P2** | omega4-axion-mass | ω.2, ω.3, TT7-TT12 |
-| D01 | Liczbowy dryft (α_s, m_H, Φ₀, …) | Liczbowy | **P3** | C10-v2 + B3-v2 | wszystkie predykcje liczbowe |
+| D01 | Liczbowy dryft (α_s, m_H, Φ₀, …) | Liczbowy | ~~P3~~ **EXECUTED 2026-05-06 via cykl D01** | research/op-D01-anchor-lock-2026-05-06 (Lock manifest 5 anchors + Phase 2A 7 edycji + Phase 2B 4 papers_external footnotes + Phase 2C 6 deferred scripts; pre-existing B3-v2 14 lokacji α_s=0.1184/Φ_0=24.783) | wszystkie predykcje liczbowe (5/5 falsyfikatorów lockowanych) |
 | M01 | Status creep w PREDICTIONS_REGISTRY | Metodologiczny | **P3** | registry-audit | counter 856 |
 | M02 | 74394a8 forward-patch | Metodologiczny | **P3** | retrospect-rollback | counter 856, F6, M_TGP |
-| M03 | Brak balance sheet pre-74394a8 | Metodologiczny | **P4** | full-balance-sheet | 27+ cykli DERIVED |
+| M03 | Brak balance sheet pre-74394a8 | Metodologiczny | ~~P4~~ **IN_PROGRESS 56% complete (Phase 1+2+ζ.1+Phase 5 draft+Opcja C+Phase 6) 2026-05-06** | research/op-M03-balance-sheet-retrofit-2026-05-06 (Framework 8 dokumentów + 12 retrofitów + Phase5_registry_refactor_draft + Phase 6 gate enforcement w meta/) z 12 cykli audited (η.2 DERIVED_COND, ε.1 STRUCT, θ.1 SPLIT, η.1 STRUCT, κ.1/ι.1/μ.1 **CRITICAL**, δ.1/δ.2/γ.1/XS.1/ζ.1 STRUCT★) + Opcja C core annotations + **Phase 6 ABSOLUTE BINDING gate** (CALIBRATION_PROTOCOL upgrade + CALIBRATION_GATE_ENFORCEMENT new + AGENT_PROTOCOL §0 update). Future cycles MUST create Phase0_balance.md przed registry commit. Multi-session ~9-15 sesji = 3-5 tyg do completion. **Mixing-operator family κ.1+ι.1+μ.1 = single coherent NUMEROLOGICAL pattern**. **9 pre-74394a8 systemic over-claiming instances CONFIRMED**. **42% honest reporting baseline**. γ.1 resolves **D01 NEEDS N2**. Estimated post-M03: counter 856 → ~712, ratio 5.5 → 3.5-4.5 | 27+ cykli DERIVED (12 done, ~16 pending) |
 
 ## Klastry naprawcze (1 cykl = 1 problem zamknięty strukturalnie)
 
@@ -120,14 +120,22 @@ Sesja przekierowuje fokus na S06, patrz
 - **S06** + **M01** + **M02** → wszystkie dotyczą tego samego: rejestr
   ma 856 wpisów, z których część jest tautologiczna lub fitted.
   Naprawcze: rollback χ.1 F6, downgrade UV.2/ω.3, audyt status creep.
-- **D01** → wymaga jednorazowego globalnego locka i propagacji przez
-  15+ plików.
+- **D01** → **EXECUTED 2026-05-06 via cykl D01** (research/op-D01-anchor-lock-2026-05-06):
+  Lock manifest 5 anchors (α_s=0.1184, Φ_0=24.783, m_H=125.31/125.1 dwie ścieżki,
+  Σm_ν=59.01, g_0^e=0.86941). Phase 2A: 7 edycji deterministicznych (README Σm_ν,
+  sek09:1428, dodatekU:19, sek00:341, companion 520+1217). Phase 2B: 4 footnotes
+  papers_external z B3-v2 canonical lock. Phase 2C deferred: 6 tooling scripts
+  internal Φ_0=24.65 (self-consistency `K_geo·m_sp²=π·Φ_0²`). Pre-existing B3-v2
+  14 lokacji α_s + Φ_0. Razem ~25 lokacji propagated, 5/5 falsyfikatorów TGP
+  lockowanych. Outstanding (P3/P4): N1 tooling re-verification, N2 Brannen
+  formal derivation, N3 Ω_Λ tracking, N4 predictivity ratio re-derivation,
+  N5 m_H F11 vs CW reconciliation.
 
 ### Klaster D: ontologia (P2-P3)
 
 - **L01** (ρ definition) — **EXECUTED 2026-05-04** via cykl L01 (formal `ρ ≡ -T^μ_μ/c_0²` + mapping SM 5 sektorów + photon treatment + sek08a addytywne edit). Bonus: zamyka S04 N1 (formal kowariantna derywacja `L_mat`).
 - **L02** (β/γ semantyka) — **EXECUTED 2026-05-04** (renotacja w dodatekA).
-- **L03** (V'' stability) — wymaga formalnej analizy spektralnej.
+- **L03** (V'' stability) — **EXECUTED 2026-05-06 via cykl L03** (research/op-L03-spectral-stability-2026-05-06): synteza pre-existing pokrycia (~70% już w sek08b 3-tier ghost-freedom + sek08_formalizm prop:vacuum-stability + sek08a prop:vacuum-stability-G0) z 3 nowymi elementami (mode counting Z₂, tachyon check 4 profile, S-L thm:spectral-synthesis-L03). NON-BREAKING addytywne sek08b ssec:spectral-synthesis-L03 (~140 linii LaTeX). Pozostałe N1-N5 z NEEDS.md są P3/P4 (rigorous bounds, 1-loop, extreme regimes — nie blokują predykcji).
 - **L04** (α dualism) — **RESOLVED 2026-05-04** (cykl op-L04-ODE-canonicalization). α=2 jest jedyną kanoniczną formulacją; α=1 to specjalny case Phase 2 universal mass formula. Distinction `m_obs ≠ M_full` (insight użytkownika 2026-05-01) wyjaśnia pozorny dualizm.
 - **L05** (mass exponent) — **częściowo zaadresowane** przez L04: k=4 (LP-4) i p=3 (R3 α=2) oba są specjalnymi przypadkami Phase 2 dwuwykładnikowej formuły `m=c·A²·g₀^[e²(1−α/4)]`. Pełna formal derivation k(α, d) generalization wciąż OPEN.
 - **L06** (m_X) — czeka na ω.4 cycle.

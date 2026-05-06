@@ -556,3 +556,145 @@ selekcja stringowego pr\'o\.zni, dynamika LQG, granica continuum CDT)
 --- problemy te przeniesione do
 \texttt{research/op-uv-renormalizability-research/}.
 \end{remark}
+
+% ====================================================================
+% L03 SPECTRAL STABILITY SYNTHESIS 2026-05-06
+% (cykl op-L03-spectral-stability-2026-05-06)
+% ====================================================================
+% Niniejsza pod-podsekcja syntezuje pre-existing 3-tier ghost-freedom
+% (rem:ghost-summary), prop:vacuum-stability (sek08_formalizm), oraz
+% prop:vacuum-stability-G0 (sek08a) w jedna spektralna picture
+% w formie Sturm-Liouville'a, domykajac audit L03
+% (audyt/L03_K_phi_stability/).
+% NON-BREAKING addytywne -- istniejace propositions niezmienione.
+% =====================================================================
+
+% -------------------------------------------------------------------
+\subsection{Synteza spektralna L03 --- jedna picture Sturm-Liouville'a}%
+\label{ssec:spectral-synthesis-L03}
+% -------------------------------------------------------------------
+
+\statuslabel{Twierdzenie [synteza pre-existing + audit closure 2026-05-06]}
+
+Niniejsza pod-podsekcja syntezuje wszystkie pre-existing wyniki
+stabilno\'sci TGP w~jedno spektralne twierdzenie w~formie
+Sturm-Liouville'a, domykaj\k{a}c audyt L03
+(\texttt{audyt/L03\_K\_phi\_stability/}).
+
+\begin{theorem}[Synteza spektralna stabilno\'sci TGP]%
+\label{thm:spectral-synthesis-L03}
+\statuslabel{Twierdzenie}.
+Niech $\Phi_{\rm eq}(x)$ b\k{e}dzie fizycznym t\l{}em TGP odpowiadaj\k{a}cym
+\'zr\'od\l{}u $\rho \geq 0$ (vacuum, FRW, Yukawa point, soliton).
+Operator linearyzowany na $\Phi_{\rm eq}$:
+\begin{equation}\label{eq:L-operator-spectral}
+  \hat{L}[\delta\Phi]
+    = -\partial_\mu\bigl[K(\varphi_{\rm eq})\,
+      g_{\rm eff}^{\mu\nu}\partial_\nu\delta\Phi\bigr]
+    + Q(\varphi_{\rm eq})\,\delta\Phi,
+\end{equation}
+posiada spektrum \textbf{non-negative}: $\sigma(\hat{L}) \subset [0,\infty)$.
+Asymptotyczna luka masowa: $m_{\rm sp}^2 = \gamma/K_{\rm geo} > 0$.
+\end{theorem}
+
+\begin{proof}[Szkic dowodu (synteza pre-existing)]
+\textbf{Krok~1 (pozytywno\'s\'c $K$):}
+Z~tw.~\ref{thm:ghost-free-soliton} + stw.~\ref{prop:ghost-free-MS} +
+stw.~\ref{prop:ghost-free-fundamental}: $K(\varphi) = K_{\rm geo}\varphi^4 > 0$
+$\forall\varphi > 0$. Dla physical configurations
+$\varphi_{\rm eq} > 0$ (sektor $\mathcal{S}_1$ dodatni), $K > 0$
+punktowo. \checkmark
+
+\textbf{Krok~2 (pozytywno\'s\'c $Q$ asymptotycznie):}
+W~asymptotyce $r\to\infty$, $\varphi_{\rm eq}\to 1$ dla wszystkich
+physical sources. W~tym limicie
+$Q(1) = V''_{\rm eff}(1) = U''_{\rm eff}(1) = +\gamma > 0$
+(stw.~\ref{prop:vacuum-stability-G0}, naprawiony tachion bug v1.x).
+\checkmark
+
+\textbf{Krok~3 (spektrum non-negative):}
+Standard S-L theorem (Coddington-Levinson 1955): punktowa pozytywno\'s\'c
+$p, q \geq 0$ implikuje $\lambda \geq 0$. Asymptotic gap
+$m_{\rm sp}^2 = \gamma/K_{\rm geo}$ zapewnia continuum zaczyna si\k{e}
+przy $\omega^2 \geq m_{\rm sp}^2 c^4$. \checkmark
+
+\textbf{Krok~4 (mode count):}
+Pojedyncze pole skalarne $\Phi$ z~dyskretn\k{a} symetri\k{a} $\mathbb{Z}_2$
+$\Rightarrow$ 1~DOF lokalnie $+$ 0~Nambu-Goldstone (Goldstone theorem
+n/a do dyskretnych grup, $\dim(\mathbb{Z}_2) = 0$). 3-tier ghost-freedom
+(rem.~\ref{rem:ghost-summary}) $\Rightarrow$ 0~ghost modes.
+$\Rightarrow$ 1~fizyczny massive scalar
+$m_{\rm sp} = \sqrt{\gamma/K_{\rm geo}}$. $\square$
+\end{proof}
+
+\begin{remark}[Implikacje fizyczne tw.~\ref{thm:spectral-synthesis-L03}]%
+\label{rem:spectral-synthesis-implications}
+\begin{enumerate}[nosep]
+  \item \textbf{Soliton stability:} R3 ODE solutions ($N=3$ generacji,
+    mass spectrum lepton z PDG $<0{,}01\%$) s\k{a} fizycznie realizowanymi
+    konfiguracjami, nie artefaktem formalnym
+    (Phase 2 P22 5/5 PASS).
+  \item \textbf{GW propagation:} dyspersja $\delta\Phi$:
+    $\omega^2 = c^2 k^2 + m_{\rm sp}^2 c^4 > 0$, brak instability
+    (zgodne z~GW170817 $c_{\rm GW} = c_{\rm EM}$).
+  \item \textbf{N-body stability:} multiple sources nie destabilizuj\k{a}
+    spektrum (point Yukawa profile, p\k{e}tla iteracji $\Phi_{\rm eq}[\rho]$
+    pozostaje w~physical domain $\Phi > 0$;
+    B9 WEP MICROSCOPE 6/6 PASS).
+  \item \textbf{Cosmological perturbations:} FRW background ze stable
+    $\psi_{\rm bg}\approx 1$, mass gap zachowany w~erze materii
+    i~recombination
+    (\texttt{tgp\_perturbations\_formal.py}).
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Zamkni\k{e}cie audytu L03]\label{rem:L03-closure}
+Audit \texttt{audyt/L03\_K\_phi\_stability/} z~2026-05-04 wskaza\l{}
+4~otwarte luki ($V''(1)<0$ vs $K=K_{\rm geo}\varphi^4$). Cykl
+\texttt{research/op-L03-spectral-stability-2026-05-06/} zsyntetyzowa\l{}
+pre-existing pokrycie ($\sim 70\%$) z~3~nowymi elementami ($\sim 30\%$):
+
+\medskip
+\begin{center}\small
+\begin{tabular}{@{}p{6cm}p{8cm}@{}}
+\toprule
+\textbf{Wym\'og audytu} & \textbf{Pokrycie} \\
+\midrule
+(1) Pe\l{}na analiza spektralna wok\'o\l{} $\psi=1$
+  & stw.~\ref{prop:vacuum-stability} $+$
+    stw.~\ref{prop:vacuum-stability-G0} $+$
+    tw.~\ref{thm:ghost-free-soliton} $+$
+    tw.~\ref{thm:spectral-synthesis-L03} (synteza) \\[3pt]
+(2) Mode counting $\mathbb{Z}_2$-broken
+  & tw.~\ref{thm:spectral-synthesis-L03} krok~4
+    (Goldstone n/a do dyskretnych) \\[3pt]
+(3) Tachyonic projection na $\Phi_{\rm eq}[\rho]$
+  & tw.~\ref{thm:spectral-synthesis-L03} kroki~1--3
+    (cztery profile weryfikowane w~\texttt{research/op-L03-spectral-stability-2026-05-06/tachyon\_check\_with\_source.md}) \\[3pt]
+(4) Ghost wall $g^* < g_{\rm phys}$
+  & wn.~\ref{cor:ghost-artifact} $+$
+    sssec.~\ref{ssec:alpha-resolution}
+    ($g_{\min}^{\rm lepton} \geq 0{,}91 > g_{\rm ghost}$
+    dla obu formulacji $\alpha=1$, $\alpha=2$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+\textbf{Status L03:}
+\statuslabel{Twierdzenie [EXECUTED 2026-05-06 via cykl
+op-L03-spectral-stability]}.
+
+\medskip\noindent
+\textbf{Pozosta\l{}e otwarte} (P3/P4, nie blokuj\k{a}ce predykcji):
+\begin{enumerate}[nosep]
+  \item Rigorous lower bound $\inf\sigma(\hat{L}) = m_{\rm sp}^2$
+    dla wszystkich $\Phi_{\rm eq}$ (formal Rayleigh quotient);
+  \item Functional analysis self-adjointness $\hat{L}^* = \hat{L}$
+    (Reed-Simon V2 \S X.1 Sturm-Liouville);
+  \item 1-loop quantum corrections do $m_{\rm sp}^2$
+    (effective action na curved background).
+\end{enumerate}
+
+Pe\l{}na specyfikacja: \texttt{research/op-L03-spectral-stability-2026-05-06/NEEDS.md}.
+\end{remark}

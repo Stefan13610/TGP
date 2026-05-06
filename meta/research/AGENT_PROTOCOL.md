@@ -43,6 +43,17 @@ tags:
    [[MIGRATION_LOG.md]] i akceptacji człowieka.
 5. **NIGDY** nie pomijaj zatrutych folderów z incydentu `74394a8`
    (lista poniżej, § 6) — automatycznie stosuj klauzulę kwarantanny.
+6. **⚠ NIGDY** (post-2026-05-06 Phase 6 enforcement): nie commituj nowego
+   cyklu do `PREDICTIONS_REGISTRY.md` lub `INDEX.md` master ledger bez
+   completed `Phase0_balance.md` w folderze cyklu. Patrz
+   [[../CALIBRATION_GATE_ENFORCEMENT.md]] dla mandatory pre-commit gate.
+   - Template: [[../../research/op-M03-balance-sheet-retrofit-2026-05-06/template_Phase0_balance.md]]
+   - **Brak Phase0_balance.md → AUTOMATIC REJECTION**
+   - **6 mandatory sections:** External inputs, Structural axioms,
+     Derived outputs, Tautology test, Falsifiability test, Independent-path
+     cross-validation
+   - Dla M03 retrofit (Phase 3-4 future): patrz
+     [[../../research/op-M03-balance-sheet-retrofit-2026-05-06/resume_protocol.md]]
 
 ---
 

@@ -1,33 +1,90 @@
 ---
 title: "CALIBRATION_PROTOCOL — anti-overclaim discipline for new cycles"
 date: 2026-05-04
+last_updated: 2026-05-06
 type: protocol
-status: BINDING for new cycles claiming "DERIVED" or "FULL CONVERGENCE"
+status: ABSOLUTE BINDING for ALL new cycles claiming any epistemic class (post-2026-05-06)
 parent: "[[AUDYT_TGP_2026-05-01.md]]"
 related:
   - "[[SUBAGENT_AUDIT_74394a8_2026-05-02.md]]"
   - "[[research/AGENT_PROTOCOL.md]]"
   - "[[PLAN_RESEARCH_WORKFLOW_v1.md]]"
+  - "[[CALIBRATION_GATE_ENFORCEMENT.md]]"
+  - "[[../research/op-M03-balance-sheet-retrofit-2026-05-06/]]"
 tags:
   - meta
   - calibration
   - anti-overclaim
   - protocol
   - audit-gate
+  - phase6-enforced
 ---
 
 # CALIBRATION_PROTOCOL — anti-overclaim discipline
 
 > **Cel:** zapobiec systemic over-claiming wzorca λ.1 / χ.1 / UV.2 (per
-> [[SUBAGENT_AUDIT_74394a8_2026-05-02.md]] §3).
+> [[SUBAGENT_AUDIT_74394a8_2026-05-02.md]] §3) **i wzorca mixing-operator
+> family κ.1 / ι.1 / μ.1** (per M03 retrofit 2026-05-06).
 >
-> **Trigger:** każdy nowy cykl claiming `DERIVED` (FULL/PARTIAL) lub
-> `FULL CONVERGENCE`/`KEYSTONE` musi przejść 2-page balance sheet review
-> **przed** committed do PREDICTIONS_REGISTRY/INDEX master ledger.
+> **Trigger:** każdy nowy cykl claiming jakąkolwiek klasę epistemiczną
+> (`DERIVED FULL/CONDITIONAL`, `STRUCTURAL`, `ANSATZ`, `NUMEROLOGICAL`,
+> `FULL CONVERGENCE`, `KEYSTONE`) musi przejść 2-page balance sheet
+> review **przed** committed do PREDICTIONS_REGISTRY/INDEX master ledger.
 >
-> **Status:** BINDING for new cycles 2026-05-04+. Previous cycles
-> (greckie litery ε…ψ, M9, M10, M11, closure_2026-04-26) były audited
-> retroactively in AUDYT_TGP_2026-05-01.
+> **Status:** **ABSOLUTE BINDING for ALL new cycles 2026-05-06+** (Phase 6
+> enforcement). Previous cycles (greckie litery ε…ψ, M9, M10, M11,
+> closure_2026-04-26) były audited retroactively in
+> [[AUDYT_TGP_2026-05-01.md]] + [[../research/op-M03-balance-sheet-retrofit-2026-05-06/]]
+> M03 retrofit framework.
+
+## ⚠ Phase 6 enforcement update 2026-05-06
+
+Po Phase 1-5 M03 retrofit framework (12 cykli audited, 9 systemic
+over-claiming instances confirmed, 5 honest reporting positive examples),
+CALIBRATION_PROTOCOL upgrade do **ABSOLUTE BINDING**:
+
+### Rules (post-Phase 6)
+
+1. **NIE może być nowy DERIVED claim bez `Phase0_balance.md` w folderze cyklu.**
+   - File MUST exist PRZED commit do master ledger
+   - Template: [[../research/op-M03-balance-sheet-retrofit-2026-05-06/template_Phase0_balance.md]]
+2. **NIE może być promocja statusu (e.g., PARTIALLY DERIVED → DERIVED) bez explicit cascade audit.**
+   - Promotion claims wymagają audit każdego prerequisite cyklu
+   - Cascade-aware classification mandatory
+3. **NIE może być "constructed criterion" by select winner z multi-candidate set.**
+   - Criterion MUST be pre-derived w osobnym axiomatic cycle
+   - Mixing-operator post-hoc construction (κ.1 wzorzec) **AUTOMATIC FAIL**
+4. **NIE może być "accommodating gate" niestandardowy.**
+   - Default falsifiability test: 1σ vs experimental band
+   - Custom gate (e.g., "20%" or "25%") wymaga **explicit justification**
+   - Brak justification = AUTOMATIC NUMEROLOGICAL classification
+5. **NIE może być sympy-rationalization claim "DERIVED" without first-principles.**
+   - "X = p/q sympy-exact" wymaga sprawdzenia: forced by axioms vs sympy fitted?
+   - Sympy fitting (post-numerical) ≠ first-principles derivation
+
+→ Patrz [[CALIBRATION_GATE_ENFORCEMENT.md]] dla pełnej operational guide.
+
+### Pattern recognition z M03 (negative examples — automatic FAIL)
+
+| Pattern | Examples | M03 verdict |
+|---------|----------|-------------|
+| Multi-candidate fit z minimum drift selection | UV.2 K_struct, θ.1 K_down | NUMEROLOGICAL |
+| Constructed criterion by select C0 | κ.1 mixing-operator denom-num pairing | NUMEROLOGICAL |
+| 3-5σ tensions + accommodating "zeroth-order gate" | ι.1 PMNS angles | ANSATZ |
+| Drift hardening via fitted corrections z NUMEROLOGICAL source | μ.1 lift factors | NUMEROLOGICAL |
+| Anchor borrowed from external (NIE first-principles) | ε.1 137 anchor | STRUCTURAL (limit) |
+| Algebraic re-arrangement masquerading as second path | ε.1 F4 chain | NOT independent path |
+| Definitional tautology (output kasuje się definicyjnie) | χ.1 G_N | TAUTOLOGY |
+
+### Pattern recognition z M03 (positive examples — pass gate)
+
+| Pattern | Examples | M03 verdict |
+|---------|----------|-------------|
+| Honest "PARTIAL POSITIVE" + acknowledged limitations | δ.1, δ.2 | STRUCTURAL ✓ |
+| Multi-anchor reality acknowledgment | γ.1 (Ω_Λ↔α_s trade-off) | STRUCTURAL ✓ |
+| Honest cascade conditionality | η.2 (conditional na ε.1+θ.1) | DERIVED_CONDITIONAL ✓ |
+| Honest "PARTIALLY DERIVED" + explicit zeroth-order gate | ζ.1, XS.1 | STRUCTURAL ✓ |
+| 2 independent paths z sympy-exact equivalence | η.2 Form A ≡ Form B | DERIVED_CONDITIONAL ✓ |
 
 ---
 
