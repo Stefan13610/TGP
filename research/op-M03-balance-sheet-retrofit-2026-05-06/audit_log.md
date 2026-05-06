@@ -677,6 +677,55 @@ tags:
   - **M03 cumulative status post-sesja-G:** Phase 1-3 100% COMPLETE; Phase 4 23%; total ~78% (35/45)
   - LaTeX compile: 548 stron clean baseline (no regression — sesja G nie modyfikowała core)
   - **Total session 2026-05-06 (A+B+C+D+E+F+G):** 30 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 COMPLETE + Phase 4 23% = **23/30 honest baseline (77%) + 2 SPLIT pattern + 4 audit-driven cluster + cross-cycle ρ.1↔τ.1 anchor support**
+
+[2026-05-06 SESSION_H_END] Claudian | Phase 4 continuation (3 cykle, 1 NULL closure exemplary)
+  - 3 cykle low-risk audited (kontynuacja Phase 4):
+    * op-alpha-fine-structure (α.1):  DONE_STRUCTURAL ★ PARTIALLY DERIVED HONEST
+        - **Author explicit "PARTIALLY DERIVED" classification** preserved
+        - 137 prime z F4 chain DERIVED z ε.1 inheritance (M03 retrofit Pattern 2)
+        - ⚠ Cascade flag: 137 ε.1 borrowed CODATA, NIE first-principles
+        - Residual 0.036 STRUCTURAL HINT explicit research-track η.2/β.1 future
+        - 9/250 fit drift 0.0025% — author "soft denom no cross-sector TGP link" honest
+        - Cross-sector lock ψ_ph=160/137 ε.1 photon-ring + α_QED prime
+        - **Wyler 9π³/16 (drift 85.7%) + Gilson cos·tan (drift 823%) FALSIFIED** at 0.5% threshold
+        - 6 LIVE predictions A1-A6 + 4-channel convergence 3/4 LIVE + 1 research-track
+        - Better framing niż czysty "FULL CONVERGENCE" (research-track explicit)
+    * op-omicron1-sigmamnu-cosmo (ο.1):  DONE_STRUCTURAL ★ COSMOLOGICAL ANCHOR
+        - Σm_ν = 59.01 meV Form A LOCKED via B4 bisection anchor (D01 Z1)
+        - Phenomenological calibration NIE first-principles (anchor-locked cycle)
+        - DESI DR2 2024-2025 PASS (Form A 59.01 vs <72 meV) POST-CONFIRMED
+        - **CMB-S4 2030+ 5.78σ DECISIVE** future falsifier (substantive)
+        - 7-channel: 1 POST + 6 LIVE 2025-2030+ (DESI DR3, SO, CMB-S4, KATRIN, Euclid+Roman, LiteBIRD)
+        - 6 alt-fits FALSIFIED w Phase 2 substantive
+        - KATRIN orthogonal null (m_β=8.66 meV << 0.2 eV sensitivity)
+        - SPLIT verdict pattern: Σm_ν Form A clean B4 anchor + m_β formula uses μ.1 PMNS partial cascade
+        - KATRIN sensitivity insensitive do exact m_β value → pragmatic OK dla cascade flag
+    * op-omicron2-phi-mean-shift-cosmo (ο.2):  DONE_STRUCTURAL_NO_GO ★★ EXEMPLARY MULTI-STAGE NULL CLOSURE
+        - **Multi-stage rapid self-correction** within ~1 day (Stage 0 → Stage 1)
+        - **Stage 0 (early afternoon 2026-05-03):** initial conclusion 107% Hubble tension match
+          (formula |dH/H| = 0.5·|dL/L|·Ω_Λ = 8.93% — LDE-style WRONG)
+        - **Stage 1 (evening 2026-05-03):** D_A integration proper EDE physics
+          (5/5 ICs converge na dH/H ~ 0.6% — 14× za mało vs required 8.37%)
+        - **NULL VERDICT** explicit — TGP NIE rozwiązuje Hubble tension via Φ_0(t) mechanism
+        - **Stages 2-4 ABANDONED** explicit (premise nullified)
+        - **publication_status: ABANDONED** explicit — TGP NIE pretends to solve Hubble tension
+        - M10.5 multi-cycle reinforcement (B_ψ/H_0² ~ 10⁻⁸ gap, same conclusion z różnymi tools)
+        - Direction ALL EDE-like ✓ structurally OK, magnitude 14× za mało (honest separation)
+        - 5/5 ICs all NULL — substantive multi-IC verification
+        - Phase 6 gate 8/8 ☑ PASS strong dla NULL closure discipline
+        - **2-nd NULL closure example w M03** (analog μ.1' pre-implementation NO-GO)
+  - Tracker updated (3 entries: α.1, ο.1, ο.2) + Phase 4 progress 6/13 (46%)
+  - Audit_log + Statystyka updated (12+3+3+3+3+3+3+3=33 audited tej sesji 2026-05-06; 38 cumulative w/ pre-M03)
+  - **Pattern recognition expanded:**
+    - **2 NULL closure pattern**: μ.1' (pre-implementation PLAN §7) + ο.2 (post-implementation Stage 0 → 1 ABANDONED)
+    - **Multi-stage rapid self-correction discipline cluster (4 cykli)**: ψ.1 (3-version), ο.2 (2-stage 1-day), μ.1' (pre-imp), τ.3 (A5 patch)
+    - **3 SPLIT verdict pattern post-Phase-4**: ν.1 (Form A/B), π.1 (1/A^{1/3}/m_ββ), ο.1 (Σm_ν/m_β)
+    - Honest reporting baseline 26/33 = 79% (wzmocnione od 77% post-sesja-G)
+    - Phase 4 progress: 6/13 audited (46%); 6 ★ honest wszystkie (z czego 2 ★★ B9 audit-driven + ο.2 ABANDONED)
+  - **Następna sesja Phase 4:** EHT (op-eht, op-eht-A), phase1-3 covariant/QG/UV, op-uv-as-ngfp, op-uv-renormalizability-research
+  - **M03 cumulative status post-sesja-H:** Phase 1-3 100% COMPLETE; Phase 4 46%; total ~84% (38/45)
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja H nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B+C+D+E+F+G+H):** 33 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 COMPLETE + Phase 4 46% = **26/33 honest baseline (79%) + 3 SPLIT pattern + 2 NULL closure + 4 multi-stage self-correction cluster + cross-cycle anchor support**
 ```
 
 ## Statystyka aktualna
@@ -693,16 +742,18 @@ tags:
 | DONE 2026-05-06 sesja D (Phase 3 continuation) | 3 (υ.1, τ.1, ψ.1) |
 | DONE 2026-05-06 sesja E (Phase 3 continuation) | 3 (σ.1, τ.2, τ.3) |
 | DONE 2026-05-06 sesja F (Phase 3 FINAL) | 3 (UV.3, M10, M11) → Phase 3 COMPLETE |
-| **DONE 2026-05-06 sesja G (Phase 4 start)** | **3 (π.1, ρ.1, B9 newton-momentum)** |
-| PENDING (effective scope minus DONE) | ~10 (Phase 4 low-risk remaining) |
+| DONE 2026-05-06 sesja G (Phase 4 start) | 3 (π.1, ρ.1, B9 newton-momentum) |
+| **DONE 2026-05-06 sesja H (Phase 4 continuation)** | **3 (α.1, ο.1, ο.2)** |
+| PENDING (effective scope minus DONE) | ~7 (Phase 4 low-risk remaining) |
 | Progress percentage Phase 1-3 | **100% COMPLETE** (32/32 scope = high+medium+aggregate audited) |
-| Progress percentage M03 total | **35/45 audited (~78% w pełnym scope)** |
+| Progress percentage M03 total | **38/45 audited (~84% w pełnym scope)** |
 | **Phase 2 high-risk** | ✅ **COMPLETE** (11/11 cykli audited) |
 | **Phase 3 medium-risk** | ✅ **COMPLETE** (15/15 cykli audited) |
-| **Phase 4 low-risk** | 🔄 **IN_PROGRESS** (3/13 audited 23%; **3 ★ honest** wszystkie) |
+| **Phase 4 low-risk** | 🔄 **IN_PROGRESS** (6/13 audited 46%; **6 ★ honest** wszystkie, w tym ★★ B9 audit-driven + ★★ ο.2 ABANDONED) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
 | **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
-| **Honest reporting baseline** | **23/30 audited (77%)** ★ — najwyższa empiryczna walidacja Phase 6 (post-sesja-G) |
+| **Honest reporting baseline** | **26/33 audited (79%)** ★ — najwyższa empiryczna walidacja Phase 6 (post-sesja-H) |
+| **NULL closure pattern** | **2 cykli**: μ.1' (Pre-implementation NO-GO PLAN §7) + ο.2 (Post-implementation Stage 0 → Stage 1 ABANDONED) |
 | **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — π.1 SPLIT inherits dla m_ββ) |
 | **Self-correction discipline cluster 2026-05-01** | **5 cykli** (ω.1, σ.1, ψ.1 3-version, τ.3 A5 patch, τ.2 no-patch consistent) |
 | **Corrective upgrade pattern (DEPRECATES predecessor)** | **2 cykli**: ψ.1 (replaces v1) + UV.3 (DEPRECATES UV.2 K_struct TAUTOLOGY) |

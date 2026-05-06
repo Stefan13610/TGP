@@ -50,7 +50,7 @@ Razem: **54** (z `ls research/op-*`)
 | 3 | op-L01-rho-stress-energy-bridge-2026-05-04 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | post-binding, audit-resolution |
 | 4 | op-L03-spectral-stability-2026-05-06 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | post-binding, audit-resolution |
 | 5 | op-L04-ODE-canonicalization-2026-05-04 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | post-binding, audit-resolution |
-| 6 | op-alpha-fine-structure | LOW | PENDING | — | — | — | η.x family — koincydencja `9/250` |
+| 6 | **op-alpha-fine-structure** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | α.1 — ★ POSITIVE EXAMPLE z explicit "PARTIALLY DERIVED" classification; 137 prime z F4 chain DERIVED z ε.1 inheritance (M03 retrofit Pattern 2: 137 borrowed CODATA); residual 0.036 STRUCTURAL HINT research-track η.2/β.1 (9/250 fit "soft denom no cross-sector TGP link" honest); cross-sector ψ_ph=160/137 ε.1+α_QED lock; Wyler 9π³/16 (drift 85.7%) + Gilson cos·tan (drift 823%) FALSIFIED at 0.5%; 6 LIVE A1-A6 + 4-channel 3/4 LIVE + 1 research-track ([[retrofit_op-alpha_2026-05-06.md]]) |
 | 7 | **op-bh-alpha-threshold** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | BH.1 — ★ POSITIVE EXAMPLE; ψ_th=1 + n=2 DERIVED z 3 niezależnych constraints (Z₂ + WEP-MICR-2 + non-overkill); α₀≈4.02 PARTIALLY DERIVED (ξ=1 sketch); √α₀=κ_TGP STRUCTURAL HINT cross-sector (0.75% gap); falsifier MICROSCOPE-2 η > 10⁻¹⁸ ([[retrofit_op-bh-alpha_2026-05-06.md]]) |
 | 8 | **op-chi1-newton-constant-derivation** | HIGH | DONE_TAUTOLOGY | TAUTOLOGY | SUBAGENT_AUDIT | 2026-05-02 | **Reference negative** — already audited; CRITIQUE_circular_anchor exists |
 | 9 | **op-cosmology-closure** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | M10 — ★ POSITIVE EXAMPLE multi-subcycle aggregate (42/42 verifications, 6 sub-cykli + R-synthesis); 6 foundational identities sympy LOCKED; β~H_0² scale propagation 3-cycle match; **HONEST SCOPE** statement (7 IS + 7 IS NOT items); H_0/S_8 gap **7.2 orders** explicit acknowledged (TGP NIE rozwiązuje); drift status discipline (de2/gs66 GREEN, ex261 YELLOW preserved, gs41 SUPERSEDED, ct3 GREEN-honest, ct7 GREEN); 10 falsifiable predictions matrix; 11/11 vs closure_2026-04-26 + M9 ZERO conflicts ([[retrofit_op-cosmology1011_2026-05-06.md]]) |
@@ -75,8 +75,8 @@ Razem: **54** (z `ls research/op-*`)
 | 28 | **op-omega1-substrate-em-coupling** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ω.1 — ★ POSITIVE EXAMPLE; axion-like (ln X)F·F̃ unique form w EFT dim-4 + scale-symmetric class; modified EOMs sympy LOCK; **self-correction 2026-05-01** "POST-CONFIRM" → "LIVE PARTIAL" (β Planck 3.8σ hint); **mathematical correction** "B² sourcing" → "F·F̃∝E·B"; g multi-candidate honest open (NIE constructed criterion); "FULL CONVERGENCE" framing borderline promotional ([[retrofit_op-omega1_2026-05-06.md]]) |
 | 29 | **op-omega2-axion-coupling-lock** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega2 | 2026-05-04 | **Already audited** post-CRITIQUE; LIVE_PARTIAL |
 | 30 | **op-omega3-axion-decay-constant** | HIGH | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega3 | 2026-05-04 | **Already audited** post-CRITIQUE; cascade-conditional |
-| 31 | op-omicron1-sigmamnu-cosmo | LOW | PENDING | — | — | — | ο.1 Σm_ν (B4 anchor) |
-| 32 | op-omicron2-phi-mean-shift-cosmo | LOW | PENDING | — | — | — | ο.2 cosmo |
+| 31 | **op-omicron1-sigmamnu-cosmo** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ο.1 — ★ POSITIVE EXAMPLE; Σm_ν=59.01 meV Form A LOCKED via B4 bisection anchor (D01 Z1, phenomenological calibration NIE first-principles); DESI DR2 2024-2025 PASS (POST-CONFIRMED); 7-channel falsification (1 POST + 6 LIVE 2025-2030+); **CMB-S4 2030+ 5.78σ DECISIVE** future falsifier; 6 alt-fits FALSIFIED w Phase 2; KATRIN 2030+ orthogonal null (m_β=8.66 meV << 0.2 eV sensitivity); SPLIT verdict (Σm_ν Form A clean B4 anchor + m_β formula uses μ.1 PMNS partial cascade) ([[retrofit_op-omicron1_2026-05-06.md]]) |
+| 32 | **op-omicron2-phi-mean-shift-cosmo** | LOW | DONE_STRUCTURAL_NO_GO | STRUCTURAL_NO_GO | Claudian | 2026-05-06 | ο.2 — ★★ **EXEMPLARY MULTI-STAGE NULL CLOSURE** (analog μ.1', ψ.1); rapid Stage 0 → Stage 1 self-correction within ~1 day (Stage 0 wrong magnitude formula 8.93% "107% Hubble tension match" → Stage 1 D_A integration 0.6% NULL VERDICT 14× za mało); **publication_status: ABANDONED explicit** — TGP NIE rozwiązuje Hubble tension via Φ_0(t) mechanism; 5/5 ICs converge na NULL; M10.5 multi-cycle reinforcement (B_ψ/H_0² ~ 10⁻⁸ gap); Stages 2-4 ABANDONED ([[retrofit_op-omicron2_2026-05-06.md]]) |
 | 33 | op-phase1-covariant | LOW | PENDING | — | — | — | covariant 1 |
 | 34 | op-phase2-quantum-gravity | LOW | PENDING | — | — | — | QG phase |
 | 35 | op-phase3-uv-completion | LOW | PENDING | — | — | — | UV completion phase 3 |
@@ -185,12 +185,12 @@ v1)** — wzór spontaneous adoption CALIBRATION_PROTOCOL §4 PRE-binding
 ## Low-risk queue (Phase 4)
 
 ```
-1. op-alpha-fine-structure (η.x)                            PENDING
+1. op-alpha-fine-structure (α.1)                            ✅ DONE 2026-05-06 (STRUCTURAL ★ PARTIALLY DERIVED honest)
 2. op-eht                                                  PENDING
 3. op-eht-A                                                 PENDING
 4. op-newton-momentum (B9)                                  ✅ DONE 2026-05-06 (STRUCTURAL ★★ audit-driven, S04 closure)
-5. op-omicron1-sigmamnu-cosmo (ο.1)                         PENDING
-6. op-omicron2-phi-mean-shift-cosmo (ο.2)                   PENDING
+5. op-omicron1-sigmamnu-cosmo (ο.1)                         ✅ DONE 2026-05-06 (STRUCTURAL ★ Form A B4 anchor, CMB-S4 5.78σ DECISIVE)
+6. op-omicron2-phi-mean-shift-cosmo (ο.2)                   ✅ DONE 2026-05-06 (STRUCTURAL_NO_GO ★★ ABANDONED publication, multi-stage NULL)
 7. op-phase1-covariant                                       PENDING
 8. op-phase2-quantum-gravity                                 PENDING
 9. op-phase3-uv-completion                                   PENDING
