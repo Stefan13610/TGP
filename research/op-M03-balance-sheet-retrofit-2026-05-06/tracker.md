@@ -51,7 +51,7 @@ Razem: **54** (z `ls research/op-*`)
 | 4 | op-L03-spectral-stability-2026-05-06 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | post-binding, audit-resolution |
 | 5 | op-L04-ODE-canonicalization-2026-05-04 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | post-binding, audit-resolution |
 | 6 | op-alpha-fine-structure | LOW | PENDING | — | — | — | η.x family — koincydencja `9/250` |
-| 7 | op-bh-alpha-threshold | MEDIUM | PENDING | — | — | — | BH.1 cascade |
+| 7 | **op-bh-alpha-threshold** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | BH.1 — ★ POSITIVE EXAMPLE; ψ_th=1 + n=2 DERIVED z 3 niezależnych constraints (Z₂ + WEP-MICR-2 + non-overkill); α₀≈4.02 PARTIALLY DERIVED (ξ=1 sketch); √α₀=κ_TGP STRUCTURAL HINT cross-sector (0.75% gap); falsifier MICROSCOPE-2 η > 10⁻¹⁸ ([[retrofit_op-bh-alpha_2026-05-06.md]]) |
 | 8 | **op-chi1-newton-constant-derivation** | HIGH | DONE_TAUTOLOGY | TAUTOLOGY | SUBAGENT_AUDIT | 2026-05-02 | **Reference negative** — already audited; CRITIQUE_circular_anchor exists |
 | 9 | op-cosmology-closure | MEDIUM | PENDING | — | — | — | M10/M11 |
 | 10 | op-cross-sector-charge | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | XS.1 (NIE ζ.1!) — POSITIVE; cross-sector α₀ ↔ κ_TGP identity z F1 single-Φ axiom; M_BH ≈ M_SC w 1% precision; honest "PARTIALLY DERIVED". **NOTE:** real ζ.1 (z mass-spectrum/PMNS) jest osobny cykl op-zeta-mass-spectrum/ — wymaga audit ([[retrofit_op-zeta_2026-05-06.md]]) |
@@ -69,10 +69,10 @@ Razem: **54** (z `ls research/op-*`)
 | 22 | op-lambda1-e2-amplitude-emergence | HIGH | DONE_NUMEROLOGICAL | NUMEROLOGICAL | SUBAGENT_AUDIT | 2026-05-02 | **λ.1 already audited** w SUBAGENT_AUDIT §3 (anchor-dependent) |
 | 23 | op-m92 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | M9.2, post-G.0 closure |
 | 24 | **op-mu-pmns-phase-hardening** | HIGH | DONE_NUMEROLOGICAL | NUMEROLOGICAL | Claudian | 2026-05-06 | μ.1 — **CRITICAL DOWNGRADE** z "DERIVED FULL CASCADE, 8 free→0 free"; "drift hardening" via (1-ρ̄), K_ν/K_up, (1-λ_C·η̄) = fitting parameters z κ.1 NUMEROLOGICAL cascade; lift factors 21×/126×/51× exactly compensate ι.1 zeroth drift; δ_CP dual form (205° vs 260°) accommodating ([[retrofit_op-mu_2026-05-06.md]]) |
-| 25 | op-mu1-minimal-substrate-log-redefinition | MEDIUM | PENDING | — | — | — | μ.1' substrate log |
+| 25 | **op-mu1-minimal-substrate-log-redefinition** | MEDIUM | DONE_STRUCTURAL_NO_GO | STRUCTURAL_NO_GO | Claudian | 2026-05-06 | μ.1' (NIE μ.1!) — ★★ EXEMPLARY honest NO-GO closure per PLAN §7; reparametryzacja PASS (Phase 1 3/3); compound mechanism FAIL (Phase 2.2 0/4 candidates dla Σε=2); P2.3 cyrkularny self-acknowledged; canonical example pre-derivation GATE discipline ([[retrofit_op-mu1prime_2026-05-06.md]]) |
 | 26 | op-newton-momentum | LOW | PENDING | — | — | — | B9, M9 PPN, post-G.0 |
 | 27 | **op-nu-majorana-phase-mbb** | MEDIUM | PENDING | — | — | — | ν.1 Majorana phase |
-| 28 | op-omega1-substrate-em-coupling | MEDIUM | PENDING | — | — | — | ω.1 EM coupling |
+| 28 | **op-omega1-substrate-em-coupling** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ω.1 — ★ POSITIVE EXAMPLE; axion-like (ln X)F·F̃ unique form w EFT dim-4 + scale-symmetric class; modified EOMs sympy LOCK; **self-correction 2026-05-01** "POST-CONFIRM" → "LIVE PARTIAL" (β Planck 3.8σ hint); **mathematical correction** "B² sourcing" → "F·F̃∝E·B"; g multi-candidate honest open (NIE constructed criterion); "FULL CONVERGENCE" framing borderline promotional ([[retrofit_op-omega1_2026-05-06.md]]) |
 | 29 | **op-omega2-axion-coupling-lock** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega2 | 2026-05-04 | **Already audited** post-CRITIQUE; LIVE_PARTIAL |
 | 30 | **op-omega3-axion-decay-constant** | HIGH | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega3 | 2026-05-04 | **Already audited** post-CRITIQUE; cascade-conditional |
 | 31 | op-omicron1-sigmamnu-cosmo | LOW | PENDING | — | — | — | ο.1 Σm_ν (B4 anchor) |
@@ -137,22 +137,25 @@ Z M03 audit §"Konkretne podejrzane" + my analysis:
 ## Medium-risk queue (Phase 3)
 
 ```
-1. op-bh-alpha-threshold (BH.1)
-2. op-cosmology-closure (M10/M11)
-3. op-mu1-minimal-substrate-log-redefinition (μ.1')
-4. op-nu-majorana-phase-mbb (ν.1)
-5. op-omega1-substrate-em-coupling (ω.1)
-6. op-phi1-substrate-action-variational (φ.1)
-7. op-psi1-substrate-light-acceleration (ψ.1)
-8. op-quantum-closure
-9. op-sc-alpha-origin (SC.1)
-10. op-sigma1-substrate-light-dispersion (σ.1)
-11. op-tau1-closure-overlap-coulomb (τ.1)
-12. op-tau2-substrate-time-coupling (τ.2)
-13. op-tau3-substrate-clock-acceleration (τ.3)
-14. op-upsilon1-closure-cross-family (υ.1)
-15. op-uv3-phi0-renormalization (UV.3)
+1. op-bh-alpha-threshold (BH.1)                                   ✅ DONE 2026-05-06 (DERIVED_CONDITIONAL ★)
+2. op-cosmology-closure (M10/M11)                                  PENDING
+3. op-mu1-minimal-substrate-log-redefinition (μ.1' substrate-log)  ✅ DONE 2026-05-06 (STRUCTURAL_NO_GO ★★)
+4. op-nu-majorana-phase-mbb (ν.1)                                  PENDING — next priority
+5. op-omega1-substrate-em-coupling (ω.1)                            ✅ DONE 2026-05-06 (STRUCTURAL ★)
+6. op-phi1-substrate-action-variational (φ.1)                      PENDING — referenced jako AXIOM przez ω.1
+7. op-psi1-substrate-light-acceleration (ψ.1)                      PENDING (relevant dla S05)
+8. op-quantum-closure                                              PENDING
+9. op-sc-alpha-origin (SC.1)                                       PENDING — wzorzec mini-cyklu, BH.1 odniesienie
+10. op-sigma1-substrate-light-dispersion (σ.1)                      PENDING
+11. op-tau1-closure-overlap-coulomb (τ.1)                          PENDING
+12. op-tau2-substrate-time-coupling (τ.2)                          PENDING
+13. op-tau3-substrate-clock-acceleration (τ.3)                     PENDING
+14. op-upsilon1-closure-cross-family (υ.1)                          PENDING
+15. op-uv3-phi0-renormalization (UV.3)                             PENDING
 ```
+
+**Phase 3 progress: 3/15 audited (20%)**. Wszystkie 3 ★ honest reporting
+positive examples — wzmacnia Phase 6 gate enforcement empirically.
 
 ## Low-risk queue (Phase 4)
 
@@ -176,8 +179,9 @@ Z M03 audit §"Konkretne podejrzane" + my analysis:
 
 | Data | Sesja | Cykli zaaudytowane | Auditor |
 |------|-------|---------------------|---------|
-| 2026-05-06 | Phase 1 setup | 0 (framework) → planowane 3-5 proof-of-concept | Claudian |
-| ... | ... | ... | ... |
+| 2026-05-06 | Sesja A: Phase 1+2+ζ.1+Phase 5 draft+Opcja C+Phase 6 | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1 PMNS, ζ.1) | Claudian |
+| 2026-05-06 | Sesja B: Phase 3 medium-risk start (3 cykle) | 3 (BH.1, ω.1, μ.1' substrate-log) — wszystkie ★ honest reporting | Claudian |
+| ... | Phase 3 continuation | 12 medium-risk PENDING | future agent |
 
 ## Cross-references
 

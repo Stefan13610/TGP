@@ -377,21 +377,56 @@ tags:
   - **Pozostałe Phase 3+4 + Phase 5 full implementation** dla future agents
   - **Następna sesja:** Phase 3 medium-risk (15 cykli) — z **mandatory Phase 6 gate** dla każdego nowego cyklu
   - Total session 2026-05-06: **12 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate = 56% M03 complete + future protection**
+
+[2026-05-06 SESSION_B_END] Claudian | Phase 3 medium-risk start (3 cykle)
+  - 3 cykle medium-risk audited:
+    * op-bh-alpha-threshold (BH.1):       DONE_DERIVED_CONDITIONAL ★
+        - ψ_th=1 + n=2 DERIVED z 3 niezależnych constraints (Z₂ + WEP-MICR-2 + non-overkill)
+        - α₀≈4.02 PARTIALLY DERIVED (ξ=1 sketch); √α₀=κ_TGP STRUCTURAL HINT (0.75% gap)
+        - Falsifier: MICROSCOPE-2 η > 10⁻¹⁸ (concrete, 2030+ horizon)
+        - Multi-source T2.6 universality flagged jako geometrically forced (Schwarzschild ψ_ph)
+    * op-omega1-substrate-em-coupling (ω.1):  DONE_STRUCTURAL ★
+        - Axion-like (ln X)F·F̃ unique form w EFT dim-4 + scale-symmetric class
+        - Modified Maxwell + substrate EOMs sympy LOCK; 3 alt-couplings cross-channel FALSIFIED
+        - **Self-correction 2026-05-01** (ψ.1.v2 critique): "POST-CONFIRM" → "LIVE PARTIAL"
+        - **Mathematical correction 2026-05-01**: "B² sourcing" → "F·F̃ ∝ E·B"
+        - g multi-candidate (4 candidates) HONEST OPEN (avoiding constructed criterion)
+        - "FULL CONVERGENCE" framing flagged borderline promotional dla Phase 5
+    * op-mu1-minimal-substrate-log-redefinition (μ.1' substrate-log):  DONE_STRUCTURAL_NO_GO ★★
+        - **EXEMPLARY** honest NO-GO closure per PLAN §7 explicit GO/NO-GO criteria
+        - Reparametryzacja PASS (Phase 1 3/3 PASS, drift 1.24·10⁻¹³%)
+        - Compound mechanism FAIL (Phase 2.2 0/4 candidates dla Σε=2)
+        - P2.3 "X = e²/2 z compound" — author explicit acknowledges TAUTOLOGICAL
+        - Cycle ZERO entries do PREDICTIONS_REGISTRY counter (no DERIVED claim)
+        - **Canonical example pre-derivation GATE discipline** — recommend dla Phase 6 §"positive examples"
+  - Naming clarification: μ.1' (substrate-log, NIE μ.1 PMNS phase hardening — same Greek letter, two different cycles)
+  - Tracker updated (3 entries: BH.1, ω.1, μ.1')
+  - Audit_log + Statystyka updated (12+3=15 audited tej sesji 2026-05-06; 20 cumulative w/ pre-M03)
+  - **Pattern recognition wzmocniony empirycznie**: 3/3 medium-risk audited = ★ honest reporting (po dwóch CRITICAL κ.1+μ.1 z sesji A, sesja B całkowicie clean)
+  - Phase 3 progress: **3/15 audited (20%)**; pozostałe 12 medium-risk PENDING
+  - **Następna sesja Phase 3:** ν.1, φ.1, SC.1, ψ.1 (priority — referenced jako AXIOM dependencies przez ω.1 + closure_2026-04-26)
+  - **M03 cumulative status post-sesja-B:** 61% (20/33 effective scope), Phase 1+2+5draft+6 COMPLETE; Phase 3 IN_PROGRESS 20%; Phase 4 + Phase 5 full PENDING
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja B nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B):** 15 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 start = **61% M03 complete + future protection**
 ```
 
 ## Statystyka aktualna
 
-| Metryka | Stan post-2026-05-06 sesja |
-|---------|----------------------------|
+| Metryka | Stan post-2026-05-06 sesja B |
+|---------|------------------------------|
 | Total op- cykli | 54 |
 | OUT_OF_SCOPE | 22 |
 | Effective scope | ~33 (po deduplikacji) |
 | DONE pre-M03 (subagent_audit + AUDIT_omega) | 5 (chi.1, UV.2, λ.1, ω.2, ω.3) |
-| DONE this session 2026-05-06 (Phase 1+2 ALL high-risk + ζ.1 + Phase 5 draft) | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1, ζ.1) |
-| PENDING (effective scope minus DONE) | ~16 |
-| Progress percentage | **52%** (17/33 effective scope) |
+| DONE 2026-05-06 sesja A (Phase 1+2+ζ.1+Phase 5 draft+Phase 6) | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1 PMNS, ζ.1) |
+| **DONE 2026-05-06 sesja B (Phase 3 medium-risk start)** | **3 (BH.1, ω.1, μ.1' substrate-log)** |
+| PENDING (effective scope minus DONE) | ~13 |
+| Progress percentage | **61%** (20/33 effective scope) |
 | **Phase 2 high-risk** | ✅ **COMPLETE** (all 11 high-risk cykli audited) |
+| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (3/15 audited; honest reporting 3/3 — wszystkie ★) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
+| **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
+| **Honest reporting baseline** | **8/15 audited (53%)** ★ — 5 z sesji A + 3 z sesji B (BH.1, ω.1, μ.1') |
 
 ## Notable patterns observed
 
