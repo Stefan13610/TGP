@@ -512,6 +512,57 @@ tags:
   - **M03 cumulative status post-sesja-D:** **79%** (26/33 effective scope)
   - LaTeX compile: 548 stron clean baseline (no regression — sesja D nie modyfikowała core)
   - **Total session 2026-05-06 (A+B+C+D):** 21 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate = **79% M03 complete + 14/21 honest baseline (67%) + ψ.1 ★★★ canonical self-correction precedent**
+
+[2026-05-06 SESSION_E_END] Claudian | Phase 3 medium-risk continuation (3 cykle z chain φ.1→ω.1→σ.1→τ.2→τ.3→ψ.1)
+  - 3 cykle medium-risk audited (kontynuacja Phase 3, chain consistency):
+    * op-sigma1-substrate-light-dispersion (σ.1):  DONE_STRUCTURAL ★
+        - Dispersion ω_±²=k²±g·k·n_∥ helicity-dependent (NIE scalar c(X))
+        - z ω.1 axion-like coupling sympy LOCK Phase 2 7/7
+        - **Self-correction 2026-05-01** (4-fold):
+          1. dispersion form rewritten dimensionally-explicit
+          2. group velocity sign **corrected POSITIVE** v_g,±=1+(g·n_∥)²/(8k²) (was negative)
+          3. "effective optical metric" → "helicity-dependent optical cone" scope softening
+          4. W3.3 CMB downgraded "PARTIAL POST-CONFIRM" → "LIVE PARTIAL candidate" (consistent z ω.1)
+        - 3 alt-dispersions multi-domain FALSIFIED (Webb/Murphy QSO + Planck CMB + Fermi LAT GRB) — substantive!
+        - WKB approximation explicit (full CFJ-class beyond σ.1 derivation)
+        - Atomic clock orthogonal cross-check (consistent z τ.2)
+        - "FULL CONVERGENCE 4/4" framing borderline (3 internal + 1 LIVE PARTIAL, analog ω.1+φ.1)
+    * op-tau2-substrate-time-coupling (τ.2):  DONE_STRUCTURAL ★ 2nd STRONGEST EMPIRICAL
+        - Scale-protection theorem — NO scalar α_em variation at LEADING O(∂ ln X)
+        - **3/4 channels NULL CONFIRMED** w istniejących danych:
+          1. Cosmological QSO Webb/Murphy 2003-22 NULL 1e-7 (10 Gyr scope)
+          2. Lab Sr/Yb/Hg+ NULL 5e-19/yr (NIST/JILA/PTB/BIPM)
+          3. Yb+/Cs differential K_diff=6.78 NULL 1e-18/yr
+        - CMB E/B 2σ partial consistent (Planck 0.30±0.13 deg) — cross-coupling z σ.1
+        - Magnetar atomic Λ-suppressed undetectable explicit (honest scope)
+        - 4 alt-clock-couplings FALSIFIED przez observed NULL (m_e·X^α, ℏ·X^β, α_em·X^γ, hyperfine·X^δ)
+        - Empirical ranking #2 po τ.1 (5/6 isotopes PASS): τ.2 = 3/4 channels NULL CONFIRMED
+        - LiteBIRD 2030+ θ ~ g·10⁻²² GeV⁻¹ future detection target
+    * op-tau3-substrate-clock-acceleration (τ.3):  DONE_STRUCTURAL ★ A5-PATCHED
+        - **Status hybrid `PASS-A5-PATCHED`** — explicit honest disclosure (unique status indicator w M03)
+        - **A5 audit patch 2026-05-01:**
+          - δω/ω formula corrected (additive-with-1/m_e → multiplicative-without-1/m_e)
+          - Numerical predictions w TT7-TT12 inheritują original 1/m_e error
+          - Λ-scan gates ~3 OOM shift: Sr/Yb gate od Λ ≲ 100 MeV do Λ ≲ ~GeV scale
+          - Phase 3 verdict 6/6 PASS structurally valid (cross-falsification logika niezmieniona)
+          - Wymaga full re-derivation post-B7 closure (explicit ω.1 EOM × Schwinger Greens function)
+        - First lab-engineering predictive cycle (E∥B vs E⊥B chopping experiment)
+        - 4 alt-L4 forms (a/b/c/d) FALSIFIED via 4-channel signature pattern (lab × frontier × cosmo × magnetar)
+        - Pair z ψ.1: τ.3 modifies mass-energy (clock-rate δm_e); ψ.1 modifies photon kinetic (effective c)
+        - Both sourceable through SAME ω.1 EOM channel (E∥B parallel) → DIFFERENT observables
+  - Tracker updated (3 entries: σ.1, τ.2, τ.3)
+  - Audit_log + Statystyka updated (12+3+3+3+3=24 audited tej sesji 2026-05-06; 29 cumulative w/ pre-M03)
+  - **Pattern recognition expanded:**
+    - **Self-correction discipline cluster 2026-05-01 = 5 cykli** (ω.1+σ.1+ψ.1 3-version+τ.3 A5+τ.2 no-patch consistent)
+    - Chain φ.1→ω.1→σ.1→τ.2→τ.3→ψ.1 = 6-cycle MUTUALLY consistent — wszystkie ★ honest
+    - "FULL CONVERGENCE N/N" framing borderline w 6 cyklach: ω.1, φ.1, υ.1, ν.1, σ.1, τ.2 (Phase 5 batch annotation)
+    - Empirical ranking: τ.1 (5/6) > τ.2 (3/4 NULL) > BH.1 (3 paths n=2) > others
+    - Honest reporting baseline 17/24 = 71% (wzmocnione od 67% post-sesja-D, od 61% post-sesja-C, od 53% post-sesja-B)
+  - Phase 3 progress: **12/15 audited (80%)**; pozostałe 3 medium-risk PENDING
+  - **Następna sesja Phase 3 (final):** UV.3, M10/M11 cosmology-closure, quantum-closure
+  - **M03 cumulative status post-sesja-E:** **88%** (29/33 effective scope)
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja E nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B+C+D+E):** 24 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate = **88% M03 complete + 17/24 honest baseline (71%) + 5-cycle self-correction discipline cluster 2026-05-01**
 ```
 
 ## Statystyka aktualna
@@ -525,15 +576,17 @@ tags:
 | DONE 2026-05-06 sesja A (Phase 1+2+ζ.1+Phase 5 draft+Phase 6) | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1 PMNS, ζ.1) |
 | DONE 2026-05-06 sesja B (Phase 3 medium-risk start) | 3 (BH.1, ω.1, μ.1' substrate-log) |
 | DONE 2026-05-06 sesja C (Phase 3 continuation) | 3 (φ.1, ν.1, SC.1) |
-| **DONE 2026-05-06 sesja D (Phase 3 continuation)** | **3 (υ.1, τ.1, ψ.1)** |
-| PENDING (effective scope minus DONE) | ~7 |
-| Progress percentage | **79%** (26/33 effective scope) |
+| DONE 2026-05-06 sesja D (Phase 3 continuation) | 3 (υ.1, τ.1, ψ.1) |
+| **DONE 2026-05-06 sesja E (Phase 3 continuation)** | **3 (σ.1, τ.2, τ.3)** |
+| PENDING (effective scope minus DONE) | ~4 |
+| Progress percentage | **88%** (29/33 effective scope) |
 | **Phase 2 high-risk** | ✅ **COMPLETE** (all 11 high-risk cykli audited) |
-| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (9/15 audited 60%; **8 ★ honest** + 1 ⚠ NUMEROLOGICAL ν.1 cascade) |
+| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (12/15 audited 80%; **11 ★ honest** + 1 ⚠ NUMEROLOGICAL ν.1 cascade) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
 | **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
-| **Honest reporting baseline** | **14/21 audited (67%)** ★ — wzmocniona empiryczna walidacja Phase 6 enforcement |
-| **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — sesja D nie expand) |
+| **Honest reporting baseline** | **17/24 audited (71%)** ★ — empiryczna walidacja Phase 6 wzmocniona post-sesja-E |
+| **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — sesje D+E nie expand) |
+| **Self-correction discipline cluster 2026-05-01** | **5 cykli** (ω.1, σ.1, ψ.1 3-version, τ.3 A5 patch, τ.2 no-patch consistent) |
 | **Special cases** | **★★★ ψ.1 multi-version self-correction** (canonical CALIBRATION_PROTOCOL §4 precedent); **★ τ.1 strongest empirical** (5/6 isotopes PASS) |
 
 ## Notable patterns observed

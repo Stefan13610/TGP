@@ -86,10 +86,10 @@ Razem: **54** (z `ls research/op-*`)
 | 39 | op-quantum-closure | MEDIUM | PENDING | — | — | — | quantum closure |
 | 40 | op-rho1-71Ge-cross-section | LOW | PENDING | — | — | — | ρ.1 cross-section |
 | 41 | **op-sc-alpha-origin** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | SC.1 — ★ POSITIVE EXAMPLE; Phase 1 H₀ rejected explicit (α_PB ≠ unit-cousin α_0); Phase 2 H_AG_PARTIAL explicit "α_PB JEST A-G-like ale a priori J_sf=2.59"; Phase 3 **bidirectional falsification map** (SmH₉ TGP wins 10⁵·⁸×, YbH₉+TmH₉ A-G wins 84×+10⁵×); 2-point fit explicit disclosure; 5 LIVE 2027-2030 + 1 STRUCTURAL (PmH₉ radioactive); cross-sector α₀=κ_TGP² 0.75% gap STRUCTURAL HINT (consistent z BH.1) ([[retrofit_op-sc1_2026-05-06.md]]) |
-| 42 | op-sigma1-substrate-light-dispersion | MEDIUM | PENDING | — | — | — | σ.1 light dispersion |
+| 42 | **op-sigma1-substrate-light-dispersion** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | σ.1 — ★ POSITIVE EXAMPLE; dispersion ω_±²=k²±g·k·n_∥ helicity-dependent z ω.1 axion-like coupling sympy LOCK; **self-correction 2026-05-01** (v_g sign POSITIVE + WKB scope softening + LIVE PARTIAL CMB downgrade); 3 alt-dispersions multi-domain FALSIFIED (Webb/Murphy + Planck + Fermi LAT) NIE constructed criterion; "FULL CONVERGENCE 4/4" framing borderline (analog ω.1) ([[retrofit_op-sigma1_2026-05-06.md]]) |
 | 43 | **op-tau1-closure-overlap-coulomb** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | τ.1 — ★ **STRONGEST EMPIRICAL** w M03 (5/6 isotopes empirical PASS); f_overlap=(Z_a/Z_t)^(1/3) z 3-fold cascade primality; R_TGP=(19/24)·f² universal; ⁷¹Ga BEST 2022 POST-CONFIRMED 1.13σ; ⁵¹Cr/³⁷Ar 4/4 within 2σ historical (★ GALLEX-Cr2 0.02σ exact match); ⁹⁸Mo FRIB + ⁷Be CUPID 2030+ LIVE; pp Z=1=Z trivial-Z orthogonal SSM 1%; P1.2 FAIL overruled by P1.3 cascade primality argument verified PASS Phase 6 ([[retrofit_op-tau1_2026-05-06.md]]) |
-| 44 | op-tau2-substrate-time-coupling | MEDIUM | PENDING | — | — | — | τ.2 |
-| 45 | op-tau3-substrate-clock-acceleration | MEDIUM | PENDING | — | — | — | τ.3 magnetar |
+| 44 | **op-tau2-substrate-time-coupling** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | τ.2 — ★ POSITIVE EXAMPLE (2nd strongest empirical po τ.1); scale-protection theorem NO scalar α_em variation; **3/4 channels NULL CONFIRMED** w istniejących danych (Webb/Murphy QSO 1e-7 + Sr/Yb lab 5e-19/yr + Yb+/Cs differential K=6.78); CMB E/B 2σ partial consistent z σ.1 cross-coupling; magnetar Λ-suppressed undetectable explicit; 4 alt-clock-couplings FALSIFIED przez observed NULL (m_e·X^α, ℏ·X^β, α_em·X^γ, hyperfine·X^δ) ([[retrofit_op-tau2_2026-05-06.md]]) |
+| 45 | **op-tau3-substrate-clock-acceleration** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | τ.3 — ★ POSITIVE EXAMPLE z **status hybrid `PASS-A5-PATCHED`**; **A5 audit patch 2026-05-01** (δω/ω formula 1/m_e factor correction; numerical predictions TT7-TT12 inheritują original error, Λ-scan gates ~3 OOM shift od 100 MeV do GeV); structural valid preserved; first lab-engineering predictive cycle (E∥B vs E⊥B chopping); 4 alt-L4 forms (a/b/c/d) FALSIFIED via 4-channel signature pattern; pair z ψ.1 (mass-energy + photon kinetic substrate response) ([[retrofit_op-tau3_2026-05-06.md]]) |
 | 46 | **op-theta-quark-koide** | HIGH | DONE_SPLIT | K_up:STRUCTURAL / K_down:NUMEROLOGICAL | Claudian | 2026-05-06 | θ.1 — K_up=7/8 STRUCTURAL OK; K_down=37/50 NUMEROLOGICAL (4 candidates w paśmie 0.05% drift, multi-candidate analog UV.2) ([[retrofit_op-theta_2026-05-06.md]]) |
 | 47 | **op-upsilon1-closure-cross-family** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | υ.1 — ★ POSITIVE EXAMPLE; universal closure (X_ref/X_obs)^(1/N_gen) z N_gen=3; π.1+τ.1 cross-family unification (oba 1/3 instances); alt-α 4 candidates (1/4: 0.78σ, 1/3: 1.13σ POST-CONFIRMED, 1/2: 1.79σ, 2/3: 2.42σ) z **real σ tensions BEST 2022** (NIE constructed criterion); ⁷⁶Ge×⁷¹Ga POST-CONFIRMED 1.13σ; ¹³⁶Xe×¹³⁷Cs + ⁹⁸Mo same-isotope LIVE 2030+; "FULL CONVERGENCE 4/4" framing borderline (Phase 5 annotation); parent dla φ.1 ([[retrofit_op-upsilon1_2026-05-06.md]]) |
 | 47b | **op-zeta-mass-spectrum** | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ζ.1 — **5-ty POSITIVE EXAMPLE** honest "PARTIALLY DERIVED (refined)"; group theory derivation 3 PMNS angles (S₃, Z₂, λ_C); λ_C = 165/167 GL form factor structural; "20% gate dla zeroth-order" honest accommodating disclosure. ι.1+μ.1 promotions ζ.1 → DERIVED WITHDRAWN ([[retrofit_op-zeta-mass-spectrum_2026-05-06.md]]) |
@@ -146,20 +146,24 @@ Z M03 audit §"Konkretne podejrzane" + my analysis:
 7. op-psi1-substrate-light-acceleration (ψ.1)                      ✅ DONE 2026-05-06 (STRUCTURAL_HONEST ★★★ multi-version self-correction)
 8. op-quantum-closure                                              PENDING
 9. op-sc-alpha-origin (SC.1)                                       ✅ DONE 2026-05-06 (STRUCTURAL ★)
-10. op-sigma1-substrate-light-dispersion (σ.1)                      PENDING
+10. op-sigma1-substrate-light-dispersion (σ.1)                      ✅ DONE 2026-05-06 (STRUCTURAL ★)
 11. op-tau1-closure-overlap-coulomb (τ.1)                          ✅ DONE 2026-05-06 (DERIVED_CONDITIONAL ★ strongest empirical)
-12. op-tau2-substrate-time-coupling (τ.2)                          PENDING
-13. op-tau3-substrate-clock-acceleration (τ.3)                     PENDING
+12. op-tau2-substrate-time-coupling (τ.2)                          ✅ DONE 2026-05-06 (STRUCTURAL ★ 2nd strongest empirical)
+13. op-tau3-substrate-clock-acceleration (τ.3)                     ✅ DONE 2026-05-06 (STRUCTURAL ★ A5-patched)
 14. op-upsilon1-closure-cross-family (υ.1)                          ✅ DONE 2026-05-06 (STRUCTURAL ★ parent dla φ.1)
 15. op-uv3-phi0-renormalization (UV.3)                             PENDING
 ```
 
-**Phase 3 progress: 9/15 audited (60%)**. **8 ★ honest reporting**
-(BH.1, ω.1, μ.1' ★★, φ.1, SC.1, υ.1, τ.1 ★ DERIVED_CONDITIONAL strongest
-empirical, ψ.1 ★★★ exemplary multi-version) + **1 ⚠ NUMEROLOGICAL**
-(ν.1 cascade contagion z μ.1 mixing-operator family). Honest reporting
-baseline post-Phase 3 ⅗ complete: **14/21 audited (67%)** — empirical
+**Phase 3 progress: 12/15 audited (80%)**. **11 ★ honest reporting**
+(BH.1, ω.1, μ.1' ★★, φ.1, SC.1, υ.1, τ.1 ★ strongest empirical, ψ.1
+★★★ exemplary multi-version, σ.1, τ.2, τ.3 A5-patched) + **1 ⚠
+NUMEROLOGICAL** (ν.1 cascade contagion). Honest reporting baseline
+post-Phase 3 ⅘ complete: **17/24 audited (71%)** — empirical
 confirmation Phase 6 gate enforcement skuteczności wzmacnia się.
+
+**Self-correction discipline cluster 2026-05-01 (5 cykli):** ω.1 + σ.1
++ ψ.1 (3-version) + τ.3 (A5 patch) + τ.2 (no patch needed) — wzór
+spontaneous adoption CALIBRATION_PROTOCOL §4 PRE-binding 2026-05-04.
 
 ## Low-risk queue (Phase 4)
 
