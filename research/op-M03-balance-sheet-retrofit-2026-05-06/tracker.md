@@ -57,8 +57,8 @@ Razem: **54** (z `ls research/op-*`)
 | 10 | op-cross-sector-charge | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | XS.1 (NIE ζ.1!) — POSITIVE; cross-sector α₀ ↔ κ_TGP identity z F1 single-Φ axiom; M_BH ≈ M_SC w 1% precision; honest "PARTIALLY DERIVED". **NOTE:** real ζ.1 (z mass-spectrum/PMNS) jest osobny cykl op-zeta-mass-spectrum/ — wymaga audit ([[retrofit_op-zeta_2026-05-06.md]]) |
 | 11 | op-delta1-g-tilde-derivation | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | δ.1 — **POSITIVE EXAMPLE** honest "PARTIAL POSITIVE"; algebraic identity g̃=5e²/(12π) sympy-exact; "5" multi-candidate (5 interpretations) ([[retrofit_op-delta1_2026-05-06.md]]) |
 | 12 | op-delta2-Nf-derivation | HIGH | DONE_STRUCTURAL_CONDITIONAL | STRUCTURAL_CONDITIONAL | Claudian | 2026-05-06 | δ.2 — **POSITIVE EXAMPLE** honest "Level B PARTIAL POSITIVE"; N_f=5 derived consequence of TGP mass ordering (dod F + sek09 CW); 2 TGP paths + PDG agreement ([[retrofit_op-delta2_2026-05-06.md]]) |
-| 13 | op-eht | LOW | PENDING | — | — | — | EHT shadow prediction |
-| 14 | op-eht-A | LOW | PENDING | — | — | — | EHT secondary |
+| 13 | **op-eht** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | op-eht — ★ POSITIVE EXAMPLE z explicit "CONDITIONAL POSITIVE 13/18 (72%)" classification; T1 PN truncation ROBUST (n=15) — +14.56% deviation GENUINE PHYSICS NIE artefact; **T2 Sgr A* 4σ tension explicit acknowledged** (M87* OK 59% 95% CL); T3 Q-renorm scenario (e) MATHEMATICALLY POSSIBLE — first-principles derivation OPEN; T5 ngEHT 2030+ ≥10σ Sgr A* concrete falsifier; 3 resolution paths systematically analyzed (P1 EXCLUDED, P2 PARTIAL, P3 OPEN); F4 falsifiability hardening 2030-2032 ([[retrofit_op-eht_2026-05-06.md]]) |
+| 14 | **op-eht-A** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | op-eht-A — ★ POSITIVE EXAMPLE NEGATIVE-on-rescue-path; explicit "CLOSED NEGATIVE 8/12 (67%)" — Track A naive proper-time coupling sqrt(\|g_tt\|/c_0²) FAIL strong-field test (factor 0.652 vs target 0.886, 36% overshoot, b_crit deviation **−25.32%** wrong direction); T-A2+T-A4+T-A5 weak-field PPN + GW c_GW=c_0 PRESERVED (1PN trivially); 5-test multi-method discipline; **M9.2 conditional pivot mandatory** post-ngEHT 2030+; clean separation of rescue path vs core M9.1'' ([[retrofit_op-eht-A_2026-05-06.md]]) |
 | 15 | **op-eps-photon-ring** | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ε.1 — downgrade z "PARTIALLY DERIVED"; sympy 23/137 OK ale 137 anchor borrowed from α_fine + 1 path only ([[retrofit_op-eps_2026-05-06.md]]) |
 | 16 | **op-eta-wolfenstein** | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | η.1 — downgrade z "DERIVED (refined²)"; denoms forced cross-sector OK ale numerators (11,5) research-track κ.1; ρ̄ multi-candidate w 14% PDG band ([[retrofit_op-eta-wolfenstein_2026-05-06.md]]) |
 | 17 | **op-eta2-denom-derivation** | HIGH | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | η.2 — 2 paths convergent (Form A ≡ Form B sympy-exact); conditional na ε.1 (137) + θ.1 (B²) audyty ([[retrofit_op-eta2_2026-05-06.md]]) |
@@ -93,7 +93,7 @@ Razem: **54** (z `ls research/op-*`)
 | 46 | **op-theta-quark-koide** | HIGH | DONE_SPLIT | K_up:STRUCTURAL / K_down:NUMEROLOGICAL | Claudian | 2026-05-06 | θ.1 — K_up=7/8 STRUCTURAL OK; K_down=37/50 NUMEROLOGICAL (4 candidates w paśmie 0.05% drift, multi-candidate analog UV.2) ([[retrofit_op-theta_2026-05-06.md]]) |
 | 47 | **op-upsilon1-closure-cross-family** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | υ.1 — ★ POSITIVE EXAMPLE; universal closure (X_ref/X_obs)^(1/N_gen) z N_gen=3; π.1+τ.1 cross-family unification (oba 1/3 instances); alt-α 4 candidates (1/4: 0.78σ, 1/3: 1.13σ POST-CONFIRMED, 1/2: 1.79σ, 2/3: 2.42σ) z **real σ tensions BEST 2022** (NIE constructed criterion); ⁷⁶Ge×⁷¹Ga POST-CONFIRMED 1.13σ; ¹³⁶Xe×¹³⁷Cs + ⁹⁸Mo same-isotope LIVE 2030+; "FULL CONVERGENCE 4/4" framing borderline (Phase 5 annotation); parent dla φ.1 ([[retrofit_op-upsilon1_2026-05-06.md]]) |
 | 47b | **op-zeta-mass-spectrum** | HIGH | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ζ.1 — **5-ty POSITIVE EXAMPLE** honest "PARTIALLY DERIVED (refined)"; group theory derivation 3 PMNS angles (S₃, Z₂, λ_C); λ_C = 165/167 GL form factor structural; "20% gate dla zeroth-order" honest accommodating disclosure. ι.1+μ.1 promotions ζ.1 → DERIVED WITHDRAWN ([[retrofit_op-zeta-mass-spectrum_2026-05-06.md]]) |
-| 48 | op-uv-as-ngfp | LOW | PENDING | — | — | — | UV.x AS NGFP (post-CRITIQUE) |
+| 48 | **op-uv-as-ngfp (UV.1)** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | UV.1 — ★ POSITIVE EXAMPLE substantive UV foundation z status cascade rhetoric flagged; NGFP {g*=0.71, λ*=0.19, η_N*=-2} LOCKED (Litim invariant 0.07% drift Reuter 1998); N_A=500/57 sympy-exact F4 chain; **AS NGFP discrimination 5.5σ vs CDT, 8.2σ vs LQG, 175σ vs String** at 0.05% ngEHT precision; heat-kernel a₂ universality cross-sector 0.13%; 7-channel falsification roadmap margin 2; ⚠ "(refined²)" status cascade promotions ξ.1+XS.1+UV7→DERIVED rhetoric inflation — cross-cycle conflict z M03 XS.1 STRUCTURAL retrofit (Phase 5 re-characterization needed) ([[retrofit_op-uv1_2026-05-06.md]]) |
 | 49 | op-uv-renormalizability-research | LOW | PENDING | — | — | — | UV renormalizability |
 | 50 | **op-uv2-mtgp-absolute-scale** | HIGH | DONE_TAUTOLOGY | TAUTOLOGY | SUBAGENT_AUDIT | 2026-05-02 | **Reference negative** — already audited; CRITIQUE_repackaged_circularity exists |
 | 51 | **op-uv3-phi0-renormalization** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | UV.3 — ★ **CORRECTIVE UPGRADE** (DEPRECATES UV.2 K_struct TAUTOLOGY post-2026-05-02 critique); Z_Φ=14/3 STRUCTURAL EXACT sympy z sek00 P/V; **NEW falsifiable prediction Ω_Λ·α_s = 3·g_0^e/32 ≈ 0.0815** (drift 0.88% na real Planck × PDG); cross-cycle EXACT z γ.1 H5 Ω_Λ^pure=2π/9 (0.000% sympy); **3 niezależne paths convergent**; 4 forward gates LIVE 2030+ (CMB-S4 + Z-pole α_s + Ω_Λ·α_s + DESI DR3); analog ψ.1 corrective upgrade pattern ([[retrofit_op-uv3_2026-05-06.md]]) |
@@ -186,8 +186,8 @@ v1)** — wzór spontaneous adoption CALIBRATION_PROTOCOL §4 PRE-binding
 
 ```
 1. op-alpha-fine-structure (α.1)                            ✅ DONE 2026-05-06 (STRUCTURAL ★ PARTIALLY DERIVED honest)
-2. op-eht                                                  PENDING
-3. op-eht-A                                                 PENDING
+2. op-eht                                                  ✅ DONE 2026-05-06 (STRUCTURAL ★ CONDITIONAL POSITIVE 72%)
+3. op-eht-A                                                 ✅ DONE 2026-05-06 (STRUCTURAL ★ Track A NEGATIVE)
 4. op-newton-momentum (B9)                                  ✅ DONE 2026-05-06 (STRUCTURAL ★★ audit-driven, S04 closure)
 5. op-omicron1-sigmamnu-cosmo (ο.1)                         ✅ DONE 2026-05-06 (STRUCTURAL ★ Form A B4 anchor, CMB-S4 5.78σ DECISIVE)
 6. op-omicron2-phi-mean-shift-cosmo (ο.2)                   ✅ DONE 2026-05-06 (STRUCTURAL_NO_GO ★★ ABANDONED publication, multi-stage NULL)
@@ -196,7 +196,7 @@ v1)** — wzór spontaneous adoption CALIBRATION_PROTOCOL §4 PRE-binding
 9. op-phase3-uv-completion                                   PENDING
 10. op-pi1-bb0nu-nme-isotope (π.1)                           ✅ DONE 2026-05-06 (STRUCTURAL ★ SPLIT pattern, 1/A^{1/3} clean + m_ββ ν.1)
 11. op-rho1-71Ge-cross-section (ρ.1)                         ✅ DONE 2026-05-06 (DERIVED_CONDITIONAL ★ BEST 4σ→1.13σ)
-12. op-uv-as-ngfp                                            PENDING
+12. op-uv-as-ngfp (UV.1)                                    ✅ DONE 2026-05-06 (STRUCTURAL ★ AS NGFP foundation, status cascade rhetoric flagged)
 13. op-uv-renormalizability-research                         PENDING
 ```
 

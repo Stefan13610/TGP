@@ -726,6 +726,51 @@ tags:
   - **M03 cumulative status post-sesja-H:** Phase 1-3 100% COMPLETE; Phase 4 46%; total ~84% (38/45)
   - LaTeX compile: 548 stron clean baseline (no regression — sesja H nie modyfikowała core)
   - **Total session 2026-05-06 (A+B+C+D+E+F+G+H):** 33 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 COMPLETE + Phase 4 46% = **26/33 honest baseline (79%) + 3 SPLIT pattern + 2 NULL closure + 4 multi-stage self-correction cluster + cross-cycle anchor support**
+
+[2026-05-06 SESSION_I_END] Claudian | Phase 4 continuation (3 cykle, EHT pair + UV.1 foundation)
+  - 3 cykle low-risk audited (kontynuacja Phase 4):
+    * op-eht (BH photon-ring shadow):  DONE_STRUCTURAL ★ CONDITIONAL POSITIVE
+        - Author explicit "CONDITIONAL POSITIVE 13/18 (72%)" classification preserved
+        - T1 PN truncation ROBUST (n=15 stable) — +14.56% deviation GENUINE PHYSICS NIE artefact
+        - **T2 Sgr A* 4σ tension explicit acknowledged** (M87* OK 59% 95% CL)
+        - T3 Q-renormalization scenario (e) MATHEMATICALLY POSSIBLE — first-principles derivation **OPEN**
+        - T5 ngEHT 2030+ ≥10σ Sgr A* concrete falsifier (1.5% precision → 9.7σ; 1% → 14.6σ)
+        - 3 resolution paths systematically analyzed (P1 EXCLUDED, P2 PARTIAL, P3 OPEN)
+        - F4 falsifiability hardening: pre-OP-EHT general → post +14.56% Sgr A* >10σ ngEHT 2030-2032
+        - 5-test multi-method discipline (T1+T2+T3+T4+T5)
+    * op-eht-A (Track A naive proper-time test):  DONE_STRUCTURAL ★ NEGATIVE-ON-RESCUE-PATH
+        - Author explicit "CLOSED NEGATIVE 8/12 (67%)" — Track A naive proper-time coupling FAIL
+        - Naive sqrt(|g_tt|/c_0²) emerges z covariant action ALE strong-field 0.652 vs target 0.886
+        - **36% overshoot quantification** + b_crit deviation **−25.32%** (wrong direction)
+        - T-A2+T-A4+T-A5 weak-field PPN + GW c_GW=c_0 **PRESERVED** (Track A safe)
+        - 5-test multi-method discipline (T-A1 do T-A5)
+        - **M9.2 conditional pivot mandatory** post-ngEHT 2030+ if GR confirmed
+        - Clean separation of rescue path vs core M9.1'' (M9.1'' itself NIE invalidated)
+        - Geometric invariance insight: ψ_ph constant at photon ring niezależnie od A_eff
+    * op-uv-as-ngfp (UV.1):  DONE_STRUCTURAL ★ STATUS CASCADE RHETORIC FLAGGED
+        - Substantive UV foundation: NGFP {g*=0.71, λ*=0.19, η_N*=-2} LOCKED
+        - **Litim invariant g*·λ*=0.1349 drift 0.07%** vs Reuter 1998 (substantive literature anchor)
+        - N_A=500/57 sympy-exact F4 chain arithmetic identity
+        - **AS NGFP discrimination at 0.05% precision: 5.5σ vs CDT, 8.2σ vs LQG, 175σ vs String**
+        - Heat-kernel a₂ universality cross-sector 0.13% drift (5 sectors)
+        - 7-channel falsification roadmap (ngEHT, LISA, LIGO O5, MICROSCOPE-2, LATOR, LnH₉, 2-loop FRG) margin 2
+        - ⚠ **Status cascade rhetoric flagged**: ξ.1+XS.1+UV7 promoted "PARTIALLY DERIVED → DERIVED (refined²)"
+        - **Cross-cycle conflict z M03**: UV.1 promotes XS.1 → DERIVED; M03 retrofit XS.1 = STRUCTURAL ★ honest
+        - "(refined²)" terminology suggests rhetorical inflation
+        - 3 consecutive promotions vs Phase 6 §2 (status promotion bez explicit cascade audit)
+        - Phase 5 re-characterization needed dla status cascade vs M03 honest classifications
+  - Tracker updated (3 entries: op-eht, op-eht-A, UV.1) + Phase 4 progress 9/13 (69%)
+  - Audit_log + Statystyka updated (12+3+3+3+3+3+3+3+3=36 audited tej sesji 2026-05-06; 41 cumulative w/ pre-M03)
+  - **Pattern recognition expanded:**
+    - **3 NEGATIVE/NULL closure pattern**: μ.1' (pre-imp NO-GO), ο.2 (post-imp ABANDONED), op-eht-A (negative-on-rescue-path)
+    - **Status cascade rhetoric anti-pattern flagged**: UV.1 ξ.1+XS.1+UV7 "(refined²)" 3-consecutive promotions z cross-cycle conflict
+    - **EHT pair systematic**: op-eht (CONDITIONAL POSITIVE 72%) + op-eht-A (NEGATIVE rescue 67%) — joint M9.1''/M9.2 framework
+    - Honest reporting baseline 29/36 = 81% (wzmocnione od 79% post-sesja-H)
+  - Phase 4 progress: 9/13 audited (69%); pozostałe 4 low-risk PENDING (phase1-3, op-uv-renormalizability)
+  - **Następna sesja Phase 4 final batch:** phase1-covariant, phase2-quantum-gravity, phase3-uv-completion, op-uv-renormalizability-research
+  - **M03 cumulative status post-sesja-I:** Phase 1-3 100% COMPLETE; Phase 4 69%; total ~91% (41/45)
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja I nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B+C+D+E+F+G+H+I):** 36 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 COMPLETE + Phase 4 69% = **29/36 honest baseline (81%) + 3 NEGATIVE/NULL closure + 1 status cascade rhetoric flag + 4 multi-stage self-correction cluster + Phase 5 cross-cycle conflict resolution needed (UV.1 vs XS.1)**
 ```
 
 ## Statystyka aktualna
@@ -743,16 +788,17 @@ tags:
 | DONE 2026-05-06 sesja E (Phase 3 continuation) | 3 (σ.1, τ.2, τ.3) |
 | DONE 2026-05-06 sesja F (Phase 3 FINAL) | 3 (UV.3, M10, M11) → Phase 3 COMPLETE |
 | DONE 2026-05-06 sesja G (Phase 4 start) | 3 (π.1, ρ.1, B9 newton-momentum) |
-| **DONE 2026-05-06 sesja H (Phase 4 continuation)** | **3 (α.1, ο.1, ο.2)** |
-| PENDING (effective scope minus DONE) | ~7 (Phase 4 low-risk remaining) |
+| DONE 2026-05-06 sesja H (Phase 4 continuation) | 3 (α.1, ο.1, ο.2) |
+| **DONE 2026-05-06 sesja I (Phase 4 continuation)** | **3 (op-eht, op-eht-A, UV.1)** |
+| PENDING (effective scope minus DONE) | ~4 (Phase 4 low-risk remaining) |
 | Progress percentage Phase 1-3 | **100% COMPLETE** (32/32 scope = high+medium+aggregate audited) |
-| Progress percentage M03 total | **38/45 audited (~84% w pełnym scope)** |
+| Progress percentage M03 total | **41/45 audited (~91% w pełnym scope)** |
 | **Phase 2 high-risk** | ✅ **COMPLETE** (11/11 cykli audited) |
 | **Phase 3 medium-risk** | ✅ **COMPLETE** (15/15 cykli audited) |
-| **Phase 4 low-risk** | 🔄 **IN_PROGRESS** (6/13 audited 46%; **6 ★ honest** wszystkie, w tym ★★ B9 audit-driven + ★★ ο.2 ABANDONED) |
+| **Phase 4 low-risk** | 🔄 **IN_PROGRESS** (9/13 audited 69%; **9 ★ honest** wszystkie, ★★ B9+ο.2 NULL closures preserved) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
 | **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
-| **Honest reporting baseline** | **26/33 audited (79%)** ★ — najwyższa empiryczna walidacja Phase 6 (post-sesja-H) |
+| **Honest reporting baseline** | **29/36 audited (81%)** ★ — najwyższa empiryczna walidacja Phase 6 (post-sesja-I) |
 | **NULL closure pattern** | **2 cykli**: μ.1' (Pre-implementation NO-GO PLAN §7) + ο.2 (Post-implementation Stage 0 → Stage 1 ABANDONED) |
 | **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — π.1 SPLIT inherits dla m_ββ) |
 | **Self-correction discipline cluster 2026-05-01** | **5 cykli** (ω.1, σ.1, ψ.1 3-version, τ.3 A5 patch, τ.2 no-patch consistent) |
