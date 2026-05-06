@@ -457,6 +457,61 @@ tags:
   - **M03 cumulative status post-sesja-C:** **70%** (23/33 effective scope)
   - LaTeX compile: 548 stron clean baseline (no regression — sesja C nie modyfikowała core)
   - **Total session 2026-05-06 (A+B+C):** 18 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate = **70% M03 complete + 4-cycle mixing-operator family confirmed**
+
+[2026-05-06 SESSION_D_END] Claudian | Phase 3 medium-risk continuation (3 cykle)
+  - 3 cykle medium-risk audited (kontynuacja Phase 3):
+    * op-upsilon1-closure-cross-family (υ.1):  DONE_STRUCTURAL ★
+        - Universal closure (X_ref/X_obs)^(1/N_gen) z N_gen=3
+        - π.1+τ.1 cross-family unification (oba 1/3 instances)
+        - alt-α 4 candidates (1/4: 0.78σ, 1/3: 1.13σ POST-CONFIRMED, 1/2: 1.79σ, 2/3: 2.42σ)
+          z **real σ tensions BEST 2022** (NIE constructed criterion!)
+        - ⁷⁶Ge×⁷¹Ga POST-CONFIRMED 1.13σ (z τ.1)
+        - ¹³⁶Xe×¹³⁷Cs + ⁹⁸Mo same-isotope LIVE 2030+
+        - Substrate-action gauge invariance LOCKED (X→λX → closure invariant)
+        - "FULL CONVERGENCE 4/4" framing borderline (analog ω.1+φ.1, Phase 5 annotation)
+        - Parent dla φ.1 AXIOM-LIFT (consistent classification)
+    * op-tau1-closure-overlap-coulomb (τ.1):  DONE_DERIVED_CONDITIONAL ★ STRONGEST EMPIRICAL
+        - **5/6 isotopes empirical PASS** — strongest empirical content w M03
+        - f_overlap=(Z_a/Z_t)^(1/3) z 3-fold cascade primality
+        - R_TGP=(19/24)·f² universal across 6 isotopes (⁷Be, ³⁷Ar, ⁵¹Cr, ⁷¹Ga, ⁹⁸Mo, ¹³⁷Cs)
+        - ⁷¹Ga BEST 2022 POST-CONFIRMED 1.13σ
+        - **⁵¹Cr/³⁷Ar 4/4 within 2σ historical** (GALLEX-Cr1, Cr2 ★ 0.02σ exact, SAGE-Cr, SAGE-Ar)
+        - ⁹⁸Mo FRIB 2030+ R=0.7793 ± 10% LIVE
+        - ⁷Be CUPID lab 2030+ f²=1.2114 LIVE
+        - pp Z=1=Z trivial-limit orthogonal SSM 1% confirmed
+        - **P1.2 FAIL** "naive numerical-best gate" overruled by **P1.3 cascade primality**
+          (verified PASS Phase 6: N_gen=3 empirical PDG + φ.1 substrate-action axiom, NIE constructed)
+        - "STRUCTURAL HINT → DERIVED" promotion **substantiated** by 5/6 PASS
+        - Cross-family chain: π.1+τ.1+υ.1+φ.1 — 4 cykli ★ honest, consistent 1/3 multi-domain
+    * op-psi1-substrate-light-acceleration (ψ.1):  DONE_STRUCTURAL_HONEST ★★★ EXEMPLARY MULTI-VERSION
+        - **3-version explicit self-correction discipline** (najczystszy w M03):
+          v1 Phases 1-3 (2026-04-30): 18/18 PASS, TT13 "Sagnac SNR ~3×10⁴ DZIŚ" ★ NOVEL
+            ↓ Phase 4 audit T4.2 + AUDYT_TGP_2026-05-01 A6/A8: błędna interpretacja Z(x)F²→Δc/c
+            ↓ status: INVALIDATED, TT13-TT18 WITHDRAWN, sympy correct ale interpretacja false
+          v2 Phase 6 (2026-05-01): 5/5 PASS corrected
+            - TT19 Sagnac chopper: Δφ ~ 5×10⁻³⁶ rad → **NULL lab** (sub-detection 23 OOM)
+            - TT20 TOF NULL lab; TT21 Cosmological NULL re-confirmed; TT22 Magnetar FRB ω⁰
+            - TT23 4-channel β_g<0 forced przez Adams DECISIVE (UV-independent positivity)
+            - 3 niezależne paths (UV NGFP + heavy-mode 1-loop + Adams) convergent na β_g<0
+          v3 Phase 7 (2026-05-01): 5/5 PASS Hilbert-series dim-6 EFT
+            - 2-element canonical basis {L₅'^(a), L₅'^(b)} via HLMT 2017 algorithm
+            - v2 manual scan recovered jako consistent subset (audit C8 closure)
+        - 8/8 ☑ Phase 6 gate (post-correction) — exemplary compliance
+        - **Pre-binding 2026-05-04 spontaneous adoption** CALIBRATION_PROTOCOL §4 discipline
+        - **Recommended jako canonical exemplar** w GATE_ENFORCEMENT.md §"Self-correction patterns"
+  - Tracker updated (3 entries: υ.1, τ.1, ψ.1)
+  - Audit_log + Statystyka updated (12+3+3+3=21 audited tej sesji 2026-05-06; 26 cumulative w/ pre-M03)
+  - **Pattern recognition expanded:**
+    - Cross-family chain π.1+τ.1+υ.1+φ.1 wszystkie 4 ★ honest, consistent 1/3 multi-domain
+    - τ.1 = strongest empirical (5/6 isotopes PASS — najwyższy empirical content w M03)
+    - ψ.1 = strongest self-correction (multi-version v1→v2→v3 explicit)
+    - "FULL CONVERGENCE N/N" framing borderline w 4 cyklach: ω.1, φ.1, υ.1 (sesja D), ν.1 (Phase 5 batch annotation)
+    - Honest reporting baseline 14/21 = 67% (wzmocnione od 61% post-sesja-C)
+  - Phase 3 progress: **9/15 audited (60%)**; pozostałe 6 medium-risk PENDING
+  - **Następna sesja Phase 3:** σ.1, τ.2, τ.3, UV.3, M10/M11 cosmology, quantum-closure
+  - **M03 cumulative status post-sesja-D:** **79%** (26/33 effective scope)
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja D nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B+C+D):** 21 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate = **79% M03 complete + 14/21 honest baseline (67%) + ψ.1 ★★★ canonical self-correction precedent**
 ```
 
 ## Statystyka aktualna
@@ -469,15 +524,17 @@ tags:
 | DONE pre-M03 (subagent_audit + AUDIT_omega) | 5 (chi.1, UV.2, λ.1, ω.2, ω.3) |
 | DONE 2026-05-06 sesja A (Phase 1+2+ζ.1+Phase 5 draft+Phase 6) | 12 (η.2, ε.1, θ.1, η.1, κ.1, ι.1, δ.1, δ.2, γ.1, XS.1, μ.1 PMNS, ζ.1) |
 | DONE 2026-05-06 sesja B (Phase 3 medium-risk start) | 3 (BH.1, ω.1, μ.1' substrate-log) |
-| **DONE 2026-05-06 sesja C (Phase 3 continuation)** | **3 (φ.1, ν.1, SC.1)** |
-| PENDING (effective scope minus DONE) | ~10 |
-| Progress percentage | **70%** (23/33 effective scope) |
+| DONE 2026-05-06 sesja C (Phase 3 continuation) | 3 (φ.1, ν.1, SC.1) |
+| **DONE 2026-05-06 sesja D (Phase 3 continuation)** | **3 (υ.1, τ.1, ψ.1)** |
+| PENDING (effective scope minus DONE) | ~7 |
+| Progress percentage | **79%** (26/33 effective scope) |
 | **Phase 2 high-risk** | ✅ **COMPLETE** (all 11 high-risk cykli audited) |
-| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (6/15 audited 40%; **5 ★ honest** + 1 ⚠ NUMEROLOGICAL ν.1 cascade) |
+| **Phase 3 medium-risk** | 🔄 **IN_PROGRESS** (9/15 audited 60%; **8 ★ honest** + 1 ⚠ NUMEROLOGICAL ν.1 cascade) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
 | **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
-| **Honest reporting baseline** | **11/18 audited (61%)** ★ — empiryczna walidacja Phase 6 enforcement |
-| **Mixing-operator family** | **⚠ EXPANDED do 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade) |
+| **Honest reporting baseline** | **14/21 audited (67%)** ★ — wzmocniona empiryczna walidacja Phase 6 enforcement |
+| **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — sesja D nie expand) |
+| **Special cases** | **★★★ ψ.1 multi-version self-correction** (canonical CALIBRATION_PROTOCOL §4 precedent); **★ τ.1 strongest empirical** (5/6 isotopes PASS) |
 
 ## Notable patterns observed
 
