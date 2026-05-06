@@ -622,6 +622,61 @@ tags:
   - **Następna Phase 4 low-risk (~13 cykli)** — tracker entries 6, 13, 14, 26, 31, 32, 33, 34, 35, 37, 40, 48, 49
   - LaTeX compile: 548 stron clean baseline (no regression — sesja F nie modyfikowała core)
   - **Total session 2026-05-06 (A+B+C+D+E+F):** 27 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 COMPLETE = **97% M03 complete + 20/27 honest baseline (74%) + Phase 3 100% (14 ★ + 1 ⚠) + 5-cluster 2026-05-01 self-correction + 2 corrective upgrades + 2 aggregate cycles**
+
+[2026-05-06 SESSION_G_END] Claudian | Phase 4 low-risk start (3 cykle parents + audit-driven)
+  - 3 cykle low-risk audited (Phase 4 start z parents dla już auditowanych):
+    * op-pi1-bb0nu-nme-isotope (π.1):  DONE_STRUCTURAL ★ SPLIT VERDICT PATTERN
+        - **SPLIT pattern (analog ν.1):** clean structural part + ν.1 contagion part
+        - 1/A^{1/3} NME closure CLEAN z φ.1+υ.1 substrate-action chain (anchor Ge-76 EDF=4.6)
+        - 24-cell matrix (3 isotopes × 4 NME methods QRPA/EDF/IBM/SM) all safe
+        - Cross-isotope ratios within ±50% NME systematic standard:
+          T(Ge-76)/T(Xe-136) 25.0% dev; T(Te-130)/T(Xe-136) 34.9% dev
+        - Both Forms safely above all 0νββ 90% CL bounds (KZ-900 + LEGEND-1000 + nEXO + CUPID)
+        - 7-channel falsification convergence (4 LIVE 2030+ + 1 mid 2026+ + 1 theory + KZ-900)
+        - ⚠ Form A/B m_ββ predictions inherit ν.1 NUMEROLOGICAL cascade contagion
+          (μ.1 PMNS angles + δ_CP NUMEROLOGICAL inputs)
+        - 3.33σ A vs B separation = composite μ.1+ν.1 cascade test, NIE specific π.1
+        - Parent dla υ.1+τ.1+φ.1 chain (consistent classification)
+    * op-rho1-71Ge-cross-section (ρ.1):  DONE_DERIVED_CONDITIONAL ★ STRONGEST TENSION-REDUCTION
+        - σ_TGP=(19/24)·(31/32)^(2/3)=0.7751 sympy LOCK (2 niezależne factors)
+        - **BEST 2022 4σ → 1.13σ tension reduction** — substantive empirical impact!
+          (75% pre-existing tension explained by TGP framework)
+        - GALLEX/SAGE 4/4 within 3σ historical:
+          GALLEX-Cr1 1.78σ, **★ GALLEX-Cr2 0.34σ (close exact)**, SAGE-Cr 1.46σ, **★ SAGE-Ar 0.15σ (exact)**
+        - 4-state universal 0.7751 chirality factor (g.s. + 175 keV + 500 keV + 708 keV)
+        - B(GT) g.s. = 0.0666 falsifier gate [0.0599, 0.0732] FRIB 2027+ z ~1% precision
+        - ⁸B Borexino orthogonal — TGP nie ingeruje w solar ν flux
+        - **Cross-cycle anchor dla τ.1**: ρ.1 19/24 chirality factor → τ.1 R_TGP=(19/24)·f²
+        - Mutual empirical support: ρ.1 BEST POST-CONFIRMED 1.13σ ⇆ τ.1 ⁷¹Ga POST-CONFIRMED 1.13σ
+        - XX3 ξ.2 PROMOTED → PARTIALLY DERIVED via K_up - K_lep = 5/24 chirality counting
+        - **Strongest empirical content** typu "tension-reduction" (NIE just NULL match)
+    * op-newton-momentum (B9 sub-cycle):  DONE_STRUCTURAL ★★ EXEMPLARY AUDIT-DRIVEN
+        - **Closes S04 phenomenologically** (metric-coupling vs L_mat) per PRIORITY_MATRIX
+        - **Audit-driven**: explicit response do M9.2 critique (single-source NIE WEP test)
+        - Sympy LOCK m_field ~ (qM)²/(4π·σ) weak-field analytical
+        - **3 niezależne composition modes** tested:
+          1. Geometric (Pt vs Ti, σ scaling)
+          2. Coupling (δq/q linearity verified, rel_dev 4.80×10⁻²)
+          3. Structural (inhomogeneous ρ core+shell vs Gaussian)
+        - Realistic MICROSCOPE Pt vs Ti: η_TGP_lab = 1.32×10⁻²⁶ (no T-α)
+        - T-α integration: 6.49×10⁻⁴⁵ combined (additional 10⁻¹⁹ suppression)
+        - **Margins**: MICROSCOPE 2017 (1.1×10⁻¹⁵): **8.3×10¹⁰× safe** (no T-α), 1.7×10²⁹× safe (T-α)
+        - MICROSCOPE-2 future (10⁻¹⁷): 7.6×10⁸× safe and 1.5×10²⁷× safe
+        - **Canonical audit-driven response model** (analog UV.3 + ψ.1 + τ.3 patterns)
+  - Tracker updated (3 entries: π.1, ρ.1, B9) + Phase 4 progress 3/13 (23%)
+  - Audit_log + Statystyka updated (12+3+3+3+3+3+3=30 audited tej sesji 2026-05-06; 35 cumulative w/ pre-M03)
+  - **Pattern recognition expanded:**
+    - **SPLIT verdict pattern**: 2 cykli (ν.1 Form A/B + π.1 1/A^{1/3} clean / m_ββ contagion) — wzór dla future SPLIT classifications
+    - **Audit-driven response cluster (4 cykli)**: B9 (composition), ψ.1 (3-version), τ.3 (A5 patch), UV.3 (DEPRECATES UV.2)
+    - **Empirical impact rankings**: τ.1 (5/6 PASS replicate) > **ρ.1 (4σ→1.13σ tension reduction)** > τ.2 (3/4 NULL) > B9 (8.3×10¹⁰× safe) > UV.3 (Ω_Λ·α_s 0.88%)
+    - Cross-cycle anchor support: ρ.1 19/24 ↔ τ.1 R_TGP factor (mutual)
+    - Parent chain π.1+τ.1+υ.1+φ.1 wszystkie 4 ★ honest, consistent 1/3 multi-domain
+    - Honest reporting baseline 23/30 = 77% (wzmocnione od 74% post-sesja-F)
+  - Phase 4 progress: **3/13 audited (23%)**; pozostałe 10 low-risk PENDING
+  - **Następna sesja Phase 4 continuation:** η.x family, EHT, ο.1, ο.2, phase1-3, UV.x
+  - **M03 cumulative status post-sesja-G:** Phase 1-3 100% COMPLETE; Phase 4 23%; total ~78% (35/45)
+  - LaTeX compile: 548 stron clean baseline (no regression — sesja G nie modyfikowała core)
+  - **Total session 2026-05-06 (A+B+C+D+E+F+G):** 30 retrofitów + framework + Phase 5 draft + core annotations + Phase 6 gate + Phase 3 COMPLETE + Phase 4 23% = **23/30 honest baseline (77%) + 2 SPLIT pattern + 4 audit-driven cluster + cross-cycle ρ.1↔τ.1 anchor support**
 ```
 
 ## Statystyka aktualna
@@ -637,18 +692,24 @@ tags:
 | DONE 2026-05-06 sesja C (Phase 3 continuation) | 3 (φ.1, ν.1, SC.1) |
 | DONE 2026-05-06 sesja D (Phase 3 continuation) | 3 (υ.1, τ.1, ψ.1) |
 | DONE 2026-05-06 sesja E (Phase 3 continuation) | 3 (σ.1, τ.2, τ.3) |
-| **DONE 2026-05-06 sesja F (Phase 3 FINAL)** | **3 (UV.3, M10, M11) → Phase 3 COMPLETE** |
-| PENDING (effective scope minus DONE) | ~1 |
-| Progress percentage | **97%** (32/33 effective scope) |
-| **Phase 2 high-risk** | ✅ **COMPLETE** (all 11 high-risk cykli audited) |
-| **Phase 3 medium-risk** | ✅ **COMPLETE 2026-05-06** (15/15 = 100%; **14 ★ honest** + 1 ⚠ NUMEROLOGICAL) |
+| DONE 2026-05-06 sesja F (Phase 3 FINAL) | 3 (UV.3, M10, M11) → Phase 3 COMPLETE |
+| **DONE 2026-05-06 sesja G (Phase 4 start)** | **3 (π.1, ρ.1, B9 newton-momentum)** |
+| PENDING (effective scope minus DONE) | ~10 (Phase 4 low-risk remaining) |
+| Progress percentage Phase 1-3 | **100% COMPLETE** (32/32 scope = high+medium+aggregate audited) |
+| Progress percentage M03 total | **35/45 audited (~78% w pełnym scope)** |
+| **Phase 2 high-risk** | ✅ **COMPLETE** (11/11 cykli audited) |
+| **Phase 3 medium-risk** | ✅ **COMPLETE** (15/15 cykli audited) |
+| **Phase 4 low-risk** | 🔄 **IN_PROGRESS** (3/13 audited 23%; **3 ★ honest** wszystkie) |
 | **Phase 5 early start** | ✅ **DRAFT COMPLETE** (registry refactor recommendations dla 12 cykli) |
 | **Phase 6 gate enforcement** | ✅ **COMPLETE** (CALIBRATION_PROTOCOL ABSOLUTE BINDING + GATE_ENFORCEMENT + AGENT_PROTOCOL) |
-| **Honest reporting baseline** | **20/27 audited (74%)** ★ — najwyższa empiryczna walidacja Phase 6 |
-| **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — sesje D+E+F nie expand) |
+| **Honest reporting baseline** | **23/30 audited (77%)** ★ — najwyższa empiryczna walidacja Phase 6 (post-sesja-G) |
+| **Mixing-operator family** | **⚠ STILL 4 cykli** (κ.1+ι.1+μ.1+ν.1 NUMEROLOGICAL/ANSATZ cascade — π.1 SPLIT inherits dla m_ββ) |
 | **Self-correction discipline cluster 2026-05-01** | **5 cykli** (ω.1, σ.1, ψ.1 3-version, τ.3 A5 patch, τ.2 no-patch consistent) |
 | **Corrective upgrade pattern (DEPRECATES predecessor)** | **2 cykli**: ψ.1 (replaces v1) + UV.3 (DEPRECATES UV.2 K_struct TAUTOLOGY) |
 | **Aggregate cycles (multi-subcycle)** | **2 cykli**: M10 (42/42 verifications) + M11 (62/62 verifications) honest scope |
+| **Audit-driven response cycles** | **4 cykli**: B9 (composition test addresses M9.2), ψ.1 (3-version), τ.3 (A5 patch), UV.3 (DEPRECATES UV.2) |
+| **SPLIT verdict pattern (clean + cascade contagion)** | **2 cykli**: ν.1 (Form A clean + Form B contagion), π.1 (1/A^{1/3} clean + m_ββ ν.1 cascade) |
+| **Strongest empirical impact rankings** | τ.1 (5/6 PASS), **ρ.1 (BEST 4σ→1.13σ tension reduction)**, τ.2 (3/4 NULL), B9 (8.3×10¹⁰× safe), UV.3 (Ω_Λ·α_s 0.88%) |
 | **Special cases** | **★★★ ψ.1 multi-version self-correction** (canonical CALIBRATION_PROTOCOL §4 precedent); **★ τ.1 strongest empirical** (5/6 isotopes PASS) |
 
 ## Notable patterns observed

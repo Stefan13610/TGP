@@ -70,7 +70,7 @@ Razem: **54** (z `ls research/op-*`)
 | 23 | op-m92 | OUT_OF_SCOPE | OUT_OF_SCOPE | n/a | — | — | M9.2, post-G.0 closure |
 | 24 | **op-mu-pmns-phase-hardening** | HIGH | DONE_NUMEROLOGICAL | NUMEROLOGICAL | Claudian | 2026-05-06 | μ.1 — **CRITICAL DOWNGRADE** z "DERIVED FULL CASCADE, 8 free→0 free"; "drift hardening" via (1-ρ̄), K_ν/K_up, (1-λ_C·η̄) = fitting parameters z κ.1 NUMEROLOGICAL cascade; lift factors 21×/126×/51× exactly compensate ι.1 zeroth drift; δ_CP dual form (205° vs 260°) accommodating ([[retrofit_op-mu_2026-05-06.md]]) |
 | 25 | **op-mu1-minimal-substrate-log-redefinition** | MEDIUM | DONE_STRUCTURAL_NO_GO | STRUCTURAL_NO_GO | Claudian | 2026-05-06 | μ.1' (NIE μ.1!) — ★★ EXEMPLARY honest NO-GO closure per PLAN §7; reparametryzacja PASS (Phase 1 3/3); compound mechanism FAIL (Phase 2.2 0/4 candidates dla Σε=2); P2.3 cyrkularny self-acknowledged; canonical example pre-derivation GATE discipline ([[retrofit_op-mu1prime_2026-05-06.md]]) |
-| 26 | op-newton-momentum | LOW | PENDING | — | — | — | B9, M9 PPN, post-G.0 |
+| 26 | **op-newton-momentum (B9)** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | B9 — ★★ EXEMPLARY AUDIT-DRIVEN; closes S04 phenomenologically (8.3×10¹⁰× safe MICROSCOPE 2017; 1.7×10²⁹× z T-α). Multi-component WEP composition test (3 modes: q + σ + ρ_structure) — addresses M9.2 critique że single-source NIE WEP test. Sympy LOCK m_field~(qM)²/(4π·σ) weak-field. Realistic Pt vs Ti η_TGP_lab=1.32×10⁻²⁶. T-α integration (6.49×10⁻⁴⁵). MICROSCOPE-2 future 7.6×10⁸× safe ([[retrofit_op-newton-momentum-B9_2026-05-06.md]]) |
 | 27 | **op-nu-majorana-phase-mbb** | MEDIUM | DONE_NUMEROLOGICAL | NUMEROLOGICAL | Claudian | 2026-05-06 | ν.1 — ⚠ **CRITICAL CASCADE** 4-ty członek mixing-operator family contagion (κ.1+ι.1+μ.1+**ν.1**); Form A α₂₁=π/2 + α₃₁=9π/26 STRUCTURAL salvageable (chirality halving + B²-taxonomy); Form B α₂₁=11π/13, α₃₁=12π/7 direct μ.1 NUMEROLOGICAL inheritance (ρ̄=2/13, η̄=6/7); m_ββ_A=1.584, m_ββ_B=3.249 meV inherit μ.1 angles + δ_CP cascade contagion; "8 free→0 free" untenable identical do μ.1 ([[retrofit_op-nu1_2026-05-06.md]]) |
 | 28 | **op-omega1-substrate-em-coupling** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | ω.1 — ★ POSITIVE EXAMPLE; axion-like (ln X)F·F̃ unique form w EFT dim-4 + scale-symmetric class; modified EOMs sympy LOCK; **self-correction 2026-05-01** "POST-CONFIRM" → "LIVE PARTIAL" (β Planck 3.8σ hint); **mathematical correction** "B² sourcing" → "F·F̃∝E·B"; g multi-candidate honest open (NIE constructed criterion); "FULL CONVERGENCE" framing borderline promotional ([[retrofit_op-omega1_2026-05-06.md]]) |
 | 29 | **op-omega2-axion-coupling-lock** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | AUDIT_omega2 | 2026-05-04 | **Already audited** post-CRITIQUE; LIVE_PARTIAL |
@@ -81,10 +81,10 @@ Razem: **54** (z `ls research/op-*`)
 | 34 | op-phase2-quantum-gravity | LOW | PENDING | — | — | — | QG phase |
 | 35 | op-phase3-uv-completion | LOW | PENDING | — | — | — | UV completion phase 3 |
 | 36 | **op-phi1-substrate-action-variational** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | φ.1 — ★ POSITIVE EXAMPLE; Lagrangian L=½(∂ ln X)² unique w EFT dim-4 + scale-symmetric class (5 alt FALSIFIED); EL→linear ln X→closure z postulate sampling x=L/N_gen; 6 isotope predictions (⁷Be, ³⁷Ar, ⁵¹Cr, ⁷¹Ga 1.13σ POST-CONFIRMED, ⁹⁸Mo, ¹³⁷Cs); RG-stability falsifier FRIB 2030+; "AXIOM-LIFTED" framing = unified Lagrangian description (NIE N_gen=3 derivation); "FULL CONVERGENCE 4/4" framing borderline promotional (analog ω.1) ([[retrofit_op-phi1_2026-05-06.md]]) |
-| 37 | op-pi1-bb0nu-nme-isotope | LOW | PENDING | — | — | — | π.1 NME isotope |
+| 37 | **op-pi1-bb0nu-nme-isotope** | LOW | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | π.1 — ★ POSITIVE EXAMPLE z **SPLIT verdict pattern**: 1/A^{1/3} NME closure clean z φ.1+υ.1 substrate-action chain; cross-isotope ratios within ±50% NME systematic (Ge/Xe 25%, Te/Xe 35% dev); 24-cell matrix (3 isotopes × 4 NME methods) all safe; ⚠ Form A/B m_ββ predictions inherit ν.1 NUMEROLOGICAL contagion (μ.1 PMNS angles + δ_CP); 3.33σ A vs B = composite μ.1+ν.1 cascade; parent dla υ.1+τ.1+φ.1 chain ([[retrofit_op-pi1_2026-05-06.md]]) |
 | 38 | **op-psi1-substrate-light-acceleration** | MEDIUM | DONE_STRUCTURAL_HONEST | STRUCTURAL_HONEST | Claudian | 2026-05-06 | ψ.1 — ★★★ **EXEMPLARY MULTI-VERSION SELF-CORRECTION**; v1 Phase 3 INVALIDATED 2026-05-01 (TT13-TT18 WITHDRAWN, Sagnac SNR ~3×10⁴ artefact błędnej interpretacji Z(x)F²→Δc/c); v2 Phase 6 corrected (TT19-TT23 NULL lab + β_g<0 forced przez Adams DECISIVE z 3 niezależnych paths); v3 Phase 7 systematic Hilbert-series 2-element canonical basis (audit C8 closure); 8/8 ☑ Phase 6 gate; canonical precedent dla CALIBRATION_PROTOCOL §4 self-correction discipline (pre-binding 2026-05-04) ([[retrofit_op-psi1_2026-05-06.md]]) |
 | 39 | **op-quantum-closure** | MEDIUM | DONE_STRUCTURAL_HONEST | STRUCTURAL_HONEST | Claudian | 2026-05-06 | M11 — ★★ **EXEMPLARY SYNTHESIS-ONLY** multi-Branch (62/62 verifications, 9 sub-cykli); η_BI ≈ η_LPA'(wide) **1.00% multi-method convergence** (Branch I 1-loop bottom-up + Branch II FRG top-down); 3D Ising ν drift 0.07% literature; **HONEST SCOPE**: "synthesis/consistency audit using closure-grade frozen reference values; NOT first-principles dim-reg/zeta-fn δM_phys; full δM_phys deferred Phase 1 covariant program"; η_CG2 outlier acknowledged "well-known LPA' underestimation"; 18.8% G_TGP smearing-broad gate explicit ([[retrofit_op-quantum-closure_2026-05-06.md]]) |
-| 40 | op-rho1-71Ge-cross-section | LOW | PENDING | — | — | — | ρ.1 cross-section |
+| 40 | **op-rho1-71Ge-cross-section** | LOW | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | ρ.1 — ★ STRONGEST TENSION-REDUCTION EMPIRICAL IMPACT; σ_TGP=(19/24)·(31/32)^(2/3)=0.7751 sympy LOCK; **BEST 2022 4σ → 1.13σ tension reduction** (75% pre-existing tension explained); GALLEX/SAGE 4/4 within 3σ historical (★ GALLEX-Cr2 0.34σ + SAGE-Ar 0.15σ exact); 4-state universal 0.7751 chirality factor; ⁸B Borexino orthogonal; **cross-cycle anchor dla τ.1 19/24 chirality factor** (mutual support); B(GT) g.s. 0.0666 falsifier gate FRIB 2027+; XX3 ξ.2 PROMOTED → PARTIALLY DERIVED ([[retrofit_op-rho1_2026-05-06.md]]) |
 | 41 | **op-sc-alpha-origin** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | SC.1 — ★ POSITIVE EXAMPLE; Phase 1 H₀ rejected explicit (α_PB ≠ unit-cousin α_0); Phase 2 H_AG_PARTIAL explicit "α_PB JEST A-G-like ale a priori J_sf=2.59"; Phase 3 **bidirectional falsification map** (SmH₉ TGP wins 10⁵·⁸×, YbH₉+TmH₉ A-G wins 84×+10⁵×); 2-point fit explicit disclosure; 5 LIVE 2027-2030 + 1 STRUCTURAL (PmH₉ radioactive); cross-sector α₀=κ_TGP² 0.75% gap STRUCTURAL HINT (consistent z BH.1) ([[retrofit_op-sc1_2026-05-06.md]]) |
 | 42 | **op-sigma1-substrate-light-dispersion** | MEDIUM | DONE_STRUCTURAL | STRUCTURAL | Claudian | 2026-05-06 | σ.1 — ★ POSITIVE EXAMPLE; dispersion ω_±²=k²±g·k·n_∥ helicity-dependent z ω.1 axion-like coupling sympy LOCK; **self-correction 2026-05-01** (v_g sign POSITIVE + WKB scope softening + LIVE PARTIAL CMB downgrade); 3 alt-dispersions multi-domain FALSIFIED (Webb/Murphy + Planck + Fermi LAT) NIE constructed criterion; "FULL CONVERGENCE 4/4" framing borderline (analog ω.1) ([[retrofit_op-sigma1_2026-05-06.md]]) |
 | 43 | **op-tau1-closure-overlap-coulomb** | MEDIUM | DONE_DERIVED_CONDITIONAL | DERIVED_CONDITIONAL | Claudian | 2026-05-06 | τ.1 — ★ **STRONGEST EMPIRICAL** w M03 (5/6 isotopes empirical PASS); f_overlap=(Z_a/Z_t)^(1/3) z 3-fold cascade primality; R_TGP=(19/24)·f² universal; ⁷¹Ga BEST 2022 POST-CONFIRMED 1.13σ; ⁵¹Cr/³⁷Ar 4/4 within 2σ historical (★ GALLEX-Cr2 0.02σ exact match); ⁹⁸Mo FRIB + ⁷Be CUPID 2030+ LIVE; pp Z=1=Z trivial-Z orthogonal SSM 1%; P1.2 FAIL overruled by P1.3 cascade primality argument verified PASS Phase 6 ([[retrofit_op-tau1_2026-05-06.md]]) |
@@ -178,22 +178,26 @@ v1)** — wzór spontaneous adoption CALIBRATION_PROTOCOL §4 PRE-binding
 - ★★ τ.1 strongest empirical (5/6 isotopes PASS, GALLEX-Cr2 0.02σ exact)
 - ★★ M11 synthesis-only canonical scope discipline
 
+**Special cases ★★+ post-Phase-4 sesja-G:**
+- ★★ B9 audit-driven exemplary (S04 phenomenological closure, 8.3×10¹⁰× safe)
+- ★ ρ.1 strongest tension-reduction empirical (BEST 4σ → 1.13σ)
+
 ## Low-risk queue (Phase 4)
 
 ```
-1. op-alpha-fine-structure (η.x)
-2. op-eht
-3. op-eht-A
-4. op-newton-momentum (B9)
-5. op-omicron1-sigmamnu-cosmo (ο.1)
-6. op-omicron2-phi-mean-shift-cosmo (ο.2)
-7. op-phase1-covariant
-8. op-phase2-quantum-gravity
-9. op-phase3-uv-completion
-10. op-pi1-bb0nu-nme-isotope (π.1)
-11. op-rho1-71Ge-cross-section (ρ.1)
-12. op-uv-as-ngfp
-13. op-uv-renormalizability-research
+1. op-alpha-fine-structure (η.x)                            PENDING
+2. op-eht                                                  PENDING
+3. op-eht-A                                                 PENDING
+4. op-newton-momentum (B9)                                  ✅ DONE 2026-05-06 (STRUCTURAL ★★ audit-driven, S04 closure)
+5. op-omicron1-sigmamnu-cosmo (ο.1)                         PENDING
+6. op-omicron2-phi-mean-shift-cosmo (ο.2)                   PENDING
+7. op-phase1-covariant                                       PENDING
+8. op-phase2-quantum-gravity                                 PENDING
+9. op-phase3-uv-completion                                   PENDING
+10. op-pi1-bb0nu-nme-isotope (π.1)                           ✅ DONE 2026-05-06 (STRUCTURAL ★ SPLIT pattern, 1/A^{1/3} clean + m_ββ ν.1)
+11. op-rho1-71Ge-cross-section (ρ.1)                         ✅ DONE 2026-05-06 (DERIVED_CONDITIONAL ★ BEST 4σ→1.13σ)
+12. op-uv-as-ngfp                                            PENDING
+13. op-uv-renormalizability-research                         PENDING
 ```
 
 ## Aktualizacje sesji
