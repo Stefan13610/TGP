@@ -111,11 +111,30 @@ status-labele, niektóre cykle z fitted anchors.
 
 | Klasa | Prefix | Liczba | Charakter |
 |-------|--------|--------|-----------|
-| **Strukturalne sprzeczności** | `S` | 6 | krytyczne; blokują LOCKED na rdzeniu |
-| **Luki ontologiczne** | `L` | 6 | otwarte derywacje, semantyczne kolizje |
+| **Strukturalne sprzeczności** | `S` | 6 + 1 (S07 EXT-3) | krytyczne; blokują LOCKED na rdzeniu |
+| **Luki ontologiczne** | `L` | 6 + 2 (L07 EXT-2, L08 EXT-4) | otwarte derywacje, semantyczne kolizje |
 | **Liczbowy dryft** | `D` | 1 | spreads parametrów (α_s, m_H, Φ₀, …) |
 | **Chaos metodologiczny** | `M` | 3 | rejestrowo-procesowe |
-| **Master files** | — | 3 | summary, priority matrix, ten README |
+| **Testy falsyfikujące** | `T` | 1 (T01 EXT-5) NEW | external falsification testing |
+| **External review** | `EXT` | 5 (EXT-1..5) | recenzja zewnętrzna 2026-05-06 |
+| **Master files** | — | 4 | summary, priority matrix, closure summary, README |
+
+## ⚠ External review 2026-05-06 — 5 strukturalnych długów
+
+[[EXTERNAL_REVIEW_2026-05-06.md]] (recenzja zewnętrzna, sesja 2026-05-06):
+
+| ID | Skrót | Klasa | Priorytet | Folder |
+|----|-------|-------|-----------|--------|
+| **EXT-1** | Kosmologia radiacyjna z varying c, ℏ, G → BBN/CMB | rozszerzenie L01 | **P1 otwarte ryzyko** | [[L01_rho_operational/EXT1_FRW_radiation_era_2026-05-06.md]] |
+| **EXT-2** | Warunek zerowej sumy → derywacja | nowy L07 | **P2** | [[L07_zero_sum_axiom/README.md]] |
+| **EXT-3** | M9.1'' z pierwszych zasad | nowy S07 | **P2** | [[S07_M911_derivation/README.md]] |
+| **EXT-4** | Phase 6+ why_n3 fermiony | nowy L08 | **P2** | [[L08_kink_fermion_closure/README.md]] |
+| **EXT-5** | LIGO 3G falsifier statement | **nowa klasa T01** | **P3** | [[T01_LIGO3G_falsifier/README.md]] |
+
+**Diagnoza syntetyczna:** TGP_v1 ma 2 strukturalne długi krytyczne
+(EXT-2, EXT-3), 1 krytyczny otwartego ryzyka (EXT-1, dwustronny), 1
+strategiczny (EXT-4) i 1 taktyczny (EXT-5). Każdy jest tematem na cykl
+badawczy ~3–6 miesięcy.
 
 ## Pliki master
 
@@ -137,17 +156,20 @@ status-labele, niektóre cykle z fitted anchors.
 | [[S04_metric_coupling_axiom/README.md]] | `ax:metric-coupling` ⊥ `L_mat = -(q/Φ₀)φρ` |
 | [[S05_tensor_sector_singleField/README.md]] | σ_ab łamie aksjomat single-Φ |
 | [[S06_circular_anchors/README.md]] | χ.1 (G_N) + UV.2 (M_TGP) cyrkularność |
+| [[S07_M911_derivation/README.md]] | **NEW (EXT-3):** M9.1'' postulat vs derywacja z pierwszych zasad |
 
 ### L — Luki ontologiczne (priorytet P2)
 
 | Folder | Skrót problemu |
 |--------|----------------|
-| [[L01_rho_operational/README.md]] | Brak operacyjnej definicji ρ |
+| [[L01_rho_operational/README.md]] | Brak operacyjnej definicji ρ (+ [[L01_rho_operational/EXT1_FRW_radiation_era_2026-05-06.md]] EXT-1 P1) |
 | [[L02_beta_gamma_semantics/README.md]] | β/γ WF FP vs faza złamana — kolizja semantyczna |
 | [[L03_K_phi_stability/README.md]] | V''(1)=-γ<0 vs K(φ)=K_geo·φ⁴ |
 | [[L04_ODE_dualism_alpha/README.md]] | Dwie żywe formulacje (α=1 K=g² vs α=2 K=g⁴) |
 | [[L05_mass_exponent_drift/README.md]] | k=4 (LP-4) vs p=5-α (R3 2026-05-01) |
 | [[L06_axion_mass_locked/README.md]] | m_X "locked" 100 MeV — fenomenologia |
+| [[L07_zero_sum_axiom/README.md]] | **NEW (EXT-2):** ∫_Σ φ √h = 0 — aksjomat vs derywacja |
+| [[L08_kink_fermion_closure/README.md]] | **NEW (EXT-4):** Phase 6+ why_n3 (kinki jako fermiony) |
 
 ### D — Liczbowy dryft (priorytet P3)
 
@@ -161,7 +183,13 @@ status-labele, niektóre cykle z fitted anchors.
 |--------|----------------|
 | [[M01_status_creep/README.md]] | PREDICTIONS_REGISTRY: STRUCTURAL → DERIVED² |
 | [[M02_ledger_pollution/README.md]] | 74394a8 forward-patch (counter 856) |
-| [[M03_balance_sheet_missing/README.md]] | Brak inputs-outputs dla 27+ pre-74394a8 cykli |
+| [[M03_balance_sheet_missing/README.md]] | Brak inputs-outputs dla 27+ pre-74394a8 cykli (**🎉 EXECUTED ALL PHASES 100% COMPLETE 2026-05-06**) |
+
+### T — Testy falsyfikujące (NEW class, EXT-5)
+
+| Folder | Skrót problemu |
+|--------|----------------|
+| [[T01_LIGO3G_falsifier/README.md]] | **NEW (EXT-5):** \|Δg_tt\|=(5/6)U³ test różnicujący vs LIGO 3G (P3 strategiczny) |
 
 ## Konwencja statusu
 
