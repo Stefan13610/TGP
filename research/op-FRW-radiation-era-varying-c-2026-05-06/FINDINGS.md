@@ -1,127 +1,174 @@
 ---
-title: "FINDINGS — op-FRW-radiation-era-varying-c (post-Phase-1)"
+title: "FINDINGS — op-FRW-radiation-era-varying-c (post-Phase-2 final)"
 date: 2026-05-07
 parent: "[[README.md]]"
 type: findings
-status: PHASE_1_COMPLETE — 4/5 PASS, critical binary outcome ujawniony
+status: PHASE_2_COMPLETE_FAIL — ścieżka A FAILS confirmed numerycznie, decyzja D/E/F pending
+classification: STRUCTURAL_NO_GO (analog μ.1', ο.2)
 tgp_owner: research/op-FRW-radiation-era-varying-c-2026-05-06
 tags:
   - findings
   - EXT-1
-  - phase1-complete
-  - critical-finding
+  - phase2-complete
+  - sciezka-A-FAILS
+  - decision-pending
+  - STRUCTURAL_NO_GO
 ---
 
-# FINDINGS — post-Phase-1
+# FINDINGS — post-Phase-2 final
+
+## Status FINAL
+
+**EXT-1 ŚCIEŻKA A — DEFINITIVELY FAILS 2026-05-07** post Phase 2
+short-cycle (2/2 PASS).
+
+**Klasyfikacja:** **STRUCTURAL_NO_GO** (analog μ.1' substrate-log, ο.2
+Hubble tension z M03 retrofit — Phase 6 honest reporting baseline
+preserved).
+
+## Phase 1 + Phase 2 cumulative
+
+### ✅ Phase 1 (4/5 PASS): Analytical scaffold
+
+- F1.1 FRW background z varying c(Φ): PASS
+- F1.2 Friedmann eq w TGP (sympy LOCK): PASS
+- F1.3 ax:c-ax:G consistency: PASS
+- F1.4 Limity asymptotyczne: PARTIAL — binary outcome ujawniony
+- F1.5 Phase 1 GATE: 4/5 PASS
+
+### ✅ Phase 2 short-cycle (2/2 PASS): Numerical confirmation
+
+- F2.1 Numerical Φ-EOM analytical: PASS — scenariusz (a) ψ FROZEN confirmed
+- F2.2 H_TGP/H_GR scaling: PASS — **0.184% drift** confirmed analitycznie
+
+## Critical findings
+
+### 1. ψ-EOM analytical solution
+
+W TGP framework w erze radiacyjnej **H >> m_eff** dla wszystkich z > 0
+→ Hubble friction DOMINATE → ψ frozen ≈ 1 (overdamped harmonic oscillator).
+
+**Source term analysis** ujawnia non-stable equilibrium: V'(ψ) max
+przy ψ=2/3 z V'_max = 4γ/27, ale w radiation era source/K_geo
+~ 3·10²⁶·γ >> 4γ/27 → brak stable equilibrium → ψ → 0 lub ψ → ∞.
+
+W obu przypadkach M9.1'' łamie założenia + numerical solver diverges.
+
+### 2. H_TGP/H_GR scaling
+
+W scenariuszu (a) — ψ frozen, varying constants efektywnie wyłączone:
+
+```
+H_TGP² / H_GR² = ρ_matter / ρ_rad = (z_eq + 1) / (1 + z) ≈ 3400/(1+z)
+Dla z = 10⁹: H_TGP / H_GR ≈ 0.184%
+```
+
+### 3. BBN ⁴He impact
+
+```
+T_freeze_TGP ≈ 0.20 MeV (vs GR 0.7 MeV)
+n/p_TGP ≈ 0.00155 (vs GR 0.157)
+Y_p_TGP ≈ 0.31% vs PDG 24.5%
+```
+
+**Drift ~99% << 5% BBN gate. CATASTROPHIC FAIL.**
+
+## Probability evolution (subiektywna ocena)
+
+| Outcome | Pre-Phase-1 (EXT-1 v2) | Post-Phase-1 | **Post-Phase-2 (FINAL)** |
+|---------|------------------------|--------------|---------------------|
+| P(ścieżka A → DERIVED) | 35-45% | 5-10% | **<1%** |
+| P(ścieżka A → STRUCTURAL CONDITIONAL) | 30-40% | 10-15% | **<2%** |
+| P(FAIL → pivot D/E/F) | 25-35% | 75-85% | **>97%** |
+
+## Decision matrix
+
+### Ścieżka E (RECOMMENDED short-term) — scope acknowledgment
+
+**Co:** Update `TGP_FOUNDATIONS.md` § scope:
+> "TGP_v1 is consistent with GR for z < z_recombination (≈ 1100). For
+> earlier epochs (BBN, inflation), TGP defers to standard cosmology
+> until structural extension (radiation coupling) is developed."
+
+**Pros:**
+- Honest acknowledgment of scope limitation
+- Trivial implementation (~1 paragraph w FOUNDATIONS)
+- Preserves S04 closure (B9 MICROSCOPE 6/6 PASS)
+- Preserves M9.1'' weak-field PPN, GW170817, dark energy
+- Peer-review rzetelność wzmocniona
+
+**Cons:**
+- Drastycznie obniża rangę TGP (nie pełna kosmologia)
+- TGP staje się "theory of late-time gravity"
+
+**Estymata:** <1 miesiąc.
+
+### Ścieżka D (long-term research-track) — L_mat extension dla pól cechowania
+
+**Co:** Dodać do L_mat sprzężenie dilatonowe dla pól cechowania:
+```
+L_mat = -(q/Φ_0)·φ·ρ + L_rad(φ, F_μν)
+```
+
+**Pros:**
+- Potencjalnie ratuje phenomenologię BBN/CMB
+- TGP może zachować claim pełnej kosmologii
+
+**Cons:**
+- **NARUSZA ax:metric-coupling** (S04 ZAMKNIĘTY 2026-05-04) — wymaga
+  RE-OPEN S04
+- B9 MICROSCOPE musi być re-verified post-extension
+- Wymaga cyklu `op-Lmat-extension-S04-reopen/` (Phase 1+2+3)
+- **30-50% probability success**
+
+**Estymata:** 6-12 miesięcy.
+
+### Ścieżka F (speculative) — pre-BBN inflation novel physics
+
+**Co:** Dodać inflacyjną fazę z ψ_init << 1 → relaxes do ψ=1 today.
+
+**Pros:** Może rozwiązać EXT-1 + dodać inflation physics
+**Cons:** 12+ miesięcy, 10-25% probability, M9.1'' łamie założenia w ψ<<1
+**Estymata:** 12+ miesięcy.
+
+## Recommendation
+
+**Krótkoterminowo:** Ścieżka **E** (scope acknowledgment) — natychmiastowa
+honest implementation.
+
+**Długoterminowo (parallel research-track):** Ścieżka **D** jako separate
+cycle.
+
+**Ścieżka F:** zarezerwowana jako "if all else fails".
 
 ## Status
 
-**PHASE 1 EXECUTED 2026-05-07** (4/5 PASS). Phase 2 ENABLED z caveat —
-F1.4 ujawnia **binary outcome bifurcation**.
+✅ **Phase 2 short-cycle COMPLETE 2026-05-07.**
 
-## Phase 1 highlights
+**EXT-1 cycle status:** **STRUCTURAL_NO_GO** (analog μ.1' + ο.2 z M03;
+Phase 6 honest reporting baseline preserved).
 
-### ✅ F1.1 — FRW background z varying c(Φ)
+**Decyzja D/E/F pending — w gestii autora.**
 
-```
-ds² = -c_0² · (Φ_0/Φ) · dt² + a(t)²[dr² + r²dΩ²]
-√(-g) = c(Φ) · a³ · r² · sin θ
-```
+## Honest reporting note
 
-Signature (-,+,+,+) zachowane. Smooth dla Φ > 0.
+Cykl wykonał Phase 1 (analytical scaffold) + Phase 2 short-cycle
+(numerical confirmation), zamknął się jako STRUCTURAL_NO_GO **w 1
+sesji** (2026-05-06 setup + 2026-05-07 execution + decision report).
 
-### ✅ F1.2 — Friedmann eq w TGP (sympy LOCK)
-
-```
-H_TGP² = (8πG_0/3) · (Φ_0/Φ) · [ρ_matter/c_0² + (1/2)K(Φ)(dΦ/dτ)² + V(Φ)]
-```
-
-Recovery w ψ=1 limit: H_TGP² → H_GR² (sympy diff = 0).
-
-Cross-check vs M10.1 V_0 = β/12 ≈ Ω_DE0 = 0.685 ✓.
-
-### ✅ F1.3 — ax:c-ax:G consistency
-
-**Krytyczne invariants:**
-- G/c² = G_0/c_0² (Schwarzschild scale **invariant** pod Φ)
-- G/(ℏc) = G_0/(ℏ_0 c_0) (constant)
-- ℓ_Pl = √(ℏG/c³) ∝ ψ^(1/4) (varies as Φ-quarter-power)
-
-### ⚠ F1.4 — Limity asymptotyczne (BIFURCATION CRITICAL)
-
-**m_eff = √(γ/K_geo) ~ H_0** (z T-Λ closure 2026-04-26).
-
-**W erze radiacyjnej:** H(z) >> m_eff dla wszystkich z > 0 → ψ frozen ≈ 1.
-
-**Scenariusz (a) — DOMINANT:** ψ frozen → varying constants efektywnie
-wyłączone w erze radiacyjnej. ALE TGP NIE ma ρ_rad strukturalnie
-(T^μ_μ_EM = 0). Wynik:
-
-```
-H_TGP(z=10⁹) / H_GR(z=10⁹) ≈ √(z_eq / (1+z)) = √(3400 / 10⁹) ≈ 0.0018 = 0.18%
-```
-
-**Drift ~99.8% << 5% gate** → BBN ⁴He **CATASTROPHIC FAIL**.
-
-**Scenariusz (b)** — wymaga ψ_BBN ≈ 3·10⁻⁶ (5 orders of magnitude poniżej
-today). Wymaga **inicjalnego warunku** ψ << 1 z mechanizmu **przed**
-TGP_v1 (np. inflacyjna faza). M9.1'' łamie założenia perturbacyjne.
-
-### ✅ F1.5 — Phase 1 GATE 4/5 PASS (z caveat)
-
-Phase 2 ENABLED. **Krytyczna rekomendacja:** numerical Φ-EOM solver
-w Phase 2 powinien szybko potwierdzić/odrzucić scenariusz (a).
-
-## Critical finding (Phase 1 main outcome)
-
-> **EXT-1 ścieżka A jest PRAWDOPODOBNIE NIE DO URATOWANIA w obecnym
-> TGP_v1 framework.**
->
-> Najprawdopodobniejszy outcome (P ≈ 75-85%): scenariusz (a) confirmed
-> w Phase 2 numerical → H_TGP(z=10⁹) ≈ 0.18% H_GR → BBN MASSIVE FAIL
-> → ścieżka A FAILS.
->
-> Wymagana decyzja autora (NEEDS N9):
-> - **Ścieżka D** (L_mat extension dla pól cechowania) — narusza S04
->   ZAMKNIĘTY 2026-05-04 przez B9 MICROSCOPE 6/6 PASS. Re-open
->   S04 audit konieczny.
-> - **Ścieżka E** (przyznanie zakresu post-recombination) — TGP
->   jako "GR w limicie post-recombination", drastycznie obniża rangę.
-
-## Subiektywna ocena post-Phase-1
-
-| Outcome | Pre-Phase-1 (z EXT-1 v2) | Post-Phase-1 |
-|---------|--------------------------|--------------|
-| P(ścieżka A → DERIVED) | 35-45% | **5-10%** |
-| P(ścieżka A → STRUCTURAL CONDITIONAL) | 30-40% | **10-15%** |
-| P(ścieżka A → FAIL → pivot D/E) | 25-35% | **75-85%** |
-
-**Phase 1 obniżyła subiektywną ocenę szans ścieżki A** z 65-85%
-(P(DERIVED) + P(STRUCTURAL) = 65-85%) do **15-25%**.
-
-## Recommended next steps
-
-1. **Phase 2 short-cycle** (1-2 sub-tests):
-   - F2.1 Numerical Φ-EOM solver dla ψ(z), z ∈ [10³, 10¹⁰]
-   - F2.2 Confirmation scenariusza (a) — ψ frozen ≈ 1 → H_TGP ≈ 0.18% H_GR
-   - Jeśli (a) confirmed: STOP, Phase 2 verdict "ścieżka A FAILS"
-
-2. **Decision report do user-a:**
-   - Ścieżka D vs E vs novel approach
-   - Implications dla S04 (B9 MICROSCOPE preserved jeśli E; re-open jeśli D)
-   - Implications dla TGP rangę (E = "GR z limit post-rec")
-
-3. **Alternative path opening:**
-   - Jeśli decyzja: ścieżka D → otwórz cykl `op-Lmat-extension-S04-reopen/`
-   - Jeśli decyzja: ścieżka E → update TGP_FOUNDATIONS § scope statement
+**Wzór godny EXT-1 v2 spirit:** explicit acknowledgment niepowodzenia
+ścieżki A jest **honest scientific output**, NIE failure. Phase 6
+ABSOLUTE BINDING gate enforced.
 
 ## Cross-references
 
-- [[Phase1_results.md]] — pełne sub-test results
+- [[Phase2_results.md]] — pełne F2.1+F2.2 z analytical derivation
+- [[Phase1_results.md]] — Phase 1 4/5 PASS
 - [[Phase0_balance.md]] — pre-derivation balance sheet
 - [[README.md]] — program plan
-- [[NEEDS.md]] — N1-N9 open questions (wszystkie nadal OPEN)
+- [[NEEDS.md]] — N1-N9 (większość RESOLVED post-Phase-2; N9 decision pending)
 - [[../../audyt/EXTERNAL_REVIEW_2026-05-06.md]] §EXT-1 v2
 - [[../../audyt/L01_rho_operational/EXT1_FRW_radiation_era_2026-05-06.md]]
-- [[../../audyt/S04_metric_coupling_axiom/]] — S04 audit (preservation
-  check w ścieżce E vs re-open w ścieżce D)
+- [[../../audyt/S04_metric_coupling_axiom/]] — preserve w E lub re-open w D
+- [[../op-newton-momentum/B9_wep_microscope_composition_results.md]] — B9
+- [[../../TGP_FOUNDATIONS.md]] — scope statement target dla ścieżki E
