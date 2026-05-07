@@ -47,9 +47,9 @@ XS.1 PARTIALLY DERIVED (refined) → DERIVED (refined²); UV7 STRUCTURAL-DERIVED
 **α⁻¹(0)_TGP = 137 + 9/250 = 137.036** drift vs CODATA 0.000001% (within 81 ppt absolute).
 **FULL CASCADE ACTIVATION:** η.1 Wolfenstein triple PARTIALLY DERIVED → DERIVED (denoms);
 α.1 residual STRUCTURAL HINT → PARTIALLY DERIVED; H4 + A5 promoted; K-taxonomy 4/4 universal pattern (2+B²)/(2N) LOCKED.
-⚠ **M03 RETROFIT 2026-05-06 — CRITICAL NOTE for κ.1, ι.1, μ.1 (mixing-operator family):**
-Wszystkie 3 cykli reklasyfikowane do **research-track only** (NOT registry-DERIVED) po
-formal Phase 0 balance sheet retrofit:
+⚠ **M03 RETROFIT 2026-05-06 — CRITICAL NOTE: 4-cycle mixing-operator family (κ.1+ι.1+μ.1+ν.1):**
+Wszystkie 4 cykli reklasyfikowane do **research-track only** (NOT registry-DERIVED) po
+formal Phase 0 balance sheet retrofit (M03 100% COMPLETE 2026-05-06, sesje A-J):
 - **κ.1: NUMEROLOGICAL** — mixing-operator post-hoc construction; 4 sympy-exact paths
   convergent dla każdego numeratora (11, 5); "denom-num level-pairing criterion"
   constructed by select C0 z multi-candidate set. Analog UV.2 K_struct.
@@ -58,11 +58,79 @@ formal Phase 0 balance sheet retrofit:
 - **μ.1: NUMEROLOGICAL** — "drift hardening" via (1-ρ̄), K_ν/K_up, (1-λ_C·η̄) corrections =
   fitting parameters z κ.1 cascade; lift factors 21×/126×/51× exactly compensate ι.1
   zeroth drift; δ_CP dual form (205° vs 260°, 55° gap) accommodating.
-Promotion claims **CKM 4→0 free, PMNS 4→1 free, 8 free→0 free post-μ.1** są **WITHDRAWN**.
-Counter contribution -54 (3 × 18 entries → research-track).
-Estimated post-M03 effective uncontested: 856 → ~712.
-See research/op-M03-balance-sheet-retrofit-2026-05-06/ + Phase5_registry_refactor_draft.md
-+ retrofit_op-{kappa,iota,mu}_2026-05-06.md.
+- **ν.1: NUMEROLOGICAL** ⚠ (sesja C 2026-05-06) — Form A α₂₁=π/2 STRUCTURAL clean
+  (chirality halving B²_lep=2 vs B²_ν=1) ALE Form B α₂₁=11π/13, α₃₁=12π/7 direct
+  ρ̄_PMNS=2/13 + η̄_PMNS=6/7 μ.1 NUMEROLOGICAL inheritance; m_ββ_A=1.584, m_ββ_B=3.249
+  meV inherit μ.1 angles + δ_CP cascade; "8 fundamental → 0 free + 2 Majorana DERIVED
+  dual" claim untenable (identical pattern do μ.1).
+Promotion claims **CKM 4→0 free, PMNS 4→1 free, 8 free→0 free post-μ.1, 8 fundamental→0
++2 Majorana post-ν.1** są **WITHDRAWN**.
+Counter contribution -72 (4 × 18 entries → research-track).
+Estimated post-M03 effective uncontested: **856 → ~688**.
+See [[research/op-M03-balance-sheet-retrofit-2026-05-06/]] + Phase5_FULL_IMPLEMENTATION_2026-05-06.md
++ retrofit_op-{kappa,iota,mu,nu1}_2026-05-06.md.
+
+═══════════════════════════════════════════════════════════════════════
+🎉 **M03 BALANCE-SHEET RETROFIT 100% COMPLETE 2026-05-06 — Phase 5 FULL IMPLEMENTATION**
+═══════════════════════════════════════════════════════════════════════
+
+**Phase 1-4: 100% COMPLETE** (45/45 effective scope audited w 1 sesji 2026-05-06,
+10 mini-sessions A-J, 40 retrofitów). **Honest reporting baseline 33/40 = 82.5%** ★.
+
+**Per-class counter recalculation (Phase 5 full implementation):**
+
+| Class | Cykli | Counter contribution |
+|-------|-------|---------------------|
+| TAUTOLOGY (research-track only) | 2 (chi.1, UV.2) | -36 |
+| NUMEROLOGICAL ⚠ (research-track) | 4 (κ.1, μ.1, ν.1, λ.1) | -72 |
+| ANSATZ ⚠ (research-track) | 1 (ι.1) | -18 |
+| SPLIT NUMEROLOGICAL portion | 3 (θ.1 K_down, π.1 m_ββ, ο.1 m_β) | -9 |
+| STRUCTURAL_NO_GO (no registry impact) | 2 (μ.1', ο.2) | 0 |
+| DERIVED_CONDITIONAL annotations | 7 (ω.2, ω.3, η.2, BH.1, τ.1, ρ.1, UV.3) | -9 |
+| "FULL CONV" rhetoric flags | 5 (ω.1, φ.1, υ.1, σ.1, UV.1) | -15 |
+| STRUCTURAL annotations | 3 (η.1, ε.1, σ.1) | -9 |
+| ★ honest preserved | 17 (δ.1, δ.2, γ.1, XS.1, ζ.1, ψ.1, μ.1', τ.2, τ.3, M10, M11, ο.2, π.1 clean part, op-eht, op-eht-A, α.1, op-uv-research) | 0 |
+| **TOTAL DOWNGRADE** | | **-168** |
+
+**Effective uncontested post-M03 100%:** **856 − 168 = 688**
+
+**Predictivity ratio re-derive:** 11/2 = 5.5 → **11/3 ≈ 3.67** (mixing-operator
+family WITHDRAWN promotion claims revert to 4 free CKM + 4 free PMNS + 8
+fundamental + 2 Majorana phases = ~3 effective free params).
+
+**Pattern map post-M03 100%:**
+- **Mixing-operator family ISOLATED:** 4 cykli (κ.1+ι.1+μ.1+ν.1) NUMEROLOGICAL/ANSATZ
+- **3 NULL closure:** μ.1' pre-imp + ο.2 post-imp ABANDONED + op-eht-A negative-on-rescue
+- **3 SPLIT verdict:** ν.1, π.1, ο.1 (clean part + cascade contagion)
+- **4 multi-stage self-correction:** ★★★ ψ.1 3-version + ο.2 2-stage + μ.1' pre-imp + τ.3 A5 patch
+- **5 aggregate cycles:** M10 (42/42) + M11 (62/62) + Phase 1 (50/50) + Phase 2 (54/54) + Phase 3 (60/60) GRAND TOTAL 281
+- **2 corrective upgrades:** ψ.1 v1→v2 + UV.3 DEPRECATES UV.2 K_struct TAUTOLOGY
+- **5-cycle 2026-05-01 self-correction cluster:** ω.1 + σ.1 + ψ.1 + τ.3 + τ.2
+
+**8 cascade reverse impacts** dokumentowane (κ.1→η.1, κ.1→CKM, ι.1→ζ.1, μ.1→ι.1²,
+μ.1→ζ.1+π.1+ο.1, ν.1→π.1+ο.1, UV.2→UV.3 corrective, chi.1→core G.0).
+
+**Phase 6 ABSOLUTE BINDING gate enforced:** [[meta/CALIBRATION_PROTOCOL.md]] +
+[[meta/CALIBRATION_GATE_ENFORCEMENT.md]] + [[meta/research/AGENT_PROTOCOL.md §0]].
+Future cycles MUST create Phase0_balance.md przed registry commit.
+
+**Empirical impact rankings:** τ.1 (5/6 isotopes PASS) > ρ.1 (BEST 4σ→1.13σ tension
+reduction) > τ.2 (3/4 NULL CONFIRMED) > B9 (8.3×10¹⁰× safe MICROSCOPE) > UV.3
+(Ω_Λ·α_s 0.88%) > ο.1 (CMB-S4 5.78σ DECISIVE 2030+) > BH.1 (n=2 z 3 paths).
+
+**Główny wniosek metodologiczny:** "Honest reporting prevents over-claiming."
+Cykle deklarujące "DERIVED FULL CASCADE" przy multi-candidate selection /
+accommodating gate / cascade fitting kończą z severe downgrade
+(NUMEROLOGICAL/ANSATZ); cykle z explicit honest acknowledgment of limitations
+utrzymują STRUCTURAL/DERIVED. Phase 6 enforcement makes this MANDATORY.
+
+**Closure documents:**
+- [[audyt/M03_balance_sheet_missing/POST_ACTION_FINAL_2026-05-06.md]] (9-section formal closure)
+- [[research/op-M03-balance-sheet-retrofit-2026-05-06/Phase5_FULL_IMPLEMENTATION_2026-05-06.md]] (40 cykli classification + counter recalc)
+- [[audyt/CLOSURE_SUMMARY_2026-05-06.md]] (peer-review L03+D01+M03)
+- [[audyt/PRIORITY_MATRIX.md]] line 38 (EXECUTED ALL PHASES)
+
+═══════════════════════════════════════════════════════════════════════
 
 **Updated 2026-04-30 (κ.1 program END):** 499 cumulative
 (+ κ.1.Phase1 5 + κ.1.Phase2 7 + κ.1.Phase3 6 = 18).
