@@ -1,6 +1,6 @@
 ---
 title: "TGP_v1 — Index hub"
-date: 2026-04-28
+date: 2026-05-09
 type: hub
 tags:
   - TGP
@@ -90,7 +90,23 @@ related:
 
 A one-screen navigation map for the TGP research ecosystem
 post-Phase-3 (closure 2026-04-28). For the project overview, see
-[`README.md`](README.md). This file is the **navigation entry point**.
+[`README.md`](README.md). This file is the **deep navigation map**.
+
+> ⚠ **2026-05-09 — primary entry-point migrated to [`STATE.md`](STATE.md).**
+> Po diagnozie chaosu organizacyjnego (80 cykli `active`, realnie WIP ~5),
+> wprowadzono `STATE.md` jako **single-source coordination point**:
+> Critical path + Active WIP (limit 5) + Recent closures + Outstanding meta-debt.
+> Aktualizowane po każdej sesji. INDEX.md pozostaje jako głęboka mapa nawigacji,
+> ale **na pierwszy rzut oka stanu sięgaj do `STATE.md`**.
+>
+> Polityka cyklu (statusy, WIP-limit, anti-patterns):
+> [`meta/CYCLE_LIFECYCLE.md`](meta/CYCLE_LIFECYCLE.md).
+>
+> 🚨 **Critical blocker 2026-05-09:** M9.1'' (4−3ψ)/ψ form **FALSIFIED 5.02σ**
+> przez GWTC-3 RERUN. Sektor grawitacji TGP w limbo do czasu zamknięcia
+> [`research/op-S07-alternative-f-psi-derivation-2026-05-09/`](research/op-S07-alternative-f-psi-derivation-2026-05-09/)
+> (alternative f(ψ) ansatz spełniający C1-C10 z first-principles derivation).
+> Pełen kontekst: [`audyt/S07_M911_derivation/`](audyt/S07_M911_derivation/).
 
 ## At a glance
 
@@ -166,10 +182,14 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 
 | Document | Purpose |
 |----------|---------|
+| **[`STATE.md`](STATE.md)** ★ | **PRIMARY entry-point post-2026-05-09** — Critical path + Active WIP (≤5) + Recent closures + Outstanding meta-debt + coordination layers map |
 | [`README.md`](README.md) | Public project overview, abstract, 40-prediction highlights, repository structure, build instructions |
 | [`PREDICTIONS_REGISTRY.md`](PREDICTIONS_REGISTRY.md) | Single source of truth for every falsifiable prediction (sector, anchor, target, horizon, status, flask DOI) |
-| [`TGP_FOUNDATIONS.md`](TGP_FOUNDATIONS.md) | Axiomatic content (4 axioms, single-Φ, Z₂, substrate) |
-| [`DEPENDENCIES.md`](DEPENDENCIES.md) / [`DEPENDENCIES_REVERSE.md`](DEPENDENCIES_REVERSE.md) | Logical-dependency graph forward/backward across modules |
+| [`TGP_FOUNDATIONS.md`](TGP_FOUNDATIONS.md) | Axiomatic content (4 axioms, single-Φ, Z₂, substrate, dual-V §3.5 post-2026-05-09) |
+| [`DEPENDENCIES.md`](DEPENDENCIES.md) / [`DEPENDENCIES_REVERSE.md`](DEPENDENCIES_REVERSE.md) | Logical-dependency graph forward/backward across modules (regenerate: `python tooling/build_deps_graph.py`; last regen 2026-05-09: 117 tex / 1098 md / 70 inputs / 1469 refs / 5891 wikilinks) |
+| [`meta/CYCLE_LIFECYCLE.md`](meta/CYCLE_LIFECYCLE.md) | Cycle status policy (9 statusów, WIP-limit, stale-detection, anti-patterns) |
+| [`audyt/README.md`](audyt/README.md) + [`audyt/PRIORITY_MATRIX.md`](audyt/PRIORITY_MATRIX.md) | Strukturalne długi (S01-S07, L01-L08, D01, M01-M03, T01, EXT-1..5) |
+| [`meta/CALIBRATION_PROTOCOL.md`](meta/CALIBRATION_PROTOCOL.md) | Anti-overclaim discipline (BINDING) |
 
 ## The four "prediction-flask" deposits
 

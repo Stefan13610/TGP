@@ -77,19 +77,29 @@ Wszystkie 2026-05-09:
 
 **Cumulative:** 103/107 PASS (96.3%) z dual-V audit chain.
 
-## ⚠ Outstanding meta-debt (P1-P2)
+## ⚠ Outstanding meta-debt
 
-Sygnał że framework wymaga porządków obok pracy badawczej:
+Sygnał że framework wymaga porządków obok pracy badawczej.
+
+### Załatwione 2026-05-09 (post-cleanup)
+
+| # | Dług | Status | Co zrobiono |
+|---|---|---|---|
+| ~~1~~ | INDEX.md stale (2026-04-28) | ✅ **DONE 2026-05-09** | Dodano banner critical-blocker S07 + STATE.md jako primary entry-point + audyt/, CYCLE_LIFECYCLE, CALIBRATION_PROTOCOL w Top-level entry points; date 2026-04-28 → 2026-05-09 |
+| ~~2~~ | DEPENDENCIES.md stale (2026-04-22) | ✅ **DONE 2026-05-09** | Regenerated via `tooling/build_deps_graph.py`: 117 tex / 1098 md / 70 inputs / 1469 refs / 5891 wikilinks (z ~1657 dependencies poprzednio — ×4 wzrost) |
+| ~~3~~ | Drugi handoff w audyt/T01 | ✅ **DONE 2026-05-09** | Zarchiwizowany jako stub: [[audyt/T01_LIGO3G_falsifier/HANDOFF_PROMPT_NEXT_SESSION.md]] (treść była pre-falsification, β=−5/64 ; faktycznie po RERUN β=−15/4 → TGP RULED OUT 5σ). T01 paused do post-S07 |
+| ~~4~~ | 80 cykli z `folder_status: active` (realnie ~5) | ✅ **DONE 2026-05-09** | Mass-triage: 85 → `paused` (auto), 9 → `closed-resolved` (cascade), 1 → `closed-NULL` (MAG-anomalous), 4 → manual fix (M03/L01/L04/void-flat-modes), 2 → `parking` (SPIN-MAG-leakage, tensor-modes-FUTURE). Patrz commit `67e0677` |
+| ~~5~~ | Brak cycle-lifecycle policy | ✅ **DONE 2026-05-09** | Spisane: [[meta/CYCLE_LIFECYCLE.md]] (9 statusów, WIP-limit, anti-patterns, mapping legacy) |
+
+### Otwarte (do osobnych sesji)
 
 | # | Dług | Lokalizacja | Notatka |
 |---|---|---|---|
-| 1 | INDEX.md stale (ostatnio 2026-04-28) | [[INDEX.md]] | nie wie o audyt/, S07, ostatnich op-* z 2026-05 |
-| 2 | DEPENDENCIES.md stale (2026-04-22) | [[DEPENDENCIES.md]] | 142 commitów później; regenerate z `tooling/build_deps_graph.py` |
-| 3 | Drugi handoff w audyt/ | [[audyt/T01_LIGO3G_falsifier/HANDOFF_PROMPT_NEXT_SESSION.md]] | ten sam anti-pattern co ex-root HANDOFF — należy skonsolidować w cyklu T01 lub w STATE.md WIP |
-| 4 | 80 cykli z `folder_status: active` (realnie ~5) | `research/op-*/README.md` | wymaga przeklasyfikacji; szacunek: ~70 → `paused` lub `parking` |
-| 5 | Brak cycle-lifecycle policy | `meta/` | reguły open/pause/close/archive nie są spisane; cykle wiszą w nieskończoność |
-| 6 | LaTeX cruft + 3 PDF kanoniczne? | root | `*.log`, `*.fls`, `*.fdb_latexmk` już w .gitignore (linie 8-19), ale historycznie committed pliki nadal w repo — wymaga `git rm --cached` cleanup. Main vs companion vs letter — który jest "the" paper? |
-| 7 | Documentation drift `status` ↔ `folder_status` | 5 cykli dual-V cascade + ~80 cykli z paused | Tekstowy `status:` field w wielu README jest nieaktualny (np. "PHASE0_PHASE1_IN_PROGRESS" mimo cascade closure, lub "active" w wielu Bucket C cykli). `folder_status` dodane/poprawione, ale text status — osobny pass cleanupu |
+| 6 | LaTeX cruft committed historycznie | root | `*.log`, `*.fls`, `*.fdb_latexmk` już w .gitignore (linie 8-19), ale historycznie committed pliki nadal w repo — wymaga `git rm --cached` cleanup. Niskoryzyko ale efekt na rozmiar repo. |
+| 7 | 3 PDF kanoniczne? | root | main.pdf 5.4M, companion 455K, letter 312K — który jest "the" paper? Decyzja redakcyjna, nie organizational. |
+| 8 | Documentation drift `status` ↔ `folder_status` | 5 cykli dual-V cascade + ~80 cykli z paused | Tekstowy `status:` field w wielu README jest nieaktualny (np. "PHASE0_PHASE1_IN_PROGRESS" mimo cascade closure, lub "active" w wielu Bucket C). `folder_status` dodane/poprawione (jest source of truth), ale text status — osobny pass cleanupu. Niskoryzyko. |
+| 9 | Brak skryptu auto-pause stale cycles | tooling/ | `tooling/check_stale_cycles.py` planowany w [[meta/CYCLE_LIFECYCLE.md]] §Stale-detection. Read-only weekly report, nie modyfikuje YAML. |
+| 10 | DEPENDENCIES_REVERSE.md duplikat | root | Auto-generowany razem z DEPENDENCIES.md — rzadko konsultowany. Można rozważyć usunięcie z generatora jeśli nikt nie używa. |
 
 ## 🗂 Coordination layers — co czym jest
 
@@ -140,3 +150,4 @@ w odpowiedniej sesji):
 | 2026-05-09 | Manual fix 4: M03/L01/L04 → `closed-resolved`; void-flat-modes naming `closed_NULL` → `closed-NULL` |
 | 2026-05-09 | 15 edge cases bez `folder_status` field — dodane top-level: 3× `active` (S07, emergent-metric, Phi-decomposition-photon), 9× `closed-resolved` (Phi-vacuum + dual-V cascade + MAG-Lorentz/resonance, SPIN-SU2), 1× `closed-NULL` (MAG-anomalous EARLY_HALT odkryte przy edycji), 2× `parking` (SPIN-MAG-leakage informal, tensor-modes-FUTURE placeholder) |
 | 2026-05-09 | **Documentation drift wykryty:** 5 cykli z dual-V cascade ma w README `status: PHASE0_PHASE1_IN_PROGRESS` mimo że parent `op-Phi-vacuum-scale/Phase_FINAL_close.md` dokumentuje je jako zamknięte. Tekstowy `status:` field nie został zaktualizowany przy cascade closure 2026-05-09. `folder_status: closed-resolved` dodane na podstawie parent's claim — text status do osobnego cleanupu |
+| 2026-05-09 | **Outstanding-debt #1-#5 załatwione:** INDEX.md update (banner S07 + STATE.md primary entry-point + audyt/CYCLE/CALIBRATION w entry points), DEPENDENCIES.md regenerated (×4 wzrost dependencies), audyt/T01 HANDOFF zarchiwizowany jako stub (pre-falsification, β=−5/64 stale), #4+#5 oznaczone DONE (mass-triage + CYCLE_LIFECYCLE policy z poprzednich rund) |
