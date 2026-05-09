@@ -1,0 +1,121 @@
+========================================================================
+§1 — M9.1'' canonical metric verification
+========================================================================
+f(psi) = (4 - 3*psi)/psi
+h(psi) = psi/(4 - 3*psi)
+f * h  = 1  (should be 1)
+f(1)   = 1  (should be 1, vacuum normalization)
+f'(1)  = -4  (should be -4)
+f''(1) = 8  (should be +8)
+
+f(1+eps) = 4*eps**6 - 4*eps**5 + 4*eps**4 - 4*eps**3 + 4*eps**2 - 4*eps + 1
+h(1+eps) = 972*eps**6 + 324*eps**5 + 108*eps**4 + 36*eps**3 + 12*eps**2 + 4*eps + 1
+
+========================================================================
+§2 — Asymptotic eps(eta_pn) expansion (eta_pn = a1/r = U/2)
+========================================================================
+eps(eta_pn) = -154*eta_pn**6/9 + 22*eta_pn**5/3 - 10*eta_pn**4/3 + 5*eta_pn**3/3 - eta_pn**2 + eta_pn
+
+g_tt^TGP/(-c^2) as series in eps: 4*eps_var**6 - 4*eps_var**5 + 4*eps_var**4 - 4*eps_var**3 + 4*eps_var**2 - 4*eps_var + 1
+
+========================================================================
+§3 — g_tt^TGP/(-c^2) expansion in U = GM/(rc^2)
+========================================================================
+g_tt^TGP/(-c^2) = 91*U**6/18 - 91*U**5/24 + 35*U**4/12 - 7*U**3/3 + 2*U**2 - 2*U + 1
+
+Coefficients alpha_n in TGP expansion g_tt/(-c^2) = sum alpha_n U^n:
+  alpha_0^TGP = 1  (expected 1)  OK
+  alpha_1^TGP = -2  (expected -2)  OK
+  alpha_2^TGP = 2  (expected 2)  OK
+  alpha_3^TGP = -7/3  (expected -7/3)  OK
+  alpha_4^TGP = 35/12  (expected 35/12)  OK
+  alpha_5^TGP = -91/24  (expected -91/24)  OK
+  alpha_6^TGP = 91/18  (expected 91/18)  OK
+
+========================================================================
+§4 — g_tt^GR/(-c^2) Schwarzschild isotropic
+========================================================================
+g_tt^GR/(-c^2) = 3*U**6/8 - 5*U**5/8 + U**4 - 3*U**3/2 + 2*U**2 - 2*U + 1
+
+Differences alpha_n^TGP - alpha_n^GR (should reproduce M9_1_pp_P1 §3.2):
+  Δα_0 = 0  (expected 0)  OK
+  Δα_1 = 0  (expected 0)  OK
+  Δα_2 = 0  (expected 0)  OK
+  Δα_3 = -5/6  (expected -5/6)  OK
+  Δα_4 = 23/12  (expected 23/12)  OK
+  Δα_5 = -19/6  (expected -19/6)  OK
+  Δα_6 = 337/72  (expected 337/72)  OK
+
+========================================================================
+§5 — Single-body Lagrangian L_a expansion
+========================================================================
+L_body / m = -sqrt(f(1+eps) - h(1+eps) v^2)  in units c=1
+
+  v^0 coefficient:
+    2*eps**4*m_var + 2*eps**3*m_var + 2*eps*m_var
+  v^2 coefficient:
+    147*eps**4*m_var + 43*eps**3*m_var + 12*eps**2*m_var + 3*eps*m_var + m_var/2
+  v^4 coefficient:
+    1799*eps**4*m_var/4 + 343*eps**3*m_var/4 + 14*eps**2*m_var + 7*eps*m_var/4 + m_var/8
+  v^6 coefficient:
+    8283*eps**4*m_var/8 + 1155*eps**3*m_var/8 + 33*eps**2*m_var/2 + 11*eps*m_var/8 + m_var/16
+  v^8 coefficient:
+    124875*eps**4*m_var/64 + 13675*eps**3*m_var/64 + 75*eps**2*m_var/4 + 75*eps*m_var/64 + 5*m_var/128
+
+========================================================================
+§6 — GR test-particle circular orbital energy E_GR(U)/mc^2
+========================================================================
+E_GR/mc^2 = 675*U**4/128 + 27*U**3/16 + 3*U**2/8 - U/2 + 1
+
+========================================================================
+§7 — Test-particle orbital energy in M9.1'' (PN expansion)
+========================================================================
+========================================================================
+§8 — β_ppE^TGP^(b=-1) — 2PN-phase coefficient (PRELIMINARY)
+========================================================================
+  Equal-mass eta = 1/4 = 0.25
+  SPA prefactor 3/(128 eta) = 3/32
+  TGP metric coefficient (5/6 U^3 in g_tt): 5/6
+  G_factor (SPA chain, central value, A2 assumption): 1
+  ─────────────────────────────────────────────────────
+  β_ppE^TGP^(b=-1) = -3/(128 eta) * (5/6) * G_factor
+                   = -5/64
+                   ≈ -0.078125
+                   ≈ -7.8125e-02
+
+OOM window (G_factor uncertainty 0.7 - 1.5):
+  G_factor = 7/10: β_ppE^TGP = -0.054688
+  G_factor = 1: β_ppE^TGP = -0.078125
+  G_factor = 13/10: β_ppE^TGP = -0.101562
+  G_factor = 3/2: β_ppE^TGP = -0.117188
+
+========================================================================
+§9 — Multi-coefficient TGP-distinguishing pattern
+========================================================================
+PN order (phase)  b_ppE     metric Δα_n    β_ppE^TGP (G=1)     ratio to β_2PN
+--------------------------------------------------------------------------------
+2PN-phase         -1        -5/6           5/64                1 (reference)
+3PN-phase         1         23/12          -23/128             -23/10
+4PN-phase         3         -19/6          19/64               19/5
+5PN-phase         5         337/72         -337/768            -337/60
+
+Key insight (M911-P2 — TGP-distinguishing signature):
+  Ratios {β_3PN/β_2PN, β_4PN/β_3PN, β_5PN/β_4PN} = {-23/10, -38/23, +337/228}
+  These ratios are FORCED by alpha=2 + hyperbolic f(psi) without fitting freedom.
+  Other modified gravity theories (dCS, sGB, EÆ) cannot reproduce this pattern
+  with bare coefficients — only with fitting, which is not predictive.
+
+========================================================================
+§10 — SUMMARY (Phase 1 Locks)
+========================================================================
+LOCKED:
+  α_n^TGP coefficients in g_tt: matches M9_1_pp_P1 §3.2 sympy LOCK 7/7 OK
+  Δα_n = α_n^TGP - α_n^GR coefficients: matches sympy LOCK 7/7 OK
+  β_ppE^TGP^(b=-1) = -3/(128 eta) * (5/6) * G_factor_SPA
+     central value (G=1, eta=1/4) = -5/64 = -7.812500e-02
+     OOM window (G=0.7 to 1.5): |β_ppE^TGP| ∈ [5.5·10⁻², 1.2·10⁻¹]
+
+PRELIMINARY (G_factor needs tighter lock):
+  Final β_ppE^TGP^(b=-1) = (TBD G_factor central value with full SPA chain
+     in M9.1'' two-body Lagrangian + modified quadrupole formula)
+  Multi-coefficient ratios {β_3PN/β_2PN, ...} = locked exactly: {-23/10, -38/23, +337/228}

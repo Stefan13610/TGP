@@ -1,0 +1,85 @@
+C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\op-void-flat-modes-h0-2026-05-06\stage1_tracker_gamma_FRW.py:130: IntegrationWarning: The integral is probably divergent, or slowly convergent.
+  val, _ = quad(r_s_integrand_LCDM, Z_RECOMB, 1e8, limit=500)
+C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\op-void-flat-modes-h0-2026-05-06\stage1_tracker_gamma_FRW.py:135: IntegrationWarning: The integral is probably divergent, or slowly convergent.
+  val, _ = quad(lambda z: r_s_integrand_TGP(z, alpha),
+================================================================================
+Stage 1 — FRW tracker γ(z) simulation
+op-void-flat-modes-h0-2026-05-06
+================================================================================
+
+Algebraic predictions (γ.1 + δ.1 + δ.2):
+  g̃ = 5e²/(12π) = 0.980004
+  Φ_eff = 8π·g̃ = 24.6302
+  Ω_Λ_TGP = (2π/9)·g̃ = 0.684172  vs Planck 0.6847
+
+H₀ tension target: ΔH/H = 8.43%
+CMB safety constraint: ρ_Λ(z=1100)/ρ_total(z=1100) < 0.05
+
+Test 5+ values of α in mixing γ(z) = γ_0·[α + (1-α)·(H(z)/H_0)²]
+================================================================================
+
+    α | ρ_Λ(rec)/ρ_tot |  ρ_Λ(eq)/ρ_tot |   Δr_s/r_s |  ΔH₀_inf/H₀ |  Coverage |   w(z=0) |  w(z=0.5) | H_rec_TGP/LCDM
+----------------------------------------------------------------------------------------------------------------------------------
+1.000 |    1.26906e-09 |    2.76718e-11 |     0.000% |     -0.000% |    -0.00% |  -1.0000 |   -1.0000 |       1.000000
+0.990 |    6.84172e-03 |    6.84172e-03 |    -0.343% |      0.343% |     4.06% |  -1.0032 |   -1.0106 |       1.003439
+0.950 |    3.42086e-02 |    3.42086e-02 |    -1.725% |      1.725% |    20.46% |  -1.0164 |   -1.0530 |       1.017556
+0.900 |    6.84172e-02 |    6.84172e-02 |    -3.481% |      3.481% |    41.29% |  -1.0340 |   -1.1057 |       1.036070
+0.750 |    1.71043e-01 |    1.71043e-01 |    -8.953% |      8.953% |   106.17% |  -1.0954 |   -1.2618 |       1.098333
+0.500 |    3.42086e-01 |    3.42086e-01 |   -18.888% |     18.888% |   224.00% |  -1.2404 |   -1.5155 |       1.232865
+0.250 |    5.13129e-01 |    5.13129e-01 |   -30.224% |     30.224% |   358.43% |  -1.4871 |   -1.7615 |       1.433154
+
+================================================================================
+VERDICT per α:
+================================================================================
+
+α = 1.0: FAIL
+   ✗ Tension coverage too small (-0.0% < 50%)
+
+α = 0.99: FAIL
+   ✗ Tension coverage too small (4.1% < 50%)
+   ✗ w_today < -1 (phantom, -1.0032)
+
+α = 0.95: FAIL
+   ✗ Tension coverage too small (20.5% < 50%)
+   ✗ w_today < -1 (phantom, -1.0164)
+
+α = 0.9: FAIL
+   ✗ CMB safety FAIL (ρ_Λ/ρ_tot = 6.84% > 5%)
+   ✗ Tension coverage too small (41.3% < 50%)
+   ✗ w_today < -1 (phantom, -1.0340)
+
+α = 0.75: FAIL
+   ✗ CMB safety FAIL (ρ_Λ/ρ_tot = 17.10% > 5%)
+   ✗ w_today < -1 (phantom, -1.0954)
+
+α = 0.5: FAIL
+   ✗ CMB safety FAIL (ρ_Λ/ρ_tot = 34.21% > 5%)
+   ✗ Tension coverage overshoot (224.0% > 150%)
+   ✗ w_today < -1 (phantom, -1.2404)
+
+α = 0.25: FAIL
+   ✗ CMB safety FAIL (ρ_Λ/ρ_tot = 51.31% > 5%)
+   ✗ Tension coverage overshoot (358.4% > 150%)
+   ✗ w_today < -1 (phantom, -1.4871)
+
+================================================================================
+STAGE 1 SUMMARY
+================================================================================
+
+❌ NO α satisfies all conditions simultaneously
+
+Diagnostic — what blocks each α:
+   α=1.000: under-coverage (coverage -0.0%)
+   α=0.990: under-coverage,phantom (coverage 4.1%)
+   α=0.950: under-coverage,phantom (coverage 20.5%)
+   α=0.900: CMB-fail,under-coverage,phantom (coverage 41.3%)
+   α=0.750: CMB-fail,phantom (coverage 106.2%)
+   α=0.500: CMB-fail,over-coverage,phantom (coverage 224.0%)
+   α=0.250: CMB-fail,over-coverage,phantom (coverage 358.4%)
+
+Note on self-consistency (B2 from M10.5/omicron2):
+This solver assumes γ(z) is FUNDAMENTAL coupling (no observer-frame rescaling).
+If sek04 self-consistency principle G(ψ) = G_0·(Φ_0/Φ) cancels boost,
+results above are upper bounds. Stage 1' addendum needed to verify.
+
+================================================================================

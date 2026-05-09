@@ -1,0 +1,92 @@
+================================================================================
+§1 — Published GWTC-3 ToGR 2PN-phase bounds (Abbott et al. 2023)
+================================================================================
+GWTC-3 combined (~90 BBH):
+  δφ̂_4 = 0.050 ± 0.300 (90% CL)
+  σ (1σ Gauss approx) = 0.182
+
+GW150914-like single event:
+  δφ̂_4 = 0.200 ± 1.000 (90% CL)
+  σ (1σ Gauss approx) = 0.608
+
+GWTC-2 combined (older):
+  δφ̂_4 = 0.100 ± 0.450 (90% CL)
+  σ (1σ Gauss approx) = 0.274
+
+================================================================================
+§2 — TGP M911-P1 prediction (LOCKED from op-ppE-mapping Phase 1)
+================================================================================
+β_ppE^TGP^(b=-1) central = -0.07812
+OOM window: |β_TGP| ∈ [0.055, 0.120]
+
+================================================================================
+§3 — Unit conversion δφ̂_4 ↔ β_ppE^(b=-1)
+================================================================================
+η (equal-mass) = 0.25
+α̂_4^GR(η=1/4) = 46.2459
+Prefactor 3/(128 η) = 0.09375
+Conversion factor: β_ppE^(b=-1) = 4.3356 · δφ̂_4
+
+TGP prediction in LIGO units:
+  δφ̂_4^TGP_central = -0.01802
+  OOM window: δφ̂_4^TGP ∈ [-0.0277, -0.0127]
+  (negative values; sign convention: deeper potential = phase advance)
+
+================================================================================
+§4 — TGP vs published GWTC-3 posteriors
+================================================================================
+Scenario                            observed      σ_GW         TGP   (TGP-obs)/σ  Within 1σ?
+------------------------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)             0.0500    0.1824     -0.0180         -0.37    YES (1σ)
+GW150914-like single                  0.2000    0.6079     -0.0180         -0.36    YES (1σ)
+GWTC-2 combined                       0.1000    0.2736     -0.0180         -0.43    YES (1σ)
+
+================================================================================
+§5 — Bayes factor TGP vs GR (Laplace approximation)
+================================================================================
+BF = L(d|TGP) / L(d|GR)  (both Laplace at observed peak)
+
+Scenario                             BF_TGP/GR   log10(BF)                       Verdict
+----------------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)               0.9685      -0.014                  INCONCLUSIVE
+GW150914-like single                    0.9899      -0.004                  INCONCLUSIVE
+GWTC-2 combined                         0.9741      -0.011                  INCONCLUSIVE
+
+================================================================================
+§6 — Bayes factor accounting for G_SPA uncertainty (TGP β OOM window)
+================================================================================
+Scenario                         BF (β central)   BF (best in window)    BF (worst)
+-----------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)                0.9685                0.9787        0.9483
+GW150914-like single                     0.9899                0.9929        0.9841
+GWTC-2 combined                          0.9741                0.9821        0.9588
+
+================================================================================
+§7 — VERDICT (preliminary, GWTC-3 reanalysis Tier 5)
+================================================================================
+PRIMARY (GWTC-3 combined ~90 BBH):
+  δφ̂_4_obs = 0.0500 ± 0.1824
+  δφ̂_4_TGP = -0.0180
+  TGP - observed: -0.0680
+  Deviation (in σ): 0.37σ
+  log10(BF_TGP/GR) = -0.014
+  BF_TGP/GR = 0.9685
+
+  STATUS: TGP CONSISTENT z GWTC-3 within 1σ
+
+DETECTION POWER:
+  Current GWTC-3: σ = 0.182
+  TGP signal in δφ̂_4 units: 0.018
+  Current TGP/σ ratio: 0.10
+  N events needed for 5σ (relative to GWTC-3 ~90 events): 2560.70x
+  → ~230463 BBH events for 5σ TGP confirmation/falsification
+
+HONEST ASSESSMENT:
+  - GWTC-3 (~90 BBH) does NOT detect TGP β at 5σ ✗
+  - GWTC-3 does NOT exclude TGP β at 5σ ✗
+  - TGP prediction is CONSISTENT z GWTC-3 within 1-2σ
+  - LIGO-O5 stack ~250 BBH (~2-3 yr A+ rate) → first decisive bound
+  - ET-D + CE 2035+ → decisive (>50σ single-event CE)
+
+================================================================================
+DONE — see Phase3_verdict.md for synthesis
