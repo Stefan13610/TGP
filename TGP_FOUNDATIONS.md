@@ -211,7 +211,8 @@ Inny agent (2026-05-09) zaktualizował M9.1'' specific (4-3ψ)/ψ form jako
 ([[research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]).
 
 **Konsekwencje dla dual-V:**
-- **Gravity sector V_M9.1'' specific form:** pending S07 alternative f(ψ)
+- **Gravity sector V_M9.1'' specific form:** ✅ recovery path identified
+  ([[research/op-emergent-metric-from-interaction-2026-05-09/]] CLOSED 57/57 PASS)
 - **Matter sector V_orig:** **NIE AFFECTED** — niezalezne od gravity specific form
 - **Dual-V framework structure:** **CONFIRMED** przez sektor separation
 
@@ -220,6 +221,137 @@ Cross-cycle consistency check
 sympy 7/7 PASS): essential matter-sector findings (Phase 5 erratum, EFT Phi_0,
 sek08a annotation) survive falsification; multi-vacuum gravity specific values
 (ψ=0, 2/3, 4/3) require post-S07 re-analysis but methodology preserved.
+
+## 3.6 Emergent-metric framework: post-falsification recovery (2026-05-09)
+
+> **Framework recovery established 2026-05-09** w cyklu
+> [[research/op-emergent-metric-from-interaction-2026-05-09/]]
+> (CLOSED, **STRUCTURAL DERIVED**, sympy 57/57 PASS, six requirements P1-P6: 6/6 RESOLVED).
+
+Post-2026-05-09 GWTC-3 falsifikacji M9.1'' specific f(ψ) = (4−3ψ)/ψ formy,
+TGP gravity sektor został odbudowany strukturalnie poprzez **interaction-driven
+emergent metric framework**. Zamiast postulować lokalną funkcję f(ψ), g_eff
+emerguje jako **funkcjonał konfiguracji wielu Φ-źródeł**.
+
+### 3.6.1 Refined ansatz (3 niezależne funkcje)
+
+```
+g_eff^00 = -A(ψ)
+g_eff^ij = δ^ij · B(ψ) + σ^ij · C(ψ) / (Φ_0² c²)
+g_eff^0i = 0  (statyczny limit; gravitomagnetic 0i deferred)
+```
+
+gdzie σ^ij = (∂^iΦ)(∂^jΦ) − (1/3)δ^ij (∇Φ)² jest **gradient strain composite**
+(level 0 obiekt z OP-7 T2 2026-04-25), aktywowany jako tensor source dla g_eff.
+
+**Trzy niezależne funkcje** A(ψ), B(ψ), C(ψ) — w przeciwieństwie do
+M9.1'' canonical, gdzie A·B = 1 było dodatkowym constraintem. M9.1'' jest
+**konkretnym przypadkiem** w nowej rodzinie, NIE jedynym.
+
+### 3.6.2 PPN constraints jako derivation (NIE postulat)
+
+Phase 2 cyklu (sympy 7/7 PASS) ustaliło z action variation:
+
+```
+γ_PPN = 1   ⟺   b_1 = -a_1     (1PN constraint na Taylor coefs)
+β_PPN = 1   ⟺   ξ_2 = ξ - a_2·ξ³/2     (2PN consistency)
+```
+
+**Solar system constraints** (Cassini |γ−1| ≤ 2.3·10⁻⁵, Mercury |β−1| ≤ 8·10⁻⁵)
+strukturalnie satysfakcjonowane: γ = β = 1 EXACT z constraintów strukturalnych,
+NIE z empirycznego fitu specyficznej formy.
+
+**σ-coupling C(ψ) jest WOLNA w 1PN/2PN** — wnosi parametryczną swobodę
+dopiero przy 2.5PN binary inspiral.
+
+### 3.6.3 β_ppE^new(c_0) parametric family (LOCK)
+
+Phase 3 cyklu (sympy 5/5 PASS) wyprowadziło uogólniony SPA chain:
+
+$$\beta_{\rm ppE}^{\rm new}\big|_{\eta=1/4} = \frac{45}{16} \cdot \Delta e_2 + \frac{45}{16} \cdot c_0 \cdot \kappa_\sigma(\eta)$$
+
+gdzie:
+
+$$\Delta e_2 = -a_1\xi_3 - 3 - \frac{4 a_2}{a_1^2} + \frac{4 b_2}{a_1^2} - \frac{8 a_3}{a_1^3} + \frac{16 a_2^2}{a_1^4}$$
+
+**Recovery rodzina:** dla każdego (a_3, ξ_3) z **ξ_3 = (32 − a_3)/32** i c_0 = 0
+otrzymujemy β_ppE = 0 EXACT (post-falsification recovery z 3PN parameter tuning).
+Alternatywnie, z M9.1''-canonical params i **c_0·κ_σ = 4/3** otrzymujemy ten
+sam zero-β rezultat (recovery z σ-coupling addition).
+
+### 3.6.4 Phase 4 GWTC-3 compliance window (LOCK)
+
+Phase 4 cyklu (sympy 8/8 PASS) zidentyfikowało:
+- |β_ppE^new| ≤ 0.78 (1σ): **window EXISTS**
+- Width on (a_3, ξ_3) parametric region: ~0.144 w ξ_3 space
+- Width on c_0·κ_σ: [1.056, 1.611] (centered at 4/3)
+- **c_GW = c structurally** (no Lorentz-violation, GW170817 constraint trivial)
+
+### 3.6.5 Equivalence principle automatic z S05 (Phase 5)
+
+Phase 5 cyklu (sympy 10/10 PASS) wyprowadziło:
+
+$$\frac{m_{\rm inertial}}{m_{\rm grav}} = 1 \quad \text{AUTOMATYCZNIE z S05}$$
+
+Ten sam q (single-field charge) determinuje OBIE masy:
+- m_grav z S_mat coupling q·ρ·Φ/Φ_0
+- m_inertial z back-reaction integral E_static/c² (analog Lenz)
+
+**Newton I + II strukturalnie derived:**
+- Newton I: Galilean-translated δΦ_eq = exact solution dla v=const (no back-reaction)
+- Newton II: F_BR = -m_inertial · a (linear back-reaction structural form)
+
+WEP (m_b = m_g) jest **automatyczną konsekwencją S05**, NIE postulatem.
+
+### 3.6.6 H6.1 structural unification (Phase 6)
+
+Phase 6 cyklu (sympy 11/11 PASS) potwierdziło **H6.1: structural unification**:
+
+> TGP ma **JEDNĄ ZASADĘ** generowania tensor structure z interactions,
+> applied at multiple levels:
+> - **Level 2 (g_eff metryka):** functional G[{Φ_i}, σ_ab, Φ̄] z gradient cross-terms
+> - **Level 3 (SU(2) spin):** dynamic-equilibrium soliton-Φ̄ interaction
+
+Cross-consistency z [[research/op-SPIN-SU2-substrate-derivation-2026-05-08/]] (47/47 PASS):
+- **Path A** (V_matter bifurcation): c_0-INDEPENDENT (dual-V lock) ✓
+- **Path B** (M9.1'' horizon multipole): preserved by Phase 4 Path 2 ✓
+- **Path C** (external embedding): c_0-INDEPENDENT (geometric) ✓
+
+⟹ SU(2) emergence ROBUST regardless of Phase 4 family choice; ≥2 of 3 paths
+preserved dla każdego punktu w GWTC-3 compliance window.
+
+### 3.6.7 Phase 4 Path 2 strukturalnie preferowana
+
+| Phase 4 path | Path A SU(2) | Path B SU(2) | Path C SU(2) | Sum |
+|---|---|---|---|---|
+| Path 1 (zmiana 3PN params) | ✅ | ❌ may break | ✅ | 2/3 OK |
+| **Path 2 (keep params + add c_0)** | **✅** | **✅** | **✅** | **3/3 OK** |
+
+**Canonical TGP recovery uses σ-coupling (c_0·κ_σ ≈ 4/3), NIE 3PN tuning.**
+Argument strukturalny (preserve all 3 SU(2) paths), NIE empiryczny fit.
+
+### 3.6.8 c_0 status — derivable, deferred multi-session
+
+c_0 (leading σ-coupling coefficient C(ψ=1)) jest **framework-derivable**:
+1. σ_ab coarse-graining z H_Γ substrate (~5-10 sesji)
+2. Dynamic-equilibrium balance analog SPIN N16 (~3-5 sesji) ← preferred
+3. SU(2) Path B exact preservation (~2-4 sesji)
+
+Heuristic target: c_0·κ_σ ≈ 4/3 (z Phase 4 GWTC-3 zero-β analysis). Numerical
+pinning HONESTLY DEFERRED do dedicated cycle `op-c0-derivation-from-substrate`.
+
+### 3.6.9 Six requirements P1-P6 (6/6 RESOLVED)
+
+| # | Requirement | Resolution |
+|---|---|---|
+| P1 | Formal definition g_eff = G[{Φ_i}] | ✅ Phase 1 (16/16) |
+| P2 | 1PN reproduction γ=β=1 z derivation | ✅ Phase 2 (7/7) |
+| P3 | 2.5PN β_ppE alternative do -15/4 | ✅ Phase 3 (parametric LOCK) |
+| P4 | M9.2 Lenz back-reaction → m_inertial | ✅ Phase 5 (m_b=m_g AUTOMATIC) |
+| P5 | Cross-consistency z 3 SU(2) paths | ✅ Phase 6 (H6.1 CONFIRMED) |
+| P6 | Falsifiability w GWTC-3 | ✅ Phase 4 (compliance window) |
+
+**Open (post-cycle, deferred):** N14 LIGO scalar mode amplitude (R5 risk, multi-session).
 
 ## 4. Co to jest "materia" i co to jest "źródło"
 

@@ -221,6 +221,7 @@ User's iterative corrections (N14 inspection, IE proposal, dynamic equilibrium f
 - [[../op-MAG-resonance-formalization-2026-05-09/]] (closed: STRUCTURAL DERIVED CONDITIONAL) — used g_e=2 (M4)
 - [[../op-Phi-decomposition-photon-2026-05-07/]] — Stage 2 photon = A_μ (compatibility)
 - [[../op-SPIN-MAG-leakage-lean-hypothesis-2026-05-07/]] — parent working hypothesis
+- **[[../op-emergent-metric-from-interaction-2026-05-09/]]** (closed: STRUCTURAL DERIVED, 57/57 PASS) — **H6.1 cross-consistency CONFIRMED** (Phase 6 sympy 11/11): wszystkie 3 ścieżki SU(2) z niniejszego cyklu zachowane przez Phase 4 Path 2 (σ-coupling) emergent-metric framework. **Path A** (V_matter bifurcation): c_0-INDEPENDENT (dual-V lock). **Path B** (M9.1'' horizon multipole): preserved via σ-coupling addition (NIE 3PN tuning). **Path C** (external embedding): c_0-INDEPENDENT (geometric). Programmatic unification: TGP ma JEDNĄ ZASADĘ generowania tensor structure z interactions, applied at multiple levels (g_eff @ level 2, SU(2) @ level 3).
 
 ### TGP framework
 - [[../../core/sek08a_akcja_zunifikowana/]] — V(Φ) source

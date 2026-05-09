@@ -77,6 +77,49 @@ See [[research/op-M03-balance-sheet-retrofit-2026-05-06/]] + Phase5_FULL_IMPLEME
 **⚠ T01 CRITICAL UPDATE 2026-05-09** — [[research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] Phase 1.5 derived G_SPA = 48 sympy-exact (test-particle, 4-level verified: sympy LOCK 5/5 + hand-calc + numerical + alternative SPA), NOT Phase 1's heuristic G_SPA ≈ 1. β_ppE^TGP^(b=-1) = -15/4 ≈ -3.75 (factor 48× LARGER than Phase 1 -5/64). [[research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] RE-RUN with corrected β: TGP M9.1'' RULED OUT at 5.02σ by GWTC-3 combined posterior (BF_TGP/GR = 3.5·10⁻⁶, log10(BF) = -5.45). M911-P1 status: **LIVE → FALSIFIED-OBSERVATIONAL** (with caveat: M9.1'' ansatz could be revised via S07 to alternative f(ψ) structure). M911-P2 ratios from Phase 1 heuristic are also WRONG (alternative SPA gives β_3PN/β_2PN = -11161/504 ≈ -22.1, not -23/10); M911-P2 needs full re-derivation. Counter -3 (M911-P1, M911-P2, M911-P3 from active falsifiers to falsified/needs-revision).
 
 ═══════════════════════════════════════════════════════════════════════
+**🟢 EMERGENT-METRIC RECOVERY 2026-05-09 — STRUCTURAL DERIVED**
+[[research/op-emergent-metric-from-interaction-2026-05-09/]] cycle CLOSED with
+**57/57 sympy PASS** (Phase 1-6 complete) and **STRUCTURAL DERIVED** classification.
+Six requirements P1-P6: **6/6 RESOLVED**. Post-falsification recovery dla TGP
+gravity sektora UDOWODNIONY strukturalnie.
+
+**Krytyczne wyniki cyklu:**
+1. **3-funkcyjny ansatz {A(ψ), B(ψ), C(ψ)}** — relaxes M9.1'' specific A·B=1
+   constraint, opening parametric family of valid TGP gravity ansatze.
+2. **γ_PPN = β_PPN = 1 EXACT** — DERIVED z action variation (NIE postulat formy):
+   - 1PN: b_1 = -a_1
+   - 2PN: ξ_2 = ξ - a_2·ξ³/2
+3. **β_ppE^new(c_0) parametric formula** (Phase 3 sympy LOCK):
+   $$\beta_{\rm ppE}^{\rm new}\big|_{\eta=1/4} = \frac{45}{16}\left[-a_1\xi_3 - 3 - \frac{4 a_2}{a_1^2} + \frac{4 b_2}{a_1^2} - \frac{8 a_3}{a_1^3} + \frac{16 a_2^2}{a_1^4}\right] + \frac{45}{16}c_0\kappa_\sigma$$
+4. **Zero-β region EXISTS** (post-falsification recovery):
+   - Path 1: ξ_3 = (32 - a_3)/32 z c_0=0 (3PN parameter tuning)
+   - Path 2: c_0·κ_σ = 4/3 z M9.1''-canonical params (σ-coupling addition)
+5. **GWTC-3 compliance window** (Phase 4): width ~0.144 w ξ_3 space, c_0·κ_σ ∈ [1.056, 1.611]
+6. **m_inertial = m_grav AUTOMATIC z S05** (Phase 5): WEP nie postulatem
+7. **H6.1 structural unification** (Phase 6): TGP ma JEDNĄ ZASADĘ tensor-from-interactions
+   applied at multiple levels (g_eff @ level 2, SU(2) @ level 3)
+8. **Phase 4 Path 2 strukturalnie PREFEROWANA** — preserves ALL 3 SU(2) paths z
+   [[research/op-SPIN-SU2-substrate-derivation-2026-05-08/]] (47/47 PASS); Path 1
+   (3PN tuning) MAY BREAK Path B (M9.1'' horizon multipole).
+9. **Canonical TGP gravity recovery: σ-coupling** (c_0·κ_σ ≈ 4/3 target),
+   NIE 3PN parameter shift. Argument strukturalny, NIE empiryczny.
+
+**Predykcje M911-P1/P2/P3 status update:**
+- ~~FALSIFIED-OBSERVATIONAL (terminal)~~ → **FALSIFIED-OBSERVATIONAL (specific form) + RECOVERY EXISTS (parametric family, c_0-coupling)**
+- Specific (4-3ψ)/ψ form ruled out 5σ; recovery via emergent-metric framework
+  with σ-coupling identified strukturalnie.
+- Future GW observations test the RECOVERED parametric region (Phase 4 window).
+
+**Detail:** [[TGP_FOUNDATIONS.md]] §3.6 (full integration).
+
+**Open (post-cycle deferred to dedicated cycles):**
+- κ_σ(η=1/4) numerical 2-body PN (3-5 sesji)
+- c_0 first-principles z dynamic-equilibrium balance (3-5 sesji) — `op-c0-derivation-from-substrate` recommended
+- LIGO scalar mode amplitude N14 (R5 risk, 2-4 sesji)
+
+Cycle counter contribution: +1 STRUCTURAL DERIVED (gravity recovery), +1 H6.1 structural unification.
+
+═══════════════════════════════════════════════════════════════════════
 **⚠ DUAL-V FRAMEWORK CLARIFICATION 2026-05-09** — [[research/op-Phi-vacuum-scale-2026-05-09/]] cycle (CLOSED, sympy 84/88 PASS) + 4 spawned audit cykles ustaliły **dual-V structure** TGP framework. **V_M9.1'' (gravity sector)** vs **V_orig (matter sector)** — separate potencjały dla różnych sektorów dynamiki. G.0 closure 2026-05-02 explicit zostawił matter coupling jako "separate verification" (A4 marker, Phase1_results.md linia 266); A4 verification ZREALIZOWANA 2026-05-09. **Φ_0 confirmed as EFT scale-dependent FREE PARAMETER** (analog Higgs VEV w SM), NIE single first-principles value. **Phase 5 MAG Mach inertia ERRATUM applied** ([[research/op-Phase5-MAG-erratum-2026-05-09/]]): internal inconsistency (β=γ vs β<<γ simultaneous) corrected → m_C² = γ EXACTLY (NIE γ/3); 44-rzędowa hierarchia v_EW/H_0 = ARTIFACT inconsistency. **Sek08a annotation update applied** (linie 95-126): "DEPRECATED FOR GRAVITATIONAL SECTOR" + matter sector usage maintained. **Reguła użycia binding post-2026-05-09:** każdy nowy cykl używający V(Φ) MUSI explicit cytować sektor (gravity → V_M9.1''; matter → V_orig). Detail: [[TGP_FOUNDATIONS.md]] §3.5 (full clarification). Cross-impact z M9.1'' falsification: matter sector findings UNAFFECTED (sympy consistency 7/7 PASS [[research/op-Phi-vacuum-scale-2026-05-09/CONSISTENCY_REPORT_post_M911_falsification.md]]); multi-vacuum gravity specific values (ψ=0, 2/3, 4/3) require post-S07 re-analysis but methodology preserved.
 
 ═══════════════════════════════════════════════════════════════════════
@@ -1314,7 +1357,7 @@ Each row carries:
 | Window | Experiment | Key TGP entries at risk |
 |--------|-----------|----------------------------|
 | **2027–2028** | MICROSCOPE-2 | G1 (η = 3.54·10⁻¹⁷), G2 (n=2), **BH7** (η_TGP = 2·10⁻¹⁸ from α(ψ_Earth)) |
-| **2027+** | LIGO O5 | GW2 (3 DOF), GW5 (no vector), GW6 (dispersion bound), **BH5** (δf/f ~ 8–16% QNM ringdown), ~~**M911-P1**~~ ⚠ FALSIFIED-OBSERVATIONAL 2026-05-09 (Phase 1.5 corrected β = -15/4 ruled out at 5σ by current GWTC-3; M9.1'' ansatz reset via S07 needed before LIGO-O5 era can re-test) |
+| **2027+** | LIGO O5 | GW2 (3 DOF), GW5 (no vector), GW6 (dispersion bound), **BH5** (δf/f ~ 8–16% QNM ringdown), ~~**M911-P1**~~ ⚠ FALSIFIED-OBSERVATIONAL 2026-05-09 (Phase 1.5 corrected β = -15/4 ruled out at 5σ by current GWTC-3) **+ RECOVERY EXISTS 2026-05-09** ([[research/op-emergent-metric-from-interaction-2026-05-09/]] STRUCTURAL DERIVED 57/57 PASS): emergent-metric framework z 3-funkcyjnym ansatz {A, B, C} ma parametric family z β_ppE^new ∈ GWTC-3 compliance window; Phase 4 Path 2 (σ-coupling c_0·κ_σ ≈ 4/3) strukturalnie preferowana — preserves all 3 SU(2) paths z SPIN cycle. LIGO-O5 era tests RECOVERED parametric region, NIE specific (4-3ψ)/ψ form |
 | **2027+** | NICER+ | **BH6** (NS M-R shift ~1–3% from GR; J0030, J0740) |
 | **2027+** | DESI DR2/DR3 | DE1 (w=−1), DE2 (w_a=0), DE3 (T-Λ), C1 (H₀), C2 (S₈), C3 (Σm_ν), **Z1** (Σm_ν falsification target 40 meV vs TGP 59.01 meV, margin −32%), **NN5** (ν.1 Σm_ν=59.01 meV cosmological tension hardening research-track) |
 | **2027+** | JUNO | **Z2** (sin²2θ₁₃ = 0.099 ± 0.5%; cross-sector λ_C/√2 lock), **Q4** (sin θ_C/sin θ₁₃ = √2 EXACT; ratio drift current 7.5%), **II1** (sin²θ₁₃_ι.1 = K_ν·λ_C² = 0.025425 ultra-sharp window [0.024, 0.027] post-ι.1 PMNS DERIVED via mixing-operator (ν,up) pair + Cabibbo lock), **MM1** (sin²θ₁₃_μ.1 = K_ν·λ_C²·(1−ρ̄) ≈ **0.021840** ultra-sharp window **[0.0218, 0.0220]** post-μ.1 hardened drift 0.73%, lift 21× via cross-sector CKM ρ̄=11/78 leakage) |
@@ -1325,8 +1368,8 @@ Each row carries:
 | **2030–2032** | ngEHT | BH1 (r_ph ratio 1.293), BH2 (Δb_crit +14.56%), BH3 (multi-BH), **BH4** (10-SMBH +14.56% map), **BH8** (√α₀ = κ_TGP cross-sector via α₀ from photon ring), **XS1** (combined ngEHT × SC v2 ≤5% → ≤1.5% post-ξ.1), **XS6** (6-channel roadmap convergence), **XI1** (Frame A vs B discrimination ≥3σ z 10-SMBH), **XI4** (F4 1-loop reinterpretation), **XI5** (XS1 sharpening 5% → 1.5%), **XI6** (7-channel convergence), **UV2** (AS NGFP vs CDT/LQG ≥5σ via N_A precision 0.05%) |
 | **2030–2035** | UV-research-track + 2-loop FRG | **UV1** (2-loop FRG closure target N_A 500/57 ± 0.01%) |
 | **~2035** | LISA / pulsar-timing arrays | GW4 (m_σ²/m_s² = 2 → 2.9% low-k phase shift), **BH5** (LISA SMBH ringdown 10⁶–10⁷ M_⊙), **XI3** (ξ-factor RG-invariance cross-scale), **UV3** (η_N*=-2 RG-running signature; ξ-factor invariance), **E4** (ε_ph² RG-invariance via ratio under common β-rescaling) |
-| **2035+** | Einstein Telescope (ET-D) + Cosmic Explorer (CE) BBH inspirale | ~~**M911-P1**~~ ⚠ FALSIFIED 2026-05-09 (already excluded by current GWTC-3 z corrected β; redundant for ET-D/CE), ~~**M911-P2**~~ ⚠ WITHDRAWN-NEEDS-REDERIVATION (Phase 1 ratios -23/10 etc. INCORRECT; alternative SPA gives -11161/504; full SPA-chain re-derivation needed before ET+CE multi-coefficient test viable) |
-| **2027–2035** | 4-channel M9.1'' strong-field roadmap | ~~**M911-P3**~~ ⚠ **PARTIAL-FALSIFIED 2026-05-09** (M911-P1 falsified GWTC-3 5σ; M911-P2 needs rederivation; remaining BH5/ε.1 channels test ANY revised M9.1'' ansatz post-S07 reset, not the current (4-3ψ)/ψ specific form) |
+| **2035+** | Einstein Telescope (ET-D) + Cosmic Explorer (CE) BBH inspirale | ~~**M911-P1**~~ ⚠ FALSIFIED 2026-05-09 (already excluded by current GWTC-3 z corrected β; redundant for ET-D/CE) **+ RECOVERY 2026-05-09**: emergent-metric framework (57/57 PASS) gives β_ppE^new(c_0) parametric family — ET-D/CE precision test recovered region, NIE specific (4-3ψ)/ψ form, ~~**M911-P2**~~ ⚠ WITHDRAWN-NEEDS-REDERIVATION (Phase 1 ratios -23/10 INCORRECT; alternative SPA -11161/504) **+ RECOVERY**: Phase 3 cyklu emergent-metric gives **uogólnioną SPA chain** dla 2-funkcyjnego ansatz {A, B} satisfying γ=β=1 (NOT M9.1''-specific A·B=1 constraint); higher-order ratios w nowej rodzinie NIE są fixed M9.1'' values |
+| **2027–2035** | 4-channel M9.1'' strong-field roadmap | ~~**M911-P3**~~ ⚠ **PARTIAL-FALSIFIED 2026-05-09** (M911-P1 falsified GWTC-3 5σ; M911-P2 needs rederivation; remaining BH5/ε.1 channels test ANY revised M9.1'' ansatz post-S07 reset) **+ RECOVERY 2026-05-09**: emergent-metric framework cycle CLOSED STRUCTURAL DERIVED z N11 SU(2) cross-consistency (Phase 6, 11/11 PASS); **Phase 4 Path 2 strukturalnie preferowana** (σ-coupling c_0·κ_σ ≈ 4/3, preserves all 3 SU(2) paths z [[research/op-SPIN-SU2-substrate-derivation-2026-05-08/]]); 4-channel roadmap re-targets RECOVERED parametric region |
 | **~2035** | LATOR / BEACON (next-gen Solar PPN) | **BH9** (γ−1 ~ 1.81·10⁻¹¹; falsifiable below 10⁻¹⁰) |
 | **2027–2035** | 7-channel UV.1 roadmap | **UV6** (ngEHT + LISA + LIGO O5 + MICROSCOPE-2 + LATOR/BEACON + LnH₉ DAC + 2-loop FRG; ≥5/7 confirmations) |
 | **2027–2035** | 5-channel ε.1 roadmap | **E6** (ngEHT + LISA + LIGO O5 + 2-loop FRG + a₂ EFT band; ≥4/5 confirmations dla DERIVED) |
