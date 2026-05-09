@@ -39,7 +39,7 @@ tags:
   - ODE-reconciliation
   - PROPOSED
 tgp_status:
-  folder_status: paused
+  folder_status: closed-resolved
   level: L1
   kind: derivation
   core_compatibility: current

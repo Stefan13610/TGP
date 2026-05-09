@@ -42,14 +42,16 @@ Cykle które realnie poruszają się w tej i następnej sesji. **Critical path
 
 | # | Cykl | Faza / status | Następny krok |
 |---|---|---|---|
-| ★ | **[[research/op-S07-alternative-f-psi-derivation-2026-05-09/]]** | Phase 0 setup (critical path) | C1-C10 sympy formalization + Phase 1 candidate enumeration |
+| ★ | **[[research/op-S07-alternative-f-psi-derivation-2026-05-09/]]** | Phase 0+ (critical path) | C1-C10 sympy formalization + Phase 1 candidate enumeration |
 | 1 | [[research/op-FRW-radiation-era-varying-c-2026-05-06/]] | Phase 2 PASS, ścieżka A FAILS | decyzja D/E/F (pivot L_mat?) |
-| 2 | [[research/op-emergent-metric-from-interaction-2026-05-09/]] | Phase 1 sympy | sprawdzić czy g_eff = G[{Φ_i}] proposal jest kompatybilny z C1-C10 z S07 |
-| 3 | [[research/op-Phi-decomposition-photon-2026-05-07/]] | aktywny | kontynuacja dekompozycji Φ → fotony (V-independent) |
+| 2 | [[research/op-Phi-decomposition-photon-2026-05-07/]] | aktywny | kontynuacja dekompozycji Φ → fotony (V-independent) |
+| 3 | (slot wolny) | — | — |
 | 4 | (slot wolny) | — | — |
 | 5 | (slot wolny) | — | — |
 
 > **Korekta WIP z 2026-05-09 wieczór:** `op-MAG-anomalous-moment-2026-05-09` był początkowo na liście WIP-5, ale jego YAML ma `status: EARLY_HALT_2026-05-09` (sympy 2/2 PASS, classification `EARLY_HALT_HONEST`) — czyli już zamknięty z honest acknowledgment. Reklasyfikowany na `closed-NULL`, zwolnił WIP slot. Nie ma silnego kandydata na zastępcę z reszty Bucket A — uczciwiej zostawić 2 wolne sloty niż wpychać słabego kandydata.
+>
+> **Korekta WIP z 2026-05-09 noc:** `op-emergent-metric-from-interaction-2026-05-09` zamknięty przez parallel agent (Phase 1-6 complete, **57/57 sympy PASS, STRUCTURAL_DERIVED**). 6/6 wymagań P1-P6 RESOLVED, 13/14 NEEDS resolved. Reklasyfikowany na `closed-resolved`, zwolnił kolejny WIP slot. Wynik **bezpośrednio relevantny dla S07**: g_eff = G[{Φ_i}] proposal może być fundamentem alternative f(ψ) (interaction-emergent zamiast postulate-functional).
 
 **Co poszło do `paused`** (z poprzedniej listy / Bucket A):
 
@@ -91,15 +93,23 @@ Sygnał że framework wymaga porządków obok pracy badawczej.
 | ~~4~~ | 80 cykli z `folder_status: active` (realnie ~5) | ✅ **DONE 2026-05-09** | Mass-triage: 85 → `paused` (auto), 9 → `closed-resolved` (cascade), 1 → `closed-NULL` (MAG-anomalous), 4 → manual fix (M03/L01/L04/void-flat-modes), 2 → `parking` (SPIN-MAG-leakage, tensor-modes-FUTURE). Patrz commit `67e0677` |
 | ~~5~~ | Brak cycle-lifecycle policy | ✅ **DONE 2026-05-09** | Spisane: [[meta/CYCLE_LIFECYCLE.md]] (9 statusów, WIP-limit, anti-patterns, mapping legacy) |
 
+### Załatwione 2026-05-09 (post-cleanup, runda 6-10)
+
+| # | Dług | Status | Co zrobiono |
+|---|---|---|---|
+| ~~6~~ | LaTeX cruft committed historycznie | ✅ **FALSE ALARM 2026-05-09** | `git ls-files \| grep -E '\.(aux\|log\|bbl\|...)$'` zwrócił 0 wyników. Pliki NIGDY nie były tracked — .gitignore działa od początku. Lokalne build artifacts pozostają tylko na dysku |
+| ~~7~~ | 3 PDF kanoniczne? | ✅ **DOCUMENTED 2026-05-09** | Spisane w [[PAPER_LAYOUT.md]]: main.pdf=full PL thesis (autorska), tgp_letter.pdf=PRL English (krótki submission), tgp_companion.pdf=PRD English (długi technical). Trójdzielny layout standardowy. Decyzja "który kanoniczny" zależy od kontekstu — patrz tabela w PAPER_LAYOUT.md |
+| ~~8~~ | Documentation drift `status` ↔ `folder_status` | ✅ **TOOLING + 2 manual fixes 2026-05-09** | Skrypt detekcji: [[tooling/check_status_drift.py]] (read-only). Zastosowane 2 oczywiste fixy: op-g0-r3-from-canonical-projection (paused → closed-resolved, text "PHASE 4 CLOSED-POSITIVE"), op-omicron2-phi-mean-shift-cosmo (paused → closed-NULL, text "STAGE_1_NULL_CLOSED_2026-05-03"). Pozostałe drifty pozostają — `folder_status` jest source of truth, text status — manual fix per cykl |
+| ~~9~~ | Brak skryptu auto-pause stale cycles | ✅ **DONE 2026-05-09** | Spisane: [[tooling/check_stale_cycles.py]] (read-only weekly report). Domyślny próg 30 dni, `--strict` daje 14 dni. Exit code 1 jeśli znaleziono stale-active (do CI/cron) |
+| ~~10~~ | DEPENDENCIES_REVERSE.md duplikat | ✅ **NO ACTION 2026-05-09** | Świadoma decyzja: zostawić (`tooling/build_deps_graph.py` generuje oba). Niskoryzyko duplicate, czasem przydatny dla "kto cytuje X". Można usunąć w przyszłości jeśli nigdy się nie używa |
+
 ### Otwarte (do osobnych sesji)
 
 | # | Dług | Lokalizacja | Notatka |
 |---|---|---|---|
-| 6 | LaTeX cruft committed historycznie | root | `*.log`, `*.fls`, `*.fdb_latexmk` już w .gitignore (linie 8-19), ale historycznie committed pliki nadal w repo — wymaga `git rm --cached` cleanup. Niskoryzyko ale efekt na rozmiar repo. |
-| 7 | 3 PDF kanoniczne? | root | main.pdf 5.4M, companion 455K, letter 312K — który jest "the" paper? Decyzja redakcyjna, nie organizational. |
-| 8 | Documentation drift `status` ↔ `folder_status` | 5 cykli dual-V cascade + ~80 cykli z paused | Tekstowy `status:` field w wielu README jest nieaktualny (np. "PHASE0_PHASE1_IN_PROGRESS" mimo cascade closure, lub "active" w wielu Bucket C). `folder_status` dodane/poprawione (jest source of truth), ale text status — osobny pass cleanupu. Niskoryzyko. |
-| 9 | Brak skryptu auto-pause stale cycles | tooling/ | `tooling/check_stale_cycles.py` planowany w [[meta/CYCLE_LIFECYCLE.md]] §Stale-detection. Read-only weekly report, nie modyfikuje YAML. |
-| 10 | DEPENDENCIES_REVERSE.md duplikat | root | Auto-generowany razem z DEPENDENCIES.md — rzadko konsultowany. Można rozważyć usunięcie z generatora jeśli nikt nie używa. |
+| 11 | Text status drift w ~15 cyklach (post #8 partial fix) | `research/op-*/README.md` | Skrypt `check_status_drift.py` raportuje pozostałe; manual review każdego rzędu (np. dual-V cascade dalej "PHASE0_PHASE1_IN_PROGRESS") |
+| 12 | `tgp_companionNotes.bib` + `tgp_letterNotes.bib` placeholders | root | ~104 bytes każdy. Letter+companion używają `tgp_main.bib` — te pliki to noise. Niskoryzyko cleanup |
+| 13 | INDEX.md cycle-list nieaktualne | INDEX.md | Zaktualizowane top-level entry points + critical-blocker banner, ale long Phase ledger + per-cykl listy mogą wymagać regen po quartet of 2026-05-09 closures |
 
 ## 🗂 Coordination layers — co czym jest
 
@@ -151,3 +161,5 @@ w odpowiedniej sesji):
 | 2026-05-09 | 15 edge cases bez `folder_status` field — dodane top-level: 3× `active` (S07, emergent-metric, Phi-decomposition-photon), 9× `closed-resolved` (Phi-vacuum + dual-V cascade + MAG-Lorentz/resonance, SPIN-SU2), 1× `closed-NULL` (MAG-anomalous EARLY_HALT odkryte przy edycji), 2× `parking` (SPIN-MAG-leakage informal, tensor-modes-FUTURE placeholder) |
 | 2026-05-09 | **Documentation drift wykryty:** 5 cykli z dual-V cascade ma w README `status: PHASE0_PHASE1_IN_PROGRESS` mimo że parent `op-Phi-vacuum-scale/Phase_FINAL_close.md` dokumentuje je jako zamknięte. Tekstowy `status:` field nie został zaktualizowany przy cascade closure 2026-05-09. `folder_status: closed-resolved` dodane na podstawie parent's claim — text status do osobnego cleanupu |
 | 2026-05-09 | **Outstanding-debt #1-#5 załatwione:** INDEX.md update (banner S07 + STATE.md primary entry-point + audyt/CYCLE/CALIBRATION w entry points), DEPENDENCIES.md regenerated (×4 wzrost dependencies), audyt/T01 HANDOFF zarchiwizowany jako stub (pre-falsification, β=−5/64 stale), #4+#5 oznaczone DONE (mass-triage + CYCLE_LIFECYCLE policy z poprzednich rund) |
+| 2026-05-09 | **Outstanding-debt #6-#10 załatwione:** #6 false alarm (LaTeX cruft nigdy nie tracked), #7 PAPER_LAYOUT.md (3 PDF role spisane), #8 check_status_drift.py + 2 manual fixes (g0-r3 → closed-resolved, omicron2 → closed-NULL), #9 check_stale_cycles.py, #10 no action (świadomie) |
+| 2026-05-09 | **op-emergent-metric-from-interaction CLOSED:** parallel agent zamknął cykl (Phase 1-6 complete, 57/57 sympy PASS, **STRUCTURAL_DERIVED**). Bezpośrednio relevantny dla S07 — g_eff = G[{Φ_i}] może być fundamentem alternative f(ψ) (interaction-emergent zamiast postulate-functional). WIP-5 zwolniło 2 sloty (z poprzedniego MAG-anomalous EARLY_HALT discovery + emergent-metric closure) |
