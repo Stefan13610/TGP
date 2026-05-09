@@ -242,22 +242,24 @@ może mieć additional polarizations — sprawdzić, czy są w bound.
 
 | Need | Phase | Priority | Status |
 |------|-------|----------|--------|
-| N1 (action many-body) | 1 | CRITICAL | OPEN |
-| N2 (σ_ab activation) | 1 | HIGH | OPEN |
-| N3 (BD demarcation) | 1 | CRITICAL | OPEN |
-| N4 (1PN derivation) | 2 | CRITICAL | OPEN |
-| N5 (solar system) | 2 | HIGH | OPEN |
-| N6 (2-source formal) | 3 | CRITICAL | OPEN |
-| N7 (phase modification) | 3 | CRITICAL | OPEN |
-| N8 (β_ppE^new) | 3 | CRITICAL | OPEN |
-| N9 (Lenz formal) | 5 | CRITICAL | OPEN |
-| N10 (equiv principle) | 5 | HIGH | OPEN |
-| N11 (cross-SU(2)) | 6 | CRITICAL | OPEN |
-| N12 (GWTC-3 check) | 4 | CRITICAL | OPEN |
-| N13 (c_GW=c) | 4 | HIGH | OPEN |
-| N14 (LIGO scalar) | 4 | HIGH | OPEN |
+| N1 (action many-body) | 1 | CRITICAL | ✅ RESOLVED (Phase 1, 16/16) |
+| N2 (σ_ab activation) | 1 | HIGH | ✅ RESOLVED (Phase 1, 16/16) |
+| N3 (BD demarcation) | 1 | CRITICAL | ✅ RESOLVED (Phase 1, 16/16) |
+| N4 (1PN derivation) | 2 | CRITICAL | ✅ RESOLVED (Phase 2, 7/7) |
+| N5 (solar system) | 2 | HIGH | ✅ RESOLVED (Phase 2, 7/7) |
+| N6 (2-source formal) | 3 | CRITICAL | ✅ RESOLVED (Phase 3, 5/5) |
+| N7 (phase modification) | 3 | CRITICAL | ✅ RESOLVED (Phase 3, 5/5) |
+| N8 (β_ppE^new) | 3 | CRITICAL | ✅ RESOLVED (Phase 3, 5/5) |
+| N9 (Lenz formal) | 5 | CRITICAL | ✅ RESOLVED (Phase 5, 10/10) |
+| N10 (equiv principle) | 5 | HIGH | ✅ RESOLVED (Phase 5, 10/10) |
+| N11 (cross-SU(2)) | 6 | CRITICAL | ✅ RESOLVED (Phase 6, 11/11) |
+| N12 (GWTC-3 check) | 4 | CRITICAL | ✅ RESOLVED (Phase 4, 8/8) |
+| N13 (c_GW=c) | 4 | HIGH | ✅ RESOLVED (Phase 4, 8/8) |
+| N14 (LIGO scalar) | 4 | HIGH | DEFERRED (R5 risk, multi-session) |
 
-**14 needs total. CRITICAL: 9. HIGH: 5.**
+**14 needs total. RESOLVED: 13. DEFERRED: 1 (N14 R5 risk, multi-session).**
+
+**Cumulative sympy: 57/57 PASS (100%) across Phase 1-6.**
 
 ## Dependencies
 
