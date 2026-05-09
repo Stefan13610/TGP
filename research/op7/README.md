@@ -7,7 +7,7 @@ related:
 tags:
   - TGP
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: mixed
   kind: derivation
   core_compatibility: current

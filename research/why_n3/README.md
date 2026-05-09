@@ -2,7 +2,7 @@
 title: "R3: Dlaczego N=3 generacji? (T-OP3)"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L1
   kind: derivation
   core_compatibility: "unknown"

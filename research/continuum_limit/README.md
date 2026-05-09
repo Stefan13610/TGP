@@ -2,7 +2,7 @@
 title: "R2: Ciągłe przejście substrat → pole (CG-1/3/4)"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L1
   kind: derivation
   core_compatibility: "unknown"

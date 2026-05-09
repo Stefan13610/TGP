@@ -7,7 +7,7 @@ related:
 tags:
   - TGP
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L2
   kind: phenomenology
   core_compatibility: "unknown"

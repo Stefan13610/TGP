@@ -2,7 +2,7 @@
 title: "TGP N-body package"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L1
   kind: phenomenology
   core_compatibility: current

@@ -2,7 +2,7 @@
 title: "R6: B=√2 analitycznie z ODE solitonowego"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: "unknown"
   kind: derivation
   core_compatibility: "unknown"

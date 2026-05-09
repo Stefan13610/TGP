@@ -23,7 +23,7 @@ tags:
   - framework
   - calibration-protocol
 tgp_status:
-  folder_status: research
+  folder_status: closed-resolved
   level: L4
   kind: meta-audit
   core_compatibility: stale

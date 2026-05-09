@@ -16,7 +16,7 @@ key_finding: |
   coupling jest cosmologicznie tension-insufficient.
 trigger: "User intuition 2026-05-03: Phi_0 should track global matter distribution(t)"
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L1
   kind: cosmology_research
   core_compatibility: "POTENTIAL_BREAKING — caveats noted, M10.x results need re-evaluation"

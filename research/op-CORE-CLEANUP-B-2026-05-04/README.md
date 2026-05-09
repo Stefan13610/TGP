@@ -21,7 +21,7 @@ tags:
   - publication-ready
   - non-breaking
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L4
   kind: derivation
   core_compatibility: in_progress

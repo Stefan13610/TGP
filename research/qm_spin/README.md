@@ -2,7 +2,7 @@
 title: "Q5: Spin 1/2 z topologii solitonu"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: "unknown"
   kind: derivation
   core_compatibility: "unknown"

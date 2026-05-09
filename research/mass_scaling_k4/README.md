@@ -2,7 +2,7 @@
 title: "R5: Prawo skalowania m ∝ A_tail⁴"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L1
   kind: derivation
   core_compatibility: "unknown"

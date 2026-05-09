@@ -25,7 +25,7 @@ tags:
   - Z2-symmetry
   - audit-resolution
 tgp_status:
-  folder_status: research
+  folder_status: paused
   level: L1
   kind: derivation
   core_compatibility: current

@@ -33,7 +33,7 @@ tags:
   - structural-exact
   - Omega_L-alpha_s-correlation
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L2
   kind: derivation
   core_compatibility: "unknown"

@@ -2,7 +2,7 @@
 title: "Q1: Niepewnosc pomiarowa z samozwrotnosci Phi"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: "unknown"
   kind: derivation
   core_compatibility: "unknown"

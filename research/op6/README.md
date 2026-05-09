@@ -2,7 +2,7 @@
 title: "OP-6 rework — rigorous continuum limit of H_Γ"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: mixed
   kind: derivation
   core_compatibility: current

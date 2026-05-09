@@ -2,7 +2,7 @@
 title: "Program P4 — Particle Sector Closure"
 date: 2026-05-03
 tgp_status:
-  folder_status: active
+  folder_status: paused
   level: L1
   kind: derivation
   core_compatibility: "unknown"

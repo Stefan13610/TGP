@@ -33,7 +33,7 @@ trigger: |
   w_eff≥-1, σ_ab spectral gap) user pyta: "czy mechanizm tunelowania/spłaszczania
   stopni swobody w obszarach oddalonych od źródeł masy mógłby coś tutaj zmienić".
 tgp_status:
-  folder_status: closed_NULL
+  folder_status: closed-NULL
   level: L1
   kind: cosmology_research
   core_compatibility: "NO_BREAKING — Stage 1 NULL zamknął tracker channel; α=1 (canonical TGP_v1) zafiksowane"
