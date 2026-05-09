@@ -1,409 +1,399 @@
-#!/usr/bin/env python3
-import sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 """
-Phase3_sympy.py — 2.5PN binary inspiral, β_ppE^new derivation
-==============================================================
+Phase 3 -- 2.5PN binary inspiral SPA chain for refined ansatz {A, B, C}
+=======================================================================
 Cycle: op-emergent-metric-from-interaction-2026-05-09
 
-Resolves N6, N7, N8 (NEEDS.md):
-  N6: 2-source case formalization (gradient cross-terms σ_cross)
-  N7: Effective phase modification δφ(f) via SPA chain
-  N8: β_ppE^new vs M9.1'' single-source -15/4
+Adapts the SPA chain from op-ppE-mapping Phase 1.5 (which derived
+beta_ppE^TGP_M911 = -15/4 with G_SPA = 48 sympy-exact, test-particle
+isotropic limit) to the *generalized* refined ansatz with TWO
+independent functions A(psi), B(psi).
 
-DERIVATION STRATEGY
--------------------
-1. Setup 2-source binary geometry (m_1, m_2 at ±r_12/2)
-2. Compute σ_ij^cross at probe position
-3. Structural form of g_eff^ij correction: δg_eff_ij = -σ_ij·C/(B²Φ_0²c²)
-4. Identify Δe_2^σ(c_0) modification at 2PN-orbital binding energy
-5. Δα_4^σ(c_0) via SPA chain (G_SPA = 48 from Phase 1.5 LOCK)
-6. β_ppE^new(c_0) parametric formula
-7. Verify single-source recovery (c_0 = 0)
-8. Document c_0 status
+Phase 2 established:
+  gamma_PPN = 1  iff  b_1 = -a_1
+  beta_PPN  = 1  iff  xi_2 = xi - a_2 * xi^3 / 2
+  sigma-coupling C(psi) UNCONSTRAINED at 1PN/2PN (enters at 2PN-orbital ~ U^4)
 
-LIMITATIONS
------------
-Full numerical Δe_2^σ derivation requires 2-body Lagrangian + binding
-energy variational calculation (multi-session). This Phase 3 derives
-STRUCTURAL FORM of β_ppE^new(c_0) and identifies the c_0-dependence
-explicitly. Full κ_σ numerical lock = future work.
+This Phase 3 derives:
+  - Full SPA chain Δe_2 -> δα_4 -> β_ppE for general (A, B) with γ=β=1
+  - Verifies M9.1'' specific point recovers β_ppE = -15/4 (Phase 1.5 LOCK L5)
+  - Shows that the relaxed family {A, B} (without A*B = 1 constraint) has
+    parametric freedom such that there exist (A, B) configurations giving
+    β_ppE different from -15/4 — including parametric region |β_ppE| < bound.
+  - σ-coupling C(ψ) parametric form (linear shift κ_σ · c_0 at leading order).
+
+Test-particle limit (eta = 1/4 used at SPA mapping). Flux F(v) = F_GR(v)
+assumed (Phase 1.5 LOCK L4: no new radiation channels at 2PN-orbital).
 """
 
 import sympy as sp
-from sympy import symbols, sqrt, Rational, diff, simplify, expand, series
+from sympy import (symbols, Rational, simplify, series, expand, Poly,
+                   solve, diff, sqrt)
 
-print("=" * 78)
-print("  Phase 3 sympy: 2.5PN β_ppE^new derivation")
-print("=" * 78)
+print("=" * 72)
+print("Phase 3 sympy: SPA chain, beta_ppE for refined ansatz {A, B, C}")
+print("=" * 72)
 
-PASS_count = 0
-FAIL_count = 0
-def check(label, cond, expected=None, got=None):
-    global PASS_count, FAIL_count
-    status = "PASS" if cond else "FAIL"
-    if cond:
-        PASS_count += 1
-    else:
-        FAIL_count += 1
-    msg = f"  [{status}] {label}"
-    if expected is not None or got is not None:
-        msg += f"  (expected={expected}, got={got})"
-    print(msg)
-    return cond
+# ---- Core symbols ----
+H_psi = symbols('H_psi', real=True)        # H_psi = psi - 1 (small)
+U = symbols('U', positive=True)
+x = symbols('x', positive=True)
+a_1, a_2, a_3, a_4 = symbols('a_1 a_2 a_3 a_4', real=True)
+b_1, b_2, b_3, b_4 = symbols('b_1 b_2 b_3 b_4', real=True)
+xi, xi_2, xi_3, xi_4 = symbols('xi xi_2 xi_3 xi_4', real=True)
+c_0 = symbols('c_0', real=True)            # leading sigma-coupling
 
-
-def banner(title):
-    print("\n" + "-" * 78)
-    print(f"  {title}")
-    print("-" * 78)
-
-# ==============================================================================
-# §1 — 2-source binary geometry
-# ==============================================================================
-banner("§1 — 2-source binary geometry")
-
-# Coordinates
-x, y, z = symbols('x y z', real=True)
-G_const, M1, M2 = symbols('G M_1 M_2', positive=True)
-r_12 = symbols('r_12', positive=True)  # binary separation
-M_tot = M1 + M2
-eta_q = M1 * M2 / M_tot**2  # symmetric mass ratio
-
-# Place particles in COM frame on x-axis: x_1 = -m_2 r_12 / M_tot, x_2 = +m_1 r_12 / M_tot
-x1_pos = -M2 * r_12 / M_tot
-x2_pos = +M1 * r_12 / M_tot
-
-# Distance from each particle
-r1 = sqrt((x - x1_pos)**2 + y**2 + z**2)
-r2 = sqrt((x - x2_pos)**2 + y**2 + z**2)
-
-# Newtonian potentials (leading order; in PN expansion δΦ_i ~ U_i)
-dPhi_1 = -G_const * M1 / r1
-dPhi_2 = -G_const * M2 / r2
-
-print(f"  Binary separation: r_12 = {r_12}")
-print(f"  COM positions: x_1 = {x1_pos}, x_2 = {x2_pos}")
-print(f"  Symmetric mass ratio eta = M_1*M_2/M_tot^2")
-check("COM frame setup consistent: x_1·M_1 + x_2·M_2 = 0",
-      simplify(x1_pos*M1 + x2_pos*M2) == 0)
-
-# Equal-mass case for simpler structural display
-print("\n  (For equal-mass case η=1/4: x_1 = -r_12/2, x_2 = +r_12/2)")
-
-# ==============================================================================
-# §2 — σ_ij decomposition with cross-terms
-# ==============================================================================
-banner("§2 — σ_ij decomposition: self vs cross terms")
-
-# Total field gradient
-grad_total = [diff(dPhi_1 + dPhi_2, q) for q in (x, y, z)]
-grad_1 = [diff(dPhi_1, q) for q in (x, y, z)]
-grad_2 = [diff(dPhi_2, q) for q in (x, y, z)]
-
-# σ_ij = (∂_iΦ)(∂_jΦ) - (1/3)δ_ij(∇Φ)²
-# Decompose into self + cross:
-#   (∂_iΦ_total)(∂_jΦ_total) = self_11 + self_22 + cross_12 + cross_21
-
-print("""
-  σ_ij = (∂_iΦ)(∂_jΦ) - (1/3)δ_ij(∇Φ)²
-
-  Decomposition with Φ = Φ_1 + Φ_2:
-    σ_ij^total = σ_ij^(1,1) + σ_ij^(2,2) + σ_ij^(cross)
-
-    σ_ij^(1,1) = (∂_iΦ_1)(∂_jΦ_1) - (1/3)δ_ij(∇Φ_1)²    [self of source 1]
-    σ_ij^(2,2) = (∂_iΦ_2)(∂_jΦ_2) - (1/3)δ_ij(∇Φ_2)²    [self of source 2]
-    σ_ij^(cross) = (∂_iΦ_1)(∂_jΦ_2) + (∂_iΦ_2)(∂_jΦ_1)
-                   - (2/3)δ_ij(∇Φ_1·∇Φ_2)              [STRUCTURALLY NEW]
-""")
-
-# Verify decomposition algebraically (linearity of ∇)
-sigma_total_xx = grad_total[0]**2 - Rational(1,3)*sum(g**2 for g in grad_total)
-sigma_self1_xx = grad_1[0]**2 - Rational(1,3)*sum(g**2 for g in grad_1)
-sigma_self2_xx = grad_2[0]**2 - Rational(1,3)*sum(g**2 for g in grad_2)
-sigma_cross_xx = (2*grad_1[0]*grad_2[0] -
-                  Rational(2,3)*sum(grad_1[i]*grad_2[i] for i in range(3)))
-
-decomp_check = simplify(sigma_total_xx - sigma_self1_xx - sigma_self2_xx - sigma_cross_xx)
-check("σ_xx decomposition: total = self_1 + self_2 + cross", decomp_check == 0)
-
-# Trace check: σ is traceless
-trace_total = sum(grad_total[i]**2 for i in range(3)) - sum(grad_total[i]**2 for i in range(3))
-# (More properly: trace σ = (∇Φ)² - (1/3)·3·(∇Φ)² = 0)
-# Let's verify formally:
-trace_self1 = sum(grad_1[i]**2 - Rational(1,3)*sum(grad_1[k]**2 for k in range(3)) for i in range(3))
-check("σ traceless (self_1)", simplify(trace_self1) == 0)
-
-# ==============================================================================
-# §3 — σ_ij^cross at probe position (anisotropy along binary axis)
-# ==============================================================================
-banner("§3 — σ_ij^cross structural form at probe position")
-
-# For probe at origin (between particles, equal-mass case for simplicity)
-# Set y=z=0, x=0 (midpoint between particles in equal-mass)
-probe_subs = {y: 0, z: 0}
-
-# Equal-mass setup for cleaner display
-equal_mass_subs = {M1: 1, M2: 1, G_const: 1}
-all_subs = {**probe_subs, **equal_mass_subs}
-
-# Compute ∂_iΦ_1 and ∂_iΦ_2 at probe (x=0, y=0, z=0)
-grad1_probe = [g.subs(all_subs).subs(x, 0) for g in grad_1]
-grad2_probe = [g.subs(all_subs).subs(x, 0) for g in grad_2]
-
-print("\n  Equal-mass probe at x=y=z=0:")
-print(f"    ∇Φ_1 (at probe) = ({grad1_probe[0]}, {grad1_probe[1]}, {grad1_probe[2]})")
-print(f"    ∇Φ_2 (at probe) = ({grad2_probe[0]}, {grad2_probe[1]}, {grad2_probe[2]})")
-
-# Note: x_1 = -r_12/2, x_2 = +r_12/2 (equal-mass)
-# r_1 (at probe origin) = r_12/2, similarly r_2 = r_12/2
-# ∂_xΦ_1 = M_1·(x - x_1)/r_1³, at probe = M_1·(0 - (-r_12/2))/(r_12/2)³ = (M_1·r_12/2) / (r_12/2)³ = M_1·4/r_12²
-# Similarly ∂_xΦ_2 = M_2·(0 - r_12/2)/(r_12/2)³ = -M_2·4/r_12²
-
-# Ah so at midpoint, ∇Φ_1 and ∇Φ_2 are ANTIPARALLEL along x-axis. So cross term ∇Φ_1·∇Φ_2 is NEGATIVE.
-
-# σ^cross_xx at probe:
-sigma_cross_xx_probe = (2*grad1_probe[0]*grad2_probe[0] -
-                        Rational(2,3)*sum(grad1_probe[i]*grad2_probe[i] for i in range(3)))
-sigma_cross_xx_probe = simplify(sigma_cross_xx_probe)
-
-sigma_cross_yy_probe = (2*grad1_probe[1]*grad2_probe[1] -
-                        Rational(2,3)*sum(grad1_probe[i]*grad2_probe[i] for i in range(3)))
-sigma_cross_yy_probe = simplify(sigma_cross_yy_probe)
-
-print(f"\n  σ^cross_xx (probe, equal-mass) = {sigma_cross_xx_probe}")
-print(f"  σ^cross_yy (probe, equal-mass) = {sigma_cross_yy_probe}")
-
-# Check: σ^cross is traceless (3D)
-trace_sigma_cross_probe = sigma_cross_xx_probe + 2*sigma_cross_yy_probe  # σ_yy = σ_zz by symmetry
-check("σ^cross traceless at probe", simplify(trace_sigma_cross_probe) == 0)
-
-# Magnitude order: σ^cross ~ O(M^2/r_12^4) at probe between equal masses
-# For binary inspiral: r_12 → r_orbit, so σ^cross ~ M^2/r_orbit^4
-
-# Structural anisotropy: σ_xx ≠ σ_yy (anisotropy along separation axis)
-print("\n  Structural anisotropy:")
-print(f"    σ_xx vs σ_yy: ratio σ_yy/σ_xx = {simplify(sigma_cross_yy_probe/sigma_cross_xx_probe)}")
-check("σ^cross anisotropy along separation axis (σ_xx ≠ σ_yy)",
-      simplify(sigma_cross_xx_probe - sigma_cross_yy_probe) != 0)
-
-# ==============================================================================
-# §4 — g_eff^ij correction from σ-coupling
-# ==============================================================================
-banner("§4 — g_eff^ij correction from σ-coupling C(ψ)")
-
-# From Phase 1 ansatz:
-#   g_eff^ij = δ^ij·B(ψ) + σ^ij·C(ψ)/(Φ_0²·c²)
-# Inverting:
-#   g_eff_ij = δ_ij/B(ψ) - σ_ij·C(ψ)/[B²(ψ)·Φ_0²·c²] + O(σ²)
-#
-# At leading order around vacuum (h = ψ-1 small), B(ψ)=1+b_1·h+...:
-#   g_eff_ij ≈ δ_ij·(1 - b_1·h) - σ_ij·c_0/(Φ_0²·c²) + O(h², σ²)
-#
-# The σ-correction enters g_eff_ij with magnitude:
-#   |Δg_eff_ij^σ| ~ |σ_ij·c_0|/(Φ_0²·c²)
-# At binary inspiral: σ_ij ~ M^2/r_orbit^4 in geometric units.
-# In c=G=M=1 units: σ ~ 1/r^4, and r ~ 1/U ⟹ σ ~ U^4
-
-c_0 = symbols('c_0', real=True)
-print("""
-  g_eff_ij correction (linearized in σ, around vacuum):
-    Δg_eff_ij^σ = -σ_ij · c_0 / (Φ_0² c²) + O(h, σ²)
-
-  In PN power counting (geometric units c=G=M_tot=1):
-    σ_ij ~ M^2/r_orbit^4 ~ U^4 (where U = M/r_orbit ≈ v² at LSO)
-
-  ⟹ Δg_eff_ij^σ ~ c_0 · v⁴ enters at 2PN-orbital level (== 2PN gauge).
-
-  This contributes to orbital binding energy at 2PN-orbital:
-    ΔE_orb^σ ~ c_0 · v⁴ * (correction factor)
-  ⟹ Δe_2^σ ~ c_0 · κ_2^σ(η)  (linear in c_0)
-""")
-
-# Order-of-magnitude verification: in dimensionless units
-# σ ~ 1/r^4, U = M/r, so σ ~ U^4 ✓
-# This means Δe_2 from σ-coupling is non-trivial at 2PN.
-
-check("σ-coupling enters at 2PN-orbital (v^4 ~ U^2 in PN counting)", True)
-
-# ==============================================================================
-# §5 — Δe_2^σ(c_0) STRUCTURAL form
-# ==============================================================================
-banner("§5 — Δe_2^σ(c_0) — structural form")
-
-# In test-particle limit (η→0), σ-cross-terms vanish (only one source).
-# In binary η=1/4, σ-cross has full anisotropy along separation.
-# Δe_2^σ depends on c_0 LINEARLY (leading order).
-
-# For circular orbit binding energy E_orb(v):
-#   E_orb = -(η v²/2) · [1 + e_1 v² + e_2 v⁴ + ...]
-# Modified by σ-coupling at v^4 order:
-#   Δe_2^σ = c_0 · κ_e2^σ(η)
-# where κ_e2^σ is structural geometric factor.
-
-# Simple estimate: σ contribution to test-particle effective potential
-# For circular orbit at radius r in equal-mass binary:
-# σ at orbital position from BOTH self-source and cross-source.
-# Effective "orbital energy shift" δE ~ -(c_0/2)·σ·v² (from g_eff_ij·v^iv^j coupling)
-# ⟹ δE/m ~ c_0 · v⁴/r² · (M^2/r²) ~ c_0 · v⁴ · O(1) for v ~ 1/√r
-
-# STRUCTURAL CONSTANT: at η=1/4 equal-mass, geometric κ_e2^σ involves:
-#   - probe at orbital position (test particle)
-#   - σ_ij^cross from binary partner
-#   - velocity-dependent contraction with v_i v_j
-# Result has dimensionless κ_e2^σ(η=1/4) of order O(1) (specific value requires
-# explicit 2-body Lagrangian).
-
-kappa_e2_sigma_eta = symbols('kappa_e2_sigma', real=True)  # placeholder
-Delta_e2_sigma = c_0 * kappa_e2_sigma_eta
-
-print(f"  Δe_2^σ(c_0, η) = c_0 · κ_e2^σ(η)")
-print(f"  κ_e2^σ(η) = structural geometric factor, computable from 2-body Lagrangian")
-print(f"  At η=1/4 (equal-mass): κ_e2^σ(1/4) is O(1) numerical constant.")
+# ============================================================
+# §1 -- A, B Taylor and isotropic-form (f, h)
+# ============================================================
 print()
-print("  HONEST CAVEAT: explicit κ_e2^σ value requires multi-session 2-body PN derivation.")
-print("  Phase 3 LOCKS structural form (linearity in c_0); numerical κ_e2^σ = future work.")
+print("-" * 72)
+print("§1  Taylor: A(psi), B(psi), and isotropic-form f = 1/A, h = 1/B")
+print("-" * 72)
 
-check("Δe_2^σ structurally linear in c_0", True)
-check("κ_e2^σ identified as deferred numerical constant", True)
+A_psi = 1 + a_1*H_psi + a_2*H_psi**2 + a_3*H_psi**3 + a_4*H_psi**4
+B_psi = 1 + b_1*H_psi + b_2*H_psi**2 + b_3*H_psi**3 + b_4*H_psi**4
 
-# ==============================================================================
-# §6 — β_ppE^new(c_0) parametric formula
-# ==============================================================================
-banner("§6 — β_ppE^new(c_0) parametric formula")
+# Isotropic-form metric functions (cycle ansatz in single-source isotropic regime)
+f_func = series(1/A_psi, H_psi, 0, 5).removeO()
+h_func = series(1/B_psi, H_psi, 0, 5).removeO()
 
-# SPA chain at η=1/4:
-#   α_4 = 30·e_2 - 20·e_1·p_1 + 10·p_1² - 10·p_2
-#   β_ppE^(b=-1) = -(3/(128η)) · Δα_4
-#
-# Δα_4 = Δα_4^diag + Δα_4^σ
-#      = Δα_4^diag + 30·Δe_2^σ + (cross-terms)
-#
-# At η=1/4 (test-particle approximation for diag):
-#   β_ppE^new = -(3/32) · [Δα_4^diag + 30·c_0·κ_e2^σ(1/4) + ...]
+# Substitute Phi-EOM Taylor: H_psi(U) = xi*U + xi_2*U^2 + xi_3*U^3 + xi_4*U^4
+H_of_U = xi*U + xi_2*U**2 + xi_3*U**3 + xi_4*U**4
 
-prefactor = Rational(3, 32)  # at η=1/4
-Delta_alpha_4_diag = symbols('Delta_alpha_4_diag', real=True)  # depends on (a,b) Taylor
-Delta_alpha_4_sigma = 30 * c_0 * kappa_e2_sigma_eta
+f_U = expand(series(f_func.subs(H_psi, H_of_U), U, 0, 5).removeO())
+h_U = expand(series(h_func.subs(H_psi, H_of_U), U, 0, 5).removeO())
 
-beta_ppE_new = -prefactor * (Delta_alpha_4_diag + Delta_alpha_4_sigma)
-beta_ppE_new = expand(beta_ppE_new)
-print(f"  β_ppE^new(c_0) = {beta_ppE_new}")
+# Apply 1PN + 2PN constraints from Phase 2:
+PPN_subs = [
+    (b_1, -a_1),
+    (xi, 2/a_1),
+    (xi_2, 2/a_1 - a_2*(2/a_1)**3/2),
+]
+f_U_pn = expand(series(f_U.subs(PPN_subs), U, 0, 5).removeO())
+h_U_pn = expand(series(h_U.subs(PPN_subs), U, 0, 5).removeO())
+
+# Quick verification: at U=0, f=1 and h=1 (vacuum normalization)
+N1_vacuum_pass = (f_U_pn.subs(U, 0) == 1) and (h_U_pn.subs(U, 0) == 1)
+print(f"  [{'PASS' if N1_vacuum_pass else 'FAIL'}] f(U=0) = h(U=0) = 1 (vacuum normalized)")
+
+# ============================================================
+# §2 -- Circular orbit v^2(U) and E_orb(U)
+# ============================================================
 print()
-print(f"  Decomposition:")
-print(f"    β_diag = -(3/32) · Δα_4^diag    (single-source, depends on (a, b))")
-print(f"    β_σ    = -(3/32) · 30 · c_0 · κ_e2^σ(η)  = -(45/16) · c_0 · κ_e2^σ(η)")
+print("-" * 72)
+print("§2  Circular orbit v^2(U), E_orb(U) for refined ansatz")
+print("-" * 72)
+
+fp = diff(f_U_pn, U)
+hp = diff(h_U_pn, U)
+
+# v^2 = -U f' / (2 h - U h')   (Phase 1.5 §2.1, isotropic spherical)
+v2_raw = -U * fp / (2*h_U_pn - U*hp)
+v2_series = expand(series(v2_raw, U, 0, 5).removeO())
+
+# Test-particle E(U)/m = f / sqrt(f - h v^2)
+denom = f_U_pn - h_U_pn * v2_series
+E_raw = f_U_pn / sqrt(denom)
+E_series = expand(series(E_raw, U, 0, 5).removeO())
+
+# ============================================================
+# §3 -- Convert U -> x = (M*Omega)^(2/3); compute E(x)
+# ============================================================
 print()
-print(f"    ⟹ β_ppE^new = β_diag + (-45/16)·c_0·κ_e2^σ(η)")
+print("-" * 72)
+print("§3  U(x) inversion, E(x) Taylor")
+print("-" * 72)
 
-# Verify M9.1'' recovery: c_0 = 0 ⟹ β_ppE^new = β_diag (single-source)
-beta_M911_recovery = beta_ppE_new.subs(c_0, 0)
-print(f"\n  Single-source recovery (c_0 → 0):")
-print(f"    β_ppE^new(c_0=0) = {beta_M911_recovery}")
-check("c_0 = 0 recovers β_diag (single-source M9.1''-class)",
-      beta_M911_recovery == -prefactor * Delta_alpha_4_diag)
+# Phase 1.5 §2.3: x = U * (v^2/U)^(1/3) ⇒ x^3 = U^2 * v^2(U)
+# Let U(x) = x + c2 x^2 + c3 x^3 + c4 x^4 + c5 x^5 (LO U=x)
+c2, c3, c4, c5 = symbols('c2 c3 c4 c5', real=True)
+U_of_x = x + c2*x**2 + c3*x**3 + c4*x**4 + c5*x**5
 
-# For M9.1'' specific (a, b, c=0): β_diag = -(3/32)·(-40) = 15/4 = 3.75 (FALSIFIED)
-# For new ansatz (a, b ≠ M9.1''), β_diag may be different.
+# RHS = U^2 * v^2(U) ;  match RHS = x^3 to all orders
+v2_at_Ux = v2_series.subs(U, U_of_x)
+RHS_x = expand(series(U_of_x**2 * v2_at_Ux, x, 0, 8).removeO())
+remaining = expand(RHS_x - x**3)
 
-# ==============================================================================
-# §7 — c_0 value for β_ppE^new = 0 (TENTATIVE)
-# ==============================================================================
-banner("§7 — c_0 value for β_ppE^new = 0 (within GWTC-3 bound)")
+# Solve order by order: coefficient of x^4 -> c2, x^5 -> c3, x^6 -> c4, x^7 -> c5
+solved = {}
+for n in [4, 5, 6, 7]:
+    eq_n = remaining.coeff(x, n).subs(solved)
+    eq_n = expand(eq_n)
+    for u in [c2, c3, c4, c5]:
+        if u not in solved and eq_n.has(u):
+            sol = solve(eq_n, u)
+            if sol:
+                solved[u] = simplify(sol[0])
+                break
 
-# To satisfy GWTC-3 bound |β_ppE^new| ≤ 0.78:
-# Need: |β_diag - (45/16)·c_0·κ_e2^σ| ≤ 0.78
-#
-# If new ansatz preserves M9.1'' single-source form ⟹ β_diag = 15/4 = 3.75
-# Then: |3.75 - (45/16)·c_0·κ_e2^σ| ≤ 0.78
-# Solve: (45/16)·c_0·κ_e2^σ ∈ [3.75-0.78, 3.75+0.78] = [2.97, 4.53]
-# ⟹ c_0·κ_e2^σ ∈ [16/45·2.97, 16/45·4.53] ≈ [1.057, 1.611]
+# Apply solutions to U_of_x
+U_of_x_solved = U_of_x
+for u, val in solved.items():
+    U_of_x_solved = U_of_x_solved.subs(u, val)
 
-beta_diag_M911 = Rational(15, 4)
-beta_bound = sp.Rational(78, 100)
+print(f"  U(x) inversion solved (order 5 in x).")
+for u, val in solved.items():
+    print(f"    {u} = {val}")
 
-# Solve for c_0·κ_e2^σ such that β_ppE^new = 0 (central case)
-c0_kappa_zero = sp.solve(beta_diag_M911 - Rational(45, 16) * symbols('product') - 0, symbols('product'))[0]
-print(f"  For β_ppE^new = 0 (exact GR match at 2.5PN-phase):")
-print(f"    c_0 · κ_e2^σ(η=1/4) = {c0_kappa_zero} = 4/3")
+# Substitute U(x) into E_series to get E(x)
+E_of_x_raw = E_series.subs(U, U_of_x_solved)
+E_of_x = expand(series(E_of_x_raw, x, 0, 5).removeO())
+
 print()
-print(f"  For β_ppE^new at GWTC-3 bound 0.78:")
-c0_kappa_bound_low = (beta_diag_M911 - beta_bound) * Rational(16, 45)
-c0_kappa_bound_high = (beta_diag_M911 + beta_bound) * Rational(16, 45)
-print(f"    c_0 · κ_e2^σ ∈ [{c0_kappa_bound_low}, {c0_kappa_bound_high}]")
-print(f"                 ≈ [{float(c0_kappa_bound_low):.3f}, {float(c0_kappa_bound_high):.3f}]")
+print("  E(x)/m for refined ansatz, coefficients:")
+for n in [0, 1, 2, 3, 4]:
+    coef = simplify(E_of_x.coeff(x, n))
+    print(f"    [x^{n}]  E coeff = {coef}")
+
+# ============================================================
+# §4 -- e_n binding coefficients (Cutler-Flanagan)
+# ============================================================
 print()
-print("  TENTATIVE: c_0·κ_e2^σ ≈ 4/3 (exact GR match) is structurally clean number.")
-print("  HONEST CAVEAT: this requires numerical κ_e2^σ derivation to lock c_0 itself.")
+print("-" * 72)
+print("§4  Binding-energy coefficients e_n = -2 * coeff(E-1, x^(n+1))")
+print("-" * 72)
 
-check("c_0·κ_e2^σ = 4/3 gives β_ppE^new = 0 (exact GR at 2.5PN)", True)
+# Cutler-Flanagan: E_b/m = -x/2 (1 + e_1 x + e_2 x^2 + e_3 x^3 + ...)
+# E_total/m = 1 + E_b/m  =>  E - 1 = E_b/m
+# coeff(E - 1, x^(n+1)) = -e_n/2  =>  e_n = -2 * coeff(E - 1, x^(n+1))
+E_minus_1 = expand(E_of_x - 1)
+e_n_TGP = []
+for n in [1, 2, 3]:
+    coef_xn1 = E_minus_1.coeff(x, n+1)
+    e_n_val = simplify(-2 * coef_xn1)
+    e_n_TGP.append(e_n_val)
 
-# ==============================================================================
-# §8 — c_0 status: derivable / free / framework-fixed
-# ==============================================================================
-banner("§8 — c_0 status determination")
+# GR test-particle (Schwarzschild) values from Phase 1.5 §2.4:
+e_n_GR = [Rational(-3, 4), Rational(-27, 8), Rational(-675, 64)]
 
-print("""
-  CRITICAL QUESTION (Phase 3 G6):
-  Is c_0 derivable from TGP framework, or free parameter?
+print("  Cycle-family e_n = function of {a_1, a_2, a_3, b_2, b_3, xi_3}:")
+for i, n in enumerate([1, 2, 3]):
+    print(f"    e_{n}_TGP = {e_n_TGP[i]}")
+    print(f"    e_{n}_GR  = {e_n_GR[i]}")
 
-  Status options:
-  ────────────────────────────────────────────────────────
-  (A) c_0 derivable from σ_ab (OP-7 T2) coupling structure
-  (B) c_0 fixed by SU(2) cross-consistency (N11 / Phase 6)
-  (C) c_0 free parameter (STRUCTURAL_CONDITIONAL)
-  (D) c_0 fixed by Φ_0 EFT scale-dependence
+# Δe_n
+delta_e = [simplify(e_n_TGP[i] - e_n_GR[i]) for i in range(3)]
 
-  CURRENT EVALUATION (post-Phase 3 derivation):
-
-  Argument for (A): σ_ab is derived from Hamiltonian H_Γ at level 0
-  (FOUNDATIONS § 2 hierarchy). The coupling C(ψ) of σ to g_eff is a
-  STRUCTURAL parameter of the metric ansatz. In principle it should be
-  computable from H_Γ → continuum action coarse-graining.
-
-  Argument for (B): SPIN-SU2 cycle (closed) showed that interaction-
-  generated tensor structure (level 3) emerges from dynamic equilibrium.
-  Same mechanism for g_eff (level 2) suggests c_0 should be computable
-  from same dynamic-equilibrium constraint.
-
-  Argument against (C): TGP foundations are STRONGLY constraining (single
-  field Φ + Z2 + S05). A free parameter in g_eff would weaken the framework.
-
-  CURRENT VERDICT: c_0 is LIKELY framework-derivable (option A or B), but
-  EXPLICIT derivation is multi-session work. Phase 3 leaves c_0 as
-  PARAMETRIC slot pending Phase 6 cross-consistency check.
-
-  IF c_0 ≈ 4/3/κ_e2^σ(η=1/4) ≈ structural value with simple form (e.g.,
-  c_0 = 4/3 if κ_e2^σ = 1): cycle SUCCEEDS at Phase 4 GWTC-3 check.
-
-  IF c_0 from framework calc gives different value: STRUCTURAL_NO_GO at
-  Phase 4 (cycle fails honestly).
-""")
-
-check("c_0 status documented (deferred to Phase 6 with strong (A)/(B) prior)", True)
-
-# ==============================================================================
-# §9 — Phase 3 summary
-# ==============================================================================
-banner("§9 — Phase 3 sympy summary")
-
-print(f"\n  Total: {PASS_count}/{PASS_count + FAIL_count} PASS")
 print()
-if FAIL_count == 0:
-    print("  ✅ Phase 3 STRUCTURAL DERIVED:")
-    print("     - σ_ij^cross decomposition: self + cross terms")
-    print("     - σ-coupling C(ψ) enters at 2PN-orbital (v^4)")
-    print("     - β_ppE^new(c_0) = β_diag - (45/16)·c_0·κ_e2^σ(η)")
-    print("     - Single-source recovery (c_0=0) verified")
-    print("     - c_0 = 4/3·(κ_e2^σ)^(-1) gives β_ppE = 0 (TENTATIVE)")
-    print()
-    print("  Phase 3 limitations:")
-    print("     - κ_e2^σ(η=1/4) numerical value: deferred to multi-session 2-body PN")
-    print("     - c_0 first-principles derivation: deferred to Phase 6 (SU(2) cross-consistency)")
-    print()
-    print("  NEXT STEPS:")
-    print("     - Phase 4: GWTC-3 falsifier check (with c_0 parameter scan)")
-    print("     - Phase 5: Lenz back-reaction (m_inertial)")
-    print("     - Phase 6: SU(2) cross-consistency → c_0 derivation")
+print("  Delta e_n = e_n_TGP - e_n_GR:")
+for i, n in enumerate([1, 2, 3]):
+    print(f"    delta_e_{n} = {delta_e[i]}")
+
+# delta_e_1 = 0 must hold (1PN PPN matching from Phase 2)
+N4_e1_pass = (delta_e[0] == 0)
+print()
+print(f"  [{'PASS' if N4_e1_pass else 'FAIL'}] delta_e_1 = 0 (1PN gamma=beta=1 imposed)")
+
+# ============================================================
+# §5 -- δα_4 and β_ppE^TGP^(b=-1) at η=1/4
+# ============================================================
+print()
+print("-" * 72)
+print("§5  SPA chain: delta_alpha_4 -> beta_ppE^TGP at eta=1/4")
+print("-" * 72)
+
+# Phase 1.5 §4.1 SPA formula:
+#   alpha_4 = 30*e_2 - 20*e_1*p_1 + 10*p_1^2 - 10*p_2
+# Test-particle GR flux: p_1 = -1247/336, p_2 = -44711/9072
+# Δp_1 = Δp_2 = 0 (Phase 1.5 LOCK L4: no new radiation channels at 2PN-orbital)
+p_1 = Rational(-1247, 336)
+p_2 = Rational(-44711, 9072)
+
+# Δα_4 = 30*Δe_2 - 20*Δe_1*p_1   (since Δp_n = 0, and Δe_1 = 0 from 1PN)
+delta_alpha_4 = simplify(30 * delta_e[1] - 20 * delta_e[0] * p_1)
+
+# Equivalently, with Δe_1 = 0:  δα_4 = 30·Δe_2
+print(f"  delta_alpha_4 = 30*delta_e_2 - 20*delta_e_1*p_1 = {delta_alpha_4}")
+print(f"                = 30*delta_e_2  (since delta_e_1 = 0)")
+
+# β_ppE^(b=-1) at η=1/4:  β = (3/(128·η))·δα_4 = (3/32)·δα_4
+beta_ppE_TGP = simplify(Rational(3, 32) * delta_alpha_4)
+print(f"  beta_ppE^TGP^(b=-1) at eta=1/4: (3/32) * delta_alpha_4")
+print(f"                                = {beta_ppE_TGP}")
+print()
+print(f"  Equivalent form: beta_ppE = (45/16) * delta_e_2")
+
+# ============================================================
+# §6 -- M9.1'' specific point: recovery of -15/4
+# ============================================================
+print()
+print("-" * 72)
+print("§6  M9.1'' specific point: beta_ppE = -15/4 recovery")
+print("-" * 72)
+
+# A_M911 = psi/(4-3psi) -> Taylor: 1 + 4H + 12H^2 + 36H^3 + 108H^4 + ...
+# B_M911 = (4-3psi)/psi -> Taylor: 1 - 4H + 4H^2 - 4H^3 + 4H^4 - ...
+psi_sym = symbols('psi_sym', positive=True)
+A_M911 = psi_sym / (4 - 3*psi_sym)
+B_M911 = (4 - 3*psi_sym) / psi_sym
+A_M911_taylor = series(A_M911.subs(psi_sym, 1+H_psi), H_psi, 0, 5).removeO()
+B_M911_taylor = series(B_M911.subs(psi_sym, 1+H_psi), H_psi, 0, 5).removeO()
+
+a_M = [expand(A_M911_taylor).coeff(H_psi, n) for n in [1, 2, 3, 4]]
+b_M = [expand(B_M911_taylor).coeff(H_psi, n) for n in [1, 2, 3, 4]]
+print(f"  A_M911 Taylor coefs [a_1..a_4]: {a_M}")
+print(f"  B_M911 Taylor coefs [b_1..b_4]: {b_M}")
+
+# Determine xi_3 for M9.1'' from canonical Φ-EOM. From Phase 1.5 v^2_TGP coeff U^3 = +13/2.
+# Substitute partial M9.1'' values, then solve xi_3.
+M911_partial = [
+    (a_1, 4), (a_2, 12), (a_3, 36), (a_4, 108),
+    (b_2, 4), (b_3, -4), (b_4, 4),
+]
+v2_M911_part = expand(v2_series.subs(M911_partial))
+v2_U3_M911 = v2_M911_part.coeff(U, 3)
+xi_3_sol = solve(v2_U3_M911 - Rational(13, 2), xi_3)
+xi_3_M911 = simplify(xi_3_sol[0]) if xi_3_sol else None
+print(f"  xi_3_M911 (derived from v^2 coeff U^3 = 13/2): {xi_3_M911}")
+
+# For xi_4: Phase 1.5 doesn't explicitly state, but it's determined by canonical EOM.
+# At order x^3 (which gives e_2), only xi_3 matters (xi_4 enters x^4 = e_3 level).
+# So xi_4 doesn't affect β_ppE^(b=-1) which is a 2.5PN-PHASE = 0.5PN-orbital deviation,
+# matched at O(x^2) in E(x).
+
+# Substitute full M9.1'' values
+M911_full = M911_partial + [(xi_3, xi_3_M911), (xi_4, 0)]
+delta_e_2_M911 = simplify(delta_e[1].subs(M911_full))
+beta_ppE_M911 = simplify(beta_ppE_TGP.subs(M911_full))
+
+print()
+print(f"  M9.1'' with these coefficients:")
+print(f"    delta_e_2_M911 = {delta_e_2_M911}    (Phase 1.5 LOCK L3: -4/3)")
+print(f"    beta_ppE_M911  = {beta_ppE_M911}    (Phase 1.5 LOCK L5: -15/4)")
+
+M911_de2_pass = (delta_e_2_M911 == Rational(-4, 3))
+M911_beta_pass = (beta_ppE_M911 == Rational(-15, 4))
+print(f"  [{'PASS' if M911_de2_pass else 'FAIL'}] delta_e_2 = -4/3 recovered")
+print(f"  [{'PASS' if M911_beta_pass else 'FAIL'}] beta_ppE = -15/4 recovered")
+
+# ============================================================
+# §7 -- Parametric family analysis (N8): does cycle have β=0 region?
+# ============================================================
+print()
+print("-" * 72)
+print("§7  N8: parametric family region with |beta_ppE| -> 0")
+print("-" * 72)
+
+# delta_e[1] is a function of {a_1, a_2, a_3, b_2, b_3, xi_3}
+free_syms_de2 = sorted(delta_e[1].free_symbols, key=str)
+print(f"  delta_e_2 depends on: {free_syms_de2}")
+
+# Strategic move: keep (a_1, a_2, b_2) at M9.1''-like values to preserve 1PN/2PN
+# canonical structure, but treat (a_3, b_3, xi_3) as free 3PN parameters.
+# Solve delta_e_2 = 0 for one parameter (say xi_3) given others.
+
+de2_at_M911_low = simplify(delta_e[1].subs([(a_1, 4), (a_2, 12), (b_2, 4)]))
+print()
+print(f"  With (a_1, a_2, b_2) = (4, 12, 4) [M9.1''-like 1PN/2PN]:")
+print(f"  delta_e_2 = {de2_at_M911_low}")
+print(f"  free in: {sorted(de2_at_M911_low.free_symbols, key=str)}")
+
+# Solve delta_e_2 = 0 for xi_3 (other (a_3, b_3) treated as free symbols)
+xi_3_zero_sol = solve(de2_at_M911_low, xi_3)
+print()
+if xi_3_zero_sol:
+    xi_3_zero = simplify(xi_3_zero_sol[0])
+    print(f"  Solving delta_e_2 = 0 for xi_3:")
+    print(f"  xi_3 (zero-beta) = {xi_3_zero}")
+    delta_xi_3 = simplify(xi_3_zero - xi_3_M911)
+    print(f"  Shift from M9.1'' value xi_3_M911 = {xi_3_M911}:")
+    print(f"  delta xi_3 = xi_3_zero - xi_3_M911 = {delta_xi_3}")
+    print(f"  free parameters in shift: {sorted(delta_xi_3.free_symbols, key=str)}")
+    # If a_3 is free: any a_3 value paired with appropriate xi_3 gives β=0
+    N8_zero_beta_pass = True
 else:
-    print(f"  ❌ Phase 3 FAIL: {FAIL_count} check(s) failed")
+    N8_zero_beta_pass = False
+
+print()
+print(f"  [{'PASS' if N8_zero_beta_pass else 'FAIL'}] Cycle family has parametric region")
+print(f"    where beta_ppE^TGP = 0 (post-falsification recovery EXISTS)")
+
+# ============================================================
+# §8 -- sigma-coupling C(psi) parametric form (linear in c_0)
+# ============================================================
+print()
+print("-" * 72)
+print("§8  sigma-coupling C(psi) parametric contribution to beta_ppE")
+print("-" * 72)
+
+# Phase 2 N4c established: sigma-coupling enters at O(h^2) = O(U^2) in g_eff_ij.
+# In PN counting, sigma ~ (grad Phi)^2 ~ (U/r)^2.
+# In c=G=M=1 units with r ~ 1/U: (U/r)^2 = (U * U)^2 = U^4, so sigma ~ U^4.
+# This means sigma-coupling enters at 2PN-orbital (v^4 ~ U^2).
+#
+# At test-particle level (single source) sigma = sigma_self has uniaxial
+# radial structure. At binary (2-source) sigma_cross_12 has anisotropy along
+# separation axis. Both contribute at v^4.
+#
+# Phase 1.5 SPA used g_eff_ij isotropic. The sigma-coupling breaks isotropy
+# at O(U^4). For ISOTROPIC SPA component this gives an effective shift to
+# h(U) that contributes to delta_e_2.
+#
+# Symbolic form: delta_e_2^sigma = c_0 * kappa_sigma  (linear leading order)
+# Hence: beta_ppE^new = beta_ppE_diag + (45/16) * c_0 * kappa_sigma.
+
+kappa_sigma = symbols('kappa_sigma', real=True)  # structural geometric factor
+delta_e_2_sigma_struct = c_0 * kappa_sigma
+beta_ppE_sigma_shift = Rational(45, 16) * delta_e_2_sigma_struct
+
+print(f"  delta_e_2^sigma   = c_0 * kappa_sigma  (structural form, linear in c_0)")
+print(f"  beta_ppE^sigma    = (45/16) * c_0 * kappa_sigma = {beta_ppE_sigma_shift}")
+print()
+print(f"  beta_ppE^new(c_0) = beta_ppE_diag(a_n, b_n, xi_3) + (45/16)*c_0*kappa_sigma")
+print()
+print(f"  HONEST CAVEAT: kappa_sigma numerical value requires explicit 2-body PN ")
+print(f"  derivation in cycle's anisotropic ansatz (multi-session future work).")
+print(f"  Phase 3 LOCKS structural form (linearity in c_0). Phase 4 will treat")
+print(f"  kappa_sigma * c_0 as a single effective parameter for GWTC-3 fit.")
+
+# c_0 status (per N6 setup §7): documented as deferred to Phase 6 cross-consistency
+print()
+print(f"  c_0 status (per Phase 3 setup §7):")
+print(f"    Likely framework-derivable (option A: from sigma_ab OP-7 structure")
+print(f"    or option B: from SPIN-SU2 cross-consistency). Multi-session work.")
+
+# ============================================================
+# Summary
+# ============================================================
+print()
+print("=" * 72)
+print("Phase 3 verification summary")
+print("=" * 72)
+
+results = [
+    ("§1 vacuum normalization f=h=1 at U=0",                  N1_vacuum_pass),
+    ("§4 delta_e_1 = 0 at 1PN",                                N4_e1_pass),
+    ("§6 M9.1'' recovers delta_e_2 = -4/3",                    M911_de2_pass),
+    ("§6 M9.1'' recovers beta_ppE = -15/4",                    M911_beta_pass),
+    ("§7 cycle family has zero-beta xi_3 solution",            N8_zero_beta_pass),
+]
+n_pass = sum(1 for _, p in results if p)
+n_total = len(results)
+for name, p in results:
+    print(f"  [{'PASS' if p else 'FAIL'}] {name}")
+
+print()
+print(f"  TOTAL: {n_pass}/{n_total} PASS")
+
+if n_pass == n_total:
+    print()
+    print("  >>> Phase 3 STRUCTURAL DERIVED <<<")
+    print()
+    print("  Strukturalne wnioski:")
+    print("    1. SPA chain GENERALIZED z M9.1'' specific (A*B=1) na")
+    print("       2-funkcyjny ansatz {A(psi), B(psi)} satisfying gamma=beta=1.")
+    print("    2. M9.1'' specific point recovers beta_ppE = -15/4 (Phase 1.5 LOCK L5).")
+    print("    3. Relaxing A*B=1 constraint opens parametric family;")
+    print("       beta_ppE in family = function of {a_3, b_3, xi_3} (3PN params).")
+    print("    4. Zero-beta region exists: there exist (xi_3, a_3, b_3) configurations")
+    print("       in family where delta_e_2 = 0, hence beta_ppE = 0.")
+    print("    5. sigma-coupling C(psi) adds linear shift (45/16)*c_0*kappa_sigma;")
+    print("       widens parametric window further.")
+    print("    6. Post-falsification recovery EXISTS structurally.")
+    print()
+    print("  Open from Phase 3 (deferred to Phase 4-6):")
+    print("    - kappa_sigma numerical value (2-body anisotropic PN)")
+    print("    - c_0 first-principles derivation (Phase 6 SU(2) cross-check)")
+    print("    - Numerical pinning: which point in family is canonical TGP?")
+else:
+    print(f"  >>> {n_total - n_pass} FAILED <<<")
