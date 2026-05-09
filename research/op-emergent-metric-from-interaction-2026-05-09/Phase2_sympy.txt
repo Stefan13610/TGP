@@ -1,0 +1,99 @@
+========================================================================
+Phase 2 sympy: 1PN/2PN matching for refined ansatz (A,B,C)
+========================================================================
+
+[1] Inverse Taylor series:
+    1/A(h) = -a_1**3*h**3 + a_1**2*h**2 + 2*a_1*a_2*h**3 - a_1*h - a_2*h**2 - a_3*h**3 + 1
+    1/B(h) = -b_1**3*h**3 + b_1**2*h**2 + 2*b_1*b_2*h**3 - b_1*h - b_2*h**2 - b_3*h**3 + 1
+
+[2] g_eff_munu in PPN form (after h(U) substitution, expanded in U):
+    g_eff_00 = -U**2*a_1**2*xi**2 + U**2*a_1*xi_2 + U**2*a_2*xi**2 + U*a_1*xi - 1
+    g_eff_ii = U**2*b_1**2*xi**2 - U**2*b_1*xi_2 - U**2*b_2*xi**2 - U*b_1*xi + 1
+
+------------------------------------------------------------------------
+N4: 1PN matching
+------------------------------------------------------------------------
+  g_eff_00 coefficient of U:    a_1*xi    (PPN target: 2)
+  g_eff_00 coefficient of U^2:  -a_1**2*xi**2 + a_1*xi_2 + a_2*xi**2    (PPN target: -2 beta)
+  g_eff_ii coefficient of U:    -b_1*xi    (PPN target: 2 gamma)
+  g_eff_ii coefficient of U^2:  b_1**2*xi**2 - b_1*xi_2 - b_2*xi**2    (PPN target: 2(gamma + ...))
+
+  Newton match (g_00 linear in U): a_1 * xi = 2
+     => a_1 = 2/xi
+     [PASS] Newton match consistent
+
+  gamma_PPN = (g_ii coeff of U)/2 = -b_1*xi/2
+  Substituting b_1 = -a_1 and xi = 2/a_1:  gamma_PPN = 1
+     [PASS] gamma_PPN = 1 <=> b_1 = -a_1 (KEY 1PN CONSTRAINT)
+
+------------------------------------------------------------------------
+N4b: 2PN matching
+------------------------------------------------------------------------
+  beta_PPN expression (general):
+     beta = -(g_00 coeff U^2)/2 = a_1**2*xi**2/2 - a_1*xi_2/2 - a_2*xi**2/2
+  After 1PN constraints (a_1 = 2/xi, b_1 = -a_1):
+     beta = -a_2*xi**2/2 + 2 - xi_2/xi
+
+  beta_PPN = 1 condition (2PN constraint):
+     -a_2*xi**2/2 + 1 - xi_2/xi = 0
+     => xi_2 = -a_2*xi**3/2 + xi
+
+------------------------------------------------------------------------
+M9.1'' algebraic recovery check
+------------------------------------------------------------------------
+  A_M911(1+h) Taylor: 36*h**3 + 12*h**2 + 4*h + 1
+  B_M911(1+h) Taylor: -4*h**3 + 4*h**2 - 4*h + 1
+     a_1_M911 = 4, a_2_M911 = 12
+     b_1_M911 = -4, b_2_M911 = 4
+  [PASS] M9.1'' satisfies b_1 = -a_1 (gamma=1)
+  xi_M911 = 2/a_1 = 1/2    (canonical h-to-U coefficient)
+  beta_M911 (with M9.1'' coeffs) = 1/2 - 2*xi_2
+  M9.1'' beta=1 implies xi_2_M911 = -1/4
+  [PASS] M9.1'' recovers canonical xi_2 = -1/4
+
+------------------------------------------------------------------------
+N4c: sigma-coupling C(psi) order check
+------------------------------------------------------------------------
+  Structural analysis:
+     sigma^ij ~ (partial Phi)(partial Phi) = O((grad h)^2) = O(h^2)
+     g_eff_ij = delta_ij/B - sigma_ij*C/B^2 + O(sigma^2)
+     sigma_ij*C/B^2 enters at O(h^2) -> 2PN order (NOT 1PN)
+
+  Symbolic: g_eff_ij with sigma_scale*C correction:
+     correction = 4*b_1**3*c_0*h**3*sigma_scale - 3*b_1**2*c_0*h**2*sigma_scale - 6*b_1*b_2*c_0*h**3*sigma_scale + 2*b_1*c_0*h*sigma_scale + 2*b_2*c_0*h**2*sigma_scale + 2*b_3*c_0*h**3*sigma_scale - c_0*sigma_scale
+     (each term proportional to sigma_scale -> O(h^2) when sigma_scale ~ h^2)
+  [PASS] sigma-correction is linear in sigma_scale (no h^0*sigma^0 leak)
+
+------------------------------------------------------------------------
+N5: Solar system PPN bounds
+------------------------------------------------------------------------
+  Imposed constraints (Phase 2 derivation):
+     1PN:  b_1 = -a_1   ->  gamma_PPN = 1 EXACT
+     2PN:  xi_2 fixed s.t. beta_PPN = 1 EXACT
+  Solar system bounds:
+     |gamma - 1| <= 2.3e-5 (Cassini Shapiro, 2003)        SATISFIED (gamma=1 exact)
+     |beta  - 1| <= 8e-5   (Mercury perihelion + LLR)     SATISFIED (beta=1 exact)
+     => N5 PASS structurally (no parametric room for solar-system violation at 1PN/2PN)
+
+========================================================================
+Phase 2 verification summary
+========================================================================
+  [PASS] N4 Newton match (a_1*xi=2)
+  [PASS] N4 gamma_PPN=1 <=> b_1=-a_1 (1PN)
+  [PASS] N4b xi_2 derivable from beta_PPN=1
+  [PASS] M9.1'' recovers b_1 = -a_1 (gamma=1)
+  [PASS] M9.1'' recovers xi_2 = -1/4 (beta=1)
+  [PASS] N4c sigma correction is O(sigma^1)
+  [PASS] N5 solar system bounds (structural)
+
+  TOTAL: 7/7 PASS
+
+  >>> Phase 2 N4 + N5 STRUCTURAL DERIVED <<<
+  >>> Cycle authorized to proceed Phase 3 (2.5PN binary inspiral) <<<
+
+  Key structural finding:
+    1PN gamma_PPN = beta_PPN = 1 imposes:
+       b_1 = -a_1   (1 constraint among 2 functions)
+       xi_2 = (function of {a_1, a_2, b_2, xi})  (2PN structure)
+    sigma-coupling C(psi) UNCONSTRAINED by 1PN/2PN -- enters at
+    2.5PN binary inspiral via gradient cross-terms (Phase 3 derivation).

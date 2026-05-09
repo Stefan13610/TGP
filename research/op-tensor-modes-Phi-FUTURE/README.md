@@ -3,6 +3,7 @@ title: "op-tensor-modes-Phi-FUTURE — placeholder na future research"
 date: 2026-05-07
 type: research-placeholder
 status: PLACEHOLDER_NOT_OPEN
+folder_status: parking
 classification: FUTURE_RESEARCH_CANDIDATE
 parent: "[[../op-Phi-decomposition-photon-2026-05-07/Phase3_results.md]]"
 related_research:

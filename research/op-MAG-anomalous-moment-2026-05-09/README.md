@@ -3,6 +3,7 @@ title: "op-MAG-anomalous-moment — α/π z phase amplification at topology conn
 date: 2026-05-09
 type: research-cycle
 status: EARLY_HALT_2026-05-09
+folder_status: closed-NULL
 phase: Phase1_quickscan
 classification: EARLY_HALT_HONEST
 sympy_total: 2/2 PASS

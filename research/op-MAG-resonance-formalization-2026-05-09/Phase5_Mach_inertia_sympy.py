@@ -194,10 +194,30 @@ print(f"  m_Mach = {m_Mach_simplified}")
 # Replace gamma -> m_C^2 (taking Phi_0 = 1 normalization, or absorbing)
 # For dimensional clarity: gamma has dim [E^2], so gamma = k * m_C^2 where k dimensionless
 
+# ============================================================================
+# ⚠️ ERRATUM 2026-05-09 — INTERNAL INCONSISTENCY w niniejszych liniach
+# ============================================================================
+# Phase 5 zakłada SIMULTANEOUSLY:
+#   (a) β = γ (V_orig vacuum condition Phi_eq = Phi_0, V'(Phi_0)=0 wymusza β=γ)
+#   (b) β << γ (żeby uzyskać m_C^2 ~ 3γ poniżej)
+# Te dwa założenia są wzajemnie SPRZECZNE.
+#
+# CORRECT z β=γ exact: V''(Phi_0) = -2γ + 3γ = γ  =>  m_C^2 = γ (NIE γ/3)
+#
+# IMPACT: original quantitative analysis "scenariusz (b) Phi_0=v_EW jest BEST"
+#         jest ARTEFAKTEM tej inconsistency. Z corrected m_C^2 = γ z γ = M_Pl^2
+#         (T-Λ canonical), wszystkie Phi_0 scenariusze działają perturbatively.
+#
+# ERRATUM full analysis: research/op-Phase5-MAG-erratum-2026-05-09/
+#   sympy verification 5/5 PASS, hierarchia 44-rzędowa v_EW/H_0 = ARTIFACT.
+#
+# Origin discovery: research/op-Phi-vacuum-scale-2026-05-09/Phase2_results.md §2
+# ============================================================================
 # In TGP: V''(Phi_0) = -2 beta + 3 gamma = m_C^2
-# Assuming beta << gamma (typical), m_C^2 ~ 3 gamma, so gamma ~ m_C^2/3
+# [HISTORICAL] Assuming beta << gamma (typical), m_C^2 ~ 3 gamma, so gamma ~ m_C^2/3
+# [CORRECTED]  Z β=γ exact: m_C^2 = γ (preserved below as gamma_sub for historical record)
 # Substitute:
-gamma_sub = m_C**2 / 3  # approximate TGP relation
+gamma_sub = m_C**2 / 3  # ⚠️ DEPRECATED approximation — see ERRATUM above; correct: gamma = m_C**2
 m_Mach_with_mC = m_Mach_formula.subs(gamma_p, gamma_sub)
 m_Mach_with_mC_simp = sp.simplify(m_Mach_with_mC)
 print(f"\n  Z gamma ~ m_C^2/3:")

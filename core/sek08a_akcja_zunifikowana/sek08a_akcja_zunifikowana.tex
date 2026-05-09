@@ -7,7 +7,51 @@
 \statuslabel{Propozycja}
 
 % =====================================================================
+% **CRITICAL UPDATE 2026-05-09 — M9.1'' (4-3psi)/psi FORM
+% OBSERVATIONALLY FALSIFIED at 5sigma by GWTC-3**
+% =====================================================================
+%
+%   Phase 1.5 G_SPA tighter lock (research/op-ppE-mapping/Phase1.5_G_SPA_lock.md)
+%   wyprowadzilo G_SPA = 48 sympy-exact (test-particle, 4-level verified:
+%   sympy LOCK + hand-calc + numerical + alternative SPA orthogonal).
+%   Phase 1's heuristic G_SPA ~= 1 NIE applies do TGP M9.1'' (SYC 2013
+%   derived dla SMALL-PERTURBATION; TGP ma STRUCTURAL O(1) modyfikacje).
+%
+%   beta_ppE^TGP^(b=-1) = -15/4 ~= -3.75 (eta=1/4, test-p exact),
+%   factor 48× LARGER niz Phase 1 OOM (-5/64 ~= -0.078).
+%
+%   GWTC-3 RE-RUN (research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09):
+%   z corrected beta, M9.1'' specific (4-3psi)/psi RULED OUT at 5.02sigma
+%   (BF_TGP/GR = 3.5e-6, log10(BF) = -5.45, OVERWHELMING GR preference).
+%
+%   Konsekwencja dla TEJ SEKCJI:
+%     V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12 (prop:V-M911-canonical)
+%     i sqrt(-g) = c0*psi/(4-3*psi) sa derived z (4-3psi)/psi specific
+%     ansatz - jezeli S07 znajdzie alternative f(psi), te wyrazenia
+%     zmieniaja sie. v2.0 G.0 closure jest VALID matematycznie dla
+%     specific (4-3psi)/psi form, ALE ten form jest OBSERWACYJNIE
+%     SFALSYFIKOWANY.
+%
+%   Status w PREDICTIONS_REGISTRY 2026-05-09:
+%     M911-P1: LIVE -> FALSIFIED-OBSERVATIONAL
+%     M911-P2: WITHDRAWN-NEEDS-REDERIVATION
+%     M911-P3: PARTIAL-FALSIFIED
+%
+%   Sam program TGP (Phi z Z_2, alpha=2 vacuum, emergencja) NIE jest
+%   sfalsyfikowany - falsyfikacja waska, dotyczy SPECYFICZNEJ formy
+%   hyperbolic f(psi) = (4-3psi)/psi.
+%
+%   Path forward: S07 audyt M9.1'' derivation z fundamentu - alternative
+%   f(psi) ansatze konsystentne z alpha=2 + 1PN exact + GWTC-3 constraints.
+%
+%   Sekcja ponizej (akcja zunifikowana z V_M911 + sqrt(-g) M9.1''
+%   canonical) jest matematycznie POPRAWNA jako derivation; specific
+%   form V_M911 zostanie zastapiona w przyszlej wersji po S07.
+%
+% =====================================================================
 % G.0 CLOSURE 2026-05-02 (Phase 4 implementation, v1.x -> v2.0)
+% [UWAGA: closure VALID matematycznie; specific (4-3psi)/psi form
+%  observacyjnie sfalsyfikowane 2026-05-09 - patrz CRITICAL UPDATE]
 % =====================================================================
 % Ta sekcja istnieje w dwoch warstwach:
 %
@@ -94,19 +138,35 @@ gdzie:
   % ---
   \begin{equation}\label{eq:V-selfinterference}
     V_{\rm orig}(\varphi) = \frac{\beta}{3}\,\varphi^3 - \frac{\gamma}{4}\,\varphi^4
-    \qquad \textbf{[DEPRECATED 2026-05-02; see \texttt{prop:V-M911-canonical}]}
+    \qquad \textbf{[DEPRECATED FOR GRAVITATIONAL SECTOR 2026-05-02; see \texttt{prop:V-M911-canonical}]}
     \qquad (\beta = \gamma,\;\text{stw.~\ref{prop:vacuum-condition}}).%
-    \footnote{\textbf{STATUS post-G.0 closure 2026-05-02:}
-    formulacja $V_{\rm orig}$ jest \textbf{DEPRECATED}; canonical TGP
-    używa $V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$
+    \footnote{\textbf{STATUS post-G.0 closure 2026-05-02 + dual-V verification 2026-05-09:}
+    formulacja $V_{\rm orig}$ jest \textbf{DEPRECATED tylko dla sektora grawitacyjnego};
+    canonical TGP w gravity sektorze u\.zywa $V_{\rm M9.1''}(\psi) = -\gamma\psi^2(4-3\psi)^2/12$
     (\texttt{prop:V-M911-canonical}, sek08a v2.0 ADDENDUM,
-    Phase~1 G0a sympy LOCK 4/4 PASS reprodukuje R3 ODE EXACT). Stara
-    formulacja kanoniczna z~potencja\l{}em $P(g) = \tfrac{\beta}{7}\,g^7
-    - \tfrac{\gamma}{8}\,g^8$ ze sprz\k{e}\.zeniem $K(g) = g^4$ jest
-    r\'ownie\.z deprecated; zachowane w~\texttt{tgp\_companion.tex}
+    Phase~1 G0a sympy LOCK 4/4 PASS reprodukuje R3 ODE EXACT).
+    %
+    \textbf{MATTER SECTOR USAGE UTRZYMANE} (A4 marker realization,
+    op-dual-V-structure-clarification-2026-05-09, sympy 10/10 PASS):
+    G.0 closure explicit nie modyfikowa\l{}o $\mathcal{L}_{\rm mat}$
+    (Phase1\_results.md linia 266: \emph{``A4 (matter coupling) wymaga
+    osobnego sprawdzenia (G.0 nie dotyka L\_mat)''}). Verifikacja A4 (2026-05-09)
+    potwierdzi\l{}a, \.ze $V_{\rm orig}$ pozostaje canonical dla matter dynamics:
+    Phase~5 Mach inertia ($m_e=511$ keV reproduction, $\lambda_4 > 0$ wymagane),
+    T-$\Lambda$ $\rho_{\rm vac}$ closure ($1{,}020$ obs match przy $\Phi_{\rm eq}=\Phi_0$),
+    particle masses via field expansion wok\'o\l{} $\Phi_0$ vacuum.
+    %
+    Stara formulacja kanoniczna z~potencja\l{}em $P(g) = \tfrac{\beta}{7}\,g^7
+    - \tfrac{\gamma}{8}\,g^8$ ze sprz\k{e}\.zeniem $K(g) = g^4$ pozostaje
+    deprecated globalnie (UV.3 closure); zachowane w~\texttt{tgp\_companion.tex}
     Sec.~2.2 jako historic record. Mass spectrum lepton (P22 sympy LOCK
     5/5 PASS): $m_\mu/m_e$ diff $-0{,}0013\%$ PDG, $m_\tau/m_e$ diff
-    $+0{,}0049\%$ PDG.}
+    $+0{,}0049\%$ PDG.
+    %
+    \textbf{Reguła użycia (post-2026-05-09):} cykle gravity-related (M9.1''
+    metryka, R3 ODE, Newton limit, PPN) MUSZĄ używać $V_{\rm M9.1''}$;
+    cykle matter-related (Mach inertia, $\rho_{\rm vac}$, particle masses)
+    MUSZĄ explicit cytować $V_{\rm orig}$ + sektor.}
   \end{equation}
 % ── Nota kanoniczna (2026-04-07) ──────────────────────────────────
 % Formulacja kanoniczna TGP używa potencjału P(g) = (β/7)g⁷ − (γ/8)g⁸

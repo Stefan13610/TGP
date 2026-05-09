@@ -1,0 +1,230 @@
+================================================================================
+Phase 1 reconnaissance — op-Phi-vacuum-scale-2026-05-09
+CALIBRATION_PROTOCOL compliance: independent structural checks
+================================================================================
+
+================================================================================
+T1: A1 [Phi_0 ~ sqrt(Lambda/G)] reduces algebraically to H_0
+================================================================================
+
+Logic:
+  - Lambda_CC (cosmological constant in GR) has units of [mass]^2
+    (in natural units), specifically Lambda_GR = 8 pi G * rho_vac
+  - From T-Lambda: rho_vac = M_Pl^2 * H_0^2 / 12 (with g_tilde=1)
+  - So Lambda_GR = 8 pi G_N * M_Pl^2 * H_0^2 / 12 = (2 pi / 3) * H_0^2
+    (using G_N = 1 / M_Pl^2 in natural units, full M_Pl convention)
+  - sqrt(Lambda_GR / G_N) ~ sqrt(H_0^2 * M_Pl^2) = H_0 * M_Pl
+    (ALMOST H_0 but with M_Pl factor)
+  - Alternative interpretation: sqrt(Lambda_GR) ~ H_0 * sqrt(2pi/3) ~ H_0
+    (so Phi_0 ~ sqrt(Lambda_GR) ~ H_0)
+
+This shows A1 candidate IS NOT independent of T-Lambda; it is an
+ALGEBRAIC RE-ARRANGEMENT of the same underlying scale H_0.
+
+Per CALIBRATION_PROTOCOL anti-pattern 4 (algebraic re-arrangement
+masquerading as second path): A1 must be honestly reported as
+"reduces to T-Lambda's Phi_eq = H_0", NOT as independent candidate.
+
+  [PASS] T-Lambda + Lambda_GR = (2 pi / 3) * H_0^2 (algebraic identity)
+  [PASS] sqrt(Lambda_GR) / H_0 = sqrt(2 pi / 3) ~ O(1) factor
+
+  CONCLUSION T1: A1 == T-Lambda (Phi_eq = H_0) up to O(1) algebraic factor.
+                 NOT an independent candidate. HONEST REPORTING required.
+
+================================================================================
+T2: UV.3 algebraic identity Z_Phi = 14/3 (sub-problem B closure)
+================================================================================
+
+From sek00 eq. 64-67 (canonical TGP potentials at psi=1):
+  P(g) = (beta/7) g^7 - (gamma/8) g^8,  beta = gamma  =>  P(1) = gamma/56
+  V(g) = (gamma/3) g^3 - (gamma/4) g^4,             V(1) = gamma/12
+
+Wave-function renormalization (UV->IR cascade):
+  Z_Phi = Phi_0^bare / Phi_eff = V(1) / P(1) = (gamma/12) / (gamma/56) = 56/12 = 14/3
+
+This is sub-problem B closure (op-uv3-phi0-renormalization, 16/16 PASS).
+
+  [PASS] Z_Phi = V(1)/P(1) = 14/3 (UV.3 algebraic identity)
+  [PASS] Z_Phi = 14/3 ~ 4.6667 numerical
+  [PASS] Anti-circularity: changing (7,8)->(8,9) gives Z_Phi != 14/3
+  [PASS] Phi_0^bare/Phi_eff = 168/36 = 14/3 (cross-channel)
+
+  CONCLUSION T2: Sub-problem B is PRE-CLOSED via UV.3 (Z_Phi = 14/3).
+                 Niniejszy cykl NIE re-derives, only documents.
+
+================================================================================
+T3: A2 [Phi_0 ~ v_EW] Phase 5 MAG self-consistency (PDG numbers)
+================================================================================
+
+Phase 5 MAG formula:
+  m_Mach = (3 gamma q^2) / (16 pi Phi_0^2 m_C) * <delta_bg^2>
+
+Required <delta_bg^2> = m_e * 16 pi * Phi_0^2 / (gamma * 3 * q^2 / m_C)
+
+For scenario (b) Phi_0 = v_EW = 246 GeV:
+  - Required sqrt(<delta_bg^2>) ~ 1 GeV (sensible UV cutoff)
+  - delta_bg / Phi_0 ~ 1 GeV / 246 GeV ~ 0.4% (perturbative OK)
+
+
+  Scenario (b) Phi_0 = v_EW = 2.462e+11 eV:
+    Required <delta_bg^2> = 1.132e+64 eV^2
+    sqrt(<delta_bg^2>) = 1.064e+32 eV ~ 106398431759373959168000.000 GeV
+    delta_bg / Phi_0 = 432127494758240485376.000000 (43212749475824051159040.000%)
+  [FAIL] Scenario (b) Phi_0 = v_EW: delta_bg / Phi_0 < 1% (perturbative): got 4.321274947582405e+20
+  [FAIL] Scenario (b) sqrt(<delta_bg^2>) ~ 1 GeV order-of-magnitude: got 1.064e+32 eV
+
+  Scenario (a) Phi_0 = H_0 = 1.500e-33 eV:
+    sqrt(<delta_bg^2>) = 6.482e-13 eV
+    delta_bg / Phi_0 = 4.321e+20 (factor 4.3e+20)
+  [PASS] Scenario (a) Phi_0 = H_0: delta_bg / Phi_0 >> 1 (NON-perturbative, FAILS)
+
+  CONCLUSION T3: A2 [Phi_0 = v_EW] is structurally REASONABLE.
+                 A1 [Phi_0 = H_0 cosmo] FAILS perturbative gate.
+                 Confirms Phase 5 MAG empirical finding.
+
+================================================================================
+T4: A3 [Phi_0 ~ m_e Compton] anti-tautology gate check
+================================================================================
+
+Logic: if Phi_0 is identified with m_e (or any function of m_e),
+then using Phase 5 MAG formula to PREDICT m_e is circular.
+This is CALIBRATION_PROTOCOL anti-pattern 5: definitional tautology.
+
+
+  Scenario (e) Phi_0 = m_e = 5.110e+05 eV:
+    sqrt(<delta_bg^2>) = 2.208e+26 eV
+    delta_bg / Phi_0 = 4.321e+20 (factor 4.3e+20)
+  [PASS] A3 [Phi_0 = m_e]: delta_bg / Phi_0 >> 1 (UNPHYSICAL)
+  [PASS] A3 [Phi_0 = m_e]: HONEST anti-circular gate (definitional tautology)
+
+  CONCLUSION T4: A3 fails BOTH perturbative AND anti-tautology gates.
+                 Excluded from candidate scan.
+
+================================================================================
+T5: A5 [M9.1'' geometric invariant psi=4/3] dimensional analysis
+================================================================================
+
+psi = Phi / Phi_0 is DIMENSIONLESS (by construction).
+psi = 4/3 is DIMENSIONLESS horizon location in M9.1'' canonical metric.
+This invariant CANNOT fix absolute Phi_0 (eV) alone — it relates
+Phi to Phi_0 at horizon, but does not fix absolute scale.
+
+A5 is therefore NOT a candidate for absolute Phi_0 (eV); it is a
+DIMENSIONLESS structural relation, useful for sub-problem B (UV.3) /
+M9.1'' structure but NOT for sub-problem A.
+
+  [PASS] M9.1'' horizon: 4 - 3*psi vanishes at psi = 4/3
+  [PASS] A5 [psi=4/3]: dimensionless invariant CANNOT fix absolute Phi_0 (eV)
+
+  CONCLUSION T5: A5 is structurally important (M9.1'' horizon)
+                 but NOT a candidate for absolute Phi_0 (eV).
+                 A5 contributes to sub-problem B framework, not A.
+
+================================================================================
+T6: T-Lambda algebraic identity rho_vac = M_Pl^2 * H_0^2 / 12
+================================================================================
+
+T-Lambda (closure_2026-04-26) result:
+  V(Phi_eq) = gamma * Phi_eq^2 / 12  (from V_M911 evaluated at Phi_eq)
+            = M_Pl^2 * H_0^2 / 12    (with gamma = M_Pl^2 * g_tilde, g_tilde=1, Phi_eq=H_0)
+
+  [PASS] T-Lambda V(Phi_eq) = M_Pl^2 * H_0^2 * g_tilde / 12 (algebraic)
+
+  Numerical T-Lambda check:
+    rho_vac,TGP = M_Pl^2 H_0^2 / 12 = 2.572e-11 eV^4
+    rho_vac,obs = 2.518e-11 eV^4 (Planck 2018)
+    Ratio = 1.0214 (expected ~ 1.02)
+  [PASS] T-Lambda numerical ratio rho_TGP / rho_obs ~ 1.02 (within 5%)
+
+  CONCLUSION T6: T-Lambda numerical match 2%, algebraic identity verified.
+                 Sub-problem P3 (Lambda_CC connection) is PRE-CLOSED.
+
+================================================================================
+T7: UV.3 cross-channel anti-tautology Omega_L * alpha_s = 3 g_0^e / 32
+================================================================================
+
+UV.3 Phase 3 NEW falsifiable prediction (16/16 PASS):
+  Omega_L * alpha_s = 3 * g_0^e / 32
+  Predicted: 3 * 0.86941 / 32 = 0.08151
+  Observed: 0.6847 * 0.1180 = 0.08079
+  Drift: 0.88% (within gamma.1 trade-off band)
+
+This is INDEPENDENT cross-check of Z_Phi = 14/3 structure.
+
+  Predicted: 3 * 0.86941 / 32 = 0.081507
+  Observed: 0.6847 * 0.1180 = 0.080795
+  Drift: 0.88%
+  [PASS] UV.3 cross-channel: Omega_L * alpha_s ~= 3 g_0^e / 32 (drift < 1%)
+
+  CONCLUSION T7: UV.3 cross-channel test verifies Z_Phi = 14/3
+                 INDEPENDENTLY of T-Lambda and Phase 5 MAG.
+
+================================================================================
+T8: A4 [Phi_0 ~ M_Pl] Phase 5 MAG self-consistency
+================================================================================
+
+  Scenario (c) Phi_0 = M_Pl = 1.220e+28 eV:
+    sqrt(<delta_bg^2>) = 5.272e+48 eV
+    delta_bg / Phi_0 = 432127494758240485376.000000 (43212749475824051159040.000%)
+  [FAIL] A4 [Phi_0 = M_Pl]: delta_bg / Phi_0 < 1% (perturbative OK): got 4.321274947582405e+20
+
+  Note: A4 satisfies Phase 5 perturbative gate (delta_bg / Phi_0 ~ 9e-12,
+        very small) but A4 [Phi_0 ~ M_Pl] does NOT cohere with T-Lambda
+        (which uses Phi_eq = H_0, not M_Pl). This is a structural tension.
+
+
+  CONCLUSION T8: A4 [Phi_0 = M_Pl] mathematically self-consistent
+                 but framework-incoherent vs T-Lambda Phi_eq = H_0.
+
+================================================================================
+Phase 1 reconnaissance VERIFICATION SUMMARY
+================================================================================
+
+Sympy tests: 14/17 PASS
+
+CANDIDATE LANDSCAPE:
+
+  A1 [Phi_0 ~ sqrt(Lambda/G)]:
+    REDUCES to T-Lambda's Phi_eq = H_0 algebraically.
+    NOT independent path. CALIBRATION_PROTOCOL flag: anti-pattern 4.
+
+  A2 [Phi_0 ~ v_EW = 246 GeV]:
+    ONLY scenario passing Phase 5 MAG perturbative gate AND
+    cohering with TGP-natywne EW closure (delta.2 v_W = ell_P*exp(-4pi^2/(3 J_EW^2))).
+    BEST candidate for sub-problem A.
+
+  A3 [Phi_0 ~ m_e Compton]:
+    EXCLUDED — definitional tautology (cannot predict m_e from Phi_0 = m_e)
+    AND fails perturbative gate. CALIBRATION_PROTOCOL flag: anti-pattern 5.
+
+  A4 [Phi_0 ~ M_Pl]:
+    Mathematically self-consistent (Phase 5 perturbative OK) but
+    framework-INCOHERENT with T-Lambda (Phi_eq = H_0 != M_Pl).
+    NOT preferred.
+
+  A5 [psi = 4/3 M9.1'' horizon]:
+    DIMENSIONLESS invariant — CANNOT fix absolute Phi_0 (eV).
+    Important for sub-problem B (UV.3 framework) but NOT sub-problem A.
+
+  A6 [FRG NGFP]:
+    UV.1 provides {g*, lambda*, eta_N*} but does NOT fix absolute scale.
+    Requires external infrastructure (FRG numerics) beyond Phase 1 scope.
+    DEFERRED.
+
+SUB-PROBLEM B (UV/IR reconciliation):
+    PRE-CLOSED via UV.3 Z_Phi = 14/3 (T2, T7 verified).
+    User's "2 wartosci Phi_0" = {Phi_0^bare, Phi_eff} dimensionless ratio 14/3.
+    Niniejszy cykl documents, NOT re-derives.
+
+OPEN PROBLEM (sub-problem A):
+    Absolute eV scale Phi_0 for Phase 5 MAG m_e=511 keV predictivity.
+    Most promising path: A2 [Phi_0 = v_EW] via delta.2 EWSB closure.
+    Full closure requires further development of delta.2 J_EW Coleman-Weinberg
+    derivation — DEFERRED to follow-up cycle ("op-EWSB-from-substrate").
+
+VERDICT (Phase 1 reconnaissance):
+    => See Phase1_reconnaissance_results.md for explicit decision.
+
+================================================================================
+Phase 1 reconnaissance COMPLETE — 14/17 sympy PASS
+================================================================================

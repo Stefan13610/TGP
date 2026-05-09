@@ -16,6 +16,46 @@ related:
 
 # Strong-field test of M9.1'': 2PN-phase deviation predictions for Einstein Telescope and Cosmic Explorer
 
+> ## ⚠ DRAFT-v1 SUPERSEDED 2026-05-09 — MAJOR REVISION REQUIRED
+>
+> This paper draft (v1, 2026-05-07) is built on Phase 1 OOM heuristic
+> β_ppE^TGP^(b=-1) = -5/64 ≈ -0.078 (assuming G_SPA ≈ 1 from Sampson-
+> Yunes-Cornish 2013 small-perturbation framework).
+>
+> **[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] Phase 1.5
+> derived G_SPA = 48 sympy-exact** (test-particle, 4-level verified:
+> sympy LOCK 5/5 + independent hand-calculation E_TGP(U³)/m = 49/48
+> + numerical sanity at U=0.1 + alternative SPA derivation orthogonal
+> route). True β_ppE^TGP^(b=-1) at η=1/4 = **-15/4 ≈ -3.75** (factor
+> 48× LARGER than v1 draft assumed).
+>
+> **[[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]
+> GWTC-3 RE-RUN with corrected β:** TGP M9.1'' specific (4-3ψ)/ψ
+> ansatz **RULED OUT at 5.02σ** by GWTC-3 combined posterior (BF =
+> 3.5·10⁻⁶, log10(BF) = -5.45). The "predictive forecast for ET/CE
+> 2035+" framing of this draft is now obsolete — falsification has
+> already occurred in current LIGO-O3 / GWTC-3 data.
+>
+> **Required revisions for v2:**
+> 1. **§3 derivation:** add Phase 1.5 G_SPA = 48 explicit derivation;
+>    explain why Phase 1's "G_SPA ≈ 1" SYC assumption fails for
+>    structural-modification theories.
+> 2. **§4 detection forecasts:** rescale all β/threshold ratios by
+>    factor 48× upward; note that LIGO-O3 single-event already excludes.
+> 3. **§5 discussion:** reframe from "future test" to "current observational
+>    falsification" + methodological finding (factor-48 correction is a
+>    notable result on its own).
+> 4. **§6 conclusion:** TGP M9.1'' specific (4-3ψ)/ψ falsified at 5σ;
+>    program-level path forward = S07 alternative f(ψ) ansatz exploration.
+> 5. **Multi-coefficient:** Phase 1 ratios {-23/10, -38/23, +337/228}
+>    are INCORRECT (Phase 1.5 alternative SPA gives -11161/504 ≈ -22.14);
+>    requires full re-derivation of M911-P2 pattern.
+>
+> Sections below are HISTORICAL v1 draft (Phase 1 baseline). DO NOT
+> submit without v2 revision incorporating Phase 1.5 finding.
+
+---
+
 ## Abstract
 
 We present a falsifiable prediction of the Theory of Geometry of

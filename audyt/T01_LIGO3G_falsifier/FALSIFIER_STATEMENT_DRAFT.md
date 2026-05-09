@@ -27,6 +27,43 @@ related:
 
 # Draft falsifier statement — `M911-P1` (Path C, najlżejsze domknięcie T01)
 
+> ## ⚠ CRITICAL UPDATE 2026-05-09 — STATUS CHANGE: FALSIFIED-OBSERVATIONAL
+>
+> **[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] Phase 1.5
+> derived G_SPA = 48 sympy-exact (test-particle, 4-level verified):**
+> sympy LOCK 5/5 + independent hand-calculation E_TGP(U³)/m = 49/48 +
+> numerical sanity at U=0.1 + alternative SPA derivation (orthogonal
+> route) ALL CONFIRM β_ppE^TGP^(b=-1) = **-15/4 ≈ -3.75** at η=1/4
+> (test-particle exact, ±25% η-correction estimate).
+>
+> This is **factor 48× LARGER** than Phase 1's heuristic value of
+> -5/64 ≈ -0.078. Phase 1's "G_SPA ≈ 1" assumption from Sampson-Yunes-
+> Cornish 2013 was applicable to SMALL-PERTURBATION regimes (BD with
+> 1/ω_BD, dCS with ζ_dCS) but **DOES NOT APPLY** to TGP M9.1'' which
+> has STRUCTURAL O(1) modifications via hyperbolic f(ψ) = (4-3ψ)/ψ.
+>
+> **GWTC-3 RE-RUN with corrected β** ([[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]):
+> TGP M9.1'' **RULED OUT at 5.02σ** by GWTC-3 combined ~90 BBH posterior
+> (BF_TGP/GR = 3.5·10⁻⁶, log10(BF) = -5.45 → "OVERWHELMING GR preference").
+>
+> **Falsifier verdict:** M9.1'' as currently formulated (specific
+> hyperbolic ansatz f(ψ) = (4-3ψ)/ψ) is **observationally excluded**
+> at 5σ by current GWTC-3 data in TIGER framework analysis.
+>
+> **Caveat:** falsification applies to specific (4-3ψ)/ψ form. Alternative
+> f(ψ) structures via S07 audit (M9.1'' derivation) remain viable for
+> exploration. Sections §1-§4 below describe the OUTDATED falsifier
+> statement based on Phase 1 OOM heuristic (β = -5/64); they are
+> historically informative but NO LONGER LIVE.
+>
+> Current operational status:
+> - M911-P1: **FALSIFIED-OBSERVATIONAL** (PREDICTIONS_REGISTRY updated 2026-05-09).
+> - M911-P2: **WITHDRAWN-NEEDS-REDERIVATION** (Phase 1 ratios incorrect; alternative SPA shows β_3PN/β_2PN = -11161/504 ≠ -23/10).
+> - M911-P3: **PARTIAL-FALSIFIED** (2/4 channels invalid; remaining BH5/ε.1 still independent test of any future revised M9.1'').
+> - Path D paper draft: requires major revision from "predictive forecast" to "negative result + factor-48 methodological finding".
+
+---
+
 > **Cel pliku.** Dostarczyć **gotowy do wklejenia** tekst wpisu do
 > `PREDICTIONS_REGISTRY.md` z explicit warunkiem falsyfikacji predykcji
 > M9.1'' P1 (`|Δg_tt| = (5/6) U³`). Bez tego wpisu predykcja jest
@@ -40,6 +77,10 @@ related:
 > **Polityka:** ten plik jest **draftem**. Jego *wklejenie* do
 > `PREDICTIONS_REGISTRY.md` jest poza zakresem T01 (`may_edit_core: false`)
 > i wymaga decyzji autora. T01 dostarcza tekst, autor go promuje.
+>
+> **Status as of 2026-05-09:** sections below describe Phase 1 baseline
+> (now SUPERSEDED by Phase 1.5). For current locked falsifier verdict
+> see CRITICAL UPDATE block above.
 
 ## §1 — Proponowana sekcja w `PREDICTIONS_REGISTRY.md` (do wklejenia)
 

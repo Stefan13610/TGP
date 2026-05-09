@@ -20,7 +20,38 @@ related:
 
 # Phase 3 — Locked falsifier thresholds
 
-## §0 — TL;DR
+## ⚠ CRITICAL UPDATE 2026-05-09 — TGP/THRESHOLD ratios re-scale
+
+**[[../op-ppE-mapping/Phase1.5_G_SPA_lock.md]] Phase 1.5 corrected β_TGP
+from -5/64 (Phase 1 OOM, G_SPA ≈ 1) to -15/4 (G_SPA = 48 sympy-exact,
+4-level verified).**
+
+**Phase 3 β_5σ thresholds REMAIN VALID** (they are bounds on β_ppE
+regardless of theory predictions). However, **TGP/threshold ratios in
+the detection table re-scale by factor 48× upward**:
+
+| Detector / scenario | β_5σ | TGP β/β_5σ (Phase 1, β=-5/64) | TGP β/β_5σ (Phase 1.5, β=-15/4) |
+|---|---|---|---|
+| LIGO-O3 single | ~10⁻¹ | ~0.78 (borderline) | **~37.5 (massively excluded)** |
+| LIGO-O3 stack 100 BBH | ~10⁻² | ~7.8 (>5σ) | **~375 (>>1000σ)** |
+| LIGO-O5 single | ~3·10⁻² | ~2.6 (first decisive) | **~125** |
+| ET-D single | ~10⁻² | ~7.8 | **~375** |
+| CE single | ~3·10⁻³ | ~26 | **~1250** |
+
+**Implication:** With Phase 1.5 corrected β, TGP M9.1'' should be
+DECISIVELY visible (or excluded) in CURRENT LIGO-O3 data, NOT just
+LIGO-O5+ era. **GWTC-3 RE-RUN** ([[../op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]])
+confirms: TGP M9.1'' RULED OUT at 5.02σ in current data.
+
+**TGP M9.1'' (specific (4-3ψ)/ψ ansatz) is FALSIFIED-OBSERVATIONAL.**
+The Phase 3 detection forecasts described below assume Phase 1's
+underestimated β; for falsification analysis, use the rescaled ratios
+above. For revised M9.1'' ansatz (post S07 reset), the thresholds
+(β_5σ values) remain VALID benchmarks.
+
+---
+
+## §0 — TL;DR (Phase 1 baseline — SUPERSEDED by Phase 1.5)
 
 ```
 M9.1'' M911-P1 falsifier thresholds (LOCKED 2026-05-07):

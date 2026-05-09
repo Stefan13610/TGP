@@ -2,10 +2,11 @@
 title: "Phase 5 — Mach inertia: m_eff structural formula DERIVED, predictivity wymaga Φ_0 fixing"
 date: 2026-05-09
 type: phase-results
-status: STRUCTURAL_DERIVED_PARAMETER_DEPENDENT
+status: STRUCTURAL_DERIVED_PARAMETER_DEPENDENT_WITH_ERRATUM
 parent: "[[./README.md]]"
 phase: 5
 sympy_verification: 2/2 PASS
+erratum: "2026-05-09 - see [[../op-Phase5-MAG-erratum-2026-05-09/]]"
 tags:
   - phase5
   - mach-inertia
@@ -13,13 +14,23 @@ tags:
   - electron-mass-test
   - structural-derivation
   - parameter-dependent
+  - erratum-2026-05-09
 ---
 
 # Phase 5 — Mach inertia formula test
 
-## Status: **STRUCTURAL DERIVED** — formula natywnie wyprowadzona, predictivity wymaga Φ_0 fixing
+> **⚠️ ERRATUM 2026-05-09 — see §ERRATUM at bottom of document.**
+> Phase 5 ma internal inconsistency w γ identification (β=γ vs β<<γ
+> simultaneously assumed). Quantitative results "scenariusz (b) Phi_0=v_EW
+> jest BEST" jest **artefaktem inconsistency**. Z corrected m_C = M_Pl
+> (z β=γ exact vacuum), wszystkie Phi_0 scenariusze działają perturbatively.
+>
+> Pełna analiza: [[../op-Phase5-MAG-erratum-2026-05-09/]] (sympy 5/5 PASS).
+> Origin: [[../op-Phi-vacuum-scale-2026-05-09/Phase2_results.md]] §2.
 
-**Sympy:** 2/2 PASS
+## Status: **STRUCTURAL DERIVED z ERRATUM** — formula natywnie wyprowadzona, ale γ identification miała inconsistency
+
+**Sympy:** 2/2 PASS (oryginalnie); + 5/5 PASS (erratum verification 2026-05-09)
 
 ## Hypothesis C3 (z README)
 
@@ -228,3 +239,73 @@ User's claim C3:
 > — autor cyklu, 2026-05-09
 
 **Status:** STRUCTURAL DERIVED. Mechanism zgodny z claim - inertia DOES come from coupling z δΦ background. Quantitative reproduction m_e wymaga Φ_0 fixing.
+
+---
+
+## ERRATUM 2026-05-09 — γ identification correction
+
+**Source:** [[../op-Phase5-MAG-erratum-2026-05-09/Phase1_erratum_sympy.py]] (5/5 PASS)
+**Origin discovery:** [[../op-Phi-vacuum-scale-2026-05-09/Phase2_results.md]] §2
+
+### Internal inconsistency w original Phase 5
+
+[[./Phase5_Mach_inertia_sympy.py]] linie 197-200 zakłada **simultaneously**:
+
+```python
+# In TGP: V''(Phi_0) = -2 beta + 3 gamma = m_C^2
+# Assuming beta << gamma (typical), m_C^2 ~ 3 gamma, so gamma ~ m_C^2/3
+```
+
+**ALE:** V_orig vacuum condition V'(Phi_0) = 0 wymaga **β = γ EXACTLY**
+(NIE approximation β<<γ). Z β=γ:
+
+$$V''(\Phi_0)\big|_{\beta=\gamma} = -2\gamma + 3\gamma = \gamma \quad \Rightarrow \quad m_C^2 = \gamma$$
+
+NIE m_C² = γ/3.
+
+### Corrected formula
+
+Phase 5 m_Mach z corrected γ = m_C²:
+
+$$m_{Mach} = \frac{3\gamma q^2}{16\pi \Phi_0^2 m_C} \langle\delta\Phi^2_{bg}\rangle = \frac{3 m_C q^2}{16\pi \Phi_0^2} \langle\delta\Phi^2_{bg}\rangle$$
+
+Z **m_C = M_Pl** (T-Λ canonical identification γ = M_Pl²):
+
+$$m_{Mach} = \frac{3 M_{Pl} q^2}{16\pi \Phi_0^2} \langle\delta\Phi^2_{bg}\rangle$$
+
+### Updated quantitative results
+
+Z target m_e = 511 keV, q = 0.303, M_Pl = 1.22×10²⁸ eV:
+
+$$\frac{\sqrt{\langle\delta\Phi^2_{bg}\rangle}}{\Phi_0} = 8.74 \times 10^{-11} \quad \text{(UNIVERSAL — niezależne od } \Phi_0\text{)}$$
+
+| Scenariusz | Φ_0 (eV) | sqrt(⟨δΦ²_bg⟩) (eV) | δ_bg/Φ_0 ratio |
+|---|---|---|---|
+| (a) Phi_0 = H_0 | 1.5×10⁻³³ | 1.31×10⁻⁴³ | 8.7×10⁻¹¹ ✓ |
+| (b) Phi_0 = v_EW | 2.46×10¹¹ | 2.15×10¹ (~21 eV) | 8.7×10⁻¹¹ ✓ |
+| (c) Phi_0 = M_Pl | 1.22×10²⁸ | 1.07×10¹⁸ | 8.7×10⁻¹¹ ✓ |
+
+**Wszystkie scenariusze działają perturbatively.** Original "scenariusz (b)
+Phi_0 = v_EW jest BEST" było **artefaktem incorrect m_C = H_0** w Phase 5.
+
+### Implication dla 44-rzędowej hierarchii
+
+Original Phase 5 wnioskował, że Phi_0 ~ v_EW (10¹¹ eV) jest forced przez
+quantitative m_e match, w odróżnieniu od H_0 cosmological (10⁻³³ eV) — to
+sugerowało 44-rzędową hierarchy.
+
+**ERRATUM verdict:** ta hierarchia jest **ARTIFACT** internal inconsistency
+Phase 5. Z corrected γ identification, **Phi_0 jest genuinely free
+parameter** w matter sektorze (EFT scale-dependent, jak Higgs VEV w SM).
+
+### Status post-erratum
+
+- **Phase 5 derivation framework:** STRUCTURALLY VALID (formula form correct)
+- **Phase 5 quantitative claim "Phi_0 = v_EW preferred":** **REVISED** — Phi_0 jest free
+- **Phi_0 absolute scale (P1 z op-Phi-vacuum-scale):** EFT scale-dependent, NIE forced
+
+### Cross-references
+
+- [[../op-Phase5-MAG-erratum-2026-05-09/Phase1_erratum_sympy.py]] — sympy 5/5 PASS
+- [[../op-Phi-vacuum-scale-2026-05-09/Phase2_results.md]] — original discovery
+- [[./Phase5_Mach_inertia_sympy.py]] — original sympy (linie 197-200 commented z erratum note)

@@ -241,21 +241,87 @@ zależny od convention. Dla T01 falsifier reportowany `|β_ppE^TGP|`
 jest niezależny od sign convention — co liczy się to magnitude
 deviation.)
 
-### 6.4 OOM window dla G_SPA uncertainty
+### 6.4 OOM window dla G_SPA uncertainty (Phase 1 heuristic, SUPERSEDED by Phase 1.5)
 
-| G_SPA | β_ppE^TGP^(b=-1) | |β_ppE^TGP| |
+> **NOTA 2026-05-09:** Wartości w tej sekcji 6.4 są **OOM heuristyczne**
+> oparte na założeniu G_SPA ≈ 1 (z Sampson-Yunes-Cornish 2013 small-
+> perturbation regime). [[Phase1.5_G_SPA_lock.md]] explicitly derived
+> G_SPA = 48 (sympy LOCK 5/5, test-particle exact), unowieważniając te
+> heuristyczne values factor ~48×. Zob. §6.5 poniżej dla locked Phase 1.5
+> values.
+
+| G_SPA (Phase 1 heuristic) | β_ppE^TGP^(b=-1) | |β_ppE^TGP| |
 |-------|-------------------|-------------|
 | 0.7   | -0.0547           | 5.5 · 10⁻² |
 | 1.0   | -0.0781           | 7.8 · 10⁻² |
 | 1.3   | -0.1016           | 1.0 · 10⁻¹ |
 | 1.5   | -0.1172           | 1.2 · 10⁻¹ |
 
-**Lock:** **|β_ppE^TGP^(b=-1)| ∈ [5.5·10⁻², 1.2·10⁻¹]** (OOM, central
-~7.8·10⁻²).
+**Phase 1 OOM (HEURISTIC — superseded):** |β_ppE^TGP^(b=-1)| ∈ [5.5·10⁻², 1.2·10⁻¹]
+(central ~7.8·10⁻²; G_SPA ≈ 1 assumption).
 
-To jest **liczbowy threshold dla M911-P1** w
+### 6.5 Phase 1.5 LOCKED G_SPA (CRITICAL CORRECTION 2026-05-09)
+
+[[Phase1.5_G_SPA_lock.md]] derives G_SPA explicitly via SPA chain in M9.1''
+test-particle isotropic limit. Sympy LOCK 5/5 PASS:
+
+```
+G_SPA = δα_4 / Δα_3 = 30·(8/5) = 48     (sympy-exact, test-particle)
+
+  Δα_3 (metric U³ in g_tt)         = -5/6   (Phase 1 LOCK)
+  Δe_2 (orbital binding x², test-p) = -4/3   (Phase 1.5 LOCK L3)
+  Δe_2/Δα_3 (metric→orbital)        = +8/5   (sympy-exact)
+  Δα_4 (TaylorF2 2PN-phase coeff)   = -40    (Phase 1.5 LOCK L5)
+  Δα_4/Δe_2 (SPA chain prefactor)   = 30     (fixed by GR p_n)
+
+β_ppE^TGP^(b=-1) at η = 1/4 (test-particle exact):
+  β_ppE^TGP = (3/(128·1/4)) · δα_4 = (3/32)·(-40) = -15/4 ≈ -3.750000
+```
+
+**Phase 1.5 LOCKED VALUES (test-particle exact, η=1/4 ± 25% from η-correction):**
+
+| Quantity | Phase 1 OOM (heuristic) | Phase 1.5 LOCK (test-p exact) | Factor |
+|---|---|---|---|
+| G_SPA central | ≈ 1 | **48** (sympy-exact) | 48× |
+| β_ppE^TGP^(b=-1) at η=1/4 | -5/64 ≈ -7.81·10⁻² | **-15/4 ≈ -3.75** | 48× |
+| \|β_ppE^TGP\| range | [5.5·10⁻², 1.2·10⁻¹] | **[2.81, 4.69]** (test-p ± 25%) | 48× |
+| δφ̂_4 (LIGO ToGR fractional) | -0.075 | **-0.865** | 11.5× |
+
+**Phase 1.5 sign-off: 5/5 sympy LOCK PASS.** Test-particle exact + η=1/4
+±25% from η-correction. Full 5% precision target NOT achieved (would
+require equal-mass DJS 2-body Lagrangian; multi-session future work, see
+[[Phase1.5_G_SPA_lock.md]] §7.3 Option B).
+
+### 6.6 Implications + downstream propagation status
+
+Phase 1.5 finding is a CRITICAL CORRECTION with major implications:
+
+1. **TGP M9.1'' 48× more detectable** than Phase 1 forecasts assumed.
+2. **GWTC-3 reanalysis Phase 2 verdict ("CONSISTENT BF≈0.97 INCONCLUSIVE")
+   needs RE-RUN.** With corrected β_TGP, signal in GWTC-3 generic ToGR
+   analysis is ~5σ tentative (factor 48× stronger than Phase 2 used).
+3. **Window of testability advances:** ~2027 LIGO-O5 → **~2026 CURRENT
+   LIGO-O3 era** (via TGP-specific Bayes Workflow A).
+4. **Falsifier statement** in [[../../audyt/T01_LIGO3G_falsifier/FALSIFIER_STATEMENT_DRAFT.md]]
+   needs major revision.
+5. **PREDICTIONS_REGISTRY M911-P1 entry** needs major update.
+6. **Paper draft** needs revision (β-scale + falsifier window shift).
+
+**Downstream propagation status (2026-05-09):**
+
+| Artefakt | Update status |
+|----------|---------------|
+| Phase1_results.md §6 (this file) | **EXECUTED** (this update) |
+| FALSIFIER_STATEMENT_DRAFT.md | **PENDING USER DECISION** (high blast radius) |
+| PREDICTIONS_REGISTRY.md M911-P1 | **PENDING USER DECISION** (public commitment, high blast radius) |
+| op-GWTC3-reanalysis Phase 2 | **PENDING RE-RUN** (verdict outdated) |
+| op-LIGO-3G-deviation Phase 3 | **VALID** (β_5σ thresholds independent of Phase 1.5; just re-scale TGP/threshold ratios) |
+| papers/M911_LIGO3G_paper/paper_draft.md | **PENDING USER DECISION** |
+
+Te liczbowy thresholdy są **liczbowy threshold dla M911-P1** w
 [[../../audyt/T01_LIGO3G_falsifier/FALSIFIER_STATEMENT_DRAFT.md]]
-(zastępuje placeholder `[β_th]`).
+(zastępuje placeholder `[β_th]` z Phase 1; Phase 1.5 dostarcza
+liczbowy threshold ~50× mocniejszy).
 
 ## §7 — Multi-coefficient pattern (M911-P2)
 

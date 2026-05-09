@@ -4,6 +4,7 @@ date: 2026-05-07
 last_updated: 2026-05-08
 type: working-hypothesis
 status: INFORMAL_CONCEPTUAL_EXPLORATION
+folder_status: parking
 classification: SPECULATIVE_FRAMEWORK_FOR_FUTURE_FORMALIZATION
 parent: "[[../op-Phi-decomposition-photon-2026-05-07/Phase3_results.md]]"
 related_audit:

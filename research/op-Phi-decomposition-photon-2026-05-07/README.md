@@ -3,6 +3,7 @@ title: "op-Phi-decomposition-photon — Stage 2: foton jako mod δΦ"
 date: 2026-05-07
 type: research-cycle
 status: SETUP_PHASE_0_PENDING_REVIEW
+folder_status: active
 classification: STRUCTURAL_EXTENSION_CANDIDATE
 parent: "[[../../audyt/EXTERNAL_REVIEW_2026-05-06.md]]"
 related_audit:

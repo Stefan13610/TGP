@@ -1,0 +1,117 @@
+==============================================================================
+  PHASE 3: F1 GR-EXACT-CLONE DERIVATION ATTEMPT
+==============================================================================
+
+==============================================================================
+  §1 — F1 candidate definition
+==============================================================================
+  f_F1(psi) = (3-psi)^2/(1+psi)^2
+  h_F1(psi) = (1+psi)^2/(3-psi)^2 (anti-podal)
+  K(psi) = psi^4
+  V_grav^F1 = U_eff * f_F1 = psi**3*(psi - 3)**2*(3*psi - 4)/(12*(psi + 1)**2)
+
+  V_grav^F1(1) = -1/12
+  V_grav^F1'(1) = 1/6
+  [PASS] F1 V_grav(1) = -1/12 (vacuum value)
+
+  F1 Taylor coefs at psi=1: b_1 = -2, b_2 = 4, b_3 = -9, b_4 = 24
+  [PASS] F1 b_1 = -2
+
+==============================================================================
+  §2 — F1 EOM derivation
+==============================================================================
+
+  F1 EOM (M9.1''-class anti-podal + G.0 universal U_eff):
+    psi'' + (2/r) psi' + (2/psi)(psi')^2 = -(psi-1)/psi^2
+
+  CRITICAL OBSERVATION: this EOM is f-INDEPENDENT!
+  The R3 ODE is universal in M9.1''-class (anti-podal + universal U_eff).
+
+  ⟹ psi(r) solution structure is THE SAME for f_M911 and f_F1!
+  ⟹ The c_n^F1 = c_n^M911 (if matter coupling is also f-independent at vacuum).
+
+  [PASS] R3 ODE is f-independent in M9.1''-class
+
+==============================================================================
+  §3 — psi(U) Taylor coefs (reproduce M9.1'' values)
+==============================================================================
+  c_1 from Newton matching (c_1 = -2/b_1):
+    M9.1'' (b_1=-4): c_1 = 1/2
+    F1     (b_1=-2): c_1 = 1
+
+  CRITICAL ANALYTICAL CHALLENGE:
+  R3 ODE (vacuum): leading U term has no balance without source.
+
+  Polynomial psi(U) solution arises ONLY with point-particle matter source.
+  Source equation in the GROUND-STATE limit ('massless effective scalar at
+  solar-system scales'):
+    K * Box psi + ... = V'(psi) - (matter coupling) * delta^3(r)
+
+  Matter coupling depends on dL_mat/dpsi at source, which depends on f
+  (via geodesic integral involving sqrt(f)).
+
+
+  HEURISTIC c_n^F1 (rescaled by ratio^n):
+    c_1^F1 = 1
+    c_2^F1 = -1
+    c_3^F1 = 5/3
+
+  CAVEAT: This heuristic assumes c_n scale uniformly with c_1. Actual c_n
+  emerge from nonlinear EOM and may NOT obey this scaling. Phase 3 honest
+  outcome: cannot determine alpha_3^F1 without explicit EOM solution.
+
+
+  alpha_3^F1 (heuristic) = -53/6
+  Delta_alpha_3^F1 (heuristic) = alpha_3 - alpha_3^GR = -22/3
+
+  beta_ppE^F1 (heuristic, G_SPA=48): 33 ≈ 33.0
+  GWTC-3 bound: 0.78
+  F1 satisfies bound? False
+
+  HONEST CAVEAT: heuristic is unreliable. True alpha_3^F1 requires
+  explicit matter-coupled EOM solution (multi-session work).
+  [PASS] F1 heuristic computed (acknowledging limitations)
+
+==============================================================================
+  §4 — Phase 3 STRUCTURAL VERDICT
+==============================================================================
+
+  PHASE 3 ACHIEVEMENTS:
+  1. F1 candidate fully specified: f, h, K, V_grav.
+  2. R3 ODE confirmed f-INDEPENDENT in M9.1''-class.
+  3. Newton matching forces c_1 = -2/b_1 = +1 for F1 (vs +1/2 for M9.1'').
+  4. Heuristic alpha_3^F1 estimate computed.
+  5. Identified key derivation gap: explicit matter-coupled EOM solution.
+
+  PHASE 3 LIMITATIONS:
+  - Full c_2^F1, c_3^F1 derivation requires matter-source coupling specification
+    in dual-V framework, including geodesic/proper-time integration with f_F1.
+  - This is multi-session work (~3-5 sessions estimated).
+
+  PHASE 3 STATUS:
+  - F1 derivation INITIATED but not COMPLETED.
+  - Verdict: STRUCTURAL_CONDITIONAL_HALT — cycle pauses with clear roadmap
+    for next session continuation.
+
+
+  HEURISTIC (UNRELIABLE) result: F1 alpha_3 = -53/6
+  Comparison to GR (-3/2): -22/3
+  TENTATIVE: F1 likely does NOT give exact GR match.
+  But this is HEURISTIC — explicit derivation needed for verdict.
+
+==============================================================================
+  §FINAL — Phase 3 sign-off
+==============================================================================
+
+  Total: 4/4 PASS
+
+  Phase 3 verdict: STRUCTURAL_CONDITIONAL_HALT
+
+  Reasoning:
+  - Framework (Phases 0-2): consistent, sympy-verified
+  - F1 candidate: structurally identified, derivation initiated
+  - Full alpha_3^F1: requires multi-session matter-coupled EOM derivation
+  - HEURISTIC estimate: insufficient for verdict (per CALIBRATION_PROTOCOL)
+
+  Recommendation: continue in next session with focused matter-coupled
+  EOM derivation for F1, OR pivot to alternative paths (H_Γ coarse-graining).

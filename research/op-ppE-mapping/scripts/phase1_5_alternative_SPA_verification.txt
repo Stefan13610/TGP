@@ -1,0 +1,72 @@
+================================================================================
+op-ppE-mapping Phase 1.5 — ALTERNATIVE SPA verification
+Date: 2026-05-09
+================================================================================
+
+§1 — Concrete e_n, p_n values (test-particle limit, LOCK L4 F_TGP=F_GR):
+  GR test-particle:  e_1 = -3/4, e_2 = -27/8, e_3 = -675/64
+  TGP test-particle: e_1 = -3/4, e_2 = -113/24, e_3 = -10315/576
+  Δe_1 = 0
+  Δe_2 = -4/3
+  Δe_3 = -265/36
+  p_1 = -1247/336, p_2 = -44711/9072, p_3 = 0
+
+§2 — E(v), F(v) concrete (numerical) at η=1/4:
+  E_GR(v) = 675*v**8/512 + 27*v**6/64 + 3*v**4/32 - v**2/8
+  E_TGP(v) = 10315*v**8/4608 + 113*v**6/192 + 3*v**4/32 - v**2/8
+  F(v) = -44711*v**14/22680 - 1247*v**12/840 + 2*v**10/5 (same for TGP and GR by LOCK L4)
+
+§3 — dt/dv · v^9 (regular polynomial near v=0):
+  GR:  -34339356965*v**6/2731180032 + 15293365*v**4/8128512 + 3715*v**2/2688 + 5/8
+  TGP: -109941292325*v**6/2731180032 - 5027915*v**4/8128512 + 3715*v**2/2688 + 5/8
+  Δ:   -55805*v**6/2016 - 5*v**4/2
+
+§4 — Coefficients a_k of dt/dv · v^9 = a_0 + a_2 v² + a_4 v⁴ + a_6 v⁶:
+k   a_k^GR                   a_k^TGP                  Δa_k                     
+0   5/8                      5/8                      0                        
+2   3715/2688                3715/2688                0                        
+4   15293365/8128512         -5027915/8128512         -5/2                     
+6   -34339356965/2731180032  -109941292325/2731180032 -55805/2016              
+
+§5 — Ψ(v) = 2 v³ t(v) - 2 Φ(v) (in M=1, η=1/4):
+  Ψ_GR(v)  = 34339356965*v/910393344 + 15293365/(5419008*v) + 3715/(8064*v**3) + 3/(32*v**5)
+  Ψ_TGP(v) = 109941292325*v/910393344 - 5027915/(5419008*v) + 3715/(8064*v**3) + 3/(32*v**5)
+
+ΔΨ(v) = Ψ_TGP - Ψ_GR = 5*(11161*v**2 - 504)/(672*v)
+
+================================================================================
+§6 — β_ppE^TGP^(b=-1) extracted directly from ΔΨ(v) at v^(-1)
+================================================================================
+
+β_ppE^TGP^(b=-1) (alternative SPA route) = -15/4
+                                         ≈ -3.750000
+
+β_ppE^TGP^(b=-1) (original Phase 1.5)    = -15/4
+                                         ≈ -3.750000
+
+Difference (alternative - original) = 0
+  → ALTERNATIVE SPA VERIFIES ORIGINAL Phase 1.5 result EXACTLY ✓
+  → Possibility (B) [methodological error in Phase 1.5] RULED OUT
+
+§7 — Sanity check: β_ppE^TGP^(b=-3) (1PN-phase)
+  Should be 0 (TGP matches GR exactly at 1PN: β_PPN=γ_PPN=1).
+  Alternative result: β_ppE^TGP^(b=-3) = 0
+  → MATCHES expected 0 ✓
+
+§8 — Sanity check: ΔΨ(v) at v^(-5) (0PN leading)
+  Should be 0 (TGP and GR have same 0PN-phase prefactor 3/(128η)).
+  Alternative result: Δ at v^(-5) = 0
+  → MATCHES expected 0 ✓
+
+§9 — Bonus: β_ppE^TGP^(b=+1) (3PN-phase) — alternative-derived:
+  β at v^(+1) = 55805/672
+            ≈ 83.043155
+  (Compare to TGP's M911-P2 multi-coefficient predicted ratio β_3PN/β_2PN = -23/10.
+   Phase 1 gave β_3PN at central -23/128. Alternative...)
+  Alternative / Phase 1 ratio = -223220/483
+  Alternative β_3PN/β_2PN ratio = -11161/504
+  Phase 1 predicted ratio = -23/10
+
+================================================================================
+ALTERNATIVE SPA VERIFICATION COMPLETE 2026-05-09
+================================================================================

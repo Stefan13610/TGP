@@ -25,7 +25,7 @@ related:
   - "[[../op-newton-momentum/M9_1_pp_setup.md]]"
   - "[[../../PREDICTIONS_REGISTRY.md]]"
 tgp_status:
-  folder_status: research-active
+  folder_status: paused
   level: research
   kind: research-cycle
   core_compatibility: extension

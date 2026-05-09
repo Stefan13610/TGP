@@ -3,6 +3,7 @@ title: "op-SPIN-SU2-substrate-derivation — formal derivation SU(2) jako moduli
 date: 2026-05-08
 type: research-cycle
 status: CLOSED_STRUCTURAL_DERIVED
+folder_status: closed-resolved
 phase: Phase6_close
 classification: STRUCTURAL_DERIVED
 sympy_total: 47/47 PASS

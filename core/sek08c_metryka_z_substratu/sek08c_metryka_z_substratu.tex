@@ -4,7 +4,72 @@
 % ============================================================
 %
 % =====================================================================
+% **CRITICAL UPDATE 2026-05-09 — M9.1'' (4-3psi)/psi FORM
+% OBSERVATIONALLY FALSIFIED at 5sigma by GWTC-3**
+% =====================================================================
+%
+%   Phase 1.5 G_SPA tighter lock
+%   (research/op-ppE-mapping/Phase1.5_G_SPA_lock.md) wyprowadzi\l{}o
+%   G_SPA = 48 sympy-exact (test-particle, 4-level verified):
+%     L1: sympy LOCK 5/5 PASS
+%     L2: independent hand-calculation E_TGP(U^3)/m = 49/48
+%     L3: numerical sanity at U=0.1 (6 decimal places match)
+%     L4: alternative SPA derivation (orthogonal route) - exact match
+%
+%   Phase 1's heuristic G_SPA ~= 1 (cytat Sampson-Yunes-Cornish 2013)
+%   NIE applies do TGP M9.1'' - SYC 2013 derived dla SMALL-PERTURBATION
+%   regimes (BD z 1/omega_BD, dCS z zeta_dCS); TGP M9.1'' ma STRUCTURAL
+%   O(1) modification via hyperbolic f(psi) = (4-3psi)/psi.
+%
+%   Konsekwencja: beta_ppE^TGP^(b=-1) = -15/4 ~= -3.75 (eta=1/4,
+%   test-p exact), factor 48× LARGER niz Phase 1 OOM (-5/64 ~= -0.078).
+%
+%   GWTC-3 RE-RUN (research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09):
+%   z corrected beta, TGP M9.1'' specific (4-3psi)/psi ansatz RULED OUT
+%   at 5.02sigma by GWTC-3 combined ~90 BBH posterior:
+%     BF_TGP/GR = 3.5e-6, log10(BF) = -5.45
+%     Jeffreys: OVERWHELMING GR preference (>10^5x)
+%
+%   Status updates 2026-05-09:
+%     PREDICTIONS_REGISTRY M911-P1: LIVE -> FALSIFIED-OBSERVATIONAL
+%     PREDICTIONS_REGISTRY M911-P2: ratios Phase 1 heurystyka WRONG
+%       (-23/10 vs alternative SPA -11161/504) -> WITHDRAWN-NEEDS-REDERIVATION
+%     PREDICTIONS_REGISTRY M911-P3: 2/4 channels invalid -> PARTIAL-FALSIFIED
+%
+%   Wewnetrzna spojnosc programu TGP:
+%     - Falsyfikacja jest WASKA: dotyczy SPECYFICZNEJ formy (4-3psi)/psi.
+%       Sam program TGP (Phi z Z_2 symetria, emergencja, alpha=2 vacuum
+%       Phi-EOM) NIE jest sfalsyfikowany.
+%     - G.0 closure (2026-05-02 below) byl/jest VALID dla M9.1'' specific
+%       form, ALE testowy outcome (LIGO 3G predictive falsifier framing)
+%       zostal sfalsyfikowany.
+%     - V_M911(psi) = -gamma*psi^2*(4-3*psi)^2/12 i sqrt(-g) = c0*psi/(4-3psi)
+%       sa derived z (4-3psi)/psi ansatz; jezeli S07 znajdzie alternative
+%       f(psi), te wyrazenia tez sie zmieniaja.
+%
+%   Path forward: S07 audyt (M9.1'' derivation z fundamentu) ma eksplorowac
+%   alternative f(psi) ansatze konsystentne z:
+%     - alpha=2 vacuum Phi-EOM (uchowane)
+%     - 1PN exact match GR (gamma_PPN = beta_PPN = 1 exact)
+%     - GWTC-3 constraints |delta_phi_4| <= 0.18 (1sigma)
+%       => |beta_ppE| <= 0.78 absolute
+%       => |G_SPA * Delta_alpha_3| <= 8.32 (eta=1/4) - constraint na
+%          alternative ansatze
+%
+%   Methodological finding (G_SPA = 48 dla structural-modification theories;
+%   SYC 2013 nie applies poza small-coupling regime) jest publishable
+%   na wlasna - niezaleznie od TGP M9.1'' fate.
+%
+%   Sektory tego pliku ponizej (§8c body) opisuja M9.1'' canonical
+%   derivation i pozostaja MATEMATYCZNIE POPRAWNE jako derivation;
+%   PREDICTIVE/OBSERVATIONAL framing zostal sfalsyfikowany. Pozostawione
+%   jako historyczny rekord; przyszla wersja po S07 alternative ansatz
+%   exploration zastapi M9.1'' canonical form.
+%
+% =====================================================================
 % G.0 CLOSURE 2026-05-02 (Phase 4 implementation)
+% [UWAGA: closure jest VALID matematycznie; observational predictivity
+%  framing M9.1'' falsified 2026-05-09 - patrz CRITICAL UPDATE powyzej]
 % A1 + A2 + A3 → ALL CLOSED-RESOLVED przez program G.0
 % (research/op-g0-r3-from-canonical-projection/, Phase 1+2+3 PASS 4/4 each)
 % =====================================================================

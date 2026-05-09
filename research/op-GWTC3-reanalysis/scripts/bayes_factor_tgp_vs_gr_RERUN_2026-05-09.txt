@@ -1,0 +1,100 @@
+================================================================================
+op-GWTC3-reanalysis Phase 2 RE-RUN with Phase 1.5 corrected β
+Date: 2026-05-09
+================================================================================
+
+§1 — Comparison Phase 1 vs Phase 1.5 β_ppE^TGP^(b=-1):
+  Phase 1 OOM (G_SPA ≈ 1):       β_TGP = -0.078125 = -5/64
+  Phase 1.5 LOCKED (G_SPA = 48): β_TGP = -3.750000 = -15/4
+  Ratio: Phase 1.5 / Phase 1 = 48.00× (factor 48)
+
+§2 — Conversion + TGP δφ̂_4 prediction in LIGO ToGR units:
+  α̂_4^GR(η=1/4) = 46.2459
+  Conversion: β_ppE = 4.3356 · δφ̂_4
+  Phase 1:    δφ̂_4_TGP = -0.018020
+  Phase 1.5:  δφ̂_4_TGP = -0.864942  (factor 48 larger)
+
+================================================================================
+§3 — TGP overlay vs GWTC-3 (with Phase 1.5 corrected β)
+================================================================================
+
+PHASE 1 (β = -0.0781, δφ̂_TGP = -0.0180):
+Scenario                            observed      σ_GW         TGP   (TGP-obs)/σ             Verdict
+----------------------------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)             0.0500    0.1824     -0.0180         -0.37          CONSISTENT
+GW150914-like single                  0.2000    0.6079     -0.0180         -0.36          CONSISTENT
+GWTC-2 combined                       0.1000    0.2736     -0.0180         -0.43          CONSISTENT
+
+PHASE 1.5 (β = -3.7500, δφ̂_TGP = -0.8649):
+Scenario                            observed      σ_GW         TGP   (TGP-obs)/σ             Verdict
+----------------------------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)             0.0500    0.1824     -0.8649         -5.02     5.02σ RULED OUT
+GW150914-like single                  0.2000    0.6079     -0.8649         -1.75       1.75σ tension
+GWTC-2 combined                       0.1000    0.2736     -0.8649         -3.533.53σ STRONG TENSION
+
+================================================================================
+§4 — Bayes factor TGP vs GR (Laplace approximation)
+================================================================================
+
+Scenario                           BF Phase 1  log10(BF) Ph1    BF Phase 1.5  log10(BF) Ph1.5
+----------------------------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)              0.9685         -0.014    3.554792e-06           -5.449
+GW150914-like single                   0.9899         -0.004    2.275620e-01           -0.643
+GWTC-2 combined                        0.9741         -0.011    2.124000e-03           -2.673
+
+
+Scenario                        Phase 1 verdict                 Phase 1.5 verdict                  
+----------------------------------------------------------------------------------------------------
+GWTC-3 combined (~90 BBH)       INCONCLUSIVE                    OVERWHELMING GR (>10^5 preferred)  
+GW150914-like single            INCONCLUSIVE                    weak GR preference                 
+GWTC-2 combined                 INCONCLUSIVE                    OVERWHELMING GR (>10^2 preferred)  
+
+================================================================================
+§5 — Significance of Phase 1.5 vs Phase 1 in current GWTC-3 data
+================================================================================
+
+PHASE 1 prediction (β = -5/64):
+  GWTC-3 σ_combined ≈ 0.182
+  TGP δφ̂_4 = -0.0180
+  TGP/σ ratio = 0.099 → ~0.1σ marginal
+  σ-tension from observed: 0.37σ
+  → CONSISTENT (Phase 2 verdict 2026-05-07)
+
+PHASE 1.5 prediction (β = -15/4):
+  GWTC-3 σ_combined ≈ 0.182
+  TGP δφ̂_4 = -0.8649
+  TGP/σ ratio = 4.743 → would be ~4.7σ signal
+  σ-tension from observed: 5.02σ
+  log10(BF_TGP/GR) = -5.449
+  → STRONG GR preference (TGP RULED OUT at ~5.0σ)
+
+================================================================================
+§6 — IMPLICATION for TGP M9.1''
+================================================================================
+
+  GWTC-3 combined RULES OUT Phase 1.5 corrected β at 5.0σ
+  in GENERIC ToGR multi-coefficient marginalized analysis.
+
+  Three possibilities:
+
+  (A) TGP M9.1'' is FALSIFIED by current GWTC-3 data.
+      → Phase 1.5 result correct + TGP M9.1'' ansatz observationally
+        excluded. Need to either modify the ansatz (e.g., explore
+        different f(ψ) structures) or abandon M9.1''.
+
+  (B) Phase 1.5 has a derivation error (despite 5/5 LOCK PASS).
+      → Should re-derive G_SPA via independent route (e.g., direct
+        v² → ω² → x conversion in different gauge, full DJS 2-body,
+        or independent literature cross-check).
+
+  (C) The conversion β_ppE ↔ δφ̂_4 has unrecognized normalization.
+      → If LIGO ToGR's δφ̂_4 normalization differs from Buonanno-Iyer
+        2009 by some factor, the bound interpretation changes.
+        Must verify Abbott 2023 §IV explicitly.
+
+  Recommended: PAUSE downstream propagation. User decision needed on
+  which possibility to investigate first (likely A, with B/C as cross-checks).
+
+================================================================================
+RE-RUN COMPLETE 2026-05-09
+================================================================================

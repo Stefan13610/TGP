@@ -23,7 +23,29 @@ related:
 
 # Phase 3 — VERDICT: TGP M911-P1 vs GWTC-3
 
-## §0 — Executive verdict
+## ⚠ CRITICAL UPDATE 2026-05-09 — VERDICT REVERSED
+
+**This Phase 3 verdict (2026-05-07: "TGP CONSISTENT, BF≈0.97 INCONCLUSIVE")
+was based on Phase 1 OOM heuristic β_TGP = -5/64. [[../op-ppE-mapping/Phase1.5_G_SPA_lock.md]]
+Phase 1.5 derived G_SPA = 48 (4-level verified: sympy LOCK 5/5 + hand-calc
++ numerical + alternative SPA), giving β_TGP = -15/4 ≈ -3.75 — factor 48×
+larger than Phase 1.**
+
+**Phase 2 RE-RUN with corrected β** ([[Phase2_RERUN_2026-05-09_corrected_beta.md]]):
+- **Verdict REVERSED:** TGP M9.1'' RULED OUT at 5.02σ (BF = 3.5·10⁻⁶,
+  log10(BF) = -5.45 → "OVERWHELMING GR preference").
+- δφ̂_4_TGP corrected = -0.865 (vs original -0.018), 5σ tension with
+  GWTC-3 observed +0.05 ± 0.182.
+- TGP M9.1'' **falsified-observational** under TIGER framework analysis.
+
+**Sections below are HISTORICAL** (Phase 1 baseline). Current operational
+verdict: M9.1'' specific (4-3ψ)/ψ ansatz is observationally excluded by
+GWTC-3 at 5σ; alternative f(ψ) forms via S07 reset are next exploration
+path.
+
+---
+
+## §0 — Executive verdict (HISTORICAL — pre Phase 1.5)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐

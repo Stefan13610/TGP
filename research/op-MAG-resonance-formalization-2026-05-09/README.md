@@ -3,6 +3,7 @@ title: "op-MAG-resonance-formalization — magnetyzm jako δΦ-resonance, unifik
 date: 2026-05-09
 type: research-cycle
 status: CLOSED_STRUCTURAL_DERIVED_CONDITIONAL
+folder_status: closed-resolved
 phase: Phase6_close
 classification: STRUCTURAL_DERIVED_CONDITIONAL
 sympy_total: 14/14 PASS

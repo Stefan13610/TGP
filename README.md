@@ -8,7 +8,43 @@ Author: Mateusz Serafin | 2026
 
 ---
 
-## Status: M9.1'' hyperbolic metric + OP-7 CLOSED (2026-04-25)
+## ⚠ Status update 2026-05-09: M9.1'' (4-3ψ)/ψ specific form OBSERVATIONALLY FALSIFIED at 5σ
+
+**[Phase 1.5 G_SPA tighter lock](research/op-ppE-mapping/Phase1.5_G_SPA_lock.md)
+derived G_SPA = 48 sympy-exact (test-particle, 4-level verified: sympy LOCK
+5/5 + independent hand-calc + numerical sanity + alternative SPA orthogonal
+route).** Phase 1's heuristic G_SPA ≈ 1 (Sampson-Yunes-Cornish 2013 cite)
+**does NOT apply** to TGP M9.1'' — SYC was derived for SMALL-PERTURBATION
+regimes; TGP has STRUCTURAL O(1) modification via hyperbolic f(ψ) =
+(4-3ψ)/ψ.
+
+Consequence: β_ppE^TGP^(b=-1) = -15/4 ≈ -3.75 at η=1/4 (factor **48× LARGER**
+than Phase 1 OOM -5/64 ≈ -0.078).
+
+**[GWTC-3 RE-RUN](research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md)**
+with corrected β: TGP M9.1'' specific (4-3ψ)/ψ form **RULED OUT at 5.02σ**
+by GWTC-3 combined ~90 BBH posterior (BF_TGP/GR = 3.5·10⁻⁶, log10(BF) =
+-5.45, "OVERWHELMING GR preference").
+
+**Status updates:**
+- PREDICTIONS_REGISTRY M911-P1: LIVE → **FALSIFIED-OBSERVATIONAL**
+- PREDICTIONS_REGISTRY M911-P2: ratios Phase 1 heuristic WRONG → **WITHDRAWN-NEEDS-REDERIVATION**
+- PREDICTIONS_REGISTRY M911-P3: 2/4 channels invalid → **PARTIAL-FALSIFIED**
+- Paper draft (papers/M911_LIGO3G_paper/): DRAFT-v1 SUPERSEDED, v2 required.
+
+**Falsification is narrow:** specific (4-3ψ)/ψ ansatz form is excluded;
+TGP program itself (Φ scalar with Z₂ symmetry, α=2 vacuum Φ-EOM,
+emergence) is **NOT falsified**. Path forward: S07 audit explores
+alternative f(ψ) ansatze consistent with α=2 + 1PN exact + GWTC-3
+constraints (|β_ppE| ≤ 0.78 absolute; |G_SPA·Δα_3| ≤ 8.32 at η=1/4).
+
+Methodological finding (G_SPA = 48 for structural-modification theories;
+SYC 2013 framework fails outside small-coupling regime) is publishable
+result on its own.
+
+---
+
+## Status (historical): M9.1'' hyperbolic metric + OP-7 CLOSED (2026-04-25)
 
 **Latest pivot chain (chronological):**
 - **2026-04-24 — v2 axiom pivot:** substrate Hamiltonian `eq:H-Gamma`

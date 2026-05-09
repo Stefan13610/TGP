@@ -1,0 +1,56 @@
+========================================================================
+Phase 1 sympy verification -- op-emergent-metric-from-interaction-2026-05-09
+========================================================================
+
+------------------------------------------------------------------------
+N1: many-body Phi decomposition + gradient cross-terms
+------------------------------------------------------------------------
+  [PASS] N1.1 partial_i Phi = partial_i dPhi_1 + partial_i dPhi_2
+  [PASS] N1.2 K_ij decomposition (numerical, 5 pts)
+  [PASS] N1.3 K_cross_12 != 0 (structurally new term)
+  [PASS] N1.4 K_cross anisotropy on axis (xx != yy = zz)
+  [PASS] N1.5 K_cross_12 -> 0 when M_2 -> 0 (single-source)
+
+------------------------------------------------------------------------
+N2: sigma_ab activation (gradient strain composite, OP-7 T2)
+------------------------------------------------------------------------
+  [PASS] N2.1 sigma_ab traceless (delta^ij sigma_ij = 0)
+  [PASS] N2.2 Tr(K) linearity
+  [PASS] N2.3 sigma decomposition (sigma = sigma_1 + sigma_2 + sigma_cross)
+  [PASS] N2.4 sigma_cross anisotropy (xx != yy = zz on axis)
+  [PASS] N2.5 uniaxial traceless: sigma_xx + 2 sigma_yy = 0 on axis
+  [PASS] N2.6 sigma_cross_12 -> 0 when M_2 -> 0
+
+------------------------------------------------------------------------
+N3: demarkacja od Brans-Dicke / Horndeski (foundations  5.1)
+------------------------------------------------------------------------
+  [PASS] N3.1a vacuum: partial_i Phi = 0 (M_1=M_2=0)
+  [PASS] N3.1b vacuum: K = 0 and sigma = 0
+  [PASS] N3.2 g_eff_vacuum = A(psi_bar) eta (conformal flat)
+  [PASS] N3.3 STRUCTURAL: TGP cycle has 1 dynamical d.o.f. (Phi), BD has 2
+  [PASS] N3.4 STRUCTURAL: 1 scalar mode (TGP) vs 1 scalar + 2 tensor (BD)
+
+========================================================================
+Phase 1 verification summary
+========================================================================
+  [PASS] N1.1 partial_i Phi linearity
+  [PASS] N1.2 K_ij decomposition
+  [PASS] N1.3 K_cross_12 nonzero
+  [PASS] N1.4 K_cross anisotropy
+  [PASS] N1.5 K_cross -> 0 single-source
+  [PASS] N2.1 sigma_ab traceless
+  [PASS] N2.2 Tr(K) linearity
+  [PASS] N2.3 sigma decomposition
+  [PASS] N2.4 sigma_cross anisotropy
+  [PASS] N2.5 uniaxial pattern
+  [PASS] N2.6 sigma_cross -> 0 single-source
+  [PASS] N3.1a vacuum partial Phi = 0
+  [PASS] N3.1b vacuum K=0, sigma=0
+  [PASS] N3.2 g_eff_vacuum conformal flat
+  [PASS] N3.3 single d.o.f. (Phi)
+  [PASS] N3.4 mode counting vs BD
+
+  TOTAL: 16/16 PASS
+
+  >>> Phase 1 N1+N2+N3 STRUCTURAL DERIVED <<<
+  >>> Cycle authorized to proceed Phase 2 (1PN limit) <<<
