@@ -103,13 +103,23 @@ Sygnał że framework wymaga porządków obok pracy badawczej.
 | ~~9~~ | Brak skryptu auto-pause stale cycles | ✅ **DONE 2026-05-09** | Spisane: [[tooling/check_stale_cycles.py]] (read-only weekly report). Domyślny próg 30 dni, `--strict` daje 14 dni. Exit code 1 jeśli znaleziono stale-active (do CI/cron) |
 | ~~10~~ | DEPENDENCIES_REVERSE.md duplikat | ✅ **NO ACTION 2026-05-09** | Świadoma decyzja: zostawić (`tooling/build_deps_graph.py` generuje oba). Niskoryzyko duplicate, czasem przydatny dla "kto cytuje X". Można usunąć w przyszłości jeśli nigdy się nie używa |
 
+### Załatwione 2026-05-09 (post-cleanup, runda 11-13)
+
+| # | Dług | Status | Co zrobiono |
+|---|---|---|---|
+| ~~11~~ | Text status drift w ~15 cyklach | ✅ **TRIAGED 2026-05-09** | Z 15 raportów drifts: 1 realny fix applied (`op-uv3-phi0-renormalization`: paused → closed-resolved, text "COMPLETE — FULL CONVERGENCE 16/16"). Pozostałe 14 to false-positives heurystyki (text status carrying semantic info — np. cascade cycles "PHASE0_PHASE1_IN_PROGRESS" mimo closed-resolved przez parent cascade). `folder_status` jest source of truth |
+| ~~12~~ | `*Notes.bib` placeholders | ✅ **DONE 2026-05-09** | Oba pliki zawierały tylko `@CONTROL{REVTEX42Control}` (RevTeX auto-gen build artifacts), nie były referenced w żadnym `.tex`. Usunięte z indeksu git + dodane `*Notes.bib` do .gitignore (regenerują się przy compilacji) |
+| ~~13~~ | INDEX.md cycle-list nieaktualne | ✅ **PARTIAL 2026-05-09** | Dodany banner "REVISION 2026-05-09" w "## At a glance" — M9.1'' falsification + dual-V framework + quartet of closures (10 cykli z linkami) + WIP-5 enforcement note. Pełen Phase ledger regen — osobna duża sesja (do tego potrzebne reskanowanie 856 closures) |
+
 ### Otwarte (do osobnych sesji)
 
-| # | Dług | Lokalizacja | Notatka |
-|---|---|---|---|
-| 11 | Text status drift w ~15 cyklach (post #8 partial fix) | `research/op-*/README.md` | Skrypt `check_status_drift.py` raportuje pozostałe; manual review każdego rzędu (np. dual-V cascade dalej "PHASE0_PHASE1_IN_PROGRESS") |
-| 12 | `tgp_companionNotes.bib` + `tgp_letterNotes.bib` placeholders | root | ~104 bytes każdy. Letter+companion używają `tgp_main.bib` — te pliki to noise. Niskoryzyko cleanup |
-| 13 | INDEX.md cycle-list nieaktualne | INDEX.md | Zaktualizowane top-level entry points + critical-blocker banner, ale long Phase ledger + per-cykl listy mogą wymagać regen po quartet of 2026-05-09 closures |
+Nic krytycznego — wszystkie 13 pozycji outstanding-debt z 2026-05-09 załatwione lub udokumentowane.
+
+Pozostają drobne / niskoryzyko:
+
+- **Phase ledger w INDEX.md** — pełen regen (856 closures × per-cycle row update) wymaga osobnej dużej sesji. Banner 2026-05-09 wystarcza dla nawigacji.
+- **Text status drift** — 14 cykli z heurystyczne mismatchami (głównie cascade cycles + ledger-style text statuses). Można fix per-cykl manualnie przy następnej edycji każdego.
+- **Build artifacts cleanup** — gdy tylko ktoś znowu skompiluje `main.tex`, `*.aux`/`*.log`/etc. wygenerują się lokalnie (gitignored, OK).
 
 ## 🗂 Coordination layers — co czym jest
 
@@ -163,3 +173,4 @@ w odpowiedniej sesji):
 | 2026-05-09 | **Outstanding-debt #1-#5 załatwione:** INDEX.md update (banner S07 + STATE.md primary entry-point + audyt/CYCLE/CALIBRATION w entry points), DEPENDENCIES.md regenerated (×4 wzrost dependencies), audyt/T01 HANDOFF zarchiwizowany jako stub (pre-falsification, β=−5/64 stale), #4+#5 oznaczone DONE (mass-triage + CYCLE_LIFECYCLE policy z poprzednich rund) |
 | 2026-05-09 | **Outstanding-debt #6-#10 załatwione:** #6 false alarm (LaTeX cruft nigdy nie tracked), #7 PAPER_LAYOUT.md (3 PDF role spisane), #8 check_status_drift.py + 2 manual fixes (g0-r3 → closed-resolved, omicron2 → closed-NULL), #9 check_stale_cycles.py, #10 no action (świadomie) |
 | 2026-05-09 | **op-emergent-metric-from-interaction CLOSED:** parallel agent zamknął cykl (Phase 1-6 complete, 57/57 sympy PASS, **STRUCTURAL_DERIVED**). Bezpośrednio relevantny dla S07 — g_eff = G[{Φ_i}] może być fundamentem alternative f(ψ) (interaction-emergent zamiast postulate-functional). WIP-5 zwolniło 2 sloty (z poprzedniego MAG-anomalous EARLY_HALT discovery + emergent-metric closure) |
+| 2026-05-09 | **Outstanding-debt #11-#13 załatwione:** #11 1 manual fix (op-uv3 → closed-resolved per text "COMPLETE"); 14 pozostałych drifts to heurystyczne false-positives. #12 `*Notes.bib` usunięte (RevTeX build artifacts, nie referenced) + `*Notes.bib` w .gitignore. #13 INDEX.md banner "REVISION 2026-05-09" dodany (quartet of closures + WIP-5 + critical-path; pełen Phase ledger regen — osobna sesja) |

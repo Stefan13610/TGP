@@ -125,6 +125,36 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 > - [[research/op-omega3-axion-decay-constant/AUDIT_omega3_2026-05-04.md]]
 > - [[PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04" — per-row table
 
+> 🚨 **REVISION 2026-05-09 — M9.1'' falsification + dual-V framework:**
+>
+> **Sektor grawitacji TGP w limbo.** GWTC-3 RERUN (~90 BBH) ruled out
+> M9.1'' specific (4−3ψ)/ψ form **5.02σ** (BF_TGP/GR = 3.55·10⁻⁶):
+> - [[research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] — G_SPA = 48 sympy LOCK 5/5 → β_ppE^TGP = −15/4
+> - [[research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] — 5.02σ ruled out
+> - **All M911-P1/P2/P3 predictions FALSIFIED/WITHDRAWN** w PREDICTIONS_REGISTRY
+>
+> **Critical path:** [[research/op-S07-alternative-f-psi-derivation-2026-05-09/]] —
+> alternative f(ψ) ansatz spełniający C1-C10 z first-principles derivation.
+>
+> **Quartet of closures 2026-05-09 (sympy 103/107 + 57/57 = 160/164 PASS):**
+> - [[research/op-Phi-vacuum-scale-2026-05-09/]] — STRUCTURAL_DERIVED_CONDITIONAL_HALT (84/88) — dual-V framework
+> - [[research/op-V-canonical-consistency-audit-2026-05-09/]] (10/10) — V_orig DEPRECATED, V_M9.1'' canonical
+> - [[research/op-MAG-Phase5-V-reference-clarification-2026-05-09/]] (10/10) — Phase 5 erratum applied
+> - [[research/op-dual-V-structure-clarification-2026-05-09/]] (10/10) — dual-V binding rules
+> - [[research/op-Phase5-MAG-erratum-2026-05-09/]] (5/5) — γ = m_C² correction
+> - [[research/op-Phi0-spatial-variation-predictions-2026-05-09/]] (6/6) — Φ₀ spatial variation predictions
+> - [[research/op-MAG-Lorentz-A-mu-coupling-2026-05-09/]] — CLOSED_STRUCTURAL_CONDITIONAL (11/11)
+> - [[research/op-MAG-resonance-formalization-2026-05-09/]] — CLOSED_STRUCTURAL_DERIVED_CONDITIONAL (14/14)
+> - [[research/op-SPIN-SU2-substrate-derivation-2026-05-08/]] — CLOSED_STRUCTURAL_DERIVED (47/47)
+> - [[research/op-emergent-metric-from-interaction-2026-05-09/]] — **STRUCTURAL_DERIVED (57/57)** — g_eff = G[{Φ_i}] interaction-emergent (post-falsification recovery, relevant dla S07)
+> - [[research/op-MAG-anomalous-moment-2026-05-09/]] — EARLY_HALT_HONEST (2/2)
+>
+> **TGP_FOUNDATIONS §3.5** (NEW): dual-V structure binding rules (V_grav vs V_matter sectoral separation).
+>
+> **WIP-5 enforced** (post-chaos cleanup 2026-05-09): max 5 cykli active (excluding critical path slot). Patrz [[STATE.md]] dla aktualnego WIP + [[meta/CYCLE_LIFECYCLE.md]] dla polityki.
+>
+> **Mass-triage executed:** ~85 cykli przeklasyfikowane z `active`/`research` → `paused` (skrypt `tooling/reclassify_cycles_2026-05-09.py`). Tooling support: `tooling/check_stale_cycles.py` (read-only weekly report), `tooling/check_status_drift.py` (read-only status drift detection).
+
 - **Master verification ledger:** **856** cumulative closures
   (post-2026-05-04: **effective uncontested 784, contested 72** — see banner above)
   (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7 + ξ.1.Phase1 5 + ξ.1.Phase2 7 + ξ.1.Phase3 7 + UV.1.Phase1 5 + UV.1.Phase2 7 + UV.1.Phase3 6 + ε.1.Phase1 5 + ε.1.Phase2 7 + ε.1.Phase3 6 + ζ.1.Phase1 5 + ζ.1.Phase2 7 + ζ.1.Phase3 6 + θ.1.Phase1 5 + θ.1.Phase2 7 + θ.1.Phase3 6 + η.1.Phase1 5 + η.1.Phase2 7 + η.1.Phase3 6 + α.1.Phase1 5 + α.1.Phase2 7 + α.1.Phase3 6 + η.2.Phase1 5 + η.2.Phase2 7 + η.2.Phase3 6 + κ.1.Phase1 5 + κ.1.Phase2 7 + κ.1.Phase3 6 + ι.1.Phase1 5 + ι.1.Phase2 7 + ι.1.Phase3 6 + μ.1.Phase1 5 + μ.1.Phase2 7 + μ.1.Phase3 6 + ν.1.Phase1 5 + ν.1.Phase2 7 + ν.1.Phase3 6 + ξ.2.Phase1 5 + ξ.2.Phase2 7 + ξ.2.Phase3 6 + ο.1.Phase1 5 + ο.1.Phase2 7 + ο.1.Phase3 6 + π.1.Phase1 5 + π.1.Phase2 7 + π.1.Phase3 6 + ρ.1.Phase1 5 + ρ.1.Phase2 7 + ρ.1.Phase3 6 + τ.1.Phase1 4 + τ.1.Phase2 7 + τ.1.Phase3 6 + υ.1.Phase1 5 + υ.1.Phase2 7 + υ.1.Phase3 6 + φ.1.Phase1 5 + φ.1.Phase2 7 + φ.1.Phase3 6 + ω.1.Phase1 5 + ω.1.Phase2 7 + ω.1.Phase3 6 + σ.1.Phase1 5 + σ.1.Phase2 7 + σ.1.Phase3 6 + τ.2.Phase1 5 + τ.2.Phase2 7 + τ.2.Phase3 6 + τ.3.Phase1 5 + τ.3.Phase2 7 + τ.3.Phase3 6 + ψ.1.Phase1 5 + ψ.1.Phase2 7 + ψ.1.Phase3 6 + ψ.1.v2.Phase4 5 + ψ.1.v2.Phase5 5 + ψ.1.v2.Phase6 5 + ω.2.Phase1 5 + ω.2.Phase2 7 + ω.2.Phase3 6 + χ.1.Phase1 5 + χ.1.Phase2 7 + χ.1.Phase3 6 + UV.2.Phase1 5 + UV.2.Phase2 7 + UV.2.Phase3 6 + ω.3.Phase1 5 + ω.3.Phase2 7 + ω.3.Phase3 6;
