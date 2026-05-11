@@ -55,7 +55,7 @@ szukali compatibility layer z literaturą beyond-GR, która jest w PPN/ppE basis
 
 | Phase | Status | Action |
 |---|---|---|
-| **Phase 0** — Triage | ✅ DONE 2026-05-10 (auto scan); 🟡 manual decisions IN_PROGRESS (2/10 done 2026-05-11) | [[meta/PROJECTION_TRIAGE_2026-05-10.md]] §2+§7 |
+| **Phase 0** — Triage | ✅ DONE 2026-05-10 (auto scan); ✅ **DONE 2026-05-11 (10/10 manual decisions complete)** | [[meta/PROJECTION_TRIAGE_2026-05-10.md]] §2+§7+§8 |
 | **Phase 4** — Kickoff template | ✅ DONE 2026-05-10 | [[meta/CYCLE_KICKOFF_TEMPLATE.md]] |
 | **Phase 1** — Bulk downgrade | ⏳ PENDING (post-Phase-0 decisions) | YAML update + WARNING_BLOCK.md per cycle |
 | **Phase 2** — LaTeX disclaimers | ⏳ PENDING | core/sek08* warning blocks |
@@ -63,16 +63,31 @@ szukali compatibility layer z literaturą beyond-GR, która jest w PPN/ppE basis
 | **Phase 5** — Retrofit exemplar | 🟡 KICKOFF DRAFT 2026-05-11 (parking) | Companion native cycle [[research/op-LIGO-3G-native-phase-residual-2026-05-11/]]; Phase 0 blocked na #5+#9 audits |
 | **Phase 6** — Pre-registration ops | 🟡 PARTIAL (registries created); decisions PENDING | Author authorization for PR-002 (re-link target identified 2026-05-11), PR-003 |
 
-**Progress 2026-05-11 (sesja kontynuacja per HANDOFF §3 Opcja A):**
+**Progress 2026-05-11 (sesja kontynuacja per HANDOFF §3 Opcja A — ✅ QUEUE COMPLETE 10/10):**
 
-- **Audit-flag list adversarial decisions on 2 of 10 PROJECTION_SUSPECTED rows:**
-  - **Row #6** `op-emergent-metric-from-interaction-2026-05-09` → **NATIVE-WITH-MAPPING (PARTIAL) → A−** (foundations TRZYMAJĄ; Phase 1+5 clean L1-native exemplar; Phase 2-4 derivation L1-foundation z L2-presentation; ADDENDUM 2026-05-10 reframes; 6 audit-flags AF1-AF6 addressable w Phase 5 retrofit cycle)
-  - **Row #3** `op-LIGO-3G-deviation` → **INTENTIONAL-PROJECTION → B** (legitimate framework-translation, NIE drift; Fisher matrix β_ppE detection forecasts dla T01 audit; cycle's CRITICAL UPDATE 2026-05-09 acknowledges M9.1'' specific predictions falsified, β_5σ infrastructure remains valid)
-  - PROJECTION_TRIAGE §4 INTENTIONAL_PROJECTION whitelist EXPANDED do 3 entries
-- **VT-002 status:** TENTATIVE → PROMOTED-PENDING-RETROFIT (per audit confirmed L1-native foundation; AF1 closure path = Phase 5 retrofit cycle)
-- **Companion native cycle kickoff drafted** [[research/op-LIGO-3G-native-phase-residual-2026-05-11/]] (parking; Phase 0 commit blocked na #5 + #9 PROJECTION_TRIAGE dispositions which are upstream c_0 + κ_σ heuristic LOCKs)
-- **Foundations retrofitu STAND** — 2/10 rows dispositioned bez framework collapse; Tier 1 framework {A,B,C} (M9_RESTRUCTURE §2) confirmed clean L1-native; Tier 2 anchor Path 2 preservation sound
-- **Queue continuation** dla pozostałych 8 PROJECTION_SUSPECTED rows: priority #4 (S07 alt) → #8 (h-TT calibration) → #5+#9 (c_0/κ_σ heuristic, batched) → #10 → #1 → #7 → #2
+- **Adversarial dispositions on 10/10 PROJECTION_SUSPECTED rows** (full queue completed sesją):
+
+| claim_status | Count | Cycles |
+|---|---|---|
+| **A−** | 2 | #6 emergent-metric, #7 g0-r3-from-canonical-projection |
+| **B** | 1 | #3 LIGO-3G-deviation (intentional translation) |
+| **C** | 6 | #4 S07-alt (HALT), #8 h-TT-calibration (HALT, adversarial), #5 c_0-derivation (heuristic), #9 κ_σ-2body (heuristic), #1 L01-N1 (literature-anchored downgrade), #2 L01-rho-stress-energy-bridge (foundational) |
+| **D** | 1 | #10 recovery-V-LIGO-regime (planned, archive per gating) |
+| **B-drift PROJECTION-ONLY** | **0** | **ZERO** |
+
+- **Foundations retrofitu STAND** — żaden cycle w 10 audytach nie był drift PROJECTION-ONLY. Tier 1 framework {A,B,C} (M9_RESTRUCTURE §2) confirmed clean L1-native per #6 audit; Tier 2 Path 2 anchor heuristically reproduced per #5+#9 batched (c_0·κ_σ = 4/3 EXACT).
+- **VT-002 status:** TENTATIVE → PROMOTED-PENDING-RETROFIT (per audit confirmed L1-native foundation; AF1 closure path = Phase 5 retrofit cycle).
+- **PROJECTION_TRIAGE §4 INTENTIONAL_PROJECTION whitelist EXPANDED** do 3 entries (op-GWTC3-reanalysis + op-ppE-mapping + op-LIGO-3G-deviation).
+- **Companion native cycle kickoff drafted** [[research/op-LIGO-3G-native-phase-residual-2026-05-11/]] (parking → **UNBLOCKED** pending WIP slot + author activation approval; inheritance LOCKs c_0=4π, κ_σ=1/(3π) preserved heuristic-caveat).
+- **L01 N-cascade retrofit pattern validated:** parallel agent's §RETROACTIVE downgrade on #1 (op-L01-N1) exemplar Phase 1 retrofit pattern; sibling N2-N5 analogous downgrades pending separate session (per author note "osobny agent robi teraz przegląd cykli").
+- **Phase 5 retrofit blocker RESOLVED** — companion native cycle can proceed pending WIP + author approval; original Plan §Phase 5 candidate updated do dual-track (#3 INTENTIONAL_PROJECTION formalize + companion native spawn).
+
+**Outstanding follow-up tasks** (per author scope decision, pending):
+1. Cycle YAML updates — single-cycle `output_type`/`claim_status` retroactive edits per disposition (low-blast individual approvals)
+2. ADDENDUM 2026-05-10 additions — #4 S07-alt + #7 g0-r3 need ADDENDUM files dla consistency
+3. Phase 5 retrofit kickoff Phase 0 commit — parking → active pending WIP + author approval
+4. Reframe annotations — #7 g0-r3 V_M911 "canonical metric" → "Path 2 anchor specific" per M9_RESTRUCTURE §3.2
+5. Phase 1 bulk downgrade can NOW proceed (Phase 0 manual decisions COMPLETE)
 
 **Diagnoza dla cytowań w session work:** dopóki Phase 1 bulk-downgrade nie zakończony, każdy
 cytowany result z gravity sector cykli (β_ppE, β_PPN, c_0, κ_σ, ξ_n) wymaga *manual review*

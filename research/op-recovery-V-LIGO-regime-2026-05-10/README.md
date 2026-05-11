@@ -6,8 +6,10 @@ classification: STRUCTURAL_RECOVERY (P1 priority; re-activate post Branch D)
 priority: P1_FRAMEWORK_RECOVERY (LIGO-regime mech iii viability under scale-dependent γ)
 parent: "[[../op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]]"
 target: "Re-activate recovery V mPhi parametric analysis w Branch D LIGO-regime context. Premise: γ_eff(ω_LIGO) ≪ M_Pl² (Branch D LIGO-regime limit) → V''(Φ_0)|_{LIGO} ≪ M_Pl² → m_Φ_observable(LIGO) ≪ M_Pl² → mechanism (iii) realizes naturally. Outcome: explicit V form for LIGO regime + observable predictions."
-status: parking — Phase 0 setup prepared, awaiting Cycle 1 outcome (gating dependency)
-folder_status: parking
+status: closed-superseded — Cycle 1 closed GF.B-STRUCTURAL 2026-05-10; per §1.3 gating logic ARCHIVE per cycle's-own-rule (2026-05-11 disposition per meta/PROJECTION_TRIAGE §7 row #10)
+folder_status: closed-superseded
+output_type: observable   # planned per L1_native.output_observable contract (never realized — cycle archived pre-activation)
+claim_status: D           # SPECULATIVE_PARTIAL — Phase 0 setup; never reached Phase 1 sympy
 predecessor:
   - "[[../op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]] (parent — spawned this cycle)"
   - "[[../op-gamma-identification-first-principles-2026-05-10/Phase4_branch_verdict.md]] (Branch D verdict mandates LIGO-regime exploration)"
@@ -253,16 +255,47 @@ f(ψ) audyt jest active. **This cycle (matter sector V_LIGO) jest INDEPENDENT** 
 
 ## §6 — Status
 
-**📦 PARKING — Phase 0 setup prepared, awaiting Cycle 1 outcome (gating dependency).**
+**📦 CLOSED-SUPERSEDED 2026-05-11** per cycle's-own §1.3 gating logic execution.
 
-**To activate:**
-1. Cycle 1 (`op-gamma-RG-running-derivation`) completes z GF.A outcome
-2. γ_eff(ω_LIGO) explicit value inherited z Cycle 1
-3. User decides P1 priority + WIP slot allocation
-4. Folder_status `parking` → `active`
-5. Begin Phase 1 substantive work
+### §6.1 — Gating outcome (2026-05-10) → ARCHIVE per §1.3 rule
 
-**Estimated completion:** 7-10 sesji post-activation (depends on Cycle 1 timing).
+Gating Cycle 1 (`op-gamma-RG-running-derivation`) closed 2026-05-10 z **GF.B-STRUCTURAL**
+verdict (per [[../../STATE.md]]: "β=γ open"; single-scale γ wins, NIE RG-running framework).
 
-**Strategic priority:** P1 — second after Cycle 1 (P0). Closes recovery V cycle status z
-honest verdict per Branch D framework.
+Per cycle's own §1.3 gating logic pre-declared:
+
+| Cycle 1 outcome | This cycle action (pre-declared) |
+|---|---|
+| GF.A (Branch D substantiated) | ACTIVATES z explicit γ_eff(ω_LIGO) |
+| **GF.B/C (single-scale wins)** ← **ACTUAL** | **DOWNGRADES to ARCHIVE confirmation** |
+| GF.HALT | PAUSED until OP-1 M2 progress |
+
+**Cycle's-own-rule outcome:** ARCHIVE. folder_status `parking` → `closed-superseded`.
+
+### §6.2 — Disposition audit (2026-05-11)
+
+Per [[../../meta/PROJECTION_TRIAGE_2026-05-10.md]] §7 row #10 audit:
+
+- **Disposition:** NATIVE-WITH-MAPPING (PLANNED, archive per gating)
+- **Claim_status:** D (SPECULATIVE_PARTIAL — Phase 0 setup; never reached Phase 1 sympy)
+- **PROJECTION_SUSPECTED scan flag = false positive** (L2 markers w cross-references;
+  primary outputs design L1 native per §2.3 claims C1-C8)
+- **Cycle preserved jako methodology exemplar** dla Phase 0 README template (TGP-native
+  check §2.1 Q1-Q8 properly filled, anti-pattern §2.5 9-pkt list, pre-declared claims
+  +gates anti-Lakatos compliant)
+- **Author approved Opcja A** 2026-05-11 ("A"): meta updates + cycle YAML + this cross-ref note
+
+### §6.3 — Future reactivation conditions (not currently triggered)
+
+Jeśli kiedyś Branch D / RG-running γ framework substantiated z innym cyklem (e.g., post-OP-1
+M2 progress lub future framework evolution), ten cycle's Phase 0 design CAN be reactivated:
+
+1. Spawn new cycle z fresh kickoff contract (per CYCLE_KICKOFF_TEMPLATE)
+2. Re-inherit methodology design z tego cycle's §2.1 + §2.5 (jako reference example)
+3. PR-### entry committed przed Phase 1 sympy (per L1_native.pre_registration_date field design)
+4. NIE simply "reactivate" ten cycle — methodology requires fresh pre-registration timestamp
+   per PRE_REGISTERED_FALSIFIERS append-only invariant
+
+**Strategic context preserved:** post-falsification recovery V framework remains relevant
+research direction; Phase 5 retrofit companion cycle `op-LIGO-3G-native-phase-residual-2026-05-11`
+addresses native Δφ(f) prediction w stable γ ~ M_Pl² regime (single-scale per Cycle 1 GF.B).
