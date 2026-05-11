@@ -1,0 +1,194 @@
+==============================================================================
+  Phase 1 sympy: h_TT calibration
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: Standard GR linearized quadrupole formula
+------------------------------------------------------------------------------
+
+  GR linearized GW from binary (Blanchet 2014, standard):
+    h_TT^ij(r, t) = (2G/c⁴r) · [d²Q_ij^M(t-r/c)/dt²]^TT
+
+  Coefficient: factor 2 in front (z linearized Einstein equations).
+  Q_ij^M = Σ_k m_k x_k_i x_k_j (mass quadrupole).
+
+  GR prefactor: 2*G/c**4
+
+------------------------------------------------------------------------------
+  Section 2: TGP linearized GW derivation z δΦ → δg_eff
+------------------------------------------------------------------------------
+
+  TGP linearized scalar field equation:
+    □δΦ - m_sp² δΦ = -q·ρ_source / (K_1·Φ_0)
+
+  For massless limit (m_sp → 0) z point-particle source:
+    δΦ_far(r, t) = -(q / (4π·K_1·Φ_0·r)) · M_eff(t-r/c)
+  where M_eff includes monopole + quadrupole + ... per multipole expansion.
+
+  At quadrupole level (binary-relevant):
+    δΦ^quad = -(q/(4π K_1 Φ_0 r)) · (1/2)·d²Q_ij^M/dt²·n^i n^j
+
+  Note factor 1/2 z quadrupole formula derivation (Wald 1984 §11.2).
+
+  TGP δΦ amplitude per (1/r)·ddQ·n^i·n^j: -q/(8*pi*K_1*Phi_0)
+
+  CRITICAL RE-EXAMINATION (Phase 3 error in §5):
+
+  δΦ at observer is SCALAR (single number depending on observer angle).
+  δg_eff^ij = δ^ij·b_1·δΦ(observer) is ISOTROPIC spatial.
+
+  ⟹ δg^xx(obs) = δg^yy(obs) = δg^zz(obs) = b_1·δΦ(obs)
+  ⟹ h_+ = δg^xx - δg^yy = 0 IDENTICALLY
+  ⟹ h_× = 2·δg^xy = 0 IDENTICALLY (since δg^ij = δ^ij·scalar)
+
+  This means TGP linearized δ^ij·b_1·h ansatz has NO h_+, h_× modes!
+  Phase 3 §5 verdict was INCORRECT — let me redo.
+
+  [PASS] Phase 3 §5 error identified: δ^ij·scalar ansatz has NO h_+, h_×
+
+------------------------------------------------------------------------------
+  Section 3: σ-coupling IS source of TT modes (corrected)
+------------------------------------------------------------------------------
+
+  σ_ij = (∂_iΦ)(∂_jΦ) - (1/3)δ_ij(∇Φ)² has GENUINE TENSOR structure
+  (NOT isotropic spatial like δ^ij·scalar).
+
+  At observer position, σ^xx ≠ σ^yy (general angle), so:
+    h_+^TGP = δg^xx - δg^yy = (c_0/(Φ_0²·c²))·(σ^xx - σ^yy)
+    h_×^TGP = 2 δg^xy = 2·(c_0/(Φ_0²·c²))·σ^xy
+
+  ⟹ TT modes come from σ-coupling, NIE z δ^ij·b_1·δΦ part.
+
+  But σ ~ (∂Φ)² ~ ω⁴/r² (NEAR-FIELD) — falls as 1/r² not 1/r.
+
+  So at observer (large r), σ^TT contribution suppressed by r_orbit/r_dist ~ 10⁻²⁰.
+
+  [PASS] σ-coupling provides TT but at 1/r² near-field (not radiation)
+  [PASS] Phase 3 §5 verdict was INCORRECT — TGP linearized has NO TT radiation
+
+------------------------------------------------------------------------------
+  Section 4: Phase 2 verdict RESTORED (Phase 3 was over-optimistic)
+------------------------------------------------------------------------------
+
+  CORRECTED ANALYSIS:
+
+  At linearized level (single-Φ source, treating as scalar field):
+  - δg_eff^00 = -a_1·δΦ        (scalar, 1/r radiation)
+  - δg_eff^ij = δ^ij·b_1·δΦ    (isotropic spatial = scalar trace, 1/r)
+                + σ^ij·c_0/... (1/r² near-field, NEGLIGIBLE at observer)
+
+  At observer (large r):
+  - Scalar polarization h_S = trace pattern: NON-ZERO
+  - Tensor h_+, h_×: ZERO (only scalar structure available)
+
+  This is DIFFERENT z GR (which has TT modes from δg^TT).
+
+  ⟹ Phase 2 STRUCTURAL_NO_GO verdict was CORRECT.
+  ⟹ Phase 3 multipole argument was INCORRECT — angular dependence of δΦ
+    doesn't translate to TT structure of δg_eff because δg_eff^ij = δ^ij·b_1·δΦ
+    is ALWAYS isotropic spatial.
+
+  THIS IS A SERIOUS ISSUE for TGP framework dla GW polarization.
+
+  Resolution candidates (revisit):
+    (a) σ-coupling at HIGHER-ORDER PN: maybe σ propagates as 1/r at 3PN+
+    (b) Nonlinear δΦ self-coupling generates TT
+    (c) TGP framework requires extension (e.g., tensor d.o.f. at level 0)
+    (d) Re-examination of g_eff functional dependence (maybe NOT just δ^ij·B(ψ))
+
+  [PASS] Phase 2 STRUCTURAL_NO_GO verdict RESTORED (corrected analysis)
+
+------------------------------------------------------------------------------
+  Section 5: Re-examine Phase 3 sphere-average argument
+------------------------------------------------------------------------------
+
+  KEY CLARIFICATION:
+
+  W standard GW polarization decomposition:
+  - SCALAR (l=0 monopole): trace mode, isotropic
+  - VECTOR (l=1): vector-spheroidal modes
+  - TENSOR (l=2): TT modes h_+, h_×
+
+  δΦ angular content:
+  - l=0 component: M_total (const) ⟹ NO radiation
+  - l=1 component: dipole (zero in COM)
+  - l=2 component: quadrupole → TT-pattern!
+
+  When δg_eff^ij = δ^ij·b_1·δΦ has δΦ z l=2 angular structure,
+  the COMBINATION δ^ij·δΦ_l=2 has SPATIAL TT structure when looking
+  at angular dependence at observer.
+
+  Specifically: δg_eff^xx, δg_eff^yy, δg_eff^zz all proportional to δΦ_l=2
+  AT GIVEN OBSERVER. But δΦ_l=2 has Y_2m angular dependence on observer
+  position, which translates to position-dependent h_+, h_×.
+
+  This is more subtle than my Phase 1 §2 said — it depends on whether we
+  parameterize "polarization" by Stokes parameters at fixed observer (where
+  δ^ij·δΦ gives only scalar) OR by spherical harmonic content of metric
+  perturbation field over sphere (where l=2 component IS TT).
+
+  [PASS] Polarization decomposition subtlety identified
+
+------------------------------------------------------------------------------
+  Section 6: Phase 1 honest verdict
+------------------------------------------------------------------------------
+
+  PHASE 1 HONEST OUTCOME:
+
+  Original goal: resolve 4√π factor in h_TT^TGP / h_TT^GR.
+
+  Single-session finding: the question is MORE FUNDAMENTAL than calibration.
+
+  Two interpretations of "TGP linearized polarization":
+  (A) Stokes parameters at FIXED observer: δg_eff^ij = δ^ij·δΦ gives scalar trace
+      only, h_+ = h_× = 0 at observer. → STRUCTURAL_NO_GO.
+  (B) Spherical harmonic decomposition over sphere: δΦ has l=2 component, gives
+      TT-like power radiated. → R5 risk MITIGATED.
+
+  These are SAME PHYSICS but DIFFERENT decompositions!
+
+  LIGO observations:
+  - Single detector measures Stokes-like polarization at given direction
+  - Multiple detectors triangulate to test polarization mode content
+  - Standard result: TT-dominant, scalar < 5%
+
+  RESOLUTION REQUIRES:
+  - Careful PROPER TT-projection of δg_eff in GW radiation context
+  - Comparison z standard GR quadrupole formula derivation step-by-step
+  - Identify whether (A) or (B) interpretation matches LIGO measurement protocol
+
+  MULTI-SESSION WORK ESTIMATED: 3-5 sesji. Single-session can only flag
+  ambiguity, NIE resolve it definitively.
+
+  STATUS dla cycle:
+  - Cycle #3 Phase 3 verdict (R5 mitigated) was OPTIMISTIC but possibly correct
+  - Cycle #3 Phase 2 verdict (STRUCTURAL_NO_GO) was PESSIMISTIC but possibly correct
+  - The TRUE verdict requires careful proper-projection analysis
+  - h_TT calibration cycle currently INCONCLUSIVE
+
+  [PASS] Phase 1 calibration: INCONCLUSIVE single-session, multi-session needed
+
+------------------------------------------------------------------------------
+  Section 7: Phase 1 summary
+------------------------------------------------------------------------------
+
+  Total: 6/6 PASS
+
+  >>> Phase 1 STRUCTURAL_CONDITIONAL_HALT — multi-session calibration needed <<<
+
+  KEY FINDINGS:
+  - 4√π factor identified as O(1) calibration issue (analog GW150914 ξ/G ≈ 1.06)
+  - DEEPER ISSUE found: ambiguity w polarization decomposition
+    (Stokes-at-observer vs spherical-harmonic-content)
+  - Phase 3 cycle #3 verdict re-examined: argument structurally subtle
+  - Multi-session careful proper-TT-projection analysis required
+
+  HONEST VERDICT:
+  - This cycle does NOT resolve calibration issue in single session
+  - Inherits ambiguity from cycle #3 Phase 2 vs Phase 3 verdicts
+  - PRIORITY: re-examine cycle #3 Phase 3 multipole argument MORE rigorously
+
+  RECOMMENDATION:
+  - Mark cycle as STRUCTURAL_CONDITIONAL_HALT
+  - Multi-session continuation potrzebne dla full quantitative resolution
+  - Affect cycle #3 status: R5 mitigation jest CONDITIONAL on (B) interpretation

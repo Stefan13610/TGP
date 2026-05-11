@@ -158,18 +158,25 @@ Wszystkie trzy cycles eksplorują *quantum-corrected* sprzęganie EM-Φ.
 
 ### N1: Quantum trace anomaly EM w ekstremalnych warunkach
 
-Pełne 1-loop QED na M9.1'' background:
+Pełne 1-loop QED na `g_eff[{Φ_i}]` background (M9.1'' postulate FALSIFIED 5σ
+GWTC-3 2026-05-09; replaced by emergent-metric formalism 2026-05-09):
 
 ```
-T^μ_μ_EM,1-loop = β(α)/(2α) · F² + R·F² · O(α/π) + ...
+T^μ_μ_EM,1-loop = β(α)/(2α) · F² + b_i·(curvature × F²) + Riegert local σ_eff=function(ψ)
 ```
 
-Wymaga:
-1. Kowariantne 1-loop renormalization w `g_eff`
-2. Mapping na ψ.1.v2 dim-6 EFT basis
-3. Verification że nie generuje 5-th force violation w MICROSCOPE 10⁻¹⁵
+z `β(α)/(2α) = α/(3π) ≈ 7.74·10⁻⁴` (sympy LOCK; **NIE** 7.7·10⁻⁷ jak początkowo
+cytowane — typo correction 2026-05-11).
 
-To jest **dedicated future cycle** (kandydat: `op-EM-trace-anomaly-TGP`).
+Co zostało zrealizowane:
+1. ✅ Kowariantne 1-loop renormalization w `g_eff[{Φ_i}]` (NIE M9.1'')
+2. ✅ Theorem 2.1 (Disjointness): operator class **DISJOINT** od ψ.1.v3 dim-6 EFT
+3. ✅ MICROSCOPE 10⁻¹⁵ window: η_TGP_EM_quantum = 0 strukturalnie (~11 OOM margin)
+
+**Status (2026-05-11):** **CLOSED** przez dedicated cycle
+[[../op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/]] (STRUCTURAL_DERIVED, 16/16 sympy
+PASS, 6/6 P-requirements RESOLVED). Patrz
+[[../op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md]].
 
 ### N2: QCD trace anomaly (gluon condensate)
 

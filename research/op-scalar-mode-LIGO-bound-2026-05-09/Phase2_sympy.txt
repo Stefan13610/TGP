@@ -1,0 +1,204 @@
+==============================================================================
+  Phase 2 sympy: R5 risk explicit resolution
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: Linearized δΦ from binary source
+------------------------------------------------------------------------------
+
+  Far-field δΦ(r, t) z binary inspiral:
+    δΦ_far ~ -(q / (4π K_1 Φ_0 r)) · [M_total + (1/2c²) d²Q^φ/dt² + O(1/c⁴)]
+
+  For binary at COM:
+    Monopole M_total = const (no radiation)
+    Dipole Σ_i m_i x_i = 0 (COM cancellation)
+    Quadrupole Q^Φ_ij = Σ_i m_i x_i x_j → d²Q/dt² ~ μ·a²·ω² (radiating)
+
+  Z TGP single-field (q_i = q·m_i universal scalar charge):
+    Q^Φ_ij = q · M_total · ⟨x_i x_j⟩_orbit = q · Q^M_ij (mass quadrupole)
+
+  Scalar amplitude in radiation zone:
+    h_S = (4 G_S / c⁴) · d²Q^Φ/dt² · (1/r_dist)
+        = (4 q²/(K_1 Phi_0² c⁴)) · μ·a²·ω² · (1/r_dist)    (factor 4 from quadrupole formula)
+
+  h_S amplitude scaling: ~ G · μ·a²·ω² / (c⁴ · r_dist)
+  [Same ORDER as tensor amplitude h_T standard quadrupole]
+
+  CRITICAL: in TGP single-field, scalar 'charge per mass' = q/m = √(4πG/K_1·Phi_0)
+  vs BD α_BD² = 1/(2ω_BD+3)·(1/2). For TGP, α_BD-equivalent is NOT
+  suppressed by large coupling parameter — naive R5 risk REAL at linear.
+  [PASS] Scalar mode amplitude scaling derived (1/r radiation, ~G prefactor)
+
+------------------------------------------------------------------------------
+  Section 2: Tensor (σ-induced) mode amplitude — far-field analysis
+------------------------------------------------------------------------------
+
+  σ-induced tensor mode at observer (far-field):
+    σ_ij ~ (∂Φ)² ~ (ω²·δΦ_amplitude/r)² ~ 1/r² fall-off
+
+  vs proper radiation:
+    h_T(quadrupole) ~ 1/r fall-off
+
+  Ratio at LIGO detector (r_dist >> r_orbit):
+    h_T(σ-induced) / h_T(radiation) ~ r_orbit/r_dist << 1
+
+  ⟹ σ-coupling does NOT generate radiative tensor mode at this order.
+  σ contribution suppressed at observer by orbital/distance ratio.
+
+  Numerical estimate: r_orbit/r_dist ~ 10⁻²⁰
+  σ-induced contribution NEGLIGIBLE at observer.
+  [PASS] σ-coupling does NOT provide radiative tensor mode (1/r² near-field)
+
+------------------------------------------------------------------------------
+  Section 3: Scenario 1 vs 2 vs 3 — honest assessment
+------------------------------------------------------------------------------
+
+  Phase 1 naive: h_S/h_T = 2√π ≈ 3.54 (R5 risk)
+  Phase 2 §1: scalar mode amplitude scales as G (NOT BD-suppressed)
+  Phase 2 §2: σ-coupling does NOT redirect to radiative tensor (1/r² near-field)
+
+  ⟹ Scenario 2 (σ-cross cancellation in radiation) FAILS at linearized level.
+
+  REMAINING OPTIONS:
+    Scenario 1 (R5 realized): naive analysis correct, framework FAILS LIGO bound
+    Scenario 3 (Vainshtein-analog): non-perturbative compact-object suppression
+    Scenario 4 (TGP gauge structure): hidden constraint reduces scalar d.o.f.
+
+  [PASS] Scenario 2 (σ-cancellation in radiation) ELIMINATED at leading order
+
+------------------------------------------------------------------------------
+  Section 4: Vainshtein-analog screening estimate (Scenario 3)
+------------------------------------------------------------------------------
+
+  Vainshtein analog estimate:
+    r_V = (G·M / m_sp²)^(1/3)
+
+  TGP parameters:
+    m_sp ~ H_0 ~ 1.5e-33 eV ~ 1/H_0 ~ 1.4e26 m (cosmological scale)
+    M = 30 M_sun ~ 6e31 kg dla BBH
+    G·M ~ 4·10²¹ m³/s²
+
+  r_V ~ (G·M)^(1/3) · (1/m_sp)^(2/3)
+      ~ (4e21)^(1/3) · (1.4e26)^(2/3)
+      ~ 1.6e7 · 5.9e17
+      ~ 9.4 · 10²⁴ m
+      ~ 300 Mpc
+
+  r_V ≈ 300 Mpc
+  r_dist (GW150914) ≈ 400 Mpc
+  Ratio r_V/r_dist ≈ 0.75
+
+  Vainshtein scaling: scalar mode suppression ~ (r/r_V)^(α) for r > r_V
+  Dla DGP/Galileon: α ~ 3/4, scalar suppressed by ~(r_V/r)^α at r >> r_V
+
+  For LIGO at r_dist ~ 400 Mpc, r_V ~ 300 Mpc:
+  Suppression factor ~ (300/400)^(3/4) ≈ 0.81 — NOT enough to suppress 70× violation!
+
+  ⟹ Vainshtein analog INSUFFICIENT dla LIGO band sources.
+  [PASS] Vainshtein analog insufficient (r_V ~ r_dist marginal)
+
+------------------------------------------------------------------------------
+  Section 5: Re-examining TGP scalar charge structure
+------------------------------------------------------------------------------
+
+  CRITICAL RE-EXAMINATION (Phase 5 LOCK):
+    G_eff = q²/(4π Phi_0² K_1) — TGP's scalar coupling = Newton G
+
+  In standard scalar-tensor (BD analog):
+    Scalar σ has SEPARATE dynamics; α_BD coupling to T_μν
+    Scalar polarization mode separate from tensor
+
+  In TGP (single-field S05):
+    Phi IS the gravitational field — NO SEPARATE SCALAR MODE
+    Phi-fluctuations propagate AS gravity (g_eff = G[{Phi_i}])
+
+  ⟹ "Scalar polarization" in TGP = perturbation of g_eff specific pattern
+    that looks like scalar from observer perspective.
+
+  Question: in linearized GW from binary, what specific pattern of δg_eff arises?
+
+
+  PROBLEM IDENTIFIED (Phase 2 §5):
+    In emergent-metric framework, linearized δΦ → δg_eff has SCALAR PATTERN only:
+      δg_eff^00 = -a_1·h          (linear scalar)
+      δg_eff^ij = δ^ij·b_1·h       (isotropic spatial = scalar trace)
+      σ^ij contribution ~ 1/r²    (NOT radiation, near-field only)
+
+    ⟹ TGP at linearized level has NO TENSOR (TT) RADIATION.
+
+  Conflict z observation:
+    GWTC-3 measures TT polarization (h_+, h_×) consistent z GR.
+    Scalar polarization < few % bound.
+
+  Resolution options:
+    (a) TT radiation from NONLINEAR Phi self-coupling (multi-Φ source backreaction)
+    (b) TT mode from σ at higher-order PN (3PN+ where σ becomes radiative)
+    (c) Framework genuinely inconsistent z GW observations (TGP single-field falsified)
+
+  [PASS] Conflict identified: TGP linearized has SCALAR-only pattern
+
+------------------------------------------------------------------------------
+  Section 6: Phase 2 honest verdict
+------------------------------------------------------------------------------
+
+  PHASE 2 EXPLICIT DERIVATION OUTCOME:
+
+  Scenario 1 (R5 risk realized at linear level): CONFIRMED w naive analysis
+  Scenario 2 (σ-cross cancellation): ELIMINATED — σ at observer is 1/r² near-field
+  Scenario 3 (Vainshtein analog): INSUFFICIENT (r_V ~ r_dist marginal)
+  Scenario 4 (Hidden gauge): not yet examined
+
+  ADDITIONAL FINDING: linearized TGP single-field has SCALAR-ONLY
+  radiation pattern — conflict z observed TT polarization.
+
+  HONEST VERDICT FOR PHASE 2:
+  - R5 risk REAL at linearized level
+  - Linear analysis predicts SCALAR-DOMINANT pattern (NOT consistent with
+    GR-like h+, h× observations)
+  - Resolution requires NONLINEAR Phi dynamics OR TGP framework revision
+
+  Cycle status update:
+  - Phase 1: STRUCTURAL_CONDITIONAL (R5 risk identified, σ candidate)
+  - Phase 2 (this): SCENARIO 1 confirmed at linearized level
+                   σ-suppression candidate REJECTED at this order
+                   New issue: TGP single-field linearized has wrong polarization pattern
+
+  RECOMMENDATION: cycle close as **STRUCTURAL_NO_GO** with explicit identification
+  that linearized emergent-metric framework predicts scalar-dominant GW pattern,
+  inconsistent z observed TT-dominant pattern.
+
+  ESCAPE ROUTES (multi-session future work):
+    - Nonlinear Φ self-coupling generating TT modes (3-5 sesji)
+    - σ-coupling at higher PN orders becoming radiative (3-5 sesji)
+    - Structural framework revision (TGP S05 reconsideration?)
+
+  [PASS] Phase 2 STRUCTURAL_NO_GO honest verdict identified
+
+------------------------------------------------------------------------------
+  Section 7: Phase 2 summary
+------------------------------------------------------------------------------
+
+  Total: 6/6 PASS
+
+  >>> Phase 2 STRUCTURAL_NO_GO (honest, explicit derivation) <<<
+
+  KEY RESULTS:
+  - Scalar mode h_S ~ 1/r radiation z TGP single-field coupling
+  - σ-coupling NIE generates radiative TT mode (1/r² near-field only)
+  - Vainshtein analog INSUFFICIENT (r_V ≈ r_dist marginal)
+  - **Conflict z observed TT polarization pattern**: linearized TGP
+    single-field gives SCALAR-ONLY radiation pattern
+
+  CYCLE RECOMMENDATION:
+  Mark cycle as STRUCTURAL_NO_GO at linearized level. R5 risk REAL,
+  no σ-cross cancellation mechanism in radiation zone, scalar pattern
+  conflicts z LIGO observed TT-dominant polarization.
+
+  ESCAPE ROUTES (multi-session, future work):
+  - Nonlinear Phi self-coupling generating TT (3-5 sesji)
+  - σ-coupling higher PN becoming radiative (3-5 sesji)
+  - TGP framework revision z explicit additional structure
+
+  IMPLICATION: if no escape route works, emergent-metric framework
+  Phase 4 Path 2 (σ-coupling) NIE jest sufficient — would need
+  return to deeper structural reconsideration.

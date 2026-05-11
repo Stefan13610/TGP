@@ -1,0 +1,62 @@
+
+======================================================================
+§1 — V_orig structural properties [STRUCT]
+======================================================================
+  [STRUCT] T2.1: V'(Φ_0) = 0 IFF β=γ (vacuum condition): PASS  (V'(Φ_0) = Phi_0*(-beta + gamma); subst β=γ ⇒ 0)
+  [STRUCT] T2.2: V''(Φ_0)|_{β=γ} = γ (mass² identification): PASS  (V''(Φ_0)|_β=γ = gamma; expected γ — matches Phase 5 erratum m_C²=γ)
+  [STRUCT] T2.3: V(Φ_0)|_{β=γ} = -γ·Φ_0²/12 (T-Λ closure target): PASS  (V(Φ_0)|_β=γ = -Phi_0**2*gamma/12; expected -γΦ_0²/12 — basis dla T-Λ ρ_vac matching)
+  [STRUCT] T2.4: Cubic Φ³ allowed under Z₂(ŝ→-ŝ) since Φ=⟨ŝ²⟩ Z₂-invariant: PASS  (Phase 1 T1.6 verified Φ Z₂-even; Z₂ on ŝ doesn't constrain V(Φ) functional form)
+
+======================================================================
+§2 — Naive mean-field V_site → V(Φ) [ALG]
+======================================================================
+  [ALG] T2.5: Naive mean-field V_site → ½m₀²·Φ + ¼λ₀·Φ² (Φ¹+Φ²): PASS  (V_meanfield = Phi**2*lambda_0/4 + Phi*m_0^2/2; expected ½m₀²Φ + ¼λ₀Φ² — note: Φ¹+Φ² NIE Φ³+Φ⁴)
+  [ALG] T2.6: V_orig (Φ³+Φ⁴) ≠ naive mean-field (Φ¹+Φ²) — generic: PASS  (Φ³+Φ⁴ structure requires NON-NAIVE coarse-graining (loop corrections lub level-0 ŝ⁶+ŝ⁸))
+
+======================================================================
+§3 — Extended V_site (ŝ²+ŝ⁴+ŝ⁶+ŝ⁸) → V(Φ) Φ¹+Φ²+Φ³+Φ⁴ [ALG]
+======================================================================
+  [ALG] T2.7: Extended V_site (ŝ⁶+ŝ⁸ included) → Φ¹+Φ²+Φ³+Φ⁴: PASS  (V_ext_mf = Phi**4*c_4 + Phi**3*c_3 + Phi**2*c_2 + Phi*c_1; expected c₁Φ+c₂Φ²+c₃Φ³+c₄Φ⁴)
+  [ALG] T2.8: V_orig reproducible z extended V_site (c₃, c₄ specific): PASS  (V_match = Phi**3*(Phi*gamma/4 - Phi_0*beta/3)/Phi_0**2; V_orig = Phi**4*gamma/(4*Phi_0**2) - Phi**3*beta/(3*Phi_0); structural identity)
+  [PARAM] T2.9: β=γ ⇒ c₃/c₄ = -4Φ_0/3 (level-0 microstructure constraint): PASS  (c₃/c₄|_β=γ = -4*Phi_0/3; expected -4Φ_0/3)
+
+======================================================================
+§4 — Hubbard-Stratonovich auxiliary Φ insertion [HS]
+======================================================================
+  [HS] T2.10 [HS]: Hubbard-Stratonovich identity (algebraic verification): PASS  (-Phi²/(4λ) - ½Φs² = -(Phi+λs²)²/(4λ) + λs⁴/4; ∫DΦ saddle ⇒ e^{(λ/4)s⁴})
+  [HS] T2.11 [HS]: Post-H-S, ŝ kinetic op D[Φ] = -∇² + m₀² + Φ: PASS  (Standard QFT: Phi acts as Φ-dependent mass for ŝ; integrate ŝ Gaussian gives det⁻¹ᐟ²)
+
+======================================================================
+§5 — 1-loop expansion Tr ln(D[Φ]) [LOOP]
+======================================================================
+  [LOOP] T2.12: 1-loop V_eff(Φ) has nonzero Φ³ coefficient: PASS  (m_eff⁴·ln(m_eff²/Λ²) expanded coef of x³ = m_0sq**2/3 (nonzero ⇒ Φ³ generated))
+  [LOOP] T2.13: 1-loop V_eff(Φ) has nonzero Φ⁴ coefficient: PASS  (m_eff⁴·ln(m_eff²/Λ²) expanded coef of x⁴ = -m_0sq**2/12 (nonzero ⇒ Φ⁴ generated))
+  [LOOP] T2.14: V_orig form (Φ³+Φ⁴) STRUCTURALLY COMPATIBLE z 1-loop coarse-graining: PASS  (Standard 1-loop expansion generates ALL polynomial Φⁿ orders — Φ³+Φ⁴ specifically PRESENT)
+
+======================================================================
+§6 — Parameter mapping level 0 → level 1 [PARAM]
+======================================================================
+  [PARAM] T2.15: Φ_0 = |m₀²|/λ₀ (mean-field SSB vacuum): PASS  (Level-0 SSB: m₀²<0 + λ₀>0 ⇒ Φ_0 = |m₀²|/λ₀ (textbook MF ϕ⁴))
+  [PARAM] T2.16: γ-running entry: γ(μ) = λ₀ + 1-loop O(λ₀² log μ): PASS  (Coleman-Weinberg ϕ⁴ result; Phase 3 will derive β_γ(μ) explicit)
+  [PARAM] T2.17: 4-DOF level-0 → 3-DOF level-1 mapping concrete: PASS  (K_geo=J; Φ_0=|m₀²|/λ₀; γ=λ₀ (tree); β=γ enforces structural condition)
+
+======================================================================
+§7 — Gate verdicts G2.1 + G2.2 [META]
+======================================================================
+  [META] T2.18 [META]: G2.1 — analytical Wilsonian framework PASS: PASS  (H-S transform + 1-loop Tr ln structural foundation OK)
+  [META] T2.19 [META]: G2.2 — V_orig form (Φ³+Φ⁴) STRUCTURALLY COMPATIBLE: PASS  (1-loop Tr ln generates all Φⁿ; precise (Φ³+Φ⁴-only, β=γ) needs Phase 3 quantitative)
+  [META] T2.20 [META]: β=γ vacuum condition jest STRUCTURAL OPEN POST-PHASE-2: PASS  (Either (a) fine-tuning z generic H_Γ, lub (b) TGP-specific RG fixed point — Phase 3 examines)
+  [META] T2.21 [META]: Phase 2 PROCEED verdict: PASS  (PROCEED to Phase 3 (β-function dla γ derivation))
+
+======================================================================
+SUMMARY
+======================================================================
+  Total tests: 21
+  PASS:        21
+  FAIL:        0
+
+  Phase 2 verdict: G2.1 PASS + G2.2 STRUCTURAL PASS
+  Open question post-Phase-2: β=γ vacuum tuning origin (Phase 3 examines)
+  Phase 3 trigger: PROCEED (β-function dla γ derivation)
+
+  ✓ All Phase 2 structural checks PASS — Gates G2.1 + G2.2 cleared

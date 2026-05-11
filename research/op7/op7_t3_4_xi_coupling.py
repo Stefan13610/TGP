@@ -19,11 +19,76 @@ Strategia:
 Refs: T3.1-T3.3, M9_1_pp_P3_results.md (GW170817 conditional).
 """
 
+# =============================================================================
+#  AMENDMENT NOTICE — 2026-05-09 (op-T34-normalization-amendment cycle)
+# =============================================================================
+#
+#  This script contains TWO compounding algebraic gaps that propagate a
+#  factor-4 error into the stated value of xi_eff. The script itself is
+#  preserved as a HISTORICAL ARTIFACT for audit trail; do NOT use its stated
+#  conclusion `xi = G * Phi_0^2` for downstream work.
+#
+#  CORRECTED VALUE (clean first-principles re-derivation, 17/17 sympy PASS):
+#       xi_eff = 4 * G * Phi_0^2          (NOT  G * Phi_0^2)
+#
+#  Equivalent matching condition (independent of c_0 LOCK choice):
+#       c_0 * xi_eff = 16 * pi * G * Phi_0^2
+#
+#  GAP 1 — Inside the print(""" ... """) at line ~132 of this file:
+#      Stated:    sigma_ab(r,t) ~ -(xi / (4 pi c^4)) * Q_ddot_ab^TT / r
+#      Correct:   sigma_ab(r,t)  = -(xi / (8 pi c^4 r)) * Q_ddot_ab^TT
+#      Source of error: missing PN-(1/2) factor from Maggiore Eq. 3.81
+#                       (standard identity:  integral T^ij d^3y = (1/2) * Q_ddot^M_ij ).
+#      Effect: factor 2 too large.
+#
+#  GAP 2 — Inside the print(""" ... """) at line ~140 of this file:
+#      Line ~137: h = (Lambda_0 * xi / (4 pi c^4)) * Q_ddot / r
+#      Line ~139: h_GR = (G / c^4) * Q_ddot / r * 2     [factor 2 EXPLICIT]
+#      Stated  (line ~140):    Lambda_0 * xi / (4 pi) = G
+#                              =>  Lambda_0 * xi = 4 * pi * G
+#      Correct algebra:        Lambda_0 * xi / (4 pi) = 2 G
+#                              =>  Lambda_0 * xi = 8 * pi * G
+#      Effect: factor 2 algebraic mismatch when equating line 137 with line 139.
+#
+#  COMPOUND: Gap 1 (factor 2)  *  Gap 2 (factor 2)  =  factor 4
+#  Confirmed by op-sigma-3PN-radiative Phase 2 direct calculation
+#  (h_TT^sigma / h_TT^GR = 0.265 ~= 1/4 with the un-amended value, exact 1.0
+#  after amendment) and independently by adversarial verification.
+#
+#  PRESERVED LOCKS (NOT affected by this amendment):
+#      c_0 = 4*pi               (cycle #1 LOCK survives)
+#      kappa_sigma = 1/(3*pi)   (cycle #2 LOCK survives, independent)
+#      c_0 * kappa_sigma = 4/3  (joint LOCK survives, beta_ppE = 0 condition)
+#
+#  SCOPE: this is a single-coefficient correction. All structural conclusions
+#  of OP-7 T3.4 (existence of Path A coupling, gauge structure, dimensional
+#  reasonableness) remain valid; only the numerical normalization changes.
+#
+#  Cross-references:
+#      [[../op-T34-normalization-amendment-2026-05-09/Phase_FINAL_close.md]]
+#      [[../op-T34-normalization-amendment-2026-05-09/Phase1_results.md]]
+#      [[../op-T34-normalization-amendment-2026-05-09/Phase1_sympy.py]]
+#      [[./OP7_T3_results.md]]   (T3.4 amendment notice §0)
+#
+# =============================================================================
+
 import sys
 try:
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 except Exception:
     pass
+
+print("""
+=============================================================================
+  AMENDMENT NOTICE — 2026-05-09 (op-T34-normalization-amendment cycle)
+=============================================================================
+  This script contains TWO compounding algebraic gaps (Gap 1 line ~132,
+  Gap 2 line ~140) that yield a stated xi = G*Phi_0^2 instead of the
+  correct xi = 4*G*Phi_0^2. Run output below is preserved as historical
+  artifact only. Use op-T34-normalization-amendment/Phase1_sympy.py for
+  the corrected value (matching condition: c_0 * xi = 16*pi*G*Phi_0^2).
+=============================================================================
+""")
 
 import numpy as np
 import sympy as sp
@@ -130,6 +195,9 @@ print("""
 Z T3.1 EOM:  box sigma_ab + m^2 sigma_ab = -xi T_ab^{TT}
 Far-field solution (m -> 0 limit):
   sigma_ab(r,t) ~ -(xi / 4 pi c^4) * Q_ddot_ab^TT (t - r/c) / r
+  [<<< GAP 1 (AMENDED 2026-05-09): missing PN-(1/2) factor from Maggiore
+        Eq. 3.81  integral T^ij d^3y = (1/2) Q_ddot^M_ij. Correct form:
+        sigma_ab(r,t) = -(xi / (8 pi c^4 r)) * Q_ddot_ab^TT.    Factor 2 low. >>>]
 
 Metric perturbation z T4 (postpostulat): g_ij = h(psi) delta_ij + Lambda(psi) sigma_ij
   delta g_ij^TT = Lambda(psi=1) * sigma_ij^TT = Lambda_0 * sigma_ij^TT
@@ -138,6 +206,10 @@ Strain: h_+, h_x = (Lambda_0 * xi / 4 pi c^4) * Q_ddot / r
 
 Identyfikacja z GR (h_GR = G/c^4 * Q_ddot / r * 2 z konwencji TT-projection):
   Lambda_0 * xi / 4 pi = G  =>  Lambda_0 * xi = 4 pi G
+  [<<< GAP 2 (AMENDED 2026-05-09): algebra mismatch with line h_GR = 2G/c^4...
+        Equating h-strain with h_GR gives  Lambda_0 * xi / (4 pi) = 2 G,
+        therefore  Lambda_0 * xi = 8 pi G  (NOT 4 pi G).    Factor 2 low.
+        Compound with GAP 1: factor 4. Corrected xi_eff = 4 G Phi_0^2. >>>]
 
 W wymiarach naturalnych dim Lambda_0 = 1/Phi^2 (z T2 dim sigma = Phi^2/L^2,
 g jest dimensionless, wiec Lambda * sigma = dimensionless => Lambda ~ L^2/Phi^2).

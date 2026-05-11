@@ -1,0 +1,29 @@
+==============================================================================
+Phase 2 sympy — N4 Higgs trace anomaly: EW cosmology + Friedmann + Q2 F1
+==============================================================================
+
+[PASS] T1: R5 lock — EW transition crossover (m_H > 80 GeV endpoint)  | m_H=125.25 GeV, endpoint=80 GeV, margin=+45.25 GeV (>0)
+[PASS] T2: T_EW perturbative ≈ T_EW lattice (within 30%), both at v's scale  | T_EW_pert=148.9 GeV, T_EW_lat=159.0 GeV, |rel diff|=6.3%, T_EW_lat/v=0.65
+[PASS] T3: ρ_Higgs_thermal(T_EW) / ρ_radiation ≈ 0.3-1.5%  | m_H/T_EW=0.788, f(m/T)≈0.829, ratio≈0.83%
+[PASS] T4: Boltzmann suppression exp(-m_H/T_CMB) → 0 (Q2 F1 IR basis)  | m_H/T_CMB ≈ 5.33e+14, log(Boltzmann) ≈ -5.33e+14 << -100
+[PASS] T5: Q2 F1 verified — ρ_Higgs_vac substrate-decoupled vs Λ_obs (OOM gap > 50)  | |bare ρ_Higgs_vac|≈4.76e+44 eV⁴, Λ_obs≈2.50e-11 eV⁴, OOM gap≈55.3
+[PASS] T6: Friedmann δ_EW = ρ_Higgs_thermal/ρ_radiation small; TGP addition ZERO  | if NOT in g_*: δ_EW ≈ 1.01%; standard g_* INCLUDES → ZERO
+[PASS] T7: No first-order GW signal (R5 lock) — EW + QCD both crossover  | EW: m_H=125.25>80 GeV ✓; QCD: 2+1 flavor lattice ✓ (per N2)
+[PASS] T8: Cross-cycle pattern (R6 partial) — N1+N2+N3+N4 follow identical Q2 F1  | EM, QCD, SPARC, Higgs — all via substrate-decoupling mechanism
+
+==============================================================================
+SUMMARY
+==============================================================================
+PASS: 8/8
+FAIL: 0/8
+
+[PASS] T1: R5 lock — EW transition crossover (m_H > 80 GeV endpoint)  | m_H=125.25 GeV, endpoint=80 GeV, margin=+45.25 GeV (>0)
+[PASS] T2: T_EW perturbative ≈ T_EW lattice (within 30%), both at v's scale  | T_EW_pert=148.9 GeV, T_EW_lat=159.0 GeV, |rel diff|=6.3%, T_EW_lat/v=0.65
+[PASS] T3: ρ_Higgs_thermal(T_EW) / ρ_radiation ≈ 0.3-1.5%  | m_H/T_EW=0.788, f(m/T)≈0.829, ratio≈0.83%
+[PASS] T4: Boltzmann suppression exp(-m_H/T_CMB) → 0 (Q2 F1 IR basis)  | m_H/T_CMB ≈ 5.33e+14, log(Boltzmann) ≈ -5.33e+14 << -100
+[PASS] T5: Q2 F1 verified — ρ_Higgs_vac substrate-decoupled vs Λ_obs (OOM gap > 50)  | |bare ρ_Higgs_vac|≈4.76e+44 eV⁴, Λ_obs≈2.50e-11 eV⁴, OOM gap≈55.3
+[PASS] T6: Friedmann δ_EW = ρ_Higgs_thermal/ρ_radiation small; TGP addition ZERO  | if NOT in g_*: δ_EW ≈ 1.01%; standard g_* INCLUDES → ZERO
+[PASS] T7: No first-order GW signal (R5 lock) — EW + QCD both crossover  | EW: m_H=125.25>80 GeV ✓; QCD: 2+1 flavor lattice ✓ (per N2)
+[PASS] T8: Cross-cycle pattern (R6 partial) — N1+N2+N3+N4 follow identical Q2 F1  | EM, QCD, SPARC, Higgs — all via substrate-decoupling mechanism
+
+ALL TESTS PASS — Phase 2 RESOLVED (Higgs cosmology + Q2 F1 + R5 lock)

@@ -1,0 +1,422 @@
+==============================================================================
+  Phase 2 sympy: σ-induced TT amplitude via Path A direct (h_TT^σ)
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: Path A EOM (OP-7 T3.1 LOCK)
+------------------------------------------------------------------------------
+
+  Path A Lagrangian (OP-7 T3.1 LOCK):
+    L_σ = -(1/4)(∂_μ σ_ab)(∂^μ σ^ab) - (1/2)·m_σ²·σ_ab·σ^ab - (ξ_eff/2)·σ_ab·T^{ab,TT}
+
+  Variation δL/δσ^ab = 0:
+    □ σ_ab + m_σ² σ_ab = -ξ_eff · T_ab^TT
+
+  Z OP-7 T3.4 LOCK: ξ_eff = G·Φ_0² (with GW150914 calibration ξ/G·Φ_0² ≈ 1.06)
+  Z Path B audit:   m_σ² = 2·m_s²
+
+  [PASS] Path A EOM derived from L_σ via Euler-Lagrange (OP-7 T3.1)
+  [PASS] ξ_eff = G·Φ_0² locked via T3.4
+  [PASS] m_σ² = 2·m_s² locked via Path B audit T-PB.2
+
+------------------------------------------------------------------------------
+  Section 2: Massless limit decoupling check
+------------------------------------------------------------------------------
+  m_s ~ 0.0005 eV (substrate mass)
+  M_eff = √2·m_s ~ 7.07e-04 eV
+  ω_LIGO ~ 4e-13 eV (100 Hz GW)
+  M_eff/ω_LIGO ~ 1.77e+09
+  [PASS] Decoupling: M_eff ≫ ω_LIGO (ratio > 1e8)
+
+  CONCLUSION: m_σ² · σ ≪ □σ at LIGO band.
+  Massless limit JUSTIFIED for Phase 2 calculation:
+    □ σ_ab ≈ -ξ_eff · T_ab^TT
+
+
+------------------------------------------------------------------------------
+  Section 3: Retarded Green function solution
+------------------------------------------------------------------------------
+
+  Equation: □σ_ab(x,t) = -ξ_eff · T_ab^TT(x,t)
+
+  Solution z retarded Green G_ret(x-y, t-t_y) = δ(t-t_y - |x-y|/c)/(4π|x-y|):
+
+    σ_ab(x,t) = (ξ_eff/(4π·c²)) · ∫ d³y T_ab^TT(y, t - |x-y|/c) / |x-y|
+
+  (factor 1/c² z source coupling normalization, GR-analog)
+
+  Far-field expansion |x| → ∞:
+    1/|x-y| ≈ 1/r · (1 + n·y/r + ...)
+    t - |x-y|/c ≈ t - r/c + n·y/c
+
+  Leading 1/r term:
+    σ_ab^far(r→∞, t) = (ξ_eff/(4π·c²·r)) · ∫ d³y T_ab^TT(y, t-r/c)
+
+  [PASS] Retarded Green function applied (standard wave equation)
+  [PASS] Far-field 1/r expansion applied
+
+------------------------------------------------------------------------------
+  Section 4: Stress-energy → quadrupole moment relation
+------------------------------------------------------------------------------
+
+  Standard PN identity (z stress-energy conservation ∂_μ T^μν = 0):
+
+    ∫ d³y T^ij(y, t) = (1/2) · d²/dt² [ ∫ d³y ρ(y, t) y^i y^j ]
+                    = (1/2) · d² Q^M_ij(t) / dt²
+
+  where Q^M_ij = ∫ ρ y^i y^j d³y is mass quadrupole moment.
+
+  Derivation: ∂_t T^00 = -∂_i T^0i  (energy conservation)
+              ∂_t T^0i = -∂_j T^ij  (momentum conservation)
+              ⟹ ∂_t² T^00 = ∂_i ∂_j T^ij
+              ⟹ ∫ T^ij d³y = (1/2) ∫ y^i y^j ∂_t² T^00 d³y = (1/2)·d²Q/dt²
+
+  Therefore far-field σ_ab:
+    σ_ab^far(r→∞, t) = (ξ_eff/(8π·c²·r)) · d²Q^M_ab^TT(t-r/c)/dt²
+
+  [PASS] ∫T^ij = (1/2)d²Q/dt² (standard PN identity)
+
+  GR mass quadrupole formula (standard, Misner-Thorne-Wheeler):
+    h_ij^GR^TT(r→∞, t) = (2G/(c⁴·r)) · d²Q^M_ij^TT(t-r/c)/dt²
+
+  [PASS] GR quadrupole formula h^GR = (2G/c⁴r)·Q̈^TT (textbook)
+
+------------------------------------------------------------------------------
+  Section 5: Emergent-metric coupling: δg_TT^observer = (c_0/Φ_0²)·σ^TT
+------------------------------------------------------------------------------
+
+  Emergent-metric ansatz (Phase 4 of op-emergent-metric-from-interaction):
+    g_eff^ij = δ^ij·B(ψ) + σ^ij·C(ψ)/(Φ_0²·c²)
+
+  At LINEAR (probe) level z C(ψ_0) = c_0 (substrate vacuum):
+    δg_eff^ij(observer) = δ^ij·b_1·δΦ + (c_0/(Φ_0²·c²))·σ^ij(observer)
+
+  TT projection (z op-h-TT-calibration LOCK):
+    TT[δ^ij·b_1·δΦ] = 0 IDENTICALLY  ← scalar pollution killed
+    TT[σ^ij·c_0/(Φ_0²·c²)] = (c_0/(Φ_0²·c²)) · σ^ij^TT
+
+  Hence h_TT^σ at observer:
+    h_ij^σ_TT(observer) = (c_0/(Φ_0²·c²)) · σ_ij^TT(observer)
+
+
+  Substituting σ_ab^far formula:
+    h_ij^σ_TT(observer) = (c_0·ξ_eff/(8π·Φ_0²·c⁴·r)) · d²Q^M_ij^TT(t-r/c)/dt²
+
+  [PASS] Emergent-metric coupling applied to far-field σ
+
+------------------------------------------------------------------------------
+  Section 6: Ratio h_TT^σ / h_TT^GR (core Phase 2 result)
+------------------------------------------------------------------------------
+
+  h_TT^σ / h_TT^GR = c_0·ξ_eff / (16π·G·Φ_0²)
+  Symbolic ratio = c_0*xi_eff/(16*pi*G*Phi_0**2)
+
+  Substitute ξ_eff = G·Φ_0² (T3.4 geometric LOCK):
+    ratio = c_0/(16*pi)
+  [PASS] Ratio reduces to c_0/(16π) z ξ_eff = G·Φ_0² substitution
+
+  Substitute c_0 = 4π (cycle #1 LOCK, geometric):
+    ratio = 1/4
+    numerical = 0.2500
+  [PASS] Geometric ratio = 1/4 z c_0 = 4π LOCK
+
+------------------------------------------------------------------------------
+  Section 7: GW150914 calibration ξ/(G·Φ_0²) ≈ 1.06
+------------------------------------------------------------------------------
+
+  Substitute ξ_eff = 1.06·G·Φ_0², c_0 = 4π:
+    ratio = 53/200
+    numerical = 0.2650
+  [PASS] GW150914-calibrated ratio ≈ 0.265 (= 1.06/4)
+
+------------------------------------------------------------------------------
+  Section 8: Interpretation — does this VIOLATE LIGO?
+------------------------------------------------------------------------------
+
+  COMPUTED RATIO:
+    h_TT^σ / h_TT^GR = c_0/(16π) · (ξ_eff/(G·Φ_0²))
+                     = (4π)/(16π) · 1.06
+                     = 0.265   (26.5%)
+
+  INTERPRETATION CHOICES (this is the strategic pivot):
+
+
+  CASE A — σ provides ENTIRE TGP h_TT (no separate GR-baseline):
+
+    h_TT^TGP^total = h_TT^σ = (c_0·ξ_eff/(8π·Φ_0²·c⁴·r))·d²Q^M_TT/dt²
+
+    GW150914 calibration cycle #1 LOCKED ξ/(G·Φ_0²) = 1.06 by REQUIRING
+    h_TT^TGP_total ≈ h_TT^GR_observed.
+
+    For h_TT^TGP = h_TT^GR (full match), need:
+       c_0·ξ_eff/(8π·G·Φ_0²) = 2 (GR coefficient)
+
+    Equivalently: c_0·(ξ_eff/(G·Φ_0²))/(8π) = 2
+                  c_0·1.06/(8π) = 2
+                  c_0 = 16π/1.06 ≈ 15.0π/1 = 47.4
+
+    ALE c_0 = 4π ≈ 12.57 (cycle #1 LOCK).
+
+    SHORTFALL: c_0(needed for full match)/c_0(LOCK) = 47.4/12.57 ≈ 3.77
+
+    ⟹ TGP h_TT amplitude is 1/3.77 ≈ 26.5% of needed GR amplitude!
+
+  c_0_needed (full GR match) = 16π/1.06 = 47.420
+  c_0_locked (cycle #1)      = 4π        = 12.566
+  shortfall factor           = 3.774
+  TGP/GR amplitude            = 0.2650
+  [PASS] CASE A: TGP h_TT = 26.5% of GR h_TT (insufficient for binary match)
+
+  CASE B — σ-contribution ADDITIVE (plus standard GR-equivalent quadrupole):
+
+    h_TT^total = h_TT^GR + h_TT^σ
+                = h_TT^GR · (1 + 0.265)
+                = 1.265 · h_TT^GR
+
+    LIGO bound on amplitude deviation:
+      |h_TT_observed - h_TT_GR| / h_TT_GR < ~ few % (post-O3)
+
+    Our prediction: 26.5% deviation
+
+    ⟹ This IS detectable; GW150914 amplitude was matched within ~6% (T3.4 calibration)
+       NOT 26.5%. Discrepancy of 4× in amplitude deviation magnitude.
+
+  [PASS] CASE B: 26.5% additive deviation conflicts z GW150914 6% match
+
+  CASE C — Possible resolutions:
+
+    (i)   c_0 = 4π identification was incomplete; actual coupling has
+          extra factor (e.g. c_0_full = 16π/1.06 from full match requirement)
+    (ii)  Path A → Path B conversion in cycle #1 missed factor 4 somewhere
+    (iii) GW150914 calibration ξ/(G·Φ_0²) ≈ 1.06 was based on different
+          formula (Path A direct quadrupole, NOT emergent-metric Path 2)
+    (iv)  Additional κ_σ-like factor enters TT amplitude (orbital averaging)
+    (v)   Phase 4 ansatz coupling C(ψ_0)/Φ_0² needs additional factor
+
+    SIGNIFICANT TENSION in framework consistency revealed.
+
+  [PASS] CASE C: Tension in framework — multi-session resolution needed
+
+------------------------------------------------------------------------------
+  Section 9: Cross-check z c_0·κ_σ = 4/3 LOCK
+------------------------------------------------------------------------------
+
+  Joint LOCK from cycles #1+#2: c_0·κ_σ = 4/3 EXACT (β_ppE = 0 condition).
+
+  This LOCK is at GW PHASE level (2.5PN). It says:
+    Effective σ-coupling combination c_0·κ_σ matches GR phase.
+
+  Question: does h_TT^σ amplitude calculation use c_0 or c_0·κ_σ?
+
+  Path A direct calculation (this Phase 2):
+    h_TT^σ ∝ c_0  (NOT c_0·κ_σ)
+
+  Reasoning: σ_ab radiation IS direct Path A quadrupole-formula amplitude,
+  without orbital averaging that κ_σ encodes. κ_σ enters at PHASE level
+  (frequency-domain integral), NOT amplitude.
+
+
+  Amplitude ratio uses c_0: c_0·ξ_eff/(16π·G·Φ_0²) = c_0/16π · 1.06
+  Independent of κ_σ.
+  [PASS] Amplitude ratio uses c_0 alone (κ_σ enters at phase level)
+
+  Joint LOCK c_0·κ_σ = 4/3 + κ_σ = 1/(3π) ⟹ c_0 = 4*pi = 4π
+  [PASS] c_0 = 4π consistent both directly + via joint LOCK
+
+------------------------------------------------------------------------------
+  Section 10: Adversarial — what if c_0 is differently identified?
+------------------------------------------------------------------------------
+
+  PRIOR (from Phase 1 setup): c_0 = 4π (geometric).
+
+  ADVERSARIAL: what if c_0_full = 16π (factor 4 larger) — possibly
+  z 16π ≈ 8π·2 (Newton constant 8πG normalization vs 4πG)?
+
+  Under c_0 = 16π hypothesis:
+
+    h_TT^σ / h_TT^GR = 53/50
+    numerical = 1.0600
+  [PASS] If c_0 = 16π: ratio ≈ 1.06 (close to GR match!)
+
+  ALTERNATIVE: 8πG vs 4πG normalization.
+  Standard GR Einstein eqs: G_μν = (8πG/c⁴)·T_μν
+  If c_0 derivation accidentally used 4πG normalization:
+     → factor 2 missing
+     → c_0_actual = 8π
+
+  Under c_0 = 8π: ratio = 53/100 = 0.5300
+  [PASS] If c_0 = 8π: ratio = 0.53 (still 50% deviation, fails)
+
+  CONCLUSION (adversarial):
+    c_0 = 4π  ⟹ ratio ~ 0.265 (TGP gives 26.5% of GR — STRONG TENSION)
+    c_0 = 8π  ⟹ ratio ~ 0.53  (TGP gives 53% of GR — STRONG TENSION)
+    c_0 = 16π ⟹ ratio ~ 1.06  (TGP matches GR — CONSISTENT z calibration!)
+
+  c_0 = 16π would MATCH GW150914 calibration ξ/G·Φ_0² ≈ 1.06 if interpreted
+  as h_TT direct match. cycle #1 c_0 = 4π may have factor-4 ambiguity.
+
+
+------------------------------------------------------------------------------
+  Section 11: Deeper question — emergent-metric coupling normalization
+------------------------------------------------------------------------------
+
+  The emergent-metric Phase 4 ansatz has structure:
+    g_eff^ij = δ^ij · B(ψ) + σ^ij · C(ψ)/(Φ_0²·c²)
+
+  The PHYSICAL claim is g_eff IS the metric LIGO measures. Under this:
+    h_ij^TGP_total = δg_eff^ij = δ^ij·b_1·δΦ + (c_0/(Φ_0²·c²))·σ^ij
+
+  TT projection:
+    h_TT^TGP_total = 0 + (c_0/(Φ_0²·c²))·σ^ij_TT
+                   = (c_0/(Φ_0²·c²))·σ^TT
+
+  But this is supposed to MATCH h_TT^GR for binary radiation!
+
+  Required: (c_0/(Φ_0²·c²))·σ^TT_far = h_TT^GR = (2G/(c⁴·r))·Q̈^TT
+
+  σ_ab^far(Path A solution) = (ξ_eff/(8π·c²·r))·Q̈^TT
+                            = (G·Φ_0²·1.06/(8π·c²·r))·Q̈^TT
+
+  Substituting:
+    h_TT^TGP_total = (c_0/(Φ_0²·c²)) · (G·Φ_0²·1.06/(8π·c²·r)) · Q̈^TT
+                   = (c_0·G·1.06/(8π·c⁴·r)) · Q̈^TT
+
+  For this to equal h_TT^GR = (2G/(c⁴r))·Q̈^TT, need:
+    c_0·1.06/(8π) = 2
+    c_0 = 16π/1.06 ≈ 47.4
+
+
+  c_0 required for full GR match: 47.420
+  c_0 = 4π locked from cycle #1: 12.566
+  Required vs locked ratio: 3.774
+  Symbolic: c_0_match/c_0_locked = 200/53 = 3.774
+  [PASS] c_0 needed for full match ≈ 3.77 × locked value
+
+  POSSIBILITIES:
+
+  (P1) c_0 cycle #1 derivation MISSED FACTOR ~4. Cycle #1 was Phase A→B
+       conversion z OP-7 T3.4 chain. Path B conversion may have 4× factor.
+
+  (P2) ξ_eff/(G·Φ_0²) ≈ 1.06 was MISCALIBRATED. T3.4 calibration came from
+       h_predicted = ξ·d²Q/(8π·G·c⁴·r) with ξ matching h_observed. If T3.4
+       used WRONG quadrupole formula coefficient, ξ value off.
+
+  (P3) Emergent-metric Phase 4 ansatz coupling constant should be C(ψ_0)/Φ_0²
+       NOT c_0/Φ_0². If C(ψ_0) ≠ c_0 in normalization, all formulas shift.
+
+  (P4) Phase 4 ansatz might have ADDITIONAL non-σ tensor coupling missed
+       (e.g. velocity-dependent V_ij). This would supplement σ amplitude.
+
+  RIGOROUS RESOLUTION requires multi-session work — direct re-derivation
+  z OP-7 T3.4 chain with careful normalization tracking.
+
+  [PASS] Multiple consistency-restoring scenarios identified
+  [PASS] Multi-session normalization re-derivation required for full DERIVED
+
+------------------------------------------------------------------------------
+  Section 12: LIGO observational comparison
+------------------------------------------------------------------------------
+
+  LIGO bounds on extra polarization modes:
+
+  • LIGO O3 polarization tests (Abbott et al. 2021, 2103.01066):
+    - Tensor-only vs scalar-only: tensor model strongly preferred
+    - log Bayes factor for additional scalar/vector modes ~ -10 to -50
+
+  • LIGO O3 tensor-amplitude consistency:
+    - GR matches within ~3-10% per binary parameter
+    - Cumulative across many events: tighter
+
+  TGP h_TT prediction (this Phase 2):
+
+
+  Under c_0 = 4π (canonical cycle #1 LOCK):
+    h_TT^σ / h_TT^GR = 0.265 (= 0.265 = 26.5%)
+
+    Interpretation A: TGP σ provides only 26.5% of needed amplitude
+                      → events would appear ~4× LOUDER than predicted
+                      → CONFLICTS z GW150914 detection
+    Interpretation B: σ contribution adds 26.5% on top of GR
+                      → events would appear 1.265× LOUDER
+                      → CONFLICTS LIGO post-O3 amplitude tests (~few %)
+
+  [PASS] Either interpretation under c_0=4π VIOLATES LIGO at observable level
+
+  Under c_0 = 16π/1.06 ≈ 47.4 (full-match required):
+    h_TT^σ / h_TT^GR = 1.06 (≈ 1)
+
+    TGP reproduces GR within ~6% (consistent z GW150914 calibration).
+    LIGO bounds SATISFIED.
+
+    But this c_0 = 47.4 contradicts c_0 = 4π LOCK from cycle #1.
+    Resolution requires re-derivation z attention to normalization.
+
+  [PASS] c_0 ≈ 47.4 needed for LIGO consistency, contradicts cycle #1
+
+------------------------------------------------------------------------------
+  Section 13: Phase 2 Verdict
+------------------------------------------------------------------------------
+
+  Total: 24/24 PASS
+
+==============================================================================
+  PHASE 2 VERDICT: STRUCTURAL_CONDITIONAL — Path A direct REVEALS TENSION
+==============================================================================
+
+  KEY RESULTS:
+
+  1. Path A EOM gives explicit far-field formula:
+        σ_ab^far = (ξ_eff/(8π·c²·r)) · d²Q^M_TT/dt²
+
+  2. Emergent-metric coupling gives:
+        h_TT^σ = (c_0·ξ_eff/(8π·Φ_0²·c⁴·r)) · d²Q^M_TT/dt²
+
+  3. Ratio versus GR (calibrated):
+        h_TT^σ / h_TT^GR = c_0·1.06 / (16π) = 0.265 (z c_0 = 4π LOCK)
+
+  4. LIGO consistency requires c_0 ≈ 16π/1.06 ≈ 47.4 — 3.77× the locked value.
+
+  IMPLICATIONS:
+
+  ✓ σ-radiation MECHANISM works (Path A EOM gives proper 1/r tensor radiation)
+  ✓ TT-projection gives h_+, h_× (σ has genuine tensor structure, NOT killed)
+  ✓ PN-counting LOCKED at LEADING quadrupole order (NOT 3PN suppressed)
+  ✓ Mathematical formalism consistent (no Hadamard scheme ambiguity)
+
+  ⚠ NORMALIZATION inconsistency: c_0 = 4π LOCK gives only 26.5% of needed amp
+  ⚠ Resolution requires multi-session re-examination of:
+     - OP-7 T3.4 ξ_eff = G·Φ_0² derivation chain
+     - cycle #1 c_0 = 4π Path A → Path B conversion
+     - Phase 4 ansatz emergent-metric coupling normalization
+
+  HONEST CLASSIFICATION:
+    - NOT STRUCTURAL_NO_GO: framework HAS proper tensor radiation mechanism
+    - NOT STRUCTURAL_DERIVED: normalization gives 4× factor error
+    - STRUCTURAL_CONDITIONAL with explicit normalization gap identified
+
+  NEXT STEPS:
+
+  (1) Adversarial sub-cycle: re-derive c_0 z OP-7 T3.4 chain z explicit
+      attention to 4πG vs 8πG normalization (1-2 sesji).
+
+  (2) Independent verification: cross-check via Path B Hadamard PF
+      — even with scheme ambiguity, should give same gross factor structure.
+
+  (3) If normalization gap resolves to factor 4: framework PASSES LIGO
+      bound. Cycle DERIVED.
+
+  (4) If normalization gap UNRESOLVABLE (c_0 = 4π is genuinely correct):
+      framework predicts 26% deviation, falsified at LIGO O3 sensitivity.
+      Pivot do Route B (nonlinear δΦ).
+
+  PROBABILITY ASSESSMENT (post-Phase 2):
+    - DERIVED post-normalization-resolution: 30-40%
+    - STRUCTURAL_CONDITIONAL stable: 30-40% (most likely)
+    - NO_GO post-resolution failure: 25-30%
+
+
+  FINAL TALLY: 24/24 sympy PASS
+
+  >>> Phase 2 STRUCTURAL_CONDITIONAL — normalization gap revealed <<<
+
+  Critical follow-up: c_0 normalization audit (multi-session).

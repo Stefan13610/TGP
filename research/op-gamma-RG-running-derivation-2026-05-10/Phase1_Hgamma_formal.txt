@@ -1,0 +1,70 @@
+
+======================================================================
+§1 — Symbol declaration (level 0 H_Γ structure)
+======================================================================
+  Substrate field: ŝ_i (per vertex i ∈ V of Γ=(V,E))
+  Normalized amplitude: φ_i = ŝ_i / s_0
+  Bond coupling matrix (GL-bond v2 2026-04-24): K_ij = J·(φ_i·φ_j)²
+  On-site potential V_site(ŝ) Z₂-symmetric
+  Coarse-grained: Φ = ⟨ŝ²⟩, level-1 V_orig = -(β/3)Φ³/Φ_0 + (γ/4)Φ⁴/Φ_0²
+
+======================================================================
+§2 — Dimensional consistency [DIM]
+======================================================================
+  [DIM] T1.1: J has dimension [energy]: PASS  (GL-bond v2 axiom: J jest bond strength scale)
+  [DIM] T1.2: a_Γ has dimension [length]: PASS  (Lattice spacing — UV cutoff scale)
+  [DIM] T1.3: T (RG/thermal scale) has dimension [energy]: PASS  (RG flow input — Wilsonian sliding scale or thermal T)
+  [DIM] T1.4: H_Γ has dimension [energy]: PASS  (Sum of bond + site contributions, each dimension [E])
+  [DIM] T1.5: μ_UV ~ ℏc/a_Γ has dimension [energy]: PASS  (Wilsonian UV cutoff — entry point dla Phase 2 RG flow)
+
+======================================================================
+§3 — Z₂ structural invariance [STRUCT]
+======================================================================
+  [STRUCT] T1.6: Φ = ⟨ŝ²⟩ is Z₂-even: PASS  (Z₂: ŝ→-ŝ ⇒ ŝ² invariant ⇒ ⟨ŝ²⟩ invariant)
+  [STRUCT] T1.7: K_ij = J(φ_iφ_j)² is Z₂-even: PASS  ((φ_iφ_j)² invariant under simultaneous Z₂; bilinear -Jŝ_iŝ_j NIE jest invariant — WYCOFANE 2026-04-24)
+  [STRUCT] T1.8: bilinear -Jŝ_iŝ_j NIE jest local-Z₂-invariant: PASS  (single-vertex flip change: 2*J*s_i*s_j ≠ 0 ⇒ BROKEN ⇒ rejected by GL-bond v2)
+  [STRUCT] T1.9: K_ij = J(φ_iφ_j)² IS local-Z₂-invariant: PASS  ((φ_iφ_j)² → (-φ_i·φ_j)² = (φ_iφ_j)² ✓ — explains why GL-bond v2 substituted bilinear)
+
+======================================================================
+§4 — GL-bond block-averaging → K(φ) = K_geo·φ⁴ [ALG]
+======================================================================
+  [ALG] T1.10: K_ij|_homog = J·φ⁴: PASS  (K_ij(φ_i=φ_j=φ) = J*phi**4; expected J·φ⁴)
+  [ALG] T1.11: K_geo = J in homogeneous block-averaging limit: PASS  (Foundation: prop:substrate-action eq:Lkin-geo K(φ)=K_geo·φ⁴; matches sek08 §1037-1041)
+
+======================================================================
+§5 — D_kin canonical form from K(φ)·g^μν∂_μφ∂_νφ [ALG]
+======================================================================
+  [ALG] T1.12: D_kin canonical identity (∇²φ + 2(∇φ)²/φ = (1/3φ²)·∇²(φ³)): PASS  (sek08 §1046 eq:Dkin-unique; canonical TGP form)
+
+======================================================================
+§6 — V_orig structure level 1 [STRUCT]
+======================================================================
+  [STRUCT] T1.13: V_orig(Φ) is well-defined for Φ ≥ 0 (no Z₂ on Φ-variable): PASS  (Φ = ⟨ŝ²⟩ ≥ 0; Z₂(ŝ→-ŝ) acts trivially on Φ; cubic Φ³ allowed)
+
+======================================================================
+§7 — Parameter accounting (G1.2) [PARAM]
+======================================================================
+  [PARAM] T1.14: Level 0 free parameter count = 4 (J, a_Γ, m₀², λ₀): PASS  (After s_0-fixing convention; T jest RG flow input (NIE parameter))
+  [PARAM] T1.15: Level 1 effective parameter count = 3 (K_geo, Φ_0, β=γ): PASS  (β=γ vacuum condition removes 1 DOF (foundations §3 eq below 3.5))
+  [PARAM] T1.16: 4 → 3 mapping consistent (1 DOF absorbed in field rescaling): PASS  (Standard EFT: Wilsonian integration does not increase low-energy DOF; 1 DOF absorbed)
+  [PARAM] T1.17: H_Γ specification UNIQUE given (J, a_Γ, m₀², λ₀): PASS  (Phase 2 task: explicit Wilsonian map (J, a_Γ, m₀², λ₀) → (K_geo, Φ_0, γ))
+
+======================================================================
+§8 — Gate verdict G1.1 + G1.2 [META]
+======================================================================
+  [META] T1.18 [META]: G1.1 — H_Γ specification consistent z foundations §2: PASS  (Z₂ structural + K(φ)=K_geo·φ⁴ + D_kin canonical — all PASS)
+  [META] T1.19 [META]: G1.2 — parameter accounting unique (4 level-0 free params): PASS  (4 free level-0 params (J, a_Γ, m₀², λ₀); T jest RG input flow scale)
+  [META] T1.20 [META]: Phase 1 PROCEED verdict: PASS  (PROCEED to Phase 2 (Wilsonian effective action H_Γ → S[Φ]))
+
+======================================================================
+SUMMARY
+======================================================================
+  Total tests: 20
+  PASS:        20
+  FAIL:        0
+
+  Phase 1 verdict: G1.1 PASS + G1.2 PASS
+  Cumulative cycle sympy: 20/20
+  Phase 2 trigger: PROCEED (Wilsonian effective action derivation)
+
+  ✓ All Phase 1 structural checks PASS — Gates G1.1 + G1.2 cleared

@@ -1,0 +1,188 @@
+==============================================================================
+  Phase 2 sympy: RIGOROUS verification Phase 1 calibration
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: GR linearized GW derivation step-by-step
+------------------------------------------------------------------------------
+
+  STANDARD GR LINEARIZED DERIVATION (Wald 1984 §11.2, Maggiore 2008):
+
+  Step 1: Einstein equations linearized:
+    □ h̄_μν = -16πG T_μν          (Lorenz gauge)
+  where h̄_μν = h_μν - (1/2)η_μν·h_kk (trace-reversed)
+
+  Step 2: Source T_μν dla matter at rest (slow motion):
+    T_00 = ρ·c²
+    T_0i = ρ·c·v^i
+    T_ij = ρ·v^i v^j + p·δ_ij
+
+  Step 3: Solution z retarded Green function:
+    h̄_μν(x,t) = (4G/c⁴)·∫ d³y T_μν(y, t-|x-y|/c) / |x-y|
+
+  Step 4: Far-field expansion + multipole:
+    h̄_μν^far ~ (4G/c⁴r)·∫ d³y T_μν(y, t-r/c) + corrections
+
+  Step 5: For binary, dominant T_ij gives quadrupole h̄_ij:
+    h̄_ij^far ~ (2G/c⁴r) · d²Q_ij^M(t-r/c)/dt²
+  where Q_ij^M = Σ m_k x_k^i x_k^j is mass quadrupole.
+
+  Step 6: TT projection at observer:
+    h_TT^ij = P_ik·P_jl·(h̄^kl) - (1/2)·P_ij·P_kl·h̄^kl
+  where P_ij = δ_ij - n_i·n_j (transverse projector to direction n).
+
+  KEY: T_ij has GENUINE TENSOR structure (v^i·v^j ≠ isotropic).
+  ⟹ h̄_ij INHERITS tensor structure → TT projection NON-ZERO.
+
+  T_xx = ρ·v_x², T_yy = ρ·v_y², T_xy = ρ·v_x·v_y
+  Generally T_xx ≠ T_yy (anisotropic in v_i v_j)
+  [PASS] T_ij has genuine tensor structure (NOT isotropic)
+
+  ⟹ GR h̄_ij^far has tensor structure → h_TT^ij ≠ 0 ✓
+  [PASS] GR linearized gives h_TT^ij ≠ 0 (standard result)
+
+------------------------------------------------------------------------------
+  Section 2: TGP linearized GW — step-by-step parallel
+------------------------------------------------------------------------------
+
+  TGP LINEARIZED DERIVATION (parallel z GR):
+
+  Step 1: TGP Phi-EOM linearized:
+    □ δΦ - m_sp²·δΦ = -q·ρ_source / (K_1·Φ_0)
+  (NOT Einstein — different equation, source IS DIFFERENT)
+
+  Step 2: Source dla matter (TGP):
+    ρ_source = ρ (mass density, scalar)  [NOT T_μν tensor]
+    Note: TGP couples to scalar density ρ, NOT to full stress-energy T_μν.
+    This is FUNDAMENTAL difference from GR/scalar-tensor.
+
+  Step 3: Solution z retarded Green function:
+    δΦ(x,t) = -(q/(4π K_1 Φ_0))·∫ d³y ρ(y, t-|x-y|/c) / |x-y|
+
+  Step 4: Far-field + multipole:
+    δΦ^far ~ -(q/(4π K_1 Φ_0 r))·[M_total + (1/2c²)·d²Q^M_ij/dt²·n^i·n^j + ...]
+
+  Step 5: g_eff_ij from δΦ:
+    δg_eff_ij = δ_ij·b_1·(δΦ/Φ_0) + σ_ij·c_0/(Φ_0²·c²)
+
+  STEP 5 IS THE KEY DIFFERENCE FROM GR.
+  GR: h̄_ij has full tensor structure inherited from T_ij.
+  TGP: δg_eff_ij has δ_ij·SCALAR structure (linear in δΦ, no inherent tensor).
+
+  Step 6: TT projection at observer:
+    For δg_eff_ij = δ_ij·b_1·(δΦ/Φ_0):
+    P_TT^ij[δ_ij·X] = P_ij·X - (1/2)·P_ij·tr(P)·X
+    Where tr(P) = 3 - n_i·n^i = 3-1 = 2.
+    Hmm let me redo properly.
+
+
+  Compute TT-projection of h^ij = δ^ij·X (isotropic spatial):
+    Λ^ij_kl·δ^kl = P^i_k·P^j_l·δ^kl - (1/2)·P^ij·P^k_k
+
+    P^ik·P^jk = (δ^ik - n^i n^k)(δ^jk - n^j n^k)
+              = δ^ij - n^i n^j - n^i n^j + n^i n^j (n_k n^k)
+              = δ^ij - n^i n^j  (since n^k n^k = 1)
+              = P^ij
+
+    tr(P) = δ^k_k - n^k n_k = 3 - 1 = 2
+
+    h_TT^ij = P^ij·X - (1/2)·P^ij·2·X = P^ij·X - P^ij·X = 0
+
+  Sympy: tr(P) = -n_x**2 - n_y**2 - n_z**2 + 3
+  Sympy simplified: tr(P) = -n_x**2 - n_y**2 - n_z**2 + 3
+  [PASS] tr(P) = 3 - n^2 = 2 (unit vector)
+
+  Verify P² = P (projector identity, on unit sphere n²=1)
+  [PASS] P² = P (verified element-wise)
+
+  TT-projection coefficient on δ^ij: (1 - tr(P)/2) = 0
+  [PASS] TT projection of δ^ij·X = 0 for unit vector n
+
+  ⟹ RIGOROUS RESULT: h^ij = δ^ij·X has h_TT^ij = 0 IDENTICALLY for any X.
+
+  Phase 1 calibration analysis CONFIRMED: TGP linearized z δ_ij·b_1·δΦ
+  isotropic spatial structure has h_+ = h_× = 0 at observer.
+
+  Phase 3 cycle #3 verdict (R5 mitigated) was INCORRECT.
+
+  [PASS] Phase 1 calibration analysis RIGOROUSLY CONFIRMED
+
+------------------------------------------------------------------------------
+  Section 3: Where COULD TT structure come from in TGP linearized?
+------------------------------------------------------------------------------
+
+  Possible TT sources in TGP framework:
+
+  (A) σ-coupling at higher PN order: σ_ij ~ 1/r² far-field z linearized,
+      ALE at HIGHER PN orders, σ_ij from accelerating (∂Φ)² products may
+      have 1/r retarded contribution. Requires careful calculation.
+
+  (B) Tensor coupling at NONLINEAR level: nonlinear δΦ products may give
+      tensor structure missing at linear order.
+
+  (C) Phase 1 emergent-metric ansatz INCOMPLETE: ansatz
+      g_eff^ij = δ^ij·B(ψ) + σ^ij·C(ψ) misses tensor coupling that should
+      exist at LINEAR order. E.g., velocity-dependent term V_ij(ψ, ∂_tψ).
+
+  (D) Multi-Φ extension: S05 single-Φ may need extension dla genuine tensor d.o.f.
+
+  For LINEARIZED ANALYSIS as currently formulated, NO TT modes exist.
+  ⟹ R5 risk REAL at linearized level.
+
+  [PASS] R5 risk REAL at linearized — escape requires nonlinear or framework extension
+
+------------------------------------------------------------------------------
+  Section 4: Cycle #3 Phase 3 verdict status
+------------------------------------------------------------------------------
+
+  Verification VERDICT: Phase 1 calibration analysis is RIGOROUS and CORRECT.
+
+  Phase 3 cycle #3 verdict (R5 mitigated via multipole):
+  - Phase 3 §5 claimed: h_+ ~ d²(Q_xx - Q_yy)/dt² in TGP linearized
+  - REALITY: TGP linearized z δ_ij·b_1·δΦ ansatz gives h_TT^ij = 0 IDENTICALLY
+    (rigorous TT-projection of δ_ij·X = 0)
+  - Phase 3 §3 sphere-average argument was about TOTAL POWER, NIE about
+    h_S(observer) — different quantity
+
+  ⟹ Cycle #3 Phase 3 verdict was INCORRECT.
+  ⟹ Cycle #3 should be re-classified STRUCTURAL_CONDITIONAL (z R5 risk active).
+
+  IMPLICATIONS:
+  - emergent-metric framework Phase 4 Path 2: STILL VALID for 1PN/2PN tests
+  - emergent-metric framework Phase 4 Path 2: THREATENED at GW polarization level
+  - Multi-session resolution required (escape routes A-D above)
+
+  TGP_FOUNDATIONS §3.6.10.4 needs amendment.
+  PREDICTIONS_REGISTRY needs amendment.
+
+  [PASS] Cycle #3 Phase 3 verdict identified as INCORRECT (rigorously)
+
+------------------------------------------------------------------------------
+  Section 5: Phase 2 calibration verdict
+------------------------------------------------------------------------------
+
+  Total: 8/8 PASS
+
+  >>> Phase 2 RIGOROUS VERIFICATION: Phase 1 analysis CORRECT <<<
+
+  KEY RESULTS:
+  - Linearized GR: T_ij has genuine tensor structure → h_TT^ij ≠ 0 ✓
+  - Linearized TGP: source coupling ρ·δΦ scalar only at linear order
+  - TGP δg_eff_ij = δ_ij·b_1·δΦ → h_TT^ij = 0 IDENTICALLY (rigorous)
+  - σ-coupling 1/r² near-field: no radiative TT at linear
+  - Phase 1 calibration analysis CONFIRMED
+  - Phase 3 cycle #3 verdict was INCORRECT
+
+  STATUS dla cycle #3:
+  - DOWNGRADE recommended: STRUCTURAL DERIVED → STRUCTURAL_CONDITIONAL
+  - R5 risk RESTORED at linearized level
+  - Multi-session escape routes (A-D in §3) needed dla resolution
+
+  STATUS dla calibration cycle (this):
+  - Phase 1: identified subtle Phase 3 cycle #3 error
+  - Phase 2 (this): rigorous verification CONFIRMS Phase 1 analysis
+  - Original 4√π factor question: STILL UNRESOLVED (deeper issue exposed)
+
+  CONCLUSION: cycle calibration zaczął jako quantitative O(1) calibration,
+  okazał się że linearized framework NIE produces TT modes at all.
+  Calibration question moot until escape route identified.

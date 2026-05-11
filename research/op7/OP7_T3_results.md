@@ -1,7 +1,47 @@
 # OP-7 / T3 — Dynamika σ_ab: derivacja EOM, m_σ, ghost analysis, ξ coupling
 
-**Data:** 2026-04-25
-**Status:** ⚠️ STRUCTURAL POSITIVE z OPEN TENSION (Φ₀/m_σ)
+**Data:** 2026-04-25 (AMENDED 2026-05-09 — T3.4 ξ_eff factor-4 correction)
+**Status:** ⚠️ STRUCTURAL POSITIVE z OPEN TENSION (Φ₀/m_σ) + **T3.4 AMENDMENT NOTICE (2026-05-09)**
+
+> **AMENDMENT NOTICE 2026-05-09:**
+>
+> T3.4 result `ξ_eff = G·Φ_0²` is **AMENDED** to `ξ_eff = 4·G·Φ_0²` per
+> [[../op-T34-normalization-amendment-2026-05-09/Phase_FINAL_close.md]]
+> (17/17 sympy PASS, clean first-principles derivation).
+>
+> **Source of error:** OP-7 T3.4 sympy script `op7_t3_4_xi_coupling.py` had
+> compound factor-4 algebraic gap:
+> - **Gap 1** (line 132): missing PN-(1/2) factor from Maggiore Eq. 3.81
+>   (`σ_far ∝ ξ/(4π) ` should be `ξ/(8π)`)
+> - **Gap 2** (line 140): algebraic mismatch z line 139 (`Λ_0·ξ = 4πG`
+>   should be `8πG` to equate z stated h_GR formula `2G/c⁴·Q̈/r`)
+>
+> **Compound:** factor 2 × factor 2 = factor 4 error in stated ξ_eff.
+>
+> **Corrected first-principles:** matching condition `c_0·ξ_eff = 16π·G·Φ_0²`
+> from Path A EOM + retarded Green + PN identity + emergent-metric coupling.
+> Z `c_0 = 4π` LOCK (joint cycle): `ξ_eff = 4·G·Φ_0²`.
+>
+> **Implications:**
+> - h_TT^σ amplitude post-amendment EXACTLY matches GR mass quadrupole
+> - LIGO O3 amplitude + polarization tests PASSED post-amendment
+> - R5 risk RESOLVED post-amendment (was active)
+> - 6/6 P-requirements RESOLVED (was 5/6)
+>
+> **Preserved LOCKS** (NIE affected by amendment):
+> - c_0 = 4π (cycle #1)
+> - κ_σ = 1/(3π) (cycle #2)
+> - c_0·κ_σ = 4/3 EXACT (joint LOCK)
+> - β_ppE = 0 (Phase 4 emergent-metric)
+> - 1PN/2PN/2.5PN tests
+> - Path B audit T-PB.1-T-PB.5 (M² = 2m_s², ghost-free)
+>
+> **Cycle history:** detected via op-sigma-3PN-radiative cycle Phase 2 +
+> adversarial verification; resolved via op-T34-normalization-amendment cycle.
+>
+> **Adversarial protocol vindicated** — second time this protocol prevented
+> framework over-claim (first: op-h-TT-calibration cycle's catch of Phase 3
+> cycle #3 "h_+ ≠ 0" error).
 **Pliki wykonawcze:**
 - `op7_t3_sigma_dynamics.py` (T3.1)
 - `op7_t3_2_m_sigma_scale.py` (T3.2)
@@ -105,9 +145,11 @@ Wszystkie współczynniki **dodatnie** → ghost-free.
 
 ### Część T3.4 — Sprzężenie ξ + GW150914 matching
 
-**Strukturalna identyfikacja:** Λ₀ × ξ = 4πG.
-- Z natural choice Λ₀ = 1/Φ₀² (canonical metric coupling): ξ = G·Φ₀²
-- Razem: TGP daje GR-equivalent quadrupole formula.
+**Strukturalna identyfikacja (AMENDED 2026-05-09):** Λ₀ × ξ_eff = 16π·G·Φ_0² (gdy c_0 wbudowane w Λ_0)
+- Z c_0 = 4π LOCK (joint cycle) i Λ₀ ↔ c_0/Φ_0² emergent-metric coupling: **ξ_eff = 4·G·Φ_0²**
+- Razem: TGP daje **EXACT** GR-equivalent quadrupole formula.
+
+**ORIGINAL TEXT (NOW AMENDED, see notice §0):** "Λ₀ × ξ = 4πG. Z natural choice Λ₀ = 1/Φ₀² (canonical metric coupling): ξ = G·Φ₀²" — zawiera factor-4 algebraiczny gap (Gap 1 + Gap 2 z amendment cycle).
 
 **Empirical matching GW150914:**
 - Q̈ ~ 1.44e+48 J (binary 30+30 M_sun, a=350km, f=100Hz)

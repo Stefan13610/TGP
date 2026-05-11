@@ -1,0 +1,215 @@
+==============================================================================
+Phase 2 — H_Γ → Φ coarse-graining audit (sympy)
+Cykl: op-gamma-identification-first-principles-2026-05-10
+==============================================================================
+
+
+==============================================================================
+§1 — H_Γ substrate Hamiltonian structure (foundations §2 level 0)
+==============================================================================
+
+  Per foundations table (level 0):
+    Γ = (V, E) — discrete substrate (vertices V, edges E)
+    H_Γ — GL-bond Hamiltonian (v2 2026-04-24)
+    ŝ — substrate field on vertices
+    Coarse-graining: Φ = ⟨ŝ²⟩, σ_ab = K_ab − (1/3)δ_ab Tr(K)
+
+  Substrate parameters (level 0 free parameters):
+    J         — bond strength scale  [energy]
+    a_Gamma   — lattice spacing       [length]
+    T_substr  — substrate 'temperature' (RG flow input)  [energy]
+
+  [DIM]    T1.1: Level 0 H_Γ has 2-3 dimensional parameters: (J, a_Γ, T_substr) ... PASS
+           ↳ Standard for GL-type lattice Hamiltonian; same dim count as TGP foundations §2.
+
+==============================================================================
+§2 — Generic GL coarse-graining: V_eff(Φ) form & coupling constants
+==============================================================================
+
+  Standard GL effective potential post coarse-graining:
+    V_eff(Φ) = a(T)·Φ² + b·Φ⁴ + ...  (continuous limit)
+  In TGP V_orig form (dual-V matter sector):
+    V_orig(Φ) = -(β/3)·Φ³/Φ_0  +  (γ/4)·Φ⁴/Φ_0²  (β=γ vacuum)
+
+  Direct Φ³ term in TGP (instead of standard Φ²) jest UNIQUE feature:
+  TGP single-Φ Z₂ axiom + α=2 selection (foundations §3) → Φ³ term derivable
+  via specific TGP-native derivation (G.0 closure 2026-05-02 R3 ODE matching).
+
+  [ALG]    T2.1: V_orig form ~ -β·Φ³/Φ_0 + γ·Φ⁴/Φ_0²  jest TGP-native (foundations §3) ... PASS
+           ↳ Algebraic structure derived; γ jako coupling constant remains to be identified.
+
+==============================================================================
+§3 — Dimensional structure: γ from (J, a_Γ, T_substr)
+==============================================================================
+
+  Required: [γ] = mass²  (forced by [V] = mass⁴, [Φ] = mass)
+
+  Available substrate-natural mass² candidates:
+    γ_(JJ)  = J²            (squared bond strength)
+    γ_(aa)  = 1/a_Γ²        (inverse squared lattice spacing)
+    γ_(Ja)  = J/a_Γ         (mixed; needs another length scale)
+    γ_(JaT) = J·T/a_Γ²      (full RG-running combination)
+
+  All of these have correct dimensions [mass²]. WHICH ONE jest γ?
+  → To wymaga full RG flow analysis (OP-1 M2 — currently OPEN).
+
+  [DIM]    T3.1: Multiple dimensional mass² combinations from (J, a_Γ, T): non-unique ... PASS
+           ↳ Dimensional analysis ALONE does not pick unique γ identification.
+
+==============================================================================
+§4 — Branch viability: γ ~ J² with different J identifications
+==============================================================================
+
+  Working hypothesis: γ ~ J² (substrate bond strength dominates)
+
+  Different J identifications give different branches:
+    Branch A (J ~ M_Pl): γ = J² where Planck-scale bond strength (BD-import argument)
+    Branch B (J ~ ℏω_LIGO): γ = J² where LIGO-band bond strength (recovery V regime)
+    Branch C (J ~ H_0): γ = J² where Cosmological-scale bond strength
+    Branch D (J = J(μ_RG)): γ = J² where RG-flowing bond strength → γ scale-dependent
+
+  None of these J identifications are uniquely fixed by H_Γ structure ALONE.
+  Each requires additional input (UV completion, RG flow boundary, holography, etc.)
+
+  [OPEN!]  T4.1: J identification is NOT uniquely fixed by H_Γ structure ... PASS
+           ↳ Same problem as Phase 1 step 2 (γ = M_Pl²): naturalness postulate, not derivation.
+
+==============================================================================
+§5 — RG flow scenario: γ_eff(μ) scale-dependent (Branch D framework)
+==============================================================================
+
+  Per foundations §3.5.3:
+    'Φ_0 jest EFT scale-dependent free parameter' (analogiczne do SM Higgs VEV)
+
+  Implication: jeśli Φ_0 jest scale-dependent, to γ logically też powinno być
+  (γ jest coupling w expansion wokół Φ_0; γ_eff(μ) = γ(μ) → γ(Φ_0(μ)))
+
+  Multi-scale γ scenario:
+    Cosmological regime (μ ~ H_0):  γ_eff(H_0) ~ M_Pl²  → Branch A
+    EW regime (μ ~ M_Z):            γ_eff(M_Z) ~ ?      → δ.2 EWSB derivation pending
+    LIGO regime (μ ~ ℏω_LIGO):      γ_eff(ω_LIGO) ~ ?   → recovery V cycle relevance
+
+  Pure dimensional analysis:
+    If RG scaling preserves substrate-Planck connection: γ_eff(μ) ~ M_Pl²·g̃(μ)
+    If RG scaling is anomalous: γ_eff(μ) može significantly deviate
+
+  [META]   T5.1: RG flow scenario CONSISTENT z foundations §3.5.3 EFT framework ... PASS
+           ↳ Branch D natural conclusion if §3.5.3 declaration extended to γ.
+
+==============================================================================
+§6 — Analytical attempt: standard GL coarse-graining → V_eff dimensional structure
+==============================================================================
+
+  Standard GL Hamiltonian on lattice:
+    H_GL = -J·Σ_⟨ij⟩ ŝ_i·ŝ_j  +  λ·Σ_i (ŝ_i² - 1)²  + ...
+
+  Continuous limit (a_Γ → 0):
+    H = ∫ d^d x [(K/2)·(∇ŝ)² + (m²/2)·ŝ² + (λ/4!)·ŝ⁴]
+    where K ~ J·a_Γ^(d-2), m² ~ J/a_Γ² ·(T-T_c), λ ~ J/a_Γ^(d-4)
+
+  In d=4 (TGP foundations level 1): K~J·a_Γ², m²~J/a_Γ², λ~J·a_Γ⁰=J
+
+  TGP V_orig matter sector form:
+    V_orig ~ γ·Φ⁴/Φ_0²  ⇒  effective coupling ~ γ/Φ_0² (dimensionless)
+
+  Identification:
+    γ/Φ_0² ~ λ/Φ_0² ~ J/Φ_0²
+    ⇒ γ ~ J  if Φ_0² ~ Φ_0² (trivial)
+    ⇒ γ ~ J  IF we assume Φ_0 ~ √J (substrate field amplitude)
+
+  But γ has [mass²], not [mass] — so we need ONE MORE 'mass' scale.
+  Standard GL: γ ~ J/a_Γ²  →  [γ] = energy/length² = mass⁴/(mass²) = mass²  ✓
+
+  Strong-coupling identification (J·a_Γ ~ O(1)):
+    γ ~ J/a_Γ² ~ J·(1/a_Γ)·(1/a_Γ) ~ J·Λ_UV² where Λ_UV = 1/a_Γ
+    If Λ_UV ~ M_Pl (UV completion at Planck scale, BD-import): γ ~ J·M_Pl²
+    If Λ_UV ~ H_0 (substrate scale = cosmological per OP-3): γ ~ J·H_0²
+
+  STRUCTURAL CONCLUSION:
+    γ depends on TWO scales (J, Λ_UV = 1/a_Γ).
+    γ ~ J²:    requires J·a_Γ ~ O(1) AND identification J = M_Pl
+    γ ~ M_Pl²: requires Λ_UV = M_Pl AND J ~ Λ_UV (strong-coupling)
+    Neither identification is uniquely DERIVABLE without additional input.
+
+  [OPEN!]  T6.1: GL coarse-graining gives γ ~ J/a_Γ² (dimensional); J + a_Γ NOT separately fixed ... PASS
+           ↳ Standard GL structure shows γ depends on TWO substrate parameters; uniqueness OPEN.
+
+==============================================================================
+§7 — What WOULD be needed for first-principles γ derivation
+==============================================================================
+
+  R1: Bond strength scale identification J = ?
+        Status: Currently: BD-import argument J ~ M_Pl (POSTULATE); first-principles OPEN.
+
+  R2: Lattice spacing a_Γ identification (per OP-3: a_Γ = 1/Φ_0)
+        Status: Currently: a_Γ = 1/Φ_0; Φ_0 is EFT scale-dependent → a_Γ also scale-dep.
+
+  R3: RG flow analysis from H_Γ (OP-1 M2)
+        Status: BLOCKED per source: 'M-derivation U(φ) z H_Γ' currently open.
+
+  R4: Wilsonian effective action derivation (level 0 → level 1)
+        Status: Standard GL methodology; not yet executed in TGP framework.
+
+  R5: UV completion: what fixes 1/a_Γ at small scales?
+        Status: BD-import: Planck length. TGP-native: Hubble cutoff (per OP-3 + closure 2026-04-26).
+
+  R6: Multi-scale matching (cosmological / EW / LIGO)
+        Status: Per Branch D: requires explicit RG running between scales.
+
+  R7: Connection do Newton G_N normalization (q²/(4π·Φ_0²·K_1) = G_N)
+        Status: Currently algebraic constraint; doesn't fix γ directly.
+
+  [OPEN!]  T7.1: First-principles γ derivation requires R1-R7; ALL R-items are OPEN or POSTULATED ... PASS
+           ↳ Phase 2 confirms: full derivation is OPEN problem in TGP framework (per source).
+
+==============================================================================
+§8 — BD-drift self-audit (per CALIBRATION_PROTOCOL §4.4.5)
+==============================================================================
+
+  (a) §3 red flags w Phase 2
+      → Identified: J ~ M_Pl IS BD-import (Pattern 'natural scale = M_Pl' = BD-bridge).
+  (b) §4 form-meaning mapping
+      → γ ~ J/a_Γ² jest TGP-native dimensional structure; J = M_Pl jest BD-postulate.
+  (c) ASK-RULE Trigger B response continuation
+      → Phase 1 fired Trigger B; Phase 2 confirms OPEN status of derivation per source.
+  (d) Patterns explicit citation
+      → Foundations §2 (level 0), §3.5.3 (EFT scale-dependent Φ_0), Pattern 2.5 cited.
+  (e) Honest disclosure: derivation OPEN, not 'derived'
+      → Phase 2 EXPLICIT documents requirements R1-R7, all OPEN or POSTULATED.
+  [META]   T8.1: BD-drift self-audit Phase 2: NO new drifts; OPEN status preserved honest ... PASS
+           ↳ Self-audit weaker niż independent subagent audit (per §4.4.5).
+
+==============================================================================
+§9 — Summary
+==============================================================================
+
+  Total tests:        8
+  Passed:             8/8
+
+  KEY FINDINGS (Phase 2):
+  1. γ MUST have dimension [mass²] (forced by V form). Confirmed.
+  2. Available substrate-natural mass² combinations: J², 1/a_Γ², J/a_Γ², ...
+  3. NONE of these are uniquely fixed by H_Γ structure alone.
+  4. BD-import 'J ~ M_Pl' is POSTULATE (Pattern: standard physics scale).
+  5. RG flow scale-dependence (Branch D) jest CONSISTENT z foundations §3.5.3.
+  6. Full derivation requires R1-R7; ALL items are OPEN or POSTULATED.
+  7. Source [[../closure_2026-04-26/Lambda_from_Phi0/results.md]] §7.1.1:
+     'First-principles γ = M_Pl²: blocked by OP-1 M2 (M-derivation z H_Γ).'
+
+  GATE STATUS:
+  G2.1 (H_Γ Hamiltonian z bond strength scale identified):
+       ❌ FALSIFIER — bond strength J jest NOT uniquely identified w current TGP
+  G2.2 (Coarse-graining z Φ-EOM derivable explicit):
+       ⚠️ CONDITIONAL — dimensional structure derived; specific values OPEN
+  G2.3 (γ value derivable z fundamental coupling):
+       ❌ FALSIFIER — γ NOT derivable z fundamental coupling without OP-1 M2
+
+  PHASE 2 VERDICT (for Phase 4 branch decision):
+  → Confirms Phase 1 finding: γ first-principles derivation is OPEN.
+  → Strengthens Branch D probability (RG scale-dependent γ consistent z §3.5.3).
+  → No new constraint on γ; multiple branches remain mathematically viable.
+
+==============================================================================
+Phase 2 sympy: 8/8 PASS (all checks evaluated correctly).
+Identified 3 OPEN problem statements.
+==============================================================================

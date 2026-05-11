@@ -1,0 +1,249 @@
+==============================================================================
+Phase 3 — Newton G_N + joint LOCKs cross-check on γ identification
+Cykl: op-gamma-identification-first-principles-2026-05-10
+==============================================================================
+
+
+==============================================================================
+§1 — Inherited LOCK enumeration (gravitational sector)
+==============================================================================
+
+  L1: G_eff = q²/(4π·Φ_0²·K_1) = G_N
+       [LOCK] Phase 5 emergent-metric (BD-form / TGP-meaning)
+  L2: ξ_eff = 4·G·Φ_0²
+       [LOCK] op-T34-normalization-amendment (TGP-native LIVE)
+  L3: c_0 = 4π
+       [LOCK] op-c0-derivation-from-substrate (TGP-native LIVE heuristic)
+  L4: κ_σ = 1/(3π)
+       [LOCK] op-kappa-sigma-2body-PN (TGP-native LIVE heuristic)
+  L5: |γ_PPN - 1| ≤ 2.3·10⁻⁵ (Cassini)
+       [OBS] Observational anchor, automatic in M9.1'' β=γ=1
+  L6: γ·Φ_eq² = 12·ρ_vac,obs (T-Λ)
+       [LOCK] Phase 1 audit — algebraic given Φ_eq=H_0 + γ=M_Pl²
+  L7: m_C² = γ (Phase 5 erratum)
+       [LOCK] Phase 5 erratum 2026-05-09 (algebraic)
+  L8: m_ψ² = (4/3)·γ (V_M9.1'' at ψ=2/3)
+       [LOCK] mPhi-verification 2026-05-09 (algebraic)
+
+  [META]   T1.1: 8 inherited LOCKs enumerated (L1-L8) ... PASS
+           ↳ Joint analysis evaluates whether these collectively pin γ uniquely.
+
+==============================================================================
+§2 — Free parameter accounting in the joint LOCK system
+==============================================================================
+
+  Free parameters: ['γ', 'Φ_0', 'Φ_eq', 'q', 'K_1', 'K_geo']  (6 parameters)
+
+  External anchors (observational, NIE derived):
+    M_Pl = 1.22·10²⁸ eV
+    H_0  = 1.44·10⁻³³ eV
+    G_N  = (1/M_Pl)² in natural units
+    ρ_vac,obs = 2.52·10⁻¹¹ eV⁴
+    Cassini bound (|γ_PPN-1| ≤ 2.3·10⁻⁵)
+
+  Substantive equations (constraining free params):
+    L1: q²/(4π·Φ_0²·K_1) = G_N        [3 params: q, Φ_0, K_1]
+    L2: ξ_eff = 4·G·Φ_0²                [defines ξ_eff in Φ_0; Φ_0 appears alone]
+    L6: γ·Φ_eq² = 12·ρ_vac,obs          [2 params: γ, Φ_eq]
+
+  Definitional (NOT constraints on free params, define dependent quantities):
+    L7: m_C² = γ                       [defines m_C from γ]
+    L8: m_ψ² = (4/3)·γ                 [defines m_ψ from γ]
+    L3, L4: pure numerics             [no free param involvement]
+
+  Substantive equations:  L1 + L6 = 2
+  Free parameters:        6 (γ, Φ_0, Φ_eq, q, K_1, K_geo)
+  Free dimensions:        6 - 2 = 4
+
+  → System jest UNDERDETERMINED by 4 dimensions.
+  [META]   T2.1: Joint LOCK system has 6 free params, 2 substantive equations: 4-D undetermined ... PASS
+           ↳ Newton + T-Λ together leave 4-dimensional family. γ NIE pinned uniquely.
+
+==============================================================================
+§3 — Algebraic structure: solving for γ in joint system
+==============================================================================
+
+  From L6: γ = 12·ρ_vac/Phi_eq²
+           = 12*rho_vac/Phi_eq**2
+
+  From L1: q² = 4π·Phi_0²·K_1·G_N → constraint on (q, Phi_0, K_1) but NOT γ
+
+  Combined: γ depends on Phi_eq via L6 alone.
+  Phi_eq jest STILL free parameter (not fixed by L1).
+
+  [ALG]    T3.1: Symbolic solve: γ depends on Phi_eq (via L6); Phi_eq nie fixed by L1 ... PASS
+           ↳ Newton constraint L1 doesn't help fix γ — independent dimension.
+
+==============================================================================
+§4 — Constraint refinement: czy Phi_0 = Phi_eq?
+==============================================================================
+
+  Common implicit assumption: Phi_eq = Phi_0 (single field VEV in matter sector).
+  IS THIS DERIVED OR ASSUMED?
+
+  V_orig(Φ) = -(β/3)·Φ³/Φ_0 + (γ/4)·Φ⁴/Φ_0²
+  V_orig'(Φ) = -β·Φ²/Φ_0 + γ·Φ³/Φ_0²
+  V_orig'(Φ=Phi_0) = -β·Phi_0 + γ·Phi_0 = (γ-β)·Phi_0
+
+  Vacuum condition V'(Phi_eq) = 0 z β=γ:
+    V'(Φ) = (γ/Φ_0²)·Φ²·(Φ - Φ_0)  ⇒  vacua at Φ=0 (degenerate) and Φ=Φ_0
+
+  → Yes: Phi_eq = Phi_0 jest DERIVED from V_orig form + β=γ vacuum condition.
+    (Algebraic, NOT additional postulate.)
+
+  Sympy verification: V'(Φ) = 0 with β=γ:
+    Roots: [Phi_0]
+    Non-trivial vacuum: Φ = [Phi_0]
+
+  [ALG]    T4.1: Phi_eq = Phi_0 jest DERIVED from V_orig + β=γ vacuum (algebraic) ... PASS
+           ↳ Sympy: vacuum at Φ=Phi_0 algebraic, NOT additional postulate.
+  IMPLICATION: System reduces to 5 free params (γ, Φ_0=Φ_eq, q, K_1, K_geo)
+  with 2 substantive equations:
+    L1: q²/(4π·Φ_0²·K_1) = G_N
+    L6: γ·Φ_0² = 12·ρ_vac,obs    [now Phi_eq=Phi_0 substitution]
+
+  Free dimensions: 5 - 2 = 3
+
+  CRUCIAL: With Phi_eq=Phi_0, T-Λ becomes:
+    γ = 12·ρ_vac / Φ_0²
+
+  → Φ_0 IDENTIFICATION ⟺ γ IDENTIFICATION (one-to-one map).
+
+  [ALG]    T4.2: Phi_eq=Phi_0 ⇒ γ = 12·ρ_vac/Φ_0² (one-to-one map: Φ_0 ↔ γ) ... PASS
+           ↳ γ now uniquely tied to Φ_0; identifying Φ_0 = identifying γ.
+
+==============================================================================
+§5 — Per-Branch consistency: Phi_0 → γ → Newton check (q²/K_1 ratio)
+==============================================================================
+
+  Methodology: for each Phi_0 hypothesis, compute γ via L6, then
+  check Newton constraint L1 is solvable z natural q, K_1.
+
+  Scenario             Phi_0 (eV)      γ = 12ρ/Φ₀² (eV²)         Branch
+  ------------------------------------------------------------------------------
+  Phi_0 = H_0 (cosmological) 1.44e-33        1.457e+56                 → Branch A-like (γ ~ M_Pl²)
+  Phi_0 = v_EW = 246 GeV (EW) 2.46e+11        4.993e-33                 → Branch A-like (γ ~ M_Pl²)
+  Phi_0 = M_Pl (Planck — original BD) 1.22e+28        2.030e-66                 → Branch A-like (γ ~ M_Pl²)
+  Phi_0 = ℏω_LIGO = 4·10⁻¹³ eV (LIGO) 4.00e-13        1.888e+15                 → Branch A-like (γ ~ M_Pl²)
+  Phi_0 = 1 meV (DE scale) 1.00e-03        3.022e-04                 → Branch A-like (γ ~ M_Pl²)
+
+  [DIM]    T5.1: Per-Phi_0 scenarios give different γ values via L6 (T-Λ closure) ... PASS
+           ↳ Each Phi_0 hypothesis maps uniquely to γ via L6. Φ_0 choice = γ choice.
+
+  Newton constraint: q²/K_1 = 4π·Phi_0²·G_N = 4π·Phi_0²/M_Pl²
+  Per scenario:
+    Phi_0 = H_0 (cosmological)  q²/K_1 = 1.751e-121
+    Phi_0 = v_EW = 246 GeV (EW)  q²/K_1 = 5.109e-33
+    Phi_0 = M_Pl (Planck — original BD)  q²/K_1 = 1.257e+01
+    Phi_0 = ℏω_LIGO = 4·10⁻¹³ eV (LIGO)  q²/K_1 = 1.351e-80
+    Phi_0 = 1 meV (DE scale)  q²/K_1 = 8.443e-62
+
+  Each scenario admits SOME (q, K_1) z q²/K_1 satisfying Newton — Newton
+  jest 1-D constraint in (q, K_1) plane GIVEN any Phi_0. So Newton
+  constraint NIE filters Phi_0 (i thus γ) — Newton jest INDEPENDENT.
+
+  [META]   T5.2: Newton L1 admits solutions for ALL Phi_0 scenarios (no branch elimination) ... PASS
+           ↳ Newton constraint is INDEPENDENT of γ — joint LOCKs underdetermined.
+
+==============================================================================
+§6 — Substrate compositeness: q, K_1 first-principles status
+==============================================================================
+
+  Per foundations + Phase 5 results:
+    q = source coupling charge (per L_mat = -(q/Phi_0)·φ·ρ)
+    K_1 = leading kinetic prefactor (from K(φ) = K_geo·φ⁴ at α=2)
+
+  q first-principles status: BLOCKED — q jest free coupling, q value not derived
+  K_1 first-principles status: BLOCKED — K_1 = K_geo·1 (at φ=Phi_0, ψ=1) but K_geo OPEN
+
+  K_geo derivation: per chain, K_geo ~ M_Pl² (BD-import again — same pattern as γ!)
+
+  [OPEN!]  T6.1: q, K_1 are NOT first-principles fixed in current TGP framework ... PASS
+           ↳ Same OPEN status as γ. BD-import of M_Pl² for K_geo same suspect Pattern.
+
+  CRUCIAL META OBSERVATION:
+    Phase 5 emergent-metric LOCK G_eff = q²/(4π·Phi_0²·K_1) = G_N
+    If K_geo ~ M_Pl² is BD-import (same pattern as γ ~ M_Pl²),
+    then this LOCK has MULTIPLE simultaneous BD-bridges:
+      γ ~ M_Pl² (Phase 1 audit confirmed)
+      K_geo ~ M_Pl² (LOCK that supports Phase 5 G_eff calculation)
+
+    → Phase 5 LOCK formally listed as 'BD-form / TGP-meaning per §4 F1'
+       — this annotation EXPLICIT acknowledges BD-form nature.
+
+  [META]   T6.2: Phase 5 G_eff LOCK explicitly tagged 'BD-form / TGP-meaning' (NOT TGP-native) ... PASS
+           ↳ Annotation honest; multiple BD-bridges simultaneous in Newton G_N derivation.
+
+==============================================================================
+§7 — Overdetermination assessment: czy joint LOCKs reveal conflict?
+==============================================================================
+
+  Pre-declared falsifier (G3.1 'overdetermined → conflict z γ identification')
+  was hypothesis: jeśli T-Λ + Newton + Phase 5 + Cassini etc. all together
+  could NOT be simultaneously satisfied for some Branch.
+
+  Phase 3 finding:
+  - 8 LOCKs listed; only 2 are substantive equations (L1, L6) on free params
+  - L7, L8 define dependent quantities (m_C, m_ψ from γ)
+  - L3, L4 are pure numerics (no free param)
+  - L5 (Cassini) automatic in M9.1'' β=γ=1 framework
+  - L2 defines ξ_eff (no constraint on free params besides Phi_0)
+
+  → Joint system jest NOT overdetermined; jest UNDERDETERMINED.
+  → No conflict between branches; multiple branches mathematically consistent.
+
+  [META]   T7.1: Joint LOCK system jest UNDERDETERMINED (3-D free), NIE overdetermined ... PASS
+           ↳ G3.1 falsifier (overdetermined) DOES NOT trigger. G3.3 (multi-branch ambiguity) confirmed.
+
+==============================================================================
+§8 — BD-drift self-audit (per CALIBRATION_PROTOCOL §4.4.5)
+==============================================================================
+
+  (a) §3 red flags w Phase 3
+      → Identified: Phase 5 G_eff LOCK has MULTIPLE BD-bridges (γ ~ M_Pl² + K_geo ~ M_Pl²).
+  (b) §4 form-meaning mapping
+      → Phase 5 LOCK formally tagged 'BD-form / TGP-meaning per §4 F1' — honest annotation.
+  (c) ASK-RULE Trigger B continuation
+      → Phase 3 confirms multiple Trigger B sites (γ, K_geo); cycle scope keeps focus na γ.
+  (d) Patterns explicit citation
+      → Pattern 2.2 (momentum flux for G_N) noted; Phase 5 erratum chain preserved.
+  (e) Honest disclosure
+      → T7.1: G3.1 falsifier DOES NOT trigger; system underdetermined (multi-branch viable).
+  [META]   T8.1: BD-drift self-audit Phase 3: NO new drifts; Phase 5 BD-form annotation preserved honestly ... PASS
+           ↳ Self-audit weaker than independent subagent audit (per §4.4.5).
+
+==============================================================================
+§9 — Summary
+==============================================================================
+
+  Total tests:        11
+  Passed:             11/11
+
+  KEY FINDINGS (Phase 3):
+  1. 8 inherited LOCKs enumerated; 2 substantive equations (L1, L6) on free params.
+  2. Free parameters: 6 (γ, Φ_0, Φ_eq, q, K_1, K_geo); 2 substantive eqs.
+  3. Phi_eq = Phi_0 derivable from V_orig + β=γ vacuum (algebraic).
+  4. With Phi_eq=Phi_0, system reduces to 5 free params, 2 eqs: 3-D underdetermined.
+  5. Newton constraint L1 admits solutions for ALL Phi_0 scenarios (no filter).
+  6. Phase 5 G_eff LOCK has MULTIPLE simultaneous BD-bridges (γ + K_geo).
+     Phase 5 LOCK explicitly tagged 'BD-form / TGP-meaning' — honest acknowledgment.
+  7. G3.1 (overdetermined) DOES NOT trigger; system UNDERDETERMINED.
+
+  GATE STATUS:
+  G3.1 (overdetermined → conflict z γ identification):
+       ❌ FALSIFIER NIE triggers — system jest UNDERDETERMINED, NOT overdetermined
+  G3.2 (γ ~ M_Pl² consistent z Newton constraint):
+       ✅ CONSISTENT — Newton admits this branch (and others)
+  G3.3 (Alternative γ also satisfies Newton constraint):
+       ✅ TRIGGERED — multi-branch ambiguity CONFIRMED
+
+  PHASE 3 VERDICT (for Phase 4 branch decision):
+  → Newton G_N constraint NIE filters branches; multiple γ values admit Newton solution.
+  → Joint system underdetermined; γ NIE pinned by all known gravitational LOCKs together.
+  → Branch ambiguity CONFIRMED definitively.
+  → Phase 4 must deliver verdict via probabilistic / structural argumentation,
+    NOT additional algebraic constraint.
+
+==============================================================================
+Phase 3 sympy: 11/11 PASS (all checks evaluated correctly).
+==============================================================================

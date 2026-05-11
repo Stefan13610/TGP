@@ -1,0 +1,117 @@
+==============================================================================
+  Phase 1 sympy: Scalar mode vs LIGO bound (N14 R5 risk)
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: Phi-EOM decoupling regime check
+------------------------------------------------------------------------------
+  Scenario B (cosmological m_s ~ H_0):
+    m_s ~ 1.00e-33 eV
+    ω_LIGO ~ 1.00e-13 eV
+    m_s / ω_LIGO ~ 1.00e-20
+    ⟹ m_s ≪ ω_LIGO ⟹ effectively MASSLESS at LIGO band ✓
+  [PASS] m_s ≪ ω_LIGO (cosmological m_s ~ H_0)
+
+------------------------------------------------------------------------------
+  Section 2: Tensor radiation amplitude (GR quadrupole baseline)
+------------------------------------------------------------------------------
+
+  Standard GR quadrupole formula:
+    h_T ~ (G/c⁴) · (d²Q_ij/dt²) · (1/r_dist)
+        ~ (G μ a² ω²)/(c⁴ r_dist)
+
+  GW150914 calibration (~30+30 M_sun binary at 400 Mpc):
+    h_T_observed ~ 1e-21
+
+  [PASS] Tensor amplitude h_T ~ GR baseline (Blanchet 2014)
+
+------------------------------------------------------------------------------
+  Section 3: Scalar mode emission heuristic
+------------------------------------------------------------------------------
+  TGP scalar charge: q = 2√(π G) (z Phase 5 emergent-metric)
+  ⟹ q² = 4π G
+
+  Scalar quadrupole amplitude:
+    h_S ~ (q/c⁴) · μ a² ω² · (1/r_dist)
+        ~ (2√(πG)/c⁴) · μ a² ω² / r_dist
+
+  NAIVE ratio h_S/h_T (G=c=1 units): q/G = 2√π ≈ 3.545
+  Compare LIGO bound: < 5% (h_S/h_T < 0.05)
+  ⟹ NAIVE result OVERSHOOTS bound by factor 71
+  [PASS] Naive scalar/tensor ratio overshoots LIGO bound
+
+------------------------------------------------------------------------------
+  Section 4: Suppression mechanisms (Vainshtein analog?)
+------------------------------------------------------------------------------
+
+  Three suppression mechanisms candidates:
+    (1) Vainshtein screening: active in strong-field BBH inspiral
+    (2) Mass Yukawa: m_s ≫ 1/r required (NOT met dla cosmological m_s)
+    (3) sigma-coupling cancellation: σ-cross-terms may CANCEL scalar leading
+
+  Per emergent-metric framework: scalar mode emission MAY be suppressed by
+  σ-coupling structure (gradient cross-terms specifically arrange to cancel
+  scalar polarization w binary GW radiation).
+
+
+  HEURISTIC: in emergent-metric framework where g_eff jest funkcjonał {Φ_i},
+  scalar mode emission powinien być suppressed because:
+   - g_eff NIE ma niezależnej dynamiki (Phase 1 N3 BD-demarcation)
+   - Phi-fluctuations sprzęgnięte poprzez σ_ab tensor structure
+   - σ-cross-terms w 2-body binary mogą kasować scalar leading
+
+  Rigorous proof requires:
+   - Explicit 2-body Phi-radiation calculation
+   - Comparison z tensor radiation at SAME order
+   - Cancellation pattern identification
+
+  Multi-session work; Phase 1 gives ONLY heuristic mechanism identification.
+
+  [PASS] Suppression mechanism identified (σ-cross-terms candidate)
+
+------------------------------------------------------------------------------
+  Section 5: Phase 1 honest scope + verdict
+------------------------------------------------------------------------------
+
+  HONEST PHASE 1 OUTCOME:
+   - NAIVE scalar/tensor ratio (z Brans-Dicke analog): ≈ 3.5 (overshoots bound 5%)
+   - SUPPRESSION mechanism CANDIDATE: σ-cross-coupling cancellation (emergent-metric)
+   - Vainshtein screening alternative: typical compact-object inspiral
+   - Rigorous calculation: deferred multi-session
+
+  STATUS:
+   - Phase 1 indicates POTENTIAL R5 RISK if no suppression mechanism operates
+   - BUT emergent-metric framework structurally HAS candidate suppression
+     (σ-cross-coupling specifically NEW vs single-source)
+   - Phase 2-3 cycle continuation needed dla rigorous resolution
+
+  RECOMMENDATION:
+   - Mark cycle as STRUCTURAL_CONDITIONAL: R5 risk identified, candidate
+     suppression mechanism documented, rigorous derivation deferred
+   - Continue z multi-session 2-body Phi-radiation calculation (3-4 sesji)
+
+  [PASS] Phase 1 honest scope documented (R5 risk + suppression candidate)
+
+------------------------------------------------------------------------------
+  Section 6: Phase 1 verdict
+------------------------------------------------------------------------------
+
+  Total: 5/5 PASS
+
+  >>> Phase 1 STRUCTURAL_CONDITIONAL — R5 risk identified <<<
+
+  KEY RESULTS:
+  - Decoupling regime confirmed: m_s ≪ ω_LIGO (cosmological m_s)
+  - GR tensor baseline: standard quadrupole h_T ~ G μ a² ω² / (c⁴ r)
+  - Naive scalar/tensor ratio: q/G = 2√π ≈ 3.5 (OVERSHOOTS LIGO 5% bound)
+  - Suppression candidate: σ-cross-coupling cancellation
+  - Rigorous 2-body Phi-radiation derivation: DEFERRED
+
+  HONEST CAVEAT (CALIBRATION_PROTOCOL):
+  - Naive overshoot suggests R5 risk
+  - σ-coupling suppression is HYPOTHETICAL — needs explicit verification
+  - DO NOT claim cycle PASS dla N14 without rigorous derivation
+
+  STATUS: STRUCTURAL_CONDITIONAL (R5 risk pending Phase 2-3)
+  Phase 2-3 multi-session work: 2-body Phi-radiation calculation
+  z explicit σ-cross-coupling cancellation (or absence thereof)

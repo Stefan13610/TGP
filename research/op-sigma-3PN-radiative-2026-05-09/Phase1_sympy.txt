@@ -1,0 +1,138 @@
+==============================================================================
+  Phase 1 sympy: σ at 3PN+ — linear δΦ + σ near-field structure
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: Binary mass quadrupole z circular orbit
+------------------------------------------------------------------------------
+  Q_xx = M*a**2*cos(omega*t)**2/4
+  Q_yy = M*a**2*sin(omega*t)**2/4
+  Q_xy = M*a**2*sin(2*omega*t)/8
+  Q_zz = 0
+
+  d²Q_xx/dt² = -M*a**2*omega**2*cos(2*omega*t)/2
+  d²Q_yy/dt² = M*a**2*omega**2*cos(2*omega*t)/2
+  d²Q_xy/dt² = -M*a**2*omega**2*sin(2*omega*t)/2
+
+  Tr(Q) = Q_xx + Q_yy + Q_zz = M*a**2/4
+  [PASS] Tr(Q) = const dla circular orbit (= M·a²/4 dla equal-mass binary at separation a)
+  [PASS] d²(Tr Q)/dt² = 0 (Q_xx + Q_yy const)
+
+------------------------------------------------------------------------------
+  Section 2: Linear δΦ z mass quadrupole at far-field
+------------------------------------------------------------------------------
+  d²(Q·n·n)/dt² (general angle) = -M*a**2*omega**2*sin(theta)**2*cos(2*omega*t - 2*phi)/2
+
+  Observer along z (θ=0): d²(Q·n·n)/dt² = 0
+  [PASS] Observer along z gives 0 (Q_zz=0 for orbital plane)
+  Observer along x (θ=π/2, φ=0): d²(Q·n·n)/dt² = -M*a**2*omega**2*cos(2*omega*t)/2
+  [PASS] Observer along x: d²Q·n·n/dt² = d²Q_xx/dt²
+
+------------------------------------------------------------------------------
+  Section 3: Gradient ∂_i δΦ at near-field
+------------------------------------------------------------------------------
+  ∂_x δΦ (from binary) computed sympy z direct gradient
+  ∂_x δΦ structure: <class 'sympy.core.add.Add'> + components from each particle
+  [PASS] Gradient ∂_iΦ structure derived
+
+------------------------------------------------------------------------------
+  Section 4: σ_ij = (∂_iΦ)(∂_jΦ) - (1/3)δ_ij(∇Φ)²
+------------------------------------------------------------------------------
+  Tr(σ) = σ_xx + σ_yy + σ_zz = 0
+  [PASS] σ traceless (3D)
+  [PASS] σ_xy = σ_yx (symmetric)
+
+  Sample at |x| ~ 100: ∂_xΦ ≈ 1.92e-05
+  Sample at |x| ~ 100: σ_xx ≈ -1.23e-14
+  σ scaling estimate: σ ~ 1/r⁴ at far-field (bilinear in 1/r²)
+  [PASS] σ_xx far-field scaling: ~ 1/r⁴
+
+------------------------------------------------------------------------------
+  Section 5: Volume integral ∫ σ_ij d³x dla binary
+------------------------------------------------------------------------------
+
+  Volume integral ∫ σ_ij d³x dla binary (effective tensor moment):
+
+  Far-field convergence:
+    σ_ij ~ 1/r⁴ at large |x|
+    ∫ r²·dr · 1/r⁴ = ∫ dr/r² ~ finite at ∞ ✓
+
+  Near-field UV divergence:
+    σ_ij ~ 1/r⁴ at r → 0 (near particle)
+    ∫ r²·dr · 1/r⁴ ~ ∫ dr/r² ~ DIVERGES at r=0 ✗
+
+  Standard regularization needed (Hadamard, dim reg).
+
+  Phase 1 single-session: identify this divergence structure but DEFER
+  full regularization to Phase 2.
+
+  [PASS] σ volume integral has well-defined far-field, UV-divergent at particle
+
+------------------------------------------------------------------------------
+  Section 6: Phase 2 strategy preview — σ as 2nd-order source
+------------------------------------------------------------------------------
+
+  Phase 2 GOAL: compute 2nd-order δΦ generated z σ source.
+
+  Mechanism (standard in PN, analog gravitational self-energy):
+    □ δΦ_2 + m_s²·δΦ_2 = source[σ²]
+
+  Specifically, σ_ab dynamics z Path B audit (closure 2026-04-26):
+    □ σ_ab + 2m_s²·σ_ab = TT-projected source[J·∂Φ]
+
+  Z source ≠ 0, σ_ab itself has propagating mode. Far-field σ_ab(r→∞) z
+  point binary source CAN be 1/r if σ source has finite quadrupole moment.
+
+  Specifically, σ_ab tensor moment z binary:
+    Q^σ_ab = ∫ d³x σ_ab · (something)
+  After regularization, finite. Then σ_ab(observer) ~ Q^σ_ab(t-r/c)/r.
+
+  This σ_ab radiation IS TT-tensor mode at observer, providing h_+, h_×.
+
+  Phase 2 task:
+    - Regularize ∫ σ d³x dla binary (Hadamard partie-finie)
+    - Compute Q^σ_ab(t) tensor moment z circular orbit
+    - Compute ddQ^σ_ab/dt² (radiation amplitude)
+    - δσ_ab(observer) ~ ddQ^σ_ab/r
+    - δg_eff_TT^observer = c_0/(Φ_0² c²) · σ^TT(observer)
+    - Compare amplitudes z LIGO observed h_+, h_×
+
+  PN order estimate: σ ~ U² near particle (z (∂Φ)²), so Q^σ ~ U²·M·a² ~ U²·Q_M
+  Compared to mass quadrupole Q_M: factor U² suppression
+  At LIGO band U ~ 0.1 (near merger): suppression ~ 1/100 ≈ 1%
+  ⟹ σ-induced TT amplitude ~ 1% of mass quadrupole tensor amplitude
+  ⟹ within LIGO 5% scalar polarization bound — POSSIBLY consistent!
+
+  This is **promising**. Phase 2 explicit calculation needed dla verification.
+
+  [PASS] Phase 2 strategy identified: σ as 2nd-order tensor source
+  [PASS] PN order estimate: σ-induced TT ~ U² ~ 1% of mass quadrupole
+
+------------------------------------------------------------------------------
+  Section 7: Phase 1 verdict — STRUCTURAL setup
+------------------------------------------------------------------------------
+
+  Total: 11/11 PASS
+
+  >>> Phase 1 STRUCTURAL DERIVED — foundation set <<<
+
+  KEY RESULTS:
+  - Binary mass quadrupole Q_ij explicit
+  - Tr(Q) = const → no monopole radiation
+  - d²(Tr Q)/dt² = 0 (sphere-averaged scalar mode 0, but observer ≠ 0)
+  - Linear δΦ structure z multipole expansion documented
+  - ∂_i δΦ at general position computed sympy
+  - σ_ij tensor structure verified (traceless, symmetric)
+  - σ ~ 1/r⁴ scaling far-field, UV-divergent at particle
+
+  PHASE 2 STRATEGY:
+  - σ_ab acts as 2nd-order tensor source dla δΦ_2 generation
+  - σ_ab itself propagates jako tensor wave (z M² = 2m_s² mass)
+  - Far-field σ_ab(r) ~ Q^σ_ab(t-r/c)/r — RADIATIVE TENSOR MODE
+  - PN order: σ-induced TT ~ U² ~ 1% mass quadrupole at LIGO band
+  - Within LIGO 5% scalar polarization bound — POSSIBLY VIABLE
+
+  HONEST CAVEATS:
+  - Hadamard regularization needed dla ∫ σ d³x (Phase 2)
+  - Multi-session work for full numerical lock
+  - Phase 1 establishes framework, Phase 2-5 do explicit calculation

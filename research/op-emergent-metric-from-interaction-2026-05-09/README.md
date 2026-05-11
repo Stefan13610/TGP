@@ -231,10 +231,13 @@ Jeśli nie — wskazuje na ukryty problem w jednym z poziomów.
 
 ## Status
 
-🟢 **OPEN — Phase 0** (balance sheet pending)
+🔒 **CLOSED — STRUCTURAL DERIVED** (Phase 1-6, 57/57 sympy PASS, 6/6 P-requirements RESOLVED).
+Zob. [[./Phase_FINAL_close.md]] dla pełnego sign-offu.
 
-Następny krok: ukończyć `Phase0_balance.md` (8/8 gate) i `NEEDS.md` (lista
-P1-P6 + sub-needs N1-Nk).
+> **ADDENDUM 2026-05-10 (interpretive overlay, NIE zmienia classification):**
+> [[./ADDENDUM_2026-05-10_native_observables_first.md]] — reframe Phase 2-4 wyników
+> w native-observables-first form (β jest induced, NIE natywne; γ jest natywne).
+> Per `meta/PPN_AS_PROJECTION.md` methodology binding 2026-05-10+.
 
 ---
 
