@@ -222,6 +222,93 @@ algebraic identities. Tylko **interpretacja statusu** downgraded.
 
 ---
 
+## 4.4 BD-drift audit (added 2026-05-10, BINDING)
+
+### 4.4.1 — Trigger i scope
+
+**Każdy cycle Phase FINAL** (post-2026-05-10 cycles, plus retroactive audit cycles dla
+pre-2026-05-10 cykli z BD-form formulami) MUSI spawn `bd-drift-audit` subagent przed wystawieniem
+verdict `STRUCTURAL DERIVED`.
+
+**Cel:** wykryć systemic BD-drift (Brans-Dicke / scalar-tensor / Horndeski translation) w
+cycle outputs zanim verdict propaguje cascadowo do downstream cykli.
+
+**Scope:**
+- Cykle dotyczące gravity / inertia / momentum / mass / GW sektora
+- Cykle inheriting LOCKs z pre-2026-05-10 cykli (heavily suspect)
+- Cykle używające `m_Φ`, `g_eff`, `Φ-EOM`, `T^μν`, `δΦ propagator`, `Yukawa`, `BD ω`,
+  `scalar-tensor`, `Horndeski` (search literally tych terms)
+
+**Wyłączenia:**
+- Pure mathematical sympy proofs (algebraic identities, symbol manipulation)
+- Documentation-only updates (no new derivations)
+- Pure numerical simulations z jasno zdefiniowaną TGP-native equation
+
+### 4.4.2 — Subagent prompt template
+
+```
+Subagent task: BD-drift audit dla cycle <CYCLE_NAME>
+
+Context: Cycle <CYCLE_NAME> Phase <X> outputs (read these files):
+- <CYCLE_PATH>/Phase<X>_results.md
+- <CYCLE_PATH>/Phase<X>_sympy.py
+- <CYCLE_PATH>/Phase<X>_sympy.txt
+- <CYCLE_PATH>/README.md
+
+Your task:
+1. Read TGP_NATIVE_COMPUTATIONAL_PATTERNS.md §1 (ASK-RULE), §2 (patterns), §3 (red flags),
+   §4 (form-meaning mapping)
+2. Audit cycle outputs dla:
+   (a) §3 red flags — list every detected red flag z line numbers
+   (b) §4 form-meaning mismatch — every BD-form formula bez explicit annotation
+   (c) §1 ASK-RULE triggers — moments gdy agent powinien był pytać user'a but didn't
+   (d) §2 missing patterns — gdzie cycle używa std-physics derivation zamiast TGP-native pattern
+3. Generate report `BD_DRIFT_AUDIT_<DATE>.md` z:
+   - Section 1: detected drifts (list)
+   - Section 2: severity classification (LOW/MEDIUM/HIGH/CRITICAL per drift)
+   - Section 3: recommendation (PASS / CONDITIONAL / RECOMMEND_AMENDMENT / RECOMMEND_HALT)
+   - Section 4: specific fixes per drift
+
+Constraints:
+- Read-only, NIE modify cycle files
+- Max 3-4 file reads
+- Concise report (under 800 words)
+- If no drifts found, explicit state "NO BD-DRIFT DETECTED" w Section 1
+
+Return: report file path + 2-sentence summary.
+```
+
+### 4.4.3 — Verdict consequences
+
+| Drift severity | Subagent recommendation | Cycle verdict consequence |
+|---|---|---|
+| NONE | PASS | Cycle proceeds z planned verdict |
+| LOW (1-2 minor BD-form formulas, easily annotated) | CONDITIONAL | Cycle adds explicit annotations + proceeds |
+| MEDIUM (multiple §3 red flags, missing §2 patterns) | RECOMMEND_AMENDMENT | Cycle Phase X reopened dla TGP-native re-derivation; OR explicit downgrade do `STRUCTURAL_CONDITIONAL z BD-drift flag` |
+| HIGH (systemic Φ-quantum carrier framing, fixed m_Φ, postulated mechanisms) | RECOMMEND_HALT | Cycle classification → `STRUCTURAL_CONDITIONAL_HALT z BD-drift`; spawn dedicated TGP-native re-derivation cycle |
+| CRITICAL (verdict fundamentally relies on BD-mode physics) | RECOMMEND_HALT + cascade audit | Cycle DOWNGRADED; spawn audit cykli wszystkich downstream cykli inheriting LOCKs |
+
+### 4.4.4 — Adversarial pattern continuation
+
+BD-drift audit jest **rozszerzeniem** existing adversarial verification protocol (§4.3).
+Pattern adversarial = każda sesja ma at least 1 audit subagent działający niezalezne od
+primary cycle work.
+
+**Demonstrated value (do 2026-05-10):** 5× pre-2026-05-10 catch (sphere-avg error, factor-4
+ξ_eff gap, Channel B Yukawa flag, Yukawa audit verdict, m_Φ verification ruling out mech iii)
++ 1× meta-layer catch (BD-drift discovered post-recovery-V Phase 1 → triggered TGP_NATIVE_COMPUTATIONAL_PATTERNS).
+
+### 4.4.5 — Fallback dla absence of subagent capability
+
+Jeśli session bez ability spawn subagent (np. resource constraints, user-request limits):
+agent MUSI **manually** wykonać §4.4.2 audit checklist on own outputs przed Phase FINAL,
+i explicit document audit results w `Phase<FINAL>_results.md` §X.X "Self-audit BD-drift".
+
+**Honest fallback:** "Self-audit jest weaker niż independent subagent audit." Future session
+SHOULD re-run independent audit gdy capability available.
+
+---
+
 ## 5. Cross-references
 
 - [[SUBAGENT_AUDIT_74394a8_2026-05-02.md]] — root-cause exemplar
@@ -232,6 +319,9 @@ algebraic identities. Tylko **interpretacja statusu** downgraded.
   (positive example — cascade z θ.1 OK, no critique)
 - [[research/op-omega3-axion-decay-constant/AUDIT_omega3_2026-05-04.md]]
   (cascade-conditional example — algebra OK, magnitude conditional)
+- [[TGP_NATIVE_COMPUTATIONAL_PATTERNS.md]] — anti-BD-drift binding protocol (§1 ASK-RULE,
+  §2 patterns, §3 red flags, §4 form-meaning mapping, §5 pre-flight checklist) referenced
+  by §4.4 BD-drift audit
 
 ---
 

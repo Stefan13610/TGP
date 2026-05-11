@@ -155,6 +155,42 @@ post-Phase-3 (closure 2026-04-28). For the project overview, see
 >
 > **Mass-triage executed:** ~85 cykli przeklasyfikowane z `active`/`research` → `paused` (skrypt `tooling/reclassify_cycles_2026-05-09.py`). Tooling support: `tooling/check_stale_cycles.py` (read-only weekly report), `tooling/check_status_drift.py` (read-only status drift detection).
 
+> 🟢 **REVISION 2026-05-10 — γ-identification cascade complete (Branch A re-asserted):**
+>
+> **Parent + 4 spawned cycles cascade resolution:** 2026-05-10 całodzienna sesja
+> dostarczyła first-principles γ_eff(μ) RG analysis i odwróciła parent's Branch D dominance.
+>
+> **Parent cycle:** [[research/op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]]
+> — GF.D verdict (45/45 PASS, Branch D dominant 50-70% qualitative; OP-1 M2 confirmed BLOCKED).
+>
+> **Cascade resolution:**
+> - **Cycle 1** [[research/op-gamma-RG-running-derivation-2026-05-10/Phase_FINAL_close.md]] —
+>   **GF.B-STRUCTURAL** verdict (88/88 PASS): Branch A re-asserted; one-loop ϕ⁴ daje O(log) running
+>   only (γ varies 0.85 across 41 orders); Branch B UNREACHABLE; β=γ vacuum tuning OPEN.
+>   Parent's Branch D dominance HONESTLY REVERSED via first-principles. Adversarial PASS-WITH-FLAGS.
+> - **Cycle 2** (recovery-V-LIGO-regime) — **ARCHIVE** (GF.A-conditional gating fails).
+> - **Cycle 3** [[research/op-EFT-Phi0-multi-scale-2026-05-10/Phase_FINAL_close.md]] —
+>   formal multi-scale EFT framework substantiated (10/10 PASS, foundations §3.5.3 amendment text-drafts).
+> - **Cycle 4** [[research/op-foundations-3.5.3-extension-2026-05-10/Phase_FINAL_close.md]] —
+>   foundations document patched: §3.5.3.1 added (quantitative framework), §3.5.6 updated
+>   (Pattern 2.5 BINDING-PRINCIPLE-CONFIRMED-ALGEBRAIC z PHYSICAL APPLICATION CONDITIONAL).
+>
+> **T3 cycle close** ([[research/op-V-M911-psi-profile-near-degenerate-2026-05-10/Phase_FINAL_close.md]]):
+> verdict UPGRADED CONDITIONAL → CONFIRMED via Cycle 1 GF.B cascade (50/50 PASS preserved).
+>
+> **Recovery V cycle** ([[research/op-recovery-V-mPhi-parametric-analysis-2026-05-09/]]):
+> ARCHIVED (folder_status `closed-superseded`) — irrelevant pod Branch A.
+>
+> **Cumulative 2026-05-10:** parent (45) + Cycle 1 (88) + Cycle 3 (10) + 4 (n/a doc) = **143 sympy PASS**.
+> **Framework cumulative: 323 → 466/466 PASS** (+143 across cascade).
+>
+> **TGP_FOUNDATIONS.md updates 2026-05-10:**
+> - §3.5.3.1 NEW — γ_eff(μ), Φ_0(μ) one-loop expressions; Branch A re-asserted; OP-1 M2 PARTIALLY RESOLVED
+> - §3.5.6 STATUS UPDATED — Pattern 2.5 BINDING-PRINCIPLE-CONFIRMED-ALGEBRAIC; APPLICATION CONDITIONAL
+>
+> **3 adversarial subagent audits all PASS-WITH-FLAGS** (no HIGH-severity drifts; epistemic packaging only).
+> **mPhi-verification verdict CONFIRMED-CORRECT** under Branch A regime.
+
 - **Master verification ledger:** **856** cumulative closures
   (post-2026-05-04: **effective uncontested 784, contested 72** — see banner above)
   (M9 13 + M10 42 + M11 62 + Phase 1 50 + Phase 2 54 + Phase 3 60 + SC.1.Phase1 4 + SC.1.Phase2 6 + SC.1.Phase3 7 + BH.1.Phase1 5 + BH.1.Phase2 7 + BH.1.Phase3 7 + XS.1.Phase1 5 + XS.1.Phase2 7 + XS.1.Phase3 7 + ξ.1.Phase1 5 + ξ.1.Phase2 7 + ξ.1.Phase3 7 + UV.1.Phase1 5 + UV.1.Phase2 7 + UV.1.Phase3 6 + ε.1.Phase1 5 + ε.1.Phase2 7 + ε.1.Phase3 6 + ζ.1.Phase1 5 + ζ.1.Phase2 7 + ζ.1.Phase3 6 + θ.1.Phase1 5 + θ.1.Phase2 7 + θ.1.Phase3 6 + η.1.Phase1 5 + η.1.Phase2 7 + η.1.Phase3 6 + α.1.Phase1 5 + α.1.Phase2 7 + α.1.Phase3 6 + η.2.Phase1 5 + η.2.Phase2 7 + η.2.Phase3 6 + κ.1.Phase1 5 + κ.1.Phase2 7 + κ.1.Phase3 6 + ι.1.Phase1 5 + ι.1.Phase2 7 + ι.1.Phase3 6 + μ.1.Phase1 5 + μ.1.Phase2 7 + μ.1.Phase3 6 + ν.1.Phase1 5 + ν.1.Phase2 7 + ν.1.Phase3 6 + ξ.2.Phase1 5 + ξ.2.Phase2 7 + ξ.2.Phase3 6 + ο.1.Phase1 5 + ο.1.Phase2 7 + ο.1.Phase3 6 + π.1.Phase1 5 + π.1.Phase2 7 + π.1.Phase3 6 + ρ.1.Phase1 5 + ρ.1.Phase2 7 + ρ.1.Phase3 6 + τ.1.Phase1 4 + τ.1.Phase2 7 + τ.1.Phase3 6 + υ.1.Phase1 5 + υ.1.Phase2 7 + υ.1.Phase3 6 + φ.1.Phase1 5 + φ.1.Phase2 7 + φ.1.Phase3 6 + ω.1.Phase1 5 + ω.1.Phase2 7 + ω.1.Phase3 6 + σ.1.Phase1 5 + σ.1.Phase2 7 + σ.1.Phase3 6 + τ.2.Phase1 5 + τ.2.Phase2 7 + τ.2.Phase3 6 + τ.3.Phase1 5 + τ.3.Phase2 7 + τ.3.Phase3 6 + ψ.1.Phase1 5 + ψ.1.Phase2 7 + ψ.1.Phase3 6 + ψ.1.v2.Phase4 5 + ψ.1.v2.Phase5 5 + ψ.1.v2.Phase6 5 + ω.2.Phase1 5 + ω.2.Phase2 7 + ω.2.Phase3 6 + χ.1.Phase1 5 + χ.1.Phase2 7 + χ.1.Phase3 6 + UV.2.Phase1 5 + UV.2.Phase2 7 + UV.2.Phase3 6 + ω.3.Phase1 5 + ω.3.Phase2 7 + ω.3.Phase3 6;

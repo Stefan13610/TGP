@@ -9,6 +9,18 @@ Dokumenty meta-poziomu: audyty calosci, plany domkniecia, plany rozwoju, plany p
 - `SUBAGENT_AUDIT_74394a8_2026-05-02.md` — audyt incydentu agentowego (CLOSED 2026-05-04 §8 forward-patch)
 - `CALIBRATION_PROTOCOL.md` — anti-overclaim discipline (BINDING 2026-05-04+)
 
+### Methodological binding docs (active)
+- `TGP_NATIVE_COMPUTATIONAL_PATTERNS.md` — anti-BD-drift binding protocol (BINDING 2026-05-10+, all 7 patterns)
+- `PPN_AS_PROJECTION.md` — native-observables-first methodology; PPN/ppE jako projekcja, NIE fizyka (BINDING 2026-05-10+)
+- `M9_RESTRUCTURE_NOTE.md` — anti-M9.1''-as-canonical-drift; M9.1'' jako Path 2 anchor w {A,B,C} family, NIE framework (ACTIVE 2026-05-10+, lightweight; cycle-by-cycle audit deferred)
+
+### Retrofit metodologiczny 2026-05-10 (BINDING dla nowych cykli + PHASE 1+ retrofit istniejących)
+- `CYCLE_KICKOFF_TEMPLATE.md` — **mandatory contract** dla cykli post-2026-05-10: L1 native MUST, L2 framework reduction OPTIONAL last stage, pre-flight methodology read confirmation, drift markers auto-reject (BINDING)
+- `VALIDATION_TRANSFERS.md` — append-only registry analytical reductions TGP → walidowane frameworks (Newton/GR/PPN); validation transfer scope per VT-### entry; bootstrap entries TENTATIVE pending audit
+- `PRE_REGISTERED_FALSIFIERS.md` — append-only registry decision rules z immutable timestamps; anti-Lakatos clause (recovery scope must be pre-declared, NIE post-hoc); PR-001 retroactive log + PR-002/PR-003 proposed
+- `PROJECTION_TRIAGE_2026-05-10.md` — Phase 0 triage results (135 cykli scanned; 12 drift suspects, 14 native-clean, 107 structural, 2 intentional projection); manual decisions PENDING
+- `triage_2026-05-10/` — CSV scan outputs per category (read-only)
+
 ### Master plany (active)
 - `PLAN_DOMKNIECIA_MASTER.md` — master-plan domkniecia otwartych punktow (10/10 closed)
 - `PLAN_PUBLIKACJI_MASTER.md` — master-plan publikacji
