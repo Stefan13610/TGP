@@ -1,11 +1,16 @@
 ---
-title: "Draft falsifier statement dla PREDICTIONS_REGISTRY (M911-P1: |Δg_tt| = (5/6) U³)"
-date: 2026-05-07
+title: "Falsifier statement — M911-P1: post-Phase 1.5 + post-GWTC-3 RE-RUN native-first form"
+date: 2026-05-10 (v2 native-first revision)
+revision_history:
+  - v1 (2026-05-07): Phase 1 OOM heuristic baseline (β=-5/64); SUPERSEDED
+  - v1.5-update (2026-05-09): CRITICAL UPDATE block added; internally inconsistent
+  - v2 (2026-05-10): native-first revision per `meta/PPN_AS_PROJECTION.md §3.1`;
+                     OUTDATED Phase 1 baseline moved to APPENDIX A; current status
+                     promoted to primary content
 parent: "[[README.md]]"
-type: registry-draft
+type: registry-statement-native-first
 tgp_owner: audyt/T01_LIGO3G_falsifier
 tags:
-  - draft
   - falsifier
   - registry
   - M911
@@ -16,51 +21,211 @@ tags:
   - ppE
   - T01
   - EXT-5
+  - native-observables-first
+  - post-Phase1.5
+  - post-GWTC3-RERUN
+  - falsified-observational
 related:
   - "[[README.md]]"
+  - "[[ADDENDUM_2026-05-10_native_observables_first.md]] (native-first methodology binding)"
   - "[[NEEDS.md]]"
-  - "[[PPN_TO_PPE_MAPPING.md]]"
-  - "[[SENSITIVITY_BACK_OF_ENVELOPE.md]]"
+  - "[[PPN_TO_PPE_MAPPING.md]] (target of post-Phase 1.5 revision)"
+  - "[[SENSITIVITY_BACK_OF_ENVELOPE.md]] (target of post-Phase 1.5 revision)"
+  - "[[../../meta/PPN_AS_PROJECTION.md]] (parent methodology, binding 2026-05-10+)"
   - "[[../../PREDICTIONS_REGISTRY.md]]"
-  - "[[../../research/op-newton-momentum/M9_1_pp_P1_results.md]]"
+  - "[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] (β=-15/4 sympy LOCK source)"
+  - "[[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] (5.02σ FALSIFIED source)"
+  - "[[../../research/op-emergent-metric-from-interaction-2026-05-09]] (recovery framework)"
+  - "[[../../research/op-newton-momentum/M9_1_pp_P1_results.md]] (native c_n source)"
 ---
 
-# Draft falsifier statement — `M911-P1` (Path C, najlżejsze domknięcie T01)
+# Falsifier statement — M911-P1 (native-first v2, post-Phase 1.5 + post-GWTC-3 RE-RUN)
 
-> ## ⚠ CRITICAL UPDATE 2026-05-09 — STATUS CHANGE: FALSIFIED-OBSERVATIONAL
+## §0 — Document status
+
+**Current operational status (2026-05-10 v2):**
+
+| Predykcja | Status | Source |
+|---|---|---|
+| **M911-P1** (g_tt = (5/6)U³ deviation, M9.1'' specific f(ψ)=(4-3ψ)/ψ form) | **FALSIFIED-OBSERVATIONAL 5.02σ** | GWTC-3 RE-RUN 2026-05-09 z β=-15/4 prior |
+| **M911-P2** (multi-coefficient ratios {-23/10, -38/23, +337/228}) | **WITHDRAWN — needs re-derivation z corrected G_SPA** | Phase 1.5 alternative SPA shows β_3PN/β_2PN = -11161/504 ≠ -23/10 |
+| **M911-P3** (4-channel orthogonal pattern) | **PARTIAL-FALSIFIED** (2/4 channels invalid; BH5/ε.1 remain) | per Phase 1.5 + GWTC-3 RE-RUN |
+| **Recovery framework** (emergent-metric Phase 4) | **VIABLE** (zero-β region in (a_n, ξ_n) space) | op-emergent-metric Phase 4 STRUCTURAL DERIVED |
+
+**Document organization:**
+- §1: native-first falsifier statement (PRIMARY content, gotowy do PREDICTIONS_REGISTRY)
+- §2: PREDICTIONS_REGISTRY recommended entries (corrected post-2026-05-09)
+- §3: Roadmap update (post-falsification + recovery)
+- §4: Cross-references
+- **APPENDIX A**: OUTDATED Phase 1 baseline (β=-5/64) — historical reference only
+
+## §1 — Native-first falsifier statement (CURRENT)
+
+### §1.1 — Native predictions (L1)
+
+TGP M9.1''-derived **native Taylor coefficients** of `g_tt[Φ]` w isotropic
+weak-field expansion (sympy LOCK 5/5 PASS, op-newton-momentum/M9_1_pp_P1_results.md
+§3.2):
+
+```
+g_tt^TGP / (-c²) = 1 − 2U·c_1 + 2U²·c_2 + 2U³·c_3 + 2U⁴·c_4 + 2U⁵·c_5 + ...
+
+c_1 = +1                  c_2 = +1                  (forced z PPN γ=β=1)
+c_3 = -5/6                c_4 = -23/12              c_5 = +337/72
+                          (DEVIATIONS — derive z α=2 vacuum Φ-EOM, M9.1'' f(ψ)=(4-3ψ)/ψ)
+```
+
+Plus structural prefactor lock (op-ppE-mapping/Phase1.5_G_SPA_lock.md, sympy LOCK 5/5):
+
+```
+G_SPA = 48                (SPA chain prefactor in M9.1'' isotropic test-particle limit)
+                          [NOT G_SPA ≈ 1 generic-ppE heuristic]
+```
+
+### §1.2 — ppE projection (L2)
+
+Per Phase 1.5 sympy LOCK (and cross-validated z emergent-metric Phase 4
+independent derivation):
+
+```
+β_ppE^TGP_(b=-1) = -(3/(128·η)) · Δα_3 · G_SPA
+                 = -(3/(128·1/4)) · (-5/6) · 48
+                 = -15/4 ≈ -3.75    [η=1/4 binary inspiral, M9.1'' specific point]
+
+Equivalent ToGR fractional:
+δφ̂_4_TGP = -0.865    (86% deviation w 2PN-phase coefficient)
+```
+
+Convention: PHASE-PN (Cutler-Flanagan 1994); M9.1'' convention dictionary w
+[[CONVENTION_DECISION.md]]; b_ppE = -1 odpowiada 2PN-phase correction (= U³ in
+energy convention, = "3PN energy" in M9.1'' historical naming).
+
+### §1.3 — Falsification map (L3)
+
+| Bound | Native coef constrained | Status |
+|---|---|---|
+| Cassini γ_PPN ≤ 2.3·10⁻⁵ | c_1 = 1 (M9.1'' classical) | PASS automatic |
+| LLR β_PPN ≤ 8·10⁻⁵ | c_2 = 1 plus (a_2, ξ_2) | PASS automatic |
+| **GWTC-3 RE-RUN 2026-05-09** (corrected β=-15/4 prior) | M9.1'' specific point {c_3, c_4, c_5} | **FALSIFIED 5.02σ** (BF=3.5·10⁻⁶, log10(BF)=-5.45) |
+| Recovery Path 1: c_0=0 + ξ_3=(32-a_3)/32 | shifted (a_n, ξ_n) point | VIABLE (zero-β solution) |
+| Recovery Path 2: M9.1'' a_n + c_0·κ_σ=4/3 | M9.1'' coefs + canonical σ-coupling | VIABLE (structurally preferred per emergent-metric §5) |
+
+### §1.4 — Native-first falsifier statement (verbatim contract)
+
+> **Predykcja**: TGP M9.1'' canonical f(ψ)=(4-3ψ)/ψ przewiduje native Taylor
+> coefs `g_tt[Φ]`: c_3=-5/6, c_4=-23/12, c_5=+337/72 (sympy LOCK 5/5,
+> op-newton-momentum/M9_1_pp_P1_results.md §3.2). Strukturalny prefactor
+> SPA chain G_SPA=48 (sympy LOCK 5/5, op-ppE-mapping/Phase1.5).
 >
-> **[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] Phase 1.5
-> derived G_SPA = 48 sympy-exact (test-particle, 4-level verified):**
-> sympy LOCK 5/5 + independent hand-calculation E_TGP(U³)/m = 49/48 +
-> numerical sanity at U=0.1 + alternative SPA derivation (orthogonal
-> route) ALL CONFIRM β_ppE^TGP^(b=-1) = **-15/4 ≈ -3.75** at η=1/4
-> (test-particle exact, ±25% η-correction estimate).
+> **Projekcja na ppE 2PN-phase chart:** β_ppE^TGP_(b=-1) = -15/4 ≈ -3.75
+> (η=1/4 binary inspiral; cross-validated z emergent-metric Phase 4
+> independent derivation: identical value, different route).
 >
-> This is **factor 48× LARGER** than Phase 1's heuristic value of
-> -5/64 ≈ -0.078. Phase 1's "G_SPA ≈ 1" assumption from Sampson-Yunes-
-> Cornish 2013 was applicable to SMALL-PERTURBATION regimes (BD with
-> 1/ω_BD, dCS with ζ_dCS) but **DOES NOT APPLY** to TGP M9.1'' which
-> has STRUCTURAL O(1) modifications via hyperbolic f(ψ) = (4-3ψ)/ψ.
+> **Falsyfikacja (current observational status):** GWTC-3 combined ~90 BBH
+> posterior z corrected β=-15/4 prior (op-GWTC3-reanalysis Phase 2 RE-RUN
+> 2026-05-09): BF_TGP/GR = 3.5·10⁻⁶, log10(BF) = -5.45, **TGP M9.1''
+> RULED OUT at 5.02σ ("OVERWHELMING GR preference")**. M9.1'' specific
+> form FALSIFIED-OBSERVATIONAL.
 >
-> **GWTC-3 RE-RUN with corrected β** ([[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]):
-> TGP M9.1'' **RULED OUT at 5.02σ** by GWTC-3 combined ~90 BBH posterior
-> (BF_TGP/GR = 3.5·10⁻⁶, log10(BF) = -5.45 → "OVERWHELMING GR preference").
+> **Recovery framework:** falsyfikacja punktu w przestrzeni native Taylor
+> coefs (a_n, ξ_n, b_n, c_0, κ_σ) NIE wyklucza całej przestrzeni.
+> op-emergent-metric-from-interaction-2026-05-09 (closed STRUCTURAL DERIVED,
+> sympy 57/57 PASS) daje rodzinę Taylor expansions parametryzowanych przez
+> te native coefs z **zero-β region** zgodnym z GWTC-3 1σ window
+> |β_ppE_(b=-1)| ≤ 0.78. Path 1 (c_0=0 + 3PN tuning ξ_3=(32-a_3)/32) i
+> Path 2 (M9.1'' a_n + canonical σ-coupling c_0·κ_σ=4/3) są strukturalnie
+> viable.
 >
-> **Falsifier verdict:** M9.1'' as currently formulated (specific
-> hyperbolic ansatz f(ψ) = (4-3ψ)/ψ) is **observationally excluded**
-> at 5σ by current GWTC-3 data in TIGER framework analysis.
+> **Future falsifier (ET-D / CE 2027-2035):** confirm/refute *recovered
+> specific point* (post-S07-derived alternative f(ψ) lub explicit σ-coupling
+> via canonical c_0·κ_σ=4/3); NIE testuje już original M9.1'' canonical
+> (które jest już wykluczone).
 >
-> **Caveat:** falsification applies to specific (4-3ψ)/ψ form. Alternative
-> f(ψ) structures via S07 audit (M9.1'' derivation) remain viable for
-> exploration. Sections §1-§4 below describe the OUTDATED falsifier
-> statement based on Phase 1 OOM heuristic (β = -5/64); they are
-> historically informative but NO LONGER LIVE.
+> **Falsifier kontrakt z observatoriumami:** jeśli przyszłe data (ET-D + CE
+> 2027-2035) pokaże, że **żaden** punkt w native (a_n, ξ_n) space jest
+> consistent z observed β_ppE_(b=-1) within 5σ, **emergent-metric framework
+> byłby strukturalnie wykluczony** (nie tylko specific M9.1'' point).
+> To byłaby strukturalna falsyfikacja TGP gravity sector.
+
+## §2 — Proponowana sekcja w `PREDICTIONS_REGISTRY.md`
+
+```markdown
+### M911-P1 — TGP M9.1'' canonical metryka (FALSIFIED-OBSERVATIONAL)
+
+**Native predykcja (preserved):** Taylor coefs `g_tt[Φ]` z M9.1'' f(ψ)=(4-3ψ)/ψ:
+- c_3 = -5/6, c_4 = -23/12, c_5 = +337/72 (sympy LOCK 5/5)
+- G_SPA = 48 (sympy LOCK 5/5, SPA chain in M9.1'' isotropic test-particle)
+
+**ppE projection:** β_ppE^TGP_(b=-1) = -15/4 (η=1/4 binary inspiral)
+**Cross-validation:** emergent-metric Phase 4 niezależna derywacja → identical -15/4
+
+**Status:** **FALSIFIED-OBSERVATIONAL 5.02σ** (GWTC-3 RE-RUN 2026-05-09,
+BF_TGP/GR = 3.5·10⁻⁶, "OVERWHELMING GR preference")
+
+**Recovery framework:** op-emergent-metric-from-interaction-2026-05-09 daje
+rodzinę Taylor expansions z zero-β region zgodnym z GWTC-3 1σ. Two viable paths:
+- Path 1: c_0=0 + 3PN tuning ξ_3=(32-a_3)/32
+- Path 2: M9.1'' a_n + canonical σ-coupling c_0·κ_σ=4/3 (structurally preferred)
+
+**Pending closure:** S07 audyt (M9.1'' derivation z fundamentu) + emergent-metric
+specific point identification (post-recovery).
+```
+
+## §3 — Roadmap update
+
+```markdown
+| **2026-05-09** | GWTC-3 RE-RUN | M9.1'' canonical FALSIFIED-OBSERVATIONAL 5.02σ; recovery via emergent-metric framework opened |
+| **2027-2030** | LIGO-O5 stack | confirm/refute recovered point in (a_n, ξ_n) space (Path 1 lub Path 2) |
+| **2035+** | ET-D + CE inspirale BBH | decisive 5σ test of recovered specific point post-S07 |
+```
+
+## §4 — Cross-references
+
+### Native-first methodology binding
+- [[../../meta/PPN_AS_PROJECTION.md]] — parent methodology (binding 2026-05-10+)
+- [[ADDENDUM_2026-05-10_native_observables_first.md]] — T01 native-first overlay
+  (chart correction Phase 1 → 1.5)
+
+### Source documents (Phase 1.5 + GWTC-3 RE-RUN)
+- [[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] — β=-15/4 sympy LOCK
+- [[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]
+  — 5.02σ FALSIFIED source
+- [[../../research/op-emergent-metric-from-interaction-2026-05-09]] — recovery
+  framework, sympy 57/57 PASS
+
+### Native predictions sources
+- [[../../research/op-newton-momentum/M9_1_pp_P1_results.md]] — c_n derivation,
+  sympy 5/5 LOCK
+- [[../../TGP_FOUNDATIONS.md]] § 3 — (5/6)U³ narrative
+
+### Audit-level
+- [[../EXTERNAL_REVIEW_2026-05-06.md]] §EXT-5 — recenzja źródłowa T01
+- [[../README.md]] — indeks audytu
+- [[../S07_M911_derivation/README.md]] — meta-bloker (M9.1'' z fundamentu)
+
+### Pre-revision (historical)
+- See **APPENDIX A** below for OUTDATED Phase 1 baseline (β=-5/64).
+
+---
+
+## APPENDIX A — OUTDATED Phase 1 baseline (β=-5/64) — HISTORICAL ONLY
+
+> **⚠ HISTORICAL REFERENCE ONLY:**
+> Sections below describe the **OUTDATED Phase 1 OOM heuristic** baseline
+> (β_ppE^TGP_(b=-1) ≈ -5/64 ≈ -7.81·10⁻², z G_SPA ≈ 1 założenia z
+> Sampson-Yunes-Cornish 2013).
 >
-> Current operational status:
-> - M911-P1: **FALSIFIED-OBSERVATIONAL** (PREDICTIONS_REGISTRY updated 2026-05-09).
-> - M911-P2: **WITHDRAWN-NEEDS-REDERIVATION** (Phase 1 ratios incorrect; alternative SPA shows β_3PN/β_2PN = -11161/504 ≠ -23/10).
-> - M911-P3: **PARTIAL-FALSIFIED** (2/4 channels invalid; remaining BH5/ε.1 still independent test of any future revised M9.1'').
-> - Path D paper draft: requires major revision from "predictive forecast" to "negative result + factor-48 methodological finding".
+> **Diagnoza błędu:** Phase 1 cited SYC 2013 dla "G_SPA ≈ 1 for metric-only
+> modifications". SYC 2013 framework był derived dla *small-perturbation*
+> regimes (BD with 1/ω_BD coupling, dCS with ζ_dCS coupling), **NIE dla
+> structural O(1) modifications**. TGP M9.1'' f(ψ)=(4-3ψ)/ψ z Δα_3=-5/6
+> O(1) jest w drugiej kategorii. SPA chain prefactor amplifies (α_4=30·e_2
+> + cross-terms) → G_SPA=48, factor 48× away from 1.
+>
+> Phase 1.5 sympy-LOCK derived G_SPA=48 explicit; β_ppE^TGP_(b=-1) corrected
+> to -15/4. GWTC-3 RE-RUN z corrected prior dał 5.02σ falsification.
+>
+> Original §1-§4 content (preservowane dla audit trail; **NIE do PREDICTIONS_REGISTRY**)
 
 ---
 

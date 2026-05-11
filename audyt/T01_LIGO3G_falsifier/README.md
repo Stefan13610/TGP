@@ -21,6 +21,7 @@ related:
   - "[[../README.md]]"
   - "[[../PRIORITY_MATRIX.md]]"
   - "[[../S07_M911_derivation/README.md]]"
+  - "[[ADDENDUM_2026-05-10_native_observables_first.md]] (v4 native-first reframe, binding 2026-05-10+)"
   - "[[NEEDS.md]]"
   - "[[FALSIFIER_STATEMENT_DRAFT.md]]"
   - "[[PPN_TO_PPE_MAPPING.md]]"
@@ -29,6 +30,11 @@ related:
   - "[[CYCLE_KICKOFF_op-ppE-mapping.md]]"
   - "[[CYCLE_KICKOFF_op-LIGO-3G-deviation.md]]"
   - "[[FINDINGS.md]]"
+  - "[[../../meta/PPN_AS_PROJECTION.md]] (parent native-first methodology)"
+  - "[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] (Phase 1.5 G_SPA=48 LOCK source)"
+  - "[[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] (5.02σ FALSIFIED source)"
+  - "[[../../research/op-emergent-metric-from-interaction-2026-05-09]] (Phase 4 zero-β recovery framework)"
+  - "[[../../papers/M911_LIGO3G_paper/paper_draft.md]] (v2 revision target)"
   - "[[../../PREDICTIONS_REGISTRY.md]]"
   - "[[../../TGP_FOUNDATIONS.md]]"
   - "[[../../research/op-newton-momentum/M9_1_pp_P1_results.md]]"
@@ -37,7 +43,7 @@ tgp_status:
   level: T1
   kind: audit-test
   core_compatibility: review-only
-  last_reviewed_against_core: 2026-05-07
+  last_reviewed_against_core: 2026-05-10
   may_edit_core: false
   exports_findings: true
   has_needs_file: true
@@ -51,7 +57,7 @@ tgp_status:
   polluted_74394a8: false
   pre_existing_findings: false
   pre_existing_needs: false
-  last_yaml_update: 2026-05-07
+  last_yaml_update: 2026-05-10
 revisions:
   - v1 (2026-05-06): Pierwsza wersja — diagnoza EXT-5, ścieżki A/B/C/D
   - v2 (2026-05-07): Dodano NEEDS.md, FALSIFIER_STATEMENT_DRAFT.md
@@ -105,6 +111,54 @@ revisions:
     Phase3_verdict.md §3.3. **Recommended next:** Workflow A
     (TGP-specific Bayes z public GWTC-3 events, ~1 sesja Python,
     expected ~1-2σ tentative signal).
+  - v3.2 (2026-05-09, Phase 1.5 G_SPA LOCK + GWTC-3 RE-RUN):
+    [[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]]
+    sympy-derived **G_SPA = 48 (sympy-exact, test-particle)** —
+    factor 48× LARGER than Phase 1 heuristic G_SPA ≈ 1 (SYC 2013
+    small-perturbation framework, applied OUTSIDE its regime of
+    validity). 4-level verification: sympy LOCK 5/5 + hand-calc
+    + numerical sanity at U=0.1 + alternative SPA orthogonal
+    route — all converge on β_ppE^TGP^(b=-1) = **-15/4 ≈ -3.75**
+    at η=1/4 (test-p ±25%). [[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]
+    GWTC-3 RE-RUN z corrected β prior: **BF = 3.5·10⁻⁶, log10 BF
+    = -5.45, σ-level = 5.02σ FALSIFIED-OBSERVATIONAL** (vs v3.1
+    INCONCLUSIVE BF=0.97 z β=-5/64 prior). M911-P1 →
+    FALSIFIED-OBSERVATIONAL. M911-P2 → WITHDRAWN-needs-rederivation
+    (Phase 1 ratios {-23/10, -38/23, +337/228} INCORRECT; alternative
+    SPA gives β_3PN/β_2PN = -11161/504 ≈ -22.14). M911-P3 →
+    PARTIAL-FALSIFIED (2/4 channels invalid; BH5 + ε.1 LIVE).
+    FALSIFIER_STATEMENT_DRAFT.md → CRITICAL UPDATE block at top.
+    paper_draft.md → DRAFT-v1 SUPERSEDED block; v2 revision required.
+  - v4 (2026-05-10, native-first revision per `meta/PPN_AS_PROJECTION.md`
+    binding 2026-05-10+): kompleksowa revision T01 audit folder pod
+    native-observables-first methodology. Utworzono
+    [[ADDENDUM_2026-05-10_native_observables_first.md]] (~280 lines,
+    v2 corrected post-Phase 1.5 reading) — three-layer specification
+    (L1 native c_n / L2 chart β_ppE / L3 falsifier GWTC-3 + ET-D + CE);
+    **β_ppE = -5/64 vs -15/4 = Phase 1 heuristic vs Phase 1.5
+    sympy-LOCK correction** (NIE chart-disambiguation jak v1
+    addendum błędnie sugerował); cross-validation T01 + emergent-metric
+    AGREE on β=-15/4 (sibling form-meaning case study Phase 1 = ψ.1.v1).
+    [[FALSIFIER_STATEMENT_DRAFT.md]] revision: native-first §0-§4
+    PRIMARY content; Phase 1 baseline → APPENDIX A historical reference.
+    **Deferred revision tasks executed 2026-05-10 (this v4):**
+    [[PPN_TO_PPE_MAPPING.md]] explicit G_SPA=48 dictionary update
+    (§0 native-first three-layer dictionary primary; §2.2 historical
+    heuristic preserved; §5 assumptions A1-A6 closed status post-Phase 1.5;
+    §6 next-steps recomputed); [[SENSITIVITY_BACK_OF_ENVELOPE.md]]
+    thresholds recomputed z β=-15/4 prior (§0 post-LOCK summary primary;
+    §4 detection table updated z TGP/bound 5σ FALSIFIED in LIGO-O3
+    + academic ratios for ET/CE; §6 conclusion v4 negative result
+    + recovery paths); [[../../papers/M911_LIGO3G_paper/paper_draft.md]]
+    v2 revision (Abstract v2 + §1'-§7' primary content "negative result
+    + factor-48 methodological finding + recovery via emergent-metric
+    framework"; v1 abstract + §1-§6 → APPENDIX A historical record).
+    **T01 status: CLOSED-EXECUTED + native-first reframe COMPLETE.**
+    7-fold cross-cycle convergence diagnostic: T01 (chart-level) +
+    L01 (numerical) + τ.3 (mechanism) + ψ.1 (operator-class) + Q2
+    (vacuum-level) + Φ-vacuum (dual-V) + B9 (regime-level) — all
+    converge on **separable sector structure** of TGP framework,
+    *structural property* nie post-hoc tuning.
 ---
 
 # T01 — Test różnicujący: |Δg_tt| = (5/6) U³ vs LIGO 3G

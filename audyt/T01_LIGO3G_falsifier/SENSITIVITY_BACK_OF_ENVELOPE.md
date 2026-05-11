@@ -1,44 +1,129 @@
 ---
-title: "Sensitivity OOM (preview Path A): detektywność (5/6) U³ w ET-D / CE"
-date: 2026-05-07
+title: "Sensitivity OOM (Path A): detektywność (5/6) U³ — Phase 1.5 G_SPA=48 LOCK + GWTC-3 5.02σ FALSIFIED"
+date: 2026-05-07 (original) / 2026-05-10 (v2 β=-15/4 LOCK update)
 parent: "[[README.md]]"
-type: analytical-preview
+type: analytical-preview-superseded-by-Phase1.5-and-GWTC3-RERUN
 tgp_owner: audyt/T01_LIGO3G_falsifier
+revision_history:
+  - v1 (2026-05-07): preview Path A — Phase 1 OOM heuristic baseline (β=-5/64)
+  - v2 (2026-05-07 sesja C-B-A-D): §4 patched z Phase 1 LOCK (TGP/bound 0.78–780 ratios)
+  - v3 (2026-05-09): Phase 1.5 G_SPA=48 LOCK + GWTC-3 RE-RUN 5.02σ FALSIFIED-OBSERVATIONAL
+  - v4 (2026-05-10): native-first reframe + thresholds recomputed z β=-15/4 prior;
+                     aligns with [[ADDENDUM_2026-05-10_native_observables_first.md]]
 tags:
-  - preview
   - sensitivity
   - back-of-envelope
   - ET-D
   - Cosmic-Explorer
   - LIGO-O5
+  - LIGO-O3
   - SNR
   - Fisher
-  - 3PN
+  - 2PN-phase
   - T01
   - EXT-5
+  - G_SPA-locked
+  - sympy-LOCK
+  - Phase1.5
+  - GWTC3-falsified
+  - native-observables-first
 related:
   - "[[README.md]]"
+  - "[[ADDENDUM_2026-05-10_native_observables_first.md]] (parent native-first methodology)"
   - "[[NEEDS.md]]"
   - "[[FALSIFIER_STATEMENT_DRAFT.md]]"
   - "[[PPN_TO_PPE_MAPPING.md]]"
+  - "[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] (β=-15/4 sympy LOCK source)"
+  - "[[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] (5.02σ FALSIFIED source)"
+  - "[[../../research/op-LIGO-3G-deviation/Phase3_falsifier_thresholds.md]] (Phase 3 Fisher LOCK)"
+  - "[[../../meta/PPN_AS_PROJECTION.md]] (binding methodology)"
 ---
 
-# Sensitivity back-of-envelope — preview Path A
+# Sensitivity back-of-envelope — Path A (post-Phase 1.5 LOCK + GWTC-3 RE-RUN)
 
-> **Cel pliku.** Order-of-magnitude (OOM) szacowanie detektywności
-> deviation (5/6) U³ od GR w sieciach ET-D / Cosmic Explorer dla
-> reprezentatywnych BBH/BNS scenariuszy, oparte na **literaturze
-> existing Fisher analyses**. Plik jest **previewem** dla cyklu
-> `research/op-LIGO-3G-deviation/`; dostarcza:
-> - skala U typowa dla inspiralu (gdzie deviation jest najsilniejsza),
-> - SNR-targets dla ET-D + CE (literatura),
-> - ppE Fisher bounds dla 3PN coefficient (literatura),
-> - explicit decyzję CZY (5/6) U³ jest detektywna i dla jakich M, d, SNR.
+## ⚠ STATUS UPDATE 2026-05-10 — Phase 1.5 + GWTC-3 RE-RUN incorporated
+
+> **Two cascading findings invalidate the v1-v2 "preview" framing:**
 >
-> **Status:** OOM. Liczby są przybliżone z dokładnością do faktora
-> 2–3 (literatura giving the same scenario varies by ~factor 2 due
-> to inclination/sky-position averaging assumptions). Cykl
-> `op-LIGO-3G-deviation/` Phase 2 zamknie precyzję do %.
+> 1. **Phase 1.5 (2026-05-09):** G_SPA = 48 sympy-exact, NIE ≈ 1 jak Phase 1
+>    heuristic zakładał. Source: [[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]].
+>    → β_ppE^TGP^(b=-1) = -15/4 ≈ -3.75 (factor 48× larger than v2 assumed).
+>
+> 2. **GWTC-3 RE-RUN (2026-05-09):** TGP M9.1'' specific (4-3ψ)/ψ ansatz
+>    **FALSIFIED at 5.02σ** by GWTC-3 combined posterior (BF = 3.5·10⁻⁶,
+>    log10 BF = -5.45). The "borderline LIGO-O3 / decisive ET-CE 2035+"
+>    framing is OBSOLETE — falsification has already occurred.
+>    Source: [[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]].
+>
+> **What this file documents now (v4 2026-05-10):**
+> - §0: post-Phase 1.5 + post-RE-RUN summary table (PRIMARY)
+> - §1-§3: literature ppE Fisher bounds (still valid; depend only on detector
+>   sensitivity, not on TGP β value)
+> - §4: detection table RECOMPUTED with β=-15/4 prior — shows that in CURRENT
+>   LIGO-O3 + GWTC-3 era, TGP/bound ratio ~5σ already (post-detection regime,
+>   confirmed via TIGER framework Bayes RE-RUN)
+> - §5-§6: caveats + falsification window (collapsed to "already past")
+>
+> **Native-first reframe (binding 2026-05-10+):** native L1 quantities
+> (c_3 = -5/6, Δe_2 = -4/3, Δα_4 = -40) sympy-LOCKED; L2 chart projection
+> (β_ppE, b_ppE, G_SPA) sympy-LOCKED; L3 falsifier (GWTC-3 BF, ET-D + CE
+> thresholds) gives empirical verdict. M9.1'' specific f(ψ) FALSIFIED;
+> recovery via emergent-metric Phase 4 zero-β region OR alternative S07
+> f(ψ) reset remains viable.
+
+## §0 — Post-Phase 1.5 + post-RE-RUN summary (PRIMARY 2026-05-10)
+
+| Quantity | Phase 1 (v1, 2026-05-07) | Phase 1.5 (v3, 2026-05-09) | Comment |
+|---|---|---|---|
+| G_SPA | ≈ 1 (SYC 2013 heuristic, OBSOLETE) | **48** sympy-exact | factor 48× correction |
+| β_ppE^TGP^(b=-1) at η=1/4 | -5/64 ≈ -0.078 | **-15/4 ≈ -3.75** | factor 48× larger |
+| OOM window |β| | [0.055, 0.12] | **[2.81, 4.69]** | test-p ± 25% η-correction |
+| LIGO-O3 status | borderline | **5.02σ FALSIFIED-OBSERVATIONAL** | GWTC-3 RE-RUN (TIGER) |
+| LIGO-O5 prediction | "first decisive 2027+" | already falsified | obsolete framing |
+| ET-D + CE prediction | "1000σ at single loud BBH" | already falsified | obsolete framing |
+| Window of testability | "2027–2035" | already past (2019-2020 GWTC-3 closed it) | falsification occurred in past data |
+
+**Native parameter audit (post-Phase 1.5):**
+
+```
+L1 native source (sympy-LOCKED, op-newton-momentum):
+  c_3 (g_tt at U³)     = -5/6     [α=2 vacuum + M9.1'' f(ψ) FORCED]
+  c_4 (g_tt at U⁴)     = -23/12   [structural]
+  c_5 (g_tt at U⁵)     = +337/72  [structural]
+
+L1 native dynamics (sympy-LOCKED, op-ppE-mapping Phase 1.5):
+  Δe_2 (orbital)       = -4/3     [test-particle exact, η-correction ±25%]
+  Δα_4 (TaylorF2)      = -40      [test-particle exact, sympy-exact rational]
+
+L2 chart projection (sympy-LOCKED, op-ppE-mapping Phase 1.5):
+  G_SPA                = 48       [test-particle exact, NIE 1 jak SYC 2013 heuristic]
+  β_ppE^TGP^(b=-1)     = -15/4    [η=1/4, test-p ± 25%]
+  b_ppE^TGP            = -1       [2PN-phase, U³ metric → phase]
+
+L3 falsifier (empirical, op-GWTC3-reanalysis Phase 2 RE-RUN):
+  GWTC-3 BF_TGP/GR     = 3.5·10⁻⁶ [combined posterior, TIGER framework]
+  GWTC-3 σ-level       = 5.02σ    [FALSIFIED-OBSERVATIONAL]
+  ET-D + CE windows    = N/A      [falsification already occurred in past data]
+
+Falsifier scope: M9.1'' SPECIFIC ansatz f(ψ)=(4-3ψ)/ψ falsified.
+Recovery: S07 alternative f(ψ) reset OR emergent-metric Phase 4
+          zero-β region in (a_n, ξ_n, b_n, c_0, κ_σ) space.
+```
+
+## §0.1 — Cel pliku (HISTORICAL preview-era)
+
+> **Original cel (2026-05-07).** Order-of-magnitude (OOM) szacowanie
+> detektywności deviation (5/6) U³. Plik był previewem dla cyklu
+> `research/op-LIGO-3G-deviation/`. Cykl został wykonany w sesji
+> 2026-05-07 (Phase 0+1+2+3 Fisher matrix, calibrated thresholds).
+> Phase 1.5 (2026-05-09) + GWTC-3 RE-RUN (2026-05-09) razem zamknęły
+> wszystkie open assumptions A1-A6 i dały empirical verdict.
+>
+> **Status v4 (2026-05-10):** ANALYTICAL DOKUMENT (post-Phase 1.5 LOCK
+> + post-RE-RUN). Liczby są teraz sympy-exact lub literature-locked.
+> Sekcje §1-§3 zachowują strukturę OOM jako pedagogical reference;
+> §4 recomputed z β=-15/4 prior; §0 (post-LOCK summary) jest primary
+> post-2026-05-10.
 
 ## §1 — Reżim ważności U dla inspiralu BBH
 
@@ -149,71 +234,98 @@ Z Maggiore et al. 2020 §3 i Yagi–Yunes 2016 (1602.04674):
 | ET+CE | 5000 BBH | ~10⁻⁴ |
 | ET+CE | 10⁵ BBH (5yr) | ~10⁻⁵ |
 
-## §4 — Skonfrontowanie: TGP M9.1'' β_ppE^TGP vs detector bounds
+## §4 — Skonfrontowanie: TGP M9.1'' β_ppE^TGP vs detector bounds (RECOMPUTED v4 2026-05-10)
 
-### 4.1 Skala β_ppE^TGP (LOCKED 2026-05-07 via op-ppE-mapping Phase 1)
+### 4.1 Skala β_ppE^TGP (LOCKED Phase 1.5, 2026-05-09)
 
-**Status update:** preview OOM zastąpiony liczbowym lock z
-[[../../research/op-ppE-mapping/Phase1_results.md]] §6 (sympy LOCK
-14/14: 7/7 α_n^TGP coefficients reproducja + 7/7 Δα_n consistency).
+**Phase 1.5 LOCK:** [[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] §4-§5
+(sympy LOCK 5/5 PASS + 4-level verification: hand-calc + numerical sanity at
+U=0.1 + alternative SPA orthogonal route → all converge to identical β=-15/4).
 
 ```
-β_ppE^TGP^(b=-1) = -(3/(128·η)) · (5/6) · G_SPA   [LOCKED form]
+β_ppE^TGP^(b=-1) = -(3/(128·η)) · Δα_3_metric · G_SPA   [LOCKED form]
 
-Equal-mass (η=1/4), G_SPA=1 (central):
-   β_ppE^TGP^(b=-1) = -5/64 ≈ -7.81 · 10⁻²
+Equal-mass (η=1/4), G_SPA = 48 (sympy-exact test-particle):
+   β_ppE^TGP^(b=-1) = -(3/(128·1/4)) · (-5/6) · 48 = -(3/32) · 40 = -15/4 ≈ -3.75
 
-OOM window (G_SPA ∈ [0.7, 1.5], uncertainty z modified quadrupole formula):
-   |β_ppE^TGP^(b=-1)| ∈ [5.5 · 10⁻², 1.2 · 10⁻¹]
+Test-particle ± 25% η-correction window:
+   |β_ppE^TGP^(b=-1)| ∈ [2.81, 4.69]
 ```
 
-**Konkluzja vs preview:** preview szacował OOM ~10⁻¹ (κ ≈ 0.5–1.5);
-lock dał ~7.8·10⁻² (central) — w tej samej skali, precyzja ~30%
-przy G_SPA=1. **To jest decisive: TGP β_ppE^TGP ≈ 7.8·10⁻² jest
-~2.6× powyżej LIGO-O5 single-event bound ~3·10⁻²** → first decisive
-detection możliwa już w erze ~2027–2030.
+**Phase 1 vs Phase 1.5:** Phase 1 szacował β ≈ -7.8·10⁻² (central z G_SPA ≈ 1
+heuristic). Phase 1.5 sympy-LOCKED β = -3.75 (factor **48× larger**).
+Phase 1 heuristic G_SPA ≈ 1 was applied OUTSIDE its regime of validity
+(SYC 2013 small-perturbation framework; TGP M9.1'' jest structural O(1)
+modification → SPA chain amplification G_SPA = 48).
 
-### 4.2 Tabela detekcji (TGP vs bounds)
+### 4.2 Tabela detekcji (RECOMPUTED z β=-15/4 prior, v4 2026-05-10)
 
 **Konwencja:** wszystkie wartości β_ppE_5σ_bound poniżej są dla
-**2PN-phase, b_ppE = −1** (zob. [[CONVENTION_DECISION.md]] dla wyjaśnienia
-mapowania U³-w-g_tt → b=−1; bounds wzięte z linii 2PN tabeli §3.1).
+**2PN-phase, b_ppE = −1** (zob. [[CONVENTION_DECISION.md]]; bounds wzięte
+z linii 2PN tabeli §3.1; Phase 3 Fisher LOCK
+[[../../research/op-LIGO-3G-deviation/Phase3_falsifier_thresholds.md]] §2
+confirms detector thresholds independent of theory prediction).
 
-| Detektor / scenariusz | β_ppE_5σ_bound^(b=−1) | β_ppE^TGP (LOCKED) | TGP/bound | Detekcja TGP? |
-|-----------------------|------------------------|----------------------|-----------|----------------|
-| LIGO-O3 (now)          | ~10⁻¹                 | ~7.8·10⁻²            | ~0.78     | borderline |
-| LIGO-O5 single | ~3·10⁻²                       | ~7.8·10⁻²            | ~2.6      | **YES — first decisive 2027+** |
-| LIGO-O5 stack 100 BBH | ~3·10⁻³                | ~7.8·10⁻²            | ~26       | YES (>20σ) |
-| ET-D single | ~10⁻³                         | ~7.8·10⁻²            | ~78       | YES (>50σ) |
-| ET-D stack 100 BBH | ~10⁻⁴                    | ~7.8·10⁻²            | ~780      | YES (>700σ) |
-| CE single | ~3·10⁻⁴                         | ~7.8·10⁻²            | ~260      | YES (>200σ) |
-| ET+CE stack 5000 BBH | ~10⁻⁴                  | ~7.8·10⁻²            | ~780      | YES (>700σ) |
+| Detektor / scenariusz | β_ppE_5σ_bound^(b=−1) | β_ppE^TGP (LOCKED v3) | TGP/bound | Detekcja TGP? (v4 verdict) |
+|-----------------------|------------------------|------------------------|-----------|------------------------------|
+| **LIGO-O3 / GWTC-3 (TIGER reanalysis)** | β_5σ ≈ 0.78 (single-coef) | **3.75** | **~5.02σ** | **FALSIFIED-OBSERVATIONAL** ([[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]) |
+| LIGO-O3 generic ToGR (multi-coef marginalized) | ~10⁻¹ | 3.75 | ~37 | would be >30σ but generic analysis ~50× weaker than dedicated TIGER |
+| LIGO-O5 single | ~3·10⁻² | 3.75 | ~125 | (academic) >100σ if not already falsified |
+| LIGO-O5 stack 100 BBH | ~3·10⁻³ | 3.75 | ~1250 | (academic) >1000σ |
+| ET-D single (GW150914-like loud) | ~10⁻³ | 3.75 | ~3750 | (academic) >3000σ |
+| ET-D stack 100 BBH | ~10⁻⁴ | 3.75 | ~37500 | (academic) >30000σ |
+| CE single (loud BBH) | ~3·10⁻⁴ | 3.75 | ~12500 | (academic) >10000σ |
+| ET+CE stack 5000 BBH | ~10⁻⁴ | 3.75 | ~37500 | (academic) >30000σ |
 
-**Komentarz do "borderline" w O3.** Subiektywna interpretacja "TGP w
-basenie" dla aktualnego LIGO-O3: bound ~10⁻¹ vs przewidziane β_ppE^TGP
-~10⁻¹ — to znaczy że TGP jest na **granicy aktualnej wykrywalności**.
-Nie sfalsyfikowane, ale również nie *nadal under-constrained*. Zob.
-[[NEEDS.md]] Q3 — re-analiza GWTC-3 ppE constraints w 2PN-phase
-specifically dla M9.1'' β_TGP^TGP byłaby cennym side-cyklem.
+**Wszystkie wartości "(academic)" oznaczają: gdyby M9.1'' przetrwał GWTC-3
+falsification, byłby trywialnie wykryty w późniejszych detektorach.
+Ponieważ falsification już zaszedł w GWTC-3, te kolumny są historyczne.**
 
-**Główny insight:**
+### 4.3 GWTC-3 RE-RUN verdict (post-Phase 1.5 corrected β, 2026-05-09)
 
-1. **TGP jest w basenie konsystencji w LIGO-O3.** Bounds są ~3·10⁻¹,
-   przewidziane β_TGP ~ 10⁻¹ — TGP jest *under-constrained*. To jest
-   **dobre** — nie ma już falsyfikacji z O3, a deviation jest
-   *prawdziwie predyktywna* dla przyszłości.
+Per [[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]:
 
-2. **LIGO-O5 może już dać sygnał.** Stack 100 BBH events daje bound
-   ~3·10⁻². Jeśli β_ppE^TGP ≈ 10⁻¹, to **LIGO-O5 już falsyfikuje
-   M9.1'' lub potwierdza** ~2027–2030. (Pre-ET window.)
+```
+GWTC-3 combined posterior (TIGER framework, ~90 BBH events):
+  σ_β at b=-1 (2PN-phase)     ≈ 0.78        (single-coef Bayes prior)
+  β_ppE^TGP (Phase 1.5 LOCK)  = -3.75       (η=1/4, ±25% test-p approx)
+  TGP / σ_β                    = 4.81        (Z-score)
+  Bayes factor BF_TGP/GR       = 3.5·10⁻⁶   (combined)
+  log10 BF                     = -5.45      ("OVERWHELMING GR preference")
+  σ-level vs combined          = 5.02σ       (FALSIFIED-OBSERVATIONAL)
 
-3. **ET-D + CE są decisive.** Single events już dają detekcję. Stack
-   1000+ BBH daje >1000σ. Albo deviation jest tam, i M9.1'' jest
-   verified, albo nie ma — i M9.1'' jest *nadzwyczaj sfalsyfikowana*.
+Caveat: falsification applies to SPECIFIC M9.1'' ansatz f(ψ) = (4-3ψ)/ψ.
+        Alternative f(ψ) structures (S07 reset) + emergent-metric Phase 4
+        recovery framework (zero-β region) remain viable.
+```
 
-4. **Window of testability:** ~2027 (LIGO-O5 first stacked results)
-   do 2035+ (ET-D + CE first observations). To **5–8 letnie okno**
-   na peer-review podążanie M9.1''.
+### 4.4 Główny insight (post-Phase 1.5 + post-RE-RUN)
+
+1. **Falsification window collapsed.** Preview-era language "borderline LIGO-O3"
+   był oparty na Phase 1 heuristic G_SPA ≈ 1. Phase 1.5 sympy-LOCK G_SPA = 48
+   gives factor 48× larger β_TGP, czyniąc M9.1'' specific ansatz **już
+   sfalsyfikowanym 5σ** w current LIGO-O3 / GWTC-3 data.
+
+2. **"Window of testability 2027–2035" nieaktualne.** Falsifikacja już zaszła
+   w 2019-2020 (LIGO O3 obs run, GWTC-3 catalog). RE-RUN 2026-05-09 z corrected
+   β prior dokumentuje to retrospectively.
+
+3. **Multi-coefficient pattern misleading (Phase 1 heuristic).** Phase 1 ratios
+   {-23/10, -38/23, +337/228} are INCORRECT (Phase 1.5 alternative SPA gives
+   β_3PN/β_2PN = -11161/504 ≈ -22.14, factor ~10× off). M911-P2 entry of
+   PREDICTIONS_REGISTRY → WITHDRAWN-needs-rederivation.
+
+4. **Recovery via emergent-metric Phase 4.** [[../../research/op-emergent-metric-from-interaction-2026-05-09]]
+   Phase 4 STRUCTURAL DERIVED zero-β region in (a_n, ξ_n, b_n, c_0, κ_σ)
+   parameter space — Path 1 (c_0 = 0 substrate) i Path 2 (κ_σ = 4/3 canonical
+   coupling) viable post-falsification. Falsification dotyczy *specific
+   f(ψ)*, NIE TGP framework całość.
+
+5. **Methodological finding (independent of TGP fate).** SPA chain analysis
+   for STRUCTURAL-modification theories (O(1) coupling, NOT small-perturbation)
+   gives G_SPA ≠ 1 (factor 48 in this case). SYC 2013 "G_SPA ≈ 1" common
+   assumption FAILS for such theories — notable methodological caveat for
+   future ppE catalog work (Yagi-Yunes-Pretorius 2016 review etc.).
 
 ## §5 — Reżim ważności i caveat-e
 
@@ -248,22 +360,55 @@ Wszystkie liczby powyżej zakładają konwencję "phase 3PN = b_ppE = +1"
 To jest **dobry argument dla TGP**: w ANY konwencji, deviation
 jest detektywna.
 
-## §6 — Konkluzja preliminary
+## §6 — Konkluzja v4 (post-Phase 1.5 LOCK + post-GWTC-3 RE-RUN)
 
-| Pytanie z [[NEEDS.md]] | Odpowiedź preliminary (OOM) |
-|------------------------|------------------------------|
-| Q1 — najsłabszy ET sygnał dla 5σ detekcji? | M_BBH ≥ 30 M_⊙, d ≤ 1 Gpc, single SNR ≥ 100 | 
-| Q3 — czy O3/O4 już *constraints*? | NIE — TGP w basenie ~10⁻¹, bounds ~10⁻¹ |
-| (komplement) — kiedy decyzyjne? | LIGO-O5 stack ~2027–2030, ET-D + CE ~2035 |
+### 6.1 Recomputed answers do questions z [[NEEDS.md]]
 
-**Preliminary verdict:** (5/6) U³ deviation **jest detektywna w 3G era**
-przy realistic SNR i event rates. To znaczy — T01 falsifier jest
-**fizycznie wykonalny**, nie tylko teoretycznie sformułowany.
+| Pytanie | Odpowiedź v1-v2 (Phase 1) | Odpowiedź v4 (Phase 1.5 + RE-RUN) |
+|---------|---------------------------|------------------------------------|
+| Q1 — najsłabszy ET sygnał dla 5σ detekcji? | M_BBH ≥ 30 M_⊙, d ≤ 1 Gpc, SNR ≥ 100 | **N/A** — falsification already occurred in GWTC-3; ET-D not needed |
+| Q3 — czy O3/O4 już *constraints*? | NIE — TGP w basenie ~10⁻¹ | **TAK** — TGP-specific TIGER reanalysis 5.02σ FALSIFIED ([[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]) |
+| (komplement) — kiedy decyzyjne? | LIGO-O5 stack ~2027–2030 | **już zdecydowane (2019-2020 GWTC-3 catalog)** |
 
-Cykl `research/op-LIGO-3G-deviation/` Phase 2 zamknie:
-- precyzyjny single-event SNR threshold,
-- precyzyjny network SNR / N_events combo dla ET-D + CE,
-- Fisher matrix z full param (mass, spin, distance, inclination).
+### 6.2 v4 verdict (post-Phase 1.5 + post-RE-RUN)
+
+**(5/6) U³ deviation z M9.1'' specific f(ψ)=(4-3ψ)/ψ ansatz** jest:
+
+1. **Empirycznie sfalsyfikowane 5.02σ** w GWTC-3 (combined ~90 BBH events,
+   TIGER framework Bayes inference z corrected β=-15/4 prior).
+2. **Methodologically robust** — sympy-LOCK 5/5 PASS at multiple verification
+   levels (Phase 1 + Phase 1.5 + 4-level cross-check + alternative SPA route).
+3. **Native parameter audit clean** — zero free parameters; falsification dotyczy
+   *specific ansatz form*, NIE framework jako całość.
+
+### 6.3 Recovery paths (post-falsification, viable)
+
+| Path | Description | Status |
+|------|-------------|--------|
+| **S07 alternative f(ψ)** | Reset M9.1'' z innym hyperbolic / power ansatz; preserve native L1 c_n structure | OPEN — S07 audit cycle |
+| **Emergent-metric Phase 4** | zero-β region in (a_n, ξ_n, b_n, c_0, κ_σ) substrate parameter space | STRUCTURAL DERIVED ([[../../research/op-emergent-metric-from-interaction-2026-05-09]]) |
+| **Path 1: c_0 = 0** | substrate scaling vanishes → β-independent g_eff[Φ] | viable; in Phase 4 zero-β |
+| **Path 2: κ_σ = 4/3 canonical** | substrate-coupling preserves PPN γ=β=1 + zero β at 2PN-phase | viable; in Phase 4 zero-β |
+
+**Cykl `research/op-LIGO-3G-deviation/` Phase 3** (already executed,
+2026-05-07) provides Fisher LOCK on detector thresholds — those are
+**theory-independent** i remain valid as bounds on β_ppE^(b=-1) regardless
+of which f(ψ) ansatz is tested.
+
+### 6.4 Native-first scope clarification (binding 2026-05-10+)
+
+Per [[../../meta/PPN_AS_PROJECTION.md]] §3.1, falsification result reads:
+
+| Layer | Status |
+|---|---|
+| **L1 native** (Φ-EOM derivation, c_n coefficients) | **PRESERVED** — α=2 vacuum + (4-3ψ)/ψ produces sympy-LOCKED c_n |
+| **L2 chart** (β_ppE projection) | **VALIDATED** — sympy-LOCK 5/5 + 4-level confirms Phase 1.5 derivation |
+| **L3 falsifier** (GWTC-3 BF / σ-level) | **FALSIFIED** — 5.02σ on M9.1'' SPECIFIC ansatz only |
+
+Falsification of L3 nie sfalsyfikowuje native L1 framework; sfalsyfikowuje
+*specific functional form* mapping substrate Φ → effective metric. Recovery
+via alternative L1 source structure (S07 reset) lub via emergent-metric Phase 4
+zero-β substrate-parameter region.
 
 ## Cross-references
 

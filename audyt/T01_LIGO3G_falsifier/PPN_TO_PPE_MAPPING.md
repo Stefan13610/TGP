@@ -1,42 +1,114 @@
 ---
-title: "PPN → ppE mapping (preview Path B): (5/6) U³ deviation → β_ppE^(3PN)"
-date: 2026-05-07
+title: "PPN → ppE mapping (Path B): (5/6) U³ deviation → β_ppE^(2PN-phase) — Phase 1.5 G_SPA=48 LOCK"
+date: 2026-05-07 (original) / 2026-05-10 (v2 G_SPA=48 LOCK update)
 parent: "[[README.md]]"
-type: analytical-preview
+type: analytical-preview-superseded-by-Phase1.5
 tgp_owner: audyt/T01_LIGO3G_falsifier
+revision_history:
+  - v1 (2026-05-07): preview Path B — Phase 1 OOM heuristic, β_ppE^TGP ≈ -5/64 (G_SPA ≈ 1)
+  - v2 (2026-05-07 sesja C-B-A-D): preview SUPERSEDED przez Phase 1 LOCK (op-ppE-mapping/Phase1_results.md)
+  - v3 (2026-05-09): Phase 1.5 G_SPA=48 sympy-LOCK derived → β_ppE^TGP = -15/4 ≈ -3.75 (factor 48× larger)
+  - v4 (2026-05-10): native-first reframe + dictionary explicit G_SPA=48 update post-Phase 1.5 +
+                     post-GWTC-3 RE-RUN; aligns with [[ADDENDUM_2026-05-10_native_observables_first.md]]
 tags:
-  - preview
+  - dictionary
   - analytical
   - ppE
   - PPN
-  - 3PN
+  - 2PN-phase
   - M911
   - inspiral
   - phase-modification
   - T01
   - EXT-5
+  - G_SPA-locked
+  - sympy-LOCK
+  - Phase1.5
+  - native-observables-first
 related:
   - "[[README.md]]"
+  - "[[ADDENDUM_2026-05-10_native_observables_first.md]] (parent native-first methodology)"
   - "[[NEEDS.md]]"
   - "[[FALSIFIER_STATEMENT_DRAFT.md]]"
   - "[[SENSITIVITY_BACK_OF_ENVELOPE.md]]"
   - "[[../../research/op-newton-momentum/M9_1_pp_P1_results.md]]"
+  - "[[../../research/op-ppE-mapping/Phase1_results.md]] (Phase 1 LOCK, β=-5/64 with G_SPA≈1 heuristic)"
+  - "[[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] (Phase 1.5 sympy-LOCK 5/5 PASS, G_SPA=48 sympy-exact)"
+  - "[[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] (GWTC-3 RE-RUN, 5.02σ FALSIFIED)"
+  - "[[../../meta/PPN_AS_PROJECTION.md]] (binding methodology 2026-05-10+)"
 ---
 
-# PPN → ppE mapping — preview Path B
+# PPN → ppE mapping — Path B (post-Phase 1.5 LOCK)
 
-> **Cel pliku.** Dostarczyć **analityczny szkielet** mapowania
-> (5/6) U³ deviation w `g_tt^TGP` na parametry ppE Yunes–Pretorius
-> (β_ppE, b_ppE) dla fazy waveformu inspiralu BBH. Ten plik jest
-> **previewem** dla cyklu `research/op-ppE-mapping/` Phase 1; nie
-> zastępuje go. Dostarcza:
-> - dictionary "metric coefficient → SPA phase coefficient",
-> - identyfikację b_ppE^TGP,
-> - **structural** (nie precise) szacowanie β_ppE^TGP ze skali (5/6),
-> - listę założeń, które cykl badawczy musi zwalidować.
+## ⚠ STATUS UPDATE 2026-05-10 — Phase 1.5 G_SPA=48 LOCK incorporated
+
+> **Co zmieniło się od v1 preview (2026-05-07):**
 >
-> **Status:** SCHEMATYCZNY. Liczby są przybliżone z dokładnością
-> O(1) prefactor. Cykl `op-ppE-mapping/` zamknie precyzję do %.
+> 1. **G_SPA = 48 sympy-exact** (NIE ≈ 1 jak Phase 1 heuristic zakładał).
+>    Phase 1.5 derivation 4-level verified (sympy LOCK 5/5 + independent
+>    hand-calc + numerical sanity + alternative SPA orthogonal route).
+>    Source: [[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] §4.5.
+>
+> 2. **β_ppE^TGP^(b=-1) = -15/4 ≈ -3.75** (test-particle exact, η=1/4 ±25%);
+>    **factor 48× LARGER** niż Phase 1 OOM estimate -5/64 ≈ -0.078.
+>
+> 3. **Multi-coefficient ratios MISLEADING.** Phase 1 ratios {-23/10, -38/23,
+>    +337/228} są INCORRECT; Phase 1.5 alternative SPA gives β_3PN/β_2PN =
+>    -11161/504 ≈ -22.14 (factor ~10× different). M911-P2 multi-coefficient
+>    pattern requires full re-derivation per Phase 1.5 §10 sign-off.
+>
+> 4. **GWTC-3 RE-RUN 2026-05-09 with corrected β**: TGP M9.1'' specific
+>    (4-3ψ)/ψ ansatz **FALSIFIED at 5.02σ** (BF=3.5·10⁻⁶, log10 BF = -5.45).
+>    Source: [[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]].
+>
+> 5. **Falsifier window collapsed:** "ET-D + CE 2035+" no longer applies;
+>    falsification has occurred in CURRENT LIGO-O3 / GWTC-3 data. The
+>    "preview Path B for op-ppE-mapping cycle" framing is HISTORICAL.
+>
+> **Dictionary entries below are UPDATED to Phase 1.5 LOCK values.**
+> Sections preserved as analytical reference; the cycle `op-ppE-mapping/`
+> Phase 1 + 1.5 closed all open assumptions. Native-first methodology
+> per [[ADDENDUM_2026-05-10_native_observables_first.md]] (binding
+> 2026-05-10+) treats `g_tt[Φ]` Taylor coefficients (c_3 = -5/6,
+> c_4 = -23/12, c_5 = +337/72, …) as **L1 native** observables; ppE
+> parameters (β_ppE, b_ppE, G_SPA) as **L2 projection chart**;
+> GWTC-3 / ET-D / CE bounds as **L3 falsification map**.
+
+## §0 — Native-first three-layer dictionary (PRIMARY post-2026-05-10)
+
+| Layer | Quantity | TGP value | Source |
+|---|---|---|---|
+| **L1 native** | c_3 (g_tt Taylor at U³) | **-5/6** sympy-exact | M9_1_pp_P1 §3.2 LOCK 5/5 |
+| **L1 native** | c_4 (g_tt Taylor at U⁴) | **-23/12** sympy-exact | M9_1_pp_P1 §3.2 LOCK 5/5 |
+| **L1 native** | c_5 (g_tt Taylor at U⁵) | **+337/72** sympy-exact | M9_1_pp_P1 §3.2 LOCK 5/5 |
+| **L1 native** | Δe_2 (orbital binding at v⁴) | **-4/3** sympy-exact | Phase 1.5 §2.4 LOCK L3 |
+| **L1 native** | Δα_4 (TaylorF2 phase coef) | **-40** sympy-exact | Phase 1.5 §4.3 LOCK L5 |
+| **L2 chart** | b_ppE (PN order encoding) | **-1** (2PN-phase) | Cutler-Flanagan / Yunes-Pretorius |
+| **L2 chart** | G_SPA (SPA chain prefactor) | **48** sympy-exact (test-p) | Phase 1.5 §4.5 LOCK L5 |
+| **L2 chart** | β_ppE^TGP^(b=-1) at η=1/4 | **-15/4 ≈ -3.75** ±25% | Phase 1.5 §4.4 LOCK L5 |
+| **L3 falsifier** | GWTC-3 BF (TGP vs GR) | **3.5·10⁻⁶ → 5.02σ FALSIFIED** | RE-RUN 2026-05-09 |
+
+**Native parameter audit:** native coefs {c_3, c_4, c_5, …} are forced
+by α=2 vacuum Φ-EOM + M9.1'' f(ψ)=(4-3ψ)/ψ ansatz; **ZERO free
+parameters**. ppE values are **derived projections**, not fitted.
+This is what makes the falsification test sharp.
+
+---
+
+## §0.1 — Cel pliku (HISTORICAL preview-era language)
+
+> **Original cel pliku (2026-05-07).** Dostarczyć **analityczny szkielet**
+> mapowania (5/6) U³ deviation w `g_tt^TGP` na parametry ppE
+> Yunes–Pretorius (β_ppE, b_ppE) dla fazy waveformu inspiralu BBH.
+> Ten plik był **previewem** dla cyklu `research/op-ppE-mapping/`
+> Phase 1; cykl został wykonany w sesji 2026-05-07 (Phase 0+1+2+3
+> sympy LOCK 14/14) + Phase 1.5 (2026-05-09 sympy LOCK 5/5 +
+> 4-level verification G_SPA=48).
+>
+> **Status:** ANALYTICAL DICTIONARY (post-Phase 1.5 LOCK). Liczby są
+> teraz sympy-exact. Sekcje §1-§6 poniżej zachowują strukturę preview
+> jako pedagogical reference; §0 (native-first dictionary) jest
+> primary post-2026-05-10.
 
 ## §1 — ppE framework w skrócie
 
@@ -145,7 +217,24 @@ problem — TO JEST ZAKRES `op-LIGO-3G-deviation/` Phase 1 (N1).
 Ale dla preview szacujemy: deviation w E_orb przy v⁴ propaguje się
 do fazy Ψ przy u⁴/u⁵ = u⁻¹, czyli **2PN phase deviation** (b_ppE = −1).
 
-### 2.2 Heurystyka magnitude
+### 2.2 Heurystyka magnitude (HISTORICAL — superseded by Phase 1.5 LOCK)
+
+> **Phase 1 heuristic (2026-05-07, OBSOLETE):** preview szacował
+> κ_TGP ≈ 0.5–1.5 (G_SPA ≈ 1) na podstawie Sampson-Yunes-Cornish 2013
+> "metric-only modifications" framework. **To było incorrectly applied
+> outside SYC 2013 regime of validity** (small-perturbation; TGP
+> M9.1'' jest structural O(1) modification). Phase 1.5 sympy-LOCK
+> 4-level verified (2026-05-09): **G_SPA = 48 sympy-exact**
+> (factor 48× larger than Phase 1 heuristic).
+>
+> Phase 1.5 derivation (sketch):
+> ```
+> Δe_2 (orbital binding at v⁴) = (8/5)·Δα_3_metric = (8/5)·(-5/6) = -4/3
+> Δα_4 (TaylorF2 phase)         = 30·Δe_2 + cross-terms              = -40
+> G_SPA = Δα_4 / Δα_3            = -40 / (-5/6)                       = 48
+> β_ppE^TGP^(b=-1) at η=1/4      = -(3/(128·1/4)) · 40                = -15/4
+> ```
+> Source: [[../../research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] §2-§4.
 
 Dla M9.1'':
 
@@ -153,34 +242,23 @@ Dla M9.1'':
 Δg_tt/c² = − (5/6) U³ + …      gdzie U ≈ v²/c² ≈ u²/c²
 ```
 
-W phase modification (heurystyczna SPA):
+W phase modification (Phase 1.5 sympy-LOCKED SPA chain):
 
 ```
-δΨ_TGP(u) ≈ (3/(128 η)) · u⁻⁵ · κ_TGP · u^(2N_phase)
+δΨ_TGP(u) = (3/(128 η)) · u⁻⁵ · κ_TGP^LOCKED · u⁴      [PHASE 1.5]
+
+κ_TGP^LOCKED = (5/6) · G_SPA = (5/6) · 48 = 40           (test-p exact)
+β_ppE^TGP^(b=-1) at η=1/4 = -(3/(128·η)) · κ_TGP = -15/4 ≈ -3.75
+                                                    [test-p ± 25% η-correction]
 ```
 
-gdzie N_phase = 2 (2PN phase) i κ_TGP zawiera (5/6) plus prefactory
-z dE/dt i E_orb mappings. Konkretnie (heurystycznie, numerycznie):
-
+**Phase 1.5 OOM window (test-particle ± η-correction):**
 ```
-κ_TGP ≈ (5/6) · (numerical prefactor O(1))
-       ≈ 0.5 ÷ 1.5  (one-sigma; precise value to be locked in op-ppE-mapping)
+|β_ppE^TGP^(b=-1)| ∈ [2.81, 4.69]                         (NIE [0.055, 0.12])
 ```
 
-Wtedy:
-
-```
-δΨ_TGP(u) ≈ (3/(128 η)) · κ_TGP · u⁻³        ← 1PN-like u⁻³ form
-```
-
-**Stop. Dla precise:** powyższy heurystyczny scaling NIE jest dokładny
-— pełne mapowanie wymaga (a) M9.1'' two-body Lagrangian (DJS-like,
-ale z hiperboliczną metryką), (b) dE/dt z multipole expansion w
-M9.1'' (UWAGA: potencjalna modyfikacja luminosity przez modyfikację
-quadrupole formula w M9.1''!). Cykl `op-ppE-mapping/` Phase 1 to
-zamknie. Tutaj dostajemy *strukturę* i **expectation: β_ppE^TGP
-to liczba O(1) razy (5/6), w b_ppE = −1 lub b_ppE = +1 zależnie
-od konwencji PN counting**.
+**Phase 1.5 closed all preview-era assumptions** A1, A2, A3, A4, A5, A6
+(see §5 below; status updated post-Phase 1.5).
 
 ## §3 — Dictionary: PN coefficients M9.1'' → ppE phase
 
@@ -237,55 +315,95 @@ TGP **distinguishable**:
    przez α=2 i hyperbolic f(ψ); nie ma "fitting freedom". W dCS i
    Einstein–Æther coefficient zależy od free coupling.
 
-**Dictionary entry (proposed for `op-ppE-mapping/` Phase 1):**
+**Dictionary entry (LOCKED post-Phase 1.5, 2026-05-09):**
 
 ```
-M9.1'' → ppE:
-  b_ppE^TGP = −1 (2PN phase, U³ metric)
-  β_ppE^TGP = numerically_locked_from_E_orb_2body_M911
-  cross-pattern: {β_(2PN), β_(3PN), β_(4PN)} = κ_TGP · {(5/6), (23/12)·c_4ratio, (19/6)·c_5ratio}
-                 where c_Nratio = SPA chain prefactor at PN order N
-                 (to be locked from 2-body Lagrangian)
+M9.1'' → ppE (Phase 1.5 sympy-LOCK 5/5 + 4-level verification):
+  b_ppE^TGP            = -1                         (2PN-phase, U³ metric)
+  G_SPA                = 48                         (sympy-exact, test-particle)
+  β_ppE^TGP^(b=-1)     = -15/4 ≈ -3.75              (η=1/4, test-p ±25%)
+  |β| OOM window       ∈ [2.81, 4.69]               (test-p ± η-correction)
+
+Multi-coefficient (Phase 1.5 alternative SPA, M911-P2 needs full re-derivation):
+  β_3PN/β_2PN          = -11161/504 ≈ -22.14        (NIE -23/10 jak Phase 1 heuristic
+                                                      sugerował; Phase 1.5 §10 sign-off)
+  β_4PN/β_3PN, β_5PN/β_4PN = TBD (M911-P2 WITHDRAWN-needs-rederivation)
+
+Distinguishing signature: NIE jest zachowywany jako simple {-23/10, -38/23, +337/228}
+  pattern (Phase 1 heuristic incorrect). Native multi-coefficient pattern requires
+  full DJS 2-body Lagrangian (Phase 1.6+ work).
 ```
 
-## §5 — Założenia, które cykl `op-ppE-mapping/` musi zwalidować
+**Dictionary entry (HISTORICAL Phase 1 baseline, 2026-05-07 — preserved for revision history):**
 
-| ID | Założenie | Status |
-|----|-----------|--------|
-| A1 | M9.1'' two-body Lagrangian istnieje i daje finite Lagrangian (nie blow-up przy ψ → 4/3 horizon w external potencjale) | OPEN — wymaga sek08c uogólnienia na dwa źródła |
-| A2 | Quadrupole formula w M9.1'' modyfikuje się w sposób reprezentatywny przez metric perturbation tylko (NIE nowymi dipole / scalar charges) | OPEN — wymaga gauge-invariant analiza |
-| A3 | dE/dt luminosity w M9.1'' jest *modyfikowana* przy 2PN+ orbital w sposób spójny z metric coefficients (5/6) U³ | OPEN |
-| A4 | Stationary phase approximation jest ważna w M9.1'' z tego samego powodu co w GR (adiabatic inspiral) | LIKELY (no obvious mechanism breaks adiabaticity) |
-| A5 | TGP nie wprowadza nowych radiacyjnych DOF (no scalar mode) zgodnie z GW1 (c_T = c_s) i GW2 (3 DOF) | LIVE w PREDICTIONS_REGISTRY |
-| A6 | Konwencja PN counting "metric N-PN ↔ phase (N−1)-PN" jest poprawna dla M9.1'' (z hyperbolic ansatz) | OPEN — może być inna |
+```
+M9.1'' → ppE [Phase 1 OOM heuristic, OBSOLETE]:
+  b_ppE^TGP^(b=-1)  = -5/64 ≈ -0.078            (G_SPA ≈ 1 SYC 2013 heuristic, η=1/4)
+  multi-pattern     = {-23/10, -38/23, +337/228}  (Phase 1 heuristic, INCORRECT)
 
-**Bez zwalidowania A1–A6 powyższe szacowania są PRELIMINARY.** Audit
-folder T01 *nie zamyka* tych założeń — przekazuje je do
-`op-ppE-mapping/` jako contract.
+Reason for retraction: SYC 2013 "G_SPA ≈ 1" applies only to small-perturbation
+regimes (BD with 1/ω_BD coupling, dCS with ζ_dCS coupling). TGP M9.1'' f(ψ)=
+(4-3ψ)/ψ is structural O(1) modification → SPA chain amplifies via α_4 = 30·e_2
++ cross-terms → G_SPA = 48 sympy-exact (Phase 1.5 §4.5).
+```
 
-## §6 — Następny krok dla cyklu `op-ppE-mapping/` Phase 1
+## §5 — Założenia, które cykl `op-ppE-mapping/` musiał zwalidować — STATUS POST-PHASE 1.5
 
-1. **Setup (Phase 1.1):** Two-body Lagrangian w M9.1'' z DJS approach
-   uogólnionym na hyperbolic f(ψ). Reference: Damour–Jaranowski–Schäfer
-   2014 dla GR; uogólnienie na M9.1'' wymaga substitution
-   c² → c²·(4-3ψ)²/ψ² (z M9_1_pp_setup §2.5).
+| ID | Założenie | Status (post-Phase 1.5 2026-05-09) |
+|----|-----------|------------------------------------|
+| A1 | M9.1'' two-body Lagrangian istnieje i daje finite Lagrangian (nie blow-up przy ψ → 4/3 horizon w external potencjale) | **PARTIAL** — test-particle limit OK (Phase 1.5 §2); equal-mass DJS 2-body deferred do Phase 1.6 (~25% uncertainty na η-correction) |
+| A2 | Quadrupole formula w M9.1'' modyfikuje się w sposób reprezentatywny przez metric perturbation tylko (NIE nowymi dipole / scalar charges) | **CLOSED PASS** — Phase 1.5 §3.1 LOCK L4: F_TGP(v) = F_GR(v) at leading 2PN-orbital (cross-channel via GW1 c_T=c_s + GW2 3 DOF) |
+| A3 | dE/dt luminosity w M9.1'' jest *modyfikowana* przy 2PN+ orbital w sposób spójny z metric coefficients (5/6) U³ | **CLOSED PASS** — Phase 1.5 §3.2: ΔF(v) = O(v⁴) ~ 3% at v_LSO, sub-leading dla 2PN-phase coef |
+| A4 | Stationary phase approximation jest ważna w M9.1'' z tego samego powodu co w GR (adiabatic inspiral) | **CLOSED PASS** — Phase 1.5 §4 SPA chain inversion sympy-verified (cross-check Buonanno-Iyer 2009 GR test-p α_4) |
+| A5 | TGP nie wprowadza nowych radiacyjnych DOF (no scalar mode) zgodnie z GW1 (c_T = c_s) i GW2 (3 DOF) | **DERIVED** w PREDICTIONS_REGISTRY (M911-P2/P3 partial; GW1/GW2 separately verified) |
+| A6 | Konwencja PN counting "metric N-PN ↔ phase (N−1)-PN" jest poprawna dla M9.1'' (z hyperbolic ansatz) | **CLOSED CHOICE** — [[CONVENTION_DECISION.md]] adoptuje PHASE-PN; U³ metric = 2PN-phase = b_ppE = -1 |
 
-2. **Phase 1.2:** Dla equal-mass binary η = 1/4, wyprowadzić
-   E_orb(v) do v⁸ (4PN orbital). Verify że E_orb^TGP odbiega od
-   E_orb^GR przy v⁴ (2PN orbital), zgodnie z metric (5/6)U³.
+**Phase 1.5 zamknął A1 (partial test-p), A2-A6 (full).** Pozostała ~25%
+η-correction uncertainty na G_SPA(η=1/4) jest PRZEJRZYSTA — dla
+falsification verdict (β_TGP/σ_β > 5σ) jest *nieistotna* (factor 48
+correction już dominuje).
 
-3. **Phase 1.3:** Wyprowadzić dE/dt do v¹⁸ (4PN luminosity). Założenie
-   A3 zwalidować lub modyfikować quadrupole formula.
+**Critical post-Phase 1.5 finding:** A1 partial-closure (test-p G_SPA=48
+vs equal-mass G_SPA(η=1/4) ≤ ±25%) sufficient dla GWTC-3 RE-RUN, który
+gives 5.02σ FALSIFIED-OBSERVATIONAL bez względu na η-correction precision.
 
-4. **Phase 1.4:** SPA inversion → Ψ_TGP(f). Zidentyfikować
-   β_ppE^(2PN_phase), β_ppE^(3PN_phase), β_ppE^(4PN_phase) liczbowo
-   dla η=1/4 i równolegle dla η ∈ [0.1, 0.25].
+## §6 — Status cyklu `op-ppE-mapping/` — POST-PHASE 1.5 LOCKED
 
-5. **Phase 1.5:** Compare z catalog Yunes–Yagi–Pretorius 2016. Ustal
-   uniqueness multi-coefficient pattern jako TGP-specific signature.
+**Phase 1 (2026-05-07):** β_ppE^TGP = -5/64 ≈ -0.078 (G_SPA ≈ 1 SYC 2013
+heuristic) — **OBSOLETE** (regime-of-validity error).
 
-**Output Phase 1:** liczbowy [β_th] dla [[FALSIFIER_STATEMENT_DRAFT.md]]
-§1 placeholder.
+**Phase 1.5 (2026-05-09):** β_ppE^TGP = -15/4 ≈ -3.75 (G_SPA = 48 sympy-exact
+test-particle) — **LOCKED** (4-level verification: sympy LOCK 5/5 + hand-calc
++ numerical sanity + alternative SPA orthogonal route).
+
+### Następne kroki post-Phase 1.5 (uporządkowane priority)
+
+| Step | Description | Status |
+|------|-------------|--------|
+| **GWTC-3 RE-RUN** (highest priority) | Re-run TIGER-framework Bayes inference z β=-15/4 prior | **EXECUTED 2026-05-09** — BF=3.5·10⁻⁶, 5.02σ FALSIFIED-OBSERVATIONAL ([[../../research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]) |
+| **Falsifier statement revision** | Update FALSIFIER_STATEMENT_DRAFT z post-Phase 1.5 + post-RE-RUN values | **EXECUTED 2026-05-10 v2** — native-first format ([[FALSIFIER_STATEMENT_DRAFT.md]]) |
+| **PREDICTIONS_REGISTRY update** | M911-P1 → FALSIFIED-OBSERVATIONAL; M911-P2 → WITHDRAWN; M911-P3 → PARTIAL | **EXECUTED 2026-05-09** |
+| **Paper draft revision** | papers/M911_LIGO3G_paper "predictive forecast" → "negative result + recovery via emergent-metric" | **PENDING** (this propagation cycle 2026-05-10) |
+| **SENSITIVITY_BACK_OF_ENVELOPE update** | Recompute thresholds z β=-15/4 prior; update detection table | **PENDING** (this propagation cycle 2026-05-10) |
+| **PPN_TO_PPE_MAPPING dictionary** | Explicit G_SPA=48 dictionary entry | **EXECUTED** (this v4 update) |
+| **Phase 1.6 — Equal-mass DJS** | Full DJS 2-body Lagrangian z hyperbolic f(ψ); η-correction precision 5% | **DEFERRED** (multi-session; not blocking — η-correction ±25% sufficient dla 5σ verdict) |
+| **M911-P2 re-derivation** | Multi-coefficient pattern z corrected G_SPA chain | **DEFERRED** (Phase 1.6+; M911-P2 currently WITHDRAWN-needs-rederivation) |
+| **Recovery framework** | emergent-metric Phase 4 zero-β region exploration | **STRUCTURAL DERIVED** ([[../../research/op-emergent-metric-from-interaction-2026-05-09]]) |
+
+### Native-first reframe (post-2026-05-10)
+
+Per [[../../meta/PPN_AS_PROJECTION.md]] binding methodology:
+
+| Layer | Status post-Phase 1.5 + RE-RUN |
+|---|---|
+| **L1 native** (g_tt Taylor c_n) | sympy-LOCK 5/5 PASS, structurally forced by α=2 + M9.1'' f(ψ) |
+| **L2 chart** (β_ppE, b_ppE, G_SPA) | sympy-LOCK 5/5 PASS post-Phase 1.5; G_SPA=48 sympy-exact |
+| **L3 falsifier** (GWTC-3 + ET-D + CE bounds) | GWTC-3 5.02σ FALSIFIED on f(ψ)=(4-3ψ)/ψ specific ansatz |
+
+Native-first methodology emphasizes że falsification dotyczy **specific
+M9.1'' f(ψ)=(4-3ψ)/ψ form**, NIE TGP framework całość. Recovery via
+S07 alternative f(ψ) ansatz exploration + emergent-metric Phase 4
+zero-β region (a_n, ξ_n, b_n, c_0, κ_σ) parameter space remains viable.
 
 ## Cross-references
 
