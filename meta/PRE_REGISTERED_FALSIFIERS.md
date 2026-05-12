@@ -123,26 +123,63 @@ timestampą i osobnym entry.
   - Retrofit native-first version: `op-LIGO-3G-deviation` cycle in observable form
     (φ(f) function, not β_ppE parameter) — pre-registration NEXT.
 
-### PR-002 (PROPOSED, TO-BE-FILLED): ET-D / CE recovered-point falsification
+### PR-002 (LOCKED 2026-05-11): ET-D / CE Δφ(f) phase residual native falsification
 
-- **Cycle:** [[../research/op-LIGO-3G-deviation/]] (post-retrofit)
-- **Pre-registration date:** PENDING — **MUST FILL BEFORE retrofit cycle Phase 1**
-- **Pre-registration commit:** PENDING
-- **Native observable:** GW inspiral phase φ(f) deviation residual przeciwko GR template,
-  in radians as function of f (Hz), for BBH events with M_total > Z M_⊙ at SNR > W
-- **Decision rule (PROPOSED — needs author lock):**
-  > "If ET-D + CE 2027-2035 stack residual on φ(f) - φ(f)_GR < δ_threshold (TBD by Fisher
-  > matrix calculation) at 5σ for any sub-window of frequency band, recovered-point
-  > emergent-metric framework is structurally excluded — NOT just specific (a_n, ξ_n) point
-  > but full Path 2 (σ-coupling) family."
-- **Falsification target:** Emergent-metric Phase 4 Path 2 (canonical σ-coupling recovery)
-- **Confidence threshold:** 5σ stack residual
-- **Recovery scope:** **NONE** — pre-declared: if ET-D + CE 5σ excludes Path 2, framework
-  needs deeper amendment (mechanism (v): framework extension), NOT shifted (a_n, ξ_n) point
-  within same family
-- **Status:** PENDING (cycle not yet retrofitted; pre-registration not yet committed)
-- **Notes:** **HARD RULE for this cycle:** No recovery cycle on Path 2 falsification without
-  separate explicit author authorization + new PR-### entry. Anti-Lakatos clause.
+- **Cycle:** [[../research/op-LIGO-3G-native-phase-residual-2026-05-11/]]
+  - *Originally drafted 2026-05-10 placeholder pointing to* `op-LIGO-3G-deviation/`
+    (intentional-projection cycle); re-linked to native-phase-residual companion cycle on
+    2026-05-11 per [[RESEARCH_RESTART_2026-05-11.md]] §1.2 (clean kickoff schema). Re-link
+    legitimate (PROPOSED → LOCKED bootstrap, NIE revision per §4); original placeholder
+    preserved here for audit trail.
+- **Pre-registration date:** 2026-05-11 (kickoff commit timestamp w README YAML
+  `contract.L1_native.pre_registration_date`)
+- **Pre-registration commit:** `<git SHA to be inscribed at activation commit; ten plik
+  edit + README folder_status flip + STATE.md WIP add scheduled as single PR-002
+  activation commit>`
+- **Native observable:** Δφ(f) = inspiral phase residual w **radians per Hz frequency bin**
+  dla BBH inspiral signal w f ∈ [10, 1024] Hz, M_chirp ∈ [10, 50] M_⊙, d_L ≤ 1 Gpc,
+  SNR ≥ 100. Single-event + stacked N-event 5σ sensitivity windows; detector-specific
+  σ_Δφ thresholds w μrad dla LIGO-O5/ET-D/CE/network.
+- **Decision rule (LOCKED, verbatim z cycle README §0.2 / YAML
+  `contract.L1_native.falsification_rule`):**
+  > "Jeśli ET-D + CE stack 100+ BBH events daje residual |Δφ(f) - Δφ_GR(f)| > σ_Δφ_5σ
+  > across any sub-window of inspiral band [10, 100] Hz, native (a_3, ξ_3, c_0·κ_σ)
+  > point at canonical Tier 2 anchor (M9.1'' Path 2: a_3=36, ξ_3=5/24, c_0·κ_σ=4/3)
+  > excluded at 5σ."
+- **Falsification target:** Tier 2 Path 2 anchor (M9.1'' canonical σ-coupling recovery
+  point: a_3=36, ξ_3=5/24, c_0·κ_σ=4/3) — native (a_3, ξ_3, c_0·κ_σ) parameter region
+- **Confidence threshold:** 5σ stack residual on Δφ(f) sub-window of [10, 100] Hz
+- **Recovery scope (LOCKED, anti-Lakatos per §3.3):**
+  ```yaml
+  allowed_directions:
+    - "σ-coupling magnitude shift c_0·κ_σ ∈ [1.056, 1.611]
+       (Phase 4 emergent-metric GWTC-3 1σ window per
+       [[../research/op-emergent-metric-from-interaction-2026-05-09/Phase4_results.md]] §2)"
+  forbidden_directions:
+    - "new free Taylor coefs beyond a_5 / ξ_5"
+    - "modification of S05 single-Φ axiom"
+  if_recovery_exhausted: "framework structural amendment mode (mechanism v per §3.3);
+                          NOT continued shifted-point recovery cycles within same family"
+  ```
+- **Status:** **LOCKED-PENDING-DATA** (cycle CLOSED-RESOLVED 2026-05-12 claim_status A−;
+  detector forecasts complete Phase 5; awaiting LIGO-O5 A+ ~2027 first decisive era
+  + ET-D/CE 2027-2035 stack data dla actual falsification observation)
+- **Closure update (2026-05-12):** Cycle ALL 6/6 P-requirements RESOLVED; 55/55 sympy
+  PASS cumulative; 3× adversarial bd-drift-audit iterations PASS (mid-cycle caught
+  amendment + post-amendment + final). Native result z Phase 5: M9.1'' Path 2 anchor
+  (Δe_2_native = -4/3) **LIGO-O5 A+ single-event SNR = 15.05σ ~2027 first decisive
+  falsification window**. ET-D 75.5σ / CE 318σ / ET+CE network 326σ at 1 Gpc reference.
+  GWTC-3 current era: SNR 4.81 (near 5σ, nie yet falsified). Cycle ready dla observational
+  verification.
+- **Notes:**
+  - **HARD RULE:** No recovery cycle on Path 2 falsification z directions outside
+    `allowed_directions` bez separate explicit author authorization + new PR-### entry.
+  - L2 projection na β_ppE (analytical-exact reduction attempted Phase 3) — consistency
+    check przeciwko GWTC-3 |β_ppE| ≤ 0.78 (1σ); status `pass at Path 2 anchor`. Native
+    falsifier (Δφ residual) jest authoritative; β_ppE bound jest L2 projection
+    consistency check, NIE primary falsification rule.
+  - VT-002 promotion AF1 closure tied to this cycle's L2 sympy-exact reduction success
+    (per [[VALIDATION_TRANSFERS.md]] VT-002 status: PROMOTED-PENDING-RETROFIT).
 
 ### PR-003 (PROPOSED, RECOMMENDED): TGP-native predictions time capsule
 

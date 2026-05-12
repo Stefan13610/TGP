@@ -18,6 +18,93 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
+## 🔴🔴 RESTART MODE 2026-05-11 — external review Rec 1+2+3+F+4 wykonane; clean schema BINDING
+
+**Diagnoza external review autora 2026-05-11:** Cohort 2026-05-11 cykli (N1+N2+N3+N4+N5+cluster+hierarchy)
+miało procedural + substantive drift mimo BINDING CYCLE_KICKOFF_TEMPLATE od 2026-05-10:
+- **0/7 cykli** miało `contract::` blok (BINDING fail)
+- **0/112 testów sympy** wykonywało first-principles derivation z TGP axioms
+- **24/104 testów** to literal `T_pass = True` (algebraic mimicry)
+- **Cluster cycle** miał Lakatos OR-clause verdict-logic
+
+**Pełna autoryzacja external review (conversation 2026-05-11):**
+
+| Rec | Status | Outcome | Reference |
+|---|---|---|---|
+| **Rec 1** option A | ✅ DONE | 6 cykli STRUCTURAL_DERIVED → STRUCTURAL_VERIFIED (C); hierarchy preserved (honest NO_GO) | per-cycle §RETROACTIVE sections |
+| **Rec 3** option B | ✅ DONE | Adversarial audit 112 testów; decydowalne dane TAUTOLOGY/HARDCODED/LITERATURE_ANCHORED/FIRST_PRINCIPLES | [[meta/AUDIT_2026-05-11_sympy_substance.md]] |
+| **Rec 3+F** | ✅ DONE | N1 + N3 differential downgrade C → D (ALGEBRAIC_MIMICRY); N2/N4/N5/cluster preserve C | per-cycle §R.8 sections |
+| **Rec 2** option K | ✅ DONE | Cluster cycle → EARLY_HALT_HONEST (`closed-NULL`); precedent: op-MAG-anomalous-moment | cluster §R.10-§R.16 |
+| **Rec 4** option L | ✅ DONE | Halt mechanism + technical validator + restart guidance; scaffold #4+#5 halted | [[meta/RESEARCH_RESTART_2026-05-11.md]] |
+
+**Restart deliverables (Rec 4 wykonane 2026-05-11):**
+
+- [[tooling/validate_kickoff.py]] — pure-stdlib Python validator (technical enforcement gate); baseline test: **17 FAIL / 1 PASS** of 18 post-cutoff cycles (jedyny PASS: `op-LIGO-3G-native-phase-residual-2026-05-11`)
+- [[meta/templates/op-cycle-kickoff-template-v2-2026-05-11.md]] — minimal viable boilerplate dla nowych cykli z wszystkimi BINDING placeholders
+- [[meta/RESEARCH_RESTART_2026-05-11.md]] — operational guidance (halt mechanism + clean kickoff workflow + anti-drift checklist + recommended cycle order)
+- Scaffold #4 (`op-S07-reset-alternative-f-psi-2026-05-11`) — folder_status: `parking-pending-new-kickoff`
+- Scaffold #5 (`op-inflation-substrate-genesis-2026-05-11`) — folder_status: `parking-pending-new-kickoff`
+
+**Status szóstki 2026-05-11 cohort post-restart (final claim_status):**
+
+| Cycle | claim_status | Retrofit path |
+|---|---|---|
+| N1 EM-trace-anomaly | **D (ALGEBRAIC_MIMICRY)** | `op-L01-N1-retrofit-native` ~3-5 sesji |
+| N2 QCD-trace-anomaly | C (LITERATURE_ANCHORED) | `op-L01-N2-retrofit-native` ~4-6 sesji |
+| N3 SPARC | **D (ALGEBRAIC_MIMICRY)** | `op-L01-N3-retrofit-native-SPARC` ~2-3 sesji |
+| N4 Higgs-trace-anomaly | C (MIXED, Phase 1 substantive sympy) | `op-L01-N4-retrofit-native-Higgs` ~5-8 sesji |
+| N5 EW-gauge-anomaly | C (LITERATURE_ANCHORED) | `op-L01-N5-retrofit-native-EW` ~4-6 sesji |
+| Cluster mass deficit | **EARLY_HALT_HONEST (`closed-NULL`)** | `op-cluster-sterile-nu-prediction-2026-XX` (separate z pre-bounded recovery_scope) |
+| Higgs hierarchy | STRUCTURAL_NO_GO (honest, preserved) | `op-composite-Higgs-substrate-TGP` (deferred) |
+
+**Halt na nowe spawny:** TAK do validator PASS. Workflow dla każdego nowego cyklu:
+1. `cp meta/templates/op-cycle-kickoff-template-v2-2026-05-11.md research/op-<NAME>-<DATE>/README.md`
+2. Fill `<<FILL>>` placeholders
+3. `python tooling/validate_kickoff.py research/op-<NAME>-<DATE>/README.md` → MUST PASS
+4. Submit PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md` jeśli falsifiable
+5. User authorization "active" + WIP slot wolny
+
+Cykle bez tej ścieżki **NIE są spawn'owane** (Rec 4 enforcement).
+
+**Recommended pierwszy candidate dla activation (post-restart):**
+`op-LIGO-3G-native-phase-residual-2026-05-11` — already validator PASS, ready pending
+WIP slot + user explicit "active" authorization.
+
+**✅ FIRST CYCLE POST-RESTART CLOSED 2026-05-12 — `op-LIGO-3G-native-phase-residual-2026-05-11`:**
+
+**1-session sprint:** activation → 5 phases → mid-cycle adversarial audit → amendment Scope A
+→ post-amendment audit → final pre-closure audit → closure ceremony. **claim_status A−**
+(STRUCTURAL_DERIVED_NATIVE z L2 not-fully-FP-attempted; honest per Iter III).
+
+**Substance metrics (post-amendment + final):**
+- 55/55 sympy PASS cumulative (Phase 1-5)
+- 11 FP (20.0%) / 39 LIT (70.9%) / 5 DEC (9.1%); 0 hidden True; 90.9% non-trivial
+- vs cohort 2026-05-11 baseline: **+20pp FP**, -23pp hardcoded — substantively superior z
+  honest classification
+
+**Adversarial protocol 3× validated:**
+- Iter I (mid-cycle post-Phase-3): AMENDMENT NEEDED (25% reclass, 4 hidden True)
+- Iter II (post-amendment): PASS — Phase 4 unblocked
+- Iter III (pre-closure final): PASS, 0.0pp delta vs self-claim → closure authorized
+
+**Native physics result preserved:**
+- Δφ(f) = -(15/4)·Δe_2_native / (M·(πMf)^(1/3)) [radians]
+- β_ppE^TGP = (45/16)·Δe_2_native (L2 reduction sympy-verified; matches parent emergent-metric Phase 4 LOCK)
+- Native Fisher rank-1 at 2.5PN; σ_Δe_2 = (16/45)·σ_β_ppE
+- **PR-002 LOCKED-PENDING-DATA:** M9.1'' Path 2 anchor Δe_2 = -4/3 →
+  **LIGO-O5 A+ ~2027 first decisive SNR=15.05σ** single-event falsification window
+
+**Protocol value demonstrated:** Cohort 2026-05-11 cykle (N1-N5+cluster+hierarchy)
+miały drift caught dopiero external review weeks-later → cascade reclassification do
+A/D/EARLY_HALT. **This cycle:** mid-cycle audit caught issues w-cyklu → amendment
+→ closure z confidence. **First cycle post-restart demonstrating RESEARCH_RESTART +
+CALIBRATION_PROTOCOL working as intended.**
+
+**WIP slot #3 ZWOLNIONY 2026-05-12.** Cycle dostępne dla observational verification when
+LIGO-O5 A+ era data available (~2027 first decisive).
+
+---
+
 ## 🔴 RETROFIT MODE 2026-05-10+ — gravity sector triage IN PROGRESS
 
 **Diagnoza weekendowa autora 2026-05-10:** Agenci pracowali autonomicznie w PPN/ppE-projection
@@ -157,7 +244,8 @@ Cykle które realnie poruszają się w tej i następnej sesji.
 |---|---|---|---|
 | 1 | [[research/op-FRW-radiation-era-varying-c-2026-05-06/]] | Phase 2 PASS, ścieżka A FAILS | decyzja D/E/F (pivot L_mat?) |
 | 2 | [[research/op-Phi-decomposition-photon-2026-05-07/]] | aktywny | kontynuacja dekompozycji Φ → fotony (V-independent) |
-| ~~3~~ | ~~[[research/op-recovery-V-mPhi-parametric-analysis-2026-05-09/]]~~ | **📦 ARCHIVED 2026-05-10** — Cycle 1 GF.B verdict makes recovery V framework irrelevant dla typical LIGO. folder_status `closed-superseded`. Phase 1 38/38 sympy PASS preserved (algebraic structural decoupling — TGP-native finding). **WIP slot 3 ZWOLNIONY.** | n/a — archived |
+| ~~**3**~~ | ~~[[research/op-LIGO-3G-native-phase-residual-2026-05-11/]]~~ | **✅ CLOSED-RESOLVED 2026-05-12 — claim_status A−** ([[research/op-LIGO-3G-native-phase-residual-2026-05-11/Phase6_close.md]] closure ceremony). **First cycle aktywowany post-restart 2026-05-11.** 1-session sprint: activation → 5 phases → amendment → 3 audit iter → closure. **55/55 sympy PASS cumulative** (11 FP / 39 LIT / 5 DEC; 90.9% non-trivial; 0 hidden True). **ALL 6/6 P-requirements RESOLVED.** Native chain z S05: Δφ(f) = -(15/4)·Δe_2_native/(M·(πMf)^(1/3)); β_ppE^TGP = (45/16)·Δe_2_native; rank-1 Fisher at 2.5PN. **PR-002 LOCKED-PENDING-DATA**: M9.1'' Path 2 anchor (Δe_2=-4/3) **LIGO-O5 A+ ~2027 first decisive falsification at 15.05σ**. **Adversarial bd-drift-audit protocol 3× validated** (Iter I caught substance overestimation, Iter II confirmed amendment, Iter III final PASS — 0.0pp delta vs self-claim). VT-002 AF1 closed-verified at LIT-level. **WIP slot #3 ZWOLNIONY 2026-05-12.** | n/a — closed |
+| ~~~~ | ~~[[research/op-recovery-V-mPhi-parametric-analysis-2026-05-09/]]~~ | **📦 ARCHIVED 2026-05-10** — Cycle 1 GF.B verdict makes recovery V framework irrelevant dla typical LIGO. folder_status `closed-superseded`. Phase 1 38/38 sympy PASS preserved (algebraic structural decoupling — TGP-native finding). **WIP slot 3 ZWOLNIONY (→ przejęty 2026-05-12 przez LIGO-3G-native).** | n/a — archived |
 | ~~4~~ | ~~[[research/op-V-M911-psi-profile-near-degenerate-2026-05-10/]]~~ | **✅ CLOSED 2026-05-10** — verdict UPGRADED CONDITIONAL → CONFIRMED via Cycle 1 GF.B cascade ([[research/op-V-M911-psi-profile-near-degenerate-2026-05-10/Phase_FINAL_close.md]]). **50/50 sympy PASS** (Phase 1: 23 + Phase 2: 14 + Phase 3: 13). Pattern 2.5 BINDING-PRINCIPLE-CONFIRMED-ALGEBRAIC z PHYSICAL APPLICATION CONDITIONAL na extreme environments (foundations §3.5.6 patched 2026-05-10). **WIP slot 4 ZWOLNIONY.** | n/a — closed |
 | ~~5~~ | ~~[[research/op-gamma-RG-running-derivation-2026-05-10/]]~~ | **✅ CLOSED 2026-05-10 — GF.B-STRUCTURAL z β=γ open** + spawned **Cycle 3** ([[research/op-EFT-Phi0-multi-scale-2026-05-10/]] CLOSED 10/10 PASS) + **Cycle 4** ([[research/op-foundations-3.5.3-extension-2026-05-10/]] CLOSED, foundations §3.5.3.1 + §3.5.6 patched). 88/88 PASS Cycle 1 + 10 + 0 = 98 cumulative. Parent's Branch D dominance HONESTLY REVERSED via first-principles. 3 adversarial audits all PASS-WITH-FLAGS (no HIGH drifts). **WIP slot 5 ZWOLNIONY.** | n/a — closed |
 

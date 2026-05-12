@@ -1,0 +1,195 @@
+==============================================================================
+Phase 2 sympy -- op-LIGO-3G-native-phase-residual-2026-05-11
+Native Delta_phi(f) chain: g_eff geodesic + sigma_cross_12 + 2.5PN radiation
+Sympy version: 1.14.0
+==============================================================================
+
+------------------------------------------------------------------------------
+T1 (FP4): sigma_cross_12 anisotropic uniaxial DERIVATION z S05 emergent T^munu
+------------------------------------------------------------------------------
+  T^{ij}_cross constructed as (∂^iPhi_1)(∂^jPhi_2) + (∂^jPhi_1)(∂^iPhi_2)
+  Traceless decomp: sigma_cross = T_cross - (1/3) delta * Tr(T_cross)
+  sigma_yy = sigma_zz on axis (y<->z rot symmetry): True
+  sigma_xx + sigma_yy + sigma_zz = 0 (traceless by construction): True
+  -> uniaxial sigma_xx + 2*sigma_yy = 0 (derived, NOT postulated): True
+  sigma_xx != sigma_yy (genuine anisotropy along binary axis): True
+  sigma_cross_12 -> 0 at m_1 = 0 (consistency cross-coupling): True
+  T1 (FP4): PASS | FIRST_PRINCIPLES
+           Czy sigma_cross_12 uniaxial pattern (sigma_xx + 2*sigma_yy = 0 na osi) EMERGES strukturalnie z S05 single-Phi emergent stress-energy decomposition T^{munu}_cross = (∂^muPhi_1)(∂^nuPhi_2) + (∂^nuPhi_1)(∂^muPhi_2) ?
+
+------------------------------------------------------------------------------
+T2 (FP5): Delta_phi(f) FULL CHAIN end-to-end Phi-EOM -> phase residual
+------------------------------------------------------------------------------
+  Step 1 (binding E coefficient): Delta_e_2_canonical = -a_3/8 + c_0*kappa_sigma - 4*xi_3 + 4
+          expected = -4*xi_3 + 4 - a_3/8 + c_0*kappa_sigma -> True
+  Step 2 (dt/dv chain rule via P_GW): Delta(dt/dv) form match: True
+  Step 3 (v(f) Kepler PN): dv/df = pi*M/(3*v^2): True
+  Step 4 (Delta_Psi integrand 2*omega_orb*Delta(dt/dv)): True
+          phase residual Delta_Psi(v) = -(-15*a_1**5*xi_3 + 15*a_1**4*c_0*kappa_sigma - 45*a_1**4 - 60*a_1**2*a_2 + 60*a_1**2*b_2 - 120*a_1*a_3 + 240*a_2**2)/(16*M*a_1**4*eta*v_pn): True
+  Step 5 (eta=1/4 substitution): Delta_phi = 15*(a_1**5*xi_3 - a_1**4*c_0*kappa_sigma + 3*a_1**4 + 4*a_1**2*a_2 - 4*a_1**2*b_2 + 8*a_1*a_3 - 16*a_2**2)/(4*M*a_1**4*v_pn): True
+  T2 (FP5): PASS | FIRST_PRINCIPLES
+           Czy Delta_phi(f) phase residual emerges end-to-end z (geodesic w g_eff -> binding E(v) -> dE/dt = -P_GW -> dt/df -> Delta_phi(f)), z explicit symbolic verification each step (NIE post-hoc beta_ppE parameterization)?
+
+------------------------------------------------------------------------------
+T3 (FP6): sigma-coupling 2.5PN contribution z TT-projection of grad cross-terms
+       [RECLASSIFIED LIT per bd-drift-audit 2026-05-12: TT-projection mechanism not sympy-verified]
+------------------------------------------------------------------------------
+  sigma_xx_axis nonzero (TT mode possible): True
+  beta_ppE^sigma = (45/16)*c_0*kappa_sigma (cross-cycle match): True
+  Delta_phi^sigma linear in c_0 (no c_0^2 correction at b=-1): True
+  NO exp(-m*r) screening in sigma_cross (anti-BD verification): True
+  c_0 * kappa_sigma = 4/3 at canonical anchor (M9.1'' Path 2): True
+  T3 (FP6): PASS | LITERATURE_ANCHORED
+           Czy sigma-coupling C(psi) contribution to Delta_phi(f) emerges z TT-projection of gradient cross-terms (Pattern 2.2 momentum-flux, NIE BD propagator), i daje structural shift Delta_e_2^sigma = c_0 * kappa_sigma (linear in c_0)?
+
+------------------------------------------------------------------------------
+T4 (FP supporting): Geodesic in g_eff preserves S05 single-Phi structure
+       [RECLASSIFIED LIT per bd-drift-audit 2026-05-12: symbol-absence trivial-by-construction]
+------------------------------------------------------------------------------
+  No INDEPENDENT g_eff symbol in Christoffel (S05 single-Phi): True
+  Vacuum geodesic (h=0): Gamma -> 0 (no spurious offset): True
+  Christoffel ~ dh/dx (derivative coupling, geodesic form): True
+  NO exp(-m*r) screening in Christoffel (anti-Yukawa): True
+  Symbolic Christoffel: Gamma^x_xx = -hp_sym*(b_1 + 2*b_2*h_sym)/(2*b_1*h_sym + 2*b_2*h_sym**2 + 2)
+  T4: PASS | LITERATURE_ANCHORED
+     Czy Christoffel symbols geodesic equation w g_eff[Phi_1+Phi_2] zalezne WYLACZNIE od Phi (S05 preserved), NIE od independent g_eff dof?
+
+------------------------------------------------------------------------------
+T5: 2-body PN expansion to O(v^5/c^5) = 2.5PN, leading-order verification
+------------------------------------------------------------------------------
+  E_b coef v^2 = -eta/2 (Newton): True
+  E_b coef v^4 = -eta*e_1/2 (1PN): True
+  E_b coef v^6 = -eta*e_2/2 (2PN): True
+  Delta_Psi(v) ~ v^(-1) (b=-1 ppE, 2.5PN radiation-reaction): True
+  T5: PASS | LITERATURE_ANCHORED
+     Czy 2-body PN expansion E_b(v) zawiera v^5/c^5 = 2.5PN term jako 2.5PN radiation-reaction order (b=-1 ppE position), per Cutler-Flanagan?
+
+------------------------------------------------------------------------------
+T6: SPA consistency check (native chain, NIE literal CF substitution)
+------------------------------------------------------------------------------
+  Delta_phi(v=v(f)) = 15*(a_1**5*xi_3 - a_1**4*c_0*kappa_sigma + 3*a_1**4 + 4*a_1**2*a_2 - 4*a_1**2*b_2 + 8*a_1*a_3 - 16*a_2**2)/(4*pi**(1/3)*M**(4/3)*a_1**4*f_gw**(1/3))
+  Form match: linear in Delta_e_2_native: True
+  Consistency with parent Phase 3 SPA (45/16)*Delta_e_2: True
+  T6: PASS | LITERATURE_ANCHORED
+     Czy chain Delta_Psi(v) = integral 2*omega_orb*Delta(dt/dv) dv (native SPA-like) zgadza sie z parent Phase 3 SPA mapping (45/16)*Delta_e_2 PRZY eta=1/4 AND consistent z Cutler-Flanagan standard SPA convention?
+
+------------------------------------------------------------------------------
+T7: Kepler's law r_12(f) and v(f) chain (PN convention)
+------------------------------------------------------------------------------
+  Circular orbit v_orb = sqrt(M/r_12): True
+  v_PN from omega_orb Kepler = sqrt(M/r_12): True
+  r_12(v) inverse = M/v^2: True
+  T7: PASS | LITERATURE_ANCHORED
+     Czy r_12(f) Kepler chain via v = (pi*M*f)^(1/3) (G=c=1) reproduces circular orbit relation omega_orb^2 * r_12^3 = M, omega_GW = 2*omega_orb?
+
+------------------------------------------------------------------------------
+T8: Delta_phi(f) at f_ISCO characteristic limit check
+------------------------------------------------------------------------------
+  v_ISCO = 1/sqrt(6) (Schwarzschild test-particle limit)
+  Delta_phi(v_ISCO) = -(15/4)*Delta_e_2*sqrt(6)/M: True
+  Numerical value at canonical anchor: 0 (finite real: True)
+  T8: PASS | LITERATURE_ANCHORED
+     Czy Delta_phi(f) ewaluowany na f_ISCO = c^3/(6*sqrt(6)*pi*G*M) (Schwarzschild innermost stable circular orbit) daje finite, well-defined value bez singularności (consistency check upper limit inspiral band)?
+
+------------------------------------------------------------------------------
+T9: sigma_TT^ij transverse-traceless decomposition from sigma_cross_T1
+------------------------------------------------------------------------------
+  TT decomp: sigma_TT_xx + sigma_TT_yy = 0 (trace removed): True
+  sigma_TT_xx nonzero generically (h_+ excited): True
+  sigma_TT_xy nonzero off-axis (h_x excited too): True
+  T9: PASS | LITERATURE_ANCHORED
+     Czy TT-projection of sigma_cross^ij (propagation along z-axis) gives standard TT modes h_+, h_x WITH NO scalar (trace) leak?
+
+------------------------------------------------------------------------------
+T10 (FP supporting): Native coef sensitivity ∂Delta_phi/∂{a_3, xi_3, c_0*kappa}
+       [RECLASSIFIED LIT per bd-drift-audit 2026-05-12: only `partial != 0`, not non-degeneracy]
+------------------------------------------------------------------------------
+  ∂Delta_phi/∂a_3 at test = 75/32 (nonzero: True)
+  ∂Delta_phi/∂xi_3 at test = 75 (nonzero: True)
+  ∂Delta_phi/∂c_0 at test = -25/(4*pi) (nonzero: True)
+  ∂Delta_phi/∂kappa_sigma at test = -75*pi (nonzero: True)
+  (Known degeneracy: all proportional via Delta_e_2 at b=-1 level; broken by e_3 at Phase 4)
+  T10: PASS | LITERATURE_ANCHORED
+      Czy partial derivatives Delta_phi(f) wrt (a_3, xi_3, c_0*kappa_sigma) są all non-zero (Fisher matrix rows populated; non-degeneracy NIE weryfikowana)?
+
+------------------------------------------------------------------------------
+T11: M9.1'' Path 2 anchor substitution check (a_3=36, xi_3=5/24, c_0*kappa=4/3)
+------------------------------------------------------------------------------
+  Delta_e_2(canonical + Path 2 anchor) = 0: zero = True
+  Delta_phi(Path 2 anchor) = 0: zero = True
+  c_0*kappa_sigma = 1.3333333333333333 in PR-002 recovery scope [1.056, 1.611]: True
+  (Path 2 anchor recovers GR exactly: native (a_3,xi_3,c_0*kappa) cancellation)
+  T11: PASS | LITERATURE_ANCHORED
+      Czy Delta_phi(f) at M9.1'' Path 2 anchor (a_3=36, xi_3=5/24, c_0*kappa=4/3) daje konkretną finite numerical prediction (PR-002 falsifier evaluation)?
+
+------------------------------------------------------------------------------
+T12 (FP supporting): GR limit requires multiple independent conditions (Q6 framing)
+------------------------------------------------------------------------------
+  GR limit solution: xi_3 = -a_3/32 + c_0*kappa_sigma/4 + 1
+  Solution exists (recovery possible): True
+  Solution involves a_3 AND (c_0 or kappa): True
+  Non-trivial (xi_3 NOT trivially 0): True
+  Different (a_3, c_0*kappa) -> different xi_3 (multi-D surface): True
+  T12: PASS | FIRST_PRINCIPLES
+      Czy GR limit Delta_phi(f) -> 0 wymaga multiple independent conditions (a_3, xi_3, c_0*kappa) NIE single-parameter, weryfikujac 'TGP-mechanism-recovers-GR' framing (NIE trivial 'TGP-is-GR-by-translation' mimicry)?
+
+------------------------------------------------------------------------------
+T13: Cross-cycle consistency z emergent-metric Phase 4 beta_ppE^new
+------------------------------------------------------------------------------
+  Native Phase 2 beta_ppE = (45/16)*Delta_e_2_native
+  Parent Phase 4 beta_ppE^new = (45/16)*Delta_e_2_diag + (45/16)*c_0*kappa_sigma
+  Form match (algebraic identity): True
+  M9.1'' specific point beta_M911 = -15/4 (expected -15/4): True
+  T13: PASS | LITERATURE_ANCHORED
+      Czy native Delta_phi(f) chain Phase 2 zgadza sie z parent emergent-metric Phase 4 LOCK beta_ppE^new = (45/16)*Delta_e_2 + (45/16)*c_0*kappa_sigma after SPA conversion (Delta_phi -> beta_ppE via v^(-1) coefficient)?
+
+------------------------------------------------------------------------------
+T14: STRUCTURAL DECLARATION — S05 single-Phi preserved through full Phase 2 chain
+------------------------------------------------------------------------------
+  g_eff^munu = G[Phi_total, sigma_ab, Phi_bar]: functional of single Phi (S05)
+  Pattern 2.2 momentum-flux derivation (no propagator exchange)
+  Pattern 2.4 GW as collective T^munu pattern (no graviton)
+  Status flagged: T14_status = DECLARATIVE
+  T14: DECLARATIVE | DECLARATIVE
+      Czy Phase 2 chain (geodesic w g_eff -> dE/dt = -P_GW -> dt/df -> Delta_phi) preserves S05 single-Phi axiom throughout (NIE introduces second dynamical field, NIE invokes Phi-quantum graviton)?
+
+==============================================================================
+Phase 2 sympy verification summary
+==============================================================================
+  [PASS] T1 FP4 sigma_cross_12 uniaxial DERIVATION z S05 emergent T^munu   | FIRST_PRINCIPLES
+  [PASS] T2 FP5 Delta_phi(f) full chain Phi-EOM->geodesic->dE/dt->phase    | FIRST_PRINCIPLES
+  [PASS] T3 FP6 sigma-coupling 2.5PN z TT-projection grad cross-terms      | LITERATURE_ANCHORED
+  [PASS] T4 geodesic in g_eff preserves S05 single-Phi                     | LITERATURE_ANCHORED
+  [PASS] T5 2-body PN expansion to 2.5PN order                             | LITERATURE_ANCHORED
+  [PASS] T6 SPA consistency native chain vs parent (45/16) mapping         | LITERATURE_ANCHORED
+  [PASS] T7 Kepler r_12(f) and v(f) PN chain                               | LITERATURE_ANCHORED
+  [PASS] T8 Delta_phi(f_ISCO) finite limit                                 | LITERATURE_ANCHORED
+  [PASS] T9 sigma_TT decomposition h_+/h_x                                 | LITERATURE_ANCHORED
+  [PASS] T10 native coefs sensitivity (Fisher prep)                        | LITERATURE_ANCHORED
+  [PASS] T11 M9.1'' Path 2 anchor substitution                             | LITERATURE_ANCHORED
+  [PASS] T12 GR limit multiple independent conditions (Q6 framing)         | FIRST_PRINCIPLES
+  [PASS] T13 cross-cycle consistency parent Phase 4 beta_ppE^new           | LITERATURE_ANCHORED
+  [PASS] T14 S05 preserved through Phase 2 chain (DECLARATIVE)             | DECLARATIVE
+
+  TOTAL: 14/14 PASS
+  FIRST_PRINCIPLES:     3/14 (21.4%)
+  LITERATURE_ANCHORED:  10/14 (71.4%)
+  DECLARATIVE:          1/14 (7.1%)
+  Non-trivial (FP + LIT): 92.9%
+
+  Sympy substance budget check (per §0.5b):
+    >=3 FIRST_PRINCIPLES required:    True  (3 found)
+    >=60% non-trivial required:       True  (92.9%)
+    <=10% DECLARATIVE budget:         True  (7.1%)
+
+  >>> Phase 2 sympy substance ALL CHECKS PASS <<<
+  >>> Native Delta_phi(f) chain established <<<
+  >>> Cycle authorized to proceed Phase 3 (L2 projection beta_ppE) <<<
+
+==============================================================================
+Cumulative cycle status (Phase 1 + Phase 2)
+==============================================================================
+  Phase 1: 13 tests | 4 FP + 8 LIT + 1 DEC | 92.3% non-trivial (amended 2026-05-12)
+  Phase 2: 14 tests | 3 FP + 10 LIT + 1 DEC | 92.9% non-trivial (amended 2026-05-12)
+  CUMULATIVE: 27 tests | 7 FP + 18 LIT + 2 DEC | 92.6% non-trivial
+  Cumulative FIRST_PRINCIPLES %: 25.9%

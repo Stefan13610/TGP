@@ -1,0 +1,156 @@
+==============================================================================
+Phase 1 sympy -- op-LIGO-3G-native-phase-residual-2026-05-11
+Sympy version: 1.14.0
+==============================================================================
+
+------------------------------------------------------------------------------
+T1 (FP1): Pattern 2.1 Newton emergence z covariant Phi-EOM linearization
+------------------------------------------------------------------------------
+  Vacuum check: V'(Phi_0)|_{beta=gamma} = 0 (expect 0) -> True
+  m_Phi^2 intrinsic = beta (expect beta) -> True
+  Linearization V'_lin coef of eps = Phi_0*beta (expect beta*Phi_0) -> True
+  Newton coupling identification q = 4*pi*G/c**2 -> True
+  T1 (FP1): PASS | FIRST_PRINCIPLES
+           Czy Newton Poisson form ∇²phi_pert ∝ -G*rho emerges NATYWNIE z TGP covariant Phi-EOM weak-field linearization, NIE assumed jako axiom?
+
+------------------------------------------------------------------------------
+T2 (FP2): Pattern 2.2 Newton force via momentum-flux integral nad S_1 sphere
+       [RECLASSIFIED LIT per bd-drift-audit 2026-05-12: momentum-flux mechanism not sympy-verified]
+------------------------------------------------------------------------------
+  Gradient ∂^x phi_2 at body 1 = -G*m_2/r_12**2 (expect -G*m_2/r_12^2)
+  Force F^x_{1<-2} from momentum-flux = G*m_1*m_2/r_12**2 (expect +G*m_1*m_2/r_12^2)
+  Force diff = 0 -> force_pass: True
+  Grad check pass: True
+  F^x_{2<-1} = -G*m_1*m_2/r_12**2 (expect -G*m_1*m_2/r_12^2)
+  Newton 3rd law: F_{1<-2} + F_{2<-1} = 0 -> True
+  T2 (FP2): PASS | LITERATURE_ANCHORED
+           Czy F_{1<-2} = -G*m_1*m_2*r_hat/r_12^2 EMERGES z momentum-flux integral ∮ T^{0i} dS_i (NIE z BD-style δΦ propagator exchange)?
+
+------------------------------------------------------------------------------
+T3 (FP3): Pattern 2.5 m_Phi_eff(r) environment-dependent z V''(Phi_local(r))
+------------------------------------------------------------------------------
+  m_Phi_eff^2(r)/beta = (3*G**2*(m_1**2 + 2*m_1*m_2 + m_2**2) - 4*G*c**2*r*(m_1 + m_2) + c**4*r**2)/(c**4*r**2)
+  Expected: 1 + 4*h(r) + 3*h(r)^2 with h(r) = -G*(m1+m2)/(r*c^2)
+  Form match: diff = 0 -> True
+  lim_{r->inf} m_Phi_eff^2/beta = 1 (expect 1, i.e., m_Phi^2 -> m_Phi_intrinsic^2 = beta)
+  d(m_Phi_eff^2/beta)/dr at test point = 97/125000 -> non-trivial r-dep: True
+  d(m_Phi_eff^2/beta)/dm_1 at test point = -97/2500 -> mass-dep: True
+  T3 (FP3): PASS | FIRST_PRINCIPLES
+           Czy m_Phi_eff^2(r, m_1, m_2) jest environment-dependent observable (NIE universal Lagrangian parameter), z prawidlowym limit r->infinity?
+
+------------------------------------------------------------------------------
+T4: Inheritance verification sigma_cross_12 anisotropic uniaxial (z parent N1.4)
+------------------------------------------------------------------------------
+  sigma_yy = sigma_zz on axis: True
+  uniaxial sigma_xx + 2*sigma_yy = 0: True
+  sigma_xx != sigma_yy on axis (anisotropic): True
+  T4: PASS | LITERATURE_ANCHORED
+     Czy sigma_cross_12 z 2-body gradient cross-terms zachowuje uniaxial traceless pattern (sigma_xx + 2*sigma_yy = 0 na osi) z parent N1.4?
+
+------------------------------------------------------------------------------
+T5: sigma_cross_12 -> 0 in single-source limit (parent N1.5 inheritance)
+------------------------------------------------------------------------------
+  sigma_cross_12 at m_2=0 all entries zero: True
+  T5: PASS | LITERATURE_ANCHORED
+     Czy sigma_cross_12 → 0 gdy m_2 → 0 (single-source consistency)?
+
+------------------------------------------------------------------------------
+T6: V dual-V canonical structure preserved (FOUNDATIONS §3.5.2)
+------------------------------------------------------------------------------
+  Coef of Phi^3 = -beta/(3*Phi_0) (expect -beta/(3*Phi_0)) -> match: True
+  Coef of Phi^4 = gamma/(4*Phi_0**2) (expect gamma/(4*Phi_0^2)) -> match: True
+  No Phi^2 term (NOT generic phi^4 with mass term): True
+  No Phi^1 term (no tadpole): True
+  T6: PASS | LITERATURE_ANCHORED
+     Czy V uzyte w cyklu = V_orig matter sector dual-V canonical, NIE generic ϕ^4?
+
+------------------------------------------------------------------------------
+T7 (FP supporting): Retarded Green's function structure for sigma-coupling (NOT Yukawa)
+------------------------------------------------------------------------------
+  ∇^2(1/r) = 0 for r > 0 (Laplace Green's function): True
+  Yukawa G_Y satisfies (∇^2 - m^2) G_Y = 0 (Helmholtz, NOT TGP-native default): True
+  lim_{m->0} Yukawa = 1/r (massless reduction): True
+  T7: PASS | FIRST_PRINCIPLES
+     Czy retarded Green's function dla weak-field Phi-EOM ma TGP-native 1/(4*pi*r) form (Pattern 2.2 §2.2.3 Warning B anti-Yukawa)?
+
+------------------------------------------------------------------------------
+T8: Dimensional analysis Newton force [F] = N
+------------------------------------------------------------------------------
+  [G*m^2/r^2] simplified = L*M/T**2
+  Newton SI target: M*L/T^2 -> match: True
+  T8: PASS | LITERATURE_ANCHORED
+     Czy [F_Newton] = [G*m_1*m_2/r^2] = kg*m/s^2 in SI (correct Newton units)?
+
+------------------------------------------------------------------------------
+T9: PN ordering O(v^2/c^2) for binary inspiral correction
+------------------------------------------------------------------------------
+  1PN parameter G*M/(r*c^2) = v^2/c^2 (Kepler): True
+  Smallness check v/c=0.01: v^2/c^2 = 1/10000, << 1: True
+  T9: PASS | LITERATURE_ANCHORED
+     Czy 1PN correction to Newton scales as O(v^2/c^2) per standard PN expansion?
+
+------------------------------------------------------------------------------
+T10: c_0 * kappa_sigma = 4/3 EXACT (joint inheritance verification)
+------------------------------------------------------------------------------
+  c_0 = 4*pi, kappa_sigma = 1/(3*pi)
+  c_0 * kappa_sigma = 4/3 (expect 4/3)
+  Difference = 0 -> True
+  T10: PASS | LITERATURE_ANCHORED
+      Czy c_0 * kappa_sigma = 4/3 EXACT po inheritance z #5/#9 audits?
+
+------------------------------------------------------------------------------
+T11: g_eff ansatz {A,B,C} inheritance structure (parent emergent-metric Phase 1)
+------------------------------------------------------------------------------
+  gamma_PPN=1 -> b_1 + a_1 = 0 with b_1 = -a_1: True
+  A(psi) Taylor coefficient at O(delta_psi^3) = a_3/6: True
+  T11: PASS | LITERATURE_ANCHORED
+      Czy g_eff ansatz inherited z parent Phase 1 zawiera tri-funkcyjna {A,B,C} structure z konsystencja gamma_PPN=1 (b_1 = -a_1)?
+
+------------------------------------------------------------------------------
+T12 (FP supporting): m_Phi_eff^2 vacuum limit recovers m_Phi_intrinsic^2 EXACTLY
+------------------------------------------------------------------------------
+  m_Phi_eff^2 at h=0: beta
+  m_Phi_intrinsic^2 = beta (from T1): beta
+  Difference: 0 -> True
+  T12: PASS | FIRST_PRINCIPLES
+      Czy m_Phi_eff^2 -> V''(Phi_0) = m_Phi_intrinsic^2 EXACTLY gdy h(r) -> 0 (vacuum limit)?
+
+------------------------------------------------------------------------------
+T13: STRUCTURAL DECLARATION -- S05 single-Phi axiom preservation
+------------------------------------------------------------------------------
+  S05 single-Phi axiom: STRUCTURAL declaration (NOT sympy-derivable per se)
+  Verified algebraically in parent emergent-metric Phase 1 N3.3, N3.4 (mode counting)
+  Status flagged: T13_status = DECLARATIVE
+  T13: DECLARATIVE | DECLARATIVE
+      Czy cykl preserves S05 single-Phi axiom (jedno fundamentalne pole Phi, no separate g_eff dynamics, no Phi-quantum exchange particle)?
+
+==============================================================================
+Phase 1 sympy verification summary
+==============================================================================
+  [PASS] T1 FP1 Pattern 2.1 Newton emergence z Phi-EOM                | FIRST_PRINCIPLES
+  [PASS] T2 FP2 Pattern 2.2 Newton force via momentum-flux            | LITERATURE_ANCHORED
+  [PASS] T3 FP3 Pattern 2.5 m_Phi_eff environment-dependent           | FIRST_PRINCIPLES
+  [PASS] T4 sigma_cross_12 uniaxial inheritance                       | LITERATURE_ANCHORED
+  [PASS] T5 sigma_cross_12 single-source limit                        | LITERATURE_ANCHORED
+  [PASS] T6 V_orig dual-V canonical structure                         | LITERATURE_ANCHORED
+  [PASS] T7 retarded Green function structure                         | FIRST_PRINCIPLES
+  [PASS] T8 dimensional analysis                                      | LITERATURE_ANCHORED
+  [PASS] T9 PN ordering O(v^2/c^2)                                    | LITERATURE_ANCHORED
+  [PASS] T10 c_0*kappa_sigma=4/3 inheritance                          | LITERATURE_ANCHORED
+  [PASS] T11 g_eff ansatz {A,B,C} inheritance                         | LITERATURE_ANCHORED
+  [PASS] T12 m_Phi_eff vacuum limit recovers intrinsic                | FIRST_PRINCIPLES
+  [PASS] T13 S05 single-Phi preservation (DECLARATIVE)                | DECLARATIVE
+
+  TOTAL: 13/13 PASS
+  FIRST_PRINCIPLES:     4/13 (30.8%)
+  LITERATURE_ANCHORED:  8/13 (61.5%)
+  DECLARATIVE:          1/13 (7.7%)
+  Non-trivial (FP + LIT): 92.3%
+
+  Sympy substance budget check (per §0.5b):
+    >=3 FIRST_PRINCIPLES required:    True  (4 found)
+    >=60% non-trivial required:       True  (92.3%)
+    <=10% DECLARATIVE budget:         True  (7.7%)
+
+  >>> Phase 1 sympy substance ALL CHECKS PASS <<<
+  >>> Cycle authorized to proceed Phase 2 (Delta phi(f) chain) <<<
