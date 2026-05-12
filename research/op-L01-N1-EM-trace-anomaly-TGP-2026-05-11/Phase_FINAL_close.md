@@ -1,16 +1,21 @@
 ---
-title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N1 closed konstruktywnie)"
+title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N1 closed konstruktywnie) — DOWNGRADED 2026-05-11 → STRUCTURAL_VERIFIED (C)"
 date: 2026-05-11
+last_updated: 2026-05-11 (retroactive downgrade per external review)
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED
-sympy_total: "16/16 PASS (100%)"
-six_requirements_status: "6/6 RESOLVED (P1-P6)"
+classification: SPECULATIVE_PARTIAL_ADMINISTRATIVELY_CLOSED  # was STRUCTURAL_DERIVED → STRUCTURAL_VERIFIED (C) 2026-05-11 Rec 1 → further downgraded to D 2026-05-11 Rec 3 (option F per adversarial audit); ALGEBRAIC_MIMICRY verdict (11/16 TAUTOLOGY+HARDCODED); see §RETROACTIVE §R.8
+claim_status: D  # FURTHER DOWNGRADED 2026-05-11 from C to D per adversarial audit (option F); honest taxonomy stretch — D = SPECULATIVE_PARTIAL nominally "n/a — nie closing status" per CYCLE_LIFECYCLE; applied because sympy substance level is WIP-equivalent (Phase1 5+1 TAUTOLOGY/HARDCODED of 8; Phase2 1+4 of 8); see §RETROACTIVE §R.8 + meta/AUDIT_2026-05-11_sympy_substance.md
+legacy_claim_status_C: C  # preserved from Rec 1 (first downgrade 2026-05-11) before Rec 3 audit refinement
+output_type: structural  # algebra consistency only; no native observable with physical units locked in this cycle
+legacy_classification: STRUCTURAL_DERIVED  # preserved for audit trail (append-only)
+sympy_total: "16/16 PASS (100%) — but see §RETROACTIVE for sympy substance audit"
+six_requirements_status: "6/6 RESOLVED (P1-P6) — at level of internal consistency"
 risks_status: "R1-R4, R6 closed structurally; R5 honestly documented"
-status: 🟢 CLOSED — L01 N1 (Quantum trace anomaly EM) constructive derivation COMPLETE
+status: 🟡 CLOSED-DOWNGRADED — L01 N1 EM trace anomaly cycle, claim status C (was claimed STRUCTURAL_DERIVED, downgraded retroactively)
 folder_status: closed-resolved
-parent_cycle_resolution: "L01 NEEDS §N1 closed by this cycle"
+parent_cycle_resolution: "L01 NEEDS §N1 status: cited-literature-verified (NOT derivation-from-axioms) — see §RETROACTIVE"
 ---
 
 # Phase FINAL — Cycle close
@@ -287,3 +292,173 @@ update + PREDICTIONS_REGISTRY 4 new entries.
 Theorem 2.1 (Disjointness) verified konstruktywnie. R6 (QEP universality) closed
 strukturalnie z S05 immunity. Ready dla cross-cycle integration:
 [[./Phase4_three_layer_closure.md]] §8 lista.
+
+---
+
+## §RETROACTIVE — Status downgrade 2026-05-11 (external review)
+
+**Trigger:** External review 2026-05-11 (autor projektu) zidentyfikował proceduralne
+i merytoryczne luki w claim status tego cyklu. §0-§11 powyżej pozostają jako audit
+trail (append-only per `meta/PRE_REGISTERED_FALSIFIERS.md` §0.3); ta sekcja
+nadpisuje **claim status interpretation**, NIE oryginalną treść techniczną.
+
+### §R.1 — Procedural gaps (per BINDING template post-2026-05-10)
+
+Per `meta/CYCLE_KICKOFF_TEMPLATE.md` (status: `🟢 ACTIVE — BINDING dla wszystkich
+cykli otwieranych post-2026-05-10`):
+
+- ❌ **No `contract::` block** w README.md (BINDING §1 wymaga L1/L2/L3 contract)
+- ❌ **No `L1_native.pre_registration_date`** (immutable timestamp przed Phase 1)
+- ❌ **No `## §0.4 — Pre-flight methodology read confirmation`** (BINDING §2.6)
+- ❌ **No PR-### entry** w `meta/PRE_REGISTERED_FALSIFIERS.md` (per §3.4)
+- ❌ **No `output_type` field** w YAML frontmatter (BINDING §2.2)
+
+Konsekwencja per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8: *"Brak `pre_registration_date`
+dla falsifiable claim → max claim status C (internal consistency)"*. Bez PR-###
+entry per `meta/PRE_REGISTERED_FALSIFIERS.md` §3.4: *"Without entry: max status
+`STRUCTURAL_VERIFIED` (C)"*.
+
+### §R.2 — Substantive gaps (sympy substance audit)
+
+External review przeprowadził test-by-test breakdown Phase 1 sympy. Werdykt:
+żaden z 8 testów nie wykonuje 1-loop QED integralu z first principles — wszystkie
+weryfikują że literatura jest poprawnie wpisana lub są tautologiami algebraicznymi.
+
+| Test | Co naprawdę liczy | Klasyfikacja |
+|---|---|---|
+| **T1** | `beta_single_fermion - α²·2/(3π)` gdzie `beta_single_fermion = (2/3)·α²/π`. Identyczne wyrażenia. | tautologia (substytucja) |
+| **T2** | `β/(2α) - α/(3π)` po podstawieniu T1. | tautologia |
+| **T3** | `T_trace = -F_lambda_mu + (4/4)·F²` z `subs(F_lambda_mu, F_squared)` → 0. | tautologia |
+| **T4** | `(β/(2α))·F² - α·F²/(3π)` po podstawieniu T1. | tautologia |
+| **T5** | `T5_pass = True  # dimensional analysis is structural, no symbolic test` | hardcoded |
+| **T6** | `isinstance(A_func, sp.Function)` gdzie `A_func = Function('A')(psi)` 165 linii wyżej. | tautologia |
+| **T7** | `psi in sigma_eff.free_symbols` gdzie σ_eff zawiera A(psi), B(psi). | tautologia |
+| **T8** | `dispersion_classical = ω² - c₀²k²; dispersion_renormalized = ω² - c₀²k²`. Literalna kopia. | tautologia |
+
+**β-funkcja QED jest zadeklarowana z Capper-Duff-Halpern 1974, NIE wyprowadzona
+z TGP axioms.** Sympy weryfikuje, że agent poprawnie wpisał stałą z literatury.
+To jest anti-pattern #6 z `meta/CALIBRATION_PROTOCOL.md` ("Sympy-rationalization
+'DERIVED' without first-principles") — closure §10 originally deklarowała
+compliance z tym anti-patternem; downgrade reflects honest reading.
+
+### §R.3 — Downgrade decision
+
+Per `meta/CYCLE_LIFECYCLE.md` §Claim status taxonomy:
+
+| Field | Original (first close 2026-05-11) | Revised (retroactive 2026-05-11) |
+|---|---|---|
+| `classification` | `STRUCTURAL_DERIVED` | `STRUCTURAL_VERIFIED` |
+| `claim_status` | (not declared) | `C` |
+| `output_type` | (not declared) | `structural` |
+| Falsifiability | claimed A−/A | not claimable without PR-### + observable target |
+| Cytable jako | "konstruktywna verification 1-loop QED" | "algebraic consistency check z literature β-function" |
+
+### §R.4 — Co cykl NADAL twierdzi (zachowane)
+
+- ✅ Algebraic consistency operator class (Theorem 2.1 disjointness — algebraic claim, structural)
+- ✅ Dimensional consistency checks (units of ρ_EM_quantum, F², α/(3π) ratio)
+- ✅ Sympy LOCK na zadeklarowanych identitiesach (po wpisaniu stałych literaturowych)
+- ✅ Cross-cycle structural compatibility — brak sprzeczności z innymi cyklami
+- ✅ L01 ADDENDUM §3.2 typo correction (α²/(3π) → α/(3π), factor 1000) — to jest realny finding
+- ✅ Magnetar ratio recalc B=10¹¹ T → 10⁻¹⁰ — realny numerical follow-through
+
+### §R.5 — Co cykl NIE twierdzi (downgrade)
+
+- ❌ First-principles derivation β-function QED z TGP axioms (literatura cited, NIE derived)
+- ❌ Falsifiable native prediction status (brak PR-### + brak observable target z native physical units locked specifically by this cycle)
+- ❌ A+/A/A− validation transfer status (wymaga `output_type: observable` per §taxonomy)
+- ❌ Closure §10 anti-pattern #6 compliance ("first-principles") — należy reklasyfikować jako "literature-anchored"
+
+### §R.6 — Path back to A−/A (retrofit scope)
+
+Aby ponownie aspirować do A−/A claim status, wymagane:
+
+1. Dodaj `contract::` block do `README.md` z explicit `output_observable` (np. magnetar polar shift ms residual, lub MICROSCOPE η bound), `falsification_rule`, `pre_registration_date`
+2. Submit PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md` (z explicit "retroactive log" status per §3.4 jeśli pre-registration timestamp post-dates first observation w lab/space data)
+3. Rewrite sympy phase(s) tak żeby T1-T8 wykonywały **first-principles derivation** z TGP axioms (Φ-EOM kowariantnej + Riegert mode extraction + 1-loop integral w `g_eff[{Φ_i}]` background) — NIE substytucję literatury
+4. Demonstrate `output_type: observable` (fizyczne jednostki: ms, μrad, dimensionless η ratio)
+
+Scope retrofit: dedicated `op-L01-N1-retrofit-native` cycle, ~3-5 sesji est.
+**NIE jest objęte tą closure.**
+
+### §R.7 — Audit trail invariant
+
+Ta sekcja jest **append-only**. §0-§11 oryginalne pozostają niezmienione. Czytelnicy
+tego cyklu MUSZĄ przeczytać §RETROACTIVE pierwsi aby zrozumieć aktualny claim status.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 (autor projektu)
+- Methodology: `meta/CYCLE_KICKOFF_TEMPLATE.md` §1-§2, `meta/CYCLE_LIFECYCLE.md`
+  §Claim status taxonomy + Anti-pattern #8, `meta/PRE_REGISTERED_FALSIFIERS.md` §3.4
+- Cluster cycle parallel downgrade: [[../op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]]
+- Sibling N-cycle downgrades: N2, N3, N4, N5 (analogous procedural gaps)
+
+**Downgrade authorized:** autor projektu, conversation 2026-05-11, option (A)
+"reklasyfikacja statusów retroaktywnie".
+
+---
+
+### §R.8 — Further differential downgrade C → D (2026-05-11 Rec 3 outcome)
+
+**Trigger:** Adversarial audit per `meta/CALIBRATION_PROTOCOL.md` §4.4 wykonane 2026-05-11
+(option B) z decydowalnym pytaniem per test sympy. Niezależny subagent klasyfikował
+wszystkie 16 testów N1 Phase 1+2 (jeden z TAUTOLOGY / HARDCODED / LITERATURE_ANCHORED /
+FIRST_PRINCIPLES).
+
+**Wynik audytu dla N1:**
+
+| Phase | TAUTOLOGY | HARDCODED | LITERATURE_ANCHORED | FIRST_PRINCIPLES |
+|---|---|---|---|---|
+| Phase 1 | 5 | 1 | 2 | 0 |
+| Phase 2 | 1 | 4 | 3 | 0 |
+| **Total N1** | **6** | **5** | **5** | **0** |
+
+**Per-cycle verdict (audit subagenta):** `ALGEBRAIC_MIMICRY` — 11/16 testów TAUTOLOGY +
+HARDCODED, 5/16 LITERATURE_ANCHORED z mixed substance, 0 FIRST_PRINCIPLES.
+
+**Audit recommendation:** Rec 1 downgrade do C było **za łagodne** dla N1. Per audit
+subagenta: "Phase 2 ma 5 HARDCODED + 1 TAUTOLOGY z 8; werdykt powinien iść w kierunku
+D lub explicit 'literature-consistency check, not derivation.'"
+
+**Decision (option F, autor projektu 2026-05-11):** N1 claim_status downgrade C → D.
+
+**Taxonomy tension acknowledged:** D = `SPECULATIVE_PARTIAL` jest nominalnie oznaczone
+"n/a — nie closing status" w `meta/CYCLE_LIFECYCLE.md`. N1 jest administracyjnie
+`folder_status: closed-resolved`. Aplikacja D jest **honest stretch** odzwierciedlający
+że substantywna głębia (sympy substance) jest WIP-equivalent.
+
+**Alternative consideration:** introduction of nowy sub-level `C−` (`STRUCTURAL_VERIFIED_THIN`)
+dla "closed cycle z substance-thin sympy" byłby taxonomicznie czystszy. To future
+framework refinement decyzja autor projektu — patrz `meta/AUDIT_2026-05-11_sympy_substance.md`
+§3.3 dla pełnego rationale.
+
+**Key test-by-test evidence z audytu:**
+
+- Phase 1 T5: `T5_pass = True  # dimensional analysis is structural, no symbolic test` (linia 179) — literal hardcoded
+- Phase 1 T6: `isinstance(A_func, sp.Function)` gdzie A_func = Function('A')(psi) 165 linii wyżej — type-check tautology
+- Phase 1 T8: `dispersion_classical = ω² - c₀²k²; dispersion_renormalized = ω² - c₀²k²  # SAME structure` (linia 287, komentarz w kodzie sam to przyznaje)
+- Phase 2 T3: `T3_pass = True  # operator class enumeration is by construction` (linia 208)
+- Phase 2 T4: `T4_disjoint = True` (linia 256) z prose only
+- Phase 2 T6: `T6_pass = True` (linia 359) prose-only
+- Phase 2 T7: `T7_pass = True  # honest documentation of regime restriction` (linia 396)
+
+**Co N1 nadal twierdzi (preserved nawet w D):**
+
+- L01 ADDENDUM §3.2 typo correction (α²/(3π) → α/(3π), factor 1000) — real finding
+- Magnetar ratio recalc B=10¹¹ T → 10⁻¹⁰ — real numerical follow-through (Phase 3 §2)
+- Theorem 2.1 structural disjointness claim (algebraic, internal consistency)
+- GW170817 numerical Δc/c ~ 10⁻⁸⁰ bound (Phase 2 T5 substantive arithmetic)
+
+**Path forward (deferred):**
+
+- `op-L01-N1-retrofit-native` cycle (~3-5 sesji): rewrite Phase 1+2 sympy żeby kluczowe
+  testy wykonywały **first-principles derivation z TGP axioms** (Φ-EOM kowariantnej +
+  Riegert mode extraction + 1-loop integral w `g_eff[{Φ_i}]` background) — NIE
+  substytucję literatury
+
+**Audit invariant:** §R.8 jest append-only. §R.1-§R.7 (Rec 1 outcome) pozostają niezmienione.
+Czytelnicy MUSZĄ przeczytać §R.8 dla aktualnego claim_status. Pełny audit data w
+[[../../meta/AUDIT_2026-05-11_sympy_substance.md]] §2.3 (N1 Phase 1 + Phase 2 test-by-test).
+
+**Differential downgrade authorized:** autor projektu, conversation 2026-05-11, option (F)
+"differential downgrade based on adversarial audit data".

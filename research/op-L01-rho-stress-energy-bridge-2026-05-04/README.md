@@ -120,10 +120,68 @@ Patrz [[NEEDS.md]] dla pełnej listy.
 
 ## Status (2026-05-11 update — N1+N2+N3+N4+N5 closure ★ FULL SM COVERAGE ★)
 
+> ⚠ **STATUS DOWNGRADE 2026-05-11 (retroactive, per external review):**
+>
+> Sekcja "🔒 CLOSED-DERIVED" oraz POST-N1/N2/N3/N4/N5 closure blocks poniżej
+> **pozostają w oryginalnej formie** (audit trail; append-only per
+> `meta/PRE_REGISTERED_FALSIFIERS.md` §0.3), ALE **claim status N1-N5 cycles
+> został reklasyfikowany retroaktywnie z `STRUCTURAL_DERIVED` na `STRUCTURAL_VERIFIED` (C)**
+> per `meta/CYCLE_LIFECYCLE.md` §Claim status taxonomy.
+>
+> **Przyczyny (verified empirycznie):**
+> - **0/7 cykli 2026-05-11 ma BINDING `contract::` block** w README.md per
+>   `meta/CYCLE_KICKOFF_TEMPLATE.md` §1 (BINDING post-2026-05-10)
+> - **Brak `pre_registration_date` + brak PR-### entries** w
+>   `meta/PRE_REGISTERED_FALSIFIERS.md` → max claim status C per Anti-pattern #8
+> - **Sympy substance audit:** N1 + N3 dominantnie algebraic tautology + hardcoded
+>   `T_pass = True`; N2, N4 mixed (literature-anchored); N5 single-phase
+>   (literature-anchored); β-functions QED/QCD/EW są cytowane z literatury,
+>   NIE wyprowadzone z TGP axioms
+>
+> **Co N1-N5 cycles NADAL twierdzą (preserved):**
+> - Algebraic consistency operator class form z TGP matter-sector mapping
+> - Dimensional analysis correctness
+> - Cross-cycle structural compatibility z N1+N2+N3+N4+N5+Q1+Q2+Q3
+> - Sympy LOCK na zadeklarowanych identitiesach (po wpisaniu stałych literatury)
+> - Konkretne realne findings: α/(3π) typo correction (N1), magnetar OOM (N1),
+>   T-Λ ratio 1.020 (N2), R5 crossover LOCK (N4), Q2 F1 OOM gaps (N2/N4/N5)
+>
+> **Co N1-N5 cycles NIE twierdzą (downgrade):**
+> - First-principles derivation β-functions z TGP axioms (literatura cytowana, NIE derived)
+> - Falsifiable native predictions A+/A/A− status (wymaga PR-### + observable target)
+> - "Pełna SM coverage konstruktywnie udowodniona" — bardziej precyzyjnie:
+>   "full SM literature-anchoring coverage; constructive TGP-axiom derivation deferred"
+>
+> **Per-cycle §RETROACTIVE sections z detailed audit:**
+> - [[../op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] **[D after Rec 3+F]**
+> - [[../op-L01-N2-QCD-trace-anomaly-cosmology-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] **[C preserved]**
+> - [[../op-L01-N3-SPARC-rho-consistency-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] **[D after Rec 3+F]**
+> - [[../op-L01-N4-Higgs-trace-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] **[C preserved]**
+> - [[../op-L01-N5-EW-gauge-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] **[C preserved]**
+> - PREDICTIONS_REGISTRY: §STATUS DOWNGRADE PREAMBLE 2026-05-11 (przed M911-EM* entries) + Rec 3+F UPDATE
+> - **Standalone audit record:** [[../../meta/AUDIT_2026-05-11_sympy_substance.md]] — niezależny adversarial audit 112 testów across 6 cykli
+>
+> **Cluster + hierarchy cycles** also downgraded/noted; see their §RETROACTIVE sections.
+>
+> **Rec 3+F differential downgrade outcome (2026-05-11):**
+> Adversarial audit (option B) wykazał niejednolity sympy substance:
+> - **N1, N3 → D (SPECULATIVE_PARTIAL administratively-closed)** — ALGEBRAIC_MIMICRY verdict
+> - **N2, N4, N5 → C preserved** — LITERATURE_ANCHORED / MIXED verdicts (substantive content)
+> - **0 z 112 testów = FIRST_PRINCIPLES** (uniform cohort observation)
+>
+> **Path forward:** retrofit cycles `op-L01-N1-retrofit-native` ... `op-L01-N5-retrofit-native`
+> (~3-8 sesji each) pozwoli na re-aspiration do A−/A claim status z explicit
+> first-principles derivation z TGP axioms.
+>
+> **Downgrade authorized:** autor projektu, conversation 2026-05-11, options (A) → (F).
+
 🔒 **CLOSED-DERIVED** (Phase 3/3 CLOSED, F1-F21 exported, **Q1+Q2+Q3 zamknięte**
 przez cross-cycle propagation 2026-05-10, **N1+N2+N3+N4+N5 wszystkie zamknięte
 konstruktywnie 2026-05-11** przez pięć dedicated cycles — **MILESTONE: pełne
-SM matter+gauge sektor coverage**).
+SM matter+gauge sektor coverage**)
+[claim status REVISED 2026-05-11: see DOWNGRADE preamble above; N1-N5 status
+revised z STRUCTURAL_DERIVED na STRUCTURAL_VERIFIED (C); legacy text preserved
+jako audit trail; "MILESTONE" rewidowane na "full SM literature-anchoring coverage"].
 
 > **POST-N5 CLOSURE (2026-05-11, same day as N1+N2+N3+N4 — ★ LAST L01 N-NEED ★):**
 > EW gauge sektor (SU(2)×U(1)) trace anomaly N5 zamknięty *konstruktywnie* w
@@ -273,8 +331,8 @@ strukturalnie udowodniony 2026-05-11.**
 
 **Open follow-up cycles (scaffolded 2026-05-11):**
 
-- [[../op-cluster-mass-deficit-resolution-2026-05-11/]] — **CLOSED 2026-05-11** STRUCTURAL_DERIVED (H1b: TGP + sterile ν 2 eV); 24/24 sympy PASS; 6.4σ multi-experiment falsifiability post-2030+; separate research thread (cluster astrophysical regime; NIE L01 SM sektor coverage)
-- [[../op-Higgs-hierarchy-mechanism-2026-05-11/]] — N4 R3 deferred follow-up (Q2 F1 + S05 jako hierarchy protection mechanism); ~8-12 sesji; honest CAVEAT (revolutionary scope)
+- [[../op-cluster-mass-deficit-resolution-2026-05-11/]] — **CLOSED-NULL 2026-05-11 (EARLY_HALT_HONEST after Rec 2)**: TGP-pure (H1a) shows ~50% mass deficit (M_TGP/M_obs ≈ 0.472 ± 0.118 across 10-cluster sample) — honest negative result. H1b sterile ν addition reclassified jako separate dedicated cycle requirement (NOT framework conclusion z tego cyklu); ROFM/NFW/statistical tools preserved jako framework resources. **[Full history: STRUCTURAL_DERIVED H1b → STRUCTURAL_VERIFIED C → EARLY_HALT_HONEST; see [[../op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§R.10]]; precedent op-MAG-anomalous-moment]**
+- [[../op-Higgs-hierarchy-mechanism-2026-05-11/]] — **CLOSED EARLY 2026-05-11** STRUCTURAL_NO_GO (H1c — honest verdict); N4 R3 deferred explicit analyzed: H1a substrate UV regulator shifts fine-tuning, H1b modified Veltman unnatural; TGP as-presented NIE rozwiązuje hierarchy; composite Higgs deferred dedicated future cycle **[STATUS PRESERVED 2026-05-11 — honest negative verdict aligns z claim status C; procedural note added; see [[../op-Higgs-hierarchy-mechanism-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]]]**
 - [[../op-S07-reset-alternative-f-psi-2026-05-11/]] — M9.1'' FALSIFIED-OBSERVATIONAL GWTC-3 5.02σ rejection follow-up (alternative f(ψ) z S07 freedom); ~5-8 sesji
 - [[../op-inflation-substrate-genesis-2026-05-11/]] — Φ_eq(t) inflation prehistory (Q2 NEEDS §N4 deferred); ~8-12 sesji
 

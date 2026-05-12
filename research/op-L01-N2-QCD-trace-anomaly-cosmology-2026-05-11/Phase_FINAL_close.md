@@ -1,16 +1,20 @@
 ---
-title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N2 closed konstruktywnie)"
+title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N2 closed konstruktywnie) — DOWNGRADED 2026-05-11 → STRUCTURAL_VERIFIED (C)"
 date: 2026-05-11
+last_updated: 2026-05-11 (retroactive downgrade per external review)
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED
-sympy_total: "24/24 PASS (100%)"
-six_requirements_status: "6/6 RESOLVED (P1-P6)"
+classification: STRUCTURAL_VERIFIED  # was STRUCTURAL_DERIVED; downgraded 2026-05-11 per external review (see §RETROACTIVE)
+claim_status: C  # per meta/CYCLE_LIFECYCLE.md §Claim status taxonomy; max C without pre_registration_date (anti-pattern #8)
+output_type: structural  # algebra consistency only; native observable not locked in this cycle (lattice + literature external inputs anchor numerics)
+legacy_classification: STRUCTURAL_DERIVED  # preserved for audit trail (append-only)
+sympy_total: "24/24 PASS (100%) — but see §RETROACTIVE for sympy substance audit"
+six_requirements_status: "6/6 RESOLVED (P1-P6) — at level of internal consistency"
 risks_status: "R1-R7 all addressed (R2 honestly documented, R1+R3-R7 fully closed)"
-status: 🟢 CLOSED — L01 N2 (QCD trace anomaly + cosmology) constructive derivation COMPLETE
+status: 🟡 CLOSED-DOWNGRADED — L01 N2 QCD trace anomaly cycle, claim status C (was claimed STRUCTURAL_DERIVED, downgraded retroactively)
 folder_status: closed-resolved
-parent_cycle_resolution: "L01 NEEDS §N2 closed by this cycle"
+parent_cycle_resolution: "L01 NEEDS §N2 status: cited-literature-verified (NOT derivation-from-axioms) — see §RETROACTIVE"
 ---
 
 # Phase FINAL — Cycle close
@@ -289,3 +293,105 @@ entries M911-QCD-*.
 **Q2 F1 konstruktywnie verified dla QCD sektora.** BBN/CMB/PTA bounds all PASS
 automatic. Ready dla cross-cycle integration:
 [[./Phase4_three_layer_closure.md]] §7 lista.
+
+---
+
+## §RETROACTIVE — Status downgrade 2026-05-11 (external review)
+
+**Trigger:** External review 2026-05-11 (autor projektu) zidentyfikował proceduralne
+i merytoryczne luki w claim status tego cyklu. §0-§11 powyżej pozostają jako audit
+trail (append-only per `meta/PRE_REGISTERED_FALSIFIERS.md` §0.3); ta sekcja
+nadpisuje **claim status interpretation**, NIE oryginalną treść techniczną.
+
+### §R.1 — Procedural gaps (per BINDING template post-2026-05-10)
+
+Per `meta/CYCLE_KICKOFF_TEMPLATE.md` (BINDING dla cykli post-2026-05-10):
+
+- ❌ **No `contract::` block** w README.md (BINDING §1 L1/L2/L3 contract)
+- ❌ **No `L1_native.pre_registration_date`** (immutable timestamp przed Phase 1)
+- ❌ **No `## §0.4 — Pre-flight methodology read confirmation`** (BINDING §2.6)
+- ❌ **No PR-### entry** w `meta/PRE_REGISTERED_FALSIFIERS.md` (per §3.4)
+- ❌ **No `output_type` field** w YAML frontmatter (BINDING §2.2)
+
+Konsekwencja per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8 + PRE_REGISTERED_FALSIFIERS
+§3.4: max claim status `STRUCTURAL_VERIFIED` (C). Cycle NIE może być cytowany jako
+falsifiable native prediction.
+
+### §R.2 — Substantive gaps (sympy substance audit)
+
+External review classification N2 sympy: "mixed" — kombinacja:
+
+- **Literature-anchored declarations.** β_QCD(g) = -(b₀/16π²)·g³ z b₀=7 (N_f=6) jest
+  zadeklarowane z literatury QCD standard (NIE wyprowadzone z TGP axioms). Sympy
+  weryfikuje że agent poprawnie wpisał stałą.
+- **Hardcoded `T_pass = True`** asserts: external review count = 9 across Phase 1+2+3
+  (1 + 5 + 3 respectively z 24 testów cumulative).
+- **Real computations** (vacuum condensate magnitude, EW phase transition T_c, BBN
+  N_eff bounds) — anchored z lattice + literature inputs, NIE z TGP-axiom derivation.
+
+**β_QCD jest deklarowane z CDJ-1977 + SVZ-1979 + lattice; sympy weryfikuje
+algebraic consistency tej deklaracji.** To jest *literature anchoring*, NIE
+*first-principles derivation z TGP axioms*.
+
+Closure §10 oryginalnie deklarowała compliance z anti-pattern #6 ("first-principles");
+downgrade reflects honest reading: literature jest *cited and verified*, NIE *derived*.
+
+### §R.3 — Downgrade decision
+
+Per `meta/CYCLE_LIFECYCLE.md` §Claim status taxonomy:
+
+| Field | Original (first close 2026-05-11) | Revised (retroactive 2026-05-11) |
+|---|---|---|
+| `classification` | `STRUCTURAL_DERIVED` | `STRUCTURAL_VERIFIED` |
+| `claim_status` | (not declared) | `C` |
+| `output_type` | (not declared) | `structural` |
+| Falsifiability | claimed A−/A | not claimable bez PR-### + observable target |
+| Cytable jako | "konstruktywna Q2 F1 verification dla QCD" | "algebraic consistency QCD trace anomaly form z literature β + lattice" |
+
+### §R.4 — Co cykl NADAL twierdzi (zachowane)
+
+- ✅ Algebraic consistency QCD trace anomaly form (CDJ-1977 + SVZ-1979) z TGP
+  matter sektor mapping
+- ✅ Numerical consistency T_QCD ≈ 150-170 MeV phase transition lattice value
+- ✅ BBN N_eff + CMB compatibility verification (z lattice external inputs)
+- ✅ T-Λ ratio 1.020 numerical agreement (z standard cosmology fits)
+- ✅ Sympy LOCK na zadeklarowanych identitiesach (po wpisaniu stałych lattice + lit.)
+- ✅ Cross-cycle structural compatibility — brak sprzeczności z N1 + Q2
+
+### §R.5 — Co cykl NIE twierdzi (downgrade)
+
+- ❌ First-principles derivation β_QCD z TGP axioms (CDJ/SVZ cited, NIE derived)
+- ❌ Falsifiable native prediction status (brak PR-### + brak observable target)
+- ❌ A+/A/A− validation transfer status (wymaga `output_type: observable`)
+- ❌ Closure §10 anti-pattern #6 compliance ("first-principles") — reklasyfikować jako
+  "literature + lattice anchored"
+- ❌ "Q2 F1 konstruktywnie verified" — bardziej precyzyjnie: "Q2 F1 algebraic consistency
+  z QCD literature form verified, full constructive derivation deferred"
+
+### §R.6 — Path back to A−/A (retrofit scope)
+
+Wymagane do re-claim A−/A:
+
+1. Dodaj `contract::` block z explicit `output_observable` (np. T-Λ ratio precision, BBN N_eff bound, CMB-S4 forecast residual)
+2. Submit PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+3. Rewrite sympy phases tak żeby kluczowe testy wykonywały **first-principles derivation**
+   z TGP axioms (Φ-EOM kowariantnej w gluon condensate background) — NIE substytucję
+   literatury β_QCD
+4. Demonstrate `output_type: observable` (T-Λ MeV, N_eff dimensionless ratio)
+
+Scope: dedicated `op-L01-N2-retrofit-native` cycle, ~4-6 sesji est.
+**NIE jest objęte tą closure.**
+
+### §R.7 — Audit trail invariant
+
+§0-§11 oryginalne pozostają niezmienione. Czytelnicy MUSZĄ przeczytać §RETROACTIVE
+pierwsi. Append-only invariant.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 (autor projektu)
+- Methodology: `meta/CYCLE_KICKOFF_TEMPLATE.md` §1-§2, `meta/CYCLE_LIFECYCLE.md`
+  §Claim status taxonomy + Anti-pattern #8, `meta/PRE_REGISTERED_FALSIFIERS.md` §3.4
+- Sibling N-cycle downgrades: N1, N3, N4, N5 (analogous procedural + substantive gaps)
+
+**Downgrade authorized:** autor projektu, conversation 2026-05-11, option (A)
+"reklasyfikacja statusów retroaktywnie".

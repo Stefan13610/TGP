@@ -1,16 +1,21 @@
 ---
-title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N3 SPARC consistency verified)"
+title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N3 SPARC consistency verified) — DOWNGRADED 2026-05-11 → STRUCTURAL_VERIFIED (C)"
 date: 2026-05-11
+last_updated: 2026-05-11 (retroactive downgrade per external review)
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED
-sympy_total: "8/8 PASS (100%)"
-six_requirements_status: "6/6 RESOLVED (P1-P6)"
+classification: SPECULATIVE_PARTIAL_ADMINISTRATIVELY_CLOSED  # was STRUCTURAL_DERIVED → STRUCTURAL_VERIFIED (C) 2026-05-11 Rec 1 → further downgraded to D 2026-05-11 Rec 3 (option F); ALGEBRAIC_MIMICRY verdict (5/8 hardcoded T_pass = True; only 3/8 trivial arithmetic); see §RETROACTIVE §R.8
+claim_status: D  # FURTHER DOWNGRADED 2026-05-11 from C to D per adversarial audit (option F); honest taxonomy stretch (D nominalnie "n/a — nie closing status" per CYCLE_LIFECYCLE); applied because sympy substance level najmocniej hardcoded z całej szóstki cykli 2026-05-11; see §RETROACTIVE §R.8 + meta/AUDIT_2026-05-11_sympy_substance.md
+legacy_claim_status_C: C  # preserved from Rec 1 (first downgrade 2026-05-11) before Rec 3 audit refinement
+output_type: structural  # algebra consistency only; sympy 5/8 hardcoded True + 2/8 v²/c² < 0.01 unit checks
+legacy_classification: STRUCTURAL_DERIVED  # preserved for audit trail (append-only)
+sympy_total: "8/8 PASS (100%) — but 5/8 hardcoded True + 2/8 pure-Python unit arithmetic; see §RETROACTIVE"
+six_requirements_status: "6/6 RESOLVED (P1-P6) — at level of internal consistency"
 risks_status: "R1 closed strukturalnie + R2 honestly documented"
-status: 🟢 CLOSED — L01 N3 (SPARC ρ-consistency) verification COMPLETE
+status: 🟡 CLOSED-DOWNGRADED — L01 N3 SPARC consistency cycle, claim status C (sympy 8/8 PASS heavily hardcoded, see §RETROACTIVE)
 folder_status: closed-resolved
-parent_cycle_resolution: "L01 NEEDS §N3 closed by this cycle"
+parent_cycle_resolution: "L01 NEEDS §N3 status: dimensional-consistency-verified (NOT derivation-from-axioms) — see §RETROACTIVE"
 priority: low (cosmetic)
 ---
 
@@ -249,3 +254,169 @@ documentation note.
 **Cycle close.** Sympy 8/8 PASS (100%). Six P-requirements 6/6 RESOLVED.
 **ρ_SPARC ≡ ρ_baryon ≡ -T^μ_μ_dust/c_0² verified.** Ready dla cross-cycle
 integration: §7 lista.
+
+---
+
+## §RETROACTIVE — Status downgrade 2026-05-11 (external review)
+
+**Trigger:** External review 2026-05-11 zidentyfikował, że to jest najbardziej
+ostry case sympy-substance gap z całej szóstki cykli 2026-05-11. §0-§9 powyżej
+pozostają jako audit trail; ta sekcja nadpisuje claim status interpretation.
+
+### §R.1 — Procedural gaps (per BINDING template post-2026-05-10)
+
+Identyczne z N1/N2:
+
+- ❌ No `contract::` block
+- ❌ No `L1_native.pre_registration_date`
+- ❌ No `## §0.4 — Pre-flight methodology read confirmation`
+- ❌ No PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+- ❌ No `output_type` field
+
+Per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8 + PRE_REGISTERED_FALSIFIERS §3.4: max C.
+
+### §R.2 — Substantive gaps (sympy substance audit — N3-specific)
+
+External review breakdown N3 Phase 1 sympy 8 testów (czytałem cały plik):
+
+| Test | Co naprawdę liczy | Klasyfikacja |
+|---|---|---|
+| **T1** | `T1_pass = True  # analytic identity` (T^μ_μ_dust = -ρ·c² declared) | hardcoded |
+| **T2** | `ρ_TGP = -T^μ_μ/c_0²` po podstawieniu `c_light = c_0` → ρ = ρ | trivial subst |
+| **T3** | Pure-Python `(200e3/3e8)²/2 < 0.01` — weryfikuje że km/s ≪ c | unit arithmetic |
+| **T4** | Pure-Python `(1e3/3e8)²/2 < 1e-6` — weryfikuje że HI thermal v ≪ c | unit arithmetic |
+| **T5** | `T5_pass = True` (double-counting check w prose, NIE sympy) | hardcoded |
+| **T6** | `T6_pass = True` (SPARC framework consistency w prose) | hardcoded |
+| **T7** | `T7_pass = True` (S05 preservation w prose) | hardcoded |
+| **T8** | `T8_pass = True` (Sgr A* extreme limit honest documentation) | hardcoded |
+
+**N3 verdict "STRUCTURAL DERIVED 8/8 PASS" = 5 print-and-True + 2 sprawdzenia że
+km/s ≪ c + 1 trywialna substytucja c²/c₀² = 1.**
+
+**Żaden test nie wykonuje first-principles derivation w sensie TGP-axiom-based.**
+Co cykl prawdziwie weryfikuje: dimensional analysis (poprawne jednostki SI) +
+prose-level structural argument zapisany w komentarzach Python (NIE evaluated
+przez sympy).
+
+### §R.3 — Downgrade decision
+
+| Field | Original | Revised |
+|---|---|---|
+| `classification` | `STRUCTURAL_DERIVED` | `STRUCTURAL_VERIFIED` |
+| `claim_status` | (not declared) | `C` |
+| `output_type` | (not declared) | `structural` (dimensional analysis only) |
+| Cytable jako | "ρ-bridge verified do <10⁻⁶ precision" | "ρ-bridge dimensionally consistent z dust limit; precision claim wynika z unit arithmetic, NIE z TGP derivation" |
+
+### §R.4 — Co cykl NADAL twierdzi (zachowane)
+
+- ✅ Dimensional consistency: [ρ_baryon] = [-T^μ_μ_dust/c_0²] = [M·L⁻³] ✓
+- ✅ Order-of-magnitude argument: galactic v²/c² ~ 10⁻⁷ ≪ 1% (Python arithmetic)
+- ✅ Prose-level structural argument: SPARC fits use ρ_baryon only, no separate ρ_DM
+- ✅ Scope clarification: galactic-disk regime explicitly excluded cluster scale
+- ✅ Cross-cycle structural compatibility — N3 jest spójny z N1, Q1, Q2 ujęciem
+
+### §R.5 — Co cykl NIE twierdzi (downgrade)
+
+- ❌ Sympy-verified "STRUCTURAL DERIVED" — większość testów to hardcoded True
+- ❌ "Konstruktywna verification" — to jest dimensional consistency, NIE derivation
+- ❌ Falsifiable native prediction (brak PR-### + brak observable target z fizycznymi
+  jednostkami locked specifically by this cycle; SPARC <10⁻⁶ precision wynika z
+  unit arithmetic na external data, nie z TGP-anchor)
+- ❌ Priority "low cosmetic" claim — review pokazuje że jest to nie "cosmetic
+  verification" ale "wykonanie cyklu z konstruktywnym werdyktem na 5 hardcoded
+  asserts + 2 unit checks + 1 trivial subst"
+
+### §R.6 — Path back to A−/A (retrofit scope)
+
+Wymagane:
+
+1. `contract::` block z `output_observable: "SPARC chi²_red residual ratio TGP-vs-MOND vs ρ_baryon column"`
+2. PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+3. Rewrite Phase 1 sympy: zastąp hardcoded True faktycznymi sympy-symbolic
+   derivations z perfect fluid stress-energy tensor decomposition + 4-velocity
+   transformations + Φ-EOM matter coupling
+4. Demonstrate `output_type: observable` (chi²_red dimensionless, v_rot km/s)
+
+Scope: dedicated `op-L01-N3-retrofit-native-SPARC` cycle, ~2-3 sesji est.
+**NIE jest objęte tą closure.**
+
+### §R.7 — Audit trail invariant
+
+§0-§9 oryginalne pozostają niezmienione. Append-only.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 — N3 wyróżniony jako najostrzejszy case
+  ("5/8 hardcoded True", "STRUCTURAL DERIVED za 5 print-and-True + 2 sprawdzenia
+  że km/s ≪ c")
+- Methodology: `meta/CYCLE_KICKOFF_TEMPLATE.md`, `meta/CYCLE_LIFECYCLE.md`,
+  `meta/PRE_REGISTERED_FALSIFIERS.md`
+- Sibling N-cycle downgrades: N1, N2, N4, N5
+
+**Downgrade authorized:** autor projektu, conversation 2026-05-11, option (A).
+
+---
+
+### §R.8 — Further differential downgrade C → D (2026-05-11 Rec 3 outcome)
+
+**Trigger:** Adversarial audit per `meta/CALIBRATION_PROTOCOL.md` §4.4 wykonane 2026-05-11
+(option B) z decydowalnym pytaniem per test sympy. Niezależny subagent klasyfikował
+wszystkie 8 testów N3 Phase 1.
+
+**Wynik audytu dla N3:**
+
+| Phase | TAUTOLOGY | HARDCODED | LITERATURE_ANCHORED | FIRST_PRINCIPLES |
+|---|---|---|---|---|
+| Phase 1 | 0 | 5 | 3 | 0 |
+| **Total N3** | **0** | **5** | **3** | **0** |
+
+**Per-cycle verdict (audit subagenta):** `ALGEBRAIC_MIMICRY` — 5/8 testów to literal
+`T_pass = True` z prose-only justification; pozostałe 3/8 to trywialna pure-Python
+arithmetic (v²/c² for km/s; substytucja c_light → c_0). **N3 jest najmocniej
+skoncentrowany w hardcoded z całej szóstki cykli 2026-05-11.**
+
+**Audit recommendation:** Rec 1 downgrade do C było **za łagodne** dla N3. Per audit
+subagenta: "5 z 8 testów to literal `T_pass = True`, tylko T2-T4 mają trivial
+arithmetic; werdykt powinien iść w kierunku D."
+
+**Decision (option F, autor projektu 2026-05-11):** N3 claim_status downgrade C → D.
+
+**Taxonomy tension:** identyczna z N1 — patrz `meta/AUDIT_2026-05-11_sympy_substance.md`
+§3.2-§3.3.
+
+**Key test-by-test evidence z audytu (5/8 hardcoded):**
+
+- T1: `T1_pass = True  # analytic identity` (linia 54)
+- T5: `T5_pass = True` (linia 184) — prose-only o emergent DM
+- T6: `T6_pass = True` (linia 209) — prose-only o SPARC consistency
+- T7: `T7_pass = True` (linia 237) — prose-only o S05
+- T8: `T8_pass = True  # honest documentation` (linia 272)
+
+Pozostałe 3/8 (T2, T3, T4) wykonują substytucję c_light → c_0 lub pure-Python
+`(v/c)²/2 < threshold` arithmetic z fizycznymi jednostkami SI.
+
+**Co N3 nadal twierdzi (preserved nawet w D):**
+
+- Dimensional consistency: [ρ_baryon] = [-T^μ_μ_dust/c_0²] = [M·L⁻³] ✓
+- Order-of-magnitude argument: galactic v²/c² ~ 10⁻⁷ ≪ 1% (Python arithmetic)
+- Scope clarification: SPARC = galactic-disk regime; cluster scale outside
+- Cross-cycle structural compatibility z N1, Q1, Q2 ujęciem (declarative, NIE derived)
+
+**Co N3 NIE twierdzi (D-downgrade):**
+
+- "Sympy-verified STRUCTURAL DERIVED" — 5/8 to hardcoded True z prose-only justification
+- "Konstruktywna verification" — to jest dimensional declaration, NIE derivation
+- "8/8 sympy PASS" przekonujący — pasy są dla literal True, nie dla weryfikacji
+
+**Path forward (deferred):**
+
+- `op-L01-N3-retrofit-native-SPARC` cycle (~2-3 sesji): rewrite Phase 1 sympy zastępując
+  hardcoded True faktyczną symbolic derivation z perfect fluid stress-energy tensor
+  decomposition + 4-velocity Lorentz transformations + Φ-EOM matter coupling z TGP
+  axiom S05
+
+**Audit invariant:** §R.8 jest append-only. §R.1-§R.7 (Rec 1 outcome) preserved.
+Czytelnicy MUSZĄ przeczytać §R.8 dla aktualnego claim_status. Pełny audit data w
+[[../../meta/AUDIT_2026-05-11_sympy_substance.md]] §2.3 (N3 Phase 1 test-by-test).
+
+**Differential downgrade authorized:** autor projektu, conversation 2026-05-11, option (F)
+"differential downgrade based on adversarial audit data".

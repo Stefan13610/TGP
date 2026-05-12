@@ -1,16 +1,24 @@
 ---
-title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (cluster mass deficit closed H1b: TGP + sterile ν 2 eV)"
+title: "Phase FINAL — Cycle close: EARLY_HALT_HONEST (Rec 2 2026-05-11; H1a TGP-pure insufficient at cluster scale; H1b sterile ν NOT legitimate framework conclusion); legacy: STRUCTURAL DERIVED (H1b) → STRUCTURAL_VERIFIED (C) → EARLY_HALT_HONEST"
 date: 2026-05-11
+last_updated: 2026-05-11 (Rec 2 EARLY_HALT_HONEST reclassification)
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED (H1b)
-verdict: "H1b — TGP framework (ROFM + multi-source g_eff) + sterile ν 2 eV (sin²2θ ~ 10⁻³, Δ_N_eff = 0.05) closes cluster mass deficit konstruktywnie; H1a (TGP-pure) RULED OUT (multi-source 10¹⁰× insufficient); compatible z all current bounds; 6.4σ combined falsifiability post-2030+"
-sympy_total: "24/24 PASS (100%)"
-six_requirements_status: "6/6 RESOLVED (P1-P6 adapted)"
-risks_status: "R1-R6 addressed (5/6 closed + 1 partial)"
-status: 🟢 CLOSED — cluster mass deficit constructive resolution COMPLETE
-folder_status: closed-resolved
+classification: EARLY_HALT_HONEST  # Rec 2 final 2026-05-11; H1a TGP-pure insufficient honestly acknowledged; H1b sterile ν addition deferred do separate dedicated cycle z pre-bounded recovery_scope per PRE_REGISTERED_FALSIFIERS §3.3
+claim_status: C  # honest negative verdict aligns naturally z STRUCTURAL_VERIFIED level per CYCLE_LIFECYCLE (analog do hierarchy STRUCTURAL_NO_GO claim_status C)
+output_type: structural  # TGP-pure prediction wykonane na real cluster data (arithmetic OK); honest verdict = H1a insufficient
+legacy_classification_v1: "STRUCTURAL_DERIVED (H1b)"  # initial claim 2026-05-11 (first close)
+legacy_classification_v2: "STRUCTURAL_VERIFIED (C, REC-2 pending)"  # Rec 1 downgrade 2026-05-11 (first retroactive)
+legacy_classification_v3: "EARLY_HALT_HONEST"  # Rec 2 final 2026-05-11 (current)
+legacy_verdict_v1: "H1b — TGP framework (ROFM + multi-source g_eff) + sterile ν 2 eV (sin²2θ ~ 10⁻³, Δ_N_eff = 0.05) closes cluster mass deficit konstruktywnie; H1a (TGP-pure) RULED OUT (multi-source 10¹⁰× insufficient); compatible z all current bounds; 6.4σ combined falsifiability post-2030+ — REVISED: see §RETROACTIVE §R.10"
+final_verdict: "EARLY_HALT_HONEST — H1a TGP-pure shows ~50% mass deficit (M_TGP/M_obs = 0.472 ± 0.118 across 10-cluster sample); to jest honest negative result. H1b sterile ν addition wymaga separate cycle z pre-registered parameter bounds per PRE_REGISTERED_FALSIFIERS §3.3 (precedent: op-MAG-anomalous-moment 2/2 sympy PASS → EARLY_HALT_HONEST)."
+sympy_total: "24/24 PASS (100%) — real arithmetic na cluster data; H1a TGP-pure prediction substantywnie wykonana; H1b verdict-logic flagged Lakatos pattern; see §R.10"
+six_requirements_status: "P1+P2 RESOLVED (ROFM formalism + v_circ profile); P3 NEGATIVE-RESOLVED (H1a fails honestly); P4 cross-cycle (Bullet) NIE addressed bez H1b; P5+P6 inherit"
+risks_status: "R1-R6 addressed (5/6 closed + 1 partial); R4 honest verdict applied"
+status: 🟢 CLOSED-NULL — cluster cycle EARLY_HALT_HONEST (H1a TGP-pure insufficient at cluster scale; H1b deferred do separate dedicated cycle)
+folder_status: closed-NULL  # per CYCLE_LIFECYCLE §slownik: closed-NULL = Phase FINAL z verdict EARLY_HALT (brak claimu, honest acknowledgment)
+rec2_outcome: "EARLY_HALT_HONEST reclassification finalized 2026-05-11 per option K; see §R.10"
 ---
 
 # Phase FINAL — Cycle close
@@ -299,3 +307,281 @@ opened + closed same day z compact 4-phase derivation).**
 **STRUCTURAL DERIVED. Cycle closed. H1b: TGP + sterile ν 2 eV.**
 
 **6.4σ combined falsifiability post-2030+. Empirical commitments locked.**
+
+---
+
+## §RETROACTIVE — Status downgrade 2026-05-11 (external review)
+
+**Trigger:** External review 2026-05-11 zidentyfikował cluster cycle jako **najostrzejszy
+methodological case** z 2026-05-11 szóstki: nie sympy substance (24/24 real arithmetic),
+ale **verdict-logic pattern** (H1a → H1b OR clause) jest dokładnie anti-Lakatos
+pattern, który `meta/PRE_REGISTERED_FALSIFIERS.md` miał wyłapać.
+
+§0-§X powyżej pozostają jako audit trail. Ta sekcja nadpisuje claim status
+interpretation oraz oznacza cykl jako **Rec 2 review pending**.
+
+### §R.1 — Procedural gaps (identyczne z L01 N-series)
+
+- ❌ No `contract::` block w README.md (BINDING §1 post-2026-05-10)
+- ❌ No `L1_native.pre_registration_date`
+- ❌ No `## §0.4 — Pre-flight methodology read confirmation`
+- ❌ No PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+- ❌ No `output_type` field w YAML frontmatter
+
+Per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8 + PRE_REGISTERED_FALSIFIERS §3.4: max C.
+
+### §R.2 — Substantive gap: VERDICT-LOGIC IS LAKATOS PATTERN
+
+W przeciwieństwie do N1/N2/N3/N4/N5 (gdzie problem jest sympy substance = literature
+anchoring), cluster cycle ma **prawdziwą arytmetykę** (24/24 PASS na realnych danych
+Coma/Bullet/A1689/A2744). **Sympy substance jest OK.** Problem jest gdzie indziej.
+
+**Problem: anti-Lakatos clause violation per PRE_REGISTERED_FALSIFIERS §3.3.**
+
+README §"Central hypothesis H1" deklaruje trzy gałęzie:
+
+- **H1a:** TGP-pure (g_eff multi-source) daje cluster enhancement
+- **H1b:** *"Jeśli H1a falsifikuje"*, sterile ν 2 eV + sin²2θ ~ 10⁻³ + ΔN_eff = 0.05
+- **H1c:** STRUCTURAL_NO_GO
+
+To jest **decision tree z gwarantowanym ALL-PASS**: jeśli H1a upadnie, H1b automatycznie
+przejmuje. Reguła nie jest falsyfikowalna — jest *konstruowalna* żeby zawsze pasować.
+
+**PRE_REGISTERED_FALSIFIERS §3.3 (Unbounded recovery space):**
+
+> `falsification_rule: "if X exceeded, [primary] excluded but recovery space open"`
+> **Why bad:** "Recovery space open" without pre-declared bounds = degenerative
+> research programme. Each falsification just opens new recovery space → infinite
+> regress.
+> **Remediation:** Pre-declare recovery scope: `recovery_scope.allowed_directions: [...]`
+> z explicit bounds.
+
+Cluster cycle nie miał `recovery_scope` z pre-declared sterile ν mass + mixing bounds.
+H1b parameters (m_ν = 2 eV, sin²2θ ~ 10⁻³, ΔN_eff = 0.05) są **dobrane post-hoc**
+żeby zamknąć M_obs/M_bar ≈ 8.5 deficit, NIE wynikają z prior derivation.
+
+### §R.3 — "Falsifiability 6.4σ post-2030+" rewizja
+
+Original §X claim: "6.4σ combined falsifiability post-2030+" — to jest commitment
+na *przyszłość* (CMB-S4 2030+, JSNS² 2027, Project 8 2030+, Euclid 2026-2030,
+Athena 2035+), NIE wynik *tego* cyklu.
+
+**Cykl jest klasyfikowany STRUCTURAL_DERIVED przez to, że żaden eksperyment jeszcze
+nie powiedział NIE** — to jest klasyczna "absence of evidence" przesunięta na future
+data. To NIE jest pozytywny structural derivation w sensie methodology.
+
+Falsifiability commitment legitymne i przydatne — ale wymaga osobnego PR-### entry
+*przed* fitem H1b, NIE post-closure jako audit.
+
+### §R.4 — Downgrade decision (Rec 1)
+
+| Field | Original (first close 2026-05-11) | Revised (retroactive 2026-05-11) |
+|---|---|---|
+| `classification` | `STRUCTURAL_DERIVED (H1b)` | `STRUCTURAL_VERIFIED` |
+| `claim_status` | (not declared) | `C` |
+| `output_type` | (not declared) | `structural` |
+| Verdict logic | H1a → H1b OR clause (Lakatos) | flagged anti-Lakatos, Rec 2 pending |
+| Cytable jako | "TGP + sterile ν 2 eV closes cluster deficit konstruktywnie" | "TGP-pure (H1a) demonstrated insufficient (deficit M_TGP/M_obs ~ 0.43 Coma); sterile ν addition (H1b) post-hoc tuned to fit; cycle status pending Rec 2 reclassification" |
+
+### §R.5 — Co cykl NADAL twierdzi (zachowane)
+
+- ✅ TGP-pure cluster prediction: M_TGP/M_obs ≈ 0.43 dla Coma (Phase 1 T1; real arithmetic)
+- ✅ 10-cluster sample statistics: mean M_TGP/M_obs = 0.472 ± 0.118 (Phase 2; real arithmetic)
+- ✅ MOND clusters problem range konsystentny z TGP-pure prediction (0.40-0.70)
+- ✅ ROFM galactic→cluster scaling formalism (Phase 1 setup)
+- ✅ Multi-experiment framework (5 future probes identified honestly)
+
+### §R.6 — Co cykl NIE twierdzi (downgrade)
+
+- ❌ **"H1b STRUCTURAL DERIVED"** — sterile ν parameters NOT pre-declared with bounds; post-hoc tuned to fit. Per `PRE_REGISTERED_FALSIFIERS.md` §3.3: this is degenerative recovery space.
+- ❌ **"6.4σ combined falsifiability post-2030+"** as a cycle result — to jest future commitment, NIE result. Requires separate PR-### entry pre-data.
+- ❌ "H1a RULED OUT" — bardziej precyzyjnie: "H1a (TGP-pure) shows ~50% mass deficit which TGP framework cannot close natively at cluster scale; OK to honestly say so without immediately swapping in BSM addition."
+- ❌ Falsifiable native prediction status (brak PR-### + verdict logic violates anti-Lakatos)
+
+### §R.7 — Rec 2 review pending (separate user authorization)
+
+Per external review Rec 2:
+
+> "Cluster verdict zamienić ze STRUCTURAL DERIVED (H1b) na EARLY_HALT_HONEST: TGP-pure
+> nie zamyka cluster scale, sterile ν addition wymaga osobnego cyklu z pre-registered
+> prediction przed fitem. Pamięć autora flagowała op-MAG-anomalous-moment jako
+> EARLY_HALT_HONEST przy 2/2 sympy PASS — ten precedent jest dobry."
+
+**Rec 2 status:** PENDING separate user authorization. Rec 1 (this downgrade) classifies
+cycle as `STRUCTURAL_VERIFIED` (C) per CYCLE_LIFECYCLE taxonomy. If/when Rec 2 is
+authorized, classification will be further updated to `EARLY_HALT_HONEST`
+(`folder_status: closed-NULL` per CYCLE_LIFECYCLE §slownik).
+
+H1b future research jako separate cycle should:
+
+1. Pre-register sterile ν parameter bounds *before* fit (m_ν, sin²2θ, ΔN_eff
+   bounds z prior cosmology + lab limits)
+2. Submit PR-### entry z explicit recovery_scope.allowed_directions
+3. Run TGP-pure (H1a) as falsifier *first*, then assess whether BSM addition is
+   warranted *only if* TGP-pure exhausted AND BSM addition parameters pre-bounded
+
+### §R.8 — Path back to A−/A (retrofit scope)
+
+Wymagane (po Rec 2 reclassification):
+
+1. Reframe cycle as honest scope-limited TGP-pure cluster scale result
+2. Spawn separate `op-cluster-sterile-nu-prediction-2026-XX` cycle z full
+   `contract::` + PR-### entry + pre-bounded recovery_scope
+3. Multi-experiment combined falsifiability is legitimate, ale tylko z pre-registered
+   bounds, NIE jako *current cycle result*
+
+### §R.9 — Audit trail invariant
+
+§0-§X oryginalne pozostają niezmienione. Append-only.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 (autor projektu) — cluster jako najostrzejszy
+  Lakatos pattern case
+- Methodology: `meta/CYCLE_KICKOFF_TEMPLATE.md`, `meta/CYCLE_LIFECYCLE.md`,
+  `meta/PRE_REGISTERED_FALSIFIERS.md` §3.3 (Unbounded recovery space), §3.4
+- Precedent: `op-MAG-anomalous-moment` (EARLY_HALT_HONEST z 2/2 sympy PASS)
+- Sibling N-cycle downgrades: N1, N2, N3, N4, N5
+
+**Downgrade authorized (Rec 1):** autor projektu, conversation 2026-05-11, option (A).
+**Rec 2 reclassification PENDING:** separate user authorization required.
+
+---
+
+### §R.10 — Rec 2 EARLY_HALT_HONEST reclassification (2026-05-11 option K)
+
+**Trigger:** Autor projektu, conversation 2026-05-11, option K = wykonanie Rec 2.
+Rec 2 było pre-flagged w §R.7 jako "PENDING separate authorization". Teraz finalizowane.
+
+**Pełna historia status tego cyklu:**
+
+| Version | Date | Classification | Rationale |
+|---|---|---|---|
+| v1 | 2026-05-11 (first close) | STRUCTURAL_DERIVED (H1b) | H1a TGP-pure RULED OUT, H1b TGP+sterile ν 2 eV adopted as constructive resolution |
+| v2 | 2026-05-11 (Rec 1) | STRUCTURAL_VERIFIED (C) | Procedural downgrade per CYCLE_KICKOFF_TEMPLATE; verdict-logic Lakatos pattern flagged for REC-2 |
+| **v3** | **2026-05-11 (Rec 2, this section)** | **EARLY_HALT_HONEST** | **H1a TGP-pure insufficient honestly acknowledged; H1b reclassified jako separate cycle requirement** |
+
+**Decydujące rozumowanie dla EARLY_HALT_HONEST:**
+
+Phase 1 T1 dla Coma cluster: M_TGP/M_obs ≈ 0.43 — **TGP-pure framework demonstrably fails
+to close cluster mass deficit**. Phase 2: 10-cluster sample confirms uniform deficit
+(mean M_TGP/M_obs = 0.472 ± 0.118).
+
+To jest **honest negative result** dla TGP framework na cluster scale. Per
+[[../op-MAG-anomalous-moment]] precedent (EARLY_HALT_HONEST z 2/2 sympy PASS): cycle
+should have honestly closed at this point, NIE swapped in BSM addition (sterile ν 2 eV)
+jako "framework conclusion".
+
+**Anti-Lakatos clause per `meta/PRE_REGISTERED_FALSIFIERS.md` §3.3:**
+
+> "Recovery space open" without pre-declared bounds = degenerative research programme.
+> Each falsification just opens new recovery space → infinite regress.
+> **Remediation:** Pre-declare recovery scope: `recovery_scope.allowed_directions: [...]`
+> z explicit bounds.
+
+Cluster cycle README nie deklarowało `recovery_scope` z pre-bounded sterile ν parameters
+(m_ν, sin²2θ, ΔN_eff). H1b adoption była **post-hoc tuning** żeby zamknąć M_obs/M_bar
+deficit, NIE pre-bounded recovery direction.
+
+**Decision:**
+
+- **H1a (TGP-pure):** EARLY_HALT_HONEST verdict — TGP framework natywnie NIE rozwiązuje
+  cluster mass deficit. To jest legitymny, honest, scope-limited negative result.
+- **H1b (TGP + sterile ν):** wymaga **separate dedicated cycle** z explicit pre-registration:
+  - `contract::` block w README.md
+  - `pre_registration_date` przed Phase 1 sympy
+  - PR-### entry w PRE_REGISTERED_FALSIFIERS.md
+  - `recovery_scope.allowed_directions` z explicit bounds dla m_ν, sin²2θ, ΔN_eff
+  - Sympy fit do cluster sample wykonany **po** pre-registration, NIE tuned do fitu
+
+### §R.11 — Co cykl twierdzi po Rec 2 (preserved, jasno scope-limited)
+
+**Honest scope-limited POSITIVE results (preserved):**
+
+- ✅ ROFM galactic→cluster scaling formalism wyprowadzony (Phase 1 setup) — to jest
+  framework computational tool, valid dla future cluster cycles
+- ✅ TGP-pure cluster prediction M_TGP/M_obs ≈ 0.472 ± 0.118 (Phase 1 T1 + Phase 2):
+  **honest negative result** dla TGP framework na cluster scale
+- ✅ 10-cluster sample analysis: Coma, Perseus, A1689, A2744, Virgo, A1835, A2029,
+  Bullet, Hydra A, A85 — real arithmetic z published mass data
+- ✅ MOND clusters problem (Sanders 1999, Famaey-McGaugh 2012) range 0.40-0.70
+  consistency z TGP-pure prediction — TGP framework reproduces MOND-class limitation
+  honestly
+- ✅ NFW profile integration dla future cluster cycles (Phase 2 tool development)
+- ✅ Statistical analysis tools (M-T_X scatter, CV computation) — methodological work
+
+### §R.12 — Co cykl NIE twierdzi po Rec 2 (downgrade EARLY_HALT)
+
+**NIE są framework conclusions (downgrade z H1b adoption):**
+
+- ❌ "Cluster mass deficit closed via TGP + sterile ν 2 eV" — to NIE jest framework
+  conclusion; to byłoby post-hoc tuning bez pre-bounded recovery_scope
+- ❌ "f_sterile_ν = 4.73 ± 0.71 (massive clusters)" — parametr dobrany do fitu, NIE
+  framework prediction
+- ❌ "6.4σ combined multi-experiment falsifiability post-2030+" — to jest commitment
+  na future H1b cycle, NIE wynik tego cyklu; cykl byłby cycled jako *future test*
+  dopiero PO pre-registration sterile ν parameters z separate dedicated cycle
+- ❌ "STRUCTURAL_DERIVED H1b" — Lakatos pattern post-hoc adoption, NIE konstruktywna
+  derivation
+
+### §R.13 — Future H1b cycle requirements (NIE objęte tym cyklem)
+
+`op-cluster-sterile-nu-prediction-2026-XX` (separate dedicated cycle):
+
+1. **Pre-registration (BINDING):**
+   - `contract::` block z `output_observable`, `falsification_rule`, `pre_registration_date`
+   - PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+   - `recovery_scope.allowed_directions` z explicit bounds:
+     - `m_ν ∈ [0.5, 5.0] eV` (Planck N_eff + KATRIN compatible range)
+     - `sin²2θ ∈ [10⁻⁴, 10⁻²]` (reactor SBL anomaly + STEREO bounds)
+     - `ΔN_eff ∈ [0.0, 0.3]` (Planck + BBN bounds)
+
+2. **Order of work:**
+   - Phase 1 = pre-register parameter bounds (PR-### timestamp) PRZED Phase 1 sympy
+   - Phase 2 = run sympy fit do cluster sample within pre-bounded space
+   - Phase 3 = report fit results vs pre-bounded space; if best-fit lies w boundary →
+     framework wymaga structural amendment (mechanism v per PRE_REGISTERED_FALSIFIERS §3.3),
+     NIE recovery cycle
+
+3. **Multi-experiment falsifiability framework (legitimate carry-over):**
+   - JSNS² 2024-2027, CMB-S4 2030+, Project 8 2030+, Euclid 2026-2030, Athena 2035+
+   - **Combined σ commitment** wymaga separate PR-### entry przed data observation
+   - **NIE jest** "wynik" cyklu w sensie current closure
+
+### §R.14 — Tooling preserved dla future cycle
+
+Cycle deliverables, które są **valid framework tools** (preserved z honest closure):
+
+- ROFM galactic→cluster scaling formalism (`Phase1_setup.md`)
+- 10-cluster sample data (`Phase2_setup.md` + sympy)
+- NFW profile integration (`Phase2_sympy.py`)
+- Statistical analysis tools (mean, std, CV, M-T_X scatter; `Phase2_sympy.py`)
+- Multi-experiment falsifiability framework structure (Phase 3)
+
+Te tools są **NIE invalidated** przez EARLY_HALT_HONEST verdict. Mogą być reused w
+`op-cluster-sterile-nu-prediction-2026-XX` future cycle z proper pre-registration.
+
+### §R.15 — Cross-link do MAG precedent
+
+`op-MAG-anomalous-moment` cycle (z autor memory): 2/2 sympy PASS → EARLY_HALT_HONEST
+verdict z honest scope-limited acknowledgment. Cluster cycle teraz aligns z tym
+precedent jako methodology-consistent honest negative result.
+
+Both cycles share: real sympy work valid w cycle scope; honest verdict że framework
+zmienia się od claimed STRUCTURAL_DERIVED do scope-limited honest acknowledgment;
+future work explicitly deferred do separate cycle z proper pre-registration.
+
+### §R.16 — Audit invariant
+
+§0-§X oryginalne pozostają niezmienione. §R.1-§R.9 (Rec 1) preserved. §R.10-§R.15
+(Rec 2) dodane jako follow-up. Append-only.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 (autor projektu) — cluster jako Lakatos case
+- Rec 1 + Rec 3+F outcome: §R.1-§R.9 powyżej + [[../../meta/AUDIT_2026-05-11_sympy_substance.md]]
+- Methodology: `meta/PRE_REGISTERED_FALSIFIERS.md` §3.3 (Unbounded recovery space),
+  `meta/CYCLE_LIFECYCLE.md` §slownik (`closed-NULL` definition)
+- Precedent: `op-MAG-anomalous-moment` (EARLY_HALT_HONEST z 2/2 sympy PASS)
+- Future cycle: `op-cluster-sterile-nu-prediction-2026-XX` (proposed, NIE yet scaffolded)
+
+**Rec 2 reclassification authorized:** autor projektu, conversation 2026-05-11, option (K)
+"wykonać Rec 2 (cluster → EARLY_HALT_HONEST)".

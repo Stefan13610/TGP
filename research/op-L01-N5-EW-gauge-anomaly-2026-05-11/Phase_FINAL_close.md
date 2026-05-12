@@ -1,16 +1,21 @@
 ---
-title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N5 closed konstruktywnie; LAST L01 N-need closed)"
+title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N5 closed konstruktywnie; LAST L01 N-need closed) — DOWNGRADED 2026-05-11 → STRUCTURAL_VERIFIED (C)"
 date: 2026-05-11
+last_updated: 2026-05-11 (retroactive downgrade per external review)
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED
-sympy_total: "8/8 PASS (100%)"
-six_requirements_status: "6/6 RESOLVED (P1-P6)"
+classification: STRUCTURAL_VERIFIED  # was STRUCTURAL_DERIVED; downgraded 2026-05-11 per external review (see §RETROACTIVE)
+claim_status: C  # per meta/CYCLE_LIFECYCLE.md §Claim status taxonomy; max C without pre_registration_date (anti-pattern #8)
+output_type: structural  # algebra consistency only; SU(2)×U(1) β-functions from SM literature
+legacy_classification: STRUCTURAL_DERIVED  # preserved for audit trail (append-only)
+sympy_total: "8/8 PASS (100%) — literature-anchored; see §RETROACTIVE for sympy audit"
+six_requirements_status: "6/6 RESOLVED (P1-P6) — at level of internal consistency"
 risks_status: "R1-R6 all addressed konstruktywnie/inherited"
-status: 🟢 CLOSED — L01 N5 (EW gauge anomaly SU(2)×U(1)) constructive derivation COMPLETE
+status: 🟡 CLOSED-DOWNGRADED — L01 N5 EW gauge anomaly cycle, claim status C (was claimed STRUCTURAL_DERIVED, downgraded retroactively)
 folder_status: closed-resolved
-parent_cycle_resolution: "L01 NEEDS §N5 closed by this cycle — LAST OPEN L01 N-NEED"
+parent_cycle_resolution: "L01 NEEDS §N5 status: cited-literature-verified (NOT derivation-from-axioms); LAST L01 N-need procedurally addressed, NIE konstruktywnie wyprowadzone — see §RETROACTIVE"
+milestone_claim: "Full SM matter+gauge sektor coverage 2026-05-11 — REVISED: full SM literature-anchoring coverage; constructive TGP-axiom derivation deferred do retrofit cycles"
 ---
 
 # Phase FINAL — Cycle close
@@ -218,3 +223,100 @@ strukturalnie udowodniony).**
 **STRUCTURAL DERIVED. Cycle closed. LAST L01 N-need RESOLVED.**
 
 **MILESTONE: full SM matter+gauge sektor coverage 2026-05-11 (N1+N2+N3+N4+N5).**
+
+---
+
+## §RETROACTIVE — Status downgrade 2026-05-11 (external review)
+
+**Trigger:** External review 2026-05-11 zidentyfikował proceduralne i merytoryczne
+luki w claim status. §0-§X powyżej pozostają jako audit trail. "MILESTONE" claim
+rewidowany w §R poniżej.
+
+### §R.1 — Procedural gaps
+
+Identyczne z N1/N2/N3/N4:
+
+- ❌ No `contract::` block
+- ❌ No `L1_native.pre_registration_date`
+- ❌ No `## §0.4 — Pre-flight methodology read confirmation`
+- ❌ No PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+- ❌ No `output_type` field
+
+Per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8 + PRE_REGISTERED_FALSIFIERS §3.4: max C.
+
+### §R.2 — Substantive gaps (sympy substance audit — N5-specific)
+
+External review classification N5 sympy: "(1 phase 8/8)" — single-session compact
+closure z architecture inheritance pattern z N1+N2+N4.
+
+Sympy structure (8 testów Phase 1):
+- T1: β_SU(2) asymptotic freedom (b₀ = 19/6) — **declared z SM Yang-Mills literature**
+- T2: β_U(1) Landau pole — **declared z SM EW literature**
+- T3: trace anomaly form — **declared z CDH 1974 + N1 inheritance**
+- T4: Q2 F1 OOM gap 54.9 — **dimensional argument z literature scales**
+- T5: EW cosmology N4-inheritance — **algebraic substitution z N4 R5 LOCK**
+- T6: S05 axiom — **structural property declaration**
+- T7: cross-cycle 10-fold convergence — **counting argument**
+- T8: PDG EW precision sin²θ_W — **tree-level Sirlin definition; loop-corrected difference
+  ~4% = Sirlin 1980 SM effect cited honestly**
+
+**SU(2) i U(1) β-functions są cytowane ze Standard Model literature (Cheng-Li 1984,
+Peskin-Schroeder 1995, PDG); sympy weryfikuje algebraic consistency tych deklaracji
+w TGP matter-sector mapping.** NIE jest to first-principles derivation z TGP axioms.
+
+External review hardcoded `T_pass = True` count for N5 Phase 1: 0 (none) — sympy
+substance jest lepsza niż N1/N3, ale **literature-anchored** wzorzec utrzymuje się.
+
+### §R.3 — Downgrade decision
+
+| Field | Original | Revised |
+|---|---|---|
+| `classification` | `STRUCTURAL_DERIVED` | `STRUCTURAL_VERIFIED` |
+| `claim_status` | (not declared) | `C` |
+| `output_type` | (not declared) | `structural` |
+| Cytable jako | "konstruktywna N5 + LAST L01 N-need closed" | "algebraic consistency SU(2)×U(1) gauge sektora z SM literature β-functions; LAST L01 N-need *procedurally* addressed" |
+
+### §R.4 — Co cykl NADAL twierdzi (zachowane)
+
+- ✅ Algebraic consistency SU(2)×U(1) β-functions z SM literature
+- ✅ Q2 F1 OOM gap dla EW gauge sector (dimensional argument)
+- ✅ N4 cosmology inheritance pattern verified algebraically
+- ✅ S05 single-Φ preserved (structural property)
+- ✅ Cross-cycle structural compatibility z N1+N2+N4
+- ✅ PDG sin²θ_W tree-level + loop-correction documentation (Sirlin 1980 honest cite)
+
+### §R.5 — Co cykl NIE twierdzi (downgrade)
+
+- ❌ First-principles derivation SU(2)×U(1) β-functions z TGP axioms (SM literature
+  cited, NIE derived)
+- ❌ Falsifiable native prediction status (brak PR-### + brak observable target)
+- ❌ "LAST L01 N-need closed" jako "konstruktywnie wyprowadzony" — bardziej precyzyjnie:
+  "ostatni L01 N-need *proceduralnie* addressed na poziomie algebraic consistency"
+- ❌ "MILESTONE: full SM matter+gauge sektor coverage" — bardziej precyzyjnie:
+  "milestone: full SM literature-anchoring coverage; constructive TGP-axiom derivation
+  całego SM sektora pozostaje *otwarta* (5 retrofit cykli ~3-8 sesji każdy)"
+
+### §R.6 — Path back to A−/A (retrofit scope)
+
+Wymagane:
+
+1. `contract::` block z `output_observable` (np. ET-D/CE EW-cosmology signature, Tevatron-LHC EW precision)
+2. PR-### entry
+3. Rewrite Phase 1 sympy: zastąp β_SU(2)/β_U(1) literature declarations sympy-symbolic
+   derivation z TGP gauge boson Φ-coupling (jeśli istnieje TGP-native ujęcie SU(2)×U(1))
+4. `output_type: observable` (cross-sections, asymmetries, EW precision parameters)
+
+Scope: dedicated `op-L01-N5-retrofit-native-EW` cycle, ~4-6 sesji est.
+
+### §R.7 — Audit trail invariant
+
+§0-§X oryginalne pozostają niezmienione. Append-only.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 (autor projektu)
+- Methodology: `meta/CYCLE_KICKOFF_TEMPLATE.md`, `meta/CYCLE_LIFECYCLE.md`,
+  `meta/PRE_REGISTERED_FALSIFIERS.md`
+- Sibling N-cycle downgrades: N1, N2, N3, N4
+- Cluster + hierarchy downgrades: [[../op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]], [[../op-Higgs-hierarchy-mechanism-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]]
+
+**Downgrade authorized:** autor projektu, conversation 2026-05-11, option (A).

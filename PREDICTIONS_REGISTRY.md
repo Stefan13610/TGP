@@ -1275,6 +1275,136 @@ Each row carries:
 | **M911-P1** | **\|Δg_tt\|/c² = (5/6) U³ deviation od GR** (b_ppE = −1, 2PN-phase); **β_ppE^TGP^(b=-1) = -15/4 ≈ -3.75 (η=1/4, test-particle exact, Phase 1.5 LOCK 5/5)**; G_SPA = 48 sympy-exact (NOT ≈ 1 jak Phase 1 OOM). 4-level verified: sympy LOCK + hand-calc + numerical + alternative SPA (orthogonal). Phase 1.5 corrected lock: [[research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]]. ⚠ **STATUS CHANGE 2026-05-09 — FALSIFIED-OBSERVATIONAL**: GWTC-3 RE-RUN ([[research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]) z corrected β: **TGP RULED OUT at 5.02σ** by GWTC-3 combined (BF_TGP/GR = 3.5·10⁻⁶, log10(BF) = -5.45 → "OVERWHELMING GR preference"). **Caveat:** falsification jest dla SPECYFICZNEGO M9.1'' ansatz (f(ψ) = (4-3ψ)/ψ); alternative f(ψ) structures via S07 mogą być still viable. | g_tt^TGP/(-c²) = 1−2U+2U²−(7/3)U³+...; sympy LOCK 14/14 (Phase 1) + 5/5 (Phase 1.5 G_SPA). δφ̂_4_TGP = -0.865 (LIGO ToGR fractional convention), δφ̂_4_obs = +0.05 ± 0.182 (1σ, GWTC-3 combined ~90 BBH) → 5.02σ tension. | (corrected, Phase 1.5 β = -15/4): single LIGO-O3 event sufficient for 5σ rejection lub detection. Generic ToGR multi-coef GWTC-3: TGP RULED OUT 5σ (achieved). TGP-specific single-coef Bayes: factor ~50× tighter, would yield ~250σ rejection if TGP signal absent. | **FALSIFIED-OBSERVATIONAL** (2026-05-09; Phase 1.5 LOCK + GWTC-3 RE-RUN; M9.1'' specific ansatz inconsistent z GWTC-3 5σ; reset path via S07 alternative f(ψ) structures recommended) | tgp-core | [[research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] (5/5 LOCK) + [[research/op-ppE-mapping/scripts/phase1_5_alternative_SPA_verification.py]] (orthogonal cross-check) + [[research/op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]] (5σ rejection) |
 | **M911-P2** | **Multi-coefficient TGP-distinguishing signature** ratios {β_(N+1)PN_phase / β_NPN_phase}; **Phase 1 heuristic ratios {−23/10, −38/23, +337/228} are WRONG** (computed via simple Δα_n ratios, ignored full SPA chain). Phase 1.5 alternative SPA derives β_3PN/β_2PN = **−11161/504 ≈ −22.14** (NOT -23/10), invalidating Phase 1 multi-coefficient pattern. Full re-derivation pending. | Phase 1.5 alternative SPA (test-particle, η=1/4): β_2PN = -15/4, β_3PN = +55805/672 ≈ +83.04, β_3PN/β_2PN = -11161/504. Phase 1 ratios invalid because they assumed simple Δα_n_metric ratios; SPA chain has α_n = sum of e_k, p_k cross-terms, NOT proportional to Δα_n alone. | M911-P2 needs full re-derivation z corrected SPA chain at multi-coefficient level. Current Phase 1 ratios CANNOT be used for TGP identification. | **WITHDRAWN-NEEDS-REDERIVATION** (2026-05-09; Phase 1 ratios incorrect; full SPA chain re-derivation needed) | tgp-core | [[research/op-ppE-mapping/Phase1.5_G_SPA_lock.md]] §5.2 + [[research/op-ppE-mapping/scripts/phase1_5_alternative_SPA_verification.py]] §9 (β_3PN/β_2PN = -11161/504) |
 | **M911-P3** | **4-channel M9.1'' strong-field falsifier roadmap** (M911-P1 single-coefficient + M911-P2 multi-coefficient + BH5 QNM ringdown δf/f ~ 8–16% + ε.1/E6 photon-ring strong-field) | 4 niezależne kanały testujące M9.1'' deviation od GR w obszarze U ≳ 10⁻²; wzajemnie ortogonalne (waveform inspiral × ringdown × shadow geometry) | M911-P1 channel 1: FALSIFIED 2026-05-09 (5σ GWTC-3 rejection). M911-P2 channel 2: WITHDRAWN-NEEDS-REDERIVATION. Pozostają BH5 (QNM ringdown) i ε.1/E6 (photon ring) jako niezależne TGP-tests; BUT M9.1'' specyficzny ansatz już falsyfied → BH5/ε.1 testują *modyfikowany* M9.1'' (po S07 reset). | **PARTIAL-FALSIFIED 2/4 channels invalid** (2026-05-09; M911-P1 falsified GWTC-3, M911-P2 needs rederivation; BH5/ε.1 still LIVE for any future revised M9.1'') | master-only (T01 audit) | [[audyt/T01_LIGO3G_falsifier/FINDINGS.md]] §1.6 + Phase 1.5 update notes |
+
+---
+
+### ⚠ STATUS DOWNGRADE PREAMBLE — 2026-05-11 (autoryzacja: autor projektu)
+
+**Wszystkie wpisy poniżej z signaturą "(2026-05-11; STRUCTURAL_DERIVED..." oraz "STRUCTURAL — falsifiable..." zostały RECLASSIFIED retroaktywnie 2026-05-11.**
+
+**Trigger:** Zewnętrzna recenzja autora projektu 2026-05-11 zidentyfikowała procedural + substantive gaps w siódemce cykli 2026-05-11 (N1+N2+N3+N4+N5+cluster+hierarchy):
+
+- Procedural: 0/7 cykli ma BINDING `contract::` block per `meta/CYCLE_KICKOFF_TEMPLATE.md` §1 + brak `pre_registration_date` per `meta/PRE_REGISTERED_FALSIFIERS.md` §3.4 → per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8: **max claim status C (STRUCTURAL_VERIFIED)**.
+- Substantive: N1 + N3 sympy "8/8 PASS" jest dominantnie algebraic tautology + hardcoded `T_pass = True`; N2, N4 mixed (literature-anchored); N5 single-phase (literature-anchored); cluster Lakatos OR-clause (H1a → H1b backstop bez pre-bounded recovery_scope per §3.3); hierarchy honest verdict preserved jako positive outlier.
+
+**Authoritative reclassification (Rec 1 z external review):**
+
+| M911-* ID | Original status claim | Revised classification 2026-05-11 | Cycle closure §RETROACTIVE link |
+|---|---|---|---|
+| M911-EM-quantum-trace-anomaly | TESTED-PASS / STRUCTURAL_DERIVED | **STRUCTURAL_VERIFIED (C)** — literature-anchored algebraic consistency | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-EM-quantum-MICROSCOPE | TESTED-PASS / structural | **STRUCTURAL_VERIFIED (C)** — structural argument from N1 (downgraded with parent) | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-EM-quantum-GW170817 | TESTED-PASS / structural | **STRUCTURAL_VERIFIED (C)** — dimensional argument (cosmological R/m_e² ~ 10⁻⁷⁷) | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-EM-quantum-magnetar | LIVE — deferred precision | **STRUCTURAL_VERIFIED (C) — LIVE for future Schwinger lab; precision claim deferred** | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-QCD-trace-anomaly | TESTED-PASS / STRUCTURAL_DERIVED | **STRUCTURAL_VERIFIED (C)** — CDJ/SVZ/lattice literature-anchored | [[research/op-L01-N2-QCD-trace-anomaly-cosmology-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-QCD-vacuum-decoupling | TESTED-PASS | **STRUCTURAL_VERIFIED (C)** — Q2 F1 algebraic consistency dla QCD (parent N2 downgraded) | [[research/op-L01-N2-QCD-trace-anomaly-cosmology-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-QCD-crossover | TESTED-PASS | **STRUCTURAL_VERIFIED (C)** — HotQCD lattice consensus inheritance | [[research/op-L01-N2-QCD-trace-anomaly-cosmology-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-QCD-BBN | TESTED-PASS | **STRUCTURAL_VERIFIED (C)** — Boltzmann suppression argument (parent N2 downgraded) | [[research/op-L01-N2-QCD-trace-anomaly-cosmology-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-SPARC-rho-consistency | TESTED-PASS / STRUCTURAL_DERIVED | **STRUCTURAL_VERIFIED (C)** — 5/8 sympy hardcoded True + 2/8 v²/c² unit arithmetic; dimensional consistency only | [[research/op-L01-N3-SPARC-rho-consistency-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-Higgs-trace-anomaly | TESTED-PASS / STRUCTURAL_DERIVED | **STRUCTURAL_VERIFIED (C)** — PDG/Coleman-Weinberg/Sirlin literature-anchored | [[research/op-L01-N4-Higgs-trace-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-Higgs-Q2-F1-verification | TESTED-PASS | **STRUCTURAL_VERIFIED (C)** — OOM gap dimensional argument | [[research/op-L01-N4-Higgs-trace-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-Higgs-LISA-no-EW-signal | STRUCTURAL — falsifiable post-2035 | **STRUCTURAL_VERIFIED (C) + falsifiability commitment LEGITIMATE but requires separate PR-### entry** before LISA data; current entry status: claim pending pre-registration | [[research/op-L01-N4-Higgs-trace-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-Higgs-HL-LHC-FCC-ee-null-test | STRUCTURAL — falsifiable post-2030/2045 | **STRUCTURAL_VERIFIED (C) + falsifiability commitment LEGITIMATE but requires separate PR-### entry**; current: claim pending pre-registration | [[research/op-L01-N4-Higgs-trace-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-Higgs-Planck-BBN-preservation | TESTED-PASS | **STRUCTURAL_VERIFIED (C)** — frozen-out Boltzmann argument (parent N4 downgraded) | [[research/op-L01-N4-Higgs-trace-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-EW-gauge-trace-anomaly | TESTED-PASS / STRUCTURAL_DERIVED | **STRUCTURAL_VERIFIED (C)** — SM literature β-functions (Gross-Wilczek + Politzer + Adler-Collins-Duncan + Peskin-Schroeder) anchored | [[research/op-L01-N5-EW-gauge-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-EW-gauge-Q2-F1-verification | TESTED-PASS | **STRUCTURAL_VERIFIED (C)** — OOM gap dimensional argument (parent N5 downgraded) | [[research/op-L01-N5-EW-gauge-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-EW-gauge-LISA-cosmology-inherit | STRUCTURAL — falsifiable post-2035 | **STRUCTURAL_VERIFIED (C) + falsifiability commitment LEGITIMATE but requires separate PR-### entry**; current: claim pending pre-registration | [[research/op-L01-N5-EW-gauge-anomaly-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-cluster-mass-deficit-H1b | TESTED-PASS / STRUCTURAL_DERIVED H1b | **STRUCTURAL_VERIFIED (C) — REC-2 REVIEW PENDING for EARLY_HALT_HONEST**; H1b sterile ν parameters NOT pre-bounded (Lakatos OR-clause per `meta/PRE_REGISTERED_FALSIFIERS.md` §3.3) | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-cluster-sterile-nu-JSNS2 | STRUCTURAL — falsifiable 2024-2027 | **HOLD PENDING REC-2 cluster cycle reclassification**; sterile ν parameters require pre-registered bounds before treating jako TGP prediction; falsifiability framework valid but cycle-status dependency | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-cluster-sterile-nu-CMB-S4 | STRUCTURAL — falsifiable post-2030+ | **HOLD PENDING REC-2** — same | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-cluster-sterile-nu-Project-8 | STRUCTURAL — falsifiable post-2030+ | **HOLD PENDING REC-2** — same | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| M911-cluster-sterile-nu-Euclid-Athena | STRUCTURAL — falsifiable 2026-2035+ | **HOLD PENDING REC-2** — same | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+| **M911-hierarchy-STRUCTURAL_NO_GO** | STRUCTURAL_NO_GO HONEST H1c | **STATUS PRESERVED** — honest negative verdict aligns naturally z claim status C; procedural note added | [[research/op-Higgs-hierarchy-mechanism-2026-05-11/Phase_FINAL_close.md#§RETROACTIVE]] |
+
+**Audit invariant:** Wpisy poniżej pozostają w ich oryginalnej formie (append-only per `meta/PRE_REGISTERED_FALSIFIERS.md` §0.3). Status column oryginalnych wpisów NIE jest edytowany — ten PREAMBLE jest authoritative reclassification source.
+
+**Co to oznacza praktycznie:**
+
+- Wpisy z `**TESTED-PASS** (2026-05-11; STRUCTURAL_DERIVED, 6/6 P-requirements...)` poniżej **NIE są cytowalne jako falsifiable TGP predictions** w ich obecnej formie. Są cytowalne jako **internal algebraic consistency checks z literature-anchored values**.
+- Falsifiability commitments (LISA Ω_GW^EW = 0, HL-LHC λ_HHH null, JSNS² sin²2θ probe, CMB-S4 ΔN_eff, Project 8 m_β kink, Euclid f_sterile, Athena NFW) są **legitimate framework predictions** ale **wymagają separate PR-### entries** w `meta/PRE_REGISTERED_FALSIFIERS.md` przed traktowaniem jako pre-registered falsifiers.
+- M911-hierarchy-STRUCTURAL_NO_GO **zachowuje status** — honest negative verdict NIE wymaga downgrade.
+
+**Path forward:** retrofit cycles `op-L01-N1-retrofit-native` przez `op-L01-N5-retrofit-native` (~3-8 sesji each) + `op-cluster-sterile-nu-prediction-2026-XX` (separate cycle z pre-bounded recovery_scope) pozwoli na re-aspiration do A−/A claim status zgodnie z `meta/CYCLE_LIFECYCLE.md` §taxonomy.
+
+**Downgrade authorized:** autor projektu, conversation 2026-05-11, option (A) "reklasyfikacja statusów retroaktywnie".
+
+### ⚠ Rec 3 + F differential downgrade UPDATE (2026-05-11)
+
+Po wykonaniu Rec 3 (adversarial re-audit z decydowalnym pytaniem per test sympy) i
+option F (differential downgrade based on audit data), **N1 + N3 cycles zostały
+dalej obniżone z C → D** per audit findings:
+
+| Cycle | Rec 1 status (first) | Rec 3+F refined status | Audit rationale |
+|---|---|---|---|
+| **N1 EM** | C (STRUCTURAL_VERIFIED) | **D (SPECULATIVE_PARTIAL administratively-closed)** | ALGEBRAIC_MIMICRY verdict; 11/16 testów TAUTOLOGY+HARDCODED |
+| **N3 SPARC** | C (STRUCTURAL_VERIFIED) | **D (SPECULATIVE_PARTIAL administratively-closed)** | ALGEBRAIC_MIMICRY verdict; 5/8 literal `T_pass = True` |
+| **N2 QCD** | C (STRUCTURAL_VERIFIED) | **C preserved** | LITERATURE_ANCHORED verdict; Phase 1 substantive Λ_QCD numerical |
+| **N4 Higgs** | C (STRUCTURAL_VERIFIED) | **C preserved** | MIXED verdict; Phase 1 substantive `sp.diff`/`sp.solve` SSB derivation |
+| **N5 EW gauge** | C (STRUCTURAL_VERIFIED) | **C preserved** | LITERATURE_ANCHORED verdict; 6/8 substantive PDG arithmetic |
+| **Cluster mass deficit** | C (STRUCTURAL_VERIFIED) | **C preserved** | LITERATURE_ANCHORED verdict; najsilniejszy substantive (20/24 LIT) |
+| **Hierarchy** | (preserved) | (preserved) | STRUCTURAL_NO_GO honest verdict, procedural note only |
+
+**Implikacja dla M911-* wpisów poniżej:**
+
+- **M911-EM-quantum-** wpisy (N1 parent): należące do cyklu z D claim_status; cytowalne TYLKO jako "literature-anchored algebraic consistency check, NOT first-principles TGP derivation"
+- **M911-SPARC-rho-consistency** (N3 parent): D claim_status; cytowalne TYLKO jako "dimensional consistency declaration"
+- **M911-QCD-***, **M911-Higgs-***, **M911-EW-gauge-***, **M911-cluster-*** (N2/N4/N5/Cluster parents): C claim_status preserved; cytowalne jako "literature-anchored verification"
+
+**Taxonomy tension noted:** D nominalnie "n/a — nie closing status" per CYCLE_LIFECYCLE;
+honest stretch dla closed cycles z substance-thin sympy. Future framework refinement
+może wprowadzić `C−` (STRUCTURAL_VERIFIED_THIN) — patrz [[meta/AUDIT_2026-05-11_sympy_substance.md]] §3.3.
+
+**Audit reference:** [[meta/AUDIT_2026-05-11_sympy_substance.md]] — pełny niezależny audyt
+z per-test classifications z line-citations (112 testów across 6 cykli).
+
+**Differential downgrade authorized:** autor projektu, conversation 2026-05-11, option (F).
+
+---
+
+### ⚠ Rec 2 cluster → EARLY_HALT_HONEST UPDATE (2026-05-11 option K)
+
+Rec 2 wykonana 2026-05-11 (option K). Cluster cycle reclassified:
+
+| Cycle | Pre-Rec-2 status | **Post-Rec-2 status (final)** |
+|---|---|---|
+| Cluster mass deficit | STRUCTURAL_VERIFIED (C) z REC-2 pending marker | **EARLY_HALT_HONEST (`closed-NULL` per CYCLE_LIFECYCLE §slownik)** |
+
+**Implikacja dla M911-cluster-* entries poniżej:**
+
+- **M911-cluster-mass-deficit-H1b**: NO LONGER CITABLE jako framework prediction.
+  H1a (TGP-pure) prediction (M_TGP/M_obs ≈ 0.472 ± 0.118) jest honest negative result —
+  TGP framework natywnie NIE rozwiązuje cluster mass deficit. H1b sterile ν addition
+  wymaga separate dedicated cycle `op-cluster-sterile-nu-prediction-2026-XX` z
+  pre-bounded `recovery_scope` per PRE_REGISTERED_FALSIFIERS §3.3.
+
+- **M911-cluster-sterile-nu-JSNS2**, **M911-cluster-sterile-nu-CMB-S4**,
+  **M911-cluster-sterile-nu-Project-8**, **M911-cluster-sterile-nu-Euclid-Athena**:
+  WITHDRAWN-PENDING-SEPARATE-CYCLE. Multi-experiment falsifiability framework jest
+  legitymna conceptually, ale wymaga pre-registration sterile ν parameters w separate
+  cycle przed traktowaniem jako framework predictions. Nie są obecnie cytowalne.
+
+**Co cluster cycle nadal twierdzi (honest scope-limited):**
+
+- TGP-pure cluster prediction M_TGP/M_obs ≈ 0.472 ± 0.118 (honest negative result)
+- MOND clusters problem (Sanders 1999) range 0.40-0.70 consistency
+- ROFM galactic→cluster scaling formalism (valid framework tool dla future cycles)
+- 10-cluster sample analysis methodology
+- NFW + statistical tools (preserved dla future H1b cycle)
+
+**Precedent applied:** `op-MAG-anomalous-moment` (2/2 sympy PASS → EARLY_HALT_HONEST,
+2026 z autor memory). Cluster cycle aligns z methodology-consistent honest negative
+result pattern.
+
+**Audit reference:** [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase_FINAL_close.md#§R.10]]
+— pełny rationale + cross-link do anti-Lakatos PRE_REGISTERED_FALSIFIERS §3.3.
+
+**Rec 2 authorized:** autor projektu, conversation 2026-05-11, option (K).
+
+---
+
+Pozostała rekomendacja: Rec 4 (kickoff enforcement) PENDING separate authorization.
+
+---
+
 | **M911-EM-quantum-trace-anomaly** | **Quantum trace anomaly EM (1-loop QED na g_eff[{Φ_i}]):** ρ_EM_quantum[{Φ_i}] = -[(α/(3π))·F² + γ_i·(curvature × F²) + Riegert local σ_eff=function(ψ)]/c_0². **β(α)/(2α) = α/(3π) ≈ 7.74·10⁻⁴ sympy LOCK** (Capper-Duff-Halpern 1974). Operator class strukturalnie DISJOINT od ψ.1.v3 dim-6 EFT basis B={L₅'_a, L₅'_b} (Theorem 2.1 sympy T4). **NIE wprowadza nowych ppE/PPN free parameters** — modyfikuje precision native predictions w extreme regimes. | Birrell-Davies 1982 + Riegert 1984 framework adapted to TGP w obecności emergent-metric Phase 1 ansatz {A(ψ),B(ψ),C(ψ)}; sympy 16/16 PASS (Phase 1+2). | Lab (B=1 T): \|ρ_EM_quantum\| ~ 7·10⁻¹⁵ kg/m³ inside electromagnet, undetectable. Magnetar typical (B=10¹⁰ T): ratio ρ_EM_quantum/ρ_NS ~ 1.7·10⁻¹². Magnetar extreme (B=10¹¹ T, B/B_QED~23 marginal perturbative): ratio ~1.7·10⁻¹⁰. Future: Schwinger-class lab (E~10¹⁵ V/m macroscopic, 2030+). | **TESTED-PASS** (2026-05-11; STRUCTURAL_DERIVED, 6/6 P-requirements; lab regime NULL prediction confirmed; magnetar regime predicted ≪ ρ_NS) | tgp-core | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase_FINAL_close.md]] |
 | **M911-EM-quantum-MICROSCOPE** | **η_TGP_EM_quantum (Pt vs Ti) = 0 strukturalnie** z universal coupling structure (S05 + ax:metric-coupling). Trace anomaly contribution **NIE generuje** differential acceleration między atomami z różnym EM-content. **R6 (Asorey-2015 type QEP violations) closed strukturalnie** — TGP universal coupling immune do takiej klasy violation mechanism. | η_TGP_total = η_TGP_Dirac (B9 baseline 1.32·10⁻²⁶) + η_TGP_EM_quantum (=0) ≈ 1.32·10⁻²⁶. Universal coupling structure: ρ ≡ -T^μ_μ/c_0² zbiera *wszystkie* contributions z atomic stress-energy z *tym samym* prefactor q/Φ_0. | MICROSCOPE 2017 η ≤ 1.1·10⁻¹⁵ (Pt vs Ti): ~11 OOM margin PASS automatic. MICROSCOPE-2 / STEP 2027+ projection η ≤ 10⁻¹⁷: ~9 OOM margin PASS automatic. Eöt-Wash + LLR Nordtvedt: PASS automatic. | **TESTED-PASS** (2026-05-11; ~11 OOM margin; structural verification w Phase 3 §3 + R6 closure §4) | tgp-core | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase3_results.md]] §3-§4 |
 | **M911-EM-quantum-GW170817** | **Δc/c (photon dispersion od trace anomaly) ≈ 10⁻⁸⁰** ≪ GW170817 bound 9·10⁻²² (~58 OOM margin). c_GW=c structurally preserved (no graviton in QED loop at 1-loop; classical g_eff functional dynamics determines GW). Trace anomaly modyfikuje *photon* dispersion przez R·F² coupling, ale R_cosmo/m_e² ~ 10⁻⁷⁷ negligible. | Phase 2 §3.1 dispersion analysis: Δc/c ~ (α/(3π))·R/m_e² ≈ 7.74·10⁻⁴ · 10⁻⁵² / 10²⁵ ≈ 10⁻⁸⁰ (cosmological background); sympy T5 + T6 LOCK. | GW170817 |c_GW/c_EM - 1| < 9·10⁻²² (LIGO-Virgo + Fermi GBM 1.7s coincidence): preserved structurally pod 1-loop QED corrections. Future Cosmic Explorer GW170817-analog z |c_GW/c| ≤ 10⁻²³: PASS automatic. | **TESTED-PASS** (2026-05-11; ~58 OOM margin; Phase 2 sympy T5+T6) | tgp-core | [[research/op-L01-N1-EM-trace-anomaly-TGP-2026-05-11/Phase2_results.md]] §3 |
@@ -1296,6 +1426,7 @@ Each row carries:
 | **M911-cluster-sterile-nu-JSNS2** | **JSNS² (J-PARC 2024-2027) earliest direct test:** sin²2θ_14 = 10⁻³ at Δm² ≈ 4 eV² jest **boundary sensitivity** dla JSNS² liquid scintillator νμ→νe oscillation experiment. Detection przy boundary daje H1b PARTIAL CONFIRMATION; null result wymaga sin²2θ refinement. **First post-2024+ falsifiable probe** dla H1b. | Phase 3 §2 op-cluster cycle; JSNS² Collaboration arXiv:2103.12586 (2021); STEREO 2023 Nature 613, 257 baseline. | **JSNS² 2024-2027:** boundary probe at sin²2θ = 10⁻³ ⇔ Δm² = 4 eV²; current bounds STEREO 0.018 (×18 margin), MicroBooNE 1-eV exclusion compatible. | **STRUCTURAL — falsifiable 2024-2027** (2026-05-11; earliest H1b empirical test) | tgp-core | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase3_results.md]] §2 |
 | **M911-cluster-sterile-nu-CMB-S4** | **CMB-S4 (DOE+NSF 2030+) cosmological imprint:** ΔN_eff = 0.05 (sterile ν 2 eV partial thermalization, sin²2θ=10⁻³) → **1.25σ marginal detection** z CMB-S4 ΔN_eff precision ±0.04. Σm_ν combined active+sterile: 0.062 eV (NH, 1.55σ) lub 0.102 eV (IH, 2.55σ). | Phase 3 §1 op-cluster cycle; CMB-S4 Collaboration arXiv:2203.08024 (2022); Bridle et al. 2017 sterile ν cosmology review. | **CMB-S4 2030+:** detection significance 1.25σ (ΔN_eff) + 1.5-2.5σ (Σm_ν); falsification ~3σ jeśli null result. Synergy z Project 8 m_β + Euclid + JSNS² + Athena. | **STRUCTURAL — falsifiable post-2030+** (2026-05-11; marginal detection w CMB-S4 era) | tgp-core | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase3_results.md]] §1 |
 | **M911-cluster-sterile-nu-Project-8** | **Project 8 (CRES MIT+UW 2030+) direct mass measurement:** sterile ν contribution do m_β = |U_e4|·m_sterile ≈ 0.032 eV; combined active + sterile m_β ≈ 0.051 eV (active 0.04 eV + sterile 0.032 eV). **Spectral kink at E_endpoint - 2 eV** detectable z Project 8 atomic tritium z **3σ significance**. KATRIN 2024 current bound m_β < 0.45 eV (compatible H1b combined ~0.05 eV). | Phase 3 §3 op-cluster cycle; Project 8 Collaboration J. Phys. G 44, 054004 (2017); KATRIN arXiv:2406.13516 (2024). | **Project 8 phase II 2025+ + final 2030+:** sensitivity 40 meV (0.04 eV); H1b sterile contribution 32 meV detectable; spectral shape kink **3σ direct sterile ν detection**. | **STRUCTURAL — falsifiable post-2030+** (2026-05-11; 3σ direct sterile detection z atomic tritium endpoint) | tgp-core | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase3_results.md]] §3 |
+| **M911-hierarchy-STRUCTURAL_NO_GO** | **TGP framework as-presented NIE rozwiązuje hierarchy problem (op-Higgs-hierarchy-mechanism 2026-05-11):** HONEST H1c verdict (STRUCTURAL_NO_GO) z dedicated cycle. Standard SM Σ c_i ≈ -8.97 (top Yukawa dominant); required tuning Λ_UV~M_Pl daje ~10³² OOM (32.7 OOM); Veltman-Sirlin sum rule SM ≈ -279,750 GeV² (NOT satisfied). **Three TGP attempts wszystkie FAIL**: (H1a) substrate UV regulator Λ_TGP = M_Pl·√ε wymaga ε ≈ 1.85·10⁻³³ — fine-tuning SHIFTED nie solved; (H1b) modified Veltman via TGP-specific operatorów wymaga c_TGP_extra = +8.97 — żaden naturalny mechanism nie wymusza; Q2 F1 + S05 są NIE direct hierarchy mechanisms (różne strukturalne issue). Composite Higgs framework (h(x) = collective substrate excitation) jako H1c sub-case **deferred** do dedicated future cycle. | Phase 1 op-Higgs-hierarchy cycle (8/8 sympy PASS); Veltman 1981 + 't Hooft 1980 + Sirlin 1980 + Giudice 2008 hierarchy review; PDG 2024 m_H, y_t, g, g', λ inputs. | **TGP framework status w hierarchy**: NIE worse niż SM (preserves mechanisms), NIE better (no breakthrough). N4 R3 deferred precision item teraz **explicit failure analysis** completed. Future direction: composite Higgs lub fundamentally different mechanism (relaxion, cosmological selection). | **STRUCTURAL_NO_GO** (2026-05-11; HONEST H1c verdict; revolutionary scope honestly declined per Phase 0 §4) | tgp-core | [[research/op-Higgs-hierarchy-mechanism-2026-05-11/Phase_FINAL_close.md]] |
 | **M911-cluster-sterile-nu-Euclid-Athena** | **Euclid + Athena cluster surveys (2026-2035+):** Euclid 10⁵-cluster M-T_X residual scatter 0.05 dex (factor 2.6× nad current); f_sterile_ν constancy test 5σ. Athena 2035+ X-IFU ICM mapping z ΔT/T ~ 1%, 5 arcsec spatial resolution; sterile ν NFW r_s ≈ 300 kpc resolved z 124 spatial elements dla Coma. | Phase 3 §4 op-cluster cycle; Euclid Collaboration arXiv:1110.3193 (2011); Athena Mission Consortium arXiv:1903.07772 (2019); Vikhlinin et al. 2009 M-T_X baseline 0.13 dex. | **Euclid 2026-2030:** f_sterile constancy 5σ falsifiability test; **Athena 2035+:** spatial NFW profile verification + M-T_X scatter <0.05 dex. Combined z CMB-S4 + Project 8 + JSNS² → **6.4σ multi-experiment falsifiability post-2030+**. | **STRUCTURAL — falsifiable 2026-2035+** (2026-05-11; strongest H1b cluster-survey test) | tgp-core | [[research/op-cluster-mass-deficit-resolution-2026-05-11/Phase3_results.md]] §4 |
 
 ---

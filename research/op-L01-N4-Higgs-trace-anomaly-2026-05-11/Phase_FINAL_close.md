@@ -1,16 +1,20 @@
 ---
-title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N4 closed konstruktywnie)"
+title: "Phase FINAL — Cycle close: STRUCTURAL DERIVED (L01 N4 closed konstruktywnie) — DOWNGRADED 2026-05-11 → STRUCTURAL_VERIFIED (C)"
 date: 2026-05-11
+last_updated: 2026-05-11 (retroactive downgrade per external review)
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED
-sympy_total: "24/24 PASS (100%)"
-six_requirements_status: "6/6 RESOLVED (P1-P6)"
+classification: STRUCTURAL_VERIFIED  # was STRUCTURAL_DERIVED; downgraded 2026-05-11 per external review (see §RETROACTIVE)
+claim_status: C  # per meta/CYCLE_LIFECYCLE.md §Claim status taxonomy; max C without pre_registration_date (anti-pattern #8)
+output_type: structural  # algebra consistency only; Higgs SSB + EW phase transition values from literature
+legacy_classification: STRUCTURAL_DERIVED  # preserved for audit trail (append-only)
+sympy_total: "24/24 PASS (100%) — mixed substance; see §RETROACTIVE for sympy audit"
+six_requirements_status: "6/6 RESOLVED (P1-P6) — at level of internal consistency"
 risks_status: "R1-R6 all addressed (R3 deferred precision, R1+R2+R4+R5+R6 fully closed/honestly documented)"
-status: 🟢 CLOSED — L01 N4 (Higgs trace anomaly + EW cosmology) constructive derivation COMPLETE
+status: 🟡 CLOSED-DOWNGRADED — L01 N4 Higgs trace anomaly cycle, claim status C (was claimed STRUCTURAL_DERIVED, downgraded retroactively)
 folder_status: closed-resolved
-parent_cycle_resolution: "L01 NEEDS §N4 closed by this cycle"
+parent_cycle_resolution: "L01 NEEDS §N4 status: cited-literature-verified + literature-anchored cosmology; NOT derivation-from-axioms — see §RETROACTIVE"
 ---
 
 # Phase FINAL — Cycle close
@@ -67,7 +71,7 @@ sektora (czwarty SM sektor post-N1+N2+N3).**
 |---|---|---|
 | **R1** (M9.1'' contamination) | **closed strukturalnie** | Generic 3-funkcyjny ansatz {A, B, C} per emergent-metric Phase 1 (sympy T7) |
 | **R2** (renorm scheme dependence) | **honestly documented** | MS-bar scheme; structural form scheme-independent; analog do N1 Wilson γ_i deferred precision (sympy T8) |
-| **R3** (Higgs hierarchy problem) | **deferred precision** | Q2 F1 + S05 *strengthens consistency* z m_H stability; full theoretical resolution outside cycle scope; empirical status preserved (Phase 2 §5.3) |
+| **R3** (Higgs hierarchy problem) | **deferred precision → analyzed explicit 2026-05-11** | Q2 F1 + S05 *strengthens consistency* z m_H stability w sensie że TGP **NIE worsen** SM hierarchy problem. **EXPLICIT failure analysis** w dedicated cycle [[../op-Higgs-hierarchy-mechanism-2026-05-11/Phase1_results.md]]: H1a (substrate UV regulator) shifts fine-tuning do ε=10⁻³³; H1b (modified Veltman z TGP operators) wymaga unnatural c_TGP=+8.97; Q2 F1 + S05 są NIE direct hierarchy mechanisms. **Final status: STRUCTURAL_NO_GO (H1c)** — TGP framework as-presented NIE rozwiązuje hierarchy fully; composite Higgs framework deferred do future dedicated cycle. Empirical status preserved (Phase 2 §5.3). |
 | **R4** (S05 violation) | **closed strukturalnie** | h(x) emergent SM scalar; Riegert σ_eff = function(ψ); single-Φ axiom preserved (sympy T7) |
 | **R5** (EW transition order) | **closed konstruktywnie** | Lattice consensus m_H_endpoint=80 GeV; m_H=125.25>80 → crossover (Phase 2 T1, Phase 3 T6); LISA Ω_GW^EW=0 falsifiable |
 | **R6** (cross-cycle consistency) | **closed konstruktywnie** | N1+N2+N3+N4 identical Q2 F1 substrate-decoupling pattern; two-sektor GW synergy (Phase 3 T7) |
@@ -297,3 +301,99 @@ N4 jest fourth SM sektor coverage strukturalnie udowodniony).**
 ---
 
 **STRUCTURAL DERIVED. Cycle closed.**
+
+---
+
+## §RETROACTIVE — Status downgrade 2026-05-11 (external review)
+
+**Trigger:** External review 2026-05-11 zidentyfikował proceduralne i merytoryczne
+luki w claim status. §0-§X powyżej pozostają jako audit trail.
+
+### §R.1 — Procedural gaps
+
+Identyczne z N1/N2/N3:
+
+- ❌ No `contract::` block
+- ❌ No `L1_native.pre_registration_date`
+- ❌ No `## §0.4 — Pre-flight methodology read confirmation`
+- ❌ No PR-### entry w `meta/PRE_REGISTERED_FALSIFIERS.md`
+- ❌ No `output_type` field
+
+Per `meta/CYCLE_LIFECYCLE.md` Anti-pattern #8 + PRE_REGISTERED_FALSIFIERS §3.4: max C.
+
+### §R.2 — Substantive gaps (sympy substance audit — N4-specific)
+
+External review classification N4 sympy: "mixed". Wzorzec:
+
+- **Literature-anchored Higgs sector constants:** m_H = 125.25 GeV, v = 246.22 GeV,
+  λ = m_H²/(2v²) ≈ 0.1295, β_λ ≈ -0.033, γ_m ≈ -0.027 — wszystkie z PDG/lattice/SM.
+- **EW phase transition values:** T_EW_lattice ≈ 159 GeV, T_EW_perturbative ≈ 148.9 GeV,
+  m_H_endpoint_4D ≈ 80 GeV — z KLRS 1996, DRR 2014 lattice papers.
+- **R5 crossover LOCK:** m_H = 125.25 > 80 GeV endpoint → crossover (NIE first-order)
+  — to jest direct application of lattice result, NIE TGP derivation.
+- **OOM gap 55.3 (Q2 F1 verification):** Higgs sector contribution OOM-decoupled
+  od substrate-vacuum — argument z dimensional analysis + literature scale separation.
+- **Hardcoded `T_pass = True`:** external review count N4 Phase 1+2+3 = 1+0+0 = 1
+  hardcoded (N4 lepszy niż N1/N3 w tym wymiarze, ale wciąż większość sympy to
+  algebraic substitution of literature values, NIE derivation).
+
+**Higgs SSB + EW phase transition jest cytowany z PDG + lattice; sympy weryfikuje
+że agent poprawnie wpisał stałe.** Cycle NIE wyprowadza λ z TGP axioms, NIE
+wyprowadza T_EW z TGP cosmology — używa zewnętrznych wartości jako anchors.
+
+### §R.3 — Downgrade decision
+
+| Field | Original | Revised |
+|---|---|---|
+| `classification` | `STRUCTURAL_DERIVED` | `STRUCTURAL_VERIFIED` |
+| `claim_status` | (not declared) | `C` |
+| `output_type` | (not declared) | `structural` |
+| Cytable jako | "konstruktywna N4 verification" | "algebraic consistency Higgs sektora z literature m_H, v, λ + lattice T_EW + Q2 F1 OOM separation argument" |
+
+### §R.4 — Co cykl NADAL twierdzi (zachowane)
+
+- ✅ R5 crossover LOCK: m_H = 125.25 GeV > 80 GeV lattice endpoint → crossover
+  EW transition (NIE first-order) — to jest legitymny direct application of
+  KLRS 1996 + DRR 2014 result
+- ✅ LISA Ω_GW^EW = 0 strukturalnie — falsifiable post-2035 (legitymny statement,
+  ale falsifiability claim wymaga osobnego PR-### entry retrofit)
+- ✅ Q2 F1 OOM gap 55.3 dla Higgs sector — dimensional decoupling argument
+- ✅ Algebraic consistency Higgs SSB literature values z TGP matter sector mapping
+- ✅ Cross-cycle structural compatibility z N1, N2, Q2
+
+### §R.5 — Co cykl NIE twierdzi (downgrade)
+
+- ❌ First-principles derivation λ_Higgs lub T_EW z TGP axioms (PDG + lattice
+  cited, NIE derived)
+- ❌ Falsifiable native prediction status (brak PR-### + brak observable target
+  z native physical units locked specifically by N4)
+- ❌ R3 (hierarchy problem) "deferred" status — review wskazuje że spawned
+  hierarchy cycle dał honest H1c STRUCTURAL_NO_GO; to NIE jest "deferred" ale
+  "NIE rozwiązane w TGP framework" — N4 closure powinna to odzwierciedlać
+- ❌ A+/A/A− validation transfer status
+
+### §R.6 — Path back to A−/A (retrofit scope)
+
+Wymagane:
+
+1. `contract::` block z explicit `output_observable` (np. LISA Ω_GW^EW upper bound, lub HL-LHC λ_HHH precision)
+2. PR-### entry (R5 crossover LOCK + LISA null detection są naturalne falsifiers)
+3. Rewrite sympy: zastąp Higgs constant substitutions sympy-symbolic derivation
+   path z TGP matter sector EOM
+4. `output_type: observable` (Ω_GW dimensionless strain, λ_HHH cross-section)
+
+Scope: dedicated `op-L01-N4-retrofit-native-Higgs` cycle, ~5-8 sesji est.
+
+### §R.7 — Audit trail invariant
+
+§0-§X oryginalne pozostają niezmienione. Append-only.
+
+Cross-references:
+- External review: konwersacja 2026-05-11 (autor projektu)
+- Methodology: `meta/CYCLE_KICKOFF_TEMPLATE.md`, `meta/CYCLE_LIFECYCLE.md`,
+  `meta/PRE_REGISTERED_FALSIFIERS.md`
+- Sibling N-cycle downgrades: N1, N2, N3, N5
+- Hierarchy cycle: spawned hierarchy honest H1c NO_GO closure preserved (procedural
+  note added, claim status stable jako honest negative)
+
+**Downgrade authorized:** autor projektu, conversation 2026-05-11, option (A).

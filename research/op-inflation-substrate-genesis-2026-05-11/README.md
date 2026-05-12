@@ -1,8 +1,13 @@
 ---
-title: "op-inflation-substrate-genesis — Φ_eq(t) inflation prehistory + reheating + BBN initial conditions w TGP framework"
+title: "op-inflation-substrate-genesis — Φ_eq(t) inflation prehistory + reheating + BBN initial conditions w TGP framework [HALTED 2026-05-11 pending new kickoff per RESEARCH_RESTART]"
 date: 2026-05-11
+last_updated: 2026-05-11 (halt notice added per Rec 4)
 type: research-cycle
-status: 🟡 OPEN — scaffold opened 2026-05-11 (long-term theoretical; ~8-12 sesji est.)
+status: 🔴 HALTED — scaffold zamrożony 2026-05-11 per [[../../meta/RESEARCH_RESTART_2026-05-11.md]] §1.1; brak BINDING contract:: block per CYCLE_KICKOFF_TEMPLATE §1; re-activation wymaga rewrite README z meta/templates/op-cycle-kickoff-template-v2-2026-05-11.md + validator PASS + PR-### entry
+folder_status: parking-pending-new-kickoff  # downgraded from parking (open scaffold); halted do validator PASS
+halt_reason: "0/5 BINDING fields present: brak contract::, brak L1_native.pre_registration_date, brak output_type, brak §0.4 confirmation, brak PR-### entry"
+halt_authorization: "autor projektu, conversation 2026-05-11, option (L) Rec 4"
+reactivation_path: "Per RESEARCH_RESTART §1.2: rewrite README z BINDING template; run tooling/validate_kickoff.py → must PASS; submit PR-### entry; user authorization 'active'."
 parent: "[[../op-Q2-vacuum-budget-2026-05-10/NEEDS.md]] §N4 (Inflation prehistory of Φ_eq)"
 predecessors:
   - "[[../op-Q2-vacuum-budget-2026-05-10/]] (Q2 N4 deferred to dedicated inflation cycle)"

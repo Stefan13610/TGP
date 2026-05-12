@@ -1,8 +1,13 @@
 ---
-title: "op-S07-reset-alternative-f-psi — alternative f(ψ) metric structures post M9.1'' FALSIFIED-OBSERVATIONAL (GWTC-3 5.02σ rejection 2026-05-09)"
+title: "op-S07-reset-alternative-f-psi — alternative f(ψ) metric structures post M9.1'' FALSIFIED-OBSERVATIONAL (GWTC-3 5.02σ rejection 2026-05-09) [HALTED 2026-05-11 pending new kickoff per RESEARCH_RESTART]"
 date: 2026-05-11
+last_updated: 2026-05-11 (halt notice added per Rec 4)
 type: research-cycle
-status: 🟡 OPEN — scaffold opened 2026-05-11 (reset path z S07 freedom; ~5-8 sesji est.)
+status: 🔴 HALTED — scaffold zamrożony 2026-05-11 per [[../../meta/RESEARCH_RESTART_2026-05-11.md]] §1.1; brak BINDING contract:: block per CYCLE_KICKOFF_TEMPLATE §1; re-activation wymaga rewrite README z meta/templates/op-cycle-kickoff-template-v2-2026-05-11.md + validator PASS + PR-### entry
+folder_status: parking-pending-new-kickoff  # downgraded from parking (open scaffold); halted do validator PASS
+halt_reason: "0/5 BINDING fields present: brak contract::, brak L1_native.pre_registration_date, brak output_type, brak §0.4 confirmation, brak PR-### entry"
+halt_authorization: "autor projektu, conversation 2026-05-11, option (L) Rec 4"
+reactivation_path: "Per RESEARCH_RESTART §1.2: rewrite README z BINDING template; run tooling/validate_kickoff.py → must PASS; submit PR-### entry; user authorization 'active'."
 parent: "[[../op-ppE-mapping/]] + [[../op-GWTC3-reanalysis/Phase2_RERUN_2026-05-09_corrected_beta.md]]"
 predecessors:
   - "[[../op-newton-momentum/M9_1_pp_P1_results.md]] (M9.1'' kanoniczna metryka — FALSIFIED)"
