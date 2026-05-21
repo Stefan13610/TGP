@@ -1,0 +1,113 @@
+
+======================================================================
+T1: BH5 family discriminability matrix LIGO-O5 stack100 (σ=0.25%): poly-quad>5σ, poly-trans>5σ, quad-trans<5σ
+  Classification: FIRST_PRINCIPLES
+  Details: BH5 fiducials: poly=0, quad@β=0.4=2/125=1.60%, trans@α=0.832=1.38%; disc poly-quad=6.40σ, poly-trans=5.54σ, quad-trans=0.86σ (quad-trans NIE-discriminable LIGO-O5)
+  T1 PASS
+
+======================================================================
+T2: BH5 family discriminability Cosmic Explorer stack100 (σ=0.025%): all 3 family pairs >5σ (×10 vs LIGO-O5)
+  Classification: FIRST_PRINCIPLES
+  Details: CE disc poly-quad=64.00σ, poly-trans=55.38σ, quad-trans=8.62σ (CE promotes quad-trans z 0.88σ→8.8σ → ALL family pairs discriminable)
+  T2 PASS
+
+======================================================================
+T3: ε.1 family discriminability ngEHT stack10 (σ≈6.3%): all signals <5σ at recovery boundary fiducials (NIE-discriminable alone)
+  Classification: FIRST_PRINCIPLES
+  Details: ε.1 fiducials: poly=0, quad@β=0.4=4.44%, trans@α=0.832=3.85%; disc poly-quad=0.70σ, poly-trans=0.61σ, quad-trans=0.09σ (ngEHT alone INSUFFICIENT for family discrimination at recovery boundary)
+  T3 PASS
+
+======================================================================
+T4: Cross-channel coupled BH5+ε.1 joint SNR (trans family α=0.832): joint > BH5 alone (improvement small; BH5-dominated)
+  Classification: FIRST_PRINCIPLES
+  Details: BH5 SNR=5.54σ; ε.1 SNR=0.61σ; joint=√(5.54²+0.61²)=5.57σ; improvement=0.0333σ (cross-channel adds via shared α-dependence)
+  T4 PASS
+
+======================================================================
+T5: LISA 2035+ EMRI ringdown σ=0.1%: poly-quad+poly-trans>5σ; quad-trans<5σ (CE remains needed for full family)
+  Classification: FIRST_PRINCIPLES
+  Details: LISA disc poly-quad=16.00σ, poly-trans=13.84σ, quad-trans=2.16σ (quad-trans <5σ; CE 2030+ still needed for full discrimination)
+  T5 PASS
+
+======================================================================
+T6: 4-way M9.1'' anchor matrix at α=-4 effective: BH5 [8%,16%] + ε.1 4/9 + S07-reset -4/3 + c_0·κ_σ=4/3 simultaneously consistent
+  Classification: FIRST_PRINCIPLES
+  Details: Anchor 1 BH5 [2/25, 4/25] = [8%,16%] ✓; Anchor 2 ε.1 quad = 4/9 = 4/9 ✓; Anchor 3 Δe_2 = α/3 at α=-4 = -4/3 = -4/3 ✓; Anchor 4 c_0·κ_σ = 4/3 = 4/3 ✓; S07-reset constraint @ α=-4: -a_3/8 - 4*xi_3 + 20/3 = -4ξ_3 - a_3/8 + 20/3 (1-param family consistent)
+  T6 PASS
+
+======================================================================
+T7: Recovery region α∈[-0.832, 0.832] PASSING per channel: ppE β=0.78 (boundary), BH5 ≤1.4%, ε.1 ≤3.85%
+  Classification: FIRST_PRINCIPLES
+  Details: β_ppE at α=0.832: 39/50 = 0.78 = GWTC-3 1σ boundary (PASSES); BH5 max trans signal: 1.38%; ε.1 max trans signal: 3.85%
+  T7 PASS
+
+======================================================================
+T8: LIGO-O5 PSD-coupled SNR_BH5 at M=30 M⊙ GW150914-class: SNR=20 → σ_single=2.5%
+  Classification: LITERATURE_ANCHORED
+  Details: M_BH=30 M⊙; SNR_GW150914=20 (BH5 LIVE T3.2); σ_single=1/(2·20)=1/40 = 2.5% per BH5 LIVE inheritance
+  T8 PASS
+
+======================================================================
+T9: Photon orbit numerical Sgr A* M=4.1·10⁶ M⊙: θ_shadow≈50 μas (ngEHT literature anchor)
+  Classification: LITERATURE_ANCHORED
+  Details: Sgr A* M=4100000 M_⊙ = 4.1·10⁶ M_⊙; θ_shadow_GR ≈ 50 μas (literature; consistent z r_ph=3M Schwarzschild calculation 51.4 μas)
+  T9 PASS
+
+======================================================================
+T10: Pre-observational 5σ thresholds per detector: LIGO-O5 1.25%, CE 0.125%, LISA 0.5%, ngEHT 31.6%
+  Classification: FIRST_PRINCIPLES
+  Details: BH5 5σ threshold: O5=1/80=1.25%, CE=1/800=0.125%, LISA=1/200=0.5%; ε.1 5σ threshold ngEHT=0.3162=1/√10 ≈ 31.6%
+  T10 PASS
+
+
+======================================================================
+PHASE 3 SYMPY SUMMARY
+======================================================================
+
+Total tests: 10
+Passed: 10/10
+FIRST_PRINCIPLES: 8/10 (80.0%)
+LITERATURE_ANCHORED: 2/10 (20.0%)
+Hardcoded T_pass=True: 0/10 (binding: 0)
+
+======================================================================
+PER-TEST CLASSIFICATION
+======================================================================
+Test   Class                  Status Description
+------ ---------------------- ------ ------------------------------------------------------------
+T1     FIRST_PRINCIPLES       PASS   BH5 family discriminability matrix LIGO-O5 stack100 (σ=0.25%
+T2     FIRST_PRINCIPLES       PASS   BH5 family discriminability Cosmic Explorer stack100 (σ=0.02
+T3     FIRST_PRINCIPLES       PASS   ε.1 family discriminability ngEHT stack10 (σ≈6.3%): all sign
+T4     FIRST_PRINCIPLES       PASS   Cross-channel coupled BH5+ε.1 joint SNR (trans family α=0.83
+T5     FIRST_PRINCIPLES       PASS   LISA 2035+ EMRI ringdown σ=0.1%: poly-quad+poly-trans>5σ; qu
+T6     FIRST_PRINCIPLES       PASS   4-way M9.1'' anchor matrix at α=-4 effective: BH5 [8%,16%] +
+T7     FIRST_PRINCIPLES       PASS   Recovery region α∈[-0.832, 0.832] PASSING per channel: ppE β
+T8     LITERATURE_ANCHORED    PASS   LIGO-O5 PSD-coupled SNR_BH5 at M=30 M⊙ GW150914-class: SNR=2
+T9     LITERATURE_ANCHORED    PASS   Photon orbit numerical Sgr A* M=4.1·10⁶ M⊙: θ_shadow≈50 μas 
+T10    FIRST_PRINCIPLES       PASS   Pre-observational 5σ thresholds per detector: LIGO-O5 1.25%,
+
+======================================================================
+DEC STRUCTURAL DECLARATIONS (Phase 3, separate from PASS count)
+======================================================================
+DEC-5: Numerical fiducials są post-PE values (z S07-reset PR-010 recovery), NIE first-principles
+DEC-6: Pre-observational discrimination ceiling A− (full A reserved dla actual data)
+
+======================================================================
+CUMULATIVE CYCLE METRICS (Phase 1 + 2 + 3)
+======================================================================
+Phase 1 (BH5):        12/12 PASS, 10 FP (83.3%), 2 LIT, 0 hardcoded
+Phase 2 (ε.1):        12/12 PASS, 10 FP (83.3%), 2 LIT, 0 hardcoded
+Phase 3 (numerical):  10/10 PASS, 8 FP (80.0%), 2 LIT, 0 hardcoded
+CUMULATIVE:           34/34 PASS, 28 FP (82.4%), 6 LIT, 0 hardcoded
+DEC structural separate: 6 (DEC-1..6)
+
+======================================================================
+BINDING THRESHOLD CHECKS:
+  ≥70% FP (Phase 3 target):    ✓ PASS (80.0%)
+  0 hardcoded T_pass=True:     ✓ PASS (0)
+  All tests pass:              ✓ PASS (10/10)
+  Cumulative ≥75% FP binding:  ✓ PASS (82.4%)
+======================================================================
+
+PHASE 3 SYMPY: ALL GATES PASS ✓
+CYCLE READY FOR PHASE FINAL CLOSURE CEREMONY

@@ -1,0 +1,122 @@
+
+======================================================================
+T1: Schwarzschild QNM symbolic baseline ω_GR ~ 1/M_BH (Berti-Cardoso form)
+  Classification: FIRST_PRINCIPLES
+  Details: d(omega_GR)/dM_BH = -483*c_light**3/(5000*G*M_BH**2) = -omega_GR/M_BH; difference=0
+  T1 PASS
+
+======================================================================
+T2: Family marker d²f/dψ²(ψ_0) per family enumeration {0, 2β_q, α²}
+  Classification: FIRST_PRINCIPLES
+  Details: polynomial: 0; quadratic: 2*beta_q; transcendental: alpha**2
+  T2 PASS
+
+======================================================================
+T3: δω_QNM/ω_GR derivation: linear in d²f/dψ²(ψ_0), quadratic in Δψ_ringdown
+  Classification: FIRST_PRINCIPLES
+  Details: d(δω/ω)/d(d²f) = Delta_psi**2*kappa_geom/2 (expected Delta_psi**2*kappa_geom/2); d²(δω/ω)/dΔψ² = d2f_dpsi2_psi0*kappa_geom (expected d2f_dpsi2_psi0*kappa_geom)
+  T3 PASS
+
+======================================================================
+T4: Polynomial channel δω_QNM/ω_GR = 0 EXACT (GR limit; d²f=0)
+  Classification: FIRST_PRINCIPLES
+  Details: δω/ω (polynomial) = 0
+  T4 PASS
+
+======================================================================
+T5: Quadratic channel δω_QNM/ω_GR = κ_geom·β_q·(Δψ)² (d²f=2β_q substituted)
+  Classification: FIRST_PRINCIPLES
+  Details: δω/ω (quadratic) = Delta_psi**2*beta_q*kappa_geom; expected Delta_psi**2*beta_q*kappa_geom
+  T5 PASS
+
+======================================================================
+T6: Transcendental channel δω_QNM/ω_GR = κ_geom·α²·(Δψ)²/2 (d²f=α² substituted)
+  Classification: FIRST_PRINCIPLES
+  Details: δω/ω (transcendental) = Delta_psi**2*alpha**2*kappa_geom/2; expected Delta_psi**2*alpha**2*kappa_geom/2
+  T6 PASS
+
+======================================================================
+T7: M9.1'' anchor consistency: d²f_M911/dψ²(1)=8 → δω/ω∈[8%,16%] for κ_geom∈[0.5,1.0]
+  Classification: FIRST_PRINCIPLES
+  Details: d²f_M911/dψ²(1)=8; δω/ω(M911)=4*kappa_geom/25; range [2/25, 4/25] = [8%, 16%] vs LIVE 8-16% (op-bh-alpha-threshold T3.2)
+  T7 PASS
+
+======================================================================
+T8: c_0·κ_σ = 4/3 LOCK preservation (Path 2 anchor); QNM independent at leading order
+  Classification: FIRST_PRINCIPLES
+  Details: c_0·κ_σ = 4/3 = 4/3 EXACT; QNM channel d/dc_0 = 0, d/dκ_σ = 0
+  T8 PASS
+
+======================================================================
+T9: ASK-RULE Trigger C resolution: κ_geom NIE BD coupling (geometric Δψ² dependence)
+  Classification: FIRST_PRINCIPLES
+  Details: BD-mode g_BD = κ_geom·(Δψ)² requires d/dΔψ ≠ 0 → 2*Delta_psi*kappa_geom; κ_geom is geometric, NIE constant coupling
+  T9 PASS
+
+======================================================================
+T10: LIGO O5 A+ PSD-anchored σ_f: single-event 1/(2·SNR=20)=2.5%; stack 100→0.25%
+  Classification: LITERATURE_ANCHORED
+  Details: single-event σ_f/f = 1/40 = 2.5%; stack/√100 = 1/400 = 0.25%
+  T10 PASS
+
+======================================================================
+T11: Cosmic Explorer ~2030 stack 5σ family discrimination threshold = 0.125%
+  Classification: LITERATURE_ANCHORED
+  Details: CE SNR=200; single σ_f/f = 1/400 = 0.25%; stack 100→1/4000=0.025%; 5σ threshold = 1/800 = 0.125%
+  T11 PASS
+
+======================================================================
+T12: Pattern 2.5 environment-dependent: κ_eff(BH, Δψ=0.20) ≠ κ_eff(cosmological, Δψ→0)
+  Classification: FIRST_PRINCIPLES
+  Details: κ_eff(BH) = kappa_geom/25 = κ_geom·0.04 (finite); κ_eff(cosmo→0) = 0 = 0 (vanishing)
+  T12 PASS
+
+
+======================================================================
+PHASE 1 SYMPY SUMMARY
+======================================================================
+
+Total tests: 12
+Passed: 12/12
+FIRST_PRINCIPLES: 10/12 (83.3%)
+LITERATURE_ANCHORED: 2/12 (16.7%)
+Hardcoded T_pass=True: 0/12 (binding: 0)
+
+Non-trivial substance: 12/12 (100% — every test does symbolic work)
+
+======================================================================
+PER-TEST CLASSIFICATION
+======================================================================
+Test   Class                  Status Description
+------ ---------------------- ------ ------------------------------------------------------------
+T1     FIRST_PRINCIPLES       PASS   Schwarzschild QNM symbolic baseline ω_GR ~ 1/M_BH (Berti-Car
+T2     FIRST_PRINCIPLES       PASS   Family marker d²f/dψ²(ψ_0) per family enumeration {0, 2β_q, 
+T3     FIRST_PRINCIPLES       PASS   δω_QNM/ω_GR derivation: linear in d²f/dψ²(ψ_0), quadratic in
+T4     FIRST_PRINCIPLES       PASS   Polynomial channel δω_QNM/ω_GR = 0 EXACT (GR limit; d²f=0)
+T5     FIRST_PRINCIPLES       PASS   Quadratic channel δω_QNM/ω_GR = κ_geom·β_q·(Δψ)² (d²f=2β_q s
+T6     FIRST_PRINCIPLES       PASS   Transcendental channel δω_QNM/ω_GR = κ_geom·α²·(Δψ)²/2 (d²f=
+T7     FIRST_PRINCIPLES       PASS   M9.1'' anchor consistency: d²f_M911/dψ²(1)=8 → δω/ω∈[8%,16%]
+T8     FIRST_PRINCIPLES       PASS   c_0·κ_σ = 4/3 LOCK preservation (Path 2 anchor); QNM indepen
+T9     FIRST_PRINCIPLES       PASS   ASK-RULE Trigger C resolution: κ_geom NIE BD coupling (geome
+T10    LITERATURE_ANCHORED    PASS   LIGO O5 A+ PSD-anchored σ_f: single-event 1/(2·SNR=20)=2.5%;
+T11    LITERATURE_ANCHORED    PASS   Cosmic Explorer ~2030 stack 5σ family discrimination thresho
+T12    FIRST_PRINCIPLES       PASS   Pattern 2.5 environment-dependent: κ_eff(BH, Δψ=0.20) ≠ κ_ef
+
+======================================================================
+DEC STRUCTURAL DECLARATIONS (separate, NOT counted in PASS total)
+======================================================================
+DEC-1: S05 single-Φ axiom preserved across BH5 channel
+        → BH5 derivation uses ONLY Φ-EOM (no Φ_2, no hidden field)
+        → Family enumeration WITHIN single-Φ substrate per S05 (FOUNDATIONS §5.1)
+DEC-2: ax:metric-coupling preserved (universal g_eff coupling)
+        → Test particle (graviton perturbation) couples to g_eff[Φ_eq(BH)] only
+        → NIE direct Φ-quantum exchange (Φ-quanta forbidden per FOUNDATIONS §5.1)
+
+======================================================================
+BINDING THRESHOLD CHECKS:
+  ≥75% FP (binding):           ✓ PASS (83.3%)
+  0 hardcoded T_pass=True:     ✓ PASS (0)
+  All tests pass:              ✓ PASS (12/12)
+======================================================================
+
+PHASE 1 SYMPY: ALL GATES PASS ✓

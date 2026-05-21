@@ -1,0 +1,129 @@
+
+======================================================================
+T1: Schwarzschild photon orbit baseline ε_ph²_GR = 1/27 (r_ph=3M, b_crit=3√3·M)
+  Classification: FIRST_PRINCIPLES
+  Details: r_ph from dV/dr=0: r_ph=3*M_BH; b_crit²=r_ph²/(1-2M/r_ph)=27*M_BH**2; ε_ph² at M=1: 1/27 = 1/27
+  T1 PASS
+
+======================================================================
+T2: Family marker d²f/dψ²(ψ_0) per family at photon orbit ψ_ph (analog Phase 1 T2)
+  Classification: FIRST_PRINCIPLES
+  Details: polynomial: 0; quadratic: 2*beta_q; transcendental: alpha**2
+  T2 PASS
+
+======================================================================
+T3: δε_ph²/ε_ph²_GR (quad channel) = κ_ε · d²f/dψ²(ψ_0)/2; κ_ε=1/9 (S07-reset Phase 2 inheritance)
+  Classification: FIRST_PRINCIPLES
+  Details: d/d(d²f) = 1/18 (expected 1/18); d/dΔψ = 0 (no Δψ² factor; single radius r_ph=3M); κ_ε = 1/9 = 1/9 EXACT
+  T3 PASS
+
+======================================================================
+T4: Polynomial channel δε_ph²/ε_ph²_GR (quad) = 0 EXACT (GR limit; d²f=0)
+  Classification: FIRST_PRINCIPLES
+  Details: δε_ph²/ε_ph²_GR (polynomial, quad channel) = 0
+  T4 PASS
+
+======================================================================
+T5: Quadratic channel δε_ph²/ε_ph²_GR = β_q/9 (matches S07-reset Phase 2 derivation)
+  Classification: FIRST_PRINCIPLES
+  Details: δε_ph²/ε_ph²_GR (quadratic) = beta_q/9; expected β_q/9 = beta_q/9
+  T5 PASS
+
+======================================================================
+T6: Transcendental channel δε_ph²/ε_ph²_GR = α²/18 (matches S07-reset Phase 2 derivation)
+  Classification: FIRST_PRINCIPLES
+  Details: δε_ph²/ε_ph²_GR (transcendental) = alpha**2/18; expected α²/18 = alpha**2/18
+  T6 PASS
+
+======================================================================
+T7: M9.1'' anchor: d²f_M911/dψ²(1)=8 → quad channel δε_ph²/ε_ph²_GR = 4/9 ≈ 44.4% (NIE total +14.6%; quad-only)
+  Classification: FIRST_PRINCIPLES
+  Details: d²f_M911/dψ²(1)=8=8; quad channel = 4/9 = 4/9 ≈ 44.44%; distinct z op-eht +14.6% (latter = total shift dominated by linear channel α/3 z S07-reset Phase 2)
+  T7 PASS
+
+======================================================================
+T8: c_0·κ_σ = 4/3 LOCK preservation; ε.1 quad channel independent at leading order
+  Classification: FIRST_PRINCIPLES
+  Details: c_0·κ_σ = 4π · 1/(3π) = 4/3 = 4/3 EXACT; ε.1 quad channel d/dc_0=0, d/dκ_σ=0
+  T8 PASS
+
+======================================================================
+T9: ASK-RULE Trigger C: κ_ε=1/9 NIE BD coupling (specific photon-orbit geometric factor 1/r_ph²)
+  Classification: FIRST_PRINCIPLES
+  Details: κ_ε = 1/9 (Rational, NIE Symbol); 1/r_ph² = 1/3² = 1/9; κ_ε IS geometric ratio, NIE free BD coupling
+  T9 PASS
+
+======================================================================
+T10: ngEHT angular resolution σ_θ=5 μas; per-source σ_(δε_ph²) ≈ 20%
+  Classification: LITERATURE_ANCHORED
+  Details: σ_θ/θ_shadow = 5/50 = 1/10 = 10%; σ_(δε_ph²/ε_ph²) ≈ 2·σ_(δθ/θ) = 1/5 = 20% per single source
+  T10 PASS
+
+======================================================================
+T11: ngEHT 10-SMBH stack: σ_stack ≈ 6.3%; 5σ family discrimination threshold ≈ 31.6%
+  Classification: LITERATURE_ANCHORED
+  Details: σ_stack = 1/5/√10 = sqrt(10)/50 = 6.32%; 5σ threshold = sqrt(10)/10 = 1/√10 ≈ 31.62%
+  T11 PASS
+
+======================================================================
+T12: Cross-channel ratio invariant BH5/ε.1 (trans family) = 9·κ_geom·(Δψ_ringdown)² INDEPENDENT of α
+  Classification: FIRST_PRINCIPLES
+  Details: ratio = 9*Delta_psi**2*kappa_geom; expected 9·κ_geom·Δψ² = 9*Delta_psi**2*kappa_geom; d(ratio)/dα = 0 = 0 (α cancels); free symbols = {Delta_psi, kappa_geom} = {κ_geom, Δψ} ⇒ pure geometric
+  T12 PASS
+
+
+======================================================================
+PHASE 2 SYMPY SUMMARY
+======================================================================
+
+Total tests: 12
+Passed: 12/12
+FIRST_PRINCIPLES: 10/12 (83.3%)
+LITERATURE_ANCHORED: 2/12 (16.7%)
+Hardcoded T_pass=True: 0/12 (binding: 0)
+
+Non-trivial substance: 12/12 (100% — every test does symbolic work)
+
+======================================================================
+PER-TEST CLASSIFICATION
+======================================================================
+Test   Class                  Status Description
+------ ---------------------- ------ ------------------------------------------------------------
+T1     FIRST_PRINCIPLES       PASS   Schwarzschild photon orbit baseline ε_ph²_GR = 1/27 (r_ph=3M
+T2     FIRST_PRINCIPLES       PASS   Family marker d²f/dψ²(ψ_0) per family at photon orbit ψ_ph (
+T3     FIRST_PRINCIPLES       PASS   δε_ph²/ε_ph²_GR (quad channel) = κ_ε · d²f/dψ²(ψ_0)/2; κ_ε=1
+T4     FIRST_PRINCIPLES       PASS   Polynomial channel δε_ph²/ε_ph²_GR (quad) = 0 EXACT (GR limi
+T5     FIRST_PRINCIPLES       PASS   Quadratic channel δε_ph²/ε_ph²_GR = β_q/9 (matches S07-reset
+T6     FIRST_PRINCIPLES       PASS   Transcendental channel δε_ph²/ε_ph²_GR = α²/18 (matches S07-
+T7     FIRST_PRINCIPLES       PASS   M9.1'' anchor: d²f_M911/dψ²(1)=8 → quad channel δε_ph²/ε_ph²
+T8     FIRST_PRINCIPLES       PASS   c_0·κ_σ = 4/3 LOCK preservation; ε.1 quad channel independen
+T9     FIRST_PRINCIPLES       PASS   ASK-RULE Trigger C: κ_ε=1/9 NIE BD coupling (specific photon
+T10    LITERATURE_ANCHORED    PASS   ngEHT angular resolution σ_θ=5 μas; per-source σ_(δε_ph²) ≈ 
+T11    LITERATURE_ANCHORED    PASS   ngEHT 10-SMBH stack: σ_stack ≈ 6.3%; 5σ family discriminatio
+T12    FIRST_PRINCIPLES       PASS   Cross-channel ratio invariant BH5/ε.1 (trans family) = 9·κ_g
+
+======================================================================
+DEC STRUCTURAL DECLARATIONS (separate, NOT counted in PASS total)
+======================================================================
+DEC-3: S05 single-Φ axiom preserved across ε.1 channel
+        → Photon orbit derivation uses ONLY Φ-EOM (no Φ_2)
+        → ε.1 quad channel WITHIN single-Φ substrate per S05 (FOUNDATIONS §5.1)
+DEC-4: ax:metric-coupling preserved (universal g_eff coupling at photon orbit)
+        → Photon (test particle) couples to g_eff[Φ_eq(BH)] only
+        → NIE direct Φ-quantum exchange (Φ-quanta forbidden per FOUNDATIONS §5.1)
+
+======================================================================
+CUMULATIVE CYCLE METRICS (Phase 1 + Phase 2)
+======================================================================
+Phase 1 (BH5):        12/12 PASS, 10 FP (83.3%), 2 LIT, 0 hardcoded
+Phase 2 (ε.1):        12/12 PASS, 10 FP (83.3%), 2 LIT, 0 hardcoded
+CUMULATIVE:           24/24 PASS, 20 FP (83.3%), 4 LIT, 0 hardcoded
+
+======================================================================
+BINDING THRESHOLD CHECKS:
+  ≥75% FP (binding):           ✓ PASS (83.3%)
+  0 hardcoded T_pass=True:     ✓ PASS (0)
+  All tests pass:              ✓ PASS (12/12)
+======================================================================
+
+PHASE 2 SYMPY: ALL GATES PASS ✓
