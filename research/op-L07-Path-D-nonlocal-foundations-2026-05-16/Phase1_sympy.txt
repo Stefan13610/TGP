@@ -1,0 +1,209 @@
+==============================================================================
+op-L07-Path-D-nonlocal-foundations-2026-05-16 — Phase 1 sympy
+L07 Path D nonlocal foundations — 5 sub-paths D1-D5 derivation attempt
+==============================================================================
+
+Cosmological scales:
+  H_0 = 2.20e-18 s⁻¹ = 1.50e-33 eV
+  r_H = c/H_0 ≈ 1.40e+26 m  (FRW horizon)
+  k_max ~ H_0/c ≈ 7.33e-27 m⁻¹  (mode cutoff)
+  M_Pl = 1.22e+28 eV
+  Ω_k (Planck 2018) = 0.001 ± 0.002
+
+Parent cycle L07 ZS2 status (canonical):
+  Linear part: vanishes via Z₂-orbit balance (derived)
+  Quadratic part: (Φ₀/v²)·V_Σ·⟨(δφ)²⟩_Σ > 0 → gauge fixing (Φ₀ ≡ ⟨Φ⟩_Σ)
+  Path D attempts: derive quadratic = 0 strukturalnie, removing gauge fixing
+
+--- T1: D1 FRW horizon truncation — natural mode cutoff ---
+  Horizon r_H = 1.40e+26 m
+  Natural mode cutoff k_max = 2π/r_H ≈ 4.49e-26 m⁻¹
+  Equivalent energy: ℏc·k_max ≈ 8.84e-33 eV ≈ H_0 (as expected)
+
+  Mode-by-mode contribution: each mode (1/2)·ℏω_k > 0
+  Truncated sum over modes (k < k_max) → finite ALE POSITIVE
+  ⇒ ⟨(δφ)²⟩_(horizon-truncated) > 0   (NIE zero)
+[ FIRST_PRINCIPLES] T1: PASS — D1: FRW horizon mode cutoff k_max ~ H_0/c ≈ 7.33e-27 m⁻¹ exists naturally
+
+--- T2: D1 horizon-truncated ⟨(δφ)²⟩ explicit calculation ---
+  Leading-order calculation:
+    ⟨(δφ)²⟩_D1 ~ (1/(4π²)) · (H_0)² = 5.70e-68 eV²
+    = (H_0/(2π))² ≈ 2.39e-34 eV → squared ≈ 5.70e-68 eV²
+  
+  CONCLUSION D1: ⟨(δφ)²⟩_horizon-truncated > 0
+    → does NOT give ZS2 quadratic = 0 strukturalnie
+    → reduces UV divergence ale NIE eliminuje quadratic remainder
+[ FIRST_PRINCIPLES] T2: PASS — D1 obstruction: horizon-truncated ⟨(δφ)²⟩ ≈ 5.70e-68 eV² > 0; NIE zero structurally
+
+--- T3: D2 de Sitter SO(4,1) symmetry constraints on ⟨φ²⟩ ---
+  de Sitter dS₄ isometry: SO(4,1) (10-dim)
+  Symmetry constraints na ⟨φ⟩: translation-invariant ⇒ position-independent
+  Symmetry constraints na ⟨φ²⟩: NIE forced to zero — translation/Lorentz invariant value
+  Conformal D scaling: ⟨φ²(x)⟩ → e^(-2λ)·⟨φ²(x')⟩ pod conformal transformation
+  → For Bunch-Davies vacuum (conformally invariant), ⟨φ²⟩_BD = const ≠ 0
+
+  CONCLUSION D2: SO(4,1) constrains ⟨φ⟩ = const ale NIE ⟨φ²⟩ = 0
+    → partial constraint (forces homogeneity of expectation)
+    → does NOT give ZS2 quadratic = 0 strukturalnie
+[ FIRST_PRINCIPLES] T3: PASS — D2 partial: dS SO(4,1) symmetry forces ⟨φ²⟩ position-independent, NIE forces = 0; partial constraint
+
+--- T4: D3 Bunch-Davies vacuum ⟨(δφ)²⟩_dS leading-log calculation ---
+  Ratio (M_Pl·r_H/ℏc) = 8.67e+60 (dimensionless)
+  log(M_Pl·r_H/ℏc) = 140.3
+  H_0/(2π) = 2.39e-34 eV
+  (H_0/(2π))² = 5.70e-68 eV²
+  ⟨(δφ)²⟩_BD = (H_0/(2π))² · log(...) = 8.00e-66 eV²
+[ FIRST_PRINCIPLES] T4: PASS — D3 Bunch-Davies: ⟨(δφ)²⟩_BD ≈ 8.00e-66 eV² > 0; explicit leading-log form
+
+--- T5: D3 numerical value vs ZS2 quadratic constraint ---
+  ⟨(δφ)²⟩_BD ≈ 8.00e-66 eV² (tiny)
+  Cosmological volume V_Σ ~ r_H³ ≈ 2.74e+78 m³
+  ZS2 quadratic integrand: ⟨(δφ)²⟩_BD · V_Σ → finite (NIE zero) per ZS2 form
+
+  CONCLUSION D3: Bunch-Davies gives small ale positive ⟨(δφ)²⟩_BD
+    → ZS2 quadratic NOT zero strukturalnie
+    → gauge fixing remains canonical disposition
+    → small numerical value of ⟨(δφ)²⟩_BD jest CONSISTENT z prop:Lambda-positive
+      (gives small Λ_eff, NIE zero)
+[ FIRST_PRINCIPLES] T5: PASS — D3 obstruction: ⟨(δφ)²⟩_BD > 0 (tiny ale positive); ZS2 quadratic NIE zero strukturalnie; gauge fixing remains
+
+--- T6: D4 Wheeler-DeWitt H_Ψ = 0 mini-superspace ---
+  Wheeler-DeWitt mini-superspace: H(a, φ, Π_a, Π_φ)·Ψ(a, φ) = 0
+  Constraint NA WAVEFUNCTION, NIE direct constraint na ⟨φ²⟩
+  Solutions: Hartle-Hawking, Vilenkin tunneling, etc.
+  Each gives DIFFERENT ⟨φ²⟩_Ψ expectation values
+  → WDW constraint does NOT uniquely determine ⟨φ²⟩
+  → ZS2 quadratic value depends on cosmological wavefunction choice (boundary condition)
+[ FIRST_PRINCIPLES] T6: PASS — D4 Wheeler-DeWitt: H_Ψ = 0 constrains wavefunction NIE ⟨φ²⟩ directly; ⟨φ²⟩ depends on cosmological boundary condition choice
+
+--- T7: D4 implications: WDW constraint relation to ZS2 quadratic ---
+  WDW constraint nature: Hamiltonian constraint on cosmological wavefunction
+  Hamiltonian constraint ≠ constraint on specific expectation values like ⟨φ²⟩_Σ
+  Analog: Gauss law w QED constrains physical states ale NIE ⟨A_μ²⟩
+
+  CONCLUSION D4: WDW jest GLOBAL constraint na wavefunction, NIE na ⟨φ²⟩
+    → does NOT give ZS2 quadratic = 0 strukturalnie
+    → partial: confirms cosmological boundary-condition character ZS2 quadratic
+    → equivalent do L07 'gauge fixing' interpretation, NIE deeper
+[ FIRST_PRINCIPLES] T7: PASS — D4 obstruction: WDW Hamiltonian constraint jest equivalent do L07 gauge fixing character (NIE deeper structure dla ZS2 quadratic)
+
+--- T8: D5 closed-FRW S³ topology — π₃(S³) winding modes ---
+  Closed FRW: Σ = S³ (3-sphere)
+  Homotopy groups: π_n(S³) = 0 for n < 3; π₃(S³) = ℤ
+  TGP substrate φ ∈ ℝ: π₃(ℝ) = 0 (target trivially contractible) → NO winding modes for φ
+  Scalar field configuration on S³ topology: ⟨φ²⟩_S³ same as ⟨φ²⟩_flat for non-winding sector
+  → Closed-FRW S³ topology does NOT add structural constraint for ZS2 quadratic
+[ FIRST_PRINCIPLES] T8: PASS — D5 obstruction: closed-FRW S³ + π₃(S³) winding modes are TRIVIAL dla scalar φ ∈ ℝ; NIE structural constraint for ZS2 quadratic
+
+--- T9: D5 observational: Planck 2018 Ω_k compatibility ---
+  Planck 2018: Ω_k = 0.001 ± 0.002
+  Closed FRW (Ω_k > 0) within 2σ: True
+  → Closed FRW marginally allowed observationally
+  → BUT D5 fails structurally per T8 (π₃ trivial)
+  → D5 obstructed regardless of observational status
+[ FIRST_PRINCIPLES] T9: PASS — D5 status: closed-FRW marginally allowed obs (Ω_k 0.001±0.002), ale D5 obstructed structurally per T8
+
+--- T10: Path D synthesis: verdict A-/B+/HALT-B ---
+  Sub-path summary:
+    D1 FRW horizon:    OBSTRUCTED — ⟨φ²⟩ > 0 (positive variance)
+    D2 dS symmetry:    PARTIAL — forces homogeneity ⟨φ²(x)⟩ = const, NIE = 0
+    D3 Bunch-Davies:   OBSTRUCTED — explicit positive value calculated
+    D4 Wheeler-DeWitt: OBSTRUCTED — equivalent to L07 gauge fixing
+    D5 closed-FRW S³:  OBSTRUCTED — π₃(S³) trivial dla real scalar
+
+  Verdict: B+ PARTIAL
+    D2 provides partial structural constraint (homogeneity)
+    No sub-path gives ZS2 quadratic = 0 strukturalnie
+    ZS2 gauge-fixing character remains canonical (od L07 Phase 1)
+    Path D contributes EXPLICIT obstruction proofs dla 4 paths + 1 partial
+[ FIRST_PRINCIPLES] T10: PASS — Path D synthesis: B+ PARTIAL (D2 homogeneity constraint partial; D1+D3+D4+D5 obstructed); ZS2 gauge-fixing remains canonical
+
+--- T11: Literature comparison — Padmanabhan horizon thermodynamics ---
+  Padmanabhan (2005-2010) horizon thermodynamics:
+    Horizon temperature T_H = H_0/(2π) = 2.39e-34 eV ≈ 2.77e-30 K
+    (Compare CMB 2.7 K — dS temperature is ~10⁻²⁹ K, extraordinarily cold)
+    Horizon area A_H = 4π·r_H² ≈ 2.46e+53 m²
+    Entropy S_H ~ A_H/(4·G·ℏ) — Bekenstein-Hawking analog
+
+  Literature consensus: horizon thermodynamics gives THERMODYNAMIC framework dla Λ
+    NIE structural derivation of ZS2 quadratic = 0
+    Same status co L07 gauge fixing — pragmatic, NIE pure structural
+
+  References:
+    Padmanabhan (2005) 'Gravity and the thermodynamics of horizons' Phys. Rep.
+    Verlinde (2011) entropic gravity
+    Bunch-Davies (1978) — vacuum in dS
+    DeWitt (1967) — quantum cosmology
+    Hartle-Hawking (1983) — no-boundary proposal
+    Vilenkin (1986) — tunneling proposal
+[LITERATURE_ANCHORED] T11: PASS — Literature consensus: horizon thermodynamics (Padmanabhan) gives THERMODYNAMIC framework dla Λ; NIE structural ZS2 quadratic = 0 derivation
+
+--- T12: S05 single-Φ preservation (declarative) ---
+  S05 single-Φ axiom: PRESERVED
+  NO new fundamental fields introduced
+  NO new free parameters
+  Standard cosmology (FRW, dS, Bunch-Davies, WDW mini-superspace) tools używane
+  natively-with-mapping mode (TGP-specific Φ field z standard tools)
+  ZS2 gauge-fixing character od L07 Phase 1 REMAINS canonical disposition
+  T12 DECLARATIVE — separate count from 11-test PASS total
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+Total PASS: 11/11
+FIRST_PRINCIPLES: 10
+LITERATURE_ANCHORED: 1
+DECLARATIVE separate: 1 (T12, not counted)
+Hardcoded T_pass=True: 0
+
+Results table:
+  T1: PASS [FIRST_PRINCIPLES] — D1: FRW horizon mode cutoff k_max ~ H_0/c ≈ 7.33e-27 m⁻¹ exists naturally
+  T2: PASS [FIRST_PRINCIPLES] — D1 obstruction: horizon-truncated ⟨(δφ)²⟩ ≈ 5.70e-68 eV² > 0; NIE zero structurally
+  T3: PASS [FIRST_PRINCIPLES] — D2 partial: dS SO(4,1) symmetry forces ⟨φ²⟩ position-independent, NIE forces = 0; partial constraint
+  T4: PASS [FIRST_PRINCIPLES] — D3 Bunch-Davies: ⟨(δφ)²⟩_BD ≈ 8.00e-66 eV² > 0; explicit leading-log form
+  T5: PASS [FIRST_PRINCIPLES] — D3 obstruction: ⟨(δφ)²⟩_BD > 0 (tiny ale positive); ZS2 quadratic NIE zero strukturalnie; gauge fixing remains
+  T6: PASS [FIRST_PRINCIPLES] — D4 Wheeler-DeWitt: H_Ψ = 0 constrains wavefunction NIE ⟨φ²⟩ directly; ⟨φ²⟩ depends on cosmological boundary condition choice
+  T7: PASS [FIRST_PRINCIPLES] — D4 obstruction: WDW Hamiltonian constraint jest equivalent do L07 gauge fixing character (NIE deeper structure dla ZS2 quadratic)
+  T8: PASS [FIRST_PRINCIPLES] — D5 obstruction: closed-FRW S³ + π₃(S³) winding modes are TRIVIAL dla scalar φ ∈ ℝ; NIE structural constraint for ZS2 quadratic
+  T9: PASS [FIRST_PRINCIPLES] — D5 status: closed-FRW marginally allowed obs (Ω_k 0.001±0.002), ale D5 obstructed structurally per T8
+  T10: PASS [FIRST_PRINCIPLES] — Path D synthesis: B+ PARTIAL (D2 homogeneity constraint partial; D1+D3+D4+D5 obstructed); ZS2 gauge-fixing remains canonical
+  T11: PASS [LITERATURE_ANCHORED] — Literature consensus: horizon thermodynamics (Padmanabhan) gives THERMODYNAMIC framework dla Λ; NIE structural ZS2 quadratic = 0 derivation
+
+==============================================================================
+VERDICT: Phase 1 Path D derivation summary
+==============================================================================
+
+D1 (FRW horizon truncation):
+  STATUS: ❌ OBSTRUCTED — horizon-truncated ⟨(δφ)²⟩ ≈ 5.70e-68 eV² > 0;
+          natural cutoff exists ale NIE eliminuje quadratic remainder
+
+D2 (de Sitter SO(4,1) symmetry):
+  STATUS: 🟡 PARTIAL — symmetry forces ⟨φ²(x)⟩ = const (homogeneity); NIE forces = 0;
+          partial structural constraint (best of 5 paths)
+
+D3 (Bunch-Davies vacuum):
+  STATUS: ❌ OBSTRUCTED — explicit calculation: ⟨(δφ)²⟩_BD ≈ 8.00e-66 eV²
+          (small ale positive); tiny value consistent z Λ_eff > 0 (NIE = 0)
+
+D4 (Wheeler-DeWitt mini-superspace):
+  STATUS: ❌ OBSTRUCTED — Hamiltonian constraint H_Ψ = 0 is GLOBAL ale constrains
+          WAVEFUNCTION, NIE specific ⟨φ²⟩; equivalent do L07 gauge-fixing interpretation
+
+D5 (closed-FRW S³ topology):
+  STATUS: ❌ OBSTRUCTED — π₃(S³) trivial dla real scalar φ ∈ ℝ; topology adds nothing
+          structurally; closed-FRW marginally observ-allowed ale fails strukturalnie
+
+SYNTHESIS:
+  - NO sub-path gives ZS2 quadratic = 0 strukturalnie (A− NIE achieved)
+  - D2 provides PARTIAL constraint (homogeneity) — best of 5 paths
+  - 4 explicit OBSTRUCTION PROOFS dla nonlokalność spacelike full derivation
+  - ZS2 gauge-fixing character (od L07 Phase 1) REMAINS canonical disposition
+  - Cosmological constant problem disposition: clarified strukturalnie ale unchanged numerically
+
+VERDICT: B+ PARTIAL (D2 partial constraint; D1+D3+D4+D5 obstructed; ZS2 gauge-fixing canonical)
+
+Pre-registered B+/HALT-B expectation: B+ achieved cleanly via D2 partial.
+NIE A− (would require full ZS2 quadratic = 0 strukturalnie — not found).
+NIE HALT-B (D2 provides real partial constraint, NIE complete obstruction).
+

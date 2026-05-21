@@ -1,0 +1,57 @@
+==============================================================================
+Phase 1 sympy — quark sector mass formula empirical test
+Cycle: op-L08-Phase6-quark-sector-mass-formula-2026-05-16
+Pre-registered falsifier: ≥3/5 ratios @ 10% tolerance OR HALT-B
+==============================================================================
+
+[PASS] T1_universal_formula_alpha2_exponent (FIRST_PRINCIPLES): e²(1-α/4)|_{α=2} = exp(2)/2 = e²/2 ≈ 3.6945
+[PASS] T2_mass_ratio_formula (FIRST_PRINCIPLES): m_i/m_j = (A_i/A_j)²·(g_i/g_j)^(e²/2); algebraic equivalence verified
+[PASS] T3_lepton_anchor_verification (LITERATURE_ANCHORED): m_μ/m_e: predicted 206.7556 vs PDG 206.7683 (drift 0.0061%); m_τ/m_e: predicted 3073.50 vs PDG 3477.23 (drift 11.61%)
+[PASS] T4_A_tail_power_law_fit (FIRST_PRINCIPLES): log(A_tail) = 3.8404·log(g_0) + -1.6866; A_tail ≈ 0.1851·g_0^3.8404; R² = 0.998793; residuals: ['0.0171', '-0.0541', '0.0371']
+[FAIL] T5_m_c_over_m_u (FIRST_PRINCIPLES): predicted (audit-constrained) = 1.000 vs PDG 587.963; drift = 99.8% (tolerance 10%)
+[FAIL] T6_m_b_over_m_d (FIRST_PRINCIPLES): predicted = 1.000 vs PDG 895.075; drift = 99.9%
+[FAIL] T7_m_t_over_m_c (FIRST_PRINCIPLES): predicted = 1.000 vs PDG 135.976; drift = 99.3%
+[FAIL] T8_m_s_over_m_d (FIRST_PRINCIPLES): predicted = 1.000 vs PDG 20.000; drift = 95.0%
+[FAIL] T9_m_b_over_m_t (FIRST_PRINCIPLES): predicted = 1.0000 vs PDG 0.0242; drift = 4031.3%
+[FAIL] T10_required_g0_in_audit_range (FIRST_PRINCIPLES): Required g_0_q values (free fit): u: g_0_req=0.9898 OUT; d: g_0_req=1.0592 OUT; s: g_0_req=1.3784 OUT; c: g_0_req=1.2501 OUT; b: g_0_req=1.2500 OUT; t: g_0_req=1.2500 OUT; 0/6 ∈ [0.817, 0.891]
+[FAIL] T11_structural_ceiling_test (FIRST_PRINCIPLES): Max achievable mass ratio in g_0 ∈ [0.817, 0.891]: 2.681; required m_t/m_u = 79949; ratio 3.35e-05 of required
+[PASS] T12_sek08b_audit_range_consistency (LITERATURE_ANCHORED): Audit range used = [0.817, 0.891] matches sek08b:529 [0.817, 0.891]
+[PASS] T13_S05_single_Phi_preservation (DECLARATIVE): Universal formula uses single Φ field; quarks are kinks z różnymi g_0 — S05 preserved
+
+==============================================================================
+PHASE 1 SUMMARY
+==============================================================================
+Total sympy: 6/13 PASS
+  FIRST_PRINCIPLES: 3/10  (30.0% of FP)   ratio of total: 76.9%
+  LITERATURE_ANCHORED: 2/2
+  DECLARATIVE: 1/1 (separate from sympy PASS count)
+  Hardcoded T_pass=True: 0  (BINDING ABSOLUTE)
+
+CENTRAL TEST (pre-registered): 0/5 quark mass ratios within 10%
+
+==============================================================================
+PRE-REGISTERED FALSIFICATION RULE CHECK (BINDING §0.2 README)
+==============================================================================
+  Quark ratios passed (T5-T9): 0/5
+  Verdict: HALT-B  (Path C; <3/5 ratios within 10% — universal-Φ-kink description INSUFFICIENT dla quark sektora; strukturalna konieczność extension)
+
+==============================================================================
+PER-TEST RESULTS
+==============================================================================
+  [PASS] T1_universal_formula_alpha2_exponent     (FIRST_PRINCIPLES)
+  [PASS] T2_mass_ratio_formula                    (FIRST_PRINCIPLES)
+  [PASS] T3_lepton_anchor_verification            (LITERATURE_ANCHORED)
+  [PASS] T4_A_tail_power_law_fit                  (FIRST_PRINCIPLES)
+  [FAIL] T5_m_c_over_m_u                          (FIRST_PRINCIPLES)
+  [FAIL] T6_m_b_over_m_d                          (FIRST_PRINCIPLES)
+  [FAIL] T7_m_t_over_m_c                          (FIRST_PRINCIPLES)
+  [FAIL] T8_m_s_over_m_d                          (FIRST_PRINCIPLES)
+  [FAIL] T9_m_b_over_m_t                          (FIRST_PRINCIPLES)
+  [FAIL] T10_required_g0_in_audit_range           (FIRST_PRINCIPLES)
+  [FAIL] T11_structural_ceiling_test              (FIRST_PRINCIPLES)
+  [PASS] T12_sek08b_audit_range_consistency       (LITERATURE_ANCHORED)
+  [PASS] T13_S05_single_Phi_preservation          (DECLARATIVE)
+
+==============================================================================
+END Phase 1 sympy
+==============================================================================

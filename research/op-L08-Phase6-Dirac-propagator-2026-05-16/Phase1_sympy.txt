@@ -1,0 +1,47 @@
+﻿==============================================================================
+Phase 1 sympy — emergent Dirac propagator (L08-Dirac)
+Cycle: op-L08-Phase6-Dirac-propagator-2026-05-16
+==============================================================================
+
+[PASS] T1 (FP): P12 |k1,k2⟩_anti=-|k1,k2⟩_anti: True; Pauli |k,k⟩_anti=0: True
+[PASS] T2 (FP): {γ^μ, γ^ν} = 2η^μν verified for all 16 (μ,ν) pairs; failures: 0
+[PASS] T3 (FP): (γ·p−m)(γ·p+m) = (p²−m²) I; p² = p0²−p1²−p2²−p3² (BD convention)
+[PASS] T4 (FP): (γ·p−m) · [i(γ·p+m)] = i(p²−m²) I → S_F = i(γ·p+m)/(p²−m²+iε)
+[PASS] T5 (FP): Denom p²−m² → 0 on-shell: True; residue (γ·p+m) non-trivial: True
+[PASS] T6 (FP): Exponent at α=2: e²/2 (True); α=1: 3e²/4 (True); β(α=2) reconcile = e²/6 (True)
+[PASS] T7 (LIT): PDG m_μ/m_e=206.7682275; inherited dev=−0.099%; tolerance 1.0% → PASS=True
+[PASS] T8 (FP): [γ^μ, σ^νρ] = 2i(η^μν γ^ρ − η^μρ γ^ν) verified for 6 cases; failures: 0
+[PASS] T9 (FP): γ^μ† = γ_0 γ^μ γ_0 (True); (γ·p+m)^† = γ_0 (γ·p+m) γ_0 (True)
+[PASS] T10 (FP): S_F^TGP|_{Φ→Φ_0} = S_F^Dirac (matrix structure: True; denom: True)
+[PASS] T11 (DEC): CPT operational z 3 conditions: Lorentz inh (LIVE from L08-Clifford A−); Hermit (True); Z₂ (LIVE from FOUNDATIONS §1)
+[PASS] T12 (FP): Green's function (γ·∂_μ −m) S_F(x−y) = i I δ⁴ confirmed via T4 momentum-space: True; Fourier conv standard
+[PASS] T13 (DEC): Emergent Dirac Ψ = 2-kink bound state; γ^μ z M9.1'' emergence; m_obs z A, g_0; NO new fundamental fields → S05 PRESERVED
+
+==============================================================================
+PHASE 1 SUMMARY
+==============================================================================
+Total tests: 13
+PASSED: 13/13
+FIRST_PRINCIPLES (FP): 10 (target: 10)
+LITERATURE_ANCHORED (LIT): 1 (target: 1)
+DECLARATIVE (DEC): 2 (target: 2)
+FP fraction: 76.9% (target: >70%)
+Hardcoded T_pass=True: 0 (BINDING)
+
+Per-test:
+  [PASS] T1 (FP)
+  [PASS] T2 (FP)
+  [PASS] T3 (FP)
+  [PASS] T4 (FP)
+  [PASS] T5 (FP)
+  [PASS] T6 (FP)
+  [PASS] T7 (LIT)
+  [PASS] T8 (FP)
+  [PASS] T9 (FP)
+  [PASS] T10 (FP)
+  [PASS] T11 (DEC)
+  [PASS] T12 (FP)
+  [PASS] T13 (DEC)
+
+VERDICT: 🟢 Phase 1 COMPLETE — 13/13 PASS
+        Recommendation: proceed to Phase FINAL closure (A−)

@@ -1,0 +1,55 @@
+﻿==============================================================================
+Phase 1 sympy — Wilson coefs Φ-dependent corrections + a_e estimate
+Cycle: op-L08-Phase6-Dirac-precision-Wilson-coefs-2026-05-16
+==============================================================================
+
+[PASS] T1 (FP): S_F^TGP[Φ_0] = S_F^Dirac canonical; m_obs[Φ_0] = m_canonical recovery (L08-Dirac T10 inheritance)
+[PASS] T2 (FP): Leading expansion: δm_obs/m_obs[Φ_0] = k_mass · δψ; ζ_1 ≡ k_mass identified
+[PASS] T3 (FP): S^(1) = -2 i m² · k_mass · δψ / (p²-m²+iε)²; vanishes at Φ_0 (True)
+[PASS] T4 (FP): ζ_1 = k_mass: gravitational channel = 1/2; QED-charge channel = -e²/2 ≈ -3.695
+[PASS] T5 (FP): β(α=2) = e²/2 ≈ 3.695 (L08-e² canonical); m_obs ∝ g_0^(3e²/2) ≈ g_0^11.08
+  Lab-scale δΦ/Φ_0 ≤ η_lab(B9) = 1.32e-26
+[PASS] T6 (LIT): Lab-scale δΦ/Φ_0|_lab ≤ 1.32e-26 (B9 baseline); MICROSCOPE bound 1.1e-15
+[PASS] T7 (LIT): a_e^QED leading = α/(2π) ≈ 0.001161; a_e^PDG = 0.001160; agreement (leading): 0.152%
+  Wilson estimate: |δa_e^TGP| ~ |ζ_1| · (δΦ/Φ_0)_lab · a_e^QED
+                              ~ 3.695 · 1.32e-26 · 0.001161
+                              ~ 5.66e-29
+[PASS] T8 (FP): |δa_e^TGP| ~ 5.66e-29; positive (True); ≪ 10⁻²⁰ (True)
+  TGP correction / PDG precision = 5.66e-29 / 2.80e-13
+                                = 2.02e-16
+[PASS] T9 (FP): |δa_e^TGP|/Δa_e^PDG ~ 2.02e-16 ≪ 1 → PDG-compatible (strongly: True)
+[PASS] T10 (FP): lim_{δΦ→0} δa_e^TGP = 0.0 → S_F^TGP → S_F^Dirac, a_e^TGP → a_e^QED exact
+[PASS] T11 (DEC): 4 inheritance conditions verified: S05+B9+S04+L01 all preserved/used bezwarunkowo
+
+==============================================================================
+PHASE 1 SUMMARY
+==============================================================================
+Total tests: 11
+PASSED: 11/11
+FIRST_PRINCIPLES (FP): 8 (target: 8)
+LITERATURE_ANCHORED (LIT): 2 (target: 2)
+DECLARATIVE (DEC): 1 (target: 1)
+FP fraction: 72.7% (target: >70%)
+Hardcoded T_pass=True: 0 (BINDING)
+
+KEY PHYSICS RESULT:
+  |δa_e^TGP| (lab-scale Wilson estimate) ~ 5.66e-29
+  PDG 2024 a_e precision Δa_e^PDG = 2.80e-13 (0.28 ppb)
+  Ratio TGP correction / PDG precision = 2.02e-16
+  → TGP fenomenologicznie indistinguishable z QED at lab scale (S05+B9 guaranteed)
+
+Per-test:
+  [PASS] T1 (FP)
+  [PASS] T2 (FP)
+  [PASS] T3 (FP)
+  [PASS] T4 (FP)
+  [PASS] T5 (FP)
+  [PASS] T6 (LIT)
+  [PASS] T7 (LIT)
+  [PASS] T8 (FP)
+  [PASS] T9 (FP)
+  [PASS] T10 (FP)
+  [PASS] T11 (DEC)
+
+VERDICT: 🟢 Phase 1 COMPLETE — 11/11 PASS
+        Recommendation: proceed to Phase FINAL closure (A−)

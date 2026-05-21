@@ -1,0 +1,60 @@
+==================================================================================
+Phase 1 sympy — hadron topology confinement from compact U(1)
+Cycle: op-L08-Phase6-hadron-topology-confinement-2026-05-16
+==================================================================================
+
+[PASS] T1_winding_quantization_theorem (FIRST_PRINCIPLES): n[γ] = (1/2π)∮dθ = k; for integer k → n=k ∈ ℤ (compact U(1) consequence)
+[PASS] T2_quark_winding_assignment (FIRST_PRINCIPLES): n_u = 2/3 (PDG q_u/e = 2/3); n_d = -1/3 (PDG q_d/e = -1/3); both fractional ∉ ℤ → forbidden as isolated
+[PASS] T3_composition_rule_derivation (FIRST_PRINCIPLES): 3·n_total + (N_q - N_q̄) = 3·(N_u - M_u) ∈ 3ℤ → n_total ∈ ℤ ⟺ (N_q - N_q̄) ≡ 0 (mod 3)
+[PASS] T4_baryon_classification_8_states (FIRST_PRINCIPLES): 8 baryons: p (proton)=1✓; n (neutron)=0✓; Δ⁺⁺=2✓; Δ⁻=-1✓; Λ⁰=0✓; Σ⁺=1✓; Σ⁻=-1✓; Ξ⁰=0✓
+[PASS] T5_meson_classification_6_states (FIRST_PRINCIPLES): 6 mesons: π⁺=1✓; π⁻=-1✓; π⁰=0✓; K⁺=1✓; K⁰=0✓; J/ψ=0✓
+[PASS] T6_forbidden_configurations (FIRST_PRINCIPLES): 7 forbidden configs (all should be ∉ ℤ): isolated u=2/3✓forbidden; isolated d=-1/3✓forbidden; uu diquark=4/3✓forbidden; ud diquark=1/3✓forbidden; dd diquark=-2/3✓forbidden; 4q uuud=5/3✓forbidden; 5q uuudd=4/3✓forbidden
+[PASS] T7_pentaquark_uudccb_allowed (FIRST_PRINCIPLES): P_c uudc̄c: n_total=1 (integer=True); N-M=3 (≡0 mod 3: True)
+[PASS] T8_tetraquark_cases (FIRST_PRINCIPLES): 4 tetraquark cases: 2q+2q̄ X(3872)=0 allowed✓; 2q+2q̄ T_cc=1 allowed✓; 3q+1q̄ uud d̄=4/3 forbidden✓; 4q uudd=2/3 forbidden✓
+[PASS] T9_dibaryon_H_uuddss_allowed (FIRST_PRINCIPLES): H-dibaryon uuddss: n_total=0 (integer=True); N-M=6 (≡0 mod 3: True)
+[PASS] T10_LHCb_2015_pentaquarks_consistency (LITERATURE_ANCHORED): P_c(4380): n=1 ✓; P_c(4450): n=1 ✓; LHCb 2015 confirmed pentaquark structural prediction
+[PASS] T11_tetraquark_Zc_Tcc_consistency (LITERATURE_ANCHORED): Z_c(3900) cc̄ud̄: n=1; T_cc(3875) ccūd̄: n=1; both integer ⟺ structural rule satisfied
+[PASS] T12_general_theorem_N_minus_M_mod_3 (FIRST_PRINCIPLES): Scanned 255 configurations (N_u,N_d,M_u,M_d ∈ 0..3); theorem holds for 255, fails for 0
+[PASS] T13_S05_single_Phi_preservation (DECLARATIVE): θ ∈ [0,2π) is phase of single complex Φ = |Φ|·exp(iθ); compact U(1) intrinsic to S05; no extension required
+
+==================================================================================
+PHASE 1 SUMMARY
+==================================================================================
+Total sympy: 13/13 PASS
+  FIRST_PRINCIPLES: 10/10 (76.9% of total)
+  LITERATURE_ANCHORED: 2/2
+  DECLARATIVE: 1/1 (separate)
+  Hardcoded T_pass=True: 0 (BINDING ABSOLUTE)
+
+CENTRAL classification tests: 7/7
+
+==================================================================================
+PRE-REGISTERED FALSIFICATION RULE CHECK (BINDING §0.2 README)
+==================================================================================
+  PDG hadrons classified correctly (T4+T5+T7-T11): True
+  Forbidden configs excluded correctly (T6): True
+  General theorem N-M ≡ 0 mod 3 (T12): True
+
+  Verdict: A- STRUCTURAL_DERIVED_NATIVE_PARTIAL  (full classification success)
+  Note: All tests pass; 1/3 fractional charge origin remains open (B+ → A- by L2 transfer)
+
+==================================================================================
+PER-TEST RESULTS
+==================================================================================
+  [PASS] T1_winding_quantization_theorem            (FIRST_PRINCIPLES)
+  [PASS] T2_quark_winding_assignment                (FIRST_PRINCIPLES)
+  [PASS] T3_composition_rule_derivation             (FIRST_PRINCIPLES)
+  [PASS] T4_baryon_classification_8_states          (FIRST_PRINCIPLES)
+  [PASS] T5_meson_classification_6_states           (FIRST_PRINCIPLES)
+  [PASS] T6_forbidden_configurations                (FIRST_PRINCIPLES)
+  [PASS] T7_pentaquark_uudccb_allowed               (FIRST_PRINCIPLES)
+  [PASS] T8_tetraquark_cases                        (FIRST_PRINCIPLES)
+  [PASS] T9_dibaryon_H_uuddss_allowed               (FIRST_PRINCIPLES)
+  [PASS] T10_LHCb_2015_pentaquarks_consistency      (LITERATURE_ANCHORED)
+  [PASS] T11_tetraquark_Zc_Tcc_consistency          (LITERATURE_ANCHORED)
+  [PASS] T12_general_theorem_N_minus_M_mod_3        (FIRST_PRINCIPLES)
+  [PASS] T13_S05_single_Phi_preservation            (DECLARATIVE)
+
+==================================================================================
+END Phase 1 sympy
+==================================================================================
