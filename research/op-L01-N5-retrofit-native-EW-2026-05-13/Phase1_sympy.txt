@@ -1,0 +1,33 @@
+[  T1] [    FIRST_PRINCIPLES] [PASS] SM gauge β-coefficients: b_2 = 19/6 (SU(2) AF), b_1 = -41/10 (U(1) non-AF)
+       → b_2 = 19/6 (AF), b_1 = -41/10 (non-AF, Landau pole high but finite)
+[  T2] [    FIRST_PRINCIPLES] [PASS] Weinberg angle: sin²θ_W = g'²/(g²+g'²); verify trig identity sin²θ = tan²θ/(1+tan²θ)
+       → sin²θ_W - tan²θ/(1+tan²θ) = 0
+[  T3] [    FIRST_PRINCIPLES] [PASS] Gauge boson masses: M_W²/M_Z² = cos²θ_W (Sirlin relation, tree level)
+       → M_W²/M_Z² - cos²θ_W = 0; relation M_W/M_Z = cos θ_W ≈ 0.882
+[  T4] [    FIRST_PRINCIPLES] [PASS] Gauge running: d(1/g²)/dlogμ = b/(8π²); SU(2) b_2 > 0 → g shrinks; U(1) b_1 < 0 → g' grows
+       → d(1/g²)/dlogμ = 19/(48*pi**2); expected b_2/(8π²) = 19/(48*pi**2)
+[  T5] [    FIRST_PRINCIPLES] [PASS] Sphaleron rate ~ exp(-E_sph/T) z E_sph ~ 4πv/g; rate exponentially suppressed dla T < T_EW (BAU freeze-out)
+       → d(-E_sph/T)/dT = 4*pi*v/(T**2*g_2); positive → suppression grows as T decreases
+[  T6] [    FIRST_PRINCIPLES] [PASS] EW gauge sektor couples to Φ via g_eff (NIE direct Φ-W/Z vertex per S05)
+       → δT_EW/δΦ = DW_sq*dg_dPhi; structural coupling only
+[  T7] [ LITERATURE_ANCHORED] [PASS] sin²θ_W(M_Z) = 0.23121 ± 0.00004 (PDG 2024 MS-bar)
+       → sin²θ_W PDG = 0.23121; on-shell derived from M_W/M_Z = 0.2232 (scheme dependence ~3%)
+[  T8] [ LITERATURE_ANCHORED] [PASS] m_W = 80.369 ± 0.013 GeV (PDG 2024); η_B = 6.13·10⁻¹⁰ (Planck 2018) — anchored measurements
+       → m_W = 80.369 GeV, η_B = 6.130e-10
+
+--- Structural declarations ---
+
+[ T9] [DECLARATIVE         ] S05 single-Φ + ax:metric-coupling: EW gauge sektor (W±, Z, γ) couples to Φ wyłącznie via g_eff metric. Sphaleron rate non-perturbative computation deferred (lattice). BAU explicit CP-violation source beyond TGP retrofit scope. EW phase transition type (SM crossover NIE first-order) preserved by TGP's universal g_eff.
+
+======================================================================
+PHASE 1 SYMPY RESULTS — N5-EW SUMMARY
+======================================================================
+
+Total: 8
+PASS: 8/8
+FIRST_PRINCIPLES: 6/8 (75.0%)
+LITERATURE_ANCHORED: 2/8
+DECLARATIVE: 1
+Hardcoded True: 0
+
+>>> ALL TESTS PASS — Phase 1 closure GATE OPEN <<<

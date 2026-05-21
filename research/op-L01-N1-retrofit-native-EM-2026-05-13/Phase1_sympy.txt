@@ -1,0 +1,42 @@
+[  T1] [    FIRST_PRINCIPLES] [PASS] F_μν F^μν Lorentz scalar = 2(B² - E²/c²) (standard EM invariant)
+       → F_μν F^μν symbolic = 2*(-E_x**2 - E_y**2 - E_z**2 + c**2*(B_x**2 + B_y**2 + B_z**2))/c**2; expected 2(B² - E²/c²)
+[  T2] [    FIRST_PRINCIPLES] [PASS] 1-loop β_QED = g³ · (4/3 N_f) / (16π²); RG-consistent solving d(1/g²)/dlog(μ) = -b_1/(8π²)
+       → β_QED = N_f*g**3/(12*pi**2); b_1 = 4*N_f/3; RG check: d(1/g²)/dlog(μ) = -b_1/(8π²) = -N_f/(6*pi**2)
+[  T3] [    FIRST_PRINCIPLES] [PASS] Riegert trace anomaly: T^μ_μ_EM = (β/(2g)) F² + a·G + c·W² z a_QED < 0, c_QED > 0
+       → a_QED = -N_f/(360*pi**2), c_QED = N_f/(40*pi**2); T^μ_μ structure = F_squared*N_f*g**2/(24*pi**2) - G_GB*N_f/(360*pi**2) + N_f*W_squared/(40*pi**2)
+[  T4] [    FIRST_PRINCIPLES] [PASS] Theorem 2.1: dim-4 (F²) and dim-6 ((∂Φ)²·F²/Λ²) operator classes are linearly independent (∩=∅)
+       → α·F² + β·(∂Φ)²·F²/Λ²: coefficient sep verified; α=0 AND β=0 required → disjoint
+[  T5] [    FIRST_PRINCIPLES] [PASS] Pattern 2.1: T^μ_μ_EM linearization in δΦ — coefficient ∝ β/g · F² · (∂g/∂Φ)|_{Φ_0}
+       → ∂(δT)/∂(δΦ) = -F2_eta*N_f*dg_dPhi*g**2/(6*pi**2); expected -2(β/g)·F²·(∂g/∂Φ)
+[  T6] [    FIRST_PRINCIPLES] [PASS] GW170817 |Δc/c| ~ |⟨T^μ_μ_EM⟩|/ε_vac symbolic OOM (dimensionless ratio of trace anomaly to vacuum energy density)
+       → Δc/c symbolic = T_trace_EM_typical/epsilon_vacuum; dimensional check: both [E·L⁻³] → ratio dimensionless
+[  T7] [ LITERATURE_ANCHORED] [PASS] GW170817 |Δc/c| ≤ 7·10⁻¹⁶ (LIGO-Virgo + Fermi-GBM 2017, Abbott+2017 ApJL 848 L13)
+       → computed Δc/c = 4.226e-22; bound 7e-16
+[  T8] [ LITERATURE_ANCHORED] [PASS] MICROSCOPE η ≤ 1.1·10⁻¹⁵ (Touboul+2017 PRL 119, 231101)
+       → η_MICROSCOPE_bound = 1.100e-15; TGP prediction η_TGP_EM_quantum = 0
+[  T9] [    FIRST_PRINCIPLES] [PASS] η_TGP_EM_quantum = 0 strukturalnie z S05 + ax:metric-coupling (universal g_eff → composition-independent acceleration)
+       → η_TGP = 0 (= 0 strukturalnie); bound 1.100e-15; passes ∞-OOM margin
+
+--- Structural declarations (NOT counted w PASS total) ---
+
+[T10] [DECLARATIVE         ] S05 single-Φ + ax:metric-coupling preservation: ALL matter (including EM photons) couples wyłącznie przez g_eff[Φ]. NIE introduces additional Φ-photon vertex.
+[T11] [DECLARATIVE         ] Scope: B << B_QED ≈ 4.4·10⁹ T (perturbative regime). Non-perturbative magnetar (PSR J1745-2900 surface B ~ 10¹⁴ T) OUTSIDE niniejszego scope (separate cycle).
+
+======================================================================
+PHASE 1 SYMPY RESULTS — SUMMARY
+======================================================================
+
+Total sympy tests: 9
+PASS: 9/9 (100.0%)
+FIRST_PRINCIPLES: 7/9 (77.8%)
+LITERATURE_ANCHORED: 2/9 (22.2%)
+Hardcoded `T_pass = True`: 0 (vs predecessor 11/16)
+DECLARATIVE (separate): 2
+Non-trivial: 100%
+
+vs predecessor (D-ALGEBRAIC_MIMICRY):
+  Predecessor N1 (2026-05-11): 0 FP + 11/16 TAUTOLOGY+HARDCODED + 5 LIT
+  This retrofit (2026-05-13):  7 FP + 0 hardcoded + 2 LIT
+  Delta: +7pp FP, -11pp hardcoded
+
+>>> ALL TESTS PASS — Phase 1 closure GATE OPEN <<<

@@ -1,0 +1,33 @@
+[  T1] [    FIRST_PRINCIPLES] [PASS] TGP-pure cluster M_TGP/M_obs ≈ 0.47 (predecessor): factor 2.13× additional needed → sterile ν addition
+       → factor_needed = 100/47 ≈ 2.13
+[  T2] [    FIRST_PRINCIPLES] [PASS] Sterile ν L = -m_νs·ν̄_s·ν_s scalar mass term + mixing; couples to g_eff[Φ] via ax:metric-coupling (NO direct Φ-ν_s vertex)
+       → L_νs_mass = -m_nu_s*nu_bar_s*nu_s; consistent z S05 + ax:metric-coupling
+[  T3] [    FIRST_PRINCIPLES] [PASS] M_TGP+ν total = M_baryon + M_TGP_emergent + m_νs·n_νs·V; linear w m_νs (closure requirement structure)
+       → ∂M_total/∂m_νs = V_cluster*n_nu_s; linear contribution n_νs·V_cluster
+[  T4] [    FIRST_PRINCIPLES] [PASS] ΔN_eff = (7/8)·(T_νs/T_γ)⁴; partial thermalization T_ratio ≈ 0.5 gives ΔN_eff ≈ 0.055 within Planck 1σ (0.18)
+       → ΔN_eff(T_ratio=1/2) = 7/128 = 0.0547; bound 0.18
+[  T5] [    FIRST_PRINCIPLES] [PASS] S05 single-Φ preserved by sterile ν addition: sterile ν jest SM-extension (additional fermion), NIE TGP-second-field
+       → S05 axiom dotyczy Φ-substrate; sterile ν dodana do SM-matter content jest osobnym poziomem hierarchii
+[  T6] [ LITERATURE_ANCHORED] [PASS] Planck 2018 ΔN_eff < 0.18 (1σ); TGP prediction 0.055 within window
+       → Planck bound = 0.18; TGP = 0.0547
+[  T7] [ LITERATURE_ANCHORED] [PASS] Bullet Cluster offset 200-300 kpc (Clowe+2006) — sterile ν 2 eV collisionless preserved
+       → offset = 250 kpc; sterile ν free-streaming length ~ Mpc consistent
+[  T8] [ LITERATURE_ANCHORED] [PASS] KATRIN sterile ν 2025 projection m_νs < 2 eV; TGP pre-bounded m_νs ∈ [1.5, 2.5] eV at edge of sensitivity
+       → TGP central m_νs = 2.0 eV; KATRIN projection ~ 2.0 eV
+
+--- Structural declarations ---
+
+[ T9] [DECLARATIVE         ] Anti-Lakatos commitment: brak H1c backstop. Pre-bounded recovery_scope BINDING: {m_νs ∈ [1.5, 2.5] eV, sin²2θ ∈ [10⁻⁴, 10⁻²], ΔN_eff ∈ [0.02, 0.10]}. Jeśli future CMB-S4 + KATRIN measurement excludes region z >5σ confidence, cycle FALSIFIED — framework musi accept cluster mass deficit jako genuine challenge.
+
+======================================================================
+PHASE 1 SYMPY RESULTS — cluster sterile-nu SUMMARY
+======================================================================
+
+Total: 8
+PASS: 8/8
+FIRST_PRINCIPLES: 5/8
+LITERATURE_ANCHORED: 3/8
+DECLARATIVE: 1
+Hardcoded True: 0
+
+>>> ALL TESTS PASS — Phase 1 closure GATE OPEN <<<

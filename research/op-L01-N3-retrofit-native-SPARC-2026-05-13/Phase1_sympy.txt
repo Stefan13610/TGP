@@ -1,0 +1,50 @@
+[ T1a] [    FIRST_PRINCIPLES] [PASS] 4-velocity normalization u^μ u_μ = -c² (mostly-plus) holds
+       → u^μ u_μ (c-scaled) = -1 (expected -1) → diff = 0
+[ T1b] [    FIRST_PRINCIPLES] [PASS] Static fluid (v=0): T_00 = ρ·c² (energy density)
+       → T_00(v=0) = c**2*rho (expected ρ·c²)
+[  T2] [    FIRST_PRINCIPLES] [PASS] Trace T^μ_μ = -ρ·c² + 3p (general perfect fluid in mostly-plus)
+       → T^μ_μ symbolic = -c**2*rho + 3*p; expected -ρc²+3p → diff = 0
+[ T3a] [    FIRST_PRINCIPLES] [PASS] Dust limit: T^μ_μ_dust = -ρ·c² (v-independent EXACT)
+       → T^μ_μ_dust = -c**2*rho; expected -ρc²
+[ T3b] [    FIRST_PRINCIPLES] [PASS] Dust limit: ρ_TGP ≡ -T^μ_μ/c² = ρ_rest EXACT
+       → ρ_TGP_dust = rho; expected ρ
+[ T4a] [    FIRST_PRINCIPLES] [PASS] Lorentz boost u^μ z velocity w=v → fluid rest frame u'^μ = (1,0,0,0)
+       → u'^μ(w=v) = [1, 0, 0, 0]
+[ T4b] [    FIRST_PRINCIPLES] [PASS] T^μ_μ Lorentz invariant: T'^μ_μ (rest) = T^μ_μ (boosted)
+       → T'^μ_μ (rest) = -c**2*rho + 3*p; T^μ_μ (boosted) = -c**2*rho + 3*p; diff = 0
+[  T5] [    FIRST_PRINCIPLES] [PASS] Non-rel expansion: ρ_rest = ρ_local · (1 - v²/c²) + O(v⁴/c⁴) — z γ⁻² (correct relativistic relationship)
+       → ρ_rest series = rho_local - rho_local*v**2/c**2; expected ρ_local·(1 - v²/c²)
+[  T6] [ LITERATURE_ANCHORED] [PASS] SPARC stars v=200 km/s: v²/c² < 10⁻⁵ (well below 1% target)
+       → v²/c² = 10000000000/22468879468420441 ≈ 4.451e-07
+[  T7] [ LITERATURE_ANCHORED] [PASS] HI gas v_thermal=1 km/s: v²/c² < 10⁻¹⁰ (utterly negligible)
+       → v²/c² = 250000/22468879468420441 ≈ 1.113e-11
+[  T8] [    FIRST_PRINCIPLES] [PASS] ax:metric-coupling consistency: T_μν_dust via δS_mat/δg^μν = perfect fluid form
+       → T_perfect - T_axiom = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]] (expected zero matrix)
+
+--- Structural declarations (NOT counted w PASS total) ---
+
+[ T9] [DECLARATIVE         ] S05 single-Φ axiom preserved: ax:metric-coupling implies all matter couples to single g_eff[Φ] (NIE multiple gravitational fields). ρ_baryon (matter sektor) i g_eff[Φ̄] (gravitational sektor) jako separable sektory — NIE introduces second matter field.
+[T10] [DECLARATIVE         ] Scope: SPARC galactic-disk regime (r ~ kpc, v ~ 200 km/s). Cluster-scale (Mpc, ~σ_v ~ 1000 km/s) OUTSIDE niniejszego scope per cluster cycle EARLY_HALT_HONEST precedent (op-cluster-mass-deficit-resolution-2026-05-11). Near-SMBH (r ~ AU, v → c) outside SPARC database.
+
+======================================================================
+PHASE 1 SYMPY RESULTS — SUMMARY
+======================================================================
+
+Total sympy tests: 11
+PASS: 11/11 (100.0%)
+FIRST_PRINCIPLES: 9/11 (81.8%)
+LITERATURE_ANCHORED: 2/11 (18.2%)
+Hardcoded `T_pass = True`: 0 (vs predecessor 5/8)
+DECLARATIVE (separate): 2
+Non-trivial: 100% (every test has explicit symbolic content)
+
+Substance metrics vs predecessor:
+  Predecessor N3 (2026-05-11): 5 hardcoded True + 2 unit arithmetic + 1 trivial subst
+  This retrofit (2026-05-13):  9 FIRST_PRINCIPLES + 2 LIT-anchored + 0 hardcoded
+
+Key substantive correction caught (T5):
+  Predecessor used (1 - v²/(2c²)) for ρ_rest correction.
+  First-principles γ⁻² expansion gives (1 - v²/c²) at O(v²/c²) leading.
+  Factor-2 error fixed; correct relativistic relationship recovered.
+
+>>> ALL TESTS PASS — Phase 1 closure GATE OPEN <<<

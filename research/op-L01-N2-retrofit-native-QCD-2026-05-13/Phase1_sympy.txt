@@ -1,0 +1,38 @@
+[  T1] [    FIRST_PRINCIPLES] [PASS] β_QCD asymptotic freedom: SM (N_c=3, N_f=6) gives b_0 = 7 > 0 → β_QCD = -7g³/(16π²) < 0
+       → b_0_SM = 7; β_QCD(g=1, SM) = -7/(16*pi**2) (negative ✓)
+[  T2] [    FIRST_PRINCIPLES] [PASS] T^μ_μ_QCD = (β/(2g_s))·Tr(G²) = -g_s²·b_0/(32π²) · G² (sign matches asymptotic freedom)
+       → T^μ_μ_QCD = G_munu_sq*g_s**2*(-11*N_c + 2*N_f)/(96*pi**2); expected -g_s²·b_0/(32π²)·G²
+[  T3] [    FIRST_PRINCIPLES] [PASS] Riegert anomaly signs: a_QCD < 0 (Euler), c_QCD > 0 (Weyl²) — z spin-1 gluon + fermion contributions
+       → sign(a_QCD) = -1, sign(c_QCD) = 1
+[  T4] [    FIRST_PRINCIPLES] [PASS] Pattern 2.1: T^μ_μ_QCD linearization in δΦ — coefficient ∝ (β/g_s)·G²·(∂g/∂Φ)
+       → ∂(δT_QCD)/∂(δΦ) = G_munu_sq*dg_dPhi_QCD*g_s**2*(11*N_c/3 - 2*N_f/3)/(8*pi**2); expected -2(β/g_s)·G²·(∂g/∂Φ)
+[  T5] [    FIRST_PRINCIPLES] [PASS] Asymptotic freedom: α_s(μ→∞) → 0 z β_QCD < 0 (RG-improved running)
+       → lim(μ→∞) α_s(μ) = 0 (expected 0)
+[  T6] [    FIRST_PRINCIPLES] [PASS] Λ_QCD = μ·exp(-2π/(b_0·α_s(μ))) RG-invariant at 1-loop (canonical Schwartz §23.6)
+       → Λ_QCD symbolic = mu*exp(-2*pi*(alpha_s_0*(11*N_c/3 - 2*N_f/3)*log(mu/mu_0)/(2*pi) + 1)/(alpha_s_0*(11*N_c/3 - 2*N_f/3))); RG-invariance follows z β_QCD 1-loop
+[  T7] [ LITERATURE_ANCHORED] [PASS] FLAG 2024 ⟨q̄q⟩^(2+1) = -(272 MeV)³ ≈ -0.020 GeV³ (chiral symmetry breaking)
+       → ⟨q̄q⟩ = -0.0201 GeV³ (-2.012e+07 MeV³)
+[  T8] [ LITERATURE_ANCHORED] [PASS] BBN D/H = 2.527·10⁻⁵ (Cooke+2018 QSO) — consistent z SBBN + Φ_eq(t_QCD→BBN) evolution
+       → D/H observed = 2.527e-05, SBBN bound = 3.000e-05
+
+--- Structural declarations (separate) ---
+
+[ T9] [DECLARATIVE         ] S05 single-Φ + ax:metric-coupling preservation: QCD quarks i gluons sprzęgają się z g_eff[Φ] przez standard QCD Lagrangian; NIE direct Φ-quark vertex. Q2 F1 verified: substrate vs hadron-sector decoupling at vacuum level.
+
+======================================================================
+PHASE 1 SYMPY RESULTS — N2-QCD SUMMARY
+======================================================================
+
+Total: 8
+PASS: 8/8
+FIRST_PRINCIPLES: 6/8 (75.0%)
+LITERATURE_ANCHORED: 2/8 (25.0%)
+Hardcoded True: 0 (vs predecessor: actual algebraic, but no FP)
+DECLARATIVE separate: 1
+Non-trivial: 100%
+
+vs predecessor (C-LIT-anchored):
+  Predecessor: 0 FP + algebraic with literature inputs
+  Retrofit: 6 FP + 2 LIT + 1 DEC
+
+>>> ALL TESTS PASS — Phase 1 closure GATE OPEN <<<
