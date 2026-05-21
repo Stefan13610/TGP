@@ -41,7 +41,38 @@ tgp_status:
 
 # L05 — wykładnik masy: k=4 vs p=5−α
 
-## Klasa: LUKA ONTOLOGICZNA / NIEJAWNY PIVOT • Priorytet: P2
+## 🟢 STATUS UPDATE 2026-05-16 — **CLOSED-RESOLVED A−**
+
+**Closure source:** [[../../research/op-L05-mass-exponent-k-alpha-d-2026-05-16/Phase_FINAL_close.md]]
+
+**Verdict:** STRUCTURAL_DERIVED_NATIVE (A−), 12/12 sympy PASS, 11 FP (91.7%), 6/6 P-requirements
+RESOLVED. Możliwość A constructively confirmed; Możliwości B i C eliminated.
+
+**Key analytical results:**
+- `k_full(α, d) = 4 + d(α-2)/2` — volumetric M_full z Derrick virial scaling
+- `σ_match(α, d) = 1 + (d-1)(α-2)/4` — core-tail matching A_tail ∝ A^σ_match
+- `k_obs(α, d=3) = 5 − α = p_crit_Sobolev(d=3) − α` — structural d=3 conformal critical
+
+**Reconciliation theorem:**
+- LP-4 "M ∝ A^4" = m_obs(α=1, d=3) = 4 (NOT k_full=5/2)
+- R3 "m_obs ∝ A_tail^(5-α)" = k_obs(α, d=3) z Sobolev p_crit structure
+- m_obs ≠ M_full operationally formalized (ADM-vs-Komara analog)
+
+**Audit Możliwości dispositioned:**
+- Możliwość A (LP-4 dotyczy M_full, R3 dotyczy m_obs; LP-4 niedoprecyzowane) — ✅ **CONFIRMED constructively**
+- Możliwość B (R3 fitting artifact) — ❌ ELIMINATED (Sobolev structural origin)
+- Możliwość C (LP-4 wrong) — ❌ ELIMINATED (LP-4 correct dla m_obs at α=1)
+
+**Downstream impact:**
+- audyt/PRIORITY_MATRIX klaster D L05 P2 OPEN → CLOSED-RESOLVED
+- audyt/L08 (kink fermion closure) — m_obs vs M_full distinction available dla emergent Dirac pole-mass
+- research/why_n3/CORRECTIONS_2026-05-01.md — analytical backbone added (m_obs ≠ M_full now derived)
+- research/mass_scaling_k4 — reinterpreted (LP-4 = m_obs at α=1, NOT M_full)
+- core/sek08b_ghost_resolution thm:B1'' — reinterpretation note recommended (specific to M_full)
+
+---
+
+## Klasa: LUKA ONTOLOGICZNA / NIEJAWNY PIVOT • Priorytet: ~~P2~~ **CLOSED-RESOLVED 2026-05-16**
 
 ## Diagnoza
 

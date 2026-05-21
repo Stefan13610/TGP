@@ -167,8 +167,8 @@ badawczy ~3–6 miesięcy.
 | [[L03_K_phi_stability/README.md]] | V''(1)=-γ<0 vs K(φ)=K_geo·φ⁴ |
 | [[L04_ODE_dualism_alpha/README.md]] | Dwie żywe formulacje (α=1 K=g² vs α=2 K=g⁴) |
 | [[L05_mass_exponent_drift/README.md]] | k=4 (LP-4) vs p=5-α (R3 2026-05-01) |
-| [[L06_axion_mass_locked/README.md]] | m_X "locked" 100 MeV — fenomenologia |
-| [[L07_zero_sum_axiom/README.md]] | **NEW (EXT-2):** ∫_Σ φ √h = 0 — aksjomat vs derywacja |
+| [[L06_axion_mass_locked/README.md]] | m_X "locked" 100 MeV — fenomenologia → **PARTIAL B+ 2026-05-16** (Paths A-D obstructed; Path E FREE PARAMETER strukturalnie verified; numerical anchor (M_Pl²·H_0)^(1/3) noted) via [[../research/op-L06-axion-mass-derivation-2026-05-16/]] |
+| [[L07_zero_sum_axiom/README.md]] | **NEW (EXT-2):** ∫_Σ φ √h = 0 — aksjomat vs derywacja → **PARTIAL B+ 2026-05-16** (Path A + Path D both investigated; ZS1 derived as Z₂-tożsamość; ZS2 gauge-fixing canonical solidified z 4 obstruction proofs) via [[../research/op-L07-zero-sum-Z2-derivation-2026-05-16/]] + [[../research/op-L07-Path-D-nonlocal-foundations-2026-05-16/]] |
 | [[L08_kink_fermion_closure/README.md]] | **NEW (EXT-4):** Phase 6+ why_n3 (kinki jako fermiony) |
 
 ### D — Liczbowy dryft (priorytet P3)

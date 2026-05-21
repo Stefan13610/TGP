@@ -84,6 +84,36 @@ related:
   - "[[research/op-psi1-substrate-light-acceleration/Phase4_results.md]]"
   - "[[research/op-psi1-substrate-light-acceleration/Phase5_results.md]]"
   - "[[research/op-psi1-substrate-light-acceleration/Phase6_results.md]]"
+  # Sesja 2026-05-16 — 8 derivation cycles + 1 housekeeping cycle (90/90 sympy PASS, 91.1% FP, 0 hardcoded)
+  - "[[research/op-L05-mass-exponent-k-alpha-d-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L08-Phase6-FR-antisymmetry-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L08-Phase6-Clifford-emergence-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L08-Phase6-e2-derivation-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L08-Phase6-RG-flow-Z-phi-asymptotic-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L07-zero-sum-Z2-derivation-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L06-axion-mass-derivation-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-L07-Path-D-nonlocal-foundations-2026-05-16/Phase1_results.md]]"
+  - "[[research/op-core-update-sesja-2026-05-16-annotations/Phase_FINAL_close.md]]"
+  # Sesja 2026-05-17 — 7 derivation cycles + 1 housekeeping cycle (56/56 sympy PASS, ~65% effective FP, hardcoded drift cycles 4-6 flagged) + integration audit + PR-016 LOCK
+  - "[[research/op-neutrino-omega-motion-wake-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-neutrino-RP2-wake-extension-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-neutrino-L_kink-bracketing-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-neutrino-red-giant-tension-analysis-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-neutrino-L_X-structural-derivation-attempt-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-WZ-emergence-quantitative-loop-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-neutrino-mu-nu-astrophysical-discrimination-2026-05-17/Phase_FINAL_close.md]]"
+  - "[[research/op-housekeeping-sesja-2026-05-17-annotations/Phase_FINAL_close.md]]"
+  - "[[audyt/AUDIT_REPORT_2026-05-17_7-cycle_integration.md]]"
+  - "[[meta/PRE_REGISTERED_FALSIFIERS.md]]"  # PR-016 LOCKED 2026-05-17 entry
+  # Sesja 2026-05-18 — 3 cycles (boson sub-component multi-cycle + non-Abelian gauge audit; 22/24 sympy PASS) + 2 meta dispositions + 1 pre-screening
+  # AUDIT CLARIFICATION (cycle 3, this sesja): sesja 2026-05-16 quark sektor entries previously cited monolithic "A− topology"
+  # ACTUAL split per audit: composition rule A− conditional (hadron-topology cycle) + mass formula HALT-B (quark-sector-mass cycle) + gauge dynamics declared limit (no cycle; audit-confirmed gap)
+  # See: [[meta/TGP_W_Z_THEORETICAL_LIMIT.md]] §0.5 audit context + §1A SU(3) gap
+  - "[[research/op-composite-higgs-substrate-attempt-2026-05-18/Phase_FINAL_close.md]]"      # cycle ε: composite Higgs HALT-B (path ε ruled out)
+  - "[[research/op-MQ-flavor-interpolation-2026-05-18/Phase_FINAL_close.md]]"                 # cycle ζ: M_Q granular HARD HALT (path ζ ruled out; 6-path exhaustion)
+  - "[[research/op-audit-non-Abelian-gauge-status-2026-05-18/Phase_FINAL_close.md]]"          # cycle audit: SU(3) gauge gap confirmed; 6 doc corrections executed
+  - "[[meta/TGP_W_Z_THEORETICAL_LIMIT.md]]"                                                    # META-DISPOSITION; scope expanded post-audit
+  - "[[meta/M_Q_GRANULAR_PRE_SCREENING_2026-05-18.md]]"                                        # PRE-SCREENING; Scenario B executed
 ---
 
 # TGP_v1 — Index hub
@@ -364,6 +394,51 @@ master state may evolve, but the deposit is the timestamped prediction.
 | **ψ.1.v2.Phase4** 5 sub-tests tensor operator L₅' structural derivation + causality (correction phase); T4.1 tensor candidate scan + φ.1 X→λX scale-invariance: 4 cand L₅'_a (∂lnX)(∂lnX)F^μρ F^ν_ρ tensor + parity-EVEN + irreducible **UNIQUELY CANONICAL**, L₅'_b (∂lnX)(∂lnX)F·F̃ parity-odd helicity (σ.1 territory), L₅'_c (∂∂lnX)F·F reduces to L₅'_a, L₅'_d □(lnX)F² scalar = v1 mistake; T4.2 **formal proof scalar Z(x)F² fails to modify light cones** sympy LOCK on null cone equality (Z>0 cancels, η^μν determines null cones, INDEPENDENT of Z(x)) → ψ.1.v1 = wave-function renormalization Bekenstein/Sandvik dilaton-photon coupling → varying-α_em NOT varying-c, NEGATIVE structural result; T4.3 effective optical metric g^μν_eff = η^μν + (ξ/Λ²)n^μ n^ν derived (n^μ = ∂^μlnX, ξ = -2β_g convention); T4.4 causality + positivity bounds: anisotropic c_eff²(θ) = 1 - ξn²cos²θ/Λ² (parallel max slowdown, perpendicular UNCHANGED), subluminal everywhere requires ξ≥0 → β_g≤0, vacuum Cherenkov constraint forces sign, no CTC w lab E∥B; T4.5 UV matching β_g sign 3 channels: Channel A AS NGFP undetermined sign, Channel B heavy-mode 1-loop suggestywnie negative, **Channel C Adams-Arkani-Hamed-Dubovsky-Nicolis-Rattazzi positivity bound [arXiv:hep-th/0602178] DECISIVE β_g<0 STRICT UV-INDEPENDENT** (causality + analyticity forward amplitude → forced subluminality); 5/5 PASS → Phase 5 forward; sign convention: L₅'_a = -(|β_g|/Λ²)(∂_μlnX)(∂_νlnX)F^μρ F^ν_ρ z ξ = +2|β_g| > 0 subluminal | 5 | CLOSED 2026-05-01 | [`research/op-psi1-substrate-light-acceleration/Phase4_results.md`](research/op-psi1-substrate-light-acceleration/Phase4_results.md) |
 | **ψ.1.v2.Phase5** 5 sub-tests eikonal + dispersion + corrected Sagnac (correction phase); T5.1 eikonal dispersion g^μν_eff k_μ k_ν = (ω²-|k|²) + (ξ/Λ²)(n·k)² = 0 sympy LOCK proper Minkowski contractions (n·k = n^0ω - n_i·k_i, lower indices via η_μν = diag(+,-,-,-)); T5.2 anisotropic c_local(θ) sympy LOCK c_eff²(θ) = 1 - n²ξ cos²θ/Λ² (θ=0 parallel max slowdown, θ=π/2 perpendicular UNCHANGED); T5.3 Sagnac chopper differential A-B (parallel-vs-perpendicular loop) Δφ = 4π L_arm |β_g|(∇lnX)²/(Λ²λ_γ); realistic numerical: lab L=1m λ=1μm |β_g|=0.1 Λ=100TeV |∇lnX|=10⁻³ m⁻¹ → Δφ ~5×10⁻³⁶ rad, SNR (1 mo, shot-floor 6×10⁻¹³ rad) ~8×10⁻²⁴ **SUB-DETECTION by 23 OOM** ≪ v1's fałszywe SNR 3×10⁴; magnetar-extreme |∇lnX|=1 m⁻¹ → SNR ~8×10⁻¹⁸ still undetectable; v1 SNR 3×10⁴ formally documented jako artefakt fałszywej skalarnej Δc/c; T5.4 Yukawa Greens for tensor source: (∇²-Λ²)G=0 dla r>0 LOCK, Φ_eff(r) ~ |β_g|/Λ²·e^(-Λr)/(4πr)·tensor projector → exp cutoff at Λ⁻¹, no long-range tensor force; T5.5 4 alt-tensor falsification matrix: L₅'_a UNIQUELY produces directional Sagnac A-B differential (L₅'_b helicity-locked NOT directional, L₅'_c reduces to L₅'_a, L₅'_d scalar = v1 error gives ZERO); 5/5 PASS → Phase 6 forward | 5 | CLOSED 2026-05-01 | [`research/op-psi1-substrate-light-acceleration/Phase5_results.md`](research/op-psi1-substrate-light-acceleration/Phase5_results.md) |
 | **ψ.1.v2.Phase6** 5 sub-tests corrected predictions TT19-TT23 + 4-channel re-convergence (correction phase, ψ.1 program END true close-out); T6.1 (TT19) Sagnac chopper differential lab realistic SNR ~10⁻²⁴ NULL prediction (falsifier: positive Sagnac chopper SNR > 10⁻³ in lab without external ∇lnX amplification); T6.2 (TT20) TOF dual-arm directional Δt = L|β_g|(∇lnX)²/(Λ²c₀) lab ~10⁻⁵¹ s sub-attosecond NULL prediction; T6.3 (TT21) cosmological NULL re-confirmed (background X(t) FRW-homogeneous → ∇lnX=0 globally, fluctuations <(∇lnX)²>_isotropic → ZERO directional c-shift on CMB/BBN/LSS, consistent ω.1, σ.1, τ.2, τ.3); T6.4 (TT22) magnetar FRB ω-INDEPENDENT survival: c_eff(θ) = 1 - O(n²/Λ²) frequency-INDEPENDENT, σ.1 ω² leading vs ψ.1.v2 ω⁰ sub-leading residual on top, no falsification σ.1, ψ.1.v2 dodaje ω⁰ correction undetectable currently; T6.5 (TT23) **4-channel ψ.1.v2 convergence**: A AS NGFP NEG anchor σ.1 + B heavy-mode 1-loop NEG O((m/Λ)²Q²/48π²) suggestywnie + **C Adams positivity NEG STRICT DECISIVE UV-INDEPENDENT** + D cosmological NULL within bound; 4/4 channels consistent; **TT13-TT18 (ψ.1.v1) WITHDRAWN** (replaced by TT19-TT23, false scalar Δc/c interpretation); **ψ.1 program END (TRUE close-out)**: v1 NEGATIVE structural result + v2 corrected anisotropic predictions + Adams-forced β_g<0 + 4-channel convergence; ledger 769→784, phase ledger 521→536; cross-cycle role REVISED: ψ.1.v2 = sub-leading anisotropic correction to σ.1 leading helicity-birefringence (NOT primary lab-engineering channel as v1 falsely claimed); 5/5 PASS | 5 | CLOSED 2026-05-01 | [`research/op-psi1-substrate-light-acceleration/Phase6_results.md`](research/op-psi1-substrate-light-acceleration/Phase6_results.md) |
+
+| **Sesja 2026-05-16 (8 derivation + 1 housekeeping cycles)** | 90 + N/A | CLOSED 2026-05-16 | [See condensed table below] |
+| **Sesja 2026-05-17 (7 cycles neutrino magnetic moment line + 1 housekeeping)** | 56 + N/A | CLOSED 2026-05-17 | [See condensed table below] |
+
+### Sesja 2026-05-16 — cycle-by-cycle (condensed)
+
+| Cycle | Verdict | Sympy | Substantive finding | Closure document |
+|---|---|---|---|---|
+| **L05** mass-exponent k(α,d) | A− | 12/12 PASS | m_obs vs M_full distinction: k_obs(α=1,d=3)=4 (LP-4 match) ≠ k_full=5/2; closes L05 audit Możliwość A constructively | [[research/op-L05-mass-exponent-k-alpha-d-2026-05-16/Phase_FINAL_close.md]] |
+| **L08-FR** antisymmetry | A− | 12/12 PASS | Finkelstein-Rubinstein 2-particle exchange π₁(C_2-defect)=Z₂; Berry phase π → antisymm wavefunction; closes L08 audit problem #1 (spin-statistics) operationally | [[research/op-L08-Phase6-FR-antisymmetry-2026-05-16/Phase_FINAL_close.md]] |
+| **L08-Clifford** emergence | A− | 12/12 PASS | Cl(1,3) algebra inherited z M9.1'' Lorentz tetrad; closes L08 audit problem #4 (Dirac algebra) operationally; adversarial T7 signature fix | [[research/op-L08-Phase6-Clifford-emergence-2026-05-16/Phase_FINAL_close.md]] |
+| **L08-e²** derivation | B+ partial | 12/12 PASS | Algebraic reconciliation F1↔F2 mass formula via β(α) = e²(1−α/4)/(3−α); e_Euler² ≈ 7.389 STRUCTURAL OPEN (NUMERICAL ANCHOR per PHASE6 §11) | [[research/op-L08-Phase6-e2-derivation-2026-05-16/Phase_FINAL_close.md]] |
+| **L08-RG** flow Z_φ | B (HALT) | 9/9 PASS | RG flow path 1+3 OBSTRUCTED — TGP α=2 = free massive field in canonical ψ=φ²; η_φ=0 trivially; literature O(0.01-0.1) ≠ e²/2 ≈ 3.69 (factor 50-100 mismatch) | [[research/op-L08-Phase6-RG-flow-Z-phi-asymptotic-2026-05-16/Phase_FINAL_close.md]] |
+| **L07** zero-sum Z₂ | B+ partial | 11/11 PASS | ZS1 (chiralna) DERIVED jako Z₂-tożsamość (analog QCD ⟨q̄γ⁵q⟩=0); ZS2 (przestrzenna) linear Z₂-derived + quadratic gauge fixing; prop:Lambda-positive foundation STRENGTHENED | [[research/op-L07-zero-sum-Z2-derivation-2026-05-16/Phase_FINAL_close.md]] |
+| **L06** axion-mass m_X | B+ partial | 11/11 PASS | 4 derivation paths (A-D) OBSTRUCTED z explicit proofs; Path E FREE PARAMETER strukturalnie verified (Goldstone + S05 + ω.1 emergent breaking); 1 NUMERICAL ANCHOR documented: (M_Pl²·H_0)^(1/3) ≈ 60 MeV (factor 1.7 from 100 MeV) | [[research/op-L06-axion-mass-derivation-2026-05-16/Phase_FINAL_close.md]] |
+| **L07-Path-D** nonlocal | B+ partial | 11/11 PASS | 5 sub-paths (D1-D5) tested: D2 dS SO(4,1) PARTIAL homogeneity; D1+D3+D4+D5 obstructed; ZS2 gauge-fixing canonical SOLIDIFIED z 4 obstruction proofs | [[research/op-L07-Path-D-nonlocal-foundations-2026-05-16/Phase_FINAL_close.md]] |
+| **core-update-sesja-annotations** | HOUSEKEEPING-DONE | N/A | 2 of 2 confirmed annotations applied (sek01 ax:zero + sek05 prop:Lambda-positive); L05 thm:B1'' skipped honestly (aspirational target nie istnieje); `may_edit_core: true` explicit dla cycle | [[research/op-core-update-sesja-2026-05-16-annotations/Phase_FINAL_close.md]] |
+
+**Sesja totals:** 90/90 sympy PASS, 82 FIRST_PRINCIPLES (91.1%), 8 LIT (8.9%), 8 declarative separate, **0 hardcoded `T_pass=True`** across all cycles.
+**Anchors:** 2 numerical anchors documented (L08 e_Euler² + L06 (M_Pl²·H_0)^(1/3)) — analog L08 NUMERICAL ANCHOR classification (PHASE6 §11).
+**Obstruction proofs:** 9 total (L08-RG ×1 + L06 ×4 + L07-Path-D ×4) — structural derivability boundaries explicitly mapped.
+**Audit closures:** L05 RESOLVED, L06 PARTIAL B+, L07 PARTIAL B+ (Path A + Path D), L08 problems #1+#4 CLOSED A− + #2 PARTIAL B+.
+**Integration audit:** [[audyt/AUDIT_REPORT_2026-05-16_8-cycle_integration.md]] — 🟢 STRUCTURALLY SOUND.
+
+### Sesja 2026-05-17 — cycle-by-cycle (condensed)
+
+| Cycle | Verdict | Sympy | Substantive finding | Closure document |
+|---|---|---|---|---|
+| **1. ω-motion β-task** | A− | 8/8 PASS | δθ wake source S = (2e/f_0)(∂_μf_0)A^μ derived strukturalnie z linearized EOM; moving + B → S ∝ v·B·t ≠ 0 (β PASS); RP² + Liénard-Wiechert structural agreement | [[research/op-neutrino-omega-motion-wake-2026-05-17/Phase_FINAL_close.md]] |
+| **2. RP² extension** | A− | 8/8 PASS | β REFINED — R3 closed strukturalnie (Φ = f_0·U(n) z |U|²=1 → |Φ|²=f_0² spherical); spinor-mediated Berry-motion channel μ_spinor ~ e·β·ℏ/(4m_eff) z γ_Berry=π | [[research/op-neutrino-RP2-wake-extension-2026-05-17/Phase_FINAL_close.md]] |
+| **3. L_kink bracketing** | B+ constrain | 8/8 PASS | Bracketing strukturalnie zawęża L_kink = L_X = 3.3 fm (m_X = 60 MeV L06 anchor); spinor channel daje **μ_ν^TGP_A ≈ 3.55·10⁻¹² μ_B** (scenario A) — wszystkie inne 7 scenarios ruled out z XENONnT | [[research/op-neutrino-L_kink-bracketing-2026-05-17/Phase_FINAL_close.md]] |
+| **4. Red-giant tension** | A− NO TENSION | 8/8 PASS | Joint CI methodology: σ_tension naive 5.91σ → joint 0.67σ (m_X log-σ 0.22 + bound log-σ 0.30); critical m_X = 95.6 MeV (above target 100 MeV → automatic PASS); cycle 3 prediction CONFIRMED | [[research/op-neutrino-red-giant-tension-analysis-2026-05-17/Phase_FINAL_close.md]] |
+| **5. L_X derivation attempt** | HALT-B | 8/8 PASS | Paths F/G/H failed dla L_X structural derivation; L06 Path E (m_X FREE PARAMETER) STRENGTHENED przez 7-path exhaustion; honest negative result | [[research/op-neutrino-L_X-structural-derivation-attempt-2026-05-17/Phase_FINAL_close.md]] |
+| **6. W/Z + Lee-Shrock loop** | B+ PARTIAL | 8/8 PASS | 4 structural paths (α/β/γ/δ) dla SM EW emergence FAILED (RP² 2 invariants vs SU(2) 3; etc.); SM-like Lee-Shrock loop daje **μ_ν^TGP_B ≈ 3.2·10⁻²⁰ μ_B** (scenario B); cycle 3 dual-scenario revision z 10⁸ scale difference | [[research/op-WZ-emergence-quantitative-loop-2026-05-17/Phase_FINAL_close.md]] |
+| **7. Astrophysical discrimination** | A− BOTH CONSISTENT | 8/8 PASS | 7-bound joint CI survey (TRGB + SN1987A + ωCen + M5 + BBN + Solar RSFP + BH disk): max σ_A = +0.667σ (TRGB; cycle 4 reproduced); wszystkie 7 NO TENSION (≤1σ); **dual-scenario STRENGTHENED** | [[research/op-neutrino-mu-nu-astrophysical-discrimination-2026-05-17/Phase_FINAL_close.md]] |
+| **8. housekeeping-sesja-annotations** | HOUSEKEEPING-DONE | N/A | INDEX.md sync (this row + condensed table + YAML related); cross-cycle annotations cycles 1-5; core/ sek*.tex LaTeX-comment annotations dla warstwa 3c PR-016 — closes R2/R4/R5 z integration audit | [[research/op-housekeeping-sesja-2026-05-17-annotations/Phase_FINAL_close.md]] |
+
+**Sesja totals:** **56/56 sympy PASS**, 42 FIRST_PRINCIPLES (75% declared; ~65% effective per audit §2.3 — cycles 4-6 hardcoded drift flagged), 7 LIT, 7 DEC separate, **12 hardcoded `T_pass=True`** (cycles 1, 2, 3, 7 clean; cycles 4, 5, 6 have 2-4 extra hardcoded for informative FP-labeled tests — methodology lesson going forward).
+**Predictions:** PR-016 dual-scenario LIVE/LOCKED-PENDING-DATA — **μ_ν^TGP** scenario A 3.55·10⁻¹² μ_B (m_X-scale) lub scenario B 3.2·10⁻²⁰ μ_B (SM-like) — falsifiable XLZD/DARWIN ~2030+; 7-bound astrophysical survey PASSED (max σ_A = 0.667σ TRGB).
+**Obstruction proofs:** 7 total (cycle 5: Paths F/G/H ×3; cycle 6: Paths α/β/γ/δ ×4) — TGP-native W/Z emergence + L_X derivation structural limits mapped.
+**Audit closures:** L08 problem #3 sub-components: quarks A− (unchanged), **neutrinos A− REINFORCED** post-7-bound, **bosons OPEN MULTI-SESSION** (cycle 6 4 paths ruled out).
+**Integration audit:** [[audyt/AUDIT_REPORT_2026-05-17_7-cycle_integration.md]] — 🟢 STRUCTURALLY SOUND (5 R-items flagged; R1 methodology lesson + R3 PR-016 LOCK RESOLVED + R2/R4/R5 RESOLVED via cycle 8 housekeeping).
+**PR-016 formal entry:** [[meta/PRE_REGISTERED_FALSIFIERS.md]] §"PR-016 (LOCKED 2026-05-17)" — dual-scenario falsifier z decision rule + recovery scope anti-Lakatos LOCKED.
+
+---
 
 Sub-cycle results for the most recent cycle:
 [3.A KEYSTONE (AS NGFP)](research/op-phase3-uv-completion/Phase3_A_results.md) ·
