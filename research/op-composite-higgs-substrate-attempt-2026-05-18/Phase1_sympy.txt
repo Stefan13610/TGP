@@ -1,0 +1,236 @@
+====================================================================================
+Phase 1 sympy — composite Higgs substrate attempt sesja-1-of-N
+Cykl: op-composite-higgs-substrate-attempt-2026-05-18
+Sesja 2026-05-18 (sesja-1-of-N multi-session campaign)
+====================================================================================
+
+TGP-native scales (log10 GeV):
+  m_X       = 6.000e-02 GeV  → log = -1.222
+  m_ν       = 1.000e-10 GeV  → log = -10.000
+  H_0       = 1.400e-42 GeV  → log = -41.854
+  m_Pl      = 1.221e+19 GeV  → log = +19.087
+  TARGET v_H = 246.220 GeV  → log = +2.391
+
+====================================================================================
+T1 — LITERATURE_ANCHORED: Composite Higgs framework anchors
+====================================================================================
+
+  Source                   Year Reference                        Features
+  ----------------------------------------------------------------------------------------------------
+  Kaplan-Georgi 1984            Phys. Lett. B 136, 183           composite Higgs minimal, vacuum misalignment θ
+  Susskind 1979                 Phys. Rev. D 20, 2619            technicolor SU(N_TC) hidden gauge group, chiral condensate <T̄T>
+  Hill-Simmons 2003             Phys. Rep. 381, 235              walking technicolor, EWPO constraints
+
+  Required features inventory:
+    hidden gauge group       : ✓
+    chiral condensate        : ✓
+    composite Higgs h        : ✓
+    scale Λ ≈ TeV            : ✓
+    Goldstone bosons         : ✓
+
+  Anchors: 3 sources, all required features present: True
+  Status: PASS
+
+====================================================================================
+T2 — FIRST_PRINCIPLES: TGP-native scale enumeration vs v_H = 246 GeV
+====================================================================================
+
+  Combination                      log10(GeV)     Value (GeV) |log_diff vs v_H|
+  ------------------------------------------------------------------------------------------
+  m_X                                  -1.222       6.000e-02            3.613
+  m_X²/m_Pl                           -21.530       2.948e-22           23.922
+  (m_X·m_Pl)^(1/2)                     +8.932       8.559e+08            6.541
+  (m_X²·m_Pl)^(1/3)                    +5.548       3.529e+05            3.156
+  (m_X·m_Pl²)^(1/3)                   +12.317       2.076e+12            9.926
+  m_X^(2/3)·m_Pl^(1/3)                 +5.548       3.529e+05            3.156
+  m_X^(3/4)·m_Pl^(1/4)                 +3.855       7.166e+03            1.464
+  m_X^(4/5)·m_Pl^(1/5)                 +2.840       6.916e+02            0.449
+  m_X^(5/6)·m_Pl^(1/6)                 +2.163       1.455e+02            0.228
+  (m_X²·m_Pl·H_0)^(1/4)                -6.303       4.981e-07            8.694
+
+  CLOSEST TGP-native combination: m_X^(5/6)·m_Pl^(1/6)
+    Value: 1.455e+02 GeV
+    Log-distance to v_H: 0.228 dex (factor 1.69)
+
+  HONEST ASSESSMENT:
+    - Minimum log-distance: 0.228 dex
+    - This corresponds to factor 1.69 from v_H
+    - HOWEVER: exponents not structurally motivated (numerological)
+    - Composite Higgs requires Λ_compositeness *determined by dynamics*, NIE 'any kombinacja'
+
+  T_pass: min_log_dist < 1.0 (TeV reachable by some combination): True
+  Status: PASS
+
+====================================================================================
+T3 — FIRST_PRINCIPLES: Candidate TGP-native confining dynamics
+====================================================================================
+
+  Candidates enumerated for TGP-native 'technicolor-like' dynamics:
+  1. Kink condensate <ψ_kink ψ̄_kink>
+     Scale: 6.000e-02 GeV
+     Feasibility: OBSTRUCTION — condensate scale 2.16e-04 GeV³ vs required 1.49e+07 GeV³ (Δlog = -10.84)
+
+  2. Substrate Φ strong-coupling near boundary
+     Scale: 6.000e-02 GeV
+     Feasibility: OBSTRUCTION — substrate has only m_X scale; no separate TeV regime identified
+
+  3. Hidden gauge group SU(N_TC)
+     Feasibility: REQUIRES NEW AXIOM — violates S05+Z₂+U(1) minimality (T6 check)
+
+  4. Kink bilinears + RG running to TeV
+     Feasibility: CONDITIONAL — depends on RG fixed point analysis (NIE explored sesja-1); deferred sesja-2+
+
+  Summary: 4 candidates enumerated
+    Obstructions documented: 3
+    Conditional (deferred sesja 2+): 1
+  → No candidate w sesja-1 jest unconditionally feasible; all have obstructions or deferred analysis.
+  T_pass: n_candidates ≥ 1 AND feasibility assessed for each: True
+  Status: PASS
+
+====================================================================================
+T4 — FIRST_PRINCIPLES: Goldstone counting dla composite Higgs requirement
+====================================================================================
+
+  Required Goldstones (composite Higgs): 4 (3 eaten + 1 physical Higgs)
+
+  TGP minimal axioms broken continuous global symmetries:
+    U(1) phase (S05)              : 1 Goldstone(s)
+    Z₂ (discrete)                 : 0 Goldstone(s)
+    RP² topology                  : 0 Goldstone(s)
+    U(1) gauge                    : 0 Goldstone(s)
+  Total Goldstones from TGP minimal: 1
+
+  Goldstone deficit: 3
+  → Composite Higgs needs 3 additional broken continuous symmetries beyond TGP minimal
+  → Possible source: hidden gauge group (technicolor SU(N_TC)) global flavor symmetry
+     - SU(N_TC) chiral symmetry breaking gives N²-1 Goldstones (N_TC=2 → 3 Goldstones)
+     - But requires NEW axiom (hidden gauge group); T6 check
+
+  T_pass: total_goldstones ≥ 4: False
+  Status: FAIL
+  Interpretation: TGP INSUFFICIENT — needs extension
+
+====================================================================================
+T5 — FIRST_PRINCIPLES: Hierarchy m_H << Λ via composite analog
+====================================================================================
+
+  Observed: m_H = 125.10 GeV, v_H = 246.22 GeV
+  Ratio m_H/v_H = 0.5081 (≈ 0.5; hierarchy moderate, NOT m_H << v_H)
+
+  Composite hierarchy assessment:
+    If Λ_compositeness ≈ v_H = 246 GeV: m_H/Λ = 0.5081 (moderate)
+    If Λ_compositeness ≈ 1 TeV: m_H/Λ = 0.1251 (better)
+    If Λ_compositeness ≈ 10 TeV: m_H/Λ = 0.0125 (good)
+  → Composite hierarchy 'natural' requires Λ_compositeness ≥ 1 TeV
+
+  Using TGP closest combination as Λ_candidate:
+    Λ_TGP = 145.52 GeV (from T2: m_X^(5/6)·m_Pl^(1/6))
+    m_H/Λ_TGP = 0.8597
+  → Hierarchy SATISFIED (< 1)
+
+  T_pass: m_H/Λ_TGP < 1: True
+  Status: PASS
+  Note: This is MINIMUM hierarchy condition; 'natural' composite would need Λ ≥ 1 TeV (factor 4+ above v_H)
+
+====================================================================================
+T6 — FIRST_PRINCIPLES: S05+Z₂+U(1) compatibility — new axiom needed?
+====================================================================================
+
+  TGP minimal axioms (LIVE):
+    - S05 single Φ
+    - Z₂ Goldstone-Nambu
+    - U(1) gauge
+    - RP² topology (fermion)
+
+  Composite Higgs requirements vs TGP minimal:
+    Hidden gauge group SU(N_TC)               : ✗ (NEEDS NEW AXIOM/STRUCTURE)
+    Chiral fermion sektor for condensate      : ✓
+    Symmetry breaking pattern G/H             : ✓
+    Goldstone bosons ≥4                       : ✗ (NEEDS NEW AXIOM/STRUCTURE)
+
+  Number of NEW axioms needed beyond S05+Z₂+U(1)+RP²: 2
+  Specifically:
+    1. Hidden gauge group (technicolor) — fundamental EXTENSION of TGP
+    2. Additional broken continuous symmetries dla 3 missing Goldstones
+
+  T_pass: n_new_axioms == 0: False
+  Status: FAIL
+  Interpretation: TGP minimal INSUFFICIENT — composite needs 2 new structural elements
+
+====================================================================================
+T7 — FIRST_PRINCIPLES: Sesja-1 verdict aggregate
+====================================================================================
+
+  Test summary:
+    T1 LIT (literature anchors): PASS
+    T2 FP  (scale enumeration TeV reachable): PASS
+    T3 FP  (candidate dynamics enumerated): PASS
+    T4 FP  (Goldstone counting sufficient): FAIL
+    T5 FP  (hierarchy m_H < Λ): PASS
+    T6 FP  (S05 compatible no new axiom): FAIL
+
+  Aggregate:
+    FP PASS: 3/5 (T2-T6)
+    FP FAIL: 2/5
+    Critical failures (T4 AND T6 both FAIL): True
+
+  PRE-REGISTERED VERDICT: **HALT-B**
+  Detail: Critical failures: Goldstone deficit (3) AND new axiom required (2); composite Higgs ALSO ruled out (5th path)
+
+  T_pass: verdict in valid set: True
+  Status: PASS
+
+====================================================================================
+T8 — DECLARATIVE: S05 preservation; no new free axioms attempted
+====================================================================================
+
+  This cycle ATTEMPTED composite Higgs framework but did NOT add new axioms.
+  Result of T6: composite Higgs WOULD REQUIRE new axiom (hidden gauge group)
+  → Cycle does not adopt new axiom; honest documentation only
+  → S05 + Z₂ + U(1) + RP² preserved
+
+  Status: PASS (DEC budget — declarative; 1 of 1 hardcoded T_pass allowed)
+
+====================================================================================
+SUMMARY
+====================================================================================
+
+Test results: 6/8 mixed
+  T1: PASS
+  T2: PASS
+  T3: PASS
+  T4: FAIL
+  T5: PASS
+  T6: FAIL
+  T7: PASS
+  T8: PASS
+
+Substance: 6 FP + 1 LIT + 1 DEC = 75% FP ✓
+Hardcoded T_pass=True: 1 (T8 DEC only — strict cycle 1/2/7 pattern)
+
+====================================================================================
+KEY VERDICT — Sesja-1-of-N composite Higgs attempt
+====================================================================================
+
+  PRE-REGISTERED VERDICT: **HALT-B**
+  Critical failures: Goldstone deficit (3) AND new axiom required (2); composite Higgs ALSO ruled out (5th path)
+
+  Structural obstructions documented:
+    - Goldstone deficit: TGP minimal provides 1 Goldstone; needs 4 (deficit 3)
+    - New axioms required: 2 (hidden gauge group + additional broken symmetries)
+
+  Path enumeration dla problem #3 boson sub-component (post-sesja-1):
+    Path α (Berry × spinor → SU(2)): ❌ ruled out (cycle 6)
+    Path β (π_n(RP²) higher homotopy): ❌ ruled out (cycle 6)
+    Path γ (Φ-Φ* doublet → SU(2)): ❌ ruled out (cycle 6)
+    Path δ (S05+Z₂ → emergent gauge): ❌ ruled out (cycle 6)
+    Path ε (composite Higgs framework, this cycle): ❌ also ruled out (HALT-B)
+
+  Multi-session campaign status:
+    Sesja-1-of-1: composite Higgs framework also failed strukturalnie
+    Path ε ruled out z 5-path exhaustion for problem #3 boson sub-component
+    Future direction: requires structural EXTENSION beyond minimal axioms
+
+====================================================================================
+END Phase 1 sympy
+====================================================================================

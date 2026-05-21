@@ -1,0 +1,203 @@
+
+======================================================================
+T1 LIT — Yang-Mills SM literature anchors + required features
+======================================================================
+  Literature anchors: 4 / required ≥3
+    [1] Yang & Mills 1954, Phys. Rev. 96, 191: Original non-Abelian gauge construction SU(N)
+    [2] Peskin & Schroeder 1995 'Intro to QFT' Ch 15-17: Yang-Mills + QCD textbook standard
+    [3] Gross & Wilczek 1973 PRL 30 + Politzer 1973 PRL 30 (Nobel 2004): Asymptotic freedom β(g)
+    [4] Wilson 1974 'Confinement of quarks' Phys. Rev. D 10: Lattice QCD + confinement
+  Required SM features: 5/5
+    ✓ SU3_has_8_generators_non_Abelian_structure_constants: True
+    ✓ 8_gluons_in_adjoint_representation: True
+    ✓ Yang_Mills_self_interaction_3_4_gluon_vertices: True
+    ✓ asymptotic_freedom_beta_function_negative: True
+    ✓ confinement_sigma_string_tension_1_GeV_per_fm: True
+  T1 LIT verdict: PASS
+
+======================================================================
+T2 FP — TGP minimal axioms gauge content inventory (A1)
+======================================================================
+  TGP minimal axioms inventory:
+    S05_single_Phi_field: continuous symmetries = 1, type = U(1) phase
+    Z2_discrete_symmetry: continuous symmetries = 0, type = Z₂ discrete
+    U(1)_phase_of_Phi: continuous symmetries = 0, type = subsumed by S05
+    RP2_Berry_phase_topology: continuous symmetries = 0, type = discrete topology
+  Total continuous symmetries available: 1
+  SM EW+QCD required gauge generators: SU(3) 8 + SU(2) 3 + U(1)_Y 1 = 12
+  Gauge generator deficit: 11
+  Non-Abelian generators required: 11
+  TGP non-Abelian native: 0
+  Non-Abelian deficit: 11
+  T2 verdict: PASS — TGP minimal axioms have 1 continuous symmetry (Abelian U(1)) only
+
+======================================================================
+T3 FP — Cross-cycle audit of 3 SU(3)-relevant cycles (A1, A2, A3)
+======================================================================
+  Audited 3 cycles claiming SU(3)-relevant content:
+
+  ▸ op-L08-Phase6-hadron-topology-confinement-2026-05-16 (A-)
+    DERIVED:
+      ✓ N_q - N_q̄ ≡ 0 (mod 3) composition rule (compact U(1) winding)
+      ✓ 18 PDG hadrons + 11 forbidden configs classified correctly
+      ✓ 255-config general theorem verified
+    CONDITIONAL on SM input:
+      ⚠ Fractional quark charges ±1/3, ±2/3 (R1 OPEN per cycle §0)
+    NOT DERIVED:
+      ✗ SU(3) gauge symmetry (Yang-Mills construction)
+      ✗ 8 gluons G^a_μ
+      ✗ Yang-Mills self-interaction (3-gluon + 4-gluon vertices)
+      ✗ Asymptotic freedom β(g)
+      ✗ Confinement σ ≈ 1 GeV/fm (cycle §0 EXPLICIT caveat: 'requires separate energetic derivation')
+
+  ▸ op-L08-Phase6-quark-sector-mass-formula-2026-05-16 (HALT-B)
+    TESTED and FAILED:
+      ❌ Universal Φ-kink formula m = c·A_tail²·g_0^(e²/2) dla quark mass spectrum
+      ❌ 0/5 ratios within 10% tolerance
+      ❌ Structural ceiling 2.68× vs required 80,000× (m_t/m_u)
+    NOT DERIVED:
+      ✗ Quark masses
+      ✗ ANY gauge structure
+
+  ▸ op-L01-N2-retrofit-native-QCD-2026-05-13 (B+ retrofit)
+    DERIVED:
+      ✓ Φ_eq(t) cosmology profile w QCD epoch z~10¹², t~10⁻⁵s
+    INHERITED from SM:
+      ❗ β_QCD coefficient (1-loop standard SM result)
+      ❗ QCD trace anomaly form T^μ_μ = (β/2g) Tr(G_μν G^μν)
+      ❗ SU(3) gauge symmetry (entire structure assumed)
+    NOT DERIVED:
+      ✗ SU(3) gauge symmetry
+      ✗ Gluons
+      ✗ Yang-Mills self-interaction
+
+  Audit summary:
+    SU(3) gauge dynamics derived by any cycle: False
+    Quark masses derived: False
+    Quark composition rule derived (conditional): True
+    Confinement σ derived quantitatively: False
+  T3 verdict: PASS
+
+======================================================================
+T4 FP — SU(3) gauge dynamics gap test (A4)
+======================================================================
+  Required SU(3) gauge dynamics content (7 elements):
+    ✗ 8 gluon gauge bosons G^a_μ: derived = False
+    ✗ SU(3) generators T^a satisfying [T^a, T^b] = i f^{abc} T^c: derived = False
+    ✗ Yang-Mills field strength G^a_μν = ∂_μ G^a_ν - ∂_ν G^a_μ + g f^{abc} G^b_μ G^c_ν: derived = False
+    ✗ 3-gluon vertex from f^{abc} G^b G^c term: derived = False
+    ✗ 4-gluon vertex from f² G² G² term: derived = False
+    ✗ Asymptotic freedom β(g) = -b₀ g³/(16π²), b₀ = 11 - 2n_f/3: derived = False
+    ✗ Confinement σ ≈ 1 GeV/fm: derived = False
+  Aggregate: 0/7 SU(3) gauge dynamics elements derived w TGP
+  T4 verdict: PASS — gap confirmed (0/7 elements derived)
+
+======================================================================
+T5 FP — U(1)_em derivation mechanism (A5)
+======================================================================
+  U(1)_em derivation mechanism (per TGP_FOUNDATIONS §3.4):
+    starting_point: Φ(x) = ρ(x) e^{iθ(x)} — complex scalar S05 z global U(1) phase
+    gauging_step: Local θ(x) → θ(x) + α(x) requires gauge field A_μ
+    covariant_derivative: D_μ Φ = (∂_μ - i e A_μ) Φ
+    result: U(1)_em emerges natively z S05 phase symmetry
+    Abelian_essential: True
+  Mechanism essentially Abelian: True
+  Gauging extends to non-Abelian z TGP minimal axioms: False
+  Reason: non-Abelian wymaga ≥2 continuous symmetries z non-trivial commutators
+           TGP minimal ma 1 continuous symmetry (S05 U(1))
+  T5 verdict: PASS
+
+======================================================================
+T6 FP — Abelian/non-Abelian structural pattern test (A6)
+======================================================================
+  Gauge structure derivation pattern test:
+    ✓ U(1)_em: abelian=True, TGP_derived=True, mechanism=S05 phase gauging
+    ✓ SU(2)_L: abelian=False, TGP_derived=False, mechanism=6-path exhaustion 2026-05-18; declared limit
+    ✓ SU(3)_c: abelian=False, TGP_derived=False, mechanism=NIE addressed (this audit); analog SU(2)_L gap
+  Pattern consistent across 3 gauge structures: True
+
+  PATTERN CONFIRMED:
+    TGP minimal axioms (S05+Z₂+U(1)+RP²) **natively generate Abelian gauge structure** (U(1)_em z S05 phase).
+    TGP minimal axioms **structurally cannot derive non-Abelian gauge structures** (SU(2)_L, SU(3)_c).
+    Non-Abelian gauge dynamics jest **strukturalnym limitem** TGP framework reach.
+
+  T6 verdict: PASS — pattern confirmed
+
+======================================================================
+T7 FP — Aggregate verdict + documentation correction recommendations
+======================================================================
+  Audit findings:
+    A1_hadron_topology_scope: A− DERIVED conditional composition rule; NOT derived: SU(3) gauge / gluons / Yang-Mills / confinement σ
+    A2_quark_mass_scope: HALT-B; universal Φ-kink formula INSUFFICIENT; nothing derived re gauge
+    A3_N2_retrofit_scope: B+ retrofit; INHERITED β_QCD, gauge symmetry, gluons z SM; NATIVE only Φ_eq(t) cosmology
+    A4_SU3_gauge_dynamics_gap: CONFIRMED — 0/7 SU(3) gauge dynamics elements derived w TGP
+    A5_U1em_derivation: DERIVED z S05 phase mechanism; Abelian-essential
+    A6_Abelian_non_Abelian_pattern: CONFIRMED — Abelian native / non-Abelian declared limit
+
+  Documentation corrections enumerated (6):
+    [1] meta/TGP_W_Z_THEORETICAL_LIMIT.md
+        Action: RENAME + SCOPE EXPANSION → meta/TGP_NON_ABELIAN_GAUGE_THEORETICAL_LIMIT.md
+        Reason: Limit covers BOTH SU(2)_L (6-path exhaustion documented) AND SU(3)_c (audit-confirmed gap analog)
+    [2] STATE.md
+        Action: Update 'Particle quark sektor (A− topology 2026-05-16)' → split into 3 components
+        Reason: Mis-cited as monolithic A−; actually composition rule A− conditional + mass formula HALT-B + gauge dynamics declared limit
+    [3] audyt/L08_kink_fermion_closure/README.md
+        Action: Problem #3 quark sub-component status: split into 3 sub-sub-components
+        Reason: Same as STATE.md
+    [4] TGP_FOUNDATIONS.md §4 warstwa 3c row
+        Action: Update 'SU(3) color (kink topology assignment)' annotation: clarify LABEL ASSIGNMENT (composition rule conditional) vs gauge derivation (NOT done)
+        Reason: Currently ambiguous; reader cannot tell scope of A−
+    [5] PREDICTIONS_REGISTRY.md PR-006 (QCD trace anomaly)
+        Action: Audit annotate: 'retrofit-inherited β_QCD z SM; native part: Φ_eq cosmology profile'
+        Reason: PR-006 currently might appear as 'TGP-derived' without explicit retrofit caveat
+    [6] INDEX.md
+        Action: Sesja 2026-05-16 entries update — split quark sektor row
+        Reason: Same as STATE.md propagation
+
+  Aggregate audit verdict: CONFIRM_GAP_OVER_CLAIM_DOC_CORRECTIONS_REQUIRED
+  T7 verdict: PASS
+
+======================================================================
+T8 DEC — S05 + warstwa 3c preservation (audit doesn't introduce new axioms)
+======================================================================
+  S05: True
+  Z₂: True
+  U(1): True
+  RP²: True
+  Warstwa 3c: True
+  No new axioms (audit is meta-analysis): True
+  T8 verdict: PASS (DEC budget; 1 of 1)
+
+======================================================================
+Phase 1 sympy aggregate summary
+======================================================================
+  Tests executed: 8/8 PASS
+    ✅ T1 LIT
+    ✅ T2 FP
+    ✅ T3 FP
+    ✅ T4 FP
+    ✅ T5 FP
+    ✅ T6 FP
+    ✅ T7 FP
+    ✅ T8 DEC
+
+  Strict cycle 1/2/7 conditional T_pass pattern:
+    Hardcoded T_pass=True: 1 (T8 DEC only)
+    Strict pattern: ✓ preserved
+
+  Audit verdict: CONFIRM_GAP_OVER_CLAIM_DOC_CORRECTIONS_REQUIRED
+  Documentation corrections: 6 enumerated
+
+  Structural pattern confirmed:
+    TGP minimal axioms generate Abelian gauge natively (U(1)_em)
+    Non-Abelian gauge structures (SU(2)_L, SU(3)_c) są strukturalnym limitem
+    6-path exhaustion 2026-05-18 (SU(2)_L) + audit 2026-05-18 (SU(3)_c) → unified declared limit
+
+  Anti-Lakatos audit compliance: ✓
+    Findings są corrections of misrepresentations, NIE softening of original cycle verdicts
+    Cycle 2026-05-16 verdicts (A− composition / HALT-B mass) remain unchanged
+    Cycle 2026-05-13 retrofit B+ remains unchanged
+
+======================================================================
+Phase 1 audit sympy COMPLETE
+======================================================================

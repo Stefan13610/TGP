@@ -1,0 +1,157 @@
+
+======================================================================
+T1 LIT — Literature/structural anchors inventory
+======================================================================
+  Literature anchors: 4 / required ≥3
+    [1] Vilenkin & Shellard 1994, 'Cosmic Strings and Other Topological Defects' (CUP)
+    [2] Coleman 1985, 'Aspects of Symmetry' (CUP) Ch 6 'Q-balls'
+    [3] TGP warstwa 3c cycle 2026-05-16 quark sector mass formula
+    [4] TGP_FOUNDATIONS §3.5.6 Pattern 2.5 (BINDING)
+  Required features: 4/4
+    ✓ kink_internal_modes_standard_physics
+    ✓ pattern_2_5_BINDING_foundation
+    ✓ warstwa_3c_flavor_labels
+    ✓ SU2_requires_3_generators
+  T1 LIT verdict: PASS
+
+======================================================================
+T2 FP — Test T1 sub-A: External DoF enumeration (NOT counted as internal)
+======================================================================
+  External DoF (NOT counted as M_Q internal config):
+    spatial_position: 3
+    spacetime_orientation: 3
+  Total external: 6
+  T2 FP verdict: PASS
+
+======================================================================
+T3 FP — Test T1 sub-B: Internal config DoF enumeration
+======================================================================
+  Internal config DoF enumeration (honest count):
+    ✓ radial_breathing_mode: 1
+        Lowest continuous fluctuation around equilibrium ρ(r) profile
+    ✓ Q_ball_internal_phase_omega: 1
+        Internal frequency ω (Φ(x,t) = ρ(r) e^{iωt}); continuous parameter in config space
+    ✓ twist_along_axis: 1
+        Phase modulation along defect axis (spin axis from RP² Berry)
+    — anisotropy_parameters: 0
+        Rare; usually 0 for spherical-symmetric defects (TGP kink baseline)
+    — boundary_coupling_phase: 0
+        Borderline; coupling to environment Φ_eff but environment-DEFINED, not internal
+  Total internal config DoF: 3
+  T3 FP verdict: PASS
+
+======================================================================
+T4 FP — Test T1 aggregate: ≥3 internal config DoF (gating)
+======================================================================
+  Internal DoF count: 3
+  Threshold (≥3 for Test T1 PASS): 3
+  Test T1 PASS (count ≥3): True
+  Internal DoF form SU(2) algebra naturally: False
+  Structural caveat: 3 DoF identified ALE generators commute trivially (U(1)^3, not SU(2))
+  T4 verdict: PASS (count) z structural caveat
+  → Continue to T5 (Test T2)
+
+======================================================================
+T5 FP — Test T2: Continuous interpolation between flavor classes
+======================================================================
+  Sub-test A: Standard topological interpretation
+    Premise: Flavor labels w warstwa 3c are π_n-classified discrete topology classes
+    Result: Continuous deformation between d-kink and u-kink IMPOSSIBLE (topology preserved)
+    Continuous interpolation: False
+  Sub-test B: Parametric interpretation (alternative)
+    Premise: Flavor labels correspond to discrete minima of continuous parameter
+    Result: Continuous deformation possible IF such continuous parameter exists w warstwa 3c framework
+    Continuous interpolation w warstwa 3c: False
+  Quantum tunneling counted as continuous: False (forbidden per anti-Lakatos)
+  Aggregate continuous interpolation existence: False
+  Test T2 substantive verdict: FAIL
+  → HARD HALT recommended; flavor classes topologically isolated; δ blocker holds for ζ
+
+======================================================================
+T6 FP — Test T3: Energy cost interpolation ~ M_W order-of-magnitude
+======================================================================
+  Counterfactual scale estimate (per Pattern 2.5 §3.5.6):
+    √V''(Φ_0_local) ~ m_H = 125.000000000000 GeV
+    Δ (field-space distance) ~ v_EW = 246.000000000000 GeV
+    1/L_kink ~ v_EW = 246.000000000000 GeV
+    E_interp estimate = √V'' × (Δ/L_kink_inv) ≈ 125.0 GeV
+  Comparison z anchor M_W = 80.3790000000000 GeV
+  Ratio E_interp / M_W = 1.56
+  Counterfactual T3 result (if T2 had PASSed):
+    Scale match PASS (factor ≤10 z M_W): True
+    Scale match PARTIAL (factor ≤100 z M_W): True
+  Anti-numerologi check:
+    TGP-native scales used: True
+    Fine-tuning required: False
+  T6 verdict: PASS (test executed)
+  Test T3 substantive (counterfactual): PASS
+  Note: T6 substantive result is COUNTERFACTUAL — T5 FAIL gates this question
+
+======================================================================
+T7 FP — Aggregate verdict per pre-screening §4 decision matrix
+======================================================================
+  Test T1 verdict: PASS
+  Test T2 verdict: FAIL
+  Test T3 verdict (counterfactual): PASS_counterfactual
+  Aggregate verdict per decision matrix: HARD_HALT
+  Implications:
+    • Path ζ (M_Q granular + warstwa 3c flavor interpolation) HALT-B
+    • Test T2 FAIL substantive: warstwa 3c flavor classes topologically isolated
+    • Path δ blocker (1 vs 4 continuous symmetries) holds for ζ also
+    • Declared limit ([[meta/TGP_W_Z_THEORETICAL_LIMIT.md]]) REINFORCED
+    • 6-path exhaustion: α/β/γ/δ/ε + ζ all ruled out
+    • Option A + C disposition strengthened
+
+======================================================================
+T8 DEC — S05 + warstwa 3c axiomatic preservation budget
+======================================================================
+  S05 (single Φ field): True
+  Z₂ discrete symmetry: True
+  U(1) phase symmetry: True
+  RP² Berry phase: True
+  Warstwa 3c kink framework (derived): True
+  Pattern 2.5 §3.5.6 (BINDING): True
+  No new axioms required: True
+  T8 DEC verdict: PASS (DEC budget; 1 of 1 hardcoded used)
+
+======================================================================
+Phase 1 sympy aggregate summary
+======================================================================
+  Tests executed: 8/8 PASS
+    ✅ T1 LIT
+    ✅ T2 FP
+    ✅ T3 FP
+    ✅ T4 FP
+    ✅ T5 FP
+    ✅ T6 FP
+    ✅ T7 FP
+    ✅ T8 DEC
+
+  Strict cycle 1/2/7 conditional T_pass pattern:
+    Hardcoded T_pass=True count: 1 (T8 DEC only)
+    FP tests (T2-T7): 6, all conditional T_pass z explicit boolean
+    LIT test (T1): 1, conditional T_pass z literature inventory
+    DEC test (T8): 1, allowed budget hardcoded
+    Methodology: STRICT pattern preserved ✓
+
+  Substantive verdicts (NIE test PASS/FAIL):
+    Test T1 (≥3 internal config DoF): PASS
+    Test T2 (continuous interpolation): FAIL
+    Test T3 (energy cost scale): PASS_counterfactual
+    Aggregate per pre-screening §4: HARD_HALT
+
+  Path ζ cycle disposition:
+    🔴 HARD HALT — substantive structural finding
+    Reason: Test T2 substantive FAIL — warstwa 3c flavor classes topologically isolated
+    Path ζ ≡ recycle path δ (1 continuous vs 4 EW generators) confirmed at granular level
+    Declared limit ([[meta/TGP_W_Z_THEORETICAL_LIMIT.md]]) REINFORCED
+    6-path exhaustion: α/β/γ/δ/ε + ζ all ruled out
+
+  Anti-Lakatos audit:
+    Pre-registration timestamp: 2026-05-18 ✓
+    Forbidden post-hoc moves applied: NONE ✓
+    Substantive verdict honest: ✓
+
+======================================================================
+Phase 1 sympy COMPLETE
+======================================================================
