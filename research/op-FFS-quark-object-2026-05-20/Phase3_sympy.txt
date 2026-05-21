@@ -1,0 +1,106 @@
+========================================================================
+Phase 3 sympy - Native V(Phi) + 3 generations closure
+Cycle: op-FFS-quark-object-2026-05-20
+Caveats targeted: C4 (3 generations inherited), C5 (toy model V(q))
+Pre-registration: 2026-05-20 LOCKED
+========================================================================
+
+------------------------------------------------------------------------
+T_P3_1 [FP] - Native V_TGP(Phi) form z Pattern 2.5 section 3.5.6 + S05
+------------------------------------------------------------------------
+  V_TGP(rho) = (lambda/4) * (rho^2 - Phi_0^2)^2
+            = lambda*(-Phi_0_local**2 + rho**2)**2/4
+  Z_2 invariance: V(-rho) - V(rho) = 0
+  Z_2 invariant: True
+  V_TGP contains theta_w: False
+  U(1) phase invariant: True
+  V'(rho) = lambda*rho*(-Phi_0_local**2 + rho**2)
+  V''(rho) = -lambda*(Phi_0_local**2 - 3*rho**2)
+  V''(Phi_0_local) = 2*Phi_0_local**2*lambda
+  Expected: 2*lambda*Phi_0^2 = 2*Phi_0_local**2*lambda
+  V'' diff: 0
+  Pattern 2.5 V'' form correct: True
+  V_TGP(Phi_0) = 0
+  Minimum at rho=Phi_0 (V=0): True
+  T_P3_1 PASS: True
+
+------------------------------------------------------------------------
+T_P3_2 [FP] - Discrete stable points origin (topological NIE potential)
+------------------------------------------------------------------------
+  Native V_TGP depends on winding q (lifts U(1) degeneracy): False
+  Discrete stable points origin: TOPOLOGICAL (Kirchhoff at Y-vertex)
+  Refinement vs pre-screening toy model:
+    Toy model V(q) = V_min * sin^2(pi*N*q): artificial potential creating minima
+    Native V_TGP(Phi): U(1) symmetric - NO q-dependent potential
+    Real mechanism: Y-vertex Kirchhoff sum q_i in Z forces q = m/N
+  Stable q values at N=3: [0, 1/3, 2/3]
+  Kirchhoff 3*q in Z at each stable q: [True, True, True]
+  All stable q satisfy Kirchhoff: True
+  Non-stable q test: q = 1/5
+  Kirchhoff at q=1/5: False
+  Non-stable q violates Kirchhoff: True
+  T_P3_2 PASS: True
+
+------------------------------------------------------------------------
+T_P3_3 [FP] - B3 preservation pod native V_TGP(Phi) (caveat C5)
+------------------------------------------------------------------------
+  B3 part (i) continuous U(1) cover: True
+  B3 part (ii) discrete stable q=m/3: True
+  B3 part (iii) intermediate unstable: True
+  B3 mechanism refined: topological (Kirchhoff) NIE potential (toy model)
+  B3 preserved pod native V_TGP(Phi): True
+  Demarcation z zeta blocker (M_Q HALT-B precedent) preserved: True
+  T_P3_3 PASS: True
+
+------------------------------------------------------------------------
+T_P3_4 [FP] - 3 generations source explicit decision (caveat C4)
+------------------------------------------------------------------------
+  Phase 3 decision: OPTION_A_INHERIT_FROM_WARSTWA_3C
+  Warstwa 3c cycle 2026-05-16 status: CLOSED_A_MINUS (LOCKED)
+  Phase 2 T_P2_4 Lagrangian-level independence: True
+  FFS framework compatible with 3-generation inheritance: True
+  Caveat C4 closure: EXPLICIT INHERITANCE (Option a)
+  Note: 3 generations remain inherited dependency, NOT derived in FFS framework
+        Derivation from FFS topology (Option b) deferred per scaffold section 5
+        Emergent 3D hypothesis status: out of scope this cycle
+  T_P3_4 PASS: True
+
+------------------------------------------------------------------------
+T_P3_5 [FP] - Aggregate Phase 3 verdict
+------------------------------------------------------------------------
+  T_P3_1 (V_TGP form): True
+  T_P3_2 (discrete stable topological): True
+  T_P3_3 (B3 preserved pod native V): True
+  T_P3_4 (3 gens inherit explicit): True
+  Aggregate Phase 3 PASS: True
+  Phase 3 verdict: PROCEED_TO_PHASE_4
+
+========================================================================
+Phase 3 summary
+========================================================================
+  Tests run: 5 (5 FP + 0 LIT + 0 DEC budget)
+  FP substantive PASS: 5/5 (100%)
+  Hardcoded FP T_pass=True: 0 (strict cycle 1/2/7 pattern preserved)
+  DEC budget used: 0 of 1 total (preserved for Phase FINAL)
+
+  T_P3_1 FP: [PASS] Native V_TGP(Phi) z Pattern 2.5 + S05
+  T_P3_2 FP: [PASS] Discrete stable points topological (NIE potential)
+  T_P3_3 FP: [PASS] B3 preserved pod native V (caveat C5)
+  T_P3_4 FP: [PASS] 3 generations explicit inheritance (caveat C4)
+  T_P3_5 FP: [PASS] aggregate verdict
+
+  Phase 3 verdict: PROCEED_TO_PHASE_4
+
+  Caveats closure status (pre-screening section 3.4):
+    C1 (T2 field-component separation): CLOSED w Phase 1
+    C2 (T3 pelen joint EOM): CLOSED w Phase 1
+    C3 (T4 N=3 energetically preferred): CLOSED w Phase 2
+    C4 (T5 inherited 3 generations): CLOSED w Phase 3 (Option a explicit)
+    C5 (T6 toy model V(q)): CLOSED w Phase 3 (mechanism topological)
+    C6 (T7 Phi_0_local anchor): Phase 4 scope
+
+  5/6 caveats CLOSED. Remaining: C6 (Phi_0_local derivation) for Phase 4.
+
+========================================================================
+Phase 3 complete. Next: Phase 4 (Phi_0_local derivation z TGP foundations).
+========================================================================
