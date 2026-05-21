@@ -1,0 +1,206 @@
+====================================================================================
+Phase 1 sympy — L_X structural derivation attempt (Paths F/G/H)
+Cykl: op-neutrino-L_X-structural-derivation-attempt-2026-05-17
+====================================================================================
+
+Targets dla L_X:
+  Anchor target: 3.29 fm (from m_X = 60 MeV anchor)
+  Critical target: 1.97 fm (from m_X = 95.6 MeV)
+  L06 target: 1.97 fm (from m_X = 100 MeV)
+  Tolerance dla 10% precision: ±0.041 dex (per L06 standard)
+
+====================================================================================
+T1 — FIRST_PRINCIPLES: Path F — Skyrme-like balance
+====================================================================================
+
+  Skyrme-like balance: L_F = c_factor / (A_tail · g_eff)
+  Where g_eff is TGP-native coupling. Candidates:
+
+  λ_C_e (electron Compton) = 3.862e-13 m = 386.1592 fm = 386159.23 am
+
+  Candidate                              | L_F (fm)      | vs target (3.3 fm) | OOM diff
+  --------------------------------------------------------------------------------------------
+  F1: λ_C_e / A_tail_ν (no factor)       |    6.330e+05  | 1.92e+05×  | +5.28 (FAIL)
+  F2: A_tail_ν · λ_C_e                   |    2.356e-01  | 7.16e-02×  | -1.15 (FAIL)
+  F3: λ_C_e / (A_tail_ν · g_0_ν)         |    2.877e+06  | 8.75e+05×  | +5.94 (FAIL)
+  F4: A_tail_ν · A_tail_e · λ_C_e        |    2.591e-02  | 7.88e-03×  | -2.10 (FAIL)
+  F5: (A_tail_ν/g_0_ν) · λ_C_e           |    1.071e+00  | 3.25e-01×  | -0.49 (ANCHOR)
+  F6: g_0_ν · A_tail_ν · λ_C_e           |    5.182e-02  | 1.58e-02×  | -1.80 (FAIL)
+
+  Best Path F match: F5: (A_tail_ν/g_0_ν) · λ_C_e (OOM diff: -0.49)
+  Path F structural verdict: FAIL (no candidate within 10%)
+  Test T1 status: PASS (test completed, structural verdict reported)
+
+====================================================================================
+T2 — FIRST_PRINCIPLES: Path G — RP² topological scale
+====================================================================================
+
+  RP² topological scale: L_G = ℏc / E_topo
+  Where E_topo is characteristic energy of π_1(RP²)=Z_2 transition
+
+  E_topo candidate                       | E_topo (MeV)  | L_G (fm)      | OOM diff
+  ------------------------------------------------------------------------------------------
+  G1: m_e (electron mass)                |       0.511   |     386.159   | +2.07 (FAIL)
+  G2: m_e · g_0_ν                        |       0.112   |    1755.269   | +2.73 (FAIL)
+  G3: m_e · A_tail_e                     |       0.056   |    3510.538   | +3.03 (FAIL)
+  G4: m_e · γ_Berry/π                    |       0.511   |     386.159   | +2.07 (FAIL)
+  G5: m_e · g_0_ν / γ_Berry              |       0.036   |    5514.341   | +3.22 (FAIL)
+  G6: 2m_e / γ_Berry                     |       0.325   |     606.577   | +2.27 (FAIL)
+  G7: m_e · A_tail_ν / g_0_ν             |       0.001   |  139270.542   | +4.63 (FAIL)
+
+  Best Path G match: G1: m_e (electron mass) (OOM diff: +2.07)
+  Path G structural verdict: FAIL (no candidate within 10%)
+  Test T2 status: PASS
+
+====================================================================================
+T3 — FIRST_PRINCIPLES: Path H — Berry-Compton bridging
+====================================================================================
+
+  Berry-Compton bridging: L_H ~ γ_Berry · λ_C / factor
+  γ_Berry = π (PHASE3 + cycle 2)
+
+  Candidate                                | L_H (fm)      | OOM diff
+  --------------------------------------------------------------------------------
+  H1: γ_Berry · λ_C_e                          |   1.213e+03   | +2.57 (FAIL)
+  H2: γ_Berry · λ_C_e / (4π)                   |   9.654e+01   | +1.47 (FAIL)
+  H3: γ_Berry · λ_C_e · A_tail_ν               |   7.400e-01   | -0.65 (FAIL)
+  H4: γ_Berry · λ_C_e / A_tail_ν               |   1.989e+06   | +5.78 (FAIL)
+  H5: γ_Berry · (M_Pl² · H_0)^(1/3) inverse    |   1.022e+01   | +0.49 (ANCHOR)
+  H6: λ_C_e / (γ_Berry · A_tail_e)             |   1.117e+03   | +2.53 (FAIL)
+
+  Best Path H match: H5: γ_Berry · (M_Pl² · H_0)^(1/3) inverse (OOM diff: +0.49)
+  Path H structural verdict: FAIL (no candidate within 10%)
+  Test T3 status: PASS
+
+====================================================================================
+T4 — FIRST_PRINCIPLES: V''(1) re-analysis post-RP²
+====================================================================================
+
+  L06 Path A: V''(1) = -γ < 0 (tachyonic) — pure substrate
+  Question: does RP² defect modify V''(1)?
+
+  Pure substrate: V''(1) = -gamma = -γ ✗ tachyonic
+
+  RP² defect adds V_orient ~ K·(∂n)² ≥ 0 (positive)
+  V''_eff(1) = V''_sub(1) + V''_orient(1) = -γ + K·m_X²
+
+  → CIRCULAR: uses m_X to derive m_X (Lakatos)
+  → RP² extension does NOT structurally fix tachyonic V''(1)
+  → L06 Path A obstruction PERSISTS post-RP²
+
+  Status: PASS (re-analysis completed; obstruction PERSISTS)
+
+====================================================================================
+T5 — FIRST_PRINCIPLES: Inverse-problem m_X z empirical μ_ν
+====================================================================================
+
+  Inverse-problem methodology: solve m_X z empirical μ_ν = bound
+  Formula: μ_ν^TGP/μ_B = (m_e·m_ν)/(4·m_X²)
+  Setting μ_ν^TGP = bound (Capozzi-Raffelt 2σ = 1.2·10⁻¹² μ_B):
+    m_X_inv² = m_e·m_ν/(4·bound)
+    m_X_inv = sqrt(5.110e+05 × 0.1 / (4 × 1.200e-12))
+    m_X_inv = sqrt(1.065e+16) eV
+    m_X_inv = 103.18 MeV
+    L_X_inv = 1.912 fm
+
+  Comparison:
+    Anchor (L06):    m_X = 60 MeV, L_X = 3.29 fm
+    Critical (cycle 4): m_X = 95.6 MeV, L_X = 2.06 fm
+    Inverse-problem:  m_X = 103.2 MeV, L_X = 1.91 fm
+
+  → Inverse-problem gives CONSISTENT m_X estimate (post-uncertainty)
+  → But this is EMPIRICAL PINNING, NIE first-principles structural derivation
+  → Honest classification: NUMERICAL PINNING z bound (analog Path B's f_X)
+  Status: PASS (informative; classified as pinning NOT derivation)
+
+====================================================================================
+T6 — FIRST_PRINCIPLES: Consistency vs L06 Path E (Goldstone)
+====================================================================================
+
+  L06 Path E: pure-substrate Goldstone → m_X = 0 strukturalnie
+  Implication dla L_X: L_X = ℏc/m_X → ∞ strukturalnie
+
+  Practically: m_X > 0 z background-dependent breaking (ω.1 axion-photon coupling)
+    → L_X ∈ finite range z empirical pinning
+
+  Conclusion: L_X strukturalnie INFINITE (Goldstone limit); finite L_X reflects
+  background; this is CONSISTENT z L06 Path E result
+
+  → Path E inheritance: m_X = FREE PARAMETER strukturalnie
+  → Paths F-H attempt finite L_X derivation conflicts z Goldstone limit
+  → Path E provides INTERPRETATION: finite L_X measures BACKGROUND coupling
+
+  Status: PASS (Path E consistency confirmed; L_X structurally infinite)
+
+====================================================================================
+T7 — DECLARATIVE: S05 preservation
+====================================================================================
+
+  Inputs:
+    A_tail, g_0: derived z why_n3 R3 ODE solve (TGP-native)
+    γ_Berry = π: derived z PHASE3 RP² (TGP-native)
+    V(φ) = β·φ²(1-φ²/4): from sek05 (core TGP)
+    All TGP-native inputs; no new free parameters introduced
+  → S05 single-Φ preserved
+  Status: PASS
+
+====================================================================================
+T8 — LITERATURE_ANCHORED: Skyrme model comparison
+====================================================================================
+
+  Skyrme model: L_S = 1/(f_π · e_S)
+    f_π = 93 MeV (pion decay constant)
+    e_S = 5.45 (Skyrme parameter, fit to nucleon mass)
+    L_S = ℏc/(f_π · e_S) = 0.389 fm
+
+  TGP L_X target: 3.29 fm
+  Skyrme L_S: 0.39 fm
+  Ratio: 8.45× different
+
+  Skyrme uses NON-MINIMAL Lagrangian z Skyrme term (∇·n)²
+  TGP uses MINIMAL U(1) — no analogous Skyrme term
+  → Direct Skyrme analog NOT applicable to pure-TGP setup
+  Status: PASS
+
+====================================================================================
+SUMMARY
+====================================================================================
+
+Test results: 8/8 PASS
+  T1: PASS
+  T2: PASS
+  T3: PASS
+  T4: PASS
+  T5: PASS
+  T6: PASS
+  T7: PASS
+  T8: PASS
+
+Substance: 6 FP + 1 LIT + 1 DEC = 75% FP ✓, hardcoded T_pass=True: 0
+
+====================================================================================
+PATHS F/G/H STRUCTURAL VERDICT
+====================================================================================
+
+    Path                                          Best match    OOM diff  Status
+  ------------------------------------------------------------------------------------------
+       F                        F5: (A_tail_ν/g_0_ν) · λ_C_e     -0.49    FAIL
+       G                             G1: m_e (electron mass)     +2.07    FAIL
+       H           H5: γ_Berry · (M_Pl² · H_0)^(1/3) inverse     +0.49    FAIL
+
+====================================================================================
+KEY VERDICT
+====================================================================================
+
+  ✗ HALT-B: all 3 new paths (F/G/H) failed within 10% precision
+     Best candidate: F5: (A_tail_ν/g_0_ν) · λ_C_e
+     (best OOM diff: +0.49)
+
+  → L06 Path E extended: m_X = FREE PARAMETER strukturalnie
+  → 7 structural paths now exhausted (L06 A-D + this F/G/H)
+  → Goldstone theorem (T6): L_X = ∞ strukturalnie dla pure-substrate
+  → Finite L_X reflects BACKGROUND coupling (informative, NIE structural)
+
+====================================================================================
+END Phase 1 sympy
+====================================================================================

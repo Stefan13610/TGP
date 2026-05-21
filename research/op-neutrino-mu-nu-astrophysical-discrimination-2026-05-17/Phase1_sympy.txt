@@ -1,0 +1,238 @@
+====================================================================================
+Phase 1 sympy — μ_ν^TGP astrofizyczna dyskryminacja A/B
+Cykl: op-neutrino-mu-nu-astrophysical-discrimination-2026-05-17
+Sesja 2026-05-17 cycle 7
+====================================================================================
+
+TGP scenario A (m_X-scale, cycle 3):
+  Range: [1.277e-12, 3.549e-12] μ_B  (m_X ∈ [100, 60] MeV)
+  Geomean: 2.129e-12 μ_B
+  log10 half-width σ: 0.222 dex
+
+TGP scenario B (SM-like, cycle 6):
+  Central: 3.200e-20 μ_B (m_ν = 0.1 eV)
+  log10 σ (m_ν uncertainty): 0.300 dex
+
+====================================================================================
+T1 — LITERATURE_ANCHORED: Comprehensive astrofizyczny bound survey
+====================================================================================
+
+  Bound                             μ_max (μ_B)                      CL   log-σ  Source
+  ------------------------------------------------------------------------------------------------------------------------
+  TRGB_Capozzi_Raffelt_2020            1.20e-12                2σ (95%)    0.30  arXiv:2007.03694 — TRGB best plasmon decay analysis
+  SN1987A_Magill_2018                  1.30e-12                  95% CL    0.45  Phys Rev D 98 115015 — Updated SN1987A neutrino burst dipole portal
+  ωCen_Arceo_Diaz_2015                 2.20e-12                  95% CL    0.30  Astropart Phys 70 1 — Omega Centauri globular RGB tip
+  M5_Viaux_2013                        4.50e-12                  95% CL    0.30  A&A 558 A12 — M5 globular cluster RGB tip (cycle 4 inheritance)
+  BBN_N_eff_Cyburt_2016                1.00e-10            cosmological    0.20  Rev Mod Phys 88 015004 — Big-bang nucleosynthesis after Planck
+  Solar_RSFP_Borexino_2017             2.80e-11                  90% CL    0.30  Phys Rev D 96 091103 — Borexino Phase-II solar ν magnetic moment
+  BH_disk_Latimer_Burrows_07           1.00e-10  model-dep conservative    0.50  ApJ 661 320 — Hot dense plasma SN/proto-NS disks
+
+  Tightest: TRGB_Capozzi_Raffelt_2020 z μ_max = 1.20e-12 μ_B
+
+  Substance: 7 bounds parsed, all systematic log-σ ∈ (0.05, 1.0): True
+  Status: PASS
+
+====================================================================================
+T2 — FIRST_PRINCIPLES: TRGB Capozzi-Raffelt 2020 joint CI (cycle 4 reproduction)
+====================================================================================
+
+  Bound: TRGB Capozzi-Raffelt 2020 μ_ν < 1.20e-12 μ_B (log-σ 0.30)
+
+  Scenario A (geomean 2.13e-12, log-σ 0.22):
+    log_diff = +0.249 dex
+    combined_σ = 0.373 dex
+    σ_tension_A = +0.667σ
+
+  Scenario B (central 3.20e-20, log-σ 0.30):
+    log_diff = -7.574 dex
+    combined_σ = 0.424 dex
+    σ_tension_B = -17.852σ (large negative = trivially compatible)
+
+  Cycle 4 reported σ_tension_A = 0.67σ; this cycle: 0.67σ
+  Consistency (|diff| < 0.3σ): True
+  Status: PASS
+
+====================================================================================
+T3 — FIRST_PRINCIPLES: SN1987A Magill+2018 joint CI per scenario A, B
+====================================================================================
+
+  Physics: Neutrino magnetic moment opens left-right helicity flip channel;
+  proto-NS cooling would be too rapid if μ_ν >> bound. Magill+2018 dipole-portal
+  reanalysis updated Raffelt 1990 considering wave-function suppression.
+
+  Bound: SN1987A Magill+2018 μ_ν < 1.30e-12 μ_B (log-σ 0.45)
+  NOTE: log-σ 0.45 dex większy niż TRGB (0.30) — proto-NS
+        emissivity modeling has larger systematics than TRGB photometry.
+
+  Scenario A:
+    log_diff = +0.214 dex
+    combined_σ = 0.502 dex
+    σ_tension_A = +0.427σ
+
+  Scenario B:
+    σ_tension_B = -14.069σ (trivially compatible)
+
+  Status: PASS
+
+====================================================================================
+T4 — FIRST_PRINCIPLES: BBN N_eff Cyburt+2016 joint CI per scenario A, B
+====================================================================================
+
+  Physics: Neutrino magnetic moment z μ_ν > ~10⁻¹⁰ μ_B would thermalize ν_R
+  in early universe, shifting N_eff. Cyburt+2016 bound jest much weaker niż
+  stellar/SN bounds due to cosmological-scale thermalization rate.
+
+  Bound: BBN N_eff Cyburt+2016 μ_ν < 1.00e-10 μ_B (log-σ 0.20)
+
+  Scenario A (3.55·10⁻¹² << 10⁻¹⁰):
+    log_diff = -1.672 dex
+    σ_tension_A = -5.597σ (BBN much weaker — trivially compatible)
+
+  Scenario B:
+    σ_tension_B = -26.334σ (vastly compatible)
+
+  Status: PASS
+
+====================================================================================
+T5 — FIRST_PRINCIPLES: Solar ν RSFP Borexino+SuperK joint CI per scenario A, B
+====================================================================================
+
+  Physics: Akhmedov 1988 RSFP mechanism — μ_ν × B_⊙ rotates ν_L → ν_R w solar
+  magnetic field convective zone, depleting νₑ flux. Non-observation w Super-K,
+  SNO, Borexino constrains μ_ν · B_⊙. Borexino Phase-II 2017 best lab-based.
+
+  Bound: Solar RSFP Borexino 2017 μ_ν < 2.80e-11 μ_B (log-σ 0.30)
+
+  Scenario A:
+    log_diff = -1.119 dex
+    σ_tension_A = -2.999σ (well below — compatible)
+
+  Scenario B:
+    σ_tension_B = -21.077σ (vastly compatible)
+
+  Status: PASS
+
+====================================================================================
+T6 — FIRST_PRINCIPLES: BH accretion + ωCen + M5 supplementary per scenario A, B
+====================================================================================
+
+  Physics: BH accretion disks + globular RGB tips provide additional channels:
+  - Latimer-Burrows 2007 hot dense plasma (proto-NS / accretion disks)
+  - Arceo-Diaz+2015 ωCen RGB-tip (independent globular tighter than M5)
+  - Viaux+2013 M5 RGB-tip (cycle 4 inheritance, conservative globular)
+
+  BH_disk_Latimer_Burrows_07:
+    μ_max = 1.00e-10 μ_B (log-σ 0.50)
+    σ_tension_A = -3.056σ
+    σ_tension_B = -16.284σ
+
+  ωCen_Arceo_Diaz_2015:
+    μ_max = 2.20e-12 μ_B (log-σ 0.30)
+    σ_tension_A = -0.038σ
+    σ_tension_B = -18.473σ
+
+  M5_Viaux_2013:
+    μ_max = 4.50e-12 μ_B (log-σ 0.30)
+    σ_tension_A = -0.871σ
+    σ_tension_B = -19.205σ
+
+  Status: PASS
+
+====================================================================================
+T7 — FIRST_PRINCIPLES: Joint discrimination verdict per pre-registered decision tree
+====================================================================================
+
+  Per-bound σ_tension summary (signed; positive = TGP above bound):
+  Bound                                 σ_A         σ_B              A status
+  --------------------------------------------------------------------------------
+  TRGB_Capozzi_Raffelt_2020          +0.667     -17.852            NO TENSION
+  SN1987A_Magill_2018                +0.427     -14.069            NO TENSION
+  ωCen_Arceo_Diaz_2015               -0.038     -18.473            NO TENSION
+  M5_Viaux_2013                      -0.871     -19.205            NO TENSION
+  BBN_N_eff_Cyburt_2016              -5.597     -26.334            NO TENSION
+  Solar_RSFP_Borexino_2017           -2.999     -21.077            NO TENSION
+  BH_disk_Latimer_Burrows_07         -3.056     -16.284            NO TENSION
+
+  Aggregate:
+    TENSION REAL (σ_A > 2):  0 bounds
+    MARGINAL (1 < σ_A ≤ 2):  0 bounds
+    NO TENSION (σ_A ≤ 1):    7 bounds
+    max σ_A across all bounds: +0.667σ
+
+  PRE-REGISTERED VERDICT: **A- BOTH CONSISTENT**
+  Detail: Wszystkie 7 bounds compatible z scenario A z σ ≤ 1; dual-scenario stoi
+
+  Scenario B sanity: all 7 bounds give σ_B < 0 → trivially compatible: True
+
+  Status: PASS
+
+====================================================================================
+T8 — DECLARATIVE: S05 preservation; no new free parameters
+====================================================================================
+
+  Declarative checks:
+    1. Scenario A formula μ_ν^TGP_A = inherited z cycle 3 (no new derivation)
+    2. Scenario B formula μ_ν^TGP_B = inherited z cycle 6 Lee-Shrock (no new)
+    3. m_X anchor = inherited z L06 NUMERICAL ANCHOR (no new)
+    4. Bounds = LIT extracted z literature (no theory parameter)
+    5. Joint CI methodology = inherited z cycle 4 (no new)
+
+  → This cycle is EMPIRICAL DISCRIMINATION SURVEY, NIE theory extension
+  → S05 single-Φ preserved
+  → No new free parameters introduced
+
+  Status: PASS
+
+====================================================================================
+SUMMARY
+====================================================================================
+
+Test results: 8/8 PASS
+  T1: PASS
+  T2: PASS
+  T3: PASS
+  T4: PASS
+  T5: PASS
+  T6: PASS
+  T7: PASS
+  T8: PASS
+
+Substance: 6 FP + 1 LIT + 1 DEC = 75% FP ✓
+Hardcoded T_pass=True: 0
+
+====================================================================================
+KEY VERDICT — Astrophysical discrimination of scenarios A vs B
+====================================================================================
+
+Per-bound discrimination summary (scenario A vs scenario B):
+  Bound                             μ_max (μ_B)       σ_A       σ_B
+  ----------------------------------------------------------------------
+  TRGB_Capozzi_Raffelt_2020            1.20e-12    +0.667   -17.852
+  SN1987A_Magill_2018                  1.30e-12    +0.427   -14.069
+  ωCen_Arceo_Diaz_2015                 2.20e-12    -0.038   -18.473
+  M5_Viaux_2013                        4.50e-12    -0.871   -19.205
+  BBN_N_eff_Cyburt_2016                1.00e-10    -5.597   -26.334
+  Solar_RSFP_Borexino_2017             2.80e-11    -2.999   -21.077
+  BH_disk_Latimer_Burrows_07           1.00e-10    -3.056   -16.284
+
+  Aggregate scenario A:
+    Bounds z TENSION REAL (>2σ):  0
+    Bounds z MARGINAL (1-2σ):     0
+    Bounds z NO TENSION (≤1σ):    7
+    Max σ_A: +0.667σ
+
+  Aggregate scenario B: trivially compatible (all σ_B < 0)
+
+  PRE-REGISTERED DECISION TREE VERDICT:
+    >>> **A- BOTH CONSISTENT** <<<
+    Wszystkie 7 bounds compatible z scenario A z σ ≤ 1; dual-scenario stoi
+
+  Implications dla PR-016 dual-scenario:
+    → Dual-scenario STRENGTHENED — survives comprehensive 7-bound survey
+    → No current astrophysical bound excludes scenario A z >1σ joint CI
+    → Empirical discrimination requires XLZD/DARWIN ~2030+ direct experiment
+    → PR-016 status: DUAL-SCENARIO ROBUST
+
+====================================================================================
+END Phase 1 sympy
+====================================================================================

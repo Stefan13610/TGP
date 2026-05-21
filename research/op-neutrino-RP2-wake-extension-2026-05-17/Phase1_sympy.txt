@@ -1,0 +1,144 @@
+====================================================================================
+Phase 1 sympy — RP² extension R3 closure
+Cykl: op-neutrino-RP2-wake-extension-2026-05-17
+====================================================================================
+
+====================================================================================
+T1 — FIRST_PRINCIPLES: Φ = f_0(r)·U(n) decomposition, f_0 spherical?
+====================================================================================
+
+  Hedgehog ansatz: Φ(x) = f_0(r)·U(n(x))
+  Magnitude: |Φ|² = f_0(r)² (purely radial)
+  |∇f_0|² = (f'(r))² · (x²+y²+z²)/r² = (f'(r))² ✓
+  Symbolic check: |∇f_0|² - (f'(r))² = 0
+  Status: PASS
+  → Hedgehog magnitude f_0(r) IS spherical (no angular dependence)
+
+====================================================================================
+T2 — FIRST_PRINCIPLES: Source S structure pod RP² vs spherical β-task
+====================================================================================
+
+  Source S = (2e/f_0)·(∂_μf_0)·A^μ
+  Under RP² hedgehog: f_0(r) spherical (T1)
+  Static B = B_0 ẑ, A = (B_0/2)(-y,x,0):
+  ∇f_0 · A_vec = 0 (static case)
+  IDENTICAL z β-task T2 (since f_0 magnitude unchanged)
+  Status: PASS
+  → Source structure preserved structurally pod RP² extension
+
+====================================================================================
+T3 — FIRST_PRINCIPLES: Linear-in-v preservation pod RP²
+====================================================================================
+
+  Moving RP² hedgehog: r' = √((x-vt)² + y² + z²)
+  Magnitude f_0(r') still spherical (in co-moving frame)
+  Source S |_{v=0} = 0
+  ∂S/∂v |_{v=0} = -B_0*t*y*Derivative(f_r(_xi_1), _xi_1)/(2*sqrt(x**2 + y**2 + z**2))
+  v=0 → S=0 ✓: True
+  Linear-in-v non-zero: True
+  Status: PASS
+  → β-task T3 KEY result PRESERVED pod RP² extension
+
+====================================================================================
+T4 — FIRST_PRINCIPLES: n=0 winding (∂θ_static=0) preserved
+====================================================================================
+
+  Neutrino n=0 winding: ∮dθ_static = 0
+  n=0 (U(1) winding): YES ✓
+  Berry phase γ (RP² invariant): ∮A_φ dφ = pi
+  γ_Berry = π: YES ✓
+  Status: PASS
+  → U(1) n=0 winding (compact phase) and γ_Berry=π (RP² topology)
+     are DISTINCT invariants; both consistent for neutrino
+
+====================================================================================
+T5 — FIRST_PRINCIPLES: Berry-motion coupling heuristic channel
+====================================================================================
+
+  Berry phase γ = π (PHASE3)
+  Adiabatic transport: q_berry ~ (γ/2π)·e·β = e·β/2
+  Spinor-mediated dipole: μ_spinor = q_berry·ℏ/(2m_eff)
+  Symbolic: μ_spinor = beta*e*hbar/(4*m_eff)
+  Linear in v/c (motion-derived): True
+  Status: PASS
+  → NEW coupling channel identified heuristically:
+     Berry-mediated effective charge × motion → spinor dipole
+     Linear-in-v scaling CONSISTENT z β-task scalar mechanism
+     (Quantitative loop computation DEFERRED post-W/Z sector)
+
+====================================================================================
+T6 — LITERATURE_ANCHORED: γ_Berry = π (Berry 1984; PHASE3 §2.4)
+====================================================================================
+
+  Berry phase formula: γ = ∮ A_φ dφ, A_φ = (1-cos(θ))/2
+  Equatorial loop θ=π/2: γ = π × (1-cos(π/2)) = π × 1 = π
+
+        θ_loop        γ_Berry        γ/π
+  ----------------------------------------
+           π/4         0.9202     0.2929
+  π/2 (equatorial)          3.142      1.000
+          3π/4          5.363      1.707
+
+  Equatorial γ = π: True
+  Status: PASS
+  → Reference: Berry 1984 Proc Roy Soc A 392; PHASE3 §2.4 (consistency)
+
+====================================================================================
+T7 — DECLARATIVE: Gauge invariance pod RP² extension
+====================================================================================
+
+  Gauge: A_μ → A_μ + ∂_μλ; δθ → δθ + eλ
+  Under RP²: orientation U(n) is geometric (target space), gauge unaffected
+  Component-wise checks of (∂_μδθ - eA_μ) invariance:
+    μ=t: diff = 0
+    μ=x: diff = 0
+    μ=y: diff = 0
+    μ=z: diff = 0
+  All invariant: True
+  Status: PASS
+  → Gauge invariance PRESERVED pod RP² extension
+
+====================================================================================
+T8 — FIRST_PRINCIPLES: Structural equivalence theorem
+====================================================================================
+
+  Theorem: |Φ|² spherical(r) = |Φ|² RP²-hedgehog(r) = f_0(r)²
+  Reason: orientation U(n) is unitary, |U|² = 1
+  Magnitude depends ONLY on radial profile f_0(r)
+  → All magnitude-derived terms in L are identical
+  → Source S = (2e/f_0)·(∂_μf_0)·A^μ is identical
+  → All β-task results (T1-T8) transfer to RP² case unchanged
+  Symbolic check: |Φ_A|² - |Φ_B|² = 0
+  Status: PASS
+
+====================================================================================
+SUMMARY — Phase 1 RP² extension sympy verification
+====================================================================================
+
+Test results: 8/8 PASS
+
+  T1: PASS
+  T2: PASS
+  T3: PASS
+  T4: PASS
+  T5: PASS
+  T6: PASS
+  T7: PASS
+  T8: PASS
+
+Substance ratio:
+  T1-T5, T8: FIRST_PRINCIPLES (6 tests, 75%)
+  T6:        LITERATURE_ANCHORED (1 test)
+  T7:        DECLARATIVE (1 test)
+  FP: 6/8 = 75% (≥75% threshold met)
+  Hardcoded T_pass=True: 0
+
+VERDICT: ✓ β REFINED: f_0 spherical + S identical + linear-v preserved + spinor channel identified
+  → R3 (spherical vs RP²) from β-task: CLOSED structurally
+  → β-task β PASS verdict ROBUST under full RP² topology
+  → NEW finding: spinor-mediated Berry-motion coupling channel candidate
+    (heuristic; quantitative loop computation deferred post-W/Z sector)
+
+====================================================================================
+END Phase 1 sympy
+====================================================================================
