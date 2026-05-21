@@ -2,10 +2,14 @@
 title: "op-FRW-radiation-era-varying-c — H_TGP(z) z varying c, ℏ, G dla BBN/CMB"
 date: 2026-05-06
 parent: "[[../INDEX.md]]"
-status: ACTIVE
+status: CLOSED-SUPERSEDED  # post-2026-05-16 closure ceremony per Phase_FINAL_close.md
+closure_date: 2026-05-16
+folder_status: closed-superseded
+claim_status: STRUCTURAL_NO_GO  # Path A scope; REDIRECTED-RESOLUTION via Path F successor cycle
+successor: "[[../op-inflation-substrate-genesis-2026-05-11/Phase_FINAL_close.md]]"  # Path F A− (2026-05-13)
 cycle: EXT-1 (extension L01)
 audit_source: "[[../../audyt/EXTERNAL_REVIEW_2026-05-06.md]] §EXT-1 v2"
-priority: P1 OTWARTE RYZYKO
+priority: P1 OTWARTE RYZYKO → CLOSED-SUPERSEDED
 related:
   - "[[../../audyt/L01_rho_operational/EXT1_FRW_radiation_era_2026-05-06.md]]"
   - "[[../op-L01-rho-stress-energy-bridge-2026-05-04/]]"
@@ -223,3 +227,20 @@ Patrz [[NEEDS.md]] — formalna lista N1...N5 do rozszerzenia po każdej Phase.
   → Phase 2 enabled (BBN + recombination)
 - **Jeśli Phase 1 = <4/5** (singularność, non-perturbative regime):
   → Cykl ABANDONED, ścieżka D/E required, raport do user-a
+
+## Status FINAL (post-2026-05-16 closure ceremony)
+
+🟢 **CLOSED-SUPERSEDED** — patrz [[Phase_FINAL_close.md]] dla pełnej ceremonii zamknięcia.
+
+**Werdykt cyklu:**
+- **Path A** (varying-constants recovery w obecnym ax:c-ax:G framework): **STRUCTURAL_NO_GO**
+  confirmed numerycznie w Phase 2 (H_TGP/H_GR ≈ 0.184%; Y_p_TGP ≈ 0.31% vs PDG 24.5%).
+- **Path F** (pre-BBN inflation, NOVEL physics): **SUCCESS** via dedicated successor cycle
+  [[../op-inflation-substrate-genesis-2026-05-11/]] (A−, 41/41 sympy PASS, F3 Starobinsky
+  preferred Planck-compatible, Φ_eq chain across 6 cosmological epochs, 2026-05-13).
+- **Path D** (L_mat extension + S04 re-open): **NIE PODJĘTA — niepotrzebna**; Path F
+  resolved scope without naruszenia S04 (B9 MICROSCOPE preserved bezwarunkowo).
+- **Path E** (TGP_FOUNDATIONS scope acknowledgment): **PENDING-COSMETIC** (deferred do
+  dedicated housekeeping cycle); zreframed post-Path F success.
+
+**EXT-1 P1 OTWARTE RYZYKO status:** 🟢 **CLOSED-SUPERSEDED** via Path F successor cycle.

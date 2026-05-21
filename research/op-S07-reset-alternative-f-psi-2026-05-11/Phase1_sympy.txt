@@ -1,0 +1,51 @@
+[  T1] [    FIRST_PRINCIPLES] [PASS] Baseline f(ψ) = 1: trivial GR (no TGP signature in metric f); β_ppE_trivial = 0
+       → f_trivial(ψ → ψ_0) = 1; β_ppE contribution = 0 (no f-deviation)
+[  T2] [    FIRST_PRINCIPLES] [PASS] Polynomial family f(ψ) = 1 + α(ψ-ψ_0): GR limit f(ψ_0) = 1 by construction
+       → f_poly(ψ → ψ_0) = 1; α free parameter (S07 freedom)
+[ T3a] [    FIRST_PRINCIPLES] [PASS] M9.1'' f(ψ) = (4-3ψ)/ψ Taylor at ψ_0=1: f(1)=1 ✓, df/dψ|_1 = -4 (linear coefficient α_M911 = -4)
+       → df_M911/dψ|_{ψ_0=1} = -4; expected -4
+[ T3b] [    FIRST_PRINCIPLES] [PASS] β_ppE^poly(α) = (15/16)·α (linear scaling); α=0 → β_ppE=0 (trivial); α=-4 reproduces M9.1''
+       → β_ppE^poly = 15*alpha/16; consistency check α=-4 → -15/4 = -15/4 ✓
+[  T4] [    FIRST_PRINCIPLES] [PASS] GWTC-3 compatibility: |α| ≤ 0.832 for polynomial f(ψ); M9.1'' α=-4 excluded; range α ∈ [-0.832, 0.832]
+       → α_range_upper = 16·0.78/15 = 104/125 ≈ 0.8320; α_M911=-4 outside (excluded)
+[ T5a] [    FIRST_PRINCIPLES] [PASS] Quadratic family f(ψ) = 1 + α(ψ-ψ_0) + β(ψ-ψ_0)²: GR limit f(ψ_0) = 1
+       → f_quad(ψ → ψ_0) = 1
+[ T5b] [    FIRST_PRINCIPLES] [PASS] Quadratic family β_ppE^(2.5PN) = (15/16)·α at leading order (β coefficient enters at higher PN)
+       → β_quad contribution suppressed at 2.5PN; leading order matches polynomial family
+[ T6a] [    FIRST_PRINCIPLES] [PASS] Transcendental family f(ψ) = exp(α(ψ-ψ_0)): GR limit f(ψ_0) = exp(0) = 1
+       → f_exp(ψ → ψ_0) = 1
+[ T6b] [    FIRST_PRINCIPLES] [PASS] Transcendental β_ppE at 2.5PN leading: same as polynomial (15/16)·α (Taylor leading = α)
+       → Taylor coef of (ψ-ψ_0)^1 = alpha; expected α
+[  T7] [    FIRST_PRINCIPLES] [PASS] Cross-cycle: c_0·κ_σ = 4/3 EXACT (emergent-metric Phase 4 LOCK); enables zero-β recovery beyond α=0
+       → c_0·κ_σ LOCK = 4/3; provides σ-coupling compensation in Δe_2_native
+[  T8] [ LITERATURE_ANCHORED] [PASS] GWTC-3 |β_ppE| ≤ 0.78 (1σ); M9.1'' β_ppE = -15/4 rejected at 5.02σ (Abbott+2021)
+       → GWTC-3 bound = 0.78 (1σ); M9.1'' rejection = 5.02σ
+[  T9] [ LITERATURE_ANCHORED] [PASS] LIGO-O5 A+ ~2027 single-event SNR = 15.05σ falsification window (inherited PR-002 LOCK)
+       → LIGO-O5 A+ SNR = 15.05σ (2027); inheritance from LIGO-3G-native A−
+
+--- Structural declarations (NOT counted w PASS total) ---
+
+[T10] [DECLARATIVE         ] Anti-Lakatos commitment: brak H1c/H1d backstop. Recovery_scope: f(ψ) family enumeration WITHIN S07 freedom z mandatory GR-limit f(ψ_0)=1 constraint. Jeśli wszystkie alternatywy give β_ppE outside GWTC-3 window OR fail LIGO-O5 A+ 5σ test → H1b verdict: framework architecture revision OR M9.1'' framework-level falsification accepted.
+[T11] [DECLARATIVE         ] S05 single-Φ axiom preserved bezwarunkowo across wszystkie f(ψ) alternatives. f(ψ) modyfikuje TYLKO TGP-emergent metric g_eff[Φ], NIE wprowadza second-field; ax:metric-coupling preserved (matter sprzęga się przez g_eff).
+
+======================================================================
+PHASE 1 SYMPY RESULTS — S07-reset alternative f(ψ) SUMMARY
+======================================================================
+
+Total: 12
+PASS: 12/12
+FIRST_PRINCIPLES: 10/12 (83.3%)
+LITERATURE_ANCHORED: 2/12
+DECLARATIVE (separate): 2
+Hardcoded True: 0
+
+Phase 1 results headline:
+  - 3 f(ψ) families enumerated: trivial / polynomial / transcendental
+  - All preserve GR-limit f(ψ_0)=1 by construction
+  - β_ppE^poly(α) = (15/16)·α (linear scaling)
+  - GWTC-3 compatible range: α ∈ [-0.832, 0.832]
+  - M9.1'' α=-4 excluded; recovery region NON-TRIVIAL z c_0·κ_σ=4/3 LOCK
+
+Status: Phase 1 PASS — Phase 2 (Bayesian fit per family) deferred dla future session
+
+>>> ALL TESTS PASS — Phase 1 gate OPEN (Phase 2 next) <<<
