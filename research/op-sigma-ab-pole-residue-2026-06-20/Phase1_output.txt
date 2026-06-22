@@ -1,0 +1,41 @@
+======================================================================
+P1 — SPEKTRUM wolnego <sigma_ab sigma_cd> (kanal spin-2)
+======================================================================
+Pi(p) = atan(p/(2*m))/(4*pi*p)
+atan(p/2m): punkty rozgalezienia przy p = +- 2 i m  => p^2 = -4 m^2 (euklides)
+ => CIECIE (kontinuum dwuczastkowe) od progu p^2 = -(2 m_s)^2; BRAK izolowanego bieguna w wolnej teorii.
+ (biegun bylby prostym 1/(p^2+M^2); atan to funkcja z cieciem, nie biegun.)
+
+======================================================================
+P2 — PROJEKCJA jadra interakcji na fale L=2 (spin-2)
+======================================================================
+P_2(x) = 3*x**2/2 - 1/2
+kontakt phi^4 (M0): proj_{L=2} = int_{-1}^{1} 1 * P_2 dx = 0   => ZERO (kontakt = czysta L=0)
+pochodna ~ (k.k') ~ x:   proj_{L=2} = int x*P_2 dx = 0   => ZERO (L=1, nie L=2)
+kwadrupol ~ (k.k')^2 ~ x^2: proj_{L=2} = int x^2*P_2 dx = 4/15   => NIEZEROWE (tylko interakcja >=2 pochodne ma L=2)
+
+======================================================================
+P3 — WARUNEK BIEGUNA Bethego-Salpetera w kanale spin-2
+======================================================================
+Warunek bound-state: 1 = K_{L=2} * G(M^2)
+ - substrat M0 (kontakt): K_{L=2} = 0  => 1 = 0 SPRZECZNE => BRAK bieguna spin-2.
+ - interakcja kwadrupolowa: K_{L=2} != 0, ale to czlon >=2-pochodne = IRRELEVANT (UV),
+   nie czesc zwalidowanego substratu M0; sila wiazania niegwarantowana.
+
+======================================================================
+P4 — OPE coeff 2 m_s^2 vs pozycja bieguna
+======================================================================
+Heredity EOM coeff M^2 = 2 m_s^2 (closure Path B) = wsp. operatorowy (krotki dystans/OPE),
+NIE pozycja bieguna funkcji spektralnej (kontinuum od 4 m_s^2).
+Aby 2 m_s^2 bylo biegunem, musialby istniec bound state ~1.41 m_s PONIZEJ progu 2 m_s -
+a P3 pokazuje: kontakt M0 NIE wiaze spin-2 => taki biegun NIE powstaje.
+
+======================================================================
+PODSUMOWANIE Phase 1 (value-blind, wyliczone):
+ C-POLE   = FAIL : wolne <sigma sigma> = kontinuum (ciecie atan), brak izolowanego bieguna.
+ C-KERNEL = FAIL : kontakt M0 ma proj_{L=2}=0 (i ~x daje 0); tylko >=2-pochodne (irrelevant) daja L=2.
+ C-RESIDUE= FAIL : brak bieguna => brak residuum on-shell => C_sigma NIE ustalone.
+ C-MATCH  = USTALENIE : 2 m_s^2 = coeff OPE, NIE masa bieguna.
+ => Framework NIE dostarcza pole-residue dla sigma_ab. C_sigma pozostaje WOLNYM parametrem (op-CG4 Ph3).
+ => kappa_E = WOLNY PARAMETR sektora radiacyjnego (opcja b uczciwa).
+======================================================================

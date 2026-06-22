@@ -194,8 +194,8 @@ Krok & Opis & Typ & Status \\
 \midrule
 CG-1 & Istnienie i jedyność $S^*$ (Banach) & [AN] & \textbf{[OTWARTY]} \\
 CG-2 & LPA' z $K_k(\rho)$, zbieżność do $K_\mathrm{TGP}$ & [NUM] & \textbf{[ZAMKNIĘTY NUM]} \\
-CG-3 & Zbieżność $\Phi_B \to \Phi$ w $H^1$ (homogenizacja) & [AN] & \textbf{[OTWARTY]} \\
-CG-4 & Identyfikacja $K_\mathrm{hom} = K_\mathrm{TGP}$ & [AN+NUM] & \textbf{[OTWARTY]} \\
+CG-3 & Zbieżność $\Phi_B \to \Phi$ w $H^1$ (homogenizacja) & [AN] & \textbf{[ZAMKNIĘTY NUM]} \\
+CG-4 & Identyfikacja $K_\mathrm{hom} = K_\mathrm{TGP}$ & [AN+NUM] & \textbf{[CZĘŚCIOWY NUM]} \\
 CG-5 & Φ₀ z równania samospójnego \eqref{eq:self_consistency} & [NUM] & \textbf{[ZAMKNIĘTY NUM]} \\
 \bottomrule
 \end{tabular}
@@ -209,11 +209,30 @@ $v_2=0.06090$.
 Krok OP-1 (LPA' z $\eta\neq0$) zamknięty skryptem
 \texttt{tgp\_erg\_eta\_lpa\_prime.py} (10/10 PASS):
 $\eta^*=0.04419$ (samospójnie).
-Kroki CG-1, CG-3, CG-4 wymagają zaawansowanej matematyki
+Krok CG-1 wymaga zaawansowanej matematyki
 (ERG funkcjonalne, teoria homogenizacji de Giorgi, analiza funkcjonalna).
 Krok CG-5 zamknięty skryptem \texttt{tgp\_cg5\_phi0\_self\_consistency.py}
 (8/8 PASS, 2026-04-02): $T^*/T_c = 0.7955$, $a_\mathrm{sub,fiz} = 9.072$,
 $a_\Gamma\cdot\Phi_0 = 1.000000$.
+
+\medskip\noindent
+\textbf{Aktualizacja 2026-06-20 (CG-3, CG-4).}
+\emph{CG-3} zamkni\k{e}ty numerycznie (homogenizacja $\Phi_B\to\Phi$
+w~$H^1$, Cauchy, 5/5; cykl \texttt{op-CG34-continuum-closure}).
+\emph{CG-4} cz\k{e}\'sciowo: trzy sk\l{}adniki zamkni\k{e}te
+(koercywno\'s\'c $c_*>0$ \emph{continuum-stabilna}, $\beta=\gamma$,
+forma $K_\mathrm{hom}=K_\mathrm{IR}$). Kluczowe ustalenie
+(cykl \texttt{op-CG4-substrate-closure}): patologiczny by\l{}
+\emph{tylko} wi\k{a}z $-J(\hat s_i\hat s_j)^2$; substrat
+$\varphi^4$ klasy Isinga (M0) jest \textbf{niepatologiczny}
+($c_*>0$, rozrzut $1.13\times$ w~rozmiarze sieci), wi\k{e}c
+\textbf{residuum modelu substratu jest rozwi\k{a}zane}. Pozosta\l{}y
+residual --- scheme-independent $C_\sigma$ tensora $\sigma_{ab}$ ---
+\textbf{nie} jest problemem substratu ani numeryki: $C_\sigma$ jest
+\emph{dowiedzenie} parametrem swobodnym~UV (rozbie\.zno\'s\'c liniowa,
+brak bieguna spin~2); patrz uw.~\ref{rem:sigma-Csigma-free}
+(sek.~formalizmu) oraz cykl
+\texttt{op-sigma-ab-pole-residue}.
 
 \subsection*{Q.6 Program numeryczny dla CG-2 i CG-5}
 

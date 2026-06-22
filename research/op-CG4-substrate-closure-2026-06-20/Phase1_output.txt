@@ -1,0 +1,56 @@
+
+======================================================================
+T1 — alpha_eff = s-1 z mikroskopowego Z(phi)=Z0*phi^{2s}, Phi=phi^2
+======================================================================
+K1(Phi) = Phi**(s - 1)*Z0/4
+K1'/(2 K1) = (s - 1)/(2*Phi)   => alpha_eff (conv lap+alpha*(gradPhi)^2/(2Phi)) = s - 1
+  s=0: K1 ~ Phi^-1,  alpha_eff = -1
+  s=1: K1 ~ Phi^0,  alpha_eff = 0
+  s=3: K1 ~ Phi^2,  alpha_eff = 2
+USTALENIE: substrat standardowy Z=const (s=0) -> alpha_eff=-1; struktura (gradPhi)^2/Phi OBECNA
+           (wspolczynnik NIEZEROWY dla s!=1). Wartosc alpha=2 = POSTULAT na gestosci (#32),
+           NIE wynika jednoznacznie z s. C-C testuje OBECNOSC, nie wartosc.
+
+======================================================================
+T2 — Stabilnosc (bounded-below) kandydatow M0..M3
+======================================================================
+M0 (phi^4): bounded-below  <=>  u > 0  -> niestabilny dla u<=0 (runaway)
+M3 (phi^6): bounded-below  <=>  w > 0  -> bounded-below dla w>0 NIEZALEZNIE od znaku u (dopuszcza u<0)
+M1 (-J(s_i s_j)^2): E_uniform ~ (u - J*z) s^4  -> bounded-below <=> u > J*z
+   => albo runaway (u<Jz, udokumentowana patologia), albo dla u>Jz redukuje sie do M0
+       z przeskalowanym wspolczynnikiem (BRAK niezaleznej korzysci). Kontrola negatywna.
+M2 (gradient-bond v2): cz³on >=0 zawsze, ZNIKA dla pola jednorodnego (s_i=s_j)
+   => kierunek plaski w amplitudzie -> bez on-site V(s) amplituda nieokreslona (frozen/degeneracja).
+      Krytycznosc kontroluje on-site V (=M0/M3), nie sam bond. Nie dodaje czystego pkt. kryt.
+
+======================================================================
+T3 — Typ przejscia Z2 (Landau): f(M)=a/2 M^2 + b/4 M^4 + c/6 M^6
+======================================================================
+Ekstrema niezerowe: M^2 = [(-b - sqrt(-4*a*c + b**2))/(2*c), (-b + sqrt(-4*a*c + b**2))/(2*c)]
+b>0 (c>0): przejscie CIAGLE (2. rzedu) przy a=0           [M0: b=u>0 -> ciagle, klasa Isinga]
+b=0      : punkt TRIKRYTYCZNY                              [M3: u=0]
+b<0 (c>0): przejscie 1. RZEDU, skok przy a=3b^2/(16c)>0    [niepozadane: histereza]
+  weryfikacja 1.rzedu (sympy): [{Msq: -3*b/(4*c), a1: 3*b**2/(16*c)}]
+
+======================================================================
+T4 — B¹bel 3D Pi(p): znak C_sigma + power-counting operatora zlozonego
+======================================================================
+Pi(p) = atan(p/(2*m))/(4*pi*p)
+rozwiniecie p->0: 1/(8*pi*m) - p**2/(96*pi*m**3)
+  wspolczynnik p^0 = 1/(8*pi*m)  (= 1/(8 pi m))
+  wspolczynnik p^2 = -1/(96*pi*m**3)  (= -1/(96 pi m^3) < 0)
+  => C_sigma = -coeff(p^2) = 1/(96*pi*m**3)  > 0   [znak DERIVED, zgodny z #31]
+
+Superficial degree of divergence dla <O_ab O_cd>: D = d + #deriv - 2*#prop = 3+4-4 = 3
+  D=3 > 0  => UV POWER-divergent (cubic) => additywna subtrakcja + mieszanie operatorow
+  = R-continuum. To zrodlo scheme-dependence prefaktora C_sigma (Phase 3).
+  Znak/skaling C_sigma DERIVED; scheme-independent MAGNITUDA wymaga renormalizacji (Phase 2/3).
+
+======================================================================
+PODSUMOWANIE Phase 1 (value-blind, wyliczone):
+ - alpha_eff=s-1 potwierdzone; alpha=2 NIE z substratu (postulat, #32) -> C-C: struktura obecna.
+ - Stabilnosc: M0(u>0) i M3(w>0) bounded-below; M1 runaway/redukcja; M2 kierunek plaski.
+ - Punkt krytyczny: M0 = ciagly (Ising); M3 = ciagly + trikrytyczny tunable; M1/M2 wykluczone STRUKTURALNIE.
+ - C_sigma>0 DERIVED (banbel 3D); R-continuum (D=3 cubic) = bariera scheme-indep. -> Phase 2/3.
+ REKOMENDACJA Phase 2: substrat produkcyjny = M0 (phi^4 GL, klasa Isinga), cross-check M3.
+======================================================================

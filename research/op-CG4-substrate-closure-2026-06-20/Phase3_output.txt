@@ -1,0 +1,38 @@
+======================================================================
+A. STRUKTURA ANALITYCZNA (sympy)
+======================================================================
+|W^TT|^2 = kx**4/2 + kx**2*ky**2 + ky**4/2   (UWAGA: niezalezne od pz!)
+<|W^TT|^2>_phi = k**4*sin(theta)**4/2   = 1/2 k^4 sin^4(theta)
+
+d^2/dpz^2 [1/D_p]|_0 / 1 (p^2 coeff) = (-kx**2 - ky**2 + 3*kz**2 - m**2)/(kx**2 + ky**2 + kz**2 + m**2)**3
+   = (4 kz^2 - k^2 - m^2)/(k^2+m^2)^3   [k^2=kx^2+ky^2+kz^2]
+
+--- stopien rozbieznosci wspolczynnika p^2 (C_sigma) ---
+[O_ab]=3 (d=3) => [<OO>(p)]=3 => [coeff p^2]=1 => LINIOWA rozbieznosc (~Lambda)
+kat. calka  int_{-1}^{1}(1-mu^2)^2(4mu^2-1)dmu = -16/35 = -16/35  (NIEZEROWA!)
+=> wspolczynnik rozbieznosci LINIOWEJ jest NIEZEROWY
+=> C_sigma z golego babla jest scheme-DEPENDENT (rosnie ~Lambda); brak continuum scheme-indep.
+
+======================================================================
+B. WERYFIKACJA NUMERYCZNA  C_sigma(Lambda)
+======================================================================
+  Lambda     C_sigma(Lam)
+     5.0         -0.00880
+    10.0         -0.02280
+    20.0         -0.05151
+    40.0         -0.10930
+    80.0         -0.22505
+   160.0         -0.45664
+
+fit C_sigma(Lam) = -0.002891*Lambda + 0.00611
+przewidziany wsp. liniowy = 1/2 * 1/2 * (-16/35) * 2pi/(2pi)^3 = -0.002895
+|slope| >> 0 => LINIOWO ROZBIEZNE (scheme-dependent)
+
+======================================================================
+WERDYKT Phase 3 (wyliczony):
+ C_sigma (wsp. p^2 kanalu TT sigma_ab) ma NIEZEROWA rozbieznosc LINIOWA w Lambda.
+ => NIE istnieje scheme-independent continuum golego operatora d_s d_s.
+ => C_sigma jest UV-czuly = wolny parametr (wymaga warunku renormalizacyjnego: residuum bieguna),
+    NIEustalany przez sam babel. C-D = GAP (nie PARTIAL-survival).
+ To TLUMACZY pasmo lattice-MC #31 [0.04,11.1]: wartosc skaluje sie z odcieciem sieci.
+======================================================================

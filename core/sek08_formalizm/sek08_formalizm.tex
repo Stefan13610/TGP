@@ -168,8 +168,14 @@ $\psi_{\rm ini} = 7/6$ & dok\l{}adnie & I$\to$III &
   (stw.~\ref{prop:psi-ini-derived}; \texttt{ex86} 9/9~PASS) \\
 \midrule
 \multicolumn{4}{l}{\textit{Warstwa~III --- wyprowadzone (predykcje)}} \\
-$M_* = m_P$ & $\approx 1{,}2\times 10^{19}$ GeV & III &
-  $\PhiZero + \ell_P$ (stw.~\ref{prop:Mstar-from-substrate}) \\
+% KOREKTA 2026-06-14 (op-disformal-radiation-resolution, F-DRR-3 = POSTULATE):
+% klasyfikacja 'Warstwa III -- wyprowadzone' dla M_* to OVERCLAIM. prop:Mstar-from-substrate
+% jest ARGUMENTEM WYMIAROWYM (M_*^2=1/ell_P^2 jako jedyna bezparam. kombinacja + norm. B(Phi0)=1),
+% NIE mikro-derywacja z dynamiki substratu, i NIE fit. status_map ('Propozycja; brak mikro-derywacji')
+% jest poprawne. Liczba M_*=m_P stoi jako postulat wymiarowy. Por. Phase2_derivation.md §6.
+$M_* = m_P$ & $\approx 1{,}2\times 10^{19}$ GeV & III$^{\dagger}$ &
+  $\PhiZero + \ell_P$ (stw.~\ref{prop:Mstar-from-substrate};
+  $^{\dagger}$\,\emph{postulat wymiarowy, nie mikro-derywacja --- por.\ status\_map}) \\
 $\Lambda_{\rm eff} \sim \gamma/12$ & $\sim H_0^2$ & III &
   $W(1) = \gamma/3$ (stw.~\ref{prop:Lambda-eff}) \\
 3~generacje & dok\l{}adnie & III &
@@ -1065,6 +1071,35 @@ $\alpha=2$ \emph{wewn\k{a}trz} klasy~(C1--C3); rozlu\'znienie
 kt\'oregokolwiek z~warunk\'ow (nielokalno\'s\'c, wy\.zsze pochodne,
 inna $\Phi$-kowariancja) otwiera\l{}oby inne warto\'sci.
 Odpowied\'z na C5 z~recenzji 2026-04-25.
+\end{remark}
+
+\begin{remark}[Rozr\'o\.znienie pola amplitudowego i~g\k{e}sto\'sci --- rozstrzygni\k{e}cie
+  \texttt{op-A3-alpha-resolution} (2026-06-14)]%
+\label{rem:amplitude-vs-density-alpha}
+\textbf{Konwencja LOCKED (Opcja~B; skorygowana --- audyt \texttt{op-amplitude-density-global-audit} 2026-06-16).}
+Kanonicznym polem TGP jest \textbf{g\k{e}sto\'s\'c} $\Phi$ (def.~\ref{def:Phi}: ,,$\Phi$ mierzy g\k{e}sto\'s\'c
+wygenerowanej przestrzeni"; $\Phi\propto\langle\hat s^2\rangle$, sek01). W~tw.~\ref{thm:D-uniqueness}
+oraz w~r\'ownaniu pola (sek02~eq:N-preview: $\nabla^2\Phi+\alpha(\nabla\Phi)^2/\Phi$, $\alpha=2$)
+wsp\'o\l{}czynnik gradientowy $\alpha=2$ jest \textbf{postulowany na g\k{e}sto\'sci} $\Phi$, poprzez aksjomatyczne
+konforemne sprz\k{e}\.zenie $K(\varphi)=K_{\mathrm{geo}}\varphi^4$ ze zmienn\k{a} bezwymiarow\k{a}
+$\varphi=\Phi/\Phi_0$ (sek08a~eq:K-coupling-unified), b\k{e}d\k{a}c\k{a} selekcj\k{a} w~klasie C1--C3
+(NIE wyprowadzeniem z~substratu --- por.\ rem.~\ref{rem:alpha2-pivot-status-pl}).
+
+\medskip\noindent\textbf{Status substratu (op-A3-alpha-resolution).} Mikroskopowa reprezentacja
+\emph{amplitudowa} ($\hat s\propto\sqrt{\Phi}$, sprz\k{e}\.zenie substratu $K\propto\hat s^4$) po przepisaniu
+w~zmiennej g\k{e}sto\'sci daje $\alpha=\tfrac12$ (sek10~eq:kinetic\_macro: $K_{\mathrm{eff}}(\psi)\propto\psi$),
+\textbf{NIE}~$2$ --- poniewa\.z $\alpha$ \textbf{nie jest niezmiennikiem} nieliniowej redefinicji
+$\hat s\to\Phi\propto\hat s^2$. Substrat zatem \textbf{nie derywuje} $\alpha=2$; to jest dok\l{}adnie tre\'s\'c
+wycofania substratowego wyprowadzenia (rem.~\ref{rem:alpha2-pivot-status-pl}). $\alpha=2$ ma status
+\emph{aksjomatycznej selekcji} (C1--C3), a~nie derywacji.
+
+\medskip\noindent\textbf{Konsekwencja:} kanoniczne r\'ownanie pola, metryka $g_{\rm eff}(\Phi)$ (sek08c),
+soliton (R3 ODE) i~widmo mas s\k{a} zdefiniowane w~\textbf{g\k{e}sto\'sci} $\Phi$ z~$\alpha=2$.
+Amplituda $\hat s\propto\sqrt{\Phi}$ jest jedynie reprezentacj\k{a} mikroskopow\k{a}, nie osobnym polem
+dynamicznym. Cykl \texttt{research/op-A3-alpha-resolution-2026-06-14/} (sympy, value-blind 5/5) ustali\l{}
+relacj\k{e} $\alpha=p/2$ i~nie-niezmienniczo\'s\'c; cykl \texttt{research/op-amplitude-density-global-audit-2026-06-16/}
+skorygowa\l{} wcze\'sniejsze (b\l{}\k{e}dne) ramowanie ,,pole kanoniczne = amplituda" do zgodno\'sci
+z~def.~\ref{def:Phi} oraz sek10~uw.~\ref{rem:canonical_g4}.
 \end{remark}
 
 \begin{remark}[Zwi\k{a}zek z~laplasjanem Laplace'a--Beltramiego]%
@@ -6931,17 +6966,61 @@ przez dopasowanie do amplitudy GR
 (tw.~\ref{thm:amplitude-matching}), a~$m_\sigma \to 0$
 przyj\k{e}te z~korelacji dalekosi\k{e}\.znych substratowych.
 Pozosta\l{}y $C_\sigma$ (lub r\'ownowa\.znie $\sigma_0$)
-jest \textbf{dodatkowym parametrem} --- wyznaczalnym w~zasadzie
-z~dynamiki substratu (dod.~\ref{app:substrat}), ale obecnie
-niezobliczonym.
+jest \textbf{dodatkowym parametrem}. Pierwotnie zak\l{}adano go za
+wyznaczalny w~zasadzie z~dynamiki substratu (dod.~\ref{app:substrat});
+status ten zosta\l{} jednak \textbf{zaostrzony} (2026-06-20):
+$C_\sigma$ jest \emph{dowiedzenie} parametrem swobodnym, nie
+wielko\'sci\k{a} obliczaln\k{a} t\k{a} drog\k{a} ---
+patrz uw.~\ref{rem:sigma-Csigma-free}.
 
 \medskip\noindent
 \textbf{Bilans parametr\'ow}: sektor skalarny $\Phi$ ma
 \textbf{2} wolne parametry ($\gamma$ i~$q$);
 sektor tensorowy $\sigma_{ab}$ dodaje \textbf{1} parametr
 ($C_\sigma$). \L{}\k{a}cznie TGP ma $2+1 = 3$ parametry
-fenomenologiczne. Redukcja do $2$ wymaga obliczenia $C_\sigma$
-z~hamiltonianu substratu --- jest to \textbf{problem otwarty}.
+fenomenologiczne. Redukcja do $2$ wymaga\l{}aby obliczenia
+$C_\sigma$ z~hamiltonianu substratu; uw.~\ref{rem:sigma-Csigma-free}
+pokazuje, \.ze \textbf{nie jest to mo\.zliwe} t\k{a} drog\k{a}
+($C_\sigma$ jest nieredukowalnym parametrem swobodnym~UV).
+TGP ma zatem \textbf{3}~parametry fenomenologiczne, a~sektor
+tensorowy jest pod tym wzgl\k{e}dem \textbf{nieredukowalny}.
+\end{remark}
+
+\begin{remark}[$C_\sigma$ jako nieredukowalny parametr swobodny:
+czu\l{}o\'s\'c UV oraz brak bieguna]\label{rem:sigma-Csigma-free}
+Dwa niezale\.zne wyniki (2026-06-20) ustalaj\k{a}, \.ze $C_\sigma$
+--- a~wi\k{e}c r\'ownie\.z $\kappa_E \equiv 8\pi G_0 C_\sigma
+\sigma_0^2/c^3$ --- jest \textbf{nieredukowalnym parametrem
+swobodnym}, nie wielko\'sci\k{a} przewidywaln\k{a} z~substratu:
+\begin{enumerate}
+\item \textbf{Czu\l{}o\'s\'c UV.} Wsp\'o\l{}czynnik przy $p^2$
+  funkcji dwupunktowej operatora z\l{}o\.zonego
+  $O_{ab} = \partial_a\hat s\,\partial_b\hat s$ w~kanale
+  poprzeczno-bez\'sladowym (spin~2) ma \emph{niezerow\k{a}
+  rozbie\.zno\'s\'c liniow\k{a}} w~odci\k{e}ciu $\Lambda$;
+  wsp\'o\l{}czynnik k\k{a}towy
+  $\int_{-1}^{1}(1-\mu^2)^2(4\mu^2-1)\,d\mu = -16/35 \neq 0$
+  (weryfikacja analityczno-numeryczna zgodna do~4 cyfr).
+  Go\l{}y b\k{a}bel nie ma wi\k{e}c granicy niezale\.znej od schematu:
+  warto\'s\'c $C_\sigma$ zale\.zy od odci\k{e}cia (co t\l{}umaczy
+  rozrzut pomiar\'ow sieciowych).
+\item \textbf{Brak bieguna.} Funkcja spektralna $\sigma_{ab}$ jest
+  \emph{kontinuum} dwucz\k{a}stkowym od progu $(2m_s)^2$
+  (ci\k{e}cie $\arctan$), bez izolowanego bieguna. Interakcja
+  kontaktowa substratu ($\varphi^4$, klasa Isinga) ma \emph{zerow\k{a}}
+  projekcj\k{e} na fal\k{e} spin~2 ($\int_{-1}^{1}P_2(x)\,dx = 0$):
+  fala $s$ nie wi\k{a}\.ze w~kanale $d$. Nie powstaje stan zwi\k{a}zany,
+  wi\k{e}c nie istnieje warunek residuum on-shell ustalaj\k{a}cy
+  $C_\sigma$. Wsp\'o\l{}czynnik $M^2 = 2m_s^2$ (r\'ow.~heredytarne)
+  jest wielko\'sci\k{a} OPE, \emph{nie} mas\k{a} bieguna.
+\end{enumerate}
+\noindent\textbf{Wniosek.} Sektor tensorowy GW zawiera jeden
+nieredukowalny parametr swobodny $C_\sigma$ ($\equiv\kappa_E$).
+Prze\.zycie warunku radiacyjnego ($\kappa_E = 5/6$) jest osi\k{a}galne
+przez \emph{wyb\'or} tego parametru, nie jako predykcja; predykcje
+tensorowe (M911-*) s\k{a} \textbf{warunkowe} wzgl\k{e}dem $\kappa_E$.
+Pe\l{}ny zapis: cykle \texttt{op-CG4-substrate-closure-2026-06-20}
+oraz \texttt{op-sigma-ab-pole-residue-2026-06-20}.
 \end{remark}
 
 % -------------------------------------------------------------------
@@ -9291,10 +9370,10 @@ mechanizm i~prediction landscape:
   \item Cykl~2: kana\l{} spinor B Berry-motion $\mu_{\rm spinor}\sim e\beta\hbar/(4m_{\rm eff})$
     z~$\gamma_{\rm Berry}=\pi$ na~$\mathbb{RP}^2$
     (\texttt{research/op-neutrino-RP2-wake-extension-2026-05-17/}).
-  \item Cykl~3: scenario~A $\boxed{\mu_\nu^{\rm TGP}_A \approx 3{,}55\cdot 10^{-12}\,\mu_B}$
+  \item Cykl~3: scenario~A $\boxed{\mu_{\nu,A}^{\rm TGP} \approx 3{,}55\cdot 10^{-12}\,\mu_B}$
     z~heurystycznym t\l{}umieniem $(L_{\rm kink}/\lambda_{C\nu})^2$ i~$m_X=60$~MeV (L06 anchor)
     (\texttt{research/op-neutrino-L\_kink-bracketing-2026-05-17/}).
-  \item Cykl~6: scenario~B $\boxed{\mu_\nu^{\rm TGP}_B \approx 3{,}2\cdot 10^{-20}\,\mu_B}$
+  \item Cykl~6: scenario~B $\boxed{\mu_{\nu,B}^{\rm TGP} \approx 3{,}2\cdot 10^{-20}\,\mu_B}$
     z~SM-like Lee-Shrock loop $G_F m_e m_\nu$ przy~$v_H=246$~GeV
     (\texttt{research/op-WZ-emergence-quantitative-loop-2026-05-17/}).
   \item Cykl~7: $7$-bound astrofizyczny survey (TRGB, SN1987A, $\omega$Cen, M5, BBN, Solar RSFP, BH disk)

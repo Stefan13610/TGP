@@ -1263,6 +1263,7 @@ Each row carries:
 | **GW4** | **m_σ²/m_s² = 2** sympy-exact integer | OPE-invariant, preserved 4/4 UV | LISA / PTA low-k phase shift ~2.9% signature, 2030–2035 | **LOCKED** | tgp-core | `closure_2026-04-26/` (Path B σ_ab 11/11), Phase3.F |
 | **GW5** | **No vector modes** (single-scalar) | GR: 0; bimetric: 2 vector | LIGO O5 polarization fit: detection of h_v ≠ 0 falsifies | **STRUCTURAL** | tgp-core | M9.3.4 |
 | **GW6** | **m_s ≪ ω_LIGO** (effective masslessness in LIGO band) | M_eff/ω_LIGO ≈ 7·10⁹ | LIGO O5: c_GW(f) frequency-dependence above precision floor | **STRUCTURAL** | tgp-core | Phase1.F |
+| **GW7** | **C_σ (≡ κ_E = 8πG₀C_σσ₀²/c³) = nieredukowalny WOLNY PARAMETR** (NIE predykcja). Dwa dowody: (a) wsp. p² operatora złożonego ∂ŝ∂ŝ w kanale TT spin-2 ma niezerową rozbieżność liniową UV (wsp. kątowy −16/35; analit.=num do 4 cyfr); (b) brak izolowanego bieguna spin-2 — kontakt φ⁴ ma ∫P₂dx=0 (s-wave nie wiąże d-wave) → brak residuum on-shell. „M²=2m_s²" = coeff OPE, nie masa bieguna. | radiation-sector kinetic normalization; przeżycie warunku radiacyjnego κ_E=5/6 osiągalne tylko przez **wybór** parametru | LISA/CE: κ_E wchodzi do tensorowej jasności GW (Ṗ_b excess); wartość ustala obserwabla, nie teoria | **FREE-PARAMETER (2026-06-20)** — param-counting sektora radiacyjnego +1; predykcje M911-* warunkowe na κ_E | tgp-core | [[research/op-CG4-substrate-closure-2026-06-20/Phase3_renorm.md]] (rozbieżność UV) + [[research/op-sigma-ab-pole-residue-2026-06-20/Phase_FINAL_close.md]] (brak bieguna spin-2) + uw. rem:sigma-Csigma-free (sek08) |
 
 ---
 
