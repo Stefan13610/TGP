@@ -1,0 +1,38 @@
+﻿========================================================================
+F-AUX-A.0 � METHOD VALIDATION on EM: A_0 must come out auxiliary
+========================================================================
+[PASS] A.0.1 EM kinetic Hessian is SINGULAR (rank 2 of 3) -> primary constraint  -- rank(W_EM) = 2, det = 0
+[PASS] A.0.2 null direction is exactly A_0 (the known auxiliary field)  -- nullspace = [[1, 0, 0]]
+      => method correctly detects auxiliary (constrained) components.
+========================================================================
+F-AUX-A � Dirac analysis of LOCKED linearized TGP Phi sector
+========================================================================
+[PASS] A.1 TGP Phi kinetic Hessian = K_1 > 0, NON-singular -> NO primary constraint  -- W = K_1
+[PASS] A.2 momentum p = K_1*qdot invertible for velocity (Dirac algorithm ends, 0 constraints)  -- qdot = [p_/K_1]
+[PASS] A.3 EOM: K_1*qddot + (K_1 k^2 + m^2) q = -j  (hyperbolic, propagating)  -- EL = K_1*k**2*q(t) + K_1*Derivative(q(t), (t, 2)) + j + m_**2*q(t)
+[PASS] A.4 Hessian independent of k -> no mode (monopole/dipole/quadrupole) is constrained
+========================================================================
+F-AUX-B � statics <-> radiation: same propagator pole
+========================================================================
+[PASS] B.1 static lock G(0,k)=1/k^2 for all k  =>  F(s) = 1/s identically on s>0  -- analytic continuation: F(s)=1/s
+[PASS] B.2 pole at s = k^2 - omega^2 = 0 with residue 1 != 0 -> radiation unavoidable  -- residue = 1
+[PASS] B.3 counter-attempt F=1/(s+a): static limit becomes Yukawa 1/(k^2+a) != 1/k^2 -> killing the radiative pole necessarily destroys the Newton lock  -- any shift of the pole = mass term = changes statics (PR-025 T2a q^2=4piG lock)
+========================================================================
+F-AUX-C � symmetry inventory: no gauge orbit acts on the breathing mode
+========================================================================
+[PASS] C.1 S05 U(1): |Phi| invariant under theta -> theta+alpha (d|Phi|/dalpha = 0)  -- shift = 0
+[PASS] C.2 Z2 has NO continuous extension on real Phi: Im(e^{i eps} x)=x sin(eps)=0 forces eps in {0, pi} (discrete) -> no Noether generator, no first-class constraint  -- Im = x*sin(eps); solutions eps = [0, pi]
+========================================================================
+INFO � sigma sector Hessian (DOUBTS register input, out of verdict scope)
+========================================================================
+[PASS] INFO.1 sigma kinetic Hessian regular -> ALL 6 components of symmetric sigma_ab propagate (no gauge constraints; non-Fierz-Pauli ghost risk -> DOUBTS W-AUX)
+========================================================================
+F-AUX-D � AGGREGATE VERDICT (computed from flags, not hand-written)
+========================================================================
+      F-AUX-A: NEGATIVE
+      F-AUX-B: NEGATIVE
+      F-AUX-C: NEGATIVE
+      VERDICT = HONEST_NEGATIVE (Phi-auxiliary NOT derivable in LIVE; PR-025 -> EXHAUSTIVE-OVER-LIVE)
+[PASS] D.1 aggregate computed mechanically from {A,B,C} flags  -- HONEST_NEGATIVE (Phi-auxiliary NOT derivable in LIVE; PR-025 -> EXHAUSTIVE-OVER-LIVE)
+========================================================================
+TOTAL: 13/13 PASS

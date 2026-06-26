@@ -1,0 +1,32 @@
+========================================================================================
+op-nucleation-dimensionality — Phase 3 (F-ND-D, Q-D2 sortowanie)
+========================================================================================
+[PASS] FP-D1: E_sort(D)=⟨|cosθ|⟩_{S^{D-1}}=Γ(D/2)/(√π·Γ((D+1)/2)): D=1:1.0000, D=2:0.6366, D=3:0.5000, D=4:0.4244, D=5:0.3750, D=6:0.3395  ⇒ MONOTONICZNIE malejąca (True); brak wewnętrznego piku w D=3.
+[PASS] FP-D2: Kanały boczne (równoległe do ściany) = D−1: {1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5} (rosnące, True) ⇒ spójne z malejącą wydajnością: więcej dróg ominięcia ścianę z D.
+[PASS] FP-D3: Okno życia W(D)=E_sort(D)·Θ(D≥3): {1:0.000, 2:0.000, 3:0.500, 4:0.424, 5:0.375, 6:0.340} ⇒ pik w D=3 (True). ALE Θ(D≥3) = warunek konieczny TOPOLOGII (F-ND-A), NIE niezależny czynnik ⇒ pik = REPAKOWANIE A+B (D≥3 z topologii × spadek geometryczny), nie nowy derived selektor.
+[PASS] FP-D4: H-SORT = mechanizm ROBOCZY (user-threshold): werdykt F-ND-D NIE podnosi claim_status (ceiling C), NIE zmienia Q-D1, NIE może być cytowany jako ustalona bariogeneza.
+[PASS] FP-D5: Circularity guard: E_sort(D), Θ(D≥3) parametryczne; pik w 3 RAPORTOWANY z jawną atrybucją do topologii (F-ND-A), nie jako niezależny dowód; D_obs=3 nieużyte jako input.
+
+========================================================================================
+WERDYKT F-ND-D (z flag; INFORMATIONAL)
+========================================================================================
+F-ND-D = SORT-MONOTONE (genuine oś sortowania malejąca; 'pik w D=3' okna życia = repakowanie F-ND-A Θ(D≥3) × spadek geometryczny, NIE niezależny selektor)
+   • wydajność sortowania monotonicznie maleje z D: True
+   • pik okna życia w D=3 tylko przez topologiczny Θ(D≥3): True
+   • H-SORT nie podnosi claim_status (ceiling C): True
+
+----------------------------------------------------------------------------------------
+COMPARISON-ONLY
+----------------------------------------------------------------------------------------
+   • Pierwotne pytanie user (Q-D2: 'wszystkie inne możliwości ND asymmetry'): sortowanie nie wyróżnia D=3 jako MECHANIZM — maleje gładko; jedyne wyróżnienie D=3 pochodzi z topologicznego warunku D≥3, już policzonego w F-ND-A (nie z asymetrii/sortowania samego).
+
+========================================================================================
+FP STATISTICS: 5/5 PASS   (0 hardcoded; werdykt z flag; INFORMATIONAL)
+========================================================================================
+  PASS  FP-D1
+  PASS  FP-D2
+  PASS  FP-D3
+  PASS  FP-D4
+  PASS  FP-D5
+
+F-ND-D = SORT-MONOTONE (genuine oś sortowania malejąca; 'pik w D=3' okna życia = repakowanie F-ND-A Θ(D≥3) × spadek geometryczny, NIE niezależny selektor)

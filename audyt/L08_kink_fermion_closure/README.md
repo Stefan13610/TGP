@@ -44,6 +44,40 @@ tgp_status:
 
 # L08 — Phase 6+ why_n3 (warstwa 3c: kinki jako fermiony)
 
+## 🟢 STATUS UPDATE 2026-06-25 (#40 NORM-OVERLOAD + #41 RESCUE-CONFIRMED) — **PROBLEM #3c QUARK MASS SPECTRUM: HALT-B RE-SCOPED → RESCUE-CONFIRMED**
+
+**Cykle źródłowe:**
+- [[../../research/op-L08-quark-g0-tail-vs-core-audit-2026-06-25/Phase_FINAL_close.md]] (#40 NORM-OVERLOAD, 9/9 FP)
+- [[../../research/op-quark-mass-core-g0-rescue-test-2026-06-25/Phase_FINAL_close.md]] (#41 RESCUE-CONFIRMED, 8/8 FP)
+
+**Re-scope statusu #3c (poprzednio 🔴 HALT-B):** dwa cykle 2026-06-25 ustaliły, że werdykt
+HALT-B (`op-L08-Phase6-quark-sector-mass-formula-2026-05-16`) był **podwójnym artefaktem**:
+
+1. **#40 (NORM-OVERLOAD):** sufit `T11 = 2,68×` policzony na **złej zmiennej** — przedział
+   `g₀ ∈ [0,817; 0,891]` to **pasmo bazowe g₀^(1) per sektor** (kotwice φ-FP {down 0,817;
+   lepton 0,870; up 0,891}), a NIE domena rdzeniowego g₀ (która = [0,869; 1,730]). Ten sam
+   mechanizm m∝A_tail⁴ daje leptonom m_τ/m_e = 3477 ≫ 2,62, więc sufit zakazywałby hierarchii
+   leptonowej ⇒ **VOIDED** (nieważny, nie sfalsyfikowany).
+2. **#41 (RESCUE-CONFIRMED):** formuła HALT-B `m=c_M·A_tail²·g₀^(e²/2)` zawiera **0/3**
+   składników maszynerii dodatekX {addytywne m_0, φ-FP per-sektor, shifted-Koide} ⇒ **strawman**.
+   Niezależny solver `{m_0=𝒜·m_3/m_1 ; Q_K(m_i+m_0)=2/3}`, 𝒜=a_Γ/φ: **m_b 0,59%, m_t 0,77%
+   (pole)**; 𝒜 univ 0,33%; α_s=√𝒜/C_F = 0,11792 vs PDG (0,03σ).
+
+**Nowy status #3c: 🟢 RESCUE-CONFIRMED (z caveatami).** Sektor kwarkowy **NIE jest
+structural insufficiency** — jest **częściowo predyktywny** (r_31 z r_21 + uniwersalne 𝒜;
+4 inputy → 2 predykcje m_b/m_t, NIE „zero parametrów").
+
+**Caveaty (anti-Lakatos, forbidden #10):**
+- **m_t scheme-zależny:** pole 0,77% / MS-bar 5,50% — zgodność m_t NIE jest scheme-niezależna.
+- **𝒜 = C_F²α_s² warunkowe** (most, nie derywacja): zależy od postulatu K_geo·m_sp²=π·Φ₀²,
+  który redukuje się do niedomkniętego CG-1/CG-3 (#43 POSTULATE-CONDITIONAL,
+  [[../../research/op-A-derivation-from-CG-2026-06-25/Phase_FINAL_close.md]]).
+- **NIE „cały SM z 3 inputów"** — leptony (3 masy z 1 inputu) silniejsze niż kwarki.
+
+**Werdykt HALT-B pozostaje IMMUTABLE** — był poprawny dla *testowanej* (błędnej) hipotezy
+„m=A_tail²·g₀^(e²/2) na pasmie bazowym"; korekta dotyczy **zakresu ważności**, nie poprawności.
+D1 rozstrzygnięty: kanoniczna maszyneria masowa = **M∝A_tail⁴ + addytywne m_0**.
+
 ## 🟡 STATUS UPDATE 2026-05-18 — **PROBLEM #3 BOSON SUB-COMPONENT 6-PATH EXHAUSTION CONFIRMED**
 
 **Sesja 2026-05-18 sesja-1 multi-cycle campaign on problem #3 boson sub-component:**
@@ -79,7 +113,7 @@ tgp_status:
 |---|---|---|---|
 | **(a)** Quark istnienie + kink topology (warstwa 3c) | ✅ **A− DERIVED** | Warstwa 3c kink cycles | OK |
 | **(b)** Hadron composition rule $N_q - N_{\bar q} \equiv 0 \pmod 3$ (color singlet) | ✅ **A− DERIVED conditional** | [[../../research/op-L08-Phase6-hadron-topology-confinement-2026-05-16/]] | Conditional na input fractional charges ±1/3, ±2/3 (R1 OPEN) |
-| **(c)** Quark mass spectrum | 🔴 **HALT-B** | [[../../research/op-L08-Phase6-quark-sector-mass-formula-2026-05-16/]] | Universal Φ-kink formula INSUFFICIENT; structural ceiling 2.68× vs required 80,000× |
+| **(c)** Quark mass spectrum | 🟢 **RESCUE-CONFIRMED** (re-scoped 2026-06-25 #40+#41; HALT-B był strawmanem + błędna domena g₀) | [[../../research/op-quark-mass-core-g0-rescue-test-2026-06-25/]] (#41) + [[../../research/op-L08-quark-g0-tail-vs-core-audit-2026-06-25/]] (#40) | r_31 predykowane: m_b 0,59%, m_t 0,77% (pole)/5,5% (MS-bar); 𝒜 warunkowe na CG (#43); sufit 2,68× VOIDED. Patrz STATUS UPDATE 2026-06-25 (góra) |
 | **(d)** SU(3) gauge symmetry + gluons + Yang-Mills + asymptotic freedom + confinement σ | 🔴 **DECLARED LIMIT** | This audit; analog SU(2)_L 6-path exhaustion | 0/7 SU(3) gauge dynamics elements derived w TGP |
 
 ### Updated problem #3 boson sub-component (post-audit):
@@ -98,7 +132,7 @@ tgp_status:
 | #2 Three generations | 🟡 B+ | e²/2 cycle 2026-05-16 |
 | **#3a Quark fermion content** | ✅ A− | Warstwa 3c topology |
 | **#3b Hadron composition rule** | ✅ A− conditional | 2026-05-16 hadron-topology |
-| **#3c Quark mass spectrum** | 🔴 HALT-B | 2026-05-16 quark-mass-formula |
+| **#3c Quark mass spectrum** | 🟢 RESCUE-CONFIRMED (re-scoped 2026-06-25 #40+#41; caveaty m_t scheme / 𝒜 CG #43) | 2026-06-25 rescue-test (#41) + g0-tail-audit (#40) |
 | **#3d Quark gauge dynamics (SU(3)_c gluons)** | 🔴 DECLARED LIMIT | 2026-05-18 audit |
 | **#3e Neutrino sektor** | ✅ A− REINFORCED | 2026-05-17 + PR-016 dual-scenario |
 | **#3f Boson sektor (W/Z, SU(2)_L)** | 🔴 DECLARED LIMIT (6-path) | 2026-05-18 limit doc |

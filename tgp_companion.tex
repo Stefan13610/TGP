@@ -5,6 +5,7 @@
 \documentclass[aps,prd,twocolumn,superscriptaddress,showpacs,
   nofootinbib,floatfix,longbibliography]{revtex4-2}
 
+\usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -13,8 +14,15 @@
 \usepackage{mathtools}
 \usepackage{bm}
 
+% --- Float placement for wide (double-column) tables ---
+\setcounter{dbltopnumber}{4}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.05}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+
 % --- Custom macros ---
-\newcommand{\gone}{g_0^e}
+\newcommand{\gone}{{g_0^e}}
 \newcommand{\OL}{\Omega_\Lambda}
 \newcommand{\Nzero}{\mathcal{N}_0}
 \newcommand{\GL}{\mathrm{GL}(3,\mathbb{F}_2)}
@@ -46,15 +54,23 @@ We present the complete technical framework of the
 Tensor-Gravitational-Potential (TGP) theory, a conformal scalar field
 theory based on the discrete group $\GL$ (order~168) that derives
 Standard Model flavor parameters and cosmological observables from
-three fundamental inputs: the TGP coupling $\gone = 0.86941$, the
+three \emph{primary} inputs: the TGP coupling $\gone = 0.86941$, the
 cosmological constant $\OL = 0.6847$, and the generation number
-$N = 3$. We derive 12~master equations, catalog 40~quantitative
+$N = 3$. Counted honestly (value-blind audit, 2026-06-25), the full
+free \emph{numerical} parameter count is $N_{\rm free}\simeq 10$
+(adding $\Phi_0$, $c_0$, four quark base couplings, $N_e$; with
+$\OL/\tilde g$ and $\as$ traded/conditional) supplemented by six
+structural selection axioms, versus $\simeq 19$ for the Standard Model
+under a symmetric convention---TGP remains genuinely more economical
+($10 \ll 19$). We derive 12~master equations, catalog 40~quantitative
 predictions (21~confirmed by experiment, 18 within $2\sigma$, 3~exact),
 and present results from 42~numerical verification scripts totaling
 385+~individual tests ($> 90\%$ pass rate, 14~perfect scores). The
-kinetic coupling $\alpha = 2$ is proved as an algebraic theorem from
-the substrate Hamiltonian; functional RG confirms its stability under
-Wilsonian flow. We evaluate 15~kill criteria (all survived), compare
+kinetic coupling $\alpha = 2$ is fixed as the unique element of the
+conformal kinetic class (C1)--(C3) on the density $\Phi=\langle\hat s^2\rangle$---an
+axiomatic selection, not a derivation from the microscopic substrate (which
+yields $\alpha=\tfrac12$); functional RG confirms the stability of the selected
+$\alpha = 2$ fixed point under Wilsonian flow. We evaluate 15~kill criteria (all survived), compare
 TGP against five competing BSM frameworks (highest score: 41/50,
 prediction-to-parameter ratio 5.7), and provide a roadmap of
 11~experimental tests spanning 2025--2040. Open questions include the
@@ -105,9 +121,13 @@ $\GL$, whose structure naturally encodes three fermion generations, the
 Koide mass relation, and connections between particle physics and
 cosmological parameters.
 
-From three fundamental inputs---$\gone$, $\OL$, and $N=3$---TGP derives
+From three \emph{primary} inputs---$\gone$, $\OL$, and $N=3$---TGP derives
 40~quantitative predictions, of which 21 are confirmed by current
-experimental data. This paper provides the complete technical derivations,
+experimental data. (A value-blind parameter-counting audit, 2026-06-25,
+fixes the honest free \emph{numerical} count at $N_{\rm free}\simeq 10$
+plus six structural selection axioms, versus $\simeq 19$ for the Standard
+Model; ``three inputs'' is the headline driver, not the full tally.)
+This paper provides the complete technical derivations,
 numerical verification results, and experimental roadmap.
 
 The paper is organized as follows.
@@ -217,7 +237,10 @@ $g_0 = g(0)$.
 
 \textbf{Remark on the kinetic coupling.}
 The conformal argument fixes $K(g) = g^{2\alpha}$ with $\alpha = 2$,
-giving $K = g^4$ as stated above.  Alternative kinetic couplings---notably
+giving $K = g^4$ as stated above.  This is an \emph{axiomatic selection on
+the density} $\Phi=\langle\hat s^2\rangle$ (uniqueness within the conformal
+class), \emph{not} a microscopic-substrate derivation: the substrate alone
+yields $\alpha=\tfrac12$.  Alternative kinetic couplings---notably
 $K = g^2$ (effective-dimension argument $n_{K} = D{-}2 = 2$) and
 $K = 1 + 4\ln g$ (substrate-level derivation)---have been explored in
 the literature and in earlier versions of this work.  All three choices
@@ -293,7 +316,7 @@ central role in TGP. Key facts~\cite{GL3F2,Dickson1901}:
 \section{The 12 master equations}\label{sec:master}
 % ============================================================
 
-From the three inputs $(\gone, \OL, N{=}3)$ and the $\GL$ structure,
+From the three primary inputs $(\gone, \OL, N{=}3)$ and the $\GL$ structure,
 TGP derives 12~master equations. We derive each below.
 
 \subsection{F1: Strong coupling constant}\label{ssec:F1}
@@ -788,7 +811,7 @@ Each script tests a distinct aspect of TGP physics.
 
 Each test has the form:
 \begin{enumerate}
-\item Compute a TGP prediction from the three inputs
+\item Compute a TGP prediction from the three primary inputs
   $(\gone, \OL, N)$;
 \item Compare with experimental data or mathematical identities;
 \item Apply a pass/fail criterion (typically agreement within
@@ -935,7 +958,7 @@ TGP achieves:
 \section{Experimental roadmap}\label{sec:roadmap}
 % ============================================================
 
-\begin{table*}[t]
+\begin{table*}[tp]
 \caption{Experimental tests of TGP predictions (2025--2040).}\label{tab:roadmap}
 \begin{ruledtabular}
 \begin{tabular}{llllc}
@@ -1170,7 +1193,8 @@ The most decisive tests are:
 
 We have presented the complete technical framework of the
 Tensor-Gravitational-Potential theory and its 40~quantitative predictions
-derived from three fundamental inputs:
+derived from three \emph{primary} inputs (full free count $N_{\rm free}\simeq 10$
+numerical $+\,6$ structural axioms; see the parameter-economy item above):
 \begin{equation}
   \gone = 0.86941\,,\quad \OL = 0.6847\,,\quad N = 3\,.
 \end{equation}
@@ -1185,6 +1209,11 @@ The key results are:
 \item \textbf{Parameter economy}: SM+$\Lambda$CDM parameter count
   reduced from 35 to 7 ($-80\%$), with a prediction-to-parameter
   ratio of 5.7---the highest among all BSM frameworks evaluated.
+  \emph{Honest refinement (audit 2026-06-25): the free numerical
+  count is $N_{\rm free}\simeq 10$ (not 7) plus six structural axioms,
+  versus $\simeq 19$ for the SM under a symmetric convention; still
+  $10 \ll 19$, with the leptonic sector---three masses from one
+  coupling to $0.006\%$---as the strongest genuine result.}
 \item \textbf{Top BSM score}: 41/50 on a composite testability index,
   exceeding Starobinsky $R^2$ (32), SU(5) GUT (25), MSSM (22), and
   string theory (16).
@@ -1213,11 +1242,12 @@ mass ordering: observation of inverted ordering would kill TGP.
 
 Table~\ref{tab:all-predictions} lists all 40~TGP predictions.
 
-\begin{table*}[t]
+\begin{table*}[tp]
 \caption{Complete catalog of 40 TGP predictions.
   Status: C = confirmed ($< 2\sigma$), E = exact ($0\sigma$),
   T = testable (upcoming experiment), P = genuine prediction,
   A = approximate, Th = theory-level.}\label{tab:all-predictions}
+\footnotesize
 \begin{ruledtabular}
 \begin{tabular}{rlllcl}
 \# & Observable & TGP value & Experiment & $\sigma$ & Status \\

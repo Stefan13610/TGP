@@ -1,0 +1,150 @@
+
+========================================================================
+FP1 — M9.1'' canonical β_ppE without σ-coupling
+========================================================================
+  β_ppE^M911 (c_0 = 0) = -15/4
+  Expected: -15/4 = -3.75 (the FALSIFIED 5.02σ value)
+  → FP1 M9.1'' canonical β_ppE reproduction: PASS
+     computed = -15/4
+     expected = -15/4
+     note: Reproduces emergent-metric Phase 4 LOCK baseline (the FALSIFIED value)
+
+========================================================================
+FP2 — Δe_2 at M9.1'' canonical parameters
+========================================================================
+  Δe_2(M9.1''-canonical) = -4/3
+  Expected: -4/3 (since β_M911 = (45/16)·Δe_2 = (45/16)·(-4/3) = -15/4)
+  → FP2 Δe_2 at M9.1''-canonical: PASS
+     computed = -4/3
+     expected = -4/3
+     note: Verifies factorization β = (45/16)·Δe_2 with σ-coupling = 0
+
+========================================================================
+FP3 — Geometric zero-β target (Path 2 σ-coupling addition)
+========================================================================
+  β_ppE^new (c_0·κ_σ = 4/3) = 0
+  Expected: 0 EXACT
+  → FP3 Geometric zero-β target c_0·κ_σ = 4/3 EXACT: PASS
+     computed = 0
+     expected = 0
+     note: Reproduces emergent-metric Phase 4 §2 Path 2 zero-β condition
+
+========================================================================
+FP4 — Joint heuristic c_0·κ_σ = 4π · 1/(3π) = 4/3 EXACT
+========================================================================
+  c_0 (geometric) = 4π = 4*pi
+  κ_σ (heuristic) = 1/(3π) = 1/(3*pi)
+  c_0·κ_σ = 4/3
+  Expected: 4/3 EXACT (clean π cancellation)
+  → FP4 Joint c_0·κ_σ = 4/3 EXACT (heuristic π cancellation): PASS
+     computed = 4/3
+     expected = 4/3
+     note: Reproduces joint LOCK from op-c0-derivation + op-kappa-sigma cycles
+
+========================================================================
+FP5 — GW150914 calibrated β_ppE^new value
+========================================================================
+  c_0 (GW150914 calibrated) = 4π·1.06 = 106*pi/25
+  c_0·κ_σ (GW150914) = 106/75 ≈ 1.4133
+  β_ppE^new (GW150914) = 9/40 ≈ 0.2250
+  → FP5 GW150914 calibrated β_ppE^new: PASS
+     computed = 9/40
+     expected = (15/4)·0.06 = 0.2250
+     note: Documents that GW150914 calibration deviation 6% in c_0·κ_σ space translates to β_ppE^new ≈ 0.225. Note: c_0-derivation Phase FINAL §3.3 had 'β_ppE ≈ 0.08' which is the c_0·κ_σ deviation (0.08 from 4/3), NOT the β_ppE value — minor doc clarification opportunity.
+
+========================================================================
+FP6 — GWTC-3 1σ window edges on c_0·κ_σ
+========================================================================
+  c_0·κ_σ lower edge (β = +0.78) = 1.0560
+  c_0·κ_σ upper edge (β = -0.78) = 1.6107
+  Expected per emergent-metric Phase 4 §2 Path 2: [1.056, 1.611]
+  → FP6 GWTC-3 1σ window edges on c_0·κ_σ: PASS
+     computed = [1.0560, 1.6107]
+     expected = [1.0560, 1.6107]
+     note: Inherits emergent-metric Phase 4 §2 Path 2 LOCK
+
+========================================================================
+FP7 — Geometric c_0·κ_σ = 4/3 INSIDE GWTC-3 1σ window
+========================================================================
+  Geometric target: c_0·κ_σ = 4/3 = 1.3333
+  GWTC-3 window:    [1.056, 1.611]
+  Inside window?    True
+  → FP7 Geometric target 4/3 inside GWTC-3 1σ window: PASS
+     computed = 1.3333333333333333
+     expected = ∈ (1.056, 1.611)
+     note: Validates that recovery framework target is observationally consistent
+
+========================================================================
+FP8 — GW150914 calibrated c_0·κ_σ ≈ 1.413 INSIDE GWTC-3 1σ window
+========================================================================
+  GW150914 calibrated: c_0·κ_σ ≈ 1.4133
+  GWTC-3 window:       [1.056, 1.611]
+  Inside window?       True
+  → FP8 GW150914 calibrated value inside GWTC-3 1σ window: PASS
+     computed = 1.4133333333333333
+     expected = ∈ (1.056, 1.611)
+     note: GW150914 calibration with 6% deviation from geometric still safely inside
+
+========================================================================
+FP9 — ET-D / CE projected bound tightening factor 10
+========================================================================
+  Hypothetical ET-D bound: |β_ppE| ≤ 0.0780
+  Implied c_0·κ_σ window: [1.3056, 1.3611]
+  Width: 0.0555
+  Geometric target 4/3 inside ET window? True
+  GW150914 calibrated 1.413 inside ET window? False
+  → If GW150914 deviation 6% persists at ET-D precision, recovery would be
+    distinguishable from geometric: PR-020 falsification gate active.
+  → FP9 ET-D projected bound implications: PASS
+     computed = window [1.3056, 1.3611], geom_inside=True, GW150914_inside=False
+     expected = geometric inside; GW150914 calibration on edge or outside
+     note: ET-D / CE tightening provides PR-020 falsification gate: if future GW data confirms β_ppE ≈ 0 at <0.078 precision, recovery validated; if excludes 0 at 5σ, recovery falsified.
+
+========================================================================
+FP10 — Compatibility check with PR-010 (α ∈ [-0.832, 0.832])
+========================================================================
+  PR-010 LOCKED: α ∈ [-0.832, 0.832] for S07 polynomial family
+  PR-020 LOCK candidate: β_ppE^new = (45/16)(Δe_2 + c_0·κ_σ) for {A,B,C} ansatz
+  These are DIFFERENT parameterizations of PN observables.
+  Compatibility: NO direct contradiction (both within GWTC-3 1σ)
+  PR-020 specifies different precision regime (future ET-D/CE)
+  → FP10 PR-010 / PR-020 cross-parameterization compatibility: PASS
+     computed = different parameterizations of PN observables
+     expected = no direct contradiction
+     note: PR-010 is S07-polynomial framework α; PR-020 is emergent-metric c_0·κ_σ parameter. Both within GWTC-3 1σ; PR-020 specifies future-tightening regime (ET-D/CE/LISA ~2035+ projections).
+
+========================================================================
+PHASE 3 SUMMARY
+========================================================================
+
+  Total FPs: 10
+  PASS:      10
+  Non-PASS:  0
+
+   ID  NAME                                                          STATUS    
+  ---  ------------------------------------------------------------  ----------
+    1  M9.1'' canonical β_ppE reproduction                           PASS      
+    2  Δe_2 at M9.1''-canonical                                      PASS      
+    3  Geometric zero-β target c_0·κ_σ = 4/3 EXACT                   PASS      
+    4  Joint c_0·κ_σ = 4/3 EXACT (heuristic π cancellation)          PASS      
+    5  GW150914 calibrated β_ppE^new                                 PASS      
+    6  GWTC-3 1σ window edges on c_0·κ_σ                             PASS      
+    7  Geometric target 4/3 inside GWTC-3 1σ window                  PASS      
+    8  GW150914 calibrated value inside GWTC-3 1σ window             PASS      
+    9  ET-D projected bound implications                             PASS      
+   10  PR-010 / PR-020 cross-parameterization compatibility          PASS      
+
+  Key PR-020 LOCK candidate values verified:
+    β_ppE^new (M9.1''-canonical, FALSIFIED):     -15/4 = -3.75
+    β_ppE^new (geometric c_0·κ_σ = 4/3):         0 EXACT ✓
+    β_ppE^new (GW150914 calibrated):             0.225  (deviation from 0)
+    GWTC-3 1σ window on c_0·κ_σ:                 [1.0560, 1.6107]
+    Width:                                       0.555
+    Geometric target 4/3 = 1.333:                INSIDE ✓
+    GW150914 calibrated 1.413:                   INSIDE ✓
+    ET-D projected bound ~0.078:                 implied window ~[1.305, 1.361]
+
+  F-INT-C verdict candidate: PASS_PARTIAL_HEURISTIC
+    (PR-020 LOCK candidate fully specified;
+     numerical anchors c_0=4π, κ_σ=1/(3π) HEURISTIC;
+     rigorous pinning DEFERRED to O1/O2 future cycles)

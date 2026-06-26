@@ -1,0 +1,15 @@
+=== Phase 1 sympy checks (value-blind) ===
+V1  int(1-mu^2)^2(4mu^2-1) dmu = -16/35  (target -16/35)   -> PASS
+V2  int P2 dmu               = 0  (target 0)          -> PASS
+C1  spin-2 projection of mu^2 = 4/15  (!=0 => fed)     -> PASS
+C2  4pi*1/(3pi) - 4/3        = 0  (trivial id) -> PASS
+C3  d/dLambda C(Lambda)      = kappa_lin  (= kappa_lin != 0 => UV-sensitive) -> PASS
+
+TOTAL: 5/5 PASS
+
+Interpretation (value-blind):
+ - V1,V2 reproduce #33/#34 -> engine validated (forbidden #4 satisfied).
+ - C1: operator d s.d s genuinely sources the spin-2 channel (c_0 lives there).
+ - C3: its p^2 coefficient is linearly cutoff-dependent (F1) -> normalization
+        (whether named C_sigma or c_0) is scheme-dependent unless an external
+        identity fixes it. None supplied by ksi_eff matching (R3) or 4/3 (C2 trivial).

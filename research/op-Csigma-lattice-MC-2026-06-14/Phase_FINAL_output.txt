@@ -1,0 +1,27 @@
+
+======================================================================
+Phase FINAL — AGREGAT F-LMC-D (wyliczony z reguly LOCKED Phase 0 §3)
+======================================================================
+  Wejscie (dyspozycje faz):
+    F-LMC-A (continuum-zbiezny C_sigma>0?) = PARTIAL
+      - C_sigma>0 zmierzone: True (znak DERIVED)
+      - clean scheme-independent continuum: NIE (operator zlozony power-divergent; krytycznosc p_min/m_s>1: True)
+    F-LMC-B (T w c^3/G_0 z bledem) = PASS
+    F-LMC-C (kappa_E vs 5/6): pasmo [0.038, 11.087], central 0.616
+      - 5/6 w pasmie: True;  1 w pasmie: True
+
+======================================================================
+WERDYKT AGREGATOWY
+======================================================================
+  F-LMC-D (agregat, z reguly LOCKED) = PARTIAL
+  lean strukturalny (nie-twardy)     = FALSIFIED  (naturalna kappa_E~O(1)~1 != 5/6; survival miara zero, niechroniona)
+
+  Interpretacja: sektor grawitacyjny radiacyjny TGP pozostaje UNDERDETERMINED-fine-tuned,
+  ale teraz z LICZBOWYM centralem kappa_E ~ 0.62 (O(1)) i jawnym pasmem [0.04, 11.09].
+  Postep vs parent (PARTIAL strukturalny): C_sigma>0 i O(1) ZMIERZONE numerycznie (nie tylko skaling).
+  Residual GAP: scheme-independent continuum operatora zlozonego (dodatekQ CG-3/CG-4, ANALITYCZNY nie MC).
+
+  [OK] Werdykt WYLICZONY z reguly (value-blind), nie wybrany recznie.
+  Wyniki: Phase_FINAL_results.json
+
+SESJA: op-Csigma-lattice-MC Phase FINAL (2026-06-14)

@@ -1,0 +1,35 @@
+==============================================================================
+Phase 4 sympy -- op-frontier-bridge-and-asymmetry (modul B: KB4 + SIG-2)
+==============================================================================
+
+--- KB4: does the creation amplitude distinguish Phi from Phi*? (H-CP) ---
+[PASS] FP1 -- fluctuation spectrum around real wall: m_h^2 == LOCKED m_eff^2; m_chi^2 = lam(w^2-Phi0^2); Goldstone m_chi^2(Phi0) = 0
+        m_h^2 = lambda*(-Phi0**2 + 3*w**2) ; m_chi^2 = lambda*(-Phi0**2 + w**2) ; m_chi^2(w=Phi0) = 0
+[PASS] FP2 -- C-parity: V(h, -chi) - V(h, chi) == 0 EXACT; ZERO odd-chi monomials to ALL orders (|Phi|^2 even in chi)
+        parity residual = 0 ; odd-chi monomial degrees: [] (kinetic term even trivially: |dPhi|^2 = (d(w+h))^2 + (d chi)^2)
+[PASS] FP3 -- vertex audit: ALL interaction vertices have EVEN chi-leg count -> H-CP amplitude asymmetry EXCLUDED for real wall
+        vertices (n_h, n_chi): [(0, 4), (1, 2), (2, 2), (3, 0), (4, 0)] ; odd-chi vertices: []
+
+--- SIG-2: leakage fraction bound + fate of leaked antimatter ---
+[PASS] FP4 -- binding |V_wA(xi_d)|/M_K = 12(2-sqrt3) EXACT ~ 3.21 (Manton) / 2.48 (fitted band) > 1: DEEPLY BOUND at creation depth
+        Manton: 24 - 12*sqrt(3) = 3.2154 ; fitted: 2.4759 ; closed-form residual: 0
+[PASS] FP5 -- chase: tau_acc/tau_tr = (2+sqrt3)/72 EXACT ~ 0.052 << 1 (band: 0.017-0.052): absorption FAST vs transit
+        strict (Dv=c): 0.0518 ; loose (Dv=c/3): 0.0173 ; closed-form residual: 0
+[PASS] FP6 -- leakage opens only at xi > ln72 ~ 4.28 (>> creation depth 1.32; A-i confines creation to layer); f_leak <= ~1.2e-3 (conservative)
+        xi_leak = log(72) = 4.2767 [loose: 5.3753] ; tanh(ln72/2) = 71/73: True ; f_leak: strict 1.116e-03 / loose 1.270e-04
+[PASS] FP7 -- persistent antimatter fraction -> 0 (leaked pairs annihilate; transient) ; COMPARISON-ONLY: 0 < f_bar_max = 1e-6 PASS
+        lim f_persistent = 0 ; energy-injection fraction f_rad = 2 f_leak ~ 2.231e-03 -- NO pre-registered anchor for radiation injection => flagged for FUTURE pre-registration (PR-023 candidate observable), NOT compared (anti-goalpost)
+[PASS] FP8 -- SIG-1 refinement: t_* shift = sqrt(multiplier) monotone; multiplier >= 2 => t_*^(B) >= sqrt2 t_* (P1 EXACT result = lower bound)
+        shift(mult=2) = sqrt(2) ; d(shift)/d(mult) > 0: True
+[PASS] FP9 -- circularity guard: no G_obs / eta_B / anchor symbol in ANY derivation expression (anchor = FP7 comparison line only)
+        free symbols audited: ['Phi0', 'chi_s', 'h', 'lambda', 't', 'tau_ann', 'w'] ; blacklist hits: []
+==============================================================================
+SUMMARY: 9/9 PASS ; 0 hardcoded T_pass (all verdicts computed)
+KB4: NEGATIVE_FOR_REAL_WALL (DERIVED, all orders): action exactly even in chi =>
+  creation amplitude CANNOT distinguish Phi/Phi* around the real wall; H-CP excluded
+  within LIVE machinery. Residual GAP (declared): phase-textured wall / RP2 holonomy sectors.
+SIG-2: BOUNDED: f_leak <= ~1.2e-3 (conservative; criterion band 1.3e-4..1.2e-3) under declared
+  weight model; structural chain: A-i confines creation to layer << xi_leak = ln72;
+  leaked pairs transient => persistent antimatter -> 0 (COMPARISON-ONLY: PASS vs 1e-6);
+  radiation-injection ~ 2 f_leak = NEW observable flagged for future PR-023 pre-registration.
+Disposition: 1D-proxy != 3D claim; F-BA-6 classification -> Phase FINAL (user decision on KB3).

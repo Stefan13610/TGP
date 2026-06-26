@@ -1,0 +1,33 @@
+==============================================================================
+Phase 1 sympy -- op-frontier-bridge-and-asymmetry (modul B, 1D proxy)
+==============================================================================
+[PASS] FP1 -- kink solves static EOM; tail amplitude a = 2*Phi0, rate m_Phi
+        EOM residual = 0 ; tail amplitude = 2*Phi0 (expected 2*Phi0)
+[PASS] FP2 -- topological selection rule: bulk-adjacent partner MUST be antikink (q opposite to wall)
+        adjacent A allowed=True, adjacent K allowed=False, order wall-A-K valid=True, wall-K-A valid=False
+[PASS] FP3 -- cross-term E_x = int(wall' * kink') > 0 (aligned penalized), decays to 0 in bulk
+        E_x at xi={edge:1.3170, 3, 4, 10, 20}: ['7.949e-01', '4.100e-01', '2.311e-01', '2.055e-03', '2.099e-07'] ; decay ratio E(20)/E(10) = 1.02e-04 (-> 0, consistent with LOCKED F_substrat = 0)
+[PASS] FP4 -- kink-antikink: V_int attractive, decay rate = m_Phi (consistency with LOCKED CE-H m*sqrt2)
+        fitted rate = 1.36561 vs m_Phi = 1.41421 (rel dev 3.44e-02, std 5%); E_int<0 all pts; C_fit = 8.712
+        [LIT informational, declared Phase 0 par.8(c) O(1)] C_fit/(m*Phi0^2) = 6.16 (Manton tail-product candidates: 8 or 16; race + floor independent of C)
+[PASS] FP5 -- KB1 floor: |dE_C|/M_K > 1e-3 in layer region; -> 0 in bulk; xi_edge = ln(2+sqrt3) exact
+        |dE_C|/M_K at xi={1.317, 3, 4} = {4.95, 0.92, 0.34}; bulk limit = 0; xi_edge identity: True
+[PASS] FP6 -- KB2: antikink pulled TOWARD wall (frontier sector); kink pushed INTO bulk
+        F_A(wall) = -C*m*exp(-m*x1) (sign -1 = toward wall) ; F_K(wall) = C*m*exp(-m*x2) (sign 1 = into bulk)
+[PASS] FP7 -- KB3 race: F_rel = C*m*[e^-xi1 + e^-xi2 - 2 e^-xi_s]; critical xi_s* = ln(3+2*sqrt3) EXACT
+        identity: True; xi_s* = 1.8663 (= ln(3+2sqrt3): True); grid R>0 (separation wins): {1.0: False, 1.5: False, 2.0: True, 2.5: True, 3.0: True, 4.0: True}; FULL pre-registered range [1,4] satisfied: False (KB3 mechanical outcome: CONDITIONAL)
+[PASS] FP8 -- SIG-1: pair budget x2 => t_*^(B) = sqrt(2) * t_* EXACT; t_* matches FM LOCKED form
+        t_*2/t_*1 = sqrt(2) ; t_*1 == FM P3 form: True
+[PASS] FP9 -- outside channel CLOSED: m_eff^2 < 0 for |Phi| < Phi0/sqrt3 -> only bulk-side pair channel persists
+        m_eff^2(|Phi|=Phi0/2)/(lam Phi0^2) = -1/4 < 0 ; boundary residual at Phi0/sqrt3 = 0
+[PASS] FP10 -- circularity guard: no G_obs / eta_B / observed-asymmetry symbol in any verdict expression
+        free symbols audited: ['C', 'G', 'Phi0', 'c', 'lambda', 'm', 's_sep', 'x', 'x1', 'x2', 'xi_d', 'xi_s'] ; blacklist hits: []
+==============================================================================
+SUMMARY: 10/10 PASS ; 0 hardcoded T_pass (all verdicts computed)
+KB1: PASS (two lines: FP2 topological selection + FP3/FP5 energetic distinction)
+KB2: PASS-DERIVED (FP6: wall-aligned charge -> bulk; C-partner -> wall/frontier sector)
+KB3: CONDITIONAL (FP7: separation wins iff xi_s > ln(3+2sqrt3) ~ 1.866 at creation depth
+     xi_d = ln(2+sqrt3) ~ 1.317; holds on (1.866, 4] subset of pre-registered [1, 4];
+     dilute-approx validity xi >~ 2 declared; NOT a full-range PASS -- reported mechanically)
+SIG-1: PASS EXACT (t_*^(B) = sqrt2 * t_*)
+Disposition: 1D-proxy != 3D claim (Phase 0 par. 1.2.2); verdict F-BA-6 remains OPEN until Phase FINAL

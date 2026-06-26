@@ -1,0 +1,41 @@
+========================================================================
+Phase 1 — op-Csigma-coarse-graining : weryfikacja strukturalna (SETUP)
+========================================================================
+
+(1) sigma_ab = K_ab - 1/3 Tr(K) delta_ab
+    symetryczna  : True
+    Tr(sigma)    : 0  (=> BEZSLADOWA)
+    skladniki niezalezne: 6(sym) - 1(slad=0) = 5  (spin-2: wymaga 5) -> PASS
+
+(2) Z2-parzystosc i stopien operatorow (s -> -s)
+    K_ab ~ s_i s_j : parzyste = True | stopien w s = 2
+    Phi  ~ s_i^2   : parzyste = True | stopien w s = 2
+    => sigma_ab i Phi to KOMPOZYTY tego samego stopnia (2) w s, oba Z2-parzyste.
+       sigma_ab = rzut ANIZOTROPOWY, Phi = rzut IZOTROPOWY tego samego H_Gamma.
+
+(3) Bilans wymiarowy (eq:S-sigma), [S]=1:
+    [d^4x]=E^-4, [pochodna]^2=E^2  =>  [C_sigma] = E**2/dimSig**2  (w jedn. [sigma]=dimSig)
+    Jesli sigma bezwymiarowe (dimSig=1): [C_sigma] = E^2  (tension/stiffness^2).
+    Jesli [sigma]=[Phi_0]: [C_sigma]=E^2/[Phi_0]^2  -> rozstrzyga to Phase 3 (C_sigma vs sigma_0).
+
+(4) Znak C_sigma (ghost-free):
+    d^2/d(Dsigma)^2 [ (J/2)(Dsigma)^2 ] = J  > 0  dla J>0  => C_sigma > 0 (brak duchow).
+    (zgodne z eq:S-sigma bullet i prob:tensor-modes 'Ghost-free C_sigma>0 z J>0'.)
+
+(5) Szkielet skalowania (Phase-1 SETUP, prefaktor=GAP):
+    C_sigma ~ J*a_sub**p*c_pref   gdzie c_pref=O(1) i p NIEOKRESLONE w Phase 1.
+    Ekstrakcja (c_pref, p) z blokowego usredniania = Phase 2 (RDZEN). TU NIE LICZONE.
+
+(6) Dyspozycje falsyfikatorow po Phase 1 (SETUP):
+    F-CG-A (emergentna kinetyka Lorentz, c_0): PARTIAL-pending
+           - c_0 propagacja LOCKED w rdzeniu (rem:cGW-tensor),
+           - ale emergencja czlonu CZASOWEGO (d_t sigma)^2 ze STATYCZNEGO H_Gamma = do sprawdzenia Phase 2.
+    F-CG-B (forma C_sigma({J,a_sub,...}))     : OPEN -> Phase 2 (tu tylko szkielet+znak).
+    F-CG-C (sigma_0 + zlozenie kappa_E)        : OPEN -> Phase 3.
+    F-CG-D (kappa_E vs 5/6)                     : OPEN -> Phase FINAL (prog 5/6 LOCKED Phase 0).
+
+========================================================================
+WERDYKT Phase 1 (SETUP): obiekt = KOMPOZYT bilinowy <s_i s_j> (rzut anizotropowy H_Gamma);
+  symetryczny/bezsladowy/5-komp (PASS), Z2-parzysty, C_sigma>0 z J>0, [C_sigma]*[sigma]^2=E^2.
+  C_sigma NIE wyprowadzone (anti-Lakatos) -> przekazane do Phase 2 z jawna specyfikacja.
+========================================================================

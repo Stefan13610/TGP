@@ -1,0 +1,27 @@
+======================================================================
+F-VIA-A — sygnatura g_eff (wartosci wlasne vs u)
+======================================================================
+[PASS] F-VIA-A: g_eff=diag(-A,A(1+u),A,A); det=-A**3*(A + G**2*b); radial eig=A(1+u). Lorentz <=> u>-1 (|u|<1 dla B<0). B<0,|u|>1 => radial<0 => FLIP sygnatury. flag=SIGNATURE-FLIP-for-B<0-|u|>1
+======================================================================
+F-VIA-B — DOF count: induced-TT slaved?
+======================================================================
+[PASS] F-VIA-B: delta g_eff ∝ dPhi (metryka emergentna, eq:disformal-perturbation); brak niezaleznego czlonu kinetycznego h^TT => induced-TT SLAVED (nie-DOF). Argument induced-TT Phase2 formalnie void. (rem:GW-scope-2026). flag=SLAVED
+======================================================================
+F-VIA-D — czy nietrywialne ekranowanie wymaga |u|>~1?  (S=1/|1-u|)
+======================================================================
+[PASS] F-VIA-D: S=1/|1-u|<1/2 <=> Union(Interval.open(-oo, -1), Interval.open(3, oo)) (|u|>1). Perturbacyjnie maly disformal (|u|<<1) => S~1 (brak). flag=SCREENING-NEEDS-|u|>~1
+======================================================================
+F-VIA-C — trylemat: {Lorentz} ∩ {skalar zdrowy} ∩ {screening} dla obu znakow B
+======================================================================
+[PASS] F-VIA-C: healthy=Interval.open(-oo, 1/3); lorentz=Interval.open(-1, oo); screening=Union(Interval.open(-oo, -1), Interval.open(3, oo)). intersekcja = EmptySet (B<0:EmptySet, B>0:EmptySet). EMPTY=True. flag=EMPTY
+======================================================================
+F-VIA-E — agregat (z flag)
+======================================================================
+[PASS] F-VIA-E: A=FLIP(True) ∧ B=SLAVED(True) ∧ C=EMPTY(True) => BROKEN-via-viability
+
+======================================================================
+WERDYKT F-VIA: 5/5 PASS  =>  D6/sektor radiacyjny -> BROKEN-via-viability
+  Geometria TWARDA: B<0->flip sygnatury (det EXACT), B>0->ghost skalara (Z LOCKED).
+  Jedyna przeslanka nie-twarda: 'screening => |u|>~1' (qualitatively robust; skaling 1/|1-u| dziedziczony).
+  O12-NIEZALEZNE: dla DOWOLNEGO B albo |u|<1 (brak screeningu->PR-025) albo |u|>1 (patologia).
+DISCIPLINE: hardcoded=0 ; verdict_from_flags=True ; induced-TT NIE uzyte jako dowod (F-VIA-B void)

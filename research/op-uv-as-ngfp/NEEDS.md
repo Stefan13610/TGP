@@ -30,6 +30,18 @@ tags:
 > 
 > ---
 
+### Nowy otwarty problem (2026-06-23, #39 — jedyna droga do „α=2 derywowane")
+
+> Z [[research/op-bond-order-RG-selection-2026-06-23/Phase_FINAL_close.md]] (werdykt RG-NOT-SELECTED,
+> sympy 5/5): α=2 na gęstości wymaga substratowego bondu K(ŝ)∝ŝ¹⁰ (rząd 6, s=5), którego
+> **power-counting NIE selekcjonuje** ([g_s]=−s(d−2), s=5 najbardziej irrelevant). Jedyna pozostała
+> droga do uczynienia α=2 *wyprowadzeniem* (a nie aksjomatem selekcji C1–C3 na gęstości):
+>
+> **Czy interagujący NGFP rodziny bondów (ŝᵢŝⱼ)ⁿ generuje anomalny wymiar γ ≈ −5/6 dla operatora
+> O_{s=5} = ŝ¹⁰(∇ŝ)², czyniąc go marginalnym/relewantnym?** Wymaga pełnego rachunku FRG na rodzinie
+> ŝ^{2s}(∇ŝ)². Status: wieloletni track UV, niski priorytet inżynieryjny, wysoki fundamentalny
+> (analog statusu c₀ #37 — tożsamość Warda/normalizacja σ_ab). NIE deferred derivation — honest open question.
+
 ## OPEN markery w tabelach
 
 - `Phase3_results.md`: ` |  **N_A normalization**  |  OPEN (closest 9, Δ 2.6%)  |  **PARTIALLY DERIVED (refined²)** — 500/57 sympy-exact + NGFP RG-stable  | `

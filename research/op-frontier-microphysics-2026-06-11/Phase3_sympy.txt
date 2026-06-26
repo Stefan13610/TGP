@@ -1,0 +1,82 @@
+﻿==============================================================================
+op-frontier-microphysics Phase 3 — F-FM-COR (A-ii / C-2 / A2)
+==============================================================================
+
+FP1 — COR-1: shell map density => homogeneity
+  x(t; t0) = c*t**(2/3)*t_0**(1/3)
+  entry position - c t0 = 0; entry velocity - 2c/3 = 0
+  xdot - (2/3)x/t = 0 (shells REPRODUCE the derived flow)
+  rho(x,t) = Mdot/(4 pi x^2 dx/dt0) = 1/(6*pi*G*t**2)
+  rho - 1/(6 pi G t^2) = 0; free of t0: True
+  => HOMOGENEITY IS NOT IMPOSED: it is the EXACT outcome of
+     (marginality => Mdot = const) + (v_c = 2c/3 deposition) + flow transport.
+  T_pass FP1 = True
+
+FP2 — COR-1: full dynamical + mass closure
+  EOM residual xddot + G M_enc/x^2 = 0 (EXACT solution of
+  the self-gravitating system — not merely kinematic)
+  d(M_enc)/dt along trajectory = 0; M_enc - M(t0) = 0
+  dx/dt0 > 0 (no caustics, single-stream => supports A-iv): True
+  mass closure: sum shells - M(t) = 0; x(t0->0) -> 0
+  T_pass FP2 = True
+
+FP3 — COR-1 caveats: power-law growth; uniqueness gap declared
+  indicial roots at eps = 2/3: [-1, 2/3] (power-law, no runaway —
+  R17 no-runaway class; homogeneity preserved up to predicted growth)
+  DECLARED: uniqueness of self-consistent solution not shown;
+  sphericity of locus = inherited Phase 0 par.8(e)(iv) assumption.
+  T_pass FP3 = True
+
+FP4 — COR-2: formal booking (C-2 dissolved)
+  F_substrate = 0; res(2/3) = 0; Delta_bulk(2/3) = 0
+  conditional on EQ-1 functional form E_sol = E(<Phi>) (concept LOCKED,
+  claim-rigor class par.3.6.12) — declared.
+  T_pass FP4 (C-2 = DERIVED-dissolved) = True
+
+FP5 — COR-3: demand side of the bridge
+  net mechanical at entry = (1/2)(2c/3)^2 - GM/(ct) = 0 (marginality)
+  demand rate = Mdot c^2 = 2*c**5/(9*G) (d/dt = 0 — CONST)
+  T_pass FP5 = True
+
+FP6 — COR-3: supply side; R-FM-3 restructured
+  supply rate = pi*Phi_0**4*c**3*lambda*t**2 (prop t^2)
+  t_* = [sqrt(2)*c/(3*sqrt(pi)*sqrt(G)*Phi_0**2*sqrt(lambda))] (unique positive: True)
+  supply/demand = 9*pi*G*Phi_0**4*lambda*t**2/(2*c**2) = (t/t_*)^2; excess fraction -> 1
+  early epoch t < t_*: funding DEFICIT — honest structural finding
+  (INFORMATIONAL: relates to initial epoch; no numeric lambda, Phi_0 used)
+  T_pass FP6 = True
+
+FP7 — COR-3 residual gaps (declared) => verdict PARTIAL
+  GAP: EQ-5 field-level bookkeeping (schematic in concept)
+  GAP: bottom-up J_source rate (top-down marginality rate stands)
+  GAP: A-iv from wall microphysics (no-caustics support only)
+  COR-3 = PARTIAL (energy-ledger bridge specified EXACT; gaps above)
+  T_pass FP7 (gaps enumerated, none hidden) = True
+
+FP8 — circularity guard + aggregate
+  free symbols across Phase 3: ['G', 'Phi_0', 'c', 'epsilon', 'lambda', 't', 't_0', 'x']
+  COR-1 (A-ii): DERIVED_SELF_CONSISTENT (exact solution; uniqueness + sphericity caveats declared)
+  COR-2 (C-2): DERIVED (dissolved: F_sub = 0; residual identically 0)
+  COR-3 (A2): PARTIAL (energy-ledger specified; 3 gaps declared)
+  T_pass FP8 (no G_obs anywhere) = True
+
+==============================================================================
+  FP1: PASS
+  FP2: PASS
+  FP3: PASS
+  FP4: PASS
+  FP5: PASS
+  FP6: PASS
+  FP7: PASS
+  FP8: PASS
+
+  TOTAL: 8/8 PASS; hardcoded T_pass = 0/8
+  F-FM-COR: COR-1 DERIVED_SELF_CONSISTENT / COR-2 DERIVED / COR-3 PARTIAL
+  PR-022 conditions after Phase 3:
+    (i)  tiebreaker: SATISFIED (A-ii conditionality now DERIVED;
+         residual conditionality: A-iv declared + uniqueness caveat)
+    (ii) A-ii: DERIVED_SELF_CONSISTENT (caveats declared)
+    (iii) C-2: SATISFIED (dissolved)
+    (iv) A2: PARTIAL — user decision at Phase FINAL
+  NO PR-022 THIS PHASE (forbidden move #6: strict ALL-conditions reading)
+==============================================================================

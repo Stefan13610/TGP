@@ -1,0 +1,25 @@
+========================================================================
+PHASE 1 FAST-AUDIT: kategoria g in [0,817;0,891] -> waznosc sufitu HALT-B
+========================================================================
+
+[DANE] rdzeniowe g0 leptonow (ODE substratowe): e=0.8695 mu=1.4068 tau=1.7296
+[DANE] g_min ogona: mu=0.898 tau=0.742 crit=0.779
+[DANE] audit range I = [0.817, 0.891], width eps=0.0867
+
+[T1] g0 (wejscie ODE) rozne od g_min (wartosc profilu)?  True
+[T2] core hull [0.869,1.730]; e in I? True ; mu in I? False ; tau in I? False
+     -> I zawiera TYLKO baze (elektron), wyklucza mion i tauon core g0: True
+[T3] g_min band [0.742,0.898]; I subset tail band? True
+[T5] eps_I=0.0867 ; (1+eps)^(e2/2)=1.3594 ; ceiling_T11=2.624 (cel ~2.68): True
+
+[T6] leptony mieszcza sie w I? False ; m_tau/m_e (=3477) > ceiling (2.62)? True
+     >>> WERDYKT KATEGORII (wyliczony): NORM-OVERLOAD <<<
+[T7] eps_core (domena leptonow [0.869,1.730]) = 0.662  vs eps_I=0.0867  (>5x: True)
+     (1+eps_core)^(e2/2)=6.53 -- skala bledu kategorii; NIE dowod reprodukowalnosci kwarkow (R4)
+[T8] circularity guard -- masy KWARKOW PDG uzyte w kategoryzacji? False -> brak: True
+[T9-DEC] S05 single-Phi zachowane; werdykt HALT-B poprzednika NIETYKALNY (audyt zakresu waznosci).
+
+========================================================================
+PASS: 9 / 9 FP-testow
+WERDYKT: NORM-OVERLOAD
+========================================================================

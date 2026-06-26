@@ -582,17 +582,47 @@ preserved dla każdego punktu w GWTC-3 compliance window.
 **Canonical TGP recovery uses σ-coupling (c_0·κ_σ ≈ 4/3), NIE 3PN tuning.**
 Argument strukturalny (preserve all 3 SU(2) paths), NIE empiryczny fit.
 
-### 3.6.8 c_0 status — derivable, deferred multi-session
+### 3.6.8 c_0 status — WOLNY PARAMETR UV (rozstrzygnięte 2026-06-22, #37; wcześniej: „derivable, deferred")
 
-c_0 (leading σ-coupling coefficient C(ψ=1)) jest **framework-derivable**:
+> ⚠ **CL-9 ANNOTATION 2026-06-22** (via [[research/op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]], #37, sympy 5/5 PASS):
+> Status c_0 **rozstrzygnięty NEGATYWNIE**: c_0 = C(ψ=1) jest normalizacją **tego samego**
+> operatora złożonego ∂ŝ∂ŝ w kanale spin-2, którego współczynnik p² (= C_σ) udowodniono
+> (#33 op-CG4) jako **liniowo rozbieżny w odcięciu UV** (wsp. kątowy −16/35 ≠ 0). Brak
+> tożsamości Warda i **brak izolowanego bieguna spin-2** (#34 op-sigma-ab-pole-residue;
+> ∫P₂dx=0) ⟹ żadna zewnętrzna relacja nie ustala normalizacji. ⟹ **c_0 = nieredukowalny
+> WOLNY PARAMETR UV**, NIE „framework-derivable".
+>
+> **Heuristyka „c_0 ≈ 4π" (cykl 2026-05-09) NIE jest wyprowadzeniem:** „4π" pochodzi z
+> **matchingu** ξ_eff = 4π·G·Φ_0² (thm:amplitude-matching = **warunek dopasowania**, nie
+> predykcja — zalockowane #35), a mnożnik 1.06 = **kalibracja do GW150914** (fit). Iloczyn
+> c_0·κ_σ = 4π·1/(3π) = 4/3 jest **algebraicznie trywialny** (post-hoc-konstruowalny;
+> sympy C2 PASS). Cykl 2026-05-09 jest **SUPERSEDED**.
+>
+> **Konsekwencja:** okno recovery „c_0·κ_σ = 4/3" (§3.6.3/§3.6.4) to **podwójne strojenie**
+> (c_0 wolne ∧ κ_E ≡ C_σσ_0² wolne, #34/#35) ⟹ sektor grawitacyjno-radiacyjny **NIE dostarcza
+> falsyfikowalnej predykcji amplitudy/fazy GW** (β_ppE^new = warunkowe). **Niezmienione
+> (predykcje strukturalne, R2):** 2 TT + breathing mode (smoking gun 3G), c_GW=c,
+> m_σ²=2m_s² (OPE, LOCKED). **Param-counting:** c_0 i C_σ to normalizacje tego samego
+> operatora σ_ab ⟹ **jedna** stała radiacyjna; budżet TGP pozostaje **3** (c_0 NIE jest
+> 4. parametrem). Cross-ref: `rem:sigma-Csigma-free` (sek08), PREDICTIONS_REGISTRY GW7.
+
+**Historyczny stan (pre-#37, 2026-05-09 — SUPERSEDED):** c_0 (leading σ-coupling coefficient C(ψ=1)) uznano za **framework-derivable**:
 1. σ_ab coarse-graining z H_Γ substrate (~5-10 sesji)
 2. Dynamic-equilibrium balance analog SPIN N16 (~3-5 sesji) ← preferred
 3. SU(2) Path B exact preservation (~2-4 sesji)
 
 Heuristic target: c_0·κ_σ ≈ 4/3 (z Phase 4 GWTC-3 zero-β analysis). Numerical
 pinning HONESTLY DEFERRED do dedicated cycle `op-c0-derivation-from-substrate`.
+**[Powyższy „deferred derivation" rozstrzygnięty negatywnie przez #37 — patrz CL-9.]**
 
-### 3.6.9 Six requirements P1-P6 (6/6 RESOLVED)
+### 3.6.9 Six requirements P1-P6 (6/6 RESOLVED — initial closure 2026-05-09 morning)
+
+> ⚠ **CL-1 ANNOTATION 2026-06-01** (via [[research/op-S07-emergent-metric-integration-2026-06-01/Phase1_audit.md]] §4.3 GAP-1 + Phase_FINAL_close.md):
+> Initial closure state captured below reflects 2026-05-09 morning emergent-metric Phase FINAL verdict.
+> **Subsequent cascade DOWNGRADE** (mPhi-verification 2026-05-09 wieczór + 2026-05-10 γ-cascade Branch A re-assertion):
+> P6 → CONDITIONAL with **R5 risk active for typical LIGO sources** (m_Φ ~ M_Pl regime → mechanism (iii) δΦ-mediation FAILS at LIGO scales).
+> **Current LIVE status: 5/6 P-RESOLVED** (P1-P5 RESOLVED unchanged; P6 CONDITIONAL pending mechanism v research program).
+> See §3.6.10.6 below for full cascade trail + [[PREDICTIONS_REGISTRY.md]] 2026-05-10 γ-cascade entry for canonical LIVE source. Recovery V cycle ARCHIVED 2026-05-10.
 
 | # | Requirement | Resolution |
 |---|---|---|
@@ -607,9 +637,18 @@ pinning HONESTLY DEFERRED do dedicated cycle `op-c0-derivation-from-substrate`.
 
 ### 3.6.10 Joint follow-up cycles closure (2026-05-09)
 
+> ⚠ **CL-9 ANNOTATION 2026-06-22** (#37, [[research/op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]]):
+> Poniższe §3.6.10.1–3 są **SUPERSEDED** w części dotyczącej c_0 jako wyprowadzenia. „c_0≈4π"
+> NIE jest derywacją — to **matching** ξ_eff (tw. amplitude-matching = warunek dopasowania, nie
+> predykcja) + **kalibracja GW150914**, a iloczyn c_0·κ_σ=4π·1/(3π)=4/3 jest **algebraicznie
+> trywialny** (post-hoc-konstruowalny). c_0 = C(ψ=1) to **ta sama UV-czuła normalizacja** co C_σ
+> (ten sam operator ∂ŝ∂ŝ, rozbieżność −16/35, #33; brak bieguna spin-2, #34) ⟹ **wolny parametr UV**.
+> ⟹ „c_0·κ_σ=4/3" = **podwójne strojenie**, nie predykcja amplitudy/fazy GW. c_0 ≡ C_σ (jedna stała
+> radiacyjna, NIE 4. parametr; bilans 3). Czytaj §3.6.10.1–3 jako **zapis historyczny heurystyki**.
+
 Trzy follow-up cykle uruchomione + zamknięte 2026-05-09:
 
-#### 3.6.10.1 — c_0 derivation z OP-7 T3.4 chain
+#### 3.6.10.1 — c_0 derivation z OP-7 T3.4 chain  *(SUPERSEDED #37 — patrz CL-9)*
 [[research/op-c0-derivation-from-substrate-2026-05-09/]] STRUCTURAL DERIVED
 (heuristic numerical, 5/5 sympy):
 ```
@@ -717,6 +756,80 @@ content observed by LIGO. Status STRUCTURAL_CONDITIONAL accurately reflects this
 > korekcie framework jest **STRUCTURAL DERIVED 6/6 RESOLVED** (R5 RESOLVED).
 > Sekcje §3.6.10.4 i §3.6.10.5 pozostają jako audit-trail morning state;
 > aktualne LIVE status w §3.6.10.6.
+
+> ⚠ **CL-4 ANNOTATION 2026-06-13** (via [[research/op-PSR-Pdot-energy-balance-2026-06-13/]] PR-025 + [[research/op-gravitational-sector-survival-2026-06-13/]]):
+> „6/6 RESOLVED (evening state)" w §3.6.10.6 opisuje sektor radiacyjny na poziomie **amplitudy** (h_TT^σ = h_TT^GR).
+> **PR-025 (2026-06-13) TRIGGERED** na poziomie **bilansu energii** (Ṗ_b): P6-radiacyjne DOWNGRADE do
+> **amplitude-only** (energy balance falsyfikuje konkretne branże konforemne: σ masywny ⇒ 1/6 ⇒ 13227σ;
+> σ bezmasowy κ_E=1 + skalar ⇒ 7/6 ⇒ 2646σ). **Zakres skorygowany 2026-06-13:** to domknięcie
+> (i upgrade „EXHAUSTIVE-OVER-LIVE" z op-phi-radiative-dof-audit) jest **exhaustive nad pod-teorią
+> KONFOREMNĄ, NIE nad pełnym LIVE**. op-gravitational-sector-survival (INDETERMINATE, 13/13 PASS)
+> wykazał, że disformalna struktura LIVE (`hyp:disformal`) wnosi człon X-nieliniowy (Vainshtein; EXACT:
+> L_kin = A·X − (b/2)X²) łamiący premisę no-go, a κ_E=ξ_eff/λ jest niepinowane (det J = 2ξ/λ ≠ 0).
+> **Status LIVE sektora radiacyjnego: INDETERMINATE** — rozstrzygnięcie w [[research/op-disformal-radiation-resolution-2026-06-13/]].
+> Liczby PR-025 LOCKED nietknięte; korekta dotyczy wyłącznie ZASIĘGU twierdzenia o wyczerpaniu.
+
+> ⚠ **CL-5 ANNOTATION 2026-06-14** (via [[research/op-disformal-radiation-resolution-2026-06-13/]] — rozstrzygnięcie D6 z CL-4, 14/14 PASS):
+> Status LIVE sektora radiacyjnego z „INDETERMINATE" (CL-4) → **UNDERDETERMINED** (strukturalnie niefalsyfikowalny w obecnej formie).
+> **T1 (bilans Ṗ_b, NIE amplitudy):** disformalny Vainshtein TŁUMI strumień energii skalarnej z orbity czynnikiem
+> kinetycznym 1/u, u=bX_bg/A (EXACT: operator fluktuacji Z^μν=2(A−bX)η−4b∂φ∂φ; Ṗ_φ^LIVE=(1/u)·⅙P_GR) — **NIE UNSCREENED**
+> (naiwny argument „konforemne źródło bez pochodnych ⇒ ⅙ stoi" OBALONY: ekranowana odpowiedź pola przez Z_eff, nie źródło).
+> Ale **NIE SCREENED-do-GR**: magnituda 1/u zależy od underived B(Φ) [otwarty problem O12]. **T2:** κ_E=C_σσ₀² strukturalnie
+> NIEPINOWANE (EXACT: det J=2≠0 w konkretach σ_ab; amplituda R7 nie pinuje strumienia; pin tylko przez tuning E-H = forbidden).
+> **T3:** M_*=m_P = postulat WYMIAROWY (analiza wymiarowa + B(Φ₀)=1), nie mikro-derywacja, nie fit — **sek08 tab. „M_*: Warstwa III
+> wyprowadzone" = OVERCLAIM; status_map „Propozycja" poprawne** (korekta klasyfikacji, nie liczby).
+> **Werdykt: sektor radiacyjny NIE sfalsyfikowany ani uratowany — niefalsyfikowalny w obecnej formie** (underdetermination-parametryczna).
+> Domknięcie wymaga (3): pin C_σ z substratu + rozwiązanie B(Φ)[O12] + mikro-derywacja M_*. Liczby PR-025 LOCKED nietknięte.
+> Nowy DOUBT W-DRR-1: znak b=B/M_*⁴ decyduje o zdrowiu modu gradientowego (Z^rr=2A−6bX) — styk z O12.
+
+> 🔴 **CL-6 ANNOTATION 2026-06-14** ⚠️ **SUPERSEDED przez CL-7 (ta sama sesja) — „FALSIFIED" było NADMIERNIE ZAOSTRZONE; zachowane jako audit-trail** (via [[research/op-disformal-hamiltonian-viability-2026-06-14/]] — rozstrzygnięcie W-DRR-1, sympy 5/5; audyt [[research/op-disformal-stability-2026-06-14/AUDIT_verdict_2026-06-14.md]]):
+> Status LIVE sektora radiacyjnego z „UNDERDETERMINED" (CL-5) → **FALSIFIED-via-viability**.
+> **Disformal viability (EXACT):** $g_{\rm eff}=\mathrm{diag}(-A,A(1+u),A,A)$, $\det=-A^4(1+u)$ — radialna
+> wartość własna $A(1+u)<0$ dla $|u|>1$ (B<0) ⇒ **flip sygnatury przy $|u|=1$ ($=r_V$)** (utrata Lorentzowskości).
+> **Trylemat ∀B (O12-NIEZALEŻNIE):** {g_eff Lorentz}∩{skalar zdrowy}∩{nietrywialne ekranowanie}=∅ —
+> B<0,|u|>1: flip sygnatury; B>0,|u|>2: ghost skalara (L'<0); B<0,|u|<1: brak ekranowania ⇒ PR-025 konforemny stoi.
+> **Korekta dowodu:** wcześniejsza ścieżka „induced-TT $c_T^2<0$" (op-disformal-stability Phase 2) była
+> NIEROBUSTNA (induced-TT to slaved nie-DOF, `rem:GW-scope-2026`); poprawny argument = viability $g_{\rm eff}$.
+> **Jedyna nie-twarda przesłanka:** „silne ekranowanie ⇒ $|u|\gtrsim1$" (jakościowo solidne; pełny DRW = W-VIA-1).
+> **Wniosek: sektor grawitacyjny RADIACYJNY/DALEKOZASIĘGOWY LIVE TGP_v1 jest SFALSYFIKOWANY** (konforemny
+> przez dane PR-025; disformalny przez geometrię). Statyka/1PN (γ=β=1) nietknięta — falsyfikacja dotyczy
+> sektora radiacyjnego/dynamicznego, NIE całej ramy. Rewizja ⇒ TGP v2 (warunki brzegowe: Phase_FINAL §6).
+> Liczby PR-025 LOCKED nietknięte.
+
+> 🟡 **CL-7 ANNOTATION 2026-06-14 (KOREKTA CL-6 — adwersaryjna kontrola terminalna)**
+> (via [[research/op-disformal-hamiltonian-viability-2026-06-14/ADVERSARIAL_REVIEW_2026-06-14.md]]; 2 niezależne agenty-sceptyki):
+> **CL-6 „FALSIFIED-via-viability" cofnięte → UNDERDETERMINED.** Kontrola geometryczna POTWIERDZIŁA algebrę
+> (kanał skalarno-disformalny / Vainshtein screening **BROKEN** — twarde, niezmiennicze, sympy). ALE kontrola
+> fizyczna wykazała **błąd ZAKRESU:** właściwym radiatorem GW jest **niezależne pole $\sigma_{ab}$**
+> (`ssec:tensor-substrate`, `thm:amplitude-matching`), propagujące na $g_{\rm eff}$ z $c_0$, które **NIE wchodzi
+> do $\det g_{\rm eff}$** — argument viability go nie dotyczy. Strumień $\kappa_E=C_\sigma\sigma_0^2$ **niepinowane**;
+> bilans $\dot P_b=\kappa_E P_{GR}+\tfrac16 P_{GR}$, przy $\kappa_E=5/6$ suma $=P_{GR}$ (mieści dane, nie przewiduje).
+> **Viability eliminuje JEDNĄ drogę ratunku (screening skalara), NIE falsyfikuje sektora.** Eskalacja
+> UNDERDETERMINED→BROKEN (CL-6) była non sequitur (ten sam typ błędu „niewłaściwy obiekt" co induced-TT —
+> tu: skalar/$g_{\rm eff}$ zamiast σ_ab).
+> **Status LIVE sektora radiacyjnego: UNDERDETERMINED** (= op-disformal-radiation-resolution; domknięcie =
+> pinowanie κ_E z substratu). Pod-wynik twardy: disformalny screening skalara geometrycznie wykluczony.
+> Liczby PR-025 LOCKED nietknięte.
+
+> 🟢 **CL-8 ANNOTATION 2026-06-22 (#35 — DOMKNIĘCIE κ_E: pinowanie DOWIEDZIONE NIEMOŻLIWE)**
+> (via [[research/op-CG4-substrate-closure-2026-06-20/Phase_FINAL_close.md]] #33 +
+> [[research/op-sigma-ab-pole-residue-2026-06-20/Phase_FINAL_close.md]] #34;
+> propagacja: [[research/op-sigma-status-propagation-audit-2026-06-20/Phase1_audit.md]]):
+> **Postawione w CL-7 pytanie domknięcia („domknięcie = pinowanie κ_E z substratu") zostało
+> ROZSTRZYGNIĘTE NEGATYWNIE.** Dwa niezależne dowody, że κ_E ≡ C_σσ₀² (≡ 8πG₀C_σσ₀²/c³) jest
+> **nieredukowalnym WOLNYM PARAMETREM UV**, nie wielkością pinowalną z substratu:
+> (a) **op-CG4 Phase 3** — wsp. p² operatora złożonego ∂ŝ∂ŝ w kanale TT spin-2 ma niezerową
+> rozbieżność LINIOWĄ UV (wsp. kątowy ∫(1−μ²)²(4μ²−1)dμ = −16/35 ≠ 0; analit. = num do 4 cyfr)
+> ⇒ brak scheme-independent continuum; (b) **op-sigma-ab-pole-residue** — σ_ab to kontinuum
+> dwucząstkowe (cięcie arctan od (2m_s)²), brak izolowanego bieguna spin-2; kontakt φ⁴ (Ising)
+> ma zerową projekcję na falę spin-2 (∫P₂dx=0, s-wave nie wiąże d-wave) ⇒ brak residuum on-shell.
+> „M²=2m_s²" = coeff OPE, **nie** masa bieguna (GW4 LOCKED, NIE downgradowany).
+> **Status LIVE sektora radiacyjnego: UNDERDETERMINED → RESOLVED-via-free-parameter (opcja b).**
+> Bilans Ṗ_b = κ_E·P_GR + ⅙·P_GR; przy κ_E=5/6 suma = P_GR mieści dane, ale jest osiągana przez
+> **wybór** κ_E, nie jako predykcja. Substrat NIE jest problemem (M0 φ⁴ Isinga niepatologiczny,
+> c*>0 NUM; patologia #31 = bond M1). Bilans parametrów: sektor skalarny 2 + tensorowy 1 (C_σ) = **3**
+> (rdzeń: sek08 `rem:sigma-params` + `rem:sigma-Csigma-free`; rejestr: GW7 = FREE-PARAMETER).
+> Predykcje M911-* **warunkowe** na κ_E. Liczby PR-025 LOCKED nietknięte.
 
 #### 3.6.10.6 — T3.4 ξ_eff normalization amendment 2026-05-09 (evening) — R5 RESOLVED
 
@@ -898,6 +1011,18 @@ preserved jako historical artifact; amendment notice issued w
 Single algebraic correction sufficient — żadnej framework-protection retreat,
 żadnego multi-candidate fit. Pattern: "Full honest amendment" preferred over
 framework protection (analog Errata + Amendment w published papers).
+
+> ⚠ **CL-2 ANNOTATION 2026-06-01** (via [[research/op-S07-emergent-metric-integration-2026-06-01/Phase1_audit.md]] §4.4 GAP-2 + Phase_FINAL_close.md):
+> Cumulative sympy through **235/235 PASS** reflects gravity-sector recovery cycles
+> through mPhi-verification 2026-05-09 wieczór (chronology §3.6.10.5 + §3.6.10.6 above).
+> **Subsequent 2026-05-10 γ-identification cascade** (op-gamma-RG-running-derivation
+> parent 45 + Cycle 1 op-gamma-RG-running 88 + Cycle 3 op-EFT-Phi0-multi-scale 10
+> + Cycle 4 op-foundations-3.5.3-extension doc) added **+143** to cumulative grand total
+> = **466/466 PASS**. See [[PREDICTIONS_REGISTRY.md]] 2026-05-10 γ-identification cascade
+> entry (lines 239-283) for canonical LIVE source + Branch A re-assertion verdict +
+> recovery V cycle ARCHIVE status. **R1 #21 PARTIALLY CLOSED 2026-06-01 via CL-1 + CL-2**;
+> minor CL-3 (documentation chain trace 235→323 baseline shift) deferred to future
+> cleanup cycle.
 
 ## 4. Co to jest "materia" i co to jest "źródło"
 

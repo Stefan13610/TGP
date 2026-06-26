@@ -1,0 +1,70 @@
+﻿==============================================================================
+op-frontier-microphysics Phase 1 — F-FM-Q4 (frontier definition)
+==============================================================================
+
+FP1 — Q4 exclusion: finite spatial locus of the Phi-transition
+  gamma-3 locus R(t) = c*t: finite for finite t, dR/dt = c: True
+  wall profile Phi_w = Phi_0 tanh(x/delta), delta = sqrt(2)/(Phi_0*sqrt(lambda))
+  gradient localized (max at locus, -> 0 away): True
+  => Q4-B (no spatial locus) EXCLUDED by KQ2+KQ3 (finite R = ct; x-localized
+     transition). Q4-A EXCLUDED by KQ1 (background manifold contradicts
+     pozycja C LOCKED — semantic, concept par.1.1). KQ4: exterior appears ONLY
+     as E1-like reference value Phi -> 0, no metric extension beyond R used.
+  => Q4-C (IDENTIFICATION) is the unique survivor of the CLOSED set.
+  T_pass FP1 (locus finite + transition x-localized) = True
+
+FP2 — driving pressure Delta V
+  Delta V = V(0) - V(Phi_0) = Phi_0**4*lambda/4
+  T_pass FP2 (Delta V = lambda Phi_0^4/4 EXACT, > 0) = True
+
+FP3 — wall width and mass scale
+  EOM residual of kink: 0
+  m_Phi = sqrt(V''(Phi_0)) = sqrt(2)*Phi_0*sqrt(lambda); delta - 2/m_Phi = 0
+  T_pass FP3 (kink solves EOM; delta = 2/m_Phi EXACT) = True
+
+FP4 — surface tension (thin-wall)
+  sigma = sqrt(2)*Phi_0**3*sqrt(lambda)/3
+  T_pass FP4 (sigma = (2/3) sqrt(lambda/2) Phi_0^3 EXACT) = True
+
+FP5 — wall dynamics vs gamma-3 (consistency)
+  R_c = 2 sigma / Delta V = 8*sqrt(2)/(3*Phi_0*sqrt(lambda)) (unique: True)
+  F(R->oo) = Phi_0**4*lambda/4 = Delta V > 0; F(2 R_c) = Phi_0**4*lambda/8 > 0
+  thin-wall: delta/(c t) -> 0 as t -> oo
+  => sustained outward push => gamma v grows monotonically => v -> c;
+     asymptotically null frontier, CONSISTENT with gamma-3 (LOCKED source).
+  T_pass FP5 = True
+
+FP6 — stability boundary |Phi| = Phi_0/sqrt(3) (NEW, EXACT)
+  m_eff^2(Phi) = 3*Phi**2*lambda - Phi_0**2*lambda
+  zero (positive branch): [sqrt(3)*Phi_0/3]; expected Phi_0/sqrt(3)
+  strictly inside wall (< Phi_0): True; depth x* = 0.6585 delta
+  T_pass FP6 (boundary Phi_0/sqrt(3) EXACT, strictly inside) = True
+
+FP7 — pre-derivation validation (growth machinery + residual zeros)
+  p+(2/3) = 2/3 (EdS EXACT); p+(3/2) = -1/6 + sqrt(55)/6 (= (sqrt(55)-1)/6)
+  log10 G: 2.0252 (exp 2.0253, rel dev 4.12e-05); 3.2485 (exp 3.2485, rel dev 1.47e-05)
+  Delta_bulk zeros: [2/3] (unique at 2/3); Delta_bulk(3/2) = 5/8
+  T_pass FP7 = True
+
+FP8 — circularity guard
+  free symbols across Phase 1: ['Phi', 'Phi_0', 'R', 'epsilon', 'lambda', 'x']
+  T_pass FP8 (no G_obs, no observed-growth symbol anywhere) = True
+
+==============================================================================
+  FP1: PASS
+  FP2: PASS
+  FP3: PASS
+  FP4: PASS
+  FP5: PASS
+  FP6: PASS
+  FP7: PASS
+  FP8: PASS
+
+  TOTAL: 8/8 PASS; hardcoded T_pass = 0/8
+  F-FM-Q4: Q4-C (IDENTIFICATION) — frontier = spatial locus R = ct of the
+  Phi-saturation transition layer; 'Phi-space boundary' and 'physical edge'
+  are ONE object under generated-space ontology => RESOLVED_STRUCTURAL
+  (conditional on LOCKED concept-paper ontology; risk R-FM-5 declared).
+  Tiebreaker v_c: NOT touched (Phase 2). New Phase-2 input: stability
+  boundary |Phi| = Phi_0/sqrt(3) strictly inside wall (FP6).
+==============================================================================

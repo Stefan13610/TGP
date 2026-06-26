@@ -1263,7 +1263,7 @@ Each row carries:
 | **GW4** | **m_σ²/m_s² = 2** sympy-exact integer | OPE-invariant, preserved 4/4 UV | LISA / PTA low-k phase shift ~2.9% signature, 2030–2035 | **LOCKED** | tgp-core | `closure_2026-04-26/` (Path B σ_ab 11/11), Phase3.F |
 | **GW5** | **No vector modes** (single-scalar) | GR: 0; bimetric: 2 vector | LIGO O5 polarization fit: detection of h_v ≠ 0 falsifies | **STRUCTURAL** | tgp-core | M9.3.4 |
 | **GW6** | **m_s ≪ ω_LIGO** (effective masslessness in LIGO band) | M_eff/ω_LIGO ≈ 7·10⁹ | LIGO O5: c_GW(f) frequency-dependence above precision floor | **STRUCTURAL** | tgp-core | Phase1.F |
-| **GW7** | **C_σ (≡ κ_E = 8πG₀C_σσ₀²/c³) = nieredukowalny WOLNY PARAMETR** (NIE predykcja). Dwa dowody: (a) wsp. p² operatora złożonego ∂ŝ∂ŝ w kanale TT spin-2 ma niezerową rozbieżność liniową UV (wsp. kątowy −16/35; analit.=num do 4 cyfr); (b) brak izolowanego bieguna spin-2 — kontakt φ⁴ ma ∫P₂dx=0 (s-wave nie wiąże d-wave) → brak residuum on-shell. „M²=2m_s²" = coeff OPE, nie masa bieguna. | radiation-sector kinetic normalization; przeżycie warunku radiacyjnego κ_E=5/6 osiągalne tylko przez **wybór** parametru | LISA/CE: κ_E wchodzi do tensorowej jasności GW (Ṗ_b excess); wartość ustala obserwabla, nie teoria | **FREE-PARAMETER (2026-06-20)** — param-counting sektora radiacyjnego +1; predykcje M911-* warunkowe na κ_E | tgp-core | [[research/op-CG4-substrate-closure-2026-06-20/Phase3_renorm.md]] (rozbieżność UV) + [[research/op-sigma-ab-pole-residue-2026-06-20/Phase_FINAL_close.md]] (brak bieguna spin-2) + uw. rem:sigma-Csigma-free (sek08) |
+| **GW7** | **C_σ (≡ κ_E = 8πG₀C_σσ₀²/c³) = nieredukowalny WOLNY PARAMETR** (NIE predykcja). Dwa dowody: (a) wsp. p² operatora złożonego ∂ŝ∂ŝ w kanale TT spin-2 ma niezerową rozbieżność liniową UV (wsp. kątowy −16/35; analit.=num do 4 cyfr); (b) brak izolowanego bieguna spin-2 — kontakt φ⁴ ma ∫P₂dx=0 (s-wave nie wiąże d-wave) → brak residuum on-shell. „M²=2m_s²" = coeff OPE, nie masa bieguna. **(2026-06-22, #37):** współczynnik metryczny **c₀ = C(ψ=1)** (wiodące sprzężenie σ^ij w g_eff^ij, ramą recovery) to **ta sama UV-czuła normalizacja** co C_σ (ten sam operator ∂ŝ∂ŝ, spin-2, −16/35) — **NIE osobny parametr**. „c₀≈4π" = matching ξ_eff + kalibracja GW150914; iloczyn c₀·κ_σ=4/3 trywialny ⟹ okno recovery = **podwójne strojenie**, nie predykcja amplitudy/fazy. | radiation-sector kinetic normalization; przeżycie warunku radiacyjnego κ_E=5/6 osiągalne tylko przez **wybór** parametru | LISA/CE: κ_E wchodzi do tensorowej jasności GW (Ṗ_b excess); wartość ustala obserwabla, nie teoria | **FREE-PARAMETER (2026-06-20)** — param-counting sektora radiacyjnego +1; predykcje M911-* warunkowe na κ_E | tgp-core | [[research/op-CG4-substrate-closure-2026-06-20/Phase3_renorm.md]] (rozbieżność UV) + [[research/op-sigma-ab-pole-residue-2026-06-20/Phase_FINAL_close.md]] (brak bieguna spin-2) + [[research/op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]] (c₀≡C_σ, #37) + uw. rem:sigma-Csigma-free (sek08) |
 
 ---
 
@@ -2026,6 +2026,33 @@ sesji A− closures (S07-reset + inflation).
 
 [[audyt/AUDIT_REPORT_2026-05-16_8-cycle_integration.md]] — 🟢 STRUCTURALLY SOUND;
 identified housekeeping debt (4 categories) addressed in P1-P4 follow-up housekeeping batch.
+
+═══════════════════════════════════════════════════════════════════════
+
+## 🔵 STATUS UPDATE 2026-06-25 (#42 + #43) — α_s(M_Z) z sektora kwarkowego: **consistency-check WARUNKOWY, NIE first-principles predykcja**
+
+**Cykle źródłowe:**
+- [[research/op-A-derivation-from-CG-2026-06-25/Phase_FINAL_close.md]] (#43 POSTULATE-CONDITIONAL, 4/4)
+- [[research/op-quark-mass-core-g0-rescue-test-2026-06-25/Phase_FINAL_close.md]] (#41 RESCUE-CONFIRMED, 8/8)
+- [[research/op-parameter-counting-balance-sheet-2026-06-25/Phase_FINAL_close.md]] (#42 HEADLINE-OPTIMISTIC)
+
+**Klasyfikacja (anti-Lakatos, value-blind):** wartość **α_s(M_Z) = 0,1179** odtworzona z sektora
+kwarkowego przez most **𝒜 = a_Γ/φ = C_F²α_s²** (zgodność 0,03σ z PDG, dodatekX
+`rem:X-m0-physical`) **NIE jest predykcją first-principles**. Cały łańcuch wisi na pojedynczym
+postulacie **K_geo·m_sp² = π·Φ₀²** (`eq:X-K-msp-hypothesis`), który redukuje się do
+**niedomkniętego mostu coarse-grainingu Γ→Φ** (CG-1/CG-3 w `status_map.tex`, status [SZKIC];
+ex200 4/8 PASS). Status: **POSTULATE-CONDITIONAL** — α_s = **strukturalny sprawdzian spójności
+warunkowy na zamknięcie CG**, analog do α=2 (#36/#38/#39, pending NGFP) i c₀ (#37, pending Ward/UV).
+
+**Spójność z ledgerem #42:** α_s sklasyfikowany jako **TRADED** (warunkowy), NIE genuine derived
+win; uczciwy N_free programu bez zmian (10). Reprodukcja **m_b/m_t (#41)** pozostaje ważna
+(częściowa predykcja r_31, m_t scheme-zależny pole 0,8% / MS-bar 5,5%) — to osobny, ważny wynik;
+korekta dotyczy wyłącznie statusu mostu 𝒜→α_s jako „derywacji".
+
+**Propagacja rdzenia:** dodatekX adnotowany (`rem:X-rescope-43`, addytywnie); sek08b:529
+przeformułowany (#40 NORM-OVERLOAD: [0,817;0,891] = pasmo bazowe φ-FP, nie domena g₀);
+audyt/L08 #3c → RESCUE-CONFIRMED. **Nota:** explicit predykcje mas kwarków pozostają poza tym
+rejestrem (per audyt/L08 README); niniejszy wpis dotyczy statusu α_s/𝒜.
 
 ═══════════════════════════════════════════════════════════════════════
 

@@ -1,0 +1,61 @@
+==========================================================================
+T-STA-A1 — operator Z^{mn} z L=AX-(b/2)X^2 na tle STATYCZNYM (gradient radialny)
+==========================================================================
+[PASS] T-STA-A1.X: X=(grad phi)^2=G**2 = G^2 > 0 na tle statycznym (mostly-plus, gradient przestrzenny). u=bX/A: znak u = znak b = znak B (A>0, X>0). REZIM STATYCZNY (rozny od kosmologicznego X<0).
+[PASS] T-STA-A1: Z^{mn}=2(A-bX)eta-4b(∂phi)(∂phi)^T [EXACT, match=True] -- zgodne z S1 (reuse, nie nowy operator).
+==========================================================================
+T-STA-A2 — skladowe znakowe (S2) + no-ghost: znak czlonu czasowego Z^{00} i kinetyki L'
+==========================================================================
+[PASS] T-STA-A2.form: Z^00=2*A*(u - 1)=-2A(1-u); Z^rr=2*A*(1 - 3*u)=2A(1-3u); Z^perp=2*A*(1 - u)=2A(1-u) -- POTWIERDZA S2 z S1.
+[PASS] T-STA-A2: L'=A(1-u); no-ghost <=> L'>0 <=> (1-u)>0 <=> u<1. Dla u>1 (B>0 silne): L'<0 => GHOST.
+==========================================================================
+T-STA-B1 — gradient: c_s^2=(1-u)/(1-3u) (S3) + Z^rr, Z^perp; warunki stabilnosci
+==========================================================================
+[PASS] T-STA-B1.cs2: c_s^2 = L'/(L'+2X L'') = (u - 1)/(3*u - 1) = (1-u)/(1-3u) -- POTWIERDZA S3.
+  c_s^2>=0 : Union(Interval.open(-oo, 1/3), Interval(1, oo))
+  Z^rr>=0  : Interval(-oo, 1/3)   (1-3u>=0 => u<=1/3)
+  Z^perp>=0: Interval(-oo, 1)   (1-u>=0 => u<=1)
+  gradient_health (Z^rr>0 ∧ Z^perp>0): Interval.open(-oo, 1/3)  (=> u<1/3)
+[PASS] T-STA-B1: gradient-stabilny <=> u<1/3 (Z^rr>0, c_s^2>0). Dla 1/3<u<1: Z^rr<0 i c_s^2<0 => NIESTAB. GRADIENTOWA.
+==========================================================================
+T-STA-B2 — czynnik EKRANOWANIA S(u)=1/|1-u| (S4): gdzie GENUINE suppression S<1 ?
+==========================================================================
+  S(u)=1/|1-u|<1  <=>  |1-u|>1  <=>  u in Union(Interval.open(-oo, 0), Interval.open(2, oo))
+  S(u)>1 (ENHANCEMENT, niefizyczne dla ekranowania): u in Interval.open(0, 2)
+[PASS] T-STA-B2: Genuine suppression (S<1) TYLKO dla u<0 (B<0) lub u>2 (B>0, gleboki ghost). Dla 0<u<2 (B>0 slabe/posrednie): S>1 => strumien WZMOCNIONY (jeszcze gorzej).
+==========================================================================
+T-STA-C(prep) — EGZYSTENCJA znaku B: czy (no-ghost ∧ gradient ∧ ekranowanie) jest NIEPUSTE?
+==========================================================================
+  full_health (no-ghost ∧ gradient): Interval.open(-oo, 1/3)   (u<1/3)
+  screening (S<1):                   Union(Interval.open(-oo, 0), Interval.open(2, oo))        (u<0 ∪ u>2)
+  health ∧ screening:                Interval.open(-oo, 0)
+  galaz B>0 (u>0): EmptySet   <- czy istnieje zdrowy+ekranujacy dla B>0 ?
+  galaz B<0 (u<0): Interval.open(-oo, 0)   <- czy istnieje zdrowy+ekranujacy dla B<0 ?
+[PASS] T-STA-C.prep: B>0: zdrowy+ekranujacy = EmptySet (PUSTE -- ekranowanie B>0 wymaga u>2 = gleboki ghost). B<0: zdrowy+ekranujacy = Interval.open(-oo, 0) (NIEPUSTE -- caly u<0). => ZDROWY+EKRANUJACY ZNAK ISTNIEJE i JEST JEDNOZNACZNIE B<0.
+==========================================================================
+T-STA-Bneg — weryfikacja galezi B<0: c_s^2, Z^rr, Z^perp, S wszystkie zdrowe dla u<0
+==========================================================================
+[PASS] T-STA-Bneg: B<0 (u=-w,w>0): c_s^2=(1+w)/(1+3w) in (1/3,1) [lim_0=1, lim_inf=1/3] -- SUBLUMINAL, zdrowy; Z^rr=2A(1+3w)>0; Z^perp=2A(1+w)>0; S=1/(1+w)<1 (ekranuje). WSZYSTKO ZDROWE ∀w>0, dowolna magnituda.
+==========================================================================
+T-STA-disc — dyscyplina anti-Lakatos
+==========================================================================
+[PASS] T-STA-disc: 0 danych obserwacyjnych (struktura); werdykt z flag; 0 nowych stalych; OBA znaki B sprawdzone (nie zalozone); zakres = wylacznie sign-pin (magnituda B/M*/kappa_E poza, forbidden #5).
+==========================================================================
+FLAGI F-STA-A / F-STA-B (wyliczone z flag) + kandydat sign-pin
+==========================================================================
+checks: 10/10 PASS
+
+F-STA-A = HEALTHY
+F-STA-B = HEALTHY
+KANDYDAT SIGN-PIN (z health∧screening) = B<0 (u<0)
+  - Zdrowy (no-ghost ∧ gradient ∧ ekranujacy) operator ISTNIEJE i wymaga JEDNOZNACZNIE B<0.
+  - B>0: ekranowanie wymaga u>2 (gleboki ghost), a rejon zdrowy u<1/3 ENHANCUJE strumien (S>1).
+  - B<0: zdrowy ∀ magnitudy (c_s^2 in (1/3,1) subluminal) ORAZ ekranuje (S=1/(1+|u|)<1).
+  => F-STA-A=HEALTHY, F-STA-B=HEALTHY. Patologia NIE jest wymuszona (istnieje zdrowy znak).
+
+  WERDYKT CYKLU NIEROZSTRZYGNIETY na A/B: przenosi sie na F-STA-C (Phase 2):
+  czy B<0 (zdrowy radiacyjnie) jest ZGODNY z rdzeniem (iv)? prop:cT (S6) daje c_T^2=Ac0^2/(A+(B/M*^4)(∂Phi)^2_perp):
+  dla B<0 mianownik<A => c_T^2>c0^2 (NADSWIETLNA moda tensorowa) -- PRE-FLAGOWANE napiecie (Phase0 §6).
+  Jesli SIGN-CONFLICT (B<0 radiacja vs B>0 c_T) nieusuwalny => BROKEN; jesli rozlaczne geom. => SIGN-PINNED B<0.
+
+DISCIPLINE: hardcoded_T_pass=0 ; verdict_from_flags=True ; both_signs_tested=True ; scope=sign-pin-only

@@ -1,0 +1,88 @@
+﻿==============================================================================
+FCR Phase 1 — frontier creation rate: derivation + prediction matrix
+==============================================================================
+
+FP1 — B1 zero-energy/horizon condition (symbolic)
+  M(t) = c**3*t/(2*G);  dM/dt = c**3/(2*G) (const => M prop t)
+  rho(t) = 3/(8*pi*G*t**2);  rho - 3H^2/(8 pi G) = 0  [critical-density identity]
+  eps_G(tot) = 4 pi G rho t^2 = 3/2
+  T_pass FP1 (M prop t; critical identity EXACT; eps_G = 3/2 EXACT) = True
+
+FP2 — B1 numeric value at t_0
+  M_tot(t_0) = c^3 t_0/(2G) = 8.795e+52 kg  (gamma-7 rough input was 1e53 kg)
+  INFORMATIONAL: ratio = 0.879 (consistency note, NOT an input)
+  T_pass FP2 (value finite, computed, order-1e53) = True
+
+FP3 — F-FCR-A: S_creation prop H
+  A1: S_matter/rho = Mdot/M = 1/t  (= H = 1/t EXACT)
+  A2: EQ-5 stationary => S_Phi = 3*Phi_c/t  (prop H, coefficient 3<Phi>)
+  A2 bridge Phi-substrate -> matter sector: NOT specified in concept paper
+  => A2 bridge gap DECLARED (PARTIAL_concept_mismatch component; forbidden move #9 honored)
+  T_pass FP3 (A1 EXACT; A2 scaling consistent) = True
+
+FP4 — F-FCR-C: indicial structure of the three pre-declared bulk forms
+  C2a-form: p+ = sqrt(epsilon) - 1
+  C2b-form: p+ = sqrt(4*epsilon + 1)/2 - 3/2
+  C2c-form: p+ = sqrt(4*epsilon + 1)/2 - 1/2
+  eps->0 limit: growth collapses (p+ <= 0) in all forms: True
+  T_pass FP4 = True
+  C-form SELECTION: concept paper specifies boundary-localized creation (EQ-5 note)
+  but NOT the bulk transport/homogenization of created matter =>
+  >>> F-FCR-C verdict: PARTIAL_concept_mismatch (pre-registered honest outcome) <<<
+  All three forms evaluated in the matrix (no cherry-picking; forbidden move #4).
+
+FP5 — native tau_init from gamma-3 mapping
+  1 + z = t_0/t (a prop t, EXACT) => tau_init = 1/(1+z_rec) = 9.1659e-04
+  log10 span = 3.0378
+  PROVENANCE AUDIT: gamma-7/R17 used tau_init = 2.75e-5 = LCDM age-at-recombination
+  (1.2e13 s) — borrowed mapping, NOT gamma-3-native. Ratio vs native: 33.3x.
+  => R1 candidate flag (forward-looking; NO retroactive verdict modification — fm #3)
+  T_pass FP5 = True
+
+FP6 — prediction matrix (G = (1/tau_init)^p+; bands LOCKED)
+
+  B1: Omega_m = 1 (zero-energy): eps_G = 1.500
+    C2a-form: p+ = +0.2247  log10 G = 0.683  => FAIL_LOW
+    C2b-form: p+ = -0.1771  log10 G = 0.000  => FAIL_LOW
+    C2c-form: p+ = +0.8229  log10 G = 2.500  => PASS_BAND   [p = -1/2 + sqrt(7)/2 EXACT]
+
+  B2: Omega_m = 0.31 (E2 claim): eps_G = 0.465
+    C2a-form: p+ = -0.3181  log10 G = 0.000  => FAIL_LOW
+    C2b-form: p+ = -0.6544  log10 G = 0.000  => FAIL_LOW
+    C2c-form: p+ = +0.3456  log10 G = 1.050  => PARTIAL_BAND
+
+  T_pass FP6 (matrix complete, all cells computed) = True
+
+FP7 — circularity guard
+  free symbols of all p+: {epsilon}  (subset of {epsilon}: True)
+  T_pass FP7 = True
+
+INFORMATIONAL — xi = 1 sensitivity (forbidden as adoption; reporting only)
+    xi=1, Omega=1.0: C2a-form: log10 G = 2.22
+    xi=1, Omega=1.0: C2b-form: log10 G = 0.92
+    xi=1, Omega=1.0: C2c-form: log10 G = 3.96
+    xi=1, Omega=0.31: C2c-form: log10 G = 1.78
+
+FP8 — aggregate F-FCR-D (mechanical)
+    B1: STRUCTURAL_POSTULATE
+    B2: CONCEPT_CLAIM_UNVERIFIED
+    A: A1_DERIVED_CONDITIONAL_ON_B + A2_bridge_gap
+    C: PARTIAL_concept_mismatch
+
+  >>> F-FCR-D AGGREGATE: STRUCTURAL_CONDITIONAL <<<
+  T_pass FP8 = True
+  => PR-022: NOT APPENDED (PREDICTION_REALIZED not reached; forbidden move #5 honored)
+
+==============================================================================
+  FP1: PASS
+  FP2: PASS
+  FP3: PASS
+  FP4: PASS
+  FP5: PASS
+  FP6: PASS
+  FP7: PASS
+  FP8: PASS
+
+  TOTAL: 8/8 PASS; hardcoded T_pass = 0/8
+  F-FCR-D: STRUCTURAL_CONDITIONAL
+==============================================================================

@@ -1,0 +1,123 @@
+========================================================================
+Phase 1 sympy — op-CE-H-3D-native-interaction-2026-05-22
+========================================================================
+
+------------------------------------------------------------------------
+T_P1_1 [LIT]: Literature anchors check (INFORMATIONAL only)
+------------------------------------------------------------------------
+Anchors verified: 5/5
+  - Nielsen-Olesen 1973: Vortex line in Abelian Higgs — note: gauge model
+  - Vilenkin-Shellard 1994: Cosmic strings — Abelian Higgs framework
+  - Manton-Sutcliffe 2004: Topological solitons — 2D/3D solitons
+  - Goldstone 1961, Goldstone-Salam-Weinberg 1962: Goldstone theorem
+  - Peskin-Schroeder ch.20: SSB + Goldstone modes
+
+T_P1_1 LIT verdict: INFORMATIONAL (NOT validation target)
+Methodological note: 4 of 5 anchors use Abelian Higgs (LOCAL gauge);
+TGP S05 has GLOBAL U(1) in minimal axiomatization → DIFFERENT mass spectrum
+(Goldstone massless, NOT eaten by gauge field).
+
+------------------------------------------------------------------------
+T_P1_2 [FP]: Vortex EL equation derived from TGP Lagrangian
+------------------------------------------------------------------------
+Vortex EL equation (Nielsen-Olesen form, derived from L = ½|∇Φ|² - (λ/4)(|Φ|²-v²)²):
+  ρ''(r) + ρ'(r)/r - n²·ρ(r)/r² + λ·ρ·(ρ² - v²) = 0
+
+Symbolic verification (EL_lhs - expected_EL): 0
+  T_P1_2 well-posed: True
+
+Boundary conditions:
+  ρ(0) = 0 (core regularity, |Φ| → 0 at vortex axis)
+  ρ(r → ∞) = v (mexican hat VEV)
+
+T_P1_2 verdict: PASS (EL equation derived, BCs specified)
+
+------------------------------------------------------------------------
+T_P1_3 [FP]: Far-field asymptotic — ρ → v with rate m_σ = v·sqrt(2λ)
+------------------------------------------------------------------------
+Higgs mass (from V''(v) = 2λv²): m_σ² = 2*lambda*v**2
+                                m_σ = sqrt(2)*sqrt(lambda)*v
+
+Linearization check (δ → 0 limit):
+  Zeroth order (vacuum residual): -n_w**2*v/r**2
+  First order in δ coefficient: 2*lambda*v**2 - n_w**2/r**2
+
+Expected vacuum residual: -n²v/r²
+Match check (computed - expected): 0
+
+Far-field structure:
+  Power-law correction (from n² source): δ_power ~ -n²/(2λv·r²)
+  Exponential correction (homogeneous):  δ_exp ~ K_0(m_σ r) ~ exp(-m_σ r)/sqrt(r)
+  ρ(r → ∞) = v + δ_power(r) + δ_exp(r) → v
+
+T_P1_3 verdict: PASS
+  Vacuum residual correct: True
+  m_σ = v·sqrt(2λ) verified analytically: True
+
+------------------------------------------------------------------------
+T_P1_4 [FP]: Mass spectrum — Higgs massive m_σ; Goldstone massless
+------------------------------------------------------------------------
+Decomposition: Φ = (v + σ)·exp(iπ/v)
+  σ: radial (Higgs) fluctuation
+  π: phase (Goldstone) fluctuation
+
+Mass spectrum (from quadratic Lagrangian):
+  m_σ² = 2λv²    (Higgs mass squared)
+  m_σ  = v·sqrt(2λ)
+  m_π² = 0       (Goldstone MASSLESS)
+  m_π  = 0
+
+Positivity check (λ=1, v=1): m_σ² = 2 > 0: True
+
+Goldstone theorem application:
+  Symmetry broken: U(1) phase (1 continuous generator)
+  Expected Goldstone modes: 1
+  Computed Goldstone modes (m=0 modes): 1 (π field)
+
+T_P1_4 verdict: PASS
+
+------------------------------------------------------------------------
+T_P1_5 [FP]: RP² + Z₂ compatibility (sanity check)
+------------------------------------------------------------------------
+Z₂ check (Φ → -Φ):
+  Vortex: ρ·exp(inφ) → ρ·exp(inφ + iπ)
+  Topology preserved (winding number n unchanged)
+  Z₂ symmetry COMPATIBLE with vortex ansatz: True
+
+RP² compatibility check:
+  RP² topology: relevant for σ_ab orientation field (Foundations §1 level 0)
+  Vortex ansatz: uses Φ phase only (NIE σ_ab attached)
+  Pure Φ-vortex independent of RP² consideration; default vortex compatible.
+  Note: hedgehog point defect ansatz (DEC alternative) WOULD use RP² explicitly.
+
+T_P1_5 verdict: PASS
+
+========================================================================
+Phase 1 aggregate verdict
+========================================================================
+
+Substantive FP tests:
+  ✓ T_P1_2: PASS  (Vortex EL equation derived)
+  ✓ T_P1_3: PASS  (Far-field asymptotic + vacuum residual)
+  ✓ T_P1_4: PASS  (Mass spectrum (Higgs massive, Goldstone massless))
+  ✓ T_P1_5: PASS  (RP² + Z₂ compatibility)
+
+LIT tests:
+  ℹ T_P1_1: LIT_PASS  (Literature anchors (5/5 INFORMATIONAL))
+
+Substantive metrics:
+  4/4 FP substantive PASS
+  0 hardcoded T_pass=True (strict cycle 1/2/7 preserved)
+  0/1 DEC budget used (vortex default, NIE DEC switch)
+  1 LIT informational
+
+Aggregate Phase 1 verdict: PROCEED_TO_PHASE_2
+  Vortex ansatz EL well-posed.
+  Mass spectrum verified analytically: m_σ = v·sqrt(2λ), Goldstone massless.
+  Far-field structure: power-law correction (-n²/(2λv·r²)) + exp(-m_σ r)/sqrt(r) tail.
+  Z₂ × RP² compatibility preserved.
+  Ready for Phase 2: two-vortex interaction V_int(L).
+
+========================================================================
+END OF Phase 1 sympy
+========================================================================

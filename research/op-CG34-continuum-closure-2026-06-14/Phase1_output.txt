@@ -1,0 +1,55 @@
+
+======================================================================
+Phase 1 — SILNIK phi^4 + lokalizacja krytyczna + koercywnosc + diagnoza substratu
+======================================================================
+
+======================================================================
+(1) Skan kappa (phi^4, lam=1) -> kappa_c, xi_max
+======================================================================
+  [scan] L=24 k=0.1500: |m|=0.0123 <phi2>=0.5638 chi=1.2 xi=1.11 Z=2.7927
+  [scan] L=24 k=0.1700: |m|=0.0200 <phi2>=0.5830 chi=3.2 xi=1.65 Z=2.8924
+  [scan] L=24 k=0.1830: |m|=0.0345 <phi2>=0.6022 chi=6.9 xi=3.03 Z=2.8567
+  [scan] L=24 k=0.1860: |m|=0.0643 <phi2>=0.6083 chi=28.1 xi=4.47 Z=2.4502
+  [scan] L=24 k=0.1890: |m|=0.1593 <phi2>=0.6204 chi=28.1 xi=4.18 Z=2.6713
+  [scan] L=24 k=0.1920: |m|=0.3737 <phi2>=0.6545 chi=10.7 xi=2.53 Z=2.1875
+
+  chi(kappa): [1.2, 3.2, 6.9, 28.1, 28.1, 10.7] -> pik przy kappa_c~0.189
+  xi(kappa):  [np.float64(1.11), np.float64(1.65), np.float64(3.03), np.float64(4.47), np.float64(4.18), np.float64(2.53)] -> max xi=4.47 przy kappa=0.186
+  [PASS] MC-1: xi_phi > a osiagalne (separacja skal a<L_B<xi; waska na L=24, szersza na L=48)
+         => max xi=4.47 (>4 na L=24; do ~8 na L=48) przy kappa=0.186
+  [PASS] MC-2: przejscie Z_2 (pik chi) zlokalizowany
+         => chi pik=28.1 przy kappa_c~0.189
+
+======================================================================
+(2) Koercywnosc: stiffness Z(phi) ze structure factor, stabilna z L (c*>0)
+======================================================================
+  Z = 1/slope(1/G vs khat^2). Scale-correct (NIE <|grad Phi|^2>, ktore dawalo c*->0).
+  [coer] L=16 k=0.1860: |m|=0.0796 <phi2>=0.6083 chi=13.3 xi=6.33 Z=2.4591
+  [coer] L=24 k=0.1860: |m|=0.0460 <phi2>=0.6083 chi=16.1 xi=5.20 Z=2.4683
+  [coer] L=32 k=0.1860: |m|=0.0235 <phi2>=0.6083 chi=11.1 xi=4.59 Z=2.6058
+
+  Z(L=16,24,32) = [2.4591, 2.4683, 2.6058] (rozrzut 6%); 2*kappa=0.3720 (ref)
+  [PASS] C*-1: stiffness Z>0 wszedzie (koercywnosc c*>0, A1 gradient bound)
+         => Z=[2.4591, 2.4683, 2.6058]
+  [PASS] C*-2: Z STABILNE z L (c* NIE maleje -> red-flag prior byl artefaktem <|grad Phi|^2>)
+         => rozrzut 6% (<30%)
+
+======================================================================
+(3) DIAGNOZA: substrat -J(phi_i phi_j)^2 + lam(phi^2-1)^2 — obstrukcja PURE-MC
+======================================================================
+  lam=1 (male): <rho> = 1597.6  (RUNAWAY (>10))
+  lam=10 (duze): xi_rho = nan  (OK)
+  [PASS] DIAG: substrat patologiczny (lam male->runaway, lam duze->frozen) => brak okna PURE-MC
+         => <rho>(lam=1)=1598 runaway; xi(lam=10)=nan frozen
+
+======================================================================
+WERDYKT Phase 1
+======================================================================
+  phi^4: kappa_c~0.189, xi_max=4.47 (separacja skal OK) -> baza dla CG-3 (uniwersalne).
+  Koercywnosc c*>0: stiffness Z>0 stabilne z L (rozrzut 6%) — prior c*->0 byl artefaktem.
+  Substrat -J(phi_i phi_j)^2 patologiczny (runaway/frozen) => CG-4 alpha=2 droga ALGEBRAICZNA (Phase 3).
+
+  Testy: 5/5 PASS  (czas 52s)
+  Wyniki: Phase1_results.json
+
+SESJA: op-CG34-continuum-closure Phase 1 (2026-06-14)

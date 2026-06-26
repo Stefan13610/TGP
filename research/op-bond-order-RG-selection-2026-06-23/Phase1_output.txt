@@ -1,0 +1,71 @@
+
+==========================================================================
+(R1) SANITY: [g_s](d,gamma) z power-counting; free term s=0 marginalny przy gamma=0
+==========================================================================
+  [s_hat] = d/2 + gamma - 1
+  [O_s]   = (2s+2)[s_hat]+2 = d*s + d + 2*gamma*s + 2*gamma - 2*s
+  [g_s]   = d - [O_s]       = -d*s - 2*gamma*s - 2*gamma + 2*s
+  Przy gamma=0:  [g_s] = -s*(d - 2)
+  [PASS] R1: SANITY [g_{s=0}]=0 przy gamma=0 (swobodny czlon kinetyczny marginalny)
+         => [g_0](gamma=0) = 0
+  [PASS] R1(ii): [g_s]|gamma=0 = -s(d-2)  (zwarta postac)
+         => -s*(d - 2) == -s(d-2)
+
+==========================================================================
+(R2) Monotonicznosc [g_s] w s (gamma=0, d>2): wyzsze s bardziej czy mniej relevant?
+==========================================================================
+  d[g_s]/ds (gamma=0) = 2 - d
+  Dla d>2: d[g_s]/ds = -(d-2) < 0  => [g_s] MALEJE z s => wyzsze s = BARDZIEJ irrelevant.
+  [PASS] R2: [g_s] malejacy w s dla d>2 => RG faworyzuje NIZSZE s (mniej irrelevant)
+         => d[g_s]/ds = -(d-2); w d=4: -2 < 0
+
+==========================================================================
+(R3) Czy s=5 (alpha=2) selekcjonowany vs s=2 (alpha=1/2) vs s=0 (free)? [d=4, gamma=0]
+==========================================================================
+  s=0  (K=const, free, alpha=-1/2):  [g_s](d=4) = 0   => marginalny
+  s=2  (substrat v2, alpha=1/2):  [g_s](d=4) = -4   => IRRELEVANT
+  s=5  (alpha=2, WYMAGANY):  [g_s](d=4) = -10   => IRRELEVANT
+
+  Porzadek irrelewancji (d=4): s=0 (0) > s=2 (-4) > s=5 (-10).
+  s=5 (alpha=2) jest NAJBARDZIEJ irrelewantny — NIE selekcjonowany; nawet bardziej tlumiony
+  niz substratowy s=2 (alpha=1/2). Marginalny jest TYLKO s=0 (swobodny K=const).
+  [PASS] R3: s=5 (alpha=2) NIE relevant/marginal; najbardziej irrelevant => RG-NOT-SELECTED
+         => [g_5]=-10 < [g_2]=-4 < [g_0]=0 (d=4)
+
+==========================================================================
+(R4) NGFP escape: jakie gamma czyni s=5 marginalnym? Wiarygodne?
+==========================================================================
+  [g_{s=5}](d=4, gamma) = -12*gamma - 10
+  Marginalny ([g_5]=0) wymaga gamma = -5/6 ≈ -0.8333
+  To DUZY, ujemny anomalny wymiar (|gamma|~0.83). Typowe anomalne wymiary <<1;
+  taki gamma bylby skrajny/dostrojony, NIE naturalny. Analogicznie dla s=2 (alpha=1/2):
+    s=2 marginalny wymaga gamma = -2/3 ≈ -0.6667 (mniejszy |gamma|).
+  => Nawet przez anomalny wymiar, s=5 trudniej uczynic marginalnym niz nizsze s.
+  [PASS] R4: s=5 marginalny wymaga skrajnego gamma~-0.83 (niewiarygodne) => brak naturalnego NGFP escape
+         => gamma(s=5 marginal)=-5/6≈-0.833; gamma(s=2)=-2/3≈-0.667
+
+==========================================================================
+WERDYKT (value-blind, regula Phase0 §3)
+==========================================================================
+  R1: [g_s] = -s(d-2) - (2s+2)*gamma ; przy gamma=0: [g_s]=-s(d-2). s=0 (free) marginalny. SANITY OK.
+  R2: [g_s] malejacy w s (d>2) => RG faworyzuje NIZSZE s.
+  R3: s=5 (alpha=2) NAJBARDZIEJ irrelevant (d=4: [g_5]=-10 < [g_2]=-4 < [g_0]=0). NIE selekcjonowany.
+  R4: NGFP escape wymaga gamma~-0.83 (skrajny, dostrojony) => niewiarygodny.
+
+  *** WERDYKT: RG-NOT-SELECTED ***
+  RG-relevance (power-counting) NIE selekcjonuje rzedu dajacego alpha=2 (s=5).
+  Przeciwnie: dyskryminuje go (najbardziej irrelevant), faworyzujac nizsze s — w tym
+  substratowe s=2 (alpha=1/2). Marginalny jest tylko swobodny czlon (s=0). NGFP/anomalny
+  wymiar nie ratuje (wymaga skrajnego gamma~-0.83).
+  => Jedynym selektorem alpha=2 pozostaje DENSITY-FRAME klasa konforemna C1-C3 (makro,
+     geometryczna, zwiazana z g_ij~Phi) — to NIE substrate-level zasada RG, lecz
+     przeformulowanie JUZ znanej selekcji aksjomatycznej (rem:alpha2-pivot-status).
+  => alpha=2 = NIEREDUKOWALNIE AKSJOMATYCZNE na gestosci (status analog c0, #37).
+
+  Obie strony: (PRO RG) gdyby istnial NGFP z gamma~-0.83 dla s=5 — ale to skrajne/dostrojone.
+    (CONTRA RG) naive + umiarkowany gamma jednoznacznie czynia s=5 irrelevant; RG woli nizsze s.
+
+  Testy: 5/5 PASS
+  Wyniki: Phase1_results.json
+
+SESJA: op-bond-order-RG-selection Phase 1 (2026-06-23, #39)

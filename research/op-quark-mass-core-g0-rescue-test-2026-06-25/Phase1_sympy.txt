@@ -1,0 +1,34 @@
+========================================================================
+PHASE 1 RESCUE-TEST: niezalezne samozgodne m_3 + diagnoza strawmana HALT-B
+========================================================================
+
+[STALE] A=a_G/phi = 0.02472 ; phi=1.61803 ; C_F=1.3333
+
+[T1] phi-FP anchors {down,lepton,up} = {0.8171,0.8695,0.8905} -> [0.817,0.890] = sek08b:529? True
+     => [0,817;0,891] to KOTWICE sektorow, NIE domena (potwierdza #40 NORM-OVERLOAD)
+
+[T2] DOWN: m_b^pred = 4204.7 MeV (PDG 4180); m_0(d)=22.3 ; delta_b=0.59%
+[T2] UP:   m_t^pred = 171435 MeV ; m_0(u)=1962
+           vs pole 172760: delta=0.77% ; vs MS-bar 162500: delta=5.50% ; best=0.77%
+     m_b<=5%? True ; m_t<=5% (jakis schemat)? True
+
+[T3] A=a_G/phi=0.02472 vs A_emp(PDG avg ~0.02464): dev=0.33% (<=2%: True)
+     A=C_F^2*alpha_s^2 -> alpha_s=sqrt(A)/C_F = 0.11792 vs PDG 0.1179+/-0.0009 (0.03 sigma; <=1: True)
+
+[T4] HALT-B formula sklada sie z maszynerii dodatekX? False ; brakuje 3/3 skladnikow: ['additive_m0', 'phiFP_per_sector', 'shifted_koide']
+     strawman (>=2/3 brak)? True
+
+[T5] LICZNIK: per sektor 2 wejscia (m_1,m_2) -> m_3 predykcja ; shared {a_G,phi}
+     6 mas kwarkow = 4 inputy + 2 PREDYKCJE (m_b,m_t) ; m_3 jako input? False
+     r_31 = genuine predykcja (NIE 'zero parametrow', NIE fit)? True
+
+[T6] flagi: strawman=True closure<=5%=True A_univ<=2%=True closure<=15%=True genuine=True
+     >>> WERDYKT (wyliczony): RESCUE-CONFIRMED <<<
+
+[T7-DEC] m_t scheme: pole 172760 vs MS-bar 162500 (~6%% rozjazd) -> RAPORT pod oboma.
+         dodatekX LIVE read-only; HALT-B IMMUTABLE; A=C_F^2*a_s^2 warunkowe (CG-1/3 R5).
+
+========================================================================
+PASS: 8 / 8 FP-flag
+WERDYKT: RESCUE-CONFIRMED
+========================================================================

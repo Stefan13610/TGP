@@ -1,0 +1,48 @@
+{
+  "cycle": "op-bond-order-RG-selection",
+  "predecessor": "op-Phi-field-identity-resolution-2026-06-23 (#38)",
+  "g_s_formula": "[g_s] = -s(d-2) - (2s+2)*gamma",
+  "g_s_gamma0": "[g_s]|gamma=0 = -s(d-2)",
+  "monotonic_in_s": "malejacy (d>2) => RG faworyzuje nizsze s",
+  "d4_gamma0": {
+    "g_0": 0,
+    "g_2": -4,
+    "g_5": -10
+  },
+  "s_for_alpha2": 5,
+  "s_substrate_v2": 2,
+  "s_free": 0,
+  "gamma_needed_s5_marginal": -0.8333333333333334,
+  "no_go_RG": true,
+  "verdict": "RG-NOT-SELECTED",
+  "verdict_plain": "RG-relevance NIE selekcjonuje rzedu dajacego alpha=2 (s=5); dyskryminuje go (najbardziej irrelevant), faworyzujac nizsze s w tym substratowe s=2 (alpha=1/2); NGFP escape wymaga skrajnego gamma~-0.83 (niewiarygodny). Jedyny selektor alpha=2 = density-frame klasa konforemna C1-C3 (makro/geometryczna), NIE substrate RG => alpha=2 nieredukowalnie aksjomatyczne na gestosci (status analog c0 #37).",
+  "n_pass": 5,
+  "n_tot": 5,
+  "tests": [
+    {
+      "label": "R1: SANITY [g_{s=0}]=0 przy gamma=0 (swobodny czlon kinetyczny marginalny)",
+      "status": "PASS",
+      "detail": "[g_0](gamma=0) = 0"
+    },
+    {
+      "label": "R1(ii): [g_s]|gamma=0 = -s(d-2)  (zwarta postac)",
+      "status": "PASS",
+      "detail": "-s*(d - 2) == -s(d-2)"
+    },
+    {
+      "label": "R2: [g_s] malejacy w s dla d>2 => RG faworyzuje NIZSZE s (mniej irrelevant)",
+      "status": "PASS",
+      "detail": "d[g_s]/ds = -(d-2); w d=4: -2 < 0"
+    },
+    {
+      "label": "R3: s=5 (alpha=2) NIE relevant/marginal; najbardziej irrelevant => RG-NOT-SELECTED",
+      "status": "PASS",
+      "detail": "[g_5]=-10 < [g_2]=-4 < [g_0]=0 (d=4)"
+    },
+    {
+      "label": "R4: s=5 marginalny wymaga skrajnego gamma~-0.83 (niewiarygodne) => brak naturalnego NGFP escape",
+      "status": "PASS",
+      "detail": "gamma(s=5 marginal)=-5/6≈-0.833; gamma(s=2)=-2/3≈-0.667"
+    }
+  ]
+}

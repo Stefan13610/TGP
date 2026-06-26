@@ -61,8 +61,11 @@ The theory is built on four axioms
 (absolute reference state $\Nzero$, $\Zp$-symmetric relational substrate,
 matter as source, instability of $\Nzero$) and a single dynamical degree of freedom.
 From these inputs we derive:
-(i) a unique second-order kinetic operator with coefficient $\alpha=2$ as an
-algebraic theorem;
+(i) a unique second-order kinetic operator whose coefficient $\alpha=2$ is
+fixed by the conformal kinetic class (C1)--(C3) as an axiomatic selection on
+the density $\Phi=\langle\hat s^2\rangle$ (a uniqueness theorem \emph{within}
+the class; \emph{not} a derivation from the microscopic substrate, which
+yields $\alpha=\tfrac12$);
 (ii) an effective spatial metric of exponential form $g_{ij}=e^{+2U/c_{0}^{2}}\delta_{ij}$
 that reproduces all post-Newtonian parameters of general relativity exactly
 ($\gamma_{\mathrm{PPN}}=\beta_{\mathrm{PPN}}=1$);
@@ -194,7 +197,7 @@ The bond is a Ginzburg--Landau (GL) gradient term in the Z$_{2}$-even
 composite $\hat{\Phi}_{i}\equiv\hat{s}_{i}^{2}$, equivalent in continuum
 to $\mathcal{F}_{\mathrm{kin}}^{\mathrm{geo}}[\varphi]=
 (K_{\mathrm{geo}}/2)\int\varphi^{4}(\nabla\varphi)^{2}\,d^{d}x$ (see
-App.~B, Prop.~\ref{prop:substrate-action}); it vanishes identically on
+App.~B, the substrate-action proposition); it vanishes identically on
 any configuration with $\hat{s}_{i}=0$, encoding the fact that
 \emph{an empty substrate cannot support geometry}. This is a change
 from v1 (axiom pivot 2026-04-24; see \texttt{KNOWN\_ISSUES.md}).
@@ -329,6 +332,15 @@ The kinetic operator is
 \end{equation}
 \end{theorem}
 
+\begin{remark}[Epistemic status of $\alpha=2$]
+Theorem~\ref{thm:alpha2} establishes \emph{uniqueness within the conformal
+class} (C1)--(C3) on the density $\Phi=\langle\hat s^2\rangle$; it is an
+\emph{axiomatic selection}, not a derivation from the microscopic substrate.
+A substrate-level computation (with $\Phi\propto u^2$) yields $\alpha=\tfrac12$,
+so $\alpha=2$ must be read as a selection condition, with $\alpha=2$ remaining
+phenomenologically required (PPN, soliton profile, mass spectrum).
+\end{remark}
+
 \begin{proof}[Proof sketch]
 Condition (C2) fixes $K(1)=1$. The Euler--Lagrange equation of
 $\mathcal{L}_{\mathrm{kin}}=-\tfrac{1}{2}K(\varphi)(\nabla\varphi)^{2}$
@@ -359,7 +371,7 @@ calculation (row~16 of Sec.~\ref{sec:status}).
 \label{rem:alpha2-pivot-status}
 The form $K_{ij}=J(\varphi_i\varphi_j)^2$ used above is \emph{the v2
 axiom for the substrate bond} (Ginzburg--Landau gradient bond in the
-$\Z2$-even composite $\hat{\Phi}_i = \hat{s}_i^2$), \emph{not} a
+$\Zp$-even composite $\hat{\Phi}_i = \hat{s}_i^2$), \emph{not} a
 derivation from a minimal bilinear substrate. The earlier programme
 (M2-a/b/c, M3-a/c) attempted to derive $K(\varphi) \propto \varphi^4$
 from MK coarse-graining of the bilinear bond

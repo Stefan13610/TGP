@@ -69,17 +69,23 @@ $N_{\mathrm{sekt}}$ & klasyfikacja \\
   & 2 & defekty niestabilne \\
 \textbf{3} & $\pi_0(\Zp) = \Zp$ &
     $\pi_1(SO(3)) = \Zp$ &
-    $\pi_2(SO(3)/\Zp) = \mathbb{Z}$ &
-  \textbf{3} & \textbf{pe\l{}na hierarchia} \\
+    $\pi_2(SO(3)/\Zp){=}0^{\dagger}$ &
+  \textbf{3} & \textbf{hierarchia (punkty: $\mathbb{RP}^2$)} \\
 4 & $\pi_0 = \Zp$ & $\pi_1 = \Zp$ &
     $\pi_2 = \mathbb{Z}$ & 3+
   & \'srednie pole, brak fluktuacji \\
 \bottomrule
 \end{tabular}
 \end{center}
+{\small ${}^{\dagger}$\,\textbf{Errata 2026-06-13}
+(cykl \texttt{op-nucleation-dimensionality}): $\pi_2(SO(3)/\Zp) = 0$ ---
+$\pi_2$ ka\.zdej grupy Liego (i~jej ilorazu dyskretnego) znika. Defekty
+\emph{punktowe} ($\pi_2 = \mathbb{Z}$) wymagaj\k{a} rozmaito\'sci
+$\mathbb{RP}^2 = S^2/\Zp$ (nie $SO(3)/\Zp$); spin-$\tfrac12$ z~$\pi_1(SO(3)) = \Zp$
+bez zmian. Pe\l{}na Errata po Wniosku.}
 Dok\l{}adnie w~$d = 3$ istniej\k{a} \textbf{trzy niezale\.zne
 sektory homotopii}: \'scianki ($\pi_0$), linie wirowe ($\pi_1$),
-punktowe monopole ($\pi_2$). Odpowiada to hipotezie~\ref{hyp:generacje}
+punktowe monopole ($\pi_2$, sektor $\mathbb{RP}^2$). Odpowiada to hipotezie~\ref{hyp:generacje}
 o~trzech generacjach cz\k{a}stek jako trzech typach defekt\'ow
 topologicznych.
 
@@ -194,7 +200,8 @@ $d_c^{\mathrm{Ising}} = 4$).}
 
 \medskip
 \noindent\textbf{Wniosek.}
-$d = 3$ jest \textbf{jedynym} wymiarem, w~kt\'orym jednocze\'snie:
+$d = 3$ jest wymiarem \textbf{preferowanym} (najmocniejszym kandydatem),
+w~kt\'orym jednocze\'snie:
 \begin{enumerate}[(a),nosep]
   \item przej\'scie fazowe jest stabilne z~nietrywialnym
         uniwersalno\'sci\k{a} ($\nu \neq \tfrac{1}{2}$,
@@ -206,8 +213,30 @@ $d = 3$ jest \textbf{jedynym} wymiarem, w~kt\'orym jednocze\'snie:
         \textbf{trzy re\.zimy} (przyci\k{a}ganie--odpychanie--studnia)
         dla naturalnych warto\'sci sta\l{}ych TGP.
 \end{enumerate}
-Argument pozostaje preferencyjny, lecz koniunkcja
-warunk\'ow~(a)--(c) czyni $d = 3$ \textbf{jedynym realistycznym
-wyborem} --- nie jednym z~wielu, ale jedynym spe\l{}niaj\k{a}cym
-wszystkie trzy kryteria.
+Argument pozostaje \textbf{preferencyjny}: koniunkcja
+warunk\'ow~(a)--(c) czyni $d = 3$ \textbf{najmocniejszym kandydatem
+preferencyjnym} spe\l{}niaj\k{a}cym wszystkie trzy kryteria --- wyr\'o\.znienie
+\emph{preferencyjne}, nie jednoznacznie \emph{derived} (patrz Errata poni\.zej).
+
+\medskip
+\noindent\textbf{Errata (cykl \texttt{op-nucleation-dimensionality}, 2026-06-13;
+value-blind audyt, 26/26 sympy PASS).}
+\begin{enumerate}[(i),nosep]
+  \item \emph{Homotopia:} $\pi_2(SO(3)/\Zp) = 0$ (poprawka zapisu;
+        $\pi_2$ ka\.zdej grupy Liego znika). Defekty punktowe
+        ($\pi_2 = \mathbb{Z}$) wymagaj\k{a} $\mathbb{RP}^2 = S^2/\Zp$;
+        spin-$\tfrac12$ z~$\pi_1(SO(3)) = \Zp$ poprawny.
+  \item \emph{Test $d > 3$:} dla $\mathbb{RP}^2$ (i~$S^2$) $\pi_{d-1} \neq 0$
+        dla \emph{ka\.zdego} $d \geq 3$ ($\pi_3(S^2) = \mathbb{Z}$, \dots);
+        defekty punktowe istniej\k{a} tak\.ze w~$d = 4,5,6$, a~$N_{\mathrm{sekt}}$
+        ro\'snie monotonicznie. ``Dok\l{}adnie trzy'' to przej\'scie przez~3, nie pik.
+  \item \emph{Stabilno\'s\'c:} $\Delta_d > 0$ przy $B/\sqrt{AC} \approx 3{,}4$
+        (asercja, nie wyprowadzenie z~$\{\beta,\gamma,\Phi_0,\lambda\}$) zachodzi
+        dla \emph{pasma} $d \in \{2,\dots,6\}$; wykluczenie $d \geq 4$ opiera
+        si\k{e} wy\l{}\k{a}cznie na mi\k{e}kkim $\Theta(\nu_d^{-1})$
+        ($d_c^{\mathrm{Ising}} = 4$), nie na ostrym progu.
+\end{enumerate}
+\noindent\emph{Wniosek erraty:} odporne pozostaje $d \geq 3$ (konieczne dla
+cz\k{a}stek punktowych); wyr\'o\.znienie $d = 3$ jest \textbf{preferencyjne}, nie
+``jedynym realistycznym wyborem''. Por.\ \texttt{research/op-nucleation-dimensionality-2026-06-13/}.
 \end{remark}

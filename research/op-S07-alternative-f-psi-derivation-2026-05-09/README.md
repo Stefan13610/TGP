@@ -6,8 +6,10 @@ priority: P1_CRITICAL
 parent: "[[../../audyt/S07_M911_derivation/README.md]]"
 target: "S07 audit realization — find alternative f(ψ) ansatz post-(4-3ψ)/ψ falsification"
 classification: TGP_BLOCKER_RESOLUTION
-status: ACTIVE — Phase 0
-folder_status: active
+status: CLOSED-SUPERSEDED-BY-EMERGENT-METRIC
+folder_status: closed-superseded
+supersession_annotation: "2026-06-01 (via op-S07-emergent-metric-integration-2026-06-01 F-INT-B PASS_FULL_SUPERSESSION): Option B path (Phase FINAL §5) realized in op-emergent-metric-from-interaction-2026-05-09. Path Option A (M9.1''-class deep dive) declared UNNECESSARY. Substantive verdict 82/82 PASS + STRUCTURAL_CONDITIONAL_HALT classification PRESERVED unchanged at substance level per integration cycle §4.5 LOCK."
+original_status_preserved: "STRUCTURAL_CONDITIONAL_HALT 82/82 PASS (substantive verdict PRESERVED unchanged; supersession is CLASSIFICATION ANNOTATION update, NOT verdict modification)"
 predecessor_cycles:
   - "[[../op-Phi-vacuum-scale-2026-05-09/]] (matter sector dual-V CLOSED)"
   - "[[../op-V-canonical-consistency-audit-2026-05-09/]]"
@@ -32,6 +34,18 @@ tags:
 ---
 
 # op-S07-alternative-f-psi-derivation-2026-05-09
+
+> ### 🟢 SUPERSESSION ANNOTATION 2026-06-01
+>
+> **Status: CLOSED-SUPERSEDED-BY-EMERGENT-METRIC.**
+>
+> Per [[../op-S07-emergent-metric-integration-2026-06-01/Phase_FINAL_close.md]] F-INT-B PASS_FULL_SUPERSESSION (sesja #10):
+> Cycle's open question (Phase FINAL §5 Options A vs B fork) RESOLVED via **Option B realization** in [[../op-emergent-metric-from-interaction-2026-05-09/]] STRUCTURAL DERIVED (57/57 PASS; post-cascade 5/6 P-RESOLVED).
+> Path **Option A** (M9.1''-class deep dive) declared **UNNECESSARY** by current TGP framework state.
+> **9/10 S07 C-constraints satisfied** at physics level by emergent-metric; C9 (anti-podal A·B=1) **intentionally relaxed** AS THE Option B pivot.
+> **S07 substantive verdict STRUCTURAL_CONDITIONAL_HALT 82/82 PASS + structural insights** (R3 ODE f-independence, M9.1''-class rigidity, Newton matching algebra) **PRESERVED unchanged** per op-S07-emergent-metric-integration-2026-06-01 Phase 0 §4.5 LOCK.
+> This is a **CLASSIFICATION ANNOTATION update, NOT a verdict modification**.
+> New lockbox falsifier **PR-020** (β_ppE^new at 2.5PN inspiral phase BBH) appended to [[../../meta/PRE_REGISTERED_FALSIFIERS.md]] 2026-06-01 as recovery framework observational target.
 
 ## Mission
 

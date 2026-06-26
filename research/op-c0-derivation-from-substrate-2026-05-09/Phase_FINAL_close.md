@@ -4,13 +4,20 @@ date: 2026-05-09
 parent: "[[./README.md]]"
 type: phase-final
 phase: FINAL
-classification: STRUCTURAL_DERIVED (heuristic numerical)
+classification: STRUCTURAL_DERIVED (heuristic numerical) → 🔴 SUPERSEDED (#37, 2026-06-22)
 sympy_total: 5/5 PASS (Phase 1)
-status: 🟢 CLOSED (heuristic pinning); full rigorous derivation deferred multi-session
-folder_status: closed-resolved-heuristic
+status: 🔴 SUPERSEDED — „c₀≈4π" obalone jako matching+kalibracja (nie derywacja); c₀ = wolny parametr UV (#37)
+superseded_by: "[[../op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]]"
+folder_status: superseded-by-37
 ---
 
 # Phase FINAL — c_0 cycle close
+
+> 🔴 **SUPERSEDED przez #37 (2026-06-22)** — [[../op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]].
+> Klasyfikacja „STRUCTURAL DERIVED (heuristic), c₀≈4π" **obalona value-blind**: „4π" = matching ξ_eff
+> (warunek dopasowania, nie predykcja) + kalibracja GW150914; iloczyn c₀·κ_σ=4/3 trywialny (post-hoc).
+> Po #33/#34: c₀ = C(ψ=1) = ta sama UV-czuła normalizacja co C_σ ⟹ **wolny parametr UV**, nie predykcja.
+> Treść poniżej = zapis historyczny.
 
 ## §0 — VERDICT
 

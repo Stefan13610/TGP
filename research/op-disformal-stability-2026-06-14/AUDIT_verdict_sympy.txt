@@ -1,0 +1,28 @@
+====================================================================
+(1) FIZYCZNY skalar: Z^{mn} k_m k_n = 0 (radialnie, k||grad)
+====================================================================
+  c_scalar^2/c0^2 = (3*u - 1)/(u - 1)  ; B<0 (u=-W): (3*W + 1)/(W + 1)
+  -> dla B<0 ZAWSZE >0 (zdrowy, choc nadswietlny). Argument 'scalar wants B<0' POPRAWNY.
+====================================================================
+(2) induced-TT c_T (prop:cT, NAIVE operator A*box + b dPhi dPhi dd)
+====================================================================
+  c_T^2/c0^2 = 1+u (proof-form);  B<0 (u=-W): 1 - W  (<0 dla W>1)
+  ALE rem:GW-scope-2026: dPhi^TT to NIE niezalezny spin-2 DOF -> c_T^2<0 NIE jest
+  niestabilnoscia propagujacego modu. To obiekt slaved. Argument Phase 2 NIEROBUSTNY.
+====================================================================
+(3) g_eff VIABILITY (wlasciwy argument): det + sygnatura
+====================================================================
+  g_eff = diag(-A, A+bG^2, A, A) ;  det = -A**3*(A + G**2*b) = -A^4(1+u)
+  eigenvalues: {-A: 1, A + G**2*b: 1, A: 2}
+  radial eig = A(1+u): B<0 (u=-W) -> A(1-W); <0 dla W>1 => SYGNATURA FLIP (drugi czas).
+  => g_eff Lorentzowska <=> 1+u>0 <=> (B>0 dowolne) lub (B<0, |u|<1).  Prog |u|=1 = r_V.
+====================================================================
+WNIOSEK AUDYTU
+====================================================================
+  screening S=1/|1-u| male <=> |u|>>1.
+  B<0,|u|>>1: skalar zdrowy ALE g_eff sygnatura flip (niefizyczne).
+  B>0,|u|>2 (screening): L'=A(1-u)<0 => ghost skalara.
+  B<0,|u|<1: g_eff OK, ale S~1 (brak screeningu) => PR-025 konforemny stoi.
+  => (g_eff Lorentz)  AND  (skalar zdrowy)  AND  (strong screening) = ZBIOR-PUSTY.
+  WERDYKT: BROKEN PRAWDOPODOBNIE POPRAWNY, ale via DISFORMAL VIABILITY, nie via induced-TT.
+  Prog |u|=1, ktory Phase 2 przypisala 'niestab. tensora', to NAPRAWDE degeneracja g_eff.

@@ -1,0 +1,41 @@
+
+========================================================================
+Phase 3 — sigma_0 + rozstrzygniecie C_sigma vs sigma_0
+========================================================================
+(1) Redundancja sigma->lam*sigma, sigma_0->lam*sigma_0, C_sigma->C_sigma/lam^2:
+    h^TT = 2 sigma/sigma_0           : zmiana = 0  -> NIEZMIENNICZE
+    kinetyk (C_s/2)(d sigma)^2       : zmiana = 0  -> NIEZMIENNICZE
+    flux ~ C_s sigma_0^2             : zmiana = 0  -> NIEZMIENNICZE
+    => C_sigma i sigma_0 NIE sa osobno fizyczne (gauge przeskalowania). Fizyczny: T = C_sigma*sigma_0^2.
+
+(2) Amplituda O_amp = xi_eff/(C_sigma sigma_0):
+    zmiana pod redundancja = xi_eff*(lambda - 1)/(C_sigma*sigma_0) -> NIEZMIENNICZA (gdy xi_eff -> xi_eff/lam)
+    Matching GR slave'uje xi_eff do (C_sigma sigma_0). Po matchingu: jedyna swoboda radiacyjna = T.
+    Konsystencja konwencji: core thm:amplitude-matching (xi=4pi G0 sigma0 Phi0) = normalizacja KANONICZNA
+    (C_sigma wchlonniete do sigma~). Parent O_amp~xi/(C_s sigma_0) = ta sama fizyka, jawny C_sigma. OK.
+
+(3) kappa_E przez jeden parametr T = C_sigma*sigma_0^2:
+    kappa_E = 8*pi*G0*T/c**3
+    survival (kappa_E=5/6): T = 5*c**3/(48*pi*G0)   (= 5/6 * grawiton GR)
+    naturalna (kappa_E=1) : T = c**3/(8*pi*G0)   (= sztywnosc grawitonu GR c^3/8piG0)
+    stosunek T_survive/T_natural = 5/6  (= 5/6).
+
+(4) Czy T jest zlockowane do grawitonu GR (kappa_E=1)?
+    GR: diff-inwariancja => jedno G lockuje wszystko => kappa_E=1 wymuszone.
+    TGP: sigma_ab = osobny 2. DOF sieci (A1), NIE czesc diff-inwariantnego G_mu_nu.
+         det J = -xi_eff/C_sigma != 0 (amplituda _|_ strumien). BRAK tozsamosci Warda lockujacej T.
+    => 'jeden parametr T' TAK (redundancja), ale jego WARTOSC nie jest chroniona.
+
+========================================================================
+WERDYKT Phase 3
+========================================================================
+F-CG-C (sigma_0 + zlozenie): RESOLVED (parameter counting) + PARTIAL (wartosc)
+   - sigma_0 = normalizacja korelatora kierunkowego (~ skala Phi_0 tego samego s); konwencja.
+   - C_sigma vs sigma_0: NIE dwa parametry. Dokladna redundancja sigma->lam*sigma (sympy: 3/3 niezmienniki).
+   - JEDYNY fizyczny parametr radiacyjny: T = C_sigma sigma_0^2 (tensor stiffness). kappa_E=8pi G0 T/c^3.
+     => sek08 rem:param-counting 3->2: redukcja UZASADNIONA (C_sigma i sigma_0 to jeden DOF T).
+F-CG-D (kappa_E vs 5/6): PARTIAL-lean-FALSIFIED (bez zmian, teraz na 1 parametrze T)
+   - survival <=> T = 5/6 * (c^3/8pi G0) EXACT (miara zero); naturalna T = c^3/8pi G0 => kappa_E=1 => 7/6 FALSIFIED.
+   - T nie zlockowane (brak diff-inwariancji sektora tensorowego) => generycznie kappa_E=O(1) != 5/6.
+AGREGAT: UNDERDETERMINED-fine-tuned, ale STRUKTURALNIE OCZYSZCZONY do JEDNEGO parametru T; lean FALSIFIED.
+   Residual GAP: liczbowa wartosc T = C_sigma sigma_0^2 -> lattice-MC kierunkowego babla (Phase 2 §9).

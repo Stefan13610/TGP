@@ -1,0 +1,124 @@
+﻿==============================================================================
+op-R17-linear-runaway-diagnosis — Phase 1 execution
+==============================================================================
+
+log10(tau_present/tau_init) = 4.56067
+
+------------------------------------------------------------------------------
+FP1 — F-R17-A.1: eps_G(t_0) = 3 G_eff M_univ / (c^3 t_0) reproduction
+  eps_G = 1.7056   (LOCKED reference 1.71; rel dev 0.0026)
+  T_pass FP1 = True
+
+------------------------------------------------------------------------------
+FP2 — F-R17-A.2: numerical reproduction of the gamma-7 runaway
+  ODE integration success: True
+  log10(delta_present/delta_init) = 214.09
+  LOCKED gamma-7 reference: 213.78 (6e213); tolerance ±1.0
+  T_pass FP2 = True
+
+------------------------------------------------------------------------------
+FP3 — F-R17-A.3: symbolic WKB exponent structure
+  balance 2p-2 = -3  =>  p = -1/2
+  lambda solutions: [-2*sqrt(epsilon), 2*sqrt(epsilon)]  (growing-mode |lambda| = 2*sqrt(eps_G))
+  T_pass FP3 = True
+
+------------------------------------------------------------------------------
+FP4 — F-R17-B: background residual Delta(tau) under audited transcription
+  Delta(t) symbolic = G*M/(c**3*t)
+  Delta(tau) = G*M/(c**3*t_0*tau)   [expect eps_G/(3 tau)]
+  Delta(tau_init) = 2.067e+04   Delta(1) = 0.569
+  F-R17-B verdict: INCONSISTENT_O1  (max Delta = 2.067e+04; threshold 0.1)
+  T_pass FP4 (residual well-defined + extremum located) = True
+
+------------------------------------------------------------------------------
+FP5 — F-R17-B.2: lemma — runaway mode is generated EXACTLY by the residual
+  S(tau) = 3*G*M/(c**3*t_0*tau**3)
+  phi'(tau) - sqrt(3*Delta)/tau = 0   [expect 0]
+  T_pass FP5 = True
+  => Delta bounded  <=>  phi' <= sqrt(3 Delta_max)/tau  <=>  power-law growth only.
+  => The 10^213 runaway is the integrated effect of the UNBOUNDED residual (~1/tau).
+
+------------------------------------------------------------------------------
+F-R17-C — symbolic derivation of route growth ODEs from the fluid system
+  background continuity residual (must be 0): 0
+  general ODE: delta'' + ((alpha*d - alpha*k + alpha + 2)/tau_v) delta' + ((alpha*tau_v**3*(-alpha*d*k + alpha*d - k + 1) - epsilon_G*tau_v**(alpha + 2))/tau_v**5) delta = 0
+
+FP6 — mandatory limit check: alpha -> 0 recovers standard equation
+  alpha=0:  A = 2/tau_v   B = -epsilon_G/tau_v**3
+  expect A = 2/tau, B = -eps/tau^3 (the audited runaway eq.)  => T_pass FP6 = True
+
+------------------------------------------------------------------------------
+FP7-FP10 — routes C1 / C2a / C2b / C2c (pre-declared Phase 0 §3; CLOSED set)
+  eps_G = 1.7056; log10 tau-span = 4.5607
+
+C1 — zero-active-mass (source -> 0):
+  delta'' + (2/tau) delta' = 0; roots p = [-1.0, 0.0]
+  growing-mode p+ = +0.0000 => log10 G = 0.000 => FAIL_LOW
+  T_pass FP7 (C1 exact solution structure) = True
+
+C2a — frontier creation (alpha=1), unclustered (k=0), no momentum drag (d=0):
+  C2a: ODE delta'' + (3)/tau delta' + (1 - epsilon_G)/tau^2 delta = 0
+        scale-invariant: True; indicial roots p = ['-2.3060', '+0.3060']
+        growing-mode p+ = +0.3060  =>  log10 G = 1.395  =>  PARTIAL_BAND   (G_obs target log10 = 3.0; bands LOCKED)
+
+C2b — frontier creation (alpha=1), unclustered (k=0), momentum drag (d=1):
+  C2b: ODE delta'' + (4)/tau delta' + (2 - epsilon_G)/tau^2 delta = 0
+        scale-invariant: True; indicial roots p = ['-2.8984', '-0.1016']
+        growing-mode p+ = -0.1016  =>  log10 G = 0.000  =>  FAIL_LOW   (G_obs target log10 = 3.0; bands LOCKED)
+
+C2c — frontier creation (alpha=1), comoving-clustered (k=1, d=0):
+  C2c: ODE delta'' + (2)/tau delta' + (-epsilon_G)/tau^2 delta = 0
+        scale-invariant: True; indicial roots p = ['-1.8984', '+0.8984']
+        growing-mode p+ = +0.8984  =>  log10 G = 4.097  =>  PARTIAL_BAND   (G_obs target log10 = 3.0; bands LOCKED)
+
+------------------------------------------------------------------------------
+FP11 — numerical ODE cross-check (C2a, C2c): rel dev of log10 G < 1%
+  C2a: analytic log10 G = 1.3955; numeric = 1.3955; rel dev = 7.49e-14
+  C2c: analytic log10 G = 4.0974; numeric = 4.0974; rel dev = 4.77e-14
+  T_pass FP11 = True
+
+------------------------------------------------------------------------------
+FP12 — circularity guard: indicial coefficients free symbols subset of {eps_G}
+  free symbols of all route coefficients: {epsilon_G}
+  T_pass FP12 = True
+
+------------------------------------------------------------------------------
+FP13 — F-R17-D aggregate diagnosis (mechanical)
+  F-R17-A regression gate: PASS
+  F-R17-B: INCONSISTENT_O1
+  F-R17-C route verdicts: {'C1': 'FAIL_LOW', 'C2a': 'PARTIAL_BAND', 'C2b': 'FAIL_LOW', 'C2c': 'PARTIAL_BAND'}
+
+  >>> F-R17-D AGGREGATE VERDICT: ARTIFACT_PARTIAL <<<
+  T_pass FP13 (verdict in pre-registered set) = True
+
+------------------------------------------------------------------------------
+INFORMATIONAL — sensitivity of best routes to M_univ (LOCKED 1e53 kg; O(2) rough)
+  M_univ x  0.1: eps_G =   0.171 | C2a log10 G =   0.00 | C2c log10 G =   0.68
+  M_univ x  0.5: eps_G =   0.853 | C2a log10 G =   0.00 | C2c log10 G =   2.51
+  M_univ x  1.0: eps_G =   1.706 | C2a log10 G =   1.40 | C2c log10 G =   4.10
+  M_univ x  2.0: eps_G =   3.411 | C2a log10 G =   3.86 | C2c log10 G =   6.45
+  M_univ x 10.0: eps_G =  17.056 | C2a log10 G =  14.27 | C2c log10 G =  16.69
+  inverse note (INFORMATIONAL ONLY, forbidden as input — Phase 0 §5 #3/#10):
+    log10 G = 3 would require: C2c eps_G = 1.090 (M_univ = 6.39e+52 kg); C2a eps_G = 2.748 (M_univ = 1.61e+53 kg)
+
+==============================================================================
+FP SUMMARY
+  FP1: PASS
+  FP2: PASS
+  FP3: PASS
+  FP4: PASS
+  FP5: PASS
+  FP6: PASS
+  FP7: PASS
+  FP8: PASS
+  FP9: PASS
+  FP10: PASS
+  FP11: PASS
+  FP12: PASS
+  FP13: PASS
+
+  TOTAL: 13/13 PASS; hardcoded T_pass = 0/13 (all computed)
+  F-R17-B: INCONSISTENT_O1
+  F-R17-C: {'C1': 'FAIL_LOW', 'C2a': 'PARTIAL_BAND', 'C2b': 'FAIL_LOW', 'C2c': 'PARTIAL_BAND'}
+  F-R17-D: ARTIFACT_PARTIAL
+==============================================================================

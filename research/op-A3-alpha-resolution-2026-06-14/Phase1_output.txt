@@ -1,0 +1,68 @@
+
+========================================================================
+(F-alpha-A) SANITY: relacja EL  K(f)=f^(2alpha)  <=>  EL coeff = alpha  (sek08, macro f=Phi/Phi0)
+========================================================================
+  K(f)=f^p  =>  EL coeff (nabla f)^2/f  =  K'f/(2K) = p/2
+  Zatem alpha = p/2,  tj. K(f)=f^(2*alpha).  (Reprodukuje sek08 eq:K-ode: K=C f^(2 alpha).)
+  [PASS] F-alpha-A: relacja EL poprawna (alpha=p/2 dla K=f^p) — sek08 OK
+         => EL coeff = p/2 = p/2
+  thm:D-uniqueness C3: K(f)=f^4 (p=4) => alpha = 2  (=2, GDY f jest polem kinetyki)
+  [PASS] F-alpha-A(ii): C3 arytmetyka OK — JESLI K(Phi/Phi0)=(Phi/Phi0)^4 to alpha=2
+         => alpha_C3=2
+
+========================================================================
+(F-alpha-B) TRANSFORMACJA substratu: K(u)~u^(2s) [micro] + Phi~u^2 [ontologia] -> alpha=?
+========================================================================
+  L_micro = K_geo u^(2s)(nabla u)^2;  u=u_ref sqrt(psi).
+  K_eff(psi) (wsp. przy (nabla psi)^2) = K_geo*u_ref**2*(psi*u_ref**2)**s/(4*psi)
+  => K_eff(psi) ~ psi^(s - 1)   (potega p_eff = s-1)
+  alpha(substrat, poprawna transformacja) = p_eff/2 = (s-1)/2 = s/2 - 1/2
+    s=1 (K~u^2, lemat K_phi2):        alpha = 0
+    s=2 (K~u^4, prop:substrate-action): alpha = 1/2
+  [PASS] F-alpha-B: substrat K~u^4 + Phi~u^2 (poprawna transformacja) => alpha != 2
+         => alpha(s=2) = 1/2 (= 1/2, NIE 2)
+
+========================================================================
+(F-alpha-C) WERDYKT: czy alpha=2 wynika z substratu?
+========================================================================
+  Poprawnie stransformowany substrat:
+    lemat K_phi2 (K~u^2):           alpha = 0
+    prop:substrate-action (K~u^4):  alpha = 1/2
+  thm:D-uniqueness C3 twierdzi:     alpha = 2  (przez K(Phi/Phi0)=(Phi/Phi0)^4 BEZ transformacji)
+
+  *** NIESPOJNOSC ***
+  thm:D-uniqueness C3 wstawia substratowe K~u^4 BEZPOSREDNIO do macro f=Phi/Phi0,
+  pomijajac zmiane zmiennych Phi~u^2 (ontologia Phi=<s^2>). Poprawna transformacja (sek10
+  eq:kinetic_macro) daje K_eff(psi)~psi^(s-1): dla u^4 (s=2) -> psi^1 (LINIOWY) -> alpha=1/2, NIE 2.
+  [PASS] F-alpha-C: alpha=2 NIE wynika z substratu pod Phi~u^2 => INCONSISTENCY (chain zlamany w C3)
+         => alpha(substrat)=1/2 (K~u^4) lub 0 (K~u^2); thm:D-uniqueness C3=2 przez pominiecie Phi~u^2
+
+========================================================================
+(F-alpha-D) CO potrzeba dla alpha=2? (konstruktywne opcje naprawy)
+========================================================================
+  Opcja A: utrzymac Phi~u^2, podniesc potege K(u). alpha=2 wymaga s=5 => K(u)~u^10=u^10.
+           (Brak derywacji substratowej dajacej u^10 — odrzucone jako sztuczne.)
+  Opcja B: Phi~u (AMPLITUDA, nie gestosc). Wtedy psi=u/u_ref, K(u)=u^4=psi^4 => K_eff~psi^4 => alpha=2. ✓
+           ALE to SPRZECZNE z ontologia Phi=<s^2>~u^2 (sek08 poziom 0, sek10 eq:Phi_phi_id).
+
+  => alpha=2 jest spojne TYLKO jesli macro pole Phi ∝ u (amplituda substratu),
+     a NIE Phi=<s^2> ∝ u^2. To jest istota niespojnosci: 'ktore pole jest fundamentalne'.
+  [PASS] F-alpha-D: opcje naprawy wyznaczone (B: Phi∝u amplituda => alpha=2, ale lamie Phi=<s^2>)
+         => alpha=2 <=> Phi∝u (amplituda); Phi=<s^2>∝u^2 => alpha=1/2
+
+========================================================================
+WERDYKT (value-blind)
+========================================================================
+  F-alpha-A: relacja EL (alpha=p/2) POPRAWNA — sek08 eq:K-ode niepodwazone.
+  F-alpha-B/C: substrat K~u^4 + Phi=<s^2>~u^2  =>  alpha = 1/2  (NIE 2).
+              thm:D-uniqueness C3 daje alpha=2 przez POMINIECIE zmiany zmiennych Phi~u^2.
+  => WERDYKT: alpha=2 = DERIVED-INCONSISTENCY (niespojnosc konwencji micro/macro).
+     alpha=2 wymaga Phi∝u (amplituda) — sprzeczne z ontologia Phi=<s^2>.
+     Pod ontologia Phi=<s^2>: poprawne alpha = 1/2 (K~u^4) lub 0 (K~u^2).
+  Obie strony: (PRO α=2) MC LK-1 'α=2 w 1.2σ' — ale blad ±3.82 (dodatekQ2), wiec slabe;
+              relacja EL poprawna. (CONTRA) zmiana zmiennych Phi~u^2 jednoznacznie daje α≠2.
+
+  Testy: 5/5 PASS
+  Wyniki: Phase1_results.json
+
+SESJA: op-A3-alpha-resolution Phase 1 (2026-06-14)

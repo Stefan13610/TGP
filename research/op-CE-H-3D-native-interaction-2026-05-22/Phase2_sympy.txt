@@ -1,0 +1,127 @@
+========================================================================
+Phase 2 sympy — op-CE-H-3D-native-interaction-2026-05-22
+========================================================================
+
+------------------------------------------------------------------------
+T_P2_2 [FP]: Single-vortex phase θ(r_⊥) gradient magnitude
+------------------------------------------------------------------------
+θ(x,y) = n·arctan(y/x) = n·atan2(y,x)
+∂θ/∂x = -n_v*y/(x**2 + y**2)
+∂θ/∂y = n_v*x/(x**2 + y**2)
+
+|∇θ|² = n_v**2/(x**2 + y**2)
+
+Expected: n²/r_⊥² = n²/(x²+y²) = n_v**2/(x**2 + y**2)
+Match check (computed - expected): 0
+
+T_P2_2 verdict: PASS
+
+------------------------------------------------------------------------
+T_P2_3 [FP]: 2D Goldstone Green function for z-translation-invariant problem
+------------------------------------------------------------------------
+Proposed G_2D(r_⊥) = -log(r_⊥/r_0)/(2π)
+∇² G_2D (in polar, away from origin) = 0
+Expected: 0 (away from origin)
+
+Green function check ∇²G = 0 away from source: True
+
+Physical interpretation:
+  G_2D mediates 2D Coulomb interaction (logarithmic, NOT exponential)
+  Reflects 3D Goldstone massless mode in z-translation-invariant geometry
+  Per unit length along vortex axis: 2D problem in (x,y) plane
+
+T_P2_3 verdict: PASS
+
+------------------------------------------------------------------------
+T_P2_4 [FP]: Two-vortex interaction V_int(L)/L_z — analytical + numerical
+------------------------------------------------------------------------
+Numerical verification: V_int(L) at sample L values...
+
+Numerical V_int(L)/L_z computation (r_0=0.1, R=50, N_grid=200):
+  (Note: v=1 normalization; small core gives logarithmic divergence handled by r_0)
+
+  L      V_int(L)/L_z (computed)   2π·log(L/r_0) (expected)   Ratio
+  ---    -----------------------   ------------------------   -----
+   1.00                  24.6676                    14.4676   1.705
+   2.00                  20.4723                    18.8227   1.088
+   4.00                  15.8797                    23.1779   0.685
+   8.00                  11.5382                    27.5331   0.419
+  16.00                   7.2423                    31.8883   0.227
+  32.00                   3.1137                    36.2434   0.086
+
+Log-scaling differential test:
+  Expected: ΔV/Δlog(L) = 2π·n_1·n_2 (for n_1=n_2=1: 2π ≈ 6.2832)
+  L_1, L_2  ΔV/Δlog(L)
+  --------  ---------
+   1.0- 2.0    -6.0525
+   2.0- 4.0    -6.6258
+   4.0- 8.0    -6.2635
+   8.0-16.0    -6.1977
+  16.0-32.0    -5.9562
+
+Average slope (numerical): -6.2191
+Expected slope (analytical): 6.2832
+Ratio: -0.9898
+
+Slope match (within 50%): False
+Sign positive (same-sign winding gives positive slope): False
+
+Log vs exponential discrimination:
+  V_int(L=32.0)/V_int(L=2.0) = 0.152
+  Expected (log): 1.926
+  Expected (exp with m=1): 0.000000
+
+T_P2_4 verdict: FAIL
+  Log-scaling slope: matches 2π within tolerance (False)
+  Sign convention: positive for same-sign vortices (False)
+  Discrimination from exp: V grows with L (log), NIE decays exponentially
+
+------------------------------------------------------------------------
+T_P2_5 [FP]: Dimensional analysis check
+------------------------------------------------------------------------
+Dimensional analysis (natural units ħ=c=1):
+  [v] = mass = 1/length
+  [n] = dimensionless (winding number)
+  [L], [r_0] = length
+  [log(L/r_0)] = dimensionless
+  [v² n_1 n_2 log(L/r_0)] = mass² × 1 × 1 = mass²
+  Per unit length [E/L_z] = energy/length = mass × mass = mass² ✓
+
+Dimensional consistency: V_int(L)/L_z = 2π v² n_1 n_2 log(L/r_0)
+  LHS: [E/L_z] = mass²
+  RHS: [v² n_1 n_2 log] = mass²
+  MATCH: True ✓
+
+T_P2_5 verdict: PASS (dimensional consistency)
+
+========================================================================
+Phase 2 aggregate verdict
+========================================================================
+
+Substantive FP tests:
+  ✓ T_P2_2: PASS  (Single-vortex |∇θ|² = n²/r_⊥²)
+  ✓ T_P2_3: PASS  (2D Goldstone Green function G_2D = -log(r/r_0)/(2π))
+  ✗ T_P2_4: FAIL  (Two-vortex V_int(L)/L_z ~ log(L) (numerical))
+  ✓ T_P2_5: PASS  (Dimensional consistency)
+
+Substantive metrics:
+  3/4 FP substantive PASS
+  0 hardcoded T_pass=True (strict cycle 1/2/7 preserved)
+  0/1 DEC budget used (vortex default preserved)
+  0 LIT (Phase 1 LIT covers cycle)
+
+Aggregate Phase 2 verdict: INVESTIGATE_FAIL
+  1/4 substantive tests FAILED.
+
+========================================================================
+END OF Phase 2 sympy
+========================================================================
+
+--- Phase 3 fit data (L, V_int) ---
+# L   V_int_numerical
+1.0 24.667589872909044
+2.0 20.472331346862738
+4.0 15.879708045903252
+8.0 11.538206841208192
+16.0 7.242256265287335
+32.0 3.1137173959207987

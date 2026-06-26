@@ -1,0 +1,48 @@
+========================================================================
+T2-A — fizyczne kombinacje sektora sigma_ab: O_amp (amplituda) vs O_flux (strumien)
+========================================================================
+[PASS] T2-A: O_amp = xi_eff/(C_sigma*sigma0) (pinowane przez R7: amplituda=GR);  O_flux = C_sigma*sigma0**2 (kontroluje kappa_E, strumien). Trzy parametry {C_sigma,sigma0,xi_eff}, dwie fizyczne kombinacje.
+========================================================================
+T2-B — Jacobian (xi',sigma0')->(O_amp,O_flux): det != 0  => O_amp PERP O_flux (ground Phase2 Filar II)
+========================================================================
+[PASS] T2-B: det J[(xi',sigma0')->(xi'/sigma0', sigma0'^2)] = 2 != 0 => O_amp i O_flux NIEZALEZNE. Ugruntowanie Phase2-survival Filar II (det J=2xi/lambda!=0, R9): USTALENIE AMPLITUDY (R7) NIE USTALA STRUMIENIA => kappa_E swobodne kinematycznie.
+========================================================================
+T2-C — czy LIVE pinuje O_flux=C_sigma*sigma0^2? (zliczanie warunkow; rem:sigma-params)
+========================================================================
+[PASS] T2-C: 4 warunki substratu ['Phi0', 'G0', 'Lambda_eff', 'xi_eff'] pinuja {mu,m0^2,lam0,J}; zaden nie pinuje C_sigma (pins_C_sigma=False). rem:sigma-params: C_sigma NIEZOBLICZONY. => O_flux=C_sigma*sigma0^2 NIEPINOWANE przez LIVE. Jedyny pin = narzucenie norm. E-H = TUNING do GR (forbidden #2/#3, bo nie wyprowadzone z substratu).
+========================================================================
+T2 -> FLAGA F-DRR-2
+========================================================================
+F-DRR-2 = UNPINNED  (O_flux=C_sigma*sigma0^2 swobodne; amplituda R7 nie pinuje strumienia; pin tylko przez tuning E-H = forbidden)
+========================================================================
+T3-A — prop:Mstar-from-substrate: jaka to klasa dowodu? (analiza wymiarowa vs mikro-derywacja)
+========================================================================
+[PASS] T3-A: prop:Mstar: M*^2=1/ell_P^2 (M*^2*ell_P^2=1) z ANALIZY WYMIAROWEJ (jedyna bezparam. kombinacja o [m^2]) + norm. B(Phi0)=1. Mikro-derywacja wspolczynnika z dynamiki substratu: False. => argument WYMIAROWY, NIE mikro-derywacja.
+========================================================================
+T3-B — czy M* jest FITOWANE do r_V/danych? (anti-tuning, forbidden #3)
+========================================================================
+[PASS] T3-B: M* zafiksowane przez ell_P (Planck), NIE przez r_V (fit_rV=False) ani dane (fit_data=False). r_V=f(M*), nie M*=f(r_V). => NIE FITTED (nie tuning-belt).
+========================================================================
+T3-C — rozstrzygniecie niespojnosci sek08 'Warstwa III' vs status_map 'Propozycja'
+========================================================================
+[PASS] T3-C: sek08='Warstwa III -- wyprowadzone' vs status_map='Propozycja; brak mikro-derywacji'. T3-A: argument wymiarowy (nie mikro). => status_map POPRAWNE; sek08 'wyprowadzone' = OVERCLAIM klasyfikacyjny (do korekty w propagacji FINAL).
+========================================================================
+T3 -> FLAGA F-DRR-3
+========================================================================
+F-DRR-3 = POSTULATE  (M*=m_P: postulat WYMIAROWY z ell_P + B(Phi0)=1; underived mikroskopowo; NIE fit)
+========================================================================
+T3-D — dyscyplina
+========================================================================
+[PASS] T3-D: 0 danych obserwacyjnych; werdykt z flag; 0 nowych stalych; anty-tuning (forbidden #2/#3) zachowany.
+========================================================================
+WERDYKT Phase 2 (flagi) + KANDYDAT agregatu F-DRR-C (do Phase FINAL)
+========================================================================
+checks: 7/7 PASS
+  F-DRR-2 = UNPINNED
+  F-DRR-3 = POSTULATE
+
+  Agregat (F-DRR-1=PARTIAL, F-DRR-2=UNPINNED, F-DRR-3=POSTULATE):
+    broken=False, clean=False  =>  KANDYDAT D6 -> UNDERDETERMINED
+    (do potwierdzenia + closure + propagacja w Phase FINAL; wymaga user 'działaj')
+
+DISCIPLINE: hardcoded_T_pass=0 ; verdict_from_flags=True ; anti_tuning_preserved=True ; new_constants=0

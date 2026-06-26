@@ -1,0 +1,30 @@
+========================================================================
+PHASE 1 CHAIN-AUDIT: 𝒜=C_F^2 a_s^2 — derywowane czy postulate?
+========================================================================
+
+[chain] sigma_phys = C_F**2*K_geo*alpha_s**2*m_sp**2/(Phi0**2*pi)
+[chain] przy L5 (K_geo*m_sp^2=pi*Phi0^2): 𝒜 = C_F**2*alpha_s**2
+
+[T1] L5 => 𝒜 = C_F^2*alpha_s^2 ? True
+
+[T2] linki:
+     [DERIVED-ANSATZ ] L1 sigma_hat=pi*A^2 (ansatz gauss)
+     [DERIVED        ] L2 A_color=C_F a_s/(pi Phi0)
+     [DERIVED        ] L3 m_sp^2=gamma
+     [DEFINITIONAL   ] L4 sigma_phys=K_geo m_sp^2 sigma_hat
+     [POSTULATE      ] L5 K_geo*m_sp^2=pi*Phi0^2
+     liczba POSTULATE (load-bearing): 1 -> dokladnie 1? True
+
+[T3] CG-1/CG-3 (Gamma->Phi): label=[SZKIC] ex200=4/8 𝒜~sqrt(sigma)/Phi0 zamkniete=False ex202_T6=FAIL
+     CG zamkniete? False -> NOT closed: True
+
+[T4] K_geo*m_sp^2/Phi0^2 ustalone niezaleznie (wymaga zamknietego CG)? False -> NIE: True
+
+[T5] flagi: L5=>CF2as2=True ; L5 postulate=True ; CG not closed=True ; K_geo not fixed=True
+     >>> WERDYKT: POSTULATE-CONDITIONAL <<<
+     => alpha_s 0,03sigma = STRUCTURAL CONSISTENCY-CHECK warunkowy (NIE first-principles)
+
+========================================================================
+PASS: 4/4
+WERDYKT: POSTULATE-CONDITIONAL
+========================================================================

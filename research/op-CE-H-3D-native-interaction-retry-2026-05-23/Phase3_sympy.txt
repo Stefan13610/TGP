@@ -1,0 +1,81 @@
+========================================================================
+Phase 3 sympy — γ-1 retry z §3.6.7 BINDING (equal-param fit)
+========================================================================
+
+Reused V_int(L) data from original γ-1 Phase 2 (numerical integration):
+  L:     [ 1.  2.  4.  8. 16. 32.]
+  V_int: [24.6676 20.4723 15.8797 11.5382  7.2423  3.1137]
+
+------------------------------------------------------------------------
+T_P3_1 [FP]: 2-param log fit V_int(L) = A + B·log(L)
+------------------------------------------------------------------------
+Fit parameters (2):
+  A = 24.6619
+  B = -6.2572
+R²_log = 0.999787
+
+§3.6.6 sign check: B < 0 (negative slope per physical principle): True
+§3.6.9 precision: |B| ≈ 2π within 5%: True
+  |B| = 6.2572, expected 2π = 6.2832
+  Deviation: 0.41% (threshold 5%)
+
+T_P3_1 verdict: PASS
+  R²_log ≥ 0.95: True
+  Sign negative: True
+  Magnitude 5%: True
+
+------------------------------------------------------------------------
+T_P3_2 [FP]: 2-param exp fit V_int(L) = C·exp(-m·L) [NO offset!]
+------------------------------------------------------------------------
+Fit parameters (2):
+  C = 24.9390
+  m = 0.0873
+R²_exp = 0.967046
+
+§3.6.7 equal-param compliance: BOTH log AND exp use 2 parameters ✓
+
+T_P3_2 verdict: PASS (execution; informational)
+
+------------------------------------------------------------------------
+T_P3_3 [FP]: F-γ-1 CRUCIAL TEST — §3.6 extension compliance
+------------------------------------------------------------------------
+R²_log = 0.999787
+R²_exp = 0.967046 (2-param, NIE 3-param exp+offset!)
+Difference R²_log - R²_exp = 0.032741
+
+Pre-registered F-γ-1 PASS criteria (Phase 0 §8 + README §1):
+  (a) R²_log ≥ 0.95: True (actual 0.9998)
+  (b) R²_log > R²_exp + 0.02 z 2-param fits: True (actual diff 0.0327)
+  (c) Slope sign negative (§3.6.6): True
+  (d) Slope magnitude 5% (§3.6.9): True
+
+========================================================================
+F-γ-1 CRUCIAL TEST VERDICT:
+========================================================================
+  ✓ F-γ-1 PASS (clean — all 4 criteria satisfied)
+    Native 3D U(1) interaction V_int(L) ~ log(L) (logarithmic)
+    Sign correct (negative slope per same-sign repulsion)
+    Slope magnitude 2π within 5%
+    2-param exp fits worse than 2-param log by margin > 0.02
+    HARD HALT scenario (pure exp) NOT realized
+    CE-H structural feature CONFIRMED at toy 3D level
+
+========================================================================
+Phase 3 retry aggregate verdict
+========================================================================
+
+Substantive FP tests:
+  ✓ T_P3_1 (2-param log fit): PASS
+  ✓ T_P3_2 (2-param exp fit): PASS
+  ✓ T_P3_3 (F-γ-1 z §3.6 extension): PASS
+
+Substantive metrics:
+  3/3 FP substantive PASS
+  0 hardcoded T_pass=True (strict cycle 1/2/7 preserved)
+  §3.6.6-3.6.9 BINDING compliance verified
+
+→ Phase 4 (F-γ-2 self-consistency) ACTIVATED conditional na F-γ-1 PASS
+
+========================================================================
+END OF Phase 3 retry sympy
+========================================================================

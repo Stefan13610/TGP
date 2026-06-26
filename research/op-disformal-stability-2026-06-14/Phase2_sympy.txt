@@ -1,0 +1,53 @@
+============================================================================
+T-STA-C1 — rekonstrukcja c_T^2 (S6) i parametr kierunkowy u_perp = u*cos^2(theta)
+============================================================================
+[PASS] T-STA-C1: c_T^2 = c0^2/(1 + u_perp), u_perp = u*cos^2(theta) (u=bX/A). theta=0 (propagacja || grad, STREFA FALOWA): u_perp=u (max). theta=pi/2: u_perp=0 (c_T=c0, case-iii).
+============================================================================
+T-STA-C2 — zdrowie mody TENSOROWEJ: subluminal (c_T^2<=c0^2) + hiperbolicznosc (denom>0)
+============================================================================
+  hiperbolicznosc denom>0 => b in Interval.open(-1, oo)
+  subluminal c_T^2<=c0^2  => b in Union(Interval.open(-oo, -1), Interval(0, oo))  (UWAGA: zawiera tez c_T^2<0!)
+  ZDROWY tensor (denom>0 ∧ subluminal) => b in Interval(0, oo)  (kontrola skali: Interval(0, oo))
+[PASS] T-STA-C2: TENSOR zdrowy (hiperbol. denom>0 ∧ subluminal) <=> b>=0 (B>=0). b<0: NADSWIETLNY dla |u|<1 (np. c_T^2=2c0^2>c0^2); strata hiperbolicznosci przy q2=A/|b| (|u|=1, denom=0, c_T^2->oo), dalej c_T^2=-2<0 => NIESTAB. GRADIENTOWA tensora.
+============================================================================
+T-STA-C3 — geometria STREFY FALOWEJ: propagacja radialna k_hat||grad => u_perp=u; prog=r_V
+============================================================================
+[PASS] T-STA-C3: Strefa falowa: k_hat||grad Phi_bg (radialnie) => cos^2=1 => u_perp=u=X*b/A (IDENTYCZNA projekcja jak skalar). Prog |u|=1 = r_V (S10). Wewnatrz r_V (|u|>1, J0737): denom tensora = A(1-|u|)<0 => mod tensorowy NIESTABILNY dla B<0. Geometria 'case-iii' (poprzeczna) NIE dotyczy wlasnej radiacji ukladu.
+============================================================================
+T-STA-C4 — SIGN-CONFLICT: znak zdrowy-skalar (Phase1: B<0) vs znak zdrowy-tensor (B>=0)
+============================================================================
+  scalar_healthy_sign (Phase 1, no-ghost∧gradient∧ekran.): b in Interval.open(-oo, 0)  (B<0)
+  tensor_healthy_sign (T-STA-C2, subluminal∧hiperbol.):    b in Interval(0, oo)  (B>=0)
+  przeciecie (znak speln. RAZEM (i)-(iii) i (iv)):         EmptySet
+[PASS] T-STA-C4: przeciecie znakow zdrowych = EmptySet (PUSTE). Skalar radiacyjny wymaga B<0; tensor rdzenia (prop:cT) wymaga B>=0. TEN SAM B(Phi) nie moze byc obu znakow => SIGN-CONFLICT.
+============================================================================
+T-STA-C5 — nieusuwalnosc: czy istnieje OKNO (skalar ekranuje ∧ tensor zdrowy)? + analiza ucieczki
+============================================================================
+  skalar ekranuje nietryw. (S<=1/2): w=|u| in Interval(1, oo)  (|u|>=1, wewnatrz r_V)
+  tensor B<0 nie-niestabilny:        w=|u| in Interval.Ropen(0, 1)   (|u|<1, na zewnatrz r_V)
+  OKNO (ekranuje ∧ tensor stabilny): EmptySet
+[PASS] T-STA-C5: OKNO (skalar ekranuje ∧ tensor zdrowy) = EmptySet (PUSTE). Jedyna 'ucieczka' |u|<<1 daje S->1 (ekranowanie TRYWIALNE) => nie ratuje sektora; a tensor i tak strukturalnie nadswietlny. Konflikt NIEUSUWALNY w geometrii strefy falowej (k_hat||grad).
+============================================================================
+T-STA-C6 — polaryzacje (S7) nie pinuja znaku; statyka r_V spojna z B<0; dyscyplina
+============================================================================
+[PASS] T-STA-C6: Polaryzacje (S7): h_+,h_x istnieja dla B!=0 (oba znaki) => NIE pinuja znaku. Statyka r_V/gamma uzywa tego samego Z(X>0) => tez preferuje B<0 (spojne ze skalarem, NIE nowy konflikt). Konflikt znaku pochodzi WYLACZNIE z c_T (tensor). 0 danych; oba znaki testowane; zakres sign-pin.
+============================================================================
+FLAGA F-STA-C (wyliczona z flag) + IMPLIKOWANY agregat F-STA-D (formalnie: Phase FINAL)
+============================================================================
+checks: 6/6 PASS
+
+F-STA-C = SIGN-CONFLICT
+  - Zdrowy radiacyjnie znak = B<0 (Phase 1). Zdrowy tensor rdzenia (prop:cT) = B>=0.
+  - Przeciecie znakow = PUSTE; brak okna (skalar ekranuje ∧ tensor zdrowy).
+  - Nieusuwalne w strefie falowej: k_hat||grad Phi => u_perp=u; prog niestab. tensora |u|=1 = r_V;
+    wewnatrz r_V (J0737, |u|>>1) B<0 => mod tensorowy c_T^2<0 (niestab. gradientowa).
+
+  Reguly agregatu Phase0 §5.1 (do formalnego LOCK w Phase FINAL):
+    F-STA-A=HEALTHY (Phase1), F-STA-B=HEALTHY (Phase1), F-STA-C=SIGN-CONFLICT (ta faza)
+    patologia_nieusuwalna = (A=GHOST-FORCED ∨ B=GRADIENT-FORCED) = False
+    konflikt_znaku        = (C=SIGN-CONFLICT) = True
+    broken = patologia_nieusuwalna ∨ konflikt_znaku = True
+    => op-disformal-stability -> BROKEN (sektor radiacyjny SFALSYFIKOWANY PRZEZ STABILNOSC)
+
+DISCIPLINE: hardcoded_T_pass=0 ; verdict_from_flags=True ; both_signs_tested=True ; scope=sign-pin-only
+NOTE: formalny agregat F-STA-D + closure + propagacja = Phase FINAL (osobny user 'dzialaj').

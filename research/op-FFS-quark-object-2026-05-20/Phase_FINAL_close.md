@@ -497,3 +497,115 @@ Annotation dla [[../op-L08-Phase6-hadron-topology-confinement-2026-05-16/Phase_F
 **Methodological innovation R1+R2+R3 first operational test SUCCESSFUL — Phase 4 R3 trigger active.**
 **5/6 caveats CLOSED + 1/6 PARTIAL z honest documentation.**
 **Multi-session strict cycle 1/2/7 pattern preserved across 4 phases.**
+
+---
+
+## §11 — R2 integration audit closure annotation (2026-05-22)
+
+**R2 audit cycle:** [[../op-R2-integration-audit-CE-H-FFS-2026-05-22/]] — **R2_PASS** 2026-05-22
+
+**Aggregate verdict:** 8/9 CLOSED + 1/9 DEFERRED + 0 ESCALATED.
+
+### FFS-side R2 verdicts (4 of 9 scope items)
+
+| Item | R2 verdict | Implication for FFS cycle |
+|---|---|---|
+| FFS-1 (hedgehog+string joint config necessity) | ✅ CLOSED | Joint config minimality justified; alternatives ruled out |
+| FFS-2 (lepton/quark dichotomy necessity) | ✅ CLOSED | Dichotomy structurally derived (EM charge integrality) |
+| FFS-3 (Pattern 2.5 σ interpretation) | ✅ CLOSED | Strict Nielsen-Olesen q² confirmed; pre-screening factor 10 LOCKED preserved |
+| FFS-4 (symmetric Y-vertex load-bearing) | 🟡 DEFERRED | Asymmetric Y-vertex (observed baryons) requires Phase 5-7 scope |
+
+### Cross-cycle R2 lessons applied to FFS
+
+1. **R1-1 audit verdict (CALIBRATION_PROTOCOL §3.6 BINDING):** Pre-screening T7 q=1 implicit
+   identified as **same class methodology issue** as CE-H T_P3_2. Both addressed via
+   analytical pre-derivation step requirement post-2026-05-22.
+
+2. **C6 PARTIAL status update:** R3 multi-line convergence 3/3 lines confirmed (Phase 4 FFS
+   + Archimedean + CE-H Poziom β toy). CE-H structural feature interpretation provides
+   derivation chain showing Φ_0_local jest z definicji relacyjne. **C6 PARTIAL → candidate
+   RESOLVED_STRUCTURALLY** (pending Poziom γ-1 native 3D U(1) verification F-γ-1).
+
+3. **A− → A trajectory:** Possible post:
+   - FFS-4 closure via Phase 5-7 asymmetric Y-vertex analysis
+   - C6 full RESOLVED via Poziom γ-1 success
+   - Hadron-topology 2026-05-16 R1 OPEN closure trajectory
+
+### claim_status post R2
+
+**claim_status A− conditional PRESERVED.** 
+
+Rationale: FFS-4 DEFERRED + C6 PARTIAL → RESOLVED_STRUCTURALLY conditional prevent A−→A
+upgrade w niniejszym R2 audit. R2 audit consolidates structural justification BUT NIE
+provides full closure dla C6 lub FFS-4.
+
+### Cross-cycle propagation completed (R2 Phase 4 2026-05-22)
+
+- [[../../meta/FFS_QUARK_OBJECT_PROPOSAL_2026-05-18.md]] §8.4 — R2 audit closure annotation
+- [[../../meta/FFS_PRE_SCREENING_2026-05-19.md]] §8.7 — R2 audit + CE-H link
+- [[../../meta/TGP_W_Z_THEORETICAL_LIMIT.md]] §6.5 — path η cosmology toy + R2 verdict
+- [[../../meta/CALIBRATION_PROTOCOL.md]] §6 (R1+R2+R3 BINDING) + §3.6 (analytical pre-derivation BINDING)
+- [[../../meta/PRE_REGISTERED_FALSIFIERS.md]] §6 (PR-F-β-1..5) + §7 (PR-F-γ-1..4 PENDING)
+- [[../../meta/TGP_GENERATED_SPACE_COSMOLOGY_2026-05-21.md]] §13 (Poziom β closure note + R2)
+- [[../../STATE.md]] (sesja 2026-05-22 entry at top)
+
+**Anti-Lakatos discipline:** R2 audit verdict NIE modifies FFS cycle pre-registered LOCKs.
+All FFS phase results IMMUTABLE per audit trail invariant. R2 annotation jest cross-cycle
+context layer, NIE retroactive cycle modification.
+
+---
+
+## §12 — C6 caveat RESOLVED_STRUCTURALLY annotation (2026-05-23)
+
+**C6 (Φ_0_local anchor) trajectory completed:**
+
+| Stage | Status | Source |
+|-------|--------|--------|
+| Phase 4 closure 2026-05-20 | C6 **PARTIAL** (form OK; absolute anchored explicit) | This cycle |
+| R3 multi-line convergence (3/3 confirmed) | Pending γ-1 verification | CE-H Poziom β 2026-05-21 + R2 2026-05-22 |
+| Original γ-1 (op-CE-H-3D-native-interaction-2026-05-22) | C6 PARTIAL → RESOLVED_STRUCTURALLY_CONDITIONAL | γ-1 substantive PARTIAL 2026-05-23 |
+| **γ-1 retry CLEAN PASS** (op-CE-H-3D-native-interaction-retry-2026-05-23) | C6 PARTIAL → **RESOLVED_STRUCTURALLY** | γ-1+γ-2 BOTH clean 2026-05-23 |
+
+### §12.1 C6 disposition: RESOLVED_STRUCTURALLY (post γ-1 retry CLEAN PASS)
+
+**Pre-γ-1 retry:** C6 PARTIAL — Pattern 2.5 §3.5.6 form derivation OK; absolute Φ_0 NIE derivable z minimal axioms (4 paths attempted, all wymagają external anchor OR new principle).
+
+**Post γ-1 retry (2026-05-23):** **C6 → RESOLVED_STRUCTURALLY** (NIE longer PARTIAL).
+
+**Rationale:**
+- CE-H structural feature CONFIRMED at toy 3D via γ-1 + γ-2 CLEAN PASS
+- TGP = Teoria Generowanej Przestrzeni ontologia: Φ_0_local jest z definicji relacyjne (NIE absolute)
+- "Absolute Φ_0 NIE derivable z minimal axioms" jest **strukturalna konsekwencja** ontologii, NIE error or gap
+- R3 multi-line convergence 3/3 lines confirmed + reinforced via γ-1 retry quantitative verification
+- C6 caveat reinterpreted z "open problem" → "structural feature reflecting relational nature of Φ"
+
+**Still pending dla A+ upgrade trajectory:**
+- Poziom γ-3 cosmological extension (F-γ-3 H_0 PRIMARY KILLER) — would confirm full cosmological match
+- Phase 5-7 FFS extension (asymmetric Y-vertex + asymptotic freedom + lattice transfer) — orthogonal
+
+### §12.2 FFS claim_status status (post γ-1 retry CLEAN PASS)
+
+**Pre-γ-1 retry:** A- conditional (5/6 caveats CLOSED + C6 PARTIAL; FFS-4 DEFERRED).
+
+**Post γ-1 retry (2026-05-23):**
+- C6 PARTIAL → **RESOLVED_STRUCTURALLY** (full closure z γ-1+γ-2 confirmation)
+- 6/6 caveats now resolved (5 fully + 1 RESOLVED_STRUCTURALLY)
+- FFS-4 still DEFERRED (asymmetric Y-vertex requires Phase 5-7)
+
+**FFS claim_status proposed update: A- conditional → A** (z FFS-4 DEFERRED noted explicit).
+
+**Honest disposition:** FFS-4 DEFERRED prevents pure A clean upgrade. Conservative: A- → A z explicit FFS-4 caveat. OR maintain A- conditional pending Phase 5-7 closure.
+
+**Note:** This is methodological judgement call. Default conservative: A- preserved z C6 RESOLVED annotation; explicit A upgrade requires Phase 5-7 separate cycle.
+
+### §12.3 Cross-cycle propagation (post γ-1 retry)
+
+Annotations propagated to:
+- [[../op-CE-H-3D-native-interaction-retry-2026-05-23/Phase_FINAL_close.md]] (γ-1 retry CLEAN PASS source)
+- [[../op-CE-H-two-particle-equilibrium-2026-05-21/Phase_FINAL_close.md]] §12 (CE-H Poziom β A-→A)
+- This file §12 (FFS C6 RESOLVED_STRUCTURALLY annotation)
+- [[../../meta/PRE_REGISTERED_FALSIFIERS.md]] §7 (PR-F-γ-1+2 PENDING → PASS_CLEAN)
+- [[../../meta/TGP_GENERATED_SPACE_COSMOLOGY_2026-05-21.md]] §13 (Poziom β + retry annotation)
+- [[../../STATE.md]] (sesja 2026-05-23 #3 entry)
+
+**Anti-Lakatos discipline:** Phase 4 results IMMUTABLE per audit trail invariant. §12 annotation is **cross-cycle context layer** (post-γ-1 retry confirmation), NIE retroactive cycle modification.

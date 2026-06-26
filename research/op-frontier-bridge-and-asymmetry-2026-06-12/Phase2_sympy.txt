@@ -1,0 +1,37 @@
+==============================================================================
+Phase 2 sympy -- op-frontier-bridge-and-asymmetry (modul A: GAP-2 + GAP-3)
+==============================================================================
+
+--- F-BA-2: bottom-up J_source + regulator (GAP-2) ---
+[PASS] FP1 -- bottom-up Mdot = 4 pi R^2 rho_e (Rdot - v_c) == 2c^3/(9G) top-down EXACT
+        Mdot_bottom_up = 2*c**3/(9*G) ; difference vs LOCKED top-down = 0
+[PASS] FP2 -- marginality boundary condition has UNIQUE solution rho_e = 1/(6 pi G t^2) = rho_bar
+        solutions: [1/(6*pi*G*t**2)] ; matches LOCKED rho_bar: True
+[PASS] FP3 -- trichotomy regulator: cost(rho_bar) = 0 EXACT; over-deposition -> runaway branch (cost<0); under -> blocked (cost>0)
+        d(cost)/d(rho_e) = -4*pi*G*c**2*t**2/3 < 0 ; cost(rho_bar) = 0 ; cost(2 rho_bar) = -2*c**2/9 ; cost(rho_bar/2) = c**2/9
+[PASS] FP4 -- efficiency eta(t) = (t_*/t)^2 EXACT (t_* == FM P3 LOCKED); eta(t_*) = 1; surplus -> wall kinetics
+        eta = 2*c**2/(9*pi*G*Phi0**4*lambda*t**2) ; eta == (t_*/t)^2: True ; eta(t_*) = 1 ; lim(1-eta) = 1
+[PASS] FP5 -- exponent audit: d ln(Mdot_bu)/d ln t = 0 (regulated) vs capacity exponent = 2
+        rate exponent = 0 ; capacity exponent = 2
+
+--- F-BA-3: A-iv monochromaticity from wall dynamics (GAP-3) ---
+[PASS] FP6 -- entry surface UNIQUE: single crossing of |Phi| = Phi0/sqrt3 (monotone profile); depth x* = delta*atanh(1/sqrt3)
+        crossings: 1 ; exp(m_Phi x): solved = sqrt(3) + 2, atanh-form = sqrt(3) + 2 (both == 2+sqrt3: True/True) ; dPhi/dx > 0: True
+[PASS] FP7 -- geometric entry dispersion: dv/v_c = delta/(ct) EXACT -- exponent 1 (pre-registered >= 1); -> 0 thin-wall
+        dv/v_c = sqrt(2)/(Phi0*c*sqrt(lambda)*t) ; exponent in (delta/ct) = 1 ; thin-wall limit = 0
+[PASS] FP8 -- temporal entry dispersion: |du/dt|*(delta/c)/v_c = delta/(ct) -- same order, exponent 1
+        dv_t/v_c = sqrt(2)/(Phi0*c*sqrt(lambda)*t)
+[PASS] FP9 -- recoil/peculiar dispersion decays: v_pec ~ 1/a_m ~ t^(-2/3) (consistent with LOCKED FM exponents {2/3,1/3})
+        v_pec(t) = C1/t**(2/3) ; v_pec * a_m = C1 (t-free: True)
+[PASS] FP10 -- dust attractor: w_eff = <v_pec^2>/c^2 ~ t^(-4/3) -> 0 (growth form protected asymptotically)
+        w_eff exponent = -4/3 (expected -4/3) ; limit t->oo = 0
+[PASS] FP11 -- circularity guard: no G_obs / eta_B / observed-asymmetry symbol in any verdict expression
+        free symbols audited: ['C1', 'G', 'Phi0', 'c', 'lambda', 'rho_e', 't'] ; blacklist hits: []
+==============================================================================
+SUMMARY: 11/11 PASS ; 0 hardcoded T_pass (all verdicts computed)
+F-BA-2 (GAP-2): bottom-up functional J = rho_e (Rdot - v_c); regulator = LOCKED marginality
+  trichotomy applied at entry boundary (unique rho_e = rho_bar; over->runaway, under->blocked);
+  Mdot_bu == 2c^3/(9G) EXACT; exponent t^0 vs capacity t^2; eta = (t_*/t)^2 EXACT.
+F-BA-3 (GAP-3): geometric + temporal entry dispersion = delta/(ct) EXACT (exponent 1, -> 0);
+  recoil dispersion NOT derived from wall dynamics (creation kinematics unknown -- declared);
+  but decays as 1/a_m and w_eff ~ t^(-4/3) -> 0 (dust attractor protects growth machinery).

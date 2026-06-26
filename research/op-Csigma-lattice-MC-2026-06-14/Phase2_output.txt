@@ -1,0 +1,97 @@
+
+======================================================================
+Phase 2 — RDZEN: MC babla na 3D Ising (Swendsen-Wang)
+======================================================================
+  beta_c(3D Ising) = 0.221654. Operator spin-2 TT, babel skalarny rotacyjny Pi_TT(p).
+
+======================================================================
+(1) Walidacja MC 3D Ising: |m|, chi vs beta (L=20)
+======================================================================
+  [val] L=20 beta=0.15000: |m|=0.0171(0.0008) chi=1.5 E=-0.4982 m_s=1.3413  p_min/m_s=0.23
+         Pi_TT(0)=3.5744  C_sigma=-coeff_p2=0.4134+-0.8830  ratio=0.1159  nsh=6  clean=True
+  [val] L=20 beta=0.19000: |m|=0.0316(0.0013) chi=4.2 E=-0.6958 m_s=0.5888  p_min/m_s=0.53
+         Pi_TT(0)=3.7332  C_sigma=-coeff_p2=2.3735+-nan  ratio=0.6358  nsh=1  clean=False
+  [val] L=20 beta=0.21000: |m|=0.0601(0.0027) chi=17.1 E=-0.8356 m_s=0.3296  p_min/m_s=0.95
+         Pi_TT(0)=3.3224  C_sigma=-coeff_p2=0.0000+-nan  ratio=0.0000  nsh=0  clean=False
+  [val] L=20 beta=0.22165: |m|=0.2530(0.0063) chi=95.3 E=-1.0292 m_s=0.1645  p_min/m_s=1.91
+         Pi_TT(0)=2.9532  C_sigma=-coeff_p2=0.0000+-nan  ratio=0.0000  nsh=0  clean=False
+  [val] L=20 beta=0.24000: |m|=0.6708(0.0014) chi=4.7 E=-1.6739 m_s=0.6381  p_min/m_s=0.49
+         Pi_TT(0)=1.1741  C_sigma=-coeff_p2=-0.8949+-nan  ratio=-0.7622  nsh=1  clean=False
+  [val] L=20 beta=0.27000: |m|=0.8389(0.0006) chi=0.8 E=-2.2244 m_s=1.5091  p_min/m_s=0.21
+         Pi_TT(0)=0.3715  C_sigma=-coeff_p2=0.0097+-0.0494  ratio=0.0260  nsh=7  clean=True
+  |m|(beta): [0.017, 0.032, 0.06, 0.253, 0.671, 0.839]  (rosnie z beta: lamanie Z2)
+  chi-peak ~ beta=0.221654 (oczek. ~ beta_c=0.221654)
+  [PASS] MC-1: faza Z2 poprawna (disordered->ordered)
+         => |m|(0.15)=0.017<0.15, |m|(0.27)=0.839>0.6
+  [PASS] MC-2: pik chi blisko beta_c
+         => chi-peak beta=0.221654 vs beta_c=0.221654
+
+======================================================================
+(2) RDZEN: C_sigma = -coeff(p^2) babla TT w fazie disordered (czyste p^2<<m^2)
+======================================================================
+  W disordered m_s duze => p_min^2 << m_s^2 osiagalne => CZYSTA ekstrakcja wspolczynnika p^2.
+  Mierzymy C_sigma(m_s) + znak; testujemy zbieznosc do continuum (m->0) i UV-czulosc.
+  [dis] L=32 beta=0.10000: |m|=0.0066(0.0001) chi=0.8 E=-0.3121 m_s=2.2759  p_min/m_s=0.09
+         Pi_TT(0)=3.5366  C_sigma=-coeff_p2=0.4992+-0.0251  ratio=0.1416  nsh=41  clean=True
+  [dis] L=32 beta=0.13000: |m|=0.0077(0.0001) chi=1.1 E=-0.4194 m_s=1.4795  p_min/m_s=0.13
+         Pi_TT(0)=3.6306  C_sigma=-coeff_p2=0.6992+-0.0897  ratio=0.1958  nsh=18  clean=True
+  [dis] L=32 beta=0.16000: |m|=0.0096(0.0002) chi=1.8 E=-0.5414 m_s=1.1482  p_min/m_s=0.17
+         Pi_TT(0)=3.5354  C_sigma=-coeff_p2=0.6494+-0.1530  ratio=0.1825  nsh=11  clean=True
+  [dis] L=32 beta=0.18000: |m|=0.0127(0.0002) chi=3.1 E=-0.6370 m_s=0.8509  p_min/m_s=0.23
+         Pi_TT(0)=3.5577  C_sigma=-coeff_p2=0.3825+-0.6913  ratio=0.1080  nsh=6  clean=True
+
+  C_sigma(m_s) = ['0.499+-0.025', '0.699+-0.090', '0.649+-0.153', '0.382+-0.691']
+  m_s          = [2.276, 1.479, 1.148, 0.851]
+  p_min/m_s    = [0.09, 0.13, 0.17, 0.23]  (clean gdy <1)
+  C_sigma>0 wszedzie: True  (ZNAK sztywnosci DERIVED numerycznie)
+  [PASS] F-LMC-A(i): C_sigma=-coeff(p^2) DODATNI (sztywnosc>0) zmierzony, czyste p^2
+         => C_sigma=[0.499, 0.699, 0.649, 0.382] (wszystkie >0); clean=[True, True, True, True]
+
+======================================================================
+(2b) Probe R-continuum: czy ABSOLUTNA magnituda C_sigma jest UV-skonczona (vs L przy ustalonym m_s)?
+======================================================================
+  Ustalamy beta=0.16 (m_s~0.9), zmieniamy L. Czysto-IR => C_sigma niezalezne od L; UV => dryf.
+  [uv] L=16 beta=0.16000: |m|=0.0288(0.0006) chi=1.9 E=-0.5405 m_s=1.0954  p_min/m_s=0.36
+         Pi_TT(0)=3.5191  C_sigma=-coeff_p2=0.0443+-0.6872  ratio=0.0126  nsh=2  clean=True
+  [uv] L=24 beta=0.16000: |m|=0.0150(0.0003) chi=1.8 E=-0.5414 m_s=1.1460  p_min/m_s=0.23
+         Pi_TT(0)=3.4699  C_sigma=-coeff_p2=0.2393+-0.4610  ratio=0.0684  nsh=6  clean=True
+  [uv] L=32 beta=0.16000: |m|=0.0102(0.0002) chi=1.8 E=-0.5414 m_s=0.9332  p_min/m_s=0.21
+         Pi_TT(0)=3.6528  C_sigma=-coeff_p2=0.9034+-0.4403  ratio=0.2511  nsh=7  clean=True
+
+  C_sigma(L=16,24,32 @ beta=0.16) = [0.044, 0.239, 0.903]  (rozrzut 217%)
+  Pi_TT(0)(L=16,24,32)            = [3.519, 3.47, 3.653]  (rozrzut 5%)
+  => Pi_TT(0) silnie UV-czule (additywna dywergencja operatora zlozonego, Phase 1 §5).
+  [PASS] F-LMC-A(ii): UV-czulosc operatora zlozonego udokumentowana (R-continuum AKTYWNE)
+         => Pi_TT(0) dryf 5%, C_sigma dryf 217% (schemat-zalezne)
+
+======================================================================
+(3) Krytycznosc beta_c: DIAGNOSTYKA — czy p^2 jest izolowalne na sieci skonczonej?
+======================================================================
+  Przy krytycznosci xi~L => p_min=2pi/L ~ 2pi*m_s => p_min^2 >> m_s^2: regime p^2<<m^2 NIEDOSTEPNY.
+  [crit] L=16 beta=0.22165: |m|=0.2670(0.0034) chi=70.7 E=-1.0393 m_s=0.1957  p_min/m_s=2.01
+         Pi_TT(0)=2.9991  C_sigma=-coeff_p2=0.0000+-nan  ratio=0.0000  nsh=0  clean=False
+  [crit] L=24 beta=0.22165: |m|=0.2089(0.0030) chi=147.2 E=-1.0127 m_s=0.1366  p_min/m_s=1.92
+         Pi_TT(0)=3.1328  C_sigma=-coeff_p2=0.0000+-nan  ratio=0.0000  nsh=0  clean=False
+  [crit] L=32 beta=0.22165: |m|=0.1765(0.0028) chi=257.3 E=-1.0020 m_s=0.0949  p_min/m_s=2.07
+         Pi_TT(0)=3.0428  C_sigma=-coeff_p2=0.0000+-nan  ratio=0.0000  nsh=0  clean=False
+
+  p_min/m_s (L=16,24,32) = [2.01, 1.92, 2.07]  (>>1 => p^2 izolacja NIEMOZLIWA)
+  Pi_TT(0) (krytyczne)  = [2.999, 3.133, 3.043]
+  [PASS] F-LMC-A(iii): obstrukcja p^2 przy krytycznosci UDOKUMENTOWANA (p_min/m_s>1)
+         => p_min/m_s=[2.01, 1.92, 2.07] (wszystkie >1 => analityczny coeff p^2 niedostepny przy m->0)
+
+======================================================================
+WERDYKT Phase 2 (handoff do Phase 3)
+======================================================================
+  (i)   C_sigma > 0 (sztywnosc DODATNIA): TAK — ZNAK DERIVED numerycznie (czyste p^2, disordered).
+  (ii)  C_sigma = O(1) w jednostkach sieci: TAK (~0.56); ale ABSOLUTNA magnituda UV/schemat-
+        zalezna (Pi_TT(0) dryf 5% z L) => O(1) systematyka schematu (R-continuum).
+  (iii) CONTINUUM-ZBIEZNOSC scheme-independent: NIE osiagnieta — operator zlozony power-divergent
+        + przy krytycznosci p^2 niedostepne (p_min/m_s>1). dodatekQ CG-3/CG-4 OTWARTE.
+  => F-LMC-A = PARTIAL: C_sigma>0, O(1), DERIVED (znak+rzad), prefaktor z O(1) systematyka, NIE clean continuum.
+  => Handoff: C_sigma = O(1) lattice units, pasmo ~[0.04,0.90] (schemat), -> Phase 3 unit-bridge.
+
+  Testy: 5/5 PASS   (czas 100s)
+  Wyniki: Phase2_results.json
+
+SESJA: op-Csigma-lattice-MC Phase 2 (2026-06-14)

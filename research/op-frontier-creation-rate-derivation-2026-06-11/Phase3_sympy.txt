@@ -1,0 +1,68 @@
+﻿==============================================================================
+FCR Phase 3 — frontier marginality condition (target #1)
+==============================================================================
+
+FP1 — stability trichotomy => marginality (principle)
+  marginal binding: (1/2)v_c^2 = GM/(ct)  =>  M = c*t*v_c**2/(2*G)
+  uniqueness: True; M prop t: True  (reproduces Phase 1 skeleton)
+  trichotomy: dE>0 => rate 0 (contradicts M prop t LOCKED-skeleton);
+              dE<0 => unbounded (contradicts gamma-3 steady R = ct);
+              dE=0 => stationary creation CONSISTENT — marginality FORCED.
+  T_pass FP1 (unique M(t), M prop t reproduced) = True
+
+FP2 — coefficient map xi(v_c), eps(v_c)
+  xi = v_c**2/(2*c**2);  eps_G = 3 xi = 3*v_c**2/(2*c**2)
+  T_pass FP2 (xi = v_c^2/2c^2 EXACT; eps = (3/2)(v_c/c)^2 EXACT) = True
+
+FP3 — bookkeeping set + filters
+  B-k1 (rest-energy ledger): xi = 1 — EXCLUDED (creation cost is substrate-
+        internal conversion, not mechanical binding; principle scope filter)
+  B-k2 (uniform-sphere total): xi = 5/3 — EXCLUDED (global condition, not
+        marginal-at-frontier; principle is about the CREATED element)
+  B-k3 SURVIVES: xi = 1/2, eps = 3/2  [matter created comoving with frontier]
+  B-k4 SURVIVES: xi = 2/9, eps = 2/3  [matter created at local flow speed]
+  T_pass FP3 (B-k3: eps = 3/2 EXACT; B-k4: eps = 2/3 EXACT) = True
+  NOTE: B-k3 = Schwarzschild-horizon condition (R = 2GM/c^2) — the 'zero-energy'
+  Phase-1 postulate B1 is now IDENTIFIED as marginal binding at frontier speed.
+
+FP4 — growth: surviving set {2/3, 3/2} through C-DERIVED form
+  B-k3 (v_c = c, frontier speed): p = -1/6 + sqrt(55)/6 = 1.06937 -> log10 G = 3.2485 => PASS_BAND  [= (sqrt(55)-1)/6 EXACT]
+  B-k4 (v_c = 2c/3, derived flow): p = 2/3 = 0.66667 -> log10 G = 2.0252 => PASS_BAND  [= EdS p = 2/3 EXACT]
+  BOTH candidates in PASS band: True (B-k4 edge distance 0.025 dex — honest note)
+  T_pass FP4 = True
+
+FP5 — M(t_0) numeric
+  B-k3: M(t_0) = 8.795e+52 kg (0.88 x gamma-7 rough 1e53)
+  B-k4: M(t_0) = 3.909e+52 kg (0.39 x)
+  T_pass FP5 = True
+
+FP6 — tiebreaker audit + circularity guard
+  B-k3 <- gamma-3 frontier speed; B-k4 <- Phase 2 flow consistency;
+  discriminating microphysics = concept par.10.6 Q4 (OPEN) => TIEBREAKER_OPEN
+  free symbols of p+: {epsilon}; T_pass FP6 (no G_obs anywhere) = True
+
+FP7 — verdict + aggregate
+  F-ZE (target #1): PRINCIPLE_DERIVED + COEFFICIENT_TWO_POINT {2/3, 3/2} + TIEBREAKER_OPEN
+  B1 status upgrade: STRUCTURAL_POSTULATE -> MARGINALITY-DERIVED (two-point);
+  the arbitrary-looking 'zero-energy' postulate is now a stability consequence
+  of stationary frontier creation, with xi in an EXACT two-point set.
+
+  >>> F-FCR-D AGGREGATE (post Phase 3): STRUCTURAL_CONDITIONAL (SHARPENED) <<<
+  PR-022: STILL WITHHELD (tiebreaker open) — but PR-022-candidate statement is
+  now formulable as a TWO-POINT parameter-free prediction:
+    log10 G_TGP in {2.025 (EdS-coincident), 3.249} vs observed 3.0
+  T_pass FP7 = True
+
+==============================================================================
+  FP1: PASS
+  FP2: PASS
+  FP3: PASS
+  FP4: PASS
+  FP5: PASS
+  FP6: PASS
+  FP7: PASS
+
+  TOTAL: 7/7 PASS; hardcoded T_pass = 0/7
+  F-ZE: PRINCIPLE_DERIVED + COEFFICIENT_TWO_POINT {2/3, 3/2} + TIEBREAKER_OPEN
+  Two-point prediction: log10 G in {2.025, 3.249} (both PASS_BAND; obs 3.0)
+==============================================================================

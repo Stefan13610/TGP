@@ -1,0 +1,42 @@
+{
+  "phase": 3,
+  "cycle": "op-CG34-continuum-closure",
+  "target": "CG-4",
+  "alpha_of_s": "s-1",
+  "alpha_substrate_s1": 0,
+  "alpha_requires": "s=0 (Z=const, konw. A3) lub s=3 (Z~phi^6)",
+  "A3_inconsistency": "premisa Z~phi^2 (s=1) -> alpha=0, NIE 2; konkluzja A3 uzywa K1~1/Phi (s=0)",
+  "beta_eq_gamma": true,
+  "c_star_positive": true,
+  "Z_spread": 0.0584243722127872,
+  "cg4_status": "PARTIAL (c*,beta=gamma,K_hom-forma ZAMKNIETE; alpha=2<->K(phi) DO-PINNIECIA)",
+  "n_pass": 5,
+  "n_tot": 5,
+  "tests": [
+    {
+      "label": "C4-B(i): zmiana zmiennych Phi=phi^2 generuje czlon (∇Φ)²/Φ (alpha != 0) dla Z=const",
+      "status": "PASS",
+      "detail": "wspolczynnik = -1/2 (niezerowy => struktura TGP obecna)"
+    },
+    {
+      "label": "C4-B(ii): USTALENIE jawne — substrat Z~phi^2 (s=1) daje alpha=0 (NIE 2); niespojnosc A3 zgloszona",
+      "status": "PASS",
+      "detail": "alpha_eff(s=1)=0; alpha=2 wymaga Z=const (konw. A3) lub Z~phi^6. Do pinniecia w rdzeniu."
+    },
+    {
+      "label": "C4-C: U'(Phi_0)=0 => beta_eff = gamma_eff (algebraicznie, lemat A4)",
+      "status": "PASS",
+      "detail": "U'(Phi0)=beta-gamma=0 => beta=gamma"
+    },
+    {
+      "label": "C4-A: c*>0 stabilne z L (red-flag prior c*->0 rozwiazany) — wspiera A1(ii)",
+      "status": "PASS",
+      "detail": "Z>0, rozrzut 6%"
+    },
+    {
+      "label": "C4-D: K_hom lokalny 2.rzedu (A2) zidentyfikowany z K_IR (CG-2) co do formy; N5-MC zablokowane jawnie",
+      "status": "PASS",
+      "detail": "homogenizacja local-limit + CG-2 K_IR=rho; residuum substratu niedostepne (patologia)"
+    }
+  ]
+}

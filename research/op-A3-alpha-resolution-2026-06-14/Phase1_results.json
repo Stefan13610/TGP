@@ -1,0 +1,38 @@
+{
+  "cycle": "op-A3-alpha-resolution",
+  "EL_relation": "alpha = p/2 for K(f)=f^p (sek08, POPRAWNE)",
+  "alpha_substrate_Ku2": 0,
+  "alpha_substrate_Ku4": 0.5,
+  "alpha_C3_claim": 2,
+  "alpha_needs_for_2": "Phi ∝ u (amplituda), sprzeczne z Phi=<s^2>~u^2; lub K~u^10",
+  "verdict": "DERIVED-INCONSISTENCY: alpha=2 wymaga Phi∝u; pod Phi=<s^2> alpha=1/2 (K~u^4) lub 0 (K~u^2)",
+  "n_pass": 5,
+  "n_tot": 5,
+  "tests": [
+    {
+      "label": "F-alpha-A: relacja EL poprawna (alpha=p/2 dla K=f^p) — sek08 OK",
+      "status": "PASS",
+      "detail": "EL coeff = p/2 = p/2"
+    },
+    {
+      "label": "F-alpha-A(ii): C3 arytmetyka OK — JESLI K(Phi/Phi0)=(Phi/Phi0)^4 to alpha=2",
+      "status": "PASS",
+      "detail": "alpha_C3=2"
+    },
+    {
+      "label": "F-alpha-B: substrat K~u^4 + Phi~u^2 (poprawna transformacja) => alpha != 2",
+      "status": "PASS",
+      "detail": "alpha(s=2) = 1/2 (= 1/2, NIE 2)"
+    },
+    {
+      "label": "F-alpha-C: alpha=2 NIE wynika z substratu pod Phi~u^2 => INCONSISTENCY (chain zlamany w C3)",
+      "status": "PASS",
+      "detail": "alpha(substrat)=1/2 (K~u^4) lub 0 (K~u^2); thm:D-uniqueness C3=2 przez pominiecie Phi~u^2"
+    },
+    {
+      "label": "F-alpha-D: opcje naprawy wyznaczone (B: Phi∝u amplituda => alpha=2, ale lamie Phi=<s^2>)",
+      "status": "PASS",
+      "detail": "alpha=2 <=> Phi∝u (amplituda); Phi=<s^2>∝u^2 => alpha=1/2"
+    }
+  ]
+}

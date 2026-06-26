@@ -1,0 +1,138 @@
+==============================================================================
+PHASE 2 — c(n_local) derivation z entropy crayon box formalism
+Cycle: op-CE-H-gamma-5-c-interpretation-2026-05-24
+Authorization: User 'działaj Phase 2' 2026-05-24
+Discipline: strict cycle 1/2/7; 0 hardcoded T_pass=True
+==============================================================================
+
+------------------------------------------------------------------------------
+T_P2_1 — Available slot count: ω_free = N_max - n_occupied
+------------------------------------------------------------------------------
+  ω_free computed:  N_max - n
+  ω_free expected:  N_max - n
+  diff (must be 0): 0
+  T_P2_1 PASS: True
+
+------------------------------------------------------------------------------
+T_P2_2 — Reconfig capacity ratio Ω(n)/Ω_max = (N_max-n)/N_max
+------------------------------------------------------------------------------
+  Ω(n)/Ω_max raw:       (N_max - n)/N_max
+  After substitution:   (n_critical - n_local)/n_critical
+  Expected form:        1 - n_local/n_critical
+  diff (must be 0):     0
+  T_P2_2 PASS: True
+
+------------------------------------------------------------------------------
+T_P2_3 — c_eff(n_local) formula derivation
+------------------------------------------------------------------------------
+  c_eff(n_local) derived:  c0*(1 - n_local/n_critical)
+  c_eff(n_local) expected: c0 - c0*n_local/n_critical
+  diff (must be 0):        0
+  T_P2_3 PASS: True
+
+------------------------------------------------------------------------------
+T_P2_4 — F-γ-5-D (i): c(n_local → 0) → c_0 (deep space limit)
+------------------------------------------------------------------------------
+  c(n_local=0) computed:  c0
+  c(n_local=0) expected:  c0
+  diff (must be 0):       0
+  T_P2_4 PASS: True  (F-γ-5-D property (i): deep space → c_0)
+
+------------------------------------------------------------------------------
+T_P2_5 — F-γ-5-D (ii): c(n_local → n_critical) → 0 (event horizon)
+------------------------------------------------------------------------------
+  c(n_local=n_critical) computed:  0
+  c(n_local=n_critical) expected:  0
+  diff (must be 0):                0
+  T_P2_5 PASS: True  (F-γ-5-D property (ii): event horizon emergence)
+
+------------------------------------------------------------------------------
+T_P2_6 — F-γ-5-D (iii): ∂c/∂n_local < 0 (monotonic decreasing)
+------------------------------------------------------------------------------
+  ∂c/∂n_local computed:  -c0/n_critical
+  ∂c/∂n_local expected:  -c0/n_critical
+  diff (must be 0):      0
+  Numerical sign (c0=1, n_critical=1): -1.0  (must be < 0)
+  T_P2_6 PASS: True  (F-γ-5-D property (iii): monotonic decreasing)
+
+------------------------------------------------------------------------------
+T_P2_7 — F-γ-5-D combined verification
+------------------------------------------------------------------------------
+  (i)   c(n → 0) → c_0:     True
+  (ii)  c(n → n_critical) = 0: True
+  (iii) monotonic decreasing:  True
+  T_P2_7 PASS: True  (F-γ-5-D ALL 3 properties verified)
+
+------------------------------------------------------------------------------
+T_P2_8 — n_critical dimensional analysis: ℓ_P^(-3)
+------------------------------------------------------------------------------
+  ℓ_P (Planck length) ≈ 1.616e-35 m
+  n_critical = 1/ℓ_P³ ≈ 2.370e+104 /m³
+  Expected order of magnitude: ~2.37×10¹⁰⁴ /m³
+  Ratio to expected: 0.9998  (should be within factor 10)
+  Positive + finite: True
+  T_P2_8 PASS: True  (n_critical ~ Planck density; TGP-natural)
+
+------------------------------------------------------------------------------
+T_P2_9 — Weak-field connection: δc/c_0 ∝ M/r (GR scaling)
+------------------------------------------------------------------------------
+  δc/c_0 = α·M/(r·n_critical): M*alpha/(n_critical*r)
+  ∂(δc/c_0)/∂M: alpha/(n_critical*r) → numerical 1.0 (must be > 0)
+  ∂(δc/c_0)/∂r: -M*alpha/(n_critical*r**2) → numerical -1.0 (must be < 0)
+  Scaling: linear in M, inverse linear in r → matches GR δt/t = GM/(rc²)
+  T_P2_9 PASS: True  (Phase 5 input: GR-like linear M/r scaling)
+
+------------------------------------------------------------------------------
+T_P2_10 — Linear regime sanity check (small n/n_critical)
+------------------------------------------------------------------------------
+  n_local/n_critical = 0.001
+  c/c_0 computed: 0.999
+  c/c_0 expected: 0.999
+  diff: 0.0
+  Threshold: diff < 1e-10 (linear form exact)
+  T_P2_10 PASS: True  (linear regime exact)
+
+==============================================================================
+PHASE 2 SUMMARY — substantive FP results
+==============================================================================
+  T_P2_1: PASS
+  T_P2_2: PASS
+  T_P2_3: PASS
+  T_P2_4: PASS
+  T_P2_5: PASS
+  T_P2_6: PASS
+  T_P2_7: PASS
+  T_P2_8: PASS
+  T_P2_9: PASS
+  T_P2_10: PASS
+
+  Total: 10/10 substantive FP PASS
+  Hardcoded T_pass=True count: 0  (strict cycle 1/2/7 preserved)
+
+==============================================================================
+DERIVED FORMULA (Phase 2 RESULT)
+==============================================================================
+
+  c(n_local) = c_0 · (1 - n_local / n_critical)
+
+  Properties (verified):
+  - c(n_local=0) = c_0           (F-γ-5-D (i) PASS — deep space)
+  - c(n_local=n_critical) = 0    (F-γ-5-D (ii) PASS — event horizon)
+  - monotonic decreasing         (F-γ-5-D (iii) PASS)
+
+  Mapping to pre-registered forms:
+  - MATCH Form L1 (β=1): linear blockage
+  - MATCH Form L2 (γ=1): linear entropy ratio
+  - Declared: CONFIRMED_FORM_L1_LINEAR (β=1) ≡ CONFIRMED_FORM_L2_LINEAR (γ=1)
+
+  n_critical TGP-native scaling:
+  - n_critical = 1/ℓ_P³ ≈ 2.4×10¹⁰⁵ /m³ (Planck density)
+  - Derived from substrate Planck-scale lattice (Appendix E Thm:natural-cutoff)
+
+  Phase 5 implication (preview):
+  - For point mass M at r: δc/c_0 ∝ M/r — GR-LIKE linear scaling
+  - Phase 5 will compute exact prefactor + test F-γ-5-A (R_s) + F-γ-5-B (δt/t)
+
+==============================================================================
+Phase 2 sympy execution COMPLETE
+==============================================================================

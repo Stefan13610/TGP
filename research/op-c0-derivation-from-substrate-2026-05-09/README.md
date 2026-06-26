@@ -5,8 +5,9 @@ type: research-cycle
 priority: P1_CRITICAL
 parent: "[[../op-emergent-metric-from-interaction-2026-05-09/Phase_FINAL_close.md]]"
 target: "Numerical pinning c_0 = C(ψ=1) z first-principles substrate derivation"
-classification: NUMERICAL_PINNING_CYCLE
-status: ACTIVE — Phase 0
+classification: NUMERICAL_PINNING_CYCLE → SUPERSEDED (#37, 2026-06-22)
+status: 🔴 SUPERSEDED — werdykt „STRUCTURAL DERIVED (heuristic) c₀≈4π" obalony przez #37 jako matching+kalibracja (nie derywacja); c₀ = wolny parametr UV
+superseded_by: "[[../op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]]"
 predecessor_cycles:
   - "[[../op-emergent-metric-from-interaction-2026-05-09/]] (CLOSED, 57/57 PASS)"
   - "[[../op7/]] (OP-7 T3.4 LOCK ξ=G·Φ_0², closure 2026-04-26 σ_ab Path B)"
@@ -25,6 +26,13 @@ tags:
 ---
 
 # op-c0-derivation-from-substrate-2026-05-09
+
+> 🔴 **SUPERSEDED przez #37 (2026-06-22)** — [[../op-c0-derivation-from-substrate-2026-06-22/Phase_FINAL_close.md]].
+> Werdykt tego cyklu („STRUCTURAL DERIVED (heuristic), c₀≈4π") **NIE jest wyprowadzeniem**: „4π" pochodzi
+> z matchingu ξ_eff (warunek dopasowania) + kalibracji GW150914, a iloczyn c₀·κ_σ=4π·1/(3π)=4/3 jest
+> algebraicznie trywialny (post-hoc-konstruowalny). Po dowodach #33 (rozbieżność liniowa UV −16/35 operatora
+> ∂ŝ∂ŝ) i #34 (brak bieguna spin-2) ustalono, że c₀ = C(ψ=1) to **ta sama UV-czuła normalizacja co C_σ**
+> ⟹ **wolny parametr UV**. Treść poniżej zachowana jako **zapis historyczny**.
 
 ## §0 — Mission
 

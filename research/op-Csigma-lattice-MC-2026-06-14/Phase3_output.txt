@@ -1,0 +1,57 @@
+
+======================================================================
+Phase 3 — UNIT-BRIDGE: T = C_sigma sigma_0^2, kappa_E = 8 pi G_0 T / c^3
+======================================================================
+
+======================================================================
+(A) Struktura (sympy): kappa_E, redundancja przeskalowania, prog survival
+======================================================================
+  T = C_sigma*sigma_0^2 ;  kappa_E = 8*pi*C_sigma*G0*sigma_0**2/c**3
+  redundancja: T(C_sigma/lam^2, lam*sigma_0) - T = 0 -> T INWARIANTNE
+  [PASS] P3a: redundancja przeskalowania => T=C_sigma*sigma_0^2 jedyny fizyczny (reuse parent 3/3)
+  T_survive = (5/6) c^3/(8 pi G0) ;  T_natural = c^3/(8 pi G0) (graviton GR) ;  T_s/T_n = 5/6
+  [PASS] P3b: prog survival/naturalna = 5/6 (LOCKED, reuse parent)
+
+======================================================================
+(B) Unit-bridge numeryczny: skladanie kappa_E z C_sigma (MC) i skal O(1) substratu
+======================================================================
+  C_sigma (Phase 2, najczystsze nsh>=8) = [0.499, 0.699, 0.649] -> central 0.616 (stat +-0.049)
+  Phi_0=v^2=2*rho_0* = 0.0609 (CG-2); sigma_0~Phi_0; a_Gamma=1/Phi_0=16.42
+  reprezentatywny central kappa_E ~ 0.616  (= C_sigma * O(1); naturalny punkt ~1)
+
+======================================================================
+(C) Budzet systematyki (multiplikatywny, R-continuum + R-unit-bridge) — JAWNY
+======================================================================
+    [0.50, 2.00]  C_sigma schemat (R-continuum, operator zlozony power-divergent)
+    [0.70, 1.50]  sigma_0/Phi_0 (normalizacja VEV kierunkowego)
+    [0.50, 2.00]  projekcja tensorowa t (TT 5-komp., ŝ skalar-vs-wektor)
+    [0.50, 2.00]  G_0~J*mu + most jednostkowy (R-unit-bridge HIGH)
+    [0.70, 1.50]  amplitude-matching xi_eff/c^3 (normalizacja)
+  Laczny faktor systematyki: [0.061, 18.000]
+  => kappa_E in [0.038, 11.087]  (central 0.616, O(1))
+
+======================================================================
+(D) Test value-blind: kappa_E vs 5/6 (prog LOCKED) i vs 1 (naturalna)
+======================================================================
+  pasmo kappa_E = [0.038, 11.087]
+  5/6 = 0.8333 w pasmie? True
+  1   = 1.0000 w pasmie? True
+  => pasmo obejmuje I 5/6 I 1 => NIE rozroznia SURVIVE od FALSIFIED(kappa_E=1) => PARTIAL
+  Dyspozycja F-LMC-C (numeryczna): PARTIAL
+  [PASS] F-LMC-B: T=C_sigma*sigma_0^2 zlozone w c^3/G_0 z bledem stat.+syst. (pasmo jawne)
+         => kappa_E in [0.04,11.09], central 0.62
+  [PASS] F-LMC-C: test vs 5/6 = PARTIAL
+         => 5/6 in band: True; 1 in band: True
+
+======================================================================
+WERDYKT Phase 3 (handoff do Phase FINAL)
+======================================================================
+  Struktura: T=C_sigma*sigma_0^2 (redundancja), kappa_E=8 pi G0 T/c^3, survival 5/6 (sympy reuse).
+  Numeryka: kappa_E = O(1), central 0.62, pasmo [0.04,11.09].
+  5/6 (0.833) i 1 OBA w pasmie => unit-bridge NIE rozroznia survival od kappa_E=1.
+  => F-LMC-C = PARTIAL (numeryczny przedzial). Lean FALSIFIED: naturalna O(1)~1 != 5/6, brak symetrii.
+
+  Testy: 4/4 PASS
+  Wyniki: Phase3_results.json
+
+SESJA: op-Csigma-lattice-MC Phase 3 (2026-06-14)

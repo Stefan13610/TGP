@@ -1,0 +1,86 @@
+========================================================================
+Phase 3 sympy — op-CE-H-3D-native-interaction-2026-05-22
+========================================================================
+
+Phase 2 V_int(L) data (numerical):
+  L:     [ 1.  2.  4.  8. 16. 32.]
+  V_int: [24.6676 20.4723 15.8797 11.5382  7.2423  3.1137]
+
+------------------------------------------------------------------------
+T_P3_1 [FP]: Logarithmic fit V_int(L) = A + B·log(L)
+------------------------------------------------------------------------
+Fit form: V_int(L) = A + B·log(L)
+  A = 24.6619
+  B = -6.2572  (expected: ±2π ≈ ±6.283 for log scaling)
+  R²_log = 0.999787
+
+Pre-registered threshold (Phase 0 §8.10): R²_log ≥ 0.95
+  Computed R²_log = 0.999787
+  Pass: True
+
+------------------------------------------------------------------------
+T_P3_2 [FP]: Exponential fit V_int(L) = C·exp(-m·L) + D
+------------------------------------------------------------------------
+Fit form: V_int(L) = C·exp(-m·L) + D
+  C = 23.0859
+  m = 0.1373
+  D = 3.5625
+  R²_exp = 0.987108
+
+(NOTE: Exponential fit may achieve high R² because of D offset parameter;
+ critical comparison is R²_log vs R²_exp + functional form analysis)
+
+------------------------------------------------------------------------
+T_P3_3 [FP]: F-γ-1 CRUCIAL TEST — log vs exp discrimination
+------------------------------------------------------------------------
+R²_log = 0.999787
+R²_exp = 0.987108
+Difference (R²_log - R²_exp) = 0.012680
+
+Pre-registered F-γ-1 PASS criteria (Phase 0 §8.10):
+  (a) R²_log ≥ 0.95: True  (actual 0.9998)
+  (b) R²_log > R²_exp + 0.02: False  (actual diff 0.0127)
+
+Secondary verification — ΔV/Δlog(L) constancy:
+  Slopes per interval: [-6.05253851 -6.62572124 -6.26346052 -6.19767363 -5.95631075]
+  Mean slope: -6.2191
+  Std dev: 0.2300
+  Coefficient of variation: 0.0370
+  (If pure log, CV should be small; pure exp would have large CV across intervals)
+
+F-γ-1 verdict (T_P3_3):
+  (✗) F-γ-1 FAIL per pre-registered criteria
+
+Structural interpretation:
+  V_int(L) data: spans L ∈ [1.0, 32.0] (factor 32 range)
+  V_int magnitude ratio: V(1.0)/V(32.0) = 7.922
+  Log expectation: log(32.0/r_0) / log(1.0/r_0) ≈ 5.77/3.0 ≈ 1.92 (or 7.92 if shift)
+  Pure exp expectation: exp(m·(L_max - L_min)) = exp(31·m) → very large ratio
+  Data ratio 7.9 (24.7/3.1): consistent with LOG, NOT pure exp
+
+========================================================================
+Phase 3 aggregate verdict
+========================================================================
+
+Substantive FP tests:
+  ✓ T_P3_1: PASS  (Log fit R²_log = 0.9998 (threshold ≥ 0.95))
+  ℹ T_P3_2: EXEC_PASS  (Exp fit executed, R²_exp = 0.9871 (informational))
+  ✗ T_P3_3: FAIL  (F-γ-1 differential test (R²_log - R²_exp = 0.0127))
+
+Substantive metrics:
+  2/3 FP substantive PASS (T_P3_2 informational)
+  0 hardcoded T_pass=True (strict cycle 1/2/7 preserved)
+  0/1 DEC budget used
+
+========================================================================
+F-γ-1 CRUCIAL TEST VERDICT:
+========================================================================
+  ✗ F-γ-1 FAIL (or PARTIAL)
+    Detailed analysis required Phase FINAL
+
+Next step:
+  F-γ-1 FAIL → HARD HALT scenario; proceed to Phase FINAL z honest verdict
+
+========================================================================
+END OF Phase 3 sympy
+========================================================================

@@ -339,6 +339,34 @@ To jest zgodne ze struktur\k{a} wyprowadzon\k{a} w~sek10
 ($K(\phi) = K_{\rm geo}\,\phi^2$).
 \end{uwaga}
 
+\begin{uwaga}[KOREKTA \texttt{op-A3-alpha-resolution} (2026-06-14) --- $\alpha$ NIE jest niezmiennikiem $\Phi=\phi^2$]
+\label{rem:A3-correction-alpha}
+\textbf{Uwaga rem.~\ref{rem:A3-structural} powy\.zej jest ODWR\'OCONA i~wymaga korekty
+(Opcja~B, autoryzacja u\.zytkownika; por.\ sek08 rem.~\ref{rem:amplitude-vs-density-alpha}).}
+Cykl \texttt{research/op-A3-alpha-resolution-2026-06-14/} (sympy, value-blind 5/5) wykaza\l{}:
+dla $\mathcal L=-\tfrac12 K(\varphi)(\nabla\varphi)^2$ wsp\'o\l{}czynnik gradientowy r\'ownania pola wynosi
+$\alpha=K'\varphi/(2K)$; dla $K\propto\varphi^p$ daje $\alpha=p/2$.
+\begin{itemize}[nosep]
+  \item Je\.zeli polem makroskopowym jest \textbf{g\k{e}sto\'s\'c} $\Phi=\phi^2$ (jak twierdzi rem.~\ref{rem:A3-structural}),
+    a~substrat daje $K\propto\phi^4$ (prop:substrate-action), to po zmianie zmiennych
+    $K_{\rm eff}(\Phi)\propto\Phi$ (liniowe) $\Rightarrow \boxed{\alpha=\tfrac12}$, \textbf{NIE} $2$.
+    (Dla lematu~K\_$\phi_2$ $K\propto\phi^2$: $\alpha=0$.)
+  \item $\alpha$ \textbf{NIE jest niezmiennikiem} nieliniowej redefinicji $\phi\to\Phi=\phi^2$ ---
+    twierdzenie ,,ka\.zda teoria z~$\Phi=$ kwadrat amplitudy ma $\alpha=2$" jest \textbf{fa\l{}szywe}.
+  \item Kanonicznym polem TGP jest \textbf{g\k{e}sto\'s\'c} $\Phi$ (def.~\ref{def:Phi}); $\alpha=2$ jest
+    \textbf{postulowane na g\k{e}sto\'sci} poprzez aksjomatyczne sprz\k{e}\.zenie konforemne
+    $K(\Phi/\Phi_0)=(\Phi/\Phi_0)^4$ (sek10 uw.~\ref{rem:canonical_g4}); ma status \textbf{selekcji} (C1--C3),
+    nie wyprowadzenia z~substratu (sek08 rem.~\ref{rem:alpha2-pivot-status-pl}). Reprezentacja amplitudowa
+    ($\hat s\propto\sqrt{\Phi}$, $K\propto\hat s^4$) daje $\alpha=\tfrac12$ w~g\k{e}sto\'sci ---
+    czyli substrat \textbf{nie derywuje} $\alpha=2$.
+\end{itemize}
+\textbf{Wniosek:} lemat~A3 zachowuje wa\.zno\'s\'c jako stwierdzenie, \.ze cz\l{}on $(\nabla\Phi)^2/\Phi$
+\emph{pojawia si\k{e}} przy zmianie zmiennych (jest niezerowy), ale jego \textbf{warto\'s\'c} $\alpha=2$
+jest postulatem na g\k{e}sto\'sci $\Phi$ (kanoniczne pole), a~reprezentacja amplitudowa substratu da\l{}aby
+$\alpha=\tfrac12$ --- co potwierdza nie-derywowalno\'s\'c $\alpha=2$ z~substratu (korekta ramowania:
+\texttt{op-amplitude-density-global-audit} 2026-06-16).
+\end{uwaga}
+
 % =============================================================
 \subsection*{Q2.5 Lemat A4: Identyfikacja wsp\'o\l{}czynnik\'ow}
 \label{ssec:lemma-A4}

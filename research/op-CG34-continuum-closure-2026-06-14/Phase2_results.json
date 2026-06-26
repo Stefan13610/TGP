@@ -1,0 +1,58 @@
+{
+  "phase": 2,
+  "cycle": "op-CG34-continuum-closure",
+  "target": "CG-3",
+  "L": 48,
+  "kappa": 0.187,
+  "xi": 2.8042768868131236,
+  "norm_L2": {
+    "1": 0.813496171781761,
+    "2": 0.6447132447462508,
+    "3": 0.6229252676275341,
+    "4": 0.6170980112413369,
+    "6": 0.6139083795690985,
+    "8": 0.6130911191499959
+  },
+  "diff_L2_seq": [
+    0.4961048588206956,
+    0.18666454980877006,
+    0.07019679030012853
+  ],
+  "diff_H1_seq": [
+    1.3395409140711578,
+    0.3801256239838427,
+    0.11268454065205591
+  ],
+  "rate_p": 1.4285911359333154,
+  "rate_R2": 0.9989664836001826,
+  "cg3_closed": true,
+  "n_pass": 5,
+  "n_tot": 5,
+  "tests": [
+    {
+      "label": "C3-A: ||Phi_B||_L2 ograniczone i ZBIEZNE dla b>=2 (A1(i))",
+      "status": "PASS",
+      "detail": "b>=2: [0.613,0.645], rozrzut 5% (<15%); zbiega do 0.613"
+    },
+    {
+      "label": "C3-B: xi skonczone (zanik wykladniczy korelacji, W4)",
+      "status": "PASS",
+      "detail": "xi=2.80"
+    },
+    {
+      "label": "C3-C(i): normy NIEZEROWE (naprawiono prior bug ||dPhi||=0.000000)",
+      "status": "PASS",
+      "detail": "||dPhi||_L2=[0.4961, 0.18666, 0.0702]"
+    },
+    {
+      "label": "C3-C(ii): H^1 CAUCHY — ||Phi_b-Phi_2b|| MALEJE z b (zbieznosc, CG-3 rdzen)",
+      "status": "PASS",
+      "detail": "L2:[0.4961, 0.1867, 0.0702] H1:[1.3395, 0.3801, 0.1127]"
+    },
+    {
+      "label": "C3-D: rate zbieznosci p>=1/2 zgodny z (i szybszy niz) bound A5",
+      "status": "PASS",
+      "detail": "p=1.43 (>=0.5), R^2=1.00; zbieznosc nie wolniejsza niz A5"
+    }
+  ]
+}

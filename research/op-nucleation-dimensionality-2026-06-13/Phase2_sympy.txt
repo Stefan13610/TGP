@@ -1,0 +1,47 @@
+========================================================================================
+op-nucleation-dimensionality — Phase 2 (F-ND-C)
+========================================================================================
+
+----------------------------------------------------------------------------------------
+NUKLEACJA — thin-wall S_E(d)
+----------------------------------------------------------------------------------------
+[PASS] FP-C1: R_c(d) = (d-1)σ/ε; B(d)=S_E(R_c) = [Ω_(d-1)/d]·(d-1)^(d-1)·σ^d/ε^(d-1) (thin-wall, symbolicznie).
+[PASS] FP-C2: g(d) [σ=ε=1]: g(1)=2.000, g(2)=3.142, g(3)=16.755, g(4)=133.240, g(5)=1347.530, g(6)=16149.102  ⇒ B(d) MONOTONICZNIE rosnąca (True); Γ∝exp(−B) faworyzuje NISKIE d, brak piku w d=3.
+[PASS] FP-C3: B(d) ∝ σ^d/ε^(d-1) (dimensionful) ⇒ porównanie tempa Γ między różnymi D wymaga wstrzykniętej skali (σ,ε) ⇒ brak value-blind selekcji D z nukleacji.
+
+----------------------------------------------------------------------------------------
+MARGINALNOŚĆ grawitacyjna — uogólnienie FCR na D
+----------------------------------------------------------------------------------------
+[PASS] FP-C4: Zasada (trychotomia stabilności ⇒ dE=0 marginal) NIE odwołuje się do D ⇒ marginalność jako PRYNCYPIUM nie selekcjonuje wymiaru (D-niezależna).
+[PASS] FP-C5: ρ̄(D) = [D·v_c²/(2·Ω_(D-1)·c²)]·H²/G_D — DOMYKA się dla symbolicznego D (zero specjalnego D); D-parametryczne, nie selekcjonujące.
+[PASS] FP-C6: EdS w D: a∝t^(2/D) ⇒ v_flow=(2/D)c, indicial p(D)=2/D — gładkie w D, brak wyróżnionego D; (w D=3: p=2/3, v=2c/3 — zgodne z FCR B-k4).
+[PASS] FP-C7: Bertrand/Ehrenfest (orbity stabilne ⟺ D=3) NIE liczone jako niezależny selektor: twierdzenie klasyczne (import) + pokrywa się z F-ND-B (double-count) ⇒ comparison-only.
+[PASS] FP-C8: Circularity guard: B(d), ρ̄(D), p(D) parametryczne; D=3 wyłącznie w comparison-only; ε_G/v_c/coeff '3' z FCR pojawiają się jako PRZYPADEK D=3 podstawienia, nie input.
+
+========================================================================================
+WERDYKT F-ND-C (z flag; klasy CLOSED)
+========================================================================================
+F-ND-C = NUCL-MARG-NO-SELECTION
+   • nukleacja selekcjonuje D=3? NO (monotoniczna; faworyzuje niskie d; wymaga skali)
+   • marginalność selekcjonuje D=3? NO (zasada D-niezależna; ρ̄ domyka dla każdego D)
+   • orbity (Bertrand) jako niezależny selektor? False (⇒ comparison-only)
+
+----------------------------------------------------------------------------------------
+COMPARISON-ONLY (po locku)
+----------------------------------------------------------------------------------------
+   • Marginalność w D_obs=3: ρ̄=3H²/(8πG) odtworzone (v_c=c, Ω_2=4π) — zgodne z FCR LOCKED.
+   • Bertrand/Ehrenfest: stabilne orbity związane tylko D=3 — autentyczne, ale to fizyka stabilności (oś F-ND-B) + import klasyczny, nie niezależny derived selektor.
+
+========================================================================================
+FP STATISTICS: 8/8 PASS   (0 hardcoded T_pass; werdykt z flag)
+========================================================================================
+  PASS  FP-C1
+  PASS  FP-C2
+  PASS  FP-C3
+  PASS  FP-C4
+  PASS  FP-C5
+  PASS  FP-C6
+  PASS  FP-C7
+  PASS  FP-C8
+
+F-ND-C = NUCL-MARG-NO-SELECTION

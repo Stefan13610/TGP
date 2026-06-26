@@ -1,0 +1,49 @@
+{
+  "cycle": "op-Phi-field-identity-resolution",
+  "scope_correction": "field-identity (amplituda vs gestosc) JUZ rozstrzygniete -> gestosc kanoniczna; cykl bada substrate-realizability alpha=2",
+  "EL_relation": "alpha = p/2 (sek08, POPRAWNE; op-A3 niepodwazone)",
+  "alpha_density_of_s": "(s-1)/2",
+  "s_for_alpha2": 5,
+  "K_substrate_for_alpha2": "K(s_hat) ~ s_hat^10",
+  "bond_order_extraction": 6,
+  "bond_order_weight": 5,
+  "canonical_v2_bond_s": 2,
+  "canonical_v2_alpha": "1/2",
+  "V_bond_orders": [
+    3,
+    4
+  ],
+  "alpha2_bond_order": 6,
+  "no_go": false,
+  "verdict": "REALIZABLE-NONCANONICAL",
+  "verdict_plain": "alpha=2 na gestosci jest substrate-realizowalne, ale tylko przez nie-kanoniczny Z2-skalarny bond K~s_hat^10 (rzad 6), niezalezny od V i nieselekcjonowany zasada; NIE no-go (fundament nie zlamany), ale NIE domkniete (alpha=2 pozostaje aksjomatem na gestosci dopoki brak zasady selekcjonujacej rzad 6)",
+  "n_pass": 5,
+  "n_tot": 5,
+  "tests": [
+    {
+      "label": "F1: alpha_density(s)=(s-1)/2; reprodukuje op-A3 (s=1->0, s=2->1/2)",
+      "status": "PASS",
+      "detail": "alpha(s=1)=0, alpha(s=2)=1/2"
+    },
+    {
+      "label": "F2: alpha=2 wymaga s*=5 (tj. K(s_hat) ~ s_hat^10)",
+      "status": "PASS",
+      "detail": "s* = 5, 2s* = 10"
+    },
+    {
+      "label": "F3: s*=5 -> bond DOPUSZCZALNY (skalar, Z2-parzysty, calkowity) => NIE no-go; alpha=2 REALIZOWALNE",
+      "status": "PASS",
+      "detail": "K~s_hat^10; mapowanie rzedu: ekstrakcja n=6 ((s_i s_j)^6), konwencja wagowa m=5"
+    },
+    {
+      "label": "F4: alpha=2 NIE pochodzi z kanonicznego v2 bondu (s=2 daje alpha=1/2) => NIE-KANONICZNY",
+      "status": "PASS",
+      "detail": "v2: alpha=1/2; alpha=2 wymaga s=5"
+    },
+    {
+      "label": "F5: czlon kinetyczny dajacy alpha=2 (n=6) jest NIEZALEZNY od czlonow V (n=3,4) => osobny tuned coef",
+      "status": "PASS",
+      "detail": "alpha=2 nie wypada 'za darmo' z bondu generujacego kanoniczny potencjal; to osobne wejscie"
+    }
+  ]
+}

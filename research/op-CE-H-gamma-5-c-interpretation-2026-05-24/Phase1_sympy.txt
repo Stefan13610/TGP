@@ -1,0 +1,145 @@
+==============================================================================
+PHASE 1 — c(N global) derivation z extended TGP Lagrangian + Appendix E
+Cycle: op-CE-H-gamma-5-c-interpretation-2026-05-24
+Authorization: User 'działaj Phase 1' 2026-05-24
+Discipline: strict cycle 1/2/7; 0 hardcoded T_pass=True
+==============================================================================
+
+------------------------------------------------------------------------------
+T_P1_1 — Lagrangian EOM derivation
+------------------------------------------------------------------------------
+  dV/dΦ computed:  -J + Phi*lam*(Phi**2 - v**2)
+  dV/dΦ expected:  -J + Phi*lam*(Phi**2 - v**2)
+  diff (must be 0): 0
+  T_P1_1 PASS: True
+
+------------------------------------------------------------------------------
+T_P1_2 — Partial Euler sum identity (compute Σ_{k=0}^{N-1} 1/k! for N=1..5)
+------------------------------------------------------------------------------
+  R(N) computed:  [1, 2, 5/2, 8/3, 65/24]
+  R(N) expected:  [1, 2, 5/2, 8/3, 65/24]
+  diffs (all must be 0): [0, 0, 0, 0, 0]
+  T_P1_2 PASS: True
+
+------------------------------------------------------------------------------
+T_P1_3 — Limit R(N → ∞) = e
+------------------------------------------------------------------------------
+  R(∞) computed:  E
+  R(∞) expected:  E
+  diff (must be 0): 0
+  T_P1_3 PASS: True
+
+------------------------------------------------------------------------------
+T_P1_4 — Boundary f(N=1) = 0 verification
+------------------------------------------------------------------------------
+  f(1) computed:  0
+  f(1) expected:  0
+  diff (must be 0): 0
+  T_P1_4 PASS: True  (F-γ-5-C property (ii): c(1) = 0)
+
+------------------------------------------------------------------------------
+T_P1_5 — Boundary f(N → ∞) = 1 verification
+------------------------------------------------------------------------------
+  f(∞) computed:  1
+  f(∞) expected:  1
+  diff (must be 0): 0
+  T_P1_5 PASS: True  (F-γ-5-C property (i): c(∞) = c_0)
+
+------------------------------------------------------------------------------
+T_P1_6 — Monotonicity f(N+1) - f(N) > 0 for N=1..10
+------------------------------------------------------------------------------
+  f(N) values for N=1..11:
+    N=1: f(N) = 0.0000000000
+    N=2: f(N) = 0.5819767069
+    N=3: f(N) = 0.8729650603
+    N=4: f(N) = 0.9699611781
+    N=5: f(N) = 0.9942102076
+    N=6: f(N) = 0.9990600135
+    N=7: f(N) = 0.9998683144
+    N=8: f(N) = 0.9999837860
+    N=9: f(N) = 0.9999982200
+    N=10: f(N) = 0.9999998237
+    N=11: f(N) = 0.9999999841
+  Differences f(N+1) - f(N):
+    N=1 → N+1: Δf = 0.5819767069
+    N=2 → N+1: Δf = 0.2909883534
+    N=3 → N+1: Δf = 0.0969961178
+    N=4 → N+1: Δf = 0.0242490295
+    N=5 → N+1: Δf = 0.0048498059
+    N=6 → N+1: Δf = 0.0008083010
+    N=7 → N+1: Δf = 0.0001154716
+    N=8 → N+1: Δf = 0.0000144339
+    N=9 → N+1: Δf = 0.0000016038
+    N=10 → N+1: Δf = 0.0000001604
+  T_P1_6 PASS: True  (F-γ-5-C property (iii): monotonic increasing)
+
+------------------------------------------------------------------------------
+T_P1_7 — Saturation rate check (f(5)/f(4) - 1 small)
+------------------------------------------------------------------------------
+  f(4) = 0.9699611781  (~97% saturated expected)
+  f(5) = 0.9942102076  (~99% saturated expected)
+  f(5)/f(4) = 1.0250000000
+  |f(5)/f(4) - 1| = 0.0250000000
+  Expected threshold: |ratio - 1| < 0.05 (saturation rate < 5%)
+  T_P1_7 PASS: True  (saturation extremely fast)
+
+------------------------------------------------------------------------------
+T_P1_8 — F-γ-5-C combined verification
+------------------------------------------------------------------------------
+  (i)   c(N → ∞) → c_0:  True
+  (ii)  c(N = 1) = 0:    True
+  (iii) monotonic incr:  True
+  T_P1_8 PASS: True  (F-γ-5-C ALL 3 properties verified)
+
+------------------------------------------------------------------------------
+T_P1_9 — Cosmological epoch saturation: f(N_large) close to 1
+------------------------------------------------------------------------------
+  N = 20 (small but illustrates cosmological-scale saturation):
+  R(20) = 2.71828182845904509080
+  e (target)  = 2.71828182845904509080
+  f(20) = 1.00000000000000000000
+  1 - f(20) = 0.00e+00
+  Expected threshold (cosmological): 1 - f(N) < 10⁻¹⁰
+  T_P1_9 PASS: True  (cosmologically c(N) ≈ c_0 — implication for F8)
+
+==============================================================================
+PHASE 1 SUMMARY — substantive FP results
+==============================================================================
+  T_P1_1: PASS
+  T_P1_2: PASS
+  T_P1_3: PASS
+  T_P1_4: PASS
+  T_P1_5: PASS
+  T_P1_6: PASS
+  T_P1_7: PASS
+  T_P1_8: PASS
+  T_P1_9: PASS
+
+  Total: 9/9 substantive FP PASS
+  Hardcoded T_pass=True count: 0  (strict cycle 1/2/7 preserved)
+
+==============================================================================
+DERIVED FORMULA (Phase 1 RESULT)
+==============================================================================
+
+  c(N) = c_0 · (Σ_{k=0}^{N-1} 1/k! - 1) / (e - 1)
+
+  Properties (verified):
+  - c(N=1) = 0          (F-γ-5-C (ii) PASS)
+  - c(N→∞) = c_0        (F-γ-5-C (i) PASS)
+  - monotonic increasing (F-γ-5-C (iii) PASS)
+  - saturates EXTREMELY FAST: ~97% by N=4, ~99.4% by N=5
+
+  Mapping to pre-registered forms:
+  - Matches S5 INTENT (Euler-e Taylor series, user §3.6 intuition)
+  - Specific normalization corrected from pre-registered S5 to satisfy F-γ-5-C
+  - Declared: CONFIRMED_FORM_S5_REVISED
+
+  Phase 4 implication (pre-derivation honest):
+  - For N(t) >> 5 throughout cosmological history, c(t) ≈ c_0
+  - F8 acceleration NOT rescuable via c(N(t)) variation
+  - F8 re-test (Phase 4) expected: FAIL_LITERAL — same as γ-3'
+
+==============================================================================
+Phase 1 sympy execution COMPLETE
+==============================================================================

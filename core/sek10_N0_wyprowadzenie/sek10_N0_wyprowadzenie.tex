@@ -142,8 +142,9 @@ i~daje $\alpha = 2$.
 Definiując $g \equiv \psi$ i~absorb\-ując stałe:
 $K_0\,\psi\,(\nabla\psi)^2 = (K_0/4)\,g\,(\nabla g)^2$
 (po przeskalowaniu do standardowej normalizacji).
-Definiujemy $K_\mathrm{sub}(g) = K_\mathrm{geo}\,g^2$
-(tw.~\ref{prop:f-from-substrate}), której obcięcie
+Definiujemy kanoniczne konforemne sprzężenie $K(g) = K_\mathrm{geo}\,g^4$
+(uw.~\ref{rem:canonical_g4}; postać substratowa $g^2$ z~tw.~\ref{prop:f-from-substrate}
+jest jej density-frame przybliżeniem, por.\ uw.~\ref{rem:K_to_f_amplitude}), którego obcięcie
 logarytmiczne do pierwszego rzędu wokół $g = 1$ daje:
 \begin{equation}
   \boxed{f(g) = 1 + 2\alpha\ln g,\qquad \alpha = 2,\quad g = \Phi/\Phi_0.}
@@ -155,23 +156,25 @@ Wynik jednopenętlowy jest zgodny z~analizą ERG
 \medskip\noindent
 \textbf{Pełne resummowanie substratowe.}
 Rozwinięcie \eqref{eq:K_eff_1loop} jest pierwszym przybliżeniem
-do pełnej funkcji substratowej
-$K_\mathrm{sub}(g) = K_\mathrm{geo}\,g^2$
-(tw.~\ref{prop:f-from-substrate}), gdyż:
+do pełnej kanonicznej funkcji kinetycznej (konforemne sprz\k{e}\.zenie
+$K(g)=g^4$, uw.~\ref{rem:canonical_g4}; $g$ = kanoniczne pole amplitudowe):
 \begin{equation}
-  K_\mathrm{geo}\,g^2
-  = K_\mathrm{geo}\,e^{2\ln g}
-  = K_\mathrm{geo}\bigl[1 + 2\ln g
-    + 2(\ln g)^2 + \cdots\bigr]
+  K_\mathrm{geo}\,g^4
+  = K_\mathrm{geo}\,e^{4\ln g}
+  = K_\mathrm{geo}\bigl[1 + 4\ln g
+    + 8(\ln g)^2 + \cdots\bigr]
   \;\xrightarrow{\text{trunc. 1. rz.}}\;
   K_\mathrm{geo}(1 + 4\ln g).
   \label{eq:Ksub_expansion_check}
 \end{equation}
-Tym samym $f(g) = 1 + 4\ln g$ jest obcięciem $K_\mathrm{sub}$
-z~$K_\mathrm{geo} = 1$, wiarygodnym dla $|\ln g| \ll 1$.
+Tym samym $f(g) = 1 + 4\ln g$ jest obcięciem $K(g)=g^4$
+z~$K_\mathrm{geo} = 1$, wiarygodnym dla $|\ln g| \ll 1$
+(zgodnie z~$\alpha=2$: $f=1+2\alpha\ln g$).
 W~regionie silnie nieliniowym ($g \lesssim e^{-1/4}$) należy
-stosować pełne $K_\mathrm{sub}(g) = g^2 > 0$, co eliminuje
+stosować pełne $K(g) = g^4 > 0$, co eliminuje
 problem duchów kinetycznych (sekcja~\ref{sec:ghost-resolution}).
+% Korekta op-A3-alpha-resolution (2026-06-14): forma g^2 (wczesna, density-frame) zastapiona
+% kanoniczna g^4 (amplitude-frame, alpha=2), spojnie z uw. rem:canonical_g4 i sek08 rem:amplitude-vs-density-alpha.
 
 \begin{uwaga}[Nota kanoniczna: $K(g) = g^4$ jako dokładne sprzężenie konforemne]
 \label{rem:canonical_g4}
@@ -195,6 +198,34 @@ pierwszego rzędu kanonicznej postaci $K(g) = g^4$, wiarygodnym w~otoczeniu
 próżni ($g \approx 1$). Postać $g^4$ jest dokładna na całym zakresie $g > 0$,
 zachowuje warunek $K(0) = 0$ i~nie wprowadza problemów kinetycznych duchów
 ($K(g) > 0$ dla $g > 0$).
+\end{uwaga}
+
+\begin{uwaga}[Pole amplitudowe vs g\k{e}sto\'s\'c --- rozstrzygni\k{e}cie \texttt{op-A3-alpha-resolution}]
+\label{rem:K_to_f_amplitude}
+\textbf{Konwencja LOCKED (Opcja~B; skorygowana --- audyt \texttt{op-amplitude-density-global-audit} 2026-06-16;
+por.\ sek08 rem.~\ref{rem:amplitude-vs-density-alpha}).}
+Zmienna $g\equiv\psi=\Phi/\Phi_0$ w~tej podsekcji to \textbf{g\k{e}sto\'s\'c} (bezwymiarowa; def.~\ref{def:Phi}),
+i~to ona jest kanonicznym polem TGP. Kanoniczny $\alpha=2$ jest \textbf{postulowany na g\k{e}sto\'sci} poprzez
+konforemne sprz\k{e}\.zenie $K(g)=g^4$ (uw.~\ref{rem:canonical_g4}) --- selekcja C1--C3, nie derywacja.
+\textbf{Reprezentacja amplitudowa:} substrat ma sprz\k{e}\.zenie $K\propto(\text{amplituda }\hat s)^4$ z~$\hat s\propto\sqrt{\Phi}$
+(eq.~\eqref{eq:Phi_phi_id}); przepisane w~g\k{e}sto\'sci (eq.~\eqref{eq:kinetic_macro}, $\psi=\Phi/\Phi_0$
+daj\k{a}ce \emph{liniowy} $K_\mathrm{eff}(\psi)\propto\psi$) daje wsp\'o\l{}czynnik gradientowy
+$\alpha=\tfrac12$ --- poniewa\.z $\alpha$ \textbf{nie jest niezmiennikiem} nieliniowej redefinicji
+$\hat s\to\Phi\propto\hat s^2$. \textbf{Substrat NIE derywuje $\alpha=2$} (da\l{}by $\alpha=\tfrac12$ w~g\k{e}sto\'sci);
+to zgodne z~wycofaniem substratowego wyprowadzenia (sek08 rem.~\ref{rem:alpha2-pivot-status-pl}):
+$\alpha=2$ na g\k{e}sto\'sci ma status \emph{selekcji aksjomatycznej} (C1--C3). Cykl
+\texttt{research/op-A3-alpha-resolution-2026-06-14/} (sympy, value-blind 5/5) zweryfikowa\l{} relacj\k{e}
+$\alpha=p/2$; cykl \texttt{research/op-amplitude-density-global-audit-2026-06-16/} skorygowa\l{} ramowanie
+(pole kanoniczne = g\k{e}sto\'s\'c $\Phi$, nie amplituda) i~ujednolici\l{} formy $g^2\to g^4$ powy\.zej.
+
+\medskip\noindent\textbf{Domkni\k{e}cie (2026-06-23).} Cykle
+\texttt{op-Phi-field-identity-resolution-2026-06-23} (\#38) i~\texttt{op-bond-order-RG-selection-2026-06-23}
+(\#39) (sympy 5/5 ka\.zdy) ustali\l{}y: kanoniczne $\alpha=2$ ($K_{\rm eff}(\psi)\propto\psi^4$) odpowiada
+substratowemu bondowi $K(\hat s)\propto\hat s^{10}$ (rz\k{a}d 6) --- dopuszczalnemu (skalar, $\mathbb{Z}_2$),
+lecz nie-kanonicznemu i~nieselekcjonowanemu przez RG-relevance ($[g_s]=-s(d-2)$). Substratowy bond v2
+($\hat s^4$, $s{=}2$) daje liniowy $K_{\rm eff}(\psi)\propto\psi$ ($\alpha=\tfrac12$, jak~\eqref{eq:kinetic_macro}).
+$\alpha=2$ pozostaje wi\k{e}c selekcj\k{a} konforemn\k{a} na g\k{e}sto\'sci (klasa C1--C3), nie derywacj\k{a}
+substratow\k{a}.
 \end{uwaga}
 
 \begin{wniosek}[Granica N₀ w efektywnej teorii]

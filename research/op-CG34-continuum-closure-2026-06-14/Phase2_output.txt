@@ -1,0 +1,59 @@
+
+======================================================================
+Phase 2 — CG-3: homogenizacja Phi_B -> Phi w H^1 (phi^4, L=48)
+======================================================================
+  L=48, kappa=0.187, lam=1.0; termalizacja...
+  xi_phi (L=48) = 2.80,  konfiguracje = 80
+
+======================================================================
+C3-A: uniform bound sup_b ||Phi_B||_L2 < inf (A1(i))
+======================================================================
+    b=1: ||Phi_b||_L2 = 0.8135  (raw phi^2, b=1)
+    b=2: ||Phi_b||_L2 = 0.6447
+    b=3: ||Phi_b||_L2 = 0.6229
+    b=4: ||Phi_b||_L2 = 0.6171
+    b=6: ||Phi_b||_L2 = 0.6139
+    b=8: ||Phi_b||_L2 = 0.6131
+  (A1(i) dotyczy rodziny blokowej b>=2; b=1=surowe phi^2 ma kontaktowa wariancje)
+  [PASS] C3-A: ||Phi_B||_L2 ograniczone i ZBIEZNE dla b>=2 (A1(i))
+         => b>=2: [0.613,0.645], rozrzut 5% (<15%); zbiega do 0.613
+
+======================================================================
+C3-B: zanik korelacji <phi phi>_c ~ exp(-r/xi)
+======================================================================
+  [PASS] C3-B: xi skonczone (zanik wykladniczy korelacji, W4)
+         => xi=2.80
+
+======================================================================
+C3-C: H^1 CAUCHY ||Phi_b - Phi_2b|| maleje z b (naprawa prior=0)
+======================================================================
+    1->2: ||dPhi||_L2=0.49610  ||dPhi||_H1=1.33954
+    2->4: ||dPhi||_L2=0.18666  ||dPhi||_H1=0.38013
+    4->8: ||dPhi||_L2=0.07020  ||dPhi||_H1=0.11268
+  [PASS] C3-C(i): normy NIEZEROWE (naprawiono prior bug ||dPhi||=0.000000)
+         => ||dPhi||_L2=[0.4961, 0.18666, 0.0702]
+  [PASS] C3-C(ii): H^1 CAUCHY — ||Phi_b-Phi_2b|| MALEJE z b (zbieznosc, CG-3 rdzen)
+         => L2:[0.4961, 0.1867, 0.0702] H1:[1.3395, 0.3801, 0.1127]
+
+======================================================================
+C3-D: rate ||Phi_b - Phi_ref||_L2 vs A5 = C1*(L_B/xi)+C2*(a/L_B)^{1/2}
+======================================================================
+    ||Phi_b - Phi_8||_L2: b=1:0.5340, b=2:0.1991, b=3:0.1116, b=4:0.0696, b=6:0.0425
+    fit potegowy ||dPhi|| ~ L_B^(-p): p=1.43, R^2=0.999
+    (A5 konserwatywnie p>=1/2 z fluktuacji wewnatrzblokowych; zmierzone p=1.43 >= 0.5 => OK)
+  [PASS] C3-D: rate zbieznosci p>=1/2 zgodny z (i szybszy niz) bound A5
+         => p=1.43 (>=0.5), R^2=1.00; zbieznosc nie wolniejsza niz A5
+
+======================================================================
+WERDYKT Phase 2 (CG-3)
+======================================================================
+  C3-A (uniform bound): PASS
+  C3-B (exp decay):     PASS
+  C3-C (H^1 Cauchy):    PASS  <- rdzen CG-3 (naprawiony)
+  C3-D (rate vs A5):    PASS
+  => CG-3 numerycznie: ZAMKNIETY NUM (homogenizacja Phi_B->Phi potwierdzona)
+
+  Testy: 5/5 PASS  (czas 28s)
+  Wyniki: Phase2_results.json
+
+SESJA: op-CG34-continuum-closure Phase 2 (CG-3) (2026-06-14)

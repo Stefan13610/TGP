@@ -1,0 +1,35 @@
+==============================================================================
+Phase 1 -- op-galactic-substrate-tail: FAST-KILL (F-GST-A)
+==============================================================================
+[PASS] FP1 -- spectrum reproduces LOCKED forms; m_chi^2(Phi0) = 0 EXACT (massless Goldstone in bulk)
+        m_h^2 = lambda*(-Phi0**2 + 3*w**2) ; m_chi^2 = lambda*(-Phi0**2 + w**2) ; at w=Phi0: m_h^2 = 2*Phi0**2*lambda = m_sigma^2, m_chi^2 = 0
+[PASS] FP2 -- U(1) exact in LIVE action; theta enters ONLY via derivatives (shift symmetry) => zero perturbative mass for chi; RP2 compactness affects charges, not mass (declared)
+        V(|e^{ia}Phi|^2)-V(|Phi|^2) = 0 ; |dPhi|^2 = rho**2*theta_x**2 + rho_x**2 (theta undifferentiated absent: True)
+[PASS] FP3 -- channel (i) CLOSED: static soliton Noether charge density j^0 = 0 EXACT; Q != 0 requires phase rotation in time (Q-ball class, NOT in LIVE soliton inventory)
+        j^0(static) = 0 ; j^0(rotating) = rho_seed**2*theta_dot (= rho^2 theta_dot: matches EXACT)
+[PASS] FP4 -- channel (ii) POINT geometry: 1/r form exists ONLY via unprotected 'hair' b; energy minimization drives b -> 0 uniquely (pi_2(S^1)=0: no topological lock) => amplitude of the 1/r channel = 0 EXACT
+        E_self(b) = 2*pi*Phi0**2*b**2*(R_cut - r_0)/(R_cut*r_0) ; dE/db = 0 => b = [0] (unique; d2E/db2 = 4*pi*Phi0**2*s/(r_0*(r_0 + s)) > 0: True) ; V_hair(b=0) = 0
+[PASS] FP5 -- SIGN: the only surviving long-range structure (line winding, 2D-proxy LOCKED) is REPULSIVE for same-sign charges (F = +2pi Phi0^2 n1 n2 / L > 0); derivative coupling kills static one-chi exchange EXACT (k.J = 0)
+        F_line = 2*pi*Phi0**2*n_1*n_2/L > 0 (repulsion: True) ; static exchange numerator (k.J1)(k.J2) = 0
+[PASS] FP6 -- K3 consistency: phase-sector BACKGROUND force in homogeneous bulk = 0 EXACT (theta = const => zero gradient energy); modulus K3 (F_substrat = 0, grad<Phi> = 0) untouched read-only -- NO contradiction, NO reinterpretation
+        F_bg(phase, bulk) = 0 ; grad<Phi>(bulk) = 0 (LOCKED K3 stands)
+[PASS] FP7 -- channel (iii) CLOSED: modulus exchange screened, pure exponential on 1/m_sigma (m_sigma^2 = 2 lambda Phi0^2 > 0) -- no galactic-range contribution; channel set {i, ii, iii} EXHAUSTED
+        m_sigma^2 = 2*Phi0**2*lambda (> 0: True) ; d/dr log(r G_sigma) = -sqrt(2)*Phi0*sqrt(lambda) = -m_sigma (exponential class)
+[PASS] FP8 -- circularity guard: zero observational inputs in derivation (a0/V/G observational anchors + rotation-curve data ABSENT); zero optimizer calls; free symbols subset of declared symbolic set
+        banned-token hits: [] ; free symbols of all verdict expressions: ['L', 'Phi0', 'R_cut', 'b', 'b_1', 'b_2', 'd', 'lambda', 'n_1', 'n_2', 'r_0', 'rho', 'rho_x', 'theta_x', 'w'] (subset of declared: True)
+==============================================================================
+F-GST-A MECHANICAL CLASSIFICATION:
+  H-GOLD condition 1 (massless mediator in bulk): True
+  H-GOLD condition 2 (nonzero static/topological POINT coupling): False  [FP3: Q=0; FP4: b->0; FP5b: k.J=0]
+  H-GOLD condition 4 (attractive channel exists): False  [FP5a: same-sign line REPULSIVE]
+  H-SCREEN sub-case (a) screening (modulus): True
+  H-SCREEN sub-case (b) decoupling (point geometry): True
+  H-SCREEN sub-case (c) wrong sign (line geometry): True
+  => F-GST-A = H-SCREEN_NEGATIVE  (COMPUTED from flags, not asserted)
+  Residual GAP (declared, NOT verdict-bearing): RP2 textures / holonomy sectors --
+  outside LIVE machinery (precedent: BA P4 KB4 declared GAP); any future cycle would
+  need its own pre-registration. The U(1)-phase channel set {i, ii, iii} is exhausted.
+==============================================================================
+SUMMARY: 8/8 PASS (0 hardcoded T_pass; all criteria computed-then-compared)
+VERDICT: F-GST-A = H-SCREEN_NEGATIVE (sub-cases a+b+c all demonstrated) => HONEST_NEGATIVE
+DISPOSITION (per Phase 0 par. 5): Q2/Q3 NOT executed; cycle proceeds to Phase FINAL (user gate)

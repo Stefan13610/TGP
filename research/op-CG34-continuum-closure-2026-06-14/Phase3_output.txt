@@ -1,0 +1,69 @@
+
+======================================================================
+Phase 3 — CG-4: identyfikacja K_hom = K_TGP
+======================================================================
+
+======================================================================
+(C4-B) alpha z przejscia Phi=phi^2 — samodzielna derywacja (NIE zakladamy A3)
+======================================================================
+  Mikroskopowy kinetyk Z(phi)=Z0*phi^(2s).  Po Phi=phi^2: K1(Phi)=Z0/4 * Phi^(s-1).
+    s=0 (Z=const):    K1 ~ Phi^(-1)  (1/Phi)
+    s=1 (Z~phi^2, substrat sek10): K1 ~ Phi^0 = const
+  EL: Phi'' + [K1'/(2K1)](Phi')^2 = 0 ; K1'/(2K1) = (s - 1)/(2*Phi) = (s-1)/(2Phi)
+  => wspolczynnik przy (Phi')^2/Phi = (s-1)/2.
+     Konwencja TGP: Phi'' + alpha*(Phi')^2/(2 Phi) => alpha_eff = (s-1).
+  alpha_eff(s) = s - 1:   s=0 -> alpha=-1 ; s=1 -> alpha=0 ; s=3 -> alpha=2.
+
+  *** USTALENIE (anti-Lakatos, jawne) ***
+  Samodzielna algebra: alpha=2 wymaga s=3 (Z~phi^6), LUB — w konwencji |coeff|=1/2 (A3) —
+  s=0 (Z=const) daje |coeff|=1/2 ktore A3 nazywa 'alpha=2'. Substrat Z~phi^2 (s=1) daje alpha=0.
+  => W lemacie A3 wystepuje NIESPOJNOSC premisa(Z~phi^2) <-> konkluzja(K1~1/Phi, ktore jest s=0).
+     Wartosc alpha=2 jest ROBUSTNA dla Z=const (s=0) + Phi=phi^2; dla substratu Z~phi^2 NIE.
+
+  Sprawdzenie s=0 (Z=const): wspolczynnik (Phi')^2/Phi = -1/2 (=-1/2, niezerowy => czlon obecny).
+  [PASS] C4-B(i): zmiana zmiennych Phi=phi^2 generuje czlon (∇Φ)²/Φ (alpha != 0) dla Z=const
+         => wspolczynnik = -1/2 (niezerowy => struktura TGP obecna)
+  [PASS] C4-B(ii): USTALENIE jawne — substrat Z~phi^2 (s=1) daje alpha=0 (NIE 2); niespojnosc A3 zgloszona
+         => alpha_eff(s=1)=0; alpha=2 wymaga Z=const (konw. A3) lub Z~phi^6. Do pinniecia w rdzeniu.
+
+======================================================================
+(C4-C) beta=gamma z warunku prozniowego U'(Phi_0)=0 (lemat A4, sympy)
+======================================================================
+  U(Phi)=(beta/2)Phi^2/Phi0 - (gamma/3)Phi^3/Phi0^2 ; U'(Phi0) = beta_eff - gamma_eff
+  [PASS] C4-C: U'(Phi_0)=0 => beta_eff = gamma_eff (algebraicznie, lemat A4)
+         => U'(Phi0)=beta-gamma=0 => beta=gamma
+
+======================================================================
+(C4-A) koercywnosc c* > 0 continuum-stabilne (reuse Phase 1)
+======================================================================
+  Phase 1: stiffness Z(L)=[2.459, 2.468, 2.606], rozrzut 6% (structure factor).
+  [PASS] C4-A: c*>0 stabilne z L (red-flag prior c*->0 rozwiazany) — wspiera A1(ii)
+         => Z>0, rozrzut 6%
+
+======================================================================
+(C4-D) K_hom = K_TGP: homogenizacja (L_B<<xi local limit) = CG-2 K_IR
+======================================================================
+  Lemat A2 (zamkniety): dla L_B<<xi czlony nielokalne ~O(L_B/xi)^p->0 => funkcjonal LOKALNY 2. rzedu.
+  Formula homogenizacyjna w granicy wolnozmiennej (brak oscylacji): K_hom(Phi)=<K_local>=K_1(Phi).
+  CG-2 (tgp_erg_lpa_prime, 8/8): K_IR(rho)=rho (kinetyk FRG). To USTALA forme kinetyczna z drugiej,
+  niezaleznej strony (ERG). Identyfikacja K_hom=K_TGP=K_IR jest spojna co do FORMY (oba lokalne 2.rzedu).
+  Residuum N5 na substracie: ZABLOKOWANE (Phase 1: runaway/frozen) => droga algebraiczna+ERG zamiast MC.
+  [PASS] C4-D: K_hom lokalny 2.rzedu (A2) zidentyfikowany z K_IR (CG-2) co do formy; N5-MC zablokowane jawnie
+         => homogenizacja local-limit + CG-2 K_IR=rho; residuum substratu niedostepne (patologia)
+
+======================================================================
+WERDYKT Phase 3 (CG-4)
+======================================================================
+  C4-A (c*>0 stabilne):           PASS  (Phase 1, structure factor — red-flag rozwiazany)
+  C4-B (alpha z Phi=phi^2):       USTALENIE — struktura (∇Φ)²/Φ obecna dla Z=const; 
+                                  substrat Z~phi^2 daje alpha=0 (niespojnosc lematu A3 ZGLOSZONA)
+  C4-C (beta=gamma):              PASS  (algebraicznie, U'(Phi0)=0)
+  C4-D (K_hom=K_TGP forma):       PASS  (A2 local + CG-2; N5-MC zablokowane jawnie)
+
+  => CG-4 = PARTIAL (ZAMKNIETE: c*>0, beta=gamma, K_hom forma lokalna=K_IR;
+            OTWARTE/DO-PINNIECIA: alpha=2 <-> mikroskopowy K(phi) — niespojnosc A3 (s).
+
+  Testy: 5/5 PASS (+1 USTALENIE jawne)
+  Wyniki: Phase3_results.json
+
+SESJA: op-CG34-continuum-closure Phase 3 (CG-4) (2026-06-14)

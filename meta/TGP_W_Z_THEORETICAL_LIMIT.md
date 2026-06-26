@@ -720,6 +720,75 @@ musi extend analysis (joint variational, energy minimization, native V(Φ), Φ_0
 
 Path η provides **alternative phenomenology** dla SU(3)_c observables WITHOUT deriving SU(3) gauge group. Declared limit framework STANDS as scope-refined.
 
+### §6.5 — Path η extension to cosmology toy (CE-H Poziom β 2026-05-21; R2_PASS 2026-05-22)
+
+**Extension cycle:** [[../research/op-CE-H-two-particle-equilibrium-2026-05-21/]] —
+**CLOSED A− conditional** 2026-05-21
+**Concept paper parent:** [[TGP_GENERATED_SPACE_COSMOLOGY_2026-05-21.md]] (Poziom α LOCKED)
+**R2 audit:** [[../research/op-R2-integration-audit-CE-H-FFS-2026-05-22/]] (R2_PASS 2026-05-22)
+
+**Verdict:** 🟡 **A_MINUS_CONDITIONAL** (STRUCTURAL_PROOF_OF_PRINCIPLE_with_caveats)
+
+**Critical declaration limit STATUS:** ✅ **PRESERVED PRESERVED PRESERVED.** Path η scope
+extends z FFS bound-state observables direction (§6.4) to cosmological observables direction
+**WITHOUT** rescuing declared SU(2)_L + SU(3)_c gauge group derivation. Niniejsze rozszerzenie
+NIE implies gauge group derivation; CE-H jest **structural feature TGP** (konsekwencja
+ontologii S05+Z₂+U(1)+RP²), NIE new axiom, NIE gauge rescue.
+
+**CE-H Poziom β results (16/17 substantive PASS):**
+
+| Phase | Result | Verifies |
+|---|---|---|
+| 1a | 4/4 substantive PASS | F-β-1 NULL: isolation no equilibrium ✓ |
+| 1b | 5/5 substantive PASS | F-β-2 POSITIVE: stable L* exists with bg ✓ |
+| 2 | 5/5 substantive PASS | F-β-3/4 robust across 20-cell grid ✓ |
+| 3 | 2/3 substantive PASS, 1 HONEST FAIL | F-β-5 PARTIAL ✓ |
+
+**R3 multi-line convergence trigger (3/3 lines confirmed):**
+
+| Linia | Treść | Status |
+|---|---|---|
+| 1 | Phase 4 FFS: 4 paths to absolute Φ_0_local fail | ✓ |
+| 2 | Archimedean argument (paradoks operacyjnie zerowy) | ✓ |
+| 3 | CE-H structural toy verification (Poziom β) | ✓ z 2 warstwami caveats |
+
+→ CE-H acceptable as **structural feature TGP** (NIE nowy axiom — konsekwencja ontologii).
+Minimal axiomy S05+Z₂+U(1)+RP² **NIE modified**.
+
+**R2 audit verdict (2026-05-22):** R2_PASS — 8/9 CLOSED + 1/9 DEFERRED + 0 ESCALATED.
+
+| Item | R2 verdict |
+|---|---|
+| FFS-1 hedgehog+string joint config necessity | CLOSED |
+| FFS-2 lepton/quark dichotomy necessity | CLOSED |
+| FFS-3 Pattern 2.5 σ interpretation | CLOSED (strict Nielsen-Olesen confirmed) |
+| FFS-4 symmetric Y-vertex load-bearing | DEFERRED (Phase 5-7 FFS extension scope) |
+| CE-H-1 D/L^α exogenous nature | CLOSED (toy limitation; Poziom γ-1 LOCKED) |
+| CE-H-2 α derivation gap | CLOSED (1D Z2 limit; 3D Coulomb expected) |
+| CE-H-3 dimensional structure | CLOSED (self-consistent) |
+| CE-H-4 confinement/deconfinement boundary | CLOSED (F-γ-4 LOCKED PENDING) |
+| R1-1 pre-registration analytical pre-derivation | CLOSED (CALIBRATION §3.6 BINDING) |
+
+**Honest caveats (2 warstwy):**
+
+1. **T_P3_2 honest fail:** pre-reg threshold m=1.0 failed (analitically m·√2 ≈ 1.4142,
+   fitted 1.40 match w 1%); R1-1 audit lesson formalized w CALIBRATION_PROTOCOL §3.6.
+
+2. **D/L^α exogenous w 1D Z2:** Phase 3 ujawniło że native 1D Z2 substrate daje EXPONENTIAL,
+   NOT power-law. Phase 1b/2 D/L^α było modeling tool. **Pełne 3D U(1) native long-range
+   = Poziom γ-1 scope** (F-γ-1 CRUCIAL TEST LOCKED).
+
+**Methodology validation:** R1+R2+R3 two-tier discipline **dwukrotnie operacyjnie zweryfikowana**
+(FFS rejection + CE-H acceptance) → CALIBRATION_PROTOCOL §6 + §3.6 addendum BINDING 2026-05-22.
+
+**Cosmological scope (Poziom γ-3) pre-registered:** F-γ-3 H_0 ∈ [67, 73] km/s/Mpc factor 2
+PRIMARY KILLER LOCKED 2026-05-21 PENDING_POZIOM_GAMMA. Activation requires γ-1 + γ-2 success.
+
+**Path η extension disposition:** Bound-state observables (§6.4 FFS quark object) + cosmological
+observables (§6.5 CE-H Poziom β) = **legitimate alternative phenomenology direction** dla
+TGP framework, **WITHOUT** deriving non-Abelian gauge groups. Declared limit framework
+PRESERVED in scope-refined form.
+
 ---
 
 *Future entries append below this section.*

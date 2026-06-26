@@ -890,6 +890,50 @@ cite this pre-screening + cycle results jako baseline.
 
 **Pre-screening + full cycle disposition:** STRONG_GO pre-screening LOCKED 2026-05-19 + A− conditional full cycle 2026-05-20 = comprehensive structural validation z explicit caveats. Future formal PR-### entry deferred do post R2 audit cycle.
 
+### §8.7 — R2 integration audit closure (2026-05-22) + CE-H Poziom β link
+
+**R2 audit cycle:** [[../research/op-R2-integration-audit-CE-H-FFS-2026-05-22/]] — **R2_PASS** 2026-05-22
+
+**Aggregate verdict:** 8/9 CLOSED + 1/9 DEFERRED + 0 ESCALATED → R2_PASS per pre-registered
+decision matrix.
+
+**FFS-side R2 verdicts (per §8.4 FFS_QUARK_OBJECT_PROPOSAL):**
+- FFS-1 (hedgehog+string joint config) CLOSED
+- FFS-2 (lepton/quark dichotomy) CLOSED
+- FFS-3 (Pattern 2.5 σ interpretation) CLOSED (strict Nielsen-Olesen confirmed; pre-screening
+  factor 10 claim preserved)
+- FFS-4 (symmetric Y-vertex load-bearing) DEFERRED (Phase 5-7 scope)
+
+**CE-H Poziom β link (R2 cross-cycle context):**
+
+R2 audit aggregated FFS (4 items) + CE-H Poziom β (4 items) + R1 flag (1 item). Two A−
+conditional cycles audited consolidated:
+- FFS cycle 2026-05-20 (FFS Phase 4 Φ_0_local finding as R3 line 1)
+- CE-H Poziom β cycle 2026-05-21 (CE-H structural toy as R3 line 3)
+
+**R3 multi-line convergence 3/3 lines:** CE-H acceptable as **structural feature TGP**
+(NIE nowy axiom — konsekwencja S05+Z₂+U(1)+RP² ontologii). Minimal axiomy NIE modified.
+
+**Methodology validation:** R1+R2+R3 two-tier discipline **dwukrotnie operacyjnie zweryfikowana**:
+- First operational test (FFS Phase 4): R3 trigger 1/3 → axiom NOT accepted ✓
+- Second operational test (CE-H Poziom β + R2 audit): R3 trigger 3/3 + R2_PASS → CE-H
+  acceptance as structural feature (NOT axiom) ✓
+
+**Methodological innovation R1+R2+R3 propagated do core:** [[CALIBRATION_PROTOCOL.md]] §6
+BINDING 2026-05-22. R1+R2+R3 protocol now BINDING dla future cycles.
+
+**Pre-registration analytical pre-derivation lesson:** FFS-3 q=1 implicit + CE-H T_P3_2
+m vs m·√2 patterns → CALIBRATION_PROTOCOL §3.6 BINDING 2026-05-22 (analytical pre-derivation
+step required dla FP-class falsifiers).
+
+**Declared limit STATUS post R2:** ✅ **PRESERVED.** FFS bound-state observables + CE-H
+cosmological extension = path η scope-refined; declared SU(2)_L + SU(3)_c gauge group
+derivation limit STANDS niezależnie od R2_PASS verdict.
+
+**Cycle launch authorizations (post R2):**
+- Poziom γ-1 (native 3D U(1) interaction F-γ-1 test) — PENDING authorization
+- Phase 5-7 FFS extension (asymmetric Y-vertex + asymptotic freedom + lattice transfer) — PENDING authorization
+
 ---
 
 ## §9 — Cross-references

@@ -1,0 +1,73 @@
+{
+  "phase": 1,
+  "cycle": "op-Csigma-lattice-MC",
+  "gate1_machinery": true,
+  "gate2_continuum": true,
+  "continuum_rows": [
+    {
+      "m": 0.45,
+      "C0": 0.18767332506396758,
+      "ratio": 0.3747282535627243,
+      "ratio_m2": 0.07588247134645168,
+      "n_shells": 9
+    },
+    {
+      "m": 0.4,
+      "C0": 0.2112325328568359,
+      "ratio": 0.4775630583876345,
+      "ratio_m2": 0.07641008934202154,
+      "n_shells": 7
+    },
+    {
+      "m": 0.35,
+      "C0": 0.2411291574105423,
+      "ratio": 0.628688862766963,
+      "ratio_m2": 0.07701438568895295,
+      "n_shells": 6
+    },
+    {
+      "m": 0.3,
+      "C0": 0.2805168794979813,
+      "ratio": 0.8634217356629883,
+      "ratio_m2": 0.07770795620966894,
+      "n_shells": 4
+    },
+    {
+      "m": 0.25,
+      "C0": 0.3350753793728965,
+      "ratio": 1.2543213857223003,
+      "ratio_m2": 0.07839508660764377,
+      "n_shells": 3
+    }
+  ],
+  "rm2_extrap": 0.07935852686051525,
+  "deriv_C0": {
+    "16": 0.02590321500425438,
+    "24": 0.024931021492752253,
+    "32": 0.023037659941630075
+  },
+  "n_pass": 4,
+  "n_tot": 4,
+  "tests": [
+    {
+      "label": "GATE-1a: propagator sieciowy odtworzony (MC)",
+      "status": "PASS",
+      "detail": "dev 0.7%"
+    },
+    {
+      "label": "GATE-1b: MC babel == DOKLADNY babel sieciowy (maszyneria OK)",
+      "status": "PASS",
+      "detail": "max dev 1.07% (<4%), mean dev 0.56% (<1.5%)"
+    },
+    {
+      "label": "GATE-2: ekstrapolacja ratio*m^2 (ma->0) = 1/12 (continuum analityka)",
+      "status": "PASS",
+      "detail": "0.0794 vs 0.0833, dev 4.8% (<10%)"
+    },
+    {
+      "label": "Probe-Rcont: operator zlozony UV-czuly (flaga continuum udokumentowana, R-continuum AKTYWNE)",
+      "status": "PASS",
+      "detail": "C_xy(0)(L=16,24,32)=[0.0259, 0.0249, 0.023]"
+    }
+  ]
+}

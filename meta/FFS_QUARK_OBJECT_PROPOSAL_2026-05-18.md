@@ -569,6 +569,39 @@ estimate).
 
 **Closure ceremony reference:** [[../research/op-FFS-quark-object-2026-05-20/Phase_FINAL_close.md]]
 
+### §8.4 — R2 integration audit closure (2026-05-22)
+
+**R2 audit cycle:** [[../research/op-R2-integration-audit-CE-H-FFS-2026-05-22/]] — **R2_PASS** 2026-05-22
+
+**FFS items audit (4 of 9 total scope items):**
+
+| Item | R2 verdict | Justification |
+|---|---|---|
+| FFS-1 (hedgehog+string joint config necessity) | ✅ **CLOSED** | Joint config necessary for spin-1/2 + fractional EM charge + confinement simultaneously; alternatives ruled out |
+| FFS-2 (lepton/quark dichotomy necessity) | ✅ **CLOSED** | Dichotomy derives from EM charge integrality: integer → pure hedgehog (lepton), fractional → hedgehog+string (quark) |
+| FFS-3 (Pattern 2.5 σ interpretation) | ✅ **CLOSED** | Strict Nielsen-Olesen z q² scaling correct; pre-screening "factor 10 order-of-magnitude" LOCKED stands; q=1 implicit was pre-registration analytical shortcut |
+| FFS-4 (symmetric Y-vertex load-bearing) | 🟡 **DEFERRED** | Asymmetric Y-vertex class (observed baryons proton uud, neutron udd) unexplored sympy; → Phase 5-7 FFS extension scope |
+
+**Joint FFS impact:** 3/4 CLOSED + 1/4 DEFERRED strengthens FFS A− conditional structural
+derivation. **FFS claim_status PRESERVED at A− conditional** (C6 PARTIAL + FFS-4 DEFERRED
+prevent A− → A upgrade w niniejszym R2 audit).
+
+**Upgrade trajectory:** A− → A possible post:
+- FFS-4 closure via Phase 5-7 asymmetric Y-vertex analysis
+- C6 PARTIAL → RESOLVED_STRUCTURALLY pending Poziom γ-1 (F-γ-1 native 3D U(1) long-range)
+- Hadron-topology 2026-05-16 R1 OPEN closure trajectory
+
+**Methodology innovation R1+R2+R3 second operational success:** R2 audit aggregate R2_PASS
+→ R1+R2+R3 pattern propagated to CALIBRATION_PROTOCOL §6 BINDING 2026-05-22.
+
+**Pre-registration analytical pre-derivation gap (R1-1):** FFS-3 q=1 implicit pattern + CE-H
+T_P3_2 m vs m·√2 pattern → CALIBRATION_PROTOCOL §3.6 addendum BINDING 2026-05-22 (Phase 0
+template must include analytical pre-derivation slot dla FP-class falsifiers).
+
+**Declared limit STATUS:** ✅ **PRESERVED.** R2 audit NIE rescues SU(3)_c gauge group derivation.
+FFS bound-state observables direction confirmed legitimate; declared limit ([[TGP_W_Z_THEORETICAL_LIMIT.md]])
+STANDS.
+
 ---
 
 ## §9 — Cross-references

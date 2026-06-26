@@ -1,0 +1,45 @@
+======================================================================
+FP1 — BASELINE (reuse-check LOCKED): statyka 1/r i radiacja z JEDNEGO box
+======================================================================
+[PASS] FP1: denom=-w^2+k^2+m^2: statyka(w=0,m=0)=k^2 -> 1/r (Laplace[1/4pir]=0); biegun radiacyjny w^2=k^2+m^2 z TEGO SAMEGO denom. 1/r i radiacja = projekcje box.
+======================================================================
+FP2 — D1 (nowa symetria cechowania: lokalny shift dPhi -> dPhi + L(x))
+======================================================================
+[PASS] FP2: lokalny shift wymusza m=0 AND q=0 (zabija Newton => (b)); kinetyka wymaga kompensatora A_mu = NOWE POLE => narusza par.1 (c); A_mu i tak radiuje (DOF relokowany, nie usuniety). flag=REVISION_BREAKS_par.1; breaks_b_also=True
+======================================================================
+FP3 — D2 (kinetyka eliptyczna: a=0, samo -(K1/2)(grad dPhi)^2)
+======================================================================
+[PASS] FP3: a=0 usuwa DOF radiacyjny (brak dPhi_t^2), ALE a!=b (=0!=1) => operator delta^ij d_i d_j nie jest skalarem box => preferowana klatka => alpha_1~(a-b)=-1!=0. flag=REVISION_BREAKS_alpha
+======================================================================
+FP4 — D3 (wiez 2. klasy / pole pomocnicze; PRIORYTET nogi konstruktywnej)
+======================================================================
+[PASS] FP4: D3a: dPhi=-q*rho/(Phi0*m**2) = LOKALNE ~rho (kontakt) => wsp.1/r=0 => Newton martwy => (b) zlamane. D3b kowariantny: izolacja d_t lamie Lorentz => kolaps do D2. Brak REVISION_CLEAN. flag=REVISION_BREAKS_1r
+======================================================================
+FP5 — D4 (kanal tensorowy przejmuje statyke; re-asygnacja 1/r)
+======================================================================
+[PASS] FP5: q->0 w G_eff=q^2/(4piPhi0^2K1) => G_eff=0 (Newton znika z sektora skalarnego; re-derywacja calego lancucha = nie-minimalna, lamie LOCKED (b)). Hessian=K1!=0 => dPhi nadal radiuje => D4 NIE usuwa problemu. flag=REVISION_BREAKS_1r
+======================================================================
+FP6 — D5 (RP^2 / nielokalnosc) — pozycja GAP (deklarowana, nie liczona)
+======================================================================
+[PASS] FP6: RP^2 = rezydual GST (forbidden #5, nie wyprowadzane); nielokalnosc = poza LIVE (Path D L07). flag=GAP (deklarowane, nie ciche).
+======================================================================
+FP7 — JADRO NO-GO: statyka 1/r i radiacja sa projekcjami tego samego box
+======================================================================
+[PASS] FP7: skan (a,b) in {0,1}^2: brak konfiguracji Lorentz(a=b) z 1/r(b!=0) i BEZ radiacji(a=0). clean_exists=False. => jadro no-go: lokalny Lorentz-skalar nie rozdziela statyki od radiacji.
+======================================================================
+FP8 — DYSCYPLINA / circularity guard
+======================================================================
+[PASS] FP8: 0 anchorow obserwacyjnych w wyprowadzeniu; werdykty FP wyliczone z rachunku/skanu; budzet stalych=0.
+======================================================================
+WERDYKT F-GSS-A (wyliczony z flag — NIE zadeklarowany)
+======================================================================
+  D1: REVISION_BREAKS_par.1
+  D2: REVISION_BREAKS_alpha
+  D3: REVISION_BREAKS_1r
+  D4: REVISION_BREAKS_1r
+  D5: GAP
+
+FP: 8/8 PASS
+F-GSS-A => BRAK REVISION_CLEAN w {D1..D5}. Wszystkie non-clean/GAP. NIE jest to jeszcze FALSIFIED — per Phase0 par.9 wymaga Phase 2 (F-GSS-B = dowod WYCZERPANIA na 100%).
+
+DISCIPLINE: hardcoded_T_pass=0 ; clean_routes=[] ; verdict_computed_from_flags=True

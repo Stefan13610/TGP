@@ -1,0 +1,77 @@
+{
+  "phase": 3,
+  "cycle": "op-Csigma-lattice-MC",
+  "C_sigma_clean": [
+    0.4991956003118886,
+    0.6992456757982168,
+    0.6494246396319227
+  ],
+  "C_sigma_central": 0.6159553052473427,
+  "C_sigma_stat": 0.049092102631757444,
+  "Phi0": 0.0609,
+  "sigma0": 0.0609,
+  "a_Gamma": 16.420361247947454,
+  "kappaE_central": 0.6159553052473427,
+  "kappaE_band": [
+    0.037727262446399734,
+    11.087195494452168
+  ],
+  "syst_factor": [
+    0.06124999999999999,
+    18.0
+  ],
+  "budget": [
+    {
+      "name": "C_sigma schemat (R-continuum, operator zlozony power-divergent)",
+      "lo": 0.5,
+      "hi": 2.0
+    },
+    {
+      "name": "sigma_0/Phi_0 (normalizacja VEV kierunkowego)",
+      "lo": 0.7,
+      "hi": 1.5
+    },
+    {
+      "name": "projekcja tensorowa t (TT 5-komp., ŝ skalar-vs-wektor)",
+      "lo": 0.5,
+      "hi": 2.0
+    },
+    {
+      "name": "G_0~J*mu + most jednostkowy (R-unit-bridge HIGH)",
+      "lo": 0.5,
+      "hi": 2.0
+    },
+    {
+      "name": "amplitude-matching xi_eff/c^3 (normalizacja)",
+      "lo": 0.7,
+      "hi": 1.5
+    }
+  ],
+  "covers_5_6": true,
+  "covers_1": true,
+  "disposition": "PARTIAL",
+  "n_pass": 4,
+  "n_tot": 4,
+  "tests": [
+    {
+      "label": "P3a: redundancja przeskalowania => T=C_sigma*sigma_0^2 jedyny fizyczny (reuse parent 3/3)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "label": "P3b: prog survival/naturalna = 5/6 (LOCKED, reuse parent)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "label": "F-LMC-B: T=C_sigma*sigma_0^2 zlozone w c^3/G_0 z bledem stat.+syst. (pasmo jawne)",
+      "status": "PASS",
+      "detail": "kappa_E in [0.04,11.09], central 0.62"
+    },
+    {
+      "label": "F-LMC-C: test vs 5/6 = PARTIAL",
+      "status": "PASS",
+      "detail": "5/6 in band: True; 1 in band: True"
+    }
+  ]
+}

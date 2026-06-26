@@ -1,0 +1,47 @@
+
+========================================================================
+Phase 2 — RDZEN: C_sigma z coarse-grainingu korelatora kierunkowego
+========================================================================
+(A) Babel 3D (zweryfikowany calkami beta-funkcyjnymi):
+    Pi(0)          = 1/(8*pi*m)    (oczek. 1/(8*pi*m))  -> PASS
+    coeff p^2      = -1/(96*pi*m**3)    (oczek. -1/(96*pi*m^3)) -> PASS
+    -coeff/Pi(0)   = 1/(12*m**2)   => sztywnosc/masa ~ 1/(12 m^2)  -> PASS
+    WNIOSEK: babel jest SKONCZONY i ANALITYCZNY w p=0 => emergentny czlon p^2 (sztywnosc) ISTNIEJE,
+             dodatni, z C_sigma ~ (sprzezenie^2) * 1/(96*pi*m^3). To realizuje F-CG-A (czesc przestrzenna).
+
+(B) Skaling C_sigma (kontrolowany, prefaktor=residual):
+    C_sigma ~ J*a_sub**p*c_pref*(xi_corr/a_sub)**k   ; znak: C_sigma>0 <= J>0 (babel dodatni). c_pref,p,k = GAP.
+    (k>0: bliskosc krytycznosci m->0 WZMACNIA sztywnosc ~ xi^3 z babla 1/m^3 -- struktura, nie liczba.)
+
+(C) Zlozenie kappa_E = (sztywnosc tensorowa TGP)/(sztywnosc grawitonu GR):
+    kappa_E = 8*pi*C_sigma*G0*sigma_0**2/c**3  = 8*pi*G0*C_sigma*sigma_0^2 / c^3
+
+(D) Test progu (value-blind):
+    survival  <=> kappa_E = 5/6 EXACT (miara zero, parent).
+    naturalna  =>  kappa_E = 1  => total 1+1/6 = 7/6 = galaz B PR-025 (FALSIFIED).
+    Pytanie rozstrzygajace: czy 8 pi G0 C_sigma sigma_0^2 / c^3 = 5/6 ?
+    G0 ~ J*mu (skalar, <s^2>);  C_sigma ~ J*a_sub^p (tensor, <s s>).  RÓŻNE projekcje TEGO SAMEGO s.
+    => kappa_E ~ (J mu)(J a_sub^p) sigma_0^2 / c^3 : iloczyn NIEZALEZNYCH prefaktorow substratu.
+
+(E) Czy jakas symetria lockuje kappa_E do 5/6 (lub 1)?
+    det J(amp,flux | C_sigma,sigma_0) = -xi_eff/C_sigma != 0  => amplituda _|_ strumien (2 param TGP vs 1 GR).
+    BRAK toznosci Warda lockujacej C_sigma sigma_0^2 do sztywnosci grawitonu => kappa_E NIE jest chronione.
+    => generycznie kappa_E = O(1), ale ANI 1 ANI 5/6 nie sa wymuszone. 5/6 pozostaje MIARA ZERO.
+
+========================================================================
+WERDYKT Phase 2
+========================================================================
+F-CG-A (Lorentz/kinetyka): PASS-CONDITIONAL
+   - babel daje DODATNI, skonczony czlon p^2 => sztywnosc PRZESTRZENNA emerguje z H_Gamma (C_sigma>0).
+   - czlon CZASOWY (d_t sigma)^2 i c_0 = dziedziczone z metryki emergentnej (rem:cGW-tensor LOCKED),
+     jak w sektorze skalarnym. Lorentz NIE wyprowadzony de novo z H_Gamma -> flaga zaleznosci.
+F-CG-B (forma C_sigma): PARTIAL
+   - metoda (composite babel) + skaling C_sigma~c_pref*J*a_sub^p/(m a_sub)^k + znak C_sigma>0: DERIVED.
+   - prefaktor O(1) i wykladniki: schemat-/normalizacja-zalezne -> NIE pinowane (anti-Lakatos).
+F-CG-C/D (kappa_E vs 5/6): PARTIAL-lean-FALSIFIED
+   - kappa_E = 8 pi G0 C_sigma sigma_0^2 / c^3 ZLOZONE (struktura jawna).
+   - BRAK symetrii lockujacej (det J != 0) => kappa_E generyczne O(1), 5/6 = miara zero (NIE chronione).
+   - skaling nie odroznia 5/6 od 1 bez prefaktora => survival ani potwierdzone ani wykluczone liczbowo,
+     ale 'naturalna' O(1) != 5/6 => lean FALSIFIED (wzmocniony vs parent: kappa_E teraz O(1)-bounded).
+AGREGAT F-CG-E: UNDERDETERMINED-fine-tuned (WEZSZY) ; lean FALSIFIED.
+   Residual GAP: prefaktor O(1) C_sigma -> wymaga lattice-MC kierunkowego babla + Phase 3 (sigma_0).

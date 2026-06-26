@@ -1,0 +1,77 @@
+﻿==============================================================================
+FCR Phase 2 — bulk transport derivation (F-FCR-C target #2)
+==============================================================================
+
+FP1 — homogeneous source-free continuity forces div(u) = 2/t
+  rho_bar prop t^-2 (Phase 1 B-skeleton);  div(u) = -rho'/rho = 2/t
+  T_pass FP1 = True
+
+FP2 — isotropy => u = (2/3) x/t; matter-flow scale factor a_m prop t^(2/3)
+  f(t) = div(u)/3 = 2/(3*t);  a_m(t) = C1*t**(2/3)  (prop t^(2/3))
+  T_pass FP2 (f = 2/(3t); a_m prop t^(2/3) EXACT) = True
+  NOTE: matter kinematics a_m prop t^(2/3) INSIDE space frontier R = c*t —
+  matter lags the frontier; the gap is filled by frontier creation (consistent
+  with A-i: created matter enters at/near the frontier only).
+
+FP3 — background Euler residual (bounded => substrate-balance caveat declared)
+  residual = (x/t^2) * (epsilon/3 - 2/9);  |Delta|/H_m^2 = Abs(3*epsilon - 2)/4
+  at eps = 3/2 (B1): Delta_bulk = 0.6250  — BOUNDED, time-independent
+  => per R17 lemma (phi' = sqrt(3*Delta)/tau): bounded residual => NO runaway class;
+  => background force balance requires substrate contribution ~ O(1)*H_m^2*x —
+     TGP-native (expansion is substrate-driven, gamma-3) but NOT derived from the
+     action here => CAVEAT C-2 DECLARED (carried into aggregate).
+  T_pass FP3 (residual bounded + time-independent) = True
+
+FP4 — perturbation ODE around derived flow + EdS validation
+  ODE: delta'' + (4/3)/tau delta' + (-epsilon)/tau^2 delta = 0
+  p+(eps) = Max(-sqrt(36*epsilon + 1)/6 - 1/6, sqrt(36*epsilon + 1)/6 - 1/6)
+  EdS validation (eps = 2/3): p+ = 2/3  [expect 2/3 EXACT — standard EdS growth]
+  T_pass FP4 (C-DERIVED form + EdS limit EXACT) = True
+
+FP5 — derived-form growth: B1 (eps = 3/2 EXACT) and B2 (eps = 0.465)
+  B1: p+ = -1/6 + sqrt(55)/6 = 1.06937  => log10 G = 3.2485  => PASS_BAND
+  B2: p+ = 0.53531             => log10 G = 1.6262  => PARTIAL_BAND
+  (observed comparison target log10 G_obs = 3.0; bands LOCKED Phase 0)
+  T_pass FP5 (B1 exact form p = (sqrt(55)-1)/6) = True
+
+FP6 — numerical cross-check of derived form (B1)
+  analytic log10 G = 3.24855; numeric = 3.24855; rel dev = 3.29e-14
+  T_pass FP6 = True
+
+FP7 — guards: p+ free symbols subset {eps}; global M(R=ct) prop t consistency
+  free symbols: {epsilon}; M_global = 4*pi*c**3*t/3 (prop t: True)
+  T_pass FP7 = True
+
+FP8 — F-FCR-C verdict update + aggregate
+  F-FCR-C: PARTIAL_concept_mismatch (Phase 1, state-of-concept-paper) ->
+  >>> C-DERIVED_CONDITIONAL (THIS Phase 2 derivation) <<<
+  derivation chain: A-i (E2 blocked, concept LOCKED-claim) + A-ii (homogeneity,
+  consistency requirement) + A-iii (isotropy) => u = (2/3)x/t FORCED =>
+  source-free bulk perturbation eqs with H_m = 2/(3t) — supersedes the C2a/b/c
+  proxy menu (which assumed UNIFORM-in-bulk creation, now excluded by A-i).
+  CAVEATS carried: C-2 substrate-balance (FP3); A-ii imposed not derived.
+    B1: STRUCTURAL_POSTULATE
+    B2: CONCEPT_CLAIM_UNVERIFIED
+    A: A1_DERIVED_CONDITIONAL_ON_B + A2_bridge_gap
+    C: DERIVED_CONDITIONAL (A-ii imposed; C-2 substrate-balance caveat)
+
+  >>> F-FCR-D AGGREGATE (post Phase 2): STRUCTURAL_CONDITIONAL <<<
+  => PR-022: STILL NOT APPENDED (B1 postulate + C-2/A-ii caveats outstanding)
+  T_pass FP8 = True
+
+==============================================================================
+  FP1: PASS
+  FP2: PASS
+  FP3: PASS
+  FP4: PASS
+  FP5: PASS
+  FP6: PASS
+  FP7: PASS
+  FP8: PASS
+
+  TOTAL: 8/8 PASS; hardcoded T_pass = 0/8
+  C-DERIVED form: delta'' + (4/3tau) delta' - (eps/tau^2) delta = 0
+  B1: p = (sqrt(55)-1)/6 = 1.06937 -> log10 G = 3.249 (PASS_BAND)
+  B2: log10 G = 1.626 (PARTIAL_BAND)
+  F-FCR-D: STRUCTURAL_CONDITIONAL
+==============================================================================

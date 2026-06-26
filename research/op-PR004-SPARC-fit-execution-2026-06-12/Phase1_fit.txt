@@ -1,0 +1,19 @@
+==============================================================================
+Phase 1 -- PR-004 SPARC fit execution (TGP Newton-baryon vs MOND simple)
+==============================================================================
+[PASS] FP1 -- data parse: 175 galaxies, O(3400) points, quality flags joined
+        galaxies = 175 ; points = 3391 ; Q joined = 175
+[PASS] FP2 -- sanity audit: MOND implementation EXACT (inversion identity + deep-MOND asymptote); absolute scale = convention disclosure
+        FP2a max |g_bar - g^2/(g+a0)|/g_bar = 8.41e-16 (< 1e-10) ; FP2b deep-MOND max dev = 0.073 (y<0.02) ; checked 1164 pts ; chi^2_red(MOND): GLOBAL = 49.99, MEDIAN = 10.51 -- vs PR-004 nota '~2.0' (Lelli+2017): literature value uses per-galaxy nuisance fitting (Upsilon/D/i free); LOCKED zero-parameter pipeline is stricter for BOTH models symmetrically; relative paired decision (FP4) unaffected
+[PASS] FP3 -- chi^2_red(TGP = Newton + baryons only, S05) computed (no free parameters)
+        chi^2_red(TGP): GLOBAL = 578.138 ; MEDIAN per-galaxy = 85.233 ; N = 3391 points, 175 galaxies
+[PASS] FP4 -- PR-004 decision (IMMUTABLE): chi^2_red(TGP) > chi^2_red(MOND) at 5 sigma?
+        paired per-galaxy: mean(d) = 342.88 ; SEM = 62.97 ; t = mean/SEM = 5.4 sigma ; bootstrap frac(d>0) = 1.0000 ; galaxies where TGP beats MOND: 25/175 ; DECISION: TRIGGERED (TGP g_eff[Phi_bar] mechanism INSUFFICIENT per PR-004)
+[PASS] FP5 -- secondary Q1+Q2 subsample (pre-declared allowed direction)
+        Q1+Q2: 163 galaxies, 3271 pts ; chi^2_red TGP = 597.803 vs MOND = 49.962 (medians 103.092 vs 10.152) ; t = 5.5 sigma
+[PASS] FP6 -- circularity/no-fitting guard: zero optimizer calls, zero adjusted parameters (Upsilon, a0 FIXED pre-LOCK)
+        banned call-pattern scan: [] ; UD = 0.5, UB = 0.7, a0 = 1.2e-10 (all LOCKED Phase 0)
+==============================================================================
+SUMMARY: 6/6 PASS (FP4 PASS = decision computed; physics outcome reported inside)
+HEADLINE: chi^2_red GLOBAL: TGP(Newton+baryons) = 578.14 vs MOND simple = 49.99 ; medians 85.23 vs 10.51
+PAIRED TEST: t = 5.4 sigma (threshold 5) -> PR-004 TRIGGERED

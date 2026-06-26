@@ -1,0 +1,44 @@
+==============================================================================
+Phase 3 sympy -- op-frontier-bridge-and-asymmetry (modul A: GAP-1 + GAP-4 + GAP-5)
+==============================================================================
+
+--- F-BA-1: EQ-5 field-level bridge S_Phi <-> S_matter (GAP-1) ---
+[PASS] FP1 -- field-level energy bookkeeping: d_t(e) - d_x(phi_t phi_x) == phi_t * J EXACT (sourced EOM)
+        residual = 0 (transfer density between S_Phi and S_matter = phi_t*J, field units)
+[PASS] FP2 -- BPS wall identity: int (w')^2 dx = int sqrt(2V) dPhi = sigma EXACT (FM P1 LOCKED value)
+        branch^2 == 2V: True ; int sqrt(2V) dPhi = sqrt(2)*Phi0**3*sqrt(lambda)/3 ; == sigma: True
+[PASS] FP3 -- DeltaV/sigma = (3/8) m_Phi EXACT (wall ledger expressed in field units)
+        DeltaV/sigma = 3*sqrt(2)*Phi0*sqrt(lambda)/8 ; (3/8) m_Phi = 3*sqrt(2)*Phi0*sqrt(lambda)/8
+[PASS] FP4 -- source amplitude j0(t) = (3/8) m_Phi (t_*/t)^2 DERIVED (field units); ledger closes: T = Mdot c^2 EXACT; Edot_wall >= 0 for t >= t_*
+        j0 = sqrt(2)*c**2/(12*pi*G*Phi0**3*sqrt(lambda)*t**2) ; T - Mdot c^2 = 0 ; Edot_wall(t_*) = 0 ; Edot_wall(2t_*) = 2*c**5/(3*G) > 0
+[PASS] FP5 -- dimensional check: [DeltaV * 4 pi R^2 * Rdot] == [Mdot c^2] == E/T EXACT
+        ratio of dimensions = 1
+
+--- F-BA-4: uniqueness of self-consistent solution in declared class (GAP-4) ---
+[PASS] FP6 -- continuity (source-free bulk) in class: UNIQUE U(k) = (k+2)/(k+3); U(0) = 2/3
+        U(k) = [(kappa + 2)/(kappa + 3)] ; U(k=0) = 2/3
+[PASS] FP7 -- Euler scaling match FORCES k = 0 (homogeneity derived, not imposed, within class)
+        d(residual)/dx at k=0: 0 ; at k=1: pi*rho_0/(c*t) (nonzero => excluded for rho0 > 0)
+[PASS] FP8 -- UNIQUE (U, rho0, k) = (2/3, 1/(6 pi), 0); marginality over-determination closes EXACT (3 conditions, 2 unknowns)
+        rho0 = [1/(6*pi)] ; marginality residual (1/2)v_c^2 - GM/(ct) = 0
+[PASS] FP9 -- rejection audit: rho0(U) = 3U(1-U)/(4 pi); U = 1 -> vacuum (rho0 = 0), U > 1 -> rho0 < 0 unphysical
+        rho0(U) at {2/3, 1/3, 1, 3/2} = {2/3: 1/(6*pi), 1/3: 1/(6*pi), 1: 0, 3/2: -9/(16*pi)} ; only continuity-selected U = 2/3 survives jointly
+
+--- F-BA-5: sphericity of the frontier locus (GAP-5) ---
+[PASS] FP10 -- curvature restoring: delta(2H) = (l-1)(l+2) dr/R0^2 EXACT (shape modes stiff for l >= 2; 0 for l = 1)
+        delta(2H)/(dr/R0^2) = l*(l + 1) - 2 == (l-1)(l+2): True
+[PASS] FP11 -- ALL shape modes l >= 2: |b_l| ~ t^(1/2) osc => a_l = b_l/R ~ t^(-1/2) -> 0 (UNIFORM decay rate; spherical attractor)
+        indicial roots p = [1/2 - sqrt(-4*l**2 - 4*l + 9)/2, sqrt(-4*l**2 - 4*l + 9)/2 + 1/2] (Re p = 1/2 for disc < 0); disc(l=2) = -15 ; d(disc)/dl = -8*l - 4 < 0 ; lim a_l = 0
+[PASS] FP12 -- l = 1: roots {0, 1} -> a_1 ~ const = translation drift (not asphericity); drive DeltaV shape-neutral (no angular dependence)
+        l=1 roots: [0, 1] ; DeltaV free symbols: {lambda, Phi0} (uniform lambda, Phi0 -- FM COR-1 per-area homogeneity)
+[PASS] FP13 -- circularity guard: no G_obs / eta_B / observed-asymmetry symbol in any verdict expression
+        free symbols audited: ['G', 'Phi0', 'R_0', 'U', 'Y', 'a', 'c', 'kappa', 'l', 'lambda', 'rho_0', 't', 'x'] ; blacklist hits: []
+==============================================================================
+SUMMARY: 13/13 PASS ; 0 hardcoded T_pass (all verdicts computed)
+F-BA-1 (GAP-1): field-level bridge: d_t e - d_x flux = phi_t J EXACT; T_area = c j0 sigma;
+  j0(t) = (3/8) m_Phi (t_*/t)^2 DERIVED in field units; ledger closes T = Mdot c^2 EXACT;
+  dims EXACT; eta emerges from Phase 2 regulator (not inserted).
+F-BA-4 (GAP-4): unique (U, rho0, k) = (2/3, 1/(6 pi), 0) in extended self-similar class;
+  homogeneity FORCED by Euler scaling; marginality over-determination closes EXACT.
+F-BA-5 (GAP-5): a_l ~ t^(-1/2) -> 0 for ALL l >= 2 (uniform rate; spherical attractor);
+  l=1 = drift; declared: non-relativistic transverse dynamics (gamma-freezing residual).

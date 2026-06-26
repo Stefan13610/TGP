@@ -1,0 +1,71 @@
+
+==========================================================================
+(F1) SANITY: alpha_density(s) z poprawnej transformacji substrat->gestosc
+==========================================================================
+  K_eff(psi) = K_geo*s_ref**2*(psi*s_ref**2)**s/(4*psi)
+  p_eff (potega psi) = s - 1   ->   alpha_density = p_eff/2 = s/2 - 1/2
+  [PASS] F1: alpha_density(s)=(s-1)/2; reprodukuje op-A3 (s=1->0, s=2->1/2)
+         => alpha(s=1)=0, alpha(s=2)=1/2
+
+==========================================================================
+(F2) Rozwiazac alpha_density = 2  dla s
+==========================================================================
+  alpha_density(s)=2  =>  s* = 5
+  [PASS] F2: alpha=2 wymaga s*=5 (tj. K(s_hat) ~ s_hat^10)
+         => s* = 5, 2s* = 10
+
+==========================================================================
+(F3) Czy s*=5 to DOPUSZCZALNY bond (skalarny, Z2-parzysty, calkowity rzad)?
+==========================================================================
+  K(s_hat) ~ s_hat^(2*5) = s_hat^10  (parzyste w s_hat => Z2-parzyste OK)
+  s*=5 calkowite i >=1 => dopuszczalny rzad bondu.
+  [PASS] F3: s*=5 -> bond DOPUSZCZALNY (skalar, Z2-parzysty, calkowity) => NIE no-go; alpha=2 REALIZOWALNE
+         => K~s_hat^10; mapowanie rzedu: ekstrakcja n=6 ((s_i s_j)^6), konwencja wagowa m=5
+  Ekstrakcja gradientu: (s_i s_j)^n, s=n-1 => n = 6
+  Konwencja wagowa:     K_ij=(s_i s_j)^m, s=m => m = 5
+
+==========================================================================
+(F4) Czy s*=5 to KANONICZNY bond v2 (s=2)?
+==========================================================================
+  Kanoniczny v2 bond (s_i s_j)^2 => s=2 => alpha_density = 1/2  (= 1/2, NIE 2)
+  alpha=2 wymaga s=5 != s=2 (v2). => bond NIE-KANONICZNY.
+  [PASS] F4: alpha=2 NIE pochodzi z kanonicznego v2 bondu (s=2 daje alpha=1/2) => NIE-KANONICZNY
+         => v2: alpha=1/2; alpha=2 wymaga s=5
+
+==========================================================================
+(F5) Cross-consistency: czy bond rzedu kinetyki (n=6) wspolistnieje z V~Phi^3,Phi^4?
+==========================================================================
+  V~Phi^3 (beta)  <- bond rzedu n=3
+  V~Phi^4 (gamma) <- bond rzedu n=4
+  alpha=2 (kinetyka) <- bond rzedu n=6
+  Rzedy {3,4,6} ROZNE => pojedynczy monomial bond nie wystarcza;
+  alpha=2 wymaga osobnego, niezaleznego czlonu kinetycznego rzedu 6 (wsp. dostrajalny).
+  [PASS] F5: czlon kinetyczny dajacy alpha=2 (n=6) jest NIEZALEZNY od czlonow V (n=3,4) => osobny tuned coef
+         => alpha=2 nie wypada 'za darmo' z bondu generujacego kanoniczny potencjal; to osobne wejscie
+
+==========================================================================
+WERDYKT (value-blind, regula Phase0 §4)
+==========================================================================
+  F1: alpha_density(s)=(s-1)/2  (reprodukuje op-A3; relacja EL niepodwazona).
+  F2: alpha=2  =>  s*=5  =>  K(s_hat)~s_hat^10.
+  F3: s*=5 calkowity, Z2-parzysty, skalarny => DOPUSZCZALNY => *** NIE NO-GO ***.
+  F4: s*=5 != v2 bond (s=2, alpha=1/2) => bond NIE-KANONICZNY (rzad n=6, nie n=2).
+  F5: czlon kinetyczny n=6 niezalezny od V(n=3,4) => alpha=2 = osobny tuned coef, nie 'za darmo'.
+
+  *** WERDYKT: REALIZABLE-NONCANONICAL ***
+  alpha=2 NA GESTOSCI jest substrate-realizowalne — ale TYLKO przez nie-kanoniczny,
+  wysokorzedowy bond Z2 K(s_hat)~s_hat^10 (rzad n=6), nieselekcjonowany obecna zasada
+  i niezalezny od czlonow generujacych kanoniczny potencjal V(Phi^3,Phi^4).
+  => Bez zasady selekcji rzedu n=6, alpha=2 POZOSTAJE aksjomatem na gestosci (zgodnie
+     z rem:alpha2-pivot-status), ale teraz KONSTRUKTYWNIE: wiemy DOKLADNIE jaki substrat
+     by go dal. Fundament 'emergencja z jednego pola skalarnego Z2' NIE jest zlamany
+     (taki bond jest dopuszczalny), lecz nie jest tez DOMKNIETY (brak zasady -> wybor bondu).
+
+  Obie strony: (PRO realizowalnosc) s_hat^10 jest legalnym Z2-skalarnym bondem, wiec
+    'no substrate can give alpha=2' jest FALSZ. (CONTRA derywacja) brak zasady selekcjonujacej
+    rzad 6 nad rzedem 2; rzad 6 niezalezny od V => to wybor/dostrojenie, nie derywacja kanoniczna.
+
+  Testy: 5/5 PASS
+  Wyniki: Phase1_results.json
+
+SESJA: op-Phi-field-identity-resolution Phase 1 (2026-06-23)

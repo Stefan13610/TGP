@@ -1,0 +1,68 @@
+========================================================================================
+op-nucleation-dimensionality — Phase 1 FAST AUDYT  (F-ND-A + F-ND-B)
+========================================================================================
+
+----------------------------------------------------------------------------------------
+F-ND-A — TOPOLOGIA DEFEKTÓW  (Phase0 §3 F-ND-A; klasy CLOSED)
+----------------------------------------------------------------------------------------
+[PASS] FP-A0: Relacje nakryć spójne: π_n(RP2)=π_n(S2) i π_n(SO3/Z2)=π_n(S3) dla n≥2; π2(SO3/Z2)=0 [Hatcher, Algebraic Topology, Tabela π_n(S^k) §4.1; nakrycie p: ~X→X ⇒ π_n iso dla n≥2.]
+[PASS] FP-A1: Spór rozstrzygnięty: π2(SO(3)/Z2)=0 (≠Z) — zapis sek07a 'π2(SO3/Z2)=Z' NIEPOPRAWNY; źródło punktów π2=Z to RP2/S2 (π2=Z).
+[PASS] FP-A2: N_sekt(D) [M=chiralZ2×SO3/Z2] = {1: 1, 2: 2, 3: 2, 4: 3, 5: 4, 6: 5}; [M=chiralZ2×RP2] = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6} (reguła symetryczna, D=1..6)
+[PASS] FP-A3: Punkty stabilne? [SO3/Z2]: {1: True, 2: True, 3: False, 4: True, 5: True, 6: True}  |  [RP2]: {1: True, 2: True, 3: True, 4: True, 5: True, 6: True}  (π_{D-1}(M)≠0; reguła Kibble/Mermin)
+[PASS] FP-A4: M zapisane w sek07a (SO3/Z2): cząstki punktowe w D=3 = False (π2=0 ⇒ teza 'cząstki=defekty punktowe w 3D' UPADA na własnej rozmaitości).
+[PASS] FP-A5: Uczciwy test D>3: rozmaitość z punktami (RP2) ma stabilne punkty dla D=[1, 2, 3, 4, 5, 6] (NIE tylko D=3, bo π3=π_{3}(S2)=Z≠0); N_sekt rośnie z D (True).
+[PASS] FP-A6: Circularity guard: flagi werdyktowe F-ND-A wyliczone regułami parametrycznymi w D; D_obs=3 nieobecne w wyznaczaniu flag (użyte tylko w comparison-only).
+
+----------------------------------------------------------------------------------------
+F-ND-B — STABILNOŚĆ: Δ_d (trzy reżimy) + Derrick  (Phase0 §3 F-ND-B)
+----------------------------------------------------------------------------------------
+[PASS] FP-B1: Δ_d wyprowadzone symbolicznie = (d-1)²B²-4d(d-2)AC  (zgodne z sek07a eq:Delta-d); zera siły ⟺ d·C·u²-(d-1)·B·u+(d-2)·A=0.
+[PASS] FP-B2: Próg τ_d=2√(d(d-2))/(d-1) dla Δ_d>0: τ_2=0.0000, τ_3=1.7321, τ_4=1.8856, τ_5=1.9365, τ_6=1.9596  (rosnący, ograniczony →2).
+[PASS] FP-B3: DERIVED-vs-FITTED: A,B,C(d) wyprowadzone z {β,γ,Φ0,λ}? = False (asercja, nie derywacja). Dla asercji ρ=3.4: Δ_d>0 dla d∈[2, 3, 4, 5, 6] ⇒ warunek trzech reżimów NIE wyklucza d≥4.
+[PASS] FP-B4: Derrick: bez tła równowaga L*>0 dla E_g,E_p>0 = False (d≥2, Derrick). Z członem tła ∝L^p: równowaga możliwa w PAŚMIE d (zależnie od p) — nie wycina pojedynczego d=3.
+[PASS] FP-B5: Θ(ν_d⁻¹): nietrywialne przejście tylko d∈{2,3} (d_c^Ising=4, pole średnie d≥4). d=4 wykluczone WYŁĄCZNIE miękkim 'pole średnie/trywialne' (Δ_4>0 dla ρ=3.4) = True ⇒ selekcja stabilnościowa = PREFERENCYJNA, nie DERIVED.
+[PASS] FP-B6: Circularity guard: τ_d, Δ_d, Derrick parametryczne w d; '3' nie w gałęzi decyzyjnej; wartości liczbowe (3.4) traktowane jako ASERCJA do audytu, nie input.
+
+========================================================================================
+WERDYKTY (wyliczone z flag; klasy CLOSED Phase0 §3)
+========================================================================================
+F-ND-A = TOPO-NO-SELECTION (z elementem GAP: rozmaitość porządku nieustalona; π2(SO3/Z2)=0 vs π2(RP2)=Z)
+   • sek07a π2(SO(3)/Z2)=Z BŁĘDNE (poprawnie 0): True
+   • rozmaitość zapisana nie daje cząstek punktowych w D=3: True
+   • przy naprawie (RP2) punkty NIE są unikalne dla D=3: True
+
+F-ND-B = STAB-SELECTS-3-FITTED (D=3 wyróżniony, lecz Δ_d>0 dla pasma d≥3; A,B,C nie-derived; d≥4 wykluczone tylko miękkim Θ(ν⁻¹))
+   • A,B,C(d) derived z stałych TGP: False
+   • Δ_d>0 dla pasma (nie pojedynczego d): True
+   • Derrick/bg wybiera pasmo nie punkt: True
+
+Trajektoria (INFORMATIONAL; F-ND-E dopiero w Phase FINAL po F-ND-C):
+   • mocna teza 'topologia wycina DOKŁADNIE D=3' przetrwała audyt: False
+   • odporna część 'cząstki punktowe wymagają D≥3' (π2≠0): True
+   ⇒ kierunek: SEK07A-CHALLENGED na unikalności / DIM-3-PREFERENTIAL na D≥3 (rozstrzygnięcie po F-ND-C: nukleacja+marginalność).
+
+----------------------------------------------------------------------------------------
+COMPARISON-ONLY (po locku wyników per-D; Phase0 §0 pkt 2)
+----------------------------------------------------------------------------------------
+   • D_obs = 3: leży w paśmie dopuszczonym przez stabilność (d≥3) ✓ i spełnia warunek konieczny topologii (π2≠0 ⇒ punkty) ✓ — zgodność, ALE nie z UNIKALNOŚCI.
+   • '3 generacje ↔ 3 sektory': N_sekt(3)[RP2]=3 (zgodne), lecz N_sekt(4)=4 (D=4 ma WIĘCEJ sektorów, nie mniej) — koincydencja liczbowa, nie selekcja.
+
+========================================================================================
+FP STATISTICS: 13/13 PASS   (0 hardcoded T_pass; werdykty z flag)
+========================================================================================
+  PASS  FP-A0
+  PASS  FP-A1
+  PASS  FP-A2
+  PASS  FP-A3
+  PASS  FP-A4
+  PASS  FP-A5
+  PASS  FP-A6
+  PASS  FP-B1
+  PASS  FP-B2
+  PASS  FP-B3
+  PASS  FP-B4
+  PASS  FP-B5
+  PASS  FP-B6
+
+F-ND-A = TOPO-NO-SELECTION (z elementem GAP: rozmaitość porządku nieustalona; π2(SO3/Z2)=0 vs π2(RP2)=Z)
+F-ND-B = STAB-SELECTS-3-FITTED (D=3 wyróżniony, lecz Δ_d>0 dla pasma d≥3; A,B,C nie-derived; d≥4 wykluczone tylko miękkim Θ(ν⁻¹))

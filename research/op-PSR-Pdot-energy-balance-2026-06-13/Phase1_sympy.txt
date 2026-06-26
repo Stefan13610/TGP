@@ -1,0 +1,49 @@
+﻿========================================================================
+T0 � dipole cancellation for C_i = q*m_i (circular two-body, CM frame)
+========================================================================
+[PASS] T0 scalar dipole D = q*Sum(m_i x_i) == 0 identically
+========================================================================
+T2a � static calibration: q^2 = 4*pi*G from Newtonian limit
+========================================================================
+[PASS] T2a.1 Lap(-q m1/(4 pi r)) == 0 for r>0
+[PASS] T2a.2 U_int = -G m1 m2/d  <=>  q^2 = 4*pi*G  -- q^2 = [4*pi*G]
+========================================================================
+T1 � angular integrals over the unit sphere
+========================================================================
+[PASS] T1.1  Int n_x^4 dOmega = 4*pi/5
+[PASS] T1.2  Int n_x^2 n_y^2 dOmega = 4*pi/15
+[PASS] T1.3  Int n_x^3 n_y dOmega = 0
+========================================================================
+T3 � scalar quadrupole power for circular binary, ab initio
+========================================================================
+[PASS] T3.1 trace M_ij = mu*d^2 = const (no breathing for circular orbit)  -- trM = d**2*m1*m2/(m1 + m2)
+[PASS] T3.2 P_phi = (16/15) G mu^2 d^4 omega^6   [ab initio]  -- P_phi = 16*G*d**4*m1**2*m2**2*omega**6/(15*(m1 + m2)**2)
+[PASS] T3.3 P_phi == (G/30)*<I3:I3>  (user's formula reproduced)  -- <I3:I3> = 32*d**4*m1**2*m2**2*omega**6/(m1**2 + 2*m1*m2 + m2**2)
+[PASS] T3.4 P_GR = (32/5) G mu^2 d^4 omega^6  (lock consistency)
+[PASS] T3.5 P_phi / P_GR = 1/6 EXACT  -- ratio = 1/6
+========================================================================
+T4 � sigma-channel propagation gate at J0737-3039 frequencies
+========================================================================
+[PASS] T4.1 hbar*omega_GW < m_sigma c^2  =>  sigma channel NON-PROPAGATING  -- hbar*w_GW = 9.363e-19 eV vs m_sigma = 7.10e-04 eV (ratio 1.3e-15)
+[PASS] T4.2 static range of sigma = hbar*c/m_sigma ~ sub-mm (cannot carry Newton)  -- range = 0.278 mm
+[PASS] T4.3 k^2 < 0 for omega < m (evanescent, zero flux at infinity)
+========================================================================
+T5 � Branch B: amplitude lock does NOT pin the energy flux
+========================================================================
+[PASS] T5.1 amplitude match h_eff=h_GR  <=>  lam*xi = 16 pi G (1 condition)
+[PASS] T5.2 flux ratio kappa_E = xi^2/(16 pi G) under amplitude lock -> NOT fixed to 1 (2nd independent condition xi=lam required)  -- kappa_E = xi_**2/(16*pi*G)
+[PASS] T5.3 symmetric choice xi=lam gives kappa_E = 1 (GR flux) exactly
+========================================================================
+T6 � verdicts vs J0737-3039 (R_obs = 0.999963 +/- 0.000063)
+========================================================================
+[PASS] T6.1 Branch A: R = 1/6 deviates by > 5 sigma  -- R_A = 0.166667, deviation = 13227 sigma
+[PASS] T6.2 Branch B (canonical kappa_E=1): R = 7/6 deviates by > 5 sigma  -- R_B = 1.166667, deviation = 2646 sigma
+      Branch B rescue would need kappa_E = 0.833296 +/- 0.000315 (rel. 3.8e-04) -> NEW tuned anchor, forbidden by Phase 0 par.6.2
+      B1913+16 cross-check: Branch A 520 sigma, Branch B 105 sigma (same verdicts)
+========================================================================
+T7 � eccentricity robustness (e = 0.0877775)
+========================================================================
+[PASS] T7.1 O(e^2) channel-ratio shift cannot bridge Branch A gap  -- bound on ratio shift ~ 5.2% vs gap 0.833
+[PASS] T7.2 O(e^2) channel-ratio shift cannot bridge Branch B gap  -- bound ~ 5.2% vs gap 0.167
+========================================================================
+TOTAL: 21/21 PASS

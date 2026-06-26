@@ -1,0 +1,46 @@
+========================================================================
+T1-A — operator fluktuacji Z^{mn} z czlonu disformalnego (Vainshtein kinetyczny)
+========================================================================
+[PASS] T1-A: Z^mn = 2(A-bX)eta - 4b (dphi)(dphi)^T  [EXACT, match=True]; L''=-b!=0 => Z zalezy od tla X => natywny VAINSHTEIN KINETYCZNY (enhancement Z z X_bg).
+========================================================================
+T1-B — wzmocnienie kinetyczne wewnatrz r_V: Z_eff/A = 2(bX/A - 1) >> 1 dla bX>>A
+========================================================================
+[PASS] T1-B: u=bX_bg/A (u>1 wewnatrz r_V). Zeff/A=2|1-u| -> 2u dla u>>1 (lim ratio=1). Kinetyka fluktuacji WZMOCNIONA ~u razy wewnatrz r_V (mechanizm ekranowania obecny).
+========================================================================
+T1-C — BILANS ENERGII: P_phi^LIVE / P_phi^unscreened = 1/u  (T^{0r}, NIE amplituda)
+========================================================================
+[PASS] T1-C: ratio P_phi^LIVE/P_phi^unscr = Abs(u - 1)/(u - 1)**2 ;  ~1/u dla u>>1 (ratio*u->1). => STRUMIEN energii skalarnej TLUMIONY czynnikiem Vainshteina 1/u  (z bilansu T^{0r}). P_phi^LIVE = (1/u)*(1/6)P_GR.
+========================================================================
+T1-D — NIE 'UNSCREENED': nieekranowane zrodlo konforemne NIE chroni (1/6) przed tlumieniem
+========================================================================
+[PASS] T1-D: Zrodlo konforemne (R14) jest BEZ pochodnych (nieekranowane), ale ODPOWIEDZ delta_phi i STRUMIEN sa tlumione przez Zeff w EOM (Zeff*Box delta_phi=zrodlo). ratio=1/|1-u|<1 dla u>2 => (1/6)P_GR NIE przezywa przy pelnej sile => flaga != UNSCREENED_FLUX. Obalony naiwny argument 'konforemne sprzezenie nieekranowane => 1/6 stoi'.
+========================================================================
+T1-E — NIE 'SCREENED-do-GR': magnituda 1/u zalezy od NIEWYPROWADZONYCH B(Phi)[O12] i M*[R11]
+========================================================================
+[PASS] T1-E: u=(B/M*^4)X_bg/A: B(Phi) derived=False (O12 OTWARTY), M* derived=False (status_map 'Propozycja'). => magnituda tlumienia 1/u NIEWYPROWADZONA => NIE da sie orzec 'strumien sprowadzony do GR' => flaga != SCREENED_FLUX (strict).
+========================================================================
+T1-F — rozroznienie wielkosci (forbidden #4): amplituda R3 (kanal C2) != strumien (kanal C1)
+========================================================================
+[PASS] T1-F: amplituda C2 ∝ 1/(kr) [propagacja]  vs  strumien C1 ∝ 1/u=A/(bX_bg) [kinetyka]: ROZNE wielkosci, rozne mechanizmy, rozne zmienne {k, r} vs {u}. => R3 (18 rzedow amplitudy) NIE dowodzi tlumienia strumienia; rozstrzygniecie z T^{0r} (T1-C). Caveat recon §4(i) ROZSTRZYGNIETY: amplituda != strumien, ale strumien TEZ tlumiony (innym czynnikiem).
+========================================================================
+T1-G — dyscyplina anti-Lakatos
+========================================================================
+[PASS] T1-G: 0 danych obserwacyjnych (struktura); werdykt z flag; 0 nowych stalych; bilans ENERGII (T^{0r}) nie amplitudy (forbidden #4); B/M* raportowane jako underived wprost.
+========================================================================
+WERDYKT F-DRR-1 (wyliczony z flag)
+========================================================================
+checks: 7/7 PASS
+
+F-DRR-1 = PARTIAL
+  - Disformalny Vainshtein DZIALA na STRUMIEN: P_phi^LIVE = (1/u)(1/6)P_GR, u=bX_bg/A (T1-C).
+  - NIE UNSCREENED: nieekranowane zrodlo konforemne nie chroni (1/6) -- odpowiedz/strumien
+    tlumione kinetycznie przez Zeff (T1-D); naiwny argument obalony.
+  - NIE SCREENED-do-GR: magnituda 1/u zalezy od NIEWYPROWADZONYCH B(Phi)[O12] i M*[R11] (T1-E).
+  - amplituda(C2,1/(kr)) != strumien(C1,1/u): caveat recon §4(i) rozstrzygniety (T1-F).
+  => Strumien SUPRESJONOWANY (nie broken na C1), ale magnituda NIEDOOKRESLONA (B,M* underived).
+     Zywa droga ku UNDERDETERMINED; rozstrzygniecie pin/M* = Phase 2 (T2,T3).
+
+DISCIPLINE: hardcoded_T_pass=0 ; verdict_from_flags=True ; energy_balance_not_amplitude=True
+
+W-DRR-1 (DOUBT, MED): Z^{rr}=2A-6bX<0 dla u>1/3 => znak b=B/M*^4 decyduje o zdrowiu modu
+  gradientowego (ghost/Laplacian). Znak B niewyprowadzony (O12). Do rejestru DOUBTS.

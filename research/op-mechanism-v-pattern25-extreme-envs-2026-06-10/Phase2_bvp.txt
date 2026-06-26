@@ -1,0 +1,70 @@
+﻿==============================================================================
+  P25 Phase 2 — F-P25-B condensed BVP verification (NS-NS) + formal verdict
+==============================================================================
+
+------------------------------------------------------------------------------
+  Section 1: EOM / W(psi) re-verification (sympy)
+------------------------------------------------------------------------------
+  [PASS] FP1: W = -V'/gamma EXACT; m_tilde^2 = 4/3; delta_psi_critical = 2*sqrt(3)/9
+         (expected=all identities EXACT, got=True, m2=4/3, dcrit=2*sqrt(3)/9)
+
+------------------------------------------------------------------------------
+  Section 2: regression gate — T3 Phase 3 Branch A typical-LIGO (LOCKED .txt)
+------------------------------------------------------------------------------
+  [PASS] FP2: REGRESSION GATE — T3 Phase 3 LOCKED .txt 6.83e-81 (rel dev < 2%)
+         (expected=6.83e-81, got=6.833e-81 (rel dev 0.0004))
+
+------------------------------------------------------------------------------
+  Section 3: nonlinear BVP — anchor vs LOCKED T3 Phase 2 (M=0.01, sigma=1)
+------------------------------------------------------------------------------
+  [PASS] FP3: nonlinear BVP anchor M=0.01, sigma=1 vs LOCKED T3 Phase 2 delta_psi_max = 1.91e-4 (rel dev < 15%)
+         (expected=1.91e-4, got=1.907e-04 (rel dev 0.002; converged=True; rms=1.8e-11))
+
+------------------------------------------------------------------------------
+  Section 4: amplitude ladder — linear scaling delta_psi_max ∝ M
+------------------------------------------------------------------------------
+    M = 1.0e-04  ->  delta_psi_max = 1.907001e-06   (converged=True, rms=1.9e-11)
+    M = 3.0e-04  ->  delta_psi_max = 5.721003e-06   (converged=True, rms=2.4e-11)
+    M = 1.0e-03  ->  delta_psi_max = 1.907001e-05   (converged=True, rms=2.7e-10)
+    M = 3.0e-03  ->  delta_psi_max = 5.721089e-05   (converged=True, rms=1.8e-11)
+    M = 1.0e-02  ->  delta_psi_max = 1.907097e-04   (converged=True, rms=1.8e-11)
+  [PASS] FP4: log-log slope = 1.000 +/- 0.01 AND ratio spread < 2% (linear regime confirmed across x100 amplitude range)
+         (expected=slope 1.000; spread < 1.02, got=slope 1.00001; spread 1.00005)
+
+------------------------------------------------------------------------------
+  Section 5: wide-source BVP — direct validation of local formula delta_psi=(3/4)rho
+------------------------------------------------------------------------------
+  [PASS] FP5: central delta_psi vs (3/4)*rho(0) for sigma*m_tilde ~ 11.5 (rel dev < 5%) — S-rho local formula NUMERICALLY validated
+         (expected=4.7620e-07, got=4.6587e-07 (rel dev 0.0217; converged=True))
+
+------------------------------------------------------------------------------
+  Section 6: NS-NS near-contact — formal delta_psi_max under Branch A
+------------------------------------------------------------------------------
+    rho_NS (Planck units, Branch A) = 1.948e-79
+    regime selector (R_NS * m_tilde) = 7.14e+38  (>> 1: LOCAL regime forced)
+    delta_psi single NS center      = 1.461e-79
+    delta_psi near-contact (x2 cap) = 2.922e-79
+  [PASS] FP6: NS-NS delta_psi_max (incl. x2 contact bound) computed; consistency with Phase 1 FP13 preview (factor 3)
+         (expected=~1.5e-79 (preview), got=1.461e-79)
+  [PASS] FP7: degeneration audit — rho->0 => delta_psi->0; thresholds absent from source/response forms (comparison-only)
+         (expected=clean, got=True, True)
+
+------------------------------------------------------------------------------
+  Section 7: F-P25-B formal verdict (mechanical)
+------------------------------------------------------------------------------
+    delta_psi_max(NS-NS, x2 bound) = 2.922e-79
+    thresholds: PASS >= 0.3849; PARTIAL >= 0.0385
+    shortfall vs PARTIAL band: 77.1 orders of magnitude
+
+    >>> F-P25-B VERDICT (NS-NS branch): FAIL_NEGATIVE <<<
+    (BH-BH branch: NEGATIVE at the gate — Phase 1 FP12, source = 0 identically)
+  [PASS] FP8: verdict in pre-registered set + computed from thresholds (0 hardcoded)
+         (expected=pre-registered set, got=FAIL_NEGATIVE)
+  [PASS] FP9: numerical honesty — all BVP runs converged (no tachyonic-regime breakdown anywhere on the ladder; far from T3 M_critical = 15.80)
+         (expected=all converged, got=True)
+
+==============================================================================
+  FP SUMMARY: 9/9 PASS; hardcoded T_pass = 0/9
+  F-P25-B (NS-NS): FAIL_NEGATIVE  (shortfall 77.1 orders vs PARTIAL band)
+  F-P25-B (BH-BH): NEGATIVE at gate (Phase 1, source = 0)
+==============================================================================
