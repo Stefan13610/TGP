@@ -42,7 +42,7 @@ User: „przeanalizuj etap TGP_v1" → „uzupełnij" (STATE retro-wpis + README
 
 ### WIP po sesji
 - **op-lattice-bath-runaway: 🔴 CLOSED-GATE-STOP** + POST-CLOSE N1/N2 🟢 WYKONANE. Pytanie centralne (ω²(n) w kąpieli) NIEROZSTRZYGNIĘTE — zatrzymane bramką.
-- **Następny krok (deklaracja użytkownika):** rozpisanie promptu/LOCKa dla NOWEJ SESJI — N3: rachunek centralny na fazach ZMIERZONYCH (drabina d\* istnieje dla dowolnych faz) + opcjonalnie test hipotezy dwóch sektorów (znak efektywnego W wokół tła o gęstości n — łączy N2 z N3).
+- **🟢 ROZPISANE: [[research/op-bath-two-sectors-2026-08-23/Phase0_balance.md]] — PHASE0-LOCKED, zero obliczeń** (autoryzacja: „ok, przygotuj prompt"). Q1 = N3: runaway w kąpieli na fazach ZMIERZONYCH (modele M-P potęgowy + M-L logarytmiczny, drabina d\* par ee/eμ/μμ, kryteria Q1-PASS/FAIL/INCONCLUSIVE); Q2 = hipoteza dwóch sektorów: czy znak tachionowy W emerguje z gęstości w akcji STABILNEJ (tła ψ_n, d∈{∞,8,6,4,2}, kontrola d=∞→Yukawa) — Q2-PASS dałby derywacyjną kotwicę maszynerii 2. Prompt dla nowej sesji: [[research/op-bath-two-sectors-2026-08-23/HANDOFF_PROMPT.md]] (do wklejenia w całości; zawiera lekcję higieny ścieżek).
 - **Decyzje użytkownika (user-gate, korekt rdzenia NIE wykonano):** dopiski do dodatekH/status_map (N1: przypisanie faz do eq:J-ode; N2: remark przy Nocie kanonicznej o znaku W; N4: flaga przy g₀τ=4 — kolaps w niezależnej integracji); status O-K1.
 - Otwarte bez zmian: Φ₀ poza kosmologią; nośnik filaru spin-½; kolor (trzy rozwidlenia); dwa substraty rdzenia; NEEDS N1–N3 z #63.
 
