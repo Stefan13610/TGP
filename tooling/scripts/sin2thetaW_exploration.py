@@ -8,7 +8,7 @@ parameters. Strategy:
   2. Find which boundary condition reproduces sin^2(theta_W) = 0.23122
   3. Search for TGP-motivated formula for that boundary condition
 
-Key TGP parameters: Phi_0 ~ 24.65, a_Gamma = 0.040, N_c = 3, N_f = 5
+Key TGP parameters: Phi_0 ~ 24.783, a_Gamma = 0.040, N_c = 3, N_f = 5
 """
 
 import numpy as np

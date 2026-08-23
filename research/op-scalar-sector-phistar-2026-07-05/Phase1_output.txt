@@ -1,0 +1,19 @@
+=== Phase 1: ogon amplitudowy wiru (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5 dt=0.02 tau_relax=4.0
+
+     r     f_2D/s*     1-xi^2/r^2    stosunek   |odchylka|
+   6.00   0.98168    0.98419      0.99744   0.256%
+   6.50   0.98473    0.98653      0.99817   0.183%
+   7.00   0.98709    0.98839      0.99869   0.131%
+   7.50   0.98879    0.98988      0.99890   0.110%
+   8.00   0.99021    0.99111      0.99909   0.091%
+   8.50   0.99143    0.99212      0.99930   0.070%
+   9.00   0.99238    0.99297      0.99940   0.060%
+   9.50   0.99313    0.99369      0.99943   0.057%
+  10.00   0.99375    0.99431      0.99944   0.056%
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase1): determinizm bitowy: True; nf=False run=False H_mono=True
+G2 (ogon algebraiczny): max |odchylka| = 0.256% <= 1%: True  -> PASS
+
+PODSUMOWANIE PHASE 1: G1(czesc)=PASS G2=PASS

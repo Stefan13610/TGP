@@ -1,0 +1,30 @@
+=== Phase 2: wir jako tlo stacjonarne (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5  para: (-32.0, -32.0) (+1), (32.0, 32.0) (-1)
+
+--- G3: stacjonarnosc po 2000 krokach relaksacji ---
+  residuum max|RHS| = 1.303e-02  (prog 1e-4)
+  dryf pozycji rdzeni (krok 1000 -> 2000) = 0.29662  (prog 0.02)
+  kret: n_tot = 0;  determinizm bitowy: True;  H_mono: True
+  -> FAIL
+
+--- G4a: widma operatorow na tle wirowym ---
+  lambda_min(L_toy)  = -0.07864  (frakcja modu w rdzeniach: 0.000)  [oczekiwanie pre-code: < -0.01 — pierscien V''<0 wiaze]
+  lambda_min(L_full) = -0.060989  (rozdzielczosc ~1e-3; prog G4a: >= -1e-3)
+  -> G4a: FAIL
+
+--- G4b: noise-run, pelna dynamika II rzedu, tau=150 ---
+  gamma_fit: rdzenie = +0.00141, globalnie = +0.00347 (prog 0.01; B2 mialo 0.125)
+  flagi: nf=False run=False;  dryft sekularny energii = 9.71e-07 (prog 1e-4)
+  -> G4b: PASS
+
+--- G5 (demo, obserwacja): pakiet amplitudowy omega=1.1, b=6 ---
+  alpha_demo = -36.000 deg (sig=176.361; 5 probek)  ->  kierunek: KU wirowi
+  (eikonal, Phase0: b=6, omega=1.1 -> +43 deg KU wirowi; pomiar ILOSCIOWY = nastepny op)
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): determinizm True; H_mono relaksacji True; dryft energii dynamiki 9.71e-07 <= 1e-4: True
+G3 (stacjonarnosc): FAIL
+G4 (RDZEN, brak tachionu): a) lambda_min(L_full)=-0.060989 >= -1e-3: False;  b) gamma_fit<=0.01: True  -> FAIL
+   diagnostyka: lambda_min(L_toy)=-0.07864 (toy-sektor ma tachion na tle stacjonarnym — zdyskwalifikowany)
+
+PODSUMOWANIE PHASE 2: G3=FAIL G4=FAIL

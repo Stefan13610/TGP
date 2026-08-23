@@ -1,0 +1,35 @@
+=== Phase 2: wir jako tlo stacjonarne (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5  para: (-32.0, -32.0) (+1), (32.0, 32.0) (-1)
+
+diagnostyka ansatzu: max |dtheta| na linkach poza rdzeniami = 1.5831 (wadliwy ansatz mial pi)
+  kret ansatzu: n_tot=0; pozycje: +1 (np.float64(-31.75), np.float64(-31.75)), -1 (np.float64(32.25), np.float64(32.25))
+
+--- G3: stacjonarnosc po 2000 krokach relaksacji ---
+  pozycje rdzeni (krok 2000): +1 (np.float64(-31.062), np.float64(-31.062)), -1 (np.float64(31.562), np.float64(31.562))
+  |psi| daleko od rdzeni: min = 1.0184 (s*=1.1742; wadliwy ansatz dawal 0.10)
+  residuum max|RHS| = 8.107e-03  (prog 1e-4)
+  dryf pozycji rdzeni (krok 1000 -> 2000) = 0.42216  (prog 0.02)
+  kret: n_tot = 0;  determinizm bitowy: True;  H_mono: True
+  -> FAIL
+
+--- G4a: widma operatorow na tle wirowym ---
+  lambda_min(L_toy)  = +0.01979  (frakcja modu w rdzeniach: 0.998)  [oczekiwanie pre-code: < -0.01 — pierscien V''<0 wiaze]
+  lambda_min(L_full) = +0.000793  (rozdzielczosc ~1e-3; prog G4a: >= -1e-3)
+  -> G4a: PASS
+
+--- G4b: noise-run, pelna dynamika II rzedu, tau=150 ---
+  gamma_fit: rdzenie = +0.00028, globalnie = +0.01149 (prog 0.01; B2 mialo 0.125)
+  flagi: nf=False run=False;  dryft sekularny energii = 6.93e-07 (prog 1e-4)
+  -> G4b: FAIL
+
+--- G5 (demo, obserwacja): pakiet amplitudowy omega=1.1, b=6 ---
+  alpha_demo (srednia wektorowa P) = -134.995 deg; probki katowe: ['-174.4', '-135.1', '-135.0', '-135.0', '-135.0']  ->  kierunek: KU wirowi
+  (eikonal, Phase0: b=6, omega=1.1 -> +43 deg KU wirowi; pomiar ILOSCIOWY = nastepny op)
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): determinizm True; H_mono relaksacji True; dryft energii dynamiki 6.93e-07 <= 1e-4: True
+G3 (stacjonarnosc): FAIL
+G4 (RDZEN, brak tachionu): a) lambda_min(L_full)=+0.000793 >= -1e-3: True;  b) gamma_fit<=0.01: False  -> FAIL
+   diagnostyka: lambda_min(L_toy)=+0.01979 (toy-sektor bez szybkiego tachionu)
+
+PODSUMOWANIE PHASE 2: G3=FAIL G4=FAIL

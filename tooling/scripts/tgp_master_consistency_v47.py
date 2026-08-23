@@ -32,7 +32,7 @@ Omega_Lambda = 0.6847
 H_0 = 67.4             # km/s/Mpc
 
 # Stale TGP
-Phi_0 = 36 * Omega_Lambda  # ~24.65
+Phi_0 = 24.783  # LOCKED (#42 ledger); prev drift 36*Omega_Lambda~24.65
 a_Gamma = 0.040
 N_c = 3
 N_f = 5
@@ -282,8 +282,8 @@ print("=" * 70)
 dm21_sq = 7.53e-5   # eV^2
 dm32_sq = 2.453e-3  # eV^2 (positive => normal ordering)
 
-# TGP predicts: sum_mnu ~ 59.6 meV, K(nu) = 1/2 (Majorana)
-sum_mnu_TGP = 59.6e-3  # eV
+# TGP predicts: sum_mnu ~ 59.01 meV, K(nu) = 1/2 (Majorana)
+sum_mnu_TGP = 59.01e-3  # eV  (LOCKED #42; prev drift 59.6)
 
 # From oscillation data + sum constraint, reconstruct individual masses
 # m1^2 + dm21 = m2^2, m2^2 + dm32 = m3^2
@@ -308,10 +308,10 @@ test("E1: Normal ordering (m3 > m2 > m1)",
 
 # E2: sum(m_nu) consistent with Planck+DESI upper bound
 # Planck+DESI: sum < 0.072 eV (95% CL), central ~0.06 eV
-test("E2: sum(m_nu) = 59.6 meV < 72 meV (Planck+DESI)",
+test("E2: sum(m_nu) = 59.01 meV < 72 meV (Planck+DESI)",
      sum_mnu_TGP < 0.072, f"{sum_mnu_TGP*1e3:.1f} meV")
 
-# E3: K(nu) from oscillation data + sum = 59.6 meV
+# E3: K(nu) from oscillation data + sum = 59.01 meV
 # Standard Koide K ∈ [1, 3] always. K(nu)=1/2 impossible for standard formula.
 # TGP claim "K(nu)=1/2" must refer to modified (Majorana see-saw) parameter.
 # Here we compute the standard K as diagnostic.

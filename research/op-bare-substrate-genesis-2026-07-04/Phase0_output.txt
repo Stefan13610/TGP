@@ -1,0 +1,43 @@
+=== Phase 0: weryfikacja rachunkow analitycznych (pre-code) ===
+potencjal: a=0.5, b=1.6, c=1.0, kappa=0.5, dx=0.5, dt=0.02
+
+[1] Ekstrema V (pierwiastki a - b|s| + c s^2 = 0):
+    b^2-4ac = 0.5600  (LOCK: 0.56)  -> OK
+    bariera  |s_bar| = 0.4258  Phi_bar = 0.1813  (LOCK: ~0.426 / ~0.181)
+    prozniaN |s*|    = 1.1742  Phi*    = 1.3787  (LOCK: ~1.174 / ~1.378)
+    residua V'(s_bar), V'(s*): 2.36e-17, 0.00e+00
+    -> PASS
+
+[2] Energie i krzywizny:
+    V(0)      = 0.000000
+    V(s_bar)  = 0.012371   (wysokosc bariery)
+    V(s*)     = -0.043504  (LOCK: ~ -0.044, ma byc < 0)
+    V''(0)    = 0.5000     (>0 => s=0 metastabilne)
+    V''(s*)   = 0.8787   (>0 => s* stabilne)
+    V''(s_bar)= -0.3187   (<0 => bariera)
+    min V''  przy |s|=b/3c=0.5333: V''=-0.3533
+    G6 pre-prediction: V''(s*)=0.879 > V''(0)=0.500  -> maly bump w CORE drozszy niz w FAR: potwierdzone
+    -> PASS
+
+[3] Szerokosc scianki domenowej vs siatka:
+    ell ~ sqrt(2*kappa/V''(s*)) = 1.0668  = 2.13 * dx
+    -> ryzyko pinningu realne (~2*dx), kontrola z G5 (dx=0.25 -> 4.27 wezly) zasadna
+
+[4] Stabilnosc jawnego Eulera:
+    dyfuzja:  dt < dx^2/(4*kappa) = 0.1250   (LOCK: 0.125), dt=0.02 -> OK
+    reakcja:  max|V''| na [-2,2] = 6.100 -> dt < 2/max|V''| = 0.3279, dt=0.02 -> OK
+    kontrola G5 (dx=0.25, dt=0.005): dt < 0.03125 -> OK
+
+[5] Wspolczynnik superpozycji klastra K=7 (heks pierscien + centrum), w=1.5:
+    D=2: s_max(0) ~ 3.467 * A0   (6 sasiadow w odl. D)
+    D=3: s_max(0) ~ 1.812 * A0   (6 sasiadow w odl. D)
+    D=4: s_max(0) ~ 1.171 * A0   (6 sasiadow w odl. D)
+    -> D=2 silnie superpozycyjny (~3.5*A0), D=4 prawie addytywnie czysty (~1.17*A0);
+       flaga superposition-trivial z G4 ma operacyjny sens.
+
+[6] Sanity delta_bump (A=0.10, w=1.0), oszacowanie czysto potencjalowe (bez czlonu grad):
+    FAR  (s=0):   dV ~ 0.5*V''(0)*A^2  = 0.002500 > 0
+    CORE (s=s*):  dV ~ 0.5*V''(s*)*A^2 = 0.004393 > 0  (drozszy niz FAR - zgodnie z predykcja G6)
+    FRONT: bump przesuwa interfejs w strone V(s*)=-0.0435<0 -> jedyna lokalizacja z szansa na dE<=0
+
+=== WYNIK FAZY 0: PASS - rachunki LOCK potwierdzone, model gotowy do Phase 1 ===

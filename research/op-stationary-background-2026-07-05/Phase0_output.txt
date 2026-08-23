@@ -1,0 +1,33 @@
+=== Phase 0 check: op-stationary-background (LOCK: Phase0_balance.md) ===
+
+--- 1. babel krytyczny (rownanie #1) ---
+  v_inf=0.15993 c=0.4898 (op-lock-interaction, G2)  ->  R_c_pred = 3.0626; pasmo G2: [2.450, 3.675]
+
+--- 2. profil wiru i n^2(r) (rownania #2-#3) ---
+  V'''(s*) = 3.8450   A_t = V'''(s*)*s**xi^2 = 2.5690
+  m_TV = 0.9374; pasmo V''(f)<0: f in (0.190, 0.874) -> pierscien r in ~(0.49, 2.32)  [zrodlo oczekiwanego modu L_toy]
+  n^2(r) dla omega (kolumny 1.0/1.1/1.3) + ogon algebraiczny:
+   r=  1.0:   10.7168   4.5583   2.4531   [ogon(1.1): 8.7536]
+   r=  2.0:    9.6212   4.1571   2.2893   [ogon(1.1): 2.9384]
+   r=  3.0:    5.6050   2.6864   1.6887   [ogon(1.1): 1.8615]
+   r=  4.0:    3.1890   1.8016   1.3274   [ogon(1.1): 1.4846]
+   r=  6.0:    1.6974   1.2554   1.1043   [ogon(1.1): 1.2154]
+   r=  8.0:    1.3518   1.1288   1.0526   [ogon(1.1): 1.1212]
+   r= 12.0:    1.1500   1.0549   1.0224   [ogon(1.1): 1.0538]
+
+--- 3. ray tracing: alpha_pred(b, omega) [deg] ---
+    (alpha > 0 = ugiecie KU wirowi; profil radialny z ODE)
+    b:                4        6        8       12
+    omega=1.0:  +87.604  -158.225  +57.871  +15.743
+    omega=1.1:  +114.658  +43.015  +14.006   +5.299
+    omega=1.3:  +60.695  +12.448   +5.236   +2.108
+
+--- 4. progi (LOCK, sekcja 3) ---
+  G4a: lambda_min(L_full) >= -1e-3 (rozdzielczosc iteracji przy kontinuum Goldstone'a od 0)
+  G4b: gamma_fit <= 0.01  (amplifikacja <= e^1.5 = 4.5 na oknie tau=150; kontrast B2: gamma=0.125 -> e^19)
+
+=== WNIOSKI PHASE 0 ===
+  R_c_pred = 3.063; n(r) > 1 wszedzie (deficyt = osrodek gestszy,
+  refrakcja KU wirowi, UNIWERSALNA — n nie zalezy od znaku kretu);
+  ogon n^2-1 ~ 2.569/(r^2*(omega^2-V''(s*))) — algebraiczny;
+  alpha_pred zalockowane jako zaklad dla opa pomiarowego

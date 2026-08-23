@@ -1,0 +1,26 @@
+=== Phase 3: skalowanie masowe + uniwersalnosc (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5 kappa=0.5 a=0.5 b=1.6 c=1.0 dt=0.02 eps=0.3 g0=4.0 G_GRID=[2.0, 2.5, 3.0, 3.5]
+
+--- przygotowanie obiektow ---
+  hist1 (A0=0.6): R_target= 8.0 -> R_act=8.0178 po tau=  61.8
+  hist1 (A0=0.6): R_target=12.0 -> R_act=12.0004 po tau=  98.0
+  hist1 (A0=0.6): R_target=16.0 -> R_act=16.0194 po tau= 130.2
+  hist2 (A0=1.0): R_target= 8.0 -> R_act=8.0058 po tau=  41.6
+  H_inc_max prep: hist1=0.00e+00, hist2=0.00e+00
+
+--- pary przy g0=4 (kontrola D4 per snapshot) ---
+  8x8 (hist1)    g_init= 3.886  nosnik g=[2.651,3.219]  Dv(2.0)=--  Dv(2.5)=--  Dv(3.0)=+0.32935  Dv(3.5)=--  [nf=False run=False bc=False H_mono=True]
+  12x12 (hist1)  g_init= 3.926  nosnik g=[2.759,3.172]  Dv(2.0)=--  Dv(2.5)=--  Dv(3.0)=+0.35924  Dv(3.5)=--  [nf=False run=False bc=False H_mono=True]
+  16x16 (hist1)  g_init= 3.888  nosnik g=[2.871,3.089]  Dv(2.0)=--  Dv(2.5)=--  Dv(3.0)=+0.37614  Dv(3.5)=--  [nf=False run=False bc=False H_mono=True]
+  8x8 (hist2)    g_init= 3.912  nosnik g=[2.692,3.245]  Dv(2.0)=--  Dv(2.5)=--  Dv(3.0)=+0.32566  Dv(3.5)=--  [nf=False run=False bc=False H_mono=True]
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase3): finite/no-runaway + H_nierosnace: PASS
+G5 (dyskryminator; punkty wspolne g=[3.0]):
+  Dv_bar: 8x8=+0.32935  12x12=+0.35924  16x16=+0.37614
+  ratio_mass = Dv(16x16)/Dv(8x8) = 1.1421  (12x12/8x8 = 1.0908)
+  klasyfikacja: FRONTOWE (powierzchniowe)
+G6 (uniwersalnosc stanu; punkty wspolne g=[3.0]):
+  Dv_bar: hist1=+0.32935  hist2=+0.32566  ratio_hist=0.9888  |ratio-1|=0.0112 (<=0.10) -> PASS
+
+PODSUMOWANIE PHASE 3: G1(czesc)=PASS G5=FRONTOWE (powierzchniowe) G6=PASS

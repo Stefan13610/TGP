@@ -1,0 +1,106 @@
+=== Phase 1: substrate genesis (LOCK: Phase0_balance.md) ===
+N=128 L=64.0 dx=0.5 kappa=0.5 a=0.5 b=1.6 c=1.0 dt=0.02 steps=6000 w=1.5 eps=0.3 A_min=0.000244 seed=20260704
+brzegi: periodyczne, Laplasjan 5-pkt; guard |s|>10.0 (flaga, nie clamp)
+
+--- runy ---
+bare#1                 s_max(0)= 0.050  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+bare#2                 s_max(0)= 0.050  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F   [determinizm bitowy vs #1: T]
+single(A0=0.4)         s_max(0)= 0.400  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+single(A0=0.6)         s_max(0)= 0.600  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+single(A0=0.8)         s_max(0)= 0.800  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+single(A0=1.0)         s_max(0)= 1.000  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+single(A0=1.2)         s_max(0)= 1.200  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+single(A0=1.4)         s_max(0)= 1.400  Phi_max_fin=  0.0000  area_fin= 0.000000  pers=   n/a  tail=   n/a  DECAYED  loc=T  bc=F  H_mono=T  run=F
+cluster(A0=1.4,D=2)    s_max(0)= 4.853  Phi_max_fin=  1.3787  area_fin= 0.217834  pers= 3.139  tail= 1.214  LOCKED   loc=T  bc=F  H_mono=T  run=F   [superposition-trivial: n/a (brak nadkryt. singla)]
+cluster(A0=1.4,D=3)    s_max(0)= 2.537  Phi_max_fin=  1.3787  area_fin= 0.255676  pers= 2.891  tail= 1.195  LOCKED   loc=T  bc=F  H_mono=T  run=F   [superposition-trivial: n/a (brak nadkryt. singla)]
+cluster(A0=1.4,D=4)    s_max(0)= 1.640  Phi_max_fin=  1.3787  area_fin= 0.290833  pers= 2.712  tail= 1.189  LOCKED   loc=T  bc=F  H_mono=T  run=F   [superposition-trivial: n/a (brak nadkryt. singla)]
+
+--- przebiegi (Phi_max, metric_area) ---
+  bare#1:
+      tau_step=    0: Phi_max=  0.0025  metric_area=0.000000
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  single(A0=0.4):
+      tau_step=    0: Phi_max=  0.1600  metric_area=0.000000
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  single(A0=0.6):
+      tau_step=    0: Phi_max=  0.3600  metric_area=0.000305
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  single(A0=0.8):
+      tau_step=    0: Phi_max=  0.6400  metric_area=0.001282
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  single(A0=1.0):
+      tau_step=    0: Phi_max=  1.0000  metric_area=0.002258
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  single(A0=1.2):
+      tau_step=    0: Phi_max=  1.4400  metric_area=0.002747
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  single(A0=1.4):
+      tau_step=    0: Phi_max=  1.9600  metric_area=0.002991
+      tau_step= 1500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 3000: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 4500: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 5400: Phi_max=  0.0000  metric_area=0.000000
+      tau_step= 6000: Phi_max=  0.0000  metric_area=0.000000
+  cluster(A0=1.4,D=2):
+      tau_step=    0: Phi_max= 23.5549  metric_area=0.014709
+      tau_step= 1500: Phi_max=  1.3723  metric_area=0.033752
+      tau_step= 3000: Phi_max=  1.3784  metric_area=0.069397
+      tau_step= 4500: Phi_max=  1.3787  metric_area=0.129944
+      tau_step= 5400: Phi_max=  1.3787  metric_area=0.179504
+      tau_step= 6000: Phi_max=  1.3787  metric_area=0.217834
+  cluster(A0=1.4,D=3):
+      tau_step=    0: Phi_max=  6.4354  metric_area=0.018982
+      tau_step= 1500: Phi_max=  1.3765  metric_area=0.043762
+      tau_step= 3000: Phi_max=  1.3786  metric_area=0.088440
+      tau_step= 4500: Phi_max=  1.3787  metric_area=0.158264
+      tau_step= 5400: Phi_max=  1.3787  metric_area=0.213928
+      tau_step= 6000: Phi_max=  1.3787  metric_area=0.255676
+  cluster(A0=1.4,D=4):
+      tau_step=    0: Phi_max=  2.6894  metric_area=0.025208
+      tau_step= 1500: Phi_max=  1.3779  metric_area=0.054016
+      tau_step= 3000: Phi_max=  1.3786  metric_area=0.107239
+      tau_step= 4500: Phi_max=  1.3787  metric_area=0.184631
+      tau_step= 5400: Phi_max=  1.3787  metric_area=0.244690
+      tau_step= 6000: Phi_max=  1.3787  metric_area=0.290833
+
+=== EWALUACJA KRYTERIOW (LOCKED) ===
+G1 (techniczne): finite/no-runaway=True, H_nierosnace=True, determinizm=True  -> PASS
+G2 (bare pozostaje niemetryczne): metric_area_fin=0.000000 < A_min=0.000244: PASS
+G3 (single decays): podkrytyczne A0=[0.4, 0.6, 0.8, 1.0, 1.2, 1.4], nadkrytyczne A0=[]
+   -> PASS
+   OBSERWACJA (poza kryterium): zaden single z zalockowanego skanu nie lockuje;
+   A_c > 1.4 dla profilu w=1.5 -> doprecyzowanie progu w Phase 2.
+G4 cluster(A0=1.4, D=2): area>=A_min=True, pers=3.139(>=0.9), tail=1.214(>=0.99), superposition-trivial=n/a (brak nadkryt. singla), boundary_contact=F -> LOCK
+G4 cluster(A0=1.4, D=3): area>=A_min=True, pers=2.891(>=0.9), tail=1.195(>=0.99), superposition-trivial=n/a (brak nadkryt. singla), boundary_contact=F -> LOCK
+G4 cluster(A0=1.4, D=4): area>=A_min=True, pers=2.712(>=0.9), tail=1.189(>=0.99), superposition-trivial=n/a (brak nadkryt. singla), boundary_contact=F -> LOCK
+G4 (kolektywny lock, RDZEN): PASS  (lock przy D=[2.0, 3.0, 4.0]; lock NIE-superpozycyjny przy D=[2.0, 3.0, 4.0])
+
+G5: wstepnie - ostrosc progu po A0 widoczna w skanie single; pelny skan progu,
+    przypadki graniczne i kontrola pinningu (N=256) -> Phase 2.
+G6: DeltaE_create (FAR/CORE/FRONT) -> Phase 2.
+
+PODSUMOWANIE PHASE 1: G1=PASS G2=PASS G3=PASS G4=PASS (G5/G6 -> Phase 2)

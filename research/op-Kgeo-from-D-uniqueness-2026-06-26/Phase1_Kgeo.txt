@@ -1,0 +1,57 @@
+========================================================================
+Phase 1 — K_geo^(0) native derivation (T-anti-circ ARMED: zero alpha_s in)
+========================================================================
+
+[T1] D-UNIQUENESS — czy warunki C1-C3 pinuja wartosc prefaktora K_geo?
+------------------------------------------------------------------------
+  Rozwiazanie C1 (ODE K'/K=2a/phi):  Eq(K(phi), C1*phi**(2*alpha))
+  Postac: K(phi) = (stala) * phi^(2*alpha)   ;  stala wolna obecna: True
+  [PASS] T1.a  C1 => K(phi)=C*phi^(2alpha), C = WOLNA stala calkowania  --- prefaktor C nieokreslony przez C1
+  C3 matching:  2*alpha=4 => alpha=2;  oraz C == K_geo (DEFINICJA, nie rachunek)
+  [PASS] T1.b  alpha=2 wyznaczone, ale K_geo pozostaje = C (wolny prefaktor)  --- liczba rownan pinujacych liczbowo K_geo z C1-C3 = 0
+
+[T2] NORMALIZACJA KANONICZNA — czy K_geo jest absorbowalne (brak niezmiennika)?
+------------------------------------------------------------------------
+  -1/2 (grad Phi~)^2 = -K_geo*g**2*phi**4/2
+  -1/2 K_geo phi^4 (grad phi)^2 = -K_geo*g**2*phi**4/2
+  [PASS] T2.a  Phi~=sqrt(K_geo)phi^3/3 kanonizuje L_kin dla KAZDEGO K_geo>0  --- K_geo wchodzi tylko w definicje Phi~
+  [PASS] T2.b  K_geo absorbowalne przez redefinicje pola (brak niezmiennika poziomu-0)  --- K_geo -> lambda^2 K_geo nieobserwowalne bez zewnetrznej skali
+
+[T3] GEOMETRIA RURY — sigma_hat=pi*A^2: pi z calkowania po kacie (bez alpha_s)
+------------------------------------------------------------------------
+   A=1.0e-03  sigma_hat/A^2 = 3.13461960   (pi=3.14159265)
+   A=5.0e-04  sigma_hat/A^2 = 3.13810413   (pi=3.14159265)
+   A=2.0e-04  sigma_hat/A^2 = 3.14019719   (pi=3.14159265)
+   A=1.0e-04  sigma_hat/A^2 = 3.14089651   (pi=3.14159265)
+  [PASS] T3.a  sigma_hat/A^2 -> pi (A->0, w=1): czynnik pi JEST geometryczny (kat rury)  --- lim = 3.140897 vs pi = 3.141593; ZERO alpha_s uzyte
+  [PASS] T3.b  geometria rury daje sigma_hat (+pi), ale NIE wyznacza K_geo ani m_sp^2  --- K_geo*m_sp^2 to wymiarowa skala spoza profilu rury
+
+[T4] COARSE-GRAINING (most Gamma->Phi) — status ex200 (read-only, manuskrypt)
+------------------------------------------------------------------------
+   ex200 (alpha_eff convergence): 4/8 PASS  -> zbieznosc: False
+   ex202 (sigma~sqrt(sigma)/Phi0): 7/8 PASS (T6 FAIL)
+  [PASS] T4.a  CG-3 (most Gamma->Phi) NIE domkniety: alpha_eff niezbiezny przy dostepnym L  --- K_geo^(0) z CG nieosiagalne teraz (status [SZKIC])
+
+[T5] OZNACZALNOSC R = K_geo^(0)*m_sp^2/(pi*Phi_0^2) bez alpha_s/mas kwarkow
+------------------------------------------------------------------------
+   - Sciezka2 D-uniqueness           : niedostepna      K_geo=C wolna stala (T1); brak rownania na wartosc
+   - norm. kanoniczna                : niedostepna      K_geo absorbowalne (T2); brak niezmiennika poziomu-0
+   - Sciezka1 geometria rury         : niedostepna      daje sigma_hat+pi (T3), nie K_geo/m_sp^2 (skala)
+   - Sciezka3 CG (ex200)             : niedostepna      alpha_eff niezbiezny 4/8 (T4); most [SZKIC]
+   - [CIRC-FORBIDDEN] przez alpha_s  : ZAKAZANA(circ)   K_geo*m_sp^2:=pi*Phi0^2 z dopasowania do alpha_s
+  [PASS] T5.a  Brak NIEcyrkularnej drogi do liczbowego K_geo^(0) (bez alpha_s/CG)  --- kazda droga do liczby wymaga alpha_s (circ) LUB domkniecia CG
+  [PASS] T5.b  R NIE jest oznaczalne value-blind (K_geo^(0) nieoznaczalne bez CG)  --- => aktywuje galaz (C) reguly
+
+========================================================================
+ZASTOSOWANIE REGULY value-blind (plomba 2026-06-26, immutable)
+========================================================================
+
+  R oznaczalne value-blind:  False
+  WERDYKT (wyliczony z reguly): (C) POSTULATE-CONFIRMED
+  Uzasadnienie: K_geo^(0) nieoznaczalne niezaleznie od poziomu-0 bez
+                domkniecia CG-1/CG-3 (ex200 alpha_eff 4/8); D-uniqueness
+                fixuje FORME phi^4+alpha=2, nie WARTOSC prefaktora K_geo.
+
+  Sympy/num testy strukturalne: 9/9 PASS
+  T-anti-circ: zero alpha_s / zero mas kwarkow w wyznaczeniu K_geo^(0).
+========================================================================

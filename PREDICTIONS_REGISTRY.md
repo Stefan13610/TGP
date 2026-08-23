@@ -1160,10 +1160,18 @@ circularity audit. Source critiques + plan:
   entries: see AUDIT_omega3_2026-05-04 mini-audit per-row outcome.
 
 **Counter rollback (mark-only, no entry deletions):**
-856 cumulative → **856 (effective uncontested 784, contested 72 marked
-PARTIAL CONDITIONAL pending audit closures).** No sub-test PASS deleted —
-all mechanical sympy LOCKs preserved. Only **interpretation status** of
-chi.1/UV.2/ω.2/ω.3 promotions downgraded.
+Efektywny licznik zweryfikowanych domknięć po rollbacku contested/numerological:
+**~688** (ratio ~3,67, estymata ±20; patrz [[meta/AUDYT_GLEBOKI_2026-06-28.md]]
+§1 M03/M02 oraz 40× `retrofit_op-*.md`; szczegółowy bilans -168 → 856−168=688
+w sekcji "Effective uncontested post-M03 100%" powyżej). Liczba **856** to suma
+kumulatywna **SPRZED** przeklasyfikowania (zawiera 72 contested + cykle
+NUMEROLOGICAL: chi.1/UV.2/ω.2/ω.3 + mixing-operator κ.1/ι.1/μ.1/ν.1).
+Korekta ratio przewidywalności: poprzednie **5,5 → ~3,67**.
+
+856 cumulative (SPRZED rollbacku) → effective uncontested 784, contested 72
+marked **PARTIAL CONDITIONAL** pending audit closures → **post-rollback ~688**.
+No sub-test PASS deleted — all mechanical sympy LOCKs preserved. Only
+**interpretation status** of chi.1/UV.2/ω.2/ω.3 promotions downgraded.
 
 **Why mark-only (not rollback):**
 1. Sub-tests are mechanically correct (Stueckelberg ansatz, K_struct ≈ 173

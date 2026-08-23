@@ -474,8 +474,14 @@ ordering gives:
 \begin{equation}\label{eq:F7}
   \boxed{m_1 = 0.80,\; m_2 = 8.65,\; m_3 = 50.11 \text{ meV}}\,,
 \end{equation}
-with $\sum m_\nu = 59.6$~meV. This satisfies the cosmological
-bound $\sum m_\nu < 120$~meV~\cite{Planck2018} and predicts
+with $\sum m_\nu = 59.6$~meV \emph{at zeroth order}. The canonical
+value (B4-locked Z1-anchor, 2026-05-01; registry \#42) is
+$\boldsymbol{\Sigma m_\nu = 59.01}$~\textbf{meV} with $m_1 = 0$ and
+normal ordering (oscillation split $m_2 = 8.61$, $m_3 = 50.50$~meV,
+$\Sigma_\mathrm{PDG} = 59.11$~meV, $0.17\%$ drift vs.\ the
+substrate-action lock); it supersedes the zeroth-order target
+in Eq.~\eqref{eq:F7}. This satisfies the cosmological bound
+$\sum m_\nu < 120$~meV~\cite{Planck2018} and predicts
 \textbf{normal ordering only}---inverted ordering is excluded because
 $K(\nu) = 1/2$ cannot be satisfied with IO mass-squared differences.
 
@@ -1188,6 +1194,33 @@ The most decisive tests are:
 
 
 % ============================================================
+\section{Limitations: the UV/coarse-graining roots}\label{sec:limitations}
+% ============================================================
+
+TGP's macroscopic phenomenology is self-contained, but four quantities are
+\emph{axiomatic selections on the density field rather than substrate
+derivations}: the kinetic exponent $\alpha = 2$, the tensor normalization
+$c_0$ (the free UV constant $C_\sigma$), the confinement constant
+$\mathcal{A}$ (hence $\as$), and the geometric prefactor $K_\mathrm{geo}$.
+Each is derivable only by closing the same substrate-to-continuum
+(coarse-graining/NGFP) bridge, which remains open (CG-1 Banach existence;
+$\alpha_\mathrm{eff}$ non-convergence on accessible lattices). We make this
+explicit rather than absorbing it into the headline: a value-blind,
+pre-registered finite-size-scaling study confirms that the canonical
+substrate yields $K(\Phi)\propto\Phi^{-1}$ ($\alpha_\mathrm{eff} = -\tfrac12$),
+\emph{not} the $K(\Phi)\propto\Phi^4$ that $\alpha = 2$ would require---so
+$\alpha = 2$ is carried as a conformal-class selection (C1)--(C3), not a
+derivation. This lowers the apparent parsimony but leaves the honest
+free-parameter count unchanged ($N_{\rm free}\simeq 10$ versus $\simeq 19$
+for the Standard Model) and does not affect the UV-independent predictions
+(lepton masses, PPN with $\gamma=\beta=1$, and the GW mode content with
+$c_\mathrm{GW}=c$). The bridge closure is a falsifiable program, not a
+hidden assumption: a closed coarse-graining that forced
+$K_\mathrm{geo}\,m_\mathrm{sp}^2\neq\pi\,\PhiZero^2$ would refute the
+$\as$ consistency bridge $\mathcal{A}=C_F^2\as^2$.
+
+
+% ============================================================
 \section{Conclusion}\label{sec:conclusion}
 % ============================================================
 
@@ -1240,47 +1273,48 @@ mass ordering: observation of inverted ordering would kill TGP.
 
 \section{Complete prediction catalog}\label{app:predictions}
 
-Table~\ref{tab:all-predictions} lists all 40~TGP predictions.
+Table~\ref{tab:all-predictions} lists all 40~TGP catalog entries.
 
 \begin{table*}[tp]
-\caption{Complete catalog of 40 TGP predictions.
+\caption{Complete catalog of 40 TGP entries.
   Status: C = confirmed ($< 2\sigma$), E = exact ($0\sigma$),
   T = testable (upcoming experiment), P = genuine prediction,
-  A = approximate, Th = theory-level.}\label{tab:all-predictions}
+  A = approximate, Th = theory-level,
+  CC = consistency-check (depends on SM input, postulate, or fit;
+  \emph{not} an independent prediction --- per ledger \#42).}\label{tab:all-predictions}
 \footnotesize
 \begin{ruledtabular}
 \begin{tabular}{rlllcl}
 \# & Observable & TGP value & Experiment & $\sigma$ & Status \\
 \hline
-1 & $\as(\MZ)$ & 0.1184 & $0.1180 \pm 0.0009$ & 0.4 & C \\
+1 & $\as(\MZ)$ & 0.1184 & $0.1180 \pm 0.0009$ & 0.4 & CC \\
 2 & $K(\ell) = 2/3$ & 0.66666 & 0.66666 & 0.0 & E \\
 3 & $|\GL| = 168$ & 168 & --- & 0.0 & E \\
 4 & $c_\mathrm{GW} = c$ & exact & $< 3\!\times\!10^{-15}$ & 0.0 & E \\
 5 & $\Omega_\mathrm{DM}$ & 0.262 & $0.265 \pm 0.011$ & 0.3 & C \\
 6 & $m_H$ (GeV) & 125.31 & $125.20 \pm 0.11$ & 1.0 & C \\
 7 & $n_s$ & 0.967 & $0.965 \pm 0.004$ & 0.4 & C \\
-8 & $m_W$ (GeV) & 80.354 & $80.354 \pm 0.032$ & 0.01 & C \\
+8 & $m_W$ (GeV) & 80.354 & $80.354 \pm 0.032$ & 0.01 & CC \\
 9 & $\lambda_C$ & 0.22550 & $0.22500 \pm 0.00067$ & 0.7 & C \\
 10 & $N_\nu$ & 3 & $2.984 \pm 0.008$ & 2.0 & C \\
 11 & $m_\mu/m_e$ & 206.77 & 206.768 & 0.01 & C \\
 12 & $m_\tau$ (MeV) & 1776.9 & $1776.86 \pm 0.12$ & 0.3 & C \\
 13 & $r_{32} = m_\tau/m_\mu$ & 16.818 & 16.817 & 0.06 & C \\
-14 & $\sin^2\theta_W$ & 0.23126 & $0.23121 \pm 0.00004$ & 1.2 & C \\
+14 & $\sin^2\theta_W$ & 0.23126 & $0.23121 \pm 0.00004$ & 1.2 & CC \\
 15 & $\as(m_\tau)/\as(\MZ)$ & 2.778 & $2.799 \pm 0.121$ & 0.17 & C \\
 16 & $\Delta a_\mu$ ($\times 10^{-10}$) & 23.5 & $24.9 \pm 4.8$ & 0.3 & C \\
 17 & $\bar\theta$ & 0 & $< 10^{-10}$ & --- & C \\
 18 & CKM unitarity & $< 10^{-5}$ & $< 0.001$ & --- & C \\
-19 & $\as \cdot \OL$ & 0.0815 & invariant & --- & Th \\
+19 & $\as \cdot \OL$ & 0.0815 & invariant & --- & CC \\
 20 & $K(\nu) = 1/2$ & 0.500 & --- & --- & P \\
-21 & $\sum m_\nu$ (meV) & 59.6 & $< 120$ & --- & T \\
-22 & $m_1$ (meV) & 0.80 & --- & --- & P \\
-23 & $m_2$ (meV) & 8.65 & --- & --- & P \\
-24 & $m_3$ (meV) & 50.11 & --- & --- & P \\
-24 & $m_3$ (meV) & 50.4 & --- & --- & P \\
+21 & $\sum m_\nu$ (meV) & 59.01 & $< 120$ & --- & T \\
+22 & $m_1$ (meV) & 0 & --- & --- & P \\
+23 & $m_2$ (meV) & 8.61 & --- & --- & P \\
+24 & $m_3$ (meV) & 50.50 & --- & --- & P \\
 25 & Normal ordering & YES & --- & --- & T \\
 26 & Proton stable & $\tau_p = \infty$ & $> 10^{34}$~yr & --- & T \\
 27 & No monopoles & $\pi_2 = 0$ & not found & --- & C \\
-28 & $w_0$ & $-0.961$ & --- & --- & T \\
+28 & $w_0$ & $-0.961$ & --- & --- & CC \\
 29 & $r$ (tensor/scalar) & $3.3 \times 10^{-3}$ & $< 0.036$ & --- & T \\
 30 & 6 BH types & $\ZZ_3 \times \ZZ_2$ & --- & --- & P \\
 31 & No BH interior & $g = 0$ at horizon & --- & --- & Th \\
@@ -1296,6 +1330,26 @@ Table~\ref{tab:all-predictions} lists all 40~TGP predictions.
 \end{tabular}
 \end{ruledtabular}
 \end{table*}
+
+\noindent\textbf{Consistency-checks (CC) versus predictions (ledger \#42).}
+Five catalog entries are \emph{consistency-checks}, not independent
+predictions, and are labelled CC accordingly:
+\begin{itemize}
+  \item \#1 $\as(\MZ)$ --- postulate-conditional on the substrate
+    amplitude $\mathcal{A}$ (closure of $N_c^3\gone/(8\PhiZero)$),
+    not a parameter-free output.
+  \item \#8 $m_W$ --- obtained from $m_W = m_Z\cos\theta_W$ with the
+    measured $m_Z$ and $\as$ taken as \emph{input}; it tests internal
+    consistency of the EW sector rather than a first-principles mass.
+  \item \#14 $\sin^2\theta_W$ --- the tree-level TGP value $3/13$ is
+    $11.3\sigma$ from experiment; the $1.2\sigma$ agreement requires the
+    QCD-loop correction, so this is a loop-corrected consistency check.
+  \item \#19, \#28 dark-energy sector ($\as\cdot\OL$, $w_0$) --- the DESI
+    $w(z)$ agreement is fit-by-construction (frozen-field
+    $w\!\approx\!-1$), and the $\OL$ value involves a traded parameter
+    ($\tilde g\approx0.98$); reported as consistency checks, not
+    falsifiable predictions.
+\end{itemize}
 
 
 \section{Complete script registry}\label{app:scripts}

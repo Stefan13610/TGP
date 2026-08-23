@@ -1,0 +1,46 @@
+======================================================================
+Phase 1 first-pass - ostry test R1 (V_sub odnaleziony)
+======================================================================
+
+[T_A] Bond mikro H_Gamma: -J s_i s_j  -> jaka kinetyka w s?
+    (s_i - s_j)^2  |_a^2  = sx**2     (=> (grad s)^2)
+    prefaktor kinetyczny K_s = J/2
+    zaleznosc od pola s? d/ds = 0  -> STALA (kanoniczna)
+    => wykladnik e_s = 0 (kanoniczna)  => alpha=1/2 w s; w Phi=s^2: K~Phi^-1 (=#49!)
+
+[T_B] Sprzezenie geometryczne v2: K_ij=J(phi_i phi_j)^2 * (phi_i-phi_j)^2
+    prefaktor kinetyczny K(phi) = J*phi**4
+    wykladnik e_phi w K~phi^e = 4   => alpha = e/2 = 2
+
+[T_C] Czy K_ij=J(phi_i phi_j)^2 wystepuje w mikro H_Gamma?
+    H_Gamma bond  : -J s_i s_j         (BILINEARNY w polu)
+    geom coupling : +J (phi_i phi_j)^2 (KWARTYCZNY w polu; phi~|s|)
+    -> phi_i phi_j ~ |s_i||s_j| ; (phi_i phi_j)^2 ~ s_i^2 s_j^2  (kwartyk bond)
+    -> s_i^2 s_j^2  !=  s_i s_j  : RӯNE operatory bond.
+    s_i^2 s_j^2 - s_i s_j (test rownosci) = s*(s*(a**2*sxx + 2*a*sx + 2*s) - 2)*(a**2*sxx + 2*a*sx + 2*s)/4  (!=0 => RӯNE)
+    WNIOSEK T_C: kwartyczne K_ij (zrodlo alpha=2) NIE jest obecne w eq:B-H.
+                 alpha=2 = POSTULAT v2 na poziomie parametru porzadku, nie z H_Gamma.
+
+[T_D] Mapa s -> Phi=s^2 : redefinicja (tautologia) czy coarse-graining?
+    dPhi/ds = 2*s  -> zero przy s=0 (nieodwracalna); s i -s -> ta sama Phi (sign-blind)
+    => NIE jest redefinicja pola (gubi znak + degeneruje w s=0).
+    => crossover przez s->Phi=<s^2> NIE jest tautologia (R1 omijalne TU),
+       ALE to dokladnie CG z #49 -> daje alpha_eff=-1/2, nie +2.
+
+[V_sub] Potencjal substratu (z rdzenia), w amplitudzie phi:
+    U(phi) = beta*phi**3/3 - gamma*phi**4/4
+    U'(1) = beta - gamma  -> =0 wymusza beta=gamma (proznia)
+    U(phi)|_(beta=gamma) = -gamma*phi**3*(3*phi - 4)/12
+
+======================================================================
+SYNTEZA Phase 1 first-pass:
+  T_A: mikro bond -J s_i s_j -> KANONICZNA kinetyka (e_s=0) -> w Phi: K~Phi^-1 (#49).
+  T_B: geom v2 K_ij=J(phi phi)^2 -> K(phi)~phi^4 -> alpha=2 (manuskrypt).
+  T_C: kwartyczny K_ij NIE jest w eq:B-H (s^2 s^2 != s s) -> alpha=2 = POSTULAT v2.
+  T_D: s->Phi=<s^2> = coarse-graining (nie redef) -> R1 omijalne, ale to droga #49 (-1/2).
+  ----
+  WNIOSEK: V_sub ZNALEZIONY. alpha=2 NIE wynika z mikro H_Gamma; pochodzi z osobnego
+  postulatu geometrycznego v2 (K_ij=J(phi_i phi_j)^2). To RATYFIKUJE #49 od strony
+  analitycznej i USTAWIA teze usera: -1/2 = mikro (s, H_Gamma), +2 = postulat v2 (phi).
+  Luka -1/2 -> +2 = status sprzezenia geometrycznego v2 (postulat vs derywacja).
+======================================================================

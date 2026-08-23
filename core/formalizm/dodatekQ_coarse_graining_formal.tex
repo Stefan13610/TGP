@@ -234,6 +234,20 @@ brak bieguna spin~2); patrz uw.~\ref{rem:sigma-Csigma-free}
 (sek.~formalizmu) oraz cykl
 \texttt{op-sigma-ab-pole-residue}.
 
+\medskip\noindent
+\textbf{Aktualizacja 2026-06-26 (CG-4, sk\l{}adnik $\alpha=2\leftrightarrow K_\mathrm{hom}$; \#49).}
+Drugie residuum CG-4 zg\l{}oszone w~cyklu \texttt{op-CG34-continuum-closure} (\#31) ---
+identyfikacja wyk\l{}adnika kinetycznego $\alpha=2$ z~mikroskopowego $K(\phi)$ (,,do dopi\k{e}cia'')
+--- zosta\l{}o \textbf{rozstrzygni\k{e}te NEGATYWNIE} cyklem value-blind
+\texttt{op-CG-alpha-eff-convergence} (\#49, regu\l{}a A/B/C, FSS $L\in\{16,24,32,40\}$ +
+sympy chain-rule): \textbf{werdykt (B) REFUTED-SUBSTRATE}. Substrat (kanoniczny $s=0$) daje
+$K_\mathrm{hom}(\Phi)\propto\Phi^{-1}$ ($\alpha_{\rm eff}=-\tfrac12$), \emph{nie}~$\Phi^{4}$
+($\alpha=2$); $\alpha=2$ pozostaje selekcj\k{a} aksjomatyczn\k{a} na g\k{e}sto\'sci
+(sek08 uw.~\ref{rem:alpha2-pivot-status-pl}, dod.~Q2 uw.~\ref{rem:A3-correction-alpha}).
+Domyka to interpretacj\k{e} ,,$[$CZ\k{E}\'SCIOWY NUM$]$'' kroku CG-4: forma $K_\mathrm{hom}=K_\mathrm{IR}$
+zamkni\k{e}ta, ale \emph{warto\'s\'c}~$\alpha=2$ \textbf{nie} pochodzi z~substratu (analogicznie
+$K_{\rm geo}$, \#48).
+
 \subsection*{Q.6 Program numeryczny dla CG-2 i CG-5}
 
 Skrypt \texttt{tgp\_erg\_lpa\_prime.py} (zastąpił
@@ -343,6 +357,22 @@ czyli \textbf{$\alpha_{\rm eff} = 2$}.
 algebraiczn\k{a} konsekwencj\k{a} przej\'scia od amplitudy
 do jej kwadratu. To mocno wspiera naturalnie\'s\'c r\'ownania pola.
 \end{proposition}
+
+\begin{uwaga}[KOREKTA \texttt{prop:Q-alpha-from-phi-squared} --- za\l{}o\.zenie $Z\sim\phi^2$ daje $\alpha=0$, nie~$2$ (\#31/\#38/\#39/\#49)]
+\label{rem:Q-alpha-overclaim-correction}
+Konkluzja powy\.zszej propozycji jest \textbf{przeszacowana} i~zosta\l{}a skorygowana
+(por.\ dod.~Q2 uw.~\ref{rem:A3-correction-alpha}; sek08 uw.~\ref{rem:alpha2-pivot-status-pl}).
+Przy $Z(\phi)\sim\phi^2$ wsp\'o\l{}czynnik $Z(\sqrt{\Phi})/(4\Phi)=\mathrm{const}$, wi\k{e}c
+wariacja daje \emph{standardowy} cz\l{}on $\nabla^2\Phi$ ($\alpha_{\rm eff}=0$), a~nie
+$(\nabla\Phi)^2/\Phi$ ($\alpha=2$); pole kanoniczne ($Z=\mathrm{const}$) daje
+$K(\Phi)\propto\Phi^{-1}$ ($\alpha_{\rm eff}=-\tfrac12$). \.Zadna z~tych warto\'sci nie wynosi~$2$.
+Cykl value-blind \texttt{op-CG-alpha-eff-convergence} (\#49, FSS + chain-rule, \textbf{werdykt (B)
+REFUTED-SUBSTRATE}) potwierdza to numerycznie: $\alpha=2$ \textbf{nie} jest derywowane z~przej\'scia
+$\phi\to\Phi=\phi^2$ substratu, lecz jest \textbf{selekcj\k{a} aksjomatyczn\k{a} na g\k{e}sto\'sci}
+(klasa konforemna C1--C3; $\alpha=2\Leftrightarrow s=5$, $K\propto\hat s^{10}$ --- niekanoniczne,
+\#38, RG-irrelevant, \#39). Propozycja zachowuje wa\.zno\'s\'c jedynie jako stwierdzenie, \.ze cz\l{}on
+gradientowy w~zmiennej $\Phi$ \emph{pojawia si\k{e}} (jest niezerowy), nie za\'s co~do warto\'sci $\alpha$.
+\end{uwaga}
 
 \medskip\noindent
 \textbf{Dalsze rozwinięcie.}

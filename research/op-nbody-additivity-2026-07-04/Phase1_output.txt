@@ -1,0 +1,32 @@
+=== Phase 1 (op-nbody-additivity): statyczna addytywnosc (LOCK) ===
+N=256 L=128.0 dx=0.5 kappa=0.5 a=0.5 b=1.6 c=1.0 eps=0.3 R_obj=8.0 g_scan=[2.0, 2.5, 3.0, 4.0] podloga=0.0001
+
+obiekt: R_act=8.0178 po tau=61.8, H_obj=-1.985873; determinizm bitowy prep x2: True; H_inc_max=0.00e+00; finite=True
+
+--- G2: pary osiowe, refit Yukawy (g_meas z kompozycji) ---
+  g0=2.0: g_meas= 1.0102  E_2=-5.343888e-01
+  g0=2.5: g_meas= 2.7107  E_2=-2.172158e-01
+  g0=3.0: g_meas= 2.7107  E_2=-2.172158e-01
+  g0=4.0: g_meas= 3.8864  E_2=-8.164006e-02
+  g0=5.0: g_meas= 4.9395  E_2=-2.950600e-02
+  g0=6.0: g_meas= 5.9563  E_2=-1.046542e-02
+  fit: A=1.6437  m=0.8132  R^2(log)=0.978610
+
+--- delta_N(g): chain3 / triangle3 / hex6 ---
+  g=2.0:  chain3: E_N=-1.06878e+00 sum_par=-1.06878e+00 delta=-1.274e-09  tri3: E_N=-1.69095e+00 sum_par=-1.67992e+00 delta=-6.564e-03  hex6: E_N=-3.35985e+00 sum_par=-3.35984e+00 delta=-1.761e-06
+  g=2.5:  chain3: E_N=-6.90476e-01 sum_par=-6.90476e-01 delta=-9.391e-10  tri3: E_N=-8.49379e-01 sum_par=-8.46056e-01 delta=-3.927e-03  hex6: E_N=-2.01062e+00 sum_par=-2.01062e+00 delta=-8.898e-07
+  g=3.0:  chain3: E_N=-4.34432e-01 sum_par=-4.34432e-01 delta=-6.088e-10  tri3: E_N=-6.39047e-01 sum_par=-6.36946e-01 delta=-3.299e-03  hex6: E_N=-1.27389e+00 sum_par=-1.27389e+00 delta=-5.600e-07
+  g=4.0:  chain3: E_N=-1.63280e-01 sum_par=-1.63280e-01 delta=-2.218e-10  tri3: E_N=-2.21349e-01 sum_par=-2.21003e-01 delta=-1.564e-03  hex6: E_N=-4.42007e-01 sum_par=-4.42007e-01 delta=-1.848e-07
+
+=== EWALUACJA (LOCKED) ===
+G1: determinizm=True, finite=True, H_nierosnace(prep)=True -> PASS
+G2 (ciaglosc): m=0.8132 in [0.8,1.2]: True; R^2(log)=0.9786 >= 0.97: True -> PASS
+G3 (rezim addytywny, g>=3): max|delta| = 3.299e-03 (tri3, g=3.0) <= 0.02 -> PASS
+G4 (RDZEN, mechanizm Fermata): punkty nad podloga: 4/4
+  (a) znak delta_tri < 0: True
+  (b) |delta_tri| rosnie przy malejacym g: True
+  (c) mu=0.6888 in [0.4,1.1]: True (predykcja 0.73; model: 0.59)
+  (d) |delta_chain| < |delta_tri| (nad podloga): True   [chain: -1.3e-09, -9.4e-10, -6.1e-10, -2.2e-10]
+  -> PASS
+
+PODSUMOWANIE PHASE 1: G1=PASS G2=PASS G3=PASS G4=PASS

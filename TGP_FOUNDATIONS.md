@@ -28,6 +28,18 @@ od tego, jak elegancko rozwiązuje konkretny problem techniczny. Pivot
 substratu **w obrębie skalarnego Z₂** (np. zmiana potencjału, kinetyki,
 struktury bondu) jest dozwolony jako narzędzie inżynieryjne.
 
+> **Uściślenie S05 (single-Φ ≠ parameter-free).** Aksjomat jednego pola
+> pozostaje nienaruszony: operator strain `σ_ab = K_ab − (1/3)δ_ab Tr(K)`
+> (poziom 0) jest **kompozytem tego samego** substratu Z₂ (`Φ = ⟨ŝ²⟩`,
+> `σ_ab` z `⟨∂ŝ∂ŝ⟩`), a **nie** drugim polem fundamentalnym — więc
+> single-Φ uniqueness dotyczy *pola*, nie *liczby parametrów*. „Jedno
+> pole" **nie oznacza** zerowego budżetu parametrów: sektor σ wnosi
+> **nieredukowalny wolny parametr UV** (`C_σ`/`κ_E`, normalizacja `c_0`;
+> #34/#37 — dowiedzione liniowo rozbieżne w odcięciu UV, brak izolowanego
+> bieguna spin-2). Stąd budżet parametrów TGP wynosi **3** (`c_0` i `C_σ`
+> to jedna stała radiacyjna, NIE 4. parametr — §3.6.8,
+> `rem:sigma-Csigma-free`).
+
 ## 2. Hierarchia formalizmu (cztery poziomy)
 
 Patrz `rem:hierarchia-sektorow` w `core/sek08_formalizm.tex` (lin. 15–47).
@@ -58,7 +70,7 @@ z:
 
 - **L_field** = (1/2) K(φ) g_eff^μν ∂_μφ ∂_νφ - V(φ),
   - K(φ) = K_geo φ⁴ (z α=2 selection),
-  - V(φ) = (β/3) φ³ - (γ/4) φ⁴, **β = γ** (warunek próżni),
+  - V(φ) = (β_GL/3) φ³ - (γ_GL/4) φ⁴, **β_GL = γ_GL** (warunek próżni; (β/γ)_GL = 1 algebraicznie — to NIE są wykładniki krytyczne (β/γ)_WF ≈ 0.264; zob. dodatekA §A `app:A-beta-gamma-distinction`),
     - **⚠ POST-2026-05-09 dual-V clarification:** ta formuła V_orig odnosi się
       teraz do **MATTER SECTOR V** (V_orig, używanego w Phase 5 Mach inertia,
       T-Λ ρ_vac, particle masses przez field expansion wokół Φ_0 vacuum).
@@ -1118,7 +1130,7 @@ fluktuacje uśredniają się → klasyczny limit.
 ## 7. Status M3–M8 (archiwum)
 
 W cyklach M3–M8 (kwiecień 2026) zbadano własności **wykładników
-krytycznych** ratio `β/γ` w punkcie stałym Wilsona-Fishera 3D Isinga
+krytycznych** ratio `(β/γ)_WF` (wykładniki krytyczne — ≠ współczynniki GL, dla których (β/γ)_GL = 1) w punkcie stałym Wilsona-Fishera 3D Isinga
 metodami MK-RG (M3) i NPRG/Wetterich-LPA (M8), wraz z trzema kanałami
 zamknięcia (M4 H-S Jacobian, M5 Z_Φ, M6/M7 wiązanie GL).
 

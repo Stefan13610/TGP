@@ -1,0 +1,42 @@
+=== Phase 0 check: op-scalar-sector-phistar (LOCK: Phase0_balance.md) ===
+
+--- 1. algebra ---
+  s*=1.174166  Phi*=1.378665  V''(s*)=0.878665
+  xi^2 = kappa/V''(s*) = 0.5690   m_a = sqrt(V''(s*)/kappa) = 1.3256
+  2*pi*J = 4.3312   4*pi*J = 8.6624
+
+--- 2. ogon algebraiczny (rownanie #1) ---
+     r     f_ODE/s*    1-xi^2/r^2    stosunek
+    4.0   0.93760     0.96443      0.97218
+    5.0   0.96823     0.97724      0.99078
+    6.0   0.98092     0.98419      0.99668
+    8.0   0.99046     0.99111      0.99935
+   10.0   0.99410     0.99431      0.99978
+   12.0   0.99595     0.99605      0.99990
+
+--- 3. dekompozycja kwadrupolowa (ansatz zlozeniowy, PRZED pomiarem) ---
+  geometria GLOWNA dx=0.5: N=256 L=128.0 dx=0.5 X=32.0
+    d     E_S          E_O          E_sym        E_anty     4piJ*[G(d)-G(2X,d)]   ratio
+    5.0  -647.16955  -696.35618  -671.76286  -24.59331   -18.29000   1.3446
+    6.0  -648.34967  -694.68316  -671.51641  -23.16675   -16.72820   1.3849
+    8.0  -650.37790  -692.09180  -671.23485  -20.85695   -14.28420   1.4601
+   10.0  -652.03785  -690.13553  -671.08669  -19.04884   -12.41433   1.5344
+   12.0  -653.41893  -688.57906  -670.99899  -17.58007   -10.91203   1.6111
+    fit (P) na E_sym_ansatz: C=-670.73692  B_pred=13.5460  RSS=8.72e-06
+    przewidywany rozstep kanalu na skanie: 0.7645
+
+  geometria KONTROLA dx=0.25: N=256 L=64.0 dx=0.25 X=16.0
+    d     E_S          E_O          E_sym        E_anty     4piJ*[G(d)-G(2X,d)]   ratio
+    5.0  -124.55977  -161.74595  -143.15286  -18.59309   -12.41433   1.4977
+    6.0  -125.68499  -160.13285  -142.90892  -17.22393   -10.91203   1.5784
+    8.0  -127.57052  -157.68978  -142.63015  -15.05963   -8.61334   1.7484
+    fit (P) na E_sym_ansatz: C=-142.13242  B_pred=13.4861  RSS=1.56e-07
+    przewidywany rozstep kanalu na skanie: 0.5227
+
+=== WNIOSKI PHASE 0 ===
+  1) algebra: xi^2=0.5690, m_a=1.3256, 2piJ=4.3312
+  2) ogon wiru algebraiczny ~ 1 - xi^2/r^2 (podstawa formy P)
+  3) B_pred(glowna) = 13.5460; B_pred(kontrola) = 13.4861
+     — zalockowane predykcje kanalu dylatacyjnego przed pomiarem
+  4) E_anty vs teoria Greena: ratio ~ 1 potwierdza algebre
+     kasowania kanalu fazowego (rownanie #2)

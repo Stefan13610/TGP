@@ -271,6 +271,78 @@ jest regularna i~dodatnia w~tym punkcie:
 \end{equation}
 \end{corollary}
 
+\begin{remark}[Zakres wniosku~\ref{cor:ghost-artifact} po CP-7 (2026-07-03):
+  ściana jest AKTYWNA w dynamice korony]%
+\label{rem:ghost-artifact-scope-CP7}
+Diagonalizacja numeryczna
+(\texttt{research/op-spectral-analysis-Phi-2026-07-03/}) wykazała
+napięcie z zakresem powyższego wniosku:
+(i)~profile solitonowe $\mu$ i~$\tau$ (mechanizm selekcji $N{=}3$,
+skrypty \texttt{a3d}/\texttt{ls10}) \textbf{dotykają ściany}
+($\min_r g = 0{,}788$ i~$0{,}786$ przy $g^*=0{,}779$; odpowiednio 1~i~3
+odbicia; $\min f(g) \approx 0{,}04$), a odbicie $g'\to-g'$ jest
+regularyzacją ad-hoc (nie-EL);
+(ii)~w formie substratowej $K_{\rm sub}=K_{\rm geo}g^2$ (bez ściany)
+profil $\tau$ ($g_0=3{,}189$) \textbf{kolabuje} ($\min g = 0{,}158$,
+profil urywa się przy $r\approx 3$) --- ściana jest funkcjonalnie
+konieczna dla generacji~3 w obecnym mechanizmie.
+Stąd: status ,,artefakt log-aproksymacji'' pozostaje poprawny dla
+sektora słabopolowego/grawitacyjnego, ale dla dynamiki solitonowej
+korony ściana wymaga modelu pierwszoprincypialnego (hipoteza robocza,
+autor 2026-07-03: ściana = próg stabilności \textbf{budżetu tworzonej
+przestrzeni} w solitonie --- ilość tworzonej przestrzeni w rdzeniu
+przekracza próg stabilności; formalizacja:
+\texttt{op-wall-dynamics-2026-07-03}).
+\end{remark}
+
+\begin{remark}[Cykl \texttt{op-wall-dynamics} wykonany (2026-07-03):
+  wersja liniowa hipotezy bud\.zetowej negatywna;
+  $g_{0,\rm crit}=8/5$ jako pr\'og aktywacji \'sciany]%
+\label{rem:wall-dynamics-2026-07-03}
+Cykl \texttt{research/op-wall-dynamics-2026-07-03/} (kryteria
+zalockowane przed obliczeniami) przetestowa\l{} hipotez\k{e}
+robocz\k{a} z~uwagi~\ref{rem:ghost-artifact-scope-CP7}. Wyniki:
+\begin{enumerate}[nosep]
+  \item \textbf{Wi\k{e}zy bud\.zetowe liniowe (W1, wynik negatywny):}
+    cztery pre-deklarowane rodziny wi\k{e}z\'ow
+    ($\int v\,w\,r^2\,dr=0$ z~$w\in\{1,\;g_{\rm eq}^2,\;f(g_{\rm eq}),\;
+    \mathbf{1}_{r<r_{\rm core}}\}$) oraz ich pary NIE zeruj\k{a}
+    indeksu siod\l{}owego $\mu/\tau$: minimum osi\k{a}galne
+    $\mu\to1$, $\tau\to1$, a~mod rezydualny nie jest kierunkiem
+    rodziny profili (overlap z~$\partial g/\partial g_0$ rz\k{e}du
+    $0{,}005\ll0{,}9$). Fakt strukturalny: wi\k{e}z bud\.zetu RDZENIA
+    ($r<r_{\rm core}$) usuwa dok\l{}adnie mody g\l{}\k{e}bokie
+    ($-1{,}282$/$-4{,}216$), kt\'orych nie ruszaj\k{a} wi\k{e}zy
+    globalne. Hipoteza wymaga wi\k{e}zu
+    nieliniowego/\l{}adunkowego (w\l{}a\'sciwy Q-ball:
+    \l{}adunek z~symetrii $+$ kryterium typu Vakhitova--Kolokolova)
+    --- OPEN.
+  \item \textbf{G\l{}adka regularyzacja \'sciany (W2, wynik
+    negatywny):} w~rodzinie
+    $f_\varepsilon=\tfrac12\bigl[f+\sqrt{f^2+\varepsilon^2}\bigr]$
+    profil $\tau$ KOLABUJE dla ka\.zdego
+    $\varepsilon\in\{0{,}2;\,0{,}1;\,0{,}05;\,0{,}02\}$ (jak substrat
+    $\alpha=1$), a~$\lambda_{\min}(\varepsilon\to0)$ nie zbiega ---
+    odbicie pozostaje jedynym znanym no\'snikiem mechanizmu gen-3;
+    dryf $r_{21}$ ($\mu$-only) $+1{,}9\%\dots+23\%$ wzgl\k{e}dem
+    hard-wall (dopuszczalne $0{,}1\%$): mechanizm mas jest wra\.zliwy
+    na model \'sciany.
+  \item \textbf{Dwa progi = jeden mechanizm (W3a):} pr\'og pierwszego
+    kontaktu profilu ze \'scian\k{a} $g^*$ le\.zy przy
+    $g_{0,\rm wall}=1{,}6114$, zgodnie z~$g_{0,\rm crit}=8/5$ (H7,
+    \texttt{tgp\_master\_consistency\_v47.py}) na poziomie
+    $0{,}71\%$: g\'orny ogranicznik rdzenia i~dolna \'sciana
+    kinetyczna s\k{a} dwiema projekcjami jednego zjawiska.
+    Warunek konieczny kontaktu (z~to\.zsamo\'sci
+    $dH/dr=-(2/r)f\,g'^2$, exact): $W(g_0)\le W(g^*)$
+    $\Rightarrow$ $g_0\ge1{,}1696$; t\l{}umienie $2/r$ przesuwa
+    pr\'og do $1{,}61$. Wielko\'sci $B_{\rm core}$/$E_{\rm core}$
+    nie maj\k{a} ekstrem\'ow przy progach --- no\'snikiem
+    powi\k{a}zania jest dynamika ODE, nie bud\.zet rdzeniowy
+    w~wersji liniowej.
+\end{enumerate}
+\end{remark}
+
 % -------------------------------------------------------------------
 \subsection{Dopasowanie reżimu próżniowego}\label{ssec:matching}
 % -------------------------------------------------------------------
@@ -351,7 +423,7 @@ próżniowym}, gdzie $f(g) \approx K_{\rm sub}(g)$.
 
 \begin{proposition}[Zachowanie mechanizmu $A_{\rm tail}$]%
 \label{prop:Atail-preserved}
-\statuslabel{Twierdzenie}.
+\statuslabel{Aproksymacja (re\.zim ogona, przypadek $M_{\rm full}$)}.
 Mechanizm hierarchii mas oparty na amplitudzie ogona
 $A_{\rm tail}(g_0)$ (hip.~\ref{hyp:J-mass-Atail4},
 dod.~\ref{app:ogon-masy}) jest \textbf{niezmienniczy}
@@ -372,6 +444,37 @@ w~regionie ogona, ponieważ:
     ogony obu solitonów leżą w~tym samym reżimie.
 \end{enumerate}
 \end{proposition}
+
+\begin{remark}[Status $A^4$ wobec wzoru zunifikowanego $m_{\rm obs}$
+(L05, 2026-06-28)]\label{rem:Atail4-vs-unified}
+Skalowanie $A_{\rm tail}^4$ ze~stw.~\ref{prop:Atail-preserved} opisuje
+\textbf{mas\k{e} pe\l{}n\k{a}} $M_{\rm full} = c_M A_{\rm tail}^4$ (klasyczna
+energia z~pe\l{}nego Lagrangianu substratu; rem.~\ref{rem:J2-cM},
+\S\ref{app:J2-skalowanie}) i~ma status \emph{aproksymacji} wa\.znej
+w~re\.zimie ogona, \textbf{nie} twierdzenia. Obserwowana masa fizyczna
+$m_{\rm obs}$ jest natomiast dana \textbf{wzorem zunifikowanym}
+\[
+  m_{\rm obs}(g_0,\alpha)
+    = c_M\,A_{\rm tail}^2(g_0,\alpha)\,g_0^{\,e^2(1-\alpha/4)},
+\]
+(rem.~\ref{rem:materia-hierarchia} w~\S\ref{sec:formalizm} oraz
+rem.~\ref{rem:hyp-unified-action-M911-canonical} w~sekcji akcji
+zunifikowanej), kt\'ory dla \textbf{kanonicznego $\alpha=2$}
+($K(\phi)=K_{\rm geo}\phi^4$) daje
+$m_{\rm obs} = c_M A_{\rm tail}^2\,g_0^{\,e^2/2}$ --- zgodnie
+z~zalockowanym werdyktem $\alpha=2$. Empiryczne $A^4$ odpowiada
+przypadkowi $\alpha=1$ (a~konkretnie $m_{\rm obs}$ przy $\alpha=1$,
+\emph{nie} $M_{\rm full}$; por.\ \texttt{audyt/L05\_mass\_exponent\_drift})
+i~\textbf{nie} stanowi twierdzenia konkurencyjnego wobec $\alpha=2$.
+
+\medskip\noindent
+\textbf{$m_{\rm obs} \neq M_{\rm full}$:} obserwabla $m_{\rm obs}$ to masa
+biegunowa emergentnego propagatora (pole-mass), a~nie klasyczna masa
+ADM/Komar $M_{\rm full}$ ca\l{}ego solitonu; skale te r\'o\.zni\k{a} si\k{e}
+normalizacj\k{a} oraz wyk\l{}adnikiem ($k_{\rm full}=4$ wobec
+$k_{\rm obs}=e^2/2$ dla $\alpha=2$). Liczbowe stosunki mas lepton\'ow
+pozostaj\k{a} bez zmian.
+\end{remark}
 
 \begin{remark}[Podsumowanie statusu ghost-freedom TGP]%
 \label{rem:ghost-summary}
@@ -588,9 +691,12 @@ stabilno\'sci TGP w~jedno spektralne twierdzenie w~formie
 Sturm-Liouville'a, domykaj\k{a}c audyt L03
 (\texttt{audyt/L03\_K\_phi\_stability/}).
 
-\begin{theorem}[Synteza spektralna stabilno\'sci TGP]%
+\begin{theorem}[Synteza spektralna stabilno\'sci TGP --- zakres:
+  formulacja grawitacyjna]%
 \label{thm:spectral-synthesis-L03}
-\statuslabel{Twierdzenie}.
+\statuslabel{Twierdzenie (zakres zaw\k{e}\.zony 2026-07-03: obowi\k{a}zuje
+w~formulacji grawitacyjnej $K=K_{\rm geo}\varphi^4$ z~$U_A$; sektor
+solitonowy --- patrz uwaga~\ref{rem:spectral-CP7})}.
 Niech $\Phi_{\rm eq}(x)$ b\k{e}dzie fizycznym t\l{}em TGP odpowiadaj\k{a}cym
 \'zr\'od\l{}u $\rho \geq 0$ (vacuum, FRW, Yukawa point, soliton).
 Operator linearyzowany na $\Phi_{\rm eq}$:
@@ -634,6 +740,42 @@ $\Rightarrow$ 1~fizyczny massive scalar
 $m_{\rm sp} = \sqrt{\gamma/K_{\rm geo}}$. $\square$
 \end{proof}
 
+\begin{remark}[Diagonalizacja numeryczna CP-7 (2026-07-03): zakres
+  twierdzenia i~wynik negatywny dla sektora solitonowego]%
+\label{rem:spectral-CP7}
+Cykl \texttt{research/op-spectral-analysis-Phi-2026-07-03/} wykona\l{}
+pierwsz\k{a} faktyczn\k{a} diagonalizacj\k{e} BVP operatora
+\eqref{eq:L-operator-spectral} (sympy exact $+$ samosprz\k{e}\.zona
+dyskretyzacja S-L, zbie\.zno\'s\'c $N{=}2000/4000/8000$,
+$R{=}40/60/80$). Wynik:
+\begin{enumerate}[nosep]
+  \item \textbf{Formulacja grawitacyjna (F-A):} teza POTWIERDZONA ---
+    pr\'o\.znia $N_{\rm neg}=0$, kraw\k{e}d\'z $1{,}0027\gamma$; t\l{}a
+    Yukawy EL-konsystentne (relaksacja Newtona, residuum $<3\cdot10^{-12}$)
+    do amplitudy $1{,}28$: $N_{\rm neg}=0$.
+  \item \textbf{Formulacja solitonowa} (funkcjonal, kt\'orego r\'ownaniem
+    EL jest ODE solitonu korony: $f(g)=1+2\alpha\ln g$,
+    $W'(g)=g^2(1-g)$): teza NIE obowi\k{a}zuje --- $W''(1)=-\gamma<0$
+    $\Rightarrow$ kontinuum tachioniczne od $-\gamma$ (box-count
+    $=\lfloor R/\pi\rfloor$ dok\l{}adnie); mody zlokalizowane $l{=}0$:
+    $e$: 0, $\mu$: 2 $(-1{,}282;\,-1{,}057)$, $\tau$: 3
+    $(-4{,}216;\,-1{,}114;\,-1{,}010)$ --- $\mu/\tau$ s\k{a} punktami
+    siod\l{}owymi statycznego funkcjona\l{}u bez wi\k{e}z\'ow.
+    Krok~2 szkicu dowodu ($Q\to+\gamma$) jest w\l{}asno\'sci\k{a}
+    formulacji grawitacyjnej, nie solitonowej (tam $Q\to-\gamma$);
+    konflacja obu form = dualizm L04.
+  \item \textbf{Czego wynik NIE uniewa\.znia:} dopasowa\'n mas korony
+    ($r_{21}$, $r_{31}$/Koide) --- to w\l{}asno\'sci profili ODE.
+    Uniewa\.znia claim ,,pe\l{}na stabilno\'s\'c spektralna wspiera
+    koron\k{e}''. Stabilno\'s\'c $\mu/\tau$ wymaga sformu\l{}owania
+    z~wi\k{e}zem (bud\.zet tworzonej przestrzeni, analogia Q-ball)
+    lub dynamiki \'sciany --- OPEN, cykl
+    \texttt{op-wall-dynamics-2026-07-03} (wykonany 2026-07-03:
+    wersja liniowa wi\k{e}zu negatywna ---
+    uwaga~\ref{rem:wall-dynamics-2026-07-03}).
+\end{enumerate}
+\end{remark}
+
 \begin{remark}[Implikacje fizyczne tw.~\ref{thm:spectral-synthesis-L03}]%
 \label{rem:spectral-synthesis-implications}
 \begin{enumerate}[nosep]
@@ -641,6 +783,10 @@ $m_{\rm sp} = \sqrt{\gamma/K_{\rm geo}}$. $\square$
     mass spectrum lepton z PDG $<0{,}01\%$) s\k{a} fizycznie realizowanymi
     konfiguracjami, nie artefaktem formalnym
     (Phase 2 P22 5/5 PASS).
+    \emph{Korekta 2026-07-03:} istnienie profili potwierdzone; ich
+    stabilno\'s\'c spektralna w~funkcjonale bez wi\k{e}z\'ow ---
+    NEGATYWNA dla $\mu/\tau$ (uwaga~\ref{rem:spectral-CP7});
+    stabilno\'s\'c fizyczna = OPEN (wi\k{e}z/\'sciana).
   \item \textbf{GW propagation:} dyspersja $\delta\Phi$:
     $\omega^2 = c^2 k^2 + m_{\rm sp}^2 c^4 > 0$, brak instability
     (zgodne z~GW170817 $c_{\rm GW} = c_{\rm EM}$).

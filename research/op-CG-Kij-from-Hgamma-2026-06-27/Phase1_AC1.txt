@@ -1,0 +1,40 @@
+======================================================================
+Phase 1 - F-CGK-A + F-CGK-C1 (value-blind)
+======================================================================
+  [lit 3D Ising] Delta_sigma=0.5181489, eta=0.03630, Delta_eps=1.412625
+
+[F-CGK-A] Wykladnik e w K~(pole)^e : chain rule, obie ramy
+  substrat (kanoniczny s): e_amplituda=0, e_gestosc=-1  (e_gestosc=-1 => #49 anchor)
+  manuskrypt (K=Kgeo phi^4): e_amplituda=4, e_gestosc=1
+  LUKA spojna: amplituda Delta_e=4 (Delta_alpha=2); gestosc Delta_e=2 (Delta_alpha=1)
+  F-CGK-A anchor (e_sub_gestosc == -1): True
+  [W-CGK-1 DOUBT] '#49 headline' Delta_e=5 = e_sub_gestosc(-1) vs e_man_AMPLITUDA(+4) = MIESZANA rama.
+                  W spojnej ramie luka = 4 (ampl.) lub 2 (gest.). (B) ROBUST (luka != 0 w obu).
+
+[F-CGK-C1] Wymiar RG O_n = Phi^n (grad Phi)^2 przy 3D WF (Phi=s^2=eps)
+  Delta[O_n] = (n+2)*Delta_eps + 2 = 1.412625*n + 4.82525
+    n=-1 (substrat K~Phi^-1           ): Delta=3.413  IRRELEWANTNY (>3)
+    n=+0 (kanon (grad Phi)^2          ): Delta=4.825  IRRELEWANTNY (>3)
+    n=+1 (manuskrypt(gest) K~Phi^+1   ): Delta=6.238  IRRELEWANTNY (>3)
+    n=+2 (K~Phi^+2 (sek08b g^2)       ): Delta=7.651  IRRELEWANTNY (>3)
+  Czy ktorykolwiek operator kinetyczny RELEWANTNY? False
+  F-CGK-C1 => C-AXIOM-contribution (wszystkie irrelewantne => exponent nie pinowany przez FP)
+
+[F-CGK-B] (implikacja z C1) eta potrzebne vs bound unitarnosci
+  luka gestosc = 2; to wymaga DOMINACJI operatora Phi^+1 nad Phi^-1 w IR,
+  tj. RELEWANCJI (C1), NIE shiftu eta. eta_lit=0.0363 (male).
+  prog LOCKED: eta>1 = 'duze'. eta_lit << 1 => B-REFUTED (eta nie mostkuje).
+
+======================================================================
+WYNIK Phase 1 (F-CGK-A, C1; B-implikacja):
+  A: anchor e_sub_gestosc=-1 -> True (#49 potwierdzone jako baseline).
+     luka spojna: 4 (ampl.) / 2 (gest.) -- NIE 5 (W-CGK-1).
+  C1: O_n dla n in -1,0,1,2 -> wszystkie Delta>3 -> IRRELEWANTNE.
+      => caly sektor kinetyczny kompozytu Phi=eps jest RG-irrelewantny (zgodne z #39).
+  B: eta_lit<<1 -> B-REFUTED.
+  ----
+  WSTEPNIE (do agregatu F-CGK-D w Phase 2 po C2):
+  (B-REFUTED) AND (C1=wszystkie irrelewantne) => silnie ku NON-DERIVABLE
+  (alpha=2 = nieredukowalny aksjomat; exponent kinetyczny nie pinowany przez FP).
+  Pozostaje C2 (czteropolowy bond: wspolczynnik fiksowany czy wolny) -> Phase 2.
+======================================================================

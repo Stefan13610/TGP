@@ -1,6 +1,6 @@
 ---
 title: "STATE.md — TGP_v1 single-source coordination point"
-date: 2026-06-11
+date: 2026-08-23
 type: state
 status: ACTIVE
 purpose: "Jedyny plik aktualizowany po każdej sesji. Inne warstwy (INDEX, audyt/PRIORITY_MATRIX, meta/PLAN_*) są referencyjne."
@@ -8,6 +8,569 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 ---
 
 # STATE.md — current state of TGP_v1 framework
+
+---
+
+## 🟡 Sesje #64+ (2026-07-04 → 2026-08-16) — WPIS RETROSPEKTYWNY (zrekonstruowany 2026-08-23 z artefaktów `research/`; STATE nie był aktualizowany na bieżąco w tym okresie)
+
+Dwa bloki prac po #63: (A) program „most do grawitacji" (14 cykli, 2026-07-04 → 2026-07-14, wszystkie CLOSED z LOCKami Phase 0), (B) wieloetapowy cykl eksploracyjny `op-native-pressure-lepton-stability` (2026-07-27 → 2026-08-16, **OPEN**) + siostrzany `op-ep-scattering-babyskyrmion` (CLOSED). Numeracja sesji w tym okresie nieciągła (meta wskazuje #65 dla 2026-07-27); wpis zbiorczy.
+
+### (A) Program „most do grawitacji" (2026-07-04 → 2026-07-14) — 14 cykli CLOSED
+
+- **[[research/op-blocked-soliton-bang-2026-07-04/README.md]]** — CLOSED-EXECUTED, mixed 3/4: samotny soliton zanika (skala czasu), klaster 8/8 przeżywa (blokowanie).
+- **[[research/op-bare-substrate-genesis-2026-07-04/Phase_FINAL_close.md]]** — **G1–G6 PASS (wersja mocna):** goły substrat POTRAFI wygenerować samopodtrzymujące, lockowane struktury Φ>0 przez kolektywny lock; fundament mostu do grawitacji stoi.
+- **[[research/op-lock-interaction-gravity-2026-07-04/Phase_FINAL_close.md]]** — oddziaływanie lock–lock ISTNIEJE, przyciągające, ale **Yukawa (m~m₀=1), skaluje się z frontem** → NIE grawitacja; GAŁĄŹ B (B1 Goldstone / B2 metryka efektywna).
+- **[[research/op-nbody-additivity-2026-07-04/Phase_FINAL_close.md]]** — addytywność parowa POPARTA w reżimie rozseparowanym (g≥3: |δ|≤3.3e−3); załamanie = człon 3-ciałowy w punkcie Fermata, ~exp(−μg).
+- **[[research/op-goldstone-mediator-2026-07-04/Phase_FINAL_close.md]]** (B1) — mediator bezmasowy ISTNIEJE (2D-Newton, log; C2 pred/meas 0.86–1.04; skalowanie ładunkowe 3.93 vs 4), ale **ŁADUNKOWY** (równoimienne odpychają) → grawitacja NIE jest prostym Goldstone'em U(1).
+- **[[research/op-phi-metric-refraction-2026-07-04/Phase_FINAL_close.md]]** (B2) — pomiar niewykonalny: **zamrożone tło obiektu TACHIONOWE w ścianie** (γ=0.123 pred / 0.125 meas, zgodność 1.3%); klauzula D6 pre-rejestrowana zadziałała.
+- **[[research/op-scalar-sector-phistar-2026-07-05/Phase_FINAL_close.md]]** (C, dylatacyjny) — G3 FAIL → STOP: kanał NIEROZSTRZYGNIĘTY (procedura statyczna S/O łamie własny warunek symetrii); ogon algebraiczny wiru potwierdzony.
+- **[[research/op-stationary-background-2026-07-05/Phase_FINAL_close.md]]** — formalnie FAIL/STOP, ale ustalenie strukturalne: **sektor falowy wokół wiru BEZ tachionu** (λ_min=+0.0008; tachion B2 był własnością ściany dużego obiektu); ścisła stacjonarność = przeszkoda topologiczno-geometryczna.
+- **[[research/op-vortex-refraction-2026-07-05/Phase_FINAL_close.md]]** (B2′ #1) — STOP: para wirów (+1,−1) pod dynamiką II rzędu ANIHILUJE (τ=107.5) w oknie przelotu; kwazi-stacjonarność była własnością przepływu gradientowego.
+- **[[research/op-lattice-background-2026-07-05/Phase_FINAL_close.md]]** (B2′ #2) — problem tła ROZWIĄZANY konstrukcją (szachownica D4: przemieszczenie 0.0000 do τ=400); **pierwsze WAŻNE pomiary refrakcji: ugięcie KU wirowi we wszystkich runach**; G5 5/6 w paśmie.
+- **[[research/op-shortwave-lattice-2026-07-05/Phase_FINAL_close.md]]** (B2′ #3, L=256) — **G5 PASS 6/6 → P1 (POLICZALNOŚĆ) ROZSTRZYGNIĘTE POZYTYWNIE**: łącznie 11 ważnych punktów kryterialnych, ratio 0.788–1.573, uniwersalnie skupiająca geometria propagacji wokół defektów; granica eikonalu zmierzona (b_eff~λ).
+- **[[research/op-asymmetric-lattice-2026-07-05/Phase_FINAL_close.md]]** (B2′ #4) — STOP na bramce G2: siatka skośna dynamicznie niezdatna (mod ścinający, core_lost τ=227); ryzyko #1 pre-rejestrowane, bramka zadziałała.
+- **[[research/op-oblique-beam-2026-07-12/Phase_FINAL_close.md]]** (B2′ #5) — **KANAŁ CYRKULACYJNY ZMIERZONY** (G5b FAIL wariant (i) przy G6a PASS): P2 „ślepota na kręt" rozstrzygnięte NEGATYWNIE; P1 na geometriach chronionych lustrem BEZ ZMIAN.
+- **[[research/op-ep-scattering-babyskyrmion-2026-07-28/WYNIK_ep-scattering-babyskyrmion_2026-07-28.md]]** (falsyfikator §4 RAM) — „ładunek" operacyjny w relatywistycznym baby-Skyrme **NIE jest Coulombowski** (znak siły z orientacji χ, nie z Q₁Q₂; ekranowanie Yukawa) — negatyw mocny, zamyka trop.
+
+**Bilans (A):** grawitacja ≠ kanał amplitudowy Z2 (Yukawa), ≠ prosty Goldstone U(1) (ładunkowy); JEDYNY policzalny kanał o znaku grawitacji = **geometryczny (refrakcja na tle Φ)** — P1 domknięte pozytywnie, odkryty kanał cyrkulacyjny (odd) do charakteryzacji.
+
+### (B) `op-native-pressure-lepton-stability-2026-07-27` — **OPEN-ACTIVE** ([[research/op-native-pressure-lepton-stability-2026-07-27/README.md]] — pełna mapa)
+
+Cykl eksploracyjny bez LOCKa Phase 0, z serią audytów adwersarialnych. Skrót:
+
+- ⛔ **OBALONE po drodze:** N4d „native pressure" w izolacji (**E[u]≥0 z równością iff u≡1** w obu sektorach kanonicznych — stabilizacja ciśnieniem strukturalnie niewykonalna w tym sektorze); „pressure+loops=111%" (overfitting); bounce-hierarchy (N_neg = artefakt pudła: 12/19/25 = floor(R/π), identycznie dla próżni; **F-A kanoniczna: runaway dla wszystkich g₀ — brak solitonów crown**); cała warstwa budżetowa (AUDYT 24 ustalenia: h≡1 artefakt+bug, lokalizacja=artefakt UV, B=2 z rdzenia ⟹ obiekt nie istnieje); kolor ℤ₃ z substratu Isinga (rank-3 znika tożsamościowo; GL(3,𝔽₂) perfekcyjna); σ_ab bez próżni (|σ|~L^−2.03).
+- ✅ **PRZEŻYŁO:** uniqueness **2T** (jedyna skończona podgrupa SU(2) nieabelowa z ℤ₃ w abelianizacji; 2T=Q₈⋊ℤ₃); **spin bezbarwny** (−1∈[2T,2T] ⟹ χ(−1)=1); bound symplicjalny T≥5B (jako twierdzenie); ontologia energii relacyjnej.
+- 🔴 **AUDYT TRZECH REŻIMÓW (2026-08-10/15, ZAMKNIĘTY):** studnia (reżim III/confinement) NIE jest ustanowiona przez żaden z 5 rachunków rdzenia; trzy rachunki tej samej wielkości wzajemnie sprzeczne; ~17 „PASS" bez testu zdolnego dać FAIL; skale absurdalne (d_well protonu 17 rzędów pod Planckiem; M_crit=8×10¹⁹ M_☉ ⟹ „makro⟹tylko grawitacja" fałszywe o 20+ rzędów); skrypty rdzenia cicho poprawiają niespójność eq:Eint. **Ocalało: reżim I (grawitacja) i d\*=4β** (odporne na usunięcie E_γ; ale przy kalibracji kosmologicznej d\*=1.06e26 m). Blokada programu: **co ustala Φ₀ poza domeną kosmologiczną**. Znalezisko rdzeniowe: **DWA niezgodne substraty** (dodatekB ŝ∈ℝ/ℤ₂ vs sek09 Ξ∈ℂ³/SU(3)_c) — kolor POSTULOWANY.
+- 🟢 **RETROSPEKTYWA 2026-08-16 ([[research/op-native-pressure-lepton-stability-2026-07-27/ANALIZA_retrospektywa_oscylacyjny-lock_2026-08-16.md]]):** (1) ślepa plamka — WSZYSTKIE testy stabilności korpusu (#60–#63 włącznie) liczyły pojedynczy obiekt w próżni; konfiguracja o skończonej gęstości źródeł (centralna dla ontologii) nigdy niepoliczona; (2) dwie maszynerie stabilności (EFT Φ — padła; ODE z ogonem OSCYLACYJNYM — nieaudytowana) nigdy niepołączone; (3) **nowy wynik 4/4 PASS z kontrolą negatywną: oscylacyjny lock** — E_int(d)∝−e^(−κd)·cos(d+φ)/d daje dyskretną drabinę stabilnych minimów co 2π·r_core (pierwsze d\*≈6.0–6.1; stabilny łańcuch 3 źródeł, Hessian dodatni); skala NIE kosmologiczna — potencjalnie rozpuszcza blokadę Φ₀.
+
+### WIP po tym okresie (krytyczna ścieżka)
+
+1. **RACHUNEK CENTRALNY (niewykonany):** test V3 (runaway) dla solitonu **w kąpieli sąsiadów** — sieć periodyczna, gęstość n, ogony oscylacyjne z faktycznego ODE; pytanie binarne: czy mod runaway dostaje ω²>0 przy jakimś n.
+2. (κ, φ, A) ogona z faktycznego ODE rdzenia (fazy: δ_e=−81.4°, δ_μ=+38.6°, δ_τ=−27.3°) → d\* dla par ee/eμ/μτ.
+3. **Audyt maszynerii 2** (ODE/O-L5/why_n3; rysy: Q_K=3/2 jako wejście, korekta r₃₁) — przed budowaniem na niej czegokolwiek.
+4. Housekeeping: zagnieżdżona ścieżka `<cykl>/TGP/TGP_v1/…` w cyklu native-pressure (m.in. AUDYT_KRYTYCZNY_2026-07-28.md) — wzorzec #62, do przeniesienia.
+5. NEEDS N1–N3 z #63 (dopiski sek08b + lepton paper Limitations): status user-gate bez zmian.
+
+### Uwagi metodologiczne
+Wpis zrekonstruowany post-hoc (2026-08-23) — nie zastępuje protokołu sesyjnego; werdykty przepisane z Phase_FINAL_close/AUDYT/ANALIZA bez reinterpretacji. Cykl (B) prowadzony BEZ LOCKa Phase 0 (odstępstwo od wzorca #60–#63) — dyscyplinę zapewniały audyty post-hoc i jawne WYCOFANIA; rachunek centralny z pkt 1 powinien wrócić do trybu LOCK przed obliczeniami.
+
+---
+
+## 🟡 Sesja 2026-07-04 #63 — `op-nonlinear-charge-constraint` WYKONANE (Phase 1–3 wg LOCK-a z #62, osobny agent). **Hipoteza budżetowa autora obalona także w wersji NIELINIOWEJ/ŁADUNKOWEJ** — V1 NEGATYWNE (M0: 0/9 kandydatów C1–C5 zachowanych, sympy exact), V2 NEGATYWNE dla μ/τ (VK slope-positive na całych gałęziach; deflacja ładunkowa nie usuwa modów głębokich; kontinuum tachioniczne przy każdym ω — krawędź c(ω)=−1−7ω²; próżnia ω duchowiona od ω_gh=0,2935), V3 kierunek (i): niestabilność μ potwierdzona nieliniowo (runaway, wyjście pola z dziedziny modelu g→0 w t*≈3,6). Po #60/#62/#63: wszystkie trzy ścieżki stabilizacji μ/τ w klasie pól gładkich z odbiciem ad-hoc ZAMKNIĘTE negatywnie.
+
+Agent-implementator (autoryzacja #62: „rozpisz cykl badawczy N4 dla nowego agenta"; realizacja: ta sesja). Wejście wg handoffu LOCK-a: Phase0_balance.md → op-wall-dynamics README+kod → CP-7 README → sek08b remarks → STATE #60–#62. Kryteria V1–V3 niezmienione; jedyna dopuszczona korekta (LOCK §8: konwencja znaku VK + renormalizacja pudła) udokumentowana w Phase 1 PRZED P2b. Housekeeping na starcie: ponowny artefakt zagnieżdżonej ścieżki `TGP/TGP_v1/TGP/TGP_v1/…` (pliki LOCK-a tego cyklu + README kwarantanny) — przeniesione na właściwe miejsca, pusty katalog usunięty (wzorzec #62).
+
+### ✅ Phase 1 — inwentarz ładunków, sympy exact ([[research/op-nonlinear-charge-constraint-2026-07-03/Phase1_output.txt]])
+- **P1a PASS:** EOM(M0); energia zachowana exact; statyczne EL = ODE korony a3d/CP-7 exact.
+- **V1 NEGATYWNE (zgłoszone wprost):** pełna tabela C1–C5 — **0/9 zachowanych** (test operatorem Eulera: dywergencja zupełna on-shell ⟺ zachowanie; residua potwierdzone sondami); energia = kontrola dodatnia (nie budżet). Per LOCK: „hipoteza wymaga rozszerzenia M1" — dalej wyłącznie gałąź M1 (model-extension, NIE core).
+- **P1c (M1):** Q Noether zachowany EXACT; redukcja Q-ball: W_eff=W−(ω²/2)fφ²; GSS: L₊ (forma CP-7, W→W_eff), L₋ z L₋φ_ω=0 exact (mod fazowy). Konwencja VK zalockowana PRZED P2b: Q:=ω∫fφ²r² (>0), stabilna gałąź ⟺ dQ_sol/dω<0; wielkości odjęte od ω-próżni (pudło R=60).
+- **P1d:** człon ω² **OBNIŻA** krawędź: c(ω)=−1−7ω²−117ω⁴+O(ω⁶) (z przesunięciem próżni φ_∞=1−3ω²+…); krawędź L₋=0 exact ∀ω; próżnia przecina g*=e^{−1/4} przy **ω_gh=0,2935** (dalej tło kinetycznie zduchowione). **Nie istnieje ω_min z σ_ess≥0** — klauzula tła V2 aktywna.
+
+### ✅ Phase 2 — rodzina Q-ball + VK ([[research/op-nonlinear-charge-constraint-2026-07-03/Phase2_output.txt]], R-kontrola: [[research/op-nonlinear-charge-constraint-2026-07-03/Phase2b_Rcontrol_output.txt]])
+- **P2a:** gałęzie φ_ω ciągłe z CP-7 dla **ω≤0,25** (e/μ/τ; skan [0,1] krok 0,05 w całości); ω≥0,30: kolaps na ścianę (29 odbić) — zbieżnie z ω_gh.
+- **V2 NEGATYWNE dla μ i τ:** (ii) **dQ_sol/dω>0 wszędzie** (slope-positive; jedyny slope-negative: e@ω=0,05 — poza hipotezą); (iii) deflacja ładunkowa+rodziny nie usuwa modów głębokich (N_c=N_loc; μ@ω=0,10 mod pogłębia się do −3,35; τ: −4,2 zawsze obecny; μ N_loc=0 dla ω≥0,15 to skutek nurkującej krawędzi, nie stabilizacji). Zbieżność 3 siatek zgodna; **R-kontrola {40,80}: identyczne N_loc, λ do 3–4 cyfr**.
+- **P2d:** gate mas ω→0 **PASS** (drift r₂₁=0,0005%, r₃₁=0,0012% <0,1% — baseline #62 odtworzony, zero re-fitowania); dryf przy ω>0 raportowany bez progu: 5–25% (ω=0,05–0,10) → 50–100% (ω=0,15–0,25) — Q-ballowe podkręcenie niszczy dopasowanie mas.
+- Cross-check f_ε (ε=0,2 + kontrola 0,1, per LOCK): μ kolabuje od ω≥0,15/0,10; τ zawsze (jak #62); spójne z hard-wall.
+
+### ✅ Phase 3 — nieliniowy test dynamiczny M0-f_ε ([[research/op-nonlinear-charge-constraint-2026-07-03/Phase3_output.txt]])
+- Metoda: dokładny hamiltonowski układ semi-dyskretny (E zachowana exact w ODE ⇒ gate mierzy czysto błąd RK4); **gate |ΔE|/E≤2,4e−8 PASS**; zbieżność dt (0,004/0,002) exact. τ poza zakresem (brak EL w f_ε, #62) — odnotowane.
+- **V3 kierunek (i):** wzrost wykładniczy a(t) z σ_fit=0,97–1,74 vs √1,389=1,18 (3/4 runów ±20%; odchylenie +48% = mieszanie z kierunkiem F-ważonym, udokumentowane); **zero saturacji** (‖δg‖→80–136% tła); **pole opuszcza dziedzinę modelu (g→0) w t*=3,62** (ε=0,2; kontrola ε=0,1: t*=1,7–3,3) przy każdej amplitudzie i znaku. Subtelność normalizacyjna zapisana: dokładna dynamika liniowa jest F-ważona (λ_F=−7,86/−52,4 ⇒ σ_F=2,80/7,24) — miękka ściana czyni region ścienny skrajnie szybkim; kierunek werdyktu niezależny. **„Niestabilność potwierdzona nieliniowo w M0-f_ε"** — nieliniowość nie stabilizuje: dynamiczny odpowiednik statycznego kolapsu τ z #62.
+
+### Deliverables
+- [[research/op-nonlinear-charge-constraint-2026-07-03/README.md]] (CLOSED-EXECUTED, werdykty V1–V3) · Phase1/2/2b/3 .py + outputy · [[research/op-nonlinear-charge-constraint-2026-07-03/NEEDS.md]] (N1–N3 core user-gated + N4 research: dyskretność substratu / inna symetria / sektor F-A / metastabilność) · [[audyt/L03_K_phi_stability/POST_ACTION_UPDATE_2026-07-04.md]] (+ pointer w POST_ACTION b).
+- Rdzeń .tex NIETKNIĘTY — build-gate bezprzedmiotowy (zero edycji core).
+
+### Anti-Lakatos
+✓ Zero zmian kryteriów/list/siatek/konwencji ściany po starcie obliczeń (LOCK z #62 nietknięty). ✓ Jedyna dopuszczona korekta (konwencja VK) udokumentowana przed P2b, zgodnie z LOCK §8. ✓ Trzy werdykty negatywne zgłoszone wprost z zbieżnością siatek + R-kontrolą. ✓ Skany raportowane w całości (INCOMPLETE/GHOSTED włącznie). ✓ Zero re-fitowania (gate mas PASS). ✓ M1 pozostał model-extension (nie wszedł do core). ✓ NEEDS user-gated. ✓ NIE commitowano.
+
+### WIP po #63
+- **op-nonlinear-charge-constraint: 🟢 EXECUTED (werdykt negatywny, kompletny).**
+- **Decyzja użytkownika:** (1) user-gate na NEEDS N1–N3 (dopiski sek08b + lepton paper Limitations — domykają warstwę spójności po zamknięciu trzeciej ścieżki); (2) wybór dalszej drogi dla stabilności μ/τ: NEEDS N4 (a–d: substrat dyskretny / inna symetria / F-A / metastabilność) — każda wymaga decyzji ontologicznej, nie kolejnej numeryki w tej samej klasie; LUB Tier 2 (CP-8 S04 residuals / CP-9 L01 disformal) wg planu.
+- Kwarantanna [[meta/stray-path-cleanup-2026-07-03/README.md]]: bez zmian (do decyzji po git-diff).
+
+### Cross-references
+- [[research/op-nonlinear-charge-constraint-2026-07-03/README.md]] (+ Phase0–3, NEEDS) · [[research/op-wall-dynamics-2026-07-03/README.md]] (#62, baza) · [[research/op-spectral-analysis-Phi-2026-07-03/README.md]] (CP-7) · [[audyt/L03_K_phi_stability/POST_ACTION_UPDATE_2026-07-04.md]] · `core/sek08b…tex` rem:wall-dynamics-2026-07-03 (N1 pending) · #60 (CP-7) · #61 (LOCK W) · #62 (W1–W3 + LOCK tego cyklu)
+
+---
+
+## 🟡 Sesja 2026-07-03 #62 — `op-wall-dynamics` WYKONANE (Phase 1–3 wg LOCK-a z #61, osobny agent) + IMPLEMENTACJA NEEDS N1–N3 (user-gate) + HOUSEKEEPING podwojonych ścieżek (15 plików odzyskanych) + LOCK Phase 0 cyklu `op-nonlinear-charge-constraint` (N4; handoff: następna sesja). W1 NEGATYWNE: stabilizacja więzem liniowym obalona; W2 NEGATYWNE: brak gładkiego zamiennika ściany (kolaps τ przy każdym ε); W3a POZYTYWNE strukturalnie: g_crit=8/5 ⟺ próg kontaktu ze ścianą g* (0,71%).
+
+Agent-implementator (autoryzacja #61: „zajmiemy się tym w następnej sesji, osobny agent"). Wejście wg handoffu: LOCK → CP-7 README → Phase2_bvp_spectrum.py → sek08b remarks → STATE #60–#61. Kryteria z LOCK-a niezmienione; skrypty napisane PRZED uruchomieniem.
+
+### ✅ Phase 1 — stabilność z więzem budżetu ([[research/op-wall-dynamics-2026-07-03/Phase1_output.txt]])
+- Metoda: dokładne spektrum P L̂ P (inercja Haynswortha na tridiagonalu CP-7 + bisekcja; więz c_j=w(r_j)·r_j w koordynatach symetryzowanych, waga B=r²). Walidacja: unconstrained = CP-7 (co do 1e−4); gęsta projekcja przy N=2000: 4/4 PASS (max|Δλ|≈5e−10).
+- **W1 NEGATYWNE (wersja liniowa, zgłoszone wprost per LOCK):** pojedyncze K1–K3: μ 2→2, τ 3→2 (usuwają tylko mod przy krawędzi −1,0098; głębokie −1,282/−4,216 nietknięte). K4 (budżet rdzeniowy, r<r_core): μ 2→1, τ 3→2 — **usuwa dokładnie mody GŁĘBOKIE**. Pary K_i∧K4: μ→1, τ→1 — ale μ=0 nigdy nieosiągnięte, a mod rezydualny NIE jest kierunkiem rodziny profili (overlap z ∂g/∂g₀ = 0,004–0,008 ≪ 0,9). Zbieżność N=2k/4k/8k: identyczne liczby modów; R-kontrola: mody krawędziowe (≈−1,006) R-zależne (kontinuum), głębokie stabilne. K1–K3 niemal współliniowe (cos>0,995; zdominowane ogonem).
+- Wg LOCK-a: „stabilizacja budżetem obalona w wersji liniowej; hipoteza autora wymaga więzu nieliniowego/innego ładunku" — udokumentowane (NEEDS N4: właściwy Q-ball = ładunek z symetrii + Vakhitov–Kolokolov).
+
+### ✅ Phase 2 — ściana jednostronna + soft wall ([[research/op-wall-dynamics-2026-07-03/Phase2_output.txt]])
+- **W2a:** zbiór kontaktu odbitego profilu ~pusty (min g=0,7876/0,7863 vs g*+0,01=0,7888; 0–2 pkt siatki) — Dirichlet na kontakcie zostawia μ:2/τ:3. LCP: w ścisłej linearyzacji stożek przeszkody NIEAKTYWNY (przeszkoda w odległości ≥0,005) — ograniczenie odnotowane per LOCK; suplement skończonej amplitudy (rzut na stożek): minimum = λ_min bez więzu.
+- **W2b NEGATYWNE:** rodzina f_ε=½[f+√(f²+ε²)], ε∈{0,2;0,1;0,05;0,02}: (i) **τ KOLABUJE dla każdego ε** (profil urywa się r≈2,6 — jak substrat α=1): soliton gen-3 istnieje TYLKO z ad-hoc odbiciem, też wśród gładkich modeli EL; (ii) λ_min(ε→0) NIE zbiega (τ: −4,3/−226/−190/−4,8), spektra przy ustalonym ε niezbieżne w N dla ε≤0,1 (μ) i wszystkich ε (τ); jedynie μ@ε=0,2 zbiega (min f_ε~ε²/4 poniżej rozdzielczości siatek) — kwantyfikacja regularization-dependence z CP-7; (iii) dryf r₂₁/r₃₁(ε): tabela formalnie nieobliczalna (brak ogona τ); μ-only: +1,9% (ε=0,02) … +23% (ε=0,2) ≫ 0,1% — **mechanizm mas korony wrażliwy na model ściany (do Limitations)**. Baseline hard-wall odtworzony: r₂₁=206,73, r₃₁=3479,6.
+
+### ✅ Phase 3 — budżet i progi ([[research/op-wall-dynamics-2026-07-03/Phase3_output.txt]])
+- **W3a:** sympy exact: f(g*)=0; dH/dr=−(2/r)f g′² (tożsamość na EL, PASS); warunek konieczny kontaktu W(g₀)≤W(g*) ⇒ g₀≥1,1696. Numerycznie (bisekcja, guard g*+0,005): **g₀_wall=1,6114 vs g_crit=8/5: zgodność 0,71%** — górny ogranicznik H7 = próg pierwszej aktywacji ściany dolnej: **dwa progi = jeden mechanizm ścienny** (pierwsze bezpośrednie powiązanie; H7/H8 wzmocnione). ALE: B_core (skan 120 pkt g₀∈[1,04;3,40]) bez ekstremum przy progach (max ~3,06±0,05, między μ a τ); E_core nierozstrzygalne (szum kinków odbić) — nośnikiem powiązania jest dynamika ODE, nie B_core/E_core.
+- **W3b (SPECULATIVE, deskryptywnie):** N_loc(g₀) rośnie globalnie (0→4), ale tuż po każdym skoku odbić (1,61/2,25/2,89) chwilowo SPADA (1,7→0; 2,3→2; 2,9→2); mody istnieją już przed kontaktem (g₀≥1,4). Zero claimów.
+
+### Deliverables
+- [[research/op-wall-dynamics-2026-07-03/README.md]] (CLOSED-EXECUTED, werdykty W1–W3), Phase1/2/3 .py + outputy, [[research/op-wall-dynamics-2026-07-03/NEEDS.md]] (N1–N3 core user-gated + N4 research), [[audyt/L03_K_phi_stability/POST_ACTION_UPDATE_2026-07-03b.md]] (+ pointer w POST_ACTION 2026-07-03). T-OP4: per LOCK utrzymać OPEN + doprecyzować → NEEDS N2 (user-gate).
+
+### ✅ IMPLEMENTACJA NEEDS N1–N3 (user-gate przyznany w tej samej sesji: „NEEDS N1–N3")
+- **N1+N3 `sek08b`:** NOWY `rem:wall-dynamics-2026-07-03` (po `rem:ghost-artifact-scope-CP7`): (i) W1 — więzy liniowe K1–K4+pary nie zerują indeksu (min μ→1, τ→1; mod rezydualny ≠ kierunek rodziny; fakt K4: budżet rdzenia usuwa mody głębokie) → hipoteza wymaga więzu nieliniowego/ładunkowego (Q-ball + Vakhitov–Kolokolov), OPEN; (ii) W2 — kolaps τ w f_ε dla każdego ε, λ_min(ε→0) nie zbiega, dryf r₂₁ +1,9…+23%; (iii) W3a — g₀_wall=1,6114 ≈ g_crit=8/5 (0,71%), warunek konieczny kontaktu g₀≥1,1696 (z dH/dr=−(2/r)fg′²), B_core/E_core bez ekstremów przy progach. Plus pointer w `rem:spectral-CP7` pkt 3.
+- **N2 lepton paper:** Limitations T-OP4 doprecyzowane — linear constraints insufficient (saddle index min 1; surviving mode ≠ family direction), wall-model sensitivity (τ collapse ∀ε; r₂₁ drift +1,9–23%), hard-wall reflection = structural input; stability OPEN na poziomie nieliniowym.
+- **N4:** NIE wykonane (research-propozycja; decyzja użytkownika).
+
+### Build-gate'y (wszystkie PASS)
+- `main.tex` exit 0 (×2 przebiegi); undefined refs: **7 = identyczny zbiór pre-existing** (#32: app:A-aksjomaty, app:B-mapa-params, ax:substrat, eq:Phi-sigma-action, para:basin-stability, ssec:disformal, ssec:disformal-spectrum-tests) — **0 nowych**; 0 błędów; `rem:wall-dynamics-2026-07-03` rozwiązany.
+- `tgp_lepton_masses.tex` exit 0 (×2); 0 undefined refs; 0 błędów.
+
+### ✅ HOUSEKEEPING — sprzątnięcie podwojonych ścieżek (autoryzacja: „zrób porządki")
+- Wykryty systematyczny artefakt wcześniejszych sesji: pliki zapisywane do ścieżek `<cykl>/TGP/TGP_v1/<ścieżka>` (28 plików, 8 lokalizacji). Dyspozycja: **15 ODZYSKANO** (istniały tylko w złej ścieżce — m.in. Phase_FINAL_close.md cykli op-sigma-status-propagation-audit-2026-06-20, op-c0-derivation-from-substrate-2026-06-22 z README, op-CE-H-3D-native-interaction-2026-05-22, op-Kgeo-from-D-uniqueness-2026-06-26, op-L08-Phase6-Dirac-propagator-2026-05-16, op-T34-normalization-amendment-2026-05-09 z HANDOFF) → przeniesione na właściwe miejsca; **9 duplikatów** bajt-w-bajt usuniętych; **6 różniących się** (starsze snapshoty) → [[meta/stray-path-cleanup-2026-07-03/README.md]] (kwarantanna, nic nie nadpisano). `find -path "*/TGP/TGP_v1/*"` → 0.
+
+### ✅ LOCK nowego cyklu: `research/op-nonlinear-charge-constraint-2026-07-03/` — **PHASE0-LOCKED, zero obliczeń** (autoryzacja: „rozpisz cykl badawczy N4 dla nowego agenta")
+- [[research/op-nonlinear-charge-constraint-2026-07-03/Phase0_balance.md]]: pełny handoff (kontekst #60/#62, kod do reuse, stałe). Modele ZAMKNIĘTE: M0 (kanoniczne zanurzenie dynamiczne L_S=½f ġ²−½f|∇g|²−W) i M1 (kompleksyfikacja U(1), jawnie model-extension, user-gate przed core). Fazy: **V1** inwentarz ładunków C1–C5 (sympy, tabela zachowany/nie) + krawędź kontinuum σ_ess(ω); **V2** rodziny Q-ball φ_ω (ciągłość ω→0 z profilami CP-7, kontrola dryfu mas <0,1%), kryterium VK dQ/dω + N_loc(L₊, deflacja fazy/rodziny)=0 na 3 siatkach — koniunkcja (i)–(iii); **V3** nieliniowa ewolucja μ w f_{ε=0,2} (jedyny N-zbieżny punkt z W2b; τ poza zakresem — brak reprezentanta EL, odnotowane), gate |ΔE|/E<1e−6. Konwencja ściany zamknięta (hard-wall baseline + cross-check ε=0,2). Forbidden moves + progi zapisane PRZED obliczeniami; wynik negatywny → wprost.
+
+### Anti-Lakatos
+✓ Zero zmian kryteriów/więzów/tolerancji po uruchomieniu (kombinacje i K4 były pre-deklarowane w LOCK-u #61). ✓ Trzy wyniki negatywne zgłoszone wprost z liczbami i zbieżnością (W1, W2b, W3a-budżet). ✓ Niezbieżności raportowane JAKO niezbieżności. ✓ Metoda zwalidowana niezależnie (dense vs inercja 4/4). ✓ Rdzeń .tex NIETKNIĘTY (NEEDS user-gated). ✓ Phase0_balance.md nietknięty. ✓ NIE commitowano.
+
+### WIP po #62
+- **op-wall-dynamics: 🟢 EXECUTED. NEEDS N1–N3: 🟢 DONE. Housekeeping ścieżek: 🟢 DONE. N4: 🟢 ROZPISANE (PHASE0-LOCKED).**
+- **Następna sesja (osobny agent):** realizacja `op-nonlinear-charge-constraint` Phase 1–3 wg [[research/op-nonlinear-charge-constraint-2026-07-03/Phase0_balance.md]] (wejście dla agenta: README cyklu, kolejność czytania podana). Alternatywnie: Tier 2 (CP-8/CP-9) — decyzja użytkownika.
+- Kwarantanna [[meta/stray-path-cleanup-2026-07-03/README.md]]: po weryfikacji git-diff można usunąć.
+
+### Cross-references
+- [[research/op-wall-dynamics-2026-07-03/README.md]] (+ Phase0–3, NEEDS) · [[research/op-spectral-analysis-Phi-2026-07-03/README.md]] (CP-7, baza) · [[audyt/L03_K_phi_stability/POST_ACTION_UPDATE_2026-07-03b.md]] · `core/sek08b…tex` rem:ghost-artifact-scope-CP7 (N1 pending) · H7/H8 (`tgp_master_consistency_v47.py`) · #60 (CP-7) · #61 (LOCK)
+
+---
+
+## 🟢 Sesja 2026-07-03 #61 — IMPLEMENTACJA NEEDS N1–N5 w rdzeniu (user-gate przyznany) + LOCK Phase 0 cyklu `op-wall-dynamics` (handoff: następna sesja, osobny agent). Doprecyzowanie interpretacyjne #60 z autorem.
+
+User: wyjaśnienie „co obalone" → potwierdzenie, że mechanizm ściany (budżet tworzonej przestrzeni) NIE został obalony (obalone: 3 twierdzenia dokumentacyjne) → „dopisz NEEDS, zaktualizuj rdzeń, rozpisz Phase 0 op-wall-dynamics".
+
+### ✅ Doprecyzowanie interpretacyjne (zapisane w NEEDS N6 + rdzeniu)
+- **Hipoteza autora (2026-07-03):** ściana wynika z wewnętrznej energii solitonu — ilość tworzonej przestrzeni w rdzeniu przekracza próg stabilności ⇒ budżet przestrzeni = wielkość więzowa ⇒ stabilność μ/τ liczyć na podprzestrzeni więzu (analogia Q-ball). CP-7 tego NIE obalił; dwa wyniki CP-7 wspierają funkcjonalną realność ściany (τ kolabuje bez niej; ściana aktywna dla μ/τ).
+- Rozróżnienie zarejestrowane: CP-7 badał ścianę DOLNĄ (kinetyczną, g*≈0,78, trafianą przez ogon); górny ogranicznik rdzenia (g_crit=8/5, H7/H8) NIETKNIĘTY.
+
+### ✅ Edycje rdzenia (NEEDS N1–N5, addytywne, user-gated)
+- **N1 `sek08b`:** `thm:spectral-synthesis-L03` — statuslabel + tytuł zawężone do formulacji grawitacyjnej; NOWY `rem:spectral-CP7` (pełny wynik CP-7: F-A potwierdzone / F-S kontinuum od −γ + siodła μ:2, τ:3 / czego nie unieważnia); korekta pkt 1 `rem:spectral-synthesis-implications` (istnienie profili ≠ stabilność spektralna).
+- **N2 `sek08b`:** NOWY `rem:ghost-artifact-scope-CP7` po `cor:ghost-artifact` — zakres „artefaktu" zawężony do sektora słabopolowego; dla korony ściana AKTYWNA (min g μ/τ = 0,788/0,786; odbicie ad-hoc nie-EL; substrat bez ściany traci τ); hipoteza budżetowa autora zapisana jako robocza.
+- **N3 lepton paper:** Limitations „Two points"→„Three points" + T-OP4 (spectral stability μ/τ OPEN; saddle points 2/3; nie dotyka mass ratios; ściana/więz deferred).
+- **N4:** `audyt/L03_K_phi_stability/POST_ACTION_UPDATE_2026-07-03.md` — dyspozycja ROZDZIELONA: F-A CLOSED-RESOLVED numerycznie / F-S OPEN-RECLASSIFIED (zmierzony wynik negatywny).
+- **N5 `dodatekA_notacja`:** wiersz N0-6 — pełna forma Q (człony F′/F″ na tłach niejednorodnych) z odnośnikiem do cyklu.
+- **NEEDS.md** cyklu CP-7: N1–N5 oznaczone EXECUTED + log; N6 rozszerzone o hipotezę autora.
+
+### ✅ Nowy cykl: `research/op-wall-dynamics-2026-07-03/` — **PHASE0-LOCKED, zero obliczeń**
+- [[research/op-wall-dynamics-2026-07-03/Phase0_balance.md]]: pełny handoff dla osobnego agenta (kontekst CP-7, kod do reuse, stałe). Fazy: **W1** stabilność z więzem budżetu (K1 prosty ∫v r²dr=0, K2 metryczny ∫v g² r²dr, K3 kinetyczny ∫v f(g) r²dr; PRE-deklarowane kombinacje K_i∧K_j + K4 rdzeniowy — bo 1 więz usuwa ≤1 mod, a μ/τ mają 2/3); **W2** ściana jako warunek jednostronny + soft-wall f_ε (zbieżność λ_min(ε→0), dryf r₂₁/r₃₁(ε) <0,1%); **W3** wspólne źródło budżetowe obu progów (g*=e^{−1/4} dolny, g_crit=8/5 górny) + W3b korelacja indeksu z generacją (SPECULATIVE, deskryptywnie). Kryteria PASS/FAIL i forbidden moves zalockowane; wynik negatywny → zgłoszenie wprost.
+
+### Build-gate'y
+- `main.tex` exit 0 (rebuild po N1/N2/N5), `tgp_lepton_masses.tex` exit 0 (po N3) — szczegóły niżej w sekcji; 0 nowych undefined refs.
+
+### Anti-Lakatos
+✓ Edycje rdzenia wyłącznie addytywne/zawężające status, wzorzec CP-2. ✓ Hipoteza autora zapisana jako ROBOCZA (do testu), nie jako wynik. ✓ Phase 0 nowego cyklu zalockowane PRZED obliczeniami (kombinacje więzów pre-deklarowane). ✓ Rozróżnienie „obalone twierdzenia dokumentacyjne" vs „nieobalony mechanizm fizyczny" wpisane do rdzenia. ✓ NIE commitowano.
+
+### WIP po #61
+- **NEEDS N1–N5: 🟢 DONE (rdzeń spójny z CP-7).**
+- **Następna sesja (osobny agent):** realizacja `op-wall-dynamics` Phase 1–3 wg [[research/op-wall-dynamics-2026-07-03/Phase0_balance.md]] (wejście dla agenta: README cyklu, kolejność czytania podana).
+
+### Cross-references
+- `core/sek08b…tex` rem:spectral-CP7 / rem:ghost-artifact-scope-CP7 / thm:spectral-synthesis-L03 (zakres) · `axioms/notacja/dodatekA_notacja.tex` N0-6 · `papers_external/paper_lepton_masses/tgp_lepton_masses.tex` Limitations T-OP4 · [[audyt/L03_K_phi_stability/POST_ACTION_UPDATE_2026-07-03.md]] · [[research/op-wall-dynamics-2026-07-03/README.md]] · [[research/op-spectral-analysis-Phi-2026-07-03/NEEDS.md]] · #60 (CP-7) · H7/H8 (`tgp_master_consistency_v47.py`)
+
+---
+
+## 🟡 Sesja 2026-07-03 #60 — CP-7 WYKONANE: `op-spectral-analysis-Phi` (L03, Tier 2) — pierwsza faktyczna diagonalizacja numeryczna operatora fluktuacji. Sektor grawitacyjny CZYSTY; sektor solitonowy: WYNIK NEGATYWNY (tachioniczne kontinuum + siodłowość μ/τ). Twierdzenie syntezy L03 z 2026-05-06 OBALONE dla formy solitonowej.
+
+User: „Ok działaj z op-spectral-analysis-Phi". Nowy cykl [[research/op-spectral-analysis-Phi-2026-07-03/README.md]] (Phase 0 LOCK → sympy → BVP; kryteria zalockowane przed kodem).
+
+### ✅ Wykonane
+- **Phase 1 (sympy, 10/11 PASS):** dokładna druga wariacja → `L̂[v]=−(1/r²)(r²Fv′)′+Qv`, `Q=W″−½F″u₀′²−F′[u₀″+(2/r)u₀′]`; tożsamości EL↔EOM potwierdzone exact: akcja F-A (K=ψ⁴, U_A′=K_geo γ(ψ⁷−ψ⁶)) ⇔ `thm:field-eq`(α=2); funkcjonał F-S (f=1+4ln g, W′=g²(1−g)) ⇔ ODE korony a3d/ls10; F-S′ ⇔ ODE słownikowe α=1. C1: m_sp²=γ exact.
+- **Phase 2 (BVP, samosprzężona S-L, zbieżność N=2k/4k/8k, R=40/60/80):**
+  - **C2 PASS:** próżnia F-A — N_neg=0, krawędź 1,0027.
+  - **C3:** profile liniowe Yukawy: artefakt (λ_min dywerguje z N — tło nie-EL przy 1/r core); tła **nieliniowe Newtona (residuum <3e−12), amp do 1,28: N_neg=0** — grawitacja spektralnie czysta.
+  - **C4 NEGATYWNE:** próżnia formy solitonowej **tachioniczna** (kontinuum od −1; box-count = floor(R/π) dokładnie: 12/19/25). Mody zlokalizowane (zbieżne): **e: 0, μ: 2 (−1,282; −1,057), τ: 3 (−4,216; −1,114; −1,010)** — μ/τ = punkty siodłowe E_S. `thm:spectral-synthesis-L03` (σ⊂[0,∞) „dla wszystkich tł") — **obowiązuje tylko w F-A** (synteza 2026-05-06 założyła Q→+γ, własność F-A, nie F-S: tam Q→−1; konflacja = dualizm L04 u źródła).
+  - **C5 CONFIRMED:** krawędź −0,9973 ≈ W″(1)/f(1) = −1.
+  - **C6 (ghost wall) ROZSTRZYGNIĘTE:** (a) e nie dotyka ściany (min g=0,932); μ/τ: 1/3 odbicia, min f(g)≈0,04 — **ściana aktywnym składnikiem dynamiki gen 2–3** (odbicie = regularyzacja ad-hoc, nie-EL ⇒ spektra μ/τ regularization-dependent); substrat α=1 (preferowany sek08b): **τ kolabuje** (min g=0,158, profil urywa się r≈3) — substrat nie reprodukuje mechanizmu gen-3; (b) koniec ψ→0 w F-A: **miękki** (U″(χ)→0⁻ ~ −4·3^{1/3}γKχ^{1/3}; hipoteza bariery OBALONA, T7b FAIL uczciwie) — wykluczenie ψ→0 aksjomat-warunkowe (no-absolute-vacuum), nie dynamiczne.
+- **Czego wynik NIE unieważnia:** dopasowań mas korony (własności profili, nie spektrum). Unieważnia claim „stabilność spektralna wspiera koronę"; stabilność μ/τ wymaga interpretacji dynamicznej (ściana/więz typu Q-ball) — OPEN.
+- **Obserwacja SPECULATIVE (zero claimów):** indeks siodłowy l=0 rośnie z generacją (0/2/3), koreluje z liczbą odbić (0/1/3).
+
+### Dyspozycja L03 po CP-7
+- **F-A (grawitacja): CLOSED-RESOLVED numerycznie** (diagonalizacja wykonana, σ≥0, koniec sklasyfikowany).
+- **F-S (solitony): OPEN-RECLASSIFIED** — zmierzony wynik negatywny; łączy się z L04 i Limitations korony.
+
+### Anti-Lakatos
+✓ Phase 0 LOCK przed kodem; zero zmian kryteriów post-hoc. ✓ 4 wyniki negatywne zgłoszone wprost (T7b, C3-raw, C4, obalenie twierdzenia syntezy dla F-S). ✓ Artefakt vs fizyka rozdzielone testem zbieżności. ✓ Rdzeń .tex NIETKNIĘTY — propozycje w [[research/op-spectral-analysis-Phi-2026-07-03/NEEDS.md]] (N1–N6, user-gated). ✓ NIE commitowano.
+
+### WIP po #60
+- **CP-7: 🟢 EXECUTED (werdykt mieszany, uczciwy).**
+- **Następne (rekomendacja):** (1) user-gate na NEEDS N1–N5 (edycje sek08b/dodatekA/lepton-paper Limitations — domykają warstwę spójności po tym wyniku); (2) N6/op-wall-dynamics (interpretacja ściany: regularyzacje, więz Q-ball, indeks vs generacja) LUB CP-8 (S04 residuals) / CP-9 (L01 disformal) wg planu Tier 2.
+
+### Cross-references
+- [[research/op-spectral-analysis-Phi-2026-07-03/README.md]] (+ Phase0–2b, NEEDS) · [[research/op-L03-spectral-stability-2026-05-06/spectral_synthesis.md]] (obalone dla F-S) · `core/sek08b…tex` cor:ghost-artifact/sssec:alpha-resolution (napięcie) · `audyt/L03_K_phi_stability/` · [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §3 CP-7 · #56 (mechanizm N=3) · #59 (poprzednia sesja)
+
+---
+
+## 🟢 Sesja 2026-07-03 #59 — DOMKNIĘCIE 2 flag z #58 + COSMO honest-framing w BODY main.tex (ostatni wiersz audytu „blokuje publ.: TAK"). Zero nowej fizyki, edycje wyłącznie addytywne/korygujące status.
+
+Analiza stanu → najważniejsza rzecz: flagi submission-side z #58 (Σm_ν dryf w papers; COSMO main-body) + retoryka INDEX.md. Tier 2 (CP-7/8/9) świadomie NIE zaczęte przed zdjęciem flag.
+
+### ✅ FLAGA 1 — Σm_ν 59,6→59,01 w papers (DONE)
+- **`tgp_letter.tex`**: F7 (tab. master l.169) 59,6→**59,01**; nota c2 (l.293–296) odwrócona — kanon (B4-locked Z1-anchor #42, m₁=0, NO) prowadzi, 59,6 jawnie pre-lock zeroth-order; tab. predykcji (l.330) →59,01.
+- **`tgp_companion.tex`**: §F7 — kanon **59,01** prowadzi (split oscylacyjny m₂=8,61, m₃=50,50; Σ_PDG=59,11, drift 0,17% vs substrate-action lock), eq. F7 (0,80/8,65/50,11) jawnie zeroth-order; tabela: #21→59,01, #22–24→split kanoniczny (m₁=0/8,61/50,50), **usunięty zdublowany wiersz #24** (m₃ 50,11 i 50,4 jednocześnie — bug).
+- Wartości kanoniczne u źródła: `PREDICTIONS_REGISTRY.md` l.469–484 (Form A LOCKED, m₂=√Δm²₂₁=8,614, m₃=√Δm²₃₁=50,498).
+
+### ✅ FLAGA 2 (audyt: COSMO „blokuje publ.: TAK jako prediction") — caveaty wpięte do PDF BODY (DONE)
+- **`sek05` `rem:wz-quantitative`**: nowa Uwaga 2026-07-03 — χ²_TGP≈χ²_ΛCDM z `b1_wde_friedmann_fit.py` = **fit-by-construction** (Ω_m z ΛCDM wstrzyknięte, ψ zamrożone ⇒ w≈−1 trywialnie, `b1…py:498`); zgodność z DESI = consistency-check, NIE sukces predykcyjny; falsyfikowalne pozostaje tylko strukturalne |w₀+1|~10⁻⁹, w_a≈0.
+- **`sek05` `rem:Lambda-post-uv3`**: nowa Uwaga 2026-07-03 — Ω_Λ^corr=5e²/54 zależy od g̃≈0,98 (δ.1: „postulat z matchem, nie ab initio", `results.md:367`; ≥5 dekompozycji „5", `README.md:94–99`; trade-off psuje α_s do +1,26σ) ⇒ **consistency-check warunkowany ansatzem**, nie predykcja ab initio.
+- **`sek05` NOWY `rem:PR004-mg-vs-dm`**: falsyfikator **PR-004 TRIGGERED 5,4σ** (SPARC 175, LOCKED 2026-06-13) wpięty do PDF body (dotąd TYLKO w `research/op-PR004…`; grep MOND/PR-004 w core = 0 trafień) — gałąź rotacyjna bez DM (g_eff[Φ̄], Newton+bariony) sfalsyfikowana; nośnik krzywych rotacji = wyłącznie sektor FDM-soliton (Ω_DM=0,262); manuskrypt nie może powoływać się na obie gałęzie (= sprzeczność MG-vs-particle-DM z audytu R3c rozstrzygnięta framingowo).
+- **`sek07`** (K18, O23): nota rozgraniczająca K18 (FDM-soliton) od sfalsyfikowanej gałęzi PR-004, \ref do `rem:PR004-mg-vs-dm`.
+- **`sek00_summary`**: relacja 5e²/54 sklasyfikowana inline jako CC warunkowany ansatzem g̃ (\ref do sek05), zamiast „pojedyncza predykcja".
+
+### ✅ FLAGA 3 — INDEX.md l.248 (DONE)
+- Wpis UV.2 program-END: inline marker `[⚠ status 2026-05-04/2026-06-28: NUMEROLOGICAL OBSERVATION …]` (wzorzec τ.3); „PERFECT CONVERGENCE" zachowane historycznie, status wiążący = nota + registry §REVISION.
+
+### Build-gate'y (wszystkie PASS)
+- `tgp_letter.tex` exit 0 / 4 str.; `tgp_companion.tex` exit 0 / 14 str.; `main.tex` exit 0 / **554 str.**, **0 nowych undefined refs** (7 pre-existing #32; 8 wystąpień, ax:substrat ×2); non-ASCII z edycji = 0 (1 złapany i naprawiony przed finalnym buildem).
+- `tgp_master_consistency_v47.py`: **59/60 PASS, 1 expected FAIL — SPÓJNY**.
+
+### Anti-Lakatos
+✓ Edycje wyłącznie addytywne/korygujące status; budżet nowych claimów = 0. ✓ Wynik NEGATYWNY (PR-004 5,4σ) promowany z research/ do PDF body, nie ukryty. ✓ Kanon Σm_ν = wartość zalockowana #42, nie re-fit. ✓ Rdzeń fizyczny (most Γ→Φ, σ_ab, Tier 2/3) NIETKNIĘTY. ✓ NIE commitowano (zostawione użytkownikowi).
+
+### WIP po #59
+- **Flagi #58 + COSMO body: 🟢 DONE.** Wiersz COSMO audytu — submission-side domknięty (body niesie caveaty; „prediction"-framing usunięty u źródła). Pozostałość = defekt fizyczny (structural amendment sektora rotacyjnego post-PR-004) → Tier 2/3.
+- **Następne:** Tier 2 — CP-7 (`op-spectral-analysis-Phi`, L03; podpiera stabilność solitonów=koronę), CP-8 (S04 residuals), CP-9 (L01 disformal). Tło: Tier 3 (most Γ→Φ) jako Limitations.
+
+### Cross-references
+- `tgp_letter.tex` l.169/293–296/330 · `tgp_companion.tex` §F7 + tabela #21–24 · `core/sek05…tex` rem:wz-quantitative / rem:Lambda-post-uv3 / rem:PR004-mg-vs-dm · `core/sek07…tex` K18/O23 · `core/sek00_summary.tex` §Ω_Λ · `INDEX.md` l.248 · `research/op-PR004-SPARC-fit-execution-2026-06-12/` · [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §1.1 COSMO / §6 R3 · #58 (flagi źródłowe)
+
+---
+
+## 🟢 Sesja 2026-06-28 #58 — IMPLEMENTACJA naprawcza Tier 0 + Tier 1 (agent-implementator). Oba blokery (S01, L05) ZAMKNIĘTE w body/PDF; cała higiena Tier 1 wykonana. ZERO nowej fizyki, edycje wyłącznie addytywne/korygujące status.
+
+Realizacja promptu naprawczego (CP-2 → CP-1 → CP-3..CP-6b, CP-0L). Wszystkie build-gate'y exit 0.
+
+### ✅ TIER 0 (blokery) — ZAMKNIĘTE
+- **CP-2 (L05) — DONE.** `sek08b prop:Atail-preserved` (l.~354): `Twierdzenie` → `Aproksymacja (reżim ogona, M_full)`; nowy `rem:Atail4-vs-unified` (A⁴=M_full aprox.; kanon = wzór zunifikowany, α=2→g₀^(e²/2); m_obs≠M_full ADM/Komar); `dodatekJ2` nowy `rem:J2-kobs-kfull` (k_full=4 vs k_obs=e²/2 kanon; ν 4,12/1,36 = fity tej samej A_tail). \ref do `rem:materia-hierarchia` (sek08_formalizm) + `rem:hyp-unified-action-M911-canonical` (sek08a). Cel: żadna sekcja nie głosi A⁴ jako Twierdzenia sprzecznego z α=2.
+- **CP-1 (S01+S02+S03) — DONE (honest).** `sek08c thm:metric-from-budget-M911-canonical`: status → `proposed/specific static anchor`; „jednoznacznie wyznaczona" zmiękczone; nowy **PDF-widoczny** `rem:M911-GW-caveat` (statyczny PPN β=γ=1 zachowany; GW sfalsyf. ppE β≈−15/4 vs GWTC-3 → 5,02σ; rodzina {A,B,C} g⁰⁰=−A,g^ij=δB+σC/(Φ₀²c²) → FOUNDATIONS §3.6; C/c₀ wolny UV #37; first-principles NON-DERIVABLE #53 → S07 jako proposed; β,γ = projekcja PPN, nie predykcja). S02: `sek08a` √−g=c₀φ oznaczone deprecated v1.x→M9.1''; `status_map` v1.x row [deprecated] + v2.0 row GW-caveat. (dodatekH miał już przypis.)
+
+### ✅ TIER 1 (higiena) — DONE
+- **CP-3 (L02).** `sek08_formalizm prop:vacuum-selection`: kolizja usunięta — `(β/γ)_GL` (→1) vs `(β/γ)_WF≈0,264`, inline \ref `app:A-beta-gamma-distinction`; FOUNDATIONS l.61/1121 subskrypty _GL/_WF; `vacuum_selection.py` docstring disambiguacja.
+- **CP-4 (L07+S05).** `sek01` nowy `rem:ZS-L07-status` + korekta „dwa niezależne aksjomaty"; `sek05` nowy `rem:Lambda-L07-strengthened` (ZS1=Z₂-tożsamość, ZS2-kwadratowa=gauge fixing, nie surowy aksjomat); FOUNDATIONS §1 zmiękczone single-Φ uniqueness (dot. pola, nie liczby parametrów; budżet 3, S05).
+- **CP-5 (D01).** 8 skryptów Φ_0=24.65→24.783, 4 skrypty Σm_ν=59.6→59.01 (każdy `# LOCKED #42; prev drift`); nowy CI job `param-lock` (grep `^[^#]*\b(24\.65|59\.6)\b`). Re-run `tgp_master_consistency_v47.py`: **59/60 PASS, 1 expected FAIL — SPÓJNY**.
+- **CP-6 (M01+M02+M03) [subagent].** Licznik 856/784→**~688** (ratio ~3,67) w `INDEX.md` + `PREDICTIONS_REGISTRY.md` (Option A, rozkład zachowany); rebrand 4 folderów (χ.1/UV.2/ω.2/ω.3) → ANSATZ/NUMEROLOGICAL (mark-only); nowa nota `meta/M01_Phase_FINAL_close_2026-06-28.md`. Zero zalockowanych liczb, zero .tex.
+- **CP-6b (#42).** `tgp_companion.tex`+`tgp_letter.tex`+`README.md`: α_s, m_W, sin²θ_W, w_0(DESI), Ω_Λ oznaczone **consistency-check** (nie predykcje); legendy/akapity wyjaśniające.
+- **CP-0L (korona #56).** `a3d_soliton_brannen_r.py:143` G0_TAU_fitted → „= wartość Koidego Q_K=3/2" (usunięty mylący `# fitted to match PDG`); lepton paper Limitations: gen.3 przez Koide (nie φ²-ladder, φ² zawodzi 13,7%), B=√2 num. potwierdzone / analitycznie niewyprowadzone (T-OP3).
+
+### Build-gate'y (wszystkie PASS)
+- `main.tex`: **exit 0, 554 str.** (baseline 553 + 1 str. z dodanych caveatów), **0 nowych undefined refs** (7 pre-existing #32), 0 non-ASCII z edycji. (Rebuild po CP-2/CP-1/CP-3/CP-4.)
+- `tgp_companion.tex` exit 0 / 14 str.; `tgp_letter.tex` exit 0 / 4 str.; `tgp_lepton_masses.tex` exit 0 / 11 str.
+- `tgp_master_consistency_v47.py`: 59/60 PASS (1 expected FAIL).
+
+### Flagi dla użytkownika (poza zakresem, rekomendacja)
+- **Σm_ν dryf w papers:** `tgp_companion.tex` (#21, F7) i `tgp_letter.tex` (F7, tabela) wciąż cytują **59,6 meV** vs lock **59,01** (README ma już 59,01). Rekomendowana korekta w osobnym kroku (ostrożnie z rozbiciem m_i).
+- **INDEX.md log ~l.248** (UV.2 program-END) wciąż ma dawną retorykę „PERFECT CONVERGENCE" — subagent zostawił (addytywność); status contested propagowany globalnym bannerem.
+
+### Anti-Lakatos
+✓ Edycje wyłącznie addytywne/korygujące status; budżet nowych claimów = 0. ✓ Werdykty zalockowane (#42/#49/#53/#56) odzwierciedlone, nie re-litygowane. ✓ Most Γ→Φ i 4 korzenie (Tier 3) NIETKNIĘTE. ✓ Niespójności warstw usunięte (caveaty/disposition z komentarzy → PDF body), nie ukryte. ✓ NIE commitowano (zostawione użytkownikowi).
+
+### WIP po #58
+- **Tier 0 + Tier 1: 🟢 DONE.** Manuskrypt submission-ready od strony spójności warstw.
+- **Następne (poza zakresem tej sesji):** Tier 2 (CP-7/8/9 wzmocnienia), Tier 3 (most Γ→Φ, σ_ab, non-abelian) — wieloletni track. + 2 flagi wyżej.
+
+### Cross-references
+- `core/sek08b…tex` l.352–407 · `core/sek08c…tex` l.401–505 · `core/sek08a…tex` l.426 · `core/sek08_formalizm…tex` l.11604 · `core/sek01…tex` rem:ZS-L07-status · `core/sek05…tex` rem:Lambda-L07-strengthened · `core/_meta_latex/status_map.tex` · `TGP_FOUNDATIONS.md` §1/l.61/l.1121 · `tgp_companion.tex`/`tgp_letter.tex`/`README.md` (#42) · `papers_external/paper_lepton_masses` · `tooling/scripts/*` (#42 lock) · `.github/workflows/ci.yml` (param-lock) · `meta/M01_Phase_FINAL_close_2026-06-28.md`
+
+---
+
+## 🟢 Sesja 2026-06-28 #57 — UŚCIŚLENIE 2 blokerów (S01, L05) u źródła (user-prompted „przeanalizuj dokładniej"). Oba opisy były zbyt ostre; severity/effort obniżone. Blokery wciąż 2, ale tańsze.
+
+User: „czekaj, M9.1 nie zostało całkowicie obalone? co do α — zgoda, częściowo ujednolicone, ale nie w 100%; przeanalizuj dokładniej". **Obie uwagi trafne.**
+
+### ✅ S01 — uściślone
+- **M9.1'' NIE jest „całkowicie obalone".** Obalona WĄSKO: tylko forma `(4−3ψ)/ψ` jako **predykcja sektora GW** (ppE β=−15/4, GWTC-3 5,02σ). Statyczny PPN (A,B→β=γ=1, σ_ab=0 dla statycznego źródła) **przeżywa**; recovery `op-emergent-metric-from-interaction` (57/57) zachowuje A,B, a sfalsyfikowane = σ-coupling C/c₀ (wolne #37). sek08c l.63–67: body „MATEMATYCZNIE POPRAWNE jako derivation; PREDICTIVE/OBSERVATIONAL framing sfalsyfikowany". (M9.1 oryginał power-law — osobno, całkowicie obalony przez β_PPN=4.)
+- **Realny bloker (węższy):** body głosi „metryka jednoznacznie wyznaczona" (Twierdzenie l.417–424) BEZ caveatu falsyfikacji+recovery — te są w komentarzach .tex („v3.0"), nie w PDF. Effort L/honest-S.
+
+### ✅ L05 — uściślone
+- **NIE twarda sprzeczność; ujednolicone w ~80%.** Rdzeń body JUŻ niesie wzór zunifikowany `m_obs=c_M·A_tail²·g_0^(e²(1−α/4))` (sek08_formalizm l.9376, sek08a l.392), spójny z α=2 (μ/e −0,005%); „A^4" i „A^(5−α)=A^3" jawnie zdegradowane do **aproksymacji** (l.9382–9384). Cykl op-L05 (12/12): `k_full(α=2)=4`, `k_obs(α=2)=3` — różne obiekty (m_obs≠M_full, ADM/Komar).
+- **Resztka (lokalna, ~20%):** `sek08b prop:Atail-preserved` (l.352–374) NIE zsynchronizowane — wciąż `\statuslabel{Twierdzenie}` z gołym A^4 (grep: sek08b nie ma M_full/m_obs/Komar/5−α, a 6 innych plików rdzenia ma). + nota reinterpretacji zalecana w `audyt/L05` l.71 niewykonana + dryf ν 4,12(dodatekJ) vs 1,36(dodatekJ2). Effort **S** (było L).
+
+### Zmienione pliki (addytywnie)
+- ✅ `meta/AUDYT_GLEBOKI_2026-06-28.md`: wiersze S01/L05 (§1), CP-1/CP-2 (§3) uściślone (#57).
+- ✅ `STATE.md`: ten wpis.
+
+### Anti-Lakatos
+✓ Samokorekta w stronę mniej dramatyczną (oba blokery tańsze/węższe) — zgłoszona wprost. ✓ Nie zinflowano teraz w „zamknięte": S01 caveat-do-body realny, L05 sek08b-sync realny. ✓ Zakotwiczone (sek08c l.63–67/417–424, sek08_formalizm l.9376–9384, sek08b l.352–374, grep 6 plików). ✓ Rdzeń .tex NIETKNIĘTY (implementacja = osobny agent, user-gated).
+
+### WIP po #57
+- **Uściślenie blokerów: 🟢 DONE.** Blokery = 2 (S01 honest-S/L, L05 S). Przygotowany prompt dla agenta-implementatora (Tier 0 + Tier 1).
+- **Następna rzecz:** uruchomić agenta realizującego CP-2 (S, najpierw) → CP-1 → Tier 1 (CP-3..CP-6b, CP-0L).
+
+### Cross-references
+- `core/sek08c…tex` l.63–67,417–424 · `core/sek08_formalizm…tex` l.9376–9384 · `core/sek08a…tex` l.392 · `core/sek08b…tex` l.352–374 · `audyt/L05_mass_exponent_drift/README.md` l.71 · #56 (korona) · #55 (re-weryfikacja)
+
+---
+
+## 🟢 Sesja 2026-06-28 #56 — KOREKTA #55: re-analiza mechanizmu selekcji τ (user-prompted) → zarzut „korona = 1→2 z ukrytym fitem" **WYCOFANY**. Korona leptonowa = **genuine 1→3**. Blokery wracają do **2 (S01, L05)**.
+
+User: „przeanalizuj jeszcze ten fit; z pamięci: gen.1 i 2 proste, gen.3 wymagała studni potencjału + górnego ogranicznika stabilności (brak 4. leptonu)". Pamięć autora **potwierdzona u źródła** — pierwszy audytor (#55) przestrzelił.
+
+### ✅ Ustalenie skorygowane (zweryfikowane u źródła)
+- **gen.1,2 proste:** `g_0^μ=φ·g_0^e`, jeden fit g_0^e, r_21=206,77 dokładnie.
+- **gen.3 (τ) przez domknięcie Koidego `Q_K=3/2`** (przy N=3), NIE φ²-drabinę: `√r₃₁=2(1+√r₂₁)+√(3(1+4√r₂₁+r₂₁))`→r_31=3477,5 (**0,009%**, `ls10_third_generation_selection.py:79-87`). φ² zawodzi (3955, 13,7%) — uczciwie OPEN w `dodatekJ2:117,220`.
+- **N=3 + brak 4. leptonu = selekcja stabilnościowa** (= „studnia + górny ogranicznik" autora): ODE `V(g)=g²(1−g)` + ściana-duch `g*=exp(−1/2α)`; odbicia 0→1→3→6, RMSE/A 0,5→2,2→8→36% (k=4 DEGRADED, `ls10 LS-10d`/ex127); 4. gen. <LEP 100,8 GeV ⟹ wykluczona (`ex116_fourth_generation_prediction.py`); +topologia (d=3) +Brannen (Q_K=2N/(N+1) tylko N=3).
+- **`G0_TAU_fitted=3.18912`** (`a3d…py:143`) = lokalna stała wygody = wartość Koidego (`tau_selection_v47b.py`), **nie** niezależny anchor. Mylący komentarz `# fitted to match PDG` — pierwszy audytor się na nim zakotwiczył.
+
+### ⚠ Co WYCOFANE z #55
+- **R1 / CROWN / CP-0:** „1→2 z ukrytym fitem; 3 niezgodne ścieżki" → BŁĘDNE. Korona = genuine 1→3. CP-0 zdjęte z Tier 0; pozostaje **CP-0L** (Tier 1, kosmetyczny honest-framing). Paper II **publikowalny**.
+- Pozostałe ustalenia #55 (R2 m_W, R3 kosmologia, R4 licznik 856, R5 S01) **bez zmian** — stoją.
+
+### Resztkowa uczciwa luka korony (do Limitations, NIE bloker)
+(i) gen.3 innym mechanizmem niż gen.1→2 (Koide, nie φ²); (ii) `B=√2` (dokładność Koidego) numerycznie potwierdzone (`|B_num−√2|<1e-6`), analitycznie niewyprowadzone (a3d T5 FAIL, T-OP3 „dlaczego N=3").
+
+### Zmienione pliki (addytywnie)
+- ✅ `meta/AUDYT_GLEBOKI_2026-06-28.md`: KOREKTA #56 w bannerze §0, wiersz CROWN (§1.1), CP-0→CP-0L (§3+§3.1), §4 sekwencja, §6 R1 przepisane.
+- ✅ `STATE.md`: ten wpis #56.
+
+### Anti-Lakatos
+✓ Wynik NEGATYWNY dla własnej tezy zgłoszony wprost (samokorekta: niezależny audytor był zbyt ostry). ✓ Nie zinflowano teraz korony w „w pełni domkniętą" — resztkowa luka (B=√2 analitycznie) jawna. ✓ Korekta zakotwiczona w plikach (ls10/tau_selection/ex116/dodatekJ2). ✓ Rdzeń .tex NIETKNIĘTY.
+
+### WIP po #56
+- **Re-analiza τ: 🟢 DONE.** Blokery = 2 (S01, L05). Korona = genuine 1→3 (najmocniejszy wynik, potwierdzony).
+- **Następna „najważniejsza rzecz":** bez zmian — Tier 0 (CP-1 metryka, CP-2 L05); Tier 1 higiena (CP-3..CP-6b, CP-0L); Tier 3 most Γ→Φ jako Limitations.
+
+### Cross-references
+- `tooling/scripts/ls10_third_generation_selection.py` · `tooling/scripts/tau_selection_v47b.py` · `research/nbody/examples/ex116_fourth_generation_prediction.py` · `partial_proofs/hierarchia_mas/dodatekJ2_sciezka9_formalizacja.tex` · [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §6 R1 (KOREKTA) · #55 (re-weryfikacja)
+
+---
+
+## 🟢 Sesja 2026-06-28 #55 — NIEZALEŻNA RE-WERYFIKACJA AUDYTU (recenzent zewnętrzny, czysty kontekst): druga ocena u źródła (6 równoległych audytorów, bez dostępu do [[meta/AUDYT_GLEBOKI_2026-06-28.md]] — anti-anchoring; weryfikacja w .tex/.py, nie README/POST_ACTION) → aktualizacja audytu o **§6 (5 rozbieżności) + §1.1 (4 nowe wiersze) + CP-0 + CP-6b**. Liczba blokerów **2→3**.
+
+User: „oceń stan TGP_v1 niezależnie (co dostarczone/czego brakuje), wyznacz kolejne projekty" → „zaktualizuj pliki audytu". Kryterium adversarialne: „uczciwie opisane" ≠ „zamknięte"; nie ufać etykietom statusu, weryfikować u źródła.
+
+### ✅ Ustalenie dominujące (zgodne z #54)
+- Potwierdzony wzorzec **„re-labelling ≠ naprawa"**; dwa fundamentalne węzły XL (most Γ→Φ + σ_ab/κ_E); α=2 NON-DERIVABLE jako aksjomat (nie falsyfikacja); L01/M03 jako jedyne realnie domknięte; struktura Tier 0–3 + roadmapa CP-1..CP-9 przejęte.
+
+### ⚠ 5 ROZBIEŻNOŚCI (audyt #54 zbyt łagodny dla 3 sztandarowych wyników — dowody u źródła)
+- **R1 (NAJWAŻNIEJSZA) — korona leptonowa to 1→2, nie 1→3.** m_τ ma UKRYTY drugi anchor: `scripts/a3d_soliton_brannen_r.py:144` `G0_TAU_fitted=3.18912 # fitted to match PDG tau`; czysta φ²-ladder → r_31=3955 (**13,7% błędu**, `dodatekJ2:117-119`); 3 niezgodne ścieżki do tej samej liczby. „0,006%" = fit. → **nowy bloker CP-0** (poprzedza CP-2; Paper II nie publikować przed CP-0).
+- **R2 — m_W „0,01σ" = consistency-check przebrany za predykcję** (m_Z+α_s INPUT; tree sin²θ_W=3/13 **11,3σ off**, `sek09:1215`). → CP-6b.
+- **R3 — kosmologia niedoreprezentowana:** DESI w(z) fit-by-construction (`b1…py:498` „indistinguishable from ΛCDM"); Ω_Λ przehandlowany (g̃≈0,98, trade-off psuje α_s, `op-delta1…:204`); sprzeczność MG-vs-particle-DM + SPARC obalony (PR-004 5,4σ).
+- **R4 — licznik 856 NIEpropagowany do ~688** (`INDEX.md:224` wciąż 856/784) → podniesione do blokującego (część CP-6).
+- **R5 — S01 ostrzej:** kanon w body = forma SFALSYFIKOWANA 5,02σ (`sek08c…tex:419-421` vs `:7-9,27-31`), nie tylko brak twierdzenia o unikalności.
+
+### Zmienione pliki (addytywnie — rdzeń .tex NIETKNIĘTY)
+- ✅ `meta/AUDYT_GLEBOKI_2026-06-28.md`: banner §0 (2→3 blokery), §1.1 (CROWN/COSMO/EW-mW/LEDGER-N), §3 (CP-0, CP-6b, CP-6 podniesione), §4 sekwencja, §6 (5 rozbieżności), frontmatter+cross-refs.
+- ✅ `STATE.md`: ten wpis #55.
+
+### Anti-Lakatos
+✓ Edycje ADDYTYWNE: werdykty #54 ODZWIERCIEDLONE, nie nadpisane (druga ocena = osobna warstwa §6). ✓ Anti-anchoring: 6 audytorów bez dostępu do #54. ✓ Rozbieżności zgłoszone wprost z dowodem (plik+linia). ✓ Werdykty negatywne (#49/#53) nadal jako ratyfikacja aksjomatu, NIE falsyfikacja. ✓ Rdzeń .tex/papers NIETKNIĘTE (CP-0..CP-6b user-gated). ✓ Nie zinflowano niczego w naprawę.
+
+### WIP po #55
+- **Niezależna re-weryfikacja: 🟢 DONE.** Audyt zaktualizowany (3 blokery: S01, L05, **CROWN/CP-0**).
+- **Następna „najważniejsza rzecz" (rekomendacja):** Tier 0 — **CP-0** (re-framing korony, dotyka najmocniejszego deklarowanego wyniku) + CP-1/CP-2; Tier 1 (CP-3..CP-6b) równolegle. Tier 3 (most Γ→Φ) wieloletni — Limitations.
+
+### Cross-references
+- [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §6/§1.1 (rozbieżności) · [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]] · #54 (audyt główny) · #42 (ledger) · #49/#53 (α=2)
+
+---
+
+## 🟢 Sesja 2026-06-28 #54 — AUDYT GŁĘBOKI (standing reference): re-weryfikacja **22 zgłoszonych luk** (S01–S07, L01–L08, M01–M03, D01, T01, most Γ→Φ, sektor QCD) względem stanu rzeczywistego #42–#53 → utworzono [[meta/AUDYT_GLEBOKI_2026-06-28.md]]. Metoda: workflow `tgp-deep-audit` (22 niezależnych audytorów, run wf_4c82b639-877), kryterium adversarialne **„uczciwie opisane" ≠ „naprawione"**.
+
+User: „oceń stan TGP_v1 (co dostarczone / czego brakuje), wejdź głębiej dla każdego problemu, zbierz w jeden dokument, wpisz do STATE". Cel: rozdzielić publikowalność od wieloletnich fundamentów; sprawdzić, które luki realnie domknięte vs tylko przeklasyfikowane.
+
+### ✅ Ustalenie dominujące
+- **Większość „domknięć" z `audyt/*/POST_ACTION_UPDATE` (2026-05-04..06) to uczciwe PRZEKLASYFIKOWANIE (aksjomat / FREE / postulate-conditional / declared-limit), NIE naprawa strukturalna** — defekt fizyczny zostaje („honest, not fixed"). Z 22 problemów:
+  - **Realnie CLOSED-RESOLVED (2):** L01 (ρ=−Tᵘᵤ/c²), M03 (balance-sheet retrofit — 40 plików istnieje).
+  - **CLOSED-ANNOTATION-ONLY (3):** S06 (G_N tautologia), S07 (M9.1'' ansatz, #53 NON-DERIVABLE), L02 (renotacja β/γ tylko w glosariuszu).
+  - **SUPERSEDED (1):** S02 (fix zakotwiczony w sfalsyfikowanym M9.1'').
+  - **PARTIAL (16):** reszta.
+- **Jedyne 2 blokery publikacji pełnego manuskryptu:** **S01** (metryka: kanoniczna-w-body vs sfalsyfikowana-w-headerze) i **L05** (sek08b `prop:Atail-preserved` wciąż głosi wykładnik masy 4 jako *Twierdzenie*, sprzeczny z kanonicznym α=2→3).
+- **Wszystkie ciężkie luki (XL) zbiegają do 2 fundamentów:** (1) most Γ→Φ/NGFP (α=2, c₀, 𝒜→α_s, K_geo) — przy czym **#49/#53 dowiodły α=2 NON-DERIVABLE z kanonicznego substratu** ⟹ terminalnie aksjomat, nie „do zrobienia"; (2) ontologia σ_ab/κ_E (brak parameter-free GW, neg. #33/#34/#37).
+
+### 📋 Roadmapa kolejnych krytycznych projektów (pełna w [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §3)
+- **🔴 Tier 0 (blokery):** CP-1 rekonsolidacja metryki (S01/S02/S03, L); CP-2 naprawa wykładnika masy (L05, L/S).
+- **🟠 Tier 1 (higiena, tygodnie):** CP-3 renotacja β/γ (L02, S); CP-4 framing z komentarzy do body (L07/S05, S); CP-5 lock Φ_0 w tooling+CI (D01, S–M); CP-6 domknięcie ledgera (M01/M02/S06, M).
+- **🟡 Tier 2:** CP-7 `op-spectral-analysis-Phi` (L03, L); CP-8 S04 residuals (Cassini/ω_BD/m_Φ, M); CP-9 L01 disformal (L).
+- **⚪ Tier 3 (lata, NIE blokować — nieść jako Limitations):** most Γ→Φ; σ_ab/κ_E; non-abelowe cechowanie (W/Z, gluony — declared limit); metryka first-principles (status „proposed"); m_X.
+- **Niezależnie:** Paper I (N-body) + Paper II (lepton masses) — UV-niezależne, realnie gotowe → publikować bez czekania na Tier 0–3.
+
+### Build / Anti-Lakatos
+Markdown referencyjny (poza buildem) — brak buildu. main.tex NIETKNIĘTY. ✓ Odróżniono „manuskrypt uczciwy co do luki" od „luka zamknięta" (kryterium user). ✓ Nie zinflowano re-labellingu w naprawę; nie zgłoszono jako otwarte tego, co realnie naprawiono (L01, M03). ✓ Werdykty negatywne (#49/#53) jako ratyfikacja statusu aksjomatu, NIE falsyfikacja TGP. ✓ Każdy werdykt zakotwiczony w plikach + numerach sesji.
+
+### WIP po #54 — AUDYT KOMPLETNY
+- **Audyt głęboki: 🟢 DONE** (standing reference). WIP slot wolny.
+- **Następna „najważniejsza rzecz" (rekomendacja audytu):** Tier 0 — CP-1 (metryka) lub CP-2 (L05), bo to jedyne 2 luki blokujące spójność skompilowanego manuskryptu. Tier 1 (CP-3..CP-6) wykonalny równolegle, tania higiena. Tier 3 (most Γ→Φ) pozostaje wieloletnim trackiem fundamentalnym — nieść jako Limitations, nie blokować publikacji.
+
+### Cross-references
+- [[meta/AUDYT_GLEBOKI_2026-06-28.md]] (dokument główny, tabela 22 + roadmapa) · [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]] (4 korzenie) · [[PREDICTIONS_REGISTRY.md]] (ledger 856→688)
+- #49 (α=2 REFUTED-SUBSTRATE) · #53 (α=2 NON-DERIVABLE) · #33/#34/#37 (κ_E/c₀ FREE) · #42 (N_free=10) · #52 (Limitations w letter/companion)
+
+---
+
+## 🟢 Sesja 2026-06-27 #53 — NOWY CYKL [[research/op-CG-Kij-from-Hgamma-2026-06-27/Phase_FINAL_close.md]] **F-CGK-D = NON-DERIVABLE** (α=2 nieredukowalny aksjomat v2; **mapa obstrukcji KOMPLETNA**: Gaussian/η/RG-relevance/stopień-bondu) + diagnostyka R1 (V_sub odnaleziony) + **propagacja do rdzenia** (user-gated). Build `main.pdf` **exit 0, 553 str.** (baseline; 0 non-ASCII z edycji).
+
+User: ciąg „działaj" — analiza tezy dwufazowej (α_eff=−½ substrat vs α=2 manuskrypt) → cykl atakujący pytanie „czy K_ij=J(φ_iφ_j)² wyprowadza się z mikro H_Γ?" → propagacja werdyktu do rdzenia. **ZAKAZ re-litygacji:** #49/#39 IMMUTABLE (anchor/RG); ledger #42 bez zmian; budżet nowych stałych = 0.
+
+### ✅ Diagnostyka R1 ([[research/op-amplitude-density-phase-bridge-2026-06-27/Phase1_Vsub_FINDINGS.md]])
+- Gładki „bulk-crossover" α_eff=−½→α=2 = **TAUTOLOGIA** zmiennej (T1+T3': obie ramy → to samo pole kanoniczne χ=√2√Φ). Mapa ŝ→Φ=⟨ŝ²⟩ = prawdziwy coarse-graining (nie redefinicja), więc R1 omijalne, ale to droga #49 (−½).
+- **V_sub ODNALEZIONY** (brakujące wejście): `U(φ)=(β/3)φ³−(γ/4)φ⁴` (eq:U-GL) + mikro `V_ŝ=(m₀²/2)ŝ²+(λ₀/4)ŝ⁴` (eq:B-H) + Landau. Słownik: φ²=Φ/Φ₀, Φ=⟨ŝ²⟩.
+
+### ✅ Cykl op-CG-Kij-from-Hgamma — CLOSED-RESOLVED, NON-DERIVABLE (value-blind, Phase0 LOCK → Phase1 A/C1 → Phase2 C2/D)
+- **F-CGK-A** (anchor): bilinearny bond −Jŝ_iŝ_j → kinetyka kanoniczna w ŝ → α_eff=−½ w gęstości (#49 potwierdzone jako baseline).
+- **F-CGK-C1** (rdzeń): `Δ[Φⁿ(∇Φ)²]=(n+2)Δ_ε+2 > d=3` dla n=−1,0,1,2 (Δ_ε≈1,413 Ising bootstrap, cytowane) — **cały** sektor kinetyczny kompozytu Φ=ε RG-**irrelewantny** ⟹ wykładnik nie pinowany przez FP = aksjomat (potwierdza #39).
+- **F-CGK-B**: η_3D-Ising≈0,036≪1 → brak ucieczki przez wymiar anomalny (B-REFUTED).
+- **F-CGK-C2**: α=2 wymaga szesciopolowego bondu (ŝ_iŝ_j)³ — nieobecny w eq:B-H, współczynnik wolny, irrelewantny → nowy aksjomat (C-AXIOM).
+- **F-CGK-D** = (B-REFUTED ∧ C-AXIOM) ⟹ **NON-DERIVABLE**.
+- **Bonus R5**: trzy wykładniki {−½,1,2} = trzy konstrukcje (H_Γ≠F_kin): bilinear / (φφ)²-energia / (φφ)²-sztywność. **DOUBT W-CGK-1**: „headline #49" Δe=5 miesza ramy (spójnie 4 ampl./2 gęst.); werdykt (B) robust, #49 nietknięte.
+
+### ✅ Propagacja do rdzenia (user-gated, AUTORYZOWANA „nanieść do rdzenia")
+- ✅ **`core/_meta_latex/status_map.tex`** l.72+l.77: noty „NON-DERIVABLE potwierdzone analitycznie" + mapa obstrukcji (op-CG-Kij-from-Hgamma).
+- ✅ **`axioms/substrat/dodatekB_substrat.tex`** `rem:B-v2-status`: akapit „Potwierdzenie analityczne (2026-06-27)" z kompletną 4-ramienną mapą obstrukcji; explicite „ratyfikuje status aksjomatyczny v2".
+- ✅ **`meta/HONEST_FRAMING_UV_CG_ROOTS.md`**: wiersz α=2 (#53), nowa §2.1 (mapa obstrukcji + R5 + W-CGK-1), zakres #37–#53, cross-ref.
+
+### Build (reguła §1)
+`latexmk main.tex` **exit 0, 553 str.** (zgodne z baseline #50/#52). Moje edycje .tex = **0 non-ASCII** (zweryfikowane); 7 undefined refs = pre-existing residual #32; 28 missing-char = pre-existing (polskie litery/em-dash w komentarzach), NIE z edycji. Logi build (folder cyklu) usunięte.
+
+### Anti-Lakatos
+✓ Werdykt WYLICZONY z flag (reguły LOCKED przed Phase 1; DERIVABLE pre-akceptowany). ✓ Endpoint +4/α=2 NIE wbudowany (e liczone). ✓ Bound η i Δ_ε CYTOWANE z literatury (Ising bootstrap), nie zakładane. ✓ #49/#39 LOCKED, niezmienione; W-CGK-1 zgłoszony jawnie, #49 nietknięte. ✓ Ledger #42 / `N_axiom=6` bez zmian (C2 pokazuje, że derywacja WYMAGAŁABY nowego aksjomatu — NIE wprowadzonego). ✓ Edycje rdzenia ADDYTYWNE (0 zmian twierdzeń/liczb; tylko wzmocnienie istniejących uczciwych stwierdzeń). ✓ S05 single-Φ zachowany.
+
+### WIP po #53
+- **Korzeń α=2: 🟢 analitycznie DOMKNIĘTY** — mapa obstrukcji KOMPLETNA (Gaussian/η/RG-relevance/bond-degree) naniesiona do rdzenia. Status: nieredukowalny aksjomat (ratyfikowany, NIE falsyfikujący).
+- **Pozostałe 3 korzenie** (c₀ #37 FREE, 𝒜→α_s #43 POSTULATE-CONDITIONAL, K_geo #48 POSTULATE-CONFIRMED) — bez zmian; wspólny most Γ→Φ/NGFP.
+- **Następna „najważniejsza rzecz" (bez zmian):** wieloletni track UV/CG (most Γ→Φ/NGFP) — niski priorytet inżynieryjny, wysoki fundamentalny.
+
+### Cross-references
+- [[research/op-CG-Kij-from-Hgamma-2026-06-27/Phase_FINAL_close.md]] (#53 NON-DERIVABLE) · [[research/op-amplitude-density-phase-bridge-2026-06-27/Phase1_Vsub_FINDINGS.md]] (R1, V_sub) · [[research/op-CG-alpha-eff-convergence-2026-06-26/Phase_FINAL_close.md]] (#49 anchor, LOCKED) · [[research/op-bond-order-RG-selection-2026-06-23/Phase_FINAL_close.md]] (#39 RG-irrelevant) · [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]] §2.1 · [[meta/SCOPING_op-amplitude-density-phase-bridge_2026-06-27.md]]
+
+---
+
+## 🟢 Sesja 2026-06-27 #52 — KONSOLIDACJA SUBMISSION (user-gated): wpięcie honest-framingu UV/CG (§4 [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]]) jako sekcji „Limitations" do `tgp_companion.tex` (pełna) + `tgp_letter.tex` (skrót) + audyt spójności cross-document (4 kryteria post #42/#49). Build: tgp_letter exit 0 ×2 (**4 str.**), tgp_companion exit 0 ×2 (**14 str.**), **0 undefined, 0 rerun** — zgodne z baseline #45. main.tex NIETKNIĘTY (sek00 = zgodny, bez edycji).
+
+User: zadanie konsolidacji submission TGP_v1 (WP1→WP2→WP3). **ZAKAZ re-litygacji:** werdykty #42/#48/#49 IMMUTABLE — wpisywane, nie zmieniane. Budżet nowych stałych/claimów = 0 (konsolidacja, NIE nowa fizyka). Źródło prawdy: [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]] §4 (drop-in EN prose).
+
+### ✅ WP1 — §4 „Limitations" wpięte (2 pliki standalone)
+- ✅ **`tgp_companion.tex`** (PRD): nowa `\section{Limitations: the UV/coarse-graining roots}` (`\label{sec:limitations}`) między „Open questions" a „Conclusion" — **pełna wersja** §4 (cztery korzenie α=2/c₀/𝒜→α_s/K_geo jako aksjomatyczne selekcje na gęstości; most CG/NGFP otwarty; FSS value-blind ⟹ substrat K∝Φ⁻¹ (α_eff=−½), NIE Φ⁴; N_free≈10 vs ~19 bez zmian; predykcje UV-niezależne; PR-025 forward: K_geo·m_sp²≠π·Φ₀² ⟹ refute 𝒜=C_F²α_s²).
+- ✅ **`tgp_letter.tex`** (PRL, 4 str.): **skrót 3-zdaniowy** „Limitations (UV/coarse-graining roots)" po „Open questions", przed „Conclusion" (cztery korzenie + α_eff=−½ ≠ α=2 ⟹ selekcja konforemna + N_free≈10/predykcje UV-niezależne/PR-025 falsifier). Wzorzec edycji jak #45 (przy istniejącym honest-framingu „primary inputs"/N_free≈10).
+
+### ✅ WP2 — Audyt spójności cross-document (tabela {plik × kryterium × werdykt})
+| Plik | (1) headline 10+6 vs 19 | (2) α_s warunkowe ¬first-principles | (3) α=2 selekcja na gęstości ¬substrat (B)#49 | (4) zlock. m_H/Σm_ν/α_s |
+|---|---|---|---|---|
+| **README.md** | PASS (tagline+abstract+ledger #42) | PASS (highlight „consistency-check via 𝒜, not first-principles, #43") | PASS (l.150/172 „axiomatic selection on density C1–C3, substrate yields α=½") | PASS (125.31/1.0σ C9 · 59.01 B4 · 0.1184 B3) |
+| **tgp_letter.tex** | PASS (abstract+konkluzja+box „primary inputs") | PASS (abstract „α_s traded/conditional"; Limitations „α_s consistency bridge") | **EDYCJA** — body „Kinetic coupling α=2" over-claimował, że substrat (Φ=φ²→K∝Φ⁻¹) „produkuje α=2 (Lemma A3)"; skorygowano addytywnie do α_eff=−½, werdykt (B) #49, selekcja konforemna C1–C3 | **EDYCJA** — m_H stary anchor (125.25±0.17/0.3σ)→C9 (PDG2024 125.20±0.11/1.0σ; wartość 125.31 bez zmian, 4 miejsca); Σm_ν nota addytywna 59.01 (B4 Z1, m_1=0) |
+| **tgp_companion.tex** | PASS (abstract+intro+konkluzja „honest refinement N_free≈10") | PASS (abstract „α_s traded/conditional"; F1 brak claimu first-principles; Limitations „𝒜=C_F²α_s² consistency bridge") | PASS („Remark on kinetic coupling" + abstract „axiomatic selection on density, not microscopic-substrate derivation, substrate yields α=½") | **EDYCJA** — Σm_ν nota addytywna 59.01 (B4 Z1, m_1=0); m_H już 1.0σ C9 ✓; α_s 0.1184 ✓ |
+| **sek00_summary.tex** (main.tex) | N/A — brak headline „3 inputy/40 pred" (zgodny) | zgodny (ścieżka B3-v2, status „Propozycja", brak first-principles; #43-scope per #45) | zgodny (dualizm α=1/α=2; substrat→α=1 NIE α=2; α=2 via prop:substrate-action selekcja; predykcje α-niezależne; per #45/#50 świadomie scoped) | zgodny (l.341 125.31/1.0σ D01 · l.331 59.01 B4 · l.217 0.1184 B3) |
+
+- **3 niespójności znalezione i odzwierciedlone addytywnie** (letter ×2 kryt., companion ×1 kryt.); reszta PASS/zgodny. **sek00 NIE edytowany** (zgodny + #45/#50 świadomie scoped + edycja = re-litygacja + zbędny build 553 str.).
+
+### Build (reguła §1)
+`pdflatex tgp_letter.tex` exit 0 ×2 (**4 str.**, 0 undefined, 0 rerun); `pdflatex tgp_companion.tex` exit 0 ×2 (**14 str.** — pełna sekcja Limitations zmieściła się bez wzrostu, 0 undefined, 0 rerun) — zgodne z baseline #45. README/STATE = markdown. main.tex nietknięty. Logi build (folder tymczasowy vault) usunięte.
+
+### Anti-Lakatos
+✓ Zero re-litygacji: #42/#48/#49 odzwierciedlone, nie zmienione. ✓ Edycje ADDYTYWNE/minimalne (nowa sekcja + noty; 0 zerwanych \ref/\cite/\label; korekta α=2 w letter usuwa wewnętrzną sprzeczność z własnym abstraktem). ✓ Bias DWUSTRONNY: cztery korzenie UV/CG jawne, NIE chowane; aksjomaty (α=2/Z₂/...) NIE liczone jako wolne parametry. ✓ Budżet nowych stałych/claimów = 0 (synteza zalockowanych werdyktów #37–#49). ✓ NIGDZIE „α_s/α=2 wyprowadzone z first principles" (oba aksjomatyczne/warunkowe). ✓ Zlockowane wartości liczbowe (m_H/Σm_ν/α_s) NIEzmienione — tylko spójność statusu (m_H value 125.31 unchanged, anchor PDG2022→PDG2024; Σm_ν addytywna nota lock, zeroth-order zachowany). ✓ Falsyfikowalność (PR-025 forward) zachowana w obu papers.
+
+### WIP po #52 — KONSOLIDACJA SUBMISSION KOMPLETNA
+- **WP1+WP2+WP3: 🟢 ALL DONE.** §4 Limitations wpięte (companion pełne / letter skrót); audyt 4 kryteriów wykonany (3 edycje addytywne + reszta PASS/zgodny); build exit 0, str. = baseline #45, 0 undefined nowych.
+- **Decision-menu (user-gated, niewdrożone):**
+  - (a) **Opcjonalnie** wpiąć §4 Limitations także do `papers_external/` (arxiv_submission / paper_lepton_masses / paper_bh_shadow) jeśli mają headline „3 inputy" — wymaga osobnego audytu tych plików;
+  - (b) **Opcjonalnie** zsynchronizować `tgp_companion.tex`/`tgp_letter.tex` Σm_ν zeroth-order spektrum (m_1=0.80/m_2=8.65/m_3=50.11) → B4-locked (m_1=0, Σ=59.01) jeśli pełna spójność tabel pożądana (wymaga przeliczenia spektrum, NIE czysto addytywne — świadomie pominięte, nota addytywna wystarcza);
+  - (c) **Opcjonalnie** lekka nota #49-ratyfikacji do README highlight α=2 (obecnie cytuje op-A3; substancja już spójna — pominięte per „nie wymuszaj edycji");
+  - (d) NIE wdrażać nowej fizyki / NIE domykać CG — most Γ→Φ/NGFP pozostaje wieloletnim trackiem fundamentalnym (4/4 korzenie aksjomatyczne pending UV/CG, mapa obstrukcji KOMPLETNA per #50/#51).
+- **Następna „najważniejsza rzecz" (bez zmian):** wieloletni track UV/CG (most Γ→Φ/NGFP) dla 4 korzeni — niski priorytet inżynieryjny, wysoki fundamentalny.
+
+### Cross-references
+- [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]] §4 (źródło prawdy drop-in prose) · [[research/op-CG-alpha-eff-convergence-2026-06-26/Phase_FINAL_close.md]] (#49 (B) REFUTED-SUBSTRATE) · [[research/op-parameter-counting-balance-sheet-2026-06-25/Phase_FINAL_close.md]] (#42 ledger N_free=10) · #45 (WP1 honest-framing wzorzec edycji) · #50 (propagacja #49 do core) · #51 (standing reference)
+
+---
+
+## 🟢 Sesja 2026-06-26 #51 — STANDING REFERENCE: utworzono [[meta/HONEST_FRAMING_UV_CG_ROOTS.md]] — 1-stronicowa synteza statusu **czterech korzeni UV/CG** (α=2 #49 CLOSED-NEGATIVE · c₀ #37 FREE · 𝒜→α_s #43 POSTULATE-CONDITIONAL · K_geo #48 POSTULATE-CONFIRMED), ze wspólnym mianownikiem (most Γ→Φ/NGFP) + **gotowym akapitem EN „Limitations" do submission** (§4).
+
+User: „dodać krótki wpis #51 rejestrujący tę notę jako standing reference" (po „przygotuj notę syntetyczną").
+
+### ✅ Deliverable
+- **`meta/HONEST_FRAMING_UV_CG_ROOTS.md`** (markdown, poza buildem): §0 teza · §1 tabela 4 korzeni (status/dlaczego warunkowy/cykl) · §2 stan mostu Γ→Φ (NGFP 7/7 analitycznie; CG-1 [OTWARTY], ex200 4/8, ex202 7/8; CG-2/3/5 zamknięte) · §3 dlaczego NIE falsyfikuje (bilans #42 bez zmian; makro UV-independent; PR-025 forward; (B)≠falsyfikacja) · §4 **drop-in EN prose** do `tgp_letter`/`tgp_companion` · §5 anti-Lakatos + cross-refs.
+- **Rola:** pojedyncze źródło prawdy o statusie 4 stałych derywowalnych tylko przez UV/CG; synteza zalockowanych werdyktów #37–#49 (zero nowych claimów).
+
+### Build / Anti-Lakatos
+Markdown referencyjny (nie wchodzi do main.tex) — brak buildu. ✓ Zero nowych claimów (synteza). ✓ Bias dwustronny (korzenie jawne, aksjomaty nie liczone jako parametry). ✓ Falsyfikowalność (PR-025) zachowana.
+
+### WIP po #51
+- **Nota standing reference: 🟢 DONE.** Opcjonalne (niewdrożone, user-gated): wpięcie akapitu §4 (EN) bezpośrednio do `tgp_letter.tex`/`tgp_companion.tex` z buildem.
+- **Następna „najważniejsza rzecz" (bez zmian):** wieloletni track UV/CG (most Γ→Φ/NGFP) dla pozostałych 3 korzeni (c₀ #37, 𝒜 #43, K_geo #48).
+
+---
+
+## 🟢 Sesja 2026-06-26 #50 — PROPAGACJA (user-gated) **werdyktu #49 (B) REFUTED-SUBSTRATE do rdzenia**: 4 addytywne noty w 3 plikach core (sek08 + dodatekQ ×2 + dodatekQ2); build `main.tex` **exit 0 ×2, 553 str., 0 NOWYCH dangling refs** (7 = pre-existing residual #32).
+
+User: „przeprowadź propagację" (dyspozycja Phase_FINAL §4, #49). **ZAKAZ re-litygacji:** werdykt (B) IMMUTABLE; edycje ODZWIERCIEDLAJĄ go, nie zmieniają. Manuskrypt **już był uczciwy** (sek08 rem:alpha2-pivot-status-pl „nieredukowalnie aksjomatyczne"; dodatekQ2 rem:A3-correction-alpha „substrat α=½"; status_map l.72/77 „NIE derywacja") — propagacja = **lekkie noty ratyfikujące #49 jako numeryczną FSS** + rozstrzygnięcie residuum CG34.
+
+### ✅ Propagacja ZASTOSOWANA (4 noty addytywne, 3 pliki w main.tex)
+- ✅ **`core/sek08_formalizm/sek08_formalizm.tex`** (`rem:alpha2-pivot-status-pl`, po bilansie): nota „Potwierdzenie numeryczne FSS (#49)" — (B) REFUTED-SUBSTRATE; konwencja `α_density=(s−1)/2`: kanoniczny s=0 → α_eff=−½ (chain-rule exact `K∝Φ^{−1}`; MC e_inf=−0.12, R²_FSS=0.73, 4×L); α=2 wymaga s=5 (#38); escape przez η~O(5) zamknięty (uzupełnia RG #39 γ≈−5/6). Ratyfikuje „nieredukowalnie aksjomatyczne", NIE falsyfikuje TGP.
+- ✅ **`core/formalizm/dodatekQ_coarse_graining_formal.tex`** (×2): (a) nota CG-4 „składnik α=2↔K_hom (#49)" — drugie residuum CG34 (#31, „do dopięcia") **rozstrzygnięte NEGATYWNIE** (substrat s=0 → K∝Φ^{−1}, nie Φ⁴); forma K_hom=K_IR zamknięta, wartość α=2 NIE z substratu. (b) nowa `rem:Q-alpha-overclaim-correction` po `prop:Q-alpha-from-phi-squared`: over-claim „α_eff=2 mocno wspiera naturalność" skorygowany — Z∼φ² daje α=0, kanoniczne Z=const daje α=−½, żadne ≠2; #49 (B) potwierdza.
+- ✅ **`partial_proofs/most_gamma_phi/dodatekQ2_most_gamma_phi_lematy.tex`** (`rem:A3-correction-alpha`): nota „Ratyfikacja FSS (#49)" — istniejąca korekta (2026-06-14) potwierdzona numerycznie+analitycznie; niespójność CG34 (#31) „α=2↔K(φ) do dopięcia" **potwierdzona realna i rozstrzygnięta negatywnie**.
+
+### Build (reguła HANDOFF §1)
+`pdflatex main.tex` **exit 0 ×2, 553 str.** (zgodne z baseline #36/#44); 7 unikalnych undefined refs = **pre-existing residual #32** (ax:substrat, para:basin-stability, ssec:disformal, eq:Phi-sigma-action, ssec:disformal-spectrum-tests, app:A-aksjomaty, app:B-mapa-params), **NIE z moich edycji**. Nowe cytaty (rem:A3-correction-alpha, rem:alpha2-pivot-status-pl) rozwiązane; nowy `rem:Q-alpha-overclaim-correction` nieużywany gdzie indziej (brak NOWYCH dangling).
+
+### Anti-Lakatos
+✓ Zero re-litygacji: werdykt (B) odzwierciedlony, nie zmieniony. ✓ Edycje addytywne (proza/noty; 0 zerwanych \ref/\label; 0 usunięć). ✓ #49 jako ratyfikacja istniejącej uczciwości manuskryptu, nie nowy claim. ✓ (B) jawnie ≠ falsyfikacja TGP. ✓ Budżet nowych stałych 0. ✓ Over-claim `prop:Q-alpha-from-phi-squared` jawnie oznaczony (nie ukryty). ✓ #31/#38/#39/#48/#49 IMMUTABLE.
+
+### WIP po #50 — PROPAGACJA #49 KOMPLETNA
+- **Wszystkie 3 dyspozycje Phase_FINAL §4 (dodatekQ2 A3 / dodatekQ CG-4 / sek08 thm:alpha2 framing): 🟢 DONE.** #42 ledger (α=2 aksjomat) potwierdzony bez zmian. status_map l.72/77 już niesie poprawny framing (sek08 = źródło prawdy, wzmocnione) — pominięte świadomie (edycja tabeli = zbędne ryzyko, framing już obecny).
+- **Następna „najważniejsza rzecz":** pozostałe 3 korzenie (c₀ #37, 𝒜 #43, K_geo #48) wciąż POSTULATE-CONDITIONAL — wspólny mianownik = pełne domknięcie mostu Γ→Φ/NGFP (op-uv-as-ngfp). Mapa obstrukcji KOMPLETNA: 4/4 korzenie aksjomatyczne pending UV/CG.
+
+---
+
+## 🟢 Sesja 2026-06-26 #49 — op-CG-alpha-eff-convergence: **Faza A LOCK + Phase 1 FSS + FINAL** (1 sesja). Cykl atakujący **najpilniejszy pojedynczy filar numeryczny** wspólnego korzenia UV/CG (α=2 / K_geo / 𝒜 / c₀): czy `α_eff` blokowo-uśrednionego substratu zbiega do **2**. Reguła **A/B/C** + progi **|ᾱ−2|: 0,3/1,0; R²_FSS: 0,7** zaplombowane value-blind (immutable `pre_registration_date: 2026-06-26`); rachunek (sympy 3/3 + MC FSS 4×L) ⟹ **WERDYKT (B) REFUTED-SUBSTRATE**: substrat NIE generuje α=2 ⟹ **niespójność lematu A3 (#31) POTWIERDZONA realna; α=2 ściśle aksjomatyczne-na-gęstości; ścieżka substratowa do α=2 = CLOSED-NEGATIVE.**
+
+User: „tak działaj z Fazą A" → „tak działaj z fazą 1" (po analizie najważniejszej rzeczy do domknięcia → wspólny mianownik CG Γ→Φ). Cykl `research/op-CG-alpha-eff-convergence-2026-06-26/`.
+
+### ✅ Phase 1 + FINAL (ta sama sesja — user „działaj z fazą 1")
+- **Solver `Phase1_fss.py` (sympy + zwektoryzowany checkerboard MC, 0 hardcoded, T-anti-circ ENFORCED):**
+  - **§A Rdzeń analityczny (sympy 3/3, circularity-free):** T1 — kompozyt `Φ=σ²` (=⟨ŝ²⟩) ⟹ chain-rule `K(Φ)=1/(4Φ)∝Φ^{−1}` ⟹ **e=−1, α_eff=−1/2** (= CG34 „K_1∼1/Φ"); manuskrypt wymaga `K∝φ⁴` (e=+4, α=2). T2 — ogólnie `Φ=σ^{2p}`: `e=1/p−2`; composite p=1 ⟹ e=−1; α=2 wymaga p=1/6 (bez sensu substratowego). T3 — escape przez wymiar anomalny `Δe=5` (η~O(5)) niemożliwy (WF 3D η≈0.036).
+  - **§B Numeryka FSS (φ⁴ Z₂ NIEpatologiczny, L∈{16,24,32,40}):** estymator chain-rule (NIE artefakt-prone log-log ex200); `⟨Φ⟩≈0.72` stabilne (okno scale-separated istnieje); `e_inf=−0.116`, `R²_FSS=0.729` (clean, per-L R² rośnie 0.564→0.805), `spread=0.014` ⟹ `ᾱ=−0.058`.
+  - **Rozbieżność MC (−0.12) vs analityka (−1) udokumentowana** jako bias estymatora (lattice decorrelation `∇(σ²)` vs `σ²` węzła) — werdykt robustny pod oboma (oba ≫ od e=+4).
+- **WERDYKT (wyliczony z plomby, value-blind): (B) REFUTED-SUBSTRATE** — `|ᾱ−2|=2.06≥1.0 ∧ R²_FSS=0.73≥0.7`. (A)/(C) nieosiągnięte.
+- **Konsekwencja:** thm:D-uniqueness/thm:alpha2 ustala FORMĘ `K∝φ^{2α}` + α=2 jako **selekcję w klasie konforemnej na gęstości** — ale substrat `⟨ŝ²⟩` daje α_eff=−1/2, NIE 2. **(B) NIE falsyfikuje TGP** — RATYFIKUJE istniejący uczciwy status (status_map l.72 „selekcja, NIE derywacja"; #48 K_geo aksjomatyczny) **od strony numeryczno-substratowej** i POTWIERDZA niespójność A3 (#31) jako realną. **α=2 dołącza jako CZWARTY rozstrzygnięty korzeń** do rodziny aksjomatyczne/conditional: α=2 (CLOSED-NEGATIVE, ten cykl), c₀ (#37), 𝒜 (#43), K_geo (#48). Ledger #42 (N_axiom=6) potwierdzony, bez zmian.
+
+### Anti-Lakatos
+✓ Werdykt WYLICZONY z plomby (progi 0.3/1.0/0.7 niezmienione). ✓ Wynik NEGATYWNY (B) zgłoszony wprost, nie ukryty/przemianowany. ✓ Rozbieżność MC vs analityka udokumentowana jako bias, nie zamieciona; werdykt zakotwiczony w exact analityce + robustny pod oboma. ✓ Substrat NIEpatologiczny (uczciwiej niż CG34 `-J(φ_iφ_j)²`). ✓ Circularity guard ENFORCED. ✓ 0 hardcoded, 0 nowych stałych. ✓ #31/#43/#48 IMMUTABLE. ✓ (B) jawnie ≠ falsyfikacja TGP.
+
+### Faza A (wcześniej w tej sesji — kontekst)
+Phase 0 LOCK + audyt ex200/ex202 vs CG34: ustalono, że obstrukcja α_eff to NIE „mały L", lecz strukturalna niespójność `Z(φ)` (ex200 single-L=16, tol T3=1.5, estymator artefakt-prone vs CG34 algebra `α_eff=s−1=0`). Plomba reguły A/B/C + read-lock + balance gate. ex202 baseline 7/8 (T6 FAIL: σ_TGP ~712×).
+
+### WIP po #49 (cykl zamknięty)
+- **op-CG-alpha-eff-convergence: 🟢 CLOSED-RESOLVED — (B) REFUTED-SUBSTRATE** (sympy 3/3 + MC FSS 4×L, 0 hardcoded, 1 sesja, 0 nowych stałych). WIP slot zwolniony.
+- **Dyspozycja (user-gated, Phase_FINAL §4):** dodatekQ2 A3 reframe (niespójność POTWIERDZONA); dodatekQ CG-4 (składnik α=2↔K(φ) rozstrzygnięty NEGATYWNIE); thm:alpha2/status_map l.72 wzmocnić framing „selekcja, NIE derywacja"; #42 ledger potwierdzony.
+- **Następna „najważniejsza rzecz":** pozostałe 3 korzenie (c₀ #37, 𝒜 #43, K_geo #48) wciąż POSTULATE-CONDITIONAL — jedyna droga = pełne domknięcie mostu Γ→Φ / NGFP (op-uv-as-ngfp). **Mapa obstrukcji teraz KOMPLETNA:** żaden z 4 korzeni nie jest derywowany z substratu; wszystkie aksjomatyczne pending UV/CG — uczciwy domknięty obraz dla publikacji.
+
+---
+
+## 🟢 Sesja 2026-06-26 #47-#48 — op-Kgeo-from-D-uniqueness: **Phase 0 LOCK + Phase 1 + FINAL** (1 sesja). Cykl inicjujący track UV/CG (most Γ→Φ) `parking → active → closed-resolved`. Reguła **A/B/C** + progi **5%/25%** zaplombowane value-blind (immutable `pre_registration_date: 2026-06-26`); rachunek 9/9 PASS ⟹ **WERDYKT (C) POSTULATE-CONFIRMED**: K_geo⁽⁰⁾ nieoznaczalne niezależnie od poziomu-0 bez domknięcia CG ⟹ **ratyfikacja #43 POSTULATE-CONDITIONAL**.
+
+User: „twoje zadanie rozpocząć ten cykl" → „ok działaj z fazą 1" (`research/op-Kgeo-from-D-uniqueness-2026-06-26/`). Cykl zlokalizowany przez #43 jako jedyna droga most→derywacja dla 𝒜=C_F²α_s². Phase 0 LOCK = brama pre-rejestracji; Phase 1 = native derivation K_geo⁽⁰⁾ (value-blind).
+
+### ✅ Phase 0 WYKONANE
+- **Mandatory pre-flight reads (KICKOFF §2.6):** PPN_AS_PROJECTION §3.1, NATIVE_PATTERNS §1-4, M9_RESTRUCTURE §1.4+§3, KICKOFF §1-2 — sign-off README §0.4.
+- **Read-lock źródeł (read-only):** dodatekX prop:X-A-from-tube-tension (l.954-1048) + eq:X-K-msp-hypothesis (l.975); thm:D-uniqueness (sek08 l.962-1000); status_map CG-1/CG-3 [SZKIC] + ex200 4/8 + ex202 7/8; #43 Phase_FINAL.
+- **🔒 Plomba reguły:** R := K_geo^(0)·m_sp²/(π·Φ₀²); (A) DERIVED R∈[0,95;1,05] → α_s genuine first-principles; (B) REFUTED-BRIDGE R∉[0,80;1,25] → PR-025 forward (b); (C) POSTULATE-CONFIRMED inaczej LUB K_geo^(0) nieoznaczalne bez CG. Anti-moving-goalposts: zmiana progu = HALT-B.
+- **Balance gate:** budżet nowych stałych = 0 (K_geo ma być POCHODNĄ; jeśli wolny parametr → wynik C).
+- **Audit trail:** `Phase0_LOCK.md` (pełny), README YAML `folder_status: active` + `pre_registration_date: 2026-06-26`.
+
+### Obserwacja scope (value-blind, NIE werdykt)
+**thm:D-uniqueness ustala FORMĘ K(φ)=K_geo·φ⁴ + α=2, ale K_geo to dowolny dodatni prefaktor C (krok 2 dowodu: K=C·φ^{2α}, C>0)** — wartość NIE wyznaczona. Potwierdza status_map l.72 („selekcja w klasie konforemnej, NIE derywacja z substratu"). Sygnał a priori w stronę (C), ALE rozstrzyga dopiero rachunek Phase 1 (reguła value-blind).
+
+### Anti-Lakatos
+✓ Reguła + progi zaplombowane PRZED rachunkiem (immutable). ✓ Read-lock read-only. ✓ Circularity guard ARMED (zero α_s/mas kwarków w K_geo^(0); ratio numeryczny dodatekX l.992-1006 = INPUT-α_s, zakazany jako wejście). ✓ Reguła dwustronna A/B/C. ✓ #43 IMMUTABLE, 0 re-litygacji.
+
+### Phase 1 + FINAL (ta sama sesja — user „działaj z fazą 1")
+- **Solver `Phase1_Kgeo.py` (sympy + numeryka, 9/9 PASS, 0 hardcoded, T-anti-circ ENFORCED):**
+  - **T1 (D-uniqueness):** ODE `K'/K=2α/φ` ⟹ `K=C·φ^{2α}`, **C = wolna stała całkowania**; C3 (`K=K_geo·φ⁴`) daje α=2 ORAZ `C≡K_geo` (DEFINICJA, nie rachunek). Równań pinujących liczbowo K_geo z C1-C3 = **0**.
+  - **T2 (norm. kanoniczna):** `Φ̃=√K_geo·φ³/3` kanonizuje L_kin dla KAŻDEGO K_geo>0 (sympy tożsamość) ⟹ K_geo absorbowalne, **brak niezmiennika poziomu-0**.
+  - **T3 (geometria rury):** skan po WOLNYM A (NIE α_s), w=1: `σ̂/A²→π` (3,14090). **π geometryczne** (kąt rury), ale σ̂ bezwymiarowe — NIE wyznacza skali `K_geo·m_sp²`.
+  - **T4 (CG):** ex200 4/8, α_eff niezbieżny; most Γ→Φ [SZKIC]. **K_geo via CG nieosiągalne teraz.**
+  - **T5 (oznaczalność R):** brak NIEcyrkularnej drogi do liczby K_geo⁽⁰⁾ (każda wymaga α_s — circ, zakazane — LUB domknięcia CG) ⟹ **R nieoznaczalne value-blind**.
+- **WERDYKT (wyliczony z plomby, value-blind): (C) POSTULATE-CONFIRMED** — gałąź „K_geo⁽⁰⁾ nieoznaczalne bez domknięcia CG-1/CG-3" SPEŁNIONA. (A)/(B) nieosiągnięte (R nieoznaczalne; postulat NIE sfalsyfikowany — PR-025 (b) NIE uruchomione).
+- **Konsekwencja:** **#43 POSTULATE-CONDITIONAL ratyfikowany od strony poziomu-0.** thm:D-uniqueness = selekcja FORMY w klasie konforemnej (C1-C3), NIE wartości prefaktora — spójne z manuskryptem (status_map l.72; rem:alpha2-pivot/amplitude-vs-density: α=2 „nieredukowalnie aksjomatyczne na gęstości", #38/#39). K_geo dołącza do α=2/c₀ jako irreducibly conditional pending UV/CG. α_s = consistency-check warunkowy, bez zmian (ledger #42 bez zmian). **Czynnik π hipotezy — częściowo wyjaśniony** (geometria kąta rury, T3); skala `K_geo·m_sp²=Φ₀²` pozostaje otwarta.
+
+### WIP po #48 (cykl zamknięty)
+- **op-Kgeo-from-D-uniqueness: 🟢 CLOSED-RESOLVED — (C) POSTULATE-CONFIRMED** (9/9, 0 hardcoded, 1 sesja, 0 nowych stałych; claim_status C / pending-bridge CG). WIP slot zwolniony.
+- **Wartość cyklu:** „nie wiemy" → **precyzyjna mapa obstrukcji** K_geo (analog #37 c₀, #39 α=2): D-uniqueness fixuje formę nie wartość; K_geo absorbowalny; π geometryczny, skala nie; jedyny zamykacz = CG/NGFP.
+- **Następna „najważniejsza rzecz":** wieloletni track UV/CG (most Γ→Φ / NGFP: `op-CG34-continuum-closure`, `op-Csigma-*`, `op-uv-as-ngfp`) — wspólny mianownik 𝒜/α=2/c₀; niski priorytet inżynieryjny, wysoki fundamentalny. Build: brak .tex (markdown + .py only).
 
 ---
 

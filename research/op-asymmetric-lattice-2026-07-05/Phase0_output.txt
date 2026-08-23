@@ -1,0 +1,124 @@
+=== Phase 0 check: op-asymmetric-lattice, proba #4 (LOCK: Phase0_balance.md) ===
+
+--- 1. kanal amplitudowy + TABELA PROJEKTOWA (rownanie #1, D12) ---
+  s* = 1.174166  Phi* = 1.378665  V''(s*) = 0.878665
+  m_TV = 0.9374  xi^2 = 0.5690  A_t = 2.5690
+  omega=1.1:  k0 = 0.8140   lambda =   7.72   v_g = 0.3700
+  omega=1.5:  k0 = 1.6561   lambda =   3.79   v_g = 0.5520
+
+  TABELA PROJEKTOWA (D12): b_nom >= 1.5*lambda + 0.9 ORAZ
+  odleglosc wiazki od soczewek rzedow posrednich >= 1.5*lambda
+  (soczewki posrednie w x=0: rzad y=0 [-1] i y=-128 [+1];
+   wiazka y = -64 +/- b: d_blizsza = 64-|b|, d_dalsza = 64+|b|)
+    omega=1.1 |b|=  14 [KRYT +/-]: prog_b = 12.48 (b-prog = +1.52); b/lambda = 1.81; d_posr = 50/78 (prog 11.58: OK) -> W DOMENIE
+    omega=1.1 |b|=  20 [KRYT +/-]: prog_b = 12.48 (b-prog = +7.52); b/lambda = 2.59; d_posr = 44/84 (prog 11.58: OK) -> W DOMENIE
+    omega=1.1 |b|=  24 [KRYT +/-]: prog_b = 12.48 (b-prog = +11.52); b/lambda = 3.11; d_posr = 40/88 (prog 11.58: OK) -> W DOMENIE
+    omega=1.5 |b|=   8 [KRYT +/-]: prog_b =  6.59 (b-prog = +1.41); b/lambda = 2.11; d_posr = 56/72 (prog 5.69: OK) -> W DOMENIE
+    omega=1.5 |b|=  12 [KRYT +/-]: prog_b =  6.59 (b-prog = +5.41); b/lambda = 3.16; d_posr = 52/76 (prog 5.69: OK) -> W DOMENIE
+    omega=1.1 |b|=  28 [obs +/-]: prog_b = 12.48 (b-prog = +15.52); b/lambda = 3.63; d_posr = 36/92 (prog 11.58: OK) -> poza kryteriami
+
+--- 2. bilans sil (punktowo-wirowy): PARY INWERSYJNE v/-v (D16) ---
+    sasiedzi rdzenia: v = n1*a1 + n2*a2, a1=(128,0), a2=(64,64),
+    q(v) = (-1)^(n1+n2); q(-v) = q(v) -> pary v/-v kasuja sie
+    DOKLADNIE (F nieparzysta). UWAGA (README): NIE sumowac powlok
+    bez parowania — kasowanie jest wlasnoscia PAR, nie orbit D4.
+      powloka indeksowa K=1: par =   4; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=2: par =   8; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=3: par =  12; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=4: par =  16; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=5: par =  20; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=6: par =  24; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=7: par =  28; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      powloka indeksowa K=8: par =  32; max |F_pary| = 0.000e+00; |F_powloki| = 0.000e+00; |F_suma| = 0.000e+00
+      -> F_netto (pary, K<=8) = (+0.000e+00, +0.000e+00)  (kasowanie DOKLADNE per para)
+      kontrola NEGATYWNA (polplaszczyzna, bez partnerow -v): |F| = 7.681e-03 — NIE kasuje sie;
+      kasowanie pochodzi z par inwersyjnych, nie z D4
+      kontrola pudelkowa (K=8, wszystkie 8 wirow + obrazy): |F| = 1.228e-02 — czlon powierzchniowy obciecia ~K^-2 (artefakt, errata #1 proby #2)
+      max po WSZYSTKICH 8 rdzeniach (pudelko K=8): 1.230e-02 (jednakowy artefakt — otoczenia identyczne z inwersji)
+
+--- 3. symetrie konfiguracji (weryfikacja konstrukcji, sekcja 1.2) ---
+  (a) lustro osi wiazki (y -> -128-y) + sprzezenie [zachowuje ladunki]:
+      pozycje lustrzane: TAK (8/8 pozycji przechodzi na pozycje)
+      ladunki: NIEZGODNE w 4/8 wirach -> lustro ZLAMANE przez ladunki:
+        wir +1@(-128,+0): ladunek -1 zamiast +1 w (-128,-128)
+        wir -1@(+0,+0): ladunek +1 zamiast -1 w (+0,-128)
+        wir +1@(+0,-128): ladunek -1 zamiast +1 w (+0,+0)
+        wir -1@(+128,-128): ladunek +1 zamiast -1 w (+128,+0)
+  (b) S-inv (r -> 2A - r wokol A=(-64,-64)): zgodnosc pozycji+ladunkow: 8/8 -> DOKLADNA symetria tla
+  (c) S-conj (sprzezenie = translacja o (128,0)): translacja kazdego wiru trafia w wir o PRZECIWNYM ladunku: 8/8 -> DOKLADNA rownowaznosc
+
+--- 4. dyspersja sieciowa ANALITYCZNIE (dx=0.5): omega_lat = sqrt(kappa*(2-2cos(k dx))/dx^2 + V''(s*)) ---
+    omega=1.1 (k0=0.8140, k0*dx=0.407): omega_lat = 1.09793  blad = -0.19%  [KRYTERIALNE pasmo G3]
+    omega=1.5 (k0=1.6561, k0*dx=0.828): omega_lat = 1.47425  blad = -1.72%  [KRYTERIALNE pasmo G3]
+    prog G3: 5% (MIERZONE w Phase 1, nie zakladane)
+
+--- 5. tlo: siatka skosna 8 wirow L=256, ansatz 4 pary poziome, relaksacja 2000 ---
+  diagnostyka szwu (ansatz, 4 pary — nowa kombinacja): max |dtheta| na linkach poza rdzeniami = 0.1367 rad (proba #3: 0.124; wadliwy ansatz: ~pi)
+  kret ansatzu: n_tot = 0; pozycje: -1#0:(+64.25,-63.75); -1#1:(+0.25,+0.25); -1#2:(-63.75,+64.25); -1#3:(+128.25,+128.25); +1#0:(-63.75,-63.75); +1#1:(+128.25,+0.25); +1#2:(+64.25,+64.25); +1#3:(+0.25,+128.25)
+  po relaksacji 2000 krokow (dt=0.02):
+    residuum max|RHS| = 5.680e-03 (proba #3: 9.6e-07)
+    pozycje rdzeni: -1#0:(+63.563,-63.757); -1#1:(-0.437,+0.243); -1#2:(-64.437,+64.243); -1#3:(+127.563,+128.243); +1#0:(-63.063,-63.743); +1#1:(-127.063,+0.257); +1#2:(+64.937,+64.257); +1#3:(+0.937,-127.743)
+    n_tot = 0; max |poz - nominal| = 0.9719
+    |psi| daleko od rdzeni: min = 1.0475 (s* = 1.1742)
+    diagnostyka D11(a): max|psi_bg - I[psi_bg]| = 2.346e+00 (inwersja wokol nominalnego A; 0 = bitowa)
+    diagnostyka D11(b): max|roll(conj(psi_bg), N/2) - psi_bg| = 2.346e+00 (sprzezenie=translacja; 0 = bitowa)
+
+--- 6. n^2 od rdzenia A (srednia 4 kierunkow osiowych; kolumny omega 1.1/1.5) ---
+   r=  1.0:    4.6085   1.8719   [ogon(1.1): 8.7536]
+   r=  2.0:    4.1524   1.7617   [ogon(1.1): 2.9384]
+   r=  3.0:    2.7159   1.4146   [ogon(1.1): 1.8615]
+   r=  4.0:    1.8250   1.1993   [ogon(1.1): 1.4846]
+   r=  6.0:    1.2629   1.0635   [ogon(1.1): 1.2154]
+   r=  8.0:    1.1337   1.0323   [ogon(1.1): 1.1212]
+   r= 12.0:    1.0599   1.0145   [ogon(1.1): 1.0538]
+   r= 16.0:    1.0358   1.0087   [ogon(1.1): 1.0303]
+   r= 20.0:    1.0249   1.0060   [ogon(1.1): 1.0194]
+   r= 24.0:    1.0192   1.0046   [ogon(1.1): 1.0135]
+   (gestosc 2x proby #3: najblizszy sasiad 90.5, nie 128)
+
+--- 7. ray tracing WIAZACY (D6/D18): alpha_pred(+/-b) [deg],
+    plaszczyzny x_eval in {-54, -27, 0, +27, +54}; projektowo
+    przy b_nom (WIAZACO per run: b_eff w Phase 2);
+    Delta_eik(para) = pred(+b) - pred(-b) w kazdej plaszczyznie
+    omega=1.1 para |b|=14 [KRYT]:
+      b= +14: x=-54:  +2.362  x=-27:  +3.066  x=+0:  +2.993  x=+27:  +3.240  x=+54:  +4.616  (rozrzut 2.253)
+      b= -14: x=-54:  +2.614  x=-27:  +3.827  x=+0:  +4.074  x=+27:  +3.960  x=+54:  +4.479  (rozrzut 1.866)
+      Delta_eik(b_nom): x=-54:  -0.252  x=-27:  -0.761  x=+0:  -1.082  x=+27:  -0.719  x=+54:  +0.136
+    omega=1.1 para |b|=20 [KRYT]:
+      b= +20: x=-54:  +0.697  x=-27:  +1.176  x=+0:  +1.097  x=+27:  +1.362  x=+54:  +2.259  (rozrzut 1.562)
+      b= -20: x=-54:  +1.108  x=-27:  +1.924  x=+0:  +2.180  x=+27:  +2.090  x=+54:  +2.669  (rozrzut 1.561)
+      Delta_eik(b_nom): x=-54:  -0.411  x=-27:  -0.748  x=+0:  -1.083  x=+27:  -0.728  x=+54:  -0.410
+    omega=1.1 para |b|=24 [KRYT]:
+      b= +24: x=-54:  +0.247  x=-27:  +0.599  x=+0:  +0.483  x=+27:  +0.732  x=+54:  +1.383  (rozrzut 1.136)
+      b= -24: x=-54:  +0.723  x=-27:  +1.350  x=+0:  +1.593  x=+27:  +1.481  x=+54:  +1.905  (rozrzut 1.182)
+      Delta_eik(b_nom): x=-54:  -0.476  x=-27:  -0.751  x=+0:  -1.110  x=+27:  -0.748  x=+54:  -0.522
+    omega=1.5 para |b|=8 [KRYT]:
+      b=  +8: x=-54:  +2.668  x=-27:  +2.854  x=+0:  +2.826  x=+27:  +2.876  x=+54:  +3.121  (rozrzut 0.453)
+      b=  -8: x=-54:  +2.616  x=-27:  +2.998  x=+0:  +3.052  x=+27:  +3.017  x=+54:  +2.977  (rozrzut 0.436)
+      Delta_eik(b_nom): x=-54:  +0.052  x=-27:  -0.144  x=+0:  -0.226  x=+27:  -0.140  x=+54:  +0.144
+    omega=1.5 para |b|=12 [KRYT]:
+      b= +12: x=-54:  +0.895  x=-27:  +1.077  x=+0:  +1.056  x=+27:  +1.117  x=+54:  +1.456  (rozrzut 0.561)
+      b= -12: x=-54:  +0.930  x=-27:  +1.249  x=+0:  +1.310  x=+27:  +1.286  x=+54:  +1.464  (rozrzut 0.535)
+      Delta_eik(b_nom): x=-54:  -0.035  x=-27:  -0.172  x=+0:  -0.253  x=+27:  -0.169  x=+54:  -0.008
+    omega=1.1 para |b|=28 [obs]:
+      b= +28: x=-54:  -0.015  x=-27:  +0.234  x=+0:  +0.052  x=+27:  +0.269  x=+54:  +0.750  (rozrzut 0.764)
+      b= -28: x=-54:  +0.511  x=-27:  +0.994  x=+0:  +1.210  x=+27:  +1.044  x=+54:  +1.341  (rozrzut 0.830)
+      Delta_eik(b_nom): x=-54:  -0.525  x=-27:  -0.760  x=+0:  -1.158  x=+27:  -0.775  x=+54:  -0.591
+
+--- 8. budzet czasu (sekcja 1.4) ---
+  omega=1.1: v_g=0.370; wyzwolenie ~tau=124.3; 5. probka ~tau=140.3
+  omega=1.5: v_g=0.552; wyzwolenie ~tau= 83.3; 5. probka ~tau= 99.3
+  bramka G2: okno tau=600, kryterium tau<=450 >= 3x przelot (~140 przy omega=1.1)
+  limit runow falowych tau=300 pokrywa 5. probke kazdej serii
+  koszt: bramka ~10-15 min; run ~3-6 min; 13 runow Phase 2 + 3 runy Phase 3 -> calosc ~1.5-2 h
+
+=== WNIOSKI PHASE 0 ===
+  wszystkie 10 punktow kryterialnych W DOMENIE eikonalu
+  (b_nom >= 1.5*lambda+0.9; odleglosci od soczewek posrednich
+  >= 1.5*lambda); bilans sil = 0 DOKLADNIE parami inwersyjnymi
+  v/-v (kontrola negatywna polplaszczyzny potwierdza mechanizm);
+  lustro POZYCJI dokladne, ZLAMANE przez ladunki w 4/8 wirow
+  (oba rzedy posrednie) -> alpha_odd niewiazana zadna symetria;
+  S-inv i S-conj zweryfikowane na konfiguracji (testy G6a);
+  zaklad eikonalny WIAZACY policzony dla +b i -b OSOBNO
+  z Delta_eik per para; Phase 1 = bramka G2 PRZED pakietem

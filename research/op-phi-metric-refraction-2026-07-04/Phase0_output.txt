@@ -1,0 +1,35 @@
+=== Phase 0 check: op-phi-metric-refraction (LOCK: Phase0_balance.md) ===
+
+--- 1. sektor falowy: masy i wspolczynnik zalamania (rownania #1-#2) ---
+  V''(0) = 0.5  -> m_FV = 0.7071   (LOCK: 0.707)
+  V''(s*) = 0.87867  -> m_TV = 0.9374   (LOCK: 0.937)
+  D6: V''(s) < 0 dla s in (0.190, 0.874), min V'' = -0.3533 przy s = 0.534
+  n_wnetrze(omega) = sqrt((omega^2 - V''(s*)) / (omega^2 - V''(0))):
+    omega=1.0: n_in=0.4926  k0_FV=1.0000  v_g=0.5000
+    omega=1.1: n_in=0.6831  k0_FV=1.1916  v_g=0.5417
+    omega=1.3: n_in=0.8257  k0_FV=1.5427  v_g=0.5934
+  przyklad LOCKa (omega=1.1): n_in = 0.68 -> 0.6831  OK
+
+--- 2. tlo: zlockowany obiekt (D9) ---
+  cluster(0.6, D=3, K=7) -> R_obj = 12.000 po tau = 98.0; max s = 1.17416 (s* = 1.17417)
+  komorek z V''(s_bg) < 0 (pierscien sciany): 712 (1.09% siatki); min V''(s_bg) = -0.3533
+
+--- 3. D6: widmo L = -kappa*Lap + V''(s_bg) (iteracja potegowa) ---
+  lambda_min = -0.01523  ->  TACHION, gamma = sqrt(-lambda_min) = 0.1234
+  lokalizacja modu: <r> = 12.24 (R_obj = 12.0); frakcja normy w r < R_obj+5: 0.9999
+  prognoza kontaminacji (omega=1.1): tau_lotu ~ 155, amplifikacja e^(gamma*tau) ~ e^19.1 = 2.06e+08
+  -> wg D6: jesli pomiar ugiecia skontaminowany, G3/G4/G6 NIEAPLIKOWALNE (klauzula pre-code)
+
+--- 4. D7: ray tracing eikonalny na TYM SAMYM tle ---
+  alpha_pred [stopnie] (alpha > 0 = ugiecie OD obiektu dla b > 0):
+    b:                8       12       16       20
+    omega=1.0:  +71.118  +24.781  -92.403   -0.243
+    omega=1.1:  +61.430  +19.048  -65.570   -0.170
+    omega=1.3:  +45.000  +11.099  -13.727   -0.101
+  znaki/monotonie raportowane; szczegolowa interpretacja w Phase 2
+
+=== WNIOSKI PHASE 0 ===
+  1) masy zgodne z LOCKiem; kontrast n silny (n_in(1.1) = 0.68)
+  2) tlo przygotowane deterministycznie (R_obj = 12.00)
+  3) lambda_min = -0.01523: TACHION SCIANY POTWIERDZONY rachunkiem (zgodnie z pre-rejestracja D6) — pomiar ugiecia na tle zamrozonym zagrozony; decyzja wg empirycznej klauzuli D6(c) w Phase 2
+  4) alpha_pred policzone (D7) — predykcje eikonalne zalockowane przed pomiarem

@@ -30,7 +30,9 @@ tgp_status:
   last_yaml_update: "2026-05-03"
 ---
 
-# op-omega3-axion-decay-constant
+# op-omega3-axion-decay-constant (ω.3) — ANSATZ/NUMEROLOGICAL (mark-only)
+
+> **STATUS (CP-6, 2026-06-28): przeklasyfikowane jako ANSATZ/NUMEROLOGICAL** — promocja „FULL CONVERGENCE"/„CLOSED-DERIVED" wycofana (mark-only); status cascade-conditional na rollbacku UV.2 K_struct. f_a = 3125·π²·M_GUT/1273 poprawne jako tożsamość algebraiczna (ZZ1), ale magnitudo dziedziczy PARTIAL po UV.2; interpretacja = numerologia/ansatz, NIE derywacja; sympy-LOCKi zachowane. Patrz [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §1 (S06/M02) oraz [[../../PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04" (wiersze ZZ1–ZZ6) + `AUDIT_omega3_2026-05-04`.
 
 > **Sesja 4 auto-generated README** (2026-05-03).
 > Folder nie miał wcześniej README. Treść poniżej jest minimalna —

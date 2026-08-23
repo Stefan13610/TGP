@@ -30,7 +30,9 @@ tgp_status:
   last_yaml_update: "2026-05-03"
 ---
 
-# op-uv2-mtgp-absolute-scale
+# op-uv2-mtgp-absolute-scale (UV.2) — ANSATZ/NUMEROLOGICAL (mark-only)
+
+> **STATUS (CP-6, 2026-06-28): przeklasyfikowane jako ANSATZ/NUMEROLOGICAL** — promocja „FULL CONVERGENCE"/„CLOSED-DERIVED" wycofana (mark-only). K_struct ≈ 173 to obserwacja numerologiczna post-hoc dopasowana w paśmie M_GUT, nie zastąpiona derywacją; sympy-LOCKi zachowane, ale interpretacja = numerologia/ansatz, NIE derywacja. Patrz [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §1 (S06/M02) oraz [[../../PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04" (wiersze YY1–YY6).
 
 > **Sesja 4 auto-generated README** (2026-05-03).
 > Folder nie miał wcześniej README. Treść poniżej jest minimalna —

@@ -1,0 +1,94 @@
+==============================================================================
+Phase 2: BVP spectra.  Units gamma=beta=K_geo=1. TOL_NEG=-1e-06
+==============================================================================
+
+[C2] B1 vacuum F-A (expect: all lam >= 0, edge = 1):
+  N=2000                             lam_min=+1.002740  lam_1=+1.010961  N_neg=0  [expect lam_min ~ 1]
+  N=4000                             lam_min=+1.002741  lam_1=+1.010963  N_neg=0  [expect lam_min ~ 1]
+  N=8000                             lam_min=+1.002741  lam_1=+1.010965  N_neg=0  [expect lam_min ~ 1]
+  C2 verdict: PASS (edge err 2.74e-03, N_neg=0)
+
+[C3] B2 Yukawa F-A, linear profiles A=0.01, 0.1 (l=0):
+  A=0.01 N=2000 (min psi=1.000, max psi=1.7) lam_min=-15530.736517  lam_1=+1.002751  N_neg=1
+  A=0.01 N=4000 (min psi=1.000, max psi=2.3) lam_min=-807749.018620  lam_1=+1.002750  N_neg=1
+  A=0.01 N=8000 (min psi=1.000, max psi=3.7) lam_min=-36435698.126364  lam_1=+1.002750  N_neg=1
+  A=0.10 N=2000 (min psi=1.000, max psi=7.6) lam_min=-63094151.183810  lam_1=+1.002799  N_neg=1
+  A=0.10 N=4000 (min psi=1.000, max psi=14.2) lam_min=-3624628458.207832  lam_1=+1.002735  N_neg=1
+  A=0.10 N=8000 (min psi=1.000, max psi=27.6) lam_min=-218974100923.089630  lam_1=-5093.394774  N_neg=2
+
+[C3] B2 Yukawa F-A, NONLINEAR Newton backgrounds (targets ~0.3, ~1.0):
+  S=0.9 (amp=0.075, res=1.8e-12)     lam_min=+1.002774  lam_1=+1.011095  N_neg=0
+  S=4.0 (amp=0.339, res=1.8e-12)     lam_min=+1.002853  lam_1=+1.011409  N_neg=0
+  C3 verdict: FAIL
+
+[C5] B4 vacuum F-S (dualism control; expect edge = -1):
+  N=4000                             lam_min=-0.997259  lam_1=-0.989037  N_neg=19  [expect lam_min ~ -1]
+  C5 verdict: CONFIRMED-NEGATIVE (as predicted analytically) (measured edge -0.9973)
+
+[C4/C6a] B3 solitons F-S (crown log-form, alpha=2, wall reflections):
+  g0^e  =1.24915: bounces=0, min g=0.9323 (g*=0.7788), min f(g)=0.7195, grid pts=4000
+      l=0                            lam_min=-0.997960  lam_1=-0.990502  N_neg=19
+      l=1                            lam_min=-0.994639  lam_1=-0.983894  N_neg=18
+  g0^mu =2.02117: bounces=1, min g=0.7876 (g*=0.7788), min f(g)=0.0447, grid pts=4000
+      l=0                            lam_min=-1.282161  lam_1=-1.056623  N_neg=19
+      l=1                            lam_min=-1.030902  lam_1=-0.997004  N_neg=18
+  g0^tau=3.18912: bounces=3, min g=0.7863 (g*=0.7788), min f(g)=0.0384, grid pts=4000
+      l=0                            lam_min=-4.216422  lam_1=-1.114234  N_neg=19
+      l=1                            lam_min=-1.108174  lam_1=-1.007474  N_neg=18
+
+[C4] B5 solitons F-S' (substrate alpha=1, dictionary-preferred):
+  g0^e  =1.24915: min g=0.9369 (ghost_log=0.3679 n/a for poly K), grid pts=4000
+      l=0                            lam_min=-0.997457  lam_1=-0.989467  N_neg=19
+      l=1                            lam_min=-0.994471  lam_1=-0.983575  N_neg=18
+  g0^mu =2.02117: min g=0.5215 (ghost_log=0.3679 n/a for poly K), grid pts=4000
+      l=0                            lam_min=-1.291216  lam_1=-1.012717  N_neg=18
+      l=1                            lam_min=-0.997787  lam_1=-0.990136  N_neg=18
+  g0^tau=3.18912: min g=0.1579 (ghost_log=0.3679 n/a for poly K), grid pts=199
+      l=0                            lam_min=-2.125189  lam_1=+8.509114  N_neg=1
+      l=1                            lam_min=+2.526513  lam_1=+13.702541  N_neg=0
+
+[C4] grid convergence for soliton-e (F-S, l=0):
+  N=2000                             lam_min=-0.997960  lam_1=-0.990505  N_neg=19
+  N=4000                             lam_min=-0.997960  lam_1=-0.990502  N_neg=19
+  N=8000                             lam_min=-0.997960  lam_1=-0.990501  N_neg=19
+  R=40                               lam_min=-0.995381  lam_1=-0.978573  N_neg=12
+  R=80                               lam_min=-0.998858  lam_1=-0.994671  N_neg=25
+
+==============================================================================
+SUMMARY TABLE (N_neg = modes with lambda < -1e-6, N=4000, R=60)
+  ('e', 0)       N_neg=19  lam_min=-0.99796  bounces=0
+  ('e', 1)       N_neg=18  lam_min=-0.99464  bounces=0
+  ('mu', 0)      N_neg=19  lam_min=-1.28216  bounces=1
+  ('mu', 1)      N_neg=18  lam_min=-1.03090  bounces=1
+  ('sub_e', 0)   N_neg=19  lam_min=-0.99746  bounces=0
+  ('sub_e', 1)   N_neg=18  lam_min=-0.99447  bounces=0
+  ('sub_mu', 0)  N_neg=18  lam_min=-1.29122  bounces=0
+  ('sub_mu', 1)  N_neg=18  lam_min=-0.99779  bounces=0
+  ('sub_tau', 0) N_neg=1   lam_min=-2.12519  bounces=0
+  ('sub_tau', 1) N_neg=0   lam_min=+2.52651  bounces=0
+  ('tau', 0)     N_neg=19  lam_min=-4.21642  bounces=3
+  ('tau', 1)     N_neg=18  lam_min=-1.10817  bounces=3
+==============================================================================
+(a) Yukawa F-A nonlinear, push amplitude toward 1.0:
+  S=  8.0 amp=0.657 res=1.8e-12  lam_min=+1.002909  N_neg=0
+  S= 12.0 amp=0.932 res=2.2e-12  lam_min=+1.002940  N_neg=0
+  S= 18.0 amp=1.275 res=2.7e-12  lam_min=+1.002969  N_neg=0
+
+(b) localized negative modes (lambda < -1 - 1e-3), N=4000, R=60:
+  F-S      e        l=0  N_localized=0  []
+  F-S      e        l=1  N_localized=0  []
+  F-S      mu       l=0  N_localized=2  [-1.2822, -1.0566]
+  F-S      mu       l=1  N_localized=1  [-1.0309]
+  F-S      tau      l=0  N_localized=3  [-4.2164, -1.1142, -1.0098]
+  F-S      tau      l=1  N_localized=2  [-1.1082, -1.0075]
+  F-Sp     sub_e    l=0  N_localized=0  []
+  F-Sp     sub_e    l=1  N_localized=0  []
+  F-Sp     sub_mu   l=0  N_localized=2  [-1.2912, -1.0127]
+  F-Sp     sub_mu   l=1  N_localized=0  []
+  F-Sp     sub_tau  l=0  N_localized=1  [-2.1252]
+  F-Sp     sub_tau  l=1  N_localized=0  []
+
+(c) box-count consistency (vacuum F-S): expect floor(R/pi)
+  R=40: N_neg=12, floor(R/pi)=12
+  R=60: N_neg=19, floor(R/pi)=19
+  R=80: N_neg=25, floor(R/pi)=25

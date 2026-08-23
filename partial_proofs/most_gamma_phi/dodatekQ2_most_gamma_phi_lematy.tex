@@ -365,6 +365,17 @@ $\alpha=K'\varphi/(2K)$; dla $K\propto\varphi^p$ daje $\alpha=p/2$.
 jest postulatem na g\k{e}sto\'sci $\Phi$ (kanoniczne pole), a~reprezentacja amplitudowa substratu da\l{}aby
 $\alpha=\tfrac12$ --- co potwierdza nie-derywowalno\'s\'c $\alpha=2$ z~substratu (korekta ramowania:
 \texttt{op-amplitude-density-global-audit} 2026-06-16).
+
+\medskip\noindent\textbf{Ratyfikacja FSS (2026-06-26, \#49 --- \texttt{op-CG-alpha-eff-convergence}).}
+Niezale\.zny cykl value-blind (regu\l{}a A/B/C zaplombowana \emph{przed} rachunkiem) potwierdzi\l{}
+t\k{e} korekt\k{e} \textbf{numerycznie} (finite-size scaling, $L\in\{16,24,32,40\}$, substrat
+$\varphi^4$~$\mathbb{Z}_2$ niepatologiczny) oraz \textbf{analitycznie} (sympy, chain-rule \emph{exact}):
+dla pola kanonicznego $K(\Phi)\propto\Phi^{-1}$ ($\alpha_{\rm eff}=-\tfrac12$, tj.\ $s=0$ w~konwencji
+$\alpha_{\rm density}=(s-1)/2$), a~$\alpha=2$ wymaga $s=5$. \textbf{Werdykt (B) REFUTED-SUBSTRATE}:
+substrat \emph{nie generuje} $\alpha=2$ --- niespójno\'s\'c sygnalizowana w~cyklu
+\texttt{op-CG34-continuum-closure} (\#31, ,,$\alpha=2\leftrightarrow K(\phi)$ do dopi\k{e}cia'')
+jest \textbf{potwierdzona jako realna i~rozstrzygni\k{e}ta negatywnie}; $\alpha=2$ pozostaje
+selekcj\k{a} aksjomatyczn\k{a} na g\k{e}sto\'sci (por.\ sek08 uw.~\ref{rem:alpha2-pivot-status-pl}).
 \end{uwaga}
 
 % =============================================================

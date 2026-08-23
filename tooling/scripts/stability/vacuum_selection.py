@@ -69,7 +69,15 @@ os.makedirs(PLOT_DIR, exist_ok=True)
 def rg_fixed_point_analysis():
     """
     Migdal-Kadanoff RG for Z₂ substrate on hypercubic lattice.
-    Show that β/γ → 1 at the Wilson-Fisher fixed point.
+    Show that (β/γ)_GL → 1 near the Wilson-Fisher fixed point.
+
+    NOTE (L02 disambiguation, see axioms/notacja/dodatekA_notacja.tex
+    app:A-beta-gamma-distinction): the β, γ used here are the
+    GINZBURG-LANDAU potential coefficients (β_GL, γ_GL), whose vacuum
+    ratio is (β/γ)_GL = 1 algebraically. They are NOT the Wilson-Fisher
+    CRITICAL EXPONENTS (β_WF ≈ 0.326, γ_WF ≈ 1.237, (β/γ)_WF ≈ 0.264).
+    No contradiction: GL coefficients vs critical exponents are distinct
+    objects living in different layers of the formalism.
     """
     print("=" * 70)
     print("ARGUMENT 1: RG Fixed Point (Wilson-Fisher)")

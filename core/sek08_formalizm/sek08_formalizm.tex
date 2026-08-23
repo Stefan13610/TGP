@@ -1098,6 +1098,22 @@ $\alpha=2$ jest zatem \textbf{nieredukowalnie aksjomatyczne na g\k{e}sto\'sci}, 
 tylko przez now\k{a}, nietrywialn\k{a} struktur\k{e} (interaguj\k{a}cy NGFP rodziny
 $(\hat s_i\hat s_j)^n$), bez \'scie\.zki in\.zynieryjnej. Bilans input\'ow TGP bez zmian
 ($\alpha=2$ ju\.z liczone jako selekcja C1--C3, nie nowy parametr).
+
+\medskip\noindent\textbf{Potwierdzenie numeryczne FSS (2026-06-26, \#49).}
+Cykl \texttt{research/op-CG-alpha-eff-convergence-2026-06-26} (value-blind, regu\l{}a
+A/B/C zaplombowana \emph{przed} rachunkiem) dostarczy\l{} pierwszej bezpo\'sredniej
+\emph{finite-size-scaling} weryfikacji na niepatologicznym substracie $\varphi^4$~klasy
+$\mathbb{Z}_2$ (cztery rozmiary sieci $L\in\{16,24,32,40\}$, $\langle\Phi\rangle$ stabilne):
+\textbf{werdykt (B) REFUTED-SUBSTRATE}. W~konwencji $\alpha_{\rm density}=(s-1)/2$ substrat
+kanoniczny ($s=0$, $K_{\hat s}=\mathrm{const}$) daje $\alpha_{\rm eff}=-\tfrac12$
+(chain-rule \emph{exact} $K(\Phi)\propto\Phi^{-1}$; MC $e_{\infty}=-0{,}12$, $R^2_{\rm FSS}=0{,}73$),
+a~$\alpha=2$ wymaga\l{}oby $s=5$ ($K\propto\hat s^{10}$, \#38). Cykl domyka te\.z drog\k{e}
+ucieczki przez wymiar anomalny: przesuni\k{e}cie wyk\l{}adnika potrzebne do $\alpha=2$
+odpowiada\l{}oby $\eta\sim O(5)$ (niemo\.zliwe dla unitarnego near-Gaussian, WF~3D
+$\eta\approx0{,}036$), co \emph{uzupe\l{}nia} argument RG \#39 ($\gamma\approx-5/6$). Werdykt
+\textbf{nie falsyfikuje} TGP --- \emph{ratyfikuje} status ,,nieredukowalnie aksjomatyczne
+na g\k{e}sto\'sci'' od strony numeryczno-substratowej (czwarty korzeń obok $c_0$~\#37,
+$\mathcal{A}$~\#43, $K_{\rm geo}$~\#48). Bilans input\'ow bez zmian.
 \end{remark}
 
 \begin{remark}[Rozr\'o\.znienie pola amplitudowego i~g\k{e}sto\'sci --- rozstrzygni\k{e}cie
@@ -11586,10 +11602,16 @@ nie jest \emph{ad hoc} --- jest selekcjonowany przez trzy
 niezale\.zne mechanizmy:
 \begin{enumerate}[nosep]
   \item \textbf{Punkt sta\l{}y RG (mikroskopowy):}
-    Na punkcie sta\l{}ym Wilsona--Fishera substratu $\Zp$
-    stosunek $\beta/\gamma = 1 + \mathcal{O}(\varepsilon^2)$,
-    $\varepsilon = 4-d$. Dla $d = 3$: naturalny zakres
-    $\beta/\gamma \in [0{,}8;\;1{,}2]$ bez dostrajania.
+    wsp\'o\l{}czynniki GL potencja\l{}u (formalizm $(3,4)$) maj\k{a}
+    stosunek $(\beta/\gamma)_{\rm GL} = 1 + \mathcal{O}(\varepsilon^2)$
+    w~okolicy punktu sta\l{}ego Wilsona--Fishera substratu $\Zp$
+    ($\varepsilon = 4-d$). Dla $d = 3$: naturalny zakres
+    $(\beta/\gamma)_{\rm GL} \in [0{,}8;\;1{,}2]$ bez dostrajania.
+    \textbf{Uwaga (L02):} chodzi o~\emph{wsp\'o\l{}czynniki GL}
+    $(\beta,\gamma)_{\rm GL}$ (\S\ref{app:A-beta-gamma-distinction}),
+    \textbf{nie} o~wyk\l{}adniki krytyczne WF, dla kt\'orych
+    $(\beta/\gamma)_{\rm WF}\approx0{,}264$ --- to dwa r\'o\.zne
+    obiekty, bez sprzeczno\'sci.
   \item \textbf{Atraktor kosmologiczny (makroskopowy):}
     R\'ownanie pola w~FRW z~t\l{}umieniem Hubble'a
     pcha $\psi$ ku $\psi_{\mathrm{eq}} = 7\beta/(6\gamma)$.

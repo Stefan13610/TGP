@@ -1,0 +1,72 @@
+=== Phase 2: prawo pary wirow (LOCK: Phase0_balance.md) ===
+kappa=0.5 a=0.5 b=1.6 c=1.0 dt=0.02 eps=0.3  s*=1.174166 Phi*=1.378665 xi=0.7544 J=0.6893
+predykcja: C2 = 2*pi*J = 4.3312, pasmo G4 = [3.465, 5.197]; (Y) kryterialnie m in (0.3, 2.0) (D4)
+
+--- vortex_core: profil rdzenia po relaksacji vs rownanie #1 ---
+  [GLOWNA dx=0.5] para referencyjna d=64.0: klastry n=[-1.0, 1.0] (n_tot=0)  flagi: nf=False run=False H_mono=True
+     r     |psi|_zmierzone   f_ODE(r)    roznica
+    0.75      0.39759       0.29590    +0.10169
+    1.25      0.58734       0.50463    +0.08272
+    2.25      0.91410       0.85490    +0.05919
+    3.25      1.06347       1.03946    +0.02401
+    4.25      1.12017       1.11327    +0.00690
+    6.25      1.15463       1.15402    +0.00060
+    8.25      1.16337       1.16370    -0.00034
+     |psi|(r=8.25)/s* = 0.9908 (prog: 1 +/- 0.03: True); max |roznica| vs ODE = 0.1017
+
+--- pair_static [GLOWNA dx=0.5]: relaksacja 200 krokow (D3) ---
+  d0=  6.0  d_meas(150)= 3.4784 E(150)=-705.8194   d_meas(200)= 2.8657 E(200)=-706.2646   kret=[-1.0, 1.0]  H_mono=True
+  d0=  8.0  d_meas(150)= 6.9900 E(150)=-703.9356   d_meas(200)= 6.6657 E(200)=-704.1193   kret=[-1.0, 1.0]  H_mono=True
+  d0= 12.0  d_meas(150)=11.4002 E(150)=-701.7726   d_meas(200)=11.2229 E(200)=-701.8528   kret=[-1.0, 1.0]  H_mono=True
+  d0= 16.0  d_meas(150)=15.5507 E(150)=-700.3553   d_meas(200)=15.4189 E(200)=-700.4116   kret=[-1.0, 1.0]  H_mono=True
+  d0= 24.0  d_meas(150)=23.6930 E(150)=-698.3776   d_meas(200)=23.6046 E(200)=-698.4186   kret=[-1.0, 1.0]  H_mono=True
+
+--- fit (L) vs (Y) na E(d_meas) po 200 krokach (D4) ---
+  (L) log:     C1=-710.6364  C2=3.7387  RSS=7.448e-01  AIC=-5.52
+  (Y) Yukawa (m in (0.3, 2.0)): C1=-700.3526  A=15.4091  m=0.3000  RSS=7.935e+00  AIC=+8.31
+  Delta_AIC (Y - L) = +13.83   (>= +10: wygrywa L; <= -10: wygrywa Y)
+  [czulosc D4] (Y) z m swobodnym [0.005, 3]: m=0.0607 RSS=1.335e-02 AIC=-23.63 (degeneracja m->0 zapisana z gory w D4, poza kryterium)
+  [czulosc D3] fit (L) na punktach z kroku 150: C2=3.9137 (stabilnosc transjentu: Delta C2 = +0.1751)
+
+--- pair_dynamic: d(tau), test v*d ~ const (D5), C2_dyn (D6) ---
+  d0= 12.0: tau_end=    40.4  d: 12.0 -> 2.484  frakcja krokow z dd>0: 0.0000
+           v*d (okno d in [4, 10]): mediana=1.4467 [p10=1.3589, p90=2.1812]  C2_dyn (D6, okno d in [5, 9]) = 2.7522
+  d0= 16.0: tau_end=    95.6  d: 16.0 -> 2.516  frakcja krokow z dd>0: 0.0000
+           v*d (okno d in [4, 14]): mediana=1.0935 [p10=0.9945, p90=1.5774]  C2_dyn (D6, okno d in [5, 13]) = 3.0948
+  d0= 24.0: tau_end=   283.8  d: 24.0 -> 2.555  frakcja krokow z dd>0: 0.0000
+           v*d (okno d in [4, 22]): mediana=0.8558 [p10=0.7591, p90=1.1646]  C2_dyn (D6, okno d in [5, 21]) = 3.3566
+
+--- test pinningu (D9): przesuniecie rdzeni o pol wezla ---
+  GLOWNA dx=0.5:  Delta_E_pin=1.151e-04  rozstep E(d)=7.8459  pin/rozstep=0.001%  (prog 2%)
+
+--- kontrola dx=0.25 (D9): L=64, N=256 ---
+  [KONTROLA dx=0.25] para referencyjna d=32.0: klastry n=[-1.0, 1.0] (n_tot=0)  flagi: nf=False run=False H_mono=True
+     r     |psi|_zmierzone   f_ODE(r)    roznica
+    0.75      0.34668       0.29590    +0.05078
+    1.25      0.56132       0.50463    +0.05669
+    2.25      0.89788       0.85490    +0.04297
+    3.25      1.05880       1.03946    +0.01934
+    4.25      1.11930       1.11327    +0.00603
+    6.25      1.15304       1.15402    -0.00098
+    8.25      1.16205       1.16370    -0.00166
+     |psi|(r=8.25)/s* = 0.9897 (prog: 1 +/- 0.03: True); max |roznica| vs ODE = 0.0567
+--- pair_static [KONTROLA dx=0.25]: relaksacja 200 krokow (D3) ---
+  d0=  6.0  d_meas(150)= 4.5803 E(150)=-171.2364   d_meas(200)= 4.0570 E(200)=-171.6980   kret=[-1.0, 1.0]  H_mono=True
+  d0=  8.0  d_meas(150)= 7.0838 E(150)=-169.3144   d_meas(200)= 6.7228 E(200)=-169.5099   kret=[-1.0, 1.0]  H_mono=True
+  d0= 12.0  d_meas(150)=11.3345 E(150)=-167.0575   d_meas(200)=11.2002 E(200)=-167.1463   kret=[-1.0, 1.0]  H_mono=True
+  C2_ctrl (3 punkty, raport) = 4.4826
+  Delta_E_pin=6.130e-06  rozstep E(d)=4.5517  pin/rozstep=0.000%  (prog 2%)
+  mobilnosc (d0=8): d 7.918 -> 2.683 w tau=12.2 (rdzenie ruchome: True)
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): finite/no-runaway + H_Gamma nierosnace na wszystkich runach: PASS
+G3 (istnienie i stabilnosc wirow):
+  kret zachowany po relaksacji (core/statyka/kontrola): True/True/True
+  |psi| -> s* dla r >> xi (dx=0.5 / dx=0.25): True/True
+  pinning nieistotny (D9, prog 2%): True;  rdzenie ruchome: True
+  -> PASS
+G4 (RDZEN, prawo dlugozasiegowe): Delta_AIC(Y-L)=+13.83 -> wygrywa: L
+  C2=3.7387 in [3.465, 5.197]: True (predykcja 2*pi*kappa*Phi* = 4.3312; C2/C2_pred = 0.8632)
+  -> PASS
+
+PODSUMOWANIE PHASE 2: G1(czesc)=PASS G3=PASS G4=PASS  [forma: logarytmiczna (2D Newton)]

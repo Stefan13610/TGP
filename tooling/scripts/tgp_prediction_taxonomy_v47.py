@@ -25,7 +25,7 @@ import numpy as np
 # Parameters
 # ============================================================
 Omega_Lambda = 0.6847
-Phi_0 = 36 * Omega_Lambda   # 24.65 -- calibrated from Lambda_obs
+Phi_0 = 24.783  # LOCKED (#42 ledger); prev drift 36*Omega_Lambda~24.65 (calib. Lambda_obs)
 a_Gamma = 0.040              # calibrated from r_21 (lepton sector)
 N_c = 3
 N_f = 5
@@ -211,7 +211,7 @@ add("m0(d,s,b)",
 # ============================================================
 
 add("sum(m_nu)",
-    59.6, 60.0, 30.0, "P",
+    59.01, 60.0, 30.0, "P",
     "TGP predicts ~60 meV (normal ordering). Planck+DESI gives "
     "upper bound ~72 meV. Not yet precision-testable.",
     "Planck+DESI")

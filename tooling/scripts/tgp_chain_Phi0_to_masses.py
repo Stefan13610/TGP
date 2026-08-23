@@ -54,7 +54,7 @@ ALPHA = 2.0                            # canonical coordinate (degeneracy!)
 
 # Substrate parameters
 PHI_0_S3 = 24.671                      # from kappa_obs
-PHI_0_CONSENSUS = 24.65                # working value
+PHI_0_CONSENSUS = 24.783               # LOCKED (#42 ledger); prev drift 24.65 working
 A_GAMMA = 0.040049                     # substrate scale
 RHO_0_STAR = 0.03045                   # WF fixed point (CG-2)
 C_ERG = 13.0 / 3.0                    # ERG constant: g0_e = 1 - c*rho_0*
@@ -341,7 +341,7 @@ print("=" * 72)
 # C1: Full chain with Phi_0_consensus
 # =====================================================================
 print("\n" + "=" * 72)
-print("[C1] Full ERG chain: Phi_0 = 24.65 (consensus)")
+print("[C1] Full ERG chain: Phi_0 = 24.783 (LOCKED #42)")
 print("=" * 72)
 
 res_c1 = full_chain(PHI_0_CONSENSUS)

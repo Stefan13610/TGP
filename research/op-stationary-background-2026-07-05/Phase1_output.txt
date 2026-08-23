@@ -1,0 +1,20 @@
+=== Phase 1: babel krytyczny K1 (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5 dt=0.02  R_c_pred=3.0626 pasmo=[2.450, 3.675]
+
+  R=1.0: SHRINK;  R=6.0: GROW   (oczekiwane: SHRINK / GROW)
+  R=3.5000: GROW
+  R=2.2500: SHRINK
+  R=2.8750: SHRINK
+  R=3.1875: SHRINK
+  R=3.3438: GROW
+  R=3.2656: GROW
+  R_c = 3.2266 +/- 0.0391
+
+--- lambda_min zamrozonego babla R=3.227 ---
+  lambda_min = +0.00657  (brak modu ujemnego?)
+  lokalizacja modu: <r> = 3.62 (R_c = 3.23)
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase1): flagi czyste: True
+G2 (K1): R_c=3.227 w pasmie [2.450, 3.675]: True; Delta_R<=0.25: True; lambda_min<0: False
+  -> FAIL: K1 = konfiguracja stacjonarna, ale SIODLO (mod wzrostu) -> odrzucony jako tlo (zgodnie z oczekiwaniem pre-code)

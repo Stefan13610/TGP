@@ -1,0 +1,33 @@
+=== Phase 3: symetrie tla — G6a (LOCK: sekcje 1.5/4, D11) ===
+(pre-rejestracja: rownosci DOKLADNE z konstrukcji — test implementacji, nie fizyki)
+
+tlo zrelaksowane; residuum max|RHS| = 9.648e-07
+tlo lustrzane zrelaksowane; residuum = 9.648e-07; kontrola D11: max|psi_bg_m - conj(psi_bg)| = 0.000e+00
+
+--- baseline: (omega=1.1, b=+14) — powtorka runu Phase 2 ---
+  run [baseline] b_nom=+14:
+    b_eff = 13.285  tau_wyzw = 128.0
+    probki alpha [deg]: ['+5.2415', '+5.7922', '+5.4226', '+5.5720', '+5.7000']
+    alpha = +5.55480 +/- 0.19644 deg;  E_dryft = 6.47e-16; n_tot = 0.0; flagi: brak
+
+--- wariant S1: b = -14 (odbicie osi wiazki y -> -128-y) ---
+  run [S1 b=-14] b_nom=-14:
+    b_eff = 13.785  tau_wyzw = 128.0
+    probki alpha [deg]: ['+5.2415', '+5.7922', '+5.4226', '+5.5720', '+5.7000']
+    alpha = +5.55480 +/- 0.19644 deg;  E_dryft = 6.47e-16; n_tot = 0.0; flagi: brak
+
+--- wariant S2: tlo lustrzane, b = +14 ---
+  run [S2 lustro] b_nom=+14:
+    b_eff = 13.285  tau_wyzw = 128.0
+    probki alpha [deg]: ['+5.2415', '+5.7922', '+5.4226', '+5.5720', '+5.7000']
+    alpha = +5.55480 +/- 0.19644 deg;  E_dryft = 6.47e-16; n_tot = 0.0; flagi: brak
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase3): flagi/E_dryft/kret  -> PASS
+G6a-S1: |alpha(+14) - alpha(-14)| = |+5.55480 - +5.55480| = 4.94e-11 <= 0.2777: True
+G6a-S2: |alpha(+14) - alpha(lustro,+14)| = |+5.55480 - +5.55480| = 0.00e+00 <= 0.2777: True
+  -> G6a: PASS
+
+UWAGA (pre-rejestrowana, #1.5/forbidden move #5): alpha_odd = [alpha(+14)-alpha(-14)]/2 = +2.47e-11 deg = 0 z konstrukcji tla — wlasnosc symetrii, NIE pomiar uniwersalnosci cyrkulacyjnej (pelny P2 = osobny op na tle asymetrycznym)
+
+PODSUMOWANIE PHASE 3: G6a=PASS

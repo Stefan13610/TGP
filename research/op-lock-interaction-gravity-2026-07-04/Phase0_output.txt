@@ -1,0 +1,19 @@
+=== Phase 0 check: rachunki pre-eksperyment (LOCK: Phase0_balance.md) ===
+
+s* = 1.17417, s_bar = 0.42583
+V(s*) = -0.043504  -> DeltaV = V(0)-V(s*) = 0.043504
+V''(0) = 0.5000, V''(s*) = 0.87867
+ROWNANIE #1: m0 = sqrt(V''(0)/kappa) = 1.0000  (predykcja LOCK: 1.0)
+
+OGON RADIALNY: slope ln(u*sqrt(r)) = -0.98868  (K0 => -m0 = -1.0000)
+  |slope+m0| = 0.01132 <= 0.05 : PASS
+
+ROWNANIE #3 (front planarny 1D, 30000 krokow):
+  v_planar(zmierzone)  = 0.159857
+  int f'^2 dx          = 0.270546
+  v_teoria = DeltaV/int = 0.160802   (rozn. wzgledna 0.59% <= 5%: PASS)
+  => oszacowanie v_inf ~ 0.1599; przewidywanie c ~ kappa = 0.5
+  => promien krytyczny R_c = kappa/v_inf ~ 3.13  (obiekty R_obj in {8,12,16} > R_c: OK, rosna)
+  => szacowany czas domkniecia szczeliny g0=8: tau ~ 25
+
+PODSUMOWANIE PHASE 0 CHECK: m0=PASS ogon_K0=PASS front_1D=PASS -> PASS

@@ -58,7 +58,7 @@ PHI_0_S1 = 23.313                      # S1: kosmologia (Lambda_obs)
 PHI_0_S2c = 24.783                     # S2c: norma Brannena
 PHI_0_S3 = 24.671                      # S3: kappa_obs
 PHI_0_S4 = 24.938                      # S4: DESI DR2 (a_Gamma * Phi_0 = 1.005)
-PHI_0_CONSENSUS = 24.65                # wartosc robocza
+PHI_0_CONSENSUS = 24.783               # LOCKED (#42 ledger); prev drift 24.65 robocza
 
 A_GAMMA = 0.040049                     # substrate scale
 ALPHA_K_OLD = 8.5616                   # legacy parametr (Form B)

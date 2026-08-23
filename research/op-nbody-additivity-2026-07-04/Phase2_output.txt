@@ -1,0 +1,22 @@
+=== Phase 2 (op-nbody-additivity): dynamika kooperatywnosci (LOCK) ===
+N=256 L=128.0 dx=0.5 dt=0.02 eps=0.3 g0=4.0 G_GRID=[2.0, 2.5, 3.0, 3.5]
+
+obiekt: R_act=8.0178
+kontrola: R 8.018 -> 13.703  [nf=False run=False bc=False H_mono=True]
+
+--- pary/lancuch przy g0=4 ---
+  pair(g0=4)       nosnik g=[2.651,3.219]  Dv(2.0)=--  Dv(2.5)=--  Dv(3.0)=+0.32935  Dv(3.5)=--
+  chain3(g0=4)     nosnik g=[2.651,3.219]  Dv(2.0)=--  Dv(2.5)=--  Dv(3.0)=+0.32935  Dv(3.5)=--
+
+--- OBSERWACJA (poza kryteriami): hex6(g=3) vs pair(g=3) ---
+  hex6:  g_init=2.711 -> koniec g=0.402 przy tau=2.2; tau(g<=1.5)=1.80  [nf=False run=False bc=False H_mono=True]
+  pair3: g_init=2.711 -> koniec g=0.402 przy tau=2.2; tau(g<=1.5)=1.80  [nf=False run=False bc=False H_mono=True]
+  stosunek czasow domkniecia hex/para = 1.0000 (addytywnie ~1; <1 = kooperatywne przyspieszenie)
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): finite/no-runaway + H_nierosnace: PASS
+G5 (klasyfikator; punkty wspolne g=[3.0]):
+  Dv_bar: para=+0.32935  chain3=+0.32935  ratio_coop=1.0000
+  klasyfikacja: LOKALNY (sciana-ogon, addytywny)
+
+PODSUMOWANIE PHASE 2: G1(czesc)=PASS  G5=LOKALNY (sciana-ogon, addytywny)

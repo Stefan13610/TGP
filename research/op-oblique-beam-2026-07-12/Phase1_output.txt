@@ -1,0 +1,48 @@
+=== Phase 1: BRAMKA G2 (tau=600) + kalibracja G3 na modach SKOSNYCH + background_check ===
+(LOCK proby #5: D1/D7/D8/D14/D15) N=512 L=256.0 dx=0.5 dt=0.05
+
+--- background_check: szachownica 4 wirow L=256 (kod tla BEZ ZMIAN vs proba #3) ---
+  diagnostyka szwu: max |dtheta| poza rdzeniami = 0.1244 rad << pi: True  (proba #3: 0.1244)
+  kret ansatzu: n_tot = 0; 4 rdzenie: -1#0:(+64.25,-63.75); -1#1:(-63.75,+64.25); +1#0:(-63.75,-63.75); +1#1:(+64.25,+64.25)
+  po relaksacji 2000 krokow (dt=0.02):
+    residuum max|RHS| = 9.648e-07 (proba #3: 9.648e-07)
+    pozycje rdzeni: -1#0:(+64.250,-63.750); -1#1:(-63.750,+64.250); +1#0:(-63.750,-63.750); +1#1:(+64.250,+64.250)
+    n_tot = 0; |psi| daleko od rdzeni: min = 1.1028 (s* = 1.1742)
+    determinizm bitowy relaksacji: True; H_mono: True
+
+--- BRAMKA G2: tlo bez pakietu, dynamika II rzedu, tau = 600 ---
+    (kryterium: max przemieszczenie KAZDEGO rdzenia <= 1.0 dla tau <= 450; (450,600] poza kryterium; MIERZONE, nie cytowane)
+    tau=  60.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 120.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 180.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 240.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 300.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 360.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 420.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 480.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 540.0: max przemieszczenie = 0.0000   n_tot = 0
+    tau= 600.0: max przemieszczenie = 0.0000   n_tot = 0
+    max przemieszczenie rdzenia: tau<=450: 0.0000; tau<=600: 0.0000
+    per rdzen (tau<=450): -1#0: 0.0000; -1#1: 0.0000; +1#0: 0.0000; +1#1: 0.0000
+    dryft sekularny energii (run bramki) = 0.00e+00
+    gamma_s: brak widocznej ucieczki w oknie (dmax nie osiaga 0.05 w wystarczajacej liczbie probek)
+    KONTRAST (cytowane): proba #3 (to samo tlo) — 0.0000 przez tau=600; siatka skosna proby #4 — utrata rdzeni tau=227; para — 107.5
+    -> BRAMKA G2: max przemieszczenie (tau<=450) = 0.0000 <= 1.0: True; flagi: brak  -> PASS
+
+--- G3: dyspersja na tle jednorodnym s* (D7), mody SKOSNE k = (2 pi/L)(2q, q) ---
+    q     |k|     omega_meas   omega_teor   blad%   omega_siec   H_dryft(sek.)  H_osc
+    10  0.5488     1.01429     1.01453   -0.02     1.01421    2.14e-11   3.80e-09
+    13  0.7135     1.06367     1.06451   -0.08     1.06365    7.13e-12   4.60e-09
+    20  1.0976     1.21295     1.21699   -0.33     1.21279    2.02e-11   7.78e-09
+    25  1.3720     1.34005     1.34904   -0.67     1.33981    3.91e-12   1.16e-08
+    30  1.6464     1.47793     1.49467   -1.12     1.47746    1.91e-10   1.71e-08
+    (pre-rejestracja 1.1: anizotropia (kx^4+ky^4)/k^4 = 17/25;
+     oszacowanie analityczne bledu: k0(1.1): ~-0.13%, k0(1.5): ~-1.2%)
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase1): determinizm bitowy (fala: True, relaksacja: True); brak NaN; dryft sekularny H (dyspersja) max = 1.91e-10, (bramka) = 0.00e+00 <= 0.0001; kret tla n_tot=0 i 4 rdzenie: True  -> PASS
+G2 (BRAMKA czasu zycia): max przemieszczenie (tau<=450) = 0.0000 <= 1.0  -> PASS
+G3 (kalibracja SKOSNA, pasmo [0.5,1.7]): max |blad| = 1.12% <= 5%: True  -> PASS
+
+PODSUMOWANIE PHASE 1: G1(czesc)=PASS G2=PASS G3=PASS
+BRAMKA G2 PASS -> wolno uruchomic Phase 2 (runy ugiecia)

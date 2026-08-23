@@ -1,0 +1,87 @@
+=== Phase 2: skan ugiecia na siatce (LOCK: Phase0_balance.md, D1-D6/D8-D10/D14/D16) ===
+N=256 L=128.0 dx=0.5 dt=0.05; tlo: szachownica 4 wirow; pakiet u0=1e-3 sx=sy=8, start x0=-60, y0=-32+b
+WARUNEK WSTEPNY: bramka G2 PASS (Phase1_output.txt)
+
+tlo zrelaksowane (2000 krokow dt=0.02); residuum max|RHS| = 1.622e-06
+
+--- skan glowny: omega {1.1, 1.3} x b {8, 12, 16} (KRYTERIALNE) ---
+  run [kryt] omega=1.1 b_nom=+8 u0=1.0e-03:
+    b_eff = 7.165  tau_wyzw = 96.5  okno = (-21.749996154187627, 22.249996154187784)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+8.52', '+9.04', '+8.76', '+9.26', '+9.31']
+    alpha = +9.005 +/- 0.300 deg   alpha_pred(b_eff; x_eval=-18.82) = +20.235 deg   ratio = 0.445
+    czulosc plaszczyzny (krance okna): [+19.770, +19.591] deg
+    G1: E_dryft = 1.09e-13; gamma_core(po tranzycie) = -0.02966; n_tot = 0.0; flagi: brak
+  run [kryt] omega=1.1 b_nom=+12 u0=1.0e-03:
+    b_eff = 11.321  tau_wyzw = 97.0  okno = (-21.74999625615513, 22.249996256155306)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+6.67', '+6.45', '+6.48', '+6.91', '+6.74']
+    alpha = +6.657 +/- 0.170 deg   alpha_pred(b_eff; x_eval=-18.99) = +5.602 deg   ratio = 1.188
+    czulosc plaszczyzny (krance okna): [+5.345, +6.854] deg
+    G1: E_dryft = 1.28e-13; gamma_core(po tranzycie) = -0.02682; n_tot = 0.0; flagi: brak
+  run [kryt] omega=1.1 b_nom=+16 u0=1.0e-03:
+    b_eff = 15.519  tau_wyzw = 97.5  okno = (-21.749996357809692, 22.249996357809884)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+3.68', '+3.31', '+3.59', '+3.64', '+3.61']
+    alpha = +3.565 +/- 0.132 deg   alpha_pred(b_eff; x_eval=-19.03) = +2.609 deg   ratio = 1.366
+    czulosc plaszczyzny (krance okna): [+2.461, +3.805] deg
+    G1: E_dryft = 1.04e-13; gamma_core(po tranzycie) = -0.02275; n_tot = 0.0; flagi: brak
+  run [kryt] omega=1.3 b_nom=+8 u0=1.0e-03:
+    b_eff = 7.520  tau_wyzw = 77.0  okno = (-21.749992679815353, 22.249992679815534)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+4.99', '+4.66', '+4.53', '+4.50', '+4.48']
+    alpha = +4.590 +/- 0.191 deg   alpha_pred(b_eff; x_eval=-17.92) = +6.197 deg   ratio = 0.741
+    czulosc plaszczyzny (krance okna): [+6.029, +6.445] deg
+    G1: E_dryft = 2.34e-15; gamma_core(po tranzycie) = -0.04773; n_tot = 0.0; flagi: brak
+  run [kryt] omega=1.3 b_nom=+12 u0=1.0e-03:
+    b_eff = 11.602  tau_wyzw = 77.5  okno = (-21.749992739411972, 22.24999273941217)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+3.57', '+3.24', '+2.96', '+3.04', '+3.01']
+    alpha = +3.110 +/- 0.225 deg   alpha_pred(b_eff; x_eval=-17.99) = +2.125 deg   ratio = 1.464
+    czulosc plaszczyzny (krance okna): [+2.008, +2.661] deg
+    G1: E_dryft = 1.84e-15; gamma_core(po tranzycie) = -0.04311; n_tot = 0.0; flagi: brak
+  run [kryt] omega=1.3 b_nom=+16 u0=1.0e-03:
+    b_eff = 15.685  tau_wyzw = 78.0  okno = (-21.749992801323966, 22.24999280132417)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+1.58', '+1.63', '+1.43', '+1.46', '+1.46']
+    alpha = +1.497 +/- 0.078 deg   alpha_pred(b_eff; x_eval=-17.96) = +1.045 deg   ratio = 1.432
+    czulosc plaszczyzny (krance okna): [+0.970, +1.484] deg
+    G1: E_dryft = 1.34e-14; gamma_core(po tranzycie) = -0.03704; n_tot = 0.0; flagi: brak
+
+--- G6b: liniowosc, (omega=1.1, b=8), u0 -> u0/2 ---
+  run [G6b] omega=1.1 b_nom=+8 u0=5.0e-04:
+    b_eff = 7.165  tau_wyzw = 96.5  okno = (-21.749996154187627, 22.249996154187784)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+8.52', '+9.05', '+8.76', '+9.26', '+9.31']
+    alpha = +9.005 +/- 0.300 deg   alpha_pred(b_eff; x_eval=-18.81) = +20.236 deg   ratio = 0.445
+    czulosc plaszczyzny (krance okna): [+19.770, +19.591] deg
+    G1: E_dryft = 2.70e-14; gamma_core(po tranzycie) = -0.02981; n_tot = 0.0; flagi: brak
+
+--- obserwacje POZA kryteriami ---
+  run [obs-b6] omega=1.1 b_nom=+6 u0=1.0e-03:
+    b_eff = 5.206  tau_wyzw = 95.0  okno = (-21.749995847055615, 22.2499958470558)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+8.43', '+8.25', '+8.86', '+8.74', '+8.94']
+    alpha = +8.671 +/- 0.263 deg   alpha_pred(b_eff; x_eval=-19.09) = +12.247 deg   ratio = 0.708
+    czulosc plaszczyzny (krance okna): [+12.254, +12.295] deg
+    G1: E_dryft = 9.75e-14; gamma_core(po tranzycie) = -0.03035; n_tot = 0.0; flagi: brak
+  run [obs-om1.0] omega=1.0 b_nom=+8 u0=1.0e-03:
+    b_eff = 6.366  tau_wyzw = 140.5  okno = (-21.749998327691955, 22.249998327691927)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+11.38', '+12.17', '+12.69', '+12.33', '+12.35']
+    alpha = +12.193 +/- 0.437 deg   alpha_pred(b_eff; x_eval=-20.56) = +nan deg   ratio = nan
+    czulosc plaszczyzny (krance okna): [+nan, +nan] deg
+    G1: E_dryft = 1.84e-15; gamma_core(po tranzycie) = -0.01243; n_tot = 0.0; flagi: brak
+  run [obs-superpos] omega=1.1 b_nom=+8 u0=1.0e-03:
+    b_eff = 7.165  tau_wyzw = 96.5  okno = (-21.749996154187627, 22.249996154187784)  rdzen rozpr.: (-31.75,-31.75) -> (-31.75,-31.75) (dryf 0.000)
+    probki alpha [deg]: ['+8.52', '+9.04', '+8.76', '+9.26', '+9.31']
+    alpha = +9.005 +/- 0.300 deg   alpha_pred(b_eff; x_eval=-18.82) = +20.235 deg   ratio = 0.445
+    czulosc plaszczyzny (krance okna): [+19.770, +19.591] deg
+    G1: E_dryft = 4.42e-14; gamma_core(po tranzycie) = +0.00356; n_tot = 0.0; flagi: brak
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): flagi czyste: True; E_dryft <= 1e-4: True; gamma_core <= 0.01: True; kret zachowany (n_tot=0, 4 rdzenie): True  -> PASS
+G4 (istnienie): |alpha(8,1.1)|=9.01 > 3*sigma=0.90: True; maleje z b: True; maleje z omega: True  -> PASS
+G5 (RDZEN, policzalnosc P1, geometria wielosoczewkowa): znak KU (alpha>0) ORAZ alpha/alpha_pred(b_eff) in [0.5, 2.0]:
+    omega=1.1 b= 8: alpha= +9.005 pred(b_eff=7.17)=+20.235 ratio=0.445  -> POZA
+    omega=1.1 b=12: alpha= +6.657 pred(b_eff=11.32)= +5.602 ratio=1.188  -> OK
+    omega=1.1 b=16: alpha= +3.565 pred(b_eff=15.52)= +2.609 ratio=1.366  -> OK
+    omega=1.3 b= 8: alpha= +4.590 pred(b_eff=7.52)= +6.197 ratio=0.741  -> OK
+    omega=1.3 b=12: alpha= +3.110 pred(b_eff=11.60)= +2.125 ratio=1.464  -> OK
+    omega=1.3 b=16: alpha= +1.497 pred(b_eff=15.69)= +1.045 ratio=1.432  -> OK
+  -> G5: FAIL
+G6b (liniowosc): |+9.005 - +9.005| = 0.000 <= 0.901: True  -> PASS
+
+PODSUMOWANIE PHASE 2: G1(czesc)=PASS G4=PASS G5=FAIL G6b=PASS
+(G6a — symetrie: Phase3_symmetry.py)

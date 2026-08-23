@@ -384,8 +384,8 @@ print("""
     Delta m^2_32 = 2.453e-3 eV^2
 
   With K(nu) = 1/2 (Majorana, B=√2):
-    Predicted: m_1=0.80 meV, m_2=8.65 meV, m_3=50.11 meV
-    Sum m_nu = 59.6 meV (testable by KATRIN, cosmology)
+    Predicted (illustrative pre-lock split): m_1=0.80, m_2=8.65, m_3=50.11 meV
+    Sum m_nu = 59.01 meV (LOCKED #42; testable by KATRIN, cosmology)
 
   Question: does A = a_Gamma/phi work for neutrinos too?
   Neutrinos have no confinement, so m_0 = 0 is expected.

@@ -1,0 +1,48 @@
+======================================================================
+Phase 2 - F-CGK-C2 + agregat F-CGK-D (value-blind)
+======================================================================
+
+[F-CGK-C2] bond -J (s_i s_j)^q -> sztywnosc K(s) (rozwiniecie + IBP)
+    h(s)=s^q,  h'=q*s**q/s
+    K_stiff(s) = J a^2 (h')^2 = J*a**2*q**2*s**(2*q - 2)
+    wykladnik sztywnosci e_K = 2*q - 2   (= 2(q-1))
+
+    Mapowanie stopnia bondu -> e_K -> alpha (KONWENCJA AMPLITUDOWA; phi=s):
+    e_K = 2(q-1) = 2 alpha_ampl  =>  alpha_ampl = q-1 ;  stopien bondu = 2q
+      q=1 (stopien 2): e_K=0, alpha_ampl=0, alpha_eff(gest)=-1/2  [OBECNY w eq:B-H]
+      q=2 (stopien 4): e_K=2, alpha_ampl=1, alpha_eff(gest)=1/2  [NIEOBECNY; extra aksjomat]
+      q=3 (stopien 6): e_K=4, alpha_ampl=2, alpha_eff(gest)=3/2  [NIEOBECNY; extra aksjomat]
+
+    alpha_ampl=2 (manuskrypt) wymaga q=3 => bond szesciopolowy -J (s_i s_j)^3:
+      (i)  NIEOBECNY w eq:B-H (tam bilinear, q=1).
+      (ii) wspolczynnik J' WOLNY (nowy aksjomat; nie fiksowany symetria Z2).
+      (iii) operator wysokowymiarowy => RG-irrelewantny (spojne z C1: wszystkie irrelewantne).
+    F-CGK-C2 => C-AXIOM (nawet augmentacja H_Gamma = nowy wolny aksjomat, nie derywacja)
+
+    [bonus R5] trzy alpha_ampl z trzech konstrukcji (nie jednej rodziny!):
+       * bilinear s_i s_j (eq:B-H, JEDYNY obecny): kanon w s -> alpha_eff=-1/2 (gestosc, #49)
+       * (phi_i phi_j)^2 jako ENERGIA bondu (sek08b H_Gamma): K~phi^2 -> alpha_ampl=1
+       * (phi_i phi_j)^2 jako WSPOLCZYNNIK sztywnosci na (phi_i-phi_j)^2 (manuskrypt F_kin): K~phi^4 -> alpha_ampl=2
+       => R5 = artefakt H_Gamma != F_kin + rama ampl/gest, NIE czysta rodzina 2/4/6.
+
+[F-CGK-D] AGREGAT (value-blind, z flag):
+    B  = B-REFUTED
+    C1 = all-irrelevant  (=> C-AXIOM-contribution)
+    C2 = C-AXIOM
+    regula: NON-DERIVABLE <= (B-REFUTED AND C-AXIOM)
+    => F-CGK-D = NON-DERIVABLE
+
+======================================================================
+WERDYKT op-CG-Kij-from-Hgamma:
+  F-CGK-D = NON-DERIVABLE
+  alpha=2 (K_ij=J(phi_i phi_j)^2) NIE jest wyprowadzalne z mikro H_Gamma:
+   * Gaussian CG bilinearnego bondu -> alpha_eff=-1/2 (#49, anchor potwierdzony);
+   * eta_lit<<1 -> brak ucieczki przez wymiar anomalny (B-REFUTED);
+   * caly sektor kinetyczny kompozytu Phi=eps RG-irrelewantny (C1; zgodne #39);
+   * alpha=2 wymaga szesciopolowego bondu (s_i s_j)^3: nieobecny w eq:B-H,
+     wspolczynnik wolny, irrelewantny => NOWY AKSJOMAT, nie derywacja (C2).
+  ----
+  BONUS: trzy wykladniki (R5) z trzech konstrukcji (H_Gamma != F_kin): bilinear->(-1/2 gest.),
+         (phi phi)^2-energia->(alpha=1), (phi phi)^2-sztywnosc->(alpha=2). Tylko bilinear w eq:B-H.
+  => alpha=2 RATYFIKOWANE jako nieredukowalny aksjomat (status_map l.72, HONEST_FRAMING).
+======================================================================

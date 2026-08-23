@@ -30,7 +30,9 @@ tgp_status:
   last_yaml_update: "2026-05-03"
 ---
 
-# op-chi1-newton-constant-derivation
+# op-chi1-newton-constant-derivation (χ.1) — ANSATZ/NUMEROLOGICAL (mark-only)
+
+> **STATUS (CP-6, 2026-06-28): przeklasyfikowane jako ANSATZ/NUMEROLOGICAL** — promocja „FULL CONVERGENCE"/„CLOSED-DERIVED" wycofana (mark-only). Cyrkularny anchor (G_N · M_Pl² = 1) czyni derywację G_N tautologią; sympy-LOCKi zachowane, ale interpretacja = numerologia/ansatz, NIE derywacja od pierwszych zasad. Patrz [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §1 (S06/M02) oraz [[../../PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04" (wiersze XX1–XX6).
 
 > **Sesja 4 auto-generated README** (2026-05-03).
 > Folder nie miał wcześniej README. Treść poniżej jest minimalna —

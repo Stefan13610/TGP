@@ -11,7 +11,7 @@ import numpy as np
 # Fundamental parameters
 # ============================================================
 Omega_Lambda = 0.6847
-Phi_0 = 36 * Omega_Lambda  # = 24.65
+Phi_0 = 24.783  # LOCKED (#42 ledger); prev drift 36*Omega_Lambda~24.65
 a_Gamma = 0.040
 N_c = 3
 N_f = 5
@@ -106,8 +106,8 @@ alpha_s_tube = np.sqrt(A_tgp) / C_F
 pred("alpha_s(tube) = sqrt(A)/C_F", alpha_s_tube, 0.1179, 0.0009, "", "PDG2024")
 
 # --- Neutrino sector ---
-# TGP: normal ordering, K(nu)=1/2 (Majorana), sum_mnu ~ 59.6 meV
-pred("sum(m_nu) meV", 59.6, 60.0, 30.0, "meV", "Planck+DESI")
+# TGP: normal ordering, K(nu)=1/2 (Majorana), sum_mnu ~ 59.01 meV (LOCKED #42)
+pred("sum(m_nu) meV", 59.01, 60.0, 30.0, "meV", "Planck+DESI")
 # NOTE: Standard Koide K in [1,3]. K(nu)=1/2 was claimed for Majorana see-saw
 # parameter, NOT standard Koide. Removed until formalized.
 # pred("K(nu) Majorana", 0.5, 0.5, 0.1, "", "TGP prediction")

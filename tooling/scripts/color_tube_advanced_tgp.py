@@ -290,7 +290,7 @@ print()
 # beta sets the scale of the self-interaction.
 # If we work in units where the lattice spacing a = 1, then beta ~ 1/a^2 ~ 1
 # (the self-interaction scale is the lattice scale).
-# Then m_sp ~ 1 in lattice units, and Phi_0 ~ 24.65 also in lattice units.
+# Then m_sp ~ 1 in lattice units, and Phi_0 ~ 24.783 also in lattice units.
 # The condition m_sp = sqrt(pi)*Phi_0 ~ 43.7 is NOT 1.
 # So the canonical K_geo = 1 doesn't work trivially.
 

@@ -1,0 +1,36 @@
+=== Phase 3: symetrie — G6a (LOCK proby #5: sekcja 1.2/4, D11, D16) ===
+(pre-rejestracja: testy IMPLEMENTACJI ramki skosnej; S-inv: zaokraglenia, S-conj: bitowo; NIE pomiar P2)
+
+tlo zrelaksowane; residuum max|RHS| = 9.648e-07
+tlo lustrzane zrelaksowane; residuum = 9.648e-07; kontrola D11b: max|psi_bg_m - conj(psi_bg)| = 0.000e+00
+diagnostyka D11a: max|psi_bg - I[psi_bg]| (inwersja wokol A_nom) = 2.348e+00 (ansatz z obcieciem obrazow: oczekiwane niezerowe male)
+
+--- baseline: (omega=1.1, b=+14) pakiet standardowy D2 (powtorka runu Phase 2) ---
+  run [baseline] b_nom=+14 (fwd):
+    b_eff = 13.683  tau_wyzw = 127.0
+    probki alpha [deg]: ['+4.2799', '+4.0101', '+4.5725', '+4.4052', '+4.5940']
+    alpha = +4.39129 +/- 0.21449 deg;  E_dryft = 4.85e-16; n_tot = 0.0; flagi: brak
+
+--- S-inv: (omega=1.1, b=-14) pakiet WSTECZNY D16 (-u) ---
+  run [S-inv bwd] b_nom=-14 (bwd):
+    b_eff = 13.962  tau_wyzw = 125.5
+    probki alpha [deg]: ['+4.2377', '+4.3625', '+4.2543', '+4.6995', '+4.5781']
+    alpha = +4.44750 +/- 0.18270 deg;  E_dryft = 1.13e-15; n_tot = 0.0; flagi: brak
+
+--- S-conj: tlo lustrzane (theta -> -theta), b=+14, pakiet standardowy ---
+  run [S-conj lustro] b_nom=+14 (fwd):
+    b_eff = 13.683  tau_wyzw = 127.0
+    probki alpha [deg]: ['+4.2799', '+4.0101', '+4.5725', '+4.4052', '+4.5940']
+    alpha = +4.39129 +/- 0.21449 deg;  E_dryft = 4.85e-16; n_tot = 0.0; flagi: brak
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase3): flagi/E_dryft/kret  -> PASS
+G6a-S-inv: |alpha(+14,+u) - alpha(-14,-u)| = |+4.39129 - +4.44750| = 5.62e-02 <= 0.2196: True
+G6a-S-conj: |alpha(+14) - alpha(lustro,+14)| = |+4.39129 - +4.39129| = 0.00e+00 <= 0.2196: True
+  -> G6a: PASS
+
+UWAGA (pre-rejestrowana, forbidden move #7): wynik S-inv/S-conj
+jest testem implementacji ramki skosnej i sprzezenia — NIE
+pomiarem P2 (jedyny pomiar P2 to G5b na parach +/-b, Phase 2)
+
+PODSUMOWANIE PHASE 3: G6a=PASS

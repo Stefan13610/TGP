@@ -1,0 +1,27 @@
+========================================================================
+Phase 1: exact second variation  E[u] = int (1/2)F|grad u|^2 + W(u)
+========================================================================
+  [OK] T2a: eps^2 density == (1/2)F v'^2 + F' u0' v v' + (1/2)[W'' + (1/2)F'' u0'^2] v^2
+  [OK] T2b: Q == W''(u0) - (1/2)F''(u0) u0'^2 - F'(u0)[u0'' + (2/r)u0']  (locked form) :: operator: L[v] = -(1/r^2)(r^2 F v')' + Q v
+------------------------------------------------------------------------
+F-A: F = K_geo psi^4, U_A' = K_geo gamma (psi^7 - psi^6)   [beta=gamma]
+  [OK] T1: EL(E_A) == -K_geo psi^4 * [eq:full-field(alpha=2)] :: canonical action reproduces thm:field-eq exactly
+  [OK] T3 (C1): F-A vacuum m_sp^2 = U_A''(1)/K(1) = gamma :: m_sp^2 = gamma
+  [OK] T3b: Q_A(A=0) == gamma*K_geo (vacuum limit consistency)
+------------------------------------------------------------------------
+F-S: f = 1 + 4 ln g, W' = g^2(1-g)   [crown scripts a3d/ls10, ALPHA=2]
+  [OK] T4: EL(E_S) == -[a3d ODE] :: crown soliton ODE is EL of E_S with f=1+4ln g, W'=g^2(1-g)
+  [OK] T5: F-S vacuum edge = W''(1)/f(1) = -1 (dualism L04, to be MEASURED in Phase 2) :: edge = -1
+------------------------------------------------------------------------
+F-S': F = K_geo g^2, W' = g^2(1-g)   [sek08b cor:alpha1-preferred]
+  [OK] T6: F-S' vacuum edge = -1/K_geo (same negative sign as F-S) :: edge = -1/K_geo
+  [OK] T6b: EL(E_S') == -g^2 * [dictionary ODE alpha=1]
+------------------------------------------------------------------------
+T7: F-A endpoint psi->0 (K=psi^4 degenerate): canonical variable analysis
+  [OK] T7a: chi(psi)=psi^3/3 invertible, psi(chi) smooth for chi>0
+    U(chi) = 9*3**(1/3)*K_geo*chi**(7/3)*gamma*(7*3**(1/3)*chi**(1/3) - 8)/56
+    d2U/dchi2 ~ chi^(-2/3) * (0)  as chi->0
+  [FAIL] T7b: leading curvature coefficient at chi->0 is POSITIVE (repulsive barrier) :: coeff = 0
+========================================================================
+Phase 1 result: 10 PASS, 1 FAIL
+========================================================================

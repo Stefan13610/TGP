@@ -1,0 +1,93 @@
+=== Phase 0 check: op-lattice-background (LOCK: Phase0_balance.md) ===
+
+--- 1. kanal amplitudowy: k0, v_g, lambda (rownanie #1) ---
+  s* = 1.174166  Phi* = 1.378665  V''(s*) = 0.878665
+  m_TV = 0.9374  xi^2 = 0.5690  A_t = 2.5690
+  omega=1.0:  k0 = 0.4926   lambda =  12.75   v_g = 0.2463
+  omega=1.1:  k0 = 0.8140   lambda =   7.72   v_g = 0.3700
+  omega=1.3:  k0 = 1.2738   lambda =   4.93   v_g = 0.4899
+  UWAGA dyfrakcyjna (D12): lambda(1.1)=7.72 ~ b — rezim falowy,
+  stad szerokie pasmo G5 [0.5, 2.0]
+
+--- 2. bilans sil (punktowo-wirowy, obrazy periodyczne) ---
+    F_i = sum_j q_i q_j (r_i - r_j)/|r_i - r_j|^2; powloki obrazow
+    K = max(|kx|,|ky|); suma czesciowa po kazdej powloce
+    SIATKA, wir +1 w (-32,-32): powloki centrowane na wirze
+    (sasiedzi w (64i,64j), ladunek (-1)^(i+j); powloka K = max(|i|,|j|))
+      powloka K=1: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=2: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=3: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=4: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=5: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=6: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=7: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      powloka K=8: |F_powloki| = 0.000e+00   |F_suma| = 0.000e+00
+      -> F_netto = (+0.000e+00, +0.000e+00)  (kasowanie DOKLADNE z symetrii D4, do zaokraglen)
+      (kontrola: obciecie pudelkowe K=8 daje |F| = 1.912e-05 — czlon powierzchniowy obciecia, maleje ~K^-2)
+    KONTRAST — para proby #1, wir +1 w (-32,-32):
+      po powloce K=8: F = (+1.226e-02, +1.226e-02), |F| = 1.734e-02  (!= 0)
+      pomiar proby #1 (Phase2b): przemieszczenie 14 przy tau=50,
+      anihilacja tau=107.5 — cytowane, bez powtorki
+
+--- 3. tlo: szachownica 4 wirow, ansatz 2 pary poziome, relaksacja 2000 ---
+  diagnostyka szwu (ansatz): max |dtheta| na linkach poza rdzeniami = 0.1244 rad  (oczekiwane ogony dipolowe ~0.04; wadliwy ansatz: ~pi)
+  kret ansatzu: n_tot = 0; pozycje: -1#0: (+32.25,-31.75); -1#1: (-31.75,+32.25); +1#0: (-31.75,-31.75); +1#1: (+32.25,+32.25)
+  po relaksacji 2000 krokow (dt=0.02):
+    residuum max|RHS| = 1.622e-06 (proba #1, para: 8.107e-03)
+    pozycje rdzeni: -1#0: (+32.250,-31.750); -1#1: (-31.750,+32.250); +1#0: (-31.750,-31.750); +1#1: (+32.250,+32.250)
+    n_tot = 0; max |poz - nominal| = 0.3536
+    |psi| daleko od rdzeni: min = 1.1028 (s* = 1.1742)
+
+--- 4. n^2 od rdzenia rozpraszajacego (srednia 4 kierunkow osiowych; kolumny omega 1.0/1.1/1.3) ---
+   r=  1.0:   10.8729   4.6155   2.4765   [ogon(1.1): 8.7536]
+   r=  2.0:    9.6003   4.1494   2.2862   [ogon(1.1): 2.9384]
+   r=  3.0:    5.6878   2.7167   1.7011   [ogon(1.1): 1.8615]
+   r=  4.0:    3.2513   1.8244   1.3367   [ogon(1.1): 1.4846]
+   r=  6.0:    1.7097   1.2599   1.1061   [ogon(1.1): 1.2154]
+   r=  8.0:    1.3548   1.1299   1.0531   [ogon(1.1): 1.1212]
+   r= 12.0:    1.1520   1.0557   1.0227   [ogon(1.1): 1.0538]
+   r= 16.0:    1.0867   1.0318   1.0130   [ogon(1.1): 1.0303]
+   (uwaga: siatka nie jest radialna — sasiedzi w +/-x, +/-y w odleglosci 64)
+
+--- 5. ray tracing (D6): alpha_pred(b, omega) [deg], kat czytany
+    w plaszczyznach x_eval in {-22, -12, 0, +12, +22}
+    (nominalne krance okna: x1+10 = -22, x2-10 = +22);
+    w nawiasie [orient]: tabela orientacyjna tla PARY (proba #1)
+    omega=1.0:
+      b=   6:  PRZECHWYT (r<0.6 od rdzenia)
+      b=   8:  x=-22:  +59.809  x=-12:  +62.652  x=+0:  +63.179  x=+12:  +62.398  x=+22:  +59.727
+                (srodek +63.179; rozrzut plaszczyzn 3.452 deg)  [orient para: +50.33]
+      b=  12:  x=-22:  +13.403  x=-12:  +15.418  x=+0:  +16.007  x=+12:  +15.961  x=+22:  +14.229
+                (srodek +16.007; rozrzut plaszczyzn 2.604 deg)
+      b=  16:  x=-22:   +6.300  x=-12:   +7.528  x=+0:   +8.253  x=+12:   +8.860  x=+22:  +10.054
+                (srodek +8.253; rozrzut plaszczyzn 3.753 deg)
+    omega=1.1:
+      b=   6:  x=-22:  +45.059  x=-12:  +45.807  x=+0:  +45.726  x=+12:  +45.614  x=+22:  +45.580
+                (srodek +45.726; rozrzut plaszczyzn 0.748 deg)  [orient para: +39.08]
+      b=   8:  x=-22:  +13.508  x=-12:  +14.321  x=+0:  +14.438  x=+12:  +14.320  x=+22:  +13.506
+                (srodek +14.438; rozrzut plaszczyzn 0.932 deg)  [orient para: +14.58]
+      b=  12:  x=-22:   +4.609  x=-12:   +5.190  x=+0:   +5.448  x=+12:   +5.661  x=+22:   +6.161
+                (srodek +5.448; rozrzut plaszczyzn 1.552 deg)  [orient para: +4.99]
+      b=  16:  x=-22:   +2.262  x=-12:   +2.651  x=+0:   +2.899  x=+12:   +3.139  x=+22:   +3.555
+                (srodek +2.899; rozrzut plaszczyzn 1.292 deg)  [orient para: +2.65]
+    omega=1.3:
+      b=   6:  x=-22:  +12.628  x=-12:  +12.925  x=+0:  +12.951  x=+12:  +12.891  x=+22:  +12.557
+                (srodek +12.951; rozrzut plaszczyzn 0.394 deg)
+      b=   8:  x=-22:   +5.047  x=-12:   +5.328  x=+0:   +5.409  x=+12:   +5.461  x=+22:   +5.575
+                (srodek +5.409; rozrzut plaszczyzn 0.528 deg)  [orient para: +5.81]
+      b=  12:  x=-22:   +1.845  x=-12:   +2.063  x=+0:   +2.168  x=+12:   +2.268  x=+22:   +2.487
+                (srodek +2.168; rozrzut plaszczyzn 0.642 deg)  [orient para: +2.05]
+      b=  16:  x=-22:   +0.918  x=-12:   +1.068  x=+0:   +1.166  x=+12:   +1.263  x=+22:   +1.419
+                (srodek +1.166; rozrzut plaszczyzn 0.501 deg)  [orient para: +1.09]
+
+--- 6. budzet czasu ---
+  omega=1.0: v_g=0.246; wyzwolenie ~tau=154.3; 5. probka ~tau=170.3; za 2. soczewka ~tau=414.1
+  omega=1.1: v_g=0.370; wyzwolenie ~tau=102.7; 5. probka ~tau=118.7; za 2. soczewka ~tau=275.7
+  omega=1.3: v_g=0.490; wyzwolenie ~tau= 77.6; 5. probka ~tau= 93.6; za 2. soczewka ~tau=208.2
+  bramka G2: okno tau=400, kryterium tau<=300 >= 3x przelot (~120 przy omega=1.1) — spelnia definicje 1.5
+
+=== WNIOSKI PHASE 0 ===
+  bilans sil siatki = 0 z symetrii (powloki kasuja sie do maszyn.);
+  zaklad eikonalny WIAZACY policzony na rzeczywistym tle siatki
+  wraz z czuloscia plaszczyzny ewaluacji (D6);
+  Phase 1 = bramka G2 (czas zycia) PRZED jakimkolwiek pakietem

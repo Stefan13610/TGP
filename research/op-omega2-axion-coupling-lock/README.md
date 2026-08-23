@@ -30,7 +30,9 @@ tgp_status:
   last_yaml_update: "2026-05-03"
 ---
 
-# op-omega2-axion-coupling-lock
+# op-omega2-axion-coupling-lock (ω.2) — ANSATZ/NUMEROLOGICAL (mark-only)
+
+> **STATUS (CP-6, 2026-06-28): przeklasyfikowane jako ANSATZ/NUMEROLOGICAL** — promocja „FULL CONVERGENCE"/„CLOSED-DERIVED" wycofana (mark-only); status efektywny LIVE PARTIAL. Kaskada g_axion = α_em·E_TGP/(2π) (E_TGP = 536/75) mechanicznie poprawna, ale interpretacja = numerologia/ansatz, NIE derywacja; sympy-LOCKi zachowane. Patrz [[meta/AUDYT_GLEBOKI_2026-06-28.md]] §1 (S06/M02) oraz [[../../PREDICTIONS_REGISTRY.md]] §"REVISION 2026-05-04" (wiersze WW7–WW12) + `AUDIT_omega2_2026-05-04`.
 
 > **Sesja 4 auto-generated README** (2026-05-03).
 > Folder nie miał wcześniej README. Treść poniżej jest minimalna —

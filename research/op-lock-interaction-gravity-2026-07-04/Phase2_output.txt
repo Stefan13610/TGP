@@ -1,0 +1,51 @@
+=== Phase 2: oddzialywanie pary (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5 kappa=0.5 a=0.5 b=1.6 c=1.0 dt=0.02 eps=0.3 R_obj=8.0 g0_scan=[2.0, 3.0, 4.0, 5.0, 6.0, 8.0]
+
+obiekt: cluster(0.6, D=3, K=7) -> R_act=8.0178 po tau=61.8 (H_inc_max prep=0.00e+00); H_obj=-1.985873
+
+--- pair_static: E_int(g) = H[s1+s2] - 2*H[obj] (D1: shift o pelne wezly) ---
+  g0= 2.0  centra=+/-  9.00  g_meas= 1.0102  E_int=-5.343888e-01   blad superpozycji ~e^-g = 0.3642
+  g0= 3.0  centra=+/-  9.50  g_meas= 2.7107  E_int=-2.172158e-01   blad superpozycji ~e^-g = 0.0665
+  g0= 4.0  centra=+/- 10.00  g_meas= 3.8864  E_int=-8.164006e-02   blad superpozycji ~e^-g = 0.0205
+  g0= 5.0  centra=+/- 10.50  g_meas= 4.9395  E_int=-2.950600e-02   blad superpozycji ~e^-g = 0.0072
+  g0= 6.0  centra=+/- 11.00  g_meas= 5.9563  E_int=-1.046542e-02   blad superpozycji ~e^-g = 0.0026
+  g0= 8.0  centra=+/- 12.00  g_meas= 7.9635  E_int=-1.286240e-03   blad superpozycji ~e^-g = 0.0003
+
+--- fit (Y) vs (P) na E_int(g_meas), log-przestrzen (D2) ---
+  (Y) Yukawa:  E = -A*exp(-m*g):  A=1.93959  m=0.8831  R^2(log)=0.983880  AIC=-12.50
+  (P) potega:  E = -B*g^(-p):     B=1.31656  p=2.6911  R^2(log)=0.816330  AIC=+2.10
+  Delta_AIC (P - Y) = +14.60   (>= +10: wygrywa Y;  <= -10: wygrywa P)
+  [czulosc, bez g_meas<2] (Y): A=3.50097 m=0.9835 R^2=0.997973   (P): p=4.7032 R^2=0.953871   Delta_AIC(P-Y)=+15.62
+
+--- pair_dynamic: kontrola D4 (ten sam snapshot, pojedynczy) ---
+  kontrola: 401 rekordow, R: 8.018 -> 17.539, flagi: nf=False run=False bc=False H_mono=True
+
+  pair(g0=2.0): g_init= 1.010 -> g_end= 0.224 (tau_end=   0.2, 2 rek.)  nf=False run=False bc=False H_mono=True
+  pair(g0=3.0): g_init= 2.711 -> g_end= 0.402 (tau_end=   2.2, 12 rek.)  nf=False run=False bc=False H_mono=True
+  pair(g0=4.0): g_init= 3.886 -> g_end= 0.461 (tau_end=   5.2, 27 rek.)  nf=False run=False bc=False H_mono=True
+  pair(g0=5.0): g_init= 4.940 -> g_end= 0.936 (tau_end=   9.0, 46 rek.)  nf=False run=False bc=False H_mono=True
+  pair(g0=6.0): g_init= 5.956 -> g_end= 0.179 (tau_end=  13.6, 69 rek.)  nf=False run=False bc=False H_mono=True
+  pair(g0=8.0): g_init= 7.964 -> g_end= 0.418 (tau_end=  22.6, 114 rek.)  nf=False run=False bc=False H_mono=True
+
+--- Delta_v(g) [interpolacja; kolumny = g] ---
+  run        g=1.5      g=2.0      g=2.5      g=3.0      g=3.5      g=4.0      g=5.0      g=6.0      g=7.0    
+  g0=4.0          --        --        --   +0.32935        --        --        --        --        --
+  g0=5.0          --        --        --   +0.31903   +0.17145   +0.10101        --        --        --
+  g0=6.0          --        --        --   +0.32306   +0.17217   +0.10209   +0.03370        --        --
+  g0=8.0          --        --        --   +0.33302   +0.17475   +0.10133   +0.03328   +0.01089   +0.00358
+
+--- fit informacyjny na Delta_v(g), run g0=8 (poza kryterium G4) ---
+  (Y): m_dyn=1.1472 R^2=0.9924   (P): p_dyn=5.3913 R^2=0.9807   Delta_AIC(P-Y)=+74.59
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): finite/no-runaway + H_nierosnace na wszystkich runach: PASS
+G3 (istnienie oddzialywania):
+  E_int < 0 dla wszystkich g: True;  |E_int| malejace z g: True
+  dynamika (run g0=6, brzmienie LOCKa): punktow z g<=4: 17, wszystkie Delta_v > 0: True, min pokryte g = 2.621
+  informacyjnie, interpolacje w [2.0, 3.0, 4.0]: {2.0: 'poza nosnikiem', 3.0: '+0.32306', 4.0: '+0.10209'}
+  -> PASS
+G4 (RDZEN, prawo algebraiczne): Delta_AIC=+14.60 -> wygrywa: Y
+  m_fit=0.8831 in [0.8, 1.2]: True  (predykcja substratu m0=1.0, rownanie #1)
+  -> PASS
+
+PODSUMOWANIE PHASE 2: G1(czesc)=PASS G3=PASS G4=PASS  [forma: Yukawa]

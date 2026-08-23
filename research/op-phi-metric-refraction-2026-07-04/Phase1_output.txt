@@ -1,0 +1,24 @@
+=== Phase 1: kalibracja dyspersji (LOCK: Phase0_balance.md, D5) ===
+N=256 L=128.0 dx=0.5 kappa=0.5 dt=0.05 okno tau=100.0
+
+--- tlo FV: V'' = 0.50000 (m = 0.7071) ---
+    m     k       omega_meas   omega_teor   blad%   omega_siec   H_dryft(sek.)  H_osc
+    10  0.4909     0.78738     0.78770   -0.04     0.78732    4.37e-06   3.87e-04
+    15  0.7363     0.87642     0.87811   -0.19     0.87637    1.30e-08   4.80e-04
+    20  0.9817     0.98617     0.99092   -0.48     0.98606    1.17e-05   6.08e-04
+    25  1.2272     1.10903     1.11937   -0.92     1.10890    1.49e-05   7.67e-04
+    30  1.4726     1.23957     1.25869   -1.52     1.23943    1.22e-05   9.60e-04
+
+--- tlo TV: V'' = 0.87867 (m = 0.9374) ---
+    m     k       omega_meas   omega_teor   blad%   omega_siec   H_dryft(sek.)  H_osc
+    10  0.4909     0.99938     0.99957   -0.02     0.99927    3.20e-07   6.24e-04
+    15  0.7363     1.07099     1.07226   -0.12     1.07084    1.79e-05   7.16e-04
+    20  0.9817     1.16243     1.16644   -0.34     1.16232    6.99e-06   8.44e-04
+    25  1.2272     1.26844     1.27736   -0.70     1.26820    7.56e-06   1.01e-03
+    30  1.4726     1.38412     1.40106   -1.21     1.38378    1.45e-07   1.20e-03
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase1): determinizm bitowy: True; brak NaN; max dryft sekularny H_u = 1.79e-05 <= 0.0001: True (oscylacja leapfrog O((dt*omega)^2) raportowana, poza kryterium; D4)  -> PASS
+G2 (kalibracja dyspersji): max |blad| = 1.52% <= 5%: True  -> PASS
+
+PODSUMOWANIE PHASE 1: G1(czesc)=PASS G2=PASS

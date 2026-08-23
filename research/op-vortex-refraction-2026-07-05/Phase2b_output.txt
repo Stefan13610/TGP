@@ -1,0 +1,38 @@
+=== Phase 2b: diagnostyka czasu zycia tla (przed interpretacja) ===
+
+tlo zrelaksowane (identycznie jak Phase 2)
+
+--- (1) para pod pelna dynamika II rzedu: separacja(tau) ---
+   tau=  10.0: rdzen+1 = ( -30.43, -30.43)  separacja =   86.79
+   tau=  20.0: rdzen+1 = ( -28.83, -28.83)  separacja =   82.24
+   tau=  30.0: rdzen+1 = ( -26.63, -26.63)  separacja =   76.03
+   tau=  40.0: rdzen+1 = ( -24.00, -24.00)  separacja =   68.59
+   tau=  50.0: rdzen+1 = ( -21.03, -21.03)  separacja =   60.19
+   tau=  60.0: rdzen+1 = ( -17.78, -17.78)  separacja =   50.99
+   tau=  70.0: rdzen+1 = ( -14.30, -14.30)  separacja =   41.14
+   tau=  80.0: rdzen+1 = ( -10.61, -10.61)  separacja =   30.72
+   tau=  90.0: rdzen+1 = (  -6.75,  -6.75)  separacja =   19.79
+   tau= 100.0: rdzen+1 = (  -2.63,  -2.63)  separacja =    8.15
+   ANIHILACJA PARY: tau = 107.5 (brak windingu w polu)
+   przemieszczenie rdzenia +1: tau=50: 14.13; tau=100: 40.15; tau=150: 44.23
+   (budzet #1.4 zakladal ~3 na przelot tau~200 — SFALSYFIKOWANY;
+    dynamika II rzedu jest bezdyssypacyjna: sila akumuluje predkosc)
+
+--- (2) kontrola integratora: przemieszczenie rdzenia +1 do tau=100 ---
+   dt=0.05: rdzen+1(tau=100) = ( -2.611, -2.611)
+   dt=0.025: rdzen+1(tau=100) = ( -2.616, -2.616)
+   roznica pozycji = 0.0074 -> kolaps NIE jest artefaktem kroku czasowego
+
+--- (3) OBSERWACJA POZA KRYTERIAMI: kierunek ugiecia, okno STALE ---
+    (omega=1.1, b=8; okno x > x_rdzen(0)+10, wyzwolenie: centroid;
+     tlo KOLABUJE — wynik ma status wylacznie klasyfikatora znaku)
+    tau probek: 100.0..116.0; b_eff(do wyzwolenia) = 17.13
+    alpha_surowe (srednia wektorowa) = +0.43 deg; probki: ['+0.5', '+0.5', '+0.4', '+0.4', '+0.4']
+    KIERUNEK: nierozstrzygniete (KU = P_y < 0 dla b>0)
+    UWAGA: wielkosc NIEINTERPRETOWALNA (soczewka w ruchu ~0.2-0.3 vs v_g=0.37)
+
+=== WNIOSKI DIAGNOSTYKI ===
+  kolaps pary pod dynamika II rzedu jest FIZYCZNY (nie artefakt dt);
+  budzet dryfu #1.4 (3 jedn.) sfalsyfikowany -> runy kryterialne
+  Phase 2 niewazne z przyczyny strukturalnej (D9: brak 5 probek);
+  szczegolowa regula decyzyjna: Phase_FINAL_close.md

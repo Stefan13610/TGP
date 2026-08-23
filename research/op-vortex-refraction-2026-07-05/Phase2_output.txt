@@ -1,0 +1,61 @@
+=== Phase 2: skan ugiecia (LOCK: Phase0_balance.md, D1-D10) ===
+N=256 L=128.0 dx=0.5 dt=0.05; tlo: para (+1,-1); pakiet u0=1e-3 sx=sy=8, start x0=-60, y0=-32+b
+
+tlo zrelaksowane (2000 krokow dt=0.02); residuum max|RHS| = 8.107e-03
+
+--- skan glowny: omega {1.1, 1.3} x b {8, 12, 16} (KRYTERIALNE) ---
+  run [kryt] omega=1.1 b_nom=+8 u0=1.0e-03:
+    b_eff = 17.126  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.281 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.03087; n_tot = 0; flagi: ['no5', 'core_lost']
+  run [kryt] omega=1.1 b_nom=+12 u0=1.0e-03:
+    b_eff = 16.853  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.365 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.03143; n_tot = 0; flagi: ['no5', 'core_lost']
+  run [kryt] omega=1.1 b_nom=+16 u0=1.0e-03:
+    b_eff = 16.775  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.389 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.02405; n_tot = 0; flagi: ['no5', 'core_lost']
+  run [kryt] omega=1.3 b_nom=+8 u0=1.0e-03:
+    b_eff = 13.255  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +1.647 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.04015; n_tot = 0; flagi: ['no5', 'core_lost']
+  run [kryt] omega=1.3 b_nom=+12 u0=1.0e-03:
+    b_eff = 11.936  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.080 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.02864; n_tot = 0; flagi: ['no5', 'core_lost']
+  run [kryt] omega=1.3 b_nom=+16 u0=1.0e-03:
+    b_eff = 10.877  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.576 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.01284; n_tot = 0; flagi: ['no5', 'core_lost']
+
+--- G6: liniowosc, (omega=1.1, b=8), u0 -> u0/2 ---
+  run [G6] omega=1.1 b_nom=+8 u0=5.0e-04:
+    b_eff = 17.122  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.282 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.03075; n_tot = 0; flagi: ['no5', 'core_lost']
+
+--- obserwacje POZA kryteriami: b=6 (silne pole), omega=1.0 ---
+  run [obs-b6] omega=1.1 b_nom=+6 u0=1.0e-03:
+    b_eff = 17.385  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +2.207 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.02820; n_tot = 0; flagi: ['no5', 'core_lost']
+  run [obs-om1.0] omega=1.0 b_nom=+8 u0=1.0e-03:
+    b_eff = 21.129  tau_wyzw = None  rdzen: (-31.06,-31.06) -> (0.25,0.25) (dryf 44.28)
+    alpha = +nan +/- nan deg   alpha_pred(b_eff) = +3.784 deg   alpha/alpha_pred = nan
+    G1: E_dryft = 1.51e-07; gamma_core(po tranzycie) = +nan, (2. polowa) = -0.01687; n_tot = 0; flagi: ['no5', 'core_lost']
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase2): flagi czyste: False; E_dryft <= 1e-4: True; gamma_core <= 0.01: False; kret zachowany: True  -> FAIL
+G3 (istnienie): |alpha(8,1.1)|=nan > 3*sigma=nan: False; maleje z b: False; maleje z omega: False  -> FAIL
+G4 (RDZEN, policzalnosc): znak KU (alpha>0) ORAZ alpha/alpha_pred(b_eff) in [0.5, 2.0]:
+    omega=1.1 b= 8: alpha=   +nan pred(b_eff=17.13)= +2.281 ratio=  nan  -> POZA
+    omega=1.1 b=12: alpha=   +nan pred(b_eff=16.85)= +2.365 ratio=  nan  -> POZA
+    omega=1.1 b=16: alpha=   +nan pred(b_eff=16.78)= +2.389 ratio=  nan  -> POZA
+    omega=1.3 b= 8: alpha=   +nan pred(b_eff=13.25)= +1.647 ratio=  nan  -> POZA
+    omega=1.3 b=12: alpha=   +nan pred(b_eff=11.94)= +2.080 ratio=  nan  -> POZA
+    omega=1.3 b=16: alpha=   +nan pred(b_eff=10.88)= +2.576 ratio=  nan  -> POZA
+  -> G4: FAIL
+G6 (liniowosc): |+nan - +nan| = nan <= nan: False  -> FAIL
+
+PODSUMOWANIE PHASE 2: G1(czesc)=FAIL G3=FAIL G4=FAIL G6=FAIL

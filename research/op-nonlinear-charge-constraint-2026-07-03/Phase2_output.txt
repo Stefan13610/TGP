@@ -1,0 +1,471 @@
+==============================================================================
+Phase 2: Q-ball family (M1, model-extension) + VK.  LOCK: Phase0 sec.3.
+Wall: hard (reflection g*+0.005) baseline; cross-check f_eps 0.2/0.1.
+omega grid: [0,1] step 0.05 (full).  N in {2000,4000,8000}, R=60.
+Localized: lam < edge_+(omega) - 1e-3 [L+], lam < -1e-3 [L-].
+==============================================================================
+
+[A] omega-vacuum and continuum edges (hard-wall kinetic f):
+    omega  phi_inf     f(phi_inf)  edge(L+)     k_tail    status
+    0.00   1.000000    1.000000    -1.000000    1.0000    
+    0.05   0.992519    0.969964    -1.018254    1.0091    
+    0.10   0.970324    0.879500    -1.083268    1.0408    
+    0.15   0.934300    0.728168    -1.238083    1.1127    
+    0.20   0.886388    0.517600    -1.632497    1.2777    
+    0.25   0.830190    0.255596    -3.123055    1.7672    
+    0.30   0.771181    -0.039326   19.789769    n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.35   0.715589    -0.338600   2.358378     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.40   0.667996    -0.613892   1.408133     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.45   0.629902    -0.848763   1.147141     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.50   0.600442    -1.040355   1.077152     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.55   0.577874    -1.193601   1.089143     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.60   0.560497    -1.315722   1.146000     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.65   0.546962    -1.413504   1.231955     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.70   0.536269    -1.492480   1.339314     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.75   0.527699    -1.556919   1.463938     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.80   0.520736    -1.610047   1.603429     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.85   0.515008    -1.654291   1.756316     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.90   0.510241    -1.691488   1.921652     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    0.95   0.506233    -1.723035   2.098803     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    1.00   0.502831    -1.750008   2.287330     n/a       GHOSTED (f(phi_inf)<0 / vacuum below wall)
+    edge(L-) = 0 dla kazdego omega (exact, Phase1).
+
+[B] P2a: branches phi_omega (hard wall, N=4000, R=60):
+  [e]  g0 = 1.24915 (FIXED, zero re-fitting)
+    omega  bounces  min g     filled    A_tail(k)    uwagi
+    0.00   0        0.9323    True      0.298821     
+    0.05   0        0.9219    True      0.308301       sup|phi_0.05-phi_0|=0.0109
+    0.10   0        0.8906    True      0.336334     
+    0.15   0        0.8370    True      0.376564     
+    0.20   1        0.7856    True      0.380590     
+    0.25   3        0.7843    True      0.465088     
+    0.30   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.35   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.40   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.45   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.50   29       0.7840    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.55   29       0.7842    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.60   29       0.7840    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.65   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.70   29       0.7840    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.75   29       0.7844    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.80   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.85   29       0.7841    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.90   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.95   29       0.7843    False     n/a          INCOMPLETE (bounce cap / collapse)
+    1.00   29       0.7847    False     n/a          INCOMPLETE (bounce cap / collapse)
+  [mu]  g0 = 2.02117 (FIXED, zero re-fitting)
+    omega  bounces  min g     filled    A_tail(k)    uwagi
+    0.00   1        0.7876    True      1.133081     
+    0.05   1        0.7843    True      1.153169       sup|phi_0.05-phi_0|=0.0307
+    0.10   1        0.7894    True      1.183562     
+    0.15   2        0.7860    True      1.237100     
+    0.20   4        0.7839    True      1.342966     
+    0.25   13       0.7841    True      0.103778     
+    0.30   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.35   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.40   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.45   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.50   29       0.7840    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.55   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.60   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.65   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.70   29       0.7840    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.75   29       0.7841    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.80   29       0.7841    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.85   29       0.7848    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.90   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.95   29       0.7851    False     n/a          INCOMPLETE (bounce cap / collapse)
+    1.00   29       0.7842    False     n/a          INCOMPLETE (bounce cap / collapse)
+  [tau]  g0 = 3.18912 (FIXED, zero re-fitting)
+    omega  bounces  min g     filled    A_tail(k)    uwagi
+    0.00   3        0.7863    True      2.295062     
+    0.05   3        0.7893    True      2.308703       sup|phi_0.05-phi_0|=0.0604
+    0.10   4        0.7840    True      2.398724     
+    0.15   5        0.7848    True      2.376487     
+    0.20   8        0.7849    True      1.015719     
+    0.25   21       0.7847    True      0.415231     
+    0.30   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.35   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.40   29       0.7839    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.45   29       0.7840    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.50   29       0.7841    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.55   29       0.7845    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.60   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.65   29       0.7848    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.70   29       0.7846    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.75   29       0.7841    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.80   29       0.7838    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.85   29       0.7854    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.90   29       0.7848    False     n/a          INCOMPLETE (bounce cap / collapse)
+    0.95   29       0.7854    False     n/a          INCOMPLETE (bounce cap / collapse)
+    1.00   29       0.7851    False     n/a          INCOMPLETE (bounce cap / collapse)
+
+[C] P2b: Q(omega), E(omega) [pudlo R=60; raw + vacuum-subtracted
+    wg konwencji LOCKED w Phase1/P1c], znak dQ_sol/domega:
+  [e]
+    omega  Q_raw         Q_sol         E_raw         E_sol         dQsol/dom   VK(dQ<0?)
+    0.00   0             0             6000          0.015153      nan         -
+    0.05   3444.3        4.4357        6084.2        0.24624       -73.46      TAK
+    0.10   5954.8        -7.3462       6266.9        -0.74701      116.9       nie
+    0.15   6880.9        16.129        6375.2        2.4559        358.9       nie
+    0.20   5884.6        28.542        6194.1        5.7314        592.4       nie
+    0.25   3246.3        75.373        5597.3        18.942        nan         -
+    0.30   nan           nan           nan           nan           nan         -
+    0.35   nan           nan           nan           nan           nan         -
+    0.40   nan           nan           nan           nan           nan         -
+    0.45   nan           nan           nan           nan           nan         -
+    0.50   nan           nan           nan           nan           nan         -
+    0.55   nan           nan           nan           nan           nan         -
+    0.60   nan           nan           nan           nan           nan         -
+    0.65   nan           nan           nan           nan           nan         -
+    0.70   nan           nan           nan           nan           nan         -
+    0.75   nan           nan           nan           nan           nan         -
+    0.80   nan           nan           nan           nan           nan         -
+    0.85   nan           nan           nan           nan           nan         -
+    0.90   nan           nan           nan           nan           nan         -
+    0.95   nan           nan           nan           nan           nan         -
+    1.00   nan           nan           nan           nan           nan         -
+    diagnostyka dE/domega = omega dQ/domega: mediana ratio = 1.641 (odchylenia = czlony brzegowe pudla/odbic; nie-kryterium)
+  [mu]
+    omega  Q_raw         Q_sol         E_raw         E_sol         dQsol/dom   VK(dQ<0?)
+    0.00   0             -0            6001          1.0151        nan         -
+    0.05   3443.4        3.6078        6085.4        1.4246        807.3       nie
+    0.10   6042.9        80.733        6276.8        9.1857        1326        nie
+    0.15   7001          136.2         6394.2        21.492        1982        nie
+    0.20   6135          278.94        6245.8        57.493        7884        nie
+    0.25   4095.5        924.56        5813.4        235.01        nan         -
+    0.30   nan           nan           nan           nan           nan         -
+    0.35   nan           nan           nan           nan           nan         -
+    0.40   nan           nan           nan           nan           nan         -
+    0.45   nan           nan           nan           nan           nan         -
+    0.50   nan           nan           nan           nan           nan         -
+    0.55   nan           nan           nan           nan           nan         -
+    0.60   nan           nan           nan           nan           nan         -
+    0.65   nan           nan           nan           nan           nan         -
+    0.70   nan           nan           nan           nan           nan         -
+    0.75   nan           nan           nan           nan           nan         -
+    0.80   nan           nan           nan           nan           nan         -
+    0.85   nan           nan           nan           nan           nan         -
+    0.90   nan           nan           nan           nan           nan         -
+    0.95   nan           nan           nan           nan           nan         -
+    1.00   nan           nan           nan           nan           nan         -
+    diagnostyka dE/domega = omega dQ/domega: mediana ratio = 1.569 (odchylenia = czlony brzegowe pudla/odbic; nie-kryterium)
+  [tau]
+    omega  Q_raw         Q_sol         E_raw         E_sol         dQsol/dom   VK(dQ<0?)
+    0.00   0             0             6007.9        7.8681        nan         -
+    0.05   3483.6        43.801        6095.9        11.866        2862        nie
+    0.10   6248.3        286.2         6306.7        39.101        5077        nie
+    0.15   7416.3        551.54        6468.7        95.985        7107        nie
+    0.20   6852.9        996.89        6404.3        215.94        3.149e+04   nie
+    0.25   6871.1        3700.2        6519.4        941.08        nan         -
+    0.30   nan           nan           nan           nan           nan         -
+    0.35   nan           nan           nan           nan           nan         -
+    0.40   nan           nan           nan           nan           nan         -
+    0.45   nan           nan           nan           nan           nan         -
+    0.50   nan           nan           nan           nan           nan         -
+    0.55   nan           nan           nan           nan           nan         -
+    0.60   nan           nan           nan           nan           nan         -
+    0.65   nan           nan           nan           nan           nan         -
+    0.70   nan           nan           nan           nan           nan         -
+    0.75   nan           nan           nan           nan           nan         -
+    0.80   nan           nan           nan           nan           nan         -
+    0.85   nan           nan           nan           nan           nan         -
+    0.90   nan           nan           nan           nan           nan         -
+    0.95   nan           nan           nan           nan           nan         -
+    1.00   nan           nan           nan           nan           nan         -
+    diagnostyka dE/domega = omega dQ/domega: mediana ratio = 1.658 (odchylenia = czlony brzegowe pudla/odbic; nie-kryterium)
+
+[D] P2c: spektra L+/L- wokol phi_omega; N_loc z deflacja
+    kierunku ladunkowego (dQ/dphi ~ f'phi^2+2f phi) i rodziny
+    (dphi/domega); zbieznosc N in {2000,4000,8000}.
+    Dla omega z GHOSTED tlem: krawedz nieokreslona -> raport
+    surowego lambda_min, N_loc oznaczone 'n/o' (per LOCK V2 note).
+  [e]
+    omega  N/k  loc(L+) [lam<edge-1e-3]      lam_min(L-) Nc(chg)  Nc(c+f)  phase-mode   uwagi
+    0.00   2000 0: []                        0.0027     0        -        0.7791       
+    0.00   4000 0: []                        0.0027     0        -        0.7790       
+    0.00   8000 0: []                        0.0027     0        -        0.7789       
+    0.05   2000 0: []                        0.0027     0        -        0.7793       
+    0.05   4000 0: []                        0.0027     0        0        0.7792       
+    0.05   8000 0: []                        0.0027     0        -        0.7791       
+    0.10   2000 0: []                        0.0024     0        -        0.7806       
+    0.10   4000 0: []                        0.0024     0        0        0.7805       
+    0.10   8000 0: []                        0.0024     0        -        0.7804       
+    0.15   2000 0: []                        0.0020     0        -        0.7789       
+    0.15   4000 0: []                        0.0020     0        0        0.7788       
+    0.15   8000 0: []                        0.0020     0        -        0.7787       
+    0.20   2000 0: []                        0.0014     0        -        0.7735       
+    0.20   4000 0: []                        0.0014     0        0        0.7736       
+    0.20   8000 0: []                        0.0014     0        -        0.7736       
+    0.25   2000 0: []                        -0.0008    0        -        0.7642       
+    0.25   4000 0: []                        -0.0007    0        0        0.7574       
+    0.25   8000 0: []                        -0.0006    0        -        0.7500       
+    0.30   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.30   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.30   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   8000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   2000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   4000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   8000 PROFIL NIEKOMPLETNY -- pomijam
+  [mu]
+    omega  N/k  loc(L+) [lam<edge-1e-3]      lam_min(L-) Nc(chg)  Nc(c+f)  phase-mode   uwagi
+    0.00   2000 2: ['-1.2838', '-1.0567']    0.0025     2        -        0.7604       
+    0.00   4000 2: ['-1.2822', '-1.0566']    0.0026     2        -        0.7693       
+    0.00   8000 2: ['-1.2819', '-1.0566']    0.0025     2        -        0.7672       
+    0.05   2000 2: ['-1.2631', '-1.1050']    0.0024     2        -        0.7581       
+    0.05   4000 2: ['-1.2607', '-1.1049']    0.0026     2        2        0.7752       
+    0.05   8000 2: ['-1.2618', '-1.1050']    0.0024     2        -        0.7620       
+    0.10   2000 2: ['-3.3615', '-1.1987']    0.0022     2        -        0.7542       
+    0.10   4000 2: ['-3.3532', '-1.2007']    0.0021     2        2        0.7339       
+    0.10   8000 2: ['-3.3512', '-1.1993']    0.0022     2        -        0.7578       
+    0.15   2000 0: []                        0.0006     0        -        0.6132       
+    0.15   4000 0: []                        0.0014     0        0        0.6944       
+    0.15   8000 0: []                        0.0007     0        -        0.5947       
+    0.20   2000 0: []                        -0.0027    0        -        0.7744       
+    0.20   4000 0: []                        -0.0040    0        0        0.7884       
+    0.20   8000 0: []                        -0.0052    0        -        0.7963       
+    0.25   2000 0: []                        -0.0174    0        -        0.6364       
+    0.25   4000 0: []                        -0.0132    0        0        0.6325       
+    0.25   8000 0: []                        -0.0141    0        -        0.6356       
+    0.30   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.30   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.30   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   8000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   2000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   4000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   8000 PROFIL NIEKOMPLETNY -- pomijam
+  [tau]
+    omega  N/k  loc(L+) [lam<edge-1e-3]      lam_min(L-) Nc(chg)  Nc(c+f)  phase-mode   uwagi
+    0.00   2000 3: ['-4.2186', '-1.1143', '-1.0098'] -0.0098    2        -        0.8055       
+    0.00   4000 3: ['-4.2164', '-1.1142', '-1.0098'] -0.0093    2        -        0.8046       
+    0.00   8000 3: ['-4.2146', '-1.1142', '-1.0098'] -0.0025    2        -        0.7604       
+    0.05   2000 2: ['-4.2026', '-1.2462']    -0.0166    2        -        0.8126       
+    0.05   4000 2: ['-4.2007', '-1.2461']    -0.0056    2        2        0.7933       
+    0.05   8000 2: ['-4.2023', '-1.2461']    -0.0062    2        -        0.7966       
+    0.10   2000 1: ['-4.1669']               -0.0198    1        -        0.7973       
+    0.10   4000 1: ['-4.1649']               -0.0084    1        1        0.7891       
+    0.10   8000 1: ['-4.1639']               -0.0113    1        -        0.7935       
+    0.15   2000 2: ['-4.0977', '-1.3085']    -0.0199    2        -        0.7899       
+    0.15   4000 2: ['-4.0985', '-1.3083']    -0.0036    2        2        0.7500       
+    0.15   8000 2: ['-4.0989', '-1.3082']    -0.0148    2        -        0.7880       
+    0.20   2000 2: ['-4.0125', '-3.6415']    -0.0225    2        -        0.6687       
+    0.20   4000 2: ['-4.0100', '-3.6260']    -0.0260    2        2        0.6887       
+    0.20   8000 2: ['-4.0086', '-3.6220']    -0.0157    2        -        0.6244       
+    0.25   2000 1: ['-3.8956']               -0.0438    1        -        0.6086       
+    0.25   4000 1: ['-3.8926']               -0.0332    1        1        0.5991       
+    0.25   8000 1: ['-3.8909']               -0.0217    1        -        0.6249       
+    0.30   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.30   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.30   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.35   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.40   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.45   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.50   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.55   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.60   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.65   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.70   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.75   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.80   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.85   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.90   8000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   2000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   4000 PROFIL NIEKOMPLETNY -- pomijam
+    0.95   8000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   2000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   4000 PROFIL NIEKOMPLETNY -- pomijam
+    1.00   8000 PROFIL NIEKOMPLETNY -- pomijam
+
+[E] P2d: kontrola mas (A_tail^4, okno [20,35], k(omega)):
+    baseline #62 (hard wall, omega=0): r21=206.73 r31=3479.6
+    omega  r21          drift%     r31          drift%    
+    0.00   206.729      0.000      3479.6       0.001     
+    0.05   195.736      5.318      3144.6       9.626     
+    0.10   153.349      25.822     2587.2       25.645    
+    0.15   116.483      43.654     1586.3       54.411    
+    0.20   155.035      25.006     50.7         98.542    
+    0.25   0.002        99.999     0.6          99.982    
+    0.30   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.35   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.40   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.45   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.50   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.55   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.60   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.65   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.70   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.75   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.80   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.85   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.90   tlo GHOSTED -- fit ogona niezdefiniowany
+    0.95   tlo GHOSTED -- fit ogona niezdefiniowany
+    1.00   tlo GHOSTED -- fit ogona niezdefiniowany
+    gate omega->0 (<0.1%): drift r21=0.0005%, r31=0.0012% -> PASS
+
+[F] cross-check f_eps (LOCK: WYLACZNIE eps=0.2 + kontrola 0.1):
+  eps = 0.2:
+    tag  omega  min g     r_end    lam_min(L+)  uwagi
+    e    0.00   0.9325    60.0     -0.9979      edge=-0.9902
+    e    0.05   0.9222    60.0     -0.9861      edge=-1.0079
+    e    0.10   0.8912    60.0     -0.9541      edge=-1.0713
+    e    0.15   0.8390    60.0     -0.9578      edge=-1.2229
+    e    0.20   0.7711    60.0     -1.8920      edge=-1.6164
+    e    0.25   0.7054    60.0     -2.0605      edge=-3.0816
+    e    0.30   0.6320    60.0     -2.4569      edge=-9.6586
+    mu   0.00   0.4107    60.0     -1.3896      edge=-0.9902
+    mu   0.05   0.3738    60.0     -1.3723      edge=-1.0079
+    mu   0.10   0.1934    60.0     -1.3476      edge=-1.0713
+    mu   0.15   KOLAPS/urwanie r_end=3.34
+    mu   0.20   KOLAPS/urwanie r_end=3.15
+    mu   0.25   KOLAPS/urwanie r_end=2.97
+    mu   0.30   KOLAPS/urwanie r_end=2.80
+    tau  0.00   KOLAPS/urwanie r_end=2.68
+    tau  0.05   KOLAPS/urwanie r_end=2.67
+    tau  0.10   KOLAPS/urwanie r_end=2.64
+    tau  0.15   KOLAPS/urwanie r_end=2.60
+    tau  0.20   KOLAPS/urwanie r_end=2.55
+    tau  0.25   KOLAPS/urwanie r_end=2.48
+    tau  0.30   KOLAPS/urwanie r_end=2.41
+  eps = 0.1:
+    tag  omega  min g     r_end    lam_min(L+)  uwagi
+    e    0.00   0.9323    60.0     -0.9979      edge=-0.9975
+    e    0.05   0.9220    60.0     -0.9859      edge=-1.0156
+    e    0.10   0.8908    60.0     -0.9528      edge=-1.0802
+    e    0.15   0.8375    60.0     -0.9629      edge=-1.2343
+    e    0.20   0.7666    60.0     -3.4693      edge=-1.6304
+    e    0.25   0.7001    60.0     -3.8459      edge=-3.2087
+    e    0.30   0.6225    60.0     -4.4368      edge=-19.0222
+    mu   0.00   0.3727    60.0     -1.3838      edge=-0.9975
+    mu   0.05   0.3259    60.0     -1.3683      edge=-1.0156
+    mu   0.10   KOLAPS/urwanie r_end=3.39
+    mu   0.15   KOLAPS/urwanie r_end=3.22
+    mu   0.20   KOLAPS/urwanie r_end=3.06
+    mu   0.25   KOLAPS/urwanie r_end=2.90
+    mu   0.30   KOLAPS/urwanie r_end=2.74
+    tau  0.00   KOLAPS/urwanie r_end=2.64
+    tau  0.05   KOLAPS/urwanie r_end=2.64
+    tau  0.10   KOLAPS/urwanie r_end=2.61
+    tau  0.15   KOLAPS/urwanie r_end=2.57
+    tau  0.20   KOLAPS/urwanie r_end=2.52
+    tau  0.25   KOLAPS/urwanie r_end=2.46
+    tau  0.30   KOLAPS/urwanie r_end=2.39
+
+==============================================================================
+WERDYKT V2 (koniunkcja (i)-(iii), LOCKED; + klauzula tla):
+  KLAUZULA TLA (LOCK): kryterium ma sens TYLKO jesli P1d/P2c
+  wykazuja usuniecie/podniesienie kontinuum.  Phase1: edge(L+) =
+  -1 - 7 omega^2 + O(omega^4) < -1 dla kazdego omega; dla omega >
+  omega_gh=0.2935 tlo zduchowione.  Kontinuum pozostaje tachioniczne
+  przy KAZDYM omega.
+  [e  ] galaz ciagla (kompletne profile): omega <= 0.25;
+        kandydaci omega_k (VK i (iii) jednoczesnie): [0.05]
+  [mu ] galaz ciagla (kompletne profile): omega <= 0.25;
+        kandydaci omega_k (VK i (iii) jednoczesnie): BRAK
+  [tau] galaz ciagla (kompletne profile): omega <= 0.25;
+        kandydaci omega_k (VK i (iii) jednoczesnie): BRAK
+
+  (pelne brzmienie werdyktu -> README; jesli kandydatow brak i/lub
+   kontinuum tachioniczne dla kazdego omega: wynik per LOCK --
+   negatywny/nierozstrzygalny zgloszony wprost)
+==============================================================================

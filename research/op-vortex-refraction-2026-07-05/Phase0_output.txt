@@ -1,0 +1,59 @@
+=== Phase 0 check: op-vortex-refraction (LOCK: Phase0_balance.md) ===
+
+--- 1. kanal amplitudowy: k0, v_g, lambda (rownanie #1) ---
+  s* = 1.174166  Phi* = 1.378665  V''(s*) = 0.878665
+  m_TV = 0.9374  xi^2 = 0.5690  A_t = 2.5690
+  omega=1.0:  k0 = 0.4926   lambda =  12.75   v_g = 0.2463
+  omega=1.1:  k0 = 0.8140   lambda =   7.72   v_g = 0.3700
+  omega=1.3:  k0 = 1.2738   lambda =   4.93   v_g = 0.4899
+  UWAGA dyfrakcyjna (D12): lambda(1.1)=7.72 ~ b — rezim falowy,
+  stad szerokie pasmo G4 [0.5, 2.0]
+
+--- 2. tlo: para (+1,-1), ansatz zlozony, relaksacja 2000 krokow ---
+  residuum max|RHS| po relaksacji = 8.107e-03 (op-stationary: 8.1e-03; tlo QUASI-stacjonarne)
+  |psi| daleko od rdzeni: min ~ 1.0184  (s*=1.1742)
+
+--- 3. n^2(r) na tle pary (rownanie #1) vs ogon algebraiczny ---
+  (srednia z 4 kierunkow osiowych od rdzenia +1; kolumny omega 1.0/1.1/1.3)
+   r=  1.0:   11.1399   4.7132   2.5164   [ogon(1.1): 8.7536]
+   r=  2.0:    9.5601   4.1347   2.2802   [ogon(1.1): 2.9384]
+   r=  3.0:    5.9271   2.8043   1.7368   [ogon(1.1): 1.8615]
+   r=  4.0:    3.4136   1.8839   1.3610   [ogon(1.1): 1.4846]
+   r=  6.0:    1.7468   1.2735   1.1117   [ogon(1.1): 1.2154]
+   r=  8.0:    1.3761   1.1377   1.0562   [ogon(1.1): 1.1212]
+   r= 12.0:    1.1738   1.0636   1.0260   [ogon(1.1): 1.0538]
+   r= 16.0:    1.1082   1.0396   1.0162   [ogon(1.1): 1.0303]
+
+--- 4. ray tracing na rzeczywistym tle: alpha_pred(b, omega) [deg] ---
+    (D6: start x=-60, wyjscie x>+40; alpha>0 = KU wirowi;
+     w nawiasach: tabela CYTOWANA — izolowany profil ODE, -60/+60)
+    b:                     6         8        12        16
+    omega=1.0:      -5.167   +50.330   +13.371    +7.102
+      (ODE):       PRZECHW   +57.871   +15.743    +8.385
+    omega=1.1:     +39.081   +14.577    +4.993    +2.651
+      (ODE):       +43.015   +14.006    +5.299    +2.948
+    omega=1.3:     +16.955    +5.808    +2.054    +1.090
+      (ODE):       +12.448    +5.236    +2.108    +1.187
+
+    roznice tlo-rzeczywiste vs cytowane (punkty wspolne):
+      omega=1.0 b= 6: tlo -5.1665976776023 vs cyt -158.225 (strefa silna/przechwyt — poza kryterium)
+      omega=1.0 b= 8: tlo  +50.330 vs cyt  +57.871  (-13.0%)
+      omega=1.0 b=12: tlo  +13.371 vs cyt  +15.743  (-15.1%)
+      omega=1.1 b= 6: tlo  +39.081 vs cyt  +43.015  ( -9.1%)
+      omega=1.1 b= 8: tlo  +14.577 vs cyt  +14.006  ( +4.1%)
+      omega=1.1 b=12: tlo   +4.993 vs cyt   +5.299  ( -5.8%)
+      omega=1.3 b= 6: tlo  +16.955 vs cyt  +12.448  (+36.2%)
+      omega=1.3 b= 8: tlo   +5.808 vs cyt   +5.236  (+10.9%)
+      omega=1.3 b=12: tlo   +2.054 vs cyt   +2.108  ( -2.6%)
+
+--- 5. budzet dryfu tla (#1.4) ---
+  dryf pary (cytowany, op-stationary Phase2b): ~0.015/tau, przyspieszajacy
+  omega=1.0: v_g=0.246, przelot do okna ~tau=154.3 -> przesuniecie rdzenia ~2.31
+  omega=1.1: v_g=0.370, przelot do okna ~tau=102.7 -> przesuniecie rdzenia ~1.54
+  omega=1.3: v_g=0.490, przelot do okna ~tau= 77.6 -> przesuniecie rdzenia ~1.16
+  wniosek: korekta b_eff (D5) + pozycje z pola (psi_ref, D3) OBOWIAZKOWE
+
+=== WNIOSKI PHASE 0 ===
+  zaklad eikonalny na rzeczywistym tle policzony i zapisany;
+  Phase2 liczy alpha_pred PRZY b_eff na tym samym tle (D5);
+  kryterialne punkty: omega {1.1,1.3} x b {8,12,16}; pasmo [0.5,2.0]

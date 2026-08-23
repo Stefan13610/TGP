@@ -398,10 +398,10 @@ na poziomie fundamentalnym).\qed
 % eq:vol-element-M911) zast\k{e}puje deprecated formy I/II.
 % ---
 
-\begin{theorem}[Metryka efektywna z~substratu~--- M9.1'' kanoniczna
-post-G.0]%
+\begin{theorem}[Metryka efektywna z~substratu~--- M9.1'' jako
+specyficzny statyczny anchor (post-G.0)]%
 \label{thm:metric-from-budget-M911-canonical}
-\statuslabel{Twierdzenie [G.0 closure 2026-05-02 + Phase~2 P22+P23 sympy LOCK 5/5+5/5 PASS]}
+\statuslabel{Propozycja --- proposed/specific static anchor (statyczny PPN: P22+P23 sympy LOCK 5/5+5/5 PASS; sektor GW sfalsyfikowany GWTC-3 $5{,}02\sigma$ --- patrz rem.~\ref{rem:M911-GW-caveat})}
 
 Pod nast\k{e}puj\k{a}cymi za\l{}o\.zeniami (post-G.0 closure 2026-05-02):
 \begin{enumerate}[(i),nosep]
@@ -414,7 +414,9 @@ Pod nast\k{e}puj\k{a}cymi za\l{}o\.zeniami (post-G.0 closure 2026-05-02):
         EXACT (P23 sympy LOCK);
   \item $\ell_P = \sqrt{G\hbar/c^3} = \text{const}$ (aksjomat A7).
 \end{enumerate}
-Metryka efektywna jest \textbf{jednoznacznie} wyznaczona:
+Przy powy\.zszych za\l{}o\.zeniach metryka efektywna przyjmuje
+posta\'c (\textbf{proponowany specyficzny statyczny anchor} M9.1'';
+zakres wa\.zno\'sci i~falsyfikacja sektora GW --- rem.~\ref{rem:M911-GW-caveat}):
 \begin{equation}\label{eq:metric-M911-canonical}
   \boxed{
     ds^2 = -\frac{c_0^2(4-3\psi)}{\psi}\,dt^2
@@ -459,6 +461,51 @@ Mass spectrum lepton (P22 sympy LOCK 5/5 PASS):
 $m_\mu/m_e = 206{,}766$ (PDG diff $-0{,}0013\%$),
 $m_\tau/m_e = 3477{,}40$ (PDG diff $+0{,}0049\%$). \qed
 \end{proof}
+
+\begin{remark}[Zakres wa\.zno\'sci M9.1'' i~recovery emergent-metric
+$\{A,B,C\}$ (S01, u\'sci\'slenie \#57)]\label{rem:M911-GW-caveat}
+\statuslabel{Caveat falsyfikacyjny --- proposed/specific static anchor}
+Forma $(4-3\psi)/\psi$ z~r\'ow.~\eqref{eq:metric-M911-canonical}
+jest \textbf{specyficznym statycznym anchorem}, nie jedyn\k{a}
+dopuszczaln\k{a} metryk\k{a} emergentn\k{a}:
+\begin{itemize}[nosep]
+  \item \textbf{Sektor statyczny (PPN) --- zachowany:} linearyzacja
+    $g_{tt},g_{ij}$ daje $\beta_{\rm PPN}=\gamma_{\rm PPN}=1$
+    (P22+P23 sympy LOCK), zgodnie z~Mercury/LLR/Cassini.
+  \item \textbf{Sektor falowy (GW) --- sfalsyfikowany:} mapowanie ppE
+    daje $\beta_{\rm ppE}^{\rm TGP}\approx-15/4\approx-3{,}75$
+    ($\eta=1/4$), podczas gdy GWTC-3 (combined $\sim$90 BBH posterior)
+    wymaga $|\beta_{\rm ppE}|\lesssim0{,}78$ --- obserwacyjna
+    falsyfikacja na \textbf{$5{,}02\sigma$}
+    (\texttt{research/op-GWTC3-reanalysis}).
+\end{itemize}
+\textbf{Recovery (post-falsifikacyjna).} M9.1'' jest konkretnym
+cz\l{}onkiem szerszej \emph{rodziny emergent-metric} $\{A,B,C\}$
+(\texttt{TGP\_FOUNDATIONS.md} \S3.6), w~kt\'orej $g_{\rm eff}$ jest
+funkcjona\l{}em konfiguracji wielu \'zr\'ode\l{} $\Phi$:
+\[
+  g_{\rm eff}^{00} = -A(\psi),\qquad
+  g_{\rm eff}^{ij} = \delta^{ij}\,B(\psi)
+    + \sigma^{ij}\,\frac{C(\psi)}{\PhiZero^{2}c^{2}},
+\]
+gdzie $\sigma^{ij}=(\partial^i\Phi)(\partial^j\Phi)
+-\tfrac13\delta^{ij}(\nabla\Phi)^2$ to gradientowy strain-composite.
+Recovery zachowuje $A,B$ (st\k{a}d statyczny PPN bez zmian) i~dodaje
+sprz\k{e}\.zenie tensorowe $C(\psi)$, kt\'ore re-targetuje sektor GW.
+\textbf{Wsp\'o\l{}czynnik $C/c_0$ pozostaje wolnym parametrem UV}
+(numeryczne pinning HONESTLY DEFERRED; status FREE, por.\ \#37).
+Pe\l{}na derywacja \emph{first-principles} formy M9.1'' jest
+NON-DERIVABLE z~$H_\Gamma$ (\#53) --- niesiona jako \emph{proposed}
+/ Ograniczenia, nie rozstrzygana tutaj (S07).
+
+\medskip\noindent
+\textbf{$\beta,\gamma$ jako projekcja (S03).} Warto\'sci
+$\beta_{\rm PPN}=\gamma_{\rm PPN}=1$ s\k{a} \emph{projekcj\k{a} PPN}
+statycznej metryki na obserwable s\l{}abego pola (metodyka
+native-observables-first, \texttt{meta/PPN\_AS\_PROJECTION.md}),
+a~\textbf{nie} niezale\.zn\k{a} predykcj\k{a}; pe\l{}na derywacja
+wariacyjna (Path~A) pozostaje otwarta.
+\end{remark}
 
 \begin{remark}[Element obj\k{e}to\'sciowy a~zunifikowana akcja]%
 \label{rem:vol-element-M911}

@@ -1,0 +1,53 @@
+======================================================================
+mini-test R1 - amplitude->density kinetic crossover (DIAGNOSTIC)
+======================================================================
+
+[T1] Czy goly wykladnik kinetyczny pojedynczego pola jest konwencja?
+    K(Phi)               = Phi**(-2 + 1/p)/(4*p**2)
+    wykladnik e(p)       = -2 + 1/p    (ref #49: 1/p-2 = -2 + 1/p)
+    T1a  e == 1/p-2      : True
+    kanoniczne chi(Phi)  = Phi**(1/(2*p))
+    chi w sigma          = sigma
+    T1b  chi  prop  sigma     : True  (=> goly K to czysta zamiana zmiennej)
+      p=1: e=-1
+      p=1/6: e=4
+      p=2: e=-3/2
+
+[T2] Czy dressing metryczny sqrt(-g)~Phi^m mostkuje -1 -> +4?
+    net E(m) = m + e_sub = m - 1   (e_sub=-1)
+    wymagane m dla E=+4  : m = 5
+      m=1 (sqrt-g=c0*psi)     : E_net = 0  (cel +4? False)
+      m=2 (vol 4D f^2)        : E_net = 1  (cel +4? False)
+      m=3                     : E_net = 2  (cel +4? False)
+    niedobor kandydata m=1: Dm = 4  (= ta sama luka De co #49)
+
+[T3] Niezmiennik fizyczny: m^2_phys = V''/(2K) (para K,V, nie K samo)
+    V(psi)                 = -gamma*psi**2*(3*psi - 4)**2/12
+    K_density(psi)         = 1/(4*psi)
+    m^2_phys (rama gestosci)  = 2*gamma/3
+    m^2_phys (rama amplitudy) = gamma
+    V'' samo (gestosc)=gamma/3  vs V'' samo (amplituda)=2*gamma  -> rozne (znak: K liczy sie)
+    T3  m^2_phys niezmiennik (V''/2K rowne): False
+
+[T4] Skalowo-zalezna mapa F_ell: gdzie crossover MOZE byc fizyczny?
+    F(sigma)=sigma^(2p), F'(sigma) = 2*p*sigma**(2*p - 1)
+    lokus nieodwracalnosci F'=0 : sigma = []  (=> Phi=0)
+    => crossover moze nabrac tresci fizycznej TYLKO przy Phi=0 (nukleacja),
+       NIE jako gladka interpolacja w objetosci (tam: tautologia).
+
+======================================================================
+PODSUMOWANIE (diagnostyka R1, value-blind)
+======================================================================
+  T1 (goly K = konwencja, chi prop sigma)         : True
+  T2 (naiwny dressing metryczny niewystarcza): True
+  T3 (niezmiennik = para (K,V), nie K)       : False
+  T4 (fizyka tylko przy Phi=0 / nukleacja)   : False
+----------------------------------------------------------------------
+WNIOSEK DIAGNOSTYCZNY:
+  * R1 REALNE: goly wykladnik kinetyczny to konwencja (T1).
+  * UCIECZKA ISTNIEJE, ale cel = PARA (K,V), nie sam wykladnik (T3).
+  * Naiwna Droga B (volume dressing) NIE mostkuje -1->+4 (T2): brak D=5.
+  * Gladki crossover w objetosci = tautologia; fizyka tylko w Phi=0 (T4).
+  => Teza dwufazowa ZYWA tylko jako: (K,V)-anchored, zakotwiczona w nukleacji Phi=0.
+     'Gladkie -1/2 -> +2 w objetosci' = martwe (tautologia).
+======================================================================

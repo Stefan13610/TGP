@@ -1,0 +1,46 @@
+=== Phase 2: refrakcja na tle zamrozonym (LOCK: Phase0_balance.md) ===
+N=256 L=128.0 dx=0.5 dt=0.05 u0=0.001 sx=8.0 sy=12.0 seed=20260704
+
+tlo zamrozone: R_obj=12.000 (D9)
+
+--- tachyon_check (D6b): szum 1e-8, bez pakietu, tau<=200 ---
+  S_GUARD osiagniety przy tau=195.5 (flaga, stop)
+  gamma_meas = 0.1250  vs  sqrt(-lambda_min) = 0.1234 (Phase0)  [zgodnosc: 1.3%]
+  lokalizacja wzrostu w r < R_obj+5: 0.9999 (tachion SCIANY potwierdzony empirycznie)
+
+--- deflection: skan (omega, b); waznosc wg D6(c) ---
+  om=1.0 b= 8.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= +71.118  gamma_wall=0.0946  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.0 b=12.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= +24.781  gamma_wall=0.0942  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.0 b=16.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= -92.403  gamma_wall=0.0945  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.0 b=20.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred=  -0.243  gamma_wall=0.0947  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.1 b= 8.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= +61.430  gamma_wall=0.0835  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.1 b=12.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= +19.048  gamma_wall=0.0833  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.1 b=16.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= -65.570  gamma_wall=0.0829  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.1 b=20.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred=  -0.170  gamma_wall=0.0830  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.3 b= 8.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= +45.000  gamma_wall=0.0885  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.3 b=12.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= +11.099  gamma_wall=0.0882  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.3 b=16.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred= -13.727  gamma_wall=0.0886  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+  om=1.3 b=20.0: alpha=    +nandeg (sig=nan, glob=    +nan)  pred=  -0.101  gamma_wall=0.0891  kontam.ratio=nan  probek=0  runaway=True  WAZNY=False
+
+--- linearity (G6): om=1.1, b=12, u0 vs u0/2 ---
+  runy niewazne wg D6(c) (waznosc: False/False) -> G6 NIEAPLIKOWALNE (D6d); uwaga zapisana z gory: rownanie liniowe => G6 nie wykrywa kontaminacji
+
+--- barrier_regime (obserwacja): om=0.8 in (m_FV, m_TV), b=0 ---
+  probek pomiarowych: 0 (transmisja nie osiagnela okna pomiaru); gamma_wall=0.1114  runaway=True
+
+--- frozen_vs_live (obserwacja, D11): om=1.1, b=12, tlo zywe ---
+  alpha_live=+nandeg (sig=nan)  gamma_wall=-0.0165  kontam.ratio=nan  probek=0  runaway=True
+  (tlo rosnie podczas przelotu — obserwacja jakosciowa, poza G1-G6)
+
+=== EWALUACJA (LOCKED) ===
+waznosc pomiarow deflection wg D6(c): 0/12 waznych
+G3/G4/G6: NIEAPLIKOWALNE wg pre-rejestrowanej klauzuli D6(d):
+  tlo zamrozone generuje tachion sciany (lambda_min=-0.0152,
+  gamma_meas=0.125), ktory kontaminuje wszystkie runy
+  przed oknem pomiaru. Geometria propagacji na TLE ZAMROZONYM
+  jest niemierzalna w tej minimalnej realizacji.
+G5: empirycznie NIEROZSTRZYGNIETE; strona teoretyczna (eikonal,
+  D7, zalockowana przed pomiarem): kierunek zalezy od b —
+  OD obiektu dla promieni przecinajacych wnetrze (b=8,12),
+  KU obiektowi dla muskajacych pierscien sciany n^2>1 (b=16).
+G6: NIEAPLIKOWALNE

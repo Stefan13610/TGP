@@ -1,0 +1,55 @@
+=== Phase 2: dekompozycja kanalow (LOCK: Phase0_balance.md) ===
+s*=1.174166 xi=0.7544 2piJ=4.3312 m_a=1.3256 B_pred=13.546 (Phase0)
+
+--- skan S/O [GLOWNA dx=0.5]: X=32.0, d0 in [5.0, 6.0, 8.0, 10.0, 12.0] ---
+  d0= 5.0 S: d_meas= 6.1901  E=-651.52188  gph=  +4.1485  kret_ok=True  H_mono=True
+  d0= 5.0 O: d_meas= 0.8526  E=-702.66327  gph=  -7.5572  kret_ok=True  H_mono=True
+  d0= 6.0 S: d_meas= 7.1081  E=-652.27413  gph=  +3.8761  kret_ok=True  H_mono=True
+  d0= 6.0 O: d_meas= 2.9049  E=-699.71596  gph=  -4.9641  kret_ok=True  H_mono=True
+  d0= 8.0 S: d_meas= 8.9131  E=-653.75282  gph=  +3.4348  kret_ok=True  H_mono=True
+  d0= 8.0 O: d_meas= 6.7250  E=-695.50434  gph=  -3.2925  kret_ok=True  H_mono=True
+  d0=10.0 S: d_meas=10.7559  E=-655.09947  gph=  +3.0737  kret_ok=True  H_mono=True
+  d0=10.0 O: d_meas= 9.0922  E=-692.99502  gph=  -2.7035  kret_ok=True  H_mono=True
+  d0=12.0 S: d_meas=12.6395  E=-656.28974  gph=  +2.7685  kret_ok=True  H_mono=True
+  d0=12.0 O: d_meas=11.2858  E=-691.18228  gph=  -2.2894  kret_ok=True  H_mono=True
+
+--- fit laczny (P1): E = K + Cphi*gph + amp(d) ---
+  (P): K=-677.9580  Cphi=5.9455  B=-82.5151  RSS=1.088e+02  AIC=+29.87
+  (Y): K=-675.0486  Cphi=6.0491  A=-45.5987  m=1.0605  RSS=2.820e+01  AIC=+18.37
+  Delta_AIC (Y - P) = -11.50  (>= +10: wygrywa P; <= -10: Y)
+
+--- P2: przebieg kanalu slepego na znak (rezyduum bezmodelowe) ---
+   d0     E_res_sym(200)   E_res_sym(150)   |roznica|
+   5.0   +10.99865       +6.57142       4.42724
+   6.0   +5.19744       +3.51915       1.67828
+   8.0   +2.90644       +1.80278       1.10365
+  10.0   +2.81002       +1.76158       1.04844
+  12.0   +2.79748       +1.76211       1.03536
+  floor = 4.42724   rozstep = 8.20118   rozstep/floor = 1.9
+
+--- skan S/O [KONTROLA dx=0.25]: X=16.0, d0 in [5.0, 6.0, 8.0] ---
+  d0= 5.0 S: d_meas= 6.1614  E=-129.84542  gph=  +2.8126  kret_ok=True  H_mono=True
+  d0= 5.0 O: d_meas= 2.0921  E=-167.98945  gph=  -4.2333  kret_ok=True  H_mono=True
+  d0= 6.0 S: d_meas= 7.0905  E=-130.50958  gph=  +2.5515  kret_ok=True  H_mono=True
+  d0= 6.0 O: d_meas= 4.1289  E=-165.05852  gph=  -2.8906  kret_ok=True  H_mono=True
+  d0= 8.0 S: d_meas= 8.8012  E=-131.79449  gph=  +2.1621  kret_ok=True  H_mono=True
+  d0= 8.0 O: d_meas= 7.0256  E=-161.00196  gph=  -1.8788  kret_ok=True  H_mono=True
+  kontrola: Cphi=6.7689  B=-43.5329 (B_pred_ctrl=13.4861)  E_res_sym rosnace: False
+
+--- P5 (obserwacja): kwadrupol S, d0=4, dynamika tau<=100 ---
+  tau=   1.0  d_ss= 4.1694
+  tau=  21.0  d_ss= 8.3483
+  tau=  41.0  d_ss=10.9010
+  tau=  61.0  d_ss=12.7297
+  tau=  81.0  d_ss=14.2071
+  tau= 100.0  d_ss=15.3959
+  v*d: poczatek 1.3798 -> koniec 0.9112 (czysta faza: ~const; spadek na malych d = slad przyciagajacej poprawki dylatacyjnej — raport jakosciowy)
+
+=== EWALUACJA (LOCKED) ===
+G1: flagi + H_mono + kret (4x |n|=1, n_tot=0) wszedzie: PASS
+G3 (dekompozycja dziala): Cphi/(2piJ) = 1.3727 in [0.8, 1.2]: False  -> FAIL
+G4 (RDZEN — uniwersalne przyciaganie): E_res_sym scisle rosnace: False; rozstep > 10*floor: False (8.2012 vs 44.2724)  -> FAIL
+G5: wygrywa (Y); m = 1.0605 in (np.float64(1.0605147018364736), np.float64(1.59077205275471)): True  -> PASS
+G6 (kontrola dx=0.25): monotonia+znak zgodne: FAIL
+
+PODSUMOWANIE PHASE 2: G1=PASS G3=FAIL G4=FAIL G5=PASS G6=FAIL  [forma: Y]

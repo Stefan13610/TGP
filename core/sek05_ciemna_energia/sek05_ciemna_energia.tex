@@ -292,6 +292,24 @@ $\Lambda_{\mathrm{eff}}$ --- sp\'ojnie
 z~jako\'sciowym argumentem sekcji~\ref{ssec:de-struktury}.
 \end{proof}
 
+\begin{remark}[Fundament $\Lambda_{\mathrm{eff}}>0$ wzmocniony przez
+domkni\k{e}cie Z$_2$ (L07, 2026-05-16)]\label{rem:Lambda-L07-strengthened}
+Cykl \texttt{op-L07-zero-sum-Z2-derivation} (B+, 11/11 sympy PASS)
+obni\.za zale\.zno\'s\'c stw.~\ref{prop:Lambda-positive} od surowego
+aksjomatu zerowej sumy:
+\begin{itemize}[nosep]
+  \item \textbf{ZS1} --- $\Zp$-to\.zsamo\'s\'c (wyprowadzona);
+  \item \textbf{ZS2 (cz\k{e}\'s\'c kwadratowa)} --- \textbf{gauge fixing}
+    przez warunek brzegowy $\PhiZero\equiv\langle\Phi\rangle_\Sigma$,
+    nie surowy aksjomat.
+\end{itemize}
+Wniosek $\Lambda_{\mathrm{eff}}>0$ wynika strukturalnie z~ZS1 $+$
+warunku brzegowego $+$ $\langle\delta\varphi^2\rangle>0$, \textbf{bez}
+nowych aksjomat\'ow (por.\ sek01,
+rem.~\ref{rem:ZS-L07-status}). Pe\l{}na derywacja kwadratowego zera
+ZS2 pozostaje obstrukcj\k{a} (disposition: gauge fixing).
+\end{remark}
+
 % --- POST-CYCLE ANNOTATION 2026-05-16 ---
 % FOUNDATION STRENGTHENED by op-L07-zero-sum-Z2-derivation-2026-05-16
 % (STRUCTURAL_PARTIAL_DERIVED, claim B+, 11/11 sympy PASS).
@@ -683,6 +701,21 @@ $\gamma$.1, $\delta$.1$+$$\delta$.2, UV.3) zgodne na poziomie
 $\sim 1\%$ z~Planck $\Omega_\Lambda = 0{,}6847$. Open: sub-leading
 $O(1)$ factor $1/12$ jako deeper substrate dynamics.
 
+\medskip\noindent
+\textbf{Uwaga 2026-07-03 (status epistemiczny promocji --- ledger \#42):}
+korekta $\Omega_\Lambda^{\mathrm{TGP,corr}} = 5e^2/54$ zale\.zy od
+$\tilde{g} \approx 0{,}98$ z~cyklu $\delta$.1, kt\'ory sam deklaruje
+,,postulat z~matchem, nie ab initio''
+(\texttt{op-delta1\ldots/results.md:367}); rozk\l{}ad ,,$N_f=5$'' ma
+$\geq 5$ r\'ownowa\.znych dekompozycji
+(\texttt{op-delta1\ldots/README.md:94--99}), a~trade-off optymalizuj\k{a}cy
+$\Omega_\Lambda$ pogarsza jednocze\'snie $\alpha_s$ do $+1{,}26\sigma$
+(\texttt{tam\.ze:204}). W~nomenklaturze ledgera \#42 zgodno\'s\'c
+$-0{,}07\sigma$ nale\.zy wi\k{e}c klasyfikowa\'c jako
+\textbf{consistency-check warunkowany ansatzem}, nie predykcj\k{e}
+ab initio; status ab-initio wymaga\l{}by niezale\.znego wyprowadzenia
+$\tilde{g}$ (open).
+
 \textbf{Cross-references:}
 \texttt{core/sek00\_summary} (UV.3 tabela $\Phi_0^{\mathrm{bare}}/Z_\Phi/\Phi_{\mathrm{eff}}$) +
 \texttt{core/sek08\_formalizm} (G.0 closure header, op-uv3 entry) +
@@ -851,6 +884,20 @@ razy poni\.zej progu DESI.
 \textbf{To jest predykcja TGP, nie brak:} je\.zeli przysz\l{}e
 pomiary wyka\.z\k{a} $w \neq -1$ na poziomie procenta,
 \textbf{falsyfikuje} to minimalny sektor TGP.
+
+\medskip\noindent
+\textbf{Uwaga 2026-07-03 (status epistemiczny --- consistency-check,
+ledger \#42):} por\'ownanie $\chi^2_{\mathrm{TGP}} \approx
+\chi^2_{\Lambda\mathrm{CDM}}$ z~fitu Friedmanna do DESI
+(\texttt{b1\_wde\_friedmann\_fit.py}) jest \textbf{fit-by-construction}:
+skrypt wstrzykuje $\Omega_m$ z~$\Lambda$CDM, a~pole $\psi$ jest
+zamro\.zone, wi\k{e}c $w \approx -1$ wynika trywialnie
+(,,indistinguishable from $\Lambda$CDM'', \texttt{b1\ldots py:498}).
+Zgodno\'s\'c $\chi^2$ z~DESI nale\.zy zatem czyta\'c jako
+\emph{consistency-check}, NIE jako niezale\.zne dopasowanie ani
+sukces predykcyjny sektora DE. Tre\'sci\k{a} falsyfikowaln\k{a}
+pozostaje wy\l{}\k{a}cznie strukturalne twierdzenie
+$|w_0+1| \sim 10^{-9}$, $w_a \approx 0$ (kill-kryterium powy\.zej).
 \end{remark}
 
 %%--------------------------------------------------------------------
@@ -871,6 +918,28 @@ sektorach N-body:
 Oba sektory wynikaj\k{a} z~tej samej teorii (te same aksjonaty N0),
 r\'o\.znorodno\'s\'c skal jest konsekwencj\k{a} r\'o\.znej dynamiki
 skupisk.
+\end{remark}
+
+\begin{remark}[PR-004: falsyfikacja ga\l{}\k{e}zi rotacyjnej bez DM
+  --- LOCKED 2026-06-13]\label{rem:PR004-mg-vs-dm}
+\textbf{Uwaga 2026-07-03 (wynik negatywny, regu\l{}a IMMUTABLE):}
+zalockowany falsyfikator \textbf{PR-004} zosta\l{} wykonany mechanicznie
+na pr\'obie SPARC~175 (Lelli+2016, 3391 punkt\'ow;
+\texttt{research/op-PR004-SPARC-fit-execution-2026-06-12/}) i~zosta\l{}
+\textbf{TRIGGERED}: mechanizm rotacyjny TGP $g_{\rm eff}[\bar\Phi \approx
+\Phi_0]$ (Newton $+$ wy\l{}\k{a}cznie bariony, bez cz\k{a}stkowej DM)
+przegrywa z~MOND simple przy $t = 5{,}4\sigma$ (pr\'og $5\sigma$;
+$\chi^2_{\rm red}$ global 578 vs 50, mediany 85 vs 10{,}5, wygrane
+25/175). Per kontrakt cyklu: ,,framework needs structural amendment,
+NOT continued recovery''. \textbf{Konsekwencja dla sp\'ojno\'sci
+sektora DM:} ga\l{}\k{a}\'z ,,galaktyki bez ciemnej materii''
+(modified-gravity-like) jest \textbf{sfalsyfikowana}; no\'snikiem
+krzywych rotacji w~TGP pozostaje wy\l{}\k{a}cznie sektor FDM-soliton
+(cz\k{a}stkowa DM, $\Omega_{\rm DM} = 0{,}262$, uwaga
+\ref{rem:fdm-tgp-sector} i~K18). Manuskrypt nie mo\.ze r\'ownocze\'snie
+powo\l{}ywa\'c si\k{e} na obie ga\l{}\k{e}zie; wyniki K18/ex43
+(skalowanie $r_c$) dotycz\k{a} sektora FDM-soliton i~pozostaj\k{a}
+niezale\.zne od PR-004.
 \end{remark}
 
 \begin{proposition}[Funkcja transferu FDM -- TGP]\label{prop:fdm-transfer}

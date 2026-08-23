@@ -69,12 +69,12 @@ i~hamiltonianem $H_\Gamma$ istnieje
 
 $K(0) = 0$: brak przestrzeni przy $\Phi = 0$
   & \statuslabel{Twierdzenie}
-  & $K(\varphi) = K_{\rm geo}\varphi^4 \Rightarrow K(0) = 0$; selekcja w~klasie konforemnej C1--C3 (na g\k{e}sto\'sci), NIE derywacja z~substratu (uw.~o~statusie $\alpha=2$, sek08)
+  & $K(\varphi) = K_{\rm geo}\varphi^4 \Rightarrow K(0) = 0$; selekcja w~klasie konforemnej C1--C3 (na g\k{e}sto\'sci), NIE derywacja z~substratu (uw.~o~statusie $\alpha=2$, sek08; \textbf{NON-DERIVABLE potwierdzone analitycznie} --- \texttt{op-CG-Kij-from-Hgamma} 2026-06-27)
   & stw.~\ref{prop:K0-from-substrate} \\[3pt]
 
 $\alpha = 2$: operator $\mathcal{D} = \nabla^2\Phi/\Phi + 2(\nabla\Phi)^2/\Phi^2$
   & \statuslabel{Twierdzenie}
-  & $K_{ij} = J(\varphi_i\varphi_j)^2$, klasa $K(\varphi) = \varphi^n$; $\alpha=2$ = selekcja w~klasie C1--C3 (na g\k{e}sto\'sci), nie derywacja (substrat: $\alpha=\tfrac12$)
+  & $K_{ij} = J(\varphi_i\varphi_j)^2$, klasa $K(\varphi) = \varphi^n$; $\alpha=2$ = selekcja w~klasie C1--C3 (na g\k{e}sto\'sci), nie derywacja (substrat: $\alpha=\tfrac12$); \textbf{NON-DERIVABLE} (mapa obstrukcji: Gaussian/$\eta$/RG-irrelewancja $O_n$/stopie\'n bondu, \texttt{op-CG-Kij-from-Hgamma})
   & tw.~\ref{prop:substrate-action} \\[3pt]
 
 $\beta = \gamma$: warunek pr\'o\.zniowy $U'(1) = 0$
@@ -236,14 +236,17 @@ Metryka z~substratu: $g_{tt} = -c_0^2/\psi$, jedyno\'s\'c
   & tw.~\ref{thm:metric-from-substrate-full} \\[3pt]
 
 Zunifikowana akcja $S_{\rm TGP}$ v1.x; $\sqrt{-g} = c_0\psi$
-  & \statuslabel{Propozycja}
-  & metryka $\to$ $\det g = -c_0^2\psi^2$
+\textbf{(deprecated $\to$ v2.0)}
+  & \statuslabel{Propozycja [deprecated v1.x]}
+  & metryka $\to$ $\det g = -c_0^2\psi^2$; superseded przez $c_0\psi/(4{-}3\psi)$
   & hip.~\ref{hyp:unified-action} \\[3pt]
 
 Zunifikowana akcja $S_{\rm TGP}$ v2.0 (G.0); $\sqrt{-g} = c_0\psi/(4{-}3\psi)$,
 $V_{M911} = -\gamma\psi^2(4{-}3\psi)^2/12$
-  & \statuslabel{Twierdzenie [G.0]}
-  & M9.1'' + Phase 1+2+3 PASS 4/4 ka\.zda; $\Phi$-EOM = R3 ODE EXACT
+  & \statuslabel{Twierdzenie [G.0] (statyczny); GW sfalsyf.\ $5{,}02\sigma$}
+  & M9.1'' + Phase 1+2+3 PASS 4/4 ka\.zda; $\Phi$-EOM = R3 ODE EXACT;
+    statyczny PPN $\beta{=}\gamma{=}1$; sektor GW sfalsyfikowany GWTC-3
+    (proposed static anchor, rem.~\ref{rem:M911-GW-caveat})
   & stw.~\ref{prop:V-M911-canonical}, stw.~\ref{prop:psi-EOM-R3} \\[3pt]
 
 $\kappa = 3/(4\Phi_{\rm eff}) = 7/(2\Phi_0^{\rm bare}) \approx 0{,}030$

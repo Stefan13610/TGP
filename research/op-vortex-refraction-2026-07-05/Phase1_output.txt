@@ -1,0 +1,26 @@
+=== Phase 1: kalibracja + background_check (LOCK: Phase0_balance.md, D1/D7/D8) ===
+N=256 L=128.0 dx=0.5 kappa=0.5 dt=0.05
+
+--- G2: dyspersja na tle jednorodnym s* (D7) ---
+    m     k       omega_meas   omega_teor   blad%   omega_siec   H_dryft(sek.)  H_osc
+    11  0.5400     1.01183     1.01215   -0.03     1.01171    1.06e-11   3.77e-09
+    15  0.7363     1.07095     1.07226   -0.12     1.07084    1.25e-10   4.73e-09
+    20  0.9817     1.16242     1.16644   -0.34     1.16232    6.04e-11   6.56e-09
+    25  1.2272     1.26842     1.27736   -0.70     1.26820    6.93e-11   9.30e-09
+    30  1.4726     1.38410     1.40106   -1.21     1.38378    1.71e-12   1.32e-08
+
+--- background_check: para (+1,-1), ansatz zlozony ---
+  diagnostyka szwu: max |dtheta| na linkach poza rdzeniami = 1.5831 (wadliwy ansatz: pi; artefakt C ~1.6 znany, relaksuje sie)
+  kret ansatzu: n_tot = 0; pozycje: +1 (np.float64(-31.75), np.float64(-31.75)), -1 (np.float64(32.25), np.float64(32.25))
+  po relaksacji 2000 krokow (dt=0.02):
+    pozycje rdzeni: +1 (np.float64(-31.062), np.float64(-31.062)), -1 (np.float64(31.562), np.float64(31.562)); n_tot = 0
+    |psi| daleko od rdzeni: min = 1.0184 (s* = 1.1742)
+    residuum max|RHS| = 8.107e-03 (tlo QUASI-stacjonarne — korekta przez b_eff/psi_ref, D3/D5; to NIE jest kryterium)
+    dryf rdzeni (krok 1000 -> 2000, tau=20) = 0.4222 ~ 0.02111/tau (cytowane 0.015/tau)
+    determinizm bitowy relaksacji: True; H_mono: True
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase1): determinizm bitowy (fala: True, relaksacja: True); brak NaN; max dryft sekularny H = 1.25e-10 <= 0.0001: True; kret tla n_tot=0: True  -> PASS
+G2 (kalibracja dyspersji): max |blad| = 1.21% <= 5%: True  -> PASS
+
+PODSUMOWANIE PHASE 1: G1(czesc)=PASS G2=PASS

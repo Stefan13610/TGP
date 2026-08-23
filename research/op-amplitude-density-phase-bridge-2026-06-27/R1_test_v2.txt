@@ -1,0 +1,35 @@
+======================================================================
+mini-test R1 v2 - korekta + ostra postac
+======================================================================
+
+[T3'] Czy obie ramy daja TO SAMO pole kanoniczne chi(psi)?
+    chi_density(psi) = sqrt(2)*sqrt(psi)
+    chi_amp(psi)     = sqrt(2)*sqrt(psi)
+    T3' chi_density == chi_amp : True
+      => redefinicja Phi=sigma^2 zachowuje fizyke (to SAMO pole kanoniczne).
+      => 'goly crossover' (samo K, ta sama V przepisana) = TAUTOLOGIA. Potwierdzone.
+
+[T3''] Ostra postac: dyskryminator redef-rownowaznosci par (K,V)
+    Mechanizm (do Phase 1, wymaga V_sub substratu):
+      1. policz chi_sub z K_sub=Phi^-1 ; chi_TGP z K_TGP=Phi^+4
+      2. wyraz V_sub(chi_sub) i V_TGP(chi_TGP)
+      3. rowne (mod stala/skala) => ta sama teoria (crossover fake);
+         rozne => RӯNE teorie (substrat != TGP; #49 stoi jako 'nie ta sama teoria').
+    chi_TGP(Phi) dla K=Phi^4 : sqrt(2)*psi**3/3   (chi ~ Phi^3 - silnie nieliniowe)
+    chi_sub(Phi) dla K=Phi^-1: sqrt(2)*sqrt(psi)  (chi ~ Phi^(1/2))
+    => mapy kanoniczne RӯNE funkcyjnie (Phi^3 vs Phi^1/2); zgodnosc par zalezy
+       wylacznie od tego, czy potencjaly skladaja sie do tej samej V(chi). [Phase 1]
+
+[T4'] Lokus nieodwracalnosci mapy F (z brzegiem sigma=0):
+    F(sig)=sig^(2p), F'(sig)=2*p*sig**(2*p)/sig
+    F'=0 przy sig = []   (brzeg Phi=0)
+    => jedyny punkt, gdzie redefinicja TRACI odwracalnosc = Phi=0 (nukleacja).
+       Tam i tylko tam 'crossover' moze byc czyms wiecej niz zmiana zmiennej.
+
+======================================================================
+WNIOSEK v2 (poprawiony):
+  T3' : redef Phi=sigma^2 daje to samo pole kanoniczne -> goly crossover = TAUTOLOGIA.
+  T3'': realny crossover <=> pary (K,V) NIE-redef-rownowazne -> wymaga V_sub [PHASE 1].
+  T4' : jedyny lokus nieodwracalnosci = Phi=0 (nukleacja).
+  RAZEM z v1: R1 realne; teza zywa tylko jako (K,V)-niezgodnosc zakotwiczona w Phi=0.
+======================================================================

@@ -7,6 +7,23 @@ on:
     branches: [main]
 
 jobs:
+  param-lock:
+    # Guard against parameter drift returning to tooling scripts (#42 ledger).
+    # Canonical locks: Phi_0 = 24.783, sum(m_nu) = 59.01 meV.
+    # The regex matches only the CODE portion of each line (everything before
+    # the first '#'), so explanatory comment annotations such as
+    # "prev drift 24.65" / "prev drift 59.6" are intentionally NOT flagged.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parameter lock guard (Phi_0=24.783, sum m_nu=59.01)
+        run: |
+          if grep -rnP '^[^#]*\b(24\.65|59\.6)\b' tooling/scripts/ --include=*.py; then
+            echo "::error::Parameter drift detected in tooling/scripts. Use Phi_0=24.783 and sum(m_nu)=59.01 (LOCKED #42); keep old values only inside comment annotations."
+            exit 1
+          fi
+          echo "Parameter locks OK (Phi_0=24.783, sum m_nu=59.01)."
+
   reproduce:
     runs-on: ubuntu-latest
     strategy:

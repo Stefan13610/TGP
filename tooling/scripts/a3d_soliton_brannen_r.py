@@ -138,15 +138,17 @@ print("=" * 65)
 print("\n--- T1: A_tail z ODE solitonu ---")
 
 # g0 values for 3 generations
-# tau: use phi^2 * g0_e (standard TGP ladder) or find from soliton
-G0_TAU_phi2 = PHI**2 * G0_E  # = 3.269... (phi^2 ladder)
-G0_TAU_fitted = 3.18912       # from ex131 (fitted to match PDG tau)
+# tau (gen.3): the phi^2 ladder does NOT hold for the 3rd generation
+# (phi^2*g0_e fails by ~13.7% on the tau mass). The 3rd generation is
+# fixed instead by the Koide closure Q_K = 3/2 at N=3 (#56: corona 1->3).
+G0_TAU_phi2 = PHI**2 * G0_E  # = 3.269... (phi^2 ladder -- FAILS ~13.7%)
+G0_TAU_fitted = 3.18912       # = value from Koide closure Q_K=3/2 (N=3), NOT a PDG fit
 
 print(f"  phi = {PHI:.6f}")
 print(f"  g0^e = {G0_E:.5f}")
 print(f"  g0^mu = phi*g0^e = {G0_MU:.5f}")
 print(f"  g0^tau(phi^2) = {G0_TAU_phi2:.5f}")
-print(f"  g0^tau(fitted) = {G0_TAU_fitted:.5f}")
+print(f"  g0^tau(Koide Q_K=3/2) = {G0_TAU_fitted:.5f}")
 print()
 
 results = {}

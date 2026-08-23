@@ -1,0 +1,28 @@
+=== Phase 1: genesis_u1 (LOCK: Phase0_balance.md, D11) ===
+N=256 L=128.0 dx=0.5 kappa=0.5 a=0.5 b=1.6 c=1.0 dt=0.02 eps=0.3 seed=20260704 theta0=0.7
+
+--- bare (szum U(-0.05,0.05) * e^{i*0.7}), 6000 krokow ---
+  tau=   30.0  Phi_max=4.476e-19  metric_area=0.000000
+  tau=   60.0  Phi_max=1.911e-32  metric_area=0.000000
+  tau=   90.0  Phi_max=8.683e-46  metric_area=0.000000
+  tau=  120.0  Phi_max=4.152e-59  metric_area=0.000000
+  determinizm bitowy (run x2): True
+  flagi: nf=False run=False bc=False  H_mono=True (H_inc_max=0.00e+00)
+  zanik: metric_area_final=0.00e+00 < A_MIN=6.10e-05: True
+
+--- kowariancja fazowa U(1): max| |psi|_theta0 - |psi|_real | = 4.905e-45 ---
+
+--- cluster(A0=0.6, D=3, K=7) * e^{i*0.7} ---
+  tau=   30.0  Phi_max=1.35312  metric_area=0.005447
+  tau=   60.0  Phi_max=1.37708  metric_area=0.011856
+  tau=   61.8  Phi_max=1.37736  metric_area=0.012161
+  R(Phi>eps) osiagniete: 8.018 po tau=61.8
+  flagi: nf=False run=False bc=False  H_mono=True (H_inc_max=0.00e+00)
+  lock: Phi_max=1.37736 in [0.8, 1.2]*Phi*=[1.1029, 1.6544]: True
+  faza w centrum po locku: 0.700000 (theta0=0.7) — faza globalna zachowana (U(1))
+
+=== EWALUACJA (LOCKED) ===
+G1 (czesc Phase1): determinizm + finite + H_Gamma nierosnace: PASS
+G2 (ciaglosc fundamentu na U(1)): bare zanika: True, cluster lockuje z Phi ~ Phi*: True  -> PASS
+
+PODSUMOWANIE PHASE 1: G1(czesc)=PASS G2=PASS

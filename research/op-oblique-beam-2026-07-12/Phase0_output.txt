@@ -1,0 +1,110 @@
+=== Phase 0 check: op-oblique-beam (LOCK: Phase0_balance.md, proba #5) ===
+
+--- 1. kanal amplitudowy + TABELA PROJEKTOWA par +/-b (rownanie #1, D12) ---
+  s* = 1.174166  Phi* = 1.378665  V''(s*) = 0.878665
+  m_TV = 0.9374  xi^2 = 0.5690  A_t = 2.5690
+  omega=1.1:  k0 = 0.8140   lambda =   7.72   v_g = 0.3700
+  omega=1.5:  k0 = 1.6561   lambda =   3.79   v_g = 0.5520
+
+  TABELA PROJEKTOWA (kryterium: |b_nom| >= 1.5*lambda + 0.9):
+    [KRYT para] omega=1.1 b=+/-  14: prog = 12.48  |b| - prog = +1.52  |b|/lambda = 1.81  -> W DOMENIE
+    [KRYT para] omega=1.1 b=+/-  20: prog = 12.48  |b| - prog = +7.52  |b|/lambda = 2.59  -> W DOMENIE
+    [KRYT para] omega=1.5 b=+/-   8: prog =  6.59  |b| - prog = +1.41  |b|/lambda = 2.11  -> W DOMENIE
+    [KRYT para] omega=1.5 b=+/-  12: prog =  6.59  |b| - prog = +5.41  |b|/lambda = 3.16  -> W DOMENIE
+    [obs para ] omega=1.1 b=+/-  24: prog = 12.48  |b| - prog = +11.52  |b|/lambda = 3.11  -> W DOMENIE
+
+--- 2. GEOMETRIA PASA SKOSNEGO (rownanie #2): obrazy soczewek w (xi, eta) wzgledem A_nom ---
+    u = (2,1)/sqrt(5); n = (-1,2)/sqrt(5); phi = atan(1/2) = 26.565 deg
+    obrazy periodyczne 4 rdzeni z -50 < xi < 300 (pomijajac A):
+      (i,j)=(+1.0,-1.0) [q=+1]: xi =   57.24  eta =  -171.73  W PASIE {10<xi<130}
+      (i,j)=(+0.0,+1.0) [q=-1]: xi =   57.24  eta =  +114.49  W PASIE {10<xi<130}
+      (i,j)=(+1.0,+0.0) [q=-1]: xi =  114.49  eta =   -57.24  W PASIE {10<xi<130}
+      (i,j)=(+1.0,+1.0) [q=+1]: xi =  171.73  eta =   +57.24  
+      (i,j)=(+2.0,+0.0) [q=+1]: xi =  228.97  eta =  -114.49  
+      (i,j)=(+1.0,+2.0) [q=-1]: xi =  228.97  eta =  +171.73  
+      (i,j)=(+2.0,+1.0) [q=-1]: xi =  286.22  eta =    +0.00  
+
+    odleglosci prostopadle |eta_soczewki - b| od linii wiazki (soczewki pasa i najblizsze):
+      omega=1.1 b=  +14: (0,1): 100.49  (1,0):  71.24  (1,1):  43.24  (2,1):  14.00   min(pas) = 71.24 >= 33: True
+      omega=1.1 b=  -14: (0,1): 128.49  (1,0):  43.24  (1,1):  71.24  (2,1):  14.00   min(pas) = 43.24 >= 33: True
+      omega=1.1 b=  +20: (0,1):  94.49  (1,0):  77.24  (1,1):  37.24  (2,1):  20.00   min(pas) = 77.24 >= 33: True
+      omega=1.1 b=  -20: (0,1): 134.49  (1,0):  37.24  (1,1):  77.24  (2,1):  20.00   min(pas) = 37.24 >= 33: True
+      omega=1.5 b=   +8: (0,1): 106.49  (1,0):  65.24  (1,1):  49.24  (2,1):   8.00   min(pas) = 65.24 >= 33: True
+      omega=1.5 b=   -8: (0,1): 122.49  (1,0):  49.24  (1,1):  65.24  (2,1):   8.00   min(pas) = 49.24 >= 33: True
+      omega=1.5 b=  +12: (0,1): 102.49  (1,0):  69.24  (1,1):  45.24  (2,1):  12.00   min(pas) = 69.24 >= 33: True
+      omega=1.5 b=  -12: (0,1): 126.49  (1,0):  45.24  (1,1):  69.24  (2,1):  12.00   min(pas) = 45.24 >= 33: True
+      omega=1.1 b=  +24: (0,1):  90.49  (1,0):  81.24  (1,1):  33.24  (2,1):  24.00   min(pas) = 81.24 >= 33: True
+      omega=1.1 b=  -24: (0,1): 138.49  (1,0):  33.24  (1,1):  81.24  (2,1):  24.00   min(pas) = 33.24 >= 33: True
+    (obraz (2,1) lezy NA osi wiazki przy xi=286.2 — poza oknem 130 i poza 5. probka; D12)
+
+--- 3. dyspersja sieciowa SKOSNA analitycznie (dx=0.5; kierunek (2,1)/sqrt(5), anizotropia (kx^4+ky^4)/k^4 = 17/25) ---
+    omega=1.1 (k0=0.8140): skosnie blad = -0.13%  (axialnie, proba #3: -0.19%)
+    omega=1.5 (k0=1.6561): skosnie blad = -1.17%  (axialnie, proba #3: -1.72%)
+    mody G3 (D7): k = (2 pi/L)(2q, q):
+      q=10: |k| = 0.5488  omega_teor = 1.01453  omega_siec(analit.) = 1.01421  blad = -0.03%
+      q=13: |k| = 0.7135  omega_teor = 1.06451  omega_siec(analit.) = 1.06365  blad = -0.08%
+      q=20: |k| = 1.0976  omega_teor = 1.21699  omega_siec(analit.) = 1.21279  blad = -0.35%
+      q=25: |k| = 1.3720  omega_teor = 1.34904  omega_siec(analit.) = 1.33981  blad = -0.68%
+      q=30: |k| = 1.6464  omega_teor = 1.49467  omega_siec(analit.) = 1.47746  blad = -1.15%
+    prog G3: 5% (MIERZONE w Phase 1, nie zakladane)
+
+--- 4. tlo: szachownica 4 wirow L=256 (BEZ ZMIAN vs proba #3), relaksacja 2000 ---
+  diagnostyka szwu (ansatz): max |dtheta| poza rdzeniami = 0.1244 rad (proba #3: 0.1244)
+  po relaksacji 2000 krokow (dt=0.02):
+    residuum max|RHS| = 9.648e-07 (proba #3: 9.648e-07)
+    pozycje rdzeni: -1#0: (+64.250,-63.750); -1#1: (-63.750,+64.250); +1#0: (-63.750,-63.750); +1#1: (+64.250,+64.250)
+    n_tot = 0
+    rdzen A (rozpraszajacy) po relaksacji: (-63.750, -63.750)
+
+--- 5. ray tracing WIAZACY (D6): alpha_pred [deg, KU A] czytany w plaszczyznach xi_eval in {10, 40, 70, 100, 130} ---
+    start: r = A + (-36)u + b*n, kierunek u; przechwyt r<0.6;
+    Delta_eik(para) = alpha_pred(+b) - alpha_pred(-b) plaszczyzna po plaszczyznie; rozrzut = max-min po plaszczyznach
+    [KRYT] omega=1.1 para b=+/-14:
+      +b: xi= 10:  +3.069  xi= 40:  +3.610  xi= 70:  +3.660  xi=100:  +3.706  xi=130:  +3.749   (rozrzut 0.680)
+      -b: xi= 10:  +3.180  xi= 40:  +3.723  xi= 70:  +3.694  xi=100:  +3.604  xi=130:  +3.503   (rozrzut 0.544)
+      Delta_eik(plaszczyzny): xi= 10:  -0.111  xi= 40:  -0.114  xi= 70:  -0.034  xi=100:  +0.103  xi=130:  +0.246
+      Delta_eik rozrzut plaszczyzn = 0.360 deg  (odniesienie reguly wzmacniajacej G5b)
+      [orient. sekcja 1.3: alpha ~ +3.56; Delta ~ +0.14 (formula ogonowa, polowkowy przelot)]
+    [KRYT] omega=1.1 para b=+/-20:
+      +b: xi= 10:  +1.328  xi= 40:  +1.674  xi= 70:  +1.707  xi=100:  +1.733  xi=130:  +1.751   (rozrzut 0.423)
+      -b: xi= 10:  +1.338  xi= 40:  +1.711  xi= 70:  +1.695  xi=100:  +1.573  xi=130:  +1.388   (rozrzut 0.372)
+      Delta_eik(plaszczyzny): xi= 10:  -0.011  xi= 40:  -0.037  xi= 70:  +0.012  xi=100:  +0.159  xi=130:  +0.363
+      Delta_eik rozrzut plaszczyzn = 0.400 deg  (odniesienie reguly wzmacniajacej G5b)
+      [orient. sekcja 1.3: alpha ~ +1.75; Delta ~ +0.08 (formula ogonowa, polowkowy przelot)]
+    [KRYT] omega=1.5 para b=+/-8:
+      +b: xi= 10:  +2.770  xi= 40:  +2.929  xi= 70:  +2.942  xi=100:  +2.956  xi=130:  +2.970   (rozrzut 0.200)
+      -b: xi= 10:  +2.988  xi= 40:  +3.141  xi= 70:  +3.131  xi=100:  +3.113  xi=130:  +3.094   (rozrzut 0.153)
+      Delta_eik(plaszczyzny): xi= 10:  -0.218  xi= 40:  -0.211  xi= 70:  -0.189  xi=100:  -0.157  xi=130:  -0.124
+      Delta_eik rozrzut plaszczyzn = 0.094 deg  (odniesienie reguly wzmacniajacej G5b)
+      [orient. sekcja 1.3: alpha ~ +2.64; Delta ~ +0.05 (formula ogonowa, polowkowy przelot)]
+    [KRYT] omega=1.5 para b=+/-12:
+      +b: xi= 10:  +1.048  xi= 40:  +1.183  xi= 70:  +1.194  xi=100:  +1.204  xi=130:  +1.213   (rozrzut 0.166)
+      -b: xi= 10:  +1.094  xi= 40:  +1.229  xi= 70:  +1.221  xi=100:  +1.198  xi=130:  +1.170   (rozrzut 0.135)
+      Delta_eik(plaszczyzny): xi= 10:  -0.047  xi= 40:  -0.046  xi= 70:  -0.027  xi=100:  +0.006  xi=130:  +0.043
+      Delta_eik rozrzut plaszczyzn = 0.090 deg  (odniesienie reguly wzmacniajacej G5b)
+      [orient. sekcja 1.3: alpha ~ +1.17; Delta ~ +0.04 (formula ogonowa, polowkowy przelot)]
+    [obs]  omega=1.1 para b=+/-24:
+      +b: xi= 10:  +0.865  xi= 40:  +1.123  xi= 70:  +1.145  xi=100:  +1.160  xi=130:  +1.167   (rozrzut 0.302)
+      -b: xi= 10:  +0.852  xi= 40:  +1.147  xi= 70:  +1.141  xi=100:  +0.998  xi=130:  +0.729   (rozrzut 0.417)
+      Delta_eik(plaszczyzny): xi= 10:  +0.012  xi= 40:  -0.024  xi= 70:  +0.004  xi=100:  +0.162  xi=130:  +0.438
+      Delta_eik rozrzut plaszczyzn = 0.462 deg  (odniesienie reguly wzmacniajacej G5b)
+      [orient. sekcja 1.3: alpha ~ +1.21; Delta ~ +0.04 (formula ogonowa, polowkowy przelot)]
+
+--- 6. budzet czasu (sekcja 1.4) ---
+  omega=1.1: v_g=0.370; wyzwolenie (xi=+10) ~tau=124.3; 5. probka ~tau=140.3; koniec okna (xi=130) ~tau=448.6
+  omega=1.5: v_g=0.552; wyzwolenie (xi=+10) ~tau= 83.3; 5. probka ~tau= 99.3; koniec okna (xi=130) ~tau=300.7
+  limit runow falowych tau=300 (6000 krokow) pokrywa 5. probke
+  obu serii z zapasem; bramka G2: okno tau=600, kryterium
+  tau<=450 >= 3x przelot (~140 przy omega=1.1)
+  koszt: jak proba #3 (bramka ~15 min; 11 runow Phase2 +
+  3 runy Phase3 ~ 1-1.5 h)
+
+=== WNIOSKI PHASE 0 ===
+  wszystkie 4 pary kryterialne W DOMENIE eikonalu (|b| >=
+  1.5*lambda + 0.9) i w odleglosci >= 33 od soczewek pasa;
+  kierunek (2,1) poza wszystkimi lustrami D4 (obrazy soczewek
+  asymetryczne: eta=-57.2 vs +114.5) -> Delta_eik != 0,
+  policzalna, WIAZACO z ray tracingu OSOBNO dla +b i -b wraz
+  z rozrzutem plaszczyzn; dyspersja skosna w progu 5%
+  analitycznie (pomiar: G3 na modach (2q,q));
+  Phase 1 = bramka G2 (tau=600) PRZED jakimkolwiek pakietem
