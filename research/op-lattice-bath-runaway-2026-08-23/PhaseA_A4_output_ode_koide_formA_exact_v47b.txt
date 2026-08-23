@@ -1,0 +1,60 @@
+# ode_koide_formA_exact_v47b.py  (rc=0, 269 s)
+
+KOIDE FROM CANONICAL TGP ODE: FORM A vs FORM B
+(Fine scan to capture narrow bracket near critical g0)
+
+=================================================================
+  FORM A: alpha=2, source=g^2(1-g) [CANONICAL TGP]
+=================================================================
+  g0_e  = 0.8676968610
+  g0_mu = 1.4039630130  (phi * g0_e)
+  A_e   = 0.130945860211
+  A_mu  = 0.496549733702
+  r_21  = 206.768283 (target 206.768283)
+
+  KOIDE SOLUTION FOUND:
+  g0_tau = 1.5695724137
+  A_tau  = 1.005557097096
+  Q_K    = 1.499999999993  (target 1.500000)
+  r_31   = 3477.44  (PDG: 3477.23)
+  c = g0_tau/g0_e = 1.8088948852
+  Dev from PDG r_31: +0.006136%
+
+=================================================================
+  FORM B: alpha=1, source=(1-g) [used in earlier scripts]
+=================================================================
+  g0_e  = 0.8694378257
+  g0_mu = 1.4067799530  (phi * g0_e)
+  A_e   = 0.124589840473
+  A_mu  = 0.472447559680
+  r_21  = 206.768283 (target 206.768283)
+
+  KOIDE SOLUTION FOUND:
+  g0_tau = 1.7293912851
+  A_tau  = 0.956748064484
+  Q_K    = 1.500000000000  (target 1.500000)
+  r_31   = 3477.44  (PDG: 3477.23)
+  c = g0_tau/g0_e = 1.9890913808
+  Dev from PDG r_31: +0.006136%
+
+=================================================================
+  SUMMARY
+=================================================================
+
+  Form                         g0_e    c=g0t/g0e            Q_K       r_31    r31 dev
+  A (canonical)            0.867697   1.80889489   1.5000000000     3477.4    +0.0061%
+  B (scripts)              0.869438   1.98909138   1.5000000000     3477.4    +0.0061%
+
+  PDG: r_21 = 206.768, r_31 = 3477.23
+  Koide target: Q_K = 1.500000
+
+  CRITICAL g0 ANALYSIS (Form A):
+  g0_tau = 1.569572
+  g0_crit approx 1.600 (soliton collapse threshold)
+  Margin: 0.0304 (1.90% below critical)
+
+  CONCLUSION: Canonical Form A (alpha=2, K=g^4) DOES produce
+  Koide Q_K = 3/2, but g0_tau sits just below the critical
+  threshold where solitons cease to exist.
+  This suggests a deep connection between the Koide condition
+  and the soliton existence boundary in TGP.

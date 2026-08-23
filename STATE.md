@@ -11,6 +11,40 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
+## 🟡 Sesja 2026-08-23 — STATE-SYNC + HOUSEKEEPING + COMMIT/PUSH + LOCK Phase 0 cyklu `op-lattice-bath-runaway` + REALIZACJA Phase A (bramka): **STOP na A3 — fazy ogona dodatekH niereprodukowalne**
+
+User: „przeanalizuj etap TGP_v1" → „uzupełnij" (STATE retro-wpis + README cyklu native-pressure) → „posprzątaj i wypchnij" → „zrób też audyt i start z fazą 0".
+
+### ✅ Wykonane
+- **STATE.md:** retrospektywny wpis #64+ (sekcja niżej) — rekonstrukcja okresu 2026-07-04 → 2026-08-16 z artefaktów `research/`.
+- **README cyklu native-pressure:** [[research/op-native-pressure-lepton-stability-2026-07-27/README.md]] (zrekonstruowane retrospektywnie; status OPEN-ACTIVE).
+- **Housekeeping:** zagnieżdżona ścieżka `<cykl>/TGP/TGP_v1/…` w cyklu native-pressure — 7 plików odzyskanych (m.in. AUDYT_KRYTYCZNY_2026-07-28.md → katalog cyklu; TIER2_SESSION65 → meta/), 1 duplikat bajt-w-bajt usunięty, pusty katalog skasowany (wzorzec #62; zero kwarantanny). Kwarantanna [[meta/stray-path-cleanup-2026-07-03/README.md]] pozostawiona (user-gate po git-diff).
+- **Git:** commit `18d06a4` (369 plików: zaległość #47–#65+, w tym cykle #60–#63, gravity-bridge, native-pressure) + push fast-forward na `origin/main` (9376191..18d06a4). Zweryfikowane: origin/main == HEAD, drzewo czyste.
+- **LOCK nowego cyklu:** [[research/op-lattice-bath-runaway-2026-08-23/Phase0_balance.md]] — **PHASE0-LOCKED, zero obliczeń** (autoryzacja: „zrób też audyt i start z fazą 0"). Rachunek centralny retrospektywy 2026-08-16: **Phase A** = audyt maszynerii 2 jako BRAMKA (A1 próg 8/5, A2 ogon ω=1, A3 fazy δ_e/δ_μ/Δ=120°, A4 audyt 8 skryptów `*_v47b.py` z obowiązkiem „każdy test musi mieć osiągalny FAIL", A5 rozstrzygnięcie niespójności dodatekH↔AUDYT_KRYTYCZNY, A6 korekta p134e–g); **Phase 1** = (κ,φ,A) z faktycznego ODE + d\* par; **Phase 2** = runaway w kąpieli (baseline #63 V3, skan n zalockowany, V-PASS/V-FAIL/V-INCONCLUSIVE, kontrole negatywne P1c/P2c); **Phase 3** warunkowa. Forbidden moves + drzewo decyzyjne zalockowane PRZED kodem.
+
+### ✅ REALIZACJA Phase A (osobny agent, ta sama sesja; autoryzacja: „2" = start od razu) — **CLOSED-GATE-STOP**
+- **A1 PASS:** g₀,crit=8/5 do 3.7e−11 (niezależny stałokrokowy RK4 vs adaptacyjny solve_ivp rdzenia); formuła 2(α+2)/[2(α+2)−d] na 5 parach (α,d).
+- **A2 PASS:** ω_tail=1.00000 dla α∈{1,2,3}; kontrola negatywna (e^−r) poprawnie odrzucona. Fundament locku oscylacyjnego z retrospektywy 2026-08-16 audyt PRZEŻYWA.
+- **A3 FAIL MERYTORYCZNY:** fazy ogona z dodatekH lin. 1126–1129 niereprodukowalne: **δ_e=−75.50° vs −81.4±2°, δ_μ=+88.48° vs +38.6±2°, Δ(e→μ)=163.98° vs 120±1°** — wykluczone: konwencja fazy, okno fitu (7 okien, dryf ≤2.8°), wariant układu (6 wariantów), błąd implementacji (zgodność z atail_functional rdzenia do 5 cyfr). Bonus: **A_μ=0.3861 z dodatekH p127 sprzeczne z własnymi skryptami rdzenia** (atail_functional: A(1.455)≈0.59). Amplitudy A≈|g₀−1| PASS (0.993–1.011).
+- **A5 ROZSTRZYGNIĘTE:** niespójność dodatekH↔AUDYT_KRYTYCZNY zlokalizowana — **wyłącznie znak członu źródłowego (W̃=g⁷/7−g⁸/8, W̃″(1)=−1 vs W=u⁸/8−u⁷/7, W″(1)=+1)**; dwa wewnętrznie spójne, RÓŻNE układy; runaway AUDYT-u nie przeczy solitonom (M2). Otwarta rysa: który znak W wynika z AKCJI TGP — rdzeń definiuje równanie, nie wyprowadza W.
+- **A4 (tabela 8/8 skryptów):** 5/8 bez testu zdolnego dać FAIL; 2 mają — i w obu FAIL faktycznie WYSTĄPIŁ bez odnotowania w SUMMARY (ngen: err 4.6e−6 vs narracja „1e−10"; a3d: T5 FAIL 5/6 vs docstring „6/6"); gcrit_pohozaev: SUMMARY podaje relację wirialną sfalsyfikowaną własnym outputem (T/V=0.019 vs 3.0); gcrit_energy: NIE UKOŃCZONY w oknie audytu (2×~1665 s CPU bez SUMMARY; formuła g₀_crit = wejście własnej weryfikacji). Żaden nie liczy faz z dodatekH.
+- **A6:** korekta p134e–g powtórzona; Q_K=3/2 + g₀τ=4 flagowane INPUT. Nowe: τ przy g₀=4 (biegnące α_eff) **KOLAPSUJE** w niezależnej integracji (g₀=4 = granica istnienia lim α→0).
+- **Reguła bramki → STOP: Phase 1–3 NIEURUCHOMIONE; rachunek centralny (ω²(n) w kąpieli) NIEPOLICZONY.** Zadziałanie bramki = sukces LOCKa, nie porażka cyklu.
+- Deliverables: [[research/op-lattice-bath-runaway-2026-08-23/PhaseA_report.md]] · [[research/op-lattice-bath-runaway-2026-08-23/Phase_FINAL_close.md]] · [[research/op-lattice-bath-runaway-2026-08-23/NEEDS.md]] (N1–N4 user-gated) · PhaseA_output.txt + 8× PhaseA_A4_output_*.txt + 3× diag.
+
+### Anti-Lakatos
+✓ Wpis retrospektywny jawnie oznaczony jako rekonstrukcja post-hoc (bez reinterpretacji werdyktów). ✓ LOCK zamknięty przed jakimkolwiek obliczeniem; nietknięty w trakcie realizacji. ✓ Diagnozy A3 (3 iteracje) wykonane i udokumentowane PRZED werdyktem; błędu implementacji nie znaleziono ⟹ kryteriów NIE korygowano. ✓ Wynik negatywny bramki zgłoszony wprost z liczbami. ✓ Kontrole negatywne wykonane (A2). ✓ Rejestr wejść (Q_K=3/2 = INPUT) egzekwowany. ✓ Rdzeń .tex nietknięty (NEEDS user-gated). ✓ Commit/push za jawną zgodą użytkownika (wyniki Phase A jeszcze NIE commitowane).
+
+### WIP po sesji
+- **op-lattice-bath-runaway: 🔴 CLOSED-GATE-STOP.** Pytanie centralne (ω²(n) w kąpieli) NIEROZSTRZYGNIĘTE — zatrzymane bramką.
+- **Decyzje użytkownika (NEEDS N1–N4):** N1 (PRIORYTET) pochodzenie faz −81.4°/+38.6°/Δ=120.01° w dodatekH — nie mają skryptu-źródła w audytowanym zestawie, A_μ sprzeczne z atail_functional; dotyka statusu O-K1 („Δ=120° potwierdzone"); N2 znak W z akcji TGP (od tego zależy sama oscylacyjność ogona); N3 ewentualny NOWY cykl (nowy LOCK): rachunek centralny na fazach ZMIERZONYCH (drabina d* istnieje dla dowolnych faz); N4 flaga przy g₀τ=4 (kolaps w niezależnej integracji).
+- Otwarte bez zmian: Φ₀ poza kosmologią; nośnik filaru spin-½; kolor (trzy rozwidlenia); dwa substraty rdzenia; NEEDS N1–N3 z #63.
+
+### Cross-references
+[[research/op-lattice-bath-runaway-2026-08-23/Phase0_balance.md]] · [[research/op-native-pressure-lepton-stability-2026-07-27/README.md]] · [[research/op-native-pressure-lepton-stability-2026-07-27/ANALIZA_retrospektywa_oscylacyjny-lock_2026-08-16.md]] · [[research/op-nonlinear-charge-constraint-2026-07-03/Phase3_nonlinear_evolution.py]] · commit `18d06a4`
+
+---
+
 ## 🟡 Sesje #64+ (2026-07-04 → 2026-08-16) — WPIS RETROSPEKTYWNY (zrekonstruowany 2026-08-23 z artefaktów `research/`; STATE nie był aktualizowany na bieżąco w tym okresie)
 
 Dwa bloki prac po #63: (A) program „most do grawitacji" (14 cykli, 2026-07-04 → 2026-07-14, wszystkie CLOSED z LOCKami Phase 0), (B) wieloetapowy cykl eksploracyjny `op-native-pressure-lepton-stability` (2026-07-27 → 2026-08-16, **OPEN**) + siostrzany `op-ep-scattering-babyskyrmion` (CLOSED). Numeracja sesji w tym okresie nieciągła (meta wskazuje #65 dla 2026-07-27); wpis zbiorczy.

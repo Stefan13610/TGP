@@ -1,0 +1,48 @@
+Exception in thread Thread-4 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1613, in _readerthread
+    buffer.append(fh.read())
+                  ~~~~~~~^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\encodings\cp1250.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x88 in position 663: character maps to <undefined>
+A4 runner: 4 skryptow, timeout 2400 s
+  ngen_collapse_proof_v47b.py          rc=0     1398 s
+  gcrit_energy_proof_v47b.py           rc=4294967295 1668 s
+  collapse_exponent_v47b.py            rc=0     465 s
+Traceback (most recent call last):
+  File "C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\op-lattice-bath-runaway-2026-08-23\PhaseA_A4_runner.py", line 66, in <module>
+    for name, status, dt in ex.map(run_one, todo):
+                            ~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 639, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 311, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Mateusz\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\op-lattice-bath-runaway-2026-08-23\PhaseA_A4_runner.py", line 47, in run_one
+    body = proc.stdout + ("\n[STDERR]\n" + proc.stderr
+           ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                          if proc.stderr else "")
+                          ~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+     ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                          if proc.stderr else "")
+                          ~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'

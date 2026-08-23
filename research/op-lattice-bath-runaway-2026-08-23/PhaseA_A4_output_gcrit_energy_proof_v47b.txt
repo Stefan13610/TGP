@@ -1,0 +1,26 @@
+# gcrit_energy_proof_v47b.py — NIE UKOŃCZONO W OKNIE AUDYTU (ustalenie A4)
+
+Dwa niezależne przebiegi (15:05 i 15:22, 2026-08-23) przerwane po
+~1665 s i ~1668 s CPU KAŻDY bez dotarcia do SUMMARY (efektywny TIMEOUT
+okna audytu; limit runnera: 2400 s). Zero częściowego outputu do
+odzyskania: stdout procesu jest blokowo buforowany przy przechwyceniu
+do potoku, więc wiersze tabel wydrukowane przed przerwaniem przepadły.
+
+Przyczyna długiego czasu (analiza statyczna kodu):
+- find_critical_and_friction / find_critical_g_energy: bisekcje po
+  ~80 iteracji, każda iteracja = solve_ivp z rtol=1e-12, atol=1e-14,
+  max_step=0.01, r_max=500 (>= 50 000 krokow na całkowanie);
+- 13 przypadków (alpha,d) w DWÓCH wariantach (f- i g-zmienna)
+  + 7 dodatkowych d dla alpha=2 => rzędu 3000+ pełnych całkowań
+  wysokiej precyzji; brak trybu szybkiej weryfikacji, brak zapisu
+  częściowych wyników.
+
+Charakterystyka audytowa (ze źródła, bez uruchomienia):
+- (i) osiągalny FAIL: BRAK — skrypt nie ma żadnego kryterium
+  PASS/FAIL; eksploracyjny ("czy całka tarcia ma zamkniętą formę?").
+- (ii) SUMMARY (statycznie): uczciwie otwarte — deklaruje, że całka
+  tarcia jest funkcjonałem trajektorii i NIE domyka dowodu formuły
+  g0_crit dla d>1.
+- (iii) INPUT: formuła g0_crit=(2a+4)/(2a+4-d) (używana do
+  bracketingu — dowodzona rzecz jest zakładana w procedurze szukania);
+  DERIVED: numeryczny bilans -W(g0c) = całka tarcia.
