@@ -54,5 +54,18 @@ oscylacyjność ogona, A≈|g₀−1| (±1.1%). Pada warstwa FAZOWA.
 - [[Phase0_balance.md]] — LOCK (nienaruszony).
 - [[PhaseA_report.md]] — pełny raport bramki + tabela A4 (8 skryptów).
 - [[Phase_FINAL_close.md]] — zamknięcie wg drzewa decyzyjnego LOCKa §6.
-- [[NEEDS.md]] — user-gated: N1 pochodzenie faz w dodatekH, N2 znak W
-  z akcji, N3 ewentualny nowy cykl na fazach zmierzonych, N4 rysa τ(g₀=4).
+- [[NEEDS.md]] — N1/N2 🟢 WYKONANE 2026-08-23 (autoryzacja użytkownika);
+  N3 (nowy cykl na fazach zmierzonych) i N4 (rysa τ(g₀=4)) — otwarte.
+
+## POST-CLOSE: śledztwa N1/N2 (2026-08-23)
+
+- **[[ANALIZA_N1_pochodzenie-faz_2026-08-23.md]] — fazy ZNALEZIONE:**
+  δ_e=−81.43°, δ_μ=+38.58°, **Δ=120.01° zreprodukowane co do setnej** —
+  z układu eq:J-ode (F=1+2α_eff·ln g; p131_eta_refinement.py, archiwum),
+  NIE z układu potęgowego, który dokumentuje O-L5. Rozjazd dokumentacyjny,
+  nie fabrykacja; Δ=120° niewrażliwe na η_K (własność formy logarytmicznej).
+- **[[ANALIZA_N2_znak-W-z-akcji_2026-08-23.md]] — oba znaki W żyją w sek08a:**
+  wyprowadzenie z akcji (próżnia stabilna, m²=+γ, gałąź AUD) vs inline
+  „Nota kanoniczna 2026-04-07" (EL = równanie maszynerii 2, próżnia
+  tachionowa). L04 rozstrzygnął tylko kinetykę. Hipoteza „pojedynczy obiekt
+  vs kąpiel" = spójna korespondencja strukturalna, bez derywacji (→ N3).

@@ -11,10 +11,26 @@ related:
   - "[[../../core/_meta_latex/status_map.tex]]"
 ---
 
-# NEEDS (wszystko user-gated — NIC z poniższego nie zostało wykonane)
+# NEEDS (user-gated)
 
 Bramka A padła na A3 (fazy ogona niereprodukowalne). Propozycje dalszej
 drogi, do decyzji użytkownika:
+
+> **UPDATE 2026-08-23 (autoryzacja użytkownika: „zajmij się N1 i N2"):**
+> - **N1 → 🟢 WYKONANE (śledztwo):** fazy ZNALEZIONE i zreprodukowane co do
+>   setnej stopnia — pochodzą z `_archiwum/.../p131_eta_refinement.py`,
+>   układ eq:J-ode (F=1+2α_eff·ln g, Formulacja B), NIE układ potęgowy O-L5.
+>   Pełna analiza: [[ANALIZA_N1_pochodzenie-faz_2026-08-23.md]]
+>   (+ [[N1_provenance_check.py]]). Korekty rdzenia: nadal USER-GATED.
+> - **N2 → 🟢 WYKONANE (dokumentacyjnie):** źródło rozdwojenia znaku W
+>   zlokalizowane W SAMYM sek08a (prop:field-eq-from-action vs inline
+>   „Nota kanoniczna 2026-04-07", której EL = równanie maszynerii 2);
+>   L04 canonicalization rozstrzygnął tylko kinetykę, nigdy znak potencjału.
+>   Hipoteza autora (pojedynczy obiekt vs kąpiel) ma dokładny odpowiednik
+>   strukturalny — bez derywacji (kandydat do N3). Derywacja jednego znaku
+>   z akcji: OTWARTA. Pełna analiza: [[ANALIZA_N2_znak-W-z-akcji_2026-08-23.md]].
+>   Korekty rdzenia: nadal USER-GATED.
+> - N3, N4: bez zmian (poniżej).
 
 ## N1 — Ustalenie pochodzenia faz w dodatekH lin. 1126–1129 (PRIORYTET)
 
