@@ -11,6 +11,30 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
+## 🟢 Sesja 2026-08-31 (B) — NEEDS N1+N2 cyklu fluctuation-channel WYKONANE jako cykl-następca `op-fluctuation-extended-nbody` (LOCK → Phase 1–3 → CLOSED-EXECUTED): **QE NIE — rozciągłość NIE daje −1/d (wykładnik zostaje −2, R tylko w amplitudzie); QN TAK — kanał fluktuacyjny nieaddytywny, człon 3-ciałowy uniwersalnie DODATNI (osłabia)**
+
+User: „zacomituj i zajmij się research/op-substrate-fluctuation-channel-2026-08-23/". Sesja B wykryła w trakcie, że sesja główna (kroki 1–3) ŻYJE równolegle — kolizja kroku 2 rozwiązana podziałem plików między sesjami (koordynacja cross-session; szczegóły w scalonym wpisie kroku 2 sesji głównej niżej). Sesja B: dokończenie kroku 2 (dopisek Limitations lepton-paper, logi NEEDS) + cykl-następca poniżej.
+
+### ✅ Nowy cykl WYKONANY: [[research/op-fluctuation-extended-nbody-2026-08-31/README.md]] — **CLOSED-EXECUTED** (poziom 0; realizacja NEEDS N1+N2 rodzica [[research/op-substrate-fluctuation-channel-2026-08-23/NEEDS.md]])
+- **LOCK:** [[research/op-fluctuation-extended-nbody-2026-08-31/Phase0_balance.md]] zamknięty PRZED kodem; okna pre-rejestrowane; maszyneria dziedziczona (siatka L³, G przez FFT, pinning, Amendment A1 rodzica: propagator connected z B̂ na krytyczności).
+- **QE = odpowiedź na N1 rodzica: NIE (czysty negatyw; maszyneria 9/9 PASS):** dla kul zamrożonego pola R∈{1,2,3} (7/33/123 węzłów, log-det pełnych macierzy kowariancji, L=128) wykładnik dalekiego pola na krytyczności **pozostaje −2** (slopes −2.070/−2.091/−2.147, R²≥0.99986; dryf L=96↔128 = 0.054); przy kontakcie p_loc **STROMIEJE** do ~−3, nigdy nie łagodnieje do −1 (najdłuższy przebieg |p_loc+1|≤0.15: **0** przy wymaganych ≥3; pełne profile bez selekcji w outputach). **R wchodzi wyłącznie w amplitudę wg obrazu pojemnościowego** (Phase 1 exact: det(I−c²Σ_A⁻¹JΣ_B⁻¹J)=1−c²C_AC_B): A(R)/[½C_R²(4π)⁻²] = 0.933/0.938/0.962. Uniwersalność znaku (F<0) i zasięg 2μ (±1.9%/3.7%) PRZEŻYWAJĄ rozciągłość. Konsekwencja: Newtonowskie −1/d nie wychodzi z dwuciałowej rozciągłości — pozostałe nieliczone ścieżki poziomu 0: ośrodek/ekranowanie i N-ciałowość zbiorowa (NEEDS N1/N2 nowego cyklu).
+- **QN = odpowiedź na N2 rodzica: TAK (Phase 1 sympy 5/5 + Phase 3 3/3):** ΔF₃ = g₁₂g₁₃g₂₃ − ½Σ g²g² + O(g⁵) (exact); znak **DODATNI we wszystkich 20 punktach** ({m=0.2, kryt-connected} × {trójkąt, kolinearna} × d∈{4..12}) — nieaddytywność **osłabia** przyciąganie parowe; wielkość na krytyczności |ΔF₃|/|ΣF_par| = 1.1–4.0%, zanik slope −3.03 (analitycznie −3); zgodność num↔analit 1.6e−4 (m=0.2, T, d=8). **Kontrast:** kanał klasyczny (źródłowy) addytywny DOKŁADNIE (<1e−12) — nieaddytywność jest sygnaturą swoiście fluktuacyjną. Zero przenoszenia na sektor solitonowy (op-nbody-additivity = inny kanał).
+- **Incydent P1-5a** (bug składniowy sympy, crash nie FAIL; poprawka maszynerii przed werdyktem, kryterium bez zmian) — udokumentowany w [[research/op-fluctuation-extended-nbody-2026-08-31/Phase_FINAL_close.md]].
+- **NEEDS N1–N4 user-gated** ([[research/op-fluctuation-extended-nbody-2026-08-31/NEEDS.md]]): N1 ośrodek o skończonej gęstości defektów (ekranowanie — ostatnia nieliczona ścieżka −1/d poziomu 0); N2 skalowanie ΔF_N z N (granica ważności superpozycji); N3 dopisek aktualizujący zastrzeżenie w `rem:fluctuation-channel-bridge` (core, user-gate); N4 werdykty do NEEDS rodzica (higiena).
+
+### Anti-Lakatos
+✓ LOCK przed kodem; zero zmian kryteriów/okien po starcie. ✓ Wynik negatywny QE zgłoszony jako główny wynik. ✓ Kontrole: tożsamość R=0 (<1e−16), Fischer (F<0), dryf L, addytywność klasyczna (<1e−12). ✓ Rdzeń .tex nietknięty przez sesję B poza user-gate kroku 2. ✓ Delimitacja od op-bloch-chain-stability (sesja główna) dotrzymana — katalogi rozłączne, STATE edytowany dopiero po zwolnieniu.
+
+### WIP po sesji (B)
+- **op-fluctuation-extended-nbody: 🟢 CLOSED-EXECUTED** (QE-NIE / QN-TAK). Decyzje user-gate: NEEDS N1–N4.
+- **op-substrate-fluctuation-channel:** NEEDS rozliczone — N3/N5 EXECUTED (krok 2), N1/N2 EXECUTED (ten cykl; werdykty do dopisania w NEEDS rodzica po user-gate), N4 (QB poza MFT) OPEN.
+- Bilans dnia dla programu „most do grawitacji": kanał fluktuacyjny ma uniwersalny znak i przeżywa rozciągłość, ale −1/d wymaga teraz efektów ośrodkowych (N1) albo poziomu 1; sektor tachionowy w 1D bez wsparcia (Q-FAIL op-bloch-chain-stability, wpis niżej).
+
+### Cross-references
+[[research/op-fluctuation-extended-nbody-2026-08-31/Phase_FINAL_close.md]] · [[research/op-fluctuation-extended-nbody-2026-08-31/NEEDS.md]] · [[research/op-substrate-fluctuation-channel-2026-08-23/NEEDS.md]] · [[research/op-bloch-chain-stability-2026-08-31/README.md]] (sesja główna, delimitacja)
+
+---
+
 ## 🟢 Sesja 2026-08-31 — STATE-SYNC zamknięcia `op-bath-two-sectors` (obliczenia 2026-08-23, close dokumentacyjny 2026-08-29) + COMMIT/PUSH zaległości 18 plików + user-gate NEEDS (krok 2) + następca Q1 (krok 3)
 
 User: „przenalizuj w jakim stanie jest aktualnie tgp_v1 i co warto zrobić jako następny krok" → autoryzacja: „ok działaj z krokami 1, 2, 3" (1 = księgowość, 2 = zbiorczy user-gate zaległych NEEDS, 3 = cykl-następca Q1 metodą zwalidowaną w Q2).
