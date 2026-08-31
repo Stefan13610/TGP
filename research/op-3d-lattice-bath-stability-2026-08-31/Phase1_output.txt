@@ -1,0 +1,65 @@
+==============================================================================
+Phase 1 -- bramka maszynerii 3D. LOCK sec. 3 Phase 1; decyzje FROZEN
+w Phase_method_decisions.md. INPUT: g0_mu=%.5f, eps=0.2 (kontrola
+0.1), beta=gamma=1. KAZDY FAIL => STOP bez Phase 2-4.
+==============================================================================
+g0_mu = 2.02117 (INPUT #63)
+[t=    0.0s] [P1a] dyspersja prozni 3D exact: pudlo L=2pi, N in {32,64}
+[t=    2.6s]   sektor tach N=32: maxerr(najnizsza galaz po k) = 6.022e-04
+    k=Gamma: w2_num=-1.000000 w2_ex=-1.000000 err=6.08e-14 (10 galezi: maxerr=9.94e-01)
+    k=X    : w2_num=-0.750201 w2_ex=-0.750000 err=2.01e-04 (10 galezi: maxerr=1.98e+00)
+    k=M    : w2_num=-0.500401 w2_ex=-0.500000 err=4.01e-04 (10 galezi: maxerr=9.84e-01)
+    k=R    : w2_num=-0.250602 w2_ex=-0.250000 err=6.02e-04 (10 galezi: maxerr=1.98e+00)
+[t=   78.4s]   sektor tach N=64: maxerr(najnizsza galaz po k) = 1.506e-04
+    k=Gamma: w2_num=-1.000000 w2_ex=-1.000000 err=3.29e-14 (10 galezi: maxerr=2.99e+00)
+    k=X    : w2_num=-0.750050 w2_ex=-0.750000 err=5.02e-05 (10 galezi: maxerr=2.00e+00)
+    k=M    : w2_num=-0.500100 w2_ex=-0.500000 err=1.00e-04 (10 galezi: maxerr=9.96e-01)
+    k=R    : w2_num=-0.250151 w2_ex=-0.250000 err=1.51e-04 (10 galezi: maxerr=2.00e+00)
+[t=   81.1s]   sektor stab N=32: maxerr(najnizsza galaz po k) = 3.441e-04
+    k=Gamma: w2_num=+1.000000 w2_ex=+1.000000 err=2.02e-14 (10 galezi: maxerr=4.97e-01)
+    k=X    : w2_num=+1.249799 w2_ex=+1.250000 err=1.61e-04 (10 galezi: maxerr=8.80e-01)
+    k=M    : w2_num=+1.499599 w2_ex=+1.500000 err=2.68e-04 (10 galezi: maxerr=3.93e-01)
+    k=R    : w2_num=+1.749398 w2_ex=+1.750000 err=3.44e-04 (10 galezi: maxerr=1.13e+00)
+[t=  145.4s]   sektor stab N=64: maxerr(najnizsza galaz po k) = 8.605e-05
+    k=Gamma: w2_num=+1.000000 w2_ex=+1.000000 err=1.26e-13 (10 galezi: maxerr=9.99e-01)
+    k=X    : w2_num=+1.249950 w2_ex=+1.250000 err=4.02e-05 (10 galezi: maxerr=8.87e-01)
+    k=M    : w2_num=+1.499900 w2_ex=+1.500000 err=6.69e-05 (10 galezi: maxerr=3.98e-01)
+    k=R    : w2_num=+1.749849 w2_ex=+1.750000 err=8.60e-05 (10 galezi: maxerr=1.14e+00)
+  P1a tach: maxerr(N32)=6.022e-04 (gate<=1e-3), ratio 32/64=3.999 (gate [3,5]) -> PASS
+  P1a stab: maxerr(N32)=3.441e-04 (gate<=1e-3), ratio 32/64=3.999 (gate [3,5]) -> PASS
+[t=  145.4s] [P1b] kotwica radialna (model #63 verbatim): R=60, N=4000
+C:\Users\Mateusz\Documents\ObsydnianMain\TGP\TGP_v1\research\op-3d-lattice-bath-stability-2026-08-31\Phase1_gate3d.py:58: RuntimeWarning: invalid value encountered in log
+  f_log = lambda g: 1 + 2 * ALPHA * np.log(g)
+  lam_min(w1) = -1.38962 (kotwica -1.3896 +- 1e-3)
+[t=  147.4s]   a=+0.01 dt=0.0040: gate|dE|/E=1.64e-08 PASS; t*=3.62 (kotwica 3.62+-0.05) PASS
+[t=  150.0s]   a=+0.01 dt=0.0020: gate|dE|/E=7.81e-10 PASS; t*=3.62 (kotwica 3.62+-0.05) PASS
+[t=  151.2s]   a=-0.01 dt=0.0040: gate|dE|/E=1.64e-08 PASS; t*=3.62 (kotwica 3.62+-0.05) PASS
+  P1b: lam_min PASS; ewolucja PASS -> PASS (t*_radial = 3.62)
+[t=  151.2s] [P1c] most radialny->kartezjanski (model #63): L=30, N in {76,100}
+[t=  181.6s]   N= 76 (h=0.3947): lam_min(3D) = -8.80982; 10 najnizszych: ['-8.8098', '-8.8095', '-8.8094', '-8.8066', '-8.8064', '-8.8064', '-8.8062', '-8.8042', '-8.8041', '-8.8040']
+[t=  284.0s]   N=100 (h=0.3000): lam_min(3D) = -7.53713; 10 najnizszych: ['-7.5371', '-7.5371', '-7.5371', '-7.5363', '-7.5363', '-7.5363', '-7.5356', '-7.5356', '-7.5356', '-7.2574']
+  |lam(N76)-lam_rad| = 7.4202 (gate <= 0.0695): FAIL; poprawa N100: 6.1475 < 7.4202: PASS
+[t=  289.8s]   evo3D a=+0.01 dt=0.020: gate=5.16e-07 PASS; t*=0.18 (3.62 +- 15%: [3.08,4.16]) FAIL
+[t=  300.5s]   evo3D a=+0.01 dt=0.010: gate=7.53e-08 PASS; t*=0.17 (3.62 +- 15%: [3.08,4.16]) FAIL
+[t=  306.9s]   evo3D a=-0.01 dt=0.020: gate=5.16e-07 PASS; t*=0.18 (3.62 +- 15%: [3.08,4.16]) FAIL
+  P1c: FAIL (t*_izo(3D) = 0.17 -> Phase 4)
+[t=  306.9s] [P1d] gate energii ewolucji 3D: L=2pi, N=32, a=1e-3, t_end=4
+[t=  358.9s]   [kanoniczna K_eps=0.2] dt=0.004: gate|dE|/E=6.82e-15 PASS
+[t=  461.5s]   [kanoniczna K_eps=0.2] dt=0.002: gate|dE|/E=4.01e-16 PASS
+    zbieznosc dt: ||g_dt - g_dt/2||_inf(t=4) = 1.23e-13 (gate<=1e-6) PASS
+[t=  513.5s]   [kanoniczna K_eps=0.1] dt=0.004: gate|dE|/E=7.42e-15 PASS
+[t=  617.3s]   [kanoniczna K_eps=0.1] dt=0.002: gate|dE|/E=8.02e-16 PASS
+    zbieznosc dt: ||g_dt - g_dt/2||_inf(t=4) = 1.29e-13 (gate<=1e-6) PASS
+[t=  638.5s]   [#63 F_eps=0.2] dt=0.004: gate|dE|/E=8.59e-16 PASS
+[t=  678.7s]   [#63 F_eps=0.2] dt=0.002: gate|dE|/E=5.16e-16 PASS
+    zbieznosc dt: ||g_dt - g_dt/2||_inf(t=4) = 1.14e-13 (gate<=1e-6) PASS
+
+==============================================================================
+BRAMKA Phase 1 (LOCK sec. 3; kazdy FAIL => STOP):
+  P1a: PASS
+  P1b: PASS
+  P1c: FAIL
+  P1d: PASS
+
+P1 GATE: FAIL -> STOP (raport bez Phase 2-4)
+==============================================================================
