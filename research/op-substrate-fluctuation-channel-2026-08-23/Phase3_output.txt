@@ -1,0 +1,42 @@
+========================================================================
+Phase 3 — QB: krzywizna MFT v2 w kapieli
+========================================================================
+[PASS] QB-1a: Delta_C_bond = 8 z J s_b^6 (sympy exact)  Delta_C_bond = 8*J*s_b**6*z
+[PASS] QB-1b: kontrola numeryczna 2. roznicy (20 punktow, tol 1e-4)  
+[PASS] QB-1c: Delta_C_bond >= 0 dla wszystkich s_b (z,J>0) — wiazanie gradientowe STABILIZUJE punkt jednorodny  (parzysta potega s_b, wsp. dodatni)
+[PASS] QB-1d: kontrola negatywna — flip znaku J wykrywany jako destabilizujacy  Delta_C(-J, s_b=0.7) = -5.64715200000000
+[PASS] QB-2a: dC/dsigma = 3u + 144 sigma^2 > 0 (u>0) — korzen jedyny  
+    WF: sigma_vac = |r|/u = 0.5747; sigma_c = 0.1711 (residuum 4.44e-16); sigma_c^0 (bez bondu) = 0.1916
+    Phi_c/Phi_vac = 0.2977;  C(sigma_vac) = 13.6118
+[PASS] QB-2b: istnieje prog rozrzedzenia Phi_c in (0, Phi_vac) przy WF  Phi_c/Phi_vac = 0.2977
+[PASS] QB-2c: kapiel o gestosci prozniowej STABILNA (C(sigma_vac) > 0)  C = 13.6118 = 2|r| + 48 sigma_vac^3
+[PASS] QB-2d: bond ZAWEZA obszar niestabilny (sigma_c < sigma_c^0)  0.1711 < 0.1916
+    skan 41x41: Phi_c/Phi_vac in [0.1966, 0.3307]
+[PASS] QB-2e: prog istnieje i Phi_c < Phi_vac na CALYM skanie  
+------------------------------------------------------------------------
+SUMMARY Phase 3: 9/9 PASS
+  PASS  QB-1a: Delta_C_bond = 8 z J s_b^6 (sympy exact)
+  PASS  QB-1b: kontrola numeryczna 2. roznicy (20 punktow, tol 1e-4)
+  PASS  QB-1c: Delta_C_bond >= 0 dla wszystkich s_b (z,J>0) — wiazanie gradientowe STABILIZUJE punkt jednorodny
+  PASS  QB-1d: kontrola negatywna — flip znaku J wykrywany jako destabilizujacy
+  PASS  QB-2a: dC/dsigma = 3u + 144 sigma^2 > 0 (u>0) — korzen jedyny
+  PASS  QB-2b: istnieje prog rozrzedzenia Phi_c in (0, Phi_vac) przy WF
+  PASS  QB-2c: kapiel o gestosci prozniowej STABILNA (C(sigma_vac) > 0)
+  PASS  QB-2d: bond ZAWEZA obszar niestabilny (sigma_c < sigma_c^0)
+  PASS  QB-2e: prog istnieje i Phi_c < Phi_vac na CALYM skanie
+
+WERDYKT QB-1: wklad wiazania gradientowego do krzywizny w punkcie
+  jednorodnym = +8zJ s_b^6 >= 0 ZAWSZE. Znak tachionowy NIE moze
+  emergowac z wiazania gradientowego substratu na poziomie MFT —
+  jesli istnieje, pochodzi z czesci ON-SITE (rozrzedzenie).
+WERDYKT QB-2: prog rozrzedzenia ISTNIEJE: przy punkcie WF
+  Phi_c/Phi_vac = 0.298; kapiel pelna stabilna, kapiel
+  rozrzedzona ponizej ~30% gestosci prozniowej -> krzywizna
+  tachionowa (spinodala substratu). Na skanie (r,u) prog zawsze
+  w (0,1): [0.197, 0.331].
+QB-3 (deskryptywnie, ZERO claimow poziomu 1): wzor {pelna kapiel ->
+  stabilnie; rozrzedzenie -> tachionowo} jest strukturalnie rownolegly
+  do hipotezy dwoch sektorow N2 (izolowany/stabilny vs kapiel/tachion),
+  ale z ODWROTNA rola gestosci: na poziomie 0 to NISKA gestosc tla
+  destabilizuje. Porownanie czysto deskryptywne; poziom 1 rozstrzyga
+  op-bath-two-sectors (Q2), nie ten cykl.

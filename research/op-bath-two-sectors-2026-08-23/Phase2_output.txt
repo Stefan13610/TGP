@@ -1,0 +1,234 @@
+﻿==============================================================================
+Phase 2 (Q1): runaway w kapieli.  LOCK: Phase0 sec. 3 Phase 2.
+Model dynamiczny: M0-f_eps eps=0.2 (#63 V3).  INPUT: g0_e=1.24915
+(galaz f_eps/a3d), phi-FP, N_c=12.  (A,delta,kappa,d*): WYLACZNIE
+Phase1_results.json, model M-P PRIMARY, okno [120,260].
+==============================================================================
+wczytano Phase1: A_e=0.093576 d_e=-75.34 deg; A_mu=0.615899 d_mu=+97.20 deg
+
+------------------------------------------------------------------------------
+[P2a] baseline izolacji, R=60, N=4000 (siatka #63)
+  mu: g0=2.02117  lam_min(w1)=-1.3896 (#63: -1.389 dla mu)  lam_min(F)=-7.8579
+    a=+0.01 dt=0.0040: gate=1.64e-08 PASS; BREAKDOWN t*=3.62
+    a=+0.01 dt=0.0020: gate=7.81e-10 PASS; BREAKDOWN t*=3.62
+    a=-0.01 dt=0.0040: gate=1.64e-08 PASS; BREAKDOWN t*=3.62
+    t*_izo(mu) = 3.62
+  e: g0=1.24915  lam_min(w1)=-0.9979 (#63: -1.389 dla mu)  lam_min(F)=-0.9987
+    a=+0.01 dt=0.0040: gate=3.56e+95 FAIL; BREAKDOWN t*=10.07
+    a=+0.01 dt=0.0020: gate=4.81e+05 FAIL; BREAKDOWN t*=10.06
+    a=-0.01 dt=0.0040: gate=1.81e-09 PASS; BREAKDOWN t*=7.08
+    UWAGA: gate komparatora e FAIL (dodatek, poza gate P2a)
+    t*_izo(e) = 7.08
+  P2a: gate energii PASS wszystkie przebiegi.
+
+------------------------------------------------------------------------------
+[ee] central=e (g0=1.24915, t*_izo=7.08), sasiedzi=e (A=0.0936, delta=-75.3 deg, kappa=0.000), N_c=12
+  d punkty (LOCKED): ['3.364', '9.835', '16.158', '1.682', '5.047']
+  -- d=3.364: c_bath=-0.0110 (=N_c A cos(d-delta)/d)
+     R=  1.68 h=0.0150 N=  112: w2_raw= +2.4990  w2_clean= +2.4990  vac_min= +2.4660 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.68 h=0.0075 N=  224: w2_raw= +2.5148  w2_clean= +2.5148  vac_min= +2.4819 (N_neg_vac=0, floor(R/pi)=0)
+     R=  3.36 h=0.0150 N=  224: w2_raw= -0.0658  w2_clean= -0.0658  vac_min= -0.1222 (N_neg_vac=1, floor(R/pi)=1)
+     R=  3.36 h=0.0075 N=  449: w2_raw= -0.0638  w2_clean= -0.0638  vac_min= -0.1202 (N_neg_vac=1, floor(R/pi)=1)
+     zbieznosc w2_clean: srednia=+1.2210 rozrzut=2.5805 -> NIEZBIEZNE
+     evo R=  1.68 a=+0.01: gate=9.7e+155 FAIL; BREAKDOWN t*=5.02 (t/t*_izo=0.71)
+     evo R=  1.68 a=-0.01: gate=1.8e+68 FAIL; BREAKDOWN t*=5.11 (t/t*_izo=0.72)
+     evo R=  1.68 a=+0.00: gate=5.0e+129 FAIL; BREAKDOWN t*=5.06 (t/t*_izo=0.72)
+     evo R=  3.36 a=+0.01: gate=6.4e+12 FAIL; BREAKDOWN t*=6.08 (t/t*_izo=0.86)
+     evo R=  3.36 a=-0.01: gate=5.3e+59 FAIL; BREAKDOWN t*=6.15 (t/t*_izo=0.87)
+     evo R=  3.36 a=+0.00: gate=4.5e+20 FAIL; BREAKDOWN t*=6.11 (t/t*_izo=0.86)
+  -- d=9.835: c_bath=+0.0176 (=N_c A cos(d-delta)/d)
+     R=  4.92 h=0.0150 N=  328: w2_raw= -0.5682  w2_clean=  BRAK   vac_min= -0.5833 (N_neg_vac=1, floor(R/pi)=1)
+     R=  4.92 h=0.0075 N=  656: w2_raw= -0.5673  w2_clean=  BRAK   vac_min= -0.5827 (N_neg_vac=1, floor(R/pi)=1)
+     R=  9.84 h=0.0150 N=  656: w2_raw= -0.9705  w2_clean= -0.9705  vac_min= -0.8883 (N_neg_vac=3, floor(R/pi)=3)
+     R=  9.84 h=0.0075 N= 1311: w2_raw= -0.9705  w2_clean= -0.9705  vac_min= -0.8882 (N_neg_vac=3, floor(R/pi)=3)
+     evo R=  4.92 a=+0.01: gate=4.7e-07 PASS; BREAKDOWN t*=2.33 (t/t*_izo=0.33)
+     evo R=  4.92 a=-0.01: gate=5.5e-07 PASS; BREAKDOWN t*=2.23 (t/t*_izo=0.32)
+     evo R=  4.92 a=+0.00: gate=2.0e-07 PASS; BREAKDOWN t*=2.28 (t/t*_izo=0.32)
+     evo R=  9.84 a=+0.01: gate=5.9e+49 FAIL; BREAKDOWN t*=7.87 (t/t*_izo=1.11)
+     evo R=  9.84 a=-0.01: gate=3.5e+28 FAIL; BREAKDOWN t*=7.81 (t/t*_izo=1.10)
+     evo R=  9.84 a=+0.00: gate=2.0e+10 FAIL; BREAKDOWN t*=7.84 (t/t*_izo=1.11)
+  -- d=16.158: c_bath=+0.0134 (=N_c A cos(d-delta)/d)
+     R=  8.08 h=0.0150 N=  539: w2_raw= -0.9324  w2_clean= -0.9324  vac_min= -0.8393 (N_neg_vac=2, floor(R/pi)=2)
+     R=  8.08 h=0.0075 N= 1077: w2_raw= -0.9323  w2_clean= -0.9323  vac_min= -0.8391 (N_neg_vac=2, floor(R/pi)=2)
+     R= 16.16 h=0.0150 N= 1077: w2_raw= -0.9964  w2_clean=  BRAK   vac_min= -0.9524 (N_neg_vac=5, floor(R/pi)=5)
+     R= 16.16 h=0.0075 N= 2154: w2_raw= -0.9964  w2_clean=  BRAK   vac_min= -0.9524 (N_neg_vac=5, floor(R/pi)=5)
+     evo R=  8.08 a=+0.01: gate=2.2e+15 FAIL; BREAKDOWN t*=8.83 (t/t*_izo=1.25)
+     evo R=  8.08 a=-0.01: gate=1.0e+10 FAIL; BREAKDOWN t*=8.66 (t/t*_izo=1.22)
+     evo R=  8.08 a=+0.00: gate=7.1e+08 FAIL; BREAKDOWN t*=8.74 (t/t*_izo=1.24)
+     evo R= 16.16 a=+0.01: gate=5.9e+09 FAIL; BREAKDOWN t*=8.52 (t/t*_izo=1.20)
+     evo R= 16.16 a=-0.01: gate=4.6e-07 PASS; BREAKDOWN t*=5.58 (t/t*_izo=0.79)
+     evo R= 16.16 a=+0.00: gate=2.3e+17 FAIL; BREAKDOWN t*=8.53 (t/t*_izo=1.21)
+  -- d=1.682: c_bath=-0.6606 (=N_c A cos(d-delta)/d)
+     R=  0.84 h=0.0150 N=   56: w2_raw=+23.8935  w2_clean=+23.8935  vac_min=+12.7050 (N_neg_vac=0, floor(R/pi)=0)
+     R=  0.84 h=0.0075 N=  112: w2_raw=+24.0633  w2_clean=+24.0633  vac_min=+12.8345 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.68 h=0.0150 N=  112: w2_raw= +2.7799  w2_clean= +2.7799  vac_min= +2.4660 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.68 h=0.0075 N=  224: w2_raw= +2.8583  w2_clean= +2.8583  vac_min= +2.4819 (N_neg_vac=0, floor(R/pi)=0)
+     zbieznosc w2_clean: srednia=+13.3987 rozrzut=21.2834 -> NIEZBIEZNE
+     evo R=  0.84 a=+0.01: gate=1.3e-04 FAIL; BREAKDOWN t*=0.22 (t/t*_izo=0.03)
+     evo R=  0.84 a=-0.01: gate=3.5e-07 PASS; BREAKDOWN t*=0.19 (t/t*_izo=0.03)
+     evo R=  0.84 a=+0.00: gate=3.2e-06 FAIL; BREAKDOWN t*=0.21 (t/t*_izo=0.03)
+     evo R=  1.68 a=+0.01: gate=3.2e-07 PASS; BREAKDOWN t*=0.21 (t/t*_izo=0.03)
+     evo R=  1.68 a=-0.01: gate=6.3e-06 FAIL; BREAKDOWN t*=0.20 (t/t*_izo=0.03)
+     evo R=  1.68 a=+0.00: gate=5.8e-07 PASS; BREAKDOWN t*=0.21 (t/t*_izo=0.03)
+  -- d=5.047: c_bath=+0.2218 (=N_c A cos(d-delta)/d)
+     R=  2.52 h=0.0150 N=  168: w2_raw= +0.4803  w2_clean= +0.4803  vac_min= +0.5506 (N_neg_vac=0, floor(R/pi)=0)
+     R=  2.52 h=0.0075 N=  336: w2_raw= +0.4847  w2_clean= +0.4847  vac_min= +0.5553 (N_neg_vac=0, floor(R/pi)=0)
+     R=  5.05 h=0.0150 N=  336: w2_raw= -0.6975  w2_clean= -0.6975  vac_min= -0.6038 (N_neg_vac=1, floor(R/pi)=1)
+     R=  5.05 h=0.0075 N=  673: w2_raw= -0.6965  w2_clean= -0.6965  vac_min= -0.6032 (N_neg_vac=1, floor(R/pi)=1)
+     zbieznosc w2_clean: srednia=-0.1072 rozrzut=1.1823 -> NIEZBIEZNE
+     evo R=  2.52 a=+0.01: gate=3.1e+20 FAIL; BREAKDOWN t*=4.69 (t/t*_izo=0.66)
+     evo R=  2.52 a=-0.01: gate=2.0e+43 FAIL; BREAKDOWN t*=4.73 (t/t*_izo=0.67)
+     evo R=  2.52 a=+0.00: gate=2.7e+28 FAIL; BREAKDOWN t*=4.71 (t/t*_izo=0.66)
+     evo R=  5.05 a=+0.01: gate=3.8e-07 PASS; BREAKDOWN t*=1.26 (t/t*_izo=0.18)
+     evo R=  5.05 a=-0.01: gate=3.9e-07 PASS; BREAKDOWN t*=1.24 (t/t*_izo=0.17)
+     evo R=  5.05 a=+0.00: gate=8.3e-06 FAIL; BREAKDOWN t*=1.24 (t/t*_izo=0.18)
+
+------------------------------------------------------------------------------
+[emu] central=mu (g0=2.02117, t*_izo=3.62), sasiedzi=e (A=0.0936, delta=-75.3 deg, kappa=0.000), N_c=12
+  d punkty (LOCKED): ['6.512', '12.870', '19.179', '3.256', '9.769']
+  -- d=6.512: c_bath=+0.0046 (=N_c A cos(d-delta)/d)
+     R=  3.26 h=0.0150 N=  217: w2_raw= -0.4425  w2_clean= -0.4425  vac_min= -0.0637 (N_neg_vac=1, floor(R/pi)=1)
+     R=  3.26 h=0.0075 N=  434: w2_raw= -0.4412  w2_clean= -0.4412  vac_min= -0.0615 (N_neg_vac=1, floor(R/pi)=1)
+     R=  6.51 h=0.0150 N=  434: w2_raw= -7.6352  w2_clean= -7.6352  vac_min= -0.7580 (N_neg_vac=2, floor(R/pi)=2)
+     R=  6.51 h=0.0075 N=  868: w2_raw= -7.3702  w2_clean= -7.3702  vac_min= -0.7578 (N_neg_vac=2, floor(R/pi)=2)
+     zbieznosc w2_clean: srednia=-3.9723 rozrzut=7.1940 -> NIEZBIEZNE
+     evo R=  3.26 a=+0.01: gate=1.2e+253 FAIL; BREAKDOWN t*=4.48 (t/t*_izo=1.24)
+     evo R=  3.26 a=-0.01: gate=1.1e+39 FAIL; BREAKDOWN t*=4.51 (t/t*_izo=1.25)
+     evo R=  3.26 a=+0.00: gate=6.5e+11 FAIL; BREAKDOWN t*=4.50 (t/t*_izo=1.24)
+     evo R=  6.51 a=+0.01: gate=4.5e+09 FAIL; BREAKDOWN t*=6.04 (t/t*_izo=1.67)
+     evo R=  6.51 a=-0.01: gate=2.3e-02 FAIL; BREAKDOWN t*=5.84 (t/t*_izo=1.62)
+     evo R=  6.51 a=+0.00: gate=2.2e+31 FAIL; BREAKDOWN t*=6.05 (t/t*_izo=1.67)
+  -- d=12.870: c_bath=-0.0042 (=N_c A cos(d-delta)/d)
+     R=  6.44 h=0.0150 N=  429: w2_raw= -8.0688  w2_clean= -8.0688  vac_min= -0.7524 (N_neg_vac=2, floor(R/pi)=2)
+     R=  6.44 h=0.0075 N=  858: w2_raw= -7.7914  w2_clean= -7.7914  vac_min= -0.7521 (N_neg_vac=2, floor(R/pi)=2)
+     R= 12.87 h=0.0150 N=  858: w2_raw= -8.0688  w2_clean= -8.0688  vac_min= -0.9307 (N_neg_vac=4, floor(R/pi)=4)
+     R= 12.87 h=0.0075 N= 1716: w2_raw= -7.7914  w2_clean= -7.7914  vac_min= -0.9306 (N_neg_vac=4, floor(R/pi)=4)
+     zbieznosc w2_clean: srednia=-7.9301 rozrzut=0.2774 -> NIEZBIEZNE
+     evo R=  6.44 a=+0.01: gate=2.0e+164 FAIL; BREAKDOWN t*=6.02 (t/t*_izo=1.67)
+     evo R=  6.44 a=-0.01: gate=4.8e-05 FAIL; BREAKDOWN t*=5.65 (t/t*_izo=1.56)
+     evo R=  6.44 a=+0.00: gate=7.2e+176 FAIL; BREAKDOWN t*=6.10 (t/t*_izo=1.69)
+     evo R= 12.87 a=+0.01: gate=8.8e+16 FAIL; BREAKDOWN t*=6.55 (t/t*_izo=1.81)
+     evo R= 12.87 a=-0.01: gate=1.2e-06 FAIL; BREAKDOWN t*=4.46 (t/t*_izo=1.23)
+     evo R= 12.87 a=+0.00: gate=1.4e-06 FAIL; BREAKDOWN t*=5.43 (t/t*_izo=1.50)
+  -- d=19.179: c_bath=-0.0043 (=N_c A cos(d-delta)/d)
+     R=  9.59 h=0.0150 N=  639: w2_raw= -8.0745  w2_clean= -8.0745  vac_min= -0.8830 (N_neg_vac=3, floor(R/pi)=3)
+     R=  9.59 h=0.0075 N= 1279: w2_raw= -7.7965  w2_clean= -7.7965  vac_min= -0.8830 (N_neg_vac=3, floor(R/pi)=3)
+     R= 19.18 h=0.0150 N= 1279: w2_raw= -8.0739  w2_clean= -8.0739  vac_min= -0.9634 (N_neg_vac=6, floor(R/pi)=6)
+     R= 19.18 h=0.0075 N= 2557: w2_raw= -7.7965  w2_clean= -7.7965  vac_min= -0.9634 (N_neg_vac=6, floor(R/pi)=6)
+     zbieznosc w2_clean: srednia=-7.9353 rozrzut=0.2780 -> NIEZBIEZNE
+     evo R=  9.59 a=+0.01: gate=1.8e-06 FAIL; BREAKDOWN t*=0.93 (t/t*_izo=0.26)
+     evo R=  9.59 a=-0.01: gate=1.8e-06 FAIL; BREAKDOWN t*=0.93 (t/t*_izo=0.26)
+     evo R=  9.59 a=+0.00: gate=1.8e-06 FAIL; BREAKDOWN t*=0.93 (t/t*_izo=0.26)
+     evo R= 19.18 a=+0.01: gate=5.4e-07 PASS; BREAKDOWN t*=5.73 (t/t*_izo=1.58)
+     evo R= 19.18 a=-0.01: gate=3.9e-07 PASS; BREAKDOWN t*=4.46 (t/t*_izo=1.23)
+     evo R= 19.18 a=+0.00: gate=4.7e-07 PASS; BREAKDOWN t*=5.48 (t/t*_izo=1.52)
+  -- d=3.256: c_bath=-0.0486 (=N_c A cos(d-delta)/d)
+     R=  1.63 h=0.0150 N=  109: w2_raw= +2.0577  w2_clean= +2.0577  vac_min= +2.6986 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.63 h=0.0075 N=  217: w2_raw= +2.0742  w2_clean= +2.0742  vac_min= +2.7159 (N_neg_vac=0, floor(R/pi)=0)
+     R=  3.26 h=0.0150 N=  217: w2_raw= -0.3965  w2_clean= -0.3965  vac_min= -0.0637 (N_neg_vac=1, floor(R/pi)=1)
+     R=  3.26 h=0.0075 N=  434: w2_raw= -0.3952  w2_clean= -0.3952  vac_min= -0.0615 (N_neg_vac=1, floor(R/pi)=1)
+     zbieznosc w2_clean: srednia=+0.8351 rozrzut=2.4707 -> NIEZBIEZNE
+     evo R=  1.63 a=+0.01: gate=2.6e+33 FAIL; BREAKDOWN t*=3.29 (t/t*_izo=0.91)
+     evo R=  1.63 a=-0.01: gate=3.8e+10 FAIL; BREAKDOWN t*=3.32 (t/t*_izo=0.92)
+     evo R=  1.63 a=+0.00: gate=4.8e+07 FAIL; BREAKDOWN t*=3.30 (t/t*_izo=0.91)
+     evo R=  3.26 a=+0.01: gate=5.4e+08 FAIL; BREAKDOWN t*=4.56 (t/t*_izo=1.26)
+     evo R=  3.26 a=-0.01: gate=2.1e+30 FAIL; BREAKDOWN t*=4.59 (t/t*_izo=1.27)
+     evo R=  3.26 a=+0.00: gate=6.3e+11 FAIL; BREAKDOWN t*=4.58 (t/t*_izo=1.27)
+  -- d=9.769: c_bath=+0.0101 (=N_c A cos(d-delta)/d)
+     R=  4.88 h=0.0150 N=  326: w2_raw= -7.3462  w2_clean= -7.3462  vac_min= -0.5778 (N_neg_vac=1, floor(R/pi)=1)
+     R=  4.88 h=0.0075 N=  651: w2_raw= -7.0865  w2_clean= -7.0865  vac_min= -0.5771 (N_neg_vac=1, floor(R/pi)=1)
+     R=  9.77 h=0.0150 N=  651: w2_raw= -7.3782  w2_clean= -7.3782  vac_min= -0.8869 (N_neg_vac=3, floor(R/pi)=3)
+     R=  9.77 h=0.0075 N= 1302: w2_raw= -7.1208  w2_clean= -7.1208  vac_min= -0.8868 (N_neg_vac=3, floor(R/pi)=3)
+     zbieznosc w2_clean: srednia=-7.2329 rozrzut=0.2917 -> NIEZBIEZNE
+     evo R=  4.88 a=+0.01: gate=4.1e-06 FAIL; BREAKDOWN t*=1.22 (t/t*_izo=0.34)
+     evo R=  4.88 a=-0.01: gate=4.1e-06 FAIL; BREAKDOWN t*=1.20 (t/t*_izo=0.33)
+     evo R=  4.88 a=+0.00: gate=5.0e-06 FAIL; BREAKDOWN t*=1.21 (t/t*_izo=0.33)
+     evo R=  9.77 a=+0.01: gate=7.1e-07 PASS; BREAKDOWN t*=0.98 (t/t*_izo=0.27)
+     evo R=  9.77 a=-0.01: gate=7.1e-07 PASS; BREAKDOWN t*=0.98 (t/t*_izo=0.27)
+     evo R=  9.77 a=+0.00: gate=7.1e-07 PASS; BREAKDOWN t*=0.98 (t/t*_izo=0.27)
+
+------------------------------------------------------------------------------
+[mumu] central=mu (g0=2.02117, t*_izo=3.62), sasiedzi=mu (A=0.6159, delta=+97.2 deg, kappa=0.000), N_c=12
+  d punkty (LOCKED): ['3.079', '9.572', '15.897', '1.539', '4.618']
+  -- d=3.079: c_bath=+0.4493 (=N_c A cos(d-delta)/d)
+     R=  1.54 h=0.0150 N=  103: w2_raw= +1.7685  w2_clean= +1.7685  vac_min= +3.1331 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.54 h=0.0075 N=  205: w2_raw= +1.7877  w2_clean= +1.7877  vac_min= +3.1536 (N_neg_vac=0, floor(R/pi)=0)
+     R=  3.08 h=0.0150 N=  205: w2_raw= -0.8082  w2_clean= -0.8082  vac_min= +0.0458 (N_neg_vac=0, floor(R/pi)=0)
+     R=  3.08 h=0.0075 N=  411: w2_raw= -0.8068  w2_clean= -0.8068  vac_min= +0.0483 (N_neg_vac=0, floor(R/pi)=0)
+     zbieznosc w2_clean: srednia=+0.4853 rozrzut=2.5959 -> NIEZBIEZNE
+     evo R=  1.54 a=+0.01: gate=1.2e+09 FAIL; BREAKDOWN t*=2.70 (t/t*_izo=0.75)
+     evo R=  1.54 a=-0.01: gate=1.1e+10 FAIL; BREAKDOWN t*=2.72 (t/t*_izo=0.75)
+     evo R=  1.54 a=+0.00: gate=2.8e+28 FAIL; BREAKDOWN t*=2.71 (t/t*_izo=0.75)
+     evo R=  3.08 a=+0.01: gate=3.4e+65 FAIL; BREAKDOWN t*=3.77 (t/t*_izo=1.04)
+     evo R=  3.08 a=-0.01: gate=6.8e+09 FAIL; BREAKDOWN t*=3.78 (t/t*_izo=1.05)
+     evo R=  3.08 a=+0.00: gate=8.6e+13 FAIL; BREAKDOWN t*=3.78 (t/t*_izo=1.04)
+  -- d=9.572: c_bath=-0.0167 (=N_c A cos(d-delta)/d)
+     R=  4.79 h=0.0150 N=  319: w2_raw= -8.6969  w2_clean= -8.6969  vac_min= -0.5607 (N_neg_vac=1, floor(R/pi)=1)
+     R=  4.79 h=0.0075 N=  638: w2_raw= -8.3958  w2_clean= -8.3958  vac_min= -0.5600 (N_neg_vac=1, floor(R/pi)=1)
+     R=  9.57 h=0.0150 N=  638: w2_raw= -8.7358  w2_clean= -8.7358  vac_min= -0.8826 (N_neg_vac=3, floor(R/pi)=3)
+     R=  9.57 h=0.0075 N= 1276: w2_raw= -8.4390  w2_clean= -8.4390  vac_min= -0.8826 (N_neg_vac=3, floor(R/pi)=3)
+     zbieznosc w2_clean: srednia=-8.5669 rozrzut=0.3400 -> NIEZBIEZNE
+     evo R=  4.79 a=+0.01: gate=5.3e-06 FAIL; BREAKDOWN t*=1.18 (t/t*_izo=0.33)
+     evo R=  4.79 a=-0.01: gate=1.0e-05 FAIL; BREAKDOWN t*=1.17 (t/t*_izo=0.32)
+     evo R=  4.79 a=+0.00: gate=5.5e-06 FAIL; BREAKDOWN t*=1.18 (t/t*_izo=0.33)
+     evo R=  9.57 a=+0.01: gate=5.3e-07 PASS; BREAKDOWN t*=0.92 (t/t*_izo=0.25)
+     evo R=  9.57 a=-0.01: gate=5.3e-07 PASS; BREAKDOWN t*=0.92 (t/t*_izo=0.25)
+     evo R=  9.57 a=+0.00: gate=5.3e-07 PASS; BREAKDOWN t*=0.92 (t/t*_izo=0.25)
+  -- d=15.897: c_bath=-0.0292 (=N_c A cos(d-delta)/d)
+     R=  7.95 h=0.0150 N=  530: w2_raw= -9.4679  w2_clean= -9.4679  vac_min= -0.8343 (N_neg_vac=2, floor(R/pi)=2)
+     R=  7.95 h=0.0075 N= 1060: w2_raw= -9.1502  w2_clean= -9.1502  vac_min= -0.8341 (N_neg_vac=2, floor(R/pi)=2)
+     R= 15.90 h=0.0150 N= 1060: w2_raw= -9.4679  w2_clean= -9.4679  vac_min= -0.9512 (N_neg_vac=5, floor(R/pi)=5)
+     R= 15.90 h=0.0075 N= 2120: w2_raw= -9.1502  w2_clean= -9.1502  vac_min= -0.9512 (N_neg_vac=5, floor(R/pi)=5)
+     zbieznosc w2_clean: srednia=-9.3091 rozrzut=0.3177 -> NIEZBIEZNE
+     evo R=  7.95 a=+0.01: gate=1.9e+13 FAIL; BREAKDOWN t*=6.02 (t/t*_izo=1.66)
+     evo R=  7.95 a=-0.01: gate=1.8e+11 FAIL; BREAKDOWN t*=6.02 (t/t*_izo=1.66)
+     evo R=  7.95 a=+0.00: gate=1.5e+12 FAIL; BREAKDOWN t*=6.02 (t/t*_izo=1.66)
+     evo R= 15.90 a=+0.01: gate=4.2e-05 FAIL; BREAKDOWN t*=1.62 (t/t*_izo=0.45)
+     evo R= 15.90 a=-0.01: gate=4.2e-05 FAIL; BREAKDOWN t*=1.62 (t/t*_izo=0.45)
+     evo R= 15.90 a=+0.00: gate=4.2e-05 FAIL; BREAKDOWN t*=1.62 (t/t*_izo=0.45)
+  -- d=1.539: c_bath=+4.7417 (=N_c A cos(d-delta)/d)
+     R=  0.77 h=0.0150 N=   51: w2_raw= +2.7794  w2_clean= +2.7794  vac_min=+15.3307 (N_neg_vac=0, floor(R/pi)=0)
+     R=  0.77 h=0.0075 N=  103: w2_raw= +2.9455  w2_clean= +2.9455  vac_min=+15.5029 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.54 h=0.0150 N=  103: w2_raw= -8.0247  w2_clean= -8.0247  vac_min= +3.1331 (N_neg_vac=0, floor(R/pi)=0)
+     R=  1.54 h=0.0075 N=  205: w2_raw= -8.0120  w2_clean= -8.0120  vac_min= +3.1536 (N_neg_vac=0, floor(R/pi)=0)
+     zbieznosc w2_clean: srednia=-2.5780 rozrzut=10.9702 -> NIEZBIEZNE
+     evo R=  0.77 a=+0.01: gate=5.3e+15 FAIL; BREAKDOWN t*=1.03 (t/t*_izo=0.29)
+     evo R=  0.77 a=-0.01: gate=1.9e+08 FAIL; BREAKDOWN t*=1.04 (t/t*_izo=0.29)
+     evo R=  0.77 a=+0.00: gate=3.4e+10 FAIL; BREAKDOWN t*=1.04 (t/t*_izo=0.29)
+     evo R=  1.54 a=+0.01: gate=4.1e+16 FAIL; BREAKDOWN t*=1.07 (t/t*_izo=0.30)
+     evo R=  1.54 a=-0.01: gate=2.0e+06 FAIL; BREAKDOWN t*=1.08 (t/t*_izo=0.30)
+     evo R=  1.54 a=+0.00: gate=9.4e+08 FAIL; BREAKDOWN t*=1.07 (t/t*_izo=0.30)
+  -- d=4.618: c_bath=-1.5618 (=N_c A cos(d-delta)/d)
+     R=  2.31 h=0.0150 N=  154: w2_raw= +2.1167  w2_clean= +2.1167  vac_min= +0.8485 (N_neg_vac=0, floor(R/pi)=0)
+     R=  2.31 h=0.0075 N=  308: w2_raw= +2.2278  w2_clean= +2.2278  vac_min= +0.8546 (N_neg_vac=0, floor(R/pi)=0)
+     R=  4.62 h=0.0150 N=  308: w2_raw=-269.7814  w2_clean=-269.7814  vac_min= -0.5290 (N_neg_vac=1, floor(R/pi)=1)
+     R=  4.62 h=0.0075 N=  616: w2_raw=-272.6844  w2_clean=-272.6844  vac_min= -0.5282 (N_neg_vac=1, floor(R/pi)=1)
+     zbieznosc w2_clean: srednia=-134.5303 rozrzut=274.9121 -> NIEZBIEZNE
+     evo R=  2.31 a=+0.01: gate=6.4e-07 PASS; BREAKDOWN t*=0.17 (t/t*_izo=0.05)
+     evo R=  2.31 a=-0.01: gate=7.3e-07 PASS; BREAKDOWN t*=0.17 (t/t*_izo=0.05)
+     evo R=  2.31 a=+0.00: gate=6.9e-07 PASS; BREAKDOWN t*=0.17 (t/t*_izo=0.05)
+     evo R=  4.62 a=+0.01: gate=1.4e-06 FAIL; BREAKDOWN t*=0.17 (t/t*_izo=0.05)
+     evo R=  4.62 a=-0.01: gate=1.3e-06 FAIL; BREAKDOWN t*=0.17 (t/t*_izo=0.05)
+     evo R=  4.62 a=+0.00: gate=1.4e-06 FAIL; BREAKDOWN t*=0.17 (t/t*_izo=0.05)
+
+==============================================================================
+PODSUMOWANIE Q1 (kryteria LOCK sec. 3, doslownie):
+  [ee d=3.364] w2_clean=+1.2210 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [ee d=9.835] w2_clean=brak conv=None; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [ee d=16.158] w2_clean=brak conv=None; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [ee d=1.682] w2_clean=+13.3987 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [ee d=5.047] w2_clean=-0.1072 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [emu d=6.512] w2_clean=-3.9723 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [emu d=12.870] w2_clean=-7.9301 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [emu d=19.179] w2_clean=-7.9353 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [emu d=3.256] w2_clean=+0.8351 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [emu d=9.769] w2_clean=-7.2329 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [mumu d=3.079] w2_clean=+0.4853 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [mumu d=9.572] w2_clean=-8.5669 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [mumu d=15.897] w2_clean=-9.3091 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [mumu d=1.539] w2_clean=-2.5780 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+  [mumu d=4.618] w2_clean=-134.5303 conv=False; ewolucja +-: ucieczka/domain => nierozstrzygajacy
+
+WERDYKT: Q1-INCONCLUSIVE (albo mieszane, albo niezbiezne/domain)
+(interpretacja liczb i kombinacji -> Phase_FINAL_close.md)
+==============================================================================

@@ -1,0 +1,13 @@
+G_fft(0) = 0.107147; prog zaokraglen eps*G(0) = 2.379e-17
+G_fft(22) = -2.331e-18  |.| < prog: True
+G_mp(22)  = 5.39749635282e-20   (> 0: True)
+G_mp(4)   = 2.19770357367e-5 vs FFT 2.197703573674e-05
+sanity d=4: |mp-fft|/fft = 3.885e-14
+------------------------------------------------------------
+[PASS] (a) wartosc FFT pod progiem zaokraglen
+[PASS] (b) G(22) > 0 w dps=40: 5.3974964e-20
+[PASS] (c) sanity metody mpmath (d=4)
+WNIOSEK 2b: QF-4c pad = artefakt precyzji testu; pozytywnosc G_m
+potwierdzona niezaleznie (dps=40). Kryterium LOCK (G_m>0) STOI;
+werdykt kontroli QF-4c: PASS po udokumentowanej korekcie
+implementacyjnej testu (wzorzec A3: blad implementacji ZNALEZIONY).

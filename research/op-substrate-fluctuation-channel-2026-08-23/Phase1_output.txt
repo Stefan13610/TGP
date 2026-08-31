@@ -1,0 +1,31 @@
+========================================================================
+Phase 1 — QF analitycznie (sympy exact)
+========================================================================
+[PASS] T1a: F_fl = (1/2)ln(1-g^2) (exact)  F_fl = -log(G0) + log(-G0**2*g**2 + G0**2)/2
+[PASS] T1b: F_fl < 0 dla g in (0,1) [przyciaganie uniwersalne]  
+[PASS] T1c: dF_fl/dg < 0 (|F| rosnie z g; F_fl(d) rosnie z d)  
+[PASS] T2: wyraz wiodacy klasyczny = -(v1*v2/G0^2)*Gd  coeff(Gd) = -v1*v2/G0**2
+[PASS] T3: F_zrodla = -(1/2)q^T Sigma q; czlon krzyzowy = -q1*q2*Gd  czlon krzyzowy/(q1q2) = -G_d
+[PASS] T4: (-(d2/dr2 + (2/r)d/dr) + m^2) e^{-mr}/(4 pi r) = 0 (r>0)  residuum = 0
+[PASS] T5: kontrola negatywna — g>1 wykryte jako niefizyczne  F_fl(g=1.2) = -0.410490276034915 + 1.5707963267949*I
+[PASS] T6a: F_fl = -g^2/2 - g^4/4 + O(g^6)  szereg = -g**4/4 - g**2/2
+[PASS] T6b: F_fl ~ -e^{-2 m d}/(32 pi^2 d^2 G0^2) [zasieg 2m, potega -2]  F_asym = -exp(-2*d*m)/(32*pi**2*G0**2*d**2)
+------------------------------------------------------------------------
+SUMMARY Phase 1: 9/9 PASS
+  PASS  T1a: F_fl = (1/2)ln(1-g^2) (exact)
+  PASS  T1b: F_fl < 0 dla g in (0,1) [przyciaganie uniwersalne]
+  PASS  T1c: dF_fl/dg < 0 (|F| rosnie z g; F_fl(d) rosnie z d)
+  PASS  T2: wyraz wiodacy klasyczny = -(v1*v2/G0^2)*Gd
+  PASS  T3: F_zrodla = -(1/2)q^T Sigma q; czlon krzyzowy = -q1*q2*Gd
+  PASS  T4: (-(d2/dr2 + (2/r)d/dr) + m^2) e^{-mr}/(4 pi r) = 0 (r>0)
+  PASS  T5: kontrola negatywna — g>1 wykryte jako niefizyczne
+  PASS  T6a: F_fl = -g^2/2 - g^4/4 + O(g^6)
+  PASS  T6b: F_fl ~ -e^{-2 m d}/(32 pi^2 d^2 G0^2) [zasieg 2m, potega -2]
+
+Wnioski analityczne (exact):
+ * kanal M-S (zrodlowy):   U = -q1 q2 G_m(d)      -> znak ~ sgn(q1 q2),
+   zasieg m, na krytycznosci ~ -1/d  (kanal LADUNKOWY)
+ * kanal M-D klasyczny:    ~ -(v1 v2/G0^2) G_m(d)  -> znak ~ sgn(v1 v2)
+ * kanal M-D fluktuacyjny: F_fl = (1/2)ln(1-g^2) < 0 ZAWSZE
+   (niezaleznie od v1, v2) -> zasieg 2m, na krytycznosci ~ -1/d^2
+   JEDYNY kanal o uniwersalnym znaku przyciagania na poziomie 0.

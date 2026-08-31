@@ -1,0 +1,43 @@
+﻿==============================================================================
+Phase 3 (Q2): dwa sektory z jednej akcji stabilnej (M-S).
+Wariant FROZEN: komorka 1D periodyczna; sigma_s=0.5, q=1.0 [INPUT].
+Operator fluktuacji: waga w=psi^4; kotwica prozni: omega^2=gamma+k^2.
+==============================================================================
+
+[P3a] KONTROLA d=inf: pojedyncze zrodlo, [-40,40], Dirichlet psi=1
+  N=4000: max(psi)=1.276673; fit m=0.99998 -> m^2=0.99997 (gamma=1; odchyl 0.00%, gate<=5%); monotoniczny zanik [2,30]: True; omega^2_min=1.00687 (oczek. ~+gamma)
+  N=8000: max(psi)=1.276683; fit m=1.00000 -> m^2=0.99999 (gamma=1; odchyl 0.00%, gate<=5%); monotoniczny zanik [2,30]: True; omega^2_min=1.00687 (oczek. ~+gamma)
+  KONTROLA d=inf: PASS (Yukawa m^2=+gamma odtworzona).
+
+[P3a/P3b] siec periodyczna: d in {8, 6, 4, 2}, q=1.0
+  d=8 N=400: psi in [1.015952, 1.276759]; omega^2 najnizsze: ['+1.34464', '+2.03819', '+2.22560', '+3.92344']
+  d=8 N=800: psi in [1.015952, 1.276756]; omega^2 najnizsze: ['+1.34464', '+2.03821', '+2.22561', '+3.92359']
+    zbieznosc siatek: |dv|=4.85e-06 -> ZBIEZNE; omega^2_min(d=8) = +1.34464
+  d=6 N=400: psi in [1.041748, 1.277208]; omega^2 najnizsze: ['+1.56855', '+2.73989', '+2.74530', '+5.99611']
+  d=6 N=800: psi in [1.041748, 1.277206]; omega^2 najnizsze: ['+1.56855', '+2.73991', '+2.74531', '+5.99637']
+    zbieznosc siatek: |dv|=5.66e-06 -> ZBIEZNE; omega^2_min(d=6) = +1.56855
+  d=4 N=400: psi in [1.106345, 1.280927]; omega^2 najnizsze: ['+1.88310', '+4.29527', '+4.41233', '+11.75412']
+  d=4 N=800: psi in [1.106346, 1.280926]; omega^2 najnizsze: ['+1.88311', '+4.29530', '+4.41237', '+11.75472']
+    zbieznosc siatek: |dv|=3.32e-06 -> ZBIEZNE; omega^2_min(d=4) = +1.88310
+  d=2 N=400: psi in [1.274989, 1.322219]; omega^2 najnizsze: ['+2.46974', '+12.34111', '+12.34385', '+41.94758']
+  d=2 N=800: psi in [1.274989, 1.322219]; omega^2 najnizsze: ['+2.46974', '+12.34126', '+12.34400', '+41.95001']
+    zbieznosc siatek: |dv|=4.29e-07 -> ZBIEZNE; omega^2_min(d=2) = +2.46974
+  [wrazliwosc] d=4, q=0.3: omega^2_min=+1.28824
+
+[P3b] odpowiedz statyczna: superkomorka 10 okresow, L chi = -delta_h w centrum zrodla
+  d=8: zmiany znaku (|x-x0|>2 sigma_s): 0 -> MONOTONICZNA/YUKAWA; |chi| zanika: True
+  d=6: zmiany znaku (|x-x0|>2 sigma_s): 0 -> MONOTONICZNA/YUKAWA; |chi| zanika: True
+  d=4: zmiany znaku (|x-x0|>2 sigma_s): 0 -> MONOTONICZNA/YUKAWA; |chi| zanika: True
+  d=2: zmiany znaku (|x-x0|>2 sigma_s): 0 -> MONOTONICZNA/YUKAWA; |chi| zanika: True
+  kontrola prozni (d=inf): zmiany znaku = 0 (oczek. 0, Yukawa)
+
+==============================================================================
+PODSUMOWANIE Q2 (kryteria LOCK sec. 3 Phase 3, doslownie):
+  d=8: omega^2_min=+1.34464 (conv=True), odpowiedz: monotoniczna
+  d=6: omega^2_min=+1.56855 (conv=True), odpowiedz: monotoniczna
+  d=4: omega^2_min=+1.88310 (conv=True), odpowiedz: monotoniczna
+  d=2: omega^2_min=+2.46974 (conv=True), odpowiedz: monotoniczna
+
+WERDYKT: Q2-FAIL (gestosc NIE zmienia znaku; rozdwojenie W pozostaje problemem aksjomatycznym)
+(kontrola d=inf: PASS; interpretacja -> Phase_FINAL_close.md)
+==============================================================================

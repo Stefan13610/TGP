@@ -11,6 +11,60 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
+## 🟢 Sesja 2026-08-31 — STATE-SYNC zamknięcia `op-bath-two-sectors` (obliczenia 2026-08-23, close dokumentacyjny 2026-08-29) + COMMIT/PUSH zaległości 18 plików + user-gate NEEDS (krok 2) + następca Q1 (krok 3)
+
+User: „przenalizuj w jakim stanie jest aktualnie tgp_v1 i co warto zrobić jako następny krok" → autoryzacja: „ok działaj z krokami 1, 2, 3" (1 = księgowość, 2 = zbiorczy user-gate zaległych NEEDS, 3 = cykl-następca Q1 metodą zwalidowaną w Q2).
+
+### ✅ Krok 1 — księgowość: op-bath-two-sectors CLOSED (retro-sync do STATE)
+
+- **op-bath-two-sectors: 🔴 CLOSED** ([[research/op-bath-two-sectors-2026-08-23/Phase_FINAL_close.md]]; obliczenia 2026-08-23 — sesja implementatora urwana po Phase 3; zamknięcie dokumentacyjne 2026-08-29; STATE synchronizowany dopiero teraz):
+  - **Gate Phase 1: PASS** wg pre-rejestrowanego rulingu zakresu ([[research/op-bath-two-sectors-2026-08-23/Phase1_gate_ruling.md]]; strict-reading z opcjonalnym τ: FAIL — oba odczyty raportowane). Zmierzone (A, δ) PRIMARY [120,260]: M-P e (0.093576, −75.34°), M-P μ (0.615899, +97.20°), M-L e (0.095922, −81.43°), M-L μ (0.363732, +38.58°); κ_eff≤5.4e−6→κ:=0. **Δ_ML(e→μ)=120.01°** — potwierdzenie ANALIZA_N1 co do setnej na fazach zmierzonych NIEZALEŻNIE. Drabina minimów 2π±5% **PASS 6/6** (odchył 0.96–3.34%, malejący z d); kontrola P1c (Yukawa bez cos) czysta 6/6. Flaga **TAU-NEAR-THRESHOLD**: τ (Q_K=3/2 [INPUT]) 1.9% pod progiem 8/5; wrażliwość +2% → KOLAPS.
+  - **Q1 (runaway w kąpieli): INCONCLUSIVE** — P2a baseline PASS (λ_min(w1)=−1.3896 vs #63 −1.389; t*=3.62 stabilne w dt), ale ω²_min NIEZBIEŻNE siatka×komórka we WSZYSTKICH 15 punktach (rozrzut 0.28–274.9); znak ω² podąża za ROZMIAREM komórki (R<π: +, R>π: −), a komparator izolacja-w-komórce BEZ kąpieli daje niemal identyczne spektra i breakdowny (t*/t*_izo=0.03–1.81 także przy amp=0). **Ustalenie metodologiczne: komórkowy wariant z obciętym tłem + zero-flux BC jest NIEZDOLNY rozstrzygnąć Q1** (artefakt niestacjonarnego obcięcia dominuje nad efektem kąpieli, |c_bath|≤0.45). Pytanie N3 (ω²(n)) pozostaje OTWARTE.
+  - **Q2 (dwa sektory jednej akcji): FAIL — czysty poznawczo** (kontrola d=∞ PASS: m²=0.99997/0.99999=γ±0.00%; pełna zbieżność |dv|≤5.7e−6): ω²_min(d)=+1.34464 (d=8), +1.56855 (d=6), +1.88310 (d=4), +2.46974 (d=2) — wszystkie DODATNIE i ROSNĄCE z gęstością; odpowiedź statyczna monotoniczna/Yukawa dla wszystkich d; wrażliwość q=0.3 również dodatnia. Gęstość źródeł w akcji stabilnej USZTYWNIA potencjał fluktuacji — znak tachionowy NIE emerguje. **Hipoteza „dwa sektory jednej akcji" OBALONA w klasie zbadanej; wybór znaku W = otwarty problem AKSJOMATYCZNY (decyzja ontologiczna autora, nie numeryka)** — dosłownie wg drzewa LOCKa §6.
+- **Commit/push (za jawną zgodą):** zaległość 18 plików — cały cykl [[research/op-substrate-fluctuation-channel-2026-08-23/README.md]] (CLOSED-EXECUTED, dotąd tylko na dysku), Phase 1–3 + dokumenty zamykające op-bath-two-sectors, [[meta/BRAINSTORM_2026-08-23_brakujace-puzzle.md]], STATE.md → origin/main.
+
+### ✅ Krok 2 — zbiorczy user-gate zaległych NEEDS (dopiski addytywne do core; szczegóły w podsekcji po realizacji)
+
+### ✅ Krok 3 — cykl-następca Q1 (szczegóły w podsekcji po realizacji)
+
+### WIP po kroku 1
+- **op-bath-two-sectors: 🔴 CLOSED** (Q1-INCONCLUSIVE / Q2-FAIL). NEEDS N1–N4 → realizowane w kroku 2 (autoryzacja „działaj z krokami 1,2,3").
+- **op-substrate-fluctuation-channel: 🟢 CLOSED-EXECUTED** — bez zmian; NEEDS N3 (remark dodatekB) → krok 2; N1/N2 (obiekty rozciągłe, N-ciałowość) — kandydaci na przyszłe cykle.
+- **op-native-pressure: OPEN-ACTIVE** — bez zmian. Burza mózgów pkt 3/4/5/6/8 — bez zmian.
+- Krytyczna ścieżka: rachunek centralny ω²(n) NIEROZSTRZYGNIĘTY (Q1-INCONCLUSIVE) → krok 3 = następca metodą zwalidowaną w Q2 (samouzgodnione tło + periodyczne BC / analiza pasmowa) z nowym LOCKiem Phase 0.
+
+### Cross-references
+[[research/op-bath-two-sectors-2026-08-23/Phase_FINAL_close.md]] · [[research/op-bath-two-sectors-2026-08-23/NEEDS.md]] · [[research/op-lattice-bath-runaway-2026-08-23/ANALIZA_N2_znak-W-z-akcji_2026-08-23.md]] · [[research/op-substrate-fluctuation-channel-2026-08-23/NEEDS.md]]
+
+---
+
+## 🟢 Sesja 2026-08-23 (B) — BURZA MÓZGÓW (zapisana) + cykl `op-substrate-fluctuation-channel` WYKONANY w całości (LOCK → Phase 1–3 → CLOSED-EXECUTED): **QF PASS — kanał fluktuacyjny = jedyny kanał poziomu 0 o uniwersalnym znaku przyciągania; QB — tachion nie z wiązania (MFT), próg rozrzedzenia Φ_c/Φ_vac ≈ 0.30**
+
+User: „burza mózgów… może brakuje jakiejś koncepcji, puzla" → „wszystkie twoje uwagi są bardzo trafne, warte zapisania… Zapisz to i zajmij się w tej sesji 1+2".
+
+### ✅ Burza mózgów (zapisana)
+- [[meta/BRAINSTORM_2026-08-23_brakujace-puzzle.md]] — 8 kandydatów na brakujące puzzle (rejestr: structural-emergence, zero claimów): (0) meta-wzorzec „izolacja umiera, kolektyw żyje" → hipoteza niejednorodnej próżni jako zasady unifikującej dualizmy; (1) tło/kąpiel jako zasada; (2) warstwa statystyczna substratu → grawitacja (kanał fluktuacyjny; korekta: dodatekB MA T_sub/T_c/WF — brakowało POŁĄCZENIA z programem grawitacyjnym); (3) spin-½ przez Finkelsteina–Rubinsteina (π₁ przestrzeni konfiguracji dyskretnej); (4) kolor jako trójbarwienie podsieci + confinement ze ścian domenowych; (5) odwrócenie S07 — zmierzyć f(ψ) z refrakcji (metryka Gordona) zamiast zgadywać ansatze; (6) Δ(e→μ)=120.01°=2π/3 — możliwy ślad ℤ₃ generacji (2T=Q₈⋊ℤ₃); (7) kanał odd — u autora NA TAPECIE w innej ramie (drabinka solitonowa o wyznaczonym kształcie → EM jako ruch+interferencja); (8) „TGP-lite" z survivors. Priorytet autora: 1+2 od zaraz, reszta na przyszłość.
+
+### ✅ Nowy cykl WYKONANY: [[research/op-substrate-fluctuation-channel-2026-08-23/README.md]] — **CLOSED-EXECUTED** (poziom 0; jawnie NIE dubluje op-bath-two-sectors poziomu 1)
+- **LOCK:** [[research/op-substrate-fluctuation-channel-2026-08-23/Phase0_balance.md]] + Amendment A1 (estymator krytyczny ze stałą projekcji modu zerowego) — oba zamknięte PRZED kodem; okna fitów pre-rejestrowane.
+- **QF PASS (Phase 1 sympy 9/9 + Phase 2 siatka FFT L=64/128):** trzy kanały defekt–defekt rozdzielone exact: źródłowy −q₁q₂G_m (ładunkowy, zasięg μ, kryt. −1/d), klasyczny pinning ~−v₁v₂G_m (ładunkowy), **fluktuacyjny F_fl=½ln(1−(G(d)/G₀)²) < 0 ZAWSZE (v-niezależny), zasięg 2μ (zgodność 0.8–4%, R²≥0.9998), kryt. −1/d² (slope −2.06/−2.15, dryf p 0.048)**. Tabela znaków 6/6. Sygnatura, której brakowało kanałom z programu „most do grawitacji" (amplitudowy masywny / Goldstone ładunkowy). Zastrzeżenie jawne: defekt PUNKTOWY na krytyczności → −1/d², NIE Newton −1/d (obiekty rozciągłe + N-ciałowość = NEEDS N1/N2). Kontekst skali z korpusu połączony: m_eff²=γ(1+T_Γ), γ≈12Λ_eff/Φ₀ ⟹ ξ~horyzont ⟹ reżim efektywnie krytyczny wewnątrz horyzontu (spójne z prop:continuum-conditions).
+- **Incydent QF-4c (wzorzec A3, udokumentowany):** pierwotny FAIL = G_fft(22; m=2)=−2.3e−18 POD progiem zaokrągleń (eps·G₀=2.4e−17); Phase 2b: suma spektralna mpmath dps=40 → G=+5.4e−20>0 (sanity 3.9e−14). Błąd implementacji TESTU znaleziony ⟹ korekta legalna; pierwotny output zachowany.
+- **QB (Phase 3 sympy 9/9):** **QB-1: ΔC_bond=+8zJs_b⁶ ≥ 0 ZAWSZE** — znak tachionowy NIE emerguje z wiązania gradientowego na MFT (wynik negatywny wprost; zawęża pochodzenie znaku W → poziom 1 lub poza-MFT). **QB-2: próg rozrzedzenia ISTNIEJE (spinodala): Φ_c/Φ_vac=0.298 przy WF** (r*=−2.251,u*=3.917), skan 41×41: 0.197–0.331; kąpiel próżniowa stabilna (C=13.6), bond ZAWĘŻA obszar niestabilny. QB-3 (deskryptywnie): odwrotna rola gęstości niż w hipotezie N2 — informacja dla interpretacji op-bath-two-sectors Q2, nie sprzeczność.
+- **NEEDS N1–N5 user-gated:** N1 obiekty rozciągłe (czy istnieje reżim −1/d); N2 N-ciałowość log-det; N3 remark w dodatekB (core, user-gate); N4 QB poza MFT; N5 nota porównawcza do ANALIZA_N2.
+
+### Anti-Lakatos
+✓ LOCK+A1 przed kodem; zero zmian kryteriów/okien po starcie. ✓ Dwa incydenty testowe (QF-4c precyzja, QB-2a literówka stałej 288→144) zdiagnozowane PRZED werdyktem, z błędem implementacji ZNALEZIONYM; pierwotne FAIL-e zachowane w outputach. ✓ Wynik negatywny QB-1 wprost. ✓ Kontrole negatywne wykonane (T5, QF-4a/b/c, QB-1d). ✓ Rdzeń .tex NIETKNIĘTY. ✓ Zakaz dublowania op-bath-two-sectors dotrzymany. ✓ NIE commitowano.
+
+### WIP po sesji (B)
+- **op-substrate-fluctuation-channel: 🟢 CLOSED-EXECUTED** (QF PASS / QB rozstrzygnięte). Decyzje user-gate: NEEDS N1–N5.
+- Burza mózgów: punkty 3/4/5/6/8 czekają na decyzję o własnych cyklach.
+- Bez zmian: op-bath-two-sectors (osobny agent, w realizacji — katalog zawiera już Phase 1–3, README jeszcze PHASE0-LOCKED; NIE ruszano), op-native-pressure (OPEN-ACTIVE), otwarte z sesji (A).
+
+### Cross-references
+[[meta/BRAINSTORM_2026-08-23_brakujace-puzzle.md]] · [[research/op-substrate-fluctuation-channel-2026-08-23/Phase_FINAL_close.md]] · [[research/op-substrate-fluctuation-channel-2026-08-23/NEEDS.md]] · [[axioms/substrat/dodatekB_substrat.tex]] (eq:B-WF, prop:continuum-conditions, cor:entropy-potential) · [[research/op-bath-two-sectors-2026-08-23/README.md]] (delimitacja poziomów)
+
+---
+
 ## 🟡 Sesja 2026-08-23 — STATE-SYNC + HOUSEKEEPING + COMMIT/PUSH + LOCK Phase 0 cyklu `op-lattice-bath-runaway` + REALIZACJA Phase A (bramka): **STOP na A3 — fazy ogona dodatekH niereprodukowalne**
 
 User: „przeanalizuj etap TGP_v1" → „uzupełnij" (STATE retro-wpis + README cyklu native-pressure) → „posprzątaj i wypchnij" → „zrób też audyt i start z fazą 0".

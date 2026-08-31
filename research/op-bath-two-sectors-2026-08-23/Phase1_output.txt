@@ -1,0 +1,80 @@
+﻿==============================================================================
+Phase 1: zmierzone (A, delta) + drabina d*.  LOCK: Phase0 sec. 3.
+INPUT: g0_e=0.90548 (r21/phi-FP), g0_mu=phi*g0_e=1.46510,
+       g0_tau=1.5696 (Q_K=3/2), eta_K=181/15 (M-L).
+Okno PRIMARY dla Phase 2: [120,260], R=450 (method_decisions p.2).
+==============================================================================
+
+--- P1a, M-P (potegowy, PRIMARY): g''+(2/r)g'+(2/g)g'^2=g^2(1-g) ---
+  M-P e   g0=0.90548:
+    [50,150]:  A=0.093579  delta=  -75.35 deg  R2=0.9999906
+    [120,260]: A=0.093576  delta=  -75.34 deg  R2=0.9999978  (PRIMARY)
+    R-kontrola (300 vs 450): |d delta|=0.0000 deg (gate<=3.6) dA/A=6.06e-09 -> PASS
+    rozjazd okien: 0.01 deg (<=3, ok);  kappa_eff=+3.37e-07 -> uzyte kappa=0.0000
+    gate R2>=0.999: PASS
+  M-P mu  g0=1.46510:
+    [50,150]:  A=0.615920  delta=  +96.74 deg  R2=0.9995755
+    [120,260]: A=0.615899  delta=  +97.20 deg  R2=0.9998993  (PRIMARY)
+    R-kontrola (300 vs 450): |d delta|=0.0000 deg (gate<=3.6) dA/A=1.57e-08 -> PASS
+    rozjazd okien: 0.46 deg (<=3, ok);  kappa_eff=+3.95e-07 -> uzyte kappa=0.0000
+    gate R2>=0.999: PASS
+  M-P tau g0=1.56960:
+    [50,150]:  A=1.006501  delta= -173.14 deg  R2=0.9987829
+    [120,260]: A=1.006011  delta= -171.94 deg  R2=0.9997182  (PRIMARY)
+    R-kontrola (300 vs 450): |d delta|=0.0000 deg (gate<=3.6) dA/A=2.28e-07 -> PASS
+    rozjazd okien: 1.20 deg (<=3, ok);  kappa_eff=+5.41e-06 -> uzyte kappa=0.0000
+    gate R2>=0.999: FAIL
+
+--- M-P tau: kontrola wrazliwosci +-2% (method_decisions P1 p.8) ---
+  M-P tau-2% g0=1.53821:
+    [50,150]:  A=0.830109  delta= +139.96 deg  R2=0.9992031
+    [120,260]: A=0.830053  delta= +140.78 deg  R2=0.9998118  (PRIMARY)
+    R-kontrola (300 vs 450): |d delta|=0.0000 deg (gate<=3.6) dA/A=1.30e-07 -> PASS
+    rozjazd okien: 0.83 deg (<=3, ok);  kappa_eff=+7.40e-07 -> uzyte kappa=0.0000
+    gate R2>=0.999: PASS
+  M-P tau+2% g0=1.60099  KOLAPS/NIE DOBIEGL (r_end=5.9)
+
+--- P1a, M-L (logarytmiczny, CROSS-CHECK): F g''+(2/r)g'=g^2(1-g) ---
+  M-L e   g0=0.90548:
+    [50,150]:  A=0.095921  delta=  -81.43 deg  R2=0.9999974
+    [120,260]: A=0.095922  delta=  -81.43 deg  R2=0.9999994  (PRIMARY)
+    R-kontrola (300 vs 450): |d delta|=0.0000 deg (gate<=3.6) dA/A=1.22e-09 -> PASS
+    rozjazd okien: 0.01 deg (<=3, ok);  kappa_eff=-1.51e-07 -> uzyte kappa=0.0000
+    gate R2>=0.999: PASS
+  M-L mu  g0=1.46510:
+    [50,150]:  A=0.363739  delta=  +38.68 deg  R2=0.9999615
+    [120,260]: A=0.363732  delta=  +38.58 deg  R2=0.9999908  (PRIMARY)
+    R-kontrola (300 vs 450): |d delta|=0.0000 deg (gate<=3.6) dA/A=1.95e-08 -> PASS
+    rozjazd okien: 0.10 deg (<=3, ok);  kappa_eff=+1.99e-07 -> uzyte kappa=0.0000
+    gate R2>=0.999: PASS
+
+--- P1b/P1c, model MP: E_int(d) = -Ai Aj e^{-(ki+kj)d/2} cos(d-di-dj)/d ---
+  MP ee  : 9 minimow; d*1..3 = ['3.3644', '9.8352', '16.1579']
+    odstepy = ['6.4708', '6.3227', '6.3005', '6.2929', '6.2894']; max odch. od 2pi = 2.99% (predykcja LOCKED 2pi+-5%: PASS)
+    P1c Yukawa (te same A): 0 minimow -> CZYSTA
+  MP emu : 9 minimow; d*1..3 = ['6.5124', '12.8704', '19.1790']
+    odstepy = ['6.3580', '6.3086', '6.2961', '6.2909', '6.2884']; max odch. od 2pi = 1.19% (predykcja LOCKED 2pi+-5%: PASS)
+    P1c Yukawa (te same A): 0 minimow -> CZYSTA
+  MP mumu: 10 minimow; d*1..3 = ['3.0790', '9.5721', '15.8966']
+    odstepy = ['6.4931', '6.3245', '6.3009', '6.2932', '6.2895']; max odch. od 2pi = 3.34% (predykcja LOCKED 2pi+-5%: PASS)
+    P1c Yukawa (te same A): 0 minimow -> CZYSTA
+
+--- P1b/P1c, model ML: E_int(d) = -Ai Aj e^{-(ki+kj)d/2} cos(d-di-dj)/d ---
+  ML ee  : 10 minimow; d*1..3 = ['3.1315', '9.6202', '15.9443']
+    odstepy = ['6.4887', '6.3241', '6.3009', '6.2931', '6.2895']; max odch. od 2pi = 3.27% (predykcja LOCKED 2pi+-5%: PASS)
+    P1c Yukawa (te same A): 0 minimow -> CZYSTA
+  ML emu : 9 minimow; d*1..3 = ['5.3504', '11.7334', '18.0462']
+    odstepy = ['6.3830', '6.3128', '6.2975', '6.2916', '6.2888']; max odch. od 2pi = 1.59% (predykcja LOCKED 2pi+-5%: PASS)
+    P1c Yukawa (te same A): 0 minimow -> CZYSTA
+  ML mumu: 9 minimow; d*1..3 = ['7.4972', '13.8409', '20.1466']
+    odstepy = ['6.3437', '6.3057', '6.2950', '6.2904', '6.2881']; max odch. od 2pi = 0.96% (predykcja LOCKED 2pi+-5%: PASS)
+    P1c Yukawa (te same A): 0 minimow -> CZYSTA
+
+==============================================================================
+GATE PHASE 1 (LOCK: fity R2>=0.999 i R-stabilne; kontrola P1c czysta):
+  R2 wszystkie >= 0.999: FAIL
+  R-stabilnosc |d delta|<=3.6 deg: PASS
+  P1c (Yukawa, wszystkie pary/modele): CZYSTA
+  => GATE: FAIL -> STOP przed Phase 2
+==============================================================================
+zapisano Phase1_results.json

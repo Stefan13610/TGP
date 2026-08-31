@@ -1,12 +1,12 @@
 ---
 title: "op-bath-two-sectors — runaway w kąpieli na fazach zmierzonych (Q1) + derywacyjny test dwóch sektorów znaku W (Q2)"
 type: research_cycle
-status: PHASE0-LOCKED
-phase: "0 (LOCK zamknięty; zero obliczeń)"
-folder_status: locked-awaiting-execution
-claim_status: "PHASE0-LOCKED 2026-08-23 — następca op-lattice-bath-runaway (CLOSED-GATE-STOP) po rozstrzygnięciu N1/N2. Q1: czy mod runaway dostaje ω²>0 przy skończonej gęstości n, z ogonami/fazami ZMIERZONYMI z układów M-P (potęgowy, EL Noty kanonicznej) i M-L (logarytmiczny eq:J-ode, nośnik Δ=120.01°). Q2 (hipoteza autora): czy znak tachionowy efektywnego W EMERGUJE z gęstości w akcji STABILNEJ (eq:field-eq-reproduced) — test 'pojedynczy obiekt vs kąpiel' jako dwóch sektorów jednej akcji. Kryteria Q1/Q2-PASS/FAIL/INCONCLUSIVE, kontrole negatywne (Yukawa bez cos; próżnia w komórce; d=∞→Yukawa m²=+γ) zalockowane PRZED kodem."
+status: CLOSED
+phase: "FINAL (Phase 1–3 wykonane 2026-08-23; zamknięcie 2026-08-29)"
+folder_status: closed
+claim_status: "CLOSED 2026-08-29 — Q1-INCONCLUSIVE, Q2-FAIL. Phase 1: gate PASS wg rulingu (Phase1_gate_ruling.md; strict-reading z opcjonalnym τ: FAIL); (A,δ) zmierzone [120,260]: M-P e(0.0936,−75.34°) μ(0.6159,+97.20°), M-L e(0.0959,−81.43°) μ(0.3637,+38.58°) — Δ_ML(e→μ)=120.01° reprodukuje N1; drabiny 2π±5% PASS 6/6; P1c czysta. Q1-INCONCLUSIVE: P2a baseline PASS (λ_min=−1.3896 vs #63 −1.389, t*=3.62, gate ≤1.6e−8), ale ω²_min NIEZBIEŻNE 0/15 punktów (znak podąża za rozmiarem komórki R≶π); komparator BEZ kąpieli daje niemal identyczne spektra i breakdowny — wariant komórkowy z obciętym tłem niezdolny rozstrzygnąć Q1 (N3 pozostaje OTWARTE). Q2-FAIL: kontrola d=∞ PASS (m²=γ±0.00%), ω²_min(d)=+1.34/+1.57/+1.88/+2.47 dla d=8/6/4/2 — zbieżne, dodatnie, ROSNĄCE z gęstością; odpowiedź monotoniczna. Hipoteza dwóch sektorów OBALONA w klasie zbadanej; znak W = otwarty problem AKSJOMATYCZNY (decyzja ontologiczna autora). NEEDS user-gated."
 created_date: 2026-08-23
-closed_date: null
+closed_date: 2026-08-29
 authorization: "User 2026-08-23: 'ok, przygotuj prompt' — realizacja Phase 1–3: nowa sesja, osobny agent (prompt: HANDOFF_PROMPT.md)"
 anti_lakatos_lock: ACTIVE
 related:
@@ -49,5 +49,12 @@ Kod do reuse: `N1_provenance_check.py` (układy+fit), `Phase3_nonlinear_evolutio
 
 ## Status
 
-- **Phase 0: 🟢 LOCKED (2026-08-23). Zero obliczeń.**
-- Phase 1–3: oczekują (nowa sesja / osobny agent).
+- Phase 0: 🟢 LOCKED (2026-08-23).
+- Phase 1: ✅ wykonana (2026-08-23) — gate PASS wg rulingu
+  ([[Phase1_gate_ruling.md]]); Δ_ML(e→μ)=120.01°, drabiny 2π±5% PASS 6/6.
+- Phase 2 (Q1): ⚠️ **Q1-INCONCLUSIVE** — niezbieżność siatka×komórka 0/15;
+  komparator bez kąpieli pada identycznie (artefakt komórki dominuje).
+- Phase 3 (Q2): ❌ **Q2-FAIL** — ω²_min(d) dodatnie i rosnące z gęstością;
+  hipoteza dwóch sektorów obalona w klasie zbadanej.
+- **CLOSED 2026-08-29.** Werdykty i liczby: [[Phase_FINAL_close.md]];
+  propozycje user-gated: [[NEEDS.md]].

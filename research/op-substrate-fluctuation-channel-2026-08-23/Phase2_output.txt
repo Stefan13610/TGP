@@ -1,0 +1,48 @@
+========================================================================
+Phase 2 — QF numerycznie (siatka, FFT)
+========================================================================
+  policzono G: L=64, m=0.0, G(0)=0.249203
+  policzono G: L=64, m=0.2, G(0)=0.236409
+  policzono G: L=64, m=0.5, G(0)=0.211155
+  policzono G: L=64, m=2.0, G(0)=0.107147
+  policzono G: L=128, m=0.0, G(0)=0.250967
+  policzono G: L=128, m=0.05, G(0)=0.248730
+  policzono G: L=128, m=0.2, G(0)=0.236409
+[PASS] T0: (-Delta+m^2)G = delta_0 (masywne, rezidua <1e-10)  
+    QF-1 L=128 m=0.05 okno[10,30]: F_fl<0: True, monotoniczne: True, F_fl(10)=-1.904e-04, F_fl(30)=-2.938e-06
+    QF-1 L=64 m=0.2 okno[5,15]: F_fl<0: True, monotoniczne: True, F_fl(5)=-3.228e-04, F_fl(15)=-6.366e-07
+    QF-1 L=64 m=0.5 okno[2,8]: F_fl<0: True, monotoniczne: True, F_fl(2)=-3.285e-03, F_fl(8)=-4.221e-07
+    QF-1 L=64 m=0.0 okno[6,16]: F_fl<0: True, monotoniczne: True, F_fl(6)=-7.834e-04, F_fl(16)=-2.136e-05
+    QF-1 L=128 m=0.0 okno[8,24]: F_fl<0: True, monotoniczne: True, F_fl(8)=-5.379e-04, F_fl(24)=-2.036e-05
+[PASS] QF-1a: F_fl < 0 we wszystkich oknach  
+[PASS] QF-1b: F_fl rosnace z d (przyciaganie) we wszystkich oknach  
+    tabela znakow (m=0.2, L=64, d=8):
+      M-D klas. (+a,+a)        = -3.2501e-03  (przyciaganie)
+      M-D klas. (+a,-a)        = +3.3066e-03  (odpychanie)
+      M-D klas. (+a, 0)        = +1.4115e-05  (odpychanie)
+      M-S (q=+1,+1)            = -2.0357e-03  (przyciaganie)
+      M-S (q=+1,-1)            = +2.0357e-03  (odpychanie)
+      M-D flukt. (kazde v)     = -3.7075e-05  (przyciaganie)
+[PASS] QF-1c: kanaly klasyczne flipuja znak, fluktuacyjny NIE  
+    QF-2 m=0.5: kappa_S=0.5144 vs mu=0.4949 (3.9%, R2=0.99979) | kappa_D=1.0292 vs 2mu=0.9899 (4.0%, R2=0.99978)
+    QF-2 m=0.2: kappa_S=0.2013 vs mu=0.1997 (0.8%, R2=0.99999) | kappa_D=0.4026 vs 2mu=0.3993 (0.8%, R2=0.99998)
+[PASS] QF-2: zasiegi kappa_S=mu, kappa_D=2mu (+/-10%, R2>0.99)  
+    QF-3 L=64: p=-1.0771 (cel -1.0+/-0.1, R2=0.999997), B=-0.00277, A=0.08705 (1/4pi=0.07958); slope F_fl=-2.1547 (cel -2.0+/-0.2, R2=0.99999)
+    QF-3 L=128: p=-1.0288 (cel -1.0+/-0.1, R2=1.000000), B=-0.00156, A=0.08320 (1/4pi=0.07958); slope F_fl=-2.0580 (cel -2.0+/-0.2, R2=1.00000)
+    QF-3 dryf p(64)-p(128) = 0.0482 (cel <0.1)
+[PASS] QF-3: krytyczne p=-1, slope F_fl=-2, dryf<0.1 (Amendment A1)  
+[PASS] QF-4a: m=2 zanik |F_fl(6)|/|F_fl(2)| < 1e-3  ratio = 8.621e-08
+[PASS] QF-4b: obrazy periodyczne — |G64-G128|/G128 < 1e-2 (d<=16, m=0.2)  max rel = 6.058e-04
+[FAIL] QF-4c: G_m > 0 wszedzie (przypadki masywne)  
+------------------------------------------------------------------------
+SUMMARY Phase 2: 8/9 PASS
+  PASS  T0: (-Delta+m^2)G = delta_0 (masywne, rezidua <1e-10)
+  PASS  QF-1a: F_fl < 0 we wszystkich oknach
+  PASS  QF-1b: F_fl rosnace z d (przyciaganie) we wszystkich oknach
+  PASS  QF-1c: kanaly klasyczne flipuja znak, fluktuacyjny NIE
+  PASS  QF-2: zasiegi kappa_S=mu, kappa_D=2mu (+/-10%, R2>0.99)
+  PASS  QF-3: krytyczne p=-1, slope F_fl=-2, dryf<0.1 (Amendment A1)
+  PASS  QF-4a: m=2 zanik |F_fl(6)|/|F_fl(2)| < 1e-3
+  PASS  QF-4b: obrazy periodyczne — |G64-G128|/G128 < 1e-2 (d<=16, m=0.2)
+  FAIL  QF-4c: G_m > 0 wszedzie (przypadki masywne)
+WERDYKT QF: INCONCLUSIVE (pad kontroli QF-4 — maszyneria)
