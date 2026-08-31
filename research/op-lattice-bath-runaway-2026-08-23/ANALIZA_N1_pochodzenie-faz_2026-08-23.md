@@ -83,3 +83,17 @@ się zgadzają, amplituda z dokładnością do konwencji fitu).
   sugestii, że to własność układu potęgowego O-L5.
 - status_map O-L5: analogiczna flaga przy „Fazy ogona".
 - Mapa p127 (A_μ=0.3861): flaga [WINDOW-DEPENDENT] albo re-derywacja.
+
+## 5. POST-SCRIPTUM 2026-08-31 — potwierdzenie niezależne + realizacja korekt (user-gate)
+
+- **Niezależne potwierdzenie (op-bath-two-sectors, Phase 1, fazy ZMIERZONE):**
+  Δ_ML(e→μ)=120.01° zreprodukowane na fazach mierzonych niezależnie
+  (okna [50,150] i [120,260], R=300/450, R-kontrola |Δδ|=0.0000°);
+  drabina minimów 2π±5% PASS 6/6 (odchył 0.96–3.34%, malejący z d).
+  Wniosek tej analizy (fazy = własność układu logarytmicznego eq:J-ode)
+  potwierdzony pomiarowo.
+- **Korekty rdzenia z §4: WYKONANE 2026-08-31** (autoryzacja użytkownika
+  „działaj z krokami 1,2,3"): dopisek o pochodzeniu faz + flaga przy
+  statusie O-K1 w dodatekH; flaga [2026-08-31] w wierszu Koide Q=3/2
+  w status_map. Mapa p127: pozostaje z uwagą w dopisku dodatekH
+  (A_μ=0.3861 sprzeczne z atail_functional).

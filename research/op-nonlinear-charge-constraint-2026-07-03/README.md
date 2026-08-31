@@ -174,3 +174,22 @@ re-fitowania g₀ i stałych korony (gate mas ω→0 PASS: 0,0005%).
 ✓ Wyniki negatywne zgłoszone wprost (V1, V2, V3). ✓ Niezbieżności i
 kolapsy raportowane jako takie. ✓ M1 nie wszedł do core (NEEDS
 user-gated). ✓ Rdzeń .tex NIETKNIĘTY. ✓ NIE commitowano.
+
+## Nota metodologiczna 2026-08-31 (Limitation następcy V3; z op-bath-two-sectors, Q1-INCONCLUSIVE)
+
+Pytanie następcze do V3 (czy SKOŃCZONA GĘSTOŚĆ sąsiadów stabilizuje mod
+runaway — ω²(n) w kąpieli) pozostaje **OTWARTE**, z ustaleniem
+metodologicznym z [[../op-bath-two-sectors-2026-08-23/Phase_FINAL_close.md]]:
+
+- Komórka WS z obciętym profilem izolowanym + δg_bath i zero-flux BC jest
+  **NIEZDOLNA** rozstrzygnąć pytanie: ω²_min podąża za rozmiarem komórki
+  (R<π: +, R>π: −), 0/15 punktów zbieżnych siatka×komórka; komparator BEZ
+  kąpieli daje niemal identyczne spektra i breakdowny (t*/t*_izo
+  0.03–1.81 również przy amp=0) — artefakt niestacjonarnego obcięcia
+  dominuje nad efektem kąpieli (|c_bath| ≤ 0.45 przy zalockowanych d*).
+- Baseline tego cyklu (λ_min(w1)=−1.389, t*=3.62) zreprodukowany tam
+  jako P2a PASS — wynik V3 stoi.
+- Następca metodologiczny (osobny Phase 0): tło SAMOUZGODNIONE
+  w komórce + periodyczne BC + analiza pasmowa (Bloch) — przeniesienie
+  konstrukcji, która w Q2 dała czystą zbieżność, na sektor dynamiczny
+  M0-f_eps.

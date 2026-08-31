@@ -23,9 +23,23 @@ User: „przenalizuj w jakim stanie jest aktualnie tgp_v1 i co warto zrobić jak
   - **Q2 (dwa sektory jednej akcji): FAIL — czysty poznawczo** (kontrola d=∞ PASS: m²=0.99997/0.99999=γ±0.00%; pełna zbieżność |dv|≤5.7e−6): ω²_min(d)=+1.34464 (d=8), +1.56855 (d=6), +1.88310 (d=4), +2.46974 (d=2) — wszystkie DODATNIE i ROSNĄCE z gęstością; odpowiedź statyczna monotoniczna/Yukawa dla wszystkich d; wrażliwość q=0.3 również dodatnia. Gęstość źródeł w akcji stabilnej USZTYWNIA potencjał fluktuacji — znak tachionowy NIE emerguje. **Hipoteza „dwa sektory jednej akcji" OBALONA w klasie zbadanej; wybór znaku W = otwarty problem AKSJOMATYCZNY (decyzja ontologiczna autora, nie numeryka)** — dosłownie wg drzewa LOCKa §6.
 - **Commit/push (za jawną zgodą):** zaległość 18 plików — cały cykl [[research/op-substrate-fluctuation-channel-2026-08-23/README.md]] (CLOSED-EXECUTED, dotąd tylko na dysku), Phase 1–3 + dokumenty zamykające op-bath-two-sectors, [[meta/BRAINSTORM_2026-08-23_brakujace-puzzle.md]], STATE.md → origin/main.
 
-### ✅ Krok 2 — zbiorczy user-gate zaległych NEEDS (dopiski addytywne do core; szczegóły w podsekcji po realizacji)
+### ✅ Krok 2 — zbiorczy user-gate zaległych NEEDS (dopiski addytywne; wykonane RÓWNOLEGLE przez sesję główną i sesję B 2026-08-31 — kolizja wykryta, podział uzgodniony między sesjami, wpis scalony)
 
-### ✅ Krok 3 — cykl-następca Q1 (szczegóły w podsekcji po realizacji)
+Zrealizowane (wszystkie addytywne, datowane 2026-08-31):
+- **op-bath-two-sectors N1:** remark `rem:W-sign-axiomatic` w [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]] — (i) lokalizacja rozdwojenia znaku W (ANALIZA_N2: prop:field-eq-from-action vs Nota kanoniczna), (ii) Q2-FAIL (ω²_min(d) dodatnie, rosnące z gęstością, kontrola d=∞ czysta), (iii) nota poziomu 0 (spinodala MFT, odwrotna rola gęstości). Wniosek w rdzeniu: **wybór znaku W = otwarty problem aksjomatyczny**.
+- **op-bath-two-sectors N2:** dopisek w Limitations [[papers_external/paper_lepton_masses/tgp_lepton_masses.tex]] — stabilizacja kąpielą OTWARTA + ustalenie metodologiczne (komórka zero-flux niezdolna; następca: tło samouzgodnione + periodyczne BC/Bloch). *(dokończone w sesji B)*
+- **op-bath-two-sectors N3+N4:** dopiski w [[core/formalizm/dodatekH_lancuch_wyprowadzen.tex]] (pochodzenie faz z układu logarytmicznego eq:J-ode nie potęgowego O-L5; Δ_ML=120.01° zmierzone niezależnie; kolaps τ przy g₀=4; flaga TAU-NEAR-THRESHOLD 1.9% pod progiem 8/5) + flaga w [[core/_meta_latex/status_map.tex]] przy Koide Q=3/2.
+- **op-substrate-fluctuation-channel N3:** remark `rem:fluctuation-channel-bridge` w [[axioms/substrat/dodatekB_substrat.tex]] (kanał fluktuacyjny ↔ reżim krytyczny wewnątrz horyzontu). **N5:** POST-SCRIPTUM w ANALIZA_N2 + pkt (iii) remarku sek08a.
+- **Build gate:** `build_gate_2026-08-31.log` — main.pdf 557 str., **zero nowych undefined refs** (8 zastanych, o 1 mniej niż w main_build.log). NEEDS.md obu cykli: statusy EXECUTED + logi.
+
+### 🟢 Krok 3 — cykl-następca Q1 ROZPISANY: [[research/op-bloch-chain-stability-2026-08-31/Phase0_balance.md]] — PHASE0-LOCKED (zero obliczeń przed LOCKiem)
+
+*(Korekta wpisu sesji B: krok 3 NIE został przekierowany — sesja główna żyła i realizuje go równolegle; „zajmij się fluctuation-channel" to OSOBNE zlecenie usera dla sesji B, realizowane jako `op-fluctuation-extended-nbody-2026-08-31` obok, nie zamiast.)*
+
+- **Pytanie binarne Q:** czy w sektorze tachionowym (EL Noty kanonicznej / maszyneria 2) istnieje separacja d łańcucha periodycznego, przy której ω²_min(d)=min_k λ_min(L̂_d(k)) > 0 — na tle SAMOUZGODNIONYM (relaksacja przed linearyzacją), z periodycznymi BC i analizą pasmową Blocha (metoda zwalidowana w Q2 poprzednika; dokładnie następca z NEEDS N2).
+- **Zakres jawnie ograniczony w LOCKu:** 1D strukturalne (łańcuch ≠ soliton radialny 3D; w 1D ogony oscylacyjne nie zanikają, więc łańcuch jest obiektem naturalnym); 3D = ewentualny osobny cykl.
+- **Fazy:** P1 bramka maszynerii (dyspersja próżni exact ω²(k)=k²∓1 — osiągalny FAIL analityczny; gate energii 1e−6); P2 istnienie tła (relaksacja, 5 zalockowanych d ∈ {π,2π,3π,4π,6π} × 2 starty; brak istnienia ⟹ CLOSED-GATE-STOP); P3 rachunek centralny (spektrum pasmowe, próg zbieżności identyczny jak u poprzednika; kontrole P3b próżnia-superkomórka + P3c sektor stabilny nieusuwalne); P4 warunkowy test nieliniowy (3·t*_ref, t*_ref=3.62 z #63).
+- **Realizacja:** osobny agent (ta sama sesja), wg LOCKa; wyniki → podsekcja niżej po zamknięciu.
 
 ### WIP po kroku 1
 - **op-bath-two-sectors: 🔴 CLOSED** (Q1-INCONCLUSIVE / Q2-FAIL). NEEDS N1–N4 → realizowane w kroku 2 (autoryzacja „działaj z krokami 1,2,3").

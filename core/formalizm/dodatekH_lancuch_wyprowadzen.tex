@@ -1128,6 +1128,25 @@ $\varphi$-FP (\'scie\.zka~9, dodatek~\ref{app:J2-formalizacja}).
     $\delta_\mu = +38{,}6^\circ$,
     $\delta_\tau(g_0=4) = -27{,}3^\circ$.
 
+    \textbf{[Dopisek 2026-08-31 --- pochodzenie faz (audyt A3 +
+    ANALIZA\_N1, \texttt{research/op-lattice-bath-runaway-2026-08-23}):]}
+    powy\.zsze fazy pochodz\k{a} z~uk\l{}adu \emph{logarytmicznego}
+    \texttt{eq:J-ode} ($F(g)=1+2\alpha_{\rm eff}\ln g$, Formulacja~B
+    z~runningiem; \l{}a\'ncuch p127$\to$p131$\to$p134f, skrypt
+    \texttt{p131\_eta\_refinement.py}), \textbf{nie} z~uk\l{}adu
+    pot\k{e}gowego $K=g^{2\alpha}$ opisywanego przez O-L5.
+    Reprodukcja przy $g_0^e=0{,}90548$: $\delta_e=-81{,}43^\circ$,
+    $\delta_\mu=+38{,}58^\circ$, $\Delta(e\to\mu)=120{,}01^\circ$
+    (co do setnej stopnia); $\Delta\approx120^\circ$ jest
+    w\l{}asno\'sci\k{a} formy logarytmicznej (niewra\.zliwe na
+    $\eta_K\in[12,14]$). Z~uk\l{}adu pot\k{e}gowego fazy wynosz\k{a}
+    $\delta_e=-75{,}50^\circ$, $\delta_\mu=+88{,}48^\circ$,
+    $\Delta=163{,}98^\circ$ (bramka A3). Niezale\.zne potwierdzenie
+    na fazach \emph{zmierzonych}: $\Delta_{\rm ML}(e\to\mu)=120{,}01^\circ$
+    (\texttt{op-bath-two-sectors}, Phase~1, okna [120,260]/[50,150]).
+    Uwaga: $A_\mu=0{,}3861$ (p127) sprzeczne
+    z~\texttt{atail\_functional} rdzenia ($A(1{,}455)\approx0{,}59$).
+
   \item \textbf{KOREKTA (p134e--g):} Amplituda $A_\tau$ jest
     \textbf{monotonicznie rosn\k{a}ca} z~$g_0^\tau$ --- nie istnieje
     maksimum. Warto\'s\'c $r_{31} = 3477{,}5$ z~p131 wynika\l{}a
@@ -1142,6 +1161,10 @@ $\varphi$-FP (\'scie\.zka~9, dodatek~\ref{app:J2-formalizacja}).
     \begin{itemize}[nosep]
       \item Running $\alpha_{\rm eff}(g) = 2/(1+\eta_K(g-1)^2)$
             daje $\Delta(e\to\mu) = 120^\circ$ --- \textbf{potwierdzone}.
+            \textbf{[Flaga 2026-08-31]}: potwierdzone w~uk\l{}adzie
+            logarytmicznym \texttt{eq:J-ode} (Formulacja~B);
+            w~uk\l{}adzie pot\k{e}gowym O-L5 $\Delta=163{,}98^\circ$
+            --- patrz dopisek o~pochodzeniu faz wy\.zej.
       \item $A_\tau(g_0^\tau)$ ro\'snie monotonicznie
             --- brak naturalnego ograniczenia na $r_{31}$ z~samej amplitudy.
       \item $\eta_K = 181/15 = \alpha^2 d + 1/((\alpha^2+1)d)$
@@ -1159,6 +1182,22 @@ $\varphi$-FP (\'scie\.zka~9, dodatek~\ref{app:J2-formalizacja}).
     \end{equation}
     Dzia\l{}a \textbf{wy\l{}\k{a}cznie} dla $\alpha=2$ (jedyne niezerowe
     rozwi\k{a}zanie $2\alpha = \alpha^2$).
+
+    \textbf{[Flaga 2026-08-31 --- istnienie $\tau$ (A6/N4
+    \texttt{op-lattice-bath-runaway} + N3
+    \texttt{op-bath-two-sectors}):]}
+    w~niezale\.znej integracji uk\l{}adu z~biegn\k{a}cym
+    $\alpha_{\rm eff}$ profil $\tau$ przy $g_0^\tau=4$
+    \textbf{kolapsuje}; $g_0=4$ le\.zy na granicy istnienia
+    ($\lim_{\alpha\to0}$ progu $=4$) --- obiekt mo\.ze nie
+    istnie\'c jako regularne rozwi\k{a}zanie tego uk\l{}adu;
+    $g_0^\tau=4$ pozostaje \textbf{[INPUT]} (podobnie $Q_K=3/2$).
+    Ponadto w~uk\l{}adzie pot\k{e}gowym M-P
+    ($g_0^\tau=1{,}5696$ z~$Q_K=3/2$ [INPUT]) $\tau$ le\.zy
+    $1{,}9\%$ pod progiem kolapsu $8/5$
+    (flaga \textsc{tau-near-threshold}; wra\.zliwo\'s\'c
+    $+2\%$ $\to$ kolaps, $-2\%$ $\to$ PASS;
+    \texttt{op-bath-two-sectors} Phase~1).
 
   \item \textbf{Bilans potencja\l{}owo-kinetyczny (p146) --- WYPROWADZENIE:}
     Punkt \'srodkowy w~przestrzeni $K$: $g_{\rm mid}$ taki,

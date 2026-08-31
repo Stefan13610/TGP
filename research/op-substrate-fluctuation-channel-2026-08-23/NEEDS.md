@@ -1,7 +1,21 @@
 # NEEDS — op-substrate-fluctuation-channel-2026-08-23 (user-gated)
 
-Żadna z pozycji nie została wykonana; rdzeń .tex nietknięty. Decyzje należą
-do użytkownika.
+> **LOG WYKONANIA (2026-08-31):**
+> - **N3 ✅ EXECUTED** (user-gate krok 2) — remark
+>   `rem:fluctuation-channel-bridge` w dodatekB (przy cor:entropy-potential):
+>   inwentarz kanałów poziomu 0 + połączenie m_eff²=γ(1+T_Γ),
+>   γ≈12Λ_eff/Φ₀ ⟹ reżim efektywnie krytyczny wewnątrz horyzontu.
+>   Build gate PASS (build_gate_2026-08-31.log, zero nowych undefined refs).
+> - **N5 ✅ EXECUTED** (user-gate krok 2) — POST-SCRIPTUM w ANALIZA_N2
+>   (op-lattice-bath-runaway) + pkt (iii) remarku `rem:W-sign-axiomatic`
+>   w sek08a (rozrzedzenie vs zagęszczenie; odwrotna rola gęstości).
+> - **N1 + N2 → realizowane 2026-08-31** jako cykl-następca
+>   `op-fluctuation-extended-nbody-2026-08-31` (własny LOCK Phase 0;
+>   autoryzacja: user 2026-08-31 „zajmij się
+>   research/op-substrate-fluctuation-channel-2026-08-23/").
+> - **N4 — OPEN** (bez zmian; czeka na decyzję).
+
+Rdzeń .tex: dopiski addytywne wykonane wyłącznie w ramach user-gate wyżej.
 
 ## N1 (research): kanał fluktuacyjny dla obiektów ROZCIĄGŁYCH
 Defekt punktowy daje na krytyczności potencjał ~−1/d² (nie Newtonowskie

@@ -126,3 +126,22 @@ do „które tło rozwijamy" (jedna akcja, dwa sektory).
   odpowiada nocie kanonicznej, nie wyprowadzeniu z akcji zunifikowanej.
 - Ewentualny nowy op (analytical decision, wzorzec L04): „znak W
   z akcji + hipoteza dwóch sektorów (próżnia vs kąpiel)".
+
+## 6. POST-SCRIPTUM 2026-08-31 — rozstrzygnięcia po tej analizie
+
+- **Hipoteza dwóch sektorów: OBALONA w klasie zbadanej**
+  (op-bath-two-sectors, Phase 3, Q2-FAIL): w akcji gałęzi STABILNEJ
+  samouzgodnione tła sieci źródeł d∈{8,6,4,2} dają ω²_min(d)
+  = +1.34/+1.57/+1.88/+2.47 — dodatnie i ROSNĄCE z gęstością
+  (kontrola d=∞ czysta: m²=γ±0.00%). Gęstość USZTYWNIA potencjał
+  fluktuacji; znak tachionowy nie emerguje. **Wybór znaku W = otwarty
+  problem AKSJOMATYCZNY (decyzja ontologiczna autora).**
+- **Nota porównawcza (N5 op-substrate-fluctuation-channel, poziom 0 MFT):**
+  na poziomie substratu znak tachionowy pochodzi z ROZRZEDZENIA
+  (spinodala on-site: próg Φ_c/Φ_vac≈0.298 przy WF, skan 0.197–0.331),
+  a wiązanie gradientowe ZAWSZE stabilizuje (ΔC_bond=+8zJs_b⁶≥0) —
+  odwrotna rola gęstości niż w hipotezie dwóch sektorów; deskryptywnie
+  spójne z Q2-FAIL poziomu 1 (oba poziomy: zagęszczanie stabilizuje).
+- **Korekta rdzenia z §5: WYKONANA 2026-08-31** (user-gate): jawny
+  remark `rem:W-sign-axiomatic` w sek08a (przy prop:field-eq-from-action),
+  scalający lokalizację z tej analizy + Q2-FAIL + notę poziomu 0.

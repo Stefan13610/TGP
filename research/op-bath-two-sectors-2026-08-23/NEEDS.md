@@ -3,7 +3,7 @@ title: "NEEDS — propozycje po op-bath-two-sectors (user-gated; Q1-INCONCLUSIVE
 date: 2026-08-29
 type: needs
 tgp_owner: research/op-bath-two-sectors-2026-08-23
-status: "PROPOSED — żadna edycja core nie wykonana; wszystko czeka na user-gate"
+status: "EXECUTED 2026-08-31 — user-gate przyznany (autoryzacja „działaj z krokami 1,2,3", krok 2); N1–N4 wykonane, log przy pozycjach"
 related:
   - "[[Phase_FINAL_close.md]]"
   - "[[Phase0_balance.md]]"
@@ -13,7 +13,23 @@ related:
 # NEEDS — wnioski cyklu (wszystkie addytywne, user-gated)
 
 Zgodnie z drzewem LOCKa §6 i werdyktami: **Q1-INCONCLUSIVE**, **Q2-FAIL**.
-Rdzeń `.tex` NIETKNIĘTY; poniżej wyłącznie propozycje.
+
+> **LOG WYKONANIA (2026-08-31, user-gate „działaj z krokami 1,2,3" krok 2):**
+> - **N1 ✅ EXECUTED** — remark `rem:W-sign-axiomatic` w sek08a (przy
+>   prop:field-eq-from-action): lokalizacja rozdwojenia (ANALIZA_N2) +
+>   wynik Q2 (ω²_min(d) dodatnie, rosnące z gęstością) + nota poziomu 0
+>   (spinodala MFT); wniosek „znak W = otwarty problem aksjomatyczny".
+> - **N2 ✅ EXECUTED** — dopisek w Limitations `tgp_lepton_masses.tex`:
+>   pytanie o stabilizację kąpielą OTWARTE + ustalenie metodologiczne
+>   (wariant komórkowy zero-flux NIEZDOLNY rozstrzygnąć; następca:
+>   tło samouzgodnione + periodyczne BC / Bloch).
+> - **N3 ✅ EXECUTED** — flaga TAU-NEAR-THRESHOLD w dodatekH (dopisek
+>   „istnienie τ": 1.9% pod progiem 8/5, wrażliwość ±2%) + flaga
+>   w status_map przy Koide Q=3/2.
+> - **N4 ✅ EXECUTED** — dopisek w dodatekH przy fazach: Δ_ML(e→μ)=120.01°
+>   zmierzone niezależnie potwierdza ANALIZA_N1 co do setnej.
+> - Build gate: `build_gate_2026-08-31.log` — main.pdf 557 str., zero
+>   NOWYCH undefined refs (porównane z main_build.log/main_build_62.log).
 
 ## N1 (HIGH, z Q2-FAIL) — `sek08a` okolice prop:field-eq-from-action / Noty kanonicznej: znak W = problem aksjomatyczny
 
