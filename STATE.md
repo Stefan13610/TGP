@@ -34,9 +34,13 @@ User (po Q-FAIL kroku 3): hipoteza, że m²=−W″(1) w konwencji źródłowej 
 - Incydenty: korekta eigsh tol=0 (deskryptywna tabela gałęzi; przed Phase 3, która nie wystartowała); v0 Lanczosa deterministyczno-pseudolosowy (freeze, przed pierwszym biegiem); rozdział modeli FROZEN (kotwice w #63 M0-f_ε verbatim, rachunek w akcji kanonicznej).
 - **NEEDS user-gated (4 opcje kontynuacji):** m.in. re-lock mostu przy h≈0.10–0.15 (N≈200–300³ — koszt!), most w modelu kanonicznym bez ściany f_ε, metody radialno-sprzężone/spektralne, bazy zlokalizowane.
 
+### 🟢 USER-GATE + LOCK re-locku 3D: [[research/op-3d-canonical-lattice-2026-08-31/Phase0_balance.md]] — PHASE0-LOCKED (opcja „b" z NEEDS poprzednika, wybrana przez usera)
+- **Decyzja user-gate zapisana:** kotwice #63 (λ_min=−1.3896, t*=3.62) PRZESTAJĄ być bramką 3D (kieszeń f_ε = własność regularyzacji, nie fizyki); nowa kotwica kanoniczna MIERZONA w cyklu (P1b-kan, h∈{0.05,0.025,0.0125}, R=60) z obowiązkową diagnostyką kieszeni Q(r); most P1c-kan przy h∈{0.4,0.3} gate ±5% + trend. Obiekt: μ kanoniczny g₀=1.46507=φ·g₀_e [INPUT]. Dziedziczone bez powtarzania: P1a/P1d poprzednika (ten sam model kanoniczny); reużycie nieuruchomionych skryptów Phase 2–3. Phase 2–4 jak u poprzednika (dosłownie).
+- Realizacja: autoryzowana („rozpiszę LOCK i odpalę" → „b"), osobny agent.
+
 ### WIP po sesji (C)
 - **op-symplectic-Jspectrum: 🔴 CLOSED Q-FAIL.** NEEDS user-gated (m.in. akceptacja rulingu tol).
-- **op-3d-lattice-bath-stability: 🔴 CLOSED-GATE-FAIL-STOP (P1c).** Pytanie ω²(n) w 3D OTWARTE — zablokowane rozdzielczością dyskretyzacji kartezjańskiej przy ścianie f_ε, nie fizyką. NEEDS: 4 opcje re-locku (user-gate).
+- **op-3d-lattice-bath-stability: 🔴 CLOSED-GATE-FAIL-STOP (P1c).** Pytanie ω²(n) w 3D OTWARTE — zablokowane rozdzielczością dyskretyzacji kartezjańskiej przy ścianie f_ε, nie fizyką. NEEDS opcja „b" → realizowana jako op-3d-canonical-lattice (wyżej).
 - Decyzja aksjomatyczna o znaku W: OTWARTA — kompletny negatywny materiał 1D; droga 3D istnieje, ale wymaga cięższej/innej numeryki (decyzja user-gate).
 - Bez zmian: ośrodek/ekranowanie (NEEDS extended-nbody), N4 fluctuation-channel, op-native-pressure OPEN-ACTIVE.
 
