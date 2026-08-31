@@ -11,7 +11,7 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
-## 🟢 Sesja 2026-08-31 (C, kontynuacja sesji głównej) — weryfikacja konwencji W_source/V_energy (hipoteza autora) + LOCK mini-cyklu [[research/op-symplectic-Jspectrum-2026-08-31/Phase0_balance.md]] — PHASE0-LOCKED
+## 🔴 Sesja 2026-08-31 (C, kontynuacja sesji głównej) — weryfikacja konwencji W_source/V_energy (hipoteza autora) + mini-cykl [[research/op-symplectic-Jspectrum-2026-08-31/README.md]] WYKONANY W CAŁOŚCI — **CLOSED, Q-FAIL: klasa symplektyczna I rzędu też NIE ratuje sektora tachionowego w 1D; już sama próżnia jest symplektycznie niestabilna (max Re λ = γ/4)**
 
 User (po Q-FAIL kroku 3): hipoteza, że m²=−W″(1) w konwencji źródłowej rozwiązuje rozdwojenie znaku W → „sprawdź to" → wynik weryfikacji → „ok, załuż nowy mini cykl".
 
@@ -19,15 +19,18 @@ User (po Q-FAIL kroku 3): hipoteza, że m²=−W″(1) w konwencji źródłowej 
 - **Algebra hipotezy poprawna, ale zastosowana do maszynerii 2 NIE daje m²=+γ: statyka pinuje znak.** Zmierzona statyka (∇²g=g²(1−g), ogony oscylacyjne ω_tail=1 — A2) wymusza: zanurzenie energetyczne → ω²=k²−γ; zanurzenie źródłowe (□g=W′) odtwarzające TĘ SAMĄ statykę → W″(1)=+γ → m²=−W″(1)=−γ — **to samo widmo, minus tylko przewędrował**. Wariant „W″(1)=−γ zostaje" daje statykę Yukawa e^(−r) bez solitonów = istniejąca gałąź stabilna (prop:field-eq-from-action). Relabeling W_source/V_energy jest **widmowo inwariantny**; rozdwojenie gałęzi jest fizyczne (obserwowalnie różne ogony), nie księgowe. Zgodne z P1a cyklu bloch (ω²=k²−1 do 8.3e−5).
 - **Poważna wersja intuicji autora:** zmiana KLASY dynamiki, nie etykiety W — dynamika symplektyczna I rzędu (NLS/GP-podobna), w której ujemny kierunek Hessianu NIE implikuje niestabilności (stabilność orbitalna; świat kryterium VK z #63). Jedyna nieprzebadana klasa (II rzędu: Q-FAIL bloch; gradient flow: ten sam Hessian).
 
-### 🟢 LOCK mini-cyklu `op-symplectic-Jspectrum` (wzorzec L04, analytical-decision; PHASE0-LOCKED, zero obliczeń)
-- **Q:** czy tła łańcucha z cyklu bloch (d∈{3π,4π,6π}, λ_min(L₊)≈−1.22, wprost z Phase2_backgrounds.npz — zakaz relaksowania nowych) mają widmo symplektyczne σ(JL̂)⊂iℝ? Q-PASS ⟹ „dwa sektory znaku W" = potencjalnie „dwie DYNAMIKI jednej akcji" (materiał do decyzji aksjomatycznej, nie decyzja). Q-FAIL ⟹ klasa symplektyczna też nie ratuje 1D.
-- Kontrole z osiągalnym FAIL w OBIE strony: C1 soliton NLS kubiczny (znany stabilny — musi wyjść iℝ mimo ujemnego L₊), C2 NLS nadkrytyczny |u|⁶u (znany niestabilny — musi wyjść Re λ>0), C3 próżnia analitycznie; tożsamość L₋g_d=0 exact; gate reprodukcji kotwicy λ_min(3π)=−1.222191±1e−4. Delimitacja od #63 V2 (Q-balle ω>0, VK) jawna w LOCKu.
-- Status ontologiczny: MODEL-EXTENSION; wybór złożenia u↔g flagowany [INPUT-ONTO]; rdzeń nietknięty.
+### 🔴 Mini-cykl `op-symplectic-Jspectrum` (wzorzec L04, analytical-decision) — LOCK zacommitowany PRZED kodem (`ee12e29`) → Phase 1–3 → **CLOSED, Q-FAIL** (PRIMARY; wszystkie 4 tła, bez MIXED; autoryzacja realizacji: „tak działaj")
+- **Q:** czy tła łańcucha z cyklu bloch (d∈{3π,4π,6π}, λ_min(L₊)≈−1.22, wprost z Phase2_backgrounds.npz — READ-ONLY, zweryfikowane mtime) mają widmo symplektyczne σ(JL̂)⊂iℝ?
+- **Phase 1 (sympy 16/16 PASS):** P1a inwariantność widmowa ω²=k²−γ dla DOWOLNEJ wagi F i obu konwencji (energia/źródło); P1b gradient flow ≡ −L₊; P1c derywacja L₊/L₋ z E[u] — L₋g_d=0 on-shell EXACT, L₊ ≡ operator bloch on-shell, czynnik ½ Wirtingera (λ²=−ν/4). **Kluczowy wynik analityczny: już PRÓŻNIA u=1 jest symplektycznie niestabilna — λ²(κ)=−¼κ²(κ²−γ)>0 dla 0<κ<√γ, max Re λ = γ/4 = 0.25** ⟹ mechanizm NLS-owej stabilności orbitalnej (neutralizacja dyskretnego modu ujemnego więzami) nie ma tu czego ratować.
+- **Phase 2 (bramka 4/4 PASS, osiągalne FAIL-e w obie strony zadziałały):** kotwica λ_min(3π)=−1.222191 do 1.19e−7; C1 NLS kubiczny (znany stabilny): max Re λ=1.5e−7 mimo ujemnego L₊ ✓; C2 |u|⁶u (znany niestabilny): λ=2.915 zbieżnie ✓ (separacja C1/C2: 5.3e6×); C3 próżnia num↔analit 6.8e−4, rząd 2.
+- **Phase 3 (RACHUNEK CENTRALNY, wszystkie ZBIEŻNE Δ≤4.3e−5):** max Re λ = **+0.1434** (3π), **+0.1398** (4π), **+0.1434/+0.1396** (6π 2-garb/1-garb) — dodatnie na wszystkich tłach i wszystkich k (płasko w k, rozstęp ≤1e−5); tła jedynie SPOWALNIAJĄ wzrost względem próżni (0.14 vs 0.25). Cross-check produktowy λ²=−ν/4 zgodny ≤3.4e−8; ‖L₋g‖∞≤3.6e−12; artefakty Jordana O(h) zidentyfikowane osobno. Phase 4 nieuruchomiona (LOCK: tylko przy Q-PASS).
+- **Incydenty (pełna dokumentacja w katalogu cyklu):** ruling tol FROZEN przed obliczeniami (odczyt literalny-nieograniczony grid-rozbieżny i nie wykrywa znanego niestabilnego C2 — PRIMARY pasmowy |λ|≤12; oba odczyty raportowane wszędzie, w Phase 3 rozjeżdżają werdykt — **user-gate na akceptację rulingu w NEEDS**); 2× correction_note (sympy positive=True + znak euler_equations; deskryptywna diagnostyka symetrii) — oba przed użyciem wyników, pierwotne outputy zachowane.
+- **Konsekwencja:** wszystkie trzy klasy dynamiki zgodne ze statyką maszynerii 2 (II rzędu, gradient flow, symplektyczna I rzędu) są w 1D niestabilne — hipoteza „stabilizacja przez zmianę dynamiki" ZAMKNIĘTA negatywnie w klasie zbadanej. Decyzja aksjomatyczna o znaku W wraca do autora bez tej podpory; jedyna pozostała droga rachunkowa = **3D**.
 
 ### WIP po sesji (C)
-- **op-symplectic-Jspectrum: PHASE0-LOCKED** — realizacja: do autoryzacji / osobny agent.
-- Decyzja aksjomatyczna o znaku W: NADAL OTWARTA — ten cykl dostarczy jej materiału (pozytywnego lub negatywnego).
-- Bez zmian: kandydaci 3D (NEEDS bloch), ośrodek/ekranowanie (NEEDS extended-nbody), N4 fluctuation-channel, op-native-pressure OPEN-ACTIVE.
+- **op-symplectic-Jspectrum: 🔴 CLOSED Q-FAIL.** NEEDS user-gated (m.in. akceptacja rulingu tol; kandydat 3D).
+- Decyzja aksjomatyczna o znaku W: OTWARTA — teraz z kompletnym negatywnym materiałem 1D (trzy klasy dynamiki).
+- Bez zmian: kandydaci 3D (NEEDS bloch + ten cykl), ośrodek/ekranowanie (NEEDS extended-nbody), N4 fluctuation-channel, op-native-pressure OPEN-ACTIVE.
 
 ### Cross-references
 [[research/op-symplectic-Jspectrum-2026-08-31/Phase0_balance.md]] · [[research/op-bloch-chain-stability-2026-08-31/Phase_FINAL_close.md]] · [[research/op-lattice-bath-runaway-2026-08-23/ANALIZA_N2_znak-W-z-akcji_2026-08-23.md]] · [[research/op-nonlinear-charge-constraint-2026-07-03/README.md]] (#63 V2/VK)

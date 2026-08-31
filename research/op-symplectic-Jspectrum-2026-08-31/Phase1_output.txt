@@ -1,0 +1,55 @@
+==============================================================================
+Phase 1 -- analityka sympy (LOCK sec. 3 Phase 1). beta=gamma=1
+w cyklu; tu symbolicznie (proznia g=1 wymaga beta=gamma -- tak
+substytuujemy). [INPUT-ONTO] zlozenie u = g_d + a + ib (modul
+pola = g; LOCK sec. 2 Rejestr WEJSC).
+==============================================================================
+
+[P1a] inwariantnosc widmowa zanurzen II rzedu (energia vs zrodlo)
+  ogolne zanurzenie V'=F*S, DOWOLNE F: omega^2 = -gamma + k**2
+  [PASS] P1a-ogolne: omega^2 == k^2 - gamma (niezaleznie od F) 
+  zanurzenie energetyczne (K=g^4, U'=K*S): omega^2 = -gamma + k**2
+  [PASS] P1a-energia: omega^2 == k^2 - gamma 
+  [PASS] P1a-energia: U' == K*S (spojnosc akcji kanonicznej) 
+  zanurzenie zrodlowe #63 (f=1+4ln g, W'=S): omega^2 = -gamma + k**2
+  [PASS] P1a-zrodlo: omega^2 == k^2 - gamma 
+  WNIOSEK P1a: obie konwencje (W_source/V_energy) i KAZDA waga F
+  daja te sama dyspersje prozni omega^2 = k^2 - gamma -- relabeling
+  widmowo inwariantny w calej klasie II rzedu.
+
+[P1b] gradient flow g_t = -dE/dg <=> Hessian (druga wariacja)
+  [PASS] P1b: linearyzacja dE/dg wokol g0 == L_plus (Hessian) -- a_t = -L_plus a => stabilnosc gradient flow <=> L_plus >= 0
+  [PASS] P1b: czlon rzedu 0 == statyczne EL (tlo stacjonarne w flow) 
+  Uwaga (Sylvester): problem II rzedu ma forme wazona L_plus phi =
+  omega^2 K phi z K>0 -- znaki widma pokrywaja sie ze znakami L_plus;
+  gradient flow i dynamika II rzedu rzadza sie TYM SAMYM Hessianem.
+
+[P1c] derywacja L_plus / L_minus z E[u] (pole zespolone)
+  [PASS] P1c: E_p|_(rzad 0) == statyczne EL (tlo = punkt stacjonarny) 
+  [PASS] P1c: E_q|_(rzad 0) == 0 (brak sily w kierunku fazowym) 
+  [PASS] P1c: E_p|_(rzad 1) == L_plus a  (amplitudowy Hessian) 
+  [PASS] P1c: E_q|_(rzad 1) == L_minus b (operator fazowy) 
+  [PASS] P1c: dE/du* == (E_p + i E_q)/2 (Wirtinger => czynnik 1/2) -- i u_t = dE/du* => a_t = +L_minus b/2, b_t = -L_plus a/2; JL = [[0, L_minus/2], [-L_plus/2, 0]], lambda^2 = -nu/4, nu = spec(L_minus L_plus)
+  [PASS] P1c: L_minus g0 == EL0 (tozsamosc strukturalna, off-shell) 
+  [PASS] P1c-CENTRALNA: L_minus g_d == 0 ON-SHELL (exact; mod fazowy) -- FAIL => STOP calego cyklu (LOCK sec. 3 Phase 1)
+  [PASS] P1c: Q_minus == (K g0')'/g0 on-shell (dyskretyzacja on-shell z Phase_method_decisions sec. 2 jest tozsamosciowa) 
+  [PASS] P1c: Q_plus == K(2 beta g - 3 gamma g^2 + 2 g'^2/g^2) on-shell (operator Phase 3 bloch) 
+
+[P1c-vac] dyspersja JL wokol prozni u=1 (beta=gamma):
+  symbol L_plus  = -gamma + k**2  (k^2 - gamma)
+  symbol L_minus = k**2  (k^2; U'(1)=0)
+  lambda^2(k) = -L_plus*L_minus/4 = k**2*(gamma - k**2)/4
+  [PASS] P1c-vac: lambda^2 == -k^2 (k^2 - gamma)/4 
+  [PASS] P1c-vac: U'(1) == 0 przy beta=gamma (proznia stacjonarna) 
+  0 < k^2 < gamma: lambda^2 > 0 -- PROZNIA NIESTABILNA takze
+  symplektycznie; max Re lambda = gamma/4 przy k^2 = gamma/2
+  [PASS] P1c-vac: max Re lambda == gamma/4 (przy k^2=gamma/2) 
+
+==============================================================================
+PHASE 1: PASS (wszystkie tozsamosci sympy-exact).
+Operatory do Phase 2/3 (FROZEN, Phase_method_decisions sec. 1-2):
+  L_plus  = -d/dx(K d/dx) + K(2 beta g - 3 gamma g^2 + 2 g'^2/g^2)
+  L_minus = -d/dx(K d/dx) + (K g')'/g   [L_minus g_d = 0 exact]
+  JL = [[0, L_minus/2], [-L_plus/2, 0]];  lambda^2 = -nu/4
+  C3 (analitycznie): lambda^2(kappa) = -kappa^2(kappa^2 - gamma)/4
+==============================================================================

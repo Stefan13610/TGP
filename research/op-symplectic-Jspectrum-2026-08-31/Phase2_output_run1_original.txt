@@ -1,0 +1,51 @@
+==============================================================================
+Phase 2 -- bramka maszynerii (LOCK sec. 3 Phase 2; ruling tol:
+Phase_method_decisions sec. 4 -- oba odczyty raportowane).
+==============================================================================
+
+[Gate A] reprodukcja L_plus cyklu bloch (problem wazony, tlo 3pi,
+  N=800, k=0): lambda_min vs kotwica -1.222191 +/- 1e-4
+  [INPUT-ONTO] u0 = g_d (modul pola = g; LOCK sec. 2)
+  lambda_min(3pi, wazony) = -1.222191 (|d|=1.19e-07) -> PASS
+  tozsamosci dyskretne: ||L_minus g||_inf = 3.64e-12 (mod fazowy, fp-0);
+  ||L_plus g'||_inf = 8.15e-06 (translacja, oczekiwane O(h^2))
+
+[C1 (NLS kubiczny -- znany STABILNY)] pudelko L=40, soliton Newton-polish (pol-komorka
+  parzysta), operatory K=2, U wchloniete omega=1.
+  N=1024: seed-residuum=9.0e-04, Newton-residuum=2.2e-13;
+          max Re lambda = +1.498823e-07; tol PRIMARY=1.167e-02, tol literalny=2.622e+00
+          symetria czworek +/-lambda: 5.2e+03
+          cross-check produktowy: max Re lambda(JL)=1.498823e-07 vs z L_-L_+: 7.868957e-06 (|d|=7.7e-06)
+  N=2048: seed-residuum=2.2e-04, Newton-residuum=1.0e-12;
+          max Re lambda = +5.519064e-07; tol PRIMARY=1.168e-02, tol literalny=1.049e+01
+          symetria czworek +/-lambda: 2.1e+04
+  C1 werdykt: max Re lambda(N=1024) = 1.499e-07 <= tol?
+    odczyt PRIMARY (pasmowy, tol=1.167e-02): PASS; odczyt literalny (tol=2.622e+00): PASS
+    konsystencja siatek: |d max Re| = 4.02e-07
+
+[C2 (NLS |u|^6 u -- znany NIESTABILNY)] pudelko L=40, soliton Newton-polish (pol-komorka
+  parzysta), operatory K=2, U wchloniete omega=1.
+  N=1024: seed-residuum=1.3e-02, Newton-residuum=1.9e-13;
+          max Re lambda = +2.915156e+00; tol PRIMARY=1.161e-02, tol literalny=2.622e+00
+          symetria czworek +/-lambda: 5.2e+03
+          cross-check produktowy: max Re lambda(JL)=2.915156e+00 vs z L_-L_+: 2.915156e+00 (|d|=1.3e-10)
+  N=2048: seed-residuum=3.2e-03, Newton-residuum=8.9e-13;
+          max Re lambda = +2.907593e+00; tol PRIMARY=1.162e-02, tol literalny=1.049e+01
+          symetria czworek +/-lambda: 2.1e+04
+  C2 werdykt: Re lambda > 0? max Re lambda = 2.915156 (N=1024) / 2.907593 (N=2048), |d|=7.56e-03 (prog zb. 2.91e-02) -> PASS
+    separacja od C1 (deskryptywnie): 5.3e+06 x (wymog >= 10)
+
+[C3] proznia u=1 sektora tachionowego, komorka d=2pi, 9 punktow k:
+  analityka (Phase 1): lambda^2(kappa) = -kappa^2(kappa^2-gamma)/4
+  N=400: maxerr(8 galezi, wszystkie k) = 6.797e-04 -> PASS
+  N=800: maxerr(8 galezi, wszystkie k) = 1.700e-04 -> PASS
+  C3 werdykt (siatka bazowa N=400): PASS; ratio N400/N800 = 4.00 (oczekiwany ~4, rzad 2)
+  Uwaga fizyczna (z Phase 1): 0<kappa<1 => Re lambda>0 -- proznia
+  tachionowa jest niestabilna TAKZE symplektycznie (max gamma/4).
+
+==============================================================================
+PHASE 2 GATE: PASS (Gate A kotwica + C1 + C2 + C3).
+Maszyneria wazna: przechodzi znany-stabilny (C1) MIMO ujemnego
+kierunku L_plus, wykrywa znany-niestabilny (C2), odtwarza
+analityke prozni (C3) i operator Hessianu cyklu bloch (Gate A).
+==============================================================================
