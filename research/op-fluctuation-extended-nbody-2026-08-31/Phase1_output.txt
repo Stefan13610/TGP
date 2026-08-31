@@ -1,0 +1,21 @@
+========================================================================
+Phase 1 — analityka (sympy exact)
+========================================================================
+[PASS] P1-1: det Sigma3/G0^3 = 1 - sum g^2 + 2 g12 g13 g23  det = -g12**2 + 2*g12*g13*g23 - g13**2 - g23**2 + 1
+[PASS] P1-2: Delta F3 = g12 g13 g23 - 1/2 sum g^2 g^2 + O(g^5)  szereg(eps^3..4) = -epsilon**4*g12**2*g13**2/2 - epsilon**4*g12**2*g23**2/2 - epsilon**4*g13**2*g23**2/2 + epsilon**3*g12*g13*g23
+[PASS] P1-3: Delta F3 > 0 (probka exact g=(0.1,0.1,1/12))  Delta F3 = 0.00073329608
+[PASS] P1-4: det(I - c^2 SigA^-1 J SigB^-1 J) = 1 - c^2 C_A C_B (n=2 exact)  
+[PASS] P1-5: wykladnik dalekiego pola = -2 NIEZALEZNIE od C_A, C_B (od R)  d ln|F|/d ln d = -2
+    P1-6 (deskryptywnie): DF3_T = sqrt(2)*kappa**3/(2*d**3), DF3_C = kappa**3/(2*d**3), T/C = sqrt(2)
+    obie konfiguracje: DF3 ~ 1/d^3 (wolniej o d^-1 od czlonu parowego 1/d^2 * g^2 ~ 1/d^4... raport w Phase 3 numerycznie)
+------------------------------------------------------------------------
+SUMMARY Phase 1: 5/5 PASS
+  PASS  P1-1: det Sigma3/G0^3 = 1 - sum g^2 + 2 g12 g13 g23
+  PASS  P1-2: Delta F3 = g12 g13 g23 - 1/2 sum g^2 g^2 + O(g^5)
+  PASS  P1-3: Delta F3 > 0 (probka exact g=(0.1,0.1,1/12))
+  PASS  P1-4: det(I - c^2 SigA^-1 J SigB^-1 J) = 1 - c^2 C_A C_B (n=2 exact)
+  PASS  P1-5: wykladnik dalekiego pola = -2 NIEZALEZNIE od C_A, C_B (od R)
+WERDYKT QN-1: TAK — czlon wiodacy Delta F3 = g12*g13*g23 (rzad 3),
+  DODATNI dla g_ij>0: nieaddytywnosc 3-cialowa OSLABIA przyciaganie
+  parowe (znak okreslony symbolicznie). Monopol: wykladnik -2,
+  R tylko w amplitudzie (C_A C_B) — hipoteza do testu w Phase 2.

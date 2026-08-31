@@ -1,0 +1,84 @@
+==============================================================================
+Phase 3 -- spektrum pasmowe Blocha (sektor tachionowy, akcja
+kanoniczna). LOCK sec. 3 Phase 3; operator i reguly FROZEN w
+Phase_method_decisions.md sec. 2/4/5.
+==============================================================================
+
+[P3b] KONTROLA: proznia g=1 w superkomorce 4d -- zwiniete k^2-1
+  d=pi (superkomorka 12.5664, N=1600): maxerr(8 galezi) = 2.742e-05 -> PASS
+  d=2pi (superkomorka 25.1327, N=1600): maxerr(8 galezi) = 2.056e-05 -> PASS
+  d=3pi (superkomorka 37.6991, N=1600): maxerr(8 galezi) = 9.138e-06 -> PASS
+  d=4pi (superkomorka 50.2655, N=1600): maxerr(8 galezi) = 5.140e-06 -> PASS
+  d=6pi (superkomorka 75.3982, N=1600): maxerr(8 galezi) = 2.285e-06 -> PASS
+
+[P3c] KONTROLA: sektor stabilny m^2=+1 ze zrodlem (konstrukcja Q2
+  poprzednika: d_s=4, sigma_s=0.5, q=1); wymog: omega^2_min > 0.
+  N=400: psi in [1.106345, 1.280927]; omega^2_min = +1.88310 (argmin k=0.0000); lambda_min(k=0) = +1.88310 (kotwica poprzednika: +1.88310)
+  N=800: psi in [1.106346, 1.280926]; omega^2_min = +1.88311 (argmin k=0.0000); lambda_min(k=0) = +1.88311 (kotwica poprzednika: +1.88310)
+  P3c: PASS (omega^2_min > 0 na obu siatkach: 1.883102876696082, 1.8831061986519249)
+
+[P3a] spektra tel Phase 2 (tla: 3pi/0.7, 4pi/0.7, 6pi/0.7, 6pi/S3single)
+
+  --- tlo 3pi/0.7 (d=9.424778) ---
+    N=400, k-siatka 16: omega^2_min = -1.222209 (argmin k = 0.000000)
+    N=400, k-siatka 32: omega^2_min = -1.222209 (argmin k = 0.000000)
+    N=800, k-siatka 16: omega^2_min = -1.222191 (argmin k = 0.000000)
+    N=800, k-siatka 32: omega^2_min = -1.222191 (argmin k = 0.000000)
+    GLOWNA (N=800,k32): omega^2_min = -1.222191; Delta_siatka=1.84e-05, Delta_k=0.00e+00, prog=1.22e-02 -> ZBIEZNE
+    k=0 spektrum: ['-1.222191', '-0.000002', '+0.632027', '+1.614505']
+    overlap z g0' (B-wazony): ['0.000', '1.000', '0.000', '0.000'] -> mod translacyjny: indeks [1], lambda_trans = ['-2.44e-06']
+    deskryptywnie (nie-kryterialnie): min k=0 bez translacji = -1.222191
+    cross-check u-forma k=0.0000: waga-K -1.222191 vs u-forma -1.222193 (|delta|=2.10e-06)
+    cross-check u-forma k=0.3333: waga-K -1.221890 vs u-forma -1.221893 (|delta|=2.11e-06)
+
+  --- tlo 4pi/0.7 (d=12.566371) ---
+    N=400, k-siatka 16: omega^2_min = -1.229371 (argmin k = 0.000000)
+    N=400, k-siatka 32: omega^2_min = -1.229371 (argmin k = 0.000000)
+    N=800, k-siatka 16: omega^2_min = -1.229340 (argmin k = 0.000000)
+    N=800, k-siatka 32: omega^2_min = -1.229340 (argmin k = 0.000000)
+    GLOWNA (N=800,k32): omega^2_min = -1.229340; Delta_siatka=3.11e-05, Delta_k=0.00e+00, prog=1.23e-02 -> ZBIEZNE
+    k=0 spektrum: ['-1.229340', '-0.000005', '+0.696189', '+1.156717']
+    overlap z g0' (B-wazony): ['0.000', '1.000', '0.000', '0.000'] -> mod translacyjny: indeks [1], lambda_trans = ['-5.45e-06']
+    deskryptywnie (nie-kryterialnie): min k=0 bez translacji = -1.229340
+    cross-check u-forma k=0.0000: waga-K -1.229340 vs u-forma -1.229344 (|delta|=3.89e-06)
+    cross-check u-forma k=0.2500: waga-K -1.229337 vs u-forma -1.229341 (|delta|=3.89e-06)
+
+  --- tlo 6pi/0.7 (d=18.849556) ---
+    N=400, k-siatka 16: omega^2_min = -1.222283 (argmin k = 0.000000)
+    N=400, k-siatka 32: omega^2_min = -1.222283 (argmin k = 0.000000)
+    N=800, k-siatka 16: omega^2_min = -1.222209 (argmin k = 0.000000)
+    N=800, k-siatka 32: omega^2_min = -1.222209 (argmin k = 0.000000)
+    GLOWNA (N=800,k32): omega^2_min = -1.222209; Delta_siatka=7.35e-05, Delta_k=0.00e+00, prog=1.22e-02 -> ZBIEZNE
+    k=0 spektrum: ['-1.222209', '-1.221909', '-0.020339', '-0.000010']
+    overlap z g0' (B-wazony): ['0.000', '0.000', '0.000', '1.000'] -> mod translacyjny: indeks [3], lambda_trans = ['-9.77e-06']
+    deskryptywnie (nie-kryterialnie): min k=0 bez translacji = -1.222209
+    cross-check u-forma k=0.0000: waga-K -1.222209 vs u-forma -1.222218 (|delta|=8.38e-06)
+    cross-check u-forma k=0.1667: waga-K -1.222059 vs u-forma -1.222068 (|delta|=8.41e-06)
+
+  --- tlo 6pi/S3single (d=18.849556) ---
+    N=400, k-siatka 16: omega^2_min = -1.229898 (argmin k = 0.000000)
+    N=400, k-siatka 32: omega^2_min = -1.229898 (argmin k = 0.000000)
+    N=800, k-siatka 16: omega^2_min = -1.229829 (argmin k = 0.000000)
+    N=800, k-siatka 32: omega^2_min = -1.229829 (argmin k = 0.000000)
+    GLOWNA (N=800,k32): omega^2_min = -1.229829; Delta_siatka=6.96e-05, Delta_k=0.00e+00, prog=1.23e-02 -> ZBIEZNE
+    k=0 spektrum: ['-1.229829', '-0.000013', '+0.645460', '+0.776045']
+    overlap z g0' (B-wazony): ['0.000', '1.000', '0.000', '0.000'] -> mod translacyjny: indeks [1], lambda_trans = ['-1.26e-05']
+    deskryptywnie (nie-kryterialnie): min k=0 bez translacji = -1.229829
+    cross-check u-forma k=0.0000: waga-K -1.229829 vs u-forma -1.229838 (|delta|=8.78e-06)
+    cross-check u-forma k=0.1667: waga-K -1.229829 vs u-forma -1.229838 (|delta|=8.78e-06)
+
+zapisano wyniki: C:/Users/Mateusz/Documents/ObsydnianMain/TGP/TGP_v1/research/op-bloch-chain-stability-2026-08-31/Phase3_results.json
+
+==============================================================================
+TABELA omega^2_min(d) (kryterium zbieznosci LOCK, doslownie):
+  P3b (proznia w superkomorce): PASS
+  P3c (sektor stabilny): PASS
+  tlo 3pi/0.7        d=  9.4248: omega^2_min = -1.222191 (ZBIEZNE; argmin k=0.0000)
+  tlo 4pi/0.7        d= 12.5664: omega^2_min = -1.229340 (ZBIEZNE; argmin k=0.0000)
+  tlo 6pi/0.7        d= 18.8496: omega^2_min = -1.222209 (ZBIEZNE; argmin k=0.0000)
+  tlo 6pi/S3single   d= 18.8496: omega^2_min = -1.229829 (ZBIEZNE; argmin k=0.0000)
+
+  istnieje d z omega^2_min > 0 (zbiezne): False
+  omega^2_min < 0 dla wszystkich policzalnych tel (zbieznie): True
+  (werdykt Q wymaga Phase 4 -- kryteria LOCK sec. 3 Phase 4)
+==============================================================================

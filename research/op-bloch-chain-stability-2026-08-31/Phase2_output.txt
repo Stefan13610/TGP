@@ -1,0 +1,74 @@
+==============================================================================
+Phase 2 -- istnienie samouzgodnionego tla lancucha (M-C).
+LOCK sec. 3 Phase 2; Newton na pol-komorce (method_decisions sec. 3).
+Kryteria: ||R||_inf <= 1e-10 (pelna komorka), ||g_N-g_2N||_inf <= 1e-4,
+niestalosc ||g-1||_inf >= 0.05.  Starty A in {0.7, 0.3}, sigma=d/8.
+==============================================================================
+
+[d = pi = 3.141593]
+  start A=0.7: KOLAPS-DO-PROZNI
+    N=400: ||R||=0.00e+00 (OK), g in [1.000000, 1.000000]
+    N=800: ||R||=0.00e+00 (OK), g in [1.000000, 1.000000], ||g-1||_inf=0.000000
+    ||g_400-g_800||_inf(wezly wspolne)=0.00e+00 (gate<=1e-4: PASS); minima=0; rozrzut E_mech=0.00e+00
+  start A=0.3: KOLAPS-DO-PROZNI
+    N=400: ||R||=2.22e-16 (OK), g in [1.000000, 1.000000]
+    N=800: ||R||=2.22e-16 (OK), g in [1.000000, 1.000000], ||g-1||_inf=0.000000
+    ||g_400-g_800||_inf(wezly wspolne)=0.00e+00 (gate<=1e-4: PASS); minima=0; rozrzut E_mech=0.00e+00
+  oba zalockowane starty bez rozwiazania niestalego -> start pomocniczy S3 (kwadratura/strzelanie)
+    S3: brak orbity o okresie d (strzelanie bez zmiany znaku) -> istnienie NIEPOTWIERDZONE dla tego d
+
+[d = 2pi = 6.283185]
+  start A=0.7: KOLAPS-DO-PROZNI
+    N=400: ||R||=1.44e-12 (OK), g in [0.998366, 1.001624]
+    N=800: ||R||=5.65e-12 (LINE-SEARCH-FAIL), g in [0.999184, 1.000813], ||g-1||_inf=0.000816
+    ||g_400-g_800||_inf(wezly wspolne)=8.18e-04 (gate<=1e-4: FAIL); minima=1; rozrzut E_mech=5.13e-12
+  start A=0.3: KOLAPS-DO-PROZNI
+    N=400: ||R||=1.52e-12 (OK), g in [0.998366, 1.001624]
+    N=800: ||R||=5.79e-12 (LINE-SEARCH-FAIL), g in [0.999184, 1.000813], ||g-1||_inf=0.000816
+    ||g_400-g_800||_inf(wezly wspolne)=8.18e-04 (gate<=1e-4: FAIL); minima=1; rozrzut E_mech=5.13e-12
+  oba zalockowane starty bez rozwiazania niestalego -> start pomocniczy S3 (kwadratura/strzelanie)
+    S3: brak orbity o okresie d (strzelanie bez zmiany znaku) -> istnienie NIEPOTWIERDZONE dla tego d
+
+[d = 3pi = 9.424778]
+  start A=0.7: NIESTALE-ZBIEZNE
+    N=400: ||R||=7.38e-13 (OK), g in [0.509815, 1.140608]
+    N=800: ||R||=2.64e-12 (OK), g in [0.509826, 1.140602], ||g-1||_inf=0.490174
+    ||g_400-g_800||_inf(wezly wspolne)=1.09e-05 (gate<=1e-4: PASS); minima=1; rozrzut E_mech=6.23e-07
+  start A=0.3: NIESTALE-ZBIEZNE
+    N=400: ||R||=7.06e-13 (OK), g in [0.509815, 1.140608]
+    N=800: ||R||=2.64e-12 (OK), g in [0.509826, 1.140602], ||g-1||_inf=0.490174
+    ||g_400-g_800||_inf(wezly wspolne)=1.09e-05 (gate<=1e-4: PASS); minima=1; rozrzut E_mech=6.23e-07
+  oba starty niestale: ||g(0.7)-g(0.3)||_inf = 3.33e-16 -> IDENTYCZNE TLO
+
+[d = 4pi = 12.566371]
+  start A=0.7: NIESTALE-ZBIEZNE
+    N=400: ||R||=3.27e-13 (OK), g in [0.331180, 1.142730]
+    N=800: ||R||=1.59e-12 (OK), g in [0.331188, 1.142721], ||g-1||_inf=0.668812
+    ||g_400-g_800||_inf(wezly wspolne)=1.61e-05 (gate<=1e-4: PASS); minima=1; rozrzut E_mech=1.14e-06
+  start A=0.3: KOLAPS-DO-PROZNI
+    N=400: ||R||=3.85e-13 (OK), g in [0.996721, 1.003237]
+    N=800: ||R||=1.27e-12 (OK), g in [0.998366, 1.001624], ||g-1||_inf=0.001634
+    ||g_400-g_800||_inf(wezly wspolne)=1.65e-03 (gate<=1e-4: FAIL); minima=2; rozrzut E_mech=8.22e-11
+
+[d = 6pi = 18.849556]
+  start A=0.7: NIESTALE-ZBIEZNE
+    N=400: ||R||=1.79e-13 (OK), g in [0.509771, 1.140629]
+    N=800: ||R||=7.18e-13 (OK), g in [0.509815, 1.140608], ||g-1||_inf=0.490185
+    ||g_400-g_800||_inf(wezly wspolne)=4.37e-05 (gate<=1e-4: PASS); minima=2; rozrzut E_mech=2.49e-06
+  start A=0.3: KOLAPS-DO-PROZNI
+    N=400: ||R||=9.98e-13 (OK), g in [0.995065, 1.004840]
+    N=800: ||R||=7.04e-13 (OK), g in [0.997545, 1.002431], ||g-1||_inf=0.002455
+    ||g_400-g_800||_inf(wezly wspolne)=2.48e-03 (gate<=1e-4: FAIL); minima=3; rozrzut E_mech=4.17e-10
+
+zapisano tla: C:/Users/Mateusz/Documents/ObsydnianMain/TGP/TGP_v1/research/op-bloch-chain-stability-2026-08-31/Phase2_backgrounds.npz (9 tablic)
+
+==============================================================================
+PODSUMOWANIE Phase 2 (kryterium istnienia LOCK, doslownie):
+  d=pi: istnienie tla niestalego-zbieznego: NIE
+  d=2pi: istnienie tla niestalego-zbieznego: NIE
+  d=3pi: istnienie tla niestalego-zbieznego: TAK
+  d=4pi: istnienie tla niestalego-zbieznego: TAK
+  d=6pi: istnienie tla niestalego-zbieznego: TAK
+
+ISTNIENIE POTWIERDZONE dla co najmniej jednego d -> Phase 3.
+==============================================================================

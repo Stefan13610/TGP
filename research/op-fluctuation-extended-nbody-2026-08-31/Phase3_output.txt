@@ -1,0 +1,40 @@
+========================================================================
+Phase 3 — QN: N-cialowosc kanalu fluktuacyjnego (log-det)
+========================================================================
+  B_hat(L=128) = -1.564369e-03
+    QN-2: znak Delta F3 (20 punktow):
+      m02  T d= 4: DF3=+2.7723e-05, |DF3|/|sum par|=1.6080e-02
+      m02  T d= 6: DF3=+2.0864e-06, |DF3|/|sum par|=6.4619e-03
+      m02  T d= 8: DF3=+2.2511e-07, |DF3|/|sum par|=2.8532e-03
+      m02  T d=10: DF3=+2.9478e-08, |DF3|/|sum par|=1.3276e-03
+      m02  T d=12: DF3=+4.3617e-09, |DF3|/|sum par|=6.3880e-04
+      m02  C d= 4: DF3=+1.2007e-05, |DF3|/|sum par|=7.6017e-03
+      m02  C d= 6: DF3=+7.1717e-07, |DF3|/|sum par|=2.3900e-03
+      m02  C d= 8: DF3=+6.1395e-08, |DF3|/|sum par|=8.2386e-04
+      m02  C d=10: DF3=+6.3794e-09, |DF3|/|sum par|=2.9992e-04
+      m02  C d=12: DF3=+7.4884e-10, |DF3|/|sum par|=1.1321e-04
+      crit T d= 4: DF3=+3.1286e-04, |DF3|/|sum par|=3.9828e-02
+      crit T d= 6: DF3=+9.2139e-05, |DF3|/|sum par|=2.7232e-02
+      crit T d= 8: DF3=+3.8653e-05, |DF3|/|sum par|=2.0645e-02
+      crit T d=10: DF3=+1.9640e-05, |DF3|/|sum par|=1.6596e-02
+      crit T d=12: DF3=+1.1269e-05, |DF3|/|sum par|=1.3857e-02
+      crit C d= 4: DF3=+2.1898e-04, |DF3|/|sum par|=3.0834e-02
+      crit C d= 6: DF3=+6.4420e-05, |DF3|/|sum par|=2.1125e-02
+      crit C d= 8: DF3=+2.7003e-05, |DF3|/|sum par|=1.6018e-02
+      crit C d=10: DF3=+1.3723e-05, |DF3|/|sum par|=1.2881e-02
+      crit C d=12: DF3=+7.8868e-06, |DF3|/|sum par|=1.0771e-02
+[PASS] QN-2: znak Delta F3 uniwersalny (ten sam we wszystkich 20 punktach)  znak = +
+[PASS] QN-3: kanal klasyczny (zrodlowy) addytywny dokladnie (<1e-12)  
+[PASS] QN-4: zgodnosc z rozwinieciem rzedu<=4 (m=0.2, T, d=8) < 5%  num=2.251059e-07, analit=2.250704e-07, rel=1.58e-04
+    deskryptywnie (fit slope ln|DF3| vs ln d, crit, [6,12]):
+      T: slope = -3.031 (analitycznie ~ -3 z g^3)
+      C: slope = -3.030 (analitycznie ~ -3 z g^3)
+------------------------------------------------------------------------
+SUMMARY Phase 3: 3/3 PASS
+  PASS  QN-2: znak Delta F3 uniwersalny (ten sam we wszystkich 20 punktach)
+  PASS  QN-3: kanal klasyczny (zrodlowy) addytywny dokladnie (<1e-12)
+  PASS  QN-4: zgodnosc z rozwinieciem rzedu<=4 (m=0.2, T, d=8) < 5%
+WERDYKT QN: TAK — kanal fluktuacyjny NIEADDYTYWNY z uniwersalnym
+  znakiem DODATNIM czlonu 3-cialowego (oslabia przyciaganie parowe),
+  zgodnie z Phase 1 (czlon wiodacy g12*g13*g23); kanal klasyczny
+  addytywny dokladnie (kontrast potwierdzony).

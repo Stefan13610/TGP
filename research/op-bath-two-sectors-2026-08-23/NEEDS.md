@@ -19,10 +19,13 @@ Zgodnie z drzewem LOCKa §6 i werdyktami: **Q1-INCONCLUSIVE**, **Q2-FAIL**.
 >   prop:field-eq-from-action): lokalizacja rozdwojenia (ANALIZA_N2) +
 >   wynik Q2 (ω²_min(d) dodatnie, rosnące z gęstością) + nota poziomu 0
 >   (spinodala MFT); wniosek „znak W = otwarty problem aksjomatyczny".
-> - **N2 ✅ EXECUTED** — dopisek w Limitations `tgp_lepton_masses.tex`:
->   pytanie o stabilizację kąpielą OTWARTE + ustalenie metodologiczne
->   (wariant komórkowy zero-flux NIEZDOLNY rozstrzygnąć; następca:
->   tło samouzgodnione + periodyczne BC / Bloch).
+> - **N2 ✅ EXECUTED (oba miejsca z propozycji)** — dopisek w Limitations
+>   `tgp_lepton_masses.tex` ORAZ nota metodologiczna 2026-08-31 w README
+>   cyklu #63 (`op-nonlinear-charge-constraint`): pytanie o stabilizację
+>   kąpielą OTWARTE + ustalenie metodologiczne (wariant komórkowy
+>   zero-flux NIEZDOLNY rozstrzygnąć; następca: tło samouzgodnione
+>   + periodyczne BC / Bloch — realizowany jako
+>   `op-bloch-chain-stability-2026-08-31`).
 > - **N3 ✅ EXECUTED** — flaga TAU-NEAR-THRESHOLD w dodatekH (dopisek
 >   „istnienie τ": 1.9% pod progiem 8/5, wrażliwość ±2%) + flaga
 >   w status_map przy Koide Q=3/2.

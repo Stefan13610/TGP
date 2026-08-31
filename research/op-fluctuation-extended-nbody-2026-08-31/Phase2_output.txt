@@ -1,0 +1,59 @@
+========================================================================
+Phase 2 — QE: obiekty rozciagle (siatka, FFT, log-det)
+========================================================================
+  G policzone: L=128 m=0.2, L=128 m=0, L=96 m=0
+  B_hat(L=128) = -1.564369e-03 (fit: A=0.08320, p=-1.0288)
+  B_hat(L=96) = -1.920846e-03 (fit: A=0.08629, p=-1.0573)
+    QE-0 d=4: zamkniete=-7.712273609642934e-04, log-det=-7.712273609641329e-04, |diff|=1.60e-16
+    QE-0 d=8: zamkniete=-3.707347516385546e-05, log-det=-3.707347516379578e-05, |diff|=5.97e-17
+    QE-0 d=12: zamkniete=-3.303821231257227e-06, log-det=-3.303821231259718e-06, |diff|=2.49e-18
+    QE-0 d=16: zamkniete=-3.747642152212860e-07, log-det=-3.747642152163166e-07, |diff|=4.97e-18
+[PASS] QE-0: R=0 log-det == forma zamknieta (<1e-12)  
+  F_fl policzone: m02 R=1 d in [4,28]
+  F_fl policzone: m02 R=2 d in [6,28]
+  F_fl policzone: crit128 R=1 d in [4,28]
+  F_fl policzone: crit128 R=2 d in [6,28]
+  F_fl policzone: crit128 R=3 d in [8,28]
+  F_fl policzone: crit96 R=2 d in [6,24]
+    QE-1 m02 R=1 [8,18]: F<0: True, mono: True, F(8)=-4.846e-04, F(18)=-1.624e-06
+    QE-1 m02 R=2 [10,20]: F<0: True, mono: True, F(10)=-8.650e-04, F(20)=-3.407e-06
+    QE-1 crit128 R=1 [4,28]: F<0: True, mono: True, F(4)=-3.389e-02, F(28)=-4.995e-04
+    QE-1 crit128 R=2 [6,28]: F<0: True, mono: True, F(6)=-5.637e-02, F(28)=-1.730e-03
+    QE-1 crit128 R=3 [8,28]: F<0: True, mono: True, F(8)=-9.597e-02, F(28)=-4.706e-03
+[PASS] QE-1a: F_fl(d;R) < 0 wszedzie (uniwersalnosc przezywa rozciaglosc)  
+[PASS] QE-1b: F_fl rosnace z d (przyciaganie) wszedzie  
+    QE-2 R=1: kappa_D=0.4070 vs 2mu=0.3993 (1.9%, R2=0.99997)
+    QE-2 R=2: kappa_D=0.4142 vs 2mu=0.3993 (3.7%, R2=0.99991)
+[PASS] QE-2: zasieg 2mu przezywa rozciaglosc (+/-10%, R2>0.99)  
+    QE-3 R=1 okno[10,28]: slope=-2.0703 (R2=0.999975)
+    QE-3 R=2 okno[14,28]: slope=-2.0914 (R2=0.999941)
+    QE-3 R=3 okno[16,28]: slope=-2.1474 (R2=0.999865)
+    QE-3: wszystkie slope=-2+/-0.25: True; ktorykolwiek slope=-1+/-0.15: False
+[PASS] QE-3: fit daleki wykonany, R2>0.99 wszedzie  slopes = {1: np.float64(-2.07), 2: np.float64(-2.091), 3: np.float64(-2.147)}
+    QE-4 R=1 profil p_loc(d): 5:-2.44, 6:-2.25, 7:-2.17, 8:-2.14, 9:-2.12, 10:-2.10, 11:-2.10, 12:-2.09, 13:-2.09, 14:-2.08, 15:-2.08, 16:-2.08, 17:-2.08, 18:-2.07, 19:-2.07, 20:-2.07, 21:-2.06, 22:-2.06, 23:-2.05, 24:-2.04, 25:-2.03, 26:-2.02, 27:-2.01
+    QE-4 R=1: najdluzszy przebieg |p+1|<=0.15: 0
+    QE-4 R=2 profil p_loc(d): 7:-2.71, 8:-2.44, 9:-2.32, 10:-2.25, 11:-2.21, 12:-2.18, 13:-2.16, 14:-2.15, 15:-2.14, 16:-2.13, 17:-2.12, 18:-2.11, 19:-2.10, 20:-2.09, 21:-2.09, 22:-2.08, 23:-2.07, 24:-2.06, 25:-2.05, 26:-2.04, 27:-2.03
+    QE-4 R=2: najdluzszy przebieg |p+1|<=0.15: 0
+    QE-4 R=3 profil p_loc(d): 9:-3.05, 10:-2.71, 11:-2.54, 12:-2.44, 13:-2.37, 14:-2.32, 15:-2.28, 16:-2.25, 17:-2.22, 18:-2.20, 19:-2.18, 20:-2.17, 21:-2.15, 22:-2.14, 23:-2.12, 24:-2.11, 25:-2.10, 26:-2.08, 27:-2.07
+    QE-4 R=3: najdluzszy przebieg |p+1|<=0.15: 0
+    QE-4: przebieg >=3 kolejnych d z p_loc=-1+/-0.15: False
+[PASS] QE-4: profil p_loc policzony na pelnym zakresie (raport bez selekcji)  
+    QE-5 (deskryptywnie): amplituda A(R) przy |F|~A/d^2 i pojemnosci:
+      R=1: A(R)=0.40088, C_R=11.6462, monopol 0.5*C^2/(4pi)^2=0.42946, A/pred=0.933
+      R=2: A(R)=1.38679, C_R=21.6033, monopol 0.5*C^2/(4pi)^2=1.47772, A/pred=0.938
+      R=3: A(R)=3.80374, C_R=35.3388, monopol 0.5*C^2/(4pi)^2=3.95417, A/pred=0.962
+[PASS] QE-kontrola(c): dryf slope L=96 vs L=128 (R=2, [14,24]) < 0.1  s128=-2.1057, s96=-2.1599, dryf=0.0543
+[PASS] QE-kontrola(b): F_fl <= 0 wszedzie (Fischer)  max F = -1.216e-08
+[PASS] QE-kontrola(d): G_m>0 (m=0.2)  
+------------------------------------------------------------------------
+SUMMARY Phase 2: 9/9 PASS
+  PASS  QE-0: R=0 log-det == forma zamknieta (<1e-12)
+  PASS  QE-1a: F_fl(d;R) < 0 wszedzie (uniwersalnosc przezywa rozciaglosc)
+  PASS  QE-1b: F_fl rosnace z d (przyciaganie) wszedzie
+  PASS  QE-2: zasieg 2mu przezywa rozciaglosc (+/-10%, R2>0.99)
+  PASS  QE-3: fit daleki wykonany, R2>0.99 wszedzie
+  PASS  QE-4: profil p_loc policzony na pelnym zakresie (raport bez selekcji)
+  PASS  QE-kontrola(c): dryf slope L=96 vs L=128 (R=2, [14,24]) < 0.1
+  PASS  QE-kontrola(b): F_fl <= 0 wszedzie (Fischer)
+  PASS  QE-kontrola(d): G_m>0 (m=0.2)
+WERDYKT QE (pytanie N1): NIE — wykladnik dalekiego pola pozostaje -2 (slopes: {1: np.float64(-2.07), 2: np.float64(-2.091), 3: np.float64(-2.147)}), R wchodzi tylko w amplitude; brak przebiegu p_loc=-1.

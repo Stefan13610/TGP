@@ -1,0 +1,32 @@
+==============================================================================
+Phase 1 -- bramka maszynerii (LOCK sec. 3 Phase 1; decyzje FROZEN
+Phase_method_decisions.md).  Komorka d=2pi; metryka bledu:
+|num-ex|/max(|ex|,1); gate <= 1e-3 (N=400) + ratio x4 in [3,5].
+==============================================================================
+
+[P1a tach] m^2 = -1: maxerr(N=400) = 8.327e-05 (gate <= 1e-3: PASS);
+  maxerr(N=800) = 2.082e-05; ratio = 4.000 (gate [3,5]: PASS)
+  k=0.0000: num=['-1.000000', '-0.000021', '-0.000021'] vs ex=['-1.000000', '+0.000000', '+0.000000']
+  k=0.5000: num=['-0.750001', '-0.750001', '+1.249896'] vs ex=['-0.750000', '-0.750000', '+1.250000']
+
+[P1a stab] m^2 = +1: maxerr(N=400) = 3.203e-05 (gate <= 1e-3: PASS);
+  maxerr(N=800) = 8.007e-06; ratio = 4.000 (gate [3,5]: PASS)
+  k=0.0000: num=['+1.000000', '+1.999979', '+1.999979'] vs ex=['+1.000000', '+2.000000', '+2.000000']
+  k=0.5000: num=['+1.249999', '+1.249999', '+3.249896'] vs ex=['+1.250000', '+1.250000', '+3.250000']
+
+------------------------------------------------------------------------------
+[P1b] ewolucja nieliniowa na prozni + perturbacja a=1e-3;
+  g0 = 1 + a(0.5 + cos x), d=2pi, N=400, t_end=4.0, RK4;
+  gate |dE|/E <= 1e-6; zbieznosc dt: ||g_dt - g_dt/2||_inf <= 1e-6.
+  eps=0.2 dt=0.0040: E0=0.112199, max|dE|/E = 6.43e-15 -> PASS
+  eps=0.2 dt=0.0020: E0=0.112199, max|dE|/E = 4.95e-16 -> PASS
+  eps=0.2 zbieznosc dt: ||g_dt - g_dt/2||_inf = 1.18e-13 -> PASS
+  eps=0.2 wzrost tachionowy (kontrola sensownosci, nie gate): max|g-1| t=0: 1.50e-03 -> t=4: 1.44e-02
+  eps=0.1 dt=0.0040: E0=0.112199, max|dE|/E = 6.93e-15 -> PASS
+  eps=0.1 dt=0.0020: E0=0.112199, max|dE|/E = 4.95e-16 -> PASS
+  eps=0.1 zbieznosc dt: ||g_dt - g_dt/2||_inf = 1.29e-13 -> PASS
+  eps=0.1 wzrost tachionowy (kontrola sensownosci, nie gate): max|g-1| t=0: 1.50e-03 -> t=4: 1.47e-02
+
+==============================================================================
+GATE PHASE 1: P1a PASS, P1b PASS -> PASS (maszyneria wazna)
+==============================================================================

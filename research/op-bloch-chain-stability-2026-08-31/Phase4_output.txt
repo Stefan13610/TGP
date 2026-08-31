@@ -1,0 +1,49 @@
+==============================================================================
+Phase 4 -- test nieliniowy (warunek: Phase 3 ZBIEZNA -> spelniony).
+Superkomorka 4d, perturbacja +-0.01||tlo|| wzdluz modu minimalnego;
+K_eps: eps=0.2 (+- ), kontrola eps=0.1 (+), kontrola dt/2 (+, 0.2);
+t*_ref=3.62; 2t*=7.24; t_end=3t*=10.86. UCIECZKA: g<=0 lub
+max|g-g0| > 100%% tla.
+==============================================================================
+
+--- tlo 3pi/0.7 (d=9.4248): mod minimalny k=0, lambda=-1.222209 (Phase3: -1.222191), indeks 0 ---
+  ||tlo|| = 0.490185; amplituda = 0.004902; sigma_lin = sqrt(|omega^2_min|) = 1.1055
+  [znak +1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.02); t_esc=4.64; gate |dE|/E=2.11e-11 (PASS); sigma_fit=1.1056 (vs lin 1.1055, odchyl +0.0%)
+  [znak -1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.02); t_esc=4.92; gate |dE|/E=6.48e-09 (PASS); sigma_fit=1.0768 (vs lin 1.1055, odchyl -2.6%)
+  [znak +1 eps=0.1 dt=0.0040] ||dg||>100% tla (ratio=1.02); t_esc=4.72; gate |dE|/E=5.74e-11 (PASS); sigma_fit=1.0942 (vs lin 1.1055, odchyl -1.0%)
+  [znak +1 eps=0.2 dt=0.0020] ||dg||>100% tla (ratio=1.02); t_esc=4.64; gate |dE|/E=1.32e-12 (PASS); sigma_fit=1.1056 (vs lin 1.1055, odchyl +0.0%)
+
+--- tlo 4pi/0.7 (d=12.5664): mod minimalny k=0, lambda=-1.229371 (Phase3: -1.229340), indeks 0 ---
+  ||tlo|| = 0.668820; amplituda = 0.006688; sigma_lin = sqrt(|omega^2_min|) = 1.1088
+  [znak +1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.00); t_esc=4.58; gate |dE|/E=5.21e-11 (PASS); sigma_fit=1.1126 (vs lin 1.1088, odchyl +0.3%)
+  [znak -1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.01); t_esc=4.84; gate |dE|/E=3.60e-08 (PASS); sigma_fit=1.0813 (vs lin 1.1088, odchyl -2.5%)
+  [znak +1 eps=0.1 dt=0.0040] ||dg||>100% tla (ratio=1.03); t_esc=4.64; gate |dE|/E=4.11e-10 (PASS); sigma_fit=1.0996 (vs lin 1.1088, odchyl -0.8%)
+  [znak +1 eps=0.2 dt=0.0020] ||dg||>100% tla (ratio=1.00); t_esc=4.58; gate |dE|/E=3.28e-12 (PASS); sigma_fit=1.1126 (vs lin 1.1088, odchyl +0.3%)
+
+--- tlo 6pi/0.7 (d=18.8496): mod minimalny k=0, lambda=-1.222283 (Phase3: -1.222209), indeks 0 ---
+  ||tlo|| = 0.490229; amplituda = 0.004902; sigma_lin = sqrt(|omega^2_min|) = 1.1055
+  [znak +1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.02); t_esc=4.64; gate |dE|/E=2.09e-11 (PASS); sigma_fit=1.1053 (vs lin 1.1055, odchyl -0.0%)
+  [znak -1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.00); t_esc=4.90; gate |dE|/E=5.76e-09 (PASS); sigma_fit=1.0773 (vs lin 1.1055, odchyl -2.5%)
+  [znak +1 eps=0.1 dt=0.0040] ||dg||>100% tla (ratio=1.01); t_esc=4.72; gate |dE|/E=5.60e-11 (PASS); sigma_fit=1.0938 (vs lin 1.1055, odchyl -1.1%)
+  [znak +1 eps=0.2 dt=0.0020] ||dg||>100% tla (ratio=1.02); t_esc=4.64; gate |dE|/E=1.31e-12 (PASS); sigma_fit=1.1053 (vs lin 1.1055, odchyl -0.0%)
+
+--- tlo 6pi/S3single (d=18.8496): mod minimalny k=0, lambda=-1.229898 (Phase3: -1.229829), indeks 0 ---
+  ||tlo|| = 0.832499; amplituda = 0.008325; sigma_lin = sqrt(|omega^2_min|) = 1.1090
+  [znak +1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.01); t_esc=4.60; gate |dE|/E=5.74e-11 (PASS); sigma_fit=1.1108 (vs lin 1.1090, odchyl +0.2%)
+  [znak -1 eps=0.2 dt=0.0040] ||dg||>100% tla (ratio=1.02); t_esc=4.78; gate |dE|/E=1.57e-07 (PASS); sigma_fit=1.0861 (vs lin 1.1090, odchyl -2.1%)
+  [znak +1 eps=0.1 dt=0.0040] ||dg||>100% tla (ratio=1.01); t_esc=4.58; gate |dE|/E=4.73e-10 (PASS); sigma_fit=1.1000 (vs lin 1.1090, odchyl -0.8%)
+  [znak +1 eps=0.2 dt=0.0020] ||dg||>100% tla (ratio=1.01); t_esc=4.60; gate |dE|/E=3.62e-12 (PASS); sigma_fit=1.1108 (vs lin 1.1090, odchyl +0.2%)
+
+==============================================================================
+PODSUMOWANIE Phase 4 (kryteria LOCK sec. 3 Phase 4, doslownie):
+  3pi/0.7: omega^2_min=-1.222191; ucieczki (znaki +-, eps=0.2): 4.64, 4.92
+  4pi/0.7: omega^2_min=-1.229340; ucieczki (znaki +-, eps=0.2): 4.58, 4.84
+  6pi/0.7: omega^2_min=-1.222209; ucieczki (znaki +-, eps=0.2): 4.64, 4.90
+  6pi/S3single: omega^2_min=-1.229829; ucieczki (znaki +-, eps=0.2): 4.60, 4.78
+
+  wszystkie tla omega^2_min<0 zbieznie: True
+  ucieczka w t <= 2t*_ref=7.24 we wszystkich glownych biegach: True
+  jakiekolwiek tlo bez ucieczki do 3t*=10.86 przy obu znakach: False
+  (zlozenie z kryteriami Q -> Phase_FINAL_close.md; odczyt
+   kwantyfikatora d wg Phase3_verdict_ruling.md)
+==============================================================================
