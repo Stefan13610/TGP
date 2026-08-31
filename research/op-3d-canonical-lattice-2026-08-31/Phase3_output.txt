@@ -1,0 +1,69 @@
+==============================================================================
+Phase 3 -- RACHUNEK CENTRALNY: Bloch 3D wokol tel sieci sc
+(model kanoniczny). LOCK sec. 3 Phase 3; FROZEN: MD-poprzednika
+sec. 1/2/6 (przejete); korekta 1 (eigsh tol=0):
+../op-3d-lattice-bath-stability-2026-08-31/Phase_correction_note_eigsh.md.
+INPUT: g0_mu=1.4650974 (=phi*0.90548), d*1=3.0790, beta=gamma=1.
+==============================================================================
+tla z Phase 2: 2pi/A0.7, 2pi/A1.0
+[t=    0.0s] [P3b] KONTROLA: proznia g=1 w komorce [0,d)^3 -- galezie |k+G|^2-1
+[t=    4.1s]   d=pi     N=32: maxerr(10 galezi, 4 pkt k) = 6.648e-03 -> PASS
+[t=   43.0s]   d=pi     N=48: maxerr(10 galezi, 4 pkt k) = 2.959e-03 -> PASS
+[t=   49.0s]   d=2pi    N=32: maxerr(10 galezi, 4 pkt k) = 9.497e-03 -> PASS
+[t=   83.4s]   d=2pi    N=48: maxerr(10 galezi, 4 pkt k) = 4.227e-03 -> PASS
+[t=   89.1s]   d=dstar1 N=32: maxerr(10 galezi, 4 pkt k) = 6.622e-03 -> PASS
+[t=  124.9s]   d=dstar1 N=48: maxerr(10 galezi, 4 pkt k) = 2.948e-03 -> PASS
+[t=  130.6s]   d=3pi    N=32: maxerr(10 galezi, 4 pkt k) = 7.386e-03 -> PASS
+[t=  166.2s]   d=3pi    N=48: maxerr(10 galezi, 4 pkt k) = 3.288e-03 -> PASS
+[t=  172.3s]   d=4pi    N=32: maxerr(10 galezi, 4 pkt k) = 4.155e-03 -> PASS
+[t=  207.1s]   d=4pi    N=48: maxerr(10 galezi, 4 pkt k) = 2.482e-01 -> FAIL
+  P3b: FAIL
+[t=  207.1s] [P3c] KONTROLA: sektor stabilny m^2=+1 ze zrodlem 3D (d_s=4, sigma=0.5, q=1)
+[t=  219.5s]   N=32: psi in [1.00692, 1.07456], ||R||=2.5e-11; w2_min = +1.06518 (argmin Gamma) -> PASS
+[t=  285.2s]   N=48: psi in [1.00693, 1.07440], ||R||=3.3e-10; w2_min = +1.06520 (argmin Gamma) -> PASS
+  P3c: PASS (wymog w2_min > 0 na obu siatkach)
+[t=  285.2s] [P3a] spektra tel Phase 2 (sektor tachionowy)
+
+  --- tlo 2pi/A0.7 (d=6.283185) ---
+[t=  286.5s]     N=32 k=Gamma: 10 najn.: ['-1.6890', '-0.0042', '-0.0042', '-0.0042', '+0.1936', '+0.6751'] | trans idx [1, 2, 3] [1s]
+[t=  287.5s]     N=32 k=X    : 10 najn.: ['-1.6790', '-0.2397', '+0.0224', '+0.0224', '+0.3847', '+0.7505'] | trans idx [1, 2, 3] [1s]
+[t=  288.5s]     N=32 k=M    : 10 najn.: ['-1.6695', '-0.1955', '-0.1955', '+0.0467', '+0.5624', '+0.5947'] | trans idx [1, 2, 3] [1s]
+[t=  289.7s]     N=32 k=R    : 10 najn.: ['-1.6605', '-0.1568', '-0.1568', '-0.1568', '+0.6742', '+0.6742'] | trans idx [1, 2, 3] [1s]
+    N=32: w2_min(clean po k) = -1.689007 (argmin Gamma); pelne min = -1.689007 (Gamma); Gamma: 3 modow transl., lam_trans=['-4.24e-03', '-4.24e-03', '-4.24e-03'], Rayleigh=['-4.21e-03', '-4.21e-03', '-4.21e-03']
+[t=  297.1s]     N=48 k=Gamma: 10 najn.: ['-1.6743', '-0.0018', '-0.0018', '-0.0018', '+0.1886', '+0.6659'] | trans idx [1, 2, 3] [7s]
+[t=  302.6s]     N=48 k=X    : 10 najn.: ['-1.6639', '-0.2430', '+0.0255', '+0.0255', '+0.3797', '+0.7416'] | trans idx [1, 2, 3] [6s]
+[t=  308.1s]     N=48 k=M    : 10 najn.: ['-1.6541', '-0.1978', '-0.1978', '+0.0503', '+0.5519', '+0.5897'] | trans idx [1, 2, 3] [5s]
+[t=  314.7s]     N=48 k=R    : 10 najn.: ['-1.6448', '-0.1583', '-0.1583', '-0.1583', '+0.6639', '+0.6639'] | trans idx [1, 2, 3] [7s]
+    N=48: w2_min(clean po k) = -1.674350 (argmin Gamma); pelne min = -1.674350 (Gamma); Gamma: 3 modow transl., lam_trans=['-1.84e-03', '-1.84e-03', '-1.84e-03'], Rayleigh=['-1.83e-03', '-1.83e-03', '-1.83e-03']
+    GLOWNA (N=48): w2_min = -1.674350; |delta(32->48)| = 1.47e-02 (prog 8.37e-02) -> ZBIEZNE
+    cross-check u-forma k=Gamma (N=32): waga-K -1.689007 vs u-forma -1.690771 (|delta|=1.76e-03)
+    cross-check u-forma k=R     (N=32): waga-K -1.660493 vs u-forma -1.662343 (|delta|=1.85e-03)
+
+  --- tlo 2pi/A1.0 (d=6.283185) ---
+[t=  317.2s]     N=32 k=Gamma: 10 najn.: ['-1.6890', '-0.0042', '-0.0042', '-0.0042', '+0.1936', '+0.6751'] | trans idx [1, 2, 3] [1s]
+[t=  318.2s]     N=32 k=X    : 10 najn.: ['-1.6790', '-0.2397', '+0.0224', '+0.0224', '+0.3847', '+0.7505'] | trans idx [1, 2, 3] [1s]
+[t=  319.3s]     N=32 k=M    : 10 najn.: ['-1.6695', '-0.1955', '-0.1955', '+0.0467', '+0.5624', '+0.5947'] | trans idx [1, 2, 3] [1s]
+[t=  320.5s]     N=32 k=R    : 10 najn.: ['-1.6605', '-0.1568', '-0.1568', '-0.1568', '+0.6742', '+0.6742'] | trans idx [1, 2, 3] [1s]
+    N=32: w2_min(clean po k) = -1.689007 (argmin Gamma); pelne min = -1.689007 (Gamma); Gamma: 3 modow transl., lam_trans=['-4.24e-03', '-4.24e-03', '-4.24e-03'], Rayleigh=['-4.21e-03', '-4.21e-03', '-4.21e-03']
+[t=  327.6s]     N=48 k=Gamma: 10 najn.: ['-1.6743', '-0.0018', '-0.0018', '-0.0018', '+0.1886', '+0.6659'] | trans idx [1, 2, 3] [7s]
+[t=  333.1s]     N=48 k=X    : 10 najn.: ['-1.6639', '-0.2430', '+0.0255', '+0.0255', '+0.3797', '+0.7416'] | trans idx [1, 2, 3] [5s]
+[t=  338.6s]     N=48 k=M    : 10 najn.: ['-1.6541', '-0.1978', '-0.1978', '+0.0503', '+0.5519', '+0.5897'] | trans idx [1, 2, 3] [6s]
+[t=  345.5s]     N=48 k=R    : 10 najn.: ['-1.6448', '-0.1583', '-0.1583', '-0.1583', '+0.6639', '+0.6639'] | trans idx [1, 2, 3] [7s]
+    N=48: w2_min(clean po k) = -1.674350 (argmin Gamma); pelne min = -1.674350 (Gamma); Gamma: 3 modow transl., lam_trans=['-1.84e-03', '-1.84e-03', '-1.84e-03'], Rayleigh=['-1.83e-03', '-1.83e-03', '-1.83e-03']
+    GLOWNA (N=48): w2_min = -1.674350; |delta(32->48)| = 1.47e-02 (prog 8.37e-02) -> ZBIEZNE
+    cross-check u-forma k=Gamma (N=32): waga-K -1.689007 vs u-forma -1.690771 (|delta|=1.76e-03)
+    cross-check u-forma k=R     (N=32): waga-K -1.660493 vs u-forma -1.662343 (|delta|=1.85e-03)
+
+zapisano wyniki: C:/Users/Mateusz/Documents/ObsydnianMain/TGP/TGP_v1/research/op-3d-canonical-lattice-2026-08-31/Phase3_results3d.json
+
+==============================================================================
+TABELA w2_min(d) (po odjeciu translacji; zbieznosc LOCK doslownie):
+  P3b: FAIL   P3c: PASS
+  tlo 2pi/A0.7       d=  6.2832: w2_min = -1.674350 (ZBIEZNE; argmin Gamma; pelne min -1.674350)
+  tlo 2pi/A1.0       d=  6.2832: w2_min = -1.674350 (ZBIEZNE; argmin Gamma; pelne min -1.674350)
+
+  istnieje d z w2_min > 0 (zbiezne): False
+  w2_min < 0 dla wszystkich istniejacych tel (zbieznie): True
+  (werdykt Q wymaga Phase 4; ruling kwantyfikatora PRZED Phase 4)
+  deskryptywnie vs 1D: bloch-chain w2_min = -1.222...-1.230
+==============================================================================

@@ -1,0 +1,66 @@
+[t=    0.0s] profil radialny mu KANONICZNY (INPUT g0=1.4650974)...
+==============================================================================
+Phase 2 -- istnienie tla sieci sc 3D (akcja kanoniczna; obiekt
+PRIMARY: soliton mu kanoniczny). LOCK sec. 3 Phase 2; newton_krylov
+FROZEN (MD-poprzednika sec. 4, przejete). Kryteria: ||R||_inf <=
+1e-8, ||g-1||_inf >= 0.05, ||g_32-g_48||_inf <= 5e-3 (podsiatka
+16^3). INPUT: g0_mu=1.4650974 (=phi*0.90548), d*1=3.0790, beta=gamma=1.
+==============================================================================
+
+[d = pi = 3.141593]
+[t=    0.4s]   A1.0 N=32: GUARD start: min=-2.899 < 0.05 -> clip
+[t=    6.2s]   A1.0 N=32: UCIECZKA-g->0 ||R||_inf=5.39e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=3.1e-15 [5.8s]
+[t=   26.8s]   A1.0 N=48: UCIECZKA-g->0 ||R||_inf=4.06e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=8.4e-15 [20.6s]
+  A1.0: dgrid(16^3)=3.17e-06 (gate<=5e-3) -> UCIECZKA-g->0/UCIECZKA-g->0
+[t=   26.8s]   A0.7 N=32: GUARD start: min=-1.729 < 0.05 -> clip
+[t=   32.8s]   A0.7 N=32: UCIECZKA-g->0 ||R||_inf=5.39e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=3.1e-15 [6.0s]
+[t=   50.7s]   A0.7 N=48: UCIECZKA-g->0 ||R||_inf=4.06e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=8.4e-15 [17.9s]
+  A0.7: dgrid(16^3)=3.17e-06 (gate<=5e-3) -> UCIECZKA-g->0/UCIECZKA-g->0
+
+[d = 2pi = 6.283185]
+[t=   50.7s]   A1.0 N=32: GUARD start: min=-0.335 < 0.05 -> clip
+[t=   55.8s]   A1.0 N=32: OK-KANDYDAT ||R||_inf=3.11e-10 (OK), g in [0.6064,1.4734], ||g-1||_inf=0.4734, asym=1.1e-02 [5.1s]
+[t=   69.1s]   A1.0 N=48: OK-KANDYDAT ||R||_inf=6.67e-10 (OK), g in [0.6100,1.4688], ||g-1||_inf=0.4688, asym=1.0e-02 [13.3s]
+  A1.0: dgrid(16^3)=4.58e-03 (gate<=5e-3) -> NIESTALE-ZBIEZNE
+[t=   73.7s]   A0.7 N=32: OK-KANDYDAT ||R||_inf=2.75e-10 (OK), g in [0.6065,1.4733], ||g-1||_inf=0.4733, asym=1.6e-02 [4.6s]
+[t=   87.1s]   A0.7 N=48: OK-KANDYDAT ||R||_inf=5.05e-10 (OK), g in [0.6101,1.4687], ||g-1||_inf=0.4687, asym=1.7e-02 [13.4s]
+  A0.7: dgrid(16^3)=4.59e-03 (gate<=5e-3) -> NIESTALE-ZBIEZNE
+
+[d = dstar1 = 3.079000]
+[t=   87.1s]   A1.0 N=32: GUARD start: min=-3.023 < 0.05 -> clip
+[t=   93.0s]   A1.0 N=32: UCIECZKA-g->0 ||R||_inf=5.38e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=1.9e-15 [5.8s]
+[t=  111.4s]   A1.0 N=48: UCIECZKA-g->0 ||R||_inf=4.09e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=4.9e-15 [18.5s]
+  A1.0: dgrid(16^3)=3.07e-06 (gate<=5e-3) -> UCIECZKA-g->0/UCIECZKA-g->0
+[t=  111.5s]   A0.7 N=32: GUARD start: min=-1.816 < 0.05 -> clip
+[t=  117.2s]   A0.7 N=32: UCIECZKA-g->0 ||R||_inf=5.38e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=1.9e-15 [5.7s]
+[t=  135.0s]   A0.7 N=48: UCIECZKA-g->0 ||R||_inf=4.09e-10 (OK), g in [0.0000,0.0000], ||g-1||_inf=1.0000, asym=4.9e-15 [17.8s]
+  A0.7: dgrid(16^3)=3.07e-06 (gate<=5e-3) -> UCIECZKA-g->0/UCIECZKA-g->0
+
+[d = 3pi = 9.424778]
+[t=  141.8s]   A1.0 N=32: NIEZBIEZNE ||R||_inf=1.01e+00 (NO-CONV), g in [0.5996,1.5474], ||g-1||_inf=0.5474, asym=7.0e-02 [6.8s]
+[t=  198.2s]   A1.0 N=48: OK-KANDYDAT ||R||_inf=6.67e-11 (OK), g in [0.4587,1.5861], ||g-1||_inf=0.5861, asym=2.4e-01 [56.4s]
+  A1.0: dgrid(16^3)=4.86e-01 (gate<=5e-3) -> NIEZBIEZNE/OK-KANDYDAT
+[t=  218.0s]   A0.7 N=32: KOLAPS-DO-PROZNI ||R||_inf=7.32e-10 (OK), g in [1.0000,1.0000], ||g-1||_inf=0.0000, asym=1.1e-09 [19.8s]
+[t=  296.1s]   A0.7 N=48: KOLAPS-DO-PROZNI ||R||_inf=8.75e-10 (OK), g in [1.0000,1.0000], ||g-1||_inf=0.0000, asym=1.7e-09 [78.1s]
+  A0.7: dgrid(16^3)=1.80e-09 (gate<=5e-3) -> KOLAPS-DO-PROZNI
+
+[d = 4pi = 12.566371]
+[t=  343.1s]   A1.0 N=32: KOLAPS-DO-PROZNI ||R||_inf=8.93e-10 (OK), g in [1.0000,1.0000], ||g-1||_inf=0.0000, asym=1.1e-08 [47.0s]
+[t=  556.1s]   A1.0 N=48: KOLAPS-DO-PROZNI ||R||_inf=8.40e-10 (OK), g in [1.0000,1.0000], ||g-1||_inf=0.0000, asym=1.0e-08 [212.9s]
+  A1.0: dgrid(16^3)=2.95e-08 (gate<=5e-3) -> KOLAPS-DO-PROZNI
+[t=  608.3s]   A0.7 N=32: KOLAPS-DO-PROZNI ||R||_inf=6.98e-10 (OK), g in [1.0000,1.0000], ||g-1||_inf=0.0000, asym=5.7e-09 [52.1s]
+[t=  767.3s]   A0.7 N=48: KOLAPS-DO-PROZNI ||R||_inf=9.94e-10 (OK), g in [1.0000,1.0000], ||g-1||_inf=0.0000, asym=2.1e-08 [159.0s]
+  A0.7: dgrid(16^3)=2.24e-08 (gate<=5e-3) -> KOLAPS-DO-PROZNI
+
+zapisano tla: C:/Users/Mateusz/Documents/ObsydnianMain/TGP/TGP_v1/research/op-3d-canonical-lattice-2026-08-31/Phase2_backgrounds3d.npz (6 tablic)
+
+==============================================================================
+PODSUMOWANIE Phase 2 (kryterium istnienia LOCK, doslownie):
+  d=pi     (3.1416): istnienie tla: NIE   [A1.0:UCIECZKA-g->0/UCIECZKA-g->0; A0.7:UCIECZKA-g->0/UCIECZKA-g->0]
+  d=2pi    (6.2832): istnienie tla: TAK   [A1.0:NIESTALE-ZBIEZNE; A0.7:NIESTALE-ZBIEZNE]
+  d=dstar1 (3.0790): istnienie tla: NIE   [A1.0:UCIECZKA-g->0/UCIECZKA-g->0; A0.7:UCIECZKA-g->0/UCIECZKA-g->0]
+  d=3pi    (9.4248): istnienie tla: NIE   [A1.0:NIEZBIEZNE/OK-KANDYDAT; A0.7:KOLAPS-DO-PROZNI]
+  d=4pi    (12.5664): istnienie tla: NIE   [A1.0:KOLAPS-DO-PROZNI; A0.7:KOLAPS-DO-PROZNI]
+
+ISTNIENIE POTWIERDZONE dla co najmniej jednego d -> Phase 3.
+==============================================================================

@@ -1,0 +1,14 @@
+==============================================================================
+Phase 4 -- nieliniowa weryfikacja: superkomorka 2x2x2, K_eps,
+t_end = 3 t*_izo(3D) = 14.130. LOCK sec. 3 Phase 4; MD sec. 5.
+INPUT: t*_izo(3D)=4.710 (Phase1), tla: Phase2_backgrounds3d.npz,
+wybor modu: Phase3_results3d.json (tla ze zbieznym Phase 3).
+==============================================================================
+[t=    0.0s] [tlo 2pi/A0.7] d=6.283185, w2_min=-1.674350 (argmin Gamma) -> mod perturbacji
+  mod: lambda = -1.674350 (zgodnosc z Phase 3 w2_min: |d|=0.00e+00)
+  ||tlo|| = 0.4687, a = 0.004687, N_sc = 96, dt = 0.01, t_end = 14.130
+[t=  666.4s]   [+a eps=0.2 dt=0.01]: UCIECZKA (t_esc=4.060, mechanizm=dev>||tlo||); vs 2t*=9.42 / 3t*=14.13; gate|dE|/E=8.89e-11 PASS; maxdev=0.478 [659s]
+[t= 1952.1s]   [+a eps=0.2 dt=0.005]: UCIECZKA (t_esc=4.060, mechanizm=dev>||tlo||); vs 2t*=9.42 / 3t*=14.13; gate|dE|/E=5.56e-12 PASS; maxdev=0.478 [1286s]
+[t= 2647.1s]   [-a eps=0.2 dt=0.01]: UCIECZKA (t_esc=4.120, mechanizm=dev>||tlo||); vs 2t*=9.42 / 3t*=14.13; gate|dE|/E=2.70e-08 PASS; maxdev=0.471 [695s]
+[t= 3305.4s]   [+a eps=0.1 dt=0.01]: UCIECZKA (t_esc=4.200, mechanizm=dev>||tlo||); vs 2t*=9.42 / 3t*=14.13; gate|dE|/E=1.04e-10 PASS; maxdev=0.470 [658s]
+[t= 3305.4s] [tlo 2pi/A1.0] d=6.283185, w2_min=-1.674350 (argmin Gamma) -> mod perturbacji
