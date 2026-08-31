@@ -27,10 +27,16 @@ User (po Q-FAIL kroku 3): hipoteza, że m²=−W″(1) w konwencji źródłowej 
 - **Incydenty (pełna dokumentacja w katalogu cyklu):** ruling tol FROZEN przed obliczeniami (odczyt literalny-nieograniczony grid-rozbieżny i nie wykrywa znanego niestabilnego C2 — PRIMARY pasmowy |λ|≤12; oba odczyty raportowane wszędzie, w Phase 3 rozjeżdżają werdykt — **user-gate na akceptację rulingu w NEEDS**); 2× correction_note (sympy positive=True + znak euler_equations; deskryptywna diagnostyka symetrii) — oba przed użyciem wyników, pierwotne outputy zachowane.
 - **Konsekwencja:** wszystkie trzy klasy dynamiki zgodne ze statyką maszynerii 2 (II rzędu, gradient flow, symplektyczna I rzędu) są w 1D niestabilne — hipoteza „stabilizacja przez zmianę dynamiki" ZAMKNIĘTA negatywnie w klasie zbadanej. Decyzja aksjomatyczna o znaku W wraca do autora bez tej podpory; jedyna pozostała droga rachunkowa = **3D**.
 
+### 🟢 LOCK cyklu 3D (kontynuacja sesji; autoryzacja: „ok 1 Cykl 3D dla stabilności w kąpieli"): [[research/op-3d-lattice-bath-stability-2026-08-31/Phase0_balance.md]] — PHASE0-LOCKED, zero obliczeń
+- **Q:** czy sieć prosta kubiczna solitonów μ (baseline #63: g₀=2.02117, λ_min=−1.3896, t*=3.62) ma przy jakimś d ∈ {π, 2π, 3.0790 [INPUT d*₁μμ], 3π, 4π} widmo ω²_min(d)>0 na tle samouzgodnionym (Bloch: Γ/X/M/R, N∈{32,48}, mody translacyjne odejmowane po identyfikacji)?
+- Nieprzenośność negatywu 1D pre-rejestrowana w LOCKu (Hill nie obowiązuje w 3D; ogony 1/r). Konstrukcja fail-fast: P1 tania bramka (dyspersja próżni 3D exact + kotwica radialna ±1e−3 + most radialny→kartezjański ±5% + t*_izo(3D)) PRZED ciężką relaksacją; Phase 2 istnienie sieci = osobna bramka (negatyw wszędzie ⟹ CLOSED-GATE-STOP); P3b/P3c kontrole nieusuwalne; Phase 4 warunkowa (superkomórka 2×2×2). Nawet przy Q-FAIL: deskryptywny trend ω²_min(d) vs 1D (−1.22) zalockowany jako deliverable.
+- Realizacja: do autoryzacji.
+
 ### WIP po sesji (C)
-- **op-symplectic-Jspectrum: 🔴 CLOSED Q-FAIL.** NEEDS user-gated (m.in. akceptacja rulingu tol; kandydat 3D).
-- Decyzja aksjomatyczna o znaku W: OTWARTA — teraz z kompletnym negatywnym materiałem 1D (trzy klasy dynamiki).
-- Bez zmian: kandydaci 3D (NEEDS bloch + ten cykl), ośrodek/ekranowanie (NEEDS extended-nbody), N4 fluctuation-channel, op-native-pressure OPEN-ACTIVE.
+- **op-symplectic-Jspectrum: 🔴 CLOSED Q-FAIL.** NEEDS user-gated (m.in. akceptacja rulingu tol).
+- **op-3d-lattice-bath-stability: PHASE0-LOCKED** — realizacja do autoryzacji.
+- Decyzja aksjomatyczna o znaku W: OTWARTA — kompletny negatywny materiał 1D (trzy klasy dynamiki); cykl 3D = ostatnia droga rachunkowa.
+- Bez zmian: ośrodek/ekranowanie (NEEDS extended-nbody), N4 fluctuation-channel, op-native-pressure OPEN-ACTIVE.
 
 ### Cross-references
 [[research/op-symplectic-Jspectrum-2026-08-31/Phase0_balance.md]] · [[research/op-bloch-chain-stability-2026-08-31/Phase_FINAL_close.md]] · [[research/op-lattice-bath-runaway-2026-08-23/ANALIZA_N2_znak-W-z-akcji_2026-08-23.md]] · [[research/op-nonlinear-charge-constraint-2026-07-03/README.md]] (#63 V2/VK)
