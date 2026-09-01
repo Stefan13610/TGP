@@ -11,6 +11,28 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
+## 🟢 Sesja 2026-09-01 — RE-RAMA pytania o stabilność (hipoteza autora: granica metametryczna) + LOCK [[research/op-metametric-boundary-2026-09-01/Phase0_balance.md]] — PHASE0-LOCKED
+
+User (po serii Q-FAIL): „granicą powinien być stan metametryczny, w ramach którego dozwolone jest dowolne kreowanie nowych solitonów/obiektów za darmo […] jeżeli tej granicy nie ma, układ może się zrelaksować" → wskazanie hipotezy źródłowej: [[research/op-blocked-soliton-bang-2026-07-04/README.md]] („Kluczowa luka: zerokosztowa kreacja"; „wielki wybuch trwa na granicy metryki") → „jeżeli [obliczenia] załamią się ze względu na generowanie obiektów, to w sumie będzie wynik pozytywny. I tak zapisz nowy cykl".
+
+### Re-rama (analiza sesji, poziom konwencji — bez nowych obliczeń)
+- Wszystkie dotychczasowe werdykty Q-FAIL (bloch-chain, symplectic, 3d-canonical) mierzyły stabilność w zespole KANONICZNYM (stała liczba obiektów) względem konfiguracji niebędących stanem zrelaksowanym. Fakt konwencyjny: U(1)=+1/56 > U(0)=0, U″(1)=−1 — próżnia na maksimum potencjału; obserwowane ucieczki g→0 (Phase 2/4 cykli 3D, #63 V3) są spójne z RELAKSACJĄ ku stanowi pustemu, nie ze „śmiercią" obiektu. W kontinuum granicy metametrycznej nie widać; kandydat: spinodala rozrzedzenia Φ_c/Φ_vac≈0.298 z QB-2 (poziom 0).
+- Zidentyfikowane ograniczenia dotychczasowej konstrukcji (do NEEDS przyszłych cykli): tła wyłącznie statyczne (brak breather/Floquet), brak więzów z wielkości zachowanych, tylko sieci jednogatunkowe sc, kryterium absolutne zamiast względem stanu zrelaksowanego.
+
+### 🟢 LOCK `op-metametric-boundary` (PHASE0-LOCKED, zero obliczeń)
+- **Q1:** czy granica metametryczna (μ=0 kreacji) istnieje w kontinuum (równanie stanu: ΔE_create solitonu vs próżnia/stan pusty, ε(2π) z npz) — spodziewany negatyw = formalizacja „relaksacji bez granicy". **Q2 (rachunek centralny):** relaksacja z podłogą substratową g_floor WYPROWADZONĄ z QB-2 (3 zalockowane wartości progu 0.197/0.298/0.331; mapowanie z dodatekB FROZEN przed startem), 3 starty (soliton radialny / sieć 2π z npz READ-ONLY / próżnia+szum seed=20260901). **Q3 (warunkowe):** widmo na stanie zrelaksowanym — pierwszy pomiar stabilności względem WŁAŚCIWEGO punktu odniesienia.
+- **Kryterium autora pre-rejestrowane jako POZYTYW:** załamanie rachunku przez SPONTANICZNĄ NUKLEACJĘ obiektów (detektor zalockowany: spójne regiony g<(1+g_floor)/2 ponad liczbę zasianych, ≥10 j.cz., zbieżność siatka×dt wymagana; kontrola sektora stabilnego = zero fałszywych alarmów, nieusuwalna) ⟹ **Q2-PASS-NUCLEATION** — reżim bezkosztowej kreacji potwierdzony. Załamanie nie-nukleacyjne = INCONCLUSIVE, nie pozytyw (litera locka).
+- Realizacja: do autoryzacji.
+
+### WIP po sesji
+- **op-metametric-boundary: PHASE0-LOCKED** — realizacja do autoryzacji.
+- Reszta bez zmian: decyzja aksjomatyczna o znaku W (teraz z re-ramą: Q-FAIL-e mogą być relaksacją, nie śmiercią — rozstrzygnie ten cykl); NEEDS zaległe (ruling tol Jspectrum, bcc/fcc, ekranowanie ośrodkowe, N4 fluctuation).
+
+### Cross-references
+[[research/op-metametric-boundary-2026-09-01/Phase0_balance.md]] · [[research/op-blocked-soliton-bang-2026-07-04/README.md]] · [[research/op-substrate-fluctuation-channel-2026-08-23/Phase_FINAL_close.md]] (QB-2) · [[research/op-3d-canonical-lattice-2026-08-31/Phase_FINAL_close.md]]
+
+---
+
 ## 🔴 Sesja 2026-08-31 (C, kontynuacja sesji głównej) — weryfikacja konwencji W_source/V_energy (hipoteza autora) + mini-cykl [[research/op-symplectic-Jspectrum-2026-08-31/README.md]] WYKONANY W CAŁOŚCI — **CLOSED, Q-FAIL: klasa symplektyczna I rzędu też NIE ratuje sektora tachionowego w 1D; już sama próżnia jest symplektycznie niestabilna (max Re λ = γ/4)**
 
 User (po Q-FAIL kroku 3): hipoteza, że m²=−W″(1) w konwencji źródłowej rozwiązuje rozdwojenie znaku W → „sprawdź to" → wynik weryfikacji → „ok, załuż nowy mini cykl".
