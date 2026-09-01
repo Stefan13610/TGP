@@ -1,0 +1,16 @@
+﻿==============================================================================
+P2a -- GATE maszynerii podlogi (LOCK sec. 3 P2a; FROZEN MD sec. 5). FAIL => STOP.
+REJESTR [INPUT]: progi QB-2 (0.197, 0.298, 0.331) -> g_floor (np.float64(0.4438468), np.float64(0.5458938), np.float64(0.575326)); kappa=100;
+g0_mu=1.4650974; beta=gamma=1; seed=20260901 (nieuzywany w P2a).
+==============================================================================
+  P2a-i floor=0.4438468: radial ||g-1||_inf=0.00e+00 -> PASS | 3D N=32 ||g-1||_inf=0.00e+00 -> PASS
+  P2a-i floor=0.5458938: radial ||g-1||_inf=0.00e+00 -> PASS | 3D N=32 ||g-1||_inf=0.00e+00 -> PASS
+  P2a-i floor=0.5753260: radial ||g-1||_inf=0.00e+00 -> PASS | 3D N=32 ||g-1||_inf=0.00e+00 -> PASS
+  P2a-ii floor=0.4438468 radial: |dE|/E=1.77e-16 (gate<=1e-6), min g=1.0000 > g_floor -> PASS
+  P2a-ii floor=0.4438468 3D N=32: |dE|/E=6.02e-16 (gate<=1e-6), min g=0.9990 > g_floor -> PASS
+  P2a-ii floor=0.5458938 radial: |dE|/E=1.77e-16 (gate<=1e-6), min g=1.0000 > g_floor -> PASS
+  P2a-ii floor=0.5458938 3D N=32: |dE|/E=6.02e-16 (gate<=1e-6), min g=0.9990 > g_floor -> PASS
+  P2a-ii floor=0.5753260 radial: |dE|/E=1.77e-16 (gate<=1e-6), min g=1.0000 > g_floor -> PASS
+  P2a-ii floor=0.5753260 3D N=32: |dE|/E=6.02e-16 (gate<=1e-6), min g=0.9990 > g_floor -> PASS
+
+P2a GATE: PASS -> P2b

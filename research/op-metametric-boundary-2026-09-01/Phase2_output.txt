@@ -1,0 +1,174 @@
+﻿==============================================================================
+Phase 2 (op-metametric-boundary) -- Q2: relaksacja z podloga substratowa.
+LOCK sec. 3 Phase 2; FROZEN: Phase_method_decisions.md sec. 1-6.
+REJESTR [INPUT]: progi QB-2 {0.197,0.298,0.331} -> g_floor
+{0.4438468,0.5458938,0.5753260} (mapowanie g=phi=(Phi/Phi0)^(1/2),
+dodatekB eq:K-geometric/prop:substrate-action); kappa=100 FROZEN;
+seed=20260901 amp=1e-3; g0_mu=phi*0.90548=1.4650974; beta=gamma=1;
+kotwica lam_min=-1.646589 (siatki radialne {0.025,0.0125}); tlo 2pi
+z npz op-3d-canonical (READ-ONLY). Korekta 1 (obsluga zalamania):
+Phase_correction_note_breakdown_handling.md -- zapisana PRZED uzyciem
+wynikow; pierwotny output zachowany (Phase2_results/
+job_tach_sol_f2_h025_pre_correction.txt).
+==============================================================================
+
+--- P2a: GATE maszynerii podlogi ---
+==============================================================================
+P2a -- GATE maszynerii podlogi (LOCK sec. 3 P2a; FROZEN MD sec. 5). FAIL => STOP.
+REJESTR [INPUT]: progi QB-2 (0.197, 0.298, 0.331) -> g_floor (np.float64(0.4438468), np.float64(0.5458938), np.float64(0.575326)); kappa=100;
+g0_mu=1.4650974; beta=gamma=1; seed=20260901 (nieuzywany w P2a).
+==============================================================================
+  P2a-i floor=0.4438468: radial ||g-1||_inf=0.00e+00 -> PASS | 3D N=32 ||g-1||_inf=0.00e+00 -> PASS
+  P2a-i floor=0.5458938: radial ||g-1||_inf=0.00e+00 -> PASS | 3D N=32 ||g-1||_inf=0.00e+00 -> PASS
+  P2a-i floor=0.5753260: radial ||g-1||_inf=0.00e+00 -> PASS | 3D N=32 ||g-1||_inf=0.00e+00 -> PASS
+  P2a-ii floor=0.4438468 radial: |dE|/E=1.77e-16 (gate<=1e-6), min g=1.0000 > g_floor -> PASS
+  P2a-ii floor=0.4438468 3D N=32: |dE|/E=6.02e-16 (gate<=1e-6), min g=0.9990 > g_floor -> PASS
+  P2a-ii floor=0.5458938 radial: |dE|/E=1.77e-16 (gate<=1e-6), min g=1.0000 > g_floor -> PASS
+  P2a-ii floor=0.5458938 3D N=32: |dE|/E=6.02e-16 (gate<=1e-6), min g=0.9990 > g_floor -> PASS
+  P2a-ii floor=0.5753260 radial: |dE|/E=1.77e-16 (gate<=1e-6), min g=1.0000 > g_floor -> PASS
+  P2a-ii floor=0.5753260 3D N=32: |dE|/E=6.02e-16 (gate<=1e-6), min g=0.9990 > g_floor -> PASS
+
+P2a GATE: PASS -> P2b
+
+--- P2b: sektor tachionowy (18 biegow; pelne logi: Phase2_results/batch_*.txt) ---
+[t=    0.3s]   [tach_sol_f1_h025 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=1285.697466, ||gdot||=1.53e+00
+[t=    0.4s]   [tach_sol_f1_h025 dt=0.01] ZALAMANIE (niefinitycznosc) t=2.750; ostatni finityczny stan: g in [-2.82e+56, -2.82e+56]
+[t=    0.4s]   [tach_sol_f1_h025 dt=0.01] KONIEC: BREAKDOWN (t=2.8), g in [-281997980398488199152901521912668423587081539934641717248.0000,-281997980397725008415853370391797351603539851281696817152.0000], ||g-const||=381595368524075760435535991770844326472450048.0000, N_obj=1 (seed 0), ||gdot||=inf
+[t=    0.5s]   [tach_sol_f1_h0125 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=1285.698837, ||gdot||=1.53e+00
+[t=    0.6s]   [tach_sol_f1_h0125 dt=0.01] ZALAMANIE (niefinitycznosc) t=3.130; ostatni finityczny stan: g in [-5.735e+57, -5.735e+57]
+[t=    0.6s]   [tach_sol_f1_h0125 dt=0.01] KONIEC: BREAKDOWN (t=3.1), g in [-5734921703708208379786730989781166006579799298798652489728.0000,-5734921703644378071842236713694305396953911526078160044032.0000], ||g-const||=31915153972247138043430304812943886360246222848.0000, N_obj=1 (seed 0), ||gdot||=inf
+[t=    0.7s]   [tach_sol_f2_h025 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=1285.697466, ||gdot||=1.53e+00
+[t=    0.7s]   [tach_sol_f2_h025 dt=0.01] ZALAMANIE (niefinitycznosc) t=2.750; ostatni finityczny stan: g in [-2.82e+56, -2.82e+56]
+[t=    0.7s]   [tach_sol_f2_h025 dt=0.01] KONIEC: BREAKDOWN (t=2.8), g in [-281997980398488199152901521912668423587081539934641717248.0000,-281997980397725008415853370391797351603539851281696817152.0000], ||g-const||=381595368524075760435535991770844326472450048.0000, N_obj=1 (seed 0), ||gdot||=inf
+[t=    0.8s]   [tach_sol_f2_h0125 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=1285.698837, ||gdot||=1.53e+00
+[t=    0.9s]   [tach_sol_f2_h0125 dt=0.01] ZALAMANIE (niefinitycznosc) t=3.130; ostatni finityczny stan: g in [-5.735e+57, -5.735e+57]
+[t=    0.9s]   [tach_sol_f2_h0125 dt=0.01] KONIEC: BREAKDOWN (t=3.1), g in [-5734921703708208379786730989781166006579799298798652489728.0000,-5734921703644378071842236713694305396953911526078160044032.0000], ||g-const||=31915153972247138043430304812943886360246222848.0000, N_obj=1 (seed 0), ||gdot||=inf
+[t=    1.0s]   [tach_sol_f3_h025 dt=0.01] start: N_seed=1, g in [0.7773,1.4651], E=1285.697466, ||gdot||=1.53e+00
+[t=    1.1s]   [tach_sol_f3_h025 dt=0.01] ZALAMANIE (niefinitycznosc) t=2.750; ostatni finityczny stan: g in [-2.82e+56, -2.82e+56]
+[t=    1.1s]   [tach_sol_f3_h025 dt=0.01] KONIEC: BREAKDOWN (t=2.8), g in [-281997980398488199152901521912668423587081539934641717248.0000,-281997980397725008415853370391797351603539851281696817152.0000], ||g-const||=381595368524075760435535991770844326472450048.0000, N_obj=1 (seed 1), ||gdot||=inf
+[t=    1.1s]   [tach_sol_f3_h0125 dt=0.01] start: N_seed=1, g in [0.7773,1.4651], E=1285.698837, ||gdot||=1.53e+00
+[t=    1.3s]   [tach_sol_f3_h0125 dt=0.01] ZALAMANIE (niefinitycznosc) t=3.130; ostatni finityczny stan: g in [-5.735e+57, -5.735e+57]
+[t=    1.3s]   [tach_sol_f3_h0125 dt=0.01] KONIEC: BREAKDOWN (t=3.1), g in [-5734921703708208379786730989781166006579799298798652489728.0000,-5734921703644378071842236713694305396953911526078160044032.0000], ||g-const||=31915153972247138043430304812943886360246222848.0000, N_obj=1 (seed 1), ||gdot||=inf
+[t=    0.0s]   [tach_lat_f1_N32 dt=0.01] start: N_seed=1, g in [0.6064,1.4734], E=4.291737, ||gdot||=2.17e-02
+[t=    0.6s]   [tach_lat_f1_N32 dt=0.01] ZALAMANIE (niefinitycznosc) t=1.250; ostatni finityczny stan: g in [4.64e+50, 4.64e+50]
+[t=    0.6s]   [tach_lat_f1_N32 dt=0.01] KONIEC: BREAKDOWN (t=1.2), g in [463950122654408055913426671832292819474512615571456.0000,463950122654408055913426671832292819474512615571456.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=inf
+[t=    0.6s]   [tach_lat_f2_N32 dt=0.01] start: N_seed=1, g in [0.6064,1.4734], E=4.291737, ||gdot||=2.17e-02
+[t=    1.2s]   [tach_lat_f2_N32 dt=0.01] ZALAMANIE (niefinitycznosc) t=1.250; ostatni finityczny stan: g in [4.64e+50, 4.64e+50]
+[t=    1.2s]   [tach_lat_f2_N32 dt=0.01] KONIEC: BREAKDOWN (t=1.2), g in [463950122654408055913426671832292819474512615571456.0000,463950122654408055913426671832292819474512615571456.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=inf
+[t=    1.2s]   [tach_lat_f3_N32 dt=0.01] start: N_seed=1, g in [0.6064,1.4734], E=4.291737, ||gdot||=2.17e-02
+[t=    1.8s]   [tach_lat_f3_N32 dt=0.01] ZALAMANIE (niefinitycznosc) t=1.250; ostatni finityczny stan: g in [4.64e+50, 4.64e+50]
+[t=    1.8s]   [tach_lat_f3_N32 dt=0.01] KONIEC: BREAKDOWN (t=1.2), g in [463950122654408055913426671832292819474512615571456.0000,463950122654408055913426671832292819474512615571456.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=inf
+[t=    1.8s]   [tach_noise_f1_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=4.429814, ||gdot||=6.03e-02
+[t=    0.0s]   [tach_noise_f1_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=4.429814, ||gdot||=6.03e-02
+[t=    5.4s]   [tach_noise_f1_N32 dt=0.01] ZALAMANIE (niefinitycznosc) t=11.060; ostatni finityczny stan: g in [4.483e+109, 4.483e+109]
+[t=    5.4s]   [tach_noise_f1_N32 dt=0.01] KONIEC: BREAKDOWN (t=11.1), g in [44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.0000,44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=inf
+[t=    5.4s]   [tach_noise_f2_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=4.429814, ||gdot||=6.03e-02
+[t=   11.0s]   [tach_noise_f2_N32 dt=0.01] ZALAMANIE (niefinitycznosc) t=11.060; ostatni finityczny stan: g in [4.483e+109, 4.483e+109]
+[t=   11.0s]   [tach_noise_f2_N32 dt=0.01] KONIEC: BREAKDOWN (t=11.1), g in [44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.0000,44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=inf
+[t=   11.0s]   [tach_noise_f3_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=4.429814, ||gdot||=6.03e-02
+[t=   16.4s]   [tach_noise_f3_N32 dt=0.01] ZALAMANIE (niefinitycznosc) t=11.060; ostatni finityczny stan: g in [4.483e+109, 4.483e+109]
+[t=   16.4s]   [tach_noise_f3_N32 dt=0.01] KONIEC: BREAKDOWN (t=11.1), g in [44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.0000,44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=inf
+[t=    0.0s]   [tach_lat_f1_N48 dt=0.01] start: N_seed=1, g in [0.6100,1.4688], E=4.300620, ||gdot||=9.26e-03
+[t=    2.5s]   [tach_lat_f1_N48 dt=0.01] ZALAMANIE (niefinitycznosc) t=1.490; ostatni finityczny stan: g in [2.127e+60, 2.127e+60]
+[t=    2.5s]   [tach_lat_f1_N48 dt=0.01] KONIEC: BREAKDOWN (t=1.5), g in [2126973085932194265428024102719528943675300894828078733197312.0000,2126973085932194265428024102719528943675300894828078733197312.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=inf
+[t=    2.6s]   [tach_lat_f2_N48 dt=0.01] start: N_seed=1, g in [0.6100,1.4688], E=4.300620, ||gdot||=9.26e-03
+[t=    5.1s]   [tach_lat_f2_N48 dt=0.01] ZALAMANIE (niefinitycznosc) t=1.490; ostatni finityczny stan: g in [2.127e+60, 2.127e+60]
+[t=    5.1s]   [tach_lat_f2_N48 dt=0.01] KONIEC: BREAKDOWN (t=1.5), g in [2126973085932194265428024102719528943675300894828078733197312.0000,2126973085932194265428024102719528943675300894828078733197312.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=inf
+[t=    5.1s]   [tach_lat_f3_N48 dt=0.01] start: N_seed=1, g in [0.6100,1.4688], E=4.300620, ||gdot||=9.26e-03
+[t=    7.6s]   [tach_lat_f3_N48 dt=0.01] ZALAMANIE (niefinitycznosc) t=1.490; ostatni finityczny stan: g in [2.127e+60, 2.127e+60]
+[t=    7.6s]   [tach_lat_f3_N48 dt=0.01] KONIEC: BREAKDOWN (t=1.5), g in [2126973085932194265428024102719528943675300894828078733197312.0000,2126973085932194265428024102719528943675300894828078733197312.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=inf
+[t=    7.6s]   [tach_noise_f1_N48 dt=0.01] start: N_seed=0, g in [0.9991,1.0010], E=4.429842, ||gdot||=7.33e-02
+[t=   26.4s]   [tach_noise_f1_N48 dt=0.01] ZALAMANIE (niefinitycznosc) t=11.060; ostatni finityczny stan: g in [3.878e+70, 3.878e+70]
+[t=   26.4s]   [tach_noise_f1_N48 dt=0.01] KONIEC: BREAKDOWN (t=11.1), g in [38782986895122409062316686785198064135684405141828250448541562802536448.0000,38782986895122409062316686785198064135684405141828250448541562802536448.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=inf
+[t=   26.4s]   [tach_noise_f2_N48 dt=0.01] start: N_seed=0, g in [0.9991,1.0010], E=4.429842, ||gdot||=7.33e-02
+[t=   46.4s]   [tach_noise_f2_N48 dt=0.01] ZALAMANIE (niefinitycznosc) t=11.060; ostatni finityczny stan: g in [3.878e+70, 3.878e+70]
+[t=   46.4s]   [tach_noise_f2_N48 dt=0.01] KONIEC: BREAKDOWN (t=11.1), g in [38782986895122409062316686785198064135684405141828250448541562802536448.0000,38782986895122409062316686785198064135684405141828250448541562802536448.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=inf
+[t=   46.5s]   [tach_noise_f3_N48 dt=0.01] start: N_seed=0, g in [0.9991,1.0010], E=4.429842, ||gdot||=7.33e-02
+[t=   66.3s]   [tach_noise_f3_N48 dt=0.01] ZALAMANIE (niefinitycznosc) t=11.060; ostatni finityczny stan: g in [3.878e+70, 3.878e+70]
+[t=   66.3s]   [tach_noise_f3_N48 dt=0.01] KONIEC: BREAKDOWN (t=11.1), g in [38782986895122409062316686785198064135684405141828250448541562802536448.0000,38782986895122409062316686785198064135684405141828250448541562802536448.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=inf
+
+--- P2c: kontrola sektora stabilnego m^2=+gamma (18 biegow) ---
+[t=    0.3s]   [stab_sol_f1_h025 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=-1274.453109, ||gdot||=1.07e+01
+[t=    0.8s]   [stab_sol_f1_h025 dt=0.01] STACJONARNOSC t=16.0: ||gdot||=9.63e-09, g in [1.0000,1.0000]
+[t=    0.8s]   [stab_sol_f1_h025 dt=0.01] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=9.63e-09
+[t=    0.8s]   [stab_sol_f1_h0125 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=-1274.451819, ||gdot||=1.07e+01
+[t=    1.5s]   [stab_sol_f1_h0125 dt=0.01] STACJONARNOSC t=16.0: ||gdot||=9.63e-09, g in [1.0000,1.0000]
+[t=    1.5s]   [stab_sol_f1_h0125 dt=0.01] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=9.63e-09
+[t=    1.6s]   [stab_sol_f2_h025 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=-1274.453109, ||gdot||=1.07e+01
+[t=    2.0s]   [stab_sol_f2_h025 dt=0.01] STACJONARNOSC t=16.0: ||gdot||=9.63e-09, g in [1.0000,1.0000]
+[t=    2.0s]   [stab_sol_f2_h025 dt=0.01] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=9.63e-09
+[t=    2.1s]   [stab_sol_f2_h0125 dt=0.01] start: N_seed=0, g in [0.7773,1.4651], E=-1274.451819, ||gdot||=1.07e+01
+[t=    2.9s]   [stab_sol_f2_h0125 dt=0.01] STACJONARNOSC t=16.0: ||gdot||=9.63e-09, g in [1.0000,1.0000]
+[t=    2.9s]   [stab_sol_f2_h0125 dt=0.01] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=9.63e-09
+[t=    3.0s]   [stab_sol_f3_h025 dt=0.01] start: N_seed=1, g in [0.7773,1.4651], E=-1274.453109, ||gdot||=1.07e+01
+[t=    3.7s]   [stab_sol_f3_h025 dt=0.01] STACJONARNOSC t=16.0: ||gdot||=9.63e-09, g in [1.0000,1.0000]
+[t=    3.7s]   [stab_sol_f3_h025 dt=0.01] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=9.63e-09
+[t=    3.8s]   [stab_sol_f3_h0125 dt=0.01] start: N_seed=1, g in [0.7773,1.4651], E=-1274.451819, ||gdot||=1.07e+01
+[t=    4.7s]   [stab_sol_f3_h0125 dt=0.01] STACJONARNOSC t=16.0: ||gdot||=9.63e-09, g in [1.0000,1.0000]
+[t=    4.7s]   [stab_sol_f3_h0125 dt=0.01] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=9.63e-09
+[t=    0.0s]   [stab_lat_f1_N32 dt=0.01] start: N_seed=1, g in [0.6064,1.4734], E=3.747222, ||gdot||=9.66e+00
+[t=   10.3s]   [stab_lat_f1_N32 dt=0.01] STACJONARNOSC t=19.0: ||gdot||=6.95e-09, g in [1.0000,1.0000]
+[t=   10.3s]   [stab_lat_f1_N32 dt=0.01] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=6.95e-09
+[t=   10.3s]   [stab_lat_f2_N32 dt=0.01] start: N_seed=1, g in [0.6064,1.4734], E=3.747222, ||gdot||=9.66e+00
+[t=   21.0s]   [stab_lat_f2_N32 dt=0.01] STACJONARNOSC t=19.0: ||gdot||=6.95e-09, g in [1.0000,1.0000]
+[t=   21.0s]   [stab_lat_f2_N32 dt=0.01] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=6.95e-09
+[t=   21.0s]   [stab_lat_f3_N32 dt=0.01] start: N_seed=1, g in [0.6064,1.4734], E=3.747222, ||gdot||=9.66e+00
+[t=   31.9s]   [stab_lat_f3_N32 dt=0.01] STACJONARNOSC t=19.0: ||gdot||=6.95e-09, g in [1.0000,1.0000]
+[t=   31.9s]   [stab_lat_f3_N32 dt=0.01] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=6.95e-09
+[t=   31.9s]   [stab_noise_f1_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=-4.429111, ||gdot||=6.20e-02
+[t=   35.1s]   [stab_noise_f1_N32 dt=0.01] STACJONARNOSC t=6.0: ||gdot||=4.61e-09, g in [1.0000,1.0000]
+[t=   35.1s]   [stab_noise_f1_N32 dt=0.01] KONIEC: STATIONARY (t=6.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=4.61e-09
+[t=   35.1s]   [stab_noise_f2_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=-4.429111, ||gdot||=6.20e-02
+[t=   38.6s]   [stab_noise_f2_N32 dt=0.01] STACJONARNOSC t=6.0: ||gdot||=4.61e-09, g in [1.0000,1.0000]
+[t=   38.6s]   [stab_noise_f2_N32 dt=0.01] KONIEC: STATIONARY (t=6.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=4.61e-09
+[t=   38.6s]   [stab_noise_f3_N32 dt=0.01] start: N_seed=0, g in [0.9992,1.0009], E=-4.429111, ||gdot||=6.20e-02
+[t=   41.9s]   [stab_noise_f3_N32 dt=0.01] STACJONARNOSC t=6.0: ||gdot||=4.61e-09, g in [1.0000,1.0000]
+[t=   41.9s]   [stab_noise_f3_N32 dt=0.01] KONIEC: STATIONARY (t=6.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=4.61e-09
+[t=    0.0s]   [stab_lat_f1_N48 dt=0.01] start: N_seed=1, g in [0.6100,1.4688], E=3.613634, ||gdot||=9.41e+00
+[t=   30.0s]   [stab_lat_f1_N48 dt=0.01] STACJONARNOSC t=19.0: ||gdot||=6.53e-09, g in [1.0000,1.0000]
+[t=   30.0s]   [stab_lat_f1_N48 dt=0.01] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=6.53e-09
+[t=   30.0s]   [stab_lat_f2_N48 dt=0.01] start: N_seed=1, g in [0.6100,1.4688], E=3.613634, ||gdot||=9.41e+00
+[t=   59.3s]   [stab_lat_f2_N48 dt=0.01] STACJONARNOSC t=19.0: ||gdot||=6.53e-09, g in [1.0000,1.0000]
+[t=   59.3s]   [stab_lat_f2_N48 dt=0.01] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=6.53e-09
+[t=   59.3s]   [stab_lat_f3_N48 dt=0.01] start: N_seed=1, g in [0.6100,1.4688], E=3.613634, ||gdot||=9.41e+00
+[t=   87.9s]   [stab_lat_f3_N48 dt=0.01] STACJONARNOSC t=19.0: ||gdot||=6.53e-09, g in [1.0000,1.0000]
+[t=   87.9s]   [stab_lat_f3_N48 dt=0.01] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 1), ||gdot||=6.53e-09
+[t=   88.0s]   [stab_noise_f1_N48 dt=0.01] start: N_seed=0, g in [0.9991,1.0010], E=-4.429083, ||gdot||=7.50e-02
+[t=   96.9s]   [stab_noise_f1_N48 dt=0.01] STACJONARNOSC t=6.0: ||gdot||=4.60e-09, g in [1.0000,1.0000]
+[t=   96.9s]   [stab_noise_f1_N48 dt=0.01] KONIEC: STATIONARY (t=6.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=4.60e-09
+[t=   97.0s]   [stab_noise_f2_N48 dt=0.01] start: N_seed=0, g in [0.9991,1.0010], E=-4.429083, ||gdot||=7.50e-02
+[t=  106.0s]   [stab_noise_f2_N48 dt=0.01] STACJONARNOSC t=6.0: ||gdot||=4.60e-09, g in [1.0000,1.0000]
+[t=  106.0s]   [stab_noise_f2_N48 dt=0.01] KONIEC: STATIONARY (t=6.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=4.60e-09
+[t=  106.0s]   [stab_noise_f3_N48 dt=0.01] start: N_seed=0, g in [0.9991,1.0010], E=-4.429083, ||gdot||=7.50e-02
+[t=  115.1s]   [stab_noise_f3_N48 dt=0.01] STACJONARNOSC t=6.0: ||gdot||=4.60e-09, g in [1.0000,1.0000]
+[t=  115.1s]   [stab_noise_f3_N48 dt=0.01] KONIEC: STATIONARY (t=6.0), g in [1.0000,1.0000], ||g-const||=0.0000, N_obj=0 (seed 0), ||gdot||=4.60e-09
+
+--- WERDYKT (skladanie) ---
+==============================================================================
+WERDYKT Q2 (skladanie; litera LOCKa sec. 3 Phase 2)
+==============================================================================
+tach sol   floor=0.4438468 (prog 0.197): h025: BREAKDOWN t=3 g[-281997980398488199152901521912668423587081539934641717248.000,-281997980397725008415853370391797351603539851281696817152.000] dev=381595368524075760435535991770844326472450048.000 N1/seed0 | h0125: BREAKDOWN t=3 g[-5734921703708208379786730989781166006579799298798652489728.000,-5734921703644378071842236713694305396953911526078160044032.000] dev=31915153972247138043430304812943886360246222848.000 N1/seed0
+tach sol   floor=0.5458938 (prog 0.298): h025: BREAKDOWN t=3 g[-281997980398488199152901521912668423587081539934641717248.000,-281997980397725008415853370391797351603539851281696817152.000] dev=381595368524075760435535991770844326472450048.000 N1/seed0 | h0125: BREAKDOWN t=3 g[-5734921703708208379786730989781166006579799298798652489728.000,-5734921703644378071842236713694305396953911526078160044032.000] dev=31915153972247138043430304812943886360246222848.000 N1/seed0
+tach sol   floor=0.5753260 (prog 0.331): h025: BREAKDOWN t=3 g[-281997980398488199152901521912668423587081539934641717248.000,-281997980397725008415853370391797351603539851281696817152.000] dev=381595368524075760435535991770844326472450048.000 N1/seed1 | h0125: BREAKDOWN t=3 g[-5734921703708208379786730989781166006579799298798652489728.000,-5734921703644378071842236713694305396953911526078160044032.000] dev=31915153972247138043430304812943886360246222848.000 N1/seed1
+tach lat   floor=0.4438468 (prog 0.197): N32: BREAKDOWN t=1 g[463950122654408055913426671832292819474512615571456.000,463950122654408055913426671832292819474512615571456.000] dev=0.000 N0/seed1 | N48: BREAKDOWN t=1 g[2126973085932194265428024102719528943675300894828078733197312.000,2126973085932194265428024102719528943675300894828078733197312.000] dev=0.000 N0/seed1
+tach lat   floor=0.5458938 (prog 0.298): N32: BREAKDOWN t=1 g[463950122654408055913426671832292819474512615571456.000,463950122654408055913426671832292819474512615571456.000] dev=0.000 N0/seed1 | N48: BREAKDOWN t=1 g[2126973085932194265428024102719528943675300894828078733197312.000,2126973085932194265428024102719528943675300894828078733197312.000] dev=0.000 N0/seed1
+tach lat   floor=0.5753260 (prog 0.331): N32: BREAKDOWN t=1 g[463950122654408055913426671832292819474512615571456.000,463950122654408055913426671832292819474512615571456.000] dev=0.000 N0/seed1 | N48: BREAKDOWN t=1 g[2126973085932194265428024102719528943675300894828078733197312.000,2126973085932194265428024102719528943675300894828078733197312.000] dev=0.000 N0/seed1
+tach noise floor=0.4438468 (prog 0.197): N32: BREAKDOWN t=11 g[44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.000,44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.000] dev=0.000 N0/seed0 | N48: BREAKDOWN t=11 g[38782986895122409062316686785198064135684405141828250448541562802536448.000,38782986895122409062316686785198064135684405141828250448541562802536448.000] dev=0.000 N0/seed0
+tach noise floor=0.5458938 (prog 0.298): N32: BREAKDOWN t=11 g[44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.000,44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.000] dev=0.000 N0/seed0 | N48: BREAKDOWN t=11 g[38782986895122409062316686785198064135684405141828250448541562802536448.000,38782986895122409062316686785198064135684405141828250448541562802536448.000] dev=0.000 N0/seed0
+tach noise floor=0.5753260 (prog 0.331): N32: BREAKDOWN t=11 g[44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.000,44829176442227717116755559730104349776752920231146463708246431179101461489618192391571555433361597728116703232.000] dev=0.000 N0/seed0 | N48: BREAKDOWN t=11 g[38782986895122409062316686785198064135684405141828250448541562802536448.000,38782986895122409062316686785198064135684405141828250448541562802536448.000] dev=0.000 N0/seed0
+stab sol   floor=0.4438468 (prog 0.197): h025: STATIONARY t=16 g[1.000,1.000] dev=0.000 N0/seed0 | h0125: STATIONARY t=16 g[1.000,1.000] dev=0.000 N0/seed0
+stab sol   floor=0.5458938 (prog 0.298): h025: STATIONARY t=16 g[1.000,1.000] dev=0.000 N0/seed0 | h0125: STATIONARY t=16 g[1.000,1.000] dev=0.000 N0/seed0
+stab sol   floor=0.5753260 (prog 0.331): h025: STATIONARY t=16 g[1.000,1.000] dev=0.000 N0/seed1 | h0125: STATIONARY t=16 g[1.000,1.000] dev=0.000 N0/seed1
+stab lat   floor=0.4438468 (prog 0.197): N32: STATIONARY t=19 g[1.000,1.000] dev=0.000 N0/seed1 | N48: STATIONARY t=19 g[1.000,1.000] dev=0.000 N0/seed1
+stab lat   floor=0.5458938 (prog 0.298): N32: STATIONARY t=19 g[1.000,1.000] dev=0.000 N0/seed1 | N48: STATIONARY t=19 g[1.000,1.000] dev=0.000 N0/seed1
+stab lat   floor=0.5753260 (prog 0.331): N32: STATIONARY t=19 g[1.000,1.000] dev=0.000 N0/seed1 | N48: STATIONARY t=19 g[1.000,1.000] dev=0.000 N0/seed1
+stab noise floor=0.4438468 (prog 0.197): N32: STATIONARY t=6 g[1.000,1.000] dev=0.000 N0/seed0 | N48: STATIONARY t=6 g[1.000,1.000] dev=0.000 N0/seed0
+stab noise floor=0.5458938 (prog 0.298): N32: STATIONARY t=6 g[1.000,1.000] dev=0.000 N0/seed0 | N48: STATIONARY t=6 g[1.000,1.000] dev=0.000 N0/seed0
+stab noise floor=0.5753260 (prog 0.331): N32: STATIONARY t=6 g[1.000,1.000] dev=0.000 N0/seed0 | N48: STATIONARY t=6 g[1.000,1.000] dev=0.000 N0/seed0
+
+P2c (sektor stabilny m^2=+gamma): PASS -- zero nukleacji
+
+KLASYFIKACJA Q2 (litera):
+  INCONCLUSIVE: zalamanie nie-nukleacyjne / niezbieznosc / INCOMPLETE (NIE pozytyw -- litera LOCKa)
+
+zapisano stany: C:/Users/Mateusz/Documents/ObsydnianMain/TGP/TGP_v1/research/op-metametric-boundary-2026-09-01/Phase2_relaxed_states.npz (36 tablic)

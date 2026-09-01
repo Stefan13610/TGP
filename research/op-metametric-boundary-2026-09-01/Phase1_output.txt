@@ -1,0 +1,44 @@
+﻿==============================================================================
+Phase 1 (op-metametric-boundary) -- Q1: rownanie stanu kreacji.
+LOCK sec. 3 Phase 1; FROZEN: Phase_method_decisions.md sec. 7.
+INPUT: g0_mu=phi*0.90548=1.4650974, beta=gamma=1, kotwica lam_min=-1.646589 [INPUT], progi QB-2 {0.197,0.298,0.331} [INPUT, nieuzywane w P1].
+==============================================================================
+[t=    0.0s] [P1a] sympy: struktura U(g) = beta g^7/7 - gamma g^8/8 (beta=gamma=1)
+  U(0) = 0 (wymog 0): PASS
+  U(1) = 1/56 (wymog 1/56): PASS
+  U''(1) = -1 (wymog -1): PASS
+  U'(g) = -g**6*(g - 1); solveset(U'=0, (0,1)) = EmptySet (wymog: zbior pusty -> brak minimum lokalnego w (0,1)): PASS
+  formalnie: U' = g^6(1-g) > 0 na (0,1) => U scisle ROSNACE na (0,1);
+  wniosek o kierunku relaksacji: U(0)=0 < U(g<1) < U(1)=1/56 --
+  proznia g=1 lezy na maksimum lokalnym (U''(1)=-1<0), stan pusty
+  g=0 energetycznie nizej; relaksacja monotoniczna g->0 BEZ
+  posredniego minimum (zadnej granicy w kontinuum miedzy 1 a 0).
+  P1a: PASS
+[t=    0.1s] [P1b] profil radialny mu kanoniczny (g0=1.4650974), R=60
+  h=0.0500: DeltaE_create(sol|proznia) = -0.178794; DeltaE_create(sol|pusty) = +16156.580620
+  h=0.0250: DeltaE_create(sol|proznia) = -0.178958; DeltaE_create(sol|pusty) = +16156.582559
+  h=0.0125: DeltaE_create(sol|proznia) = -0.178999; DeltaE_create(sol|pusty) = +16156.583044
+  wartosci glowne (h=0.0125): DeltaE(sol|vac) = -0.178999 (|delta h/2| = 4.10e-05); DeltaE(sol|pusty) = +16156.583044 (|delta| = 4.85e-04)
+  uwaga skalowa: DeltaE(sol|pusty) zawiera objetosciowy koszt prozni U(1)*V(R) ~ (4pi/3)R^3/56 = 16156.8 -- rosnie z R^3
+  znaki: mu(sol|vac) = -, mu(sol|pusty) = +
+[t=    0.6s] [P1c] eps(2pi) z npz (READ-ONLY, bez relaksowania)
+  tlo 2pi/A1.0 N=32: E_cell = 4.291737; E_cell[g=1] = 4.429468; eps(2pi) = -0.00055526 (znak -)
+  tlo 2pi/A1.0 N=48: E_cell = 4.300620; E_cell[g=1] = 4.429468; eps(2pi) = -0.00051944 (znak -)
+  tlo 2pi/A0.7 N=32: E_cell = 4.291737; E_cell[g=1] = 4.429468; eps(2pi) = -0.00055526 (znak -)
+  tlo 2pi/A0.7 N=48: E_cell = 4.300620; E_cell[g=1] = 4.429468; eps(2pi) = -0.00051944 (znak -)
+  npz READ-ONLY: mtime niezmieniony: PASS
+  glowna (A1.0, N=48): eps(2pi) = -0.00051944 (|delta 32->48| = 3.58e-05)
+
+==============================================================================
+WERDYKT Q1 (litera LOCKa sec. 3 Phase 1):
+  DeltaE(sol|vac)        = -0.17899876
+  DeltaE(sol|pusty)      = +16156.58304439
+  eps(2pi) A1.0 N48      = -0.00051944
+  eps(2pi) A1.0 N32      = -0.00055526
+  eps(2pi) A0.7 N48      = -0.00051944
+  eps(2pi) A0.7 N32      = -0.00055526
+
+  czy w policzonym zbiorze istnieje konfiguracja z mu=0 ODDZIELAJACA rezim mu<0 od mu>0: TAK
+  Q1-POS: granica metametryczna w kontinuum ISTNIEJE w policzonym zbiorze -> charakteryzacja + Q2 nadal (drzewo LOCK sec. 6)
+  P1a: PASS | P1b: policzone (3 siatki) | P1c: policzone (4 tablice, npz nietkniety: TAK)
+==============================================================================
