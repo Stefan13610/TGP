@@ -15,6 +15,21 @@ Drzewo decyzyjne LOCKa §6 nie ma jawnej gałęzi dla Q2-INCONCLUSIVE —
 poniższe pozycje raportują potrzeby wynikające z litery wyników, bez
 przesądzania.
 
+> **LOG WYKONANIA (2026-09-02, user-gate „ok, działaj"):**
+> - **N1 ✅ ROZSTRZYGNIĘTE (dokumentacyjnie):** korpus MA naturalne górne
+>   domknięcie — biegun metryki efektywnej M9.1'' (sek08a,
+>   eq:vol-element-M911: √−g_eff=c₀ψ/(4−3ψ); ds²: g_tt→0 przy ψ=4/3)
+>   ⟹ g_ceil=√(4/3)=1.15470. Obserwacja: tła bloch g_max=1.141–1.143
+>   tuż pod granicą. Domknięcie METRYCZNE — zbieżne z hipotezą
+>   „granicy metryki" z op-blocked-soliton-bang.
+> - **N2 ✅ ADRESOWANE:** pudło L=4π (k_min=0.5<1) w cyklu-następcy.
+> - **N1+N2 → realizowane jako
+>   [[../op-metric-closure-relaxation-2026-09-02/Phase0_balance.md]]**
+>   (obustronne domknięcie + większe pudło + dziedziczony detektor
+>   nukleacji + nowy detektor obiektów górnych).
+> - N3 (dopisek Q1-POS), N4 (geneza Γ+s_i), N5 (kanał g→+∞
+>   w dynamice hamiltonowskiej) — OPEN, bez zmian.
+
 ## N1 — Kanał ucieczki g→+∞: czy korpus ma górne domknięcie? (kluczowe)
 
 18/18 biegów relaksacyjnych sektora tachionowego załamuje się przez

@@ -11,6 +11,30 @@ update_policy: "Aktualizować po: (a) closure cyklu, (b) zmianie krytycznej ści
 
 ---
 
+## 🟢 Sesja 2026-09-02 — N1 ROZSTRZYGNIĘTE: korpus MA górne domknięcie i jest ono METRYCZNE (biegun M9.1'' przy ψ=4/3) + LOCK następcy [[research/op-metric-closure-relaxation-2026-09-02/Phase0_balance.md]] — PHASE0-LOCKED
+
+User: „ok, działaj" (sekwencja N1 → re-lock Q2 z NEEDS op-metametric-boundary).
+
+### ✅ N1 rozstrzygnięte (dokumentacyjnie, przeszukanie korpusu)
+- **Górne domknięcie pola istnieje w korpusie i jest METRYCZNE:** M9.1'' canonical (G.0 closure LOCK 2026-05-02, sek08a): √−g_eff = c₀ψ/(4−3ψ) (eq:vol-element-M911), ds² = −c₀²(4−3ψ)/ψ dt² + ψ/(4−3ψ)δᵢⱼdxⁱdxʲ, V_M9.1''=−γψ²(4−3ψ)²/12 ⟹ **ψ_max=4/3, g_ceil=√(4/3)=1.15470** (g_tt→0: nieskończona dylatacja czasu — GRANICA METRYKI dosłownie; √−g→∞: dynamiczna bariera objętościowa). Hipoteza autora „wielki wybuch trwa na granicy metryki" (op-blocked-soliton-bang) dostaje umocowanie w rdzeniu.
+- **Obserwacja (sanity, pre-rejestrowana w nowym locku):** tła łańcucha bloch miały g_max=1.1406–1.1429 — tuż POD g_ceil; zrelaksowane struktury zdają się żyć przy granicy metrycznej.
+- Kandydaci słabsi (odnotowani): kompaktowość ŝ∈ℝ/ℤ₂ (dodatekB), człon entropijny (T_Γ-tłumiony); spinodala QB ma tylko gałąź rozrzedzeniową.
+
+### 🟢 LOCK `op-metric-closure-relaxation` (PHASE0-LOCKED, zero obliczeń)
+- **Q (reponowane Q2):** czy z OBUSTRONNYM domknięciem (podłoga QB-2 + czynnik metryczny w(ψ)=ψ/(4−3ψ) w funkcjonale — PRIMARY z fizyki; wariant kontrolny C-BAR z gołą barierą, nieusuwalny) i pudłem L=4π (k_min=0.5 — pasmo tachionowe próżni częściowo w pudle, adresuje N2) relaksacja osiąga stan metametryczny: Q-PASS-STATIC (stacjonarny niestały) / **Q-PASS-NUCLEATION (kaskada kreacji — pre-rejestrowany POZYTYW autora, detektor dziedziczony + NOWY detektor obiektów górnych g>1.0774**, bo kierunek ucieczki poprzednika był w górę) / Q-FAIL / INCONCLUSIVE.
+- Bramki: P1b reprodukcja BREAKDOWN poprzednika bez domknięć (ciągłość), P1c sektor stabilny zero fałszywych alarmów. Starty: geneza (seed=20260902, L=4π), soliton radialny, sieć 2π (npz READ-ONLY).
+- Realizacja: autoryzowana („ok, działaj"), osobny agent.
+
+### WIP po sesji
+- **op-metric-closure-relaxation: PHASE0-LOCKED → realizacja w toku.**
+- NEEDS op-metametric-boundary: N1 ✅ / N2 ✅ (adresowane następcą); N3/N4/N5 OPEN.
+- Reszta bez zmian.
+
+### Cross-references
+[[research/op-metric-closure-relaxation-2026-09-02/Phase0_balance.md]] · [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]] (eq:vol-element-M911) · [[research/op-metametric-boundary-2026-09-01/NEEDS.md]]
+
+---
+
 ## 🟢 Sesja 2026-09-01 — RE-RAMA pytania o stabilność (hipoteza autora: granica metametryczna) + LOCK [[research/op-metametric-boundary-2026-09-01/Phase0_balance.md]] — PHASE0-LOCKED
 
 User (po serii Q-FAIL): „granicą powinien być stan metametryczny, w ramach którego dozwolone jest dowolne kreowanie nowych solitonów/obiektów za darmo […] jeżeli tej granicy nie ma, układ może się zrelaksować" → wskazanie hipotezy źródłowej: [[research/op-blocked-soliton-bang-2026-07-04/README.md]] („Kluczowa luka: zerokosztowa kreacja"; „wielki wybuch trwa na granicy metryki") → „jeżeli [obliczenia] załamią się ze względu na generowanie obiektów, to w sumie będzie wynik pozytywny. I tak zapisz nowy cykl".
