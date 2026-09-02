@@ -29,8 +29,13 @@ User: „ok, działaj" (sekwencja N1 → re-lock Q2 z NEEDS op-metametric-bounda
 - **Phase 3 (charakterystyka kaskady, bez progów):** pojedyncza inwersja rdzenia na podłogę QB-2; rozmiar fizyczny zgodny między siatkami (r≤9.94 vs 10.16); E monotonicznie maleje.
 - **NEEDS user-gated (5):** geneza Γ+s_i (PILNE); reinterpretacja Q-FAIL-i + dopiski core; **N3 — kandydat re-locku: właściwa para metryczna (w, V_M9.1'')**; domena startów; interpretacja krotności N=1.
 
+### 🟢 ROZPISANE: [[research/op-metric-pair-M911-2026-09-02/Phase0_balance.md]] — PHASE0-LOCKED, zero obliczeń (autoryzacja: „ok, rozpisz cykl dla nowego agenta"; realizacja N3 poprzednika)
+- Pierwszy cykl programu we WŁAŚCIWEJ parze sektora grawitacyjnego (reguła sek08a): w(ψ)=ψ/(4−3ψ) + V_M9.1''=−γψ²(4−3ψ)²/12 + K=K_geoψ⁴. **Q-A:** czy sektor jest samodomknięty (krajobraz w·V bez podłóg ad-hoc — ZAKAZ dodawania barier jest sednem pytania)? **Q-B (centralne):** czy relaksacja (geneza L=4π seed=20260903 / bump ψ_max=1.3 / sieć 2π przeskalowana z npz) daje nukleację (detektory w ψ: <5/6, >7/6; pozytyw pre-rejestrowany) lub stan strukturalny? **Q-C:** widmo (warunkowe). Kategoria deskryptywna BREAKDOWN-BOUNDARY („pole wybiera granicę") oddzielona od pozytywu.
+- Prompt dla nowego agenta: [[research/op-metric-pair-M911-2026-09-02/HANDOFF_PROMPT.md]] (do wklejenia w całości).
+
 ### WIP po sesji
-- **op-metric-closure-relaxation: 🟢 CLOSED, Q-PASS-NUCLEATION.** Pierwszy pozytyw programu granicy metametrycznej: kreacja obiektu przy obustronnym domknięciu ISTNIEJE (choć pojedyncza, nie kaskadowa; w wariancie sufitu, nie czystej metryki). Klucz następcy: para (w, V_M9.1'') — sektor grawitacyjny korpusu zamiast hybrydy.
+- **op-metric-pair-M911: PHASE0-LOCKED** — realizacja: nowy agent (handoff gotowy).
+- **op-metric-closure-relaxation: 🟢 CLOSED, Q-PASS-NUCLEATION.** Pierwszy pozytyw programu granicy metametrycznej: kreacja obiektu przy obustronnym domknięciu ISTNIEJE (choć pojedyncza, nie kaskadowa; w wariancie sufitu, nie czystej metryki).
 - NEEDS op-metametric-boundary: N1 ✅ / N2 ✅; N3/N4/N5 OPEN. Reszta bez zmian.
 
 ### Cross-references
