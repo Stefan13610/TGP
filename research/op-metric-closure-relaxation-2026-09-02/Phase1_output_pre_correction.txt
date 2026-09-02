@@ -1,0 +1,48 @@
+==============================================================================
+P1a -- stacjonarnosc prozni (oba warianty; gate <= 1e-10, t=10)
+==============================================================================
+REJESTR [INPUT]: g_ceil=sqrt(4/3)=1.1547005 [M9.1'' eq:vol-element-M911]; g_floor=0.5458938; kappa=100 FROZEN; seed=20260902 amp=0.001; g0_mu=1.4650974; beta=gamma=1; wariant=PRIM+CBAR sektor=tach
+  P1a PRIM radial h=0.0125 : max||g-1||_inf = 0.000e+00 -> PASS
+  P1a PRIM 3D L=2pi N=32   : max||g-1||_inf = 0.000e+00 -> PASS
+  P1a PRIM 3D L=4pi N=48   : max||g-1||_inf = 0.000e+00 -> PASS
+  P1a CBAR radial h=0.0125 : max||g-1||_inf = 0.000e+00 -> PASS
+  P1a CBAR 3D L=2pi N=32   : max||g-1||_inf = 0.000e+00 -> PASS
+  P1a CBAR 3D L=4pi N=48   : max||g-1||_inf = 0.000e+00 -> PASS
+P1a: PASS
+==============================================================================
+P1b -- reprodukcja BREAKDOWN bez domkniec (w=1, bez kar); oczekiwane t w [2.7,3.2]
+==============================================================================
+[t=   34.2s]   [p1b_sol_h0.025] start: N_seed dn=0 up=1, g in [0.7773,1.4651], E=-0.016764, ||gdot||=1.53e+00
+[t=   34.2s]   [p1b_sol_h0.025] ZALAMANIE (niefinitycznosc) t=2.750; ostatni finityczny stan: g in [-2.82e+56, -2.82e+56]
+[t=   34.2s]   [p1b_sol_h0.025] KONIEC: BREAKDOWN (t=2.8), g in [-281997980398488199152901521912668423587081539934641717248.0000,-281997980397725008415853370391797351603539851281696817152.0000] (gmax-gceil=-281997980397725008415853370391797351603539851281696817152.0000), ||g-const||=381595368524075760435535991770844326472450048.0000, N_dn=1/seed0 N_up=0/seed1, ||gdot||=inf
+  P1b h=0.025: BREAKDOWN t=2.750 (wymog BREAKDOWN, t in [2.7,3.2]) -> PASS
+[t=   34.3s]   [p1b_sol_h0.0125] start: N_seed dn=0 up=1, g in [0.7773,1.4651], E=-0.015435, ||gdot||=1.53e+00
+[t=   34.5s]   [p1b_sol_h0.0125] ZALAMANIE (niefinitycznosc) t=3.130; ostatni finityczny stan: g in [-5.735e+57, -5.735e+57]
+[t=   34.5s]   [p1b_sol_h0.0125] KONIEC: BREAKDOWN (t=3.1), g in [-5734921703708208379786730989781166006579799298798652489728.0000,-5734921703644378071842236713694305396953911526078160044032.0000] (gmax-gceil=-5734921703644378071842236713694305396953911526078160044032.0000), ||g-const||=31915153972247138043430304812943886360246222848.0000, N_dn=1/seed0 N_up=0/seed1, ||gdot||=inf
+  P1b h=0.0125: BREAKDOWN t=3.130 (wymog BREAKDOWN, t in [2.7,3.2]) -> PASS
+P1b: PASS
+==============================================================================
+P1c -- sektor stabilny m^2=+gamma: relaksacja do prozni, ZERO alarmow OBU detektorow (macierz FROZEN MD sec. 6)
+==============================================================================
+[t=   34.5s]   [p1c_lat_PRIM] start: N_seed dn=1 up=1, g in [0.6064,1.4734], E=713692.047556, ||gdot||=1.07e+08
+[t=   34.5s]   [p1c_lat_PRIM] ZALAMANIE (niefinitycznosc) t=0.040; ostatni finityczny stan: g in [-3.223e+145, -3.223e+145]
+[t=   34.5s]   [p1c_lat_PRIM] KONIEC: BREAKDOWN (t=0.0), g in [-32229629266140562002451582284588651620492843159814698973840265181155620846334323920925212402754367629944610386475810684569883433632460940100239360.0000,-32229629266140562002451582284588651620492843159814698973840265181155620846334323920925212402754367629944610386475810684569883433632460940100239360.0000] (gmax-gceil=-32229629266140562002451582284588651620492843159814698973840265181155620846334323920925212402754367629944610386475810684569883433632460940100239360.0000), ||g-const||=0.0000, N_dn=1/seed1 N_up=0/seed1, ||gdot||=inf
+  P1c lat PRIM: BREAKDOWN t=0.0, ||g-1||_inf=3.22e+145, alarmy: ZERO -> FAIL
+[t=   34.5s]   [p1c_lat_CBAR] start: N_seed dn=1 up=1, g in [0.6064,1.4734], E=10.270708, ||gdot||=1.98e+01
+[t=   43.8s]   [p1c_lat_CBAR] STACJONARNOSC t=19.0: ||gdot||=6.98e-09, g in [1.0000,1.0000]
+[t=   43.8s]   [p1c_lat_CBAR] KONIEC: STATIONARY (t=19.0), g in [1.0000,1.0000] (gmax-gceil=-0.1547), ||g-const||=0.0000, N_dn=0/seed1 N_up=0/seed1, ||gdot||=6.98e-09
+  P1c lat CBAR: STATIONARY t=19.0, ||g-1||_inf=6.98e-09, alarmy: ZERO -> PASS
+[t=   43.9s]   [p1c_gen_PRIM] start: N_seed dn=0 up=0, g in [0.9990,1.0009], E=0.000849, ||gdot||=1.94e-02
+[t=   63.2s]   [p1c_gen_PRIM] STACJONARNOSC t=7.0: ||gdot||=6.46e-09, g in [1.0000,1.0000]
+[t=   63.2s]   [p1c_gen_PRIM] KONIEC: STATIONARY (t=7.0), g in [1.0000,1.0000] (gmax-gceil=-0.1547), ||g-const||=0.0000, N_dn=0/seed0 N_up=0/seed0, ||gdot||=6.46e-09
+  P1c gen PRIM: STATIONARY t=7.0, ||g-1||_inf=5.72e-09, alarmy: ZERO -> PASS
+[t=   63.3s]   [p1c_gen_CBAR] start: N_seed dn=0 up=0, g in [0.9990,1.0009], E=0.000849, ||gdot||=1.93e-02
+[t=   74.6s]   [p1c_gen_CBAR] STACJONARNOSC t=7.0: ||gdot||=6.59e-09, g in [1.0000,1.0000]
+[t=   74.6s]   [p1c_gen_CBAR] KONIEC: STATIONARY (t=7.0), g in [1.0000,1.0000] (gmax-gceil=-0.1547), ||g-const||=0.0000, N_dn=0/seed0 N_up=0/seed0, ||gdot||=6.59e-09
+  P1c gen CBAR: STATIONARY t=7.0, ||g-1||_inf=5.85e-09, alarmy: ZERO -> PASS
+[t=   74.7s]   [p1c_sol_CBAR] start: N_seed dn=0 up=1, g in [0.7773,1.4651], E=11.416118, ||gdot||=2.04e+01
+[t=   75.2s]   [p1c_sol_CBAR] STACJONARNOSC t=16.0: ||gdot||=9.65e-09, g in [1.0000,1.0000]
+[t=   75.2s]   [p1c_sol_CBAR] KONIEC: STATIONARY (t=16.0), g in [1.0000,1.0000] (gmax-gceil=-0.1547), ||g-const||=0.0000, N_dn=0/seed0 N_up=0/seed1, ||gdot||=9.65e-09
+  P1c sol CBAR: STATIONARY t=16.0, ||g-1||_inf=8.99e-09, alarmy: ZERO -> PASS
+P1c: FAIL -> STOP
+STOP (P1c FAIL)

@@ -20,15 +20,18 @@ User: „ok, działaj" (sekwencja N1 → re-lock Q2 z NEEDS op-metametric-bounda
 - **Obserwacja (sanity, pre-rejestrowana w nowym locku):** tła łańcucha bloch miały g_max=1.1406–1.1429 — tuż POD g_ceil; zrelaksowane struktury zdają się żyć przy granicy metrycznej.
 - Kandydaci słabsi (odnotowani): kompaktowość ŝ∈ℝ/ℤ₂ (dodatekB), człon entropijny (T_Γ-tłumiony); spinodala QB ma tylko gałąź rozrzedzeniową.
 
-### 🟢 LOCK `op-metric-closure-relaxation` (PHASE0-LOCKED, zero obliczeń)
-- **Q (reponowane Q2):** czy z OBUSTRONNYM domknięciem (podłoga QB-2 + czynnik metryczny w(ψ)=ψ/(4−3ψ) w funkcjonale — PRIMARY z fizyki; wariant kontrolny C-BAR z gołą barierą, nieusuwalny) i pudłem L=4π (k_min=0.5 — pasmo tachionowe próżni częściowo w pudle, adresuje N2) relaksacja osiąga stan metametryczny: Q-PASS-STATIC (stacjonarny niestały) / **Q-PASS-NUCLEATION (kaskada kreacji — pre-rejestrowany POZYTYW autora, detektor dziedziczony + NOWY detektor obiektów górnych g>1.0774**, bo kierunek ucieczki poprzednika był w górę) / Q-FAIL / INCONCLUSIVE.
-- Bramki: P1b reprodukcja BREAKDOWN poprzednika bez domknięć (ciągłość), P1c sektor stabilny zero fałszywych alarmów. Starty: geneza (seed=20260902, L=4π), soliton radialny, sieć 2π (npz READ-ONLY).
-- Realizacja: autoryzowana („ok, działaj"), osobny agent.
+### 🟢 Cykl `op-metric-closure-relaxation` WYKONANY W CAŁOŚCI — **CLOSED, Q-PASS-NUCLEATION (pierwszy Q-PASS wątku!): pre-rejestrowany pozytyw autora WYSTĄPIŁ — zbieżna nukleacja obiektu (N=1±0, 4/4 biegi) w wariancie C-BAR; rozjazd PRIMARY↔C-BAR totalny z diagnozą: zalockowana hybryda (w metryczne × kanoniczne U) niekompatybilna — biegun PRZYCIĄGA**
+- **Phase 1 PASS 3/3:** P1a 6/6 (dryf 0.0; decyzja FROZEN: gęstość jako U−U(1), wymuszona literą P1a); P1b 2/2 — dokładna reprodukcja BREAKDOWN poprzednika (t=2.750/3.130); P1c 4/4 po korekcie macierzy kontroli (fałszywa przesłanka locka: obserwacja g_max≈1.14 dotyczy tła 1D; tło 3D ma g_max=1.4734>g_ceil — correction note, pierwotny FAIL zachowany, macierz P2 nietknięta) — detektory zdolne do FAIL i czyste.
+- **Phase 2 (14 biegów + 2 dt/2, zero INCOMPLETE):**
+  - **soliton×C-BAR: NUCLEATION-DN zbieżna** (t₀=2.0 w 4/4; N_det=1±0; obiekt = kula rdzeniowa r≲10: rdzeń INWERTUJE w dół i osiada na podłodze QB-2 g→0.549, a objętość zewnętrzna wspina się do studni barierowej **g_ceil+0.0994** — struktury żyją TUŻ NAD granicą metryczną); **pojedyncza kreacja, nie kaskada mnożenia** (N: 0→1, stały).
+  - sieć×C-BAR: STATIONARY jednorodne g≡0.5354 (podłoga). geneza×PRIMARY: BREAKDOWN t=8.72/8.77 identycznie dla 3 podłóg (zerowa czułość); sol/lat×PRIMARY: BREAKDOWN t≤0.06 (starty powyżej g_ceil). Nukleacja górna nigdzie niepotwierdzona (okno 10 j.cz. nieosiągalne przed załamaniem).
+  - **Diagnoza rozjazdu (analitycznie + numerycznie):** U_b(g_ceil)=U(√(4/3))−U(1)=−0.0219<0 ⟹ w·U_b→−∞ przy ψ→4/3 — **biegun metryczny z kanonicznym U PRZYCIĄGA zamiast odpychać**; korpusowy V_M9.1''=−γψ²(4−3ψ)²/12 ma podwójne zero w 4/3 (w·V skończone) — **właściwa para metryczna to (w, V_M9.1''), nie hybryda z U kanonicznym**.
+- **Phase 3 (charakterystyka kaskady, bez progów):** pojedyncza inwersja rdzenia na podłogę QB-2; rozmiar fizyczny zgodny między siatkami (r≤9.94 vs 10.16); E monotonicznie maleje.
+- **NEEDS user-gated (5):** geneza Γ+s_i (PILNE); reinterpretacja Q-FAIL-i + dopiski core; **N3 — kandydat re-locku: właściwa para metryczna (w, V_M9.1'')**; domena startów; interpretacja krotności N=1.
 
 ### WIP po sesji
-- **op-metric-closure-relaxation: PHASE0-LOCKED → realizacja w toku.**
-- NEEDS op-metametric-boundary: N1 ✅ / N2 ✅ (adresowane następcą); N3/N4/N5 OPEN.
-- Reszta bez zmian.
+- **op-metric-closure-relaxation: 🟢 CLOSED, Q-PASS-NUCLEATION.** Pierwszy pozytyw programu granicy metametrycznej: kreacja obiektu przy obustronnym domknięciu ISTNIEJE (choć pojedyncza, nie kaskadowa; w wariancie sufitu, nie czystej metryki). Klucz następcy: para (w, V_M9.1'') — sektor grawitacyjny korpusu zamiast hybrydy.
+- NEEDS op-metametric-boundary: N1 ✅ / N2 ✅; N3/N4/N5 OPEN. Reszta bez zmian.
 
 ### Cross-references
 [[research/op-metric-closure-relaxation-2026-09-02/Phase0_balance.md]] · [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]] (eq:vol-element-M911) · [[research/op-metametric-boundary-2026-09-01/NEEDS.md]]
