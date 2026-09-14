@@ -1,0 +1,57 @@
+==============================================================================
+WERDYKT Q-E (litera LOCKa sec. 2 Phase 3; detektor FROZEN MD sec. 5)
+REJESTR [INPUT]: K_geo=gamma=c0=1; R=200; h {0.05,0.025}; dt=0.005 (dt/2=0.0025 przy zdarzeniach); t_max=1000; sponge gamma0=1.0 smootherstep [160,200]; E_core r<=80; E_ref=E_core(50); prog 0.5; 100 T0=628.319; >=50 przejsc; RADIATED prog 0.05 E_ref; pas 4/3-1e-6 / 1e-6; brak seeda
+==============================================================================
+Tabela biegow (start x siatka):
+  start            h     status                 tau       cand   ncross   omega     E_end/E_ref
+  g_a-0.30_s3      h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.30_s3      h025  BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.30_s3      h05_dt2 BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.30_s6      h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.30_s6      h025  BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.30_s6      h05_dt2 BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.15_s3      h05   OK                     211.0     nie    68       -         1.492e-02
+  g_a-0.15_s3      h025  OK                     211.0     nie    68       -         1.492e-02
+  g_a-0.15_s6      h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.15_s6      h025  BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a-0.15_s6      h05_dt2 BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a+0.15_s3      h05   OK                     206.9     nie    66       -         1.421e-02
+  g_a+0.15_s3      h025  OK                     206.9     nie    66       -         1.421e-02
+  g_a+0.15_s6      h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a+0.15_s6      h025  BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a+0.15_s6      h05_dt2 BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a+0.25_s3      h05   BREAKDOWN-BOUNDARY-LOWER n/a       nie    0        -         -
+  g_a+0.25_s3      h025  BREAKDOWN              n/a       nie    0        -         -
+  g_a+0.25_s3      h05_dt2 BREAKDOWN-BOUNDARY-LOWER n/a       nie    0        -         -
+  g_a+0.25_s6      h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  g_a+0.25_s6      h025  BREAKDOWN              n/a       nie    0        -         -
+  g_a+0.25_s6      h05_dt2 BREAKDOWN              n/a       nie    0        -         -
+  qR3_a-0.20       h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  qR3_a-0.20       h025  BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  qR3_a-0.20       h05_dt2 BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  qR3_a+0.20       h05   BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  qR3_a+0.20       h025  BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  qR3_a+0.20       h05_dt2 BREAKDOWN-BOUNDARY     n/a       nie    0        -         -
+  vac              h05   OK                     >=950     nie    0        -         -
+  vac              h025  OK                     >=950     nie    0        -         -
+
+Klasyfikacja per start (zbieznosc: h,h/2 oraz dt/2 przy zdarzeniach):
+  g_a-0.30_s3     : BREAKDOWN-BOUNDARY     [zbiezne (h,h/2,dt/2)]
+  g_a-0.30_s6     : BREAKDOWN-BOUNDARY     [zbiezne (h,h/2,dt/2)]
+  g_a-0.15_s3     : RADIATED               [zbieznie (obie siatki)]
+  g_a-0.15_s6     : BREAKDOWN-BOUNDARY     [zbiezne (h,h/2,dt/2)]
+  g_a+0.15_s3     : RADIATED               [zbieznie (obie siatki)]
+  g_a+0.15_s6     : BREAKDOWN-BOUNDARY     [zbiezne (h,h/2,dt/2)]
+  g_a+0.25_s3     : INCONCLUSIVE           [niezbiezne]
+  g_a+0.25_s6     : INCONCLUSIVE           [niezbiezne]
+  qR3_a-0.20      : BREAKDOWN-BOUNDARY     [zbiezne (h,h/2,dt/2)]
+  qR3_a+0.20      : BREAKDOWN-BOUNDARY     [zbiezne (h,h/2,dt/2)]
+  kontrola vac: alarmy detektora = ['OK cand=False', 'OK cand=False'] (wymagane: zero)
+
+Deskryptywnie (obowiazkowo, LOCK): los startow quasi-R3 (ksztalt sin(r)/r):
+  qR3_a-0.20: klasa BREAKDOWN-BOUNDARY; tau(h05)=n/a, przejscia=0, omega=-
+  qR3_a+0.20: klasa BREAKDOWN-BOUNDARY; tau(h05)=n/a, przejscia=0, omega=-
+
+KLASY: OSCILLON=0 RADIATED=2 BREAKDOWN*=6 INCONCLUSIVE=2
+WERDYKT: Q-E-INCONCLUSIVE (PASS: >=1 OSCILLON zbiezny; FAIL: wszystkie RADIATED zbieznie; INCONCLUSIVE: reszta)
+==============================================================================

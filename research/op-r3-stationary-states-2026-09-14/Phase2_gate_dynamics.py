@@ -66,6 +66,13 @@ def evolve(eng, g, pi, tmax, dt, sample_dt=None, sampler=None,
 
 em("=" * 78)
 em("PHASE 2 -- bramka maszynerii dynamicznej (definicje FROZEN MD sec.7)")
+em("Korekty: 1(a) kwadranty FFT; 1(b) stop=stagnacja; 2: ewaluator")
+em("  energii dU=(psi-1)^2(3psi^2+2psi+1)/12 (correction notes 1,2)")
+import sympy as _sp
+_p = _sp.symbols('psi')
+_chk = _sp.simplify((_p - 1)**2*(3*_p**2 + 2*_p + 1)/12
+                    - (_p**4/4 - _p**3/3 - _sp.Rational(-1, 12)))
+em("  tozsamosc dU (sympy simplify, 0 wymagane): %s" % _chk)
 em("REJESTR [INPUT]: K_geo=gamma=c0=1; dt=%.3f; sponge gamma0=%.1f"
    " smootherstep r in [160,200]; pas 4/3-1e-6 / 1e-6; brak seeda"
    % (DT, ec.GAMMA0_SP))

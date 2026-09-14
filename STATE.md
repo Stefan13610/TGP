@@ -24,26 +24,36 @@ related:
 
 ## 🔴 Critical path
 
-**`op-r3-stationary-states-2026-09-14` — PHASE0-LOCKED, czeka na realizację (nowy agent; handoff gotowy).**
+**`op-oscillon-small-amplitude-2026-09-14` — PHASE0-LOCKED (właściwy test P1b; wynik Q-G rozstrzyga o nośniku oscylonowym i statusie łańcucha leptonowego). Równolegle: `op-collapse-matter-source-2026-09-14` (status kolapsu).**
 
-Po rozstrzygnięciu N2 (konwencją kanoniczną DYNAMIKI jest odczyt `|g^tt|` — decyzja usera 2026-09-14)
-`prop:psi-EOM-R3` ma w rdzeniu status **CONDITIONAL-ON-BRANCH**. Na R3 ODE wiszą: N=3, m_μ/m_e,
-m_τ/m_e, Koide 2/3, 6 mas kwarków, c₂=−1 → PPN.
+Tło: `op-r3-stationary-states-2026-09-14` CLOSED: **Q-E-INCONCLUSIVE**.
 
-**Wynik Q-E/Q-F tego cyklu rozstrzyga status całego łańcucha leptonowego:**
-- Q-E/Q-F POZYTYWNE → dziedziczenie spektrum przez gałąź zdrową (profile R3 = przestrzenne profile stanów stacjonarnych; masy = częstości wzbudzeń quasi-stacjonarnych).
-- Q-E/Q-F NEGATYWNE → konflikt aksjomatyczny z decyzją usera o konwencji `|g^tt|`.
+Cykl ratunkowy NIE dał nośnika w klasie zbadanej: 0×OSCILLON; oba starty quasi-R3 (sin(r)/r)
+kolabują do granicy dziedziny w t≈2.3–4.7 (< 1 oscylacja, zbieżnie). ALE pre-rejestrowana
+predykcja P1b (Lindstedt–Poincaré: ω₂=−139/24<0, miękka nieliniowość ⟹ oscylony MAŁEJ amplitudy)
+pozostaje NIESKONFRONTOWANA — zamrożona rodzina startów zaczynała się od |a|=0.15, poza domeną
+predykcji (a≲0.1, t_max≫1000). Na R3 ODE nadal wiszą: N=3, m_μ/m_e, m_τ/m_e, Koide 2/3,
+6 mas kwarków, c₂=−1 → PPN — status: **CONDITIONAL-ON-BRANCH bez nośnika w klasie zbadanej**.
 
-Wejście: [[research/op-r3-stationary-states-2026-09-14/HANDOFF_PROMPT.md]] ·
-[[research/op-r3-stationary-states-2026-09-14/Phase0_balance.md]]
+**Decyzja usera 2026-09-14 (po analizie): uruchomione N1 + N2** → dwa nowe LOCK-i (bliźniaki):
+- **[[research/op-oscillon-small-amplitude-2026-09-14/]]** (★ ścieżka krytyczna) — właściwy test
+  P1b: a∈{0.02…0.10}×σ∈{3,6,10}, t_max=10⁴, R=400, detektor + kryterium ω_peak≤0.99 (rdzeń
+  związany). **Q-G-FAIL = falsyfikacja P1b** → user-gate o statusie łańcucha leptonowego.
+- **[[research/op-collapse-matter-source-2026-09-14/]]** — sprzężenie z materią z RDZENIA
+  (eq:L-mat-unified ⟹ 𝒰_mat=λ̃ρ̂ψ²/(4−3ψ), wyprowadzane): Q-H1 deformacja↔indukcja (binarne
+  M911-N2), Q-H2 stabilizacja 4 kolapsujących startów poprzednika.
+Pozostają OPEN: N3 (status łańcucha — czeka na Q-G), N4 (nadkategoria COLLAPSE — przyjęta
+w NOWYCH LOCK-ach jako definicja klasyfikacyjna, zgodnie z propozycją NEEDS).
 
 ## 🟡 Active WIP (limit: 5 równolegle)
 
 | # | Cykl | Faza / status | Następny krok |
 |---|---|---|---|
-| 1 ★ | [[research/op-r3-stationary-states-2026-09-14/]] | **PHASE0-LOCKED** (zero obliczeń) | realizacja Q-E (oscylony ≥100 T₀, detektor FROZEN) + Q-F warunkowo; nowy agent wg HANDOFF_PROMPT |
-| 2 | [[research/op-action-audit-spectrum-insert-2026-09-13/]] | CLOSED (Q-D1-PASS + Q-D2-INCONCLUSIVE) | **NEEDS OPEN:** N1 (więz skończonej skali dla ΔE_insert), N4 (schemat więzu w przyszłych LOCK-ach) — user-gated |
-| 3 | [[research/op-metric-pair-M911-2026-09-02/]] | CLOSED (Q-A-PASS + Q-B-FAIL) | **NEEDS OPEN:** N4-M911 — dopisek core o samodomknięciu pary (w, V_M9.1'') — user-gated |
+| 1 ★ | [[research/op-oscillon-small-amplitude-2026-09-14/]] | **PHASE0-LOCKED** (zero obliczeń) | realizacja Q-G (oscylony małej amplitudy, test P1b); nowy agent wg HANDOFF_PROMPT |
+| 2 | [[research/op-collapse-matter-source-2026-09-14/]] | **PHASE0-LOCKED** (zero obliczeń) | realizacja Q-H1/Q-H2 (deformacja Yukawy + stabilizacja kolapsu); nowy agent wg HANDOFF_PROMPT |
+| 3 | [[research/op-r3-stationary-states-2026-09-14/]] | CLOSED (Q-E-INCONCLUSIVE; Q-F nieuruchomione) | **NEEDS:** N1 🟢→nowy LOCK, N2 🟢→nowy LOCK, N4 🟢 przyjęte w nowych LOCK-ach; N3 (status łańcucha) OPEN — czeka na Q-G |
+| 4 | [[research/op-action-audit-spectrum-insert-2026-09-13/]] | CLOSED (Q-D1-PASS + Q-D2-INCONCLUSIVE) | **NEEDS OPEN:** N1 (więz skończonej skali dla ΔE_insert), N4 (schemat więzu w przyszłych LOCK-ach) — user-gated |
+| 5 | [[research/op-metric-pair-M911-2026-09-02/]] | CLOSED (Q-A-PASS + Q-B-FAIL) | **NEEDS:** N2 🟢→realizowane przez op-collapse-matter-source; N4-M911 (dopisek core o samodomknięciu pary) — OPEN, user-gated |
 
 ★ = slot krytycznej ścieżki.
 
@@ -70,7 +80,7 @@ statusu maszynowego; pełna polityka: [[meta/CYCLE_LIFECYCLE.md]].
 nie kopiować ich treści tutaj.
 
 ---
-## 🟢 Sesja 2026-09-14 — **N2 ROZSTRZYGNIĘTE (user-gate CORE): konwencją kanoniczną DYNAMIKI jest odczyt |g^tt| (gałąź stabilna, Yukawa)** — dopiski core sek08a (rem:W-sign-axiomatic(iv) + NOWY rem:psi-EOM-R3-branch-status; prop:psi-EOM-R3 przeklasyfikowane CONDITIONAL-ON-BRANCH, nic nie usunięte) + LOCK hipotezy ratunkowej [[research/op-r3-stationary-states-2026-09-14/Phase0_balance.md]] — PHASE0-LOCKED
+## 🟢 Sesja 2026-09-14 — **N2 ROZSTRZYGNIĘTE (user-gate CORE): konwencją kanoniczną DYNAMIKI jest odczyt |g^tt| (gałąź stabilna, Yukawa)** — dopiski core sek08a (rem:W-sign-axiomatic(iv) + NOWY rem:psi-EOM-R3-branch-status; prop:psi-EOM-R3 przeklasyfikowane CONDITIONAL-ON-BRANCH, nic nie usunięte) + LOCK hipotezy ratunkowej [[research/op-r3-stationary-states-2026-09-14/Phase0_balance.md]] + **CYKL WYKONANY I ZAMKNIĘTY (agent z handoffu): Q-E-INCONCLUSIVE — 0 oscylonów w klasie zbadanej; oba starty quasi-R3 kolabują < 1 oscylacji; predykcja P1b (ω₂=−139/24<0, małe amplitudy) NIESKONFRONTOWANA**
 
 User: analiza N2 („skłaniam się ku |g^tt|; czy Yukawa w TGP w ogóle potrzebna, czy ślepa uliczka? TGP jednopolowe — oddziaływania wielopolowe niekonieczne") → wybór „Sekwencja minimalnego ryzyka".
 
@@ -86,9 +96,18 @@ User: analiza N2 („skłaniam się ku |g^tt|; czy Yukawa w TGP w ogóle potrzeb
 - **Q-E:** czy dynamika 2. rzędu (M,𝒦,𝒰 zalockowane Q-D1) ma długożyciowe oscylony (≥100 T₀, detektor FROZEN, zbieżnie)? **Q-F (warunkowe):** dyskretność (rodziny węzłowe + bariera — analog N=3)? Zakres: istnienie i dyskretność; ZAKAZ claimów o stosunkach mas (osobny przyszły cykl). P1b = pre-rejestrowana predykcja znaku przesunięcia częstości (Lindstedt–Poincaré).
 - Prompt dla nowego agenta: [[research/op-r3-stationary-states-2026-09-14/HANDOFF_PROMPT.md]].
 
+### 🟢 Cykl `op-r3-stationary-states` WYKONANY W CAŁOŚCI (agent z handoffu, jedna sesja) — **CLOSED: Q-E-INCONCLUSIVE; Q-F nieuruchomione (warunkowe)**
+- **Phase 1:** P1a PASS (κ²=ω²−1 sympy; klasy ω<1 zlokalizowane / ω>1 kontinuum; mapowanie R3: κ=1⟺ω²=2 — formy zgodne); **P1b PREDYKCJA pre-rejestrowana: ω₂=−139/24≈−5.79<0** (miękka nieliniowość — warunek konieczny oscylonów małej amplitudy SPEŁNIONY; kontrola: redukcja do standardu 3β/8−5α²/12 przy M≡1; arytmetyka zweryfikowana niezależnie przez sesję główną); P1c PASS 27/27.
+- **Phase 2 PASS 6/6** po 2 korektach implementacyjnych HARNESSU (progi/definicje LOCKa nietknięte; correction notes PRZED użyciem, pierwotne outputy zachowane): (1) kwadranty FFT w teście dyspersji; (2) katastrofalna kancelacja 𝒰(ψ)−𝒰(1) w ewaluatorze energii → tożsamość (ψ−1)²(3ψ²+2ψ+1)/12. Po korektach: dyspersja pełnej nieliniowej maszynerii odtwarza **ω²=k²+1 do 1.5e−4** (niezależna walidacja Q-D1), dryf energii 1.9e−9/100T₀, odwracalność trajektorii 5.1e−12, odbicie sponge 1.9e−4. **Maszyneria dynamiki 2. rzędu zwalidowana — N3 poprzednika ZREALIZOWANE** (pierwsza klasa dynamiczna poza gradient flow).
+- **Phase 3 — Q-E-INCONCLUSIVE wg litery** (PASS wymagał ≥1 OSCILLON — jest 0; FAIL wymagał wszystkie RADIATED — są 2/10): 2×RADIATED zbieżnie (|a|=0.15 σ=3: τ≈207–211 ≪ 628, E_core→1.4–1.5% bez plateau, zero stabilizacji częstości); 6×BREAKDOWN-BOUNDARY zbieżnie (t≈2.3–19.8, czasy zgodne h/h2/dt2 do ~1%); 2×INCONCLUSIVE (a=+0.25: kategoria niezbieżna — przy ψ→0 c=(4−3ψ)/ψ→∞ przekracza CFL). **Deskryptywnie kluczowe: OBA starty quasi-R3 (±0.2·sin(r)/r) kolabują do granicy dziedziny w t≈2.3–4.7 — kształt R3 nie przeżywa ani jednej oscylacji T₀.** Nowa twarda obserwacja: dziedzina (0,4/3) w dynamice 2. rzędu jest „dziurawa" dla szerokich/głębokich zaburzeń (kolaps = reguła 6/10, w gradient flow był wyjątkiem).
+- **P1b vs Phase 3 — BEZ konfrontacji rozstrzygającej** (forbidden move dotrzymany): domena predykcji (a→0, czasy życia ~1/(|ω₂|a²) ≫ 1000) leży POZA zamrożoną rodziną startów (|a|≥0.15). Miękka nieliniowość wciąż dopuszcza oscylony małej amplitudy — to najbliższy dobrze postawiony test hipotezy ratunkowej (NEEDS N1).
+- Szczegóły: [[research/op-r3-stationary-states-2026-09-14/Phase_FINAL_close.md]] · decyzje: [[research/op-r3-stationary-states-2026-09-14/NEEDS.md]]. Integralność zweryfikowana przez sesję główną: Phase3_output.txt zgodny 1:1 z raportem zamknięcia; LOCK/MD niezmienione (integrity_snapshot.txt).
+
 ### WIP po sesji
 - **N2 (op-action-audit): 🟢 ROZSTRZYGNIĘTE** (konwencja |g^tt| dla dynamiki; dopiski core wykonane). N1 (więz skończonej skali ΔE_insert), N4 (schemat więzu) — OPEN. N4-M911 (dopisek samodomknięcia) — OPEN.
-- **op-r3-stationary-states: PHASE0-LOCKED** — realizacja: nowy agent (handoff gotowy). Krytyczna ścieżka: wynik Q-E/Q-F decyduje o statusie łańcucha leptonowego (CONDITIONAL-ON-BRANCH → dziedziczenie przez gałąź zdrową ALBO konflikt aksjomatyczny z decyzją usera).
+- **op-r3-stationary-states: 🟢 CLOSED, Q-E-INCONCLUSIVE.** Hipoteza ratunkowa BEZ nośnika w klasie zbadanej (ale nie sfalsyfikowana — INCONCLUSIVE ≠ FAIL; domena małych amplitud niezbadana). Łańcuch leptonowy: CONDITIONAL-ON-BRANCH bez nośnika w klasie zbadanej.
+- **Decyzja usera (gate NEEDS): N1+N2 uruchomione** → dwa nowe LOCK-i zapisane przez sesję główną (zero obliczeń): [[research/op-oscillon-small-amplitude-2026-09-14/Phase0_balance.md]] (Q-G: test P1b, a≤0.10, t_max=10⁴, kryterium ω_peak≤0.99; **Q-G-FAIL = falsyfikacja P1b**) i [[research/op-collapse-matter-source-2026-09-14/Phase0_balance.md]] (Q-H1/Q-H2: 𝒰_mat=λ̃ρ̂ψ²/(4−3ψ) z eq:L-mat-unified — realizuje też N2-M911; pre-rejestrowane: δψ<0, asymetria sufit/podłoga). Handoffy gotowe. N4 (nadkategoria COLLAPSE) przyjęta w obu nowych LOCK-ach; N3 czeka na Q-G.
+- Higiena repo (sesja równoległa 2026-09-14): rotacja STATE.md 7545→~300 linii (archiwa `meta/STATE_ARCHIVE_*`), dodany [[CLAUDE.md]], normalizacja `folder_status` do 6 wartości, `CYCLES.tsv`.
 
 ### Cross-references
 [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]] · [[research/op-r3-stationary-states-2026-09-14/Phase0_balance.md]] · [[research/op-action-audit-spectrum-insert-2026-09-13/NEEDS.md]] · [[research/why_n3/README.md]]

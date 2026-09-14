@@ -62,7 +62,15 @@ def Upfun(p):
     return p*p*(p - 1.0)
 
 
-U_VAC = Ufun(1.0)   # -1/12 (odejmowane w energii)
+U_VAC = Ufun(1.0)   # -1/12 (referencyjnie; energia uzywa dUfun)
+
+
+def dUfun(p):
+    """U(psi) - U(1) = (psi-1)^2 (3 psi^2 + 2 psi + 1)/12 --
+    tozsamosc DOKLADNA (correction note 2): forma sfaktoryzowana
+    bez kancelacji zmiennoprzecinkowej przy psi ~ 1."""
+    d = p - 1.0
+    return d*d*(3.0*p*p + 2.0*p + 1.0)/12.0
 
 
 class NonConvergence(Exception):
@@ -105,7 +113,7 @@ class Engine:
     def energy(self, g, pi, rmax=None):
         gm = 0.5*(g[:-1] + g[1:])
         dg = np.diff(g)/self.h
-        dens = self.r2*(pi*pi/(2.0*Mfun(g)) + (Ufun(g) - U_VAC))
+        dens = self.r2*(pi*pi/(2.0*Mfun(g)) + dUfun(g))
         grad = 0.5*self.rm2*Kfun(gm)*dg**2
         if rmax is None:
             return 4.0*np.pi*self.h*(float(np.sum(dens))

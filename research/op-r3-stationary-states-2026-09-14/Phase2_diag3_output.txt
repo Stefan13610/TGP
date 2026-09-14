@@ -1,0 +1,39 @@
+==============================================================================
+DIAGNOSTYKA 3 -- lokalizacja C1 (deskryptywna)
+==============================================================================
+
+T4a: dE na odcinku [150,170] vs dt (pelny model):
+  dt=0.02000: (E(170)-E(150))/E = -1.6443e-06
+  dt=0.01000: (E(170)-E(150))/E = -9.0262e-07
+  dt=0.00500: (E(170)-E(150))/E = -6.8758e-07
+  dt=0.00125: (E(170)-E(150))/E = -6.6677e-07
+
+T4b: bisekcja czlonow -- ewolucja [0,150]+[150,170] w wariancie,
+  dE na [150,170] vs dt (uwaga: inny model => inna trajektoria;
+  diagnozujemy TYLKO obecnosc skladnika dt-niezaleznego):
+  M=1     : dt=0.02: -1.8468e-06  dt=0.005: -8.7589e-07  dt=0.00125: -7.2807e-07
+  K=1     : dt=0.02: -1.7035e-06  dt=0.005: -6.5689e-07  dt=0.00125: -4.7407e-07
+  M=1,K=1 : dt=0.02: -1.7321e-06  dt=0.005: -7.6601e-07  dt=0.00125: -6.5634e-07
+
+T4c: spojnosc gradientu na stanie t=150 (centralne roznice):
+  i=   0 r=   0.03  dE/dpsi_num=-2.278681e-08  -w F=-2.278628e-08  rel=2.34e-05
+  i=   1 r=   0.08  dE/dpsi_num=+4.724086e-08  -w F=+4.724601e-08  rel=1.09e-04
+  i=   2 r=   0.12  dE/dpsi_num=-2.377960e-08  -w F=-2.377037e-08  rel=3.89e-04
+  i= 100 r=   5.03  dE/dpsi_num=+3.536261e-05  -w F=+3.537976e-05  rel=4.85e-04
+  i= 500 r=  25.03  dE/dpsi_num=+4.467951e-03  -w F=+4.468034e-03  rel=1.85e-05
+  i=1000 r=  50.03  dE/dpsi_num=+1.191110e-02  -w F=+1.191163e-02  rel=4.44e-05
+  i=1500 r=  75.03  dE/dpsi_num=+2.138500e-02  -w F=+2.138489e-02  rel=5.01e-06
+  i=2000 r= 100.03  dE/dpsi_num=+3.861179e-03  -w F=+3.860646e-03  rel=1.38e-04
+  i=2500 r= 125.03  dE/dpsi_num=+7.686638e-05  -w F=+7.849391e-05  rel=2.07e-02
+  i=3000 r= 150.03  dE/dpsi_num=+1.137631e-07  -w F=+0.000000e+00  rel=1.14e+23
+  i=3998 r= 199.93  dE/dpsi_num=+2.020264e-07  -w F=+0.000000e+00  rel=2.02e+23
+  i=3999 r= 199.98  dE/dpsi_num=+1.010384e-07  -w F=+0.000000e+00  rel=1.01e+23
+  max rel (psi) = 2.02e+23
+  max rel (pi)  = 5.22e-04
+
+T4d: rzad amplitudy -- pelny bieg a=1e-4, dt=0.005, h=0.05:
+  okno [  0, 10] T0: (<E>-E0)/E0 = -7.6475e-06
+  okno [ 10, 20] T0: (<E>-E0)/E0 = -4.5141e-05
+  okno [ 40, 50] T0: (<E>-E0)/E0 = -6.6656e-04
+  okno [ 90,100] T0: (<E>-E0)/E0 = -6.8961e-04
+  (a=1e-3 dawalo plateau-C2 ~ -7.0e-6; jesli C1/E0 ~ a => teraz ~ -7e-7; jesli ~ a^2 => ~ -7e-8; jesli staly => -7e-6)

@@ -1,8 +1,5 @@
 ==============================================================================
 PHASE 2 -- bramka maszynerii dynamicznej (definicje FROZEN MD sec.7)
-Korekty: 1(a) kwadranty FFT; 1(b) stop=stagnacja; 2: ewaluator
-  energii dU=(psi-1)^2(3psi^2+2psi+1)/12 (correction notes 1,2)
-  tozsamosc dU (sympy simplify, 0 wymagane): 0
 REJESTR [INPUT]: K_geo=gamma=c0=1; dt=0.005; sponge gamma0=1.0 smootherstep r in [160,200]; pas 4/3-1e-6 / 1e-6; brak seeda
 ==============================================================================
 
@@ -27,8 +24,8 @@ P2b: dyspersja -- puls a=1e-3 sigma=2 @ r=0, sponge OFF, R=200,
   P2b (3 biny gate, h=0.05): PASS
 
 P2c-energia: puls a=1e-3 sigma=3, sponge OFF, 100 T0, obie siatki
-  h=0.050: status=OK E(0)=8.777379e-05 dryf(okna)=1.876e-09 (<=1e-6: PASS); deskr. max|E-E0|/E0=7.295e-06
-  h=0.025: status=OK E(0)=8.777390e-05 dryf(okna)=1.990e-09 (<=1e-6: PASS); deskr. max|E-E0|/E0=7.295e-06
+  h=0.050: status=OK E(0)=8.777379e-05 dryf(okna)=7.000e-06 (<=1e-6: FAIL); deskr. max|E-E0|/E0=1.200e-05
+  h=0.025: status=OK E(0)=8.777390e-05 dryf(okna)=6.985e-06 (<=1e-6: FAIL); deskr. max|E-E0|/E0=1.191e-05
 
 P2c-sponge: puls a=1e-3 sigma=5 @ r=100; A: R=200 sponge ON;
   B: R=400 sponge OFF (referencja); h=0.05, t=250; u=r(psi-1)
@@ -39,8 +36,8 @@ P2c-sponge: puls a=1e-3 sigma=5 @ r=100; A: R=200 sponge ON;
   P2a_h0.025  : PASS
   P2a_h0.05   : PASS
   P2b         : PASS
-  P2cE_h0.025 : PASS
-  P2cE_h0.05  : PASS
+  P2cE_h0.025 : FAIL
+  P2cE_h0.05  : FAIL
   P2c_sponge  : PASS
-PHASE 2: PASS -- maszyneria dopuszczona do Phase 3
+PHASE 2: FAIL => STOP (LOCK sec. 2)
 ==============================================================================
