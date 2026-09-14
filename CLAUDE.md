@@ -30,6 +30,16 @@ jednego zjada ćwierć okna kontekstu. **Reguła twarda:**
 
 Nie czytaj pliku „na wszelki wypadek". Jeśli nie wiesz gdzie coś jest — Grep, nie Read.
 
+**Zanim zaproponujesz nowy cykl — sprawdź, czy to już nie było liczone.** Grep odpowiada tylko
+wtedy, gdy znasz słowo klucz; do pytania „czy ktoś już to badał" służy:
+
+```
+python tooling/similar.py "opis zagadnienia wlasnymi slowami"
+python tooling/similar.py --like op-metric-pair-M911-2026-09-02   # cykle pokrewne
+```
+
+Zwraca ścieżki i werdykty (nie zdania), więc wynik jest weryfikowalny w źródle.
+
 ## 2. Warstwy repo — co czym jest i co wolno dotknąć
 
 | Warstwa | Zawartość | Prawo zapisu |
