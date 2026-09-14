@@ -1,0 +1,72 @@
+==============================================================================
+Phase 1 -- Q-A: krajobraz pary metrycznej (w, V_M9.1'', K)
+REJESTR [INPUT]: K_geo=1 gamma=1; formy CYTAT sek08a (MD sec.1);
+PRIMARY odczyt B (MD sec.2): Keff=psi^4; odczyt A: Keff_A=w*K
+==============================================================================
+
+w(psi)     = psi/(4 - 3*psi)
+V(psi)     = -psi**2*(3*psi - 4)**2/12
+K(psi)     = psi**4
+rho_eff    = w*V = psi**3*(3*psi - 4)/12  (simplify)
+Keff (B)   = psi**4 ; Keff_A (odczyt A) = -psi**5/(3*psi - 4)
+
+TOZSAMOSCI (warunek uzycia postaci wielomianowej w silniku, MD sec.3):
+  U := w*V - gamma*(psi^4/4 - psi^3/3)      simplify -> 0
+  U' := w'V + wV' - gamma*psi^2*(psi-1)     simplify -> 0
+  w'(psi) = 4/(3*psi - 4)**2 ; V'(psi) = -psi*(3*psi - 4)*(3*psi - 2)/3
+  zera V': [2/3, 4/3]  (srednie progowe LOCKa: (2/3+1)/2=5/6, (1+4/3)/2=7/6)
+  -> tozsamosci: PASS
+
+P1a: punkty krytyczne rho_eff na (0, 4/3)
+  rho'  = psi**2*(psi - 1)
+  rho'' = psi*(3*psi - 2)
+  rho'=0 -> psi in ['1']
+  punkty krytyczne WEWNATRZ (0,4/3): ['1']
+    psi=1: rho=-1/12 (=-0.0833333333), rho''=1 (MINIMUM (rho''>0))
+
+  zachowanie: rho_eff(0+) = 0 ; rho_eff(4/3-) = 0 ; rho_eff(4/3)=0
+  monotonia: rho' = psi^2(psi-1) < 0 na (0,1), > 0 na (1,4/3)
+    kontrola: rho'(1/2)<0: True ; rho'(7/6)>0: True
+  globalne minimum rho_eff na [0,4/3]: -1/12 (=-0.0833333333)
+
+  pelna gestosc e = 1/2*Keff|grad psi|^2 + rho_eff:
+    odczyt B: Keff = psi^4 > 0 na (0,4/3): True
+    odczyt A: Keff_A = psi^5/(4-3psi) > 0 na (0,4/3): True (biegun dopiero w psi=4/3)
+    -> OBA odczyty: wspolczynnik kinetyczny DODATNI na dziedzinie;
+       E[psi] >= |Omega| * inf rho_eff = -|Omega|/12 -- OGRANICZONE z dolu, brak kierunku ucieczki
+
+  stacjonarnosc prozni w pelnym E: U'(1) = w'(1)V(1)+w(1)V'(1) = 0
+    -> psi*=1 JEST punktem krytycznym pelnego funkcjonalu
+
+WERDYKT Q-A (litera LOCKa sec.2 Phase 1):
+  (1) minimum psi* in (0,4/3): TAK (psi*=1)
+  (2) krzywizna rho''(psi*)>0: TAK (rho''(1)=1)
+  (3) rho_eff(4/3) > rho_eff(psi*): TAK (0 > -1/12)
+  (4) E ograniczone z dolu / brak ucieczki: TAK (inf rho=-1/12, Keff>0)
+  ==> Q-A-PASS
+
+P1b (gate zgodnosci sympy vs float, prog 1e-12):
+  psi=1/2      rho_sympy=-5/192 = -0.02604166666666667 ; rho_float=-0.02604166666666666 ; |d|=3.47e-18 -> OK
+  psi=1        rho_sympy=-1/12 = -0.08333333333333333 ; rho_float=-0.08333333333333331 ; |d|=1.39e-17 -> OK
+  psi=7/6      rho_sympy=-343/5184 = -0.06616512345679013 ; rho_float=-0.06616512345679015 ; |d|=2.78e-17 -> OK
+  psi=13/10    rho_sympy=-2197/120000 = -0.01830833333333333 ; rho_float=-0.01830833333333326 ; |d|=7.29e-17 -> OK
+  P1b: PASS
+
+Tabela kontrolna (co 0.1, dziedzina (0,4/3)):
+  psi    rho_eff        U'=psi^2(psi-1) Keff=psi^4   Keff_A=wK     
+  0.10   -3.083333e-04 -9.000000e-03 1.000000e-04 2.702703e-06
+  0.20   -2.266667e-03 -3.200000e-02 1.600000e-03 9.411765e-05
+  0.30   -6.975000e-03 -6.300000e-02 8.100000e-03 7.838710e-04
+  0.40   -1.493333e-02 -9.600000e-02 2.560000e-02 3.657143e-03
+  0.50   -2.604167e-02 -1.250000e-01 6.250000e-02 1.250000e-02
+  0.60   -3.960000e-02 -1.440000e-01 1.296000e-01 3.534545e-02
+  0.70   -5.430833e-02 -1.470000e-01 2.401000e-01 8.845789e-02
+  0.80   -6.826667e-02 -1.280000e-01 4.096000e-01 2.048000e-01
+  0.90   -7.897500e-02 -8.100000e-02 6.561000e-01 4.542231e-01
+  1.00   -8.333333e-02 +0.000000e+00 1.000000e+00 1.000000e+00
+  1.10   -7.764167e-02 +1.210000e-01 1.464100e+00 2.300729e+00
+  1.20   -5.760000e-02 +2.880000e-01 2.073600e+00 6.220800e+00
+  1.30   -1.830833e-02 +5.070000e-01 2.856100e+00 3.712930e+01
+wykres kontrolny: Phase1_landscape.png zapisany
+
+PODSUMOWANIE Phase 1: Q-A-PASS ; P1b PASS

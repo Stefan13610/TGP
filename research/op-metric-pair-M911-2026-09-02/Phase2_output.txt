@@ -1,0 +1,22 @@
+==============================================================================
+Phase 2 -- bramka maszynerii (silnik = import Phase3_relax_M911)
+psi* = 1 (P1a sympy: U'(1)=0 -- proznia punktem krytycznym pelnego E; kontrola float: Ueffp(1.0)=0.0)
+==============================================================================
+
+P2a: proznia psi=1 bez zaburzen, t=10, gate max||psi-1|| <= 1e-10
+  radial h=0.0125    max_t ||psi-1||_inf = 0.000e+00 -> OK
+  3D L=2pi N=32      max_t ||psi-1||_inf = 0.000e+00 -> OK
+  3D L=4pi N=48      max_t ||psi-1||_inf = 0.000e+00 -> OK
+  P2a: PASS
+
+P2b: detektory (progi FROZEN: dn psi<5/6=0.8333333, up psi>7/6=1.1666667);
+  pola testowe: dip 1-0.4exp(-r^2/2), bump 1+0.3exp(-r^2/2), proznia (sigma_t=1.0)
+  3D dip (dolny)     psi in [0.610,1.000]: N_dn=1 (oczek. 1, rozm. [552]), N_up=0 (oczek. 0, rozm. []) -> OK
+  3D bump (gorny)    psi in [1.000,1.292]: N_dn=0 (oczek. 0, rozm. []), N_up=1 (oczek. 1, rozm. [304]) -> OK
+  3D proznia         psi in [1.000,1.000]: N_dn=0 (oczek. 0, rozm. []), N_up=0 (oczek. 0, rozm. []) -> OK
+  rad dip (dolny)    psi in [0.600,1.000]: N_dn=1 (oczek. 1, rozm. [53]), N_up=0 (oczek. 0, rozm. []) -> OK
+  rad bump (gorny)   psi in [1.000,1.300]: N_dn=0 (oczek. 0, rozm. []), N_up=1 (oczek. 1, rozm. [43]) -> OK
+  rad proznia        psi in [1.000,1.000]: N_dn=0 (oczek. 0, rozm. []), N_up=0 (oczek. 0, rozm. []) -> OK
+  P2b: PASS
+
+PODSUMOWANIE Phase 2: PASS

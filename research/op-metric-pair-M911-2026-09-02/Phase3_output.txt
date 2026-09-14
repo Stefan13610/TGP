@@ -1,0 +1,27 @@
+==============================================================================
+WERDYKT Q-B (skladanie; litera LOCKa sec. 2 Phase 3 + MD sec. 6)
+REJESTR [INPUT]: K_geo=gamma=1; seed=20260903 amp=0.001; psi_max_start=1.30;
+  thr_dn=5/6=0.8333333 thr_up=7/6=1.1666667; pas=4/3-1e-6; sigma_bump=5.0 [INPUT-MD]; formy CYTAT sek08a (MD sec.1); odczyt B (MD sec.2)
+==============================================================================
+gen :
+    gen_N48: STATIONARY t=7.0 psi[1.0000,1.0000] pmax-4/3=-0.3333 dev=0.0000 mean=1.0000 Ndn0/0 Nup0/0 E_rel=0.000e+00
+    gen_N64: STATIONARY t=7.0 psi[1.0000,1.0000] pmax-4/3=-0.3333 dev=0.0000 mean=1.0000 Ndn0/0 Nup0/0 E_rel=0.000e+00
+    STACJONARNE: ||psi-const||_inf = ['0.000000', '0.000000'] (>=0.05: NIE); ||c-f||_inf(podsiatka) = 2.56e-12 (<=5e-3: TAK); sanity pmax-4/3: ['-0.3333', '-0.3333']; mean vs psi*=1: ['+2.48e-09', '+2.48e-09']
+bump:
+    bump_h025: STATIONARY t=16.0 psi[1.0000,1.0000] pmax-4/3=-0.3333 dev=0.0000 mean=1.0000 Ndn0/0 Nup0/1 E_rel=0.000e+00
+    bump_h0125: STATIONARY t=16.0 psi[1.0000,1.0000] pmax-4/3=-0.3333 dev=0.0000 mean=1.0000 Ndn0/0 Nup0/1 E_rel=0.000e+00
+    STACJONARNE: ||psi-const||_inf = ['0.000000', '0.000000'] (>=0.05: NIE); ||c-f||_inf(podsiatka) = 6.73e-14 (<=5e-3: TAK); sanity pmax-4/3: ['-0.3333', '-0.3333']; mean vs psi*=1: ['+1.13e-09', '+1.13e-09']
+lat :
+    lat_N32: STATIONARY t=16.0 psi[1.0000,1.0000] pmax-4/3=-0.3333 dev=0.0000 mean=1.0000 Ndn0/0 Nup0/1 E_rel=0.000e+00
+    lat_N48: STATIONARY t=16.0 psi[1.0000,1.0000] pmax-4/3=-0.3333 dev=0.0000 mean=1.0000 Ndn0/0 Nup0/1 E_rel=0.000e+00
+    STACJONARNE: ||psi-const||_inf = ['0.000000', '0.000000'] (>=0.05: NIE); ||c-f||_inf(podsiatka) = 3.47e-11 (<=5e-3: TAK); sanity pmax-4/3: ['-0.3333', '-0.3333']; mean vs psi*=1: ['-8.87e-09', '-8.83e-09']
+
+DESKRYPTYWNIE (obowiazkowe, LOCK sec.2): los startu sieciowego:
+    lat_N32: STATIONARY; struktura sieci NIE przezywa -- relaksacja do jednorodnosci (dev koncowy 0.000000, N_dn/N_up koncowe 0/0)
+    lat_N48: STATIONARY; struktura sieci NIE przezywa -- relaksacja do jednorodnosci (dev koncowy 0.000000, N_dn/N_up koncowe 0/0)
+
+KLASYFIKACJA Q-B (litera):
+  Q-B-FAIL: wszystko relaksuje do jednorodnej prozni
+
+zapisano stany: C:/Users/Mateusz/Documents/ObsydnianMain/TGP/TGP_v1/research/op-metric-pair-M911-2026-09-02/Phase3_relaxed_states.npz (6 tablic)
+WERDYKT: Q-B-FAIL
