@@ -520,6 +520,27 @@ zawsze stabilizuje ($\Delta C_{\rm bond}=+8zJs_b^6\ge0$) ---
 odwrotna rola g\k{e}sto\'sci ni\.z w~hipotezie dw\'och sektor\'ow.
 \textbf{Wniosek: wyb\'or znaku $W$ pozostaje otwartym problemem
 aksjomatycznym (decyzja ontologiczna, nie numeryka).}
+\textbf{(iv) Dopisek 2026-09-14 (decyzja usera; user-gate N2 cyklu
+\texttt{research/op-action-audit-spectrum-insert-2026-09-13}):}
+audyt jednej akcji zlokalizowa\l{} rozdwojenie precyzyjnie
+w~kontrakcji cz\l{}onu CZASOWEGO: odczyt $|g^{tt}|$ daje
+$L=\tfrac12 M\dot\psi^2-\tfrac12\mathcal{K}|\nabla\psi|^2-\mathcal{U}$
+z~$M(\psi)=K_{\rm geo}\psi^6/(c_0(4-3\psi)^2)>0$ i~dyspersj\k{a}
+pr\'o\.zni $\omega^2=k^2+1$ (bez tachionu i~ducha; Q-D1-PASS, sympy),
+za\'s literalna kontrakcja ZNAKOWANA (sygnatura $(-,+,+,+)$) odtwarza
+R3 ODE $(1-\psi)/\psi^2$, lecz kosztem ducha w~cz\l{}onie czasowym
+i~tachionu $\omega^2=k^2-1$; jedna rzeczywista wariacja Lorentzowska
+nie daje obu naraz. Wraz z~(ii), (iii) oraz relaksacyjnym domkni\k{e}ciem
+pary (\texttt{op-metric-pair-M911}: Q-A-PASS samodomkni\k{e}cie,
+Q-B-FAIL brak kreacji statycznej) daje to CZTERY zbie\.zne linie za
+ga\l{}\k{e}zi\k{a}~(a). \textbf{DECYZJA (user-gate 2026-09-14):
+konwencj\k{a} kanoniczn\k{a} DYNAMIKI jest odczyt $|g^{tt}|$
+(ga\l{}\k{a}\'z stabilna, $m_{\rm sp}^2=+\gamma$, ogony Yukawy ---
+sp\'ojnie z~prop.~\ref{prop:vacuum-stability-G0} i~L03).} R3 ODE
+pozostaje EXACT jako statyka ga\l{}\k{e}zi znakowanej
+(rem.~\ref{rem:psi-EOM-R3-branch-status}); hipoteza reinterpretacji
+profil\'ow R3 jako stan\'ow stacjonarnych ga\l{}\k{e}zi zdrowej ---
+w~te\'scie: \texttt{research/op-r3-stationary-states-2026-09-14/}.
 \end{remark}
 
 \begin{proof}
@@ -1042,6 +1063,35 @@ sek08a v2.0 jako konsekwencje wariacji TGP-canonical akcji:
 \end{itemize}
 Wery\-fika\-cja Phase 2 P22 (sympy LOCK + numerical match z R3 profile,
 \texttt{phase2\_P22\_mass\_spectrum\_verification.py}, 5/5 PASS).
+\end{remark}
+
+\begin{remark}[Status ga\l{}\k{e}ziowy prop.~\ref{prop:psi-EOM-R3}
+--- dopisek 2026-09-14 (user-gate N2,
+\texttt{op-action-audit-spectrum-insert})]%
+\label{rem:psi-EOM-R3-branch-status}
+To\.zsamo\'s\'c prop.~\ref{prop:psi-EOM-R3} zachodzi przy redukcji
+statycznej z~kontrakcj\k{a} ZNAKOWAN\k{A} $g^{tt}<0$ --- czyli
+w~ga\l{}\k{e}zi, kt\'orej sektor czasowy ma ducha i~tachion
+$\omega^2=k^2-1$ (audyt jednej akcji, Q-D1; por.
+rem.~\ref{rem:W-sign-axiomatic}(iv)). W~konwencji kanonicznej
+DYNAMIKI $|g^{tt}|$ (decyzja 2026-09-14) statyka pe\l{}nego
+funkcjona\l{}u to $\psi''+\tfrac{2}{r}\psi'+\tfrac{2}{\psi}(\psi')^2
+=(\psi-1)/\psi^2$ (zaniki Yukawy; brak statycznych soliton\'ow ---
+sp\'ojnie z~Q-B-FAIL \texttt{op-metric-pair-M911}). Proposition
+NIE jest usuni\k{e}ta: R3 ODE i~jej sukcesy liczbowo pozostaj\k{a}
+EXACT jako r\'ownanie ga\l{}\k{e}zi znakowanej; ich wyprowadzenie
+z~konwencji kanonicznej wymaga natomiast NOWEGO mechanizmu.
+Kandydat (hipoteza w~te\'scie,
+\texttt{research/op-r3-stationary-states-2026-09-14/}): profile
+oscylacyjne R3 jako przestrzenne profile stan\'ow STACJONARNYCH
+$\psi=1+e^{-i\omega t}f(r)$ ga\l{}\k{e}zi zdrowej ---
+$\nabla^2 f=-\kappa^2 f$ z~$\kappa^2=(M\omega^2-\mathcal{U}'')/
+\mathcal{K}$, tj.\ $\kappa^2=\omega^2-1$ przy pr\'o\.zni
+(linearyzacja R3 $\kappa=1\Leftrightarrow\omega^2=2$); masy
+jako cz\k{e}sto\'sci wzbudze\'n quasi-stacjonarnych zamiast energii
+profil\'ow statycznych. Do rozstrzygni\k{e}cia cyklu status
+konsekwencji rem.~\ref{rem:psi-EOM-R3-consequences}:
+CONDITIONAL-ON-BRANCH.
 \end{remark}
 
 \begin{proposition}[Stabilno\'s\'c t\l{}a pr\'o\.zniowego --- G.0 corrected]%

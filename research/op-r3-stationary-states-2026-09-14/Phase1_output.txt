@@ -1,0 +1,84 @@
+==============================================================================
+PHASE 1 -- analityka stanow stacjonarnych; K_geo=gamma=c0=1 [INPUT]
+Formy CYTAT (MD sec.1; dziedziczone op-action-audit Phase1_output):
+  M(psi)   = psi^6/(4-3psi)^2 = psi**6/(3*psi - 4)**2
+  K(psi)   = psi**4
+  U(psi)   = psi**4/4 - psi**3/3
+  weryfikacja M' vs cytat 12psi^5(2-psi)/(4-3psi)^3: simplify = 0
+  U'  = psi**3 - psi**2  (= psi^2(psi-1): 0)
+  U'' = 3*psi**2 - 2*psi ; U''(1) = 1
+
+pi-formulacja (MD sec.2, deskryptywnie): pidot_EOM - pidot_H
+  simplify = 0  (0 wymagane)
+
+------------------------------------------------------------------------------
+P1a: linearyzacja stacjonarna psi = 1 + eps e^{-i om t} f(r)
+  O(eps) EOM (po podzieleniu przez e^{-i om t}):
+    -omega**2*f(r) + f(r) - Derivative(f(r), (r, 2)) - 2*Derivative(f(r), r)/r = 0
+  simplify(O(eps) - [-om^2 f - f'' - 2f'/r + f]) = 0
+  kappa^2 = (M(1)om^2 - U''(1))/K(1) = omega**2 - 1
+  simplify(kappa^2 - (om^2 - 1)) = 0
+  KLASY: om<1 => kappa^2<0: f ~ e^{-|kappa| r}/r (ZLOKALIZOWANE);
+         om>1 => kappa^2>0: f ~ sin(kappa r)/r (kontinuum oscyl.)
+  mapowanie na linearyzacje R3: kappa=1 <=> om^2 = [2]
+  zgodnosc z LOCK (kappa=1 <=> om^2=2): PASS
+  P1a: PASS
+
+------------------------------------------------------------------------------
+P1b: Lindstedt-Poincare, mod jednorodny rdzenia (MD sec. 8)
+  ODE: M(1+u) om^2 u_thth + 1/2 M'(1+u) om^2 u_th^2 + U'(1+u) = 0
+  O(a):   u1(theta) + Derivative(u1(theta), (theta, 2)) = 0
+    u1 = cos(theta): residuum = 0
+  O(a^2) czlon sekularny (proj. cos): -2*omega1
+    => omega_1 = [0]
+  rhs2 = M1/4 - U3/4 + 3*M1/4 - U3/4 cos(2 theta)
+    u2 = M1/4 - U3/4 + (-3*M1 + U3)*cos(2*theta)/12 ; kontrola L u2 - rhs2 = 0
+  O(a^3) sekularny: M1**2/8 + M1*U3/4 - M2/4 - 5*U3**2/24 + U4/8 - 2*omega2 = 0
+  => omega_2 (symbolicznie, U3=U'''(1), U4=U''''(1), M1=M'(1),
+     M2=M''(1)):
+     omega_2 = M1**2/16 + M1*U3/8 - M2/8 - 5*U3**2/48 + U4/16
+  wartosci form: U'''(1)=4, U''''(1)=6, M'(1)=12, M''(1)=156
+  omega_2 = -139/24 = -139/24
+  omega(a) = 1 + omega_2 a^2 + O(a^4); float: omega_2 = -5.791667
+
+  PREDYKCJA PRE-REJESTROWANA (P1b, LOCK sec.2; zakaz
+  reinterpretacji po Phase 3): omega_2 < 0 => nieliniowosc MIEKKA
+  => warunek istnienia oscylonu malej amplitudy (om(a) < m=1): SPELNIONY (oscylony malej amplitudy OCZEKIWANE)
+
+------------------------------------------------------------------------------
+P1c (gate): sympy(bin double) vs float w psi in {0.9, 1, 1.1};
+  prog |d| <= 1e-12*max(1,|v|) (MD sec. 8)
+  psi=0.9 M   sympy(bin)=+3.1446213017751490e-01 float=+3.1446213017751490e-01 |d|=0.00e+00 PASS
+  psi=0.9 Mp  sympy(bin)=+3.5477778789258090e+00 float=+3.5477778789258103e+00 |d|=1.33e-15 PASS
+  psi=0.9 K   sympy(bin)=+6.5610000000000002e-01 float=+6.5610000000000002e-01 |d|=0.00e+00 PASS
+  psi=0.9 Kp  sympy(bin)=+2.9160000000000004e+00 float=+2.9160000000000004e+00 |d|=0.00e+00 PASS
+  psi=0.9 U   sympy(bin)=-7.8975000000000004e-02 float=-7.8975000000000017e-02 |d|=1.39e-17 PASS
+  psi=0.9 Up  sympy(bin)=-8.0999999999999989e-02 float=-8.0999999999999989e-02 |d|=0.00e+00 PASS
+  psi=0.9 U2  sympy(bin)=+6.3000000000000012e-01 float=+6.3000000000000023e-01 |d|=1.11e-16 PASS
+  psi=0.9 U3  sympy(bin)=+3.4000000000000004e+00 float=+3.4000000000000004e+00 |d|=0.00e+00 PASS
+  psi=0.9 U4  sympy(bin)=+6.0000000000000000e+00 float=+6.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 M   sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 Mp  sympy(bin)=+1.2000000000000000e+01 float=+1.2000000000000000e+01 |d|=0.00e+00 PASS
+  psi=1.0 K   sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 Kp  sympy(bin)=+4.0000000000000000e+00 float=+4.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 U   sympy(bin)=-8.3333333333333329e-02 float=-8.3333333333333315e-02 |d|=1.39e-17 PASS
+  psi=1.0 Up  sympy(bin)=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 U2  sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 U3  sympy(bin)=+4.0000000000000000e+00 float=+4.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 U4  sympy(bin)=+6.0000000000000000e+00 float=+6.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.1 M   sympy(bin)=+3.6154306122449023e+00 float=+3.6154306122449027e+00 |d|=4.44e-16 PASS
+  psi=1.1 Mp  sympy(bin)=+5.0709935860058380e+01 float=+5.0709935860058380e+01 |d|=0.00e+00 PASS
+  psi=1.1 K   sympy(bin)=+1.4641000000000004e+00 float=+1.4641000000000004e+00 |d|=0.00e+00 PASS
+  psi=1.1 Kp  sympy(bin)=+5.3240000000000016e+00 float=+5.3240000000000016e+00 |d|=0.00e+00 PASS
+  psi=1.1 U   sympy(bin)=-7.7641666666666651e-02 float=-7.7641666666666720e-02 |d|=6.94e-17 PASS
+  psi=1.1 Up  sympy(bin)=+1.2100000000000012e-01 float=+1.2100000000000012e-01 |d|=0.00e+00 PASS
+  psi=1.1 U2  sympy(bin)=+1.4300000000000004e+00 float=+1.4300000000000004e+00 |d|=0.00e+00 PASS
+  psi=1.1 U3  sympy(bin)=+4.6000000000000005e+00 float=+4.6000000000000005e+00 |d|=0.00e+00 PASS
+  psi=1.1 U4  sympy(bin)=+6.0000000000000000e+00 float=+6.0000000000000000e+00 |d|=0.00e+00 PASS
+  P1c: PASS
+
+==============================================================================
+PHASE 1 PODSUMOWANIE: P1a PASS; P1b PREDYKCJA: omega_2 = -139/24 (-5.791667;
+  nieliniowosc MIEKKA -- oscylony malej amplitudy oczekiwane); P1c PASS
+  kappa^2 = om^2 - 1 [WYPROWADZONE]; kappa=1 <=> om^2=2 [zgodne R3]
+==============================================================================

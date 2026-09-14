@@ -1,0 +1,43 @@
+==============================================================================
+PHASE 2 -- bramka maszynerii dynamicznej (definicje FROZEN MD sec.7)
+REJESTR [INPUT]: K_geo=gamma=c0=1; dt=0.005; sponge gamma0=1.0 smootherstep r in [160,200]; pas 4/3-1e-6 / 1e-6; brak seeda
+==============================================================================
+
+P2a: prozna, konfiguracja produkcyjna (sponge ON), 100 T0
+  h=0.050: status=OK, ||psi-1||_inf(max po biegu) = 0.000e+00 (<=1e-10: PASS); alarmy detektora: 0 (E_core=0, przejscia=0)
+  h=0.025: status=OK, ||psi-1||_inf(max po biegu) = 0.000e+00 (<=1e-10: PASS); alarmy detektora: 0 (E_core=0, przejscia=0)
+
+P2b: dyspersja -- puls a=1e-3 sigma=2 @ r=0, sponge OFF, R=200,
+  t=400, u=r(psi-1) co dt_out=0.2; FFT 2D Hann; parabola na piku
+  h=0.05 (PRIMARY), okno T=400.0:
+    k_tar=0.6 k_bin=0.5969 om_meas=1.250352 om_teor=1.164600 |d|/om=7.36e-02 FAIL [GATE]
+    k_tar=1.0 k_bin=1.0053 om_meas=1.421745 om_teor=1.417973 |d|/om=2.66e-03 PASS [GATE]
+    k_tar=1.4 k_bin=1.4137 om_meas=1.728368 om_teor=1.731645 |d|/om=1.89e-03 PASS [GATE]
+    k_tar=1.8 k_bin=1.7907 om_meas=2.045836 om_teor=2.051008 |d|/om=2.52e-03 (deskr.)
+    k_tar=2.2 k_bin=2.1991 om_meas=2.409341 om_teor=2.415803 |d|/om=2.68e-03 (deskr.)
+  h=0.025 (deskryptywnie):
+    k_tar=0.6 k_bin=0.5969 om_meas=1.250294 om_teor=1.164600 |d|/om=7.36e-02
+    k_tar=1.0 k_bin=1.0053 om_meas=1.421791 om_teor=1.417973 |d|/om=2.69e-03
+    k_tar=1.4 k_bin=1.4137 om_meas=1.728553 om_teor=1.731645 |d|/om=1.79e-03
+    k_tar=1.8 k_bin=1.7907 om_meas=2.046220 om_teor=2.051008 |d|/om=2.33e-03
+    k_tar=2.2 k_bin=2.1991 om_meas=2.409936 om_teor=2.415803 |d|/om=2.43e-03
+  P2b (3 biny gate, h=0.05): FAIL
+
+P2c-energia: puls a=1e-3 sigma=3, sponge OFF, 100 T0, obie siatki
+  h=0.050: status=OK E(0)=8.777379e-05 dryf(okna)=7.000e-06 (<=1e-6: FAIL); deskr. max|E-E0|/E0=1.200e-05
+  h=0.025: status=OK E(0)=8.777390e-05 dryf(okna)=6.984e-06 (<=1e-6: FAIL); deskr. max|E-E0|/E0=1.191e-05
+
+P2c-sponge: puls a=1e-3 sigma=5 @ r=100; A: R=200 sponge ON;
+  B: R=400 sponge OFF (referencja); h=0.05, t=250; u=r(psi-1)
+  max|u_A-u_B| (r<=120) = 6.424e-06; ampl. padajaca (r in [120,160]) = 3.328e-02
+  odbicie = 1.931e-04 (<=1e-3: PASS)
+
+==============================================================================
+  P2a_h0.025  : PASS
+  P2a_h0.05   : PASS
+  P2b         : FAIL
+  P2cE_h0.025 : FAIL
+  P2cE_h0.05  : FAIL
+  P2c_sponge  : PASS
+PHASE 2: FAIL => STOP (LOCK sec. 2)
+==============================================================================
