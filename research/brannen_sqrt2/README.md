@@ -1,5 +1,6 @@
 ---
 title: "R6: B=√2 analitycznie z ODE solitonowego"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

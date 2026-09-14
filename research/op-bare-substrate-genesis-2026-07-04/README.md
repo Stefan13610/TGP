@@ -1,5 +1,6 @@
 ---
 title: "op-bare-substrate-genesis — geneza samopodtrzymujacych struktur z golego substratu"
+folder_status: closed
 date: 2026-07-04
 type: research-op
 status: CLOSED

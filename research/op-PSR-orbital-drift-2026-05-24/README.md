@@ -3,7 +3,8 @@ title: "op-PSR-orbital-drift — TGP native O(U³) orbital-drift falsifier (NS s
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL (4-phase single-session sprint complete)
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 created_date: 2026-05-24
 closed_date: 2026-05-24
 claim_status: B+ (pre-observational consistency + future-test target)

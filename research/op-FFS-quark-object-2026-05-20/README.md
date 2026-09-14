@@ -1,5 +1,6 @@
 ---
 title: "op-FFS-quark-object-2026-05-20 — Full FFS cycle launch post pre-screening STRONG_GO; 6 honest caveats closure + asymptotic freedom β-sign + gluon Y-vertex modes + lattice/lab validation transfer (path η bound-state observables direction; declared SU(3)_c gauge limit PRESERVED)"
+folder_status: paused
 date: 2026-05-20
 type: cycle
 phase: scaffold

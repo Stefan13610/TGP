@@ -1,5 +1,6 @@
 ---
 title: "λ.1 — e² jako fundamental constant w TGP amplitude sector?"
+folder_status: closed
 date: 2026-05-01
 cycle: λ.1
 status: NEGATIVE CLOSURE (post-audit + M.4 + M.5 + M.6) — wszystkie 6 testowanych mechanizmów FAIL; e² zostaje empirical coincidence

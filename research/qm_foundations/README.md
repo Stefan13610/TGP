@@ -1,5 +1,6 @@
 ---
 title: "Q0: Emergentna Mechanika Kwantowa z TGP -- Architektura"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

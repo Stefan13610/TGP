@@ -4,7 +4,8 @@ date: 2026-06-23
 type: research_cycle
 status: "🟢 CLOSED — REALIZABLE-NONCANONICAL (sympy 5/5); rekomendacje ZASTOSOWANE łącznie z #39 (sek08 ×2 + sek10 + STATE #38; build exit 0, 553 str.)"
 phase: FINAL
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 created_date: 2026-06-23
 session: "#38"
 authorization: "User 2026-06-23: 'tak działaj z op-Phi-field-identity-resolution'"

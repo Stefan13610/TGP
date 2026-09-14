@@ -1,5 +1,6 @@
 ---
 title: "op-metric-closure-relaxation — relaksacja z obustronnym domknięciem: podłoga QB-2 + granica metryczna ψ=4/3 (M9.1''); test stanu metametrycznego i kaskady nukleacji"
+folder_status: closed
 date: 2026-09-02
 type: research-cycle
 status: CLOSED

@@ -1,5 +1,6 @@
 ---
 title: "op-oblique-beam (B2-prime, proba #5) — pelny P2: wiazka skosna atan(1/2) na zwalidowanej szachownicy L=256"
+folder_status: closed
 date: 2026-07-12
 type: research-op
 status: CLOSED (2026-07-14)

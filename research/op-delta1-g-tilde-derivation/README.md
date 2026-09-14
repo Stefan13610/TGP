@@ -1,5 +1,6 @@
 ---
 title: "δ.1 — Derivation g̃ = 5e²/(12π): PARTIAL POSITIVE z H_NF (N_f=5)"
+folder_status: closed
 date: 2026-05-02
 cycle: δ.1
 status: PARTIAL POSITIVE — H_NF identyfikuje '5' jako N_f (QCD active flavors at M_Z)

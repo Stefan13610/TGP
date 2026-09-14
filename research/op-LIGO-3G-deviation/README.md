@@ -1,5 +1,6 @@
 ---
 title: "op-LIGO-3G-deviation — Fisher matrix forecasting M911-P1 dla ET-D + CE"
+folder_status: paused
 date: 2026-05-07
 parent: "[[../README.md]]"
 type: research-cycle

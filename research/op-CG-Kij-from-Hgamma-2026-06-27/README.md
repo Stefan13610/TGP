@@ -2,7 +2,9 @@
 title: "op-CG-Kij-from-Hgamma: czy kwartyczne sprzezenie geometryczne K_ij=J(phi_i phi_j)^2 (zrodlo alpha=2) wyprowadza sie z mikro H_Gamma jakimkolwiek coarse-grainingiem, czy jest nieredukowalnym aksjomatem v2?"
 date: 2026-06-27
 type: research-cycle
-folder_status: closed-resolved   # CLOSED 2026-06-27: F-CGK-D = NON-DERIVABLE (patrz Phase_FINAL_close.md)
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "CLOSED 2026-06-27: F-CGK-D = NON-DERIVABLE (patrz Phase_FINAL_close.md)"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 # ============== KICKOFF CONTRACT (structural cycle) ==============

@@ -3,7 +3,8 @@ title: "op-CG34-continuum-closure — domknięcie CG-3 (homogenizacja Φ_B→Φ 
 type: research_cycle
 status: "🟢 CLOSED — CG-3 ZAMKNIĘTY NUM; CG-4 PARTIAL (znaczący postęp) 2026-06-14"
 phase: FINAL
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 created_date: 2026-06-14
 closed_date: 2026-06-14
 authorization: "User 2026-06-14 (sesja #31): 'działaj z domknięciem CG-3/CG-4'"

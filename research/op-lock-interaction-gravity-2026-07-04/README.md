@@ -1,5 +1,6 @@
 ---
 title: "op-lock-interaction-gravity — oddzialywanie zlockowanych obiektow (most do grawitacji, krok 1)"
+folder_status: closed
 date: 2026-07-04
 type: research-op
 status: CLOSED

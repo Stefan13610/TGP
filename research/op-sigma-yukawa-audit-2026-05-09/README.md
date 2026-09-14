@@ -1,5 +1,6 @@
 ---
 title: "op-sigma-yukawa-audit-2026-05-09 — Adversarial audit of σ-channel propagation at LIGO scales"
+folder_status: paused
 date: 2026-05-09
 type: research-cycle
 priority: P1_CRITICAL

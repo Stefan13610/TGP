@@ -4,7 +4,8 @@ date: 2026-05-06
 parent: "[[../INDEX.md]]"
 status: CLOSED-SUPERSEDED  # post-2026-05-16 closure ceremony per Phase_FINAL_close.md
 closure_date: 2026-05-16
-folder_status: closed-superseded
+folder_status: closed
+legacy_status: "closed-superseded"
 claim_status: STRUCTURAL_NO_GO  # Path A scope; REDIRECTED-RESOLUTION via Path F successor cycle
 successor: "[[../op-inflation-substrate-genesis-2026-05-11/Phase_FINAL_close.md]]"  # Path F A− (2026-05-13)
 cycle: EXT-1 (extension L01)

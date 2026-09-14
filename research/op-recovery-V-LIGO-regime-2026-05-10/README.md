@@ -7,7 +7,8 @@ priority: P1_FRAMEWORK_RECOVERY (LIGO-regime mech iii viability under scale-depe
 parent: "[[../op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]]"
 target: "Re-activate recovery V mPhi parametric analysis w Branch D LIGO-regime context. Premise: γ_eff(ω_LIGO) ≪ M_Pl² (Branch D LIGO-regime limit) → V''(Φ_0)|_{LIGO} ≪ M_Pl² → m_Φ_observable(LIGO) ≪ M_Pl² → mechanism (iii) realizes naturally. Outcome: explicit V form for LIGO regime + observable predictions."
 status: closed-superseded — Cycle 1 closed GF.B-STRUCTURAL 2026-05-10; per §1.3 gating logic ARCHIVE per cycle's-own-rule (2026-05-11 disposition per meta/PROJECTION_TRIAGE §7 row #10)
-folder_status: closed-superseded
+folder_status: closed
+legacy_status: "closed-superseded"
 output_type: observable   # planned per L1_native.output_observable contract (never realized — cycle archived pre-activation)
 claim_status: D           # SPECULATIVE_PARTIAL — Phase 0 setup; never reached Phase 1 sympy
 predecessor:

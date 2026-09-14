@@ -1,5 +1,6 @@
 ---
 title: "op-chi1-newton-constant-derivation"
+folder_status: legacy
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 related:

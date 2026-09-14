@@ -3,7 +3,8 @@ title: "op-mechanism-v-enumeration — Phase 0 scoping cycle for Mechanism v (P6
 type: research_cycle
 status: CLOSED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 closed_date: 2026-06-10
 authorization_phase1: "User 2026-06-01: 'start faza 1' → Phase 1 scoping execution (enumeration cycle Phase 1)"
 authorization_final: "User 2026-06-10: 'ok zgoda działaj w wyznaczonej przez siebie kolejności' → Phase FINAL closure ceremony"

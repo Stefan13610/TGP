@@ -11,7 +11,9 @@
 title: "S07 Phase 3 BH5/ε.1 numerical — pre-observational f(ψ) family discrimination via QNM ringdown + photon ring observables"
 date: 2026-05-14
 type: research-cycle
-folder_status: closed-resolved   # 2026-05-14 sesja P3-FINAL: active → closed-resolved per Phase FINAL closure ceremony Opcja A heroic; claim_status A−; WIP slot 1/5 FREED
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "2026-05-14 sesja P3-FINAL: active → closed-resolved per Phase FINAL closure ceremony Opcja A heroic; claim_status A−; WIP slot 1/5 FREED"
 claim_status: A-                 # STRUCTURAL_DERIVED_NATIVE z L2 not-fully-FP-attempted (per S07-reset/inflation A− template)
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 

@@ -4,7 +4,8 @@ date: 2026-06-23
 type: research_cycle
 status: "🟢 CLOSED — RG-NOT-SELECTED (sympy 5/5); rekomendacje ZASTOSOWANE (sek08 ×2 + sek10 + STATE #39 + op-uv-as-ngfp; build exit 0, 553 str.)"
 phase: FINAL
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 created_date: 2026-06-23
 session: "#39"
 authorization: "User 2026-06-23: 'b' (cykl następczy nad zasadą selekcji rzędu bondu)"

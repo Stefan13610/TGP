@@ -1,5 +1,6 @@
 ---
 title: "op-symplectic-Jspectrum — mini-cykl: klasa dynamiki substratu a znak W (spektrum JL̂ na tłach łańcucha)"
+folder_status: closed
 date: 2026-08-31
 type: research-cycle
 status: CLOSED

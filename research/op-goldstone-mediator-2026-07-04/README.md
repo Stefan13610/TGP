@@ -1,5 +1,6 @@
 ---
 title: "op-goldstone-mediator — bezmasowy mediator U(1)/Goldstone (most do grawitacji, galaz B1)"
+folder_status: closed
 date: 2026-07-04
 type: research-op
 status: CLOSED

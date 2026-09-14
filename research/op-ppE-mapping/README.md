@@ -1,5 +1,6 @@
 ---
 title: "op-ppE-mapping — Mapowanie M9.1'' (5/6) U³ deviation na ppE phase parameter"
+folder_status: paused
 date: 2026-05-07
 parent: "[[../README.md]]"
 type: research-cycle

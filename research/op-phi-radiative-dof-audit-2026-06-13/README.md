@@ -1,6 +1,7 @@
 ---
 title: "op-phi-radiative-dof-audit-2026-06-13"
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "HONEST_NEGATIVE ⟹ PR-025 EXHAUSTIVE-OVER-LIVE (pending user ratification)"
 date_opened: 2026-06-13
 date_closed: 2026-06-13

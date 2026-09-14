@@ -2,7 +2,9 @@
 title: "op-Kgeo-from-D-uniqueness — czy K_geo·m_sp²=π·Φ₀² jest derywowalne z poziomu-0 (D-uniqueness + geometria rury), czy nieredukowalnie postulowane?"
 date: 2026-06-26
 type: research-cycle
-folder_status: closed-resolved   # CLOSED 2026-06-26: (C) POSTULATE-CONFIRMED (9/9). Phase 0 LOCK + Phase 1 + FINAL w 1 sesji — patrz Phase_FINAL_close.md
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "CLOSED 2026-06-26: (C) POSTULATE-CONFIRMED (9/9). Phase 0 LOCK + Phase 1 + FINAL w 1 sesji — patrz Phase_FINAL_close.md"
 claim_status: "C — STRUCTURAL_VERIFIED (pending-bridge: CG-1/CG-3)"
 parent: "[[../../partial_proofs/quark_sector/dodatekX_quark_sector.tex]]"
 

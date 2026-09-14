@@ -2,7 +2,8 @@
 title: "op-CE-H-gamma-7-clumping-acceleration-2026-05-24 — F8 acceleration via mass-clumping effective-space (BINDING contract)"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED_PHASE_0_PENDING
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-24
 parent_cycles:
   - op-CE-H-gamma-5-c-interpretation-2026-05-24 (B+ LOCKED 2026-05-24; F8 FAIL_LITERAL confirmed)

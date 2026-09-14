@@ -1,5 +1,6 @@
 ---
 title: "op-stationary-background — tlo stacjonarne dla sektora falowego: babel vs wir"
+folder_status: closed
 date: 2026-07-05
 type: research-op
 status: CLOSED

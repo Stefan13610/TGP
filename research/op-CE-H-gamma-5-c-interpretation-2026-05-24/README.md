@@ -2,7 +2,8 @@
 title: "op-CE-H-gamma-5-c-interpretation-2026-05-24 — Poziom γ-5 c interpretation + F8 re-test + GR predictions (BINDING contract)"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED_PHASE_0_ONLY
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-24
 parent_cycles:
   - op-CE-H-gamma-3-cosmological-2026-05-23 (B+ LOCKED 2026-05-23)

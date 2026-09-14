@@ -3,7 +3,8 @@ title: "op-R17-linear-runaway-diagnosis — diagnostic cycle: is the R1 #17 line
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED ARTIFACT_PARTIAL (LOCKED 2026-06-11) — runaway = transcription artifact (exact lemma φ' = √(3Δ)/τ); consistent EQ-5 routes bracket observed growth 10¹·⁴/10⁴·¹ vs 10³; R1 #17 downgraded CRITICAL → HIGH re-scoped; follow-up proposal op-frontier-creation-rate-derivation REGISTERED not activated; M_univ ×1.6 note = consistency check NOT prediction (Phase_FINAL §4)"
 created_date: 2026-06-11
 activated_date: 2026-06-11

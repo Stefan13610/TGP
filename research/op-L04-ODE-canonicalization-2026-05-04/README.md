@@ -1,5 +1,6 @@
 ---
 title: "L04 ODE-canonicalization — kanoniczna formulacja TGP α=2 (analytical decision)"
+folder_status: closed
 date: 2026-05-04
 cycle: L04
 type: audit-resolution

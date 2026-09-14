@@ -1,5 +1,6 @@
 ---
 title: "op-asymmetric-lattice (B2-prime, proba #4) — pelny P2: uniwersalnosc w znaku kretu na siatce skosnej (eksperyment zerowy kanalu cyrkulacyjnego)"
+folder_status: closed
 date: 2026-07-05
 type: research-op
 status: CLOSED (STOP na bramce G2, 2026-07-12)

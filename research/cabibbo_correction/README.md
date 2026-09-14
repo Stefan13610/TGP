@@ -1,5 +1,6 @@
 ---
 title: "R1: Korekcja Cabibbo — odejmowanie self-energii Z₃"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

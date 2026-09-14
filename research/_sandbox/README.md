@@ -1,5 +1,6 @@
 ---
 title: "_sandbox — piaskownica dla agentów (NIE część teorii)"
+folder_status: legacy
 date: 2026-05-03
 type: sandbox-readme
 parent: "[[../INDEX.md]]"

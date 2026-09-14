@@ -1,5 +1,6 @@
 ---
 title: "OP-6 rework — rigorous continuum limit of H_Γ"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

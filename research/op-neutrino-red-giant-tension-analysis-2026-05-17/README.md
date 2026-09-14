@@ -2,7 +2,8 @@
 title: "op-neutrino-red-giant-tension-analysis — does TGP μ_ν prediction create real astrophysical tension?"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

@@ -7,7 +7,8 @@ parent: "[[../op-emergent-metric-from-interaction-2026-05-09/Phase4_results.md]]
 target: "Numerical scalar mode amplitude bound check vs LIGO polarization"
 classification: FALSIFIER_CHECK_CYCLE
 status: 🟠 DOWNGRADED 2026-05-09 — STRUCTURAL_CONDITIONAL (Phase 3 verdict corrected)
-folder_status: amended-conditional
+folder_status: closed
+legacy_status: "amended-conditional"
 sympy_total: "28/28 PASS (Phase 1-3 + amendment Phase 1+2 calibration)"
 close_date: 2026-05-09
 phase_final_close: "[[./Phase_FINAL_close.md]]"

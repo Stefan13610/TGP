@@ -1,5 +1,6 @@
 ---
 title: "M03 balance sheet retrofit — multi-session retrospective audit framework"
+folder_status: closed
 date: 2026-05-06
 cycle: M03
 type: long-running-audit

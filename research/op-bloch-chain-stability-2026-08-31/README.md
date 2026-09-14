@@ -1,5 +1,6 @@
 ---
 title: "op-bloch-chain-stability — następca Q1: samouzgodniony łańcuch periodyczny + Bloch w sektorze tachionowym (ω²(n) modu runaway)"
+folder_status: closed
 date: 2026-08-31
 type: research-cycle
 status: CLOSED — Q-FAIL (PRIMARY wg rulingu; strict-literal: Q-INCONCLUSIVE)

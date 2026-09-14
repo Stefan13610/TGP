@@ -1,5 +1,6 @@
 ---
 title: "μ.1 — Minimal substrate redefinition (ψ ≡ log g)"
+folder_status: closed
 date: 2026-05-02
 cycle: μ.1
 status: NO-GO CLOSURE — reparametryzacja PASS (mathematically invariant), ale Σε=2 topology NIE-DERIVED

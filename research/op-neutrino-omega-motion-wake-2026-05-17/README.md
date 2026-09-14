@@ -2,7 +2,8 @@
 title: "op-neutrino-omega-motion-wake — δθ wake derivation dla moving n=0 kink (neutrino) w polu A_μ"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 # ============== KICKOFF CONTRACT (BINDING post-2026-05-10) ==============

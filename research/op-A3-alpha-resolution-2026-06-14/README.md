@@ -3,7 +3,8 @@ title: "op-A3-alpha-resolution — rozstrzygnięcie niespójności α=2 ↔ K(φ
 type: research_cycle
 status: "🟢 CLOSED — DERIVED-INCONSISTENCY (α=2 nie wynika z substratu pod Φ=⟨ŝ²⟩) 2026-06-14"
 phase: FINAL
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 created_date: 2026-06-14
 closed_date: 2026-06-14
 authorization: "User 2026-06-14 (sesja #31): 'tak działaj z op-A3-alpha-resolution'"

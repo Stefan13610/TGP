@@ -2,7 +2,8 @@
 title: "op-neutrino-RP2-wake-extension — δθ wake under RP² Berry phase topology (R3 closure z β-task)"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

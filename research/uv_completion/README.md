@@ -1,5 +1,6 @@
 ---
 title: "R7: UV Completion — unifikacja sprzężeń przy M_Pl"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: "needs-bridge"

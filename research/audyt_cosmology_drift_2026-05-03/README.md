@@ -1,5 +1,6 @@
 ---
 title: "Audyt cosmology drift remediation 2026-05-03"
+folder_status: paused
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 type: audit

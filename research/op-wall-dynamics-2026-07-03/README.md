@@ -3,7 +3,8 @@ title: "op-wall-dynamics — interpretacja ściany duchowej + stabilność solit
 type: research_cycle
 status: CLOSED-EXECUTED
 phase: FINAL
-folder_status: closed-mixed-verdict
+folder_status: closed
+legacy_status: "closed-mixed-verdict"
 claim_status: "CLOSED-EXECUTED 2026-07-03 — W1 NEGATYWNE (wersja liniowa): mody μ/τ przetrwały wszystkie więzy K1–K3 i pre-deklarowane kombinacje; minimum osiągalne μ:1/τ:1 (pary z K4), rezydualny mod NIE jest kierunkiem rodziny (overlap ≈0,005 ≪ 0,9). Struktura: K4 (budżet rdzeniowy) usuwa dokładnie mody GŁĘBOKIE (−1,282/−4,216). W2 NEGATYWNE dla gładkich regularyzacji: soft-wall f_ε — τ KOLABUJE dla każdego ε (odbicie funkcjonalnie konieczne także wśród gładkich modeli EL); λ_min(ε→0) nie zbiega; dryf r₂₁ (μ-only) +1,9%…+23% ≫ 0,1%. W3a: g₀_wall=1,6114 ≈ 8/5 (0,71%) — górny próg g_crit (H7) pokrywa się z progiem aktywacji ściany dolnej g*: dwa progi = jeden mechanizm ścienny; B_core bez ekstremum przy progach (max ≈3,06); E_core nierozstrzygalne (szum kinków). Hipoteza budżetowa autora: obalona w wersji LINIOWEJ, wzmocniona strukturalnie (K4/g_crit⟺g*) — wymaga więzu nieliniowego/ładunkowego."
 created_date: 2026-07-03
 closed_date: 2026-07-03

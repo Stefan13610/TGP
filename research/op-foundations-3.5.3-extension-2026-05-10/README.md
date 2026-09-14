@@ -7,7 +7,8 @@ priority: P2_FOUNDATIONS_DOCUMENTATION (formal foundations amendment integrating
 parent: "[[../op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]]"
 target: "Update foundations §3.5.3 (EFT scale-dependent Φ_0) z explicit Branch D γ_eff(μ) framework. Update §3.5.6 (Pattern 2.5) z RG-scale-dep extension. Provide formal foundations update integrating parent + Cycles 1-3 results into TGP_FOUNDATIONS.md. Documentation gate dla framework consistency."
 status: 🟢 CLOSED 2026-05-10 — foundations §3.5.3 + §3.5.6 patches applied; adversarial PASS-WITH-FLAGS (5 LOW findings only)
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 verdict: "Foundations document successfully patched z Cycles 1+3 quantitative content"
 close: "[[./Phase_FINAL_close.md]]"
 predecessor:

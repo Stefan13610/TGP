@@ -1,5 +1,6 @@
 ---
 title: "op-Higgs-hierarchy-mechanism — strukturalna analiza Q2 F1 + S05 jako mechanism protecting m_H od Λ_UV² destabilization (N4 R3 deferred follow-up)"
+folder_status: paused
 date: 2026-05-11
 type: research-cycle
 status: 🟡 OPEN — scaffold opened 2026-05-11 (revolutionary scope; ~8-12 sesji est.; honest CAVEAT: full resolution może być out of scope)

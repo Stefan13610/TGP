@@ -1,5 +1,6 @@
 ---
 title: "R4: Ansatz metryczny h(Φ)=Φ z pierwszych zasad"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

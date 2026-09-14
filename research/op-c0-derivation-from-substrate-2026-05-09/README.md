@@ -1,5 +1,6 @@
 ---
 title: "op-c0-derivation-from-substrate-2026-05-09 — pierwsza-zasadowa derywacja c_0 σ-coupling"
+folder_status: closed
 date: 2026-05-09
 type: research-cycle
 priority: P1_CRITICAL

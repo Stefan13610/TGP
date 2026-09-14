@@ -1,5 +1,6 @@
 ---
 title: "op-void-flat-modes-h0 — spłaszczanie/tunelowanie stopni swobody w obszarach ρ→0 jako kanał H₀ tension"
+folder_status: closed
 date: 2026-05-06
 parent: "[[../INDEX.md]]"
 type: research_program

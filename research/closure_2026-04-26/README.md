@@ -1,5 +1,6 @@
 ---
 title: "closure_2026-04-26"
+folder_status: legacy
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 related:

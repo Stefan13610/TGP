@@ -1,5 +1,6 @@
 ---
 title: "_archive — archiwum obsoletnych ścieżek badawczych"
+folder_status: legacy
 date: 2026-05-03
 type: archive-readme
 parent: "[[../INDEX.md]]"

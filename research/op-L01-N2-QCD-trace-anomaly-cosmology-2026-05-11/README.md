@@ -1,5 +1,6 @@
 ---
 title: "op-L01-N2-QCD-trace-anomaly-cosmology — non-perturbative ρ_QCD(T) jako transient source dla Φ-EOM w QCD epoce + Friedmann integration + BBN/CMB/PTA bounds"
+folder_status: paused
 date: 2026-05-11
 type: research-cycle
 status: 🟡 OPEN — Phase 0 in progress (multi-session: ~4-6 sesji est.)

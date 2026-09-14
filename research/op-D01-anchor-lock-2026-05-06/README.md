@@ -1,5 +1,6 @@
 ---
 title: "D01 anchor lock + propagacja parametrów (Φ₀, α_s, m_H, Σm_ν, g_0^e)"
+folder_status: locked
 date: 2026-05-06
 cycle: D01
 type: audit-resolution

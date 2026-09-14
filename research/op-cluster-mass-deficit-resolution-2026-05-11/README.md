@@ -1,5 +1,6 @@
 ---
 title: "op-cluster-mass-deficit-resolution — galactic cluster ~35% mass deficit at virial scale + sterile neutrino/TGP alternative analysis"
+folder_status: paused
 date: 2026-05-11
 type: research-cycle
 status: 🟡 OPEN — scaffold opened 2026-05-11 (multi-session est. ~6-10 sesji)

@@ -3,7 +3,8 @@ title: "op-S07-emergent-metric-integration — formal integration of emergent-me
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL COMPLETE 2026-06-01
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED INTEGRATION_COMPLETE"
 created_date: 2026-06-01
 activated_date: 2026-06-01

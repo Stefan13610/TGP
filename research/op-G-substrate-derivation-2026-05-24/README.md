@@ -3,7 +3,8 @@ title: "op-G-substrate-derivation — independent γ derivation from TGP fundame
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL COMPLETE 2026-06-01
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED HONEST_NEGATIVE"
 created_date: 2026-05-24
 activated_date: 2026-06-01

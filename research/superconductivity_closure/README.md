@@ -1,5 +1,6 @@
 ---
 title: "Program P5 — Superconductivity Closure"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

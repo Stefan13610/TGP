@@ -3,7 +3,8 @@ title: "op-frontier-creation-rate-derivation — derive S_creation, M_univ(t) re
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "PHASE3_COMPLETE — frontier marginality DERIVED (principle: stability trichotomy; coefficient: ε = (3/2)(v_c/c)² EXACT, two-point set {2/3, 3/2}; B1 upgrade POSTULATE → MARGINALITY-DERIVED). TWO-POINT parameter-free prediction: log₁₀G ∈ {2.025 (EdS-coincident), 3.249} — BOTH PASS_BAND, observed 3.0 between. Tiebreaker = frontier microphysics (§10.6 Q4) OPEN. F-FCR-D STRUCTURAL_CONDITIONAL (SHARPENED); NO PR-022"
 created_date: 2026-06-11
 activated_date: 2026-06-11

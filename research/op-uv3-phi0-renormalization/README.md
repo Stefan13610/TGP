@@ -1,5 +1,6 @@
 ---
 title: "UV.3 — explicit Φ₀ wave-function renormalization Z_Φ = 14/3 (FULL CONVERGENCE 16/16)"
+folder_status: paused
 date: 2026-05-02
 cycle: UV.3
 status: COMPLETE — FULL CONVERGENCE

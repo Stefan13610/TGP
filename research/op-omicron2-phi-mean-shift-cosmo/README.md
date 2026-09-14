@@ -1,5 +1,6 @@
 ---
 title: "op-omicron2-phi-mean-shift-cosmo — TGP Phi_0(t) tracking — NULL Hubble tension"
+folder_status: closed
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 type: research_program

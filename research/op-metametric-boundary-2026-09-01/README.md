@@ -4,7 +4,8 @@ date: 2026-09-01
 type: research-cycle
 status: CLOSED-EXECUTED
 closed_date: 2026-09-01
-folder_status: closed-q1-positive-q2-inconclusive
+folder_status: closed
+legacy_status: "closed-q1-positive-q2-inconclusive"
 claim_status: "Q1-POS (μ(sol|próżnia)=−0.179<0, ε(2π)=−5.2e−4<0 vs ΔE(sol|pusty)=+16157>0 — znaki mieszane, próżnia już w reżimie opłacalnej kreacji); Q2-INCONCLUSIVE (18/18 załamanie NIE-nukleacyjne g→+∞, podłoga QB-2 nigdy nieaktywowana, zero nukleacji; P2a 12/12, P2c 18/18 czyste); Q3 nie wykonane (warunek LOCKa niespełniony)."
 tgp_owner: research/op-metametric-boundary-2026-09-01
 authorization: "User 2026-09-01: hipoteza z README op-blocked-soliton-bang (zerokosztowa kreacja na granicy metrycznej); »jeżeli [obliczenia] załamią się ze względu na generowanie obiektów to w sumie będzie wynik pozytywny. I tak zapisz nowy cykl«"

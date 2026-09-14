@@ -1,5 +1,6 @@
 ---
 title: "OP-UV-RENORMALIZABILITY-RESEARCH — UV-complete renormalizability (research-track wieloletni)"
+folder_status: paused
 date: 2026-04-28
 status: 🔬 OPEN — research-track wieloletni (long-term, parallel to Phase 4 empirical)
 predecessor: "[[../op-phase3-uv-completion/Phase3_R_final_results.md]] (Phase 3 cycle CLOSED 60/60, GRAND TOTAL 281)"

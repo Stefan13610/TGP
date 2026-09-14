@@ -1,5 +1,6 @@
 ---
 title: "op-amplitude-density-global-audit"
+folder_status: closed
 date: 2026-06-16
 type: research-cycle
 status: CLOSED

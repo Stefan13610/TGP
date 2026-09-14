@@ -3,7 +3,8 @@ title: "op-Phase5-MAG-erratum — fix internal inconsistency w Phase 5 gamma ide
 date: 2026-05-09
 type: erratum-cycle
 status: PHASE0_PHASE1_IN_PROGRESS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 classification: ERRATUM_LIGHTWEIGHT
 parent: "[[../op-Phi-vacuum-scale-2026-05-09/Phase2_results.md]]"
 related_cycles:

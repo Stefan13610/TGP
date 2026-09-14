@@ -2,7 +2,8 @@
 title: "op-R2-audit-3-6-extension-2-2026-05-24 — R2 audit dla 3 R1 flag CANDIDATES z γ-3 cycle"
 type: audit_cycle
 status: PRE_REGISTERED_LOCKED
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-24
 parent_cycles:
   - op-CE-H-gamma-3-cosmological-2026-05-23 (B+ verdict; 3 R1 flags identified)

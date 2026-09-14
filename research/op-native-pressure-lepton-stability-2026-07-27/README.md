@@ -3,7 +3,8 @@ title: "op-native-pressure-lepton-stability — od ciśnienia Goldstone'a (N4d) 
 type: research_cycle
 status: OPEN-ACTIVE
 phase: "po retrospektywie 2026-08-16; rachunek centralny (V3 w kąpieli sąsiadów) NIEWYKONANY"
-folder_status: open-mixed-verdict
+folder_status: paused
+legacy_status: "open-mixed-verdict"
 claim_status: "OPEN 2026-08-16 — cykl wieloetapowy z serią twardych audytów. OBALONE: N4d 'native pressure' w izolacji (E[u]≥0 z równością iff u≡1 w obu sektorach kanonicznych — strukturalnie niewykonalne), 'pressure+loops=111%' (overfitting: jawny skan scale/λ_loop), bounce-hierarchy (N_neg=artefakt pudła 12/19/25=floor(R/π); F-A kanoniczna: runaway dla wszystkich g₀), cała warstwa budżetowa (h≡1 artefakt+bug; lokalizacja=artefakt UV; B=2 z rdzenia ⟹ |Δf|_max=0), kolor ℤ₃ z substratu Isinga (rank-3 znika tożsamościowo; GL(3,𝔽₂) perfekcyjna), σ_ab bez próżni (|σ|~L^−2.03), reżim III/studnia (trzy niezgodne rachunki rdzenia; ~17 PASS bez możliwego FAIL; studnia=osobliwość −1/d). PRZEŻYŁO: uniqueness 2T (jedyna skończona podgrupa SU(2) nieabelowa z ℤ₃ w abelianizacji), spin bezbarwny (−1∈Q₈ ⟹ χ(−1)=1), E[u]≥0 (twierdzenie), d*=4β (odporne na usunięcie E_γ, 13%), oscylacyjny lock (4/4 PASS z kontrolą negatywną: dyskretna drabina minimów co 2π·r_core, d*≈6.0–6.1, stabilny łańcuch 3 źródeł). ZIDENTYFIKOWANA ŚLEPA PLAMKA: żaden test stabilności w całym korpusie nie policzył konfiguracji o skończonej gęstości źródeł — tej, o której ontologia TGP twierdzi, że jest stabilna."
 created_date: 2026-07-27
 closed_date: null

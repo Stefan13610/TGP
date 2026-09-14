@@ -1,5 +1,6 @@
 ---
 title: "op-vortex-refraction (B2-prime) — ilosciowa refrakcja fal na defekcie: most geometryczny wokol materii-defektow"
+folder_status: closed
 date: 2026-07-05
 type: research-op
 status: CLOSED

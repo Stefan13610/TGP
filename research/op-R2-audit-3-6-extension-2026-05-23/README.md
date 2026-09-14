@@ -2,7 +2,8 @@
 title: "op-R2-audit-3-6-extension-2026-05-23 — R2 audit cycle dla CALIBRATION §3.6 BINDING extension"
 type: integration_audit_cycle
 status: PRE_REGISTERED_LOCKED
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-23
 parent_cycle: op-CE-H-3D-native-interaction-2026-05-22 (A- conditional Poziom γ-1)
 parent_audit: op-R2-integration-audit-CE-H-FFS-2026-05-22 (R2_PASS; first R2 audit; §3.6 BINDING source)

@@ -1,5 +1,6 @@
 ---
 title: "G.0 — R3 ODE jako projekcja TGP-canonical na M9.1'' (foundational unification)"
+folder_status: closed
 date: 2026-05-02
 cycle: G.0
 status: PHASE 4 CLOSED-POSITIVE — sek08a v2.0 + sek08c A1/A2/A3 closure + cross-references applied to core LaTeX (pdflatex compile clean)

@@ -2,7 +2,8 @@
 title: "op-composite-higgs-substrate-attempt — sesja-1-of-N multi-session attempt na composite Higgs framework w TGP dla problem #3 boson sub-component"
 date: 2026-05-18
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

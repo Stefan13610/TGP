@@ -1,5 +1,6 @@
 ---
 title: "γ.1 — Φ_eff anchor inconsistency resolution (RESOLVED z H5)"
+folder_status: closed
 date: 2026-05-02
 cycle: γ.1 (G1)
 status: POSITIVE CLOSURE — H5 (multi-anchor reality + structural primacy Φ_eff = 8π)

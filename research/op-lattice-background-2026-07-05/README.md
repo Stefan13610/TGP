@@ -1,5 +1,6 @@
 ---
 title: "op-lattice-background (B2-prime, proba #2) — refrakcja na defekcie na tle szachownicowym o zerowej sile netto"
+folder_status: closed
 date: 2026-07-05
 type: research-op
 status: CLOSED

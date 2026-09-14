@@ -1,5 +1,6 @@
 ---
 title: "op-mPhi-level0-verification-2026-05-09 — Verify m_Φ at level 0 dla mechanism (iii) realization"
+folder_status: paused
 date: 2026-05-09
 type: research-cycle
 priority: P1_BLOCKER

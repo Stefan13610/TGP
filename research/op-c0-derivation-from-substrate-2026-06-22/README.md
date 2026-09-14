@@ -1,5 +1,6 @@
 ---
 title: "op-c0-derivation-from-substrate (2026-06-22, #37) — czy c₀ (sprzężenie σ, C(ψ=1)) jest wyprowadzalne z substratu, czy jest wolnym parametrem UV (jak C_σ, #33)?"
+folder_status: closed
 date: 2026-06-22
 type: research-cycle
 status: 🟡 CLOSED-VERDICT — c₀ = WOLNY PARAMETR UV (LOCK §4 wiersz 1, sympy 5/5); rekomendacje rdzenia WSTRZYMANE do autoryzacji

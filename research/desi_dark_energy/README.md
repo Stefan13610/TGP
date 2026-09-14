@@ -1,5 +1,6 @@
 ---
 title: "DESI w(z) Phantom-Crossing Falsification — Program P2 (TGP Redirect)"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

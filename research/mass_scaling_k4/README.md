@@ -1,5 +1,6 @@
 ---
 title: "R5: Prawo skalowania m ∝ A_tail⁴"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

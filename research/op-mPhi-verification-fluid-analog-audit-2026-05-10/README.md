@@ -7,7 +7,8 @@ priority: P0_META_FIX (T2.A track w post-burza-2026-05-10 strategy)
 parent: "[[../op-mPhi-level0-verification-2026-05-09/Phase1_results.md]]"
 target: "Determine czy mPhi-verification verdict 'm_ψ ~ M_Pl → mechanism iii FAILS' jest BD-drift artifact under TGP-native environment-dependent m_Φ_observable interpretation (Pattern 2.5 / foundations §3.5.6 DRAFT)"
 status: ACTIVE — Phase 1 light-touch audit (ten dokument)
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 predecessor:
   - "[[../op-mPhi-level0-verification-2026-05-09/Phase1_results.md]] (24/24 PASS, m_ψ_intrinsic = (2/√3)·M_Pl, verdict mechanism iii FAILS)"
   - "[[../op-recovery-V-mPhi-parametric-analysis-2026-05-09/Phase1_results.md]] (38/38 PASS, BD-drift detected w framing)"

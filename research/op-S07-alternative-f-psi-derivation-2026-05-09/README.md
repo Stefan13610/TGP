@@ -7,7 +7,8 @@ parent: "[[../../audyt/S07_M911_derivation/README.md]]"
 target: "S07 audit realization — find alternative f(ψ) ansatz post-(4-3ψ)/ψ falsification"
 classification: TGP_BLOCKER_RESOLUTION
 status: CLOSED-SUPERSEDED-BY-EMERGENT-METRIC
-folder_status: closed-superseded
+folder_status: closed
+legacy_status: "closed-superseded"
 supersession_annotation: "2026-06-01 (via op-S07-emergent-metric-integration-2026-06-01 F-INT-B PASS_FULL_SUPERSESSION): Option B path (Phase FINAL §5) realized in op-emergent-metric-from-interaction-2026-05-09. Path Option A (M9.1''-class deep dive) declared UNNECESSARY. Substantive verdict 82/82 PASS + STRUCTURAL_CONDITIONAL_HALT classification PRESERVED unchanged at substance level per integration cycle §4.5 LOCK."
 original_status_preserved: "STRUCTURAL_CONDITIONAL_HALT 82/82 PASS (substantive verdict PRESERVED unchanged; supersession is CLASSIFICATION ANNOTATION update, NOT verdict modification)"
 predecessor_cycles:

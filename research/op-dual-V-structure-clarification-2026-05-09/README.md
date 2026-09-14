@@ -3,7 +3,8 @@ title: "op-dual-V-structure-clarification — formal verification dual-V hypothe
 date: 2026-05-09
 type: structural-clarification-cycle
 status: PHASE0_PHASE1_IN_PROGRESS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 classification: STRUCTURAL_CLARIFICATION
 parent: "[[../op-MAG-Phase5-V-reference-clarification-2026-05-09/Phase1_clarification_results.md]]"
 related_cycles:

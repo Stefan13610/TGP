@@ -1,5 +1,6 @@
 ---
 title: "R3: Dlaczego N=3 generacji? (T-OP3)"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

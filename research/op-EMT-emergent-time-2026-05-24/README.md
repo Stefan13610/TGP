@@ -3,7 +3,8 @@ title: "op-EMT-emergent-time — TGP emergent-time formalism + (z, d_L) re-deriv
 type: research_program
 status: DEFERRED
 phase: pre-Phase 0 (skeleton)
-folder_status: deferred
+folder_status: paused
+legacy_status: "deferred"
 created_date: 2026-05-24
 parent_motivation: "γ-5 §3.5 'time emerges from reconfiguration dynamics, rate = c' + sek08c g_eff_00 metric form — formal τ(N) mapping never derived in TGP"
 authorization: "User 2026-05-24: 'trzeba stworzyć wszystkie 4, ustawić im odpowiedni status i kolejność'"

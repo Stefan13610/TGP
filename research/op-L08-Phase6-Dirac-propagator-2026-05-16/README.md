@@ -5,7 +5,8 @@ pre_registration_date: 2026-05-16
 parent: "[[../../audyt/L08_kink_fermion_closure/README.md]]"
 cycle: L08 Phase 6 (warstwa 3c kink-fermion closure)
 status: CLOSED-RESOLVED — A− claim_status, 13/13 sympy PASS, single-session sprint
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: A-
 closure_date: 2026-05-16
 may_edit_core: false

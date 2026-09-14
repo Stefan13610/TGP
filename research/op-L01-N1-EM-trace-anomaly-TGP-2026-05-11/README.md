@@ -1,5 +1,6 @@
 ---
 title: "op-L01-N1-EM-trace-anomaly-TGP — Quantum trace anomaly EM (1-loop QED na g_eff[{Φ_i}]) i ρ_EM_quantum jako native source dla Φ-EOM"
+folder_status: paused
 date: 2026-05-11
 type: research-cycle
 status: 🟡 OPEN — Phase 0 in progress

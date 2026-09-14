@@ -2,7 +2,8 @@
 title: "op-CE-H-two-particle-equilibrium — Toy test of CE-H structural claim (Poziom β)"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-21
 parent_concept_paper: meta/TGP_GENERATED_SPACE_COSMOLOGY_2026-05-21.md
 parent_cycle: op-FFS-quark-object-2026-05-20 (A- conditional closure 2026-05-20)

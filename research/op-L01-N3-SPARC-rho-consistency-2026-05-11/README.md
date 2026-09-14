@@ -1,5 +1,6 @@
 ---
 title: "op-L01-N3-SPARC-rho-consistency — verification że ρ_SPARC ≡ ρ_baryon ≡ -T^μ_μ_dust/c_0² w non-relativistic galactic limit (<1% precision)"
+folder_status: paused
 date: 2026-05-11
 type: research-cycle
 status: 🟡 OPEN — Phase 0+1 in single session (low-priority cosmetic)

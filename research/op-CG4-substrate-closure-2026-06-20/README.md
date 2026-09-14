@@ -1,5 +1,6 @@
 ---
 title: "op-CG4-substrate-closure — domknięcie residuum CG-4: niepatologiczny model substratu dla scheme-independent C_σ (pinowanie κ_E → twardy werdykt sektora radiacyjnego GW)"
+folder_status: closed
 date: 2026-06-20
 type: cycle_readme
 status: 🟢 CLOSED (2026-06-20) — pełny cykl 0+1+2+3+FINAL; substrat RESOLVED (M0); C_σ dowiedzenie UV-czuły = wolny parametr (sektor radiacyjny nieusuwalny bąblem)

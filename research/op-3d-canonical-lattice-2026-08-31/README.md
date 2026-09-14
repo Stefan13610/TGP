@@ -1,5 +1,6 @@
 ---
 title: "op-3d-canonical-lattice — CLOSED: Q-FAIL — sieć sc solitonów kanonicznych μ istnieje tylko przy d=2π i jest tachionowa (ω²_min=−1.674350, potwierdzone nieliniowo); 3D pogłębia niestabilność względem 1D (−1.22)"
+folder_status: closed
 date: 2026-08-31
 type: research-cycle
 status: CLOSED

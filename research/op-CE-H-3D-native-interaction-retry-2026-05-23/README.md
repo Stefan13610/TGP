@@ -2,7 +2,8 @@
 title: "op-CE-H-3D-native-interaction-retry-2026-05-23 — Poziom γ-1 retry z §3.6 extension compliance"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-23
 parent_cycle: op-CE-H-3D-native-interaction-2026-05-22 (γ-1 A- conditional; original)
 parent_audit: op-R2-audit-3-6-extension-2026-05-23 (R2_PASS; §3.6 extension BINDING source)

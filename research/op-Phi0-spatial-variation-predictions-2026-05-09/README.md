@@ -3,7 +3,8 @@ title: "op-Phi0-spatial-variation-predictions — testable predictions Hipoteza 
 date: 2026-05-09
 type: predictions-cycle
 status: PHASE0_PHASE1_IN_PROGRESS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 classification: TESTABLE_PREDICTIONS
 parent: "[[../op-Phi-vacuum-scale-2026-05-09/Phase_OPEN_FRONTIER_phi0_local_variation.py]]"
 related_cycles:

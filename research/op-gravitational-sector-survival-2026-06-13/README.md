@@ -3,7 +3,8 @@ title: "op-gravitational-sector-survival — czy istnieje minimalna niead-hoc re
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 closed_date: 2026-06-13
 claim_status: "CLOSED-RESOLVED INDETERMINATE — sektor grawitacyjny TGP_v1 NIE sfalsyfikowany. D1–D5 BREAKS/GAP (no-go FP7 nad pod-teorią konforemną); D6 (disformal LIVE) = LIVE_UNRESOLVED (X² łamie FP7; κ_E unpinned; M_* underived). F-GSS-B NOT_EXHAUSTED. 'EXHAUSTIVE-OVER-LIVE' z PR-025 skorygowane co do zasięgu (NIE liczb). Spawn: op-disformal-radiation-resolution. 13/13 sympy PASS."
 spawn: "[[../op-disformal-radiation-resolution-2026-06-13/]]"

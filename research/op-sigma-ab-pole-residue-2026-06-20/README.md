@@ -1,5 +1,6 @@
 ---
 title: "op-sigma-ab-pole-residue — czy framework dostarcza warunek pole-residue ustalający C_σ (κ_E) jako predykcję? WERDYKT: NIE (decydujący negatyw)"
+folder_status: closed
 date: 2026-06-20
 type: cycle_readme
 status: 🟢 CLOSED (2026-06-20) — WERDYKT NEGATYWNY: brak pole-residue; C_σ pozostaje wolnym parametrem; κ_E = wolny parametr (opcja b)

@@ -1,5 +1,6 @@
 ---
 title: "L01 ρ stress-energy bridge — formal kowariantna definicja gęstości materii"
+folder_status: closed
 date: 2026-05-04
 cycle: L01
 type: audit-resolution

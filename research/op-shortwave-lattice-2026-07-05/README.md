@@ -1,5 +1,6 @@
 ---
 title: "op-shortwave-lattice (B2-prime, proba #3) — refrakcja krotkofalowa na siatce L=256: domkniecie P1 w domenie eikonalu"
+folder_status: closed
 date: 2026-07-05
 type: research-op
 status: CLOSED

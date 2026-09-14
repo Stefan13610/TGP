@@ -1,5 +1,6 @@
 ---
 title: "op-L01-N4-Higgs-trace-anomaly — 1-loop Higgs sektor trace anomaly w g_eff[{Φ_i}] + SSB cancellation framework + h(x) quantum fluctuations + EW phase transition cosmology"
+folder_status: paused
 date: 2026-05-11
 type: research-cycle
 status: 🟡 OPEN — Phase 0+1 in current session (multi-session: ~3-5 sesji est.)

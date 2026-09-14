@@ -2,7 +2,8 @@
 title: "op-neutrino-L_X-structural-derivation-attempt — Paths F/G/H attempt (post-L06 A-D failures)"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

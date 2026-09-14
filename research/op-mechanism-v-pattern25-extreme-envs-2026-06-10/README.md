@@ -3,7 +3,8 @@ title: "op-mechanism-v-pattern25-extreme-envs — dedicated cycle: does the bina
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED NEGATIVE (LOCKED 2026-06-11) — F-P25-A PARTIAL_SOURCE_NS_ONLY + F-P25-B FAIL_NEGATIVE (NS-NS δψ_max = 2.92e-79, shortfall 77.1 orders; BVP-validated 24/24 PASS cumulative) + F-P25-C NOT_APPLICABLE + F-P25-D NEGATIVE; P6 R5 confirmed for extreme environments; mechanism v routes to candidate (c) framework extension; NO PR-021"
 created_date: 2026-06-10
 activated_date: 2026-06-10

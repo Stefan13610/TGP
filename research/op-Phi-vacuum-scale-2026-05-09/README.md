@@ -3,7 +3,8 @@ title: "op-Phi-vacuum-scale — derivation Φ_0 z first principles + UV/IR norma
 date: 2026-05-09
 type: research-cycle
 status: 🔒 CLOSED
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 verdict: STRUCTURAL_DERIVED_CONDITIONAL_HALT
 phase: FINAL
 classification: STRUCTURAL_CLARIFICATION_CYCLE

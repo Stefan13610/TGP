@@ -2,7 +2,8 @@
 title: "op-CE-H-3D-native-interaction-2026-05-22 — Poziom γ-1: native 3D U(1) interaction F-γ-1 CRUCIAL TEST"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-22
 parent_concept_paper: meta/TGP_GENERATED_SPACE_COSMOLOGY_2026-05-21.md
 parent_cycle: op-CE-H-two-particle-equilibrium-2026-05-21 (A- conditional Poziom β CLOSED)

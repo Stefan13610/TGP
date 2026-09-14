@@ -1,5 +1,6 @@
 ---
 title: "Kosmologiczne napięcia jako jednorodny efekt substratu TGP"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

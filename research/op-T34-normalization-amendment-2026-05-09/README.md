@@ -1,5 +1,6 @@
 ---
 title: "op-T34-normalization-amendment-2026-05-09 — Audit + amendment of T3.4 ξ_eff normalization chain"
+folder_status: paused
 date: 2026-05-09
 type: research-cycle
 priority: P1_CRITICAL

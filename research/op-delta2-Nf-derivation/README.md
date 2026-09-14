@@ -1,5 +1,6 @@
 ---
 title: "δ.2 — Derivation N_f = 5: Level B PARTIAL POSITIVE z H_decouple + H_geom"
+folder_status: closed
 date: 2026-05-02
 cycle: δ.2
 status: PARTIAL POSITIVE Level B — N_f=5 structurally derivable z mass ordering + M_Z scale

@@ -2,7 +2,8 @@
 title: "op-nucleation-dimensionality — czy maszyneria TGP (nukleacja + topologia defektów S05/Z₂/U(1)/RP² + stabilność + marginalność) SELEKCJONUJE wymiar przestrzenny D=3, czy istniejący argument sek07a Q(d) jest skonstruowany pod znany D_obs=3? Value-blind audyt + uczciwy test D>3."
 date: 2026-06-13
 type: research_cycle
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 phase: FINAL
 claim_status: "C (STRUCTURAL_VERIFIED)"
 closed_date: 2026-06-13

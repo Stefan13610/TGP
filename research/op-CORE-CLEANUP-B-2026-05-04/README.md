@@ -1,5 +1,6 @@
 ---
 title: "CORE-CLEANUP-B — hybrydowe wyczyszczenie rdzenia (literal cleanup body + dodatek_pivot_history)"
+folder_status: paused
 date: 2026-05-04
 cycle: CORE-CLEANUP-B
 type: cleanup-cycle

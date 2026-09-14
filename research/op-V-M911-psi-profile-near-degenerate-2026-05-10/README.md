@@ -7,7 +7,8 @@ priority: P0_T3 (post-burza-2026-05-10 strategy continuation)
 parent: "[[../op-mPhi-verification-fluid-analog-audit-2026-05-10/README.md]]"
 target: "Quantitative verification że near-degenerate ψ regions (V''(ψ) = 0 at ψ_± = (6±2√3)/9) are physically realizable w realistic source environments → mechanism (iii) realizes naturally bez recovery V search"
 status: 🟢 CLOSED 2026-05-10 — Phase 1+2+3 DONE (50/50 PASS); verdict UPGRADED z CONDITIONAL → CONFIRMED via Cycle 1 GF.B-STRUCTURAL post-cascade
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 verdict: "Pattern 2.5 BINDING-PRINCIPLE-CONFIRMED-ALGEBRAIC z PHYSICAL APPLICATION CONDITIONAL (extreme environments)"
 close: "[[./Phase_FINAL_close.md]]"
 post_cascade_verdict_update: "Original Phase 3 verdict CONDITIONAL na γ identification: pod Branch A → mechanism iii FAILS dla typical LIGO (CORRECT). Cycle 1 Phase 4 GF.B-STRUCTURAL re-asserts Branch A via first-principles RG analysis. T3 verdict UPGRADED do CONFIRMED: Pattern 2.5 BINDING-PRINCIPLE; APPLICATION CONDITIONAL na extreme environments (δψ ~ 0.3+)."

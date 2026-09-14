@@ -3,7 +3,8 @@ title: "op-V-canonical-consistency-audit — audit V_orig (DEPRECATED) vs V_M9.1
 date: 2026-05-09
 type: audit-cycle
 status: PHASE0_PHASE1_IN_PROGRESS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 classification: AUDIT_DOCUMENTATION_CYCLE
 parent: "[[../op-Phi-vacuum-scale-2026-05-09/Phase1_reconnaissance_results.md]]"
 related_cycles:

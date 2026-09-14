@@ -2,7 +2,9 @@
 title: "Native Δφ(f) phase residual forecast dla 3G detectors — Phase 5 retrofit exemplar"
 date: 2026-05-11
 type: research-cycle
-folder_status: closed-resolved   # CLOSED 2026-05-12 (full cycle: activation → 5 phases → amendment → 3 audit iter → closure)
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "CLOSED 2026-05-12 (full cycle: activation → 5 phases → amendment → 3 audit iter → closure)"
 activation_date: 2026-05-12
 activation_authorization: "user explicit 'Tak — pełna aktywacja' 2026-05-12 per RESEARCH_RESTART §3.6"
 closure_date: 2026-05-12

@@ -1,5 +1,6 @@
 ---
 title: "OP-1 / OP-2 / OP-4 — derivation of the self-interference potential U(φ)"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused

@@ -3,7 +3,9 @@ title: "op-inflation-substrate-genesis — Φ_eq(t) inflation prehistory + rehea
 date: 2026-05-11
 last_updated: 2026-05-13 sesja P3-inflation (Phase FINAL closure ceremony; A−)
 type: research-cycle
-folder_status: closed-resolved   # CLOSED 2026-05-13 sesja P3-inflation per user authorization "Opcja A" (Phase 3 + FINAL combined); cumulative 41/41 sympy PASS (33 FP / 8 LIT / 6 DEC separate); WIP slot 2/5 FREED
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "CLOSED 2026-05-13 sesja P3-inflation per user authorization 'Opcja A' (Phase 3 + FINAL combined); cumulative 41/41 sympy PASS (33 FP / 8 LIT / 6 DEC separate); WIP slot 2/5 FREED"
 claim_status: A-MINUS   # STRUCTURAL_DERIVED_NATIVE z L2 not-fully-FP-attempted; H1a CONFIRMED pending observational LiteBIRD ~2030
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 

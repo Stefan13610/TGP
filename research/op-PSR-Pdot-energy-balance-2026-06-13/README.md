@@ -1,6 +1,7 @@
 ---
 title: "op-PSR-Pdot-energy-balance-2026-06-13"
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "TRIGGERED-FALSIFIED (pending user ratification)"
 date_opened: 2026-06-13
 date_closed: 2026-06-13

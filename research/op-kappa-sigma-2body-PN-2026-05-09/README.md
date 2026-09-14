@@ -7,7 +7,8 @@ parent: "[[../op-emergent-metric-from-interaction-2026-05-09/Phase_FINAL_close.m
 target: "Numerical κ_σ(η=1/4) z 2-body PN binding-energy modification"
 classification: NUMERICAL_DERIVATION_CYCLE
 status: 🟢 CLOSED — STRUCTURAL DERIVED (heuristic numerical)
-folder_status: closed-resolved-heuristic
+folder_status: closed
+legacy_status: "closed-resolved-heuristic"
 sympy_total: "7/7 PASS (Phase 1)"
 close_date: 2026-05-09
 phase_final_close: "[[./Phase_FINAL_close.md]]"

@@ -1,5 +1,6 @@
 ---
 title: "op-L01-N5-EW-gauge-anomaly — Yang-Mills SU(2)×U(1) trace anomaly w g_eff[{Φ_i}] + EW gauge cosmology + Q2 F1 verification + GW/CMB bounds"
+folder_status: closed
 date: 2026-05-11
 type: research-cycle
 status: 🟢 CLOSED — STRUCTURAL_DERIVED 2026-05-11 (compact single-session via architecture inheritance N1+N2+N4)

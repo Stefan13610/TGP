@@ -3,7 +3,8 @@ title: "op-galactic-substrate-tail — czy natywny dalekozasięgowy człon subst
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 closed_date: 2026-06-13
 claim_status: "CLOSED-RESOLVED HONEST_NEGATIVE (LOCKED 2026-06-13) — F-GST-A = H-SCREEN_NEGATIVE (fast-kill Phase 1, 8/8 PASS): sektor fazowy U(1) NIE dostarcza nieekranowanego przyciągającego kanału międzysolitonowego — (a) moduł ekranowany 1/m_σ; (b) decoupling punktowy EXACT (Q_Noether = 0; włos 1/r relaksuje do b = 0, π₂(S¹) = 0; statyczna wymiana = 0 z shift symmetry); (c) zły znak windingu liniowego (odpychanie jednoimiennych). Q2/Q3 NOT EXECUTED per design; NO PR-024; PR-004 nietknięty; rezyduał GAP: sektor RP² (poza LIVE). Structural-amendment path PR-004 uczciwie zamknięty na poziomie mechanizmu."
 created_date: 2026-06-13

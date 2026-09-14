@@ -3,7 +3,8 @@ title: "op-Csigma-lattice-MC — liczbowe wyznaczenie T=C_σσ_0² (tensor stiff
 type: research_cycle
 status: "🟡 CLOSED-RESOLVED — PARTIAL (UNDERDETERMINED-fine-tuned, liczbowy κ_E≈0.62 O(1); lean FALSIFIED) 2026-06-14"
 phase: FINAL
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 created_date: 2026-06-14
 closed_date: 2026-06-14
 registered_by: "user 2026-06-14 (sesja #31): 'zarejestruj op-Csigma-lattice-MC'"

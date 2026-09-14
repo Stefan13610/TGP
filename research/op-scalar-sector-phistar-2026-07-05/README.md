@@ -1,5 +1,6 @@
 ---
 title: "op-scalar-sector-phistar — kanal dylatacyjny na tle Phi* (most do grawitacji, galaz C)"
+folder_status: closed
 date: 2026-07-05
 type: research-op
 status: CLOSED

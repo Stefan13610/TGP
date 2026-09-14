@@ -2,7 +2,9 @@
 title: "op-CG-alpha-eff-convergence — czy α_eff blokowo-uśrednionego substratu zbiega do 2 (continuum/FSS), czy obstrukcja jest strukturalna (niespójność α_eff=s−1 z CG34/#31)?"
 date: 2026-06-26
 type: research-cycle
-folder_status: closed-resolved   # CLOSED 2026-06-26: (B) REFUTED-SUBSTRATE. Faza A LOCK + Phase 1 FSS + FINAL w 1 sesji — patrz Phase_FINAL_close.md
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "CLOSED 2026-06-26: (B) REFUTED-SUBSTRATE. Faza A LOCK + Phase 1 FSS + FINAL w 1 sesji — patrz Phase_FINAL_close.md"
 claim_status: "structural — (B) REFUTED-SUBSTRATE: substrat NIE generuje α=2 (α_eff=−1/2 exact; e_inf=−0.12 MC); α=2 aksjomatyczne-na-gęstości"
 parent: "[[../../core/_meta_latex/status_map.tex]]"
 

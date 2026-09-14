@@ -1,5 +1,6 @@
 ---
 title: "op-3d-lattice-bath-stability — RACHUNEK CENTRALNY w 3D: czy sieć solitonów o skończonej gęstości stabilizuje mod runaway"
+folder_status: closed
 date: 2026-08-31
 type: research-cycle
 status: CLOSED-GATE-FAIL-STOP-P1c

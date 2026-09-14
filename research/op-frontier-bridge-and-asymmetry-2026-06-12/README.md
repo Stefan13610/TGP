@@ -3,7 +3,8 @@ title: "op-frontier-bridge-and-asymmetry — moduł A: domknięcie mostu A2 (GAP
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED BRIDGE_COMPLETE + H-SORT_DERIVED_1DPROXY (USER-THRESHOLD-DECISIONS ×2; DOUBTS REGISTER ×9) LOCKED 2026-06-12 — moduł A: GAP-1/2 DERIVED, GAP-3 SUPPORTED_PARTIAL (próg: user TAK), GAP-4 DERIVED_IN_CLASS, GAP-5 DERIVED; moduł B: KB1/KB2 PASS, KB3 CONDITIONAL-EXACT (próg: user TAK), KB4 NEGATIVE_FOR_REAL_WALL (H-CP wykluczone), SIG-1 EXACT, SIG-2 BOUNDED. PR-022 APPEND-ELIGIBLE (append deferred — dyskusja post-FINAL); PR-023 candidate recorded. Cumulative 43/43 PASS, 0 hardcoded, 0 new constants."
 created_date: 2026-06-12
 activated_date: 2026-06-12

@@ -2,7 +2,8 @@
 title: "op-neutrino-L_kink-bracketing — L_kink range estimate + μ_ν^TGP quantitative bracketing"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

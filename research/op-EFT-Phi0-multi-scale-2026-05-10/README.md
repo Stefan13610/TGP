@@ -7,7 +7,8 @@ priority: P2_FRAMEWORK_FORMALIZATION (formal EFT structure dla scale-running par
 parent: "[[../op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]]"
 target: "Establish formal EFT framework dla Φ_0(μ) ↔ γ_eff(μ) scale-running między cosmological / EW / LIGO regimes. Outcome: explicit matching conditions; analogous do SM Higgs VEV scale-dependence; closes foundations §3.5.3 declaration → quantitative framework."
 status: 🟢 CLOSED 2026-05-10 — formal EFT framework substantiated; 10/10 sympy PASS; adversarial PASS-WITH-FLAGS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 verdict: "Foundations §3.5.3 EFT scale-dep declaration → quantitative framework w one-loop expressions"
 close: "[[./Phase_FINAL_close.md]]"
 post_cycle_1_scope_note: "Cycle 1 GF.B reversed Branch D dominance; Cycle 3 scope reduced to: formal Φ_0(μ) one-loop running + joint γ_eff·Φ_0² T-Λ matching consistency + foundations §3.5.3 amendment recommendation. Original 6-phase plan compressed to 3 phases + FINAL."

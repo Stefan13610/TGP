@@ -1,5 +1,6 @@
 ---
 title: "L03 spectral stability — pełna analiza spektralna V''(1)<0 vs K(φ)=K_geo·φ⁴"
+folder_status: closed
 date: 2026-05-06
 cycle: L03
 type: audit-resolution

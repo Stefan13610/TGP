@@ -5,7 +5,8 @@ pre_registration_date: 2026-05-16
 parent: "[[../op-L08-Phase6-Dirac-propagator-2026-05-16/Phase_FINAL_close.md]]"
 cycle: L08 Phase 6 precision extension (Wilson coefs)
 status: CLOSED-RESOLVED — A− single-session sprint 2026-05-16
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: A-
 closure_date: 2026-05-16
 may_edit_core: false

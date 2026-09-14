@@ -2,7 +2,8 @@
 title: "op-WZ-emergence-quantitative-loop — W/Z emergence attempt + SM-like loop μ_ν estimate"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

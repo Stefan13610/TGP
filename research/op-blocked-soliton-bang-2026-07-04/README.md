@@ -3,7 +3,8 @@ title: "op-blocked-soliton-bang — blokowana relaksacja N solitonow"
 type: research_cycle
 status: CLOSED-EXECUTED
 phase: FINAL
-folder_status: closed-mixed-positive-toy
+folder_status: closed
+legacy_status: "closed-mixed-positive-toy"
 claim_status: "Toy model wykonany: Phase1 C1/C3/C4 PASS, C2 FAIL przy zalockowanych 1200 krokach; Phase2 pokazuje, ze samotny soliton przekracza prog zaniku przy 3600 krokach, a klaster pozostaje blokowany. POST-CLOSE BRAINSTORM: ten op testuje tylko pozna faze locku gotowych solitonow; NIE testuje wlasciwej genezy z golego substratu relacyjnego Gamma/s_i."
 created_date: 2026-07-04
 closed_date: 2026-07-04

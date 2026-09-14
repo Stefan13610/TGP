@@ -1,6 +1,7 @@
 ---
 title: "op-PSR-spin-substrate-channel-2026-06-13 (EXPLORATORY)"
-folder_status: exploratory-note
+folder_status: paused
+legacy_status: "exploratory-note"
 claim_status: "STRUCTURAL_CONDITIONAL — spin does NOT change the orbital verdict"
 date: 2026-06-13
 relates_to: "[[../op-PSR-Pdot-energy-balance-2026-06-13/]] (FALSIFIED — NOT reopened)"

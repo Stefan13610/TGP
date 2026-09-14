@@ -2,7 +2,8 @@
 title: "op-CE-H-gamma-3-cosmological-2026-05-23 — Poziom γ-3 cosmological extension (F-γ-3 H_0 PRIMARY KILLER)"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED_PHASE_0_ONLY
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-23
 parent_cycles:
   - op-CE-H-3D-native-interaction-retry-2026-05-23 (A CLEAN PASS γ-1+γ-2)

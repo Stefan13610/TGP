@@ -3,7 +3,8 @@ title: "op-spectral-analysis-Phi — CP-7/L03: numeryczna diagonalizacja operato
 type: research_cycle
 status: CLOSED-EXECUTED
 phase: FINAL
-folder_status: closed-mixed-verdict
+folder_status: closed
+legacy_status: "closed-mixed-verdict"
 claim_status: "CLOSED-EXECUTED 2026-07-03 — sektor grawitacyjny F-A: spektralnie CZYSTY (C1/C2 PASS; C3 PASS na tłach EL-konsystentnych do amp 1,28; linear-profile artefakty zdiagnozowane). Sektor solitonowy F-S (forma korony): wynik NEGATYWNY — próżnia g=1 funkcjonału solitonowego jest tachioniczna (kontinuum od −1, potwierdzone box-count = floor(R/π)); mody zlokalizowane: e=0, μ=2, τ=3 (l=0). Ghost wall: AKTYWNY dla μ/τ (min f(g)≈0,04); forma substratowa α=1 traci solitona τ (kolaps g→0,16). Twierdzenie syntezy 2026-05-06 (σ⊂[0,∞) dla wszystkich tł) OBALONE dla sektora solitonowego — obowiązuje TYLKO w F-A."
 created_date: 2026-07-03
 closed_date: 2026-07-03

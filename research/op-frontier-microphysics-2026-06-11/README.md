@@ -3,7 +3,8 @@ title: "op-frontier-microphysics — resolve concept §10.6 Q4 (what IS the fron
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED TIEBREAKER_COMPLETE (A2-PARTIAL) LOCKED 2026-06-11 — Q4 RESOLVED_STRUCTURAL (identification); v_c = 2c/3 EXACT (B-k4; B-k3 excluded value-blind); collapsed ONE-POINT parameter-free prediction log₁₀G = 2.025 (p = 2/3 EdS EXACT) vs observed 3.0 (0.97 dex below; PASS_BAND edge); A-ii DERIVED_SELF_CONSISTENT; C-2 dissolved; A2 PARTIAL. PR-022 WITHHELD (user decision, strict reading). GAP REGISTER ×6 (incl. NEW GAP-6 matter-antimatter selectivity); follow-up op-frontier-bridge-and-asymmetry REGISTERED (not activated). Cumulative 24/24 PASS, 0 hardcoded, 0 new constants."
 created_date: 2026-06-11
 activated_date: 2026-06-11

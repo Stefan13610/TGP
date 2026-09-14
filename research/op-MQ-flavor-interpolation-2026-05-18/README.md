@@ -1,5 +1,6 @@
 ---
 title: "op-MQ-flavor-interpolation-2026-05-18 — Test ścieżki ζ (M_Q granular + warstwa 3c flavor interpolation) jako Option B candidate dla problem #3 boson sub-component"
+folder_status: paused
 date: 2026-05-18
 type: cycle
 phase: scaffold

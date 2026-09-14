@@ -1,5 +1,6 @@
 ---
 title: "muon_g_minus_2"
+folder_status: legacy
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 related:

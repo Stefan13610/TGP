@@ -2,7 +2,8 @@
 title: "op-neutrino-mu-nu-astrophysical-discrimination — survey wszystkich astrofizycznych bounds dla dyskryminacji μ_ν^TGP scenarios A vs B"
 date: 2026-05-17
 type: research-cycle
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 
 contract:

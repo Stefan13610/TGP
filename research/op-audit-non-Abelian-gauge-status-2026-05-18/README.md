@@ -1,5 +1,6 @@
 ---
 title: "op-audit-non-Abelian-gauge-status-2026-05-18 — formal audit czy TGP minimal axioms wyderywowały SU(3)_c gauge dynamics analogicznie do udokumentowanego SU(2)_L 6-path exhaustion, lub czy non-Abelian gauge w ogóle jest TGP-derivable"
+folder_status: paused
 date: 2026-05-18
 type: cycle-audit
 phase: scaffold

@@ -7,7 +7,8 @@ priority: P0_FRAMEWORK_BREAKTHROUGH (resolves blocked first-principles γ deriva
 parent: "[[../op-gamma-identification-first-principles-2026-05-10/Phase_FINAL_close.md]]"
 target: "Derive γ_eff(μ) z H_Γ substrate Hamiltonian via Wilsonian RG flow (level 0 → level 1 coarse-graining). Resolves OP-1 M2 (M-derivation U(φ) z H_Γ, blocked per closure_2026-04-26/Lambda_from_Phi0/results.md §7.1.1). Outcome: explicit γ_eff(μ) function za scale; Branch D quantitative substantiation."
 status: 🟢 CLOSED 2026-05-10 — GF.B-STRUCTURAL z β=γ-open; 88/88 sympy PASS; adversarial PASS-WITH-FLAGS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 verdict: "GF.B-STRUCTURAL — Branch A re-asserted; parent Branch D dominance reversed via first-principles RG analysis"
 close: "[[./Phase_FINAL_close.md]]"
 predecessor:

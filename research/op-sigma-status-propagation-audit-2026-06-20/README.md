@@ -1,5 +1,6 @@
 ---
 title: "op-sigma-status-propagation-audit — audyt spójności propagacji statusu κ_E = wolny parametr (po #33/#34)"
+folder_status: closed
 date: 2026-06-22
 type: research-cycle
 status: 🟢 CLOSED — DO-POPRAWY naprawione (4 poprawki P1–P4, build 553 str. exit 0)

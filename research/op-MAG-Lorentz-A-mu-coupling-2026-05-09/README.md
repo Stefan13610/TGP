@@ -3,7 +3,8 @@ title: "op-MAG-Lorentz-A-mu-coupling — EM-strength Lorentz force F = qv × B z
 date: 2026-05-09
 type: research-cycle
 status: CLOSED_STRUCTURAL_CONDITIONAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 phase: Phase6_close
 classification: STRUCTURAL_CONDITIONAL
 sympy_total: 11/11 PASS

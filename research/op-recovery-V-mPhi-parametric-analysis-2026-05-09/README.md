@@ -7,7 +7,8 @@ parent: "[[../op-mPhi-level0-verification-2026-05-09/Phase1_results.md]]"
 target: "Determine whether ANY zero-β-compatible recovery V form has V''(Φ_0) ≪ ℏω_LIGO ~ 4·10⁻¹³ eV → mechanism (iii) realizes → framework recovery STRUCTURAL DERIVED"
 classification: STRUCTURAL_PARAMETRIC_ANALYSIS
 status: 📦 ARCHIVED 2026-05-10 — recovery V framework irrelevant pod Branch A (Cycle 1 GF.B-STRUCTURAL); Phase 1 38/38 PASS preserved
-folder_status: closed-superseded
+folder_status: closed
+legacy_status: "closed-superseded"
 verdict: "ARCHIVE — recovery V framework irrelevant dla typical LIGO sources under Branch A re-asserted via first-principles RG analysis"
 archive_reason: "Cycle [[../op-gamma-RG-running-derivation-2026-05-10/Phase_FINAL_close.md]] verdict GF.B-STRUCTURAL re-asserts Branch A (single-scale γ z mild log running). Pattern 2.5 (env-dep m_Φ) BINDING-PRINCIPLE preserved ALE PHYSICAL APPLICATION CONDITIONAL na extreme environments — NIE typical LIGO. Recovery V framework would address LIGO-regime mechanism iii realization, ALE GF.A NOT MET ⇒ recovery V irrelevant dla typical LIGO. Phase 1 algebraic structural decoupling (38/38 sympy PASS) preserved as TGP-native finding (independent of recovery V interpretation). Future reactivation possible IF binary BH near-horizon environments studied (deferred extreme-env study)."
 archive_date: 2026-05-10

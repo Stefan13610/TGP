@@ -1,5 +1,6 @@
 ---
 title: "op-nbody-additivity — addytywnosc parowa oddzialywania lockow (test superpozycji dla rdzenia)"
+folder_status: closed
 date: 2026-07-04
 type: research-op
 status: CLOSED

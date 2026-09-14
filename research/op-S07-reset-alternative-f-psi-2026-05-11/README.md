@@ -3,7 +3,9 @@ title: "op-S07-reset-alternative-f-psi — alternative f(ψ) metric structures p
 date: 2026-05-11
 last_updated: 2026-05-13 sesja P-FINAL (Phase FINAL closure ceremony; A−)
 type: research-cycle
-folder_status: closed-resolved   # CLOSED 2026-05-13 sesja P-FINAL per user authorization "Opcja A (recommended): Phase FINAL closure ceremony z claim_status A−"; cumulative 27/27 sympy PASS (22 FP / 5 LIT / 4 DEC separate); WIP slot 1/5 FREED
+folder_status: closed
+legacy_status: "closed-resolved"
+verdict: "CLOSED 2026-05-13 sesja P-FINAL per user authorization 'Opcja A (recommended): Phase FINAL closure ceremony z claim_status A−'; cumulative 27/27 sympy PASS (22 FP / 5 LIT / 4 DEC separate); WIP slot 1/5 FREED"
 claim_status: A-MINUS   # STRUCTURAL_DERIVED_NATIVE z L2 not-fully-FP-attempted; H1a TENTATIVE pending observational LIGO-O5 A+ ~2027
 parent: "[[../../TGP_FOUNDATIONS.md]]"
 

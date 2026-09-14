@@ -7,7 +7,8 @@ parent: "[[../op-scalar-mode-LIGO-bound-2026-05-09/Phase_FINAL_close.md]]"
 target: "Resolve ~4√π factor mismatch w h_TT^TGP / h_TT^GR amplitude"
 classification: QUANTITATIVE_CALIBRATION_CYCLE → ADVERSARIAL_VERIFICATION_CYCLE
 status: 🟠 CLOSED — STRUCTURAL_CONDITIONAL_HALT (adversarial finding triggered amendment cascade)
-folder_status: closed-conditional-adversarial
+folder_status: closed
+legacy_status: "closed-conditional-adversarial"
 sympy_total: "16/16 PASS (Phase 1+2)"
 close_date: 2026-05-09
 phase_final_close: "[[./Phase_FINAL_close.md]]"

@@ -1,5 +1,6 @@
 ---
 title: "op-FFS-pre-screening-2026-05-19 — Test ścieżki η (FFS fractional flux string quark object) jako Option B candidate dla problem #3 quark sub-component gauge dynamics (bound-state observables approach, NIE gauge group derivation)"
+folder_status: paused
 date: 2026-05-19
 type: cycle
 phase: scaffold

@@ -1,5 +1,6 @@
 ---
 title: "neutrino_msw"
+folder_status: legacy
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 related:

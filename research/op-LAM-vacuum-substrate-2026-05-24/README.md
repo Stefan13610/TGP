@@ -7,7 +7,8 @@ closed_date: 2026-05-25
 claim_status: "STRUCTURAL_PARTIAL (C+) — sign + EoS + phenomenology PASS; magnitude FAIL_LOW"
 related_PR: "PR-018 LOCKED-STRUCTURAL-PARTIAL 2026-05-25"
 R1_flags: "R1 #19 CLOSED in cycle (sek08a sign convention reproduced via action-principle derivation)"
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 created_date: 2026-05-24
 activated_date: 2026-05-24
 parent_motivation: "Appendix E eq. 207 (Λ_eff = γ/12) + eq. 353 (m_sp ~ ℏH_0/c²) + eq. 365 (Phi-phonon DE candidate) + sek08c V_M911"

@@ -3,7 +3,8 @@ title: "op-PR004-SPARC-fit-execution — wykonanie LOCKED falsyfikatora PR-004: 
 type: research_cycle
 status: CLOSED-RESOLVED
 phase: FINAL
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 claim_status: "CLOSED-RESOLVED PR004-TRIGGERED-FALSIFIED-MECHANISM (LOCKED 2026-06-13) — TGP g_eff[Φ̄ ≈ Φ₀] (Newton + wyłącznie bariony, S05) przegrywa z MOND simple na SPARC 175 przy t = 5.4σ (próg 5σ, reguła IMMUTABLE PR-004); Q1+Q2: 5.5σ. χ²_red GLOBAL 578 vs 50; mediany 85 vs 10.5; TGP lepsze tylko w 25/175 (HSB barionowo zdominowane). Per kontrakt: 'framework needs structural amendment, NOT continued recovery'."
 created_date: 2026-06-12
 closed_date: 2026-06-13

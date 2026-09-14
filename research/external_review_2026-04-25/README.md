@@ -1,5 +1,6 @@
 ---
 title: "external_review_2026-04-25"
+folder_status: legacy
 date: 2026-05-03
 parent: "[[../INDEX.md]]"
 related:

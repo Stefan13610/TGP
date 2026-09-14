@@ -3,7 +3,8 @@ title: "op-emergent-metric-from-interaction — g_eff jako funkcjonał wielocia�
 date: 2026-05-09
 type: research-cycle
 status: 🔒 CLOSED — STRUCTURAL DERIVED
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 sympy_total: "57/57 PASS (Phase 1-6 complete)"
 verdict: STRUCTURAL_DERIVED
 close_date: 2026-05-09

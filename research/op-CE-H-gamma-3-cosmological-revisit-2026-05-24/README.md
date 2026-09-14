@@ -2,7 +2,8 @@
 title: "op-CE-H-gamma-3-cosmological-revisit-2026-05-24 — γ-3' z c(Φ) per §3.6.13 BINDING"
 type: research_cycle
 status: PRE_REGISTERED_LOCKED
-folder_status: active
+folder_status: paused
+legacy_status: "active"
 pre_registration_date: 2026-05-24
 parent_cycles:
   - op-CE-H-gamma-3-cosmological-2026-05-23 (B+ verdict LOCKED; c=const assumption identified as audit gap)

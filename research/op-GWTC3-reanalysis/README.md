@@ -1,5 +1,6 @@
 ---
 title: "op-GWTC3-reanalysis — TGP M911-P1 Bayes factor analysis na public LIGO/Virgo GWTC-3 data"
+folder_status: paused
 date: 2026-05-07
 parent: "[[../README.md]]"
 type: research-cycle

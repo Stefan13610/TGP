@@ -1,5 +1,6 @@
 ---
 title: "op-sigma-3PN-radiative-2026-05-09 — Route A escape: σ-coupling at 3PN+ as TT source"
+folder_status: paused
 date: 2026-05-09
 type: research-cycle
 priority: P1_CRITICAL

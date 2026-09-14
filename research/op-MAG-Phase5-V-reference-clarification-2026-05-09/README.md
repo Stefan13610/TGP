@@ -3,7 +3,8 @@ title: "op-MAG-Phase5-V-reference-clarification — explicit clarification V_ori
 date: 2026-05-09
 type: audit-clarification-cycle
 status: PHASE0_PHASE1_IN_PROGRESS
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 classification: AUDIT_LIGHTWEIGHT_CLARIFICATION
 parent: "[[../op-V-canonical-consistency-audit-2026-05-09/Phase1_audit_results.md]]"
 related_cycles:

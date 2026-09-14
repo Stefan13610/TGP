@@ -4,7 +4,8 @@ date: 2026-05-10
 parent: "[[../op-L01-rho-stress-energy-bridge-2026-05-04/NEEDS.md]] §Q2"
 type: research-cycle-mini
 status: 🔒 CLOSED — STRUCTURAL DERIVED (synthesis cycle, single-Phase FINAL closure)
-folder_status: closed-resolved
+folder_status: closed
+legacy_status: "closed-resolved"
 verdict: STRUCTURAL_DERIVED
 close_date: 2026-05-10
 classification: SYNTHESIS_CYCLE

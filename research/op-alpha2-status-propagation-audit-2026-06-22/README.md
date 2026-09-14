@@ -1,5 +1,6 @@
 ---
 title: "op-alpha2-status-propagation-audit — audyt spójności propagacji statusu α=2 = selekcja na gęstości (po #31 op-A3 / #32)"
+folder_status: closed
 date: 2026-06-22
 type: research-cycle
 status: 🟢 CLOSED — DO-POPRAWY naprawione (P1+P2+P3+P4 zastosowane 2026-06-22; main.tex build exit 0, 553 str.)

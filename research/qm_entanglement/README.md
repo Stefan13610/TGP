@@ -1,5 +1,6 @@
 ---
 title: "Q4: Splatanie z korelacji substratu"
+folder_status: legacy
 date: 2026-05-03
 tgp_status:
   folder_status: paused
