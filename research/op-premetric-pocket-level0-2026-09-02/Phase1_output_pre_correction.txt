@@ -1,0 +1,14 @@
+==============================================================================
+Phase 1 -- bramka ciaglosci (silnik = import Phase2_pocket)
+==============================================================================
+  P1a bare (szum)              metric_area=0.000e+00 (<A_min=2.441e-04) Hmono=True -> OK
+  P1b single(A0=1.4,w=1.5)     metric_area=0.000e+00 (<A_min=2.441e-04) Hmono=True -> OK
+  P1a/P1b/P1c: PASS
+
+P1d: 1D profil sciany Z2 (Dirichlet -s*..+s*):
+  dx=0.05 : res=7.14e-11 Phi_min=1.087e-04 szer(Phi<0.30)=2.3898 szer(Phi<Phi_bar)=1.8799 sigma_w=0.429765
+  dx=0.025: res=9.17e-11 Phi_min=2.719e-05 szer(Phi<0.30)=2.4275 szer(Phi<Phi_bar)=1.8927 sigma_w=0.429771
+  zbieznosc: d szer(eps)=1.551e+00% d szer(bar)=6.742e-01% dPhi_min/Phi_bar=4.497e-04 (<1%) -> FAIL
+  deskryptywnie: rdzen sciany Phi_min ~ 2.7e-05 -- sciana Z2 MA rdzen przedmetryczny (psi_min=1.97e-05); pas psi<0.218 szeroki 2.43 j.
+
+PODSUMOWANIE Phase 1: FAIL -- STOP

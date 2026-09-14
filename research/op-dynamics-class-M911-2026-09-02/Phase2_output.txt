@@ -1,0 +1,28 @@
+==============================================================================
+WERDYKT Q-CONS (wariant A: Cahn-Hilliard; litera LOCKa sec. 2)
+==============================================================================
+gen:
+    gen_N32: STATIONARY t=22.0 psi[1.0000,1.0000] dev=0.000000 mean=0.999999 Ndn0/0 Nup0/0 occup=0.00 t_dev=0.0 E=-165.366809
+    gen_N48: STATIONARY t=22.0 psi[1.0000,1.0000] dev=0.000000 mean=0.999999 Ndn0/0 Nup0/0 occup=0.00 t_dev=0.0 E=-165.366809
+    -> JEDNORODNE (dev<0.05): mean=['0.999999', '0.999999'] t_dev=[0.0, 0.0]
+dip:
+    dip_N32: STATIONARY t=49.0 psi[0.9879,0.9879] dev=0.000000 mean=0.987947 Ndn0/1 Nup0/0 occup=0.00 t_dev=14.0 E=-165.224975
+    dip_N48: STATIONARY t=49.0 psi[0.9879,0.9879] dev=0.000000 mean=0.987947 Ndn0/1 Nup0/0 occup=0.00 t_dev=14.0 E=-165.224976
+    -> JEDNORODNE (dev<0.05): mean=['0.987947', '0.987947'] t_dev=[14.0, 14.0]
+lat:
+    lat_N32: STATIONARY t=12.0 psi[0.9351,0.9351] dev=0.000000 mean=0.935080 Ndn0/0 Nup0/1 occup=0.08 t_dev=4.0 E=-20.192278
+    lat_N48: STATIONARY t=12.0 psi[0.9354,0.9354] dev=0.000000 mean=0.935410 Ndn0/0 Nup0/1 occup=0.08 t_dev=4.0 E=-20.196920
+    -> JEDNORODNE (dev<0.05): mean=['0.935080', '0.935410'] t_dev=[4.0, 4.0]
+
+DESKRYPTYWNIE (obowiazkowe): t_dev(dev<1e-3) vs poprzednik (gradient flow: gen 7.0 / bump 16.0 / lat 16.0):
+    gen_N32: t_dev=0.0 (status STATIONARY, t_end=22)
+    gen_N48: t_dev=0.0 (status STATIONARY, t_end=22)
+    dip_N32: t_dev=14.0 (status STATIONARY, t_end=49)
+    dip_N48: t_dev=14.0 (status STATIONARY, t_end=49)
+    lat_N32: t_dev=4.0 (status STATIONARY, t_end=12)
+    lat_N48: t_dev=4.0 (status STATIONARY, t_end=12)
+
+KLASYFIKACJA Q-CONS (litera):
+  Q-CONS-FAIL: wszystko dyfunduje do jednorodnej sredniej
+
+WERDYKT: Q-CONS-FAIL ; stany: Phase2_relaxed_states.npz (6)

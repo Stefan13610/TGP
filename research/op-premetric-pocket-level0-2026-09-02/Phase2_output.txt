@@ -1,0 +1,25 @@
+==============================================================================
+WERDYKTY op-premetric-pocket-level0 (litera LOCKa sec. 2)
+==============================================================================
+Q-PKT-A (kieszen gola):
+  R=4    bare_end=0.000e+00 t_close=8.0 tail=1.0000 bc=False Hmono=True
+  R=8    bare_end=0.000e+00 t_close=24.0 tail=1.0000 bc=False Hmono=True
+  R=16   bare_end=0.000e+00 t_close=63.0 tail=1.0000 bc=False Hmono=True
+  tau_close(R): [(4.0, 8.0), (8.0, 24.0), (16.0, 63.0)]; fit lin: a=4.625 R2=0.99781; kwadrat: a=0.2217 R2=0.99070
+  => Q-PKT-A-HEAL-ALL
+Q-PKT-B (kropla antyfazowa -- centralne):
+  R=4    t_life=9.0 bare_end=0.000e+00 smin_end=1.174 tail=1.0000 bc=False Hmono=True
+  R=8    t_life=52.0 bare_end=0.000e+00 smin_end=1.174 tail=1.0000 bc=False Hmono=True
+  R=16   t_life=243.0 bare_end=0.000e+00 smin_end=1.174 tail=1.0000 bc=False Hmono=True
+  tau_life(R): [(4.0, 9.0), (8.0, 52.0), (16.0, 243.0)]; fit lin: a=20.125 R2=0.97462; kwadrat: a=0.9807 R2=0.99972 (kandydat R^2 = curvature flow)
+  => Q-PKT-B-ZANIK
+Q-PKT-C (sciany Z2 jako trwale struktury przedmetryczne):
+  N=128: bare=6.2500e-02 (1024 wezlow) tail=1.0000 Phimin=1.066e-02 Hmono=True
+  N=256: bare=7.8125e-02 tail=1.0000 Phimin=2.705e-03
+  => Q-PKT-C-PASS-SHEET
+Q-PKT-D (pozostalosc po kieszeni na scianie):
+  R=4    bare_end=6.2500e-02 baza(sciany)=6.2500e-02 excess=0.000e+00 (prog A_min=2.441e-04) tail=1.0000
+  R=8    bare_end=6.2500e-02 baza(sciany)=6.2500e-02 excess=0.000e+00 (prog A_min=2.441e-04) tail=1.0000
+  => Q-PKT-D: [(4.0, 'CLEAN-WALL'), (8.0, 'CLEAN-WALL')]
+
+MAPOWANIE NA POZIOM 1 (deskryptywne, obowiazkowe): psi = Phi/Phi* (Phi*=1.3787); pas przedmetryczny Phi<0.30 <=> psi<0.218

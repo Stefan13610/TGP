@@ -1,0 +1,9 @@
+==============================================================================
+Phase 1 -- bramka estymatorow (silnik = import Phase2_network)
+==============================================================================
+P1a paski: L_wall=128.0 (oczek. 128.0) Ndom+=1 Ndom-=1 -> OK
+P1b kropla R=8: L_wall(0)=64.0 (oczek. 8R=64 +-10%) Ndom-=1; L_wall(tau=60)=0.0 (oczek. 0) -> OK
+P1c GRF grid-niezalezny (seed 20260906): max|f128-avg(f256)|=0.0000 (<=0.05); |dstd|=0.0000 (<=0.02) -> OK
+P1d H_Gamma nierosnace (geneza A=1.0, 2000 krokow): OK
+
+PODSUMOWANIE Phase 1: PASS

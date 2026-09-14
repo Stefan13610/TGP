@@ -1,0 +1,26 @@
+==============================================================================
+WERDYKT Q-INER (wariant B: inercja+lapse M9.1''; litera LOCKa)
+==============================================================================
+gen:
+    gen_N32: TMAX t=100.0 psi[0.9994,1.0006] okno dev[0.000545,0.000674] occup=0.00 epsH=1.11e-10 drift=False stiff=None Ndn0/0 Nup0/0
+    gen_N48: TMAX t=100.0 psi[0.9994,1.0006] okno dev[0.000580,0.000726] occup=0.00 epsH=1.53e-10 drift=False stiff=None Ndn0/0 Nup0/0
+    -> DYSPERSJA (okno max dev ['6.74e-04', '7.26e-04'] < 0.05)
+dip:
+    dip_N32: BREAKDOWN-BOUNDARY-LOWER t=5.6 psi[0.9856,1.1264] okno dev[nan,nan] occup=0.00 epsH=4.11e-10 drift=False stiff=None Ndn0/1 Nup0/0
+    dip_N48: BREAKDOWN-BOUNDARY-LOWER t=5.5 psi[0.9857,1.1320] okno dev[nan,nan] occup=0.00 epsH=4.16e-10 drift=False stiff=None Ndn0/1 Nup0/0
+    -> wklad INCONCLUSIVE (statusy ['BREAKDOWN-BOUNDARY-LOWER', 'BREAKDOWN-BOUNDARY-LOWER'], drift/stiff: [(False, None), (False, None)])
+lat:
+    lat_N32: BREAKDOWN-BOUNDARY t=4.6 psi[1.0588,1.3332] okno dev[nan,nan] occup=0.00 epsH=6.92e-08 drift=False stiff=None Ndn0/0 Nup1/1
+    lat_N48: BREAKDOWN-BOUNDARY t=4.1 psi[1.0587,1.3333] okno dev[nan,nan] occup=0.00 epsH=2.81e-07 drift=False stiff=None Ndn0/0 Nup1/1
+    -> wklad INCONCLUSIVE (statusy ['BREAKDOWN-BOUNDARY', 'BREAKDOWN-BOUNDARY'], drift/stiff: [(False, None), (False, None)])
+
+DESKRYPTYWNIE (obowiazkowe): psi_min(t) dipa (strefa spinodalna) i N_obj(t):
+    dip_N32: t=0:0.561 t=1:0.982 t=2:0.994 t=3:0.996 t=5:0.986
+      N_dn(t): 0:1 1:0 2:0 3:0 5:0
+    dip_N48: t=0:0.555 t=1:0.982 t=2:0.994 t=3:0.995 t=5:0.986
+      N_dn(t): 0:1 1:0 2:0 3:0 5:0
+
+KLASYFIKACJA Q-INER (litera):
+  Q-INER-INCONCLUSIVE (NIE pozytyw; kategorie STIFF/DRIFT/BOUNDARY powyzej)
+
+WERDYKT: Q-INER-INCONCLUSIVE ; stany: Phase3_final_states.npz (10)

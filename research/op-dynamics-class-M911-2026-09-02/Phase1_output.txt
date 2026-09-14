@@ -1,0 +1,26 @@
+==============================================================================
+Phase 1 -- bramki maszynerii (silniki A i B)
+==============================================================================
+
+G1 (wariant A, Cahn-Hilliard):
+  proznia N=32 L=2pi t=10: dryf=0.000e+00 -> OK
+  proznia N=32 L=4pi t=10: dryf=0.000e+00 -> OK
+  masa (dip N=32, t=10): |d mean|/mean = 1.124e-16 (<=1e-13) -> OK
+  E niemalejaco (probki co 1): max wzrost = 0.000e+00 (<=1e-12) -> OK
+  G1: PASS
+
+G2 (wariant B, inercja+lapse):
+  B'(psi)=12psi^5(2-psi)/(4-3psi)^3 vs sympy: max|d|_rel=1.061e-14 -> OK
+  proznia N=32 L=4pi t=10 (v0=0): dryf=0.000e+00 -> OK
+  fala eps=1e-6 k=1 (m=2, N=32): omega_meas=1.409686 vs omega_disc=1.409686 (|d|=1.42e-11 <=1e-3) -> OK
+    deskryptywnie: vs kontinuum sqrt(2)=1.414214: |d|=3.20e-03 (dyspersja siatkowa -- poza gate'em)
+  dryf H: max|H-H0|/H_rel(0) = 2.883e-05 (H_rel(0)=9.858e-10) (<=1e-3) -> OK
+  G2: PASS
+
+G3 (detektory, N=48 L=4pi):
+  dip      psi[0.610,1.000]: N_dn=1/1 N_up=0/0 -> OK
+  bump     psi[1.000,1.292]: N_dn=0/0 N_up=1/1 -> OK
+  proznia  psi[1.000,1.000]: N_dn=0/0 N_up=0/0 -> OK
+  G3: PASS
+
+PODSUMOWANIE Phase 1: PASS
