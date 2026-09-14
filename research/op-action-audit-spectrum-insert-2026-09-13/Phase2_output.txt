@@ -1,0 +1,47 @@
+==============================================================================
+PHASE 2 -- Q-D1: dyspersja prozni z jednej akcji; K_geo=gamma=c0=1
+  [INPUT]; M, Keff, Ueff z Phase 1 (P1b PASS); psi* = 1
+==============================================================================
+
+Linearyzacja EOM wokol psi*=1 (psi = 1 + eps e^{i(kx-om t)}),
+  wspolczynnik O(eps) EL: k**2 - omega**2 + 1 = 0
+  => omega^2(k) = [k**2 + 1]   [WYPROWADZONE]
+  formula LOCKa: [Keff(1)k^2 + Ueff''(1)]/M(1) = k**2 + 1 ;
+  simplify(omega^2_wyprowadzone - formula) = 0
+
+  M(1) = 1 ; Keff(1) = 1 ; Ueff''(psi) = psi*(3*psi - 2) ; Ueff''(1) = 1
+  m^2   = Ueff''(1)/M(1) = 1
+  c_s^2 = Keff(1)/M(1)   = 1
+  omega^2(k) = k**2 + 1  -- omega^2(0) = 1 > 0; brak tachionu
+
+Znaki na dziedzinie (0, 4/3):
+  M = psi^6/(4-3psi)^2: licznik psi^6>0, mianownik (4-3psi)^2>0
+    na (0,4/3); zera w dziedzinie: EmptySet => M > 0 na (0,4/3)
+  Keff = psi^4: zera w dziedzinie: EmptySet => Keff > 0 na (0,4/3)
+  odczyt A: K_A = psi^5/(4-3psi): zera: EmptySet; 4-3psi>0 na (0,4/3)
+    => K_A > 0 na (0,4/3)
+  kontrola float (siatka 2e5 pkt na (0,4/3)): min M = 6.250e-38 > 0: True;
+    min Keff = 1.000e-24 > 0: True; min K_A = 2.500e-31 > 0: True
+  Ueff''(psi) = psi(3psi-2): Ueff''>0 dla psi>2/3; Ueff''(1)=1>0
+
+Odczyt A rownolegle (odnotowanie; NIE wplywa na werdykt, PRIMARY=B):
+  K_A(1) = 1 = Keff(1) -- w psi*=1 odczyty A i B NIE roznicuja
+  omega^2_A(k) = [K_A(1)k^2 + Ueff''(1)]/M(1) = k**2 + 1 (identyczna)
+  c_s^2(psi) roznicuje poza prozni: B: Keff/M = (4-3psi)^2/psi^2;
+    A: K_A/M = (4-3psi)/psi -- obie dodatnie na (0,4/3)
+
+------------------------------------------------------------------------------
+DESKRYPTYWNIE (MD sec.3; NIE werdyktotworcze): wariant ZNAKOWANEGO
+g^tt (literalna kontrakcja w sygnaturze (-,+,+,+)):
+  omega^2_sgn(k) = [k**2 - 1] -- tachion dla k<1 (omega^2(0) = -1 < 0);
+  dokladnie omega^2 = k^2 - 1 audytu (rozdz. 2). LOCK zamraza czlon
+  czasowy przez |g^tt| => wariant znakowany NIE jest PRIMARY.
+
+==============================================================================
+WERDYKT Q-D1 (litera LOCKa sec. 2):
+  M(1)=1>0: True; Ueff''(1)=1>0: True; omega^2(k)=k^2+1>0 dla k>=0: True
+  M>0 na (0,4/3): True; Keff>0 na (0,4/3): True
+  => Q-D1-PASS
+  m^2 = 1, c_s^2 = 1 (odczyt B = PRIMARY);
+  odczyt A w psi*=1 identyczny (K_A(1)=1).
+==============================================================================

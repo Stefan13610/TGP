@@ -1,0 +1,17 @@
+==============================================================================
+DIAGNOSTYKA DESKRYPTYWNA: dokladne dyskretne minimum warunkowe
+(Newton, ||dH_free||_inf <= 1e-13) vs punkt staly schematu flow
+(NIE werdyktotworcze; werdykt Q-D2 z Phase3_output.txt bez zmian)
+==============================================================================
+A070_R60_h0.025: dE_flow=+1.58104250e-03 dE_exact=+1.51423968e-03 |roznica|=6.68e-05 (4.412%)
+   Newton: ||dH||=3.31e-12 po -2 iter; max|psi_ex-psi_flow|=1.90e-02
+A070_R60_h0.0125: dE_flow=+7.89551790e-04 dE_exact=+7.55298444e-04 |roznica|=3.43e-05 (4.535%)
+   Newton: ||dH||=6.30e-12 po -2 iter; max|psi_ex-psi_flow|=1.94e-02
+A125_R60_h0.025: dE_flow=+6.92026828e-03 dE_exact=+3.21651018e-03 |roznica|=3.70e-03 (115.148%)
+   Newton: ||dH||=6.48e-12 po -2 iter; max|psi_ex-psi_flow|=1.36e-01
+A125_R60_h0.0125: dE_flow=+3.56664649e-03 dE_exact=+1.60434733e-03 |roznica|=1.96e-03 (122.311%)
+   Newton: ||dH||=1.23e-11 po -2 iter; max|psi_ex-psi_flow|=1.42e-01
+
+Skalowanie h (dokladne minima): 
+  A070: dE_exact(h=0.025)=+1.514240e-03 dE_exact(h=0.0125)=+7.552984e-04 stosunek=0.4988 (0.5 = czyste skalowanie ~h, zerowa pojemnosc punktu w 3D)
+  A125: dE_exact(h=0.025)=+3.216510e-03 dE_exact(h=0.0125)=+1.604347e-03 stosunek=0.4988 (0.5 = czyste skalowanie ~h, zerowa pojemnosc punktu w 3D)
