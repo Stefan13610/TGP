@@ -1,0 +1,21 @@
+==============================================================================
+PHASE 2 -- bramka (FROZEN; MD sec. 5). REJESTR [INPUT]: dt=0.005; R=200;
+  sponge gamma0=1.0 smootherstep [160,200] (ON prod., OFF P2c); dt_out=0.1;
+  okna dryfu [0,10T0]/[90T0,100T0]; progi: 1e-10 / 4.74+-2% / 1e-6
+==============================================================================
+P2a: proznia lam=0, sponge ON, 100 T0 = 628.318531
+  h=0.050: max||psi-1||_inf = 0.000e+00  (prog 1e-10)  PASS  [60 s]
+  h=0.025: max||psi-1||_inf = 0.000e+00  (prog 1e-10)  PASS  [143 s]
+  P2a: PASS
+P2b: regresja lam=0, qR3 a=-0.20, h=0.05, sponge ON
+  status=BREAKDOWN-BOUNDARY t_end=4.7400 (cel 4.74 +-2%, tj. [4.6452, 4.8348])
+  P2b: PASS  [2 s]
+P2c: energia ze zrodlem lam=0.05, gauss a=+0.05 s=3, sponge OFF, t=700
+  h=0.050: E(0)=2.289378581e+00 <E>_wcz=2.289340870e+00 <E>_pozn=2.289346095e+00
+          dryf=2.282e-06 (prog 1e-6)  max|E-E0|=3.376e-04  FAIL  [197 s]
+  h=0.025: E(0)=2.289378867e+00 <E>_wcz=2.289341034e+00 <E>_pozn=2.289346295e+00
+          dryf=2.298e-06 (prog 1e-6)  max|E-E0|=3.376e-04  FAIL  [400 s]
+  P2c: FAIL
+==============================================================================
+PHASE 2 PODSUMOWANIE: P2a PASS ; P2b PASS ; P2c FAIL => STOP (FAIL => STOP)  [802 s]
+==============================================================================

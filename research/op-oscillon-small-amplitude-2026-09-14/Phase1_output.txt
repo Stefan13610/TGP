@@ -1,0 +1,67 @@
+==============================================================================
+PHASE 1 -- op-oscillon-small-amplitude (MD sec. 7; zero ewolucji)
+Formy CYTAT (MD sec. 1; zrodlo: op-action-audit Phase1_output.txt
+  via op-r3-stationary-states Phase1_output.txt):
+  M = psi^6/(4-3psi)^2 ; M' = 12 psi^5(2-psi)/(4-3psi)^3
+  K = psi^4 ; K' = 4 psi^3 ; U = psi^4/4 - psi^3/3 ;
+  U' = psi^2(psi-1) ; U'' = 3psi^2-2psi ; K_geo=gamma=c0=1 [LOCK]
+
+------------------------------------------------------------------------------
+P1a': tozsamosci symboliczne (simplify = 0 wymagane):
+  simplify(dM/dpsi - M'_cytat) = 0
+  simplify(dU_tozsamosc - (U(psi)-U(1))) = 0   (correction note 2 poprzednika -- dziedziczona)
+  simplify(dU/dpsi - U'_cytat) = 0
+  simplify(dK/dpsi - K'_cytat) = 0
+  tozsamosci: PASS
+
+P1a' gate: sympy(na binarnym double) vs float (engine_core),
+  psi in {0.9, 1, 1.1}; prog |d| <= 1e-12*max(1,|v|)
+  psi=0.9 M   sympy(bin)=+3.1446213017751490e-01 float=+3.1446213017751490e-01 |d|=0.00e+00 PASS
+  psi=0.9 Mp  sympy(bin)=+3.5477778789258090e+00 float=+3.5477778789258103e+00 |d|=1.33e-15 PASS
+  psi=0.9 K   sympy(bin)=+6.5610000000000002e-01 float=+6.5610000000000002e-01 |d|=0.00e+00 PASS
+  psi=0.9 Kp  sympy(bin)=+2.9160000000000004e+00 float=+2.9160000000000004e+00 |d|=0.00e+00 PASS
+  psi=0.9 U   sympy(bin)=-7.8975000000000004e-02 float=-7.8975000000000017e-02 |d|=1.39e-17 PASS
+  psi=0.9 Up  sympy(bin)=-8.0999999999999989e-02 float=-8.0999999999999989e-02 |d|=0.00e+00 PASS
+  psi=0.9 U2  sympy(bin)=+6.3000000000000012e-01 float=+6.3000000000000012e-01 |d|=0.00e+00 PASS
+  psi=0.9 dU  sympy(bin)=+4.3583333333333312e-03 float=+4.3583333333333312e-03 |d|=0.00e+00 PASS
+  psi=1.0 M   sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 Mp  sympy(bin)=+1.2000000000000000e+01 float=+1.2000000000000000e+01 |d|=0.00e+00 PASS
+  psi=1.0 K   sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 Kp  sympy(bin)=+4.0000000000000000e+00 float=+4.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 U   sympy(bin)=-8.3333333333333329e-02 float=-8.3333333333333315e-02 |d|=1.39e-17 PASS
+  psi=1.0 Up  sympy(bin)=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 U2  sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.0 dU  sympy(bin)=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+  psi=1.1 M   sympy(bin)=+3.6154306122449023e+00 float=+3.6154306122449027e+00 |d|=4.44e-16 PASS
+  psi=1.1 Mp  sympy(bin)=+5.0709935860058380e+01 float=+5.0709935860058380e+01 |d|=0.00e+00 PASS
+  psi=1.1 K   sympy(bin)=+1.4641000000000004e+00 float=+1.4641000000000004e+00 |d|=0.00e+00 PASS
+  psi=1.1 Kp  sympy(bin)=+5.3240000000000016e+00 float=+5.3240000000000016e+00 |d|=0.00e+00 PASS
+  psi=1.1 U   sympy(bin)=-7.7641666666666651e-02 float=-7.7641666666666720e-02 |d|=6.94e-17 PASS
+  psi=1.1 Up  sympy(bin)=+1.2100000000000012e-01 float=+1.2100000000000012e-01 |d|=0.00e+00 PASS
+  psi=1.1 U2  sympy(bin)=+1.4300000000000004e+00 float=+1.4300000000000006e+00 |d|=2.22e-16 PASS
+  psi=1.1 dU  sympy(bin)=+5.6916666666666773e-03 float=+5.6916666666666773e-03 |d|=0.00e+00 PASS
+  P1a': PASS (24/24; + tozsamosci PASS)
+
+------------------------------------------------------------------------------
+P1b': omega_2 -- CYTAT (op-r3-stationary-states Phase1_output.txt,
+  bez ponownego wyprowadzania):
+  'omega_2 = -139/24' ; float: -5.791667
+  (tam: omega_2 = M1^2/16 + M1*U3/8 - M2/8 - 5*U3^2/48 + U4/16,
+   M'(1)=12, M''(1)=156, U'''(1)=4, U''''(1)=6)
+
+Tabela przewidywanych omega(a) ~= 1 + omega_2 a^2 -- MIEKKA,
+deskryptywna (MD sec. 6; pre-rejestrowany ZNAK omega_peak<1
+i monotonia w a; BEZ progu PASS/FAIL) -- zapisana PRZED Phase 3:
+  a=0.02  omega(a) = 0.997683
+  a=0.05  omega(a) = 0.985521
+  a=0.08  omega(a) = 0.962933
+  a=0.10  omega(a) = 0.942083
+
+Uwaga deskryptywna (nie zmienia progow): dla a=0.02 mapa LP daje
+omega=0.9977 > 0.99 (prog detektora, warunek 3) -- prog pozostaje
+litera LOCKa.
+
+==============================================================================
+PHASE 1 PODSUMOWANIE: P1a' PASS; P1b' CYTAT omega_2 = -139/24
+  (-5.791667) + tabela omega(a) zapisana PRZED Phase 3
+==============================================================================

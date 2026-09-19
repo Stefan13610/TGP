@@ -1,0 +1,51 @@
+==============================================================================
+PHASE 3 / Q-H2 -- stabilizacja kolapsu (LOCK sec. 3-4; klasyfikatory MD sec. 7)
+REJESTR [INPUT]: starty FROZEN (4 reprezentanci kolapsu poprzednika, profile
+  identyczne); lam {0.05,0.2,0.5}; t_max=1000; h=0.05 (potw. h=0.025 i dt=0.0025);
+  dt=0.005; sponge ON; E_core r<=80 gestosc PELNA (z U_mat, prozniowo odjeta);
+  E_ref=E_core(50); progi 0.05/0.5 E_ref; pas 4/3-1e-6 / 1e-6; tau: t_hold-50;
+  potwierdzenia +-10%; baseline lam=0 = COLLAPSE (wszystkie 4 starty, sufit)
+==============================================================================
+Tabela biegow (start x lam x konfiguracja):
+  start         lam   konfig   klasa         podtyp/t_end             tau      E_end/E_ref
+  g_a+0.15_s6   0.05  h05      COLLAPSE      BREAKDOWN-BOUNDARY-LOWER@t=1.600 n/a      -
+  g_a+0.15_s6   0.2   h05      COLLAPSE      BREAKDOWN@t=0.825        n/a      -
+  g_a+0.15_s6   0.5   h05      COLLAPSE      BREAKDOWN-BOUNDARY@t=0.535 n/a      -
+  g_a-0.30_s3   0.05  h025     INCONCLUSIVE-RUN -                        n/a      2.073e+00
+  g_a-0.30_s3   0.05  h05      INCONCLUSIVE-RUN -                        n/a      2.073e+00
+  g_a-0.30_s3   0.05  h05_dt2  INCONCLUSIVE-RUN -                        n/a      2.073e+00
+  g_a-0.30_s3   0.2   h025     INCONCLUSIVE-RUN -                        n/a      1.152e+00
+  g_a-0.30_s3   0.2   h05      INCONCLUSIVE-RUN -                        n/a      1.152e+00
+  g_a-0.30_s3   0.2   h05_dt2  INCONCLUSIVE-RUN -                        n/a      1.152e+00
+  g_a-0.30_s3   0.5   h05      COLLAPSE      BREAKDOWN-BOUNDARY@t=0.160 n/a      -
+  qR3_a+0.20    0.05  h025     COLLAPSE      BREAKDOWN-BOUNDARY@t=1.415 n/a      -
+  qR3_a+0.20    0.05  h05      COLLAPSE      BREAKDOWN-BOUNDARY@t=1.415 n/a      -
+  qR3_a+0.20    0.2   h05      COLLAPSE      BREAKDOWN-BOUNDARY@t=0.790 n/a      -
+  qR3_a+0.20    0.5   h05      COLLAPSE      BREAKDOWN-BOUNDARY-LOWER@t=0.495 n/a      -
+  qR3_a-0.20    0.05  h025     RADIATED      -                        44.6     -7.953e-01
+  qR3_a-0.20    0.05  h05      RADIATED      -                        44.7     -7.953e-01
+  qR3_a-0.20    0.05  h05_dt2  RADIATED      -                        44.7     -7.953e-01
+  qR3_a-0.20    0.2   h025     COLLAPSE      BREAKDOWN-BOUNDARY@t=0.570 n/a      -
+  qR3_a-0.20    0.2   h05      RADIATED      -                        30.5     -5.979e+00
+  qR3_a-0.20    0.2   h05_dt2  RADIATED      -                        30.5     -6.006e+00
+  qR3_a-0.20    0.5   h05      COLLAPSE      BREAKDOWN-BOUNDARY@t=0.230 n/a      -
+------------------------------------------------------------------------------
+Zbieznosc i kategoria koncowa par (potwierdzenia MD sec. 7):
+  qR3_a-0.20    lam=0.05 : RADIATED         [potwierdzone (h/2 i dt/2); baseline lam=0: COLLAPSE t=4.740]
+  qR3_a+0.20    lam=0.05 : COLLAPSE         [kontrola negatywu h/2: zgodna (t_end 1.415 vs 1.415); baseline lam=0: COLLAPSE t=2.275]
+  g_a-0.30_s3   lam=0.05 : INCONCLUSIVE-RUN [potwierdzone (h/2 i dt/2); baseline lam=0: COLLAPSE t=6.640]
+  g_a+0.15_s6   lam=0.05 : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=18.185]
+  qR3_a-0.20    lam=0.2  : INCONCLUSIVE-RUN [rozjazd potwierdzen: h025=COLLAPSE dt2=RADIATED; baseline lam=0: COLLAPSE t=4.740]
+  qR3_a+0.20    lam=0.2  : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=2.275]
+  g_a-0.30_s3   lam=0.2  : INCONCLUSIVE-RUN [potwierdzone (h/2 i dt/2); baseline lam=0: COLLAPSE t=6.640]
+  g_a+0.15_s6   lam=0.2  : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=18.185]
+  qR3_a-0.20    lam=0.5  : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=4.740]
+  qR3_a+0.20    lam=0.5  : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=2.275]
+  g_a-0.30_s3   lam=0.5  : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=6.640]
+  g_a+0.15_s6   lam=0.5  : COLLAPSE         [kategoria na h [LOCK]; baseline lam=0: COLLAPSE t=18.185]
+------------------------------------------------------------------------------
+KLASY KONCOWE: STABILIZED=0 RADIATED=1 COLLAPSE=8 INCONCLUSIVE-RUN=3 (z 12)
+WERDYKT Q-H2 (litera LOCKa sec. 4): Q-H2-INCONCLUSIVE
+  (PASS: >=1 para STABILIZED potwierdzona h/2 i dt/2 przy baseline COLLAPSE;
+   FAIL: wszystkie 12 par COLLAPSE zbieznie; inaczej INCONCLUSIVE)
+==============================================================================

@@ -1,0 +1,59 @@
+==============================================================================
+PHASE 3 / Q-I2 -- WYGASZANIE zrodla (LOCK sec.3; MD sec.7)
+REJESTR [INPUT]: rampa lam(t)=lam*S((600+100-t)/100), Delta=100,
+  t_off=600 => lam=0 od t=700 [LOCK]; t_max=1700; h=0.05,
+  dt=0.005, sponge ON; E_ref_off=E_core(700), E_core r<=80;
+  okno trwalosci W_P=[700, 700+100T0]=[700, 1328.3185];
+  okno koncowe W_F=[1600,1700] [INPUT-MD]; progi: 0.5*E_ref_off,
+  max_{r<=40}|psi-1|>=0.02 (PERSISTENT-OBJECT); E(1700)<0.05*
+  E_ref_off lub max|psi-1|<1e-3 w W_F (RETURN-TO-VACUUM);
+  potwierdzenia: PERSISTENT -> h=0.025 + dt/2; jeden RETURN
+  (najnizsze lam SETTLED) -> h=0.025; kontrola lam=0.01
+==============================================================================
+PREDYKCJA PRE-REJESTROWANA (LOCK sec.0, NIENARUSZALNA):
+  "w galezi zdrowej BEZ zrodla nie ma statycznych solitonow
+   (Q-B-FAIL) ani oscylonow (Q-E/Q-G) ==> oczekiwany wynik Q-I2:
+   RETURN-TO-VACUUM lub COLLAPSE"
+==============================================================================
+Biegi SETTLED-* z Q-I1 (lista+kotwice), do wygaszenia: [0.05, 0.06, 0.08, 0.1]
+Kontrola czystosci wygaszania lam=0.01: klasa Q-I1 = SETTLED-DEF
+------------------------------------------------------------------------------
+BIEGI WYGASZANIA (h=0.05, dt=0.005, kontynuacja z t=600):
+  lam     rola      klasa po rampie      E(700)      E(1700)     E(1700)/E(700)  max|psi-1|(r<=40,t=1700)  tau     [s]
+  0.050   kotwica   RETURN-TO-VACUUM     +3.7307e-04 +2.7856e-04 7.4668e-01      2.0192e-04               0.0     334
+  0.060   lista     RETURN-TO-VACUUM     +3.8994e-04 +2.9378e-04 7.5341e-01      2.0635e-04               0.0     342
+  0.080   lista     RETURN-TO-VACUUM     +4.0737e-04 +3.1107e-04 7.6359e-01      2.1009e-04               0.0     333
+  0.100   lista     RETURN-TO-VACUUM     +4.1061e-04 +3.1698e-04 7.7198e-01      2.1043e-04               0.0     341
+  0.010   kontrola  RETURN-TO-VACUUM     +2.0759e-04 +1.4174e-04 6.8279e-01      1.3819e-04               0.0     329
+------------------------------------------------------------------------------
+BILANS ENERGII (deskryptywnie; podczas rampy energia NIE jest
+zachowana -- praca zrodla; LOCK: nie bramkowac):
+  lam     E_core(600)   E_core(700)   E_core(1700)  dE_rampa
+  0.050   -2.83625e+00  +3.73070e-04  +2.78565e-04  +2.83662e+00
+  0.060   -3.88556e+00  +3.89936e-04  +2.93780e-04  +3.88595e+00
+  0.080   -6.32327e+00  +4.07374e-04  +3.11066e-04  +6.32368e+00
+  0.100   -9.14841e+00  +4.10611e-04  +3.16983e-04  +9.14882e+00
+  0.010   -1.47591e-01  +2.07592e-04  +1.41743e-04  +1.47798e-01
+------------------------------------------------------------------------------
+KONTROLA CZYSTOSCI WYGASZANIA (lam=0.01, identyczna rampa):
+  klasa = RETURN-TO-VACUUM (oczekiwane RETURN-TO-VACUUM)
+  max_{r<=40}|psi-1| (t=1700) = 1.382e-04  (prog 1e-3)  PASS
+  GATE maszynerii wygaszania: PASS
+------------------------------------------------------------------------------
+POTWIERDZENIA (LOCK sec.3):
+  PERSISTENT-OBJECT do potwierdzenia (h=0.025 + dt/2): brak
+  obowiazkowa kontrola negatywu RETURN-TO-VACUUM (najnizsze lam SETTLED): 0.05
+  bieg potwierdzajacy        klasa_on   klasa_off            tau      E(1700)/E(700)  [s]
+  lam=0.050 h=0.0250 dt=0.00500  SETTLED-DEF RETURN-TO-VACUUM     0.0      7.4669e-01      665
+------------------------------------------------------------------------------
+  lam=0.050 RETURN (kontrola negatywu): h=0.025 ZGODNE (kategoria zgodna)
+==============================================================================
+WERDYKT Q-I2 (litera LOCK sec.4): Q-I2-FAIL
+  uzasadnienie: wszystkie biegi SETTLED-* po wygaszeniu: RETURN-TO-VACUUM lub COLLAPSE; kontrola negatywu (lam=0.05, h=0.025) zgodna
+  PERSISTENT-OBJECT: brak ; RETURN-TO-VACUUM: [0.05, 0.06, 0.08, 0.1] ; COLLAPSE: brak ; INCONCLUSIVE-RUN: brak
+------------------------------------------------------------------------------
+KONFRONTACJA Z PREDYKCJA PRE-REJESTROWANA (bez reinterpretacji):
+  predykcja "RETURN-TO-VACUUM lub COLLAPSE": TRAFIONA
+==============================================================================
+Czas calkowity Q-I2: 1008 s
+PHASE3-QI2 DONE

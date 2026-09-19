@@ -1,0 +1,25 @@
+==============================================================================
+DIAGNOSTYKA P2c (deskryptywna; progi/okna LOCKa NIETKNIETE)
+konfiguracja: lam=0.05, gauss a=+0.05 s=3, sponge OFF, h=0.05, t=630
+==============================================================================
+dt=0.01   : dryf_okienny=9.131e-06  dryf_fit(100T0)=4.829e-06
+           amplituda oscylacji wokol fitu=1.212e-03  slope=1.759e-08  [95 s]
+  T3 srednie kolejnych okien 10T0 (odchylki od okna 1, x1e-6):
+    +0.00 +9.16 +9.19 +9.17 +9.24 +9.18 +9.04 +7.49 +9.06 +9.13
+  T3 znaki roznic kolejnych okien: ++-+---++  (monotonia => trend sekularny; zmienne => oscylacja)
+dt=0.005  : dryf_okienny=2.282e-06  dryf_fit(100T0)=1.207e-06
+           amplituda oscylacji wokol fitu=3.031e-04  slope=4.397e-09  [164 s]
+  T3 srednie kolejnych okien 10T0 (odchylki od okna 1, x1e-6):
+    +0.00 +2.29 +2.30 +2.29 +2.31 +2.29 +2.26 +1.87 +2.27 +2.28
+  T3 znaki roznic kolejnych okien: ++-+---++  (monotonia => trend sekularny; zmienne => oscylacja)
+dt=0.0025 : dryf_okienny=5.705e-07  dryf_fit(100T0)=3.017e-07
+           amplituda oscylacji wokol fitu=7.578e-05  slope=1.099e-09  [322 s]
+  T3 srednie kolejnych okien 10T0 (odchylki od okna 1, x1e-6):
+    +0.00 +0.57 +0.57 +0.57 +0.58 +0.57 +0.56 +0.47 +0.57 +0.57
+  T3 znaki roznic kolejnych okien: ++-+---++  (monotonia => trend sekularny; zmienne => oscylacja)
+------------------------------------------------------------------------------
+SKALOWANIE (T1): dt 0.01 -> 0.005 -> 0.0025
+  dryf_okienny : 9.131e-06 -> 2.282e-06 -> 5.705e-07  (iloraz 4.00, 4.00; dt^2 => ~4)
+  amplituda osc: 1.212e-03 -> 3.031e-04 -> 7.578e-05  (iloraz 4.00, 4.00)
+  dryf_fit     : 4.829e-06 -> 1.207e-06 -> 3.017e-07
+==============================================================================

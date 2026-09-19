@@ -1,0 +1,62 @@
+==============================================================================
+PHASE 3 / Q-I1 -- zrodlo na prozni, faza WLACZONA (LOCK sec.3; MD sec.6)
+REJESTR [INPUT]: lista lam {0.06,0.08,0.10,0.12,0.14,0.16,0.18} [LOCK];
+  kotwice {0.05,0.20}; kontrola Q-I2 lam=0.01 (poza werdyktem);
+  h=0.05 (potw. 0.025), dt=0.005, R=200, sponge ON [160,200];
+  start psi=1 pi=0, zrodlo od t=0, t_on=600; okno [500,600];
+  osiadlosc V<=0.01*max(D,1e-12) na r<=80; prog M911 5/6;
+  pas 4/3-1e-6 / 1e-6; bisekcja 6 krokow, t_max=600 [INPUT-MD]
+==============================================================================
+BIEGI GLOWNE (h=0.05):
+  lam     rola        klasa          psibar(0)   V         D         t_end   [s]
+  0.010   kontrola    SETTLED-DEF    0.965353    2.51e-05  3.46e-02  -       171
+  0.050   kotwica     SETTLED-DEF    0.865982    3.40e-05  1.34e-01  -       165
+  0.060   lista       SETTLED-DEF    0.845733    3.47e-05  1.54e-01  -       175
+  0.080   lista       SETTLED-SUB    0.808031    3.55e-05  1.92e-01  -       170
+  0.100   lista       SETTLED-SUB    0.772903    3.57e-05  2.27e-01  -       175
+  0.120   lista       COLLAPSE(BREAKDOWN-BOUNDARY) n/a         n/a       n/a       0.8300  0
+  0.140   lista       COLLAPSE(BREAKDOWN-BOUNDARY) n/a         n/a       n/a       0.7500  0
+  0.160   lista       COLLAPSE(BREAKDOWN-BOUNDARY) n/a         n/a       n/a       0.6950  0
+  0.180   lista       COLLAPSE(BREAKDOWN-BOUNDARY) n/a         n/a       n/a       0.6500  0
+  0.200   kotwica     COLLAPSE(BREAKDOWN) n/a         n/a       n/a       0.6000  0
+------------------------------------------------------------------------------
+POTWIERDZENIE SIATKOWE h=0.025 (najglebszy SETTLED-SUB): lam=0.1
+------------------------------------------------------------------------------
+BISEKCJA lam_crit (6 krokow, protokol identyczny t_max=600):
+  przedzial startowy [0.100000, 0.120000] (najwyzsze bez COLLAPSE / najnizsze z COLLAPSE)
+  krok 1: lam=0.1100000 -> COLLAPSE(BREAKDOWN-BOUNDARY-LOWER) [lo=0.1000000 hi=0.1100000] (0 s)
+  krok 2: lam=0.1050000 -> SETTLED-SUB              [lo=0.1050000 hi=0.1100000] (127 s)
+  krok 3: lam=0.1075000 -> UNSETTLED                [lo=0.1075000 hi=0.1100000] (175 s)
+  krok 4: lam=0.1087500 -> COLLAPSE(BREAKDOWN)      [lo=0.1075000 hi=0.1087500] (0 s)
+  krok 5: lam=0.1081250 -> COLLAPSE(BREAKDOWN-BOUNDARY) [lo=0.1075000 hi=0.1081250] (0 s)
+  krok 6: lam=0.1078125 -> COLLAPSE(BREAKDOWN-BOUNDARY) [lo=0.1075000 hi=0.1078125] (0 s)
+  WYNIK deskryptywny: lam_crit = 0.1076563 +- 0.0001562
+  (kontekst poprzednika: lam_crit in (0.05, 0.2])
+------------------------------------------------------------------------------
+POTWIERDZENIE h=0.025 (lam=0.100): klasa=COLLAPSE psibar(0)=n/a [0 s]
+  zgodnosc kategorii h=0.05 (SETTLED-SUB) vs h=0.025 (COLLAPSE): ROZJAZD
+------------------------------------------------------------------------------
+DESKRYPTYWNIE (obowiazkowo): psibar(0) zmierzone vs tabela P1-I2
+  (0D: psi_min(lam) z minimum f=U+lam*psi^2/(4-3psi), rho_hat=1;
+   lam_fold=0.285769734239 -- PRE-REJESTRACJA, bez bramkowania)
+  lam     klasa            psibar(0)_meas  psi_min(0D)  meas-0D
+  0.010   SETTLED-DEF      0.965353        0.957825     +0.007528
+  0.050   SETTLED-DEF      0.865982        0.848184     +0.017798
+  0.060   SETTLED-DEF      0.845733        0.826612     +0.019121
+  0.080   SETTLED-SUB      0.808031        0.786726     +0.021305
+  0.100   SETTLED-SUB      0.772903        0.749756     +0.023148
+  0.120   COLLAPSE         n/a             0.714585     -
+  0.140   COLLAPSE         n/a             0.680435     -
+  0.160   COLLAPSE         n/a             0.646671     -
+  0.180   COLLAPSE         n/a             0.612685     -
+  0.200   COLLAPSE         n/a             0.577787     -
+------------------------------------------------------------------------------
+==============================================================================
+WERDYKT Q-I1 (litera LOCK sec.4): Q-I1-INCONCLUSIVE
+  uzasadnienie: brak zbieznego SETTLED-SUB i brak kompletu SETTLED-DEF/COLLAPSE na liscie
+  SETTLED-SUB na liscie: [0.08, 0.1]
+  SETTLED-DEF na liscie: [0.06]
+  COLLAPSE na liscie   : [0.12, 0.14, 0.16, 0.18]
+==============================================================================
+Czas calkowity Q-I1: 478 s
+PHASE3-QI1 DONE

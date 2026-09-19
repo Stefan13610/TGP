@@ -1,0 +1,119 @@
+==============================================================================
+PHASE 1 -- analityka pre-rejestrowana (LOCK sec. 2; MD sec. 4)
+REJESTR [INPUT]: formy CYTAT (MD sec.1-2); rho_hat=exp(-r^2/18);
+  rampa lam(t)=lam*S((600+100-t)/100) [LOCK]; prog gate'u 1e-12;
+  punkty kontrolne psi in {0.9, 1, 1.1} [LOCK sec.2];
+  lista lam LOCKa: {0.06,0.08,0.10,0.12,0.14,0.16,0.18}
+==============================================================================
+P1-I1: gate cytatow form (sympy vs float silnika) + tozsamosci
+  simplify(M' - dM/dpsi) = 0  PASS
+  simplify(K' - dK/dpsi) = 0  PASS
+  simplify(U' - dU/dpsi) = 0  PASS
+  simplify([U-U(1)] - (psi-1)^2(3psi^2+2psi+1)/12) = 0  PASS
+  simplify(dU_mat/dpsi - lr*psi(8-3psi)/(4-3psi)^2) = 0  PASS
+  simplify([U_mat-U_mat(1)] - lr(psi-1)(psi+4)/(4-3psi)) = 0  PASS
+  kontrola numeryczna (lr = lam*rho_hat = 1): |d| <= 1e-12*max(1,|v|)
+    psi=0.9 M                sympy=+3.1446213017751490e-01 float=+3.1446213017751490e-01 |d|=0.00e+00 PASS
+    psi=0.9 M'               sympy=+3.5477778789258090e+00 float=+3.5477778789258103e+00 |d|=1.33e-15 PASS
+    psi=0.9 K                sympy=+6.5610000000000002e-01 float=+6.5610000000000002e-01 |d|=0.00e+00 PASS
+    psi=0.9 K'               sympy=+2.9160000000000004e+00 float=+2.9160000000000004e+00 |d|=0.00e+00 PASS
+    psi=0.9 U                sympy=-7.8975000000000004e-02 float=-7.8975000000000017e-02 |d|=1.39e-17 PASS
+    psi=0.9 U'               sympy=-8.0999999999999989e-02 float=-8.0999999999999989e-02 |d|=0.00e+00 PASS
+    psi=0.9 U-U(1)           sympy=+4.3583333333333312e-03 float=+4.3583333333333312e-03 |d|=0.00e+00 PASS
+    psi=0.9 dU_mat/dpsi      sympy=+2.8224852071005921e+00 float=+2.8224852071005921e+00 |d|=0.00e+00 PASS
+    psi=0.9 U_mat-U_mat(1)   sympy=-3.7692307692307686e-01 float=-3.7692307692307692e-01 |d|=5.55e-17 PASS
+    psi=1.0 M                sympy=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 M'               sympy=+1.2000000000000000e+01 float=+1.2000000000000000e+01 |d|=0.00e+00 PASS
+    psi=1.0 K                sympy=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 K'               sympy=+4.0000000000000000e+00 float=+4.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 U                sympy=-8.3333333333333329e-02 float=-8.3333333333333315e-02 |d|=1.39e-17 PASS
+    psi=1.0 U'               sympy=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 U-U(1)           sympy=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 dU_mat/dpsi      sympy=+5.0000000000000000e+00 float=+5.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 U_mat-U_mat(1)   sympy=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.1 M                sympy=+3.6154306122449023e+00 float=+3.6154306122449027e+00 |d|=4.44e-16 PASS
+    psi=1.1 M'               sympy=+5.0709935860058380e+01 float=+5.0709935860058380e+01 |d|=0.00e+00 PASS
+    psi=1.1 K                sympy=+1.4641000000000004e+00 float=+1.4641000000000004e+00 |d|=0.00e+00 PASS
+    psi=1.1 K'               sympy=+5.3240000000000016e+00 float=+5.3240000000000016e+00 |d|=0.00e+00 PASS
+    psi=1.1 U                sympy=-7.7641666666666651e-02 float=-7.7641666666666720e-02 |d|=6.94e-17 PASS
+    psi=1.1 U'               sympy=+1.2100000000000012e-01 float=+1.2100000000000012e-01 |d|=0.00e+00 PASS
+    psi=1.1 U-U(1)           sympy=+5.6916666666666773e-03 float=+5.6916666666666773e-03 |d|=0.00e+00 PASS
+    psi=1.1 dU_mat/dpsi      sympy=+1.0551020408163273e+01 float=+1.0551020408163273e+01 |d|=0.00e+00 PASS
+    psi=1.1 U_mat-U_mat(1)   sympy=+7.2857142857142954e-01 float=+7.2857142857142954e-01 |d|=0.00e+00 PASS
+  gate rampy lam(t) [LOCK sec.3]: lam=1, t_off=600, Delta=100
+    t=    0.0 lam(t)/lam = 1.00000000000000000 (oczek. 1.0) PASS
+    t=  600.0 lam(t)/lam = 1.00000000000000000 (oczek. 1.0) PASS
+    t=  650.0 lam(t)/lam = 0.50000000000000000 (oczek. 0.5) PASS
+    t=  700.0 lam(t)/lam = 0.00000000000000000 (oczek. 0.0) PASS
+    t= 1700.0 lam(t)/lam = 0.00000000000000000 (oczek. 0.0) PASS
+    S'(0)=0 S'(1)=0 (gladkosc C1 na obu koncach) PASS
+    lam(t)=0 DOKLADNIE dla t>=700: True
+  P1-I1: PASS
+------------------------------------------------------------------------------
+P1-I2: PRE-REJESTRACJA ILOSCIOWA -- statyczna odpowiedz nieliniowa 0D
+  f(psi) = U(psi) + lam*psi^2/(4-3psi)  (rho_hat=1, rdzen zrodla)
+  f'(psi)  = psi*(-3*lam*psi + 8*lam + psi*(psi - 1)*(3*psi - 4)**2)/(3*psi - 4)**2
+  f''(psi) = (-32*lam + 81*psi**5 - 378*psi**4 + 648*psi**3 - 480*psi**2 + 128*psi)/(27*psi**3 - 108*psi**2 + 144*psi - 64)
+  f'=0  <=>  lam = LAM(psi) = psi*(psi - 1)*(3*psi - 4)**2/(3*psi - 8)
+  gate: simplify(LAM(psi) - psi(1-psi)(4-3psi)^2/(8-3psi)) = 0  PASS
+  lam_fold (saddle-node f'=f''=0): pierwiastki d LAM/d psi = 0 w (0,1):
+    psi_fold = 0.327916542813830510
+  lam_fold (sympy)   : psi_fold = 0.327916542813831  lam_fold = 0.285769734238588
+  lam_fold (numeryka): psi_fold = 0.327916542824524  lam_fold = 0.285769734238588
+  zgodnosc sympy/numeryka: |d lam_fold| = 5.551e-17
+  => dla lam > lam_fold lokalne minimum 0D NIE ISTNIEJE
+     (przewidywany MECHANIZM lam_crit; konfrontacja DESKRYPTYWNA)
+
+  TABELA psi_min(lam) -- LISTA LOCKa (PRE-REJESTRACJA, PRZED Phase 3)
+    lam     psi_min      f''(psi_min)   psi_min<5/6?  d_psi_min=psi_min-1
+    0.060   0.826611537  +9.431853e-01  TAK          -0.173388463
+    0.080   0.786725807  +8.639239e-01  TAK          -0.213274193
+    0.100   0.749755931  +7.832257e-01  TAK          -0.250244069
+    0.120   0.714585382  +7.031059e-01  TAK          -0.285414618
+    0.140   0.680435158  +6.242864e-01  TAK          -0.319564842
+    0.160   0.646670971  +5.469098e-01  TAK          -0.353329029
+    0.180   0.612685373  +4.707982e-01  TAK          -0.387314627
+  [INPUT-MD deskryptywne, dopisane PRZED Phase 3] kotwice spoza listy:
+    0.010   0.957824987  +1.060471e+00  nie          -0.042175013
+    0.050   0.848184149  +9.808365e-01  nie          -0.151815851
+    0.200   0.577786515  +3.955202e-01  TAK          -0.422213485
+  prog detektora M911: 5/6 = 0.833333333
+  najnizsze lam w tabeli z psi_min < 5/6 : 0.06
+
+  [INPUT-MD deskryptywne, dopisane PRZED Phase 3; NIE bramkuje
+   zadnego werdyktu] 0D zachowawczy punkt zwrotu ze startu psi=1,
+   psidot=0: DV(psi) = [U(psi)-U(1)] + lam*[U_mat(psi)-U_mat(1)] = 0
+   => lam_turn(psi) = -[U-U(1)]/[U_mat-U_mat(1)] ; psi_turn(lam):
+    lam_turn(psi->0+) = 0.083333333  (powyzej tej wartosci 0D-trajektoria
+     ze startu psi=1 siega PODLOGI psi=0 -- 0D-owy prog dynamiczny)
+    lam     psi_turn(0D, zachowawczy)
+    0.010   0.912300574
+    0.050   0.618210068
+    0.060   0.534399974
+    0.080   0.268122048
+    0.100   0 (siega podlogi)
+    0.120   0 (siega podlogi)
+    0.140   0 (siega podlogi)
+    0.160   0 (siega podlogi)
+    0.180   0 (siega podlogi)
+    0.200   0 (siega podlogi)
+------------------------------------------------------------------------------
+P1-I3: kontekst predykcji Q-I2 (CYTAT, bez obliczen)
+  ../op-metric-pair-M911-2026-09-02/NEEDS.md:
+    "Werdykty cyklu: Q-A-PASS (sektor samodomkniety bez podlog
+     i barier) + Q-B-FAIL (wszystko relaksuje do jednorodnej prozni
+     psi=1; zero nukleacji, zero 'pole wybiera granice')."
+  Phase0_balance.md sec.0 (LOCK tego cyklu):
+    "w galezi zdrowej BEZ zrodla nie ma statycznych solitonow
+     (Q-B-FAIL) ani oscylonow (Q-E/Q-G) ==> oczekiwany wynik Q-I2:
+     RETURN-TO-VACUUM lub COLLAPSE"
+  Phase0_balance.md sec.2 (P1-I3, litera): "po wygaszeniu (lam=0)
+    jedyne znane stany trwale to psi=1 (Q-B-FAIL, Q-A-PASS)"
+  => predykcja pre-rejestrowana Q-I2 NIENARUSZALNA (LOCK sec.6).
+  P1-I3: PASS (cytat kontekstu)
+==============================================================================
+PHASE 1 PODSUMOWANIE: P1-I1 PASS ; P1-I2 ZAPISANE (tabela + lam_fold)
+  lam_fold = 0.285769734239 (psi_fold = 0.327916542825)
+  psi_min(lam) dla listy LOCKa: 0.06:0.826612 0.08:0.786726 0.10:0.749756 0.12:0.714585 0.14:0.680435 0.16:0.646671 0.18:0.612685
+  P1-I3 PASS (cytat)
+==============================================================================

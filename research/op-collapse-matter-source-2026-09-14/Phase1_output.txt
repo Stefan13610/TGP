@@ -1,0 +1,81 @@
+==============================================================================
+PHASE 1 -- analityka pre-rejestrowana; K_geo=gamma=c0=1 [INPUT]
+Zrodlo czlonu materii (TYLKO ODCZYT, core sek08a):
+  eq:L-mat-unified: L_mat = -(q/Phi0)*psi*rho ;
+  rho = -T^mu_mu/c0^2 >= 0 (L01 formal definition 2026-05-04);
+  czynnik psi = konsekwencja elementu objetosci (audit A4
+  2026-05-01, Option 2 -- preserve axiom);
+  eq:vol-element-M911: sqrt(-g) = c0*psi/(4-3psi).
+  rho = rho0 * rho_hat(r), rho_hat = exp(-r^2/18) [LOCK, FROZEN];
+  lam := (q*c0/Phi0)*rho0 > 0 (bezwymiarowe).
+==============================================================================
+P1-H1: wyprowadzenie U_mat z zapisu literalnego (sympy)
+  U_mat literalnie = -sqrt(-g)*L_mat = -c0*psi**2*q*rho0*exp(-r**2/18)/(Phi0*(3*psi - 4))
+  gate tozsamosci: simplify(U_mat_lit - lam*rho_hat*psi^2/(4-3psi)) = 0  PASS
+  gate pochodnej: simplify(dU_mat/dpsi - lam*rho_hat*psi*(8-3psi)/(4-3psi)^2) = 0  PASS
+  gate tozsamosci prozniowo odjetej (bez kancelacji):
+    simplify(U_mat(psi)-U_mat(1) - lam*rho_hat*(psi-1)*(psi+4)/(4-3psi)) = 0  PASS
+  kontrola numeryczna (lam=1, r=0): prog |d| <= 1e-12*max(1,|v|)
+    psi=0.5 Um  sympy(bin)=+1.0000000000000001e-01 float=+1.0000000000000001e-01 |d|=0.00e+00 PASS
+    psi=0.5 Ump sympy(bin)=+5.2000000000000002e-01 float=+5.2000000000000002e-01 |d|=0.00e+00 PASS
+    psi=0.5 dUm sympy(bin)=-9.0000000000000002e-01 float=-9.0000000000000002e-01 |d|=0.00e+00 PASS
+    psi=1.0 Um  sympy(bin)=+1.0000000000000000e+00 float=+1.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 Ump sympy(bin)=+5.0000000000000000e+00 float=+5.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.0 dUm sympy(bin)=+0.0000000000000000e+00 float=+0.0000000000000000e+00 |d|=0.00e+00 PASS
+    psi=1.2 Um  sympy(bin)=+3.5999999999999988e+00 float=+3.5999999999999965e+00 |d|=2.22e-15 PASS
+    psi=1.2 Ump sympy(bin)=+3.2999999999999979e+01 float=+3.2999999999999943e+01 |d|=3.55e-14 PASS
+    psi=1.2 dUm sympy(bin)=+2.5999999999999988e+00 float=+2.5999999999999974e+00 |d|=1.33e-15 PASS
+  P1-H1: PASS
+------------------------------------------------------------------------------
+P1-H2: odpowiedz zlinearyzowana wokol psi=1 (statycznie)
+  EOM statyczne, lam = eps*lamh, psi = 1 + eps*f(r); O(eps):
+    -5*lamh*exp(-r**2/18) - f(r) + Derivative(f(r), (r, 2)) + 2*Derivative(f(r), r)/r = 0
+  gate: simplify(O(eps) - [f'' + 2f'/r - f - 5*lamh*rho_hat]) = 0  PASS
+  => (-lap + 1) dpsi = -5*lam*rho_hat  (dpsi=eps*f, lam=eps*lamh)
+  => dpsi = -5*lam*(G_Yuk * rho_hat), G_Yuk = exp(-r)/(4 pi r)
+  wsp. 5 = dU_mat/dpsi|_{psi=1} / (lam rho_hat) = 1*(8-3)/(4-3)^2
+  redukcja sferyczna (kernel Yukawy, wyprowadzenie kontrolowane):
+    s^2 = r^2+rp^2-2 r rp mu ; dmu/ds = -s/(r*rp)  (= -s/(r rp): 0)
+    s(mu=+1) = sqrt(r**2 - 2*r*rp + rp**2) = |r-rp| ; s(mu=-1) = sqrt(r**2 + 2*r*rp + rp**2)
+    (1/4pi) int dOmega' e^{-s}/s = (1/(2 r rp)) int_{|r-rp|}^{r+rp} e^{-s} ds
+      = (exp(r + rp) - exp(Abs(r - rp)))*exp(-r - rp - Abs(r - rp))/(2*r*rp)
+    => dpsi(r) = -(5 lam / r) int_0^oo rp rho_hat(rp) [e^{-|r-rp|} - e^{-(r+rp)}]/2 drp
+    => dpsi(0) = -5 lam int_0^oo rp rho_hat(rp) e^{-rp} drp
+  I0 = int_0^60 rp exp(-rp^2/18 - rp) drp = 0.776061934827
+  PREDYKCJA pre-rejestrowana [LOCK sec. 2]: dpsi < 0 wszedzie,
+  ogon ~ e^{-r}/r; glebokosci liniowe dpsi_lin(0) = -5*lam*I0:
+    lam=0.01   dpsi_lin(0) = -0.03880310
+    lam=0.05   dpsi_lin(0) = -0.19401548
+    lam=0.2    dpsi_lin(0) = -0.77606193
+    lam=0.5    dpsi_lin(0) = -1.94015484
+  profil dpsi_lin(r)/lam (kwadratura):
+    r=0.025  dpsi_lin/lam = -3.88019304e+00
+    r=1.000  dpsi_lin/lam = -3.69817850e+00
+    r=2.000  dpsi_lin/lam = -3.20219889e+00
+    r=3.000  dpsi_lin/lam = -2.52081969e+00
+    r=5.000  dpsi_lin/lam = -1.18010611e+00
+    r=8.000  dpsi_lin/lam = -1.94632788e-01
+    r=12.000 dpsi_lin/lam = -6.29674437e-03
+    r=20.000 dpsi_lin/lam = -1.56936703e-06
+    r=30.000 dpsi_lin/lam = -4.75076079e-11
+    r=40.000 dpsi_lin/lam = -1.61763157e-15
+  kontrola rezydualna ODE (siatka h=0.025, r<50, FD 2. rzedu):
+    max|(-lap+1)dpsi_lin + 5 rho_hat| / max|5 rho_hat| = 5.697e-06
+  znak: dpsi_lin(r) < 0 na calej siatce: True
+  P1-H2: PASS (wyprowadzenie + kwadratura-wzorzec)
+------------------------------------------------------------------------------
+P1-H3: fakty brzegowe U_mat (sympy limit; lam,rho_hat>0)
+  lim_{psi->4/3-} U_mat = oo  (= +oo: zrodlo ODPYCHA od sufitu tam gdzie rho_hat>0)
+  lim_{psi->0+}  U_mat = 0  (= 0: podloga BEZ bezposredniej bariery od materii)
+  pochodna na podlodze: lim_{psi->0+} dU_mat/dpsi = 0  (sila materii znika na podlodze)
+  ASYMETRIA pre-rejestrowana [LOCK sec. 2]: stabilizacja
+  latwiejsza dla kolapsow gornych (sufit) niz dolnych (podloga)
+  -- konfrontacja w Q-H2.
+  P1-H3: PASS
+==============================================================================
+PHASE 1 PODSUMOWANIE: P1-H1 PASS ; P1-H2 PASS ; P1-H3 PASS
+  U_mat(psi,r) = lam * rho_hat(r) * psi^2/(4-3psi)   [WYPROWADZONE]
+  dU_mat/dpsi  = lam * rho_hat(r) * psi(8-3psi)/(4-3psi)^2
+  U_mat - U_mat(1) = lam * rho_hat * (psi-1)(psi+4)/(4-3psi)
+  dpsi_lin(r) = -(5 lam/r) int rp rho_hat [e^{-|r-rp|}-e^{-(r+rp)}]/2 drp ; dpsi_lin(0) = -5 lam I0, I0=0.776061935
+==============================================================================

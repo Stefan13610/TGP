@@ -1,0 +1,32 @@
+==============================================================================
+PHASE 2 -- bramka (FROZEN; MD sec.5). FAIL => STOP
+REJESTR [INPUT]: dt=0.005; R=200; sponge gamma0=1 smootherstep
+  [160,200] (ON: P2a/P2b, OFF: P2c [INPUT-MD]); dt_out=0.1;
+  progi: P2a 1e-10; P2b psibar(0)=0.865982+-1%, t_end=0.375+-5%;
+  P2c dryf sekularny <=1e-6/100T0, okna [10,20]T0 vs [90,100]T0
+  [INPUT-MD: estymator przejety z correction note 1 poprzednika]
+==============================================================================
+P2a: proznia lam=0, sponge ON, 100 T0 = 628.318531
+  h=0.050: max||psi-1||_inf = 0.000e+00 (prog 1e-10) PASS [66 s]
+  h=0.025: max||psi-1||_inf = 0.000e+00 (prog 1e-10) PASS [141 s]
+  P2a: PASS
+P2b-1: regresja lam=0.05 stale, start psi=1, t=300, okno [250,300]
+  status=OK psibar(0)=0.865982 (kotwica 0.865982, +-1% => [0.857322, 0.874642]); n_prof=11
+  dpsi(0) = -0.134018 (kotwica -0.134018; wzgl. odchylenie 0.000%)
+  P2b-1: PASS [79 s]
+P2b-2: regresja lam=0.5 stale, start psi=1, h=0.05
+  status=BREAKDOWN-BOUNDARY t_end=0.3750 (kotwica 0.375, +-5% => [0.35625, 0.39375])
+  P2b-2: PASS [0 s]
+  P2b: PASS
+P2c: energia przy lam STALYM 0.05 (gauss a=+0.05 s=3, sponge OFF, t=700)
+  h=0.050: E(0)=2.289378581e+00 <E>_[10,20]T0=2.289346111e+00 <E>_[90,100]T0=2.289346095e+00
+          dryf_sekularny=8.801e-09 (prog 1e-6/100T0) PASS [207 s]
+          deskr.: offset_dC2(stary estym.)=2.282e-06  dryf_fitLSQ[10,100]T0=1.606e-07  max|E-E0|=3.376e-04
+  h=0.025: E(0)=2.289378867e+00 <E>_[10,20]T0=2.289346312e+00 <E>_[90,100]T0=2.289346295e+00
+          dryf_sekularny=8.993e-09 (prog 1e-6/100T0) PASS [356 s]
+          deskr.: offset_dC2(stary estym.)=2.298e-06  dryf_fitLSQ[10,100]T0=1.603e-07  max|E-E0|=3.376e-04
+  P2c: PASS
+==============================================================================
+PHASE 2 PODSUMOWANIE: P2a PASS ; P2b PASS ; P2c PASS => BRAMKA OTWARTA [356 s]
+==============================================================================
+PHASE2 DONE

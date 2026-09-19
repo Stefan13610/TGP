@@ -1,0 +1,71 @@
+==============================================================================
+PHASE 3 -- Q-G (litera LOCKa sec. 5; detektor/triage FROZEN MD sec. 3-4)
+REJESTR [INPUT]: K_geo=gamma=c0=1; R=400; h {0.05,0.025}; dt=0.005 (dt/2=0.0025); t_max=10000; staging A t=2000/triage 0.2*E_ref; sponge gamma0=1.0 smootherstep [320,400]; E_core r<=80; E_ref=E_core(50); detektor 0.5*E_ref/100T0/50 przejsc/omega_peak<=0.99; potwierdzenia tau 10%, omega 2%; RADIATED 0.05; WEAK 1e-3/1000 j.cz.; COLLAPSE pas 4/3-1e-6, 1e-6, okno 1 j.cz.; brak seeda
+==============================================================================
+Tabela biegow (start x siatka):
+  start          siatka   status    zdarzenie(t)           tau       cross  omega_peak+/-dom   E_end/E_ref
+  g_a0.02_s3     h05      OK        -                      174.3     55     -                  1.098e-03
+  g_a0.02_s6     h05      OK        -                      393.9     126    -                  9.839e-03
+  g_a0.02_s10    h05      OK        -                      699.2     223    -                  4.607e-02
+  g_a0.05_s3     h05      OK        -                      174.9     55     -                  1.117e-03
+  g_a0.05_s6     h05      OK        -                      418.2     134    -                  1.130e-02
+  g_a0.05_s6     h025     OK        -                      418.2     134    -                  1.130e-02
+  g_a0.05_s10    h05      OK        -                      880.3     281    -                  7.782e-02
+  g_a0.08_s3     h05      OK        -                      178.6     56     -                  1.178e-03
+  g_a0.08_s6     h05      OK        -                      487.1     156    -                  1.620e-02
+  g_a0.08_s10    h05      EVENT     BOUNDARY-UPPER(55.240) -         -      -                  -
+  g_a0.08_s10    h05_dt2  EVENT     NONFINITE(55.245)      -         -      -                  -
+  g_a0.10_s3     h05      OK        -                      183.5     58     -                  1.253e-03
+  g_a0.10_s6     h05      OK        -                      637.9     203    -                  3.065e-02
+  g_a0.10_s10    h05      EVENT     BOUNDARY-UPPER(40.010) -         -      -                  -
+  g_a0.10_s10    h05_dt2  EVENT     BOUNDARY-UPPER(40.065) -         -      -                  -
+  vac            h05      OK        -                      >=9950    0      -                  -
+
+Triage Etapu A (FROZEN):
+  g_a0.02_s3     -> martwy w Etapie A
+  g_a0.02_s6     -> martwy w Etapie A
+  g_a0.02_s10    -> martwy w Etapie A
+  g_a0.05_s3     -> martwy w Etapie A
+  g_a0.05_s6     -> martwy w Etapie A
+  g_a0.05_s10    -> martwy w Etapie A
+  g_a0.08_s3     -> martwy w Etapie A
+  g_a0.08_s6     -> martwy w Etapie A
+  g_a0.08_s10    -> martwy w Etapie A
+  g_a0.10_s3     -> martwy w Etapie A
+  g_a0.10_s6     -> martwy w Etapie A
+  g_a0.10_s10    -> martwy w Etapie A
+
+Klasyfikacja per start:
+  g_a0.02_s3     : RADIATED         [tau=174.3 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.02_s6     : RADIATED         [tau=393.9 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.02_s10    : RADIATED         [tau=699.2 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.05_s3     : RADIATED         [tau=174.9 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.05_s6     : RADIATED         [zbieznie h,h/2 (tau 418.2/418.2)]
+  g_a0.05_s10    : INCONCLUSIVE-RUN [poza literami kategorii (E_end/E_ref=0.078, cand=False, weak=False)]
+  g_a0.08_s3     : RADIATED         [tau=178.6 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.08_s6     : RADIATED         [tau=487.1 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.08_s10    : COLLAPSE         [podtyp BOUNDARY-UPPER/NONFINITE; t=55.240,55.245]
+  g_a0.10_s3     : RADIATED         [tau=183.5 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.10_s6     : RADIATED         [tau=637.9 (bez kontroli h/2 wg regul potwierdzen)]
+  g_a0.10_s10    : COLLAPSE         [podtyp BOUNDARY-UPPER; t=40.010,40.065]
+  kontrola vac : OK (kandydat=False wymagane)
+
+Konfrontacja omega_peak vs mapa LP (MIEKKA, deskryptywna, BEZ progu -- MD sec. 6):
+  (* = omega_desc: deskryptywnie, pik FFT na calym oknie podtrzymania < wymogu 1000 j.cz. detektora --
+   correction note 1b; NIE wchodzi do detektora)
+  g_a0.02_s3     omega_peak=-                  omega_LP(a=0.02)=0.9977
+  g_a0.02_s6     omega_peak=1.0013+/-0.0159*   omega_LP(a=0.02)=0.9977
+  g_a0.02_s10    omega_peak=1.0016+/-0.0090*   omega_LP(a=0.02)=0.9977
+  g_a0.05_s3     omega_peak=-                  omega_LP(a=0.05)=0.9855
+  g_a0.05_s6     omega_peak=1.0013+/-0.0150*   omega_LP(a=0.05)=0.9855
+  g_a0.05_s10    omega_peak=1.0015+/-0.0071*   omega_LP(a=0.05)=0.9855
+  g_a0.08_s3     omega_peak=-                  omega_LP(a=0.08)=0.9629
+  g_a0.08_s6     omega_peak=1.0013+/-0.0129*   omega_LP(a=0.08)=0.9629
+  g_a0.08_s10    omega_peak=-                  omega_LP(a=0.08)=0.9629
+  g_a0.10_s3     omega_peak=-                  omega_LP(a=0.10)=0.9421
+  g_a0.10_s6     omega_peak=1.0016+/-0.0098*   omega_LP(a=0.10)=0.9421
+  g_a0.10_s10    omega_peak=-                  omega_LP(a=0.10)=0.9421
+
+KLASY: COLLAPSE=2 INCONCLUSIVE-RUN=1 RADIATED=9
+WERDYKT: Q-G-INCONCLUSIVE (PASS: >=1 OSCILLON potwierdzony h/2 i dt/2; FAIL: WSZYSTKIE 12 RADIATED zbieznie ORAZ zero OSCILLON-WEAK; INCONCLUSIVE: reszta)
+==============================================================================

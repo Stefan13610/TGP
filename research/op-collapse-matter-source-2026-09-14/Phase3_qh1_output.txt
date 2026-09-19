@@ -1,0 +1,43 @@
+==============================================================================
+PHASE 3 / Q-H1 -- zrodlo na prozni (LOCK sec. 3; klasyfikatory MD sec. 6)
+REJESTR [INPUT]: lam {0.01,0.05,0.2,0.5}; t_max=300; h=0.05 (0.01/0.5 + h=0.025);
+  dt=0.005; sponge ON; okno [250,300]; osiadlosc V<=0.01*max(D,1e-12) r<=80;
+  progi 5/6, 7/6 (trwale = wszystkie probki okna); pas 4/3-1e-6 / 1e-6;
+  gate liniowy lam=0.01: <=5% wzgledem max|dpsi_lin| na r<=40
+==============================================================================
+bieg lam=0.01  h=0.050: status=OK cls=DEFORMATION  [59 s]
+    V=8.765e-05 D=3.465e-02 settled=True pull_lo=False pull_hi=False within=True
+    min psibar=0.965353  dpsi(0)=-0.034647
+bieg lam=0.01  h=0.025: status=OK cls=DEFORMATION  [131 s]
+    V=8.765e-05 D=3.465e-02 settled=True pull_lo=False pull_hi=False within=True
+    min psibar=0.965347  dpsi(0)=-0.034653
+bieg lam=0.05  h=0.050: status=OK cls=DEFORMATION  [76 s]
+    V=1.150e-04 D=1.340e-01 settled=True pull_lo=False pull_hi=False within=True
+    min psibar=0.865982  dpsi(0)=-0.134018
+bieg lam=0.2   h=0.050: status=BREAKDOWN cls=COLLAPSE t_end=0.600  [0 s]
+bieg lam=0.5   h=0.050: status=BREAKDOWN-BOUNDARY cls=COLLAPSE t_end=0.375  [0 s]
+bieg lam=0.5   h=0.025: status=BREAKDOWN-BOUNDARY cls=COLLAPSE t_end=0.375  [0 s]
+------------------------------------------------------------------------------
+Gate liniowy (lam=0.01, h=0.05): profil osiadly vs -5 lam (G_Yuk*rho_hat)
+  err = max|dpsi_meas - dpsi_lin| / max|dpsi_lin| (r<=40) = 0.1071  (prog 0.05)  FAIL
+------------------------------------------------------------------------------
+Deskryptywnie (obowiazkowo): dpsi(0) zmierzone vs predykcja liniowa -5*lam*I0
+  I0 = 0.776061935 (kwadratura P1-H2)
+  lam     h      klasa            dpsi(0)_meas   dpsi(0)_lin   meas/lin
+  0.01    0.050  DEFORMATION      -0.034647      -0.038803     0.893
+  0.01    0.025  DEFORMATION      -0.034653      -0.038803     0.893
+  0.05    0.050  DEFORMATION      -0.134018      -0.194015     0.691
+  0.2     0.050  COLLAPSE(BREAKDOWN)  n/a            -0.776062     -
+  0.5     0.050  COLLAPSE(BREAKDOWN-BOUNDARY)  n/a            -1.940155     -
+  0.5     0.025  COLLAPSE(BREAKDOWN-BOUNDARY)  n/a            -1.940155     -
+------------------------------------------------------------------------------
+Zbieznosc klas (MD sec. 6): lam 0.01/0.5 wymagaja h05=h025; lam 0.05/0.2 klasa z h05
+  lam=0.01 : h05=DEFORMATION h025=DEFORMATION => DEFORMATION
+  lam=0.05 : h05=DEFORMATION => DEFORMATION
+  lam=0.2  : h05=COLLAPSE => COLLAPSE
+  lam=0.5  : h05=COLLAPSE h025=COLLAPSE => COLLAPSE
+==============================================================================
+WERDYKT Q-H1 (litera LOCKa sec. 4): Q-H1-PULL
+  (DEFORMATION: wszystkie lam DEFORMATION zbieznie + gate liniowy <=5%;
+   PULL: >=1 lam THRESHOLD-PULL/COLLAPSE zbieznie; inaczej INCONCLUSIVE)
+==============================================================================

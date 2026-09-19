@@ -1,6 +1,6 @@
 ---
 title: "STATE.md — TGP_v1 single-source coordination point"
-date: 2026-09-14
+date: 2026-09-19
 type: state
 status: ACTIVE
 purpose: "Jedyny plik aktualizowany po każdej sesji. Zakres: krytyczna ścieżka + WIP + 3 ostatnie sesje. Historia → meta/STATE_ARCHIVE_*.md."
@@ -24,9 +24,37 @@ related:
 
 ## 🔴 Critical path
 
-**`op-oscillon-small-amplitude-2026-09-14` — PHASE0-LOCKED (właściwy test P1b; wynik Q-G rozstrzyga o nośniku oscylonowym i statusie łańcucha leptonowego). Równolegle: `op-collapse-matter-source-2026-09-14` (status kolapsu).**
+**USER-GATE: kierunek wątku kreacji po Q-I2-FAIL — gałąź „kreacja z materii statycznej" DOMKNIĘTA NEGATYWNIE.**
+Brak cyklu w realizacji; brak LOCK-a czekającego na wykonanie. Następny krok = decyzja autora.
 
-Tło: `op-r3-stationary-states-2026-09-14` CLOSED: **Q-E-INCONCLUSIVE**.
+`op-matter-induced-creation-2026-09-15` CLOSED 2026-09-19: **Q-I2-FAIL** (4/4 stany osiadłe →
+RETURN-TO-VACUUM po adiabatycznym wygaszeniu; PERSISTENT-OBJECT=0; predykcja pre-rejestrowana
+TRAFIONA) + **Q-I1-INCONCLUSIVE** (okno podprogowe NIEPUSTE na siatce produkcyjnej — λ̃=0.08:
+ψ̄(0)=0.808, λ̃=0.10: 0.773, próg M911 5/6 — ale LOCK-owe potwierdzenie h=0.025 najgłębszego
+przypadku rozjechało się do COLLAPSE; λ̃_crit(h=0.05)=0.107656±0.000156).
+
+**Bilans wątku kreacji po dwóch domknięciach:** czysty sektor grawitacyjny NIE kreuje (Q-B-FAIL,
+6/6 do ψ≡1) **i** materia statyczna NIE kreuje (Q-I2-FAIL, 4/4 do próżni). Obiekt indukowany jest
+**cieniem źródła** — zero histerezy, zero trwałości bez podtrzymania. W konwencji kanonicznej
+(|g^tt|, user-gate 2026-09-14) program nadal nie ma ANI JEDNEGO trwałego zlokalizowanego obiektu:
+brak statycznych solitonów (Q-B), brak oscylonów (Q-E, Q-G), brak obiektów indukowanych (Q-I2).
+
+**Kandydaci następnego kroku (do wyboru przez autora — szczegóły w NEEDS cyklu):**
+1. **N1 — re-lock metodologiczny** (tani): reguła potwierdzenia siatkowego „najgłębszy SETTLED-SUB
+   ORAZ jeden odsunięty od progu" + ekstrapolacja λ̃_crit(h→0) — czy okno podprogowe przeżywa
+   granicę ciągłą, czy zbiega do λ̃_turn(0D)=1/12. Domyka INCONCLUSIVE, nie otwiera nowej fizyki.
+2. **Samouzgodnione ρ(ψ)** (drzewo §5, gałąź Q-I1-PASS∧Q-I2-FAIL): „lepton = stan związany ze
+   źródłem" wymaga źródła reagującego na pole. Wymaga user-gate wobec S05 (jedno pole).
+3. **Geneza Γ+s_i, poziom 0** (M911-N1): wątek kreacji wraca przed metrykę.
+4. **N4 — próg DYNAMICZNY** (deskryptywny, mocny): λ̃_fold(0D)=0.285770 NIE jest mechanizmem progu;
+   kolaps zachodzi w pierwszym overshoocie nagłego załączenia. Kandydat osobnego LOCK-a
+   (załączanie adiabatyczne vs nagłe) — rozstrzyga, czy λ̃_crit jest własnością modelu czy protokołu.
+
+Status łańcucha leptonowego ROZSTRZYGNIĘTY dopiskiem core 2026-09-15 (user-gate): rem:psi-EOM-R3-branch-status
+uzupełniony o wynik trzech cykli — **CONDITIONAL-ON-BRANCH bez nośnika w klasach zbadanych** + diagnoza
+jakościowa (metryczna kinetyka defokusuje: c=(4−3ψ)/ψ rośnie przy obniżeniu ψ) + trzy kierunki dalsze
+(granica metryczna / stany związane ze źródłem / sektor euklidesowy). Liczby R3 pozostają EXACT
+w gałęzi znakowanej.
 
 Cykl ratunkowy NIE dał nośnika w klasie zbadanej: 0×OSCILLON; oba starty quasi-R3 (sin(r)/r)
 kolabują do granicy dziedziny w t≈2.3–4.7 (< 1 oscylacja, zbieżnie). ALE pre-rejestrowana
@@ -49,9 +77,10 @@ w NOWYCH LOCK-ach jako definicja klasyfikacyjna, zgodnie z propozycją NEEDS).
 
 | # | Cykl | Faza / status | Następny krok |
 |---|---|---|---|
-| 1 ★ | [[research/op-oscillon-small-amplitude-2026-09-14/]] | **PHASE0-LOCKED** (zero obliczeń) | realizacja Q-G (oscylony małej amplitudy, test P1b); nowy agent wg HANDOFF_PROMPT |
-| 2 | [[research/op-collapse-matter-source-2026-09-14/]] | **PHASE0-LOCKED** (zero obliczeń) | realizacja Q-H1/Q-H2 (deformacja Yukawy + stabilizacja kolapsu); nowy agent wg HANDOFF_PROMPT |
-| 3 | [[research/op-r3-stationary-states-2026-09-14/]] | CLOSED (Q-E-INCONCLUSIVE; Q-F nieuruchomione) | **NEEDS:** N1 🟢→nowy LOCK, N2 🟢→nowy LOCK, N4 🟢 przyjęte w nowych LOCK-ach; N3 (status łańcucha) OPEN — czeka na Q-G |
+| 1 ★ | [[research/op-matter-induced-creation-2026-09-15/]] | **CLOSED 2026-09-19 (Q-I1-INCONCLUSIVE + Q-I2-FAIL)** — okno podprogowe niepuste na h=0.05 (ψ̄(0)=0.808/0.773), potwierdzenie h/2 rozjechane; 4/4 RETURN-TO-VACUUM po wygaszeniu, PERSISTENT-OBJECT=0; λ̃_crit=0.107656±0.000156 | **NEEDS N1–N6 OPEN, user-gated.** Slot ★ WOLNY — czeka na decyzję kierunku (patrz Critical path) |
+| 1b | [[research/op-oscillon-small-amplitude-2026-09-14/]] | CLOSED 2026-09-15 (Q-G-INCONCLUSIVE) — 0×OSCILLON/WEAK, 9×RADIATED, 2×COLLAPSE (σ=10 → sufit!), 1×INC-RUN; ω_desc na progu kontinuum | NEEDS N2 🟢 ROZSTRZYGNIĘTE dopiskiem core 2026-09-15; N1/N3/N4 OPEN (niski priorytet) |
+| 2 | [[research/op-collapse-matter-source-2026-09-14/]] | **CLOSED 2026-09-15 (Q-H1-PULL + Q-H2-INCONCLUSIVE)** — λ̃_crit∈(0.05,0.2]; STABILIZED=0; 1 kolaps UCHYLONY (qR3−0.20@0.05 → zdeformowana próżnia) | **NEEDS:** N1 🟢 ZREALIZOWANE przez op-matter-induced-creation (Q-I2-FAIL: indukcja ≠ kreacja); N2 re-lock kategorii względem E_static — OPEN, user-gated |
+| 3 | [[research/op-r3-stationary-states-2026-09-14/]] | CLOSED (Q-E-INCONCLUSIVE; Q-F nieuruchomione) | NEEDS: N1 🟢 wykonane (Q-G), N2 🟢 wykonane (Q-H), N4 🟢 przyjęte; N3 = ścieżka krytyczna |
 | 4 | [[research/op-action-audit-spectrum-insert-2026-09-13/]] | CLOSED (Q-D1-PASS + Q-D2-INCONCLUSIVE) | **NEEDS OPEN:** N1 (więz skończonej skali dla ΔE_insert), N4 (schemat więzu w przyszłych LOCK-ach) — user-gated |
 | 5 | [[research/op-metric-pair-M911-2026-09-02/]] | CLOSED (Q-A-PASS + Q-B-FAIL) | **NEEDS:** N2 🟢→realizowane przez op-collapse-matter-source; N4-M911 (dopisek core o samodomknięciu pary) — OPEN, user-gated |
 
@@ -78,6 +107,58 @@ statusu maszynowego; pełna polityka: [[meta/CYCLE_LIFECYCLE.md]].
 
 **Zasada:** STATE.md wskazuje JEDNĄ rzecz krytyczną + max 5 WIP. Reszta to zasoby referencyjne —
 nie kopiować ich treści tutaj.
+
+---
+## 🟢 Sesja 2026-09-19 — **`op-matter-induced-creation` WYKONANY I ZAMKNIĘTY (agent z handoffu): Q-I2-FAIL — KREACJI Z MATERII STATYCZNEJ NIE MA (4/4 RETURN-TO-VACUUM, PERSISTENT-OBJECT=0, predykcja pre-rejestrowana TRAFIONA) + Q-I1-INCONCLUSIVE (okno podprogowe niepuste, ale potwierdzenie siatkowe rozjechane)** — gałąź M911-N2 domknięta negatywnie; ścieżka krytyczna → user-gate o kierunku
+
+User: „wyznacz kolejny cel" → wskazanie zaległego LOCK-a na ścieżce krytycznej (od 2026-09-15 zero ruchu) → „odpal agenta dla handoffu".
+
+### 🟢 [[research/op-matter-induced-creation-2026-09-15/]] — CLOSED: **Q-I1-INCONCLUSIVE + Q-I2-FAIL**
+- **Phase 1 PASS** (P1-I1 6/6 tożsamości + 27/27 kontroli ≤1.33e−15; **P1-I2 pre-rejestracja ilościowa zapisana PRZED Phase 3**: krzywa ψ_min(λ̃) dla całej listy + λ̃_fold=0.285769734239; P1-I3 cytat).
+- **Phase 2 PASS 3/3 BEZ KOREKT** — próżnia 0.0; **kotwice poprzednika odtworzone co do cyfry**: δψ(0)@λ̃=0.05 = −0.134018 (odchylenie 0.000%), t_end@λ̃=0.5 = 0.3750; dryf sekularny 8.8e−9 na obu siatkach.
+- **Q-I1-INCONCLUSIVE wg litery:** SETTLED-DEF dla λ̃∈{0.01,0.05,0.06}, **SETTLED-SUB dla λ̃∈{0.08,0.10}** (ψ̄(0)=0.808031 / 0.772903, próg M911 5/6), COLLAPSE dla λ̃≥0.12 — wszystkie w PIERWSZYM overshoocie (t_end=0.60–0.83). Bisekcja 6 kroków: **λ̃_crit(h=0.05)=0.107656±0.000156** (poprzednik dawał tylko (0.05,0.2]). PASS zablokowany, bo LOCK §3 wymagał potwierdzenia h=0.025 dla **najgłębszego** SETTLED-SUB (λ̃=0.10, 7% pod progiem) — ten bieg na h/2 **kolabuje** (t=0.95). FAIL też niemożliwy (lista nie jest kompletem DEF/COLLAPSE).
+- **Q-I2-FAIL (centralne, zgodnie z predykcją):** wszystkie 4 stany osiadłe (λ̃=0.05, 0.06, 0.08, 0.10) — **w tym OBA podprogowe** — po adiabatycznym wygaszeniu (smootherstep Δ=100) dają **RETURN-TO-VACUUM**: max|ψ−1|(r≤40, t=1700) = 2.0–2.1e−4 przy progu 1e−3. PERSISTENT-OBJECT = 0. Kontrola negatywu λ̃=0.05 na h=0.025 ZGODNA; gate czystości wygaszania λ̃=0.01 PASS (1.38e−4). **Predykcja pre-rejestrowana TRAFIONA — bez reinterpretacji.**
+- **Higiena wzorowa:** hashe FROZEN (LOCK + MD + engine_core) NIEZMIENIONE, **zero correction notes, zero incydentów**. Probe zbieżności siatkowej uruchomiony **PO** zapisaniu werdyktu, oznaczony jako poza protokołem werdyktowym — werdykt NIE podniesiony post hoc, mimo że probe pokazał zbieżność λ̃=0.06 i λ̃=0.08 (rozjazd jest LOKALNY wokół progu, nie systemowy).
+- **NEEDS N1–N6 user-gated:** N1 reguła potwierdzenia siatkowego + ekstrapolacja λ̃_crit(h→0) (główny); N2 domknięcie gałęzi M911-N2; N3 kryterium RETURN-TO-VACUUM zadziałało tylko przez człon amplitudowy (E(1700)/E(700)=0.75 ≫ 0.05 — energia rdzenia po rampie to resztka, stosunek nic nie mierzy); N4 **próg jest DYNAMICZNY, nie statyczny** (λ̃_fold 0D=0.2858 vs λ̃_crit=0.1077 — mechanizmem jest overshoot nagłego załączenia, nie fold); N5 zakres ważności 𝒰_mat przy λ̃≳0.1; N6 higiena.
+
+### Weryfikacja sesji głównej (niezależna, z surowych outputów)
+Werdykty sprawdzone **1:1 z `Phase3_qi1_output.txt` / `Phase3_qi2_output.txt`**, nie z narracji zamknięcia. Litera LOCK §4 zastosowana poprawnie w obu przypadkach (w tym rozłączność „lub" w RETURN-TO-VACUUM i koniunkcja „oraz" w PERSISTENT-OBJECT). `integrity_snapshot.txt` potwierdza LOCK UNCHANGED.
+
+### Synteza (poziom syntezy, bez nowych obliczeń)
+- **Wątek kreacji domknięty z dwóch stron:** czysty sektor nie kreuje (Q-B-FAIL) **i** materia statyczna nie kreuje (Q-I2-FAIL). Obiekt indukowany to cień źródła — zero histerezy. W konwencji kanonicznej program nie ma ANI JEDNEGO trwałego zlokalizowanego obiektu (Q-B, Q-E, Q-G, Q-I2).
+- **Zysk pozytywny mimo dwóch negatywów:** (1) λ̃_crit zawężone z przedziału (0.05,0.2] do 0.107656±0.000156; (2) istnienie osiadłego stanu PODPROGOWEGO potwierdzone na siatce produkcyjnej (poprzednik miał to tylko deskryptywnie); (3) **obalony domniemany mechanizm progu** — fold 0D (0.2858) jest 2.65× wyżej niż zmierzony próg, więc kolaps NIE jest utratą minimum statycznego, tylko dynamicznym overshootem.
+
+### Cross-references
+[[research/op-matter-induced-creation-2026-09-15/Phase_FINAL_close.md]] · [[research/op-matter-induced-creation-2026-09-15/NEEDS.md]] · [[research/op-matter-induced-creation-2026-09-15/Phase3_qi2_output.txt]] · [[research/op-collapse-matter-source-2026-09-14/NEEDS.md]] · [[research/op-metric-pair-M911-2026-09-02/NEEDS.md]]
+
+---
+
+## 🟢 Sesja 2026-09-15 — **OBA CYKLE-BLIŹNIAKI WYKONANE I ZAMKNIĘTE (agenci z handoffów): Q-G-INCONCLUSIVE (zero oscylonów małej amplitudy; ω na progu kontinuum, zero śladu mapy LP) + Q-H1-PULL / Q-H2-INCONCLUSIVE (materia deformuje/indukuje, nie stabilizuje w kategorii STABILIZED)** — po trzech cyklach gałąź zdrowa BEZ nośnika oscylonowego; ścieżka krytyczna → user-gate: status łańcucha leptonowego
+
+User: „tak działaj" (uruchomienie obu agentów-implementatorów po wyborze N1+N2 z NEEDS op-r3-stationary-states).
+
+### 🟢 [[research/op-oscillon-small-amplitude-2026-09-14/]] — CLOSED: **Q-G-INCONCLUSIVE** (właściwy test P1b)
+- Phase 1 PASS (P1a′ 24/24; P1b′ cytat ω₂=−139/24 + tabela ω(a) PRZED Phase 3); Phase 2 PASS 6/6 (próżnia 0.0; **regresja τ=206.9 odchyłka 0.000 vs poprzednik**; dryf 9.65e−8; odbicie sponge 1.13e−7).
+- Phase 3 (13 startów h=0.05 → triage → Etap B; potwierdzenia wg reguł): **0×OSCILLON, 0×OSCILLON-WEAK; 9×RADIATED** (τ=174–699; kontrola negatywu a=0.05 σ=6: τ=418.2 IDENTYCZNE na h i h/2); **2×COLLAPSE** (σ=10, a≥0.08 — do SUFITU w t≈40–55, zbieżnie dt/2: kolaps do granicy nie wymaga dużej amplitudy, wystarczy szerokie zaburzenie); 1×INCONCLUSIVE-RUN (a=0.05 σ=10: podtrzymanie 880>628, ale E→7.8% bez plateau — szczelina kategorii). Triage: 12/12 startów martwych w t=2000; Etap B dobiegła tylko próżnia (ψ≡1 do t=10⁴).
+- **Konfrontacja z mapą LP (miękka): zmierzone ω_desc=1.0013–1.0016 wszędzie, PŁASKO w a** — dokładnie próg kontinuum m=1; mapa LP przewidywała 0.9977→0.9421. Zero śladu zmiękczenia i samopułapkowania (zastrzeżenie: pomiar na gasnącym rdzeniu; falsyfikacja P1b NIE orzeczona literą — FAIL wymagał 12/12 RADIATED). Korekta 1 (warstwa raportu FFT; nota przed użyciem). Integralność SHA256 UNCHANGED; werdykt zweryfikowany przez sesję główną 1:1 z Phase3_output.txt.
+- NEEDS: **N2 (★ user-gate): status łańcucha leptonowego po dwóch cyklach bez nośnika** (kandydat dopisku core rem:psi-EOM-R3-branch-status); N1 szczelina kategorii; N3 kolaps szerokich startów → materiał bliźniaka; N4 budżet FFT.
+
+### 🟢 [[research/op-collapse-matter-source-2026-09-14/]] — CLOSED: **Q-H1-PULL + Q-H2-INCONCLUSIVE** (materia z eq:L-mat-unified)
+- Phase 1 PASS (𝒰_mat=λ̃ρ̂ψ²/(4−3ψ) WYPROWADZONE sympy z literalnego √−g·(q/Φ₀)ψρ; δψ_lin=−5λ̃(G_Yuk∗ρ̂); fakty brzegowe P1-H3). Phase 2 PASS 3/3 po korekcie 1 (estymator dryfu: pierwotny FAIL 2.28e−6 = dt²-owy offset hamiltonianu-cienia, dowód ×4.00 przy dt/2; po korekcie 8.8e−9; **regresja kolapsu λ̃=0: t_end=4.7400 dokładnie**).
+- **Q-H1-PULL:** λ̃≥0.2 INDUKUJE ucieczkę z dziedziny (λ̃=0.5: COLLAPSE t=0.375 zbieżnie na obu siatkach; **λ̃_crit∈(0.05,0.2]**); przy λ̃≤0.05 DEFORMATION (min ψ̄=0.866>5/6), ale gate liniowy FAIL 10.7%>5% — saturacja nieliniowa (meas/lin: 0.893 przy λ̃=0.01, 0.691 przy 0.05). **Znak δψ<0 (P1-H2) POTWIERDZONY.**
+- **Q-H2-INCONCLUSIVE:** STABILIZED=0 (litera wymagała zachowania E_core startu); COLLAPSE=8/12 — wszystkie SZYBSZE niż baseline (0.16–1.6 vs 4.7–18.2: indukcja, spójna z Q-H1-PULL); **1 kolaps UCHYLONY potwierdzone h/2+dt/2: qR3−0.20 przy λ̃=0.05 → RADIATED (τ=44.7), pole osiada w ZDEFORMOWANEJ próżni** (ψ(0)→0.866 = dokładnie deformacja Q-H1); 3×INCONCLUSIVE-RUN (2 przetrwańcy t=1000 z E_ref≤0 — kategoria względem E startu źle mierzy relaksację do stanu związanego ze źródłem; 1 rozjazd siatek). Probe lokusa: kolaps z materią = centralny runaway w rdzeniu ρ̂ (przejście przez pas w jednym kroku) — podtyp sufit/podłoga to kierunek overshootu, nie sygnatura asymetrii P1-H3 (bez rozstrzygnięcia w przewidzianej formie).
+- NEEDS user-gated: N1 materia jako mechanizm INDUKCJI przejść — konfrontacja z hipotezą kreacji M911 (drzewo tamtego LOCKa); N2 re-lock kategorii względem E_static (STABILIZED mierzone od stanu związanego, nie od startu); N3–N5 wg FINAL.
+
+### ✏️ Dopisek core + nowy LOCK (kontynuacja sesji 2026-09-15; autoryzacja: wybór usera „dopisek core + wątek kreacji + dyskusja")
+- **Dopisek core** [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]] (rem:psi-EOM-R3-branch-status, blok „Dopisek 2026-09-15"): wynik trzech cykli zaksięgowany — **CONDITIONAL-ON-BRANCH bez nośnika w klasach zbadanych** (amplitudy 0.02–0.30, σ=3–15, sferycznie, t≤10⁴, z materią statyczną i bez); liczby R3 EXACT w gałęzi znakowanej; diagnoza jakościowa (metryczny defocusing: c=(4−3ψ)/ψ rośnie przy obniżeniu ψ — miękkość LP modu jednorodnego nie przenosi się na profile 3D); trzy kierunki user-gated: (i) spektrum przy granicy metrycznej (N=3 z bariery robust, bariera≡sufit), (ii) stany związane ze źródłem (obserwowany ψ(0)→0.61<5/6), (iii) gałąź znakowana jako sektor euklidesowy (R3 jako siodła S_E).
+- **Nowy LOCK** [[research/op-matter-induced-creation-2026-09-15/Phase0_balance.md]] — PHASE0-LOCKED, zero obliczeń (realizuje NEEDS N1 cyklu materii + gałąź „sprzężenie z materią" hipotezy kreacji M911): **Q-I1** indukowany stan podprogowy ψ̄(0)<5/6 w oknie λ̃∈{0.06…0.18} + bisekcja λ̃_crit + pre-rejestrowana krzywa ψ_min(λ̃)/fold z 0D; **Q-I2 (centralne)** trwałość po adiabatycznym wygaszeniu źródła (rampa smootherstep Δ=100; PERSISTENT-OBJECT = pierwsza kreacja w konwencji kanonicznej → eskalacja user-gate CORE). **Predykcja pre-rejestrowana: RETURN-TO-VACUUM/COLLAPSE** (bez źródła jedyny znany stan trwały to ψ≡1 — Q-B-FAIL, Q-E/Q-G).
+
+### Synteza sesji (poziom syntezy, bez nowych obliczeń)
+- **Bilans hipotezy ratunkowej po 3 cyklach:** gałąź zdrowa nie samopułapkuje pola w żadnej zbadanej klasie (amplitudy 0.02–0.30, σ=3–15, t do 10⁴); analityczna miękkość LP (ω₂<0, mod jednorodny) NIE przenosi się na zlokalizowane profile 3D — pole dzwoni na progu kontinuum i rozprasza się. Konsekwencje R3 pozostają CONDITIONAL-ON-BRANCH **bez nośnika**; decyzja o dopisku core i dalszym kierunku = user (ścieżka krytyczna).
+- **Nowa fizyka programu (dwie twarde obserwacje):** (1) kolaps do granicy dziedziny zależy od SZEROKOŚCI/energii zaburzenia, nie amplitudy (σ=10 przy a=0.08 → sufit); (2) korpusowe sprzężenie z materią jest destabilizujące powyżej λ̃_crit∈(0.05,0.2] i deformujące poniżej — jedyna forma „stabilizacji" to relaksacja do próżni zdeformowanej źródłem. Wątek kreacji M911 dostaje kandydata mechanizmu (indukcja przez materię) — user-gate.
+
+### Cross-references
+[[research/op-oscillon-small-amplitude-2026-09-14/Phase_FINAL_close.md]] · [[research/op-oscillon-small-amplitude-2026-09-14/NEEDS.md]] · [[research/op-collapse-matter-source-2026-09-14/Phase_FINAL_close.md]] · [[research/op-collapse-matter-source-2026-09-14/NEEDS.md]] · [[research/op-r3-stationary-states-2026-09-14/NEEDS.md]]
 
 ---
 ## 🟢 Sesja 2026-09-14 — **N2 ROZSTRZYGNIĘTE (user-gate CORE): konwencją kanoniczną DYNAMIKI jest odczyt |g^tt| (gałąź stabilna, Yukawa)** — dopiski core sek08a (rem:W-sign-axiomatic(iv) + NOWY rem:psi-EOM-R3-branch-status; prop:psi-EOM-R3 przeklasyfikowane CONDITIONAL-ON-BRANCH, nic nie usunięte) + LOCK hipotezy ratunkowej [[research/op-r3-stationary-states-2026-09-14/Phase0_balance.md]] + **CYKL WYKONANY I ZAMKNIĘTY (agent z handoffu): Q-E-INCONCLUSIVE — 0 oscylonów w klasie zbadanej; oba starty quasi-R3 kolabują < 1 oscylacji; predykcja P1b (ω₂=−139/24<0, małe amplitudy) NIESKONFRONTOWANA**
@@ -114,79 +195,13 @@ User: analiza N2 („skłaniam się ku |g^tt|; czy Yukawa w TGP w ogóle potrzeb
 
 ---
 
-## 🟢 Sesja 2026-09-13 — ZAKSIĘGOWANE zamknięcie op-metric-pair-M911 (Q-A-PASS: sektor (w, V_M9.1'', K=ψ⁴) SAMODOMKNIĘTY bez podłóg/barier + Q-B-FAIL: czysta relaksacja NIE kreuje, 6/6 do ψ≡1) + analiza audytu zewnętrznego [[TGP_analiza_i_priorytety.pdf]] + cykl [[research/op-action-audit-spectrum-insert-2026-09-13/Phase0_balance.md]] ROZPISANY I WYKONANY W TEJ SESJI — CLOSED: **Q-D1-PASS (właściwa para bez tachionu i ducha: ω²(k)=k²+1, m²=c_s²=1) + Q-D2-INCONCLUSIVE (pin punktowy: ΔE∝h→0) + zlokalizowane NAPIĘCIE ZNAKU WARIACJI w rdzeniu (user-gate CORE)**
-
-User: analiza `TGP_analiza_i_priorytety.pdf` w kontekście dalszej pracy → wybór ścieżki „Audyt analityczny P0.1+P0.3" (spośród: P0.1+P0.3 / dopisek core N4 / LOCK N2 materia / LOCK N3 dynamika 2. rzędu).
-
-### ✅ Zaksięgowanie: cykl `op-metric-pair-M911` CLOSED-EXECUTED (wykonany przez agenta z handoffu; STATE dotąd nie odnotowywał wyników)
-- **Q-A-PASS:** ρ_eff=w·V=γ(ψ⁴/4−ψ³/3) — jedyne minimum ψ*=1 (ρ″=1>0, ρ_eff(1)=−1/12), granica 4/3 POD GÓRKĘ (ρ_eff(4/3)=0), 𝒦>0 w obu odczytach, E≥−|Ω|/12 — **pierwszy cykl programu, w którym model nie wymaga ani podłogi, ani sufitu**. Rozjazd odczytów kinetyki rozstrzygnięty CYTATEM przed startem (PRIMARY=odczyt B: w·g_eff^ij≡1 ⟹ 𝒦=ψ⁴).
-- **Q-B-FAIL (litera):** 6/6 biegów (geneza N48/N64, bump h=0.025/0.0125, sieć 2π N32/N48) STATIONARY w jednorodnej próżni ψ≡1 (zbieżnie 1e−11÷1e−14); zdarzeń ZERO. Kontrast: 10/10 BREAKDOWN hybrydy poprzednika — diagnoza niekompatybilnej hybrydy potwierdzona od strony pozytywnej. **Czysty sektor grawitacyjny NIE KREUJE** — hipoteza kreacji kierowana do genezy Γ+s_i / sprzężenia z materią (drzewo LOCKa §5). Q-C nie wykonane (warunkowe). Szczegóły: [[research/op-metric-pair-M911-2026-09-02/Phase_FINAL_close.md]]; NEEDS N1–N5 user-gated: [[research/op-metric-pair-M911-2026-09-02/NEEDS.md]].
-
-### 📄 Audyt zewnętrzny (PDF, snapshot 5c543d76 z 02.09 — SPRZED wyników M911) — synteza po skonsumowaniu
-- Wniosek 1 (w w kinetyce) → rozstrzygnięty w M911 (odczyt B, cytat). Wniosek 2 (dowód jednorodności ⟹ skan zbędny) → **potwierdzony empirycznie przez Q-B-FAIL**; lekcja: przed kolejnymi skanami relaksacyjnymi najpierw krótki dowód klasy. Wnioski 3–5 (C-BAR≠detektor solitonu; ΔE_insert źle zdefiniowane w Q1-POS; brak nośnika spin-2) → OTWARTE.
-- Zbieżność niezależnych diagnoz: audyt (rozdz. 3+6) i drzewo M911 wskazują to samo — kolejny krok NIE może być kolejną relaksacją czystego sektora.
-- Priorytety audytu po M911: P0.1 w połowie (brak kanoniki czasowej i widma — Q-C nie zaszło), P0.2 skonsumowany, P0.3/P1.x/P2 otwarte.
-
-### 🟢 ROZPISANE: [[research/op-action-audit-spectrum-insert-2026-09-13/Phase0_balance.md]] — PHASE0-LOCKED, zero obliczeń (realizacja P0.1+P0.3 audytu; wybór usera)
-- **Q-D1 (analitycznie, sympy):** z JEDNEJ literalnej akcji (eq:S-TGP-unified-M911-canonical) pęd kanoniczny, Hamiltonian, M(ψ) (WYNIK, nie założenie) i dyspersja próżni ω²(k) — rozstrzyga tachion/duch we właściwej parze (audyt rozdz. 2: stara hybryda dawała ω²=k²−1). Gate P1b: statyka z H ≡ funkcjonał PRIMARY M911 (tożsamość sympy).
-- **Q-D2 (lekka numeryka radialna):** ΔE_insert(A;R,h) na WSPÓLNYM tle (korekta metodologiczna Q1-POS: koniec porównań między różnymi tłami); rodzina A={0.50,0.70,5/6,7/6,1.25,1.30}, R∈{60,120}, h∈{0.025,0.0125}; werdykty Q-D2-COST/CHANNEL/INCONCLUSIVE.
-- Drzewo: Q-D1-PASS ⟹ operator kinetyczny zalockowany dla przyszłej dynamiki 2. rzędu (N3 staje się dobrze postawiony); Q-D1-FAIL ⟹ user-gate CORE (znaki). Prompt dla nowego agenta: [[research/op-action-audit-spectrum-insert-2026-09-13/HANDOFF_PROMPT.md]].
-
-### 🟢 Cykl `op-action-audit-spectrum-insert` WYKONANY W CAŁOŚCI (agent z handoffu, jedna sesja; wznowiony raz do dokończenia P3b+closure) — **CLOSED: Q-D1-PASS + Q-D2-INCONCLUSIVE**
-- **Q-D1-PASS (P0.1 audytu WYKONANY):** z JEDNEJ literalnej akcji (sympy, simplify=0): **M(ψ)=K_geoψ⁶/(c₀(4−3ψ)²) WYPROWADZONE** z członu √−g·½K·|g^tt|ψ̇² (nie założone), 𝒦=ψ⁴, 𝒰=γ(ψ⁴/4−ψ³/3); π=Mψ̇; H|_{π=0} ≡ E_PRIMARY M911 (gate P1b: tożsamość dokładna — akcja i funkcjonał relaksacji poprzednika pochodzą z JEDNEGO zapisu); **ω²(k)=k²+1, m²=c_s²=1** — próżnia bez tachionu i bez ducha, M>0 i 𝒦>0 na całej (0,4/3), oba odczyty kinetyki w ψ*=1 identyczne. **Właściwa para NAPRAWIA tachion starej hybrydy** (audyt rozdz. 2: ω²=k²−1). Correction note 1 (gate P1c: harness dwóch wejść binarnych + fma; progi/punkty/formy NIETKNIĘTE; po korekcie 12/12 ≤5.7e−14).
-- **⚠️ NAPIĘCIE ZNAKU WARIACJI zlokalizowane precyzyjnie (deskryptywnie, user-gate CORE — N2):** odczyt |g^tt| daje zdrową dyspersję k²+1, ale statykę (ψ−1)/ψ² (zaniki Yukawy); literalna kontrakcja ZNAKOWANA odtwarza R3 ODE (1−ψ)/ψ² (fundament spektrum mas), ale kosztem tachionu k²−1 + ducha. **Jedna rzeczywista wariacja Lorentzowska nie daje obu naraz** — kaweat audytu rozdz. 2 potwierdzony i zawężony do decyzji o konwencji w sek08a/sek08c. ZERO samowolnych napraw rdzenia.
-- **Q-D2-INCONCLUSIVE (P0.3 audytu wykonany połowicznie, z zyskiem metodologicznym):** P3a 8/8 PASS; P3b 24/24: ΔE_insert>0 dla wszystkich A≠1 przy każdym skończonym h, monotonicznie rosnące z |A−1| (spójne z Q-A-PASS), **|ΔE(R=120)−ΔE(R=60)|=0 DOKŁADNIE** (zero członu objętościowego — główna wada Q1-POS usunięta definicją wspólnego tła), ALE **brak zbieżności h: ΔE∝h→0 (punktowy pin ψ(0)=A ma zerową pojemność w 3D**; potwierdzone minimami Newtona: stosunek 0.4988 przy h→h/2) ⟹ INCONCLUSIVE wg litery, bez werdyktu znaku. A=1.30: BREAKDOWN-BOUNDARY-LOWER (kategoria deskryptywna, zbieżna). Zakaz wnioskowania o barierze kreacji dotrzymany.
-- **NEEDS user-gated (4):** N1 poprawka definicji ΔE_insert (więz skończonej skali); **N2 user-gate CORE: rozstrzygnięcie znaku wariacji/sygnatury (|g^tt| ↔ R3 ODE)**; N3 cykl dynamiki 2. rzędu z zalockowanym (M,𝒦,𝒰) — warunkowo na N2; N4 schemat więzu w przyszłych LOCKach. Szczegóły: [[research/op-action-audit-spectrum-insert-2026-09-13/NEEDS.md]] · [[research/op-action-audit-spectrum-insert-2026-09-13/Phase_FINAL_close.md]].
-
-### WIP po sesji
-- **op-metric-pair-M911: 🟢 CLOSED, Q-A-PASS + Q-B-FAIL** (zaksięgowane; NEEDS N1–N5 user-gated, w tym N4 — kandydat dopisku core o samodomknięciu pary: NIEROZSTRZYGNIĘTY, czeka na decyzję usera).
-- **op-action-audit-spectrum-insert: 🟢 CLOSED, Q-D1-PASS + Q-D2-INCONCLUSIVE.** P0.1 audytu wykonany; P0.2 skonsumowany (sesja); P0.3 wykonany połowicznie (definicja poprawiona co do członu objętościowego, wymaga więzu skończonej skali — N1).
-- **Krytyczna ścieżka po sesji: user-gate CORE N2 (znak wariacji |g^tt| ↔ R3 ODE)** — blokuje pełne zalockowanie operatora kinetycznego dla dynamiki 2. rzędu (N3) i dotyka fundamentu spektrum mas R3. Dalej: decyzja o kosztownej gałęzi — N2-materia (M911) vs N3-dynamika (ten cykl).
-
-### Cross-references
-[[research/op-metric-pair-M911-2026-09-02/Phase_FINAL_close.md]] · [[research/op-action-audit-spectrum-insert-2026-09-13/Phase0_balance.md]] · [[TGP_analiza_i_priorytety.pdf]] · [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]]
-
----
-
-## 🟢 Sesja 2026-09-02 — N1 ROZSTRZYGNIĘTE: korpus MA górne domknięcie i jest ono METRYCZNE (biegun M9.1'' przy ψ=4/3) + LOCK następcy [[research/op-metric-closure-relaxation-2026-09-02/Phase0_balance.md]] — PHASE0-LOCKED
-
-User: „ok, działaj" (sekwencja N1 → re-lock Q2 z NEEDS op-metametric-boundary).
-
-### ✅ N1 rozstrzygnięte (dokumentacyjnie, przeszukanie korpusu)
-- **Górne domknięcie pola istnieje w korpusie i jest METRYCZNE:** M9.1'' canonical (G.0 closure LOCK 2026-05-02, sek08a): √−g_eff = c₀ψ/(4−3ψ) (eq:vol-element-M911), ds² = −c₀²(4−3ψ)/ψ dt² + ψ/(4−3ψ)δᵢⱼdxⁱdxʲ, V_M9.1''=−γψ²(4−3ψ)²/12 ⟹ **ψ_max=4/3, g_ceil=√(4/3)=1.15470** (g_tt→0: nieskończona dylatacja czasu — GRANICA METRYKI dosłownie; √−g→∞: dynamiczna bariera objętościowa). Hipoteza autora „wielki wybuch trwa na granicy metryki" (op-blocked-soliton-bang) dostaje umocowanie w rdzeniu.
-- **Obserwacja (sanity, pre-rejestrowana w nowym locku):** tła łańcucha bloch miały g_max=1.1406–1.1429 — tuż POD g_ceil; zrelaksowane struktury zdają się żyć przy granicy metrycznej.
-- Kandydaci słabsi (odnotowani): kompaktowość ŝ∈ℝ/ℤ₂ (dodatekB), człon entropijny (T_Γ-tłumiony); spinodala QB ma tylko gałąź rozrzedzeniową.
-
-### 🟢 Cykl `op-metric-closure-relaxation` WYKONANY W CAŁOŚCI — **CLOSED, Q-PASS-NUCLEATION (pierwszy Q-PASS wątku!): pre-rejestrowany pozytyw autora WYSTĄPIŁ — zbieżna nukleacja obiektu (N=1±0, 4/4 biegi) w wariancie C-BAR; rozjazd PRIMARY↔C-BAR totalny z diagnozą: zalockowana hybryda (w metryczne × kanoniczne U) niekompatybilna — biegun PRZYCIĄGA**
-- **Phase 1 PASS 3/3:** P1a 6/6 (dryf 0.0; decyzja FROZEN: gęstość jako U−U(1), wymuszona literą P1a); P1b 2/2 — dokładna reprodukcja BREAKDOWN poprzednika (t=2.750/3.130); P1c 4/4 po korekcie macierzy kontroli (fałszywa przesłanka locka: obserwacja g_max≈1.14 dotyczy tła 1D; tło 3D ma g_max=1.4734>g_ceil — correction note, pierwotny FAIL zachowany, macierz P2 nietknięta) — detektory zdolne do FAIL i czyste.
-- **Phase 2 (14 biegów + 2 dt/2, zero INCOMPLETE):**
-  - **soliton×C-BAR: NUCLEATION-DN zbieżna** (t₀=2.0 w 4/4; N_det=1±0; obiekt = kula rdzeniowa r≲10: rdzeń INWERTUJE w dół i osiada na podłodze QB-2 g→0.549, a objętość zewnętrzna wspina się do studni barierowej **g_ceil+0.0994** — struktury żyją TUŻ NAD granicą metryczną); **pojedyncza kreacja, nie kaskada mnożenia** (N: 0→1, stały).
-  - sieć×C-BAR: STATIONARY jednorodne g≡0.5354 (podłoga). geneza×PRIMARY: BREAKDOWN t=8.72/8.77 identycznie dla 3 podłóg (zerowa czułość); sol/lat×PRIMARY: BREAKDOWN t≤0.06 (starty powyżej g_ceil). Nukleacja górna nigdzie niepotwierdzona (okno 10 j.cz. nieosiągalne przed załamaniem).
-  - **Diagnoza rozjazdu (analitycznie + numerycznie):** U_b(g_ceil)=U(√(4/3))−U(1)=−0.0219<0 ⟹ w·U_b→−∞ przy ψ→4/3 — **biegun metryczny z kanonicznym U PRZYCIĄGA zamiast odpychać**; korpusowy V_M9.1''=−γψ²(4−3ψ)²/12 ma podwójne zero w 4/3 (w·V skończone) — **właściwa para metryczna to (w, V_M9.1''), nie hybryda z U kanonicznym**.
-- **Phase 3 (charakterystyka kaskady, bez progów):** pojedyncza inwersja rdzenia na podłogę QB-2; rozmiar fizyczny zgodny między siatkami (r≤9.94 vs 10.16); E monotonicznie maleje.
-- **NEEDS user-gated (5):** geneza Γ+s_i (PILNE); reinterpretacja Q-FAIL-i + dopiski core; **N3 — kandydat re-locku: właściwa para metryczna (w, V_M9.1'')**; domena startów; interpretacja krotności N=1.
-
-### 🟢 ROZPISANE: [[research/op-metric-pair-M911-2026-09-02/Phase0_balance.md]] — PHASE0-LOCKED, zero obliczeń (autoryzacja: „ok, rozpisz cykl dla nowego agenta"; realizacja N3 poprzednika)
-- Pierwszy cykl programu we WŁAŚCIWEJ parze sektora grawitacyjnego (reguła sek08a): w(ψ)=ψ/(4−3ψ) + V_M9.1''=−γψ²(4−3ψ)²/12 + K=K_geoψ⁴. **Q-A:** czy sektor jest samodomknięty (krajobraz w·V bez podłóg ad-hoc — ZAKAZ dodawania barier jest sednem pytania)? **Q-B (centralne):** czy relaksacja (geneza L=4π seed=20260903 / bump ψ_max=1.3 / sieć 2π przeskalowana z npz) daje nukleację (detektory w ψ: <5/6, >7/6; pozytyw pre-rejestrowany) lub stan strukturalny? **Q-C:** widmo (warunkowe). Kategoria deskryptywna BREAKDOWN-BOUNDARY („pole wybiera granicę") oddzielona od pozytywu.
-- Prompt dla nowego agenta: [[research/op-metric-pair-M911-2026-09-02/HANDOFF_PROMPT.md]] (do wklejenia w całości).
-
-### WIP po sesji
-- **op-metric-pair-M911: PHASE0-LOCKED** — realizacja: nowy agent (handoff gotowy).
-- **op-metric-closure-relaxation: 🟢 CLOSED, Q-PASS-NUCLEATION.** Pierwszy pozytyw programu granicy metametrycznej: kreacja obiektu przy obustronnym domknięciu ISTNIEJE (choć pojedyncza, nie kaskadowa; w wariancie sufitu, nie czystej metryki).
-- NEEDS op-metametric-boundary: N1 ✅ / N2 ✅; N3/N4/N5 OPEN. Reszta bez zmian.
-
-### Cross-references
-[[research/op-metric-closure-relaxation-2026-09-02/Phase0_balance.md]] · [[core/sek08a_akcja_zunifikowana/sek08a_akcja_zunifikowana.tex]] (eq:vol-element-M911) · [[research/op-metametric-boundary-2026-09-01/NEEDS.md]]
-
----
-
 ## 📜 Archiwum sesji
 
 Treść przeniesiona 1:1 przy rotacji 2026-09-14 (STATE.md: 7545 → ~300 linii).
 
 | Archiwum | Zakres | Linie |
 |---|---|---|
-| [[meta/STATE_ARCHIVE_2026-Q3.md]] | 2026-09-01 … 2026-07-03 | 403 |
+| [[meta/STATE_ARCHIVE_2026-Q3.md]] | 2026-09-13 … 2026-07-03 | ~487 |
 | [[meta/STATE_ARCHIVE_2026-06.md]] | czerwiec 2026 (#59 … #22) | 2876 |
 | [[meta/STATE_ARCHIVE_2026-05.md]] | maj 2026 + historyczne sekcje standing (2026-05-09/12) + migration log | 4163 |
 
@@ -194,5 +209,7 @@ Treść przeniesiona 1:1 przy rotacji 2026-09-14 (STATE.md: 7545 → ~300 linii)
 
 | Data | Zmiana |
 |---|---|
+| 2026-09-19 | Rotacja bieżąca: sesja 2026-09-13 → [[meta/STATE_ARCHIVE_2026-Q3.md]] (treść 1:1); dodany wpis sesji 2026-09-19; Critical path przepisany po Q-I2-FAIL (slot ★ wolny, brak LOCK-a w kolejce). |
+| 2026-09-15 | Rotacja: sesja 2026-09-02 → [[meta/STATE_ARCHIVE_2026-Q3.md]] (treść 1:1); dodany wpis sesji 2026-09-15. |
 | 2026-09-14 | **Rotacja STATE.md** — 7545 linii (692 KB) → ~300. Wpisy sesyjne starsze niż 3 ostatnie przeniesione do `meta/STATE_ARCHIVE_*.md` **bez zmiany treści**. Sekcje `Critical path` / `Active WIP` / `Coordination layers` przepisane na stan 2026-09-14 (poprzednie pochodziły z 2026-05-09/12 i były nieaktualne — zachowane w [[meta/STATE_ARCHIVE_2026-05.md]]). Dodany [[CLAUDE.md]]. Sekcje `Recent closures` / `Outstanding meta-debt` / `WIP lifecycle (proposal)` nie zostały odtworzone — ich treść była z 2026-05 i jest w archiwum; polityka statusów żyje w [[meta/CYCLE_LIFECYCLE.md]]. |
 | 2026-05-09 | STATE.md utworzony jako single-source coordination point (pełny log migracji 2026-05: [[meta/STATE_ARCHIVE_2026-05.md]]) |

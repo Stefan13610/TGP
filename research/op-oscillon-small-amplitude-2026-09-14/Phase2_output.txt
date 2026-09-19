@@ -1,0 +1,29 @@
+==============================================================================
+PHASE 2 -- bramka maszynerii (MD sec. 8; LOCK sec. 4; FAIL => STOP)
+Konfiguracja [LOCK]: R=400; sponge smootherstep gamma0=1.0 [320,400]; dt=0.005; dt_out=0.1; E_core r<=80; E_ref=E_core(50)
+==============================================================================
+
+P2a (proznia; sponge ON; 100 T0 = 628.319; obie siatki):
+  h=0.050: ||psi-1||_inf = 0.000e+00 (prog 1e-10) PASS; przejscia psi(0)=0, kandydat=False (zero alarmow) [99 s]
+  h=0.025: ||psi-1||_inf = 0.000e+00 (prog 1e-10) PASS; przejscia psi(0)=0, kandydat=False (zero alarmow) [244 s]
+
+P2b (regresja vs poprzednik: start a=+0.15 sigma=3, R=400,
+  h=0.05, sponge ON, t=300; tau = t_hold - 50; baseline 206.9 +/- 5%):
+  E_ref = E_core(50) = 2.232629e+00; t_hold = 256.9; tau = 206.9;
+  |tau - 206.9|/206.9 = 0.000 (prog 0.05) PASS  [129 s]
+
+P2c-energia (start a=0.05 sigma=6 [produkcyjny], sponge OFF
+  [INPUT-MD, pudlo zamkniete], R=400, t=700, obie siatki;
+  dryf = |<E>_[90T0,100T0] - <E>_[0,10T0]|/<E>_[0,10T0] <= 1e-6):
+  h=0.050: E0=1.626031e+00; dryf=9.649e-08 (prog 1e-6) PASS; deskryptywnie max|E-E0|/E0=6.627e-06  [348 s]
+  h=0.025: E0=1.626031e+00; dryf=9.649e-08 (prog 1e-6) PASS; deskryptywnie max|E-E0|/E0=6.627e-06  [632 s]
+
+P2c-sponge (odbicie, roznicowo: A R=400 sponge ON vs B R=800 sponge OFF;
+  h=0.05, t=350; puls 1e-3 exp(-(r-200)^2/(2*25)) [INPUT-MD]; u=r(psi-1);
+  gate: max_{r<=240,t}|u_A-u_B| / max_{r in [240,320],t}|u_B| <= 1e-3):
+  max|u_A-u_B| (r<=240) = 5.304e-09; max|u_B| (240<r<=320) = 4.685e-02;
+  stosunek = 1.132e-07 (prog 1e-3) PASS  [442 s]
+
+==============================================================================
+PHASE 2 PODSUMOWANIE: PASS 6/6 (P2a_h0.05:P, P2a_h0.025:P, P2b:P, P2c_E_h0.05:P, P2c_E_h0.025:P, P2c_sponge:P)
+==============================================================================

@@ -1,0 +1,23 @@
+==============================================================================
+PHASE 2 -- bramka (FROZEN; MD sec. 5). REJESTR [INPUT]: dt=0.005; R=200;
+  sponge gamma0=1.0 smootherstep [160,200] (ON prod., OFF P2c); dt_out=0.1;
+  okna dryfu [0,10T0]/[90T0,100T0]; progi: 1e-10 / 4.74+-2% / 1e-6
+==============================================================================
+P2a: proznia lam=0, sponge ON, 100 T0 = 628.318531
+  h=0.050: max||psi-1||_inf = 0.000e+00  (prog 1e-10)  PASS  [55 s]
+  h=0.025: max||psi-1||_inf = 0.000e+00  (prog 1e-10)  PASS  [149 s]
+  P2a: PASS
+P2b: regresja lam=0, qR3 a=-0.20, h=0.05, sponge ON
+  status=BREAKDOWN-BOUNDARY t_end=4.7400 (cel 4.74 +-2%, tj. [4.6452, 4.8348])
+  P2b: PASS  [1 s]
+P2c: energia ze zrodlem lam=0.05, gauss a=+0.05 s=3, sponge OFF, t=700
+  h=0.050: E(0)=2.289378581e+00 <E>_[10,20]T0=2.289346111e+00 <E>_[90,100]T0=2.289346095e+00
+          dryf_sekularny=8.801e-09 (prog 1e-6/100T0)  PASS  [169 s]
+          deskr.: offset_dC2(stary estym.)=2.282e-06  dryf_fitLSQ[10,100]T0=1.606e-07  max|E-E0|=3.376e-04
+  h=0.025: E(0)=2.289378867e+00 <E>_[10,20]T0=2.289346312e+00 <E>_[90,100]T0=2.289346295e+00
+          dryf_sekularny=8.993e-09 (prog 1e-6/100T0)  PASS  [368 s]
+          deskr.: offset_dC2(stary estym.)=2.298e-06  dryf_fitLSQ[10,100]T0=1.603e-07  max|E-E0|=3.376e-04
+  P2c: PASS
+==============================================================================
+PHASE 2 PODSUMOWANIE: P2a PASS ; P2b PASS ; P2c PASS => BRAMKA OTWARTA  [743 s]
+==============================================================================
